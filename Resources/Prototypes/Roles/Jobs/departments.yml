@@ -236,6 +236,7 @@
   - PermaPrisoner # Harmony
   - Brigmedic # Goob
   - SecurityClown # event-restricted, Goob
+  - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
 
 - type: department
   id: Science
