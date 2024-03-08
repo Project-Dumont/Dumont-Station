@@ -169,6 +169,7 @@
     - Security
     - Service
     - Supply
+    - Prison #DeltaV
     defaultChannel: Command
   - type: Sprite
     layers:
@@ -287,6 +288,7 @@
   - type: EncryptionKey
     channels:
     - Security
+    - Prison #deltaV
     defaultChannel: Security
   - type: Sprite
     layers:
