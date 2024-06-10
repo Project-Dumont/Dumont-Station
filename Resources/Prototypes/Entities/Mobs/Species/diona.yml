@@ -155,6 +155,15 @@
     whitelist:
       types:
       - Shard
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - RootSpeak
+    understands:
+    - GalacticCommon
+    - RootSpeak
+  # Gaby Station -> Languages end
 
 - type: entity
   parent: BaseSpeciesDummy

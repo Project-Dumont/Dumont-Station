@@ -15,6 +15,7 @@ namespace Content.Server.Speech.EntitySystems;
 /// </summary>
 public sealed class ListeningSystem : EntitySystem
 {
+    [Dependency] private readonly ChatSystem _chat = default!; // Gaby Station -> Language
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
 
     public override void Initialize()
@@ -25,10 +26,14 @@ public sealed class ListeningSystem : EntitySystem
 
     private void OnSpeak(EntitySpokeEvent ev)
     {
-        PingListeners(ev.Source, ev.Message, ev.ObfuscatedMessage);
+        PingListeners(ev.Source, ev.Message, ev.IsWhisper); // Gaby Station -> Language
     }
 
-    public void PingListeners(EntityUid source, string message, string? obfuscatedMessage)
+    public void PingListeners(
+        EntityUid source,
+        string message,
+        bool isWhisper // Gaby Station -> Language
+        )
     {
         // TODO whispering / audio volume? Microphone sensitivity?
         // for now, whispering just arbitrarily reduces the listener's max range.
@@ -39,7 +44,10 @@ public sealed class ListeningSystem : EntitySystem
 
         var attemptEv = new ListenAttemptEvent(source);
         var ev = new ListenEvent(message, source);
-        var obfuscatedEv = obfuscatedMessage == null ? null : new ListenEvent(obfuscatedMessage, source);
+
+        // Gaby station -> Languages
+        var obfuscatedEv = !isWhisper ? null : new ListenEvent(_chat.ObfuscateMessageReadability(message), source);
+
         var query = EntityQueryEnumerator<ActiveListenerComponent, TransformComponent>();
 
         while(query.MoveNext(out var listenerUid, out var listener, out var xform))

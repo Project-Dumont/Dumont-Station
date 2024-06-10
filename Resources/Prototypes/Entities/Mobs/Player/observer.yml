@@ -202,6 +202,9 @@
       enum.RevivalContractUiKey.Key: # Goobstation - Devil
         type: RevivalContractBoundUserInterface
         requireInputValidation: false
+  # Gaby Station -> Languages
+  - type: UniversalLanguageSpeaker # Ghosts should understand any language.
+
 
 # proto for player ghosts specifically
 - type: entity

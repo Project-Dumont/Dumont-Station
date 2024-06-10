@@ -280,6 +280,15 @@
     price: 100
   - type: Appearance
   - type: WiresVisuals
+  # Gaby station -> Languages start
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - RobotTalk
+    understands:
+    - GalacticCommon
+    - RobotTalk
+  # Gaby station -> Languages end
 
 - type: entity
   parent: VendingMachine

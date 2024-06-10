@@ -70,3 +70,30 @@
   - JukeboxCircuitBoard
   - DawInstrumentMachineCircuitboard
   - SheetifierMachineCircuitboard # Goobstation - Moved from ScienceBoards
+
+- type: latheRecipePack
+  id: ServiceTranslators
+  recipes:
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - XenoTranslator
+
+- type: latheRecipePack
+  id: ServiceTranslatorImplanters
+  recipes:
+  - BasicGalaticCommonTranslatorImplanter
+  - AdvancedGalaticCommonTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - AnimalTranslator
+  - MofficTranslatorImplanter
+  - MofficTranslator
+  

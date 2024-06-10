@@ -106,6 +106,15 @@
   - type: InnateMiningScannerViewer # Frontier
     pingSound: null
     viewRange: 3 # Goob value
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - SolCommon
+    understands:
+    - GalacticCommon
+    - SolCommon
+  # Gaby Station -> Languages end
 
 - type: entity
   parent: BaseSpeciesDummy

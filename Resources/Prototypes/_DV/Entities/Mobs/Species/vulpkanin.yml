@@ -142,6 +142,15 @@
     - VulpEmotes
   # - type: FootPrints # WD EDIT
   - type: Wagging # Einstein-Engine
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - Canilunzt
+    understands:
+    - GalacticCommon
+    - Canilunzt
+  # Gaby Station -> Languages begin
 
 - type: entity
   save: false

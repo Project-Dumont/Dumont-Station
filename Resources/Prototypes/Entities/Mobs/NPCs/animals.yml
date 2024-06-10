@@ -327,8 +327,6 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: ReplacementAccent
-    accent: mouse
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Effects/bite.ogg
@@ -344,6 +342,13 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  # Gaby Station -> Language end
 
 - type: entity
   name: bee
@@ -522,13 +527,18 @@
     eggSpawn:
     - id: FoodEgg
   - type: ExaminableHunger
-  - type: ReplacementAccent
-    accent: chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
     - Passive
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
+  # Gaby Station -> Languages end
 
 - type: entity
   parent: MobChicken
@@ -819,8 +829,6 @@
       amount: 2
   - type: Extractable
     grindableSolutionName: food
-  - type: ReplacementAccent
-    accent: mothroach
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
@@ -892,6 +900,13 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Moffic
+    understands:
+    - Moffic
+  # Gaby Station -> Language end
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
 # The white duck is more akin to a pekin or call duck.
@@ -961,13 +976,18 @@
     eggSpawn:
     - id: FoodEgg
   - type: ExaminableHunger
-  - type: ReplacementAccent
-    accent: duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
     - Passive
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Duck
+    understands:
+    - Duck
+  # Gaby Station -> Languages end
 
 - type: entity
   name: white duck #Quack
@@ -1229,8 +1249,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
-  - type: ReplacementAccent
-    accent: crab
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CopperBlood
@@ -1242,6 +1260,13 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Crab
+    understands:
+    - Crab
+  # Gaby Station -> Language end
 
 - type: entity
   name: goat
@@ -1492,8 +1517,6 @@
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
-  - type: ReplacementAccent
-    accent: kangaroo
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1545,6 +1568,14 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Kangaroo
+    understands:
+    - Kangaroo
+  # Gaby Station -> Languages end
+
 
 - type: entity
   name: boxing kangaroo
@@ -1739,7 +1770,6 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
@@ -1762,6 +1792,14 @@
         Burn: 3
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+  # Gaby Station -> Language end
 
 - type: entity
   name: monkey
@@ -1777,7 +1815,6 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
-  - type: MonkeyAccent
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1795,6 +1832,15 @@
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+    - GalacticCommon
+  # Gaby Station -> Language end
 
 - type: entity
   id: MobMonkeySyndicateAgent
@@ -1824,8 +1870,6 @@
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
-  - type: ReplacementAccent
-    accent: kobold
   # Shitmed Change Start
   - type: HumanoidAppearance
     species: Kobold
@@ -1892,6 +1936,14 @@
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
     rules: ghost-role-information-nonantagonist-rules
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Kobold
+    understands:
+    - Kobold
+    - Monkey
+  # Gaby Station -> Language end
 
 - type: entity
   name: kobold
@@ -2077,8 +2129,6 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
   - type: Tag
     tags:
     - Trash
@@ -2185,6 +2235,13 @@
       - !type:GibBehavior
         gibContents: Skip
         recursive: false
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  # Gaby Station -> Language end
 
 - type: entity
   parent: MobMouse
@@ -2538,6 +2595,13 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    understands:
+    - GalacticCommon
+  # Gaby Station -> Language end
 
 - type: entity
   name: penguin
@@ -2764,8 +2828,6 @@
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
-  - type: ReplacementAccent
-    accent: xeno
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -2816,6 +2878,13 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+  # Gaby Station -> Language end  
 
 - type: entity
   parent: MobSpiderBase
@@ -3147,6 +3216,13 @@
   - type: Tag
     tags:
     - VimPilot
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Fox
+    understands:
+    - Fox
+  # Gaby Station -> Language end
 
 - type: entity
   name: corgi
@@ -3190,8 +3266,6 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
   - type: InteractionPopup
     interactSuccessString: petting-success-dog
     interactFailureString: petting-failure-generic
@@ -3208,6 +3282,13 @@
   - type: Tag
     tags:
     - VimPilot
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Dog
+    understands:
+    - Dog
+  # Gaby Station -> Language end
 
 - type: entity
   name: corrupted corgi
@@ -3340,8 +3421,6 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: cat
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -3367,6 +3446,13 @@
     tags:
     - VimPilot
   - type: VentCrawler # goobstation - Ventcrawl
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Cat
+    understands:
+    - Cat
+  # Gaby Station -> Languages end
 
 - type: entity
   name: calico cat
@@ -3435,6 +3521,14 @@
         Slash: 6
         Piercing: 6
         Structural: 15
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - GalacticCommon
+  # Gaby Station -> Languages end
 
 - type: entity
   name: space cat
@@ -3734,8 +3828,6 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
   - type: Tag
     tags:
     - VimPilot
@@ -3789,6 +3881,13 @@
         name: food-sequence-burger-content-hamster
       taco:
         name: food-sequence-content-hamster
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  # Gaby Station -> Languages end
 
 - type: entity
   name: pig
@@ -3850,8 +3949,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: ReplacementAccent
-    accent: pig
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -3860,6 +3957,13 @@
   - type: HTN
     rootTask:
       task: RuminantCompound
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Pig
+    understands:
+    - Pig
+  # Gaby Station -> Languages end
 
 - type: entity
   name: diona nymph
@@ -3941,6 +4045,14 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - RootSpeak
+    understands:
+    - GalacticCommon
+    - RootSpeak
+  # Gaby Station -> Languages end
 
 - type: entity
   parent: MobDionaNymph

@@ -17,6 +17,7 @@
 using Content.Client.Stylesheets;
 using Content.Shared.Chat;
 using Content.Shared.Input;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;

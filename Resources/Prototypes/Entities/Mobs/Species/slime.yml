@@ -188,6 +188,15 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - Bubblish
+    understands:
+    - GalacticCommon
+    - Bubblish
+  # Gaby Station -> Languages end
 
 - type: entity
   parent: MobHumanDummy

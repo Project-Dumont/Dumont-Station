@@ -290,6 +290,15 @@
     coefficient: 0.5
   - type: CombatPower # Goobstation
     factor: 2
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - Mouse
+    understands:
+    - GalacticCommon
+    - Mouse
+  # Gaby Station -> Language end
 
 - type: entity
   id: MobRatKingBuff
@@ -471,6 +480,14 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - GalacticCommon
+    - Mouse
+  # Gaby Station -> Language end
 
 - type: weightedRandomEntity
   id: RatKingLoot

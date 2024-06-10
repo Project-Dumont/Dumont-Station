@@ -18,7 +18,10 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Server._Gabystation.Language;
 using Content.Server.Administration;
+using Content.Shared._Gabystation.Language;
+using Content.Shared._Gabystation.Language.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Emoting;
 using Content.Shared.Examine;
@@ -75,6 +78,15 @@ namespace Content.Server.Mind.Commands
             {
                 entityManager.EnsureComponent<SpeechComponent>(uid);
                 entityManager.EnsureComponent<EmotingComponent>(uid);
+
+                // Gaby station -> Languages start
+                var language = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+                var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
+                // If the speaker knows any language (like monkey or robot), they keep those
+                // Otherwise, we give them the fallback
+                if (speaker.SpokenLanguages.Count == 0)
+                    language.AddLanguage(speaker, SharedLanguageSystem.FallbackLanguagePrototype);
+                // Gaby station -> Languages end
             }
 
             entityManager.EnsureComponent<ExaminerComponent>(uid);

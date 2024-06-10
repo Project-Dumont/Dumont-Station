@@ -4,13 +4,26 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Gabystation.Language;
 using Content.Shared.Chat;
 using Content.Shared.Radio;
 
 namespace Content.Server.Radio;
 
+/// <summary>
+/// <param name="OriginalChatMsg">The message to display when the speaker can understand "language"</param>
+/// <param name="LanguageObfuscatedChatMsg">The message to display when the speaker cannot understand "language"</param>
+/// </summary>
 [ByRefEvent]
-public readonly record struct RadioReceiveEvent(string Message, EntityUid MessageSource, RadioChannelPrototype Channel, EntityUid RadioSource, MsgChatMessage ChatMsg);
+public readonly record struct RadioReceiveEvent(
+    // Gaby Station -> languages
+    EntityUid MessageSource,
+    RadioChannelPrototype Channel,
+    EntityUid RadioSource,
+    ChatMessage OriginalChatMsg, // Gaby Station -> Languages
+    ChatMessage LanguageObfuscatedChatMsg, // Gaby Station -> Languages
+    LanguagePrototype Language
+);
 
 /// <summary>
 /// Use this event to cancel sending message per receiver

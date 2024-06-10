@@ -284,6 +284,30 @@
   - FauxAstroTiles
   # Goobstation R&D Console rework end
 
+# Gaby Station -> Languages start
+- type: technology
+  id: BasicTranslation
+  name: research-technology-basic-translation
+  icon:
+    sprite: _Gabystation/Objects/Devices/translator.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - BasicGalaticCommonTranslatorImplanter
+  - MofficTranslator
+  position: 1,8
+  technologyPrerequisites:
+  - AdvancedEntertainment
+# Gaby Station -> Languages end
+
 # Tier 3
 
 - type: technology
@@ -320,3 +344,29 @@
   technologyPrerequisites:
   - BiochemicalStasis
   # Goobstation R&D Console rework end
+
+# Gaby Station -> Languages start
+- type: technology
+  id: AdvancedTranslation
+  name: research-technology-advanced-translation
+  icon:
+    sprite: Objects/Devices/translator.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - XenoTranslator
+  - AdvancedGalaticCommonTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - AnimalTranslator
+  - MofficTranslatorImplanter
+  position: 2,6
+  technologyPrerequisites:
+  - BasicTranslation
+# Gaby Station -> Languages end

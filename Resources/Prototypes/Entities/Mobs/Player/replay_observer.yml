@@ -16,3 +16,5 @@
   - type: MovementSpeedModifier
     baseSprintSpeed: 24
     baseWalkSpeed: 16
+  # Gaby Station -> Languages
+  - type: UniversalLanguageSpeaker

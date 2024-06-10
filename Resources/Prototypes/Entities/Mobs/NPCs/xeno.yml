@@ -237,6 +237,13 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+  # Gaby Station -> Languages end
 
 - type: entity
   name: praetorian
@@ -346,6 +353,15 @@
   - type: Tag
     tags:
     - CannotSuicide
+  # Gaby Station -> Languages begin
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - Xeno
+    understands:
+    - GalacticCommon
+    - Xeno
+  # Gaby Station -> Languages end
 
 - type: entity
   name: ravager

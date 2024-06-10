@@ -256,6 +256,8 @@
     - ServiceBoards
     - SharedBoards
     - CameraBoards
+    - ServiceTranslators
+    - ServiceTranslatorImplanters
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ServiceBoardsEvilStatic # Donk Co microwave circiutboard

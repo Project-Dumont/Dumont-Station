@@ -56,6 +56,15 @@
     - DoorBumpOpener
     - AnomalyHost
     - Oni
+  # Gaby Station -> Languages start
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - Nekomimetic
+    understands:
+    - GalacticCommon
+    - Nekomimetic
+  # Gaby Station -> Languages end
 
 - type: entity
   save: false

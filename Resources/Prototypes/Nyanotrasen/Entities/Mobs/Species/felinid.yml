@@ -91,6 +91,17 @@
   - type: Consciousness
     cap: 160
     threshold: 80
+  # Gaby Station -> Languages start
+  - type: LanguageSpeaker
+    speaks:
+    - GalacticCommon
+    - SolCommon
+    - Nekomimetic
+    understands:
+    - GalacticCommon
+    - SolCommon
+    - Nekomimetic
+  # Gaby Station -> Languages end
 
 - type: entity
   save: false

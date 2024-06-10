@@ -169,6 +169,14 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalIan
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Dog
+    understands:
+    - GalacticCommon
+    - Dog
+  # Gaby Station -> Language end
 
 - type: entity
   name: Old Ian
@@ -281,6 +289,14 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalNamedCat
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Cat
+    understands:
+    - GalacticCommon
+    - Cat
+  # Gaby Station -> Language end
 
 - type: entity
   name: Exception
@@ -301,6 +317,14 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalNamedCat
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Cat
+    understands:
+    - GalacticCommon
+    - Cat
+  # Gaby Station -> Language end
 
 - type: entity
   name: Floppa
@@ -440,8 +464,6 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -462,6 +484,14 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalMcGriff
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Dog
+    understands:
+    - GalacticCommon
+    - Dog
+  # Gaby Station -> Language end
 
 - type: entity
   name: Paperwork
@@ -536,8 +566,6 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: dog
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-dog
@@ -558,6 +586,14 @@
   - type: Speech
     speechVerb: Canine
     speechSounds: Dog
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Dog
+    understands:
+    - GalacticCommon
+    - Dog
+  # Gaby Station -> Language end
 
 - type: entity
   name: Morty
@@ -698,6 +734,14 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalRenault
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Fox
+    understands:
+    - GalacticCommon
+    - Fox
+  # Gaby Station -> Language end
 
 - type: entity
   name: Hamlet
@@ -751,6 +795,14 @@
     flavors:
     - meaty
     - sadness
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Mouse
+    understands:
+    - GalacticCommon
+    - Mouse
+  # Gaby Station -> Language end
 
 - type: entity
   name: Shiva
@@ -931,6 +983,14 @@
     attributes:
       proper: true
       gender: female
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Bubblish
+    understands:
+    - GalacticCommon
+    - Bubblish
+  # Gaby Station -> Language end
 
 - type: entity
   name: Pun Pun
@@ -966,6 +1026,15 @@
     attributes:
       proper: true
       gender: male
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Monkey
+    understands:
+    - GalacticCommon
+    - Monkey
+    - Kobold
+  # Gaby Station -> Language end
 
 - type: entity
   name: Tropico
@@ -993,3 +1062,11 @@
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
+  # Gaby Station -> Language begin
+  - type: LanguageSpeaker
+    speaks:
+    - Crab
+    understands:
+    - GalacticCommon
+    - Crab
+  # Gaby Station -> Language end
