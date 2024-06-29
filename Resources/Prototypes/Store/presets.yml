@@ -39,6 +39,7 @@
     - UplinkWearables
     - UplinkJob
     - UplinkPointless
+    - UplinkObjectives # Dumont
     - UplinkSales # WD EDIT
     currencyWhitelist:
     - Telecrystal

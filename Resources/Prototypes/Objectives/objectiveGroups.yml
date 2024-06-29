@@ -120,6 +120,7 @@
     CMORapidSyringeGunStealObjective: 1
     RDHardsuitStealObjective: 1
     NukeDiskStealObjective: 1
+    PlutoniumCoreStealObjective: 0.5 # Dumont
     MagbootsStealObjective: 1
     # CERocketLauncherStealObjective: 1
     CorgiMeatStealObjective: 1

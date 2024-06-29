@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+
+- type: storeCategory
+  id: UplinkObjectives
+  name: store-category-objectives
+  priority: 12
+
+- type: listing
+  id: UplinkCoreExtractionToolbox
+  name: uplink-core-extraction-toolbox-name
+  description: uplink-core-extraction-toolbox-desc
+  icon:
+    sprite: Objects/Misc/nuke_core_container.rsi
+    state: closed
+  productEntity: ToolboxSyndicateFilledCoreExtraction
+  categories: [UplinkObjectives]
+  conditions:
+  - !type:ObjectiveUnlockCondition
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components: [SurplusBundle]
+
+- type: entity
+  parent: ToolboxSyndicate
+  id: ToolboxSyndicateFilledCoreExtraction
+  suffix: Filled, Core Extraction
+  components:
+  - type: StorageFill
+    contents:
+    - id: Crowbar
+    - id: Welder
+    - id: Wrench
+    - id: ThinTippedScrewdriver
+    - id: NukeCoreContainer
+
+- type: Tag
+  id: PlutoniumCore
+
+- type: tool
+  id: FineScrewing
+  name: tool-quality-fine-screwing-name
+  toolName: tool-quality-fine-screwing-tool-name
+  spawn: ThinTippedScrewdriver
+  icon:
+    sprite: Objects/Tools/screwdriver.rsi
+    state: screwdriver-map
