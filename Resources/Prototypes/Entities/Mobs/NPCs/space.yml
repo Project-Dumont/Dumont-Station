@@ -302,7 +302,7 @@
   - type: CombatPower # Goobstation
     factor: 1 # times more dangerous than a crew-member
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Kangaroo
     understands:
@@ -391,7 +391,7 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 4
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -518,7 +518,7 @@
       color: "#4faffb"
     - type: Fauna # Lavaland Change
     # Gaby Station -> Languages begin
-    - type: LanguageSpeaker
+    - type: LanguageKnowledge
       speaks:
       - Xeno
       understands:

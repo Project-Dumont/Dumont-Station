@@ -238,7 +238,7 @@
     activateSound: null
     deactivateSound: null
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -354,7 +354,7 @@
     tags:
     - CannotSuicide
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Xeno

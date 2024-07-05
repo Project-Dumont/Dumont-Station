@@ -57,7 +57,7 @@
     - AnomalyHost
     - Oni
   # Gaby Station -> Languages start
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Nekomimetic

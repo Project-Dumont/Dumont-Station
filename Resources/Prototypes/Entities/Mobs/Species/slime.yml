@@ -189,7 +189,7 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Bubblish

@@ -343,7 +343,7 @@
     activateSound: null
     deactivateSound: null
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -533,7 +533,7 @@
     factions:
     - Passive
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Chicken
     understands:
@@ -901,7 +901,7 @@
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Moffic
     understands:
@@ -982,7 +982,7 @@
     factions:
     - Passive
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Duck
     understands:
@@ -1261,7 +1261,7 @@
   - type: Body
     prototype: AnimalHemocyanin
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Crab
     understands:
@@ -1569,7 +1569,7 @@
     rootTask:
       task: SimpleHostileCompound
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Kangaroo
     understands:
@@ -1793,7 +1793,7 @@
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Monkey
     understands:
@@ -1833,7 +1833,7 @@
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Monkey
     understands:
@@ -1937,7 +1937,7 @@
     description: ghost-role-information-kobold-description
     rules: ghost-role-information-nonantagonist-rules
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Kobold
     understands:
@@ -2236,7 +2236,7 @@
         gibContents: Skip
         recursive: false
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -2596,7 +2596,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     understands:
@@ -2879,7 +2879,7 @@
     activateSound: null
     deactivateSound: null
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -3217,7 +3217,7 @@
     tags:
     - VimPilot
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Fox
     understands:
@@ -3283,7 +3283,7 @@
     tags:
     - VimPilot
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Dog
     understands:
@@ -3447,7 +3447,7 @@
     - VimPilot
   - type: VentCrawler # goobstation - Ventcrawl
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Cat
     understands:
@@ -3522,7 +3522,7 @@
         Piercing: 6
         Structural: 15
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Xeno
     understands:
@@ -3882,7 +3882,7 @@
       taco:
         name: food-sequence-content-hamster
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -3958,7 +3958,7 @@
     rootTask:
       task: RuminantCompound
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Pig
     understands:
@@ -4046,7 +4046,7 @@
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - RootSpeak
     understands:

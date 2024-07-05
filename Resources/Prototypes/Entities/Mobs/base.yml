@@ -118,6 +118,7 @@
   - type: CameraRecoil
   - type: MindContainer
   - type: MovementSpeedModifier
+  - type: LanguageSpeaker # Gaby Station -> Languages. This component is required to support speech, although it does not define known languages.
   - type: RequireProjectileTarget
     active: False
   - type: AnimatedEmotes

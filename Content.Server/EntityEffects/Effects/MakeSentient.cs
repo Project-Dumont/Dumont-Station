@@ -11,11 +11,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
+using Content.Server._Gabystation.Language;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Speech.Components;
 using Content.Shared._Gabystation.Language;
-using Content.Shared._Gabystation.Language.Events;
+using Content.Shared._Gabystation.Language.Components;
 using Content.Shared._Gabystation.Language.Systems;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mind.Components;
@@ -40,19 +40,18 @@ public sealed partial class MakeSentient : EntityEffect
         entityManager.RemoveComponent<MonkeyAccentComponent>(uid);
 
         // Gaby Station -> Languages start
+        // Make sure the entity knows at least fallback (Galactic Common)
         var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
+        var knowledge = entityManager.EnsureComponent<LanguageKnowledgeComponent>(uid);
         var fallback = SharedLanguageSystem.FallbackLanguagePrototype;
 
-        if (!speaker.UnderstoodLanguages.Contains(fallback))
-            speaker.UnderstoodLanguages.Add(fallback);
+        if (!knowledge.UnderstoodLanguages.Contains(fallback))
+            knowledge.UnderstoodLanguages.Add(fallback);
 
-        if (!speaker.SpokenLanguages.Contains(fallback))
-        {
-            speaker.CurrentLanguage = fallback;
-            speaker.SpokenLanguages.Add(fallback);
-        }
+        if (!knowledge.SpokenLanguages.Contains(fallback))
+            knowledge.SpokenLanguages.Add(fallback);
 
-        args.EntityManager.EventBus.RaiseLocalEvent(uid, new LanguagesUpdateEvent(), true);
+        IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>().UpdateEntityLanguages(uid, speaker);
         // Gaby Station -> Languages end
 
         // Stops from adding a ghost role to things like people who already have a mind

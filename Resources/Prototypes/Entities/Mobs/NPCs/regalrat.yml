@@ -291,7 +291,7 @@
   - type: CombatPower # Goobstation
     factor: 2
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Mouse
@@ -481,7 +481,7 @@
     activateSound: null
     deactivateSound: null
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:

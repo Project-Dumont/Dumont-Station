@@ -224,7 +224,7 @@
     threshold: 105
     cap: 210
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Draconic

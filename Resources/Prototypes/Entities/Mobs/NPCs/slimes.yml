@@ -204,7 +204,7 @@
   - type: CombatPower # Goobstation
     factor: 8 # / 2 = times more powerful than an unarmed crew-member
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Bubblish
     understands:

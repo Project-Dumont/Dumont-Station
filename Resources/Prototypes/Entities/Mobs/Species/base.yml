@@ -484,7 +484,7 @@
     damagePenalty: 0.2
   - type: ExaminableCharacter # WWDP
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker # This is here so all with no LanguageSpeaker at least spawn with the default languages.
+  - type: LanguageKnowledge # This is here so all with no LanguageSpeaker at least spawn with the default languages.
     speaks:
     - GalacticCommon
     understands:

@@ -143,7 +143,7 @@
   # - type: FootPrints # WD EDIT
   - type: Wagging # Einstein-Engine
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Canilunzt

@@ -115,8 +115,11 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
     private void OnLanguageChosen(string id)
     {
         var proto = _clientLanguageSystem.GetLanguagePrototype(id);
-        if (proto != null)
-            _clientLanguageSystem.RequestSetLanguage(proto);
+        if (proto == null)
+            return;
+
+        _clientLanguageSystem.RequestSetLanguage(proto);
+        UpdateState(id, _clientLanguageSystem.SpokenLanguages);
     }
 
 

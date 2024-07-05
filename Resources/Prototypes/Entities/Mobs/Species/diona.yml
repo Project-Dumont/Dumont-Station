@@ -156,7 +156,7 @@
       types:
       - Shard
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RootSpeak

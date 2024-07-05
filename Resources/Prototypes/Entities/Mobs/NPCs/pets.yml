@@ -170,7 +170,7 @@
   - type: StealTarget
     stealGroup: AnimalIan
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Dog
     understands:
@@ -290,7 +290,7 @@
   - type: StealTarget
     stealGroup: AnimalNamedCat
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Cat
     understands:
@@ -318,7 +318,7 @@
   - type: StealTarget
     stealGroup: AnimalNamedCat
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Cat
     understands:
@@ -485,7 +485,7 @@
   - type: StealTarget
     stealGroup: AnimalMcGriff
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Dog
     understands:
@@ -587,7 +587,7 @@
     speechVerb: Canine
     speechSounds: Dog
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Dog
     understands:
@@ -735,7 +735,7 @@
   - type: StealTarget
     stealGroup: AnimalRenault
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Fox
     understands:
@@ -796,7 +796,7 @@
     - meaty
     - sadness
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Mouse
     understands:
@@ -984,7 +984,7 @@
       proper: true
       gender: female
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Bubblish
     understands:
@@ -1027,7 +1027,7 @@
       proper: true
       gender: male
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Monkey
     understands:
@@ -1063,7 +1063,7 @@
   - type: StealTarget
     stealGroup: AnimalTropico
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - Crab
     understands:

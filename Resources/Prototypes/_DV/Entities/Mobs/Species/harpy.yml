@@ -183,7 +183,7 @@
       - Landmine
       - Mousetrap
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - SolCommon

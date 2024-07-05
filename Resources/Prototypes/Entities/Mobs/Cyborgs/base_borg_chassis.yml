@@ -424,7 +424,7 @@
     penetrateDamage: 75 # It's harder to kill iron golem
     damagePenalty: 0.25
   # Gaby Station -> Language begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RobotTalk

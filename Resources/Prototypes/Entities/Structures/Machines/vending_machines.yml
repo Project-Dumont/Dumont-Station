@@ -281,7 +281,7 @@
   - type: Appearance
   - type: WiresVisuals
   # Gaby station -> Languages start
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RobotTalk

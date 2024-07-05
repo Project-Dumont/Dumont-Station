@@ -107,7 +107,7 @@
     pingSound: null
     viewRange: 3 # Goob value
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - SolCommon

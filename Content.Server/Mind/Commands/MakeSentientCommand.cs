@@ -82,10 +82,11 @@ namespace Content.Server.Mind.Commands
                 // Gaby station -> Languages start
                 var language = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
                 var speaker = entityManager.EnsureComponent<LanguageSpeakerComponent>(uid);
-                // If the speaker knows any language (like monkey or robot), they keep those
-                // Otherwise, we give them the fallback
+
+                // If the entity already speaks some language (like monkey or robot), we do nothing else
+                // Otherwise, we give them the fallback language
                 if (speaker.SpokenLanguages.Count == 0)
-                    language.AddLanguage(speaker, SharedLanguageSystem.FallbackLanguagePrototype);
+                    language.AddLanguage(uid, SharedLanguageSystem.FallbackLanguagePrototype);
                 // Gaby station -> Languages end
             }
 

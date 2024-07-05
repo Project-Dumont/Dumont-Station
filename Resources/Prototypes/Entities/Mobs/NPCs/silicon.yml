@@ -279,7 +279,7 @@
   - type: NoSlip
   - type: Insulated
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - RobotTalk

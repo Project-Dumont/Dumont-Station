@@ -92,7 +92,7 @@
     cap: 160
     threshold: 80
   # Gaby Station -> Languages start
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - SolCommon

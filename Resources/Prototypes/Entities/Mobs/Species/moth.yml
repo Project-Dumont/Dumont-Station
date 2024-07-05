@@ -249,7 +249,7 @@
   - type: DashAction # Goobstation - dark souls moths
     actionProto: ActionDashMoth
   # Gaby Station -> Languages begin
-  - type: LanguageSpeaker
+  - type: LanguageKnowledge
     speaks:
     - GalacticCommon
     - Moffic
