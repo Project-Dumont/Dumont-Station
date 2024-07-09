@@ -669,17 +669,17 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (nameEv.SpeechVerb != null && _prototypeManager.TryIndex(nameEv.SpeechVerb, out var proto))
                 speech = proto;
         }
-        
+
         // Gaby Station -> Languages start
         var language = languageOverride ?? _language.GetLanguage(source);
 
         name = FormattedMessage.EscapeText(name);
         // The chat message wrapped in a "x says y" string
-        var wrappedMessage = WrapPublicMessage(source, name, message, wrappedMessagePostfix);
+        var wrappedMessage = WrapPublicMessage(source, name, message, wrappedMessagePostfix, languageOverride: language);
         // The chat message obfuscated via language obfuscation
         var obfuscated = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true, _configurationManager.GetCVar(CCVars.ChatPunctuation), (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en") || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
         // The language-obfuscated message wrapped in a "x says y" string
-        var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, wrappedMessagePostfix);
+        var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, wrappedMessagePostfix, languageOverride: language);
 
         SendInVoiceRange(ChatChannel.Local, name, message, wrappedMessage, obfuscated, wrappedObfuscated, source, range, languageOverride: language);
 
@@ -769,6 +769,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
                 wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message" + wrappedMessagePostfix,
+                    ("color", language.Color ?? Color.Gray),
                     ("entityName", name),
                     ("message", FormattedMessage.EscapeText(result)));
             }
@@ -778,13 +779,14 @@ public sealed partial class ChatSystem : SharedChatSystem
                 // Collisiongroup.Opaque is not ideal for this use. Preferably, there should be a check specifically with "Can Ent1 see Ent2" in mind
                 result = ObfuscateMessageReadability(perceivedMessage);
                 wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message" + wrappedMessagePostfix,
-                    ("entityName", nameIdentity), ("message", FormattedMessage.EscapeText(result)));
+                    ("entityName", nameIdentity), ("color", language.Color ?? Color.Gray), ("message", FormattedMessage.EscapeText(result)));
             }
             else
             {
                 // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
                 result = ObfuscateMessageReadability(perceivedMessage);
                 wrappedMessage = Loc.GetString("chat-manager-entity-whisper-unknown-wrap-message" + wrappedMessagePostfix,
+                    ("color", language.Color ?? Color.Gray),
                     ("message", FormattedMessage.EscapeText(result)));
             }
 
@@ -792,6 +794,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         var replayWrap = Loc.GetString("chat-manager-entity-whisper-wrap-message" + wrappedMessagePostfix,
+            ("color", language.Color ?? Color.Gray),
             ("entityName", name),
             ("message", FormattedMessage.EscapeText(message)));
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, replayWrap, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
@@ -1122,15 +1125,22 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <summary>
     ///     Wraps a message sent by the specified entity into an "x says y" string.
     /// </summary>
-    public string WrapPublicMessage(EntityUid source, string name, string message, string wrappedMessagePostfix = "")
+    public string WrapPublicMessage(
+        EntityUid source,
+        string name,
+        string message,
+        string wrappedMessagePostfix = "",
+        LanguagePrototype? languageOverride = null
+        )
     {
+        var language = languageOverride ?? _language.GetLanguage(source);
         var speech = GetSpeechVerb(source, message);
-        var verbName = Loc.GetString(_random.Pick(speech.SpeechVerbStrings));
         return Loc.GetString((speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message") + wrappedMessagePostfix,
+            ("color", language.Color ?? Color.White),
             ("entityName", name),
-            ("verb", verbName),
-            ("fontType", speech.FontId),
-            ("fontSize", speech.FontSize),
+            ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+            ("fontType", language.FontId ?? speech.FontId),
+            ("fontSize", language.FontSize ?? speech.FontSize),
             ("message", message));
     }
 
