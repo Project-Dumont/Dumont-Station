@@ -26,7 +26,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage;
 using Content.Server.Emoting.Systems;
 using Content.Server.Speech.EntitySystems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Medical;
 using Content.Server.Traits.Assorted;
 using Content.Shared.Traits.Assorted;
