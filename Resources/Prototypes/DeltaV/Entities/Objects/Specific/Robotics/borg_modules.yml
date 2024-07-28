@@ -67,6 +67,21 @@
     - FlashRecharging
 
 - type: entity
+  id: BorgModuleSecurityEscalate
+  parent: BorgModuleSecurityDeescalate
+  name: escalation cyborg module
+  description: Peace was never an option.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-hurt
+  - type: ItemBorgModule
+    items:
+    - Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
+    - FlashRecharging
+
+- type: entity
   id: BorgModuleSecurityChase # Research Locked - EnergyGunsAdvanced
   parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
   name: chase cyborg module
