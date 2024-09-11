@@ -23,6 +23,7 @@
   - type: Tag
     tags:
     - HighRiskItem
+    - FitInTeleporterConsole
   - type: StealTarget
     stealGroup: HandTeleporter
 
@@ -38,6 +39,9 @@
     layers:
     - state: icon
       color: green
+  - type: Tag
+    tags:
+    - FitInTeleporterConsole
   - type: HandTeleporter
     allowPortalsOnDifferentGrids: true
     allowPortalsOnDifferentMaps: true

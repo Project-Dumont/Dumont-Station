@@ -100,7 +100,7 @@ public partial class NavMapControl : MapGridControl
     // Components
     private NavMapComponent? _navMap;
     private MapGridComponent? _grid;
-    private TransformComponent? _xform;
+    protected TransformComponent? _xform;
     private PhysicsComponent? _physics;
     private FixturesComponent? _fixtures;
 
