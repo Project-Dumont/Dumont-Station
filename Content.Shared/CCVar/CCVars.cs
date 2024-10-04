@@ -273,4 +273,13 @@ public sealed partial class CCVars : CVars
     public static readonly CVarDef<bool> MOTDBuletinEnable =
         CVarDef.Create("chat.motd_buletin_enable", true, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE, "If the MOTD buletin appears in lobby");
 
+    #region GhostRespawn
+
+    public static readonly CVarDef<double> GhostRespawnTime =
+        CVarDef.Create("ghost.respawn_time", 15d, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> GhostRespawnMaxPlayers =
+        CVarDef.Create("ghost.respawn_max_players", 40, CVar.SERVERONLY);
+
+    #endregion
 }
