@@ -298,7 +298,7 @@ namespace Content.Server.GameTicking
 
                 character = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
             //Ghost system return to round, check for whether the character isn't the same.
-            if (lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
+            if (!_cfg.GetCVar(CCVars.GhostAllowSameCharacter) && lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
             {
                 var message = checkAvoid
                     ? Loc.GetString("ghost-respawn-same-character-slightly-changed-name")
