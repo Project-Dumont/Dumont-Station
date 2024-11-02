@@ -158,6 +158,22 @@ namespace Content.Server.Cocoon
             _doAfter.TryStartDoAfter(args);
         }
 
+        private void StartUnCocooning(EntityUid uid, CocoonerComponent component, EntityUid target)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("uncocoon-start-third-person", ("target", target), ("spider", Identity.Entity(uid, EntityManager))), uid,
+                Shared.Popups.PopupType.MediumCaution);
+
+            var delay = component.CocoonDelay / 2;
+
+            var args = new DoAfterArgs(EntityManager, uid, delay, new UnCocoonDoAfterEvent(), uid, target: target)
+            {
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
+            };
+
+            _doAfter.TryStartDoAfter(args);
+        }
+
         private void OnCocoonDoAfter(EntityUid uid, CocoonerComponent component, CocoonDoAfterEvent args)
         {
             if (args.Handled || args.Cancelled || args.Args.Target == null)
