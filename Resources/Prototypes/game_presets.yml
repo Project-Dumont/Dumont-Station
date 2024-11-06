@@ -320,3 +320,21 @@
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
+  
+- type: gamePreset
+  id: Vampire
+  alias:
+  - vamp
+  - vamps
+  - vampire
+  - vampires
+  name: vampire-gamemode-title
+  description: vampire-gamemode-description
+  showInVote: true
+  minPlayers: 25 # Gaby - 25 player to start with vamps
+  rules:
+  - Vampire
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - BasicRoundstartVariation

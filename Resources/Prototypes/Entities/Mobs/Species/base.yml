@@ -473,6 +473,8 @@
       enum.WizardTeleportUiKey.Key: # Goobstation - wizard
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
+      enum.VampireMutationUiKey.Key:
+        type: VampireMutationBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto

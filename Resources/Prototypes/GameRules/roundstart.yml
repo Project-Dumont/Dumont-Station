@@ -170,6 +170,8 @@
     rules:
     - id: DummyNonAntag
       prob: 0.3
+    - id: Vampire
+      prob: 0.25
 
 - type: entity
   id: DeathMatch31
