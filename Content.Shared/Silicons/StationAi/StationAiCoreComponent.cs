@@ -50,6 +50,18 @@ public sealed partial class StationAiCoreComponent : Component
     public EntityUid? RemoteEntity;
 
     /// <summary>
+    /// Buffer for TTS words. Can be set negative.
+    /// </summary>
+    [DataField]
+    public int TtsBufferBetweenWordsMs = -50;
+
+    /// <summary>
+    /// Buffer for TTS words. Can be set negative.
+    /// </summary>
+    [DataField]
+    public int TtsBufferBetweenWordsMs = -50;
+
+    /// <summary>
     /// Prototype that represents the 'eye' of the AI
     /// </summary>
     [DataField(readOnly: true)]

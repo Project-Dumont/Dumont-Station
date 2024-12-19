@@ -110,7 +110,7 @@ namespace Content.Server.Communications
         [Dependency] private readonly QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
         [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
         [Dependency] private readonly IGameTiming _timing = default!; // cooldown
-		[Dependency] private readonly AnnounceTTSSystem _announceTtsSystem = default!;
+		[Dependency] private readonly AnnounceTtsSystem _announceTtsSystem = default!;
 
         private const float UIUpdateInterval = 5.0f;
 
@@ -369,7 +369,7 @@ namespace Content.Server.Communications
 
 			List<string> announcementWords = new List<string>{};
 			if (canTTS)
-				announcementWords = AnnounceTTSSystem.PrepareTTSMessage((string)msg);
+				announcementWords = AnnounceTtsSystem.PrepareTtsMessage((string)msg);
 			msg += "\n" + Loc.GetString("comms-console-announcement-sent-by") + " " + author;
             if (comp.Global)
             {
