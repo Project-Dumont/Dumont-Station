@@ -56,6 +56,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Projectiles;
 
@@ -66,6 +67,7 @@ public sealed class SlipperySystem : EntitySystem
 {
     [Dependency] private readonly INetManager _net = default!; // Goobstation
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
@@ -89,6 +91,8 @@ public sealed class SlipperySystem : EntitySystem
 
         SubscribeLocalEvent<SlipperyComponent, ProjectileHitEvent>(OnProjectileHit); // Omu - Deslippler
         SubscribeLocalEvent<SlipperyComponent, ThrowDoHitEvent>(OnThrowHit); // Omu - Deslippler
+        SubscribeLocalEvent<RecentlySlipppedComponent, SlipAttemptEvent>(OnRecentSlipAttempt);
+        SubscribeLocalEvent<SlipGraceComponent, SlippedEvent>(OnGraceSlipped);
     }
 
     private void OnProjectileHit(EntityUid uid, SlipperyComponent component, ref ProjectileHitEvent args) // Omu - Deslippler
@@ -139,6 +143,22 @@ public sealed class SlipperySystem : EntitySystem
             _speedModifier.AddModifiedEntity(args.OtherEntity);
     }
 
+    private void OnRecentSlipAttempt(EntityUid uid, RecentlySlipppedComponent component, SlipAttemptEvent args)
+    {
+        if (component.NextSlip > _timing.CurTime)
+        {
+            args.NoSlip = true;
+            return;
+        }
+
+        RemCompDeferred(uid, component);
+    }
+
+    private void OnGraceSlipped(EntityUid uid, SlipGraceComponent component, ref SlippedEvent args)
+    {
+        EnsureComp<RecentlySlipppedComponent>(uid).NextSlip = _timing.CurTime + component.Delay;
+    }
+
     public bool CanSlip(EntityUid uid, EntityUid toSlip) // Goob edit
     {
         return !_container.IsEntityInContainer(uid)
@@ -180,8 +200,11 @@ public sealed class SlipperySystem : EntitySystem
         var hardStun = component.SlipData.SuperSlippery; // Goobstation
         // Goob edit end
 
-        var ev = new SlipEvent(other);
-        RaiseLocalEvent(uid, ref ev);
+        var slipEv = new SlipEvent(other);
+        RaiseLocalEvent(uid, ref slipEv);
+
+        var slippedEv = new SlippedEvent(uid);
+        RaiseLocalEvent(other, ref slippedEv);
 
         if (TryComp(other, out PhysicsComponent? physics) && !HasComp<SlidingComponent>(other))
         {
@@ -249,3 +272,8 @@ public record struct SlipCausingAttemptEvent (bool Cancelled);
 /// <param name="Slipped">The entity being slipped</param>
 [ByRefEvent]
 public readonly record struct SlipEvent(EntityUid Slipped);
+
+/// Raised on the entity that got slipped
+/// <param name="Slipper">The entity being slipped</param>
+[ByRefEvent]
+public readonly record struct SlippedEvent(EntityUid Slipper);
