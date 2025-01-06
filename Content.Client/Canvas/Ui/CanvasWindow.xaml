@@ -1,0 +1,58 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               Title="Canvas"
+               Resizable="True"
+               SetSize="700 700"
+               MinSize="700 700">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Name="HeaderColorPreview" Orientation="Horizontal" Align="Center" Margin="0 8 0 8">
+            <Label Text="Colour:" Margin="0 0 8 0"/>
+            <Button Name="ColorPreview" Text="Cor" Margin="8 0 0 0" />
+        </BoxContainer>
+        <BoxContainer Name="HeaderTools" Orientation="Horizontal" Margin="0 0 0 8">
+            <LineEdit Name="Search" PlaceHolder="Paint Code" HorizontalExpand="True" />
+            <Button Name="ImportButton" Text="Import" Margin="8 0 0 0" />
+            <Button Name="ExportButton" Text="Export" Margin="8 0 0 0" />
+            <Button Name="FinalizeButton" Text="Finalize" Margin="8 0 0 0" />
+        </BoxContainer>
+        <ScrollContainer VerticalExpand="True">
+            
+            <BoxContainer Orientation="Horizontal" Align="Begin">
+                <BoxContainer Name="ResolutionContainer" Orientation="Vertical" Align="Begin">
+                    <Label Text="Resolution"/>
+                    <BoxContainer Orientation="Horizontal">
+                        <Slider Name="HeightSize"
+                                MinValue="16"
+                                MaxValue="64"
+                                HorizontalExpand="True"
+                                MinSize="80 0"
+                                Rounded="True" />
+                        <Control MinSize="8 0" />
+                        <Label Name="HeightSizeLabel" Text="16" MinSize="48 0"/>
+                        <Control MinSize="4 0"/>
+
+                    </BoxContainer>
+                    <BoxContainer Orientation="Horizontal">
+                        <Slider Name="WidthSize"
+                                MinValue="16"
+                                MaxValue="64"
+                                HorizontalExpand="True"
+                                MinSize="80 0"
+                                Rounded="True" />
+                        <Control MinSize="8 0" />
+                        <Label Name="WidthSizeLabel" Text="16" MinSize="48 0"/>
+                        <Control MinSize="4 0"/>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Horizontal" Align="Center">
+                        <LineEdit Name="ArtistSignature" PlaceHolder="Signature" HorizontalExpand="True" />
+                    </BoxContainer>
+                    <BoxContainer Name="ColorSelector" Orientation="Horizontal" Align="Center">
+                    </BoxContainer>
+                </BoxContainer>
+                <BoxContainer Name="Grids" Orientation="Vertical" Align="Center" VerticalExpand="True">
+                </BoxContainer>
+            </BoxContainer>
+            
+        </ScrollContainer>
+    </BoxContainer>
+</controls:FancyWindow>
