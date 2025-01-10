@@ -39,8 +39,8 @@
     tags:
       - Cartridge
       - CartridgePistol
-  - type: CartridgeAmmo
-    proto: BulletPistol
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletPistolTrace
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -55,8 +55,8 @@
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Standard kinetic ammunition is common and useful in most situations.
   parent: BaseCartridgePistol
   components:
-  - type: CartridgeAmmo
-    proto: BulletPistol
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletPistolTrace
 
 - type: entity
   id: CartridgePistolPractice
@@ -64,8 +64,8 @@
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Chalk ammunition is generally non-harmful, used for practice.
   parent: BaseCartridgePistol
   components:
-  - type: CartridgeAmmo
-    proto: BulletPistolPractice
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletPistolPracticeTrace
   -  type: Sprite
      layers:
        - state: base
@@ -80,8 +80,8 @@
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Incendiary ammunition contains a self-igniting compound that sets the target ablaze.
   parent: BaseCartridgePistol
   components:
-  - type: CartridgeAmmo
-    proto: BulletPistolIncendiary
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletPistolIncendiaryTrace
   - type: Sprite
     layers:
       - state: base
@@ -96,8 +96,8 @@
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Uranium core ammunition features a load of fissile material, irradiating the target from the inside.
   parent: BaseCartridgePistol
   components:
-  - type: CartridgeAmmo
-    proto: BulletPistolUranium
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletPistolUraniumTrace
   - type: Sprite
     layers:
       - state: base

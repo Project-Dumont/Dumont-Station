@@ -63,6 +63,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._Shitmed.Weapons.Ranged.Events; // Shitmed Change
+using Content.Shared._Starlight.Weapon.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
@@ -584,6 +585,15 @@ public abstract partial class SharedGunSystem : EntitySystem
         cartridge.Spent = spent;
         Appearance.SetData(uid, AmmoVisuals.Spent, spent);
     }
+    // 🌟Starlight🌟
+    protected void SetCartridgeSpent(EntityUid uid, HitScanCartridgeAmmoComponent cartridge, bool spent)
+    {
+        if (cartridge.Spent != spent)
+            DirtyField(uid, cartridge, nameof(HitScanCartridgeAmmoComponent.Spent));
+
+        cartridge.Spent = spent;
+        Appearance.SetData(uid, AmmoVisuals.Spent, spent);
+    }
 
     /// <summary>
     /// Drops a single cartridge / shell
@@ -618,6 +628,9 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     public IShootable EnsureShootable(EntityUid uid)
     {
+        if (TryComp<HitScanCartridgeAmmoComponent>(uid, out var hitscanCartridge))
+            return hitscanCartridge;
+
         if (TryComp<CartridgeAmmoComponent>(uid, out var cartridge))
             return cartridge;
 
@@ -788,7 +801,12 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Serializable, NetSerializable]
     public sealed class HitscanEvent : EntityEventArgs
     {
-        public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = new();
+        public (NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)? MuzzleFlash; // 🌟Starlight🌟
+        public (NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)? TravelFlash; // 🌟Starlight🌟
+        public (NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)? ImpactFlash; // 🌟Starlight🌟
+        public (NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)? Bullet; // 🌟Starlight🌟
+        public (NetCoordinates coordinates, Angle angle, NetEntity target)? Impact; // 🌟Starlight🌟
+
     }
 }
 
