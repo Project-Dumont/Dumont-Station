@@ -179,7 +179,7 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;  // 🌟Starlight🌟
     [Dependency] private readonly DecalSystem _decals = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly FlammableSystem _flammable = default!; // 🌟Starlight🌟
+    [Dependency] private readonly FlammableSystem _flammableSystem = default!; // 🌟Starlight🌟
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!; // 🌟Starlight🌟
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
@@ -241,8 +241,9 @@ public sealed partial class GunSystem : SharedGunSystem
             ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
             : new EntityCoordinates(_map.GetMapOrInvalid(fromMap.MapId), fromMap.Position);
 
+        var pointerLength = mapDirection.Length(); // 🌟Starlight🌟
         // Update shot based on the recoil
-        toMap = fromMap.Position + angle.ToVec() * mapDirection.Length();
+        toMap = fromMap.Position + angle.ToVec() * pointerLength; // 🌟Starlight🌟
         mapDirection = toMap - fromMap.Position;
         var gunVelocity = Physics.GetMapLinearVelocity(fromEnt);
 
@@ -278,10 +279,10 @@ public sealed partial class GunSystem : SharedGunSystem
                                 3f);
 
                             for (var i = 1; i < hitscanPrototype.Count; i++)
-                                Hitscan(gunUid, gun, fromCoordinates, user, fromMap, toMap, angles[i].ToVec(), hitscanPrototype);
+                                Hitscan(gunUid, gun, fromCoordinates, user, fromMap, pointerLength, angles[i].ToVec(), hitscanPrototype);
                         }
                         else
-                            Hitscan(gunUid, gun, fromCoordinates, user, fromMap, toMap, mapDirection, hitscanPrototype);
+                            Hitscan(gunUid, gun, fromCoordinates, user, fromMap, pointerLength, mapDirection, hitscanPrototype);
 
                         //RaiseLocalEvent(ent!.Value, new AmmoShotEvent()
                         //{
@@ -407,7 +408,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
 
                     if (hitscan.Count > 0 && TryComp(hitEntity, out FlammableComponent? flammable)) // Goobstation
-                        _flammable.AdjustFireStacks(hitEntity, hitscan.Count, flammable, true);
+                        _flammableSystem.AdjustFireStacks(hitEntity, hitscan.Count, flammable, true);
 
                         var dmg = hitscan.Damage;
 
@@ -419,7 +420,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         {
                             if (TryComp<FlammableComponent>(hitEntity, out var flameComp))
                             {
-                                _flammable.Ignite(hitEntity, lastUser, flameComp);
+                                _flammableSystem.Ignite(hitEntity, lastUser, flameComp);
                             }
                         }
 
@@ -501,7 +502,7 @@ public sealed partial class GunSystem : SharedGunSystem
             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
         }
         //🌟Starlight🌟
-        void Hitscan(EntityUid gunUid, GunComponent gun, EntityCoordinates fromCoordinates, EntityUid? user, MapCoordinates fromMap, Vector2 pointer, Vector2 mapDirection, HitscanPrototype hitscan)
+        void Hitscan(EntityUid gunUid, GunComponent gun, EntityCoordinates fromCoordinates, EntityUid? user, MapCoordinates fromMap, float pointer, Vector2 mapDirection, HitscanPrototype hitscan)
         {
             EntityUid? lastHit = null;
 
@@ -538,16 +539,12 @@ public sealed partial class GunSystem : SharedGunSystem
                             {
                                 continue;
                             }
-                            if (HasComp<MobMoverComponent>(collide.HitEntity)
-                                && TryComp<FixturesComponent>(collide.HitEntity, out var fixtures))
+                            if (collide.Distance < pointer - 2f && HasComp<MobMoverComponent>(collide.HitEntity))
                             {
-                                var distSquared = (collide.HitPos - pointer).LengthSquared();
+                                if (pointer - collide.Distance > 4f) continue;
 
-                                const float MinDistSq = 4f;   // 2^2
-                                const float MaxDistSq = 25f;  // 5^2
-
-                                var chance = Math.Clamp(1f - ((distSquared - MinDistSq) / (MaxDistSq - MinDistSq)), 0f, 1f);
-                                if ((chance != 1) && (chance == 0 || !_rand.Prob(chance))) continue;
+                                var chance = Math.Clamp(1f - ((collide.Distance - 2f) / 2f), 0f, 1f);
+                                if (!_rand.Prob(chance)) continue;
                             }
 
                             result = collide;
@@ -613,7 +610,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 if (hitscan.Ignite)
                 {
                     if (TryComp<FlammableComponent>(lastHit.Value, out var flammable))
-                        _flammable.SetFireStacks(lastHit.Value, 1, flammable, true);
+                        _flammableSystem.SetFireStacks(lastHit.Value, 1, flammable, true);
 
                     if (Transform(lastHit.Value) is TransformComponent xform && xform.GridUid is { } gridUid)
                     {
