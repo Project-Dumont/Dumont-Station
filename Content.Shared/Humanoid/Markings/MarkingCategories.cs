@@ -24,6 +24,8 @@ namespace Content.Shared.Humanoid.Markings
         Snout,
         Chest,
         Groin, // Shitmed Change
+        Underwear, // DeltaV
+        Undershirt, // DeltaV
         Arms,
         Legs,
         Wings, // For IPC wings porting from SimpleStation
@@ -44,6 +46,8 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.HeadTop => MarkingCategories.HeadTop,
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,
                 HumanoidVisualLayers.Snout => MarkingCategories.Snout,
+                HumanoidVisualLayers.Undershirt => MarkingCategories.Undershirt, // DeltaV
+                HumanoidVisualLayers.Underwear => MarkingCategories.Underwear, // DeltaV
                 HumanoidVisualLayers.Chest => MarkingCategories.Chest,
                 HumanoidVisualLayers.Groin => MarkingCategories.Groin, // Shitmed Change
                 HumanoidVisualLayers.RArm => MarkingCategories.Arms,

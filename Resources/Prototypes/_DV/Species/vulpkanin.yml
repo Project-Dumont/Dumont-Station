@@ -34,6 +34,8 @@
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobVulpkaninChest
     Groin: MobVulpkaninGroin
     HeadTop: MobHumanoidAnyMarking
@@ -64,6 +66,12 @@
       defaultMarkings: [ VulpTail ]
     Head:
       points: 5
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
       required: false
     Legs:
       points: 8

@@ -30,6 +30,8 @@
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking # DeltaV
+    Undershirt: MobHumanoidAnyMarking # DeltaV
     Chest: MobVoxChest
     Groin: MobVoxGroin
     Eyes: MobVoxEyes
@@ -68,6 +70,14 @@
       points: 4
       required: true
       defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+    # Begin DeltaV changes.
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    # End DeltaV changes.
     Chest:
       points: 2
       required: false

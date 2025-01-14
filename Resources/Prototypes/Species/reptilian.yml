@@ -33,6 +33,8 @@
   sprites:
     Head: MobReptilianHead
     Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking # DeltaV
+    Undershirt: MobHumanoidAnyMarking # DeltaV
     Chest: MobReptilianChest
     Groin: MobReptilianGroin
     HeadTop: MobHumanoidAnyMarking
@@ -75,6 +77,14 @@
     Chest:
       points: 8
       required: false
+    # Begin DeltaV changes.
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    # End DeltaV changes.
     Legs:
       points: 8
       required: false
