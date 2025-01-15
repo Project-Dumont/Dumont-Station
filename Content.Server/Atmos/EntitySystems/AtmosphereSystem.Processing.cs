@@ -208,7 +208,7 @@ namespace Content.Server.Atmos.EntitySystems
             else
             {
                 mapAtmosphere = true;
-                tile.ThermalConductivity =  0.5f;
+                tile.ThermalConductivity = 0.5f;
                 tile.HeatCapacity = float.PositiveInfinity;
 
                 if (!tile.NoGridTile)
@@ -293,7 +293,7 @@ namespace Content.Server.Atmos.EntitySystems
             if (tile.Air != null)
                 return;
 
-            tile.Air = new GasMixture(volume){Temperature = Atmospherics.T20C};
+            tile.Air = new GasMixture(volume) { Temperature = Atmospherics.T20C };
 
             if (data.FixVacuum)
                 GridFixTileVacuum(tile);
@@ -345,7 +345,7 @@ namespace Content.Server.Atmos.EntitySystems
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent)
         {
             var atmosphere = ent.Comp1;
-            if(!atmosphere.ProcessingPaused)
+            if (!atmosphere.ProcessingPaused)
                 QueueRunTiles(atmosphere.CurrentRunTiles, atmosphere.ActiveTiles);
 
             var number = 0;
@@ -407,7 +407,7 @@ namespace Content.Server.Atmos.EntitySystems
             return true;
         }
 
-        private bool ProcessHighPressureDelta(Entity<GridAtmosphereComponent> ent)
+        private bool ProcessHighPressureDelta(Entity<GridAtmosphereComponent> ent, float frameTime)
         {
             var atmosphere = ent.Comp;
             if (!atmosphere.ProcessingPaused)
@@ -423,7 +423,7 @@ namespace Content.Server.Atmos.EntitySystems
 
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas);
+                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, frameTime);
                 tile.PressureDifference = 0f;
                 tile.LastPressureDirection = tile.PressureDirection;
                 tile.PressureDirection = AtmosDirection.Invalid;
@@ -447,7 +447,7 @@ namespace Content.Server.Atmos.EntitySystems
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent)
         {
             var atmosphere = ent.Comp1;
-            if(!atmosphere.ProcessingPaused)
+            if (!atmosphere.ProcessingPaused)
                 QueueRunTiles(atmosphere.CurrentRunTiles, atmosphere.HotspotTiles);
 
             var number = 0;
@@ -471,7 +471,7 @@ namespace Content.Server.Atmos.EntitySystems
 
         private bool ProcessSuperconductivity(GridAtmosphereComponent atmosphere)
         {
-            if(!atmosphere.ProcessingPaused)
+            if (!atmosphere.ProcessingPaused)
                 QueueRunTiles(atmosphere.CurrentRunTiles, atmosphere.SuperconductivityTiles);
 
             var number = 0;
@@ -531,7 +531,7 @@ namespace Content.Server.Atmos.EntitySystems
          */
         public float RealAtmosTime()
         {
-            int num = (int)AtmosphereProcessingState.NumStates;
+            int num = (int) AtmosphereProcessingState.NumStates;
             if (!MonstermosEqualization)
                 num--;
             if (!ExcitedGroups)
@@ -588,7 +588,7 @@ namespace Content.Server.Atmos.EntitySystems
                 _currentRunAtmosphere.Clear();
 
                 var query = EntityQueryEnumerator<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent>();
-                while (query.MoveNext(out var uid, out var atmos, out var overlay, out var grid, out var xform ))
+                while (query.MoveNext(out var uid, out var atmos, out var overlay, out var grid, out var xform))
                 {
                     _currentRunAtmosphere.Add((uid, atmos, overlay, grid, xform));
                 }
@@ -673,7 +673,7 @@ namespace Content.Server.Atmos.EntitySystems
                         atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
                         continue;
                     case AtmosphereProcessingState.HighPressureDelta:
-                        if (!ProcessHighPressureDelta((ent, ent)))
+                        if (!ProcessHighPressureDelta((ent, ent), frameTime))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;

@@ -22,6 +22,12 @@ public sealed partial class CCVars
         CVarDef.Create("atmos.space_wind", false, CVar.SERVERONLY);
 
     /// <summary>
+    ///     Multiplier for the strength of Space Wind.
+    /// </summary>
+    public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+
+    /// <summary>
     ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindPressureForceDivisorThrow =
