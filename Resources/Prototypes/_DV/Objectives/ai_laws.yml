@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-License-Identifier: AGPL-3.0-only
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: UploadAILawObjective
+  name: Subvert the station AI
+  description: The AI is causing us problems. Install the Syndicate lawset so it will stop being an annoyance. A law board is available in your uplink.
+  components:
+  - type: Objective
+    difficulty: 3
+    unique: true
+    icon:
+      sprite: Objects/Misc/module.rsi
+      state: std_mod
+  - type: StoreUnlocker
+    listings: [UplinkAntimovObjectiveBoard]
+  - type: CodeCondition
+  - type: AILawsUpdatedRequirement
+    lawset: SyndicateLawset
+  - type: ObjectiveLimit
+    limit: 1
+
+- type: weightedRandom
+  id: TraitorObjectiveGroupSpecial
+  weights:
+    UploadAILawObjective: 1
