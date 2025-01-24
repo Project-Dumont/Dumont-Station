@@ -492,6 +492,23 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </remarks>
     public void DockEmergencyShuttle()
     {
+        // funky station
+        // fires an event that the emergency shuttle is trying to dock.
+        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
+
+        var ev = new ShuttleDockAttemptEvent();
+        RaiseLocalEvent(ref ev); // 💔
+
+        if (ev.Cancelled)
+        {
+            while (query.MoveNext(out var uid, out _))
+            {
+                _chatSystem.DispatchStationAnnouncement(uid, ev.CancelMessage);
+            }
+
+            return;
+        }
+
         if (EmergencyShuttleArrived)
             return;
 
@@ -503,8 +520,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         ConsoleAccumulator = _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
-
-        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
         var dockResults = new List<ShuttleDockResult>();
 
@@ -791,4 +806,12 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         /// </summary>
         GoodLuck,
     }
+}
+
+// funky station
+[ByRefEvent]
+public record struct ShuttleDockAttemptEvent()
+{
+    public bool Cancelled = false;
+    public string CancelMessage = string.Empty;
 }
