@@ -1,3 +1,5 @@
+using Content.Server._DV.Objectives.Components; // DeltaV
+using Content.Server._DV.Objectives.Systems; // DeltaV
 using Content.Server.Antag;
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
@@ -40,6 +42,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly KidnapHeadsConditionSystem _kidnap = default!; // DeltaV
+    [Dependency] private readonly SharedMapSystem _map = default!; // DeltaV
     // goob edit
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
@@ -60,6 +64,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         base.Initialize();
 
         SubscribeLocalEvent<NukeExplodedEvent>(OnNukeExploded);
+        SubscribeLocalEvent<NukeOpsShuttleComponent, FTLCompletedEvent>(OnFTLCompleted); // DeltaV - Kidnap heads objective
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
         SubscribeLocalEvent<NukeDisarmSuccessEvent>(OnNukeDisarm);
 
@@ -164,6 +169,34 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             }
 
             _roundEndSystem.EndRound();
+        }
+    }
+
+    // DeltaV - Kidnap heads nukie objective
+    private void OnFTLCompleted(Entity<NukeOpsShuttleComponent> ent, ref FTLCompletedEvent args)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out var uid, out _, out var nukeops, out _))
+        {
+            // Get the nukie outpost map.
+            if (!TryComp<RuleGridsComponent>(uid, out var ruleGridsComp) || ruleGridsComp.Map == null)
+                return;
+
+            // Make sure your on the same map as the nukie outposts map.
+            if (args.MapUid == _map.GetMap(ruleGridsComp.Map.Value))
+            {
+                // Now check of the kidnap heads objective is complete... (Yes this is suspect)
+                var objectives = EntityQueryEnumerator<KidnapHeadsConditionComponent>();
+                if (!objectives.MoveNext(out var objUid, out var kidnapHeads)) // No kidnap head objectives
+                    return;
+
+                if (!_kidnap.IsCompleted((objUid, kidnapHeads)))
+                    return;
+
+                nukeops.WinConditions.Add(WinCondition.NukiesKidnappedHeads);
+                SetWinType((uid, nukeops), WinType.OpsMajor);
+                _roundEndSystem.EndRound();
+            }
         }
     }
 

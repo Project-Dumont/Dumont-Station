@@ -166,5 +166,6 @@ public enum WinCondition : byte
     NukiesAbandoned,
     AllNukiesDead,
     SomeNukiesAlive,
-    AllNukiesAlive
+    AllNukiesAlive,
+    NukiesKidnappedHeads, // DeltaV - Hostage ops
 }
