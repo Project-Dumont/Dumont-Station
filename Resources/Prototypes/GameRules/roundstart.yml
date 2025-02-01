@@ -99,6 +99,8 @@
     minPlayers: 20
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml # goob edit
+  - type: NukieOperation
+    operations: NukieOperations
   - type: AntagSelection
     selectionTime: BeforeJobs
     definitions:
