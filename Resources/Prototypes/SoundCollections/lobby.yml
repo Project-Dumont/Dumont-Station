@@ -17,19 +17,19 @@
     - /Audio/Lobby/atomicamnesiammx.ogg
     # Goobstation - Custom lobby music
     - /Audio/Lobby/skubstep.ogg
-    - /Audio/Lobby/sneedsfeedandseed.ogg
+    #- /Audio/Lobby/sneedsfeedandseed.ogg
     - /Audio/Lobby/honk.ogg
-  #  - /Audio/Lobby/clownalwayswins.ogg
+    #- /Audio/Lobby/clownalwayswins.ogg
     - /Audio/Lobby/clownwmv.ogg
-  #  - /Audio/Lobby/dawsonschristian.ogg
+    #- /Audio/Lobby/dawsonschristian.ogg
     - /Audio/Lobby/thewizard.ogg
     - /Audio/Lobby/skubstub.ogg
-  #  - /Audio/Lobby/space_radiation.ogg
-  #  - /Audio/Lobby/redsun.ogg
-  #  - /Audio/Lobby/chollima.ogg
+    #- /Audio/Lobby/space_radiation.ogg
+    #- /Audio/Lobby/redsun.ogg
+    #- /Audio/Lobby/chollima.ogg
     - /Audio/Lobby/monument.ogg
     - /Audio/Lobby/marhaba.ogg
-    - /Audio/Lobby/the_future_soon.ogg
+    #- /Audio/Lobby/the_future_soon.ogg
     # Gabystation - musicas do lobby
     # Musicas pega da estação pirata
     # https://github.com/rbertoche/space-station-14/blob/pirata/Resources/Prototypes/SoundCollections/lobby.yml
@@ -45,8 +45,8 @@
     - /Audio/_Gabystation/Lobby/devil.ogg
     # Fim estação pirata
     - /Audio/_Gabystation/Lobby/estrelar.ogg
-    - /Audio/_Gabystation/Lobby/hurry.ogg
-    - /Audio/_Gabystation/Lobby/radioPirata.ogg
+    #- /Audio/_Gabystation/Lobby/hurry.ogg
+    #- /Audio/_Gabystation/Lobby/radioPirata.ogg
     - /Audio/_Gabystation/Lobby/tntin.ogg
     - /Audio/_Gabystation/Lobby/A_Gira.ogg
     - /Audio/_Gabystation/Lobby/Brasil_Pandeiro.ogg
@@ -62,3 +62,8 @@
     - /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
     - /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
     - /Audio/_Gabystation/Lobby/sete_mares.ogg
+    - /Audio/_Gabystation/Lobby/construcao.ogg
+    # Vai ter Slipknot sim e quero ver quem vai tirar, ainda botei umas leves
+    - /Audio/_Gabystation/Lobby/dead_memories.ogg
+    - /Audio/_Gabystation/Lobby/vermillion_pt2.ogg
+    - /Audio/_Gabystation/Lobby/wait_and_bleed.ogg

@@ -122,3 +122,30 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "Gatinha Comunista por Vitroles. Baixado do Youtube.com em formato OGG."
   source: "https://www.youtube.com/watch?v=-baB66elbtc"
+  
+- files: ["construcao.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Construção por Chico Buarque. Baixado do site musicasdonordeste.net, convertido para OGG."
+  source: "https://www.musicasdonordeste.net/2018/04/momentompb-chico-buarque-construcao-1971.html"
+  
+- files: ["sete_mares.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Descobridor dos Sete Mares por Tim Maia. Baixado do site discosdampb.music.blog, convertido para OGG."
+  source: "https://discosdampb.music.blog/2020/06/24/tim-maia-tim-universal-maia-box-exclusivo-mp3-320-kbps/"
+
+- files: ["dead_memories.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Dead Memories por Slipknot. Baixado do site archive.org, convertido para OGG."
+  source: "https://archive.org/details/slipknot-all-hope-is-gone"
+ 
+- files: ["vermillion_pt2.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Vermillion Pt. 2 por Slipknot. Baixado do site archive.org, convertido para OGG."
+  source: "https://archive.org/details/81-bs-1-lett-rl.-sl-1425"
+ 
+- files: ["wait_and_bleed.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Wait and Bleed por Slipknot. Baixado do site archive.org, convertido para OGG e remasterizado por DoutorWhite."
+  source: "https://archive.org/details/slipknot-10th-anniversary-edition"
+ 
+ 

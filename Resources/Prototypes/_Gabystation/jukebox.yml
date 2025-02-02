@@ -136,3 +136,27 @@
   name: Adoniran Barbosa - Trem das Onze
   path:
     path: /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
+    
+- type: jukebox
+  id: Construcao
+  name: Chico Buarque - Construção
+  path:
+    path: /Audio/_Gabystation/Lobby/construcao.ogg
+
+- type: jukebox
+  id: DeadMemories
+  name: Slipknot - Dead Memories
+  path:
+    path: /Audio/_Gabystation/Lobby/dead_memories.ogg
+
+- type: jukebox
+  id: VermillionPt2
+  name: Slipknot - Vermillion Pt. 2
+  path:
+    path: /Audio/_Gabystation/Lobby/vermillion_pt2.ogg
+
+- type: jukebox
+  id: WaitAndBleed
+  name: Slipknot - Wait And Bleed (DoutorWhite mix)
+  path:
+    path: /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
