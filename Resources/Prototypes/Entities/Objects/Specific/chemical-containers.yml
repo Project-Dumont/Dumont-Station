@@ -125,10 +125,9 @@
     size: Ginormous
     sprite: Objects/Specific/Chemistry/tank.rsi
   - type: DnaSubstanceTrace
-  - type: StaticPrice
   - type: Pullable
   - type: MultiHandedItem
-
+  - type: StaticPrice
     price: 400
     
     #feito por skysnowflok/supernova com ajuda do Bruno e sprite por skysnowflok/supernova
