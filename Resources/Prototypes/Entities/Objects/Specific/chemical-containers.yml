@@ -127,6 +127,7 @@
   - type: DnaSubstanceTrace
   - type: StaticPrice
   - type: Pullable
+  - type: MultiHandedItem
 
     price: 400
     
