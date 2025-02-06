@@ -6,6 +6,13 @@
     Glass: 100
 
 - type: latheRecipe
+  id: TanqueDeReagenteMelhor
+  result: TanqueDeReagenteMelhor
+  completetime: 2
+  materials:
+    Steel: 600
+
+- type: latheRecipe
   id: LargeBeaker
   result: LargeBeaker
   completetime: 2

@@ -209,6 +209,7 @@
       - FreezerElectronics
       - ToolboxMechanical # Goobstation - Recycle update
       - Pen # Goobstation - Allow pen printing
+      - TanqueDeReagenteMelhor
       # Begin Delta-V additions
       - CassetteTape
       - TapeRecorder
@@ -1087,6 +1088,7 @@
       - Hemostat
       - ClothingEyesGlassesChemical
       - WhiteCane
+      - TanqueDeReagenteMelhor
       - SyringeGun #Goobstation
       - MedicalPatchBasic  #Goobstation - MedicalPatch
       - MedicalPatchRapid #Goobstation - MedicalPatch
