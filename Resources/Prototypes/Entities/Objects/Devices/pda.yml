@@ -262,6 +262,7 @@
       - NewsReaderCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -347,6 +348,7 @@
     - WantedListCartridge
     - NanoChatCartridge # DeltaV
     - NanoBankCartridge # Gabystation
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -363,6 +365,7 @@
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -681,6 +684,7 @@
     - MailMetricsCartridge
     - NanoChatCartridge # DeltaV
     - NanoBankCartridge # Gabystation
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -699,6 +703,13 @@
     borderColor: "#e39751"
   - type: Icon
     state: pda-cargo
+  - type: CartridgeLoader # DeltaV
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge # DeltaV
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -728,6 +739,7 @@
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -1032,6 +1044,13 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-rd
+  - type: CartridgeLoader
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -1080,6 +1099,7 @@
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
     - NanoBankCartridge # Gabystation
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1143,6 +1163,7 @@
     state: pda-centcom
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
+    diskSpace: 12 # DeltaV
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -1154,6 +1175,7 @@
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: CentcomPDA
@@ -1171,7 +1193,7 @@
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     notificationsEnabled: false
-    diskSpace: 10 # DeltaV
+    diskSpace: 12 # DeltaV
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -1183,6 +1205,7 @@
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1340,6 +1363,7 @@
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1446,6 +1470,13 @@
     borderColor: "#3f3f74"
   - type: Icon
     state: pda-reporter
+  - type: CartridgeLoader # DeltaV
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge # DeltaV
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -1511,6 +1542,7 @@
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
     - NanoBankCartridge # Gabystation
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1541,6 +1573,7 @@
     - MedTekCartridge
     - NanoChatCartridge # DeltaV
     - NanoBankCartridge # Gabystation
+    - SOSCartridge # Imp
 
 - type: entity
   parent: ClownPDA
