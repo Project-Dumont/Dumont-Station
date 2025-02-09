@@ -2,7 +2,7 @@ Name: Gaby
 Order: -2
 Entries:
 - author: skysnowflok/supernova
-  time: '2025-02-06T12:01:00.0000000+00:00'
+  time: '2025-02-6T12:01:00.0000000+00:00'
   url: https://github.com/Gaby-Station/Gaby-Station/pull/129
   changes:
     - type: Add
