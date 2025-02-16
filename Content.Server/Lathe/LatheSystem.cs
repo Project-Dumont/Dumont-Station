@@ -320,11 +320,27 @@ namespace Content.Server.Lathe
                     }
                     else
                     {
-                        var result = Spawn(resultProto, Transform(uid).Coordinates);
-                        _stack.TryMergeToContacts(result);
-                        if (TryComp<ScannableForPointsComponent>(result, out var scannable)) // Goobstation
-                            scannable.Points = 0; // Goobstation, this thing is to prevent ntr duping points via an emagged lathe
+                        // spawn deferred to follow-up Starlight behaviour (uses container-aware transform)
                     }
+                    //Starlight Start
+                    var transform = Transform(uid).Coordinates;
+                    if (_container.IsEntityInContainer(uid))
+                        transform = Transform(_container.GetContainingContainers(uid).Last().Owner).Coordinates;
+                    var result = Spawn(resultProto, transform);
+
+                    if (TryComp<ScannableForPointsComponent>(result, out var scannable)) // Goobstation
+                        scannable.Points = 0; // prevent ntr duping points via an emagged lathe
+
+                    var ev = new LatheProductFinishedEvent(result); //FarHorizons
+                    RaiseLocalEvent(uid, ref ev); //FarHorizons
+
+                    _stack.TryMergeToContacts(result);
+                    if (currentRecipe.PrintTicket)
+                    {
+                        var tickets = Spawn(currentRecipe.TicketProtoId, transform);
+                        _stack.TryMergeToContacts(tickets);
+                    }
+                     //Starlight End
                 }
 
                 if (currentRecipe.ResultReagents is { } resultReagents &&
