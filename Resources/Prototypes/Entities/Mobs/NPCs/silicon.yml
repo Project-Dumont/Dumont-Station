@@ -698,3 +698,62 @@
     range: 1
   - type: Puller
     needsHands: false
+
+- type: entity
+  parent:
+  - MobSiliconBase
+  - ShowSecurityIcons
+  - StripableInventoryBase
+  - BaseStunbaton
+  id: MobSecuritron
+  name: securitron
+  description: Tiders hate this one simple trick!
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Bots/securitron.rsi
+    state: secbot
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: HTN
+    rootTask:
+      task: SecbotCompound
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    animation: WeaponArcThrust
+    damage:
+      types:
+        Blunt: 0
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40
+  - type: CanForceHandcuff
+    handcuffsId: Zipties
+    requireHands: false
+  - type: Construction
+    graph: SecBot
+    node: bot
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+  - type: Anchorable
+  - type: InteractionPopup
+    interactSuccessString: petting-success-secbot
+    interactFailureString: petting-failure-secbot
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Inventory
+    templateId: medibot
+  - type: ActiveRadio
+    channels:
+    - Hexadecimal
+    - Common
+    - Security
