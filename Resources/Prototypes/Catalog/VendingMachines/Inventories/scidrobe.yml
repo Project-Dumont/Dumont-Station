@@ -33,3 +33,8 @@
     ClothingShoesBootsWinterSci: 2
   contrabandInventory:
     ToyFigurineResearchDirector: 1
+  emaggedInventory:
+    ClothingUniformJumpsuitScientistSyndicate: 1
+    ClothingUniformJumpsuitScientistWhiteSyndicate: 1
+    ClothingUniformJumpsuitCCRSyndicate: 1
+    ClothingUniformCybersunRND: 1 # DeltaV
