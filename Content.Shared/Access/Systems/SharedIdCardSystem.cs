@@ -207,6 +207,28 @@ public abstract class SharedIdCardSystem : EntitySystem
         return false;
     }
 
+    public bool TryFindIdCards(EntityUid uid, out HashSet<Entity<IdCardComponent>> idCards)
+    {
+        idCards = new();
+
+        if (TryComp(uid, out HandsComponent? hands) &&
+            hands.ActiveHandEntity is EntityUid heldItem &&
+            TryGetIdCard(heldItem, out var idCard))
+        {
+            idCards.Add(idCard);
+        }
+
+        // check entity itself
+        if (TryGetIdCard(uid, out idCard))
+            idCards.Add(idCard);
+
+        // check inventory slot?
+        if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid) && TryGetIdCard(idUid.Value, out idCard))
+            idCards.Add(idCard);
+
+        return idCards.Count > 0;
+    }
+
     /// <summary>
     /// Attempts to change the job title of a card.
     /// Returns true/false.

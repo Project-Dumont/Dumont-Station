@@ -112,13 +112,19 @@ public sealed class CriminalStatusSystem : EntitySystem
 
     private bool CheckIdCard(EntityUid uid, ContrabandComponent contraband)
     {
-        List<ProtoId<DepartmentPrototype>>? departments = null;
-        if (_id.TryFindIdCard(uid, out var id))
+        HashSet<ProtoId<DepartmentPrototype>> departments = new();
+        if (_id.TryFindIdCards(uid, out var ids))
         {
-            departments = id.Comp.JobDepartments;
+            foreach (var id in ids)
+            {
+                foreach (var department in id.Comp.JobDepartments)
+                {
+                    departments.Add(department);
+                }
+            }
         }
 
-        return contraband.AllowedDepartments != null && departments != null && departments.Intersect(contraband.AllowedDepartments).Any();
+        return contraband.AllowedDepartments != null && departments.Intersect(contraband.AllowedDepartments).Any();
     }
 
     private bool UpdateIdCard(Entity<CriminalRecordComponent> ent, EntityUid item)
