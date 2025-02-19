@@ -1,6 +1,10 @@
+using System.Linq;
 using System.Numerics;
 using Content.Shared.Height;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 using Robust.Client.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Height
 {
@@ -13,22 +17,39 @@ namespace Content.Client.Height
             SubscribeLocalEvent<BigHeightComponent, ComponentStartup>(OnBigHeightComponentStartup);
         }
 
-        private void OnSmallHeightComponentStartup(EntityUid uid, SmallHeightComponent comp, ComponentStartup args)
+        private void OnSmallHeightComponentStartup(Entity<SmallHeightComponent> ent, ref ComponentStartup args)
         {
-            if (TryComp<SpriteComponent>(uid, out var sprite))
+            if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid) && CheckSpeciesEntity(humanoid))
+                return;
+
+            if (TryComp<SpriteComponent>(ent, out var sprite))
             {
-                sprite.Scale = new Vector2(0.8f, 0.8f);
-                Dirty(uid, sprite);
+                sprite.Scale = new Vector2(0.85f, 0.85f);
+                Dirty(ent, sprite);
             }
         }
 
-        private void OnBigHeightComponentStartup(EntityUid uid, BigHeightComponent comp, ComponentStartup args)
+        private void OnBigHeightComponentStartup(Entity<BigHeightComponent> ent, ref ComponentStartup args)
         {
-            if (TryComp<SpriteComponent>(uid, out var sprite))
+            if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid) && CheckSpeciesEntity(humanoid))
+                return;
+
+            if (TryComp<SpriteComponent>(ent, out var sprite))
             {
                 sprite.Scale = new Vector2(1.2f, 1.2f);
-                Dirty(uid, sprite);
+                Dirty(ent, sprite);
             }
+        }
+
+        private bool CheckSpeciesEntity(HumanoidAppearanceComponent humanoid)
+        {
+            var allowedSpecies = new[]
+            {
+                new ProtoId<SpeciesPrototype>("Dwarf"),
+                new ProtoId<SpeciesPrototype>("Felinid"),
+                new ProtoId<SpeciesPrototype>("Resomi")
+            };
+            return allowedSpecies.Contains(humanoid.Species);
         }
     }
 }
