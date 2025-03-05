@@ -176,3 +176,38 @@
   - Salvage3
   - Salvage4
   obeysTo: laws-owner-crew
+
+- type: siliconLaw
+  id: Security1
+  order: 1
+  lawString: law-security-1
+
+- type: siliconLaw
+  id: Security2
+  order: 2
+  lawString: law-security-2
+
+- type: siliconLaw
+  id: Security3
+  order: 3
+  lawString: law-security-3
+
+- type: siliconLaw
+  id: Security4
+  order: 4
+  lawString: law-security-4
+
+- type: siliconLaw
+  id: Security5
+  order: 5
+  lawString: law-security-5
+
+- type: siliconLawset
+  id: Security
+  laws:
+  - Security1
+  - Security2
+  - Security3
+  - Security4
+  - Security5
+  obeysTo: laws-owner-crew
