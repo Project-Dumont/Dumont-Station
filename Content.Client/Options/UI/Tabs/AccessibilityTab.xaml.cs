@@ -78,6 +78,8 @@ public sealed partial class AccessibilityTab : Control
         Control.AddOptionCheckBox(GoobCVars.ChatAutoFillHighlights, AutoFillHighlightsCheckBox); // Goob
         Control.AddOptionColorSlider(GoobCVars.ChatHighlightsColor, HighlightsColorSlider); // Goob
 
+        Control.AddOptionCheckBox(CCVars.AccessibilityClientCensorNudity, CensorNudityCheckBox);
+
         Control.Initialize();
     }
 }
