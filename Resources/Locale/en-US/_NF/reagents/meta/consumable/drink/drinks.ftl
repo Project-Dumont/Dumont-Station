@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SPDX-FileCopyrightText: 2024 Tonk-GCR <190437025+Tonk-GCR@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
@@ -18,3 +19,7 @@ reagent-desc-torpedo-juice = The joys of drinking and unrestricted submarine war
 
 reagent-name-bees-knees = bee’s knees
 reagent-desc-bees-knees = BEEEEEEEEEEEEEEES!!! Has a stingy smell.
+=======
+﻿reagent-name-pumpkin-spice-latte = spiced pumpkin latte
+reagent-desc-pumpkin-spice-latte = It's autumn somewhere. Smells like cinnamon and cloves.
+>>>>>>> cc425a90910 (pumpkin spice latte)

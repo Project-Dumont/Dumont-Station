@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SPDX-FileCopyrightText: 2024 Tonk-GCR <190437025+Tonk-GCR@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 #
@@ -47,3 +48,9 @@
   id: bees
   flavorType: Complex
   description: flavor-complex-bees
+=======
+﻿- type: flavor
+  id: basic
+  flavorType: Base
+  description: flavor-base-basic
+>>>>>>> cc425a90910 (pumpkin spice latte)
