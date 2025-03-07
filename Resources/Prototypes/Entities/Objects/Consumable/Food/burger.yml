@@ -46,7 +46,7 @@
     - map: ["foodSequenceLayers"]
   - type: FoodSequenceStartPoint
     key: burger
-    acceptAll: true # Goobstation - anythingburgers
+    # acceptAll: true # readd whitelist for bottom bun. - dreykor
     maxLayers: 12 # Goobstation - anythingburgers
     startPosition: 0, 0
     offset: 0, 0.1
