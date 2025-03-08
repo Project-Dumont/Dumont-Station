@@ -73,5 +73,10 @@ Entries:
   changes:
     - type: Add
       message: Impressora de documentos (cherry-picked)
+- author: Dreykor(arguemeu)
+  time: '2025-03-08T12:01:00.0000000+00:00'
+  changes:
+    - type: Fix
+      message: readiciona whitelist para hamburguers, assim evitando o meta de insta kill, e evitando que itens aleatorios sejam botados no hamburguer, algo sem muito sentido em MRP.
 Name: GabyStation
 Order: -2
