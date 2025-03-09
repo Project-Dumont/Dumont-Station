@@ -71,7 +71,7 @@
   components:
     - type: BatterySelfRecharger
       autoRecharge: true
-      autoRechargeRate: 12
+      autoRechargeRate: 50
 
 - type: entity
   parent: HoloprojectorSecurity
