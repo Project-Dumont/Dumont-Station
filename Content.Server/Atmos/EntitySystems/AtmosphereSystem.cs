@@ -43,6 +43,8 @@ using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Decals;
 using Content.Shared.Doors.Components;
 using Content.Shared.Maps;
+using Content.Shared.Standing;
+using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
@@ -79,6 +81,8 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] public readonly PuddleSystem Puddle = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly AtmosDeviceSystem _atmosDeviceSys = default!;
+    [Dependency] private readonly SharedStunSystem _sharedStunSystem = default!;
+    [Dependency] private readonly StandingStateSystem _standingSystem = default!;
 
     private const float ExposedUpdateDelay = 1f;
     private float _exposedTimer = 0f;

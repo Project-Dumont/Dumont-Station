@@ -22,22 +22,10 @@ public sealed partial class CCVars
         CVarDef.Create("atmos.space_wind", false, CVar.SERVERONLY);
 
     /// <summary>
-    ///     Multiplier for the strength of Space Wind.
+    ///     A direct multiplier on how violent space wind is.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
         CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindPressureForceDivisorThrow =
-        CVarDef.Create("atmos.space_wind_pressure_force_divisor_throw", 15f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
-    /// </summary>
-    public static readonly CVarDef<float> SpaceWindPressureForceDivisorPush =
-        CVarDef.Create("atmos.space_wind_pressure_force_divisor_push", 2500f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.
@@ -47,11 +35,16 @@ public sealed partial class CCVars
         CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
 
     /// <summary>
-    ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
-    ///     A "throwing" atmospheric pressure difference ignores this limit, but not the max. velocity limit.
+    ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
     /// </summary>
-    public static readonly CVarDef<float> SpaceWindMaxPushForce =
-        CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
+    public static readonly CVarDef<float> SpaceWindMaxAngularVelocity =
+        CVarDef.Create("atmos.space_wind_max_angular_velocity", 3f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     The amount of time (in seconds) for space wind to knock down a player character if they are subjected to space wind.
+    /// </summary>
+    public static readonly CVarDef<float> SpaceWindKnockdownTime =
+        CVarDef.Create("atmos.space_wind_knockdown_time", 1f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether monstermos tile equalization is enabled.
@@ -82,13 +75,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AtmosGridImpulse =
         CVarDef.Create("atmos.grid_impulse", false, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     What fraction of air from a spaced tile escapes every tick.
-    ///     1.0 for instant spacing, 0.2 means 20% of remaining air lost each time
-    /// </summary>
-    public static readonly CVarDef<float> AtmosSpacingEscapeRatio =
-        CVarDef.Create("atmos.mmos_spacing_speed", 0.15f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum amount of air allowed on a spaced tile before it is reset to 0 immediately in kPa

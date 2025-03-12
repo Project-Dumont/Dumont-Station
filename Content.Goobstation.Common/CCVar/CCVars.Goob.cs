@@ -35,18 +35,11 @@ public sealed partial class GoobCVars
         CVarDef.Create("atmos.space_wind_maximum_calculated_inverse_mass", 0.04f, CVar.SERVERONLY);
 
     /// <summary>
-    /// Increases default airflow calculations to O(n^2) complexity, for use with heavy space wind optimizations. Potato servers BEWARE
-    /// This solves the problem of objects being trapped in an infinite loop of slamming into a wall repeatedly.
-    /// </summary>
-    public static readonly CVarDef<bool> MonstermosUseExpensiveAirflow =
-        CVarDef.Create("atmos.mmos_expensive_airflow", true, CVar.SERVERONLY);
-
-    /// <summary>
     ///     A multiplier on the amount of force applied to Humanoid entities, as tracked by HumanoidAppearanceComponent
     ///     This multiplier is added after all other checks are made, and applies to both throwing force, and how easy it is for an entity to be thrown.
     /// </summary>
     public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
-        CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.humanoid_throw_multiplier", 5f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Taken as the cube of a tile's mass, this acts as a minimum threshold of mass for which air pressure calculates whether or not to rip a tile from the floor
