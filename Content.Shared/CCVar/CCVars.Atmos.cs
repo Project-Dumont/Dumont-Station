@@ -32,7 +32,7 @@ public sealed partial class CCVars
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_velocity", 15f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
