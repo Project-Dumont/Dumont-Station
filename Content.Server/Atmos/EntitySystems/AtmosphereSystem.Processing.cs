@@ -23,6 +23,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Piping.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Gravity;
 using Content.Shared.Maps;
 using Content.Shared.Projectiles;
 using Robust.Shared.Map;
@@ -408,7 +409,7 @@ namespace Content.Server.Atmos.EntitySystems
             return true;
         }
 
-        private bool ProcessHighPressureDelta(Entity<GridAtmosphereComponent> ent, float frameTime)
+        private bool ProcessHighPressureDelta(Entity<GridAtmosphereComponent> ent)
         {
             var atmosphere = ent.Comp;
             if (!atmosphere.ProcessingPaused)
@@ -423,9 +424,21 @@ namespace Content.Server.Atmos.EntitySystems
             var pressureQuery = GetEntityQuery<MovedByPressureComponent>();
             var projectileQuery = GetEntityQuery<ProjectileComponent>();
 
+            // Doing this here because it's entirely possible the gravity component can be on the Map OR the Grid, and can even be both.
+            // But since we are on a single GridAtmosphere, it's expedient to do this here instead of on every tile.
+            var sumGravity = 0.0;
+            if (TryComp(ent.Owner, out GravityComponent? gridGravity)
+                && gridGravity.Enabled)
+                sumGravity += gridGravity.Acceleration;
+
+            var gridMap = Transform(ent.Owner).MapUid;
+            if (gridMap is not null && TryComp(gridMap, out GravityComponent? mapGravity)
+                && mapGravity.Enabled)
+                sumGravity += mapGravity.Acceleration;
+
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
-                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, frameTime);
+                HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, sumGravity);
                 tile.PressureDifference = 0f;
                 tile.LastPressureDirection = tile.PressureDirection;
                 tile.PressureDirection = AtmosDirection.Invalid;
@@ -675,7 +688,7 @@ namespace Content.Server.Atmos.EntitySystems
                         atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
                         continue;
                     case AtmosphereProcessingState.HighPressureDelta:
-                        if (!ProcessHighPressureDelta((ent, ent), frameTime))
+                        if (!ProcessHighPressureDelta((ent, ent)))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;
