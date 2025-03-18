@@ -184,6 +184,9 @@
     knockdownTimeDelta: -2
   - type: StaminaDamageResistance # Goobstation
     coefficient: 0.7
+  - type: Tag
+    tags:
+      - Armor
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity
@@ -391,6 +394,9 @@
     knockdownTimeDelta: -3
   - type: StaminaDamageResistance # Goobstation
     coefficient: 0.4
+  - type: Tag
+    tags:
+      - SpecialArmor
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
@@ -567,6 +573,9 @@
     knockdownTimeDelta: -2.5
   - type: StaminaDamageResistance # Goobstation
     coefficient: 0.6
+  - type: Tag
+    tags:
+      - SpecialArmor
 
 - type: entity # This is from upstream, so it goes in wizden code.
   parent: [ClothingOuterArmorCaptainCarapace, BaseCentcommContraband]

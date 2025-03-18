@@ -146,6 +146,9 @@
     wideAnimationRotation: 90 # when/if bayonets get added (to rifles) set this to -90
     soundHit:
       collection: MetalThud # Goobstation ^
+  - type: Tag
+    tags:
+      - Rifle
 
 - type: entity
   name: AKM

@@ -308,6 +308,9 @@
   - type: Appearance
   - type: Multishot # Goobstation
     spreadAddition: 10
+  - type: Tag
+    tags:
+      - Rifle
 
 - type: entity
   name: makeshift laser pistol
@@ -367,6 +370,9 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: Tag
+    tags:
+      - SpecialWeapon
 
 - type: entity
   name: practice laser rifle
@@ -415,6 +421,9 @@
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
     fireCost: 62.5
+  - type: Tag
+    tags:
+      - Rifle
 
 - type: entity
   name: pulse pistol
@@ -598,6 +607,7 @@
     tags:
     - TurretCompatibleWeapon
     - Rifle # Goobstation
+    - SpecialWeapon # Gaby/Funky - director tweaks
   - type: Item # Goobstation
     size: Huge
     shape:
@@ -673,6 +683,7 @@
   - type: Tag
     tags:
     - Rifle
+    - SpecialWeapon
   - type: Item
     size: Huge
     shape:
@@ -748,6 +759,9 @@
     - Antagonists
   - type: PacifismAllowedGun
 
+  - type: Tag
+    tags:
+      - Taser
 
 - type: entity
   name: disabler SMG
@@ -860,7 +874,6 @@
   - type: Tag
     tags:
     - HighRiskItem
-    - Sidearm
     - WeaponAntiqueLaser
   - type: StaticPrice
     price: 750
@@ -909,6 +922,9 @@
     price: 63
   - type: Multishot # Goobstation
     spreadAddition: 10
+  - type: Tag
+    tags:
+      - SpecialWeapon
 
 - type: entity
   name: C.H.I.M.P. handcannon
@@ -981,6 +997,9 @@
       fireCost: 100
     - proto: AnomalousParticleSigmaStrong
       fireCost: 100
+  - type: Tag
+    tags:
+      - Sidearm
 
 - type: entity
   name: eye of a behonker
