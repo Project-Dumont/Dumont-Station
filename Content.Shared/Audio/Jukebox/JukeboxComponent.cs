@@ -38,11 +38,15 @@ public sealed partial class JukeboxComponent : Component
     [DataField]
     public string? SelectState;
 
+    [DataField]
+    public bool NeedsBattery = false;
+
     [ViewVariables]
     public bool Selecting;
 
     [ViewVariables]
     public float SelectAccumulator;
+
 }
 
 [Serializable, NetSerializable]

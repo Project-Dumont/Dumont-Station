@@ -120,6 +120,9 @@
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
+    - BoomboxRed
+    - BoomboxGreen
+    - BoomboxBlue
     - BorgModuleLollypop # Goobstation
   position: 0,2
 
