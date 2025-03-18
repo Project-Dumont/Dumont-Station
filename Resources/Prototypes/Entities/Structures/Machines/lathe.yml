@@ -419,6 +419,10 @@
     - MedicalVehiclesStatic
     - GrenadeTriggersStatic
     - TapeRecorderStatic
+    # Funky
+    - BoomboxRed
+    - BoomboxGreen
+    - BoomboxBlue
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityWeaponsStatic

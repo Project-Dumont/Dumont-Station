@@ -426,6 +426,10 @@
         children:
         - id: DrinkSpaceGlue
         - id: DrinkSpaceLube
+      - !type:GroupSelector
+        children:
+        - id: BoomboxPink
+        - id: BoomboxPurple
       # Rare Group
     - !type:GroupSelector
       weight: 2
@@ -443,6 +447,7 @@
       - id: DrinkMopwataBottleRandom
       - id: LidSalami
         weight: 0.05
+      - id: BoomboxSlav
 
 - type: entity
   name: Maint Loot Spawner

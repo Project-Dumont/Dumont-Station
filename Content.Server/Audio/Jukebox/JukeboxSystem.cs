@@ -43,7 +43,10 @@
 
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.PowerCell;
 using Content.Shared.Audio.Jukebox;
+using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -59,6 +62,8 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
 {
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly ItemToggleSystem _toggle = default!;
 
     public override void Initialize()
     {
@@ -70,8 +75,8 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         SubscribeLocalEvent<JukeboxComponent, JukeboxSetTimeMessage>(OnJukeboxSetTime);
         SubscribeLocalEvent<JukeboxComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<JukeboxComponent, ComponentShutdown>(OnComponentShutdown);
-
         SubscribeLocalEvent<JukeboxComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<JukeboxComponent, ItemToggledEvent>(OnToggled);
     }
 
     private void OnComponentInit(EntityUid uid, JukeboxComponent component, ComponentInit args)
@@ -84,6 +89,9 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
 
     private void OnJukeboxPlay(EntityUid uid, JukeboxComponent component, ref JukeboxPlayingMessage args)
     {
+        if (!CanPlay(uid, component))
+            return;
+
         if (Exists(component.AudioStream))
         {
             Audio.SetState(component.AudioStream, AudioState.Playing);
@@ -195,5 +203,32 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         }
 
         _appearanceSystem.SetData(uid, JukeboxVisuals.VisualState, finalState);
+    }
+
+    private bool CanPlay(EntityUid uid, JukeboxComponent component)
+    {
+
+        if (component.NeedsBattery)
+        {
+            if (!_toggle.IsActivated(uid))
+                return false;
+
+            if (!_powerCell.HasActivatableCharge(uid))
+                return false;
+        }
+
+        return true;
+
+    }
+
+    private void OnToggled(Entity<JukeboxComponent> ent, ref ItemToggledEvent args)
+    {
+        if (!ent.Comp.NeedsBattery)
+            return;
+
+        if (args.Activated)
+            return;
+
+        Stop(ent);
     }
 }
