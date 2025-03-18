@@ -36,5 +36,5 @@ alert-level-epsilon-announcement = A  Central de Comando ordenou o nível de seg
 alert-level-epsilon-instructions = Considerem todos os contratos expirados.
 
 alert-level-omicron = Omicron
-alert-level-omicron-announcement = A CentCom tomou controle total da estação. aguardem ordens futuras dos oficiais da CentCom, fiquem em seus departamentos.
-alert-level-omicron-instructions = Aguarde ordens da CentCom.
+alert-level-omicron-announcement = A Central de Comando tomou controle total da estação. Aguardem ordens futuras dos oficiais da Central de Comando, fiquem em seus departamentos.
+alert-level-omicron-instructions = Aguarde ordens da Central de Comando.
