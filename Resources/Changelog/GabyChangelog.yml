@@ -1,82 +1,238 @@
+Name: Gaby
+Order: -2
 Entries:
 - author: Dreykor
   time: '2024-11-6T12:01:00.0000000+00:00'
-  url: https://github.com/Scomossor/Gaby-Station/pull/2 #url se tiver
+  url: https://github.com/Scomossor/Gaby-Station/pull/2
   changes:
-    - type: Add # One of the following: Add, Remove, Tweak, Fix
+    - type: Add
       message: Adiciona o changelog do Gaby Station!
+  id: 0
 - author: cosmosgc
   time: '2024-11-18T12:01:00.0000000+00:00'
   url: https://github.com/Scomossor/Gaby-Station/pull/4
   changes:
     - type: Add
       message: Adiciona canvas para desenho
+  id: 1
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Tradução ao lobby
+  id: 2
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Console de energia portatil
+  id: 3
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Tweak
       message: Revenant
+  id: 4
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Melhorias no console de comunicações
+  id: 5
 - author: Zeroblacck
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Mais tradução para o jogo
+  id: 6
 - author: JoseFernando-TZ
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Mais tradução para o jogo
+  id: 7
 - author: Dreykor
   time: '2024-11-18T20:15:00.0000000+00:00'
   changes:
     - type: Add
       message: Adiciona Cabelo e Barba para a raça Moth!
+  id: 8
 - author: Dreykor
   time: '2024-11-20T10:26:00.0000000+00:00'
   changes:
     - type: Fix
-      message: Corrige a falta de cabelo e barba para Moth! # Viva a evoluçao!
+      message: Corrige a falta de cabelo e barba para Moth!
+  id: 9
 - author: Day-OS
   time: '2024-11-21T12:01:00.0000000+00:00'
-  url: https://github.com/Day-OS/estacao-pirata-14/commit/4cc22579c59061d09c0b8b6b79c7dfd192540374
+  url: >-
+    https://github.com/Day-OS/estacao-pirata-14/commit/4cc22579c59061d09c0b8b6b79c7dfd192540374
   changes:
     - type: Add
       message: Cartas! 🃏 (cherry-picked)
+  id: 10
 - author: Day-OS
   time: '2024-11-21T12:01:00.0000000+00:00'
-  url: https://github.com/Day-OS/estacao-pirata-14/commit/0af1e2a4fe85087497c872281cb3913a2f918696
+  url: >-
+    https://github.com/Day-OS/estacao-pirata-14/commit/0af1e2a4fe85087497c872281cb3913a2f918696
   changes:
     - type: Add
       message: Vestidos e Ternos! (cherry-picked)
+  id: 11
 - author: Day-OS
   time: '2024-11-21T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Muitas roupas novas (cherry-picked)
+  id: 12
 - author: AgentePanela
   time: '2024-12-08T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Impressora de documentos (cherry-picked)
+  id: 13
+- author: Lenhare
+  time: '2024-12-22T21:30:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução inicial do "Guide Book".
+  id: 14
+- author: Zequin
+  time: '2024-12-22T21:30:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução inicial do "Guide Book".
+  id: 15
+- author: AgentePanela
+  time: '2025-01-02T21:30:00.0000000+00:00'
+  changes:
+    - type: Tweak
+      message: Sotaquee Ohio agora é Xique-Xique.
+  id: 16
+- author: AgentePanela
+  time: '2025-01-02T21:30:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Pronome neutro.
+  id: 17
+- author: Piras314
+  changes:
+    - type: Add
+      message: Changelog automatica!
+  time: '2025-01-08T01:17:03.0000000+00:00'
+  id: 18
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Revert "Reativar o cog"
+  time: '2025-01-08T01:30:48.0000000+00:00'
+  id: 19
+- author: joshevodka
+  changes:
+    - type: Fix
+      message: Arruma o a falta de itens no SecTéc.
+  time: '2025-01-09T20:25:03.0000000+00:00'
+  id: 20
+- author: AgentePALIEN
+  changes:
+    - type: Add
+      message: Alien.
+    - type: Remove
+      message: Não alien.
+    - type: Tweak
+      message: Alien.
+    - type: Fix
+      message: Alien.
+  id: 21
+  time: '2025-01-15T17:30:09.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Remove
+      message: Dynamic da votação
+  id: 22
+  time: '2025-01-25T21:30:52.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Add
+      message: Mais musicas foram adicionadas ao lobby e a jukebox.
+  id: 23
+  time: '2025-01-26T00:08:57.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Heads e secs ganham 10 gaby coins a mais.
+    - type: Remove
+      message: Nomes bobos para singu, tesla e SM.
+    - type: Tweak
+      message: >-
+        Jogadores apenas podem ganhar coins se estiver mais de 7 pessoas no
+        round.
+    - type: Tweak
+      message: Quantidade de eventos.
+    - type: Tweak
+      message: Greentext da menos coins.
+    - type: Tweak
+      message: Preços da loja.
+    - type: Fix
+      message: Quantidade absurdas de antags midround.
+  id: 24
+  time: '2025-01-27T03:17:15.0000000+00:00'
+- author: Lyndomen, Sleepy.Abril, MilonPR and DoutorWhite
+  changes:
+    - type: Tweak
+      message: >-
+        Alvos de morte normais agora só precisam ser mortos uma vez - mas
+        precisa ensinar a eles uma lição que será lembrada
+  id: 25
+  time: '2025-01-27T14:11:05.0000000+00:00'
+- author: youtissoum and DoutorWhite
+  changes:
+    - type: Add
+      message: >-
+        Adiciona prisioneiros, uma nova função focada em role-play. (Não são
+        antagonistas)
+  id: 26
+  time: '2025-01-27T14:13:29.0000000+00:00'
+- author: Wellnachapa, AgentePanela
+  changes:
+    - type: Add
+      message: Novos desenhos ao lobby.
+  id: 27
+  time: '2025-01-27T19:32:06.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrige erros de `MAKEPLURAL` e `MANY` nas traduções.
+  id: 28
+  time: '2025-01-31T01:51:23.0000000+00:00'
+- author: beck-thompson, DoutorWhite
+  changes:
+    - type: Add
+      message: >-
+        Hostage Ops, um objetivo alternativo para nukies, onde eles podem
+        sequestrar todos os heads ao invés de explodir a estação.
+    - type: Add
+      message: >-
+        Hostage Implants, que pacificam as vítimas sequestradas e as deixam
+        invisíveis para turrets nukies.
+  id: 29
+  time: '2025-02-01T19:10:29.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Tweak
+      message: Altera sprites dos alertas, IPCs, algemas e cartas.
+  id: 30
+  time: '2025-02-02T06:17:26.0000000+00:00'
 - author: Dreykor(arguemeu)
   time: '2025-03-08T12:01:00.0000000+00:00'
   changes:
     - type: Fix
       message: readiciona whitelist para hamburguers, assim evitando o meta de insta kill, e evitando que itens aleatorios sejam botados no hamburguer, algo sem muito sentido em MRP.
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Add
+      message: Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio do alerta epsilon para sua versão completa.
+  id: 31
+  time: '2025-03-17T21:30:00.0000000+00:00'
 Name: GabyStation
 Order: -2
