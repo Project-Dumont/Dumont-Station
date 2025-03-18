@@ -1,1 +1,0 @@
-battery-electrocute-charge = A bateria tomou um disparo de energia!

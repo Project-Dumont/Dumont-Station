@@ -3,15 +3,13 @@
   alias:
     - survival
   name: survival-title
-  showInVote: false # secret
+  showInVote: true # Gabystation - melhor que dynamic
   description: survival-description
   rules:
-    # - MeteorSwarmScheduler Goobstation - nuh uh
-    - RampingStationEventScheduler
+    - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -23,11 +21,11 @@
   showInVote: false # secret
   description: kessler-syndrome-description
   rules:
-    - KesslerSyndromeScheduler
+#    - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllAtOnce
@@ -41,12 +39,16 @@
     - Traitor
     - Revolutionary
     - Zombie
+    - Thief
+    - Heretic
+    - BlobGameMode
+    - LoneAbductorSpawn
     # - KesslerSyndromeScheduler Goobstation - nuh uh
     - RampingStationEventScheduler
     - Changeling # Goobstation - changeling playtest
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllerAtOnce
@@ -63,16 +65,20 @@
     - Traitor
     - Revolutionary
     - Zombie
+    - Thief
+    - Heretic
+    - BlobGameMode
+    - LoneAbductorSpawn
     - BasicStationEventScheduler
-    - KesslerSyndromeScheduler
-    - MeteorSwarmMildScheduler
-    - MeteorSwarmScheduler
+#    - KesslerSyndromeScheduler
+#    - MeteorSwarmMildScheduler # Goob Edit
+#    - MeteorSwarmScheduler # Goob edit
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
     - Changeling # Goobstation - changeling playtest
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Extended
@@ -84,10 +90,10 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
-  # - MeteorSwarmScheduler Goobstation - nuh uh
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Greenshift
@@ -100,7 +106,7 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Secret
@@ -108,12 +114,12 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: true
+  showInVote: false # Goob - Game Director
   description: secret-description
   rules:
     - Secret
     - BasicStationEventScheduler
-    - ChristmasEventScheduler # goob
+    # - LavalandStormScheduler # Lavaland Change # All possible secret choices already contain this
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
@@ -124,10 +130,10 @@
   description: secret-description
   rules:
     - BasicStationEventScheduler
-  #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -139,7 +145,7 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Sandbox
@@ -151,7 +157,6 @@
   maxPlayers: 5
   rules:
     - Sandbox
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Traitor
@@ -165,10 +170,10 @@
     - Traitor
     - SubGamemodesRule
     - BasicStationEventScheduler
-  #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Deathmatch
@@ -182,7 +187,6 @@
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Nukeops
@@ -195,10 +199,10 @@
     - Nukeops
     - SubGamemodesRule
     - BasicStationEventScheduler
-  #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Revolutionary
@@ -213,10 +217,10 @@
     - Revolutionary
     - SubGamemodesRule
     - BasicStationEventScheduler
-  #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie
@@ -232,10 +236,10 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-#  - MeteorSwarmScheduler Goobstation - nuh uh
+  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombieteors
@@ -249,7 +253,7 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - KesslerSyndromeScheduler
+ # - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
+  - LavalandStormScheduler # Lavaland Change

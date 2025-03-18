@@ -1,7 +1,8 @@
 - type: emote
   id: Fart
   name: chat-emote-name-fart
-  category: General
+  category: Farts
+  available: false
   icon: _Goobstation/Interface/Emotes/fart.png
   whitelist:
     components:
@@ -9,6 +10,7 @@
   blacklist:
     components:
     - BorgChassis
+    - Silicon
   chatMessages: ["chat-emote-msg-fart"]
   chatTriggers:
     - fart
@@ -55,7 +57,8 @@
 - type: emote
   id: FartInhale
   name: chat-emote-name-fart-inhale
-  category: General
+  category: Farts
+  available: false
   icon: _Goobstation/Interface/Emotes/fart-in.png
   whitelist:
     components:
@@ -63,6 +66,7 @@
   blacklist:
     components:
     - BorgChassis
+    - Silicon
   chatMessages: ["chat-emote-msg-fart-inhale"]
   chatTriggers:
     - inhale anally
@@ -95,7 +99,8 @@
 - type: emote
   id: FartSuper
   name: chat-emote-name-fart-super
-  category: General
+  category: Farts
+  available: false
   icon: _Goobstation/Interface/Emotes/fart-super.png
   whitelist:
     components:
@@ -103,6 +108,7 @@
   blacklist:
     components:
     - BorgChassis
+    - Silicon
   chatMessages: ["chat-emote-msg-fart-super"]
   chatTriggers:
     - superfart

@@ -23,6 +23,7 @@
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
             #service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
@@ -54,6 +55,7 @@
             SecurityOfficer: [ 6, 6 ]
             SecurityCadet: [ 3, 3 ]
             Lawyer: [ 1, 2 ]
+            PermaPrisoner: [ 3, 3 ] # Gaby
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

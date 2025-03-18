@@ -10,6 +10,7 @@
     - Revolutionary
     - Changeling
     - Heretic
+    - Wizard
 
 - type: explosion
   id: Blob
@@ -26,10 +27,8 @@
   id: BlobMob
 
 - type: entity
-  name: cancer mouse
-  description: Toxic. Squeak!
-  parent: MobMouseCancer
-  id: MobMouseCancerBlob
+  parent: MobMouse
+  id: MobMouseBlob
   suffix: Blob
   components:
   - type: BlobCarrier
@@ -41,7 +40,7 @@
   parent: BaseAntagSpawner
   components:
     - type: GhostRoleMobSpawner
-      prototype: MobMouseCancerBlob
+      prototype: MobMouseBlob
     - type: GhostRole
       makeSentient: true
       name: blob-carrier-role-name
@@ -49,6 +48,9 @@
       rules: blob-carrier-role-rules
       raffle:
         settings: default
+      requirements:
+      - !type:OverallPlaytimeRequirement
+        time: 18000 #5 hours
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:

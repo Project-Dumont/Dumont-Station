@@ -4,7 +4,7 @@ ent-ClothingShoesBootsWork = botas de obra
 ent-ClothingShoesBootsJack = coturnos
     .desc = Um par de coturnos, projetados para unidades de combate e segurança.
 
-ent-ClothingShoesBootsSalvage = botas de salvagem
+ent-ClothingShoesBootsSalvage = botas de explorador
     .desc = Um par de botas duras, projetadas para a proteção do usuário em ambientes perigosos.
 
 ent-ClothingShoesBootsPerformer = sapatos

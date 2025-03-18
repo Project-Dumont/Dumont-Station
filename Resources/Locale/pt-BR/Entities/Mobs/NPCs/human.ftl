@@ -5,7 +5,7 @@ ent-MobSpirate = Spirate
      .desc = Yarr!
      .suffix = Irritado
 
-ent-MobCBURNUnit = Agente CBURN
+ent-MobCBURNUnit = Agente de Contenção Biológica
      .desc = Esmague a infecção a todo custo.
 
 ent-SalvageHumanCorpse = humano desconhecido

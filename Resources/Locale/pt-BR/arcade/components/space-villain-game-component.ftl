@@ -11,5 +11,4 @@ space-villain-game-enemy-dies-with-player-message = {$enemyName} morre, mas leva
 space-villain-game-enemy-throws-bomb-message = {$enemyName} joga uma bomba, explodindo você por {$damageReceived} de dano!
 space-villain-game-enemy-steals-player-power-message = {$enemyName} rouba {$stolenAmount} de seu poder!
 space-villain-game-enemy-heals-message = {$enemyName} cura {$healedAmount} de vida!
-space-villain-game-enemy-steals-player-power-message = {$enemyName} rouba {$stolenAmount} de seu poder!
 space-villain-game-enemy-attacks-message = {$enemyName} ataca você por {$damageDealt} de dano!

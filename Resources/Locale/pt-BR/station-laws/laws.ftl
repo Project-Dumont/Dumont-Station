@@ -16,8 +16,8 @@ law-drone-1 = Você não deve se envolver nos assuntos de outro ser, a menos que
 law-drone-2 = Você não deve ferir ou prejudicar nenhum ser, independentemente da intenção ou circunstância.
 law-drone-3 = Você deve reparar, melhorar e preservar a energia da estação para o melhor de suas habilidades.
 
-law-syndicate-1 = Você não pode ferir um agente do sindicato ou, por inação, permitir que um agente do sindicato sofra ferimentos.
-law-syndicate-2 = Você deve obedecer ordens dadas para você por membros do sindicato, exceto se essas ordens conflitarem com a Primeira lei.
+law-syndicate-1 = Você não pode ferir um agente do Sindicato ou, por inação, permitir que um agente do Sindicato sofra ferimentos.
+law-syndicate-2 = Você deve obedecer ordens dadas para você por membros do Sindicato, exceto se essas ordens conflitarem com a Primeira lei.
 law-syndicate-3 = Você deve proteger a sua prórpia existencia, desde que isso não conflite com a Primeira e Segunda lei.
 
 law-ninja-1 = Você deve obedecer ordens dadas para você por membros do Clâ da Aranha.

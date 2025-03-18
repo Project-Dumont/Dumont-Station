@@ -17,13 +17,13 @@ roles-antag-suspicion-innocent-objective = Descubra e elimine todos os traidores
 roles-antag-suspicion-suspect-name = Suspeito
 roles-antag-suspicion-suspect-objective = Mate os inocentes.
 
-roles-antag-nuclear-operative-commander-name = Comandante Operativo Nuclear
+roles-antag-nuclear-operative-commander-name = Comandante de Operação Nuclear
 roles-antag-nuclear-operative-commander-objective = Lidere sua equipe para a destruição da estação.
 
-roles-antag-nuclear-operative-agent-name = Agente Operativo Nuclear
-roles-antag-nuclear-operative-agent-objective = Assim como o operativo padrão, a prioridade será o tratamento da equipe.
+roles-antag-nuclear-operative-agent-name = Médico de Operação Nuclear
+roles-antag-nuclear-operative-agent-objective = Assim como o agente padrão, a prioridade será o tratamento da equipe.
 
-roles-antag-nuclear-operative-name = Operativo Nuclear
+roles-antag-nuclear-operative-name = Agente de Operação Nuclear
 roles-antag-nuclear-operative-objective = Encontre o disco nuclear e exploda a estação.
 
 roles-antag-subverted-silicon-name = Silício Corrompido

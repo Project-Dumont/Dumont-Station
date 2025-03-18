@@ -16,7 +16,6 @@ ame-window-refresh-parts-button = Recarregar partes
 ame-window-core-count-label = Número de Núcleos:
 ame-window-power-currentsupply-label = Fornecimento atual de potência:
 ame-window-power-targetsupply-label = Fornecimento alvo de potência:
-ame-window-toggle-injection-button = Ligar/Desligar Injeção
 ame-window-eject-button = Ejetar
 ame-window-increase-fuel-button = Aumentar
 ame-window-decrease-fuel-button = Diminuir

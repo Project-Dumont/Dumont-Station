@@ -37,8 +37,8 @@ thief-backpack-category-chemistry-description =
 
 thief-backpack-category-syndie-name = Kit Sindicato
 thief-backpack-category-syndie-description =
-    Um conjunto de itens de um agente do sindicato que você roubou
-    no passado. Inclui um cartão de identificação de agente, Emag, um pAI de sindicato,
+    Um conjunto de itens de um agente do Sindicato que você roubou
+    no passado. Inclui um cartão de identificação de agente, Emag, um pAI de Sindicato,
     e alguns estranhos cristais vermelhos.
 
 thief-backpack-category-sleeper-name = Kit de Dorminhoco

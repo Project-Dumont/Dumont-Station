@@ -298,7 +298,7 @@ ent-DrinkSpaceUpGlass = copo de spaceup
 ent-DrinkSpaceMountainWindGlass = copo de vento da montanha espacial
      .desc = Vento da Montanha Espacial. Como você sabe, não existem montanhas no espaço, apenas vento.
 
-ent-DrinkSyndicatebomb = bomba do sindicato
+ent-DrinkSyndicatebomb = bomba do Sindicato
      .desc = Tem gosto de terrorismo!
 
 ent-DrinkTeaGlass = copo de chá

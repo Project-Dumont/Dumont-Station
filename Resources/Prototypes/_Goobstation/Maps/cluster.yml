@@ -11,7 +11,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_cluster.yml
         - type: StationNameSetup
-          mapNameTemplate: '{0} Christmuster Station {1}'
+          mapNameTemplate: '{0} Cluster Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -23,6 +23,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]
@@ -52,9 +53,10 @@
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 2, 2 ]
+            PermaPrisoner: [ 2, 2 ] # Gaby
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 2, 2 ]
+            SalvageSpecialist: [ 5, 5 ]
             CargoTechnician: [ 2, 2 ]
             #civillian
             Passenger: [ -1, -1 ]

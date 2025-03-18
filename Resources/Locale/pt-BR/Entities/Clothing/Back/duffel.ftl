@@ -31,28 +31,28 @@ ent-ClothingBackpackDuffelHydroponics = mala hidropônica
 ent-ClothingBackpackDuffelSalvage = mala de exploração
     .desc = Uma mala enorme para armazenar todos tesouros espaciais!
 
-ent-ClothingBackpackDuffelSyndicate = mala do sindicato
+ent-ClothingBackpackDuffelSyndicate = mala do Sindicato
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
-ent-ClothingBackpackDuffelSyndicateBundle = mala do sindicato
+ent-ClothingBackpackDuffelSyndicateBundle = mala do Sindicato
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
-ent-ClothingBackpackDuffelSyndicateAmmo = mala do sindicatoo
+ent-ClothingBackpackDuffelSyndicateAmmo = mala do Sindicatoo
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
-ent-ClothingBackpackDuffelSyndicateAmmoBundle = mala do sindicato
+ent-ClothingBackpackDuffelSyndicateAmmoBundle = mala do Sindicato
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
-ent-ClothingBackpackDuffelSyndicateMedical = mala do sindicato
+ent-ClothingBackpackDuffelSyndicateMedical = mala do Sindicato
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
-ent-ClothingBackpackDuffelSyndicateMedicalBundle = mala do sindicato
+ent-ClothingBackpackDuffelSyndicateMedicalBundle = mala do Sindicato
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
 ent-ClothingBackpackDuffelHolding = mala interdimensional
     .desc = Uma mala que contém um buraco de minhoca ao bluespace.
 
-ent-ClothingBackpackDuffelAtmospherics = mala de atmosféricos
+ent-ClothingBackpackDuffelAtmospherics = mala da atmosférica
     .desc = Uma mala espaçosa e à prova de fogo. Tem cheiro de plasma.
 
 ent-ClothingBackpackDuffelVirology = mala da virologia

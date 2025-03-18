@@ -8,7 +8,8 @@
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
-    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
+    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <!-- Background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
                  Stretch="KeepAspectCovered" />
@@ -22,7 +23,7 @@
                         <!-- Left Top Panel -->
                         <PanelContainer StyleClasses="AngleRect" HorizontalAlignment="Left" Name="LeftSideTop"
                                         VerticalAlignment="Top">
-                            <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="800">
+                            <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="1200">
                                 <info:LinkBanner Name="LinkBanner" VerticalExpand="false" HorizontalAlignment="Center"
                                                  Margin="3 3 3 3" />
                                 <controls:StripeBack>
@@ -47,20 +48,30 @@
                         <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer"
                                       Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 8" />
                     </BoxContainer>
-                    <TextureRect Access="Public" Name="FUCKINGMARIAH" MaxHeight="25" />
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
+                    <!-- Gabystation start-->
                     <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                             <Button Name="ShowMOTD" Margin="5 5 5 5" Visible="False" Text="{Loc 'lobby-buletin-motd-title'}"
                                 HorizontalExpand="True" VerticalExpand="True" MinWidth="50" Access="Public" />
                         <lobbyUi:LobbyBuletin Name="MOTDBuletin" Margin="3 3 3 3" Access="Public"/>
-                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <!-- Gabystation end -->
+                        <PanelContainer VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                    Margin="0 75" StyleClasses="AngleRect">
+                            <RichTextLabel Name="LobbyMessageLabel" Access="Public" Margin="5" />
+                        </PanelContainer>
+                    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4"> <!-- Goobstation - Lobby Background Credits -->
                             <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
                             <PanelContainer StyleClasses="AngleRect">
                                 <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
                             </PanelContainer>
                         </BoxContainer>
+                        <!-- Goobstation start -->
+                        <PanelContainer StyleClasses="AngleRect">
+                            <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
+                        </PanelContainer>
+                        <!-- Goobstation end -->
                     </BoxContainer>
                 </Control>
                 <!-- Character setup state -->
@@ -68,10 +79,20 @@
                 <Control Access="Public" Visible="False" Name="CharacterSetupState" VerticalExpand="True" />
             </BoxContainer>
             <!-- Right Panel -->
-            <PanelContainer Name="RightSide" StyleClasses="AngleRect" HorizontalAlignment="Center" VerticalExpand="True"
+            <PanelContainer Name="RightSide" Access="Public" StyleClasses="AngleRect" HorizontalAlignment="Right" VerticalExpand="True"
                             VerticalAlignment="Stretch">
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True" HorizontalAlignment="Center">
-                    <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Center">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                    <!-- Top row -->
+                    <BoxContainer Orientation="Horizontal" MinSize="0 40" Name="HeaderContainer" Access="Public"
+                                  SeparationOverride="4">
+                        <Label Name="ServerName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                               HorizontalExpand="True" HorizontalAlignment="Center" />
+                    </BoxContainer>
+                    <!-- Gold line -->
+                    <controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" />
+                    <controls:HSpacer Spacing="10" />
+                    <!-- Voting & misc button bar -->
+                    <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Right">
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="Square" />
                         <Button Name="BalanceButton" Access="Public" StyleClasses="Square"

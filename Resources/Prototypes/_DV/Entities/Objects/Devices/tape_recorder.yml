@@ -1,0 +1,149 @@
+- type: entity
+  parent: BaseItem
+  id: TapeRecorder
+  name: tape recorder
+  description: Anything said into this device can and will be used against you in a court of space law.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Devices/tape_recorder.rsi
+    layers:
+    - state: empty
+    - state: idle
+      map: ["tape"]
+      visible: false
+  - type: Item
+    size: Small
+  - type: TapeRecorder
+  - type: ActiveListener
+    range: 4
+  - type: UseDelay
+    delay: 1
+  - type: Speech
+  - type: ItemSlots
+    slots:
+      cassette_tape:
+        priority: 4
+        whitelist:
+          components:
+          - FitsInTapeRecorder
+  - type: ContainerContainer
+    containers:
+      cassette_tape: !type:ContainerSlot
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.TapeRecorderVisuals.Mode:
+        tape:
+          Stopped: { state: "idle" }
+          Playing: { state: "playing" }
+          Recording: { state: "recording" }
+          Rewinding: { state: "rewinding" }
+      enum.TapeRecorderVisuals.TapeInserted:
+        tape:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.TapeRecorderUIKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.TapeRecorderUIKey.Key:
+        type: TapeRecorderBoundUserInterface
+
+- type: entity
+  parent: TapeRecorder
+  id: TapeRecorderFilled
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      cassette_tape:
+      - CassetteTape
+
+- type: entity
+  parent: BaseItem
+  id: CassetteTape
+  name: cassette tape
+  description: A magnetic tape that can hold up to two minutes of content on either side.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Devices/cassette_tapes.rsi
+    layers:
+    - state: tape_greyscale
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+    - state: tape_ribbonoverlay
+      map: [ "enum.ToggleVisuals.Layer" ]
+      visible: false
+  - type: Item
+    size: Tiny
+  - type: Damageable
+  - type: TapeCassette
+    maxCapacity: 180
+    repairWhitelist:
+      tags:
+      - Screwdriver
+      - Write
+  - type: FitsInTapeRecorder
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        tape_greyscale: Rainbow
+
+# Traduzção - Gabystation
+
+- type: entity
+  suffix: Interview with Bruce Kelp
+  parent: CassetteTape
+  id: CassetteTapeInterview
+  components:
+  - type: Label
+    currentLabel: Entrevista com Bruce Kelp
+  - type: TapeCassette
+    recordedData:
+      - timestamp: 2
+        name: Phil Dervin
+        message: "São 11h43, presentes na sala estão Phil Dervin, Detetive de primeira classe, Oficial Belview e Bruce Kelp, suspeito de uma acusação de invasão segura, quatro acusações de agressão, duas acusações de roubo e 85 acusações de perturbação da ordem pública."
+      - timestamp: 6
+        name: Phil Dervin
+        message: "Sr. Smosh, o senhor entende as acusações das quais está sendo acusado?"
+      - timestamp: 14
+        name: Bruce Kelp
+        message: "Eu não me importo com o que você diz, eu não fiz nada."
+      - timestamp: 18
+        name: Phil Dervin
+        message: "Senhor, você foi pego em flagrante no quarto do Capitão. Tentando roubar a reserva de uísque dele, nada menos."
+      - timestamp: 23
+        name: Phil Dervin
+        message: "Você teve sorte de ele não ter atirado em você por isso."
+      - timestamp: 28
+        name: Bruce Kelp
+        message: "Eu não vi nenhuma placa dizendo que eu não podia estar lá."
+      - timestamp: 34
+        name: Phil Dervin
+        message: "O quarto do Capitão? Eu acho que não precisamos de uma placa dizendo para as pessoas ficarem fora - é senso comum."
+      - timestamp: 38
+        name: Phil Dervin
+        message: "De qualquer forma, isso não vem ao caso, mesmo que não fosse proibido, ainda há a questão dos itens restritos que encontramos em sua posse e a subsequente tentativa de fugir da prisão."
+      - timestamp: 42
+        name: Bruce Kelp
+        message: "Eu não fiz nada."
+      - timestamp: 46
+        name: Officer Belview
+        message: "Você escapou de 3 oficiais, roubou um bastão de choque e bateu no Ian com ele. O Chefe de Pessoal ficou muito chateado com essa última parte."
+      - timestamp: 50
+        name: Bruce Kelp
+        message: "Qual de vocês deu um disabler para o Chefe de Pessoal?"
+      - timestamp: 54
+        name: Phil Dervin
+        message: "O Guarda fez isso, acabou sendo uma boa ideia, não acha?"
+      - timestamp: 58
+        name: Officer Belview
+        message: "Eu diria que sim."

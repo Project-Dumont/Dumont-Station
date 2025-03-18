@@ -19,7 +19,7 @@ ent-ClothingEyesGlasses = óculos
 ent-ClothingEyesGlassesSunglasses = óculos de sol
     .desc = Útil tanto para segurança quanto para Cargonia.
 
-ent-ClothingEyesGlassesSecurity = óculos da segurança
+ent-ClothingEyesGlassesSecurity = óculos de segurança
     .desc = Uma tecnologia estranhamente antiga. Se ver um holofote em formato de morcego, não vá ao local.
 
 ent-ClothingEyesGlassesThermal = óculos de visão térmica

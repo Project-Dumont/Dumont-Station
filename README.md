@@ -1,33 +1,43 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://github.com/Goob-Station/Goob-Station/blob/master/Resources/Textures/Logo/logo.png" /></p>
+<p align="center"><img alt="Space Station 14" src="https://raw.githubusercontent.com/Gaby-Station/Gaby-Station/refs/heads/gaby/Resources/Textures/Logo/logo.png"/></p>
 
-This is a fork from the primary repo for Space Station 14 called Goob Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server this is the content pack for Goob Station.
+Essa é uma fork brasileira do [Goob Station](https://github.com/Goob-Station/Goob-Station), chamada Gaby Station, aqui contem todos os arquivos referentes ao servidor e client do jogo.
+> [!NOTE]
+> Goob Station é uma fork de [Space Station 14](https://github.com/space-wizards/space-station-14).
 
-If you want to host or create content for SS14, go to the [Space Station 14 repository](https://github.com/space-wizards/space-station-14) as it contains both RobustToolbox and the content pack for development of new content packs and is the base for your fork.
+> [!TIP]
+> Se você deseja criar conteudo ou hostear um servidor de SS14 (base), vá para o [repositório oficial do Space Station 14](https://github.com/space-wizards/space-station-14).
 
-## Links
+## Links:
 
-[Goob Station Discord Server](https://discord.gg/goobstation) | [Goob Station Forum](https://forums.goobstation.com/) | [Goob Station Website](https://goobstation.com)
+[Servidor do Discord](https://discord.gg/9SUUREbMbq)
+
+<!--
 
 ## Documentation/Wiki
 
-The Goob Station [docs site](https://docs.goobstation.com/) has documentation on GS14's content, engine, game design, and more. It also have lots of resources for new contributors to the project.
+The Goob Station [docs site](https://docs.goobstation.com/) has documentation on GS14's content, engine, game design, and more. It also has lots of resources for new contributors to the project.
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in [Discord](https://discord.gg/goobstation) if you want to help. Feel free to check the [list of issues](https://github.com/Goob-Station/Goob-Station/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
-While Goob doesn't use the [contribution guidelines,](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) you can feel free to if you want to check your stuff.
+We are happy to accept contributions from anybody. Get in [Development Discord Server](https://discord.gg/zXk2cyhzPN) if you want to help. Feel free to check the [list of issues](https://github.com/Goob-Station/Goob-Station/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
+While following the [Space Station 14 contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) is not mandatory for Goob Station, we recommend reviewing them for best practices.
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
 
-## Building
+-->
 
-1. Clone this repo.
-2. Run `RUN_THIS.py` to init submodules and download the engine.
-3. Compile the solution.
+## Compilando e Rodando:
 
-[More detailed instructions on building the project.](https://docs.goobstation.com/en/general-development/setup.html)
+> [!TIP]
+> Você pode pedir ajuda em nosso servidor do [Discord](https://discord.gg/9SUUREbMbq) em [#programação](https://discord.com/channels/1296583940731179100/1299917674700083211).
 
-## License
+1. Clone o repositório.
+2. Abra `RUN_THIS.py` para instalar os submodulos e instalar a engine.
+3. Abra `buildAllRelease.bat` após compilado abra `runQuickAll.bat` (os dois arquivos estão em `Scripts\bat\`.
+
+[Para um tutorial mais detalhado (inglês).](https://docs.goobstation.com/en/general-development/setup.html)
+
+## Licensa:
 
 Content contributed to this repository after commit [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36) is licensed under the GNU Affero General Public License version 3.0, unless otherwise stated. See LICENSE-AGPLv3.txt. Content contributed to this repository before commit [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36) is licensed under the MIT license, unless otherwise stated. See LICENSE.txt.
 

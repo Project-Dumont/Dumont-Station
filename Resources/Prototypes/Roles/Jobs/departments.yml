@@ -49,6 +49,8 @@
   - ERTEngineer
   - DeathSquad
   - HecuOperative
+  - BlueshieldOfficer # Goobstation
+  - NanotrasenRepresentative # Goobstation
   editorHidden: true
   weight: 120
 
@@ -77,6 +79,7 @@
   - ERTEngineer
   - DeathSquad
   - HecuOperative
+  - AdministrativeAssistant # Delta V
   primary: false
   weight: 100
 
@@ -116,6 +119,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - PermaPrisoner # Harmony
 
 - type: department
   id: Science

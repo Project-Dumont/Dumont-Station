@@ -40,8 +40,6 @@ namespace Content.Client.Communications.UI
 
             MessageInput.Placeholder = new Rope.Leaf(_loc.GetString("comms-console-menu-announcement-placeholder"));
 
-            MaintEmergencyButton.StyleClasses.Add(StyleBase.ButtonCaution); //nao funfa
-
             var maxAnnounceLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
             MessageInput.OnTextChanged += (args) =>
             {
@@ -75,10 +73,6 @@ namespace Content.Client.Communications.UI
 
 
             AlertLevelButton.Disabled = !AlertLevelSelectable;
-
-            MaintEmergencyButton.OnPressed += _ => OnMaint?.Invoke();
-
-            CentCommButton.OnPressed += _ => OnCentcomm?.Invoke();
 
             EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
             EmergencyShuttleButton.Disabled = !CanCall;

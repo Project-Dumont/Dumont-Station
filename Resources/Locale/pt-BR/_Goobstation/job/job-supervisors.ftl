@@ -1,1 +1,1 @@
-job-supervisors-ntr-centcom = O representante Nanotrasen e o comando central.
+job-supervisors-ntr-centcom = O representante Nanotrasen e à  Central de Comando.

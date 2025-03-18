@@ -31,7 +31,7 @@ ent-MimePDA = PDA de mime
 ent-ChaplainPDA = PDA de padre
     .desc = PDA escolhido por Deus.
 
-ent-QuartermasterPDA = PDA de intendente
+ent-QuartermasterPDA = PDA do intendente logístico
     .desc = PDA para o cara que encomenda as armas.
 
 ent-CargoPDA = PDA de carga
@@ -79,7 +79,7 @@ ent-RnDPDA = PDA de diretor de pesquisa
 ent-SciencePDA = PDA de ciência
     .desc = Está coberto por uma substância pegajosa desconhecida.
 
-ent-HoSPDA = PDA de chefe de segurança
+ent-HoSPDA = PDA do segurança chefe
     .desc = Quem carrega este PDA é a lei.
 
 ent-WardenPDA = PDA de carceiro
@@ -88,7 +88,7 @@ ent-WardenPDA = PDA de carceiro
 ent-SecurityPDA = PDA de segurança
     .desc = Vermelho para esconder as manchas de sangue dos passageiros.
 
-ent-CentcomPDA = PDA de CentCom
+ent-CentcomPDA = PDA da Central de Comando
     .desc = Coloriu o cinza entorpecente da burocracia.
 
 ent-MusicianPDA = PDA de músico
@@ -100,13 +100,13 @@ ent-AtmosPDA = PDA de atmos
 ent-ClearPDA = PDA de substituto
     .desc = 99 e 44/100 por cento de plástico puro.
 
-ent-SyndiPDA = PDA de sindicato
+ent-SyndiPDA = PDA de Sindicato
     .desc = Ok, hora de ser um membro produtivo de- ah, legal, sou um cara mau, hora de matar pessoas!
 
-ent-ERTLeaderPDA = PDA de ERT
+ent-ERTLeaderPDA = PDA de da ERT
     .desc = Vermelho para poder de fogo.
 
-ent-CBURNPDA = PDA de CBURN
+ent-CBURNPDA = PDA da CBURN
     .desc = Cheira a carne podre.
 
 ent-PsychologistPDA = PDA de psicólogo

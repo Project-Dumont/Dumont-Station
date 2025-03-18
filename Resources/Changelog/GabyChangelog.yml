@@ -228,11 +228,12 @@ Entries:
   changes:
     - type: Fix
       message: readiciona whitelist para hamburguers, assim evitando o meta de insta kill, e evitando que itens aleatorios sejam botados no hamburguer, algo sem muito sentido em MRP.
+  id: 31
 - author: Dreykor (arguemeu)
   changes:
     - type: Add
       message: Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio do alerta epsilon para sua versão completa.
-  id: 31
+  id: 32
   time: '2025-03-17T21:30:00.0000000+00:00'
 Name: GabyStation
 Order: -2

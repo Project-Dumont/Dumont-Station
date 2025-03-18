@@ -1,29 +1,28 @@
 <Document>
-  # Fires & Space
+  # Incêndios & Espaço
 
-  Fires and spacings are an inevitability due to the highly flammable plasma gas and the endless vacuum of space present in and around the station, so it's important to know how to manage them.
+  Incêndios e vazamentos no espaço são uma inevitabilidade devido ao gás plasma altamente inflamável e ao vácuo infinito do espaço presentes na estação e ao redor dela, por isso é importante saber como gerenciá-los.
 
-  ## Spacing
-  Space is arguably the easier of the two to handle. Be aware; active spacings will slowly siphon the air out of the station's air reserves. If you find it impossible to fix structural damage due to some other hazard, make sure to limit the airflow to that room. (Currently only half-valid due to the Gas Miners infinitely replenishing most of the useful gases)
+  ## Vazamento no Espaço
+  O espaço é, sem dúvida, a parte mais fácil de se lidar. Esteja ciente de que vazamentos ativos irão lentamente drenar o ar das reservas de ar da estação. Se você achar impossível corrigir danos estruturais devido a outro risco, certifique-se de limitar o fluxo de ar para essa área. (Atualmente, isso é apenas parcialmente válido devido aos Minadores de Gás, que repõem infinitamente a maioria dos gases úteis)
 
-  While it does render an area uninhabitable, it can be trivially solved by simply following a two step process. Step one is to seal the hole that caused the vacuum.
+  Embora torne uma área inabitável, isso pode ser facilmente resolvido seguindo um processo de dois passos. O primeiro passo é vedar o buraco que causou o vácuo.
 
-  Step two is to repressurize the affected area. Note that the affected area will NOT fill from the station's distro network by default. Some atmospheric devices, specifically air vents, have built-in safeguards that cause the device to be disabled if pressure in a room drops too low. This features prevents spacings from venting the distro network unintentionally.
+  O segundo passo é repressurizar a área afetada. Observe que a área afetada NÃO será preenchida automaticamente pela rede de distribuição da estação. Alguns dispositivos atmosféricos, especificamente os ventiladores de ar, possuem salvaguardas integradas que fazem o dispositivo ser desativado se a pressão na sala cair muito baixo. Esse recurso evita que os vazamentos no espaço ventilarem a rede de distribuição inadvertidamente.
 
-  As a result, there are three main options to repressurize the affected area:
+  Como resultado, há três opções principais para repressurizar a área afetada:
 
-  1. Assuming distro vents and pipes have not been destroyed in some unfortunate accident, you may set surrounding air alarms to the "Fill" setting. This will cause connected air vents to override their safeguards and begin repressurizing the area.
-    - Be aware this setting also allows vents to OVERpressurize a room, so this process must be monitored at all times.
+  1. Supondo que os ventiladores de distribuição e tubulações não tenham sido destruídos em algum acidente infeliz, você pode configurar os alarmes de ar ao redor para a configuração "Preencher". Isso fará com que os ventiladores de ar conectados ignorem suas salvaguardas e comecem a repressurizar a área.
+    - Esteja ciente de que essa configuração também permite que os ventiladores SUPER pressionem a sala, portanto, esse processo deve ser monitorado o tempo todo.
 
-  2. Another option is to open any firelocks that were engaged in response to the original spacing. This will cause the pressure to equalize between both areas.
-    - This option generally causes more firelocks to engage in the surrounding area, potentially causing disruptions or making the second area unsafe for station crew.
+  2. Outra opção é abrir qualquer travamento de incêndio que tenha sido ativado em resposta ao vazamento. Isso fará com que a pressão se iguale entre as duas áreas.
+    - Esta opção geralmente faz com que mais travamentos de incêndio sejam ativados na área ao redor, o que pode causar interrupções ou tornar a segunda área insegura para a tripulação da estação.
 
-  3. The final option is to bring a canister into the spaced area and open its release valve. An air canister at 4500kpa can fully repressurize around 20-30 tiles before running out of gas.
-    - This option requires the canister be brought in from outside (generally atmos), which can be slow and time consuming depending on the situation.
+  3. A última opção é levar um cilindro para a área vazada e abrir sua válvula de liberação. Um cilindro de ar a 4500kpa pode repressurizar completamente cerca de 20-30 tiles antes de esgotar o gás.
+    - Essa opção exige que o cilindro seja trazido de fora (geralmente de atmos), o que pode ser lento e demorado dependendo da situação.
 
-
-  ## Fires
-  Fires can be dealt with through a multitude of ways, but some of the most effective methods include:
-    - Spacing the enflamed area if possible. This will destroy all of the gasses in the room, which may be a problem if you're already straining life support.
-    - Dumping a Frezon canister into the enflamed area. This will ice over the flames and halt any ongoing reaction, provided you use enough Frezon. Additionally, this does not result in destruction of material, so you can simply scrub the room afterwards.
+  ## Incêndios
+  Os incêndios podem ser tratados de várias maneiras, mas alguns dos métodos mais eficazes incluem:
+    - Vazamento da área em chamas, se possível. Isso destruirá todos os gases na sala, o que pode ser um problema se você já estiver sobrecarregando o suporte à vida.
+    - Descartar um cilindro de Frezon na área em chamas. Isso irá congelar as chamas e interromper qualquer reação em andamento, desde que você use o suficiente de Frezon. Além disso, isso não resulta em destruição de material, então você pode simplesmente limpar a sala depois.
 </Document>

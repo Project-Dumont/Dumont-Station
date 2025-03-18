@@ -40,7 +40,7 @@ ent-CargoIDCard = ID de carga
 ent-SalvageIDCard = ID de salvamento
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-QuartermasterIDCard = ID do intendente de carga
+ent-QuartermasterIDCard = ID do intendente logístico
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
 ent-ResearchIDCard = ID de pesquisa
@@ -88,13 +88,13 @@ ent-RDIDCard = ID do diretor de pesquisa
 ent-HoSIDCard = chefe do ID de segurança
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-CentcomIDCard = ID do Centcom
+ent-CentcomIDCard = ID da Central de Comando
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-ERTLeaderIDCard = ID do ERT
+ent-ERTLeaderIDCard = ID do da ERT
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-CentcomIDCardSyndie = ID do Centcom
+ent-CentcomIDCardSyndie = ID da Central de Comando
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
 ent-MusicianIDCard = ID do músico
@@ -109,7 +109,7 @@ ent-AgentIDCard = ID do Death Squad
 ent-AtmosIDCard = ID de técnico atmosférico
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-SyndicateIDCard = ID do sindicato
+ent-SyndicateIDCard = ID do Sindicato
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
 ent-PsychologistIDCard = ID de psicólogo
@@ -124,6 +124,6 @@ ent-BoxerIDCard = ID de boxeador
 ent-DetectiveIDCard = ID de detetive
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-CBURNIDcard = ID do CBURN
+ent-CBURNIDcard = ID da CBURN
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 

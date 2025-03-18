@@ -30,12 +30,15 @@
   - type: Tag
     tags:
       - PowerCell
+      - DroneUsable # Goobstation
   - type: Appearance
   - type: PowerCellVisuals
   - type: Riggable
   - type: HitscanBatteryAmmoProvider
     proto: RedLightLaser
     fireCost: 50
+  - type: StealTarget #Goobstation - IPC steal
+    stealGroup: Battery
 
 - type: entity
   name: potato battery
@@ -52,6 +55,7 @@
   - type: Tag
     tags:
       - PotatoBattery
+      - DroneUsable # Goobstation
   - type: Construction
     graph: PowerCellPotato
     node: potatobattery

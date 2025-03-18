@@ -1,84 +1,84 @@
-ent-ClothingOuterWinterCoat = agasalho
+ent-ClothingOuterWinterCoat = casaco
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterAtmos = agasalho de atmos
+ent-ClothingOuterWinterAtmos = casaco da atmosférica
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterBar = agasalho de bartender
+ent-ClothingOuterWinterBar = casaco de bartender
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCap = agasalho de capitão
+ent-ClothingOuterWinterCap = casaco do capitão
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCargo = agasalho da cargo
+ent-ClothingOuterWinterCargo = casaco da logística
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCE = agasalho do engenheiro chefe
+ent-ClothingOuterWinterCE = casaco do engenheiro chefe
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCentcom = agasalho da centcom
+ent-ClothingOuterWinterCentcom = casaco da Central de Comando
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterChem = agasalho de químico
+ent-ClothingOuterWinterChem = casaco da química
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCMO = agasalho do médico chefe
+ent-ClothingOuterWinterCMO = casaco do médico chefe
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterClown = agasalho de palhaço
+ent-ClothingOuterWinterClown = casaco do palhaço
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterEngi = agasalho de engenheiro
+ent-ClothingOuterWinterEngi = casaco da engenharia
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterGen = agasalho genético
+ent-ClothingOuterWinterGen = casaco da genética
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterHoP = agasalho do chefe dos funcionários
+ent-ClothingOuterWinterHoP = casaco do chefe dos funcionários
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterHoS = agasalho do chefe de segurança
+ent-ClothingOuterWinterHoS = casaco do segurança chefe
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterHydro = agasalho hidropônico
+ent-ClothingOuterWinterHydro = casaco da hidroponia
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterJani = agasalho de zelador
+ent-ClothingOuterWinterJani = casaco de zelador
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterMed = agasalho de médico
+ent-ClothingOuterWinterMed = casaco da médicina
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterMime = agasalho de mímico
+ent-ClothingOuterWinterMime = casaco de mímico
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterMiner = agasalho de minerador
+ent-ClothingOuterWinterMiner = casaco de explorador
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterPara = agasalho de paramédico
+ent-ClothingOuterWinterPara = casaco de paramédico
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterQM = agasalho do quartermaster
+ent-ClothingOuterWinterQM = casaco do intendente logístico
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterRD = agasalho do diretor de pesquisas
+ent-ClothingOuterWinterRD = casaco do diretor de pesquisa
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterRobo = agasalho robótico
+ent-ClothingOuterWinterRobo = casaco da robótica
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterSci = agasalho de cientista
+ent-ClothingOuterWinterSci = casaco de cientista
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterSec = agasalho da segurança
+ent-ClothingOuterWinterSec = casaco de segurança
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterViro = agasalho de virologia
+ent-ClothingOuterWinterViro = casaco da virologia
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterWarden = agasalho blindado do carcereiro
+ent-ClothingOuterWinterWarden = casaco blindado do carcereiro
     .desc = Uma roupa de frio utilitária e robusta, projetada para proteger o carcereiro das ameaças encontradas diáriamente nas celas.
 
-ent-ClothingOuterWinterMusician = agasalho de músico
+ent-ClothingOuterWinterMusician = casaco de músico
     .desc = Um tuxedo largo, utilizado por um músico de classe.
 

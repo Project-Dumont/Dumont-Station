@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseLockerTeleporter
+  id: AdminAssistantLockerTeleporter
+  name: teletransportador de armario de assistente administrativo
+  description: Dipositivo capaz de trazer um armario de assistente administrativo via bluespace.
+  components:
+  - type: Sprite
+    state: standard
+  - type: SpawnItemsOnUse
+    items:
+    - id: UniqueLockerAdminAssistantFilled
+
+- type: entity
+  parent: AdminAssistantLockerTeleporter
+  id: UniqueAdminAssistantLockerTeleporter
+  suffix: Unique
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: UniqueEntityChecker
+    markerName: AdminAssistant
+  - type: UniqueEntityMarker
+    markerName: AdminAssistant
+    stationOnly: false

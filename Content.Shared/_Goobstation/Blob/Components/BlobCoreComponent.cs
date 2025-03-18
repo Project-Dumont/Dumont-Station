@@ -1,12 +1,10 @@
 using Content.Shared.Damage;
 using Content.Shared.Explosion;
 using Content.Shared.FixedPoint;
-using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared._Goobstation.Blob.Components;
 
@@ -36,6 +34,9 @@ public sealed partial class BlobCoreComponent : Component
 
     [DataField]
     public FixedPoint2 CoreBlobTotalHealth = 400;
+
+    [DataField]
+    public float StartingMoney = 250f; // enough for 2 resource nodes and a bit of defensive action
 
     [DataField]
     public float AttackRate = 0.3f;
@@ -192,7 +193,7 @@ public sealed partial class BlobCoreComponent : Component
     };
 
     [DataField(required: true)]
-    public List<ProtoId<EntityPrototype>> ActionPrototypes = [];
+    public List<EntProtoId> ActionPrototypes = [];
 
     [DataField]
     public ProtoId<ExplosionPrototype> BlobExplosive = "Blob";

@@ -37,6 +37,9 @@
 - files: ["nukieplanet.yml"]
   authors: DogZeroX, Emisse, metalgearsloth
 
+- files: ["nukieplanet-honkops.yml"]
+  authors: Piras314, DogZeroX, Emisse, metalgearsloth
+
 - files: ["omega.yml"]
   authors: Emisse
 
@@ -55,8 +58,23 @@
 - files: ["cog.yml"]
   authors: Spacemann
 
+- files: ["submarine.yml"]
+  authors: Piras314, UnicornOnLSD, IamVelcroboy, deltanedas, rosieposieeee, Peptide90, SimpleStation14, VMSolidus, DEATHB4DEFEAT
+
+- files: ["lambda.yml"]
+  authors: Ichai, Dapnee, Oraclestation's players
+
 #Gabystation Maps
 #These are located in /_Gabystation/Maps/
 
 - files: ["gamma.yml"]
-  authors: Leshiy, CRISOOOOO
+  authors: AgRevol, CRISOOOOO
+
+- files: ["falcon.yml"]
+  authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
+
+- files: ["leonid.yml"]
+  authors: Gallagin, Derball
+
+- files: ["delta.yml"]
+  authors: Corvax team, pheenty

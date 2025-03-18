@@ -1,5 +1,5 @@
 credits-window-title = Créditos
-credits-window-patrons-tab = Patronos
+credits-window-patrons-tab = Patrocinadores
 credits-window-ss14contributorslist-tab = Créditos
 credits-window-licenses-tab = Licenças Open Source
 credits-window-become-patron-button = Vire um Patrono

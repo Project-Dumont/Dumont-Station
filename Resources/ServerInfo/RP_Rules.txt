@@ -127,5 +127,4 @@ These rules also apply to any individual who is a silicon, including cyborgs and
     - Just cause you have all-access does not mean you can abuse it to take items from heads or other areas. Ask for permission.
     - Use common sense and remember that you are also held up to a high standard of play like command and the Blueshield Officer is. Failure to do so will lead to a roleban from command or gameban.
 
-[color=#ffffff]SANDBOX SPECIFIC RULES[/color]
-1. You are free to do as you wish, however, causing massive damage to both the station, the arrivals system, and other player’s builds is strictly prohibited. It is also strictly prohibited to spawn large amounts of entities, as too much entities can cause severe lag.
+By accepting these rules, you consent to the server redialing you to other servers in our network.

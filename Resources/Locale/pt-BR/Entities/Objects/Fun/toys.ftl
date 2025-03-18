@@ -14,10 +14,10 @@ ent-PlushieLamp = lamp plushie
     .desc = A light emitting friend!
 
 ent-PlushieLizard = lizard plushie
-    .desc = An adorable stuffed toy that resembles a lizardperson. Made by CentCom as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
+    .desc = An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
 
 ent-PlushieSpaceLizard = space lizard plushie
-    .desc = An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentCom as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
+    .desc = An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
 
 ent-PlushieRatvar = ratvar plushie
     .desc = A small stuffed doll of the elder god Ratvar.

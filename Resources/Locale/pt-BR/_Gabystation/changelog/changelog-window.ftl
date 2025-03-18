@@ -1,1 +1,1 @@
-changelog-tab-title-GabyStation = "Gaby Station"
+changelog-tab-title-Gaby = Gaby Station

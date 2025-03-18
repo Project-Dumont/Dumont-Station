@@ -1,390 +1,390 @@
-ent-PaintingMonkey = monkey painting
-    .desc = Return to monky.
+ent-PaintingMonkey = pintura de macaco
+    .desc = Faça macacagem.
 
-ent-BaseSignDirectional = monkey painting
-    .desc = Return to monky.
+ent-BaseSignDirectional = pintura de macaco
+    .desc = Faça macacagem.
 
-ent-SignDirectionalBar = bar sign
-    .desc = A direction sign, pointing out which way the bar is.
+ent-SignDirectionalBar = placa do bar
+    .desc = Uma placa direcional, apontado onde fica o bar.
 
-ent-SignDirectionalBridge = bridge sign
-    .desc = A direction sign, pointing out which way the Bridge is.
+ent-SignDirectionalBridge = placa da ponte
+    .desc = Uma placa direcional, apontado onde fica a ponte.
 
-ent-SignDirectionalBrig = brig sign
-    .desc = A direction sign, pointing out which way the Brig is.
+ent-SignDirectionalBrig = placa da cadeia
+    .desc = Uma placa direcional, apontado onde fica a cadeia .
 
-ent-SignDirectionalChapel = chapel sign
-    .desc = A direction sign, pointing out which way the Chapel is.
+ent-SignDirectionalChapel = placa da capela
+    .desc = Uma placa direcional, apontado onde fica a capela.
 
-ent-SignDirectionalChemistry = chemistry sign
-    .desc = A direction sign, pointing out which way the chemistry lab is.
+ent-SignDirectionalChemistry = placa da química
+    .desc = Uma placa direcional, apontado onde fica o laboratório químico.
 
-ent-SignDirectionalCryo = cryo sign
-    .desc = A direction sign, pointing out the way to cryogenics.
+ent-SignDirectionalCryo = placa da criogenia
+    .desc = Uma placa direcional, apontado onde fica a criogenia.
 
-ent-SignDirectionalDorms = dorms sign
-    .desc = A direction sign, pointing out which way the Dorms are.
+ent-SignDirectionalDorms = placa dos dormitórios
+    .desc = Uma placa direcional, apontado onde fica os dormitórios.
 
-ent-SignDirectionalEng = engineering sign
-    .desc = A direction sign, pointing out which way the Engineering department is.
+ent-SignDirectionalEng = placa da engenharia
+    .desc = Uma placa direcional, apontado onde fica o departamento de engenharia.
 
-ent-SignDirectionalEvac = evac sign
-    .desc = A direction sign, pointing out which way evac is.
+ent-SignDirectionalEvac = placa da evacuação
+    .desc = Uma placa direcional, apontado onde fica a doca de evacuação.
 
-ent-SignDirectionalFood = food sign
-    .desc = A direction sign, pointing out which way the kitchen is.
+ent-SignDirectionalFood = placa da cantina
+    .desc = Uma placa direcional, apontado onde fica a cozinha.
 
-ent-SignDirectionalGravity = gravity sign
-    .desc = A direction sign, pointing out which way the gravity generator is.
+ent-SignDirectionalGravity = placa da gravidade
+    .desc = Uma placa direcional, apontado onde fica o gerador de gravidade.
 
-ent-SignDirectionalHop = hop sign
-    .desc = A direction sign, pointing out which way Head of Personnel's office is.
+ent-SignDirectionalHop = placa do chefe dos funcionários
+    .desc = Uma placa direcional, apontado onde fica o escritório do chefe dos funcionários.
 
-ent-SignDirectionalHydro = hydro sign
-    .desc = A direction sign, pointing out which way hydroponics is.
+ent-SignDirectionalHydro = placa da hidroponia
+    .desc = Uma placa direcional, apontado onde fica a hidroponia.
 
-ent-SignDirectionalJanitor = janitor sign
-    .desc = A direction sign, pointing out which way the janitor's closet is.
+ent-SignDirectionalJanitor = placa do zelador
+    .desc = Uma placa direcional, apontado onde fica a sala do zelador.
 
-ent-SignDirectionalLibrary = library sign
-    .desc = A direction sign, pointing out which way the library is.
+ent-SignDirectionalLibrary = placa da bilbioteca
+    .desc = Uma placa direcional, apontado onde fica a bibliotéca.
 
-ent-SignDirectionalMed = medical sign
-    .desc = A direction sign, pointing out which way the Medical department is.
+ent-SignDirectionalMed = placa do hospital
+    .desc = Uma placa direcional, apontado onde fica o departamento médico.
 
-ent-SignDirectionalSalvage = salvage sign
-    .desc = A direction sign, pointing out which way the Salvage department is.
+ent-SignDirectionalSalvage = placa da exploração e mineração
+    .desc = Uma placa direcional, apontado onde fica o departmaneto de exploração e mineração.
 
-ent-SignDirectionalSci = epistemics sign
-    .desc = A direction sign, pointing out which way the Epistemics department is.
+ent-SignDirectionalSci = placa da pesquisa e desenvolvimento
+    .desc = Uma placa direcional, apontado onde fica o departamento de pesquisa e desenvolvimento.
 
-ent-SignDirectionalSec = sec sign
-    .desc = A direction sign, pointing out which way Security is.
+ent-SignDirectionalSec = placa da segurança
+    .desc = Uma placa direcional, apontado onde fica a segurança.
 
-ent-SignDirectionalSolar = solars sign
-    .desc = A direction sign, pointing out which way solars are.
+ent-SignDirectionalSolar = placa das solares
+    .desc = Uma placa direcional, apontado onde fica os painéis solares.
 
-ent-SignDirectionalSupply = supply sign
-    .desc = A direction sign, pointing to some supplies.
+ent-SignDirectionalSupply = placa da logística e suprimentos
+    .desc = Uma placa direcional, apontado onde fica o departamento de logística.
 
-ent-SignDirectionalWash = washroom sign
-    .desc = A direction sign, pointing to the way to a washroom.
+ent-SignDirectionalWash = placa do banheiro
+    .desc = Uma placa direcional, apontado onde fica o banheiro.
 
-ent-SignAi = ai sign
-    .desc = A sign, indicating an AI is present.
+ent-SignAi = placa de IA
+    .desc = Uma placa que indica a inteligência artificial da estação.
 
-ent-SignArmory = armory sign
-    .desc = A sign indicating the armory.
+ent-SignArmory = placa do artenal
+    .desc = Uma placa que indica o arsenal.
 
-ent-SignToolStorage = tool storage sign
-    .desc = A sign indicating the tool storage room.
+ent-SignToolStorage = placa da despensa de ferramentas
+    .desc = Uma placa que indica a despença de ferramentas.
 
-ent-SignAnomaly = anomaly lab sign
-    .desc = A sign indicating the anomaly lab.
+ent-SignAnomaly = placa do laboratório anômalo
+    .desc = Uma placa que indica o labortório de anomalias.
 
-ent-SignAtmos = atmos sign
-    .desc = A sign indicating the atmospherics area.
+ent-SignAtmos = placa da atmosférica
+    .desc = Uma placa que indica o pavilhão da atmosférica.
 
-ent-SignAtmosMinsky = atmospherics sign
-    .desc = A sign indicating the atmospherics area.
+ent-SignAtmosMinsky = placa da atmosférica
+    .desc = Uma placa que indica pavilhão da atmosférica.
 
-ent-SignBar = bar sign
-    .desc = A sign indicating the bar.
+ent-SignBar = placa do bar
+    .desc = Uma placa que indica o bar.
 
-ent-SignBio = bio sign
-    .desc = A sign indicating the biology lab.
+ent-SignBio = placa de laboratório de biologia
+    .desc = Uma placa que indica o laboratório de biologia.
 
-ent-SignBiohazard = biohazard sign
-    .desc = A sign indicating a biohazard.
+ent-SignBiohazard = placa de perigo biológico
+    .desc = Uma placa que indica um perigo biológico.
 
-ent-SignBridge = bridge sign
-    .desc = A sign indicating the bridge.
+ent-SignBridge = placa da ponte
+    .desc = Uma placa que indica a ponte de comando.
 
-ent-SignCanisters = canisters sign
-    .desc = A sign warning the viewer about pressurised canisters.
+ent-SignCanisters = placa de armazém de gases
+    .desc = Uma placa que indica o armazém de recipientes de gases pressurizados.
 
-ent-SignCargo = cargo sign
-    .desc = A sign indicating the cargo area.
+ent-SignCargo = placa da logística
+    .desc = Uma placa que indica o pavilhão de logística.
 
-ent-SignCargoDock = cargo dock sign
-    .desc = A sign indicating a cargo dock.
+ent-SignCargoDock = placa da doca de carregamento
+    .desc = Uma placa que indica a doca de carga e descarga.
 
-ent-SignChapel = chapel sign
-    .desc = A sign indicating the chapel.
+ent-SignChapel = placa da capela
+    .desc = Uma placa que indica a capela.
 
-ent-SignChem = chemistry sign
-    .desc = A sign indicating the chemistry lab.
+ent-SignChem = placa da química
+    .desc = Uma placa que indica o laboratório químico.
 
-ent-SignChemistry1 = chemistry sign
-    .desc = A sign indicating the chemistry lab.
+ent-SignChemistry1 = placa da química
+    .desc = Uma placa que indica o laboratório químico.
 
-ent-SignChemistry2 = chemistry sign
-    .desc = A sign indicating the chemistry lab.
+ent-SignChemistry2 = placa da química
+    .desc = Uma placa que indica o laboratório químico.
 
-ent-SignCloning = cloning sign
-    .desc = A sign indicating the cloning lab.
+ent-SignCloning = placa de clonagem
+    .desc = Uma placa que indica o laboratório de clonagem.
 
-ent-SignConference = conference room sign
-    .desc = A sign indicating the conference room.
+ent-SignConference = placa da sala de conferência
+    .desc = Uma placa que indica a sala de conferência.
 
-ent-SignDisposalSpace = disposal sign
-    .desc = A sign indicating a disposal area.
+ent-SignDisposalSpace = placa de descarte e reciclagem
+    .desc = Uma placa que indica a sala de descarte e reciclagem.
 
-ent-SignDoors = doors sign
-    .desc = A sign indicating doors.
+ent-SignDoors = placa de portas
+    .desc = Uma placa que indica portas.
 
-ent-SignDrones = drones sign
-    .desc = A sign indicating drones.
+ent-SignDrones = placa de drones
+    .desc = Uma placa que indica o armazém de drones.
 
-ent-SignEngine = engine sign
-    .desc = A sign indicating the engine room.
+ent-SignEngine = placa de gerador
+    .desc = Uma placa que indica o pavilhão dos geradores.
 
-ent-SignEngineering = engineering sign
-    .desc = A sign indicating the engineering area.
+ent-SignEngineering = placa da engenharia
+    .desc = Uma placa que indica o departamento de engenharia.
 
-ent-SignEscapePods = escape pods sign
-    .desc = A sign indicating the escape pods.
+ent-SignEscapePods = placa das cápsulas de fuga
+    .desc = Uma placa que indica cápsulas de fuga.
 
-ent-SignEVA = EVA sign
-    .desc = A sign indicating an EVA area. EVA equipment may be required beyond this point.
+ent-SignEVA = placa de EVA
+    .desc = Uma placa que indica a presença ou necessidade de um trage de atividade extraveicular.
 
-ent-SignElectrical = electrical sign
-    .desc = A sign indicating an electrical hazard.
+ent-SignElectrical = placa de perigo elétrico
+    .desc = Uma placa que indica um perigo de eletrocutação.
 
-ent-SignExamroom = examination room sign
-    .desc = A sign indicating a medical examination room.
+ent-SignExamroom = placa de sala de triagem
+    .desc = Uma placa que indica a sala de triagem médica.
 
-ent-SignFire = fire sign
-    .desc = A sign indicating a fire hazard.
+ent-SignFire = placa de perigo de incêndio
+    .desc = Uma placa que indica um perigo de incêndio.
 
-ent-SignGravity = gravity sign
-    .desc = A sign indicating the gravity generator.
+ent-SignGravity = placa do gerador de gravidade
+    .desc = Uma placa que indica o gerador de gravidade.
 
-ent-SignHead = head sign
-    .desc = A sign with a hat on it.
+ent-SignHead = placa de cabeça
+    .desc = Uma placa com um chapéu.
 
-ent-SignHydro1 = hydro sign
-    .desc = A sign indicating a hydroponics area.
+ent-SignHydro1 = placa da hidroponia
+    .desc = Uma placa que indica a área de hidroponia.
 
-ent-SignHydro2 = hydro sign
-    .desc = A sign indicating a hydroponics area.
+ent-SignHydro2 = placa da hidroponia
+    .desc = Uma placa que indica a área de hidroponia.
 
-ent-SignHydro3 = hydro sign
-    .desc = A sign indicating a hydroponics area.
+ent-SignHydro3 = placa da hidroponia
+    .desc = Uma placa que indica a área de hidroponia.
 
-ent-SignInterrogation = interrogation sign
-    .desc = A sign indicating an interrogation room.
+ent-SignInterrogation = placa da sala de interrogação
+    .desc = Uma placa que indica a sala de interrogação.
 
-ent-SignLibrary = library sign
-    .desc = A sign indicating the library.
+ent-SignLibrary = placa da bibliotéca
+    .desc = Uma placa que indica a biblioteca.
 
-ent-SignMail = mail sign
-    .desc = A sign indicating mail.
+ent-SignMail = placa dos correios
+    .desc = Uma placa que indica o escritório de correios.
 
-ent-SignMedical = medbay sign
-    .desc = A sign indicating the medical bay.
+ent-SignMedical = placa do hospital
+    .desc = Uma placa que indica o departamento médico.
 
-ent-SignMinerDock = miner dock sign
-    .desc = A sign indicating the miner dock.
+ent-SignMinerDock = placa de doca de mineração
+    .desc = Uma placa que indica a doca de mineração.
 
-ent-SignMorgue = morgue sign
-    .desc = A sign indicating the morgue.
+ent-SignMorgue = placa do necrotério
+    .desc = Uma placa que indica o necrotério.
 
-ent-SignNosmoking = nosmoking sign
-    .desc = A sign indicating that smoking is not allowed in the vicinity.
+ent-SignNosmoking = placa de proibido fumar
+    .desc = Uma placa que indica que fumar é probido.
 
-ent-SignPrison = prison sign
-    .desc = A sign indicating the prison.
+ent-SignPrison = placa da prisão
+    .desc = Uma placa que indica a prisão.
 
-ent-SignRND = research and development sign
-    .desc = A sign indicating the research and development lab.
+ent-SignRND = placa da pesquisa e desenvolvimento
+    .desc = Uma placa que indica a ala de pesquisa e desenvolvimento.
 
-ent-SignRobo = robo sign
-    .desc = A sign indicating the robotics lab.
+ent-SignRobo = placa da robótica
+    .desc = Uma placa que indica a sala de robótica.
 
-ent-SignScience = epistemics sign
-    .desc = A sign indicating the epistemics area.
+ent-SignScience = placa da pesquisa e desenvolvimento
+    .desc = Uma placa que indica a ala de pesquisa e desenvolvimento.
 
-ent-SignScience1 = epistemics sign
-    .desc = A sign indicating the epistemics area.
+ent-SignScience1 = placa da pesquisa e desenvolvimento
+    .desc = Uma placa que indica a ala de pesquisa e desenvolvimento.
 
-ent-SignScience2 = epistemics sign
-    .desc = A sign indicating the epistemics area.
+ent-SignScience2 = placa da pesquisa e desenvolvimento
+    .desc = Uma placa que indica a ala de pesquisa e desenvolvimento.
 
-ent-SignShield = shield sign
-    .desc = A sign with a shield.
+ent-SignShield = placa de escudo
+    .desc = Uma placa com um escudo.
 
-ent-SignShipDock = docking sign
-    .desc = A sign indicating the ship docking area.
+ent-SignShipDock = placa de área de docagem
+    .desc = Uma placa que indica uma área de docagem de embarcações.
 
-ent-SignSpace = space sign
-    .desc = A sign warning that the area ahead is nothing but cold, empty space.
+ent-SignSpace = placa de espaço sideral
+    .desc = Uma placa que avisa que em frente só existe o vazio do espaço sideral.
 
-ent-SignSurgery = surgery sign
-    .desc = A sign indicating the operating theater.
+ent-SignSurgery = placa da sala de cirurgia
+    .desc = Uma placa que indica a sala de cirugia.
 
-ent-SignTelecomms = telecomms sign
-    .desc = A sign indicating the telecommunications room.
+ent-SignTelecomms = placa da sala de telecomunicações
+    .desc = Uma placa que indica a sala de telecomunicações.
 
-ent-SignToxins = toxins sign
-    .desc = A sign indicating the toxin lab.
+ent-SignToxins = placa do laboratório de toxinas
+    .desc = Uma placa que indica o laboratório de toxinas.
 
-ent-SignToxins2 = toxins sign
-    .desc = A sign indicating the toxin lab.
+ent-SignToxins2 = placa do laboratório de toxinas
+    .desc = Uma placa que indica o laboratório de toxinas.
 
-ent-SignVirology = virology sign
-    .desc = A sign indicating the virology lab.
+ent-SignVirology = placa do laboratório de virologia
+    .desc = Uma placa que indica o laboratório de pesquisa patológica.
 
-ent-SignCorrosives = corrosives warning sign
-    .desc = A sign indicating a corrosive materials hazard.
+ent-SignCorrosives = placa de perigo de substâncias corrosivas
+    .desc = Uma placa que indica a presença de substâncias corrosivas.
 
-ent-SignCryogenics = cryogenics warning sign
-    .desc = A sign indicating a cryogenic materials hazard. Bring a jacket!
+ent-SignCryogenics = placa de perigo criogênico
+    .desc = Uma placa que indica a presença de materiais criogênicos, traga um casaco!
 
-ent-SignDanger = danger warning sign
-    .desc = A sign warning against some danger.
+ent-SignDanger = placa de perigo
+    .desc = Essa placa significa PE-RI-GO!.
 
-ent-SignExplosives = explosives warning sign
-    .desc = A sign indicating an explosive materials hazard.
+ent-SignExplosives = placa de perigo de materiais explosivos
+    .desc = Uma placa que indica a presença de materiais explosivos.
 
-ent-SignFlammable = flammable warning sign
-    .desc = A sign indicating a flammable materials hazard.
+ent-SignFlammable = placa de perigo de substâncias inflamáveis
+    .desc = Uma placa que indica a presença de substâncias inflamáveis.
 
-ent-SignLaser = laser warning sign
-    .desc = A sign indicating a laser hazard.
+ent-SignLaser = placa de perigo de lasers
+    .desc = Uma placa que indica a presença de lasers, uso de proteção óptica obrigatória.
 
-ent-SignMagnetics = magnetics warning sign
-    .desc = A sign indicating a magnetic materials hazard.
+ent-SignMagnetics = placa de perigo magnético
+    .desc = Uma placa que indica a presença de campos magnéticos poderosos.
 
-ent-SignMemetic = memetic warning sign
-    .desc = A sign indicating a memetic hazard.
+ent-SignMemetic = placa de perigo psíquico
+    .desc = Uma placa que indica fontes de ondas psíquicas.
 
-ent-SignSecure = secure sign
-    .desc = A sign indicating that the area ahead is a secure area.
+ent-SignSecure = placa de área segura
+    .desc = Uma placa que indica que a área a seguir é restrita.
 
-ent-SignSecurearea = secure area sign
-    .desc = A sign indicating that the area ahead is a secure area.
+ent-SignSecurearea = placa de área segura
+    .desc = Uma placa que indica que a área a seguir é restrita.
 
-ent-SignShock = shock sign
-    .desc = A sign indicating an electical hazard.
+ent-SignShock = placa de perigo elétrico
+    .desc = Uma placa que indica um perigo de eletrocutação.
 
-ent-SignOptical = optical warning sign
-    .desc = A sign indicating against optical radiation.
+ent-SignOptical = placa de perigo de radiação óptica
+    .desc = Uma placa que indica a presença de raios de luz cegante.
 
-ent-SignOxidants = oxidants warning sign
-    .desc = A sign indicating against oxidzing agents.
+ent-SignOxidants = placa de perigo de substâncias oxidantes
+    .desc = Uma placa que indica a presença de substâncias oxidantes.
 
-ent-SignRadiation = radiation warning sign
-    .desc = A sign indicating against ionizing radiation.
+ent-SignRadiation = placa de perigo radioativo
+    .desc = Uma placa que indica a presença de radiação ionizante.
 
-ent-SignXenobio = xenobio sign
-    .desc = A sign indicating the xenobiology lab.
+ent-SignXenobio = placa do laboratório de xenobiologia
+    .desc = Uma placa que indica o laboratório de xenobiologia.
 
-ent-SignXenobio2 = xenobio sign
-    .desc = A sign indicating the xenobiology lab.
+ent-SignXenobio2 = placa do laboratório de xenobiologia
+    .desc = Uma placa que indica o laboratório de xenobiologia.
 
-ent-SignXenolab = xenolab sign
-    .desc = A sign indicating the xenobiology lab.
+ent-SignXenolab = placa do laboratório de xenobiologia
+    .desc = Uma placa que indica o laboratório de xenobiologia.
 
-ent-SignZomlab = zombie lab sign
-    .desc = A sign indicating the zombie lab.
+ent-SignZomlab = placa do laboratório de zumbis
+    .desc = Uma placa que indica um laboratório que pesquisa zumbis.
 
-ent-SignSecureMedRed = red secure sign
-    .desc = A sign indicating that the area ahead is a secure area.
+ent-SignSecureMedRed = placa de área segura
+    .desc = Uma placa que indica que a área a seguir é restrita.
 
-ent-SignSecureSmall = small secure sign
-    .desc = A sign indicating that the area ahead is a secure area.
+ent-SignSecureSmall = placa de área segura
+    .desc = Uma placa que indica que a área a seguir é restrita.
 
-ent-SignSecureSmallRed = small red secure sign
-    .desc = A sign indicating that the area ahead is a secure area.
+ent-SignSecureSmallRed = placa de área segura
+    .desc = Uma placa que indica que a área a seguir é restrita.
 
-ent-SignBlankMed = blank sign
-    .desc = A blank sign.
+ent-SignBlankMed = placa em branco
+    .desc = Uma placa em branco.
 
-ent-SignMagneticsMed = magnetics sign
-    .desc = A sign indicating the use of magnets.
+ent-SignMagneticsMed = placa de aviso de imãs
+    .desc = Uma placa que indica the use of magnets.
 
-ent-SignDangerMed = danger sign
-    .desc = A sign warning against some form of danger.
+ent-SignDangerMed = placa de perigo
+    .desc = Uma placa que indica perigo.
 
-ent-ExplosivesSignMed = explosives sign
-    .desc = A sign indicating explosive materials.
+ent-ExplosivesSignMed = placa de perigo de materiais explosivos
+    .desc = Uma placa que indica a presença de materiais explosivos.
 
-ent-SignCryogenicsMed = cryogenics sign
-    .desc = A sign indicating cryogenic materials.
+ent-SignCryogenicsMed = placa de perigo criogênico
+    .desc = Uma placa que indica a presença de materiais criogênicos, traga um casaco!
 
-ent-SignElectricalMed = electrical sign
-    .desc = A sign indicating an electrical hazard.
+ent-SignElectricalMed = placa de perigo elétrico
+    .desc = Uma placa que indica um perigo de eletrocutação.
 
-ent-SignBiohazardMed = biohazard sign
-    .desc = A sign indicating a biohazard.
+ent-SignBiohazardMed = placa de perigo biológico
+    .desc = Uma placa que indica um perigo biológico.
 
-ent-SignRadiationMed = radiation sign
-    .desc = A sign warning against ionizing radiation.
+ent-SignRadiationMed = placa de perigo radioativo
+    .desc = Uma placa que indica a presença de radiação ionizante.
 
-ent-SignFlammableMed = flammable sign
-    .desc = A sign indicating flammable materials.
+ent-SignFlammableMed = placa de perigo de substâncias inflamáveis
+    .desc = Uma placa que indica a presença de substâncias inflamáveis.
 
-ent-SignLaserMed = laser sign
-    .desc = A sign indicating a laser hazard.
+ent-SignLaserMed = placa de perigo de lasers
+    .desc = Uma placa que indica a presença de lasers, uso de proteção óptica obrigatória.
 
-ent-SignSecureMed = secure sign
-    .desc = A sign indicating that the area ahead is a secure area.
+ent-SignSecureMed = placa de área segura
+    .desc = Uma placa que indica que a área a seguir é restrita.
 
-ent-WarningAir = air warning sign
-    .desc = WARNING! Air flow tube. Ensure the flow is disengaged before working.
+ent-WarningAir = placa de aviso de vazão atmosférico
+    .desc = ATENÇÃO! Tubulação de vazão atmosférica. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningCO2 = CO2 warning sign
-    .desc = WARNING! CO2 flow tube. Ensure the flow is disengaged before working.
+ent-WarningCO2 = placa de aviso de CO2
+    .desc = ATENÇÃO! Tubulação de vazão de dióxido de carbono. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningN2 = N2 warning sign
-    .desc = WARNING! N2 flow tube. Ensure the flow is disengaged before working.
+ent-WarningN2 = placa de aviso de N2
+    .desc = ATENÇÃO! Tubulação de vazão de nitrogênio. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningN2O = N2O warning sign
-    .desc = WARNING! N2O flow tube. Ensure the flow is disengaged before working.
+ent-WarningN2O = placa de aviso de N2O
+    .desc = ATENÇÃO! Tubulação de vazão óxido nitroso. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningO2 = O2 warning sign
-    .desc = WARNING! O2 flow tube. Ensure the flow is disengaged before working.
+ent-WarningO2 = placa de aviso de O2
+    .desc = ATENÇÃO! Tubulação de vazão de oxigênio. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningPlasma = plasma waste sign
-    .desc = WARNING! Plasma flow tube. Ensure the flow is disengaged before working.
+ent-WarningPlasma = placa de aviso de plasma
+    .desc = ATENÇÃO! Tubulação de vazão de plasma. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningTritium = tritium waste sign
-    .desc = WARNING! Tritium flow tube. Ensure the flow is disengaged before working.
+ent-WarningTritium = placa de aviso de trítio
+    .desc = ATENÇÃO! Tubulação de vazão de trítio. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-WarningWaste = atmos waste sign
-    .desc = WARNING! Waste flow tube. Ensure the flow is disengaged before working.
+ent-WarningWaste = placa de aviso de gases filtrados
+    .desc = ATENÇÃO! Tubulação de vazão de gases filtrados. Certifique-se que a vazão foi interrompida antes de trabalhar.
 
-ent-SignSmoking = no smoking sign
-    .desc = A warning sign which reads 'NO SMOKING'
+ent-SignSmoking = placa de proibido fumar
+    .desc = Uma placa que indica que fumar é probido.
 
-ent-SignSomethingOld = old sign
-    .desc = Technical information of some sort, shame its too worn-out to read.
+ent-SignSomethingOld = placa velha
+    .desc = Contém informação sobre alguma coisa. Ja está desgastada demais para ler.
 
-ent-SignSomethingOld2 = old sign
-    .desc = Looks like a planet crashing by some station above it. Its kinda scary.
+ent-SignSomethingOld2 = placa velha
+    .desc = Contém uma imagem de um planeta colidindo contra a estação. Um pouco preucupante.
 
-ent-SignSecurity = security sign
-    .desc = A sign depicting the security insignia.
+ent-SignSecurity = placa da segurança
+    .desc = Uma placa que apresenta uma insígnia da segurança.
 
-ent-SignPlaque = golden plaque
-    .desc = A prestigious golden plaque.
+ent-SignPlaque = placa dourada
+    .desc = Uma placa dourada ostentosa.
 
-ent-SignKiddiePlaque = kiddie plaque
-    .desc = A modest plaque.
+ent-SignKiddiePlaque = placa modesta
+    .desc = Uma placa modesta para um a pessoa modesta
 
-ent-SignNanotrasen1 = nanotrasen sign 1
-    .desc = Part 1.
+ent-SignNanotrasen1 = placa da Nanotrasen 1
+    .desc = Parte 1.
 
-ent-SignNanotrasen2 = nanotrasen sign 2
-    .desc = Part 2.
+ent-SignNanotrasen2 = placa da Nanotrasen 2
+    .desc = Parte 2.
 
-ent-SignNanotrasen3 = nanotrasen sign 3
-    .desc = Part 3.
+ent-SignNanotrasen3 = placa da Nanotrasen 3
+    .desc = Parte 3.
 
-ent-SignNanotrasen4 = nanotrasen sign 4
-    .desc = Part 4.
+ent-SignNanotrasen4 = placa da Nanotrasen 4
+    .desc = Parte 4.
 
-ent-SignNanotrasen5 = nanotrasen sign 5
-    .desc = Part 5.
+ent-SignNanotrasen5 = placa da Nanotrasen 5
+    .desc = Parte 5.
 

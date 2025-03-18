@@ -13,5 +13,5 @@ ent-VehicleSecway = secway
 ent-VehicleATV = ATV
      .desc = Veículo todo em bloco.
 
-ent-VehicleSyndicateSegway = sindicato segway
+ent-VehicleSyndicateSegway = Sindicato segway
      .desc = Seja um inimigo da corporação, com estilo.

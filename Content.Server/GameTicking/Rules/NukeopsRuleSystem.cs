@@ -1,3 +1,5 @@
+using Content.Server._DV.Objectives.Components; // DeltaV
+using Content.Server._DV.Objectives.Systems; // DeltaV
 using Content.Server.Antag;
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
@@ -40,6 +42,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly KidnapHeadsConditionSystem _kidnap = default!; // DeltaV
+    [Dependency] private readonly SharedMapSystem _map = default!; // DeltaV
     // goob edit
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
@@ -60,6 +64,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         base.Initialize();
 
         SubscribeLocalEvent<NukeExplodedEvent>(OnNukeExploded);
+        SubscribeLocalEvent<NukeOpsShuttleComponent, FTLCompletedEvent>(OnFTLCompleted); // DeltaV - Kidnap heads objective
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
         SubscribeLocalEvent<NukeDisarmSuccessEvent>(OnNukeDisarm);
 
@@ -104,22 +109,22 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
-        var winText = Loc.GetString($"nukeops-{component.WinType.ToString().ToLower()}");
+        var winText = Loc.GetString($"{component.LocalePrefix}{component.WinType.ToString().ToLower()}");
         args.AddLine(winText);
 
         foreach (var cond in component.WinConditions)
         {
-            var text = Loc.GetString($"nukeops-cond-{cond.ToString().ToLower()}");
+            var text = Loc.GetString($"{component.LocalePrefix}cond-{cond.ToString().ToLower()}");
             args.AddLine(text);
         }
 
-        args.AddLine(Loc.GetString("nukeops-list-start"));
+        args.AddLine(Loc.GetString($"{component.LocalePrefix}list-start"));
 
         var antags =_antag.GetAntagIdentifiers(uid);
 
         foreach (var (_, sessionData, name) in antags)
         {
-            args.AddLine(Loc.GetString("nukeops-list-name-user", ("name", name), ("user", sessionData.UserName)));
+            args.AddLine(Loc.GetString($"{component.LocalePrefix}list-name-user", ("name", name), ("user", sessionData.UserName)));
         }
     }
 
@@ -164,6 +169,34 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             }
 
             _roundEndSystem.EndRound();
+        }
+    }
+
+    // DeltaV - Kidnap heads nukie objective
+    private void OnFTLCompleted(Entity<NukeOpsShuttleComponent> ent, ref FTLCompletedEvent args)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out var uid, out _, out var nukeops, out _))
+        {
+            // Get the nukie outpost map.
+            if (!TryComp<RuleGridsComponent>(uid, out var ruleGridsComp) || ruleGridsComp.Map == null)
+                return;
+
+            // Make sure your on the same map as the nukie outposts map.
+            if (args.MapUid == _map.GetMap(ruleGridsComp.Map.Value))
+            {
+                // Now check of the kidnap heads objective is complete... (Yes this is suspect)
+                var objectives = EntityQueryEnumerator<KidnapHeadsConditionComponent>();
+                if (!objectives.MoveNext(out var objUid, out var kidnapHeads)) // No kidnap head objectives
+                    return;
+
+                if (!_kidnap.IsCompleted((objUid, kidnapHeads)))
+                    return;
+
+                nukeops.WinConditions.Add(WinCondition.NukiesKidnappedHeads);
+                SetWinType((uid, nukeops), WinType.OpsMajor);
+                _roundEndSystem.EndRound();
+            }
         }
     }
 
@@ -325,7 +358,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             {
                 // Nukies must wait some time after declaration of war to get on the station
                 var warTime = Timing.CurTime.Subtract(nukeops.WarDeclaredTime.Value);
-                if (warTime < nukeops.WarNukieArriveDelay)
+                if (warTime < nukeops.WarEvacShuttleDisabled)
                 {
                     ev.Cancelled = true;
                     ev.Reason = Loc.GetString("war-ops-shuttle-call-unavailable");
@@ -409,8 +442,9 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         var nukiesCount = EntityQuery<NukeopsRoleComponent>().Count();
         if (nukiesCount == 0)
             return rule.WarTcAmountPerNukie;
-        var playersCount = Math.Max(0, _playerManager.Sessions.Length - nukiesCount);
-        var maxNukies = playersCount / rule.WarNukiePlayerRatio;
+        var totalPlayersCount = _antag.GetTotalPlayerCount(_playerManager.Sessions);
+        var playersCount = Math.Max(0, totalPlayersCount - nukiesCount);
+        var maxNukies = totalPlayersCount / rule.WarNukiePlayerRatio;
         var nukiesMissing = Math.Max(0, maxNukies - nukiesCount);
         var totalBonus = playersCount * rule.WarTcPerPlayer;
         totalBonus += nukiesMissing * rule.WarTcPerNukieMissing;
@@ -504,7 +538,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         var target = (ent.Comp.TargetStation is not null) ? Name(ent.Comp.TargetStation.Value) : "the target";
 
         _antag.SendBriefing(args.Session,
-            Loc.GetString("nukeops-welcome",
+            Loc.GetString($"{ent.Comp.LocalePrefix}welcome",
                 ("station", target),
                 ("name", Name(ent))),
             Color.Red,
@@ -514,7 +548,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     private void OnGetBriefing(Entity<NukeopsRoleComponent> role, ref GetBriefingEvent args)
     {
         // TODO Different character screen briefing for the 3 nukie types
-        args.Append(Loc.GetString("nukeops-briefing"));
+        args.Append(Loc.GetString("nukeops-briefing")); // TODO: Goobstation: somehow pass the nukeopsrulecomponent here so we can change this based on LocalePrefix for Honkops.
     }
 
     /// <remarks>

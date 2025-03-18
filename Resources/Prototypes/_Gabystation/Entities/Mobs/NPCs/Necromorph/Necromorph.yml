@@ -2,11 +2,11 @@
   name: Carcaça
   parent: SimpleMobBase
   id: NecromorphSlasherCorpo
-  description: É melhor se livrar dessa coisa o quanto antes. #só pra assustar, no fim não fazem nada
+  description: Contem um couro extremamente valioso para Nanotrasen! # dinheiro
   components:
   - type: MovementSpeedModifier
     baseWalkSpeed : 0.1
-    baseSprintSpeed : 0.1 #"eles se mexeram?", quero fazer jogadores pensarem nisso
+    baseSprintSpeed : 0.2 # "eles se mexeram?", quero fazer jogadores pensarem nisso
   - type: Sprite
     drawdepth: Mobs
     sprite: _Gabystation/Mobs/Necromorphs/Slasher.rsi
@@ -28,8 +28,8 @@
     thresholds:
       0: Alive
       50: Dead
-  - type: MobPrice 
-    price: 4000 #money, money
+  - type: MobPrice
+    price: 5000 #money, money
 
 - type: entity
   parent:
@@ -51,11 +51,11 @@
       true
     useSound:
       path: /Audio/Items/crowbar.ogg
-  - type: SpamEmitSound #gritam em constante agonia
-    sound:
-      params:
-        volume: -8
-      collection: NecromorphScreams
+#  - type: SpamEmitSound #gritam em constante agonia
+#    sound:
+#      params:
+#        volume: -8
+#      collection: NecromorphScreams
   - type: Sprite
     drawdepth: Mobs
     sprite: _Gabystation/Mobs/Necromorphs/Slasher.rsi
@@ -99,7 +99,7 @@
       types:
         Slash: 5
         Piercing: 10
-        Structural: 20 
+        Structural: 20
   - type: Destructible
     thresholds:
     - trigger:
@@ -117,7 +117,7 @@
   coefficients:
     Blunt: 0.7
     Slash: 1.4 #mesmo assim não recomendo ir no X1 usando uma faquinha, apenas os robustos conseguem.
-    Piercing: 0.4 #balas realmente fazem cocegas. 
+    Piercing: 0.4 #balas realmente fazem cocegas.
     Cold: 0.0 # Não existe arma que cause dano de frio, né? Por enquanto...
     Heat: 1.25
     Poison: 0.5

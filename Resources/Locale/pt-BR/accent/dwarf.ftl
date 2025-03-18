@@ -361,10 +361,10 @@ accent-dwarf-words-120 = syndie
 accent-dwarf-words-replace-120 = baddie
 
 accent-dwarf-words-121 = more
-accent-dwarf-words-replace-120 = maer
+accent-dwarf-words-replace-121 = maer
 
 accent-dwarf-words-122 = moreover
-accent-dwarf-words-replace-120 = maero'er
+accent-dwarf-words-replace-122 = maero'er
 
 accent-dwarf-words-123 = over
-accent-dwarf-words-replace-120 = o'er
+accent-dwarf-words-replace-123 = o'er

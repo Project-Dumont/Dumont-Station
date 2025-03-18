@@ -34,14 +34,14 @@ ent-ClothingUniformJumpskirtEngineering = saia de engenharia
 ent-ClothingUniformJumpskirtHoP = saia do chefe de funcionários
     .desc = Bastante brando e inofensivo. Perfeito para desaparecer da face do universo.
 
-ent-ClothingUniformJumpskirtHoS = saia do chefe de segurança
+ent-ClothingUniformJumpskirtHoS = saia do segurança chefe
     .desc = É vermelho brilhante e bastante nítido, assim como as vítimas de segurança tendem a ser.
 
-ent-ClothingUniformJumpskirtHoSAlt = gola alta do chefe de segurança
-    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Chefe de Segurança. Seu tecido resistente oferece menor proteção contra danos mecânicos.
+ent-ClothingUniformJumpskirtHoSAlt = gola alta do segurança chefe
+    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Segurança Chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
 
 ent-ClothingUniformJumpskirtHoSParadeMale = uniforme de desfile do chefe da segurança
-    .desc = Um chefe de segurança de roupas de luxo, para ocasiões especiais.
+    .desc = Um segurança chefe de roupas de luxo, para ocasiões especiais.
 
 ent-ClothingUniformJumpskirtHydroponics = saia hidropônica
     .desc = Tem um forte cheiro de terra. Esperançosamente, está apenas sujo, em vez de sujo.
@@ -130,14 +130,14 @@ ent-ClothingUniformJumpskirtPerformer = saia do artista
 ent-ClothingUniformJumpskirtCapFormalDress = vestido formal do capitão
     .desc = Um vestido para ocasiões especiais.
 
-ent-ClothingUniformJumpskirtCentcomFormalDress = vestido formal de comando central
+ent-ClothingUniformJumpskirtCentcomFormalDress = vestido formal de  Central de Comando
     .desc = Um vestido para ocasiões especiais
 
 ent-ClothingUniformJumpskirtHosFormal = vestido formal de hos
     .desc = Um vestido para ocasiões especiais.
 
 ent-ClothingUniformJumpskirtOperative = saia de operativa
-    .desc = Uniforme para agentes de sindicatos de elite realizando operações táticas no espaço profundo.
+    .desc = Uniforme para agentes de Sindicatos de elite realizando operações táticas no espaço profundo.
 
 ent-ClothingUniformJumpskirtAtmos = saia técnico atmosférico
     .desc = estou no trabalho. Não posso sair do trabalho. O trabalho está respirando. Estou testando a qualidade do ar.

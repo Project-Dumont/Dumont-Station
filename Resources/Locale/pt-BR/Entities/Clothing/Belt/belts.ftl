@@ -1,7 +1,7 @@
 ent-ClothingBeltUtility = cinto de ferramentas
     .desc = Pode armazenar diversas coisas.
 
-ent-ClothingBeltChiefEngineer = cinto do chefe engenheiro
+ent-ClothingBeltChiefEngineer = cinto do engenheiro chefe
     .desc = Segura ferramentas, tem uma aparência elegante.
 
 ent-ClothingBeltAssault = cinto tático
@@ -31,7 +31,7 @@ ent-ClothingBeltChampion = cinturão de ouro
 ent-ClothingBeltHolster = coldre
     .desc = Um coldre capaz de suportar uma pistola e munição. AVISO: Somente para os mais fodas!
 
-ent-ClothingBeltSyndieHolster = coldre do sindicato
+ent-ClothingBeltSyndieHolster = coldre do Sindicato
     .desc = Um coldre capaz de suportar armamentos e munição.
 
 ent-ClothingBeltSecurityWebbing = colete tático de segurança
@@ -52,5 +52,5 @@ ent-ClothingBeltWand = cinto de varinhas mágicas
 ent-ClothingBeltMercWebbing = colete tático mercenário
     .desc = Segura para que precisar para combate.
 
-ent-ClothingBeltSalvageWebbing = colete de exploração
+ent-ClothingBeltSalvageWebbing = colete de explorador
     .desc = Sistema perfeito para guardar essenciais para trabalho no espaço.

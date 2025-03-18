@@ -4,16 +4,16 @@ ent-ClothingMaskGas = máscara de gás
 ent-ClothingMaskGasSecurity = máscara de gás da segurança
     .desc = Equipamento padrão da Segurança.
 
-ent-ClothingMaskGasSyndicate = máscara de gás do sindicato
+ent-ClothingMaskGasSyndicate = máscara de gás do Sindicato
     .desc = Uma máscara de gás tática que pode ser conectada a um Tanque de Oxigênio.
 
-ent-ClothingMaskGasAtmos = máscara de gás atmosférica
+ent-ClothingMaskGasAtmos = máscara de gás da atmosférica
     .desc = Uma máscara de gás mais tecnológica, é aprova de chamas!
 
 ent-ClothingMaskGasCaptain = máscara de gás do capitão
     .desc = Uma máscara mais refinada e tecnológica, ou deveria ser...
 
-ent-ClothingMaskGasCentcom = máscara de gás da centcom
+ent-ClothingMaskGasCentcom = máscara de gás da Central de Comando
     .desc = Eita! Verde e dourada.. Linda! Deve ser muito útil pra quem fica o dia inteiro sentado em um escritório.
 
 ent-ClothingMaskGasExplorer = máscara de gás de explorador

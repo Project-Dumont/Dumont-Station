@@ -227,6 +227,9 @@
       "name": "pda-seniorofficer"
     },
     {
+      "name": "harmony-pda-prisoner"
+    },
+    {
       "name": "equipped-IDCARD",
       "directions": 4
     }

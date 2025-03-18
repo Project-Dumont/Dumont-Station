@@ -44,7 +44,7 @@ ent-PosterContrabandEAT = EAT.
     .desc = This poster promotes rank gluttony.
 
 ent-PosterContrabandTools = Tools
-    .desc = This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentCom.
+    .desc = This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentComm.
 
 ent-PosterContrabandPower = Power
     .desc = A poster that positions the seat of power outside Nanotrasen.
@@ -65,7 +65,7 @@ ent-PosterContrabandBorgFancyv2 = Borg Fancy v2
     .desc = Borg Fancy, Now only taking the most fancy.
 
 ent-PosterContrabandKosmicheskayaStantsiya = Kosmicheskaya Stantsiya 13 Does Not Exist
-    .desc = A poster mocking CentCom's denial of the existence of the derelict station near Space Station 13.
+    .desc = A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13.
 
 ent-PosterContrabandRebelsUnite = Rebels Unite
     .desc = A poster urging the viewer to rebel against Nanotrasen.
@@ -101,7 +101,7 @@ ent-PosterContrabandTheGriffin = The Griffin
     .desc = The Griffin commands you to be the worst you can be. Will you?
 
 ent-PosterContrabandFreeDrone = Free Drone
-    .desc = This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentCom.
+    .desc = This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm.
 
 ent-PosterContrabandBustyBackdoorExoBabes6 = Busty Backdoor Exo Babes 6
     .desc = Get a load, or give, of these all natural Exos!
@@ -140,7 +140,7 @@ ent-PosterContrabandBountyHunters = Bounty Hunters
     .desc = A poster advertising bounty hunting services. "I hear you got a problem."
 
 ent-PosterContrabandTheBigGasTruth = The Big Gas Giant Truth
-    .desc = Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOM?
+    .desc = Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CentComm?
 
 ent-PosterContrabandGotWood = Got Wood?
     .desc = A grimy old advert for a seedy lumber company. "You got a friend in me." is scrawled in the corner.

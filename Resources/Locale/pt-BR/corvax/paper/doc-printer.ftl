@@ -231,9 +231,9 @@ doc-text-printer-ApplicationAppointmentInterim =
     Posição do redator:
 
     Eu, (NOME), no cargo de (nome completo do cargo), solicito a aprovação da minha nomeação para o cargo de Interino Chefe (nome completo do departamento)/Capitão.
-    Ao assumir o cargo, comprometo-me a seguir os Procedimentos Operacionais Padrão e, até a chegada do Chefe (nome completo do departamento)/Capitão do Comando Central, garantir a ordem e a gestão do departamento, assegurando a preservação dos itens especialmente valiosos e equipamentos confiados a mim.
+    Ao assumir o cargo, comprometo-me a seguir os Procedimentos Operacionais Padrão e, até a chegada do Chefe (nome completo do departamento)/Capitão da  Central de Comando, garantir a ordem e a gestão do departamento, assegurando a preservação dos itens especialmente valiosos e equipamentos confiados a mim.
 
-    Na chegada do Chefe do departamento/Capitão do Comando Central, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
+    Na chegada do Chefe do departamento/Capitão da  Central de Comando, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ApplicationEmployment =
@@ -343,7 +343,7 @@ doc-text-printer-EvacuationShuttleRequest =
     Redator do documento:
     Posição do redator:
 
-    Respeitável Comando Central! Eu, (NOME), no cargo de (nome completo do cargo), solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
+    Respeitável  Central de Comando! Eu, (NOME), no cargo de (nome completo do cargo), solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
     Motivo para o encerramento do turno:
 
     =============================================
@@ -921,7 +921,7 @@ doc-text-printer-OrderingSpecialEquipment =
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), solicito o fornecimento de equipamento especial para a estação pelo Comando Central.
+    Eu, (NOME), no cargo de (nome completo do cargo), solicito o fornecimento de equipamento especial para a estação pela  Central de Comando.
     Lista do equipamento solicitado:
 
     Razão da solicitação:

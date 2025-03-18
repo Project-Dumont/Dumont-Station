@@ -25,5 +25,5 @@ reagent-desc-fresium = Um composto misterioso que retarda a vibração de átomo
 reagent-name-laughter = Risadas
 reagent-desc-laughter = Alguns dizem que é o melhor remédio, mas estudos recentes provaram que isso não é verdade.
 
-reagent-name-laughter = suco que faz você Weh
-reagent-desc-laughter = Essência pura de pelúcia de lagarto. Faz você Weh!
+reagent-name-hew = suco que faz você Weh
+reagent-desc-hew = Essência pura de pelúcia de lagarto. Faz você Weh!

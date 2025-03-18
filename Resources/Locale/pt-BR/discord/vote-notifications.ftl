@@ -1,4 +1,4 @@
-custom-vote-webhook-name = Custom Vote Held
+custom-vote-webhook-name = Votação Personalizada Realizada
 custom-vote-webhook-footer = server: { $serverName }, round: { $roundId } { $runLevel }
 custom-vote-webhook-cancelled = **Votacao cancelada**
 custom-vote-webhook-option-pending = TBD

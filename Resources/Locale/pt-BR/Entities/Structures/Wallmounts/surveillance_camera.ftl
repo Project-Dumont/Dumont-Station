@@ -21,10 +21,6 @@ ent-SurveillanceCameraSupply = camera
     .desc = Uma câmera de vigilância. Está te observando. Tipo.
     .suffix = Supply
 
-ent-SurveillanceCameraScience = camera
-    .desc = Uma câmera de vigilância. Está te observando. Tipo.
-    .suffix = Science
-
 ent-SurveillanceCameraCommand = camera
     .desc = Uma câmera de vigilância. Está te observando. Tipo.
     .suffix = Command

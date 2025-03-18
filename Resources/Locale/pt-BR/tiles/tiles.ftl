@@ -57,7 +57,6 @@ tiles-clown-floor = piso de palhaço
 tiles-brass-plating = chapa de latão
 tiles-brass-floor-filled = chapa de latão cheio
 tiles-brass-floor-reebe = chapa de latão liso
-tiles-brass-plating = chapa de latão
 tiles-mime-floor = piso de mimico
 tiles-kitchen-floor = piso de cozinha
 tiles-laundry-floor = piso de lavanderia

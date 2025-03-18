@@ -1,12 +1,12 @@
-- type: trait
-  id: Dementia
-  name: trait-dementia-name
-  description: trait-dementia-desc
-  category: SpeechTraits
-  cost: 1
-  components:
-  - type: ReplacementAccent
-    accent: dementia
+#- type: trait
+#  id: Dementia
+#  name: trait-dementia-name
+#  description: trait-dementia-desc
+#  category: SpeechTraits
+#  cost: 1
+#  components:
+#  - type: ReplacementAccent
+#    accent: dementia
 
 - type: trait
   id: ScottishAccent
@@ -18,12 +18,30 @@
   - type: ReplacementAccent
     accent: scottish
 
+#- type: trait
+#  id: Bogan
+#  name: trait-bogan-name
+#  description: trait-bogan-desc
+#  category: SpeechTraits
+#  cost: 1
+#  components:
+#  - type: ReplacementAccent
+#    accent: bogan
+
 - type: trait
-  id: Bogan
-  name: trait-bogan-name
-  description: trait-bogan-desc
+  id: MaoistAccent
+  name: trait-maoist-accent-name
+  description: trait-maoist-accent-desc
   category: SpeechTraits
   cost: 1
   components:
-  - type: ReplacementAccent
-    accent: bogan
+  - type: MaoistAccent
+
+- type: trait
+  id: MedievalAccent
+  name: trait-medieval-accent-name
+  description: trait-medieval-accent-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: MedievalAccent

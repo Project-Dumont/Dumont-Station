@@ -26,7 +26,7 @@
     </ColorBox>
     <ColorBox>
       <Box>
-        5-XX - Capital
+        V Degree
       </Box>
     </ColorBox>
     <ColorBox>
@@ -34,7 +34,7 @@
         Code
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Crueldade Animal
       </Box>
@@ -61,7 +61,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        00
+        I
       </Box>
     </ColorBox>
     <ColorBox Color="#2f3832">
@@ -79,17 +79,19 @@
         Posse: Sindicato (P)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Unlawful Control/Kidnapping/Hostage Taking
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2f3832">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Prevention of Revival
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        01
+        II
       </Box>
     </ColorBox>
     <ColorBox Color="#2e422e">
@@ -97,8 +99,9 @@
         Roubo Menor (H)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Endangerment
       </Box>
     </ColorBox>
     <ColorBox Color="#2e422e">
@@ -106,18 +109,19 @@
         Roubo Maior (H)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Sequestro
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Refusal of Mental Shielding
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        02
+        III
       </Box>
     </ColorBox>
     <ColorBox Color="#453a59">
@@ -146,7 +150,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        03
+        IV
       </Box>
     </ColorBox>
     <ColorBox Color="#59563a">
@@ -154,8 +158,9 @@
         Invasão (T)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Restricted Gear
       </Box>
     </ColorBox>
     <ColorBox Color="#59563a">
@@ -173,7 +178,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        04
+        V
       </Box>
     </ColorBox>
     <ColorBox>
@@ -190,19 +195,19 @@
         Agressão (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Tentativa de Assassinato (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Prevenção de Ressuscitação (V)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        05
+        VI
       </Box>
     </ColorBox>
     <ColorBox>
@@ -218,22 +223,22 @@
         Homicídio Culposo (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Homicídio Doloso (V)
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Chacina (V)
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        06
+        VII
       </Box>
     </ColorBox>
-    <ColorBox Color="#3b4354">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Distúrbio da Paz (R)
       </Box>
@@ -257,7 +262,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        07
+        VIII
       </Box>
     </ColorBox>
   </Table>
@@ -270,9 +275,7 @@
   they can still be charged with terrorism. Does not apply to crimes that have an attempted listing already,
   like attempted murder.
 
-  ## Stackable Crimes: Crimes are to be considered ‘stackable’
-  in the sense that if you charge someone with two or more different crimes,
-  you should combine the times you would give them for each crime.
+  - Stackable Crimes: Crimes are to be considered 'stackable' in the sense that if you charge someone with two or more different crimes, you should combine the times you would give them for each crime.
 
   <Table Columns="5">
     <ColorBox>
@@ -299,7 +302,7 @@
         Código
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Crueldade Animal
       </Box>
@@ -320,10 +323,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-00
+        I-I
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Posse / Uso de Contrabando Menor
       </Box>
@@ -344,10 +347,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-01
+        I-II
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Roubo Menor
       </Box>
@@ -369,7 +372,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-02
+        I-III
       </Box>
     </ColorBox>
     <ColorBox>
@@ -417,10 +420,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-04
+        I-IV
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Distúrbio da Paz
       </Box>
@@ -442,7 +445,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-07
+       I-V
       </Box>
     </ColorBox>
   </Table>
@@ -475,13 +478,13 @@
         Código
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Falha em Cooperar
       </Box>
     </ColorBox><ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2:00
+        3:00
       </Box>
     </ColorBox>
     <ColorBox>
@@ -496,7 +499,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-00
+        II-I
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2f3832">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Damage/Destruction of Property
       </Box>
     </ColorBox>
     <ColorBox>
@@ -520,7 +528,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-01
+        4:00
       </Box>
     </ColorBox>
     <ColorBox>
@@ -544,7 +552,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-03
+        To resist reasonable orders given by an authority. This extends to warrants and authorized searches.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -568,7 +576,32 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-05
+        II-V
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#4d2e2e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Rioting
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To take part in a large group of personnel creating an unlawful public disturbance.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Crimes like damage of property or battery are expected to be thrown on top of this charge. Leaders of a riot can be charged with all crimes that happen under their lead.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        II-VI
       </Box>
     </ColorBox>
   </Table>
@@ -602,7 +635,7 @@
         Código
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Violação de Apreendimento
       </Box>
@@ -624,10 +657,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-00
+        III-I
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Posse / Uso de Contrabando do Sindicato
       </Box>
@@ -648,10 +681,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-01
+        III-II
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Roubo Maior
       </Box>
@@ -674,10 +707,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-02
+        III-III
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Destruição em Massa
       </Box>
@@ -698,10 +731,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-03
+        III-IV
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Invasão de Alto-Risco
       </Box>
@@ -722,10 +755,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-04
+        III-V
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Agressão
       </Box>
@@ -747,10 +780,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-05
+        III-VI
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Homicídio Culposo
       </Box>
@@ -771,10 +804,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-06
+        III-VII
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#3b4354">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Rebelião
       </Box>
@@ -795,7 +828,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-07
+        III-VIII
       </Box>
     </ColorBox>
   </Table>
@@ -830,7 +863,7 @@
         Código
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Violação de Custódia
       </Box>
@@ -851,10 +884,10 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-00
+        IV-I
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Sequestro
       </Box>
@@ -875,7 +908,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-02
+        IV-II
       </Box>
     </ColorBox>
     <ColorBox>
@@ -924,7 +957,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-06
+        IV-III
       </Box>
     </ColorBox>
   </Table>
@@ -970,7 +1003,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-00
+        V-I
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2f3832">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Prevention of Revival
       </Box>
     </ColorBox>
     <ColorBox>
@@ -990,7 +1028,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-03
+        V-II
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Refusal of Mental Shielding
       </Box>
     </ColorBox>
     <ColorBox>
@@ -1010,7 +1053,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-05
+        V-III
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#453a59">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Terrorism
       </Box>
     </ColorBox>
     <ColorBox>
@@ -1030,7 +1078,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-06
+        V-IV
       </Box>
     </ColorBox>
   </Table>

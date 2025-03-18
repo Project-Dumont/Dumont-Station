@@ -55,9 +55,10 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ -1, -1 ]
             Lawyer: [ 3, 3 ]
+            PermaPrisoner: [ 5, 5 ] # Gaby
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
+            SalvageSpecialist: [ 8, 8 ]
             CargoTechnician: [ -1, -1 ]
             #civilian
             Passenger: [ -1, -1 ]

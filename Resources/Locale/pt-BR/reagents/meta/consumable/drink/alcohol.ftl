@@ -223,7 +223,7 @@ reagent-desc-snow-white = Um refresco frio.
 reagent-name-sui-dream = sui dream
 reagent-desc-sui-dream = 'Comprometido de: refri branco, curaçau, midori.'
 
-reagent-name-syndicate-bomb = bomba do sindicato
+reagent-name-syndicate-bomb = bomba do Sindicato
 reagent-desc-syndicate-bomb = Alguém planta a bomba!
 
 reagent-name-tequila-sunrise = tequila sunrise

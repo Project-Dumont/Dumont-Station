@@ -110,7 +110,7 @@ uplink-holster-name = Coldre de Ombro
 uplink-holster-desc = Um coldre de ombro profundo capaz de segurar muitos tipos de balística.
 
 uplink-emag-name = Emag
-uplink-emag-desc = O cartão de visita do sindicato, este sequenciador é capaz de quebrar as portas e adulterar uma variedade de dispositivos de estação. Recarga automaticamente.
+uplink-emag-desc = O cartão de visita do Sindicato, este sequenciador é capaz de quebrar as portas e adulterar uma variedade de dispositivos de estação. Recarga automaticamente.
 
 uplink-agent-id-card-name = Cartão de ID do Agente
 uplink-agent-id-card-desc = Um cartão de ID modificado que pode copiar acessos de outros cartões e alterar o nome e o título da tarefa à vontade.
@@ -146,7 +146,7 @@ uplink-voice-mask-name = Máscara de Voz
 uplink-voice-mask-desc = Uma máscara de gás que permite ajustar a sua voz para quem quer que possa pensar. Também utiliza tecnologia camaleão de ponta.
 
 uplink-clothing-eyes-hud-syndicate-name = Visor do Sindicato
-uplink-clothing-eyes-hud-syndicate-desc = O head-up display profissional do sindicato, projetado para melhor detecção de humanóides e sua posterior eliminação.
+uplink-clothing-eyes-hud-syndicate-desc = O head-up display profissional do Sindicato, projetado para melhor detecção de humanóides e sua posterior eliminação.
 
 uplink-radio-jammer-name = Bloqueador de rádio
 uplink-radio-jammer-desc = Este dispositivo interromperá qualquer comunicação de rádio de saída próxima, bem como sensores de traje quando ativado.
@@ -180,7 +180,7 @@ uplink-uplink-implanter-name = Implante de Uplink
 uplink-uplink-implanter-desc = Encomende equipamentos furtivamente sem a necessidade de um PDA. Engula telecristais para completar o uplink.
 
 uplink-deathrattle-implant-name = Caixa de Implantes Deathrattle
-uplink-deathrattle-implant-desc = Uma caixa contendo implantes deathrattle suficientes para todo o esquadrão. Retransmite uma mensagem contendo sua posição para o canal do sindicato quando você entra em um estado crítico ou morre.
+uplink-deathrattle-implant-desc = Uma caixa contendo implantes deathrattle suficientes para todo o esquadrão. Retransmite uma mensagem contendo sua posição para o canal do Sindicato quando você entra em um estado crítico ou morre.
 
 uplink-death-acidifier-implant-name = Implante de Acidificador Morte
 uplink-death-acidifier-implant-desc = Derrete completamente o usuário e seu equipamento após uso ou morte.
@@ -279,7 +279,7 @@ uplink-proximity-mine-name = Mina de Proximidade
 uplink-proximity-mine-desc = Uma mina disfarçada de sinal de chão molhado.
 
 uplink-disposable-turret-name = Torreta Balística
-uplink-disposable-turret-desc = Parece e funciona como uma caixa de ferramentas elétricas normal. Ao acertar a caixa de ferramentas, ele se transformará em uma torre balística, teoricamente atirando em qualquer pessoa, exceto membros do sindicato. Pode ser transformado de volta em uma caixa de ferramentas usando uma chave de fenda e reparado usando uma chave inglesa.
+uplink-disposable-turret-desc = Parece e funciona como uma caixa de ferramentas elétricas normal. Ao acertar a caixa de ferramentas, ele se transformará em uma torre balística, teoricamente atirando em qualquer pessoa, exceto membros do Sindicato. Pode ser transformado de volta em uma caixa de ferramentas usando uma chave de fenda e reparado usando uma chave inglesa.
 
 uplink-cluster-banana-peel-name = Grenada de Banana Cluster
 uplink-cluster-banana-peel-desc = Divide-se em 6 cascas de banana explosivas após serem lançadas, as cascas detonam automaticamente após 20 segundos se ninguém escorregar nelas.
@@ -310,7 +310,7 @@ uplink-hardsuit-syndieelite-name = Hardsuit Elite do Sindicato
 uplink-hardsuit-syndieelite-desc = Uma versão elite do hardsuit vermelho-sangue, com maior mobilidade e resistência ao fogo. Propriedade dos Saqueadores Gorlex.
 
 uplink-clothing-outer-hardsuit-juggernaut-name = Traje Cybersun Demolidor
-uplink-clothing-outer-hardsuit-juggernaut-desc = Armadura hiper-resistente feita de materiais testados na instalação da cromosfera Tau. A unica coisa que vai te atrasar é próprio traje...e tasers.
+uplink-clothing-outer-hardsuit-juggernaut-desc = hardsuit hiper-resistente feita de materiais testados na instalação da cromosfera Tau. A unica coisa que vai te atrasar é próprio traje...e tasers.
 
 # Misc/noct
 uplink-cyberpen-name = Caneta Cybersun
@@ -384,7 +384,7 @@ uplink-outlaw-glasses-name = Óculos fora da lei
 uplink-outlaw-glasses-desc = Uma obrigação para cada agente secreto que se preze.
 
 uplink-costume-pyjama-name = Mala de Pijama do Sindicato
-uplink-costume-pyjama-desc = Contém 3 pares de pijamas do sindicato e 3 pelúcias para a melhor festa do pijama.
+uplink-costume-pyjama-desc = Contém 3 pares de pijamas do Sindicato e 3 pelúcias para a melhor festa do pijama.
 
 uplink-costume-clown-name = Mala de Traje de Palhaço
 uplink-costume-clown-desc = Contém um traje completo de palhaço. Inclui PDA e rádio de serviço.
@@ -405,7 +405,7 @@ uplink-scarf-syndie-red-name = Lenço vermelho Sindicato listrado
 uplink-scarf-syndie-red-desc = Um cachecol listrado vermelho estiloso. O acessório de inverno perfeito para quem tem um senso de moda aguçado e quem está com vontade de roubar alguma coisa.
 
 uplink-scarf-syndie-green-name = Cachecol listrado verde Sindicato
-uplink-scarf-syndie-green-desc = Um elegante cachecol listrado verde sindicato. O acessório de inverno perfeito para quem tem um senso de moda aguçado e quem está com vontade de roubar alguma coisa.
+uplink-scarf-syndie-green-desc = Um elegante cachecol listrado verde Sindicato. O acessório de inverno perfeito para quem tem um senso de moda aguçado e quem está com vontade de roubar alguma coisa.
 
 uplink-syndicate-pai-name = IA pessoal do Sindicato
 uplink-syndicate-pai-desc = Uma variante do IAp feita pelo Sindicato com acesso ao canal de rádio Syndie. Não garantimos a sua utilidade.

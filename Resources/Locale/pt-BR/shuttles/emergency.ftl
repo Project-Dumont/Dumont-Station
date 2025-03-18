@@ -11,7 +11,7 @@ emergency-shuttle-command-dock-desc = Chama a nave de emergência e doca ela à 
 emergency-shuttle-command-launch-desc = Lança a nave de emergência antes, se possível.
 
 # Emergency shuttle
-emergency-shuttle-left = A nave de emergência saiu da estação. Estima-se {$transitTime} segundos até que a nave chegue à CentCom.
+emergency-shuttle-left = A nave de emergência saiu da estação. Estima-se {$transitTime} segundos até que a nave chegue à Central de Comando.
 emergency-shuttle-launch-time = A nave de emergência vai partir em {$consoleAccumulator} segundos.
 emergency-shuttle-docked = A nave de emergência docou na estação no lado {$direction}. Ela vai sair em {$time} segundos.
 emergency-shuttle-good-luck = A nave de emergência não conseguiu achar uma estação. Boa sorte.

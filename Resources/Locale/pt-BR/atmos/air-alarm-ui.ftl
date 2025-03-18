@@ -28,8 +28,6 @@ air-alarm-ui-window-tab-sensors = Sensores
 
 air-alarm-ui-gases = {$gas}: {$amount} mol ({$percentage}%)
 air-alarm-ui-gases-indicator = {$gas}: [color={$color}]{$amount} mol ({$percentage}%)[/color]
-air-alarm-ui-window-temperature = {$tempC} C ({$temperature} K)
-air-alarm-ui-window-alarm-state = {$state}
 
 air-alarm-ui-mode-filtering = Filtragem
 air-alarm-ui-mode-wide-filtering = Filtragem (wide)

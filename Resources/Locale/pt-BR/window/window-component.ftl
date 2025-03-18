@@ -11,4 +11,4 @@ comp-window-damaged-6 = Está extremamente rachado e à beira de quebrar.
 ### Interaction Messages
 
 # Shown when knocking on a window
-comp-window-knock = *Toque Toque*
+comp-window-knock = *toc toc*

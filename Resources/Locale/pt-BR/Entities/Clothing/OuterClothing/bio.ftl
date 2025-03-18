@@ -1,24 +1,24 @@
-ent-ClothingOuterBioGeneral = traje de bioproteção
+ent-ClothingOuterBioGeneral = macacão para perigo biológico
     .desc = Um traje que protege o usuário contra qualquer tipo de ameaça biológica.
     .suffix = Generic
 
-ent-ClothingOuterBioCmo = traje de bioproteção
+ent-ClothingOuterBioCmo = macacão para perigo biológico
     .desc = Um traje que protege o usuário contra qualquer tipo de ameaça biológica. Em cores médicas.
     .suffix = CMO
 
-ent-ClothingOuterBioJanitor = traje de bioproteção
+ent-ClothingOuterBioJanitor = macacão para perigo biológico
     .desc = Um traje que protege o usuário contra qualquer tipo de ameaça biológica. Em cores de zelador.
     .suffix = Janitor
 
-ent-ClothingOuterBioScientist = traje de bioproteção
+ent-ClothingOuterBioScientist = macacão para perigo biológico
     .desc = Um traje que protege o usuário contra qualquer tipo de ameaça biológica. Em cores de cientista.
     .suffix = Science
 
-ent-ClothingOuterBioSecurity = traje de bioproteção
+ent-ClothingOuterBioSecurity = macacão para perigo biológico
     .desc = Um traje que protege o usuário contra qualquer tipo de ameaça biológica. Em cores de segurança.
     .suffix = Security
 
-ent-ClothingOuterBioVirology = traje de bioproteção
+ent-ClothingOuterBioVirology = macacão para perigo biológico
     .desc = Um traje que protege o usuário contra qualquer tipo de ameaça biológica. Em cores de virologia.
     .suffix = Virology
 

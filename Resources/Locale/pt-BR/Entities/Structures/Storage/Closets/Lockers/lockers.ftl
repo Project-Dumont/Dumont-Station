@@ -1,7 +1,7 @@
 ent-LockerBooze = booze storage
     .desc = This is where the bartender keeps the booze.
 
-ent-LockerQuarterMaster = quartermaster's locker
+ent-LockerQuarterMaster = intendente logístico's locker
     .desc = This is where the bartender keeps the booze.
 
 ent-LockerSalvageSpecialist = salvage specialist's equipment

@@ -8,6 +8,9 @@
     state: rods
   - type: Item
     sprite: Objects/Materials/parts.rsi
+  - type: Tag
+    tags:
+      - DroneUsable # Goobstation
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
@@ -38,6 +41,11 @@
     - rods_3
     - rods_4
     - rods_5
+  # Goobstation - Custom stack splitting dialog
+  - type: UserInterface
+    interfaces:
+      enum.StackCustomSplitUiKey.Key:
+        type: StackCustomSplitBoundUserInterface
   - type: Sprite
     state: rods_5
     layers:
@@ -45,7 +53,7 @@
       map: ["base"]
   - type: Item
     size: Normal
-#    heldPrefix: rods
+    heldPrefix: rods
   - type: Construction
     graph: MetalRod
     node: MetalRod
@@ -68,6 +76,9 @@
           Quantity: 4.5
         - ReagentId: Carbon
           Quantity: 0.5
+  - type: GuideHelp
+    guides:
+    - ExpandingRepairingStation
 
 - type: entity
   parent: PartRodMetal
@@ -78,6 +89,7 @@
   - type: Tag
     tags:
     - RodMetal1
+    - DroneUsable # Goobstation
   - type: Sprite
     state: rods
   - type: Stack
@@ -92,6 +104,7 @@
   - type: Tag
     tags:
     - RodMetal1
+    - DroneUsable # Goobstation
   - type: Sprite
     state: rods
   - type: Stack

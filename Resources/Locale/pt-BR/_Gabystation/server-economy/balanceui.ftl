@@ -11,14 +11,14 @@ gs-balanceui-shop-label = Loja
 gs-balanceui-shop-empty = Fora de estoque!
 gs-balanceui-shop-buy = Comprar
 gs-balanceui-shop-footer = ⚠ Contacte um administrador para a ultilização
-                        da sua compra
+                        da sua compra. (Uso limitado a um por dia.)
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titulos
 
-gs-balanceui-shop-buy-token-antag = Comprar antag token - 250 Gaby Coins
-gs-balanceui-shop-buy-token-ghost = Comprar ghost role token - 350 Gaby Coins
-gs-balanceui-shop-buy-token-event = Comprar event token - 100 Gaby Coins
+gs-balanceui-shop-buy-token-antag = Comprar antag token - 325 Gaby Coins
+gs-balanceui-shop-buy-token-ghost = Comprar ghost role token - 450 Gaby Coins
+gs-balanceui-shop-buy-token-event = Comprar event token - 150 Gaby Coins
 
 gs-balanceui-admin-add-label = Adicionar (ou diminuir) dinheiro:
 gs-balanceui-admin-add-player = Nome do jogador

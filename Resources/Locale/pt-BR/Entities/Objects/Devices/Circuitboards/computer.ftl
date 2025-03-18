@@ -46,8 +46,8 @@ ent-BodyScannerComputerCircuitboard = placa de computador de avaliação médica
 ent-CommsComputerCircuitboard = placa de computador de comunicação
     .desc = Uma placa de circuito impresso para um computador de comunicação.
 
-ent-SyndicateCommsComputerCircuitboard = placa de computador de comunicação do sindicato
-    .desc = Uma placa de circuito impresso para um computador de comunicação do sindicato.
+ent-SyndicateCommsComputerCircuitboard = placa de computador de comunicação do Sindicato
+    .desc = Uma placa de circuito impresso para um computador de comunicação do Sindicato.
 
 ent-RadarConsoleCircuitboard = placa de computador do radar
     .desc = Uma placa de circuito impresso para um computador do radar.
@@ -67,8 +67,8 @@ ent-ParticleAcceleratorComputerCircuitboard = placa de computador de controle do
 ent-ShuttleConsoleCircuitboard = placa de console de nave
     .desc = Uma placa de circuito impresso para um console de nave, para pilotar uma nave.
 
-ent-SyndicateShuttleConsoleCircuitboard = placa de console de nave do sindicato
-    .desc = Uma placa de circuito impresso para um console de nave do sindicato, para pilotar uma nave do sindicato.
+ent-SyndicateShuttleConsoleCircuitboard = placa de console de nave do Sindicato
+    .desc = Uma placa de circuito impresso para um console de nave do Sindicato, para pilotar uma nave do Sindicato.
 
 ent-CloningConsoleComputerCircuitboard = placa de console de clonagem
     .desc = Uma placa de circuito impresso para um console de clonagem.

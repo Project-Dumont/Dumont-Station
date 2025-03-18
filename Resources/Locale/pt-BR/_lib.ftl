@@ -32,6 +32,55 @@ zzzz-fmt-power-joules = { TOSTRING($divided, "F1") } { $places ->
     *[5] ???
 }
 
+# Usado internamente pela função ARTIGO-UM().
+zzzz-artigo-indefinido = { GENDER($ent) ->
+    *[male] um
+    [female] uma
+    [neuter] ume
+}
+
+# Usado internamente pela função ARTIGO-O().
+zzzz-artigo-definido = { GENDER($ent) ->
+    *[male] o
+    [female] a
+    [neuter] { "" }
+}
+
+# Usado internamente pela função PREPOSICAO-DE().
+zzzz-preposicao-de = { GENDER($ent) ->
+    *[male] do
+    [female] da
+    [neuter] de
+}
+
+# Usado internamente pela função PREPOSICAO-EM().
+zzzz-preposicao-em = { GENDER($ent) ->
+    *[male] no
+    [female] na
+    [neuter] em
+}
+
+# Usado internamente pela função PRONOME-ELE().
+zzzz-pronome-ele = { GENDER($ent) ->
+    *[male] ele
+    [female] ela
+    [neuter] elu
+}
+
+# Usado internamente pela função PRONOME-DELE().
+zzzz-pronome-dele = { GENDER($ent) ->
+    *[male] dele
+    [female] dela
+    [neuter] delu
+}
+
+# Usado internamente pela função MAKEGENDER()
+zzzz-genero-terminacao = { GENDER($ent) ->
+    *[male] o
+    [female] a
+    [neuter] e
+}
+
 # Used internally by the THE() function.
 zzzz-the = { PROPER($ent) ->
    *[false] o { $ent }
@@ -43,7 +92,7 @@ zzzz-subject-pronoun = { GENDER($ent) ->
    *[male] ele
     [female] ela
     [epicene] eles
-    [neuter] elas
+    [neuter] elo
    }
 
 # Used internally by the OBJECT() function.
@@ -51,7 +100,7 @@ zzzz-object-pronoun = { GENDER($ent) ->
    *[male] dele
     [female] dela
     [epicene] deles
-    [neuter] delas
+    [neuter] delo
    }
 
 # Used internally by the POSS-PRONOUN() function.
@@ -59,7 +108,7 @@ zzzz-possessive-pronoun = { GENDER($ent) ->
    *[male] dele
     [female] dela
     [epicene] deles
-    [neuter] delas
+    [neuter] delos
    }
 
 # Used internally by the POSS-ADJ() function.
@@ -67,7 +116,7 @@ zzzz-possessive-adjective = { GENDER($ent) ->
    *[male] seu
     [female] sua
     [epicene] seus
-    [neuter] suas
+    [neuter] seu
    }
 
 # Used internally by the REFLEXIVE() function.
@@ -75,7 +124,7 @@ zzzz-reflexive-pronoun = { GENDER($ent) ->
    *[male] ele mesmo
     [female] ela mesma
     [epicene] eles mesmos
-    [neuter] elas mesmas
+    [neuter] elos mesmos
    }
 
 # Used internally by the CONJUGATE-BE() function.

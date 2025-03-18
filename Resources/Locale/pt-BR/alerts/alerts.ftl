@@ -57,9 +57,6 @@ alerts-no-battery-desc = Você não tem uma bateria, o que lhe torna incapaz de 
 alerts-internals-name = Alternar internos
 alerts-internals-desc = Ativa ou desativa os componentes internos do tanque de gasolina.
 
-alerts-internals-name = Alternar internos
-alerts-internals-desc = Ativa ou desativa os componentes internos do tanque de gasolina.
-
 alerts-piloting-name = Ônibus Piloto
 alerts-piloting-desc = Você está pilotando um ônibus espacial. Clique no alerta para parar.
 

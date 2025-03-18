@@ -11,7 +11,7 @@ ent-ToolboxArtistic = toolbox artística
      .desc = Uma caixa de ferramentas normalmente repleta de materiais artísticos.
 
 ent-ToolboxSyndicate = toolbox suspeita
-     .desc = Uma caixa de ferramentas de aparência sinistra repleta de ferramentas de sindicato de elite.
+     .desc = Uma caixa de ferramentas de aparência sinistra repleta de ferramentas de Sindicato de elite.
 
 ent-ToolboxGolden = toolbox dourada
      .desc = Uma caixa de ferramentas de ouro maciço. Um rapper mataria por isso.

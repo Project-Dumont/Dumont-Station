@@ -1,0 +1,46 @@
+<Document>
+## Cadeia de Comando
+A cadeia de comando indica qual oficial tem autoridade sobre quais outros tripulantes e oficiais da estação, sou seja, quem manda em quem. Ordens dadas por oficiais com mais autoridade [bold]não devem ser negadas por seus subordinados[/bold], a não ser quando a ordem demonstra clara imprudência, negligência ou ignorância.
+
+A cadeia de comando segue:
+
+Capitão > Demais Comandantes > Empregados Departamentais > Assistentes > Silícios.
+
+O Representante da Nanotrasen [bold]não segura autoridade[/bold] sobre nenhum dos tripulantes da estação, mas é aconselhado que todos ouçam e [bold]considerem sua palavra ao tomar decisões[/bold].
+
+## Sucessão de Comando
+Indica qual oficial deve tomar o cargo de [bold]Capitão Interino ou Comandante em Chefe Interino[/bold] em caso que o Capitão oficial não esteja presente, ou seja, o segundo, terceiro, e assim vai, imediato da estação. Resumidamente, a sucessão segue:
+
+1.	Se o Capitão oficial está disponível, ele continua sendo o Capitão. Caso cointrário, veja o próximo item.
+
+2.	Se o Chefe dos Funcionários está disponível, ele se torna o Capitão Interino. Caso cointrário veja o próximo item.
+
+3.	Todos os comandantes devem votar entre si para eleger um novo Capitão Interino. Se só há 1 comandante disponível, ele se torna o Capitão Interino. Se nenhum está disponível, veja o próximo passo.
+
+4.	Se nenhum comandante está disponível ou disposto, a Central de Comando deve ser contatada, ou [bold]se a maioria da tripulação concordar[/bold], chame a evacuação.
+
+[bold]Somente comandantes[/bold] podem se tornar o Capitão Interino, demais tripulantes não são permitidos tomar o cargo. O [bold]Representante Nanotrasen[/bold] e [bold]Blueshield[/bold] são dignatários e [bold]não podem tomar o cargo[/bold]. O Assistente Administrativo não é apto para o cargo.
+<Box>
+Caso deseja promover tripulantes a cargos de chefe de departamento, consulte promoções e demissões.
+</Box>
+
+## Áreas de Alta Segurança
+Essas áreas devem ser trancadas e protegidas em certas situações, códigos de alerta ou quando à ameaça direta de sabotagem ou terrorismo. O acesso a esses compartimentos costuma ser restrito a comandantes e funcionarios do departamento autorizados. São incluídas na lista de áreas de alta segurança:
+
+[bullet/] [bold]Arsenal de armas[/bold]: Somente seguranças com permissão do carcereiro ou segurança chefe podem acessar.
+
+[bullet/] [bold]Cofre[/bold]: Somente comandantes tem acesso.
+
+[bullet/] [bold]Ponte de comando[/bold]: Somente comandantes tem acesso.
+
+[bullet/] [bold]Quartos e escritórios de comandantes[/bold]: Somente o comandante relevante tem acesso.
+
+[bullet/] [bold]Pavilhão de atmosférica[/bold]: Somente o engenheiro chefe e técnicos atmosféricos tem acesso.
+
+[bullet/] [bold]Telecomunicações e roteadores de câmeras[/bold]: Somente o engenheiro chefe ou engenheiros com permissão do engenheiro chefe podem acessar.
+
+[bullet/] [bold]Gerador de gravidade[/bold]: Somente comandantes ou engenheiros autorizados podem acessar.
+
+[bullet/] [bold]Servidor de Pesquisa e Desenvolvimento[/bold]: Somente o diretor de pesquisas tem acesso.
+
+</Document>

@@ -68,11 +68,6 @@ petting-failure-cleanbot = Você tenta acariciar {THE($target)}, mas {SUBJECT($t
 petting-failure-mimebot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} {CONJUGATE-BE($target)} ocupado imitando!
 petting-failure-medibot = Você tenta acariciar {THE($target)}, mas {POSS-ADJ($target)} seringa quase fura sua mão!
 
-## Knocking on windows
-
-# Shown when knocking on a window
-comp-window-knock = *toc toc*
-
 ## Rattling fences
 
 fence-rattle-success = *chocalha*

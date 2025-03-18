@@ -14,7 +14,6 @@ admin-logs-select-none = Nenhum
 
 # Players
 admin-logs-search-players-placeholder = Procurar Jogadores (OR)
-admin-logs-select-none = Nenhum
 admin-logs-include-non-player = Incuir não-jogadores
 
 # Logs

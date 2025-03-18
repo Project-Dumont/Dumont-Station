@@ -16,7 +16,7 @@ ent-ClothingShoesGaloshes = galochas
 ent-ClothingShoesSpaceNinja = sapatos ninja do espaço
      .desc = Um par de botas nano-aprimoradas com ventosas magnéticas integradas.
 
-ent-ClothingShoesSwat = sapatos swat
+ent-ClothingShoesSwat = sapatos da swat
      .desc = Quando quiser aumentar o calor.
 
 ent-ClothingShoesWizard = sapatos de mago

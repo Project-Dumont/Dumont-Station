@@ -3,4 +3,4 @@ ent-Cigarette = cigarro
 
 ent-CigaretteSyndicate = cigarro
      .desc = Um rolo de tabaco e nicotina.
-     .suffix = sindicato
+     .suffix = Sindicato

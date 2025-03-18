@@ -315,7 +315,7 @@ chatsan-word-113 = dnv
 chatsan-replacement-113 = de novo
 
 chatsan-word-114 = qm
-chatsan-replacement-114 = Intendente de Carga
+chatsan-replacement-114 = intendente logístico
 
 chatsan-word-115 = ce
 chatsan-replacement-115 = Engenheiro Chefe
@@ -324,7 +324,7 @@ chatsan-word-116 = cmo
 chatsan-replacement-116 = Médico Chefe
 
 chatsan-word-117 = rd
-chatsan-replacement-117 = Diretor de Pesquisas
+chatsan-replacement-117 = diretor de pesquisa
 
 chatsan-word-118 = hos
 chatsan-replacement-118 = Chefe da Segurança

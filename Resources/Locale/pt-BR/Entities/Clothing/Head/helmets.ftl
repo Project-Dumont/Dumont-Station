@@ -22,7 +22,7 @@ ent-ClothingHeadHelmetScaf = capacete scaf
 ent-ClothingHeadHelmetSpaceNinja = capacete de ninja espacial
     .desc = Apesar de aparentar ser um simples capacete, ele na verdade é feito de nanofibras, facilitando o movimento do usuário e aumentando a sua agilidade.
 
-ent-ClothingHeadHelmetSyndicate = capacete eva do sindicato
+ent-ClothingHeadHelmetSyndicate = capacete eva do Sindicato
     .desc = Um capacete forte e robusto.
 
 ent-ClothingHeadHelmetTemplar = elmo de templário
@@ -41,7 +41,7 @@ ent-ClothingHeadHelmetAtmosFire = capacete de bombeiro atmos
     .desc = Em caso de emergências, dê o fora daqui!
 
 ent-ClothingHeadHelmetLing = capacete quitinoso
-    .desc = Infla o corpo do metamofo em uma massa quitinosa de armadura.
+    .desc = Infla o corpo do metamofo em uma armadura quitinosa.
 
 ent-ClothingHeadHelmetVoidParamed = capacete de paramédico espacial
     .desc = Disk 193, os médicos irão até outra galáxia para te resgatar.
@@ -61,19 +61,19 @@ ent-ClothingHeadHelmetSwatSyndicate = capacete SWAT
 ent-ClothingHeadHelmetJanitorBombSuit = capacete anti-bombas de limpeza
     .desc = Um capacete pesado projetado para resistir a explosões formadas de reações entre substâncias químicas.
 
-ent-ClothingHeadHelmetERTLeader = capacete ERT Líder
+ent-ClothingHeadHelmetERTLeader = capacete da ERT Líder
     .desc = Um capacete selado, usado pelo líder de uma Equipe de Resposta a Tragédias da Nanotrasen. Possui detalhes em azul.
 
-ent-ClothingHeadHelmetERTSecurity = capacete ERT Segurança
+ent-ClothingHeadHelmetERTSecurity = capacete da ERT Segurança
     .desc = Um capacete selado, usado pelos membros de segurança de uma Equipe de Resposta a Tragédias da Nanotrasen. Possui detalhes em vermelho.
 
-ent-ClothingHeadHelmetERTMedic = capacete ERT Médico
+ent-ClothingHeadHelmetERTMedic = capacete da ERT Médico
     .desc = Um capacete selado, usado pelos membros médicos de uma Equipe de Resposta a Tragédias da Nanotrasen. Possui detalhes em branco.
 
-ent-ClothingHeadHelmetERTEngineer = capacete ERT Engenheiro
+ent-ClothingHeadHelmetERTEngineer = capacete da ERT Engenheiro
     .desc = Um capacete selado, usado pelos membros da engenharia de uma Equipe de Resposta a Tragédias da Nanotrasen. Possui detalhes em laranja.
 
-ent-ClothingHeadHelmetERTJanitor = capacete ERT Limpeza
+ent-ClothingHeadHelmetERTJanitor = capacete da ERT Limpeza
     .desc = Um capacete selado, usado pelos membros de limpeza de uma Equipe de Resposta a Tragédias da Nanotrasen. Possui detalhes em roxo escuro.
 
 ent-ClothingHeadHelmetBone = capacete de crânio

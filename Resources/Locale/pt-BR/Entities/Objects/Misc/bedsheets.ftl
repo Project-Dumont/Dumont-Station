@@ -16,7 +16,7 @@ ent-BedsheetCaptain = lençol do capitão
 ent-BedsheetCE = lençol do CE
      .desc = Está decorado com um emblema de chave inglesa. É altamente reflexivo e resistente a manchas, então você não precisa se preocupar em estragá-lo com óleo.
 
-ent-BedsheetCentcom = lençol do CentCom
+ent-BedsheetCentcom = lençol da Central de Comando
      .desc = Tecido com nanofio avançado para aquecer além de ser muito decorado, essencial para todos os oficiais.
 
 ent-BedsheetClown = lençol de palhaço
@@ -74,7 +74,7 @@ ent-BedsheetRed = lençol vermelho
      .desc = Um lençol de linho surpreendentemente macio.
 
 ent-BedsheetSyndie = lençol Syndie
-     .desc = Possui um emblema de sindicato e uma aura de maldade.
+     .desc = Possui um emblema de Sindicato e uma aura de maldade.
 
 ent-BedsheetUSA = lençol dos EUA
      .desc = Um lençol de linho surpreendentemente macio.

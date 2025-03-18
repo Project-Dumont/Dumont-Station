@@ -1,4 +1,3 @@
-using Content.Server._Goobstation.ServerCurrency;
 using Content.Shared.Administration;
 using Content.Server.Administration;
 using Robust.Shared.Console;
@@ -77,19 +76,18 @@ namespace Content.Server._Goobstation.ServerCurrency.Commands
                 shell.WriteError(Loc.GetString("server-currency-command-error-2"));
                 return;
             }
-            
+
             amount = Math.Abs(amount);
-            
+
             if (amount == 0)
                 amount = 1; // Trolled
-            
+
             if (!_currencyMan.CanAfford(shell.Player.UserId, amount, out int balance)){
                 shell.WriteError(Loc.GetString("server-currency-gift-command-error-2", ("balance", balance)));
                 return;
             }
 
-            _currencyMan.RemoveCurrency(shell.Player.UserId, amount);
-            _currencyMan.AddCurrency(targetPlayer, amount);
+            _currencyMan.TransferCurrency(shell.Player.UserId, targetPlayer, amount);
 
             var giver = Loc.GetString("server-currency-gift-command-giver", ("player", args[0]), ("amount", _currencyMan.Stringify(amount)));
             var reciever = Loc.GetString("server-currency-gift-command-reciever", ("player", shell.Player.Name), ("amount", _currencyMan.Stringify(amount)));
@@ -232,7 +230,8 @@ namespace Content.Server._Goobstation.ServerCurrency.Commands
                 return;
             }
 
-            var newCurrency = _currencyMan.Stringify(_currencyMan.SetBalance(targetPlayer, currency));
+            _currencyMan.SetBalance(targetPlayer, currency);
+            var newCurrency = _currencyMan.Stringify(currency);
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
         }
 

@@ -1,75 +1,75 @@
 <Document>
-  # Thieves
-  
+  # Ladrões
+
   <Box>
-    [color=#999999][italic]"Yoink! I'll be taking that! And that! Ooh, don't mind if I do!"[/italic][/color]
+    [color=#999999][italic]"Peguei! Vou levar isso! E aquilo! Ooh, não me importo se eu pegar isso também!"[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ClothingNeckCloakVoid" Caption=""/>
   </Box>
 
-  Thieves are petty yet crafty [color=green]criminals[/color] who can't keep their hands to themselves. You were forcefully given a [bold]pacifism implant[/bold] after your last arrest, but you won't let that stop you from trying to add to your collection.
+  Os ladrões são [color=green]criminosos[/color] pequenos, mas engenhosos, que não conseguem manter as mãos longe do que não lhes pertence. Você foi forçadamente implantado com um [bold]implante de pacifismo[/bold] após sua última prisão, mas isso não vai impedi-lo de tentar adicionar itens à sua coleção.
 
-  ## Art of the Steal
-  Unlike other antagonists, [bold]staying out of trouble is almost a requirement for you[/bold] because of your implant.
-  You can only run if [color=#cb0000]Security[/color] picks a fight with you, and because you work alone you don't have any friends to pull you out of danger.
+  ## A Arte do Roubo
+  Ao contrário de outros antagonistas, [bold]ficar fora de problemas é quase um requisito para você[/bold] devido ao seu implante.
+  Você só pode fugir se [color=#cb0000]a Segurança[/color] começar uma briga com você, e como trabalha sozinho, não tem amigos para tirá-lo de apuros.
 
-  But against all odds, you'll sucessfully swipe what you want using determination, sleight of hand, a few tools and your [color=cyan]thieving gloves.[/color]
+  Mas, contra todas as probabilidades, você conseguirá roubar o que quiser usando determinação, truques de prestidigitação, algumas ferramentas e suas [color=cyan]luvas de ladrão.[/color]
 
-  The pair of gloves you have give you a major advantage: [bold]the ability to take things off of people without them even noticing.[/bold] With a little practice, you can steal their wallet and keep up a conversation at the same time.
+  As luvas que você possui lhe dão uma grande vantagem: [bold]a habilidade de pegar coisas das pessoas sem que elas percebam.[/bold] Com um pouco de prática, você pode roubar suas carteiras enquanto continua a conversa.
 
-  They're also made of the highest quality [bold]holographic chameleon fibers[/bold] you could steal, but while they can take the appearance of insulated gloves you'll still need to find a real pair to keep your hands from burning.
+  Elas também são feitas com as [bold]fibras holográficas de camaleão[/bold] da mais alta qualidade que você conseguiu roubar, mas, embora possam parecer luvas isolantes, você ainda precisará encontrar um par real para proteger suas mãos de queimaduras.
 
   <Box>
-    <GuideEntityEmbed Entity="ClothingHandsChameleonThief" Caption="your thieving gloves"/>
+    <GuideEntityEmbed Entity="ClothingHandsChameleonThief" Caption="suas luvas de ladrão"/>
   </Box>
 
-  ## Tools of the Trade
-  You've got two more aces up your stolen sleeves: your [color=cyan]beacon[/color] and your [color=cyan]toolbox.[/color]
+  ## Ferramentas do Ofício
+  Você tem mais dois ases na manga: seu [color=cyan]beacon[/color] e sua [color=cyan]caixa de ferramentas.[/color]
 
-  Your [color=cyan]beacon[/color] provides safe passage home for trinkets that may not be easy to carry with you on the evac shuttle. Simply find a secluded part of the station to unfold the beacon, then set its coordinates to your hideout.
-  Any shinies near it will be [bold]teleported to your vault when the shift ends,[/bold] fulfilling your objectives.
+  Seu [color=cyan]beacon[/color] fornece uma passagem segura para casa para objetos que podem não ser fáceis de carregar com você no transporte de evacuação. Basta encontrar um lugar isolado na estação para abrir o beacon e definir suas coordenadas para seu esconderijo.
+  Quaisquer itens brilhantes próximos a ele serão [bold]teletransportados para seu cofre ao final do turno,[/bold] cumprindo seus objetivos.
 
-  However, this will instantly out you if found and make it extremely easy for people to reclaim their "missing" possessions. [bold]Make sure to hide it well![/bold]
+  No entanto, isso revelará imediatamente sua localização se for encontrado, tornando extremamente fácil para as pessoas recuperarem seus pertences "desaparecidos". [bold]Certifique-se de escondê-lo bem![/bold]
 
   <Box>
     <GuideEntityEmbed Entity="ThiefBeacon"/>
   </Box>
 
-  Your [color=cyan]toolbox[/color] contains... well, whatever you remembered to pack. [bold]You can select two pre-made kits[/bold] to help you complete grander heists.
-  Approve your choices in a safe place, as the toolbox will dissolve and the gear will drop at your feet.
+  Sua [color=cyan]caixa de ferramentas[/color] contém... bem, o que você lembrou de embalar. [bold]Você pode selecionar dois kits pré-fabricados[/bold] para ajudá-lo a completar roubos mais ambiciosos.
+  Aprove suas escolhas em um lugar seguro, pois a caixa de ferramentas se dissolverá e os equipamentos cairão aos seus pés.
 
   <Box>
     <GuideEntityEmbed Entity="ToolboxThief"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomy"/>
-    <GuideEntityEmbed Entity="C4" Caption="Breacher"/>
-    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Chameleon"/>
-    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Communicator"/>
+    <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomia"/>
+    <GuideEntityEmbed Entity="C4" Caption="Explosivo"/>
+    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Camaleão"/>
+    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Comunicador"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Sleeper"/>
-    <GuideEntityEmbed Entity="Emag" Caption="Smuggler"/>
-    <GuideEntityEmbed Entity="Telecrystal" Caption="Syndie"/>
+    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Adormecedor"/>
+    <GuideEntityEmbed Entity="Emag" Caption="Contrabandista"/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="Sindicalista"/>
   </Box>
 
-  ## Centerpiece of the Collection
-  Your kleptomania will take you places. One day, you'll feel like stealing a few figurines. Another day, you'll feel like stealing an industrial machine.
-  
-  No matter. They'll all be a part of your collection within a matter of time.
+  ## A Joia da Coleção
+  Sua cleptomania o levará a lugares. Um dia, você sentirá vontade de roubar algumas miniaturas. No outro, você desejará roubar uma máquina industrial.
 
-  You can steal items by [bold]having them on your person[/bold] when you get to CentComm. Failing this, you can steal larger items by [bold]leaving them by your beacon.[/bold]
+  Não importa. Todos farão parte de sua coleção em pouco tempo.
 
-  Some of the more [italic]animate[/italic] objectives may not cooperate with you. Make sure they're alive and with you or your beacon when the shift ends.
+  Você pode roubar itens ao [bold]tê-los em sua posse[/bold] quando chegar ao CentComm. Se isso não for possível, você pode roubar itens maiores ao [bold]deixá-los próximos ao seu beacon.[/bold]
 
-  Things that you may desire include but are not limited to:
-  
+  Alguns dos objetivos mais [italic]animados[/italic] podem não cooperar com você. Certifique-se de que eles estejam vivos e com você ou com seu beacon ao final do turno.
+
+  Coisas que você pode desejar incluem, mas não se limitam a:
+
   <Box>
-   <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Figurines"/>
-   <GuideEntityEmbed Entity="PassengerIDCard" Caption="ID cards"/>
-   <GuideEntityEmbed Entity="ChemDispenser" Caption="Structures"/>
-   <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animals/Pets"/>
+   <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Miniaturas"/>
+   <GuideEntityEmbed Entity="PassengerIDCard" Caption="Cartões de Identificação"/>
+   <GuideEntityEmbed Entity="ChemDispenser" Caption="Estruturas"/>
+   <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animais/Pets"/>
   </Box>
-  
+
 </Document>

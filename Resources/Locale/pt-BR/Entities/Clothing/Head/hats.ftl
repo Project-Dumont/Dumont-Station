@@ -7,7 +7,7 @@ ent-ClothingHeadHatBeret = boina
 ent-ClothingHeadHatBeretEngineering = boina de engenheiro
     .desc = Uma boina com a insígnia de engenheiro estampada. Dane-se a segurança, o que importa é o estilo!
 
-ent-ClothingHeadHatBeretHoS = boina de chefe de segurança
+ent-ClothingHeadHatBeretHoS = boina de segurança chefe
     .desc = Uma boina preta com uma insígnia de patente nela, pertencente ao Chefe dos Seguranças.
 
 ent-ClothingHeadHatBeretWarden = boina de carcereiro
@@ -22,7 +22,7 @@ ent-ClothingHeadHatCaptain = chapéu do capitão
 ent-ClothingHeadHatCardborg = chapéu de caixobô
     .desc = Um chapéu feito por uma criança de 5 anos.
 
-ent-ClothingHeadHatCentcom = chapéu da centcom
+ent-ClothingHeadHatCentcom = chapéu da Central de Comando
     .desc = Como é bom ser imperador...
 
 ent-ClothingHeadHatChef = chapéu de chef
@@ -40,7 +40,7 @@ ent-ClothingHeadHatFez = fez
 ent-ClothingHeadHatHopcap = boné do chefe de funcionários
     .desc = Moda casual de luxo, tô chique confortável...
 
-ent-ClothingHeadHatHoshat = chapéu do chefe de segurança
+ent-ClothingHeadHatHoshat = chapéu do segurança chefe
     .desc = Essa cidade é pequena de mais para dois xerifes..
 
 ent-ClothingHeadHatOutlawHat = chapéu de fora da lei
@@ -103,13 +103,13 @@ ent-ClothingHeadHatXmasCrown = coroa de natal
 ent-ClothingHeadHatTrucker = boné de caminhoneiro
     .desc = Não existem mais caminhoneiros, porém o estilo é o que prevalece!
 
-ent-ClothingHeadPyjamaSyndicateBlack = pijama preto do sindicato
+ent-ClothingHeadPyjamaSyndicateBlack = pijama preto do Sindicato
     .desc = Até mesmo os mais malvados precisam de uma boa noite de sono.
 
-ent-ClothingHeadPyjamaSyndicatePink = pijama rosa do sindicato
+ent-ClothingHeadPyjamaSyndicatePink = pijama rosa do Sindicato
     .desc = Até mesmo os mais malvados precisam de uma boa noite de sono.
 
-ent-ClothingHeadPyjamaSyndicateRed = pijama vermelho do sindicato
+ent-ClothingHeadPyjamaSyndicateRed = pijama vermelho do Sindicato
     .desc = Até mesmo os mais malvados precisam de uma boa noite de sono.
 
 ent-ClothingHeadPaperSack = saco de pão

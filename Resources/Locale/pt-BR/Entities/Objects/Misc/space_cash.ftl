@@ -4,9 +4,6 @@ ent-SpaceCash = credits
 ent-Credit = credits
     .desc = You gotta have money.
 
-ent-Credit = credits
-    .desc = You gotta have money.
-
 ent-SpaceCash10 = credits
     .desc = You gotta have money.
     .suffix = 10

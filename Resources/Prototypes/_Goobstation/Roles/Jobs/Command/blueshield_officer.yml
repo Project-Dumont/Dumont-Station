@@ -15,10 +15,10 @@
       time: 90000 # 25 hours
     - !type:AgeRequirement
       requiredAge: 21
+  goobcoins: 45
   weight: 20
   startingGear: BlueshieldOfficerGear
-  icon: "JobIconNanotrasen"
-  requireAdminNotify: true
+  icon: "JobIconBlueshield"
   joinNotifyCrew: true
   supervisors: job-supervisors-ntr-centcom
   canBeAntag: false
@@ -34,9 +34,12 @@
   - Command
   - CentralCommand
   - BlueshieldOfficer
+  - Service
+  - Hydroponics
+  - Cargo
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ] # Go big, or go home.
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -45,15 +48,14 @@
 - type: startingGear
   id: BlueshieldOfficerGear
   equipment:
-    shoes: ClothingShoesBootsJackFilled
-    eyes: ClothingEyesGlassesMedSec
+    eyes: ClothingEyesGlassesBSO
     gloves: ClothingHandsGlovesCombat
-    id: ERTSecurityPDA
-    ears: ClothingHeadsetAltCommand
-    belt: ClothingBeltSecurityFilled
+    id: BlueshieldPDA
+    ears: ClothingHeadsetAltBlueshield
+    belt: ClothingBeltAssaultFilled
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
   storage:
     back:
     - Flash
-    - BluespaceLifelineImplanter
     - SecHypo
+    - ClothingMaskGasSecurity

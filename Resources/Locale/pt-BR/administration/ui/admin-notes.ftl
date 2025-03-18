@@ -35,7 +35,6 @@ admin-notes-message-seen = Visto
 admin-notes-banned-from = Banido de
 admin-notes-the-server = o servidor
 admin-notes-permanently = permanentemente
-admin-notes-for = para {$player}
 admin-notes-days = {$days} dias
 admin-notes-hours = {$hours} horas
 admin-notes-minutes = {$minutes} minutos

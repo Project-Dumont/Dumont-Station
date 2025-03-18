@@ -4,7 +4,7 @@
   id: FelinidEarsBasic
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat ears :troll:
+  speciesRestriction: [Felinid, Human]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: basic_outer
@@ -91,12 +91,13 @@
     state: wide_inner
 
 # Felinid Tails
+# Goobstation - Tajaran since they're fully compatible
 
 - type: marking
   id: FelinidTailBasic
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat tails :troll:
+  speciesRestriction: [Felinid, Tajaran, Human] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -109,7 +110,7 @@
   id: FelinidTailBasicWithBow
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat tails :troll:
+  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -124,7 +125,7 @@
   id: FelinidTailBasicWithBell
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat tails :troll:
+  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -139,7 +140,7 @@
   id: FelinidTailBasicWithBowAndBell
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat tails :troll:
+  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -158,7 +159,7 @@
   id: FelinidTailBasicAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [] 
+  speciesRestriction: []
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip_wag
@@ -171,7 +172,7 @@
   id: FelinidTailBasicWithBowAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [] 
+  speciesRestriction: []
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip_wag
@@ -186,7 +187,7 @@
   id: FelinidTailBasicWithBellAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [] 
+  speciesRestriction: []
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip_wag
@@ -201,7 +202,7 @@
   id: FelinidTailBasicWithBowAndBellAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [] 
+  speciesRestriction: []
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip_wag

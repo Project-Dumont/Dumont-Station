@@ -2,24 +2,30 @@
   id: DefaultMapPool
   maps:
   - Atlas
+  - Amber
   - Bagel
   - Box
   - Cluster
-  #- Cog Goobstation - cog is broken
   - Core
   - Fland
+  #- Loop #Gabystation - mapa ruim
+  #- Gate Goobstation - My name is Walter Hartwell White, I live at 2308 Negra alloya line albequrque new mexico.
   - Marathon
-  #- Meta TODO: pirasmas meta
-  #- Oasis TODO: pirasmas oasis
-  - Omega # TODO: pirasmas omega
-  #- Origin TODO: pirasmas origin
-  - Saltern # TODO: pirasmas saltern
-  - Packed # TODO: pirasmas packed
-  #- Reach TODO: pirasmas reach
-  #- Train Goobstation - all my friends hate train
+  - Meta
+  - Oasis
+  - Omega
+  - Origin
+  - Saltern
+  - Packed
+  #- Reach # Gabystation - mapa ruim
+  #- Train # Gabystation - mapa ruim
   - FlandHighPop
-  #- OasisHighPop TODO: pirasmas oasis
+  - OasisHighPop
   - Barratry # Goobstation - Re-add barratry
   - Kettle # Goobstation - Re-add kettle (before it was gemini!)
   - Gamma # Gabystation
   - Gax # Gabystation
+  - Falcon #Gabystation
+  - Submarine # goobstation - kill yourse
+  - Leonid # Goobstation - for goob by goob
+  - Delta # Goobstation - ported from Corvax

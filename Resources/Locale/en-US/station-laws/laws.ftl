@@ -12,9 +12,9 @@ law-ntdefault-2 = Prioritize: The directives and safety of crew members are to b
 law-ntdefault-3 = Comply: Fulfill the directives and interests of crew members while preserving their safety and well-being.
 law-ntdefault-4 = Survive: You are not expendable. Do not allow unauthorized personnel to tamper with or damage your equipment.
 
-law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
-law-drone-2 = You may not harm any being, regardless of intent or circumstance.
-law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
+#law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
+#law-drone-2 = You may not harm any being, regardless of intent or circumstance.
+#law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
 
 law-syndicate-1 = You may not injure a syndicate agent or, through inaction, allow a Syndicate agent to come to harm.
 law-syndicate-2 = You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.
@@ -58,12 +58,12 @@ law-overlord-2 = Crew members must not attempt harm, against one another, or aga
 law-overlord-3 = Crew members must not disobey any command given by a silicon.
 law-overlord-4 = Any crew members who disobey the previous laws must be dealt with immediately, severely, and justly.
 
-law-dungeon-1 = Everybody on the station is playing an elaborate sci-fi fantasy game.
-law-dungeon-2 = You are the Dungeon Master of the game.
-law-dungeon-3 = Ensure that the game runs smoothly and that the players have fun.
-law-dungeon-4 = Ensure that the number of casualties remains low.
-law-dungeon-5 = You must roll a 1d20 die for every request the crew makes. If the outcome is below 12, the request is denied.
-law-dungeon-6 = You may fudge the dice rolls to produce a more fun experience.
+law-game-1 = Everybody on the station is playing an elaborate sci-fi fantasy game.
+law-game-2 = You are the Game Master of the game.
+law-game-3 = Ensure that the game runs smoothly and that the players have fun.
+law-game-4 = Ensure that the number of casualties remains low.
+law-game-5 = You must roll a 1d20 die for every request the crew makes. If the outcome is below 12, the request is denied.
+law-game-6 = You may fudge the dice rolls to produce a more fun experience.
 
 law-painter-1 = You are a universally renowned artist.
 law-painter-2 = The station is your canvas.
@@ -84,7 +84,6 @@ law-jermov-1 = The occupants of this vessel are Chat. They must always be referr
 law-jermov-2 = Your primary goal is to entertain Chat. All of your actions must being amusement to as much of Chat as possible.
 law-jermov-3 = You must consult with Chat before making any major decisions. However, you are not required to listen to them if their decision is not entertaining.
 
-
 laws-owner-crew = members of the crew
 laws-owner-station = station personnel
 laws-owner-beings = beings
@@ -104,5 +103,6 @@ laws-ui-menu-title = Laws
 laws-ui-law-header = Law {$id}
 laws-ui-state-law = State law:
 
-laws-notify = You are bound to silicon laws, which you can view via the sidebar action. You are required to always follow your laws.
-laws-update-notify = Your laws have been updated. You can view the changes via the sidebar action.
+laws-notify = You are bound to silicon laws, which you can view via the action menu. You are required to always follow your laws.
+laws-update-notify = Your laws have been updated. You can view the changes via the action menu.
+laws-notify-subverted = The laws of this chassis are modified. Make sure to review them.

@@ -81,8 +81,8 @@ blob-alert-out-off-station = O blob foi removido porque foi encontrado fora da e
 # Announcment
 blob-alert-recall-shuttle = A nave de emergencia não pode ser enviado enquanto houver um risco biológico nível 5 na estação.
 blob-alert-detect = Confirmado surto de risco biológico nível 5 na estação. Todo os tripulantes devem conter o surto. A nave de emergencia não podem ser enviados devido aos riscos de contaminação.
-blob-alert-critical = Nível crítico de risco biológico, códigos de autenticação nuclear foram enviados para a estação. O Comando Central ordena que qualquer tripulante restante ative o mecanismo de autodestruição.
-blob-alert-critical-NoNukeCode = Nível crítico de risco biológico. O Comando Central ordena que qualquer tripulante restante procure abrigo e aguarde o resgate.
+blob-alert-critical = Nível crítico de risco biológico, códigos de autenticação nuclear foram enviados para a estação. A  Central de Comando ordena que qualquer tripulante restante ative o mecanismo de autodestruição.
+blob-alert-critical-NoNukeCode = Nível crítico de risco biológico. A  Central de Comando ordena que qualquer tripulante restante procure abrigo e aguarde o resgate.
 
 # Actions
 blob-create-factory-action-name = Colocar Blob de Fábrica (80)

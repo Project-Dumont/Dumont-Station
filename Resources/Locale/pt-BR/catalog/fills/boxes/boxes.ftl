@@ -173,8 +173,8 @@ ent-BoxEncryptionKeySecurity = caixa de chaves de criptografia de segurança
 ent-BoxEncryptionKeyService = caixa de chaves de criptografia de serviço
     .desc = Uma caixa de chaves de criptografia sobressalentes.
 
-ent-BoxEncryptionKeySyndie = caixa de chaves de criptografia do sindicato
-    .desc = Duas chaves de criptografia do sindicato pelo preço de uma. Miniaturizado para facilitar o uso.
+ent-BoxEncryptionKeySyndie = caixa de chaves de criptografia do Sindicato
+    .desc = Duas chaves de criptografia do Sindicato pelo preço de uma. Miniaturizado para facilitar o uso.
 
 ent-BoxDeathRattleImplants = caixa de implante alertamorte
     .desc = Seis implantes alertamorte e dispositivos GPS portáteis para toda a equipe.

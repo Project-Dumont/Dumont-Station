@@ -1,0 +1,41 @@
+# SOP Main Directory
+- type: guideEntry
+  id: POP
+  name: guide-entry-pop
+  text: "/ServerInfo/_Gabystation/Guidebook/POP.xml"
+  children:
+  - POP Comando
+  - POP Alerta
+  - POP Transferencias
+  - POP Conduta
+  - POP Confiscar
+
+- type: guideEntry
+  id: POP Comando
+  name: guide-entry-pop-comando
+  text: "/ServerInfo/_Gabystation/Guidebook/POPComando.xml"
+  priority: 1
+
+- type: guideEntry
+  id: POP Alerta
+  name: guide-entry-pop-alerta
+  text: "/ServerInfo/_Gabystation/Guidebook/POPAlertas.xml"
+  priority: 2
+
+- type: guideEntry
+  id: POP Transferencias
+  name: guide-entry-pop-transferencias
+  text: "/ServerInfo/_Gabystation/Guidebook/POPTransferencias.xml"
+  priority: 3
+
+- type: guideEntry
+  id: POP Conduta
+  name: guide-entry-pop-conduta
+  text: "/ServerInfo/_Gabystation/Guidebook/POPConduta.xml"
+  priority: 4
+
+- type: guideEntry
+  id: POP Confiscar
+  name: guide-entry-pop-confiscar
+  text: "/ServerInfo/_Gabystation/Guidebook/POPConfiscar.xml"
+  priority: 5

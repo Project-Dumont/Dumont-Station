@@ -11,6 +11,7 @@ namespace Content.Client._EstacaoPirata.Cards.Card;
 public sealed class CardSystem : EntitySystem
 {
     [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+    [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -25,7 +26,7 @@ public sealed class CardSystem : EntitySystem
 
         for (var i = 0; i < spriteComponent.AllLayers.Count(); i++)
         {
-            Log.Debug($"Layer {i}");
+            //Log.Debug($"Layer {i}");
             if (!spriteComponent.TryGetLayer(i, out var layer) || layer.State.Name == null)
                 continue;
 
@@ -33,12 +34,12 @@ public sealed class CardSystem : EntitySystem
             if (rsi == null)
                 continue;
 
-            Log.Debug("FOI");
+            //Log.Debug("FOI");
             comp.FrontSprite.Add(new SpriteSpecifier.Rsi(rsi.Path, layer.State.Name));
         }
 
         comp.BackSprite ??= comp.FrontSprite;
-        Dirty(uid, comp);
+        DirtyEntity(uid);
         UpdateSprite(uid, comp);
     }
 
@@ -52,12 +53,11 @@ public sealed class CardSystem : EntitySystem
     private void UpdateSprite(EntityUid uid, CardComponent comp)
     {
         var newSprite = comp.Flipped ? comp.BackSprite : comp.FrontSprite;
-        if (newSprite == null)
-            return;
+        //if (newSprite == null)
+        //    return;
 
         if (!TryComp(uid, out SpriteComponent? spriteComponent))
             return;
-
         var layerCount = newSprite.Count();
 
         //inserts Missing Layers

@@ -13,3 +13,15 @@
 #    path: /Audio/_Goobstation/Animals/skibidi.wav
 
 #sigma juice no more
+
+- type: reaction
+  id: TripleCitrus
+  reactants:
+    JuiceOrange:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+    JuiceLime:
+      amount: 1
+  products:
+    TripleCitrus: 3

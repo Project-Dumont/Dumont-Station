@@ -21,12 +21,4 @@ ui-mailing-unit-destination-select-label = Selecione o destino:
 ui-mailing-unit-self-reference-label = Essa unidade:
 ui-mailing-unit-target-label = Destino:
 
-## SelfInsertVerb
-
-disposal-self-insert-verb-get-data-text = Pular dentro
-
-## FlushVerb
-
-disposal-flush-verb-get-data-text = Descarga
-
 disposal-eject-verb-contents = conteúdos

@@ -12,6 +12,7 @@
     minimumPlayers: 15
     weight: 5
     duration: 60
+    maxOccurrences: 1 # Gabystation - necromorph nerf (são mto forte pra ter toda hora)
   - type: VentCrittersRule
     entries:
     - id: NecromorphSlasher

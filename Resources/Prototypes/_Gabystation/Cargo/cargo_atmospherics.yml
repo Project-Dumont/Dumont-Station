@@ -1,0 +1,20 @@
+- type: cargoProduct
+  id: EngineeringFlatpackO2
+  icon:
+    sprite: Structures/Piping/Atmospherics/miners.rsi
+    state: miner
+  product: CrateMinerFlatpackO2
+  cost: 25000
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: EngineeringFlatpackN2
+  icon:
+    sprite: Structures/Piping/Atmospherics/miners.rsi
+    state: miner
+  product: CrateMinerFlatpackN2
+  cost: 25000
+  category: cargoproduct-category-name-atmospherics
+  group: market
+  

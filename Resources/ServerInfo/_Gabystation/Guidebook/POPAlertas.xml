@@ -1,0 +1,60 @@
+<Document>
+## Códigos de Alerta
+Indica em que situações diferentes códigos devem ser ativados e medidas de segurança a serem tomadas.
+
+<ColorBox Color="#388c34">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Verde[/color][/bold]
+  </Box>
+</ColorBox>
+Indica condições boas e seguras de trabalho. Mandatos são necessários para execução de revistas. Porte de armas é estritamente proibido.
+
+<ColorBox Color="#1b67a5">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Azul[/color][/bold]
+  </Box>
+</ColorBox>
+Ativo caso haja recente suspeita ou pequena ameaça confirmada à segurança da tripulação presente a bordo. Seguranças podem executar revistas aleatórias sem a necessidade de mandatos.
+
+<ColorBox Color="#ba292c">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Vermelho[/color][/bold]
+  </Box>
+</ColorBox>
+Ativo quando há uma grande ameaça confirmada à estrutura da estação e à vida da tripulação. Segurança deve se preparar para um conflito armado.
+
+<ColorBox Color="#c8a404">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Amarelo[/color][/bold]
+  </Box>
+</ColorBox>
+Ativo quando há quedas de energia, dano ao casco da estação ou falha catastrófica de um gerador de energia. Engenheiros são aconselhados a vestir trajes pressurizados e trabalharem rápido. Revistas e Porte de armas funcionam como no Código Verde.
+
+<ColorBox Color="#cc74fc">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Violeta[/color][/bold]
+  </Box>
+</ColorBox>
+Ativo quando á um patógeno ou organismo alienígena agressivo na estação. Médicos devem produzir vacinas e utilizar trajes de proteção biológica. Revistas precisam de mandatos. Porte de armas é permitido para seguranças.
+
+<ColorBox Color="#8b0000">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Delta[/color][/bold]
+  </Box>
+</ColorBox>
+A estação corre risco de ser completamente obliterada. Todos os tripulantes devem colaborar a neutralizar a ameaça. Porte de armas é permitido a todos.
+
+<ColorBox Color="#db7093">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Gamma[/color][/bold]
+  </Box>
+</ColorBox>
+A Central de Comando decretou estado de calamidade na estação. Todos os tripulantes devem se abrigar imediatamente. Porte de armas é permitido e aconselhado para seguranças.
+
+<ColorBox Color="#9400d3">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#ffffff]Código Épsilon[/color][/bold]
+  </Box>
+</ColorBox>
+Toda tripulação foi demitida. Dirijam-se pacificamente para a doca de evacuação para serem levados de volta para o Comando Central.
+</Document>

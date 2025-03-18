@@ -13,7 +13,7 @@ evolutionmenu-combat-boneshard-desc =
 
 evolutionmenu-combat-armor-name = Armadura de Quitina
 evolutionmenu-combat-armor-desc =
-    Infle seu corpo até transformá-lo em uma massa quitinosa de armadura.
+    Infle seu corpo até transformá-lo em uma armadura quitinosa.
     Oferece grande proteção contra danos físicos, mas menos contra outros tipos.
     Isso diminue muito o seu movimento, e manter ela de pé desacelera a geração de quimícos.
     AVISO: Requer que você absorva pelo menos 2 orgânicos para usar a habilidade.

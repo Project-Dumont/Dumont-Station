@@ -12,7 +12,7 @@ ui-disposal-unit-button-power = Energia
 
 ## Verbs
 disposal-flush-verb-get-data-text = Descarga
-disposal-self-insert-verb-get-data-text = Pular Dentro
+disposal-self-insert-verb-get-data-text = Pular dentro
 disposal-eject-verb-get-data-text = Ejetar
 
 ## No hands

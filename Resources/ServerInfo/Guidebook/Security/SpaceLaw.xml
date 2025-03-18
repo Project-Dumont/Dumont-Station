@@ -1,7 +1,7 @@
 <Document>
 # Leis Espaciais
 
-A Gaby Station opera sob um conjunto abreviado de leis espaciais. Todos os membros da tripulação, passageiros e visitantes a bordo da estação devem conhecer e seguir essas leis (elas são bastante intuitivas, apenas a segurança e o capitão precisam conhecer os tempos de detenção).
+A estação opera sob um conjunto abreviado de leis espaciais. Todos os membros da tripulação, passageiros e visitantes a bordo da estação devem conhecer e seguir essas leis (elas são bastante intuitivas, apenas a segurança e o capitão precisam conhecer os tempos de detenção).
 
 ## Tratamento dos Prisioneiros
 
@@ -40,9 +40,11 @@ Use o bom senso ao emitir punições. Não busque sempre a pena máxima; leve em
 
 **Crimes Acumuláveis:** Se acusar alguém de dois ou mais crimes diferentes, combine os tempos de punição de cada crime.
 
-**[color=red][bold]"NÃO EXCEDA 10 MINUTOS COMO TEMPO DE PRISÃO"[/bold][/color]**
+[bold]Todo prisioneiro que for transferido para prisão permanente ou executado deve ter a escolha ser julgado antes.[/bold]
 
-Se o tempo total de prisão exceder 10 minutos, reduza para este limite. Se exceder 20 minutos, o detento pode ser transferido para a prisão permanente.
+**[color=red][bold]"NÃO EXCEDA 20 MINUTOS COMO TEMPO DE PRISÃO"[/bold][/color]**
+
+Se o tempo total de prisão exceder 20 minutos, reduza para este limite. Se exceder 30 minutos, o detento pode ser transferido para a prisão permanente via julgamento.
 
 ## Crimes
 

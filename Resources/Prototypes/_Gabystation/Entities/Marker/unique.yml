@@ -1,0 +1,13 @@
+- type: entity
+  name: blueshield locker unique marker
+  id: UniqueMarkerAdminAssistant
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _DV/Structures/Storage/closet.rsi
+        state: admin_assist
+  - type: UniqueEntityMarker
+    markerName: AdminAssistant

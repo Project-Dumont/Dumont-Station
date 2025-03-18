@@ -8,7 +8,7 @@ admin-verb-make-thief = Transforme o alvo em um ladrão.
 
 admin-verb-text-make-traitor = Torna Traidor
 admin-verb-text-make-zombie = Torna Zumbi
-admin-verb-text-make-nuclear-operative = Torna Operativo Nuclear
+admin-verb-text-make-nuclear-operative = Torna Agente Nuclear
 admin-verb-text-make-pirate = Torna Pirata
 admin-verb-text-make-head-rev = Torna Head Rev
 admin-verb-text-make-thief = Torna Ladrão

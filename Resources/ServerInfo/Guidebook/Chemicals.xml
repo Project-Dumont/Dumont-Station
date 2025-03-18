@@ -1,34 +1,37 @@
 ﻿<Document>
-# Chemicals
+# Produtos Químicos
 
-Chemicals are a powerful tool that can cause a variety of effects when consumed. Some can be found in plants, purchased from cargo, or be synthesized through combination with other chemicals.
+Produtos químicos são ferramentas poderosas que podem causar uma variedade de efeitos quando consumidos. Alguns podem ser encontrados em plantas, comprados de cargueiros ou sintetizados através da combinação com outros produtos químicos.
 
-Knowing different types of chemicals and their effects is important for being able to manage injury and danger.
+Conhecer os diferentes tipos de produtos químicos e seus efeitos é importante para poder gerenciar lesões e perigos.
 
-## Elements
+## Elementos
 <GuideReagentGroupEmbed Group="Elements"/>
 
-## Medicine
+## Medicamentos
 <GuideReagentGroupEmbed Group="Medicine"/>
 
-## Narcotics
+## Narcóticos
 <GuideReagentGroupEmbed Group="Narcotics"/>
 
-## Pyrotechnics
+## Pirotecnia
 <GuideReagentGroupEmbed Group="Pyrotechnic"/>
 
-## Toxins
+## Toxinas
 <GuideReagentGroupEmbed Group="Toxins"/>
 
-## Foods
+## Alimentos
 <GuideReagentGroupEmbed Group="Foods"/>
 
-## Botanical
+## Botânicos
 <GuideReagentGroupEmbed Group="Botanical"/>
 
-## Biological
+## Biológicos
 <GuideReagentGroupEmbed Group="Biological"/>
 
-## Other
+## Special
+<GuideReagentGroupEmbed Group="Special"/>
+
+## Outros
 <GuideReagentGroupEmbed Group="Unknown"/>
 </Document>

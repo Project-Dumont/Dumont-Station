@@ -16,17 +16,29 @@
   path:
     path: /Audio/_Gabystation/Jukebox/DigitalCircus.ogg
 
-- type: jukebox
-  id: TodoGay
-  name: Marcelo Adnet - Todo Mundo é Gay
-  path:
-    path: /Audio/_Gabystation/Jukebox/gay.ogg
+#- type: jukebox
+#  id: TodoGay
+#  name: Marcelo Adnet - Todo Mundo é Gay
+#  path:
+#    path: /Audio/_Gabystation/Jukebox/gay.ogg
 
 - type: jukebox
   id: CheiaManias
   name: Raça Negra - Cheia de Manias
   path:
     path: /Audio/_Gabystation/Jukebox/cheia_de_manias.ogg
+
+- type: jukebox
+  id: CaracaMuleke
+  name: Thiaguinho - Caraca, Muleke!
+  path:
+    path: /Audio/_Gabystation/Jukebox/CaracaMuleke.ogg
+
+- type: jukebox
+  id: CalmaVida
+  name: J ESKINE - Calma vida ta de boa
+  path:
+    path: /Audio/_Gabystation/Jukebox/CalmaVida.ogg
 
 - type: jukebox
   id: GrandeFamilia
@@ -51,3 +63,112 @@
   name: Tobu - Candyland
   path:
     path: /Audio/_Gabystation/Jukebox/candyland.ogg
+
+- type: jukebox
+  id: Sin
+  name: ZIZZ Studio - Sin
+  path:
+    path: /Audio/_Gabystation/Jukebox/sin.ogg
+
+- type: jukebox
+  id: Sunset
+  name: ZIZZ Studio - Sunset
+  path:
+    path: /Audio/_Gabystation/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: Saya
+  name: ZIZZ Studio - Song Of Saya II
+  path:
+    path: /Audio/_Gabystation/Jukebox/saya.ogg
+
+- type: jukebox
+  id: ShoesofGlass
+  name: Itou Kanako - Shoes Of Glass
+  path:
+    path: /Audio/_Gabystation/Jukebox/shoes_of_glass.ogg
+
+
+- type: jukebox
+  id: ChaLaHeadChaLa
+  name: RicardoJuniorSings - Cha-la Head Cha-la
+  path:
+    path: /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
+
+- type: jukebox
+  id: GatinhaComunista
+  name: Vitroles - Gatinha Comunista
+  path:
+    path: /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
+
+- type: jukebox
+  id: Melissa
+  name: Canal Tragicômico - Melissa
+  path:
+    path: /Audio/_Gabystation/Lobby/Melissa.ogg
+
+- type: jukebox
+  id: SorrisoResplandecente
+  name: RicardoJuniorSings - Sorriso Resplandecente
+  path:
+    path: /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
+
+- type: jukebox
+  id: ElaPartiu
+  name: Tim Maia - Ela Partiu
+  path:
+    path: /Audio/_Gabystation/Lobby/Ela_Partiu.ogg
+
+- type: jukebox
+  id: SeteMares
+  name: Tim Maia - O Descobridor dos Sete Mares
+  path:
+    path: /Audio/_Gabystation/Lobby/sete_mares.ogg
+
+- type: jukebox
+  id: Perfume
+  name: Rita Lee - Lança Perfume
+  path:
+    path: /Audio/_Gabystation/Lobby/Lança_Perfume.ogg
+
+- type: jukebox
+  id: Periferia
+  name: Nega Lí - Periferia
+  path:
+    path: /Audio/_Gabystation/Lobby/Periferia.ogg
+
+- type: jukebox
+  id: MunRa
+  name: Sabotage - Mun Rá
+  path:
+    path: /Audio/_Gabystation/Lobby/Mun_Rá.ogg
+
+- type: jukebox
+  id: TremDasOnze
+  name: Adoniran Barbosa - Trem das Onze
+  path:
+    path: /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
+
+- type: jukebox
+  id: Construcao
+  name: Chico Buarque - Construção
+  path:
+    path: /Audio/_Gabystation/Lobby/construcao.ogg
+
+- type: jukebox
+  id: DeadMemories
+  name: Slipknot - Dead Memories
+  path:
+    path: /Audio/_Gabystation/Lobby/dead_memories.ogg
+
+- type: jukebox
+  id: VermillionPt2
+  name: Slipknot - Vermillion Pt. 2
+  path:
+    path: /Audio/_Gabystation/Lobby/vermillion_pt2.ogg
+
+- type: jukebox
+  id: WaitAndBleed
+  name: Slipknot - Wait And Bleed (DoutorWhite mix)
+  path:
+    path: /Audio/_Gabystation/Lobby/wait_and_bleed.ogg

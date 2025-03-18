@@ -28,8 +28,8 @@ ent-VendingMachineDinnerware = Vendedor de Louça do SpaceMaster Chef
 ent-VendingMachineMagivend = Vende Feitiços
     .desc = Vende quaisquer apetrechos arcanos um mago precisa.
 
-ent-VendingMachineDiscount = Discontos do Danilo
-    .desc = Vende salgadinhos da famosa série 'Danilo Disconto'.
+ent-VendingMachineDiscount = Danilo Descontos
+    .desc = Vende salgadinhos da famosa marca 'Danilo Desconto'.
 
 ent-VendingMachineEngivend = Vende-Treco
     .desc = Vende ferramentas, trecos, apetrechos, mecanismos, etc.

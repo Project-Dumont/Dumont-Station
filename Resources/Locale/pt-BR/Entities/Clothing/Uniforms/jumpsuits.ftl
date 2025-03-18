@@ -22,11 +22,11 @@ ent-ClothingUniformJumpsuitChiefEngineer = macacão do engenheiro-chefe
 ent-ClothingUniformJumpsuitChaplain = macacão de capelão
     .desc = É um macacão preto, muito usado por pessoas religiosas.
 
-ent-ClothingUniformJumpsuitCentcomOfficial = macacão oficial do CentCom
-    .desc = É um macacão usado pelos dirigentes do CentCom.
+ent-ClothingUniformJumpsuitCentcomOfficial = macacão oficial da Central de Comando
+    .desc = É um macacão usado pelos dirigentes da Central de Comando.
 
-ent-ClothingUniformJumpsuitCentcomOfficer = macacão de oficial do CentCom
-    .desc = É um macacão usado pelos Oficiais do CentCom.
+ent-ClothingUniformJumpsuitCentcomOfficer = macacão de oficial da Central de Comando
+    .desc = É um macacão usado pelos Oficiais da Central de Comando.
 
 ent-ClothingUniformJumpsuitChef = uniforme de chef
     .desc = Não consigo cozinhar sem isso.
@@ -55,17 +55,17 @@ ent-ClothingUniformJumpsuitEngineeringHazard = macacão de perigo
 ent-ClothingUniformJumpsuitHoP = macacão do chefe de funcionários
     .desc = Bastante brando e inofensivo. Perfeito para desaparecer da face do universo.
 
-ent-ClothingUniformJumpsuitHoS = macacão do chefe de segurança
+ent-ClothingUniformJumpsuitHoS = macacão do segurança chefe
     .desc = É vermelho brilhante e bastante nítido, assim como as vítimas de segurança tendem a ser.
 
-ent-ClothingUniformJumpsuitHoSAlt = gola alta do chefe de segurança
-    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Chefe de Segurança. Seu tecido resistente oferece menor proteção contra danos mecânicos.
+ent-ClothingUniformJumpsuitHoSAlt = gola alta do segurança chefe
+    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Segurança Chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
 
-ent-ClothingUniformJumpsuitHoSBlue = macacão azul do chefe de segurança
-    .desc = Um macacão azul do Chefe de Segurança.
+ent-ClothingUniformJumpsuitHoSBlue = macacão azul do segurança chefe
+    .desc = Um macacão azul do Segurança Chefe.
 
-ent-ClothingUniformJumpsuitHoSGrey = macacão cinza do chefe de segurança
-    .desc = Macacão cinza do Chefe de Segurança, que o faz parecer um passageiro.
+ent-ClothingUniformJumpsuitHoSGrey = macacão cinza do segurança chefe
+    .desc = Macacão cinza do Segurança Chefe, que o faz parecer um passageiro.
 
 ent-ClothingUniformJumpsuitHoSParadeMale = uniforme de desfile do chefe da segurança
     .desc = Um chefe masculino de roupas de luxo da segurança, para ocasiões especiais.
@@ -88,7 +88,7 @@ ent-ClothingUniformJumpsuitParamedic = macacão de paramédico
 ent-ClothingUniformJumpsuitPrisoner = macacão de prisioneiro
     .desc = Preso.
 
-ent-ClothingUniformJumpsuitQM = macacão de intendente
+ent-ClothingUniformJumpsuitQM = macacão do intendente
     .desc = O que o marrom pode fazer por você?
 
 ent-ClothingUniformJumpsuitResearchDirector = gola alta do diretor de pesquisa
@@ -181,13 +181,13 @@ ent-ClothingUniformJumpsuitLawyerPurple = terno de advogado roxo
 ent-ClothingUniformJumpsuitLawyerGood = terno de bom advogado
     .desc = Um terno cafona perfeito para um advogado CRIMINAL!
 
-ent-ClothingUniformJumpsuitPyjamaSyndicateBlack = pijama preto do sindicato
+ent-ClothingUniformJumpsuitPyjamaSyndicateBlack = pijama preto do Sindicato
     .desc = Para aquelas longas noites em permanente.
 
-ent-ClothingUniformJumpsuitPyjamaSyndicatePink = pijama sindicato rosa
+ent-ClothingUniformJumpsuitPyjamaSyndicatePink = pijama Sindicato rosa
     .desc = Para aquelas longas noites em permanente.
 
-ent-ClothingUniformJumpsuitPyjamaSyndicateRed = pijama vermelho do sindicato
+ent-ClothingUniformJumpsuitPyjamaSyndicateRed = pijama vermelho do Sindicato
     .desc = Para aquelas longas noites em permanente.
 
 ent-ClothingUniformJumpsuitNanotrasen = macacão nanotrasen
@@ -196,14 +196,14 @@ ent-ClothingUniformJumpsuitNanotrasen = macacão nanotrasen
 ent-ClothingUniformJumpsuitCapFormal = terno formal do capitão
     .desc = Um terno para ocasiões especiais.
 
-ent-ClothingUniformJumpsuitCentcomFormal = traje formal de comando central
+ent-ClothingUniformJumpsuitCentcomFormal = traje formal da  Central de Comando
     .desc = Um terno para ocasiões especiais.
 
 ent-ClothingUniformJumpsuitHosFormal = terno formal de hos
     .desc = Um terno para ocasiões especiais.
 
-ent-ClothingUniformJumpsuitOperative = macacão operativo
-    .desc = Uniforme para agentes de sindicatos de elite realizando operações táticas no espaço profundo.
+ent-ClothingUniformJumpsuitOperative = macacão de agente
+    .desc = Uniforme para agentes de Sindicatos de elite realizando operações táticas no espaço profundo.
 
 ent-ClothingUniformJumpsuitAtmos = macacão técnico atmosférico
     .desc = estou no trabalho. Não posso sair do trabalho. O trabalho está respirando. Estou testando a qualidade do ar.

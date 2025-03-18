@@ -8,12 +8,17 @@ using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
-
+using Content.Shared.Emag.Systems;
+using Robust.Shared.Utility;
+using Content.Server._Imp.Drone; //Goobstation drone
+using Robust.Shared.Player; //Goobstation drone
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>
 public sealed partial class BorgSystem
 {
+    [Dependency] private readonly EmagSystem _emag = default!;
+
     private void InitializeTransponder()
     {
         SubscribeLocalEvent<BorgTransponderComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
@@ -57,6 +62,32 @@ public sealed partial class BorgSystem
 
             comp.NextBroadcast = now + comp.BroadcastDelay;
         }
+        //Goobstation Drone transponder start
+        var query2 = EntityQueryEnumerator<BorgTransponderComponent, DroneComponent, DeviceNetworkComponent, MetaDataComponent>();
+        while (query2.MoveNext(out var uid, out  var comp, out var drone, out var device, out var  meta))
+        {
+            if (now < comp.NextBroadcast)
+                continue;
+            var hasBrain = HasComp<ActorComponent>(uid);
+            var data = new CyborgControlData(
+                comp.Sprite,
+                comp.Name,
+                meta.EntityName,
+                1f,
+                0,
+                hasBrain,
+                false);
+
+            var payload = new NetworkPayload()
+            {
+                [DeviceNetworkConstants.Command] = DeviceNetworkConstants.CmdUpdatedState,
+                [RoboticsConsoleConstants.NET_CYBORG_DATA] = data
+            };
+            _deviceNetwork.QueuePacket(uid, null, payload, device: device);
+
+            comp.NextBroadcast = now + comp.BroadcastDelay;
+        }
+        //Goobstation drone transponder end
     }
 
     private void DoDisable(Entity<BorgTransponderComponent, BorgChassisComponent, MetaDataComponent> ent)
@@ -126,12 +157,28 @@ public sealed partial class BorgSystem
 
     private bool CheckEmagged(EntityUid uid, string name)
     {
-        if (HasComp<EmaggedComponent>(uid))
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
         {
             Popup.PopupEntity(Loc.GetString($"borg-transponder-emagged-{name}-popup"), uid, uid, PopupType.LargeCaution);
             return true;
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Sets <see cref="BorgTransponderComponent.Sprite"/>.
+    /// </summary>
+    public void SetTransponderSprite(Entity<BorgTransponderComponent> ent, SpriteSpecifier sprite)
+    {
+        ent.Comp.Sprite = sprite;
+    }
+
+    /// <summary>
+    /// Sets <see cref="BorgTransponderComponent.Name"/>.
+    /// </summary>
+    public void SetTransponderName(Entity<BorgTransponderComponent> ent, string name)
+    {
+        ent.Comp.Name = name;
     }
 }

@@ -4,7 +4,7 @@ ent-ExGrenade = granada explosiva
 ent-GrenadeFlashBang = granada de atordoamento
      .desc = Eeeeeeeeeeeeeeeeee
 
-ent-SyndieMiniBomb = minibomba do sindicato
+ent-SyndieMiniBomb = minibomba do Sindicato
      .desc = Um explosivo de sabotagem de precisão para destruir rapidamente uma máquina, cadáver ou qualquer outra coisa que precise desaparecer.
 
 ent-NuclearGrenade = A Opção Nuclear

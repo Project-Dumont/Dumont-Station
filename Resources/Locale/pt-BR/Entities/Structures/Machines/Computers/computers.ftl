@@ -10,8 +10,8 @@ ent-BaseComputerShuttle = console de nave
 ent-ComputerShuttle = console de nave
     .desc = Usado para pilotar uma nave.
 
-ent-ComputerShuttleSyndie = console de nave do sindicato
-    .desc = Usado para pilotar uma nave do sindicato.
+ent-ComputerShuttleSyndie = console de nave do Sindicato
+    .desc = Usado para pilotar uma nave do Sindicato.
 
 ent-ComputerShuttleCargo = console da nave de carga
     .desc = Usado para pilotar a nave de carga.
@@ -50,7 +50,7 @@ ent-computerBodyScanner = computador de avaliação médica
 ent-ComputerComms = computador de comunicação
     .desc = Usado para várias funções. Quando acabar de ser desenvolvido, é claro.
 
-ent-SyndicateComputerComms = computador de comunicação do sindicato
+ent-SyndicateComputerComms = computador de comunicação do Sindicato
     .desc = Usado para várias funções. Quando acabar de ser desenvolvido, é claro.
     .suffix = Syndicate
 
@@ -81,5 +81,5 @@ ent-ComputerTelevision = televisão de tubo
 ent-ComputerShuttleSalvage = console da nave de salvatagem
     .desc = Usado para pilotar a nave de salvatagem.
 
-ent-ComputerPalletConsole = console de vendas da cargo
+ent-ComputerPalletConsole = console de vendas da logística
     .desc = Usado para vender mercadorias carregadas em paletes de carga.

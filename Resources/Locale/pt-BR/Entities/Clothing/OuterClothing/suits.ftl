@@ -7,7 +7,7 @@ ent-ClothingOuterSuitEmergency = traje de emergência
 ent-ClothingOuterSuitFire = traje de bombeiro
     .desc = Um traje que protege o usuário das chamas e do calor.
 
-ent-ClothingOuterSuitRad = traje anti-radiação
+ent-ClothingOuterSuitRad = traje de proteção nuclear
     .desc = Um traje que protege o usuário das ondas radioativas.
 
 ent-ClothingOuterSuitSpaceninja = traje de ninja espacial

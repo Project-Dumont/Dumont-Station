@@ -11,7 +11,7 @@ ent-ClothingBackpackSatchelChemistry = bolsa da química
     .desc = Uma bolsa esterilizada, customizada em cores que representam os químicos.
 
 ent-ClothingBackpackSatchelScience = bolsa de pesquisas
-    .desc = Uma bolsa útil no armazenamento de substancias nocivas.
+    .desc = Uma bolsa útil no armazenamento de substâncias nocivas.
 
 ent-ClothingBackpackSatchelSecurity = bolsa da segurança
     .desc = Uma bolsa robusta, tem cheiro de corrupção.
@@ -31,7 +31,7 @@ ent-ClothingBackpackSatchelHolding = bolsa interdimensional
 ent-ClothingBackpackSatchelLeather = bolsa de couro
     .desc = Uma bolsa tão elegante quanto antiga.
 
-ent-ClothingBackpackSatchelAtmospherics = bolsa de atmosféricos
+ent-ClothingBackpackSatchelAtmospherics = bolsa da atmosférica
     .desc = Uma bolsa resistente e à prova de fogo. Tem cheiro de plasma.
 
 ent-ClothingBackpackSatchelClown = bolzina de palhaço
