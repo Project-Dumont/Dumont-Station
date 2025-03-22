@@ -1178,6 +1178,7 @@
         factor: 3
     Medicine:
       effects:
+      - !type:RemoveCogchampAccent
       - !type:HealthChange
         conditions:
         - !type:TotalDamage

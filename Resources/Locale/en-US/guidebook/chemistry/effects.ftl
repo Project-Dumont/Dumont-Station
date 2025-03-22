@@ -426,3 +426,9 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
         *[-1] from
     } the solution
+
+reagent-effect-guidebook-remove-cogchamp-accent =
+    { $chance ->
+        [1] Removes the
+        *[other] remove the
+    } cogchamp accent of the user
