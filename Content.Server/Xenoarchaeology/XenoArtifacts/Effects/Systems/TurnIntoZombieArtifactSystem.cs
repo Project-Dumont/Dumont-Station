@@ -25,7 +25,10 @@ public sealed class TurnIntoZombieArtifactSystem : EntitySystem
         if (!HasComp<MindContainerComponent>(args.Activator) || !TryComp<ActorComponent>(args.Activator, out var target))
             return;
 
-        if (HasComp<ZombieComponent>(uid))
+        if (HasComp<ZombieImmuneComponent>(args.Activator))
+            return;
+
+        if (HasComp<ZombieComponent>(args.Activator))
             return;
 
         _zombie.ZombifyEntity((EntityUid) args.Activator);

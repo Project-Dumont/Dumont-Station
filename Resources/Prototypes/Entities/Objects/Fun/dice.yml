@@ -160,7 +160,7 @@
     - EffectSpawnDoubleEnergySword
     - EffectTurnIntoRevLeader
     - EffectTurnIntoThief
-    - EffectTurnIntoTraitor
+    - EffectTurnIntoHeretic
     - EffectTurnIntoBlob
     - EffectTurnIntoLing
     remainingUses: 1

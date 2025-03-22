@@ -724,7 +724,7 @@
 - type: artifactEffect
   id: EffectGreytideVirus
   targetDepth: -1
-  effectHint: artifact-hint-rod
+  effectHint: artifact-hint-greytide-virus
   components:
   - type: GameRuleArtifact
     rules:
@@ -763,11 +763,11 @@
     - BabelTower
 
 - type: artifactEffect
-  id: EffectTurnIntoTraitor
+  id: EffectTurnIntoHeretic
   targetDepth: -1
-  effectHint: artifact-hint-traitor
+  effectHint: artifact-hint-heretic
   components:
-  - type: TurnIntoTraitorArtifact
+  - type: TurnIntoHereticArtifact
 
 - type: artifactEffect
   id: EffectTurnIntoThief

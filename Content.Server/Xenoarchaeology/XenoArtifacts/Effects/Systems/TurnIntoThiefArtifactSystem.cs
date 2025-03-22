@@ -24,8 +24,6 @@ public sealed class TurnIntoThiefArtifactSystem : EntitySystem
     {
         if (!HasComp<MindContainerComponent>(args.Activator) || !TryComp<ActorComponent>(args.Activator, out var target))
             return;
-        if (HasComp<ThiefRoleComponent>(args.Activator))
-            return;
 
         var player = target.PlayerSession;
 
