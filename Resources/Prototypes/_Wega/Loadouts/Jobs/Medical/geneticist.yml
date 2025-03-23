@@ -1,0 +1,37 @@
+# Jumpsuit
+- type: loadout
+  id: GeneticsJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGenetics
+
+- type: loadout
+  id: GeneticsJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtGenetics
+
+# Back
+- type: loadout
+  id: GeneticsBackpack
+  equipment:
+    back: ClothingBackpackGenetics
+
+- type: loadout
+  id: GeneticsSatchel
+  equipment:
+    back: ClothingBackpackSatchelGenetics
+
+- type: loadout
+  id: GeneticsDuffel
+  equipment:
+    back: ClothingBackpackDuffelGenetics
+
+# Outer clothing
+- type: loadout
+  id: GeneticsOuterClothingLab
+  equipment:
+    outerClothing: ClothingOuterCoatLabGene
+
+- type: loadout
+  id: GeneticsOuterClothingWinter
+  equipment:
+    outerClothing: ClothingOuterWinterGen

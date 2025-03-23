@@ -1,0 +1,221 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Title="{Loc 'dna-modifier-ui-default-title'}"
+    MinSize="820 750">
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="False">
+        <!-- Верхняя часть окна -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="False" Margin="10">
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label StyleClasses="LabelBig" Text="{Loc 'dna-modifier-label-big-title-name'}" MinWidth="120"/>
+                <Control HorizontalExpand="True"/>
+                <Button Name="EjectButton" Text="{Loc 'dna-modifier-button-eject'}" Disabled="True"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="{Loc 'dna-modifier-label-name'}" MinWidth="60"/>
+                <Control MinWidth="10"/>
+                <Label Name="NameLabel"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="{Loc 'dna-modifier-label-status'}" MinWidth="60"/>
+                <Control MinWidth="10"/>
+                <Label Name="StatusLabel"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="{Loc 'dna-modifier-label-health'}" MinWidth="100"/>
+                <Control HorizontalExpand="True"/>
+                <ProgressBar Name="HealthBar" HorizontalExpand="True" MinValue="0" Value="1" MaxValue="1" SetWidth="400"/>
+            </BoxContainer>
+            <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="{Loc 'dna-modifier-label-radiation'}" MinWidth="100"/>
+                <Control HorizontalExpand="True"/>
+                <ProgressBar Name="RadiationBar" HorizontalExpand="True" MinValue="0" Value="0" MaxValue="1" SetWidth="400">
+                    <ProgressBar.ForegroundStyleBoxOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#FFA500"/>
+                    </ProgressBar.ForegroundStyleBoxOverride>
+                </ProgressBar>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="{Loc 'dna-modifier-label-ue'}" MinWidth="100"/>
+                <Control MinWidth="10"/>
+                <Label Name="UniqueEnzymesLabel"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <BoxContainer Orientation="Vertical" VerticalExpand="False" Margin="10">
+            <controls:StripeBack>
+                <Label Text="{Loc 'dna-modifier-label-sixteen'}" HorizontalAlignment="Center" StyleClasses="LabelSubText" Margin="0 4"/>
+            </controls:StripeBack>
+        </BoxContainer>
+        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+
+        <!-- Нижняя часть окна -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="False" Margin="10" MinHeight="500">
+            <ScrollContainer Name="Scroll" HScrollEnabled="False" VerticalExpand="True">
+                <TabContainer Name="Tabs" Margin="5 5 7 5">
+                    <!-- Вкладка Modify U.I. -->
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5" SeparationOverride="10">
+                        <Label Text="{Loc 'dna-modifier-box-ui'}" StyleClasses="LabelBig"/>
+                        <PanelContainer Name="UiPanel" VerticalExpand="True" MinSize="0 200" Visible="False">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="UiContainer"/>
+                        </PanelContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-target'}"/>
+                            <Control MinWidth="10"/>
+                            <FloatSpinBox MinSize="100 0" Name="RadiationTarget" Value="1"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Horizontal">
+                            <Button MinSize="80 0" Name="Releveration1Button" Text="{Loc 'dna-modifier-button-releveration'}"/>
+                        </BoxContainer>
+                    </BoxContainer>
+
+                    <!-- Вкладка Modify S.E. -->
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5" SeparationOverride="10">
+                        <Label Text="{Loc 'dna-modifier-box-se'}" StyleClasses="LabelBig"/>
+                        <PanelContainer Name="SePanel" VerticalExpand="True" MinSize="0 200" Visible="False">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="SeContainer"/>
+                        </PanelContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <BoxContainer Orientation="Horizontal">
+                            <Button MinSize="80 0" Name="Releveration2Button" Text="{Loc 'dna-modifier-button-releveration'}"/>
+                        </BoxContainer>
+                    </BoxContainer>
+
+                    <!-- Вкладка Transfer Buffers -->
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5" SeparationOverride="10">
+                        <Label Text="{Loc 'dna-modifier-box-transfer'}" StyleClasses="LabelBig"/>
+                        <!-- First -->
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-buffer-1'}"/>
+                            <Control HorizontalExpand="True"/>
+                            <Button Name="ClearButton1" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="ExportButton1" Text="{Loc 'dna-modifier-button-export'}" Disabled="True"/>
+                        </BoxContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-buffer-write'}"/>
+                            <Control MinWidth="10"/>
+                            <Button Name="SubjectUI1" Text="{Loc 'dna-modifier-button-subject-ui'}"/>
+                            <Button Name="SubjectUISE1" Text="{Loc 'dna-modifier-button-subject-ui-se'}"/>
+                            <Button Name="SubjectSE1" Text="{Loc 'dna-modifier-button-subject-se'}"/>
+                            <Button Name="FromDisk1" Text="{Loc 'dna-modifier-button-disk'}" Disabled="True"/>
+                        </BoxContainer>
+                        <PanelContainer VerticalExpand="True">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="BufferContainer1"/>
+                        </PanelContainer>
+
+                        <!-- Second -->
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-buffer-2'}"/>
+                            <Control HorizontalExpand="True"/>
+                            <Button Name="ClearButton2" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="ExportButton2" Text="{Loc 'dna-modifier-button-export'}" Disabled="True"/>
+                        </BoxContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-buffer-write'}"/>
+                            <Control MinWidth="10"/>
+                            <Button Name="SubjectUI2" Text="{Loc 'dna-modifier-button-subject-ui'}"/>
+                            <Button Name="SubjectUISE2" Text="{Loc 'dna-modifier-button-subject-ui-se'}"/>
+                            <Button Name="SubjectSE2" Text="{Loc 'dna-modifier-button-subject-se'}"/>
+                            <Button Name="FromDisk2" Text="{Loc 'dna-modifier-button-disk'}" Disabled="True"/>
+                        </BoxContainer>
+                        <PanelContainer VerticalExpand="True">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="BufferContainer2"/>
+                        </PanelContainer>
+
+                        <!-- Third -->
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-buffer-3'}"/>
+                            <Control HorizontalExpand="True"/>
+                            <Button Name="ClearButton3" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="ExportButton3" Text="{Loc 'dna-modifier-button-export'}" Disabled="True"/>
+                        </BoxContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-label-buffer-write'}"/>
+                            <Control MinWidth="10"/>
+                            <Button Name="SubjectUI3" Text="{Loc 'dna-modifier-button-subject-ui'}"/>
+                            <Button Name="SubjectUISE3" Text="{Loc 'dna-modifier-button-subject-ui-se'}"/>
+                            <Button Name="SubjectSE3" Text="{Loc 'dna-modifier-button-subject-se'}"/>
+                            <Button Name="FromDisk3" Text="{Loc 'dna-modifier-button-disk'}" Disabled="True"/>
+                        </BoxContainer>
+                        <PanelContainer VerticalExpand="True">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="BufferContainer3"/>
+                        </PanelContainer>
+
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'dna-modifier-box-disk'}" StyleClasses="LabelBig"/>
+                            <Control HorizontalExpand="True"/>
+                            <Button Name="ClearButtonDisk" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="EjectButtonDisk" Access="Public" Text="{Loc 'dna-modifier-button-eject'}" Disabled="True"/>
+                        </BoxContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <PanelContainer VerticalExpand="True">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="DiskContainer"/>
+                        </PanelContainer>
+
+                    </BoxContainer>
+
+                    <!-- Вкладка Rejuvenators -->
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5" SeparationOverride="10">
+                        <BoxContainer Orientation="Horizontal" Margin="2">
+                            <Label Text="{Loc 'dna-modifier-box-rejuvenator'}" StyleClasses="LabelBig"/>
+                            <Control HorizontalExpand="True"/>
+                            <Button Name="EjectRejuveButton" Access="Public" Text="{Loc 'dna-modifier-button-eject'}" Disabled="True"/>
+                        </BoxContainer>
+                        <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
+                        <PanelContainer VerticalExpand="True" MinSize="0 200">
+                            <PanelContainer.PanelOverride>
+                                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                            </PanelContainer.PanelOverride>
+                            <BoxContainer Name="RejuveContainer" Orientation="Vertical" Margin="4" HorizontalExpand="True"/>
+                        </PanelContainer>
+                    </BoxContainer>
+                </TabContainer>
+            </ScrollContainer>
+        </BoxContainer>
+
+        <BoxContainer Name="RadiationBox" Orientation="Vertical" VerticalExpand="False" Margin="10" Visible="False">
+            <Label Text="{Loc 'dna-modifier-label-big-radiation'}" StyleClasses="LabelBig"/>
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'dna-modifier-label-radiation-intensity'}"/>
+                <Control MinWidth="10"/>
+                <FloatSpinBox MinSize="100 0" Name="RadiationIntensity" Value="1"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'dna-modifier-label-radiation-duration'}"/>
+                <Control MinWidth="10"/>
+                <FloatSpinBox MinSize="100 0" Name="RadiationDuration" Value="1"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal">
+                <Button Name="ReleverationsButton" Text="{Loc 'dna-modifier-button-releverations'}"/>
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+
+</controls:FancyWindow>

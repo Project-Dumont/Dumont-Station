@@ -57,6 +57,10 @@ public sealed class BarkSystem : EntitySystem
             || !_prototypeManager.TryIndex<BarkPrototype>(comp.VoicePrototypeId, out var proto))
             return;
 
+        // Corvax-Wega-Deafness
+        if (HasComp<DeafnessComponent>(sourceEntity))
+            return;
+
         PlayBark(sourceEntity, ev.Message, ev.Whisper, proto);
     }
 

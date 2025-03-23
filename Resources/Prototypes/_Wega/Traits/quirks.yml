@@ -1,0 +1,7 @@
+- type: trait
+  id: Deafness
+  name: trait-deafness-name
+  description: trait-deafness-desc
+  category: Quirks
+  components:
+  - type: Deafness

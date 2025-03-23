@@ -1,0 +1,60 @@
+- type: entity
+  parent: BaseComputerAiAccess
+  id: DnaModifierConsole
+  name: DNA-modifier console
+  description: "This interface is used to change the structure of DNA."
+  components:
+  - type: DnaClient
+  - type: DnaModifierConsole
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: dna
+    - map: ["computerLayerKeys"]
+      state: rd_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: ActivatableUI
+    key: enum.DnaModifierUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.DnaModifierUiKey.Key:
+        type: DnaModifierBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: Computer
+    board: DnaModifierComputerCircuitboard
+  - type: DeviceLinkSource
+    range: 4
+    ports:
+      - MedicalScannerSender
+  - type: AccessReader
+    access: [["Research"]]
+  - type: ContainerContainer
+    containers:
+      diskSlot: !type:ContainerSlot
+      board: !type:Container
+        ents: []
+  - type: ItemSlots
+    slots:
+      diskSlot:
+        whitelist:
+          components:
+          - DnaModifierDisk
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b53ca1"
+  - type: GuideHelp
+    guides:
+    - Science

@@ -1,0 +1,17 @@
+- type: roleLoadout
+  id: JobGeneticist
+  groups:
+  - Inventory # Corvax-Loadouts
+  - GroupTankHarness
+  - GeneticsJumpsuit
+  - MedicalGloves
+  - GeneticsBackpack
+  - GeneticsOuterClothing
+  - MedicalShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Top
+  - Bottom
+  - Socks

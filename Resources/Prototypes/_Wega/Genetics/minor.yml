@@ -1,0 +1,21 @@
+# Minor
+- type: structuralEnzymes
+  id: GeneticsHeatResistanceMinor
+  typeDeviation: Minor
+  costInstability: 10
+  addComponent:
+  - type: HeatResistanceGen
+
+- type: structuralEnzymes
+  id: GeneticsShockImmunityMinor
+  typeDeviation: Minor
+  costInstability: 10
+  addComponent:
+  - type: Insulated
+
+- type: structuralEnzymes
+  id: GeneticsStrongMinor
+  typeDeviation: Minor
+  costInstability: 15
+  remComponent:
+  - type: StrongnessGen

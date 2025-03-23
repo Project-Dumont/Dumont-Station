@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: DnaModifierComputerCircuitboard
+  name: DNA-modifier computer board
+  description: "The console board for the modifier console is DNA."
+  components:
+    - type: Sprite
+      state: cpu_medical
+    - type: ComputerBoard
+      prototype: ComputerDnaModifier

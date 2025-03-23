@@ -1,0 +1,30 @@
+- type: job
+  id: Geneticist
+  name: job-name-geneticist
+  description: job-description-geneticist
+  playTimeTracker: JobGeneticist
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 42000
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 42000
+  startingGear: GeneticistGear
+  icon: "JobIconGeneticist"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Research
+  - Maintenance
+  - Cryogenics
+
+- type: startingGear
+  id: GeneticistGear
+  equipment:
+    id: GeneticistPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled

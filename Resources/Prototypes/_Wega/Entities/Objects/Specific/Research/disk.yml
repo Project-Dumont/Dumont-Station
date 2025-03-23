@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseItem
+  id: DnaModifierDisk
+  name: DNA-modifier disk
+  description: ""
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+      map: ["enum.DamageStateVisualLayers.Base"]
+    - state: datadisk_label
+    - state: datadisk_gene
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        datadisk_base: Sixteen
+  - type: DnaModifierDisk
+  - type: StaticPrice
+    price: 100

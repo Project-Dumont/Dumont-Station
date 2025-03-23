@@ -1,0 +1,22 @@
+# Medical
+- type: loadoutGroup
+  id: GeneticsJumpsuit
+  name: loadout-group-brigmedic-jumpsuit
+  loadouts:
+  - GeneticsJumpsuit
+  - GeneticsJumpskirt
+
+- type: loadoutGroup
+  id: GeneticsBackpack
+  name: loadout-group-brigmedic-backpack
+  loadouts:
+  - GeneticsBackpack
+  - GeneticsSatchel
+  - GeneticsDuffel
+
+- type: loadoutGroup
+  id: GeneticsOuterClothing
+  name: loadout-group-brigmedic-outerclothing
+  loadouts:
+  - GeneticsOuterClothingLab
+  - GeneticsOuterClothingWinter

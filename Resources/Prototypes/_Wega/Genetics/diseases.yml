@@ -1,0 +1,170 @@
+# Disease
+- type: structuralEnzymes
+  id: GeneticsPermanentBlindnessDisease
+  typeDeviation: Disease
+  costInstability: -15
+  addComponent:
+  - type: PermanentBlindness
+
+- type: structuralEnzymes
+  id: GeneticsAuldImperialDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: AuldImperialAccent
+
+- type: structuralEnzymes
+  id: GeneticsClumsinessDisease
+  typeDeviation: Disease
+  costInstability: -5
+  addComponent:
+  - type: Clumsy
+
+- type: structuralEnzymes
+  id: GeneticsColourblindnessDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: ColourBlindness
+
+- type: structuralEnzymes
+  id: GeneticsComicDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: ClownAccent
+
+- type: structuralEnzymes
+  id: GeneticsCoughingDisease
+  typeDeviation: Disease
+  costInstability: -5
+  addComponent:
+  - type: UncontrollableCough
+    emote: Cough
+    timeBetweenIncidents: 0.3, 120
+
+- type: structuralEnzymes
+  id: GeneticsDeafnessDisease
+  typeDeviation: Disease
+  costInstability: -15
+  addComponent:
+  - type: Deafness
+
+- type: structuralEnzymes
+  id: GeneticsDizzyDisease
+  typeDeviation: Disease
+  costInstability: -5
+  addComponent:
+  - type: DizzyGen
+
+- type: structuralEnzymes
+  id: GeneticsEpilepsyDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: EpilepsyGen
+
+- type: structuralEnzymes
+  id: GeneticsHornsDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: EnsureHornsGen
+
+- type: structuralEnzymes
+  id: GeneticsIncendiaryMitochondriaDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: IncendiaryMitochondriaGen
+
+- type: structuralEnzymes
+  id: GeneticsLispDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: LispAccent
+
+- type: structuralEnzymes
+  id: GeneticsLoudDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: LoudAccent
+
+- type: structuralEnzymes
+  id: GeneticsMutedDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: Muted
+
+- type: structuralEnzymes
+  id: GeneticsBlindnessDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: PermanentBlindness
+    blindness: 4
+
+- type: structuralEnzymes
+  id: GeneticsStutteringDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: StutteringAccent
+
+- type: structuralEnzymes
+  id: GeneticsObesityDisease
+  typeDeviation: Disease
+  costInstability: -5
+  # empty
+
+- type: structuralEnzymes
+  id: GeneticsRadiationSourceDisease
+  typeDeviation: Disease
+  costInstability: -15
+  addComponent:
+  - type: RadiationSource
+
+- type: structuralEnzymes
+  id: GeneticsSouthernDisease
+  typeDeviation: Disease
+  addComponent:
+  - type: SouthernAccent
+
+- type: structuralEnzymes
+  id: GeneticsTourettesSyndromeDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: TourettesSyndrome
+
+- type: structuralEnzymes
+  id: GeneticsUnintelligibleDisease
+  typeDeviation: Disease
+  costInstability: -5
+  addComponent:
+  - type: UnintelligibleAccent
+
+- type: structuralEnzymes
+  id: GeneticsWeaknessDisease
+  typeDeviation: Disease
+  costInstability: -10
+  addComponent:
+  - type: WeaknessGen
+
+- type: structuralEnzymes
+  id: GeneticsWingdingsDisease
+  typeDeviation: Disease
+  costInstability: -5
+  addComponent:
+  - type: WingdingsAccent
+
+- type: structuralEnzymes
+  id: GeneticsAphasiaDisease
+  typeDeviation: Disease
+  costInstability: -5
+  addComponent:
+  - type: AphasiaAccent
+
+- type: structuralEnzymes
+  id: GeneticsParalyzedDisease
+  typeDeviation: Disease
+  costInstability: -15
+  addComponent:
+  - type: LegsParalyzed
