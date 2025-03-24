@@ -300,6 +300,9 @@
         - Syndicate
       mindRoles:
       - MindRoleNukeops
+  - type: Tag
+    tags:
+    - ExtremeAntag # Funky
 
 - type: entity
   abstract: true
@@ -374,6 +377,9 @@
       - type: HeadRevolutionary
       mindRoles:
       - MindRoleHeadRevolutionary
+  - type: Tag
+    tags:
+    - ExtremeAntag # Funky
 
 - type: entity
   id: Sandbox

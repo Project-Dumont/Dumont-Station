@@ -208,6 +208,8 @@
       activateSound: null
       deactivateSound: null
     - type: Fauna # Lavaland Change
+    - type: CombatPower # Funky
+      factor: 8 # / 2 = times stronger than an unarmed crew member
 
 - type: entity
   parent: BaseMobCarp
