@@ -50,6 +50,7 @@
 # Midround Changelings
 - type: entity
   parent: BaseGameRule # Funky: Changed parent because it no longer directly makes changelings at all
+  parent: BaseGameRule # Funky: Changed parent because it no longer directly makes changelings at all
   id: ChangelingMidround
   components:
   - type: StationEvent
@@ -168,7 +169,7 @@
         text: head-rev-role-greeting
         color: CornflowerBlue
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-      startingGear: HeadRevGear
+      #startingGear: HeadRevGear
       components:
       - type: Revolutionary
       - type: HeadRevolutionary

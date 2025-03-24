@@ -53,16 +53,22 @@ public sealed partial class GameDirectorComponent : Component
     public List<ProtoId<StoryBeatPrototype>> RemainingBeats = new();
 
     /// <summary>
-    /// Does this round start with multiple antags.
+    /// Does this round start with calm antags or regular roundstart antags?
     /// </summary>
     [DataField]
-    public bool DualAntags;
+    public bool CalmAntags;
 
     /// <summary>
-    /// Does this round start with antags at all?.
+    /// How many antags does this round start with?
     /// </summary>
     [DataField]
-    public bool NoRoundstartAntags;
+    public int NormalAntagAmount;
+
+    [DataField]
+    public int ExtremeAntagAmount;
+
+    [DataField]
+    public int CalmAntagAmount;
 
     // Funky/Gaby changes
 

@@ -63,6 +63,7 @@
 - type: entity
   parent: BaseTraitorRule
   id: CalmTraitor # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
+  id: CalmTraitor # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
   components:
   - type: GameRule
     minPlayers: 30

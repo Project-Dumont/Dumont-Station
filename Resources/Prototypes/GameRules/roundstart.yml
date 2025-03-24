@@ -315,6 +315,9 @@
   - type: Tag
     tags:
     - ExtremeAntag # Funky
+  - type: Tag
+    tags:
+    - ExtremeAntag # Funky
 
 # Goobstation
 - type: entity
@@ -468,6 +471,9 @@
 #        - names_wizard_last
 #      mindRoles:
 #      - MindRoleWizard
+#  - type: Tag
+#    tags:
+#    - ExtremeAntag # Funky
 
 - type: entity
   id: Zombie

@@ -533,6 +533,8 @@
         startingItem: PowerCellHyper
   - type: CombatPower # Goobstation
     factor: 16 # / 2 = times more powerful than an unarmed crew-member
+  - type: CombatPower # Goobstation
+    factor: 16 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   id: PlayerBorgSyndicateAssaultGhostRole

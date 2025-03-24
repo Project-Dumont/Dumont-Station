@@ -298,73 +298,102 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
     private void TrySpawnRoundstartAntags(GameDirectorComponent scheduler)
     {
         if (scheduler.CalmAntagAmount == 0 && scheduler.NormalAntagAmount == 0 && scheduler.ExtremeAntagAmount == 0)
+        if (scheduler.CalmAntagAmount == 0 && scheduler.NormalAntagAmount == 0 && scheduler.ExtremeAntagAmount == 0)
             return;
 
         // Spawn antags based on GameDirectorComponent
-        var weightList = _prototypeManager.Index(scheduler.RoundStartAntagsWeightTable);
-
-#if DEBUG
-        var count = _configManager.GetCVar(GoobCVars.GameDirectorDebugPlayerCount);
-#else
-        var count = GetTotalPlayerCount(_playerManager.Sessions);
-#endif
-        LogMessage($"Total player count: {count}", false);
-
-        if (!scheduler.DualAntags)
-        {
-            var pick = weightList.Pick(_random);
-            IndexAndStartGameMode(pick);
-        }
-        else
-        {
-            var pick = weightList.Pick(_random);
-            var weights = weightList.Weights;
-
-            if (_prototypeManager.TryIndex(pick, out IncompatibleGameModesPrototype? incompModes))
-                weights = weights.Where(w => !incompModes.Modes.Contains(w.Key)).ToDictionary();
-
-            if (weights.Count == 0)
+            var roundStartAntags = new List<EntityPrototype>();
+            var calmStartAntags = new List<EntityPrototype>();
+            var extremeAntags = new List<EntityPrototype>();
+            foreach (var proto in GameTicker.GetAllGameRulePrototypes())
             {
-                IndexAndStartGameMode(pick);
-                return;
+                if (!proto.TryGetComponent<TagComponent>(out var tag, _factory))
+                    continue;
+
+                if (!proto.TryGetComponent<GameRuleComponent>(out var gameRuleComp, _factory))
+                    continue;
+
+                if (gameRuleComp.MinPlayers > count)
+                    continue;
+
+                if (proto.HasComponent<DynamicRulesetComponent>())
+                    continue;
+
+                if (_tag.HasTag(tag, "MidroundAntag"))
+                    continue;
+
+                if (_tag.HasTag(tag, "ExtremeAntag"))
+                {
+                    extremeAntags.Add(proto);
+                }
+                else if (_tag.HasTag(tag, "RoundstartAntag"))
+                {
+                    roundStartAntags.Add(proto);
+                }
+                else if (_tag.HasTag(tag, "CalmAntag"))
+                {
+                    calmStartAntags.Add(proto);
+                }
             }
 
-            var pick2 = _random.Pick(weights);
-            var pick1Proto = _prototypeManager.Index(pick);
-            var pick2Proto = _prototypeManager.Index(pick2);
-            if (!pick2Proto.TryGetComponent<GameRuleComponent>(out var pick2GameRule, _factory) ||
-                !pick1Proto.TryGetComponent<GameRuleComponent>(out var pick1GameRule, _factory) ||
-                pick1GameRule.MinPlayers > count || pick2GameRule.MinPlayers > count)
+
+            LogMessage($"Trying to choose {scheduler.NormalAntagAmount + scheduler.CalmAntagAmount + scheduler.ExtremeAntagAmount} roundstart antag(s)");
+
+            var random = new Random();
+            if (calmStartAntags.Count < scheduler.CalmAntagAmount)
             {
-                LogMessage("Not enough players for roundstart antags selected...");
+                LogMessage("Not enough valid calm roundstart antags found!");
                 return;
             }
-            LogMessage("Choosing roundstart antag");
-            LogMessage($"Roundstart antag chosen: {pick}");
-            LogMessage($"Roundstart antag chosen: {pick2}");
-
-            RoundstartAntagsSelectedTotal.WithLabels(pick).Inc();
-            GameTicker.AddGameRule(pick);
-            RoundstartAntagsSelectedTotal.WithLabels(pick2).Inc();
-            GameTicker.AddGameRule(pick2);
-        }
-
-        return;
-
-        void IndexAndStartGameMode(string pick)
-        {
-            var pickProto = _prototypeManager.Index(pick);
-            if(!pickProto.TryGetComponent<GameRuleComponent>(out var pickGameRule, _factory) ||
-               pickGameRule.MinPlayers > count)
+            else
             {
-                LogMessage("Not enough players for roundstart antags selected...");
+                for (int i = 0; i < scheduler.CalmAntagAmount; i++)
+                {
+                    var firstIndex = random.Next(calmStartAntags.Count);
+                    var randomAntag = calmStartAntags[firstIndex];
+                    ;
+                    var ruleEnt = GameTicker.AddGameRule(randomAntag.ID);
+                    roundStartAntags.RemoveAt(firstIndex);
+                    LogMessage($"Roundstart (calm) antag chosen {i}: {randomAntag.ID}");
+                    GameTicker.StartGameRule(ruleEnt);
+                }
+            }
+
+            if (roundStartAntags.Count < scheduler.NormalAntagAmount)
+            {
+                LogMessage("Not enough valid regular roundstart antags found!");
                 return;
             }
-            LogMessage("Choosing roundstart antag");
-            LogMessage($"Roundstart antag chosen: {pick}");
-            RoundstartAntagsSelectedTotal.WithLabels(pick).Inc();
-            GameTicker.AddGameRule(pick);
-        }
+            else
+            {
+                for (int i = 0; i < scheduler.NormalAntagAmount; i++)
+                {
+                    var firstIndex = random.Next(roundStartAntags.Count);
+                    var randomAntag = roundStartAntags[firstIndex];
+                    var ruleEnt = GameTicker.AddGameRule(randomAntag.ID);
+                    roundStartAntags.RemoveAt(firstIndex);
+                    LogMessage($"Roundstart antag chosen {i}: {randomAntag.ID}");
+                    GameTicker.StartGameRule(ruleEnt);
+                }
+            }
+
+            if (extremeAntags.Count < scheduler.ExtremeAntagAmount)
+            {
+                LogMessage("Not enough valid extreme roundstart antags found!");
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < scheduler.ExtremeAntagAmount; i++)
+                {
+                    var firstIndex = random.Next(extremeAntags.Count);
+                    var randomAntag = extremeAntags[firstIndex]; ;
+                    var ruleEnt = GameTicker.AddGameRule(randomAntag.ID);
+                    extremeAntags.RemoveAt(firstIndex);
+                    LogMessage($"Roundstart (extreme) antag chosen {i}: {randomAntag.ID}");
+                    GameTicker.StartGameRule(ruleEnt);
+                }
+            }
     }
 
     /// <summary>

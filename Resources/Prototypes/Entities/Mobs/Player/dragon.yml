@@ -318,7 +318,7 @@
     deactivateSound: null
   - type: ThermalVision # Goobstation - Thermal vision
   - type: CombatPower # Goobstation
-    factor: 4 # times more dangerous than a crew-member
+    factor: 40 # times more dangerous than a crew-member
   - type: Fauna # Lavaland Change
   - type: Prying
     pryPowered: true

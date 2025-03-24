@@ -183,6 +183,8 @@
     damageContainer: StructuralInorganic
   - type: CombatPower # Goobstation
     factor: 8 # / 2 = times more powerful than an unarmed crew-member
+  - type: CombatPower # Goobstation
+    factor: 8 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   parent: MobOreCrab
