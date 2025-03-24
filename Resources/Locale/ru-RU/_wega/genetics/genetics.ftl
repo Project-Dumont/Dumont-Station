@@ -31,6 +31,7 @@ dna-modifier-label-buffer-1 = Ячейка буфера №1
 dna-modifier-label-buffer-2 = Ячейка буфера №2
 dna-modifier-label-buffer-3 = Ячейка буфера №3
 dna-modifier-button-clear = Очистить
+dna-modifier-button-rename = Переименовать
 dna-modifier-button-export = Экспортировать
 dna-modifier-button-subject-ui = УИ субъекта
 dna-modifier-button-subject-ui-se = УИ & СФ субъекта
@@ -70,6 +71,7 @@ dna-modifier-no-data = Нет данных
 dna-disk-sample = образец-
 
 # System
+dna-disk-name = диск ДНК-модификатора
 dna-instability-stage-one = Вы чувствуете как ваша кожа пузырится
 dna-instability-stage-two = Вы чувствуете как ваши конечности выворачивает наружу, а кожа пузырится
 dna-instability-stage-three = Вы чувствуете как вас разрывает из нутри

@@ -1,7 +1,11 @@
 - type: trait
-  id: Deafness
-  name: trait-deafness-name
-  description: trait-deafness-desc
+  id: NoirVision
+  name: trait-noir-vision-name
+  description: trait-noir-vision-desc
   category: Quirks
+  blacklist:
+    components:
+      - ColourBlindness
   components:
-  - type: Deafness
+  - type: NoirVision
+

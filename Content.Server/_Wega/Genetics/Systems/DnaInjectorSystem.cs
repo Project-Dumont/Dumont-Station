@@ -112,7 +112,7 @@ public sealed partial class DnaModifierSystem
             {
                 EnzymesPrototypeId = enzymePrototype.EnzymesPrototypeId,
                 Order = enzymePrototype.Order,
-                HexCode = enzymePrototype.Order == 54
+                HexCode = enzymePrototype.Order == 55
                     ? GenerateLastHexCode()
                     : GenerateHexCode()
             };

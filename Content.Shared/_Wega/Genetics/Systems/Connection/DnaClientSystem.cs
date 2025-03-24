@@ -48,6 +48,14 @@ public sealed class DnaClientSystem : EntitySystem
         return _dnaServer.ClearBuffer((server.Value.Owner, server.Value.Comp), bufferIndex);
     }
 
+    public bool TryRenameBuffer(Entity<DnaClientComponent?> client, int bufferIndex, string name)
+    {
+        if (!TryGetServer(client, out var server))
+            return false;
+
+        return _dnaServer.RenameBuffer((server.Value.Owner, server.Value.Comp), bufferIndex, name);
+    }
+
     public bool TryGetServer(Entity<DnaClientComponent?> client, [NotNullWhen(true)] out Entity<DnaServerComponent>? serverEnt)
     {
         serverEnt = null;

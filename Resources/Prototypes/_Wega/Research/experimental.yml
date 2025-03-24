@@ -1,0 +1,12 @@
+- type: technology
+  id: GeneticsModification
+  name: research-technology-genetics-modification
+  icon:
+    sprite: Structures/Machines/scanner.rsi
+    state: open
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - MedicalScannerMachineCircuitboard
+  - DnaModifierComputerCircuitboard

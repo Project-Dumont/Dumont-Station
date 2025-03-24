@@ -107,6 +107,21 @@ public sealed class DnaModifierConsoleClearBufferEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
+public sealed class DnaModifierConsoleRenameBufferEvent : EntityEventArgs
+{
+    public NetEntity Console { get; }
+    public NetEntity User { get; }
+    public int Index { get; }
+
+    public DnaModifierConsoleRenameBufferEvent(NetEntity console, NetEntity user, int index)
+    {
+        Console = console;
+        User = user;
+        Index = index;
+    }
+}
+
+[Serializable, NetSerializable]
 public sealed class DnaModifierConsoleExportOnDiskEvent : EntityEventArgs
 {
     public NetEntity Uid { get; }

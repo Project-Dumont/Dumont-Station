@@ -2,7 +2,7 @@
   parent: BaseItem
   id: DnaModifierDisk
   name: DNA-modifier disk
-  description: ""
+  description: "A disk for recording genome data."
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi

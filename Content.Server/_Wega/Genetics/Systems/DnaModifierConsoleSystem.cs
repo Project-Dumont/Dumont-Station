@@ -26,12 +26,15 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Genetics.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Damage.Prototypes;
+using Robust.Shared.Player;
+using Content.Server.Administration;
 
 namespace Content.Server.Genetics.System
 {
     [UsedImplicitly]
     public sealed class DnaModifierConsoleSystem : EntitySystem
     {
+        [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
         [Dependency] private readonly DamageableSystem _damage = default!;
         [Dependency] private readonly DnaModifierSystem _dnaModifier = default!;
         [Dependency] private readonly DnaClientSystem _dnaClient = default!;
@@ -44,6 +47,7 @@ namespace Content.Server.Genetics.System
         [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedTransformSystem _transform = default!;
 
         [ValidatePrototypeId<EntityPrototype>]
         private const string Injector = "DnaInjector";
@@ -69,6 +73,7 @@ namespace Content.Server.Genetics.System
 
             SubscribeNetworkEvent<DnaModifierConsoleSaveServerEvent>(OnSaveServerPressed);
             SubscribeNetworkEvent<DnaModifierConsoleClearBufferEvent>(OnClearBufferPressed);
+            SubscribeNetworkEvent<DnaModifierConsoleRenameBufferEvent>(OnRenameBufferPressed);
             SubscribeNetworkEvent<DnaModifierConsoleInjectorEvent>(OnInjectorPressed);
             SubscribeNetworkEvent<DnaModifierConsoleSubjectInjectEvent>(OnSubjectInjectPressed);
 
@@ -468,7 +473,7 @@ namespace Content.Server.Genetics.System
 
             _dnaClient.TryAddToBuffer((clientEntity, client), args.CurrentSection, dataToSend);
 
-            UpdateUserInterface(GetEntity(args.Uid), console);
+            UpdateUserInterface(clientEntity, console);
         }
 
         private void OnClearBufferPressed(DnaModifierConsoleClearBufferEvent args)
@@ -479,7 +484,40 @@ namespace Content.Server.Genetics.System
 
             _dnaClient.TryClearBuffer((clientEntity, client), args.Index);
 
-            UpdateUserInterface(GetEntity(args.Uid), console);
+            UpdateUserInterface(clientEntity, console);
+        }
+
+        private void OnRenameBufferPressed(DnaModifierConsoleRenameBufferEvent args)
+        {
+            var clientEntity = GetEntity(args.Console);
+            if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || !TryComp<DnaClientComponent>(clientEntity, out var client))
+                return;
+
+            if (!_dnaClient.TryGetBufferData((clientEntity, client), args.Index, out var data))
+                return;
+
+            var user = GetEntity(args.User);
+            if (!TryComp<ActorComponent>(user, out var playerActor))
+                return;
+
+            var playerSession = playerActor.PlayerSession;
+            _quickDialog.OpenDialog(playerSession, Loc.GetString("dna-modifier-button-rename"), "",
+                (string name) =>
+                {
+                    var finalName = string.IsNullOrWhiteSpace(name)
+                        ? data.SampleName
+                        : name;
+
+                    var consolePosition = _transform.GetWorldPosition(clientEntity);
+                    var userPosition = _transform.GetWorldPosition(user);
+                    var distance = (userPosition - consolePosition).Length();
+                    if (distance > 3f)
+                        return;
+
+                    _dnaClient.TryRenameBuffer((clientEntity, client), args.Index, finalName);
+
+                    UpdateUserInterface(clientEntity, console);
+                });
         }
 
         private void OnInjectorPressed(DnaModifierConsoleInjectorEvent args)
@@ -673,8 +711,14 @@ namespace Content.Server.Genetics.System
             {
                 var randomField = fields[_random.Next(fields.Count)];
                 int randomIndex = _random.Next(0, randomField.Field.Length);
-
-                randomField.Field[randomIndex] = GenerateRandomHexValue(randomField.Field[randomIndex], intensity, 1.0f);
+                if (randomField.Name == nameof(uniqueIdentifiers.SkinTone))
+                {
+                    randomField.Field[randomIndex] = GenerateSkinToneComponent(randomIndex, intensity, 1.0f);
+                }
+                else
+                {
+                    randomField.Field[randomIndex] = GenerateRandomHexValue(randomField.Field[randomIndex], intensity, 1.0f);
+                }
                 return;
             }
 
@@ -702,6 +746,16 @@ namespace Content.Server.Genetics.System
             var field = fields[blockIndex].Field;
             if (value < 0 || value >= field.Length)
                 return;
+
+            if (blockNumber == 13)
+            {
+                if (value >= 0 && value < uniqueIdentifiers.SkinTone.Length)
+                {
+                    uniqueIdentifiers.SkinTone[value] =
+                        GenerateSkinToneComponent(value, intensity, 1.0f);
+                }
+                return;
+            }
 
             field[value] = GenerateRandomHexValue(field[value], intensity, 1.0f);
         }
@@ -751,7 +805,17 @@ namespace Content.Server.Genetics.System
             for (int i = 0; i < fieldsToModify; i++)
             {
                 var fieldIndex = _random.Next(fields.Count);
+                var fieldName = fields[fieldIndex].Name;
                 var field = fields[fieldIndex].Field;
+
+                if (fieldName == nameof(uniqueIdentifiers.SkinTone))
+                {
+                    for (int j = 0; j < field.Length; j++)
+                    {
+                        field[j] = GenerateSkinToneComponent(j, intensity, duration);
+                    }
+                    continue;
+                }
 
                 for (int j = 0; j < field.Length; j++)
                 {
@@ -819,6 +883,17 @@ namespace Content.Server.Genetics.System
             else if (modifiedValue >= 16) modifiedValue -= 16;
 
             return modifiedValue.ToString("X1");
+        }
+
+        private string GenerateSkinToneComponent(int index, float intensity, float duration)
+        {
+            switch (index)
+            {
+                case 0: return (_random.NextFloat() < intensity / 100f) ? "1" : "0";
+                case 1: int digit1 = _random.Next(0, 10); return digit1.ToString("X1");
+                case 2: int digit2 = _random.Next(0, 10); return digit2.ToString("X1");
+                default: return "0";
+            }
         }
 
         private void AddRadiationDamage(EntityUid uid, float intensity)

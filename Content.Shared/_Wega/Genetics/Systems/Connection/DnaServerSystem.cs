@@ -101,6 +101,31 @@ public sealed class DnaServerSystem : EntitySystem
         return true;
     }
 
+    public bool RenameBuffer(Entity<DnaServerComponent?> server, int bufferIndex, string name)
+    {
+        if (!Resolve(server, ref server.Comp))
+            return false;
+
+        if (string.IsNullOrWhiteSpace(name))
+            return false;
+
+        var buffer = bufferIndex switch
+        {
+            1 => server.Comp.Buffer1,
+            2 => server.Comp.Buffer2,
+            3 => server.Comp.Buffer3,
+            _ => null
+        };
+
+        if (buffer == null)
+            return false;
+
+        buffer.SampleName = name;
+        Dirty(server, server.Comp);
+
+        return true;
+    }
+
     public bool TryGetBufferData(Entity<DnaServerComponent?> server, int bufferIndex, [NotNullWhen(true)] out EnzymeInfo? data)
     {
         data = null;

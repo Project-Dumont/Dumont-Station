@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Inventory;
-using Content.Server.Polymorph.Systems;
 using Content.Shared.Buckle;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
@@ -47,6 +46,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
 
+    public static Color ValidHumanSkinTone => Color.FromHsv(new Vector4(0.07f, 0.2f, 1f, 1f));
 
     public override void Initialize()
     {
@@ -154,6 +154,8 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             var markingPrototypes = _markingIndexer.GetAllMarkingPrototypes();
             var speciesProto = _prototype.Index<SpeciesPrototype>(humanoid.Species);
 
+            var empty = new[] { "0", "0", "0" };
+
             // Цвет волос (блоки 1-3) и Вторичный цвет волос (блоки 4-6)
             if (markingSet.TryGetCategory(MarkingCategories.Hair, out var hairMarkings))
             {
@@ -171,7 +173,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
                 uniqueIdentifiers.HairStyle = markingPrototype != null
                     ? markingPrototype.HexValue
-                    : new[] { "0", "0", "0" };
+                    : empty;
 
                 // блоки 4-6
                 if (hairMarkings.Count > 1)
@@ -203,7 +205,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 uniqueIdentifiers.SecondaryHairColorB = GenerateRandomHexValues();
 
                 // блок 34
-                uniqueIdentifiers.HairStyle = new[] { "0", "0", "0" };
+                uniqueIdentifiers.HairStyle = empty;
             }
 
             // Цвет бороды (блоки 7-9)
@@ -222,7 +224,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
                 uniqueIdentifiers.BeardStyle = markingPrototype != null
                     ? markingPrototype.HexValue
-                    : new[] { "0", "0", "0" };
+                    : empty;
             }
             else
             {
@@ -231,7 +233,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 uniqueIdentifiers.BeardColorB = GenerateRandomHexValues();
 
                 // блок 33
-                uniqueIdentifiers.BeardStyle = new[] { "0", "0", "0" };
+                uniqueIdentifiers.BeardStyle = empty;
             }
 
             // Тон кожи или цвет меха (блоки 13-16)
@@ -269,7 +271,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
                 uniqueIdentifiers.HeadAccessoryStyle = markingPrototype != null
                     ? markingPrototype.HexValue
-                    : new[] { "0", "0", "0" };
+                    : empty;
             }
             else
             {
@@ -278,7 +280,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 uniqueIdentifiers.HeadAccessoryColorB = GenerateRandomHexValues();
 
                 // блок 35
-                uniqueIdentifiers.HeadAccessoryStyle = new[] { "0", "0", "0" };
+                uniqueIdentifiers.HeadAccessoryStyle = empty;
             }
 
             // Цвет разметки головы (блоки 20-22)
@@ -297,7 +299,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
                 uniqueIdentifiers.HeadMarkingStyle = markingPrototype != null
                     ? markingPrototype.HexValue
-                    : new[] { "0", "0", "0" };
+                    : empty;
             }
             else
             {
@@ -306,7 +308,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 uniqueIdentifiers.HeadMarkingColorB = GenerateRandomHexValues();
 
                 // блок 36
-                uniqueIdentifiers.HeadMarkingStyle = new[] { "0", "0", "0" };
+                uniqueIdentifiers.HeadMarkingStyle = empty;
             }
 
             // Цвет маркировки тела (блоки 23-25)
@@ -325,7 +327,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
                 uniqueIdentifiers.BodyMarkingStyle = markingPrototype != null
                     ? markingPrototype.HexValue
-                    : new[] { "0", "0", "0" };
+                    : empty;
             }
             else
             {
@@ -334,7 +336,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 uniqueIdentifiers.BodyMarkingColorB = GenerateRandomHexValues();
 
                 // блок 37
-                uniqueIdentifiers.BodyMarkingStyle = new[] { "0", "0", "0" };
+                uniqueIdentifiers.BodyMarkingStyle = empty;
             }
 
             // Цвет маркировки хвоста (блоки 26-28)
@@ -353,7 +355,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
                 uniqueIdentifiers.TailMarkingStyle = markingPrototype != null
                     ? markingPrototype.HexValue
-                    : new[] { "0", "0", "0" };
+                    : empty;
             }
             else
             {
@@ -362,7 +364,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 uniqueIdentifiers.TailMarkingColorB = GenerateRandomHexValues();
 
                 // блок 38
-                uniqueIdentifiers.TailMarkingStyle = new[] { "0", "0", "0" };
+                uniqueIdentifiers.TailMarkingStyle = empty;
             }
 
             // Цвет глаз (блоки 29-31)
@@ -374,9 +376,9 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             // Пол (блок 32)
             uniqueIdentifiers.Gender = humanoid.Sex switch
             {
-                Sex.Female => GenerateRandomGenderHexValue(0x000, 0x23D), // Женщина <= 573
-                Sex.Male => GenerateRandomGenderHexValue(0x23E, 0x320), // Мужчина >= 574 и <= 800
-                Sex.Unsexed => GenerateRandomGenderHexValue(0x321, 0x3E7), // Unsexed >= 801
+                Sex.Female => GenerateTripleHexValues(0x0, 0x5, 0x0, 0x7, 0x0, 0x3), // <= 0x5 <= 0x7 <= 0x3
+                Sex.Male => GenerateTripleHexValues(0x0, 0x7, 0x0, 0x7, 0x0, 0x8), // < 0x8 <= 0x7 < 0x9
+                Sex.Unsexed => GenerateTripleHexValues(0x8, 0xF, 0x7, 0xF, 0x9, 0xF), // >= 0x8 >= 0x7 >= 0x9
                 _ => GenerateRandomHexValues()
             };
 
@@ -384,6 +386,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         }
         else
         {
+            var empty = new[] { "0", "0", "0" };
             var uniqueIdentifiers = new UniqueIdentifiersPrototype
             {
                 ID = $"StructuralEnzymes{uid}",
@@ -420,10 +423,10 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                     : GenerateRandomGenderHexValue(0x23E, 0x320), // Мужчина
                 HairStyle = GenerateRandomHexValues(),
                 BeardStyle = GenerateRandomHexValues(),
-                HeadAccessoryStyle = new[] { "0", "0", "0" },
-                HeadMarkingStyle = new[] { "0", "0", "0" },
-                BodyMarkingStyle = new[] { "0", "0", "0" },
-                TailMarkingStyle = new[] { "0", "0", "0" }
+                HeadAccessoryStyle = empty,
+                HeadMarkingStyle = empty,
+                BodyMarkingStyle = empty,
+                TailMarkingStyle = empty
             };
 
             component.UniqueIdentifiers = uniqueIdentifiers;
@@ -623,11 +626,44 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             return;
 
         var uniqueIdentifiers = component.UniqueIdentifiers;
+        UpdateSkin(humanoid, uniqueIdentifiers);
         UpdateMarkings(humanoid, uniqueIdentifiers);
         UpdateEyeColor(humanoid, uniqueIdentifiers);
         UpdateGender(humanoid, uniqueIdentifiers);
 
         Dirty(humanoid.Owner, humanoid);
+    }
+
+    private void UpdateSkin(HumanoidAppearanceComponent humanoid, UniqueIdentifiersPrototype uniqueIdentifiers)
+    {
+        var speciesProto = _prototype.Index<SpeciesPrototype>(humanoid.Species);
+
+        switch (speciesProto.SkinColoration)
+        {
+            case HumanoidSkinColor.HumanToned:
+                humanoid.SkinColor = ConvertSkinToneToColor(uniqueIdentifiers.SkinTone);
+                break;
+
+            case HumanoidSkinColor.Hues:
+            case HumanoidSkinColor.TintedHues:
+            case HumanoidSkinColor.VoxFeathers:
+                string redHex = uniqueIdentifiers.FurColorR[0] + uniqueIdentifiers.FurColorR[1];
+                string greenHex = uniqueIdentifiers.FurColorG[0] + uniqueIdentifiers.FurColorG[1];
+                string blueHex = uniqueIdentifiers.FurColorG[0] + uniqueIdentifiers.FurColorG[1];
+
+                int red = Convert.ToInt32(redHex, 16);
+                int green = Convert.ToInt32(greenHex, 16);
+                int blue = Convert.ToInt32(blueHex, 16);
+
+                float redNormalized = red / 255f;
+                float greenNormalized = green / 255f;
+                float blueNormalized = blue / 255f;
+
+                var newColor = new Color(redNormalized, greenNormalized, blueNormalized);
+
+                humanoid.SkinColor = newColor;
+                break;
+        }
     }
 
     private void UpdateMarkings(HumanoidAppearanceComponent humanoid, UniqueIdentifiersPrototype uniqueIdentifiers)
@@ -672,14 +708,16 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         var currentGender = (values[0], values[1], values[2]) switch
         {
             ( <= 0x5, <= 0x7, <= 0x3) => Gender.Female,
-            ( <= 0x8, <= 0x0, <= 0x1) => Gender.Male,
+            ( < 0x8, <= 0x7, < 0x9) => Gender.Male,
+            ( >= 0x8, >= 0x7, >= 0x9) => Gender.Neuter,
             _ => Gender.Neuter
         };
 
         var currentSex = (values[0], values[1], values[2]) switch
         {
             ( <= 0x5, <= 0x7, <= 0x3) => Sex.Female,
-            ( <= 0x8, <= 0x0, <= 0x1) => Sex.Male,
+            ( < 0x8, <= 0x7, < 0x9) => Sex.Male,
+            ( >= 0x8, >= 0x7, >= 0x9) => Sex.Unsexed,
             _ => Sex.Unsexed
         };
 

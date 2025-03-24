@@ -6,6 +6,7 @@ namespace Content.Shared.Genetics.Systems;
 
 public abstract partial class SharedDnaModifierSystem : EntitySystem
 {
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     public void TrySaveInDisk(EntityUid disk, EnzymeInfo enzyme)
@@ -17,6 +18,8 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
             return;
 
         comp.Data = enzyme;
+        if (TryComp(disk, out MetaDataComponent? meta))
+            _metaData.SetEntityName(disk, Loc.GetString("dna-disk-name") + " " + $"({enzyme.SampleName})");
 
         Dirty(disk, comp);
         return;
@@ -82,27 +85,82 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
 
     public string[] ConvertSkinToneToHexArray(Color skinColor)
     {
-        var hsv = Color.ToHsv(skinColor);
-        var hue = hsv.X * 360f;
+        float skinToneValue = HumanSkinToneFromColor(skinColor);
 
-        const float minHue = 25f;
-        const float maxHue = 45f;
+        int normalizedTone = (int)Math.Round(skinToneValue / 100f * 99);
+        normalizedTone = Math.Clamp(normalizedTone, 0, 99);
 
-        hue = Math.Clamp(hue, minHue, maxHue);
+        int digit1 = normalizedTone / 10;
+        int digit2 = normalizedTone % 10;
 
-        var normalizedTone = (hue - minHue) / (maxHue - minHue) * 100f;
-        var toneValue = (int)Math.Round(normalizedTone);
-
-        var part1 = (toneValue / 16) % 16;
-        var part2 = (toneValue / 1) % 16;
-        var part3 = 0;
+        int firstHex = (normalizedTone >= 100) ? 1 : 0;
 
         return new[]
         {
-            part1.ToString("X1"),
-            part2.ToString("X1"),
-            part3.ToString("X1")
+            firstHex.ToString("X1"),
+            digit1.ToString("X1"),
+            digit2.ToString("X1")
         };
+    }
+
+    public float HumanSkinToneFromColor(Color color)
+    {
+        var hsv = Color.ToHsv(color);
+        // check for hue/value first, if hue is lower than this percentage
+        // and value is 1.0
+        // then it'll be hue
+        if (Math.Clamp(hsv.X, 25f / 360f, 1) > 25f / 360f
+            && hsv.Z == 1.0)
+        {
+            return Math.Abs(45 - (hsv.X * 360));
+        }
+        // otherwise it'll directly be the saturation
+        else
+        {
+            return hsv.Y * 100;
+        }
+    }
+
+    public Color ConvertSkinToneToColor(string[] skinTone)
+    {
+        Color defaultColor = Color.FromHsv(new Vector4(0.07f, 0.2f, 1f, 1f));
+        if (skinTone == null || skinTone.Length != 3)
+            return defaultColor;
+
+        try
+        {
+            bool isMaxTone = skinTone[0] == "1";
+            int tens = Convert.ToInt32(skinTone[1], 16);
+            int units = Convert.ToInt32(skinTone[2], 16);
+
+            int toneValue = isMaxTone ? 100 : Math.Clamp(tens * 10 + units, 0, 99);
+
+            float hue, saturation, value;
+
+            if (toneValue <= 20)
+            {
+                hue = 25 + (45 - 25) * (20 - toneValue) / 20f;
+                saturation = 0.2f;
+                value = 1f;
+            }
+            else
+            {
+                hue = 25f;
+                saturation = 0.2f + 0.8f * (toneValue - 20) / 80f;
+                value = 1f - 0.8f * (toneValue - 20) / 80f;
+            }
+
+            return Color.FromHsv(new Vector4(
+                hue / 360f,
+                saturation,
+                value,
+                1f
+            ));
+        }
+        catch
+        {
+            return defaultColor;
+        }
     }
 
     public string[] GenerateRandomGenderHexValue(int minHex, int maxHex)
@@ -114,6 +172,16 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
             hexString[0].ToString(),
             hexString[1].ToString(),
             hexString[2].ToString()
+        };
+    }
+
+    public string[] GenerateTripleHexValues(byte min0, byte max0, byte min1, byte max1, byte min2, byte max2)
+    {
+        return new[]
+        {
+            _random.Next(min0, max0 + 1).ToString("X1"),
+            _random.Next(min1, max1 + 1).ToString("X1"),
+            _random.Next(min2, max2 + 1).ToString("X1")
         };
     }
 
@@ -129,17 +197,21 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
 
     public string[] GenerateRandomToneValues()
     {
-        var toneValue = _random.Next(0, 101);
+        int toneValue = _random.Next(0, 101);
 
-        var part1 = (toneValue / 16) % 16;
-        var part2 = (toneValue / 1) % 16;
-        var part3 = 0;
+        int normalizedTone = (int)Math.Round(toneValue / 100f * 99);
+        normalizedTone = Math.Clamp(normalizedTone, 0, 99);
+
+        int digit1 = normalizedTone / 10;
+        int digit2 = normalizedTone % 10;
+
+        int firstHex = (toneValue == 100) ? 1 : 0;
 
         return new[]
         {
-            part1.ToString("X1"),
-            part2.ToString("X1"),
-            part3.ToString("X1")
+            firstHex.ToString("X1"),
+            digit1.ToString("X1"),
+            digit2.ToString("X1")
         };
     }
 }

@@ -101,6 +101,7 @@
                             <Label Text="{Loc 'dna-modifier-label-buffer-1'}"/>
                             <Control HorizontalExpand="True"/>
                             <Button Name="ClearButton1" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="RenameButton1" Text="{Loc 'dna-modifier-button-rename'}" Disabled="True"/>
                             <Button Name="ExportButton1" Text="{Loc 'dna-modifier-button-export'}" Disabled="True"/>
                         </BoxContainer>
                         <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
@@ -124,6 +125,7 @@
                             <Label Text="{Loc 'dna-modifier-label-buffer-2'}"/>
                             <Control HorizontalExpand="True"/>
                             <Button Name="ClearButton2" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="RenameButton2" Text="{Loc 'dna-modifier-button-rename'}" Disabled="True"/>
                             <Button Name="ExportButton2" Text="{Loc 'dna-modifier-button-export'}" Disabled="True"/>
                         </BoxContainer>
                         <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
@@ -147,6 +149,7 @@
                             <Label Text="{Loc 'dna-modifier-label-buffer-3'}"/>
                             <Control HorizontalExpand="True"/>
                             <Button Name="ClearButton3" Text="{Loc 'dna-modifier-button-clear'}" Disabled="True"/>
+                            <Button Name="RenameButton3" Text="{Loc 'dna-modifier-button-rename'}" Disabled="True"/>
                             <Button Name="ExportButton3" Text="{Loc 'dna-modifier-button-export'}" Disabled="True"/>
                         </BoxContainer>
                         <customControls:HSeparator StyleClasses="LowDivider" Margin="0 0 0 10"/>
