@@ -251,7 +251,7 @@ namespace Content.Server.Genetics.System
                         : Loc.GetString("dna-modifier-entity-unknown-text");
 
                     if (TryComp<DnaComponent>(scanBody.Value, out var dna))
-                        scannerBodyDna = dna.DNA;
+                        scannerBodyDna = dna.DNA ?? string.Empty;
 
                     if (TryComp<DamageableComponent>(scanBody.Value, out var damage))
                     {
