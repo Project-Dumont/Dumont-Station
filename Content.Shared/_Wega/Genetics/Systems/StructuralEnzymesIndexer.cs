@@ -45,28 +45,28 @@ namespace Content.Shared.Genetics.Systems
 
             int maxBlocks = 54;
             int blocksToAdd = Math.Min(allEnzymesPrototypes.Count, maxBlocks);
-            for (var i = 0; i < blocksToAdd; i++)
-            {
-                var enzymesPrototypeInfo = new EnzymesPrototypeInfo
-                {
-                    EnzymesPrototypeId = allEnzymesPrototypes[i].ID,
-                    Order = i + 1
-                };
 
-                _enzymesPrototypes.Add(enzymesPrototypeInfo);
+            var allBlocks = new List<EnzymesPrototypeInfo>();
+            for (int i = 0; i < blocksToAdd; i++)
+            {
+                allBlocks.Add(new EnzymesPrototypeInfo
+                {
+                    EnzymesPrototypeId = allEnzymesPrototypes[i].ID
+                });
             }
 
-            for (var i = blocksToAdd; i < maxBlocks; i++)
+            for (int i = blocksToAdd; i < maxBlocks; i++)
             {
-                var emptyBlock = new EnzymesPrototypeInfo
-                {
-                    Order = i + 1
-                };
-
-                _enzymesPrototypes.Add(emptyBlock);
+                allBlocks.Add(new EnzymesPrototypeInfo());
             }
 
-            _random.Shuffle(_enzymesPrototypes);
+            _random.Shuffle(allBlocks);
+
+            for (int i = 0; i < allBlocks.Count; i++)
+            {
+                allBlocks[i].Order = i + 1;
+                _enzymesPrototypes.Add(allBlocks[i]);
+            }
 
             // Last block
             var lastEmptyBlock = new EnzymesPrototypeInfo

@@ -81,6 +81,21 @@ public sealed class DnaModifierConsoleInjectorEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
+public sealed class DnaModifierInjectBlockEvent : EntityEventArgs
+{
+    public NetEntity Uid { get; }
+    public int Index { get; }
+    public int CurrentBlock { get; }
+
+    public DnaModifierInjectBlockEvent(NetEntity uid, int index, int currentBlock)
+    {
+        Uid = uid;
+        Index = index;
+        CurrentBlock = currentBlock;
+    }
+}
+
+[Serializable, NetSerializable]
 public sealed class DnaModifierConsoleSubjectInjectEvent : EntityEventArgs
 {
     public NetEntity Uid { get; }

@@ -42,13 +42,14 @@ dna-modifier-button-no-buffer = Буфер данных пуст
 dna-modifier-label-sample-name = Субъект:
 
 dna-modifier-label-data = Тип данных:
-dna-modifier-label-both-prototypes = Уникальные Идентификаторы и Уникальные Ферменты
+dna-modifier-label-both-prototypes = Уникальные Идентификаторы и Структурные Ферменты
 dna-modifier-label-unique-identifiers = Уникальные Идентификаторы
-dna-modifier-label-structural-enzymes = Уникальные Ферменты
+dna-modifier-label-structural-enzymes = Структурные Ферменты
 dna-modifier-label-no-prototypes = Нет данных
 
 dna-modifier-label-actions = Передача данных:
 dna-modifier-button-injector = Инъектор
+dna-modifier-button-inject-block = Инъектор блока
 dna-modifier-button-subject-inject = Субъект
 
 dna-modifier-button-disk = С дискеты

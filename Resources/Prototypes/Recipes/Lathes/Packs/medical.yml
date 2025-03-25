@@ -113,5 +113,5 @@
   - CryoPodMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - StasisOperatingTableCircuitboard # Corvax-Goob-StasisOperatingTable
-  - MedicalScannerMachineCircuitboard
-  - DnaModifierComputerCircuitboard
+  - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics
+  - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics

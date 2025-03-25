@@ -1,5 +1,27 @@
 # Basic / D A C
 - type: structuralEnzymes
+  id: GeneticsSmallHeightBasic
+  typeDeviation: Base
+  chanceAssimilation: 0.25
+  costInstability: 5
+  addComponent:
+  - type: SmallHeight
+
+- type: structuralEnzymes
+  id: GeneticsNoBreathingGenBasic
+  typeDeviation: Base
+  costInstability: 10
+  addComponent:
+  - type: NoBreathingGen
+
+- type: structuralEnzymes
+  id: GeneticsNoPrintsGenBasic
+  typeDeviation: Base
+  costInstability: 5
+  addComponent:
+  - type: NoPrintsGen
+
+- type: structuralEnzymes
   id: GeneticsPsyResistGenBasic
   typeDeviation: Base
   addComponent:

@@ -29,6 +29,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
     private static TimeSpan? _releveration1ButtonCooldown;
     private static TimeSpan? _releveration2ButtonCooldown;
     private static TimeSpan? _injectorButtonCooldown;
+    private static TimeSpan? _injectBlockButtonCooldown;
     private static TimeSpan? _subjectInjectButtonCooldown;
     private DnaClientSystem _dnaClient;
     private ModifyButton? _activeButtonUi = null;
@@ -37,6 +38,8 @@ public sealed partial class DnaModifierWindow : FancyWindow
     private bool _updateUi = false;
     private bool _initializedSe = false;
     private bool _updateSe = false;
+    private bool _initializedBuffer = false;
+    private bool _updateBuffer = false;
     private NetEntity _console;
 
     public DnaModifierWindow()
@@ -182,124 +185,23 @@ public sealed partial class DnaModifierWindow : FancyWindow
         }
 
         // Buffer & Disk
-        BufferContainer1.RemoveAllChildren();
-        BufferContainer2.RemoveAllChildren();
-        BufferContainer3.RemoveAllChildren();
         if (_entManager.TryGetComponent<DnaClientComponent>(console, out var dnaClient))
         {
-            for (int bufferIndex = 1; bufferIndex <= 3; bufferIndex++)
+            if (dnaClient != null && !_initializedBuffer)
             {
-                int currentBufferIndex = bufferIndex;
-                if (_dnaClient.TryGetBufferData(console, bufferIndex, out var buffer) && buffer != null)
-                {
-                    var sampleName = buffer.SampleName;
-                    var bufferContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
-
-                    var nameContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
-                    nameContainer.AddChild(new Label
-                    {
-                        Text = Loc.GetString("dna-modifier-label-sample-name"),
-                        MinWidth = 40
-                    });
-                    nameContainer.AddChild(new Control { MinWidth = 25 });
-                    nameContainer.AddChild(new Label
-                    {
-                        Text = sampleName
-                    });
-
-                    var dataContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
-                    dataContainer.AddChild(new Label
-                    {
-                        Text = Loc.GetString("dna-modifier-label-data"),
-                        MinWidth = 40
-                    });
-                    dataContainer.AddChild(new Control { MinWidth = 25 });
-
-                    var dataLabel = new Label();
-                    bool hasUniqueIdentifiers = buffer.Identifier != null;
-                    bool hasStructuralEnzymes = buffer.Info != null && buffer.Info.Count > 0;
-
-                    if (hasUniqueIdentifiers && hasStructuralEnzymes)
-                    {
-                        dataLabel.Text = Loc.GetString("dna-modifier-label-both-prototypes");
-                    }
-                    else if (hasUniqueIdentifiers)
-                    {
-                        dataLabel.Text = Loc.GetString("dna-modifier-label-unique-identifiers");
-                    }
-                    else if (hasStructuralEnzymes)
-                    {
-                        dataLabel.Text = Loc.GetString("dna-modifier-label-structural-enzymes");
-                    }
-                    else
-                    {
-                        dataLabel.Text = Loc.GetString("dna-modifier-label-no-prototypes");
-                    }
-                    dataContainer.AddChild(dataLabel);
-
-                    var buttonsContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
-                    buttonsContainer.AddChild(new Label
-                    {
-                        Text = Loc.GetString("dna-modifier-label-actions"),
-                        MinWidth = 40
-                    });
-                    buttonsContainer.AddChild(new Control { MinWidth = 25 });
-
-                    var injectorButton = new Button
-                    {
-                        Name = "InjectorButton",
-                        Text = Loc.GetString("dna-modifier-button-injector")
-                    };
-
-                    injectorButton.Disabled = _injectorButtonCooldown.HasValue && _gameTiming.CurTime < _injectorButtonCooldown
-                        ? true
-                        : false;
-
-                    injectorButton.OnPressed += _ => OnInjectorPressed(currentBufferIndex, injectorButton);
-
-                    var subjectInjectButton = new Button
-                    {
-                        Name = "SubjectInjectButton",
-                        Text = Loc.GetString("dna-modifier-button-subject-inject")
-                    };
-
-                    subjectInjectButton.Disabled = _subjectInjectButtonCooldown.HasValue && _gameTiming.CurTime < _subjectInjectButtonCooldown
-                        ? true
-                        : false;
-
-                    subjectInjectButton.OnPressed += _ => OnSubjectInjectPressed(currentBufferIndex, subjectInjectButton);
-
-                    buttonsContainer.AddChild(injectorButton);
-                    buttonsContainer.AddChild(subjectInjectButton);
-
-                    bufferContainer.AddChild(nameContainer);
-                    bufferContainer.AddChild(dataContainer);
-                    bufferContainer.AddChild(buttonsContainer);
-
-                    switch (bufferIndex)
-                    {
-                        case 1: BufferContainer1.AddChild(bufferContainer); break;
-                        case 2: BufferContainer2.AddChild(bufferContainer); break;
-                        case 3: BufferContainer3.AddChild(bufferContainer); break;
-                    }
-
-                    EnableBufferBlock(bufferIndex);
-                    DisabledSubjectDiskBlock(bufferIndex);
-                }
-                else
-                {
-                    var bufferLabel = new Label
-                    {
-                        Text = Loc.GetString("dna-modifier-button-no-buffer"),
-                    };
-
-                    switch (bufferIndex)
-                    {
-                        case 1: BufferContainer1.AddChild(bufferLabel); break;
-                        case 2: BufferContainer2.AddChild(bufferLabel); break;
-                        case 3: BufferContainer3.AddChild(bufferLabel); break;
-                    }
-                }
+                BufferContainer1.RemoveAllChildren();
+                BufferContainer2.RemoveAllChildren();
+                BufferContainer3.RemoveAllChildren();
+                InitializeBufferData(console, dnaClient);
+            }
+            else if (dnaClient != null && _updateBuffer)
+            {
+                _updateBuffer = false;
+                _initializedBuffer = false;
+                BufferContainer1.RemoveAllChildren();
+                BufferContainer2.RemoveAllChildren();
+                BufferContainer3.RemoveAllChildren();
+                InitializeBufferData(console, dnaClient);
             }
         }
 
@@ -317,68 +219,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
         ClearButtonDisk.OnPressed += _ => _entNetworkManager.SendSystemNetworkMessage(
             new DnaModifierConsoleClearDiskEvent(_console));
 
-        DiskContainer.RemoveAllChildren();
-        if (state.Enzyme != null)
-        {
-            var sampleName = state.Enzyme.SampleName;
-            var bufferContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
-
-            var nameContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
-            nameContainer.AddChild(new Label
-            {
-                Text = Loc.GetString("dna-modifier-label-sample-name"),
-                MinWidth = 40
-            });
-            nameContainer.AddChild(new Control { MinWidth = 25 });
-            nameContainer.AddChild(new Label
-            {
-                Text = sampleName
-            });
-
-            var dataContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
-            dataContainer.AddChild(new Label
-            {
-                Text = Loc.GetString("dna-modifier-label-data"),
-                MinWidth = 40
-            });
-            dataContainer.AddChild(new Control { MinWidth = 25 });
-
-            var dataLabel = new Label();
-            bool hasUniqueIdentifiers = state.Enzyme.Identifier != null;
-            bool hasStructuralEnzymes = state.Enzyme.Info != null && state.Enzyme.Info.Count > 0;
-
-            if (hasUniqueIdentifiers && hasStructuralEnzymes)
-            {
-                dataLabel.Text = Loc.GetString("dna-modifier-label-both-prototypes");
-            }
-            else if (hasUniqueIdentifiers)
-            {
-                dataLabel.Text = Loc.GetString("dna-modifier-label-unique-identifiers");
-            }
-            else if (hasStructuralEnzymes)
-            {
-                dataLabel.Text = Loc.GetString("dna-modifier-label-structural-enzymes");
-            }
-            else
-            {
-                dataLabel.Text = Loc.GetString("dna-modifier-label-no-prototypes");
-            }
-            dataContainer.AddChild(dataLabel);
-
-            bufferContainer.AddChild(nameContainer);
-            bufferContainer.AddChild(dataContainer);
-
-            DiskContainer.AddChild(bufferContainer);
-        }
-        else
-        {
-            var bufferLabel = new Label
-            {
-                Text = Loc.GetString("dna-modifier-no-disk"),
-            };
-
-            DiskContainer.AddChild(bufferLabel);
-        }
+        UpdateDiskContainer(state.Enzyme);
 
         // Rejuve
         RejuveContainer.RemoveAllChildren();
@@ -489,6 +330,185 @@ public sealed partial class DnaModifierWindow : FancyWindow
         }
     }
 
+    private void InitializeBufferData(EntityUid console, DnaClientComponent dnaClient)
+    {
+        _initializedBuffer = true;
+
+        for (int bufferIndex = 1; bufferIndex <= 3; bufferIndex++)
+        {
+            int currentBufferIndex = bufferIndex;
+            if (_dnaClient.TryGetBufferData(console, bufferIndex, out var data) && data != null)
+            {
+                var bufferContainer = CreateBufferContainer(data, currentBufferIndex);
+                switch (bufferIndex)
+                {
+                    case 1: BufferContainer1.AddChild(bufferContainer); break;
+                    case 2: BufferContainer2.AddChild(bufferContainer); break;
+                    case 3: BufferContainer3.AddChild(bufferContainer); break;
+                }
+
+                EnableBufferBlock(bufferIndex);
+                DisabledSubjectDiskBlock(bufferIndex);
+            }
+            else
+            {
+                var bufferLabel = new Label { Text = Loc.GetString("dna-modifier-button-no-buffer") };
+                switch (bufferIndex)
+                {
+                    case 1: BufferContainer1.AddChild(bufferLabel); break;
+                    case 2: BufferContainer2.AddChild(bufferLabel); break;
+                    case 3: BufferContainer3.AddChild(bufferLabel); break;
+                }
+            }
+        }
+    }
+
+    private BoxContainer CreateBufferContainer(EnzymeInfo data, int bufferIndex)
+    {
+        var sampleName = data.SampleName;
+        var bufferContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
+
+        // Name Container
+        var nameContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
+        nameContainer.AddChild(new Label { Text = Loc.GetString("dna-modifier-label-sample-name"), MinWidth = 40 });
+        nameContainer.AddChild(new Control { MinWidth = 25 });
+        nameContainer.AddChild(new Label { Text = sampleName });
+
+        // Data Container
+        var dataContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
+        dataContainer.AddChild(new Label { Text = Loc.GetString("dna-modifier-label-data"), MinWidth = 40 });
+        dataContainer.AddChild(new Control { MinWidth = 25 });
+
+        var dataLabel = new Label();
+        bool hasUniqueIdentifiers = data.Identifier != null;
+        bool hasStructuralEnzymes = data.Info != null && data.Info.Count > 0;
+
+        dataLabel.Text = (hasUniqueIdentifiers, hasStructuralEnzymes) switch
+        {
+            (true, true) => Loc.GetString("dna-modifier-label-both-prototypes"),
+            (true, false) => Loc.GetString("dna-modifier-label-unique-identifiers"),
+            (false, true) => Loc.GetString("dna-modifier-label-structural-enzymes"),
+            _ => Loc.GetString("dna-modifier-label-no-prototypes")
+        };
+
+        dataContainer.AddChild(dataLabel);
+
+        // Buttons Container
+        var buttonsContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
+        buttonsContainer.AddChild(new Label { Text = Loc.GetString("dna-modifier-label-actions"), MinWidth = 40 });
+        buttonsContainer.AddChild(new Control { MinWidth = 25 });
+
+        // Injector Button
+        var injectorButton = new Button
+        {
+            Name = "InjectorButton",
+            Text = Loc.GetString("dna-modifier-button-injector"),
+            Disabled = _injectorButtonCooldown.HasValue && _gameTiming.CurTime < _injectorButtonCooldown
+        };
+        injectorButton.OnPressed += _ => OnInjectorPressed(bufferIndex, injectorButton);
+        buttonsContainer.AddChild(injectorButton);
+
+        // Block Inject Button
+        if (hasStructuralEnzymes)
+        {
+            var blockSelectButton = new OptionButton
+            {
+                MinWidth = 40,
+                StyleClasses = { StyleNano.ButtonOpenRight }
+            };
+            for (int i = 1; i <= 55; i++)
+            {
+                blockSelectButton.AddItem($"{i}", i);
+            }
+            blockSelectButton.SelectId(1);
+            blockSelectButton.OnItemSelected += args => blockSelectButton.SelectId(args.Id);
+
+            var injectBlockButton = new Button
+            {
+                Text = Loc.GetString("dna-modifier-button-inject-block"),
+                StyleClasses = { StyleNano.ButtonOpenLeft },
+                Disabled = _injectBlockButtonCooldown.HasValue && _gameTiming.CurTime < _injectBlockButtonCooldown
+            };
+            injectBlockButton.OnPressed += _ => OnInjectBlockPressed(bufferIndex, injectBlockButton, blockSelectButton.SelectedId);
+
+            buttonsContainer.AddChild(blockSelectButton);
+            buttonsContainer.AddChild(injectBlockButton);
+        }
+
+        // Subject Inject Button
+        var subjectInjectButton = new Button
+        {
+            Name = "SubjectInjectButton",
+            Text = Loc.GetString("dna-modifier-button-subject-inject"),
+            Disabled = _subjectInjectButtonCooldown.HasValue && _gameTiming.CurTime < _subjectInjectButtonCooldown
+        };
+        subjectInjectButton.OnPressed += _ => OnSubjectInjectPressed(bufferIndex, subjectInjectButton);
+        buttonsContainer.AddChild(subjectInjectButton);
+
+        // Assemble container
+        bufferContainer.AddChild(nameContainer);
+        bufferContainer.AddChild(dataContainer);
+        bufferContainer.AddChild(buttonsContainer);
+
+        return bufferContainer;
+    }
+
+    private void UpdateDiskContainer(EnzymeInfo? enzyme)
+    {
+        DiskContainer.RemoveAllChildren();
+        if (enzyme == null)
+        {
+            DiskContainer.AddChild(new Label
+            {
+                Text = Loc.GetString("dna-modifier-no-disk")
+            });
+            return;
+        }
+
+        var bufferContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
+
+        // Name Container
+        var nameContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
+        nameContainer.AddChild(new Label
+        {
+            Text = Loc.GetString("dna-modifier-label-sample-name"),
+            MinWidth = 40
+        });
+        nameContainer.AddChild(new Control { MinWidth = 25 });
+        nameContainer.AddChild(new Label
+        {
+            Text = enzyme.SampleName
+        });
+
+        // Data Container
+        var dataContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
+        dataContainer.AddChild(new Label
+        {
+            Text = Loc.GetString("dna-modifier-label-data"),
+            MinWidth = 40
+        });
+        dataContainer.AddChild(new Control { MinWidth = 25 });
+
+        var dataLabel = new Label();
+        bool hasUniqueIdentifiers = enzyme.Identifier != null;
+        bool hasStructuralEnzymes = enzyme.Info != null && enzyme.Info.Count > 0;
+
+        dataLabel.Text = (hasUniqueIdentifiers, hasStructuralEnzymes) switch
+        {
+            (true, true) => Loc.GetString("dna-modifier-label-both-prototypes"),
+            (true, false) => Loc.GetString("dna-modifier-label-unique-identifiers"),
+            (false, true) => Loc.GetString("dna-modifier-label-structural-enzymes"),
+            _ => Loc.GetString("dna-modifier-label-no-prototypes")
+        };
+
+        dataContainer.AddChild(dataLabel);
+
+        // Assemble container
+        bufferContainer.AddChild(nameContainer);
+        bufferContainer.AddChild(dataContainer);
+        DiskContainer.AddChild(bufferContainer);
+    }
+
     private void OnButtonRadiationUiPressed()
     {
         if (_activeButtonUi != null)
@@ -519,6 +539,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
 
     private void OnButtonServerSavedPressed(int section, int type)
     {
+        _updateBuffer = true;
         _entNetworkManager.SendSystemNetworkMessage(
             new DnaModifierConsoleSaveServerEvent(_console, section, type));
     }
@@ -532,6 +553,15 @@ public sealed partial class DnaModifierWindow : FancyWindow
         _injectorButtonCooldown = _gameTiming.CurTime + TimeSpan.FromMinutes(2);
     }
 
+    private void OnInjectBlockPressed(int bufferIndex, Button button, int blockId)
+    {
+        button.Disabled = true;
+        _entNetworkManager.SendSystemNetworkMessage(
+            new DnaModifierInjectBlockEvent(_console, bufferIndex, blockId));
+
+        _injectBlockButtonCooldown = _gameTiming.CurTime + TimeSpan.FromMinutes(2);
+    }
+
     private void OnSubjectInjectPressed(int index, Button button)
     {
         button.Disabled = true;
@@ -543,12 +573,14 @@ public sealed partial class DnaModifierWindow : FancyWindow
 
     private void OnClearBufferPressed(int index)
     {
+        _updateBuffer = true;
         _entNetworkManager.SendSystemNetworkMessage(
             new DnaModifierConsoleClearBufferEvent(_console, index));
     }
 
     private void OnRenameBufferPressed(int index)
     {
+        _updateBuffer = true;
         var session = IoCManager.Resolve<IPlayerManager>().LocalSession;
         if (session?.AttachedEntity.HasValue == true)
         {

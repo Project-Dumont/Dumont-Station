@@ -75,6 +75,7 @@ namespace Content.Server.Genetics.System
             SubscribeNetworkEvent<DnaModifierConsoleClearBufferEvent>(OnClearBufferPressed);
             SubscribeNetworkEvent<DnaModifierConsoleRenameBufferEvent>(OnRenameBufferPressed);
             SubscribeNetworkEvent<DnaModifierConsoleInjectorEvent>(OnInjectorPressed);
+            SubscribeNetworkEvent<DnaModifierInjectBlockEvent>(OnInjectBlockPressed);
             SubscribeNetworkEvent<DnaModifierConsoleSubjectInjectEvent>(OnSubjectInjectPressed);
 
             SubscribeNetworkEvent<DnaModifierConsoleExportOnDiskEvent>(OnExportOnDiskPressed);
@@ -532,6 +533,27 @@ namespace Content.Server.Genetics.System
 
             _dnaModifier.OnFillingInjector(_entManager.SpawnEntity(Injector, Transform(clientEntity).Coordinates),
                 data.Identifier, data.Info);
+
+            UpdateUserInterface(clientEntity, console);
+        }
+
+        private void OnInjectBlockPressed(DnaModifierInjectBlockEvent args)
+        {
+            var clientEntity = GetEntity(args.Uid);
+            if (!TryComp<DnaModifierConsoleComponent>(clientEntity, out var console) || console.GeneticScanner == null
+                || !TryComp<DnaClientComponent>(clientEntity, out var client))
+                return;
+
+            if (!_dnaClient.TryGetBufferData((clientEntity, client), args.Index, out var data) || data.Info == null)
+                return;
+
+            var targetBlock = data.Info.FirstOrDefault(e => e.Order == args.CurrentBlock);
+            if (targetBlock == null)
+                return;
+
+            var singleBlockInfo = new List<EnzymesPrototypeInfo> { targetBlock };
+            _dnaModifier.OnFillingInjector(_entManager.SpawnEntity(Injector, Transform(clientEntity).Coordinates),
+                null, singleBlockInfo);
 
             UpdateUserInterface(clientEntity, console);
         }

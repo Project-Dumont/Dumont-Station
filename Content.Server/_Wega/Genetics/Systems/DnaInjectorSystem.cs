@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.DoAfter;
 using Content.Shared.Genetics;
 using Content.Shared.Interaction;
@@ -82,7 +83,19 @@ public sealed partial class DnaModifierSystem
 
         if (ent.Comp.EnzymesPrototypes != null)
         {
-            dnaModifier.EnzymesPrototypes = ent.Comp.EnzymesPrototypes;
+            if (ent.Comp.EnzymesPrototypes.Count > 1)
+            {
+                dnaModifier.EnzymesPrototypes = ent.Comp.EnzymesPrototypes;
+            }
+            else if (ent.Comp.EnzymesPrototypes.Count == 1 && dnaModifier.EnzymesPrototypes != null)
+            {
+                var newCode = ent.Comp.EnzymesPrototypes[0];
+                var existingCode = dnaModifier.EnzymesPrototypes.FirstOrDefault(x => x.Order == newCode.Order);
+                if (existingCode != null)
+                {
+                    existingCode.HexCode = newCode.HexCode;
+                }
+            }
         }
 
         Dirty(target, dnaModifier);
