@@ -40,6 +40,8 @@ public sealed class EnsureMarkingSystem : EntitySystem
             return;
 
         markingSet.RemoveCategory(category);
+        if (category == MarkingCategories.HeadTop && HasComp<EnsureHornsGenComponent>(target))
+            _humanoid.AddMarking(target, DefaultHorns, Color.Black);
 
         var bestMatch = FindBestMatchingMarking(style, species, markingPrototypes);
         if (bestMatch == null)

@@ -1,0 +1,10 @@
+- type: entity
+  id: ActionGenCloakOfDarkness
+  name: cloak of darkness
+  description: "You are a shadow."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: { sprite: _Wega/Interface/Actions/actions_bloodcult.rsi, state: "blood_magic" }
+    event: !type:CloakOfDarknessActionEvent
+    useDelay: 15

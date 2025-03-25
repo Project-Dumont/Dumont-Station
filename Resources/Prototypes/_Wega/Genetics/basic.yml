@@ -1,0 +1,13 @@
+# Basic / D A C
+- type: structuralEnzymes
+  id: GeneticsPsyResistGenBasic
+  typeDeviation: Base
+  addComponent:
+  - type: PsyResistGen
+
+- type: structuralEnzymes
+  id: GeneticsEmpatheticThoughtGenBasic
+  typeDeviation: Base
+  costInstability: 5
+  addComponent:
+  - type: EmpatheticThoughtGen

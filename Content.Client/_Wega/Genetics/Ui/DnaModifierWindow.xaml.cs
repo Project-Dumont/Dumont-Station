@@ -20,10 +20,10 @@ namespace Content.Client._Wega.Genetics.Ui;
 [GenerateTypedNameReferences]
 public sealed partial class DnaModifierWindow : FancyWindow
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IEntityNetworkManager _entNetworkManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private static TimeSpan? _releverationsButtonCooldown;
     private static TimeSpan? _releveration1ButtonCooldown;

@@ -130,8 +130,10 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
         try
         {
             bool isMaxTone = skinTone[0] == "1";
-            int tens = Convert.ToInt32(skinTone[1], 16);
-            int units = Convert.ToInt32(skinTone[2], 16);
+            if (!TryParseHexDigit(skinTone[1], out int tens))
+                tens = 0;
+            if (!TryParseHexDigit(skinTone[2], out int units))
+                units = 0;
 
             int toneValue = isMaxTone ? 100 : Math.Clamp(tens * 10 + units, 0, 99);
 
@@ -161,6 +163,32 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
         {
             return defaultColor;
         }
+    }
+
+    private bool TryParseHexDigit(string digit, out int value)
+    {
+        value = 0;
+        if (string.IsNullOrEmpty(digit) || digit.Length != 1)
+            return false;
+
+        char c = digit[0];
+        if (char.IsDigit(c))
+        {
+            value = c - '0';
+            return true;
+        }
+        else if (c >= 'A' && c <= 'F')
+        {
+            value = 10 + (c - 'A');
+            return true;
+        }
+        else if (c >= 'a' && c <= 'f')
+        {
+            value = 10 + (c - 'a');
+            return true;
+        }
+
+        return false;
     }
 
     public string[] GenerateRandomGenderHexValue(int minHex, int maxHex)

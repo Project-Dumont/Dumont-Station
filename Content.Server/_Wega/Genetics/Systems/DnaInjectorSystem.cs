@@ -1,4 +1,3 @@
-using Content.Server.Construction.Completions;
 using Content.Shared.DoAfter;
 using Content.Shared.Genetics;
 using Content.Shared.Interaction;

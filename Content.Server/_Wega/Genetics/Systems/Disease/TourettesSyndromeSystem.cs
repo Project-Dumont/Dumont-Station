@@ -1,10 +1,7 @@
 using Content.Server.Chat.Systems;
-using Content.Shared.Chat.Prototypes;
 using Content.Shared.Genetics;
 using Content.Shared.Jittering;
-using Content.Shared.Popups;
 using Content.Shared.Stunnable;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Genetics.System;
@@ -12,7 +9,6 @@ namespace Content.Server.Genetics.System;
 public sealed class TourettesSyndromeSystem : EntitySystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedJitteringSystem _jitteringSystem = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly IRobustRandom _random = default!;

@@ -1,53 +1,53 @@
 using System.Linq;
+using Content.Server.Administration;
 using Content.Server.DeviceLinking.Systems;
-using JetBrains.Annotations;
-using Content.Shared.Genetics;
 using Content.Server.Medical.Components;
+using Content.Server.Power.EntitySystems;
+using Content.Shared.Chemistry;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.FixedPoint;
+using Content.Shared.Forensics.Components;
+using Content.Shared.Genetics;
+using Content.Shared.Genetics.Systems;
 using Content.Shared.Genetics.UI;
-using Robust.Server.GameObjects;
-using Content.Server.Power.EntitySystems;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Power;
 using Content.Shared.UserInterface;
-using Robust.Shared.Timing;
-using Content.Shared.Mobs;
-using Content.Shared.Forensics.Components;
-using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
-using Content.Shared.Containers.ItemSlots;
+using JetBrains.Annotations;
+using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
-using Content.Shared.Chemistry;
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Chemistry.Components.SolutionManager;
-using Robust.Shared.Prototypes;
-using Content.Shared.Genetics.Systems;
-using Robust.Shared.Random;
-using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Player;
-using Content.Server.Administration;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Genetics.System
 {
     [UsedImplicitly]
     public sealed class DnaModifierConsoleSystem : EntitySystem
     {
-        [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
-        [Dependency] private readonly DamageableSystem _damage = default!;
-        [Dependency] private readonly DnaModifierSystem _dnaModifier = default!;
-        [Dependency] private readonly DnaClientSystem _dnaClient = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
+        [Dependency] private readonly DamageableSystem _damage = default!;
+        [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
+        [Dependency] private readonly DnaClientSystem _dnaClient = default!;
+        [Dependency] private readonly DnaModifierSystem _dnaModifier = default!;
         [Dependency] private readonly IEntityManager _entManager = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
-        [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-        [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
+        [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
+        [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
 
         [ValidatePrototypeId<EntityPrototype>]
         private const string Injector = "DnaInjector";

@@ -22,37 +22,36 @@ using Content.Shared.Popups;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Server.Genetics.System;
 
 public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 {
     [Dependency] private readonly IAdminLogManager _admin = default!;
+    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
-    [Dependency] private readonly MarkingPrototypesIndexerSystem _markingIndexer = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly EnsureMarkingSystem _ensureMarking = default!;
     [Dependency] private readonly StructuralEnzymesIndexerSystem _enzymesIndexer = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly ServerInventorySystem _inventory = default!;
+    [Dependency] private readonly MarkingPrototypesIndexerSystem _markingIndexer = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
-    [Dependency] private readonly ServerInventorySystem _inventory = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-
-    public static Color ValidHumanSkinTone => Color.FromHsv(new Vector4(0.07f, 0.2f, 1f, 1f));
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         InitializeInjector();
+
+        InitializeMap();
 
         SubscribeLocalEvent<DnaModifierComponent, ComponentInit>(OnDnaModifierInit);
         SubscribeLocalEvent<DnaModifierDeviationComponent, ComponentStartup>(OnDnaDeviation);
@@ -806,6 +805,8 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 _damage.SetDamage(child, damageParent, damage);
             }
 
+            EnsureComp<DnaLowestComponent>(child).Parent = target;
+
             // First undress
             if (_inventory.TryGetContainerSlotEnumerator(target, out var enumerator))
             {
@@ -843,12 +844,68 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             _admin.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(target):user} gene down up a step.");
 
             // Third clearing
-            _entManager.DeleteEntity(target); // Bye
+            EnsurePausedMap();
+            if (PausedMap != null)
+            {
+                _transform.SetParent(target, Transform(target), PausedMap.Value);
+            }
         }
         else
         {
             if (HasComp<HumanoidAppearanceComponent>(target))
                 return;
+
+            // Minus one check parent
+            if (TryComp<DnaLowestComponent>(target, out var dnaLowest) && dnaLowest.Parent != null)
+            {
+                var parent = dnaLowest.Parent.Value;
+                if (_inventory.TryGetContainerSlotEnumerator(target, out var enumeratorLowest))
+                {
+                    while (enumeratorLowest.MoveNext(out var slot))
+                    {
+                        _inventory.TryUnequip(target, slot.ID, true, true);
+                    }
+                }
+
+                foreach (var held in _hands.EnumerateHeld(target))
+                {
+                    _hands.TryDrop(target, held);
+                }
+
+                foreach (var held in _hands.EnumerateHeld(target))
+                {
+                    _hands.TryDrop(target, held);
+                    _hands.TryPickupAnyHand(parent, held, checkActionBlocker: false);
+                }
+
+                if (_mindSystem.TryGetMind(target, out var mindIdLowest, out var mindLowest))
+                    _mindSystem.TransferTo(mindIdLowest, parent, mind: mindLowest);
+
+                if (TryComp<DamageableComponent>(parent, out var parentDamage)
+                    && _mobThreshold.GetScaledDamage(target, parent, out var damageLowest) && damageLowest != null)
+                {
+                    _damage.SetDamage(parent, parentDamage, damageLowest);
+                }
+
+                if (TryComp<DnaModifierComponent>(parent, out var dnaModifier))
+                {
+                    dnaModifier.UniqueIdentifiers = component.UniqueIdentifiers;
+                    dnaModifier.EnzymesPrototypes = component.EnzymesPrototypes?.ToList();
+                    dnaModifier.Instability = component.Instability;
+                    dnaModifier.Upper = component.Upper;
+                    dnaModifier.Lowest = component.Lowest;
+
+                    Dirty(parent, dnaModifier);
+                    ChangeDna(dnaModifier);
+                }
+
+                var parentXform = Transform(parent);
+                _transform.SetCoordinates(parent, parentXform, Transform(target).Coordinates);
+                _transform.AttachToGridOrMap(parent, parentXform);
+
+                _entManager.DeleteEntity(target);
+                return;
+            }
 
             // Zero add an entity
             _buckle.TryUnbuckle(target, target, true);

@@ -7,7 +7,7 @@ namespace Content.Shared.Genetics;
 public sealed partial class CloakOfDarknessGenComponent : Component
 {
     [ValidatePrototypeId<EntityPrototype>]
-    public readonly string CloakOfDarknessAction = "ActionGenChameleon";
+    public readonly string CloakOfDarknessAction = "ActionGenCloakOfDarkness";
 
     public EntityUid? CloakOfDarknessActionEntity { get; set; }
 }
