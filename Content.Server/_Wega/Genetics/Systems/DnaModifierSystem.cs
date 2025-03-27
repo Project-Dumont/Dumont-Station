@@ -648,7 +648,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             case HumanoidSkinColor.VoxFeathers:
                 string redHex = uniqueIdentifiers.FurColorR[0] + uniqueIdentifiers.FurColorR[1];
                 string greenHex = uniqueIdentifiers.FurColorG[0] + uniqueIdentifiers.FurColorG[1];
-                string blueHex = uniqueIdentifiers.FurColorG[0] + uniqueIdentifiers.FurColorG[1];
+                string blueHex = uniqueIdentifiers.FurColorB[0] + uniqueIdentifiers.FurColorB[1];
 
                 int red = Convert.ToInt32(redHex, 16);
                 int green = Convert.ToInt32(greenHex, 16);
