@@ -81,6 +81,7 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] public readonly PuddleSystem Puddle = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly AtmosDeviceSystem _atmosDeviceSys = default!;
+    [Dependency] private readonly ThrownItemSystem _thrown = default!;
     [Dependency] private readonly SharedStunSystem _sharedStunSystem = default!;
     [Dependency] private readonly StandingStateSystem _standingSystem = default!;
 
