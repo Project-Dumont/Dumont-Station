@@ -235,3 +235,9 @@ Entries:
       message: Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio do alerta epsilon para sua versão completa.
   id: 32
   time: '2025-03-17T21:30:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Modificão completa na Perma Brig da Saltern, para a alegria dos jogadores de prisoneiros!
+  id: 33
+  time: '2025-03-27T14:44:00.0000000+00:00'
