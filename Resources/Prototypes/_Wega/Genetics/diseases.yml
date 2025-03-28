@@ -1,6 +1,7 @@
 # Disease
 - type: structuralEnzymes
   id: GeneticsPermanentBlindnessDisease
+  message: genetics-permanent-blindness-message
   typeDeviation: Disease
   costInstability: -15
   addComponent:
@@ -8,12 +9,14 @@
 
 - type: structuralEnzymes
   id: GeneticsAuldImperialDisease
+  message: genetics-auld-imperial-message
   typeDeviation: Disease
   addComponent:
   - type: AuldImperialAccent
 
 - type: structuralEnzymes
   id: GeneticsClumsinessDisease
+  message: genetics-clumsiness-message
   typeDeviation: Disease
   costInstability: -5
   addComponent:
@@ -21,6 +24,7 @@
 
 - type: structuralEnzymes
   id: GeneticsColourblindnessDisease
+  message: genetics-colourblindness-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -28,12 +32,14 @@
 
 - type: structuralEnzymes
   id: GeneticsComicDisease
+  message: genetics-comic-message
   typeDeviation: Disease
   addComponent:
   - type: ClownAccent
 
 - type: structuralEnzymes
   id: GeneticsCoughingDisease
+  message: genetics-coughing-message
   typeDeviation: Disease
   costInstability: -5
   addComponent:
@@ -43,6 +49,7 @@
 
 - type: structuralEnzymes
   id: GeneticsDeafnessDisease
+  message: genetics-deafness-message
   typeDeviation: Disease
   costInstability: -15
   addComponent:
@@ -50,6 +57,7 @@
 
 - type: structuralEnzymes
   id: GeneticsDizzyDisease
+  message: genetics-dizzy-message
   typeDeviation: Disease
   costInstability: -5
   addComponent:
@@ -57,6 +65,7 @@
 
 - type: structuralEnzymes
   id: GeneticsEpilepsyDisease
+  message: genetics-epilepsy-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -64,30 +73,35 @@
 
 - type: structuralEnzymes
   id: GeneticsHornsDisease
+  message: genetics-horns-message
   typeDeviation: Disease
   addComponent:
   - type: EnsureHornsGen
 
 - type: structuralEnzymes
   id: GeneticsIncendiaryMitochondriaDisease
+  message: genetics-incendiary-mitochondria-message
   typeDeviation: Disease
   addComponent:
   - type: IncendiaryMitochondriaGen
 
 - type: structuralEnzymes
   id: GeneticsLispDisease
+  message: genetics-lisp-message
   typeDeviation: Disease
   addComponent:
   - type: LispAccent
 
 - type: structuralEnzymes
   id: GeneticsLoudDisease
+  message: genetics-loud-message
   typeDeviation: Disease
   addComponent:
   - type: LoudAccent
 
 - type: structuralEnzymes
   id: GeneticsMutedDisease
+  message: genetics-muted-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -95,6 +109,7 @@
 
 - type: structuralEnzymes
   id: GeneticsBlindnessDisease
+  message: genetics-blindness-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -103,6 +118,7 @@
 
 - type: structuralEnzymes
   id: GeneticsStutteringDisease
+  message: genetics-stuttering-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -110,12 +126,14 @@
 
 - type: structuralEnzymes
   id: GeneticsObesityDisease
+  message: genetics-obesity-message
   typeDeviation: Disease
   costInstability: -5
   # empty
 
 - type: structuralEnzymes
   id: GeneticsRadiationSourceDisease
+  message: genetics-radiation-message
   typeDeviation: Disease
   costInstability: -15
   addComponent:
@@ -123,12 +141,14 @@
 
 - type: structuralEnzymes
   id: GeneticsSouthernDisease
+  message: genetics-southern-message
   typeDeviation: Disease
   addComponent:
   - type: SouthernAccent
 
 - type: structuralEnzymes
   id: GeneticsTourettesSyndromeDisease
+  message: genetics-tourettes-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -136,6 +156,7 @@
 
 - type: structuralEnzymes
   id: GeneticsUnintelligibleDisease
+  message: genetics-unintelligible-message
   typeDeviation: Disease
   costInstability: -5
   addComponent:
@@ -143,6 +164,7 @@
 
 - type: structuralEnzymes
   id: GeneticsWeaknessDisease
+  message: genetics-weakness-message
   typeDeviation: Disease
   costInstability: -10
   addComponent:
@@ -150,6 +172,7 @@
 
 - type: structuralEnzymes
   id: GeneticsWingdingsDisease
+  message: genetics-wingdings-message
   typeDeviation: Disease
   costInstability: -5
   addComponent:
@@ -157,6 +180,7 @@
 
 - type: structuralEnzymes
   id: GeneticsAphasiaDisease
+  message: genetics-aphasia-message
   typeDeviation: Disease
   costInstability: -5
   addComponent:
@@ -164,6 +188,7 @@
 
 - type: structuralEnzymes
   id: GeneticsParalyzedDisease
+  message: genetics-paralyzed-message
   typeDeviation: Disease
   costInstability: -15
   addComponent:

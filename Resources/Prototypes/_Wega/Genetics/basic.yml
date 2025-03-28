@@ -1,21 +1,24 @@
 # Basic / D A C
 - type: structuralEnzymes
   id: GeneticsSmallHeightBasic
+  message: genetics-small-height-message
   typeDeviation: Base
-  chanceAssimilation: 0.25
   costInstability: 5
   addComponent:
   - type: SmallHeight
 
 - type: structuralEnzymes
   id: GeneticsNoBreathingGenBasic
+  message: genetics-no-breathing-message
   typeDeviation: Base
+  chanceAssimilation: 0.25
   costInstability: 10
   addComponent:
   - type: NoBreathingGen
 
 - type: structuralEnzymes
   id: GeneticsNoPrintsGenBasic
+  message: genetics-no-prints-message
   typeDeviation: Base
   costInstability: 5
   addComponent:
@@ -23,12 +26,14 @@
 
 - type: structuralEnzymes
   id: GeneticsPsyResistGenBasic
+  message: genetics-psy-resist-message
   typeDeviation: Base
   addComponent:
   - type: PsyResistGen
 
 - type: structuralEnzymes
   id: GeneticsEmpatheticThoughtGenBasic
+  message: genetics-empathetic-thought-message
   typeDeviation: Base
   costInstability: 5
   addComponent:

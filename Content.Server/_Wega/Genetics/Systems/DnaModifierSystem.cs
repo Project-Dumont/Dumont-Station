@@ -50,7 +50,6 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         base.Initialize();
 
         InitializeInjector();
-
         InitializeMap();
 
         SubscribeLocalEvent<DnaModifierComponent, ComponentInit>(OnDnaModifierInit);
@@ -123,7 +122,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             enzyme.HexCode = GetHexCodeDisease();
         }
 
-        TryChanceStructuralEnzymes(dnaModifier);
+        TryChangeStructuralEnzymes(dnaModifier);
 
         Dirty(uid, dnaModifier);
     }
@@ -597,29 +596,29 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
         Dirty(component.Owner, component);
 
-        TryChanceUniqueIdentifiers(component);
-        TryChanceStructuralEnzymes(component);
+        TryChangeUniqueIdentifiers(component);
+        TryChangeStructuralEnzymes(component);
     }
 
     public void ChangeDna(DnaModifierComponent component, int type)
     {
         if (type == 0)
         {
-            TryChanceUniqueIdentifiers(component);
+            TryChangeUniqueIdentifiers(component);
         }
         else if (type == 1)
         {
-            TryChanceStructuralEnzymes(component);
+            TryChangeStructuralEnzymes(component);
         }
     }
 
     public void ChangeDna(DnaModifierComponent component)
     {
-        TryChanceUniqueIdentifiers(component);
-        TryChanceStructuralEnzymes(component);
+        TryChangeUniqueIdentifiers(component);
+        TryChangeStructuralEnzymes(component);
     }
 
-    private void TryChanceUniqueIdentifiers(DnaModifierComponent component)
+    private void TryChangeUniqueIdentifiers(DnaModifierComponent component)
     {
         if (!TryComp<HumanoidAppearanceComponent>(component.Owner, out var humanoid) || component.UniqueIdentifiers == null)
             return;
@@ -726,7 +725,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     #endregion Modify U.I.
 
     #region Modify S.E.
-    private void TryChanceStructuralEnzymes(DnaModifierComponent component)
+    private void TryChangeStructuralEnzymes(DnaModifierComponent component)
     {
         if (component.EnzymesPrototypes == null)
             return;
@@ -739,7 +738,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         {
             if (enzyme.Order == 55)
             {
-                TryChanceLastBlock(target, component, enzyme);
+                TryChangeLastBlock(target, component, enzyme);
                 continue;
             }
 
@@ -789,11 +788,11 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         UpdateInstability(target, component, totalInstability);
         if (messagesToShow.Count > 0)
         {
-            await ShowMessagesWithDelay(target, messagesToShow);
+            _ = ShowMessagesWithDelay(target, messagesToShow);
         }
     }
 
-    private void TryChanceLastBlock(EntityUid target, DnaModifierComponent component, EnzymesPrototypeInfo enzyme)
+    private void TryChangeLastBlock(EntityUid target, DnaModifierComponent component, EnzymesPrototypeInfo enzyme)
     {
         if (string.IsNullOrEmpty(component.Upper) || string.IsNullOrEmpty(component.Lowest))
             return;
@@ -1016,7 +1015,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             }
         }
 
-        TryChanceStructuralEnzymes(component);
+        TryChangeStructuralEnzymes(component);
 
         Dirty(uid, component);
     }
@@ -1043,7 +1042,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             }
         }
 
-        TryChanceStructuralEnzymes(component);
+        TryChangeStructuralEnzymes(component);
 
         Dirty(uid, component);
     }
