@@ -734,6 +734,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         var target = component.Owner;
         int totalInstability = component.Instability;
         var enzymes = component.EnzymesPrototypes;
+        var messagesToShow = new List<string>();
         foreach (var enzyme in enzymes)
         {
             if (enzyme.Order == 55)
@@ -762,6 +763,9 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                         EntityManager.AddComponents(target, enzymePrototype.AddComponent, false);
                         totalInstability += enzymePrototype.CostInstability;
 
+                        if (!string.IsNullOrEmpty(enzymePrototype.Message))
+                            messagesToShow.Add(enzymePrototype.Message);
+
                         _admin.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(target):user} acquires a gene type: '{enzymePrototype.ID}'.");
                     }
                 }
@@ -783,6 +787,10 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         }
 
         UpdateInstability(target, component, totalInstability);
+        if (messagesToShow.Count > 0)
+        {
+            await ShowMessagesWithDelay(target, messagesToShow);
+        }
     }
 
     private void TryChanceLastBlock(EntityUid target, DnaModifierComponent component, EnzymesPrototypeInfo enzyme)
@@ -954,6 +962,15 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
             // Third clearing
             _entManager.DeleteEntity(target); // Bye
+        }
+    }
+
+    private async Task ShowMessagesWithDelay(EntityUid target, List<string> messages)
+    {
+        foreach (var message in messages)
+        {
+            _popup.PopupEntity(Loc.GetString(message), target, target,nPopupType.Medium);
+            await Task.Delay(2000);
         }
     }
 
