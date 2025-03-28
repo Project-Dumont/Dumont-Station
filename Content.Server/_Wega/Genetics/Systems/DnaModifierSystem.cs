@@ -969,7 +969,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     {
         foreach (var message in messages)
         {
-            _popup.PopupEntity(Loc.GetString(message), target, target,nPopupType.Medium);
+            _popup.PopupEntity(Loc.GetString(message), target, target, PopupType.Medium);
             await Task.Delay(2000);
         }
     }
