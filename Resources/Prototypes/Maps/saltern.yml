@@ -64,6 +64,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Reporter: [ 1, 1 ] # Gaby
 
         # Goobstation blob-config-start SMALL+
         - type: StationBlobConfig
