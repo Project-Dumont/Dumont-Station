@@ -9,6 +9,9 @@ public sealed class StructuralEnzymesPrototype : IPrototype
     [IdDataField]
     public string ID { get; set; } = string.Empty;
 
+    [DataField("massage")]
+    public string Massage { get; set; } = default!;
+
     [DataField("addComponent")]
     public ComponentRegistry? AddComponent { get; private set; } = default!;
 
