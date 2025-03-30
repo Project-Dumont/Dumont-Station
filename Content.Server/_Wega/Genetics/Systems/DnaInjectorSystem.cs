@@ -27,15 +27,13 @@ public sealed partial class DnaModifierSystem
         if (uniqueIdentifiers == null && enzymesPrototypes == null)
             return;
 
-        if (uniqueIdentifiers != null)
-        {
-            comp.UniqueIdentifiers = uniqueIdentifiers;
-        }
+        comp.UniqueIdentifiers = uniqueIdentifiers != null
+            ? CloneUniqueIdentifiers(uniqueIdentifiers)
+            : null;
 
-        if (enzymesPrototypes != null)
-        {
-            comp.EnzymesPrototypes = enzymesPrototypes;
-        }
+        comp.EnzymesPrototypes = enzymesPrototypes != null
+            ? CloneEnzymesPrototypes(enzymesPrototypes)
+            : null;
 
         Dirty(injector, comp);
     }

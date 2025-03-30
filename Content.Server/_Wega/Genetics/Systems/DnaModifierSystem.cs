@@ -138,6 +138,24 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         Dirty(uid, component);
     }
 
+    #region Deep Cloning
+    public UniqueIdentifiersPrototype? CloneUniqueIdentifiers(UniqueIdentifiersPrototype? source)
+    {
+        if (source == null)
+            return null;
+
+        return (UniqueIdentifiersPrototype)source.Clone();
+    }
+
+    public List<EnzymesPrototypeInfo>? CloneEnzymesPrototypes(List<EnzymesPrototypeInfo>? source)
+    {
+        if (source == null)
+            return null;
+
+        return source.Select(e => (EnzymesPrototypeInfo)e.Clone()).ToList();
+    }
+    #endregion
+
     #region Initialize U.I.
     private void InitializeUniqueIdentifiers(EntityUid uid, DnaModifierComponent component)
     {

@@ -40,6 +40,14 @@ public sealed class DnaClientSystem : EntitySystem
         return _dnaServer.AddToBuffer((server.Value.Owner, server.Value.Comp), bufferIndex, data);
     }
 
+    public bool TryAddToBufferDisk(Entity<DnaClientComponent?> client, int bufferIndex, EnzymeInfo data)
+    {
+        if (!TryGetServer(client, out var server))
+            return false;
+
+        return _dnaServer.AddToBufferDisk((server.Value.Owner, server.Value.Comp), bufferIndex, data);
+    }
+
     public bool TryClearBuffer(Entity<DnaClientComponent?> client, int bufferIndex)
     {
         if (!TryGetServer(client, out var server))

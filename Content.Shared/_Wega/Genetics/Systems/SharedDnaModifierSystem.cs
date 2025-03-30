@@ -17,7 +17,7 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
         if (comp.Data != null)
             return;
 
-        comp.Data = enzyme;
+        comp.Data = (EnzymeInfo)enzyme.Clone();
         if (TryComp(disk, out MetaDataComponent? meta))
             _metaData.SetEntityName(disk, Loc.GetString("dna-disk-name") + " " + $"({enzyme.SampleName})");
 

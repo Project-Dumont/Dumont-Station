@@ -84,6 +84,34 @@ public sealed class DnaServerSystem : EntitySystem
         return true;
     }
 
+    public bool AddToBufferDisk(Entity<DnaServerComponent?> server, int bufferIndex, EnzymeInfo data)
+    {
+        if (!Resolve(server, ref server.Comp))
+            return false;
+
+        EnzymeInfo? buffer = bufferIndex switch
+        {
+            1 => server.Comp.Buffer1,
+            2 => server.Comp.Buffer2,
+            3 => server.Comp.Buffer3,
+            _ => null
+        };
+
+        if (buffer == null)
+        {
+            switch (bufferIndex)
+            {
+                case 1: server.Comp.Buffer1 = data; break;
+                case 2: server.Comp.Buffer2 = data; break;
+                case 3: server.Comp.Buffer3 = data; break;
+                default: return false;
+            }
+        }
+
+        Dirty(server.Owner, server.Comp);
+        return true;
+    }
+
     public bool ClearBuffer(Entity<DnaServerComponent?> server, int bufferIndex)
     {
         if (!Resolve(server, ref server.Comp))
@@ -140,6 +168,9 @@ public sealed class DnaServerSystem : EntitySystem
             3 => server.Comp.Buffer3,
             _ => null
         };
+
+        if (data != null)
+            Logger.Debug($"{data.Info}, {data.Identifier}");
 
         return data != null;
     }

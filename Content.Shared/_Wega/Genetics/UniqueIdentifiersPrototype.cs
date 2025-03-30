@@ -163,4 +163,49 @@ public sealed class UniqueIdentifiersPrototype : IPrototype
     // Блок 38: Стиль маркировки хвоста
     [DataField("tailMarkingStyle")]
     public string[] TailMarkingStyle { get; set; } = default!;
+
+    public object Clone()
+    {
+        var clone = new UniqueIdentifiersPrototype
+        {
+            ID = this.ID,
+            HairColorR = (string[])this.HairColorR.Clone(),
+            HairColorG = (string[])this.HairColorG.Clone(),
+            HairColorB = (string[])this.HairColorB.Clone(),
+            SecondaryHairColorR = (string[])this.SecondaryHairColorR.Clone(),
+            SecondaryHairColorG = (string[])this.SecondaryHairColorG.Clone(),
+            SecondaryHairColorB = (string[])this.SecondaryHairColorB.Clone(),
+            BeardColorR = (string[])this.BeardColorR.Clone(),
+            BeardColorG = (string[])this.BeardColorG.Clone(),
+            BeardColorB = (string[])this.BeardColorB.Clone(),
+            SkinTone = (string[])this.SkinTone.Clone(),
+            FurColorR = (string[])this.FurColorR.Clone(),
+            FurColorG = (string[])this.FurColorG.Clone(),
+            FurColorB = (string[])this.FurColorB.Clone(),
+            HeadAccessoryColorR = (string[])this.HeadAccessoryColorR.Clone(),
+            HeadAccessoryColorG = (string[])this.HeadAccessoryColorG.Clone(),
+            HeadAccessoryColorB = (string[])this.HeadAccessoryColorB.Clone(),
+            HeadMarkingColorR = (string[])this.HeadMarkingColorR.Clone(),
+            HeadMarkingColorG = (string[])this.HeadMarkingColorG.Clone(),
+            HeadMarkingColorB = (string[])this.HeadMarkingColorB.Clone(),
+            BodyMarkingColorR = (string[])this.BodyMarkingColorR.Clone(),
+            BodyMarkingColorG = (string[])this.BodyMarkingColorG.Clone(),
+            BodyMarkingColorB = (string[])this.BodyMarkingColorB.Clone(),
+            TailMarkingColorR = (string[])this.TailMarkingColorR.Clone(),
+            TailMarkingColorG = (string[])this.TailMarkingColorG.Clone(),
+            TailMarkingColorB = (string[])this.TailMarkingColorB.Clone(),
+            EyeColorR = (string[])this.EyeColorR.Clone(),
+            EyeColorG = (string[])this.EyeColorG.Clone(),
+            EyeColorB = (string[])this.EyeColorB.Clone(),
+            Gender = (string[])this.Gender.Clone(),
+            BeardStyle = (string[])this.BeardStyle.Clone(),
+            HairStyle = (string[])this.HairStyle.Clone(),
+            HeadAccessoryStyle = (string[])this.HeadAccessoryStyle.Clone(),
+            HeadMarkingStyle = (string[])this.HeadMarkingStyle.Clone(),
+            BodyMarkingStyle = (string[])this.BodyMarkingStyle.Clone(),
+            TailMarkingStyle = (string[])this.TailMarkingStyle.Clone()
+        };
+
+        return clone;
+    }
 }

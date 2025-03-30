@@ -245,11 +245,7 @@ namespace Content.Server.Genetics.System
                 }
 
                 // GET STATE
-                if (scanBody == null || !TryComp<MobStateComponent>(scanBody, out var mobState))
-                {
-                    // Literally do nothing
-                }
-                else
+                if (scanBody != null && TryComp<MobStateComponent>(scanBody, out var mobState))
                 {
                     scanBodyInfo = MetaData(scanBody.Value).EntityName;
                     scannerBodyStatus = (mobState.CurrentState != MobState.Invalid)
@@ -438,7 +434,7 @@ namespace Content.Server.Genetics.System
                     {
                         dataToSend = new EnzymeInfo()
                         {
-                            Identifier = dnaModifier.UniqueIdentifiers,
+                            Identifier = _dnaModifier.CloneUniqueIdentifiers(dnaModifier.UniqueIdentifiers),
                             Info = null
                         };
                     }
@@ -449,8 +445,8 @@ namespace Content.Server.Genetics.System
                     {
                         dataToSend = new EnzymeInfo()
                         {
-                            Identifier = dnaModifier.UniqueIdentifiers,
-                            Info = dnaModifier.EnzymesPrototypes
+                            Identifier = _dnaModifier.CloneUniqueIdentifiers(dnaModifier.UniqueIdentifiers),
+                            Info = _dnaModifier.CloneEnzymesPrototypes(dnaModifier.EnzymesPrototypes)
                         };
                     }
                     break;
@@ -461,7 +457,7 @@ namespace Content.Server.Genetics.System
                         dataToSend = new EnzymeInfo()
                         {
                             Identifier = null,
-                            Info = dnaModifier.EnzymesPrototypes
+                            Info = _dnaModifier.CloneEnzymesPrototypes(dnaModifier.EnzymesPrototypes)
                         };
                     }
                     break;
@@ -606,10 +602,10 @@ namespace Content.Server.Genetics.System
             if (_itemSlotsSystem.TryGetSlot(clientEntity, SharedDnaModifier.DiskSlotName, out var diskSlot) && diskSlot.Item != null)
             {
                 _dnaModifier.TryGetDataFromDisk(diskSlot.Item.Value, out var data);
-                if (data == null || _dnaClient.TryGetBufferData((clientEntity, client), args.Index, out _))
+                if (data == null)
                     return;
 
-                _dnaClient.TryAddToBuffer((clientEntity, client), args.Index, data);
+                _dnaClient.TryAddToBufferDisk((clientEntity, client), args.Index, data);
 
                 UpdateUserInterface(clientEntity, console);
             }
