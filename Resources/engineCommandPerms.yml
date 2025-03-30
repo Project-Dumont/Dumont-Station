@@ -124,6 +124,9 @@
   Commands:
   - kick
   - respawn
+  - balance:add
+  - balance:get
+  - balance:set
 
 - Flags: HOST
   Commands:
