@@ -238,6 +238,14 @@ Entries:
 - author: Dreykor (arguemeu)
   changes:
     - type: Tweak
+      message: Modificão completa na Perma Brig da Saltern, para a alegria dos jogadores de prisoneiros!
+    - type: Tweak
+      message: Adiciona vaga para reporter na saltern!
+  id: 33
+  time: '2025-03-27T14:44:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
       message: Várias mudanças na Loja de Gaby coins
-  id: 32
+  id: 34
   time: '2025-03-30T23:00:00.0000000+00:00'

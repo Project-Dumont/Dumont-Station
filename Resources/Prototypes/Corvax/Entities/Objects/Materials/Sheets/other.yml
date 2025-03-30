@@ -19,6 +19,13 @@
     layers:
     - state: paper
       map: ["base"]
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#e6e6fa"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
   - type: Tag
     tags:
     - Document
@@ -30,3 +37,13 @@
   components:
   - type: Stack
     count: 1
+    layers:
+    - state: paper
+      map: ["base"]
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#e6e6fa"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
