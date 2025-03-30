@@ -3,5 +3,5 @@ melee-inject-failed-hardsuit = {CAPITALIZE(POSS-ADJ($weapon))} {$weapon} não in
 melee-balloon-pop = {CAPITALIZE(THE($balloon))} pocou!
 
 
-#BatteryComponent
+# BatteryComponent
 melee-battery-examine = Tem carga o bastante para [color={$color}]{$count}[/color] usos.
