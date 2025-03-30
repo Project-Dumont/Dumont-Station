@@ -169,9 +169,6 @@ public sealed class DnaServerSystem : EntitySystem
             _ => null
         };
 
-        if (data != null)
-            Logger.Debug($"{data.Info}, {data.Identifier}");
-
         return data != null;
     }
 
