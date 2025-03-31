@@ -79,9 +79,19 @@
                 <Control Access="Public" Visible="False" Name="CharacterSetupState" VerticalExpand="True" />
             </BoxContainer>
             <!-- Right Panel -->
-            <PanelContainer Name="RightSide" StyleClasses="AngleRect" HorizontalAlignment="Center" VerticalExpand="True"
+            <PanelContainer Name="RightSide" Access="Public" StyleClasses="AngleRect" HorizontalAlignment="Right" VerticalExpand="True"
                             VerticalAlignment="Stretch">
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True" HorizontalAlignment="Center">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                    <!-- Top row -->
+                    <!-- <BoxContainer Orientation="Horizontal" MinSize="0 40" Name="HeaderContainer" Access="Public"
+                                  SeparationOverride="4">
+                        <Label Name="ServerName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                               HorizontalExpand="True" HorizontalAlignment="Center" />
+                    </BoxContainer> -->
+                    <!-- Gold line -->
+                    <!-- <controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" /> -->
+                    <controls:HSpacer Spacing="10" />
+                    <!-- Voting & misc button bar -->
                     <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Center">
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="Square" />

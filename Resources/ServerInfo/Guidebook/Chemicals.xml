@@ -29,6 +29,9 @@ Conhecer os diferentes tipos de produtos químicos e seus efeitos é importante 
 ## Biológicos
 <GuideReagentGroupEmbed Group="Biological"/>
 
+## Special
+<GuideReagentGroupEmbed Group="Special"/>
+
 ## Outros
 <GuideReagentGroupEmbed Group="Unknown"/>
 </Document>

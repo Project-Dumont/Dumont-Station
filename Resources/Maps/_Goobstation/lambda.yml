@@ -1,6 +1,17 @@
 meta:
-  format: 6
-  postmapinit: false
+  format: 7
+  category: Map
+  engineVersion: 247.2.0
+  forkId: ""
+  forkVersion: ""
+  time: 03/12/2025 15:32:25
+  entityCount: 37508
+maps:
+- 1
+grids:
+- 2
+orphans: []
+nullspace: []
 tilemap:
   0: Space
   27: FloorArcadeBlue2
@@ -61,7 +72,6 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
-    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -17686,7 +17696,7 @@ entities:
       pos: 66.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -87306.48
+      secondsUntilStateChange: -87347.92
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -85815,6 +85825,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 27.17807,0.88675
       parent: 2
+- proto: CandyBowlFilledLollypopsMystery
+  entities:
+  - uid: 29034
+    components:
+    - type: Transform
+      pos: 30.535198,35.637714
+      parent: 2
+  - uid: 29035
+    components:
+    - type: Transform
+      pos: -7.403564,42.514435
+      parent: 2
 - proto: CapacitorStockPart
   entities:
   - uid: 13566
@@ -99173,16 +99195,6 @@ entities:
     components:
     - type: Transform
       parent: 15154
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -99214,16 +99226,6 @@ entities:
     components:
     - type: Transform
       parent: 37195
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -99236,32 +99238,12 @@ entities:
     - type: Transform
       pos: 50.50797,75.38402
       parent: 2
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterWinterMime
   entities:
   - uid: 4968
     components:
     - type: Transform
       parent: 4957
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -99273,16 +99255,6 @@ entities:
     components:
     - type: Transform
       parent: 15712
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -99294,16 +99266,6 @@ entities:
     components:
     - type: Transform
       parent: 15766
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -99314,16 +99276,6 @@ entities:
     - type: Transform
       pos: 43.5,-33.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingShoesBootsCombatFilled
   entities:
   - uid: 15816
@@ -100727,7 +100679,14 @@ entities:
     - type: Transform
       pos: 76.5,36.5
       parent: 2
-- proto: ComputerSalvageExpedition
+- proto: ComputerShuttleCargo
+  entities:
+  - uid: 15973
+    components:
+    - type: Transform
+      pos: 77.5,61.5
+      parent: 2
+- proto: ComputerShuttleMiningLavaland
   entities:
   - uid: 15970
     components:
@@ -100745,13 +100704,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -5.5,73.5
-      parent: 2
-- proto: ComputerShuttleCargo
-  entities:
-  - uid: 15973
-    components:
-    - type: Transform
-      pos: 77.5,61.5
       parent: 2
 - proto: ComputerShuttleSalvage
   entities:
@@ -114553,7 +114505,7 @@ entities:
       pos: 42.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -85134.14
+      secondsUntilStateChange: -85175.586
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -115593,7 +115545,7 @@ entities:
       pos: 49.5,96.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -160901.53
+      secondsUntilStateChange: -160942.97
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -118622,7 +118574,7 @@ entities:
       pos: 7.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -157730.36
+      secondsUntilStateChange: -157771.8
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -121806,6 +121758,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 75.5,-41.5
+      parent: 2
+- proto: GasMinerPlasma
+  entities:
+  - uid: 37578
+    components:
+    - type: Transform
+      pos: 89.5,-20.5
       parent: 2
 - proto: GasMixer
   entities:
@@ -170635,6 +170594,13 @@ entities:
     - type: Transform
       pos: -65.570335,1.7875943
       parent: 2
+- proto: LavalandShuttleConsoleCircuitboard
+  entities:
+  - uid: 29129
+    components:
+    - type: Transform
+      pos: 51.5,-3.5
+      parent: 2
 - proto: LeftArmBorg
   entities:
   - uid: 25388
@@ -177143,19 +177109,19 @@ entities:
     - type: Transform
       pos: 10.771967,49.791775
       parent: 2
-- proto: PlushieBlackburnMatryoskya
-  entities:
-  - uid: 37026
-    components:
-    - type: Transform
-      pos: 18.160917,49.847885
-      parent: 2
 - proto: PlushieBlackburnKobliska
   entities:
   - uid: 37027
     components:
     - type: Transform
       pos: 18.654211,49.380287
+      parent: 2
+- proto: PlushieBlackburnMatryoskya
+  entities:
+  - uid: 37026
+    components:
+    - type: Transform
+      pos: 18.160917,49.847885
       parent: 2
 - proto: PlushieDesislavaBlackburn
   entities:
@@ -195241,13 +195207,6 @@ entities:
     components:
     - type: Transform
       pos: 45.5,53.5
-      parent: 2
-- proto: SalvageExpeditionsComputerCircuitboard
-  entities:
-  - uid: 29129
-    components:
-    - type: Transform
-      pos: 51.5,-3.5
       parent: 2
 - proto: SalvageMagnet
   entities:

@@ -1,7 +1,7 @@
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/_Goobstation/saltern.yml # Goobstation - use custom saltern
+  mapPath: /Maps/_Gabystation/saltern.yml # Gabystation - use custom saltern
   minPlayers: 0
   maxPlayers: 35
   fallback: true
@@ -64,6 +64,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Reporter: [ 1, 1 ] # Gaby
 
         # Goobstation blob-config-start SMALL+
         - type: StationBlobConfig

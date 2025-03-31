@@ -14,6 +14,7 @@
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
   canBeAntag: false
+  goobcoins: 30 #Goob content
   access:
   - Security
   - Brig
@@ -24,10 +25,14 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial # goobstation
+    components:
+      - type: SecurityStaff
 
 - type: startingGear
   id: SecurityCadetGear
   equipment:
+    eyes: ClothingEyesGlassesSecurity #Goobstation
     shoes: ClothingShoesBootsJackFilled
     outerClothing: ClothingOuterArmorBasic
     id: SecurityCadetPDA
@@ -40,3 +45,4 @@
     - Flash
     - Handcuffs
     - SecHypo # Goobstation
+    - ClothingMaskGasSecurity # Goobstation

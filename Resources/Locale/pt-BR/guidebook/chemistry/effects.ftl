@@ -350,3 +350,9 @@ reagent-effect-guidebook-missing =
         [1] Causes
         *[other] cause
     } an unknown effect as nobody has written this effect yet
+
+reagent-effect-guidebook-remove-cogchamp-accent =
+    { $chance ->
+        [1] Remove
+        *[other] remove o
+    } sotaque cogchamp indivíduo

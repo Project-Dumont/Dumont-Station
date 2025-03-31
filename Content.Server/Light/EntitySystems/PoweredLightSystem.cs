@@ -270,7 +270,7 @@ namespace Content.Server.Light.EntitySystems
                 case LightBulbState.Normal:
                     if (powerReceiver.Powered && light.On)
                     {
-                        if (!EntityManager.TryGetComponent<LightCycleComponent>(_transformSystem.GetGrid(light.Owner.ToCoordinates()), out var cycle) || !cycle.IsEnabled)
+                        if (!EntityManager.TryGetComponent<GabyLightCycleComponent>(_transformSystem.GetGrid(light.Owner.ToCoordinates()), out var cycle) || !cycle.IsEnabled)
                             SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy, lightBulb.LightSoftness);
                         else
                             SetLight(uid, true);
@@ -279,7 +279,7 @@ namespace Content.Server.Light.EntitySystems
                         if (time > light.LastThunk + ThunkDelay)
                         {
                             light.LastThunk = time;
-                            _audio.PlayEntity(light.TurnOnSound, Filter.Pvs(uid), uid, true, AudioParams.Default.WithVolume(-10f));
+                            _audio.PlayPvs(light.TurnOnSound, uid, light.TurnOnSound.Params.AddVolume(-10f));
                         }
                     }
                     else
@@ -451,7 +451,7 @@ namespace Content.Server.Light.EntitySystems
         {
             var station = _transformSystem.GetGrid(uid);
             Entity<PoweredLightComponent> lightEnt = (uid, component);
-            if (EntityManager.TryGetComponent<LightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
+            if (EntityManager.TryGetComponent<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
                 if (!enabled)
                     cycle.BulbList.Remove(lightEnt);
                 else if (!cycle.BulbList.Contains(lightEnt))

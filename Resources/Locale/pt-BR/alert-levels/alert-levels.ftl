@@ -34,3 +34,7 @@ alert-level-delta-instructions = Crewmembers are advised to listen to heads of s
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement = A  Central de Comando ordenou o nível de segurança Epsilon na estação. Considerem todos os contratos expirados.
 alert-level-epsilon-instructions = Considerem todos os contratos expirados.
+
+alert-level-omicron = Omicron
+alert-level-omicron-announcement = A Central de Comando tomou controle total da estação. Aguardem ordens futuras dos oficiais da Central de Comando, fiquem em seus departamentos.
+alert-level-omicron-instructions = Aguarde ordens da Central de Comando.

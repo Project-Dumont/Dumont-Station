@@ -129,7 +129,10 @@ reagent-effect-guidebook-adjust-solution-temperature-effect =
                 [1] add
                 *[-1] remove
             }
-    } heat from the solution until it reaches { $deltasign ->
+    } heat { $deltasign ->
+                [1] to
+                *[-1] from
+           } the solution until it reaches { $deltasign ->
                 [1] at most {NATURALFIXED($maxtemp, 2)}k
                 *[-1] at least {NATURALFIXED($mintemp, 2)}k
             }
@@ -423,3 +426,9 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
         *[-1] from
     } the solution
+
+reagent-effect-guidebook-remove-cogchamp-accent =
+    { $chance ->
+        [1] Removes the
+        *[other] remove the
+    } cogchamp accent of the user

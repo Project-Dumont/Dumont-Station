@@ -1,7 +1,7 @@
 - type: gameMap
   id: Packed
   mapName: 'Packed'
-  mapPath: /Maps/_Goobstation/packed.yml # Goobstation
+  mapPath: /Maps/_Gabystation/packed.yml # Goobstation
   minPlayers: 7
   maxPlayers: 35
   stations:
@@ -13,11 +13,14 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'VG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
           availableJobs:
             #service
-            # Goobstation - TODO: add bso and ntr
             Captain: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ] # Goobstation
+            BlueshieldOfficer: [ 1, 1 ] # Goobstation
             HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
             Bartender: [ 1, 1 ]

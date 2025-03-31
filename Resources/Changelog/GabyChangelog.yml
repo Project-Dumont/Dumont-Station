@@ -223,3 +223,29 @@ Entries:
       message: Altera sprites dos alertas, IPCs, algemas e cartas.
   id: 30
   time: '2025-02-02T06:17:26.0000000+00:00'
+- author: Dreykor(arguemeu)
+  time: '2025-03-08T12:01:00.0000000+00:00'
+  changes:
+    - type: Fix
+      message: readiciona whitelist para hamburguers, assim evitando o meta de insta kill, e evitando que itens aleatorios sejam botados no hamburguer, algo sem muito sentido em MRP.
+  id: 31
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Add
+      message: Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio do alerta epsilon para sua versão completa.
+  id: 32
+  time: '2025-03-17T21:30:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Modificão completa na Perma Brig da Saltern, para a alegria dos jogadores de prisoneiros!
+    - type: Tweak
+      message: Adiciona vaga para reporter na saltern!
+  id: 33
+  time: '2025-03-27T14:44:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Várias mudanças na Loja de Gaby coins
+  id: 34
+  time: '2025-03-30T23:00:00.0000000+00:00'

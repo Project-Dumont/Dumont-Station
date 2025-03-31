@@ -20292,6 +20292,14 @@ entities:
     - type: Transform
       pos: -27.228924,-5.825143
       parent: 2
+- proto: ArabianLamp # Goob edit
+  entities:
+  - uid: 19917
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -86.74762,160.71548
+      parent: 2
 - proto: ArrowRegular
   entities:
   - uid: 4607
@@ -141733,14 +141741,6 @@ entities:
     components:
     - type: Transform
       pos: 88.562996,64.335815
-      parent: 2
-- proto: MagicalLamp
-  entities:
-  - uid: 19917
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -86.74762,160.71548
       parent: 2
 - proto: MagicDiceBag
   entities:

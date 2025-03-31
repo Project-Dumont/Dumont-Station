@@ -77,7 +77,7 @@
   - Roubar o [color=#5b97bc]Chefe Médico[/color]'s [bold]hiposspray[/bold] ou [bold]monitor de tripulação portátil[/bold].
   <Box>
     <GuideEntityEmbed Entity="Hypospray" Caption=""/>
-    <GuideEntityEmbed Entity="HandheldCrewMonitorEmpty" Caption=""/>
+    <GuideEntityEmbed Entity="RapidSyringeGun" Caption=""/>
   </Box>
   - Roubar o [color=#c96dbf]Diretor de Pesquisa[/color]'s [bold]traje experimental[/bold] ou [bold]teleportador manual[/bold].
   <Box>
@@ -86,6 +86,7 @@
   </Box>
   - Roubar o [color=#cb0000]Chefe de Segurança[/color]'s [bold]espingarda de energia[/bold].
   <Box>
+    <GuideEntityEmbed Entity="WeaponEnergyGunMultiphase" Caption=""/>
     <GuideEntityEmbed Entity="WeaponEnergyShotgun" Caption=""/>
   </Box>
   - Roubar o [color=#f39f27]Chefe de Engenharia[/color]'s [bold]botas magnéticas avançadas[/bold].

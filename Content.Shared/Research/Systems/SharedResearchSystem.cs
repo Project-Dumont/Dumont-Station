@@ -136,10 +136,7 @@ public abstract class SharedResearchSystem : EntitySystem
             if (percent < techDiscipline.TierPrerequisites[tier])
                 break;
 
-            if (tier >= techDiscipline.LockoutTier &&
-                component.MainDiscipline != null &&
-                techDiscipline.ID != component.MainDiscipline)
-                break;
+
             tier++;
         }
 
@@ -217,17 +214,7 @@ public abstract class SharedResearchSystem : EntitySystem
         return Resolve(uid, ref component, false) && component.UnlockedTechnologies.Contains(technologyId);
     }
 
-    public void TrySetMainDiscipline(TechnologyPrototype prototype, EntityUid uid, TechnologyDatabaseComponent? component = null)
-    {
-        if (!Resolve(uid, ref component))
-            return;
 
-        var discipline = PrototypeManager.Index(prototype.Discipline);
-        if (prototype.Tier < discipline.LockoutTier)
-            return;
-        component.MainDiscipline = prototype.Discipline;
-        Dirty(uid, component);
-    }
 
     /// <summary>
     /// Removes a technology and its recipes from a technology database.

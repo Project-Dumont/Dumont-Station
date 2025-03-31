@@ -72,3 +72,9 @@
 
 - files: ["falcon.yml"]
   authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
+
+- files: ["leonid.yml"]
+  authors: Gallagin, Derball
+
+- files: ["delta.yml"]
+  authors: Corvax team, pheenty
