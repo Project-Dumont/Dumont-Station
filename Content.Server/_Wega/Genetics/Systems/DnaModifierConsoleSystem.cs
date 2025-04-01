@@ -572,6 +572,9 @@ namespace Content.Server.Genetics.System
                 return;
 
             _dnaModifier.ChangeDna(dnaModifier, data);
+
+            var damage = new DamageSpecifier { DamageDict = { { RadDamage, 20 } } };
+            _damage.TryChangeDamage(scanBody, damage, true);
         }
 
         private void OnExportOnDiskPressed(DnaModifierConsoleExportOnDiskEvent args)
