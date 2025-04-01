@@ -999,13 +999,13 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         {
             case EnzymesType.Disease:
             case EnzymesType.Minor:
-                return values[0] > 8 || values[0] = 8 && values[1] >= 0 && values[2] >= 2;
+                return values[0] > 8 || (values[0] == 8 && values[1] >= 0 && values[2] >= 2);
 
             case EnzymesType.Intermediate:
-                return values[0] > 0xB || values[0] = 0xB && values[1] >= 0xE && values[2] >= 0xA;
+                return values[0] > 0xB || (values[0] == 0xB && values[1] >= 0xE && values[2] >= 0xA);
 
             case EnzymesType.Base:
-                return values[0] > 0xD || values[0] = 0xD && values[1] >= 0xA && values[2] >= 0xC;
+                return values[0] > 0xD || (values[0] == 0xD && values[1] >= 0xA && values[2] >= 0xC);
 
             default: return false;
         }
