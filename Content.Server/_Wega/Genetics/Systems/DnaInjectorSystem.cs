@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Genetics;
 using Content.Shared.Interaction;
@@ -10,6 +12,9 @@ public sealed partial class DnaModifierSystem
 {
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+
+    [ValidatePrototypeId<DamageTypePrototype>]
+    private const string Damage = "Poison";
 
     private void InitializeInjector()
     {
@@ -100,6 +105,9 @@ public sealed partial class DnaModifierSystem
         ChangeDna(dnaModifier);
 
         _audio.PlayPvs(ent.Comp.InjectSound, target);
+
+        var damage = new DamageSpecifier { DamageDict = { { Damage, 5 } } };
+        _damage.TryChangeDamage(target, damage, true);
 
         _entManager.DeleteEntity(ent);
 
