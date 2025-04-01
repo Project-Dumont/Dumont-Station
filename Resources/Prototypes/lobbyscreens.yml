@@ -135,23 +135,4 @@
   background: /Textures/LobbyScreens/enlist.webp
   name: Nanotrasen wants YOU.
   artist: thebiggestbruh
-
-# Gabystation - lobby screens
-
-- type: lobbyBackground
-  id: lavabattle
-  background: /Textures/_Gabystation/LobbyScreens/lavaland.webp
-  name: Batalha em Lavaland
-  artist: Wellnachapa
-
-- type: lobbyBackground
-  id: revolucao
-  background: /Textures/_Gabystation/LobbyScreens/revolucao.webp
-  name: Revolução
-  artist: Wellnachapa
-
-- type: lobbyBackground
-  id: syndcouncil
-  background: /Textures/_Gabystation/LobbyScreens/council.webp
-  name: Conselho
-  artist: Wellnachapa
+  
