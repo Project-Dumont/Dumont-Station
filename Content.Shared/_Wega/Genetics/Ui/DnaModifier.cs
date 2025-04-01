@@ -27,7 +27,8 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
     public readonly ContainerInfo? InputContainerInfo;
     public readonly bool ScannerInRange;
     public readonly bool HasDisk;
-    public DnaModifierBoundUserInterfaceState(NetEntity console, UniqueIdentifiersPrototype? unique, List<EnzymesPrototypeInfo>? enzymes, EnzymeInfo? enzyme, string? scannerBodyInfo, string? scannerBodyStatus, string? scannerBodyDna, float scannerBodyHealth, float scannerBodyRadiation, bool scannerHasBeaker, ContainerInfo? inputContainerInfo, bool scannerInRange, bool hasDisk)
+    public readonly Dictionary<int, EnzymeInfo?> Buffers;
+    public DnaModifierBoundUserInterfaceState(NetEntity console, UniqueIdentifiersPrototype? unique, List<EnzymesPrototypeInfo>? enzymes, EnzymeInfo? enzyme, string? scannerBodyInfo, string? scannerBodyStatus, string? scannerBodyDna, float scannerBodyHealth, float scannerBodyRadiation, bool scannerHasBeaker, ContainerInfo? inputContainerInfo, bool scannerInRange, bool hasDisk, Dictionary<int, EnzymeInfo?> buffers)
     {
         Console = console;
         Unique = unique;
@@ -42,6 +43,7 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
         InputContainerInfo = inputContainerInfo;
         ScannerInRange = scannerInRange;
         HasDisk = hasDisk;
+        Buffers = buffers;
     }
 }
 

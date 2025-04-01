@@ -185,24 +185,21 @@ public sealed partial class DnaModifierWindow : FancyWindow
         }
 
         // Buffer & Disk
-        if (_entManager.TryGetComponent<DnaClientComponent>(console, out var dnaClient))
+        if (!_initializedBuffer)
         {
-            if (dnaClient != null && !_initializedBuffer)
-            {
-                BufferContainer1.RemoveAllChildren();
-                BufferContainer2.RemoveAllChildren();
-                BufferContainer3.RemoveAllChildren();
-                InitializeBufferData(console, dnaClient);
-            }
-            else if (dnaClient != null && _updateBuffer)
-            {
-                _updateBuffer = false;
-                _initializedBuffer = false;
-                BufferContainer1.RemoveAllChildren();
-                BufferContainer2.RemoveAllChildren();
-                BufferContainer3.RemoveAllChildren();
-                InitializeBufferData(console, dnaClient);
-            }
+            BufferContainer1.RemoveAllChildren();
+            BufferContainer2.RemoveAllChildren();
+            BufferContainer3.RemoveAllChildren();
+            InitializeBufferData(state.Buffers);
+        }
+        else if (_updateBuffer)
+        {
+            _updateBuffer = false;
+            _initializedBuffer = false;
+            BufferContainer1.RemoveAllChildren();
+            BufferContainer2.RemoveAllChildren();
+            BufferContainer3.RemoveAllChildren();
+            InitializeBufferData(state.Buffers);
         }
 
         EjectButtonDisk.Disabled = state.HasDisk ? false : true;
@@ -330,35 +327,42 @@ public sealed partial class DnaModifierWindow : FancyWindow
         }
     }
 
-    private void InitializeBufferData(EntityUid console, DnaClientComponent dnaClient)
+    private void InitializeBufferData(Dictionary<int, EnzymeInfo?> buffers)
     {
         _initializedBuffer = true;
 
         for (int bufferIndex = 1; bufferIndex <= 3; bufferIndex++)
         {
-            int currentBufferIndex = bufferIndex;
-            if (_dnaClient.TryGetBufferData(console, bufferIndex, out var data) && data != null)
+            if (buffers.TryGetValue(bufferIndex, out var data) && data != null)
             {
-                var bufferContainer = CreateBufferContainer(data, currentBufferIndex);
-                switch (bufferIndex)
+                var bufferContainer = CreateBufferContainer(data, bufferIndex);
+                var targetContainer = bufferIndex switch
                 {
-                    case 1: BufferContainer1.AddChild(bufferContainer); break;
-                    case 2: BufferContainer2.AddChild(bufferContainer); break;
-                    case 3: BufferContainer3.AddChild(bufferContainer); break;
-                }
+                    1 => BufferContainer1,
+                    2 => BufferContainer2,
+                    3 => BufferContainer3,
+                    _ => null
+                };
 
-                EnableBufferBlock(bufferIndex);
-                DisabledSubjectDiskBlock(bufferIndex);
+                if (targetContainer != null)
+                {
+                    targetContainer.AddChild(bufferContainer);
+                    EnableBufferBlock(bufferIndex);
+                    DisabledSubjectDiskBlock(bufferIndex);
+                }
             }
             else
             {
                 var bufferLabel = new Label { Text = Loc.GetString("dna-modifier-button-no-buffer") };
-                switch (bufferIndex)
+                var targetContainer = bufferIndex switch
                 {
-                    case 1: BufferContainer1.AddChild(bufferLabel); break;
-                    case 2: BufferContainer2.AddChild(bufferLabel); break;
-                    case 3: BufferContainer3.AddChild(bufferLabel); break;
-                }
+                    1 => BufferContainer1,
+                    2 => BufferContainer2,
+                    3 => BufferContainer3,
+                    _ => null
+                };
+
+                targetContainer?.AddChild(bufferLabel);
             }
         }
     }

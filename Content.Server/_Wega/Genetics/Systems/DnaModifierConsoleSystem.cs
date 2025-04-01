@@ -225,6 +225,7 @@ namespace Content.Server.Genetics.System
             UniqueIdentifiersPrototype? uniqueIdentifiers = null;
             List<EnzymesPrototypeInfo>? enzymesPrototypes = null;
 
+            var buffer = GetAllBuffers(consoleComponent.Owner);
             if (consoleComponent.GeneticScanner != null && TryComp<MedicalScannerComponent>(consoleComponent.GeneticScanner, out var scanner))
             {
                 EntityUid? scanBody = scanner.BodyContainer.ContainedEntity;
@@ -301,7 +302,8 @@ namespace Content.Server.Genetics.System
                 scannerHasBeaker,
                 BuildInputContainerInfo(inputContainer),
                 scannerInRange,
-                hasDisk
+                hasDisk,
+                buffer
                 );
         }
 
@@ -337,6 +339,21 @@ namespace Content.Server.Genetics.System
             {
                 Reagents = solution.Contents
             };
+        }
+
+        public Dictionary<int, EnzymeInfo?> GetAllBuffers(EntityUid uid)
+        {
+            var buffers = new Dictionary<int, EnzymeInfo?>();
+            if (!TryComp<DnaClientComponent>(uid, out var client))
+                return buffers;
+
+            for (int i = 1; i <= 3; i++)
+            {
+                if (_dnaClient.TryGetBufferData((uid, client), i, out var data))
+                    buffers[i] = data;
+            }
+
+            return buffers;
         }
         #endregion
 

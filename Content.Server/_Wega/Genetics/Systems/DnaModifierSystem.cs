@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Inventory;
+using Content.Server.Prayer;
 using Content.Shared.Buckle;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
@@ -20,6 +21,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Enums;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -41,6 +43,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly PrayerSystem _prayerSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -554,7 +557,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     {
         return new[]
         {
-            _random.Next(8, 16).ToString("X1"),
+            _random.Next(9, 16).ToString("X1"),
             _random.Next(0, 16).ToString("X1"),
             _random.Next(2, 16).ToString("X1")
         };
@@ -984,9 +987,12 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
     private async Task ShowMessagesWithDelay(EntityUid target, List<string> messages)
     {
+        if (!TryComp<ActorComponent>(target, out var actor))
+            return;
+
         foreach (var message in messages)
         {
-            _popup.PopupEntity(Loc.GetString(message), target, target, PopupType.Medium);
+            _prayerSystem.SendSubtleMessage(actor.PlayerSession, actor.PlayerSession, string.Empty, Loc.GetString(message));
             await Task.Delay(2000);
         }
     }
@@ -1054,7 +1060,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             if (!_prototype.TryIndex<StructuralEnzymesPrototype>(enzyme.EnzymesPrototypeId, out var enzymePrototype))
                 continue;
 
-            if (enzymePrototype.TypeDeviation is EnzymesType.Disease)
+            if (enzymePrototype.TypeDeviation == EnzymesType.Disease)
             {
                 enzyme.HexCode = GetHexCodeDisease();
             }
