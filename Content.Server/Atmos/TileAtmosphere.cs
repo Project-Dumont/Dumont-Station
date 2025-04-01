@@ -119,6 +119,9 @@ public sealed class TileAtmosphere : IGasMixtureHolder
     [Access(typeof(AtmosphereSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
     public GasMixture? Air { get; set; }
 
+    [ViewVariables]
+    public GasMixture? AirArchived { get; set; }
+
     [DataField("lastShare")]
     public float LastShare;
 
