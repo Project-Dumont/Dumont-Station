@@ -138,7 +138,6 @@ public sealed partial class DnaModifierSystem
             uniqueEnzymesPrototypes.Add(uniqueEnzyme);
         }
 
-        RemComp<DnaModifierCleanRandomizeComponent>(ent);
         injector.EnzymesPrototypes = uniqueEnzymesPrototypes;
     }
 }
