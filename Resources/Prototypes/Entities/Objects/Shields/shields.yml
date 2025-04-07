@@ -70,6 +70,13 @@
   components:
     - type: StaticPrice
       price: 90
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: riot-backpack
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -91,6 +98,13 @@
   components:
     - type: Sprite
       state: riot_laser-icon
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: riot-laser-backpack
     - type: Item
       heldPrefix: riot_laser
     - type: Blocking
@@ -112,6 +126,13 @@
     - type: Sprite
       sprite: Objects/Weapons/Melee/shields.rsi
       state: riot_bullet-icon
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: riot-bullet-backpack
     - type: Item
       heldPrefix: riot_bullet
     - type: Blocking
@@ -135,6 +156,13 @@
     - type: Sprite
       state: buckler-icon
     - type: Item
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: buckler-backpack
       heldPrefix: buckler
     - type: Blocking
       passiveBlockModifier:
@@ -190,6 +218,13 @@
     - type: Sprite
       state: makeshift-icon
     - type: Item
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: metal-backpack
       heldPrefix: metal
     - type: Blocking
       passiveBlockModifier:
@@ -298,6 +333,13 @@
   components:
     - type: Sprite
       state: ratvarian-icon
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: ratvarian-backpack
     - type: Item
       heldPrefix: ratvarian
     - type: Blocking

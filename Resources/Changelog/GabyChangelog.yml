@@ -255,9 +255,10 @@ Entries:
       message: Concerta a impressora de documentos!
     - type: Tweak
       message: Agora a maioria dos escudos podem ser usados nas costas!
+    - type: Add
+      message: Agora é possivel lançar a evacuaçao prematuramente!
   id: 35
   time: '2025-04-04T10:50:00.0000000+00:00'
-
 - author: Dreykor (arguemeu) e Donner4037
   changes:
     - type: Add
