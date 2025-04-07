@@ -155,3 +155,9 @@
   background: /Textures/_Gabystation/LobbyScreens/council.webp
   name: Conselho
   artist: Wellnachapa
+
+- type: lobbyBackground
+  id: paramedic
+  background: /Textures/_Gabystation/LobbyScreens/paramedic.webp
+  name: Paramedic
+  artist: Donner4037
