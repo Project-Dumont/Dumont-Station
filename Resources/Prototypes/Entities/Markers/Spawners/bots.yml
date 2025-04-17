@@ -100,4 +100,4 @@
         state: secbot
   - type: ConditionalSpawner
     prototypes:
-      - MobSecuritron
+      - MobBeepsky

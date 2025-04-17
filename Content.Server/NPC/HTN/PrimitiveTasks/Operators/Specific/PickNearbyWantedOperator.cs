@@ -1,9 +1,12 @@
+using Content.Server.Administration.Logs.Converters;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Security.Components;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,6 +17,7 @@ public sealed partial class PickNearbyWantedOperator : HTNOperator
     [Dependency] private readonly IEntityManager _entManager = default!;
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;
+    private SharedAudioSystem _audio = default!;
 
     [DataField]
     public float MaxPoints = 10f;
@@ -33,11 +37,15 @@ public sealed partial class PickNearbyWantedOperator : HTNOperator
     [DataField(required: true)]
     public string TargetMoveKey = string.Empty;
 
+    [DataField]
+    public string? TargetFoundSoundKey;
+
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
+        _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
     }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard, CancellationToken cancelToken)
@@ -67,8 +75,16 @@ public sealed partial class PickNearbyWantedOperator : HTNOperator
             var pathRange = SharedInteractionSystem.InteractionRange - 1f;
             var path = await _pathfinding.GetPath(owner, entity, pathRange, cancelToken);
 
-            if (path.Result == PathResult.NoPath)
+            if (path.Result != PathResult.Path)
                 continue;
+
+            if (TargetFoundSoundKey != null &&
+                (!blackboard.TryGetValue<EntityUid>(TargetKey, out var oldTarget, _entManager) ||
+                oldTarget != entity) &&
+                blackboard.TryGetValue<SoundSpecifier>(TargetFoundSoundKey, out var targetFoundSound, _entManager))
+            {
+                _audio.PlayPvs(targetFoundSound, owner);
+            }
 
             return (true, new Dictionary<string, object>()
             {

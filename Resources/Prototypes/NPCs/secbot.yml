@@ -17,6 +17,7 @@
           operator: !type:PickNearbyWantedOperator
             targetKey: StunTarget
             targetMoveKey: TargetCoordinates
+            targetFoundSoundKey: TargetFoundSound
 
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
@@ -37,6 +38,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:ForceHandcuffOperator
             targetKey: StunTarget
+            targetArrestedSoundKey: TargetArrestedSound
         - !type:HTNPrimitiveTask
           operator: !type:SendRadioOperator
             message: securitron-target-arrested
