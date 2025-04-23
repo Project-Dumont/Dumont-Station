@@ -28,7 +28,25 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
     public readonly bool ScannerInRange;
     public readonly bool HasDisk;
     public readonly Dictionary<int, EnzymeInfo?> Buffers;
-    public DnaModifierBoundUserInterfaceState(NetEntity console, UniqueIdentifiersPrototype? unique, List<EnzymesPrototypeInfo>? enzymes, EnzymeInfo? enzyme, string? scannerBodyInfo, string? scannerBodyStatus, string? scannerBodyDna, float scannerBodyHealth, float scannerBodyRadiation, bool scannerHasBeaker, ContainerInfo? inputContainerInfo, bool scannerInRange, bool hasDisk, Dictionary<int, EnzymeInfo?> buffers)
+    public readonly TimeSpan InjectorCooldownRemaining;
+    public readonly TimeSpan SubjectInjectCooldownRemaining;
+    public DnaModifierBoundUserInterfaceState(
+        NetEntity console,
+        UniqueIdentifiersPrototype?
+        unique, List<EnzymesPrototypeInfo>?
+        enzymes, EnzymeInfo? enzyme,
+        string? scannerBodyInfo,
+        string? scannerBodyStatus,
+        string? scannerBodyDna,
+        float scannerBodyHealth,
+        float scannerBodyRadiation,
+        bool scannerHasBeaker,
+        ContainerInfo? inputContainerInfo,
+        bool scannerInRange,
+        bool hasDisk,
+        Dictionary<int, EnzymeInfo?> buffers,
+        TimeSpan injectorCooldownRemaining,
+        TimeSpan subjectInjectCooldownRemaining)
     {
         Console = console;
         Unique = unique;
@@ -44,6 +62,8 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
         ScannerInRange = scannerInRange;
         HasDisk = hasDisk;
         Buffers = buffers;
+        InjectorCooldownRemaining = injectorCooldownRemaining;
+        SubjectInjectCooldownRemaining = subjectInjectCooldownRemaining;
     }
 }
 

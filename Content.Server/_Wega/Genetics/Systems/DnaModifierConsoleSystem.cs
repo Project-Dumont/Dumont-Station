@@ -225,6 +225,10 @@ namespace Content.Server.Genetics.System
             UniqueIdentifiersPrototype? uniqueIdentifiers = null;
             List<EnzymesPrototypeInfo>? enzymesPrototypes = null;
 
+            var currentTime = _timing.CurTime;
+            var injectorCooldown = consoleComponent.LastInjectorTime + consoleComponent.InjectorCooldown;
+            var subjectInjectCooldown = consoleComponent.LastSubjectInjectTime + consoleComponent.SubjectInjectCooldown;
+
             var buffer = GetAllBuffers(consoleComponent.Owner);
             if (consoleComponent.GeneticScanner != null && TryComp<MedicalScannerComponent>(consoleComponent.GeneticScanner, out var scanner))
             {
@@ -303,7 +307,9 @@ namespace Content.Server.Genetics.System
                 BuildInputContainerInfo(inputContainer),
                 scannerInRange,
                 hasDisk,
-                buffer
+                buffer,
+                currentTime < injectorCooldown ? injectorCooldown - currentTime : TimeSpan.Zero,
+                currentTime < subjectInjectCooldown ? subjectInjectCooldown - currentTime : TimeSpan.Zero
                 );
         }
 
@@ -547,6 +553,8 @@ namespace Content.Server.Genetics.System
             _dnaModifier.OnFillingInjector(_entManager.SpawnEntity(Injector, Transform(clientEntity).Coordinates),
                 data.Identifier, data.Info);
 
+            console.LastInjectorTime = _timing.CurTime;
+
             UpdateUserInterface(clientEntity, console);
         }
 
@@ -567,6 +575,8 @@ namespace Content.Server.Genetics.System
             var singleBlockInfo = new List<EnzymesPrototypeInfo> { targetBlock };
             _dnaModifier.OnFillingInjector(_entManager.SpawnEntity(Injector, Transform(clientEntity).Coordinates),
                 null, singleBlockInfo);
+
+            console.LastInjectorTime = _timing.CurTime;
 
             UpdateUserInterface(clientEntity, console);
         }
@@ -589,6 +599,8 @@ namespace Content.Server.Genetics.System
                 return;
 
             _dnaModifier.ChangeDna(dnaModifier, data);
+
+            console.LastSubjectInjectTime = _timing.CurTime;
 
             var damage = new DamageSpecifier { DamageDict = { { RadDamage, 20 } } };
             _damage.TryChangeDamage(scanBody, damage, true);

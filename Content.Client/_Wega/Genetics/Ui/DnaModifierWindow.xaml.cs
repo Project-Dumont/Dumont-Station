@@ -28,10 +28,8 @@ public sealed partial class DnaModifierWindow : FancyWindow
     private static TimeSpan? _releverationsButtonCooldown;
     private static TimeSpan? _releveration1ButtonCooldown;
     private static TimeSpan? _releveration2ButtonCooldown;
-    private static TimeSpan? _injectorButtonCooldown;
-    private static TimeSpan? _injectBlockButtonCooldown;
-    private static TimeSpan? _subjectInjectButtonCooldown;
-    private DnaClientSystem _dnaClient;
+    private TimeSpan? _injectorCooldown;
+    private TimeSpan? _subjectInjectCooldown;
     private ModifyButton? _activeButtonUi = null;
     private ModifyButton? _activeButtonSe = null;
     private bool _initializedUi = false;
@@ -46,8 +44,6 @@ public sealed partial class DnaModifierWindow : FancyWindow
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-
-        _dnaClient = _entManager.System<DnaClientSystem>();
 
         Tabs.SetTabTitle(0, Loc.GetString("dna-modifier-tab-ui"));
         Tabs.SetTabTitle(1, Loc.GetString("dna-modifier-tab-se"));
@@ -136,6 +132,14 @@ public sealed partial class DnaModifierWindow : FancyWindow
             : state.ScannerBodyDna;
 
         // Lower state
+
+        _injectorCooldown = state.InjectorCooldownRemaining > TimeSpan.Zero
+            ? _gameTiming.CurTime + state.InjectorCooldownRemaining
+            : null;
+
+        _subjectInjectCooldown = state.SubjectInjectCooldownRemaining > TimeSpan.Zero
+            ? _gameTiming.CurTime + state.SubjectInjectCooldownRemaining
+            : null;
 
         // U.I.
         if (state.Unique != null && !_initializedUi)
@@ -407,7 +411,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
         {
             Name = "InjectorButton",
             Text = Loc.GetString("dna-modifier-button-injector"),
-            Disabled = _injectorButtonCooldown.HasValue && _gameTiming.CurTime < _injectorButtonCooldown
+            Disabled = _injectorCooldown.HasValue && _gameTiming.CurTime < _injectorCooldown
         };
         injectorButton.OnPressed += _ => OnInjectorPressed(bufferIndex, injectorButton);
         buttonsContainer.AddChild(injectorButton);
@@ -431,7 +435,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
             {
                 Text = Loc.GetString("dna-modifier-button-inject-block"),
                 StyleClasses = { StyleNano.ButtonOpenLeft },
-                Disabled = _injectBlockButtonCooldown.HasValue && _gameTiming.CurTime < _injectBlockButtonCooldown
+                Disabled = _injectorCooldown.HasValue && _gameTiming.CurTime < _injectorCooldown
             };
             injectBlockButton.OnPressed += _ => OnInjectBlockPressed(bufferIndex, injectBlockButton, blockSelectButton.SelectedId);
 
@@ -444,7 +448,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
         {
             Name = "SubjectInjectButton",
             Text = Loc.GetString("dna-modifier-button-subject-inject"),
-            Disabled = _subjectInjectButtonCooldown.HasValue && _gameTiming.CurTime < _subjectInjectButtonCooldown
+            Disabled = _subjectInjectCooldown.HasValue && _gameTiming.CurTime < _subjectInjectCooldown
         };
         subjectInjectButton.OnPressed += _ => OnSubjectInjectPressed(bufferIndex, subjectInjectButton);
         buttonsContainer.AddChild(subjectInjectButton);
@@ -550,29 +554,26 @@ public sealed partial class DnaModifierWindow : FancyWindow
 
     private void OnInjectorPressed(int index, Button button)
     {
+        _updateBuffer = true;
         button.Disabled = true;
         _entNetworkManager.SendSystemNetworkMessage(
             new DnaModifierConsoleInjectorEvent(_console, index));
-
-        _injectorButtonCooldown = _gameTiming.CurTime + TimeSpan.FromMinutes(2);
     }
 
     private void OnInjectBlockPressed(int bufferIndex, Button button, int blockId)
     {
+        _updateBuffer = true;
         button.Disabled = true;
         _entNetworkManager.SendSystemNetworkMessage(
             new DnaModifierInjectBlockEvent(_console, bufferIndex, blockId));
-
-        _injectBlockButtonCooldown = _gameTiming.CurTime + TimeSpan.FromMinutes(2);
     }
 
     private void OnSubjectInjectPressed(int index, Button button)
     {
+        _updateBuffer = true;
         button.Disabled = true;
         _entNetworkManager.SendSystemNetworkMessage(
             new DnaModifierConsoleSubjectInjectEvent(_console, index));
-
-        _subjectInjectButtonCooldown = _gameTiming.CurTime + TimeSpan.FromMinutes(2);
     }
 
     private void OnClearBufferPressed(int index)
