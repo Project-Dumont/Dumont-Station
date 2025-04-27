@@ -7,497 +7,180 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# White Jumpsuit
+
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitColorWhite
-  name: white jumpsuit
-  description: A generic white jumpsuit with no rank markings.
+  id: ClothingUniformJumpsuitColorable
+  abstract: true
+  name: colorable jumpsuit
+  description: A generic jumpsuit with no rank markings.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/color.rsi
     layers:
-    - state: icon
+    - map: [ "enum.DyableVisualsLayers.Layer" ]
+      state: icon
     - state: trinkets-icon
   - type: Item
     inhandVisuals:
       left:
-      - state: inhand-left
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: inhand-left
       - state: trinkets-inhand-left
       right:
-      - state: inhand-right
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: inhand-right
       - state: trinkets-inhand-right
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/color.rsi
     clothingVisuals:
       jumpsuit:
-      - state: equipped-INNERCLOTHING
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: equipped-INNERCLOTHING
       - state: trinkets-equipped-INNERCLOTHING
+  - type: Appearance
+  - type: Dyable
+
+# White Jumpsuit
+- type: entity
+  parent: ClothingUniformJumpsuitColorable
+  id: ClothingUniformJumpsuitColorWhite
+  suffix: White
 
 # Grey Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorGrey
-  name: grey jumpsuit
-  description: A tasteful grey jumpsuit that reminds you of the good old days.
+  suffix: Grey
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#b3b3b3"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#b3b3b3"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#b3b3b3"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#b3b3b3"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#b3b3b3"
 
 # Black Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorBlack
-  name: black jumpsuit
-  description: A generic black jumpsuit with no rank markings.
+  suffix: Black
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#3f3f3f"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#3f3f3f"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#3f3f3f"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#3f3f3f"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#3f3f3f"
 
 # Blue Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorBlue
-  name: blue jumpsuit
-  description: A generic blue jumpsuit with no rank markings.
+  suffix: Blue
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#52aecc"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#52aecc"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#52aecc"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#52aecc"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#52aecc"
 
 # Dark Blue Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorDarkBlue
-  name: dark blue jumpsuit
-  description: A generic dark blue jumpsuit with no rank markings.
+  suffix: Dark Blue
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#3285ba"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#3285ba"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#3285ba"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#3285ba"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#3285ba"
 
 # Teal Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorTeal
-  name: teal jumpsuit
-  description: A generic teal jumpsuit with no rank markings.
+  suffix: Teal
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#77f3b7"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#77f3b7"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#77f3b7"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#77f3b7"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#77f3b7"
 
 # Green Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorGreen
-  name: green jumpsuit
-  description: A generic green jumpsuit with no rank markings.
+  suffix: Green
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#9ed63a"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#9ed63a"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#9ed63a"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#9ed63a"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#9ed63a"
 
  # Dark Green Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorDarkGreen
-  name: dark green jumpsuit
-  description: A generic dark green jumpsuit with no rank markings.
+  suffix: Dark Green
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#007923"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#007923"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#007923"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#007923"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#007923"
 
 # Orange Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorOrange
-  name: orange jumpsuit
-  description: Don't wear this near paranoid security officers.
+  suffix: Orange
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#ff8c19"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#ff8c19"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#ff8c19"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#ff8c19"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#ff8c19"
 
 # Pink Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorPink
-  name: pink jumpsuit
-  description: Just looking at this makes you feel <i>fabulous</i>.
+  suffix: Pink
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#ffa69b"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#ffa69b"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#ffa69b"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#ffa69b"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#ffa69b"
 
 # Red Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorRed
-  name: red jumpsuit
-  description: A generic red jumpsuit with no rank markings.
+  suffix: Red
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#eb0c07"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#eb0c07"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#eb0c07"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#eb0c07"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#eb0c07"
 
 # Yellow Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorYellow
-  name: yellow jumpsuit
-  description: A generic yellow jumpsuit with no rank markings.
+  suffix: Yellow
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#ffe14d"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#ffe14d"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#ffe14d"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#ffe14d"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#ffe14d"
 
 # Purple Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorPurple
-  name: purple jumpsuit
-  description: A generic light purple jumpsuit with no rank markings.
+  suffix: Purple
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#9f70cc"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#9f70cc"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#9f70cc"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#9f70cc"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#9f70cc"
 
 # Light Brown Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorLightBrown
-  name: light brown jumpsuit
-  description: A generic light brown jumpsuit with no rank markings.
+  suffix: Light Brown
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#c59431"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#c59431"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#c59431"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#c59431"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#c59431"
 
 # Brown Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorBrown
-  name: brown jumpsuit
-  description: A generic brown jumpsuit with no rank markings.
+  suffix: Brown
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#a17229"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#a17229"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#a17229"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#a17229"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#a17229"
 
 # Maroon Jumpsuit
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformJumpsuitColorable
   id: ClothingUniformJumpsuitColorMaroon
-  name: maroon jumpsuit
-  description: A generic maroon jumpsuit with no rank markings.
+  suffix: Maroon
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    layers:
-    - state: icon
-      color: "#cc295f"
-    - state: trinkets-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#cc295f"
-      - state: trinkets-inhand-left
-      right:
-      - state: inhand-right
-        color: "#cc295f"
-      - state: trinkets-inhand-right
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: equipped-INNERCLOTHING
-        color: "#cc295f"
-      - state: trinkets-equipped-INNERCLOTHING
+  - type: Dyable
+    color: "#cc295f"
 
 # Rainbow Jumpsuit
 - type: entity

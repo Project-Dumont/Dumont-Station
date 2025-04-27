@@ -106,6 +106,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Hands.Components;
 
 namespace Content.Shared.Item;
 
@@ -197,6 +198,26 @@ public abstract class SharedItemSystem : EntitySystem
         item.RsiPath = otherItem.RsiPath;
         item.InhandVisuals = otherItem.InhandVisuals;
         item.HeldPrefix = otherItem.HeldPrefix;
+
+        Dirty(uid, item);
+        VisualsChanged(uid);
+    }
+
+    public void SetLayerColor(EntityUid uid, HandLocation hand, string mapKey, Color? color, ItemComponent? item = null)
+    {
+        if (!Resolve(uid, ref item))
+            return;
+
+        foreach (var layer in item.InhandVisuals[hand])
+        {
+            if (layer.MapKeys == null)
+                return;
+
+            if (!layer.MapKeys.Contains(mapKey))
+                continue;
+
+            layer.Color = color;
+        }
 
         Dirty(uid, item);
         VisualsChanged(uid);

@@ -117,7 +117,7 @@
     cleanDelay: 12
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-green
+    residueColor: "#a4caa6"
 
 - type: entity
   name: soap
@@ -142,7 +142,7 @@
           Quantity: 100
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-grey
+    residueColor: "#b0aec0"
 
 - type: entity
   name: soap
@@ -160,7 +160,7 @@
     heldPrefix: deluxe
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-brown
+    residueColor: "#d2af9c"
 
 - type: entity
   name: soap
@@ -188,7 +188,7 @@
     cleanDelay: 8.0
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-red
+    residueColor: "#cb8c8c"
   - type: StaticPrice
     price: 500
 
@@ -261,7 +261,7 @@
       - meaty
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-red
+    residueColor: "#cb8c8c"
 
 - type: entity
   name: omega soap
@@ -290,7 +290,7 @@
           Quantity: 240
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-blue
+    residueColor: "#5680c5"
 
 - type: entity
   name: soap
@@ -310,7 +310,7 @@
   - type: FloorCleaner # Goobstation
   - type: Residue
     residueAdjective: residue-slippery
-    residueColor: residue-grey
+    residueColor: "#b0aec0"
   - type: Tag
     tags:
     - Soap

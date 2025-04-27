@@ -25,6 +25,7 @@ using Content.Server.Popups;
 using Content.Shared.Crayon;
 using Content.Shared.Database;
 using Content.Shared.Decals;
+using Content.Shared.Dyable;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Robust.Server.GameObjects;
@@ -54,6 +55,7 @@ public sealed class CrayonSystem : SharedCrayonSystem
         SubscribeLocalEvent<CrayonComponent, AfterInteractEvent>(OnCrayonAfterInteract, after: new[] { typeof(FoodSystem) });
         SubscribeLocalEvent<CrayonComponent, DroppedEvent>(OnCrayonDropped);
         SubscribeLocalEvent<CrayonComponent, ComponentGetState>(OnCrayonGetState);
+        SubscribeLocalEvent<CrayonComponent, GetDyableColorsEvent>(OnDyeGetColor);
     }
 
     private static void OnCrayonGetState(EntityUid uid, CrayonComponent component, ref ComponentGetState args)

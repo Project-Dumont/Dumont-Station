@@ -9,279 +9,116 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # DO NOT ARBITRARILY CHANGE THESE TO MAKE THEM "CONSISTENT" WITH THE COLOR JUMPSUITS. You are probably just going to make them look worse.
 
-# Black Shoes
 - type: entity
   parent: ClothingShoesBaseButcherable
-  id: ClothingShoesColorBlack
-  name: black shoes
-  description: Stylish black shoes.
+  id: ClothingShoesColorable
+  abstract: true
+  name: colorable shoes
+  description: Keep up with the ever changing trends. Now you never need to buy a new pair again.
   components:
   - type: Sprite
     sprite: Clothing/Shoes/color.rsi
     layers:
-    - state: icon
-      color: "#3f3f3f" #Different from the worn state for contrast reasons.
+    - map: [ "enum.DyableVisualsLayers.Layer" ]
+      state: icon
     - state: soles-icon
   - type: Item
     inhandVisuals:
       left:
-      - state: inhand-left
-        color: "#3f3f3f"
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: inhand-left
       - state: soles-inhand-left
       right:
-      - state: inhand-right
-        color: "#3f3f3f"
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: inhand-right
       - state: soles-inhand-right
   - type: Clothing
     sprite: Clothing/Shoes/color.rsi
     clothingVisuals:
       shoes:
-      - state: equipped-FEET
-        color: "#1d1d1d"
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: equipped-FEET
       - state: soles-equipped-FEET
+  - type: Appearance
+  - type: Dyable
+
+# Black Shoes
+- type: entity
+  parent: ClothingShoesColorable
+  id: ClothingShoesColorBlack
+  suffix: Black
+  components:
+  - type: Dyable
+    color: "#1d1d1d"
 
 # White Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorWhite
-  name: white shoes
-  description: Don't take them off at your office Christmas party.
+  suffix: White
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#EAE8E8" #Deliberately NOT pure white
-    - state: soles-icon
-  - type: Item
-    inhandVisuals: #We don't want the sole icons. Since this is white, it's just going to look weird (white on white doesn't really contrast.)
-      left:
-      - state: inhand-left
-        color: "#EAE8E8"
-      right:
-      - state: inhand-right
-        color: "#EAE8E8"
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#EAE8E8"
-      - state: contrastedsoles-equipped-FEET
+  - type: Dyable
+    color: "#EAE8E8" #Deliberately NOT pure white
 
 # Blue Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorBlue
-  name: blue shoes
-  description: Stylish blue shoes.
+  suffix: Blue
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#0089EF"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#0089EF"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#0089EF"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#0089EF"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#0089EF"
 
 # Brown Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorBrown
-  name: brown shoes
-  description: A pair of brown shoes.
+  suffix: Brown
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#723A02"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#723A02"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#723A02"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#592D01"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#592D01"
 
 # Green Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorGreen
-  name: green shoes
-  description: Stylish green shoes.
+  suffix: Green
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#5ABF2F"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#5ABF2F"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#5ABF2F"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#5ABF2F"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#5ABF2F"
 
 # Orange Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorOrange
-  name: orange shoes
-  description: Stylish orange shoes.
+  suffix: Orange
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#EF8100"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#EF8100"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#EF8100"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#EF8100"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#EF8100"
 
 # Red Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorRed
-  name: red shoes
-  description: Stylish red shoes.
+  suffix: Red
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#940000"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#940000"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#940000"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#940000"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#940000"
 
 # Yellow Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorYellow
-  name: yellow shoes
-  description: Stylish yellow shoes.
+  suffix: Yellow
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#EBE216"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#EBE216"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#EBE216"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#EBE216"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#EBE216"
 
 # Purple Shoes
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesColorable
   id: ClothingShoesColorPurple
-  name: purple shoes
-  description: Stylish purple shoes.
+  suffix: Purple
   components:
-  - type: Sprite
-    sprite: Clothing/Shoes/color.rsi
-    layers:
-    - state: icon
-      color: "#9C0DE1"    
-    - state: soles-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#9C0DE1"
-      - state: soles-inhand-left
-      right:
-      - state: inhand-right
-        color: "#9C0DE1"
-      - state: soles-inhand-right
-  - type: Clothing
-    sprite: Clothing/Shoes/color.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        color: "#9C0DE1"
-      - state: soles-equipped-FEET
+  - type: Dyable
+    color: "#9C0DE1"

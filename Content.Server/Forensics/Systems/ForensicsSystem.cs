@@ -392,10 +392,20 @@ namespace Content.Server.Forensics
 
             // leave behind evidence it was cleaned
             if (TryComp<FiberComponent>(args.Used, out var fiber))
-                targetComp.Fibers.Add(string.IsNullOrEmpty(fiber.FiberColor) ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial)) : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial)));
+            {
+                if (fiber.FiberColor == null)
+                    targetComp.Fibers.Add(Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial)));
+                else
+                    Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial));
+            }
 
             if (TryComp<ResidueComponent>(args.Used, out var residue))
-                targetComp.Residues.Add(string.IsNullOrEmpty(residue.ResidueColor) ? Loc.GetString("forensic-residue", ("adjective", residue.ResidueAdjective)) : Loc.GetString("forensic-residue-colored", ("color", residue.ResidueColor), ("adjective", residue.ResidueAdjective)));
+            {
+                if (residue.ResidueColor == null)
+                    targetComp.Residues.Add(Loc.GetString("forensic-residue", ("adjective", residue.ResidueAdjective)));
+                else
+                    targetComp.Residues.Add(Loc.GetString("forensic-residue-colored", ("color", residue.ResidueColor), ("adjective", residue.ResidueAdjective)));
+            }
 
             if (TryComp<ScentComponent>(args.Target, out var scentComp)) // Einstein Engines - Start
             {
@@ -451,7 +461,7 @@ namespace Content.Server.Forensics
             if (_inventory.TryGetSlotEntity(user, "gloves", out var gloves))
             {
                 if (TryComp<FiberComponent>(gloves, out var fiber) && !string.IsNullOrEmpty(fiber.FiberMaterial))
-                    component.Fibers.Add(string.IsNullOrEmpty(fiber.FiberColor) ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial)) : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial)));
+                    component.Fibers.Add(fiber.FiberColor == null ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial)) : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial)));
             }
 
             if (TryComp<FingerprintComponent>(user, out var fingerprint) && CanAccessFingerprint(user, out _))

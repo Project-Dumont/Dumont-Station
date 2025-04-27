@@ -506,7 +506,7 @@
     - type: CleansForensics
     - type: FloorCleaner # Goobstation
     - type: Fiber
-      fiberColor: fibers-white
+      fiberColor: "#EAE8E8"
     - type: DnaSubstanceTrace
 
 - type: entity

@@ -16,5 +16,5 @@ public sealed partial class ResidueComponent : Component
     public LocId ResidueAdjective = "residue-unknown";
 
     [DataField]
-    public string? ResidueColor;
+    public Color? ResidueColor;
 }

@@ -99,295 +99,115 @@
 #If you want to make it similar to the jumpsuit color, it should be slightly off.
 #P.S: Most of these just use the shoe colors, so they end up having a nice "secondary" color when wearing the full set of color clothing.
 
-# Purple Gloves
 - type: entity
   parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsGlovesColorPurple
-  name: purple gloves
-  description: Regular purple gloves that do not keep you from frying.
+  id: ClothingHandsGlovesColorable
+  abstract: true
+  name: colorable gloves
+  description: Regular gloves that do not keep you from frying.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     layers:
-    - state: icon
-      color: "#9C0DE1"
+    - map: [ "enum.DyableVisualsLayers.Layer" ]
+      state: icon
   - type: Item
     inhandVisuals:
       left:
-      - state: inhand-left
-        color: "#9C0DE1"
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: inhand-left
       right:
-      - state: inhand-right
-        color: "#9C0DE1"
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: inhand-right
   - type: Clothing
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     clothingVisuals:
       gloves:
-      - state: equipped-HAND
-        color: "#9C0DE1"
-  - type: Fiber
-    fiberColor: fibers-purple
+      - map: [ "enum.DyableVisualsLayers.Layer" ]
+        state: equipped-HAND
+  - type: Appearance
+  - type: Dyable
+
+# Purple Gloves
+- type: entity
+  parent: ClothingHandsGlovesColorable
+  id: ClothingHandsGlovesColorPurple
+  suffix: Purple
+  components:
+  - type: Dyable
+    color: "#9C0DE1"
 
 # Red Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorRed
-  name: red gloves
-  description: Regular red gloves that do not keep you from frying.
+  suffix: Red
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#940000"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#940000"
-      right:
-      - state: inhand-right
-        color: "#940000"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#940000"
-  - type: Fiber
-    fiberColor: fibers-red
+  - type: Dyable
+    color: "#940000"
 
 # Blue Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorBlue
-  name: blue gloves
-  description: Regular blue gloves that do not keep you from frying.
+  suffix: Blue
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#0089EF"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#0089EF"
-      right:
-      - state: inhand-right
-        color: "#0089EF"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#0089EF"
-  - type: Fiber
-    fiberColor: fibers-blue
+  - type: Dyable
+    color: "#0089EF"
 
 # Teal Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorTeal
-  name: teal gloves
-  description: Regular teal gloves that do not keep you from frying.
+  suffix: Teal
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#3CB57C"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#3CB57C"
-      right:
-      - state: inhand-right
-        color: "#3CB57C"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#3CB57C"
-  - type: Fiber
-    fiberColor: fibers-teal
+  - type: Dyable
+    color: "#3CB57C"
 
 # Brown Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorBrown
-  name: brown gloves
-  description: Regular brown gloves that do not keep you from frying.
+  suffix: Brown
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#723A02"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#723A02"
-      right:
-      - state: inhand-right
-        color: "#723A02"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#723A02"
-  - type: Fiber
-    fiberColor: fibers-brown
+  - type: Dyable
+    color: "#723A02"
 
 # Grey Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorGray
-  name: grey gloves
-  description: Regular grey gloves that do not keep you from frying.
+  suffix: Gray
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#999999"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#999999"
-      right:
-      - state: inhand-right
-        color: "#999999"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#999999"
-  - type: Fiber
-    fiberColor: fibers-grey
+  - type: Dyable
+    color: "#999999"
 
 # Green Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorGreen
-  name: green gloves
-  description: Regular green gloves that do not keep you from frying.
+  suffix: Green
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#5ABF2F"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#5ABF2F"
-      right:
-      - state: inhand-right
-        color: "#5ABF2F"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#5ABF2F"
-  - type: Fiber
-    fiberColor: fibers-green
+  - type: Dyable
+    color: "#5ABF2F"
 
 # Light Brown Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorLightBrown
-  name: light brown gloves
-  description: Regular light brown gloves that do not keep you from frying.
+  suffix: Light Brown
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#C09F72"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#C09F72"
-      right:
-      - state: inhand-right
-        color: "#C09F72"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#C09F72"
-  - type: Fiber
-    fiberColor: fibers-light-brown
-
-# Orange Gloves
-- type: entity
-  parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsGlovesColorOrange
-  name: orange gloves
-  description: Regular orange gloves that do not keep you from frying.
-  components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#EF8100"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#EF8100"
-      right:
-      - state: inhand-right
-        color: "#EF8100"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#EF8100"
-  - type: Fiber
-    fiberColor: fibers-orange
+  - type: Dyable
+    color: "#C09F72"
 
 # White Gloves
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesColorable
   id: ClothingHandsGlovesColorWhite
-  name: white gloves
-  description: Regular white gloves that do not keep you from frying.
+  suffix: White
   components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#EAE8E8"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#EAE8E8"
-      right:
-      - state: inhand-right
-        color: "#EAE8E8"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#EAE8E8"
-  - type: Fiber
-    fiberColor: fibers-white
+  - type: Dyable
+    color: "#EAE8E8"
 
 # Black Gloves
 # TECHNICALLY, if you ported the worn state to the RSI, this could be greyscaled, but I do not really feel like doing that.
@@ -413,8 +233,6 @@
     butcheringType: Knife
     spawned:
     - id: ClothingHandsGlovesFingerless
-  - type: Fiber
-    fiberColor: fibers-black
 
 - type: entity # Goobstation
   parent: ClothingHandsBase
@@ -433,7 +251,7 @@
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
-    fiberColor: fibers-yellow
+    fiberColor: "#ffe14d"
   - type: Armor # Goob
     modifiers:
       coefficients:
@@ -475,7 +293,7 @@
       - 4
   - type: Fiber
     fiberMaterial: fibers-insulative-frayed
-    fiberColor: fibers-yellow
+    fiberColor: "#ffe14d"
   - type: Tag
     tags:
       - BudgetInsuls
