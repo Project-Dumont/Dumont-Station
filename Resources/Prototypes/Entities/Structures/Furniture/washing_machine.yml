@@ -39,6 +39,8 @@
       - Dyable
       sizes:
       - Tiny
+  - type: Forensics
+    canDnaBeCleaned: false
   - type: Appearance
   - type: GenericVisualizer
     visuals:

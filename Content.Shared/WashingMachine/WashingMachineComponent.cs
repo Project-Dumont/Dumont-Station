@@ -9,7 +9,7 @@ public sealed partial class WashingMachineComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan WashingTime;
 
-    [ViewVariables, AutoNetworkedField, AutoPausedField, Access(typeof(WashingMachineSystem))]
+    [ViewVariables, AutoNetworkedField, AutoPausedField, Access(typeof(SharedWashingMachineSystem))]
     public TimeSpan WashingFinished;
 
     [DataField, AutoNetworkedField]
@@ -20,6 +20,6 @@ public sealed partial class WashingMachineComponent : Component
     [DataField, AutoNetworkedField]
     public SoundSpecifier? FinishedSound;
 
-    [ViewVariables, AutoNetworkedField, Access(typeof(WashingMachineSystem))]
+    [ViewVariables, AutoNetworkedField, Access(typeof(SharedWashingMachineSystem))]
     public WashingMachineState WashingMachineState;
 }

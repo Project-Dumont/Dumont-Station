@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace Content.Shared.WashingMachine;
 
-public sealed partial class WashingMachineSystem : EntitySystem
+public abstract partial class SharedWashingMachineSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -59,8 +59,7 @@ public sealed partial class WashingMachineSystem : EntitySystem
             if (_storage.ResolveStorage(uid, ref entityStorageComp))
                 items = entityStorageComp.Contents.ContainedEntities.ToHashSet();
 
-            if (component.WashingSoundStream != null)
-                component.WashingSoundStream = _audio.Stop(component.WashingSoundStream);
+            component.WashingSoundStream = _audio.Stop(component.WashingSoundStream);
 
             if (_net.IsServer)
                 _audio.PlayPvs(component.FinishedSound, uid);
@@ -71,6 +70,10 @@ public sealed partial class WashingMachineSystem : EntitySystem
             var itemEv = new WashingMachineWashedEvent(uid, items);
             foreach (var item in items)
                 RaiseLocalEvent(item, itemEv);
+
+            // update again incase forensics changed
+            // such as dyeing
+            UpdateForensics((uid, component), items);
 
             _storage.OpenStorage(uid);
         }
@@ -169,8 +172,14 @@ public sealed partial class WashingMachineSystem : EntitySystem
         var machineEv = new WashingMachineStartedWashingEvent(items);
         RaiseLocalEvent(ent.Owner, machineEv);
 
+        UpdateForensics(ent, items);
+
         var itemEv = new WashingMachineIsBeingWashed(ent.Owner, items);
         foreach (var item in items)
             RaiseLocalEvent(item, itemEv);
+    }
+
+    protected virtual void UpdateForensics(Entity<WashingMachineComponent> ent, HashSet<EntityUid> items)
+    {
     }
 }
