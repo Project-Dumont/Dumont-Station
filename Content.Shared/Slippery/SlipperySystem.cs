@@ -163,7 +163,7 @@ public sealed class SlipperySystem : EntitySystem
         RemCompDeferred(uid, component);
     }
 
-    private void OnGraceSlipped(EntityUid uid, SlipGraceComponent component, ref SlippedEvent args)
+    private void OnGraceSlipped(EntityUid uid, SlipGraceComponent component, SlippedEvent args)
     {
         if (args.SuperSlippery && !component.SuperSlippery)
             return;
@@ -220,7 +220,7 @@ public sealed class SlipperySystem : EntitySystem
         RaiseLocalEvent(uid, ref slipEv);
 
         var slippedEv = new SlippedEvent(uid, component.SlipData.SuperSlippery);
-        RaiseLocalEvent(other, ref slippedEv);
+        RaiseLocalEvent(other, slippedEv);
 
         if (TryComp(other, out PhysicsComponent? physics) && !HasComp<SlidingComponent>(other))
         {
@@ -298,5 +298,16 @@ public readonly record struct SlipEvent(EntityUid Slipped);
 /// Raised on the entity that got slipped
 /// <param name="Slipper">The entity being slipped</param>
 /// <param name="SuperSlippery">Was whatever slipped us super slippery</param>
-[ByRefEvent]
-public readonly record struct SlippedEvent(EntityUid Slipper, bool SuperSlippery);
+public sealed class SlippedEvent : EntityEventArgs, IInventoryRelayEvent
+{
+    public SlotFlags TargetSlots { get; } = SlotFlags.WITHOUT_POCKET;
+
+    public EntityUid Slipper;
+    public bool SuperSlippery;
+
+    public SlippedEvent(EntityUid slipper, bool superSlippery)
+    {
+        Slipper = slipper;
+        SuperSlippery = superSlippery;
+    }
+}

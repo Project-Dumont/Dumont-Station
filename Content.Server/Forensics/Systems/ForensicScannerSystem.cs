@@ -130,7 +130,7 @@ namespace Content.Server.Forensics
         [Dependency] private readonly ForensicsSystem _forensicsSystem = default!;
         [Dependency] private readonly TagSystem _tag = default!;
 
-        private static readonly ProtoId<TagPrototype> DNASolutionScannableTag = "DNASolutionScannable";
+        public static readonly ProtoId<TagPrototype> DNASolutionScannableTag = "DNASolutionScannable";
 
         public override void Initialize()
         {
