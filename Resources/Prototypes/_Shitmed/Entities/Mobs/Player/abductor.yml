@@ -34,6 +34,8 @@
   parent: MobAbductorAntag
   id: MobLoneAbductor
   components:
+  - type: TextToSpeech
+    voice: higherpitch-ricardo
   - type: GhostRole
     name: abductor-lone-ghost-role-name
     description: abductor-lone-ghost-role-desc
@@ -60,6 +62,8 @@
   parent: MobAbductorAntag
   id: MobAbductorScientist
   components:
+  - type: TextToSpeech
+    voice: higherpitch-ricardo
   - type: GhostRole
     name: abductor-scientist-ghost-role-name
     description: abductor-scientist-ghost-role-desc
@@ -83,6 +87,8 @@
   parent: MobAbductorAntag
   id: MobAbductorAgent
   components:
+  - type: TextToSpeech
+    voice: higherpitch-ricardo
   - type: GhostRole
     name: abductor-agent-ghost-role-name
     description: abductor-agent-ghost-role-desc

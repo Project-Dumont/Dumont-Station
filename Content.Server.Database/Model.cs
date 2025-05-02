@@ -465,8 +465,11 @@ namespace Content.Server.Database
         public int Slot { get; set; }
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
-        // #Goobstation - Borg Preferred Name
-        public string BorgName { get; set; } = null!;
+        public string Voice { get; set; } = null!;
+        public string CustomSpecieName { get; set; } = null!;
+        public string Nationality { get; set; } = null!;
+        public string Employer { get; set; } = null!;
+        public string Lifepath { get; set; } = null!;
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;

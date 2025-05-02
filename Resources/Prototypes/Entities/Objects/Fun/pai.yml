@@ -6,6 +6,9 @@
   name: personal ai device
   description: Your electronic pal who's fun to be with!
   components:
+  - type: Renamable
+  - type: TextToSpeech
+    voice: f2
   - type: Instrument
     allowPercussion: false
     handheld: false

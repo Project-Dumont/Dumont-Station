@@ -65,8 +65,11 @@ namespace Content.Shared.Preferences
         [DataField]
         private Dictionary<string, RoleLoadout> _loadouts = new();
 
-        [DataField]
-        public string Name { get; set; } = "John Doe";
+    [DataField]
+    public string Name { get; set; } = "John Doe";
+
+    [DataField]
+    public string Voice { get; set; } = "";
 
         /// <summary>
         /// Detailed text that can appear for the character if <see cref="CCVars.FlavorText"/> is enabled.
@@ -135,6 +138,7 @@ namespace Content.Shared.Preferences
         // #Goobstation - Borg Preferred Name (borgname)
         public HumanoidCharacterProfile(
             string name,
+            string voice,
             string flavortext,
             string species,
             string borgname,
@@ -151,6 +155,7 @@ namespace Content.Shared.Preferences
 
         {
             Name = name;
+            Voice = voice;
             FlavorText = flavortext;
             Species = species;
             BorgName = borgname;
@@ -180,25 +185,38 @@ namespace Content.Shared.Preferences
             }
         }
 
-        /// <summary>Copy constructor</summary>
-        public HumanoidCharacterProfile(HumanoidCharacterProfile other)
-            : this(other.Name,
-                other.FlavorText,
-                other.Species,
-                // #Goobstation - Borg Preferred Name
-                other.BorgName,
-                other.Age,
-                other.Sex,
-                other.Gender,
-                other.Appearance.Clone(),
-                other.SpawnPriority,
-                new Dictionary<ProtoId<JobPrototype>, JobPriority>(other.JobPriorities),
-                other.PreferenceUnavailable,
-                new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
-                new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
-        {
-        }
+    /// <summary>Copy constructor</summary>
+    public HumanoidCharacterProfile(HumanoidCharacterProfile other)
+        : this(
+            other.Name,
+            other.Voice,
+            other.FlavorText,
+            other.Species,
+            other.Customspeciename,
+            // EE -- Contractors Change Start
+            other.Nationality,
+            other.Employer,
+            other.Lifepath,
+            // EE -- Contractors Change End
+            other.Height,
+            other.Width,
+            other.Age,
+            other.Sex,
+            other.Gender,
+            other.DisplayPronouns,
+            other.StationAiName,
+            other.CyborgName,
+            other.Appearance.Clone(),
+            other.SpawnPriority,
+            new Dictionary<string, JobPriority>(other.JobPriorities),
+            other.Clothing,
+            other.Backpack,
+            other.PreferenceUnavailable,
+            new HashSet<string>(other.AntagPreferences),
+            new HashSet<string>(other.TraitPreferences),
+            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
+    {
+    }
 
         /// <summary>
         ///     Get the default humanoid character profile, using internal constant values.
@@ -263,7 +281,7 @@ namespace Content.Shared.Preferences
             }
 
             var name = GetName(species, gender);
-
+            
             // #Goobstation - Borg Preferred Name
             var borgname = GetBorgName();
 
@@ -309,6 +327,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithGender(Gender gender)
         {
             return new(this) { Gender = gender };
+        }
+        
+        public HumanoidCharacterProfile WithVoice(string id)
+        {
+            return new(this) { Voice = id };
         }
 
         public HumanoidCharacterProfile WithSpecies(string species)

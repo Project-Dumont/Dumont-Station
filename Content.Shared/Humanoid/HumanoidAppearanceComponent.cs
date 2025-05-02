@@ -1,9 +1,11 @@
+using Content.Shared.Andromeda.TextToSpeech;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid;
@@ -88,6 +90,35 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
+    /// <summary>
+    /// DeltaV - let paradox anomaly be cloned
+    /// </summary>
+    [ViewVariables]
+    public HumanoidCharacterProfile? LastProfileLoaded;
+
+    /// <summary>
+    ///     The height of this humanoid.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Height = 1f;
+
+    /// <summary>
+    ///     The width of this humanoid.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Width = 1f;
+
+    public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
+    {
+        {Sex.Male, "espeak2"},
+        {Sex.Female, "leticia"},
+        {Sex.Unsexed, "espeak1"}
+    };
+    [DataField("voice", customTypeSerializer: typeof(PrototypeIdSerializer<VoicePrototype>))]
+    public string? Voice
+    {
+        get; set;
+    }
 }
 
 [DataDefinition]

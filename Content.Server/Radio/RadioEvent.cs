@@ -4,7 +4,15 @@ using Content.Shared.Radio;
 namespace Content.Server.Radio;
 
 [ByRefEvent]
-public readonly record struct RadioReceiveEvent(string Message, EntityUid MessageSource, RadioChannelPrototype Channel, EntityUid RadioSource, MsgChatMessage ChatMsg);
+public readonly record struct RadioReceiveEvent(
+    EntityUid MessageSource,
+    RadioChannelPrototype Channel,
+    ChatMessage OriginalChatMsg,
+    ChatMessage LanguageObfuscatedChatMsg,
+    LanguagePrototype Language,
+    EntityUid RadioSource,
+    List<EntityUid> Receivers
+);
 
 /// <summary>
 /// Use this event to cancel sending message per receiver

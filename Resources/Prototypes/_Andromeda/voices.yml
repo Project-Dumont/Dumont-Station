@@ -1,0 +1,152 @@
+- type: voice
+  id: microsoft-maria
+  name: Microsoft Maria
+  nameId: Microsoft Maria
+  sex: Female
+  silicon: false
+  voice: 0
+
+- type: voice
+  id: microsoft-zira-desktop
+  name: Microsoft Zira Desktop
+  nameId: Microsoft Zira Desktop
+  sex: Female
+  silicon: false
+  voice: 1
+
+- type: voice
+  id: rhvoice-leticia
+  name: Letícia
+  nameId: RHVoice Letícia
+  sex: Female
+  silicon: false
+  voice: 2
+
+- type: voice
+  id: f2
+  name: eSpeak-pt+f2
+  nameId: eSpeak-pt+f2
+  sex: Female
+  silicon: false
+  voice: 3
+
+- type: voice
+  id: espeak-pt
+  name: eSpeak-pt
+  nameId: eSpeak-pt
+  sex: Male
+  silicon: false
+  voice: 4
+
+- type: voice
+  id: piper-edresson
+  name: edresson
+  nameId: piper+edresson
+  sex: Male
+  silicon: false
+  voice: 5
+
+- type: voice
+  id: piper-faber
+  name: faber
+  nameId: piper+faber
+  sex: Male
+  silicon: false
+  voice: 6
+
+- type: voice
+  id: glados
+  name: glados
+  nameId: piper+glados
+  sex: Female
+  silicon: false
+  voice: 7
+
+- type: voice
+  id: flanger-faber
+  name: faber robótico
+  nameId: piper+flanger+faber
+  sex: Male
+  silicon: false
+  voice: 8
+
+- type: voice
+  id: piper-highpitch-edresson
+  name: edresson fino
+  nameId: piper+highpitch+edresson
+  sex: Male
+  silicon: false
+  voice: 9
+
+- type: voice
+  id: higherpitch-leticia
+  name: Letícia fino
+  nameId: higherpitch+Letícia
+  sex: Female
+  silicon: false
+  voice: 10
+
+- type: voice
+  id: flanger-leticia
+  name: Letícia robotica
+  nameId: flanger+Letícia
+  sex: Female
+  silicon: false
+  voice: 11
+
+- type: voice
+  id: gabriela
+  name: Gabriela
+  nameId: Gabriela
+  sex: Female
+  silicon: false
+  voice: 12
+
+- type: voice
+  id: lowpitch-gabriela
+  name: lowpitch+Gabriela
+  nameId: lowpitch+Gabriela
+  sex: Female
+  silicon: false
+  voice: 13
+
+
+- type: voice
+  id: raquel
+  name: Raquel
+  nameId: Raquel
+  sex: Female
+  silicon: false
+  voice: 14
+
+- type: voice
+  id: aecho-leticia
+  name: Letícia com echo
+  nameId: aecho+Letícia
+  sex: Female
+  silicon: false
+  voice: 15
+
+- type: voice
+  id: ricardo
+  name: Ricardo
+  nameId: Ricardo
+  sex: Male
+  silicon: false
+  voice: 16
+
+- type: voice
+  id: highpitch-ricardo
+  name: Ricardo fino
+  nameId: highpitch+Ricardo
+  sex: Male
+  silicon: false
+  voice: 17
+
+- type: voice
+  id: higherpitch-ricardo
+  name: Ricardo mais fino
+  nameId: higherpitch+Ricardo
+  sex: Male
+  silicon: false
+  voice: 18

@@ -43,6 +43,7 @@
   - type: MovementSpeedModifier
   - type: RequireProjectileTarget
     active: False
+  - type: TextToSpeech
   - type: AnimatedEmotes
   - type: Fart
   - type: CollectiveMind # Goobstation - Starlight collective mind port

@@ -39,6 +39,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Server.Shuttles.Components;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Dynamics.Joints;
+using Content.Server.Andromeda.TTS;
+using Content.Shared.Andromeda.CCVar;
 
 namespace Content.Server.Chat.Systems;
 
@@ -362,10 +367,31 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
-        if (playSound)
+
+        // Esses anúncios são eventos como anúncio do console de comunicação, eventos anunciados na rádio e alertas
+        if (_configurationManager.GetCVar(AndromedaCCVars.TTsAnnounceGlobalEnabled) && _configurationManager.GetCVar(AndromedaCCVars.TTSEnabled))
         {
-            _audio.PlayGlobal(announcementSound == null ? DefaultAnnouncementSound : _audio.ResolveSound(announcementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            RaiseLocalEvent(new AnnouncementSpokeEvent
+            {
+                Message = message,
+                Source = Filter.Broadcast(),
+                AnnouncementSound = announcementSound
+            });
         }
+        else
+        {
+            // Som global alternativo se o anúncio local estiver desabilitado
+            if (playSound)
+            {
+                _audio.PlayGlobal(
+                    announcementSound != null ? announcementSound.ToString() : DefaultAnnouncementSound,
+                    Filter.Broadcast(),
+                    true,
+                    AudioParams.Default.WithVolume(-2f));
+            }
+        }
+
+
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
 
@@ -432,9 +458,29 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
 
-        if (playDefaultSound)
+        
+
+        // Esses anúncios são eventos como "Nome da pessoa (Capitão) chegou à estação"
+        if (_configurationManager.GetCVar(AndromedaCCVars.TTsAnnounceDispatchEnabled) && _configurationManager.GetCVar(AndromedaCCVars.TTSEnabled))
         {
-            _audio.PlayGlobal(announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound), filter, true, AudioParams.Default.WithVolume(-2f));
+            RaiseLocalEvent(new AnnouncementSpokeEvent
+            {
+                AnnouncementSound = announcementSound,
+                Message = message,
+                Source = filter
+            });
+        }
+        else
+        {
+            // Caso o anúncio de Dispatch esteja desabilitado, reproduz o som globalmente
+            if (playDefaultSound)
+            {
+                _audio.PlayGlobal(
+                    announcementSound != null ? announcementSound.ToString() : DefaultAnnouncementSound,
+                    filter,
+                    true,
+                    AudioParams.Default.WithVolume(-2f));
+            }
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");
@@ -612,6 +658,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var obfuscatedMessage = ObfuscateMessageReadability(message, 0.2f);
 
+        var obfuscatedMessage = ObfuscateMessageReadability(message, 0.2f);
+
         // get the entity's name by visual identity (if no override provided).
         string nameIdentity = FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager));
         // get the entity's name by voice (if no override provided).
@@ -628,14 +676,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         name = FormattedMessage.EscapeText(name);
 
-        var wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message" + wrappedMessagePostfix, // Goob edit
-            ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
-
-        var wrappedobfuscatedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message" + wrappedMessagePostfix, // Goob edit
-            ("entityName", nameIdentity), ("message", FormattedMessage.EscapeText(obfuscatedMessage)));
-
-        var wrappedUnknownMessage = Loc.GetString("chat-manager-entity-whisper-unknown-wrap-message" + wrappedMessagePostfix, // Goob edit
-            ("message", FormattedMessage.EscapeText(obfuscatedMessage)));
+        // para quando Ofuscada
+        var languageObfuscatedMessage = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true, _configurationManager.GetCVar(CCVars.ChatPunctuation), (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en") || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
 
 
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))

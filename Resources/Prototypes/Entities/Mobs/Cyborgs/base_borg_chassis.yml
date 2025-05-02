@@ -6,6 +6,7 @@
   save: false
   abstract: true
   components:
+  - type: TextToSpeech
   - type: Reactive
     groups:
       Acidic: [Touch]
@@ -259,6 +260,8 @@
   abstract: true
   id: BaseBorgTransponder
   components:
+  - type: TextToSpeech
+    voice: espeak-pt
   - type: BorgTransponder
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -289,6 +292,8 @@
   parent: [BaseBorgChassis, BaseBorgTransponder]
   abstract: true
   components:
+  - type: TextToSpeech
+    voice: flanger-leticia
   - type: RandomMetadata
     nameSegments:
       - names_borg
@@ -316,6 +321,8 @@
   parent: BaseBorgChassis
   abstract: true
   components:
+  - type: TextToSpeech
+    voice: espeak-pt
   - type: NpcFactionMember
     factions:
     - Syndicate

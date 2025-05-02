@@ -243,6 +243,7 @@ namespace Content.Server.Database
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
+                profile.Voice,
                 profile.FlavorText,
                 profile.Species,
                 // #Goobstation - Borg Preferred Name
@@ -281,6 +282,7 @@ namespace Content.Server.Database
             var markings = JsonSerializer.SerializeToDocument(markingStrings);
 
             profile.CharacterName = humanoid.Name;
+            profile.Voice = humanoid.Voice;
             profile.FlavorText = humanoid.FlavorText;
             // #Goobstation - Borg Preferred Name
             profile.BorgName = humanoid.BorgName;
