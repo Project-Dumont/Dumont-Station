@@ -93,6 +93,7 @@ entities:
             5: -13,11
     - type: GridAtmosphere
       simulatedTurf: false
+      spaceWindSimulation: false
       version: 2
       data:
         chunkSize: 4
