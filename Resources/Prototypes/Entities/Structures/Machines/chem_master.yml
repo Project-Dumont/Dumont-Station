@@ -143,6 +143,7 @@
   - type: SolutionContainerManager
     solutions:
       buffer: {}
+      pillBuffer: {}
   - type: DumpableSolution
     solution: buffer
     unlimited: true
