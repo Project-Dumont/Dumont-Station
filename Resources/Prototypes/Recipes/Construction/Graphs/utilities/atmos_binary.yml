@@ -88,6 +88,13 @@
         doAfter: 1
     # </Goobstation>
 
+    # Funky - heat pump
+    - to: heatpump
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
   - node: pressurepump
     entity: GasPressurePump
     edges:
@@ -275,3 +282,20 @@
       - tool: Welding
         doAfter: 1
   # </Goobstation>
+
+# Funky - heat pump
+  - node: heatpump
+    entity: HeatPump
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1

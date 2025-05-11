@@ -613,6 +613,9 @@
     - RadiatorInline
     - RadiatorInlineBend
     # </Goobstation>
+    # <FunkyStation>
+    - HeatPump
+    # </FunkyStation>
     - Deconstruct
   - type: LimitedCharges
     maxCharges: 90
