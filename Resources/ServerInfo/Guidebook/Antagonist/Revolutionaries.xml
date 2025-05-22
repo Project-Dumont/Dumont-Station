@@ -1,3 +1,14 @@
+<!--
+SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Revolucionários
 
@@ -10,8 +21,13 @@
 
   Os revolucionários são antagonistas de conversão patrocinados pelo [color=#ff0000]Sindicato[/color], cujo objetivo é tomar o controle da estação. Eles não têm truques extravagantes ou artimanhas baratas; possuem apenas uma causa e força em números.
 
+<<<<<<< HEAD
   ## Objetivos
   Você deve algemar, matar ou exilar todos os membros da [textlink="Equipe de Comando" link="Command"] na estação, em qualquer ordem.
+=======
+  ## Objectives
+  You must convert, cuff or kill all of the [textlink="Command staff" link="Command"] on station in no particular order.
+>>>>>>> goob/master
 
   Seu objetivo [bold]não é destruir a estação[/bold], mas sim [italic]tomá-la[/italic], portanto, tente minimizar os danos sempre que possível.
 
@@ -40,7 +56,11 @@
   - [bold]Visivelmente se destruírem ao serem implantados em um [color=#5e9cff]Revolucionário Chefe[/color][/bold], revelando sua identidade
   - NÃO proteger contra desorientação causada por luz
 
+<<<<<<< HEAD
   Assuma que todos os membros da [color=#cb0000]Segurança[/color] e [color=#1b67a5]Comando[/color] já estão implantados com proteções mentais.
+=======
+  Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already, [bold]however they can be removed using an empty implanter, obtainable from the Medical department's MedFab.[/bold]
+>>>>>>> goob/master
 
   <Box>
     <GuideEntityEmbed Entity="MindShieldImplanter"/>

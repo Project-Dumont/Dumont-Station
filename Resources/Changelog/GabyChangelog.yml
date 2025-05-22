@@ -249,3 +249,19 @@ Entries:
       message: Várias mudanças na Loja de Gaby coins
   id: 34
   time: '2025-03-30T23:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Concerta a impressora de documentos!
+    - type: Tweak
+      message: Agora a maioria dos escudos podem ser usados nas costas!
+    - type: Add
+      message: Agora é possivel lançar a evacuaçao prematuramente!
+  id: 35
+  time: '2025-04-04T10:50:00.0000000+00:00'
+- author: Dreykor (arguemeu) e Donner4037
+  changes:
+    - type: Add
+      message: Adiciona uma arte nova ao lobby!
+  id: 36
+  time: '2025-04-07T15:00:00.0000000+00:00'

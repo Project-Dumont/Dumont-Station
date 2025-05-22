@@ -3,7 +3,7 @@ using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Systems;
 
@@ -27,7 +27,8 @@ public sealed class GibArtifactSystem : EntitySystem
         && TryComp<DamageableComponent>(args.Activator, out var damageable))
         {
             // it's gibbing time
-            _damageableSystem.SetAllDamage((EntityUid) args.Activator, damageable, (FixedPoint2) 10000f);
+            //_damageableSystem.SetAllDamage((EntityUid) args.Activator, damageable, (FixedPoint2) 10000f);
+            Log.Error("Please readd gib system back.");
             // the one bellow crashes the server when the activator is a skeleton
             //_body.GibBody((EntityUid) args.Activator, gibOrgans: true, body, launchGibs: true);
         }

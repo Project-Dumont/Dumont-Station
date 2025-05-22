@@ -1,12 +1,26 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  id: TorsoResomi
-  name: "resomi torso"
-  parent: TorsoHuman
+  id: ChestResomi
+  name: "resomi chest"
+  parent: ChestHuman
   components:
   - type: Sprite
     sprite: _Floofstation/Mobs/Species/Resomi/parts.rsi
-    state: "torso_m"
+    state: "chest_m"
 
+- type: entity
+  id: GroinResomi
+  name: "resomi groin"
+  parent: GroinHuman
+  components:
+  - type: Sprite
+    sprite: _Floofstation/Mobs/Species/Resomi/parts.rsi
+    state: "groin_m"
 
 - type: entity
   id: HeadResomi

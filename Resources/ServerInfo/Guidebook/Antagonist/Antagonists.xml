@@ -1,3 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2023 dribblydrone <119393097+dribblydrone@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Antagonistas
   Os antagonistas são a força motriz de todas as mudanças.
@@ -6,6 +14,7 @@
 
   Esses agentes do caos são, na maioria das vezes, empregados ou apoiados pelo [color=#ff0000]Sindicato[/color], uma organização rival à Nanotrasen que não deseja nada além de vê-la destruída.
 
+<<<<<<< HEAD
   ## Diversos Antagonistas
   Os antagonistas podem assumir muitas formas, como:
   - [textlink="Operativos Nucleares" link="Nuclear Operatives"], com o objetivo de se infiltrar e destruir a estação.
@@ -15,4 +24,16 @@
   - [textlink="Ninjas Espaciais" link="SpaceNinja"], mestres da espionagem e sabotagem com equipamentos especiais.
   - [textlink="Ladrões" link="Thieves"] movidos pela cleptomania, determinados a satisfazer seu vício usando suas luvas especiais.
   - [textlink="Diversas criaturas não humanoides" link="MinorAntagonists"] que geralmente atacam qualquer coisa que se mova.
+=======
+  ## Various Antagonists
+  Antagonists can take many forms, like:
+  - [textlink="Nuclear operatives" link="Nuclear Operatives"], with the goal of infiltrating and destroying the station.
+  - [textlink="Traitors" link="Traitors"] amongst the crew who must assassinate, steal and decieve.
+  - [textlink="Revolutionaries" link="Revolutionaries"] who are intent on taking control of the station from the inside.
+  - [textlink="Zombies" link="Zombies"] that crave the flesh of every crew member and creature on board.
+  - [textlink="Space Ninjas" link="SpaceNinja"], masters of espionage and sabotage with special gear.
+  - [textlink="Thieves" link="Thieves"] driven by kleptomania, determined to get their fix using their special gloves.
+  - [textlink="The Cosmic Cult" link="CosmicCult"], who seek to usher in the end of all things.
+  - [textlink="Various non-humanoid creatures" link="MinorAntagonists"] that generally attack anything that moves.
+>>>>>>> goob/master
 </Document>

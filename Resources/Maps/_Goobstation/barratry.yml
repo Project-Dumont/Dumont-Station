@@ -1,11 +1,70 @@
+# SPDX-FileCopyrightText: 2021 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Elijahrane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Mith-randalf <84274729+Mith-randalf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 buletsponge <96000213+buletsponge@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 TaralGit <76408146+TaralGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 TimrodDX <timrod@gmail.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2022 and_a <and_a@DESKTOP-RJENGIR>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 778b <33431126+778b@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2023 Jackrost <jackrost@mail.ru>
+# SPDX-FileCopyrightText: 2023 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 RatherUncreative <RatherUncreativeName@proton.me>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 terezi <147006836+terezi-station@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Map
-  engineVersion: 247.2.0
+  engineVersion: 251.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/12/2025 21:34:23
-  entityCount: 15674
+  time: 05/15/2025 09:21:13
+  entityCount: 15671
 maps:
 - 1
 grids:
@@ -240,7 +299,7 @@ entities:
           version: 6
         -3,3:
           ind: -3,3
-          tiles: WQAAAAADWQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACWQAAAAADeQAAAAAAaAAAAAAAeQAAAAAAWQAAAAACWQAAAAABWQAAAAAAWQAAAAADeQAAAAAAWQAAAAACeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAADWQAAAAADWQAAAAAAWQAAAAACeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACeQAAAAAAaAAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAACWQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACeQAAAAAAaAAAAAAAeQAAAAAAWQAAAAACWQAAAAAAWQAAAAACWQAAAAABeQAAAAAAWQAAAAAAWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAACeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAAAHQAAAAACeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAACHQAAAAACeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAAAHQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeAAAAAAAeQAAAAAAAAAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAHQAAAAAAHQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAHQAAAAADHQAAAAABHQAAAAABWQAAAAADWQAAAAADWQAAAAACWQAAAAAAeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAAAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAHQAAAAABHQAAAAAAHQAAAAABHQAAAAAAWQAAAAABWQAAAAAAWQAAAAABeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAHQAAAAABeQAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAABWQAAAAACeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAA
+          tiles: WQAAAAADWQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACWQAAAAADeQAAAAAAaAAAAAAAeQAAAAAAWQAAAAACWQAAAAABWQAAAAAAWQAAAAADeQAAAAAAWQAAAAACeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAADWQAAAAADWQAAAAAAWQAAAAACeQAAAAAAeQAAAAAAWQAAAAAAWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACeQAAAAAAaAAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAACWQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACWQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAACeQAAAAAAaAAAAAAAeQAAAAAAWQAAAAACWQAAAAAAWQAAAAACWQAAAAABeQAAAAAAWQAAAAAAWQAAAAABeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAWQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAaAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAACeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAAAHQAAAAACeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAACHQAAAAACeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAHQAAAAAAHQAAAAADeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeAAAAAAAeQAAAAAAAAAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAHQAAAAAAHQAAAAAAHQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAHQAAAAADHQAAAAABHQAAAAABWQAAAAADWQAAAAADWQAAAAACWQAAAAAAeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAAAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAHQAAAAABHQAAAAAAHQAAAAABHQAAAAAAWQAAAAABWQAAAAAAWQAAAAABeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAHQAAAAABeQAAAAAAeQAAAAAAWQAAAAABWQAAAAABWQAAAAABWQAAAAACeQAAAAAAeQAAAAAAeAAAAAAAeAAAAAAAeQAAAAAAAAAAAAAAeAAAAAAAeQAAAAAAeQAAAAAA
           version: 6
         -4,3:
           ind: -4,3
@@ -5703,6 +5762,7 @@ entities:
             8155: 21,8
             8156: 22,8
             8179: -31,62
+            8189: -46,60
         - node:
             cleanable: True
             angle: 3.141592653589793 rad
@@ -8363,6 +8423,7 @@ entities:
             8137: 19,19
             8146: 22,18
             8147: 23,17
+            8190: -48,62
         - node:
             cleanable: True
             angle: 3.141592653589793 rad
@@ -34344,6 +34405,14 @@ entities:
     - type: Transform
       pos: -37.481266,49.508133
       parent: 2
+- proto: CapsaicinDispenser
+  entities:
+  - uid: 5236
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -45.5,53.5
+      parent: 2
 - proto: CargoTechFab
   entities:
   - uid: 551
@@ -42227,13 +42296,6 @@ entities:
     - type: Transform
       pos: -34.543724,28.416185
       parent: 2
-- proto: ClothingNeckMantleHOS
-  entities:
-  - uid: 5435
-    components:
-    - type: Transform
-      pos: -60.468678,63.752388
-      parent: 2
 - proto: ClothingNeckMantleRD
   entities:
   - uid: 5437
@@ -43318,10 +43380,10 @@ entities:
         - 0
 - proto: CrateSecurityTrackingMindshieldImplants
   entities:
-  - uid: 5576
+  - uid: 5242
     components:
     - type: Transform
-      pos: -43.5,63.5
+      pos: -45.5,61.5
       parent: 2
 - proto: CrateServiceJanitorialSupplies
   entities:
@@ -48419,8 +48481,11 @@ entities:
   - uid: 6437
     components:
     - type: Transform
-      pos: -58.33147,64.88806
+      pos: -60.236225,63.839653
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 6438
     components:
     - type: Transform
@@ -48441,8 +48506,11 @@ entities:
   - uid: 6441
     components:
     - type: Transform
-      pos: -58.70647,64.85681
+      pos: -60.611225,64.02715
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: DrinkWhiskeyGlass
   entities:
   - uid: 6442
@@ -70033,6 +70101,14 @@ entities:
     - type: Transform
       pos: -6.5,59.5
       parent: 2
+- proto: GlassBoxLawbringerFilled
+  entities:
+  - uid: 5235
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -58.5,64.5
+      parent: 2
 - proto: GravityGenerator
   entities:
   - uid: 9332
@@ -74330,6 +74406,13 @@ entities:
     - type: Transform
       pos: -36.5,66.5
       parent: 2
+- proto: GunSafeLauncherNonLethal
+  entities:
+  - uid: 5243
+    components:
+    - type: Transform
+      pos: -43.5,65.5
+      parent: 2
 - proto: Gyroscope
   entities:
   - uid: 10119
@@ -75116,7 +75199,7 @@ entities:
   - uid: 4
     components:
     - type: Transform
-      pos: -58.53795,64.84835
+      pos: -60.600807,63.725067
       parent: 2
     - type: HandheldLight
       toggleActionEntity: 5
@@ -75132,6 +75215,8 @@ entities:
           ents:
           - 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: True
     - type: ActionsContainer
   - uid: 10252
@@ -76343,9 +76428,9 @@ entities:
         - 0
         - 0
         - 0
-- proto: LockerWardenFilledHardsuit
+- proto: LockerWardenFilled
   entities:
-  - uid: 10326
+  - uid: 5238
     components:
     - type: Transform
       pos: -46.5,57.5
@@ -76455,18 +76540,6 @@ entities:
     components:
     - type: Transform
       pos: -42.288002,61.49391
-      parent: 2
-- proto: MagazinePistolSubMachineGunTopMounted
-  entities:
-  - uid: 10345
-    components:
-    - type: Transform
-      pos: -60.513123,64.48181
-      parent: 2
-  - uid: 10346
-    components:
-    - type: Transform
-      pos: -60.513123,64.48181
       parent: 2
 - proto: MagazineRifle
   entities:
@@ -77054,6 +77127,10 @@ entities:
     - type: Transform
       pos: -20.5,55.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        5237:
+        - MaterialSilo: MaterialSiloUtilizer
 - proto: MaterialWoodPlank
   entities:
   - uid: 10460
@@ -81832,11 +81909,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -72.5,45.5
       parent: 2
-  - uid: 11171
-    components:
-    - type: Transform
-      pos: -59.5,52.5
-      parent: 2
   - uid: 11172
     components:
     - type: Transform
@@ -84714,11 +84786,6 @@ entities:
     - type: Transform
       pos: -30.5,51.5
       parent: 2
-  - uid: 11717
-    components:
-    - type: Transform
-      pos: -45.5,60.5
-      parent: 2
   - uid: 11718
     components:
     - type: Transform
@@ -86460,11 +86527,13 @@ entities:
       parent: 2
 - proto: SecurityTechFab
   entities:
-  - uid: 12030
+  - uid: 5237
     components:
     - type: Transform
-      pos: -41.5,65.5
+      pos: -59.5,52.5
       parent: 2
+    - type: SiloUtilizer
+      silo: 15667
 - proto: SeedExtractor
   entities:
   - uid: 12031
@@ -87742,13 +87811,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -31.5,44.5
-      parent: 2
-- proto: SkibidiCube
-  entities:
-  - uid: 12219
-    components:
-    - type: Transform
-      pos: -28.31974,45.552948
       parent: 2
 - proto: SmartFridge
   entities:
@@ -89323,10 +89385,27 @@ entities:
       parent: 2
 - proto: SuitStorageSec
   entities:
+  - uid: 5239
+    components:
+    - type: Transform
+      pos: -42.5,65.5
+      parent: 2
+  - uid: 5241
+    components:
+    - type: Transform
+      pos: -41.5,65.5
+      parent: 2
   - uid: 12474
     components:
     - type: Transform
       pos: -41.5,64.5
+      parent: 2
+- proto: SuitStorageWarden
+  entities:
+  - uid: 5240
+    components:
+    - type: Transform
+      pos: -45.5,60.5
       parent: 2
 - proto: Supermatter
   entities:
@@ -92049,11 +92128,6 @@ entities:
     components:
     - type: Transform
       pos: -60.5,63.5
-      parent: 2
-  - uid: 12930
-    components:
-    - type: Transform
-      pos: -58.5,64.5
       parent: 2
   - uid: 12931
     components:
@@ -106324,13 +106398,6 @@ entities:
     components:
     - type: Transform
       pos: -41.62914,61.561836
-      parent: 2
-- proto: WeaponSubMachineGunWt550
-  entities:
-  - uid: 15457
-    components:
-    - type: Transform
-      pos: -60.450623,64.62244
       parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:

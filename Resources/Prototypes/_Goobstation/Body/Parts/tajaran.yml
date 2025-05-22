@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
@@ -15,13 +22,16 @@
         Quantity: 10
 
 - type: entity
-  id: TorsoTajaran
-  name: "Tajaran torso"
-  parent: [PartTajaran, BaseTorso]
+  id: ChestTajaran
+  name: "Tajaran chest"
+  parent: [PartTajaran, BaseChest]
   components:
   - type: Sprite
     sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
-    state: "torso_m"
+    state: "chest_m"
+  - type: Icon
+    sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+    state: "chest_m"
   - type: Extractable
     juiceSolution:
       reagents:
@@ -30,6 +40,24 @@
       - ReagentId: Blood
         Quantity: 20
 
+- type: entity
+  id: GroinTajaran
+  name: "Tajaran groin"
+  parent: [PartTajaran, BaseGroin]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+    state: "groin_m"
+  - type: Icon
+    sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+    state: "groin_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
 
 - type: entity
   id: HeadTajaran
