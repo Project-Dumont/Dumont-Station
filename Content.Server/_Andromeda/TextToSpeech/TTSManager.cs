@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 cosmosgc <cosmoskitsune@hotmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;

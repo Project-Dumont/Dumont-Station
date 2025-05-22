@@ -13,7 +13,9 @@
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
+// SPDX-FileCopyrightText: 2025 cosmosgc <cosmoskitsune@hotmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
