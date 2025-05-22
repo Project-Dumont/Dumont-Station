@@ -69,11 +69,11 @@
       blacklist:
         components:
           - AntagImmune
-        - BibleUser
+          - BibleUser
       lateJoinAdditional: true
       components:
-      - type: ChangelingInfection # Funky: Made midround lings infections instead of instant.
-        needsInitialization: true
+      #- type: ChangelingInfection # Funky: Made midround lings infections instead of instant.
+      #  needsInitialization: true
   - type: Tag
     tags:
       - MidroundAntag
@@ -151,7 +151,7 @@
         text: head-rev-role-greeting
         color: CornflowerBlue
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-      #startingGear: HeadRevGear
+      startingGear: HeadRevGear
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
@@ -160,6 +160,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+
 # Skeleton Spawn
 - type: entity
   parent: BaseGameRule
@@ -168,7 +169,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 15
+    minimumPlayers: 999 # nao volte nunca mais - GabyStation
     chaos:
       Hostile: 40
       Medical: 40
@@ -178,6 +179,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+
 # Blob Midround
 - type: entity
   parent: BaseGameRule
