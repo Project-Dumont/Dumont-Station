@@ -50,6 +50,20 @@ public sealed partial class GameDirectorComponent : Component
     public List<ProtoId<StoryBeatPrototype>> RemainingBeats = new();
 
     /// <summary>
+    /// Does this round start with multiple antags.
+    /// </summary>
+    [DataField]
+    public bool DualAntags;
+
+    /// <summary>
+    /// Does this round start with antags at all?.
+    /// </summary>
+    [DataField]
+    public bool NoRoundstartAntags;
+
+    // Funky/Gaby changes
+
+    /// <summary>
     /// Does this round start with calm antags or regular roundstart antags?
     /// </summary>
     [DataField]
@@ -109,7 +123,7 @@ public sealed partial class StoryPrototype : IPrototype
     ///   A human-readable description string for logging / admins
     /// </summary>
     [DataField]
-    public string Description;
+    public string Description = "";
 
     /// <summary>
     ///   Minimum number of players on the station to pick this story
@@ -154,7 +168,7 @@ public sealed partial class StoryBeatPrototype : IPrototype
     ///   A human-readable description string for logging / admins
     /// </summary>
     [DataField]
-    public string Description;
+    public string Description = "";
 
     /// <summary>
     ///   Which chaos levels we are driving in this beat and the values we are aiming for
