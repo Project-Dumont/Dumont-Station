@@ -905,10 +905,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
-                    b.Property<string>("StationAiName")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("station_ai_name");
-
                     b.Property<string>("Voice")
                         .IsRequired()
                         .HasColumnType("TEXT")

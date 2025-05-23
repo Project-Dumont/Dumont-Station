@@ -236,33 +236,22 @@ namespace Content.Shared.Preferences
     /// <summary>Copy constructor</summary>
     public HumanoidCharacterProfile(HumanoidCharacterProfile other)
         : this(
-            other.Name,
-            other.Voice,
-            other.FlavorText,
-            other.Species,
-            other.Customspeciename,
-            // EE -- Contractors Change Start
-            other.Nationality,
-            other.Employer,
-            other.Lifepath,
-            // EE -- Contractors Change End
-            other.Height,
-            other.Width,
-            other.Age,
-            other.Sex,
-            other.Gender,
-            other.DisplayPronouns,
-            other.StationAiName,
-            other.CyborgName,
-            other.Appearance.Clone(),
-            other.SpawnPriority,
-            new Dictionary<string, JobPriority>(other.JobPriorities),
-            other.Clothing,
-            other.Backpack,
-            other.PreferenceUnavailable,
-            new HashSet<string>(other.AntagPreferences),
-            new HashSet<string>(other.TraitPreferences),
-            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
+        other.Name,
+        other.Voice,
+        other.FlavorText,
+        other.Species,
+        other.BorgName,
+        other.Age,
+        other.Sex,
+        other.Gender,
+        other.Appearance.Clone(),
+        other.SpawnPriority,
+        new Dictionary<ProtoId<JobPrototype>, JobPriority>(other.JobPriorities),
+        other.PreferenceUnavailable,
+        new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
+        new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
+        new Dictionary<string, RoleLoadout>(other.Loadouts)
+    )
     {
     }
 

@@ -953,10 +953,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("species");
 
-                    b.Property<string>("StationAiName")
-                        .HasColumnType("text")
-                        .HasColumnName("station_ai_name");
-
                     b.Property<string>("Voice")
                         .IsRequired()
                         .HasColumnType("text")
