@@ -1,3 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Repitiliano
 
@@ -5,6 +13,7 @@
     <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
   </Box>
 
+<<<<<<< HEAD
   Eles SÓ podem comer frutas e carne, mas podem comer carne crua e beber sangue sem os efeitos negativos.
 
   Eles preferem uma temperatura maior que os humanos.
@@ -14,5 +23,28 @@
   O seu ataque desarmado são garras que dão dano Cortante invés de Contundente
 
   Eles tomam [color=#ffa500]30% mais de dano Congelante.[/color]
+=======
+  ## Fresh means healthy!
+
+  Reptilians are capable of and are usually quite happy to eat things other species cannot, this includes things like raw meat, live animals, and even blood!
+
+  ## Is it cold in here?
+
+  Unlike other species, Reptilians are cold-blooded. This means they have no internal way of regulating their temperature and require external sources to assist.
+  Luckily, Nanotrasen (and The Syndicate!) issue all Reptillian crewmembers their very own heating lamps, capable of keeping them warm when it would otherwise be too cold to work.
+
+  These lamps take power cells and have three seperate modes: Low, Medium, and High.
+  They can be worn on the belt, held in the hand, or placed inside a backpack. When inside a backpack, they do not function as well as they would otherwise.
+
+  Due to this, they can also tolerate much higher temperatures than humans.
+  But, they take [color=#ffa500]30% more Cold damage.[/color]
+
+  ## Well, what about the tail?
+
+  Reptillians can drag objects and people with their tail, allowing them to keep both of their hands free.
+  A crafty lizard can use this in combat to their advantage. Maybe try dragging a teammate out of fire next time?
+
+  Because of their claws, a Reptilians unarmed attack deals Slash damage instead of Blunt.
+>>>>>>> goob/master
 
 </Document>

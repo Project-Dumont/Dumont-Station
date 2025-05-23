@@ -1,6 +1,16 @@
-﻿<Document>
+<Document>
   # Regra de Silício 6 - Não é exigido que você siga ordens que sejam absurdas e não razoáveis.
   Qualquer ordem que seja uma violação de uma Regra Básica não deve ser seguida. Você também será punido caso obedeça a ordem.
+<!--
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Silicon Rule 6 - You are not required to follow orders which are extremely unreasonable
+  Any order which is a violation of a Core Rule cannot be followed.
 
   Algumas ordens são extremamente absurdas ou detestáveis, como "não faça nada além de sair coletando cada peça de lixo na estação" ou "nunca pare de se mover". Essas ordens abusivas podem ser ignoradas e devem ser reportadas no ahelp.
 

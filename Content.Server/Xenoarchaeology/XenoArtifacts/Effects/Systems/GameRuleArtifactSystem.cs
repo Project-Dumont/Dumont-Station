@@ -4,7 +4,7 @@ using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Systems;
 

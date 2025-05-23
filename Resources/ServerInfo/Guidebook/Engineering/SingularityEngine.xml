@@ -1,4 +1,11 @@
-﻿<Document>
+<!--
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
   # Singularity Engine
   The Singularity Engine is a powerful generator that uses a contained singularity to produce energy for the station.
 
@@ -70,7 +77,7 @@
 
   ## Radiation Protection
   The singularity emits a massive amount of radiation, which can kill crew members who are not wearing proper protection.
-  Be sure to wear a radiation suit or an engineering hardsuit when working near the singularity.
+  Be sure to wear a radiation suit or an engineering voidsuit when working near the singularity.
   This won't completely negate the radiation, but it will reduce the damage you take.
 
   <Box>
@@ -83,7 +90,7 @@
     <GuideEntityEmbed Entity="GeigerCounter"/>
   </Box>
 
-  The Chief Engineer has a special hardsuit that negates all radiation damage, which allows them to work near the singularity without fear of accumulating radiation damage over time.
+  The Chief Engineer has a special voidsuit that negates all radiation damage, which allows them to work near the singularity without fear of accumulating radiation damage over time.
 
   ## Singularity Properties
   The Singularity has several properties, which both make it dangerous and useful for power generation:

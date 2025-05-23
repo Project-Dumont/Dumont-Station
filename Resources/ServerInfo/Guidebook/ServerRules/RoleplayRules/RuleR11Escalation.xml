@@ -1,4 +1,4 @@
-﻿<Document>
+<Document>
   # Regra de Roleplay 11 - Siga as regras de escalonamento de forma razoável.
   Antagonistas são completamente isentos das regras de escalonamento. Não-antagonistas que estão em conflito com antagonistas não estão isentos. O escalonamento deve tipicamente seguir o padrão de tipos-de-conflito similar a:
   - Verbal
@@ -26,8 +26,13 @@
   ## Escalonamento Envolvendo Animais
   Veja [textlink="Escalonamento Envolvendo Animais" link="RuleR11-1"].
 
+<<<<<<< HEAD
   ## Exceções
   As Regras de Escalonamento não são aplicadas contra não-jogadores, mas jogadores serão responsabilizados por violação de regra mesmo se eles não perceberem que um personagem ou animal estava sendo controlado por outro jogador. Personagens que, durante inspecionamento, possuem texto roxo dizendo que estão catatônicos são considerados não-jogadores. Personagens catatônicos que estão desconectados ainda são considerados jogadores.
+=======
+  ## Exemptions
+  Escalation rules aren't enforced against non-players, but players will be held responsible for rule violations even if they don't realize that a character or animal was controlled by another player. Characters who are disconnected are still considered players. Characters who have purple text upon being examined saying "recovery is impossible" are considered non-players.
+>>>>>>> goob/master
 
   ## Amenda MRP
   As Regras de Escalonamento são obrigatórias até mesmo contra não-jogadores.
@@ -38,6 +43,7 @@
   ## Cenários de Exemplo
   Esses exemplos assumem que você não é um antagonista.
 
+<<<<<<< HEAD
   Aceitável:
   - Um jogador começa a te socar, então você começa a socá-lo devolta até que ele pare. Se ele entrar em estado crítico, você pode parar de atacá-lo e levá-lo ao Dep. de Segurança ou para a Medbay.
   - Você zoa o Palhaço, que então joga uma torta na sua cara e rouba seus sapatos. Você faz o Palhaço escorregar, rouba a máscara dele e sai correndo.
@@ -55,4 +61,35 @@
   - Sair fazendo todos os Oficiais de Segurança escorregarem só por serem Seguranças.
   - Esconder o corpo de alguém por ela ter te socado mais cedo no round.
   - Assediar o Bartender constantemente quebrando seus copos ou móveis sem nenhuma razão em específica.
+=======
+  Acceptable:
+  - A player starts punching you, so you start punching back until they stop. If they go into crit, you stop attacking them and take them to security or to get medical attention.
+  - You make fun of a clown, who then throws a pie at you and steals your shoes. You slip the clown and steal their mask.
+  - You are a security officer and tell someone to stop, so you can question them. They run away, so you use your disabler to stun and cuff them.
+  - You are a security officer and see someone wearing a syndicate hardsuit, so you shoot them to crit, cuff them, then take them to security.
+  - You are a crewmember and see a nuclear operative, so you kill them.
+  - An unauthorized person enters a high risk area of the station, like the armory or atmospherics, so you attack them until they leave.
+  - Minorly inconveniencing someone for your own benefit.
+  - As an antagonist, killing someone who got in your way.
+  - As an antagonist, killing someone who didn't give you what you want.
+  - A chef and bartender reach the lethal level of conflict through appropriate escalation. The chef crits the bartender and does not take them to medbay or security. The bartender immediately tries to crit the chef next time they run into each other.
+  - A chef and bartender reach the lethal level of conflict through appropriate escalation. The chef crits the bartender and does not take them to medbay or security. The chef insults the bartender next time they see them.
+  - A cargo technician gets a cargo bounty for a brain. After receiving a body from Medical with the purple examine text reading "Any recovery is impossible.", the cargo technician proceeds to permanently destroy the body to get the brain out.
+
+  Prohibited:
+  - A player starts punching you, so you gib them.
+  - A clown throws a pie at you and steals your shoes, so you stab them to crit with a screwdriver.
+  - You are a security officer and tell someone to stop, so you can question them. They run away so you use a truncheon to beat them to crit.
+  - An authorized person who you unreasonably or carelessly think is unauthorized enters a high risk area of the station, like the armory or atmospherics, so you attack them until they leave.
+  - An unauthorized person enters a low risk area of the station, like cargo, and you start attacking them with no other escalation.
+  - Slipping security all round because they are security.
+  - Blocking the head of personnel in their office using walls because they didn't give you what you asked for.
+  - Hiding someone's body because they punched you earlier in the round.
+  - Harassing the bar or bartender by frequently coming in to break their glasses or furniture.
+  - Randomly picking fights with people.
+  - Stealing an ID from a disconnected player as a non-antagonist.
+  - A chef and bartender reach the lethal level of conflict through appropriate escalation. The chef crits the bartender and does not take them to medbay or security. The chef immediately tries to crit the bartender next time they run into each other.
+  - A chef and bartender reach the lethal level of conflict through appropriate escalation. The chef crits the bartender and takes them to the medbay or security. The bartender immediately tries to crit the chef next time they run into each other.
+  - A cargo technician gets a cargo bounty for a brain. After finding a dead passenger in a hallway, without the body's examine text reading "Any recovery is impossible.", the cargo technician proceeds to permanently destroy the body to get the brain out.
+>>>>>>> goob/master
 </Document>

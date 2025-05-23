@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Rotting;
 using Content.Server.Body.Components;
 using Content.Server.DoAfter;
@@ -17,7 +22,7 @@ using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-
+using Content.Shared._Shitmed.Targeting; // Shitmed Change
 namespace Content.Server.Medical.CPR;
 
 public sealed class CPRSystem : EntitySystem
@@ -110,7 +115,7 @@ public sealed class CPRSystem : EntitySystem
         }
 
         if (!performer.Comp.CPRHealing.Empty)
-            _damageable.TryChangeDamage(args.Target, performer.Comp.CPRHealing, true, origin: performer);
+            _damageable.TryChangeDamage(args.Target, performer.Comp.CPRHealing * 4f, true, origin: performer, targetPart: TargetBodyPart.All); // Shitmed Change
 
         if (performer.Comp.RotReductionMultiplier > 0)
             _rottingSystem.ReduceAccumulator(
