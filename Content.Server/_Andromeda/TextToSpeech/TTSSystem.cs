@@ -19,7 +19,8 @@ using Robust.Shared.Random;
 using Content.Server.Language;
 using static Content.Shared.Administration.Notes.AdminMessageEuiState;
 
-namespace Content.Server.Andromeda.TTS;
+-namespace Content.Server.Andromeda.TTS;
++namespace Content.Server._Andromeda.TextToSpeech;
 
 public sealed partial class TTSSystem : EntitySystem
 {
