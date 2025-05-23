@@ -27,6 +27,7 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 cosmosgc <cosmoskitsune@hotmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -41,6 +42,8 @@ using Content.Shared.Database;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -66,6 +69,7 @@ public sealed class RadioSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
@@ -144,13 +148,55 @@ public sealed class RadioSystem : EntitySystem
             ? FormattedMessage.EscapeText(message)
             : message;
 
+        // start 🌟Starlight🌟
+
+        var iconId = "JobIconNoId";
+        var jobName = "";
+
+        if (_accessReader.FindAccessItemsInventory(messageSource, out var items))
+        {
+            foreach (var item in items)
+            {
+                // ID Card
+                if (TryComp<IdCardComponent>(item, out var id))
+                {
+                    iconId = id.JobIcon;
+                    jobName = id.LocalizedJobTitle;
+                    break;
+                }
+
+                // PDA
+                if (TryComp<PdaComponent>(item, out var pda)
+                    && pda.ContainedId != null
+                    && TryComp(pda.ContainedId, out id))
+                {
+                    iconId = id.JobIcon;
+                    jobName = id.LocalizedJobTitle;
+                    break;
+                }
+            }
+        }
+
+        if (HasComp<BorgChassisComponent>(messageSource) || HasComp<BorgBrainComponent>(messageSource))
+        {
+            iconId = "JobIconBorg";
+            jobName = Loc.GetString("job-name-borg");
+        }
+
+        if (HasComp<StationAiHeldComponent>(messageSource))
+        {
+            iconId = "JobIconStationAi";
+            jobName = Loc.GetString("job-name-station-ai");
+        }
+        // end 🌟Starlight🌟
+
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
             ("fontType", speech.FontId),
             ("fontSize", speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
-            ("name", name),
+            ("name", $"[icon src=\"{iconId}\" tooltip=\"{jobName}\"] {name}"),  // 🌟Starlight🌟
             ("message", content));
 
         // most radios are relayed to chat, so lets parse the chat message beforehand

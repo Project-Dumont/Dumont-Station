@@ -73,11 +73,17 @@
     weight: 5.5
     minimumPlayers: 20
     duration: 1
-    chaos: # Goobstation
-      Hostile: 200
-      Friend: 40
-      Medical: 200
-      Death: 200
+    chaos:
+      Hostile: 150
+      Friend: 150
+      Combat: 150
+      Death: 150
+    maxChaos:
+      Hostile: 30
+      Combat: -60
+      Power: 50
+      Medical: 50
+      Atmos: 50
   - type: AntagSelection
     useCharacterNames: true
     selectionTime: PostPlayerSpawn

@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -8,6 +9,7 @@
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -295,7 +297,7 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
     /// </summary>
     private void TrySpawnRoundstartAntags(GameDirectorComponent scheduler)
     {
-        if (scheduler.NoRoundstartAntags)
+        if (scheduler.CalmAntagAmount == 0 && scheduler.NormalAntagAmount == 0 && scheduler.ExtremeAntagAmount == 0)
             return;
 
         // Spawn antags based on GameDirectorComponent
@@ -593,6 +595,21 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
 
                 if (!proto.TryGetComponent<StationEventComponent>(out var stationEvent, _factory))
                     continue;
+
+                var tooMuchChaos = false;
+                foreach (var chaosType in stationEvent.MaxChaos.ChaosDict)
+                {
+                    if (chaosType.Value < chaos.ChaosDict[chaosType.Key])
+                    {
+                        tooMuchChaos = true;
+                        break;
+                    }
+                }
+
+                if (tooMuchChaos)
+                {
+                    continue;
+                }
 
                 if (!_event.CanRun(proto, stationEvent, count.Players, GameTicker.RoundDuration()))
                     continue;

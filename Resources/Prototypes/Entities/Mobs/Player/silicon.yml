@@ -90,6 +90,7 @@
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
@@ -97,6 +98,7 @@
 # SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 lizelive <github@lize.live>
+# SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -645,6 +647,8 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
+  - type: CombatPower # Goobstation
+    factor: 16 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   id: PlayerBorgSyndicateAssaultGhostRole
@@ -678,6 +682,8 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
+  - type: CombatPower # Goobstation
+    factor: 12 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   id: PlayerBorgSyndicateSaboteurGhostRole
@@ -728,6 +734,8 @@
         startingItem: PowerCellHigh
   - type: RandomMetadata
     nameSegments: [NamesBorg]
+  - type: CombatPower # Goobstation
+    factor: 10 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   id: PlayerBorgDerelictGhostRole
