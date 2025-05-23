@@ -97,7 +97,7 @@
 
 - type: Tag
   id: CannotSuicideAny
-  
+
 - type: Tag
   id: Chair
 
@@ -199,6 +199,9 @@
 
 - type: Tag
   id: FlashIgnoreResistances
+
+- type: Tag
+  id: FlashVulnerable
 
 - type: Tag
   id: FollowerStayOnPolymorph
@@ -532,6 +535,9 @@
 
 - type: Tag
   id: CalmAntag
+
+- type: Tag
+  id: ExtremeAntag
 
 - type: Tag
   id: MidroundAntag

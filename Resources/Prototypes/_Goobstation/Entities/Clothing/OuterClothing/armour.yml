@@ -48,6 +48,9 @@
     knockdownTimeDelta: -2
   - type: StaminaDamageResistance # Goobstation
     coefficient: 0.7
+  - type: Tag
+    tags:
+      - Armor
 
 # Durathread plated vest
 - type: entity
@@ -76,7 +79,9 @@
     knockdownTimeDelta: -2
   - type: StaminaDamageResistance # Goobstation
     coefficient: 0.7
-
+  - type: Tag
+    tags:
+    - Armor
 # Helldiver
 - type: entity
   parent: [ ClothingOuterArmorRaid, GeigerCounterClothing ]
@@ -128,6 +133,9 @@
     sprite: _Goobstation/Clothing/Armor/bso_armour.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Armor/bso_armour.rsi
+  - type: Tag
+    tags:
+    - Armor
 
 - type: entity
   parent: ClothingBlueshieldArmourVest

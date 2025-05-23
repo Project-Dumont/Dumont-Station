@@ -42,7 +42,7 @@
 
 # Midround Changelings
 - type: entity
-  parent: Changeling
+  parent: BaseGameRule # Funky: Changed parent because it no longer directly makes changelings at all
   id: ChangelingMidround
   components:
   - type: StationEvent
@@ -55,9 +55,9 @@
     duration: null
     occursDuringRoundEnd: false
     chaos:
-      Hostile: 150
-      Medical: 150
-      Death: 150
+      Hostile: 100
+      Medical: 100
+      Death: 100
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -65,18 +65,19 @@
     definitions:
     - prefRoles: [ Changeling ]
       max: 1
-      playerRatio: 10
+      playerRatio: 1 # 10 normally, 1 for testing
       blacklist:
         components:
-        - AntagImmune
-        - BibleUser
+          - AntagImmune
+          - BibleUser
       lateJoinAdditional: true
-      mindRoles:
-      - MindRoleChangeling
+      components:
+      #- type: ChangelingInfection # Funky: Made midround lings infections instead of instant.
+      #  needsInitialization: true
   - type: Tag
     tags:
       - MidroundAntag
-# Midround Heretics
+
 - type: entity
   parent: Heretic
   id: HereticMidround
@@ -113,6 +114,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+
 # Midround Revolutionaries
 - type: entity
   parent: Revolutionary
@@ -129,6 +131,12 @@
       Hostile: 250
       Medical: 250
       Death: 250
+    maxChaos:
+      Hostile: 30
+      Combat: -60
+      Power: 50
+      Medical: 50
+      Atmos: 50
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
     definitions:
@@ -152,6 +160,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+
 # Skeleton Spawn
 - type: entity
   parent: BaseGameRule
@@ -160,7 +169,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 15
+    minimumPlayers: 999 # nao volte nunca mais - GabyStation
     chaos:
       Hostile: 40
       Medical: 40
@@ -170,6 +179,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+
 # Blob Midround
 - type: entity
   parent: BaseGameRule
@@ -185,6 +195,12 @@
       Hostile: 300
       Medical: 300
       Death: 300
+    maxChaos:
+      Hostile: 30
+      Combat: -60
+      Power: 50
+      Medical: 50
+      Atmos: 50
   - type: BlobSpawnRule
     carrierBlobProtos:
     - SpawnPointGhostBlobRat
