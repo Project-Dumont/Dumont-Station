@@ -32,7 +32,7 @@ public static class NumberConverter
             return "zero";
 
         if (number < 0)
-            return "minus " + NumberToText(-number);
+            return "menos " + NumberToText(-number);
 
         var words = new StringBuilder();
 
