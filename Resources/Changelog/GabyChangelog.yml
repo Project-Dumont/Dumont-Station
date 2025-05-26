@@ -265,3 +265,9 @@ Entries:
       message: Adiciona uma arte nova ao lobby!
   id: 36
   time: '2025-04-07T15:00:00.0000000+00:00'
+  - author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Hotfix na saltern, usaremos a saltern do goob temporariamente, até que eu concerte a saltern do gaby
+  id: 36
+  time: '2025-05-26T15:00:00.0000000+00:00'
