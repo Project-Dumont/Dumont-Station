@@ -243,7 +243,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (ent != GetEntity(msg.Gun))
             return;
 
-
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
         // Goob edit start
         var potentialTarget = GetEntity(msg.Target);
