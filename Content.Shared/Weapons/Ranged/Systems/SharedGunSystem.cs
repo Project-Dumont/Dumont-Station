@@ -227,8 +227,22 @@ public abstract partial class SharedGunSystem : EntitySystem
             HasComp<ItemComponent>(user))
             return;
 
+        // This checks to see if a gun is jammed. If it is, send an event with the uid of the weapon
+        // the user that shot, and the component of the gun to the server; EA.
+        if (HasComp<JammedGunComponent>(ent))
+        {
+            RaiseLocalEvent(ent, new TryFireJammedWeapon(ent, user, gun));
+
+            // Need to do this, or else the RequestStopShootEvent doesn't work.
+            // The network tingy seems to reset the shot counter to 0 in the gun component.
+            gun.ShotCounter++;
+
+            return;
+        }
+
         if (ent != GetEntity(msg.Gun))
             return;
+
 
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
         // Goob edit start
@@ -241,6 +255,8 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
+        Log.Debug("Stopped firing weapon");
+
         var gunUid = GetEntity(ev.Gun);
 
         var user = args.SenderSession.AttachedEntity;
@@ -256,6 +272,12 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         if (ent != gunUid)
             return;
+
+        if (TryComp<JammedGunComponent>(gunUid, out JammedGunComponent? jamComp))
+        {
+            Log.Debug("Stopped firing jammed weapon");
+            jamComp.isNotHeldDown = true;
+        }
 
         StopShooting(gunUid, gun);
     }

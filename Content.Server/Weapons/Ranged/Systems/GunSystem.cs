@@ -165,6 +165,11 @@ using Content.Shared.Decals;
 using Content.Server.Decals;
 using Content.Shared.Body.Components;
 using Content.Shared._Shitmed.Targeting;
+using Content.Shared._Lavaland.Weapons.Ranged.Events;
+using Content.Shared.Interaction.Events;
+using Content.Shared.DoAfter;
+using Content.Server.Spawners.Components;
+using MathNet.Numerics;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -189,6 +194,8 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
     private const float DamagePitchVariation = 0.05f;
     private string[] _bloodDecals = []; // 🌟Starlight🌟
@@ -208,6 +215,61 @@ public sealed partial class GunSystem : SharedGunSystem
         _bloodDecals = _proto.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("BloodSplatter")).Select(x => x.ID).ToArray();
     }
 
+    private void Jam(EntityUid gunUid, GunComponent gun, EntityUid? user)
+    {
+        // Check if the JammedWeaponComponent is present, if it is, return.
+        if (HasComp<JammedGunComponent>(gunUid))
+        {
+            return;
+        }
+
+        if (user != null)
+        {
+            Audio.PlayPvs(gun.SoundEmpty, gunUid);
+            var jammed = AddComp<JammedGunComponent>(gunUid);
+            // Log.Debug("Jamming weapon.");
+            PopupSystem.PopupEntity(Loc.GetString("gun-jammed"), gunUid);
+
+
+        }
+    }
+
+    private void JammedFireAttempt(EntityUid uid, JammedGunComponent comp, ref TryFireJammedWeapon args)
+    {
+        if (comp.isNotHeldDown)
+        {
+            Audio.PlayPvs(args.GunComponent.SoundEmpty, args.GunUid);
+            PopupSystem.PopupEntity(Loc.GetString("gun-is-jammed"), args.GunUid);
+            // Log.Debug("Weapon is jammed");
+
+            comp.isNotHeldDown = false;
+        }
+    }
+
+    private void UnjamAttempt(EntityUid gun, JammedGunComponent comp, UseInHandEvent args)
+    {
+        // checks if there even is a gun, also, get the guncomp for time shit
+        if (!TryComp<GunComponent>(gun, out var gunComp)) { return; }
+
+        var doAfterArgs = new DoAfterArgs(EntityManager, args.User, TimeSpan.FromSeconds(gunComp.timeToUnjam), new UnjamDoAfterEvent(), gun, used: gun)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            BreakOnHandChange = true,
+            NeedHand = true
+        };
+
+        _doAfterSystem.TryStartDoAfter(doAfterArgs);
+
+    }
+
+    private void UnjamDoAfter(EntityUid gunUid, JammedGunComponent comp, UnjamDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled) { return; }
+
+        RemComp<JammedGunComponent>(gunUid);
+        PopupSystem.PopupEntity(Loc.GetString("gun-unjammed"), gunUid);
+    }
     private void OnBallisticPrice(EntityUid uid, BallisticAmmoProviderComponent component, ref PriceCalculationEvent args)
     {
         if (string.IsNullOrEmpty(component.Proto) || component.UnspawnedCount == 0)
@@ -228,6 +290,8 @@ public sealed partial class GunSystem : SharedGunSystem
         EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false)
     {
         userImpulse = true;
+        int asj = gun.averageShotsBeforeJamming;
+
 
         if (user != null)
         {
@@ -238,6 +302,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 userImpulse = false;
                 return;
             }
+
         }
 
         var fromMap = TransformSystem.ToMapCoordinates(fromCoordinates);
@@ -272,7 +337,6 @@ public sealed partial class GunSystem : SharedGunSystem
                 shotProjectiles.Add(ent.Value); // Goobstation
                 continue;
             }
-
             switch (shootable)
             {
                 //🌟Starlight🌟
@@ -322,6 +386,23 @@ public sealed partial class GunSystem : SharedGunSystem
                 case CartridgeAmmoComponent cartridge:
                     if (!cartridge.Spent)
                     {
+
+
+                        // This is the gun jamming system, it makes a random number between one and the gun's specific jam number
+                        // If the value is 1, jam it.
+
+                        int gunJamN = (int)Random.Next(1, asj + 1);
+
+                        Log.Debug($"ASJ é: {asj}");
+                        Log.Debug("Numero rolado: " + gunJamN);
+
+                        if (gunJamN == 1)
+                        {
+                            Jam(gunUid, gun, user);
+                        }
+
+
+
                         var uid = Spawn(cartridge.Prototype, fromEnt);
                         CreateAndFireProjectiles(uid, cartridge);
 

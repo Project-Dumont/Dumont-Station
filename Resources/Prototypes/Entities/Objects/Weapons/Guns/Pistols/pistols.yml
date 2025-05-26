@@ -297,6 +297,8 @@
       params:
         volume: -14
     projectileSpeed: 35 # Goobstation
+    averageShotsBeforeJamming: 80
+    timeToUnjam: 2.3
     availableModes:
     - SemiAuto
   - type: ItemSlots
@@ -374,6 +376,9 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg # Goob edit
+    fireOnDropChance: 0.6
+    averageShotsBeforeJamming: 120
+    timeToUnjam: 0.5
   - type: ItemSlots
     slots:
       gun_magazine:

@@ -23,6 +23,8 @@ gun-disabled = You can't use guns!
 gun-set-fire-mode = Set to {$mode}
 gun-magazine-whitelist-fail = That won't fit into the gun!
 gun-magazine-fired-empty = No ammo left!
+gun-jammed = The gun jams!
+gun-unjammed = You unjam the gun.
 
 # SelectiveFire
 gun-SemiAuto = semi-auto

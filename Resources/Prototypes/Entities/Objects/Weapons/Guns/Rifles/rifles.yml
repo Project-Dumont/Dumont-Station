@@ -176,6 +176,9 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+    fireOnDropChance: 0.5
+    averageShotsBeforeJamming: 100
+    timeToUnjam: 7
   - type: ChamberMagazineAmmoProvider
     boltClosed: null # Goobstation
     soundRack:
@@ -254,6 +257,9 @@
   - type: Appearance
   - type: Gun
     fireRate: 6
+    averageShotsBeforeJamming: 57
+    timeToUnjam: 5
+
 
 - type: entity
   name: Lecter
@@ -274,6 +280,9 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+    fireOnDropChance: 0.2
+    averageShotsBeforeJamming: 43
+    timeToUnjam: 4
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -395,5 +404,19 @@
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
+    averageShotsBeforeJamming: 100
+    timeToUnjam: 2
     clumsyProof: true
   - type: PacifismAllowedGun
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0 # Krillions must bubble-wrap the foam rifle
+    soundHit:
+      collection: ToySqueak
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 0
+  - type: DamageOtherOnHit
+    staminaCost: 3.5
