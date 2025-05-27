@@ -12,18 +12,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
   # Space Law — Listagem de Crimes
-  Códigos de crimes são coloridos por crimes conectados em grupo, que são coleções de crimes não-acumuláveis. Sufixos também estão inclusos no Guia Rápido para Crimes para identificar crimes conectados.
+  a 2 tabelas de crimes facil de consultar, com links para cada crime, e abaixo das tabelas, o código penal completo, com os artigos e parágrafos de cada crime.
 
   ## Guia Rápido para Crimes
   <Table Columns="4">
     <ColorBox>
       <Box>
-        I - GERAIS
+        I - DISPOSIÇÕES GERAIS
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        II - VIDA
+        II - CONTRA A VIDA
       </Box>
     </ColorBox>
     <ColorBox>
@@ -37,132 +37,93 @@ SPDX-License-Identifier: AGPL-3.0-or-later
       </Box>
     </ColorBox>
    
-    <ColorBox Color="#593a4e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Anterioridade do crime.
+        [textlink="Anterioridade do crime." link="anterioridadeDoCrime"]
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Homicídio
+        [textlink="Homicídio" link="homicidio"]
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Furto
+        [textlink="Furto" link="furto"]
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Traição Corporativa
-      </Box>
-    </ColorBox>
-    
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Intenção do crime.
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Lesão corporal
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Roubo
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Sabotagem
+        [textlink="Traição Corporativa" link="traicaoCorporativa"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Consumação
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Omissão de socorros
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Estelionato
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Insurreição
-      </Box>
-    </ColorBox>
-    
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Tentativa 
+        [textlink="Intenção do crime." link="intencaoDoCrime"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Sequestro
+        [textlink="Lesão corporal" link="lesaoCorporal"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Vandalismo
+        [textlink="Roubo" link="roubo"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Usurpação
+        [textlink="Sabotagem" link="sabotagem"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Exercício da função
+        [textlink="Consumação" link="consumacao"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Omissão de socorros" link="omissaoDeSocorros"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Receptação
+        [textlink="Estelionato" link="estelionato"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Invasão
+        [textlink="Insurreição" link="insurreicao"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Omissão
+        [textlink="Tentativa" link="tentativa"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#3b4354">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      [textlink="Sequestro" link="sequestro"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Contrabando
+      [textlink="Vandalismo" link="vandalismo"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      [textlink="Usurpação" link="usurpacao"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Co-autoria
+        [textlink="Exercício da função" link="exercicioDaFuncao"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -171,36 +132,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      [textlink="Receptação" link="receptacao"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Porte de Artefato Proibido
-      </Box>
-    </ColorBox>
-    
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Crime impossível
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Falsidade Ideológica
+      [textlink="Invasão" link="invasao"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Irrelevância
+      [textlink="Omissão Administrativa" link="omissaoAdministrativa"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -213,32 +156,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Ocultismo
-      </Box>
-    </ColorBox>
-    
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Causalidade
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Produção Proibida
+      [textlink="Contrabando" link="contrabando"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Legítima defesa
+      [textlink="Co-autoria" link="coautoria"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -251,12 +175,70 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Porte de Artefato" link="producaoProibida"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Reincidência
+        [textlink="Crime impossível" link="crimeImpossivel"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Falsidade Ideológica" link="falsidadeIdeologica"]
+      </Box>
+    </ColorBox>
+    
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Irrelevância" link="irrelevancia"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Ocultismo" link="ocultismo"]
+      </Box>
+    </ColorBox>
+    
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Causalidade" link="causalidade"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Produção Proibida" link="producaoProibida"]
+      </Box>
+    </ColorBox>
+    
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Legítima defesa" link="legitimaDefesa"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -274,7 +256,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Aplicação
+        [textlink="Reincidência" link="reincidencia"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Aplicação" link="aplicacao"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -299,12 +299,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box>
-        VI - HONRA
+        VI - CONTRA A HONRA
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        VII - ORDEM
+        VII - CONTRA A ORDEM
       </Box>
     </ColorBox>
     <ColorBox>
@@ -312,85 +312,39 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         VIII - CAPITAL
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Abuso de poder
+        [textlink="Abuso de poder" link="abusoDePoder"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Difamação
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Perturbação
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Lesa-Trasen
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Abandono
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Calúnia
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Resistência
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Prevaricação
+        [textlink="Difamação" link="difamacao"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Desrespeito à Autoridade
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Obstrução de Justiça
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Perturbação" link="perturbacao"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      [textlink="Omissão" link="#omissao"]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Evasão de Prisão
+        [textlink="Lesa-Trasen" link="lesaTrasen"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Abandono" link="abandono"]
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Negligência
+        [textlink="Calúnia" link="calunia"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Resistência" link="resistencia"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -399,7 +353,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Associação Criminosa
+        [textlink="Prevaricação" link="prevaricacao"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Desrespeito à Autoridade" link="desrespeitoAutoridade"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Obstrução de Justiça" link="obstrucaoJustica"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -408,7 +372,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Incompetência
+        [textlink="Omissão Administrativa" link="omissaoAdministrativa"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -417,6 +381,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Evasão de Prisão" link="evasaoPrisao"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -425,7 +390,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Conduta Inadequada
+        [textlink="Negligência" link="negligencia"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Associação Criminosa" link="associacaoCriminosa"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Incompetência" link="incompetencia"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -442,7 +425,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      Insubordinação
+        [textlink="Conduta Inadequada" link="condutaInadequada"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Insubordinação" link="insubordinacao"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -466,7 +466,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 Art. 1º – Não há crime sem artigo que o defina, exceto quando a NanoTrasen decidir que houve crime.
 
-§ 1º – Em caso de incerteza ou  dúvida acerca destas leis, entre em contrato com a  a̶d̶m̶i̶n̶i̶s̶t̶r̶a̶ç̶ã̶o̶  Central de Comando.
+§ 1º – Em caso de incerteza ou  dúvida acerca destas leis, entre em contrato com a a̶d̶m̶i̶n̶i̶s̶t̶r̶a̶ç̶ã̶o̶  Central de Comando.
 
 
 ## Intenção do crime.
@@ -483,54 +483,44 @@ Art. 3º - Para efeitos deste código, um crime se consuma quando o autor atinge
 
 ## Tentativa 
 
-§ 1 º - Mesmo que o resultado não ocorra, a mera tentativa de fato disposto neste código constitui crime, onde, neste caso, a pena deve ser reduzida pela metade.
+  § 1º - Mesmo que o resultado não ocorra, a mera tentativa de fato disposto neste código constitui crime, onde, neste caso, a pena deve ser reduzida pela metade.
+
+  ## Exercício da função
+
+  § 2º - Não há crime caso o autor esteja apenas desempenhando sua função de forma justa e sem abusos.
+
+  ## Omissão
+
+  Art. 4º - Omissões, e não só ações, também devem ser punidas, caso o fato esteja descrito em quaisquer dos artigos deste código.
+
+  ## Co-autoria
+
+  Art. 5º - Ajudar no planejamento e/ou na execução de um fato criminoso também constitui crime, onde o co-autor deve responder pela mesma pena.
+
+  ## Crime impossível
+
+  Art. 6º - Não serão puníveis crimes onde seja absolutamente impossível que o autor consiga atingir o resultado pretendido, desde que não causem qualquer dano ou perigo.
 
 
-## Exercício da função
+## Irrelevância
 
-§ 2º - Não há crime caso o autor esteja apenas desempenhando sua função de forma justa e sem abusos.
+§ 1º - Se do fato criminoso não resulta dano ou prejuízo significativo à vítima, este não será punível, caso não haja reincidência.
 
+## Causalidade
 
-## Omissao
+Art. 7º - Somente punirá-se crimes onde o autor tenha causado ou tentado de maneira efetiva o resultado, mesmo que indiretamente.
 
-Art. 4º - Omissões, e não só ações, também devem ser punidas, caso o fato esteja descrito em quaisquer dos artigos deste código.
-
-
-Co-autoria
-
-Art. 5º - Ajudar no planejamento e/ou na execução de um fato criminoso também constitui crime, onde o co-autor deve responder pela mesma pena.
-
-
-Crime impossível
-
-Art. 6º - Não serão puníveis crimes onde seja absolutamente impossível que o autor consiga atingir o resultado pretendido, desde que não causem qualquer dano ou perigo.
-
-
-Irrelevância
-
-
-§ 1º - Se do fato criminoso não resulta dano ou prejuízo significativo à vítima, este não será punível, caso não haja reincidência. 
-
-
-Causalidade
-Art. 7º - Somente punirá-se crimes onde o autor tenha causado ou tentado de maneira efetiva o resultado, mesmo que indiretamente. 
-
-
-
-Legítima defesa
-
+## Legítima defesa
 
 Art. 8º - Extingue-se o crime caso o autor utilize os meios necessários para repelir agressão injusta.
 
-Parágrafo único: para configurar legítima defesa, é necessário que o meio utilizado para defesa seja proporcional à agressão sofrida, e que se cesse assim que esta pare
+Parágrafo único: para configurar legítima defesa, é necessário que o meio utilizado para defesa seja proporcional à agressão sofrida, e que se cesse assim que esta pare.
 
-
-Reincidência
+## Reincidência
 
 Art. 9º - Em caso de reincidência criminal, aumente a pena em ½ (metade). Caso a reincidência seja específica, ou seja, praticar novamente o mesmo crime, dobre a pena.
 
-
-Aplicação
+## Aplicação
 
 Art. 10º - As seguintes formas de aplicação de pena são admitidas:
 
@@ -548,19 +538,15 @@ Art. 10º - As seguintes formas de aplicação de pena são admitidas:
 
 § 7º - Para fins de aplicação, considere a modalidade possível de pena mais grave, na seguinte ordem: execução > perpétua > detenção.
 
+# II - DOS CRIMES CONTRA A VIDA
 
-
-II - DOS CRIMES CONTRA A VIDA
-
-
-Homicídio
+## Homicídio
 
 Art. 11 - Matar alguém. Pena: quarenta minutos.
 
 Parágrafo único: o crime somente se consuma quando a vítima perde seus sinais vitais.
 
-§ 1 º - A pena é de execução se:
-
+§ 1º - A pena é de execução se:
 
 I - a vítima tem cargo de chefia na estação ou é integrante da Central de Comando;
 II - o meio do homicídio impede a ressurreição da vítima;
@@ -569,12 +555,10 @@ IV - se o autor matou três ou mais pessoas.
 
 § 2º - A pena é de prisão perpétua se:
 
-
 I - o autor mata a vítima para roubá-la.
 II - o autor matou duas pessoas.
 
-
-Lesão corporal
+## Lesão corporal
 
 Art. 12 - Lesionar alguém. Pena: dez minutos.
 
@@ -584,11 +568,7 @@ Art. 12 - Lesionar alguém. Pena: dez minutos.
 
 § 3º - Se a lesão é leve, a pena é de cinco minutos.
 
-
-
-
-
-Omissão de socorros
+## Omissão de socorros
 
 Art. 13 - Deixar de prestar socorro a uma pessoa em grave risco de vida ou que poderia ser revivida. Pena: três minutos.
 
@@ -598,30 +578,15 @@ Art. 13 - Deixar de prestar socorro a uma pessoa em grave risco de vida ou que p
 
 § 3º - Deixa-se de aplicar pena se, para salvar a vítima, fosse necessário correr grave e evidente risco de se perder a própria vida, ou se o faz para salvar outra pessoa em mesma necessidade.
 
-
-Sequestro
+## Sequestro
 
 Art. 14 - Sequestrar alguém. Pena: 20 minutos.
 
 § 1º - Se a vítima tem cargo de autoridade, aumenta-se a pena em ½ (um meio).
 
+# III - DOS CRIMES CONTRA O PATRIMÔNIO
 
-
-
-
-
-
-
-
-
-
-
-
-
-III - DOS CRIMES CONTRA O PATRIMÔNIO
-
-
-Furto
+## Furto
 
 Art. 15 - Furtar alguém ou um bem da estação, sem uso de violência ou ameaça. Pena: cinco minutos e confisco.
 
@@ -632,8 +597,7 @@ III - o bem furtado possui alto valor econômico.
 
 § 2º - Deixa de se aplicar a pena se o bem subtraído é irrelevante e/ou tem baixo valor econômico.
 
-
-Roubo
+## Roubo
 
 Art. 16 - Roubar alguém, com uso de violência e/ou grave ameaça. Pena: vinte minutos e confisco.
 
@@ -642,62 +606,35 @@ I - o bem furtado tem grande importância para estação;
 II - o bem furtado é altamente perigoso;
 III - o bem furtado possui alto valor econômico.
 
-
-Estelionato
+## Estelionato
 
 Art. 17 - Enganar alguém em benefício próprio ou de outra pessoa, gerando grave prejuízo à vítima. Pena: dez minutos.
 
 § 1º - Da mesma forma se aplica o não cumprimento de acordos.
 
-
-Vandalismo
+## Vandalismo
 
 Art. 18 - Deteriorar algo pertencente à estação ou outra pessoa. Pena: cinco minutos.
 
-§ 1º - A pena é de dez minutos se o bem possui alto valor econômico. 
+§ 1º - A pena é de dez minutos se o bem possui alto valor econômico.
 
-
-Receptação
+## Receptação
 
 Art. 19 - Adquirir, guardar ou estar em posse de bem subtraído de outra pessoa, sem autorização desta. Pena: cinco minutos e confisco.
 
 § 1º - A pena é de dez minutos se o bem possui alto valor econômico.
 
+# IV - DOS CRIMES CONTRA A NANOTRASEN
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-IV - DOS CRIMES CONTRA A NANOTRASEN
-
-
-Traição Corporativa
+## Traição Corporativa
 
 Art. 20 - Integrar corporação, organização, grupo, culto ou organismo contrário aos valores e objetivos da NanoTrasen. Pena: prisão perpétua e demissão.
 
 § 1º - Se o integrante da organização, detido, concordar em delatar outros integrantes de corporações rivais infiltrados, a pena pode ser reduzida para trinta minutos, desde que a informação se confirme.
 
-§ 2 º - Se a corporação, organização, grupo ou culto tem por objetivo a aniquilação completa da estação, ou de múltiplas formas de vida, a pena é de execução imediata, sem os direitos previstos neste código.
+§ 2º - Se a corporação, organização, grupo ou culto tem por objetivo a aniquilação completa da estação, ou de múltiplas formas de vida, a pena é de execução imediata, sem os direitos previstos neste código.
 
-
-Sabotagem
+## Sabotagem
 
 Art. 21 - Danificar, inutilizar, ou desativar estruturas e/ou sistemas essenciais da estação. Pena: vinte minutos.
 
@@ -707,25 +644,21 @@ Art. 21 - Danificar, inutilizar, ou desativar estruturas e/ou sistemas essenciai
 
 § 3º - Aplica-se nos mesmos termos a adulteração da atmosfera artificial da estação, desde que cause risco a estação e formas de vida.
 
-
-Insurreição
+## Insurreição
 
 Art. 22 - Constituir ou apoiar insurreição, motim, rebelião, dissidência ou revolta contrária a NanoTrasen. Pena: detenção provisória até desistência.
 
-§ 1 º - Se o rebelde se recusar a desistir da insurreição, ou se é líder da rebelião, a pena é de execução imediata.
+§ 1º - Se o rebelde se recusar a desistir da insurreição, ou se é líder da rebelião, a pena é de execução imediata.
 
+## Usurpação
 
-Usurpação
+Art. 23 - Exercer função da qual não lhe foi concedida pela Central de Comando, ou então, sem autorização do Capitão ou do Chefe dos Funcionários. Pena: três minutos.
 
-Art. 23  -  Exercer função da qual não lhe foi concedida pela Central de Comando, ou então, sem autorização do Capitão ou do Chefe dos Funcionários. Pena: três minutos.
-
-
-Invasão
+## Invasão
 
 Art. 24 - Invadir local proibido e/ou de uso restrito, sem permissão. Pena: três minutos.
 
-
-Contrabando
+## Contrabando
 
 Art. 25 - Possuir itens e equipamentos provenientes de corporações hostis a NanoTrasen, sem autorização. Pena: cinco a dez minutos e confisco.
 
@@ -735,82 +668,70 @@ Art. 25 - Possuir itens e equipamentos provenientes de corporações hostis a Na
 
 § 3º - Se o contrabando, mágico ou não, é um armamento militar perigoso, capaz de causar homicídio, aplica-se a pena em dobro e demissão.
 
-
 § 4º - Caso o portador, de boa fé, entregue tal contrabando ao departamento de segurança, com nenhum ou mínimo esforço da autoridade para o confisco do equipamento e não tenha usado indevidamente durante a posse, a pena é apenas confisco, sem confinamento.
 
 § 5º - Caso o contrabando tenha propriedades arcanas, e tenha sido usado indevidamente e/ou de má fé, considere o artigo 28.
 
-
-
-Porte de Artefato Proibido
+## Porte de Artefato Proibido
 
 Art. 26 - Possuir qualquer objeto capaz de causar dano à estação ou formas de vida, sem devida autorização para tal. Pena: cinco minutos e confisco.
 
-§ 1º - Se o artefato é explosivo ou de uso exclusivo de autoridades, aplica-se a pena em dobro. 
+§ 1º - Se o artefato é explosivo ou de uso exclusivo de autoridades, aplica-se a pena em dobro.
 
-
-Falsidade Ideológica
+## Falsidade Ideológica
 
 Art. 27 - Falsificar ou ocultar sua própria identidade, alterar suas próprias permissões ou fornecer informações falsas sobre si a autoridades. Pena: detenção até a devida identificação.
 
 § 1º - Se a ocultação se deu por motivo plausível, e o autor procurou se identificar ou obter um ID legítimo, não se aplica pena.
 
-
-Ocultismo
+## Ocultismo
 
 Art. 28 - Praticar rituais, magias, feitiços, invocações ou quaisquer atos ocultistas que contrariem os princípios operacionais da NanoTrasen. Pena: vinte minutos e confisco.
 
-§ 1 º - Se da prática resulta risco a estação ou formas de vida, a pena é de execução imediata.
+§ 1º - Se da prática resulta risco a estação ou formas de vida, a pena é de execução imediata.
 
-
-Produção Proibida
+## Produção Proibida
 
 Art. 29 - Produzir, fabricar, modificar ou armazenar itens, equipamentos, artefatos ou substâncias proibidas pela NanoTrasen, independentemente da intenção. Pena: dez minutos, confisco e demissão.
-V - DOS CRIMES ADMINISTRATIVOS
 
-Abuso de poder
+# V - DOS CRIMES ADMINISTRATIVOS
+
+## Abuso de poder
 
 Art. 30 - Utilizar cargo, autoridade ou função para obter vantagem pessoal, intimidar, coagir ou prejudicar outros membros da estação, indevidamente. Pena: rebaixamento.
 
-
-Abandono
+## Abandono
 
 Art. 31 - Ausentar-se de seu posto por período prolongado sem autorização formal, aviso prévio ou justificativa médica válida. Pena: rebaixamento.
 
-
-Prevaricação
+## Prevaricação
 
 Art. 32 - Deixar de cumprir seu dever funcional por interesse próprio, conveniência pessoal ou conivência com terceiros, prejudicando a operação da estação. Pena: demissão.
 
-
-Omissão
+## Omissão
 
 Art. 33 - Deixar de comunicar eventos, incidentes e comportamentos suspeitos, desde que relevantes, ao comando, durante exercício de cargo de autoridade. Pena: demissão.
 
-
-Negligência
+## Negligência
 
 Art. 34 – Deixar de observar os protocolos, precauções, instruções técnicas ou condutas esperadas no exercício de sua função, colocando em risco a integridade da estação, de sistemas ou de indivíduos. Pena: advertência formal.
 
-§ 1º – Se da negligência resulta prejuízo operacional relevante, falha técnica grave ou ferimentos, aplica-se pena de rebaixamento. 
+§ 1º – Se da negligência resulta prejuízo operacional relevante, falha técnica grave ou ferimentos, aplica-se pena de rebaixamento.
 § 2º – Se resultar em morte, dano irreversível ou colapso de sistema essencial, a pena é de demissão com detenção de dez minutos.
 
-
-Incompetência
+## Incompetência
 
 Art. 35 – Demonstrar incapacidade reiterada para o exercício das funções atribuídas, mesmo após treinamentos, orientações ou advertências formais. Pena: demissão.
 
 § 1º – Se resultar em morte, dano irreversível ou colapso de sistema essencial, a pena é de demissão com detenção de dez minutos.
 
-
-Conduta Inadequada
+## Conduta Inadequada
 
 Art. 36 - Adotar comportamento incompatível, reprovável, ou vergonhoso, que denigra a imagem do cargo, compromete a disciplina, ou mancha a reputação da NanoTrasen. Pena: advertência formal.
 
 § 1º – Caso persista, a conduta será considerada insubordinação moral, sujeitando o infrator a demissão.
 
-
-Insubordinação
+## Insubordinação
 
 Art. 37 - Desobedecer sistematicamente autoridade da estação e/ou da NanoTrasen, de hierarquia superior a sua, recusando-se a cumprir suas ordens. Pena: advertência formal.
 
@@ -818,80 +739,64 @@ Art. 37 - Desobedecer sistematicamente autoridade da estação e/ou da NanoTrase
 
 § 2º - Ordem de autoridades superiores devem ser cumpridas independentemente de sua legalidade aparente, sendo que denúncias de abuso devem ser comunicadas diretamente à Central de Comando.
 
+# VI - DOS CRIMES CONTRA A HONRA
 
-VI - DOS CRIMES CONTRA A HONRA
-
-
-
-Difamação
+## Difamação
 
 Art. 42 - Propagar informações falsas ou deturpadas que prejudiquem a reputação de outro membro da estação ou da NanoTrasen. Pena: advertência formal.
 
 § 1º – Se a difamação ocorrer de forma reiterada, a pena é de rebaixamento e/ou demissão.
 
+## Calúnia
 
-Calúnia
 Art. 43 - Acusar falsamente outro membro da estação ou da NanoTrasen de crime ou falta grave, com intenção de prejudicar sua reputação, de fato que saiba ser falso, e em má fé. Pena: três minutos e rebaixamento/demissão.
 
+## Desrespeito à Autoridade
 
+Art. 44 – Insultar, desacatar ou manifestar desdém explícito contra superiores hierárquicos, autoridades ou representantes oficiais da NanoTrasen, pelo mero exercício de suas funções. Pena: rebaixamento/demissão.
 
-Desrespeito à Autoridade
+§ 1º – Caso o infrator já esteja no cargo mais baixo da hierarquia, tornando assim impossível seu rebaixamento/demissão, a pena é de 5 minutos ao invés.
 
-Art. 44 – Insultar, desacatar ou manifestar desdém explícito contra superiores hierárquicos, autoridades ou representantes oficiais da NanoTrasen, pelo mero exercício de suas funções. 
-Pena: rebaixamento/demissão.
+# VII - DOS CRIMES CONTRA A ORDEM
 
-§ 1º – caso o infrator já esteja no cargo mais baixo da hierarquia, tornando assim impossível seu rebaixamento/demissão, a pena é de 5 minutos ao invés.
+## Perturbação
 
+Art. 45 - Causar desordem, por meio de comportamentos antiéticos que perturbem negativamente o ambiente de trabalho, a moral ou o convívio com terceiros. Pena: advertência formal.
 
-
-
-
-
-
-VII - DOS CRIMES CONTRA A ORDEM
-
-Perturbação
-Art. 45 - Causar desordem, por meio de comportamentos antiéticos que perturbem negativamente o ambiente de trabalho, a moral ou o convívio com terceiros.
-Pena: advertência formal.
 § 1º - A pena será de 5 minutos se houver reincidência neste artigo, desde que não constitua crime mais grave.
 
-
-Resistência
+## Resistência
 
 Art. 46 - Resistir ou recusar ordem realizada por autoridade de segurança. Pena: três minutos.
 
-
-Obstrução de Justiça
+## Obstrução de Justiça
 
 Art. 47 - Impedir que autoridades exerçam suas atividades, em benefício próprio ou de outrem. Pena: cinco minutos.
 
-
-Evasão de Prisão
+## Evasão de Prisão
 
 Art. 48 - Fugir de prisão da qual se está detido, evadir sua detenção por autoridades, ou ajudar outra pessoa para tal fim. Pena: dez minutos.
+
 § 1º - Caso o autor tente evadir a prisão, ou danificar sua cela reiteradamente, após diversos pedidos para que cesse as tentativas, de forma que seja inviável mantê-lo preso, é autorizada execução do detento.
 
-
-Associação Criminosa
+## Associação Criminosa
 
 Art. 49 - Associar-se a uma ou mais pessoas para cometer crimes. Pena: cinco minutos.
 
-VIII - DO CRIME CAPITAL
+# VIII - DO CRIME CAPITAL
 
-
-
-Lesa-Trasen
+## Lesa-Trasen
 
 Art. 50 - Toda ação, praticada por pessoa investida de função de comando ou posição estratégica que atente direta ou indiretamente contra a soberania da NanoTrasen, sua cadeia de comando, suas operações, ativos ou reputação, quando executada sem motivação externa legítima. Pena: determinada pela Central de Comando.
 
-§ 1º - São exemplos de condutas configuradas como crime de Lesa-Trasen, entre outras: 
-I - Declarar independência da estação, fragmentar sua lealdade, ou promover cisão com a Central de Comando; 
-II - Utilizar meios de comando para instaurar regimes autoritários, teocráticos, revolucionários ou não-autorizados; 
+§ 1º - São exemplos de condutas configuradas como crime de Lesa-Trasen, entre outras:
+I - Declarar independência da estação, fragmentar sua lealdade, ou promover cisão com a Central de Comando;
+II - Utilizar meios de comando para instaurar regimes autoritários, teocráticos, revolucionários ou não-autorizados;
 III - Colaborar com facções hostis, anômalas ou concorrentes da NanoTrasen, por ação ou omissão deliberada;
 IV - Comprometer deliberadamente a ordem ou hierarquia da estação, em má fé.
 
 § 2º - O crime de Lesa-Trasen é considerado, por este estatuto, infração máxima contra a ordem institucional, e sua simples tentativa, planejamento, incitação ou apologia já constituem agravantes puníveis.
-§ 3º - A participação de múltiplos membros do comando, especial rigor àqueles que exercem as funções de Capitão, resultará na pena magna.
 
+§ 3º - A participação de múltiplos membros do comando, especial rigor àqueles que exercem as funções de Capitão, resultará na pena magna.
 
 </Document>

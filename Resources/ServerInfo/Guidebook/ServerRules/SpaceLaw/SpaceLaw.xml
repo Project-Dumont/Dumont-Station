@@ -48,23 +48,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Use o bom senso e tenha um pouco de humanidade quando lidar com penas. Você não deve sempre aplicar a maior pena possível, você nem sempre precisa dar a pena máxima ou sempre procurar rebaixar alguém de função. Prisioneiros cooperativos e com bom comportamento devem ter suas penas reduzidas. Sempre leve em consideração a gravidade da situação e apenas puna o necessário para que o prisioneiro aprenda sua lição.
 
-  [color=#a4885c]Crimes Acumuláveis[/color]: Crimes devem ser considerados "acumuláveis" no sentido de que, caso você prenda alguém por dois ou mais crimes diferentes, você deve juntar as penas em uma só. Crimes conectados (ou seja, que estejam na mesma cor e sufixo no Guia Rápido para Crimes) não podem ser acumulados e, na verdade, sobrepujam um ao outro; você deve aplicar apenas a maior pena.
-
-  - Exemplo: um suspeito cometeu um 2-01 (posse: maior) e um 3-01 (posse: sindicato). A pena máxima seria 30 minutos, já que ambos os crimes são conectados e 3-01 é o maior crime.
-  - Exemplo 2: um suspeito cometeu um 1-01 (posse: menor) e um 1-03 (vandalismo). Ambos os crimes acumulam já que não estão conectados. Você poderia sentenciar por um máximo de 20 minutos, mas o contexto varia bastante, e sentenças máximas devem ser aplicadas apenas para os piores criminosos.
+  [color=#a4885c]Crimes Acumuláveis[/color]: Crimes devem ser considerados "acumuláveis" no sentido de que, caso você prenda alguém por dois ou mais crimes diferentes, você deve juntar as penas em uma só.
 
   [color=#a4885c]Criminosos Recorrentes[/color]: Crimes são considerados repetidos quando um suspeito é solto após cumprir pena por um crime e, logo depois, comete o mesmo crime ainda no mesmo turno. Crimes repetidos vão aumentando por cinco minutos (crimes menores e moderados) ou dez minutos (crimes maiores e extremos); ou seja, dez minutos na segunda vez, vinte minutos na terceira vez, e assim vai. É notável que o aumento por crimes repetidos é por ofensa, e não por prisão - isso significa que se alguém cometer dois crimes, o aumento na repetição é de dez minutos (crimes menores e moderados) ou vinte minutos (crimes maiores e extremos).
 
   [color=#a4885c]Assessoria, Tentativa e Intenção[/color]: Caso alguém intencionalmente, reconhecidamente e substancialmente provê suporte a um criminoso cometendo um crime, ele também pode ser julgado pelas mesmas ofensas; um exemplo é um assistente confessar que vai invadir uma certa área, e um engenheiro dar ferramentas de invasão para o dito assistente. O mesmo é aplicado para tentativas claras e sólidas de um crime, ou uma pessoa que demonstra intenção clara de cometer um crime, como um Operativo Nuclear do Sindicato armando a bomba nuclear mas sendo preso antes que ela exploda e ainda sendo julgado por terrorismo. Não se aplica a crimes que já tem uma listagem de tentativa, como Tentativa de Assassinato.
-
-  ## Punições Comuns
-  - [color=#a4885c]Avisos[/color]: Para crimes menores, conserte o problema e avise o criminoso para não cometer o mesmo crime novamente. Caso ele ainda tente cometer, o confinamento é a melhor opção.
-  - [color=#a4885c]Confinamento[/color]: O confinamento típico; ser preso(a) temporariamente de acordo com seus crimes.
-  - [color=#a4885c]Rebaixamento[/color]: Cobre a remoção de todo equipamento departamental que o criminoso possui e revogação do acesso departamental. Essa punição requer a aprovação do Capitão ou do Chefe do departamento em específico. Rebaixamentos só devem ser aplicados caso o suspeito possa abusar do seu equipamento departamental para cometer mais crimes, e naturalmente reduz a pena do suspeito em quinze minutos.
-
-  ## Punições Maiores
-  [color=#a4885c]Confinamento Permanente[/color]: Ser confinado(a) na prisão permanente pela duração do turno inteiro. Uma pessoa está elegível para confinamento permanente caso suas penas atuais sejam iguais ou maiores do que 45 minutos ou cometam crimes capitais. Todo prisioneiro sob prisão permanente deve ser levado à CentComm no final do turno algemado(a). Um prisioneiro não pode ser privado de quaisquer direitos da seção "Tratamento de Prisioneiros".
-  [color=#a4885c]Execução[/color]: Um jeito humano de tratar com tripulantes extremamente... perturbantes. Desde que seja razoável, um prisioneiro que tenha sido dado pena de morte pode escolher como deseja ser morto. Métodos comuns envolvem linha de fogo (fuzilamento), injeção letal, exilamento (ser lançado ao espaço), e eletrocução de alta voltagem. Outro método alternativo de "execução" é a transformação em Cyborg; isso é permitido desde que o prisioneiro não tenha cometido nenhum crime capital. Execuções só podem ser aplicadas pelo Capitão atual; se o Chefe de Segurança está como Capitão atual ou não há Capitão, todos os Chefes de Departamentos devem fazer uma reunião e votação sobre o caso.
 
   ## Listagem de Crimes
   - [textlink="Listagem de Crimes" link="SpaceLawCrimeList"]

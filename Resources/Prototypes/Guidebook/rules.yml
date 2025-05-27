@@ -451,6 +451,383 @@
   name: guide-entry-rules-sl-crime-list
   priority: 5
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+  children:
+    - homicidio
+    - lesaoCorporal
+    - omissaoDeSocorros
+    - sequestro
+    - furto
+    - roubo
+    - estelionato
+    - vandalismo
+    - receptacao
+    - traicaoCorporativa
+    - sabotagem
+    - insurreicao
+    - usurpacao
+    - invasao
+    - contrabando
+    - falsidadeIdeologica
+    - ocultismo
+    - producaoProibida
+    - abusoDePoder
+    - abandono
+    - prevaricacao
+    - omissaoAdministrativa
+    - negligencia
+    - incompetencia
+    - condutaInadequada
+    - insubordinacao
+    - difamacao
+    - calunia
+    - desrespeitoAutoridade
+    - perturbacao
+    - resistencia
+    - obstrucaoJustica
+    - evasaoPrisao
+    - associacaoCriminosa
+    - lesaTrasen
+    - anterioridadeDoCrime
+    - intencaoDoCrime
+    - consumacao
+    - tentativa
+    - exercicioDaFuncao
+    - coautoria
+    - crimeImpossivel
+    - irrelevancia
+    - causalidade
+    - legitimaDefesa
+    - reincidencia
+    - aplicacao
+
+- type: guideEntry
+  id: homicidio
+  name: guide-entry-space-law-homicidio
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/homicidio.xml"
+
+- type: guideEntry
+  id: lesaoCorporal
+  name: guide-entry-space-law-lesaoCorporal
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/lesaoCorporal.xml"
+
+- type: guideEntry
+  id: omissaoDeSocorros
+  name: guide-entry-space-law-omissaoDeSocorros
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/omissaoDeSocorros.xml"
+
+- type: guideEntry
+  id: sequestro
+  name: guide-entry-space-law-sequestro
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/sequestro.xml"
+
+- type: guideEntry
+  id: furto
+  name: guide-entry-space-law-furto
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/furto.xml"
+
+- type: guideEntry
+  id: roubo
+  name: guide-entry-space-law-roubo
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/roubo.xml"
+
+- type: guideEntry
+  id: estelionato
+  name: guide-entry-space-law-estelionato
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/estelionato.xml"
+
+- type: guideEntry
+  id: vandalismo
+  name: guide-entry-space-law-vandalismo
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/vandalismo.xml"
+
+- type: guideEntry
+  id: receptacao
+  name: guide-entry-space-law-receptacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/receptacao.xml"
+
+- type: guideEntry
+  id: traicaoCorporativa
+  name: guide-entry-space-law-traicaoCorporativa
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/traicaoCorporativa.xml"
+
+- type: guideEntry
+  id: sabotagem
+  name: guide-entry-space-law-sabotagem
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/sabotagem.xml"
+
+- type: guideEntry
+  id: insurreicao
+  name: guide-entry-space-law-insurreicao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/insurreicao.xml"
+
+- type: guideEntry
+  id: usurpacao
+  name: guide-entry-space-law-usurpacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/usurpacao.xml"
+
+- type: guideEntry
+  id: invasao
+  name: guide-entry-space-law-invasao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/invasao.xml"
+
+- type: guideEntry
+  id: contrabando
+  name: guide-entry-space-law-contrabando
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/contrabando.xml"
+
+- type: guideEntry
+  id: falsidadeIdeologica
+  name: guide-entry-space-law-falsidadeIdeologica
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/falsidadeIdeologica.xml"
+
+- type: guideEntry
+  id: ocultismo
+  name: guide-entry-space-law-ocultismo
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/ocultismo.xml"
+
+- type: guideEntry
+  id: producaoProibida
+  name: guide-entry-space-law-producaoProibida
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/producaoProibida.xml"
+
+- type: guideEntry
+  id: abusoDePoder
+  name: guide-entry-space-law-abusoDePoder
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/abusoDePoder.xml"
+
+- type: guideEntry
+  id: abandono
+  name: guide-entry-space-law-abandono
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/abandono.xml"
+
+- type: guideEntry
+  id: prevaricacao
+  name: guide-entry-space-law-prevaricacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/prevaricacao.xml"
+
+- type: guideEntry
+  id: omissaoAdministrativa
+  name: guide-entry-space-law-omissaoAdministrativa
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/omissaoAdministrativa.xml"
+
+- type: guideEntry
+  id: negligencia
+  name: guide-entry-space-law-negligencia
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/negligencia.xml"
+
+- type: guideEntry
+  id: incompetencia
+  name: guide-entry-space-law-incompetencia
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/incompetencia.xml"
+
+- type: guideEntry
+  id: condutaInadequada
+  name: guide-entry-space-law-condutaInadequada
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/condutaInadequada.xml"
+
+- type: guideEntry
+  id: insubordinacao
+  name: guide-entry-space-law-insubordinacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/insubordinacao.xml"
+
+- type: guideEntry
+  id: difamacao
+  name: guide-entry-space-law-difamacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/difamacao.xml"
+
+- type: guideEntry
+  id: calunia
+  name: guide-entry-space-law-calunia
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/calunia.xml"
+
+- type: guideEntry
+  id: desrespeitoAutoridade
+  name: guide-entry-space-law-desrespeitoAutoridade
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/desrespeitoAutoridade.xml"
+
+- type: guideEntry
+  id: perturbacao
+  name: guide-entry-space-law-perturbacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/perturbacao.xml"
+
+- type: guideEntry
+  id: resistencia
+  name: guide-entry-space-law-resistencia
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/resistencia.xml"
+
+- type: guideEntry
+  id: obstrucaoJustica
+  name: guide-entry-space-law-obstrucaoJustica
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/obstrucaoJustica.xml"
+
+- type: guideEntry
+  id: evasaoPrisao
+  name: guide-entry-space-law-evasaoPrisao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/evasaoPrisao.xml"
+
+- type: guideEntry
+  id: associacaoCriminosa
+  name: guide-entry-space-law-associacaoCriminosa
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/associacaoCriminosa.xml"
+
+- type: guideEntry
+  id: lesaTrasen
+  name: guide-entry-space-law-lesaTrasen
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/lesaTrasen.xml"
+
+- type: guideEntry
+  id: anterioridadeDoCrime
+  name: guide-entry-space-law-anterioridadeDoCrime
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/anterioridadeDoCrime.xml"
+
+- type: guideEntry
+  id: intencaoDoCrime
+  name: guide-entry-space-law-intencaoDoCrime
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/intencaoDoCrime.xml"
+
+- type: guideEntry
+  id: consumacao
+  name: guide-entry-space-law-consumacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/consumacao.xml"
+
+- type: guideEntry
+  id: tentativa
+  name: guide-entry-space-law-tentativa
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/tentativa.xml"
+
+- type: guideEntry
+  id: exercicioDaFuncao
+  name: guide-entry-space-law-exercicioDaFuncao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/exercicioDaFuncao.xml"
+
+- type: guideEntry
+  id: coautoria
+  name: guide-entry-space-law-coautoria
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/coautoria.xml"
+
+- type: guideEntry
+  id: crimeImpossivel
+  name: guide-entry-space-law-crimeImpossivel
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/crimeImpossivel.xml"
+
+- type: guideEntry
+  id: irrelevancia
+  name: guide-entry-space-law-irrelevancia
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/irrelevancia.xml"
+
+- type: guideEntry
+  id: causalidade
+  name: guide-entry-space-law-causalidade
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/causalidade.xml"
+
+- type: guideEntry
+  id: legitimaDefesa
+  name: guide-entry-space-law-legitimaDefesa
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/legitimaDefesa.xml"
+
+- type: guideEntry
+  id: reincidencia
+  name: guide-entry-space-law-reincidencia
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/reincidencia.xml"
+
+- type: guideEntry
+  id: aplicacao
+  name: guide-entry-space-law-aplicacao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/aplicacao.xml"
 
 - type: guideEntry
   id: BanTypes
