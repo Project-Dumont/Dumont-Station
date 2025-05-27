@@ -372,7 +372,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      <link Anchor="omissao">Omissão</link>
+      [textlink="Omissão" link="#omissao"]
       </Box>
     </ColorBox>
     <ColorBox Color="#4d2e2e">
@@ -490,8 +490,8 @@ Art. 3º - Para efeitos deste código, um crime se consuma quando o autor atinge
 
 § 2º - Não há crime caso o autor esteja apenas desempenhando sua função de forma justa e sem abusos.
 
-<Anchor id="omissao"></Anchor>
-## Omissão
+
+## Omissao
 
 Art. 4º - Omissões, e não só ações, também devem ser punidas, caso o fato esteja descrito em quaisquer dos artigos deste código.
 
