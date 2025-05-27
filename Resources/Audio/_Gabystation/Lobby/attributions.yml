@@ -1,4 +1,11 @@
-﻿- files: ["poeira.ogg"]
+# SPDX-FileCopyrightText: 2025 Crtosst <gdelaurentizfilho@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["poeira.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "poeira estelar by Totonho e os Cabra."
   source: "https://soundcloud.com/totonhoeoscabra/poeira-estelar"
