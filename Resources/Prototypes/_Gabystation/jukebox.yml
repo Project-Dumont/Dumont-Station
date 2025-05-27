@@ -172,3 +172,9 @@
   name: Slipknot - Wait And Bleed (DoutorWhite mix)
   path:
     path: /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
+
+- type: jukebox
+  id: Meu Piru
+  name: Allan Moreno - Quem vai querer o meu piru
+  path:
+    path: /Audio/_Gabystation/Lobby/QUEM VAI QUERER O MEU PIRU.ogg
