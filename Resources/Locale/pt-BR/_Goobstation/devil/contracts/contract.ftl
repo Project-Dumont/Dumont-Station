@@ -38,11 +38,11 @@ default-contract-content = Este contrato vinculativo feito neste dia entre:
             - A Parte Infernal (doravante "Contratante")
             - A Parte Mortal (doravante "Contratado")
 
-            [bold]Cláusulas de Vinculação:[/bold]
-            [italic]As seguintes partes abrem mão das seguintes posses[/italic]
+            {"["}bold]Cláusulas de Vinculação:{"["}/bold]
+            {"["}italic]As seguintes partes abrem mão das seguintes posses{"["}/italic{"]"}
 
             Contratado: Propriedade da Alma
             Contratado: Morte
 
-            [italic]Todas as cláusulas entram em vigor com a assinatura deste papel por ambas as partes.[/italic]
-            [italic][color=#ac3a0d]Cláusulas não podem ser quebradas. Nunca.[/color][/italic]
+             {"["}italic]Todas as cláusulas entram em vigor com a assinatura deste papel por ambas as partes.{"["}/italic]
+             {"["}italic]{"["}color=#ac3a0d]Cláusulas não podem ser quebradas. Nunca.{"["}/color]{"["}/italic]
