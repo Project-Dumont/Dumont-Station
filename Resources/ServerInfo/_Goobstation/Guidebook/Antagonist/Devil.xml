@@ -1,126 +1,126 @@
 <Document>
-  # Devil
+  # Diabo
 
-  [color=#ac3a0d]A devilish trickster with a silver tongue making deals around the station.[/color]
+  [color=#ac3a0d]Um trapaceiro demoníaco de língua afiada fazendo acordos pela estação.[/color]
 
-  A devil is an entity originating from some ungodly dimension far, far away from our own.
+  Um diabo é uma entidade originária de alguma dimensão profana, muito, muito distante da nossa.
   <Box>
-    <GuideEntityEmbed Entity="PaperDevilContract" Caption="Contract"/>
-    <GuideEntityEmbed Entity="ClothingUniformJumpsuitDevil" Caption="Devilish Attire"/>
+    <GuideEntityEmbed Entity="PaperDevilContract" Caption="Contrato"/>
+    <GuideEntityEmbed Entity="ClothingUniformJumpsuitDevil" Caption="Traje Demoníaco"/>
   </Box>
 
-  Unlike most depictions in media, a devil isn't easy to find at a glance. There's no fire and brimstone, no pitchfork and screaming. The easiest way to tell is that red glow in their eyes, and sometimes the horns or tail.
-  [bold] Not everyone with a tail or horns is a devil, that's just specist! [/bold]
+  Ao contrário da maioria das representações na mídia, um diabo não é fácil de identificar à primeira vista. Não há fogo e enxofre, nem tridente e gritos. O jeito mais fácil de perceber é o brilho vermelho nos olhos, e às vezes os chifres ou o rabo.
+  [bold] Nem todo mundo com rabo ou chifres é um diabo, isso é especismo! [/bold]
 
-  Despite their usually not-so-good intentions, a Devil is still considered crew!
-  As a Devil, [color=red][bold] you should not interfere with station affairs unless you are directly asked, or you can make a deal out of it. [/bold][/color]
+  Apesar das intenções geralmente não tão boas, um Diabo ainda é considerado tripulação!
+  Como Diabo, [color=red][bold] você não deve interferir nos assuntos da estação a menos que seja solicitado diretamente, ou possa fazer um acordo com isso. [/bold][/color]
 
-  Under normal circumstances, [color=red][bold] a crew member making a deal with the Devil should be considered a crime [/bold][/color]
+  Em circunstâncias normais, [color=red][bold] um membro da tripulação que faz um acordo com o Diabo deve ser considerado criminoso [/bold][/color]
 
-  ## Contracts
+  ## Contratos
 
-  The bread and butter of a devil is their [color=darkred]contracts[/color]. When signing a contract, various effects can be applied onto an entity.
+  O "arroz com feijão" de um diabo são seus [color=darkred]contratos[/color]. Ao assinar um contrato, vários efeitos podem ser aplicados a uma entidade.
 
-  Contracts are indestructible once signed, there's no going back once pen touches parchment.
+  Contratos são indestrutíveis após assinados, não há volta depois que a caneta toca o pergaminho.
 
-  The particular effect of a contract changes depending on which [bold] clauses [/bold] are written on it.
-  Effects can be applied to the Contractor, the Devil, or the Contractee, the signer.
+  O efeito particular de um contrato muda dependendo de quais [bold] cláusulas [/bold] estão escritas nele.
+  Efeitos podem ser aplicados ao Contratante, ao Diabo, ou ao Contratado, o assinante.
 
-  Prefixing a [bold]Clause[/bold] with either "Contractee:" or "Contractor:" will dictate who it applies to.
+  Prefixar uma [bold]Cláusula[/bold] com "Contratado:" ou "Contratante:" define a quem ela se aplica.
 
-  A [bold]Clause[/bold] is a concept or thing that one of the parties is giving up, either to the other party or destroying it entirely.
+  Uma [bold]Cláusula[/bold] é um conceito ou coisa que uma das partes está abrindo mão, seja para a outra parte ou destruindo completamente.
 
-  Example:
-    Contractee: Weakness
-    Contractee: Soul
+  Exemplo:
+    Contratado: Fraqueza
+    Contratado: Alma
 
-  In the above contract, the contractee is giving up their weakness and the rights to their soul.
-  Giving up your weakness will grant you massive resistance to all damage types, but giving up your soul could have unforeseen consequences.
+  No contrato acima, o contratado está abrindo mão de sua fraqueza e dos direitos sobre sua alma.
+  Abrir mão da fraqueza concede grande resistência a todos os tipos de dano, mas abrir mão da alma pode ter consequências imprevisíveis.
 
-  ## Contract Weight
+  ## Peso do Contrato
 
-  Every contract has a weight associated with it, which can be viewed by inspecting it.
-  Contracts with an uneven weight (below zero) cannot be signed.
+  Todo contrato tem um peso associado, que pode ser visto ao inspecioná-lo.
+  Contratos com peso desigual (abaixo de zero) não podem ser assinados.
 
-  Each clause has its own weight value.
-  As a general rule of thumb, the better the clause is for the contractee the higher the weight will be.
+  Cada cláusula tem seu próprio valor de peso.
+  Como regra geral, quanto melhor a cláusula para o contratado, maior será o peso.
 
-  This effectively means you have to balance good clauses with bad clauses.
-  [italic] It's important to note that there is no limit on how many bad clauses you can put on one contract, always read the fine-print! [/italic]
+  Isso significa que você precisa equilibrar cláusulas boas com cláusulas ruins.
+  [italic] É importante notar que não há limite para quantas cláusulas ruins você pode colocar em um contrato, sempre leia as letras miúdas! [/italic]
 
-  ## Selling your soul?
+  ## Vendendo sua alma?
 
-  Selling your soul is a fickle thing; and usually what most devils are after.
-  As a devil, your main objective is to collect as many souls as possible. The more souls you gain, the more powerful you become.
+  Vender sua alma é algo delicado; e geralmente é o que a maioria dos diabos busca.
+  Como diabo, seu objetivo principal é coletar o máximo de almas possível. Quanto mais almas você conseguir, mais poderoso se tornará.
 
-  As a contractee, selling your soul has consequences.
-  - Without a soul, you will go [bold][color=red]STRAIGHT[/color][/bold] to hell on death. No more second chances.
-  - You cannot make any more deals after selling your soul.
-  - You will be marked as "Condemned", which could have other consequences.
+  Como contratado, vender sua alma tem consequências.
+  - Sem alma, você irá [bold][color=red]DIRETO[/color][/bold] para o inferno ao morrer. Sem segundas chances.
+  - Você não pode fazer mais acordos após vender sua alma.
+  - Você será marcado como "Condenado", o que pode trazer outras consequências.
 
-  A Devil may want to be wary of the stations security team after purchasing a soul, [bold] as it can be considered prevention of revival. [/bold]
+  Um Diabo deve tomar cuidado com a equipe de segurança da estação após comprar uma alma, [bold] pois pode ser considerado prevenção de ressuscitação. [/bold]
 
-  ## No such thing as no second chances.
+  ## Não existe isso de sem segunda chance.
 
-  A devil can increase their overall power level by collecting enough souls during the duration of their stay on station.
-  Upon reaching the first level, they unlock the ability to create revival contracts.
+  Um diabo pode aumentar seu poder geral coletando almas suficientes durante sua estadia na estação.
+  Ao atingir o primeiro nível, ele desbloqueia a habilidade de criar contratos de ressurreição.
 
-  These contracts can be used on a corpse to offer that ghost a second chance at life.
-  When accepting, they will lose their soul in-exchange for a second chance at life.
+  Esses contratos podem ser usados em um cadáver para oferecer ao fantasma uma segunda chance de vida.
+  Ao aceitar, ele perderá a alma em troca de uma segunda chance.
 
-  ## Possession?
+  ## Possessão?
 
-  A devil unlocks the ability to possess targets at the second level.
-  Possession allows them to temporarily take over a targets body and do practically whatever they want.
+  Um diabo desbloqueia a habilidade de possuir alvos no segundo nível.
+  Possessão permite tomar temporariamente o corpo de um alvo e fazer praticamente o que quiser.
 
-  However, there are a few things they [italic] cannot [/italic] do:
-  - Harm themselves or others.
-  - Perform actions related to their implants or clothing.
+  No entanto, há algumas coisas que ele [italic] não pode [/italic] fazer:
+  - Ferir a si mesmo ou outros.
+  - Realizar ações relacionadas a implantes ou roupas.
 
-  You may only possess targets that are vulnerable to it, such as people who have sold their soul.
+  Você só pode possuir alvos vulneráveis a isso, como pessoas que venderam a alma.
 
-  ## Won't you shake a poor sinners hand?
+  ## Não vai apertar a mão de um pobre pecador?
 
-  As depicted in many different forms of media, a good old-fashioned handshake is practically unbeatable.
-  Shaking hands with a devil will provide you with a quick and easy reward: Full health, and a second life.
+  Como mostrado em várias mídias, um bom e velho aperto de mão é praticamente imbatível.
+  Apertar a mão de um diabo lhe dará uma recompensa rápida: Vida cheia e uma segunda chance.
 
-  The cost? Well, let's just say it varies.
-  You'll lose your soul immediately, and also gain one random negative clause from the list of clauses.
+  O custo? Bem, digamos que varia.
+  Você perderá sua alma imediatamente e também ganhará uma cláusula negativa aleatória da lista.
 
-  ## Dealing with the devil.
+  ## Lidando com o diabo.
 
-  Sometimes, in pursuit of finishing their end of a deal, a devil can become quite troublesome for the stations inhabitants.
-  Whether this be through it stealing items, or offering ungodly power to the stations enemies; it's clear to see why someone might want to get rid of one.
+  Às vezes, ao tentar cumprir sua parte do acordo, um diabo pode se tornar problemático para os habitantes da estação.
+  Seja roubando itens ou oferecendo poder profano aos inimigos da estação; é fácil entender por que alguém gostaria de se livrar de um.
 
-  Luckily for them, there's several ways to deal with a devil.
-  - Pronouncing the true name of a devil will stun them.
-  - A bible or holy water will burn a devil to the touch.
-  - Chaplains can utilize bibles to banish a devil.
+  Felizmente, há várias formas de lidar com um diabo.
+  - Pronunciar o nome verdadeiro de um diabo o atordoa.
+  - Uma bíblia ou água benta queima o diabo ao toque.
+  - Capelães podem usar bíblias para banir um diabo.
 
-  As one would guess, a chaplain is more effective at facing a devil than most.
-  Chaplains cannot be tricked to give up their soul, as they already pledged it to whatever God(s) they believe in.
+  Como se espera, um capelão é mais eficaz contra um diabo do que a maioria.
+  Capelães não podem ser enganados a entregar sua alma, pois já a dedicaram a seu(s) Deus(es).
 
-  When a chaplain uses a bible on critical or otherwise incapacitated devil, they can temporarily banish them.
-  For the next couple of minutes or so, that devil will be unable to sustain a material form.
+  Quando um capelão usa a bíblia em um diabo crítico ou incapacitado, pode baní-lo temporariamente.
+  Pelos próximos minutos, o diabo não conseguirá manter uma forma material.
 
-  [bold]When a chaplain speaks a devils true name, it will harm them [color=red]significantly![/bold][/color]
+  [bold]Quando um capelão fala o nome verdadeiro de um diabo, isso o fere [color=red]significativamente![/bold][/color]
 
-  ## True or fake name?
+  ## Nome verdadeiro ou falso?
 
-  When a devil arrives at a station they take the form of a random crew member.
-  Whether they are possessed, shape-shifted, or perhaps just a coincidental twin, they'll replace someone on station.
+  Quando um diabo chega à estação, assume a forma de um tripulante aleatório.
+  Seja possuído, metamorfoseado ou apenas um gêmeo por coincidência, ele substituirá alguém na estação.
 
-  What's important is that devil's [bold]cannot replace command staff or security members. [/bold]
+  O importante é que diabos [bold]não podem substituir membros da chefia ou da segurança. [/bold]
 
-  In all manners but one, a devil will appear with their false name.
-  The only way to view a devils true name is to read a contract they have signed, or ask them directly.
+  Em todos os aspectos, exceto um, um diabo aparecerá com seu nome falso.
+  A única forma de ver o nome verdadeiro de um diabo é ler um contrato assinado por ele ou perguntar diretamente.
 
-  ## Trickery goes both ways!
+  ## A trapaça vai nos dois sentidos!
 
-  The contractee is not the only person that can be tricked.
-  Contract weight is applied [bold] no matter who the effect applies to [/bold]
+  O contratado não é o único que pode ser enganado.
+  O peso do contrato é aplicado [bold] não importa para quem o efeito se aplica [/bold]
 
-  This means if you can trick a devil to sign a paper negatively affecting them, you can get some positive clauses for free!
+  Isso significa que, se você conseguir enganar um diabo a assinar um papel que o prejudique, pode conseguir cláusulas positivas de graça!
 
-  [textlink="Learn more about each clause." link="DevilClauses"]
+  [textlink="Saiba mais sobre cada cláusula." link="DevilClauses"]
 </Document>
