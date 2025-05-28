@@ -175,7 +175,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Porte de Artefato" link="producaoProibida"]
+        [textlink="Porte de Artefato" link="porteArtefato"]
       </Box>
     </ColorBox>
     

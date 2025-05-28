@@ -453,6 +453,7 @@
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
   children:
     - homicidio
+    - porteArtefato
     - lesaoCorporal
     - omissaoDeSocorros
     - sequestro
@@ -828,6 +829,13 @@
   ruleEntry: true
   priority: 1
   text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/aplicacao.xml"
+
+- type: guideEntry
+  id: porteArtefato
+  name: guide-entry-space-law-porteArtefato
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/porteArtefato.xml"
 
 - type: guideEntry
   id: BanTypes
