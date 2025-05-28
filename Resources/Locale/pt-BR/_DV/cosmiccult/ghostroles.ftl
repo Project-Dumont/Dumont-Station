@@ -1,5 +1,5 @@
-ghost-role-information-theunknown-name = The Unknown
-ghost-role-information-theunknown-description = The Cosmic Cult has won. An fragment of cosmic power extrudes into realspace.
+ghost-role-information-theunknown-name = O Desconhecido
+ghost-role-information-theunknown-description = O Culto Cósmico triunfou. Um fragmento de poder cósmico extrude-se no espaço real.
 ghost-role-information-theunknown-rules = ...
 
 roles-antag-rogue-ascended-name = Ascendente Astral
