@@ -1,5 +1,5 @@
 # Geral
-monument-interface-title = O monolito
+monument-interface-title = O Monólito
 monument-interface-occupied = Alguém mais está usando isso agora.
 
 # Barra de progresso
