@@ -38,3 +38,8 @@ alert-level-epsilon-instructions = Considerem todos os contratos expirados.
 alert-level-omicron = Omicron
 alert-level-omicron-announcement = A Central de Comando tomou controle total da estação. Aguardem ordens futuras dos oficiais da Central de Comando, fiquem em seus departamentos.
 alert-level-omicron-instructions = Aguarde ordens da Central de Comando.
+
+## DeltaV - Cosmic Cult
+alert-level-octarine = Octarina
+alert-level-octarine-announcement = Um evento noosférico cataclísmico ameaça envolver o espaço real. A tripulação da estação deve conter o evento se possível, ou evacuar.
+alert-level-octarine-instructions = Os tripulantes são aconselhados a ouvir os chefes de departamento para obter mais informações.

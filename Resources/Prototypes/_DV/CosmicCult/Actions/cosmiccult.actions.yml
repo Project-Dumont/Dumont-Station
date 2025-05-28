@@ -8,8 +8,8 @@
 
 - type: entity
   id: ActionCosmicSiphon
-  name: Siphon Entropy
-  description: Silently siphon entropy from your target, dealing some damage in the process.
+  name: Drenar Entropia
+  description: Drene entropia silenciosamente do seu alvo, causando dano no processo.
   components:
   - type: EntityTargetAction
     deselectOnMiss: true
@@ -28,8 +28,8 @@
 
 - type: entity
   id: ActionCosmicBlank
-  name: Shunt Subjectivity
-  description: Shunt your target's mind out of their body and unto the cosmic dark, temporarily rendering their body mindless.
+  name: Transferir Subjetividade
+  description: Expulse a mente do seu alvo de seu corpo para a escuridão cósmica, tornando seu corpo temporariamente sem mente.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
@@ -50,8 +50,8 @@
 
 - type: entity
   id: ActionCosmicPlaceMonument
-  name: Beckon The Monument
-  description: Call forth The Monument into realspace. Keep it hidden and safe from non-cultists!
+  name: Convocar o Monólito
+  description: Traga o Monólito para o espaço real. Mantenha-o escondido e seguro dos não-cultistas!
   categories: [ HideSpawnMenu ]
   components:
   - type: ConfirmableAction
@@ -69,8 +69,8 @@
 
 - type: entity
   id: ActionCosmicMoveMonument
-  name: Relocate The Monument
-  description: Your work is imperative, and the end is inevitable. Ensure that it is completed under your watch.
+  name: Realocar o Monólito
+  description: Seu trabalho é imperativo, e o fim é inevitável. Certifique-se de que seja concluído sob sua supervisão.
   categories: [ HideSpawnMenu ]
   components:
   - type: ConfirmableAction
@@ -88,8 +88,8 @@
 
 - type: entity
   id: ActionCosmicReturn
-  name: Return
-  description: Dissipate your astral projection and return to your body.
+  name: Retornar
+  description: Dissipe sua projeção astral e retorne ao seu corpo.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -102,8 +102,8 @@
 
 - type: entity
   id: ActionCosmicLapse
-  name: Abberant Lapse
-  description: Lapse your target's corporeal form, temporarily rendering it immutable, impassible, and frozen in place.
+  name: Lapso Aberrante
+  description: Faça a forma corpórea do seu alvo entrar em lapso, tornando-a temporariamente imutável, intransponível e congelada no lugar.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
@@ -121,8 +121,8 @@
 
 - type: entity
   id: ActionCosmicGlare
-  name: Null Glare
-  description: Emit a horrific pulse of cosmic light, slowing and disorienting everyone around you.
+  name: Clarão Nulo
+  description: Emita um pulso horrível de luz cósmica, desacelerando e desorientando todos ao seu redor.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -135,8 +135,8 @@
 
 - type: entity
   id: ActionCosmicIngress
-  name: Force Ingress
-  description: Use a concentrated blast of power to force a secure doorway open.
+  name: Forçar Entrada
+  description: Use uma explosão concentrada de poder para forçar a abertura de uma porta de segurança.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
@@ -153,8 +153,8 @@
 
 - type: entity
   id: ActionCosmicImposition
-  name: Vacuous Imposition
-  description: You negate any incoming damage for a short time.
+  name: Imposição Vazia
+  description: Você nega qualquer dano recebido por um curto período de tempo.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -167,8 +167,8 @@
 
 - type: entity
   id: ActionCosmicNova
-  name: Astral Nova
-  description: Hurl a large and disruptive blast of astral energy.
+  name: Nova Astral
+  description: Lance uma grande e disruptiva explosão de energia astral.
   categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
@@ -185,8 +185,8 @@
 
 - type: entity
   id: ActionRogueCosmicNova
-  name: Usurped Astral Nova
-  description: Hurl a large and disruptive blast of astral energy.
+  name: Nova Astral Usurpada
+  description: Lance uma grande e disruptiva explosão de energia astral.
   categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
@@ -201,8 +201,8 @@
 
 - type: entity
   id: ActionRogueInfection
-  name: Malign Corruption
-  description: Instill the essence of endings into a subdued target.
+  name: Corrupção Maligna
+  description: Instile a essência dos finais em um alvo subjugado.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
@@ -224,8 +224,8 @@
 
 - type: entity
   id: ActionRogueSlumber
-  name: Slumber Shell
-  description: Instantly slumber a target's mortal shell, rendering them asleep and ready for Malign Corruption.
+  name: Casulo do Sono
+  description: Faça instantaneamente o corpo mortal de um alvo adormecer, tornando-o pronto para a Corrupção Maligna.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
@@ -247,8 +247,8 @@
 
 - type: entity
   id: ActionRogueGrandShunt
-  name: Malign Mindspike
-  description: Shunt the minds of all nearby out of their body and unto the cosmic dark, temporarily rendering their body mindless.
+  name: Espeto Mental Maligno
+  description: Expulse as mentes de todos próximos de seus corpos para a escuridão cósmica, tornando seus corpos temporariamente sem mente.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

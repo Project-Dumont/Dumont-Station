@@ -11,8 +11,8 @@
   abstract: true
   parent: BaseStructure
   id: MonumentCosmicCultBase
-  name: The Monument
-  description: A great slab of unknowledge, only visible to those aware of it. Built of a thousand little nothings, its surface reflects a starless emptiness...
+  name: O monolito
+  description: Uma grande laje de desconhecimento, visível apenas para aqueles que têm consciência dela. Construída de mil pequenos nadas, sua superfície reflete um vazio sem estrelas...
   placement:
     mode: AlignTileAny
   components:
