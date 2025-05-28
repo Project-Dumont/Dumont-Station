@@ -19,28 +19,36 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Table Columns="4">
     <ColorBox>
       <Box>
-        I - DISPOSIÇÕES GERAIS
+        I
+        \n
+        DISPOSIÇÕES GERAIS
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        II - CONTRA A VIDA
+        II
+        \n
+        CONTRA A VIDA
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        III - PATRIMÔNIO
+        III
+        \n
+        PATRIMÔNIO
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        IV - NANOTRASEN
+        IV
+        \n
+        NANOTRASEN
       </Box>
     </ColorBox>
    
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Anterioridade do crime." link="anterioridadeDoCrime"]
+        [textlink="Anterioridade\ndo crime." link="anterioridadeDoCrime"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -55,18 +63,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Traição Corporativa" link="traicaoCorporativa"]
+        [textlink="Traição\nCorporativa" link="traicaoCorporativa"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Intenção do crime." link="intencaoDoCrime"]
+        [textlink="Intenção\ndo crime." link="intencaoDoCrime"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Lesão corporal" link="lesaoCorporal"]
+        [textlink="Lesão\ncorporal" link="lesaoCorporal"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -87,7 +95,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Omissão de socorros" link="omissaoDeSocorros"]
+        [textlink="Omissão de\nsocorros" link="omissaoDeSocorros"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -124,7 +132,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Exercício da função" link="exercicioDaFuncao"]
+        [textlink="Exercício\nda função" link="exercicioDaFuncao"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -144,7 +152,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      [textlink="Omissão Administrativa" link="omissaoAdministrativa"]
+      [textlink="Omissão\nAdministrativa" link="omissaoAdministrativa"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -176,13 +184,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Porte de Artefato" link="porteArtefato"]
+        [textlink="Porte de\nArtefato" link="porteArtefato"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Crime impossível" link="crimeImpossivel"]
+        [textlink="Crime\nimpossível" link="crimeImpossivel"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -195,7 +203,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Falsidade Ideológica" link="falsidadeIdeologica"]
+        [textlink="Falsidade\nIdeológica" link="falsidadeIdeologica"]
       </Box>
     </ColorBox>
     
@@ -233,13 +241,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Produção Proibida" link="producaoProibida"]
+        [textlink="Produção\nProibida" link="producaoProibida"]
       </Box>
     </ColorBox>
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Legítima defesa" link="legitimaDefesa"]
+        [textlink="Legítima\ndefesa" link="legitimaDefesa"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -295,27 +303,35 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Table Columns="4">
      <ColorBox>
       <Box>
-        V - ADMINISTRATIVOS
+        V
+        \n
+        ADMINISTRATIVOS
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        VI - CONTRA A HONRA
+        VI
+        \n
+        CONTRA A HONRA
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        VII - CONTRA A ORDEM
+        VII
+        \n
+        CONTRA A ORDEM
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        VIII - CAPITAL
+        VIII
+        \n
+        CAPITAL
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Abuso de poder" link="abusoDePoder"]
+        [textlink="Abuso de\npoder" link="abusoDePoder"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -359,21 +375,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Desrespeito à Autoridade" link="desrespeitoAutoridade"]
+        [textlink="Desrespeito\nà Autoridade" link="desrespeitoAutoridade"]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Obstrução de Justiça" link="obstrucaoJustica"]
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Omissão Administrativa" link="omissaoAdministrativa"]
+        [textlink="Obstrução\nda Justiça" link="obstrucaoJustica"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -382,7 +389,16 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Evasão de Prisão" link="evasaoPrisao"]
+        [textlink="Omissão\nAdministrativa" link="omissaoAdministrativa"]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [textlink="Evasão de\nPrisão" link="evasaoPrisao"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -400,7 +416,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Associação Criminosa" link="associacaoCriminosa"]
+        [textlink="Associação\nCriminosa" link="associacaoCriminosa"]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -426,7 +442,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [textlink="Conduta Inadequada" link="condutaInadequada"]
+        [textlink="Conduta\nInadequada" link="condutaInadequada"]
       </Box>
     </ColorBox>
     <ColorBox>
