@@ -476,6 +476,7 @@
     - producaoProibida
     - abusoDePoder
     - abandono
+    - omissao
     - prevaricacao
     - omissaoAdministrativa
     - negligencia
@@ -839,6 +840,13 @@
   ruleEntry: true
   priority: 1
   text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/porteArtefato.xml"
+
+- type: guideEntry
+  id: omissao
+  name: guide-entry-space-law-omissao
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/omissao.xml"
 
 - type: guideEntry
   id: BanTypes

@@ -152,7 +152,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      [textlink="Omissão\nAdministrativa" link="omissaoAdministrativa"]
+      [textlink="Omissão" link="omissao"]
       </Box>
     </ColorBox>
     <ColorBox>
