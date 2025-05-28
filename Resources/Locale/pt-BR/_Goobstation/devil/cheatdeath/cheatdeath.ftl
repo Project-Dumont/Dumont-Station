@@ -1,8 +1,8 @@
 cheat-death-component-examined = [color=red] Algo lhe diz que {SUBJECT($target)} não tem medo da morte. [/color]
 cheat-death-component-remaining-revives = { $amount ->
-[0] Você não tem mais revives.
-[one] Você tem um revive restante.
-*[other] Você tem {$amount} revives restantes.
+  [0] Você não tem mais chances de reviver.
+  [one] Você tem uma chance de reviver restante.
+  *[other] Você tem {$amount} chances de reviver restantes.
 }
 
 cheat-death-component-remaining-revives-unlimited = Você tem uma quantidade ilimitada de revives. Não é divertido?
