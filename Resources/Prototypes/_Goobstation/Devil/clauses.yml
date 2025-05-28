@@ -156,15 +156,21 @@
     durationOfIncident: 10, 30
 
 - type: clause
+  id: umorgao
+  clauseWeight: 45
+  event: !type:DevilContractLoseOrganEvent
+
+- type: clause
   id: pernas
   clauseWeight: 40
   addedComponents:
   - type: LegsParalyzed
 
 - type: clause
-  id: umorgao
-  clauseWeight: 45
-  event: !type:DevilContractLoseOrganEvent
+  id: pazinterior
+  clauseWeight: 5
+  addedComponents:
+  - type: TileMovement
 
 - type: clause
   id: morte
