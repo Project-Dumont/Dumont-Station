@@ -71,7 +71,7 @@
 
 - type: entity
   id: ActionEndPossession
-  name: Terminar possess
+  name: Terminar possessão
   description: Cancela a possessão prematuramente.
   categories: [ HideSpawnMenu ]
   components:
