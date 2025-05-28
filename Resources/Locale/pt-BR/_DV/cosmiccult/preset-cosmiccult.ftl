@@ -87,7 +87,7 @@ cosmiccult-role-short-briefing =
 
 cosmiccult-role-conversion-fluff =
     Ao completar a invocação, um conhecimento indescritível de repente invade sua mente!
-    Uma revelação sem igual. Um fim para o sofrimento cíclico e sisyphean.
+    Uma revelação sem igual. Um fim para o sofrimento cíclico e sisifiano.
     Uma cortina suave se fecha.
 
     Tudo o que você precisa fazer é trazê-la.
