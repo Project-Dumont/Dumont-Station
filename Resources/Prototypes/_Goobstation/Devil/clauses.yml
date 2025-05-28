@@ -8,7 +8,7 @@
 # Any spaces on the written portion will be removed, so keep it all lowercase and one word.
 
 - type: clause
-  id: soulownership
+  id: propriedadedaalma
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
 
@@ -20,23 +20,23 @@
 #  - UplinkImplant
 
 - type: clause
-  id: weakness
+  id: fraqueza
   clauseWeight: -35
   damageModifierSet: DevilDealPositive
 
 - type: clause
-  id: fearoffire
+  id: medodofogo
   clauseWeight: -20
   damageModifierSet: HellSpawn
 
 - type: clause
-  id: brokeness
+  id: quebrado
   clauseWeight: -20
   spawnedItems:
   - ClothingShoesRealJordansAutographed
 
 - type: clause
-  id: fearofspace
+  id: medodoespaco
   clauseWeight: -30
   addedComponents:
   - type: BreathingImmunity
@@ -44,7 +44,7 @@
   - type: SpecialLowTempImmunity
 
 - type: clause
-  id: fearofdeath
+  id: medodamorte
   clauseWeight: -25
   addedComponents:
   - type: MobThresholds
@@ -54,32 +54,32 @@
       201: Dead
 
 - type: clause
-  id: fearoflight
+  id: medodaluz
   clauseWeight: -15
   addedComponents:
   - type: FlashImmunity
 
 - type: clause
-  id: fearofelectricity
+  id: medodeeletricidade
   clauseWeight: -15
   addedComponents:
   - type: Insulated
 
 - type: clause
-  id: gluttony
+  id: gula
   clauseWeight: -15
   removedComponents:
   - type: Hunger
   - type: Thirst
 
 - type: clause
-  id: greed
+  id: ganancia
   clauseWeight: -10
   spawnedItems:
   - SpaceCash30000
 
 - type: clause
-  id: pain
+  id: dor
   clauseWeight: -5
   addedComponents:
   - type: PainNumbness
@@ -89,64 +89,64 @@
       80: 1
 
 - type: clause
-  id: chance
+  id: sorte
   clauseWeight: -20
   event: !type:DevilContractChanceEvent
 
 - type: clause
-  id: shadows
+  id: sombras
   clauseWeight: -25
   addedComponents:
   - type: Stealth
   - type: StealthOnMove
 
 - type: clause
-  id: humanity
+  id: humanidade
   clauseWeight: 25
   polymorph: MobFrogPolymorph
 
 - type: clause
-  id: strength
+  id: forca
   clauseWeight: 30
   damageModifierSet: DevilDealNegative
 
 - type: clause
-  id: willtofight
-  clauseWeight: 60
+  id: vontadedelutar
+  clauseWeight: 80
   addedComponents:
   - type: Pacified
 
 - type: clause
-  id: sight
+  id: visao
   clauseWeight: 60
   addedComponents:
   - type: PermanentBlindness
 
 - type: clause
-  id: coherence
+  id: coerencia
   clauseWeight: 30
   addedComponents:
   - type: BackwardsAccent
   - type: Clumsy
 
 - type: clause
-  id: voice
+  id: voz
   clauseWeight: 20
   addedComponents:
   - type: Muted
 
 - type: clause
-  id: aleg
+  id: umaperna
   clauseWeight: 30
   event: !type:DevilContractLoseLegEvent
 
 - type: clause
-  id: ahand
+  id: umamao
   clauseWeight: 30
   event: !type:DevilContractLoseHandEvent
 
 - type: clause
-  id: awake
+  id: acordado
   clauseWeight: 40
   addedComponents:
   - type: Narcolepsy
@@ -154,38 +154,32 @@
     durationOfIncident: 10, 30
 
 - type: clause
-  id: anorgan
-  clauseWeight: 45
-  event: !type:DevilContractLoseOrganEvent
-
-- type: clause
-  id: legs
+  id: pernas
   clauseWeight: 40
   addedComponents:
   - type: LegsParalyzed
 
 - type: clause
-  id: innerpeace
-  clauseWeight: 5
-  addedComponents:
-  - type: TileMovement
+  id: umorgao
+  clauseWeight: 45
+  event: !type:DevilContractLoseOrganEvent
 
 - type: clause
-  id: death
+  id: morte
   clauseWeight: -25
   addedComponents:
   - type: CheatDeath
     reviveAmount: 1
 
 - type: clause
-  id: mortality
+  id: mortalidade
   clauseWeight: -135
   addedComponents:
   - type: CheatDeath
     infiniteRevives: true
 
 - type: clause
-  id: time
+  id: tempo
   clauseWeight: 150
   addedComponents:
   - type: DelayedDeath
