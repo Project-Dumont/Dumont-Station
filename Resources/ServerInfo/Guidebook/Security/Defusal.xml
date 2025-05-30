@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-﻿<Document>
-  # Desativação de Bomba Grande
-  Então, você encontrou uma bomba grande e ela está apitando. Essas bombas demoram muito para detonar e abrem um grande buraco no casco. Continue lendo e ninguém explodirá.
-=======
 <!--
 SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
 SPDX-FileCopyrightText: 2023 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
@@ -13,9 +8,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Large Bomb Defusal
-  So, you found a large bomb and it's beeping. These bombs take a long time to detonate and punch a big hole into the hull. Just keep reading, and nobody will explode.
->>>>>>> goob/master
+  # Desativação de Bomba Grande
+  Então, você encontrou uma bomba grande e ela está apitando. Essas bombas demoram muito para detonar e abrem um grande buraco no casco. Continue lendo e ninguém explodirá.
+
 
   ## Engrenagem
   Você precisa de duas ferramentas essenciais para realizar a desativação; no entanto, uma multiferramenta é extremamente útil em termos de identificação de fios.

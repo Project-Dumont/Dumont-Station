@@ -13,22 +13,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobMoth" Caption=""/>
   </Box>
 
-<<<<<<< HEAD
-  Eles Conseguem comer algodão, tecidos e roupas, mas virtualmente quase nenhuma das comidas que outros consideram "comestíveis". Eles preferem uma temperatura mais baixa que os humanos.
-  O Sangue de Inseto deles não pode ser recuperado usando Ferro, como sangue normal.
+Eles podem comer algodão, tecidos e roupas, mas praticamente nenhum dos alimentos que outros considerariam "comestíveis". Preferem uma faixa de temperatura um pouco mais baixa do que os humanos. São obcecados pelo número "65".
 
-  As suas asas dão uma aceleração melhor se a estação não tiver gravidade, mas eles não conseguem se mover sem equipamento enquanto flutuam no espaço.
+Suas asas lhes dão melhor aceleração se não houver gravidade na estação, mas ainda assim não conseguem se mover sem equipamento quando estão flutuando no espaço.
 
-  Eles tomam [color=#1e90ff]30% menos de dano Congelante[/color] mas [color=#ffa500]30% a mais de dano de Calor, e pegam fogo mais facilmente[/color].
-=======
-  They can eat cotton, fabrics and clothing, but virtually none of the food that others would consider "edible". They prefer a somewhat lower temperature range than humans. They are obsessed with the number "65".
+Também podem dar pequenos impulsos a cada 6,5 segundos usando as asas, mas isso requer a presença de gravidade. No entanto, se movem 6,5% mais devagar do que outras espécies devido às pernas fracas.
 
-  Their wings give them better acceleration if there is no gravity on the station, but they still can't move without equipment when floating out in space.
-  They can also dash small distances once in 6.5 seconds using their wings, but that requires the gravity to be present. However they move 6.5% slower than other species due to their weak legs.
+Eles recebem 30% menos dano por Frio, mas 30% mais dano por Calor e 6,5% mais dano físico (Bruto), além de pegarem fogo com mais facilidade.
 
-  They take [color=#1e90ff]30% less Cold damage[/color] but [color=#ffa500]30% more Heat and 6.5% more Brute damage, and catch on fire more easily[/color].
-
-  They are also 6.5% lighter than most species.
->>>>>>> goob/master
+Também são 6,5% mais leves do que a maioria das espécies.
 
 </Document>

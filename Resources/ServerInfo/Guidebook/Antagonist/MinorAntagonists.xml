@@ -17,19 +17,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   A maioria, se não todos, os Antagonistas Menores são papéis controlados por fantasmas que dão aos mortos novas maneiras de causar caos na estação. Eles são gerados por eventos aleatórios.
 
-<<<<<<< HEAD
-  # Aparição
-=======
-  # Paradox Clone
+  # Clone Paradoxo
 
   <Box>
     <GuideEntityEmbed Entity="ParadoxCloneDummy"/>
   </Box>
 
-  A perfect copy of a random crewmember that was thrown into our universe by a space-time anomaly. To fix the paradox and survive they have to find and kill their original counterpart. They have no special abilities, but are have identical appearance, DNA, fingerprints, clothing, equipment and IDs, making it hard to figure out who is the orginal and who is the clone, unless you know your fellow crewmembers well.
-
-  # Revenant
->>>>>>> goob/master
+  Uma cópia perfeita de um tripulante aleatório que foi lançada em nosso universo por uma anomalia espaço-temporal. Para corrigir o paradoxo e sobreviver, ela precisa encontrar e matar sua contraparte original. Não possui habilidades especiais, mas tem aparência, DNA, impressões digitais, roupas, equipamentos e identidades idênticas aos do original, tornando difícil descobrir quem é o verdadeiro e quem é o clone — a menos que você conheça bem seus companheiros de tripulação.
+  # Aparição
 
   <Box>
     <GuideEntityEmbed Entity="MobRevenant"/>

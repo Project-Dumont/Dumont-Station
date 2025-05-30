@@ -101,7 +101,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="TritiumCanister"/>
     <GuideEntityEmbed Entity="AirCanister"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed "FrezonCanister" Caption="cilindro de frezon"/>
+    <GuideEntityEmbed Entity="FrezonCanister" Caption="cilindro de frezon"/>
   </Box>
 
   É crucial entender que um vazamento de frezon pode devastar a estação, causando um inferno congelante cheio de suéteres irritantes e queimaduras frias. O Frezon é muito frio e pode congelar a estação até a morte se até mesmo alguns moles se escaparem, então certifique-se de trancar seus cilindros ou simplesmente movê-los diretamente para uma sala de armazenamento.

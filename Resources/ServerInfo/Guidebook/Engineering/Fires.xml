@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<Document>
-  # Incêndios & Espaço
-=======
 <!--
 SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
@@ -19,7 +15,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
   # Fires
   Fires are arguably the most dangerous atmospheric upset that can occur on the station.
->>>>>>> goob/master
 
   Incêndios e vazamentos no espaço são uma inevitabilidade devido ao gás plasma altamente inflamável e ao vácuo infinito do espaço presentes na estação e ao redor dela, por isso é importante saber como gerenciá-los.
 
