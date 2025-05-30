@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Lgibb18 <65973111+Lgibb18@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Humanoid;
 using Content.Shared._Sunrise.Disease;
 namespace Content.Client._Sunrise.Disease;
