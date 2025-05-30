@@ -245,8 +245,8 @@ public sealed class SickSystem : SharedSickSystem
                 {
                     if (TryComp<DiseaseRoleComponent>(component.owner, out var disease))
                     {
-                        var kind = SuicideKind.Piercing;
-                        if (_prototypeManager.TryIndex<DamageTypePrototype>(kind.ToString(), out var damagePrototype))
+                        var kind = "Piercing"; // Use damage type id directly
+                        if (_prototypeManager.TryIndex<DamageTypePrototype>(kind, out var damagePrototype))
                         {
                             _damageableSystem.TryChangeDamage(uid, new(damagePrototype, 0.25f * disease.Lethal), true, origin: uid);
                         }
@@ -292,8 +292,8 @@ public sealed class SickSystem : SharedSickSystem
                 if (TryComp<DiseaseRoleComponent>(component.owner, out var dis))
                 {
                     _stun.TryParalyze(uid, TimeSpan.FromSeconds(5), false);
-                    var kind = SuicideKind.Shock;
-                    if (_prototypeManager.TryIndex<DamageTypePrototype>(kind.ToString(), out var damagePrototype))
+                    var kind = "Shock"; // Use damage type id directly
+                    if (_prototypeManager.TryIndex<DamageTypePrototype>(kind, out var damagePrototype))
                     {
                         _damageableSystem.TryChangeDamage(uid, new(damagePrototype, 0.35f * dis.Lethal), true, origin: uid);
                     }

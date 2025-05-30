@@ -9,7 +9,6 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Paper;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -25,8 +24,9 @@ using Robust.Shared.Prototypes;
 using System.Linq;
 using Robust.Shared.Serialization;
 using Content.Shared.Chemistry.Reagent;
-using System.Linq;
 using System.Text;
+using Content.Shared.Power;
+
 namespace Content.Server.Chemistry.EntitySystems;
 
 /// <inheritdoc/>
@@ -132,7 +132,7 @@ public sealed class VaccinatorSystem : SharedVaccinatorSystem
                     }
                 }
                 text.AppendLine("После чего положить полученную жидкость в вакцинатор, добавив одну каплю крови здорового человека.");
-                if(TryComp<PaperComponent>(printed, out var paperComp))
+                if (TryComp<PaperComponent>(printed, out var paperComp))
                 {
                     _paperSystem.SetContent((printed, paperComp), text.ToString());
                 }

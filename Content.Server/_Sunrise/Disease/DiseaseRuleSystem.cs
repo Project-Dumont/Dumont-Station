@@ -30,7 +30,7 @@ public sealed class DiseaseRuleSystem : GameRuleSystem<DiseaseRuleComponent>
             var message = Loc.GetString("disease-biohazard-announcement");
             var sender = Loc.GetString("disease-biohazard-announcement-sender");
             
-            _chatSystem.DispatchGlobalAnnouncement(message, sender, playDefault: true, colorOverride: Color.Red);
+            _chatSystem.DispatchGlobalAnnouncement(message, sender, true, null, Color.Red);
         });
     }
 

@@ -9,7 +9,7 @@ using Robust.Shared.Random;
 using Content.Shared._Sunrise.Disease;
 using Content.Server.Store.Systems;
 using Robust.Shared.Prototypes;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Popups;
 using Content.Shared.Store.Components;
 
