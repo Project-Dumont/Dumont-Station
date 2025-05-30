@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
 // SPDX-FileCopyrightText: 2024 Lgibb18 <65973111+Lgibb18@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Babaev <129369024+babaevlsdd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
