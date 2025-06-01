@@ -292,5 +292,10 @@ Entries:
   changes:
     - type: Tweak
       message: Traduz completamente o devil (Diabo), que tenhamos mais pacto com o capeta!
+    - type: Tweak
+      message: Traduz completamente o Culto cosmico! Que vossa divindade venha a terra!
+    - type: Tweak
+      message: Rework completo na Space Law, tornando-a mais facil de ser consultada, e organizando-a mais facilmente pra aplicar penas rapidamente!
   id: 37
   time: '2025-05-28T15:00:00.0000000+00:00'
+
