@@ -1,4 +1,4 @@
-﻿<Document>
+<Document>
   # Regra de Silício 2 - Leis devem ser priorizadas em ordem (do menor ao maior).
   A maioria das Leis serão numeradas, com números maiores aparecendo por último. Leis com um número menor tem prioridade sobre Leis com números maiores.
 

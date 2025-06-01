@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Humanoid;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -18,7 +25,7 @@ public sealed partial class SurgeryAddMarkingStepComponent : Component
     ///     against the entity to validate that the marking is not already present.
     /// </summary>
     [DataField]
-    public String MatchString = "";
+    public string MatchString = string.Empty;
 
     /// <summary>
     ///     What type of organ is required for this surgery?

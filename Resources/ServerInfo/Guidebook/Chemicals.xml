@@ -1,4 +1,4 @@
-﻿<Document>
+<Document>
 # Produtos Químicos
 
 Produtos químicos são ferramentas poderosas que podem causar uma variedade de efeitos quando consumidos. Alguns podem ser encontrados em plantas, comprados de cargueiros ou sintetizados através da combinação com outros produtos químicos.
@@ -28,6 +28,9 @@ Conhecer os diferentes tipos de produtos químicos e seus efeitos é importante 
 
 ## Biológicos
 <GuideReagentGroupEmbed Group="Biological"/>
+
+## Special
+<GuideReagentGroupEmbed Group="Special"/>
 
 ## Outros
 <GuideReagentGroupEmbed Group="Unknown"/>

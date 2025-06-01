@@ -1,3 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2023 dribblydrone <119393097+dribblydrone@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Antagonistas
   Os antagonistas são a força motriz de todas as mudanças.
@@ -14,5 +22,7 @@
   - [textlink="Zumbis" link="Zombies"] que anseiam pela carne de cada membro da tripulação e criatura a bordo.
   - [textlink="Ninjas Espaciais" link="SpaceNinja"], mestres da espionagem e sabotagem com equipamentos especiais.
   - [textlink="Ladrões" link="Thieves"] movidos pela cleptomania, determinados a satisfazer seu vício usando suas luvas especiais.
+  - [textlink="O Culto Cósmico" link="CosmicCult"], que busca trazer o fim de todas as coisas.
   - [textlink="Diversas criaturas não humanoides" link="MinorAntagonists"] que geralmente atacam qualquer coisa que se mova.
+
 </Document>

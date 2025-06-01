@@ -1,0 +1,202 @@
+<Document>
+  ## Posse da Alma
+  <Box>
+    [color=#999999][italic]25 Peso[/italic][/color]
+  </Box>
+
+  - Transfere a posse de uma alma para o contratante.
+  - Padrão em todo contrato.
+
+  ## Morte
+  <Box>
+    [color=#999999][italic]-25 Peso[/italic][/color]
+  </Box>
+
+  - Permite ao contratado reviver exatamente uma vez ao morrer.
+  - Padrão em todo contrato.
+
+  ## Fraqueza
+  <Box>
+    [color=#999999][italic]-35 Peso[/italic][/color]
+  </Box>
+
+  - Reduz todo dano recebido pelo contratado pela metade.
+  - Aumenta o dano sagrado recebido.
+
+  ## Medo do Espaço
+  <Box>
+    [color=#999999][italic]-30 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado imune à pressão e baixas temperaturas.
+  - Remove a necessidade de respirar do contratado.
+
+  ## Sombras
+  <Box>
+    [color=#999999][italic]-25 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado invisível.
+
+  ## Medo da Morte
+  <Box>
+    [color=#999999][italic]-25 Peso[/italic][/color]
+  </Box>
+
+  - O contratado não entra em estado crítico. Ou está de pé, ou está morto.
+
+  ## Medo do Fogo
+  <Box>
+    [color=#999999][italic]-20 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado imune ao fogo e a ser incendiado.
+
+  ## Sorte
+  <Box>
+    [color=#999999][italic]-20 Peso[/italic][/color]
+  </Box>
+
+  - Concede ao contratado uma cláusula completamente aleatória. Quer tentar a sorte?
+
+  ## Quebrado
+  <Box>
+    [color=#999999][italic]-20 Peso[/italic][/color]
+  </Box>
+
+  - Concede ao contratado um par de tênis irados, assinados pelo próprio Michael Jordan.
+
+  ## Medo da Luz
+  <Box>
+    [color=#999999][italic]-15 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado imune a flashes.
+
+  ## Gula
+  <Box>
+    [color=#999999][italic]-15 Peso[/italic][/color]
+  </Box>
+
+  - O contratado não precisa de comida ou água.
+
+  ## Medo de Eletricidade
+  <Box>
+    [color=#999999][italic]-15 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado imune a choques elétricos.
+
+  ## Ganância
+  <Box>
+    [color=#999999][italic]-10 Peso[/italic][/color]
+  </Box>
+
+  - Concede ao alvo uma grande quantidade de dinheiro.
+
+  ## Dor
+  <Box>
+    [color=#999999][italic]-5 Peso[/italic][/color]
+  </Box>
+
+  - O contratado não sente dor e não sofre penalidades por ela.
+
+  ## Paz Interior
+  <Box>
+    [color=#999999][italic]5 Peso[/italic][/color]
+  </Box>
+
+  - Concede ao alvo paz. Eterna.
+
+  ## Força
+  <Box>
+    [color=#999999][italic]30 Peso[/italic][/color]
+  </Box>
+
+  - Faz o contratado receber o dobro de dano.
+
+  ## Humanidade
+  <Box>
+    [color=#999999][italic]25 Peso[/italic][/color]
+  </Box>
+
+  - Transforma o contratado em um sapo.
+
+  ## Coerência
+  <Box>
+    [color=#999999][italic]30 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado desastrado e bagunça sua fala.
+
+  ## Voz
+  <Box>
+    [color=#999999][italic]25 Peso[/italic][/color]
+  </Box>
+
+  - Silencia permanentemente o contratado.
+
+  ## Uma mão
+  <Box>
+    [color=#999999][italic]30 Peso[/italic][/color]
+  </Box>
+
+  - Amputa imediatamente uma das mãos do contratado.
+
+  ## Uma perna
+  <Box>
+    [color=#999999][italic]30 Peso[/italic][/color]
+  </Box>
+
+  - Amputa imediatamente uma das pernas do contratado.
+
+  ## Acordado
+  <Box>
+    [color=#999999][italic]40 Peso[/italic][/color]
+  </Box>
+
+  - Torna o alvo narcoléptico.
+
+  ## Pernas
+  <Box>
+    [color=#999999][italic]40 Peso[/italic][/color]
+  </Box>
+
+  - Paralisa permanentemente ambas as pernas do contratado.
+
+  ## Um órgão
+  <Box>
+    [color=#999999][italic]45 Peso[/italic][/color]
+  </Box>
+
+  - Remove um dos órgãos do contratado e joga no chão.
+  - Provavelmente será o coração.
+
+  ## Visão
+  <Box>
+    [color=#999999][italic]60 Peso[/italic][/color]
+  </Box>
+
+  - Cega permanentemente o contratado.
+
+  ## Vontade de lutar
+  <Box>
+    [color=#999999][italic]80 Peso[/italic][/color]
+  </Box>
+
+  - Pacifica permanentemente o contratado.
+
+  ## Tempo
+  <Box>
+    [color=#999999][italic]150 Peso[/italic][/color]
+  </Box>
+
+  - Mata o contratado após cinco minutos.
+
+  ## Mortalidade
+  <Box>
+    [color=#999999][italic]-135 Peso[/italic][/color]
+  </Box>
+
+  - Concede ao alvo reviver-se ilimitadas vezes.
+</Document>
