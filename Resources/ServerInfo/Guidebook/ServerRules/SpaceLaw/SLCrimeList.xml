@@ -12,8 +12,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
   # Space Law — Listagem de Crimes
-  Duas tabelas de crimes fáceis de consultar, separadas por grupos e com todos os acentos e gramática corrigidos para melhor leitura.
-  Códigos de crimes são coloridos por crimes conectados em grupo, que são coleções de crimes não-acumuláveis. Sufixos também estão inclusos no Guia Rápido para Crimes para identificar crimes conectados.
+  Duas tabelas de crimes fáceis de consultar, separadas por grupos criminais.
+  Abaixo das tabelas se encontra o código penal completo.
 
   ## Guia Rápido para Crimes
   <Table Columns="4">
