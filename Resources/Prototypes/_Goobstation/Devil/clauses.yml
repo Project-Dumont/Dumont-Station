@@ -11,7 +11,7 @@
 # Any spaces on the written portion will be removed, so keep it all lowercase and one word.
 
 - type: clause
-  id: Alma
+  id: alma
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
 
