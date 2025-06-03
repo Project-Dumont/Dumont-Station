@@ -23,15 +23,16 @@
 #  implants:
 #  - UplinkImplant
 
-- type: clause
-  id: fraqueza
-  clauseWeight: -35
-  damageModifierSet: DevilDealPositive
+# - type: clause
+#   id: fraqueza
+#   clauseWeight: -35
+#   damageModifierSet: DevilDealPositive
 
 - type: clause
   id: medodofogo
   clauseWeight: -20
-  damageModifierSet: HellSpawn
+  addedComponents:
+  - type: HeatImmunity
 
 - type: clause
   id: quebrado

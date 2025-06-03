@@ -1,4 +1,7 @@
 <Document>
+  # [color=#FF0000]ATENÇÂO:[/color] 
+    Os contratos não aceitam assentuação de qualquer tipo, clausulas devem ser escritos sem assentos para surtir efeito.
+
   ## Alma
   <Box>
     [color=#999999][italic]25 Peso[/italic][/color]
@@ -14,14 +17,6 @@
 
   - Permite ao contratado reviver exatamente uma vez ao morrer.
   - Padrão em todo contrato.
-
-  ## Fraqueza
-  <Box>
-    [color=#999999][italic]-35 Peso[/italic][/color]
-  </Box>
-
-  - Reduz todo dano recebido pelo contratado pela metade.
-  - Aumenta o dano sagrado recebido.
 
   ## Medo do Espaço
   <Box>
@@ -44,13 +39,6 @@
   </Box>
 
   - O contratado não entra em estado crítico. Ou está de pé, ou está morto.
-
-  ## Medo do Fogo
-  <Box>
-    [color=#999999][italic]-20 Peso[/italic][/color]
-  </Box>
-
-  - Torna o contratado imune ao fogo e a ser incendiado.
 
   ## Sorte
   <Box>
@@ -186,14 +174,14 @@
 
   - Pacifica permanentemente o contratado.
 
-  ## Tempo
+  ## Tempo (NÃO combine com Morte, causa perma death)
   <Box>
     [color=#999999][italic]150 Peso[/italic][/color]
   </Box>
 
   - Mata o contratado após cinco minutos.
 
-  ## Mortalidade
+  ## Mortalidade 
   <Box>
     [color=#999999][italic]-135 Peso[/italic][/color]
   </Box>
