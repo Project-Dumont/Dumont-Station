@@ -1,10 +1,13 @@
 <Document>
-  ## Mortality
+  # [color=#FF0000]ATENCAO:[/color]
+    Os contratos NAO aceitam acentuacao de qualquer tipo. Clausulas devem ser escritas SEM acentos para funcionar corretamente.
+
+  ## Mortalidade
   <Box>
-    [color=#999999][italic]-135 Weight[/italic][/color]
+    [color=#999999][italic]-135 Peso[/italic][/color]
   </Box>
 
-  - Grants the target an unlimited amount of self revives.
+  - Dá ao alvo uma quantidade ilimitada de auto-revives.
 
   ## Fraqueza
   <Box>
@@ -14,20 +17,20 @@
   - Reduz todo dano recebido pelo contratado pela metade.
   - Aumenta o dano sagrado recebido.
 
-  ## Fear of Death
+  ## Medo da morte
   <Box>
-    [color=#999999][italic]-25 Weight[/italic][/color]
+    [color=#999999][italic]-25 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee have no critical state. You stand, or you die.
+  - Faz com que o contratado não entre em estado crítico. Ou está de pé, ou está morto.
 
-  ## Death
+  ## Morte
   <Box>
-    [color=#999999][italic]-25 Weight[/italic][/color]
+    [color=#999999][italic]-25 Peso[/italic][/color]
   </Box>
 
-  - Allows the contractee to revive themselves exactly once on death.
-  - Default on every contract.
+  - Permite ao contratado reviver exatamente uma vez ao morrer.
+  - Padrão em todo contrato.
 
   ## Sombras
   <Box>
@@ -36,12 +39,12 @@
 
   - Torna o contratado invisível.
 
-  ## Brokeness
+  ## Quebrado
   <Box>
     [color=#999999][italic]-20 Peso[/italic][/color]
   </Box>
 
-  - Grants the contractee a pair of sick fucking jays, signed by Micheal Jordan himself.
+  - Concede ao contratado um par de tênis irados, assinados pelo próprio Michael Jordan.
 
   ## Sorte
   <Box>
@@ -50,12 +53,12 @@
 
   - Concede ao contratado uma cláusula completamente aleatória. Quer tentar a sorte?
 
-  ## Fear of Fire
+  ## Medo do Fogo
   <Box>
     [color=#999999][italic]-20 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to fire, and immune to being lit on fire.
+  - Torna o contratado imune a fogo e a ser incendiado.
 
   ## Medo da Luz
   <Box>
@@ -64,41 +67,40 @@
 
   - Torna o contratado imune a flashes.
 
-
   ## Medo de Eletricidade
   <Box>
     [color=#999999][italic]-15 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to electrical shocks.
+  - Torna o contratado imune a choques elétricos.
 
-  ## Gluttony
+  ## Gula
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee not need food or water.
+  - Faz o contratado não precisar de comida ou água.
 
-  ## Fear of Drowning
+  ## Medo de Afogamento
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 Peso[/italic][/color]
   </Box>
 
-  - Disables the contractees need to breathe.
+  - Remove a necessidade de respirar do contratado.
 
-  ## Fear of Crushing
+  ## Medo de Esmagamento
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to pressure damage.
+  - Torna o contratado imune a dano por pressão.
 
-  ## Fear of Freezing
+  ## Medo de Congelamento
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to low temperatures.
+  - Torna o contratado imune a baixas temperaturas.
 
   ## Ganância
   <Box>
@@ -121,41 +123,41 @@
 
   - Concede ao alvo paz. Eterna.
 
-  ## Voice
+  ## Voz
   <Box>
-    [color=#999999][italic]20 Weight[/italic][/color]
+    [color=#999999][italic]20 Peso[/italic][/color]
   </Box>
 
-  - Permanently mutes the contractee.
+  - Silencia permanentemente o contratado.
 
-  ## Soul Ownership
+  ## Posse da alma
   <Box>
-    [color=#999999][italic]25 Weight[/italic][/color]
+    [color=#999999][italic]25 Peso[/italic][/color]
   </Box>
 
-  - Transfers ownership of a soul to the contractor.
-  - Default on every contract.
+  - Transfere a posse de uma alma para o contratante.
+  - Padrão em todo contrato.
 
   ## Humanidade
   <Box>
     [color=#999999][italic]25 Peso[/italic][/color]
   </Box>
 
-  - Turns the contractee into a frog.
+  - Transforma o contratado em um sapo.
 
-  ## Strength
+  ## Força
   <Box>
-    [color=#999999][italic]30 Weight[/italic][/color]
+    [color=#999999][italic]30 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee take double damage.
+  - Faz o contratado receber o dobro de dano.
 
   ## Coerência
   <Box>
     [color=#999999][italic]30 Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee clumsy and messes up their speech.
+  - Torna o contratado desastrado e bagunça sua fala.
 
   ## Uma mão
   <Box>
@@ -202,7 +204,7 @@
 
   ## Vontade de lutar
   <Box>
-    [color=#999999][italic]60 Weight[/italic][/color]
+    [color=#999999][italic]60 Peso[/italic][/color]
   </Box>
 
   - Pacifica permanentemente o contratado.
@@ -212,5 +214,5 @@
     [color=#999999][italic]150 Peso[/italic][/color]
   </Box>
 
-  - Kills the contractee after five minutes.
+  - Mata o contratado após cinco minutos.
 </Document>

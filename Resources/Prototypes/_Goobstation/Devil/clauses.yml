@@ -12,7 +12,7 @@
 # Any spaces on the written portion will be removed, so keep it all lowercase and one word.
 
 - type: clause
-  id: alma
+  id: possedaalma
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
 
@@ -72,37 +72,19 @@
   - type: Thirst
 
 - type: clause
-  id: fearofdrowning
+  id: medodeafogamento
   clauseWeight: -10
   addedComponents:
   - type: SpecialBreathingImmunity
 
 - type: clause
-  id: fearofcrushing
+  id: medodeesmagamento
   clauseWeight: -10
   addedComponents:
   - type: SpecialPressureImmunity
 
 - type: clause
-  id: fearoffreezing
-  clauseWeight: -10
-  addedComponents:
-  - type: SpecialLowTempImmunity
-
-- type: clause
-  id: fearofdrowning
-  clauseWeight: -10
-  addedComponents:
-  - type: SpecialBreathingImmunity
-
-- type: clause
-  id: fearofcrushing
-  clauseWeight: -10
-  addedComponents:
-  - type: SpecialPressureImmunity
-
-- type: clause
-  id: fearoffreezing
+  id: medodecongelamento
   clauseWeight: -10
   addedComponents:
   - type: SpecialLowTempImmunity
