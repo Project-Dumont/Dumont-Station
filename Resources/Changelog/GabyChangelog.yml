@@ -306,4 +306,10 @@ Entries:
       message: Nerfa o evento de instigator
   id: 38
   time: '2025-06-05T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Corrige problemas de tradução do devil, vindos do update.
+  id: 39
+  time: '2025-06-06T15:00:00.0000000+00:00'
 
