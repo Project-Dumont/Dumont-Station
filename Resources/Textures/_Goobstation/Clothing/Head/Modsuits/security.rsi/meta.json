@@ -20,6 +20,14 @@
 		{
 			"name": "equipped-HEAD-sealed",
 			"directions": 4
+		},
+		{
+			"name": "equipped-HEAD-vulpkanin",
+			"directions": 4
+		},
+		{
+			"name": "equipped-HEAD-sealed-vulpkanin",
+			"directions": 4
 		}
   ]
 }
