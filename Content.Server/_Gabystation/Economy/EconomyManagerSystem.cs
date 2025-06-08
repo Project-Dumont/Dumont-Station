@@ -37,8 +37,8 @@ namespace Content.Server._Gabystation.Economy
 
             _chat.ChatMessageToOne(
                 Shared.Chat.ChatChannel.Server,
-                "You got an new [bold]NanoBank[/bold] account.",
-                $"Your account id is [bold]{number}[/bold] and your initial password is '[bold]{password}[/bold]'.",
+                Loc.GetString("economy-manager-chat-new-account"),
+                Loc.GetString("economy-manager-chat-new-account-wrapped", ("number", number), ("password", password)),
                 default,
                 false,
                 args.Player.Channel

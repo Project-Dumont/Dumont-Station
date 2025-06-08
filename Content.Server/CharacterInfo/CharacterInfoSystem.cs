@@ -81,12 +81,10 @@ public sealed class CharacterInfoSystem : EntitySystem
             if (mind.NanoBankAccount is not null)
             {
                 _bank.GetAccountPassword(mind.NanoBankAccount ?? 0, true, out var password);
-                nanoBankBriefing = $"NanoBank ID: {mind.NanoBankAccount} | Initial Password: {password}";
+                nanoBankBriefing = Loc.GetString("economy-character-info-briefing", ("number", mind.NanoBankAccount ?? 0), ("password", password));
             }
             else
-            {
-                nanoBankBriefing = $"No NanoBank account.";
-            }
+                nanoBankBriefing = Loc.GetString("economy-character-info-unknow");
         }
 
         RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, nanoBankBriefing), args.SenderSession);

@@ -39,7 +39,7 @@ public sealed class GetBankCurrencyCommand : IConsoleCommand
                     var (accountId, uid, account) = entry;
                     var job = account.JobId ?? "Unknown";
                     return new CompletionOption(accountId.ToString(),
-                        $"{accountId} | {_entityManager.GetComponent<MetaDataComponent>(uid).EntityName}");
+                        $"{_entityManager.GetComponent<MetaDataComponent>(uid).EntityName}");
                 })
                 .ToArray();
 
