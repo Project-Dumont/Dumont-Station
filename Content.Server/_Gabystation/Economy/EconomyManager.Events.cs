@@ -1,4 +1,5 @@
 
+using Content.Shared._Gabystation.Economy;
 using JetBrains.Annotations;
 
 namespace Content.Server._Gabystation.Economy;
@@ -12,7 +13,7 @@ public sealed class AccountPaymentCompleted : EntityEventArgs
     public int AccountId;
     public IBankAccount? Account;
     public EntityUid Uid;
-
+    public float Payment;
 }
 
 /// <summary>

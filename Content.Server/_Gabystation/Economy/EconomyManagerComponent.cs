@@ -1,3 +1,4 @@
+using Content.Shared._Gabystation.Economy;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
@@ -24,3 +25,5 @@ public sealed partial class EconomyManagerComponent : Component
     [DataField]
     public float PaymentCooldownRemaining = 5f;
 }
+
+

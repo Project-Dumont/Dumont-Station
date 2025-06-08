@@ -1,7 +1,9 @@
-using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.NameIdentifier;
+using Content.Shared._Gabystation.Economy;
+using Content.Shared._Gabystation.NanoBank;
+using Content.Shared.Access.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -17,6 +19,7 @@ namespace Content.Server._Gabystation.Economy
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly IChatManager _chat = default!;
         [Dependency] private readonly IPrototypeManager _prototypes = default!;
+        [Dependency] private readonly SharedIdCardSystem _id = default!;
         private readonly ProtoId<NameIdentifierGroupPrototype> _nameIdentifierGroup = "NanoBank";
 
         public override void Initialize()
@@ -68,6 +71,15 @@ namespace Content.Server._Gabystation.Economy
             if (TryComp<MindContainerComponent>(uid, out var mindc) && TryComp<MindComponent>(mindc.Mind, out var mind))
                 mind.NanoBankAccount = accountId;
 
+            if (_id.TryFindIdCard(uid, out var idCard))
+            {
+                // Add the account to the id card
+                var bankCard = EnsureComp<NanoBankCardComponent>(uid);
+                bankCard.AccountId = accountId;
+                bankCard.AccountPin = password;
+                bankCard.LoggedIn = true;
+            }
+
             return true;
         }
 
@@ -107,7 +119,7 @@ namespace Content.Server._Gabystation.Economy
                         continue;
 
                     account.Balance += proto.Salary;
-                    var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Uid = uid };
+                    var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Uid = uid, Payment = proto.Salary };
                     RaiseLocalEvent(ev);
                 }
 
@@ -131,6 +143,20 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
+        public bool ValidateLogin(EconomyManagerComponent comp, int id, int pin)
+        {
+            if (!comp.BankAccounts.TryGetValue(id, out var account))
+                return false;
+
+            if (account.Password != pin)
+            {
+                account = null;
+                return false;
+            }
+
+            return true;
+        }
+
         public List<(int AccountId, EntityUid Uid, IBankAccount Account)> GetLinkedAccounts()
         {
             var result = new List<(int, EntityUid, IBankAccount)>();
@@ -148,23 +174,5 @@ namespace Content.Server._Gabystation.Economy
             }
             return result;
         }
-    }
-
-    public sealed class BankAccount : IBankAccount
-    {
-        public required int Password { get; set; }
-        public required int InitialPassword { get; set; }
-        public float Balance { get; set; }
-        public required string? JobId { get; set; }
-        public required EntityUid? Owner { get; set; }
-    }
-
-    public interface IBankAccount
-    {
-        int Password { get; set; }
-        int InitialPassword { get; set; }
-        float Balance { get; set; }
-        string? JobId { get; set; }
-        EntityUid? Owner { get; set; }
     }
 }
