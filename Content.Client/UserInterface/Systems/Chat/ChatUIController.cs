@@ -348,14 +348,14 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         system.OnCharacterUpdate -= OnCharacterUpdated;
     }
 
-  private void OnCharacterUpdated(CharacterData data)
+    private void OnCharacterUpdated(CharacterData data)
     {
         // If the _charInfoIsAttach is false then the character panel was the one
         // to generate the event, dismiss it.
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, _, _, entityName) = data;
+        var (_, job, _, _, entityName, _) = data; // Gabystation change - bank
 
         // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name)
         // subdivide it so that the name and surname individually get highlighted.

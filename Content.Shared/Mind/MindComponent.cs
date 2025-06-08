@@ -165,4 +165,11 @@ public sealed partial class MindComponent : Component
     [ViewVariables, Access(typeof(SharedMindSystem), typeof(SharedGameTicker))]
     // TODO remove this after moving IPlayerManager functions to shared
     public ICommonSession? Session { get; set; }
+
+    /// <summary>
+    ///     The ID of the NanoBank account.
+    ///     If is not null the mind window will show
+    /// </summary>
+    [DataField]
+    public int? NanoBankAccount { get; set; } // Gabystation change (Bank)
 }

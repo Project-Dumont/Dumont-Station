@@ -16,6 +16,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Gabystation.Economy;
 using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
@@ -32,6 +33,7 @@ public sealed class CharacterInfoSystem : EntitySystem
     [Dependency] private readonly MindSystem _minds = default!;
     [Dependency] private readonly RoleSystem _roles = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
+    [Dependency] private readonly EconomyManagerSystem _bank = default!;
 
     public override void Initialize()
     {
@@ -51,6 +53,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
         var jobTitle = Loc.GetString("character-info-no-profession");
         string? briefing = null;
+        string? nanoBankBriefing = null; // Gabystation change - bank
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
             // Get objectives
@@ -72,8 +75,20 @@ public sealed class CharacterInfoSystem : EntitySystem
 
             // Get briefing
             briefing = _roles.MindGetBriefing(mindId);
+
+
+            // Gabystation change - bank
+            if (mind.NanoBankAccount is not null)
+            {
+                _bank.GetAccountPassword(mind.NanoBankAccount ?? 0, true, out var password);
+                nanoBankBriefing = $"NanoBank ID: {mind.NanoBankAccount} | Initial Password: {password}";
+            }
+            else
+            {
+                nanoBankBriefing = $"No NanoBank account.";
+            }
         }
 
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing), args.SenderSession);
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, nanoBankBriefing), args.SenderSession);
     }
 }
