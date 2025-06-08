@@ -17,4 +17,10 @@ public sealed partial class EconomyManagerComponent : Component
     /// </summary>
     [DataField("uidBankRef")]
     public Dictionary<EntityUid, int> UidBankRef = new Dictionary<EntityUid, int>();
+
+    [DataField]
+    public float PaymentDelay = 60f;
+
+    [DataField]
+    public float PaymentCooldownRemaining = 5f;
 }

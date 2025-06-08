@@ -16,6 +16,7 @@ namespace Content.Server._Gabystation.Economy
         [Dependency] private readonly NameIdentifierSystem _name = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly IChatManager _chat = default!;
+        [Dependency] private readonly IPrototypeManager _prototypes = default!;
         private readonly ProtoId<NameIdentifierGroupPrototype> _nameIdentifierGroup = "NanoBank";
 
         public override void Initialize()
@@ -55,10 +56,15 @@ namespace Content.Server._Gabystation.Economy
             // Assign a random bank account id
             _name.GenerateUniqueName(uid, _nameIdentifierGroup, out accountId);
 
-            var bankAccount = new BankAccount() { Balance = balance, JobId = jobId, InitialPassword = password, Password = password };
+            // Create the account interface
+            var bankAccount = new BankAccount()
+            { Balance = balance, JobId = jobId, InitialPassword = password, Password = password, Owner = uid };
+
+            // Add the bank to the dict and ref dict
             comp.BankAccounts.Add(accountId, bankAccount);
             comp.UidBankRef.Add(uid, accountId);
 
+            // Add the breafing in character menu
             if (TryComp<MindContainerComponent>(uid, out var mindc) && TryComp<MindComponent>(mindc.Mind, out var mind))
                 mind.NanoBankAccount = accountId;
 
@@ -79,11 +85,36 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
+        // This handles payments
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
 
+            var ents = AllEntityQuery<EconomyManagerComponent>();
+            while (ents.MoveNext(out var uid, out var comp))
+            {
+                if (comp.PaymentCooldownRemaining >= 0f)
+                {
+                    comp.PaymentCooldownRemaining -= frameTime;
+                    continue;
+                }
 
+                foreach (var (accountId, account) in comp.BankAccounts)
+                {
+                    if (account.JobId is null)
+                        continue;
+                    if (!_prototypes.TryIndex<JobPrototype>(account.JobId, out var proto))
+                        continue;
+
+                    account.Balance += proto.Salary;
+                    var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Uid = uid };
+                    RaiseLocalEvent(ev);
+                }
+
+                RaiseLocalEvent(new AfterPaymentRotation() { Uid = uid });
+
+                comp.PaymentCooldownRemaining = comp.PaymentDelay;
+            }
         }
 
         public bool GetAccountPassword(int id, bool initial, out int password)
@@ -125,6 +156,7 @@ namespace Content.Server._Gabystation.Economy
         public required int InitialPassword { get; set; }
         public float Balance { get; set; }
         public required string? JobId { get; set; }
+        public required EntityUid? Owner { get; set; }
     }
 
     public interface IBankAccount
@@ -133,5 +165,6 @@ namespace Content.Server._Gabystation.Economy
         int InitialPassword { get; set; }
         float Balance { get; set; }
         string? JobId { get; set; }
+        EntityUid? Owner { get; set; }
     }
 }

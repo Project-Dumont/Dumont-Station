@@ -257,6 +257,12 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public int Goobcoins { get; private set; } = 1;
+
+        /// <summary>
+        ///     Gabystation Change: The amount of spesos a job will be payed.
+        /// </summary>
+        [DataField]
+        public int Salary { get; private set; } = 100;
     }
 
     /// <summary>
