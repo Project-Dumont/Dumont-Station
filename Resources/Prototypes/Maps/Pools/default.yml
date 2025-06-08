@@ -64,15 +64,17 @@
   - Origin
   - Saltern
   - Packed
-  - Reach # Gabystation - mapa ruim
+  - Reach
   #- Train # Gabystation - mapa ruim
   - FlandHighPop
   - OasisHighPop
+  # Goob Station Maps
   - Barratry # Goobstation - Re-add barratry
   - Kettle # Goobstation - Re-add kettle (before it was gemini!)
-  - Gamma # Gabystation
-  - Gax # Gabystation
-  - Falcon #Gabystation
   - Submarine # goobstation - kill yourse
   - Leonid # Goobstation - for goob by goob
   - Delta # Goobstation - ported from Corvax
+  # Gaby Station Maps
+  #- Gamma - Desativa esses mapas até serem mantidos por outras pessoas
+  #- Gax
+  #- Falcon

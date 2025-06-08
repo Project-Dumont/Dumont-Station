@@ -298,4 +298,18 @@ Entries:
       message: Rework completo na Space Law, tornando-a mais facil de ser consultada, e organizando-a mais facilmente pra aplicar penas rapidamente!
   id: 37
   time: '2025-05-28T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Tweak
+      message: Diminui as chances de abudctor
+    - type: Tweak
+      message: Nerfa o evento de instigator
+  id: 38
+  time: '2025-06-05T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Corrige problemas de tradução do devil, vindos do update.
+  id: 39
+  time: '2025-06-06T15:00:00.0000000+00:00'
 

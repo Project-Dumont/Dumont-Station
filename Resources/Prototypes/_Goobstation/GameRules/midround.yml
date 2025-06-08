@@ -27,8 +27,9 @@
       Hostile: 100
       Medical: 100
       Death: 100
-    chaosScore: 250
     eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 250
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -64,8 +65,9 @@
       Hostile: 100
       Medical: 100
       Death: 100
-    chaosScore: 300
     eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 300
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -86,6 +88,7 @@
     tags:
       - MidroundAntag
 
+# Midround Heretics
 - type: entity
   parent: Heretic
   id: HereticMidround
@@ -103,8 +106,9 @@
       Hostile: 200
       Medical: 150
       Death: 200
-    chaosScore: 300
     eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 300
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -147,8 +151,9 @@
       Power: 50
       Medical: 50
       Atmos: 50
-    chaosScore: 800
     eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 800
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
     definitions:
@@ -186,8 +191,9 @@
       Hostile: 40
       Medical: 40
       Death: 40
-    chaosScore: 90
     eventType: Chaotic
+  - type: GameRule
+    chaosScore: 90
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
   - type: Tag
@@ -215,8 +221,9 @@
       Power: 50
       Medical: 50
       Atmos: 50
-    chaosScore: 800
     eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 800
   - type: BlobSpawnRule
     carrierBlobProtos:
     - SpawnPointGhostBlobRat

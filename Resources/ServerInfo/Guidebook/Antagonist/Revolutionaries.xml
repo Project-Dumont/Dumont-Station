@@ -21,13 +21,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Os revolucionários são antagonistas de conversão patrocinados pelo [color=#ff0000]Sindicato[/color], cujo objetivo é tomar o controle da estação. Eles não têm truques extravagantes ou artimanhas baratas; possuem apenas uma causa e força em números.
 
-<<<<<<< HEAD
+
+<Box>
+  <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
+</Box>
+
   ## Objetivos
   Você deve algemar, matar ou exilar todos os membros da [textlink="Equipe de Comando" link="Command"] na estação, em qualquer ordem.
-=======
-  ## Objectives
-  You must convert, cuff or kill all of the [textlink="Command staff" link="Command"] on station in no particular order.
->>>>>>> goob/master
 
   Seu objetivo [bold]não é destruir a estação[/bold], mas sim [italic]tomá-la[/italic], portanto, tente minimizar os danos sempre que possível.
 
@@ -37,30 +37,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Os [bold][color=#5e9cff]Revolucionários Chefes[/color][/bold] são escolhidos no início do turno e começam com uma [color=cyan]lanterna de luz[/color] e um par de [color=cyan]óculos escuros[/color].
 
   <Box>
-    <GuideEntityEmbed Entity="Flash"/>
-    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
-  </Box>
+  <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
+</Box>
 
-  Você pode converter membros da tripulação para seu lado usando qualquer [bold]lanterna de luz[/bold] e atacando alguém com ela em [color=#ff0000]modo agressivo[/color].
-  No entanto, [bold]você não pode converter seu alvo se ele estiver usando [color=cyan]proteção contra luz[/color][/bold], como óculos escuros ou máscara de soldador.
+  You can convert crew members by using a [color=#a4885c]Revolutionary Manifesto[/color] on them.
 
-  <Box>
-    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
-    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
-    <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
-  </Box>
+  Beware! A [color=#a4885c]MindShield Implant[/color] will prevent the implanted person from being converted into a revolutionary. Assume all of [color=#a4885c]Security[/color] and [color=#a4885c]Command[/color] are implanted already.
+<Box>
+  <GuideEntityEmbed Entity="MindShieldImplanter" Caption="MindShield Implanter"/>
+</Box>
+  Another obstacle in your way are those pesky [color=cyan]mindshield implanters[/color]. These will:
+  - Prevent the implanted person from being converted into a [color=red]Revolutionary[/color]
+  - De-convert Revolutionaries, and will make them no longer loyal to your cause
+  - [bold]Visibly be destroyed upon being implanted into a [color=#5e9cff]Head Revolutionary[/color][/bold], giving you away
 
-  Outro obstáculo em seu caminho são os incômodos [color=cyan]implantadores de proteção mental[/color]. Eles irão:
-  - Impedir que a pessoa implantada seja convertida em [color=red]Revolucionário[/color]
-  - Desconverter Revolucionários, removendo sua lealdade à sua causa
-  - [bold]Visivelmente se destruírem ao serem implantados em um [color=#5e9cff]Revolucionário Chefe[/color][/bold], revelando sua identidade
-  - NÃO proteger contra desorientação causada por luz
-
-<<<<<<< HEAD
-  Assuma que todos os membros da [color=#cb0000]Segurança[/color] e [color=#1b67a5]Comando[/color] já estão implantados com proteções mentais.
-=======
   Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already, [bold]however they can be removed using an empty implanter, obtainable from the Medical department's MedFab.[/bold]
->>>>>>> goob/master
 
   <Box>
     <GuideEntityEmbed Entity="MindShieldImplanter"/>

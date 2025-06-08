@@ -227,9 +227,9 @@
   - type: NukeopsRule
   - type: RuleGrids
   - type: AntagSelection
-  - type: StationEvent # Goobstation
+  # Goobstation
+  - type: GameRule
     chaosScore: 1200
-    eventType: Roundstart
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
@@ -314,23 +314,30 @@
     tags:
     - ExtremeAntag # Funky
 
+# Goobstation
 - type: entity
   abstract: true
   parent: BaseGameRule
-  id: BaseTraitorRule
+  id: BaseTraitorRuleNoObjectives
   components:
   - type: TraitorRule
-  - type: StationEvent # Goobstation
+  # Goobstation
+  - type: GameRule
     chaosScore: 700
-    eventType: Roundstart
   # TODO: codewords in yml
   # TODO: uplink in yml
+  - type: AntagSelection
+    agentName: traitor-round-end-agent-name
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorRuleNoObjectives
+  id: BaseTraitorRule
+  components:
   - type: AntagRandomObjectives
     sets:
     - groups: TraitorObjectiveGroups
     maxDifficulty: 5
-  - type: AntagSelection
-    agentName: traitor-round-end-agent-name
 
 - type: entity
   parent: BaseTraitorRule
@@ -354,7 +361,7 @@
 
 - type: entity
   id: TraitorReinforcement
-  parent: BaseTraitorRule
+  parent: BaseTraitorRuleNoObjectives # Goobstation
   components:
   - type: TraitorRule
     giveUplink: false
@@ -373,9 +380,7 @@
   components:
   - type: GameRule
     minPlayers: 15
-  - type: StationEvent # Goobstation
-    chaosScore: 800
-    eventType: Roundstart
+    chaosScore: 800 # Goobstation
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn # Goobstation

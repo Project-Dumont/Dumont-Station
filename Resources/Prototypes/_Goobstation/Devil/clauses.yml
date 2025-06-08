@@ -12,16 +12,9 @@
 # Any spaces on the written portion will be removed, so keep it all lowercase and one word.
 
 - type: clause
-  id: alma
+  id: possedaalma
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
-
-# self antag clause
-#- type: clause
-#  id: pride
-#  clauseWeight: -70
-#  implants:
-#  - UplinkImplant
 
 - type: clause
   id: fraqueza
@@ -32,6 +25,8 @@
   id: medodofogo
   clauseWeight: -20
   damageModifierSet: HellSpawn
+  addedComponents:
+  - type: SpecialHighTempImmunity
 
 - type: clause
   id: quebrado
@@ -75,6 +70,24 @@
   removedComponents:
   - type: Hunger
   - type: Thirst
+
+- type: clause
+  id: medodeafogamento
+  clauseWeight: -10
+  addedComponents:
+  - type: SpecialBreathingImmunity
+
+- type: clause
+  id: medodeesmagamento
+  clauseWeight: -10
+  addedComponents:
+  - type: SpecialPressureImmunity
+
+- type: clause
+  id: medodecongelamento
+  clauseWeight: -10
+  addedComponents:
+  - type: SpecialLowTempImmunity
 
 - type: clause
   id: ganancia

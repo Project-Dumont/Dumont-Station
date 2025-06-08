@@ -85,6 +85,7 @@
             SecurityOfficer: [ 7, 7 ]
             SecurityCadet: [ 2, 4 ]
             PermaPrisoner: [ 4, 4 ] # Gaby
+            Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 8, 8 ]

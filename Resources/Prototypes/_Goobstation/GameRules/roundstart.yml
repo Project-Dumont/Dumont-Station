@@ -34,9 +34,7 @@
   - type: ChangelingRule
   - type: GameRule
     minPlayers: 15
-  - type: StationEvent
     chaosScore: 600
-    eventType: Roundstart
   - type: AntagRandomObjectives
     sets:
     - groups: ChangelingObjectiveGroups
@@ -68,9 +66,7 @@
   components:
   - type: GameRule
     minPlayers: 30
-  - type: StationEvent
     chaosScore: 700
-    eventType: Roundstart
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
@@ -94,9 +90,7 @@
   components:
   - type: GameRule
     minPlayers: 30
-  - type: StationEvent
     chaosScore: 450
-    eventType: Roundstart
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     agentName: changeling-roundend-name
@@ -116,10 +110,8 @@
   id: Calmops # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
   components:
   - type: GameRule
-    minPlayers: 30
-  - type: StationEvent
+    minPlayers: 40
     chaosScore: 1000
-    eventType: Roundstart
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml
   - type: NukieOperation
@@ -191,9 +183,7 @@
   components:
   - type: GameRule
     minPlayers: 30
-  - type: StationEvent
     chaosScore: 700
-    eventType: Roundstart
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -221,9 +211,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: BlobRule
-  - type: StationEvent
+  - type: GameRule
     chaosScore: 900
-    eventType: Roundstart
 
 - type: entity
   id: BlobGameMode
@@ -233,9 +222,7 @@
   - type: BlobRule
   - type: GameRule
     minPlayers: 15
-  - type: StationEvent
     chaosScore: 900
-    eventType: Roundstart
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
@@ -274,6 +261,7 @@
       Medical: 70
       Atmos: 70
     eventType: HostilesSpawn
+  - type: GameRule
     chaosScore: 900
   - type: BlobSpawnRule
     carrierBlobProtos:
@@ -361,10 +349,8 @@
   id: Devil
   components:
   - type: DevilRule
-  - type: StationEvent
-    eventType: Roundstart
-    chaosScore: 250 # low since they tend to revive people and stuff
   - type: GameRule
+    chaosScore: 250 # low since they tend to revive people and stuff
     minPlayers: 15
   - type: AntagObjectives
     objectives:

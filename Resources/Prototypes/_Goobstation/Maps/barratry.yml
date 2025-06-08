@@ -137,6 +137,7 @@
             SecurityOfficer: [ 5, 5 ]
             SecurityCadet: [ 2, 4 ]
             PermaPrisoner: [ 3, 3 ] # HARMONY
+            Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 6, 6 ]

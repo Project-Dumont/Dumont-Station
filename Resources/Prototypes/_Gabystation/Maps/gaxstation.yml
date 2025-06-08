@@ -83,6 +83,7 @@
             Detective: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             PermaPrisoner: [ 2, 2 ] # Gaby
+            Brigmedic: [ 1, 1 ]
             #Supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 1, 3 ]
