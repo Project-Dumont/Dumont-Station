@@ -38,7 +38,7 @@
   id: FelinidAlternativeTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat Tail :troll:
+  speciesRestriction: [Felinid, Vulpkanin, Tajaran] # Goobstation - Tajaran
   sprites:
     - sprite: _DV/Mobs/Customization/Felinid/alternative_tail.rsi
       state: m_waggingtail_cat_FRONT
