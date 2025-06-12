@@ -18,7 +18,7 @@
   id: FelinidFluffyTailRings
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Vulpkanin] #Delta-V - Vulp Cat Tail :troll:
+  speciesRestriction: [Felinid, Vulpkanin, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _DV/Mobs/Customization/Felinid/felinid_tails.rsi
     state: felinid_fluffy_tail_base
