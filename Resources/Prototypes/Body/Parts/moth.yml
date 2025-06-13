@@ -94,6 +94,11 @@
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
     state: "l_arm"
+  - type: BodyPart
+    onAdd: # Shitmed Change
+    - type: Flight
+      staminaDrainRate: 11.7
+      speedModifier: 1.25
 
 - type: entity
   id: RightArmMoth
@@ -103,6 +108,11 @@
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
     state: "r_arm"
+  - type: BodyPart
+    onAdd: # Shitmed Change
+    - type: Flight
+      staminaDrainRate: 11.7
+      speedModifier: 1.25
 
 - type: entity
   id: LeftHandMoth
