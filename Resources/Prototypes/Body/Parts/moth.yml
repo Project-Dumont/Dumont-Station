@@ -96,11 +96,11 @@
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
     state: "l_arm"
-  - type: BodyPart  # Gaby inicio
-    onAdd: # Shitmed Change
+  - type: BodyPart  # Gabystation - marioposas podem voar
+    onAdd:
     - type: Flight
       staminaDrainRate: 11.7
-      speedModifier: 1.25  # Gaby fim
+      speedModifier: 1.25 
 
 - type: entity
   id: RightArmMoth
