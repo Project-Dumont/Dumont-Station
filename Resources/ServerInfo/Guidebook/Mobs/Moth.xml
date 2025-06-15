@@ -1,3 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Moth People
 
@@ -5,11 +13,14 @@
     <GuideEntityEmbed Entity="MobMoth" Caption=""/>
   </Box>
 
-  Eles Conseguem comer algodão, tecidos e roupas, mas virtualmente quase nenhuma das comidas que outros consideram "comestíveis". Eles preferem uma temperatura mais baixa que os humanos.
-  O Sangue de Inseto deles não pode ser recuperado usando Ferro, como sangue normal.
+Eles podem comer algodão, tecidos e roupas, mas praticamente nenhum dos alimentos que outros considerariam "comestíveis". Preferem uma faixa de temperatura um pouco mais baixa do que os humanos. São obcecados pelo número "65".
 
-  As suas asas dão uma aceleração melhor se a estação não tiver gravidade, mas eles não conseguem se mover sem equipamento enquanto flutuam no espaço.
+Suas asas lhes dão melhor aceleração se não houver gravidade na estação, mas ainda assim não conseguem se mover sem equipamento quando estão flutuando no espaço.
 
-  Eles tomam [color=#1e90ff]30% menos de dano Congelante[/color] mas [color=#ffa500]30% a mais de dano de Calor, e pegam fogo mais facilmente[/color].
+Também podem dar pequenos impulsos a cada 6,5 segundos usando as asas, mas isso requer a presença de gravidade. No entanto, se movem 6,5% mais devagar do que outras espécies devido às pernas fracas.
+
+Eles recebem 30% menos dano por Frio, mas 30% mais dano por Calor e 6,5% mais dano físico (Bruto), além de pegarem fogo com mais facilidade.
+
+Também são 6,5% mais leves do que a maioria das espécies.
 
 </Document>

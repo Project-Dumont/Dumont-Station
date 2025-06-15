@@ -1,6 +1,23 @@
-using Content.Shared._Shitmed.Body.Organ; // Shitmed Change
+// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.CCVar;
+using Content.Goobstation.Common.Standing;
+using Content.Shared._Goobstation.Wizard.TimeStop;
+using Content.Shared._Goobstation.Wizard.Traps;
+using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared.Administration;
 using Content.Shared.Body.Components;
-using Content.Shared._Goobstation.CCVar; // Shitmed Change
 using Content.Shared.DoAfter;
 using Content.Shared.Input;
 using Content.Shared.Mobs.Systems;
@@ -59,9 +76,9 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
         var uid = args.SenderSession.AttachedEntity.Value;
 
-        // TODO: Wizard
-        //if (HasComp<FrozenComponent>(uid))
-        //   return;
+        if (HasComp<IceCubeComponent>(uid) || HasComp<FrozenComponent>(uid) ||
+            HasComp<AdminFrozenComponent>(uid)) // Goob edit
+            return;
 
         if (!TryComp(uid, out StandingStateComponent? standing) ||
             !TryComp(uid, out LayingDownComponent? layingDown))
@@ -114,7 +131,15 @@ public abstract class SharedLayingDownSystem : EntitySystem
             HasComp<DebrainedComponent>(uid))
             return false;
 
-        var args = new DoAfterArgs(EntityManager, uid, layingDown.StandingUpTime, new StandingUpDoAfterEvent(), uid)
+        // Goob edit start
+        var ev = new GetStandingUpTimeMultiplierEvent();
+        RaiseLocalEvent(uid, ev);
+
+        var args = new DoAfterArgs(EntityManager,
+            uid,
+            layingDown.StandingUpTime * ev.Multiplier,
+            new StandingUpDoAfterEvent(),
+            uid) // Goob edit end
         {
             BreakOnHandChange = false,
             RequireCanInteract = false,
@@ -135,7 +160,10 @@ public abstract class SharedLayingDownSystem : EntitySystem
             standingState.CurrentState is not StandingState.Standing)
         {
             if (behavior == DropHeldItemsBehavior.AlwaysDrop)
-                RaiseLocalEvent(uid, new DropHandItemsEvent());
+            {
+                var ev = new DropHandItemsEvent();
+                RaiseLocalEvent(uid, ref ev);
+            }
 
             return false;
         }
@@ -146,6 +174,13 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
     private void OnCheckAutoGetUp(Entity<LayingDownComponent> ent, ref CheckAutoGetUpEvent args)
     {
+        if (HasComp<IceCubeComponent>(ent) || HasComp<FrozenComponent>(ent) || HasComp<AdminFrozenComponent>(ent))
+        {
+            ent.Comp.AutoGetUp = false;
+            Dirty(ent);
+            return;
+        }
+
         if (!TryComp(ent, out ActorComponent? actor))
             return;
 
@@ -158,11 +193,3 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
 [Serializable, NetSerializable]
 public sealed partial class StandingUpDoAfterEvent : SimpleDoAfterEvent;
-
-[Serializable, NetSerializable]
-public enum DropHeldItemsBehavior : byte
-{
-    NoDrop,
-    DropIfStanding,
-    AlwaysDrop
-}

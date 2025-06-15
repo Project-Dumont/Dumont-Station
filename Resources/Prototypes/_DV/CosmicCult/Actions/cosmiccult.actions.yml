@@ -1,0 +1,262 @@
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionCosmicSiphon
+  name: Drenar Entropia
+  description: Drene entropia silenciosamente do seu alvo, causando dano no processo.
+  components:
+  - type: EntityTargetAction
+    deselectOnMiss: true
+    useDelay: 10
+    whitelist:
+      components:
+        - HumanoidAppearance
+    blacklist:
+      components:
+      - CosmicCult
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: siphon
+    event: !type:EventCosmicSiphon {}
+
+- type: entity
+  id: ActionCosmicBlank
+  name: Transferir Subjetividade
+  description: Expulse a mente do seu alvo de seu corpo para a escuridão cósmica, tornando seu corpo temporariamente sem mente.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    deselectOnMiss: true
+    canTargetSelf: true
+    useDelay: 120
+    whitelist:
+      components:
+        - HumanoidAppearance
+    blacklist:
+      components:
+      - CosmicCult
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: blank
+    event: !type:EventCosmicBlank {}
+
+- type: entity
+  id: ActionCosmicPlaceMonument
+  name: Convocar o Monólito
+  description: Traga o Monólito para o espaço real. Mantenha-o escondido e seguro dos não-cultistas!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ConfirmableAction
+    popup: cosmicability-monument-spawn-confirm
+    primeTime: 10 #increased to give you more time to figure out where you want to put it
+  - type: InstantAction
+    useDelay: 999
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: monument
+    event: !type:EventCosmicPlaceMonument {}
+  - type: MonumentPlacementPreview
+    tier: 1
+
+- type: entity
+  id: ActionCosmicMoveMonument
+  name: Realocar o Monólito
+  description: Seu trabalho é imperativo, e o fim é inevitável. Certifique-se de que seja concluído sob sua supervisão.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ConfirmableAction
+    popup: cosmicability-monument-move-confirm
+    primeTime: 10 #increased to give you more time to figure out where you want to put it
+  - type: InstantAction
+    useDelay: 999
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: monument-relocate
+    event: !type:EventCosmicMoveMonument
+  - type: MonumentPlacementPreview
+    tier: 2
+
+- type: entity
+  id: ActionCosmicReturn
+  name: Retornar
+  description: Dissipe sua projeção astral e retorne ao seu corpo.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 0
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: return
+    event: !type:EventCosmicReturn {}
+
+- type: entity
+  id: ActionCosmicLapse
+  name: Lapso Aberrante
+  description: Faça a forma corpórea do seu alvo entrar em lapso, tornando-a temporariamente imutável, intransponível e congelada no lugar.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    deselectOnMiss: true
+    canTargetSelf: true
+    useDelay: 24
+    whitelist:
+      components:
+        - HumanoidAppearance
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: lapse
+    event: !type:EventCosmicLapse {}
+
+- type: entity
+  id: ActionCosmicGlare
+  name: Clarão Nulo
+  description: Emita um pulso horrível de luz cósmica, desacelerando e desorientando todos ao seu redor.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: glare
+    event: !type:EventCosmicGlare {}
+
+- type: entity
+  id: ActionCosmicIngress
+  name: Forçar Entrada
+  description: Use uma explosão concentrada de poder para forçar a abertura de uma porta de segurança.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    deselectOnMiss: true
+    useDelay: 5
+    whitelist:
+      components:
+        - Door
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: ingress
+    event: !type:EventCosmicIngress {}
+
+- type: entity
+  id: ActionCosmicImposition
+  name: Imposição Vazia
+  description: Você nega qualquer dano recebido por um curto período de tempo.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 60
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: entropic
+    event: !type:EventCosmicImposition {}
+
+- type: entity
+  id: ActionCosmicNova
+  name: Nova Astral
+  description: Lance uma grande e disruptiva explosão de energia astral.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    useDelay: 30
+    raiseOnUser: true
+    range: 60
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: nova
+    event: !type:EventCosmicNova {}
+
+#################################### ROGUE ASCENDANT ACTIONS ######################################
+
+- type: entity
+  id: ActionRogueCosmicNova
+  name: Nova Astral Usurpada
+  description: Lance uma grande e disruptiva explosão de energia astral.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    useDelay: 10
+    raiseOnUser: true
+    range: 60
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: roguenova
+    event: !type:EventRogueCosmicNova {}
+
+- type: entity
+  id: ActionRogueInfection
+  name: Corrupção Maligna
+  description: Instile a essência dos finais em um alvo subjugado.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    deselectOnMiss: true
+    useDelay: 5
+    whitelist:
+      components:
+        - HumanoidAppearance
+    blacklist:
+      components:
+        - RogueAscendedInfection
+        - CosmicCult
+        - BibleUser
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: rogueinfect
+    event: !type:EventRogueInfection {}
+
+- type: entity
+  id: ActionRogueSlumber
+  name: Casulo do Sono
+  description: Faça instantaneamente o corpo mortal de um alvo adormecer, tornando-o pronto para a Corrupção Maligna.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    deselectOnMiss: true
+    useDelay: 55
+    whitelist:
+      components:
+        - HumanoidAppearance
+    blacklist:
+      components:
+        - RogueAscendedInfection
+        - CosmicCult
+        - BibleUser
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: rogueshatter
+    event: !type:EventRogueSlumber {}
+
+- type: entity
+  id: ActionRogueGrandShunt
+  name: Espeto Mental Maligno
+  description: Expulse as mentes de todos próximos de seus corpos para a escuridão cósmica, tornando seus corpos temporariamente sem mente.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 100
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: rogueshunt
+    event: !type:EventRogueGrandShunt {}

@@ -1,3 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Repitiliano
 
@@ -5,14 +13,12 @@
     <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
   </Box>
 
-  Eles SÓ podem comer frutas e carne, mas podem comer carne crua e beber sangue sem os efeitos negativos.
+  They can eat raw meat and drink blood without any ill effects.
+  They prefer a somewhat higher temperature range than humans.
+  They can drag objects with their tail, keeping both their hands free.
 
-  Eles preferem uma temperatura maior que os humanos.
+  Their unarmed claw attacks deal Slash damage instead of Blunt.
 
-  Eles podem arrastar objetos com a sua calda, deixando as duas mãos livres.
-
-  O seu ataque desarmado são garras que dão dano Cortante invés de Contundente
-
-  Eles tomam [color=#ffa500]30% mais de dano Congelante.[/color]
+  They take [color=#ffa500]30% more Cold damage.[/color]
 
 </Document>

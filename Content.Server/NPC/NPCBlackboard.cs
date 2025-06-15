@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Access.Systems;
@@ -175,6 +189,18 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
                 value = hands.ActiveHand;
                 return true;
             }
+            case ActiveHandEntity: // Goobstation
+            {
+                if (!TryGetValue(Owner, out owner, entManager) ||
+                    !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
+                    hands.ActiveHandEntity == null)
+                {
+                    return false;
+                }
+
+                value = hands.ActiveHandEntity;
+                return true;
+            }
             case ActiveHandFree:
             {
                 if (!TryGetValue(Owner, out owner, entManager) ||
@@ -284,6 +310,7 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
 
     public const string Access = "Access";
     public const string ActiveHand = "ActiveHand";
+    public const string ActiveHandEntity = "ActiveHandEntity"; // Goobstation
     public const string ActiveHandFree = "ActiveHandFree";
     public const string CanMove = "CanMove";
     public const string FreeHands = "FreeHands";

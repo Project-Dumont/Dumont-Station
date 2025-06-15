@@ -29,6 +29,18 @@
     path: /Audio/_Gabystation/Jukebox/cheia_de_manias.ogg
 
 - type: jukebox
+  id: CaracaMuleke
+  name: Thiaguinho - Caraca, Muleke!
+  path:
+    path: /Audio/_Gabystation/Jukebox/CaracaMuleke.ogg
+
+- type: jukebox
+  id: CalmaVida
+  name: J ESKINE - Calma vida ta de boa
+  path:
+    path: /Audio/_Gabystation/Jukebox/CalmaVida.ogg
+
+- type: jukebox
   id: GrandeFamilia
   name: Dudu Nobre - A Grande Familia
   path:
@@ -136,7 +148,7 @@
   name: Adoniran Barbosa - Trem das Onze
   path:
     path: /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
-    
+
 - type: jukebox
   id: Construcao
   name: Chico Buarque - Construção

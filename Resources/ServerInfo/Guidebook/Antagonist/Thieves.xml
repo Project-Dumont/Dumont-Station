@@ -1,4 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
+
   # Ladrões
 
   <Box>
@@ -40,7 +48,7 @@
   Aprove suas escolhas em um lugar seguro, pois a caixa de ferramentas se dissolverá e os equipamentos cairão aos seus pés.
 
   <Box>
-    <GuideEntityEmbed Entity="ToolboxThief"/>
+    <GuideEntityEmbed Entity="SatchelThief"/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomia"/>

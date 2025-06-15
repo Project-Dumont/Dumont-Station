@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Alexander Evgrashin <evgrashin.adl@gmail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
@@ -23,10 +35,15 @@ public sealed class SpawnArtifactSystem : EntitySystem
 
     private void OnActivate(EntityUid uid, SpawnArtifactComponent component, ArtifactActivatedEvent args)
     {
-        if (!_artifact.TryGetNodeData(uid, NodeDataSpawnAmount, out int amount))
-            amount = 0;
+        // if it is a artifact or not
+        var isArtifact = EntityManager.HasComponent<ArtifactComponent>(uid);
+        int? amount = null;
 
-        if (amount >= component.MaxSpawns)
+        if (isArtifact)
+            if (!_artifact.TryGetNodeData(uid, NodeDataSpawnAmount, out amount))
+                amount = 0;
+
+        if (amount is not null && amount >= component.MaxSpawns)
             return;
 
         if (component.Spawns is not {} spawns)
@@ -41,6 +58,8 @@ public sealed class SpawnArtifactSystem : EntitySystem
             var ent = Spawn(spawn, spawnCord);
             _transform.AttachToGridOrMap(ent);
         }
-        _artifact.SetNodeData(uid, NodeDataSpawnAmount, amount + 1);
+
+        if (amount is not null)
+            _artifact.SetNodeData(uid, NodeDataSpawnAmount, amount + 1);
     }
 }

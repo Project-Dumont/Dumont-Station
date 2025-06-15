@@ -1,0 +1,126 @@
+<Document>
+  # Diabo
+
+  [color=#ac3a0d]Um trapaceiro demoníaco de língua afiada fazendo acordos pela estação.[/color]
+
+  Um diabo é uma entidade originária de alguma dimensão profana, muito, muito distante da nossa.
+  <Box>
+    <GuideEntityEmbed Entity="PaperDevilContract" Caption="Contrato"/>
+    <GuideEntityEmbed Entity="ClothingUniformJumpsuitDevil" Caption="Traje Demoníaco"/>
+  </Box>
+
+  Ao contrário da maioria das representações na mídia, um diabo não é fácil de identificar à primeira vista. Não há fogo e enxofre, nem tridente e gritos. O jeito mais fácil de perceber é o brilho vermelho nos olhos, e às vezes os chifres ou o rabo.
+  [bold] Nem todo mundo com rabo ou chifres é um diabo, isso é especismo! [/bold]
+
+  Apesar das intenções geralmente não tão boas, um Diabo ainda é considerado tripulação!
+  Como Diabo, [color=red][bold] você não deve interferir nos assuntos da estação a menos que seja solicitado diretamente, ou possa fazer um acordo com isso. [/bold][/color]
+
+  Em circunstâncias normais, [color=red][bold] um membro da tripulação que faz um acordo com o Diabo deve ser considerado criminoso [/bold][/color]
+
+  ## Contratos
+
+  O "arroz com feijão" de um diabo são seus [color=darkred]contratos[/color]. Ao assinar um contrato, vários efeitos podem ser aplicados a uma entidade.
+
+  Contratos são indestrutíveis após assinados, não há volta depois que a caneta toca o pergaminho.
+
+  O efeito particular de um contrato muda dependendo de quais [bold] cláusulas [/bold] estão escritas nele.
+  Efeitos podem ser aplicados ao Contratante, ao Diabo, ou ao Contratado, o assinante.
+
+  Prefixar uma [bold]Cláusula[/bold] com "Contratado:" ou "Contratante:" define a quem ela se aplica.
+
+  Uma [bold]Cláusula[/bold] é um conceito ou coisa que uma das partes está abrindo mão, seja para a outra parte ou destruindo completamente.
+
+  Exemplo:
+    Contratado: Fraqueza
+    Contratado: Posse da alma
+
+  No contrato acima, o contratado está abrindo mão de sua fraqueza e dos direitos sobre sua alma.
+  Abrir mão da fraqueza concede grande resistência a todos os tipos de dano, mas abrir mão da alma pode ter consequências imprevisíveis.
+
+  ## Peso do Contrato
+
+  Todo contrato tem um peso associado, que pode ser visto ao inspecioná-lo.
+  Contratos com peso desigual (abaixo de zero) não podem ser assinados.
+
+  Cada cláusula tem seu próprio valor de peso.
+  Como regra geral, quanto melhor a cláusula para o contratado, maior será o peso.
+
+  Isso significa que você precisa equilibrar cláusulas boas com cláusulas ruins.
+  [italic] É importante notar que não há limite para quantas cláusulas ruins você pode colocar em um contrato, sempre leia as letras miúdas! [/italic]
+
+  ## Vendendo sua alma?
+
+  Vender sua alma é algo delicado; e geralmente é o que a maioria dos diabos busca.
+  Como diabo, seu objetivo principal é coletar o máximo de almas possível. Quanto mais almas você conseguir, mais poderoso se tornará.
+
+  Como contratado, vender sua alma tem consequências.
+  - Sem alma, você irá [bold][color=red]DIRETO[/color][/bold] para o inferno ao morrer. Sem segundas chances.
+  - Você não pode fazer mais acordos após vender sua alma.
+  - Você será marcado como "Condenado", o que pode trazer outras consequências.
+
+  Um Diabo deve tomar cuidado com a equipe de segurança da estação após comprar uma alma, [bold] pois pode ser considerado prevenção de ressuscitação. [/bold]
+
+  ## Não existe isso de sem segunda chance.
+
+  Um diabo pode aumentar seu poder geral coletando almas suficientes durante sua estadia na estação.
+  Ao atingir o primeiro nível, ele desbloqueia a habilidade de criar contratos de ressurreição.
+
+  Esses contratos podem ser usados em um cadáver para oferecer ao fantasma uma segunda chance de vida.
+  Ao aceitar, ele perderá a alma em troca de uma segunda chance.
+
+  ## Possessão?
+
+  Um diabo desbloqueia a habilidade de possuir alvos no segundo nível.
+  Possessão permite tomar temporariamente o corpo de um alvo e fazer praticamente o que quiser.
+
+  No entanto, há algumas coisas que ele [italic] não pode [/italic] fazer:
+  - Ferir a si mesmo ou outros.
+  - Realizar ações relacionadas a implantes ou roupas.
+
+  Você só pode possuir alvos vulneráveis a isso, como pessoas que venderam a alma.
+
+  ## Não vai apertar a mão de um pobre pecador?
+
+  Como mostrado em várias mídias, um bom e velho aperto de mão é praticamente imbatível.
+  Apertar a mão de um diabo lhe dará uma recompensa rápida: Vida cheia e uma segunda chance.
+
+  O custo? Bem, digamos que varia.
+  Você perderá sua alma imediatamente e também ganhará uma cláusula negativa aleatória da lista.
+
+  ## Lidando com o diabo.
+
+  Às vezes, ao tentar cumprir sua parte do acordo, um diabo pode se tornar problemático para os habitantes da estação.
+  Seja roubando itens ou oferecendo poder profano aos inimigos da estação; é fácil entender por que alguém gostaria de se livrar de um.
+
+  Felizmente, há várias formas de lidar com um diabo.
+  - Pronunciar o nome verdadeiro de um diabo o atordoa.
+  - Uma bíblia ou água benta queima o diabo ao toque.
+  - Capelães podem usar bíblias para banir um diabo.
+
+  Como se espera, um capelão é mais eficaz contra um diabo do que a maioria.
+  Capelães não podem ser enganados a entregar sua alma, pois já a dedicaram a seu(s) Deus(es).
+
+  Quando um capelão usa a bíblia em um diabo crítico ou incapacitado, pode baní-lo temporariamente.
+  Pelos próximos minutos, o diabo não conseguirá manter uma forma material.
+
+  [bold]Quando um capelão fala o nome verdadeiro de um diabo, isso o fere [color=red]significativamente![/bold][/color]
+
+  ## Nome verdadeiro ou falso?
+
+  Quando um diabo chega à estação, assume a forma de um tripulante aleatório.
+  Seja possuído, metamorfoseado ou apenas um gêmeo por coincidência, ele substituirá alguém na estação.
+
+  O importante é que diabos [bold]não podem substituir membros da chefia ou da segurança. [/bold]
+
+  Em todos os aspectos, exceto um, um diabo aparecerá com seu nome falso.
+  A única forma de ver o nome verdadeiro de um diabo é ler um contrato assinado por ele ou perguntar diretamente.
+
+  ## A trapaça vai nos dois sentidos!
+
+  O contratado não é o único que pode ser enganado.
+  O peso do contrato é aplicado [bold] não importa para quem o efeito se aplica [/bold]
+
+  Isso significa que, se você conseguir enganar um diabo a assinar um papel que o prejudique, pode conseguir cláusulas positivas de graça!
+
+  [textlink="Saiba mais sobre cada cláusula." link="DevilClauses"]
+</Document>

@@ -1,4 +1,15 @@
-﻿<Document>
+<!--
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 NeKognitoHazard <168395829+NeKognitoHazard@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 TheNeonViking <julian.sean.ison@gmail.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
   # Space Law
   Em Space Station 14, estações operam sob a Space Law. Espera-se que todos os tripulantes, passageiros ou visitantes abordo da estação sigam essas leis.
 
@@ -29,6 +40,9 @@
 
   ## Remoção de Implantes
   Um suspeito pode ser forçado a receber uma remoção de implante desde que haja provas fortes e razoáveis de que o prisioneiro possui um implante, como por exemplo, um Oficial vendo que há digitais num injetor de implante descartado. Diferentemente do procedimento de aplicação, um prisioneiro pode ter sua pena adiada até que a remoção seja feita, desde que o Dep. de Segurança esteja tentando ativamente realizar o procedimento. Assim como a implantação, se um prisioneiro der permissão clara, a remoção pode ser realizada mesmo sem evidências.
+
+  ## Teste de Sangue
+  - Blood testing is a procedure that can be used to determine if a person is a [textlink="Changeling" link="Changelings"]. Blood testing may only be forced when there has been confirmation of changelings existence on the station.
 
   ## Sentenciamento
   Pela perspectiva das regras, Oficiais devem ter certeza de que apenas aplicarão penas acima de 30 minutos caso a Space Law também permita confinamento permanente. Informar o Carcereiro é altamente recomendável, até mesmo para penas temporárias. Desde que esses requisitos sejam cumpridos, Oficiais dando penas inapropriadas é considerado um problema IC, e não um problema com as regras e Admins.

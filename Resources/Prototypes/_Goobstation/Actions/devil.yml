@@ -1,0 +1,116 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Devil Specific
+
+- type: entity
+  id: ActionCreateContract
+  name: Invocar contrato infernal
+  description: Cria um contrato infernal na mão do diabo.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: summon-contract
+    event: !type:CreateContractEvent {}
+
+- type: entity
+  id: ActionCreateRevivalContract
+  name: Invocar contrato de ressurreição
+  description: Cria um contrato de ressurreição na mão do diabo.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 30
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: summon-contract-revival
+    event: !type:CreateRevivalContractEvent {}
+
+- type: entity
+  id: ActionShadowJaunt
+  name: Viagem das Sombras
+  description: Torne-se um com as sombras.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 40 # Stop running you cowardly fucks.
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: shadow-jaunt
+    event: !type:ShadowJauntEvent {}
+
+- type: entity
+  id: ActionDevilPossess
+  name: possuir alvo
+  description: Temporariamente possua o alvo, funciona apenas em alvos contratados.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    useDelay: 70
+    whitelist:
+      components:
+      - Body
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: possess
+    event: !type:DevilPossessionEvent {}
+
+- type: entity
+  id: ActionEndPossession
+  name: Terminar possessão
+  description: Cancela a possessão prematuramente.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: possess
+    event: !type:EndPossessionEarlyEvent {}
+
+- type: entity
+  id: ActionDevilGrip
+  name: Pegada do diabo
+  description: Uma pequena fração do poder que sobrou neste plano astral, Canalizada em suas mãos.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: devil-grip
+    event: !type:DevilGripEvent {}
+
+# Deals
+
+- type: entity
+  id: ActionCheatDeath
+  name: Trapacear a morte
+  description: Ria na cara do ceifador, você ainda tem tempo.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    useDelay: 250
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: _Goobstation/Actions/devil.rsi
+      state: cheat-death
+    event: !type:CheatDeathEvent {}

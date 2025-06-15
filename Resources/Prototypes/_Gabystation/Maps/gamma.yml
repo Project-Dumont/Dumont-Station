@@ -58,6 +58,7 @@
             SecurityOfficer: [ 8, 8 ]
             SecurityCadet: [ 3, 3 ]
             PermaPrisoner: [ 4, 4 ]
+            Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

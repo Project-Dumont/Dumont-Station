@@ -1,25 +1,36 @@
-﻿<Document>
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
 # Estação e Turnos
 
 Cada rodada de SS14 é um [bold]turno autocontido[/bold] que ocorre em uma das diversas estações.
 
 As rodadas normalmente duram de [color=cyan]45 a 90 minutos[/color], mas os jogadores estão livres para sair e entrar a qualquer momento durante a rodada.
 
-## Terminal de Shuttle
-Se você entrar no meio de um turno, provavelmente aparecerá no [color=lime]terminal de shuttle[/color].
-Aqui você pode pegar bebidas, conversar com outros jogadores e esperar o shuttle para levá-lo até a estação.
+## Terminal da Arrivals
+Se você entrar no meio de um turno, provavelmente aparecerá no [color=lime]Terminal da Arrivals[/color].
+Aqui você pode pegar bebidas, conversar com outros jogadores e esperar a nave de transporte para levá-lo até a estação.
 
-As telas nas paredes mostrarão o ETA do shuttle.
+As telas nas paredes mostrarão o ETA da nave.
 Quando ele chegar, basta entrar para ser transportado até a estação.
 
-Certifique-se de ficar dentro do terminal e não ficar na zona de pouso do shuttle. [color=#EB2D3A][bold]Você pode ser esmagado pelos shuttles que estão pousando[/bold][/color].
+Certifique-se de ficar dentro do Terminal da Arrivals e não ficar na zona de pouso. [color=#EB2D3A][bold]Você pode ser esmagado pelas naves que estão pousando[/bold][/color].
 
 ## Navegação
 Cada estação tem uma grande variedade de locais a serem visitados.
 Esses locais variam desde departamentos específicos onde o trabalho acontece até áreas comuns onde você pode relaxar e conversar com outras pessoas.
 
 <Box>
-  <GuideEntityEmbed Entity="StationMap"/>
+  <GuideEntityEmbed Entity="StationMap" Caption="Mapa da estação"/>
   <GuideEntityEmbed Entity="SignDirectionalDorms" Caption="Placas de Direção"/>
   <GuideEntityEmbed Entity="SignBridge" Caption="Placas de Localização"/>
 </Box>
@@ -28,7 +39,7 @@ Os [color=cyan]mapas da estação[/color] fornecem uma visão geral de toda a es
 Placas [color=cyan]regulares[/color] nas paredes podem direcioná-lo para diferentes departamentos.
 
 ## Deixando a Estação
-Ao final do turno [color=gray](exceto em caso de [color=red][bold]desastre nuclear[/bold][/color])[/color], você deixará a estação através do [color=lime]shuttle de evacuação[/color].
+Ao final do turno [color=gray](exceto em caso de [color=red][bold]desastre nuclear[/bold][/color])[/color], você deixará a estação através da [color=lime]nave de evacuação[/color].
 Quando for chamado, um anúncio será feito na estação alertando a tripulação e sinalizando sua [color=cyan]chegada em 10 minutos.[/color]
 Quando ele chegar, você precisará ir até ele, embarcar e sobreviver à viagem até o [bold]Comando Central[/bold].
 
@@ -38,7 +49,7 @@ A rodada não termina oficialmente até que você chegue ao [bold]Comando Centra
   <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
 </Box>
 
-Se precisar sair de uma rodada mais cedo, você pode fazer isso através de uma [color=lime]unidade de sono criogênico[/color].
+Se precisar sair de uma rodada mais cedo, você pode fazer isso através de uma [color=lime]cama de sono criogênico[/color].
 Basta entrar e sair do jogo que seus pertences serão armazenados e garantirão que não sejam roubados ou usados indevidamente.
 
 ## Mais Informações
