@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 joshepvodka <guilherme.ornel@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Roles;
