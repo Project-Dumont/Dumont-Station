@@ -21,6 +21,7 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
+  whitelisted: true # Gaby Station
   accessGroups:
   - AllAccess
   access:
@@ -58,6 +59,7 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-null
   canBeAntag: false
+  whitelisted: true # Gaby Station
   requirements:
     - !type:AgeRequirement
       requiredAge: 21
@@ -99,6 +101,7 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
+  whitelisted: true # Gaby Station
   requirements:
     - !type:AgeRequirement
       requiredAge: 21
@@ -141,6 +144,7 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
+  whitelisted: true # Gaby Station
   requirements:
     - !type:AgeRequirement
       requiredAge: 21
@@ -183,6 +187,7 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
+  whitelisted: true # Gaby Station
   requirements:
   - !type:AgeRequirement
     requiredAge: 21
@@ -221,6 +226,7 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
+  whitelisted: true # Gaby Station
   requirements:
   - !type:AgeRequirement
     requiredAge: 21
