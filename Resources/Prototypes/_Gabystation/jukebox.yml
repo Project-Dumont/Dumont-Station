@@ -35,12 +35,6 @@
     path: /Audio/_Gabystation/Jukebox/CaracaMuleke.ogg
 
 - type: jukebox
-  id: CalmaVida
-  name: J ESKINE - Calma vida ta de boa
-  path:
-    path: /Audio/_Gabystation/Jukebox/CalmaVida.ogg
-
-- type: jukebox
   id: GrandeFamilia
   name: Dudu Nobre - A Grande Familia
   path:

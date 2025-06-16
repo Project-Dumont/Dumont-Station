@@ -97,7 +97,7 @@ public sealed class VocalSystem : EntitySystem
         if (args.Handled)
             return;
 
-        _chat.TryEmoteWithChat(uid, component.ScreamId, voluntary: true); // Goob - emotespam
+        _chat.TryEmoteWithChat(uid, component.ScreamId);
         args.Handled = true;
     }
 
