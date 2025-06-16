@@ -50,7 +50,6 @@
 // SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
 // SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
@@ -72,6 +71,7 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -90,7 +90,6 @@ public sealed partial class ObjectsTabEntry : PanelContainer
 
     public Action<NetEntity>? OnTeleport;
     public Action<NetEntity>? OnDelete;
-    private readonly Dictionary<Button, ConfirmationData> _confirmations = new();
 
     public ObjectsTabEntry(IClientAdminManager manager, string name, NetEntity nent, StyleBox styleBox)
     {
@@ -105,13 +104,6 @@ public sealed partial class ObjectsTabEntry : PanelContainer
         DeleteButton.Disabled = !manager.CanCommand("delete");
 
         TeleportButton.OnPressed += _ => OnTeleport?.Invoke(nent);
-        DeleteButton.OnPressed += _ =>
-        {
-            if (!AdminUIHelpers.TryConfirm(DeleteButton, _confirmations))
-            {
-                return;
-            }
-            OnDelete?.Invoke(nent);
-        };
+        DeleteButton.OnPressed += _ => OnDelete?.Invoke(nent);
     }
 }

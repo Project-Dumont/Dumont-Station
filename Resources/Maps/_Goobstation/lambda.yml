@@ -176988,39 +176988,6 @@ entities:
     - type: Transform
       pos: -67.5,16.5
       parent: 2
-- proto: PlushieBlackburn
-  entities:
-  - uid: 26260
-    components:
-    - type: Transform
-      pos: 42.5,-33.5
-      parent: 2
-  - uid: 37023
-    components:
-    - type: Transform
-      pos: 10.771967,49.791775
-      parent: 2
-- proto: PlushieBlackburnKobliska
-  entities:
-  - uid: 37027
-    components:
-    - type: Transform
-      pos: 18.654211,49.380287
-      parent: 2
-- proto: PlushieBlackburnMatryoskya
-  entities:
-  - uid: 37026
-    components:
-    - type: Transform
-      pos: 18.160917,49.847885
-      parent: 2
-- proto: PlushieDesislavaBlackburn
-  entities:
-  - uid: 37018
-    components:
-    - type: Transform
-      pos: 10.266186,49.4364
-      parent: 2
 - proto: PlushieLizard
   entities:
   - uid: 26261

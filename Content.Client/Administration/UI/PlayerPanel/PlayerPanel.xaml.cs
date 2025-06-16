@@ -10,7 +10,6 @@
 // SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
 // SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
@@ -72,6 +71,7 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -97,6 +97,7 @@ public sealed partial class PlayerPanel : FancyWindow
     public event Action<string?>? OnKick;
     public event Action<NetUserId?>? OnOpenBanPanel;
     public event Action<NetUserId?, bool>? OnWhitelistToggle;
+    public event Action? OnFollow;
     public event Action? OnFreezeAndMuteToggle;
     public event Action? OnFreeze;
     public event Action? OnLogs;
@@ -112,7 +113,7 @@ public sealed partial class PlayerPanel : FancyWindow
             RobustXamlLoader.Load(this);
             _adminManager = adminManager;
 
-            UsernameCopyButton.OnPressed += _ => OnUsernameCopy?.Invoke(PlayerName.Text ?? "");
+            UsernameCopyButton.OnPressed += _ => OnUsernameCopy?.Invoke(TargetUsername ?? "");
             BanButton.OnPressed += _ => OnOpenBanPanel?.Invoke(TargetPlayer);
             KickButton.OnPressed += _ => OnKick?.Invoke(TargetUsername);
             NotesButton.OnPressed += _ => OnOpenNotes?.Invoke(TargetPlayer);
@@ -123,6 +124,7 @@ public sealed partial class PlayerPanel : FancyWindow
                 OnWhitelistToggle?.Invoke(TargetPlayer, _isWhitelisted);
                 SetWhitelisted(!_isWhitelisted);
             };
+            FollowButton.OnPressed += _ => OnFollow?.Invoke();
             FreezeButton.OnPressed += _ => OnFreeze?.Invoke();
             FreezeAndMuteToggleButton.OnPressed += _ => OnFreezeAndMuteToggle?.Invoke();
             LogsButton.OnPressed += _ => OnLogs?.Invoke();

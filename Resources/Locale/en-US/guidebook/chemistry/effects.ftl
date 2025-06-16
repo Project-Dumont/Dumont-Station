@@ -126,12 +126,6 @@ reagent-effect-guidebook-status-effect =
                 } {NATURALFIXED($time, 3)} {MANY("second", $time)} of {LOC($key)}
     }
 
-reagent-effect-guidebook-activate-artifact =
-    { $chance ->
-        [1] Attempts
-        *[other] attempt
-    } to activate an artifact
-
 reagent-effect-guidebook-set-solution-temperature-effect =
     { $chance ->
         [1] Sets
@@ -389,6 +383,12 @@ reagent-effect-guidebook-add-to-solution-reaction =
         *[other] cause
     } chemicals applied to an object to be added to its internal solution container
 
+reagent-effect-guidebook-artifact-unlock =
+    { $chance ->
+        [1] Helps
+        *[other] help
+        } unlock an alien artifact.
+
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
         [1] Adjusts
@@ -446,9 +446,3 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
         *[-1] from
     } the solution
-
-reagent-effect-guidebook-remove-cogchamp-accent =
-    { $chance ->
-        [1] Removes the
-        *[other] remove the
-    } cogchamp accent of the user

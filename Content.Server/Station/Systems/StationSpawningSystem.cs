@@ -231,15 +231,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
             DoJobSpecials(job, jobEntity);
             _identity.QueueIdentityUpdate(jobEntity);
-            // #Goobstation - Borg Preferred Name
-            if (profile != null && (prototype.ID == "Borg" || prototype.ID == "StationAi"))
-            {
-                var name = profile.BorgName;
-                if ((TryComp<NameIdentifierComponent>(jobEntity, out var nameIdentifier)) && (prototype.ID !="StationAi"))
-                    name = $"{name} {nameIdentifier.FullIdentifier}";
-
-                _metaSystem.SetEntityName(jobEntity, name);
-            }
             return jobEntity;
         }
 
@@ -269,6 +260,17 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             profile = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
         }
 
+        if (profile != null)
+        {
+            _humanoidSystem.LoadProfile(entity.Value, profile);
+            _metaSystem.SetEntityName(entity.Value, profile.Name);
+
+            if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
+            {
+                AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
+            }
+        }
+
         if (loadout != null)
         {
             EquipRoleLoadout(entity.Value, loadout, roleProto!);
@@ -283,28 +285,23 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
 
-        if (profile != null)
+        if (_configurationManager.GetCVar(GabyCVars.ICAlternateJobTitlesEnable))
         {
-            if (prototype != null)
-            {
-                if (_configurationManager.GetCVar(GabyCVars.ICAlternateJobTitlesEnable))
-                {
-                    if (profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altTitleId))
-                        if (_prototypeManager.TryIndex(altTitleId, out var altTitle))
-                            SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, altTitle);
-                }
-                else
-                {
-                    SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, null);
-                }
+            if (profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altTitleId))
+                if (_prototypeManager.TryIndex(altTitleId, out var altTitle))
+                    SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, altTitle);
             }
+            else
+            {
+                SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, null);
+            }
+        }
 
-            _humanoidSystem.LoadProfile(entity.Value, profile);
-            _metaSystem.SetEntityName(entity.Value, profile.Name);
-            if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
-            {
-                AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
-            }
+        _humanoidSystem.LoadProfile(entity.Value, profile);
+        _metaSystem.SetEntityName(entity.Value, profile.Name);
+        if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
+        {
+            AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
         }
 
         DoJobSpecials(job, entity.Value);
