@@ -317,5 +317,10 @@ Entries:
     - type: Fix
       message: Correções de otimização na Lavaland, diminuindo o lag causado por ela.
   id: 40
-  time: '2025-06-10T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Readiciona kit de armas ao chefe de segurança!
+  id: 41
+  time: '2025-06-16T15:00:00.0000000+00:00'
 
