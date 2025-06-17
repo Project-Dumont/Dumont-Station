@@ -909,7 +909,7 @@ ClothingMaskBlushingClown: ClothingMaskSexyMime
 ClothingNeckGoldAutismPin: ClothingNeckAutismPin
 MachineMaterialSilo: null
 CrateMaterialSilo: null
-  
+
 # 2025-03-29
 ClothingBackpackDuffelSyndicateRaidBundle: ClothingBackpackSyndicateRaidBundle
 
@@ -954,3 +954,6 @@ PlushieBlackburn: null
 PlushieBlackburnMatryoskya: null
 PlushieDesislavaBlackburn: null
 PlushieBlackburnKobliska: null
+
+# Gabystation 17/06 merge problems
+ClothingSatchelSmuggler: null
