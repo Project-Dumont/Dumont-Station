@@ -262,21 +262,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         if (profile != null)
         {
-            if (prototype is not null && _configurationManager.GetCVar(GabyCVars.ICAlternateJobTitlesEnable))
-            {
-                if (profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altTitleId))
-                {
-                    if (_prototypeManager.TryIndex(altTitleId, out var altTitle))
-                        SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, altTitle);
-                    else
-                        SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, null);
-                }
-                else
-                    SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, null);
-            }
-            else if (prototype is not null)
-                SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, null);
-
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
 
@@ -299,6 +284,20 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
+
+        if (prototype != null && TryComp(entity.Value, out MetaDataComponent? metaData))
+        {
+            if (profile is not null && profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altTitleId) &&
+                 _configurationManager.GetCVar(GabyCVars.ICAlternateJobTitlesEnable))
+            {
+                if (_prototypeManager.TryIndex(altTitleId, out var altTitle))
+                    SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station, altTitle);
+                else
+                    SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station, null);
+            }
+            else
+                SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station, null);
+        }
 
         DoJobSpecials(job, entity.Value);
         _identity.QueueIdentityUpdate(entity.Value);
