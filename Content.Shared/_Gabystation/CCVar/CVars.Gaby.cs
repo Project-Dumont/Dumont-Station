@@ -1,5 +1,7 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
