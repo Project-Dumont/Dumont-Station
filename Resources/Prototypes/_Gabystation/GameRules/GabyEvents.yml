@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <117521143+VictorJob@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: NecromorphSpawn
   parent: BaseStationEventShortDelay
