@@ -12,10 +12,17 @@
     minimumPlayers: 15
     weight: 5
     duration: 60
-    maxOccurrences: 1 # Gabystation - necromorph nerf (são mto forte pra ter toda hora)
+    maxOccurrences: 1 # necromorph nerf (são mto forte pra ter toda hora)
+    chaos: 
+      Hostile: 20
+      Medical: 50
+    eventType: HostileSpawn
+  - type: GameRule
+    chaosScore: 40
   - type: VentCrittersRule
-    entries:
-    - id: NecromorphSlasher
-      prob: 0.04
-    - id: NecromorphSlasherCorpo
-      prob: 0.1
+    table: !type:GroupSelector
+      children:
+      - id: NecromorphSlasher
+        weight: 0.04  # aprox 44.72%
+      - id: NecromorphSlasherCorpo
+        weight: 0.1   # aprox 89.44%
