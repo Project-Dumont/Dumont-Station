@@ -347,7 +347,7 @@
     job: Chemist
   - type: Item # Goobstation - Chemist card
     heldPrefix: chemist
-    sprite: _Goobstation/Objects/Misc/id_cards.rsi
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi 
 
 - type: entity
   parent: IDCardStandard
