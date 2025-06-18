@@ -23,6 +23,6 @@
     table: !type:GroupSelector
       children:
       - id: NecromorphSlasher
-        weight: 0.04  # aprox 44.72%
+        weight: 0.04
       - id: NecromorphSlasherCorpo
-        weight: 0.1   # aprox 89.44%
+        weight: 0.1
