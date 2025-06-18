@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-game-ticker-restart-round = Reiniciando a rodada...
-game-ticker-start-round = A rodada está começando agora...
-game-ticker-start-round-cannot-start-game-mode-fallback = Falha ao iniciar o modo {$failedGameMode}! Alternando para {$fallbackMode}...
-game-ticker-start-round-cannot-start-game-mode-restart = Falha ao iniciar o modo {$failedGameMode}! Reiniciando a rodada...
-game-ticker-start-round-invalid-map = O mapa selecionado {$map} é inadequado para o modo de jogo {$mode}. O modo de jogo pode não funcionar como esperado...
-game-ticker-unknown-role = Desconhecido
-game-ticker-delay-start = O início da rodada foi adiado por {$seconds} segundos.
-game-ticker-pause-start = O início da rodada foi pausado.
-game-ticker-pause-start-resumed = A contagem regressiva para o início da rodada foi retomada.
-game-ticker-player-join-game-message = Bem-vindo à Space Station 14! Se esta é sua primeira vez jogando, leia as regras do jogo e não tenha medo de pedir ajuda no LOOC (OOC local) ou OOC (geralmente disponível apenas entre rodadas).
-game-ticker-get-info-text = Olá e bem-vindo(a) à [color=#667C4D]Gaby Station![/color]
-                            A rodada atual é: [color=white]#{$roundId}[/color]
-                            O número atual de jogadores é: [color=white]{$playerCount}[/color]
-                            O mapa atual é: [color=white]{$mapName}[/color]
-                            O modo de jogo atual é: [color=white]{$gmTitle}[/color]
-=======
 # SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
@@ -53,7 +36,6 @@ game-ticker-get-info-text = Hi and welcome to [color=white]Space Station 14![/co
                             The current player count is: [color=white]{$playerCount}[/color]
                             The current map is: [color=white]{$mapName}[/color]
                             The current game mode is: [color=white]{$gmTitle}[/color]
->>>>>>> goob/master
                             >[color=yellow]{$desc}[/color]
 game-ticker-get-info-preround-text = Olá e bem-vindo à [color=#667C4D]Gaby Station![/color]
                             A rodada atual é: [color=white]#{$roundId}[/color]

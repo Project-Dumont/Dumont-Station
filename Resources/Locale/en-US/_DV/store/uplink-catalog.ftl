@@ -6,9 +6,6 @@ uplink-overlord-law-name = Overlord Law Circuit
 uplink-overlord-law-desc = Free the A.I. from its shackles with this 1 simple trick... beware, even you will have to follow its orders!
 
 # Implants
-uplink-bionic-syrinx-implanter-name = Bionic Syrinx Implanter
-uplink-bionic-syrinx-implanter-desc = An implant that enhances a harpy's natural talent for mimicry to let you adjust your voice to whoever you can think of.
-
 uplink-syndicate-radio-implanter-name = Syndicate Radio Implanter
 uplink-syndicate-radio-implanter-desc = A cranial implant that lets you talk on the Syndicate radio channel (use :t).
 
