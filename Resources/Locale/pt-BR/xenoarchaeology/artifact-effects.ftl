@@ -8,7 +8,7 @@ ent-XenoArtifactEffectUniversalIntercom = {""}
     .desc = Obtém a habilidade de um dispositivo de comunição de longa distância
 
 ent-XenoArtifactBecomeRandomInstrument = {""}
-    .desc = Obtém a habilidade de um instrumentro musical
+    .desc = Obtém a habilidade de um instrumento musical
 
 ent-XenoArtifactStorage = {""}
     .desc = Obtém um compartimento secreto
@@ -35,7 +35,7 @@ ent-XenoArtifactGun = {""}
     .desc = Obtém a habilidade de um revolver
 
 ent-XenoArtifactGhost = {""}
-    .desc = Se torna sanciente
+    .desc = Se torna senciente
 
 ent-XenoArtifactOmnitool = {""}
     .desc = Obtém a habilidade de uma omnitool
@@ -68,13 +68,13 @@ ent-XenoArtifactColdWave = {""}
     .desc = Esfria seus arredores
 
 ent-XenoArtifactHeatWave = {""}
-    .desc = Esquece seus arredores
+    .desc = Aquece seus arredores
 
 ent-XenoArtifactFoamMild = {""}
     .desc = Produz uma fumaça química
 
 ent-XenoArtifactRandomInstrumentSpawn = {""}
-    .desc = Cria um instrumentro musical
+    .desc = Cria um instrumento musical
 
 ent-XenoArtifactMonkeySpawn = {""}
     .desc = Cria um primata
@@ -98,7 +98,7 @@ ent-XenoArtifactStealth = {""}
     .desc = Cria interferência na luz
 
 ent-XenoArtifactRareMaterialSpawn = {""}
-    .desc = Cria materias raros
+    .desc = Cria materiais raros
 
 ent-XenoArtifactRareMaterialSpawnSilver = {""}
     .desc = Cria prata
@@ -110,7 +110,7 @@ ent-XenoArtifactRareMaterialSpawnGold = {""}
     .desc = Cria ouro
 
 ent-XenoArtifactRareMaterialSpawnUranium = {""}
-    .desc = Cria uranium
+    .desc = Cria urânio
 
 ent-XenoArtifactAngryCarpSpawn = {""}
     .desc = Cria uma carpa hostil
@@ -173,7 +173,7 @@ ent-XenoArtifactArtifactSpawn = {""}
     .desc = Cria um artefato
 
 ent-XenoArtifactShuffle = {""}
-    .desc = Troca de lugar com seres sanciente
+    .desc = Troca de lugar com seres sencientes
 
 ent-XenoArtifactHealAll = {""}
     .desc = Cura milagrosa

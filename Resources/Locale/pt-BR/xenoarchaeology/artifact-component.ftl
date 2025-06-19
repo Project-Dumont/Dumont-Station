@@ -1,5 +1,5 @@
 ### Commands
-cmd-unlocknode-desc = Desbloquei o nó de um dado artefato
+cmd-unlocknode-desc = Desbloqueia o nó de um dado artefato
 cmd-unlocknode-help = unlocknode <artifact uid> <node uid>
 cmd-parse-failure-unlocknode-arg-num = Número incorreto de argumentos
 cmd-parse-failure-unlocknode-invalid-entity = A netEntity dada não é um nó válido
