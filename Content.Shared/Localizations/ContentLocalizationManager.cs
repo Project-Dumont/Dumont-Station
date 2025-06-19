@@ -66,8 +66,10 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "ARTIGO-UM", FuncArtigoIndefinido);
             _loc.AddFunction(culture, "PREPOSICAO-DE", FuncPreposicaoDe);
             _loc.AddFunction(culture, "PREPOSICAO-EM", FuncPreposicaoEm);
+            _loc.AddFunction(culture, "PREPOSICAO-A", FuncPreposicaoA);
             _loc.AddFunction(culture, "PRONOME-ELE", FuncPronomeEle);
             _loc.AddFunction(culture, "PRONOME-DELE", FuncPronomeDele);
+            _loc.AddFunction(culture, "PRONOME-SEU", FuncPronomeSeu);
             _loc.AddFunction(culture, "MAKEGENERO", FormatMakeGenero);
 
             /*
@@ -317,6 +319,11 @@ namespace Content.Shared.Localizations
             return new LocValueString(Loc.GetString("zzzz-preposicao-em", ("ent", args.Args[0])));
         }
 
+        private static ILocValue FuncPreposicaoA(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-preposicao-a", ("ent", args.Args[0])));
+        }
+
         private static ILocValue FuncPronomeEle(LocArgs args)
         {
             return new LocValueString(Loc.GetString("zzzz-pronome-ele", ("ent", args.Args[0])));
@@ -325,6 +332,11 @@ namespace Content.Shared.Localizations
         private static ILocValue FuncPronomeDele(LocArgs args)
         {
             return new LocValueString(Loc.GetString("zzzz-pronome-dele", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPronomeSeu(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-seu", ("ent", args.Args[0])));
         }
 
         private static readonly Regex GeneroAoRule = new("ão$");

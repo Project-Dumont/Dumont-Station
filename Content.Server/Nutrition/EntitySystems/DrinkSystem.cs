@@ -325,7 +325,9 @@ public sealed class DrinkSystem : SharedDrinkSystem
 
         if (!_body.TryGetBodyOrganEntityComps<StomachComponent>((args.Target.Value, body), out var stomachs))
         {
-            _popup.PopupEntity(Loc.GetString(forceDrink ? "drink-component-try-use-drink-cannot-drink-other" : "drink-component-try-use-drink-had-enough"), args.Target.Value, args.User);
+            var targetName = Identity.Entity(args.Target.Value, EntityManager);
+
+            _popup.PopupEntity(Loc.GetString(forceDrink ? "drink-component-try-use-drink-cannot-drink-other" : "drink-component-try-use-drink-had-enough", ("target", targetName)), args.Target.Value, args.User);
 
             if (HasComp<RefillableSolutionComponent>(args.Target.Value))
             {
