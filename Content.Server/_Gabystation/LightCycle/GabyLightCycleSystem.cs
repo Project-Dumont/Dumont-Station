@@ -40,8 +40,8 @@ namespace Content.Server.Time
         private static readonly SoundSpecifier? NightAlert = new SoundPathSpecifier("/Audio/_Gabystation/Announcements/nightshift.ogg");
         private static readonly SoundSpecifier? DayAlert = new SoundPathSpecifier("/Audio/_Gabystation/Announcements/dayshift.ogg");
 
-        private double _updateTimer = 0.0f;
-        private const double UpdateInterval = 1.0f; // Roda uma vez por segundo
+        private double _updateTimer = 0.0;
+        private const double UpdateInterval = 1.0; // Roda uma vez por segundo
 
         public override void Initialize()
         {
