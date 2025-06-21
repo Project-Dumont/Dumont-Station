@@ -166,3 +166,9 @@
   name: Slipknot - Wait And Bleed (DoutorWhite mix)
   path:
     path: /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
+
+- type: jukebox
+  id: WindsOfFjords
+  name: Soft Knees - Winds Of Fjords (minomus 2022 remaster)
+  path:
+    path: /Audio/_Gabystation/Jukebox/winds_of_fjord.ogg
