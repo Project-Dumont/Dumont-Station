@@ -166,3 +166,9 @@
   name: Slipknot - Wait And Bleed (DoutorWhite mix)
   path:
     path: /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
+
+- type: jukebox
+  id: JustBreathe
+  name: Pearl Jam - Just Breathe
+  path:
+    path: /Audio/_Gabystation/Jukebox/just_breathe.ogg

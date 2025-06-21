@@ -1,0 +1,4 @@
+- files: ["just_breathe.ogg"]
+  copyright: "Just Breathe by Pearl Jam. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=_7ioE4wRil8"
