@@ -1,0 +1,8 @@
+
+- type: trait
+  id: HideFromRoundEndScreen
+  name: cd-trait-hide-from-round-end-screen-name
+  description: cd-trait-hide-from-round-end-screen-desc
+  category: Meta
+  components:
+  - type: HideFromRoundEndScreen
