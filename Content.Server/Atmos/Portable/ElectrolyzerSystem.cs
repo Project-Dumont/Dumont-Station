@@ -92,6 +92,7 @@ public sealed class ElectrolyzerSystem : EntitySystem
         var oxyProduced = porportion * efficiency;
         var hydrogenProduced = porportion * 2f * efficiency;
 
+        if (initH2O > 0.05f) {
             mixture.AdjustMoles(Gas.WaterVapor, -h2oRemoved);
             mixture.AdjustMoles(Gas.Oxygen, oxyProduced);
             mixture.AdjustMoles(Gas.Hydrogen, hydrogenProduced);

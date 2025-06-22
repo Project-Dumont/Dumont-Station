@@ -351,8 +351,8 @@ namespace Content.Shared.Atmos
         public const float SuperSaturationEnds = SuperSaturationThreshold / 3;
 
         public const float OxygenBurnRateBase = 1.4f;
-        public const float PlasmaMinimumBurnTemperature = (100f+T0C);
-        public const float PlasmaUpperTemperature = (1370f+T0C);
+        public const float PlasmaMinimumBurnTemperature = (100f + T0C);
+        public const float PlasmaUpperTemperature = (1370f + T0C);
         public const float PlasmaOxygenFullburn = 10f;
         public const float PlasmaBurnRateDelta = 9f;
 
@@ -431,11 +431,6 @@ namespace Content.Shared.Atmos
         ///     The amount of energy 1 mol of Nitrium decomposing into nitrogen and water vapor releases.
         /// </summary>
         public const float NitriumDecompositionEnergy = 30e3f; // Assmos - /tg/ gases
-
-        /// <summary>
-        ///     The amount of energy 1 mol of Pluoxium forming releases.
-        /// </summary>
-        public const float PluoxiumProductionEnergy = 250; // Assmos - /tg/ gases
 
         /// <summary>
         ///     The amount of energy 1 mol of Pluoxium forming releases.
