@@ -17,7 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 using Content.Server.GameTicking.Rules;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.DoAfter;
