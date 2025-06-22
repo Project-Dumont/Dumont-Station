@@ -1,4 +1,8 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.DeltaV.CCVars;
 

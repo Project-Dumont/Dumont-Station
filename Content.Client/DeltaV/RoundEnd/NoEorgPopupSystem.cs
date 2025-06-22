@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.GameTicking;
 using Content.Shared.DeltaV.CCVars;
 using Robust.Shared.Configuration;
