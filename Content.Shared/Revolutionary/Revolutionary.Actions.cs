@@ -1,4 +1,8 @@
-﻿using Content.Shared.Actions;
+// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Actions;
 
 namespace Content.Shared.Revolutionary;
 
