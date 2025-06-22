@@ -380,4 +380,4 @@
   - BluespaceGasSenderMachineBoard
   technologyPrerequisites:
   - AdvancedAtmospherics
-  position: 10, -10
+  position: -1,-5

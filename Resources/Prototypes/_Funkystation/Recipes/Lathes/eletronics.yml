@@ -1,39 +1,29 @@
 - type: latheRecipe
-  parent: BaseCircuitboardRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: ElectrolyzerMachineCircuitboard
+  icon: { sprite:  _Funkystation/Structures/Machines/electrolyzer.rsi, state: electrolyzerOff }
   result: ElectrolyzerMachineCircuitboard
-  category: Circuitry
-  completetime: 5
-  materials:
-    Steel: 100
-    Glass: 500
 
 - type: latheRecipe
-  parent: BaseCircuitboardRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: CrystallizerMachineCircuitboard
+  icon: { sprite:  _Funkystation/Structures/Machines/crystallizer.rsi, state: off }
   result: CrystallizerMachineCircuitboard
-  category: Circuitry
-  completetime: 5
-  materials:
-    Steel: 100
-    Glass: 500
 
 - type: latheRecipe
-  parent: BaseCircuitboardRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  icon: { sprite:  _Funkystation/Structures/Piping/Atmospherics/bluespacegassender.rsi, state: off }
   id: BluespaceGasSenderMachineBoard
   result: BluespaceGasSenderMachineBoard
-  category: Circuitry
-  completetime: 5
-  materials:
-    Steel: 100
-    Glass: 500
 
 - type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: ThermomachineUpgradedFreezerMachineCircuitBoard
+  icon: { sprite:  _Funkystation/Structures/Piping/Atmospherics/upgradedthermomachine.rsi, state: freezerOff }
   result: ThermomachineUpgradedFreezerMachineCircuitBoard
 
 - type: latheRecipe
-  parent: BaseSilverCircuitboardRecipe
+  parent: [ BaseSilverCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: ThermomachineAdvancedFreezerMachineCircuitBoard
+  icon: { sprite:  _Funkystation/Structures/Piping/Atmospherics/advancedthermomachine.rsi, state: freezerOff }
   result: ThermomachineAdvancedFreezerMachineCircuitBoard

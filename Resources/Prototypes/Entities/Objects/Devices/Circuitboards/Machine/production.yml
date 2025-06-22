@@ -1491,6 +1491,7 @@
 - type: entity
   id: ElectrolyzerMachineCircuitboard
   parent: BaseMachineCircuitboard
+  name: electrolyzer machine board
   description: A machine printed circuit board for an electrolyzer.
   components:
     - type: Sprite
@@ -1511,16 +1512,13 @@
   components:
     - type: MachineBoard
       prototype: Crystallizer
-      requirements:
+      stackRequirements:
         Capacitor: 2
         Manipulator: 4
         MatterBin: 4
-      materialRequirements:
         Steel: 5
         Glass: 5
         
-        
-# Assmos - Bluespace Gas
 - type: entity
   id: BluespaceGasSenderMachineBoard
   parent: BaseMachineCircuitboard
@@ -1529,11 +1527,10 @@
   components:
     - type: MachineBoard
       prototype: BluespaceSender
-      requirements:
+      stackRequirements:
         Capacitor: 4
         Manipulator: 4
         MatterBin: 2
-      materialRequirements:
         Steel: 5
 
 - type: entity
@@ -1546,10 +1543,9 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineUpgradedFreezer
-    requirements:
+    stackRequirements:
       MatterBin: 2
       Capacitor: 2
-    materialRequirements:
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1566,10 +1562,9 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineUpgradedHeater
-    requirements:
+    stackRequirements:
       MatterBin: 2
       Capacitor: 2
-    materialRequirements:
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1586,10 +1581,9 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineAdvancedFreezer
-    requirements:
+    stackRequirements:
       MatterBin: 2
       Capacitor: 2
-    materialRequirements:
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1606,10 +1600,9 @@
     state: engineering
   - type: MachineBoard
     prototype: GasThermoMachineAdvancedHeater
-    requirements:
+    stackRequirements:
       MatterBin: 2
       Capacitor: 2
-    materialRequirements:
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
