@@ -7,3 +7,8 @@
   copyright: "Just Breathe by Pearl Jam. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=_7ioE4wRil8"
+
+- files: ["winds_of_fjord.ogg"]
+  copyright: "Winds Of Fjords by Soft Knees. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=X2uuQ1kdprk"
