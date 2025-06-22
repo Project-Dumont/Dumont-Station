@@ -199,11 +199,6 @@
   id: GasMinerNitrousOxide
   components:
     - type: GasMiner
-<<<<<<< HEAD
-      spawnGas: NitrousOxide
-||||||| parent of 275bd541be7 (Gas Stuff (#850))
-      spawnGas: NitrousOxide
-=======
       spawnGas: NitrousOxide
 
 - type: entity
@@ -293,4 +288,3 @@
   components:
     - type: GasMiner
       spawnGas: AntiNoblium
->>>>>>> 275bd541be7 (Gas Stuff (#850))

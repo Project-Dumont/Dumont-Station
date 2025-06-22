@@ -1,0 +1,39 @@
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ElectrolyzerMachineCircuitboard
+  result: ElectrolyzerMachineCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: CrystallizerMachineCircuitboard
+  result: CrystallizerMachineCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: BluespaceGasSenderMachineBoard
+  result: BluespaceGasSenderMachineBoard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: ThermomachineUpgradedFreezerMachineCircuitBoard
+  result: ThermomachineUpgradedFreezerMachineCircuitBoard
+
+- type: latheRecipe
+  parent: BaseSilverCircuitboardRecipe
+  id: ThermomachineAdvancedFreezerMachineCircuitBoard
+  result: ThermomachineAdvancedFreezerMachineCircuitBoard

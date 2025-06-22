@@ -598,12 +598,9 @@
   - type: PowerSwitch
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
-<<<<<<< HEAD
   - type: GuideHelp
     guides:
     - GasCondensing
-||||||| parent of 275bd541be7 (Gas Stuff (#850))
-=======
 
 # Assmos
 - type: entity
@@ -664,4 +661,3 @@
     heatCapacity: 40000
   - type: Machine
     board: ThermomachineAdvancedHeaterMachineCircuitBoard
->>>>>>> 275bd541be7 (Gas Stuff (#850))

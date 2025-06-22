@@ -372,8 +372,3 @@
   id: SolarPanels
   name: guide-entry-solarpanels
   text: "/ServerInfo/Guidebook/Engineering/SolarPanels.xml"
-
-- type: guideEntry
-  id: Thermomachines # funky
-  name: guide-entry-thermomachines
-  text: "/ServerInfo/Guidebook/Engineering/Thermomachines.xml"

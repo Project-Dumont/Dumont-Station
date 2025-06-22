@@ -216,23 +216,15 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
-<<<<<<< HEAD
         # Goobstation
           tags:
           - FitsInCharger
         blacklist:
           tags:
           - WizardWand
-          components:
-          - MaterialEnergy
-||||||| parent of 275bd541be7 (Gas Stuff (#850))
-=======
-        blacklist:  # Goobstation
-          components:
-          - MaterialEnergy
-          tags:
           - NoRecharge  # Assmos - Crystallizer
->>>>>>> 275bd541be7 (Gas Stuff (#850))
+          components:
+          - MaterialEnergy
 
 - type: entity
   parent: BaseItemRecharger
@@ -259,16 +251,10 @@
         blacklist:
           tags:
           - PotatoBattery
-<<<<<<< HEAD
           - WizardWand # Goobstation
-          components:  # Goobstation
-          - MaterialEnergy
-||||||| parent of 275bd541be7 (Gas Stuff (#850))
-=======
           - NoRecharge  # Assmos - Crystallizer
           components:  # Goobstation
           - MaterialEnergy
->>>>>>> 275bd541be7 (Gas Stuff (#850))
 
 - type: entity
   parent: BaseItemRecharger
@@ -295,16 +281,10 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
-<<<<<<< HEAD
         blacklist:  # Goobstation
           tags:
           - WizardWand
-||||||| parent of 275bd541be7 (Gas Stuff (#850))
-=======
-        blacklist:
-          tags:
           - NoRecharge  # Assmos - Crystallizer
->>>>>>> 275bd541be7 (Gas Stuff (#850))
 
 - type: entity
   parent: BaseRecharger
