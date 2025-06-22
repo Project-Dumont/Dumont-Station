@@ -7,7 +7,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Content.Server.Power.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Popups;
 using Content.Server.Hands.Systems;
 using Content.Shared.Actions;
