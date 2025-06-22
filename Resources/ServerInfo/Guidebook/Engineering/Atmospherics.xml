@@ -139,4 +139,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     ([color=#a4885c]Pressão kPa * Volume L = Moles * R * Temperatura K[/color])
   </Box> para derivar informações que você possa precisar sobre um gás. R é aproximadamente 8.31446.
 
+  <Box>
+  -- Mais gases foram adicionados, essa sessão está incompleta. --
+  </Box>
+
 </Document>

@@ -71,6 +71,7 @@
   id: AtmosTools
   recipes:
   - HolofanProjector
+  - ElectrolyzerMachineBoard # Gaby
 
 - type: latheRecipePack
   id: EngineeringWeapons
