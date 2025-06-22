@@ -5,12 +5,12 @@
 
 gas-ammonia-abbreviation = NH₃
 gas-carbon-dioxide-abbreviation = CO₂
-gas-frezon-abbreviation = F
+gas-frezon-abbreviation = Frezon
 gas-nitrogen-abbreviation = N₂
 gas-nitrous-oxide-abbreviation = N₂O
 gas-oxygen-abbreviation = O₂
-gas-plasma-abbreviation = P
-gas-tritium-abbreviation = T
+gas-plasma-abbreviation = Plasma
+gas-tritium-abbreviation = Tritium
 gas-water-vapor-abbreviation = H₂O
 gas-bz-abbreviation = bz
 gas-healium-abbreviation = h+

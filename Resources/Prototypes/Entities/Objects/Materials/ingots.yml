@@ -149,6 +149,43 @@
   - type: Stack
     count: 1
 
+- type: entity
+  parent: IngotBase
+  id: IngotTungsten
+  name: tungsten-carbide bar
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Tungsten: 100
+  - type: Stack
+    stackType: Tungsten
+    baseLayer: base
+    layerStates:
+    - tungsten_1
+    - tungsten_2
+    - tungsten_3
+  - type: Sprite
+    state: tungsten_3
+    layers:
+    - state: tungsten_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: tungsten
+  - type: Appearance
+
+- type: entity
+  parent: IngotTungsten
+  id: IngotTungsten1
+  name: tungsten-carbide bar
+  suffix: Single
+  components:
+  - type: Sprite
+    state: tungsten_1
+  - type: Stack
+    count: 1
+
 ## Assmos - /tg/ gases
 - type: entity
   parent: IngotBase
@@ -207,4 +244,64 @@
     state: hydrogen
   - type: Stack
     stackType: MetalHydrogen
+    count: 1
+
+## Assmos - Crystallizer
+- type: entity
+  parent: IngotBase
+  id: Zaukerite
+  name: zaukerite
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Zaukerite: 100
+  - type: Stack
+    stackType: Zaukerite
+    baseLayer: base
+    layerStates:
+    - zaukerite
+    - zaukerite_2
+    - zaukerite_3
+  - type: Sprite
+    state: zaukerite_3
+    layers:
+    - state: zaukerite_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: metalhydrogen
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: zaukerite
+  - type: SolutionContainerManager
+    solutions:
+      zaukerite:
+        reagents:
+        - ReagentId: Zauker
+          Quantity: 20
+        canReact: false
+
+- type: entity
+  parent: Zaukerite
+  id: Zaukerite10
+  name: zaukerite
+  suffix: 10
+  components:
+  - type: Sprite
+    state: zaukerite
+  - type: Stack
+    stackType: Zaukerite
+    count: 10
+
+- type: entity
+  parent: Zaukerite
+  id: Zaukerite1
+  name: zaukerite
+  suffix: Single
+  components:
+  - type: Sprite
+    state: zaukerite
+  - type: Stack
+    stackType: Zaukerite
     count: 1

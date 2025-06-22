@@ -113,6 +113,9 @@
 // SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -198,6 +201,7 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
+            "TestHFR", // Funky - HFR
             "Fland",
             "Meta",
             "Packed",

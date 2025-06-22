@@ -96,3 +96,8 @@
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
   - HolopadMachineCircuitboard
+  - BluespaceGasSenderMachineBoard # Assmos - Bluespace Gas
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
+  - CrystallizerMachineCircuitboard # Assmos - Crystallizer
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
