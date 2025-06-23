@@ -80,4 +80,3 @@ public sealed class CrystallizerProgressBarMessage : BoundUserInterfaceMessage
         ProgressBar = progressBar;
     }
 }
-

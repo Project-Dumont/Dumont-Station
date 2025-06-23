@@ -5,7 +5,7 @@ research-discipline-experimental = Experimental
 research-discipline-civilian-services = Serviços Civis
 
 research-technology-fulton = Fultons
-research-technology-salvage-equipment = Equipmento de Salvatagem
+research-technology-salvage-equipment = Equipamento de Salvatagem
 research-technology-advanced-powercells = Baterias Avançadas
 research-technology-mechanical-compression = Compressão Mecânica
 research-technology-compact-power = Potência Compacta

@@ -230,6 +230,6 @@ public sealed class BluespaceVendorSystem : EntitySystem
         if (!Resolve(uid, ref appearance, false))
             return;
 
-        _appearance.SetData(uid, BluespaceVendorVisuals.isPumping, isPumping, appearance);
+        _appearance.SetData(uid, BluespaceVendorVisuals.IsPumping, isPumping, appearance);
     }
 }

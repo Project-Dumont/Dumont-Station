@@ -23,7 +23,7 @@ namespace Content.Shared._Funkystation.Atmos.Components
     public enum BluespaceVendorVisuals
     {
         TankInserted,
-        isPumping
+        IsPumping
     }
 
     /// <summary>

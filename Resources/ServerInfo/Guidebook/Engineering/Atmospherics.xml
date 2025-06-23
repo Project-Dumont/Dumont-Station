@@ -141,7 +141,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   ## Halon
   Halon suprime incêndios consumindo oxigênio, numa proporção de 20 moles de oxigênio por 1 mol de halon, acima de 343,15 K em uma reação endotérmica, produzindo dióxido de carbono. 
-  É produzido em uma reação exotérmica ao eletrólise BZ, gerando 2 moles de halon e 0,2 moles de oxigênio por mol de BZ. Use com cautela para evitar depleção de oxigênio.
+  É produzido em uma reação exotérmica pela eletrólise de BZ, gerando 2 moles de halon e 0,2 moles de oxigênio por mol de BZ. Use com cautela para evitar depleção de oxigênio.
   
   <Box>
     <GuideEntityEmbed Entity="BZCanister"/>
@@ -151,7 +151,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## Helium
-  Helium é um gás inerte e invisível, produzido como subproduto de outras reações. Tem uso mínimo em atmosferia, devendo ser removido para evitar diluição de outros gases.
+  Helium é um gás inerte e invisível, produzido como subproduto de outras reações. Tem poucos usos na Atmosfera, devendo ser removido para evitar a diluição de outros gases.
   
   <Box>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
@@ -159,7 +159,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## Anti-Noblium
-  Anti-Noblium é um gás raro com usos muito específicos, produzido ao eletrólise do Hyper-Noblium abaixo de 150 K, gerando 0,5 mol de Anti-Noblium por mol de Hyper-Noblium. Armazene com cuidado para preservar o Hyper-Noblium para outras reações.
+  Anti-Noblium é um gás raro com usos muito específicos, produzido pela eletrólise do Hyper-Noblium abaixo de 150 K, gerando 0,5 mol de Anti-Noblium por mol de Hyper-Noblium. Armazene com cuidado para preservar o Hyper-Noblium para outras reações.
   
   <Box>
     <GuideEntityEmbed Entity="HyperNobliumCanister"/>
