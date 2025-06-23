@@ -9,7 +9,7 @@
     state: icon
   - type: FlavorProfile
     flavors:
-      - eggplant
+    - eggplant
   - type: StaticPrice
     price: 35
   - type: Item
@@ -90,7 +90,7 @@
   parent: BasePowerCell
   id: CrystalCell
   name: crystal cell
-  description: A non rechargeable cell with a huge power capacity. 
+  description: A non rechargeable cell with a huge power capacity.
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Power/crystal_cell.rsi
@@ -102,4 +102,4 @@
     pricePerJoule: 0.01
   - type: Tag
     tags:
-      - NoRecharge
+    - NoRecharge

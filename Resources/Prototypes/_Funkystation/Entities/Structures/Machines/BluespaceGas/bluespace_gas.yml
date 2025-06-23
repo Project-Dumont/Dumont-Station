@@ -36,7 +36,7 @@
   - type: DeviceLinkSource
     range: 1000
     ports:
-      - BluespaceSender
+    - BluespaceSender
   - type: Appearance
   - type: BluespaceSender
   - type: ActivatableUI
@@ -75,7 +75,7 @@
     range: 1000
   - type: DeviceLinkSink
     ports:
-      - BluespaceGasUtilizer
+    - BluespaceGasUtilizer
   - type: BluespaceGasUtilizer
 
 - type: entity
@@ -149,7 +149,7 @@
       name: comp-gas-canister-slot-name-gas-tank
       whitelist:
         components:
-          - GasTank
+        - GasTank
   - type: ContainerContainer
     containers:
       tank_slot: !type:ContainerSlot {}

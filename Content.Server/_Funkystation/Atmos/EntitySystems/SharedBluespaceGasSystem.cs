@@ -1,16 +1,10 @@
-using System.Linq;
 using Content.Shared._Funkystation.CCVars;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
-using Content.Shared.Materials;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Content.Shared._Funkystation.Atmos.Components;
-using Content.Server._Funkystation.Atmos;
 using Content.Server._Funkystation.Atmos.Components;
-
-using Content.Shared.Atmos;
-using Content.Shared.Atmos.Reactions;
 
 namespace Content.Server._Funkystation.Atmos.Systems
 {
@@ -64,7 +58,6 @@ namespace Content.Server._Funkystation.Atmos.Systems
 
             vendor.BluespaceGasMixture = ent.Comp.BluespaceGasMixture;
             vendor.BluespaceSenderConnected = true;
-            utilizer.BluespaceSender = null;
 
             utilizer.BluespaceSender = ent;
             Dirty(args.Sink, utilizer);

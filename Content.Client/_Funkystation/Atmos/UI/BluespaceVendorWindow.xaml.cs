@@ -105,7 +105,7 @@ namespace Content.Client._Funkystation.Atmos.UI
             else
             {
                 int colorSwap = 1;
-                for (var i = 0; i < Atmospherics.TotalNumberOfGases-1; i++)
+                for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
                 {
                     int index = i;
                     var gasName = Enum.GetName(typeof(Gas), index) ?? "Unknown Gas";

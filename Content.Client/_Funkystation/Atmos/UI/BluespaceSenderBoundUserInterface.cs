@@ -27,7 +27,7 @@ namespace Content.Client._Funkystation.Atmos.UI
         }
 
         /// <summary>
-        /// Called each time a chem master UI instance is opened. Generates the window and fills it with
+        /// Called each time a bluespace sender UI instance is opened. Generates the window and fills it with
         /// relevant info. Sets the actions for static buttons.
         /// </summary>
         protected override void Open()
@@ -53,7 +53,7 @@ namespace Content.Client._Funkystation.Atmos.UI
             base.UpdateState(state);
             if (_window == null || state is not BluespaceSenderBoundUserInterfaceState cast)
                 return;
-                
+
             _window.BuildGasList(cast.BluespaceSenderRetrieveList, cast.BluespaceGasMixture);
             _window.SetActive(cast.PowerToggle);
             _window.SetRetrievingMode(cast.InRetrieveMode);

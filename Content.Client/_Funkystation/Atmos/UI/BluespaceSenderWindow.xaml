@@ -3,13 +3,13 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                 MinSize="420 480"
-                Title="Bluespace Gas Sender">
+                Title="{Loc 'bluespace-sender-window-title'}">
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5" SeparationOverride="10">
             <BoxContainer Orientation="Horizontal">
                 <Label Text="Bluespace Network Gases" />
                 <Control HorizontalExpand="True" />
-                <Button Name="RetrieveModeButton" Text="Retrieve Gases"/>
-                <Button Name="ToggleStatusButton" Text="Off" Pressed="False"/>
+                <Button Name="RetrieveModeButton" Text="{Loc 'bluespace-sender-retrieve-gases'}"/>
+                <Button Name="ToggleStatusButton" Text="{Loc 'bluespace-sender-off'}" Pressed="False"/>
             </BoxContainer>
             <!-- Gas List -->
             <PanelContainer VerticalExpand="True" MinSize="0 200">
@@ -20,7 +20,7 @@
                 <ScrollContainer HorizontalExpand="True" MinSize="0 200">
                         <BoxContainer Orientation="Horizontal">
                             <BoxContainer Name="GasListBox" Orientation="Vertical" Margin="4" HorizontalExpand="True">
-                                <Label Text="Something went wrong" />
+                                <Label Text="{Loc 'bluespace-sender-error'}" />
                             </BoxContainer>
                         </BoxContainer>
                 </ScrollContainer>

@@ -233,7 +233,7 @@
     - state: zaukerite_3
       map: ["base"]
   - type: Item
-    heldPrefix: metalhydrogen
+    heldPrefix: zaukerite
   - type: Appearance
   - type: Extractable
     grindableSolutionName: zaukerite

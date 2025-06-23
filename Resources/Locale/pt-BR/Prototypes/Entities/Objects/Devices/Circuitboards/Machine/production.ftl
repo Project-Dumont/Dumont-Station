@@ -17,4 +17,4 @@ ent-ThermomachineAdvancedFreezerMachineCircuitBoard = resfriador hyper
     .desc = Um circuito elétrico de resfriador hyper. Você pode usar uma chave de fenda para mudar o circuito.
 
 ent-ThermomachineAdvancedHeaterMachineCircuitBoard = aquecedor hyper
-    .desc = Um circuito elétrico de aquecedos hyper. Você pode usar uma chave de fenda para mudar o circuito.
+    .desc = Um circuito elétrico de aquecedor hyper. Você pode usar uma chave de fenda para mudar o circuito.

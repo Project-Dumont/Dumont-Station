@@ -7,7 +7,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Components;
-using Content.Server.NodeContainer.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared._Funkystation.Atmos.Components;
 using Content.Shared.Containers.ItemSlots;
@@ -16,11 +15,11 @@ using Content.Server.Power.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Content.Shared.Database;
-using Robust.Shared.Player;
 using System.Linq;
 using Content.Server._Funkystation.Atmos.Components;
 
 namespace Content.Server._Funkystation.Atmos.EntitySystems;
+
 /// <summary>
 /// Contains all the server-side logic for bluespace vendors.
 /// <seealso cref="BluespaceVendorComponent"/>
@@ -34,10 +33,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
     [Dependency] private readonly PowerReceiverSystem _power = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
-    private TimeSpan _lastUpdateTime = TimeSpan.Zero;
-    private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(0.5);
-    private List<int> _dangerousGases = [7, 8, 9];
-    private List<int> _explosiveGases = [3, 4, 11, 13];
+    private readonly List<Gas> _dangerousGases = [Gas.NitrousOxide, Gas.Frezon, Gas.BZ, Gas.Plasma, Gas.Tritium, Gas.Nitrium, Gas.Hydrogen];
 
     public override void Initialize()
     {
@@ -68,9 +64,9 @@ public sealed class BluespaceVendorSystem : EntitySystem
 
     private void OnChangeRetrieve(EntityUid uid, BluespaceVendorComponent vendor, BluespaceVendorChangeRetrieveMessage args)
     {
-        int index = args.Index;
+        var index = args.Index;
 
-        if (_explosiveGases.Contains(index) && !vendor.BluespaceVendorRetrieveList[index])
+        if (_dangerousGases.Contains((Gas) index) && !vendor.BluespaceVendorRetrieveList[index])
         {
             _adminLogger.Add(LogType.Explosion, LogImpact.Medium, $"Player {ToPrettyString(args.Actor):player} potentially dispensing {Enum.GetName(typeof(Gas), index)} from {ToPrettyString(uid):vendor} into tank");
         }
@@ -109,7 +105,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
         }
 
         UpdatePumpingAppearance(uid, vendor, true);
-        
+
         // When retrieving, add selected gases from bluespace to tank
         var initMoles = Math.Min(((releasePressure * tankMixture.Volume) / (Atmospherics.R * Atmospherics.T20C) - tankMixture.TotalMoles), 0.2f) / isRetrievingCount;
 
@@ -120,11 +116,11 @@ public sealed class BluespaceVendorSystem : EntitySystem
 
             var moles = initMoles;
             moles = moles >= bluespaceMixture.GetMoles(i) ? bluespaceMixture.GetMoles(i) : moles;
-            
+
             bluespaceMixture.AdjustMoles(i, -moles);
             if (bluespaceMixture.GetMoles(i) < 0.01f)
                 vendor.BluespaceVendorRetrieveList[i] = !vendor.BluespaceVendorRetrieveList[i];
-                
+
             var addedGases = new GasMixture();
             addedGases.AdjustMoles(i, moles);
             addedGases.Temperature = Atmospherics.T20C;
@@ -158,7 +154,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
             return;
 
         if (vendor.GasTankSlot.Item != null)
-        {   
+        {
             UpdateTankAppearance(uid, vendor);
             var gasTank = Comp<GasTankComponent>(vendor.GasTankSlot.Item.Value);
             vendor.TankGasMixture = gasTank.Air;
@@ -170,7 +166,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
     {
         if (args.Container.ID != vendor.TankContainerName)
             return;
-        
+
         HandleTankRemoval(uid, vendor);
     }
 
@@ -197,11 +193,11 @@ public sealed class BluespaceVendorSystem : EntitySystem
 
         if (!vendor.BluespaceSenderConnected)
             return;
-        
+
         var gasTank = Comp<GasTankComponent>(vendor.GasTankSlot.Item.Value);
         var mixture = gasTank.Air;
         var removedAir = mixture.Remove(mixture.TotalMoles);
-        
+
         _atmos.Merge(vendor.BluespaceGasMixture, removedAir);
         DirtyUI(uid, vendor);
     }

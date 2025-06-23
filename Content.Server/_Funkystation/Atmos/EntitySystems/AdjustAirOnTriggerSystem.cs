@@ -27,6 +27,9 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
+    private static readonly AtmosDirection[] Directions = new[] { AtmosDirection.North, AtmosDirection.South, AtmosDirection.East, AtmosDirection.West };
+    private static readonly Vector2i[] Offsets = new[] { new Vector2i(0, 1), new Vector2i(0, -1), new Vector2i(1, 0), new Vector2i(-1, 0) };
+
     public override void Initialize()
     {
         base.Initialize();
@@ -92,13 +95,10 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
                 mixture.Temperature = Math.Max(component.Temperature.Value, Atmospherics.TCMB);
             }
 
-            var directions = new[] { AtmosDirection.North, AtmosDirection.South, AtmosDirection.East, AtmosDirection.West };
-            var offsets = new[] { new Vector2i(0, 1), new Vector2i(0, -1), new Vector2i(1, 0), new Vector2i(-1, 0) };
-
-            for (int i = 0; i < directions.Length; i++)
+            for (int i = 0; i < Directions.Length; i++)
             {
-                var direction = directions[i];
-                var offset = offsets[i];
+                var direction = Directions[i];
+                var offset = Offsets[i];
                 var neighborTile = currentTile + offset;
 
                 if (visited.Contains(neighborTile))

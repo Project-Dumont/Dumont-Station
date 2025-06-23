@@ -140,8 +140,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## Halon
-  Halon suppresses fires by consuming oxygen, at a ratio of 20 moles oxygen per 1 mole halon, above 343.15 K in an endothermic reaction, producing carbon dioxide. It's made in an exothermic reaction by electrolyzing BZ, yielding 2 moles halon and 0.2 moles oxygen per mole BZ. Use cautiously to avoid oxygen depletion.
-
+  Halon suprime incêndios consumindo oxigênio, numa proporção de 20 moles de oxigênio por 1 mol de halon, acima de 343,15 K em uma reação endotérmica, produzindo dióxido de carbono. 
+  É produzido em uma reação exotérmica ao eletrólise BZ, gerando 2 moles de halon e 0,2 moles de oxigênio por mol de BZ. Use com cautela para evitar depleção de oxigênio.
+  
   <Box>
     <GuideEntityEmbed Entity="BZCanister"/>
     <GuideEntityEmbed Entity="Electrolyzer"/>
@@ -150,7 +151,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## Helium
-  Helim é um gás inerte e invisível, produzido como subproduto de outras reações. Tem uso mínimo em atmosferia, devendo ser removido para evitar diluição de outros gases.
+  Helium é um gás inerte e invisível, produzido como subproduto de outras reações. Tem uso mínimo em atmosferia, devendo ser removido para evitar diluição de outros gases.
   
   <Box>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
