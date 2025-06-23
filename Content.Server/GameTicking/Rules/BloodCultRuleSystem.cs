@@ -26,6 +26,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.BloodCult;
 using Content.Shared.BloodCult.Components;
 using Content.Server.BloodCult.Components;
+using Content.Server.Heretic.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Server.Administration.Systems;
