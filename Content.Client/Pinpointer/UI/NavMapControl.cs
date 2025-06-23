@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Ahion <58528255+Ahion@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
