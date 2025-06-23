@@ -350,3 +350,44 @@ Entries:
       message: Atualização na cluster.
   id: 45
   time: '2025-06-17T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Add
+      message: Adiciona culto de sangue ao jogo, viva ao nosso lorde nar'sie!
+    - type: Add
+      message: Mais costumização de marcas para personagem (moth tem umas asas lindas.)!
+    - type: Add
+      message: Adiciona Boombox, que são jukebox portateis, pesquisa avançada de serviço para poder fabricar!
+    - type: Add
+      message: Adiciona mecanica de declarar revolta aos head revs!
+    - type: Add
+      message: Adiciona tela de aviso end round (No EORG), traduzido!
+    - type: Tweak
+      message: Novo visual para o flatpack!
+    - type: Tweak
+      message: Alterações na ChemMaster!
+    - type: Tweak
+      message: Agora, a UI do autodoc está em ingles, e não em chines.
+    - type: Add
+      message: Mais pelucias ao jogo!
+    - type: Add
+      message: Adiciona o novo antagonista recrutador do sindicato, onde voce convence os tripulantes a assinar os seus papeis... Com sangue!
+    - type: Tweak
+      message: Altera o visual dos carimbos no papel!
+    - type: Add
+      message: Adiciona traits que alteram o visual da sua assinatura pessoal no papel!
+    - type: Add
+      message: Nova habilidade para o revenant, agora voce pode escrever rituais malignos no chão!
+    - type: Add
+      message: Mais umas coisas que não vou lembrar de cabeça agora...
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  id: 46
+  time: '2025-06-23T15:00:00.0000000+00:00'
