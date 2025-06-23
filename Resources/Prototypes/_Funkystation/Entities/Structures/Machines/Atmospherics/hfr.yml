@@ -387,32 +387,32 @@
   - type: Paper
     content: |2
 
-      [head=1]Quick Guide to Safe Handling of the Hypertorus Fusion Reactor[/head]
+      [head=1]Guia Rápido para o manuseio seguro do Reator de Fusão Hypertorus[/head]
 
-      [head=3]Operating Instructions[/head]
-      - Build the machine as shown in the main guide.
-      - Create a 50/50 gas mix of tritium and hydrogen, totaling approximately 2000 moles.
-      - Start the machine and fill the cooling loop with plasma or hypernoblium. Use space or freezers to cool it.
-      - Connect the fuel mix to the fuel injector port, allowing only 1000 moles into the machine to ease the kickstart of the reaction.
-      - Set the Heat Conductor to 500 when starting the reaction, then reset to 100 when the power level exceeds 1.
-      - In case of a meltdown:
-        - Set the Heat Conductor and Current Damper to maximum.
-        - Set fuel injection to minimum.
-        - If heat output remains positive, adjust the Magnetic Constrictors until it becomes negative.
-        - Strengthen cooling and use high heat capacity gases (e.g., hypernoblium) in the moderator to manage the issue.
+      [head=3]Instruções de Operação[/head]
+      - Construa a máquina conforme mostrado no guia principal.
+      - Crie uma mistura gasosa 50/50 de trítio e hidrogênio, totalizando aproximadamente 2000 moles.
+      - Ligue a máquina e encha o circuito de resfriamento com plasma ou hyper-noblium. Use o espaço ou congeladores para resfriá-lo.
+      - Conecte a mistura de combustível na porta de injeção de combustível, permitindo apenas 1000 moles na máquina para facilitar o início da reação.
+      - Ajuste o condutor de calor para 500 ao iniciar a reação, depois redefina para 100 quando o nível de potência exceder 1.
+      - Em caso de derretimento:
+        - Ajuste o condutor de calor e o amortecedor de corrente para o máximo.
+        - Ajuste a injeção de combustível para o mínimo.
+        - Se a saída de calor continuar positiva, ajuste os constritores magnéticos até que se torne negativa.
+        - Reforce o resfriamento e use gases de alta capacidade térmica (por exemplo, hyper-noblium) no moderador para controlar o problema.
 
-      [head=3]Warnings[/head]
-      - The machine cannot be dismantled or powered off if the power level is above 0.
-      - Waste gases cannot be disposed of if the power level is above 5.
-      - Only helium and antinoblium can be removed from the fusion mix.
-      - Hypernoblium significantly reduces the power of the mix.
-      - Antinoblium significantly increases the power of the mix.
-      - High heat capacity gases are harder to heat or cool.
-      - Low heat capacity gases are easier to heat or cool.
-      - The machine consumes 250 KW of power when running, so prepare the station power accordingly before turning on the HFR.
-      - Setting up multiple power generators is highly recommended before running the HFR.
-      - In a power shortage, the fusion reaction continues, but cooling stops.
-      - In the event of a sustained power outage, cut all power to the HFR until power issues are sorted.
+      [head=3]Avisos[/head]
+      - A máquina não pode ser desmontada ou desligada se o nível de potência estiver acima de 0.
+      - Os gases residuais não podem ser descartados se o nível de potência estiver acima de 5.
+      - Apenas helium e hyper-noblium podem ser removidos da mistura de fusão.
+      - O hyper-noblium reduz significativamente a potência da mistura.
+      - O anti-noblium aumenta significativamente a potência da mistura.
+      - Gases com alta capacidade térmica são mais difíceis de aquecer ou resfriar.
+      - Gases com baixa capacidade térmica são mais fáceis de aquecer ou resfriar.
+      - A máquina consome 250 kW de energia quando em funcionamento, então prepare a energia da estação adequadamente antes de ligar o RFH.
+      - Recomenda-se fortemente configurar múltiplos geradores de energia antes de operar o RFH.
+      - Em caso de falta de energia, a reação de fusão continua, mas o resfriamento para.
+      - No evento de uma falta de energia prolongada, corte toda a energia do RFH até que o problema seja resolvido.
 
-      [head=3]Disclaimer[/head]
-      The author of this quick guide is not responsible for misuse or meltdowns caused by following this guide. Refer to advanced guides for detailed information on gas moderators.
+      [head=3]Aviso Legal[/head]
+      O autor deste guia rápido não se responsabiliza por mau uso ou derretimentos causados ao seguir este guia. Consulte os guias avançados para informações detalhadas sobre gases moderadores.
