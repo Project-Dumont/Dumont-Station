@@ -1,20 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Daniela <daniela.paladinof@gmail.com>
-# SPDX-FileCopyrightText: 2024 Felipealmeidaz <zeccky123@gmail.com>
-# SPDX-FileCopyrightText: 2024 Renan Lenhare <lenhare@outlook.com>
-# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
-# SPDX-FileCopyrightText: 2025 DoutorWhite <thedoctorwhite@gmail.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
-# SPDX-FileCopyrightText: 2025 Eduardo Oliveira <jubileu1232020@gmail.com>
-# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 skysnowflok <jubileu1232020@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 Name: Gaby
 Order: -2
 Entries:
@@ -244,18 +227,25 @@ Entries:
   time: '2025-03-08T12:01:00.0000000+00:00'
   changes:
     - type: Fix
-      message: readiciona whitelist para hamburguers, assim evitando o meta de insta kill, e evitando que itens aleatorios sejam botados no hamburguer, algo sem muito sentido em MRP.
+      message: >-
+        readiciona whitelist para hamburguers, assim evitando o meta de insta
+        kill, e evitando que itens aleatorios sejam botados no hamburguer, algo
+        sem muito sentido em MRP.
   id: 31
 - author: Dreykor (arguemeu)
   changes:
     - type: Add
-      message: Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio do alerta epsilon para sua versão completa.
+      message: >-
+        Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio
+        do alerta epsilon para sua versão completa.
   id: 32
   time: '2025-03-17T21:30:00.0000000+00:00'
 - author: Dreykor (arguemeu)
   changes:
     - type: Tweak
-      message: Modificão completa na Perma Brig da Saltern, para a alegria dos jogadores de prisoneiros!
+      message: >-
+        Modificão completa na Perma Brig da Saltern, para a alegria dos
+        jogadores de prisoneiros!
     - type: Tweak
       message: Adiciona vaga para reporter na saltern!
   id: 33
@@ -285,17 +275,23 @@ Entries:
 - author: Dreykor (arguemeu)
   changes:
     - type: Fix
-      message: Hotfix na saltern, usaremos a saltern do goob temporariamente, até que eu concerte a saltern do gaby
+      message: >-
+        Hotfix na saltern, usaremos a saltern do goob temporariamente, até que
+        eu concerte a saltern do gaby
   id: 36
   time: '2025-05-26T15:00:00.0000000+00:00'
 - author: Dreykor (arguemeu)
   changes:
     - type: Tweak
-      message: Traduz completamente o devil (Diabo), que tenhamos mais pacto com o capeta!
+      message: >-
+        Traduz completamente o devil (Diabo), que tenhamos mais pacto com o
+        capeta!
     - type: Tweak
       message: Traduz completamente o Culto cosmico! Que vossa divindade venha a terra!
     - type: Tweak
-      message: Rework completo na Space Law, tornando-a mais facil de ser consultada, e organizando-a mais facilmente pra aplicar penas rapidamente!
+      message: >-
+        Rework completo na Space Law, tornando-a mais facil de ser consultada, e
+        organizando-a mais facilmente pra aplicar penas rapidamente!
   id: 37
   time: '2025-05-28T15:00:00.0000000+00:00'
 - author: AgentePanela (vyas)
@@ -350,3 +346,9 @@ Entries:
       message: Atualização na cluster.
   id: 45
   time: '2025-06-17T15:00:00.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Os changlogs estão de volta!
+  id: 46
+  time: '2025-06-23T13:21:46.0000000+00:00'
