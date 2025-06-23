@@ -240,13 +240,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     {
         _roundEnd.EndRound();
     }
-
-    // funky station
-    private void EndRound()
-    {
-        _roundEnd.EndRound();
-    }
-
+    
     protected override void AppendRoundEndText(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
