@@ -89,12 +89,9 @@ namespace Content.Client.Lobby.UI
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             BalanceButton.OnPressed += _ => _consoleHost.ExecuteCommand("balanceui");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
-            ShowMOTD.OnPressed += _ =>
-            {
-                ShowMOTD.Visible = false;
-                MOTDBuletin.Visible = true;
-            };
-            MOTDBuletin.ShowMOTDButton = ShowMOTD;
+
+            CollapseButton.OnPressed += _ => TogglePanel(false);
+            ExpandButton.OnPressed += _ => TogglePanel(true);
         }
 
         public void SwitchState(LobbyGuiState state)
@@ -123,6 +120,12 @@ namespace Content.Client.Lobby.UI
 
                     break;
             }
+        }
+
+        private void TogglePanel(bool value)
+        {
+            RightSide.Visible = value;
+            ExpandPanel.Visible = !value;
         }
 
         public enum LobbyGuiState : byte
