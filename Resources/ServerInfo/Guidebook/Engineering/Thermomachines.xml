@@ -55,9 +55,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   A máquina térmica básica consome [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] de energia e pode aquecer ou resfriar gás em uma rede de tubos até [color=orange][protodata="GasThermoMachineHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] ou até [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color].
 
-  A máquina térmica avançada consome [color=orange][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] de energia e pode aquecer ou resfriar gás em uma rede de tubos até [color=orange][protodata="GasThermoMachineUpgradedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] ou até [color=orange][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Placas de máquinas térmicas avançadas podem ser impressas após pesquisar [color=purple]Tecnologias Avançadas de Atmosfera[/color].
+  A máquina térmica avançada consome [color=orange][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] de energia e pode aquecer ou resfriar gás em uma rede de tubos até [color=orange][protodata="GasThermoMachineUpgradedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] ou até [color=orange][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Placas de máquinas térmicas avançadas podem ser impressas após pesquisar [color=#c96dbf]Tecnologias Avançadas de Atmosfera[/color].
 
-  A máquina térmica hyper consome [color=orange][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] de energia e pode aquecer ou resfriar gás em uma rede de tubos até [color=orange][protodata="GasThermoMachineAdvancedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] ou até [color=orange][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Placas de máquinas térmicas hyper podem ser impressas após pesquisar [color=purple]Tecnologias Exotech de Atmosfera[/color].
+  A máquina térmica hyper consome [color=orange][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] de energia e pode aquecer ou resfriar gás em uma rede de tubos até [color=orange][protodata="GasThermoMachineAdvancedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] ou até [color=orange][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Placas de máquinas térmicas hyper podem ser impressas após pesquisar [color=#c96dbf]Tecnologias Exotech de Atmosfera[/color].
 
   Você pode trocar o modo da máquina térmica desmontando-a e usando uma chave de fenda em sua placa de circuito.
   A placa pode ser impressa em um impressor de circuitos, geralmente encontrado no Departamento de Ciência ou áreas do Departamento de Serviço.
@@ -87,6 +87,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   No entanto, também vazam [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="EnergyLeakPercentage" format="P0"/][/color] de sua energia para o ambiente ao redor, aquecendo ou resfriando a atmosfera livre respectivamente.
   Isso pode ser perigoso se não for devidamente gerenciado.
 
-  Placas de máquinas térmicas hellfire podem ser impressas após pesquisar [color=purple]Tecnologias Exotech de Atmosfera[/color].
+  Placas de máquinas térmicas hellfire podem ser impressas após pesquisar [color=#c96dbf]Tecnologias Exotech de Atmosfera[/color].
 
 </Document>
