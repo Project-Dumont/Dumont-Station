@@ -50,7 +50,7 @@ namespace Content.Server.Ghost.Roles
             GhostRoleInternalCreateMindAndTransfer(args.Player, uid, mob, ghostRole);
 
             if (outfit != null)
-                SetOutfitCommand.SetOutfit(mob, outfit, _entityManager);
+                SetOutfitCommand.SetOutfit(mob, outfit, true, _entityManager);
 
             if (++component.CurrentTakeovers < component.AvailableTakeovers)
             {
