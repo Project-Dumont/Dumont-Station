@@ -207,6 +207,7 @@
     - type: CanEnchant #GoobStation
   - !type:AddImplantSpecial
      implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
+    - type: CultResistant # Funky cult
 
 - type: startingGear
   id: ERTChaplainGear

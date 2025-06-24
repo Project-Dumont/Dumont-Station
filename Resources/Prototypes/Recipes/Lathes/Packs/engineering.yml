@@ -52,6 +52,7 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
+  - ThermomachineFreezerMachineCircuitBoard
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
@@ -71,7 +72,6 @@
   id: AtmosTools
   recipes:
   - HolofanProjector
-  - ElectrolyzerMachineBoard # Gaby
 
 - type: latheRecipePack
   id: EngineeringWeapons
@@ -96,3 +96,8 @@
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
   - HolopadMachineCircuitboard
+  - BluespaceGasSenderMachineBoard # Assmos - Bluespace Gas
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
+  - CrystallizerMachineCircuitboard # Assmos - Crystallizer
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases

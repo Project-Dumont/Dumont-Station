@@ -23,9 +23,12 @@
 # SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
@@ -1105,7 +1108,7 @@
         - !type:ReagentThreshold
           reagent: Zauker
           min: 0.25
-          max: 10
+          max: 12
         scaleByQuantity: true
         ignoreResistances: true
         damage:
@@ -1114,6 +1117,18 @@
             Heat: 2
             Poison: 2
             Bloodloss: 1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Zauker
+          min: 12
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: 30
+            Heat: 10
+            Poison: 10
+            Bloodloss: 5
 
 - type: reagent
   id: Halon

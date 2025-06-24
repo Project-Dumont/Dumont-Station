@@ -275,3 +275,8 @@
   copyright: 'by RunnerPack of Freesound.org'
   license: "CC-BY-4.0"
   source: https://freesound.org/people/RunnerPack/sounds/87040/
+
+- files: ["firefighting_nozzle.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Freesound 118950, 186950, 790280 composited and edited together by MajorMoth"
+  source: "https://freesound.org/"

@@ -95,6 +95,7 @@
   - ChaplainTitleRabbiFem
   - ChaplainTitleMonk
   - ChaplainTitleInstructor
+    - type: CultResistant # Funky cult
 
 - type: startingGear
   id: ChaplainGear

@@ -352,3 +352,81 @@ Entries:
       message: Os changlogs estão de volta!
   id: 46
   time: '2025-06-23T13:21:46.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Nova rede de gases bluespace. Use o transmissor de gás de bluespace para
+        adicionar gases a rede e a máquina de venda de gás de bluespace para
+        encher tanques com os gases da rede. Conecte as máquinas com uma
+        multiferramenta.
+    - type: Add
+      message: >-
+        Nova máquina: o cristalizador. Em condições ideais, transforme
+        substâncias gasosas em cristais. Variados preços e várias
+        funcionalidades, só tome cuidado pra não derrubar...
+    - type: Add
+      message: >-
+        O Reator de Fusão Hypertorus é um novo gerador de energia. Além de gerar
+        energia, ele proporciona um ambiente interno ótimo para reações mais
+        controladas e de maior eficiência. Mas, tenha cuidado! Assim como a
+        Supermatter, qualquer descuido pode levar na destruição massiva do
+        Departamento de Engenharia.
+    - type: Add
+      message: >-
+        Tanto o reator como o cristalizador dependem de condições ótimas, para
+        ajudar a chegar nelas, a NanoTrasen lançou novos modelos de máquinas
+        térmicas (aquecedores e resfriados).
+    - type: Add
+      message: >-
+        Os gases hidrogênio, hyper-nobium, proto-nitrate, zauker, halon e
+        anti-noblium foram adicionados.
+    - type: Tweak
+      message: >-
+        As entradas de gases e máquinas térmicas do livro guia foram
+        atualizadas!
+    - type: Add
+      message: >-
+        Pesquisas que contemplam as novas máquinas da Atmosfera foram
+        adicionadas.
+    - type: Add
+      message: >-
+        O eletrolisador foi adicionado. Em uma atmosfera livre, ele proporciona
+        a quebra das móleculas a custo de energia elétrica. Qual a fórmula da
+        agua, ou melhor, do vapor mesmo?
+    - type: Tweak
+      message: >-
+        As receitas das máquinas térmicas comuns não estão mais trancadas por
+        pesquisa e usam urânio ao invés de ouro. "Cargoo? Cade os minérios?"
+  id: 47
+  time: '2025-06-23T23:23:11.0000000+00:00'
+- author: Arguemeu, kbarkevich, Rainbeon
+  changes:
+    - type: Add
+      message: Adiciona culto de sangue ao jogo, viva ao nosso lorde nar'sie!
+  id: 48
+  time: '2025-06-23T23:29:56.0000000+00:00'
+- author: Impstation
+  changes:
+    - type: Add
+      message: >-
+        Mais customização de marcas para personagem (moth tem umas asas
+        lindas.)!
+  id: 49
+  time: '2025-06-23T23:31:32.0000000+00:00'
+- author: Arguemeu, mkanke-real
+  changes:
+    - type: Add
+      message: >-
+        Adiciona Boombox, que são jukebox portateis, pesquisa avançada de
+        serviço para poder fabricar!
+  id: 50
+  time: '2025-06-23T23:37:55.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        O controlador remoto do capitão agora tem acesso total, para a
+        felicidade dos poucos que jogam de capitão.
+  id: 51
+  time: '2025-06-24T18:47:53.0000000+00:00'

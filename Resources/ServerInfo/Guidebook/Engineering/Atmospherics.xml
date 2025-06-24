@@ -17,7 +17,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
   # Atmosféricos
 
-  Configurações atmosféricas são essenciais para o conforto a longo prazo da sua tripulação, mas geralmente são mal documentadas, o que faz com que sejam um pouco difíceis de configurar. O seguinte tenta cobrir o básico.
+  Configurações atmosféricas são essenciais para o conforto a longo prazo da sua tripulação, mas geralmente são mal documentadas, o que faz com que sejam um pouco difíceis de configurar. O seguinte guia tenta cobrir o básico.
 
   ## Mistura Padrão
   Respirar O2 puro ou N2 puro geralmente é ruim para a saúde da sua tripulação, e é recomendado que você busque uma mistura de [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color] É recomendado que a configuração do seu misturador de gás seja ajustada para uma saída de pelo menos 300kPA para uma repressurização mais rápida dos ambientes, sem representar muito risco de sobrepressurização, caso traidores sabotem a distribuição.
@@ -31,6 +31,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="StorageCanister"/>
   </Box>
+
   ## Válvulas e Depuradores
   Válvulas e depuradores são dispositivos centrais de atmosferia que preenchem e purificam os ambientes, respectivamente. Por padrão, eles são configurados para preencher os ambientes até a pressão padrão (101.24kPa) e para remover todos os gases não-O2/N2 de um ambiente. Eles podem ser reconfigurados a partir das configurações padrão ao conectá-los a um Alarme de Gás, permitindo configurar como eles respondem a vários tipos de gases ou níveis de pressão.
 
@@ -58,24 +59,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="TritiumCanister"/>
   </Box>
 
-  ##Pluoxium
-  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
-
-  Pluoxium may be created by exposing O2, CO2 and Tritium together in an exothermic reaction between 50 K and 273 K. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
-
-  <Box>
-    <GuideEntityEmbed Entity="OxygenCanister"/>
-    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="PluoxiumCanister"/>
-  </Box>
-
-  ##Pluoxium
-  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
-
-  Pluoxium may be created by exposing O2, CO2 and Tritium together in an exothermic reaction between 50 K and 273 K. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
-
+  ## Pluoxium
+  Pluoxium é um substituto não reativo do Oxigênio que fornece oito vezes mais O2 para a corrente sanguínea, exigindo uma pressão mínima interna de apenas 3 kPa.
+  Ele pode ser produzido ao combinar 66% de Dióxido de Carbono, 33% de Oxigênio e 0,01% de Trítio em uma reação exotérmica entre 50 K e 273 K. Além disso, o Pluoxium também é criado pela Supermatter quando Oxigênio e CO2 estão presentes.
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
@@ -85,7 +71,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## BZ
-  O gás BZ é um potente alucinógeno, além de um agente sedativo para slimes. Ele é tóxico para respirar e causa irritação respiratória e tosse. O BZ é usado com frequência como ingrediente em reações químicas mais complexas.
+  O gás BZ é um poderoso alucinógeno, além de ser um agente sedativo para slimes. É tóxico quando inalado e causa irritação respiratória e tosse. O BZ é frequentemente utilizado como ingrediente em reações gasosas mais complexas. 
+  Ele pode ser produzido ao combinar 33% de Óxido Nitroso e 66% de Plasma em uma reação exotérmica. A reação se torna menos eficiente se o conteúdo de Plasma for superior a 3 vezes o conteúdo de Óxido Nitroso. A reação é mais rápida fora dos canos e em ambientes de baixa pressão.
 
   <Box>
     <GuideEntityEmbed Entity="PlasmaCanister"/>
@@ -95,7 +82,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## Frezon
-  O Frezon é um gás verde-azulado muito complexo e perigoso. Para obtê-lo, você deve misturar Tritium, Oxigênio e Nitrogênio em uma sala a 70K para iniciar a reação, evitando que o Tritium se combusta com o oxigênio.
+  Frezon é um gás azul-esverdeado muito complexo e extremamente perigoso.
+  Ele pode ser produzido ao combinar 90% de Oxigênio, 8% de Nitrogênio e 2% de Trítio a uma temperatura igual ou inferior a 73,15 K. Essa reação utiliza o Nitrogênio apenas como catalisador e não o consome.
 
   <Box>
     <GuideEntityEmbed Entity="TritiumCanister"/>
@@ -107,7 +95,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   É crucial entender que um vazamento de frezon pode devastar a estação, causando um inferno congelante cheio de suéteres irritantes e queimaduras frias. O Frezon é muito frio e pode congelar a estação até a morte se até mesmo alguns moles se escaparem, então certifique-se de trancar seus cilindros ou simplesmente movê-los diretamente para uma sala de armazenamento.
 
   ## Healium
-  O Healium é um gás vermelho, formado em ambientes frios, que age como um forte agente sedativo, enquanto cura queimaduras, hematomas e danos por toxinas. O uso excessivo levará à inebriação.
+  O Healium é um gás vermelho, formado em ambientes frios, que age como um forte agente sedativo, enquanto cura queimaduras, hematomas e danos por toxinas. O uso excessivo leva à inebriação.
+  Ele pode ser produzido ao combinar 81% de Frezon e 9% de BZ em uma reação exotérmica. 
 
   <Box>
     <GuideEntityEmbed Entity="BZCanister"/>
@@ -117,7 +106,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ## Nitrium
-  O Nitrium é um estimulante gasoso que, quando inalado, pode aumentar a velocidade e a resistência. Em concentrações mais baixas, o Nitrium aumentará sua velocidade máxima de corrida enquanto estiver saudável e sem impedimentos. Além disso, em concentrações um pouco mais altas, respirar Nitrium evitará sonolência. Em altas concentrações, respirar Nitrium começará a desligar os pulmões de uma pessoa, causando asfixia.
+  O Nitrium é um gás estimulante que, quando inalado, pode aumentar a velocidade e a resistência. Em concentrações mais baixas, o Nitrium aumenta sua velocidade máxima de corrida enquanto você estiver saudável e sem impedimentos. Em concentrações um pouco maiores, respirar Nitrium evita sonolência. Em altas concentrações, respirar Nitrium começará a desligar os pulmões de uma pessoa, causando asfixia.
+  Ele pode ser produzido ao combinar 47,5% de Nitrogênio, 47,5% de Trítio e 5% de BZ a uma temperatura igual ou superior a 1500 K. Quanto maior a temperatura, maior a eficiência.
 
   <Box>
     <GuideEntityEmbed Entity="BZCanister"/>
@@ -129,6 +119,55 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   O Nitrium se decompõe em nitrogênio e vapor d'água ao entrar em contato com o oxigênio à temperatura ambiente. Essa reação pode gerar uma boa quantidade de calor, tornando a estação desconfortavelmente quente em caso de vazamento.
 
+  ## Proto-Nitrate
+  Proto-Nitrate é um gás altamente reativo e não tóxico. 
+  Combine 1 mol de Hidrogênio com 0,1 mol de Pluoxium para gerar 1,1 mol de Proto-Nitrate em uma reação exotérmica, mais eficiente entre 5000 K e 10000 K. Ele reage com hidrogênio ou trítio para ajustar o Proto-Nitrate ou produzir hidrogênio, e com BZ a 260-280 K para gerar nitrogênio, hélio e plasma. Manuseie com cuidado para evitar vazamentos.
+  <Box>
+    <GuideEntityEmbed Entity="HydrogenCanister"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="ProtoNitrateCanister"/>
+  </Box>
+
+  ## Zauker
+  Zauker é um gás mortal se inalado. Produza-o ao combinar 0,2 mol de Hyper-Noblium com 1 mol de Nitrium para gerar 1 mol de Zauker em uma reação exotérmica. Ele se decompõe na presença de Nitrogênio, gerando 0,3 mol de Oxigênio e 0,7 mol de Nitrogênio por mol de Zauker, também de forma exotérmica e com inibição semelhante. Armazene com segurança para evitar vazamentos.
+  
+  <Box>
+    <GuideEntityEmbed Entity="NitriumCanister"/>
+    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="ZaukerCanister"/>
+  </Box>
+
+  ## Halon
+  Halon suprime incêndios consumindo oxigênio, numa proporção de 20 moles de oxigênio por 1 mol de halon, acima de 343,15 K em uma reação endotérmica, produzindo dióxido de carbono. 
+  É produzido em uma reação exotérmica pela eletrólise de BZ, gerando 2 moles de halon e 0,2 moles de oxigênio por mol de BZ. Use com cautela para evitar depleção de oxigênio.
+  
+  <Box>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="Electrolyzer"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HalonCanister"/>
+  </Box>
+
+  ## Helium
+  Helium é um gás inerte e invisível, produzido como subproduto de outras reações. Tem poucos usos na Atmosfera, devendo ser removido para evitar a diluição de outros gases.
+  
+  <Box>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HeliumCanister"/>
+  </Box>
+
+  ## Anti-Noblium
+  Anti-Noblium é um gás raro com usos muito específicos, produzido pela eletrólise do Hyper-Noblium abaixo de 150 K, gerando 0,5 mol de Anti-Noblium por mol de Hyper-Noblium. Armazene com cuidado para preservar o Hyper-Noblium para outras reações.
+  
+  <Box>
+    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
+    <GuideEntityEmbed Entity="Electrolyzer"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="AntiNobliumCanister"/>
+  </Box>
+
   ## Folha de Referência
   - A mistura atmosférica padrão é [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color]
   - O gás obedece à matemática real. Você pode usar a equação:
@@ -138,9 +177,5 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     ([color=#a4885c]Pressão kPa * Volume L = Moles * R * Temperatura K[/color])
   </Box> para derivar informações que você possa precisar sobre um gás. R é aproximadamente 8.31446.
-
-  <Box>
-  -- Mais gases foram adicionados, essa sessão está incompleta. --
-  </Box>
 
 </Document>
