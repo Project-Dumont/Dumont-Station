@@ -632,6 +632,8 @@
   name: syndicate teleporters control console board
   description: A computer printed circuit board for a teleporter control console.
   components:
+  - type: Sprite
+    state: cpu_syndicate
   - type: ComputerBoard
     prototype: ComputerSyndicateTeleportersControl
 # GabyStation -> Station Teleporter end
