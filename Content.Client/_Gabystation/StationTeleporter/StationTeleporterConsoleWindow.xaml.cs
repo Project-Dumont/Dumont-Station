@@ -168,9 +168,9 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
 
             var buttonLoc = "teleporter-console-user-interface-start-connection";
             if (!teleporter.Powered)
-                buttonLoc = "teleporter-console-user-interface-cut-connection";
-            else if (isLinked)
                 buttonLoc = "teleporter-console-user-interface-no-power";
+            else if (isLinked)
+                buttonLoc = "teleporter-console-user-interface-cut-connection";
 
             var linkButton = new TeleporterButton()
             {
@@ -221,16 +221,15 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
                 var coordsTwo = _entManager.GetCoordinates(teleporter.LinkCoordinates);
 
                 if (coordsOne is null || coordsTwo is null)
-                    return;
+                    continue;
 
                 var mapId1 = _xformSystem.GetMapId(coordsOne.Value);
                 var mapId2 = _xformSystem.GetMapId(coordsTwo.Value);
 
-                if (mapId1 != mapId2)
-                    return;
-
-                if (mapId1 == MapId.Nullspace || mapId2 == MapId.Nullspace)
-                    return;
+                if (mapId1 != mapId2
+                    || mapId1 == MapId.Nullspace
+                    || mapId2 == MapId.Nullspace)
+                    continue;
 
                 NavMap.LinkedTeleportersCoordinates.Add((
                     _xformSystem.ToMapCoordinates(coordsOne.Value).Position,

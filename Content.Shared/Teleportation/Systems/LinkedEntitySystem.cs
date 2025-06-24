@@ -141,8 +141,11 @@ public sealed class LinkedEntitySystem : EntitySystem
             QueueDel(second);
 
         // GabyStation -> Station Teleporter start
-        RaiseLocalEvent(first, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
-        RaiseLocalEvent(second, new LinkedEntityChangedEvent(secondLink.LinkedEntities));
+        if (success)
+        {
+            RaiseLocalEvent(first, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
+            RaiseLocalEvent(second, new LinkedEntityChangedEvent(secondLink.LinkedEntities));
+        }
         // GabyStation -> Station Teleporter end
 
         return success;
