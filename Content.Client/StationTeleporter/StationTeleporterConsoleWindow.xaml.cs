@@ -25,11 +25,19 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     private readonly SpriteSystem _spriteSystem;
     private readonly SharedTransformSystem _xformSystem;
 
-    public event Action<NetEntity?>? SendTeleporterLinkChangeAction;
+    public event Action<NetEntity?>? OnTeleporterSelected;
 
     private NetEntity? _trackedEntity;
-    private Texture? _ringTexture;
-    private Texture? _ringFilledTexture;
+    private Texture _teleportMarkerTexture;
+    private Texture _selectedTeleportMarkerTexture;
+
+    private readonly Color _linkedColor = new Color(18, 61, 82);
+    private readonly Color _selectedColor = new Color(49, 117, 7);
+    private readonly Color _baseColor = new Color(30, 30, 34);
+    private readonly Color _borderColor = Color.Black;
+    private readonly Color _poweredBlibColor = Color.Aqua;
+    private readonly Color _unpoweredBlibColor = Color.Gray;
+    private readonly Color _selectedBlibColor = Color.Green;
 
     public StationTeleporterConsoleWindow()
     {
@@ -39,17 +47,14 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         _spriteSystem = _entManager.System<SpriteSystem>();
         _xformSystem = _entManager.System<SharedTransformSystem>();
 
+        _teleportMarkerTexture = _spriteSystem.Frame0(new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/NavMap/ring.png")));
+        _selectedTeleportMarkerTexture = _spriteSystem.Frame0(new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/NavMap/ring_filled.png")));
+
         NavMap.TrackedEntitySelectedAction += ClickTeleporterOnNavMap;
     }
 
     public void Set(StationTeleporterConsoleBoundUserInterface userInterface, string stationName, EntityUid? mapUid)
     {
-        _ringTexture =
-            _spriteSystem.Frame0(new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/NavMap/ring.png")));
-        _ringFilledTexture =
-            _spriteSystem.Frame0(
-                new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/NavMap/ring_filled.png")));
-
         if (_entManager.TryGetComponent<TransformComponent>(mapUid, out var xform))
             NavMap.MapUid = xform.GridUid;
         else
@@ -58,13 +63,11 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         StationName.AddStyleClass("LabelBig");
         StationName.Text = stationName;
         NavMap.ForceNavMapUpdate();
-
-        SendTeleporterLinkChangeAction += userInterface.SendTeleporterLinkChangeMessage;
     }
 
     public void ShowTeleporters(StationTeleporterState state, EntityUid monitor, EntityCoordinates? monitorCoords)
     {
-        ClearOutDatedData();
+        ClearOutdatedData();
 
         var teleporters = state.Teleporters;
 
@@ -83,12 +86,12 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         {
             var coordinates = _entManager.GetCoordinates(teleporter.Coordinates);
 
-            var selected = teleporter.TeleporterUid == state.SelectedTeleporter;
-            var linked = teleporter.LinkCoordinates is not null;
+            var isSelected = teleporter.TeleporterUid == state.SelectedTeleporter;
+            var isLinked = teleporter.LinkCoordinates is not null;
 
-            var bgColor = linked ? new Color(18, 61, 82) : new Color(30, 30, 34);
-            if (selected)
-                bgColor = new Color(49, 117, 7);
+            var bgColor = isLinked ? _linkedColor : _baseColor;
+            if (isSelected)
+                bgColor = _selectedColor;
 
 
             // Primary container to hold the button UI elements
@@ -101,7 +104,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
                 PanelOverride = new StyleBoxFlat
                 {
                     BackgroundColor = bgColor,
-                    BorderColor = Color.Black,
+                    BorderColor = _borderColor,
                     BorderThickness = new(2),
                 },
             };
@@ -162,12 +165,10 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
 
             rightBox.AddChild(locateButton);
 
-
-            // Link\Unlink button
             var buttonLoc = "teleporter-console-user-interface-start-connection";
-            if (linked)
-                buttonLoc = "teleporter-console-user-interface-cut-connection";
             if (!teleporter.Powered)
+                buttonLoc = "teleporter-console-user-interface-cut-connection";
+            else if (isLinked)
                 buttonLoc = "teleporter-console-user-interface-no-power";
 
             var linkButton = new TeleporterButton()
@@ -179,26 +180,21 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
                 SetWidth = 200f,
                 Disabled = !teleporter.Powered,
             };
-            linkButton.OnButtonUp += _ =>
-            {
-                SendTeleporterLinkChangeAction?.Invoke(teleporter.TeleporterUid);
-            };
+            linkButton.OnButtonUp += _ => OnTeleporterSelected?.Invoke(teleporter.TeleporterUid);
 
             rightBox.AddChild(linkButton);
 
+            var blipColor = _poweredBlibColor;
+            if (isSelected)
+                blipColor = _selectedBlibColor;
+            else if (!teleporter.Powered)
+                blipColor = _unpoweredBlibColor;
 
-            //Add teleporter coordinates to the NavMap
-            var blipColor = Color.Aqua;
-            if (!teleporter.Powered)
-                blipColor = Color.Gray;
-            if (selected)
-                blipColor = Color.Green;
-
-            if (coordinates != null && NavMap.Visible && _ringTexture is not null && _ringFilledTexture is not null)
+            if (coordinates != null && NavMap.Visible)
             {
                 var blip = new NavMapBlip(
                     coordinates.Value,
-                    linked ? _ringFilledTexture : _ringTexture,
+                    isLinked ? _selectedTeleportMarkerTexture : _teleportMarkerTexture,
                     blipColor,
                     false);
                 NavMap.TrackedEntities.TryAdd(teleporter.TeleporterUid, blip);
@@ -221,13 +217,13 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             if (teleporter.Coordinates is not null && teleporter.LinkCoordinates is not null)
             {
                 var coordsOne = _entManager.GetCoordinates(teleporter.Coordinates);
-                var coordTwo = _entManager.GetCoordinates(teleporter.LinkCoordinates);
+                var coordsTwo = _entManager.GetCoordinates(teleporter.LinkCoordinates);
 
-                if (coordsOne is null || coordTwo is null)
+                if (coordsOne is null || coordsTwo is null)
                     return;
 
                 var mapId1 = _xformSystem.GetMapId(coordsOne.Value);
-                var mapId2 = _xformSystem.GetMapId(coordTwo.Value);
+                var mapId2 = _xformSystem.GetMapId(coordsTwo.Value);
 
                 if (mapId1 != mapId2)
                     return;
@@ -237,17 +233,17 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
 
                 NavMap.LinkedTeleportersCoordinates.Add((
                     _xformSystem.ToMapCoordinates(coordsOne.Value).Position,
-                    _xformSystem.ToMapCoordinates(coordTwo.Value).Position));
+                    _xformSystem.ToMapCoordinates(coordsTwo.Value).Position));
             }
         }
     }
 
     private void ClickTeleporterOnNavMap(NetEntity? netEntity)
     {
-        SendTeleporterLinkChangeAction?.Invoke(netEntity);
+        OnTeleporterSelected?.Invoke(netEntity);
     }
 
-    private void ClearOutDatedData()
+    private void ClearOutdatedData()
     {
         TeleportersTable.RemoveAllChildren();
         NavMap.TrackedCoordinates.Clear();
@@ -259,24 +255,13 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     {
         foreach (var teleporter in TeleportersTable.Children)
         {
-            if (teleporter is not TeleporterButton)
+            if (teleporter is not TeleporterButton castTeleporter
+                || castTeleporter.Coordinates is null
+                || !NavMap.TrackedEntities.TryGetValue(castTeleporter.TeleporterUid, out var data))
                 continue;
 
-            var castTeleporter = (TeleporterButton)teleporter;
-
-            if (castTeleporter?.Coordinates == null)
-                continue;
-
-            if (NavMap.TrackedEntities.TryGetValue(castTeleporter.TeleporterUid, out var data))
-            {
-                data = new NavMapBlip(
-                    data.Coordinates,
-                    data.Texture,
-                    Color.Aqua,
-                    false);
-
-                NavMap.TrackedEntities[castTeleporter.TeleporterUid] = data;
-            }
+            data = new NavMapBlip(data.Coordinates, data.Texture, _poweredBlibColor, false);
+            NavMap.TrackedEntities[castTeleporter.TeleporterUid] = data;
         }
     }
 }

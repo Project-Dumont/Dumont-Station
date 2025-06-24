@@ -22,16 +22,10 @@ public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
 
     private void OnAppearanceChanged(Entity<StationTeleporterComponent> ent, ref AppearanceChangeEvent args)
     {
-        if (ent.Comp.PortalLayerMap is null)
-            return;
-
-        if (!_appearance.TryGetData<Color>(ent, TeleporterPortalVisuals.Color, out var newColor))
-            return;
-
-        if (!TryComp<SpriteComponent>(ent, out var sprite))
-            return;
-
-        if (!sprite.LayerMapTryGet(ent.Comp.PortalLayerMap, out var index))
+        if (ent.Comp.PortalLayerMap is null
+            || !_appearance.TryGetData<Color>(ent, TeleporterPortalVisuals.Color, out var newColor)
+            || !TryComp<SpriteComponent>(ent, out var sprite)
+            || !sprite.LayerMapTryGet(ent.Comp.PortalLayerMap, out var index))
             return;
 
         sprite.LayerSetColor(index, newColor);

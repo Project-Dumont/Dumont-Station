@@ -8,17 +8,15 @@ using Robust.Client.UserInterface;
 
 namespace Content.Client.StationTeleporter;
 
-public sealed class StationTeleporterConsoleBoundUserInterface : BoundUserInterface
+public sealed class StationTeleporterConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     [ViewVariables]
-    private StationTeleporterConsoleWindow? _menu;
-
-    public StationTeleporterConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    private StationTeleporterConsoleWindow? _window;
 
     protected override void Open()
     {
+        base.Open();
+
         EntityUid? gridUid = null;
         var stationName = string.Empty;
 
@@ -32,25 +30,20 @@ public sealed class StationTeleporterConsoleBoundUserInterface : BoundUserInterf
             }
         }
 
-        _menu = this.CreateWindow<StationTeleporterConsoleWindow>();
-        _menu.Set(this, stationName, gridUid);
+        _window = this.CreateWindow<StationTeleporterConsoleWindow>();
+
+        _window.OnTeleporterSelected += teleporter => SendMessage(new StationTeleporterClickMessage(teleporter));
+        _window.Set(this, stationName, gridUid);
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
 
-        switch (state)
-        {
-            case StationTeleporterState st:
-                EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
-                _menu?.ShowTeleporters(st, Owner, xform?.Coordinates);
-                break;
-        }
-    }
+        if (state is not StationTeleporterState st)
+            return;
 
-    public void SendTeleporterLinkChangeMessage(NetEntity? teleporter)
-    {
-        SendMessage(new StationTeleporterClickMessage(teleporter));
+        EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
+        _window?.ShowTeleporters(st, Owner, xform?.Coordinates);
     }
 }

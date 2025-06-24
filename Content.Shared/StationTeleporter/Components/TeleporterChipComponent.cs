@@ -22,7 +22,7 @@ public sealed partial class TeleporterChipComponent : Component
     public EntityUid? ConnectedTeleporter;
 
     /// <summary>
-    /// The name of the teleporter the chip has synced is copied into this field. This information is used when examining the chip.
+    /// The already localized name of the teleporter the chip has synced is copied into this field. This information is used when examining the chip.
     /// </summary>
     [DataField, AutoNetworkedField]
     public string ConnectedName = string.Empty;

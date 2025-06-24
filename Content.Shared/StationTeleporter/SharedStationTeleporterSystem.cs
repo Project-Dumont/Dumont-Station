@@ -7,17 +7,14 @@ using Content.Shared.Audio;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.Components;
-using Content.Shared.Pinpointer;
 using Content.Shared.Popups;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.StationTeleporter.Components;
-using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.StationTeleporter;
@@ -27,7 +24,7 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
     [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
@@ -81,20 +78,25 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
 
         TryComp<StationTeleporterComponent>(teleporter.Value, out var stationTeleporterComponent);
 
-        if (_link.GetLink(teleporter.Value,
-                out var linkedTeleporter)) //If the pressed teleporter is linked to another - cut this connection.
+        // If the pressed teleporter is linked to another - cut this connection.
+        if (_link.GetLink(teleporter.Value, out var linkedTeleporter))
         {
             _link.TryUnlink(teleporter.Value, linkedTeleporter.Value);
             if (stationTeleporterComponent is not null)
                 stationTeleporterComponent.LastLink = null;
         }
-        else //If the pressed teleporter is not connected to anything...
+        // If the pressed teleporter is not connected to anything...
+        else
         {
-            if (ent.Comp.SelectedTeleporter is null) //And the console doesn't have teleporter selected - select it.
+            // And the console doesn't have teleporter selected - select it.
+            if (ent.Comp.SelectedTeleporter is null)
             {
+
                 ent.Comp.SelectedTeleporter = teleporter;
+                Dirty(ent);
             }
-            else // And we have a selected teleporter - tie them together.
+            // And we have selected teleporter - tie them together.
+            else
             {
                 if (ent.Comp.SelectedTeleporter != teleporter.Value &&
                     _power.IsPowered(ent.Comp.SelectedTeleporter.Value))
@@ -112,18 +114,18 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
                 }
 
                 ent.Comp.SelectedTeleporter = null;
+                Dirty(ent);
             }
         }
     }
 
     private void OnInteractUsing(Entity<StationTeleporterComponent> teleporter, ref InteractUsingEvent args)
     {
-        if (args.Handled)
+        if (args.Handled
+            || TryComp<UseDelayComponent>(args.Used, out var useDelayComp)
+            && _useDelay.IsDelayed((args.Used, useDelayComp)))
             return;
 
-        if (TryComp<UseDelayComponent>(args.Used, out var useDelayComp) &&
-            _useDelay.IsDelayed((args.Used, useDelayComp)))
-            return;
         _useDelay.TryResetDelay(args.Used);
 
         if (!TryComp<TeleporterChipComponent>(args.Used, out var chip))
@@ -132,7 +134,7 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
         ConnectChipToTeleporter((args.Used, chip), teleporter);
 
         _popup.PopupPredicted(Loc.GetString("teleporter-console-chip-record"), teleporter, args.User);
-        Audio.PlayPredicted(chip.RecordSound, args.Used, args.User);
+        _audio.PlayPredicted(chip.RecordSound, args.Used, args.User);
 
         args.Handled = true;
     }
@@ -162,12 +164,12 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
         if (args.NewLinks.Count > 0)
         {
             _ambient.SetAmbience(ent, true);
-            Audio.PlayPvs(ent.Comp.LinkSound, xform.Coordinates);
+            _audio.PlayPvs(ent.Comp.LinkSound, xform.Coordinates);
         }
         else
         {
             _ambient.SetAmbience(ent, false);
-            Audio.PlayPvs(ent.Comp.UnlinkSound, xform.Coordinates);
+            _audio.PlayPvs(ent.Comp.UnlinkSound, xform.Coordinates);
         }
     }
 

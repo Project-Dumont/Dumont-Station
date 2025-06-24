@@ -41,9 +41,9 @@ public abstract partial class SharedStationTeleporterSystem
         if (xform.GridUid != null)
             EnsureComp<NavMapComponent>(xform.GridUid.Value);
 
-        //Send data
+        // Send data
         List<StationTeleporterStatus> teleportersData = new();
-        var cachedTeleporters = new List<EntityUid>(); //Prevent UI teleporters dublication
+        List<EntityUid> cachedTeleporters = new(); // Prevent UI teleporters duplication
 
         if (_container.TryGetContainer(ent, ent.Comp.ChipStorageName, out var container))
         {
@@ -63,7 +63,7 @@ public abstract partial class SharedStationTeleporterSystem
         ref List<StationTeleporterStatus> teleportersData,
         ref List<EntityUid> cachedTeleporters)
     {
-        //Teleporter chips get portal links
+        // Teleporter chips get portal links
         if (!TryComp<TeleporterChipComponent>(ent, out var chipComp))
             return;
 
@@ -76,10 +76,9 @@ public abstract partial class SharedStationTeleporterSystem
         if (cachedTeleporters.Contains(chipComp.ConnectedTeleporter.Value))
             return;
 
-        var powered = _power.IsPowered(chipComp.ConnectedTeleporter.Value);
-
         _link.GetLink(chipComp.ConnectedTeleporter.Value, out var linkedTeleporter);
         EntityCoordinates? linkCoord = null;
+
         if (linkedTeleporter is not null)
             linkCoord = Transform(linkedTeleporter.Value).Coordinates;
 
@@ -88,6 +87,8 @@ public abstract partial class SharedStationTeleporterSystem
         var teleporterName = LabelQuery.TryComp(chipComp.ConnectedTeleporter.Value, out var label)
             ? label.CurrentLabel ?? Loc.GetString("teleporter-name-unknown")
             : Loc.GetString("teleporter-name-unknown");
+
+        var powered = _power.IsPowered(chipComp.ConnectedTeleporter.Value);
 
         teleportersData.Add(
             new(GetNetEntity(chipComp.ConnectedTeleporter.Value),
@@ -101,16 +102,16 @@ public abstract partial class SharedStationTeleporterSystem
         ref List<StationTeleporterStatus> teleportersData,
         ref List<EntityUid> cachedTeleporters)
     {
-        //RD handheld teleporter portals
+        // RD handheld teleporter portals
         if (!TryComp<HandTeleporterComponent>(ent, out var handTeleporter))
             return;
 
-        //First portal
+        // First portal
         if (handTeleporter.FirstPortal is not null && EntityManager.EntityExists(handTeleporter.FirstPortal))
             AddPortal(handTeleporter.FirstPortal.Value, Loc.GetString("teleporter-name-rd-first"), ref teleportersData, ref cachedTeleporters);
 
 
-        //Second portal
+        // Second portal
         if (handTeleporter.SecondPortal is not null && EntityManager.EntityExists(handTeleporter.SecondPortal))
             AddPortal(handTeleporter.SecondPortal.Value, Loc.GetString("teleporter-name-rd-second"), ref teleportersData, ref cachedTeleporters);
     }

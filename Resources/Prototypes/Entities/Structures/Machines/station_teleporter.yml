@@ -7,7 +7,7 @@
   parent: [ BaseMachinePowered ]
   id: StationTeleporter
   name: teleporter
-  description: The peak of bluespace technology. A giant teleporter that allow you to travel vast distances in the blink of an eye.
+  description: The peak of bluespace technology. A giant teleporter that allows you to travel vast distances in the blink of an eye.
   suffix: Unknown Coordinates, Without Autolink
   components:
   - type: Sprite
@@ -81,11 +81,11 @@
 
 - type: entity
   parent: StationTeleporterNanotrasen
-  id: StationTeleporterCenter
-  suffix: Center, Nanotrasen
+  id: StationTeleporterHangar
+  suffix: Hangar, Nanotrasen
   components:
   - type: Label
-    currentLabel: teleporter-name-center
+    currentLabel: teleporter-name-hangar
 
 - type: entity
   parent: StationTeleporterNanotrasen

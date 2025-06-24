@@ -14,14 +14,14 @@ teleporter-console-user-interface-cut-connection = Cut connection
 teleporter-console-user-interface-no-power = Unpowered
 
 teleporter-console-user-interface-no-teleporters = No teleporters
-teleporter-console-user-interface-flavor-left = In the event of bluespace gate instability, we are not responsible for your disintegration or teleportation to ashlands.
+teleporter-console-user-interface-flavor-left = Manufacturer company takes no legal responsibility in cases of gate instability or resonance cascade.
 teleporter-console-user-interface-flavor-right = v0.666
 
-teleporter-name-unknown = Unknown Coordinates
+teleporter-name-unknown = Unlabeled location
 teleporter-name-rd-first = RD Portable portal red
 teleporter-name-rd-second = RD Portable portal blue
 
-teleporter-name-center = Center
+teleporter-name-hangar = Hangar
 teleporter-name-salvage = Salvage
 teleporter-name-medical = Medical
 teleporter-name-engineering = Engineering
