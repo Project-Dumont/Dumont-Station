@@ -4,11 +4,11 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Pinpointer;
-using Content.Shared.StationTeleporter.Components;
+using Content.Shared._Gabystation.StationTeleporter.Components;
 using Content.Shared.Teleportation.Components;
 using Robust.Shared.Map;
 
-namespace Content.Shared.StationTeleporter;
+namespace Content.Shared._Gabystation.StationTeleporter;
 
 public abstract partial class SharedStationTeleporterSystem
 {

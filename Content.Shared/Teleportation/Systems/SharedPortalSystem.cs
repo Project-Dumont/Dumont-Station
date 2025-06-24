@@ -129,7 +129,7 @@ public abstract class SharedPortalSystem : EntitySystem
             return;
         }
 
-        if (TryComp<LinkedEntityComponent>(uid, out var link) && link.LinkedEntities.Any())
+        if (TryComp<LinkedEntityComponent>(uid, out var link) && link.LinkedEntities.Any()) // Gaby Station -> Station Teleporter
         {
             // client can't predict outside of simple portal-to-portal interactions due to randomness involved
             // --also can't predict if the target doesn't exist on the client / is outside of PVS

@@ -613,6 +613,7 @@
     - type: ComputerBoard
       prototype: StationAiUploadComputer
 
+# GabyStation -> Station Teleporter start
 - type: entity
   parent: BaseComputerCircuitboard
   id: StationTeleportersControlCircuitboard
@@ -632,3 +633,4 @@
   components:
   - type: ComputerBoard
     prototype: ComputerSyndicateTeleportersControl
+# GabyStation -> Station Teleporter end

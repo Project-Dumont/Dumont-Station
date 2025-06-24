@@ -6,7 +6,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.StationTeleporter.Components;
+namespace Content.Shared._Gabystation.StationTeleporter.Components;
 
 /// <summary>
 /// Stores a reference to a specific teleporter. Can be inserted into the teleporter control console so that the console can control this teleporter

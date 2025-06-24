@@ -6,7 +6,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.StationTeleporter.Components;
+namespace Content.Shared._Gabystation.StationTeleporter.Components;
 
 /// <summary>
 /// Console that allows you to manage the StationTeleporterComponent.

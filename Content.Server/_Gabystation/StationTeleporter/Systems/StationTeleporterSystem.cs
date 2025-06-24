@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.StationTeleporter;
-using Content.Shared.StationTeleporter.Components;
+using Content.Shared._Gabystation.StationTeleporter;
+using Content.Shared._Gabystation.StationTeleporter.Components;
 
-namespace Content.Server.StationTeleporter.Systems;
+namespace Content.Server._Gabystation.StationTeleporter.Systems;
 
 public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
 {

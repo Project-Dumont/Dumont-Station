@@ -25,7 +25,7 @@
   - type: Tag
     tags:
     - HighRiskItem
-    - FitInTeleporterConsole
+    - FitInTeleporterConsole # GabyStation -> Station Teleporter
   - type: StealTarget
     stealGroup: HandTeleporter
 
@@ -43,7 +43,7 @@
       color: green
   - type: Tag
     tags:
-    - FitInTeleporterConsole
+    - FitInTeleporterConsole # GabyStation -> Station Teleporter
   - type: HandTeleporter
     allowPortalsOnDifferentGrids: true
     allowPortalsOnDifferentMaps: true

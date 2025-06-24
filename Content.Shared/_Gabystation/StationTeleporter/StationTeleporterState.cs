@@ -6,7 +6,7 @@
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.StationTeleporter;
+namespace Content.Shared._Gabystation.StationTeleporter;
 
 [Serializable, NetSerializable]
 public enum StationTeleporterConsoleUIKey

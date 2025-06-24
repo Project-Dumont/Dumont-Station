@@ -10,14 +10,14 @@ using Content.Shared.Labels.Components;
 using Content.Shared.Popups;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
-using Content.Shared.StationTeleporter.Components;
+using Content.Shared._Gabystation.StationTeleporter.Components;
 using Content.Shared.Teleportation.Systems;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.StationTeleporter;
+namespace Content.Shared._Gabystation.StationTeleporter;
 
 public abstract partial class SharedStationTeleporterSystem : EntitySystem
 {

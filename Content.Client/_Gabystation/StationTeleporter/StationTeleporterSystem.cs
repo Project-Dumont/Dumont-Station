@@ -3,11 +3,11 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.StationTeleporter;
+using Content.Shared._Gabystation.StationTeleporter;
 using Robust.Client.GameObjects;
-using StationTeleporterComponent = Content.Shared.StationTeleporter.Components.StationTeleporterComponent;
+using StationTeleporterComponent = Content.Shared._Gabystation.StationTeleporter.Components.StationTeleporterComponent;
 
-namespace Content.Client.StationTeleporter;
+namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
 {

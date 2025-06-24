@@ -7,7 +7,7 @@ using System.Numerics;
 using Content.Client.Pinpointer.UI;
 using Robust.Client.Graphics;
 
-namespace Content.Client.StationTeleporter;
+namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed partial class StationTeleporterNavMapControl : NavMapControl
 {

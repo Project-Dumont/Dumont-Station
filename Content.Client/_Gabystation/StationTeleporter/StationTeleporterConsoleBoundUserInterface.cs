@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.StationTeleporter;
+using Content.Shared._Gabystation.StationTeleporter;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.StationTeleporter;
+namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed class StationTeleporterConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {

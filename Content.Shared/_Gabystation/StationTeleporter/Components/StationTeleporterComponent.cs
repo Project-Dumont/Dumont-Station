@@ -5,7 +5,7 @@
 
 using Robust.Shared.Audio;
 
-namespace Content.Shared.StationTeleporter.Components;
+namespace Content.Shared._Gabystation.StationTeleporter.Components;
 
 /// <summary>
 /// Allows an entity to be displayed and managed using StationTeleporterConsole

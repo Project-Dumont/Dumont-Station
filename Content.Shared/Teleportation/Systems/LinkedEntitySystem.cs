@@ -70,12 +70,14 @@ public sealed class LinkedEntitySystem : EntitySystem
         Dirty(first, firstLink);
         Dirty(second, secondLink);
 
+        // GabyStation -> Station Teleporter start
         if (firstLink.LinkedEntities.Add(second) && secondLink.LinkedEntities.Add(first))
         {
             RaiseLocalEvent(first, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
             RaiseLocalEvent(second, new LinkedEntityChangedEvent(secondLink.LinkedEntities));
             return true;
         }
+        // GabyStation -> Station Teleporter end
 
         return false;
     }
@@ -93,6 +95,7 @@ public sealed class LinkedEntitySystem : EntitySystem
 
         Dirty(source, firstLink);
 
+        // GabyStation -> Station Teleporter start
         if (firstLink.LinkedEntities.Add(target))
         {
             RaiseLocalEvent(source, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
@@ -100,7 +103,7 @@ public sealed class LinkedEntitySystem : EntitySystem
         }
 
         return false;
-
+        // GabyStation -> Station Teleporter end
     }
 
     /// <summary>
@@ -136,8 +139,10 @@ public sealed class LinkedEntitySystem : EntitySystem
         if (secondLink.LinkedEntities.Count == 0 && secondLink.DeleteOnEmptyLinks)
             QueueDel(second);
 
+        // GabyStation -> Station Teleporter start
         RaiseLocalEvent(first, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
         RaiseLocalEvent(second, new LinkedEntityChangedEvent(secondLink.LinkedEntities));
+        // GabyStation -> Station Teleporter end
 
         return success;
     }
@@ -165,6 +170,7 @@ public sealed class LinkedEntitySystem : EntitySystem
     #endregion
 }
 
+// GabyStation -> Station Teleporter start
 public sealed class LinkedEntityChangedEvent : EntityEventArgs
 {
     public HashSet<EntityUid> NewLinks;
@@ -174,3 +180,4 @@ public sealed class LinkedEntityChangedEvent : EntityEventArgs
         NewLinks = newLinks;
     }
 }
+// GabyStation -> Station Teleporter end

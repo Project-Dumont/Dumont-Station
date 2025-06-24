@@ -145,11 +145,13 @@ public sealed class HandTeleporterSystem : EntitySystem
                 portal.CanTeleportToOtherMaps = true;
 
             _adminLogger.Add(LogType.EntitySpawn, LogImpact.High, $"{ToPrettyString(user):player} opened {ToPrettyString(component.SecondPortal.Value)} at {Transform(component.SecondPortal.Value).Coordinates} linked to {ToPrettyString(component.FirstPortal!.Value)} using {ToPrettyString(uid)}");
-            
+
+            // GabyStation -> Station Teleporter start
             //we link the first and second portal only if the first portal is not linked to anything
             //(this can happen if you link the first portal through the teleporters console)
             if (!_link.GetLink(component.FirstPortal!.Value, out _))
                 _link.TryLink(component.FirstPortal!.Value, component.SecondPortal.Value);
+            // GabyStation -> Station Teleporter end
 
             _audio.PlayPvs(component.NewPortalSound, uid);
         }
