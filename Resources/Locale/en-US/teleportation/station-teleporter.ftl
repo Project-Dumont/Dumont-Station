@@ -8,6 +8,7 @@ teleporter-console-chip-examine-null = [color=#f5b942]Recorded coordinates: None
 
 teleporter-console-user-interface-title = Teleporter control console
 
+teleporter-console-user-interface-unknown-station = Unknown station
 teleporter-console-user-interface-locate = Locate
 teleporter-console-user-interface-start-connection = Start connection
 teleporter-console-user-interface-cut-connection = Cut connection
