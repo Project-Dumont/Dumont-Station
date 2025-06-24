@@ -54,6 +54,7 @@
   tier: 1
   cost: 7500 # Delta Price. 5000 is pre-adjustment.
   recipeUnlocks:
+  - BotanicDNADisk # Ganimed
   - PlantBagOfHolding #DeltaV
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard

@@ -20,13 +20,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Ganimed.SeedDna.System;
 using Content.Server.Botany.Systems;
 using Content.Shared.Botany.Components;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Botany.Components
 {
-    [RegisterComponent, Access(typeof(BotanySystem))]
+    [RegisterComponent, Access(typeof(BotanySystem), typeof(SeedDnaConsoleSystem))] // _Ganimed
     public sealed partial class SeedComponent : SharedSeedComponent
     {
         /// <summary>
