@@ -14,6 +14,7 @@ using Robust.Shared.Spawners;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Pulling.Components;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Server._Shitmed.Antags.Abductor;
 
@@ -25,12 +26,14 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private static readonly EntProtoId<InstantActionComponent> SendYourself = "ActionSendYourself";
     private static readonly EntProtoId<InstantActionComponent> ExitAction = "ActionExitConsole";
+    private static readonly EntProtoId<InstantActionComponent> ReturnAction = "ActionReturnToShip";
     private static readonly EntProtoId TeleportationEffect = "EffectTeleportation";
     private static readonly EntProtoId TeleportationEffectEntity = "EffectTeleportationEntity";
 
     public void InitializeActions()
     {
         SubscribeLocalEvent<AbductorScientistComponent, ComponentStartup>(AbductorScientistComponentStartup);
+        SubscribeLocalEvent<AbductorsAbilitiesComponent, ComponentStartup>(AbductorsAbilitiesComponentStartup);
 
         SubscribeLocalEvent<ExitConsoleEvent>(OnExit);
 
@@ -43,6 +46,20 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void AbductorScientistComponentStartup(Entity<AbductorScientistComponent> ent, ref ComponentStartup args)
         => ent.Comp.SpawnPosition = EnsureComp<TransformComponent>(ent).Coordinates;
+
+    private void AbductorsAbilitiesComponentStartup(Entity<AbductorsAbilitiesComponent> ent, ref ComponentStartup args)
+    {
+        foreach (var (uid, _) in _actions.GetActions(ent))
+        {
+            if (!_entityManager.TryGetComponent<MetaDataComponent>(uid, out var metadata)
+                || metadata.EntityPrototype is not { } proto
+                || proto.ID != ReturnAction.Id)
+                continue;
+
+            ent.Comp.ReturnToShip = uid;
+            return;
+        }
+    }
 
     private void OnReturn(AbductorReturnToShipEvent ev)
     {
@@ -93,6 +110,11 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         StopPulls(ent);
         _xformSys.SetCoordinates(ent, GetCoordinates(args.TargetCoordinates));
         OnCameraExit(ent);
+
+        if (!_entityManager.TryGetComponent<AbductorsAbilitiesComponent>(ent, out var comp))
+            return;
+
+        _actions.SetCooldown(comp.ReturnToShip, TimeSpan.FromSeconds(ent.Comp.ReturnToShipCooldown));
     }
 
     private void OnExit(ExitConsoleEvent ev) => OnCameraExit(ev.Performer);
@@ -104,6 +126,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         _actions.AddAction(args.Actor, ref comp.ExitConsole, ExitAction);
         _actions.AddAction(args.Actor, ref comp.SendYourself, SendYourself);
     }
+
     private void RemoveActions(EntityUid actor)
     {
         EnsureComp<AbductorsAbilitiesComponent>(actor, out var comp);

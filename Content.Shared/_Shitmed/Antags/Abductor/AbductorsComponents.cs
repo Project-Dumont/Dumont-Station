@@ -91,6 +91,9 @@ public sealed partial class AbductorScientistComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? Console;
+
+    [DataField]
+    public float ReturnToShipCooldown = 20f;
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
@@ -108,6 +111,9 @@ public sealed partial class AbductorsAbilitiesComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? SendYourself;
+
+    [DataField]
+    public EntityUid? ReturnToShip;
 
     [DataField]
     public EntityUid[] HiddenActions = [];
