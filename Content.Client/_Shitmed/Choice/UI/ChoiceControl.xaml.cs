@@ -29,4 +29,11 @@ public partial class ChoiceControl : Control
         NameLabel.SetMessage(msg);
         Texture.Texture = texture;
     }
+
+    public void Set(string name, bool isEnabled = true, string? tooltip = "")
+    {
+        NameLabel.SetMessage(name);
+        Button.Disabled = !isEnabled;
+        Button.ToolTip = tooltip;
+    }
 }

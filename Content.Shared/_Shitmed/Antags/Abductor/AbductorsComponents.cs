@@ -20,6 +20,9 @@ public sealed partial class AbductorHumanObservationConsoleComponent : Component
 
     [DataField, AutoNetworkedField]
     public NetEntity? RemoteEntity;
+
+    [DataField]
+    public float MinStationDistance = 200f;
 }
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
 public sealed partial class AbductorConsoleComponent : Component
