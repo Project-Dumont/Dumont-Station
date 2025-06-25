@@ -53,12 +53,16 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Centronias <me@centronias.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Hanz <41141796+Hanzdegloker@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 # SPDX-FileCopyrightText: 2025 Nim <128169402+Nimfar11@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Thomas <87614336+Aeshus@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
 # SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -177,6 +181,30 @@
     Steel: 300
     Plastic: 300
     Glass: 100
+
+- type: latheRecipe
+  id: BoomboxRed
+  result: BoomboxRed
+  completetime: 4
+  materials:
+    Steel: 100
+    Plastic: 300
+
+- type: latheRecipe
+  id: BoomboxGreen
+  result: BoomboxGreen
+  completetime: 4
+  materials:
+    Steel: 100
+    Plastic: 300
+
+- type: latheRecipe
+  id: BoomboxBlue
+  result: BoomboxBlue
+  completetime: 4
+  materials:
+    Steel: 100
+    Plastic: 300
 
 - type: latheRecipe
   parent: BaseToolRecipe

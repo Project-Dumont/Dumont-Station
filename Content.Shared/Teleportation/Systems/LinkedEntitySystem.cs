@@ -4,8 +4,11 @@
 // SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -68,8 +71,16 @@ public sealed class LinkedEntitySystem : EntitySystem
         Dirty(first, firstLink);
         Dirty(second, secondLink);
 
-        return firstLink.LinkedEntities.Add(second)
-            && secondLink.LinkedEntities.Add(first);
+        // GabyStation -> Station Teleporter start
+        if (firstLink.LinkedEntities.Add(second) && secondLink.LinkedEntities.Add(first))
+        {
+            RaiseLocalEvent(first, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
+            RaiseLocalEvent(second, new LinkedEntityChangedEvent(secondLink.LinkedEntities));
+            return true;
+        }
+        // GabyStation -> Station Teleporter end
+
+        return false;
     }
 
     /// <summary>
@@ -85,7 +96,15 @@ public sealed class LinkedEntitySystem : EntitySystem
 
         Dirty(source, firstLink);
 
-        return firstLink.LinkedEntities.Add(target);
+        // GabyStation -> Station Teleporter start
+        if (firstLink.LinkedEntities.Add(target))
+        {
+            RaiseLocalEvent(source, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
+            return true;
+        }
+
+        return false;
+        // GabyStation -> Station Teleporter end
     }
 
     /// <summary>
@@ -121,6 +140,14 @@ public sealed class LinkedEntitySystem : EntitySystem
         if (secondLink.LinkedEntities.Count == 0 && secondLink.DeleteOnEmptyLinks)
             QueueDel(second);
 
+        // GabyStation -> Station Teleporter start
+        if (success)
+        {
+            RaiseLocalEvent(first, new LinkedEntityChangedEvent(firstLink.LinkedEntities));
+            RaiseLocalEvent(second, new LinkedEntityChangedEvent(secondLink.LinkedEntities));
+        }
+        // GabyStation -> Station Teleporter end
+
         return success;
     }
 
@@ -146,3 +173,15 @@ public sealed class LinkedEntitySystem : EntitySystem
 
     #endregion
 }
+
+// GabyStation -> Station Teleporter start
+public sealed class LinkedEntityChangedEvent : EntityEventArgs
+{
+    public HashSet<EntityUid> NewLinks;
+
+    public LinkedEntityChangedEvent(HashSet<EntityUid> newLinks)
+    {
+        NewLinks = newLinks;
+    }
+}
+// GabyStation -> Station Teleporter end

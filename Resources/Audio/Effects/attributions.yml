@@ -5,7 +5,6 @@
 # SPDX-FileCopyrightText: 2023 Hmeister-fake <144629361+Hmeister-fake@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
@@ -18,6 +17,10 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Chaboricks <95505064+Chaboricks@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -269,6 +272,11 @@
   license: "CC-BY-SA-3.0"
   copyright: "Created by mattroks101 for Bee Station. cig_snuff converted to mono"
   source: "https://github.com/BeeStation/BeeStation-Hornet/pull/29"
+
+- files: [gateway_off.ogg]
+  copyright: 'by RunnerPack of Freesound.org'
+  license: "CC-BY-4.0"
+  source: https://freesound.org/people/RunnerPack/sounds/87040/
 
 - files: ["firefighting_nozzle.ogg"]
   license: "CC-BY-SA-3.0"
