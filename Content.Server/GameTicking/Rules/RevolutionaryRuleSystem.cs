@@ -83,6 +83,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared._EinsteinEngines.Revolutionary;
 using Robust.Shared.Player;
 using Content.Server.Traitor.Uplink;
+using Content.Shared.PDA.Ringer;
 
 
 namespace Content.Server.GameTicking.Rules;
@@ -158,7 +159,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             return false;
 
         var pda = _uplink.FindUplinkTarget(traitor);
-        if (pda == null || !_uplink.AddUplink(traitor, component.StartingBalance, component.UplinkCurrencyId, component.UplinkStoreId))
+        if (pda == null || !_uplink.AddUplink(traitor, component.StartingBalance))
             return false;
 
         var code = EnsureComp<RingerUplinkComponent>(pda.Value).Code;
