@@ -181,7 +181,7 @@
       selectable: false
       sound: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
       disableSelection: true
-      color: DarkSlateGray
-      emergencyLightColor: DarkSlateGray
+      color: MidnightBlue
+      emergencyLightColor: MidnightBlue
       forceEnableEmergencyLights: true
       shuttleTime: 1200
