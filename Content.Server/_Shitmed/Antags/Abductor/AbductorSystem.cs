@@ -76,7 +76,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         {
             if (!_uiSystem.IsUiOpen(id, AbductorCameraConsoleUIKey.Key)
                 || !_uiSystem.TryGetUiState<AbductorCameraConsoleBuiState>(id, AbductorCameraConsoleUIKey.Key, out var state))
-                return;
+                continue;
 
             var result = new Dictionary<NetEntity, StationBeacons>();
             var isChanged = false;
@@ -223,13 +223,13 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         {
             if (_stationSystem.GetLargestGrid(Comp<StationDataComponent>(station)) is not { } grid
                 || !TryComp(station, out MetaDataComponent? stationMetaData))
-                return;
+                continue;
 
             var xform = Transform(grid);
             var isEnabled = _xformSys.InRange((ent, consoleTransform), (grid, xform), ent.Comp.MinStationDistance);
 
             if (!_entityManager.TryGetComponent<NavMapComponent>(grid, out var navMap))
-                return;
+                continue;
 
             var netEnt = GetNetEntity(station);
 
