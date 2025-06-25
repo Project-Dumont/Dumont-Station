@@ -82,7 +82,7 @@ using Content.Goobstation.Shared.Revolutionary;
 using Content.Server.Chat.Systems;
 using Content.Shared._EinsteinEngines.Revolutionary;
 using Robust.Shared.Player;
-using Content.Server.Uplink;
+using Content.Server.Traitor.Uplink;
 
 
 namespace Content.Server.GameTicking.Rules;
@@ -460,7 +460,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         // hardcoded values because idk why not
         // regards
         if (CheckCommandLose() && enemiesNormalized >= .35f
-        || revsNormalized >= .35f)
+            || revsNormalized >= .35f)
         {
             ev.Cancelled = true;
             ev.Reason = Loc.GetString("shuttle-call-error");
