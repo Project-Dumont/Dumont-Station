@@ -405,10 +405,12 @@ namespace Content.Server.Communications
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has requested martial law, reason: '{centMessage}'.");
                     _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
 
+                    SoundSpecifier sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+
                     Loc.TryGetString(comp.Title, out var title);
                     title ??= comp.Title;
                     _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("comns-console-request-send-announce"), title,
-                                                            false, new SoundPathSpecifier("/Audio/Announcements/war.ogg"), colorOverride: comp.Color);
+                                                            false, sound, colorOverride: comp.Color);
                     return;
                 }
                 _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);

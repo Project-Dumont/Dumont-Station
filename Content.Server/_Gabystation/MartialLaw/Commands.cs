@@ -93,6 +93,8 @@ namespace Content.Server._Gabystation.MartialLaw
         }
     }
 
+    [UsedImplicitly]
+    [AdminCommand(AdminFlags.Fun)]
     public sealed class ReleaseMartialLaw : LocalizedCommands
     {
         [Dependency] private readonly IEntitySystemManager _entitySystems = default!;

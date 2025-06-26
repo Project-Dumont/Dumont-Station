@@ -63,10 +63,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             </BoxContainer>
 
             <!-- EmergencyPart -->
-            <BoxContainer Orientation="Vertical"
-                SeparationOverride="6">
+            <BoxContainer Orientation="Vertical">
 
-                <RichTextLabel Name="CountdownLabel"/>
+                <RichTextLabel Name="CountdownLabel" Margin="0 2"/>
 
                 <Button Name="EmergencyShuttleButton"
                     Access="Public"

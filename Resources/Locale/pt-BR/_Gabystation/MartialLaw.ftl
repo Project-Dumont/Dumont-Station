@@ -9,4 +9,7 @@ martiallaw-end-announce = A central de comando revogou o regime de Lei Marcial. 
 
 comms-console-menu-dialog-martial-tittle = Requisitar Lei Marcial
 comms-console-menu-dialog-martial-message = Inserir motivo
-comns-console-request-send-announce = Alguem requisitou a Lei Marcial, o pedido será revisado pela central de comando.
+comns-console-request-send-announce = Uma requisisão da Lei Marcial para revisão foi enviada para Central de Comando.
+
+guide-entry-martiallaw = Lei Marcial
+guide-entry-pop-marcial = Procedimentos da Lei Marcial
