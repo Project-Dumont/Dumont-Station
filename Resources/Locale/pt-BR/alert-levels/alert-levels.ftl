@@ -44,7 +44,7 @@ alert-level-octarine = Octarina
 alert-level-octarine-announcement = Um evento noosférico cataclísmico ameaça envolver o espaço real. A tripulação da estação deve conter o evento se possível, ou evacuar.
 alert-level-octarine-instructions = Os tripulantes são aconselhados a ouvir os chefes de departamento para obter mais informações.
 
-## GabyStation - Lei marcial
-alert-level-lei marcial = Lei Marcial
-alert-level-lei marcial-announcement = A Central de Comando declarou Lei marcial a estação, se mantenha em seu respectivo departamento ou no bar, a falha em seguir instruções da equipe de segurança ou da Lei Marcial resultará em pena capital imediata.
-alert-level-lei marcial-instructions = Siga as ordens da equipe de segurança, mantenha-se em seu departamento.
+## GabyStation - Lei Marcial
+alert-level-leimarcial = Lei Marcial
+alert-level-leimarcial-announcement = A Central de Comando declarou Lei marcial à estação, se mantenha em seu respectivo departamento ou no bar. A falha em seguir instruções da equipe de segurança ou da Lei Marcial resultará em pena capital imediata.
+alert-level-leimarcial-instructions = Siga as ordens da equipe de segurança, mantenha-se em seu departamento.
