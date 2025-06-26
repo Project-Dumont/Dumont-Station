@@ -25,7 +25,7 @@ alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo e
 
 alert-level-gamma = Gamma
 alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
-alert-level-gamma-instructions = todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
 alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulantes são aconselhados a ouvir os chefes de departamento para obter ordens e mais informações sobre o ocorrido.
