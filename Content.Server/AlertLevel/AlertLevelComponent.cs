@@ -44,6 +44,11 @@ public sealed partial class AlertLevelComponent : Component
 
     [ViewVariables] public float CurrentDelay = 0;
     [ViewVariables] public bool ActiveDelay;
+    /// <summary>
+    /// GabyStation change: This disable the change of alert level in ANY position.
+    /// Used in martial law.
+    /// </summary>
+    [ViewVariables] public bool Locked = false;
 
     /// <summary>
     /// If the level can be selected on the station.

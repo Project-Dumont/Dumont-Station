@@ -172,6 +172,9 @@ public sealed class AlertLevelSystem : EntitySystem
             return;
         }
 
+        if (component.Locked) // Gaby change
+            return;
+
         if (!force)
         {
             if (!detail.Selectable
@@ -229,6 +232,14 @@ public sealed class AlertLevelSystem : EntitySystem
         }
 
         RaiseLocalEvent(new AlertLevelChangedEvent(station, level));
+    }
+
+    public void SetLocked(EntityUid station, bool locked, MetaDataComponent? dataComponent = null, AlertLevelComponent? component = null)
+    {
+        if (!Resolve(station, ref component, ref dataComponent) || component.AlertLevels == null)
+            return;
+
+        component.Locked = locked;
     }
 }
 
