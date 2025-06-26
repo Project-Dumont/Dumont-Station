@@ -46,5 +46,5 @@ alert-level-octarine-instructions = Os tripulantes são aconselhados a ouvir os 
 
 ## GabyStation - Lei Marcial
 alert-level-martial = Lei Marcial
-alert-level-leimarcial-announcement = A Central de Comando declarou Lei marcial à estação, se mantenha em seu respectivo departamento ou no bar. A falha em seguir instruções da equipe de segurança ou da Lei Marcial resultará em pena capital imediata.
+alert-level-martial-announcement = A Central de Comando decretou Lei Marcial para toda estação, A cadeia de comando foi atualizada. A falha em seguir instruções da equipe de segurança ou da lei marcial resultará em pena capital imediata.
 alert-level-leimarcial-instructions = Siga as ordens da equipe de segurança, mantenha-se em seu departamento.
