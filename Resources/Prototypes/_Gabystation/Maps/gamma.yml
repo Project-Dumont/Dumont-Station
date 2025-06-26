@@ -82,7 +82,8 @@
             SecurityOfficer: [ 8, 8 ]
             SecurityCadet: [ 6, 6 ]
             Lawyer: [ 2, 2 ]
-            PermaPrisoner: [ 4, 0 ]
+            # If disabled, keep both at 0; if enabled, ensure high-pop ≥ low-pop
+            PermaPrisoner: [ 0, 4 ]
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
