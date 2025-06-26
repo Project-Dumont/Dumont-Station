@@ -111,7 +111,7 @@
         enum.BluespaceVendorVisualLayers.Tank:
           False: { state: tank, visible: false }
           True: { state: tank, visible: true }
-      enum.BluespaceVendorVisuals.IhfrsPumping:
+      enum.BluespaceVendorVisuals.IsPumping:
         enum.BluespaceVendorVisualLayers.Pumping:
           False: { state: pumping, visible: false }
           True: { state: pumping, visible: true }

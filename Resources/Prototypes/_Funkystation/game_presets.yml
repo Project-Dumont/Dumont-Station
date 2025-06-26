@@ -79,7 +79,7 @@
   - apocalypse
   name: apostle-title
   description: apostle-description
-  showInVote: faslse # teste de caos
+  showInVote: false # teste de caos
   minPlayers: 5
   rules:
     - ApocalypseDynamic
