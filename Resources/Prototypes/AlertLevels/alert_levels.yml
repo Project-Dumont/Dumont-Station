@@ -177,8 +177,8 @@
       emergencyLightColor: CadetBlue
       forceEnableEmergencyLights: true
       shuttleTime: 600
-    Lei Marcial: # Gabystation - Lei marcial
-      announcement: alert-level-martial-law-announcement
+    lei marcial: # Gabystation - Lei marcial
+      announcement: alert-level-lei marcial-announcement
       selectable: false
       sound: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
       disableSelection: true
