@@ -125,6 +125,7 @@ namespace Content.Client.Communications.UI
 
         public event Action? OnCentcomm; // Gabystation
         public event Action? OnMaint; // Gabystation
+        public event Action? OnMartial; // Gabystation
 
         public CommunicationsConsoleMenu()
         {
@@ -172,6 +173,7 @@ namespace Content.Client.Communications.UI
 
             MaintEmergencyButton.OnPressed += _ => OnMaint?.Invoke(); // Gabystation
             CentCommButton.OnPressed += _ => OnCentcomm?.Invoke(); // Gabystation
+            MartialButton.OnPressed += _ => OnMartial?.Invoke(); // Gabystation
 
             UpdateCountdown();
         }

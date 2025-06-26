@@ -53,6 +53,7 @@ namespace Content.Client.Communications.UI
 
             _menu.OnMaint += MaintEmergencyButtonPressed;
             _menu.OnCentcomm += CentCommButtonPressed;
+            _menu.OnMartial += MartialButtonPressed;
         }
 
         public void AlertLevelSelected(string level)
@@ -92,6 +93,11 @@ namespace Content.Client.Communications.UI
         public void CentCommButtonPressed()
         {
             SendMessage(new CommunicationsConsoleCentCommButtonMessage());
+        }
+
+        public void MartialButtonPressed()
+        {
+            SendMessage(new CommunicationsConsoleMartialButtonMessage());
         }
 
         public void CallShuttle()

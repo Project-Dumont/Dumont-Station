@@ -6,3 +6,7 @@ martiallaw-start-announce = A central de comando decretou o começo da Lei Marci
 martiallaw-end-announce = A central de comando revogou o regime de Lei Marcial. A estação está novamente em regime civil.
                         Os oficais de segurança devem se reportar para remover seus acessos adicionais. Comandantes devem voltar aos seus postos.
                         A Nanotrasen agradece sua colaboração nesse ex-estado de calamidade!
+
+comms-console-menu-dialog-martial-tittle = Requisitar Lei Marcial
+comms-console-menu-dialog-martial-message = Inserir motivo
+comns-console-request-send-announce = Alguem requisitou a Lei Marcial, o pedido será revisado pela central de comando.

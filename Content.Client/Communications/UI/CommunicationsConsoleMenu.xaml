@@ -74,6 +74,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"
                     StyleClasses="OpenLeft" />
 
+                <Button Name="MartialButton"
+                    Text="{Loc 'comms-console-menu-martial'}"
+                    ToolTip="{Loc 'comms-console-menu-martial-help'}"
+                    StyleClasses="OpenBoth"
+                    Access="Public" />
+
                 <Button Name="MaintEmergencyButton"
                     Text="{Loc 'comms-console-menu-emergency-maint'}"
                     StyleClasses="OpenRight"

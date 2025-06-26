@@ -7,6 +7,8 @@ comms-console-menu-call-shuttle = Chamar nave de emergência
 comms-console-menu-recall-shuttle = Chamar nave de emergência de volta
 comms-console-menu-emergency-maint = Alternar acessos de manutenção
 comms-console-menu-nuclear-code = Requisitar codigos de ativação nuclear
+comms-console-menu-martial = Requisitar lei marcial
+comms-console-menu-martial-help = Requisita a lei marcial - Apenas chefe de segurança ou capitão.
 comms-console-menu-message-centcomm = Enviar mensagem para a Central de Comando
 
 # Announcement

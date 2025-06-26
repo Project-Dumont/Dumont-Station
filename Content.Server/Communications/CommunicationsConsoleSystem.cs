@@ -73,7 +73,8 @@ using Robust.Shared.Audio;
 using Content.Server.Administration;
 using Robust.Shared.Player;
 using Content.Server.Chat.Managers; //pra falar com centcom
-using Robust.Shared.Timing; // para cooldown
+using Robust.Shared.Timing;
+using Content.Shared.Mind; // para cooldown
 
 namespace Content.Server.Communications
 {
@@ -116,6 +117,7 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleToggleEmergencyMaintMessage>(OnToggleEmergencyMaintMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCentCommButtonMessage>(OnCentCommMessage);
+            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleMartialButtonMessage>(OnMartialMessage);
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
@@ -379,6 +381,36 @@ namespace Content.Server.Communications
                     _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
                     return;
                 } //pop up avisando q ta vazio
+                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+            });
+        }
+
+        private void OnMartialMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleMartialButtonMessage message)
+        {
+            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+                return;
+
+            var mob = message.Actor;
+            if (!CanUse(mob, uid))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
+                return;
+            }
+            //dialogo
+            _quickDialog.OpenDialog(actor.PlayerSession, Loc.GetString("comms-console-menu-dialog-martial-tittle"), Loc.GetString("comms-console-menu-dialog-martial-message"), (string centMessage) =>
+            {
+                if (!centMessage.Equals(""))
+                {
+                    _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: requsitou a lei marcial. Motivo: '{centMessage}'");
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has requested martial law, reason: '{centMessage}'.");
+                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+
+                    Loc.TryGetString(comp.Title, out var title);
+                    title ??= comp.Title;
+                    _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("comns-console-request-send-announce"), title,
+                                                            false, new SoundPathSpecifier("/Audio/Announcements/war.ogg"), colorOverride: comp.Color);
+                    return;
+                }
                 _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
             });
         }
