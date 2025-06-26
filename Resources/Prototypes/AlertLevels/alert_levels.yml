@@ -178,7 +178,7 @@
       forceEnableEmergencyLights: true
       shuttleTime: 600
     martial: # Gabystation - Lei marcial
-      announcement: alert-level-leimarcial-announcement
+      announcement: alert-level-martial-announcement
       selectable: false
       sound: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
       disableSelection: true
