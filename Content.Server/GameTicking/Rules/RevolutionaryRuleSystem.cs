@@ -85,6 +85,7 @@ using Content.Shared._EinsteinEngines.Revolutionary;
 using Robust.Shared.Player;
 using Content.Server.Traitor.Uplink;
 using Content.Shared.PDA.Ringer;
+using Content.Shared.PDA;
 
 
 namespace Content.Server.GameTicking.Rules;
@@ -168,7 +169,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         _antag.SendBriefing(traitor, Loc.GetString("head-rev-role-greeting"), Color.Red, null);
 
         if (_role.MindHasRole<RevolutionaryRoleComponent>(mindId, out var revRoleComp))
-            AddComp(revRoleComp.Value, new RoleBriefingComponent { Briefing = Loc.GetString("head-rev-briefing", ("code", string.Join("-", code).Replace("sharp", "#"))) }, overwrite: true);
+            AddComp(revRoleComp.Value, new RoleBriefingComponent { Briefing = Loc.GetString("head-rev-briefing", ("code", string.Join("-", code ?? Array.Empty<Note>()).Replace("sharp", "#"))) }, overwrite: true);
 
         return true;
     }
@@ -234,7 +235,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
                         Loc.GetString("revolutionaries-open-revolt-announcement", ("nameList", headRevNameList)),
                         Loc.GetString("revolutionaries-sender-cc"),
                         colorOverride: Color.Red);
-                
+
                 component.OpenRevoltAnnouncementPending = false;
             }
         }
@@ -245,7 +246,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     {
         _roundEnd.EndRound();
     }
-    
+
     protected override void AppendRoundEndText(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
