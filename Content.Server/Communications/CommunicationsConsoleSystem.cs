@@ -79,7 +79,6 @@ using Content.Server.Administration;
 using Robust.Shared.Player;
 using Content.Server.Chat.Managers; //pra falar com centcom
 using Robust.Shared.Timing;
-using Content.Shared.Mind; // para cooldown
 
 namespace Content.Server.Communications
 {
