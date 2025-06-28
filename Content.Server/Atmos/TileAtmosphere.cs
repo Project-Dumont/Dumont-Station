@@ -125,9 +125,6 @@ public sealed class TileAtmosphere : IGasMixtureHolder
     [DataField("lastShare")]
     public float LastShare;
 
-    [ViewVariables]
-    public readonly float[] MolesArchived = new float[Atmospherics.AdjustedNumberOfGases];
-
     GasMixture IGasMixtureHolder.Air
     {
         get => Air ?? new GasMixture(Atmospherics.CellVolume) { Temperature = Temperature };
@@ -171,6 +168,7 @@ public sealed class TileAtmosphere : IGasMixtureHolder
         GridIndex = gridIndex;
         GridIndices = gridIndices;
         Air = mixture;
+        AirArchived = Air?.Clone();
         Space = space;
 
         if (immutable)
@@ -187,6 +185,6 @@ public sealed class TileAtmosphere : IGasMixtureHolder
         NoGridTile = other.NoGridTile;
         MapAtmosphere = other.MapAtmosphere;
         Air = other.Air?.Clone();
-        Array.Copy(other.MolesArchived, MolesArchived, MolesArchived.Length);
+        AirArchived = Air?.Clone();
     }
 }

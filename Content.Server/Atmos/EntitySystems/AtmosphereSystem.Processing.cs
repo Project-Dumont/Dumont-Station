@@ -681,16 +681,6 @@ namespace Content.Server.Atmos.EntitySystems
                         }
 
                         atmosphere.ProcessingPaused = false;
-                        atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
-                        continue;
-                    case AtmosphereProcessingState.HighPressureDelta:
-                        if (!ProcessHighPressureDelta((ent, ent)))
-                        {
-                            atmosphere.ProcessingPaused = true;
-                            return;
-                        }
-
-                        atmosphere.ProcessingPaused = false;
                         atmosphere.State = AtmosphereProcessingState.Hotspots;
                         continue;
                     case AtmosphereProcessingState.Hotspots:
@@ -706,10 +696,20 @@ namespace Content.Server.Atmos.EntitySystems
                         //       Therefore, a change to this CVar might only be applied after that step is over.
                         atmosphere.State = Superconduction
                             ? AtmosphereProcessingState.Superconductivity
-                            : AtmosphereProcessingState.PipeNet;
+                            : AtmosphereProcessingState.HighPressureDelta;
                         continue;
                     case AtmosphereProcessingState.Superconductivity:
                         if (!ProcessSuperconductivity(atmosphere))
+                        {
+                            atmosphere.ProcessingPaused = true;
+                            return;
+                        }
+
+                        atmosphere.ProcessingPaused = false;
+                        atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
+                        continue;
+                    case AtmosphereProcessingState.HighPressureDelta:
+                        if (!ProcessHighPressureDelta((ent, ent)))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;

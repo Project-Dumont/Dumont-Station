@@ -281,7 +281,7 @@ public sealed partial class AtmosphereSystem
     private void GridFixTileVacuum(TileAtmosphere tile)
     {
         DebugTools.AssertNotNull(tile.Air);
-        DebugTools.Assert(tile.Air?.Immutable == false);
+        DebugTools.Assert(tile.Air?.Immutable == false );
         tile.AirArchived = null;
         tile.ArchivedCycle = 0;
 
