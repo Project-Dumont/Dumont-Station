@@ -526,6 +526,30 @@
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA17FriendlyAntag.xml"
 
 - type: guideEntry
+  id: SandboxRules
+  name: guide-entry-rules-sandbox
+  ruleEntry: true
+  priority: 50
+  text: "/ServerInfo/Guidebook/ServerRules/SandboxRules/RuleX0.xml"
+  children:
+  - RuleX1
+  - RuleX2
+
+- type: guideEntry
+  id: RuleX1
+  name: guide-entry-rules-x1
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/Guidebook/ServerRules/SandboxRules/RuleX1MassiveDamage.xml"
+  
+- type: guideEntry
+  id: RuleX2
+  name: guide-entry-rules-x2
+  ruleEntry: true
+  priority: 2
+  text: "/ServerInfo/Guidebook/ServerRules/SandboxRules/RuleX2Entitys.xml"
+
+- type: guideEntry
   id: SpaceLaw
   name: guide-entry-rules-space-law
   priority: 1

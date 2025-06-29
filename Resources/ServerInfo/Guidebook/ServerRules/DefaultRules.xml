@@ -95,6 +95,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [textlink="9. Perigo refere-se a perigos físicos, priorizados por ameaça imediata e depois probabilidade." link="RuleS9"]
   - [textlink="10. Você decide como resolver conflitos entre ordens." link="RuleS10"]
 
-## REGRAS ESPECÍFICAS DE SANDBOX
-  - 1. Você é livre para fazer o que desejar, porém, causar dano massivo para a estação, a Arrivals e as construções de outros jogadores é estritamente proibido. Também é estritamente proibido spawnar grandes quantidades de entidades, já que muitas entidades podem causar Lag.
+  ## REGRAS DE SANDBOX
+  Essas regras são especificas para o modo de Jogo Sandbox, essas regras Explicam oque pode e não pode ser feito durante uma rodada no Sandbox, de resto, voce é livre para fazer oque quiser
+
+  - [textlink="1. Dano Massivo" link="RuleX1"]
+  - [textlink="2. Entidades." link="RuleX2"]
 </Document>
