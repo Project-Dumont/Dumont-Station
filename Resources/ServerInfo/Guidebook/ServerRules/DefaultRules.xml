@@ -66,7 +66,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Essas regras se aplicam a tudo referente a antagonistas e inimigos em geral, os antagonistas devem verificar suas respectivas regras, enquanto todos devem olhar as regras 9 á 12
   Qualquer descomprimento dessas regras pode acarretar em banimento de servidor ou rolebans (banimento de função(tambem podendo conter bans de antagonistas))
 
-  Antagonistas só podem causar destruição massiva se um dos seguintes requisitos for completo
+  Antagonistas DEVEM concluir seus objetivos!
+
+  Antagonistas só podem causar destruição massiva se um dos seguintes requisitos for completo.
   - Ser Mago
   - Administrador Autorizar
   - Ter o Objetivo DAGD
