@@ -447,14 +447,14 @@
   name: guide-entry-rules-a1
   ruleEntry: true
   priority: 1
-  text: /ServerInfo/Guidebook/ServerRules/AntagRules/RuleA1BloodCult.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA1BloodCult.xml"
 
 - type: guideEntry
   id: RuleA2
   name: guide-entry-rules-a2
   ruleEntry: true
   priority: 2
-  text: /ServerInfo/Guidebook/ServerRules/AntagRules/RuleA2Abductor.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA2Abductor.xml"
 
 - type: guideEntry
   id: RuleA3
