@@ -14,28 +14,30 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
 # REGRAS GABYSTATION
 
-  Space Station 14 não é como a maioria dos jogos. Muitas das regras foram projetadas para exigirem Roleplay, e nem todas as regras são intuitivas. Por favor, tome seu tempo para ler e entender as regras antes de jogar e assim não ser surpreendido(a). Algumas das nossas regras são de zero tolerânica, ou seja, uma violação irá resultar em um ban com duração indefinida sem aviso prévio. Os Admins irão tratá-lo(a) como se você tivesse lido as regras, mesmo que não tenha.
+  Space Station 14 não é como a maioria dos jogos. Muitas das regras foram projetadas para exigirem Roleplay, e nem todas as regras são intuitivas. Por favor, tome seu tempo para ler e entender as regras antes de jogar e assim não ser surpreendido(a). Algumas das nossas regras são de tolerância zero, ou seja, uma violação irá resultar em um ban com duração indefinida sem aviso prévio. Os Admins irão tratá-lo(a) como se você tivesse lido as regras, mesmo que não tenha.
 
 ## REGRAS BÁSICAS
 
   - [textlink="1. Admins tem a palavra final." link="RuleC1"]
   - [textlink="2. Não seja babaca." link="RuleC2"]
   - [textlink="3. Sem discurso de ódio ou linguagem discriminatória." link="RuleC3"]
-  - [textlink="4. Sem conteúdos/temas sexuais, incluindo Roleplay Erótico (ERP), e sem conteúdos chocantes." link="RuleC4"]
-  - [textlink="5. Não use métodos de fora do jogo (como Discord) para se comunicar com outros jogadores." link="RuleC5"]
+  - [textlink="4. Sem ERP." link="RuleC4"]
+  - [textlink="5. Metacomunicações." link="RuleC5"]
   - [textlink="6. Não tente evadir os bans." link="RuleC6"]
   - [textlink="7. Utilize o português como língua principal." link="RuleC7"]
   - [textlink="8. Não use exploits, cheats ou macros." link="RuleC8"]
   - [textlink="9. Não use múltiplas contas, contas alternativas e não compartilhe sua conta." link="RuleC9"]
-  - [textlink="10. Não abuse ou ignore mensagens de admins." link="RuleC10"]
-  - [textlink="11. Não ameace outros jogadores de mandar Ahelps e não discuta sobre as regras." link="RuleC11"]
-  - [textlink="12. Você deve ter e agir como alguém de, pelo menos, 14 anos." link="RuleC12"]
-  - [textlink="13. Use nomes realistas, e tente evitar nomes de figuras / personagens famosos." link="RuleC13"]
-  - [textlink="14. Não use o LOOC ou OOC para compartilhar informações do round atual." link="RuleC14"]
+  - [textlink="10. AHelp." link="RuleC10"]
+  - [textlink="11. Ameaças de AHelp." link="RuleC11"]
+  - [textlink="12. Idade Minima." link="RuleC12"]
+  - [textlink="13. Regras de Nomes." link="RuleC13"]
+  - [textlink="14. ICK OCK." link="RuleC14"]
 
 ## REGRAS DE ROLEPLAY
-  Essas regras se aplicam apenas durante uma rodada. Uma rodada termina somente quando o resumo da rodada aparece. Todas essas regras se aplicam durante a rodada inteira, mesmo após o manifesto ser mostrado.
+  Essas regras se aplicam apenas durante uma rodada. Uma rodada termina somente quando o resumo da rodada aparece.
   Lembre-se de manter o nivel de roleplay, não será aceitado LRP ou NRP.
+
+  A definição de LRP e NRP é definida por um consenso entre Admins, qualquer duvida perguntar
 
   Os modos de jogo Deathmatch e Sandbox estão isentos dessas regras. Jogadores tem total responsabilidade se um modo de jogo isento dessas regras está ocorrendo ou não.
 
@@ -43,25 +45,41 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Veja a lista dos [textlink="tipos de funções" link="RoleTypes"] para mais informações sobre os diferentes tipos de funções.
 
-  - [textlink="1. Silícios devem seguir as Regras de Silícios." link="RuleR1"]
-  - [textlink="2. Familiares devem obedecer seus Mestres." link="RuleR2"]
-  - [textlink="3. Interprete seu personagem como uma pessoa normal." link="RuleR3"]
-  - [textlink="4. Não faça Metagaming, respeite o Metashield." link="RuleR4"]
-  - [textlink="5. Não interfira na Arrivals." link="RuleR5"]
-  - [textlink="6. Não aja como um Antagonista a menos que você seja um." link="RuleR6"]
-  - [textlink="7. Não prolongue a rodada desnecessariamente." link="RuleR7"]
-  - [textlink="8. Como um(a) antagonista, apenas seja amigável com seu time e não trabalhe contra seu time." link="RuleR8"]
-  - [textlink="9. Como um(a) antagonista, não cause morte e destruição além do necessário." link="RuleR9"]
-  - [textlink="10. Escute o seu líder de time." link="RuleR10"]
-  - [textlink="11. Siga as regras de escalonamento de forma razoável." link="RuleR11"]
-  - [textlink="12. Não abandone o seu papel." link="RuleR12"]
-  - [textlink="13. Mantenha-se no seu papel." link="RuleR13"]
-  - [textlink="14. Seja um exemplo caso jogue de Segurança ou Comando." link="RuleR14"]
-  - [textlink="15. Seguranças e Comandos devem seguir a Space Law e POP." link="RuleR15"]
-  - [textlink="16. Regras do Oficial Blueshield." link="RuleR16"]
-  - [textlink="17. Regras do Representante da Nanotrasen." link="RuleR17"]
-  - [textlink="18. Não obtenha, guarde ou vá atrás de equipamentos não-relacionados com seu papel. (Powergaming)" link="RuleR18"]
-  - [textlink="19. Não ignore seu papel ou o Roleplay para ir atrás de PvP. (Validhunt)" link="RuleR19"]
+  - [textlink="1. Familiares." link="RuleR2"]
+  - [textlink="2. RolePlay." link="RuleR3"]
+  - [textlink="3. Metagaming." link="RuleR4"]
+  - [textlink="4. Não interfira na Arrivals." link="RuleR5"]
+  - [textlink="5. Não prolongue a rodada desnecessariamente." link="RuleR7"]
+  - [textlink="6. Como um(a) antagonista, apenas seja amigável com seu time e não trabalhe contra seu time." link="RuleR8"]
+  - [textlink="7. Como um(a) antagonista, não cause morte e destruição além do necessário." link="RuleR9"]
+  - [textlink="8. Escute o seu líder de time." link="RuleR10"]
+  - [textlink="9. Siga as regras de escalonamento de forma razoável." link="RuleR11"]
+  - [textlink="10. Não abandone o seu papel." link="RuleR12"]
+  - [textlink="11. Mantenha-se no seu papel." link="RuleR13"]
+  - [textlink="12. Seja um exemplo caso jogue de Segurança ou Comando." link="RuleR14"]
+  - [textlink="13. Seguranças e Comandos devem seguir a Space Law e POP." link="RuleR15"]
+  - [textlink="14. Regras do Oficial Blueshield." link="RuleR16"]
+  - [textlink="15. Regras do Representante da Nanotrasen." link="RuleR17"]
+
+## REGRAS DE ANTAGONISTA
+  Essas regras se aplicam a tudo referente a antagonistas e inimigos em geral, os antagonistas devem verificar suas respectivas regras, enquanto todos devem olhar as regras 9 á 12
+  Qualquer descomprimento dessas regras pode acarretar em banimento de servidor ou rolebans (banimento de função(tambem podendo conter bans de antagonistas))
+
+  Qualquer duvida sobre as regras deverá ser retirada com um admin via AHelp
+
+  - [textlink="1. Cultista de Sangue." link="RuleA1"]
+  - [textlink="2. Blob." link="RuleA3"]
+  - [textlink="3. Infectado Inicial." link="RuleA6"]
+  - [textlink="4. Nukie." link="RuleA8"]
+  - [textlink="5. Revolucionarios." link="RuleA9"]
+  - [textlink="6. Ladrão." link="RuleA10"]
+  - [textlink="7. Traidor." link="RuleA11"]
+  - [textlink="8. Cultista Cosmico." link="RuleA12"]
+  - [textlink="9. Self-Antag." link="RuleA13"]
+  - [textlink="10. ValidHunt." link="RuleA14"]
+  - [textlink="11. PowerGaming." link="RuleA15"]
+  - [textlink="12. Metashield." link="RuleA16"]
+  - [textlink="13. Antagonistas Amigaveis." link="RuleA17"]
 
   ## REGRAS DE SILÍCIO
   Você apenas é Silício se o jogo claramente e explicitamente te dizer que você é um Silício. Para jogadores que são Silício, essas Regras de Silício sobrepõem todas as Regras de Roleplay se houver conflito. Regras de Silício não sobrepõe as Regras Básicas.
