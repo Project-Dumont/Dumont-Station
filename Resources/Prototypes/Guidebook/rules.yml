@@ -421,6 +421,7 @@
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA0.xml"
   children:
   - RuleA1
+  - RuleA2
   - RuleA3
   - RuleA6
   - RuleA8
@@ -442,87 +443,94 @@
   text: /ServerInfo/Guidebook/ServerRules/AntagRules/RuleA1BloodCult.xml"
 
 - type: guideEntry
+  id: RuleA2
+  name: guide-entry-rules-a2
+  ruleEntry: true
+  priority: 2
+  text: /ServerInfo/Guidebook/ServerRules/AntagRules/RuleA2Abductor.xml"
+
+- type: guideEntry
   id: RuleA3
   name: guide-entry-rules-a3
   ruleEntry: true
-  priority: 2
+  priority: 3
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA3Blob.xml"
 
 - type: guideEntry
   id: RuleA6
   name: guide-entry-rules-a6
   ruleEntry: true
-  priority: 3
+  priority: 4
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA6Infected.xml"
 
 - type: guideEntry
   id: RuleA8
   name: guide-entry-rules-a8
   ruleEntry: true
-  priority: 4
+  priority: 5
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA8Nukie.xml"
 
 - type: guideEntry
   id: RuleA9
   name: guide-entry-rules-a9
   ruleEntry: true
-  priority: 5
+  priority: 6
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA9Rev.xml"
 
 - type: guideEntry
   id: RuleA10
   name: guide-entry-rules-a10
   ruleEntry: true
-  priority: 6
+  priority: 7
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA10Thief.xml"
 
 - type: guideEntry
   id: RuleA11
   name: guide-entry-rules-a11
   ruleEntry: true
-  priority: 7
+  priority: 8
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA11Traitor.xml"
 
 - type: guideEntry
   id: RuleA12
   name: guide-entry-rules-a12
   ruleEntry: true
-  priority: 8
+  priority: 9
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA12CosmicCultist.xml"
 
 - type: guideEntry
   id: RuleA13
   name: guide-entry-rules-a13
   ruleEntry: true
-  priority: 9
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA13selfantag.xml"
 
 - type: guideEntry
   id: RuleA14
   name: guide-entry-rules-a14
   ruleEntry: true
-  priority: 10
+  priority: 11
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA14validhunt.xml"
 
 - type: guideEntry
   id: RuleA15
   name: guide-entry-rules-a15
   ruleEntry: true
-  priority: 11
+  priority: 12
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA15powergaming.xml"
 
 - type: guideEntry
   id: RuleA16
   name: guide-entry-rules-a16
   ruleEntry: true
-  priority: 12
+  priority: 13
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA16Metashield.xml"
 
 - type: guideEntry
   id: RuleA17
   name: guide-entry-rules-a17
   ruleEntry: true
-  priority: 13
+  priority: 14
   text: "/ServerInfo/Guidebook/ServerRules/AntagRules/RuleA17FriendlyAntag.xml"
 
 - type: guideEntry

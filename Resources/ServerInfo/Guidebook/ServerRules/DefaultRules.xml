@@ -68,18 +68,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Qualquer duvida sobre as regras deverá ser retirada com um admin via AHelp
 
   - [textlink="1. Cultista de Sangue." link="RuleA1"]
-  - [textlink="2. Blob." link="RuleA3"]
-  - [textlink="3. Infectado Inicial." link="RuleA6"]
-  - [textlink="4. Nukie." link="RuleA8"]
-  - [textlink="5. Revolucionarios." link="RuleA9"]
-  - [textlink="6. Ladrão." link="RuleA10"]
-  - [textlink="7. Traidor." link="RuleA11"]
-  - [textlink="8. Cultista Cosmico." link="RuleA12"]
-  - [textlink="9. Self-Antag." link="RuleA13"]
-  - [textlink="10. ValidHunt." link="RuleA14"]
-  - [textlink="11. PowerGaming." link="RuleA15"]
-  - [textlink="12. Metashield." link="RuleA16"]
-  - [textlink="13. Antagonistas Amigaveis." link="RuleA17"]
+  - [textlink="2. Abductor." link="RuleA2"]
+  - [textlink="3. Blob." link="RuleA3"]
+  - [textlink="4. Infectado Inicial." link="RuleA6"]
+  - [textlink="5. Nukie." link="RuleA8"]
+  - [textlink="6. Revolucionarios." link="RuleA9"]
+  - [textlink="7. Ladrão." link="RuleA10"]
+  - [textlink="8. Traidor." link="RuleA11"]
+  - [textlink="9. Cultista Cosmico." link="RuleA12"]
+  - [textlink="10. Self-Antag." link="RuleA13"]
+  - [textlink="11. ValidHunt." link="RuleA14"]
+  - [textlink="12. PowerGaming." link="RuleA15"]
+  - [textlink="13. Metashield." link="RuleA16"]
+  - [textlink="14. Antagonistas Amigaveis." link="RuleA17"]
 
   ## REGRAS DE SILÍCIO
   Você apenas é Silício se o jogo claramente e explicitamente te dizer que você é um Silício. Para jogadores que são Silício, essas Regras de Silício sobrepõem todas as Regras de Roleplay se houver conflito. Regras de Silício não sobrepõe as Regras Básicas.
@@ -100,4 +101,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   - [textlink="1. Dano Massivo" link="RuleX1"]
   - [textlink="2. Entidades." link="RuleX2"]
+
+  ## OUTRAS REGRAS
+  
+  - É proibido a destruição do ghost bar, de qualquer jeito ou motivo, passivel a banimento
 </Document>
