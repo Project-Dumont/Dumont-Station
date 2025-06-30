@@ -185,6 +185,8 @@
       selectable: false
       sound: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
       disableSelection: true
+      params:
+          volume: 7
       color: Crimson
       emergencyLightColor: Crimson
       forceEnableEmergencyLights: true
