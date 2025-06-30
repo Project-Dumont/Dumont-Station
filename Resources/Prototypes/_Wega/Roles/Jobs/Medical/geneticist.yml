@@ -26,5 +26,5 @@
   id: GeneticistGear
   equipment:
     id: GeneticistPDA
-    ears: ClothingHeadsetMedical
+    ears: ClothingHeadsetMedicalScience
     belt: ClothingBeltMedicalFilled

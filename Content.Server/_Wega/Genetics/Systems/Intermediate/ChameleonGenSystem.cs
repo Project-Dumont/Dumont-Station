@@ -19,9 +19,7 @@ public sealed class ChameleonGenSystem : EntitySystem
             return;
 
         if (!HasComp<StealthComponent>(ent))
-        {
             EnsureComp<StealthComponent>(ent);
-        }
 
         if (!HasComp<StealthOnMoveComponent>(ent))
         {

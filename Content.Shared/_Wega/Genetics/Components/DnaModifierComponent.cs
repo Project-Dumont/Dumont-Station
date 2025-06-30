@@ -1,5 +1,6 @@
 using Content.Shared.Genetics.Systems;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Genetics;
 
@@ -15,9 +16,9 @@ public sealed partial class DnaModifierComponent : Component
     [ViewVariables(VVAccess.ReadOnly), DataField("instability")]
     public int Instability { get; set; } = 0;
 
-    [ViewVariables(VVAccess.ReadOnly), DataField]
+    [ValidatePrototypeId<EntityPrototype>, ViewVariables(VVAccess.ReadOnly), DataField]
     public string Upper = string.Empty;
 
-    [ViewVariables(VVAccess.ReadOnly), DataField]
+    [ValidatePrototypeId<EntityPrototype>, ViewVariables(VVAccess.ReadOnly), DataField]
     public string Lowest = string.Empty;
 }

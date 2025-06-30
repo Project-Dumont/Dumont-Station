@@ -5,6 +5,52 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    icon: { sprite: _Wega/Interface/Actions/actions_bloodcult.rsi, state: "blood_magic" }
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
     event: !type:CloakOfDarknessActionEvent
     useDelay: 15
+
+- type: entity
+  id: ActionGenPolymorphism
+  name: polymorphism
+  description: "Take on someone else's form."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    itemIconStyle: BigAction
+    event: !type:PolymorphismActionEvent
+    useDelay: 15 #300
+
+- type: entity
+  id: ActionMindCommunicationGen
+  name: mind communication
+  description: "Contact someone through their mind."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    event: !type:MindCommunicationActionEvent
+    useDelay: 30
+
+- type: entity
+  id: ActionHulkTransformation
+  name: transformation
+  description: "SMASH!"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: { sprite: _Wega/Interface/Actions/actions_hulk.rsi, state: "transformarion" }
+    event: !type:HulkTransformationActionEvent
+
+- type: entity
+  id: ActionHulkCharge
+  name: charge
+  description: "GO AHEAD!"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityWorldTargetAction
+    icon: { sprite: _Wega/Interface/Actions/actions_hulk.rsi, state: "charge" }
+    itemIconStyle: BigAction
+    event: !type:HulkChargeActionEvent
+    useDelay: 45
+    range: 16

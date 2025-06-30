@@ -102,7 +102,7 @@ public sealed partial class DnaModifierSystem
         }
 
         Dirty(target, dnaModifier);
-        ChangeDna(dnaModifier);
+        ChangeDna(target);
 
         _audio.PlayPvs(ent.Comp.InjectSound, target);
 

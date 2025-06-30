@@ -1,9 +1,10 @@
+using Content.Shared.Genetics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Genetics;
 
-[Prototype]
+[Prototype, Access(typeof(SharedDnaModifierSystem))]
 public sealed class StructuralEnzymesPrototype : IPrototype
 {
     [IdDataField]

@@ -1,0 +1,274 @@
+- type: entity
+  id: MobMonkeyDwarf
+  parent: MobMonkey
+  suffix: AI, Dwarf
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 1, 0.8
+  - type: DnaModifier
+    upper: MobDwarf
+    lowest: MobMonkeyDwarf
+
+- type: entity
+  id: MobMonkeyDemon
+  parent: MobMonkey
+  suffix: AI, Demon
+  components:
+  - type: DnaModifier
+    upper: MobDemon
+    lowest: MobMonkeyDemon
+
+- type: entity
+  name: neara
+  id: MobSkrellkey
+  parent: MobBaseAncestor
+  description: Skrell's ancient ancestor in the flesh. Loves water and seems to want to find a way to kill you.
+  components:
+  - type: NameIdentifier
+    group: Monkey
+  - type: MonkeyAccent
+  - type: Speech
+    speechSounds: Monkey
+    speechVerb: Monkey
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: skrellkey
+      sprite: _Wega/Mobs/Animals/skrellkey.rsi
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 5
+        Piercing: 4
+      groups:
+        Burn: 3
+    clumsySound:
+      path: /Audio/Animals/monkey_scream.ogg
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-skrellkey
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-skrellkey-name
+    description: ghost-role-information-skrellkey-description
+    rules: ghost-role-information-nonantagonist-rules
+  - type: DnaModifier
+    upper: MobSkrell
+    lowest: MobSkrellkey
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPieReaction
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Heat: -1
+            Blunt: -1
+            Poison: -0.75
+    - reagents: [ Holywater ]
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Heat: -0.25
+            Blunt: -0.25
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Skrell
+  - type: SolutionScanner
+
+- type: entity
+  name: stok
+  id: MobStokkey
+  parent: MobBaseAncestor
+  description: The brutal progenitor of the Vox. For unknown genetic reasons, sometimes transforms into Resomi. Absolutely terrifying.
+  suffix: AI, Resomi
+  components:
+  - type: NameIdentifier
+    group: Monkey
+  - type: MonkeyAccent
+  - type: Speech
+    speechSounds: Monkey
+    speechVerb: Monkey
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: stokkey
+      sprite: _Wega/Mobs/Animals/stokkey.rsi
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 5
+        Piercing: 4
+      groups:
+        Burn: 3
+    clumsySound:
+      path: /Audio/Animals/monkey_scream.ogg
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-stokkey
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-stokkey-name
+    description: ghost-role-information-stokkey-description
+    rules: ghost-role-information-nonantagonist-rules
+  - type: DnaModifier
+    upper: MobResomi
+    lowest: MobStokkey
+
+- type: entity
+  id: MobStokkeyVox
+  parent: MobStokkey
+  suffix: AI, Vox
+  components:
+  - type: DnaModifier
+    upper: MobVox
+    lowest: MobStokkeyVox
+  - type: Body
+    prototype: Stokkey
+  - type: Bloodstream
+    bloodReagent: AmmoniaBlood
+
+- type: entity
+  name: wolpin
+  id: MobWolfling
+  parent: MobBaseAncestor
+  description: Genetically Vulpakins brother, they are a lot of fun to burn but carefully, they have a plan.
+  components:
+  - type: NameIdentifier
+    group: Monkey
+  - type: Speech
+    speechSounds: Monkey
+    speechVerb: Monkey
+  - type: MonkeyAccent
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-primate
+  - type: AlwaysRevolutionaryConvertible
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: wolfling
+      sprite: _Wega/Mobs/Animals/wolfling.rsi
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-wolfling-name
+    description: ghost-role-information-wolfling-description
+    rules: ghost-role-information-nonantagonist-rules
+  - type: GhostTakeoverAvailable
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 5
+        Piercing: 4
+      groups:
+        Burn: 3
+    clumsySound:
+      path: /Audio/Animals/monkey_scream.ogg
+  - type: DnaModifier
+    upper: MobVulpkanin
+    lowest: MobWolfling
+
+- type: entity
+  name: farwa
+  id: MobTajkey
+  parent: MobBaseAncestor
+  description: A small version of Tajarin. He doesn't look like his bigger self. What the hell is he?
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: tajkey
+      sprite: _Wega/Mobs/Animals/tajkey.rsi
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-tajkey-name
+    description: ghost-role-information-tajkey-description
+    rules: ghost-role-information-nonantagonist-rules
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-tajkey
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobTajkey

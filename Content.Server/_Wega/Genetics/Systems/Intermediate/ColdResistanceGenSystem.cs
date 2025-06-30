@@ -23,25 +23,17 @@ public sealed class ColdResistanceGenSystem : EntitySystem
             temperature.ColdDamageThreshold = Atmospherics.TCMB;
         }
 
-        if (TryComp<BarotraumaComponent>(ent, out var barotrauma))
-        {
-            ent.Comp.OldDamage = barotrauma.Damage;
-            RemComp<BarotraumaComponent>(ent);
-        }
+        if (HasComp<BarotraumaComponent>(ent))
+            EnsureComp<PressureImmunityComponent>(ent);
     }
 
     private void OnShutdown(Entity<ColdResistanceGenComponent> ent, ref ComponentShutdown args)
     {
         if (TryComp<TemperatureComponent>(ent, out var temperature))
-        {
             temperature.ColdDamageThreshold = ent.Comp.OldColdResistance;
-        }
 
-        if (ent.Comp.RemBarotrauma)
-        {
-            var barotrauma = EnsureComp<BarotraumaComponent>(ent);
-            barotrauma.Damage = ent.Comp.OldDamage;
-        }
+        if (HasComp<BarotraumaComponent>(ent) && HasComp<PressureImmunityComponent>(ent))
+            RemComp<PressureImmunityComponent>(ent);
     }
 }
 

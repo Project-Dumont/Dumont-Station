@@ -34,6 +34,9 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("markingCategory", required: true)]
         public MarkingCategories MarkingCategory { get; private set; } = default!;
 
+        [DataField("markingType")] // Corvax-Wega-Genetics
+        public MarkingTypes MarkingType { get; private set; } = MarkingTypes.Base; // Corvax-Wega-Genetics
+
         [DataField("speciesRestriction")]
         public List<string>? SpeciesRestrictions { get; private set; }
 

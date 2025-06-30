@@ -1,4 +1,4 @@
-# Intermediate
+# Intermediate / B E A
 - type: structuralEnzymes
   id: GeneticsChameleonIntermediate
   message: genetics-chameleon-message
@@ -10,7 +10,7 @@
 
 - type: structuralEnzymes
   id: GeneticsCloakOfDarknessIntermediate
-  message: genetics-cloak-of-darkness-messag
+  message: genetics-cloak-of-darkness-message
   typeDeviation: Intermediate
   chanceAssimilation: 0.25
   costInstability: 10
@@ -24,6 +24,30 @@
   costInstability: 10
   addComponent:
   - type: ColdResistanceGen
+
+- type: structuralEnzymes
+  id: GeneticsFlashImmunityIntermediate
+  message: genetics-flash-immunity-message
+  typeDeviation: Intermediate
+  costInstability: 10
+  addComponent:
+  - type: FlashImmunity
+
+- type: structuralEnzymes
+  id: GeneticsNightVisionIntermediate
+  message: genetics-night-vision-message
+  typeDeviation: Intermediate
+  costInstability: 10
+  addComponent:
+  - type: NightVision
+
+- type: structuralEnzymes
+  id: GeneticsPolymorphismIntermediate
+  message: genetics-polymorphism-message
+  typeDeviation: Intermediate
+  costInstability: 10
+  addComponent:
+  - type: PolymorphismGen
 
 - type: structuralEnzymes
   id: GeneticsRegenerationIntermediate

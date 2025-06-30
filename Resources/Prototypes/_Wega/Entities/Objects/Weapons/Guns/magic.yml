@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseItem
+  id: HandTelekinesisGun
+  name: hand
+  description: ""
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Weapons/Melee/magic_hand.rsi
+    state: icon
+    color: "#ed760e"
+  - type: DeleteOnDrop
+  - type: Item
+    size: Ginormous
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ed760e"
+      right:
+      - state: inhand-right
+        color: "#ed760e"
+  - type: TetherGun
+    frequency: 5
+    dampingRatio: 4
+  - type: EdibleMatter
+    canBeEaten: false
+  - type: ItemToggle
+    onUse: false

@@ -16,8 +16,7 @@ public sealed class EnzymeInfo
         {
             SampleName = this.SampleName,
             Identifier = this.Identifier != null
-                ? (UniqueIdentifiersPrototype)this.Identifier.Clone()
-                : null,
+                ? (UniqueIdentifiersPrototype)this.Identifier.Clone() : null,
             Info = this.Info?.Select(e => (EnzymesPrototypeInfo)e.Clone()).ToList()
         };
     }

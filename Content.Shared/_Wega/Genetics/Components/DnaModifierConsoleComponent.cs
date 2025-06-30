@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Genetics;
@@ -29,4 +30,7 @@ public sealed partial class DnaModifierConsoleComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan SubjectInjectCooldown = TimeSpan.FromMinutes(2);
+
+    [DataField("clickSound"), ViewVariables(VVAccess.ReadWrite)]
+    public SoundSpecifier ClickSound = new SoundPathSpecifier("/Audio/Machines/machine_switch.ogg");
 }

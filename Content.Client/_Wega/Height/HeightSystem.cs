@@ -15,6 +15,8 @@ namespace Content.Client.Height
             base.Initialize();
             SubscribeLocalEvent<SmallHeightComponent, ComponentStartup>(OnSmallHeightComponentStartup);
             SubscribeLocalEvent<BigHeightComponent, ComponentStartup>(OnBigHeightComponentStartup);
+            SubscribeLocalEvent<SmallHeightComponent, ComponentShutdown>(OnSmallHeightComponentShutdown);
+            SubscribeLocalEvent<BigHeightComponent, ComponentShutdown>(OnBigHeightComponentShutdown);
         }
 
         private void OnSmallHeightComponentStartup(Entity<SmallHeightComponent> ent, ref ComponentStartup args)
@@ -37,6 +39,30 @@ namespace Content.Client.Height
             if (TryComp<SpriteComponent>(ent, out var sprite))
             {
                 sprite.Scale = new Vector2(1.2f, 1.2f);
+                Dirty(ent, sprite);
+            }
+        }
+
+        private void OnSmallHeightComponentShutdown(Entity<SmallHeightComponent> ent, ref ComponentShutdown args)
+        {
+            if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid) && CheckSpeciesEntity(humanoid))
+                return;
+        
+            if (TryComp<SpriteComponent>(ent, out var sprite))
+            {
+                sprite.Scale = new Vector2(1.0f, 1.0f);
+                Dirty(ent, sprite);
+            }
+        }
+
+        private void OnBigHeightComponentShutdown(Entity<BigHeightComponent> ent, ref ComponentShutdown args)
+        {
+            if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid) && CheckSpeciesEntity(humanoid))
+                return;
+        
+            if (TryComp<SpriteComponent>(ent, out var sprite))
+            {
+                sprite.Scale = new Vector2(1.0f, 1.0f);
                 Dirty(ent, sprite);
             }
         }

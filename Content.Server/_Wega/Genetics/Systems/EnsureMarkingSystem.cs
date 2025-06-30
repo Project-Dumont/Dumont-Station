@@ -34,14 +34,26 @@ public sealed class EnsureMarkingSystem : EntitySystem
             _humanoid.RemoveMarking(ent, DefaultHorns);
     }
 
-    public void UpdateMarkingCategory(EntityUid target, MarkingSet markingSet, MarkingCategories category, string[] colorR, string[] colorG, string[] colorB, string[] style, string species, List<MarkingPrototypeInfo> markingPrototypes)
+    public void UpdateMarkingCategory(
+        Entity<HumanoidAppearanceComponent> humanoid,
+        MarkingSet markingSet,
+        MarkingCategories category,
+        string[] colorR, string[] colorG, string[] colorB,
+        string[] style, string species,
+        List<MarkingPrototypeInfo> markingPrototypes,
+        string[]? secondaryColorR = null,
+        string[]? secondaryColorG = null,
+        string[]? secondaryColorB = null)
     {
+        markingSet.RemoveCategory(category);
         if (style.All(c => c == "0"))
             return;
 
-        markingSet.RemoveCategory(category);
-        if (category == MarkingCategories.HeadTop && HasComp<EnsureHornsGenComponent>(target))
-            _humanoid.AddMarking(target, DefaultHorns, Color.Black);
+        if (category == MarkingCategories.HeadTop && HasComp<EnsureHornsGenComponent>(humanoid))
+        {
+            _humanoid.AddMarking(humanoid, DefaultHorns, Color.Black);
+            return;
+        }
 
         var bestMatch = FindBestMatchingMarking(style, species, markingPrototypes);
         if (bestMatch == null)
@@ -55,13 +67,28 @@ public sealed class EnsureMarkingSystem : EntitySystem
         int green = Convert.ToInt32(greenHex, 16);
         int blue = Convert.ToInt32(blueHex, 16);
 
-        float redNormalized = red / 255f;
-        float greenNormalized = green / 255f;
-        float blueNormalized = blue / 255f;
+        var mainColor = new Color(red / 255f, green / 255f, blue / 255f);
 
-        var newColor = new Color(redNormalized, greenNormalized, blueNormalized);
+        var colors = new List<Color> { mainColor };
 
-        _humanoid.AddMarking(target, bestMatch.MarkingPrototypeId, newColor);
+        if (category == MarkingCategories.Hair &&
+            secondaryColorR != null &&
+            secondaryColorG != null &&
+            secondaryColorB != null)
+        {
+            string secondaryRedHex = secondaryColorR[0] + secondaryColorR[1];
+            string secondaryGreenHex = secondaryColorG[0] + secondaryColorG[1];
+            string secondaryBlueHex = secondaryColorB[0] + secondaryColorB[1];
+
+            int secondaryRed = Convert.ToInt32(secondaryRedHex, 16);
+            int secondaryGreen = Convert.ToInt32(secondaryGreenHex, 16);
+            int secondaryBlue = Convert.ToInt32(secondaryBlueHex, 16);
+
+            var secondaryColor = new Color(secondaryRed / 255f, secondaryGreen / 255f, secondaryBlue / 255f);
+            colors.Add(secondaryColor);
+        }
+
+        _humanoid.AddMarkingWithColors(humanoid, bestMatch.MarkingPrototypeId, colors);
     }
 
     private MarkingPrototypeInfo? FindBestMatchingMarking(string[] style, string species, List<MarkingPrototypeInfo> markingPrototypes)

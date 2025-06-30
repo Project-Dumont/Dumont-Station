@@ -23,6 +23,8 @@ using Content.Shared.Power;
 using Content.Shared.UserInterface;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -34,6 +36,7 @@ namespace Content.Server.Genetics.System
     [UsedImplicitly]
     public sealed class DnaModifierConsoleSystem : EntitySystem
     {
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
         [Dependency] private readonly DamageableSystem _damage = default!;
         [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
@@ -186,7 +189,7 @@ namespace Content.Server.Genetics.System
                 return;
             }
 
-            var newState = GetUserInterfaceState(consoleComponent);
+            var newState = GetUserInterfaceState((consoleUid, consoleComponent));
             _uiSystem.SetUiState(consoleUid, DnaModifierUiKey.Key, newState);
         }
 
@@ -204,11 +207,11 @@ namespace Content.Server.Genetics.System
             UpdateUserInterface(console, consoleComp);
         }
 
-        private DnaModifierBoundUserInterfaceState GetUserInterfaceState(DnaModifierConsoleComponent consoleComponent)
+        private DnaModifierBoundUserInterfaceState GetUserInterfaceState(Entity<DnaModifierConsoleComponent> ent)
         {
             // genetic scanner info
             EntityUid? inputContainer = null;
-            NetEntity console = GetNetEntity(consoleComponent.Owner);
+            NetEntity console = GetNetEntity(ent);
 
             string scanBodyInfo = string.Empty;
             string scannerBodyStatus = string.Empty;
@@ -219,23 +222,23 @@ namespace Content.Server.Genetics.System
 
             bool hasDisk = false;
             bool scannerHasBeaker = false;
-            bool scannerInRange = consoleComponent.GeneticScannerInRange;
+            bool scannerInRange = ent.Comp.GeneticScannerInRange;
 
             EnzymeInfo? enzyme = null;
             UniqueIdentifiersPrototype? uniqueIdentifiers = null;
             List<EnzymesPrototypeInfo>? enzymesPrototypes = null;
 
             var currentTime = _timing.CurTime;
-            var injectorCooldown = consoleComponent.LastInjectorTime + consoleComponent.InjectorCooldown;
-            var subjectInjectCooldown = consoleComponent.LastSubjectInjectTime + consoleComponent.SubjectInjectCooldown;
+            var injectorCooldown = ent.Comp.LastInjectorTime + ent.Comp.InjectorCooldown;
+            var subjectInjectCooldown = ent.Comp.LastSubjectInjectTime + ent.Comp.SubjectInjectCooldown;
 
-            var buffer = GetAllBuffers(consoleComponent.Owner);
-            if (consoleComponent.GeneticScanner != null && TryComp<MedicalScannerComponent>(consoleComponent.GeneticScanner, out var scanner))
+            var buffer = GetAllBuffers(ent);
+            if (ent.Comp.GeneticScanner != null && TryComp<MedicalScannerComponent>(ent.Comp.GeneticScanner, out var scanner))
             {
                 EntityUid? scanBody = scanner.BodyContainer.ContainedEntity;
-                inputContainer = _itemSlotsSystem.GetItemOrNull(consoleComponent.GeneticScanner.Value, SharedDnaModifier.InputSlotName);
+                inputContainer = _itemSlotsSystem.GetItemOrNull(ent.Comp.GeneticScanner.Value, SharedDnaModifier.InputSlotName);
 
-                if (_itemSlotsSystem.TryGetSlot(consoleComponent.Owner, SharedDnaModifier.DiskSlotName, out var diskSlot)
+                if (_itemSlotsSystem.TryGetSlot(ent, SharedDnaModifier.DiskSlotName, out var diskSlot)
                     && diskSlot.HasItem && diskSlot.Item != null)
                 {
                     hasDisk = true;
@@ -243,7 +246,7 @@ namespace Content.Server.Genetics.System
                         enzyme = data;
                 }
 
-                if (_itemSlotsSystem.TryGetSlot(consoleComponent.GeneticScanner.Value, SharedDnaModifier.InputSlotName, out var beakerSlot)
+                if (_itemSlotsSystem.TryGetSlot(ent.Comp.GeneticScanner.Value, SharedDnaModifier.InputSlotName, out var beakerSlot)
                     && beakerSlot.HasItem)
                 {
                     scannerHasBeaker = true;
@@ -363,6 +366,9 @@ namespace Content.Server.Genetics.System
         #endregion
 
         #region Console logic
+        private void PlayClickSound(Entity<DnaModifierConsoleComponent> ent)
+            => _audio.PlayPvs(ent.Comp.ClickSound, ent, AudioParams.Default.WithVolume(-2f));
+
         private void OnEjectPressed(DnaModifierConsoleEjectEvent args)
         {
             if (!TryComp<DnaModifierConsoleComponent>(GetEntity(args.Uid), out var console) || console.GeneticScanner == null)
@@ -374,6 +380,7 @@ namespace Content.Server.Genetics.System
             if (_container.TryGetContainer(console.GeneticScanner.Value, SharedDnaModifier.OccupantSlotName, out var container))
                 _container.EmptyContainer(container);
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
@@ -388,6 +395,7 @@ namespace Content.Server.Genetics.System
             if (_itemSlotsSystem.TryGetSlot(console.GeneticScanner.Value, SharedDnaModifier.InputSlotName, out var slot))
                 _itemSlotsSystem.TryEject(console.GeneticScanner.Value, slot, null, out var _, true);
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
@@ -431,6 +439,7 @@ namespace Content.Server.Genetics.System
             if (!_solutionContainerSystem.TryAddSolution(targetSolution.Value, reagentSolution))
                 return;
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
@@ -492,6 +501,7 @@ namespace Content.Server.Genetics.System
 
             _dnaClient.TryAddToBuffer((clientEntity, client), args.CurrentSection, dataToSend);
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(clientEntity, console);
         }
 
@@ -503,6 +513,7 @@ namespace Content.Server.Genetics.System
 
             _dnaClient.TryClearBuffer((clientEntity, client), args.Index);
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(clientEntity, console);
         }
 
@@ -535,6 +546,7 @@ namespace Content.Server.Genetics.System
 
                     _dnaClient.TryRenameBuffer((clientEntity, client), args.Index, finalName);
 
+                    PlayClickSound((clientEntity, console));
                     UpdateUserInterface(clientEntity, console);
                 });
         }
@@ -554,6 +566,7 @@ namespace Content.Server.Genetics.System
 
             console.LastInjectorTime = _timing.CurTime;
 
+            PlayClickSound((clientEntity, console));
             UpdateUserInterface(clientEntity, console);
         }
 
@@ -577,6 +590,7 @@ namespace Content.Server.Genetics.System
 
             console.LastInjectorTime = _timing.CurTime;
 
+            PlayClickSound((clientEntity, console));
             UpdateUserInterface(clientEntity, console);
         }
 
@@ -591,13 +605,14 @@ namespace Content.Server.Genetics.System
                 return;
 
             var scanBody = scanner.BodyContainer.ContainedEntity;
-            if (!TryComp<DnaModifierComponent>(scanBody, out var dnaModifier))
+            if (!TryComp<DnaModifierComponent>(scanBody, out var dnaModifier) || !scanBody.HasValue)
                 return;
 
             if (!_dnaClient.TryGetBufferData((clientEntity, client), args.Index, out var data))
                 return;
 
-            _dnaModifier.ChangeDna(dnaModifier, data);
+            PlayClickSound((clientEntity, console));
+            _dnaModifier.ChangeDna((scanBody.Value, dnaModifier), data);
 
             console.LastSubjectInjectTime = _timing.CurTime;
 
@@ -619,6 +634,7 @@ namespace Content.Server.Genetics.System
             {
                 _dnaModifier.TrySaveInDisk(diskSlot.Item.Value, data);
 
+                PlayClickSound((clientEntity, console));
                 UpdateUserInterface(clientEntity, console);
             }
         }
@@ -638,6 +654,7 @@ namespace Content.Server.Genetics.System
 
                 _dnaClient.TryAddToBufferDisk((clientEntity, client), args.Index, data);
 
+                PlayClickSound((clientEntity, console));
                 UpdateUserInterface(clientEntity, console);
             }
         }
@@ -650,6 +667,7 @@ namespace Content.Server.Genetics.System
 
             if (_itemSlotsSystem.TryGetSlot(clientEntity, SharedDnaModifier.DiskSlotName, out var diskSlot) && diskSlot.Item != null)
             {
+                PlayClickSound((clientEntity, console));
                 _dnaModifier.TryClearDiskData(diskSlot.Item.Value);
             }
         }
@@ -663,7 +681,7 @@ namespace Content.Server.Genetics.System
                 return;
 
             var scanBody = scanner.BodyContainer.ContainedEntity;
-            if (!TryComp<DnaModifierComponent>(scanBody, out var dnaModifier))
+            if (!TryComp<DnaModifierComponent>(scanBody, out var dnaModifier) || !scanBody.HasValue)
                 return;
 
             if (args.CurrentTab == 0 && dnaModifier.UniqueIdentifiers != null)
@@ -678,8 +696,9 @@ namespace Content.Server.Genetics.System
             AddRadiationDamage(scanBody.Value, args.Intensity);
             Dirty(scanBody.Value, dnaModifier);
 
-            _dnaModifier.ChangeDna(dnaModifier, args.CurrentTab);
+            _dnaModifier.ChangeDna((scanBody.Value, dnaModifier), args.CurrentTab);
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 
@@ -692,7 +711,7 @@ namespace Content.Server.Genetics.System
                 return;
 
             var scanBody = scanner.BodyContainer.ContainedEntity;
-            if (!TryComp<DnaModifierComponent>(scanBody, out var dnaModifier))
+            if (!TryComp<DnaModifierComponent>(scanBody, out var dnaModifier) || !scanBody.HasValue)
                 return;
 
             int type = -1;
@@ -710,8 +729,9 @@ namespace Content.Server.Genetics.System
             AddRadiationDamage(scanBody.Value, args.Intensity);
             Dirty(scanBody.Value, dnaModifier);
 
-            _dnaModifier.ChangeDna(dnaModifier, type);
+            _dnaModifier.ChangeDna((scanBody.Value, dnaModifier), type);
 
+            PlayClickSound((GetEntity(args.Uid), console));
             UpdateUserInterface(GetEntity(args.Uid), console);
         }
 

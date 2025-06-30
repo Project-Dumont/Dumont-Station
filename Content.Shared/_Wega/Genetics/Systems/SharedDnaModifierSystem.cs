@@ -207,9 +207,9 @@ public abstract partial class SharedDnaModifierSystem : EntitySystem
     {
         return new[]
         {
-            _random.Next(min0, max0 + 1).ToString("X1"),
-            _random.Next(min1, max1 + 1).ToString("X1"),
-            _random.Next(min2, max2 + 1).ToString("X1")
+            _random.Next(min0, max0).ToString("X1"),
+            _random.Next(min1, max1).ToString("X1"),
+            _random.Next(min2, max2).ToString("X1")
         };
     }
 

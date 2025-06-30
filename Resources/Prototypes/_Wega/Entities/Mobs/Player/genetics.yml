@@ -1,0 +1,85 @@
+- type: entity
+  parent: SimpleSpaceMobBase
+  id: MobHulk
+  name: hulk
+  description: "HE'S BIG AND STRONG!"
+  components:
+  - type: Hulk
+  - type: LoudAccent
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.75
+        density: 1000
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      600: 0.8
+      800: 0.7
+      900: 0.5
+  - type: Stamina
+    critThreshold: 300
+  - type: CombatMode
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.4
+    baseSprintSpeed : 3.8
+  - type: Sprite
+    sprite: _Wega/Mobs/Aliens/Genetics/hulk.rsi
+    state: hulk
+  - type: Tool
+    speed: 1.5
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Hands
+    showInHands: false
+  - type: NoSlip
+  - type: MeleeWeapon
+    altDisarm: false
+    hidden: true
+    angle: 30
+    animation: WeaponArcFist
+    soundHit:
+      path: /Audio/Weapons/block_metal1.ogg
+    attackRate: 0.80
+    damage:
+      types:
+        Blunt: 25
+        Structural: 120
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepThud
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+    - CannotSuicide
+
+- type: entity
+  parent: MobHulk
+  id: MobZilla
+  name: zilla
+  description: "HE'S BIG AND STRONG!"
+  components:
+  - type: Sprite
+    sprite: _Wega/Mobs/Aliens/Genetics/zilla.rsi
+    noRot: true
+    state: zilla

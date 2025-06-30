@@ -32,25 +32,35 @@ public sealed partial class InventoryComponent : Component
     [AutoNetworkedField]
     public string TemplateId { get; set; } = "human";
 
-    [DataField("speciesId")] public string? SpeciesId { get; set; }
+    [DataField("speciesId"), AutoNetworkedField] public string? SpeciesId { get; set; } // Corvax-Wega-Edit
 
     public SlotDefinition[] Slots = Array.Empty<SlotDefinition>();
     public ContainerSlot[] Containers = Array.Empty<ContainerSlot>();
 
-    [DataField]
+    [DataField, AutoNetworkedField] // Corvax-Wega-Edit
     public Dictionary<string, DisplacementData> Displacements = new();
 
     /// <summary>
     /// Alternate displacement maps, which if available, will be selected for the player of the appropriate gender.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Corvax-Wega-Edit
     public Dictionary<string, DisplacementData> FemaleDisplacements = new();
 
     /// <summary>
     /// Alternate displacement maps, which if available, will be selected for the player of the appropriate gender.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Corvax-Wega-Edit
     public Dictionary<string, DisplacementData> MaleDisplacements = new();
+
+    // Corvax-Wega-Genetics-start
+    public void Clone(InventoryComponent targetInventory)
+    {
+        this.SpeciesId = targetInventory.SpeciesId;
+        this.Displacements = targetInventory.Displacements;
+        this.FemaleDisplacements = targetInventory.FemaleDisplacements;
+        this.MaleDisplacements = targetInventory.MaleDisplacements;
+    }
+    // Corvax-Wega-Genetics-end
 }
 
 /// <summary>
