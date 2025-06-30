@@ -183,10 +183,11 @@
     martial: # Gabystation - Lei marcial
       #announcement: alert-level-martial-announcement
       selectable: false
-      sound: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
+      sound:
+        path: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
+        params:
+          volume: 7      # positive raises loudness; verify it does not clip
       disableSelection: true
-      params:
-          volume: 7
       color: Crimson
       emergencyLightColor: Crimson
       forceEnableEmergencyLights: true
