@@ -35,6 +35,8 @@ public sealed partial class DnaModifierSystem
         if (target.Comp.UniqueIdentifiers == null)
             return;
 
+        EnsureComp<DnaClonedComponent>(entity);
+
         humanoid.Species = targetHumanoid.Species;
         entity.Comp.UniqueIdentifiers = CloneUniqueIdentifiers(target.Comp.UniqueIdentifiers);
         if (TryComp<DetailExaminableComponent>(entity, out var detail))

@@ -64,3 +64,11 @@
   costInstability: 15
   addComponent:
   - type: SpeedUpGen
+
+- type: structuralEnzymes
+  id: GeneticsMindCommunicationIntermediate
+  message: genetics-mind-communication-message
+  typeDeviation: Intermediate
+  costInstability: 5
+  addComponent:
+  - type: MindCommunicationGen

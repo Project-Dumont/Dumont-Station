@@ -12,3 +12,4 @@ genetics-night-vision-message = Свет всегда был таким ярки
 genetics-polymorphism-message = Почему-то вы чувствуете себя не совсем собой.
 genetics-regenerate-message = Ваши раны начинают заживать.
 genetics-super-speed-message = Вы чувствуете себя быстрым и свободным.
+genetics-mind-communication-message = Вы чувствуете, что можете проецировать свои мысли.
