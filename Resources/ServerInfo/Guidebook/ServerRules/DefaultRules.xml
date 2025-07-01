@@ -37,7 +37,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Essas regras se aplicam apenas durante uma rodada. Uma rodada termina somente quando o resumo da rodada aparece.
   Lembre-se de manter o nível de roleplay, não será aceitado LRP ou NRP.
 
-  A definição de LRP e NRP é estabelecida por um consenso entre Admins, qualquer dúvida perguntar
+  - O LRP pretende ser um ambiente de RPG mais casual, onde não se espera que os jogadores sigam o mesmo nível de imersão ou consistência de personagens do MRP.
+  - O MRP pretende ser um ambiente de RPG mais imersivo, onde se espera que os jogadores sigam um nível maior de imersão e consistência de personagens.
+  - O tempo médio de rodada no LRP é geralmente menor do que no MRP, e espera-se que os jogadores sejam mais flexíveis com seus personagens e roleplay.
+  - Não se espera que um personagem no LRP seja tão desenvolvido ou consistente quanto um personagem no MRP, e os jogadores são encorajados a se divertir e experimentar com seus personagens.
+  - Não se espera que antagonistas no LRP sigam o mesmo nível de imersão ou consistência de personagens do MRP, e os jogadores são encorajados a se divertir e experimentar com seus antagonistas.
+  - No MRP, espera-se que os antagonistas sigam um nível maior de imersão e consistência de personagens, e os jogadores são encorajados a se divertir e experimentar com seus antagonistas dentro dos limites das regras de RPG.
 
   Os modos de jogo Deathmatch e Sandbox estão isentos dessas regras. Jogadores tem total responsabilidade se um modo de jogo isento dessas regras está ocorrendo ou não.
 
@@ -63,10 +68,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [textlink="16. EORG." link="RuleR16"]
 
 ## REGRAS DE ANTAGONISTA
-  Essas regras se aplicam a tudo referente a antagonistas e inimigos em geral, os antagonistas devem verificar suas respectivas regras, enquanto todos devem olhar as regras 9 á 12
-  Qualquer descomprimento dessas regras pode acarretar em banimento de servidor ou rolebans (banimento de função(tambem podendo conter bans de antagonistas))
+  Essas regras se aplicam a tudo referente a antagonistas e inimigos em geral.
+  Antagonistas devem verificar suas respectivas regras, enquanto todos devem olhar as regras 9 á 12
+  Qualquer descumprimento pode resultar em banimento do servidor ou role-ban (incluindo possível banimento de antagonista), sem aviso prévio.
 
+  O objetivo dos antagonistas é criar histórias e tornar as rodadas interessantes, tanto para os jogadores antagonistas quanto para os jogadores da equipe. Espera-se que os antagonistas se esforcem ao menos um pouco para desempenhar o papel que lhes foi designado, embora possam romper com ele por motivos pessoais suficientes. Alguns antagonistas são limitados nas maneiras e quantidades em que podem causar morte e destruição à equipe.
+
+  Existem muitos truques, dramas e planos que resultam em histórias excelentes e adoradas por muitos, e parte da ideia do ambiente MRP é criar espaço para que isso aconteça. Muitas dessas experiências, no entanto, desaparecem com a repetição constante das mesmas piadas e histórias, é entediante e sufocante para novas ideias. A equipe administrativa, coletivamente, tem o poder discricionário de solicitar que os jogadores, ou o servidor coletivamente (no caso de spam em massa das mesmas estratégias de alto impacto, como inundações de plasma), encontrem novos metodos ou façam mudanças em seus estilos de jogo em nome de manter as experiências originais para o servidor.
+  
   Antagonistas DEVEM concluir seus objetivos!
+
+  Antagonistas Solo podem perseguir quaisquer objetivos que desejarem, da maneira que desejarem, mas isso não significa que possa fazer [textlink="sabotagem massiva." link="RuleR7"]
 
   Antagonistas só podem causar destruição massiva se um dos seguintes requisitos for completo.
   - Administrador Autorizar
