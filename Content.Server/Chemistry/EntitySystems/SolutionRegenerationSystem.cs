@@ -30,10 +30,11 @@ public sealed class SolutionRegenerationSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<SolutionRegenerationComponent, SolutionContainerManagerComponent>();
-        while (query.MoveNext(out var uid, out var regen, out var manager))
+        var query = EntityQueryEnumerator<SolutionRegenerationComponent>();
+        while (query.MoveNext(out var uid, out var regen))
         {
-            if (_timing.CurTime < regen.NextRegenTime)
+            if (_timing.CurTime < regen.NextRegenTime
+                || !TryComp(uid, out SolutionContainerManagerComponent? manager))
                 continue;
 
             // timer ignores if its full, it's just a fixed cycle

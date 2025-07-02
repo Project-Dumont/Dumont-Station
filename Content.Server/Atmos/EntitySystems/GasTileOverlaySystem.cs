@@ -81,7 +81,7 @@ namespace Content.Server.Atmos.EntitySystems
         /// <summary>
         ///     Overlay update interval, in seconds.
         /// </summary>
-        private float _updateInterval;
+        private float _updateInterval = 1;
 
         private int _thresholds;
         private EntityQuery<MapGridComponent> _gridQuery;
@@ -331,8 +331,7 @@ namespace Content.Server.Atmos.EntitySystems
 
             if (AccumulatedFrameTime < _updateInterval)
                 return;
-
-            AccumulatedFrameTime -= _updateInterval;
+            AccumulatedFrameTime = 0;
 
             // First, update per-chunk visual data for any invalidated tiles.
             UpdateOverlayData();

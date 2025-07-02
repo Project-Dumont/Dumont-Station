@@ -75,14 +75,11 @@ public sealed class MorgueSystem : EntitySystem
     /// <summary>
     ///     Updates data periodically in case something died/got deleted in the morgue.
     /// </summary>
-    private void CheckContents(EntityUid uid, MorgueComponent? morgue = null, EntityStorageComponent? storage = null, AppearanceComponent? app = null)
+    private void CheckContents(EntityUid uid, EntityStorageComponent storage, AppearanceComponent app)
     {
-        if (!Resolve(uid, ref morgue, ref storage, ref app))
-            return;
-
         if (storage.Contents.ContainedEntities.Count == 0)
         {
-            _appearance.SetData(uid, MorgueVisuals.Contents, MorgueContents.Empty);
+            _appearance.SetData(uid, MorgueVisuals.Contents, MorgueContents.Empty, app);
             return;
         }
 
@@ -115,17 +112,19 @@ public sealed class MorgueSystem : EntitySystem
         {
             comp.AccumulatedFrameTime += frameTime;
 
-            CheckContents(uid, comp, storage);
+            CheckContents(uid, storage, appearance);
 
             if (comp.AccumulatedFrameTime < comp.BeepTime)
                 continue;
 
             comp.AccumulatedFrameTime -= comp.BeepTime;
 
-            if (comp.DoSoulBeep && _appearance.TryGetData<MorgueContents>(uid, MorgueVisuals.Contents, out var contents, appearance) && contents == MorgueContents.HasSoul)
-            {
-                _audio.PlayPvs(comp.OccupantHasSoulAlarmSound, uid);
-            }
+            if (!comp.DoSoulBeep
+                || !_appearance.TryGetData<MorgueContents>(uid, MorgueVisuals.Contents, out var contents, appearance)
+                || contents != MorgueContents.HasSoul)
+                continue;
+
+            _audio.PlayPvs(comp.OccupantHasSoulAlarmSound, uid);
         }
     }
 }

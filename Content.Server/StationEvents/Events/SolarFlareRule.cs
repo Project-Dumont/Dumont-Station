@@ -25,6 +25,7 @@ public sealed class SolarFlareRule : StationEventSystem<SolarFlareRuleComponent>
     [Dependency] private readonly SharedDoorSystem _door = default!;
 
     private float _effectTimer = 0;
+    private const float EffectInterval = 1;
 
     public override void Initialize()
     {
@@ -47,22 +48,30 @@ public sealed class SolarFlareRule : StationEventSystem<SolarFlareRuleComponent>
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
 
-        _effectTimer -= frameTime;
-        if (_effectTimer < 0)
+        _effectTimer += frameTime;
+        if (_effectTimer < EffectInterval)
+            return;
+        _effectTimer = 0;
+
+        var lightQuery = EntityQueryEnumerator<PoweredLightComponent>();
+
+        while (lightQuery.MoveNext(out var lightEnt, out var light))
         {
-            _effectTimer += 1;
-            var lightQuery = EntityQueryEnumerator<PoweredLightComponent>();
-            while (lightQuery.MoveNext(out var lightEnt, out var light))
-            {
-                if (RobustRandom.Prob(component.LightBreakChancePerSecond))
-                    _poweredLight.TryDestroyBulb(lightEnt, light);
-            }
-            var airlockQuery = EntityQueryEnumerator<AirlockComponent, DoorComponent>();
-            while (airlockQuery.MoveNext(out var airlockEnt, out var airlock, out var door))
-            {
-                if (airlock.AutoClose && RobustRandom.Prob(component.DoorToggleChancePerSecond))
-                    _door.TryToggleDoor(airlockEnt, door);
-            }
+            if (!RobustRandom.Prob(component.LightBreakChancePerSecond))
+                continue;
+
+            _poweredLight.TryDestroyBulb(lightEnt, light);
+        }
+
+        var airlockQuery = EntityQueryEnumerator<AirlockComponent, DoorComponent>();
+
+        while (airlockQuery.MoveNext(out var airlockEnt, out var airlock, out var door))
+        {
+            if (!airlock.AutoClose
+                || !RobustRandom.Prob(component.DoorToggleChancePerSecond))
+                continue;
+
+            _door.TryToggleDoor(airlockEnt, door);
         }
     }
 
@@ -71,13 +80,11 @@ public sealed class SolarFlareRule : StationEventSystem<SolarFlareRuleComponent>
         var query = EntityQueryEnumerator<SolarFlareRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uid, out var flare, out var gameRule))
         {
-            if (!GameTicker.IsGameRuleActive(uid, gameRule))
+            if (!GameTicker.IsGameRuleActive(uid, gameRule)
+                || !flare.AffectedChannels.Contains(args.Channel.ID))
                 continue;
 
-            if (!flare.AffectedChannels.Contains(args.Channel.ID))
-                continue;
-
-            if (!flare.OnlyJamHeadsets || (HasComp<HeadsetComponent>(args.RadioReceiver) || HasComp<HeadsetComponent>(args.RadioSource)))
+            if (!flare.OnlyJamHeadsets || HasComp<HeadsetComponent>(args.RadioReceiver) || HasComp<HeadsetComponent>(args.RadioSource))
                 args.Cancelled = true;
         }
     }

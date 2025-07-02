@@ -187,15 +187,16 @@ public sealed class HTNSystem : EntitySystem
     public void UpdateNPC(ref int count, int maxUpdates, float frameTime)
     {
         _planQueue.Process();
-        var query = EntityQueryEnumerator<ActiveNPCComponent, HTNComponent>();
+        var query = EntityQueryEnumerator<ActiveNPCComponent>();
 
-        while (query.MoveNext(out var uid, out _, out var comp))
+        while (query.MoveNext(out var uid, out _))
         {
             // If we're over our max count or it's not MapInit then ignore the NPC.
             if (count >= maxUpdates)
                 break;
 
-            if (!comp.Enabled)
+            if (!TryComp<HTNComponent>(uid, out var comp)
+                || !comp.Enabled)
                 continue;
 
             if (comp.PlanningJob != null)

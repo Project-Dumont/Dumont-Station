@@ -72,10 +72,15 @@ public sealed class ApcSystem : EntitySystem
 
     public override void Update(float deltaTime)
     {
-        var query = EntityQueryEnumerator<ApcComponent, PowerNetworkBatteryComponent, UserInterfaceComponent>();
-        while (query.MoveNext(out var uid, out var apc, out var battery, out var ui))
+        var query = EntityQueryEnumerator<ApcComponent>();
+        while (query.MoveNext(out var uid, out var apc))
         {
-            if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay < _gameTiming.CurTime && _ui.IsUiOpen((uid, ui), ApcUiKey.Key))
+            PowerNetworkBatteryComponent? battery = null;
+
+            if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay < _gameTiming.CurTime
+                && TryComp<UserInterfaceComponent>(uid, out var ui)
+                && TryComp(uid, out battery)
+                && _ui.IsUiOpen((uid, ui), ApcUiKey.Key))
             {
                 apc.LastUiUpdate = _gameTiming.CurTime;
                 UpdateUIState(uid, apc, battery);
@@ -152,7 +157,7 @@ public sealed class ApcSystem : EntitySystem
     }
 
     public void UpdateApcState(EntityUid uid,
-        ApcComponent? apc=null,
+        ApcComponent? apc = null,
         PowerNetworkBatteryComponent? battery = null)
     {
         if (!Resolve(uid, ref apc, ref battery, false))

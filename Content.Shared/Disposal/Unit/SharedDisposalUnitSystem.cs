@@ -302,10 +302,10 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<DisposalUnitComponent, MetaDataComponent>();
-        while (query.MoveNext(out var uid, out var unit, out var metadata))
+        var query = EntityQueryEnumerator<DisposalUnitComponent>();
+        while (query.MoveNext(out var uid, out var unit))
         {
-            Update(uid, unit, metadata);
+            Update(uid, unit);
         }
     }
 
@@ -701,8 +701,9 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
     /// <summary>
     /// Work out if we can stop updating this disposals component i.e. full pressure and nothing colliding.
     /// </summary>
-    private void Update(EntityUid uid, DisposalUnitComponent component, MetaDataComponent metadata)
+    private void Update(EntityUid uid, DisposalUnitComponent component)
     {
+        var metadata = MetaData(uid);
         var state = GetState(uid, component, metadata);
 
         // Pressurizing, just check if we need a state update.

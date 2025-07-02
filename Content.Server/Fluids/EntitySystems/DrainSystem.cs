@@ -38,6 +38,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -53,8 +54,11 @@ public sealed class DrainSystem : SharedDrainSystem
     [Dependency] private readonly PuddleSystem _puddleSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
 
     private readonly HashSet<Entity<PuddleComponent>> _puddles = new();
+
+    private const float UpdateTime = 1f;
 
     public override void Initialize()
     {
@@ -151,10 +155,8 @@ public sealed class DrainSystem : SharedDrainSystem
         {
             drain.Accumulator += frameTime;
             if (drain.Accumulator < drain.DrainFrequency)
-            {
                 continue;
-            }
-            drain.Accumulator -= drain.DrainFrequency;
+            drain.Accumulator = 0;
 
             if (!managerQuery.TryGetComponent(uid, out var manager))
                 continue;
@@ -170,7 +172,7 @@ public sealed class DrainSystem : SharedDrainSystem
             }
 
             // Remove a bit from the buffer
-            _solutionContainerSystem.SplitSolution(drain.Solution.Value, (drain.UnitsDestroyedPerSecond * drain.DrainFrequency));
+            _solutionContainerSystem.SplitSolution(drain.Solution.Value, drain.UnitsDestroyedPerSecond * drain.DrainFrequency);
 
             // This will ensure that UnitsPerSecond is per second...
             var amount = drain.UnitsPerSecond * drain.DrainFrequency;
@@ -178,7 +180,8 @@ public sealed class DrainSystem : SharedDrainSystem
             if (drain.AutoDrain)
             {
                 _puddles.Clear();
-                _lookup.GetEntitiesInRange(Transform(uid).Coordinates, drain.Range, _puddles);
+                var coordinates = _transform.GetMapCoordinates(uid, Transform(uid));
+                _lookup.GetEntitiesInRange(coordinates.MapId, coordinates.Position, drain.Range, _puddles, LookupFlags.Static);
 
                 if (_puddles.Count == 0 && drainSolution.Volume <= 0)
                 {
