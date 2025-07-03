@@ -60,7 +60,8 @@
       tags:
       - LightFixture
     event: !type:StationAiLightSynthesizerActionEvent
-      bulbPrototype: LightTube
+      bulbPrototype: LightBulb
+      tubePrototype: LightTube
 
 - type: entity
   parent: BaseAction
