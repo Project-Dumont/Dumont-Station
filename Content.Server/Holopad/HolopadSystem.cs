@@ -457,17 +457,16 @@ public sealed class HolopadSystem : SharedHolopadSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
         _updateTimer += frameTime;
 
         if (_updateTimer < UpdateTime)
             return;
-
         _updateTimer = 0;
 
-        var query = AllEntityQuery<HolopadComponent, TelephoneComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var holopad, out var telephone, out var xform))
+        var query = AllEntityQuery<HolopadComponent, TelephoneComponent>();
+        while (query.MoveNext(out var uid, out var holopad, out var telephone))
         {
+            var xform = Transform(uid);
             UpdateUIState((uid, holopad), telephone);
 
             if (holopad.User == null

@@ -34,10 +34,10 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
     [Dependency] private readonly NavMapSystem _navMapSystem = default!;
     [Dependency] private readonly DeviceListSystem _deviceListSystem = default!;
 
-    private const float UpdateTime = 1.0f;
+    private const float UpdateTime = 1;
 
     // Note: this data does not need to be saved
-    private float _updateTimer = 1.0f;
+    private float _updateTimer = 0;
 
     public override void Initialize()
     {

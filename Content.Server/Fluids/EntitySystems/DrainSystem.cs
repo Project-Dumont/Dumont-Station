@@ -58,7 +58,7 @@ public sealed class DrainSystem : SharedDrainSystem
 
     private readonly HashSet<Entity<PuddleComponent>> _puddles = new();
 
-    private const float UpdateTime = 1f;
+    private const float UpdateTime = 1;
 
     public override void Initialize()
     {
