@@ -165,18 +165,21 @@ public sealed class SuitSensorSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _gameTiming.CurTime;
-        var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent>();
+        var sensors = EntityManager.EntityQueryEnumerator<ActiveSuitSensorComponent>();
 
-        while (sensors.MoveNext(out var uid, out var sensor, out var device))
+        while (sensors.MoveNext(out var uid, out _))
         {
-            if (device.TransmitFrequency is null)
+            if (!TryComp<SuitSensorComponent>(uid, out var sensor)
+                || !TryComp<DeviceNetworkComponent>(uid, out var device)
+                || device.TransmitFrequency is null
+                || !Exists(sensor.User))
+            {
+                RemCompDeferred<ActiveSuitSensorComponent>(uid);
                 continue;
+            }
 
-            // check if sensor is ready to update
-            if (curTime < sensor.NextUpdate)
-                continue;
-
-            if (!CheckSensorAssignedStation(uid, sensor))
+            if (curTime < sensor.NextUpdate
+                || !CheckSensorAssignedStation(uid, sensor))
                 continue;
 
             // TODO: This would cause imprecision at different tick rates.
@@ -185,7 +188,10 @@ public sealed class SuitSensorSystem : EntitySystem
             // get sensor status
             var status = GetSensorState(uid, sensor);
             if (status == null)
+            {
+                RemCompDeferred<ActiveSuitSensorComponent>(uid); // Someone turned the suit off, cease all checking.
                 continue;
+            }
 
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
@@ -217,10 +223,11 @@ public sealed class SuitSensorSystem : EntitySystem
     /// <returns>True if the sensor is assigned to a station or assigning it was successful. False otherwise.</returns>
     private bool CheckSensorAssignedStation(EntityUid uid, SuitSensorComponent sensor)
     {
-        if (!sensor.StationId.HasValue && Transform(uid).GridUid == null)
+        var xform = Transform(uid);
+        if (!sensor.StationId.HasValue && xform.GridUid == null)
             return false;
 
-        sensor.StationId = _stationSystem.GetOwningStation(uid);
+        sensor.StationId = _stationSystem.GetOwningStation(uid, xform);
         return sensor.StationId.HasValue;
     }
 
@@ -273,11 +280,13 @@ public sealed class SuitSensorSystem : EntitySystem
     private void OnEquipped(EntityUid uid, SuitSensorComponent component, ref ClothingGotEquippedEvent args)
     {
         component.User = args.Wearer;
+        EnsureComp<ActiveSuitSensorComponent>(uid);
     }
 
     private void OnUnequipped(EntityUid uid, SuitSensorComponent component, ref ClothingGotUnequippedEvent args)
     {
         component.User = null;
+        RemCompDeferred<ActiveSuitSensorComponent>(uid);
     }
 
     private void OnExamine(EntityUid uid, SuitSensorComponent component, ExaminedEvent args)
@@ -339,6 +348,7 @@ public sealed class SuitSensorSystem : EntitySystem
             return;
 
         component.User = args.Container.Owner;
+        EnsureComp<ActiveSuitSensorComponent>(uid);
     }
 
     private void OnRemove(EntityUid uid, SuitSensorComponent component, EntGotRemovedFromContainerMessage args)
@@ -347,6 +357,7 @@ public sealed class SuitSensorSystem : EntitySystem
             return;
 
         component.User = null;
+        RemCompDeferred<ActiveSuitSensorComponent>(uid);
     }
 
     private void OnEmpPulse(EntityUid uid, SuitSensorComponent component, ref EmpPulseEvent args)
@@ -439,6 +450,11 @@ public sealed class SuitSensorSystem : EntitySystem
 
         comp.Mode = mode;
 
+        if (mode == SuitSensorMode.SensorOff)
+            RemCompDeferred<ActiveSuitSensorComponent>(sensors.Owner);
+        else if (sensors.Comp.User != null)
+            EnsureComp<ActiveSuitSensorComponent>(sensors.Owner);
+
         if (userUid != null)
         {
             var msg = Loc.GetString("suit-sensor-mode-state", ("mode", GetModeName(mode)));
@@ -449,7 +465,7 @@ public sealed class SuitSensorSystem : EntitySystem
     /// <summary>
     ///     Set all suit sensors on the equipment someone is wearing to the specified mode.
     /// </summary>
-    public void SetAllSensors(EntityUid target, SuitSensorMode mode, SlotFlags slots = SlotFlags.All )
+    public void SetAllSensors(EntityUid target, SuitSensorMode mode, SlotFlags slots = SlotFlags.All)
     {
         // iterate over all inventory slots
         var slotEnumerator = _inventory.GetSlotEnumerator(target, slots);
@@ -466,7 +482,10 @@ public sealed class SuitSensorSystem : EntitySystem
             return null;
 
         // check if sensor is enabled and worn by user
-        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || !HasComp<MobStateComponent>(sensor.User) || transform.GridUid == null)
+        if (sensor.Mode == SuitSensorMode.SensorOff
+            || sensor.User == null
+            || !HasComp<MobStateComponent>(sensor.User)
+            || transform.GridUid == null)
             return null;
 
         // try to get mobs id from ID slot
