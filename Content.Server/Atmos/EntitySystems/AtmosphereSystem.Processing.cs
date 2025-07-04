@@ -16,6 +16,7 @@
 // SPDX-FileCopyrightText: 2024 PraxisMapper <praxismapper@gmail.com>
 // SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
