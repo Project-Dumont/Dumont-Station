@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 CRISO <cristiandeavila.uow@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -29,15 +30,30 @@
   license: "Custom"
   source: "https://youtu.be/B0MTtxBV3Aw?si=OJZdDtVLP_yMSdvu"
 
+- files: ["although_the_sky.ogg"]
+  copyright: "Although The Sky by Dorkus64. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/tVGH-g6OQhg?si=3qMPQAI33eHB8gxy"
+
 - files: ["bar_da_esquina.ogg"]
   copyright: "Bar da Esquina by Banda Passarela. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/LBAyQMaq8fY?si=Omp-WDVMxRI8W3yJ"
 
+- files: ["baby_blue.ogg"]
+  copyright: "Baby Blue by Badfinger. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/_yqOaQqgJdI?si=nusLvcUf6sIwpzC2"
+
 - files: ["birds_dont_sing.ogg"]
   copyright: "Birds Don't Sing by TV Girl. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/OqhoRXGeMW4?si=52vpb5qG_MSGRKKz"
+
+- files: ["black_knife.ogg"]
+  copyright: "Black Knife by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/B8Us0DZgexw?si=IqEYiJ9MgkRE_jtC"
 
 - files: ["buddy_holly.ogg"]
   copyright: "Buddy Holly by Weezer. Exported with cobalt.tools"
@@ -69,6 +85,11 @@
   license: "Custom"
   source: "https://youtu.be/DopBUv0ZV2w?si=Bd6ZVuxfeUmPJ44J"
 
+- files: ["hear_the_siren_sound_of_death.ogg"]
+  copyright: "Hear! The Siren Sound Of Death by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/COP66yrNde4?si=B2zdt3n-MBKZmqoy"
+
 - files: ["i_want_you.ogg"]
   copyright: "I Want You by Savage Garden. Exported with cobalt.tools"
   license: "Custom"
@@ -84,10 +105,20 @@
   license: "Custom"
   source: "https://youtu.be/FKwVFWwA_x8?si=IMihDaXQ7a7QJmw_"
 
+- files: ["its_tv_time.ogg"]
+  copyright: "It's Tv Time! by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/F2PJbTuZlTU?si=zohjDC8Bl2QuMwX7"
+
 - files: ["katamari.ogg"]
   copyright: "KATAMARI by Femtanyl. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/YfXpNIQbdjo?si=sDewjogdf4AiGp_v"
+
+- files: ["lady.ogg"]
+  copyright: "Lady (Hear Me Tonight) by Modjo. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/mMfxI3r_LyA?si=8oTay26YwZKuzt31"
 
 - files: ["lovers_rock.ogg"]
   copyright: "Lover's Rock by TV Girl. Exported with cobalt.tools"
@@ -109,10 +140,20 @@
   license: "Custom"
   source: "https://youtu.be/vQUJvBTmILo?si=JLJFQXsLQ8RgsfzM"
 
+- files: ["raise_up_your_bat.ogg"]
+  copyright: "Raise Up Your Bat by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/85WD93lz5GU?si=iY3uiwfcBXrUonRE"
+
 - files: ["roundabout.ogg"]
   copyright: "Roundabout by Yes. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/pk3HBb0mh5Q?si=-vjVZQJQcqIZ_tBd"
+
+- files: ["ruder_buster.ogg"]
+  copyright: "Ruder Buster by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/N117e1Ub39A?si=vMY-upPmz7JcL0wn"
 
 - files: ["summer.ogg"]
   copyright: "おつかれSUMMER by HALCALI. Exported with cobalt.tools"
@@ -129,8 +170,23 @@
   license: "Custom"
   source: "https://youtu.be/mXHKjFKBC0g?si=Ai1g4wBilacuu5Kq"
 
+- files: ["the_place_where_it_rained.ogg"]
+  copyright: "The place where it rained by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/aSc7Yuwn1Ao?si=eFv-E4KH5_7d-4Kv"
+
+- files: ["the_world_looks_red.ogg"]
+  copyright: "The World Looks Red by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/In3SLsHpCSg?si=5_tvFyRYlFltH36Y"
+
 - files: ["vou_pra_santa_catarina.ogg"]
   copyright: "Vou Pra Santa Catarine by Terceira Dimensão. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/AVSYcRdHpOA?si=zO-9xsL9ntvnbkwk"
+
+- files: ["welcome_to_the_green_room.ogg"]
+  copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
 

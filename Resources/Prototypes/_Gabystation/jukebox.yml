@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 samarieh <samariehy666@gmail.com>
-# SPDX-FileCopyrightText: 2025 
+# SPDX-FileCopyrightText: 2025 CRISO <cristiandeavila.uow@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -204,11 +204,23 @@
     path: /Audio/_Gabystation/Jukebox/a_world_i_built_for_you.ogg
 
 - type: jukebox
+  id: AlthoughTheSky
+  name: Dorkus64 - Although The Sky
+  path:
+    path: /Audio/_Gabystation/Jukebox/although_the_sky.ogg
+
+- type: jukebox
   id: Anemoia
   name: Oliver Buckland - Anemoia
   path:
     path: /Audio/_Gabystation/Jukebox/anemoia.ogg
-    
+
+- type: jukebox
+  id: BabyBlue
+  name: Badfinger - Baby Blye
+  path:
+    path: /Audio/_Gabystation/Jukebox/baby_blue.ogg
+
 - type: jukebox
   id: BarDaEsquina
   name: Banda Passarela - Bar da Esquina
@@ -220,6 +232,12 @@
   name: TV Girl - Birds Don't Sing
   path:
     path: /Audio/_Gabystation/Jukebox/birds_dont_sing.ogg
+
+- type: jukebox
+  id: BlackKnife
+  name: Toby Fox - Black Knife
+  path:
+    path: /Audio/_Gabystation/Jukebox/black_knife.ogg
 
 - type: jukebox
   id: BuddyHolly
@@ -258,6 +276,12 @@
     path: /Audio/_Gabystation/Jukebox/fly.ogg
 
 - type: jukebox
+  id: HearTheSirenSoundOfDeath
+  name: Heaven Pierce Her - Hear! The Siren Sound Of Death
+  path:
+    path: /Audio/_Gabystation/Jukebox/hear.ogg
+
+- type: jukebox
   id: IWantYou
   name: Savage Garden - I Want You
   path:
@@ -270,16 +294,28 @@
     path: /Audio/_Gabystation/Jukebox/impacto.ogg
 
 - type: jukebox
-  id: 
+  id: Invisible
   name: Duran Duran - Invisible
   path:
     path: /Audio/_Gabystation/Jukebox/invisible.ogg
+
+- type: jukebox
+  id: ItsTvTime
+  name: Toby Fox - It's Tv Time!
+  path:
+    path: /Audio/_Gabystation/Jukebox/its_tv_time.ogg
 
 - type: jukebox
   id: Katamari
   name: Femtanyl - KATAMARI
   path:
     path: /Audio/_Gabystation/Jukebox/katamari.ogg
+
+- type: jukebox
+  id: Lady
+  name: Modjo - Lady
+  path:
+    path: /Audio/_Gabystation/Jukebox/lady.ogg
 
 - type: jukebox
   id: LoversRock
@@ -306,10 +342,22 @@
     path: /Audio/_Gabystation/Jukebox/primeiro_baile.ogg
 
 - type: jukebox
+  id: RaiseUpYourBat
+  name: Toby Fox - Raise Up Your Bat
+  path:
+    path: /Audio/_Gabystation/Jukebox/raise_up_your_bat.ogg
+
+- type: jukebox
   id: Roundabout
   name: Yes - Roundabout
   path:
     path: /Audio/_Gabystation/Jukebox/roundabout.ogg
+
+- type: jukebox
+  id: RuderBuster
+  name: Toby Fox - Ruder Buster
+  path:
+    path: /Audio/_Gabystation/Jukebox/ruder_buster.ogg
 
 - type: jukebox
   id: Summer
@@ -330,7 +378,26 @@
     path: /Audio/_Gabystation/Jukebox/the_man_who_sold_the_world.ogg
 
 - type: jukebox
+  id: ThePlaceWhereItRained
+  name: Toby Fox - The place where it rained
+  path:
+    path: /Audio/_Gabystation/Jukebox/the_place_where_it_rained.ogg
+
+- type: jukebox
+  id: TheWorldLooksRed
+  name: Heaven Pierce Her - The World Looks Red
+  path:
+    path: /Audio/_Gabystation/Jukebox/the_world_looks_red.ogg
+
+- type: jukebox
   id: VouPraSantaCatarina
   name: Terceira Dimensão - Vou Pra Santa Catarina
   path:
     path: /Audio/_Gabystation/Jukebox/vou_pra_santa_catarina.ogg
+
+- type: jukebox
+  id: WelcomeToTheGreenRoom
+  name: Toby Fox - Welcome to the Green Room
+  path:
+    path: /Audio/_Gabystation/Jukebox/welcome_to_the_green_room.ogg
+
