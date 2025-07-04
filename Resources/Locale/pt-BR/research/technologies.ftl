@@ -5,21 +5,23 @@ research-discipline-experimental = Experimental
 research-discipline-civilian-services = Serviços Civis
 
 research-technology-fulton = Fultons
-research-technology-salvage-equipment = Equipment de Salvatagem
+research-technology-salvage-equipment = Equipamento de Salvatagem
 research-technology-advanced-powercells = Baterias Avançadas
 research-technology-mechanical-compression = Compressão Mecânica
 research-technology-compact-power = Potência Compacta
 research-technology-industrial-engineering = Engenharia Industrial
-research-technology-power-generation = Generação de Potência
-research-technology-atmospheric-tech = Tecnologias de Ar
-research-technology-shuttlecraft = Construção de naves
+research-technology-power-generation = Geração de Energia
+research-technology-atmospheric-tech = Tecnologias de Atmosfera
+research-technology-shuttlecraft = Construção de Naves
 research-technology-ripley-aplu = Ripley APLU
-research-technology-advanced-atmospherics = Tecnologias Advançado de Ar
-research-technology-advanced-tools = Ferramentas Advançadas
+research-technology-advanced-atmospherics = Tecnologias Avançadas de Atmosfera
+research-technology-advanced-tools = Ferramentas Avançadas
 research-technology-super-powercells = Super Baterias
 research-technology-bluespace-storage = Armazenamento Bluespace
 research-technology-portable-fission = Fissão Portátil
 research-technology-space-scanning = Escaneamento Espacial
+research-technology-excavation = Equipamentos Avançados de Excavação
+research-technology-atmospherics-exotech = Tecnologias Exotech de Atmosfera
 
 research-technology-salvage-weapons = Armas de Salvatagem
 research-technology-draconic-munitions = Munições Dracônicas
@@ -50,6 +52,7 @@ research-technology-quantum-leaping = Salto Quântico
 research-technology-advanced-anomaly-research = Tecnologia Móvel de Anomalia
 research-technology-rped = Troca Rápida de Peças
 research-technology-super-parts = Super Peças
+research-technology-deterrence = Tecnologias de Contensão
 
 research-technology-janitorial-equipment = Equipamentos para Zeladoria
 research-technology-laundry-tech = Tecnologia de Lavanderia

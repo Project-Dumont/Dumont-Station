@@ -56,6 +56,8 @@
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dora <27211909+catdotjs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -79,13 +81,22 @@ namespace Content.Server.Chemistry.Components
         [DataField("mode"), ViewVariables(VVAccess.ReadWrite)]
         public ChemMasterMode Mode = ChemMasterMode.Transfer;
 
-        [DataField]
-        public ChemMasterSortingType SortingType = ChemMasterSortingType.None;
-
         [DataField("pillDosageLimit", required: true), ViewVariables(VVAccess.ReadWrite)]
         public uint PillDosageLimit;
 
         [DataField("clickSound"), ViewVariables(VVAccess.ReadWrite)]
         public SoundSpecifier ClickSound = new SoundPathSpecifier("/Audio/Machines/machine_switch.ogg");
+
+        [DataField]
+        public int SortMethod;
+
+        [DataField]
+        public int TransferringAmount = 1;
+
+        [DataField]
+        public List<int> Amounts = new()
+        {
+            1, 5, 10, 15, 20, 25, 30, 50
+        };
     }
 }

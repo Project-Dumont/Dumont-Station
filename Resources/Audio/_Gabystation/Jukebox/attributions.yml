@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["just_breathe.ogg"]
+  copyright: "Just Breathe by Pearl Jam. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=_7ioE4wRil8"
+
+- files: ["winds_of_fjord.ogg"]
+  copyright: "Winds Of Fjords by Soft Knees. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=X2uuQ1kdprk"

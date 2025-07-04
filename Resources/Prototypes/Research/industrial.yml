@@ -209,7 +209,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - ThermomachineFreezerMachineCircuitBoard
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
   - GasRecyclerMachineCircuitboard
   # Goobstation R&D Console rework start
   position: -2,-4
@@ -273,9 +273,11 @@
   tier: 2
   cost: 7500
   recipeUnlocks:
-  - HellfireFreezerMachineCircuitBoard
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  - CrystallizerMachineCircuitboard
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
   technologyPrerequisites:
   - AtmosphericTech
   # Goobstation R&D Console rework start
@@ -362,3 +364,20 @@
   - AdvancedToolsTechnology  # Goobstation R&D Console rework
   - AdvancedPowercells  # Goobstation R&D Console rework
   position: 2,-6
+
+# Assmos
+- type: technology
+  id: AtmosphericsExotech
+  name: research-technology-atmospherics-exotech
+  icon:
+    sprite: _Funkystation/Structures/Piping/Atmospherics/bluespacegassender.rsi
+    state: off
+  discipline: Industrial
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - HellfireFreezerMachineCircuitBoard
+  - BluespaceGasSenderMachineBoard
+  technologyPrerequisites:
+  - AdvancedAtmospherics
+  position: -1,-5

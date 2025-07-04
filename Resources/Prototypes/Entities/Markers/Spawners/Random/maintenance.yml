@@ -33,6 +33,7 @@
 # SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Daniela <daniela.paladinof@gmail.com>
 # SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
@@ -119,17 +120,24 @@
 # SPDX-FileCopyrightText: 2024 xprospero <116504990+xprospero@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Cass <45694413+CubixThree@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2025 Momo <Rsnesrud@gmail.com>
 # SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 T <theo75cg@gmail.com>
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 # SPDX-FileCopyrightText: 2025 boxxie79 <88395316+boxxie79@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 centcomofficer24 <theo75cg@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
 # SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
@@ -426,6 +434,10 @@
         children:
         - id: DrinkSpaceGlue
         - id: DrinkSpaceLube
+      - !type:GroupSelector
+        children:
+        - id: BoomboxPink
+        - id: BoomboxPurple
       # Rare Group
     - !type:GroupSelector
       weight: 2
@@ -443,6 +455,7 @@
       - id: DrinkMopwataBottleRandom
       - id: LidSalami
         weight: 0.05
+      - id: BoomboxSlav
 
 - type: entity
   name: Maint Loot Spawner

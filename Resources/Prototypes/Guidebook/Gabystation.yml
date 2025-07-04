@@ -1,6 +1,0 @@
-- type: guideEntry
-  id: mainSpaceLaw
-  name: guide-entry-rules-space-law
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
-  children:
-  - SpaceLawCrimeList

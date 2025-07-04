@@ -52,6 +52,7 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
+  - ThermomachineFreezerMachineCircuitBoard
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
@@ -95,3 +96,8 @@
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
   - HolopadMachineCircuitboard
+  - BluespaceGasSenderMachineBoard # Assmos - Bluespace Gas
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
+  - CrystallizerMachineCircuitboard # Assmos - Crystallizer
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases

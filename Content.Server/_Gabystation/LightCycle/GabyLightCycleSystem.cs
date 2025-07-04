@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Components;
 using Robust.Shared.Audio;
@@ -28,13 +33,15 @@ namespace Content.Server.Time
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
         private int _currentHour;
-        private double _tickCount = 0;
         private string? _hexColor = "#FFFFFF";
         private bool _isNight = false;
         private Dictionary<int, Color>? _mapColor = new Dictionary<int, Color>();
         private static readonly Regex? HexPattern = new Regex(@"^#([A-Fa-f0-9]){6}$");
         private static readonly SoundSpecifier? NightAlert = new SoundPathSpecifier("/Audio/_Gabystation/Announcements/nightshift.ogg");
         private static readonly SoundSpecifier? DayAlert = new SoundPathSpecifier("/Audio/_Gabystation/Announcements/dayshift.ogg");
+
+        private double _updateTimer = 0.0;
+        private const double UpdateInterval = 1.0; // Roda uma vez por segundo
 
         public override void Initialize()
         {
@@ -79,13 +86,12 @@ namespace Content.Server.Time
         }
         public override void Update(float frameTime)
         {
-            _tickCount++;
-            var updatePerTick = _configuration.GetCVar(CCVars.UpdatePerTick);
+            _updateTimer += frameTime;
 
-            if (updatePerTick == 0 || _tickCount % updatePerTick != 0)
+            if (_updateTimer < UpdateInterval)
                 return;
+            _updateTimer = 0;
 
-            _tickCount = 0;
             _currentHour = TimeSpan.FromSeconds(GetStationTime()).Hours;
             foreach (var comp in EntityQuery<GabyLightCycleComponent>())
             {

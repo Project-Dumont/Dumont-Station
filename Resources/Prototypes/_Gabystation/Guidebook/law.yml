@@ -1,0 +1,12 @@
+- type: guideEntry
+  id: mainSpaceLaw
+  name: guide-entry-rules-space-law
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  children:
+  - SpaceLawCrimeList
+  - MartialLaw
+
+- type: guideEntry
+  id: MartialLaw
+  name: guide-entry-martiallaw
+  text: "/ServerInfo/_Gabystation/Guidebook/LeiMarcial.xml"

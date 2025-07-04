@@ -25,7 +25,7 @@ alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo e
 
 alert-level-gamma = Gamma
 alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
-alert-level-gamma-instructions = todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
 alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulantes são aconselhados a ouvir os chefes de departamento para obter ordens e mais informações sobre o ocorrido.
@@ -43,3 +43,8 @@ alert-level-omicron-instructions = Aguarde ordens da Central de Comando.
 alert-level-octarine = Octarina
 alert-level-octarine-announcement = Um evento noosférico cataclísmico ameaça envolver o espaço real. A tripulação da estação deve conter o evento se possível, ou evacuar.
 alert-level-octarine-instructions = Os tripulantes são aconselhados a ouvir os chefes de departamento para obter mais informações.
+
+## GabyStation - Lei Marcial
+alert-level-martial = Lei Marcial
+alert-level-martial-announcement = A Central de Comando decretou Lei Marcial para toda estação, A cadeia de comando foi atualizada. A falha em seguir instruções da equipe de segurança ou da lei marcial resultará em pena capital imediata.
+alert-level-martial-instructions = Siga as ordens da equipe de segurança, mantenha-se em seu departamento.

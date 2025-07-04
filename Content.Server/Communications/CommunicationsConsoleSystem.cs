@@ -24,9 +24,12 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 Raphael Bertoche <bertocheraphael@gmail.com>
 // SPDX-FileCopyrightText: 2024 Robert V <vincerob@oregonstate.edu>
 // SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 White <68350815+DoutorWhite@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 avery <51971268+graevy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
@@ -34,14 +37,18 @@
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 superjj18 <gagnonjake@gmail.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -73,7 +80,7 @@ using Robust.Shared.Audio;
 using Content.Server.Administration;
 using Robust.Shared.Player;
 using Content.Server.Chat.Managers; //pra falar com centcom
-using Robust.Shared.Timing; // para cooldown
+using Robust.Shared.Timing;
 
 namespace Content.Server.Communications
 {
@@ -116,6 +123,7 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleToggleEmergencyMaintMessage>(OnToggleEmergencyMaintMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCentCommButtonMessage>(OnCentCommMessage);
+            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleMartialButtonMessage>(OnMartialMessage);
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
@@ -379,6 +387,38 @@ namespace Content.Server.Communications
                     _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
                     return;
                 } //pop up avisando q ta vazio
+                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+            });
+        }
+
+        private void OnMartialMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleMartialButtonMessage message)
+        {
+            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+                return;
+
+            var mob = message.Actor;
+            if (!CanUse(mob, uid))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
+                return;
+            }
+            //dialogo
+            _quickDialog.OpenDialog(actor.PlayerSession, Loc.GetString("comms-console-menu-dialog-martial-tittle"), Loc.GetString("comms-console-menu-dialog-martial-message"), (string centMessage) =>
+            {
+                if (!centMessage.Equals(""))
+                {
+                    _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: requsitou a lei marcial. Motivo: '{centMessage}'");
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has requested martial law, reason: '{centMessage}'.");
+                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+
+                    SoundSpecifier sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+
+                    Loc.TryGetString(comp.Title, out var title);
+                    title ??= comp.Title;
+                    _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("comns-console-request-send-announce"), title,
+                                                            false, sound, colorOverride: comp.Color);
+                    return;
+                }
                 _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
             });
         }

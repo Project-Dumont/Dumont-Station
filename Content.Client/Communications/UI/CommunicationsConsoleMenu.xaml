@@ -63,16 +63,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             </BoxContainer>
 
             <!-- EmergencyPart -->
-            <BoxContainer Orientation="Vertical"
-                SeparationOverride="6">
+            <BoxContainer Orientation="Vertical">
 
-                <RichTextLabel Name="CountdownLabel"/>
+                <RichTextLabel Name="CountdownLabel" Margin="0 2"/>
 
                 <Button Name="EmergencyShuttleButton"
                     Access="Public"
                     Text="Placeholder Text"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"
                     StyleClasses="OpenLeft" />
+
+                <Button Name="MartialButton"
+                    Text="{Loc 'comms-console-menu-martial'}"
+                    ToolTip="{Loc 'comms-console-menu-martial-help'}"
+                    StyleClasses="OpenBoth"
+                    Access="Public" />
 
                 <Button Name="MaintEmergencyButton"
                     Text="{Loc 'comms-console-menu-emergency-maint'}"

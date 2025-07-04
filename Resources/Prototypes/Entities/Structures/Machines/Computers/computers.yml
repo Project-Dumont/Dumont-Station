@@ -110,7 +110,6 @@
 # SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Nim <128169402+Nimfar11@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
 # SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
@@ -144,7 +143,6 @@
 # SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 avery <51971268+graevy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
@@ -180,16 +178,21 @@
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <logkedr18@gmail.com>
+# SPDX-FileCopyrightText: 2025 Fildrance <fildrance@gmail.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
 # SPDX-FileCopyrightText: 2025 Killerqu00 <killerqueen1777@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <scarky0@onet.eu>
+# SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -703,6 +706,106 @@
     receiveFrequencyId: CrewMonitor
   - type: WirelessNetworkConnection
     range: 1200
+
+- type: entity
+  parent: BaseComputerAiAccess
+  id: ComputerStationTeleportersControl
+  name: station teleporters control console
+  description: Used to monitor station teleport system operations.
+  components:
+  - type: StationAiWhitelist
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: teleporters_station
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3493c2"
+  - type: Computer
+    board: StationTeleportersControlCircuitboard
+  - type: ActivatableUIRequiresAccess
+  - type: ActivatableUI
+    key: enum.StationTeleporterConsoleUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.StationTeleporterConsoleUIKey.Key:
+        type: StationTeleporterConsoleBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: StationTeleporterConsole
+    portalColor: "#81ddeb"
+  - type: Storage
+    grid:
+    - 0,0,4,2
+    maxItemSize: Small
+    storageOpenSound: /Audio/Machines/door_lock_off.ogg
+    storageCloseSound: /Audio/Machines/door_lock_on.ogg
+    storageInsertSound: /Audio/Machines/id_insert.ogg
+    storageRemoveSound: /Audio/Machines/id_swipe.ogg
+    whitelist:
+      tags:
+      - FitInTeleporterConsole
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      board: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: AccessReader
+    access: [["Command"]]
+  - type: Lock
+    unlockOnClick: false
+
+- type: entity
+  parent: ComputerStationTeleportersControl
+  id: ComputerStationTeleportersControlFilled
+  suffix: Autofilled, Nanotrasen Network
+  components:
+  - type: StationTeleporterConsole
+    autoLinkKey: Nanotrasen
+
+- type: entity
+  parent: ComputerStationTeleportersControl
+  id: ComputerSyndicateTeleportersControl
+  name: syndicate teleporters control console
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: teleporters_syndicate
+    - map: ["computerLayerKeys"]
+      state: syndie_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: PointLight
+    color: "#c61414"
+  - type: Computer
+    board: SyndicateTeleportersControlCircuitboard
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: StationTeleporterConsole
+    portalColor: "#c61414"
 
 - type: entity
   parent: BaseComputerAiAccess
