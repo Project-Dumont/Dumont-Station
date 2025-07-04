@@ -193,6 +193,7 @@
   - type: Tag
     tags:
       - Armor
+  - type: ArmorSparkEffect #starlight
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity

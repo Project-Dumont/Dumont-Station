@@ -315,6 +315,7 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: ArmorSparkEffect #starlight
 
 - type: entity
   abstract: true
