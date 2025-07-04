@@ -201,7 +201,7 @@
   name: Soft Knees - Winds Of Fjords (minomus 2022 remaster)
   path:
     path: /Audio/_Gabystation/Jukebox/winds_of_fjord.ogg
-    
+
 - type: jukebox
   id: AmorMafioso
   name: MusicalJM - Amor Mafioso
@@ -228,7 +228,7 @@
 
 - type: jukebox
   id: BabyBlue
-  name: Badfinger - Baby Blye
+  name: Badfinger - Baby Blue
   path:
     path: /Audio/_Gabystation/Jukebox/baby_blue.ogg
 
