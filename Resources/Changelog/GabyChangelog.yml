@@ -502,14 +502,6 @@ Entries:
       message: Tradução ao clica num objeto sem energia corrigida.
   id: 60
   time: '2025-07-04T18:41:45.0000000+00:00'
-- author: CRISOOOOO
-  changes:
-    - type: Add
-      message: >-
-        Pedradas foram adicionadas à jukebox e lobby, agora sim o bar pode virar
-        um boteco!!!
-  id: 61
-  time: '2025-07-04T18:46:28.0000000+00:00'
 - author: AgentePanela (vyas)
   changes:
     - type: Fix
