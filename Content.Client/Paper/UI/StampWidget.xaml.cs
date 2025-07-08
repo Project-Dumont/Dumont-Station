@@ -37,8 +37,10 @@ public sealed partial class StampWidget : PanelContainer
         set => StampedByLabel.Orientation = value;
     }
 
-    public StampDisplayInfo StampInfo {
-        set {
+    public StampDisplayInfo StampInfo
+    {
+        set
+        {
             // pretty much this whole thing is an imp edit
 
             var resCache = IoCManager.Resolve<IResourceCache>();
@@ -57,8 +59,8 @@ public sealed partial class StampWidget : PanelContainer
                             "/Textures/_Impstation/Interface/Paper/Stamps/" + icon + ".png");
 
                     // make stamps 50% larger to better match the original stamp sizes
-                    var width = (int)(borderImage.Texture.Width * 1.5);
-                    var height = (int)(borderImage.Texture.Height * 1.5);
+                    var width = (int) (borderImage.Texture.Width * 1.5);
+                    var height = (int) (borderImage.Texture.Height * 1.5);
                     SetSize = new Vector2(width, height);
                 }
 

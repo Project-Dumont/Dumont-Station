@@ -17,7 +17,7 @@
       - Radio
       components:
       - FitsInDispenser
-      
+
 - type: entity
   parent: ClothingBeltUtility
   id: ClothingBeltSyndicateUtility
