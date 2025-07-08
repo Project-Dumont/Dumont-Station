@@ -1,4 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 //
@@ -20,6 +22,9 @@ public sealed partial class AbductorHumanObservationConsoleComponent : Component
 
     [DataField, AutoNetworkedField]
     public NetEntity? RemoteEntity;
+
+    [DataField]
+    public float MinStationDistance = 200f;
 }
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
 public sealed partial class AbductorConsoleComponent : Component
@@ -88,6 +93,9 @@ public sealed partial class AbductorScientistComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? Console;
+
+    [DataField]
+    public float ReturnToShipCooldown = 20f;
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedAbductorSystem)), AutoGenerateComponentState]
@@ -105,6 +113,9 @@ public sealed partial class AbductorsAbilitiesComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? SendYourself;
+
+    [DataField]
+    public EntityUid? ReturnToShip;
 
     [DataField]
     public EntityUid[] HiddenActions = [];

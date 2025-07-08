@@ -3,8 +3,14 @@
 # SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 coolsurf6 <coolsurf24@yahoo.com.au>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 hivehum <ketchupfaced@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -67,13 +73,13 @@
       points: 2 # WWDP-Edit
       required: false
     Chest:
-      points: 3
+      points: 4 # imp 3<4
       required: false
     Legs:
-      points: 2
+      points: 8 # imp 2<8
       required: false
     Arms:
-      points: 2
+      points: 8 # imp 2<8
       required: false
 
 - type: humanoidBaseSprite

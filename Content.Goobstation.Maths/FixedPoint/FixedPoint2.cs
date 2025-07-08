@@ -18,7 +18,6 @@
 // SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
@@ -26,6 +25,11 @@
 // SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 

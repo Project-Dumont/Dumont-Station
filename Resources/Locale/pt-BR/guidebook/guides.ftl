@@ -52,6 +52,8 @@ guide-entry-defusal = Desativação de Bomba Grande
 guide-entry-criminal-records = Registros Criminais
 guide-entry-species = Espécies
 
+guide-entry-thermomachies = Máquinas térmicas
+
 guide-entry-antagonists = Antagonistas
 guide-entry-nuclear-operatives = Operativos Nucleares
 guide-entry-traitors = Traidores

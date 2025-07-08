@@ -190,5 +190,5 @@ cosmiccult-spire-entropy = Um fragmento de entropia se condensa na superfície d
 cosmiccult-entropy-inserted = Você infunde {$count} entropia no Monólito.
 cosmiccult-entropy-unavailable = Você não pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
-cosmiccult-gear-pickup-rejection = O(a) {$ITEM} resiste ao toque de {CAPITALIZE(THE($TARGET))}!
+cosmiccult-gear-pickup-rejection = {ARTIGO-O($ITEM)} {$ITEM} resiste ao toque de {CAPITALIZE(THE($TARGET))}!
 cosmiccult-gear-pickup = Você sente-se se desfazendo ao segurar o(a) {$ITEM}!

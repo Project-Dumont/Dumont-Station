@@ -26,6 +26,8 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
@@ -95,6 +97,11 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "culteyes" ] # funky cult
+        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
+        state: "human"  # TODO make vulp version
+        shader: unshaded
+        visible: false
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
@@ -112,6 +119,11 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "_DV/Effects/creampie.rsi"
         state: "creampie_vulpkanin"
+        visible: false
+      - map: [ "culthalo" ] # funky cult
+        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
+        state: "halo"
+        shader: unshaded
         visible: false
   - type: MeleeWeapon
     hidden: true
@@ -131,6 +143,7 @@
   #  coolingCoefficient: 0.1
   - type: Temperature
     atmosTemperatureTransferEfficiency: 0.01  # Goobstation - fix vulps - end
+  - type: ScentTracker # Einstein Engines
   - type: Vocal
     sounds:
       Male: MaleVulpkanin

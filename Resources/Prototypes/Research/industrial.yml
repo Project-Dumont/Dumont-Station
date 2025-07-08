@@ -105,7 +105,6 @@
   recipeUnlocks:
   - RadarConsoleCircuitboard
 #  - HandHeldMassScanner - Removed by Lavaland
-  - BorgModuleGPS
   # Goobstation R&D Console rework start
   position: 0,-3
   technologyPrerequisites:
@@ -209,7 +208,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - ThermomachineFreezerMachineCircuitBoard
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
   - GasRecyclerMachineCircuitboard
   # Goobstation R&D Console rework start
   position: -2,-4
@@ -273,9 +272,11 @@
   tier: 2
   cost: 7500
   recipeUnlocks:
-  - HellfireFreezerMachineCircuitBoard
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  - CrystallizerMachineCircuitboard
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
   technologyPrerequisites:
   - AtmosphericTech
   # Goobstation R&D Console rework start
@@ -316,9 +317,8 @@
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
+    - BorgModuleAdvancedMining
     - MechEquipmentDrillDiamond # Goobstation
-    - BorgModuleAdvancedMining # Goobstation
-    - MechEquipmentDrillDiamond
   # Goobstation R&D Console rework start
   position: 0,-6
   technologyPrerequisites:
@@ -344,12 +344,12 @@
   # Goobstation R&D Console rework start
   position: 2,-7
   technologyPrerequisites:
-   - PortableFission
+   - OptimizedMicrogalvanism
   # Goobstation R&D Console rework end
 
 - type: technology
-  id: PortableFission
-  name: research-technology-portable-fission
+  id: OptimizedMicrogalvanism
+  name: research-technology-optimized-microgalvanism
   icon:
     sprite: Objects/Power/power_cells.rsi
     state: microreactor
@@ -358,7 +358,25 @@
   cost: 15000 # Goobstation 10000 -> 15000
   recipeUnlocks:
   - PowerCellMicroreactor
+  - PowerCellHyper
   technologyPrerequisites:
   - AdvancedToolsTechnology  # Goobstation R&D Console rework
   - AdvancedPowercells  # Goobstation R&D Console rework
   position: 2,-6
+
+# Assmos
+- type: technology
+  id: AtmosphericsExotech
+  name: research-technology-atmospherics-exotech
+  icon:
+    sprite: _Funkystation/Structures/Piping/Atmospherics/bluespacegassender.rsi
+    state: off
+  discipline: Industrial
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - HellfireFreezerMachineCircuitBoard
+  - BluespaceGasSenderMachineBoard
+  technologyPrerequisites:
+  - AdvancedAtmospherics
+  position: -1,-5

@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Nicolasfmendesx11 <Nicolasfmendesx11@gmail.com>
+# SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 samarieh <samariehy666@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: jukebox
   id: Fnaf
   name: The Living Tombstone - Five Nights at Freddy's 1 Song
@@ -166,3 +177,33 @@
   name: Slipknot - Wait And Bleed (DoutorWhite mix)
   path:
     path: /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
+
+- type: jukebox
+  id: JustBreathe
+  name: Pearl Jam - Just Breathe
+  path:
+    path: /Audio/_Gabystation/Jukebox/just_breathe.ogg
+
+- type: jukebox
+  id: WindsOfFjords
+  name: Soft Knees - Winds Of Fjords (minomus 2022 remaster)
+  path:
+    path: /Audio/_Gabystation/Jukebox/winds_of_fjord.ogg
+
+- type: jukebox
+  id: Cumade e Cumpade
+  name: Leandro E Leonardo - Cumade e Cumpade
+  path:
+    path: /Audio/_Gabystation/Jukebox/cumade_e_cumpade.ogg
+
+- type: jukebox
+  id: EstradaDaVida
+  name: Milionário e José Rico - Estrada da vida
+  path:
+    path: /Audio/_Gabystation/Jukebox/estrada_da_vida.ogg
+
+- type: jukebox
+  id: SomDeCristal
+  name: Joaquim e Manuel - Som de Cristal
+  path:
+    path: /Audio/_Gabystation/Jukebox/som_de_cristal.ogg

@@ -51,6 +51,20 @@ A estação corre risco de ser completamente obliterada. Todos os tripulantes de
 </ColorBox>
 A Central de Comando decretou estado de calamidade na estação. Todos os tripulantes devem se abrigar imediatamente. Porte de armas é permitido e aconselhado para seguranças.
 
+<ColorBox Color="#fffff0">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#00000f]Código Omicron[/color][/bold]
+  </Box>
+</ColorBox>
+A Central de Comando tomou controle total da estação. Aguardem ordens futuras dos oficiais da Central de Comando, os tripulantes devem ficar em seus departamentos enquanto aguardam as ordems da Central de Comando.
+
+<ColorBox Color="#5f9ea0">
+  <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+    [bold][color=#00000f]Código Octarina[/color][/bold]
+  </Box>
+</ColorBox>
+Um evento noosférico cataclísmico ameaça envolver o espaço real. A tripulação da estação deve conter o evento se possível, ou evacuar.
+
 <ColorBox Color="#9400d3">
   <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
     [bold][color=#ffffff]Código Épsilon[/color][/bold]

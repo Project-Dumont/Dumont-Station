@@ -75,6 +75,8 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -96,6 +98,15 @@ public sealed partial class HeadRevolutionaryComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "HeadRevolutionaryFaction";
 
+    /// Funky Station
+    /// <summary>
+    /// Abilities the head revolutionaries start with.
+    /// </summary>
+    public readonly List<ProtoId<EntityPrototype>> BaseHeadRevActions = new()
+    {
+        "ActionDeclareOpenRevolt",
+    };
+
     /// <summary>
     /// How long the stun will last after the user is converted.
     /// </summary>
@@ -110,4 +121,11 @@ public sealed partial class HeadRevolutionaryComponent : Component
     /// </summary>
     [DataField]
     public bool ConvertAbilityEnabled = true;
+
+    //Funky Station
+    /// <summary>
+    /// If head rev's convert ability distributes the ability to see other Revs.
+    /// </summary>
+    [DataField]
+    public bool ConvertGivesRevVision = false;
 }
