@@ -216,7 +216,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         if (targetName is not null)
         {
             var id = await _db.GetServerBanAsync(null, target, null, null); // We only need to get with the username
-            SendServerBanWebhook(banDef, targetUsername, adminName, minutes, id?.Id);
+            SendServerBanWebhook(banDef, targetUsername ?? "?", adminName, minutes, id?.Id);
         } // Gabystation - ban webhook end
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
