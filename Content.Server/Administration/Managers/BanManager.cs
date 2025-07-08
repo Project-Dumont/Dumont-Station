@@ -218,7 +218,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         // Gabystation - ban webhook start
         var user = targetUsername ?? "?";
-        if (targetName is not null)
+        if (targetUsername is not null)
         {
             var id = await _db.GetServerBanAsync(null, target, null, null); // We only need to get with the username
             SendServerBanWebhook(banDef, user, adminName, minutes, id?.Id);
