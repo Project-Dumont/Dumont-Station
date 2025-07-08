@@ -37,6 +37,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Managers;
 
@@ -209,8 +210,14 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
-        var user = targetUsername ?? "?"; // Gabystation - ban webhook
-        SendServerBanWebhook(banDef, user, adminName, minutes); // Gabystation - ban webhook
+
+        // Gabystation - ban webhook start
+        //var user = targetUsername ?? "?";
+        if (targetName is not null)
+        {
+            var id = await _db.GetServerBanAsync(null, target, null, null); // We only need to get with the username
+            SendServerBanWebhook(banDef, targetName, adminName, minutes, id?.Id);
+        } // Gabystation - ban webhook end
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
     }
@@ -299,8 +306,15 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var length = expires == null ? Loc.GetString("cmd-roleban-inf") : Loc.GetString("cmd-roleban-until", ("expires", expires));
         _chat.SendAdminAlert(Loc.GetString("cmd-roleban-success", ("target", targetUsername ?? "null"), ("role", role), ("reason", reason), ("length", length)));
-        var user = targetUsername ?? "?"; // Gabystation - ban webhook
-        SendRoleBanWebhook(banDef, user, adminName, minutes);
+
+        // Gabystation - ban webhook start
+        //var user = targetUsername ?? "?";
+        if (targetUsername is not null)
+        {
+            var ids = await _db.GetServerRoleBansAsync(null, target, null, null);
+            ids.TryGetValue(ids.Count, out var id);
+            SendRoleBanWebhook(banDef, targetUsername, adminName, minutes, id.Id);
+        } // Gabystation - ban webhook end
 
         if (target != null && _playerManager.TryGetSessionById(target.Value, out var session))
         {

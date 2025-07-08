@@ -13,3 +13,18 @@
   copyright: "Winds Of Fjords by Soft Knees. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=X2uuQ1kdprk"
+
+- files: ["cumade_e_cumpade.ogg"]
+  copyright: "Cumade e Cumpade by Leandro E Leonardo. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=n9SNseuQ654"
+
+- files: ["estrada_da_vida.ogg"]
+  copyright: "Estrada da vida by Milionário e José Rico. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Hp7eK9IZp6c"
+
+- files: ["som_de_cristal.ogg"]
+  copyright: "Som de Cristal by Joaquim e Manuel. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Bk_E_BsgC3k"

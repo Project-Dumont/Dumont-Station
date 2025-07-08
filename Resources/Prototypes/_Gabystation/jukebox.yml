@@ -190,3 +190,20 @@
   path:
     path: /Audio/_Gabystation/Jukebox/winds_of_fjord.ogg
 
+- type: jukebox
+  id: Cumade e Cumpade
+  name: Leandro E Leonardo - Cumade e Cumpade
+  path:
+    path: /Audio/_Gabystation/Jukebox/cumade_e_cumpade.ogg
+
+- type: jukebox
+  id: EstradaDaVida
+  name: Milionário e José Rico - Estrada da vida
+  path:
+    path: /Audio/_Gabystation/Jukebox/estrada_da_vida.ogg
+
+- type: jukebox
+  id: SomDeCristal
+  name: Joaquim e Manuel - Som de Cristal
+  path:
+    path: /Audio/_Gabystation/Jukebox/som_de_cristal.ogg

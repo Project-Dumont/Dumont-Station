@@ -496,3 +496,35 @@ Entries:
       message: Correção no audio do alerta da lei marcial, pra causar mais medo.
   id: 59
   time: '2025-07-03T21:35:50.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Tradução ao clica num objeto sem energia corrigida.
+  id: 60
+  time: '2025-07-04T18:41:45.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: >-
+        Pedradas foram adicionadas à jukebox e lobby, agora sim o bar pode virar
+        um boteco!!!
+  id: 61
+  time: '2025-07-04T18:46:28.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Tradução do analisador medico.
+    - type: Fix
+      message: Anuncio de chegada na estação.
+    - type: Tweak
+      message: Jogo base atualizado para 04/07 (Goob).
+  id: 61
+  time: '2025-07-04T18:41:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Som de Cristal, Cumade e Cumpade e Estrada da Vida foram adicionadas na
+        jukebox.
+  id: 62
+  time: '2025-07-04T22:52:23.0000000+00:00'

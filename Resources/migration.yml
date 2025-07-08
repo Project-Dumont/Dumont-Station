@@ -109,6 +109,7 @@
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Ps3Moira <113228053+ps3moira@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
@@ -865,6 +866,12 @@ VendingMachineRestockSalvageEquipment: null
 ComputerSalvageExpedition: ComputerShuttleMiningLavaland
 SalvageExpeditionsComputerCircuitboard: LavalandShuttleConsoleCircuitboard
 
+# 2025-01-06
+BorgModuleRadiationDetection: null
+BorgModuleGPS: null
+BorgModuleLightReplacer: BorgModuleCustodial
+BorgModuleAdvancedTreatment: null
+
 # 2025-01-27
 FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
 
@@ -874,6 +881,10 @@ WeaponSubMachineGunVectorRubber: null
 
 # 2025-02-11
 WallShuttleInterior: WallShuttle
+
+# 2025-02-18
+PosterContrabandLustyExomorph: PosterContrabandRealExomorph
+PosterContrabandBustyBackdoorExoBabes6: PosterContrabandRouny
 
 # 2025-02-20
 MagazineBoxAntiMaterielBig: null
@@ -908,7 +919,6 @@ ToxinChemistryBottle: ChemistryBottleToxin
 CargoMailTeleporter: MailTeleporter
 ClothingMaskBlushingMime: ClothingMaskSexyMime
 ClothingMaskBlushingClown: ClothingMaskSexyMime
-ClothingNeckGoldAutismPin: ClothingNeckAutismPin
 MachineMaterialSilo: null
 CrateMaterialSilo: null
 
@@ -921,6 +931,16 @@ MediumXenoArtifact: ComplexXenoArtifact
 SimpleXenoArtifactItem: ComplexXenoArtifactItem
 MediumXenoArtifactItem: ComplexXenoArtifactItem
 VariedXenoArtifactItem: ComplexXenoArtifactItem
+
+# 2025-04-19
+ClothingOuterHardsuitSyndicate: ClothingOuterEVASuitSyndicate
+ClothingOuterHardsuitSyndicateDurathread: ClothingOuterEVASuitSyndicate
+AirlockMaintCommonLocked: AirlockMaintLocked
+AirlockMaintIntLocked: AirlockMaintLocked
+
+# 2025-04-26
+ComputerCargoShuttle: ComputerShuttleCargo
+CargoShuttleComputerCircuitboard: CargoShuttleConsoleCircuitboard
 
 # 2025-05-09 Goobstation
 ClothingBackpackCentcom: ClothingBackpackCentcomm
@@ -956,6 +976,28 @@ PlushieBlackburn: null
 PlushieBlackburnMatryoskya: null
 PlushieDesislavaBlackburn: null
 PlushieBlackburnKobliska: null
+
+# 2025-06-13 Goobstation
+BroomWitch: Broomstick
+
+# 2025-05-02
+CigPackMixedNasty: CigPackMixed
+CigPackMixedMedical: CigPackMixed
+CigaretteIpecac: CigaretteNutriment
+CigarettePax: CigaretteSaline
+CigaretteTHC: CigaretteRobustHarvest
+CigaretteMuteToxin: CigaretteSodiumPolyacrylate
+CigaretteSpaceDrugs: CigaretteLipolicide
+CigaretteMilk: CigaretteHaloperidol
+CigaretteBread: CigaretteBbqSauce
+
+# 2025-05-09
+ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
+ClothingHeadHelmetHardsuitBasic: null
+SuitStorageBasic: SuitStorageEVA
+
+# 2025-05-18
+ClothingNeckCloakMiner: null
 
 # Gabystation 17/06 merge problems
 ClothingSatchelSmuggler: null
