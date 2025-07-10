@@ -5,3 +5,6 @@
 
 - type: Tag
   id: Scimitar # Used for scabbad whitelist
+
+- type: Tag
+  id: CartridgeBazooka

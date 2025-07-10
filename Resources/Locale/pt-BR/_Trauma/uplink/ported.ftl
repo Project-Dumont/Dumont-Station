@@ -34,6 +34,12 @@ photograph-name-text = Esta é uma fotografia de {$entity}.
 
 photograph-name-text-photograph = Esta é uma fotografia de outra fotografia.
 
+solution-refuel-component-on-examine-detailed-message = Combustível: [color={$colorName}]{$fuelLeft}/{$fuelCapacity}[/color]
+
+solution-refuel-component-already-full = {CAPITALIZE(THE($name))} já está cheio.
+
+solution-refuel-component-no-fuel-in-tank = {CAPITALIZE(THE($target))} não contém combustível compatível.
+
 counter-attack-verb = Contra-atacar
 
 counter-attack-fail-npc-message = Os movimentos do alvo são imprevisíveis demais para um contra-ataque!
@@ -61,6 +67,42 @@ uplink-hijack-beacon-desc = Um sinalizador do Sindicato que invade o firewall da
 uplink-cddisknumber-name = CD da estação de números
 
 uplink-cddisknumber-desc = Chame uma ameaça para distrair a estação... se conseguir tocar o disco inteiro.
+
+uplink-adder-name = Kit Adder
+
+uplink-adder-desc = Uma pistola de plasma Adder de última geração, acompanhada de combustível próprio.
+
+uplink-akurra-name = Kit Akurra
+
+uplink-akurra-desc = Uma temível Akurra acompanhada de combustível próprio para sua avançada munição líquida.
+
+uplink-flamethrower-name = Lança-chamas FG13 Xiuhcoatl
+
+uplink-flamethrower-desc = Convide a Nanotrasen para um churrasco com esta arma incendiária portátil.
+
+uplink-leviathan-name = Kit Leviathan
+
+uplink-leviathan-desc = Às vezes, o tamanho realmente importa.
+
+uplink-magazine-echion-name = Recipiente de échion
+
+uplink-magazine-echion-desc = Um recipiente de reabastecimento com 75 unidades de échion. Compatível com a Adder e a Akurra.
+
+uplink-echion-synth-name = Sintetizador de échion
+
+uplink-echion-synth-desc = Um catalisador avançado que produz échion continuamente enquanto recebe energia. Compatível com a Adder e a Akurra.
+
+uplink-rocketexp-name = Caixa de foguetes explosivos Leviathan
+
+uplink-rocketexp-desc = Uma caixa com três foguetes explosivos compatíveis com o Leviathan.
+
+uplink-rocketinc-name = Caixa de foguetes incendiários Leviathan
+
+uplink-rocketinc-desc = Uma caixa com três foguetes incendiários compatíveis com o Leviathan.
+
+uplink-rocketcon-name = Caixa de foguetes de concussão Leviathan
+
+uplink-rocketcon-desc = Uma caixa com três foguetes de concussão compatíveis com o Leviathan.
 
 uplink-ammo-20rdmagazine-name = Carregador reto de 20 tiros (.30 de rifle)
 
@@ -102,11 +144,19 @@ secret-stash-briefcase = maleta
 
 store-category-objective = Objetivos
 
+reagent-name-echion = échion
+
+reagent-desc-echion = Uma forma volátil de matéria exótica patenteada pelo setor de pesquisa da Cybersun. Serve como combustível e munição para algumas de suas armas mais avançadas.
+
 language-Codespeak-name = Linguagem codificada
 
 language-Codespeak-description = Um código secreto que parece uma sequência de absurdos para quem não o entende.
 
 chat-language-Codespeak-name = Código
+
+item-toggle-examined-on = A luz está [color=darkgreen]acesa[/color].
+
+item-toggle-examined-off = A luz está [color=darkred]apagada[/color].
 
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
 

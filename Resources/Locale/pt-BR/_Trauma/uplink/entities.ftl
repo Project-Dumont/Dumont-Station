@@ -77,6 +77,63 @@ ent-WeaponSubMachineGunBriefcase = maleta marrom
 ent-CdDiskNumber = CD (Números)
     .desc = Contate o posto de escuta do Sindicato mais próximo para pedir reforços!
 
+ent-AdderBox = caixa de Adder
+
+ent-AkurraBox = caixa de Akurra
+
+ent-LeviathanExplosiveRocketBox = caixa de foguetes Leviathan (explosivos)
+    .desc = 4 foguetes altamente destrutivos em um recipiente preocupantemente frágil.
+
+ent-LeviathanIncendiaryRocketBox = caixa de foguetes Leviathan (incendiários)
+    .desc = 4 foguetes cheios de combustível altamente inflamável em um recipiente preocupantemente frágil.
+
+ent-LeviathanConcussionRocketBox = caixa de foguetes Leviathan (concussivos)
+    .desc = 4 projéteis de tungstênio em uma caixa frágil. Parece que vão atravessar o fundo.
+
+ent-CrateXiuhcoatl = kit Xiuhcoatl
+
+ent-CrateLeviathan = kit Leviathan
+
+ent-EchionSynth = sintetizador de échion
+    .desc = Um catalisador exótico em um recipiente portátil. Quando recebe energia, provoca flutuações microscópicas no espaço-tempo para gerar échion.
+
+ent-EchionCanister = reservatório de échion
+    .desc = Um recipiente descartável projetado para reabastecer rapidamente armas de plasma que usam échion.
+
+ent-CartridgeBazookaExp = foguete explosivo Leviathan
+    .desc = Garantia de arruinar o dia de alguém.
+
+ent-CartridgeBazookaIncendiary = foguete incendiário Leviathan
+    .desc = Garantia de arruinar o dia de alguém.
+
+ent-CartridgeBazookaCon = foguete concussivo Leviathan
+    .desc = Garantia de arruinar o dia de alguém.
+
+ent-WeaponLauncherBazooka = Leviathan
+    .desc = Um símbolo de arrogância e desejo insaciável de destruição. Usa foguetes.
+
+ent-BulletPlasmaAdder = disparo de plasma da Adder
+
+ent-BulletPlasmaAkurra = disparo de plasma da Akurra
+
+ent-BulletFlamethrower = bola de fogo
+
+ent-BulletBazookaExp = foguete
+
+ent-BulletBazookaIncendiary = foguete
+
+ent-BulletBazookaCon = foguete
+
+ent-WeaponFlamerXiuhcoatl = FG13 Xiuhcoatl
+    .desc = Simples e mortal, a Xiuhcoatl satisfaz o antigo desejo dos Saqueadores Gorlex de fazer um churrasco da Nanotrasen. Usa combustível de solda.
+
+ent-WeaponPlasmaAdder = Adder
+    .desc = O futuro da guerra estelar na palma da mão. Usa échion produzido por sintetizadores avançados.
+
+ent-WeaponPlasmaAkurra = Akurra
+    .desc = Uma bela união de tecnologia e malícia. Usa échion produzido por sintetizadores avançados.
+
+
 ent-CounterAttackingStatusEffect = contra-ataque preparado
 
 ent-BlockCounterAttackStatusEffect = contra-ataque indisponível

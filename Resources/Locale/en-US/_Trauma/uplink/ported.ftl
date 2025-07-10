@@ -35,6 +35,12 @@ photograph-name-text = This is a photograph of { PROPER($entity) ->
 
 photograph-name-text-photograph = This is a photograph of another photograph.
 
+solution-refuel-component-on-examine-detailed-message = Fuel: [color={$colorName}]{$fuelLeft}/{$fuelCapacity}[/color]
+
+solution-refuel-component-already-full = {CAPITALIZE(THE($name))} is already full.
+
+solution-refuel-component-no-fuel-in-tank = {CAPITALIZE(THE($target))} has no compatible fuel.
+
 counter-attack-verb = Counter attack
 
 counter-attack-fail-npc-message = They are too unpredictable to counterattack!
@@ -58,6 +64,42 @@ uplink-briefcase-gun-desc = An indistinct briefcase with a highly compact C-20K 
 uplink-hijack-beacon-name = Hijack Beacon
 
 uplink-hijack-beacon-desc = A syndicate-brand hijack beacon designed to get around the firewalls of Nanotrasen-brand Automated Trade Stations. They take 600 seconds to work and Trade Stations will announce they are being hacked, so prepare accordingly.
+
+uplink-adder-name = Adder bundle
+
+uplink-adder-desc = One state-of-the-art Adder plasma pistol, bundled with 2 canisters of its proprietary liquid ammo.
+
+uplink-akurra-name = Akurra bundle
+
+uplink-akurra-desc = Fearsome as it is advanced, the venerable Akurra bundled with 4 canisters of its proprietary liquid ammo.
+
+uplink-flamethrower-name = FG13 Xiuhcoatl flamethrower
+
+uplink-flamethrower-desc = Invite Nanotrasen to the cookout with this portable incendiary weapon.
+
+uplink-leviathan-name = Leviathan bundle
+
+uplink-leviathan-desc = Sometimes, it really is the size that matters.
+
+uplink-magazine-echion-name = Echion canister
+
+uplink-magazine-echion-desc = A special refueling canister containing 75 units of Echion. Compatible with the Adder and Akurra.
+
+uplink-echion-synth-name = Echion synthesizer
+
+uplink-echion-synth-desc = An advanced catalyser that produces Echion at a steady rate while powered. Compatible with the Adder and Akurra.
+
+uplink-rocketexp-name = Leviathan explosive rocket bundle
+
+uplink-rocketexp-desc = A box containing 3 explosive rockets compatible with the Leviathan.
+
+uplink-rocketinc-name = Leviathan incendiary rocket bundle
+
+uplink-rocketinc-desc = A box containing 3 incendiary rockets compatible with the Leviathan.
+
+uplink-rocketcon-name = Leviathan concussion rocket bundle
+
+uplink-rocketcon-desc = A box containing 3 concussion rockets compatible with the Leviathan.
 
 uplink-ammo-20rdmagazine-name = Straight Magazine (.30 rifle)
 
@@ -99,11 +141,19 @@ secret-stash-briefcase = briefcase
 
 store-category-objective = Objective
 
+reagent-name-echion = echion
+
+reagent-desc-echion = A volatile form of exotic matter patented by Cybersun's RnD division. Used as the fuel and ammunition for some of their more advanced weapons.
+
 language-Codespeak-name = Codespeak
 
 language-Codespeak-description = A secret code that sounds like random nonsense to anyone listening.
 
 chat-language-Codespeak-name = Codespeak
+
+item-toggle-examined-on = The light is currently [color=darkgreen]on[/color].
+
+item-toggle-examined-off = The light is currently [color=darkred]off[/color].
 
 codespeak-manual-learned = You learned Syndicate codespeak.
 
