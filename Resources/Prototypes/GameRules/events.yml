@@ -502,16 +502,16 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 3.5
+    weight: 2.5
     duration: 1
-    earliestStart: 30
-    minimumPlayers: 20
+    earliestStart: 40
+    minimumPlayers: 30
     chaos: # Goobstation
-      Hostile: 20
+      Hostile: 50
       Friend: 20
-      Combat: 40
-      Death: 100
-      Medical: 100
+      Combat: 70
+      Death: 200
+      Medical: 200
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -574,6 +574,7 @@
       Medical: 15
   - type: FalseAlarmRule
 
+# todo: desativar isso
 - type: entity
   parent: BaseWizardRule
   id: WizardSpawn
@@ -583,7 +584,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 40 # Gaby station - wizard é caos
     chaos:
       Hostile: 150
       Friend: 150
@@ -596,7 +597,7 @@
       Medical: 50
       Atmos: 50
   - type: AntagSelection
-    agentName: wizard-round-end-name
+    #agentName: wizard-round-end-name
     definitions:
     - spawnerPrototype: SpawnPointGhostWizard
       min: 1
