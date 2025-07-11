@@ -76,6 +76,7 @@
   minPlayers: 5
   rules:
     - IncidentDynamic
+    - ApocalypseDynamic
 
 - type: gamePreset
   id: TheApostle

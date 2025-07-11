@@ -11,8 +11,9 @@
   - type: GameDirector
     normalAntagAmount: 1
     stories:
-      - Breakdown
-      - Shitshow
+    - Relaxed
+    - Breakdown
+    - Shitshow
 
 - type: entity
   id: ApocalypseDynamic
@@ -22,8 +23,9 @@
   - type: GameDirector
     extremeAntagAmount: 1
     stories:
+    - Relaxed
     - Breakdown
-    - RelaxedAttack
+    #- RelaxedAttack
     - Science
 
 - type: entity
@@ -42,7 +44,7 @@
     - RepairStation
     - MadScience
     - PowerIssues
-    - Disaster
+    # - Disaster
 
 - type: story
   id: Shitshow # Clinical term
@@ -62,5 +64,5 @@
     Atmos: 800
     Power: 800
     Medical: 400
-    Death: 200
-    Combat: -80
+    Death: 150
+    Combat: -280
