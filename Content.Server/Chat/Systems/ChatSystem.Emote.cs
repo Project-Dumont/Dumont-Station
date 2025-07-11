@@ -178,12 +178,13 @@ public partial class ChatSystem
         // if general params for all sounds set - use them
         var param = proto.GeneralParams ?? sound.Params;
 
-        // Goobstation/MisandryBox - Emote spam countermeasures
+        //** Gaby station - pls no */
+        /** // Goobstation/MisandryBox - Emote spam countermeasures
         var ev = new EmoteSoundPitchShiftEvent();
         RaiseLocalEvent(uid, ref ev);
 
         param.Pitch += ev.Pitch;
-        // Goobstation/MisandryBox
+        // Goobstation/MisandryBox *//
 
         _audio.PlayPvs(sound, uid, param);
         return true;
