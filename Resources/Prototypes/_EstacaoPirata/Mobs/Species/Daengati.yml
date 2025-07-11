@@ -30,6 +30,13 @@
         Heat : 0.5 #O padrão é 1.5
   - type: Damageable
     damageModifierSet: Daengati
+  - type: NightVision # Gaby edit
+    isActive: false
+    toggleAction: ToggleDaengatiNightVision
+    color: "#9c452a"
+    strength: 2
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   save: false
@@ -38,3 +45,15 @@
   id: MobDaengatiDummy
   noSpawn: true
   description: A dummy Daengati meant to be used in character setup.
+
+- type: entity # Gaby edit
+  id: ToggleDaengatiNightVision
+  name: Switch night vision
+  description: Switches night vision.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    priority: -10
+    icon: Interface/Actions/eyeopen.png
+    event: !type:ToggleNightVisionEvent
