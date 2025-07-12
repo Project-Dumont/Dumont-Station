@@ -13,7 +13,7 @@ namespace Content.Client._CorvaxNext.CrewMedal.UI;
 public sealed partial class CrewMedalWindow : DefaultWindow
 {
     /// <summary>
-    /// Event triggered when the "Save" button is pressed, 
+    /// Event triggered when the "Save" button is pressed,
     /// provided the user has changed the reason text.
     /// </summary>
     public event Action<string>? OnReasonChanged;
@@ -32,8 +32,8 @@ public sealed partial class CrewMedalWindow : DefaultWindow
             // Check character limit and award status
             SaveButton.Disabled = _awarded || ReasonLineEdit.Text.Length > _maxCharacters;
             CharacterLabel.Text = Loc.GetString(
-                "crew-medal-ui-character-limit", 
-                ("number", ReasonLineEdit.Text.Length), 
+                "crew-medal-ui-character-limit",
+                ("number", ReasonLineEdit.Text.Length),
                 ("max", _maxCharacters));
         };
 
@@ -48,13 +48,13 @@ public sealed partial class CrewMedalWindow : DefaultWindow
 
         // Initialize the character counter display
         CharacterLabel.Text = Loc.GetString(
-            "crew-medal-ui-character-limit", 
-            ("number", ReasonLineEdit.Text.Length), 
+            "crew-medal-ui-character-limit",
+            ("number", ReasonLineEdit.Text.Length),
             ("max", _maxCharacters));
     }
 
     /// <summary>
-    /// Sets the current reason and synchronizes it with the input field 
+    /// Sets the current reason and synchronizes it with the input field
     /// if the user is not currently editing the field.
     /// </summary>
     public void SetCurrentReason(string reason)
@@ -70,7 +70,7 @@ public sealed partial class CrewMedalWindow : DefaultWindow
     }
 
     /// <summary>
-    /// Updates the "is medal awarded" status 
+    /// Updates the "is medal awarded" status
     /// and disables editing if the medal is already awarded.
     /// </summary>
     public void SetAwarded(bool awarded)

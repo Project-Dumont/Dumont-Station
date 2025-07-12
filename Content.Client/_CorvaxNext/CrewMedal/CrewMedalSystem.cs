@@ -29,8 +29,8 @@ public sealed class CrewMedalSystem : SharedCrewMedalSystem
     {
         // Checks if the Crew Medal UI is open for the given entity and reloads it with updated data.
         if (_userInterfaceSystem.TryGetOpenUi<CrewMedalBoundUserInterface>(
-                entity.Owner, 
-                CrewMedalUiKey.Key, 
+                entity.Owner,
+                CrewMedalUiKey.Key,
                 out var medalUi))
         {
             medalUi.Reload();

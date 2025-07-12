@@ -128,7 +128,7 @@ public sealed class CrewMedalSystem : SharedCrewMedalSystem
     }
 
     /// <summary>
-    /// Removes certain prohibited characters (e.g., brackets) 
+    /// Removes certain prohibited characters (e.g., brackets)
     /// to prevent unwanted tags in the text.
     /// </summary>
     private string Sanitize(string input)
