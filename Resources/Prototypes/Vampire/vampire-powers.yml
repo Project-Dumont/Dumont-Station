@@ -68,7 +68,7 @@
 
 - type: vampirePassive
   id: SupernaturalStrength 
-  catalogEntry: VampireUnnaturalStrength # Must match the catalog id
+  catalogEntry: VampireSupernaturalStrength # Must match the catalog id
   compsToAdd:
   - type: MeleeWeapon
     damage:
