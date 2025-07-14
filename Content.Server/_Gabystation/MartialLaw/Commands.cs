@@ -140,8 +140,8 @@ namespace Content.Server._Gabystation.MartialLaw
                 return;
             }
 
-            _entitySystems.GetEntitySystem<AlertLevelSystem>().SetLevel(stationUid.Value, level, false, true, true, true);
             _entitySystems.GetEntitySystem<AlertLevelSystem>().SetLocked(stationUid.Value, false);
+            _entitySystems.GetEntitySystem<AlertLevelSystem>().SetLevel(stationUid.Value, level, false, true, true, true);
 
             var announce = _entitySystems.GetEntitySystem<ChatSystem>();
             announce.DispatchStationAnnouncement(stationUid.Value,

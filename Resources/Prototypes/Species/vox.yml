@@ -77,7 +77,7 @@
       required: true
       defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
     Chest:
-      points: 1
+      points: 2
       required: false
     Overlay: # imp
       points: 4

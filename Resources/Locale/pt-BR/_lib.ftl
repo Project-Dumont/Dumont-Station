@@ -82,59 +82,59 @@ zzzz-genero-terminacao = { GENDER($ent) ->
 }
 
 # Used internally by the THE() function.
-zzzz-the = { PROPER($ent) ->
-   *[false] o { $ent }
-     [true] a { $ent }
-   }
+# zzzz-the = { PROPER($ent) ->
+#   *[false] o { $ent }
+#     [true] a { $ent }
+#   }
 
 # Used internally by the SUBJECT() function.
-zzzz-subject-pronoun = { GENDER($ent) ->
-   *[male] ele
-    [female] ela
-    [epicene] eles
-    [neuter] elo
-   }
+# zzzz-subject-pronoun = { GENDER($ent) ->
+#   *[male] ele
+#    [female] ela
+#    [epicene] eles
+#    [neuter] elo
+#   }
 
 # Used internally by the OBJECT() function.
-zzzz-object-pronoun = { GENDER($ent) ->
-   *[male] dele
-    [female] dela
-    [epicene] deles
-    [neuter] delo
-   }
+# zzzz-object-pronoun = { GENDER($ent) ->
+#   *[male] dele
+#    [female] dela
+#    [epicene] deles
+#    [neuter] delo
+#   }
 
 # Used internally by the POSS-PRONOUN() function.
-zzzz-possessive-pronoun = { GENDER($ent) ->
-   *[male] dele
-    [female] dela
-    [epicene] deles
-    [neuter] delos
-   }
+# zzzz-possessive-pronoun = { GENDER($ent) ->
+#   *[male] dele
+#    [female] dela
+#    [epicene] deles
+#    [neuter] delos
+#   }
 
 # Used internally by the POSS-ADJ() function.
-zzzz-possessive-adjective = { GENDER($ent) ->
-   *[male] seu
-    [female] sua
-    [epicene] seus
-    [neuter] seu
-   }
+# zzzz-possessive-adjective = { GENDER($ent) ->
+#   *[male] seu
+#    [female] sua
+#    [epicene] seus
+#    [neuter] seu
+#   }
 
 # Used internally by the REFLEXIVE() function.
-zzzz-reflexive-pronoun = { GENDER($ent) ->
-   *[male] ele mesmo
-    [female] ela mesma
-    [epicene] eles mesmos
-    [neuter] elos mesmos
-   }
+# zzzz-reflexive-pronoun = { GENDER($ent) ->
+#   *[male] ele mesmo
+#    [female] ela mesma
+#    [epicene] eles mesmos
+#    [neuter] elos mesmos
+#   }
 
 # Used internally by the CONJUGATE-BE() function.
-zzzz-conjugate-be = { GENDER($ent) ->
-    [epicene] são
-   *[other] é
-   }
+# zzzz-conjugate-be = { GENDER($ent) ->
+#    [epicene] são
+#   *[other] é
+#   }
 
 # Used internally by the CONJUGATE-HAVE() function.
-zzzz-conjugate-have = { GENDER($ent) ->
-    [epicene] têm
-   *[other] tem
-   }
+# zzzz-conjugate-have = { GENDER($ent) ->
+#    [epicene] têm
+#   *[other] tem
+#   }

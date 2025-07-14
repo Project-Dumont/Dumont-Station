@@ -6,7 +6,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
-using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared._Funkystation.Atmos.Components;
 using Content.Shared.Containers.ItemSlots;
@@ -17,6 +16,7 @@ using Robust.Shared.Containers;
 using Content.Shared.Database;
 using System.Linq;
 using Content.Server._Funkystation.Atmos.Components;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server._Funkystation.Atmos.EntitySystems;
 

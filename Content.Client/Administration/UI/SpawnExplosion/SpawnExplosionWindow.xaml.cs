@@ -8,6 +8,9 @@
 // SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -32,10 +35,10 @@ namespace Content.Client.Administration.UI.SpawnExplosion;
 public sealed partial class SpawnExplosionWindow : DefaultWindow
 {
     [Dependency] private readonly IClientConsoleHost _conHost = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
+    private readonly SharedMapSystem _mapSystem;
     private readonly SharedTransformSystem _transform = default!;
 
     private readonly SpawnExplosionEui _eui;
@@ -51,6 +54,7 @@ public sealed partial class SpawnExplosionWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        _mapSystem = _entMan.System<SharedMapSystem>();
         _transform = _entMan.System<TransformSystem>();
         _eui = eui;
 
@@ -100,7 +104,7 @@ public sealed partial class SpawnExplosionWindow : DefaultWindow
     {
         _mapData.Clear();
         MapOptions.Clear();
-        foreach (var map in _mapManager.GetAllMapIds())
+        foreach (var map in _mapSystem.GetAllMapIds())
         {
             _mapData.Add(map);
             MapOptions.AddItem(map.ToString());

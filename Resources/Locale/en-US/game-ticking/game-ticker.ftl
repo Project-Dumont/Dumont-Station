@@ -56,13 +56,13 @@ player-first-join-message = Jogador {$name} entrou pela primeira vez.
 # Exibido no chat para administradores quando um jogador sai
 player-leave-message = Jogador {$name} saiu.
 
-latejoin-arrival-announcement = {$character} ({$job}) { CONJUGATE-HAVE($entity) } chegou à estação!
-latejoin-arrival-announcement-special = {$job} {$character} a bordo!
-latejoin-arrival-sender = Estação
-latejoin-arrivals-direction = Uma nave que o transferirá para sua estação chegará em breve.
-latejoin-arrivals-direction-time = Uma nave que o transferirá para sua estação chegará em {$time}.
-latejoin-arrivals-dumped-from-shuttle = Uma força misteriosa impede você de sair com a nave de chegadas.
-latejoin-arrivals-teleport-to-spawn = Uma força misteriosa teletransporta você para fora da nave de chegadas. Tenha um turno seguro!
+latejoin-arrival-announcement = {$character} ({$job}) has arrived at the station!
+latejoin-arrival-announcement-special = {$job} {$character} on deck!
+latejoin-arrival-sender = Station
+latejoin-arrivals-direction = A shuttle transferring you to your station will arrive shortly.
+latejoin-arrivals-direction-time = A shuttle transferring you to your station will arrive in {$time}.
+latejoin-arrivals-dumped-from-shuttle = A mysterious force prevents you from leaving with the arrivals shuttle.
+latejoin-arrivals-teleport-to-spawn = A mysterious force teleports you off the arrivals shuttle. Have a safe shift!
 
 preset-not-enough-ready-players = Não é possível iniciar {$presetName}. São necessários {$minimumPlayers} jogadores, mas temos apenas {$readyPlayersCount}.
 preset-no-one-ready = Não é possível iniciar {$presetName}. Nenhum jogador está pronto.

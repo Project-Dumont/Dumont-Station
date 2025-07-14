@@ -26,7 +26,6 @@ using Content.Shared.BloodCult.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Damage.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Shared.StatusEffect;
 using Content.Shared.Speech.Muting;
@@ -40,6 +39,7 @@ using Content.Shared.PowerCell.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Server.Damage.Systems;
 
 
 namespace Content.Server.BloodCult.EntitySystems;
@@ -65,7 +65,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 	[Dependency] private readonly IGameTiming _gameTiming = default!;
 	[Dependency] private readonly IEntityManager _entMan = default!;
 	[Dependency] private readonly SharedStunSystem _stun = default!;
-	
+
 	[Dependency] private readonly IPrototypeManager _protoMan = default!;
 
 	private EntityQuery<EmpowerOnStandComponent> _runeQuery;
@@ -217,7 +217,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			}
 			if (args.RecordKnownSpell)
 				ent.Comp.KnownSpells.Add(args.CultAbility);
-			
+
 			_damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
 			_audioSystem.PlayPvs(args.CultAbility.CarveSound, ent);
 			if (args.StandingOnRune)
