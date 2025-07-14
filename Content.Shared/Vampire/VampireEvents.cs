@@ -13,6 +13,7 @@ namespace Content.Shared.Vampire;
 //Use power events
 public sealed partial class VampireToggleFangsEvent : VampireSelfPowerEvent { }
 public sealed partial class VampireOpenMutationsMenu : InstantActionEvent { }
+public sealed partial class VampireUnholyStrengthEvent : VampireSelfPowerEvent { }
 public sealed partial class VampireScreechEvent : VampireSelfPowerEvent { }
 public sealed partial class VampirePolymorphEvent : VampireSelfPowerEvent { }
 public sealed partial class VampireBloodStealEvent : VampireSelfPowerEvent { }

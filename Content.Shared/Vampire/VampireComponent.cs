@@ -7,7 +7,7 @@ using Content.Shared.StatusIcon;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.StatusEffect;
 using Content.Shared.Store;
 using Content.Shared.Whitelist;

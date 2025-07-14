@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Bible.Components;
+using Content.Goobstation.Shared.Bible;
 using Content.Server.Body.Components;
 using Content.Server.Flash;
 using Content.Server.Flash.Components;
@@ -19,7 +19,7 @@ using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Flash;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
@@ -35,7 +35,6 @@ using Content.Shared.Stunnable;
 using Content.Shared.Vampire;
 using Content.Shared.Vampire.Components;
 using Content.Shared.Weapons.Melee;
-using FastAccessors;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
@@ -58,6 +57,7 @@ public sealed partial class VampireSystem
         SubscribeLocalEvent<VampireComponent, VampireOpenMutationsMenu>(OnVampireOpenMutationsMenu);
         SubscribeLocalEvent<VampireComponent, VampireToggleFangsEvent>(OnVampireToggleFangs);
         SubscribeLocalEvent<VampireComponent, VampireGlareEvent>(OnVampireGlare);
+        SubscribeLocalEvent<VampireComponent, VampireUnholyStrengthEvent>(OnVampireUnholyStrength);
         SubscribeLocalEvent<VampireComponent, VampireScreechEvent>(OnVampireScreech);
         SubscribeLocalEvent<VampireComponent, VampirePolymorphEvent>(OnVampirePolymorph);
         SubscribeLocalEvent<VampireComponent, VampireHypnotiseEvent>(OnVampireHypnotise);
@@ -172,13 +172,28 @@ public sealed partial class VampireSystem
 
         ev.Handled = true;
     }
+    
+     private void OnVampireUnholyStrength(EntityUid entity, VampireComponent component, VampireUnholyStrengthEvent ev)
+    {
+        if (!TryGetPowerDefinition(ev.DefinitionName, out var def))
+            return;
+
+        var vampire = new Entity<VampireComponent>(entity, component);
+
+        if (!IsAbilityUsable(vampire, def))
+            return;
+
+        UnnaturalStrength(vampire);
+
+        ev.Handled = true;
+    }
     private void OnVampireCloakOfDarkness(EntityUid entity, VampireComponent component, VampireCloakOfDarknessEvent ev)
     {
         if (!TryGetPowerDefinition(ev.DefinitionName, out var def))
             return;
 
         var vampire = new Entity<VampireComponent>(entity, component);
-        
+
         if (_vampire.GetBloodEssence(vampire) < FixedPoint2.New(330))
         {
             _popup.PopupEntity(Loc.GetString("vampire-cloak-disable"), vampire, vampire);
