@@ -42,30 +42,31 @@
 // SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2024 {Koks} <koks@blue-creature.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.CCVar; // Goobstation
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
+using Content.Shared.Friction;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
-using Robust.Shared.Configuration; // Goobstation
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using DroneConsoleComponent = Content.Server.Shuttles.DroneConsoleComponent;
@@ -76,20 +77,14 @@ namespace Content.Server.Physics.Controllers;
 
 public sealed class MoverController : SharedMoverController
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Goobstation
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 
-    private float _maxShuttleSpeed; // Goobstation
-
     public override void Initialize()
     {
         base.Initialize();
-
-        Subs.CVar(_cfg, GoobCVars.MaxShuttleSpeed, value => _maxShuttleSpeed = value, true); // Goobstation
-
         SubscribeLocalEvent<RelayInputMoverComponent, PlayerAttachedEvent>(OnRelayPlayerAttached);
         SubscribeLocalEvent<RelayInputMoverComponent, PlayerDetachedEvent>(OnRelayPlayerDetached);
         SubscribeLocalEvent<InputMoverComponent, PlayerAttachedEvent>(OnPlayerAttached);
@@ -123,48 +118,43 @@ public sealed class MoverController : SharedMoverController
         return true;
     }
 
+    private HashSet<EntityUid> _moverAdded = new();
+    private List<Entity<InputMoverComponent>> _movers = new();
+
+    private void InsertMover(Entity<InputMoverComponent> source)
+    {
+        if (TryComp(source, out MovementRelayTargetComponent? relay))
+        {
+            if (TryComp(relay.Source, out InputMoverComponent? relayMover))
+            {
+                InsertMover((relay.Source, relayMover));
+            }
+        }
+
+        // Already added
+        if (!_moverAdded.Add(source.Owner))
+            return;
+
+        _movers.Add(source);
+    }
+
     public override void UpdateBeforeSolve(bool prediction, float frameTime)
     {
         base.UpdateBeforeSolve(prediction, frameTime);
 
+        _moverAdded.Clear();
+        _movers.Clear();
         var inputQueryEnumerator = AllEntityQuery<InputMoverComponent>();
 
+        // Need to order mob movement so that movers don't run before their relays.
         while (inputQueryEnumerator.MoveNext(out var uid, out var mover))
         {
-            var physicsUid = uid;
+            InsertMover((uid, mover));
+        }
 
-            if (RelayQuery.HasComponent(uid))
-                continue;
-
-            if (!XformQuery.TryGetComponent(uid, out var xform))
-            {
-                continue;
-            }
-
-            PhysicsComponent? body;
-            var xformMover = xform;
-
-            if (mover.ToParent && RelayQuery.HasComponent(xform.ParentUid))
-            {
-                if (!PhysicsQuery.TryGetComponent(xform.ParentUid, out body) ||
-                    !XformQuery.TryGetComponent(xform.ParentUid, out xformMover))
-                {
-                    continue;
-                }
-
-                physicsUid = xform.ParentUid;
-            }
-            else if (!PhysicsQuery.TryGetComponent(uid, out body))
-            {
-                continue;
-            }
-
-            HandleMobMovement(uid,
-                mover,
-                physicsUid,
-                body,
-                xformMover,
-                frameTime);
+        foreach (var mover in _movers)
+        {
+            HandleMobMovement(mover, frameTime);
         }
 
         HandleShuttleMovement(frameTime);
@@ -317,7 +307,7 @@ public sealed class MoverController : SharedMoverController
         var horizComp = vel.X != 0 ? MathF.Pow(Vector2.Dot(vel, new (shuttle.LinearThrust[horizIndex] / shuttle.LinearThrust[horizIndex], 0f)), 2) : 0;
         var vertComp = vel.Y != 0 ? MathF.Pow(Vector2.Dot(vel, new (0f, shuttle.LinearThrust[vertIndex] / shuttle.LinearThrust[vertIndex])), 2) : 0;
 
-        return _maxShuttleSpeed * vel * MathF.ReciprocalSqrtEstimate(horizComp + vertComp); // Goobstation - now uses cvar
+        return shuttle.BaseMaxLinearVelocity * vel * MathF.ReciprocalSqrtEstimate(horizComp + vertComp);
     }
 
     private void HandleShuttleMovement(float frameTime)

@@ -26,7 +26,7 @@ public sealed partial class BanManager
     /// <summary>
     /// Send to webhook a server ban message.
     /// </summary>
-    private async void SendServerBanWebhook(ServerBanDef ban, string player, string admin, uint? minutes)
+    private async void SendServerBanWebhook(ServerBanDef ban, string player, string admin, uint? minutes, int? id)
     {
         try
         {
@@ -35,14 +35,11 @@ public sealed partial class BanManager
 
             var hook = _webhook.Value.ToIdentifier();
 
-            var id = ban.Id?.ToString() ?? "?";
             var rId = ban.RoundId?.ToString() ?? "?";
-
-
 
             var footer = Loc.GetString("ban-manager-notify-discord-footer",
                 ("round", rId),
-                ("id", id)); // Todo: fallback
+                ("id", id?.ToString() ?? "?")); // Todo: fallback
 
             var message = "...";
 
@@ -74,7 +71,7 @@ public sealed partial class BanManager
     /// <summary>
     /// Send to webhook a role ban message.
     /// </summary>
-    private async void SendRoleBanWebhook(ServerRoleBanDef ban, string player, string admin, uint? minutes)
+    private async void SendRoleBanWebhook(ServerRoleBanDef ban, string player, string admin, uint? minutes, int? id)
     { //roleban is SHIT, it send a message to every role
         try
         {
@@ -83,12 +80,11 @@ public sealed partial class BanManager
 
             var hook = _webhook.Value.ToIdentifier();
 
-            var id = ban.Id?.ToString() ?? "?";
             var rId = ban.RoundId?.ToString() ?? "?";
 
             var footer = Loc.GetString("ban-manager-notify-discord-footer",
                 ("round", rId),
-                ("id", id));
+                ("id", id?.ToString() ?? "?"));
 
             var message = "...";
 
@@ -127,11 +123,11 @@ public sealed partial class BanManager
         var minutes = time ?? 0;
 
         if (minutes < 60)
-            return Loc.GetString("ban-manager-notify-discord-format-minutes", ("minutes", minutes));
-        
+            return Loc.GetString("ban-manager-notify-discord-formart-minutes", ("minutes", minutes));
+
         if (minutes < 1440)
-            return Loc.GetString("ban-manager-notify-discord-format-hours", ("hours", minutes / 60));
-        
-        return Loc.GetString("ban-manager-notify-discord-format-days", ("days", minutes / 1440));
+            return Loc.GetString("ban-manager-notify-discord-formart-hours", ("hours", minutes / 60));
+
+        return Loc.GetString("ban-manager-notify-discord-formart-days", ("days", minutes / 1440));
     }
 }

@@ -3,6 +3,9 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,6 +22,7 @@ public sealed class AnomalySystem : SharedAnomalySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly FloatingVisualizerSystem _floating = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -57,12 +61,12 @@ public sealed class AnomalySystem : SharedAnomalySystem
         if (HasComp<AnomalySupercriticalComponent>(uid))
             pulsing = true;
 
-        if (!sprite.LayerMapTryGet(AnomalyVisualLayers.Base, out var layer) ||
-            !sprite.LayerMapTryGet(AnomalyVisualLayers.Animated, out var animatedLayer))
+        if (!_sprite.LayerMapTryGet((uid, sprite), AnomalyVisualLayers.Base, out var layer, false) ||
+            !_sprite.LayerMapTryGet((uid, sprite), AnomalyVisualLayers.Animated, out var animatedLayer, false))
             return;
 
-        sprite.LayerSetVisible(layer, !pulsing);
-        sprite.LayerSetVisible(animatedLayer, pulsing);
+        _sprite.LayerSetVisible((uid, sprite), layer, !pulsing);
+        _sprite.LayerSetVisible((uid, sprite), animatedLayer, pulsing);
     }
 
     public override void Update(float frameTime)
@@ -71,16 +75,16 @@ public sealed class AnomalySystem : SharedAnomalySystem
 
         var query = EntityQueryEnumerator<AnomalySupercriticalComponent, SpriteComponent>();
 
-        while (query.MoveNext(out var super, out var sprite))
+        while (query.MoveNext(out var uid, out var super, out var sprite))
         {
-            var completion = 1f - (float) ((super.EndTime - _timing.CurTime) / super.SupercriticalDuration);
+            var completion = 1f - (float)((super.EndTime - _timing.CurTime) / super.SupercriticalDuration);
             var scale = completion * (super.MaxScaleAmount - 1f) + 1f;
-            sprite.Scale = new Vector2(scale, scale);
+            _sprite.SetScale((uid, sprite), new Vector2(scale, scale));
 
-            var transparency = (byte) (65 * (1f - completion) + 190);
+            var transparency = (byte)(65 * (1f - completion) + 190);
             if (transparency < sprite.Color.AByte)
             {
-                sprite.Color = sprite.Color.WithAlpha(transparency);
+                _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(transparency));
             }
         }
     }
@@ -90,7 +94,7 @@ public sealed class AnomalySystem : SharedAnomalySystem
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
-        sprite.Scale = Vector2.One;
-        sprite.Color = sprite.Color.WithAlpha(1f);
+        _sprite.SetScale((ent.Owner, sprite), Vector2.One);
+        _sprite.SetColor((ent.Owner, sprite), sprite.Color.WithAlpha(1f));
     }
 }

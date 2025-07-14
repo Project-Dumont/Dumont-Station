@@ -13,10 +13,11 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dora <27211909+catdotjs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -31,10 +32,14 @@ namespace Content.Client.Chemistry.UI
     /// Initializes a <see cref="ChemMasterWindow"/> and updates it when new server messages are received.
     /// </summary>
     [UsedImplicitly]
-    public sealed class ChemMasterBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
+    public sealed class ChemMasterBoundUserInterface : BoundUserInterface
     {
         [ViewVariables]
         private ChemMasterWindow? _window;
+
+        public ChemMasterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+        {
+        }
 
         /// <summary>
         /// Called each time a chem master UI instance is opened. Generates the window and fills it with
@@ -51,13 +56,11 @@ namespace Content.Client.Chemistry.UI
             // Setup static button actions.
             _window.InputEjectButton.OnPressed += _ => SendMessage(
                 new ItemSlotButtonPressedEvent(SharedChemMaster.InputSlotName));
+            _window.OutputEjectButton.OnPressed += _ => SendMessage(
+                new ItemSlotButtonPressedEvent(SharedChemMaster.OutputSlotName));
             _window.BufferTransferButton.OnPressed += _ => SendMessage(
                 new ChemMasterSetModeMessage(ChemMasterMode.Transfer));
             _window.BufferDiscardButton.OnPressed += _ => SendMessage(
-                new ChemMasterSetModeMessage(ChemMasterMode.Discard));
-            _window.PillBufferTransferButton.OnPressed += _ => SendMessage(
-                new ChemMasterSetModeMessage(ChemMasterMode.Transfer));
-            _window.PillBufferDiscardButton.OnPressed += _ => SendMessage(
                 new ChemMasterSetModeMessage(ChemMasterMode.Discard));
             _window.CreatePillButton.OnPressed += _ => SendMessage(
                 new ChemMasterCreatePillsMessage(
@@ -65,6 +68,8 @@ namespace Content.Client.Chemistry.UI
             _window.CreateBottleButton.OnPressed += _ => SendMessage(
                 new ChemMasterOutputToBottleMessage(
                     (uint) _window.BottleDosage.Value, _window.LabelLine));
+            _window.BufferSortButton.OnPressed += _ => SendMessage(
+                    new ChemMasterSortingTypeCycleMessage());
 
             for (uint i = 0; i < _window.PillTypeButtons.Length; i++)
             {
@@ -72,10 +77,7 @@ namespace Content.Client.Chemistry.UI
                 _window.PillTypeButtons[i].OnPressed += _ => SendMessage(new ChemMasterSetPillTypeMessage(pillType));
             }
 
-            _window.OnReagentButtonPressed += (_, button, amount, isOutput) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, amount, button.IsBuffer, isOutput));
-            _window.OnSortMethodChanged += sortMethod => SendMessage(new ChemMasterSortMethodUpdated(sortMethod));
-            _window.OnTransferAmountChanged += amount => SendMessage(new ChemMasterTransferringAmountUpdated(amount));
-            _window.OnUpdateAmounts += amounts => SendMessage(new ChemMasterAmountsUpdated(amounts));
+            _window.OnReagentButtonPressed += (args, button) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, button.Amount, button.IsBuffer));
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Content.Client.Chemistry.UI
             base.UpdateState(state);
 
             var castState = (ChemMasterBoundUserInterfaceState) state;
+
             _window?.UpdateState(castState); // Update window state
         }
     }

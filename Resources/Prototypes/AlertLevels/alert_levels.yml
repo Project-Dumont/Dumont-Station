@@ -86,6 +86,7 @@
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -183,7 +184,10 @@
     martial: # Gabystation - Lei marcial
       #announcement: alert-level-martial-announcement
       selectable: false
-      sound: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
+      sound:
+        path: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
+        params:
+          volume: 7      # positive raises loudness; verify it does not clip
       disableSelection: true
       color: Crimson
       emergencyLightColor: Crimson

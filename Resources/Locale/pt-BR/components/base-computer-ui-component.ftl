@@ -1,1 +1,1 @@
-base-computer-ui-component-not-powered = {CAPITALIZE(O($machine))} não tem energia
+base-computer-ui-component-not-powered = {CAPITALIZE(ARTIGO-O($machine))} não tem energia

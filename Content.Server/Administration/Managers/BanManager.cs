@@ -8,8 +8,13 @@
 // SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
 // SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -37,6 +42,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Managers;
 
@@ -209,8 +215,14 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
-        var user = targetUsername ?? "?"; // Gabystation - ban webhook
-        SendServerBanWebhook(banDef, user, adminName, minutes); // Gabystation - ban webhook
+
+        // Gabystation - ban webhook start
+        //var user = targetUsername ?? "?";
+        if (targetUsername is not null)
+        {
+            var id = await _db.GetServerBanAsync(null, target, null, null); // We only need to get with the username
+            SendServerBanWebhook(banDef, targetUsername, adminName, minutes, id?.Id);
+        } // Gabystation - ban webhook end
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
     }
@@ -299,8 +311,15 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var length = expires == null ? Loc.GetString("cmd-roleban-inf") : Loc.GetString("cmd-roleban-until", ("expires", expires));
         _chat.SendAdminAlert(Loc.GetString("cmd-roleban-success", ("target", targetUsername ?? "null"), ("role", role), ("reason", reason), ("length", length)));
-        var user = targetUsername ?? "?"; // Gabystation - ban webhook
-        SendRoleBanWebhook(banDef, user, adminName, minutes);
+
+        // Gabystation - ban webhook start
+        //var user = targetUsername ?? "?";
+        if (targetUsername is not null)
+        {
+            var ids = await _db.GetServerRoleBansAsync(null, target, null, null);
+            ids.TryGetValue(ids.Count, out var id);
+            SendRoleBanWebhook(banDef, targetUsername, adminName, minutes, id.Id);
+        } // Gabystation - ban webhook end
 
         if (target != null && _playerManager.TryGetSessionById(target.Value, out var session))
         {

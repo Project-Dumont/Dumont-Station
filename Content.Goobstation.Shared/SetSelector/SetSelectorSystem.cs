@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -14,6 +18,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.SetSelector;
 
+/// <summary>
+/// <see cref="SetSelectorComponent"/>
+/// this system links the interface to the logic, and will spawn sets selected by the player in the interface
+/// </summary>
 public sealed class SetSelectorSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -42,6 +50,7 @@ public sealed class SetSelectorSystem : EntitySystem
             return;
         }
 
+        // Randomize sets available for selection
         var sets = selector.Comp.PossibleSets.ToArray();
         new System.Random().Shuffle(sets);
         selector.Comp.AvailableSets = sets.Take(selector.Comp.SetsToSelect).ToList();
@@ -62,7 +71,7 @@ public sealed class SetSelectorSystem : EntitySystem
         var spawnedStorageContainer = selector.Comp.SpawnedStorageContainer;
         var openSpawnedStorage = selector.Comp.OpenSpawnedStorage;
         var coordinates = _transform.GetMapCoordinates(selector.Owner);
-        _container.TryGetContainingContainer(selector, out var target);
+        _container.TryGetContainingContainer(selector.Owner, out var target);
         List<string> ignoredContainers = new() { "implant", "pocket1", "pocket2", "pocket3", "pocket4" };
 
         List<EntityUid> spawnedEntities = [];
@@ -83,9 +92,12 @@ public sealed class SetSelectorSystem : EntitySystem
             }
         }
 
+        // Since we immediately delete the selector, the sound played on it would get deleted too,
+        // so we play the sound on coordinates of the selector instead.
         _audio.PlayPvs(selector.Comp.ApproveSound, Transform(selector.Owner).Coordinates);
         Del(selector);
 
+        // We do this after deleting the selector so the spawned storage does not collide with it
         if (storagePrototype != null && spawnedStorageContainer != null)
         {
             spawnedStorage = Spawn(storagePrototype, coordinates);
@@ -117,6 +129,7 @@ public sealed class SetSelectorSystem : EntitySystem
 
     private void OnChangeSet(Entity<SetSelectorComponent> selector, ref SetSelectorChangeSetMessage args)
     {
+        // Switch selecting set
         if (!selector.Comp.SelectedSets.Remove(args.SetNumber))
              selector.Comp.SelectedSets.Add(args.SetNumber);
 
