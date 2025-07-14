@@ -8,10 +8,14 @@ using Content.Server.Atmos.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
+using Content.Server.Body.Systems;
+using Content.Server.Body.Components;
 using Content.Server.Roles;
 using Content.Server.Vampire;
 using Content.Shared.Alert;
+using Content.Goobstation.Shared.Bible;
 using Content.Shared.Vampire.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Roles;
@@ -33,6 +37,7 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedRoleSystem _role = default!;
+    [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly ObjectivesSystem _objective = default!;
     [Dependency] private readonly VampireSystem _vampire = default!;
@@ -61,6 +66,8 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     private void OnSelectAntag(EntityUid mindId, VampireRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
     {
         var ent = args.EntityUid;
+        if (HasComp<BibleUserComponent>(ent) || !TryComp<BodyComponent>(ent, out var body) || _body.TryGetBodyOrganEntityComps<StomachComponent>((ent, body), out var stomachs))
+            return;
         _antag.SendBriefing(ent, MakeBriefing(ent), Color.Yellow, BriefingSound);
         MakeVampire(ent, comp);
     }
