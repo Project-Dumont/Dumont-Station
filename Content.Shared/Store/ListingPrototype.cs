@@ -26,7 +26,6 @@
 using System.Linq;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Store.Components;
-using Content.Shared.StoreDiscount.Components;
 using Content.Shared.Heretic.Prototypes; // Goob
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
