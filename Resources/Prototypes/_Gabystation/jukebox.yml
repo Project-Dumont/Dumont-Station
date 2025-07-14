@@ -221,6 +221,12 @@
     path: /Audio/_Gabystation/Jukebox/a_world_i_built_for_you.ogg
 
 - type: jukebox
+  id: AltarsOfApostasy
+  name: Heaven Pierce Her - Altars of Apostasy
+  path:
+    path: /Audio/_Gabystation/Jukebox/altars_of_apostasy.ogg
+
+- type: jukebox
   id: AlthoughTheSky
   name: Dorkus64 - Although The Sky
   path:
@@ -233,10 +239,28 @@
     path: /Audio/_Gabystation/Jukebox/anemoia.ogg
 
 - type: jukebox
+  id: Asgore
+  name: Toby Fox - Asgore
+  path:
+    path: /Audio/_Gabystation/Jukebox/asgore.ogg
+
+- type: jukebox
+  id: AsgoreRunsOver
+  name: Bub8les - Asgore runs over Dess
+  path:
+    path: /Audio/_Gabystation/Jukebox/asgore_runs_over.ogg
+
+- type: jukebox
   id: BabyBlue
   name: Badfinger - Baby Blue
   path:
     path: /Audio/_Gabystation/Jukebox/baby_blue.ogg
+
+- type: jukebox
+  id: Balatro
+  name: LouisF - Balatro Main Theme
+  path:
+    path: /Audio/_Gabystation/Jukebox/balatro.ogg
 
 - type: jukebox
   id: BarDaEsquina
@@ -275,6 +299,12 @@
     path: /Audio/_Gabystation/Jukebox/cant_get_over.ogg
 
 - type: jukebox
+  id: CastleVein
+  name: Heaven Pierce Her - Castle Vein
+  path:
+    path: /Audio/_Gabystation/Jukebox/castle_vein.ogg
+
+- type: jukebox
   id: ClairDeLune
   name: Johann Debussy - Clair de Lune
   path:
@@ -293,16 +323,33 @@
     path: /Audio/_Gabystation/Jukebox/fly.ogg
 
 - type: jukebox
+  id: Glory
+  name: Heaven Pierce Her - GLORY
+  path:
+    path: /Audio/_Gabystation/Jukebox/glory.ogg
+
+- type: jukebox
   id: HearTheSirenSongCallOfDeath
   name: Heaven Pierce Her - Hear! The Siren Song Call Of Death
   path:
     path: /Audio/_Gabystation/Jukebox/hear_the_siren_song_call_of_death.ogg
+- type: jukebox
+  id: HopesAndDreams
+  name: Toby Fox - Hopes And Dreams
+  path:
+    path: /Audio/_Gabystation/Jukebox/hopes_and_dreams.ogg
 
 - type: jukebox
   id: Invisible
   name: Duran Duran - Invisible
   path:
     path: /Audio/_Gabystation/Jukebox/invisible.ogg
+
+- type: jukebox
+  id: ItsRainingSomewhereElse
+  name: Toby Fox - It's raining somewhere else
+  path:
+    path: /Audio/_Gabystation/Jukebox/its_raining_somewhere_else.ogg
 
 - type: jukebox
   id: ItsTvTime
@@ -321,6 +368,12 @@
   name: Modjo - Lady
   path:
     path: /Audio/_Gabystation/Jukebox/lady.ogg
+
+- type: jukebox
+  id: LastGoodbye
+  name: Toby Fox - Last Goodbye
+  path:
+    path: /Audio/_Gabystation/Jukebox/last_goodbye.ogg
 
 - type: jukebox
   id: LoversRock
@@ -371,6 +424,12 @@
     path: /Audio/_Gabystation/Jukebox/taking_whats_not_yours.ogg
 
 - type: jukebox
+  id: TheFireIsGone
+  name: Heaven Pierce Her - The Fire is Gone
+  path:
+    path: /Audio/_Gabystation/Jukebox/the_fire_is_gone.ogg
+
+- type: jukebox
   id: TheManWhoSoldTheWorld
   name: Midge Ure - The Man Who Sold The World
   path:
@@ -393,6 +452,12 @@
   name: Terceira Dimensão - Vou Pra Santa Catarina
   path:
     path: /Audio/_Gabystation/Jukebox/vou_pra_santa_catarina.ogg
+
+- type: jukebox
+  id: WarWithoutReason
+  name: Heaven Pierce Her - War Without Reason
+  path:
+    path: /Audio/_Gabystation/Jukebox/war_without_reason.ogg
 
 - type: jukebox
   id: WelcomeToTheGreenRoom
