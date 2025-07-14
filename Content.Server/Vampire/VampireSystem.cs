@@ -38,6 +38,7 @@ using Content.Shared.StatusEffect;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Vampire;
+using Content.Shared.Charges.Systems;
 using Content.Shared.Vampire.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -84,6 +85,7 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly MetabolizerSystem _metabolism = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedVampireSystem _vampire = default!;
+    [Dependency] private readonly SharedChargesSystem _sharedChargesSystem = default!;
     
     private Dictionary<string, EntityUid> _actionEntities = new();
 
@@ -225,7 +227,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (mutationsAction == null)
             return;
 
-        _action.SetCharges(mutationsAction, chargeDisplay);
+        _sharedChargesSystem.SetCharges(mutationsAction, chargeDisplay);
     }
     
     private void OnVampireBloodChangedEvent(EntityUid uid, VampireComponent component, VampireBloodChangedEvent args)
