@@ -175,6 +175,7 @@ public sealed partial class VampireSystem : EntitySystem
         if (HasComp<VampireFangsExtendedComponent>(uid) && args.IsInDetailsRange && !_food.IsMouthBlocked(uid))
             args.AddMarkup($"{Loc.GetString("vampire-fangs-extended-examine")}{Environment.NewLine}");
     }
+
     private bool AddBloodEssence(Entity<VampireComponent> vampire, FixedPoint2 quantity)
     {
         if (quantity < 0)
@@ -190,6 +191,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         return true;
     }
+
     private bool SubtractBloodEssence(Entity<VampireComponent> vampire, FixedPoint2 quantity)
     {
         if (quantity < 0)
@@ -207,6 +209,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         return true;
     }
+
     /// <summary>
     /// Use the charges display on SummonHeirloom to show the remaining blood essence
     /// </summary>
@@ -422,6 +425,7 @@ public sealed partial class VampireSystem : EntitySystem
         _damageableSystem.TryChangeDamage(uid, damageSpec, true, false, damage, uid);
         _popup.PopupEntity(Loc.GetString("vampire-startlight-burning"), uid, uid, PopupType.LargeCaution);
     }
+
     private bool IsInSpace(EntityUid vampireUid)
     {
         var vampireTransform = Transform(vampireUid);
@@ -456,6 +460,7 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         ChangeMutation(uid, args.SelectedId, component);
     }
+
     private void ChangeMutation(EntityUid uid, VampireMutationsType newMutation, VampireComponent component)
     {
         var vampire = new Entity<VampireComponent>(uid, component);

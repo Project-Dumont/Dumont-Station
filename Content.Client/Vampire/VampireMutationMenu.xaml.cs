@@ -37,14 +37,14 @@ public sealed partial class VampireMutationMenu : DefaultWindow
         _sprite = _entityManager.System<SpriteSystem>();
         _resourceCache = IoCManager.Resolve<IResourceCache>();
     }
-    
+
     public void UpdateState(HashSet<VampireMutationsType> mutationList, VampireMutationsType selectedMutation)
     {
         _possibleMutations = mutationList;
         _selectedId = selectedMutation;
         UpdateGrid();
     }
-    
+
     private void UpdateGrid()
     {
         ClearGrid();
@@ -55,7 +55,7 @@ public sealed partial class VampireMutationMenu : DefaultWindow
         {
             //if (!_prototypeManager.TryIndex("NormalBlobTile", out EntityPrototype? proto))
             //    continue;
-        
+
             string texturePath = Mutation switch
             {
                 VampireMutationsType.None => "/Textures/Interface/Actions/actions_vampire.rsi/deathsembrace.png",
@@ -72,7 +72,7 @@ public sealed partial class VampireMutationMenu : DefaultWindow
                 MinSize = new Vector2(64, 64),
                 HorizontalExpand = true,
                 Group = group,
-                StyleClasses = {StyleBase.ButtonSquare},
+                StyleClasses = { StyleBase.ButtonSquare },
                 ToggleMode = true,
                 Pressed = _selectedId == Mutation,
                 ToolTip = Loc.GetString($"vampire-mutation-{Mutation.ToString().ToLower()}-info"),
@@ -89,7 +89,7 @@ public sealed partial class VampireMutationMenu : DefaultWindow
             });
         }
     }
-    
+
     private void ClearGrid()
     {
         Grid.RemoveAllChildren();

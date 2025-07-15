@@ -29,12 +29,12 @@ public sealed partial class VampireComponent : Component
     public static readonly string ScreamEmoteProto = "Scream";
     [ValidatePrototypeId<CurrencyPrototype>]
     public static readonly string CurrencyProto = "BloodEssence";
-    
+
     [ViewVariables(VVAccess.ReadOnly), DataField("defaultMutation")]
     public VampireMutationsType DefaultMutation = VampireMutationsType.None;
     [ViewVariables(VVAccess.ReadOnly), DataField("currentMutation")]
     public VampireMutationsType CurrentMutation = VampireMutationsType.None;
-    
+
     public readonly HashSet<VampireMutationsType> VampireMutations = new()
     {
         VampireMutationsType.None,
@@ -65,16 +65,16 @@ public sealed partial class VampireComponent : Component
 
     [ValidatePrototypeId<EntityPrototype>]
     public static readonly string MutationsActionPrototype = "ActionVampireOpenMutationsMenu";
-    
+
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? MutationsAction;
-    
+
     public readonly List<ProtoId<EntityPrototype>> BaseVampireActions = new()
     {
         "ActionVampireToggleFangs",
         "ActionVampireHypnotise"
     };
-    
+
     [ValidatePrototypeId<VampirePowerProtype>]
     public static readonly string DrinkBloodPrototype = "DrinkBlood";
 

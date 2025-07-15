@@ -8,6 +8,7 @@ using Content.Shared.Vampire.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 namespace Content.Client.Vampire;
+
 [UsedImplicitly]
 public sealed class VampireMutationBoundUserInterface : BoundUserInterface
 {

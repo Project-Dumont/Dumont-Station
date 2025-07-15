@@ -15,13 +15,13 @@ public sealed class SharedVampireSystem : EntitySystem
     {
         if (!TryComp<VampireComponent>(vampire, out var comp))
             return 0;
-        
+
         if (comp.Balance != null && comp.Balance.TryGetValue(VampireComponent.CurrencyProto, out var val))
             return val;
 
         return 0;
     }
-    
+
     public void SetAlertBloodAmount(VampireAlertComponent component, int amount)
     {
         component.BloodAmount = amount;
