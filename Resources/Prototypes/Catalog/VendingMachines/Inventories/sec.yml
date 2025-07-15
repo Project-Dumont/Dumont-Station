@@ -72,6 +72,7 @@
     CartridgeEpinephrine: 3
     CartridgeSaline: 3
     CartridgeBicaridine: 3
+    CartridgeToxin: 3 #Gabystation
     CartridgeDermaline: 3 # Goobstation - end
   # security officers need to follow a diet regimen!
   contrabandInventory:

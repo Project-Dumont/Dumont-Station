@@ -33,6 +33,7 @@
   - CartridgeDermaline
   - CartridgeAtropine
   - CartridgeSaline
+  - CartridgeToxin #Gabystation
   - SecHypo
 
 - type: latheRecipePack

@@ -24,6 +24,7 @@
   - CartridgeBicaridine
   - CartridgeDermaline
   - CartridgeSaline
+  - CartridgeToxin #Gabystation
   - ParamedHypo
 
 - type: latheRecipePack

@@ -117,6 +117,7 @@
     CartridgeBicaridine: 6
     CartridgeDermaline: 6
     CartridgeAtropine: 6
+    CartridgeToxin: 6 #Gabystation
     VehicleWheelchairFolded: 3
     FoodSnackLollypopWrappedMystery: 10
     FoodSnackLollypopWrappedTricordrazine: 8

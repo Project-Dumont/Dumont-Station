@@ -127,6 +127,14 @@
     Glass: 1200
     Gold: 500
 
+- type: latheRecipe
+  id: CartridgeToxin
+  result: CartridgeToxin
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
 # Guns
 - type: latheRecipe
   parent: BaseWeaponRecipeLong

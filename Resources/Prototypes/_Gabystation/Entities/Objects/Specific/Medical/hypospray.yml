@@ -1,0 +1,20 @@
+- type: entity
+  name: toxin autoinjector cartridge
+  parent: [ BaseSecurityMedicalContraband , BaseAutoinjectorCartridge ]
+  description: Contains 7u of dylovene and 3u of stellibinin used in a cartridge autoinjector.
+  id: CartridgeToxin
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: filling
+      color: "#009739"
+  - type: SolutionCartridge
+    targetSolution: hypospray
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Dylovene
+        Quantity: 7
+      - ReagentId: Stellibinin
+        Quantity: 3 
