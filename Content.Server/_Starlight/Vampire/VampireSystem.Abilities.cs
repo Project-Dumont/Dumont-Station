@@ -1,7 +1,9 @@
 // SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Rinary <rinary.super@gmail.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -234,7 +236,7 @@ public sealed partial class VampireSystem
     #endregion
 
 
-    private bool TryGetPowerDefinition(string name, [NotNullWhen(true)] out VampirePowerProtype? definition)
+    private bool TryGetPowerDefinition(string name, [NotNullWhen(true)] out VampirePowerPrototype? definition)
         => _powerCache.TryGetValue(name, out definition);
 
     private bool IsAbilityUsable(Entity<VampireComponent> vampire, VampirePowerProtype def)
@@ -442,11 +444,11 @@ public sealed partial class VampireSystem
     }
     private bool CloakOfDarkness(Entity<VampireComponent> vampire, float upkeep, float passiveVisibilityRate, float movementVisibilityRate)
     {
-        if (HasComp<VampireSealthComponent>(vampire))
+        if (HasComp<VampireStealthComponent>(vampire))
         {
             RemComp<StealthOnMoveComponent>(vampire);
             RemComp<StealthComponent>(vampire);
-            RemComp<VampireSealthComponent>(vampire);
+            RemComp<VampireStealthComponent>(vampire);
             _popup.PopupEntity(Loc.GetString("vampire-cloak-disable"), vampire, vampire);
             return false;
         }
@@ -456,7 +458,7 @@ public sealed partial class VampireSystem
             var stealthMovement = EnsureComp<StealthOnMoveComponent>(vampire);
             stealthMovement.PassiveVisibilityRate = passiveVisibilityRate;
             stealthMovement.MovementVisibilityRate = movementVisibilityRate;
-            var vampireStealth = EnsureComp<VampireSealthComponent>(vampire);
+            var vampireStealth = EnsureComp<VampireStealthComponent>(vampire);
             vampireStealth.Upkeep = upkeep;
             _popup.PopupEntity(Loc.GetString("vampire-cloak-enable"), vampire, vampire);
             return true;
