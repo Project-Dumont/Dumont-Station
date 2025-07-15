@@ -175,8 +175,8 @@ public sealed partial class VampireSystem
 
         ev.Handled = true;
     }
-    
-     private void OnVampireUnholyStrength(EntityUid entity, VampireComponent component, VampireUnholyStrengthEvent ev)
+
+    private void OnVampireUnholyStrength(EntityUid entity, VampireComponent component, VampireUnholyStrengthEvent ev)
     {
         if (!TryGetPowerDefinition(ev.DefinitionName, out var def))
             return;
@@ -274,6 +274,7 @@ public sealed partial class VampireSystem
         if (IsNearPrayable(vampire))
         {
             //Warning about holy power
+            _popup.PopupEntity(Loc.GetString("vampire-holy-power-nearby"), vampire, vampire, PopupType.MediumCaution);
             return false;
         }
 
@@ -286,7 +287,7 @@ public sealed partial class VampireSystem
     {
         var damage = new DamageSpecifier();
         damage.DamageDict.Add("Slash", 15);
-        
+
         _popup.PopupEntity(Loc.GetString("vampire-unnaturalstrength", ("user", vampire)), vampire, vampire, Shared.Popups.PopupType.SmallCaution);
 
         var meleeComp = EnsureComp<MeleeWeaponComponent>(vampire);
@@ -297,9 +298,9 @@ public sealed partial class VampireSystem
         var pryComp = EnsureComp<PryingComponent>(vampire);
         pryComp.Force = true;
         pryComp.PryPowered = true;
-        
+
         _popup.PopupEntity(Loc.GetString("vampire-supernaturalstrength", ("user", vampire)), vampire, vampire, Shared.Popups.PopupType.SmallCaution);
-        
+
         var damage = new DamageSpecifier();
         damage.DamageDict.Add("Slash", 15);
 
@@ -355,7 +356,7 @@ public sealed partial class VampireSystem
     {
         if (string.IsNullOrEmpty(polymorphTarget))
             return;
-        
+
         var prototypeId = polymorphTarget switch
         {
             "MobMouse" => "VampireMouse",
@@ -378,7 +379,7 @@ public sealed partial class VampireSystem
         _polymorph.PolymorphEntity(vampire, prototype);
     }
     private void BloodSteal(Entity<VampireComponent> vampire)
-    { 
+    {
         var transform = Transform(vampire.Owner);
 
         var targets = new HashSet<(EntityUid, FixedPoint2)>();
@@ -403,19 +404,19 @@ public sealed partial class VampireSystem
             var victimBloodRemaining = bloodstream.BloodSolution.Value.Comp.Solution.Volume;
             if (victimBloodRemaining <= 0)
                 continue;
-            
+
             var volumeToConsume = (FixedPoint2) Math.Min((float) victimBloodRemaining.Value, 20);
 
             targets.Add((entity, volumeToConsume));
         }
-        
+
         if (targets.Count != 0)
         {
             foreach (var (entity, volumeToConsume) in targets)
             {
                 if (!TryComp<BloodstreamComponent>(entity, out var bloodstream) || bloodstream.BloodSolution == null)
                     continue;
-                
+
                 //Transfer 80% to the vampire
                 var bloodSolution = _solution.SplitSolution(bloodstream.BloodSolution.Value, volumeToConsume * 0.80);
                 //And spill 20% on the floor
@@ -645,7 +646,7 @@ public sealed partial class VampireSystem
         //Do a precheck
         if (!HasComp<VampireFangsExtendedComponent>(vampire))
             return false;
-        
+
         if (!HasComp<TransformComponent>(vampire))
             return false;
 
@@ -708,10 +709,9 @@ public sealed partial class VampireSystem
 
         var volumeToConsume = (FixedPoint2) Math.Min((float) victimBloodRemaining.Value, args.Volume);
         var volumeToDrain = (FixedPoint2) Math.Min((float) victimBloodRemaining.Value, args.Volume * 8);
-        
         if (_mind.TryGetMind(entity, out var mindId, out var mind))
             if (_mind.TryGetObjectiveComp<BloodDrainConditionComponent>(mindId, out var objective, mind))
-                    objective.BloodDranked = entity.Comp.TotalBloodDrank;
+                objective.BloodDranked = entity.Comp.TotalBloodDrank;
 
         //Slurp
         _audio.PlayPvs(entity.Comp.BloodDrainSound, entity.Owner, AudioParams.Default.WithVolume(-3f));
