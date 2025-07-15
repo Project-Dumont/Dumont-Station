@@ -3,7 +3,7 @@
   id: VampireMidround
   components:
   - type: StationEvent
-    earliestStart: 20
+    earliestStart: 30
     weight: 3
     minimumPlayers: 30
     startAnnouncement: station-event-communication-interception
