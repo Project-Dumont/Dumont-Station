@@ -1,4 +1,13 @@
-﻿- files: ["poeira.ogg"]
+﻿# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["poeira.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "poeira estelar by Totonho e os Cabra."
   source: "https://soundcloud.com/totonhoeoscabra/poeira-estelar"
@@ -162,7 +171,7 @@
   copyright: "A World I Built For You by Joel Tumelty. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/B0MTtxBV3Aw?si=OJZdDtVLP_yMSdvu"
- 
+
  - files: ["altars_of_apostasy.ogg"]
   copyright: "Altars Of Apostasy by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
