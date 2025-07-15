@@ -442,11 +442,11 @@ public sealed partial class VampireSystem
     }
     private bool CloakOfDarkness(Entity<VampireComponent> vampire, float upkeep, float passiveVisibilityRate, float movementVisibilityRate)
     {
-        if (HasComp<VampireSealthComponent>(vampire))
+        if (HasComp<VampireStealthComponent>(vampire))
         {
             RemComp<StealthOnMoveComponent>(vampire);
             RemComp<StealthComponent>(vampire);
-            RemComp<VampireSealthComponent>(vampire);
+            RemComp<VampireStealthComponent>(vampire);
             _popup.PopupEntity(Loc.GetString("vampire-cloak-disable"), vampire, vampire);
             return false;
         }
@@ -456,7 +456,7 @@ public sealed partial class VampireSystem
             var stealthMovement = EnsureComp<StealthOnMoveComponent>(vampire);
             stealthMovement.PassiveVisibilityRate = passiveVisibilityRate;
             stealthMovement.MovementVisibilityRate = movementVisibilityRate;
-            var vampireStealth = EnsureComp<VampireSealthComponent>(vampire);
+            var vampireStealth = EnsureComp<VampireStealthComponent>(vampire);
             vampireStealth.Upkeep = upkeep;
             _popup.PopupEntity(Loc.GetString("vampire-cloak-enable"), vampire, vampire);
             return true;
