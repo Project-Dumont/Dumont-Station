@@ -234,7 +234,7 @@ public sealed partial class VampireSystem
     #endregion
 
 
-    private bool TryGetPowerDefinition(string name, [NotNullWhen(true)] out VampirePowerProtype? definition)
+    private bool TryGetPowerDefinition(string name, [NotNullWhen(true)] out VampirePowerPrototype? definition)
         => _powerCache.TryGetValue(name, out definition);
 
     private bool IsAbilityUsable(Entity<VampireComponent> vampire, VampirePowerProtype def)
