@@ -49,6 +49,10 @@ namespace Content.Goobstation.Shared.Bible // Death to serverside components. Gl
         [DataField(required: true)]
         public DamageSpecifier DamageOnUntrainedUse = default!;
 
+        [DataField(required: true)]
+
+        public DamageSpecifier DamageOnUnholyUse = default!;
+
         /// <summary>
         /// Chance the bible will fail to heal someone with no helmet
         /// </summary>

@@ -45,6 +45,7 @@ using Content.Shared._Shitmed.Targeting;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Bible;
+using Content.Goobstation.Shared.Religion;
 using Content.Shared.Bible.Components;
 using Content.Shared.Damage;
 using Content.Shared.Ghost.Roles.Components;
@@ -181,7 +182,7 @@ namespace Content.Server.Bible
             //Damage unholy creatures
             if (HasComp<UnholyComponent>(args.Target))
             {
-                _damageableSystem.TryChangeDamage(args.Target.Value, component.DamageUnholy, true, origin: uid);
+                _damageableSystem.TryChangeDamage(args.Target.Value, component.DamageOnUnholyUse, true, origin: uid);
 
                 var othersMessage = Loc.GetString(component.LocPrefix + "-damage-unholy-others", ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
                 _popupSystem.PopupEntity(othersMessage, args.User, Filter.PvsExcept(args.User), true, PopupType.MediumCaution);
