@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Genetics;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DnaModifierConsoleComponent : Component
 {
     public const string ScannerPort = "MedicalScannerSender";
@@ -19,10 +19,10 @@ public sealed partial class DnaModifierConsoleComponent : Component
     public TimeSpan NextUpdate;
     public TimeSpan UpdateInterval = TimeSpan.FromSeconds(2);
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan LastInjectorTime;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan LastSubjectInjectTime;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]

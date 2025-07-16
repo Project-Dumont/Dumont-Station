@@ -92,7 +92,11 @@ namespace Content.Server.Genetics.System
         #region UI logic
         private void OnInit(EntityUid uid, DnaModifierConsoleComponent component, ComponentInit args)
         {
+            component.LastInjectorTime = _timing.CurTime + component.InjectorCooldown;
+            component.LastSubjectInjectTime = _timing.CurTime + component.SubjectInjectCooldown;
             _signalSystem.EnsureSourcePorts(uid, DnaModifierConsoleComponent.ScannerPort);
+
+            Dirty(uid, component);
         }
 
         public override void Update(float frameTime)
