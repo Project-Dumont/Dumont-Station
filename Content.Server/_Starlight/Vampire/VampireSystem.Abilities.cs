@@ -809,10 +809,11 @@ public sealed partial class VampireSystem
     /// Cache all power prototypes in a dictionary by keyed by ID
     /// </summary>
     /// <returns></returns>
-    private FrozenDictionary<string, VampirePowerProtype> BuildPowerCache()
+    private FrozenDictionary<string, VampirePowerPrototype> BuildPowerCache()
     {
-        var protos = _prototypeManager.EnumeratePrototypes<VampirePowerProtype>();
+        var protos = _prototypeManager.EnumeratePrototypes<VampirePowerPrototype>();
         return protos.ToFrozenDictionary(x => x.ID);
+    }
     }
 
     /// <summary>
