@@ -27,7 +27,7 @@ public sealed partial class VampireSystem
     {
         var target = _number.GetTarget(uid);
         if (target > 0)
-            args.Progress = MathF.Min(comp.BloodDrained / target, 1f);
+            args.Progress = MathF.Min(comp.BloodDranked / target, 1f);
         else
             args.Progress = 1f;
     }
