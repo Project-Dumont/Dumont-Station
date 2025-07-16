@@ -10,7 +10,6 @@
     issuer: objective-issuer-vampire
   - type: RoleRequirement
     roles:
-      mindRoles:
       - VampireRole
 
 - type: entity
