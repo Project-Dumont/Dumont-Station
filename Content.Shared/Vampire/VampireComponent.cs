@@ -110,7 +110,7 @@ public sealed partial class VampireComponent : Component
 /// </summary>
 [DataDefinition]
 [Prototype("vampirePower")]
-public sealed partial class VampirePowerProtype : IPrototype
+public sealed partial class VampirePowerPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]
