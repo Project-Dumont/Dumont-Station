@@ -83,7 +83,7 @@
   name: guide-entry-vampires
   text: "/ServerInfo/Guidebook/Antagonist/Vampires.xml"
 
-- type: guideEntry
-  id: Abductors
-  name: guide-entry-abductors
-  text: "/ServerInfo/Guidebook/Antagonist/Abductors.xml"
+# - type: guideEntry # Gaby - Correção ID duplicado
+#   id: Abductors
+#   name: guide-entry-abductors
+#   text: "/ServerInfo/Guidebook/Antagonist/Abductors.xml"
