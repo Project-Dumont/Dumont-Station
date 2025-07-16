@@ -50,8 +50,8 @@ namespace Content.Server.Vampire;
 
 public sealed partial class VampireSystem
 {
-    private FrozenDictionary<string, VampirePowerProtype> _powerCache = default!;
-    private FrozenDictionary<string, VampirePassiveProtype> _passiveCache = default!;
+    private FrozenDictionary<string, VampirePowerPrototype> _powerCache = default!;
+    private FrozenDictionary<string, VampirePassivePrototype> _passiveCache = default!;
 
     private void InitializePowers()
     {
