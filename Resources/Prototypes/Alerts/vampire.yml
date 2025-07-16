@@ -11,7 +11,7 @@
   alertViewEntity: AlertVampireBloodSpriteView
   name: alerts-vampire-blood-name
   description: alerts-vampire-blood-desc
-  
+
 - type: entity
   id: AlertVampireBloodSpriteView
   categories: [ HideSpawnMenu ]
@@ -34,7 +34,7 @@
   alertViewEntity: AlertVampireStellarWeaknessSpriteView
   name: alerts-vampire-stellar-weakness-name
   description: alerts-vampire-stellar-weakness-desc
-  
+
 - type: entity
   id: AlertVampireStellarWeaknessSpriteView
   categories: [ HideSpawnMenu ]

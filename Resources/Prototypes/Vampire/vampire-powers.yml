@@ -56,7 +56,7 @@
   upkeep: 1
 
 - type: vampirePassive
-  id: UnholyStrength 
+  id: UnholyStrength
   catalogEntry: VampireUnholyStrength # Must match the catalog id
   compsToAdd:
   - type: MeleeWeapon
@@ -67,7 +67,7 @@
     soundHit: /Audio/Weapons/slash.ogg
 
 - type: vampirePassive
-  id: SupernaturalStrength 
+  id: SupernaturalStrength
   catalogEntry: VampireSupernaturalStrength # Must match the catalog id
   compsToAdd:
   - type: MeleeWeapon
@@ -75,13 +75,13 @@
       types:
         Slash: 15
     animation: WeaponArcClaw
-    soundHit: /Audio/Weapons/slash.ogg 
+    soundHit: /Audio/Weapons/slash.ogg
   - type: Prying
     force: True
     pryPowered: True
 
 - type: vampirePassive
-  id: DeathsEmbrace 
+  id: DeathsEmbrace
   catalogEntry: VampireDeathsEmbrace # Must match the catalog id
   compsToAdd:
   - type: VampireDeathsEmbrace
