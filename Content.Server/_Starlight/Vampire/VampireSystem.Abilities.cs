@@ -820,9 +820,9 @@ public sealed partial class VampireSystem
     /// Cache all passive prototypes in a dictionary by keyed by listing id
     /// </summary>
     /// <returns></returns>
-    private FrozenDictionary<string, VampirePassiveProtype> BuildPassiveCache()
+    private FrozenDictionary<string, VampirePassivePrototype> BuildPassiveCache()
     {
-        var protos = _prototypeManager.EnumeratePrototypes<VampirePassiveProtype>();
+        var protos = _prototypeManager.EnumeratePrototypes<VampirePassivePrototype>();
         return protos.ToFrozenDictionary(x => x.CatalogEntry);
     }
 }

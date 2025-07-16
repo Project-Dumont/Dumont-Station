@@ -141,7 +141,7 @@ public sealed partial class VampirePowerPrototype : IPrototype
 
 [DataDefinition]
 [Prototype("vampirePassive")]
-public sealed partial class VampirePassiveProtype : IPrototype
+public sealed partial class VampirePassivePrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]
