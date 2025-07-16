@@ -205,7 +205,7 @@ public sealed partial class VampireDeathsEmbraceComponent : Component
     public DamageSpecifier CoffinHealing = default!;
 }
 [RegisterComponent]
-public sealed partial class VampireSealthComponent : Component
+public sealed partial class VampireStealthComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)]
     public float NextStealthTick = 0;

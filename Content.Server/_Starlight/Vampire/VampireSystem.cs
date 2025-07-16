@@ -112,7 +112,7 @@ public sealed partial class VampireSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var stealthQuery = EntityQueryEnumerator<VampireComponent, VampireSealthComponent>();
+        var stealthQuery = EntityQueryEnumerator<VampireComponent, VampireStealthComponent>();
         while (stealthQuery.MoveNext(out var uid, out var vampire, out var stealth))
         {
             if (vampire == null || stealth == null)
@@ -124,7 +124,7 @@ public sealed partial class VampireSystem : EntitySystem
                 {
                     RemCompDeferred<StealthOnMoveComponent>(uid);
                     RemCompDeferred<StealthComponent>(uid);
-                    RemCompDeferred<VampireSealthComponent>(uid);
+                    RemCompDeferred<VampireStealthComponent>(uid);
                     _popup.PopupEntity(Loc.GetString("vampire-cloak-disable"), uid, uid);
                     if (_vampire.GetBloodEssence(uid) < FixedPoint2.New(300))
                     {
@@ -241,13 +241,13 @@ public sealed partial class VampireSystem : EntitySystem
         EntityUid? newEntity = null;
         EntityUid entity = default;
         // Mutations
-        if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(50) && !_actionEntities.TryGetValue(VampireComponent.MutationsActionPrototype, out entity) && !HasComp<VampireSealthComponent>(uid))
+        if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(50) && !_actionEntities.TryGetValue(VampireComponent.MutationsActionPrototype, out entity) && !HasComp<VampireStealthComponent>(uid))
         {
             _action.AddAction(uid, ref newEntity, VampireComponent.MutationsActionPrototype);
             if (newEntity != null)
                 _actionEntities[VampireComponent.MutationsActionPrototype] = newEntity.Value;
         }
-        else if (_vampire.GetBloodEssence(uid) < FixedPoint2.New(50) && _actionEntities.TryGetValue(VampireComponent.MutationsActionPrototype, out entity) || HasComp<VampireSealthComponent>(uid))
+        else if (_vampire.GetBloodEssence(uid) < FixedPoint2.New(50) && _actionEntities.TryGetValue(VampireComponent.MutationsActionPrototype, out entity) || HasComp<VampireStealthComponent>(uid))
         {
             if (!TryComp(uid, out ActionsComponent? comp))
                 return;
@@ -305,7 +305,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         //Umbrae
 
-        if (_actionEntities.TryGetValue("ActionVampireCloakOfDarkness", out entity) && !HasComp<VampireSealthComponent>(uid) && _vampire.GetBloodEssence(uid) < FixedPoint2.New(300))
+        if (_actionEntities.TryGetValue("ActionVampireCloakOfDarkness", out entity) && !HasComp<VampireStealthComponent>(uid) && _vampire.GetBloodEssence(uid) < FixedPoint2.New(300))
             _actionEntities.Remove("ActionVampireCloakOfDarkness");
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(200) && !_actionEntities.TryGetValue("ActionVampireGlare", out entity) && component.CurrentMutation == VampireMutationsType.Umbrae)
