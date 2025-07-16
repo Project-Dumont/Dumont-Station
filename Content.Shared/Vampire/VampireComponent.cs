@@ -185,7 +185,7 @@ public sealed partial class VampireSpaceDamageComponent : Component
 public sealed partial class VampireHealingComponent : Component
 {
     public double NextHealTick = 0;
-    
+
     public DamageSpecifier? Healing = default!;
 }
 

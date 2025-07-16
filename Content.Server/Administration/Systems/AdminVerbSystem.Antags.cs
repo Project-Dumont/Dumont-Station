@@ -127,7 +127,7 @@ public sealed partial class AdminVerbSystem
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultThiefRule = "Thief";
-    
+
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultVampireRule = "Vampire";
 
@@ -163,7 +163,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
+            Message = string.Join(": ", traitorName, Loc.GetString("admin-verb-make-traitor")),
         };
         args.Verbs.Add(traitor);
 
@@ -330,7 +330,7 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(cosmiccult);
         // End DeltaV Additions
-      
+
         // Funkystation - blood cult
         Verb cultAntag = new()
         {
@@ -345,7 +345,7 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-cultist")
         };
         args.Verbs.Add(cultAntag);
-        
+
         Verb vampire = new()
         {
             Text = Loc.GetString("admin-verb-text-make-vampire"),

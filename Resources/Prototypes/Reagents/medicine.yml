@@ -1396,7 +1396,7 @@
           min: 10
       - !type:DeCultify  # funky: TODO, make DeCultify work for both Cosmic and Blood Cult
         amount: 2.5
-        
+
       #If vampire
       - !type:HealthChange
         conditions:
@@ -1411,7 +1411,7 @@
           type: Vampire
         emote: Scream
         probability: 0.3
-        
+
       #If not vampire
       - !type:HealthChange
         conditions:

@@ -320,7 +320,7 @@
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
-  
+
 - type: gamePreset
   id: Vampire
   alias:
@@ -338,3 +338,5 @@
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler
+

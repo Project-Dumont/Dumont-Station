@@ -298,7 +298,7 @@
     exclusiveAntag: true
     subtype: role-subtype-zombie
   - type: ZombieRole
-  
+
 # Vampire
 
 - type: entity
