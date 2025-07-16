@@ -240,7 +240,7 @@ public sealed partial class VampireSystem
     private bool TryGetPowerDefinition(string name, [NotNullWhen(true)] out VampirePowerPrototype? definition)
         => _powerCache.TryGetValue(name, out definition);
 
-    private bool IsAbilityUsable(Entity<VampireComponent> vampire, VampirePowerProtype def)
+    private bool IsAbilityUsable(Entity<VampireComponent> vampire, VampirePowerPrototype def)
     {
         if (!IsPowerUnlocked(vampire, def.ID))
             return false;
@@ -779,7 +779,7 @@ public sealed partial class VampireSystem
     {
         return vampire.UnlockedPowers.ContainsKey(name);
     }
-    /*private bool IsPowerActive(VampireComponent vampire, VampirePowerProtype def) => IsPowerActive(vampire, def.ID);
+    /*private bool IsPowerActive(VampireComponent vampire, VampirePowerPrototype def) => IsPowerActive(vampire, def.ID);
     private bool IsPowerActive(VampireComponent vampire, string name)
     {
         return vampire.ActivePowers.Contains(name);
