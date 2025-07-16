@@ -814,7 +814,6 @@ public sealed partial class VampireSystem
         var protos = _prototypeManager.EnumeratePrototypes<VampirePowerPrototype>();
         return protos.ToFrozenDictionary(x => x.ID);
     }
-    }
 
     /// <summary>
     /// Cache all passive prototypes in a dictionary by keyed by listing id
