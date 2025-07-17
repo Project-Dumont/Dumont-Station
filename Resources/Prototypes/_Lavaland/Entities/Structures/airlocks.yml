@@ -39,7 +39,7 @@
   - type: PriorityDock
     tag: DockMining
   - type: GridFill
-    path: /Maps/_Lavaland/mining.yml
+    path: /Maps/_Gabystation/Shuttles/mining.yml # Gaby - Usando nossa nave custom.
     addComponents:
     - type: IFF
       flags:
