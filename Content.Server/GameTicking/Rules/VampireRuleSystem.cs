@@ -67,7 +67,9 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     private void OnSelectAntag(EntityUid mindId, VampireRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
     {
         var ent = args.EntityUid;
-        if (HasComp<BibleUserComponent>(ent) || !TryComp<BodyComponent>(ent, out var body) || _body.TryGetBodyOrganEntityComps<StomachComponent>((ent, body), out var stomachs))
+        if (HasComp<BibleUserComponent>(ent)
+         || !TryComp<BodyComponent>(ent, out var body)
+         || !_body.TryGetBodyOrganEntityComps<StomachComponent>((ent, body), out var stomachs))
             return;
         _antag.SendBriefing(ent, MakeBriefing(ent), Color.Yellow, BriefingSound);
         MakeVampire(ent, comp);
