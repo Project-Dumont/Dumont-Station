@@ -4,6 +4,7 @@
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
