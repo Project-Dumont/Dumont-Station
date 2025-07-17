@@ -1,47 +1,47 @@
 <Document>
-  # Vampire
+  # Vampiro
   
   <Box>
-    [color=#999999][italic]"Vampire of darkness, sucking all your blood."[/italic][/color]
+    [color=#999999][italic]"Vampiro das sombras, sugando todo o seu sangue."[/italic][/color]
   </Box>
 
-  You're just a regular vampire. You and your colleagues sneaked into the station in the guise of an employee to gain the strength and power to survive. You're overcome with [color=#eb4034]bloodlust[/color].
+  Você é apenas um vampiro comum. Você e seus colegas se infiltraram na estação disfarçados de funcionários para ganhar força e poder para sobreviver. Você está dominado por [color=#eb4034]sede de sangue[/color].
 
-  Your task is to absorb as much blood as possible while not severely harming the crew. Because that's how you reveal yourself. You have mutations in your arsenal. that can trigger a variety of different abilities.
+  Sua tarefa é absorver o máximo de sangue possível sem ferir gravemente a tripulação. Pois é assim que você se revela. Você possui mutações em seu arsenal que podem ativar uma variedade de habilidades diferentes.
 
-  ## Mutations
+  ## Mutações
   
-  Mutations allow a vampire to gain abilities, the mutation selection opens when 100 blood is drawn. currently there are only 4 mutations represented:
+  Mutações permitem que um vampiro adquira habilidades. A seleção de mutação é aberta ao drenar 100 de sangue. Atualmente existem apenas 4 mutações representadas:
   
-  [bold]Hemomancer[/bold]
-   - Focuses on blood magic and manipulating the blood around him.
-   - Abilities:
-   - Screech (200 blood)
-   - Blood Steal (300 blood)
+  [bold]Hemomante[/bold]
+   - Foca em magia de sangue e manipulação do sangue ao redor.
+   - Habilidades:
+   - Grito (200 sangue)
+   - Roubo de Sangue (300 sangue)
    
-  [bold]Shadow[/bold]
-  - Focuses on darkness, stealth, mobility.
-  - Abilities:
-  - Glare (200 blood)
-  - Cloak of Darkness (300 blood)
+  [bold]Sombra[/bold]
+  - Foca em escuridão, furtividade, mobilidade.
+  - Habilidades:
+  - Ofuscamento (200 sangue)
+  - Manto das Sombras (300 sangue)
   
   [bold]Gargantua[/bold]
-  - Focuses on melee damage and resilience.
-  - Abilities:
-  - Unholy Strength (200 blood)
-  - Supernatural Strength (300 blood)
+  - Foca em dano corpo a corpo e resistência.
+  - Habilidades:
+  - Força Profana (200 sangue)
+  - Força Sobrenatural (300 sangue)
   
   [bold]Bestia[/bold]
-  - Focuses on turning and collecting trophies.
-  - Abilities:
-  - Bat Form (200 blood)
-  - Mouse Form (300 blood)
+  - Foca em transformação e coleta de troféus.
+  - Habilidades:
+  - Forma de Morcego (200 sangue)
+  - Forma de Rato (300 sangue)
   
   
-  ## Blood System
+  ## Sistema de Sangue
   
-  You've probably encountered a moment when choosing a mutation. 
-  Your abilities don't appear, it's not a bug! 
-  Abilities appear only at a certain blood level, as well as disappear, if your blood is less than 200 you lose all abilities, if less than 300 you lose the last one. 
+  Você provavelmente já se deparou com um momento ao escolher uma mutação. 
+  Suas habilidades não aparecem, mas não é um bug! 
+  As habilidades só aparecem em determinado nível de sangue, assim como desaparecem: se seu sangue estiver abaixo de 200 você perde todas as habilidades, se estiver abaixo de 300 você perde a última.
 
 </Document>
