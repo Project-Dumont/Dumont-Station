@@ -1,1 +1,1 @@
-rmc-ui-shoutout-nt = Nanotrasen fundada por: ${name}
+rmc-ui-shoutout-nt = [bold]Nanotrasen fundada por: [color=green]{$name}[/color]![/bold]
