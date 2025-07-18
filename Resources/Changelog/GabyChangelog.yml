@@ -536,3 +536,71 @@ Entries:
       message: 'Todas as medalhas agora permitem especificar o motivo da condecoração.  '
   id: 64
   time: '2025-07-13T00:07:46.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        A NanoTrasen readaptou suas naves de mineração para a nova realidade dos
+        especialistas em exploração, apesar da falta de verba.
+  id: 65
+  time: '2025-07-18T14:05:02.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrige o sumário de End Round.
+  id: 66
+  time: '2025-07-18T14:09:07.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Sem mais meta. Portas falsas estão corretamente traduzidas.
+  id: 67
+  time: '2025-07-18T14:32:31.0000000+00:00'
+- author: samarieh
+  changes:
+    - type: Add
+      message: >-
+        Adiciona um cartucho que cura o envenenamento, disponível nos
+        departamentos de segurança e medicina.
+  id: 68
+  time: '2025-07-18T15:12:37.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Visão noturna deangati.
+    - type: Remove
+      message: Remove smite por spam.
+    - type: Remove
+      message: Gingerbread da seleção de personagems.
+    - type: Remove
+      message: Remove revenant do spawn de ghost roles durante o round.
+    - type: Tweak
+      message: Antag token e Ghost token.
+    - type: Add
+      message: Tokens de cosmeticos.
+    - type: Tweak
+      message: Drunyard (O Bebum) deve ser bem menos caotico.
+    - type: Fix
+      message: >-
+        Traduções diversas como palavras chaves do sindicato (Autoria de
+        LaryNevesPR).
+    - type: Tweak
+      message: Punpun não é mais agente livre.
+    - type: Tweak
+      message: Adiciona blood cult como possivel modo round start.
+  id: 69
+  time: '2025-07-18T15:58:06.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Patrocinadores são fundadores da Nanotrasen
+    - type: Add
+      message: '"João Nanotrasen"'
+  id: 70
+  time: '2025-07-18T16:03:56.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Tempo durante a central de comando agora é de 5 minutos.
+  id: 71
+  time: '2025-07-18T17:08:22.0000000+00:00'

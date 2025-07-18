@@ -4,25 +4,29 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 router <messagebus@vk.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Crono209ggg <crono209gg@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Common.CCVar;
 using Content.Server.Atmos.Components;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Popups;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Construction.Components;
 using Content.Shared.NodeContainer;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
-using Robust.Shared.Configuration;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.Atmos.EntitySystems;
@@ -32,28 +36,20 @@ namespace Content.Server.Atmos.EntitySystems;
 /// </summary>
 public sealed class PipeRestrictOverlapSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
 
     private readonly List<EntityUid> _anchoredEntities = new();
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
-    // Goobstation - Allow device-on-pipe stacking
-    private EntityQuery<PipeRestrictOverlapComponent> _restrictOverlapQuery;
-
-    public bool StrictPipeStacking = false;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         SubscribeLocalEvent<PipeRestrictOverlapComponent, AnchorStateChangedEvent>(OnAnchorStateChanged);
         SubscribeLocalEvent<PipeRestrictOverlapComponent, AnchorAttemptEvent>(OnAnchorAttempt);
-        Subs.CVar(_cfg, GoobCVars.StrictPipeStacking, (bool val) => {StrictPipeStacking = val;}, false);
 
         _nodeContainerQuery = GetEntityQuery<NodeContainerComponent>();
-        // Goobstation - Allow device-on-pipe stacking
-        _restrictOverlapQuery = GetEntityQuery<PipeRestrictOverlapComponent>();
     }
 
     private void OnAnchorStateChanged(Entity<PipeRestrictOverlapComponent> ent, ref AnchorStateChangedEvent args)
@@ -102,9 +98,6 @@ public sealed class PipeRestrictOverlapSystem : EntitySystem
         _anchoredEntities.Clear();
         _map.GetAnchoredEntities((grid, gridComp), indices, _anchoredEntities);
 
-        // ATMOS: change to long if you add more pipe layers than 5 + z levels
-        var takenDirs = PipeDirection.None;
-
         foreach (var otherEnt in _anchoredEntities)
         {
             // this should never actually happen but just for safety
@@ -114,52 +107,36 @@ public sealed class PipeRestrictOverlapSystem : EntitySystem
             if (!_nodeContainerQuery.TryComp(otherEnt, out var otherComp))
                 continue;
 
-            // Goobstation - Allow device-on-pipe stacking
-            if (!_restrictOverlapQuery.HasComp(otherEnt))
-                continue;
-
-            var (overlapping, which) = PipeNodesOverlap(ent, (otherEnt, otherComp, Transform(otherEnt)), takenDirs);
-            takenDirs |= which;
-
-            if (overlapping)
+            if (PipeNodesOverlap(ent, (otherEnt, otherComp, Transform(otherEnt))))
                 return true;
         }
 
         return false;
     }
 
-    public (bool, PipeDirection) PipeNodesOverlap(Entity<NodeContainerComponent, TransformComponent> ent, Entity<NodeContainerComponent, TransformComponent> other, PipeDirection takenDirs)
+    public bool PipeNodesOverlap(Entity<NodeContainerComponent, TransformComponent> ent, Entity<NodeContainerComponent, TransformComponent> other)
     {
-        var entDirs = GetAllDirections(ent).ToList();
-        var otherDirs = GetAllDirections(other).ToList();
-        var entDirsCollapsed = PipeDirection.None;
+        var entDirsAndLayers = GetAllDirectionsAndLayers(ent).ToList();
+        var otherDirsAndLayers = GetAllDirectionsAndLayers(other).ToList();
 
-        foreach (var dir in entDirs)
+        foreach (var (dir, layer) in entDirsAndLayers)
         {
-            entDirsCollapsed |= dir;
-            foreach (var otherDir in otherDirs)
+            foreach (var (otherDir, otherLayer) in otherDirsAndLayers)
             {
-                takenDirs |= otherDir;
-                if (StrictPipeStacking)
-                    if ((dir & otherDir) != 0)
-                        return (true, takenDirs);
-                else
-                    if ((dir ^ otherDir) != 0)
-                        break;
+                if ((dir & otherDir) != 0 && layer == otherLayer)
+                    return true;
             }
         }
 
-        // If no strict pipe stacking, then output ("are all entDirs occupied", takenDirs)
+        return false;
 
-        return (StrictPipeStacking ? false : ((takenDirs & entDirsCollapsed) == entDirsCollapsed), takenDirs);
-
-        IEnumerable<PipeDirection> GetAllDirections(Entity<NodeContainerComponent, TransformComponent> pipe)
+        IEnumerable<(PipeDirection, AtmosPipeLayer)> GetAllDirectionsAndLayers(Entity<NodeContainerComponent, TransformComponent> pipe)
         {
             foreach (var node in pipe.Comp1.Nodes.Values)
             {
                 // we need to rotate the pipe manually like this because the rotation doesn't update for pipes that are unanchored.
                 if (node is PipeNode pipeNode)
-                    yield return pipeNode.OriginalPipeDirection.RotatePipeDirection(pipe.Comp2.LocalRotation);
+                    yield return (pipeNode.OriginalPipeDirection.RotatePipeDirection(pipe.Comp2.LocalRotation), pipeNode.CurrentPipeLayer);
             }
         }
     }

@@ -1,8 +1,10 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
@@ -13,6 +15,7 @@
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
@@ -28,6 +31,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Goobstation.Common.CCVar;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -40,9 +44,12 @@ using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using YamlDotNet.RepresentationModel;
 
 namespace Content.Server._RMC14.LinkAccount;
 
@@ -53,6 +60,7 @@ public sealed class LinkAccountSystem : EntitySystem
     [Dependency] private readonly LinkAccountManager _linkAccount = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IResourceManager _resourceManager = default!;
 
     private TimeSpan _timeBetweenLobbyMessages;
     private TimeSpan _nextLobbyMessageTime;
@@ -150,16 +158,40 @@ public sealed class LinkAccountSystem : EntitySystem
         }
     }
 
+    // Gaby change
     private async void GetRandomShoutout()
     {
-        try
+        var patrons = LoadPatrons().ToList();
+        patrons.Add(new PatronEntry(name: "João Nanotrasen", tier: "Capitão")); // João nanotrasen prevalece.
+
+        if (patrons.Count == 0) // Isso é quase impossivel, mas vai que rola
+        {
+            _nextNTShoutout = "João Nanotrasen";
+            return;
+        }
+
+        var randomPatron = patrons[Random.Shared.Next(patrons.Count)];
+        _nextNTShoutout = randomPatron.Name;
+
+        /*try
         {
             (_nextNTShoutout) = await _db.GetRandomShoutout();
         }
         catch (Exception e)
         {
             Log.Error($"Error getting random shoutout:\n{e}");
-        }
+        }*/
+    }
+
+    // Gaby change
+    private IEnumerable<PatronEntry> LoadPatrons()
+    {
+        var yamlStream = _resourceManager.ContentFileReadYaml(new("/Credits/Patrons.yml"));
+        var sequence = (YamlSequenceNode) yamlStream.Documents[0].RootNode;
+
+        return sequence
+            .Cast<YamlMappingNode>()
+            .Select(m => new PatronEntry(m["Name"].AsString(), m["Tier"].AsString()));
     }
 
     private void OnPatronUpdated((NetUserId Id, SharedRMCPatronFull Patron) tuple)
@@ -186,5 +218,18 @@ public sealed class LinkAccountSystem : EntitySystem
             RaiseNetworkEvent(new SharedRMCDisplayLobbyMessageEvent(message.Message, message.User));
 
         GetRandomLobbyMessage();
+    }
+
+    // Gaby change
+    private sealed class PatronEntry // TODO: passar pro shared
+    {
+        public string Name { get; }
+        public string Tier { get; }
+
+        public PatronEntry(string name, string tier)
+        {
+            Name = name;
+            Tier = tier;
+        }
     }
 }

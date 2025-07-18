@@ -107,6 +107,8 @@
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ImHoks <142083149+ImHoks@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
@@ -507,6 +509,7 @@
     - ParamedHypo
     - CartridgeAtropine
     - CartridgeAtropine
+    - MedicalBeamGunBattery
 
 - type: startingGear
   id: ERTMedicalGearEVA
@@ -533,6 +536,7 @@
     - ParamedHypo
     - CartridgeAtropine
     - CartridgeAtropine
+    - MedicalBeamGunBattery
 
 # Janitor
 - type: job
