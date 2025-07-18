@@ -75,7 +75,7 @@ gs-balanceui-shop-buy-token-antag-desc = Permite você se tornar o antagonista d
 gs-balanceui-shop-buy-token-ghost-desc = Permite que você solicite uma ghost role para spawnar. (antagonistas são validos apenas depois de 40 minutos de rodada)
 gs-balanceui-shop-buy-token-admin-rp-desc = Permite que você peça ajuda a um admin a auxiliar em um Roleplay que queira, para que o RP tenha o efeito desejado pelo jogador. O token não deve ser usado para ganhar vantagem competitiva (PVP, objetivos...).
 gs-balanceui-shop-buy-token-hat-desc = Peça a um admin um chapeu cosmetico.
-gs-balanceui-shop-buy-token-clotch-desc = Peça a um admin qualquer peça de roupa cosmetica permitida.
+gs-balanceui-shop-buy-token-cloth-desc = Peça a um admin qualquer peça de roupa cosmetica permitida.
 
 gs-balanceui-admin-add-label = Adiciona (ou subtrai) Gabycoins:
 gs-balanceui-admin-add-player = Nome do Jogador
