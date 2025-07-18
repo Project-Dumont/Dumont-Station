@@ -129,6 +129,7 @@
     Glass: 1200
     Gold: 500
 
+# Gabystation
 - type: latheRecipe
   id: CartridgeToxin
   result: CartridgeToxin
