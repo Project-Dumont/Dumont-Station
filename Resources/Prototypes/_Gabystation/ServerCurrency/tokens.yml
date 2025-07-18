@@ -28,12 +28,12 @@
   adminNote: gs-balanceui-remark-token-admin-rp
 
 - type: tokenListing
-  id: HatToken
-  name: gs-balanceui-shop-buy-token-clotch
-  label: gs-balanceui-shop-token-clotch
-  description: gs-balanceui-shop-buy-token-clotch-desc
+  id: ClothToken
+  name: gs-balanceui-shop-buy-token-cloth
+  label: gs-balanceui-shop-token-cloth
+  description: gs-balanceui-shop-buy-token-cloth-desc
   price: 75
-  adminNote: gs-balanceui-remark-token-clotch
+  adminNote: gs-balanceui-remark-token-cloth
 
 - type: tokenListing
   id: HatToken
