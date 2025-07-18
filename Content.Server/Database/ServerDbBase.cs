@@ -2097,7 +2097,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             var ntName = ntNames.Count == 0 ? null : ntNames[Random.Shared.Next(ntNames.Count)];
 
             if (ntName == null)
-                ntName = "John Nanotrasen";
+                ntName = "João Nanotrasen"; // JOAO NANOTRASEN??!?!?!?!?!?!?!?
+
+            ntName = null; // Gabystation - hotchange
+            // TODO: mudar para o cartarse.
 
             return (ntName);
         }
