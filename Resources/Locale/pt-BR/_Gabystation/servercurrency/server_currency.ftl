@@ -69,7 +69,7 @@ gs-balanceui-shop-token-antag = Token de Antagonista da Rodada
 gs-balanceui-shop-token-ghost = Token de Função Fantasma
 gs-balanceui-shop-token-admin-rp = Roleplaying Token
 gs-balanceui-shop-token-hat = Token de Chapeu
-gs-balanceui-shop-token-clotch = Token de Roupa
+gs-balanceui-shop-token-cloth = Token de Roupa
 
 gs-balanceui-shop-buy-token-antag-desc = Permite você se tornar o antagonista da rodada.
 gs-balanceui-shop-buy-token-ghost-desc = Permite que você solicite uma ghost role para spawnar. (antagonistas são validos apenas depois de 40 minutos de rodada)
