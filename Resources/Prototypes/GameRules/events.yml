@@ -191,7 +191,7 @@
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    - id: RevenantSpawn
+  # - id: RevenantSpawn # Gabystation - desativa revenant
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
