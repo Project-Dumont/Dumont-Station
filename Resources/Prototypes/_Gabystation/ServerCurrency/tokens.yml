@@ -1,10 +1,12 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: tokenListing
-  id: AntagToken
+  id: GhostRoleToken
   name: gs-balanceui-shop-buy-token-ghost
   label: gs-balanceui-shop-token-ghost
   description: gs-balanceui-shop-buy-token-ghost-desc
@@ -28,12 +30,12 @@
   adminNote: gs-balanceui-remark-token-admin-rp
 
 - type: tokenListing
-  id: HatToken
-  name: gs-balanceui-shop-buy-token-clotch
-  label: gs-balanceui-shop-token-clotch
-  description: gs-balanceui-shop-buy-token-clotch-desc
+  id: ClothToken
+  name: gs-balanceui-shop-buy-token-cloth
+  label: gs-balanceui-shop-token-cloth
+  description: gs-balanceui-shop-buy-token-cloth-desc
   price: 75
-  adminNote: gs-balanceui-remark-token-clotch
+  adminNote: gs-balanceui-remark-token-cloth
 
 - type: tokenListing
   id: HatToken
