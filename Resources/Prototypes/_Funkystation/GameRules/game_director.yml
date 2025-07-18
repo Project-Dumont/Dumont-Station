@@ -15,7 +15,10 @@
     stories:
     - Relaxed
     - Breakdown
-    - Shitshow
+    - Science
+    - Peace
+    - RelaxedAttack
+    #- Shitshow
 
 - type: entity
   id: ApocalypseDynamic
