@@ -85,6 +85,6 @@ gs-balanceui-remark-token-antag = Comprou um antag token valido para o antagonis
 gs-balanceui-remark-token-ghost = Comprou um ghost role token. (antagonistas são validos apenas depois de 40 minutos de rodada)
 gs-balanceui-remark-token-admin-rp = Comprou um admin RP token. (tier baixo)
 gs-balanceui-remark-token-hat = Comprou um token de chapeu. (Chapeus cosmeticos)
-gs-balanceui-remark-token-clotch = Comprou um token de roupas. (Roupas cosmeticas) | (1 por peça)
+gs-balanceui-remark-token-cloth = Comprou um token de roupas. (Roupas cosmeticas) | (1 por peça)
 gs-balanceui-shop-click-confirm = Pressione novamente para confirmar
 gs-balanceui-shop-purchased = Comprado {$item}
