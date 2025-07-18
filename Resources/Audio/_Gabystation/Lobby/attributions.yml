@@ -6,7 +6,6 @@
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 - files: ["poeira.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "poeira estelar by Totonho e os Cabra."
@@ -257,7 +256,7 @@
   license: "Custom"
   source: "https://youtu.be/COP66yrNde4?si=B2zdt3n-MBKZmqoy"
 
- - files: ["hopes_and_dreams.ogg"]
+- files: ["hopes_and_dreams.ogg"]
   copyright: "Hopes And Dreams by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/wbO3p7_Mf30?si=YVcW3VKkQm7GKunj"
@@ -267,7 +266,7 @@
   license: "Custom"
   source: "https://youtu.be/FKwVFWwA_x8?si=IMihDaXQ7a7QJmw_"
 
- - files: ["its_raining_somewhere_else.ogg"]
+- files: ["its_raining_somewhere_else.ogg"]
   copyright: "It's raining somewhere else by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/KtC-pl9P3kE?si=NzZlRW_EiN9BE-aK"
@@ -287,7 +286,7 @@
   license: "Custom"
   source: "https://youtu.be/mMfxI3r_LyA?si=8oTay26YwZKuzt31"
 
- - files: ["last_goodbye.ogg"]
+- files: ["last_goodbye.ogg"]
   copyright: "Last Goodbye by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/EpBQ5m3Ag3Q?si=ArhFU37x2H6FI5wn"
@@ -332,7 +331,7 @@
   license: "Custom"
   source: "https://youtu.be/Ox5ENW0CeAU?si=ARWrayU_H3Z0aC6s"
 
- - files: ["the_fire_is_gone.ogg"]
+- files: ["the_fire_is_gone.ogg"]
   copyright: "The Fire is Gone by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/917xijnpJVw?si=Tf1Zg1Zfeh2FDHEX"
@@ -357,7 +356,7 @@
   license: "Custom"
   source: "https://youtu.be/AVSYcRdHpOA?si=zO-9xsL9ntvnbkwk"
 
- - files: ["war_without_reason.ogg"]
+- files: ["war_without_reason.ogg"]
   copyright: "War Without Reason by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/Gcj9-iF_lTw?si=uceN7OomzO83LrFq"
@@ -366,4 +365,3 @@
   copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
-

@@ -333,6 +333,7 @@
   name: Heaven Pierce Her - Hear! The Siren Song Call Of Death
   path:
     path: /Audio/_Gabystation/Jukebox/hear_the_siren_song_call_of_death.ogg
+
 - type: jukebox
   id: HopesAndDreams
   name: Toby Fox - Hopes And Dreams
@@ -464,4 +465,3 @@
   name: Toby Fox - Welcome to the Green Room
   path:
     path: /Audio/_Gabystation/Jukebox/welcome_to_the_green_room.ogg
-    

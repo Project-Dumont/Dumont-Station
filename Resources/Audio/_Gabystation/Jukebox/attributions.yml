@@ -6,7 +6,6 @@
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 - files: ["just_breathe.ogg"]
   copyright: "Just Breathe by Pearl Jam. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
@@ -246,4 +245,3 @@
   copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
-
