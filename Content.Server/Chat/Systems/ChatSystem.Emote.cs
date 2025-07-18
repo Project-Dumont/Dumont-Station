@@ -186,7 +186,7 @@ public partial class ChatSystem
         RaiseLocalEvent(uid, ref ev);
 
         param.Pitch += ev.Pitch;
-        // Goobstation/MisandryBox *//
+        // Goobstation/MisandryBox */
 
         _audio.PlayPvs(sound, uid, param);
         return true;
