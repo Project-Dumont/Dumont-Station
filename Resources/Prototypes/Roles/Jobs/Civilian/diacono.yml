@@ -99,6 +99,8 @@
   id: DiaconoGear
   equipment:
     shoes: ClothingShoesColorBlack
+    jumpsuit: ClothingUniformJumpsuitChaplain
+    back: ClothingBackpackChaplainFilled
     id: DiaconoPDA
     ears: ClothingHeadsetService
   storage:
