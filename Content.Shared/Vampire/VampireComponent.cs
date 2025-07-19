@@ -25,6 +25,9 @@ namespace Content.Shared.Vampire.Components;
 [RegisterComponent]
 public sealed partial class VampireComponent : Component
 {
+    // Collective Mind (Hivemind) para vampiros
+    [DataField]
+    public ProtoId<CollectiveMindPrototype> CollectiveMindAdded = "Vampiremind";
     //Static prototype references
     [ValidatePrototypeId<StatusEffectPrototype>]
     public static readonly string SleepStatusEffectProto = "ForcedSleep";
