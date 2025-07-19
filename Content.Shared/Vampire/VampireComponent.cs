@@ -9,6 +9,7 @@
 
 using Content.Shared.Body.Prototypes;
 using Content.Shared.StatusIcon;
+using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -27,7 +28,7 @@ public sealed partial class VampireComponent : Component
 {
     // Collective Mind (Hivemind) para vampiros
     [DataField]
-    public ProtoId<CollectiveMindPrototype> CollectiveMindAdded = "Vampiremind";
+    public ProtoId<CollectiveMindPrototype> CollectiveMindAdded = "VampireMind";
     //Static prototype references
     [ValidatePrototypeId<StatusEffectPrototype>]
     public static readonly string SleepStatusEffectProto = "ForcedSleep";
