@@ -431,7 +431,8 @@
     - type: GhostRole
       name: job-name-diacono
     - type: Loadout
-      prototypes: [ VisitorDiacono ]
+      # TODO: create this visitor load-out prototype or point to an existing one
+      prototypes: [ VisitorDiacono ]  # ← verify this prototype exists
       roleLoadout: [ RoleSurvivalStandard ]
 
 - type: randomHumanoidSettings
