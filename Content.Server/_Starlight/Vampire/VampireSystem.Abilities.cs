@@ -501,15 +501,15 @@ public sealed partial class VampireSystem
             Hidden = true,
         };
 
-        /*if (_doAfter.TryStartDoAfter(doAfterEventArgs))
+        if (_doAfter.TryStartDoAfter(doAfterEventArgs))
         {
-            _popup.PopupEntity(Loc.GetString("vampire-hypnotise-other", ("user", vampire.Owner), ("target", target.Value)), target.Value, Shared.Popups.PopupType.SmallCaution);
+            //_popup.PopupEntity(Loc.GetString("vampire-hypnotise-other", ("user", vampire.Owner), ("target", target.Value)), target.Value, Shared.Popups.PopupType.SmallCaution);
         }
         else
         {
             return false;
         }
-        return true;*/ // torna invisivel o uso da habilidade de hipnotismo
+        return true;
     }
     private void HypnotiseDoAfter(Entity<VampireComponent> vampire, ref VampireHypnotiseDoAfterEvent args)
     {

@@ -26,9 +26,6 @@ namespace Content.Shared.Vampire.Components;
 [RegisterComponent]
 public sealed partial class VampireComponent : Component
 {
-    // Collective Mind (Hivemind) para vampiros
-    [DataField]
-    public ProtoId<CollectiveMindPrototype> CollectiveMindAdded = "VampireMind";
     //Static prototype references
     [ValidatePrototypeId<StatusEffectPrototype>]
     public static readonly string SleepStatusEffectProto = "ForcedSleep";
@@ -141,6 +138,12 @@ public sealed partial class VampirePowerPrototype : IPrototype
     public string? PolymorphTarget = default!;
     [DataField]
     public float Upkeep = 0;
+    // Cooldown for this power
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.Zero;
+    // Collective Mind (Hivemind) para vampiros
+    [DataField]
+    public ProtoId<CollectiveMindPrototype> CollectiveMindAdded = "VampireMind";
 }
 
 [DataDefinition]

@@ -191,8 +191,8 @@ namespace Content.Server.Bible
                 var selfMessage = Loc.GetString(component.LocPrefix + "-damage-unholy-self", ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
                 _popupSystem.PopupEntity(selfMessage, args.User, args.User, PopupType.LargeCaution);
 
-                if (TryComp(uid, out UseDelayComponent? useDelay))
-                    _delay.TryResetDelay((uid, useDelay));
+                if (TryComp(uid, out UseDelayComponent? delayComp))
+                    _delay.TryResetDelay((uid, delayComp));
 
                 return;
             }
