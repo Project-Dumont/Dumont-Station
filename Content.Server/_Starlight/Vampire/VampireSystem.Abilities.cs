@@ -164,13 +164,6 @@ public sealed partial class VampireSystem
 
         var success = TryHypnotise(vampire, ev.Target, def.Duration, def.DoAfterDelay);
         ev.Handled = success;
-        if (success)
-        {
-            // Only apply cooldown if the ability was actually started
-            var actionEntity = GetPowerEntity(vampire, def.ID);
-            if (actionEntity != null)
-                _action.SetCooldown(actionEntity, def.Cooldown);
-        }
     }
     private void OnVampireBloodSteal(EntityUid entity, VampireComponent component, VampireBloodStealEvent ev)
     {
@@ -520,6 +513,14 @@ public sealed partial class VampireSystem
             return;
 
         _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(args.Target.Value, VampireComponent.SleepStatusEffectProto, args.Duration ?? TimeSpan.FromSeconds(30), false);
+
+        // Aplica cooldown da habilidade Hypnotise somente após sucesso
+        if (TryGetPowerDefinition("Hypnotise", out var def))
+        {
+            var actionEntity = GetPowerEntity(vampire.Comp, def.ID);
+            if (actionEntity != null)
+                _action.SetCooldown(actionEntity, def.Cooldown);
+        }
     }
     #endregion
 

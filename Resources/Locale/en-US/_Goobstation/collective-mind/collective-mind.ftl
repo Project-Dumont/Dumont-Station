@@ -14,4 +14,4 @@ collective-mind-mousemind = Mente Rato
 collective-mind-dronemind = Mente Drone
 collective-mind-empathy = Empathy
 collective-mind-bingle = Mente Bingle
-collective-mind-vampire = Clã Vampiro
+collective-mind-vampire = ClãVampiro

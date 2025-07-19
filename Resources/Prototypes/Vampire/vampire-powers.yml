@@ -17,7 +17,7 @@
 - type: vampirePower
   id: Hypnotise
   duration: 60
-  doAfterDelay: 1
+  doAfterDelay: 1 # Buff no hipnotismo
 
 - type: vampirePower
   id: Screech

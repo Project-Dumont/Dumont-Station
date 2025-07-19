@@ -76,8 +76,8 @@
   keycode: 'w'
   color: "#386a9b"
 
-- type: radioChannel
+- type: collectiveMind
   id: VampireMind
   name: collective-mind-vampire
   keycode: 'v'
-  color: "#7a1a1a" # Darker than sec radio (#ff4242)
+  color: "#FF0000"

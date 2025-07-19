@@ -330,7 +330,7 @@
   - vampires
   name: vampire-gamemode-title
   description: vampire-gamemode-description
-  showInVote: true
+  showInVote: false
   minPlayers: 25 # Gaby - 25 player to start with vamps
   rules:
   - Vampire
