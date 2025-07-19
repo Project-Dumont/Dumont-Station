@@ -9,6 +9,6 @@
     sprite: _Goobstation/Structures/Machines/PTL/pt_laser.rsi
     state: base
   product: MachinePowerTransmissionLaserCrate
-  cost: 5000
+  cost: 200000 #Gabystation
   category: cargoproduct-category-name-engineering
   group: market

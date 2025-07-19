@@ -5,7 +5,7 @@
 
 - type: entity
   id: MachinePowerTransmissionLaserCrate
-  parent: CrateGenericSteel
+  parent: CrateEngineeringSecure #Gabystation
   name: power transmission laser crate
   components:
   - type: StorageFill
