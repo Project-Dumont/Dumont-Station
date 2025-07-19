@@ -419,6 +419,19 @@
       roleLoadout: [ RoleSurvivalStandard ]
 
 - type: randomHumanoidSettings
+  id: VisitorDiacono
+  parent: VisitorCivilian
+  components:
+    - type: CultResistant # Funky cult
+    - type: BibleUser
+    - type: CanEnchant
+    - type: GhostRole
+      name: job-name-diacono
+    - type: Loadout
+      prototypes: [ VisitorDiacono ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+- type: randomHumanoidSettings
   id: VisitorChef
   parent: VisitorCivilian
   components:

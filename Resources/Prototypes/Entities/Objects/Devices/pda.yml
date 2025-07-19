@@ -634,6 +634,24 @@
     state: pda-chaplain
 
 - type: entity
+  name: diacono PDA
+  parent: BasePDA
+  id: DiaconoPDA
+  description: O PDA do quase escolhido de Deus.
+  components:
+  - type: Pda
+    id: DiaconoIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-diacono
+  - type: PdaBorderColor
+    borderColor: "#333312"
+  - type: Icon
+    state: pda-diacono
+
+- type: entity
   parent: ChaplainPDA
   id: VisitorChaplainPDA
   suffix: Visitor

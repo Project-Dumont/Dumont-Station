@@ -19,6 +19,7 @@ job-name-engineer = engenheiro da estação
 job-name-atmostech = técnico atmosférico
 job-name-hop = chefe dos funcionários
 job-name-captain = capitão
+job-name-diacono = diácono
 job-name-serviceworker = diarista
 job-name-centcomoff = oficial da Central de Comando
 job-name-cburn = agente de contenção biológica
