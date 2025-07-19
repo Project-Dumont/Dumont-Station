@@ -162,7 +162,15 @@ public sealed partial class VampireSystem
         if (!IsAbilityUsable(vampire, def))
             return;
 
-        ev.Handled = TryHypnotise(vampire, ev.Target, def.Duration, def.DoAfterDelay);
+        var success = TryHypnotise(vampire, ev.Target, def.Duration, def.DoAfterDelay);
+        ev.Handled = success;
+        if (success)
+        {
+            // Only apply cooldown if the ability was actually started
+            var actionEntity = GetPowerEntity(vampire, def.ID);
+            if (actionEntity != null)
+                _action.SetCooldown(actionEntity, def.Cooldown);
+        }
     }
     private void OnVampireBloodSteal(EntityUid entity, VampireComponent component, VampireBloodStealEvent ev)
     {
@@ -479,7 +487,7 @@ public sealed partial class VampireSystem
         if (attempt.Cancelled)
             return false;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, vampire, delay ?? TimeSpan.FromSeconds(5),
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, vampire, delay ?? TimeSpan.FromSeconds(1),
         new VampireHypnotiseDoAfterEvent() { Duration = duration },
         eventTarget: vampire,
         target: target,
@@ -490,9 +498,10 @@ public sealed partial class VampireSystem
             MovementThreshold = 0.01f,
             DistanceThreshold = 1.0f,
             NeedHand = false,
+            Hidden = true,
         };
 
-        if (_doAfter.TryStartDoAfter(doAfterEventArgs))
+        /*if (_doAfter.TryStartDoAfter(doAfterEventArgs))
         {
             _popup.PopupEntity(Loc.GetString("vampire-hypnotise-other", ("user", vampire.Owner), ("target", target.Value)), target.Value, Shared.Popups.PopupType.SmallCaution);
         }
@@ -500,7 +509,7 @@ public sealed partial class VampireSystem
         {
             return false;
         }
-        return true;
+        return true;*/ // torna invisivel o uso da habilidade de hipnotismo
     }
     private void HypnotiseDoAfter(Entity<VampireComponent> vampire, ref VampireHypnotiseDoAfterEvent args)
     {
