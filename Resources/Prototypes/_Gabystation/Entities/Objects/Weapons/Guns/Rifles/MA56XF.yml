@@ -48,6 +48,6 @@
         gun_chamber: !type:ContainerSlot
     - type: MagazineVisuals
       magState: mag
-      steps: 1
+      steps: 0
       zeroVisible: true
     - type: Appearance

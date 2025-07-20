@@ -22,10 +22,13 @@
         - Burst
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
-      fireOnDropChance: 0.5
+    - type: EmitSoundOnDrop
+      sound: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    - type: FireOnDrop
+      chance: 0.5
 
 - type: entity
-  name: mx3r
+  name: mx3r (empty)
   parent: WeaponPistolMX3R
   id: WeaponPistolMX3REmpty
   suffix: Empty
