@@ -29,8 +29,7 @@
         path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     - type: EmitSoundOnDrop
       sound: /Audio/Weapons/Guns/Gunshots/mk58.ogg
-    - type: FireOnDrop
-      chance: 0.5
+    
 
 - type: entity
   name: MX3R (empty)
@@ -51,7 +50,7 @@
             - MagazinePistol
       gun_chamber:
         name: Chamber
-        startingItem: null
+        startingItem: CartridgePistol
         priority: 1
         whitelist:
           tags:
