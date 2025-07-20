@@ -10,14 +10,14 @@
   description: Special pistol designed for supersoldiers. Uses .35 auto ammo.
   components:
     - type: Sprite
-      sprite: _Gabystation/Objects/Weapons/Guns/Pistol/mx3r.rsi
+      sprite: _Andromeda/Objects/Weapons/Guns/Pistol/mx3r.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
-      sprite: _Gabystation/Objects/Weapons/Guns/Pistol/mx3r.rsi
+      sprite: _Andromeda/Objects/Weapons/Guns/Pistol/mx3r.rsi
     - type: Gun
       fireRate: 6
       burstFireRate: 12
