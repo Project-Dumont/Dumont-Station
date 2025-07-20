@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: mx3r
+  name: MX3R
   parent: BaseWeaponPistol
   id: WeaponPistolMX3R
   description: Special pistol designed for supersoldiers. Uses .35 auto ammo.
@@ -33,7 +33,7 @@
       chance: 0.5
 
 - type: entity
-  name: mx3r (empty)
+  name: MX3R (empty)
   parent: WeaponPistolMX3R
   id: WeaponPistolMX3REmpty
   suffix: Empty

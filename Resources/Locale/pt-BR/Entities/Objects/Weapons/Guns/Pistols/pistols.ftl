@@ -13,5 +13,3 @@ ent-WeaponPistolCobra = cobra
 ent-WeaponPistolMk58 = Mk 58
      .desc = Uma arma barata e onipresente, produzida por uma subsidiária da NanoTrasen. Usa munição automática .35.
 
-ent-WeaponPistolMX3R = MX3-R "Swingfire"
-     .desc = Uma pistola de combate de alta potência, projetada para uso militar. Usa munição automática .35.
