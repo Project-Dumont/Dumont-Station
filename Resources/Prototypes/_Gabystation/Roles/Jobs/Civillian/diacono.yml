@@ -104,5 +104,5 @@
     ears: ClothingHeadsetService
   storage:
     back:
-    - ChaplainUndeterminedBible
-    - RubberStampChaplain
+      - ChaplainUndeterminedBible
+      - RubberStampChaplain
