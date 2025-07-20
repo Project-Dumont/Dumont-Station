@@ -1,0 +1,11 @@
+- type: entity
+  parent: IDCardStandard
+  id: DiaconoIDCard
+  name: diacono ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idchaplain
+    - type: PresetIdCard
+      job: Diacono
