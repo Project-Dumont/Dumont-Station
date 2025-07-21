@@ -1,16 +1,12 @@
 - type: entity
   parent: BorgChassisSecurity
   id: PlayerBorgSecurity
-  suffix: Peacekeeper, Patrol, Bastion
+  suffix: Battery
   components:
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
-      borg_module:
-      - BorgModuleSecurityPeacekeeper
-      - BorgModuleSecurityPatrol
-      - BorgModuleSecurityBastion
+      - MMIFilled
   - type: ItemSlots
     slots:
       cell_slot:
