@@ -1,0 +1,17 @@
+#Gabystation/Andromeda
+
+- type: technology
+  id: SelectiveFirePowerguns
+  name: selective-fire-powerguns
+  icon:
+    sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - WeaponRifleMA56XF
+  - WeaponPistolMX3R
+  technologyPrerequisites:
+  - WeaponLaserCellSMGTech #Temporário
+  position: 8,1 #Temporários

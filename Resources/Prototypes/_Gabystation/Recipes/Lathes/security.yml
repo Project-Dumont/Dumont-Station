@@ -1,0 +1,17 @@
+#Gabystation/Andromeda
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponRifleMA56XF
+  result: WeaponRifleMA56XF
+  materials:
+    Steel: 1550
+    Plastic: 750
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponPistolMX3R
+  result: WeaponPistolMX3R
+  materials:
+    Steel: 900
+    Plastic: 450
