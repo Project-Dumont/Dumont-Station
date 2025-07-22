@@ -21,6 +21,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
@@ -59,7 +60,7 @@ namespace Content.Client.Cooldown
             if (Progress >= 0f)
             {
                 var hue = (5f / 18f) * lerp;
-                color = Color.FromHsv((hue, 0.75f, 0.75f, 0.50f));
+                color = Color.FromHsv(new Vector4(hue, 0.75f, 0.75f, 0.50f));
             }
             else
             {
