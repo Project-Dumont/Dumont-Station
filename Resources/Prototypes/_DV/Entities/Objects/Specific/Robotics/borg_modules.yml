@@ -7,7 +7,7 @@
     tags:
     - BorgModuleSecurity
   - type: Sprite
-    sprite: DeltaV/Objects/Specific/Robotics/borgmodule.rsi
+    sprite: _DV/Objects/Specific/Robotics/borgmodule.rsi
 
 # Security Modules
 
