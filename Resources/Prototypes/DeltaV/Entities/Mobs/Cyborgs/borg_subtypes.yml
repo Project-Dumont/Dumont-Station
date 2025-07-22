@@ -1,0 +1,5 @@
+- type: borgSubtype
+  parentBorgType: security
+  id: security_default
+  spritePath: Mobs/Silicon/chassis.rsi
+  dummyPrototype: BorgChassisSecurity

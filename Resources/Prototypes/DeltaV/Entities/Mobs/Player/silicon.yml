@@ -1,16 +1,10 @@
 - type: entity
-  parent: BorgChassisSecurity
   id: PlayerBorgSecurity
+  parent: BorgChassisSecurity
   suffix: Battery
   components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-      - MMIFilled
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellMedium
-  - type: RandomMetadata
-    nameSegments: [names_borg] # TODO: Make good names, this is a stupid list.

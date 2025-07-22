@@ -18,9 +18,9 @@
   - BorgModuleSecurityPatrol
   - BorgModuleSecurityBastion
 
+  # lawset: Security
+
   addComponents:
-  - type: SiliconLawProvider
-    laws: SiliconPolice
   - type: FlashImmunity
   - type: ShowMindShieldIcons
   - type: ShowCriminalRecordIcons
@@ -36,7 +36,6 @@
 
   # Visual
   inventoryTemplateId: borgShort
-  spritePath: DeltaV/Mobs/Silicons/chassis.rsi
   spriteBodyState: security
   spriteHasMindState: security_e
   spriteNoMindState: security_e_r
