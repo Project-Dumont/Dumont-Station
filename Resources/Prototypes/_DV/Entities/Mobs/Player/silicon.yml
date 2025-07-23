@@ -7,7 +7,7 @@
 - type: entity
   id: PlayerBorgSecurity
   parent: BorgChassisSecurity
-  suffix: Battery
+  suffix: Battery, Module
   components:
   - type: ItemSlots
     slots:
