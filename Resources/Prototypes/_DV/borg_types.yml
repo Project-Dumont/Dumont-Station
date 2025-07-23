@@ -38,6 +38,9 @@
       Alive: BorgHealth
       Critical: BorgCrit
       Dead: BorgDead
+  # GabyStation - SecBorg Hailer
+  - type: Hailer 
+    isBorg: true
 
   radioChannels:
   - Science
