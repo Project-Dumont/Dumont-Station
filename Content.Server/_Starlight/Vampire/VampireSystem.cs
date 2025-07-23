@@ -511,5 +511,9 @@ public sealed partial class VampireSystem : EntitySystem
             mindComp.DefaultChannel = "VampireMind";
         if (!mindComp.Channels.Contains("VampireMind"))
             mindComp.Channels.Add("VampireMind");
+
+        // Garante que vamp tenha VampireDeathsEmbraceComponent
+
+        var deathsEmbraceComp = EnsureComp<vampiredeathsEmbraceComponent>(uid);
     }
 }

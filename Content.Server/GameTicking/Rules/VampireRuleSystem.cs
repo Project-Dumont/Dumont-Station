@@ -49,7 +49,7 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
 
     public readonly ProtoId<AntagPrototype> VampirePrototypeId = "Vampire";
 
-    public readonly ProtoId<NpcFactionPrototype> ChangelingFactionId = "Vampire";
+    public readonly ProtoId<NpcFactionPrototype> VampireFactionId = "Vampire";
 
     public readonly ProtoId<NpcFactionPrototype> NanotrasenFactionId = "NanoTrasen";
 
@@ -96,7 +96,7 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
         }
         // vampire stuff
         _npcFaction.RemoveFaction(target, NanotrasenFactionId, false);
-        _npcFaction.AddFaction(target, ChangelingFactionId);
+        _npcFaction.AddFaction(target, VampireFactionId);
 
         // make sure it's initial chems are set to max
         var vampireComponent = EnsureComp<VampireComponent>(target);
