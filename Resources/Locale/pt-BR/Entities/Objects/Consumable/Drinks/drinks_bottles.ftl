@@ -67,7 +67,7 @@ ent-DrinkAleBottleFull = Magm-Ale
 ent-DrinkWaterBottleFull = garrafa de água
      .desc = Água limpa simples de origem desconhecida. Você acha que talvez não queira saber disso.
 
-ent-DrinkJuiceLimeCarton = suco de limão
+ent-DrinkJuiceLimeCarton = suco de limão-lima
      .desc = Bondade agridoce.
 
 ent-DrinkJuiceOrangeCarton = suco de laranja
