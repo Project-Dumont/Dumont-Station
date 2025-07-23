@@ -40,7 +40,7 @@
     moduleId: Bastion
     items:
     - FlashRecharging
-    - WeaponLauncherNonLethal
+    - WeaponLauncherNonLethalBorg
     - SecurityWhistle
 
 - type: entity

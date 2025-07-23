@@ -17,7 +17,7 @@
   - BorgModuleSecurityDeescalate
   - BorgModuleSecurityPatrol
 
-  # lawset: Security
+  lawset: Security
 
   addComponents:
   - type: FlashImmunity

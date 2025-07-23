@@ -81,3 +81,12 @@
   - type: StaticPrice
     price: 750
   - type: Multishot
+
+- type: entity
+  parent: WeaponDisabler
+  id: WeaponDisablerSelfCharge
+  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one recharges
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
