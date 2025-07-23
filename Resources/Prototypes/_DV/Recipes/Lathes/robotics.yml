@@ -6,20 +6,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# - type: latheRecipe
-#   parent: BaseBorgModuleRecipe
-#   id: BorgModuleSecurityPatrol
-#   result: BorgModuleSecurityPatrol
-
-# - type: latheRecipe
-#   parent: BaseBorgModuleRecipe
-#   id: BorgModuleSecurityBastion
-#   result: BorgModuleSecurityBastion
-
-# - type: latheRecipe
-#   parent: BaseGoldBorgModuleRecipe
-#   id: BorgModuleSecurityDeescalate
-#   result: BorgModuleSecurityDeescalate
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleSecurityBastion
+  result: BorgModuleSecurityBastion
 
 - type: latheRecipe
   parent: BaseGoldBorgModuleRecipe

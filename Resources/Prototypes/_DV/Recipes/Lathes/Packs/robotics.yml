@@ -1,0 +1,6 @@
+- type: latheRecipePack
+  id: BorgModulesSecurityDeltaV
+  recipes:
+  - BorgModuleSecurityBastion
+  - BorgModuleSecurityEscalate
+  - BorgModuleSecurityChase

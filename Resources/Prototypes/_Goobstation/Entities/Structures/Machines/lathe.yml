@@ -222,6 +222,7 @@
     - MechBoardsSecurity
     - MechBoardsCargo
     - MechBoardsCivilian # Evil ass traitor scientist in a honker... with a rocket launcher because the honker is emagged too.
+    - BorgModulesSecurityDeltaV # DeltaV - Security Borg
   - type: MaterialStorage
     whitelist:
       tags:

@@ -778,6 +778,7 @@
     # - ServiceWeapons
     - SpecOpsGoogles
     - PowerCells
+    - BorgModulesSecurityDeltaV # DeltaV - Security Borg
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic
