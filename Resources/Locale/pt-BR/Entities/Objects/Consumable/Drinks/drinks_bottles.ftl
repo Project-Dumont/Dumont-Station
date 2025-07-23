@@ -70,7 +70,7 @@ ent-DrinkWaterBottleFull = garrafa de água
 ent-DrinkJuiceLimeCarton = suco de limão-lima
      .desc = Bondade agridoce.
 
-ent-DrinkLemonJuiceCarton = suco de limão siciliano
+ent-DrinkJuiceLemonCarton = suco de limão siciliano
      .desc = Azedo...
 
 ent-DrinkJuiceOrangeCarton = suco de laranja
