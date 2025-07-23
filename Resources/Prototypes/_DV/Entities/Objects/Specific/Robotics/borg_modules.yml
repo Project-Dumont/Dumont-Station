@@ -35,6 +35,8 @@
     - HoloprojectorSecurityRecharging
     - FlashlightSecliteRecharging
     - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: patrol-module }
 
 - type: entity
   id: BorgModuleSecurityBastion # Research Locked - AdvancedRiotControl
@@ -51,6 +53,8 @@
     - WeaponLauncherNonLethalBorg
     - FlashRecharging
     - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: bastion-module }
 
 - type: entity
   id: BorgModuleSecurityDeescalate # Available on Round Start
@@ -79,6 +83,8 @@
       whitelist:
         components:
         - Handcuff
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: deescalate-module }
 
 - type: entity
   id: BorgModuleSecurityEscalate
@@ -97,6 +103,8 @@
     - Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
     - CombatKnife # Anti-fauna for blunt resistant slimes
     - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: escalate-module }
 
 - type: entity
   id: BorgModuleSecurityChase # Research Locked - NonLethalAmmunition
@@ -113,3 +121,5 @@
     - WeaponDisablerSelfCharge
     - FlashlightSecliteRecharging
     - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: chase-module }
