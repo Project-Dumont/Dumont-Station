@@ -7,7 +7,7 @@
 
 - type: technology
   id: SelectiveFirePowerguns
-  name: selective-fire-powerguns
+  name: research-technology-selective-fire-powerguns
   icon:
     sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
     state: icon
@@ -19,4 +19,4 @@
   - WeaponPistolMX3R
   technologyPrerequisites:
   - WeaponLaserCellSMGTech #Temporário
-  position: 8,1 #Temporários
+  position: 5,-3 #Temporários
