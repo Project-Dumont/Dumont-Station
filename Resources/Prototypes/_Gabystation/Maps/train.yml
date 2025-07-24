@@ -96,9 +96,8 @@
 - type: gameMap
   id: Train
   mapName: 'Train'
-  mapPath: /Maps/_Goobstation/train.yml
+  mapPath: /Maps/_Gabystation/train.yml
   maxRandomOffset: 0
-  randomRotation: false
   minPlayers: 30
   maxPlayers: 60
   stations:
@@ -128,7 +127,6 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 3 ]
-            Detective: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
@@ -150,7 +148,9 @@
             SecurityOfficer: [ 6, 6 ]
             SecurityCadet: [ 3, 3 ]
             Lawyer: [ 1, 2 ]
-            PermaPrisoner: [ 3, 3 ] # Gaby
+            Detective: [ 1, 1 ]
+            PermaPrisoner: [ 3, 3 ]
+            Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
