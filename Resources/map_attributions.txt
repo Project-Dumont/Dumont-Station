@@ -7,9 +7,8 @@
 - files: ["falcon.yml"]
   authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
 
-- files: ["tram".yml"]
+- files: ["tram.yml"]
   authors: Betterwithketchup
-
 # Wizden/Goob Maps
 # These are located in /Maps/
 
