@@ -49,28 +49,6 @@
     - Security
 
 - type: entity
-  name: non-lethal wooden baton
-  parent: BaseItem
-  id: WoodBaton
-  description: First, do no crime.
-  noSpawn: true
-  components:
-    - type: MeleeWeapon
-      wideAnimationRotation: -135
-      damage:
-        types:
-          Blunt: 0
-    - type: StaminaDamageOnHit
-      damage: 20 # Stuns in 5
-      sound: /Audio/Nyanotrasen/Weapons/club.ogg # TODO: Find a free-to-use thwacking sound effect. This isn't perfect but this works.
-    - type: Sprite
-      sprite: _DV/Objects/Weapons/Melee/wood_baton.rsi
-      state: icon
-    - type: GuideHelp
-      guides:
-      - Security
-
-- type: entity
   parent: WeaponDisabler
   id: WeaponDisablerRecharging
   suffix: Recharging, Do Not Map

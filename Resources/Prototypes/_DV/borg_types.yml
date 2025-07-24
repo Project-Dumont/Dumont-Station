@@ -40,7 +40,7 @@
       Critical: BorgCrit
       Dead: BorgDead
   # GabyStation - SecBorg Hailer
-  - type: Hailer 
+  - type: Hailer
     isBorg: true
 
   radioChannels:
