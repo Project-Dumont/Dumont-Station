@@ -73,9 +73,8 @@
             Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
             #silicon (3)
-            StationAi: [ 1, 1 ]
+            StationAI: [ 1, 1 ]
             Borg: [ 3, 3 ]
-
         # Goobstation blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 25
