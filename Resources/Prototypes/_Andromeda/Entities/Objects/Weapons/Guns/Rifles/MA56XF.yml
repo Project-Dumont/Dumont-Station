@@ -22,7 +22,6 @@
       fireRate: 5.5
       shotsPerBurst: 4
       availableModes:
-        - SemiAuto
         - Burst
         - FullAuto
       soundGunshot:
