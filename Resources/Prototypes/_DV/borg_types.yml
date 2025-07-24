@@ -20,6 +20,7 @@
 
   # TODO: change these when reworking secborg modules to have the equivalent of roundstart gear
   defaultModules:
+  - BorgModuleTool # GabyStation - SecBorg QoL
   - BorgModuleSecurityDeescalate
   - BorgModuleSecurityPatrol
 
