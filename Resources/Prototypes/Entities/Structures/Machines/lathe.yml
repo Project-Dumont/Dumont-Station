@@ -767,6 +767,8 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    #Gabystation
+    - SecurityPowerguns
     # Goobstation
     - SecurityWeaponsGoob
     - RestraintTechnology

@@ -140,6 +140,7 @@
     Steel: 100
     Glass: 300
 
+
 # Guns
 - type: latheRecipe
   parent: BaseWeaponRecipeLong

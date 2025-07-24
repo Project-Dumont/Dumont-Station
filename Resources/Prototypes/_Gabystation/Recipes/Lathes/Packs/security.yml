@@ -1,0 +1,7 @@
+# Gabystation/Andromeda
+
+- type: latheRecipePack
+  id: SecurityPowerguns
+  recipes:
+  - WeaponRifleMA56XF
+  - WeaponPistolMX3R
