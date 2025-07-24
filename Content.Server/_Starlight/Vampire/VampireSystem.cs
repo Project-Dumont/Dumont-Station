@@ -514,6 +514,6 @@ public sealed partial class VampireSystem : EntitySystem
 
         // Garante que vamp tenha VampireDeathsEmbraceComponent
 
-        var deathsEmbraceComp = EnsureComp<vampiredeathsEmbraceComponent>(uid);
+        var deathsEmbraceComp = EnsureComp<VampireDeathsEmbraceComponent>(uid);
     }
 }
