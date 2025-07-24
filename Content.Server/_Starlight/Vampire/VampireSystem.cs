@@ -150,8 +150,13 @@ public sealed partial class VampireSystem : EntitySystem
             if (healing.NextHealTick <= 0)
             {
                 healing.NextHealTick = 1;
+            }
+
+            if (healing.NextHealTick > 0)
+            {
                 DoCoffinHeal(uid, healing);
             }
+
             healing.NextHealTick -= frameTime;
         }
 
