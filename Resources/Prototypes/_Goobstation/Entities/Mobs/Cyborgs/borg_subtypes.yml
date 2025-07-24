@@ -308,7 +308,7 @@
   parentBorgType: security
   id: security_standard
   spritePath: _Goobstation/Mobs/Silicon/Security/standard.rsi
-  dummyPrototype: BorgChassisSecStandard
+  dummyPrototype: BorgChassisSecurityStandard
 
 - type: borgSubtype
   parentBorgType: security

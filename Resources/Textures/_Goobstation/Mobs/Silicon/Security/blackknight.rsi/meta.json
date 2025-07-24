@@ -8,19 +8,19 @@
   },
   "states": [
     {
-      "name": "sec",
+      "name": "security",
       "directions": 4
     },
     {
-      "name": "sec_e",
+      "name": "security_e",
       "directions": 4
     },
     {
-      "name": "sec_e_r",
+      "name": "security_e_r",
       "directions": 4
     },
     {
-      "name": "sec_l",
+      "name": "security_l",
       "directions": 4
     }
   ]
