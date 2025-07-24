@@ -147,7 +147,7 @@ public sealed partial class VampireSystem : EntitySystem
             if (healing == null)
                 continue;
 
-            if (healing.NextHealTick >= 0) // Condição invertida denovo?
+            if (healing.NextHealTick <= 0)
             {
                 healing.NextHealTick = 1;
                 DoCoffinHeal(uid, healing);
