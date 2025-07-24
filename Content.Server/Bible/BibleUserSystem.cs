@@ -23,6 +23,7 @@
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 // SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
@@ -190,6 +191,9 @@ namespace Content.Server.Bible
 
                 var selfMessage = Loc.GetString(component.LocPrefix + "-damage-unholy-self", ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
                 _popupSystem.PopupEntity(selfMessage, args.User, args.User, PopupType.LargeCaution);
+
+                if (TryComp(uid, out UseDelayComponent? delayComp))
+                    _delay.TryResetDelay((uid, delayComp));
 
                 return;
             }

@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
@@ -15,6 +16,7 @@ using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Mind;
+using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
 using Content.Shared.Buckle;
@@ -101,6 +103,7 @@ public sealed partial class VampireSystem : EntitySystem
         SubscribeLocalEvent<VampireComponent, VampireBloodChangedEvent>(OnVampireBloodChangedEvent);
         SubscribeLocalEvent<VampireComponent, ComponentGetState>(GetState);
         SubscribeLocalEvent<VampireComponent, VampireMutationPrototypeSelectedMessage>(OnMutationSelected);
+        SubscribeLocalEvent<VampireComponent, ComponentInit>(OnVampireComponentInit);
 
         InitializePowers();
         InitializeObjectives();
@@ -498,5 +501,15 @@ public sealed partial class VampireSystem : EntitySystem
             return;
         var state = new VampireMutationBoundUserInterfaceState(component.VampireMutations, component.CurrentMutation);
         _uiSystem.SetUiState(uid, VampireMutationUiKey.Key, state);
+    }
+
+    private void OnVampireComponentInit(EntityUid uid, VampireComponent component, ComponentInit args)
+    {
+        // Garante que o vampiro tenha CollectiveMindComponent com canal VampireMind
+        var mindComp = EnsureComp<CollectiveMindComponent>(uid);
+        if (mindComp.DefaultChannel != "VampireMind")
+            mindComp.DefaultChannel = "VampireMind";
+        if (!mindComp.Channels.Contains("VampireMind"))
+            mindComp.Channels.Add("VampireMind");
     }
 }

@@ -630,3 +630,13 @@ Entries:
       message: Agora PTL custa 200 mil e agora vem em uma caixa segura da engenharia.
   id: 75
   time: '2025-07-19T06:06:02.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Agora Vampiros possuem seu próprio radio! +v para usar
+    - type: Tweak
+      message: Buff no hipnotizar do vampiro, para torna-lo infinitamente mais usavel!
+    - type: Remove
+      message: Retira o modo vampiro da votaçao de modos de jogo.
+  id: 76
+  time: '2025-07-20T15:53:16.0000000+00:00'

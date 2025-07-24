@@ -9,6 +9,7 @@
 
 using Content.Shared.Body.Prototypes;
 using Content.Shared.StatusIcon;
+using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -137,6 +138,12 @@ public sealed partial class VampirePowerPrototype : IPrototype
     public string? PolymorphTarget = default!;
     [DataField]
     public float Upkeep = 0;
+    // Cooldown for this power
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.Zero;
+    // Collective Mind (Hivemind) para vampiros
+    [DataField]
+    public ProtoId<CollectiveMindPrototype> CollectiveMindAdded = "VampireMind";
 }
 
 [DataDefinition]

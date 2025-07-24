@@ -162,7 +162,8 @@ public sealed partial class VampireSystem
         if (!IsAbilityUsable(vampire, def))
             return;
 
-        ev.Handled = TryHypnotise(vampire, ev.Target, def.Duration, def.DoAfterDelay);
+        var success = TryHypnotise(vampire, ev.Target, def.Duration, def.DoAfterDelay);
+        ev.Handled = success;
     }
     private void OnVampireBloodSteal(EntityUid entity, VampireComponent component, VampireBloodStealEvent ev)
     {
@@ -479,7 +480,7 @@ public sealed partial class VampireSystem
         if (attempt.Cancelled)
             return false;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, vampire, delay ?? TimeSpan.FromSeconds(5),
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, vampire, delay ?? TimeSpan.FromSeconds(1),
         new VampireHypnotiseDoAfterEvent() { Duration = duration },
         eventTarget: vampire,
         target: target,
@@ -490,11 +491,12 @@ public sealed partial class VampireSystem
             MovementThreshold = 0.01f,
             DistanceThreshold = 1.0f,
             NeedHand = false,
+            Hidden = true,
         };
 
         if (_doAfter.TryStartDoAfter(doAfterEventArgs))
         {
-            _popup.PopupEntity(Loc.GetString("vampire-hypnotise-other", ("user", vampire.Owner), ("target", target.Value)), target.Value, Shared.Popups.PopupType.SmallCaution);
+            //_popup.PopupEntity(Loc.GetString("vampire-hypnotise-other", ("user", vampire.Owner), ("target", target.Value)), target.Value, Shared.Popups.PopupType.SmallCaution);
         }
         else
         {
@@ -511,6 +513,14 @@ public sealed partial class VampireSystem
             return;
 
         _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(args.Target.Value, VampireComponent.SleepStatusEffectProto, args.Duration ?? TimeSpan.FromSeconds(30), false);
+
+        // Aplica cooldown da habilidade Hypnotise somente após sucesso
+        if (TryGetPowerDefinition("Hypnotise", out var def))
+        {
+            var actionEntity = GetPowerEntity(vampire.Comp, def.ID);
+            if (actionEntity != null)
+                _action.SetCooldown(actionEntity, def.Cooldown);
+        }
     }
     #endregion
 
