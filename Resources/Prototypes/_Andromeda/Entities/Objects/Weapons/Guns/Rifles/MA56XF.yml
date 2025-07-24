@@ -7,7 +7,7 @@
   name: MA56XF
   parent: BaseWeaponRifle
   id: WeaponRifleMA56XF
-  description: An advanced military-grade assault rifle. Uses .30 rifle ammo.
+  description: An advanced military-grade assault rifle. Uses .20 rifle ammo.
   components:
     - type: Sprite
       sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
@@ -37,15 +37,15 @@
           priority: 2
           whitelist:
             tags:
-              - MagazineLightRifle
+              - MagazineRifle
           whitelistFailPopup: gun-magazine-whitelist-fail
         gun_chamber:
           name: Chamber
-          startingItem: CartridgeLightRifle
+          startingItem: CartridgeRifle
           priority: 1
           whitelist:
             tags:
-              - CartridgeLightRifle
+              - CartridgeRifle
     - type: ContainerContainer
       containers:
         gun_magazine: !type:ContainerSlot
