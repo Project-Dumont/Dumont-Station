@@ -518,3 +518,11 @@
   components:
     - type: Paper
       content: doc-text-printer-REPORTACCOMPLISHMENTGOALS
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRelatorioSetorial
+  name: Relatório setorial
+  components:
+    - type: Paper
+      content: doc-text-printer-RelatorioSetorial

@@ -59,7 +59,8 @@
     - PrintedDocumentJudgmentRecipe
     - PrintedDocumentStatementHealtheRecipe
     - PrintedDocumentDecisionToStartTrialRecipe
-    - PrintedDocumentReportStation # Gaby add
+    # GabyStation documents
+    - PrintedDocumentRelatorioSetorialRecipe 
 
 - type: latheRecipePack
   id: docPrinterRecipeEmagPack

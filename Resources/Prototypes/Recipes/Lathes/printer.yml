@@ -509,3 +509,13 @@
   category: ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
+
+# GabyStation documents start
+- type: latheRecipe
+  id: PrintedDocumentRelatorioSetorialRecipe
+  parent: BaseDocumentRecipe
+  result: PrintedDocumentRelatorioSetorial
+  category: Reports
+  completetime: 2
+  applyMaterialDiscount: false
+# GabyStation documents end
