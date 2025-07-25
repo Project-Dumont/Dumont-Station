@@ -27,7 +27,7 @@ materials-bones = osso
 materials-coal = carvão
 materials-diamond = diamante
 materials-gunpowder = pólvora
-materials-cotton = Algodão
+materials-cotton = algodão
 
 # Ores
 materials-raw-iron = ferro bruto
