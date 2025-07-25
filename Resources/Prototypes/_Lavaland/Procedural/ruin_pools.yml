@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
@@ -29,22 +31,22 @@
     SyndicateBase: 1
     HierophantArena: 1
     RougeAI: 1
-    BiodomeBeach: 2
-    BiodomeSnow: 2
-    GolemShuttle: 2
+    BiodomeBeach: 1
+    BiodomeSnow: 1
+    GolemShuttle: 1
     ToyShop: 1    
-    Chemistry: 2
-    LavaLake: 3
+    Chemistry: 1
+    LavaLake: 1
     Graveyard: 1
-    SeedVault: 2
-    Hermit: 5
-    WaffleCo: 2
+    SeedVault: 1
+    Hermit: 1
+    WaffleCo: 1
     ArrivalsBack: 1
     ArrivalsFront: 1
-    CargoDebris: 2
+    CargoDebris: 1
     VulpLab: 1
-    Shelter: 4
+    Shelter: 1
     OwOLab: 1
-    MiningPost: 3
+    MiningPost: 1
   dungeonRuins:
-    CommonRuin5x5: 60
+    CommonRuin5x5: 15

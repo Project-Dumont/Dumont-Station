@@ -86,7 +86,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Os pedidos são entregues à estação através da [color=cyan]Estação de Comércio[/color] em órbita e transportados para a estação principal pelo [color=cyan]Shuttle de Carga[/color]. O shuttle não pilota sozinho, então ele deve ser pilotado dentro do shuttle ou remotamente.
 
   <Box>
-    <GuideEntityEmbed Entity="ComputerCargoShuttle"/>
+    <GuideEntityEmbed Entity="ComputerShuttleCargo"/>
   </Box>
 
   Para pilotar o shuttle, você deve primeiro encontrar o [color=cyan]Console de Shuttle de Carga[/color]. Um fica dentro da Baía de Carga e o outro dentro do Shuttle de Carga.

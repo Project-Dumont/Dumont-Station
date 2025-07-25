@@ -96,11 +96,14 @@
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
@@ -114,14 +117,17 @@
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
 // SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 // SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
@@ -188,6 +194,8 @@ namespace Content.Server.Database
         public DbSet<RMCLinkedAccountLogs> RMCLinkedAccountLogs { get; set; } = default!;
         public DbSet<RMCPatronLobbyMessage> RMCPatronLobbyMessages { get; set; } = default!;
         public DbSet<RMCPatronRoundEndNTShoutout> RMCPatronRoundEndNTShoutouts { get; set; } = default!;
+
+        public DbSet<SpiderFriend> GoobMisandrySpiderFriends { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -567,6 +575,10 @@ namespace Content.Server.Database
                 .HasForeignKey(l => l.DiscordId)
                 .HasPrincipalKey(p => p.Id)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<SpiderFriend>()
+                .HasIndex(s => s.Guid)
+                .IsUnique();
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -588,6 +600,7 @@ namespace Content.Server.Database
         public Guid UserId { get; set; }
         public int SelectedCharacterSlot { get; set; }
         public string AdminOOCColor { get; set; } = null!;
+        public List<string> ConstructionFavorites { get; set; } = new();
         public List<Profile> Profiles { get; } = new();
     }
 
@@ -597,8 +610,6 @@ namespace Content.Server.Database
         public int Slot { get; set; }
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
-        // #Goobstation - Borg Preferred Name
-        public string BorgName { get; set; } = null!;
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
@@ -614,6 +625,8 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+
+        public List<DBJobAlternateTitle> AltTitles = new();
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
@@ -658,6 +671,17 @@ namespace Content.Server.Database
         public int ProfileId { get; set; }
 
         public string TraitName { get; set; } = null!;
+    }
+
+    public class DBJobAlternateTitle
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string RoleName { get; set; } = string.Empty;
+
+        public string AlternateTitle { get; set; } = string.Empty;
     }
 
     #region Loadouts

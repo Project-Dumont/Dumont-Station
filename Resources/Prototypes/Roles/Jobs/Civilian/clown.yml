@@ -146,6 +146,14 @@
       interval: 10
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
+  alternateTitles:
+  - ClownTitleJester
+  - ClownTitleMaster
+  - ClownTitleChief
+  - ClownTitleComedian
+  - ClownTitleActor
+  - ClownTitleActress
+
 
 - type: startingGear
   id: ClownGear
@@ -159,3 +167,28 @@
     back:
     - RubberStampClown
     - CrayonRainbow
+
+- type: jobAlternateTitle
+  id: ClownTitleJester
+  name: job-name-alt-clown-jester
+
+- type: jobAlternateTitle
+  id: ClownTitleMaster
+  name: job-name-alt-clown-master
+
+- type: jobAlternateTitle
+  id: ClownTitleChief
+  name: job-name-alt-clown-chief
+
+- type: jobAlternateTitle
+  id: ClownTitleComedian
+  name: job-name-alt-clown-comedian
+
+- type: jobAlternateTitle
+  id: ClownTitleActor
+  name: job-name-alt-clown-actor
+
+- type: jobAlternateTitle
+  id: ClownTitleActress
+  name: job-name-alt-clown-actress
+

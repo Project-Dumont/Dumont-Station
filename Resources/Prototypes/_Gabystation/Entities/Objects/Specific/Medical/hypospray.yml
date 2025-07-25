@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Samariehh <samarieh666@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: toxin autoinjector cartridge
+  parent: [ BaseSecurityMedicalContraband , BaseAutoinjectorCartridge ]
+  description: Contains 7u of dylovene and 3u of stellibinin used in a cartridge autoinjector.
+  id: CartridgeToxin
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: filling
+      color: "#009739"
+  - type: SolutionCartridge
+    targetSolution: hypospray
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Dylovene
+        Quantity: 7
+      - ReagentId: Stellibinin
+        Quantity: 3

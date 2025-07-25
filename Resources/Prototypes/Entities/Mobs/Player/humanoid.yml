@@ -137,6 +137,7 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: GhostTakeoverAvailable
+    - type: IdBind
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
@@ -160,6 +161,7 @@
 - type: randomHumanoidSettings
   id: EventHumanoidCentcomm
   parent: EventHumanoidMindShielded
+  randomizeName: false
   components:
   - type: AutoImplant
     implants:
@@ -186,7 +188,6 @@
 - type: randomHumanoidSettings
   id: DeathSquad
   parent: CentcommHumanoid # Goobstation
-  randomizeName: false
   components:
     - type: AutoImplant
       implants: [ FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm] # Goobstation
@@ -235,7 +236,6 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   parent: CentcommHumanoid # Goobstation
-  randomizeName: false
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -312,6 +312,7 @@
   id: ERTChaplain
   parent: ERTLeader
   components:
+    - type: CultResistant # Funky cult
     - type: BibleUser
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
@@ -355,6 +356,8 @@
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
       roleLoadout: [ RoleSurvivalEVA ]
+    - type: CultResistant # Funky cult
+    - type: BibleUser
 
 ## ERT Janitor
 

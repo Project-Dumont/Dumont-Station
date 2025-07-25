@@ -1,4 +1,8 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Samariehh <samarieh666@gmail.com>
+# SPDX-FileCopyrightText: 2025 john git <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -9,6 +13,6 @@
     sprite: _Goobstation/Structures/Machines/PTL/pt_laser.rsi
     state: base
   product: MachinePowerTransmissionLaserCrate
-  cost: 5000
+  cost: 200000 #Gabystation
   category: cargoproduct-category-name-engineering
   group: market

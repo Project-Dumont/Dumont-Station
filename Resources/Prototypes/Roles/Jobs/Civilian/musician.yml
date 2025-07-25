@@ -71,6 +71,13 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: MikuDay
     prototype: BoxPerformer
+  alternateTitles:
+  - MusicianTitleStar
+  - MusicianTitlePianist
+  - MusicianTitleMulti
+  - MusicianTitleSinger
+  - MusicianTitleAcordeon
+
 
 - type: startingGear
   id: MusicianGear
@@ -81,4 +88,24 @@
     ears: ClothingHeadsetService
   #storage:
     #back:
-    #- Stuff
+
+- type: jobAlternateTitle
+  id: MusicianTitleStar
+  name: job-name-alt-musician-star
+
+- type: jobAlternateTitle
+  id: MusicianTitlePianist
+  name: job-name-alt-musician-pianist
+
+- type: jobAlternateTitle
+  id: MusicianTitleMulti
+  name: job-name-alt-musician-multi
+
+- type: jobAlternateTitle
+  id: MusicianTitleSinger
+  name: job-name-alt-musician-singer
+
+- type: jobAlternateTitle
+  id: MusicianTitleAcordeon
+  name: job-name-alt-musician-acordeon
+

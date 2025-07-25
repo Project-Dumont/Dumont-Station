@@ -17,7 +17,10 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Velken <8467292+Velken@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -139,6 +142,20 @@ public sealed class AlertLevelSystem : EntitySystem
     }
 
     /// <summary>
+    /// Get the default alert level for a station entity.
+    /// Returns an empty string if the station has no alert levels defined.
+    /// </summary>
+    /// <param name="station">The station entity.</param>
+    public string GetDefaultLevel(Entity<AlertLevelComponent?> station)
+    {
+        if (!Resolve(station.Owner, ref station.Comp) || station.Comp.AlertLevels == null)
+        {
+            return string.Empty;
+        }
+        return station.Comp.AlertLevels.DefaultLevel;
+    }
+
+    /// <summary>
     /// Set the alert level based on the station's entity ID.
     /// </summary>
     /// <param name="station">Station entity UID.</param>
@@ -157,6 +174,9 @@ public sealed class AlertLevelSystem : EntitySystem
         {
             return;
         }
+
+        if (component.Locked) // Gaby change
+            return;
 
         if (!force)
         {
@@ -215,6 +235,14 @@ public sealed class AlertLevelSystem : EntitySystem
         }
 
         RaiseLocalEvent(new AlertLevelChangedEvent(station, level));
+    }
+
+    public void SetLocked(EntityUid station, bool locked, MetaDataComponent? dataComponent = null, AlertLevelComponent? component = null)
+    {
+        if (!Resolve(station, ref component, ref dataComponent) || component.AlertLevels == null)
+            return;
+
+        component.Locked = locked;
     }
 }
 

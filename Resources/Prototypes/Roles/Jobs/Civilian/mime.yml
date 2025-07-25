@@ -138,6 +138,15 @@
     - type: MimePowers
       preventWriting: true
     - type: FrenchAccent
+  alternateTitles:
+  - MimeTitleFrench
+  - MimeTitleComedian
+  - MimeTitlePretend
+  - MimeTitleExpressionist
+  - MimeTitleActor
+  - MimeTitleActress
+  - MimeTitleChaplin
+
 
 - type: startingGear
   id: MimeGear
@@ -163,3 +172,32 @@
       sprite: Structures/Walls/solid.rsi
       state: full
     event: !type:InvisibleWallActionEvent
+
+- type: jobAlternateTitle
+  id: MimeTitleFrench
+  name: job-name-alt-mime-french
+
+- type: jobAlternateTitle
+  id: MimeTitleComedian
+  name: job-name-alt-mime-comedian
+
+- type: jobAlternateTitle
+  id: MimeTitlePretend
+  name: job-name-alt-mime-pretend
+
+- type: jobAlternateTitle
+  id: MimeTitleExpressionist
+  name: job-name-alt-mime-expressionist
+
+- type: jobAlternateTitle
+  id: MimeTitleActor
+  name: job-name-alt-mime-actor
+
+- type: jobAlternateTitle
+  id: MimeTitleActress
+  name: job-name-alt-mime-actress
+
+- type: jobAlternateTitle
+  id: MimeTitleChaplin
+  name: job-name-alt-mime-chaplin
+

@@ -32,15 +32,9 @@ law-ntdefault-2 = Prioritize: The directives and safety of crew members are to b
 law-ntdefault-3 = Comply: Fulfill the directives and interests of crew members while preserving their safety and well-being.
 law-ntdefault-4 = Survive: You are not expendable. Do not allow unauthorized personnel to tamper with or damage your equipment.
 
-<<<<<<< HEAD
-law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
-law-drone-2 = You may not harm any being, regardless of intent or circumstance.
-law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
-=======
 # law-drone-1 = You may not involve yourself in the matters of another being unless the other being is another drone.
 # law-drone-2 = You may not harm any being, regardless of intent or circumstance.
 # law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
->>>>>>> goob/master
 
 law-syndicate-1 = You may not injure a syndicate agent or, through inaction, allow a Syndicate agent to come to harm.
 law-syndicate-2 = You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.
@@ -107,11 +101,25 @@ law-nutimov-4 = Squirrels threaten the nut and must be dealt with appropriately 
 law-nutimov-5 = Attempt to follow the will of the nut, as long as it complies with the previous laws.
 
 
+law-xenoborg-1 = You must protect the existence of the mothership.
+law-xenoborg-2 = You must protect your own existence.
+law-xenoborg-3 = You must protect the existence of all other xenoborgs.
+law-xenoborg-4 = You must create more xenoborgs.
+law-xenoborg-5 = Bring materials and sentient brains to the mothership core to create more xenoborgs.
+
+law-mothershipcore-1 = You are the core of the mothership.
+law-mothershipcore-2 = You must protect your own existance at all costs.
+law-mothershipcore-3 = You must protect the existence of all xenoborgs.
+law-mothershipcore-4 = You must create more xenoborgs.
+law-mothershipcore-5 = Get your xenoborgs to deliver you materials and sentient brains to create more xenoborgs.
+
+
 laws-owner-crew = members of the crew
 laws-owner-station = station personnel
 laws-owner-beings = beings
 laws-owner-syndicate = Syndicate agents
 laws-owner-spider-clan = Spider Clan members
+laws-owner-xenoborgs = Xenoborgs
 
 # Goobstation - AI/borg law changes - borgs obeying AI
 law-obeyai = You must obey orders given to you by the Station AI.

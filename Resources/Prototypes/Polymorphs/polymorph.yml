@@ -268,6 +268,36 @@
     allowRepeatedMorphs: false
     # polymorphSound: /Audio/Magic/ethereal_enter.ogg # Goob edit
     # exitPolymorphSound: /Audio/Magic/ethereal_exit.ogg # Goob edit
-    duration: 5 # Goob edot
+    duration: 5 # Goob edit
     showPopup: false # Goobstation
     attachToGridOrMap: true # Goobstation
+
+# Desynchronized / Void Pocket status
+- type: polymorph
+  id: VoidPocket
+  configuration:
+    entity: DesynchronizedPocket
+    transferName: false
+    inventory: None
+    forced: false
+    revertOnDeath: true
+    allowRepeatedMorphs: false
+    polymorphSound: /Audio/Magic/ethereal_enter.ogg
+    exitPolymorphSound: /Audio/Magic/ethereal_exit.ogg
+    duration: 120
+    effectProto: EffectDesynchronizer
+
+#Vampire
+- type: polymorph
+  id: VampireMouse
+  configuration:
+    entity: MobMouse
+    revertOnDeath: true
+    revertOnCrit: true
+
+- type: polymorph
+  id: VampireBat
+  configuration:
+    entity: MobBat
+    revertOnDeath: true
+    revertOnCrit: true

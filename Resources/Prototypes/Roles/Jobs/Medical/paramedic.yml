@@ -81,11 +81,9 @@
   description: job-description-paramedic
   playTimeTracker: JobParamedic
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 14400 #4 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 27000 # 7.5 hrs
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 9000 #2.5 hrs
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
@@ -102,6 +100,9 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.25
+  alternateTitles:
+  - ParamedicTitleFirstResponder
+  - ParamedicTitleTech
 
 - type: startingGear
   id: ParamedicGear
@@ -112,3 +113,11 @@
   storage:
     back:
     - EmergencyRollerBedSpawnFolded
+
+- type: jobAlternateTitle
+  id: ParamedicTitleFirstResponder
+  name: job-name-alt-paramedic-first-responder
+
+- type: jobAlternateTitle
+  id: ParamedicTitleTech
+  name: job-name-alt-paramedic-tech

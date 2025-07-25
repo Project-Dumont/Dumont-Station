@@ -31,7 +31,7 @@
   result: Beaker
   completetime: 2
   materials:
-    Glass: 100
+    Glass: 200
 
 - type: latheRecipe
   id: TanqueDeReagenteMelhor
@@ -45,7 +45,7 @@
   result: LargeBeaker
   completetime: 2
   materials:
-    Glass: 200
+    Glass: 400
 
 - type: latheRecipe
   id: CryostasisBeaker

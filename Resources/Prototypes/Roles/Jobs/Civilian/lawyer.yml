@@ -87,6 +87,10 @@
     components:
     - type: Condemned
       soulOwnedNotDevil: true
+  alternateTitles:
+  - LawyerTitleAttourney
+  - LawyerTitleExpert
+  - LawyerTitleDefender
 
 - type: startingGear
   id: LawyerGear
@@ -100,3 +104,15 @@
     back:
     - RubberStampLawyer
     - BookSpaceLaw
+
+- type: jobAlternateTitle
+  id: LawyerTitleAttourney
+  name: job-name-alt-lawyer-attourney
+
+- type: jobAlternateTitle
+  id: LawyerTitleExpert
+  name: job-name-alt-lawyer-expert
+
+- type: jobAlternateTitle
+  id: LawyerTitleDefender
+  name: job-name-alt-lawyer-defender

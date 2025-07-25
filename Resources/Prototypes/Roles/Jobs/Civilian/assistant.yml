@@ -62,14 +62,21 @@
 # SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
 # SPDX-FileCopyrightText: 2025 Ducks <97200673+TwoDucksOnnaPlane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 Jarl <elliotacline@gmail.com>
+# SPDX-FileCopyrightText: 2025 Jarl <140098675+JarlElbowses@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 # SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -83,19 +90,24 @@
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
   goobcoins: 0 #Goob content
- # access:
- #  - Maintenance
-  # goob tider hivemind
-  special:
-  - !type:AddComponentSpecial # ?????????????? - panela
-    components:
-      - type: IntrinsicRadioReceiver
-      - type: IntrinsicRadioTransmitter
-        channels:
-        - TideHivemind
-      - type: ActiveRadio
-        channels:
-        - TideHivemind
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 #10 hrs
+      inverted: true # get a job you bum
+  #  access:
+  #  - Maintenance
+  # gaby alt job titles
+  alternateTitles:
+  - AssistantTitlePassenger
+  - AssistantTitleOffDuty
+  - AssistantTitleFreelancer
+  - AssistantTitleErrand
+  - AssistantTitleTrader
+  - AssistantTitleTourist
+  - AssistantTitleIntern
+  - AssistantTitleTest
+  - AssistantTitleArtist
+  - AssistantTitleAssistant
 
 - type: startingGear
   id: PassengerGear
@@ -105,3 +117,43 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: AssistantTitlePassenger
+  name: job-name-alt-assistant-passenger
+
+- type: jobAlternateTitle
+  id: AssistantTitleOffDuty
+  name: job-name-alt-assistant-off-duty
+
+- type: jobAlternateTitle
+  id: AssistantTitleFreelancer
+  name: job-name-alt-assistant-freelancer
+
+- type: jobAlternateTitle
+  id: AssistantTitleErrand
+  name: job-name-alt-assistant-errand
+
+- type: jobAlternateTitle
+  id: AssistantTitleTrader
+  name: job-name-alt-assistant-trader
+
+- type: jobAlternateTitle
+  id: AssistantTitleTourist
+  name: job-name-alt-assistant-tourist
+
+- type: jobAlternateTitle
+  id: AssistantTitleIntern
+  name: job-name-alt-assistant-intern
+
+- type: jobAlternateTitle
+  id: AssistantTitleTest
+  name: job-name-alt-assistant-test
+
+- type: jobAlternateTitle
+  id: AssistantTitleArtist
+  name: job-name-alt-assistant-artist
+
+- type: jobAlternateTitle
+  id: AssistantTitleAssistant
+  name: job-name-alt-assistant-assistant

@@ -135,14 +135,24 @@
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -158,6 +168,7 @@ using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
+using Content.Shared._Gabystation.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
 using Content.Shared.Guidebook;
@@ -200,6 +211,10 @@ namespace Content.Client.Lobby.UI
         private readonly LobbyUIController _controller;
 
         private readonly SpriteSystem _sprite;
+
+        // CCvar.
+        private int _maxNameLength;
+        private bool _allowFlavorText;
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
@@ -279,6 +294,10 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
+
+            _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
+            _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
+
             ImportButton.OnPressed += args =>
             {
                 ImportProfile();
@@ -314,6 +333,7 @@ namespace Content.Client.Lobby.UI
             #region Name
 
             NameEdit.OnTextChanged += args => { SetName(args.Text); };
+            NameEdit.IsValid = args => args.Length <= _maxNameLength;
             NameRandomize.OnPressed += args => RandomizeName();
             RandomizeEverythingButton.OnPressed += args => { RandomizeEverything(); };
             WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
@@ -345,19 +365,6 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Age
-
-            // # Goobstation - Preferred Cyborg Name Thing
-
-            #region BorgName
-
-            BorgNameRandomize.OnPressed += args => RandomizeBorgName();
-            BorgNameEdit.OnTextChanged += args =>
-            {
-                if (!string.IsNullOrEmpty(args.Text))
-                    SetBorgName(args.Text);
-            };
-
-            #endregion BorgName
 
             #region Gender
 
@@ -612,7 +619,7 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public void RefreshFlavorText()
         {
-            if (_cfgManager.GetCVar(CCVars.FlavorText))
+            if (_allowFlavorText)
             {
                 if (_flavorText != null)
                     return;
@@ -911,8 +918,6 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateFlavorTextEdit();
-            // #Goobstation - Borg Preferred Name
-            UpdateBorgNameEdit();
             UpdateSexControls();
             UpdateGenderControls();
             UpdateSkinColor();
@@ -1055,6 +1060,8 @@ namespace Content.Client.Lobby.UI
 
                 Array.Sort(jobs, JobUIComparer.Instance);
 
+                var altJobTitlesEnable = _cfgManager.GetCVar(GabyCVars.ICAlternateJobTitlesEnable);
+
                 foreach (var job in jobs)
                 {
                     var jobContainer = new BoxContainer()
@@ -1075,7 +1082,23 @@ namespace Content.Client.Lobby.UI
                     };
                     var jobIcon = _prototypeManager.Index(job.Icon);
                     icon.Texture = _sprite.Frame0(jobIcon.Icon);
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    var hasDefaultAltTitle = Profile?.JobAlternateTitles.ContainsKey(job.ID);
+
+                    if (altJobTitlesEnable)
+                    {
+                        if (hasDefaultAltTitle.HasValue && hasDefaultAltTitle.Value)
+                        {
+                            var defaultAltTitle = Profile?.JobAlternateTitles[job.ID];
+                            selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides, job.AlternateTitles, defaultAltTitle, _prototypeManager);
+                        }
+                        else
+                        {
+                            selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides, job.AlternateTitles, null, _prototypeManager);
+                        }
+                    }
+                    else
+                        selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides, null, null, null);
 
                     if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, out var reason))
                     {
@@ -1085,6 +1108,14 @@ namespace Content.Client.Lobby.UI
                     {
                         selector.UnlockRequirements();
                     }
+
+                    selector.OnSelectedTitle += selectedTitle =>
+                    {
+                        if (!altJobTitlesEnable)
+                            return;
+                        Profile = Profile?.WithJobAltTitle(job.ID, selectedTitle);
+                        SetDirty();
+                    };
 
                     selector.OnSelected += selectedPrio =>
                     {
@@ -1365,16 +1396,6 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
-        // #Goobstation - Prefered Cyborg Name Stuff
-        private void SetBorgName(string newBName)
-        {
-            Profile = Profile?.WithBorgName(newBName);
-            SetDirty();
-
-            if (!IsDirty)
-                return;
-        }
-
         private void SetSex(Sex newSex)
         {
             Profile = Profile?.WithSex(newSex);
@@ -1463,12 +1484,6 @@ namespace Content.Client.Lobby.UI
         private void UpdateAgeEdit()
         {
             AgeEdit.Text = Profile?.Age.ToString() ?? "";
-        }
-
-        // #Goobstation - More Borg Name Stuff
-        private void UpdateBorgNameEdit()
-        {
-            BorgNameEdit.Text = Profile?.BorgName.ToString() ?? "";
         }
 
         /// <summary>
@@ -1786,14 +1801,6 @@ namespace Content.Client.Lobby.UI
             var name = HumanoidCharacterProfile.GetName(Profile.Species, Profile.Gender);
             SetName(name);
             UpdateNameEdit();
-        }
-        // #Goobstation - Borg Preferred Name
-        private void RandomizeBorgName()
-        {
-            if (Profile == null) return;
-            var name = HumanoidCharacterProfile.GetBorgName();
-            SetBorgName(name);
-            UpdateBorgNameEdit();
         }
 
         private async void ExportImage()

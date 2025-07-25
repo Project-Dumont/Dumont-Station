@@ -1,7 +1,7 @@
 job-name-futureagent = agente do futuro
 job-name-salvagediver = mergulhador explorador
 job-name-ntr = representante nanostrasen
-job-name-bs = sentinela de comando
+job-name-bs = oficial blueshield
 job-name-overall = geral
 job-name-hecu = agente HECU
 

@@ -114,9 +114,16 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Minemoder5000 <minemoder50000@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -128,20 +135,19 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 21600 #6 hrs
+      time: 18000 #5 hrs
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 10800 #3 hrs
+      time: 9000 #2.5 hrs
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 36000 #10 hours
-    - !type:OverallPlaytimeRequirement
-      time: 144000 #40 hrs
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  #canBeAntag: false
+  antagAdvantage: 75 # Goobstation
   goobcoins: 40 #Goob content
   access:
   - Cargo
@@ -159,6 +165,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  alternateTitles:
+  - QuarterMasterTitleChief
+  - QuarterMasterTitleAccountant
+  - QuarterMasterTitleSupervisor
+  - QuarterMasterTitleManager
 
 - type: startingGear
   id: QuartermasterGear
@@ -171,3 +182,20 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+
+
+- type: jobAlternateTitle
+  id: QuarterMasterTitleChief
+  name: job-name-alt-qm-chief
+
+- type: jobAlternateTitle
+  id: QuarterMasterTitleAccountant
+  name: job-name-alt-qm-accountant
+
+- type: jobAlternateTitle
+  id: QuarterMasterTitleSupervisor
+  name: job-name-alt-qm-supervisor
+
+- type: jobAlternateTitle
+  id: QuarterMasterTitleManager
+  name: job-name-alt-qm-manager

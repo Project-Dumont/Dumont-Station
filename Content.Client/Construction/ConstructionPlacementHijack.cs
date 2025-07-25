@@ -15,14 +15,22 @@
 // SPDX-FileCopyrightText: 2023 08A <git@08a.re>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ertanic <36124833+Ertanic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
 using Content.Shared.Construction.Prototypes;
+using Robust.Client.GameObjects;
 using Robust.Client.Placement;
-using Robust.Client.Utility;
+using Robust.Client.ResourceManagement;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Construction
 {
@@ -30,6 +38,9 @@ namespace Content.Client.Construction
     {
         private readonly ConstructionSystem _constructionSystem;
         private readonly ConstructionPrototype? _prototype;
+
+        public ConstructionSystem? CurrentConstructionSystem { get { return _constructionSystem; } }
+        public ConstructionPrototype? CurrentPrototype { get { return _prototype; } }
 
         public override bool CanRotate { get; }
 
@@ -65,7 +76,14 @@ namespace Content.Client.Construction
         public override void StartHijack(PlacementManager manager)
         {
             base.StartHijack(manager);
-            manager.CurrentTextures = _prototype?.Layers.Select(sprite => sprite.DirFrame0()).ToList();
+
+            if (_prototype is null || !_constructionSystem.TryGetRecipePrototype(_prototype.ID, out var targetProtoId))
+                return;
+
+            if (!IoCManager.Resolve<IPrototypeManager>().TryIndex(targetProtoId, out EntityPrototype? proto))
+                return;
+
+            manager.CurrentTextures = SpriteComponent.GetPrototypeTextures(proto, IoCManager.Resolve<IResourceCache>()).ToList();
         }
     }
 }

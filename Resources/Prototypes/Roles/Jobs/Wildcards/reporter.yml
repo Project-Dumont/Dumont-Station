@@ -65,6 +65,11 @@
   access:
   - Service
   - Maintenance
+  alternateTitles:
+  - ReporterTitleAnchor
+  - ReporterTitleInterviewer
+  - ReporterTitleTv
+
 
 - type: startingGear
   id: ReporterGear
@@ -79,3 +84,14 @@
     - CassetteTape
     - MicrophoneInstrument # Goobstation
 
+- type: jobAlternateTitle
+  id: ReporterTitleAnchor
+  name: job-name-alt-reporter-anchor
+
+- type: jobAlternateTitle
+  id: ReporterTitleInterviewer
+  name: job-name-alt-reporter-interviewer
+
+- type: jobAlternateTitle
+  id: ReporterTitleTv
+  name: job-name-alt-reporter-tv

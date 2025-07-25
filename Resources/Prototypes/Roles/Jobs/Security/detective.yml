@@ -69,9 +69,9 @@
   description: job-description-detective
   playTimeTracker: JobDetective
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 54000 # 15 hours
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 18000 #5 hrs
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
@@ -91,6 +91,10 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
+  alternateTitles:
+  - DetectiveTitleInvestigator
+  - DetectiveTitleExpert
+  - DetectiveTitleAnalist
 
 - type: startingGear
   id: DetectiveGear
@@ -105,4 +109,17 @@
     - Flash
     - ForensicPad
     - ForensicScanner
+    - SecHypo # Goobstation
     - ClothingMaskGasSecurity # Goobstation
+
+- type: jobAlternateTitle
+  id: DetectiveTitleInvestigator
+  name: job-name-alt-detective-investigator
+
+- type: jobAlternateTitle
+  id: DetectiveTitleExpert
+  name: job-name-alt-detective-expert
+
+- type: jobAlternateTitle
+  id: DetectiveTitleAnalist
+  name: job-name-alt-detective-analist

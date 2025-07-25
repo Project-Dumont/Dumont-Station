@@ -114,6 +114,13 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - TauCetiBasic
+    - Chittin # Until they have a species-specific
+    understands:
+    - TauCetiBasic
+    - Chittin # Until they have a species-specific
   - type: Sprite # I'd prefer if these maps were better. Insert map pun here.
     layers:
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
@@ -132,8 +139,11 @@
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "gloves" ]
       - map: [ "shoes" ]
-      - map: [ "ears" ]
-      - map: [ "eyes" ]
+      - map: [ "culteyes" ] # funky cult
+        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
+        state: "arachnid"
+        shader: unshaded
+        visible: false
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
@@ -143,6 +153,8 @@
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ] # Do these need to be here? (arachnid hair arachnid hair)
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "ears" ]
+      - map: [ "eyes" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "maskalt" ]
       - map: [ "mask" ]
@@ -157,6 +169,11 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "Effects/creampie.rsi"
         state: "creampie_arachnid"
+        visible: false
+      - map: [ "culthalo" ] # funky cult
+        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
+        state: "halo"
+        shader: unshaded
         visible: false
   - type: Inventory
     templateId: arachnid

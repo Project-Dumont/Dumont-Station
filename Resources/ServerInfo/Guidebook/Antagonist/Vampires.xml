@@ -1,0 +1,51 @@
+<Document>
+  # Vampiro
+  
+  <Box>
+    [color=#999999][italic]"Vampiro das sombras, sugando todo o seu sangue."[/italic][/color]
+  </Box>
+
+  Você é apenas um vampiro comum. Você e seus colegas se infiltraram na estação disfarçados de funcionários para ganhar força e poder para sobreviver. Você está dominado por [color=#eb4034]sede de sangue[/color].
+
+  Sua tarefa é absorver o máximo de sangue possível sem ferir gravemente a tripulação. Pois é assim que você se revela. Você possui mutações em seu arsenal que podem ativar uma variedade de habilidades diferentes.
+
+  ## Mutações
+  
+  Mutações permitem que um vampiro adquira habilidades. A seleção de mutação é aberta ao drenar 100 de sangue. Atualmente existem apenas 4 mutações representadas:
+  
+  [bold]Hemomante[/bold]
+   - Foca em magia de sangue e manipulação do sangue ao redor.
+   - Habilidades:
+   - Grito (200 sangue)
+   - Roubo de Sangue (300 sangue)
+   
+  [bold]Sombra[/bold]
+  - Foca em escuridão, furtividade, mobilidade.
+  - Habilidades:
+  - Ofuscamento (200 sangue)
+  - Manto das Sombras (300 sangue)
+  
+  [bold]Gargantua[/bold]
+  - Foca em dano corpo a corpo e resistência.
+  - Habilidades:
+  - Força Profana (200 sangue)
+  - Força Sobrenatural (300 sangue)
+  
+  [bold]Bestia[/bold]
+  - Foca em transformação e coleta de troféus.
+  - Habilidades:
+  - Forma de Morcego (200 sangue)
+  - Forma de Rato (300 sangue)
+
+  ## Clã Vampiro
+
+  Todos os vampiros da estação fazem parte do mesmo clã, os membros do [color=#FF0000]Clã Vampiro[/color] são capazes de se comunicar entre si telepaticamente atravéz de sua linhagem sanguinea de um ancestral comum, o que permite que eles compartilhem informações e estratégias em qualquer lugar da estação.
+  O prefixo para se comunicar é: +v
+
+  ## Sistema de Sangue
+
+  Você provavelmente já se deparou com um momento ao escolher uma mutação.
+  Suas habilidades não aparecem, mas não é um bug!
+  As habilidades só aparecem em determinado nível de sangue, assim como desaparecem: se seu sangue estiver abaixo de 200 você perde todas as habilidades, se estiver abaixo de 300 você perde a última.
+
+</Document>

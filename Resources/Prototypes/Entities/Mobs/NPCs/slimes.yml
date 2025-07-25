@@ -120,9 +120,7 @@
     baseSprintSpeed: 4
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Effects/Footsteps/slime1.ogg
-      params:
-        volume: 3
+      collection: FootstepSlime
   - type: Tag
     tags:
     - FootstepSound
@@ -211,8 +209,11 @@
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
-  - type: ReplacementAccent
-    accent: slimes
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - Bubblish
+    understands:
+    - Bubblish
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true

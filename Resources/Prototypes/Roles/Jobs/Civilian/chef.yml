@@ -97,6 +97,10 @@
       - type: GrantCqc # Goobstation - Martial Arts
         startingStage: Hard # Goobstation - Martial Arts
         isBlocked: true # Goobstation - Martial Arts
+  alternateTitles:
+  - ChefTitleSteward
+  - ChefTitleCook
+  - ChefTitlePizza
 
 - type: startingGear
   id: ChefGear
@@ -108,3 +112,15 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: ChefTitleSteward
+  name: job-name-alt-chef-steward
+
+- type: jobAlternateTitle
+  id: ChefTitleCook
+  name: job-name-alt-chef-cook
+
+- type: jobAlternateTitle
+  id: ChefTitlePizza
+  name: job-name-alt-chef-pizza

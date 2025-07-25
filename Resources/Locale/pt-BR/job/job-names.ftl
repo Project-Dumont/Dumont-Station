@@ -14,7 +14,6 @@ job-name-doctor = médico
 job-name-paramedic = paramédico
 job-name-cmo = médico chefe
 job-name-chemist = químico
-job-name-blueshield = sentinela de comando
 job-name-technical-assistant = assistente técnico
 job-name-engineer = engenheiro da estação
 job-name-atmostech = técnico atmosférico

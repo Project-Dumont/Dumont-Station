@@ -2,8 +2,12 @@
 # SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Plyush <121322002+Plyushsune@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Will Oliver <willyangame76@gmail.com>
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 plyush <121322002+toasterpm87@users.noreply.github.com>
@@ -102,7 +106,7 @@
   id: VulpEarOtie
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [Vulpkanin, Felinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: otie
@@ -113,7 +117,7 @@
   id: VulpEarTajaran
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [Vulpkanin, Felinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: msai
@@ -133,7 +137,7 @@
   id: VulpEarCoyote
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [Vulpkanin, Felinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/ear_markings.rsi
       state: coyote
@@ -291,6 +295,17 @@
       state: vulp-fade
 
 - type: marking
+  id: VulpTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-tip #fade
+
+- type: marking
   id: VulpTailTip
   bodyPart: Tail
   markingCategory: Tail
@@ -302,21 +317,10 @@
       state: vulp-tip
 
 - type: marking
-  id: VulpTailWag
+  id: VulpTailTipAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag-tip #fade
-
-- type: marking
-  id: VulpTailWagTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: []
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag
@@ -368,6 +372,17 @@
       state: fox-fade
 
 - type: marking
+  id: VulpTailFoxAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag-fade
+
+- type: marking
   id: VulpTailFoxTip
   bodyPart: Tail
   markingCategory: Tail
@@ -379,21 +394,10 @@
       state: fox-tip
 
 - type: marking
-  id: VulpTailFoxWag
+  id: VulpTailFoxTipAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: fox_wag
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: fox_wag-fade
-
-- type: marking
-  id: VulpTailFoxWagTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: []
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fox_wag
@@ -404,16 +408,16 @@
   id: VulpTailBushy
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [Vulpkanin, Felinid]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: bushfluff
 
 - type: marking
-  id: VulpTailBushyWag
+  id: VulpTailBushyAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: []
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: bushfluff_wag
@@ -428,19 +432,28 @@
       state: coyote
 
 - type: marking
-  id: VulpTailCoyoteWag
+  id: VulpTailCoyoteAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: []
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: coyote_wag
 
 - type: marking
-  id: VulpTailCorgiWag
+  id: VulpTailCorgi
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [Vulpkanin, Felinid]
+  sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: corgi
+
+- type: marking
+  id: VulpTailCorgiAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: corgi_wag
@@ -513,10 +526,19 @@
       state: fluffy
 
 - type: marking
-  id: VulpTailDalmatianWag
+  id: VulpTailDalmatian
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [Vulpkanin, Felinid]
+  sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: dalmatian
+
+- type: marking
+  id: VulpTailDalmatianAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: dalmatian_wag

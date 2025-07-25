@@ -1,10 +1,10 @@
 health-analyzer-window-no-patient-data-text = Sem dados do paciente.
 health-analyzer-window-entity-unknown-text = desconhecido
 health-analyzer-window-entity-health-text = Saúde de {$entityName}:
-health-analyzer-window-entity-temperature-text = Temperatura: {$temperature}
-health-analyzer-window-entity-blood-level-text = Nível de sangue: {$bloodLevel}
+health-analyzer-window-entity-temperature-text = Temperatura:
+health-analyzer-window-entity-blood-level-text = Nível de sangue:
 health-analyzer-window-entity-bleeding-text = O paciente está sangrando!
-health-analyzer-window-entity-damage-total-text = Dano Total: {$amount}
+health-analyzer-window-entity-damage-total-text = Dano Total:
 health-analyzer-window-damage-group-text = {$damageGroup}: {$amount}
 health-analyzer-window-damage-type-text = {$damageType}: {$amount}
 health-analyzer-window-damage-type-duplicate-text = {$damageType}: {$amount} (duplicate)

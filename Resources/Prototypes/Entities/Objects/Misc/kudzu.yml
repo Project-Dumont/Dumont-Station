@@ -42,6 +42,8 @@
     - type: ActiveEdgeSpreader
     - type: EdgeSpreader
       id: Kudzu
+    - type: SpeedModifierContacts
+      affectAirborne: true
 
 - type: entity
   id: Kudzu
@@ -328,6 +330,9 @@
           data: { state: spookysmoke }
         - options: ReducedMotion
           data: { state: spookysmoke_static }
+    - type: FadingTimedDespawn # Gabystation - Fumaça de anomalia some depois de 5 minutos
+      lifetime: 250
+      fadeOutTime: 30
 
 - type: entity
   name: haze

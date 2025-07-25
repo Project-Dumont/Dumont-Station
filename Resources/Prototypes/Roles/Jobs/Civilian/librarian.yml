@@ -71,6 +71,11 @@
   access:
   - Service
   - Maintenance
+  alternateTitles:
+  - LibrarianTitleWriter
+  - LibrarianTitleEvent
+  - LibrarianTitleTech
+
 
 - type: startingGear
   id: LibrarianGear
@@ -83,3 +88,16 @@
   storage:
     back:
     - BookRandom
+
+- type: jobAlternateTitle
+  id: LibrarianTitleWriter
+  name: job-name-alt-librarian-writer
+
+- type: jobAlternateTitle
+  id: LibrarianTitleEvent
+  name: job-name-alt-librarian-event
+
+- type: jobAlternateTitle
+  id: LibrarianTitleTech
+  name: job-name-alt-librarian-tech
+

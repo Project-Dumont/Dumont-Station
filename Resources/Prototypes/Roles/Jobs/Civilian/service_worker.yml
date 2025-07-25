@@ -74,6 +74,10 @@
   name: job-name-serviceworker
   description: job-description-serviceworker
   playTimeTracker: JobServiceWorker
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Civilian
+    time: 1800 #0.5 hr
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
@@ -85,6 +89,11 @@
   - Kitchen
   extendedAccess:
   - Hydroponics
+  alternateTitles:
+  - ServiceWorkerTitleWorker
+  - ServiceWorkerTitleAssistant
+  - ServiceWorkerTitleWaiter
+
 
 - type: startingGear
   id: ServiceWorkerGear
@@ -95,3 +104,15 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: ServiceWorkerTitleWorker
+  name: job-name-alt-serviceworker-worker
+
+- type: jobAlternateTitle
+  id: ServiceWorkerTitleAssistant
+  name: job-name-alt-serviceworker-assistant
+
+- type: jobAlternateTitle
+  id: ServiceWorkerTitleWaiter
+  name: job-name-alt-serviceworker-waiter

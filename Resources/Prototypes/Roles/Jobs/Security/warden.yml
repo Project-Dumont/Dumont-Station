@@ -137,6 +137,9 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
       time: 36000 #10 hrs
   weight: 5
   startingGear: WardenGear
@@ -159,6 +162,11 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
+  alternateTitles:
+  - WardenTitleClerk
+  - WardenTitleChief
+  - WardenTitleDispacher
+  - WardenTitleManager
 
 - type: startingGear
   id: WardenGear
@@ -171,4 +179,21 @@
     back:
     - Flash
     - MagazinePistol
+    - SecHypo # Goobstation
     - ClothingMaskGasSecurity # Goobstation
+
+- type: jobAlternateTitle
+  id: WardenTitleClerk
+  name: job-name-alt-warden-clerk
+
+- type: jobAlternateTitle
+  id: WardenTitleChief
+  name: job-name-alt-warden-chief
+
+- type: jobAlternateTitle
+  id: WardenTitleDispacher
+  name: job-name-alt-warden-dispacher
+
+- type: jobAlternateTitle
+  id: WardenTitleManager
+  name: job-name-alt-warden-manager

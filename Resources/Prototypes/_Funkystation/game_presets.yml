@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: gamePreset
   id: Heretics
   alias:
@@ -70,6 +78,7 @@
   minPlayers: 5
   rules:
     - IncidentDynamic
+    #- ApocalypseDynamic
 
 - type: gamePreset
   id: TheApostle
@@ -79,7 +88,7 @@
   - apocalypse
   name: apostle-title
   description: apostle-description
-  showInVote: true
+  showInVote: false # teste de caos
   minPlayers: 5
   rules:
     - ApocalypseDynamic
@@ -90,7 +99,7 @@
   - secretdirector
   - director
   name: secret-director-title
-  showInVote: true # Goob - Game Director
+  showInVote: false # teste de cas
   description: secret-director-description
   rules:
     - SecretDirector

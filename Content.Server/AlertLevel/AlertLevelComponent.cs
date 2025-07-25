@@ -7,7 +7,9 @@
 // SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
 // SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -44,6 +46,11 @@ public sealed partial class AlertLevelComponent : Component
 
     [ViewVariables] public float CurrentDelay = 0;
     [ViewVariables] public bool ActiveDelay;
+    /// <summary>
+    /// GabyStation change: This disable the change of alert level in ANY position.
+    /// Used in martial law.
+    /// </summary>
+    [ViewVariables] public bool Locked = false;
 
     /// <summary>
     /// If the level can be selected on the station.

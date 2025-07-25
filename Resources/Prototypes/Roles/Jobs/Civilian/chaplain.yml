@@ -54,12 +54,18 @@
 # SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -84,7 +90,15 @@
     - type: BibleUser #Lets them heal with bibles
     - type: Condemned
       soulOwnedNotDevil: true # This just means they won't suffer the effects of being condemned, while still not being able to sell their soul. - Goobstation
-    - type: CanEnchant #GoobStation
+    - type: CanEnchant # GoobStation
+    - type: CultResistant # Gaby Station -> Port Funky cult
+  alternateTitles:
+  - ChaplainTitleFather
+  - ChaplainTitleImam
+  - ChaplainTitleRabbi
+  - ChaplainTitleRabbiFem
+  - ChaplainTitleMonk
+  - ChaplainTitleInstructor
 
 - type: startingGear
   id: ChaplainGear
@@ -97,3 +111,27 @@
     - ChaplainUndeterminedBible
     - RubberStampChaplain
     - Nullrod
+
+- type: jobAlternateTitle
+  id: ChaplainTitleFather
+  name: job-name-alt-chaplain-father
+
+- type: jobAlternateTitle
+  id: ChaplainTitleImam
+  name: job-name-alt-chaplain-imam
+
+- type: jobAlternateTitle
+  id: ChaplainTitleRabbi
+  name: job-name-alt-chaplain-rabbi
+
+- type: jobAlternateTitle
+  id: ChaplainTitleRabbiFem
+  name: job-name-alt-chaplain-rabbi-fem
+
+- type: jobAlternateTitle
+  id: ChaplainTitleMonk
+  name: job-name-alt-chaplain-monk
+
+- type: jobAlternateTitle
+  id: ChaplainTitleInstructor
+  name: job-name-alt-chaplain-instructor

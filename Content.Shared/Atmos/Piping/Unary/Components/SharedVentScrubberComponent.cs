@@ -30,6 +30,7 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
         public ScrubberPumpDirection PumpDirection { get; set; } = ScrubberPumpDirection.Scrubbing;
         public float VolumeRate { get; set; } = 200f;
         public bool WideNet { get; set; } = false;
+        public bool AirAlarmPanicWireCut { get; set; }
 
         public static HashSet<Gas> DefaultFilterGases = new()
         {
@@ -43,6 +44,13 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Gas.BZ, // Assmos - /tg/ gases
             Gas.Healium, // Assmos - /tg/ gases
             Gas.Nitrium, // Assmos - /tg/ gases
+            Gas.Hydrogen, // Assmos - /tg/ gases
+            Gas.HyperNoblium, // Assmos - /tg/ gases
+            Gas.ProtoNitrate, // Assmos - /tg/ gases
+            Gas.Zauker, // Assmos - /tg/ gases
+            Gas.Halon, // Assmos - /tg/ gases
+            Gas.Helium, // Assmos - /tg/ gases
+            Gas.AntiNoblium, // Assmos - /tg/ gases
         };
 
         // Presets for 'dumb' air alarm modes
@@ -82,7 +90,7 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             FilterGases = new(GasVentScrubberData.DefaultFilterGases),
             PumpDirection = ScrubberPumpDirection.Siphoning,
             VolumeRate = 200f,
-            WideNet = false
+            WideNet = true
         };
 
         public static GasVentScrubberData ReplaceModePreset = new GasVentScrubberData

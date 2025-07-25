@@ -1,20 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Daniela <daniela.paladinof@gmail.com>
-# SPDX-FileCopyrightText: 2024 Felipealmeidaz <zeccky123@gmail.com>
-# SPDX-FileCopyrightText: 2024 Renan Lenhare <lenhare@outlook.com>
-# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
-# SPDX-FileCopyrightText: 2025 DoutorWhite <thedoctorwhite@gmail.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
-# SPDX-FileCopyrightText: 2025 Eduardo Oliveira <jubileu1232020@gmail.com>
-# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 skysnowflok <jubileu1232020@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 Name: Gaby
 Order: -2
 Entries:
@@ -244,18 +227,25 @@ Entries:
   time: '2025-03-08T12:01:00.0000000+00:00'
   changes:
     - type: Fix
-      message: readiciona whitelist para hamburguers, assim evitando o meta de insta kill, e evitando que itens aleatorios sejam botados no hamburguer, algo sem muito sentido em MRP.
+      message: >-
+        readiciona whitelist para hamburguers, assim evitando o meta de insta
+        kill, e evitando que itens aleatorios sejam botados no hamburguer, algo
+        sem muito sentido em MRP.
   id: 31
 - author: Dreykor (arguemeu)
   changes:
     - type: Add
-      message: Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio do alerta epsilon para sua versão completa.
+      message: >-
+        Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio
+        do alerta epsilon para sua versão completa.
   id: 32
   time: '2025-03-17T21:30:00.0000000+00:00'
 - author: Dreykor (arguemeu)
   changes:
     - type: Tweak
-      message: Modificão completa na Perma Brig da Saltern, para a alegria dos jogadores de prisoneiros!
+      message: >-
+        Modificão completa na Perma Brig da Saltern, para a alegria dos
+        jogadores de prisoneiros!
     - type: Tweak
       message: Adiciona vaga para reporter na saltern!
   id: 33
@@ -285,17 +275,23 @@ Entries:
 - author: Dreykor (arguemeu)
   changes:
     - type: Fix
-      message: Hotfix na saltern, usaremos a saltern do goob temporariamente, até que eu concerte a saltern do gaby
+      message: >-
+        Hotfix na saltern, usaremos a saltern do goob temporariamente, até que
+        eu concerte a saltern do gaby
   id: 36
   time: '2025-05-26T15:00:00.0000000+00:00'
 - author: Dreykor (arguemeu)
   changes:
     - type: Tweak
-      message: Traduz completamente o devil (Diabo), que tenhamos mais pacto com o capeta!
+      message: >-
+        Traduz completamente o devil (Diabo), que tenhamos mais pacto com o
+        capeta!
     - type: Tweak
       message: Traduz completamente o Culto cosmico! Que vossa divindade venha a terra!
     - type: Tweak
-      message: Rework completo na Space Law, tornando-a mais facil de ser consultada, e organizando-a mais facilmente pra aplicar penas rapidamente!
+      message: >-
+        Rework completo na Space Law, tornando-a mais facil de ser consultada, e
+        organizando-a mais facilmente pra aplicar penas rapidamente!
   id: 37
   time: '2025-05-28T15:00:00.0000000+00:00'
 - author: AgentePanela (vyas)
@@ -312,4 +308,335 @@ Entries:
       message: Corrige problemas de tradução do devil, vindos do update.
   id: 39
   time: '2025-06-06T15:00:00.0000000+00:00'
-
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Correções de otimização na Lavaland, diminuindo o lag causado por ela.
+  id: 40
+  time: '2025-06-10T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Add
+      message: Fumaça de anomalias agora desaparecem depois de 5 minutos.
+  id: 41
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Add
+      message: Jogo base atualizado com o Goob até 16/06/25.
+  id: 42
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Opções do console de comunicações.
+  id: 43
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Readiciona kit de armas ao chefe de segurança!
+  id: 44
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Atualização na packed.
+    - type: Fix
+      message: Atualização na cluster.
+  id: 45
+  time: '2025-06-17T15:00:00.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Os changlogs estão de volta!
+  id: 46
+  time: '2025-06-23T13:21:46.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Nova rede de gases bluespace. Use o transmissor de gás de bluespace para
+        adicionar gases a rede e a máquina de venda de gás de bluespace para
+        encher tanques com os gases da rede. Conecte as máquinas com uma
+        multiferramenta.
+    - type: Add
+      message: >-
+        Nova máquina: o cristalizador. Em condições ideais, transforme
+        substâncias gasosas em cristais. Variados preços e várias
+        funcionalidades, só tome cuidado pra não derrubar...
+    - type: Add
+      message: >-
+        O Reator de Fusão Hypertorus é um novo gerador de energia. Além de gerar
+        energia, ele proporciona um ambiente interno ótimo para reações mais
+        controladas e de maior eficiência. Mas, tenha cuidado! Assim como a
+        Supermatter, qualquer descuido pode levar na destruição massiva do
+        Departamento de Engenharia.
+    - type: Add
+      message: >-
+        Tanto o reator como o cristalizador dependem de condições ótimas, para
+        ajudar a chegar nelas, a NanoTrasen lançou novos modelos de máquinas
+        térmicas (aquecedores e resfriados).
+    - type: Add
+      message: >-
+        Os gases hidrogênio, hyper-nobium, proto-nitrate, zauker, halon e
+        anti-noblium foram adicionados.
+    - type: Tweak
+      message: >-
+        As entradas de gases e máquinas térmicas do livro guia foram
+        atualizadas!
+    - type: Add
+      message: >-
+        Pesquisas que contemplam as novas máquinas da Atmosfera foram
+        adicionadas.
+    - type: Add
+      message: >-
+        O eletrolisador foi adicionado. Em uma atmosfera livre, ele proporciona
+        a quebra das móleculas a custo de energia elétrica. Qual a fórmula da
+        agua, ou melhor, do vapor mesmo?
+    - type: Tweak
+      message: >-
+        As receitas das máquinas térmicas comuns não estão mais trancadas por
+        pesquisa e usam urânio ao invés de ouro. "Cargoo? Cade os minérios?"
+  id: 47
+  time: '2025-06-23T23:23:11.0000000+00:00'
+- author: Arguemeu, kbarkevich, Rainbeon
+  changes:
+    - type: Add
+      message: Adiciona culto de sangue ao jogo, viva ao nosso lorde nar'sie!
+  id: 48
+  time: '2025-06-23T23:29:56.0000000+00:00'
+- author: Impstation
+  changes:
+    - type: Add
+      message: >-
+        Mais customização de marcas para personagem (moth tem umas asas
+        lindas.)!
+  id: 49
+  time: '2025-06-23T23:31:32.0000000+00:00'
+- author: Arguemeu, mkanke-real
+  changes:
+    - type: Add
+      message: >-
+        Adiciona Boombox, que são jukebox portateis, pesquisa avançada de
+        serviço para poder fabricar!
+  id: 50
+  time: '2025-06-23T23:37:55.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        O controlador remoto do capitão agora tem acesso total, para a
+        felicidade dos poucos que jogam de capitão.
+  id: 51
+  time: '2025-06-24T18:47:53.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Consoles de teleporte e pads de teleporte adicionados. Se tratam de
+        estruturas para mapping e eventos admeme. Espere ver em um futuro não
+        tão distante!
+  id: 52
+  time: '2025-06-25T00:48:43.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Tem relatos da NT usando um novo alerta para ameaças internas...
+  id: 53
+  time: '2025-06-26T14:03:58.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Agora o Abductor precisa estar a um raio de 200m da estação para ter
+        acesso as cameras e se teleportar.
+    - type: Tweak
+      message: >-
+        Ao teleportar pra estação, a habilidade de retornar a nave do Abductor
+        entra em cooldown por 20 segundos.
+  id: 54
+  time: '2025-06-26T14:08:10.0000000+00:00'
+- author: Arguemeu, taydeo, Rainbeon
+  changes:
+    - type: Add
+      message: >-
+        Rework nos revolucionários, uplink e um novo sistema de declarar revolta
+        para head revs!
+  id: 55
+  time: '2025-06-26T14:09:00.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Novas entradas na POP e uma nova Lei
+    - type: Tweak
+      message: O console de comunicações ganhou uma nova opção
+    - type: Tweak
+      message: POP de alertas recebeu uma atualização
+  id: 56
+  time: '2025-06-26T18:46:19.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Correções em um bug que desabilitava metade de substituições de falas
+        abreviadas, agora, por exemplo, falar qm no chat vai ser substituido por
+        intendente de carga, e por ai vai.
+  id: 57
+  time: '2025-06-26T21:14:38.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: A estação Gamma está de volta e atualizada!!!1!
+  id: 58
+  time: '2025-06-29T15:36:24.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Correção no audio do alerta da lei marcial, pra causar mais medo.
+  id: 59
+  time: '2025-07-03T21:35:50.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Tradução ao clica num objeto sem energia corrigida.
+  id: 60
+  time: '2025-07-04T18:41:45.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Tradução do analisador medico.
+    - type: Fix
+      message: Anuncio de chegada na estação.
+    - type: Tweak
+      message: Jogo base atualizado para 04/07 (Goob).
+  id: 61
+  time: '2025-07-04T18:41:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Som de Cristal, Cumade e Cumpade e Estrada da Vida foram adicionadas na
+        jukebox.
+  id: 62
+  time: '2025-07-04T22:52:23.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Atualiza a versão da engine para 263.0.0!
+    - type: Fix
+      message: As animações das firelock abrindo e fechando foram corrigidas!
+  id: 63
+  time: '2025-07-08T14:41:29.0000000+00:00'
+- author: slarticodefast, Vonsant and Will-Oliver-Br
+  changes:
+    - type: Add
+      message: 'A lista de medalhas condecoradas agora é exibida no final da rodada.  '
+    - type: Tweak
+      message: 'Todas as medalhas agora permitem especificar o motivo da condecoração.  '
+  id: 64
+  time: '2025-07-13T00:07:46.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        A NanoTrasen readaptou suas naves de mineração para a nova realidade dos
+        especialistas em exploração, apesar da falta de verba.
+  id: 65
+  time: '2025-07-18T14:05:02.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrige o sumário de End Round.
+  id: 66
+  time: '2025-07-18T14:09:07.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Sem mais meta. Portas falsas estão corretamente traduzidas.
+  id: 67
+  time: '2025-07-18T14:32:31.0000000+00:00'
+- author: samarieh
+  changes:
+    - type: Add
+      message: >-
+        Adiciona um cartucho que cura o envenenamento, disponível nos
+        departamentos de segurança e medicina.
+  id: 68
+  time: '2025-07-18T15:12:37.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Visão noturna deangati.
+    - type: Remove
+      message: Remove smite por spam.
+    - type: Remove
+      message: Gingerbread da seleção de personagems.
+    - type: Remove
+      message: Remove revenant do spawn de ghost roles durante o round.
+    - type: Tweak
+      message: Antag token e Ghost token.
+    - type: Add
+      message: Tokens de cosmeticos.
+    - type: Tweak
+      message: Drunyard (O Bebum) deve ser bem menos caotico.
+    - type: Fix
+      message: >-
+        Traduções diversas como palavras chaves do sindicato (Autoria de
+        LaryNevesPR).
+    - type: Tweak
+      message: Punpun não é mais agente livre.
+    - type: Tweak
+      message: Adiciona blood cult como possivel modo round start.
+  id: 69
+  time: '2025-07-18T15:58:06.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Patrocinadores são fundadores da Nanotrasen
+    - type: Add
+      message: '"João Nanotrasen"'
+  id: 70
+  time: '2025-07-18T16:03:56.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Tempo durante a central de comando agora é de 5 minutos.
+  id: 71
+  time: '2025-07-18T17:08:22.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Arruma algumas coisas faltantes da nave de salvatagem.
+  id: 72
+  time: '2025-07-19T04:12:37.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Ergam suas tochas, vampiros se infiltraram na estação!
+  id: 73
+  time: '2025-07-19T04:14:32.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: >-
+        43 pedradas foram adicionadas à jukebox e lobby, agora sim o bar pode
+        virar um boteco!!!
+  id: 74
+  time: '2025-07-19T05:53:35.0000000+00:00'
+- author: samarieh
+  changes:
+    - type: Tweak
+      message: Agora PTL custa 200 mil e agora vem em uma caixa segura da engenharia.
+  id: 75
+  time: '2025-07-19T06:06:02.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Agora Vampiros possuem seu próprio radio! +v para usar
+    - type: Tweak
+      message: Buff no hipnotizar do vampiro, para torna-lo infinitamente mais usavel!
+    - type: Remove
+      message: Retira o modo vampiro da votaçao de modos de jogo.
+  id: 76
+  time: '2025-07-20T15:53:16.0000000+00:00'

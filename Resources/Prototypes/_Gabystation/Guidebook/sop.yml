@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # SOP Main Directory
 - type: guideEntry
   id: POP
@@ -9,6 +15,7 @@
   - POP Transferencias
   - POP Conduta
   - POP Confiscar
+  - POP Marcial
 
 - type: guideEntry
   id: POP Comando
@@ -39,3 +46,9 @@
   name: guide-entry-pop-confiscar
   text: "/ServerInfo/_Gabystation/Guidebook/POPConfiscar.xml"
   priority: 5
+
+- type: guideEntry
+  id: POP Marcial
+  name: guide-entry-pop-marcial
+  text: "/ServerInfo/_Gabystation/Guidebook/POPMarcial.xml"
+  priority: 6

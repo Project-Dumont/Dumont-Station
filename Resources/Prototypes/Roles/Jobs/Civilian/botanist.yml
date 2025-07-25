@@ -54,10 +54,14 @@
 # SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 War Pigeon <54217755+minus1over12@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -81,6 +85,10 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FourTwenty
     prototype: CannabisSeeds
+  alternateTitles:
+  - BotanistTitleGardener
+  - BotanistTitleTech
+  - BotanistTitleFarmer
 
 - type: startingGear
   id: BotanistGear
@@ -92,3 +100,16 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: BotanistTitleGardener
+  name: job-name-alt-botanist-gardener
+
+- type: jobAlternateTitle
+  id: BotanistTitleTech
+  name: job-name-alt-botanist-tech
+
+- type: jobAlternateTitle
+  id: BotanistTitleFarmer
+  name: job-name-alt-botanist-farmer
+

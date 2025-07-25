@@ -80,7 +80,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 14400 #4 hrs
+      time: 9000 #2.5 hrs
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
@@ -99,6 +99,10 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.5
+  alternateTitles:
+  - MedicalDoctorTitleSurgeon
+  - MedicalDoctorTitleNurse
+  - MedicalDoctorTitleCoroner
 
 
 - type: startingGear
@@ -109,3 +113,16 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: MedicalDoctorTitleSurgeon
+  name: job-name-alt-doctor-surgeon
+
+- type: jobAlternateTitle
+  id: MedicalDoctorTitleNurse
+  name: job-name-alt-doctor-nurse
+
+- type: jobAlternateTitle
+  id: MedicalDoctorTitleCoroner
+  name: job-name-alt-doctor-coroner
+

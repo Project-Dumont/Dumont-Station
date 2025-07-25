@@ -76,7 +76,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 14400 #4 hrs
+      time: 9000 #2.5 hrs
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
@@ -87,6 +87,12 @@
   - External
   extendedAccess:
   - Atmospherics
+  alternateTitles:
+  - StationEngineerElectrician
+  - StationEngineerOperator
+  - StationEngineerEmergency
+  - StationEngineerEVA
+  - StationEngineerIntern
   special: # Goobstation
   - !type:AddComponentSpecial
     components:
@@ -101,3 +107,23 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: StationEngineerElectrician
+  name: job-name-alt-engi-electrician
+
+- type: jobAlternateTitle
+  id: StationEngineerOperator
+  name: job-name-alt-engi-operator
+
+- type: jobAlternateTitle
+  id: StationEngineerEmergency
+  name: job-name-alt-engi-emergency
+
+- type: jobAlternateTitle
+  id: StationEngineerEVA
+  name: job-name-alt-engi-eva
+
+- type: jobAlternateTitle
+  id: StationEngineerIntern
+  name: job-name-alt-engi-intern

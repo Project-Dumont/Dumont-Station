@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <117521143+VictorJob@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: NecromorphSpawn
   parent: BaseStationEventShortDelay
@@ -12,10 +20,17 @@
     minimumPlayers: 15
     weight: 5
     duration: 60
-    maxOccurrences: 1 # Gabystation - necromorph nerf (são mto forte pra ter toda hora)
+    maxOccurrences: 1 # necromorph nerf (são mto forte pra ter toda hora)
+    chaos:
+      Hostile: 20
+      Medical: 50
+    eventType: HostileSpawn
+  - type: GameRule
+    chaosScore: 40
   - type: VentCrittersRule
-    entries:
-    - id: NecromorphSlasher
-      prob: 0.04
-    - id: NecromorphSlasherCorpo
-      prob: 0.1
+    table: !type:GroupSelector
+      children:
+      - id: NecromorphSlasher
+        weight: 0.04
+      - id: NecromorphSlasherCorpo
+        weight: 0.1

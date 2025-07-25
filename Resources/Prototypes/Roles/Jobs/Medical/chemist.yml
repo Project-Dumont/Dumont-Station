@@ -68,7 +68,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 14400 #4 hrs
+      time: 18000 #5 hrs
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
@@ -83,6 +83,9 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.25
+  alternateTitles:
+  - ChemistTitlePharmacist
+
 
 - type: startingGear
   id: ChemistGear
@@ -95,3 +98,7 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: ChemistTitlePharmacist
+  name: job-name-alt-chemist-pharmacist

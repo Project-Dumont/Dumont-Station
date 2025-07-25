@@ -129,9 +129,15 @@
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Paulo Artur Pinheiro Viana Villaça <112904295+AlgumCorrupto@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
@@ -174,8 +180,10 @@
     - id: SpiderSpawn
     - id: VentClog
     - id: NecromorphSpawn # Gabystation add
-    - id: DiseaseOutbreak # Gabystation add
     - id: TidemindDevelop # Goobstation - Tidemind
+    - id: MothroachSpawn # DeltaV
+    - id: XenoVents # DeltaV
+    - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -185,7 +193,7 @@
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    - id: RevenantSpawn
+  # - id: RevenantSpawn # Gabystation - desativa revenant
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
@@ -348,8 +356,8 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 2
-    earliestStart: 75
+    weight: 3
+    earliestStart: 45
     reoccurrenceDelay: 20
     minimumPlayers: 60
     duration: null
@@ -469,6 +477,11 @@
     objectiveBlacklist:
       tags:
       - ParadoxCloneObjectiveBlacklist
+    targetBlacklist: # Goobstation
+      components:
+      - BorgBrain # No copying the AI or borgs.
+      - AntagImmune # No copying people who are immune to antags. (Gemini Hologram, Ghost bar, etcetera.)
+
   - type: AntagObjectives
     objectives:
     - ParadoxCloneKillObjective
@@ -496,20 +509,20 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 3.5
+    weight: 2.5
     duration: 1
-    earliestStart: 30
-    minimumPlayers: 20
+    earliestStart: 40
+    minimumPlayers: 30
     chaos: # Goobstation
-      Hostile: 20
+      Hostile: 50
       Friend: 20
-      Combat: 40
-      Death: 100
-      Medical: 100
+      Combat: 70
+      Death: 200
+      Medical: 200
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 280
+    chaosScore: 450
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -568,6 +581,7 @@
       Medical: 15
   - type: FalseAlarmRule
 
+# todo: desativar isso
 - type: entity
   parent: BaseWizardRule
   id: WizardSpawn
@@ -577,7 +591,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 40 # Gaby station - wizard é caos
     chaos:
       Hostile: 150
       Friend: 150
@@ -590,7 +604,7 @@
       Medical: 50
       Atmos: 50
   - type: AntagSelection
-    agentName: wizard-round-end-name
+    #agentName: wizard-round-end-name
     definitions:
     - spawnerPrototype: SpawnPointGhostWizard
       min: 1
@@ -660,7 +674,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 40
+    chaosScore: 80
   - type: KudzuGrowthRule
 
 - type: entity
@@ -755,15 +769,13 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 200
   - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.02
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.02
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobAdultSlimesBlueAngry
+      - id: MobAdultSlimesGreenAngry
+      - id: MobAdultSlimesYellowAngry
 
 - type: entity
   id: SnakeSpawn
@@ -785,13 +797,11 @@
   - type: GameRule
     chaosScore: 240
   - type: VentCrittersRule
-    entries:
-    - id: MobPurpleSnake
-      prob: 0.02
-    - id: MobSmallPurpleSnake
-      prob: 0.02
-    - id: MobCobraSpace
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobPurpleSnake
+      - id: MobSmallPurpleSnake
+      - id: MobCobraSpace
 
 - type: entity
   id: SpiderSpawn
@@ -813,9 +823,8 @@
   - type: GameRule
     chaosScore: 240
   - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpiderAngry
-      prob: 0.05
+    table: # DeltaV: EntityTable instead of spawn entries
+      id: MobGiantSpiderAngry
 
 - type: entity
   id: SpiderClownSpawn
@@ -837,10 +846,9 @@
   - type: GameRule
     chaosScore: 240
   - type: VentCrittersRule
-    playerRatio: 35 # DeltaV: Clown spiders are very robust
-    entries:
-    - id: MobClownSpider
-      prob: 0.05
+    playerRatio: 20 # DeltaV: Clown spiders are very robust
+    table: # DeltaV: EntityTable instead of spawn entries
+      id: MobClownSpider
 
 - type: entity
   id: ZombieOutbreak
@@ -953,7 +961,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 550
+    chaosScore: 500
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     definitions:
@@ -1096,16 +1104,3 @@
       min: 1
       max: 1
       pickPlayer: false
-
-# game rule that makes everyone speak with the cogchamp accent for a certain amount of time
-- type: entity
-  id: BabelTower
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: StationEvent
-      minimumPlayers: 5
-      duration: 60 # duration is in seconds by the way
-      maxDuration: 180
-      weight: 0
-    - type: BabelTowerRule

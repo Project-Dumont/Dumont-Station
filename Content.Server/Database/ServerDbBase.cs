@@ -89,11 +89,14 @@
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
@@ -109,8 +112,10 @@
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
 // SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
@@ -118,6 +123,8 @@
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 // SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
@@ -137,6 +144,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared._RMC14.LinkAccount;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -193,7 +201,11 @@ namespace Content.Server.Database
                 profiles[profile.Slot] = ConvertProfiles(profile);
             }
 
-            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor));
+            var constructionFavorites = new List<ProtoId<ConstructionPrototype>>(prefs.ConstructionFavorites.Count);
+            foreach (var favorite in prefs.ConstructionFavorites)
+                constructionFavorites.Add(new ProtoId<ConstructionPrototype>(favorite));
+
+            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor), constructionFavorites);
         }
 
         public async Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
@@ -271,7 +283,8 @@ namespace Content.Server.Database
             {
                 UserId = userId.UserId,
                 SelectedCharacterSlot = 0,
-                AdminOOCColor = Color.Red.ToHex()
+                AdminOOCColor = Color.Red.ToHex(),
+                ConstructionFavorites = [],
             };
 
             prefs.Profiles.Add(profile);
@@ -280,7 +293,7 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
-            return new PlayerPreferences(new[] { new KeyValuePair<int, ICharacterProfile>(0, defaultProfile) }, 0, Color.FromHex(prefs.AdminOOCColor));
+            return new PlayerPreferences(new[] { new KeyValuePair<int, ICharacterProfile>(0, defaultProfile) }, 0, Color.FromHex(prefs.AdminOOCColor), []);
         }
 
         public async Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
@@ -304,6 +317,19 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
+        }
+
+        public async Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        {
+            await using var db = await GetDb();
+            var prefs = await db.DbContext.Preference.SingleAsync(p => p.UserId == userId.UserId);
+
+            var favorites = new List<string>(constructionFavorites.Count);
+            foreach (var favorite in constructionFavorites)
+                favorites.Add(favorite.Id);
+            prefs.ConstructionFavorites = favorites;
+
+            await db.DbContext.SaveChangesAsync();
         }
 
         private static async Task SetSelectedCharacterSlotAsync(NetUserId userId, int newSlot, ServerDbContext db)
@@ -344,6 +370,16 @@ namespace Content.Server.Database
                 }
             }
 
+            var altTitles = new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>();
+
+            foreach (var role in profile.AltTitles)
+            {
+                altTitles.Add(
+                    new ProtoId<JobPrototype>(role.RoleName),
+                    new ProtoId<JobAlternateTitlePrototype>(role.AlternateTitle)
+                );
+            }
+
             var loadouts = new Dictionary<string, RoleLoadout>();
 
             foreach (var role in profile.Loadouts)
@@ -372,8 +408,6 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.Species,
-                // #Goobstation - Borg Preferred Name
-                profile.BorgName,
                 profile.Age,
                 sex,
                 gender,
@@ -389,6 +423,7 @@ namespace Content.Server.Database
                 ),
                 spawnPriority,
                 jobs,
+                altTitles,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
@@ -409,8 +444,6 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
-            // #Goobstation - Borg Preferred Name
-            profile.BorgName = humanoid.BorgName;
             profile.Species = humanoid.Species;
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
@@ -444,6 +477,18 @@ namespace Content.Server.Database
                 humanoid.TraitPreferences
                         .Select(t => new Trait { TraitName = t })
             );
+
+            profile.AltTitles.Clear();
+            foreach (var (role, title) in humanoid.JobAlternateTitles)
+            {
+                var newTitle = new DBJobAlternateTitle()
+                {
+                    RoleName = role.Id,
+                    AlternateTitle = title.Id
+                };
+
+                profile.AltTitles.Add(newTitle);
+            }
 
             profile.Loadouts.Clear();
 
@@ -2056,7 +2101,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             var ntName = ntNames.Count == 0 ? null : ntNames[Random.Shared.Next(ntNames.Count)];
 
             if (ntName == null)
-                ntName = "John Nanotrasen";
+                ntName = "João Nanotrasen"; // JOAO NANOTRASEN??!?!?!?!?!?!?!?
+
+            ntName = null; // Gabystation - hotchange
+            // TODO: mudar para o cartarse.
 
             return (ntName);
         }
@@ -2128,6 +2176,25 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return true;
         }
 
+        #endregion
+
+        #region Comedy
+
+        public async Task<List<Guid>> GetAllSpiderFriends()
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.GoobMisandrySpiderFriends
+                .Select(p => p.Guid)
+                .ToListAsync();
+        }
+
+        public async Task AddSpiderFriend(SpiderFriend friend)
+        {
+            await using var db = await GetDb();
+            db.DbContext.GoobMisandrySpiderFriends.Add(friend);
+
+            await db.DbContext.SaveChangesAsync();
+        }
         #endregion
 
         public abstract Task SendNotification(DatabaseNotification notification);

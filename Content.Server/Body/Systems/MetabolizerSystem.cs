@@ -38,6 +38,7 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
@@ -55,7 +56,9 @@
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -64,6 +67,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Bed.Sleep; // Shitmed Change
 using Content.Shared.Body.Organ;
+using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Reagent;
@@ -301,6 +305,31 @@ namespace Content.Server.Body.Systems
             }
 
             _solutionContainerSystem.UpdateChemicals(soln.Value);
+        }
+
+        public bool TryAddMetabolizerType(MetabolizerComponent component, string metabolizerType)
+        {
+            if (!_prototypeManager.HasIndex<MetabolizerTypePrototype>(metabolizerType))
+                return false;
+
+            if (component.MetabolizerTypes == null)
+                component.MetabolizerTypes = new();
+
+            return component.MetabolizerTypes.Add(metabolizerType);
+        }
+
+        public bool TryRemoveMetabolizerType(MetabolizerComponent component, string metabolizerType)
+        {
+            if (component.MetabolizerTypes == null)
+                return true;
+
+            return component.MetabolizerTypes.Remove(metabolizerType);
+        }
+
+        public void ClearMetabolizerTypes(MetabolizerComponent component)
+        {
+            if (component.MetabolizerTypes != null)
+                component.MetabolizerTypes.Clear();
         }
     }
 

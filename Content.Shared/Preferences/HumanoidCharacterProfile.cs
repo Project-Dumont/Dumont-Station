@@ -35,10 +35,22 @@
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Hyper B <137433177+HyperB1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Hyper B <137433177+HyperB1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -74,10 +86,6 @@ namespace Content.Shared.Preferences
         private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
-        public const int MaxNameLength = 32;
-        public const int MaxLoadoutNameLength = 32;
-        public const int MaxDescLength = 512;
-
         /// <summary>
         /// Job preferences for initial spawn.
         /// </summary>
@@ -88,6 +96,12 @@ namespace Content.Shared.Preferences
                 SharedGameTicker.FallbackOverflowJob, JobPriority.High
             }
         };
+
+        /// <summary>
+        /// Prefered job title for each job.
+        /// </summary>
+        [DataField]
+        public Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>> JobAlternateTitles = new();
 
         /// <summary>
         /// Antags we have opted in to.
@@ -126,11 +140,6 @@ namespace Content.Shared.Preferences
 
         [DataField]
         public int Age { get; set; } = 18;
-
-        // #Goobstation - Prefered Borg Name Stuff
-
-        [DataField]
-        public string BorgName { get; set; } = "Genero-Bot";
 
         [DataField]
         public Sex Sex { get; private set; } = Sex.Male;
@@ -176,18 +185,17 @@ namespace Content.Shared.Preferences
         [DataField]
         public PreferenceUnavailableMode PreferenceUnavailable { get; private set; } =
             PreferenceUnavailableMode.SpawnAsOverflow;
-        // #Goobstation - Borg Preferred Name (borgname)
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
             string species,
-            string borgname,
             int age,
             Sex sex,
             Gender gender,
             HumanoidCharacterAppearance appearance,
             SpawnPriorityPreference spawnPriority,
             Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities,
+            Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>> jobAlternateTitles,
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
@@ -197,13 +205,13 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
-            BorgName = borgname;
             Age = age;
             Sex = sex;
             Gender = gender;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
             _jobPriorities = jobPriorities;
+            JobAlternateTitles = jobAlternateTitles;
             PreferenceUnavailable = preferenceUnavailable;
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
@@ -229,14 +237,13 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
-                // #Goobstation - Borg Preferred Name
-                other.BorgName,
                 other.Age,
                 other.Sex,
                 other.Gender,
                 other.Appearance.Clone(),
                 other.SpawnPriority,
                 new Dictionary<ProtoId<JobPrototype>, JobPriority>(other.JobPriorities),
+                new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>(other.JobAlternateTitles),
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
@@ -308,13 +315,10 @@ namespace Content.Shared.Preferences
 
             var name = GetName(species, gender);
 
-            // #Goobstation - Borg Preferred Name
-            var borgname = GetBorgName();
 
             return new HumanoidCharacterProfile()
             {
                 Name = name,
-                BorgName = borgname,
                 Sex = sex,
                 Age = age,
                 Gender = gender,
@@ -336,13 +340,6 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithAge(int age)
         {
             return new(this) { Age = age };
-        }
-
-        // #Goobstation - Borg Stuff (see above for more borgname things
-
-        public HumanoidCharacterProfile WithBorgName(string borgname)
-        {
-            return new(this) { BorgName = borgname };
         }
 
         public HumanoidCharacterProfile WithSex(Sex sex)
@@ -369,6 +366,25 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)
         {
             return new(this) { SpawnPriority = spawnPriority };
+        }
+
+        public HumanoidCharacterProfile WithJobAltTitle(ProtoId<JobPrototype> jobId, ProtoId<JobAlternateTitlePrototype>? jobTitle)
+        {
+            var dictionary = new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>(JobAlternateTitles);
+
+            if (jobTitle == null || jobTitle.Value.Id == null)
+            {
+                dictionary.Remove(jobId);
+            }
+            else
+            {
+                dictionary[jobId] = jobTitle.Value;
+            }
+
+            return new(this)
+            {
+                JobAlternateTitles = dictionary
+            };
         }
 
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
@@ -527,14 +543,13 @@ namespace Content.Shared.Preferences
             if (maybeOther is not HumanoidCharacterProfile other) return false;
             if (Name != other.Name) return false;
             if (Age != other.Age) return false;
-            // #Goobstation - Borg Preferred Name
-            if (BorgName != other.BorgName) return false;
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
+            if (!JobAlternateTitles.SequenceEqual(other.JobAlternateTitles)) return false;
             if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
@@ -577,13 +592,14 @@ namespace Content.Shared.Preferences
             };
 
             string name;
+            var maxNameLength = configManager.GetCVar(CCVars.MaxNameLength);
             if (string.IsNullOrEmpty(Name))
             {
                 name = GetName(Species, gender);
             }
-            else if (Name.Length > MaxNameLength)
+            else if (Name.Length > maxNameLength)
             {
-                name = Name[..MaxNameLength];
+                name = Name[..maxNameLength];
             }
             else
             {
@@ -611,34 +627,14 @@ namespace Content.Shared.Preferences
 
 
             string flavortext;
-            if (FlavorText.Length > MaxDescLength)
+            var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
+            if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
+                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
             }
             else
             {
                 flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
-            }
-            // #Goobstation - Borg Preferred Name
-            string borgname;
-            if (string.IsNullOrEmpty(BorgName))
-            {
-                borgname = GetBorgName();
-            }
-            else if (BorgName.Length > MaxNameLength)
-            {
-                borgname = BorgName[..MaxNameLength];
-            }
-            else
-            {
-                borgname = BorgName;
-            }
-
-            borgname = borgname.Trim();
-
-            if (string.IsNullOrEmpty(borgname))
-            {
-                borgname = GetBorgName();
             }
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -679,6 +675,19 @@ namespace Content.Shared.Preferences
                 hasHighPrio = true;
             }
 
+            var altTitles = new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>();
+            foreach (var (key, value) in JobAlternateTitles)
+            {
+                if (value.Id == null || value.Id == string.Empty)
+                    continue;
+                if (!prototypeManager.TryIndex(key, out var job))
+                    continue;
+                if (job.AlternateTitles.Contains(value))
+                {
+                    altTitles.Add(key, value);
+                }
+            }
+
             var antags = AntagPreferences
                 .Where(id => prototypeManager.TryIndex(id, out var antag) && antag.SetPreference)
                 .ToList();
@@ -689,8 +698,6 @@ namespace Content.Shared.Preferences
 
             Name = name;
             FlavorText = flavortext;
-            // #Goobstation - Borg Preferred Name
-            BorgName = borgname;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -702,6 +709,13 @@ namespace Content.Shared.Preferences
             foreach (var (job, priority) in priorities)
             {
                 _jobPriorities.Add(job, priority);
+            }
+
+            JobAlternateTitles.Clear();
+
+            foreach (var (job, title) in altTitles)
+            {
+                JobAlternateTitles.Add(job, title);
             }
 
             PreferenceUnavailable = prefsUnavailableMode;
@@ -785,15 +799,6 @@ namespace Content.Shared.Preferences
             var namingSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<NamingSystem>();
             return namingSystem.GetName(species, gender);
         }
-        // #Goobstation - Borg Preferred Name
-        public static string GetBorgName()
-        {
-            var random = IoCManager.Resolve<IRobustRandom>();
-            var prototypeSystem = IoCManager.Resolve<IPrototypeManager>();
-            var prototype = prototypeSystem.Index<LocalizedDatasetPrototype>("NamesBorg");
-            return random.Pick(prototype);
-
-        }
 
         public override bool Equals(object? obj)
         {
@@ -804,13 +809,12 @@ namespace Content.Shared.Preferences
         {
             var hashCode = new HashCode();
             hashCode.Add(_jobPriorities);
+            hashCode.Add(JobAlternateTitles);
             hashCode.Add(_antagPreferences);
             hashCode.Add(_traitPreferences);
             hashCode.Add(_loadouts);
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
-            // #Goobstation - Borg Preferred Name
-            hashCode.Add(BorgName);
             hashCode.Add(Species);
             hashCode.Add(Age);
             hashCode.Add((int) Sex);

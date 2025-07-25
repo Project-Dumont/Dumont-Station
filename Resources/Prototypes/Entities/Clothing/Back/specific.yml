@@ -9,7 +9,9 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 Terraspark4941 <terraspark4941@gmail.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
@@ -107,7 +109,7 @@
   parent: Clothing
   id: ClothingBackpackFirefighterTank
   name: firefighter water tank backpack
-  description: A refrigerated water tank backpack that can switch modes to launch ATMOS resin or work as a high pressure extinguisher. 
+  description: A refrigerated water tank backpack that can switch modes to launch ATMOS resin or work as a high pressure extinguisher.
   components:
   - type: Tag
     tags:

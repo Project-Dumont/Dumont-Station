@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 DoutorWhite <thedoctorwhite@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - Name: Zequinza
   Tier: Capitão
 
@@ -40,3 +53,11 @@
 - Name: piicat
   Tier: Segurança
 
+- Name: LittleGeorges
+  Tier: Segurança Chefe
+
+- Name: Generic Dwarf
+  Tier: Capitão
+
+- Name: Hydra
+  Tier: Segurança

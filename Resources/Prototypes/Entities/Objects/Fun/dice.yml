@@ -160,46 +160,10 @@
   - type: Slippery
     slipSound:
       path: /Audio/Effects/glass_step.ogg
-    launchForwardsMultiplier: 0
+    slipData:
+      launchForwardsMultiplier: 0
   - type: DamageUserOnTrigger
     damage:
       types:
         Piercing: 5
     # I love this
-
-- type: entity
-  parent: d20Dice
-  id: d20FateDice
-  name: dado do caos
-  description: Esse dado parece que veio do capiroto, devo brincar com ele?
-  components:
-  - type: FateDice
-    effects:
-    - EffectGib
-    - EffectTurnIntoZombie
-    - EffectZombieOutbreak
-    - EffectBabelTower
-    - EffectDragon
-    - EffectMassHallucinations
-    - EffectAngryCarpSpawn
-    - EffectEmp
-    - EffectPolyLuminous
-    - EffectMonkeySpawn
-    - EffectChargeBatteries
-    - EffectHealAll
-    - EffectSpawnBagOfHolding
-    - EffectGreytideVirus
-    - EffectSpawnDoubleEnergySword
-    - EffectTurnIntoRevLeader
-    - EffectTurnIntoThief
-    - EffectTurnIntoHeretic
-    - EffectTurnIntoBlob
-    #- EffectTurnIntoLing #TODO: Arrumar isso
-    remainingUses: 1
-    toReplace: d20Dice
-  - type: PointLight
-    energy: 20
-    radius: 1.2
-  - type: RgbLightController
-    cycleRate: 0.2
-  - type: ActiveReagentGrinder

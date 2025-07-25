@@ -7,8 +7,14 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,43 +25,36 @@ using Content.Server.Revolutionary.Components; // GoobStation
 using Content.Server.Roles;
 using Content.Shared.Database;
 using Content.Shared.Implants;
-using Content.Shared.Implants.Components;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Revolutionary; // GoobStation
 using Content.Shared.Revolutionary.Components;
-using Content.Shared.Tag;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Mindshield;
 
 /// <summary>
-/// System used for checking if the implanted is a Rev or Head Rev.
+/// System used for adding or removing components with a mindshield implant
+/// as well as checking if the implanted is a Rev or Head Rev.
 /// </summary>
 public sealed class MindShieldSystem : EntitySystem
 {
     [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly RoleSystem _roleSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!; // Goobstation
-
-    [ValidatePrototypeId<TagPrototype>]
-    public const string MindShieldTag = "MindShield";
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SubdermalImplantComponent, ImplantImplantedEvent>(ImplantCheck);
+
+        SubscribeLocalEvent<MindShieldImplantComponent, ImplantImplantedEvent>(OnImplantImplanted);
         SubscribeLocalEvent<MindShieldImplantComponent, EntGotRemovedFromContainerMessage>(OnImplantDraw);
     }
 
-    /// <summary>
-    /// Checks if the implant was a mindshield or not
-    /// </summary>
-    public void ImplantCheck(EntityUid uid, SubdermalImplantComponent comp, ref ImplantImplantedEvent ev)
+    private void OnImplantImplanted(Entity<MindShieldImplantComponent> ent, ref ImplantImplantedEvent ev)
     {
-        if (!_tag.HasTag(ev.Implant, MindShieldTag) || ev.Implanted == null) // Edited Goobstation
+        if (ev.Implanted == null)
             return;
 
         EnsureComp<MindShieldComponent>(ev.Implanted.Value);
@@ -71,7 +70,7 @@ public sealed class MindShieldSystem : EntitySystem
     /// <summary>
     /// Checks if the implanted person was a Rev or Head Rev and remove role or destroy mindshield respectively.
     /// </summary>
-    public void MindShieldRemovalCheck(EntityUid implanted, EntityUid implant)
+    private void MindShieldRemovalCheck(EntityUid implanted, EntityUid implant)
     {
         if (TryComp<HeadRevolutionaryComponent>(implanted, out var headRevComp)) // GoobStation - headRevComp
         {
@@ -82,8 +81,11 @@ public sealed class MindShieldSystem : EntitySystem
         }
 
         if (_mindSystem.TryGetMind(implanted, out var mindId, out _) &&
-            _roleSystem.MindTryRemoveRole<RevolutionaryRoleComponent>(mindId))
+            _roleSystem.MindRemoveRole<RevolutionaryRoleComponent>(mindId))
         {
+            if (HasComp<ShowRevolutionaryIconsComponent>(implanted))
+                RemComp<ShowRevolutionaryIconsComponent>(implanted);
+
             _adminLogManager.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(implanted)} was deconverted due to being implanted with a Mindshield.");
         }
         if (HasComp<Goobstation.Shared.Mindcontrol.MindcontrolledComponent>(implanted))   //Goobstation - Mindcontrol Implant
@@ -92,9 +94,6 @@ public sealed class MindShieldSystem : EntitySystem
 
     private void OnImplantDraw(Entity<MindShieldImplantComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
-        if (!_tag.HasTag(ent, MindShieldTag))
-            return;
-
         _popupSystem.PopupEntity(Loc.GetString("mindshield-implant-effect-removed"), args.Container.Owner, args.Container.Owner);
 
         if (TryComp<HeadRevolutionaryComponent>(args.Container.Owner, out var headRevComp))

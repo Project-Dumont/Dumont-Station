@@ -89,9 +89,6 @@ public abstract class SharedDiceSystem : EntitySystem
         var roll = rand.Next(1, entity.Comp.Sides + 1);
         SetCurrentSide(entity, roll);
 
-        var ev = new DiceRollEvent(roll);
-        RaiseLocalEvent((EntityUid) entity, ev, true);
-
         var popupString = Loc.GetString("dice-component-on-roll-land",
             ("die", entity),
             ("currentSide", entity.Comp.CurrentValue));

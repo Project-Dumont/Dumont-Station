@@ -65,9 +65,9 @@
   description: job-description-atmostech
   playTimeTracker: JobAtmosphericTechnician
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 36000 # 15 hrs
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 9000 #2.5 hrs
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
@@ -84,6 +84,11 @@
   - !type:AddComponentSpecial # Goobstation
     components:
     - type: EngineeringStaff
+  alternateTitles:
+  - AtmosTitleLifeSupport
+  - AtmosTitleSupervisor
+  - AtmosTitleOperator
+  - AtmosTitleFireman
 
 - type: startingGear
   id: AtmosphericTechnicianGear
@@ -95,3 +100,19 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: AtmosTitleLifeSupport
+  name: job-name-alt-atmos-life-support
+
+- type: jobAlternateTitle
+  id: AtmosTitleSupervisor
+  name: job-name-alt-atmos-supervisor
+
+- type: jobAlternateTitle
+  id: AtmosTitleOperator
+  name: job-name-alt-atmos-operator
+
+- type: jobAlternateTitle
+  id: AtmosTitleFireman
+  name: job-name-alt-atmos-fireman
