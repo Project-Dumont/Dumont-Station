@@ -38,4 +38,4 @@ materials-raw-plasma = plasma bruto
 materials-raw-uranium = urânio bruto
 materials-raw-bananium = bananium bruto
 materials-raw-salt = sal em pedras
-materials-raw-diamond = Diamante bruto
+materials-raw-diamond = diamante bruto
