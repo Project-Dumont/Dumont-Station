@@ -4,7 +4,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Server._Gabystation.Economy;
 
-[RegisterComponent, Access(typeof(EconomyManagerSystem))]
+[RegisterComponent/*, Access(typeof(EconomyManagerSystem))*/]
 public sealed partial class EconomyManagerComponent : Component
 {
     /// <summary>
@@ -20,10 +20,10 @@ public sealed partial class EconomyManagerComponent : Component
     public Dictionary<EntityUid, int> UidBankRef = new Dictionary<EntityUid, int>();
 
     [DataField]
-    public float PaymentDelay = 60f;
+    public float PaymentDelay = 900f;
 
     [DataField]
-    public float PaymentCooldownRemaining = 5f;
+    public float PaymentCooldownRemaining = 900f;
 }
 
 

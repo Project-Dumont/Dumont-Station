@@ -31,11 +31,11 @@ namespace Content.Server._Gabystation.Economy
 
         private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
         {
-            var stations = _gameTicker.GetSpawnableStations(); // this sucks
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(stations[0], out var comp))
+            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(args.Station, out var comp))
                 return;
 
-            TryCreateAccount(out var number, args.Mob, args.JobId);
+
+            TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId);
             Log.Debug($"Assigning bank id to {args.Profile.Name} ({number})!");
             GetAccountPassword(number, true, out var password);
 
@@ -49,12 +49,11 @@ namespace Content.Server._Gabystation.Economy
                 );
         }
 
-        public bool TryCreateAccount(out int accountId, EntityUid uid, string? jobId = null, float balance = 500, int password = 1234)
+        public bool TryCreateAccount(out int accountId, Entity<EconomyManagerComponent> station,
+            EntityUid uid, string? jobId = null, float balance = 500, int password = 1234)
         {
             accountId = 0;
-            var stations = _gameTicker.GetSpawnableStations(); // this sucks
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(stations[0], out var comp))
-                return false;
+            var comp = station.Comp;
 
             // Assign a random bank account id
             _name.GenerateUniqueName(uid, _nameIdentifierGroup, out accountId);
@@ -83,17 +82,29 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TryGetBalance(int accountId, out float balance)
+        public bool TryGetBalance(EntityUid station, int accountId, out float balance)
         {
             balance = 0;
-            var stations = _gameTicker.GetSpawnableStations(); // this sucks
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(stations[0], out var comp))
+            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(station, out var comp))
                 return false;
 
             if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
 
             balance = bank.Balance;
+            return true;
+        }
+
+        public bool TryGetData(EntityUid station, int accountId, out IBankAccount? data)
+        {
+            data = null;
+
+            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(station, out var comp))
+                return false;
+
+            if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out data))
+                return false;
+
             return true;
         }
 
@@ -133,6 +144,17 @@ namespace Content.Server._Gabystation.Economy
             }
         }
 
+        public void SetAccountData(EntityUid station, int account, IBankAccount data)
+        {
+            if (!TryComp<EconomyManagerComponent>(station, out var comp))
+                return;
+
+            if (!comp.BankAccounts.ContainsKey(account))
+                return;
+
+            comp.BankAccounts[account] = data;
+        }
+
         public bool GetAccountPassword(int id, bool initial, out int password)
         {
             password = 0;
@@ -161,22 +183,29 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public List<(int AccountId, EntityUid Uid, IBankAccount Account)> GetLinkedAccounts()
+        public List<(int AccountId, EntityUid Uid, IBankAccount Account)> GetAllLinkedAccounts()
         {
             var result = new List<(int, EntityUid, IBankAccount)>();
+            //TODO: return the station name
 
             var stations = _gameTicker.GetSpawnableStations();
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(stations[0], out var comp))
-                return result;
 
-            foreach (var (uid, accountId) in comp.UidBankRef)
+            foreach (var station in stations)
             {
-                if (!comp.BankAccounts.TryGetValue(accountId, out var bankAccount))
+                if (!EntityManager.TryGetComponent<EconomyManagerComponent>(station, out var comp))
                     continue;
 
-                result.Add((accountId, uid, bankAccount));
+                foreach (var (uid, accountId) in comp.UidBankRef)
+                {
+                    if (!comp.BankAccounts.TryGetValue(accountId, out var bankAccount))
+                        continue;
+
+                    result.Add((accountId, uid, bankAccount));
+                }
             }
+
             return result;
+
         }
     }
 }

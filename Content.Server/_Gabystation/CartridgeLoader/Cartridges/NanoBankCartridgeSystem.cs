@@ -41,23 +41,20 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
     public void OnPayment(AccountPaymentCompleted args)
     {
+        //! Isso provavelmente tem um alto custo computacional, mas eu não sei outro jeito de fazer isso.
         Log.Debug("Payment 1");
         var ents = AllEntityQuery<NanoBankCardComponent>();
         while (ents.MoveNext(out var uid, out var comp))
         {
-            Log.Debug("Payment 2");
             var station = _station.GetOwningStation(uid);
             if (!comp.LoggedIn || comp.AccountId is 0 || comp.AccountPin is 0 || station is null)
                 continue;
-            Log.Debug("Payment 3");
 
             if (!TryComp<EconomyManagerComponent>(station, out var economyComp))
                 continue;
-            Log.Debug("Payment 4");
 
             if (!_economy.ValidateLogin(economyComp, comp.AccountId, comp.AccountPin))
                 continue;
-            Log.Debug("Payment 5");
 
             HandleNotification(uid, "economy-notification-tittle", "economy-notification-body", args.Payment);
         }
@@ -95,7 +92,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
     private void HandleNotification(EntityUid uid, string tittleLoc, string bodyLoc, float? amount)
     {
-        Log.Debug("Notf 1");
 
         if (!TryPdaFromId(uid, out var pda) || pda is null)
             return;
@@ -110,6 +106,5 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             Loc.GetString(tittleLoc),
             body);
 
-        Log.Debug("Notf 2");
     }
 }
