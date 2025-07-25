@@ -465,3 +465,15 @@
   name: Toby Fox - Welcome to the Green Room
   path:
     path: /Audio/_Gabystation/Jukebox/welcome_to_the_green_room.ogg
+
+- type: jukebox
+  id: EyesWithoutAFace
+  name: Billy Idol - Eyes Without A Face
+  path:
+    path: /Audio/_Gabystation/Jukebox/eyes_without_a_face.ogg
+
+- type: jukebox
+  id: HeartToHeart
+  name: Mac DeMarco - Heart To Heart
+  path:
+    path: /Audio/_Gabystation/Jukebox/heart_to_heart.ogg
