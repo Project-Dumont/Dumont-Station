@@ -259,6 +259,7 @@
       - NanoTaskCartridge
       - NewsReaderCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -339,6 +340,7 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - NanoChatCartridge # DeltaV
+    - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BasePDA
@@ -354,6 +356,7 @@
       - NewsReaderCartridge
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BasePDA
@@ -669,6 +672,7 @@
       - NewsReaderCartridge
       - MailMetricsCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BasePDA
@@ -715,6 +719,7 @@
       - NewsReaderCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BasePDA
@@ -1066,6 +1071,7 @@
     - WantedListCartridge
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
+    - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1138,6 +1144,7 @@
       - LogProbeCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: CentcomPDA
@@ -1166,6 +1173,7 @@
       - MedTekCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1288,6 +1296,7 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1321,6 +1330,7 @@
       - LogProbeCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1491,6 +1501,7 @@
     - WantedListCartridge
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
+    - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1520,6 +1531,7 @@
     - WantedListCartridge
     - MedTekCartridge
     - NanoChatCartridge # DeltaV
+    - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: ClownPDA
@@ -1666,6 +1678,7 @@
       - NanoTaskCartridge
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
 
 - type: entity
   parent: BasePDA

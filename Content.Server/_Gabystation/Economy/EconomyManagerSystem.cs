@@ -74,7 +74,7 @@ namespace Content.Server._Gabystation.Economy
             if (_id.TryFindIdCard(uid, out var idCard))
             {
                 // Add the account to the id card
-                var bankCard = EnsureComp<NanoBankCardComponent>(uid);
+                var bankCard = EnsureComp<NanoBankCardComponent>(idCard);
                 bankCard.AccountId = accountId;
                 bankCard.AccountPin = password;
                 bankCard.LoggedIn = true;
@@ -119,11 +119,15 @@ namespace Content.Server._Gabystation.Economy
                         continue;
 
                     account.Balance += proto.Salary;
+                    Log.Debug("Event time");
                     var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Uid = uid, Payment = proto.Salary };
                     RaiseLocalEvent(ev);
+                    Log.Debug("Event done?");
                 }
 
                 RaiseLocalEvent(new AfterPaymentRotation() { Uid = uid });
+
+                Log.Debug("Payment time!");
 
                 comp.PaymentCooldownRemaining = comp.PaymentDelay;
             }
