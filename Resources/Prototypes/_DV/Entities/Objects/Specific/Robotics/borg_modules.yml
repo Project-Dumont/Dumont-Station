@@ -118,7 +118,7 @@
   - type: ItemBorgModule
     moduleId: Chase
     items:
-    - WeaponDisablerSelfCharge
+    - WeaponDisablerRecharging
     - FlashlightSecliteRecharging
     - SecurityWhistle
   - type: BorgModuleIcon

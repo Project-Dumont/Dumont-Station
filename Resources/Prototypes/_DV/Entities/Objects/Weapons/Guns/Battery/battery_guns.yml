@@ -87,8 +87,9 @@
 
 - type: entity
   parent: WeaponDisabler
-  id: WeaponDisablerSelfCharge
+  id: WeaponDisablerRecharging
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one recharges
+  suffix: Recharging, Do Not Map
   components:
   - type: BatterySelfRecharger
     autoRecharge: true

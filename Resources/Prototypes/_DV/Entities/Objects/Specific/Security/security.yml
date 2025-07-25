@@ -49,16 +49,6 @@
     - Security
 
 - type: entity
-  parent: WeaponDisabler
-  id: WeaponDisablerRecharging
-  suffix: Recharging, Do Not Map
-  noSpawn: true
-  components:
-    - type: BatterySelfRecharger
-      autoRecharge: true
-      autoRechargeRate: 50
-
-- type: entity
   parent: HoloprojectorSecurity
   id: HoloprojectorSecurityRecharging
   suffix: Recharging, Do Not Map
