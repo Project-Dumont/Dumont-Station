@@ -640,3 +640,9 @@ Entries:
       message: Retira o modo vampiro da votaçao de modos de jogo.
   id: 76
   time: '2025-07-20T15:53:16.0000000+00:00'
+- author: Tayrtahn, Kyoth25f
+  changes:
+    - type: Fix
+      message: Bolhas de texto corrigidas.
+  id: 77
+  time: '2025-07-25T21:45:07.0000000+00:00'
