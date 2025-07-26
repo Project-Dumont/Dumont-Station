@@ -33,10 +33,16 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     {
         base.Initialize();
 
-        //SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         //SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeMessageEvent>(OnMessage);
         //SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeRemovedEvent>(OnCartridgeRemoved);
+        SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<AccountPaymentCompleted>(OnPayment);
+    }
+
+    private void OnUiReady(Entity<NanoBankCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
+    {
+        _cartridge.RegisterBackgroundProgram(args.Loader, ent);
+        //UpdateUI(ent, args.Loader);
     }
 
     public void OnPayment(AccountPaymentCompleted args)
@@ -46,6 +52,9 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         var ents = AllEntityQuery<NanoBankCardComponent>();
         while (ents.MoveNext(out var uid, out var comp))
         {
+            if (comp.NotificationsMuted) // We dont need to computate this if notifications are disabled
+                return; //? If u are planning do somemore here, put this if before HandleNotification
+
             var station = _station.GetOwningStation(uid);
             if (!comp.LoggedIn || comp.AccountId is 0 || comp.AccountPin is 0 || station is null)
                 continue;

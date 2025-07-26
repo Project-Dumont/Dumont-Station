@@ -8,8 +8,8 @@
   - type: Sprite
     sprite: _DV/Objects/Devices/cartridge.rsi
     state: cart-chat
-  #- type: UIFragment
-  #  ui: !type:NanoBankUi
+  - type: UIFragment
+    ui: !type:NanoBankUi
   - type: NanoBankCartridge
   - type: Cartridge
     programName: nano-bank-program-name
