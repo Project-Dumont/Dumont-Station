@@ -1,0 +1,125 @@
+# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseBorgModuleSecurity
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleSecurity
+  - type: Sprite
+    sprite: _DV/Objects/Specific/Robotics/borgmodule.rsi
+
+# Security Modules
+
+- type: entity
+  id: BorgModuleSecurityPatrol # Available on Round Start
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: patrol cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-patrol
+  - type: ItemBorgModule
+    moduleId: Patrol
+    items:
+    - HoloprojectorSecurityRecharging
+    - FlashlightSecliteRecharging
+    - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: patrol-module }
+
+- type: entity
+  id: BorgModuleSecurityBastion # Research Locked - AdvancedRiotControl
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: bastion cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-hold
+  - type: ItemBorgModule
+    moduleId: Bastion
+    items:
+    - WeaponLauncherNonLethalBorg
+    - FlashRecharging
+    - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: bastion-module }
+
+- type: entity
+  id: BorgModuleSecurityDeescalate # Available on Round Start
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: de-escalation cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-detain
+  - type: ItemBorgModule
+    moduleId: Deescalate
+    items:
+    - StunbatonSelfCharging
+    - FlashRecharging
+    - FlashlightSecliteRecharging
+    - SecurityWhistle
+  - type: DroppableBorgModule
+    moduleId: Deescalate
+    items:
+    - id: Handcuffs
+      whitelist:
+        components:
+        - Handcuff
+    - id: Zipties
+      whitelist:
+        components:
+        - Handcuff
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: deescalate-module }
+
+- type: entity
+  id: BorgModuleSecurityEscalate
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: escalation cyborg module
+  description: Peace was never an option.
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-hurt
+  - type: ItemBorgModule
+    moduleId: Escalate
+    items:
+    - WeaponRiotShotgunBorg
+    - Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
+    - CombatKnife # Anti-fauna for blunt resistant slimes
+    - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: escalate-module }
+
+- type: entity
+  id: BorgModuleSecurityChase # Research Locked - NonLethalAmmunition
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: chase cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-chase
+  - type: ItemBorgModule
+    moduleId: Chase
+    items:
+    - WeaponDisablerRecharging
+    - FlashlightSecliteRecharging
+    - SecurityWhistle
+  - type: BorgModuleIcon
+    icon: { sprite: _Gabystation/Interface/Actions/actions_borg.rsi, state: chase-module }

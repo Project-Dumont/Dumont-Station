@@ -62,11 +62,13 @@ petting-success-mimebot = Você acaricia {THE($target)} em {POSS-ADJ($target)} c
 petting-success-cleanbot = Você acaricia {THE($target)} em {POSS-ADJ($target)} cabeça de metal úmido.
 petting-success-medibot = Você acaricia {THE($target)} em {POSS-ADJ($target)} cabeça de metal estéril.
 petting-success-recycler = Você acaricia {THE($target)} em {POSS-ADJ($target)} exterior de aço levemente ameaçador.
+petting-success-security-cyborg = Você acaricia {ARTIGO-O($target)} {$target} em sua intimidadora cabeça de metal.
 
 petting-failure-honkbot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} buzina em recusa!
 petting-failure-cleanbot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} {CONJUGATE-BE($target)} ocupado esfregando!
 petting-failure-mimebot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} {CONJUGATE-BE($target)} ocupado imitando!
 petting-failure-medibot = Você tenta acariciar {THE($target)}, mas {POSS-ADJ($target)} seringa quase fura sua mão!
+petting-failure-security-cyborg = Você tenta acaricia {ARTIGO-O($target)} {$target}, mas {PRONOME-ELE($target)} está {MAKE-GENERO($target, "ocupado")} lendo a Lei Espacial.
 
 ## Rattling fences
 

@@ -640,3 +640,66 @@ Entries:
       message: Retira o modo vampiro da votaçao de modos de jogo.
   id: 76
   time: '2025-07-20T15:53:16.0000000+00:00'
+- author: Tayrtahn, Kyoth25f
+  changes:
+    - type: Fix
+      message: Bolhas de texto corrigidas.
+  id: 77
+  time: '2025-07-25T21:45:07.0000000+00:00'
+- author: DragonEngineer, Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada Heart to Heart de Mac DeMarco na jukebox!
+    - type: Add
+      message: Adicionada Eyes Without a Face de Billy Idol na jukebox!
+  id: 78
+  time: '2025-07-26T10:32:52.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: >-
+        Nova estação Tramstation! Diferente da outra chamada Train, essa aqui
+        tem um literal TREM dentro dela!
+  id: 79
+  time: '2025-07-26T10:37:17.0000000+00:00'
+- author: DangerRevolution, deltanedas, Avalon-Proto, ThunderBear2006, Kyoth25f
+  changes:
+    - type: Add
+      message: Ciborgue segurança adicionado. Há várias opções de chassi!
+    - type: Add
+      message: >-
+        O Módulo Patrulha vem equipado com um holoprojetor da segurança. Todo
+        ciborgue segurança tem esse módulo por padrão.
+    - type: Add
+      message: >-
+        O Módulo De-escalonamento vem equipado com um bastão de choque e um
+        flash. Todo ciborgue segurança tem esse módulo por padrão.
+    - type: Add
+      message: >-
+        O Módulo Bastião vem equipado com um lançador de granadas não-letais.
+        Ele é construido no fabricador da segurança e precisa da pesquisa
+        Controle de Multidão Avançado.
+    - type: Add
+      message: >-
+        O Módulo Escalonamento vem equipado com um truncheon, uma faca de
+        combate e uma riot shotgun. Também está trancando pela pesquisa Controle
+        de Multidão Avançado. A arma atira projeteis pouco letais que causam
+        alto dano de stamina.
+    - type: Add
+      message: >-
+        O Módulo Perseguição vem equipado com uma disabler. É liberado para
+        construção ao pesquisar Munição Não-letal.
+    - type: Add
+      message: >-
+        Por padrão os ciborgues segurança devem fazer cumprir as leis vigentes
+        da estação e obedecer o Departamento de Segurança. E, como todo
+        ciborgue, são suscetíveis a Tempestades Iônicas. Além disso, não são
+        obrigados a seguir as ordens da IA da estação.
+  id: 80
+  time: '2025-07-26T10:39:08.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: O mapa "Barratry" foi removido da rotação de mapas, mas não do jogo.
+  id: 81
+  time: '2025-07-26T10:40:51.0000000+00:00'

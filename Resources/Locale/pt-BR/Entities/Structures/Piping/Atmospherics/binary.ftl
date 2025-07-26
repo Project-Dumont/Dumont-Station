@@ -19,3 +19,12 @@ ent-GasDualPortVentPump = grade de ventilação dupla
 ent-GasRecycler = reciclador de gás
     .desc = Recicla o dióxido de carbono e o óxido nitroso. Aquecedor e compressor não incluídos.
 
+ent-HeatExchanger = radiador
+    .desc = Iguala a temperatura do gás com o do ambiente fora do cano.
+
+ent-HeatExchangerBend = radiador curvado
+    .desc = Iguala a temperatura do gás com o do ambiente fora do cano.
+    .suffix = curvado
+
+ent-SignalControlledValve = Válvula automática
+    .desc = Um tubo com uma válvula que pode ser usada (através de sinais) para desativar o fluxo de gás através dele.

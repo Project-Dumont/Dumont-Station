@@ -25,7 +25,9 @@ materials-meat = carne
 materials-web = seda
 materials-bones = osso
 materials-coal = carvão
+materials-diamond = diamante
 materials-gunpowder = pólvora
+materials-cotton = algodão
 
 # Ores
 materials-raw-iron = ferro bruto
@@ -36,3 +38,4 @@ materials-raw-plasma = plasma bruto
 materials-raw-uranium = urânio bruto
 materials-raw-bananium = bananium bruto
 materials-raw-salt = sal em pedras
+materials-raw-diamond = diamante bruto

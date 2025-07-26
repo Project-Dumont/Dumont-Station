@@ -1,0 +1,59 @@
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Security borg
+- type: borgType
+  id: security
+
+  # Description
+  dummyPrototype: BorgChassisSecurity
+
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+
+  # TODO: change these when reworking secborg modules to have the equivalent of roundstart gear
+  defaultModules:
+  - BorgModuleTool # GabyStation - SecBorg QoL
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+
+  lawset: Security
+
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical # -20 to Crit Threshold
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+  # GabyStation - SecBorg Hailer
+  - type: Hailer
+    isBorg: true
+
+  radioChannels:
+  - Science
+  - Security
+
+  # Visual
+  inventoryTemplateId: borgShort
+  spriteBodyState: security
+  spriteHasMindState: security_e
+  spriteNoMindState: security_e_r
+  spriteToggleLightState: security_l
+
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg

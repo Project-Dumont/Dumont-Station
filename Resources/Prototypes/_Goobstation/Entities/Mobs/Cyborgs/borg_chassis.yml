@@ -1,9 +1,13 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThunderBear2006 <bearthunder06@gmail.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -445,3 +449,77 @@
   components:
   - type: BorgSwitchableSubtype
     borgSubtype: service_rover
+
+# Security
+
+- type: entity
+  id: BorgChassisSecurityHound
+  parent: BorgChassisSecurity
+  name: security hound cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_hound
+
+- type: entity
+  id: BorgChassisSecurityBasic
+  parent: BorgChassisSecurity
+  name: basic security cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_basic
+
+- type: entity
+  id: BorgChassisSecurityBlackKnight
+  parent: BorgChassisSecurity
+  name: black knight cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_blackknight
+
+- type: entity
+  id: BorgChassisSecurityCricket
+  parent: BorgChassisSecurity
+  name: cricket security cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_cricket
+
+- type: entity
+  id: BorgChassisSecurityHeavy
+  parent: BorgChassisSecurity
+  name: heavy security cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_heavy
+
+- type: entity
+  id: BorgChassisSecurityNoble
+  parent: BorgChassisSecurity
+  name: noble security cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_noble
+
+- type: entity
+  id: BorgChassisSecurityRedKnight
+  parent: BorgChassisSecurity
+  name: red knight cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_redknight
+
+- type: entity
+  id: BorgChassisSecurityStandard
+  parent: BorgChassisSecurity
+  name: standard security cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BorgSwitchableSubtype
+    borgSubtype: security_standard

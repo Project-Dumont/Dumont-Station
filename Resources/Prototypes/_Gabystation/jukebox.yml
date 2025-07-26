@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Nicolasfmendesx11 <Nicolasfmendesx11@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 samarieh <samariehy666@gmail.com>
@@ -465,3 +467,15 @@
   name: Toby Fox - Welcome to the Green Room
   path:
     path: /Audio/_Gabystation/Jukebox/welcome_to_the_green_room.ogg
+
+- type: jukebox
+  id: EyesWithoutAFace
+  name: Billy Idol - Eyes Without A Face
+  path:
+    path: /Audio/_Gabystation/Jukebox/eyes_without_a_face.ogg
+
+- type: jukebox
+  id: HeartToHeart
+  name: Mac DeMarco - Heart To Heart
+  path:
+    path: /Audio/_Gabystation/Jukebox/heart_to_heart.ogg
