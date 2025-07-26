@@ -41,7 +41,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TC'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_crimsom.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
