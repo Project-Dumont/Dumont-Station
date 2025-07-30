@@ -69,7 +69,7 @@ public abstract class SharedArmorSparkEffectSystem : EntitySystem
         // SP bullets have negative armor penetration (-0.25 to -1)
         // HP bullets have very negative armor penetration (-1)
         // This is a heuristic based on the hitscan prototypes we examined
-        return args.ArmorPenetration < 0;
+        return args.Damage.ArmorPenetration < 0;
     }
 
     private bool ArmorMeetsCriteria(EntityUid armorUid, DamageModifyEvent args)
@@ -87,7 +87,7 @@ public abstract class SharedArmorSparkEffectSystem : EntitySystem
             var coeffQuery = new CoefficientQueryEvent(SlotFlags.OUTERCLOTHING);
             var relayedEvent = new InventoryRelayedEvent<CoefficientQueryEvent>(coeffQuery);
             RaiseLocalEvent(armorUid, relayedEvent);
-            
+
             if (coeffQuery.DamageModifiers.Coefficients.TryGetValue("Piercing", out var pierceCoeff))
             {
                 // Coefficient of 0.2 or less means 80%+ damage reduction
@@ -103,20 +103,20 @@ public abstract class SharedArmorSparkEffectSystem : EntitySystem
         // Find the entity wearing the armor (the target of the damage)
         var armorTransform = Transform(armorUid);
         var wearer = armorTransform.ParentUid;
-        
+
         if (!Exists(wearer))
             return;
 
         var wearerTransform = Transform(wearer);
-        
+
         // Calculate random offset within the tile
         var offsetX = _random.NextFloat(-component.MaxOffset, component.MaxOffset);
         var offsetY = _random.NextFloat(-component.MaxOffset, component.MaxOffset);
         var offset = new Vector2(offsetX, offsetY);
-        
+
         // Spawn the effect at the wearer's position with offset
         var effectCoords = wearerTransform.Coordinates.Offset(offset);
-        
+
         SparkEffectAt(effectCoords, component.SparkEffectPrototype, component.RicochetSoundCollection);
     }
 
@@ -137,15 +137,15 @@ public abstract class SharedArmorSparkEffectSystem : EntitySystem
     private void SpawnCyborgSparkEffect(EntityUid cyborgUid, CyborgSparkEffectComponent component)
     {
         var cyborgTransform = Transform(cyborgUid);
-        
+
         // Calculate random offset within the tile
         var offsetX = _random.NextFloat(-component.MaxOffset, component.MaxOffset);
         var offsetY = _random.NextFloat(-component.MaxOffset, component.MaxOffset);
         var offset = new Vector2(offsetX, offsetY);
-        
+
         // Spawn the effect at the cyborg's position with offset
         var effectCoords = cyborgTransform.Coordinates.Offset(offset);
-        
+
         SparkEffectAt(effectCoords, component.SparkEffectPrototype, component.RicochetSoundCollection);
     }
 

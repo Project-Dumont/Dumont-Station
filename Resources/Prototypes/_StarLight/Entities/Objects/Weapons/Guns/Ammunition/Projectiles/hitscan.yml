@@ -57,7 +57,7 @@
     types:
       Piercing: 40
       Structural: 30
-  staminaDamage: 35   
+  staminaDamage: 35
 
 - type: hitscan
   id: DebugBulletTrace
@@ -72,7 +72,7 @@
   damage:
     types:
       Blunt: 1
-  staminaDamage: 12   
+  staminaDamage: 12
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: rubber
@@ -87,7 +87,7 @@
       Piercing: 35
 
 - type: hitscan
-  id: BulletMagnumPracticePracticeTrace
+  id: BulletMagnumPracticeTrace
   parent: BulletTrace
   damage:
     types:
@@ -197,7 +197,7 @@
   damage:
     types:
       Blunt: 2
-      
+
 - type: hitscan
   id: BulletLightRifleIncendiaryTrace
   parent: BulletTrace
@@ -206,7 +206,7 @@
     types:
       Blunt: 3
       Heat: 16
-            
+
 - type: hitscan
   id: BulletLightRifleUraniumTrace
   parent: BulletTrace
@@ -230,7 +230,7 @@
   damage:
     types:
       Blunt: 2
-      
+
 - type: hitscan
   id: BulletRifleIncendiaryTrace
   parent: BulletTrace
@@ -239,7 +239,7 @@
     types:
       Blunt: 2
       Heat: 15
-            
+
 - type: hitscan
   id: BulletRifleUraniumTrace
   parent: BulletTrace
@@ -255,7 +255,7 @@
   damage:
     types:
       Blunt: 10
-  staminaDamage: 40   
+  staminaDamage: 40
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: buckshot
@@ -273,6 +273,7 @@
 - type: hitscan
   id: PelletShotgunFlareTrace
   parent: BulletTrace
+  ignite: true
   damage:
     types:
       Piercing: 28
@@ -291,7 +292,7 @@
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: buckshot
-    
+
 - type: hitscan
   id: ShellShotgunIncendiaryTrace
   parent: BulletTrace

@@ -14,6 +14,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Starlight.Effects;
+
 [Prototype("displacementEffect")]
 public sealed partial class DisplacementEffect : IPrototype
 {

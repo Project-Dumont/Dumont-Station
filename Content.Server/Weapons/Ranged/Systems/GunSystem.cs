@@ -413,7 +413,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         var hitName = ToPrettyString(hitEntity);
                         if (dmg != null)
                             dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user);
-                        
+
                         if (hitscan.ignite && TryComp<FlammableComponent>(hitEntity, out var flameComp))
                         {
                             flameComp.FireStacks += 1;
