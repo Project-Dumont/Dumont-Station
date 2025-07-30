@@ -404,10 +404,10 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         var hitEntity = lastHit.Value;
                         if (hitscan.StaminaDamage > 0f)
-                            _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
+                        _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
 
-                        if (hitscan.FireStacks > 0f && TryComp(hitEntity, out FlammableComponent? flammable)) // Goobstation
-                            _flammable.AdjustFireStacks(hitEntity, hitscan.FireStacks, flammable, true);
+                    if (hitscan.Count > 0 && TryComp(hitEntity, out FlammableComponent? flammable)) // Goobstation
+                        _flammable.AdjustFireStacks(hitEntity, hitscan.Count, flammable, true);
 
                         var dmg = hitscan.Damage;
 
