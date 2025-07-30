@@ -560,7 +560,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
 
-                    var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false);
+                    var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false, hitscan.Damage);
                     RaiseLocalEvent(hit, ref ev);
 
                     if (!ev.Reflected)
@@ -617,7 +617,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     if (Transform(lastHit.Value) is TransformComponent xform && xform.GridUid is { } gridUid)
                     {
-                        var position = _transform.GetGridOrMapTilePosition(lastHit.Value, xform);
+                        var position = TransformSystem.GetGridOrMapTilePosition(lastHit.Value, xform);
                         _atmosphere.HotspotExpose(gridUid, position, hitscan.Temperature, 50, user, true);
                     }
                 }
