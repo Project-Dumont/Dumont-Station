@@ -68,7 +68,7 @@
   description: Heavy magnum cartridge mostly used by revolvers. Chalk ammunition is generally non-harmful, used for practice.
   components:
   - type: HitScanCartridgeAmmo
-    hitscan: BulletMagnumPracticePracticeTrace
+    hitscan: BulletMagnumPracticeTrace
   - type: Sprite
     layers:
       - state: base
