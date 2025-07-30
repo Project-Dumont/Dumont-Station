@@ -240,7 +240,7 @@
     layers:
       - state: tranquilizer
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitscanCartridgeAmmo
+  - type: HitScanCartridgeAmmo
     soundEject:
       collection: ShellEject
     hitscan: PelletShotgunTranquilizerTrace
