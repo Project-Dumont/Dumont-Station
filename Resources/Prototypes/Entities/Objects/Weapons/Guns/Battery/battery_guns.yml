@@ -153,7 +153,7 @@
   components:
   - type: Sprite
   - type: Item
-    size: Huge
+    size: Large
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
     quickEquip: false
@@ -457,9 +457,18 @@
   components:
   - type: StaticPrice
     price: 420
+  - type: Gun #Starlight - Start
+    fireRate: 2
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto #Just allows people to hold down left click
+  - type: Battery
+    maxCharge: 1500 # ~1:30 minutes for recharge
+    startingCharge: 1500
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 62.5
+    fireCost: 30
   - type: Tag
     tags:
       - Rifle
@@ -641,7 +650,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 100
+    fireCost: 40
   - type: Tag
     tags:
     - TurretCompatibleWeapon
@@ -712,7 +721,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 100
+    fireCost: 40
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -1094,7 +1103,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
-    fireCost: 150
+    fireCost: 70
   # Goob edit start
   #- type: BatteryWeaponFireModes
   #  fireModes:
