@@ -415,10 +415,12 @@ public sealed partial class GunSystem : SharedGunSystem
                         if (dmg != null)
                             dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user);
 
-                        if (hitscan.ignite && TryComp<FlammableComponent>(hitEntity, out var flameComp))
+                        if (hitscan.Ignite)
                         {
-                            flameComp.FireStacks += 1;
-                            _flammable.Ignite(hitEntity, lastUser, flameComp);
+                            if (TryComp<FlammableComponent>(hitEntity, out var flameComp))
+                            {
+                                _flammable.Ignite(hitEntity, lastUser, flameComp);
+                            }
                         }
 
                         // check null again, as TryChangeDamage returns modified damage values
@@ -760,55 +762,54 @@ public sealed partial class GunSystem : SharedGunSystem
         // Effects tempt me not
         var sprites = new List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier sprite, float scale)>();
         var fromXform = Transform(fromCoordinates.EntityId);
-        var gridUid = fromCoordinates.GetGridUid(EntityManager);
-        var angle = mapDirection;
+        var gridUidOuter = fromCoordinates.GetGridUid(EntityManager);
 
         // We'll get the effects relative to the grid / map of the firer
         // Look you could probably optimise this a bit with redundant transforms at this point.
 
-        var gridUid = fromXform.GridUid;
-        if (gridUid != fromCoordinates.EntityId && TryComp(gridUid, out TransformComponent? gridXform))
+        var gridUidInner = fromXform.GridUid;
+        var effectAngle = angle;
+        if (gridUidInner != fromCoordinates.EntityId && TryComp(gridUidInner, out TransformComponent? gridXform))
         {
             var (_, gridRot, gridInvMatrix) = TransformSystem.GetWorldPositionRotationInvMatrix(gridXform);
             var map = TransformSystem.ToMapCoordinates(fromCoordinates);
-            fromCoordinates = new EntityCoordinates(gridUid.Value, Vector2.Transform(map.Position, gridInvMatrix));
-            angle -= gridRot;
+            fromCoordinates = new EntityCoordinates(gridUidInner.Value, Vector2.Transform(map.Position, gridInvMatrix));
+            effectAngle -= gridRot;
         }
         else
         {
-            angle -= TransformSystem.GetWorldRotation(fromXform);
+            effectAngle -= TransformSystem.GetWorldRotation(fromXform);
         }
 
         if (distance >= 1f)
         {
-            var muzzleCoords = fromCoordinates.Offset(angle.ToVec().Normalized() / 2);
+            var muzzleCoords = fromCoordinates.Offset(effectAngle.ToVec().Normalized() / 2);
             var muzzleNetCoords = GetNetCoordinates(muzzleCoords);
             if (hitscan.MuzzleFlash != null)
-                hitscanEvent.MuzzleFlash = (muzzleNetCoords, angle, hitscan.MuzzleFlash, 1f);
+                hitscanEvent.MuzzleFlash = (muzzleNetCoords, effectAngle, hitscan.MuzzleFlash, 1f);
 
             if (hitscan.TravelFlash != null)
             {
-                var coords = fromCoordinates.Offset(angle.ToVec() * (distance + 0.5f) / 2);
+                var coords = fromCoordinates.Offset(effectAngle.ToVec() * (distance + 0.5f) / 2);
                 var netCoords = GetNetCoordinates(coords);
 
-                hitscanEvent.TravelFlash = (netCoords, angle, hitscan.TravelFlash, distance - 1.5f);
+                hitscanEvent.TravelFlash = (netCoords, effectAngle, hitscan.TravelFlash, distance - 1.5f);
             }
 
             if (hitscan.Bullet != null)
-                hitscanEvent.Bullet = (muzzleNetCoords, angle, hitscan.Bullet, distance - 1.5f);
+                hitscanEvent.Bullet = (muzzleNetCoords, effectAngle, hitscan.Bullet, distance - 1.5f);
         }
 
         if (hitscan.ImpactFlash != null)
         {
-            var coords = fromCoordinates.Offset(angle.ToVec() * distance);
+            var coords = fromCoordinates.Offset(effectAngle.ToVec() * distance);
             var netCoords = GetNetCoordinates(coords);
 
-            hitscanEvent.ImpactFlash = (netCoords, angle.FlipPositive(), hitscan.ImpactFlash, 1f);
+            hitscanEvent.ImpactFlash = (netCoords, effectAngle.FlipPositive(), hitscan.ImpactFlash, 1f);
         }
 
         if (hitEntity is not null)
         {
-
             if (hitscan.Reflective == ReflectType.NonEnergy)
             {
                 if (TryComp<BloodstreamComponent>(hitEntity, out var bloodstream))
@@ -817,15 +818,15 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
                         // A flash of the neuralyzer, then a man in a black suit says that you didn’t see any “vector crutch” here, and if you did—read it again.
-                        var coords = fromCoordinates.Offset((angle.ToVec() * (distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
-                        _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, angle + Angle.FromDegrees(-45), cleanable: true);
+                        var coords = fromCoordinates.Offset((effectAngle.ToVec() * (distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
+                        _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, effectAngle + Angle.FromDegrees(-45), cleanable: true);
                     });
                 }
                 else
                 {
-                    var coords = fromCoordinates.Offset((angle.ToVec() * distance));
+                    var coords = fromCoordinates.Offset((effectAngle.ToVec() * distance));
                     var netCoords = GetNetCoordinates(coords);
-                    hitscanEvent.Impact = (netCoords, angle.FlipPositive(), GetNetEntity(hitEntity.Value));
+                    hitscanEvent.Impact = (netCoords, effectAngle.FlipPositive(), GetNetEntity(hitEntity.Value));
                 }
             }
         }
