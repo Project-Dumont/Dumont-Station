@@ -273,7 +273,6 @@
 - type: hitscan
   id: PelletShotgunFlareTrace
   parent: BulletTrace
-  ignite: true
   damage:
     types:
       Piercing: 28
