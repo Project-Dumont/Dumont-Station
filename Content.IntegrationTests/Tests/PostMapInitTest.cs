@@ -34,6 +34,7 @@
 // SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
 // SPDX-FileCopyrightText: 2025 Deerstop <edainturner@gmail.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Gallagin <64706450+Gallagin@users.noreply.github.com>
