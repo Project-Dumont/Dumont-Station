@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Matthew Herber <32679887+Happyrobot33@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Shared._Starlight.Combat.Effects.Components;
 using Content.Shared.Armor;
