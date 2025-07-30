@@ -116,7 +116,7 @@
   ignoreResistances: true
   damage:
     types:
-      Piercing: 26 
+      Piercing: 26
 ### pistol
 
 - type: hitscan
