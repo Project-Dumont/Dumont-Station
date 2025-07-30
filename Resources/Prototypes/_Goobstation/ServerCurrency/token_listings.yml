@@ -1,5 +1,8 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
@@ -8,26 +11,26 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: tokenListing
-  id: HighTierAntagToken
-  name: gs-balanceui-shop-buy-token-antag
-  label: gs-balanceui-shop-token-antag
-  description: gs-balanceui-shop-buy-token-antag-desc
-  price: 750
-  adminNote: gs-balanceui-remark-token-antag
+#- type: tokenListing
+#  id: HighTierAntagToken
+#  name: gs-balanceui-shop-buy-token-antag
+#  label: gs-balanceui-shop-token-antag
+#  description: gs-balanceui-shop-buy-token-antag-desc
+#  price: 750
+#  adminNote: gs-balanceui-remark-token-antag
 
-- type: tokenListing
-  id: AdminAbuseToken
-  name: gs-balanceui-shop-buy-token-admin-abuse
-  label: gs-balanceui-shop-token-admin-abuse
-  description: gs-balanceui-shop-buy-token-admin-abuse-desc
-  price: 250
-  adminNote: gs-balanceui-remark-token-admin-abuse
+#- type: tokenListing
+#  id: AdminAbuseToken
+#  name: gs-balanceui-shop-buy-token-admin-abuse
+#  label: gs-balanceui-shop-token-admin-abuse
+#  description: gs-balanceui-shop-buy-token-admin-abuse-desc
+#  price: 250
+#  adminNote: gs-balanceui-remark-token-admin-abuse
 
-- type: tokenListing
-  id: HatToken
-  name: gs-balanceui-shop-buy-token-hat
-  label: gs-balanceui-shop-token-hat
-  description: gs-balanceui-shop-buy-token-hat-desc
-  price: 500
-  adminNote: gs-balanceui-remark-token-hat
+#- type: tokenListing
+#  id: HatToken
+#  name: gs-balanceui-shop-buy-token-hat
+#  label: gs-balanceui-shop-token-hat
+#  description: gs-balanceui-shop-buy-token-hat-desc
+#  price: 500
+#  adminNote: gs-balanceui-remark-token-hat

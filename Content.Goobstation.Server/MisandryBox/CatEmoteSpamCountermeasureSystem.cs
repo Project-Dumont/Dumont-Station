@@ -1,5 +1,8 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -36,8 +39,8 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SpeechComponent, EmoteEvent>(OnEmoteEvent);
-        SubscribeLocalEvent<SpeechComponent, EmoteSoundPitchShiftEvent>(OnGetPitchShiftEvent);
+        //SubscribeLocalEvent<SpeechComponent, EmoteEvent>(OnEmoteEvent);
+        //SubscribeLocalEvent<SpeechComponent, EmoteSoundPitchShiftEvent>(OnGetPitchShiftEvent);
     }
 
     private void OnGetPitchShiftEvent(Entity<SpeechComponent> ent, ref EmoteSoundPitchShiftEvent ev)

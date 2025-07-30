@@ -12,7 +12,6 @@
 // SPDX-FileCopyrightText: 2021 py01 <60152240+collinlunn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 py01 <pyronetics01@gmail.com>
 // SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
@@ -22,6 +21,11 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -29,9 +33,8 @@ using Content.Server.Atmos;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.NodeContainer;
-using Content.Shared.NodeContainer.NodeGroups;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 
@@ -39,7 +42,7 @@ namespace Content.Server.NodeContainer.Nodes
 {
     /// <summary>
     ///     Connects with other <see cref="PipeNode"/>s whose <see cref="PipeDirection"/>
-    ///     correctly correspond.
+    ///     and <see cref="CurrentPipeLayer"/> correctly correspond.
     /// </summary>
     [DataDefinition]
     [Virtual]
@@ -50,6 +53,12 @@ namespace Content.Server.NodeContainer.Nodes
         /// </summary>
         [DataField("pipeDirection")]
         public PipeDirection OriginalPipeDirection;
+
+        /// <summary>
+        ///     The *current* layer to which the pipe node is assigned.
+        /// </summary>
+        [DataField("pipeLayer")]
+        public AtmosPipeLayer CurrentPipeLayer = AtmosPipeLayer.Primary;
 
         /// <summary>
         ///     The *current* pipe directions (accounting for rotation)
@@ -231,6 +240,7 @@ namespace Content.Server.NodeContainer.Nodes
             foreach (var pipe in PipesInDirection(pos, pipeDir, grid, nodeQuery))
             {
                 if (pipe.NodeGroupID == NodeGroupID
+                    && pipe.CurrentPipeLayer == CurrentPipeLayer
                     && pipe.CurrentPipeDirection.HasDirection(pipeDir.GetOpposite()))
                 {
                     yield return pipe;
