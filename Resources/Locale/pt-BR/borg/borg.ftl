@@ -17,3 +17,9 @@ borg-ui-no-brain = Nenhum cérebro presente
 borg-ui-remove-battery = Remover
 borg-ui-modules-label = Módulos:
 borg-ui-module-counter = {$actual}/{$max}
+
+## Borg type information
+
+borg-type-security-name = Segurança
+borg-type-security-desc = Auxilie a equipe de segurança na manutenção da ordem a bordo. Contenha ameaças, prenda infratores e garanta a segurança da tripulação.
+borg-type-security-transponder = ciborgue segurança

@@ -1,6 +1,9 @@
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -28,3 +31,228 @@
   copyright: "Som de Cristal by Joaquim e Manuel. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=Bk_E_BsgC3k"
+
+- files: ["amor_mafioso.ogg"]
+  copyright: "Amor Mafioso by MusicalJM. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5Zgscol2VDs?si=tqNXbZCSqjsQ6NVg"
+
+- files: ["anemoia.ogg"]
+  copyright: "Anemoia by Oliver Buckland. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Q0guReRtGWI?si=iMmA26awtUUMuP43"
+
+- files: ["a_world_i_built_for_you.ogg"]
+  copyright: "A World I Built For You by Joel Tumelty. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/B0MTtxBV3Aw?si=OJZdDtVLP_yMSdvu"
+
+- files: ["altars_of_apostasy.ogg"]
+  copyright: "Altars Of Apostasy by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/m5ra-w1xct8?si=e-V9hzUY_FcNGUyQ"
+
+- files: ["although_the_sky.ogg"]
+  copyright: "Although The Sky by Dorkus64. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/tVGH-g6OQhg?si=3qMPQAI33eHB8gxy"
+
+- files: ["asgore.ogg"]
+  copyright: "Asgore by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/42kI2lT0x6U?si=cfCE1ZUMy9U4fDDu"
+
+- files: ["asgore_runs_over.ogg"]
+  copyright: "Asgore Runs Over Dess by Bub8les. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/u5NqO2v_xnY?si=TJca8eD6bi9NjWto"
+
+- files: ["bar_da_esquina.ogg"]
+  copyright: "Bar da Esquina by Banda Passarela. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/LBAyQMaq8fY?si=Omp-WDVMxRI8W3yJ"
+
+- files: ["baby_blue.ogg"]
+  copyright: "Baby Blue by Badfinger. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/_yqOaQqgJdI?si=nusLvcUf6sIwpzC2"
+
+- files: ["balatro.ogg"]
+  copyright: "Balatro Maint Theme by LouisF. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/OnGQeVTt4KI?si=UaBw8xTGOGtrRvD9"
+
+- files: ["birds_dont_sing.ogg"]
+  copyright: "Birds Don't Sing by TV Girl. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/OqhoRXGeMW4?si=52vpb5qG_MSGRKKz"
+
+- files: ["black_knife.ogg"]
+  copyright: "Black Knife by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/B8Us0DZgexw?si=IqEYiJ9MgkRE_jtC"
+
+- files: ["buddy_holly.ogg"]
+  copyright: "Buddy Holly by Weezer. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/SiJie3Z7DG8?si=oVxdBW5IwQDp2OGe"
+
+- files: ["calice.ogg"]
+  copyright: "Cálice by Chico Buarque. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/9y2xB90A0CY?si=oe2kT4tYne_d1hP_"
+
+- files: ["cant_get_over.ogg"]
+  copyright: "Can't Get Over by KASINO. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/-wZl_ZhnVg4?si=HLaCdWhnoxAv3wbB"
+
+- files: ["castle_vein.ogg"]
+  copyright: "Castle Vein by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/AX9pqyjYZBM?si=PERU3b-9tYUyKdl6"
+
+- files: ["clair_de_lune.ogg"]
+  copyright: "Clair de Lune by Johann Debussy. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/ZlM2EB9aE3A?si=zWJrs_OwtjbSRNWi"
+
+- files: ["feche_os_olhos.ogg"]
+  copyright: "Feche os Olhos by Renato e Seus Blue Caps. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/5J7MTStp-10?si=o5eOygq0fE1fdT1T"
+
+- files: ["fly.ogg"]
+  copyright: "F L Y by Spectrum. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/DopBUv0ZV2w?si=Bd6ZVuxfeUmPJ44J"
+
+- files: ["glory.ogg"]
+  copyright: "Glory by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/kzbbO_lyZ94?si=VrB5t7KsDAXaCzUd"
+
+- files: ["hear_the_siren_song_call_of_death.ogg"]
+  copyright: "Hear! The Siren Sound Of Death by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/COP66yrNde4?si=B2zdt3n-MBKZmqoy"
+
+- files: ["hopes_and_dreams.ogg"]
+  copyright: "Hopes And Dreams by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/wbO3p7_Mf30?si=YVcW3VKkQm7GKunj"
+
+- files: ["invisible.ogg"]
+  copyright: "Invisible by Duran Duran. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/FKwVFWwA_x8?si=IMihDaXQ7a7QJmw_"
+
+- files: ["its_raining_somewhere_else.ogg"]
+  copyright: "It's raining somewhere else by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/KtC-pl9P3kE?si=NzZlRW_EiN9BE-aK"
+
+- files: ["its_tv_time.ogg"]
+  copyright: "It's Tv Time! by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/F2PJbTuZlTU?si=zohjDC8Bl2QuMwX7"
+
+- files: ["katamari.ogg"]
+  copyright: "KATAMARI by Femtanyl. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/YfXpNIQbdjo?si=sDewjogdf4AiGp_v"
+
+- files: ["lady.ogg"]
+  copyright: "Lady (Hear Me Tonight) by Modjo. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/mMfxI3r_LyA?si=8oTay26YwZKuzt31"
+
+- files: ["last_goodbye.ogg"]
+  copyright: "Last Goodbye by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/EpBQ5m3Ag3Q?si=ArhFU37x2H6FI5wn"
+
+- files: ["lovers_rock.ogg"]
+  copyright: "Lover's Rock by TV Girl. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/j_sG_Juncn8?si=Kq7RroI-pG9ek-sN"
+
+- files: ["pegando_onibus.ogg"]
+  copyright: "Pegando o Ônibus by MusicalJM. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/k91PebBnynY?si=kzYm7DqAJnVTkyXX"
+
+- files: ["primeiro_baile.ogg"]
+  copyright: "Primeiro Baile by MusicalJM. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/vQUJvBTmILo?si=JLJFQXsLQ8RgsfzM"
+
+- files: ["raise_up_your_bat.ogg"]
+  copyright: "Raise Up Your Bat by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/85WD93lz5GU?si=iY3uiwfcBXrUonRE"
+
+- files: ["roundabout.ogg"]
+  copyright: "Roundabout by Yes. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/pk3HBb0mh5Q?si=-vjVZQJQcqIZ_tBd"
+
+- files: ["ruder_buster.ogg"]
+  copyright: "Ruder Buster by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/N117e1Ub39A?si=vMY-upPmz7JcL0wn"
+
+- files: ["summer.ogg"]
+  copyright: "おつかれSUMMER by HALCALI. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/j1DnOm0DdQU?si=8LXsCEkd8rB9buX5"
+
+- files: ["taking_whats_not_yours.ogg"]
+  copyright: "Taking What's Not Yours by TV Girl. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Ox5ENW0CeAU?si=ARWrayU_H3Z0aC6s"
+
+- files: ["the_fire_is_gone.ogg"]
+  copyright: "The Fire is Gone by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/917xijnpJVw?si=Tf1Zg1Zfeh2FDHEX"
+
+- files: ["the_man_who_sold_the_world.ogg"]
+  copyright: "The Man Who Sold The World by Midge Ure. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/mXHKjFKBC0g?si=Ai1g4wBilacuu5Kq"
+
+- files: ["the_place_where_it_rained.ogg"]
+  copyright: "The place where it rained by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/aSc7Yuwn1Ao?si=eFv-E4KH5_7d-4Kv"
+
+- files: ["the_world_looks_red.ogg"]
+  copyright: "The World Looks Red by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/In3SLsHpCSg?si=5_tvFyRYlFltH36Y"
+
+- files: ["vou_pra_santa_catarina.ogg"]
+  copyright: "Vou Pra Santa Catarina by Terceira Dimensão. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/AVSYcRdHpOA?si=zO-9xsL9ntvnbkwk"
+
+- files: ["war_without_reason.ogg"]
+  copyright: "War Without Reason by Heaven Pierce Her. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/Gcj9-iF_lTw?si=uceN7OomzO83LrFq"
+
+- files: ["welcome_to_the_green_room.ogg"]
+  copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
+  license: "Custom"
+  source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
+
+- files: ["eyes_without_a_face.ogg"]
+  copyright: "Eyes Without A Face by Billy Idol. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=CPWU9l2r5_s"
+
+- files: ["heart_to_heart.ogg"]
+  copyright: "Heart To Heart by Mac DeMarco. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=qBoQzo98EpQ"

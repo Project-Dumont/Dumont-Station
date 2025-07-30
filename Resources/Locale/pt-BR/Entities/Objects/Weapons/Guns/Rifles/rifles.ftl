@@ -9,3 +9,4 @@ ent-WeaponRifleM90GrenadeLauncher = M-90gl
 
 ent-WeaponRifleLecter = Lecter
      .desc = Um rifle de assalto de nível militar de última geração. Usa munição de rifle .20.
+

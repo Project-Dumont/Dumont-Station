@@ -58,7 +58,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   As habilidades das luvas incluem:
   - Hackear portas e escotilhas.
   - Drenar energia de [bold]transformadores[/bold], como APCs, subestações ou SMESes (transformadores de maior tensão drenam energia de forma mais eficiente).
-  - Aplicar choque elétrico a um alvo, atordoando-o e causando dano leve.
   - Manipular [bold]equipamentos da estação[/bold] para cumprir [color=#66FF00]objetivos[/color].
 
   ## Katana de Energia
@@ -82,6 +81,15 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Este é um [color=cyan]explosivo C-4 modificado[/color], encontrado no seu bolso. Ele cria uma grande explosão, mas [bold]deve ser armado no local-alvo[/bold], pois é um dos seus objetivos.
 
   Não pode ser ativado manualmente, então simplesmente plante-o em uma parede ou mobília que não traga alegria. Escolha com sabedoria, pois ele não pode ser desativado depois de plantado.
+
+  ## Ninjutsu
+
+  <Box>
+    <GuideEntityEmbed Entity="NinjutsuScroll"/>
+  </Box>
+
+  As a true warrior of the Spider Clan, you are a master of [textlink="Ninjutsu" link="Ninjutsu"], a martial art honed over centuries by your teachers.
+  The art is not simply about strength or speed; it is about becoming one with the shadows and striking with deadly precision.
 
   ## Objetivos
 

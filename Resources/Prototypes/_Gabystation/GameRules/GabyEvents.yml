@@ -21,7 +21,7 @@
     weight: 5
     duration: 60
     maxOccurrences: 1 # necromorph nerf (são mto forte pra ter toda hora)
-    chaos: 
+    chaos:
       Hostile: 20
       Medical: 50
     eventType: HostileSpawn
