@@ -343,3 +343,28 @@
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: depleted-uranium
+
+- type: hitscan
+  id: PelletShotgunTranquilizerTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Blunt: 1
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        ammo:
+          maxVol: 15
+    - type: RefillableSolution
+      solution: ammo
+    - type: DrainableSolution
+      solution: ammo
+    - type: SolutionInjectOnProjectileHit
+      transferAmount: 15
+      solution: ammo
+    - type: InjectableSolution
+      solution: ammo
+  count: 1
+  bullet:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: tranquilizer

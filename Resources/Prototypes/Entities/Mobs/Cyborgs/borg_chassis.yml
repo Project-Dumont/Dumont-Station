@@ -73,6 +73,7 @@
     inherentRadioChannels:
     - Common
     # - Binary # Goobstation - replaced with collective mind
+  - type: CyborgSparkEffect #starlight
 
 - type: entity
   id: BorgChassisGeneric
@@ -154,6 +155,7 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+    - type: CyborgSparkEffect #starlight
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -193,6 +195,7 @@
         collection: FootstepHoverBorg
         params:
           volume: -6
+    - type: CyborgSparkEffect #starlight
 
 - type: entity
   id: BorgChassisSyndicateSaboteur
@@ -230,6 +233,7 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+    - type: CyborgSparkEffect #starlight
 
 - type: entity
   id: BorgChassisDerelict
@@ -262,3 +266,4 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: CyborgSparkEffect #starlight
