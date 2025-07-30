@@ -80,6 +80,7 @@ namespace Content.Client.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem : SharedGunSystem
 {
+    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
@@ -196,7 +197,7 @@ public sealed partial class GunSystem : SharedGunSystem
         spriteComp.LayerSetRSI("unshaded", (layer!.ActualRsi ?? layer.Rsi)!);
         spriteComp.LayerSetState("unshaded", layer.RsiState);
         spriteComp["unshaded"].Visible = true;
-        _displacement.TryAddDisplacement(_displacementEffect.Displacement, spriteComp, 0, "unshaded", new HashSet<string>());
+        _displacement.TryAddDisplacement(_displacementEffect.Displacement, ent, 0, "unshaded", new HashSet<string>());
     }
     private void RenderBullet(NetCoordinates coordinates, Angle angle, SpriteSpecifier sprite, float distance)
     {
