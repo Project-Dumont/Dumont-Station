@@ -918,7 +918,7 @@
     layers:
       - state: grenade
   - type: Projectile
-    deleteOnCollide: false
+    deleteOnCollide: true # Gaby - Fix being insta stunned by stun grenade
     damage:
       types:
         Blunt: 1
