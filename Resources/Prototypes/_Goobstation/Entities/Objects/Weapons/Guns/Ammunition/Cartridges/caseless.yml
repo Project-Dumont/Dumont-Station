@@ -8,5 +8,5 @@
   name: cartridge (9.5mm SAP-HE)
   parent: BaseCartridgeCaselessRifle
   components:
-  - type: CartridgeAmmo
-    proto: BulletCaselessRifleSAPHE
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletCaselessRifleSAPHETrace

@@ -368,3 +368,28 @@
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: tranquilizer
+
+- type: hitscan
+  id: BulletCaselessRifleSAPHETrace
+  parent: BulletTrace
+  damage:
+    types:
+      Piercing: 12
+  ignoreResistances: false
+  armorPenetration: 0.25
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: bullet
+  bullet:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: bullet
+  explosion:
+    explosionType: Default
+    maxIntensity: 0.7
+    intensitySlope: 0.7
+    totalIntensity: 0.7
+    maxTileBreak: 0
+  pointLight:
+    radius: 3.5
+    color: orange
+    energy: 0.5
