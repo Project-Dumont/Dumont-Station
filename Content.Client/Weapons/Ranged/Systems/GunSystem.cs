@@ -179,24 +179,14 @@ public sealed partial class GunSystem : SharedGunSystem
     }
     private void RenderDisplacementImpact(EntityCoordinates coords, Angle angle, EntityUid target)
     {
-        if (!TryComp<SpriteComponent>(target, out var sprite))
-            return;
-
         if (Deleted(coords.EntityId))
-            return;
-
-        if (!sprite!.AllLayers.TryFirstOrDefault(x => (x.ActualRsi ?? x.Rsi) != null && x.RsiState != null, out var layer))
-            return;
-
-        if (layer.PixelSize.X != 32 || layer.PixelSize.Y != 32)
             return;
 
         var ent = Spawn(ImpactProto, coords);
         var spriteComp = Comp<SpriteComponent>(ent);
         var xform = Transform(ent);
         xform.LocalRotation = angle;
-        spriteComp.LayerSetRSI("unshaded", (layer!.ActualRsi ?? layer.Rsi)!);
-        spriteComp.LayerSetState("unshaded", layer.RsiState);
+        // Não altere o sprite, use o padrão do ImpactEffect
         spriteComp["unshaded"].Visible = true;
         NetEntity netEnt = GetNetEntity(ent);
         _displacement.TryAddDisplacement(_displacementEffect.Displacement, (Entity<SpriteComponent>) (EntityManager.GetEntity(netEnt)!), 0, "unshaded", out _);
