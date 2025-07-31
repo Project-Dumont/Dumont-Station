@@ -8,7 +8,8 @@
     drawdepth: Effects
     layers:
     - map: ["unshaded"]
-      #shader: unshaded
+      sprite: _Starlight/Effects/impact.rsi
+      state: impact
   - type: EffectVisuals
   - type: Tag
     tags:
