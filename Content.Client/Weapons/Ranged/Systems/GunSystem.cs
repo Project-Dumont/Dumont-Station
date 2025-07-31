@@ -197,7 +197,8 @@ public sealed partial class GunSystem : SharedGunSystem
         spriteComp.LayerSetRSI("unshaded", (layer!.ActualRsi ?? layer.Rsi)!);
         spriteComp.LayerSetState("unshaded", layer.RsiState);
         spriteComp["unshaded"].Visible = true;
-        _displacement.TryAddDisplacement(_displacementEffect.Displacement, (Entity<SpriteComponent>) EntityManager.GetEntity(ent), 0, "unshaded", out _);
+        NetEntity netEnt = GetNetEntity(ent);
+        _displacement.TryAddDisplacement(_displacementEffect.Displacement, (Entity<SpriteComponent>) (EntityManager.GetEntity(netEnt)!), 0, "unshaded", out _);
     }
     private void RenderBullet(NetCoordinates coordinates, Angle angle, SpriteSpecifier sprite, float distance)
     {
