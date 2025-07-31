@@ -9,7 +9,8 @@
   - type: Store
     name: store-preset-name-revolutionary-uplink
     categories:
-    - RevolutionaryUplinkDefault
+    #- RevolutionaryUplinkDefault # Reativar isso quando adicionar uplink rev
+    - UplinkPointless # Remover isso quando adicionar uplink rev
     currencyWhitelist:
     - RevCoin
     balance:

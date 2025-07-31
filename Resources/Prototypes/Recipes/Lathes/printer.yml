@@ -28,16 +28,6 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentReportDepartmentRecipe
-  result: PrintedDocumentReportDepartment
-  categories:
-  - Reports
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
   id: PrintedDocumentReportEmployeePerformanceRecipe
   result: PrintedDocumentReportEmployeePerformance
   categories:
@@ -280,16 +270,6 @@
 - type: latheRecipe
   id: PrintedDocumentComplaintViolationLaborRulesRecipe
   result: PrintedDocumentComplaintViolationLaborRules
-  categories:
-  - Complaints
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
-  id: PrintedDocumentComplaintOffenseRecipe
-  result: PrintedDocumentComplaintOffense
   categories:
   - Complaints
   completetime: 2

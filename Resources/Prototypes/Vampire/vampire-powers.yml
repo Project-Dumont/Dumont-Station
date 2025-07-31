@@ -61,6 +61,13 @@
   activationCost: 30
   upkeep: 1
 
+- type: vampirePower
+  id: UnholyStrength 
+  usableWhileStunned: false
+  usableWhileCuffed: false
+  activationCost: 30
+  upkeep: 1
+
 - type: vampirePassive
   id: UnholyStrength
   catalogEntry: VampireUnholyStrength # Must match the catalog id

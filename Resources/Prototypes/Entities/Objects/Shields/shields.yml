@@ -351,6 +351,7 @@
     - type: Sprite
       state: makeshift-icon
     - type: Item
+      heldPrefix: metal
     - type: Clothing
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
@@ -358,7 +359,6 @@
       clothingVisuals:
         suitstorage:
         - state: metal-backpack
-      heldPrefix: metal
     - type: Blocking
       passiveBlockModifier:
         coefficients:

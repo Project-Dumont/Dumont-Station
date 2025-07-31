@@ -10,7 +10,6 @@
   recipes:
     - PrintedDocumentReportStationRecipe
     - PrintedDocumentReportOnEliminationOfViolationsRecipe
-    - PrintedDocumentReporDepartmentRecipe
     - PrintedDocumentReportEmployeePerformanceRecipe
     - PrintedDocumentReportOnTheChaptersMeetingRecipe
     - PrintedDocumentInternalAffairsAgentsReportRecipe
@@ -36,7 +35,6 @@
     - PrintedDocumentRequestConstructionWorkRecipe
     - PrintedDocumentRequestModernizationRecipe
     - PrintedDocumentComplaintViolationLaborRulesRecipe
-    - PrintedDocumentComplaintОffenseRecipe
     - PrintedDocumentPermissionEquipmentRecipe
     - PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
     - PrintedDocumentSearchPermissionRecipe

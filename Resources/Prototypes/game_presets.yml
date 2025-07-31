@@ -160,7 +160,7 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  #- MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change

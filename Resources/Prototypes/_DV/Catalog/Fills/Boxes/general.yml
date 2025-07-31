@@ -5,36 +5,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: Prisoner encryption key box
-  parent: BoxCardboard
-  id: BoxEncryptionKeyPrisoner
-  description: A box of spare encryption keys.
-  components:
-  - type: StorageFill
-    contents:
-      - id: EncryptionKeyPrison
-        amount: 4
-  - type: Sprite
-    layers:
-      - state: box
-      - state: encryptokey
-  - type: Storage
-    whitelist:
-      components:
-      - EncryptionKey
-
-- type: entity
-  name: justice encryption key box
-  parent: BoxEncryptionKeyPassenger
-  id: BoxEncryptionKeyJustice
-  description: A box of spare encryption keys.
-  components:
-  - type: StorageFill
-    contents:
-      - id: EncryptionKeyJustice
-        amount: 4
-
-- type: entity
   name: syndicate radio implanter box
   parent: BoxCardboard
   id: BoxSyndicateRadioImplanter
