@@ -42,10 +42,8 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TC'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_crimsom.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             #command
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
