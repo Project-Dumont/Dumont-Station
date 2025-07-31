@@ -20,9 +20,9 @@
   name: loadout-group-admin-assistant-outerclothing
   loadouts:
   - BartenderVest
-  - WinterCoatBlack
-  - WinterCoatBrown
-  - CorporateJacket
+  #!- WinterCoatBlack - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+  #!- WinterCoatBrown
+  #!- CorporateJacket
 
 - type: loadoutGroup
   id: AdminAssistantEar
@@ -36,5 +36,6 @@
   name: loadout-group-admin-assistant-gloves
   minLimit: 0
   loadouts:
-  - HoPGloves
-  - InspectionGloves
+  #!- HoPGloves - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+  #!- InspectionGloves - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+  - LatexGloves

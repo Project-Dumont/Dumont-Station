@@ -30,9 +30,9 @@
   description: uplink-syndicate-hostage-implanter-bundle-desc
   icon: { sprite: Objects/Misc/handcuffs.rsi, state: handcuff }
   productEntity: BoxSyndicateHostageImplanter
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
+  #discountCategory: UplinkSales
+  #discountDownTo:
+  #  Telecrystal: 1
   cost:
     Telecrystal: 2
   categories:
@@ -56,7 +56,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkObjectives
+  - UplinkDisruption
   conditions:
   - !type:BuyerWhitelistCondition
     blacklist:

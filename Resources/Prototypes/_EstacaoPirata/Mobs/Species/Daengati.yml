@@ -49,8 +49,16 @@
   name: Urist McDemon
   parent: MobHumanDummy
   id: MobDaengatiDummy
-  noSpawn: true
   description: A dummy Daengati meant to be used in character setup.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity # Gaby edit
   id: ToggleDaengatiNightVision

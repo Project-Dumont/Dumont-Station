@@ -134,7 +134,7 @@
     # Goobstation - Custom lobby music
     - /Audio/Lobby/skubstep.ogg
     #- /Audio/Lobby/sneedsfeedandseed.ogg
-    - /Audio/Lobby/honk.ogg
+    #!- /Audio/Lobby/honk.ogg - Gabystation: File not found.
     #- /Audio/Lobby/clownalwayswins.ogg
     - /Audio/Lobby/clownwmv.ogg
     #- /Audio/Lobby/dawsonschristian.ogg
@@ -155,17 +155,17 @@
     - /Audio/_Gabystation/Lobby/astronauta.ogg
     - /Audio/_Gabystation/Lobby/marciano.ogg
     - /Audio/_Gabystation/Lobby/marmore.ogg
-    - /Audio/_Gabystation/Lobby/oddity.ogg
+    #!- /Audio/_Gabystation/Lobby/oddity.ogg - Gabystation: File not found.
     - /Audio/_Gabystation/Lobby/sos.ogg
     - /Audio/_Gabystation/Lobby/miranda.ogg
     - /Audio/_Gabystation/Lobby/replicantes.ogg
     - /Audio/_Gabystation/Lobby/interestelar.ogg
     - /Audio/_Gabystation/Lobby/devil.ogg
     # Fim estação pirata
-    - /Audio/_Gabystation/Lobby/estrelar.ogg
+    #!- /Audio/_Gabystation/Lobby/estrelar.ogg - Gabystation: File not found.
     #- /Audio/_Gabystation/Lobby/hurry.ogg
     #- /Audio/_Gabystation/Lobby/radioPirata.ogg
-    - /Audio/_Gabystation/Lobby/tntin.ogg
+    #!- /Audio/_Gabystation/Lobby/tntin.ogg - Gabystation: File not found.
     - /Audio/_Gabystation/Lobby/A_Gira.ogg
     - /Audio/_Gabystation/Lobby/Brasil_Pandeiro.ogg
     - /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
@@ -186,7 +186,6 @@
     - /Audio/_Gabystation/Lobby/vermillion_pt2.ogg
     - /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
     # criso musga
-    - /Audio/_Gabystation/Lobby/a_world_built_for_you.ogg
     - /Audio/_Gabystation/Lobby/asgore.ogg
     - /Audio/_Gabystation/Lobby/a_world_i_built_for_you.ogg
     - /Audio/_Gabystation/Lobby/although_the_sky.ogg
@@ -197,7 +196,7 @@
     - /Audio/_Gabystation/Lobby/cant_get_over.ogg
     - /Audio/_Gabystation/Lobby/clair_de_lune.ogg
     - /Audio/_Gabystation/Lobby/fly.ogg
-    - /Audio/_Gabystation/Lobby/hopes_and_dreams.ogg
+    #- /Audio/_Gabystation/Lobby/hopes_and_dreams.ogg - essa musica é uma merda (Panela)
     - /Audio/_Gabystation/Lobby/its_raining_somewhere_else.ogg
     - /Audio/_Gabystation/Lobby/lady.ogg
     - /Audio/_Gabystation/Lobby/last_goodbye.ogg

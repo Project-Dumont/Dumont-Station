@@ -4,11 +4,13 @@
   name: administrative assistant PDA
   description: Theres pen scribbles all over the edges, and a few sticky notes stuck on it.
   components:
-  - type: Sprite
-    sprite: _Gabystation/Objects/Devices/pda.rsi
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-admin-assistant
   - type: Pda
     id: AdminAssistantIDCard
-    state: pda-admin-assistant
     penSlot:
       startingItem: LuxuryPen
       priority: -1
@@ -18,3 +20,8 @@
   - type: Icon
     sprite: _Gabystation/Objects/Devices/pda.rsi
     state: pda-admin-assistant
+  - type: Sprite
+    sprite: _Gabystation/Objects/Devices/pda.rsi
+    state: pda-admin-assistant
+  - type: PdaBorderColor
+    borderColor: "#3c94c5"

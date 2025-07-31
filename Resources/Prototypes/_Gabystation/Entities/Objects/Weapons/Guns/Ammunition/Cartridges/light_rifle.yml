@@ -9,7 +9,6 @@
       - CartridgeSWS
   - type: CartridgeAmmo
     proto: SWSShot
-    count: 1
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Guns/Ammunition/Cartridges/SWSPulseCartridge.rsi
     layers:

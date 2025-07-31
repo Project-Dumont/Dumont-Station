@@ -41,7 +41,7 @@
   components:
   - type: Hands
   - type: Tool #podem abrir portas
-    speed: 1.5
+    SpeedModifier: 1.5
     qualities:
       - Prying
   - type: Prying

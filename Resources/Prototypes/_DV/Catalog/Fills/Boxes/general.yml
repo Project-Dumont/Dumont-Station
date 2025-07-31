@@ -40,7 +40,7 @@
     - state: implant
   - type: StorageFill
     contents:
-    - id: SyndicateRadioImplanter
+    - id: RadioImplanter
       amount: 2
 
 - type: entity

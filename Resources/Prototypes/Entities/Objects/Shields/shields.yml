@@ -261,7 +261,7 @@
       - suitStorage
       clothingVisuals:
         suitstorage:
-        - state: riot-bullet-backpack
+        - state: metal-backpack
     - type: Item
       heldPrefix: ballistic
     - type: Blocking
@@ -285,6 +285,7 @@
     - type: Sprite
       state: buckler-icon
     - type: Item
+      heldPrefix: buckler
     - type: Clothing
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
@@ -292,7 +293,6 @@
       clothingVisuals:
         suitstorage:
         - state: buckler-backpack
-      heldPrefix: buckler
     - type: Blocking
       passiveBlockModifier:
         coefficients:

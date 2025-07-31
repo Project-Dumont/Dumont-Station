@@ -1,6 +1,6 @@
 - type: entity
   id: ImpactPlasmaCut
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 0.25
@@ -15,10 +15,10 @@
   - type: Tag
     tags:
       - HideContextMenu
-      
+
 - type: entity
   id: ImpactSWS
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 0.25

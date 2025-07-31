@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSpecOps
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Special Operations Helmet
   description: The retractable GOV's Carver hardsuit helmet are strangely comfortable and don't hinder the user's sight thanks to integrated sensors...Although its simple design, the technology is advanced.
   components:

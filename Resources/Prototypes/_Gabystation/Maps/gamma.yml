@@ -44,8 +44,6 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_crimsom.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             #command
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist

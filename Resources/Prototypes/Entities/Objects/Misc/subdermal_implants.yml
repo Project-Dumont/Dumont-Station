@@ -469,3 +469,22 @@
   components:
   - type: Rattle
     radioChannel: CentCom
+
+# Nukie implants
+
+- type: entity # DeltaV change
+  parent: BaseSubdermalImplant
+  id: HostageImplant
+  name: hostage implant
+  description: Perfect for all your hostage ops needs! Allows the implanted entity to be ignored by syndicate turrets.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: AddComponentsImplant
+    componentsToAdd:
+    - type: Pacified
+      disallowDisarm: true
+      disallowAllCombat: true
+  - type: AddFactionsImplant
+    factions:
+    - Hostage

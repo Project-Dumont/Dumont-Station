@@ -1,7 +1,7 @@
 - type: entity
   id: SWSShot
   name: SWS Shot
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
   - type: Sprite
@@ -19,7 +19,7 @@
 - type: entity
   id: PlasmaCut
   name: plasma cut
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
   - type: Sprite
@@ -35,4 +35,3 @@
         Slash: 15
         Heat: 6
         Structural: 45
-     
