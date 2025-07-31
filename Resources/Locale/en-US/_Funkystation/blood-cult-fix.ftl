@@ -3,3 +3,5 @@ construction-CultJuggernautShell-description =  large, inert monstrosity made fr
 
 construction-CultPylon-name = cult pylon
 construction-CultPylon-description = A floating crystal that slowly heals those faithful to Nar'Sie.
+
+stack-runed-metal = runed metal
