@@ -7,7 +7,13 @@
 # SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ertanic <36124833+Ertanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -34,17 +40,15 @@
 
 - type: stack
   id: MetalHydrogen
-  name: metal hydrogen
+  name: stack-metal-hydrogen
   icon: { sprite: /Textures/Objects/Materials/ingots.rsi, state: hydrogen }
   spawn: MetalHydrogen1
   maxCount: 30
-  itemSize: 1
 
 # Assmos
 - type: stack
   id: Zaukerite
-  name: zaukerite
+  name: stack-zaukerite
   icon: { sprite: /Textures/Objects/Materials/ingots.rsi, state: zaukerite }
   spawn: Zaukerite1
   maxCount: 30
-  itemSize: 1
