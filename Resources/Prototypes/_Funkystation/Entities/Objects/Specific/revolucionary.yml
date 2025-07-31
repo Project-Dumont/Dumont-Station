@@ -57,4 +57,4 @@
   id: RevCoin
   name: revcoin
   icon: Objects/Specific/Syndicate/telecrystal.rsi #_Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
-  spawn: telecrystal #RevCoin1
+  spawn: RevCoin1

@@ -271,7 +271,7 @@
   id: PrintedDocumentComplaintViolationLaborRulesRecipe
   result: PrintedDocumentComplaintViolationLaborRules
   categories:
-  - Complaints
+  - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
