@@ -27,13 +27,13 @@
   id: BulletTrace
   abstract: true
   muzzleFlash:
-    sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle
   travelFlash:
-    sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: trace
   impactFlash:
-    sprite: _Starlight/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
