@@ -24,7 +24,7 @@
     chaos:
       Hostile: 20
       Medical: 50
-    eventType: HostileSpawn
+    eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 40
   - type: VentCrittersRule

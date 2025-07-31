@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: Paper
   id: SheetPrinter
@@ -19,13 +26,6 @@
     layers:
     - state: paper
       map: ["base"]
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#e6e6fa"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
   - type: Tag
     tags:
     - Document
@@ -37,13 +37,3 @@
   components:
   - type: Stack
     count: 1
-    layers:
-    - state: paper
-      map: ["base"]
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#e6e6fa"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false

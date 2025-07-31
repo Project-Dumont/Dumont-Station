@@ -1,13 +1,17 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2024 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   id: PrinterDocMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: document printer machine board
-  description: A machine printed circuit board for an document printer
+  description: A machine printed circuit board for a document printer
   components:
     - type: MachineBoard
       prototype: PrinterDoc
-      requirements:
-        MatterBin: 3
-        Manipulator: 1
-      materialRequirements:
+      stackRequirements:
+        Manipulator: 4
         Glass: 1

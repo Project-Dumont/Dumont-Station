@@ -17,6 +17,10 @@
     {
       "name": "ballistic-inhand-left",
       "directions": 4
+    },
+    {
+        "name": "metal-backpack",
+        "directions": 4
     }
   ]
 }
