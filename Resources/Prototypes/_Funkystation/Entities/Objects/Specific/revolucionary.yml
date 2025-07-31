@@ -55,5 +55,5 @@
 - type: stack
   id: RevCoin
   name: revcoin
-  icon: _Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
-  spawn: RevCoin1
+  icon: Objects/Specific/Syndicate/telecrystal.rsi #_Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
+  spawn: telecrystal #RevCoin1
