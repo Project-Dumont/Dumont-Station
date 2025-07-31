@@ -63,7 +63,7 @@
   upkeep: 1
 
 - type: vampirePower
-  id: UnholyStrength 
+  id: UnholyStrength
   usableWhileStunned: false
   usableWhileCuffed: false
   activationCost: 30
