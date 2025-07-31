@@ -11,10 +11,10 @@
   description: The universal language of revolution.
   components:
   - type: Sprite
-    sprite: _Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
-    state: revcoin
+    sprite: Objects/Specific/Syndicate/telecrystal.rsi #_Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
+    state: telecrystal #revcoin
   - type: Item
-    sprite: _Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
+    sprite: Objects/Specific/Syndicate/telecrystal.rsi #_Funkystation/Objects/Specific/Revolutionary/revcoin.rsi
     size: Tiny
   - type: Stack
     count: 100
