@@ -44,7 +44,7 @@
   components:
   - type: Stack
     count: 1
-    layerStates:
+    layers:
     - state: paper
       map: ["base"]
     - state: paper_words
