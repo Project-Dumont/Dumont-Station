@@ -196,7 +196,7 @@
   - type: Tag
     tags:
       - Armor
-  - type: ArmorSparkEffect #starlight
+  # - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity

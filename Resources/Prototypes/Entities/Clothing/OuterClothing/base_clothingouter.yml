@@ -319,7 +319,7 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
-  - type: ArmorSparkEffect #starlight
+  # - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
 
 - type: entity
   abstract: true
