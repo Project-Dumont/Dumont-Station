@@ -79,7 +79,7 @@
     inherentRadioChannels:
     - Common
     # - Binary # Goobstation - replaced with collective mind
-  # - type: CyborgSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+  - type: CyborgSparkEffect
   - type: BorgSwitchableSubtype # Goobstation
     # - Binary # Goobstation - replaced with collective mind
 
@@ -175,7 +175,7 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
-    # - type: CyborgSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+    - type: CyborgSparkEffect
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -215,7 +215,7 @@
         collection: FootstepHoverBorg
         params:
           volume: -6
-    # - type: CyborgSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+    - type: CyborgSparkEffect
 
 - type: entity
   id: BorgChassisSyndicateSaboteur
@@ -253,7 +253,7 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
-    # - type: CyborgSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+    - type: CyborgSparkEffect
 
 - type: entity
   id: BorgChassisDerelict
@@ -286,4 +286,4 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
-  # - type: CyborgSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+  - type: CyborgSparkEffect

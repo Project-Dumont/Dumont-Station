@@ -447,7 +447,7 @@
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 75 # It's harder to kill iron golem
     damagePenalty: 0.25
-  # - type: CyborgSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+  - type: CyborgSparkEffect
 
 - type: entity
   abstract: true
