@@ -557,17 +557,6 @@
     sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBaseImpstation] # imp - Add foldable uniform jumpsuits
-  id: ClothingUniformJumpsuitCommandGeneric
-  name: command jumpsuit
-  description: A generic Command-colored jumpsuit not associated with any particular department.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
-
-- type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBaseImpstation] # imp - Add foldable uniform jumpsuits
   id: ClothingUniformJumpsuitHydroponics
   name: hydroponics jumpsuit
