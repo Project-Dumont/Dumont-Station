@@ -153,7 +153,7 @@
   components:
   - type: Sprite
   - type: Item
-    size: Large
+    size: Huge # Gaby - Revert parte do buff de armas lasers
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
     quickEquip: false
@@ -459,10 +459,10 @@
     price: 420
   - type: Gun #Starlight - Start
     fireRate: 2
-    selectedMode: FullAuto
+    selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    - FullAuto #Just allows people to hold down left click
+    # - FullAuto #Gaby - Revert parte do buff de armas lasers
   - type: Battery
     maxCharge: 1500 # ~1:30 minutes for recharge
     startingCharge: 1500
