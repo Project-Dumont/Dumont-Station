@@ -4,7 +4,7 @@
   name: loadout-group-hop-shoes-harmony
   loadouts:
   - BrownShoes
-  - HoPLeatherShoesHarmony
+  #!- HoPLeatherShoesHarmony - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
 
 # Security
 - type: loadoutGroup

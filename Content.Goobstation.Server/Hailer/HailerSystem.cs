@@ -1,9 +1,12 @@
 // SPDX-FileCopyrightText: 2024 Nikita Rαmses Abdoelrahman <ramses@starwolves.io>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -27,27 +30,38 @@ public sealed class HailerSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<HailerComponent, ComponentStartup>(OnStartup); // GabyStation - SecBorg Hailer
         SubscribeLocalEvent<ActionsComponent, HailerActionEvent>(OnHail);
         SubscribeLocalEvent<HailerComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<HailerComponent, GotUnequippedEvent>(OnGotUnequipped);
     }
+
+    private void OnStartup(EntityUid uid, HailerComponent component, ComponentStartup args)
+    {
+        if (!component.IsBorg) // GabyStation - SecBorg Hailer
+            return;
+
+        _actionsSystem.AddAction(uid, ref component.HailActionEntity, component.HailerAction, uid);
+    }
+
     private void OnGotEquipped(EntityUid uid, HailerComponent component, GotEquippedEvent args)
     {
-        if (args.SlotFlags == SlotFlags.MASK)
-        {
-            _actionsSystem.AddAction(args.Equipee, ref component.HailActionEntity, component.HailerAction, args.Equipee);
-        }
+        if (component.IsBorg || args.SlotFlags != SlotFlags.MASK) // GabyStation - SecBorg Hailer
+            return;
+
+        _actionsSystem.AddAction(args.Equipee, ref component.HailActionEntity, component.HailerAction, args.Equipee);
     }
     private void OnGotUnequipped(EntityUid uid, HailerComponent component, GotUnequippedEvent args)
     {
-        if (args.SlotFlags == SlotFlags.MASK)
-        {
-            _actionsSystem.RemoveAction(args.Equipee, component.HailActionEntity);
-        }
+        if (component.IsBorg || args.SlotFlags != SlotFlags.MASK) // GabyStation - SecBorg Hailer
+            return;
+
+        _actionsSystem.RemoveAction(args.Equipee, component.HailActionEntity);
     }
     string[] _sounds = [
         "/Audio/_Goobstation/Hailer/asshole.ogg",
@@ -77,6 +91,11 @@ public sealed class HailerSystem : EntitySystem
         int rInt = (int) _random.NextDouble(0, _sounds.Length);
         _audio.PlayPvs(_sounds[rInt], uid);
         _delays[uid] = _timing.CurTime.Add(_fixed_delay);
-        _chat.TrySendInGameICMessage(uid, Loc.GetString("hail-" + rInt), InGameICChatType.Speak, ChatTransmitRange.GhostRangeLimit, nameOverride: Name(uid) + "(SecMask)", checkRadioPrefix: false);
+
+        var name = Name(uid);
+        if (!TryComp<HailerComponent>(args.Performer, out var hailer) || !hailer.IsBorg) // GabyStation - SecBorg Hailer. Only borgs uid has HailerComponent
+            name += "(SecMask)";
+
+        _chat.TrySendInGameICMessage(uid, Loc.GetString("hail-" + rInt), InGameICChatType.Speak, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
     }
 }

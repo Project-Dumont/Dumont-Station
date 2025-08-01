@@ -1,3 +1,17 @@
+#Gabystation Maps
+#These are located in /_Gabystation/Maps/
+
+- files: ["gamma.yml"]
+  authors: AgRevol, CRISOOOOO
+
+- files: ["falcon.yml"]
+  authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
+
+- files: ["tram.yml"]
+  authors: Betterwithketchup
+# Wizden/Goob Maps
+# These are located in /Maps/
+
 - files: ["aspid.yml"]
   authors: Checkraze
 
@@ -64,20 +78,12 @@
 - files: ["lambda.yml"]
   authors: Ichai, Dapnee, Oraclestation's players
 
-#Gabystation Maps
-#These are located in /_Gabystation/Maps/
-
-- files: ["gamma.yml"]
-  authors: AgRevol, CRISOOOOO
-
-- files: ["falcon.yml"]
-  authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
-
 - files: ["leonid.yml"]
   authors: Gallagin, Derball
 
 - files: ["delta.yml", "chloris.yml"]
   authors: Corvax team, pheenty
+
 - files: ["convex.yml"]
   authors: Spacemann
 

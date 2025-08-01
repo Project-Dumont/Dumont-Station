@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Lary <89530982+LaryNevesPR@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: species
   id: Daengati
   name: species-name-daengati
@@ -7,9 +13,9 @@
   markingLimits: MobDaengatiMarkingLimits
   sprites: MobHumanSprites
   skinColoration: Hues
-  maleFirstNames: names_oni_male
-  femaleFirstNames: names_oni_female
-  lastNames: names_oni_location
+  maleFirstNames: NamesOniFirstMale
+  femaleFirstNames: NamesOniFirstFemale
+  lastNames: NamesOniLast
 
 - type: markingPoints
   id: MobDaengatiMarkingLimits

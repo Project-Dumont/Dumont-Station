@@ -1,0 +1,56 @@
+<Document>
+
+## Registros de Personagem
+
+Você pode criar registros para seus personagens na aba de registros do criador
+de personagens. Basta preencher os valores e salvar. As entradas geralmente devem
+ser escritas da perspectiva de um oficial da CentComm ou outro supervisor.
+
+Os registros disponíveis em todos os computadores de registros incluem altura (min: 75cm | max: 250cm), peso (min: 20kg | max: 250kg), idade,
+espécie, pronomes, cargo (na rodada) e local de residência.
+
+Seu peso e altura são totalmente pelo roleplaying e não afetam sua jogabilidade.
+
+## Entradas Gerais / de Emprego
+
+As entradas de empregado devem incluir a educação do seu personagem, empregos anteriores,
+e qualquer outra coisa que você ache que a Nanotrasen registraria sobre o passado do seu
+personagem relacionada ao trabalho. Isso também serve como um campo geral para qualquer
+entrada que não seja médica nem de segurança.
+
+Os outros registros disponíveis aqui são o tempo de trabalho do seu personagem na
+Nanotrasen (em anos), e se o seu personagem foi aprovado para trabalhar.
+
+## Entradas Médicas
+
+As entradas médicas devem incluir qualquer coisa que um médico deva saber antes de tratar
+seu personagem; cirurgias importantes, prescrições e qualquer avaliação psicológica.
+
+Outros registros disponíveis aqui incluem alergias/alergias a medicamentos, outras questões
+médicas - como se você joga com revivibilidade desativada aleatoriamente e deseja explicar
+isso com lore - e instruções sobre o que fazer com o corpo do seu personagem.
+
+## Entradas de Segurança
+
+As entradas de segurança devem incluir quaisquer prisões/incidentes graves que seu personagem
+tenha tido no passado ou enquanto trabalhava para a Nanotrasen. Incidentes menores devem
+geralmente ser evitados.
+
+Outros registros disponíveis aqui incluem características identificáveis, além dos dados padrão
+do Computador de Registros Criminais usados no jogo.
+
+## Acessando Registros
+Você pode acessar os registros dos seus colegas de tripulação no jogo através dos respectivos consoles.
+Esses consoles normalmente são encontrados em seus departamentos correspondentes!
+
+<Box>
+<GuideEntityEmbed Entity="ComputerMedicalRecords" Caption="Médico"/>
+<GuideEntityEmbed Entity="ComputerCriminalRecords" Caption="Segurança"/>
+<GuideEntityEmbed Entity="ComputerStationRecords" Caption="Estação"/>
+</Box>
+
+As entradas só podem ser escritas no menu de customização do personagem e não durante
+uma rodada. Não é obrigatório fazer registros ou entradas; interaja com
+esse recurso o quanto quiser - ou não!
+
+</Document>

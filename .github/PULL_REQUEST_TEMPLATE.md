@@ -11,16 +11,16 @@ Uncomment and modify the following line if you wish to change the license from t
 ## Por quê? / Balanceamento
 <!-- Discuta do por que da existencia da PR. (opcional | recomendado) -->
 
-## Technical details
+## Detalhes Tecnicos
 <!-- Mudanças do codigo para uma review mais facil (opcional). -->
 
-## Midia
+## Anexos
 <!-- Imagens ou videos sobre as mudanças da PR (opcional | recomendado). -->
 
-<!--## Requirements -->
-<!-- Confirm the following by placing an X in the brackets [X]: -->
-<!-- - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
-- [ ] I have added media to this PR or it does not require an ingame showcase. -->
+## Requirimentos
+<!--Confirme botando X entre os colchetes [X]: -->
+- [ ] Eu li e estou seguindo a [Politica de pull requests e changelog](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- [ ] Eu adicionei anexos à esta PR ou não precisa de imagens in-game.
 
 **Changelog**
 <!-- Adicione uma entrada para changelog do servidor, bote o emoji :cl: e siga com as mudanças assim como o exemplo.

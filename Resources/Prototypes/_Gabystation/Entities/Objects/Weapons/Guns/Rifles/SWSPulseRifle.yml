@@ -11,7 +11,9 @@
   description: A standard-issue ballistic firearm which can be loaded with grenades or proximity mines for riot conditions, or personalized for faster reloading.
   components:
   - type: Item
-    size: 50
+    size: Huge
+    shape: # Goobstation
+    - 0,0,4,2
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Guns/Rifles/SWS.rsi
     layers:
@@ -40,14 +42,14 @@
         volume: -5
   - type: ChamberMagazineAmmoProvider
     soundRack:
-      path: /Audio/_Gabystation/Weapons/Guns/Bolt/sws_bolt_open.ogg
+      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg # TODO: arrumar audio original
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazineSWS
-        insertSound: /Audio/_Gabystation/Weapons/Guns/MagIn/sws_magin.ogg
-        ejectSound: /Audio/_Gabystation/Weapons/Guns/Magout/sws_magout.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg # TODO: arrumar audio original
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:

@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Stunbaton
+  id: StunbatonSelfCharging # Someone not capitalising the B in Stun`B`aton has wasted over an hour of my life trying to fix the error.
+  suffix: Do Not Map, Recharging, Cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 12
+  - type: GuideHelp
+    guides:
+    - Security
+
+- type: entity
+  parent: Flash
+  id: FlashRecharging
+  suffix: Do Not Map , Recharging , Cyborg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 120
+  - type: GuideHelp
+    guides:
+    - Security
+
+- type: entity
+  name: seclite
+  parent: FlashlightSeclite
+  id: FlashlightSecliteRecharging
+  description: A robust flashlight used by security.
+  suffix: Do Not Map , Recharging
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+  - type: GuideHelp
+    guides:
+    - Security
+
+- type: entity
+  parent: HoloprojectorSecurity
+  id: HoloprojectorSecurityRecharging
+  suffix: Recharging, Do Not Map
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellMicroreactor
+          disableEject: true

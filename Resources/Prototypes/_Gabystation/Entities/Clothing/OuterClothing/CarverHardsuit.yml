@@ -1,7 +1,13 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSpecOps
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Special Operations Helmet
   description: The retractable GOV's Carver hardsuit helmet are strangely comfortable and don't hinder the user's sight thanks to integrated sensors...Although its simple design, the technology is advanced.
   components:
