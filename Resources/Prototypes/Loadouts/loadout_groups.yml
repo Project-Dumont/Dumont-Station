@@ -389,7 +389,7 @@
 - type: loadoutGroup
   id: PassengerJumpsuit
   name: loadout-group-passenger-jumpsuit
-  minLimit: 1
+  minLimit: 0 # Gabystation
   exclusiveWith: INNERCLOTHING # Goobstation
   loadouts:
   - GreyJumpsuit
@@ -406,7 +406,7 @@
   - LongSleeveDress #EE
   - BlackNGoldDress #EE
   - TangoDress #EE
-  - CheonsamGreenDress #EE 
+  - CheonsamGreenDress #EE
   - CheonsamPurpleDress #EE
   - CheonsamRedDress #EE
   - CheonsamWhiteDress #EE
@@ -432,7 +432,7 @@
   - PuffyDressOutfit #EE
   - SailorDress #EE
   - StripedDress #EE
-  - SundressOutfit #EE 
+  - SundressOutfit #EE
   - SundressOutfitWhite #EE
   - VictorianBlackDress #EE
   - VictorianRedDress #EE
@@ -501,7 +501,7 @@
 
 - type: loadoutGroup
   id: PassengerFace
-  name: loadout-group-passenger-mask 
+  name: loadout-group-passenger-mask
   minLimit: 0
   loadouts:
   - PassengerFace
@@ -589,7 +589,7 @@
   - AcidRaincoatYellow # Frontier
   - SuitJacket # EE
   - Modern # EE
-  - Tailcoat # EE 
+  - Tailcoat # EE
   - Cardigan # EE
   - CardiganArgyle # EE
   - CardiganSweater # EE

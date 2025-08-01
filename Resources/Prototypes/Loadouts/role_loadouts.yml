@@ -181,6 +181,12 @@
   - GroupTankHarness
   - PassengerJumpsuit
   - CommonBackpack
+  - GenericJumpsuitLoadout
+  - Glasses
+  - Survival
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
   - PassengerHat
   - PassengerNeck
   - PassengerFace
@@ -188,11 +194,6 @@
   - PassengerOuterClothing
   - PassengerShoes
   - PassengerBelt
-  - Glasses
-  - Survival
-  - Trinkets
-  - Animals
-  - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBartender

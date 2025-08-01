@@ -73,7 +73,8 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
         LoadoutsContainer.DisposeAllChildren();
         // Didn't use options because this is more robust in future.
 
-        var selected = loadout.SelectedLoadouts[_groupProto.ID];
+        loadout.SelectedLoadouts.TryGetValue(_groupProto.ID, out var selected); // Gaby change
+        selected ??= new List<Loadout>(); // Gaby change
 
         foreach (var loadoutProto in _groupProto.Loadouts)
         {
