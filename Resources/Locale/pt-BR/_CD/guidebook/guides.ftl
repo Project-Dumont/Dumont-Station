@@ -1,1 +1,1 @@
-guide-entry-cd-records = Character Records
+guide-entry-cd-records = Registros de Personagem
