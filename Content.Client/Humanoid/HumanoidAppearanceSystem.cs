@@ -283,7 +283,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
 
-        AddUndergarments(humanoid, sprite, applyUndergarmentTop, applyUndergarmentBottom);
+        AddUndergarments(humanoid, entity, applyUndergarmentTop, applyUndergarmentBottom);
     }
 
     private void ClearAllMarkings(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
@@ -335,16 +335,17 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         }
     }
 
-    private void AddUndergarments(HumanoidAppearanceComponent humanoid, SpriteComponent sprite, bool undergarmentTop, bool undergarmentBottom)
+    private void AddUndergarments(HumanoidAppearanceComponent humanoid, Entity<HumanoidAppearanceComponent, SpriteComponent> entity, bool undergarmentTop, bool undergarmentBottom)
     {
+        var sprite = entity.Comp2;
         if (undergarmentTop && humanoid.UndergarmentTop != null)
         {
             var marking = new Marking(humanoid.UndergarmentTop, new List<Color> { new Color() });
             if (_markingManager.TryGetMarking(marking, out var prototype))
             {
                 // Markings are added to ClientOldMarkings because otherwise it causes issues when toggling the feature on/off.
-                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentTop, new List<Marking>{ marking });
-                ApplyMarking(prototype, null, true, humanoid, sprite);
+                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.Undershirt, new List<Marking> { marking });
+                ApplyMarking(prototype, null, true, entity);
             }
         }
 
@@ -353,8 +354,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var marking = new Marking(humanoid.UndergarmentBottom, new List<Color> { new Color() });
             if (_markingManager.TryGetMarking(marking, out var prototype))
             {
-                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentBottom, new List<Marking>{ marking });
-                ApplyMarking(prototype, null, true, humanoid, sprite);
+                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.Underwear, new List<Marking>{ marking });
+                ApplyMarking(prototype, null, true, entity);
             }
         }
     }

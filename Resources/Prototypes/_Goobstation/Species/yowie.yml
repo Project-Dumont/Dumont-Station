@@ -49,6 +49,8 @@
     RFoot: MobYowieRFoot
     Tail: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: markingPoints
   id: MobYowieMarkingLimits

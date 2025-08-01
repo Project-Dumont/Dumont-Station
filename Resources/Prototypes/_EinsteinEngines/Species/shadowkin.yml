@@ -46,6 +46,8 @@
     RLeg: MobShadowkinRLeg
     LFoot: MobShadowkinLFoot
     RFoot: MobShadowkinRFoot
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: markingPoints
   id: MobShadowkinMarkingLimits

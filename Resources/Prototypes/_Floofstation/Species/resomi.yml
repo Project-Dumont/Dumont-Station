@@ -46,6 +46,8 @@
     Tail: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: markingPoints
   id: MobResomiMarkingLimits
