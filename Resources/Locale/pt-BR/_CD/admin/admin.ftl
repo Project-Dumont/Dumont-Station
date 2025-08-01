@@ -1,4 +1,4 @@
-admin-player-actions-window-cd-record-purge = Modificar Registros de Personagem
+admin-player-actions-window-cd-record-purge = Modificar Registros
 cd-actions-admin-modify-records = Modificar Registros de Personagem
 cd-actions-admin-modify-reset = Redefinir Registros
 cd-actions-admin-modify-del-entry = Excluir Entrada
