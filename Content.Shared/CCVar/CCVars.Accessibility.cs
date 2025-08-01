@@ -74,7 +74,7 @@ public sealed partial class CCVars
     /// Both this and AccessibilityServerCensorNudity must be false to display nudity on the client.
     /// </summary>
     public static readonly CVarDef<bool> AccessibilityClientCensorNudity =
-        CVarDef.Create("accessibility.censor_nudity", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("accessibility.censor_nudity", true /* gabe change */, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// If enabled, censors character nudity by forcing clothes markings on characters, selected by the server.
