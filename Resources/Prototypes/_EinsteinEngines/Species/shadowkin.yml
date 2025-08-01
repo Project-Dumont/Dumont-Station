@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: species
   id: Shadowkin
   name: species-name-shadowkin
@@ -38,6 +46,8 @@
     RLeg: MobShadowkinRLeg
     LFoot: MobShadowkinLFoot
     RFoot: MobShadowkinRFoot
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: markingPoints
   id: MobShadowkinMarkingLimits
@@ -51,14 +61,22 @@
       required: true
       defaultMarkings: [EarsShadowkin]
     Chest:
-      points: 6
+      points: 8
       required: false
     Legs:
-      points: 6
+      points: 8
       required: false
     Arms:
-      points: 6
+      points: 8
       required: false
+    # Begin DeltaV changes.
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    # End DeltaV changes
 
 - type: humanoidBaseSprite
   id: MobShadowkinAnyMarkingFollowSkin

@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 noirogen <raethertechnologies@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
@@ -67,5 +71,17 @@ public sealed partial class CCVars
     public static readonly CVarDef<float> SpeechBubbleBackgroundOpacity =
         CVarDef.Create("accessibility.speech_bubble_background_opacity", 0.75f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// If enabled, censors character nudity by forcing clothes markings on characters, selected by the client.
+    /// Both this and AccessibilityServerCensorNudity must be false to display nudity on the client.
+    /// </summary>
+    public static readonly CVarDef<bool> AccessibilityClientCensorNudity =
+        CVarDef.Create("accessibility.censor_nudity", true /* gabe change */, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// If enabled, censors character nudity by forcing clothes markings on characters, selected by the server.
+    /// Both this and AccessibilityClientCensorNudity must be false to display nudity on the client.
+    /// </summary>
+    public static readonly CVarDef<bool> AccessibilityServerCensorNudity =
+            CVarDef.Create("accessibility.server_censor_nudity", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 }

@@ -5,8 +5,11 @@
 // SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AvianMaiden <188556051+AvianMaiden@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -93,6 +96,12 @@ namespace Content.Server.Database
             modelBuilder.Entity<Profile>()
                 .Property(log => log.Markings)
                 .HasConversion(jsonByteArrayConverter);
+
+            // Begin CD - Character Records
+            modelBuilder.Entity<CDModel.CDProfile>()
+                .Property(log => log.CharacterRecords)
+                .HasConversion(jsonByteArrayConverter);
+            // End CD - Character Records
 
             // EF core can make this automatically unique on sqlite but not psql.
             modelBuilder.Entity<IPIntelCache>()

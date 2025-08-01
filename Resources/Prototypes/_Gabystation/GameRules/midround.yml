@@ -1,0 +1,39 @@
+- type: entity
+  parent: Vampire
+  id: VampireMidround
+  components:
+  - type: StationEvent
+    earliestStart: 30
+    weight: 3
+    minimumPlayers: 30
+    startAnnouncement: station-event-communication-interception
+    startAudio:
+      path: /Audio/Announcements/intercept.ogg
+    duration: null
+    occursDuringRoundEnd: false
+    chaos:
+      Hostile: 200
+      Medical: 150
+      Death: 200
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 300
+  - type: AlertLevelInterceptionRule
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: vampire-roundend-name
+    definitions:
+    - prefRoles: [ Vampire ]
+      max: 1
+      playerRatio: 15
+      blacklist:
+        components:
+        - AntagImmune
+        - BibleUser
+      lateJoinAdditional: true
+      jobBlacklist: [ Chaplain ] # GOOBSTATION
+      mindRoles:
+      - MindRoleVampire
+  - type: Tag
+    tags:
+      - MidroundAntag

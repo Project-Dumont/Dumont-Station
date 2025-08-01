@@ -53,7 +53,6 @@
 # SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
 # SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
@@ -95,6 +94,10 @@
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Core logic shared between regular and wall-mount substation
@@ -120,9 +123,9 @@
     voltage: Medium
   - type: PowerNetworkBattery
     maxSupply: 150000
-    maxChargeRate: 5000
+    maxChargeRate: 150000
     supplyRampTolerance: 5000
-    supplyRampRate: 1000
+    supplyRampRate: 5000
   - type: StationInfiniteBatteryTarget
 
   # Interface
@@ -184,7 +187,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 2500000
-    startingCharge: 0
+    startingCharge: 2500000
   - type: PointLight
     radius: 1.5
     energy: 1

@@ -232,6 +232,7 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 DoutorWhite <thedoctorwhite@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 # SPDX-FileCopyrightText: 2025 Eduardo Oliveira <jubileu1232020@gmail.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
@@ -242,12 +243,16 @@
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
 # SPDX-FileCopyrightText: 2025 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 JoeHammad1844 <finiansalas2@gmail.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
 # SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 OnyxTheBrave <131422822+OnyxTheBrave@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Perry Fraser <perryprog@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 RatherUncreative <RatherUncreativeName@proton.me>
@@ -344,6 +349,16 @@
     - !type:AutomatedMaterialStorage
       input: AutomationSlotMaterials
       output: null
+  - type: SpamEmitSound # Goobstation - random lathe sounds
+    minInterval: 300
+    maxInterval: 900
+    sound:
+      collection: RandomLatheSounds
+      params:
+        volume: -12 # Ambient
+        maxDistance: 10
+        variation: 0.05
+  - type: SpamEmitSoundRequirePower # Goobstation
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -523,6 +538,8 @@
     - MedicalMisc
     - MedicalVehiclesAdvanced
     - UpgradeKits
+    # Einstein Engines Packs
+    - Translators
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -765,6 +782,8 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    #Gabystation
+    - SecurityPowerguns
     # Goobstation
     - SecurityWeaponsGoob
     - RestraintTechnology
@@ -776,6 +795,7 @@
     # - ServiceWeapons
     - SpecOpsGoogles
     - PowerCells
+    - BorgModulesSecurityDeltaV # DeltaV - Security Borg
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic
@@ -875,6 +895,9 @@
     - MedicalVehiclesAdvanced
     - MedicalBoards
     - Janitor
+    # Einstein Engines Packs
+    - Translators # Language
+    - TranslatorImplanters # Language
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: EmagLatheRecipes # Goobstation Packs

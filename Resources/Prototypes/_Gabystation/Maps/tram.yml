@@ -1,0 +1,86 @@
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: gameMap
+  id: Tram
+  mapName: 'Tram'
+  mapPath: /Maps/_Gabystation/tram.yml
+  maxRandomOffset: 0
+  minPlayers: 15
+  maxPlayers: 80
+  stations:
+    Tram2:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Tram {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_accordia.yml
+        - type: StationJobs
+          availableJobs:
+            #command 5
+            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
+            #service 11-12
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 2, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 1, 2 ]
+            #engineering 11
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 3, 3 ]
+            #medical 11-14
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 4, 5 ]
+            MedicalIntern: [ 2, 3 ]
+            Paramedic: [ 1, 2 ]
+            Psychologist: [1, 1]
+            #science 7
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 3, 3 ]
+            #security 16-18
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 5, 6 ]
+            SecurityCadet: [ 3, 3 ]
+            Lawyer: [ 1, 2 ]
+            Detective: [ 1, 2 ]
+            PermaPrisoner: [ 3, 3 ]
+            Brigmedic: [ 1, 1 ]
+            #supply 7
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 3, 3 ]
+            #civilian 4+
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Reporter: [ 1, 1 ]
+            #silicon (3)
+            StationAi: [ 1, 1 ]
+            Borg: [ 3, 3 ]
+        # Goobstation blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # Goobstation blob-config-end
+

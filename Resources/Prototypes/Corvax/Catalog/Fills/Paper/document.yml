@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: Paper
   id: PrintedDocument
@@ -6,13 +13,21 @@
   components:
     - type: Paper
 
-- type: entity
+- type: entity # Gabystation add
   parent: PrintedDocument
   id: PrintedDocumentReportStation
   name: Relatório de situação
   components:
     - type: Paper
       content: doc-text-printer-ReportStation
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportDeptos
+  name: Relatório geral de departamentos
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportDeptos
 
 - type: entity
   parent: PrintedDocument
@@ -510,3 +525,11 @@
   components:
     - type: Paper
       content: doc-text-printer-REPORTACCOMPLISHMENTGOALS
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRelatorioSetorial
+  name: Relatório setorial
+  components:
+    - type: Paper
+      content: doc-text-printer-RelatorioSetorial

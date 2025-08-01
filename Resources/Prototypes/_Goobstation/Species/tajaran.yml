@@ -48,6 +48,14 @@
     Overlay:
       points: 1
       required: false
+    # Begin DeltaV changes.
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    # End DeltaV changes
 
 - type: speciesBaseSprites
   id: MobTajaranSprites
@@ -70,6 +78,8 @@
     Tail: MobHumanoidAnyMarking
     LFoot: MobTajaranLFoot
     RFoot: MobTajaranRFoot
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: humanoidBaseSprite
   id: MobTajaranEyes

@@ -16,14 +16,15 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    earliestStart: 20
+    earliestStart: 30 # Gaby change
     weight: 8
     duration: 50
-    minimumPlayers: 15
+    minimumPlayers: 25 # Gaby change
+    maxOccurrences: 1 # Gaby change
     chaos: # Goobstation
-      Hostile: 100
+      Hostile: 150 # Gaby change
       Friend: 20
-      Combat: 100
+      Combat: 200 # Gaby change
       Death: 100
       Medical: 100
     eventType: HostilesSpawn

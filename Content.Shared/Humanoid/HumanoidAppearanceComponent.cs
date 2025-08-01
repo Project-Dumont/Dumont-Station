@@ -2,8 +2,11 @@
 // SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 paige404 <59348003+paige404@users.noreply.github.com>
 //
@@ -106,12 +109,11 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// <summary>
     ///     Which markings the humanoid defaults to when nudity is toggled off.
     /// </summary>
-    /// <remarks>Goob - commented out until it's implemented across all specie</remarks>
-    //[DataField]
-    //public ProtoId<MarkingPrototype>? UndergarmentTop = new ProtoId<MarkingPrototype>("UndergarmentTopTanktop");
-    //
-    //[DataField]
-    //public ProtoId<MarkingPrototype>? UndergarmentBottom = new ProtoId<MarkingPrototype>("UndergarmentBottomBoxers");
+    [DataField]
+    public ProtoId<MarkingPrototype>? UndergarmentTop = new ProtoId<MarkingPrototype>("UndershirtDefault");
+
+    [DataField]
+    public ProtoId<MarkingPrototype>? UndergarmentBottom = new ProtoId<MarkingPrototype>("UnderwearDefault");
 
     /// <summary>
     ///     The displacement maps that will be applied to specific layers of the humanoid.

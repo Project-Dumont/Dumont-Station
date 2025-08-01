@@ -42,7 +42,15 @@
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Hyper B <137433177+HyperB1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -65,6 +73,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared._CD.Records; // CD - Character Records
 
 namespace Content.Shared.Preferences
 {
@@ -177,6 +186,11 @@ namespace Content.Shared.Preferences
         [DataField]
         public PreferenceUnavailableMode PreferenceUnavailable { get; private set; } =
             PreferenceUnavailableMode.SpawnAsOverflow;
+        // Begin CD - Character records
+        [DataField("cosmaticDriftCharacterRecords")]
+        public PlayerProvidedCharacterRecords? CDCharacterRecords;
+        // End CD - Character records
+
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
@@ -191,7 +205,11 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            // Begin CD - Character Records
+            PlayerProvidedCharacterRecords? cdCharacterRecords
+            // End CD - Character Records
+        )
 
         {
             Name = name;
@@ -208,6 +226,9 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            // Begin CD - Character Records
+            CDCharacterRecords = cdCharacterRecords;
+            // End CD - Character Records
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -239,7 +260,8 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.CDCharacterRecords) // CD - Character Records
         {
         }
 
@@ -360,6 +382,7 @@ namespace Content.Shared.Preferences
             return new(this) { SpawnPriority = spawnPriority };
         }
 
+        // Gaby change - start
         public HumanoidCharacterProfile WithJobAltTitle(ProtoId<JobPrototype> jobId, ProtoId<JobAlternateTitlePrototype>? jobTitle)
         {
             var dictionary = new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>(JobAlternateTitles);
@@ -378,6 +401,14 @@ namespace Content.Shared.Preferences
                 JobAlternateTitles = dictionary
             };
         }
+        // Gaby change - end
+
+        // Begin CD - Character Records
+        public HumanoidCharacterProfile WithCDCharacterRecords(PlayerProvidedCharacterRecords records)
+        {
+            return new HumanoidCharacterProfile(this) { CDCharacterRecords = records };
+        }
+        // End CD - Character Records
 
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
         {
@@ -546,6 +577,8 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
+            if (CDCharacterRecords != null && other.CDCharacterRecords != null && // CD
+                !CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords)) return false; // CD
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -717,6 +750,17 @@ namespace Content.Shared.Preferences
 
             _traitPreferences.Clear();
             _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
+
+            // Begin CD - Character Records
+            if (CDCharacterRecords == null)
+            {
+                CDCharacterRecords = PlayerProvidedCharacterRecords.DefaultRecords();
+            }
+            else
+            {
+                CDCharacterRecords!.EnsureValid();
+            }
+            // End CD - Character Records
 
             // Checks prototypes exist for all loadouts and dump / set to default if not.
             var toRemove = new ValueList<string>();
