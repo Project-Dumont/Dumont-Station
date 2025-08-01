@@ -15,8 +15,8 @@ loadout-name-edit-tooltip = Máximo de {$max} caracteres. Se nenhum nome for esp
 
 # Restrictions
 loadout-restrictions = Restrições
-loadouts-min-limit = Contagem minima: {$count}
-loadouts-max-limit = Contagem maxima: {$count}
+loadouts-min-limit = Min: {$count}
+loadouts-max-limit = Max: {$count}
 loadouts-points-limit = Pontos: {$count} / {$max}
 
 loadouts-points-restriction = Pontos insuficientes
