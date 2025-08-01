@@ -108,7 +108,7 @@
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
-  #canBeAntag: false # This is so they can roll devil
+  canBeAntag: false # This is so they can roll devil #! Gaby-station nuh uh
   goobcoins: 40
   access:
   - Security

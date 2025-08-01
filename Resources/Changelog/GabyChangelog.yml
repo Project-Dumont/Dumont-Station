@@ -744,6 +744,8 @@ Entries:
       message: Opção de censura pra roupa intima (ativa por padrão).
     - type: Add
       message: Agora é possivel dobrar (algumas) jumpsuits na cintura.
+    - type: Tweak
+      message: NTR não pode ser mais antag.
   id: 86
   time: '2025-08-01T14:53:49.0000000+00:00'
 - author: CRISOOOOO
