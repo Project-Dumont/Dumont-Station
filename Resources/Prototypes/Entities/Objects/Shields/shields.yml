@@ -111,15 +111,19 @@
 # SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 # SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 DieselMohawk <173439801+DieselMohawk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SeamLesss <kai.julian.watson@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
@@ -261,7 +265,7 @@
       - suitStorage
       clothingVisuals:
         suitstorage:
-        - state: riot-bullet-backpack
+        - state: metal-backpack
     - type: Item
       heldPrefix: ballistic
     - type: Blocking
@@ -285,6 +289,7 @@
     - type: Sprite
       state: buckler-icon
     - type: Item
+      heldPrefix: buckler
     - type: Clothing
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
@@ -292,7 +297,6 @@
       clothingVisuals:
         suitstorage:
         - state: buckler-backpack
-      heldPrefix: buckler
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -347,6 +351,7 @@
     - type: Sprite
       state: makeshift-icon
     - type: Item
+      heldPrefix: metal
     - type: Clothing
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
@@ -354,7 +359,6 @@
       clothingVisuals:
         suitstorage:
         - state: metal-backpack
-      heldPrefix: metal
     - type: Blocking
       passiveBlockModifier:
         coefficients:
