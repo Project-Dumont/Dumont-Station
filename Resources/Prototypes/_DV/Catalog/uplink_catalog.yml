@@ -1,7 +1,12 @@
 # SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 #
@@ -30,9 +35,9 @@
   description: uplink-syndicate-hostage-implanter-bundle-desc
   icon: { sprite: Objects/Misc/handcuffs.rsi, state: handcuff }
   productEntity: BoxSyndicateHostageImplanter
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
+  #discountCategory: UplinkSales
+  #discountDownTo:
+  #  Telecrystal: 1
   cost:
     Telecrystal: 2
   categories:
@@ -56,7 +61,7 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkObjectives
+  - UplinkDisruption
   conditions:
   - !type:BuyerWhitelistCondition
     blacklist:

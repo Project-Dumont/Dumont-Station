@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: CartridgeSWS
   name: SWS Cartridge
@@ -9,7 +15,6 @@
       - CartridgeSWS
   - type: CartridgeAmmo
     proto: SWSShot
-    count: 1
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Guns/Ammunition/Cartridges/SWSPulseCartridge.rsi
     layers:

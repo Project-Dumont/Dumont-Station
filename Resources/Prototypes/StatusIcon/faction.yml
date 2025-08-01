@@ -153,3 +153,16 @@
     sprite: /Textures/_Funkystation/Interface/Misc/cult_job_icons.rsi
     state: Cultist
   hideOnStealth: false
+
+- type: factionIcon
+  id: VampireFaction
+  isShaded: true
+  priority: 11
+  locationPreference: Left
+  showTo:
+    components:
+      - ShowAntagIcons
+      - VampireIcon
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Vampire

@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Lary <89530982+LaryNevesPR@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseMobHuman
   name: Urist McDemon
@@ -30,11 +37,38 @@
         Heat : 0.5 #O padrão é 1.5
   - type: Damageable
     damageModifierSet: Daengati
+  - type: NightVision # Gaby edit
+    isActive: false
+    toggleAction: ToggleDaengatiNightVision
+    color: "#9c452a"
+    strength: 2
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   save: false
   name: Urist McDemon
   parent: MobHumanDummy
   id: MobDaengatiDummy
-  noSpawn: true
   description: A dummy Daengati meant to be used in character setup.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
+- type: entity # Gaby edit
+  id: ToggleDaengatiNightVision
+  name: Switch night vision
+  description: Switches night vision.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    priority: -10
+    icon: Interface/Actions/eyeopen.png
+    event: !type:ToggleNightVisionEvent

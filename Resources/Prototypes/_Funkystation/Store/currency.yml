@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: currency
+  id: RevCoin
+  displayName: store-currency-display-revcoin
+  canWithdraw: false

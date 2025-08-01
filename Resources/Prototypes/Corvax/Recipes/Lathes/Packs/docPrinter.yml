@@ -1,0 +1,78 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipePack
+  id: docPrinterRecipePack
+  recipes:
+    - PrintedDocumentReportStationRecipe
+    - PrintedDocumentReportOnEliminationOfViolationsRecipe
+    - PrintedDocumentReportEmployeePerformanceRecipe
+    - PrintedDocumentReportOnTheChaptersMeetingRecipe
+    - PrintedDocumentInternalAffairsAgentsReportRecipe
+    - PrintedDocumentConditionReportRecipe
+    - PrintedDocumentReportStudyObjectRecipe
+    - PrintedDocumentExperimentReportRecipe
+    - PrintedDocumentDisposalReportRecipe
+    - PrintedDocumentApplicationAppointmentInterimRecipe
+    - PrintedDocumentApplicationEmploymentRecipe
+    - PrintedDocumentLetterResignationRecipe
+    - PrintedDocumentApplicationAccessRecipe
+    - PrintedDocumentApplicationEquipmentRecipe
+    - PrintedDocumentAppealRecipe
+    - PrintedDocumentEvacuationShuttleRequestRecipe
+    - PrintedDocumentShuttleRegistrationRequestRecipe
+    - PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
+    - PrintedDocumentRequestRequestToEstablishThreatLevelRecipe
+    - PrintedDocumentRequestChangeSalaryRecipe
+    - PrintedDocumentRequestForNonlistedEmploymentRecipe
+    - PrintedDocumentRequestForPromotionRecipe
+    - PrintedDocumentRequestDocumentsRecipe
+    - PrintedDocumentRequestEuthanasiaRecipe
+    - PrintedDocumentRequestConstructionWorkRecipe
+    - PrintedDocumentRequestModernizationRecipe
+    - PrintedDocumentComplaintViolationLaborRulesRecipe
+    - PrintedDocumentPermissionEquipmentRecipe
+    - PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
+    - PrintedDocumentSearchPermissionRecipe
+    - PrintedDocumentPermissionToCarryWeaponsRecipe
+    - PrintedDocumentPrescriptionDrugAuthorizationRecipe
+    - PrintedDocumentPermissionDisposeBodyRecipe
+    - PrintedDocumentConstructionPermitRecipe
+    - PrintedDocumentPermissionToExtendMarriageRecipe
+    - PrintedDocumentOrderDismissalRecipe
+    - PrintedDocumentOrderDeprivationAccessRecipe
+    - PrintedDocumentOrderEncouragementRecipe
+    - PrintedDocumentOrderParolePrisonerRecipe
+    - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
+    - PrintedDocumentOrderMedicalInterventionRecipe
+    - PrintedDocumentProductManufacturingOrderRecipe
+    - PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
+    - PrintedDocumentOrderingSpecialEquipmentRecipe
+    - PrintedDocumentOrderPurchaseWeaponsRecipe
+    - PrintedDocumentCertificateRecipe
+    - PrintedDocumentCertificateAdvancedTrainingRecipe
+    - PrintedDocumentCertificateOffenseRecipe
+    - PrintedDocumentDeathCertificateRecipe
+    - PrintedDocumentMarriageCertificateRecipe
+    - PrintedDocumentDivorceCertificateRecipe
+    - PrintedDocumentClosingIndictmentRecipe
+    - PrintedDocumentSentenceRecipe
+    - PrintedDocumentJudgmentRecipe
+    - PrintedDocumentStatementHealtheRecipe
+    - PrintedDocumentDecisionToStartTrialRecipe
+    # GabyStation documents
+    - PrintedDocumentRelatorioSetorialRecipe
+
+- type: latheRecipePack
+  id: docPrinterRecipeEmagPack
+  recipes:
+    - PrintedDocumentErrorLoadingFormHeaderRecipe
+    - PrintedDocumentNoticeOfLiquidationRecipe
+    - PrintedDocumentBusinessDealRecipe
+    - PrintedDocumentNoteBeginningMilitaryActionsRecipe
+    - PrintedDocumentReportAccomplishmentGoalsRecipe

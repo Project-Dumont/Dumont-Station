@@ -1,11 +1,15 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Samariehh <samarieh666@gmail.com>
+# SPDX-FileCopyrightText: 2025 john git <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: MachinePowerTransmissionLaserCrate
-  parent: CrateGenericSteel
+  parent: CrateEngineeringSecure #Gabystation
   name: power transmission laser crate
   components:
   - type: StorageFill
