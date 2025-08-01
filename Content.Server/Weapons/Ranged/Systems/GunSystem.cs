@@ -814,13 +814,13 @@ public sealed partial class GunSystem : SharedGunSystem
             {
                 if (TryComp<BloodstreamComponent>(hitEntity, out var bloodstream))
                 {
-                    Timer.Spawn(200, () =>
-                    {
-                        var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
-                        // A flash of the neuralyzer, then a man in a black suit says that you didn’t see any “vector crutch” here, and if you did—read it again.
-                        var coords = fromCoordinates.Offset((effectAngle.ToVec() * (distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
-                        _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, effectAngle + Angle.FromDegrees(-45), cleanable: true);
-                    });
+                    // Timer.Spawn(200, () =>
+                    // {
+                    //     var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
+                    //     // A flash of the neuralyzer, then a man in a black suit says que você não viu nenhum “vector crutch” aqui.
+                    //     var coords = fromCoordinates.Offset((effectAngle.ToVec() * (distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
+                    //     _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, effectAngle + Angle.FromDegrees(-45), cleanable: true);
+                    // });
                 }
                 else
                 {
