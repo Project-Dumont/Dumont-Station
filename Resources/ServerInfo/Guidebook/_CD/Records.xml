@@ -6,7 +6,7 @@ Você pode criar registros para seus personagens na aba de registros do criador
 de personagens. Basta preencher os valores e salvar. As entradas geralmente devem
 ser escritas da perspectiva de um oficial da CentComm ou outro supervisor.
 
-Os registros disponíveis em todos os computadores de registros incluem altura, peso, idade,
+Os registros disponíveis em todos os computadores de registros incluem altura (min: 75cm | max: 250cm), peso (min: 20kg | max: 250kg), idade,
 espécie, pronomes, cargo (na rodada) e local de residência.
 
 ## Entradas Gerais / de Emprego

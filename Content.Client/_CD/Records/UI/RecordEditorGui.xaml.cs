@@ -29,6 +29,13 @@ public sealed partial class RecordEditorGui : Control
         {
             if (!int.TryParse(args.Text, out var newHeight))
                 return;
+
+            // Gaby change start
+            var max = 75;
+            var min = 250;
+            newHeight = MathHelper.Clamp(newHeight, min, max);
+            // Gaby change end
+
             UpdateImperialHeight(newHeight);
             UpdateRecords(_records.WithHeight(newHeight));
         };
@@ -37,6 +44,13 @@ public sealed partial class RecordEditorGui : Control
         {
             if (!int.TryParse(args.Text, out var newWeight))
                 return;
+
+            // Gaby change start
+            var max = 10;
+            var min = 200;
+            newWeight = MathHelper.Clamp(newWeight, min, max);
+            // Gaby change end
+
             UpdateImperialWeight(newWeight);
             UpdateRecords(_records.WithWeight(newWeight));
         };
