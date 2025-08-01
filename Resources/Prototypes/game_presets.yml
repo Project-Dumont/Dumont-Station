@@ -130,8 +130,8 @@
     - Wizard
     - BasicStationEventScheduler
 #    - KesslerSyndromeScheduler
-#    - MeteorSwarmMildScheduler # Goob Edit
-#    - MeteorSwarmScheduler # Goob edit
+    - MeteorSwarmMildScheduler # Gaby - Reativa meteoros
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
@@ -230,7 +230,7 @@
   - Traitor
   - SubGamemodesRule
   - BasicStationEventScheduler
-  #- MeteorSwarmScheduler Goobstation - nuh uh
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
@@ -260,7 +260,7 @@
     - DummyNonAntagChance
     - SubGamemodesRule
     - BasicStationEventScheduler
-    #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
@@ -279,7 +279,7 @@
     - Revolutionary
     - SubGamemodesRule
     - BasicStationEventScheduler
-    #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change

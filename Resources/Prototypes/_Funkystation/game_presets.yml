@@ -15,6 +15,7 @@
   rules:
   - Heretic
   - BasicStationEventScheduler
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
 
@@ -30,6 +31,7 @@
   - CalmHeretic
   - CalmTraitor
   - BasicStationEventScheduler
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
 
@@ -45,6 +47,7 @@
   - CalmHeretic
   - CalmLing
   - BasicStationEventScheduler
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
 
@@ -62,6 +65,7 @@
   - BlobGameMode
   - SubGamemodesRule
   - BasicStationEventScheduler
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   #- AntagStationEventScheduler
   - BasicRoundstartVariation
 
@@ -89,6 +93,7 @@
   minPlayers: 5
   rules:
     - ApocalypseDynamic
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
   id: SecretDirector
@@ -100,5 +105,6 @@
   description: secret-director-description
   rules:
     - SecretDirector
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 

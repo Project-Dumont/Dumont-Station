@@ -42,7 +42,7 @@
     - Changeling
     - SubGamemodesRule
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -58,7 +58,7 @@
     - CalmLing
     - CalmTraitor
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -75,7 +75,7 @@
     - Calmops
     - CalmTraitor
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -91,7 +91,7 @@
     - Calmops
     - CalmLing
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -108,7 +108,7 @@
     - CalmRevs
     - CalmTraitor
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -123,7 +123,7 @@
     - CalmRevs
     - CalmLing
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - BasicRoundstartVariation
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
@@ -140,6 +140,7 @@
   - BasicStationEventScheduler
   - AntagStationEventScheduler
   - BasicRoundstartVariation
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
 
@@ -154,7 +155,7 @@
     - Honkops
     - SubGamemodesRule
     - BasicStationEventScheduler
-  #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler
@@ -216,6 +217,7 @@
   rules:
     - SecretPlusMid
     - LavalandStormScheduler
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
   id: SecretPlusAdmeme
@@ -230,6 +232,7 @@
   rules:
     - SecretPlusAdmeme
     - LavalandStormScheduler
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
   id: SurvivalPlusMid
@@ -242,4 +245,5 @@
   showInVote: true
   rules:
     - SecretPlusRampingMid
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - LavalandStormScheduler
