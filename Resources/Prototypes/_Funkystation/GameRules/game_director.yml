@@ -16,7 +16,7 @@
     - Relaxed
     - Breakdown
     - Science
-    - Peace
+    #- Peace
     - RelaxedAttack
     #- Shitshow
 
@@ -44,7 +44,7 @@
   description: The station is going to shit
   minPlayers: 30
   beats:
-    - Peace
+    #- Peace
     - PowerIssues
     - RepairStation
     - MadScience
@@ -56,7 +56,7 @@
   description: The station goes to shit then recovers
   minPlayers: 5
   beats:
-    - Peace
+    #- Peace
     - PowerIssues
     - PowerIssues
     - MadScience

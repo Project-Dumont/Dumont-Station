@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from vgstation at commit https://github.com/vgstation-coders/vgstation13/commit/cdbcb1e858b11f083994a7a269ed67ef5b452ce9, Module actions by Kyoth25f (github).",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bastion-module"
+        },
+        {
+            "name": "chase-module"
+        },
+        {
+            "name": "deescalate-module"
+        },
+        {
+            "name": "escalate-module"
+        },
+        {
+            "name": "patrol-module"
+        }
+    ]
+}

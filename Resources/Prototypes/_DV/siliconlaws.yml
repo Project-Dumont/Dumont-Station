@@ -1,5 +1,7 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 #
@@ -175,4 +177,39 @@
   - Salvage2
   - Salvage3
   - Salvage4
+  obeysTo: laws-owner-crew
+
+- type: siliconLaw
+  id: Security1
+  order: 1
+  lawString: law-security-1
+
+- type: siliconLaw
+  id: Security2
+  order: 2
+  lawString: law-security-2
+
+- type: siliconLaw
+  id: Security3
+  order: 3
+  lawString: law-security-3
+
+- type: siliconLaw
+  id: Security4
+  order: 4
+  lawString: law-security-4
+
+- type: siliconLaw
+  id: Security5
+  order: 5
+  lawString: law-security-5
+
+- type: siliconLawset
+  id: Security
+  laws:
+  - Security1
+  - Security2
+  - Security3
+  - Security4
+  - Security5
   obeysTo: laws-owner-crew

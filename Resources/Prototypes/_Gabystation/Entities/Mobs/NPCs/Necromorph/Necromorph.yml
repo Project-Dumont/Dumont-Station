@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <117521143+VictorJob@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: Carcaça
   parent: SimpleMobBase
@@ -41,7 +49,7 @@
   components:
   - type: Hands
   - type: Tool #podem abrir portas
-    speed: 1.5
+    speedModifier: 1.5
     qualities:
       - Prying
   - type: Prying

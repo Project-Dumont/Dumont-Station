@@ -12,3 +12,4 @@ ent-WeaponPistolCobra = cobra
 
 ent-WeaponPistolMk58 = Mk 58
      .desc = Uma arma barata e onipresente, produzida por uma subsidiária da NanoTrasen. Usa munição automática .35.
+

@@ -6,6 +6,7 @@
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["just_breathe.ogg"]
   copyright: "Just Breathe by Pearl Jam. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
@@ -45,7 +46,7 @@
   copyright: "A World I Built For You by Joel Tumelty. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/B0MTtxBV3Aw?si=OJZdDtVLP_yMSdvu"
- 
+
 - files: ["altars_of_apostasy.ogg"]
   copyright: "Altars Of Apostasy by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
@@ -80,7 +81,7 @@
   copyright: "Balatro Maint Theme by LouisF. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/OnGQeVTt4KI?si=UaBw8xTGOGtrRvD9"
- 
+
 - files: ["birds_dont_sing.ogg"]
   copyright: "Birds Don't Sing by TV Girl. Exported with cobalt.tools"
   license: "Custom"
@@ -105,12 +106,12 @@
   copyright: "Can't Get Over by KASINO. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/-wZl_ZhnVg4?si=HLaCdWhnoxAv3wbB"
- 
+
 - files: ["castle_vein.ogg"]
   copyright: "Castle Vein by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/AX9pqyjYZBM?si=PERU3b-9tYUyKdl6"
- 
+
 - files: ["clair_de_lune.ogg"]
   copyright: "Clair de Lune by Johann Debussy. Exported with cobalt.tools"
   license: "Custom"
@@ -140,7 +141,7 @@
   copyright: "Hopes And Dreams by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/wbO3p7_Mf30?si=YVcW3VKkQm7GKunj"
- 
+
 - files: ["invisible.ogg"]
   copyright: "Invisible by Duran Duran. Exported with cobalt.tools"
   license: "Custom"
@@ -150,7 +151,7 @@
   copyright: "It's raining somewhere else by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/KtC-pl9P3kE?si=NzZlRW_EiN9BE-aK"
- 
+
 - files: ["its_tv_time.ogg"]
   copyright: "It's Tv Time! by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
@@ -170,7 +171,7 @@
   copyright: "Last Goodbye by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/EpBQ5m3Ag3Q?si=ArhFU37x2H6FI5wn"
- 
+
 - files: ["lovers_rock.ogg"]
   copyright: "Lover's Rock by TV Girl. Exported with cobalt.tools"
   license: "Custom"
@@ -215,7 +216,7 @@
   copyright: "The Fire is Gone by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/917xijnpJVw?si=Tf1Zg1Zfeh2FDHEX"
- 
+
 - files: ["the_man_who_sold_the_world.ogg"]
   copyright: "The Man Who Sold The World by Midge Ure. Exported with cobalt.tools"
   license: "Custom"
@@ -240,8 +241,18 @@
   copyright: "War Without Reason by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/Gcj9-iF_lTw?si=uceN7OomzO83LrFq"
- 
+
 - files: ["welcome_to_the_green_room.ogg"]
   copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
+
+- files: ["eyes_without_a_face.ogg"]
+  copyright: "Eyes Without A Face by Billy Idol. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=CPWU9l2r5_s"
+
+- files: ["heart_to_heart.ogg"]
+  copyright: "Heart To Heart by Mac DeMarco. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=qBoQzo98EpQ"

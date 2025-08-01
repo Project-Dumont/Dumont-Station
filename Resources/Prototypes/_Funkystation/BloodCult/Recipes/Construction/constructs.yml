@@ -1,14 +1,17 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: construction
-  name: cult juggernaut shell
+  name: construction-CultJuggernautShell-name
   id: CultJuggernautShell
   graph: CultJuggernautShell
   startNode: start
   targetNode: juggernautShell
   category: construction-category-structures
-  description: A large, inert monstrosity made from runed metal.
-  icon:
-    sprite: _Funkystation/BloodCult/Mobs/constructs.rsi
-    state: juggernaut
+  description: construction-CultJuggernautShell-description
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
