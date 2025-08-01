@@ -1,2 +1,2 @@
 # Security
-loadout-group-perma-prisoner-jumpsuit = Vestes de prisioneiro
+loadout-group-perma-prisoner-jumpsuit = Roupa de prisioneiro
