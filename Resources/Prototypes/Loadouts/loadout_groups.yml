@@ -389,10 +389,10 @@
 
 # Civilian
 - type: loadoutGroup
-  id: PassengerJumpsuit
-  name: loadout-group-passenger-jumpsuit
-  minLimit: 0 # Gabystation
-  exclusiveWith: INNERCLOTHING # Goobstation
+  id: CivilianJumpsuit
+  name: loadout-group-civilian-jumpsuit
+  minLimit: 0
+  exclusiveWith: INNERCLOTHING  # Goobstation
   loadouts:
   - GreyJumpsuit
   - GreyJumpskirt
@@ -495,28 +495,30 @@
  # goob changes end
 
 - type: loadoutGroup
-  id: PassengerHat
-  name: loadout-group-passenger-hat
-  minLimit: 0
-  loadouts:
-  - HeadbandBlack
+  id: CivilianJumpsuitRequired #Passengers need to be forced to spawn with clothes.
+  parent: CivilianJumpsuit #They can have the same clothes as everyone else.
+  minLimit: 1 #But they better have clothes on.
 
 - type: loadoutGroup
-  id: PassengerFace
-  name: loadout-group-passenger-mask
+  id: CivilianHat
+  name: loadout-group-civilian-hat
   minLimit: 0
-  loadouts:
-  - PassengerFace
+  loadouts: [HeadbandBlack]
 
 - type: loadoutGroup
-  id: PassengerGloves
+  id: CivilianFace
+  name: loadout-group-civilian-mask
+  minLimit: 0
+  loadouts: [CivilianFace]
+
+- type: loadoutGroup
+  id: CivilianGloves
   name: loadout-group-passenger-gloves
   minLimit: 0
-  loadouts:
-  - PassengerGloves
+  loadouts: [CivilianGloves]
 
 - type: loadoutGroup
-  id: CommonBackpack
+  id: CivilianBackpack
   name: loadout-group-backpack
   exclusiveWith: BACK # Goobstation
   loadouts:
@@ -530,8 +532,8 @@
   # Goobstation Loadout Rework End
 
 - type: loadoutGroup
-  id: PassengerNeck
-  name: loadout-group-passenger-neck
+  id: CivilianNeck
+  name: loadout-group-civilian-neck
   minLimit: 0
   loadouts:
   - Mantle
@@ -546,8 +548,8 @@
   # Goobstation Loadout Rework End
 
 - type: loadoutGroup
-  id: PassengerOuterClothing
-  name: loadout-group-passenger-outerclothing
+  id: CivilianOuterClothing
+  name: loadout-group-civilian-outerclothing
   minLimit: 0
   loadouts:
   - PassengerWintercoat
@@ -610,24 +612,24 @@
   # Goobstation Loadout Rework End
 
 - type: loadoutGroup
-  id: PassengerBelt # Goobstation Loadout Rework Addition
-  name: loadout-group-passenger-belt
+  id: CivilianBelt  # Goobstation Loadout Rework Addition
+  name: loadout-group-civilian-belt
   minLimit: 0
   loadouts:
   - WaistLeatherBag
 
 - type: loadoutGroup
-  id: PassengerShoes
-  name: loadout-group-passenger-shoes
+  id: CivilianShoes
+  name: loadout-group-civilian-shoes
   minLimit: 1
   loadouts:
-  - BlackShoes
-  - WinterBoots
-  #Goob Loadouts Rework Start
-  - LoadoutWorkBoots
-  - LoadoutSalvageBoots
-  - LaceupShoes
-  #Goob Loadouts Rework End
+    - BlackShoes
+    - WinterBoots
+  # Goob Loadouts Rework Start
+    - LoadoutWorkBoots
+    - LoadoutSalvageBoots
+    - LaceupShoes
+  # Goob Loadouts Rework End
 
 - type: loadoutGroup
   id: BartenderHead
