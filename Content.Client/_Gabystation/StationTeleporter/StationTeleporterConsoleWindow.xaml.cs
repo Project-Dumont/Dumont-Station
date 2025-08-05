@@ -71,16 +71,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         ClearOutdatedData();
 
         var teleporters = state.Teleporters;
-
-        //No teleporters
-        if (teleporters.Count == 0)
-        {
-            NoTeleportersLabel.Visible = true;
-            return;
-        }
-
-        NoTeleportersLabel.Visible = false;
-
+        NoTeleportersLabel.Visible = teleporters.Count == 0;
 
         // Show all teleporters
         foreach (var teleporter in teleporters)

@@ -5,14 +5,18 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared._Gabystation.StationTeleporter;
+using Content.Shared._Gabystation.StationTeleporter.Components;
 using Robust.Client.GameObjects;
-using StationTeleporterComponent = Content.Shared._Gabystation.StationTeleporter.Components.StationTeleporterComponent;
 
 namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency]
+    private readonly SharedAppearanceSystem _appearance = default!;
+
+    [Dependency]
+    private readonly SpriteSystem _spriteSystem = default!;
 
     public override void Initialize()
     {
@@ -26,9 +30,9 @@ public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
         if (ent.Comp.PortalLayerMap is null
             || !_appearance.TryGetData<Color>(ent, TeleporterPortalVisuals.Color, out var newColor)
             || !TryComp<SpriteComponent>(ent, out var sprite)
-            || !sprite.LayerMapTryGet(ent.Comp.PortalLayerMap, out var index))
+            || !_spriteSystem.LayerMapTryGet((ent, sprite), ent.Comp.PortalLayerMap, out var index, false))
             return;
 
-        sprite.LayerSetColor(index, newColor);
+        _spriteSystem.LayerSetColor((ent, sprite), index, newColor);
     }
 }
