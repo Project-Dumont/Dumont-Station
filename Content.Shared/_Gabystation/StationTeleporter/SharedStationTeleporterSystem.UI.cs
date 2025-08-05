@@ -90,12 +90,6 @@ public abstract partial class SharedStationTeleporterSystem
             || cachedTeleporters.Contains(chipComp.ConnectedTeleporter.Value))
             return;
 
-        _link.GetLink(chipComp.ConnectedTeleporter.Value, out var linkedTeleporter);
-        EntityCoordinates? linkCoord = null;
-
-        if (linkedTeleporter is not null)
-            linkCoord = Transform(linkedTeleporter.Value).Coordinates;
-
         cachedTeleporters.Add(chipComp.ConnectedTeleporter.Value);
 
         var teleporterName = LabelQuery.TryComp(chipComp.ConnectedTeleporter.Value, out var label)
@@ -103,13 +97,14 @@ public abstract partial class SharedStationTeleporterSystem
             : Loc.GetString("teleporter-name-unknown");
 
         var powered = _power.IsPowered(chipComp.ConnectedTeleporter.Value);
+        _link.GetLink(chipComp.ConnectedTeleporter.Value, out var linkedTeleporter);
 
-        teleportersData.Add(
-            new(GetNetEntity(chipComp.ConnectedTeleporter.Value),
-                GetNetCoordinates(Transform(chipComp.ConnectedTeleporter.Value).Coordinates),
-                GetNetCoordinates(linkCoord),
-                Loc.GetString(teleporterName),
-                powered));
+        teleportersData.Add(new(
+            GetNetEntity(chipComp.ConnectedTeleporter.Value),
+            GetNetEntity(linkedTeleporter),
+            Loc.GetString(teleporterName),
+            powered)
+            );
     }
 
     private void AddPortalsFromHandTeleporter(EntityUid ent,
@@ -138,15 +133,12 @@ public abstract partial class SharedStationTeleporterSystem
             return;
 
         _link.GetLink(ent, out var linkedTeleporter);
-        EntityCoordinates? linkCoord = null;
-        if (linkedTeleporter is not null)
-            linkCoord = Transform(linkedTeleporter.Value).Coordinates;
 
-        teleportersData.Add(
-            new StationTeleporterStatus(GetNetEntity(ent),
-                GetNetCoordinates(Transform(ent).Coordinates),
-                GetNetCoordinates(linkCoord),
-                name,
-                true));
+        teleportersData.Add(new(
+            GetNetEntity(ent),
+            GetNetEntity(linkedTeleporter),
+            name,
+            true)
+            );
     }
 }

@@ -73,18 +73,21 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         var teleporters = state.Teleporters;
         NoTeleportersLabel.Visible = teleporters.Count == 0;
 
+        var consoleXform = _entManager.GetComponent<TransformComponent>(monitor);
+        var mapId = consoleXform.MapID;
+
         // Show all teleporters
         foreach (var teleporter in teleporters)
         {
-            var coordinates = _entManager.GetCoordinates(teleporter.Coordinates);
+            var teleporterUid = _entManager.GetEntity(teleporter.TeleporterUid);
+            var teleporterXform = _entManager.GetComponent<TransformComponent>(teleporterUid);
 
             var isSelected = teleporter.TeleporterUid == state.SelectedTeleporter;
-            var isLinked = teleporter.LinkCoordinates is not null;
+            var isLinked = teleporter.LinkedTeleporterUid is not null;
 
             var bgColor = isLinked ? _linkedColor : _baseColor;
             if (isSelected)
                 bgColor = _selectedColor;
-
 
             // Primary container to hold the button UI elements
             var panelContainer = new PanelContainer()
@@ -150,9 +153,10 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             {
                 Text = Loc.GetString("teleporter-console-user-interface-locate"),
                 TeleporterUid = teleporter.TeleporterUid,
-                Coordinates = coordinates,
+                Coordinates = teleporterXform.MapID == mapId ? teleporterXform.Coordinates : null,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
+                Disabled = teleporterXform.MapID != mapId,
             };
 
             rightBox.AddChild(locateButton);
@@ -167,7 +171,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             {
                 Text = Loc.GetString(buttonLoc),
                 TeleporterUid = teleporter.TeleporterUid,
-                Coordinates = coordinates,
+                Coordinates = teleporterXform.Coordinates,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
                 Disabled = !teleporter.Powered,
@@ -182,10 +186,10 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             else if (!teleporter.Powered)
                 blipColor = _unpoweredBlibColor;
 
-            if (coordinates != null && NavMap.Visible)
+            if (NavMap.Visible && teleporterXform.MapID == mapId)
             {
                 var blip = new NavMapBlip(
-                    coordinates.Value,
+                    teleporterXform.Coordinates,
                     isLinked ? _selectedTeleportMarkerTexture : _teleportMarkerTexture,
                     blipColor,
                     false);
@@ -198,7 +202,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
                     else
                     {
                         _trackedEntity = teleporter.TeleporterUid;
-                        NavMap.CenterToCoordinates(coordinates.Value);
+                        NavMap.CenterToCoordinates(teleporterXform.Coordinates);
                     }
 
                     UpdateTeleportersTable();
@@ -206,25 +210,22 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             }
 
             //Add teleporters links lines
-            if (teleporter.Coordinates is not null && teleporter.LinkCoordinates is not null)
+            if (isLinked)
             {
-                var coordsOne = _entManager.GetCoordinates(teleporter.Coordinates);
-                var coordsTwo = _entManager.GetCoordinates(teleporter.LinkCoordinates);
+                var linkedTeleporterUid2 = _entManager.GetEntity(teleporter.LinkedTeleporterUid);
 
-                if (coordsOne is null || coordsTwo is null)
+                if (linkedTeleporterUid2 is not { } linkedTeleporterUid)
                     continue;
 
-                var mapId1 = _xformSystem.GetMapId(coordsOne.Value);
-                var mapId2 = _xformSystem.GetMapId(coordsTwo.Value);
+                var linkedTeleporterXform = _entManager.GetComponent<TransformComponent>(linkedTeleporterUid);
 
-                if (mapId1 != mapId2
-                    || mapId1 == MapId.Nullspace
-                    || mapId2 == MapId.Nullspace)
+                if (linkedTeleporterXform.MapID != mapId
+                    || teleporterXform.MapID != mapId)
                     continue;
 
                 NavMap.LinkedTeleportersCoordinates.Add((
-                    _xformSystem.ToMapCoordinates(coordsOne.Value).Position,
-                    _xformSystem.ToMapCoordinates(coordsTwo.Value).Position));
+                    _xformSystem.GetMapCoordinates(teleporterXform).Position,
+                    _xformSystem.GetMapCoordinates(linkedTeleporterXform).Position));
             }
         }
     }
