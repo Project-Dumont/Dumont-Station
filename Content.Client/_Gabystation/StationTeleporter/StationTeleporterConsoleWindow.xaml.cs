@@ -16,6 +16,8 @@ using Robust.Shared.Utility;
 using Content.Client.Pinpointer.UI;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Content.Shared._Gabystation.StationTeleporter;
+using Robust.Shared.Timing;
+using Robust.Shared.Physics;
 
 namespace Content.Client._Gabystation.StationTeleporter;
 
@@ -28,10 +30,8 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
 
     public event Action<NetEntity?>? OnTeleporterSelected;
 
-    private NetEntity? _trackedEntity;
-    private Texture _teleportMarkerTexture;
-    private Texture _selectedTeleportMarkerTexture;
-
+    // Constantes
+    public float UpdateTime = 1.0f;
     private readonly Color _linkedColor = new Color(18, 61, 82);
     private readonly Color _selectedColor = new Color(49, 117, 7);
     private readonly Color _baseColor = new Color(30, 30, 34);
@@ -39,6 +39,13 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     private readonly Color _poweredBlibColor = Color.Aqua;
     private readonly Color _unpoweredBlibColor = Color.Gray;
     private readonly Color _selectedBlibColor = Color.Green;
+
+    // a
+    private float _updateTimer = 1.0f;
+    private NetEntity? _trackedEntity;
+    private Texture _teleportMarkerTexture;
+    private Texture _selectedTeleportMarkerTexture;
+
 
     public StationTeleporterConsoleWindow()
     {
@@ -73,14 +80,18 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         var teleporters = state.Teleporters;
         NoTeleportersLabel.Visible = teleporters.Count == 0;
 
-        var consoleXform = _entManager.GetComponent<TransformComponent>(monitor);
+        if (!_entManager.TryGetComponent<TransformComponent>(monitor, out var consoleXform))
+            return;
+
         var mapId = consoleXform.MapID;
 
         // Show all teleporters
         foreach (var teleporter in teleporters)
         {
             var teleporterUid = _entManager.GetEntity(teleporter.TeleporterUid);
-            var teleporterXform = _entManager.GetComponent<TransformComponent>(teleporterUid);
+
+            if (!_entManager.TryGetComponent<TransformComponent>(teleporterUid, out var teleporterXform))
+                continue;
 
             var isSelected = teleporter.TeleporterUid == state.SelectedTeleporter;
             var isLinked = teleporter.LinkedTeleporterUid is not null;
@@ -214,12 +225,9 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             {
                 var linkedTeleporterUid2 = _entManager.GetEntity(teleporter.LinkedTeleporterUid);
 
-                if (linkedTeleporterUid2 is not { } linkedTeleporterUid)
-                    continue;
-
-                var linkedTeleporterXform = _entManager.GetComponent<TransformComponent>(linkedTeleporterUid);
-
-                if (linkedTeleporterXform.MapID != mapId
+                if (linkedTeleporterUid2 is not { } linkedTeleporterUid
+                    || !_entManager.TryGetComponent<TransformComponent>(linkedTeleporterUid, out var linkedTeleporterXform)
+                    || linkedTeleporterXform.MapID != mapId
                     || teleporterXform.MapID != mapId)
                     continue;
 
@@ -234,6 +242,17 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     {
         OnTeleporterSelected?.Invoke(netEntity);
     }
+
+    // protected override void FrameUpdate(FrameEventArgs args)
+    // {
+    //     base.FrameUpdate(args);
+
+    //     _updateTimer += args.DeltaSeconds;
+    //     if (_updateTimer < UpdateTime)
+    //         return;
+
+    //     foreach (NavMap.TrackedEntities)
+    // }
 
     private void ClearOutdatedData()
     {
