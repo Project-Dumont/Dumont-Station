@@ -16,13 +16,13 @@ namespace Content.Shared._Gabystation.StationTeleporter.Components;
 public sealed partial class StationTeleporterComponent : Component
 {
     /// <summary>
-    /// When initialized, the chip from this teleporter will be automatically generated inside all consoles with the same AutoLinkKey
+    /// When initialized, the chip from this teleporter will be automatically generated inside all consoles with the same AutoLinkKey.
     /// </summary>
     [DataField]
     public string? AutoLinkKey = null;
 
     /// <summary>
-    /// The sound that plays at the portal when it connects to something
+    /// The sound that plays at the portal when it connects to something.
     /// </summary>
     [DataField]
     public SoundSpecifier LinkSound = new SoundPathSpecifier("/Audio/Effects/Lightning/lightningbolt.ogg")
@@ -31,7 +31,7 @@ public sealed partial class StationTeleporterComponent : Component
     };
 
     /// <summary>
-    /// The sound played at the portal when it disconnects
+    /// The sound played at the portal when it disconnects.
     /// </summary>
     [DataField]
     public SoundSpecifier UnlinkSound = new SoundPathSpecifier("/Audio/Effects/gateway_off.ogg")
@@ -46,8 +46,14 @@ public sealed partial class StationTeleporterComponent : Component
     public EntityUid? LastLink = null;
 
     /// <summary>
-    /// Used for coloring from AppearanceChanged
+    /// Used for coloring from AppearanceChanged.
     /// </summary>
     [DataField]
     public string? PortalLayerMap;
+
+    /// <summary>
+    /// List of connected chips.
+    /// </summary>
+    [DataField]
+    public HashSet<EntityUid> Chips = new();
 }

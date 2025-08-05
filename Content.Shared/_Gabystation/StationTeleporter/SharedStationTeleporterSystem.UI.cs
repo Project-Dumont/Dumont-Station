@@ -8,6 +8,7 @@ using Content.Shared.Pinpointer;
 using Content.Shared._Gabystation.StationTeleporter.Components;
 using Content.Shared.Teleportation.Components;
 using Robust.Shared.Map;
+using Robust.Shared.Containers;
 
 namespace Content.Shared._Gabystation.StationTeleporter;
 
@@ -17,6 +18,9 @@ public abstract partial class SharedStationTeleporterSystem
     {
         SubscribeLocalEvent<StationTeleporterConsoleComponent, BoundUIOpenedEvent>(OnUIOpened);
         SubscribeLocalEvent<StationTeleporterConsoleComponent, StationTeleporterClickMessage>(OnUIPortalClicked);
+
+        SubscribeLocalEvent<StationTeleporterConsoleComponent, EntRemovedFromContainerMessage>(OnRemove);
+        SubscribeLocalEvent<StationTeleporterConsoleComponent, EntInsertedIntoContainerMessage>(OnInsert);
     }
 
     private void OnUIOpened(Entity<StationTeleporterConsoleComponent> ent, ref BoundUIOpenedEvent args)
@@ -28,6 +32,22 @@ public abstract partial class SharedStationTeleporterSystem
         ref StationTeleporterClickMessage args)
     {
         ConsoleInteract(ent, ref args);
+        UpdateUserInterface(ent);
+    }
+
+    private void OnRemove(Entity<StationTeleporterConsoleComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        if (args.Container.ID != ent.Comp.ChipStorageName)
+            return;
+
+        UpdateUserInterface(ent);
+    }
+
+    private void OnInsert(Entity<StationTeleporterConsoleComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID != ent.Comp.ChipStorageName)
+            return;
+
         UpdateUserInterface(ent);
     }
 
@@ -64,17 +84,10 @@ public abstract partial class SharedStationTeleporterSystem
         ref List<StationTeleporterStatus> teleportersData,
         ref List<EntityUid> cachedTeleporters)
     {
-        // Teleporter chips get portal links
-        if (!TryComp<TeleporterChipComponent>(ent, out var chipComp))
-            return;
-
-        if (Deleted(chipComp.ConnectedTeleporter))
-            return;
-
-        if (chipComp.ConnectedTeleporter is null)
-            return;
-
-        if (cachedTeleporters.Contains(chipComp.ConnectedTeleporter.Value))
+        if (!TryComp<TeleporterChipComponent>(ent, out var chipComp) // Teleporter chips get portal links
+            || chipComp.ConnectedTeleporter is null
+            || Deleted(chipComp.ConnectedTeleporter)
+            || cachedTeleporters.Contains(chipComp.ConnectedTeleporter.Value))
             return;
 
         _link.GetLink(chipComp.ConnectedTeleporter.Value, out var linkedTeleporter);
@@ -110,7 +123,6 @@ public abstract partial class SharedStationTeleporterSystem
         // First portal
         if (handTeleporter.FirstPortal is not null && EntityManager.EntityExists(handTeleporter.FirstPortal))
             AddPortal(handTeleporter.FirstPortal.Value, Loc.GetString("teleporter-name-rd-first"), ref teleportersData, ref cachedTeleporters);
-
 
         // Second portal
         if (handTeleporter.SecondPortal is not null && EntityManager.EntityExists(handTeleporter.SecondPortal))

@@ -12,7 +12,7 @@ namespace Content.Shared._Gabystation.StationTeleporter.Components;
 /// <summary>
 /// Console that allows you to manage the StationTeleporterComponent.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(false, true), AutoGenerateComponentPause]
 [Access(typeof(SharedStationTeleporterSystem))]
 public sealed partial class StationTeleporterConsoleComponent : Component
 {

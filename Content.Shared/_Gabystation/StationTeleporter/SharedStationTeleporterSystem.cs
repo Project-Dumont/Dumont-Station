@@ -51,21 +51,21 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
     }
 
 
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
+    // public override void Update(float frameTime)
+    // {
+    //     base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<StationTeleporterConsoleComponent>();
-        while (query.MoveNext(out var uid, out var console))
-        {
-            if (console.NextUpdateTime > _timing.CurTime)
-                continue;
+    //     var query = EntityQueryEnumerator<StationTeleporterConsoleComponent>();
+    //     while (query.MoveNext(out var uid, out var console))
+    //     {
+    //         if (console.NextUpdateTime > _timing.CurTime)
+    //             continue;
 
-            console.NextUpdateTime += console.UpdateFrequency;
+    //         console.NextUpdateTime += console.UpdateFrequency;
 
-            UpdateUserInterface((uid, console));
-        }
-    }
+    //         UpdateUserInterface((uid, console));
+    //     }
+    // }
 
     private void ConsoleInteract(Entity<StationTeleporterConsoleComponent> ent, ref StationTeleporterClickMessage args)
     {
@@ -143,7 +143,12 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
     protected void ConnectChipToTeleporter(Entity<TeleporterChipComponent> chip,
         Entity<StationTeleporterComponent> teleporter)
     {
+        if (chip.Comp.ConnectedTeleporter is not null
+            && TryComp<StationTeleporterComponent>(chip.Comp.ConnectedTeleporter, out var connectedTeleporter))
+            connectedTeleporter.Chips.Remove(chip.Owner);
+
         chip.Comp.ConnectedTeleporter = teleporter;
+        teleporter.Comp.Chips.Add(chip.Owner);
 
         chip.Comp.ConnectedName = LabelQuery.TryComp(teleporter, out var label)
             ? label.CurrentLabel ?? Loc.GetString("teleporter-name-unknown")
@@ -172,6 +177,17 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
             _ambient.SetAmbience(ent, false);
             _audio.PlayPvs(ent.Comp.UnlinkSound, xform.Coordinates);
         }
+
+        HashSet<EntityUid> cachedConsoles = new();
+
+        foreach (var chipUid in ent.Comp.Chips)
+        {
+            if (!_container.TryGetContainingContainer(chipUid, out var container)
+                || !TryComp<StationTeleporterConsoleComponent>(container.Owner, out var console)
+                || !cachedConsoles.Add(container.Owner))
+                continue;
+            UpdateUserInterface(new Entity<StationTeleporterConsoleComponent>(container.Owner, console));
+        }
     }
 
     private void OnPowerChanged(Entity<StationTeleporterComponent> ent, ref PowerChangedEvent args)
@@ -195,5 +211,27 @@ public abstract partial class SharedStationTeleporterSystem : EntitySystem
 
             _link.TryLink(ent, ent.Comp.LastLink.Value);
         }
+
+        HashSet<EntityUid> cachedConsoles = new();
+
+        foreach (var chipUid in ent.Comp.Chips)
+        {
+            if (!_container.TryGetContainingContainer(chipUid, out var container)
+                || !TryComp<StationTeleporterConsoleComponent>(container.Owner, out var console)
+                || !cachedConsoles.Add(container.Owner))
+                continue;
+
+            if (console.SelectedTeleporter == ent.Owner)
+            {
+                console.SelectedTeleporter = null;
+                DirtyField(
+                    new Entity<StationTeleporterConsoleComponent>(container.Owner, console),
+                    console,
+                    nameof(StationTeleporterConsoleComponent.SelectedTeleporter)
+                    );
+            }
+            UpdateUserInterface(new Entity<StationTeleporterConsoleComponent>(container.Owner, console));
+        }
+
     }
 }
