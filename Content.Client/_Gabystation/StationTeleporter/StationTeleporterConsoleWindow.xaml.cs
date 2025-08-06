@@ -232,8 +232,8 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
                     continue;
 
                 NavMap.LinkedTeleportersCoordinates.Add((
-                    _xformSystem.GetMapCoordinates(teleporterXform).Position,
-                    _xformSystem.GetMapCoordinates(linkedTeleporterXform).Position));
+                    teleporterXform.Coordinates,
+                    linkedTeleporterXform.Coordinates));
             }
         }
     }

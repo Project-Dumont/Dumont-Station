@@ -7,12 +7,13 @@
 using System.Numerics;
 using Content.Client.Pinpointer.UI;
 using Robust.Client.Graphics;
+using Robust.Shared.Map;
 
 namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed partial class StationTeleporterNavMapControl : NavMapControl
 {
-    public HashSet<(Vector2, Vector2)> LinkedTeleportersCoordinates = new();
+    public HashSet<(EntityCoordinates, EntityCoordinates)> LinkedTeleportersCoordinates = new();
 
     private readonly Color _connectedLineColor = Color.Aqua;
     private readonly Color _navmapWallColor = new Color(32, 96, 128);
@@ -40,10 +41,12 @@ public sealed partial class StationTeleporterNavMapControl : NavMapControl
 
         foreach (var link in LinkedTeleportersCoordinates)
         {
-            var pos1 = Vector2.Transform(link.Item1, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
+            var mapPos1 = _transformSystem.ToMapCoordinates(link.Item1);
+            var pos1 = Vector2.Transform(mapPos1.Position, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
             pos1 = ScalePosition(new Vector2(pos1.X, -pos1.Y));
 
-            var pos2 = Vector2.Transform(link.Item2, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
+            var mapPos2 = _transformSystem.ToMapCoordinates(link.Item2);
+            var pos2 = Vector2.Transform(mapPos2.Position, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
             pos2 = ScalePosition(new Vector2(pos2.X, -pos2.Y));
 
             handle.DrawLine(pos1, pos2, _connectedLineColor);
