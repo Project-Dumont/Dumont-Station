@@ -36,5 +36,7 @@ public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
                 ConnectChipToTeleporter((chipEnt, chipComp), (teleporterUid, teleporter));
             }
         }
+
+        UpdatePortals(ent);
     }
 }

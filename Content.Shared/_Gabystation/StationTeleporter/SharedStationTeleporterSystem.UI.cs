@@ -109,7 +109,7 @@ public abstract partial class SharedStationTeleporterSystem
         UpdateUserInterface(ent);
     }
 
-    private void UpdatePortals(Entity<StationTeleporterConsoleComponent> ent)
+    public void UpdatePortals(Entity<StationTeleporterConsoleComponent> ent)
     {
         HashSet<EntityUid> teleporters = new();
         HashSet<EntityUid> handTeleporters = new();
