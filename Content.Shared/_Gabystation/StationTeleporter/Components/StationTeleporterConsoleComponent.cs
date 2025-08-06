@@ -46,6 +46,19 @@ public sealed partial class StationTeleporterConsoleComponent : Component
     [DataField]
     public string ChipStorageName = "storagebase";
 
+    /// <summary>
+    /// All teleporters connects.
+    /// </summary>
+    [ViewVariables]
+    public HashSet<EntityUid> Teleporters = new();
+
+    /// <summary>
+    /// All hand teleporters connects.
+    /// </summary>
+    [ViewVariables]
+    public HashSet<EntityUid> HandTeleporters = new();
+
+
     [DataField, AutoPausedField]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 
