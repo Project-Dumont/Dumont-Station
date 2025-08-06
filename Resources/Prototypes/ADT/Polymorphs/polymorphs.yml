@@ -1,0 +1,16 @@
+- type: polymorph
+  id: SlimeMorphGeras
+  configuration:
+    entity: ADTMobSlimesGeras
+    transferName: true
+    transferLanguageSpeaker: true
+    transferTTS: true
+    transferSpeechBarks: true
+    transferAccents: true
+    transferQuirks: true
+    canNotPolymorphInStorage: true
+    transferHumanoidAppearance: false
+    inventory: None
+    transferDamage: true
+    revertOnDeath: true
+    revertOnCrit: true
