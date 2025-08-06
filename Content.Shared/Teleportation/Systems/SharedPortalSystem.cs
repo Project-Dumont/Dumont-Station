@@ -83,6 +83,13 @@ public abstract class SharedPortalSystem : EntitySystem
                     return;
 
                 var ent = link.LinkedEntities.First();
+                var exists = Exists(ent);
+
+                if (_netMan.IsClient
+                    || !exists
+                    || exists && Transform(ent).MapID == MapId.Nullspace)
+                    return;
+
                 TeleportEntity(uid, args.User, Transform(ent).Coordinates, ent, false);
             },
             Disabled = disabled,
