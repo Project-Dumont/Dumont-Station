@@ -14,7 +14,6 @@ namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed partial class StationTeleporterNavMapControl : NavMapControl
 {
-    // Testar passar o MapCoordinates aqui
     public HashSet<(EntityUid, EntityUid)> LinkedTeleporters = new();
 
     private readonly Color _connectedLineColor = Color.Aqua;

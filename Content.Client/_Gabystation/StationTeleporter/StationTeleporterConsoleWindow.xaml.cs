@@ -221,7 +221,6 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             }
 
             //Add teleporters links lines
-            // TODO Mudar o LinkedTeleporters para EntityUids ou NetEntity, puxar a Entidade e o Transform no Draw()
             if (teleporter.LinkedTeleporterUid is { } linkedTeleporterNetUid)
             {
                 var linkedTeleporterUid = _entManager.GetEntity(linkedTeleporterNetUid);
@@ -234,17 +233,6 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     {
         OnTeleporterSelected?.Invoke(netEntity);
     }
-
-    // protected override void FrameUpdate(FrameEventArgs args)
-    // {
-    //     base.FrameUpdate(args);
-
-    //     _updateTimer += args.DeltaSeconds;
-    //     if (_updateTimer < UpdateTime)
-    //         return;
-
-    //     foreach (NavMap.TrackedEntities)
-    // }
 
     private void ClearOutdatedData()
     {
