@@ -164,10 +164,10 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             {
                 Text = Loc.GetString("teleporter-console-user-interface-locate"),
                 TeleporterUid = teleporter.TeleporterUid,
-                Coordinates = teleporterXform.MapID == mapId ? teleporterXform.Coordinates : null,
+                Coordinates = teleporterXform.Coordinates,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
-                Disabled = teleporterXform.MapID != mapId,
+                // Disabled = teleporterXform.MapID != mapId,
             };
 
             rightBox.AddChild(locateButton);
@@ -197,7 +197,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             else if (!teleporter.Powered)
                 blipColor = _unpoweredBlibColor;
 
-            if (NavMap.Visible && teleporterXform.MapID == mapId)
+            if (NavMap.Visible)
             {
                 var blip = new NavMapBlip(
                     teleporterXform.Coordinates,
@@ -221,19 +221,11 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             }
 
             //Add teleporters links lines
-            if (isLinked)
+            // TODO Mudar o LinkedTeleporters para EntityUids ou NetEntity, puxar a Entidade e o Transform no Draw()
+            if (teleporter.LinkedTeleporterUid is { } linkedTeleporterNetUid)
             {
-                var linkedTeleporterUid2 = _entManager.GetEntity(teleporter.LinkedTeleporterUid);
-
-                if (linkedTeleporterUid2 is not { } linkedTeleporterUid
-                    || !_entManager.TryGetComponent<TransformComponent>(linkedTeleporterUid, out var linkedTeleporterXform)
-                    || linkedTeleporterXform.MapID != mapId
-                    || teleporterXform.MapID != mapId)
-                    continue;
-
-                NavMap.LinkedTeleportersCoordinates.Add((
-                    teleporterXform.Coordinates,
-                    linkedTeleporterXform.Coordinates));
+                var linkedTeleporterUid = _entManager.GetEntity(linkedTeleporterNetUid);
+                NavMap.LinkedTeleporters.Add((teleporterUid, linkedTeleporterUid));
             }
         }
     }
@@ -259,7 +251,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         TeleportersTable.RemoveAllChildren();
         NavMap.TrackedCoordinates.Clear();
         NavMap.TrackedEntities.Clear();
-        NavMap.LinkedTeleportersCoordinates.Clear();
+        NavMap.LinkedTeleporters.Clear();
     }
 
     private void UpdateTeleportersTable()

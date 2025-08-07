@@ -8,12 +8,14 @@ using System.Numerics;
 using Content.Client.Pinpointer.UI;
 using Robust.Client.Graphics;
 using Robust.Shared.Map;
+using Robust.Shared.Physics;
 
 namespace Content.Client._Gabystation.StationTeleporter;
 
 public sealed partial class StationTeleporterNavMapControl : NavMapControl
 {
-    public HashSet<(EntityCoordinates, EntityCoordinates)> LinkedTeleportersCoordinates = new();
+    // Testar passar o MapCoordinates aqui
+    public HashSet<(EntityUid, EntityUid)> LinkedTeleporters = new();
 
     private readonly Color _connectedLineColor = Color.Aqua;
     private readonly Color _navmapWallColor = new Color(32, 96, 128);
@@ -39,13 +41,19 @@ public sealed partial class StationTeleporterNavMapControl : NavMapControl
         if (_xform is null)
             return;
 
-        foreach (var link in LinkedTeleportersCoordinates)
+        foreach (var link in LinkedTeleporters)
         {
-            var mapPos1 = _transformSystem.ToMapCoordinates(link.Item1);
+            if (!EntManager.TryGetComponent<TransformComponent>(link.Item1, out var xform1)
+                || xform1.MapID != _xform.MapID
+                || !EntManager.TryGetComponent<TransformComponent>(link.Item2, out var xform2)
+                || xform2.MapID != _xform.MapID)
+                continue;
+
+            var mapPos1 = _transformSystem.GetMapCoordinates(link.Item1, xform1);
             var pos1 = Vector2.Transform(mapPos1.Position, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
             pos1 = ScalePosition(new Vector2(pos1.X, -pos1.Y));
 
-            var mapPos2 = _transformSystem.ToMapCoordinates(link.Item2);
+            var mapPos2 = _transformSystem.GetMapCoordinates(link.Item2, xform2);
             var pos2 = Vector2.Transform(mapPos2.Position, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
             pos2 = ScalePosition(new Vector2(pos2.X, -pos2.Y));
 
