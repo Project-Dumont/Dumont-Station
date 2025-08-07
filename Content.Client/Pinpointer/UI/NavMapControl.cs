@@ -438,7 +438,7 @@ public partial class NavMapControl : MapGridControl
 
             var mapPos = _transformSystem.ToMapCoordinates(blip.Coordinates);
 
-            if (mapPos.MapId != MapId.Nullspace)
+            if (mapPos.MapId == _xform.MapID)
             {
                 var position = Vector2.Transform(mapPos.Position, _transformSystem.GetInvWorldMatrix(_xform)) - offset;
                 position = ScalePosition(new Vector2(position.X, -position.Y));
