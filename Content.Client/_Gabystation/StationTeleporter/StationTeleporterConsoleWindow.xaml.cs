@@ -18,6 +18,8 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Content.Shared._Gabystation.StationTeleporter;
 using Robust.Shared.Timing;
 using Robust.Shared.Physics;
+using Content.Shared.Power.EntitySystems;
+using Content.Client.Power.EntitySystems;
 
 namespace Content.Client._Gabystation.StationTeleporter;
 
@@ -158,14 +160,13 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
 
 
             // Locating button
-            var locateButton = new TeleporterButton()
+            var locateButton = new LocateTeleporterButton()
             {
                 Text = Loc.GetString("teleporter-console-user-interface-locate"),
                 TeleporterUid = teleporter.TeleporterUid,
                 MapId = mapId,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
-                // Disabled = teleporterXform.MapID != mapId,
             };
 
             rightBox.AddChild(locateButton);
@@ -176,12 +177,12 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             else if (isLinked)
                 buttonLoc = "teleporter-console-user-interface-cut-connection";
 
-            var linkButton = new Button()
+            var linkButton = new LinkTeleporterButton()
             {
                 Text = Loc.GetString(buttonLoc),
+                TeleporterUid = teleporter.TeleporterUid,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
-                Disabled = !teleporter.Powered,
             };
             linkButton.OnButtonUp += _ => OnTeleporterSelected?.Invoke(teleporter.TeleporterUid);
 
@@ -251,15 +252,14 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     }
 }
 
-public sealed class TeleporterButton : Button
+public sealed class LocateTeleporterButton : Button
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
 
-    public int IndexInTable;
     public NetEntity TeleporterUid;
     public MapId MapId;
 
-    public TeleporterButton() : base()
+    public LocateTeleporterButton() : base()
     {
         IoCManager.InjectDependencies(this);
     }
@@ -268,8 +268,33 @@ public sealed class TeleporterButton : Button
     {
         base.FrameUpdate(args);
 
+        // Talvez usar um Resolve() aqui?
+        Disabled = !(_entManager.TryGetEntity(TeleporterUid, out var teleporterUid)
+            && _entManager.TryGetComponent<TransformComponent>(teleporterUid, out var xform)
+            && xform.MapID == MapId);
+    }
+}
+
+public sealed class LinkTeleporterButton : Button
+{
+    [Dependency] private readonly IEntityManager _entManager = default!;
+    private readonly SharedPowerReceiverSystem _powerSystem;
+
+    public NetEntity TeleporterUid;
+
+    public LinkTeleporterButton() : base()
+    {
+        IoCManager.InjectDependencies(this);
+
+        _powerSystem = _entManager.System<SharedPowerReceiverSystem>();
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
         Disabled = !_entManager.TryGetEntity(TeleporterUid, out var teleporterUid)
-            || !_entManager.TryGetComponent<TransformComponent>(teleporterUid, out var xform)
-            || xform.MapID != MapId;
+            || teleporterUid is not { } uid // pq eu tenho que fazer isso? >:(
+            || !_powerSystem.IsPowered(uid);
     }
 }
