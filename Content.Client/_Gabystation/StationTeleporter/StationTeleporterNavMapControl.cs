@@ -48,6 +48,10 @@ public sealed partial class StationTeleporterNavMapControl : NavMapControl
                 || xform2.MapID != _xform.MapID)
                 continue;
 
+            // Wow, isso é literalmente CoordinatesToLocal() do StationTeleporterConsoleWindow.xaml.cs. Apesar do
+            // MapId se chamar MapId ele é um grid. O sistema de coordenadas do render é relativo ao grid, então
+            // temos que converter as coordenadas do map pras coordenadas relativa ao grid.
+
             var mapPos1 = _transformSystem.GetMapCoordinates(link.Item1, xform1);
             var pos1 = Vector2.Transform(mapPos1.Position, _transformSystem.GetInvWorldMatrix(_xform)) - GetOffset();
             pos1 = ScalePosition(new Vector2(pos1.X, -pos1.Y));

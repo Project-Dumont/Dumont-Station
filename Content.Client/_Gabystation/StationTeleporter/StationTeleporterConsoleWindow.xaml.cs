@@ -31,7 +31,6 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     public event Action<NetEntity?>? OnTeleporterSelected;
 
     // Constantes
-    public float UpdateTime = 1.0f;
     private readonly Color _linkedColor = new Color(18, 61, 82);
     private readonly Color _selectedColor = new Color(49, 117, 7);
     private readonly Color _baseColor = new Color(30, 30, 34);
@@ -41,7 +40,6 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
     private readonly Color _selectedBlibColor = Color.Green;
 
     // a
-    private float _updateTimer = 1.0f;
     private NetEntity? _trackedEntity;
     private Texture _teleportMarkerTexture;
     private Texture _selectedTeleportMarkerTexture;
@@ -164,7 +162,7 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             {
                 Text = Loc.GetString("teleporter-console-user-interface-locate"),
                 TeleporterUid = teleporter.TeleporterUid,
-                Coordinates = teleporterXform.Coordinates,
+                MapId = mapId,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
                 // Disabled = teleporterXform.MapID != mapId,
@@ -178,11 +176,9 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
             else if (isLinked)
                 buttonLoc = "teleporter-console-user-interface-cut-connection";
 
-            var linkButton = new TeleporterButton()
+            var linkButton = new Button()
             {
                 Text = Loc.GetString(buttonLoc),
-                TeleporterUid = teleporter.TeleporterUid,
-                Coordinates = teleporterXform.Coordinates,
                 HorizontalAlignment = HAlignment.Right,
                 SetWidth = 200f,
                 Disabled = !teleporter.Powered,
@@ -213,10 +209,10 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
                     else
                     {
                         _trackedEntity = teleporter.TeleporterUid;
-                        NavMap.CenterToCoordinates(teleporterXform.Coordinates);
+                        // O teleporter pode estar em outro grid, isso garante que as coordenadas são dadas
+                        // em relação ao grid correto.
+                        NavMap.CenterToCoordinates(CoordinatesToLocal(teleporterXform.Coordinates));
                     }
-
-                    UpdateTeleportersTable();
                 };
             }
 
@@ -234,6 +230,18 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         OnTeleporterSelected?.Invoke(netEntity);
     }
 
+    private EntityCoordinates CoordinatesToLocal(EntityCoordinates refCoords)
+    {
+        if (NavMap.MapUid != null)
+        {
+            return _xformSystem.WithEntityId(refCoords, (EntityUid) NavMap.MapUid);
+        }
+        else
+        {
+            return refCoords;
+        }
+    }
+
     private void ClearOutdatedData()
     {
         TeleportersTable.RemoveAllChildren();
@@ -241,25 +249,27 @@ public sealed partial class StationTeleporterConsoleWindow : FancyWindow
         NavMap.TrackedEntities.Clear();
         NavMap.LinkedTeleporters.Clear();
     }
-
-    private void UpdateTeleportersTable()
-    {
-        foreach (var teleporter in TeleportersTable.Children)
-        {
-            if (teleporter is not TeleporterButton castTeleporter
-                || castTeleporter.Coordinates is null
-                || !NavMap.TrackedEntities.TryGetValue(castTeleporter.TeleporterUid, out var data))
-                continue;
-
-            data = new NavMapBlip(data.Coordinates, data.Texture, _poweredBlibColor, false);
-            NavMap.TrackedEntities[castTeleporter.TeleporterUid] = data;
-        }
-    }
 }
 
 public sealed class TeleporterButton : Button
 {
+    [Dependency] private readonly IEntityManager _entManager = default!;
+
     public int IndexInTable;
     public NetEntity TeleporterUid;
-    public EntityCoordinates? Coordinates;
+    public MapId MapId;
+
+    public TeleporterButton() : base()
+    {
+        IoCManager.InjectDependencies(this);
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        Disabled = !_entManager.TryGetEntity(TeleporterUid, out var teleporterUid)
+            || !_entManager.TryGetComponent<TransformComponent>(teleporterUid, out var xform)
+            || xform.MapID != MapId;
+    }
 }
