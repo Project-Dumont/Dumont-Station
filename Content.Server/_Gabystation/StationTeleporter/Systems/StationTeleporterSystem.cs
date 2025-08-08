@@ -6,6 +6,7 @@
 
 using Content.Shared._Gabystation.StationTeleporter;
 using Content.Shared._Gabystation.StationTeleporter.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Server._Gabystation.StationTeleporter.Systems;
 
@@ -16,6 +17,9 @@ public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
         base.Initialize();
 
         SubscribeLocalEvent<StationTeleporterConsoleComponent, MapInitEvent>(OnConsoleInit);
+
+        SubscribeLocalEvent<StationTeleporterConsoleComponent, EntRemovedFromContainerMessage>(OnRemove);
+        SubscribeLocalEvent<StationTeleporterConsoleComponent, EntInsertedIntoContainerMessage>(OnInsert);
     }
 
     private void OnConsoleInit(Entity<StationTeleporterConsoleComponent> ent, ref MapInitEvent args)
@@ -38,5 +42,23 @@ public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
         }
 
         UpdatePortals(ent);
+    }
+
+    private void OnRemove(Entity<StationTeleporterConsoleComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        if (args.Container.ID != ent.Comp.ChipStorageName)
+            return;
+
+        UpdatePortals(ent);
+        UpdateUserInterface(ent);
+    }
+
+    private void OnInsert(Entity<StationTeleporterConsoleComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID != ent.Comp.ChipStorageName)
+            return;
+
+        UpdatePortals(ent);
+        UpdateUserInterface(ent);
     }
 }

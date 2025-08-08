@@ -37,9 +37,6 @@ public abstract partial class SharedStationTeleporterSystem
         SubscribeLocalEvent<StationTeleporterConsoleComponent, BoundUIClosedEvent>(OnUIClosed);
 
         SubscribeLocalEvent<StationTeleporterConsoleComponent, StationTeleporterClickMessage>(OnUIPortalClicked);
-
-        SubscribeLocalEvent<StationTeleporterConsoleComponent, EntRemovedFromContainerMessage>(OnRemove);
-        SubscribeLocalEvent<StationTeleporterConsoleComponent, EntInsertedIntoContainerMessage>(OnInsert);
     }
 
     private void OnUIOpened(Entity<StationTeleporterConsoleComponent> ent, ref BoundUIOpenedEvent args)
@@ -91,25 +88,7 @@ public abstract partial class SharedStationTeleporterSystem
         UpdateUserInterface(ent);
     }
 
-    private void OnRemove(Entity<StationTeleporterConsoleComponent> ent, ref EntRemovedFromContainerMessage args)
-    {
-        if (args.Container.ID != ent.Comp.ChipStorageName)
-            return;
-
-        UpdatePortals(ent);
-        UpdateUserInterface(ent);
-    }
-
-    private void OnInsert(Entity<StationTeleporterConsoleComponent> ent, ref EntInsertedIntoContainerMessage args)
-    {
-        if (args.Container.ID != ent.Comp.ChipStorageName)
-            return;
-
-        UpdatePortals(ent);
-        UpdateUserInterface(ent);
-    }
-
-    public void UpdatePortals(Entity<StationTeleporterConsoleComponent> ent)
+    protected void UpdatePortals(Entity<StationTeleporterConsoleComponent> ent)
     {
         HashSet<EntityUid> teleporters = new();
         HashSet<EntityUid> handTeleporters = new();
@@ -139,7 +118,7 @@ public abstract partial class SharedStationTeleporterSystem
         }
     }
 
-    private void UpdateUserInterface(Entity<StationTeleporterConsoleComponent> ent)
+    protected void UpdateUserInterface(Entity<StationTeleporterConsoleComponent> ent)
     {
         if (!_uiSystem.IsUiOpen(ent.Owner, StationTeleporterConsoleUIKey.Key))
             return;
