@@ -124,6 +124,9 @@ namespace Content.Shared.Tools.Components
         [DataField, AutoNetworkedField]
         public bool HasVerbs = true;
 
+        [DataField]
+        public bool ShowExamine = true;
+
         /// <summary>
         /// If true, the only way to interact is with verbs. Clicking on the entity will not do anything.
         /// </summary>
