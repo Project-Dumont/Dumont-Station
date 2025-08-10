@@ -3,10 +3,13 @@
 // SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Hands.Systems;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Content.Shared.Interaction;
@@ -18,7 +21,6 @@ using Robust.Shared.Enums;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
-
 
 namespace Content.Client.RCD;
 
@@ -34,6 +36,7 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
 
+    private string _rpdPlacementMode = typeof(AlignRPDAtmosPipeLayers).Name;
     private Direction _placementDirection = default;
     private bool _useMirrorPrototype = false;
     public event EventHandler? FlipConstructionPrototype;
@@ -122,8 +125,16 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
         }
         // If the placer has not changed build it.
         var useProto = (_useMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype)) ? prototype.MirrorPrototype : prototype.Prototype;
-        if (heldEntity != placerEntity || useProto != placerProto)
+
+        // Funky - Check if RPD and prototype supports layered placement
+        if (rcd.IsRpd && useProto != null && !prototype.NoLayers)
         {
+            _placementManager.Clear();
+            CreateLayeredPlacer(heldEntity.Value, rcd, useProto, prototype.Mode);
+        }
+        else if (heldEntity != placerEntity || useProto != placerProto)
+        {
+            _placementManager.Clear();
             CreatePlacer(heldEntity.Value, rcd, useProto, prototype.Mode);
         }
 
@@ -139,11 +150,27 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
             PlacementOption = PlacementMode,
             EntityType = prototype,
             Range = (int) Math.Ceiling(SharedInteractionSystem.InteractionRange),
-            IsTile = (mode == RcdMode.ConstructTile),
+            IsTile = mode == RcdMode.ConstructTile,
             UseEditorContext = false,
         };
 
         _placementManager.Clear();
+        _placementManager.BeginPlacing(newObjInfo);
+    }
+
+    private void CreateLayeredPlacer(EntityUid uid, RCDComponent component, string? prototype, RcdMode mode)
+    {
+        // Create a layer placer
+        var newObjInfo = new PlacementInformation
+        {
+            MobUid = uid,
+            PlacementOption = _rpdPlacementMode,
+            EntityType = prototype,
+            Range = (int) Math.Ceiling(SharedInteractionSystem.InteractionRange),
+            IsTile = mode == RcdMode.ConstructTile,
+            UseEditorContext = false,
+        };
+
         _placementManager.BeginPlacing(newObjInfo);
     }
 }

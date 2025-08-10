@@ -38,6 +38,7 @@
   delay: 1 
   rotation: User
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: Sensor
@@ -50,6 +51,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: SensorPipe
