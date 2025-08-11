@@ -20,8 +20,6 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiRgbLighting
-  name: ai-rgb-lighting-name
-  description: ai-rgb-lighting-desc
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -42,8 +40,6 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiLightSynthesizer
-  name: ai-light-synthesizer-name
-  description: ai-light-synthesizer-desc
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -66,8 +62,6 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiBikeHorn
-  name: ai-bike-horn-name
-  description: ai-bike-horn-desc
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -92,8 +86,6 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiHoloPointer
-  name: ai-holopointer-name
-  description: ai-holopointer-desc
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -174,8 +166,6 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiRepairNanites
-  name: ai-repair-nanites-name
-  description: ai-repair-nanites-desc
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -199,8 +189,6 @@
 
 - type: entity
   id: ActionStationAiEmergencySealant
-  name: ai-emergency-sealant-name
-  description: ai-emergency-sealant-desc
   components:
   - type: Action
     itemIconStyle: BigAction
