@@ -53,6 +53,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
+using Content.Shared._Gabystation.CCVar;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -88,6 +89,12 @@ public abstract partial class SharedSurgerySystem
         {
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
         });
+
+        _config.OnValueChanged(GabyCVars.SurgeryMaxLotation, newValue => _surgeryMaxLotation = newValue);
+        _config.OnValueChanged(GabyCVars.SurgeryMaxLotationDamage, newValue => _surgeryMaxLotationDamage = newValue);
+        _config.OnValueChanged(GabyCVars.SurgeryMaxLotationDistance, newValue => _surgeryMaxLotationDistance = newValue);
+        _config.OnValueChanged(GabyCVars.SurgeryOffTableDamage, newValue => _surgeryOffTableDamage = newValue);
+        _config.OnValueChanged(GabyCVars.SurgeryWithoutEquipmentDamage, newValue => _surgeryWithoutEquipmentDamage = newValue);
     }
 
     private void SubSurgery<TComp>(EntityEventRefHandler<TComp, SurgeryStepEvent> onStep,
@@ -694,6 +701,13 @@ public abstract partial class SharedSurgerySystem
         return group.Any(damageType => damageableComp.Damage.DamageDict.TryGetValue(damageType, out var value) && value > 0);
 
     }
+
+    private float _surgeryWithoutEquipmentDamage = 5f;
+    private float _surgeryOffTableDamage = 5f;
+    private float _surgeryMaxLotationDistance = 5f;
+    private float _surgeryMaxLotationDamage = 5f;
+    private int _surgeryMaxLotation = 5;
+
     private void HandleSanitization(SurgeryStepEvent args)
     {
         // If the (patient is a "patient" && patient is immune to sepsis), then theres nothing to do.
@@ -706,21 +720,21 @@ public abstract partial class SharedSurgerySystem
         // Check if the (user has gloves on && user has mask on) || (user has SanitizedComponent).
         if ((!_inventory.TryGetSlotEntity(args.User, "gloves", out var _) || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
             && !HasComp<SanitizedComponent>(args.User))
-            sepsis += new DamageSpecifier(poisonPrototype, 5);
+            sepsis += new DamageSpecifier(poisonPrototype, _surgeryWithoutEquipmentDamage);
 
         // Gaby Station -> Enshittificar Cirurgias e Cia start
         // Check if the (patient is buckled) && (patient is buckled to an operating table).
         if (!TryComp<BuckleComponent>(args.Body, out var buckleComponent)
             || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
-            sepsis += new DamageSpecifier(poisonPrototype, 5);
+            sepsis += new DamageSpecifier(poisonPrototype, _surgeryOffTableDamage);
 
-        var mobCount = _lookup.GetEntitiesInRange(args.Body, 5, flags: LookupFlags.Dynamic)
+        var mobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance, flags: LookupFlags.Dynamic)
             .Where(ent => _mobState.IsAlive(ent) && _interaction.InRangeUnobstructed(args.Body, ent, -1))
             .Count();
 
         // Only the surgeon and more two people around the surgery.
-        if (mobCount > 3)
-            sepsis += new DamageSpecifier(poisonPrototype, 5 * (mobCount - 3));
+        if (mobCount > _surgeryMaxLotation)
+            sepsis += new DamageSpecifier(poisonPrototype, _surgeryMaxLotationDamage * (mobCount - _surgeryMaxLotation));
         // Gaby Station -> Enshittificar Cirurgias e Cia end
 
         // If there is (no damage), theres nothing to do.

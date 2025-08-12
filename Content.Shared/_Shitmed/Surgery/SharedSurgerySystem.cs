@@ -77,6 +77,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     /// <summary>
     /// Cache of all surgery prototypes' singleton entities.
