@@ -1,14 +1,11 @@
 // SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
@@ -51,6 +48,8 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Physics;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -694,22 +693,35 @@ public abstract partial class SharedSurgerySystem
     }
     private void HandleSanitization(SurgeryStepEvent args)
     {
-        var sepsis = new DamageSpecifier();
+        // If the (patient is a "patient" && patient is immune to sepsis), then theres nothing to do.
+        if (TryComp<SurgeryTargetComponent>(args.Body, out var surgeryTargetComponent) && surgeryTargetComponent.SepsisImmune)
+            return;
 
-        // Check if the (user has gloves on && user has mask on) || (user has SanitizedComponent)
+        var sepsis = new DamageSpecifier();
+        var poisonPrototype = _prototypes.Index<DamageTypePrototype>("Poison");
+
+        // Check if the (user has gloves on && user has mask on) || (user has SanitizedComponent).
         if ((!_inventory.TryGetSlotEntity(args.User, "gloves", out var _) || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
             && !HasComp<SanitizedComponent>(args.User))
-            sepsis += new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+            sepsis += new DamageSpecifier(poisonPrototype, 5);
 
-        // Gaby Station -> Enshittificar Cirurgias e Cia
-        // Check if the (patient is buckled) && (patient is buckled to an operating table)
+        // Gaby Station -> Enshittificar Cirurgias e Cia start
+        // Check if the (patient is buckled) && (patient is buckled to an operating table).
         if (!TryComp<BuckleComponent>(args.Body, out var buckleComponent)
             || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
-            sepsis += new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+            sepsis += new DamageSpecifier(poisonPrototype, 5);
 
-        // If there is (no damage) || (patient is a "patient" && patient is immune to sepsis), then theres nothing to do
-        if (!sepsis.DamageDict.Any()
-            || TryComp<SurgeryTargetComponent>(args.Body, out var surgeryTargetComponent) && surgeryTargetComponent.SepsisImmune)
+        var mobCount = _lookup.GetEntitiesInRange(args.Body, 5, flags: LookupFlags.Dynamic)
+            .Where(ent => _mobState.IsAlive(ent) && _interaction.InRangeUnobstructed(args.Body, ent, -1))
+            .Count();
+
+        // Only the surgeon and more two people around the surgery.
+        if (mobCount > 3)
+            sepsis += new DamageSpecifier(poisonPrototype, 5 * (mobCount - 3));
+        // Gaby Station -> Enshittificar Cirurgias e Cia end
+
+        // If there is (no damage), theres nothing to do.
+        if (!sepsis.DamageDict.Any())
             return;
 
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);

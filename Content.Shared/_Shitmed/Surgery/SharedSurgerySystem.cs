@@ -46,6 +46,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Examine;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -71,6 +72,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private readonly ConsciousnessSystem _consciousness = default!;
     [Dependency] private readonly PainSystem _pain = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
 
     /// <summary>
     /// Cache of all surgery prototypes' singleton entities.
