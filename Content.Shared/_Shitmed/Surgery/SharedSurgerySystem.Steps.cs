@@ -703,8 +703,8 @@ public abstract partial class SharedSurgerySystem
 
         // Gaby Station -> Enshittificar Cirurgias e Cia
         // Check if the (patient is buckled) && (patient is buckled to an operating table)
-        if (!TryComp<BuckleComponent>(args.Body, out var buckle)
-            || !HasComp<OperatingTableComponent>(buckle.BuckledTo))
+        if (!TryComp<BuckleComponent>(args.Body, out var buckleComponent)
+            || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
             sepsis += new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
 
         // If there is (no damage) || (patient is a "patient" && patient is immune to sepsis), then theres nothing to do
