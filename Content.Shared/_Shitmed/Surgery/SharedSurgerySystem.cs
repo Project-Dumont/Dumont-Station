@@ -49,7 +49,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Examine;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
