@@ -691,18 +691,24 @@ public abstract partial class SharedSurgerySystem
     }
     private void HandleSanitization(SurgeryStepEvent args)
     {
-        if (_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
-            && _inventory.TryGetSlotEntity(args.User, "mask", out var _))
+        var sepsis = new DamageSpecifier();
+
+        // Check if the (user has gloves on && user has mask on) || (user has SanitizedComponent)
+        if ((!_inventory.TryGetSlotEntity(args.User, "gloves", out var _) || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
+            && !HasComp<SanitizedComponent>(args.User))
+            sepsis += new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+
+        // Gaby Station -> Enshittificar Cirurgias e Cia
+        // Check if the (patient is buckled) && (patient is buckled to an operating table)
+        if (!TryComp<BuckleComponent>(args.Body, out var buckle)
+            || !HasComp<OperatingTableComponent>(buckle.BuckledTo))
+            sepsis += new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+
+        // If there is (no damage) || (patient is a "patient" && patient is immune to sepsis), then theres nothing to do
+        if (!sepsis.DamageDict.Any()
+            || TryComp<SurgeryTargetComponent>(args.Body, out var surgeryTargetComponent) && surgeryTargetComponent.SepsisImmune)
             return;
 
-        if (HasComp<SanitizedComponent>(args.User))
-            return;
-
-        if (TryComp<SurgeryTargetComponent>(args.Body, out var surgeryTargetComponent) &&
-            surgeryTargetComponent.SepsisImmune)
-            return;
-
-        var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
     }
