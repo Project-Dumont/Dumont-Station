@@ -6,6 +6,6 @@
 - type: weightedRandom
   id: CentcommWeights
   weights:
-    "/Maps/_Gabystation/Centcomms/summerComm": 1
+    "/Maps/_Gabystation/Centcomms/summerComm.yml": 1
     "/Maps/centcomm.yml": 1
     "/Maps/_Gabystation/Centcomms/oldComm.yml": 1
