@@ -11,6 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Goobstation.Common.Blob;
 using Content.Goobstation.Server.Changeling.GameTicking.Rules;
 using Content.Goobstation.Server.Devil.GameTicking.Rules;
+using Content.Goobstation.Server.Gangs.GameTicking.Rules;
 using Content.Server.Administration.Managers;
 using Content.Server.Antag;
 using Content.Shared._EinsteinEngines.Silicon.Components;
@@ -80,6 +81,21 @@ public sealed partial class GoobAdminVerbSystem
             Message = Loc.GetString("admin-verb-make-devil"),
         };
         args.Verbs.Add(devilAntag);
+
+        // Gang
+        Verb gangAntag = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-gang-leader"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("_Goobstation/Clothing/Head/Hats/Gang/tophat.rsi"), "icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<GangRuleComponent>(targetPlayer, "Gang");
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-text-gang-leader"),
+        };
+        args.Verbs.Add(gangAntag);
     }
 
     public bool AntagVerbAllowed(GetVerbsEvent<Verb> args, [NotNullWhen(true)] out ICommonSession? target)

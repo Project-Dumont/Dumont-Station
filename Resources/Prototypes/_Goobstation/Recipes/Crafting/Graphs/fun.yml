@@ -25,3 +25,25 @@
               doAfter: 1
     - node: toygrenade
       entity: GrenadeToy
+
+- type: constructionGraph
+  id: GangSpray
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: end
+      steps:
+      - tag: SprayPainter
+        name: construction-graph-tag-spray-painter
+        icon:
+          sprite: Objects/Tools/spray_painter.rsi
+          state: spray_painter
+        doAfter: 4
+      - tag: DrinkCan
+        name: construction-graph-tag-empty-can
+        icon:
+          sprite: Objects/Consumable/Drinks/cola.rsi
+          state: icon_open
+  - node: end
+    entity: SprayPainterGang

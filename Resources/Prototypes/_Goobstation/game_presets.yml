@@ -165,6 +165,24 @@
     - LavalandStormScheduler
 
 - type: gamePreset
+  id: Gang
+  alias:
+  - Gang
+  - GangWars
+  - ViceCity # lol?
+  name: gang-title
+  description: gang-desc
+  showInVote: false
+  rules:
+    - Gang
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+    - LavalandStormScheduler
+
+- type: gamePreset
   id: TheGhost
   alias:
     - calm

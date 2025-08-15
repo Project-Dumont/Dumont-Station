@@ -392,3 +392,99 @@
     - Recyclable
     - WhitelistChameleon
     - HamsterWearable
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingHeadHatTophatGang
+  name: gang tophat
+  description: A black durable and stylish hat, used mostly by gang members.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/tophat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/tophat.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        offset: "0, 0.42"
+  - type: Unremoveable # its basically just a marker that youre in a gang
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingHeadHatLTophatGang
+  name: long tophat
+  description: A black durable and stylish hat, used mostly by gang members.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/ltophat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/ltophat.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        offset: "0, 0.5"
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingHeadHatWhiteTophatGang
+  name: white tophat
+  description: White, durable and stylish hat, used mostly by gang members.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/whtophat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/whtophat.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        offset: "0, 0.5"
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingHeadHatPurpleTophatGang
+  name: purple tophat
+  description: Purple, durable and stylish hat, used mostly by gang members.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/ptophat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/ptophat.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        offset: "0, 0.5"
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingHeadHatGoldenTophatGang
+  name: golden tophat
+  description: Golden, durable and stylish hat, used mostly by gang members.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/gtophat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/gtophat.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        offset: "0, 0.5"
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingHeadHatStarTophatGang
+  name: star tophat
+  description: A black, durable and stylish hat, used mostly by gang members.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/star_tophat.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/Gang/star_tophat.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        offset: "0, 0.5"
+  - type: Unremoveable

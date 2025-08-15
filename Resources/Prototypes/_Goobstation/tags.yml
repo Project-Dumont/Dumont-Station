@@ -530,6 +530,9 @@
   id: Steel
 
 - type: Tag
+  id: SprayPainter
+
+- type: Tag
   id: Stomach
 
 - type: Tag

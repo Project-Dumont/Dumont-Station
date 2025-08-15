@@ -1,0 +1,44 @@
+<Document>
+  # Gang Wars
+
+  <Box>
+  [color=#f3b355ff]Remember, I'm Sonny Forelli, and I'm the one keeping you afloat![/color]
+  </Box>
+
+  Gangs have 2 types of members, a Leader and a Member.
+  Gang leader spawns with a gang radio and a gang spray painter.
+
+  ## Basic knowledge
+
+  Gang leaders does not have any markings, so they are hard to identify.
+  Gang leaders (and members) can use gang radios to get locations of the gang tip-off crates. Every 8 minutes, there would be an announcement on the gang radio of the location of the drop, that will happen in 2 minutes.
+  <Box>
+    <GuideEntityEmbed Entity="SpawnSupplypodAnimation" Caption="Tip-off marking"/>
+  </Box>
+
+  Tip-off crates may contain weapons, armor, clothing and drugs, which are a good way to gain weapons to eliminate other gangs.
+  Gang radios are obtainable from tip-off crates, and roundstart in the leaders backpacks.
+
+
+  There are a maximum of 6 possible gangs, every gang has their own hat, [italic]their gang marking.[/italic]
+  The main objective of gang wars: Tag the most walls using your gang spray, and get rid of every other gang leader. But that is a no-easy task!
+  Because every time a gang leader dies, one random person from their gang becomes a new leader.
+
+  Gang members shouldn't conflict with security, following the escalation rules.
+
+  Every gang has their own marking, their own hat.
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadHatTophatGang" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadHatLTophatGang" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadHatWhiteTophatGang" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadHatPurpleTophatGang" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadHatGoldenTophatGang" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadHatStarTophatGang" Caption=""/>
+  </Box>
+  Every gang member has those forced on them once they've joined a gang.
+
+  <Box>
+  [color=#f3b355ff]There is no way to deconvert while you are in a gang, and there is no way to FORCE someone to join![/color]
+  </Box>
+
+</Document>

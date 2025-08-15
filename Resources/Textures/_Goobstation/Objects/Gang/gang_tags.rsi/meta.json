@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprite taken at from Goonstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "gangtag0"
+    },
+    {
+      "name": "gangtag1"
+    },
+    {
+      "name": "gangtag2"
+    },
+    {
+      "name": "gangtag3"
+    },
+    {
+      "name": "gangtag4"
+    },
+    {
+      "name": "gangtag5"
+    },
+    {
+      "name": "gangtag6"
+    },
+    {
+      "name": "gangtag7"
+    },
+    {
+      "name": "gangtag8"
+    },
+    {
+      "name": "gangtag10"
+    },
+    {
+      "name": "gangtag9"
+    },
+    {
+      "name": "gangtag11"
+    },
+    {
+      "name": "gangtag12"
+    },
+    {
+      "name": "gangtag13"
+    },
+    {
+      "name": "gangtag14"
+    },
+    {
+      "name": "gangtag15"
+    },
+    {
+      "name": "gangtag16"
+    },
+    {
+      "name": "gangtag17"
+    },
+    {
+      "name": "gangtag18"
+    },
+    {
+      "name": "gangtag19"
+    },
+    {
+      "name": "gangtag20"
+    },
+    {
+      "name": "gangtag21"
+    },
+    {
+      "name": "gangtag22"
+    }
+  ]
+}

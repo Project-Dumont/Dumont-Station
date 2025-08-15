@@ -121,6 +121,7 @@
     - Wizard
     - RampingStationEventScheduler
     - Changeling # Goobstation - changeling playtest
+    - Gang # Goobstation - when is it /\ going to be over?
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
@@ -154,6 +155,7 @@
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
     - Changeling # Goobstation - changeling playtest
+    - Gang # Goobstation
     - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset

@@ -50,7 +50,10 @@
     materialComposition:
       Steel: 75
       Plastic: 25
-  # Goobstation
+  # Goobstation below
   - type: Tool
     qualities:
     - Painting
+  - type: Tag
+    tags:
+    - SprayPainter

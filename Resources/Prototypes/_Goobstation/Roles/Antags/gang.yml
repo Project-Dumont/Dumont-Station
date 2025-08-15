@@ -1,0 +1,17 @@
+- type: antag
+  id: Gang
+  name: roles-antag-gang-leader-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-gang-leader-desc
+  guides: [ Gang ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30 hours
+
+- type: startingGear
+  id: GangLeaderStartingGear
+  storage:
+    back:
+    - GangRadio
+    - SprayPainterGang

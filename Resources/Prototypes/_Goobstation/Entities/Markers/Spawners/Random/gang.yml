@@ -1,0 +1,85 @@
+- type: entity
+  parent: CrateSyndicate
+  id: CrateGangFilled
+  name: gang equipment crate
+  description: A suspicious crate with gang markings. Contains various gang-related equipment.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: GangCrateLoot
+        rolls: !type:ConstantNumberSelector
+          value: 8
+
+- type: entityTable
+  id: GangCrateLoot
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterDameDane
+      prob: 0.8
+    - id: ClothingUniformJumpsuitDameDane
+      prob: 0.8
+    - id: ClothingShoesDameDane
+      prob: 0.8
+    - id: ClothingMaskNeckGaiter
+      prob: 0.7
+    - id: ClothingEyesGlassesSunglasses
+      prob: 0.65
+    - id: ClothingBeltBandolier
+      prob: 0.5
+    - id: GangRadio
+      prob: 1
+    - id: GangRadio
+      prob: 0.8
+    - id: GangRadio
+      prob: 0.5
+    - id: SprayPainterGang
+      prob: 0.4
+    - id: SprayPainterGang
+      prob: 0.4
+    - id: CombatKnife
+      prob: 0.4
+    - id: BaseBallBat
+      prob: 0.9
+    - id: BaseBallBat
+      prob: 0.7
+    - id: BaseBallBat
+      prob: 0.3
+    - id: Machete
+      prob: 0.3
+    - id: ThrowingKnife
+      prob: 0.2
+    - id: WeaponRevolverInspector
+      prob: 0.6
+    - id: SpeedLoaderMagnum
+      prob: 0.8
+    - id: SpeedLoaderMagnum
+      prob: 0.4
+    - id: WeaponShotgunSawn
+      prob: 0.5
+    - id: BoxLethalshot
+      prob: 0.7
+    - id: BoxZiptie
+      prob: 0.6
+    - id: MedkitCombatFilled
+      prob: 0.9
+    - id: SpaceCash5000
+      prob: 0.3
+    - id: SpaceCash1000
+      prob: 0.9
+    - id: LeavesCannabis
+      prob: 0.8
+    - id: LeavesCannabis
+      prob: 0.5
+    - id: LeavesCannabis
+      prob: 0.5
+    - id: LeavesCannabis
+      prob: 0.3
+    - id: ClothingOuterVestWeb
+      prob: 0.1
+    - id: WizardsGrimoireNoRefund
+      prob: 0.00000001
+    - id: WeaponPistolDebug
+      prob: 0.00000001
+    - id: MeleeDebugGib
+      prob: 0.00000001

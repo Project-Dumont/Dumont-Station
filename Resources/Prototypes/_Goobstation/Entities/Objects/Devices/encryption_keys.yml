@@ -26,8 +26,25 @@
     - CentCom
     - Future
     - Syndicate
+    - GangRadio
   - type: Sprite
     sprite: Objects/Devices/encryption_keys.rsi
     layers:
     - state: crypt_silver
     - state: nano_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyGang
+  name: gang encryption key
+  description: An encryption key used by gangs.
+  components:
+  - type: EncryptionKey
+    channels:
+    - GangRadio
+    defaultChannel: GangRadio
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_rusted
+    - state: pirate_label

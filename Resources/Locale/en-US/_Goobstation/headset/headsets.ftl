@@ -8,3 +8,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 chat-radio-future = Future
+chat-radio-gang = Gang

@@ -1,0 +1,14 @@
+- type: entity
+  id: SpawnSupplypodAnimation
+  # categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Gang/marker.rsi
+    state: marker_ping
+  - type: TimedDespawn
+    lifetime: 120
+  - type: SpawnOnDespawn
+    prototype: CrateGangFilled
+  - type: Tag
+    tags:
+    - HideContextMenu

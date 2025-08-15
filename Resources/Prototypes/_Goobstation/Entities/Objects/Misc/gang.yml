@@ -1,0 +1,263 @@
+- type: entity
+  id: SprayPainterGang
+  name: gang spray painter
+  parent: [ BaseItem, BaseMajorContraband]
+  description: A weird spray painter, that gang members use to mark their territory.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Gang/spray.rsi
+    state: icon
+  - type: GangSpray
+  - type: Construction
+    graph: GangSpray
+    node: end
+
+- type: entity
+  parent: [BaseItem, BaseMinorContraband]
+  id: GangRadio
+  name: suspicious radio
+  description: A radio, tuned to a specific frequency that gang members use to share information about new drops.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Gang/gang.rsi
+    state: radio
+  - type: RadioSpeaker
+    channels:
+    - GangRadio
+  - type: Speech
+    speechVerb: Robotic
+  - type: Tag
+    tags:
+    - Radio
+  - type: TelecomExempt
+
+- type: entity
+  id: RandomGangSignAny # i will not delete this because mappers told me to leave it
+  parent: MarkerBase
+  name: random gang sign spawner
+  components:
+  - type: Sprite # im lazy
+    layers:
+    - state: red
+    - sprite: Structures/Wallmounts/posters.rsi
+      state: random_anything
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - GangSign0
+    - GangSign1
+    - GangSign2
+    - GangSign3
+    - GangSign4
+    - GangSign5
+    - GangSign6
+    - GangSign7
+    - GangSign8
+    - GangSign9
+    - GangSign10
+    - GangSign11
+    - GangSign12
+    - GangSign13
+    - GangSign14
+    - GangSign15
+    - GangSign16
+    - GangSign17
+    - GangSign18
+    - GangSign19
+    - GangSign20
+    - GangSign21
+    - GangSign22
+    chance: 1
+
+- type: entity
+  id: GangSignBase
+  parent: BaseSign
+  abstract: true
+  name: gang sign
+  description: A gang sign, used by gang members to mark their territory. Its not a good idea to stand here, probably.
+  components:
+  - type: WallMount
+    arc: 360
+  - type: GangGraffiti
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Goobstation/Objects/Gang/gang_tags.rsi
+    snapCardinals: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PosterBroken:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign0
+  components:
+  - type: Sprite
+    state: gangtag0
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign1
+  components:
+  - type: Sprite
+    state: gangtag1
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign2
+  components:
+  - type: Sprite
+    state: gangtag2
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign3
+  components:
+  - type: Sprite
+    state: gangtag3
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign4
+  components:
+  - type: Sprite
+    state: gangtag4
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign5
+  components:
+  - type: Sprite
+    state: gangtag5
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign6
+  components:
+  - type: Sprite
+    state: gangtag6
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign7
+  components:
+  - type: Sprite
+    state: gangtag7
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign8
+  components:
+  - type: Sprite
+    state: gangtag8
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign9
+  components:
+  - type: Sprite
+    state: gangtag9
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign10
+  components:
+  - type: Sprite
+    state: gangtag10
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign11
+  components:
+  - type: Sprite
+    state: gangtag11
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign12
+  components:
+  - type: Sprite
+    state: gangtag12
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign13
+  components:
+  - type: Sprite
+    state: gangtag13
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign14
+  components:
+  - type: Sprite
+    state: gangtag14
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign15
+  components:
+  - type: Sprite
+    state: gangtag15
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign16
+  components:
+  - type: Sprite
+    state: gangtag16
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign17
+  components:
+  - type: Sprite
+    state: gangtag17
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign18
+  components:
+  - type: Sprite
+    state: gangtag18
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign19
+  components:
+  - type: Sprite
+    state: gangtag19
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign20
+  components:
+  - type: Sprite
+    state: gangtag20
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign21
+  components:
+  - type: Sprite
+    state: gangtag21
+
+- type: entity
+  parent: GangSignBase
+  id: GangSign22
+  components:
+  - type: Sprite
+    state: gangtag22
