@@ -19,6 +19,7 @@ chat-manager-no-such-channel = Não existe canal com a chave '{$key}'!
 chat-manager-whisper-headset-on-message = Você não pode sussurrar no rádio!
 
 chat-manager-server-wrap-message = [bold]{$message}[/bold]
+chat-manager-sender-announcement = Central de Comando
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]Anúncio de {$sender}:[/font][font size=12]
                                                 {$message}[/bold][/font]
 chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{$entityName}[/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]"[BubbleContent]{$message}[/BubbleContent]"[/font]
