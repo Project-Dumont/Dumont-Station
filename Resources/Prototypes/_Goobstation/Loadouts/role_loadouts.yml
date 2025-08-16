@@ -109,14 +109,14 @@
   - NanotrasenRepresentativeEnvirosuit
   - NanotrasenRepresentativeEnvirogloves
   # Civil loadout
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 - type: roleLoadout
   id: JobBlueshieldOfficer
@@ -138,14 +138,14 @@
   - BlueshieldOfficerEnvirogloves
   - BlueshieldOfficerGloves
   # Civil loadout
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 - type: roleLoadout
   id: JobNanotrasenCareerTrainer
@@ -167,14 +167,14 @@
   - CentComOfficerEnvirosuit
   - CentComOfficerEnvirogloves
   # Civil loadout
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 - type: roleLoadout
   id: RoleSurvivalNukieHonkops
@@ -205,14 +205,14 @@
   - BrigmedicEnvirosuit
   - BrigmedicEnvirogloves
   # Civil loadout
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 # gives plasmaman a plasma breathing tank
 # other species get nothing
