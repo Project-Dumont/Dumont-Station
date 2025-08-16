@@ -20,7 +20,7 @@
     - state: boombox
       map: ["enum.JukeboxVisualLayers.Base"]
     - state: light
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
       visible: false
       shader: unshaded
   - type: Appearance
