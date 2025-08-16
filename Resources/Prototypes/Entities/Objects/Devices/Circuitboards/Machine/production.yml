@@ -1494,7 +1494,7 @@
       prototype: Electrolyzer
       stackRequirements:
         Steel: 5
-        Capacitor: 4
+        Manipulator: 4
         CableHV: 5
         Plasteel: 2
 
@@ -1507,9 +1507,7 @@
     - type: MachineBoard
       prototype: Crystallizer
       stackRequirements:
-        Capacitor: 2
-        Manipulator: 4
-        MatterBin: 4
+        Manipulator: 10
         Steel: 5
         Glass: 5
 
@@ -1522,9 +1520,7 @@
     - type: MachineBoard
       prototype: BluespaceSender
       stackRequirements:
-        Capacitor: 4
-        Manipulator: 4
-        MatterBin: 2
+        Manipulator: 10
         Steel: 5
 
 - type: entity
@@ -1538,8 +1534,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineUpgradedFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1557,8 +1552,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineUpgradedHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1576,8 +1570,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineAdvancedFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1595,8 +1588,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineAdvancedHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
