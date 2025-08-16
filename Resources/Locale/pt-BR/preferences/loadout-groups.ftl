@@ -54,14 +54,14 @@ loadout-group-hop-backpack = Mochila do Chefe dos Funcionarios
 loadout-group-hop-outerclothing = Casaco do Chefe dos Funcionarios
 
 # Civilian
-loadout-group-passenger-jumpsuit = Roupas Civis
-loadout-group-passenger-mask = Máscaras Civis
-loadout-group-passenger-hat = Chapéus Civis
-loadout-group-passenger-gloves = Luvas Civis
-loadout-group-passenger-outerclothing = Casacos Civis
-loadout-group-passenger-shoes = Calçados Civis
-loadout-group-passenger-neck = Pescoços Civis
-loadout-group-passenger-belt = Cintos Civis
+loadout-group-civilian-jumpsuit = Roupas Civis
+loadout-group-civilian-mask = Máscaras Civis
+loadout-group-civilian-hat = Chapéus Civis
+loadout-group-civilian-gloves = Luvas Civis
+loadout-group-civilian-outerclothing = Casacos Civis
+loadout-group-civilian-shoes = Calçados Civis
+loadout-group-civilian-neck = Pescoços Civis
+loadout-group-civilian-belt = Cintos Civis
 
 loadout-group-bartender-head = Chapeu do Barman
 loadout-group-bartender-jumpsuit = Roupa do Barman
