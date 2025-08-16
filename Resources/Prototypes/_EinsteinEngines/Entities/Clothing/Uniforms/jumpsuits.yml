@@ -128,7 +128,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitRippedPunk
   name: ripped punk jeans
-  description: Black ripped jeans and a fishnet top. How punk.  
+  description: Black ripped jeans and a fishnet top. How punk.
   components:
   - type: Sprite
     sprite: _EinsteinEngines/Clothing/Uniforms/Jumpsuit/rippedpunk.rsi

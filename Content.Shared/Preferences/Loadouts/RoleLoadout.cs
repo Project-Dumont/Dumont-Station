@@ -67,6 +67,7 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
@@ -78,8 +79,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Inventory;
 using Content.Shared.CCVar;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Random;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;

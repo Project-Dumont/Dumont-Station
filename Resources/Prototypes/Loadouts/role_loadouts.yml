@@ -103,6 +103,8 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <78222136+Froffy025@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Phooooooooooooooooooooooooooooooosphate <184853112+Phooooooooooooooooooooooooooooooosphate@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
@@ -110,6 +112,7 @@
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
@@ -117,7 +120,9 @@
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Command real
+
 - type: roleLoadout
   id: JobCaptain
   groups:
@@ -183,14 +188,20 @@
   nameDataset: NamesAI
   canCustomizeName: true
 
-# Civilian
+# Goobstation - Passenger -> Civilian
 - type: roleLoadout
   id: JobPassenger
   groups:
   - GroupTankHarness
-  - PassengerJumpsuit
-  - CommonBackpack
-  - GenericJumpsuitLoadout
+  - CivilianJumpsuitRequired
+  - CivilianBackpack
+  - CivilianHat
+  - CivilianNeck
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   - Glasses
   - Survival
   - Trinkets
@@ -214,13 +225,22 @@
   - GroupTankHarness
   - BartenderHead
   - BartenderJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - BartenderOuterClothing
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - BartenderEnvirohelm
   - BartenderEnvirosuit
@@ -239,12 +259,21 @@
   groups:
   - GroupTankHarness
   - BartenderJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ServiceWorkerEnvirohelm
   - ServiceWorkerEnvirosuit
@@ -265,13 +294,22 @@
   - ChefHead
   - ChefMask
   - ChefJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - ChefOuterClothing
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ChefEnvirohelm
   - ChefEnvirosuit
@@ -290,12 +328,21 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - LibrarianEnvirohelm
   - LibrarianEnvirosuit
@@ -315,12 +362,21 @@
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - LawyerEnvirohelm
   - LawyerEnvirosuit
@@ -342,13 +398,22 @@
   - ChaplainMask
   - ChaplainNeck
   - ChaplainJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - ChaplainOuterClothing
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ChaplainEnvirohelm
   - ChaplainEnvirosuit
@@ -369,7 +434,7 @@
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
-  - CommonBackpack
+  - CivilianBackpack
   - JanitorOuterClothing
   - Glasses
   - Survival
@@ -377,6 +442,15 @@
   - JanitorPlunger
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - JanitorEnvirohelm
   - JanitorEnvirosuit
@@ -403,6 +477,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - BotanistEnvirohelm
   - BotanistEnvirosuit
@@ -415,6 +498,7 @@
   - PassengerOuterClothing
   - PassengerShoes
   - PassengerBelt
+
 
 - type: roleLoadout
   id: JobClown
@@ -429,20 +513,20 @@
   - Glasses
   - SurvivalClown
   - Trinkets
-
-  - PassengerJumpsuit
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerShoes
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   - Animals
   # Goobstation - EE Plasmeme Change.
   - ClownEnvirohelm
   - ClownEnvirosuit
   - ClownEnvirogloves
+
 
 - type: roleLoadout
   id: JobMime
@@ -458,14 +542,14 @@
   - Glasses
   - SurvivalMime
   - Trinkets
-  - PassengerJumpsuit
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerShoes
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   - Animals
   # Goobstation - EE Plasmeme Change.
   - MimeEnvirohelm
@@ -478,7 +562,7 @@
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - MusicianOuterClothing
   - Glasses
   - Survival
@@ -486,6 +570,15 @@
   - Instruments
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - MusicianEnvirohelm
   - MusicianEnvirosuit
@@ -498,6 +591,7 @@
   - PassengerOuterClothing
   - PassengerShoes
   - PassengerBelt
+
 
 # Cargo
 - type: roleLoadout
@@ -515,6 +609,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - QuartermasterEnvirohelm
   - QuartermasterEnvirosuit
@@ -543,6 +646,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - CargoTechnicianEnvirohelm
   - CargoTechnicianEnvirosuit
@@ -555,6 +667,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -569,6 +682,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - SalvageEnvirohelm
   - SalvageEnvirosuit
@@ -581,6 +703,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 # Engineering
 - type: roleLoadout
@@ -597,6 +720,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ChiefEngineerEnvirohelm
   - ChiefEngineerEnvirosuit
@@ -609,6 +741,7 @@
   - PassengerGloves
   - PassengerOuterClothing
 
+
 - type: roleLoadout
   id: JobTechnicalAssistant
   groups:
@@ -619,6 +752,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - TechnicalAssistantEnvirohelm
   - TechnicalAssistantEnvirosuit
@@ -631,6 +773,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -646,6 +789,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - StationEngineerEnvirohelm
   - StationEngineerEnvirosuit
@@ -658,6 +810,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -672,6 +825,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - AtmosEnvirohelm
   - AtmosEnvirosuit
@@ -684,6 +846,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 # Science
 - type: roleLoadout
@@ -702,6 +865,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ResearchDirectorEnvirosuit
   - ResearchDirectorEnvirohelm
@@ -714,6 +886,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 - type: roleLoadout
   id: JobScientist
@@ -732,6 +905,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ScientistEnvirohelm
   - ScientistEnvirosuit
@@ -745,6 +927,7 @@
   - PassengerOuterClothing
   - PassengerBelt
 
+
 - type: roleLoadout
   id: JobResearchAssistant
   groups:
@@ -756,6 +939,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ResearchAssistantEnvirohelm
   - ResearchAssistantEnvirosuit
@@ -768,6 +960,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 # Security
 - type: roleLoadout
@@ -880,6 +1073,7 @@
   - SecurityCadetEnvirosuit
   - SecurityCadetEnvirogloves
 
+
 # Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
@@ -898,6 +1092,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ChiefMedicalOfficerEnvirohelm
   - ChiefMedicalOfficerEnvirosuit
@@ -909,6 +1112,7 @@
   - PassengerFace
   - PassengerGloves
   - PassengerOuterClothing
+
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -927,6 +1131,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - MedicalDoctorEnvirohelm
   - MedicalDoctorEnvirosuit
@@ -939,6 +1152,7 @@
   - PassengerGloves
   - PassengerOuterClothing
 
+
 - type: roleLoadout
   id: JobMedicalIntern
   groups:
@@ -950,6 +1164,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - MedicalInternEnvirohelm
   - MedicalInternEnvirosuit
@@ -961,6 +1184,7 @@
   - PassengerFace
   - PassengerGloves
   - PassengerOuterClothing
+
 
 - type: roleLoadout
   id: JobChemist
@@ -977,6 +1201,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ChemistEnvirohelm
   - ChemistEnvirosuit
@@ -988,6 +1221,7 @@
   - PassengerFace
   - PassengerGloves
   - PassengerOuterClothing
+
 
 - type: roleLoadout
   id: JobParamedic
@@ -1005,6 +1239,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ParamedicEnvirohelm
   - ParamedicEnvirosuit
@@ -1017,6 +1260,7 @@
   - PassengerGloves
   - PassengerOuterClothing
 
+
 # Wildcards
 - type: roleLoadout
   id: JobZookeeper
@@ -1024,12 +1268,21 @@
   - ZookeeperHead
   - ZookeeperJumpsuit
   - GroupTankHarness
-  - CommonBackpack
+  - CivilianBackpack
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ZookeeperEnvirohelm
   - ZookeeperEnvirosuit
@@ -1042,18 +1295,28 @@
   - PassengerOuterClothing
   - PassengerBelt
 
+
 - type: roleLoadout
   id: JobReporter
   groups:
   - GroupTankHarness
   - ReporterJumpsuit
   - ReporterOuterClothing # Goobstation - Bodycams
-  - CommonBackpack
+  - CivilianBackpack
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoesRequired
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - ReporterEnvirohelm
   - ReporterEnvirosuit
@@ -1064,6 +1327,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 
 - type: roleLoadout
@@ -1077,6 +1341,15 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - PsychologistEnvirohelm
   - PsychologistEnvirosuit
@@ -1090,18 +1363,28 @@
   - PassengerOuterClothing
   - PassengerBelt
 
+
 - type: roleLoadout
   id: JobBoxer
   groups:
   - GroupTankHarness
   - BoxerJumpsuit
   - BoxerGloves
-  - CommonBackpack
+  - CivilianBackpack
   - Glasses
   - Survival
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  # Goobstation - Loadout Change
+  - CivilianJumpsuit
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianShoes #yeah i guess these guys can forego shoes
+  - CivilianBelt
   # Goobstation - EE Plasmeme Change.
   - BoxerEnvirohelm
   - BoxerEnvirosuit
@@ -1112,6 +1395,7 @@
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerBelt
+
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
