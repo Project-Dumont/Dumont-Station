@@ -85,6 +85,8 @@ namespace Content.Shared.Localizations
             //_loc.AddFunction(cultureEn, "MANY", FormatMany);
             _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
+            _loc.AddFunction(cultureEn, "ENERGYWATTHOURS", FormatEnergyWattHours);
             _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
             _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
             _loc.AddFunction(cultureEn, "LOC", FormatLoc);
