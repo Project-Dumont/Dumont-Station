@@ -14,6 +14,7 @@
 // SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyle Tyo <akikai297@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
