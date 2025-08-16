@@ -1,20 +1,20 @@
 chatsan-word-1 = omg
-chatsan-replacement-1 = meu deus!
+chatsan-replacement-1 = ah meu deus!
 
 chatsan-word-2 = omfg
-chatsan-replacement-2 = meu deus!!!
+chatsan-replacement-2 = !
 
 chatsan-word-3 = ong
 chatsan-replacement-3 = por deus
 
 chatsan-word-4 = wtf
-chatsan-replacement-4 = que porra é essa
+chatsan-replacement-4 = que merda é essa
 
 chatsan-word-5 = wth
-chatsan-replacement-5 = que merda é essa
+chatsan-replacement-5 = que porra é essa
 
 chatsan-word-6 = tf
-chatsan-replacement-6 = que porra
+chatsan-replacement-6 = que merda
 
 chatsan-word-7 = afaik
 chatsan-replacement-7 = pelo que eu sei
@@ -26,10 +26,10 @@ chatsan-word-9 = ikr
 chatsan-replacement-9 = eu sei, né
 
 chatsan-word-10 = idc
-chatsan-replacement-10 = não ligo
+chatsan-replacement-10 = não me importo
 
 chatsan-word-12 = tbh
-chatsan-replacement-12 = honestamente
+chatsan-replacement-12 = pra ser honesto
 
 chatsan-word-13 = lmk
 chatsan-replacement-13 = me avise
@@ -44,7 +44,7 @@ chatsan-word-16 = iirc
 chatsan-replacement-16 = se eu lembro bem
 
 chatsan-word-17 = np
-chatsan-replacement-17 = sem problemat
+chatsan-replacement-17 = sem problema
 
 chatsan-word-18 = omw
 chatsan-replacement-18 = tô a caminho
@@ -64,25 +64,25 @@ chatsan-word-24 = fr
 chatsan-replacement-24 = sério
 
 chatsan-word-25 = brb
-chatsan-replacement-25 = já volto
+chatsan-replacement-25 = volto já
 
 chatsan-word-26 = btw
-chatsan-replacement-26 = aliás
+chatsan-replacement-26 = então
 
 chatsan-word-27 = jk
-chatsan-replacement-27 = zoeira
+chatsan-replacement-27 = tô zoando
 
 chatsan-word-28 = thx
-chatsan-replacement-28 = obrigado
+chatsan-replacement-28 = obrigada
 
 chatsan-word-29 = ty
-chatsan-replacement-29 = obrigado
+chatsan-replacement-29 = obrigada
 
 chatsan-word-30 = afk
 chatsan-replacement-30 = ssd
 
 chatsan-word-31 = stfu
-chatsan-replacement-31 = cala a boca
+chatsan-replacement-31 = cala a sua boca
 
 chatsan-word-32 = gtg
 chatsan-replacement-32 = tenho que ir
@@ -91,10 +91,10 @@ chatsan-word-33 = gl
 chatsan-replacement-33 = boa sorte
 
 chatsan-word-34 = hbu
-chatsan-replacement-34 = e você?
+chatsan-replacement-34 = e você
 
 chatsan-word-35 = hmu
-chatsan-replacement-35 = me chama
+chatsan-replacement-35 = vou querer um gole
 
 chatsan-word-36 = gtfo
 chatsan-replacement-36 = sai daqui porra
@@ -103,7 +103,7 @@ chatsan-word-37 = wdym
 chatsan-replacement-37 = o que você quer dizer
 
 chatsan-word-38 = mf
-chatsan-replacement-38 = filho da puta
+chatsan-replacement-38 = filha da mãe
 
 chatsan-word-39 = etc
 chatsan-word-40 = etc.
@@ -113,16 +113,16 @@ chatsan-word-41 = wyd
 chatsan-replacement-41 = o que você tá fazendo
 
 chatsan-word-42 = ofc
-chatsan-replacement-42 = claro
+chatsan-replacement-42 = é claro
 
 chatsan-word-43 = pdc
-chatsan-replacement-43 = pode crer
+chatsan-replacement-43 = podes crer
 
 chatsan-word-44 = pdp
 chatsan-replacement-44 = pode pá
 
 chatsan-word-45 = tlg
-chatsan-replacement-45 = tô ligado
+chatsan-replacement-45 = tô ligada
 
 chatsan-word-46 = tmj
 chatsan-replacement-46 = tamo junto
@@ -146,14 +146,14 @@ chatsan-word-52 = fml
 chatsan-replacement-52 = família
 
 chatsan-word-53 = maints
-chatsan-word-54 = maint
+chatsan-word-54 = maits
 chatsan-replacement-manutencao = manutenção
 
 chatsan-word-55 = cia
 chatsan-replacement-55 = companhia
 
 chatsan-word-56 = obg
-chatsan-replacement-56 = obrigado
+chatsan-replacement-56 = obrigada
 
 chatsan-word-57 = pq
 chatsan-replacement-57 = porque
@@ -187,7 +187,7 @@ chatsan-word-67 = flw
 chatsan-replacement-67 = falou
 
 chatsan-word-68 = plmd
-chatsan-replacement-68 = pelo amor de deus
+chatsan-replacement-68 = pelo amor de Deus
 
 chatsan-word-69 = plmns
 chatsan-replacement-69 = pelo menos
@@ -208,10 +208,10 @@ chatsan-word-74 = vcs
 chatsan-replacement-74 = vocês
 
 chatsan-word-75 = mds
-chatsan-replacement-75 = meu deus
+chatsan-replacement-75 = meu Deus
 
 chatsan-word-76 = fds
-chatsan-replacement-76 = foda-se
+chatsan-replacement-76 = final de semana
 
 chatsan-word-77 = cap
 chatsan-replacement-77 = Capitão
@@ -268,7 +268,7 @@ chatsan-replacement-95 = saudades
 
 chatsan-word-96 = krl
 chatsan-word-97 = crl
-chatsan-replacement-96 = caralho
+chatsan-replacement-caralho = caralho
 
 chatsan-word-98 = ngm
 chatsan-replacement-98 = ninguém
@@ -315,7 +315,7 @@ chatsan-word-113 = dnv
 chatsan-replacement-113 = de novo
 
 chatsan-word-114 = qm
-chatsan-replacement-114 = Intendente Logístico
+chatsan-replacement-114 = intendente logístico
 
 chatsan-word-115 = ce
 chatsan-replacement-115 = Engenheiro Chefe
@@ -324,7 +324,7 @@ chatsan-word-116 = cmo
 chatsan-replacement-116 = Médico Chefe
 
 chatsan-word-117 = rd
-chatsan-replacement-117 = Diretor de Pesquisa
+chatsan-replacement-117 = diretor de pesquisa
 
 chatsan-word-118 = hos
 chatsan-replacement-118 = Chefe da Segurança
