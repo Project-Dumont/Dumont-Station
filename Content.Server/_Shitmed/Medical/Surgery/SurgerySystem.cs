@@ -46,6 +46,8 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly WoundSystem _wounds = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
+
     public override void Initialize()
     {
         base.Initialize();

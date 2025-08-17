@@ -51,9 +51,8 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Physics;
 using Content.Shared._Gabystation.CCVar;
+using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -717,9 +716,7 @@ public abstract partial class SharedSurgerySystem
         var sepsis = new DamageSpecifier();
         var poisonPrototype = _prototypes.Index<DamageTypePrototype>("Poison");
 
-        // Check if the (user has gloves on && user has mask on) || (user has SanitizedComponent).
-        if ((!_inventory.TryGetSlotEntity(args.User, "gloves", out var _) || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
-            && !HasComp<SanitizedComponent>(args.User))
+        if (!IsSanitazed(args.User))
             sepsis += new DamageSpecifier(poisonPrototype, _surgeryWithoutEquipmentDamage);
 
         // Gaby Station -> Enshittificar Cirurgias e Cia start
@@ -728,8 +725,14 @@ public abstract partial class SharedSurgerySystem
             || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
             sepsis += new DamageSpecifier(poisonPrototype, _surgeryOffTableDamage);
 
+        // Conta a entidades que estão vivas, não são borgs, estão sem luva/mascara e tem acesso ao paciente.
         var mobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance, flags: LookupFlags.Dynamic)
-            .Where(ent => _mobState.IsAlive(ent) && _interaction.InRangeUnobstructed(args.Body, ent, -1))
+            .Where(ent =>
+                _mobState.IsAlive(ent)
+                && !HasComp<BorgChassisComponent>(ent)
+                && !IsSanitazed(ent)
+                && _interaction.InRangeUnobstructed(args.Body, ent, -1)
+            )
             .Count();
 
         // Only the surgeon and more two people around the surgery.
@@ -743,6 +746,15 @@ public abstract partial class SharedSurgerySystem
 
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
+
+        bool IsSanitazed(EntityUid ent)
+        {
+            if (HasComp<SanitizedComponent>(args.User))
+                return true;
+
+            return _inventory.TryGetSlotEntity(args.User, "gloves", out var _)
+                && _inventory.TryGetSlotEntity(args.User, "mask", out var _);
+        }
     }
 
     private bool TryToolAudio(Entity<SurgeryStepComponent> ent, SurgeryStepEvent args)
