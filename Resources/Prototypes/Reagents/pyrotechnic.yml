@@ -78,6 +78,7 @@
   physicalDesc: reagent-physical-desc-soapy
   flavor: bitter
   color: "#FA00AF"
+  flammability: 5
   tileReactions:
   - !type:FlammableTileReaction
     temperatureMultiplier: 5
@@ -181,7 +182,7 @@
         damage:
           types:
             Heat: 2
-            Caustic: 0.5 # CLF3 is corrosive    
+            Caustic: 0.5 # CLF3 is corrosive
       - !type:FlammableReaction
         multiplier: 0.2
       - !type:AdjustTemperature
@@ -228,6 +229,7 @@
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
   friction: 0.4
+  flammability: 2
   tileReactions:
   - !type:FlammableTileReaction {}
   metabolisms:

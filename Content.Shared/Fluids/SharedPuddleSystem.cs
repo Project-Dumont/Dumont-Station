@@ -23,6 +23,7 @@ using Content.Shared.Fluids.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.StepTrigger.Components;
 using Robust.Shared.Containers;
+using Content.Shared.Atmos;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -62,6 +63,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         SubscribeLocalEvent<PuddleComponent, GetFootstepSoundEvent>(OnGetFootstepSound);
         SubscribeLocalEvent<PuddleComponent, ExaminedEvent>(HandlePuddleExamined);
         SubscribeLocalEvent<PuddleComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
+        SubscribeLocalEvent<PuddleComponent, TileFireEvent>(OnPuddleBurn);
 
         InitializeSpillable();
     }
@@ -210,6 +212,17 @@ public abstract partial class SharedPuddleSystem : EntitySystem
 
             solution.RemoveReagent(reagent, removed);
         }
+    }
+
+    public void OnPuddleBurn(Entity<PuddleComponent> ent, ref TileFireEvent args)
+    {
+        if (!_solutionContainerSystem.ResolveSolution(ent.Owner,
+                ent.Comp.SolutionName,
+                ref ent.Comp.Solution,
+                out var solution))
+            return;
+        _solutionContainerSystem.BurnFlammableReagents(ent.Comp.Solution.Value, 0.05f);
+
     }
 
     #region Spill
