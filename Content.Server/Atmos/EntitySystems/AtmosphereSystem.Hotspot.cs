@@ -184,7 +184,7 @@ namespace Content.Server.Atmos.EntitySystems
                             tile.Hotspot.Volume = exposedVolume;
                     }
                 }
-                tile.Hotspot.Temperature = AddClampedTemperature(tile.Hotspot.Temperature, 5 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 2)));
+                tile.Hotspot.Temperature = AddClampedTemperature(tile.Hotspot.Temperature, 1 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 1.2)));
 
                 return;
             }
@@ -196,7 +196,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                 var temperature = exposedTemperature;
                 if(puddleFlammability > 0)
-                    temperature = AddClampedTemperature(temperature, 5 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 2)));
+                    temperature = AddClampedTemperature(temperature, 1 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 1.2)));
                 tile.Hotspot = new Hotspot
                 {
                     Volume = exposedVolume * 25f,
