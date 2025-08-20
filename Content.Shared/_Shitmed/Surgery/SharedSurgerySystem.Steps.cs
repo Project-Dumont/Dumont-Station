@@ -726,7 +726,7 @@ public abstract partial class SharedSurgerySystem
             sepsis += new DamageSpecifier(poisonPrototype, _surgeryOffTableDamage);
 
         // Conta a entidades que estão vivas, não são borgs, estão sem luva/mascara e tem acesso ao paciente.
-        var mobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance, flags: LookupFlags.Dynamic)
+        var mobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance)
             .Where(ent =>
                 _mobState.IsAlive(ent)
                 && !HasComp<BorgChassisComponent>(ent)
