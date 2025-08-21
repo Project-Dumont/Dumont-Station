@@ -58,6 +58,11 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 
 public abstract partial class SharedSurgerySystem
 {
+    private float _sepsisEquipmentPenalty;
+    private float _sepsisLocationPenalty;
+    private float _sepsisCrowdingPenalty;
+    private float _crowdingCheckRange;
+
     private void InitializeSteps()
     {
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepEvent>(OnToolStep);
@@ -89,10 +94,10 @@ public abstract partial class SharedSurgerySystem
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
         });
 
-        _config.OnValueChanged(GabyCVars.SurgeryMaxLotationDamage, newValue => _surgeryMaxLotationDamage = newValue);
-        _config.OnValueChanged(GabyCVars.SurgeryMaxLotationDistance, newValue => _surgeryMaxLotationDistance = newValue);
-        _config.OnValueChanged(GabyCVars.SurgeryOffTableDamage, newValue => _surgeryOffTableDamage = newValue);
-        _config.OnValueChanged(GabyCVars.SurgeryWithoutEquipmentDamage, newValue => _surgeryWithoutEquipmentDamage = newValue);
+        _config.OnValueChanged(GabyCVars.SurgerySepsisEquipmentPenalty, value => _sepsisEquipmentPenalty = value, true);
+        _config.OnValueChanged(GabyCVars.SurgerySepsisLocationPenalty, value => _sepsisLocationPenalty = value, true);
+        _config.OnValueChanged(GabyCVars.SurgerySepsisCrowdingPenalty, value => _sepsisCrowdingPenalty = value, true);
+        _config.OnValueChanged(GabyCVars.SurgeryCrowdingCheckRange, value => _crowdingCheckRange = value, true);
     }
 
     private void SubSurgery<TComp>(EntityEventRefHandler<TComp, SurgeryStepEvent> onStep,
@@ -700,11 +705,6 @@ public abstract partial class SharedSurgerySystem
 
     }
 
-    private float _surgeryWithoutEquipmentDamage = 5f;
-    private float _surgeryOffTableDamage = 5f;
-    private float _surgeryMaxLotationDistance = 5f;
-    private float _surgeryMaxLotationDamage = 5f;
-
     private void HandleSanitization(SurgeryStepEvent args)
     {
         // If the (patient is a "patient" && patient is immune to sepsis), then theres nothing to do.
@@ -715,16 +715,15 @@ public abstract partial class SharedSurgerySystem
         var poisonPrototype = _prototypes.Index<DamageTypePrototype>("Poison");
 
         if (!IsSanitazed(args.User))
-            sepsis += new DamageSpecifier(poisonPrototype, _surgeryWithoutEquipmentDamage);
+            sepsis += new DamageSpecifier(poisonPrototype, _sepsisEquipmentPenalty);
 
         // Gaby Station -> Enshittificar Cirurgias e Cia start
         // Check if the (patient is buckled) && (patient is buckled to an operating table).
         if (!TryComp<BuckleComponent>(args.Body, out var buckleComponent)
             || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
-            sepsis += new DamageSpecifier(poisonPrototype, _surgeryOffTableDamage);
+            sepsis += new DamageSpecifier(poisonPrototype, _sepsisLocationPenalty);
 
-        // Conta a entidades que estão vivas, não são borgs, estão sem luva/mascara e tem acesso ao paciente.
-        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance)
+        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _crowdingCheckRange)
             .Where(ent =>
                 _mobState.IsAlive(ent)
                 && !HasComp<BorgChassisComponent>(ent)
@@ -734,7 +733,7 @@ public abstract partial class SharedSurgerySystem
             .Count();
 
         if (unsanitazedMobCount > 0)
-            sepsis += new DamageSpecifier(poisonPrototype, _surgeryMaxLotationDamage * unsanitazedMobCount);
+            sepsis += new DamageSpecifier(poisonPrototype, _sepsisCrowdingPenalty * unsanitazedMobCount);
         // Gaby Station -> Enshittificar Cirurgias e Cia end
 
         // If there is (no damage), theres nothing to do.

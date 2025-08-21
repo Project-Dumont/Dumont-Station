@@ -29,27 +29,29 @@ public sealed partial class GabyCVars
     // Enshittificar Cirurgias e Cia
 
     /// <summary>
-    /// Quantidade de veneno causado por passo ao fazer uma cirurgia sem luva ou sem máscara.
+    /// Poison damage applied per surgery step when the surgeon lacks proper PPE.
+    /// Triggers when missing gloves or mask and not sanitized.
     /// </summary>
-    public static readonly CVarDef<float> SurgeryWithoutEquipmentDamage =
-        CVarDef.Create("gaby.surgery.surgery_without_equipment_damage", 5f, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<float> SurgerySepsisEquipmentPenalty =
+        CVarDef.Create("gaby.surgery.sepsis_equipment_penalty", 5f, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Quantidade de veneno causado por passo ao fazer uma cirurgia fora da mesa de operação.
+    /// Poison damage applied per surgery step when operating outside proper surgical tables.
     /// </summary>
-    public static readonly CVarDef<float> SurgeryOffTableDamage =
-        CVarDef.Create("gaby.surgery.surgery_off_table_damage", 5f, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<float> SurgerySepsisLocationPenalty =
+        CVarDef.Create("gaby.surgery.sepsis_location_penalty", 5f, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Quantidade de veneno causado por passo e por ser vivo ao fazer uma cirurgia além da lotação máxima.
+    /// Poison damage applied per surgery step for each unsanitazed person around surgery.
     /// </summary>
-    public static readonly CVarDef<float> SurgeryMaxLotationDamage =
-        CVarDef.Create("gaby.surgery.surgery_max_lotation_damage", 5f, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<float> SurgerySepsisCrowdingPenalty =
+        CVarDef.Create("gaby.surgery.sepsis_crowding_penalty", 5f, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Distância em tiles que será procurado entidades pra lotação máxima.
+    /// Range in tiles to check for crowding around surgery sites.
+    /// Only living entities within this range count toward crowding penalties.
     /// </summary>
-    public static readonly CVarDef<float> SurgeryMaxLotationDistance =
-        CVarDef.Create("gaby.surgery.surgery_max_lotation_range", 5f, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<float> SurgeryCrowdingCheckRange =
+        CVarDef.Create("gaby.surgery.crowding_check_range", 5f, CVar.SERVER | CVar.REPLICATED);
 
 }
