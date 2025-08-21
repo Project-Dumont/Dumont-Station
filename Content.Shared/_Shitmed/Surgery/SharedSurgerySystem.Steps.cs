@@ -746,11 +746,9 @@ public abstract partial class SharedSurgerySystem
 
         bool IsSanitazed(EntityUid ent)
         {
-            if (HasComp<SanitizedComponent>(args.User))
-                return true;
-
-            return _inventory.TryGetSlotEntity(args.User, "gloves", out var _)
-                && _inventory.TryGetSlotEntity(args.User, "mask", out var _);
+            return HasComp<SanitizedComponent>(ent)
+                || _inventory.TryGetSlotEntity(ent, "gloves", out var _)
+                && _inventory.TryGetSlotEntity(ent, "mask", out var _);
         }
     }
 
