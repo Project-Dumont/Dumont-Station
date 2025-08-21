@@ -46,8 +46,8 @@
     Tail: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking # Gaby change
-    Undershirt: MobHumanoidAnyMarking # Gaby change
+    #Underwear: MobHumanoidAnyMarking # Gaby change
+    #Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: markingPoints
   id: MobResomiMarkingLimits
@@ -73,12 +73,12 @@
       points: 2
       required: false
     # Begin DeltaV changes.
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
-      points: 1
-      required: false
+    #Underwear:
+    #  points: 1
+    #  required: false
+    #Undershirt:
+    #  points: 1
+    #  required: false
     # End DeltaV changes
 
 - type: humanoidBaseSprite

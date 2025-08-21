@@ -168,8 +168,7 @@
   - type: PipeAppearance
   - type: PipeColorVisuals
   - type: NodeContainer
-  # Goobstation - Allow device-on-pipe stacking
-  # - type: PipeRestrictOverlap
+  - type: PipeRestrictOverlap
   - type: AtmosUnsafeUnanchor
   - type: AtmosPipeColor
   - type: AtmosMonitoringConsoleDevice
@@ -211,15 +210,6 @@
       containers:
         VentCrawlerHolderComponent: !type:Container
 
-
-# Goobstation - Allow device-on-pipe stacking
-- type: entity
-  abstract: true
-  parent: GasPipeBase
-  id: GasPipeNoOverlap
-  components:
-  - type: PipeRestrictOverlap
-
 - type: entity
   abstract: true
   parent: GasPipeSansLayers
@@ -236,7 +226,7 @@
 
 - type: entity
   # Goobstation - Allow device-on-pipe stacking
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeHalf
   suffix: Half
   placement:
@@ -271,8 +261,7 @@
     - PipeNetworks
 
 - type: entity
-  # Goobstation - Allow device-on-pipe stacking
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeStraight
   suffix: Straight
   placement:
@@ -321,8 +310,7 @@
     - PipeNetworks
 
 - type: entity
-  # Goobstation - Allow device-on-pipe stacking
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeBend
   suffix: Bend
   placement:
@@ -383,8 +371,7 @@
     - PipeNetworks
 
 - type: entity
-  # Goobstation - Allow device-on-pipe stacking
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeTJunction
   placement:
     mode: AlignAtmosPipeLayers
@@ -437,8 +424,7 @@
       VentCrawlerTube: !type:Container
 
 - type: entity
-  # Goobstation - Allow device-on-pipe stacking
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeFourway
   suffix: Fourway
   placement:
@@ -495,8 +481,7 @@
 
 - type: entity
   id: GasPipeBroken
-  # Goobstation - Allow device-on-pipe stacking
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   name: broken pipe
   description: It used to hold gas.
   components:

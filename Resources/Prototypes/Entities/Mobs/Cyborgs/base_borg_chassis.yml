@@ -150,6 +150,7 @@
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Matthew Herber <32679887+Happyrobot33@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Quantum-cross <7065792+Quantum-cross@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
@@ -199,7 +200,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 150
+        density: 300
         mask:
         - MobMask
         layer:
@@ -409,7 +410,8 @@
       minValue: 0.1
       maxValue: 2.0
       isLooped: true
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
+    spriteLayer: light
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png

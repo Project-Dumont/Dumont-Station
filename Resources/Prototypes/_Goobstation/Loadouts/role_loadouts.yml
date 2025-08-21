@@ -78,10 +78,14 @@
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
@@ -103,14 +107,20 @@
   - Animals
   - GroupSpeciesBreathTool
   - Survival
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  - NanotrasenRepresentativeGloves
+  # Goobstation - EE Plasmeme Change.
+  - NanotrasenRepresentativeEnvirohelm
+  - NanotrasenRepresentativeEnvirosuit
+  - NanotrasenRepresentativeEnvirogloves
+  # Civil loadout
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 - type: roleLoadout
   id: JobBlueshieldOfficer
@@ -126,14 +136,20 @@
   - Animals
   - GroupSpeciesBreathTool
   - SurvivalSecurity
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  # Goobstation - EE Plasmeme Change.
+  - BlueshieldOfficerEnvirohelm
+  - BlueshieldOfficerEnvirosuit
+  - BlueshieldOfficerEnvirogloves
+  - BlueshieldOfficerGloves
+  # Civil loadout
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 - type: roleLoadout
   id: JobNanotrasenCareerTrainer
@@ -150,14 +166,19 @@
   - Animals
   - GroupSpeciesBreathTool
   - Survival
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  # Goobstation - EE Plasmeme Change.
+  - CentComOfficerEnvirohelm
+  - CentComOfficerEnvirosuit
+  - CentComOfficerEnvirogloves
+  # Civil loadout
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
 
 - type: roleLoadout
   id: RoleSurvivalNukieHonkops
@@ -183,11 +204,23 @@
   - Animals
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  # Goobstation - EE Plasmeme Change.
+  - BrigmedicEnvirohelm
+  - BrigmedicEnvirosuit
+  - BrigmedicEnvirogloves
+  # Civil loadout
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt
+
+# gives plasmaman a plasma breathing tank
+# other species get nothing
+- type: roleLoadout
+  id: RoleSurvivalPlasmaTank
+  groups:
+  - GroupEVATankPlasma

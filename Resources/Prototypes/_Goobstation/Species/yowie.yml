@@ -36,6 +36,8 @@
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
     Chest: MobYowieChest
     Groin: MobYowieGroin
     Eyes: MobHumanoidEyes
@@ -49,8 +51,6 @@
     RFoot: MobYowieRFoot
     Tail: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking # Gaby change
-    Undershirt: MobHumanoidAnyMarking # Gaby change
 
 - type: markingPoints
   id: MobYowieMarkingLimits

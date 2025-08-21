@@ -122,6 +122,7 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
@@ -133,11 +134,15 @@
 # SPDX-FileCopyrightText: 2025 Cass <45694413+CubixThree@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot02@gmail.com>
 # SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot20@gmail.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Julian Giebel <juliangiebel@live.de>
 # SPDX-FileCopyrightText: 2025 KingFroozy <140668342+KingFroozy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Momo <Rsnesrud@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Phooooooooooooooooooooooooooooooosphate <184853112+Phooooooooooooooooooooooooooooooosphate@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pumkin69 <judeb@DESKTOP-M4B8G5D>
 # SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
@@ -266,7 +271,9 @@
   loadouts:
   - EmergencyNitrogen
   - EmergencyOxygen
+  - EmergencyPlasma
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -387,10 +394,10 @@
 
 # Civilian
 - type: loadoutGroup
-  id: PassengerJumpsuit
-  name: loadout-group-passenger-jumpsuit
-  minLimit: 0 # Gabystation
-  exclusiveWith: INNERCLOTHING # Goobstation
+  id: CivilianJumpsuit
+  name: loadout-group-civilian-jumpsuit
+  minLimit: 0
+  exclusiveWith: INNERCLOTHING  # Goobstation
   loadouts:
   - GreyJumpsuit
   - GreyJumpskirt
@@ -493,28 +500,30 @@
  # goob changes end
 
 - type: loadoutGroup
-  id: PassengerHat
-  name: loadout-group-passenger-hat
-  minLimit: 0
-  loadouts:
-  - HeadbandBlack
+  id: CivilianJumpsuitRequired #Passengers need to be forced to spawn with clothes.
+  parent: CivilianJumpsuit #They can have the same clothes as everyone else.
+  minLimit: 1 #But they better have clothes on.
 
 - type: loadoutGroup
-  id: PassengerFace
-  name: loadout-group-passenger-mask
+  id: CivilianHat
+  name: loadout-group-civilian-hat
   minLimit: 0
-  loadouts:
-  - PassengerFace
+  loadouts: [HeadbandBlack]
 
 - type: loadoutGroup
-  id: PassengerGloves
-  name: loadout-group-passenger-gloves
+  id: CivilianFace
+  name: loadout-group-civilian-mask
   minLimit: 0
-  loadouts:
-  - PassengerGloves
+  loadouts: [GreyTiderMask]
 
 - type: loadoutGroup
-  id: CommonBackpack
+  id: CivilianGloves
+  name: loadout-group-civilian-gloves
+  minLimit: 0
+  loadouts: [GreyTiderGloves]
+
+- type: loadoutGroup
+  id: CivilianBackpack
   name: loadout-group-backpack
   exclusiveWith: BACK # Goobstation
   loadouts:
@@ -528,8 +537,8 @@
   # Goobstation Loadout Rework End
 
 - type: loadoutGroup
-  id: PassengerNeck
-  name: loadout-group-passenger-neck
+  id: CivilianNeck
+  name: loadout-group-civilian-neck
   minLimit: 0
   loadouts:
   - Mantle
@@ -544,8 +553,8 @@
   # Goobstation Loadout Rework End
 
 - type: loadoutGroup
-  id: PassengerOuterClothing
-  name: loadout-group-passenger-outerclothing
+  id: CivilianOuterClothing
+  name: loadout-group-civilian-outerclothing
   minLimit: 0
   loadouts:
   - PassengerWintercoat
@@ -608,24 +617,29 @@
   # Goobstation Loadout Rework End
 
 - type: loadoutGroup
-  id: PassengerBelt # Goobstation Loadout Rework Addition
-  name: loadout-group-passenger-belt
+  id: CivilianBelt  # Goobstation Loadout Rework Addition
+  name: loadout-group-civilian-belt
   minLimit: 0
-  loadouts:
-  - WaistLeatherBag
+  loadouts: [WaistLeatherBag]
 
 - type: loadoutGroup
-  id: PassengerShoes
-  name: loadout-group-passenger-shoes
-  minLimit: 1
+  id: CivilianShoes
+  name: loadout-group-civilian-shoes
+  minLimit: 0
+  exclusiveWith: FEET #Goostation
   loadouts:
-  - BlackShoes
-  - WinterBoots
-  #Goob Loadouts Rework Start
-  - LoadoutWorkBoots
-  - LoadoutSalvageBoots
-  - LaceupShoes
-  #Goob Loadouts Rework End
+    - BlackShoes
+    - WinterBoots
+  # Goob Loadouts Rework Start
+    - LoadoutWorkBoots
+    - LoadoutSalvageBoots
+    - LaceupShoes
+  # Goob Loadouts Rework End
+
+- type: loadoutGroup
+  id: CivilianShoesRequired
+  parent: CivilianShoes
+  minLimit: 1 #Passengers also need to be forced to wear shoes.
 
 - type: loadoutGroup
   id: BartenderHead
@@ -894,10 +908,8 @@
   id: ClownShoes
   name: loadout-group-clown-shoes
   minLimit: 1
-  loadouts:
-  - ClownShoes
-  - JesterShoes
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [ClownShoes, JesterShoes]
 - type: loadoutGroup
   id: SurvivalClown
   name: loadout-group-survival-clown
@@ -906,7 +918,9 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
+  - EmergencyPlasmaClown
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 - type: loadoutGroup
   id: MimeHead
@@ -969,7 +983,9 @@
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
+  - EmergencyPlasmaMime
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -1064,10 +1080,8 @@
   id: QuartermasterShoes
   name: loadout-group-quartermaster-shoes
   minLimit: 1
-  loadouts:
-  - BrownShoes
-  - CargoWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [BrownShoes, CargoWinterBoots]
 - type: loadoutGroup
   id: CargoTechnicianHead
   name: loadout-group-cargo-technician-head
@@ -1110,10 +1124,8 @@
   id: CargoTechnicianShoes
   name: loadout-group-cargo-technician-shoes
   minLimit: 1
-  loadouts:
-  - BlackShoes
-  - CargoWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [BlackShoes, CargoWinterBoots]
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
   name: loadout-group-salvage-specialist-backpack
@@ -1135,6 +1147,7 @@
   id: SalvageSpecialistShoes
   name: loadout-group-salvage-specialist-shoes
   minLimit: 1
+  exclusiveWith: FEET #Goostation
   loadouts:
   - SalvageBoots
   - CargoWinterBoots
@@ -1179,10 +1192,8 @@
   id: ChiefEngineerShoes
   name: loadout-group-chief-engineer-shoes
   minLimit: 1
-  loadouts:
-  - BrownShoes
-  - EngineeringWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [BrownShoes, EngineeringWinterBoots]
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
   name: loadout-group-technical-assistant-jumpsuit
@@ -1238,10 +1249,8 @@
   id: StationEngineerShoes
   name: loadout-group-station-engineer-shoes
   minLimit: 1
-  loadouts:
-  - WorkBoots
-  - EngineeringWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [WorkBoots, EngineeringWinterBoots]
 - type: loadoutGroup
   id: StationEngineerID
   name: loadout-group-station-engineer-id
@@ -1290,10 +1299,8 @@
   id: AtmosphericTechnicianShoes
   name: loadout-group-atmospheric-technician-shoes
   minLimit: 1
-  loadouts:
-  - WhiteShoes
-  - EngineeringWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [WhiteShoes, EngineeringWinterBoots]
 - type: loadoutGroup
   id: SurvivalExtended
   name: loadout-group-survival-extended
@@ -1302,7 +1309,9 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
+  - EmergencyPlasmaExtended
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 # Science
 - type: loadoutGroup
@@ -1342,10 +1351,8 @@
   id: ResearchDirectorShoes
   name: loadout-group-research-director-shoes
   minLimit: 1
-  loadouts:
-  - BrownShoes
-  - ScienceWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [BrownShoes, ScienceWinterBoots]
 - type: loadoutGroup
   id: ScientistHead
   name: loadout-group-scientist-head
@@ -1402,11 +1409,8 @@
   id: ScientistShoes
   name: loadout-group-scientist-shoes
   minLimit: 1
-  loadouts:
-  - WhiteShoes
-  - BlackShoes
-  - ScienceWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [WhiteShoes, BlackShoes, ScienceWinterBoots]
 - type: loadoutGroup
   id: ScientistGloves
   name: loadout-group-scientist-gloves
@@ -1624,7 +1628,9 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
+  - EmergencyPlasmaSecurity
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1675,10 +1681,8 @@
   id: ChiefMedicalOfficerShoes
   name: loadout-group-chief-medical-officer-shoes
   minLimit: 1
-  loadouts:
-  - BrownShoes
-  - MedicalWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [BrownShoes, MedicalWinterBoots]
 - type: loadoutGroup
   id: MedicalDoctorHead
   name: loadout-group-medical-doctor-head
@@ -1731,10 +1735,8 @@
   id: MedicalShoes
   name: loadout-group-medical-doctor-shoes
   minLimit: 1
-  loadouts:
-  - WhiteShoes
-  - MedicalWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [WhiteShoes, MedicalWinterBoots]
 - type: loadoutGroup
   id: MedicalDoctorPDA
   name: loadout-group-medical-doctor-id
@@ -1833,11 +1835,8 @@
   id: ParamedicShoes
   name: loadout-group-paramedic-shoes
   minLimit: 1
-  loadouts:
-  - BlueShoes
-  - WhiteShoes
-  - MedicalWinterBoots
-
+  exclusiveWith: FEET #Goostation
+  loadouts: [BlueShoes, WhiteShoes, MedicalWinterBoots]
 - type: loadoutGroup
   id: MedicalEyewear
   name: loadout-group-medical-glasses
@@ -1857,7 +1856,9 @@
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
+  - EmergencyPlasmaMedical
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 # Wildcards
 - type: loadoutGroup
@@ -1908,7 +1909,9 @@
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
+  - EmergencyPlasmaSyndicate
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesPlasma # Goobstation
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

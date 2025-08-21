@@ -25,20 +25,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobHarpy" Caption="Harpy"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
-  <GuideEntityEmbed Entity="MobIPCDummy" Caption="IPC"/>
-  <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
-  <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
-  <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
-  <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
-  <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
+    <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
+    <GuideEntityEmbed Entity="MobIPCDummy" Caption="IPC"/>
+    <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
+    <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
+    <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
+    <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
+    <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
-  <GuideEntityEmbed Entity="MobTajaran" Caption="Tajaran"/>
-  <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
-  <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
-  <GuideEntityEmbed Entity="MobYowie" Caption="Yowie"/>
+    <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
+    <GuideEntityEmbed Entity="MobTajaran" Caption="Tajaran"/>
+    <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
+    <GuideEntityEmbed Entity="MobYowie" Caption="Yowie"/>
+    <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
   </Box>
 
 </Document>

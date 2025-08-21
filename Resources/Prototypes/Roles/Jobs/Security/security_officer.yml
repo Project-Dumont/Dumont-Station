@@ -125,6 +125,17 @@
     - SecHypo # Goobstation
     - ClothingMaskGasSecurity # Goobstation
 
+- type: chameleonOutfit
+  id: SecurityOfficerChameleonOutfit
+  job: SecurityOfficer
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack
+
+
 - type: jobAlternateTitle
   id: SecurityOfficerTitleInstructor
   name: job-name-alt-secoff-instructor

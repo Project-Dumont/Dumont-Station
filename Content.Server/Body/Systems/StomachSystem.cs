@@ -29,6 +29,8 @@ using Content.Shared.Body.Organ;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Whitelist;
+using Content.Shared.Chemistry.EntitySystems;
+using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -45,6 +47,7 @@ namespace Content.Server.Body.Systems
         {
             SubscribeLocalEvent<StomachComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<StomachComponent, EntityUnpausedEvent>(OnUnpaused);
+            SubscribeLocalEvent<StomachComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
             SubscribeLocalEvent<StomachComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
         }
 
@@ -56,6 +59,16 @@ namespace Content.Server.Body.Systems
         private void OnUnpaused(Entity<StomachComponent> ent, ref EntityUnpausedEvent args)
         {
             ent.Comp.NextUpdate += args.PausedTime;
+        }
+
+        private void OnEntRemoved(Entity<StomachComponent> ent, ref EntRemovedFromContainerMessage args)
+        {
+            // Make sure the removed entity was our contained solution
+            if (ent.Comp.Solution is not { } solution || args.Entity != solution.Owner)
+                return;
+
+            // Cleared our cached reference to the solution entity
+            ent.Comp.Solution = null;
         }
 
         public override void Update(float frameTime)

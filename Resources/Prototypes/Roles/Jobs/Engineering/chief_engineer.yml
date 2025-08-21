@@ -183,6 +183,18 @@
     - Flash
     - TelescopicBaton # Goobstation
 
+- type: chameleonOutfit
+  id: ChiefEngineerChameleonOutfit
+  job: ChiefEngineer
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    mask: ClothingMaskBreath
+    neck: ClothingNeckCloakCe
+    outerClothing: ClothingOuterWinterCE
+    gloves: ClothingHandsGlovesColorYellow
+    shoes: ClothingShoesBootsMagAdv
+
 - type: jobAlternateTitle
   id: CETitleSupervisor
   name: job-name-alt-ce-supervisor

@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 vorpuscl <198003781+vorpuscl@users.noreply.github.com>
@@ -158,8 +160,8 @@
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
       - map: ["socks"]
-      - map: ["underpants"]
-      - map: ["undershirt"]
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Gaby station
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Gaby station
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
@@ -219,7 +221,6 @@
     - DoorBumpOpener
     - AnomalyHost
     - ShadowkinEmotes
-    - FlashVulnerable # Can't protect against flashes
 
 - type: entity
   save: false
@@ -257,8 +258,8 @@
         - map: ["enum.HumanoidVisualLayers.LFoot"]
         - map: ["enum.HumanoidVisualLayers.RFoot"]
         - map: ["socks"]
-        - map: ["underpants"]
-        - map: ["undershirt"]
+        - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Gaby station
+        - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Gaby station
         - map: ["jumpsuit"]
         - map: ["enum.HumanoidVisualLayers.LHand"]
         - map: ["enum.HumanoidVisualLayers.RHand"]

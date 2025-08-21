@@ -88,7 +88,7 @@
     Gohei: 2
     ClothingOuterSuitWitchRobes: 2
     ClothingHeadHatWitch1: 2
-    Broomstick: 2 # Goobstation (it's here because of the order)
+    Broomstick: 2 # Goobstation
     ClothingHeadHatRedRacoon: 2
     ClothingOuterRedRacoon: 2
     ClothingHeadPaperSack: 2
@@ -115,6 +115,8 @@
     ClothingShoesBootsCowboyWhite: 1
     ClothingCostumeAbductorHead: 1
     ClothingCostumeAbductor: 1
+    ClothingHeadSanabi: 1 # Goobstation
+    ClothingNeckCloakSanabi: 1 # Goobstation
     #Loadouts Rework Stuff Start
     ClothingUniformMNKOfficeSkirt: 2 #Loadouts Rework addition - Nyanotrasen
     ClothingUniformMNKUnderGarment: 2 #Loadouts Rework addition - Nyanotrasen
@@ -134,7 +136,7 @@
     ClothingKimonoPink: 1 #Loadouts Rework addition - Nyanotrasen
     ClothingKimonoSky: 1 #Loadouts Rework addition - Nyanotrasen
     ClothingKimonoGreen: 1 #Loadouts Rework addition - Nyanotrasen
-    #Loadouts Rework Stuff End  
+    #Loadouts Rework Stuff End
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ToyFigurineBoxer: 1

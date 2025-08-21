@@ -180,6 +180,18 @@
     - Flash
     - TelescopicBaton # Goobstation
 
+- type: chameleonOutfit
+  id: ResearchDirectorChameleonOutfit
+  job: ResearchDirector
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretRND
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskGas
+    neck: ClothingNeckCloakRd
+    outerClothing: ClothingOuterCoatRD
+    gloves: ClothingHandsGlovesColorPurple
+
 - type: jobAlternateTitle
   id: ResearchDirectorTitleChief
   name: job-name-alt-rd-chief

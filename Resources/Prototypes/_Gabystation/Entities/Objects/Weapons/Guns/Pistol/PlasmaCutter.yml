@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: Tag
   id: MagazinePlasmaCutter
 
@@ -17,11 +24,11 @@
     - state: welder_flame
       visible: false
       shader: unshaded
-      map: ["enum.ToggleVisuals.Layer"]
+      map: ["enum.ToggleableVisuals.Layer"]
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: ToggleableLightVisuals
@@ -119,7 +126,7 @@
   - type: StaticPrice
     price: 1200
 
-            
+
   #Ignorar parte abaixo comentada
 
   # - type: MagazineAmmoProvider
@@ -144,9 +151,9 @@
   # - type: Appearance
   # - type: StaticPrice
   #   price: 1200
-      
+
 # TODO: TROCAR POR BATERIAS. CUTTERS NÃO USAM CARTUCHOS! #
-      
+
   # - type: ItemSlots
     # slots:
       # gun_magazine:

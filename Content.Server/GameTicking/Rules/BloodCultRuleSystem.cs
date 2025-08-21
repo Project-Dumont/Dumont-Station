@@ -531,8 +531,8 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
                 foreach (var action in _actions.GetActions(cultistUid))
                 {
-                    if (TryComp<CultistSpellComponent>(action.Id, out var actionComp))
-                        _actions.RemoveAction(cultistUid, action.Id);
+                    if (HasComp<CultistSpellComponent>(action.Owner))
+                        _actions.RemoveAction(cultistUid, action.Owner);
                 }
 
                 if (EntityManager.TryGetComponent(cultistUid, out AppearanceComponent? appearance))

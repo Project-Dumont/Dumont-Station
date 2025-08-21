@@ -74,7 +74,6 @@
 # SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Nairod <110078045+Nairodian@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
 # SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
 # SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
@@ -83,9 +82,7 @@
 # SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
@@ -123,6 +120,16 @@
 # SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -135,8 +142,7 @@
     - type: MachineBoard
       prototype: Autolathe
       stackRequirements:
-        MatterBin: 3
-        Manipulator: 1
+        Manipulator: 4
         Glass: 1
 
 - type: entity
@@ -148,7 +154,7 @@
   - type: MachineBoard
     prototype: AutolatheHyperConvection
     stackRequirements:
-      MatterBin: 3
+      Manipulator: 3
       Glass: 1
     tagRequirements:
       Igniter:
@@ -166,8 +172,7 @@
   - type: MachineBoard
     prototype: Protolathe
     stackRequirements:
-      MatterBin: 2
-      Manipulator: 2
+      Manipulator: 4
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -184,7 +189,7 @@
   - type: MachineBoard
     prototype: ProtolatheHyperConvection
     stackRequirements:
-      MatterBin: 2
+      Manipulator: 4
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -204,7 +209,7 @@
   - type: MachineBoard
     prototype: Biofabricator
     stackRequirements:
-      MatterBin: 4
+      Manipulator: 4
       Glass: 1
 
 - type: entity
@@ -218,8 +223,7 @@
     - type: MachineBoard
       prototype: SecurityTechFab
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+        Manipulator: 4
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -236,8 +240,7 @@
     - type: MachineBoard
       prototype: AmmoTechFab
       stackRequirements:
-        MatterBin: 1
-        Manipulator: 1
+        Manipulator: 2
 
 - type: entity
   id: MedicalTechFabCircuitboard
@@ -250,8 +253,7 @@
     - type: MachineBoard
       prototype: MedicalTechFab
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+        Manipulator: 4
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -269,8 +271,7 @@
   - type: MachineBoard
     prototype: CircuitImprinter
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
+      Manipulator: 2
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -287,7 +288,7 @@
   - type: MachineBoard
     prototype: CircuitImprinterHyperConvection
     stackRequirements:
-      MatterBin: 2
+      Manipulator: 2
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -306,8 +307,7 @@
   - type: MachineBoard
     prototype: ExosuitFabricator
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
+      Manipulator: 4
       Glass: 5
   - type: GuideHelp
     guides:
@@ -338,7 +338,7 @@
   - type: MachineBoard
     prototype: Biogenerator
     stackRequirements:
-      MatterBin: 2
+      Manipulator: 2
     tagRequirements:
       GlassBeaker:
         amount: 1
@@ -352,8 +352,7 @@
   - type: MachineBoard
     prototype: UniformPrinter
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 2
+      Manipulator: 3
 
 - type: entity
   id: VaccinatorMachineCircuitboard
@@ -365,8 +364,7 @@
   - type: MachineBoard
     prototype: Vaccinator
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
+      Manipulator: 2
       Cable: 5
     tagRequirements:
         GlassBeaker:
@@ -404,8 +402,7 @@
     - type: MachineBoard
       prototype: MachineArtifactAnalyzer
       stackRequirements:
-        Manipulator: 3
-        Capacitor: 1
+        Manipulator: 1
         Glass: 5
 
 - type: entity
@@ -434,7 +431,7 @@
     - type: MachineBoard
       prototype: MachineAnomalyVessel
       stackRequirements:
-        Capacitor: 3
+        Manipulator: 3
         Cable: 1
         PlasmaGlass: 10
 
@@ -449,7 +446,7 @@
   - type: MachineBoard
     prototype: MachineAnomalyVesselExperimental
     stackRequirements:
-      Capacitor: 3
+      Manipulator: 3
       Cable: 5
       PlasmaGlass: 15
       MetalRod: 4
@@ -465,8 +462,7 @@
     - type: MachineBoard
       prototype: MachineAnomalySynchronizer
       stackRequirements:
-        Manipulator: 2
-        Capacitor: 5
+        Manipulator: 7
         PlasmaGlass: 5
         Cable: 5
 
@@ -481,7 +477,7 @@
     - type: MachineBoard
       prototype: MachineAPE
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         Cable: 1
         Glass: 1
 
@@ -496,8 +492,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Cable: 5
   - type: Construction
     deconstructionTarget: null
@@ -515,8 +510,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Cable: 5
   - type: Construction
     graph: ThermomachineBoard
@@ -534,8 +528,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineHellfireFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Uranium: 1
   - type: Construction
     deconstructionTarget: null
@@ -553,8 +546,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineHellfireHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Uranium: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -572,7 +564,7 @@
   - type: MachineBoard
     prototype: BaseGasCondenser
     stackRequirements:
-      MatterBin: 1
+      Manipulator: 1
       Glass: 1
 
 - type: entity
@@ -586,8 +578,7 @@
   - type: MachineBoard
     prototype: PortableScrubber
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 2
+      Manipulator: 3
       Cable: 5
       Glass: 2
 
@@ -602,8 +593,7 @@
   - type: MachineBoard
     prototype: SpaceHeater
     stackRequirements:
-      MatterBin: 1
-      Capacitor: 2
+      Manipulator: 3
       Cable: 5
 
 - type: entity
@@ -617,8 +607,7 @@
     - type: MachineBoard
       prototype: CloningPod
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+        Manipulator: 4
         Glass: 1
         Cable: 1
 
@@ -633,7 +622,7 @@
     - type: MachineBoard
       prototype: MedicalScanner
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         Glass: 5
         Cable: 1
 
@@ -674,7 +663,7 @@
     - type: MachineBoard
       prototype: ChemMaster
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         Glass: 1
         Cable: 1
       tagRequirements:
@@ -693,7 +682,7 @@
     - type: MachineBoard
       prototype: ChemDispenserEmpty
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         Glass: 1
         Steel: 3
       tagRequirements:
@@ -712,8 +701,7 @@
   - type: MachineBoard
     prototype: BiomassReclaimer
     stackRequirements:
-      MatterBin: 2
-      Manipulator: 1
+      Manipulator: 3
       Steel: 5
     tagRequirements:
       Knife:
@@ -751,8 +739,7 @@
     - type: MachineBoard
       prototype: SeedExtractor
       stackRequirements:
-        Manipulator: 2
-        Capacitor: 1
+        Manipulator: 3
         # replacing the console screen
         Glass: 1
         Cable: 2
@@ -769,7 +756,7 @@
     - type: MachineBoard
       prototype: SMESBasicEmpty
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         CableHV: 10
       componentRequirements:
         PowerCell:
@@ -788,7 +775,7 @@
   - type: MachineBoard
     prototype: SMESAdvancedEmpty
     stackRequirements:
-      Capacitor: 2
+      Manipulator: 2
       CableHV: 20
     componentRequirements:
       PowerCell:
@@ -807,7 +794,7 @@
     - type: MachineBoard
       prototype: PowerCellRecharger
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         Cable: 5
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -828,7 +815,7 @@
     - type: MachineBoard
       prototype: PowerCageRecharger
       stackRequirements:
-        Capacitor: 4
+        Manipulator: 4
         Steel: 5
         Cable: 10
     - type: PhysicalComposition #Goobstation - Recycle update
@@ -850,7 +837,7 @@
     - type: MachineBoard
       prototype: BorgCharger
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         Cable: 5
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -871,7 +858,7 @@
     - type: MachineBoard
       prototype: WeaponCapacitorRecharger
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         CableMV: 5
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -892,7 +879,7 @@
   - type: MachineBoard
     prototype: TurboItemRecharger
     stackRequirements:
-      Capacitor: 2
+      Manipulator: 2
       CableMV: 5
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
@@ -909,7 +896,7 @@
     - type: MachineBoard
       prototype: SubstationBasicEmpty
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         CableMV: 5
         CableHV: 5
       componentRequirements:
@@ -969,7 +956,7 @@
     - type: MachineBoard
       prototype: PortableGeneratorPacman
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         CableHV: 5
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -989,7 +976,7 @@
   - type: MachineBoard
     prototype: Thruster
     stackRequirements:
-      Capacitor: 4
+      Manipulator: 4
       Steel: 5
 
 - type: entity
@@ -1002,8 +989,7 @@
   - type: MachineBoard
     prototype: Gyroscope
     stackRequirements:
-      Manipulator: 2
-      Capacitor: 1
+      Manipulator: 3
       Glass: 2
 
 - type: entity
@@ -1016,7 +1002,7 @@
     - type: MachineBoard
       prototype: PortableGeneratorSuperPacman
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         CableHV: 10
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -1036,7 +1022,7 @@
     - type: MachineBoard
       prototype: PortableGeneratorJrPacman
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         Cable: 10
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -1055,8 +1041,7 @@
     - type: MachineBoard
       prototype: KitchenReagentGrinder
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+        Manipulator: 4
       tagRequirements:
         GlassBeaker:
           amount: 1
@@ -1073,7 +1058,7 @@
   - type: MachineBoard
     prototype: ChemistryHotplate
     stackRequirements:
-      Capacitor: 2
+      Manipulator: 2
       Glass: 1
 
 - type: entity
@@ -1087,7 +1072,7 @@
   - type: MachineBoard
     prototype: KitchenElectricGrill
     stackRequirements:
-      Capacitor: 4
+      Manipulator: 4
       Glass: 2
       Cable: 5
 
@@ -1101,8 +1086,7 @@
     - type: MachineBoard
       prototype: StasisBed
       stackRequirements:
-        Capacitor: 1
-        Manipulator: 1
+        Manipulator: 2
         Cable: 3
         Steel: 2
 
@@ -1117,7 +1101,7 @@
   - type: MachineBoard
     prototype: MachineElectrolysisUnit
     stackRequirements:
-      Capacitor: 2
+      Manipulator: 2
       Cable: 1
 
 - type: entity
@@ -1135,6 +1119,19 @@
       Steel: 1
 
 - type: entity
+  id: MaterialSiloMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: material silo machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: MaterialSilo #Goobstation - Silo
+    stackRequirements:
+      Manipulator: 4
+      Cable: 1
+
+- type: entity
   id: OreProcessorMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: ore processor machine board
@@ -1144,8 +1141,7 @@
     - type: MachineBoard
       prototype: OreProcessor
       stackRequirements:
-        MatterBin: 1
-        Manipulator: 3
+        Manipulator: 4
         Glass: 1
 
 - type: entity
@@ -1158,8 +1154,7 @@
   - type: MachineBoard
     prototype: OreProcessorIndustrial
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
+      Manipulator: 4
       Glass: 1
 
 - type: entity
@@ -1170,8 +1165,7 @@
   - type: MachineBoard
     prototype: Sheetifier
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
+      Manipulator: 2
 
 - type: entity
   id: MicrowaveMachineCircuitboard
@@ -1183,7 +1177,7 @@
     - type: MachineBoard
       prototype: KitchenMicrowave
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         Glass: 2
         Cable: 2
     - type: Tag
@@ -1200,7 +1194,7 @@
     - type: MachineBoard
       prototype: SyndicateMicrowave
       stackRequirements:
-        Capacitor: 1
+        Manipulator: 1
         Glass: 2
         Cable: 2
 
@@ -1229,8 +1223,7 @@
   - type: MachineBoard
     prototype: MachineFlatpacker
     stackRequirements:
-      Manipulator: 2
-      MatterBin: 1
+      Manipulator: 3
       Steel: 1
 
 - type: entity
@@ -1243,7 +1236,7 @@
     - type: MachineBoard
       prototype: Emitter
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         CableHV: 5
         Glass: 2
 
@@ -1313,8 +1306,7 @@
   - type: MachineBoard
     prototype: GasRecycler
     stackRequirements:
-      Capacitor: 1
-      Manipulator: 1
+      Manipulator: 2
       Steel: 10
       Plasma: 5
 
@@ -1346,9 +1338,23 @@
     - type: MachineBoard
       prototype: CargoTelepad
       stackRequirements:
-        Capacitor: 2
+        Manipulator: 2
         Steel: 5
-        BSCrystal: 5 # Goobstation
+        BSCrystal: 2 # Goobstation
+
+- type: entity
+  id: MailTeleporterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: mail teleporter machine board
+  description: A machine printed circuit board for a mail teleporter.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: MailTeleporter #Goobstation
+    stackRequirements:
+      Manipulator: 2
+      Steel: 5
 
 - type: entity
   id: SodaDispenserMachineCircuitboard
@@ -1392,7 +1398,7 @@
   - type: MachineBoard
     prototype: SalvageMagnet
     stackRequirements:
-      Capacitor: 4
+      Manipulator: 4
       Steel: 5
       CableHV: 5
       Cable: 2
@@ -1408,8 +1414,7 @@
   - type: MachineBoard
     prototype: GravityGeneratorMini
     stackRequirements:
-      Capacitor: 4
-      MatterBin: 3
+      Manipulator: 7
       Steel: 5
       CableHV: 5
       Uranium: 2
@@ -1423,8 +1428,7 @@
   - type: MachineBoard
     prototype: StationAnchor
     stackRequirements:
-      Capacitor: 4
-      MatterBin: 3
+      Manipulator: 7
       Steel: 10
       Glass: 5
       CableHV: 8
@@ -1438,8 +1442,7 @@
   - type: MachineBoard
     prototype: ReagentGrinderIndustrial
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
+      Manipulator: 4
       Glass: 1
 
 - type: entity
@@ -1467,8 +1470,7 @@
     prototype: CutterMachine
     stackRequirements:
       Steel: 2
-      Capacitor: 1
-      Manipulator: 1
+      Manipulator: 2
       Cable: 1
 
 # Shitmed Change Start
@@ -1483,8 +1485,7 @@
     - type: MachineBoard
       prototype: MedicalBiofabricator
       stackRequirements:
-        MatterBin: 2
-        Manipulator: 2
+        Manipulator: 4
 # Shitmed Change End
 
 # Assmos - /tg/ gases
@@ -1500,7 +1501,7 @@
       prototype: Electrolyzer
       stackRequirements:
         Steel: 5
-        Capacitor: 4
+        Manipulator: 4
         CableHV: 5
         Plasteel: 2
 
@@ -1513,12 +1514,10 @@
     - type: MachineBoard
       prototype: Crystallizer
       stackRequirements:
-        Capacitor: 2
-        Manipulator: 4
-        MatterBin: 4
+        Manipulator: 10
         Steel: 5
         Glass: 5
-        
+
 - type: entity
   id: BluespaceGasSenderMachineBoard
   parent: BaseMachineCircuitboard
@@ -1528,9 +1527,7 @@
     - type: MachineBoard
       prototype: BluespaceSender
       stackRequirements:
-        Capacitor: 4
-        Manipulator: 4
-        MatterBin: 2
+        Manipulator: 10
         Steel: 5
 
 - type: entity
@@ -1544,8 +1541,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineUpgradedFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1563,8 +1559,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineUpgradedHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1582,8 +1577,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineAdvancedFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -1601,8 +1595,7 @@
   - type: MachineBoard
     prototype: GasThermoMachineAdvancedHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      Manipulator: 4
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard

@@ -101,6 +101,16 @@
     #back:
     #- Stuff
 
+- type: chameleonOutfit
+  id: AtmosphericTechnicianChameleonOutfit
+  job: AtmosphericTechnician
+  equipment:
+    head: ClothingHeadHelmetAtmosFire
+    mask: ClothingMaskGasAtmos
+    neck: ClothingNeckScarfStripedLightBlue
+    outerClothing: ClothingOuterSuitAtmosFire
+    gloves: ClothingHandsGlovesColorYellow
+
 - type: jobAlternateTitle
   id: AtmosTitleLifeSupport
   name: job-name-alt-atmos-life-support

@@ -80,9 +80,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
@@ -9739,50 +9737,6 @@ entities:
     - type: Transform
       pos: 19.476593,-4.469906
       parent: 21002
-- proto: ActionToggleInternals
-  entities:
-  - uid: 8791
-    components:
-    - type: Transform
-      parent: 23838
-    - type: InstantAction
-      container: 23838
-  - uid: 8792
-    components:
-    - type: Transform
-      parent: 23832
-    - type: InstantAction
-      container: 23832
-  - uid: 8794
-    components:
-    - type: Transform
-      parent: 23836
-    - type: InstantAction
-      container: 23836
-  - uid: 8795
-    components:
-    - type: Transform
-      parent: 23834
-    - type: InstantAction
-      container: 23834
-  - uid: 8796
-    components:
-    - type: Transform
-      parent: 23830
-    - type: InstantAction
-      container: 23830
-  - uid: 8807
-    components:
-    - type: Transform
-      parent: 8806
-    - type: InstantAction
-      container: 8806
-  - uid: 8992
-    components:
-    - type: Transform
-      parent: 8991
-    - type: InstantAction
-      container: 8991
 - proto: AirAlarm
   entities:
   - uid: 2121
@@ -17338,27 +17292,11 @@ entities:
     - type: Transform
       pos: -23.668444,37.633034
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8807
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8807
   - uid: 8991
     components:
     - type: Transform
       pos: -30.637194,35.58095
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8992
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8992
 - proto: AlertsComputerCircuitboard
   entities:
   - uid: 4080
@@ -92617,14 +92555,6 @@ entities:
     - type: Transform
       pos: -23.365643,29.375084
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8791
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8791
 - proto: DoubleEmergencyOxygenTankFilled
   entities:
   - uid: 23832
@@ -92632,14 +92562,6 @@ entities:
     - type: Transform
       pos: -23.646893,29.614668
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8792
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8792
 - proto: Dresser
   entities:
   - uid: 22340
@@ -94538,14 +94460,6 @@ entities:
     - type: Transform
       pos: -27.349743,13.441146
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8794
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8794
   - uid: 28423
     components:
     - type: Transform
@@ -94578,14 +94492,6 @@ entities:
     - type: Transform
       pos: -27.683077,13.784896
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8795
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8795
   - uid: 28281
     components:
     - type: Transform
@@ -94802,14 +94708,6 @@ entities:
     - type: Transform
       pos: -27.422659,13.732813
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8796
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8796
 - proto: ExtinguisherCabinetFilled
   entities:
   - uid: 5804

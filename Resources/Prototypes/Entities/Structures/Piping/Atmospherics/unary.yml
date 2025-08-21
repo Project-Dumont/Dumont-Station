@@ -373,8 +373,7 @@
       key: enum.ThermomachineUiKey.Key
     - type: WiresPanel
     - type: WiresVisuals
-  # Goobstation - Allow device-on-pipe stacking
-  # - type: PipeRestrictOverlap
+    - type: PipeRestrictOverlap
     - type: NodeContainer
       nodes:
         pipe:
@@ -562,8 +561,7 @@
         Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
         Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
   - type: AtmosDevice
-  # Goobstation - Allow device-on-pipe stacking
-  # - type: PipeRestrictOverlap
+  - type: PipeRestrictOverlap
   - type: ApcPowerReceiver
     powerLoad: 10000
   - type: Machine
@@ -619,7 +617,7 @@
   parent: GasThermoMachineFreezer
   id: GasThermoMachineUpgradedFreezer
   name: upgraded freezer
-  description: An advanced machine that cools gas in connected pipes. This looks like an upgraded model. 
+  description: An advanced machine that cools gas in connected pipes. This looks like an upgraded model.
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/Piping/Atmospherics/upgradedthermomachine.rsi
@@ -634,7 +632,7 @@
   parent: GasThermoMachineHeater
   id: GasThermoMachineUpgradedHeater
   name: upgraded heater
-  description: An advanced machine that heats gas in connected pipes. This looks like an upgraded model. 
+  description: An advanced machine that heats gas in connected pipes. This looks like an upgraded model.
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/Piping/Atmospherics/upgradedthermomachine.rsi
@@ -649,7 +647,7 @@
   parent: GasThermoMachineFreezer
   id: GasThermoMachineAdvancedFreezer
   name: advanced freezer
-  description: An advanced machine that cools gas in connected pipes. This looks like a particularly advanced model. 
+  description: An advanced machine that cools gas in connected pipes. This looks like a particularly advanced model.
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/Piping/Atmospherics/advancedthermomachine.rsi
@@ -664,7 +662,7 @@
   parent: GasThermoMachineHeater
   id: GasThermoMachineAdvancedHeater
   name: advanced heater
-  description: An advanced machine that heats gas in connected pipes. This looks like a particularly advanced model. 
+  description: An advanced machine that heats gas in connected pipes. This looks like a particularly advanced model.
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/Piping/Atmospherics/advancedthermomachine.rsi

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Command
 - type: roleLoadout
   id: JobAdministrativeAssistant
@@ -7,17 +13,16 @@
   - AdminAssistantShoes
   - AdminAssistantEar
   - AdminAssistantGloves
-  - CommonBackpack
   - Glasses
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
   # Gaby change
-  - PassengerJumpsuit
-  - CommonBackpack
-  - PassengerNeck
-  - PassengerHat
-  - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
-  - PassengerBelt
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianOuterClothing
+  - CivilianBelt

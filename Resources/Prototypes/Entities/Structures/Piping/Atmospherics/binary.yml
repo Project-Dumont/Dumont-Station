@@ -537,8 +537,7 @@
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasRecycler
-  # Goobstation - Allow device-on-pipe stacking
-  # - type: PipeRestrictOverlap
+  - type: PipeRestrictOverlap
   - type: NodeContainer
     nodes:
       inlet:

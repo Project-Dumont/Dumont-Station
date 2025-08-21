@@ -99,7 +99,7 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
             for (var i = 0; i < ent.Comp.NumberOfPipeLayers; i++)
             {
                 var index = i;
-                var layerName = GetPipeLayerName((AtmosPipeLayer)index);
+                var layerName = GetPipeLayerName((AtmosPipeLayer) index);
                 var label = Loc.GetString("atmos-pipe-layers-component-select-layer", ("layerName", layerName));
 
                 var v = new Verb
@@ -107,12 +107,12 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
                     Priority = 1,
                     Category = VerbCategory.Adjust,
                     Text = label,
-                    Disabled = index == (int)ent.Comp.CurrentPipeLayer,
+                    Disabled = index == (int) ent.Comp.CurrentPipeLayer,
                     Impact = LogImpact.Low,
                     DoContactInteraction = true,
                     Act = () =>
                     {
-                        _tool.UseTool(tool.Value, user, ent, ent.Comp.Delay, tool.Value.Comp.Qualities, new TrySettingPipeLayerCompletedEvent((AtmosPipeLayer)index));
+                        _tool.UseTool(tool.Value, user, ent, ent.Comp.Delay, tool.Value.Comp.Qualities, new TrySettingPipeLayerCompletedEvent((AtmosPipeLayer) index));
                     }
                 };
 
@@ -183,8 +183,8 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
     /// <param name="used">The tool used to adjust the pipe layer</param>
     public void SetNextPipeLayer(Entity<AtmosPipeLayersComponent> ent, EntityUid? user = null, EntityUid? used = null)
     {
-        var newLayer = ((int)ent.Comp.CurrentPipeLayer + 1) % ent.Comp.NumberOfPipeLayers;
-        SetPipeLayer(ent, (AtmosPipeLayer)newLayer, user, used);
+        var newLayer = ((int) ent.Comp.CurrentPipeLayer + 1) % ent.Comp.NumberOfPipeLayers;
+        SetPipeLayer(ent, (AtmosPipeLayer) newLayer, user, used);
     }
 
     /// <summary>
@@ -199,7 +199,7 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
         if (ent.Comp.PipeLayersLocked)
             return;
 
-        ent.Comp.CurrentPipeLayer = (AtmosPipeLayer)Math.Clamp((int)layer, 0, ent.Comp.NumberOfPipeLayers - 1);
+        ent.Comp.CurrentPipeLayer = (AtmosPipeLayer) Math.Clamp((int) layer, 0, ent.Comp.NumberOfPipeLayers - 1);
         Dirty(ent);
 
         if (TryComp<AppearanceComponent>(ent, out var appearance))

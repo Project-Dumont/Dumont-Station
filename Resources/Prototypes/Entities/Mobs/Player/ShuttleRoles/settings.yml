@@ -596,6 +596,7 @@
 
 - type: randomHumanoidSettings
   id: ChallengeVictimChiefEngineer
+  parent: EventHumanoidMindShielded
   randomizeName: false
   components:
     - type: GhostRole
@@ -616,6 +617,7 @@
 
 - type: randomHumanoidSettings
   id: ChallengeVictimCMO
+  parent: EventHumanoidMindShielded
   randomizeName: false
   components:
     - type: GhostRole
@@ -636,6 +638,7 @@
 
 - type: randomHumanoidSettings
   id: ChallengeVictimHeadOfPersonnel
+  parent: EventHumanoidMindShielded
   randomizeName: false
   components:
     - type: GhostRole
@@ -656,6 +659,7 @@
 
 - type: randomHumanoidSettings
   id: ChallengeVictimHeadOfSecurity
+  parent: EventHumanoidMindShielded
   randomizeName: false
   components:
     - type: GhostRole
@@ -676,6 +680,7 @@
 
 - type: randomHumanoidSettings
   id: ChallengeVictimResearchDirector
+  parent: EventHumanoidMindShielded
   randomizeName: false
   components:
     - type: GhostRole
@@ -696,6 +701,7 @@
 
 - type: randomHumanoidSettings
   id: ChallengeVictimQuartermaster
+  parent: EventHumanoidMindShielded
   randomizeName: false
   components:
     - type: GhostRole
@@ -802,8 +808,6 @@
       name: ghost-role-information-syndie-disaster-victim-name
       description: ghost-role-information-syndie-disaster-victim-description
       rules: ghost-role-information-nonantagonist-rules
-      mindRoles:
-      - MindRoleGhostRoleFreeAgentHarmless
       raffle:
         settings: short
     - type: Loadout

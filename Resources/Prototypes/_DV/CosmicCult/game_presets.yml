@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: gamePreset
   id: CosmicCult
   alias:
@@ -9,7 +15,7 @@
   rules:
     - CosmicCult
     - SubGamemodesRule
-    #- MeteorSwarmScheduler - Goob Edit
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - BasicStationEventScheduler
@@ -24,7 +30,7 @@
   rules:
     - CosmicCult
     - SubGamemodesRule
-    #- MeteorSwarmScheduler - Goob Edit
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - BasicStationEventScheduler
