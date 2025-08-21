@@ -369,7 +369,7 @@
   source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
 
 - files: ["do_fundo_da_grota.ogg"]
-  copyright: "Do Funda da Grota by Baitaca. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Do Fundo da Grota by Baitaca. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=EtTbS-KdcrE"
 

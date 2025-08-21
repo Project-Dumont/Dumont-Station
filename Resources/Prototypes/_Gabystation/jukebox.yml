@@ -481,8 +481,8 @@
     path: /Audio/_Gabystation/Jukebox/heart_to_heart.ogg
 
 - type: jukebox
-  id: DoFundaDaGrota
-  name: Baitaca - Do Funda da Grota
+  id: DoFundoDaGrota
+  name: Baitaca - Do Fundo da Grota
   path:
     path: /Audio/_Gabystation/Lobby/do_fundo_da_grota.ogg
 
