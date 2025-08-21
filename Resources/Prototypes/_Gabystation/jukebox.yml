@@ -479,3 +479,15 @@
   name: Mac DeMarco - Heart To Heart
   path:
     path: /Audio/_Gabystation/Jukebox/heart_to_heart.ogg
+
+- type: jukebox
+  id: DoFundaDaGrota
+  name: Baitaca - Do Funda da Grota
+  path:
+    path: /Audio/_Gabystation/Lobby/do_fundo_da_grota.ogg
+
+- type: jukebox
+  id: EDissoQueOVelhosGosta
+  name: Gaúcho da Fronteira - É disso que o velhos gosta
+  path:
+    path: /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg

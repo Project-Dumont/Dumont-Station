@@ -365,3 +365,13 @@
   copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
+
+- files: ["do_fundo_da_grota.ogg"]
+  copyright: "Do Funda da Grota by Baitaca. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=EtTbS-KdcrE"
+
+- files: ["e_disso_que_o_velho_gosta.ogg"]
+  copyright: "É disso que o velhos gosta by Gaúcho da Fronteira. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=6jUXTot03_U"
