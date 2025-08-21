@@ -1,7 +1,14 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <117521143+VictorJob@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: SWSShot
   name: SWS Shot
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
   - type: Sprite
@@ -19,7 +26,7 @@
 - type: entity
   id: PlasmaCut
   name: plasma cut
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
   - type: Sprite
@@ -35,4 +42,3 @@
         Slash: 15
         Heat: 6
         Structural: 45
-     

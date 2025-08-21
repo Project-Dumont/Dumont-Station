@@ -20,12 +20,10 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
     - type: Broadphase
     - type: OccluderTree
     - type: LoadedMap
     - type: GridTree
-    - type: MovedGrids
   - uid: 10
     components:
     - type: MetaData
@@ -6962,3 +6960,4 @@ entities:
       pos: 9.5,0.5
       parent: 10
 ...
+

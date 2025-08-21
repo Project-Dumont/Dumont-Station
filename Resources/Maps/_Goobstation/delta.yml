@@ -169,9 +169,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
@@ -31934,29 +31932,6 @@ entities:
       rot: 1.0182609457842773E-06 rad
       pos: 85.43188,7.632456
       parent: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 30
-    components:
-    - type: Transform
-      parent: 29
-    - type: InstantAction
-      container: 29
-- proto: ActionToggleLight
-  entities:
-  - uid: 32
-    components:
-    - type: Transform
-      parent: 31
-    - type: InstantAction
-      container: 31
-  - uid: 14323
-    components:
-    - type: Transform
-      parent: 24816
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 24816
 - proto: AirAlarm
   entities:
   - uid: 33
@@ -129584,14 +129559,6 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-    - type: GasTank
-      toggleActionEntity: 30
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 30
   - uid: 17349
     components:
     - type: Transform
@@ -183607,24 +183574,6 @@ entities:
     - type: Transform
       pos: -4.4580235,32.981567
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 14323
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 14323
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 24817
     components:
     - type: Transform
@@ -183643,22 +183592,6 @@ entities:
     - type: Transform
       pos: 74.52993,-39.28385
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 32
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 32
-    - type: Physics
-      canCollide: True
-    - type: ActionsContainer
   - uid: 24819
     components:
     - type: Transform

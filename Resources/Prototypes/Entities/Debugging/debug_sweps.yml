@@ -21,7 +21,12 @@
 # SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Rinary <rinary.super@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -41,6 +46,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/debug.rsi
   - type: Gun
+    soundGunshot: null
     fireRate: 100
     selectedMode: FullAuto
     availableModes:
@@ -107,8 +113,8 @@
   - type: Tag
     tags:
       - Debug
-  - type: CartridgeAmmo
-    proto: BulletDebug
+  - type: HitScanCartridgeAmmo
+    hitscan: DebugBulletTrace
 
 - type: entity
   name: goob stick gibber # Goobstation edit

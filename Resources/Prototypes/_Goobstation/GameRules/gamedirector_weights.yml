@@ -1,7 +1,10 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
 # SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -16,7 +19,7 @@
 - type: weightedRandom
   id: GameDirector
   weights:
-    Traitor: 0.25
+    Traitor: 0.20
     Changeling: 0.10
     Nukeops: 0.05
     Revolutionary: 0.05
@@ -25,8 +28,9 @@
     BlobGameMode: 0.05
     Wizard: 0.025
     CosmicCult: 0.05 # make it semi often so we can test it
+    BloodCult: 0.05 # Gabystation change
     #HonkOps: 0.01 # this test fail was real holy shit it was only a preset the entire a time i was lied too by myself
-
+    Vampire: 0.15
 
 - type: incompatibleModes
   id: Nukeops
@@ -84,6 +88,18 @@
 - type: incompatibleModes
   id: CosmicCult
   modes:
+  - Nukeops
+  - HonkOps
+  - Zombie
+  - Revolutionary
+  - BlobGameMode
+  - CosmicCult
+  - Heretic
+
+- type: incompatibleModes
+  id: Vampire
+  modes:
+  - Vampire
   - Nukeops
   - HonkOps
   - Zombie

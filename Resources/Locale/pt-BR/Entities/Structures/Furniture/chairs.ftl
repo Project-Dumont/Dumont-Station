@@ -19,8 +19,8 @@ ent-ChairOfficeDark = cadeira de escritório escura
 ent-ComfyChair = poltrona
     .desc = Confortável e luxuosa.
 
-ent-ChairPilotSeat = acento de piloto
-    .desc = O acento de piloto de uma nave prestigiosa.
+ent-ChairPilotSeat = assento de piloto
+    .desc = O assento de piloto de uma nave prestigiosa.
 
 ent-ChairWood = cadeira de madeira
     .desc = Cadeira de casa de vó.
@@ -33,4 +33,3 @@ ent-ChairCursed = cadeira amaldiçoada
 
 ent-ChairFolding = cadeira dobrável
     .desc = Perfeita para trapacear em lutas.
-

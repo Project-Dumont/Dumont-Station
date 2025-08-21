@@ -108,6 +108,17 @@
     #back:
     #- Stuff
 
+- type: chameleonOutfit
+  id: StationEngineerChameleonOutfit
+  job: StationEngineer
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedOrange
+    outerClothing: ClothingOuterWinterEngi
+    gloves: ClothingHandsGlovesColorYellow
+    shoes: ClothingShoesBootsMag
+
 - type: jobAlternateTitle
   id: StationEngineerElectrician
   name: job-name-alt-engi-electrician

@@ -12,8 +12,12 @@
 // SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -70,13 +74,14 @@ namespace Content.Shared.Friction
             _gridQuery = GetEntityQuery<MapGridComponent>();
         }
 
-        public override void UpdateBeforeMapSolve(bool prediction, PhysicsMapComponent mapComponent, float frameTime)
+        public override void UpdateBeforeSolve(bool prediction, float frameTime)
         {
-            base.UpdateBeforeMapSolve(prediction, mapComponent, frameTime);
+            base.UpdateBeforeSolve(prediction, frameTime);
 
-            foreach (var body in mapComponent.AwakeBodies)
+            foreach (var ent in PhysicsSystem.AwakeBodies)
             {
-                var uid = body.Owner;
+                var uid = ent.Owner;
+                var body = ent.Comp1;
 
                 // Only apply friction when it's not a mob (or the mob doesn't have control)
                 // We may want to instead only apply friction to dynamic entities and not mobs ever.
@@ -86,12 +91,7 @@ namespace Content.Shared.Friction
                 if (body.LinearVelocity.Equals(Vector2.Zero) && body.AngularVelocity.Equals(0f))
                     continue;
 
-                if (!_xformQuery.TryGetComponent(uid, out var xform))
-                {
-                    Log.Error($"Unable to get transform for {ToPrettyString(uid)} in tilefrictioncontroller");
-                    continue;
-                }
-
+                var xform = ent.Comp2;
                 float friction;
 
                 // If we're not touching the ground, don't use tileFriction.

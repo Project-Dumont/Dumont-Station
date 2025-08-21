@@ -8,6 +8,9 @@
 # SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kill_Me_I_Noobs <118206719+Vonsant@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,6 +20,17 @@
   name: bronzeheart medal
   description: Given to crewmates for exemplary bravery in the face of danger.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/bronzeheart.rsi
   - type: Clothing
@@ -24,6 +38,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -31,6 +56,17 @@
   name: gold medal of crewmanship
   description: Given to crewmates who display excellent crewmanship.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/gold.rsi
   - type: Clothing
@@ -40,6 +76,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -47,6 +94,17 @@
   name: cargo medal
   description: Given for the best work in the cargo department.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/cargomedal.rsi
   - type: Clothing
@@ -54,6 +112,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -61,6 +130,17 @@
   name: engineer medal
   description: Given for the best work in the engineering department.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/engineermedal.rsi
   - type: Clothing
@@ -68,6 +148,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -75,6 +166,17 @@
   name: medical medal
   description: Given for the best work in the medical department.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/medicalmedal.rsi
   - type: Clothing
@@ -82,6 +184,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -89,6 +202,17 @@
   name: science medal
   description: Given for the best work in the science department.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/sciencemedal.rsi
   - type: Clothing
@@ -96,6 +220,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -103,6 +238,17 @@
   name: security medal
   description: Given for the best work in the security department.
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/securitymedal.rsi
   - type: Clothing
@@ -110,6 +256,17 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckBase
@@ -117,6 +274,17 @@
   name: clown medal
   description: Given for the best joke in the universe. HONK!
   components:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/accessory_drop.ogg
+  # Goobstation edit end
   - type: Sprite
     sprite: Clothing/Neck/Medals/clownmedal.rsi
   - type: Clothing
@@ -126,3 +294,15 @@
   - type: Tag
     tags:
       - Medal
+      - WhitelistChameleon
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
+

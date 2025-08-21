@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 //
@@ -69,7 +71,7 @@ public sealed class SetSelectorSystem : EntitySystem
         var spawnedStorageContainer = selector.Comp.SpawnedStorageContainer;
         var openSpawnedStorage = selector.Comp.OpenSpawnedStorage;
         var coordinates = _transform.GetMapCoordinates(selector.Owner);
-        _container.TryGetContainingContainer(selector, out var target);
+        _container.TryGetContainingContainer(selector.Owner, out var target);
         List<string> ignoredContainers = new() { "implant", "pocket1", "pocket2", "pocket3", "pocket4" };
 
         List<EntityUid> spawnedEntities = [];

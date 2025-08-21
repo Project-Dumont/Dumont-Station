@@ -2,8 +2,13 @@
 // SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Michelle Szinger <chell@alterae.online>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -21,9 +26,12 @@ namespace Content.Shared.Humanoid.Markings
         Head,
         HeadTop,
         HeadSide,
+        Face, // Plasmeme Port
         Snout,
         Chest,
         Groin, // Shitmed Change
+        Underwear, // DeltaV
+        Undershirt, // DeltaV
         Arms,
         Legs,
         Wings, // For IPC wings porting from SimpleStation
@@ -38,12 +46,15 @@ namespace Content.Shared.Humanoid.Markings
             return layer switch
             {
                 HumanoidVisualLayers.Special => MarkingCategories.Special,
+                HumanoidVisualLayers.Face => MarkingCategories.Face, // Plasmeme Port
                 HumanoidVisualLayers.Hair => MarkingCategories.Hair,
                 HumanoidVisualLayers.FacialHair => MarkingCategories.FacialHair,
                 HumanoidVisualLayers.Head => MarkingCategories.Head,
                 HumanoidVisualLayers.HeadTop => MarkingCategories.HeadTop,
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,
                 HumanoidVisualLayers.Snout => MarkingCategories.Snout,
+                HumanoidVisualLayers.Undershirt => MarkingCategories.Undershirt, // DeltaV
+                HumanoidVisualLayers.Underwear => MarkingCategories.Underwear, // DeltaV
                 HumanoidVisualLayers.Chest => MarkingCategories.Chest,
                 HumanoidVisualLayers.Groin => MarkingCategories.Groin, // Shitmed Change
                 HumanoidVisualLayers.RArm => MarkingCategories.Arms,

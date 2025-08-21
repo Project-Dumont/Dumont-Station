@@ -12,7 +12,6 @@
 # SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Chelsea <163505163+yomamaguy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 DoutorWhite <thedoctorwhite@gmail.com>
 # SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
@@ -32,6 +31,8 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 CRISO <crisavilasilva060@gmail.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
 # SPDX-FileCopyrightText: 2025 Deerstop <edainturner@gmail.com>
 # SPDX-FileCopyrightText: 2025 Emisse <99158783+Emisse@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
@@ -76,11 +77,11 @@
   - Saltern
   - Packed
   - Reach
-  #- Train # Gabystation - mapa ruim
+  # Train # Gabystation - desativado após tentativa falha de voltar com o mapa
   - FlandHighPop
   - OasisHighPop
   # Goob Station Maps
-  - Barratry # Goobstation - Re-add barratry
+  # Barratry # Gabystation - Retirado do vote por doação de 1K de GC
   - Kettle # Goobstation - Re-add kettle (before it was gemini!)
   - Submarine # goobstation - kill yourse
   - Leonid # Goobstation - for goob by goob
@@ -89,4 +90,5 @@
   # Gaby Station Maps
   - Gamma
   #- Gax
-  #- Falcon
+  - Falcon
+  - Tram

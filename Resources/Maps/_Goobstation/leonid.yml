@@ -142,9 +142,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
@@ -14725,147 +14723,6 @@ entities:
     - type: Transform
       pos: -2.7764351,5.6500306
       parent: 2
-- proto: ActionStethoscope
-  entities:
-  - uid: 11
-    components:
-    - type: Transform
-      parent: 10
-    - type: EntityTargetAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10
-- proto: ActionToggleInternals
-  entities:
-  - uid: 13
-    components:
-    - type: Transform
-      parent: 12
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12
-  - uid: 16
-    components:
-    - type: Transform
-      parent: 15
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 15
-  - uid: 19
-    components:
-    - type: Transform
-      parent: 18
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 18
-  - uid: 22
-    components:
-    - type: Transform
-      parent: 21
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 21
-  - uid: 25
-    components:
-    - type: Transform
-      parent: 24
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 24
-  - uid: 27
-    components:
-    - type: Transform
-      parent: 26
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 26
-  - uid: 29
-    components:
-    - type: Transform
-      parent: 28
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 28
-  - uid: 31
-    components:
-    - type: Transform
-      parent: 30
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 30
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 14
-    components:
-    - type: Transform
-      parent: 12
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12
-  - uid: 17
-    components:
-    - type: Transform
-      parent: 15
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 15
-  - uid: 20
-    components:
-    - type: Transform
-      parent: 18
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 18
-- proto: ActionToggleLight
-  entities:
-  - uid: 39
-    components:
-    - type: Transform
-      parent: 38
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 38
-  - uid: 41
-    components:
-    - type: Transform
-      parent: 40
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 40
-  - uid: 43
-    components:
-    - type: Transform
-      parent: 42
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 42
-  - uid: 45
-    components:
-    - type: Transform
-      parent: 44
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 44
-  - uid: 51
-    components:
-    - type: Transform
-      parent: 50
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 50
-  - uid: 53
-    components:
-    - type: Transform
-      parent: 52
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 52
-  - uid: 55
-    components:
-    - type: Transform
-      parent: 54
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 54
 - proto: AirAlarm
   entities:
   - uid: 56
@@ -101029,23 +100886,6 @@ entities:
     - type: Transform
       pos: 4.47286,67.9543
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 55
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 55
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
 - proto: ClothingHeadHatHetmanHat
   entities:
   - uid: 16375
@@ -101580,17 +101420,6 @@ entities:
     - type: Transform
       pos: -47.48675,-19.320713
       parent: 2
-    - type: Stethoscope
-      actionEntity: 11
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 11
 - proto: ClothingNeckStoleChaplain
   entities:
   - uid: 16440
@@ -114159,17 +113988,6 @@ entities:
     - type: Transform
       pos: -86.5586,-42.30972
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 22
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 22
 - proto: ExtendedEmergencyOxygenTank
   entities:
   - uid: 18515
@@ -156661,58 +156479,16 @@ entities:
     - type: Transform
       pos: -75.54293,34.600636
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 13
-    - type: Jetpack
-      toggleActionEntity: 14
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 14
-          - 13
   - uid: 15
     components:
     - type: Transform
       pos: -75.44918,34.517242
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 16
-    - type: Jetpack
-      toggleActionEntity: 17
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 17
-          - 16
   - uid: 18
     components:
     - type: Transform
       pos: -75.68876,34.69445
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 19
-    - type: Jetpack
-      toggleActionEntity: 20
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 20
-          - 19
 - proto: JointRainbow
   entities:
   - uid: 24042
@@ -156950,117 +156726,27 @@ entities:
     - type: Transform
       pos: 7.5547976,49.71766
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 39
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 39
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 40
     components:
     - type: Transform
       pos: -22.716925,13.9540615
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 41
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 41
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 42
     components:
     - type: Transform
       pos: -12.542699,30.84738
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 43
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 43
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 44
     components:
     - type: Transform
       rot: 12.566370614359172 rad
       pos: -61.68904,-66.0774
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 45
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 45
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 52
     components:
     - type: Transform
       pos: -59.40194,31.688692
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 53
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 53
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 24078
     components:
     - type: Transform
@@ -157116,23 +156802,6 @@ entities:
     - type: Transform
       pos: 19.308146,-54.45275
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 51
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 51
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
   - uid: 23468
     components:
     - type: Transform
@@ -162336,69 +162005,21 @@ entities:
     components:
     - type: Transform
       parent: 23
-    - type: GasTank
-      toggleActionEntity: 25
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 25
     - type: InsideEntityStorage
   - uid: 26
     components:
     - type: Transform
       parent: 23
-    - type: GasTank
-      toggleActionEntity: 27
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 27
     - type: InsideEntityStorage
   - uid: 28
     components:
     - type: Transform
       parent: 23
-    - type: GasTank
-      toggleActionEntity: 29
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 29
     - type: InsideEntityStorage
   - uid: 30
     components:
     - type: Transform
       parent: 23
-    - type: GasTank
-      toggleActionEntity: 31
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 31
     - type: InsideEntityStorage
 - proto: PlasmaWindoorSecureCommandLocked
   entities:

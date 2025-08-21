@@ -1,0 +1,11 @@
+
+# This only exist to do not let passengers naked.
+- type: loadoutGroup
+  id: GenericJumpsuitLoadout
+  name: loadout-group-generic-jumpsuit
+  minLimit: 1
+  exclusiveWith: INNERCLOTHING # Goobstation
+  loadouts:
+  - GreyJumpsuit
+  - GreyJumpskirt
+  - AncientJumpsuit

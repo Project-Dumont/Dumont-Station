@@ -15,7 +15,11 @@
 // SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -24,6 +28,9 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Body.Organ;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Whitelist;
+using Content.Shared.Chemistry.EntitySystems;
+using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -40,6 +47,7 @@ namespace Content.Server.Body.Systems
         {
             SubscribeLocalEvent<StomachComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<StomachComponent, EntityUnpausedEvent>(OnUnpaused);
+            SubscribeLocalEvent<StomachComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
             SubscribeLocalEvent<StomachComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
         }
 
@@ -51,6 +59,16 @@ namespace Content.Server.Body.Systems
         private void OnUnpaused(Entity<StomachComponent> ent, ref EntityUnpausedEvent args)
         {
             ent.Comp.NextUpdate += args.PausedTime;
+        }
+
+        private void OnEntRemoved(Entity<StomachComponent> ent, ref EntRemovedFromContainerMessage args)
+        {
+            // Make sure the removed entity was our contained solution
+            if (ent.Comp.Solution is not { } solution || args.Entity != solution.Owner)
+                return;
+
+            // Cleared our cached reference to the solution entity
+            ent.Comp.Solution = null;
         }
 
         public override void Update(float frameTime)
@@ -150,6 +168,11 @@ namespace Content.Server.Body.Systems
             }
 
             return true;
+        }
+
+        public void SetSpecialDigestible(StomachComponent component, EntityWhitelist? whitelist)
+        {
+            component.SpecialDigestible = whitelist;
         }
     }
 }

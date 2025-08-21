@@ -1,3 +1,65 @@
+# SPDX-FileCopyrightText: 2021 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Elijahrane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Mith-randalf <84274729+Mith-randalf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 buletsponge <96000213+buletsponge@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 OldDanceJacket <98985560+OldDanceJacket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 TaralGit <76408146+TaralGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 TimrodDX <timrod@gmail.com>
+# SPDX-FileCopyrightText: 2022 and_a <and_a@DESKTOP-RJENGIR>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2023 Filler <130583174+FillerVK@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Jackrost <jackrost@mail.ru>
+# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MisterMecky <mrmecky@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PeterFuto <futo.petr@gmail.com>
+# SPDX-FileCopyrightText: 2023 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
+# SPDX-FileCopyrightText: 2025 Nox38 <nebulousnox38@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <scarky0@onet.eu>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ToxicSonicFan04 <167356917+ToxicSonicFan04@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Map
@@ -75,9 +137,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 5691
@@ -11072,49 +11132,6 @@ entities:
     - type: Transform
       pos: -1.4590547,-61.356407
       parent: 8364
-- proto: ActionToggleInternals
-  entities:
-  - uid: 25167
-    components:
-    - type: Transform
-      parent: 21419
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 21419
-  - uid: 25181
-    components:
-    - type: Transform
-      parent: 20121
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 20121
-- proto: ActionToggleLight
-  entities:
-  - uid: 8712
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 7337
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 7337
-  - uid: 8904
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 5070
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 5070
-  - uid: 16587
-    components:
-    - type: Transform
-      parent: 11756
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 11756
 - proto: AirAlarm
   entities:
   - uid: 2
@@ -90250,24 +90267,6 @@ entities:
     - type: Transform
       pos: 49.481064,16.680466
       parent: 8364
-    - type: HandheldLight
-      toggleActionEntity: 16587
-    - type: ContainerContainer
-      containers:
-        cellslot_cell_container: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 16587
-    - type: ActionsContainer
   - uid: 11760
     components:
     - type: Transform
@@ -90445,20 +90444,6 @@ entities:
     - type: Transform
       pos: 8.604933,42.85379
       parent: 8364
-    - type: HandheldLight
-      toggleActionEntity: 8712
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 8712
-    - type: ActionsContainer
 - proto: FlippoLighter
   entities:
   - uid: 5114
@@ -130806,22 +130791,8 @@ entities:
     - type: Transform
       pos: 5.3890724,53.889565
       parent: 8364
-    - type: HandheldLight
-      toggleActionEntity: 8904
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 8904
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 5679
     components:
     - type: Transform
@@ -133985,14 +133956,6 @@ entities:
     - type: Transform
       pos: 79.485985,-43.45112
       parent: 8364
-    - type: GasTank
-      toggleActionEntity: 25167
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 25167
 - proto: OxygenTankFilled
   entities:
   - uid: 5466
@@ -134005,14 +133968,6 @@ entities:
     - type: Transform
       pos: 78.58031,-56.4234
       parent: 8364
-    - type: GasTank
-      toggleActionEntity: 25181
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 25181
   - uid: 27619
     components:
     - type: Transform

@@ -1,0 +1,60 @@
+- type: entity
+  parent: BaseGameRule
+  id: Vampire
+  components:
+  - type: VampireRule
+  - type: GameRule
+    minPlayers: 25
+    chaosScore: 800
+  - type: AntagObjectives
+    objectives:
+    - BaseVampireStealObjective
+    - VampireSurviveObjective
+    - VampireDrainObjective
+    - VampireKillRandomPersonObjective
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    agentName: vampire-roundend-name
+    definitions:
+    - prefRoles: [ Vampire ]
+      max: 7
+      playerRatio: 10
+      lateJoinAdditional: true
+      jobBlacklist: [ Chaplain ]
+      mindRoles:
+      - MindRoleVampire
+      components:
+      - type: WeakToHoly
+      - type: CanEnchant
+  - type: Tag
+    tags:
+      - RoundstartAntag
+
+- type: entity
+  parent: BaseGameRule
+  id: CalmVampire
+  components:
+  - type: VampireRule
+  - type: GameRule
+    minPlayers: 15
+  - type: AntagObjectives
+    objectives:
+    - BaseVampireStealObjective
+    - VampireSurviveObjective
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    agentName: vampire-roundend-name
+    definitions:
+    - prefRoles: [ Vampire ]
+      max: 3
+      playerRatio: 10
+      lateJoinAdditional: true
+      jobBlacklist: [ Chaplain ]
+      mindRoles:
+      - MindRoleVampire
+      components:
+      - type: WeakToHoly
+      - type: CanEnchant
+  - type: Tag
+    tags:
+      - CalmAntag

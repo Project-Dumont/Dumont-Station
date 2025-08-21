@@ -73,7 +73,17 @@
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 paige404 <59348003+paige404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -97,9 +107,16 @@
       role: JobPassenger
       time: 72000 #20 hrs, fun mantle for the most experienced greytiders
 
+# Head # goob loadout rework addition
+
+- type: loadout
+  id: HeadbandBlack
+  equipment:
+    head: ClothingHeadBandBlack
+
 # Face
 - type: loadout
-  id: PassengerFace
+  id: GreyTiderMask
   effects:
   - !type:GroupLoadoutEffect
     proto: GreyTider
@@ -113,10 +130,12 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
 
+
 - type: loadout
   id: GreyJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorGrey
+
 
 # Rainbow
 - type: loadout
@@ -144,6 +163,7 @@
     proto: GreyTider
   equipment:
     jumpsuit: ClothingUniformJumpsuitAncient
+
 
 # Neck
 - type: loadout
@@ -175,9 +195,14 @@
   equipment:
     back: ClothingBackpackDuffel
 
+- type: loadout
+  id: LeatherSatchel
+  equipment:
+    back: ClothingBackpackSatchelLeather
+
 # Gloves
 - type: loadout
-  id: PassengerGloves
+  id: GreyTiderGloves
   effects:
   - !type:GroupLoadoutEffect
     proto: GreyTider
@@ -189,6 +214,16 @@
   id: PassengerWintercoat
   equipment:
     outerClothing: ClothingOuterWinterCoat
+
+- type: loadout
+  id: SuitWitchRobes
+  equipment:
+    outerClothing: ClothingOuterSuitWitchRobes
+
+- type: loadout
+  id: Bomber
+  equipment:
+    outerClothing: ClothingOuterCoatBomber
 
 # Shoes
 - type: loadout
@@ -208,75 +243,90 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorGrey
 
+
 - type: loadout
   id: BlackMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBlack
+
 
 - type: loadout
   id: BlueMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBlue
 
+
 - type: loadout
   id: DarkBlueMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorDarkBlue
+
 
 - type: loadout
   id: TealMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorTeal
 
+
 - type: loadout
   id: GreenMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorGreen
+
 
 - type: loadout
   id: DarkGreenMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorDarkGreen
 
+
 - type: loadout
   id: OrangeMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorOrange
+
 
 - type: loadout
   id: PinkMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorPink
 
+
 - type: loadout
   id: RedMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorRed
+
 
 - type: loadout
   id: YellowMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorYellow
 
+
 - type: loadout
   id: PurpleMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorPurple
+
 
 - type: loadout
   id: LightBrownMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorLightBrown
 
+
 - type: loadout
   id: BrownMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBrown
 
+
 - type: loadout
   id: MaroonMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorMaroon
+
 
 
 # service jumpsuit - putting it here because frontier's only service jumpsuits are hydroponics and general lmao # goob change btw
@@ -285,3 +335,4 @@
   id: ServiceMJ
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryService
+

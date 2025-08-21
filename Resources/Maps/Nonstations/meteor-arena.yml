@@ -29,9 +29,7 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
     - type: MapLight
@@ -1643,3 +1641,4 @@ entities:
       pos: -5.5,9.5
       parent: 2
 ...
+

@@ -29,8 +29,9 @@
     tags:
       - Cartridge
       - CartridgeCaselessRifle
-  - type: CartridgeAmmo
+  - type: HitScanCartridgeAmmo
     deleteOnSpawn: true
+    hitscan: BulletCaselessRifleTrace
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
@@ -48,8 +49,8 @@
   parent: BaseCartridgeCaselessRifle
   description: A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Standard kinetic ammunition is common and useful in most situations.
   components:
-  - type: CartridgeAmmo
-    proto: BulletCaselessRifle
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletCaselessRifleTrace
 
 - type: entity
   id: CartridgeCaselessRiflePractice
@@ -57,8 +58,8 @@
   parent: BaseCartridgeCaselessRifle
   description: A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Chalk ammunition is generally non-harmful, used for practice.
   components:
-  - type: CartridgeAmmo
-    proto: BulletCaselessRiflePractice
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletCaselessRiflePracticeTrace
   - type: Sprite
     layers:
       - state: base

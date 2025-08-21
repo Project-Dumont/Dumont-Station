@@ -114,6 +114,18 @@
     ears: ClothingHeadsetService
     belt: ClothingBeltJanitorFilled
 
+- type: chameleonOutfit
+  id: JanitorChameleonOutfit
+  job: Janitor
+  equipment:
+    head: ClothingHeadHatPurplesoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskGas
+    neck: ClothingNeckScarfStripedPurple
+    outerClothing: ClothingOuterWinterJani
+    gloves: ClothingHandsGlovesJanitor
+
+
 - type: jobAlternateTitle
   id: JanitorTitleSteward
   name: job-name-alt-janitor-steward

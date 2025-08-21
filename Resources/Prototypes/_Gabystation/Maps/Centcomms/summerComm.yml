@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: gameMap
+  id: SummerCentcomm
+  isGrid: true # Did you know that centcomm is the only "game map" that isn't actually a map? Send help.
+  mapName: 'Central Command'
+  mapPath: /Maps/_Gabystation/Centcomms/summerComm.yml
+  minPlayers: 10
+  stations:
+    centcomm:
+      stationProto: NanotrasenCentralCommand
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Central Command NT-14 {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'

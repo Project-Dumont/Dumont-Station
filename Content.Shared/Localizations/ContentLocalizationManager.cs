@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
@@ -13,8 +12,15 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <akikai297@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -87,6 +93,8 @@ namespace Content.Shared.Localizations
             //_loc.AddFunction(cultureEn, "MANY", FormatMany);
             _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
+            _loc.AddFunction(cultureEn, "ENERGYWATTHOURS", FormatEnergyWattHours);
             _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
             _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
             _loc.AddFunction(cultureEn, "LOC", FormatLoc);

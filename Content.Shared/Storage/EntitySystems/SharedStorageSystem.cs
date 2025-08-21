@@ -41,7 +41,6 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
 // SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
@@ -69,7 +68,6 @@
 // SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
 // SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
@@ -86,7 +84,6 @@
 // SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
@@ -94,11 +91,19 @@
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -460,7 +465,7 @@ public abstract class SharedStorageSystem : EntitySystem
         loc = default;
         storage = null;
 
-        if (!ContainerSystem.TryGetContainingContainer(itemEnt, out container) ||
+        if (!ContainerSystem.TryGetContainingContainer(itemEnt.Owner, out container) ||
             container.ID != StorageComponent.ContainerId ||
             !TryComp(container.Owner, out storage) ||
             !_itemQuery.Resolve(itemEnt, ref itemEnt.Comp, false))
@@ -520,7 +525,7 @@ public abstract class SharedStorageSystem : EntitySystem
         }
     }
 
-    public virtual void UpdateUI(Entity<StorageComponent?> entity) {}
+    public virtual void UpdateUI(Entity<StorageComponent?> entity) { }
 
     private void AddTransferVerbs(EntityUid uid, StorageComponent component, GetVerbsEvent<UtilityVerb> args)
     {

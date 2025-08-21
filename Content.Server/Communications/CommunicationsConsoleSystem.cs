@@ -47,6 +47,10 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
@@ -299,6 +303,10 @@ namespace Content.Server.Communications
             if (stationUid != null)
             {
                 _alertLevelSystem.SetLevel(stationUid.Value, message.Level, true, true);
+                // Goob
+                _adminLogger.Add(LogType.Chat,
+                                 LogImpact.Medium,
+                                 $"{ToPrettyString(message.Actor):actor} set alert level to {message.Level:level} with {ToPrettyString(uid):subject}");
             }
         }
 

@@ -22,6 +22,7 @@
 # SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
 # SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Daniela <daniela.paladinof@gmail.com>
 # SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 GNF54 <151114666+GNF54@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Hanz <41141796+Hanzdegloker@users.noreply.github.com>
@@ -33,10 +34,15 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
 # SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Jacktastic09 <148667265+Jacktastic09@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Marcus F <199992874+thebiggestbruh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 PotRoastPiggy <121025443+PotRoastPiggy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Smith <182301147+AgentSmithRadio@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -132,6 +138,7 @@
     ClothingHeadHatCorpsoft: 2
     ClothingHeadFishCap: 2
     ClothingHeadRastaHat: 2
+    ClothingHeadPropellerHat: 2
     ClothingBeltStorageWaistbag: 3
     ClothingEyesGlasses: 6
     ClothingHandsGlovesColorBlack: 4
@@ -153,6 +160,53 @@
     ClothingUniformJumpskirtDressOpenShoulder: 1 # Goobstation
     ClothingShoesSandals: 1 # Goobstation
     # DO NOT ADD MORE, USE UNIFORM DYING
+    #Loadouts Rework Stuff Start
+    ClothingOuterCoatAcidRaincoat: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatAcidRaincoatBlue: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatAcidRaincoatGreen: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatAcidRaincoatMagenta: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatAcidRaincoatYellow: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatBomberPunkRed: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatJacketLeather: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatJacketBiker: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatJacketJamrock: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatBomberAerostatic: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatJacketLettermanBrown: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatJacketLettermanMagenta: 3 #Loadouts Rework addition - Frontier
+    ClothingOuterCoatBomberPinkSleeves: 3 #Loadouts Rework addition - Frontier
+    ClothingUniformJumpskirtDressAsymmetric: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpskirtDressEvening: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpskirtDressMidi: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpskirtDressTea: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpskirtDressSleeveless: 3 #Loadouts Rework addition - EE
+    #JumpsuitTShirtJeans: 3 #Loadouts Rework addition - EE
+    #JumpsuitTShirtJeansGray: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpsuitYogaGymBra: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpsuitSuitBlueBlazer: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpsuitOliveSweater: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpsuitVictorianRedBlack: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpsuitVictorianRedVest: 3 #Loadouts Rework addition - EE
+    ClothingUniformJumpsuitRippedPunk: 3 #Loadouts Rework addition - Nyanotrasen
+    ClothingOuterCoatInspector: 3 #Loadouts Rework addition - EE
+    ClothingOuterCoatModern: 3 #Loadouts Rework addition - EE
+    ClothingOuterTailcoat: 3 #Loadouts Rework addition - EE
+    ClothingOuterCoatVictorian: 3 #Loadouts Rework addition - EE
+    ClothingOuterCoatVictorianRed: 3 #Loadouts Rework addition - EE
+    ClothingOuterCoatPeacoat: 3 #Loadouts Rework addition - EE
+    ClothingOuterCoatAsymmetric: 3 #Loadouts Rework addition - EE
+    ClothingOuterCoatSubmariner: 3 #Loadouts Rework addition - EE
+    ClothingOuterSuitJacket: 3 #Loadouts Rework addition - EE
+    ClothingOuterCardigan: 3 #Loadouts Rework addition - EE
+    ClothingOuterCardiganSweater: 3 #Loadouts Rework addition - EE
+    ClothingOuterCardiganArgyle: 3 #Loadouts Rework addition - EE
+    ClothingOuterCardiganSlim: 3 #Loadouts Rework addition - EE
+    ClothingOuterCowboyDuster: 3 #Loadouts Rework addition - EE
+    ClothingOuterBlazer: 3 #Loadouts Rework addition - EE
+    ClothingOuterBlazerLong: 3 #Loadouts Rework addition - EE
+    ClothingOuterBlazerFormal: 3 #Loadouts Rework addition - EE
+    ClothingOuterBlazerFlatCollar: 3 #Loadouts Rework addition - EE
+    ClothingOuterBlazerPosh: 3 #Loadouts Rework addition - EE
+    #Loadouts Rework Stuff End
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 2 # +1 Goobstation

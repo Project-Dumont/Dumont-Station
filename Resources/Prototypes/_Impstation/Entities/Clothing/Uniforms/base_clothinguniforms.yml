@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Michelle Szinger <chell@alterae.online>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  id: ClothingUniformFoldableBaseImpstation # Impstation suffix because DV already has its own ClothingUniformFoldableBase
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: unfold-verb-clothing-jacket
+    foldVerbText: fold-verb-clothing-jacket
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded

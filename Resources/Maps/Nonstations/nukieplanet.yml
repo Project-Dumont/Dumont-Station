@@ -1715,9 +1715,7 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: FTLDestination
       whitelist:
         tags:
@@ -15367,3 +15365,4 @@ entities:
       pos: 5.5,-10.5
       parent: 104
 ...
+

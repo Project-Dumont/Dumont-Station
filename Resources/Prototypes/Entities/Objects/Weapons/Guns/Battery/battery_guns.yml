@@ -153,7 +153,7 @@
   components:
   - type: Sprite
   - type: Item
-    size: Huge
+    size: Huge # Gaby - Revert parte do buff de armas lasers
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
     quickEquip: false
@@ -178,6 +178,17 @@
   - type: SurgeryTool # Shitmed
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: LasersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: LasersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: LasersDrop
+  # Goobstation edit end
   - type: AlwaysHot # Goobstation V
   - type: MeleeWeapon
     damage:
@@ -457,9 +468,18 @@
   components:
   - type: StaticPrice
     price: 420
+  - type: Gun #Starlight - Start
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    # - FullAuto #Gaby - Revert parte do buff de armas lasers
+  - type: Battery
+    maxCharge: 1500 # ~1:30 minutes for recharge
+    startingCharge: 1500
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 62.5
+    fireCost: 30
   - type: Tag
     tags:
       - Rifle
@@ -641,7 +661,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 100
+    fireCost: 40
   - type: Tag
     tags:
     - TurretCompatibleWeapon
@@ -712,7 +732,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 100
+    fireCost: 40
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -761,7 +781,7 @@
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisablerPractice
-    fireCost: 25 # Goobstation - billions must troll with practice disabler
+    fireCost: 62.5
   - type: Tag
     tags:
     - Taser
@@ -791,7 +811,7 @@
       - Belt
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 50
+    fireCost: 62.5
   - type: GuideHelp
     guides:
     - Security
@@ -1094,7 +1114,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
-    fireCost: 150
+    fireCost: 70
   # Goob edit start
   #- type: BatteryWeaponFireModes
   #  fireModes:
