@@ -77,7 +77,7 @@ xenoarch-trigger-tip-pluoxium = Pluoxium
 
 ### Description hints
 xenoarch-trigger-examine-wrenching = Há uma porca solta se mexendo sozinha.
-xenoarch-trigger-examine-prying = Há um painel de ferro na superfície.
+xenoarch-trigger-examine-prying = Há um painel de ferro na superfície, parece ter algo atrás dele. 
 xenoarch-trigger-examine-screwing = Há um pedaço levantado com um pequeno parafuso solto nele.
 xenoarch-trigger-examine-pulsing = Há um diodo exposto na superfície do artefato.
 xenoarch-trigger-examine-timer = Você só consegue pensar em um número: [italic]{$time}[/italic]
