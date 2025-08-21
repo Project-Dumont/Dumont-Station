@@ -61,7 +61,7 @@ zzzz-preposicao-em = { GENDER($ent) ->
 }
 
 # Usado internamente pela função PREPOSICAO-A().
-zzzz-preposicao-em = { GENDER($ent) ->
+zzzz-preposicao-a = { GENDER($ent) ->
     [male] ao
     [female] à
     *[neuter] a
