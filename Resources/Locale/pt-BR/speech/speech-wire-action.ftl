@@ -1,1 +1,1 @@
-wire-speech-pulse = {CAPITALIZE(THE($name))} emite um zumbido
+wire-speech-pulse = {CAPITALIZE(ARTIGO-O($name))} {$name} emite um zumbido

@@ -1,1 +1,1 @@
-telecrystal-component-sucs-inserted = Você insere {THE($source)} no {THE($target)}.
+telecrystal-component-sucs-inserted = Você insere {ARTIGO-O($source)} {$source} {PREPOSICAO-EM($target)} {$target}.
