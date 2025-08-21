@@ -30,7 +30,7 @@ chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][Bubble
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
 chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
-    *[false] {ARITOG-O($entityName)} {$entityName} {$message}[/italic]
+    *[false] {ARTIGO-O($entityName)} {$entityName} {$message}[/italic]
      [true] {$entityName} {$message}[/italic]
     }
 

@@ -27,8 +27,8 @@ pneumatic-cannon-component-change-power = { $power ->
 
 ## Shown when inserting/removing the gas tank.
 
-pneumatic-cannon-component-gas-tank-insert = Você encaixa {PRONOME-UM($tank)} {$tank} {PREPOSICAO-EM($cannon)} {$cannon}.
-pneumatic-cannon-component-gas-tank-remove = Você tira {PRONOME-UM($tank)} {$tank} {PREPOSICAO-DE($cannon)} {$cannon}.
+pneumatic-cannon-component-gas-tank-insert = Você encaixa {ARTIGO-UM($tank)} {$tank} {PREPOSICAO-EM($cannon)} {$cannon}.
+pneumatic-cannon-component-gas-tank-remove = Você tira {ARTIGO-UM($tank)} {$tank} {PREPOSICAO-DE($cannon)} {$cannon}.
 pneumatic-cannon-component-gas-tank-none = Não há um tanque de gás {PREPOSICAO-EM($cannon)} {$cannon}!
 
 ## Shown when ejecting every item from the cannon using a verb.

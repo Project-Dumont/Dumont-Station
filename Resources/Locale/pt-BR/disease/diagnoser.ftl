@@ -1,4 +1,4 @@
-diagnoser-cant-use-swab = {CAPITALIZE(ARTIGO-O($machine))} {$machine} rejeita {ARITOG-O($swab)} {$swab}.
+diagnoser-cant-use-swab = {CAPITALIZE(ARTIGO-O($machine))} {$machine} rejeita {ARTIGO-O($swab)} {$swab}.
 diagnoser-insert-swab = Você insere {ARTIGO-O($swab)} {$swab} {PREPOSICAO-EM($machine)} {$machine}.
 diagnoser-disease-report = Doença reportada: {CAPITALIZE($disease)}
 diagnoser-disease-report-none = Atestado de Boa Saúde

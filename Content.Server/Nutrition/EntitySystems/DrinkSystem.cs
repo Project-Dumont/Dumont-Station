@@ -351,7 +351,9 @@ public sealed class DrinkSystem : SharedDrinkSystem
 
             if (forceDrink)
             {
-                _popup.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough-other"), args.Target.Value, args.User);
+                var targetName = Identity.Entity(args.Target.Value, EntityManager);
+
+                _popup.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough-other", ("target", targetName)), args.Target.Value, args.User);
                 _puddle.TrySpillAt(args.Target.Value, drained, out _);
             }
             else

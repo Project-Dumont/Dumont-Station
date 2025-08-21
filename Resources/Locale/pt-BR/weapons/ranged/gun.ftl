@@ -15,7 +15,7 @@ gun-FullAuto = automático
 gun-ballistic-cycle = Carregar
 gun-ballistic-cycled = Carregado
 gun-ballistic-cycled-empty = Vazio
-gun-ballistic-transfer-invalid = {CAPITALIZE(ARTIGO-O($ammoEntity))} {$ammoEntity} não vai caber dentro {THE($targetEntity)}!
+gun-ballistic-transfer-invalid = {CAPITALIZE(ARTIGO-O($ammoEntity))} {$ammoEntity} não vai caber dentro {PREPOSICAO-DE($targetEntity)} {$targetEntity}!
 gun-ballistic-transfer-empty = {CAPITALIZE(ARTIGO-O($entity))} {$entity} está {MAKEGENERO("vazio", $entity)}.
 gun-ballistic-transfer-target-full = {CAPITALIZE(ARTIGO-O($entity))} {$entity} já está totalmente {MAKEGENERO("carregado", $entity)}.
 

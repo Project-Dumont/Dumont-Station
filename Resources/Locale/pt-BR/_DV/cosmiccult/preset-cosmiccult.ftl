@@ -40,7 +40,7 @@ cosmiccult-monument-powerdown = O Monólito fica estranhamente silencioso.
 
 cosmiccult-roundend-cultist-count = {$initialCount ->
     [1] Havia {$initialCount} [color=#4cabb3]Cultista Cósmico[/color].
-    *[other] Haviam {$initialCount} [color=#4cabb3]Cultistas Cósmicos[/color].
+    *[other] Havia {$initialCount} [color=#4cabb3]Cultistas Cósmicos[/color].
 }
 cosmiccult-roundend-entropy-count = O culto drenou {$count} Entropia.
 cosmiccult-roundend-cultpop-count = Cultistas compunham {$count}% da tripulação.
@@ -185,5 +185,5 @@ cosmiccult-spire-entropy = Um fragmento de Entropia se condensa na superfície d
 cosmiccult-entropy-inserted = Você infunde {$count} {MANY("Entropia", $count)} no Monólito.
 cosmiccult-entropy-unavailable = Você não pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
-cosmiccult-gear-pickup-rejection = {CAPITALIZE(ARTIGO-O($ITEM))} {$ITEM} resiste ao toque {PREPOSICAO-DE($TARGET)} {$target}!
-cosmiccult-gear-pickup = Você sente-se se desfazendo ao segurar {ARTIGO-O($item)} {$ITEM}!
+cosmiccult-gear-pickup-rejection = {CAPITALIZE(ARTIGO-O($ITEM))} {$ITEM} resiste ao toque {PREPOSICAO-DE($TARGET)} {$TARGET}!
+cosmiccult-gear-pickup = Você se sente se desfazendo ao segurar {ARTIGO-O($ITEM)} {$ITEM}!
