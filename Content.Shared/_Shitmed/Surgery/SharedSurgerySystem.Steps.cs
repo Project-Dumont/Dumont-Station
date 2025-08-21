@@ -89,7 +89,6 @@ public abstract partial class SharedSurgerySystem
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
         });
 
-        _config.OnValueChanged(GabyCVars.SurgeryMaxLotation, newValue => _surgeryMaxLotation = newValue);
         _config.OnValueChanged(GabyCVars.SurgeryMaxLotationDamage, newValue => _surgeryMaxLotationDamage = newValue);
         _config.OnValueChanged(GabyCVars.SurgeryMaxLotationDistance, newValue => _surgeryMaxLotationDistance = newValue);
         _config.OnValueChanged(GabyCVars.SurgeryOffTableDamage, newValue => _surgeryOffTableDamage = newValue);
@@ -705,7 +704,6 @@ public abstract partial class SharedSurgerySystem
     private float _surgeryOffTableDamage = 5f;
     private float _surgeryMaxLotationDistance = 5f;
     private float _surgeryMaxLotationDamage = 5f;
-    private int _surgeryMaxLotation = 5;
 
     private void HandleSanitization(SurgeryStepEvent args)
     {
@@ -726,7 +724,7 @@ public abstract partial class SharedSurgerySystem
             sepsis += new DamageSpecifier(poisonPrototype, _surgeryOffTableDamage);
 
         // Conta a entidades que estão vivas, não são borgs, estão sem luva/mascara e tem acesso ao paciente.
-        var mobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance)
+        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _surgeryMaxLotationDistance)
             .Where(ent =>
                 _mobState.IsAlive(ent)
                 && !HasComp<BorgChassisComponent>(ent)
@@ -735,9 +733,8 @@ public abstract partial class SharedSurgerySystem
             )
             .Count();
 
-        // Only the surgeon and more two people around the surgery.
-        if (mobCount > _surgeryMaxLotation)
-            sepsis += new DamageSpecifier(poisonPrototype, _surgeryMaxLotationDamage * (mobCount - _surgeryMaxLotation));
+        if (unsanitazedMobCount > 0)
+            sepsis += new DamageSpecifier(poisonPrototype, _surgeryMaxLotationDamage * unsanitazedMobCount);
         // Gaby Station -> Enshittificar Cirurgias e Cia end
 
         // If there is (no damage), theres nothing to do.

@@ -47,12 +47,6 @@ public sealed partial class GabyCVars
         CVarDef.Create("gaby.surgery.surgery_max_lotation_damage", 5f, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Quantidade máxima de seres vivos permitida ao redor de uma cirurgia (sem contar o paciente).
-    /// </summary>
-    public static readonly CVarDef<int> SurgeryMaxLotation =
-        CVarDef.Create("gaby.surgery.surgery_max_lotation", 3, CVar.SERVER | CVar.REPLICATED);
-
-    /// <summary>
     /// Distância em tiles que será procurado entidades pra lotação máxima.
     /// </summary>
     public static readonly CVarDef<float> SurgeryMaxLotationDistance =
