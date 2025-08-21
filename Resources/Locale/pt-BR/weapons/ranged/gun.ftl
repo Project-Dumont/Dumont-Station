@@ -24,7 +24,7 @@ gun-cartridge-spent = Ele [color=red]está gasto[/color].
 gun-cartridge-unspent = Ele [color=lime]não está gasto[/color].
 
 # BatteryAmmoProvider
-gun-battery-examine = Há carga suficiente para [color={$color}]{$count} {MANY("tiro", $count)}.
+gun-battery-examine = Há carga suficiente para [color={$color}]{$count}[/color] {MANY("tiro", $count)}.
 
 # CartridgeAmmoProvider
 gun-chamber-bolt-ammo = Arma não acionada

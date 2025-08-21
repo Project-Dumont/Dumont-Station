@@ -2,7 +2,7 @@
 ### Interaction Messages
 
 # When trying to eat food without the required utensil... but you gotta hold it
-food-you-need-to-hold-utensil = Você precisa estar segurando {ARTIGO-UMA($utensil)} {$utensil} para comer isso!
+food-you-need-to-hold-utensil = Você precisa estar segurando {ARTIGO-UM($utensil)} {$utensil} para comer isso!
 
 food-nom = Nom
 food-swallow = Você engole {ARTIGO-O($food)} {$food}.

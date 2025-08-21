@@ -150,7 +150,7 @@ namespace Content.Shared.Localizations
             string plural;
 
             if (PluralOesRule.IsMatch(firstWord))
-                plural = firstWord[..^2] + "oẽs";
+                plural = firstWord[..^2] + "ões";
             else if (PluralIsRule.IsMatch(firstWord))
                 plural = firstWord[..^1] + "is";
             else if (PluralNsRule.IsMatch(firstWord))
