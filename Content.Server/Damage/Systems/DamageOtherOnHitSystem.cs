@@ -132,6 +132,10 @@ namespace Content.Server.Damage.Systems
         /// </summary>
         private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
         {
+            // Adventure start
+            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid))
+                return;
+            // Adventure end
             args.Cancel("pacified-cannot-throw");
         }
     }
