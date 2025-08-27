@@ -98,6 +98,9 @@
       - id: MedicalStitches
       - id: BoxLatexGloves
       - id: BoxSterileMask
+      # Gaby Station -> Medical QoL
+      - id: NitrousOxideTankFilled
+      - id: ClothingMaskBreathMedical
 
 - type: entity
   id: CrateMedicalScrubs
