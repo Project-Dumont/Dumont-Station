@@ -526,6 +526,9 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 1
+  - type: Construction # Frontier
+    graph: WaffleCone # Frontier
+    node: start # Frontier
 
 - type: entity
   name: soylent waffles
@@ -889,7 +892,7 @@
         - ReagentId: Vitamin
           Quantity: 1
 
-- type: entity         
+- type: entity
   name: grilled cheese sandwich
   parent: FoodBakedBase
   id: FoodBakedGrilledCheeseSandwich

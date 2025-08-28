@@ -1,0 +1,33 @@
+## Static
+
+- type: latheRecipePack
+  id: ServiceStaticDeltaV
+  recipes:
+  - TrashBag
+  - LightReplacer
+  - Skimmer
+  - RadioHandheld
+  - FoodFrozenPopsicleTrash
+  - DrinkWaterCup
+
+- type: latheRecipePack
+  id: ServiceBoardsStaticDeltaV
+  recipes:
+  - DeepFryerMachineCircuitboard
+  - KitchenAssemblerMachineCircuitboard # Frontier cooking port
+  - ElectricRangeMachineCircuitboard # Frontier cooking port
+
+## Dynamic
+
+- type: latheRecipePack
+  id: Botany
+  recipes:
+  - PlantBagOfHolding
+  - PlantAnalyzer # Port of Frontier Plant Analyzer
+  - TrashBagOfHolding
+
+- type: latheRecipePack
+  id: ServiceBoardsDeltaV
+  recipes:
+  - AdvancedMicrowaveMachineCircuitBoard
+
