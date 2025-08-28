@@ -43,3 +43,8 @@
     ports:
     - OperatingTable
   # End Shitmed Changes
+  # Gaby Station -> Enshittificar Cirurgias e Cia start
+  - type: GuideHelp
+    guides:
+    - Surgery
+  # Gaby Station -> Enshittificar Cirurgias e Cia end

@@ -8,54 +8,63 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Surgery
-Your usual weekly activity. By performing surgical operations on your patients, you can heal wounds, remove or add body parts, organs, and more.
+# Cirurgias
+As cirurgias fazem parte do seu dia a dia de trabalho. Você é capaz de operar um paciente para tratar feridas, remover ou adicionar partes do corpo, tratar órgãos e muito mais.
 
-## The Basics
-To start surgery your patient needs to be laying down, and ideally sedated.
+## Iniciando a
+Antes de iniciar uma cirurgia, seu paciente precisa estar deitado e, idealmente, sedado. Os sedativos mais comuns são inalação de óxido nitroso e morfina.
 
-If they are not sedated, they will be in a lot of pain, which decreases their mood, and will make surgical wounds worse.
+Caso ele não esteja sedado, ele sentirá muita dor, o que afetará seu humor e agravará as feridas cirúrgicas. 
 
 <Box>
-<GuideEntityEmbed Entity="NitrousOxideTank" Caption="nitrous oxide"/>
-<GuideEntityEmbed Entity="ClothingMaskBreathMedical" Caption="any breathing tool"/>
+<GuideEntityEmbed Entity="NitrousOxideTank" Caption="óxido nitroso"/>
+<GuideEntityEmbed Entity="ClothingMaskBreathMedical" Caption="máscara de respiração"/>
 </Box>
 
-You also need to wear protective gear such as a mask and gloves to prevent harming the patient due to contamination.
+## Ambiente esterilizado
+
+Você deve vestir luvas e máscaras para prevenir machucar o paciente por contaminação. 
+
+Para garantir um ambiente esterilizado, todos próximos da cirurgia (excluindo o paciente) precisam usar também luvas e máscaras e o paciente deve estar em uma mesa cirúrgica.
+
+Animais vivos próximos da cirurgia também causam sepse no paciente.
 
 <Box>
-<GuideEntityEmbed Entity="ClothingMaskSterile" Caption="any mask"/>
-<GuideEntityEmbed Entity="ClothingHandsGlovesNitrile" Caption="any gloves"/>
+<GuideEntityEmbed Entity="ClothingMaskSterile" Caption="qualquer máscara"/>
+<GuideEntityEmbed Entity="ClothingHandsGlovesNitrile" Caption="qualquer luva"/>
+<GuideEntityEmbed Entity="OperatingTable" Caption="mesa cirúrgica"/>
+
 </Box>
 
-## Getting Started
+## Iniciando
 
-To engage in surgery, you'll need a set of surgical tools.
+Para iniciar uma cirurgia, você precisa de um conjunto de ferramentas cirúrgicas.
 
 <Box>
-<GuideEntityEmbed Entity="Scalpel" Caption="scalpel"/>
-<GuideEntityEmbed Entity="Retractor" Caption="retractor"/>
-<GuideEntityEmbed Entity="Hemostat" Caption="hemostat"/>
-<GuideEntityEmbed Entity="Drill" Caption="drill"/>
+<GuideEntityEmbed Entity="Scalpel" Caption="bisturi"/>
+<GuideEntityEmbed Entity="Retractor" Caption="retrator"/>
+<GuideEntityEmbed Entity="Hemostat" Caption="hemostato"/>
+<GuideEntityEmbed Entity="Drill" Caption="furadeira"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="Saw" Caption="saw"/>
-<GuideEntityEmbed Entity="Cautery" Caption="cautery"/>
+<GuideEntityEmbed Entity="Saw" Caption="serra"/>
+<GuideEntityEmbed Entity="Cautery" Caption="cauterizador"/>
 <GuideEntityEmbed Entity="BoneGel" Caption="bone gel"/>
 </Box>
 
-Once you've got tools in hand, interact with your patient to begin surgery. You'll be able to choose which part you want to operate on.
+Assim que tiver as ferramentas em mãos, interaja com o paciente para iniciar a cirurgia. Você poderá escolher que parte quer operar.
 
-## Ghetto Surgery
+## Cirurgia improvisada
 
-Certain non-surgical tools can be used in a pinch, use the scalpel examine icon to see how good or bad something is.
+Algumas ferramentas não-cirúrgias podem ser usadas em emergências. Clique no ícone de bisturi ao examinar para ver o quão bom ou ruim uma ferramenta é.
+
 <Box>
-<GuideEntityEmbed Entity="Welder" Caption="welder"/>
-<GuideEntityEmbed Entity="Wirecutter" Caption="wirecutter"/>
-<GuideEntityEmbed Entity="KitchenKnife" Caption="knife"/>
-<GuideEntityEmbed Entity="Crowbar" Caption="crowbar"/>
+<GuideEntityEmbed Entity="Welder" Caption="soldador"/>
+<GuideEntityEmbed Entity="Wirecutter" Caption="cortador de fio"/>
+<GuideEntityEmbed Entity="KitchenKnife" Caption="faca"/>
+<GuideEntityEmbed Entity="Crowbar" Caption="pé de cabra"/>
 </Box>
 
-They aren't ideal compared to real surgical equipment, but they'll do in a pinch!
+Elas não são as ideais quando comparadas a ferramentas cirúrgicas reais, mas servem em emergências.
 
 </Document>
