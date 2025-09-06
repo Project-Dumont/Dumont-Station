@@ -7,7 +7,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Moth People
+  # Pessoas Mariposa
 
   <Box>
     <GuideEntityEmbed Entity="MobMoth" Caption=""/>
@@ -15,12 +15,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 Eles podem comer algodão, tecidos e roupas, mas praticamente nenhum dos alimentos que outros considerariam "comestíveis". Preferem uma faixa de temperatura um pouco mais baixa do que os humanos. São obcecados pelo número "65".
 
-Suas asas lhes dão melhor aceleração se não houver gravidade na estação, mas ainda assim não conseguem se mover sem equipamento quando estão flutuando no espaço.
+Suas asas lhes dão [color=#ffa500]melhor aceleração se não houver gravidade na estação, mas ainda assim não conseguem se mover sem equipamento quando estão flutuando no espaço[/color].
 
-Também podem dar pequenos impulsos a cada 6,5 segundos usando as asas, mas isso requer a presença de gravidade. No entanto, se movem 6,5% mais devagar do que outras espécies devido às pernas fracas.
+Também podem dar pequenos impulsos a cada 6,5 segundos usando as asas, mas isso requer a presença de gravidade. No entanto, [color=#ffa500]se movem 6,5% mais devagar[/color] do que outras espécies devido às pernas fracas.
 
-Eles recebem 30% menos dano por Frio, mas 30% mais dano por Calor e 6,5% mais dano físico (Bruto), além de pegarem fogo com mais facilidade.
+Eles recebem [color=#1e90ff]30% menos dano por Frio[/color], mas [color=#ec3a3a]30% mais dano por Calor e 6,5% mais dano físico (Bruto)[/color], além de pegarem fogo com mais facilidade.
 
-Também são 6,5% mais leves do que a maioria das espécies.
+Também são [color=yellow]6,5% mais leves[/color] do que a maioria das espécies.
 
 </Document>

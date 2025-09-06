@@ -12,7 +12,7 @@ comp-pda-io-program-list-button = Programas
 
 comp-pda-io-settings-button = Configurações
 
-comp-pda-io-program-fallback-title = Program
+comp-pda-io-program-fallback-title = Programa
 
 comp-pda-io-no-programs-available = Nenhum programa disponível
 
@@ -38,7 +38,7 @@ comp-pda-ui-eject-id-button = Ejetar ID
 
 comp-pda-ui-eject-pen-button = Ejetar Caneta
 
-comp-pda-ui-ringtone-button = Ringtone
+comp-pda-ui-ringtone-button = Toque
 
 comp-pda-ui-ringtone-button-description = Troque o toque do seu PDA
 

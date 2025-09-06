@@ -20,10 +20,10 @@ ent-ClothingBeltSecurity = cinto de segurança
     .desc = Pode segurar equipamentos de segurança, como algemas e até mesmo um cassetete.
 
 ent-ClothingBeltSheath = bainha
-    .desc = Uma Bainha elegante, capaz de armazenar um Sabre.
+    .desc = Uma bainha elegante, capaz de armazenar um sabre.
 
 ent-ClothingBeltBandolier = bandoleira
-    .desc = Uma bandoleira para cartuchos de Escopeta.
+    .desc = Uma bandoleira para cartuchos de escopeta.
 
 ent-ClothingBeltChampion = cinturão de ouro
     .desc = Prove para o mundo que você é o maior!
@@ -47,10 +47,10 @@ ent-ClothingBeltSuspenders = suspensórios
     .desc = Evita que suas calças caiam em público.
 
 ent-ClothingBeltWand = cinto de varinhas mágicas
-    .desc = Um cinto feito para todas suas varinhas mágicas estupêndas, portadoras poder inimaginável.
+    .desc = Um cinto feito para todas suas varinhas mágicas estupêndas, porta poder inimaginável.
 
 ent-ClothingBeltMercWebbing = colete tático mercenário
-    .desc = Segura para que precisar para combate.
+    .desc = Um colete tático, para aqueles que amam o combate.
 
 ent-ClothingBeltSalvageWebbing = colete de explorador
-    .desc = Sistema perfeito para guardar essenciais para trabalho no espaço.
+    .desc = Sistema perfeito para guardar os essenciais para trabalho no espaço.

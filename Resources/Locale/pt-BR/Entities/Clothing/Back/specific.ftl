@@ -3,4 +3,4 @@ ent-ClothingBackpackChameleon = mochila
     .suffix = Camaleão
 
 ent-ClothingBackpackWaterTank = mochila tanque de água
-    .desc = Armazena muito líquido. Usada por pistolas de lava jato.
+    .desc = Armazena muito líquido. Usada por pistolas de lava a jato.

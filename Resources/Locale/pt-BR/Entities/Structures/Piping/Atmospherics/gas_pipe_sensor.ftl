@@ -1,2 +1,2 @@
 ent-GasPipeSensor = cano sensorial
-    .desc = Faz relatórios sobre o status do gás na rede de tubulações anexada.
+    .desc = Faz relatórios sobre o estado do gás na rede de tubulação anexada.

@@ -8,7 +8,7 @@ ent-ClothingHeadHatBeretEngineering = boina de engenheiro
     .desc = Uma boina com a insígnia de engenheiro estampada. Dane-se a segurança, o que importa é o estilo!
 
 ent-ClothingHeadHatBeretHoS = boina de segurança chefe
-    .desc = Uma boina preta com uma insígnia de patente nela, pertencente ao Chefe dos Seguranças.
+    .desc = Uma boina preta com uma insígnia de patente nela, pertencente ao segurança chefe.
 
 ent-ClothingHeadHatBeretWarden = boina de carcereiro
     .desc = Uma boina corporativa com a insígnia de carcereiro.
@@ -17,7 +17,7 @@ ent-ClothingHeadHatBowlerHat = chapéu coco
     .desc = Bola não inclusa.
 
 ent-ClothingHeadHatCaptain = chapéu do capitão
-    .desc = Como é bom ser o rei..
+    .desc = Como é bom ser o rei...
 
 ent-ClothingHeadHatCardborg = chapéu de caixobô
     .desc = Um chapéu feito por uma criança de 5 anos.
@@ -29,10 +29,10 @@ ent-ClothingHeadHatChef = chapéu de chef
     .desc = É um chapeu nem um pouco estiloso, geralmente utilizado pelos chefs de cozinha da estação. Não os provoque, já que eles podem cuspir na sua comida.
 
 ent-ClothingHeadHatFedoraBrown = fedora marrom
-    .desc = Torne-se um agiota com essa Fedora Marrom!
+    .desc = Torne-se um agiota com essa fedora marrom!
 
 ent-ClothingHeadHatFedoraGrey = fedora cinza
-    .desc = Torne-se um agiota com essa Fedora Cinza!
+    .desc = Torne-se um agiota com essa fedora cinza!
 
 ent-ClothingHeadHatFez = fez
     .desc = Esse chapéu não faz nada, mas ele já fez.
@@ -65,7 +65,7 @@ ent-ClothingHeadHatSantahat = chapéu de papai noel
     .desc = Um chapéu festivo. Renas não são inclusas.
 
 ent-ClothingHeadHatSombrero = sombrero
-    .desc = Burrito, Taco!
+    .desc = Burrito, taco!
 
 ent-ClothingHeadHatSurgcapBlue = touca de cirurgião
     .desc = Uma touca de cirurgião, utilizada nos procedimentos médicos mais complexos.

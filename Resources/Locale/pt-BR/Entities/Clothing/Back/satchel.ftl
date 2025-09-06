@@ -26,7 +26,7 @@ ent-ClothingBackpackSatchelSalvage = bolsa de exploração
     .desc = Uma bolsa surrada. Pode conter tesouros de outro mundo!
 
 ent-ClothingBackpackSatchelHolding = bolsa interdimensional
-    .desc = Uma bolsa que contém um buraco de minhoca ao bluespace.
+    .desc = Uma bolsa que contém um buraco de minhoca a dimensão azul.
 
 ent-ClothingBackpackSatchelLeather = bolsa de couro
     .desc = Uma bolsa tão elegante quanto antiga.
@@ -47,4 +47,4 @@ ent-ClothingBackpackSatchelGenetics = bolsa da genética
     .desc = Uma bolsa esterilizada, customizada em cores que representam os geneticistas.
 
 ent-ClothingBackpackSatchelCargo = bolsa de carga
-    .desc = Uma bolsa forte para roubar os suprimentos da estação.
+    .desc = Uma bolsa forte para roubar os suprimentos da estação, e vender por 10 patacas.

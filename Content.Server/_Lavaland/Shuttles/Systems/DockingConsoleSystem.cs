@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
@@ -187,7 +188,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         _shuttle.FTLToDock(shuttle, Comp<ShuttleComponent>(shuttle), grid, priorityTag: docking.DockTag);
     }
 
-    private readonly ResPath _miningShuttlePath = new("/Maps/_Gabystation/Shuttles/mining.yml"); // Gaby - Usando nossa nave custom.
+    private readonly ResPath _miningShuttlePath = new("/Maps/_Lavaland/mining.yml"); // Gaby - Revertido para a shuttle padrão.
 
     /// <summary>
     /// Load a new mining shuttle if it still doesn't exist

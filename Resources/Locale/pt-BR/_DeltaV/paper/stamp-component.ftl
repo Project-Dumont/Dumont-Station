@@ -1,1 +1,1 @@
-stamp-component-stamped-name-admin-assistant = Assistente Administrativo
+stamp-component-stamped-name-admin-assistant = assistente administrativo

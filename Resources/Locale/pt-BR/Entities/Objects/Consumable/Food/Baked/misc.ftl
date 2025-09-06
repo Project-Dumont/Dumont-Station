@@ -47,10 +47,10 @@ ent-FoodBakedPancakeCc = panqueca com gotas de chocolate
     .desc = Uma panqueca com gotas de chocolate fofinha e gostosa.
 
 ent-FoodBakedWaffle = waffles
-    .desc = Humm, waffles.
+    .desc = Um waffles quentinho. O primo mais crocante, e superior da panqueca.
 
 ent-FoodBakedWaffleSoy = waffles de soja
-    .desc = Você se sente mais saudável e - mais afeminado?
+    .desc = Você se sente mais saudável e... Mais afeminado?
 
 ent-FoodBakedWaffleSoylent = waffles de soylent
     .desc = Não é feito de carne humana. Eu juro.

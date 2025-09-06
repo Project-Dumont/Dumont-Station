@@ -18,28 +18,31 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   A Nanotrasen contrata uma variedade de Espécies sencientes.
 
   <Box>
-  <GuideEntityEmbed Entity="MobArachnid" Caption="Aracnídio"/>
-  <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
-  <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
-  <GuideEntityEmbed Entity="MobGingerbread" Caption="Gingerbread"/>
-    <GuideEntityEmbed Entity="MobHarpy" Caption="Harpy"/>
+    <GuideEntityEmbed Entity="MobDwarf" Caption="Anão"/>
+    <GuideEntityEmbed Entity="MobArachnid" Caption="Aracnídeo"/>
+    <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinídeo"/>
+    <GuideEntityEmbed Entity="MobDaengati" Caption="Daengati"/>
+    <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
+    <GuideEntityEmbed Entity="MobGingerbread" Caption="Gingerbread"/>
+    <GuideEntityEmbed Entity="MobHarpy" Caption="Harpia"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
+    <GuideEntityEmbed Entity="MobHuman" Caption="Humano"/>
     <GuideEntityEmbed Entity="MobIPCDummy" Caption="IPC"/>
-    <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
     <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
-    <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
+    <GuideEntityEmbed Entity="MobMoth" Caption="Pessoa Mariposa"/>
+    <GuideEntityEmbed Entity="MobPlasmaman" Caption="Pessoa Plasma"/>
+    <GuideEntityEmbed Entity="MobSlimePerson" Caption="Pessoa Slime"/>
+    <GuideEntityEmbed Entity="MobReptilian" Caption="Reptiliano"/>
+  </Box>
+  <Box>
     <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
     <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
-  </Box>
-  <Box>
-    <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
+    <GuideEntityEmbed Entity="MobShadowkin" Caption="Shadowkin"/>
     <GuideEntityEmbed Entity="MobTajaran" Caption="Tajaran"/>
     <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
     <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
     <GuideEntityEmbed Entity="MobYowie" Caption="Yowie"/>
-    <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
   </Box>
 
 </Document>

@@ -25,7 +25,7 @@ ent-FoodMeatCorgi = carne corgi de corte nobre
 ent-FoodMeatCrab = carne de caranguejo crua
      .desc = Uma pilha de carne crua de caranguejo.
 
-ent-FoodMeatGoliath = carne crua de Golias
+ent-FoodMeatGoliath = carne crua de golias
      .desc = Um pedaço de carne de Golias. Não é muito comestível agora, mas cozinha muito bem na lava.
 
 ent-FoodMeatDragon = carne de dragão
@@ -94,7 +94,7 @@ ent-FoodMeatDuckCooked = pato cozido
 ent-FoodMeatCrabCooked = caranguejo cozido
      .desc = Um pouco de carne de caranguejo deliciosamente cozida.
 
-ent-FoodMeatGoliathCooked = bife de Golias
+ent-FoodMeatGoliathCooked = bife de golias
      .desc = Um delicioso bife cozido na lava.
 
 ent-FoodMeatLizardCooked = bife de lagarto
@@ -104,7 +104,7 @@ ent-FoodMeatSpiderlegCooked = perna de aranha cozida
      .desc = Uma perna de aranha gigante que ainda se contorce depois de ser cozida. Bruto!
 
 ent-FoodMeatMeatballCooked = almôndega
-     .desc = Uma almôndega cozida. Perfeito para acompanhar outros pratos... exceto os frutados.
+     .desc = Uma almôndega cozida. Perfeito para acompanhar outros pratos... Exceto os frutados.
 
 ent-FoodMeatCutlet = costeleta crua
      .desc = Uma costeleta de carne crua.
@@ -158,5 +158,5 @@ ent-FoodMeatSpiderCutletCooked = costeleta de aranha
      .desc = Uma costeleta de carne de aranha cozida. Finalmente comestível.
 
 ent-FoodMeatXenoCutletCooked = xeno costeleta
-     .desc = Uma costeleta de xeno cozido, pingando... gosto?
+     .desc = Uma costeleta de xeno cozido, pingando... Gosto?
 

@@ -32,13 +32,13 @@ ent-FoodBurgerGhost = hambúrguer fantasma
     .desc = Assustador!
 
 ent-FoodBurgerCorgi = curger
-    .desc = O favorito do Chefe dos Funcionários!
+    .desc = O favorito do chefe dos funcionários!
 
 ent-FoodBurgerSpell = hambúrguer mágico
     .desc = Este lanche é pura magia. Se come até dizer Ei Nath.
 
 ent-FoodBurgerBig = hamburgão
-    .desc = Esquece o Big Mac. ISSO AQUI é o futuro!
+    .desc = Esquece o Big Mac. ISSO é o futuro!
 
 ent-FoodBurgerSuper = x-tudo
     .desc = Um verdadeiro podrão! Boa sorte descendo esta montanha.
@@ -59,7 +59,7 @@ ent-FoodBurgerEmpowered = hambúrguer energizado
     .desc = É chocante o quanto ele é bom, se você for um circuito elétrico.
 
 ent-FoodBurgerCrab = hambúrguer de caranguejo
-    .desc = A delicious patty of the crabby kind, slapped in between a bun.
+    .desc = "A delicious patty of the crabby kind, slapped in between a bun".
 
 ent-FoodBurgerSoy = x-soja
     .desc = Depois de comer isto, você sente um desejo irresistível de comprar bonecos de super-heróis a preços exorbitantes.

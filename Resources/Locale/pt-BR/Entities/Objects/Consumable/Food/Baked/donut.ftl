@@ -11,7 +11,7 @@ ent-FoodDonutChaos = rosquinha do caos
     .desc = Assim como a vida, nunca tem o mesmo gosto.
 
 ent-FoodDonutMeat = rosquinha de carne
-    .desc = O sabor é tão nojento quanto a aparência.
+    .desc = O sabor é tão nojento quanto a aparência. Deve cair bem com água para limpar o sabor depois.
 
 ent-FoodDonutPink = rosquinha rosa
     .desc = Cai bem com latte de soja.

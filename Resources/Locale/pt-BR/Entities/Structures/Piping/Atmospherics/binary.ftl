@@ -26,5 +26,5 @@ ent-HeatExchangerBend = radiador curvado
     .desc = Iguala a temperatura do gás com o do ambiente fora do cano.
     .suffix = curvado
 
-ent-SignalControlledValve = Válvula automática
+ent-SignalControlledValve = válvula automática
     .desc = Um tubo com uma válvula que pode ser usada (através de sinais) para desativar o fluxo de gás através dele.

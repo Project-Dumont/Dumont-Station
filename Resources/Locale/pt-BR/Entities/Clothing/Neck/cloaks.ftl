@@ -1,5 +1,5 @@
 ent-ClothingNeckCloakCap = capa do capitão
-    .desc = Uma elegante capa azul com uma belíssima Moldura dourada.
+    .desc = Uma elegante capa azul com uma belíssima moldura dourada.
 
 ent-ClothingNeckCloakHos = capa do segurança chefe
     .desc = Uma amedrontadora capa preta e vermelha, perfeito para aqueles que gostam de intimidar os outros.

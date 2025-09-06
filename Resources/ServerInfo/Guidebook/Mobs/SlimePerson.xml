@@ -14,25 +14,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Pessoa Slime
+  # Pessoas Slime
 
   <Box>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
   </Box>
 
-  They breathe nitrogen instead of oxygen, which is abundant in the station air, but harder to find compressed into gas tanks. They take significant damage if they are sprayed or splashed with water, but can
-  (and like other species, need to) drink it safely to stay hydrated.
-  They exhale nitrous oxide and are unaffected by it.
-  Their body processes only two toxins at a time compared to three.
+  - Respiram nitrogênio ao invés de oxigênio, que é abundante no ar da estação, mas difícil de ser encontrado comprimido em tanques.
+  - [color=#ec3a3a]Tomam dano significativo se forem molhadas com água[/color], mas podem (e precisam) tomar água em segurança para se manterem hidratadas.
+  - Elas exalam óxido nitroso (nitrous oxide) mas não são afetadas por ele.
+  - Seus corpos processam apenas duas toxinas por vez, ao invés de três.
 
-  Slimepeople have an [bold]internal 2x3 storage inventory[/bold] inside of their slime membrane. Anyone can see what's inside and take it out of you without asking,
-  so be careful.
+  Pessoas slime têm um [bold]inventário 2x3 interno[/bold] dentro de suas membranas de slime. Qualquer um pode ver e retirar o que está dentro dessa membrana sem pedir,
+  então tome cuidado.
 
-  Slimepeople have accelerated regeneration compared to other humanoids.
+  Pessoas slime [color=#ffa500]possuem regeneração acelerada[/color] comparada a outros humanoides.
 
-  Slime Blood is technically a source of moderately filling food for other species, although drinking the blood of your coworkers is usually frowned upon.
-  They suffocate 80% slower, but take pressure damage 9% faster. This makes them by far the species most capable to survive in hard vacuum. For a while.
+  O sangue de slime é tecnicamente uma fonte de comida razoável para outras espécies. No entanto, beber o sangue de seus colegas é normalmente visto com maus olhos.
+  Elas [color=#1e90ff]sufocam 80% mais devagar[/color], mas [color=#ffa500]tomam dano por pressão 9% mais rápido[/color]. Isso as torna a espécie mais capaz de sobreviver no vácuo. Por pouco tempo.
 
-  They take [color=#1e90ff]40% less Blunt damage and 20% less Poison damage[/color], but [color=#ffa500]50% more Cold damage, 20% more Slash damage and 20% more Piercing damage[/color].
+  Elas tomam [color=#1e90ff]40% menos dano Contundente[/color] e [color=#1e90ff]20% menos dano de Veneno[/color], mas [color=#ffa500]50% mais dano de Frio[/color], [color=#ffa500]20% mais dano Cortante e Perfurante[/color].
 
 </Document>

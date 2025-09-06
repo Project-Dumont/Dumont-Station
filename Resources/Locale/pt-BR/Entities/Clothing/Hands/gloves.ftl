@@ -1,14 +1,14 @@
 ent-ClothingHandsGlovesBoxingRed = luvas de boxe vermelhas
-    .desc = Regras do clube da luta: - Jamais fale sobre o clube da luta...
+    .desc = Regras do clube da luta: "Jamais fale sobre o clube da luta..."
 
 ent-ClothingHandsGlovesBoxingBlue = luvas de boxe azuis
-    .desc = Regras do clube da luta: - Jamais fale sobre o clube da luta...
+    .desc = Regras do clube da luta: "Jamais fale sobre o clube da luta..."
 
 ent-ClothingHandsGlovesBoxingGreen = luvas de boxe verdes
-    .desc = Regras do clube da luta: - Jamais fale sobre o clube da luta...
+    .desc = Regras do clube da luta: "Jamais fale sobre o clube da luta..."
 
 ent-ClothingHandsGlovesBoxingYellow = luvas de boxe amarelas
-    .desc = Regras do clube da luta: - Jamais fale sobre o clube da luta...
+    .desc = Regras do clube da luta: "Jamais fale sobre o clube da luta..."
 
 ent-ClothingHandsGlovesCaptain = luvas do capitão
     .desc = Um elegante par de luvas azuis molduradas em ouro.
@@ -17,16 +17,16 @@ ent-ClothingHandsGlovesIhscombat = luvas táticas
     .desc = Essas luvas feitas em kevlar são resistentes a fogo e impactos.
 
 ent-ClothingHandsGlovesLatex = luvas de látex
-    .desc = Um par de luvas finas e estéreis, perfeitas para Médicos!
+    .desc = Um par de luvas finas e estéreis, perfeitas para médicos!
 
 ent-ClothingHandsGlovesNitrile = luvas de nítrilo
-    .desc = Luvas de estéreis de altíssima qualidade, com certeza o SUS não tem verba pra isso!
+    .desc = Luvas estéreis de altíssima qualidade, com certeza o SUS não tem verba pra isso!
 
 ent-ClothingHandsGlovesLeather = luvas de couro do botânico
-    .desc = Essas luvas de couro previnem acidentes com espinhos, enxadas, foices, plantas assasinas, explosões nucleares, etc. São até que bem quentinhas..
+    .desc = Essas luvas de couro previnem acidentes com espinhos, enxadas, foices, plantas assassinas, explosões nucleares, etc. São até que bem quentinhas..
 
 ent-ClothingHandsGlovesPowerglove = luvas poderosas
-     .desc = Agora estou brincando com poder! Espere, eles estão desligados.
+     .desc = Agora estou brincando com poder! Espere, elas estão desligadas.
 
 ent-ClothingHandsGlovesRobohands = luvas robóticas
     .desc = Bip bup!

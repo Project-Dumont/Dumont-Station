@@ -9,31 +9,31 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Harpy
+  # Harpias
 
   <Box>
     <GuideEntityEmbed Entity="MobHarpy" Caption=""/>
   </Box>
 
-  Harpies are an avian human mutation, sprouting feathered wings and ruffled tails.
-  They see the world through an ultraviolet view, slash with their claws dealing
-  [color=#ec3a3a]piercing [/color]damage, and walk around on digitrade legs.
-  Their most iconic ability, however, is to take to the skies!
+  Harpias são uma mutação aviana de humanos, com asas emplumadas e caudas bagunçadas.
+  Elas enxergam o mundo por uma visão ultravioleta, atacam com suas garras causando
+  dano [color=#ec3a3a]Perfurante[/color], e andam por aí com suas pernas digitígradas.
+  Sua habilidade característica, no entanto, é de alcançar os céus!
 
-  ## Sing your heart out
+  ## Quem canta os males espanta
 
-  Harpies are capable of singing out a tune on the spot with their voice, allowing for you to play music wherever you are,
-  as long as you aren't muffled.
+  Harpias são capazes de cantar com facilidade, te permitindo tocar música em qualquer lugar,
+  contanto que você não esteja de boca tapada/abafada.
 
-  ## Take to the skies!
+  ## Alcance os céus!
 
-  Harpies can fly with their wings to increase their movement speed dramatically, at the cost of heavy stamina drain and a temporary inability to use their hands.
-  Their wings give them better acceleration if there is no gravity on the station, but they still can't move without equipment when floating out in space.
+  Harpias podem usar suas asas para voar e aumentar sua velocidade consideravelmente, por um alto custo de stamina e temporária incapacidade de usar suas mãos.
+  Suas asas as dão melhor aceleração quando não há gravidade na estação, mas não conseguem se mover sem equipamento no espaço aberto.
 
-  ## Weaknesses
+  ## Fraquezas
 
-  Due to their digitrade legs, they are unable to wear any type of footwear. Harpies also breathe [color=#1e90ff]3 times faster[/color] than other races.
-  They take 15% more brute damage.
-  They are very lightweight, making it hard for them to pull any other species. However, they also run 10% faster than other species.
+  Graças a suas pernas digitígradas, são incapazes de vestir quaisquer calçados. Harpias também respiram [color=#1e90ff]3 vezes mais rápido[/color] que outras espécies.
+  Elas tomam [color=#ec3a3a]15% mais dano Bruto[/color].
+  Elas são muito leves, tornando difícil carregar outras espécies. Porém, também [color=#ffa500]correm 10% mais rápido do que os demais[/color].
 
 </Document>

@@ -11,7 +11,7 @@ ent-FoodCondimentPacketBbq = molho de churrasco
      .desc = Lenços umedecidos não incluídos.
 
 ent-FoodCondimentPacketCornoil = óleo de milho
-     .desc = óleo de milho. Um delicioso óleo usado na culinária. Feito de milho.
+     .desc = Óleo de milho. Um delicioso óleo usado na culinária. Feito de milho.
 
 ent-FoodCondimentPacketFrostoil = molho de frio
      .desc = Molho Frio. Deixa a língua dormente em sua passagem.
@@ -26,7 +26,7 @@ ent-FoodCondimentPacketKetchup = ketchup
      .desc = Você já se sente mais americano.
 
 ent-FoodCondimentPacketPepper = pimenta preta
-     .desc = Freqüentemente usado para dar sabor a alimentos ou fazer as pessoas espirrar.
+     .desc = Frequentemente usado para dar sabor a alimentos ou fazer as pessoas espirrar.
 
 ent-FoodCondimentPacketSalt = sal
      .desc = Sal. Dos oceanos espaciais, presumivelmente.
@@ -44,7 +44,7 @@ ent-FoodCondimentBottle = garrafa de condimento
      .desc = Uma garrafa de vidro fina usada para armazenar condimentos.
 
 ent-FoodCondimentBottleColdsauce = garrafa de molho de frio
-     .desc=Deixa a língua dormente em sua passagem.
+     .desc = Deixa a língua dormente em sua passagem.
 
 ent-FoodCondimentBottleEnzyme = enzima universal
      .desc = Utilizado na culinária de diversos pratos.
@@ -65,7 +65,7 @@ ent-FoodCondimentBottleSmall = garrafa de condimento
      .desc = Uma garrafa de vidro menor usada para armazenar condimentos.
 
 ent-FoodCondimentBottleSmallColdsauce = garrafa de molho frio
-     .desc=Deixa a língua dormente em sua passagem.
+     .desc = Deixa a língua dormente em sua passagem.
 
 ent-FoodCondimentBottleSmallHotsauce = molho picante
      .desc = Você quase pode provar as úlceras estomacais agora!
