@@ -89,11 +89,6 @@
     mask: ClothingMaskPlague
 
 - type: loadout
-  id: SterileMask
-  equipment:
-    mask: ClothingMaskSterile
-
-- type: loadout
   id: RatMask
   equipment:
     mask: ClothingMaskRat
