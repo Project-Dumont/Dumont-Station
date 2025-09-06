@@ -4,52 +4,114 @@
 - type: loadout
   id: WitchHat
   equipment:
-    hat: ClothingHeadHatWitch1
+    head: ClothingHeadHatWitch1
 
 - type: loadout
   id: BrownFedora
   equipment:
-    hat: ClothingHeadHatFedoraBrown
+    head: ClothingHeadHatFedoraBrown
 
 - type: loadout
   id: GreyFedora
   equipment:
-    hat: ClothingHeadHatFedoraGrey
+    head: ClothingHeadHatFedoraGrey
 
 - type: loadout
   id: Fez
   equipment:
-    hat: ClothingHeadHatFez
+    head: ClothingHeadHatFez
 
 - type: loadout
   id: PirateHat
   equipment:
-    hat: ClothingHeadHatPirate
+    head: ClothingHeadHatPirate
 
 - type: loadout
   id: Sombrero
   equipment:
-    hat: ClothingHeadHatSombrero
+    head: ClothingHeadHatSombrero
 
 - type: loadout
   id: Ushanka
   equipment:
-    hat: ClothingHeadHatUshanka
+    head: ClothingHeadHatUshanka
 
 - type: loadout
   id: Tophat
   equipment:
-    hat: ClothingHeadHatTophat
+    head: ClothingHeadHatTophat
 
 - type: loadout
   id: PaperSack
   equipment:
-    hat: ClothingHeadPaperSack
+    head: ClothingHeadPaperSack
 
 - type: loadout
   id: SafariHat
   equipment:
-    hat: ClothingHeadSafari
+    head: ClothingHeadSafari
+
+- type: loadout
+  id: Beret
+  equipment:
+    head: ClothingHeadHatBeret
+
+- type: loadout
+  id: FrenchBeret
+  equipment:
+    head: ClothingHeadHatBeretFrench
+
+- type: loadout
+  id: BeaverHat
+  equipment:
+    head: ClothingHeadHatBeaverHat
+
+# Glasses
+- type: loadout
+  id: Blindfold
+  equipment:
+    eyes: ClothingEyesBlindfold
+
+- type: loadout
+  id: Eyepatch
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+- type: loadout
+  id: EyepatchFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchFlipped
+
+# Masks
+- type: loadout
+  id: PlagueMask
+  equipment:
+    mask: ClothingMaskPlague
+
+- type: loadout
+  id: SterileMask
+  equipment:
+    mask: ClothingMaskSterile
+
+- type: loadout
+  id: RatMask
+  equipment:
+    mask: ClothingMaskRat
+
+- type: loadout
+  id: BeeMask
+  equipment:
+    mask: ClothingMaskBee
+
+- type: loadout
+  id: FoxMask
+  equipment:
+    mask: ClothingMaskFox
+
+- type: loadout
+  id: BearMask
+  equipment:
+    mask: ClothingMaskBear
 
 # Gloves
 - type: loadout
@@ -68,66 +130,72 @@
     gloves: ClothingHandsGlovesFingerless
 
 - type: loadout
+  id: CivilianBlackGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+  groupBy: "gloves"
+
+- type: loadout
   id: CivilianPurpleGloves
   equipment:
     gloves: ClothingHandsGlovesColorPurple
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianRedGloves
   equipment:
     gloves: ClothingHandsGlovesColorRed
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianBlueGloves
   equipment:
     gloves: ClothingHandsGlovesColorBlue
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianTealGloves
   equipment:
     gloves: ClothingHandsGlovesColorTeal
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianBrownGloves
   equipment:
     gloves: ClothingHandsGlovesColorBrown
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianGrayGloves
   equipment:
     gloves: ClothingHandsGlovesColorGray
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianGreenGloves
   equipment:
     gloves: ClothingHandsGlovesColorGreen
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianLightBrownGloves
   equipment:
     gloves: ClothingHandsGlovesColorLightBrown
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianOrangeGloves
   equipment:
     gloves: ClothingHandsGlovesColorOrange
+  groupBy: "gloves"
 
 - type: loadout
   id: CivilianWhiteGloves
   equipment:
     gloves: ClothingHandsGlovesColorWhite
-
-- type: loadout
-  id: CivilianBlackGloves
-  equipment:
-    gloves: ClothingHandsGlovesColorBlack
+  groupBy: "gloves"
 
 # Shoes
-- type: loadout
-  id: Galoshes
-  equipment:
-    shoes: ClothingShoesGaloshes
-
 - type: loadout
   id: LeatherShoes
   equipment:

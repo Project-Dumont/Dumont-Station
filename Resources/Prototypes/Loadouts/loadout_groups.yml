@@ -243,6 +243,9 @@
   - GlassesJamjar
   - GlassesJensen
   - CheapSunglasses # Goobstation
+  - Blindfold #Gabystation
+  - Eyepatch #Gabystation
+  - EyepatchFlipped #Gabystation
 
 - type: loadoutGroup
   id: Animals  # Goobstation
@@ -520,6 +523,9 @@
   - Tophat #Gabystation
   - PaperSack #Gabystation
   - SafariHat #Gabystation
+  - Beret #Gabystation
+  - FrenchBeret #Gabystation
+  - BeaverHat #Gabystation
 
 
 - type: loadoutGroup
@@ -528,6 +534,12 @@
   minLimit: 0
   loadouts:
   - GreyTiderMask
+  - PlagueMask #Gabystation
+  - SterileMask #Gabystation
+  - RatMask #Gabystation
+  - FoxMask #Gabystation
+  - BeeMask #Gabystation
+  - BearMask #Gabystation
 
 - type: loadoutGroup
   id: CivilianGloves
@@ -549,8 +561,6 @@
   - CivilianOrangeGloves #Gabystation
   - CivilianWhiteGloves #Gabystation
   - CivilianBlackGloves #Gabystation
-  - GoldRing #Gbystation
-  - SilverRing #Gabystation
 
 - type: loadoutGroup
   id: CivilianBackpack
@@ -665,7 +675,6 @@
     - LoadoutSalvageBoots
     - LaceupShoes
   # Goob Loadouts Rework End
-    - Galoshes #Gabystation
     - LeatherShoes #Gabystation
     - Slippers #Gabystation
     - NanotrasenRepresentativeHeels #Gabystation
