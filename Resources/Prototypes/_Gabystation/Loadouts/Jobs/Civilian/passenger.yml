@@ -1,0 +1,139 @@
+# Gabystation
+
+# Hats
+- type: loadout
+  id: WitchHat
+  equipment:
+    hat: ClothingHeadHatWitch1
+
+- type: loadout
+  id: BrownFedora
+  equipment:
+    hat: ClothingHeadHatFedoraBrown
+
+- type: loadout
+  id: GreyFedora
+  equipment:
+    hat: ClothingHeadHatFedoraGrey
+
+- type: loadout
+  id: Fez
+  equipment:
+    hat: ClothingHeadHatFez
+
+- type: loadout
+  id: PirateHat
+  equipment:
+    hat: ClothingHeadHatPirate
+
+- type: loadout
+  id: Sombrero
+  equipment:
+    hat: ClothingHeadHatSombrero
+
+- type: loadout
+  id: Ushanka
+  equipment:
+    hat: ClothingHeadHatUshanka
+
+- type: loadout
+  id: Tophat
+  equipment:
+    hat: ClothingHeadHatTophat
+
+- type: loadout
+  id: PaperSack
+  equipment:
+    hat: ClothingHeadPaperSack
+
+- type: loadout
+  id: SafariHat
+  equipment:
+    hat: ClothingHeadSafari
+
+# Gloves
+- type: loadout
+  id: Powerglove
+  equipment:
+    gloves: ClothingHandsGlovesPowerglove
+
+- type: loadout
+  id: Robohands
+  equipment:
+    gloves: ClothingHandsGlovesRobohands
+
+- type: loadout
+  id: CivilianFingerlessGloves
+  equipment:
+    gloves: ClothingHandsGlovesFingerless
+
+- type: loadout
+  id: CivilianPurpleGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorPurple
+
+- type: loadout
+  id: CivilianRedGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorRed
+
+- type: loadout
+  id: CivilianBlueGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlue
+
+- type: loadout
+  id: CivilianTealGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorTeal
+
+- type: loadout
+  id: CivilianBrownGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBrown
+
+- type: loadout
+  id: CivilianGrayGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorGray
+
+- type: loadout
+  id: CivilianGreenGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorGreen
+
+- type: loadout
+  id: CivilianLightBrownGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorLightBrown
+
+- type: loadout
+  id: CivilianOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange
+
+- type: loadout
+  id: CivilianWhiteGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite
+
+- type: loadout
+  id: CivilianBlackGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+# Shoes
+- type: loadout
+  id: Galoshes
+  equipment:
+    shoes: ClothingShoesGaloshes
+
+- type: loadout
+  id: LeatherShoes
+  equipment:
+    shoes: ClothingShoesLeather
+
+- type: loadout
+  id: Slippers
+  equipment:
+    shoes: ClothingShoesSlippers

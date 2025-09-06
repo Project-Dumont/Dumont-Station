@@ -509,12 +509,40 @@
   name: loadout-group-civilian-hat
   minLimit: 0
   loadouts: [HeadbandBlack]
+  - WitchHat #Gabystation
+  - BrownFedora #Gabystation
+  - GreyFedora #Gabystation
+  - Fez #Gabystation
+  - PirateHat #Gabystation
+  - Sombrero #Gabystation
+  - Ushanka #Gabystation
+  - Tophat #Gabystation
+  - PaperSack #Gabystation
+  - SafariHat #Gabystation
+
 
 - type: loadoutGroup
   id: CivilianFace
   name: loadout-group-civilian-mask
   minLimit: 0
   loadouts: [GreyTiderMask]
+  - Powerglove #Gabystation
+  - Robohands #Gabystation
+  - CivilianFingerlessGloves #Gabystation
+  - CivilianPurpleGloves #Gabystation
+  - CivilianRedGloves #Gabystation
+  - CivilianBlueGloves #Gabystation
+  - CivilianTealGloves #Gabystation
+  - CivilianBrownGloves #Gabystation
+  - CivilianGrayGloves #Gabystation
+  - CivilianGreenGloves #Gabystation
+  - CivilianLightBrownGloves #Gabystation
+  - CivilianOrangeGloves #Gabystation
+  - CivilianWhiteGloves #Gabystation
+  - CivilianBlackGloves #Gabystation
+  - GoldRing #Gbystation
+  - SilverRing #Gabystation
+
 
 - type: loadoutGroup
   id: CivilianGloves
@@ -635,6 +663,10 @@
     - LoadoutSalvageBoots
     - LaceupShoes
   # Goob Loadouts Rework End
+    - Galoshes #Gabystation
+    - LeatherShoes #Gabystation
+    - Slippers #Gabystation
+    - NanotrasenRepresentativeHeels #Gabystation
 
 - type: loadoutGroup
   id: CivilianShoesRequired
