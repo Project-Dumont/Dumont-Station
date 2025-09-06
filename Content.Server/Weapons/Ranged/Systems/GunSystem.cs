@@ -95,11 +95,13 @@
 // SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Kirus59 <145689588+Kirus59@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
@@ -117,6 +119,7 @@
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ss14-Starlight <ss14-Starlight@outlook.com>
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 //

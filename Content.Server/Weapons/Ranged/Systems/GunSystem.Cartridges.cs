@@ -4,13 +4,15 @@
 // SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+// SPDX-FileCopyrightText: 2025 ss14-Starlight <ss14-Starlight@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
