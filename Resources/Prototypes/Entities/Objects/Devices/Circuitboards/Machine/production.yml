@@ -802,6 +802,10 @@
         Plastic: 12
     - type: StaticPrice
       price: 15
+    - type: Tag # Goobstation - augment construction
+      tags:
+      - DroneUsable
+      - AugmentRechargerBoard
 
 - type: entity
   id: PowerCageRechargerCircuitboard
@@ -845,6 +849,10 @@
         Plastic: 12
     - type: StaticPrice
       price: 15
+    - type: Tag # Goobstation - augment construction
+      tags:
+      - DroneUsable
+      - AugmentStationBoard
 
 - type: entity
   id: WeaponCapacitorRechargerCircuitboard
@@ -1182,6 +1190,7 @@
         Cable: 2
     - type: Tag
       tags:
+      - DroneUsable # Goobstation
       - MicrowaveMachineBoard
 
 - type: entity

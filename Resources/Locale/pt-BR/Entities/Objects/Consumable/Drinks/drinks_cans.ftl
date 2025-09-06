@@ -26,7 +26,7 @@ ent-DrinkStarkistCan = lata de starkist
      .desc = O sabor de uma estrela em forma líquida. E um pouco de atum...?
 
 ent-DrinkTonicWaterCan = lata de água tônica
-     .desc = Quinino tem um gosto engraçado, mas pelo menos vai manter a Malária Espacial longe.
+     .desc = Quinino tem um gosto engraçado, mas pelo menos vai manter a malária espacial longe.
 
 ent-DrinkFourteenLokoCan = lata de quatorze-loko
      .desc = O MBO avisou aos membros da tripulação que o consumo de Quatorze-Loko pode resultar em convulsões, cegueira, embriaguez ou até morte. Por favor, beba com responsabilidade.

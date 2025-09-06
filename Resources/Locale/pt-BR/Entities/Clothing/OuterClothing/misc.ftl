@@ -14,7 +14,7 @@ ent-ClothingOuterJacketChef = jaqueta de chef
     .suffix = Chef
 
 ent-ClothingOuterHoodieBlack = moletom preto
-    .desc = Meu deus!! É um Moletom preto!!!!!
+    .desc = Meu deus!! É um moletom preto!!!!!
     .suffix = Chef
 
 ent-ClothingOuterHoodieGrey = moletom cinz
@@ -74,6 +74,6 @@ ent-ClothingOuterPlagueSuit = traje de médico da peste
     .suffix = Chef
 
 ent-ClothingOuterNunRobe = túnica de freira
-    .desc = A Fé move montanhas.
+    .desc = A fé move montanhas.
     .suffix = Chef
 

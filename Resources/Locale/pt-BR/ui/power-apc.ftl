@@ -1,9 +1,9 @@
 apc-menu-title = APC
-apc-menu-breaker-label = Disjuntor Principal
+apc-menu-breaker-label = Disjuntor principal
 apc-menu-breaker-button = Alternar
 apc-menu-power-label = Carga
-apc-menu-external-label = Potência Externa
-apc-menu-charge-label = {$percent} Carregado
+apc-menu-external-label = Potência externa
+apc-menu-charge-label = {$percent} carregado
 
 # For the power state label
 

@@ -892,3 +892,28 @@ Entries:
         tripulação.
   id: 101
   time: '2025-09-03T00:09:41.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Rotular jarros do dispersor químico agora sobrescreve o rótulo ao invés
+        de adicionar. Por exemplo, antes, "jarro (hidrogênio) (Bica|Brute|15u)";
+        agora, "jarro (Bica|Brute|15u)".
+  id: 102
+  time: '2025-09-06T03:14:49.0000000+00:00'
+- author: Fafale
+  changes:
+    - type: Add
+      message: Adiciona páginas de Shadowkin e Daengati ao Livro Guia.
+    - type: Tweak
+      message: Traduz as páginas de espécies em inglês do Livro Guia
+  id: 103
+  time: '2025-09-06T03:18:54.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: >-
+        Passageiros estão devolta! Não podem mais ser antagonistas e ganham
+        apenas 5gc.
+  id: 104
+  time: '2025-09-06T03:20:37.0000000+00:00'

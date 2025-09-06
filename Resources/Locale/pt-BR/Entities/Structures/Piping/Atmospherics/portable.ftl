@@ -1,4 +1,4 @@
 ent-PortableScrubber = filtrador portátil
     .desc = Ele filtra, provavelmente!
-ent-SpaceHeater = Aquecedor
+ent-SpaceHeater = aquecedor
     .desc = Ele aquece, provavelmente!

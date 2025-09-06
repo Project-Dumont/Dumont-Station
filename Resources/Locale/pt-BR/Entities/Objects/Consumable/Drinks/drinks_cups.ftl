@@ -13,8 +13,8 @@ ent-DrinkMugBlack = caneca preta
 ent-DrinkMugBlue = caneca azul
      .desc = Uma caneca azul e preta.
 
-ent-DrinkMugGreen = caneca verde
-     .desc = Uma caneca verde claro e rosa.
+ent-DrinkMugGreen = caneca-verde
+     .desc = Uma caneca verde-claro e rosa.
 
 ent-DrinkMugDog = caneca de cachorro
      .desc = Parece um beagle de desenho animado.

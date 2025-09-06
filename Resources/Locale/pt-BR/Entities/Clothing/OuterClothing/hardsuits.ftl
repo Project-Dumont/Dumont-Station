@@ -55,7 +55,7 @@ ent-ClothingOuterHardsuitSpatio = hardsuit de espaçonauta
 ent-ClothingOuterHardsuitVoidParamed = traje espacial de socorrista
     .desc = Disk 193, os médicos irão aonde você estiver.. Até mesmo no meio do espaço!
 
-ent-ClothingOuterHardsuitJuggernaut = hardsuit Ultra-Blindada Cybersun
+ent-ClothingOuterHardsuitJuggernaut = hardsuit ultra-blindada Cybersun
     .desc = A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
 
 ent-ClothingOuterHardsuitSyndieCommander = hardsuit de comandante do Sindicato

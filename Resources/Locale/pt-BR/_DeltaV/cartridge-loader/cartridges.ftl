@@ -1,8 +1,8 @@
 ## NanoChat
 
 # General
-nano-chat-program-name = Nano Zap
-nano-chat-title = Nano Zap
+nano-chat-program-name = NanoZap
+nano-chat-title = NanoZap
 nano-chat-new-chat = Novo contato
 nano-chat-contacts = CONTATOS
 nano-chat-no-chats = Sem conversas ativas

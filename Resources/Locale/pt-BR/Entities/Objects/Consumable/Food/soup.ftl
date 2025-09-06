@@ -19,7 +19,7 @@ ent-FoodSaladJungle = salada da selva
 ent-FoodSaladCitrus = salada cítrica
      .desc = Sobrecarga de cítricos!
 
-ent-FoodSaladEden = salada do Éden
+ent-FoodSaladEden = salada do éden
      .desc = Uma salada repleta de potencial inexplorado.
 
 ent-FoodRiceBoiled = arroz cozido
@@ -77,7 +77,7 @@ ent-FoodSoupChiliCold = pimenta gelada
      .desc = Essa lama mal chega a ser líquida!
 
 ent-FoodSoupChiliClown = chili com carnaval
-     .desc = Um delicioso ensopado de carne, pimenta e lágrimas de palhaço salgadas e salgadas.
+     .desc = Um delicioso ensopado de carne, pimenta e lágrimas de palhaço salgadas.
 
 ent-FoodSoupMonkey = delícia de macaco
      .desc = Uma deliciosa sopa com pedaços de carne de macaco cozidos na perfeição, num caldo que tem um leve sabor de banana.
@@ -95,7 +95,7 @@ ent-FoodSoupMushroom = sopa de cogumelos
      .desc = Uma deliciosa e farta sopa de cogumelos.
 
 ent-FoodSoupBeet = sopa de beterraba
-     .desc = Espere, como se escreve de novo..?
+     .desc = Espere, como se escreve de novo?
 
 ent-FoodSoupBeetRed = sopa de beterraba vermelha
      .desc = Uma delícia.

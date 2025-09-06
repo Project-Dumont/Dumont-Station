@@ -1,8 +1,8 @@
 ent-MobHonkBot = buzinabot
-     .desc = Horrível.
+     .desc = Destrua a todos os custos.
 
 ent-MobCleanBot = limpabot
-     .desc = O aumento da automação agora ameaça os zeladores do espaço.
+     .desc = O maior inimigo dos detetives.
 
 ent-MobMedibot = curabot
      .desc = Não substitui um médico, mas é melhor que nada.

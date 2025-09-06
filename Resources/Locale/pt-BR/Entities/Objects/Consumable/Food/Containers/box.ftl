@@ -5,11 +5,11 @@ ent-FoodContainerEgg = caixa de ovos
      .desc = Não os deixe cair!
 
 ent-EggBoxBroken = caixa de ovos
-     .desc = Não os deixe cair!
+     .desc = Você os deixou cair...
      .suffix = Quebrado
 
 ent-FoodBoxPizza = caixa de pizza
-     .desc = Não os deixe cair!
+     .desc = Você a deixou cair...
      .suffix = Quebrado
 
 ent-FoodBoxPizzaFilled = caixa de pizza

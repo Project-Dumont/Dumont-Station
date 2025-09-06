@@ -11,7 +11,7 @@ ent-MobXenoQueen = Rainha
      .desc = Faça crescer a colmeia. Construa o ninho.
 
 ent-MobXenoRavager = Devastador
-     .desc= Hack and slash. Você é o predador.
+     .desc= retalhar e cortar. Você é o predador.
 
 ent-MobXenoRunner = Corredor
      .desc = Surpreenda sua presa com uma velocidade incrível.

@@ -30,4 +30,4 @@ ent-ClothingHeadsetAltScience = headset do diretor de pesquisa
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
 ent-ClothingHeadsetAltFreelance = headset de nômade
-    .desc = Utilizado por um grupo nomádico de nômades.
+    .desc = Utilizado por um grupo de nômades.
