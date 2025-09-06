@@ -508,7 +508,8 @@
   id: CivilianHat
   name: loadout-group-civilian-hat
   minLimit: 0
-  loadouts: [HeadbandBlack]
+  loadouts:
+  - HeadbandBlack
   - WitchHat #Gabystation
   - BrownFedora #Gabystation
   - GreyFedora #Gabystation
@@ -525,7 +526,15 @@
   id: CivilianFace
   name: loadout-group-civilian-mask
   minLimit: 0
-  loadouts: [GreyTiderMask]
+  loadouts:
+  - GreyTiderMask
+
+- type: loadoutGroup
+  id: CivilianGloves
+  name: loadout-group-civilian-gloves
+  minLimit: 0
+  loadouts:
+  - GreyTiderGloves
   - Powerglove #Gabystation
   - Robohands #Gabystation
   - CivilianFingerlessGloves #Gabystation
@@ -542,13 +551,6 @@
   - CivilianBlackGloves #Gabystation
   - GoldRing #Gbystation
   - SilverRing #Gabystation
-
-
-- type: loadoutGroup
-  id: CivilianGloves
-  name: loadout-group-civilian-gloves
-  minLimit: 0
-  loadouts: [GreyTiderGloves]
 
 - type: loadoutGroup
   id: CivilianBackpack
