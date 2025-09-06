@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.DisplacementMap;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -15,6 +16,11 @@ public sealed class DisplacementMapSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
+    private static string? BuildDisplacementLayerKey(object key)
+    {
+        return key.ToString() is null ? null : $"{key}-displacement";
+    }
+
     /// <summary>
     /// Attempting to apply a displacement map to a specific layer of SpriteComponent
     /// </summary>
@@ -24,21 +30,20 @@ public sealed class DisplacementMapSystem : EntitySystem
     /// <param name="key">Unique layer key, which will determine which layer to apply displacement map to</param>
     /// <param name="displacementKey">The key of the new displacement map layer added by this function.</param>
     /// <returns></returns>
-    public bool TryAddDisplacement(DisplacementData data,
+    public bool TryAddDisplacement(
+        DisplacementData data,
         Entity<SpriteComponent> sprite,
         int index,
         object key,
-        out string displacementKey)
+        [NotNullWhen(true)] out string? displacementKey
+    )
     {
-        displacementKey = $"{key}-displacement";
-
-        if (key.ToString() is null)
+        displacementKey = BuildDisplacementLayerKey(key);
+        if (displacementKey is null)
             return false;
 
-        if (data.ShaderOverride != null)
-            sprite.Comp.LayerSetShader(index, data.ShaderOverride);
-
-        _sprite.RemoveLayer(sprite.AsNullable(), displacementKey, false);
+        if (!TryRemoveDisplacement(sprite, key))
+            return false;
 
         //allows you not to write it every time in the YML
         foreach (var pair in data.SizeMaps)
@@ -75,7 +80,11 @@ public sealed class DisplacementMapSystem : EntitySystem
         }
 
         var displacementLayer = _serialization.CreateCopy(displacementDataLayer, notNullableOverride: true);
-        displacementLayer.CopyToShaderParameters!.LayerKey = key.ToString() ?? "this is impossible";
+
+        // This previously assigned a string reading "this is impossible" if key.ToString eval'd to false.
+        // However, for the sake of sanity, we've changed this to assert non-null - !.
+        // If this throws an error, we're not sorry. Nanotrasen thanks you for your service fixing this bug.
+        displacementLayer.CopyToShaderParameters!.LayerKey = key.ToString()!;
 
         _sprite.AddLayer(sprite.AsNullable(), displacementLayer, index);
         _sprite.LayerMapSet(sprite.AsNullable(), displacementKey, index);
@@ -83,14 +92,16 @@ public sealed class DisplacementMapSystem : EntitySystem
         return true;
     }
 
-    /// <inheritdoc cref="TryAddDisplacement"/>
-    [Obsolete("Use the Entity<SpriteComponent> overload")]
-    public bool TryAddDisplacement(DisplacementData data,
-        SpriteComponent sprite,
-        int index,
-        object key,
-        out string displacementKey)
+    /// <summary>
+    /// Attempts to remove the displacement layer specified.
+    /// </summary>
+    /// <param name="sprite"></param>
+    /// <param name="key"></param>
+    /// <returns>False if the key is invalid or the layer didn't exist. Otherwise true.</returns>
+    public bool TryRemoveDisplacement(Entity<SpriteComponent> sprite, object key)
     {
-        return TryAddDisplacement(data, (sprite.Owner, sprite), index, key, out displacementKey);
+        var displacementLayerKey = BuildDisplacementLayerKey(key);
+
+        return displacementLayerKey is not null && _sprite.RemoveLayer(sprite.AsNullable(), displacementLayerKey);
     }
 }
