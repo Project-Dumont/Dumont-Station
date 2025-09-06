@@ -405,24 +405,13 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         var hitEntity = lastHit.Value;
                         if (hitscan.StaminaDamage > 0f)
-                        _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
-
-                    if (hitscan.Count > 0 && TryComp(hitEntity, out FlammableComponent? flammable)) // Goobstation
-                        _flammableSystem.AdjustFireStacks(hitEntity, hitscan.Count, flammable, true);
+                            _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true); // Goob edit
 
                         var dmg = hitscan.Damage;
 
                         var hitName = ToPrettyString(hitEntity);
                         if (dmg != null)
                             dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user);
-
-                        if (hitscan.Ignite)
-                        {
-                            if (TryComp<FlammableComponent>(hitEntity, out var flameComp))
-                            {
-                                _flammableSystem.Ignite(hitEntity, lastUser, flameComp);
-                            }
-                        }
 
                         // check null again, as TryChangeDamage returns modified damage values
                         if (dmg != null)
@@ -447,6 +436,18 @@ public sealed partial class GunSystem : SharedGunSystem
                             {
                                 Logs.Add(LogType.HitScanHit,
                                     $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
+                            }
+                        }
+
+                        if (hitscan.Ignite)
+                        {
+                            if (TryComp<FlammableComponent>(lastHit.Value, out var flammable))
+                                _flammableSystem.SetFireStacks(lastHit.Value, 1, flammable, true);
+
+                            if (Transform(lastHit.Value) is TransformComponent xform && xform.GridUid is { } grid)
+                            {
+                                var position = TransformSystem.GetGridOrMapTilePosition(lastHit.Value, xform);
+                                _atmosphere.HotspotExpose(grid, position, hitscan.Temperature, 50, user, true);
                             }
                         }
                     }
