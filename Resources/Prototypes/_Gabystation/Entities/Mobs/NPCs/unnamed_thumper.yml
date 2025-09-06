@@ -2,7 +2,7 @@
   name: '???'
   suffix: Unnamed, Thumper
   description: "The manifestation of my being will watch over you, when you sleep in bed, and you wake up, you won't be able to move any part of you."
-  parent: MobXeno
+  parent: BaseMobAlternate
   id: MobUnnamedThumper
   components:
   - type: Sprite

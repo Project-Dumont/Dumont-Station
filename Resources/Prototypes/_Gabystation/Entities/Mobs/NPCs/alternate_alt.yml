@@ -2,7 +2,7 @@
   name: Alternate
   suffix: Whisperer
   description: Nothing Is Worth The Risk.
-  parent: MobXeno
+  parent: BaseMobAlternate
   id: MobAlternateAlt
   components:
   - type: Sprite

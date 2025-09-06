@@ -1,7 +1,7 @@
 - type: entity
   name: Wendigo
   description: A manhunter entity of the dark woods. Although its main diet is humanoids, it won't pass a meal at anything that comes across it.
-  parent: MobXeno
+  parent: BaseMobAlternate
   id: MobWendigo
   components:
   - type: Sprite
