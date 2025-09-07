@@ -1,0 +1,55 @@
+- type: body
+  id: Daengati
+  name: "daengati"
+  root: chest
+  slots:
+    head:
+      part: HeadDaengati
+      connections:
+      - chest
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganDaengatiEyes
+    chest:
+      part: ChestDaengati
+      connections:
+      - groin
+      - right arm
+      - left arm
+      - head # Shitmed
+      organs:
+        heart: OrganHumanHeart
+        lungs: OrganHumanLungs
+    groin:
+      part: GroinDaengati
+      connections:
+      - right leg
+      - left leg
+      organs:
+        stomach: OrganHumanStomach
+        liver: OrganHumanLiver
+        kidneys: OrganHumanKidneys
+    right arm:
+      part: RightArmDaengati
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmDaengati
+      connections:
+      - left hand
+    right hand:
+      part: RightHandDaengati
+    left hand:
+      part: LeftHandDaengati
+    right leg:
+      part: RightLegDaengati
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegDaengati
+      connections:
+      - left foot
+    right foot:
+      part: RightFootDaengati
+    left foot:
+      part: LeftFootDaengati

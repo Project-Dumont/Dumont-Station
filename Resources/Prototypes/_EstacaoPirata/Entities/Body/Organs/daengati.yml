@@ -1,0 +1,12 @@
+- type: entity
+  id: OrganDaengatiEyes
+  parent: OrganHumanEyes
+  name: daengati eyes
+  description: "Eyes similar to those of a feline, with vertical pupils."
+  components:
+  - type: Organ
+    onAdd:
+    - type: NightVision
+      color: "#9c452a"
+      activateSound: null
+      deactivateSound: null

@@ -23,27 +23,15 @@
         Slash: 3.5
         Heat: 2
   - type: Body
-    prototype: Human
-  - type: Temperature
-    heatDamageThreshold: 500
-    coldDamageThreshold: 270
-    currentTemperature: 310.15
-    specificHeat: 42
-    coldDamage:
-      types:
-        Cold : 0.4 #o padrão é 0.1
-    heatDamage:
-      types:
-        Heat : 0.5 #O padrão é 1.5
+    prototype: Daengati
+  - type: Daengati
+    modifiers:
+      coefficients:
+        Heat: 0.6
+        Cold: 1.3
+        Piercing: 1.15
   - type: Damageable
     damageModifierSet: Daengati
-  - type: NightVision # Gaby edit
-    isActive: false
-    toggleAction: ToggleDaengatiNightVision
-    color: "#9c452a"
-    strength: 2
-    activateSound: null
-    deactivateSound: null
 
 - type: entity
   save: false
@@ -61,14 +49,3 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
 
-- type: entity # Gaby edit
-  id: ToggleDaengatiNightVision
-  name: Switch night vision
-  description: Switches night vision.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    itemIconStyle: BigAction
-    priority: -10
-    icon: Interface/Actions/eyeopen.png
-    event: !type:ToggleNightVisionEvent
