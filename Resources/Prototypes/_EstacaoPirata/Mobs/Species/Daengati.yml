@@ -11,8 +11,8 @@
   id: MobDaengatiBase
   abstract: true
   components:
-  - type: Speech
-    speechVerb: #No momento que estou fazendo isso acredito que não tenha um modo de falar especifico dos daengatis
+  #- type: Speech # O valor não pode ser nulo, vai ficar assim até ter um valor
+  #  speechVerb:  #No momento que estou fazendo isso acredito que não tenha um modo de falar especifico dos daengatis
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
@@ -29,12 +29,6 @@
       types:
         Slash: 3.5
         Heat: 2
-  - type: Daengati
-    modifiers:
-      coefficients:
-        Heat: 0.6
-        Cold: 1.3
-        Piercing: 1.15
   - type: Temperature
     heatDamageThreshold: 500
     coldDamageThreshold: 270
@@ -46,18 +40,24 @@
     heatDamage:
       types:
         Heat : 0.5 #O padrão é 1.5
+#  - type: Daengati # Esta dando erro então vou deixar removido.. tem que adicionar depois
+#    modifiers:
+#      coefficients:
+#        Heat: 0.6
+#        Cold: 1.3
+#        Piercing: 1.15
   - type: Damageable
     damageModifierSet: Daengati
-      - type: Body
+  - type: Body
     prototype: Daengati
   - type: TypingIndicator
     proto: oni #Mudar apos adicionar indicador de escrita de daengati
-  - type: tags
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
-    - AnomalyHost
+#  - type: tags # Esta dando erro então vou deixar removido.. tem que adicionar depois
+#    tags:
+#    - CanPilot
+#    - FootstepSound
+#    - DoorBumpOpener
+#    - AnomalyHost
 - type: entity
   save: false
   name: Urist McDemon
