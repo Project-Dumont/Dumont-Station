@@ -6,7 +6,7 @@
   components:
   - type: Organ
     onAdd:
-    - type: NightVision
-      color: "#9c452a"
+    - type: NightVision # Goobstation - Nightvision
+      color: "#9c452a" #A cor parece estar forte demais, não faço ideia pra qual colocar
       activateSound: null
       deactivateSound: null

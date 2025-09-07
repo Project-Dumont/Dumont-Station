@@ -7,17 +7,6 @@
     damageModifierSet: Daengati
   - type: BodyPart
     species: Daengati
-  - type: Temperature
-    heatDamageThreshold: 500
-    coldDamageThreshold: 270
-    currentTemperature: 310.15
-    specificHeat: 42
-    coldDamage:
-      types:
-        Cold : 0.4 #o padrão é 0.1
-    heatDamage:
-      types:
-        Heat : 0.5 #O padrão é 1.5
 
 - type: entity
   id: HeadDaengati
