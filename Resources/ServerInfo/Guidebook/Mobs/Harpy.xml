@@ -32,8 +32,15 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   ## Fraquezas
 
-  Graças a suas pernas digitígradas, são incapazes de vestir quaisquer calçados. Harpias também respiram [color=#1e90ff]3 vezes mais rápido[/color] que outras espécies.
-  Elas tomam [color=#ec3a3a]15% mais dano Bruto[/color].
-  Elas são muito leves, tornando difícil carregar outras espécies. Porém, também [color=#ffa500]correm 10% mais rápido do que os demais[/color].
+  - Graças a suas pernas digitígradas, são incapazes de vestir quaisquer calçados. Porém, também [color=#ffa500]correm 10% mais rápido do que os demais[/color].
+  - Elas tomam [color=#ec3a3a]15% mais dano Bruto[/color].
+  - Elas são muito leves, tornando difícil carregar outras espécies.
+
+  <!--
+  Harpias também respiram [color=#1e90ff]3 vezes mais rápido[/color] que outras espécies.
+
+  Havia esse trecho em inglês, mas fizemos uns testes e não parece ter diferença no consumo de oxigênio ou no
+  tempo pra sufocar, caso alguém saiba explicar em melhores palavras, fique à vontade!
+  -->
 
 </Document>
