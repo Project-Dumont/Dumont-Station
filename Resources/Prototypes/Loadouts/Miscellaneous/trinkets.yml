@@ -380,14 +380,6 @@
     back:
     - FoodSnackLollypopWrappedCarp
 
-# End GoobStation
-# Gabystation
-- type: loadout
-  id: PlushieBruce
-  storage:
-    back:
-    - PlushieBruce
-
 # Towels
 - type: loadout
   id: TowelColorWhite

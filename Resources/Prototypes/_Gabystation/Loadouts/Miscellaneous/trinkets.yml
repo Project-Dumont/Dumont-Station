@@ -1,0 +1,5 @@
+- type: loadout
+  id: PlushieBruce
+  storage:
+    back:
+    - PlushieBruce
