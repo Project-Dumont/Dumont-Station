@@ -12,7 +12,7 @@
   components:
   - type: Sprite
     sprite: /Species/Daengati/organs.rsi
-    layer:
+    layers:
     - state: eyeball-l
     - state: eyeball-r
   - type: Organ
