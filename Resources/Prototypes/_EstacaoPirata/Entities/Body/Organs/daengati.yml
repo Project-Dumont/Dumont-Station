@@ -11,10 +11,10 @@
   description: "Eyes similar to those of a feline, with vertical pupils."
   components:
   - type: Sprite
-    sprite: Textures/Species/Daengati/organs.rsi
+    sprite: Species/Daengati/organs.rsi
     layers:
-    - state: eyeball-l
-    - state: eyeball-r
+      - state: eyeball-l
+      - state: eyeball-r
   - type: Organ
     onAdd:
     - type: NightVision # Goobstation - Nightvision
