@@ -11,7 +11,7 @@
   description: "Eyes similar to those of a feline, with vertical pupils."
   components:
   - type: Sprite
-    sprite: /Species/Daengati/organs.rsi
+    sprite: Textures/Species/Daengati/organs.rsi
     layers:
     - state: eyeball-l
     - state: eyeball-r
