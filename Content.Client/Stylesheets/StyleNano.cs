@@ -264,7 +264,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color GabyTheme = Color.FromHex("#667C4D");
+        public static readonly Color GabyTheme = Color.FromHex("#c73c55");
 
         public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
@@ -283,7 +283,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#164420");
 
         // gaby station
-        public static readonly Color ButtonColorDefaultGaby = Color.FromHex("#667C4D");
+        public static readonly Color ButtonColorDefaultGaby = Color.FromHex("#c73c55");
         public static readonly Color ButtonColorHoveredGaby = Color.FromHex("#4C5B39");
 
         //NavMap
