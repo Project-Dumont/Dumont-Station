@@ -1,0 +1,14 @@
+- type: entity
+  parent: DrinkShaker
+  id: GoldenDrinkShaker
+  name: golden shaker
+  description: A professional mixologist dream come true, fit to serve royalty with ice cold perfection.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
+  - type: Sprite
+    sprite: _Gabystation/Objects/Consumable/Drinks/goldenshaker.rsi
+    state: icon
+  - type: Item
+    sprite: _Gabystation/Objects/Consumable/Drinks/goldenshaker.rsi
