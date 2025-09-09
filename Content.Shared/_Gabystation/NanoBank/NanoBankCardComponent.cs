@@ -19,4 +19,10 @@ public sealed partial class NanoBankCardComponent : Component
 
     [DataField]
     public bool NotificationsMuted = false;
+
+    /// <summary>
+    /// The station linked to the account.
+    /// </summary>
+    [DataField]
+    public EntityUid? Station;
 }

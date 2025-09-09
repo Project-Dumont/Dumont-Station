@@ -1,27 +1,62 @@
 
 
+using Content.Shared.Examine;
+
 namespace Content.Shared._Gabystation.NanoBank;
 
-public sealed class NanoBankCardSystem : EntitySystem
+public abstract class SharedNanoBankSystem : EntitySystem
 {
-    //[Dependency] private readonly EconomyManagerSystem _economy = default!;
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<NanoBankCardComponent, ExaminedEvent>(OnExamined);
     }
 
-    /*public bool TryGetCardsWithAccount(int id, out AllEntityQueryEnumerator<NanoBankCardComponent> cards)
+    private void OnExamined(Entity<NanoBankCardComponent> ent, ref ExaminedEvent args)
     {
-        cards = new AllEntityQueryEnumerator<NanoBankCardComponent>();
+        if (!args.IsInDetailsRange)
+            return;
 
-        var ents = AllEntityQuery<NanoBankCardComponent>();
-        while (ents.MoveNext(out var uid, out var comp))
-        {
-            if (!comp.LoggedIn || comp.AccountId is null || comp.AccountPin is null)
-                continue;
+        if (!ent.Comp.LoggedIn)
+            return;
 
-        }
+        args.PushMarkup(Loc.GetString("nanobank-card-examine-logged"));
+    }
 
-        return true;
-    }*/
+    public bool GetNotificationsMuted(Entity<NanoBankCardComponent?> card)
+    {
+        if (!Resolve(card, ref card.Comp))
+            return false;
+
+        return card.Comp.NotificationsMuted;
+    }
+    public void SetNotificationsMuted(Entity<NanoBankCardComponent?> card, bool muted)
+    {
+        if (!Resolve(card, ref card.Comp))
+            return;
+
+        card.Comp.NotificationsMuted = muted;
+        Dirty(card);
+    }
+
+    public void SetAccountId(Entity<NanoBankCardComponent?> card, int accountId)
+    {
+        if (!Resolve(card, ref card.Comp))
+            return;
+
+        card.Comp.AccountId = accountId;
+        Dirty(card);
+    }
+
+    public void LogoutId(Entity<NanoBankCardComponent?> card)
+    {
+        if (!Resolve(card, ref card.Comp))
+            return;
+
+        card.Comp.AccountId = 0;
+        card.Comp.AccountPin = 0;
+        card.Comp.LoggedIn = false;
+        Dirty(card);
+    }
 }
+

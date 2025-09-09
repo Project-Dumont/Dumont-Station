@@ -39,8 +39,11 @@ public sealed class GetBankCurrencyCommand : IConsoleCommand
             return;
         }
 
+        if (!_entityManager.TryGetComponent<EconomyManagerComponent>(stationUid.Value, out var economy))
+            return;
+
         var economyMan = _entityManager.System<EconomyManagerSystem>();
-        if (!economyMan.TryGetBalance(stationUid.Value, int.Parse(args[0]), out var balance))
+        if (!economyMan.TryGetBalance(economy, int.Parse(args[0]), out var balance))
             shell.WriteError("Unknow bank account!");
 
         shell.WriteLine($"{args[0]} balance is: {balance}");
@@ -102,8 +105,11 @@ public sealed class SetBankCurrencyCommand : IConsoleCommand
             return;
         }
 
+        if (!_entityManager.TryGetComponent<EconomyManagerComponent>(stationUid.Value, out var economy))
+            return;
+
         var economyMan = _entityManager.System<EconomyManagerSystem>();
-        if (!economyMan.TryGetData(stationUid.Value, int.Parse(args[0]), out var data))
+        if (!economyMan.TryGetData(economy, int.Parse(args[0]), out var data))
         {
             shell.WriteLine("Unknow account!");
             return;
@@ -112,7 +118,7 @@ public sealed class SetBankCurrencyCommand : IConsoleCommand
             return;
 
         data.Balance = int.Parse(args[1]);
-        economyMan.SetAccountData(stationUid.Value, int.Parse(args[0]), data);
+        economyMan.SetAccountData(economy, int.Parse(args[0]), data);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

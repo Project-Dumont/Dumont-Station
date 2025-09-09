@@ -2,6 +2,7 @@ using Content.Client.UserInterface.Fragments;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader;
 using Robust.Client.UserInterface;
+using Content.Shared._Gabystation.CartridgeLoader.Cartridges;
 
 namespace Content.Client._Gabystation.CartridgeLoader.Cartridges;
 
@@ -18,37 +19,25 @@ public sealed partial class NanoBankUi : UIFragment
     {
         _fragment = new NanoBankUiFragment();
 
-        /*_fragment.OnNextButtonPressed += () =>
+        _fragment.OnMessageSent += (type, targetAcc, content) =>
         {
-            SendNewsReaderMessage(NewsReaderUiAction.Next, userInterface);
+            SendNanoBankUiMessage(type, targetAcc, content, userInterface);
         };
-        _fragment.OnPrevButtonPressed += () =>
-        {
-            SendNewsReaderMessage(NewsReaderUiAction.Prev, userInterface);
-        };
-        _fragment.OnNotificationSwithPressed += () =>
-        {
-            MessengerMessage(NewsReaderUiAction.NotificationSwitch, userInterface);
-        };*/
     }
 
     public override void UpdateState(BoundUserInterfaceState state)
     {
-        /*switch (state)
-        {
-            case MessengerBoundUserInterfaceState cast:
-                _fragment?.UpdateState(cast.Article, cast.TargetNum, cast.TotalNum, cast.NotificationOn);
-                break;
-            case MessengerEmptyBoundUserInterfaceState empty:
-                _fragment?.UpdateEmptyState(empty.NotificationOn);
-                break;
-        }*/
+        if (state is NanoBankUiState cast)
+            _fragment?.UpdateState(cast);
     }
 
-    /*private void SendNewsReaderMessage(NewsReaderUiAction action, BoundUserInterface userInterface)
+    private static void SendNanoBankUiMessage(NanoBankUiMessageType type,
+        int? targetAcc,
+        float? content,
+        BoundUserInterface userInterface)
     {
-        var newsMessage = new NewsReaderUiMessageEvent(action);
-        var message = new CartridgeUiMessage(newsMessage);
+        var nanoChatMessage = new NanoBankUiMessageEvent(type, targetAcc, content);
+        var message = new CartridgeUiMessage(nanoChatMessage);
         userInterface.SendMessage(message);
-    }*/
+    }
 }

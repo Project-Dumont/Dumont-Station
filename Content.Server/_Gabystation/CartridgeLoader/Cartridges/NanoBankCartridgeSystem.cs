@@ -29,11 +29,12 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly EconomyManagerSystem _economy = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
     public override void Initialize()
     {
         base.Initialize();
 
-        //SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeMessageEvent>(OnMessage);
+        SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeMessageEvent>(OnMessage);
         //SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeRemovedEvent>(OnCartridgeRemoved);
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<AccountPaymentCompleted>(OnPayment);
@@ -45,9 +46,39 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         //UpdateUI(ent, args.Loader);
     }
 
+    private void OnMessage(Entity<NanoBankCartridgeComponent> ent, ref CartridgeMessageEvent args)
+    {
+        if (args is not NanoBankUiMessageEvent msg)
+            return;
+
+        if (!GetCardEntity(GetEntity(args.LoaderUid), out var card))
+            return;
+
+        switch (msg.Type)
+        {
+            case NanoBankUiMessageType.Logout:
+                _nanoBank.LogoutId((ent.Owner, card));
+                break;
+            case NanoBankUiMessageType.Login:
+                HandleLogin(card, msg.TargetAccount, (int?) msg.Content);
+                break;
+
+            case NanoBankUiMessageType.ToggleMute:
+                HandleToggleMute(card);
+                break;
+
+            case NanoBankUiMessageType.Transfer:
+                HandleTransfer(card, msg.TargetAccount, msg.Content);
+                break;
+        }
+
+        UpdateUI(ent, GetEntity(args.LoaderUid));
+    }
+
     public void OnPayment(AccountPaymentCompleted args)
     {
         //! Isso provavelmente tem um alto custo computacional, mas eu não sei outro jeito de fazer isso.
+        // TODO: Novo metodo, o id recebe a mensagem e verifica se está na conta bancaria, se sim, envia uma outra mensagem pra cá.
         Log.Debug("Payment 1");
         var ents = AllEntityQuery<NanoBankCardComponent>();
         while (ents.MoveNext(out var uid, out var comp))
@@ -65,7 +96,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             if (!_economy.ValidateLogin(economyComp, comp.AccountId, comp.AccountPin))
                 continue;
 
-            HandleNotification(uid, "economy-notification-tittle", "economy-notification-body", args.Payment);
+            HandleNotification(uid, "economy-notification-payment-title", "economy-notification-payment-body", args.Payment);
         }
     }
 
@@ -85,6 +116,8 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         card = (pda.ContainedId.Value, idCard);
         return true;
+        /// se eu reusar isso, preciso pegar o id que estiver na mao primeiro e nao so no pda
+        /// pra coisas como atm
     }
 
     private bool TryPdaFromId(EntityUid id, out EntityUid? pda)
@@ -111,9 +144,112 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         else
             body = Loc.GetString(bodyLoc);
 
-        _cartridge.SendNotification((EntityUid) pda,
+        _cartridge.SendNotification(pda.Value,
             Loc.GetString(tittleLoc),
             body);
 
+    }
+
+    private void HandleToggleMute(Entity<NanoBankCardComponent> card)
+    {
+        var foo = (card, card.Comp);
+        _nanoBank.SetNotificationsMuted(foo, !_nanoBank.GetNotificationsMuted(foo));
+        UpdateUIForCard(card);
+    }
+
+    private void HandleLogin(Entity<NanoBankCardComponent> card, int? id, int? pin)
+    {
+        if (!TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy))
+            return;
+        if (id is null || pin is null)
+            return;
+
+        if (_economy.ValidateLogin(economy, id.Value, pin.Value))
+        {
+            card.Comp.LoggedIn = true;
+            card.Comp.AccountId = id.Value;
+            card.Comp.AccountPin = pin.Value;
+        }
+        else
+            card.Comp.LoggedIn = false;
+
+        Dirty(card);
+        UpdateUIForCard(card);
+    }
+
+    private void HandleTransfer(Entity<NanoBankCardComponent> card, int? targetAcc, float? amount)
+    {
+        if (targetAcc is null || amount is null)
+        {
+            HandleNotification(card.Owner, "economy-notification-transfer-failed-title", "economy-notification-transfer-failed-body", default);
+            return;
+        }
+        amount = (int) amount; // max coding
+
+        if (!TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy))
+        {
+            HandleNotification(card.Owner, "economy-notification-transfer-failed-title", "economy-notification-transfer-failed-body", default);
+            return;
+        }
+
+        if (!_economy.TransferBalance(economy, targetAcc.Value, card.Comp.AccountId, amount.Value))
+        {
+            HandleNotification(card.Owner, "economy-notification-transfer-failed-title", "economy-notification-transfer-failed-body", default);
+            return;
+        }
+
+        HandleNotification(card.Owner, "economy-notification-transfer-title", "economy-notification-transfer-body", amount);
+        UpdateUIForCard(card);
+    }
+
+    ///
+
+    private void UpdateUIForCard(EntityUid cardUid)
+    {
+        // Find any PDA containing this card and update its UI
+        var query = EntityQueryEnumerator<NanoBankCartridgeComponent, CartridgeComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var cartridge))
+        {
+            if (comp.Card != cardUid || cartridge.LoaderUid == null)
+                continue;
+
+            UpdateUI((uid, comp), cartridge.LoaderUid.Value);
+        }
+    }
+
+    private void UpdateUI(Entity<NanoBankCartridgeComponent> ent, EntityUid loader)
+    {
+        int accountId = 0;
+        int pin = 0;
+        bool notificationsMuted = false;
+        bool logged = false;
+        float nextPayment = 0;
+        float balance = 0;
+
+        NanoBankCardComponent? card = default;
+
+        if (ent.Comp.Card != null && TryComp<NanoBankCardComponent>(ent.Comp.Card, out card))
+        {
+            accountId = card.AccountId;
+            pin = card.AccountPin;
+            notificationsMuted = card.NotificationsMuted;
+            logged = card.LoggedIn;
+        }
+        if (logged && card?.Station is not null && TryComp<EconomyManagerComponent>(card?.Station, out var economy))
+        {
+            // validate log-in
+            logged = _economy.ValidateLogin(economy, accountId, pin);
+            card.LoggedIn = logged;
+            nextPayment = economy.PaymentCooldownRemaining;
+            _economy.TryGetBalance(economy, accountId, out balance);
+        }
+
+        var state = new NanoBankUiState(accountId,
+            pin,
+            notificationsMuted,
+            logged,
+            nextPayment,
+            balance);
+        _cartridge.UpdateCartridgeUiState(loader, state);
     }
 }

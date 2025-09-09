@@ -1,6 +1,7 @@
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.NameIdentifier;
+using Content.Server.Station.Systems;
 using Content.Shared._Gabystation.Economy;
 using Content.Shared._Gabystation.NanoBank;
 using Content.Shared.Access.Systems;
@@ -20,6 +21,7 @@ namespace Content.Server._Gabystation.Economy
         [Dependency] private readonly IChatManager _chat = default!;
         [Dependency] private readonly IPrototypeManager _prototypes = default!;
         [Dependency] private readonly SharedIdCardSystem _id = default!;
+        [Dependency] private readonly StationSystem _station = default!;
         private readonly ProtoId<NameIdentifierGroupPrototype> _nameIdentifierGroup = "NanoBank";
 
         public override void Initialize()
@@ -73,20 +75,20 @@ namespace Content.Server._Gabystation.Economy
             if (_id.TryFindIdCard(uid, out var idCard))
             {
                 // Add the account to the id card
-                var bankCard = EnsureComp<NanoBankCardComponent>(idCard);
+                var bankCard = EnsureComp<NanoBankCardComponent>(idCard.Owner);
                 bankCard.AccountId = accountId;
                 bankCard.AccountPin = password;
                 bankCard.LoggedIn = true;
+                bankCard.Station = station.Owner;
+                Dirty<NanoBankCardComponent>((idCard.Owner, bankCard));
             }
 
             return true;
         }
 
-        public bool TryGetBalance(EntityUid station, int accountId, out float balance)
+        public bool TryGetBalance(EconomyManagerComponent comp, int accountId, out float balance)
         {
             balance = 0;
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(station, out var comp))
-                return false;
 
             if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
@@ -94,13 +96,18 @@ namespace Content.Server._Gabystation.Economy
             balance = bank.Balance;
             return true;
         }
+        public bool TrySetBalance(EconomyManagerComponent comp, int accountId, float balance)
+        {
+            if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+                return false;
 
-        public bool TryGetData(EntityUid station, int accountId, out IBankAccount? data)
+            bank.Balance = balance;
+            return true;
+        }
+
+        public bool TryGetData(EconomyManagerComponent comp, int accountId, out IBankAccount? data)
         {
             data = null;
-
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(station, out var comp))
-                return false;
 
             if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out data))
                 return false;
@@ -144,11 +151,8 @@ namespace Content.Server._Gabystation.Economy
             }
         }
 
-        public void SetAccountData(EntityUid station, int account, IBankAccount data)
+        public void SetAccountData(EconomyManagerComponent comp, int account, IBankAccount data)
         {
-            if (!TryComp<EconomyManagerComponent>(station, out var comp))
-                return;
-
             if (!comp.BankAccounts.ContainsKey(account))
                 return;
 
@@ -179,6 +183,21 @@ namespace Content.Server._Gabystation.Economy
                 account = null;
                 return false;
             }
+
+            return true;
+        }
+
+        public bool TransferBalance(EconomyManagerComponent comp, int targetId, int accountId, float amount)
+        {
+            // validate accounts
+            if (!TryGetData(comp, targetId, out var targetData) || !TryGetData(comp, accountId, out var data))
+                return false;
+
+            if (data?.Balance < amount)
+                return false;
+
+            if (!TrySetBalance(comp, targetId, targetData?.Balance ?? 0 + amount))
+                return false;
 
             return true;
         }

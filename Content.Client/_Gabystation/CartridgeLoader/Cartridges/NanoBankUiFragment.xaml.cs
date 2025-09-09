@@ -7,6 +7,7 @@ using System.Globalization;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared._Gabystation.CartridgeLoader.Cartridges;
 
 namespace Content.Client._Gabystation.CartridgeLoader.Cartridges;
 
@@ -15,44 +16,59 @@ public sealed partial class NanoBankUiFragment : BoxContainer
 {
     /*public event Action? OnNextButtonPressed;
     public event Action? OnPrevButtonPressed;*/
+    private bool _notificationsMuted;
 
-    public event Action? OnNotificationSwithPressed;
+    public event Action<NanoBankUiMessageType, int?, float?>? OnMessageSent;
 
     public NanoBankUiFragment()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        //Input.Placeholder = new Rope.Leaf(_loc.GetString("comms-console-menu-announcement-placeholder"));
+        MuteButton.OnPressed += _ =>
+        {
+            _notificationsMuted = !_notificationsMuted;
+            UpdateMuteButton();
+            OnMessageSent?.Invoke(NanoBankUiMessageType.ToggleMute, null, null);
+        };
 
-        /*NotificationSwitch.OnPressed += _ => OnNotificationSwithPressed?.Invoke();
-        NotificationSwitch.Text = Loc.GetString(notificationOn ? "news-read-ui-notification-on" : "news-read-ui-notification-off");*/
+        LoginButton.OnPressed += _ => HandleLogin();
 
-        /*Next.OnPressed += _ => OnNextButtonPressed?.Invoke();
-        Prev.OnPressed += _ => OnPrevButtonPressed?.Invoke();
-        */
-    }
-    /*
-    public void UpdateState(NewsArticle article, int targetNum, int totalNum, bool notificationOn)
-    {
-        PageNum.Visible = true;
-        PageText.Visible = true;
-        ShareTime.Visible = true;
-        Author.Visible = true;
-        PageName.Text = article.Title;
-        PageText.SetMarkup(article.Content);
-        PageNum.Text = $"{targetNum}/{totalNum}";
-        NotificationSwitch.Text = Loc.GetString(notificationOn ? "news-read-ui-notification-on" : "news-read-ui-notification-off");
-        string shareTime = article.ShareTime.ToString(@"hh\:mm\:ss");
-        ShareTime.SetMarkup(Loc.GetString("news-read-ui-time-prefix-text") + " " + shareTime);
-        Author.SetMarkup(Loc.GetString("news-read-ui-author-prefix") + " " + (article.Author != null ? article.Author : Loc.GetString("news-read-ui-no-author")));
-        Prev.Disabled = targetNum <= 1;
-        Next.Disabled = targetNum >= totalNum;
+        LogoffButton.OnPressed += _ =>
+        {
+            OnMessageSent?.Invoke(NanoBankUiMessageType.Logout, null, null);
+        };
     }
 
-    public void UpdateEmptyState(bool notificationOn)
+    private void HandleLogin()
     {
-        Author.Visible = false;
-        NotificationSwitch.Text = Loc.GetString(notificationOn ? "news-read-ui-notification-on" : "news-read-ui-notification-off");
-    }*/
+        if (string.IsNullOrWhiteSpace(LoginId.Text) || string.IsNullOrWhiteSpace(LoginPin.Text))
+            return;
+
+        if (!int.TryParse(LoginId.Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var id))
+            return;
+
+        if (!int.TryParse(LoginPin.Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var pin))
+            return;
+
+        OnMessageSent?.Invoke(NanoBankUiMessageType.Login, id, pin);
+    }
+
+    public void UpdateState(NanoBankUiState state)
+    {
+        App.Visible = state.Logged;
+        Login.Visible = !state.Logged;
+
+        _notificationsMuted = state.NotificationsMuted;
+        AccountId.Text = $"#{state.AccountId:D4}";
+        Balance.Text = state.Balance.ToString();
+        Payout.Text = state.NextPayment.ToString();
+        UpdateMuteButton();
+    }
+
+    private void UpdateMuteButton()
+    {
+        if (BellMutedIcon != null)
+            BellMutedIcon.Visible = _notificationsMuted;
+    }
 }

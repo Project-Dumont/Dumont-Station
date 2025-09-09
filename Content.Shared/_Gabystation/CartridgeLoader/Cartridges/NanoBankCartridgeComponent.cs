@@ -13,8 +13,4 @@ public sealed partial class NanoBankCartridgeComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? Card;
-
-    /*
-    [DataField]
-    public EntityUid? Station;*/
 }
