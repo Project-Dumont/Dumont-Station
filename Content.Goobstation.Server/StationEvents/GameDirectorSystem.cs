@@ -40,6 +40,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Prometheus;
+using Content.Server._Gabystation;
 
 namespace Content.Goobstation.Server.StationEvents;
 
@@ -356,7 +357,7 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
         void IndexAndStartGameMode(string pick)
         {
             var pickProto = _prototypeManager.Index(pick);
-            if(!pickProto.TryGetComponent<GameRuleComponent>(out var pickGameRule, _factory) ||
+            if (!pickProto.TryGetComponent<GameRuleComponent>(out var pickGameRule, _factory) ||
                pickGameRule.MinPlayers > count)
             {
                 LogMessage("Not enough players for roundstart antags selected...");
@@ -365,7 +366,9 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
             LogMessage("Choosing roundstart antag");
             LogMessage($"Roundstart antag chosen: {pick}");
             RoundstartAntagsSelectedTotal.WithLabels(pick).Inc();
-            GameTicker.AddGameRule(pick);
+            var rule = GameTicker.AddGameRule(pick);
+
+            _tag.AddTag(rule, GabyConstants.GameDirectorRuleTag); // GabyStation
         }
     }
 
