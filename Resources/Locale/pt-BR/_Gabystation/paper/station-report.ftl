@@ -1,9 +1,8 @@
-station-report-text = A FALHA EM PREENCHER ESSE ARQUIVO RESULTARA EM MULTA
-	[color=#1b67a5]░░██░░ [head=2]Documento Oficial[/head]
-	▀████▀ [head=3]Assunto: Relatório Setorial – Status Operacional da Estação[/head]
-	▄█▀▀█▄ [head=3]De: Representante Nanotrasen[/head]
-	[/color]──────────────────────────────────────────
-
+station-report-text = -# A FALHA EM PREENCHER ESSE ARQUIVO RESULTARA EM MULTA
+    {"["}color=#1b67a5]░░██░░ [head=2]Documento Oficial[/head]
+    ▀████▀ [head=3]Assunto: Relatório de Turno[/head]
+    ▄█▀▀█▄ [head=3]De: Representante da NanoTrasen[/head]
+    {"["}/color]──────────────────────────────────────────
     • [color=#9fed58][bold]Relatório Geral[/bold][/color]
     >[mono][/mono]
     • [color=#ff5c5c][bold]Relatório do Deparamento de Segurança[/bold][/color]
