@@ -30,6 +30,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
+
     public override void Initialize()
     {
         base.Initialize();
