@@ -36,6 +36,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     // TODO list
     /// Evento pra quando receber transferencia
     /// Notificação pra quando receber transferencia
+    /// Geração de senha
 
     public override void Initialize()
     {
@@ -130,12 +131,15 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         var ents = AllEntityQuery<NanoBankCardComponent>();
         while (ents.MoveNext(out var uid, out var comp))
         {
-            if (comp.NotificationsMuted) // We dont need to computate this if notifications are disabled
-                return; //? If u are planning do somemore here, put this if before HandleNotification
 
             var station = _station.GetOwningStation(uid);
             if (!comp.LoggedIn || comp.AccountId is 0 || comp.AccountPin is 0 || station is null)
                 continue;
+
+            UpdateUIForCard(uid);
+
+            if (comp.NotificationsMuted) // We dont need to computate this if notifications are disabled
+                return; //? If u are planning do somemore here, put this if before HandleNotification
 
             if (!TryComp<EconomyManagerComponent>(station, out var economyComp))
                 continue;
@@ -143,7 +147,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             if (!_economy.ValidateLogin(economyComp, comp.AccountId, comp.AccountPin))
                 continue;
 
-            UpdateUIForCard(uid);
             HandleNotification(uid, "economy-notification-payment-title", "economy-notification-payment-body", args.Payment);
         }
     }
