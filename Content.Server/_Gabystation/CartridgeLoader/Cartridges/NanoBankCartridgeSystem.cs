@@ -22,6 +22,7 @@ using Content.Shared._Gabystation.CartridgeLoader.Cartridges;
 using Robust.Server.Containers;
 using Content.Shared.Mobs;
 using Linguini.Syntax.Ast;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server._Gabystation.CartridgeLoader.Cartridges;
 
@@ -155,49 +156,49 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     ///     Gets the ID card entity associated with a PDA.
     /// </summary>
     /// <returns>True if a valid NanoBank card was found</returns>
-    private bool GetCardEntity(EntityUid cardUid,
-        out Entity<NanoBankCardComponent> card)
+    private bool GetCardEntity(Entity<PdaComponent?> pda,
+        [NotNullWhen(true)] out Entity<NanoBankCardComponent> card)
     {
+        var (pdaUid, pdaComp) = pda;
         card = default;
 
-        if (!TryComp<PdaComponent>(cardUid, out var pda) ||
-            pda.ContainedId == null ||
-            !TryComp<NanoBankCardComponent>(pda.ContainedId, out var idCard))
+        if (!Resolve(pdaUid, ref pdaComp, false) ||
+            pdaComp.ContainedId == null ||
+            !TryComp<NanoBankCardComponent>(pdaComp.ContainedId, out var cardComp))
             return false;
 
-        card = (pda.ContainedId.Value, idCard);
+        card = (pdaComp.ContainedId.Value, cardComp);
         return true;
         /// se eu reusar isso, preciso pegar o id que estiver na mao primeiro e nao so no pda
         /// pra coisas como atm
     }
 
-    private bool TryPdaFromId(EntityUid id, out EntityUid? pda)
+    private bool TryPdaFromId(EntityUid idUid,
+        [NotNullWhen(true)] out Entity<PdaComponent> pda)
     {
         pda = default;
 
-        if (!_container.TryGetContainingContainer((id, null, null), out var container) || container is null)
+        if (!_container.TryGetContainingContainer(idUid, out var container)
+            || !TryComp<PdaComponent>(container.Owner, out var pdaComp))
             return false;
 
-        pda = container.Owner;
-
+        pda = (container.Owner, pdaComp);
         return true;
     }
 
     private void HandleNotification(EntityUid uid, string tittleLoc, string bodyLoc, float? amount)
     {
-
-        if (!TryPdaFromId(uid, out var pda) || pda is null)
+        if (!TryPdaFromId(uid, out var pda))
             return;
 
         string body;
+
         if (amount is not null)
             body = Loc.GetString(bodyLoc, ("amount", amount));
         else
             body = Loc.GetString(bodyLoc);
 
-        _cartridge.SendNotification(pda.Value,
-            Loc.GetString(tittleLoc),
-            body);
+        _cartridge.SendNotification(pda.Owner, Loc.GetString(tittleLoc), body);
 
     }
 
