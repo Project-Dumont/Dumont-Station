@@ -96,6 +96,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Gabystation.CartridgeLoader.Cartridges;
 using Content.Server.Access.Systems;
 using Content.Server.AlertLevel;
 using Content.Server.CartridgeLoader;
@@ -133,6 +134,7 @@ namespace Content.Server.PDA
         [Dependency] private readonly UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
         [Dependency] private readonly ContainerSystem _containerSystem = default!;
         [Dependency] private readonly IdCardSystem _idCard = default!;
+        [Dependency] private readonly NanoBankCartridgeSystem _nanoBank = default!; // GabyStation -> NanoBank
 
         public override void Initialize()
         {
@@ -199,6 +201,10 @@ namespace Content.Server.PDA
         {
             if (args.Container.ID != pda.IdSlot.ID && args.Container.ID != pda.PenSlot.ID && args.Container.ID != pda.PaiSlot.ID)
                 return;
+
+            // GabyStation -> NanoBank
+            if (args.Container.ID == pda.IdSlot.ID)
+                _nanoBank.UpdateUIForCard(args.Entity);
 
             // TODO: This is super cursed just use compstates please.
             if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)

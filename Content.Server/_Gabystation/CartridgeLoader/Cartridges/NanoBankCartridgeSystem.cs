@@ -47,7 +47,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         //SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeRemovedEvent>(OnCartridgeRemoved);
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<AccountPaymentCompleted>(OnPayment);
-        SubscribeLocalEvent<PdaComponent, EntRemovedFromContainerMessage>(OnIdRemoved);
     }
 
     public override void Update(float frameTime)
@@ -78,14 +77,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             // Update UI state since card reference changed
             UpdateUI((uid, nanoBank), cartridge.LoaderUid.Value);
         }
-    }
-
-    private void OnIdRemoved(Entity<PdaComponent> ent, ref EntRemovedFromContainerMessage args)
-    {
-        if (args.Container.ID != "PDA-id")
-            return;
-
-        UpdateUIForCard(args.Entity);
     }
 
     private void OnUiReady(Entity<NanoBankCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
@@ -255,9 +246,8 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         UpdateUIForCard(card);
     }
 
-    ///
-
-    private void UpdateUIForCard(EntityUid cardUid)
+    // Talvez isso não devese ser público. Mas preciso chamar em PdaSystem.
+    public void UpdateUIForCard(EntityUid cardUid)
     {
         // Find any PDA containing this card and update its UI
         var query = EntityQueryEnumerator<NanoBankCartridgeComponent, CartridgeComponent>();
@@ -283,6 +273,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         if (ent.Comp.Card != null && TryComp<NanoBankCardComponent>(ent.Comp.Card, out card))
         {
+            // Se o PDA tem ID, então puxa as informações bancárias do ID
             accountId = card.AccountId;
             pin = card.AccountPin;
             notificationsMuted = card.NotificationsMuted;
