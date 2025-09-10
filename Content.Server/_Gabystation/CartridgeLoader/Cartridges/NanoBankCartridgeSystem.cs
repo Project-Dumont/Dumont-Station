@@ -31,6 +31,13 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
 
+    // TODO List
+    // Atualizar a UI ao receber salário;
+    // Corrigir campo próximo pagamento na UI (890,2024 quer dizer quando?, sem sentido ic);
+    // Botão de transferência da UI não funcional;
+    // Apertar o X da UI crash um debug assert;
+    // Atualizar a UI ao remover o id do pda.
+
     public override void Initialize()
     {
         base.Initialize();
@@ -41,10 +48,40 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         SubscribeLocalEvent<AccountPaymentCompleted>(OnPayment);
     }
 
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        // Update card references for any cartridges that need it
+        var query = EntityQueryEnumerator<NanoBankCartridgeComponent, CartridgeComponent>();
+        while (query.MoveNext(out var uid, out var nanoBank, out var cartridge))
+        {
+            if (cartridge.LoaderUid == null)
+                continue;
+
+            // Check if we need to update our card reference
+            if (!TryComp<PdaComponent>(cartridge.LoaderUid, out var pda))
+                continue;
+
+            var newCard = pda.ContainedId;
+            var currentCard = nanoBank.Card;
+
+            // If the cards match, nothing to do
+            if (newCard == currentCard)
+                continue;
+
+            // Update card reference
+            nanoBank.Card = newCard;
+
+            // Update UI state since card reference changed
+            UpdateUI((uid, nanoBank), cartridge.LoaderUid.Value);
+        }
+    }
+
     private void OnUiReady(Entity<NanoBankCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
     {
         _cartridge.RegisterBackgroundProgram(args.Loader, ent);
-        //UpdateUI(ent, args.Loader);
+        UpdateUI(ent, args.Loader);
     }
 
     private void OnMessage(Entity<NanoBankCartridgeComponent> ent, ref CartridgeMessageEvent args)
@@ -162,6 +199,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     {
         if (!TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy))
             return;
+
         if (id is null || pin is null)
             return;
 
