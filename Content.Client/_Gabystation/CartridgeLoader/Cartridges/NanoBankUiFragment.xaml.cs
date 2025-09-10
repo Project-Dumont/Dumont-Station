@@ -19,7 +19,7 @@ public sealed partial class NanoBankUiFragment : BoxContainer
     private bool _notificationsMuted;
     private float _nextPayment = 0f;
 
-    public event Action<NanoBankUiMessageType, int?, float?>? OnMessageSent;
+    public event Action<NanoBankUiMessageType, int?, int?>? OnMessageSent;
 
     public NanoBankUiFragment()
     {

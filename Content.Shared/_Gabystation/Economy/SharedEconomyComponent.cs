@@ -11,7 +11,7 @@ public sealed class BankAccount : IBankAccount
 {
     public required int Password { get; set; }
     public required int InitialPassword { get; set; }
-    public float Balance { get; set; }
+    public int Balance { get; set; }
     public required string? JobId { get; set; }
     public required EntityUid? Owner { get; set; }
 }
@@ -20,7 +20,7 @@ public interface IBankAccount
 {
     int Password { get; set; }
     int InitialPassword { get; set; }
-    float Balance { get; set; }
+    int Balance { get; set; }
     string? JobId { get; set; }
     EntityUid? Owner { get; set; }
 }

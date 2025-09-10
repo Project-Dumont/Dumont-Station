@@ -221,7 +221,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         UpdateUIForCard(card);
     }
 
-    private void HandleTransfer(Entity<NanoBankCardComponent> card, int? targetAcc, float? amount)
+    private void HandleTransfer(Entity<NanoBankCardComponent> card, int? targetAcc, int? amount)
     {
         if (targetAcc is null || amount is null)
         {
@@ -280,7 +280,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         bool notificationsMuted = false;
         bool logged = false;
         float nextPayment = 0;
-        float balance = 0;
+        int balance = 0;
 
         NanoBankCardComponent? card = default;
 

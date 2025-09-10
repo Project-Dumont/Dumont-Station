@@ -13,6 +13,7 @@ public enum NanoBankUiMessageType : byte
     ToggleMute,
 }
 
+// Separar em diferentes messages
 [Serializable, NetSerializable]
 public sealed class NanoBankUiMessageEvent : CartridgeMessageEvent
 {
@@ -20,10 +21,10 @@ public sealed class NanoBankUiMessageEvent : CartridgeMessageEvent
 
     public readonly int? TargetAccount;
 
-    public readonly float? Content;
+    public readonly int? Content;
     public NanoBankUiMessageEvent(NanoBankUiMessageType type,
         int? targetAccount = null,
-        float? content = null)
+        int? content = null)
     {
         Type = type;
         TargetAccount = targetAccount;

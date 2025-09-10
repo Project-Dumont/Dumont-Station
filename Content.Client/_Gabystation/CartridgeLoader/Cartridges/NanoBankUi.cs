@@ -33,7 +33,7 @@ public sealed partial class NanoBankUi : UIFragment
 
     private static void SendNanoBankUiMessage(NanoBankUiMessageType type,
         int? targetAcc,
-        float? content,
+        int? content,
         BoundUserInterface userInterface)
     {
         var nanoChatMessage = new NanoBankUiMessageEvent(type, targetAcc, content);

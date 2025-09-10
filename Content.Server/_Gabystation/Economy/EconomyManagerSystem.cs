@@ -52,7 +52,7 @@ namespace Content.Server._Gabystation.Economy
         }
 
         public bool TryCreateAccount(out int accountId, Entity<EconomyManagerComponent> station,
-            EntityUid uid, string? jobId = null, float balance = 500, int password = 1234)
+            EntityUid uid, string? jobId = null, int balance = 500, int password = 1234)
         {
             accountId = 0;
             var comp = station.Comp;
@@ -86,7 +86,7 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TryGetBalance(EconomyManagerComponent comp, int accountId, out float balance)
+        public bool TryGetBalance(EconomyManagerComponent comp, int accountId, out int balance)
         {
             balance = 0;
 
@@ -96,7 +96,7 @@ namespace Content.Server._Gabystation.Economy
             balance = bank.Balance;
             return true;
         }
-        public bool TrySetBalance(EconomyManagerComponent comp, int accountId, float balance)
+        public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance)
         {
             if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
@@ -187,7 +187,7 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TransferBalance(EconomyManagerComponent comp, int targetId, int accountId, float amount)
+        public bool TransferBalance(EconomyManagerComponent comp, int targetId, int accountId, int amount)
         {
             // validate accounts
             if (!TryGetData(comp, targetId, out var targetData) || !TryGetData(comp, accountId, out var data))
