@@ -20,6 +20,8 @@ using Robust.Shared.Containers;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared._Gabystation.CartridgeLoader.Cartridges;
 using Robust.Server.Containers;
+using Content.Shared.Mobs;
+using Linguini.Syntax.Ast;
 
 namespace Content.Server._Gabystation.CartridgeLoader.Cartridges;
 
@@ -32,11 +34,11 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
 
     // TODO List
-    // Atualizar a UI ao receber salário;
-    // Corrigir campo próximo pagamento na UI (890,2024 quer dizer quando?, sem sentido ic);
+    //// Atualizar a UI ao receber salário;
+    //// Corrigir campo próximo pagamento na UI (890,2024 quer dizer quando?, sem sentido ic);
     // Botão de transferência da UI não funcional;
-    // Apertar o X da UI crash um debug assert;
-    // Atualizar a UI ao remover o id do pda.
+    //// Apertar o X da UI crash um debug assert;
+    //// Atualizar a UI ao remover o id do pda.
 
     public override void Initialize()
     {
@@ -46,6 +48,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         //SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeRemovedEvent>(OnCartridgeRemoved);
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<AccountPaymentCompleted>(OnPayment);
+        SubscribeLocalEvent<PdaComponent, EntRemovedFromContainerMessage>(OnIdRemoved);
     }
 
     public override void Update(float frameTime)
@@ -78,6 +81,14 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         }
     }
 
+    private void OnIdRemoved(Entity<PdaComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        if (args.Container.ID != "PDA-id")
+            return;
+
+        UpdateUIForCard(args.Entity);
+    }
+
     private void OnUiReady(Entity<NanoBankCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
     {
         _cartridge.RegisterBackgroundProgram(args.Loader, ent);
@@ -89,13 +100,14 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         if (args is not NanoBankUiMessageEvent msg)
             return;
 
-        if (!GetCardEntity(GetEntity(args.LoaderUid), out var card))
+        var loaderId = GetEntity(args.LoaderUid);
+        if (!GetCardEntity(loaderId, out var card))
             return;
 
         switch (msg.Type)
         {
             case NanoBankUiMessageType.Logout:
-                _nanoBank.LogoutId((ent.Owner, card));
+                _nanoBank.LogoutId((loaderId, card));
                 break;
             case NanoBankUiMessageType.Login:
                 HandleLogin(card, msg.TargetAccount, (int?) msg.Content);
@@ -110,7 +122,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
                 break;
         }
 
-        UpdateUI(ent, GetEntity(args.LoaderUid));
+        UpdateUI(ent, loaderId);
     }
 
     public void OnPayment(AccountPaymentCompleted args)
@@ -134,6 +146,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             if (!_economy.ValidateLogin(economyComp, comp.AccountId, comp.AccountPin))
                 continue;
 
+            UpdateUIForCard(uid);
             HandleNotification(uid, "economy-notification-payment-title", "economy-notification-payment-body", args.Payment);
         }
     }

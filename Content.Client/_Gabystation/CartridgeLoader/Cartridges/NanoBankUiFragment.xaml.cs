@@ -17,6 +17,7 @@ public sealed partial class NanoBankUiFragment : BoxContainer
     /*public event Action? OnNextButtonPressed;
     public event Action? OnPrevButtonPressed;*/
     private bool _notificationsMuted;
+    private float _nextPayment = 0f;
 
     public event Action<NanoBankUiMessageType, int?, float?>? OnMessageSent;
 
@@ -38,8 +39,17 @@ public sealed partial class NanoBankUiFragment : BoxContainer
         {
             OnMessageSent?.Invoke(NanoBankUiMessageType.Logout, null, null);
         };
+
+        TransferButton.OnPressed += _ => HandleTransfer();
     }
 
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        if (_nextPayment >= 0f)
+            _nextPayment -= args.DeltaSeconds;
+
+        Payout.Text = Loc.GetString("nanobank-fragment-payoff", ("time", ((int) _nextPayment).ToString()));
+    }
     private void HandleLogin()
     {
         if (string.IsNullOrWhiteSpace(LoginId.Text) || string.IsNullOrWhiteSpace(LoginPin.Text))
@@ -52,6 +62,23 @@ public sealed partial class NanoBankUiFragment : BoxContainer
             return;
 
         OnMessageSent?.Invoke(NanoBankUiMessageType.Login, id, pin);
+        LoginPin.Text = "";
+    }
+    private void HandleTransfer()
+    {
+        if (string.IsNullOrWhiteSpace(TransferId.Text) || string.IsNullOrWhiteSpace(TransferAmount.Text))
+            return;
+
+        if (!int.TryParse(TransferId.Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var target))
+            return;
+
+        if (!int.TryParse(TransferAmount.Text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var amount))
+            return;
+
+        OnMessageSent?.Invoke(NanoBankUiMessageType.Transfer, target, amount);
+        // todo: clear this with fallback
+        TransferId.Text = "";
+        TransferAmount.Text = "";
     }
 
     public void UpdateState(NanoBankUiState state)
@@ -60,9 +87,10 @@ public sealed partial class NanoBankUiFragment : BoxContainer
         Login.Visible = !state.Logged;
 
         _notificationsMuted = state.NotificationsMuted;
+        _nextPayment = state.NextPayment;
         AccountId.Text = $"#{state.AccountId:D4}";
-        Balance.Text = state.Balance.ToString();
-        Payout.Text = state.NextPayment.ToString();
+        Balance.Text = Loc.GetString("nanobank-fragment-balance", ("balance", state.Balance.ToString()));
+
         UpdateMuteButton();
     }
 

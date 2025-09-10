@@ -19,13 +19,13 @@
                              VerticalAlignment="Center"
                              MinSize="64 64"
                              Margin="-16" />
-                    <Label Text="Bem vindo, entre com sua conta:"/>
+                    <Label Text="{Loc nano-bank-login-flavor}"/>
                     <BoxContainer>
-                        <Label Text="ID da conta: " />
+                        <Label Text="{Loc nano-bank-login-id}" />
                         <LineEdit Name="LoginId" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
                     </BoxContainer>
                     <BoxContainer>
-                        <Label Text="Pin de 4 digitos: " />
+                        <Label Text="{Loc nano-bank-login-pin}" />
                         <LineEdit Name="LoginPin" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
                     </BoxContainer>
                     <Button Name="LoginButton" Text="Log-In"/>
@@ -75,7 +75,7 @@
                         MaxSize="32 32"
                         Margin="0 0 4 0"
                         StyleClasses="OpenBoth"
-                        ToolTip="{Loc nano-chat-new-chat}" />
+                        ToolTip="{Loc nano-bank-logoff}" />
             </BoxContainer>
         </controls:StripeBack>
         <!-- Balance -->
@@ -84,8 +84,8 @@
                 <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
             </PanelContainer.PanelOverride>
             <BoxContainer Margin="8" Orientation="Vertical">
-                <Label Text="Sua conta tem:"/>
-                <RichTextLabel Name="Balance" Text="[bullet/][color=white][head=3]999 spesos"/>
+                <Label Text="{Loc nano-bank-balance-label}"/>
+                <RichTextLabel Name="Balance" Text="..."/>
             </BoxContainer>
         </PanelContainer>
 
@@ -97,14 +97,22 @@
                 <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
             </PanelContainer.PanelOverride>
             <BoxContainer Margin="8" Orientation="Vertical">
-                <Label Text="Proximo pagamento:"/>
-                <RichTextLabel Name="Payout" Text="[bullet/][color=white][head=3]13:23m | 100 spesos"/>
+                <Label Text="{Loc nano-bank-payout-label}"/>
+                <RichTextLabel Name="Payout" Text="..."/>
             </BoxContainer>
         </PanelContainer>
 
         <controls:HSpacer Spacing="5" />
 
-        <Button Name="Transferir" Text="Fazer transferencia"/>
+        <BoxContainer>
+            <Label Text="{Loc nano-bank-transfer-id}" />
+            <LineEdit Name="TransferId" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
+        </BoxContainer>
+        <BoxContainer>
+            <Label Text="{Loc nano-bank-transfer-amount}" />
+            <LineEdit Name="TransferAmount" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
+        </BoxContainer>
+        <Button Name="TransferButton" Text="nano-bank-transfer-button"/>
         </BoxContainer>
     </BoxContainer>
 </cartridges:NanoBankUiFragment>
