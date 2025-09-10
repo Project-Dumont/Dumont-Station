@@ -123,7 +123,6 @@
 
 # Assmos - Metal Hydrogen
 - type: construction
-  name: metal hydrogen armor
   id: MetalHydrogenArmor
   graph: MetalHydrogenArmor
   startNode: start
@@ -134,7 +133,6 @@
   objectType: Item
 
 - type: construction
-  name: metal hydrogen helmet
   id: MetalHydrogenHelmet
   graph: MetalHydrogenHelmet
   startNode: start
@@ -145,7 +143,6 @@
   objectType: Item
 
 - type: construction
-  name: atmosian armor
   id: AtmosianArmor
   graph: AtmosianArmor
   startNode: start

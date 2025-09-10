@@ -204,7 +204,6 @@
 
 # Assmos - Metal Hydrogen
 - type: construction
-  name: metal hydrogen axe
   id: MetalHydrogenAxeConstruct
   graph: MetalHydrogenAxeConstruct
   startNode: start
