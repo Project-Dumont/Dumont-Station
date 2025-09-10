@@ -154,11 +154,11 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         card = default;
 
         if (!Resolve(pdaUid, ref pdaComp, false) ||
-            pdaComp.ContainedId == null ||
-            !TryComp<NanoBankCardComponent>(pdaComp.ContainedId, out var cardComp))
+            pdaComp.ContainedId is not { } cardUid ||
+            !TryComp<NanoBankCardComponent>(cardUid, out var cardComp))
             return false;
 
-        card = (pdaComp.ContainedId.Value, cardComp);
+        card = (cardUid, cardComp);
         return true;
         /// se eu reusar isso, preciso pegar o id que estiver na mao primeiro e nao so no pda
         /// pra coisas como atm
@@ -249,18 +249,31 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     // Talvez isso não devese ser público. Mas preciso chamar em PdaSystem.
     public void UpdateUIForCard(EntityUid cardUid)
     {
-        // Find any PDA containing this card and update its UI
-        var query = EntityQueryEnumerator<NanoBankCartridgeComponent, CartridgeComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var cartridge))
-        {
-            if (comp.Card != cardUid || cartridge.LoaderUid == null)
-                continue;
+        if (!TryPdaFromId(cardUid, out var pda)
+            || !_container.TryGetContainer(pda.Owner, SharedCartridgeLoaderSystem.InstalledContainerId, out var container))
+            return;
 
-            UpdateUI((uid, comp), cartridge.LoaderUid.Value);
-        }
+        var nanoBankUid = container.ContainedEntities
+            .Where(HasComp<NanoBankCartridgeComponent>) // Pode acontecer do PDA ter mais de um nanobank instalado?
+            .First();
+
+        if (!TryComp<NanoBankCartridgeComponent>(nanoBankUid, out var nanoBankComp))
+            return;
+
+        UpdateUI((nanoBankUid, nanoBankComp), pda);
+
+        // Find any PDA containing this card and update its UI
+        // var query = EntityQueryEnumerator<NanoBankCartridgeComponent, CartridgeComponent>();
+        // while (query.MoveNext(out var uid, out var comp, out var cartridge))
+        // {
+        //     if (comp.Card != cardUid || cartridge.LoaderUid == null)
+        //         continue;
+
+        //     UpdateUI((uid, comp), cartridge.LoaderUid.Value);
+        // }
     }
 
-    private void UpdateUI(Entity<NanoBankCartridgeComponent> ent, EntityUid loader)
+    private void UpdateUI(Entity<NanoBankCartridgeComponent> nanoBank, EntityUid loader)
     {
         int accountId = 0;
         int pin = 0;
@@ -271,7 +284,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         NanoBankCardComponent? card = default;
 
-        if (ent.Comp.Card != null && TryComp<NanoBankCardComponent>(ent.Comp.Card, out card))
+        if (nanoBank.Comp.Card != null && TryComp(nanoBank.Comp.Card, out card))
         {
             // Se o PDA tem ID, então puxa as informações bancárias do ID
             accountId = card.AccountId;
