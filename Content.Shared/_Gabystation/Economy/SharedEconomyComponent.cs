@@ -19,7 +19,7 @@ public sealed class BankAccount : IBankAccount
 public interface IBankAccount
 {
     int Password { get; set; }
-    int InitialPassword { get; set; }
+    int InitialPassword { get; set; } // Faz sentido guardar a senha inicial?
     int Balance { get; set; }
     string? JobId { get; set; }
     EntityUid? Owner { get; set; }

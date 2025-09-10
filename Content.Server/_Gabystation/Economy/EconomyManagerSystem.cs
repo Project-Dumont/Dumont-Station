@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.NameIdentifier;
@@ -22,6 +23,7 @@ namespace Content.Server._Gabystation.Economy
         [Dependency] private readonly IPrototypeManager _prototypes = default!;
         [Dependency] private readonly SharedIdCardSystem _id = default!;
         [Dependency] private readonly StationSystem _station = default!;
+
         private readonly ProtoId<NameIdentifierGroupPrototype> _nameIdentifierGroup = "NanoBank";
 
         public override void Initialize()
@@ -35,7 +37,6 @@ namespace Content.Server._Gabystation.Economy
         {
             if (!EntityManager.TryGetComponent<EconomyManagerComponent>(args.Station, out var comp))
                 return;
-
 
             TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId);
             Log.Debug($"Assigning bank id to {args.Profile.Name} ({number})!");
@@ -86,7 +87,9 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TryGetBalance(EconomyManagerComponent comp, int accountId, out int balance)
+        public bool TryGetBalance(EconomyManagerComponent comp,
+            int accountId,
+            [NotNullWhen(true)] out int balance)
         {
             balance = 0;
 
@@ -96,6 +99,7 @@ namespace Content.Server._Gabystation.Economy
             balance = bank.Balance;
             return true;
         }
+
         public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance)
         {
             if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
@@ -105,7 +109,9 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TryGetData(EconomyManagerComponent comp, int accountId, out IBankAccount? data)
+        public bool TryGetData(EconomyManagerComponent comp,
+            int accountId,
+            [NotNullWhen(true)] out IBankAccount? data)
         {
             data = null;
 
@@ -159,7 +165,9 @@ namespace Content.Server._Gabystation.Economy
             comp.BankAccounts[account] = data;
         }
 
-        public bool GetAccountPassword(int id, bool initial, out int password)
+        public bool GetAccountPassword(int id,
+            bool initial,
+            [NotNullWhen(true)] out int password)
         {
             password = 0;
             var stations = _gameTicker.GetSpawnableStations(); // this sucks
@@ -190,13 +198,13 @@ namespace Content.Server._Gabystation.Economy
         public bool TransferBalance(EconomyManagerComponent comp, int targetId, int accountId, int amount)
         {
             // validate accounts
-            if (!TryGetData(comp, targetId, out var targetData) || !TryGetData(comp, accountId, out var data))
+            if (!TryGetData(comp, targetId, out var targetData)
+                || !TryGetData(comp, accountId, out var data)
+                || data.Balance < amount)
                 return false;
 
-            if (data?.Balance < amount)
-                return false;
-
-            if (!TrySetBalance(comp, targetId, targetData?.Balance ?? 0 + amount))
+            if (!TrySetBalance(comp, targetId, targetData.Balance + amount)
+                || !TrySetBalance(comp, accountId, data.Balance - amount))
                 return false;
 
             return true;

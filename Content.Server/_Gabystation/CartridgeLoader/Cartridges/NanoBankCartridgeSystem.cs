@@ -38,6 +38,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     /// Evento pra quando receber transferencia
     /// Notificação pra quando receber transferencia
     /// Geração de senha
+    /// Estamos sempre supondo que cada conta está logada num só card, isso é errado. Todos os cards logados deveriam receber notificação.
 
     public override void Initialize()
     {
@@ -244,11 +245,15 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         HandleNotification(card.Owner, "economy-notification-transfer-title", "economy-notification-transfer-body", amount);
         UpdateUIForCard(card);
+
+        // Atualizar a UI do targetId. Como conseguir os cards logados a partir do id de uma conta?
+        // Não da pra usar o PDA de IBankAccount.Owner visto que esse 
     }
 
     // Talvez isso não devese ser público. Mas preciso chamar em PdaSystem.
     public void UpdateUIForCard(EntityUid cardUid)
     {
+        // Os UpdateUI devem ser relativos ao accountId.
         if (!TryPdaFromId(cardUid, out var pda)
             || !_container.TryGetContainer(pda.Owner, SharedCartridgeLoaderSystem.InstalledContainerId, out var container))
             return;
