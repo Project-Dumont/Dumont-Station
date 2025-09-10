@@ -33,12 +33,9 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
 
-    // TODO List
-    //// Atualizar a UI ao receber salário;
-    //// Corrigir campo próximo pagamento na UI (890,2024 quer dizer quando?, sem sentido ic);
-    // Botão de transferência da UI não funcional;
-    //// Apertar o X da UI crash um debug assert;
-    //// Atualizar a UI ao remover o id do pda.
+    // TODO list
+    /// Evento pra quando receber transferencia
+    /// Notificação pra quando receber transferencia
 
     public override void Initialize()
     {
