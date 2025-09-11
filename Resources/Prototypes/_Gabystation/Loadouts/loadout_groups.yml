@@ -29,3 +29,12 @@
   loadouts:
   - GoldenShaker
   - DrinkShaker
+
+- type: loadoutGroup
+  id: TrinketsChef
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - GoldKitchenKnife
+  - GoldButchCleaver
