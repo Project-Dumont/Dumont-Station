@@ -814,6 +814,14 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: Armor
+    coverage:
+    - Head
+    traumaDeductions:
+      Dismemberment: 0.05
+      OrganDamage: 0.05
+      BoneDamage: 0.05
+      VeinsDamage: 0
+      NerveDamage: 0
     modifiers:
       coefficients:
         Blunt: 0.95
