@@ -4,60 +4,26 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseKnife
+  parent: KitchenKnife
   id: GoldKitchenKnife
   name: gold kitchen knife
   description: Gold-plated, made only for the most refined chefs. A general-purpose chef’s knife, crafted by the Asters Merchant Guild.
   components:
-  - type: Tag
-    tags:
-    - Knife
-    - KitchenKnife
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Melee/gold_kitchen_knife.rsi
     state: icon
   - type: Item
     sprite: _Gabystation/Objects/Weapons/Melee/gold_kitchen_knife.rsi
-  - type: GuideHelp
-    guides:
-    - Chef
-    - FoodRecipes
-  - type: EmbeddableProjectile # Goobstation
-    sound: /Audio/Weapons/star_hit.ogg
-    offset: -0.15,0.0
-  - type: LandAtCursor # Goobstation
-  - type: DamageOtherOnHit # Goobstation
-    damage:
-      types:
-        Slash: 10
 
 - type: entity
-  parent: BaseKnife
+  parent: ButchCleaver
   id: GoldButchCleaver
   name: gold butcher's cleaver
   description: Gold-plated, exclusive to the most refined chefs. A massive blade used for chopping and shredding meat.
   components:
-  - type: Tag
-    tags:
-    - Knife
-    - Cleaver
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Melee/gold_cleaver.rsi
     state: butch
-  - type: MeleeWeapon
-    wideAnimationRotation: -115
-    attackRate: 1.5
-    damage:
-      types:
-        Slash: 13
   - type: Item
     size: Normal
     sprite: _Gabystation/Objects/Weapons/Melee/gold_cleaver.rsi
-  - type: GuideHelp
-    guides:
-    - Chef
-    - FoodRecipes
-  - type: Scalpel # Shitmed
-    speed: 0.3
-  - type: BoneSaw # Shitmed: Better than tg 25% because its a cleaver its meant to hack off limbs
-    speed: 0.5
