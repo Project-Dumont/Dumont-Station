@@ -135,6 +135,8 @@ namespace Content.Server._Gabystation.Economy
                     continue;
                 }
 
+                comp.PaymentCooldownRemaining = comp.PaymentDelay;
+
                 foreach (var (accountId, account) in comp.BankAccounts)
                 {
                     if (account.JobId is null)
@@ -144,8 +146,8 @@ namespace Content.Server._Gabystation.Economy
 
                     account.Balance += proto.Salary;
                     Log.Debug("Event time");
-                    var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Uid = uid, Payment = proto.Salary };
-                    RaiseLocalEvent(ev);
+                    var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Payment = proto.Salary };
+                    RaiseLocalEvent(uid, ev);
                     Log.Debug("Event done?");
                 }
 
@@ -153,7 +155,7 @@ namespace Content.Server._Gabystation.Economy
 
                 Log.Debug("Payment time!");
 
-                comp.PaymentCooldownRemaining = comp.PaymentDelay;
+                //comp.PaymentCooldownRemaining = comp.PaymentDelay;
             }
         }
 

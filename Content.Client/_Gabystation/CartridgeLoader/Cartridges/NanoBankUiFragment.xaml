@@ -9,7 +9,7 @@
                                VerticalExpand="True">
 
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
-        <BoxContainer Name="Login" Orientation="Horizontal" Visible="True" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Name="Login" Orientation="Horizontal" Visible="False" HorizontalExpand="True" VerticalExpand="True">
             <Control HorizontalExpand="True"/>
             <PanelContainer StyleClasses="BackgroundDark">
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True" Align="Center" Margin="8">
@@ -22,11 +22,11 @@
                     <Label Text="{Loc nano-bank-login-flavor}"/>
                     <BoxContainer>
                         <Label Text="{Loc nano-bank-login-id}" />
-                        <LineEdit Name="LoginId" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
+                        <LineEdit Name="LoginId" PlaceHolder="0000" HorizontalExpand="True" MinWidth="80" />
                     </BoxContainer>
                     <BoxContainer>
                         <Label Text="{Loc nano-bank-login-pin}" />
-                        <LineEdit Name="LoginPin" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
+                        <LineEdit Name="LoginPin" PlaceHolder="0000" HorizontalExpand="True" MinWidth="80" />
                     </BoxContainer>
                     <Button Name="LoginButton" Text="Log-In"/>
                 </BoxContainer>
@@ -104,15 +104,25 @@
 
         <controls:HSpacer Spacing="5" />
 
-        <BoxContainer>
-            <Label Text="{Loc nano-bank-transfer-id}" />
-            <LineEdit Name="TransferId" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
-        </BoxContainer>
-        <BoxContainer>
-            <Label Text="{Loc nano-bank-transfer-amount}" />
-            <LineEdit Name="TransferAmount" PlaceHolder="0" HorizontalExpand="True" MinWidth="80" />
-        </BoxContainer>
-        <Button Name="TransferButton" Text="nano-bank-transfer-button"/>
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+
+            <BoxContainer Orientation="Vertical" Margin="8">
+                <Label Text="{Loc nano-bank-transfer-label}"/>
+                <BoxContainer Orientation="Horizontal" SeparationOverride="8" HorizontalExpand="True">
+                    <Label Text="{Loc nano-bank-transfer-id}" VerticalAlignment="Center"/>
+                    <LineEdit Name="TransferId" PlaceHolder="0000" MinWidth="60" MaxWidth="80"/>
+
+                    <Label Text="{Loc nano-bank-transfer-amount}" VerticalAlignment="Center"/>
+                    <LineEdit Name="TransferAmount" PlaceHolder="0" MinWidth="60" HorizontalExpand="True"/>
+                </BoxContainer>
+
+                <Button Name="TransferButton" Text="{Loc nano-bank-transfer-button}" Margin="0 8 0 0"/>
+            </BoxContainer>
+        </PanelContainer>
+
         </BoxContainer>
     </BoxContainer>
 </cartridges:NanoBankUiFragment>

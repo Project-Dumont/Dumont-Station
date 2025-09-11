@@ -3,3 +3,5 @@ economy-manager-chat-new-account-wrapped = O ID da sua nova conta do NanoBank é
 
 economy-character-info-unknow = Sem conta do NanoBank
 economy-character-info-briefing = NanoBank ID: {$number} | Senha inicial: {$password}
+
+economy-money-name = spesos

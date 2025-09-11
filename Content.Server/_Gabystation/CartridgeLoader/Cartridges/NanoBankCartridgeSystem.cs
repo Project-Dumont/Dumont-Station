@@ -38,6 +38,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     /// Evento pra quando receber transferencia
     /// Notificação pra quando receber transferencia
     /// Geração de senha
+    /// Notificação pós pagamento
     /// Estamos sempre supondo que cada conta está logada num só card, isso é errado. Todos os cards logados deveriam receber notificação.
 
     public override void Initialize()
@@ -47,7 +48,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeMessageEvent>(OnMessage);
         //SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeRemovedEvent>(OnCartridgeRemoved);
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
-        SubscribeLocalEvent<AccountPaymentCompleted>(OnPayment);
+        SubscribeLocalEvent<EconomyManagerComponent, AccountPaymentCompleted>(OnPayment);
     }
 
     public override void Update(float frameTime)
@@ -98,7 +99,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         switch (msg.Type)
         {
             case NanoBankUiMessageType.Logout:
-                _nanoBank.LogoutId((loaderId, card));
+                _nanoBank.LogoutId(card.AsNullable());
                 break;
             case NanoBankUiMessageType.Login:
                 HandleLogin(card, msg.TargetAccount, (int?) msg.Content);
@@ -116,7 +117,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         UpdateUI(ent, loaderId);
     }
 
-    public void OnPayment(AccountPaymentCompleted args)
+    private void OnPayment(Entity<EconomyManagerComponent> ent, ref AccountPaymentCompleted args)
     {
         //! Isso provavelmente tem um alto custo computacional, mas eu não sei outro jeito de fazer isso.
         // TODO: Novo metodo, o id recebe a mensagem e verifica se está na conta bancaria, se sim, envia uma outra mensagem pra cá.
@@ -125,22 +126,16 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         while (ents.MoveNext(out var uid, out var comp))
         {
 
-            var station = _station.GetOwningStation(uid);
-            if (!comp.LoggedIn || comp.AccountId is 0 || comp.AccountPin is 0 || station is null)
+            if (!comp.LoggedIn || comp.AccountId != args.AccountId || comp.AccountPin is 0)
                 continue;
+
+            if (!_economy.ValidateLogin(ent.Comp, comp.AccountId, comp.AccountPin))
+                continue;
+
+            if (!comp.NotificationsMuted)
+                HandleNotification(uid, "economy-notification-payment-title", "economy-notification-payment-body", args.Payment);
 
             UpdateUIForCard(uid);
-
-            if (comp.NotificationsMuted) // We dont need to computate this if notifications are disabled
-                return; //? If u are planning do somemore here, put this if before HandleNotification
-
-            if (!TryComp<EconomyManagerComponent>(station, out var economyComp))
-                continue;
-
-            if (!_economy.ValidateLogin(economyComp, comp.AccountId, comp.AccountPin))
-                continue;
-
-            HandleNotification(uid, "economy-notification-payment-title", "economy-notification-payment-body", args.Payment);
         }
     }
 
@@ -247,7 +242,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         UpdateUIForCard(card);
 
         // Atualizar a UI do targetId. Como conseguir os cards logados a partir do id de uma conta?
-        // Não da pra usar o PDA de IBankAccount.Owner visto que esse 
+        // Não da pra usar o PDA de IBankAccount.Owner visto que esse
     }
 
     // Talvez isso não devese ser público. Mas preciso chamar em PdaSystem.
