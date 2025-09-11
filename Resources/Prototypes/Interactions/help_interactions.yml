@@ -24,6 +24,7 @@
     !type:StandingStateRequirement
     allowLaying: true
     allowKnockedDown: true
+    allowSleep: false
   action:
     !type:ComplexAction
     requireAll: false
@@ -63,6 +64,7 @@
       - !type:StandingStateRequirement
         allowLaying: true
         allowKnockedDown: true
+        allowSleep: false
       - !type:MobStateRequirement
         allowedStates: [Alive, Critical]
   action:
@@ -79,8 +81,15 @@
   effectDelayed: null
   hideByRequirement: true
   requirement:
-    !type:MobStateRequirement
-    allowedStates: [Alive, Critical]
+    !type:ComplexRequirement
+    requirements:
+      - !type:MobStateRequirement
+        allowedStates: [Alive, Critical]
+      - !type:StandingStateRequirement
+        allowStanding: true
+        allowLaying: true
+        allowKnockedDown: true
+        allowSleep: false
   action:
     !type:ComplexAction
     actions:

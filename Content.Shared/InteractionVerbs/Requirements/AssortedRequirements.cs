@@ -1,3 +1,4 @@
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Standing;
@@ -17,7 +18,9 @@ public sealed partial class EntityWhitelistRequirement : InteractionRequirement
 
     public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
-        return Whitelist.IsValid(args.Target, deps.EntMan) && !Blacklist.IsValid(args.Target, deps.EntMan);
+        return deps.WhitelistSystem.IsValid(Whitelist, args.Target) &&
+               !deps.WhitelistSystem.IsValid(Blacklist, args.Target);
+
     }
 }
 
@@ -44,17 +47,20 @@ public sealed partial class MobStateRequirement : InvertableInteractionRequireme
 [Serializable, NetSerializable]
 public sealed partial class StandingStateRequirement : InteractionRequirement
 {
-    [DataField] public bool AllowStanding, AllowLaying, AllowKnockedDown;
+    [DataField] public bool AllowStanding, AllowLaying, AllowKnockedDown, AllowSleep;
 
     public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
     {
+        if (deps.EntMan.HasComponent<SleepingComponent>(args.Target) && !AllowSleep)
+            return false;
         if (deps.EntMan.HasComponent<KnockedDownComponent>(args.Target))
             return AllowKnockedDown;
 
         if (!deps.EntMan.TryGetComponent<StandingStateComponent>(args.Target, out var state))
             return false;
 
-        return state.Standing ? AllowStanding : AllowLaying;
+        return state.CurrentState == StandingState.Standing && AllowStanding
+               || state.CurrentState == StandingState.Lying && AllowLaying;
     }
 }
 
