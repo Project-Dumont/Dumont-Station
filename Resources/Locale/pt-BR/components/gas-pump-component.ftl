@@ -9,4 +9,6 @@ comp-gas-pump-ui-pump-output-pressure = Pressão de saída (kPa):
 
 comp-gas-pump-ui-pump-transfer-rate = Taxa de transferência (L/s):
 
-comp-gas-pump-ui-needs-anchor = Ancore-o primeiro!
+comp-gas-pump-ui-pump-heat-transfer-rate = Taxa de transferência (%):
+
+comp-gas-pump-ui-needs-anchor = Ancore primeiro!
