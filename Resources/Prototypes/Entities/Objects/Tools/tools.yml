@@ -608,6 +608,13 @@
     - SignalValve
     - CanisterPort
     - FilterGas
+    # <GabyStation>
+    - ManifoldGas
+    - PipeHalf
+    - Alarm
+    - Sensor
+    - SensorPipe
+    # <\GabyStation>
     # <Goobstation>
     - FilterInline
     - RadiatorInline

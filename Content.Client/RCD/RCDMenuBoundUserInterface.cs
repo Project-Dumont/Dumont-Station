@@ -37,6 +37,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["AtmosphericUtility"] = ("rcd-component-atmosphericutility", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/port.png"))),
             ["PumpsValves"] = ("rcd-component-pumpsvalves", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/pump_volume.png"))),
             ["Vents"] = ("rcd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/vent_passive.png"))),
+            ["SensorsMonitors"] = ("rcd-component-sensorsmonitors", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/alarm.png"))),
         };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
