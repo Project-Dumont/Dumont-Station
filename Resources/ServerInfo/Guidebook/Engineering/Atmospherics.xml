@@ -15,47 +15,50 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Atmosféricos
+  # Atmosfera
 
-  Configurações atmosféricas são essenciais para o conforto a longo prazo da sua tripulação, mas geralmente são mal documentadas, o que faz com que sejam um pouco difíceis de configurar. O seguinte guia tenta cobrir o básico.
+  Configurar corretamente a atmosfera é essencial para o conforto a longo prazo da sua tripulação. O seguinte guia tenta cobrir o básico.
 
-  ## Mistura Padrão
-  Respirar O2 puro ou N2 puro geralmente é ruim para a saúde da sua tripulação, e é recomendado que você busque uma mistura de [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color] É recomendado que a configuração do seu misturador de gás seja ajustada para uma saída de pelo menos 300kPA para uma repressurização mais rápida dos ambientes, sem representar muito risco de sobrepressurização, caso traidores sabotem a distribuição.
+  ## Mistura padrão
+  A preença de O2 puro pode-se tornar uma ameaça e nem todos os tripulantes respiram oxigênio. O oxigênio é um gas reativo e essencial para reações de combustão. Sua presença em alta quantidades pode se tornar perigoso. Por sua vez, o nitrogênio não oferece nenhum risco da tripulação, mas nem todos os tripulantes são capazes de respirar.
+  
+  Dessa forma, é recomendado que você busque uma mistura de [color=#a4885c]78% N2 e 22% O2 a 101.24kPa[/color]. Também recomendamos que a bomba de saída de gás do Subdepartamento da Atmosfera seja ajustada para pelo menos 300kPA. Isso ajuda numa repressurização mais rápida dos ambientes, sem representar muito risco de sobrepressurização.
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="AirCanister"/>
   </Box>
-  Variações nessa mistura podem ser necessárias para o conforto a longo prazo de tripulações atípicas (por exemplo, Voxes, que são envenenados por Oxigênio e respiram Nitrogênio). Para tripulações atípicas (a serem implementadas), é recomendado tentar dar a eles seu próprio espaço pessoal, isolado por uma esclusa de ar ou seção de descarte. Tenha em mente que ambos os métodos têm vazamentos e você precisará de depuradores em ambos os lados da esclusa para limpar qualquer gás vazado.
+  Variações nessa mistura podem ser necessárias para o conforto a longo prazo de tripulações atípicas (por exemplo, Voxes, que são envenenados por oxigênio e respiram nitrogênio). Para tripulações atípicas, é recomendado tentar dar a eles seu próprio espaço pessoal. Tenha em mente que qualquer método têm vazamentos e você precisará de filtradores para limpar qualquer gás vazado.
   <Box>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="StorageCanister"/>
   </Box>
 
-  ## Válvulas e Depuradores
-  Válvulas e depuradores são dispositivos centrais de atmosferia que preenchem e purificam os ambientes, respectivamente. Por padrão, eles são configurados para preencher os ambientes até a pressão padrão (101.24kPa) e para remover todos os gases não-O2/N2 de um ambiente. Eles podem ser reconfigurados a partir das configurações padrão ao conectá-los a um Alarme de Gás, permitindo configurar como eles respondem a vários tipos de gases ou níveis de pressão.
+  ## Ventilação e filtradores
+  As ventilações e filtradores são dispositivos centrais de atmofera que preenchem e purificam os ambientes, respectivamente. Por padrão, eles são configurados para preencher os ambientes até a pressão padrão (101.24kPa) e para remover todos os gases não-O2/N2 de um ambiente. Eles podem ser reconfigurados a partir das configurações padrão ao conectá-los a um Alarme de Gás, permitindo configurar como eles respondem a vários tipos de gases ou níveis de pressão.
 
   <Box>
     <GuideEntityEmbed Entity="GasVentPump"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
   </Box>
-  Durante a operação padrão, se uma válvula normal detectar que o ambiente externo é o espaço, ela cessará automaticamente a operação até que uma pressão mínima seja alcançada, para evitar a destruição de gases úteis. Isso pode ser corrigido ao pressurizar o ambiente até essa pressão mínima, reabastecendo-o com um cilindro de gás (potencialmente múltiplos, se o ambiente for de tamanho significativo).
+  Durante a operação padrão, se uma ventilação normal detectar que o ambiente externo é o espaço, ela cessará automaticamente a operação até que uma pressão mínima seja alcançada, para evitar a destruição de gases úteis. Isso pode ser corrigido ao pressurizar o ambiente até essa pressão mínima, reabastecendo-o com um cilindro de gás (potencialmente múltiplos, se o ambiente for de tamanho significativo).
 
-  Caso você se depare com uma situação onde os depuradores não estão limpando o ambiente rápido o suficiente (e a funcionalidade "Sifão" ainda não conseguir acompanhar), utilize depuradores portáteis, arrastando-os até o local afetado e fixando-os no lugar. Eles funcionam muito mais rápido do que os depuradores típicos e podem limpar rapidamente um ambiente. Vazamentos grandes podem exigir o uso de múltiplos depuradores.
+  Caso você se depare com uma situação onde os filtradores não estão limpando o ambiente rápido o suficiente (e a funcionalidade "sifão" ainda não conseguir acompanhar), utilize filtradores portáteis, arrastando-os até o local afetado e fixando-os no lugar. Eles funcionam muito mais rápido do que os filtradores típicos e podem limpar rapidamente um ambiente. Vazamentos grandes podem exigir o uso de múltiplos filtradores.
   <Box>
     <GuideEntityEmbed Entity="PortableScrubber"/>
   </Box>
-  # Misturas de Gás e Câmaras de Combustão
+  # Misturas de gás e câmaras de combustão
   Caso termine todas as tarefas em mãos, você pode ganhar um dinheiro extra criando novos gases químicos.
 
-  ## Reference Sheet
-  - Standard atmospheric mix is [color=#a4885c]78% N2 and 22% O2 at 101.24kPa.[/color]
-  - Gas obeys real math. You can use the equation:
+  ## Folha de referência
+  - A mistura de atmosfera padrão é [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color]
+  - Os gases obedecem matemática real. Use a seguinte equação:
   <Box>
     [color=cyan]PV = nRT[/color]
   </Box>
   <Box>
-    ([color=#a4885c]Pressão kPa * Volume L = Moles * R * Temperatura K[/color])
-  </Box> para derivar informações que você possa precisar sobre um gás. R é aproximadamente 8.31446.
+    ([color=cyan]Pressão (em kPa) * Volume (em L) = Quantidade de Mols * R * Temperatura (em K)[/color])
+  </Box> 
+  Onde R é a Constante universal dos gases ideais, aproximadamente 8.31.
 
 </Document>

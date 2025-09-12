@@ -7,37 +7,37 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Gasses
-  Gasses are a critical part of the station's operation.
-  You may know them as the stuff you breathe, but they are also used in many other ways.
+  # Gases
+  Os gases são uma parte crítica da operação da estação.
+  Você pode conhecê-los como aquilo que você respira, mas eles também são usados de muitas outras formas.
 
-  Gasses have certain properties that make them useful for different tasks.
-  Atmospherics can also synthesize exotic gasses from other gasses, which can be used for special purposes.
+  Alguns gases possuem certas propriedades que os tornam úteis para diferentes tarefas.
+  O Subdepartmaneto de Atmosfera da Engenharia pode sintetizar gases exóticos a partir de outros gases, que podem ser usados para fins especiais.
 
  <Table Columns="5">
     <ColorBox>
       <Box>
-        Gas to Produce
+        Gás a produzir
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Temperature Required
+        Temperatura necessária
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Input Gasses
+        Gases de entrada
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Waste Byproducts
+        Subprodutos
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Special Notes
+        Observações
       </Box>
     </ColorBox>
     <ColorBox Color="#13FF4B">
@@ -47,7 +47,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ongoing Fire
+        Fogo
       </Box>
     </ColorBox>
     <ColorBox Color="#FF3300">
@@ -57,7 +57,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Water Vapor, CO2
+        Vapor, CO2
       </Box>
     </ColorBox>
     <ColorBox>
@@ -81,7 +81,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#DA1010">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Nitrogen
+	  Nitrogênio
       </Box>
     </ColorBox>
     <ColorBox>
@@ -90,7 +90,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Nitrous Oxide
+        Óxido Nitroso
       </Box>
     </ColorBox>
     <ColorBox>
@@ -108,7 +108,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Strongly Endothermic
+	  Altamente endotérmico
       </Box>
     </ColorBox>
     <ColorBox Color="#7b68ee">
@@ -128,7 +128,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Hydrogen
+	  Hidrogênio
       </Box>
     </ColorBox>
     <ColorBox>
@@ -156,7 +156,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Exothermic, Pressure Dependent
+	  Exotérmico, Depende da Pressão
       </Box>
     </ColorBox>
     <ColorBox Color="#fa8072">
@@ -179,7 +179,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Exothermic
+        Exotérmico
       </Box>
     </ColorBox>
     <ColorBox Color="#a52a2a">
@@ -203,32 +203,32 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Burns in O2
+        Queima em O2
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Hydrogen
+        Hidrogênio
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Electrolyze
+	  Eletrólise
       </Box>
     </ColorBox>
     <ColorBox Color="#bffffd">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Water Vapor
+        Vapor
       </Box>
     </ColorBox>
     <ColorBox Color="#2887E8">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Oxygen
+	  Oxigênio
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Flammable
+        Inflamável
       </Box>
     </ColorBox>
     <ColorBox>
@@ -243,7 +243,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Hydrogen, Pluox
+        Hidrogênio, Pluox
       </Box>
     </ColorBox>
     <ColorBox>
@@ -252,7 +252,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Flammable
+        Inflamável
       </Box>
     </ColorBox>
     <ColorBox Color="#1c1a1a">
@@ -275,7 +275,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Very Deadly
+        Mortal
       </Box>
     </ColorBox>
     <ColorBox Color="#e3574d">
@@ -285,7 +285,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Electrolyze
+	  Eletrólise
       </Box>
     </ColorBox>
     <ColorBox Color="#9370db">
@@ -300,7 +300,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Stops fires
+        Para a combustão
       </Box>
     </ColorBox>
     <ColorBox Color="#005959">
@@ -347,7 +347,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Stops Reactions
+	  Impede reações
       </Box>
     </ColorBox>
     <ColorBox Color="#525151">
@@ -357,7 +357,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-	  Electrolyze-100k
+	  Eletrólise-100k
       </Box>
     </ColorBox>
     <ColorBox Color="#33cccc">
@@ -375,7 +375,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
   </Table>
 
-  ## Oxygen
+  ## Oxigênio
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister" Caption=""/>
     <GuideEntityEmbed Entity="OxygenTank" Caption=""/>
@@ -384,12 +384,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="EmergencyOxygenTank" Caption=""/>
   </Box>
 
-  A common gas, used by most species on the station to breathe.
+  Um gás comum, usado pela maioria das espécies na estação para respirar.
 
-  Oxygen is an oxidizer, which means it supports combustion.
-  This makes it both useful when fusing gasses in a burn chamber, and dangerous when mixed with flammable gasses.
+  O oxigênio é um oxidante, o que significa que ele é a base da combustão.
+  Isso o torna útil ao fundir gases em uma câmara de combustão, mas também perigoso quando misturado com gases inflamáveis.
 
-  ## Nitrogen
+  ## Nitrogênio
   <Box>
     <GuideEntityEmbed Entity="NitrogenCanister" Caption=""/>
     <GuideEntityEmbed Entity="NitrogenTank" Caption=""/>
@@ -398,92 +398,98 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="EmergencyNitrogenTank" Caption=""/>
   </Box>
 
-  An inert gas, used in part with oxygen to create a breathable atmosphere.
+  Um gás inerte, usado junto ao oxigênio para criar uma atmosfera respirável.
 
-  Nitrogen is very stable and comprises most of a standard breathable atmosphere.
+  O nitrogênio é muito estável e compõe a maior parte de uma atmosfera padrão.
 
-  Some species like Slimes breathe nitrogen, with the Vox species requiring strictly nitrogen to breathe.
+  Algumas espécies como Slimes respiram nitrogênio, enquanto a espécie Vox requer estritamente nitrogênio para respirar.
 
-  ## Air Mix
+  ## Mistura de Ar
   <Box>
     <GuideEntityEmbed Entity="AirCanister" Caption=""/>
     <GuideEntityEmbed Entity="AirTank" Caption=""/>
   </Box>
 
-  A mixture of gasses that is breathable to most species on the station.
-  It consists of 21% oxygen and 79% nitrogen.
+  Uma mistura de gases respirável para a maioria das espécies na estação.
+  Consiste em 21% oxigênio e 79% nitrogênio.
 
 
-  ## Carbon Dioxide
+  ## Dióxido de Carbono
   <Box>
     <GuideEntityEmbed Entity="CarbonDioxideCanister" Caption=""/>
   </Box>
 
-  A waste gas produced by most species on the station. A common byproduct of combustion.
+  Um gás residual produzido pela maioria das espécies na estação. Também é um subproduto comum da combustão.
 
-  Despite seeming useless, some departments use it in their line of work.
+  Apesar de parecer inútil, alguns departamentos o utilizam em seu trabalho.
 
-  ## Water Vapor
+  ## Vapor
   <Box>
     <GuideEntityEmbed Entity="WaterVaporCanister" Caption=""/>
   </Box>
-  A common gas, produced by the burning of plasma and other processes.
+  Um gás comum, produzido pela queima de plasma e outros processos.
 
-  Water vapor has a good specific heat capacity compared to other gasses, making it useful for moving heat around.
+  O vapor possui alto calor específico em comparação com outros gases, o que o torna útil para transferência de calor.
 
   ## Plasma
   <Box>
     <GuideEntityEmbed Entity="PlasmaCanister" Caption=""/>
   </Box>
-  A highly flammable gas that is used in many processes on the station.
+  Um gás altamente inflamável usado em muitos processos na estação.
 
-  Engineering uses this gas to generate power and create exotic gasses.
+  A engenharia usa esse gás para gerar energia e criar gases exóticos.
 
-  Burning it generates a lot of heat, as well as gas byproducts such as carbon dioxide, water vapor, and tritium, depending on the efficiency of the burn.
+  Ao queimá-lo, gera muito calor, bem como subprodutos como dióxido de carbono, vapor e trítio, dependendo da eficiência da combustão.
 
-  Plasma gas also has a good specific heat capacity, making it useful for moving heat around.
+  O plasma também possui alto calor específico, tornando-o útil para transferência de calor.
 
   ## Tritium
   <Box>
     <GuideEntityEmbed Entity="TritiumCanister" Caption=""/>
   </Box>
-  Tritium is a clear, green gas that is highly flammable, radioactive, and combusts when in contact with oxygen, making it very helpful when running the [color=#a4885c]TEG[/color].
+  Um gás verde, claro, altamente inflamável e radioativo. Ele entra em combustão quando em contato com oxigênio e é muito útil para operar o [color=#a4885c]TEG[/color].
     <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="PlasmaCanister"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
     <GuideEntityEmbed Entity="TritiumCanister"/>
   </Box>
-  It can be made by burning 1% Plasma and 96% or more Oxygen in the Burn Chamber (Ideal ratio is rough 3% Plasma to 97% Oxygen when injected into an ongoing burn chamber). 
-  You can extract this gas through scrubbers to prevent further combustion in pipes.
+  Pode ser produzido queimando 1% de Plasma e 96% ou mais de Oxigênio em uma Câmara de Combustão. (A proporção ideal é aproximadamente 3% de plasma e 97% de oxigênio quando injetado durante uma queima). 
+  
+  É recomendado extrair esse gás o mais rápido possível para evitar a sua queima.
   
   ## Frezon
   <Box>
     <GuideEntityEmbed Entity="FrezonCanister" Caption=""/>
   </Box>
 
-  A highly sought after gas, due to the difficulty in creating it and its many properties.
+  Um gás muito procurado devido à dificuldade de criação e suas muitas propriedades.
 
-  It has an extremely high specific heat capacity, making it excellent for moving large amounts of heat around.
+  Possui calor específico altíssimo, sendo excelente para transferir grandes quantidades de calor. 
+  
+  Isso quer dizer que pouca quantidade de frezon é capaz de carregar muita energia. É preciso de muito calor ou muito frio para esquentar ou esfriar o frezon.
 
-  Frezon can combine in the air with nitrogen to create nitrous oxide, alongside cooling down the air significantly to below freezing temperatures.
+  Frezon pode se combinar com o nitrogênio da atmsofera para criar óxido nitroso. Em temperaturas extremas é capaz de congelar ou fritar a estação.
   <Box>
     <GuideEntityEmbed Entity="TritiumCanister"/>
     <GuideEntityEmbed Entity="AirCanister"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
     <GuideEntityEmbed Entity="FrezonCanister"/>
   </Box>
-  If you're looking to create this gas yourself, here's what you need to know:
-  - Frezon is produced by the combination of oxygen, tritium, and nitrogen.
-  - Tritium and oxygen are mixed at a ratio of around 1:8.
-  - Nitrogen is required as a catalyst for the reaction. The amount of nitrogen consumed is dependent on the efficiency of the reaction.
-  - The frezon reaction only occurs at cryogenic temperatures, below 73.15 K. The efficency of the reaction (how much frezon is produced) is dependent on the temperature. The closer to 73.15 K, the more frezon is produced, and the less nitrogen is consumed.
+  Se você quiser criar esse gás por conta própria, aqui está o que precisa saber:
+  - O Frezon é produzido pela combinação de oxigênio, trítio e nitrogênio.
+  - Trítio e oxigênio são misturados em uma proporção de aproximadamente 1:8.
+  - O nitrogênio é necessário como catalisador da reação. A quantidade de nitrogênio consumido depende da eficiência da reação.
+  - A reação do Frezon só ocorre em temperaturas criogênicas, abaixo de 73,15 K. A eficiência da reação (quanto frezon é produzido) depende da temperatura. Quanto mais próximo de 73,15 K, mais frezon é produzido e menos nitrogênio é consumido.
 
-  Remember, atmospherics is all about experimentation and process optimization. Try it until you get it right!
+  Lembre-se: O Subdepartamento da Atmosfera é sobre experimentação e otimização de processos. Tente até acertar!
 
   ##Pluoxium
-  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
-  It can be made by combining 66% Carbon Dioxide, 33% Oxygen, 1% Tritium together in an exothermic reaction between 50 K and 273 K. This reaction will also produce Hydogen as a byproduct. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
+  Um substituto não-reativo do oxigênio, que fornece oito vezes mais O2 para a corrente sanguínea, com apenas 3 kPa de pressão mínima necessária para respiração.
+
+  Produzido pela combinação de 66% de CO2, 33% de O2 e 1% de Trítio em reação exotérmica entre 50K e 273K. Essa reação produz hidrogênio como subproduto.
+
+  Além disso, o Cristal de Supermatéria (SM) cria Pluoxium quando há oxigênio presente na atmosfera.
 
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
@@ -494,8 +500,15 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   ##BZ
-  BZ gas is a potent hallucinogenic, as well as a sleeping agent for slimes. It is toxic to breathe and causes respiratory irritation and coughing. BZ sees frequent use as an ingredient in more complex gas reactions. 
-  It can be made by combining 33% Nitrous Oxide and 66% Plasma in an exothermic reaction. The reaction becomes less efficient if the Plasma content is greater than 3 times the Nitrous Oxide Content. The reaction is fastest outside of pipes and in low pressure enviroments.
+  Um gás alucinógeno potente e também agente sonífero para slimes. É tóxico para respiração, causa irritações e tosses.
+  
+  BZ é um gás intermediário para reações mais complexas.
+
+  Pode ser feito ao combinar 33% de óxido nitroso e 66% de plasma numa reação exotérmica.
+
+  A reação se torna menos eficiente se a quantidade de plasma presente for maior que o triplo da quantidade de Óxido Nitroso.
+
+  Também ocorre mais rapidamente fora de canos e em ambientes de baixa pressão.
 
   <Box>
     <GuideEntityEmbed Entity="PlasmaCanister"/>
