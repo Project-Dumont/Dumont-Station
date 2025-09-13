@@ -78,6 +78,10 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             }
             else
             {
+                ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players-end-rule",
+                    ("readyPlayersCount", args.Players.Length),
+                    ("minimumPlayers", minPlayers),
+                    ("presetName", ToPrettyString(uid))));
                 ForceEndSelf(uid, gameRule);
             }
         }

@@ -37,7 +37,8 @@ latejoin-arrivals-direction-time = Uma nave que o transferirá para sua estaçã
 latejoin-arrivals-dumped-from-shuttle = Uma força misteriosa impede você de sair com a nave de chegadas.
 latejoin-arrivals-teleport-to-spawn = Uma força misteriosa teletransporta você para fora da nave de chegadas. Tenha um turno seguro!
 
-preset-not-enough-ready-players = Não é possível iniciar {$presetName}. São necessários {$minimumPlayers} de jogadores prontos, mas temos apenas {$readyPlayersCount}.
+preset-not-enough-ready-players = A rodada será cancelado pois não é possível iniciar {$presetName}. São necessários {$minimumPlayers} jogadores prontos, mas temos apenas {$readyPlayersCount}.
+preset-not-enough-ready-players-end-rule = Cancelando {$presetName}, são necessários {$minimumPlayers} jogadores prontos, mas temos apenas {$readyPlayersCount}.
 preset-no-one-ready = Não é possível iniciar {$presetName}. Nenhum jogador está pronto.
 
 game-run-level-PreRoundLobby = Lobby pré-rodada
