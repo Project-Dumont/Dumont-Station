@@ -350,9 +350,11 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
             LogMessage($"Roundstart antag chosen: {pick2}");
 
             RoundstartAntagsSelectedTotal.WithLabels(pick).Inc();
-            GameTicker.AddGameRule(pick);
+            var rule1 = GameTicker.AddGameRule(pick);
+            _tag.AddTag(rule1, GabyConstants.GameDirectorRuleTag);
             RoundstartAntagsSelectedTotal.WithLabels(pick2).Inc();
-            GameTicker.AddGameRule(pick2);
+            var rule2 = GameTicker.AddGameRule(pick2);
+            _tag.AddTag(rule2, GabyConstants.GameDirectorRuleTag);
         }
 
         return;
