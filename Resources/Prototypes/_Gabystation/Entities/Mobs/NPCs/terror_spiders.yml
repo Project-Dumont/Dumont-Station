@@ -2,7 +2,7 @@
 
 - type: entity
   save: false
-  parent: [ BaseSimpleMob, MobCombat, MobGiantSpider ]
+  parent: MobSpiderBase
   id: BaseMobTerrorSpider
   suffix: AI, TerrorSpider
   description: A monstrous terror spider, you won't be wanting to face its hive.
@@ -70,6 +70,8 @@
     proto: spider
   - type: NoSlip
   - type: IgnoreSpiderWeb
+  - type: Fauna
+  - type: VentCrawler
 
 # Low Tier
 
@@ -143,6 +145,9 @@
     radius: 2.2
     energy: 1
     color: "#1aff00"
+  - type: ThermalVision
+    lightRadius: 10
+    color: "#1aff00"
 
 - type: entity
   parent: BaseMobTerrorSpider
@@ -178,6 +183,9 @@
   - type: PointLight
     radius: 2.8
     energy: 2
+    color: "#a600ff"
+  - type: ThermalVision
+    lightRadius: 15
     color: "#a600ff"
 
 # Mid Tier
@@ -217,6 +225,9 @@
     energy: 2.5
     color: "#ff0000"
   - type: Puller
+  - type: ThermalVision
+    lightRadius: 15
+    color: "#ff0000"
 
 - type: entity
   parent: BaseMobTerrorSpider
@@ -271,6 +282,9 @@
     energy: 3.5
     color: "#c8ff00"
   - type: Puller
+  - type: ThermalVision
+    lightRadius: 15
+    color: "#c8ff00"
 
 # Lower Hive Command
 
@@ -323,6 +337,9 @@
       - Door
       tags:
       - Wall
+  - type: ThermalVision
+    lightRadius: 30
+    color: "#4400ff"
 
 - type: entity
   parent: BaseMobTerrorSpider
@@ -361,4 +378,7 @@
   - type: PointLight
     radius: 3.5
     energy: 2.5
+    color: "#ff9ef2"
+  - type: ThermalVision
+    lightRadius: 20
     color: "#ff9ef2"
