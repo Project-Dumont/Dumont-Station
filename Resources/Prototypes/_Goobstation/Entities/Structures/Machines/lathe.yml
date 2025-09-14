@@ -60,6 +60,7 @@
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
+    - EngineerBagStatic
     dynamicPacks:
     - AdvancedTools
     - AtmosTools

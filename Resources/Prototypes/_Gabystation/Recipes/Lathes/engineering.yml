@@ -1,0 +1,10 @@
+- type: latheRecipe
+  id: EngineerMaterialBag
+  result: EngineerMaterialBag
+  categories:
+  - Engineering
+  completetime: 3
+  materials:
+    Plastic: 50
+    Cloth: 200
+    Steel: 200
