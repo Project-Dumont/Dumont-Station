@@ -1,0 +1,24 @@
+- type: entity
+  parent: BaseStorageItem
+  id: EngineerMaterialBag
+  name: material bag
+  description: A bag used by engineers to carry large amounts of materials.
+  components:
+  - type: Clothing
+    sprite: _Gabystation/Objects/Specific/materialbag.rsi
+    quickEquip: false
+    slots:
+    - belt
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,3
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+      - Sheet
+      - Ingot
+  - type: Dumpable
