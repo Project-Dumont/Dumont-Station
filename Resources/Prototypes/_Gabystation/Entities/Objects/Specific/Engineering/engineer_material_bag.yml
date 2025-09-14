@@ -4,13 +4,16 @@
   name: material bag
   description: A bag used by engineers to carry large amounts of materials.
   components:
-  - type: Clothing
+  - type: Sprite
     sprite: _Gabystation/Objects/Specific/materialbag.rsi
+    state: icon
+  - type: Item
+    size: Large
+    storedRotation: -90
+  - type: Clothing
     quickEquip: false
     slots:
     - belt
-  - type: Item
-    size: Large
   - type: Storage
     maxItemSize: Normal
     grid:
