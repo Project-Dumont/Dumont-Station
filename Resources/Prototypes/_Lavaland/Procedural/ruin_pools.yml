@@ -1,13 +1,10 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
-# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
@@ -35,23 +32,23 @@
     SyndicateBase: 1
     HierophantArena: 1
     RougeAI: 1
-    BiodomeBeach: 2
-    BiodomeSnow: 2
-    GolemShuttle: 2
+    BiodomeBeach: 1 # 2 Gaby Station
+    BiodomeSnow: 1 # 2 Gaby Station
+    GolemShuttle: 1 # 2 Gaby Station
     ToyShop: 1
-    Chemistry: 2
-    LavaLake: 3
+    Chemistry: 1 # 2 Gaby Station
+    LavaLake: 1 # 3 Gaby Station
     Graveyard: 1
-    SeedVault: 2
-    Hermit: 5
-    WaffleCo: 2
+    SeedVault: 1
+    Hermit: 1
+    WaffleCo: 1
     ArrivalsBack: 1
     ArrivalsFront: 1
-    CargoDebris: 2
+    CargoDebris: 1
     VulpLab: 1
-    Shelter: 4
+    Shelter: 1 # 4 Gaby Station
     Ratvar: 1
-    MiningPost: 3
+    MiningPost: 1 # 3 Gaby Station
     AbductorDebris: 1
     CultBase: 1
     FleshCave: 1
@@ -60,17 +57,17 @@
     RockCave: 1
     SlimeCave: 1
     Hunter: 1
-    Stash1: 2
-    Stash2: 2
-    Stash3: 2
-    Stash4: 2
+    Stash1: 1 # 2 Gaby Station
+    Stash2: 1 # 2 Gaby Station
+    Stash3: 1 # 2 Gaby Station
+    Stash4: 1 # 2 Gaby Station
 #WIZDEN RUINS (only peak ones, rest are trash) man
     CargoWreck: 1
     Murder: 1
-    EscapePod: 2
-    Desk: 2
-    Generator: 3
+    EscapePod: 1 # 2 Gaby Station
+    Desk: 1 # 2 Gaby Station
+    Generator: 1 # 3 Gaby Station
     Mug: 1
     Temple: 1
   dungeonRuins:
-    CommonRuin5x5: 60
+    CommonRuin5x5: 15 # 60 Gaby Station
