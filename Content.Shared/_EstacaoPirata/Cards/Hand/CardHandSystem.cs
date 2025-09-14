@@ -28,11 +28,6 @@ namespace Content.Shared._EstacaoPirata.Cards.Hand;
 
 public sealed class CardHandSystem : EntitySystem
 {
-    [ValidatePrototypeId<EntityPrototype>]
-    public readonly EntProtoId CardHandBaseName = "CardHandBase";
-    [ValidatePrototypeId<EntityPrototype>]
-    public readonly EntProtoId CardDeckBaseName = "CardDeckBase";
-
     [Dependency] private readonly CardStackSystem _cardStack = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -169,12 +164,20 @@ public sealed class CardHandSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        var cardDeck = SpawnInSameParent(CardDeckBaseName, hand);
+        if (!TryComp(hand, out CardStackComponent? handStack))
+            return;
+
+        if (handStack.Cards.Count <= 0)
+            return;
+
+        if (!TryComp(handStack.Cards.First(), out CardComponent? firstCardComp))
+            return;
+
+        var cardDeck = SpawnInSameParent(firstCardComp.CardDeckBaseName, hand);
         bool isHoldingCards = _hands.IsHolding(user, hand);
 
         EnsureComp<CardStackComponent>(cardDeck, out var deckStack);
-        if (!TryComp(hand, out CardStackComponent? handStack))
-            return;
+
         _cardStack.TryJoinStacks(cardDeck, hand, deckStack, handStack, null);
 
         if (isHoldingCards)
@@ -184,7 +187,7 @@ public sealed class CardHandSystem : EntitySystem
     {
         if (card == target || _net.IsClient)
             return;
-        var cardHand = SpawnInSameParent(CardHandBaseName, card);
+        var cardHand = SpawnInSameParent(comp.CardHandBaseName, card);
         if (TryComp<CardHandComponent>(cardHand, out var handComp))
             handComp.Flipped = targetComp.Flipped;
         if (!TryComp(cardHand, out CardStackComponent? stack))
@@ -202,7 +205,7 @@ public sealed class CardHandSystem : EntitySystem
     {
         if (_net.IsClient)
             return;
-        var cardHand = SpawnInSameParent(CardHandBaseName, card);
+        var cardHand = SpawnInSameParent(comp.CardHandBaseName, card);
         if (TryComp<CardHandComponent>(cardHand, out var handComp))
             handComp.Flipped = comp.Flipped;
         if (!TryComp(cardHand, out CardStackComponent? stack))

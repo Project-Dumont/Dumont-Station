@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Deck;
 using Content.Shared._EstacaoPirata.Cards.Hand;
 using Content.Shared._EstacaoPirata.Cards.Stack;
@@ -118,13 +119,14 @@ public sealed class CardSystem : EntitySystem
         bool pickup = _hands.IsHolding(user, first);
         EntityUid cardStack;
         bool? flip = null;
+
         if (HasComp<CardDeckComponent>(second))
         {
-            cardStack = SpawnInSameParent(_cardDeck.CardDeckBaseName, first);
+            cardStack = SpawnInSameParent(firstComp.CardDeckBaseName, first);
         }
         else if (HasComp<CardHandComponent>(second))
         {
-            cardStack = SpawnInSameParent(_cardHand.CardHandBaseName, first);
+            cardStack = SpawnInSameParent(firstComp.CardHandBaseName, first);
             if(TryComp<CardHandComponent>(cardStack, out var stackHand))
                 stackHand.Flipped = firstComp.Flipped;
             flip = firstComp.Flipped;

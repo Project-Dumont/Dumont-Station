@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Content.Shared._EstacaoPirata.Cards.Stack;
 using Content.Shared.Audio;
@@ -35,7 +36,6 @@ public sealed class CardDeckSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    public readonly EntProtoId CardDeckBaseName = "CardDeckBase";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -86,12 +86,15 @@ public sealed class CardDeckSystem : EntitySystem
         if (stack.Cards.Count <= 1)
             return;
 
+        if (!TryComp(stack.Cards.First(), out CardComponent? firstCardComp))
+            return;
+
         _audio.PlayPredicted(deck.PickUpSound, Transform(uid).Coordinates, user);
 
         if (!_net.IsServer)
             return;
 
-        var cardDeck = SpawnInSameParent(CardDeckBaseName, uid);
+        var cardDeck = SpawnInSameParent(firstCardComp.CardDeckBaseName, uid);
 
         EnsureComp<CardStackComponent>(cardDeck, out var deckStack);
 

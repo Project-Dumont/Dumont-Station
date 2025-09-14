@@ -33,7 +33,6 @@ public sealed class CardSystem : EntitySystem
 
         for (var i = 0; i < spriteComponent.AllLayers.Count(); i++)
         {
-            //Log.Debug($"Layer {i}");
             if (!spriteComponent.TryGetLayer(i, out var layer) || layer.State.Name == null)
                 continue;
 
@@ -41,8 +40,7 @@ public sealed class CardSystem : EntitySystem
             if (rsi == null)
                 continue;
 
-            //Log.Debug("FOI");
-            comp.FrontSprite.Add(new SpriteSpecifier.Rsi(rsi.Path, layer.State.Name));
+            comp.FrontSprite.Add(layer.ToPrototypeData());
         }
 
         comp.BackSprite ??= comp.FrontSprite;
@@ -60,8 +58,6 @@ public sealed class CardSystem : EntitySystem
     private void UpdateSprite(EntityUid uid, CardComponent comp)
     {
         var newSprite = comp.Flipped ? comp.BackSprite : comp.FrontSprite;
-        //if (newSprite == null)
-        //    return;
 
         if (!TryComp(uid, out SpriteComponent? spriteComponent))
             return;
@@ -87,7 +83,8 @@ public sealed class CardSystem : EntitySystem
         for (var i = 0; i < newSprite.Count(); i++)
         {
             var layer = newSprite[i];
-            spriteComponent.LayerSetSprite(i, layer);
+            _spriteSystem.LayerSetRsiState((uid, spriteComponent), i, layer.State);
+            _spriteSystem.LayerSetColor((uid, spriteComponent), i, layer.Color?? Color.White);
         }
     }
 }

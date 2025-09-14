@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -21,13 +22,13 @@ public sealed partial class CardComponent : Component
     /// The back of the card
     /// </summary>
     [DataField("backSpriteLayers", readOnly: true)]
-    public List<SpriteSpecifier> BackSprite = [];
+    public List<PrototypeLayerData> BackSprite = [];
 
     /// <summary>
     /// The front of the card
     /// </summary>
     [DataField("frontSpriteLayers", readOnly: true)]
-    public List<SpriteSpecifier> FrontSprite = [];
+    public List<PrototypeLayerData> FrontSprite = [];
 
     /// <summary>
     /// If it is currently flipped. This is used to update sprite and name.
@@ -41,6 +42,12 @@ public sealed partial class CardComponent : Component
     /// </summary>
     [DataField("name", readOnly: true), AutoNetworkedField]
     public string Name = "";
+
+    [DataField("cardHandBaseName")]
+    public EntProtoId CardHandBaseName = "CardHandBase";
+
+    [DataField("cardDeckBaseName")]
+    public EntProtoId CardDeckBaseName = "CardDeckBase";
 
 }
 

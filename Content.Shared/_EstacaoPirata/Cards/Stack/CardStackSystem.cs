@@ -93,9 +93,19 @@ public sealed class CardStackSystem : EntitySystem
         if (!Resolve(uid, ref comp))
             return false;
 
-        if (!TryComp(card, out CardComponent? _))
+        // Prevent two different types of cards from being joined
+        if (!TryComp(card, out CardComponent? firstComp))
             return false;
 
+        if (comp.Cards.Count > 0)
+        {
+            if (!TryComp(comp.Cards.First(), out CardComponent? secondCardComp))
+                return false;
+            if (firstComp.CardHandBaseName.Id != secondCardComp.CardHandBaseName.Id)
+                return false;
+            if (firstComp.CardDeckBaseName.Id != secondCardComp.CardDeckBaseName.Id)
+                return false;
+        }
         if (comp.Cards.Count >= MaxCardsInStack)
             return false;
 
@@ -155,6 +165,18 @@ public sealed class CardStackSystem : EntitySystem
             return false;
         if (!Resolve(firstStack, ref firstComp) || !Resolve(secondStack, ref secondComp))
             return false;
+
+        if (firstComp.Cards.Count > 0 && secondComp.Cards.Count > 0)
+        {
+            if (!TryComp(firstComp.Cards.First(), out CardComponent? firstCardComp))
+                return false;
+            if (!TryComp(secondComp.Cards.First(), out CardComponent? secondCardComp))
+                return false;
+            if (firstCardComp.CardHandBaseName.Id != secondCardComp.CardHandBaseName.Id)
+                return false;
+            if (firstCardComp.CardDeckBaseName.Id != secondCardComp.CardDeckBaseName.Id)
+                return false;
+        }
 
         bool changed = false;
         var cardList = secondComp.Cards.ToList();
@@ -334,6 +356,18 @@ public sealed class CardStackSystem : EntitySystem
         if (firstComp.Cards.Count <= 0)
             return;
 
+        if (firstComp.Cards.Count > 0 || secondComp.Cards.Count > 0)
+        {
+            if (!TryComp(firstComp.Cards.First(), out CardComponent? firstCardComp))
+                return;
+            if (!TryComp(secondComp.Cards.First(), out CardComponent? secondCardComp))
+                return;
+            if (firstCardComp.CardHandBaseName.Id != secondCardComp.CardHandBaseName.Id)
+                return;
+            if (firstCardComp.CardDeckBaseName.Id != secondCardComp.CardDeckBaseName.Id)
+                return;
+
+        }
         var cards = firstComp.Cards.TakeLast(n).ToList(); // Frontier: make a copy we don't munge during iteration
 
         var firstCard = cards.First(); // Cache first card for animation - enumerable changes in foreach

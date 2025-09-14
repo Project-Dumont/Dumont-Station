@@ -29,6 +29,7 @@ public sealed partial class CardHandComponent : Component
 
     [DataField("flipped")]
     public bool Flipped = false;
+
 }
 
 
