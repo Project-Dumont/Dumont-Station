@@ -605,6 +605,17 @@
 
 - type: entity
   parent: BaseComputerCircuitboard
+  id: ComputerXenoborgsControlCircuitboard
+  name: xenoborg control console board
+  description: A computer printed circuit board for a xenoborg control console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerXenoborgsControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
   id: StationAiUploadCircuitboard
   name: AI upload console board
   description: A computer printed circuit board for a AI upload console.
@@ -637,3 +648,49 @@
   - type: ComputerBoard
     prototype: ComputerSyndicateTeleportersControl
 # GabyStation -> Station Teleporter end
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationAiFixerCircuitboard
+  name: AI restoration console
+  description: A computer printed circuit board for an AI restoration console console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: StationAiUploadComputer
+
+# GabyStation -> Station Teleporter start
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationTeleportersControlCircuitboard
+  name: teleporters control console board
+  description: A computer printed circuit board for a teleporter control console.
+  components:
+  - type: Sprite
+    state: cpu_command
+  - type: ComputerBoard
+    prototype: ComputerStationTeleportersControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SyndicateTeleportersControlCircuitboard
+  name: syndicate teleporters control console board
+  description: A computer printed circuit board for a teleporter control console.
+  components:
+  - type: Sprite
+    state: cpu_syndicate
+  - type: ComputerBoard
+    prototype: ComputerSyndicateTeleportersControl
+# GabyStation -> Station Teleporter end
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationAiFixerCircuitboard
+  name: AI restoration console
+  description: A computer printed circuit board for an AI restoration console console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: StationAiFixerComputer
