@@ -3,12 +3,6 @@ criminal-records-console-records-list-title = Tripulantes
 criminal-records-console-select-record-info = Selecione um registro.
 criminal-records-console-no-records = Nenhum registro encontrado!
 criminal-records-console-no-record-found = Nenhum registro foi encontrado para a pessoa selecionada.
-
-criminal-records-console-window-title = Computador de Registros Criminais
-criminal-records-console-records-list-title = Tripulantes
-criminal-records-console-select-record-info = Selecione um registro.
-criminal-records-console-no-records = Nenhum registro encontrado!
-criminal-records-console-no-record-found = Nenhum registro foi encontrado para a pessoa selecionada.
 criminal-records-console-flavor-left = Prenda primeiro! Pergunte depois.
 criminal-records-console-flavor-right = v2.1
 criminal-records-console-show-all = All
