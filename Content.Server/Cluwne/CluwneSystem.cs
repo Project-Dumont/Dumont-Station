@@ -131,6 +131,6 @@ public sealed class CluwneSystem : EntitySystem
     /// </summary>
     private void OnRefreshNameModifiers(Entity<CluwneComponent> entity, ref RefreshNameModifiersEvent args)
     {
-        args.AddModifier("cluwne-name-prefix");
+        args.AddModifier("cluwne-name-prefix", 0, [("ent", entity.Owner)]);
     }
 }
