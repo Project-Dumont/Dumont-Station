@@ -8,12 +8,11 @@
   name: Declare Open Revolt
   description: Declares Open Revolt, allowing all Revolutionaries to see each other's Revolutionary status, at the cost of outing the name of all Head Revolutionaries.
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: NoItem
     checkCanInteract: false
-    icon:
-      sprite: /Textures/Interface/Misc/job_icons.rsi
-      state: HeadRevolutionary
-    event: !type:DeclareOpenRevoltEvent
+    icon: { sprite: /Textures/Interface/Misc/job_icons.rsi, state: HeadRevolutionary }
     startDelay: true
     useDelay: 600
+  - type: InstantAction
+    event: !type:DeclareOpenRevoltEvent {}

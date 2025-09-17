@@ -27,7 +27,6 @@ public sealed partial class BloodCultRuleComponent : Component
     /// <summary>
     ///	Possible Nar'Sie summon locations.
     /// </summary>
-    [DataField]
     public static List<string> PossibleVeilLocations = new List<string> {
         "DefaultStationBeaconCaptainsQuarters", "DefaultStationBeaconHOPOffice",
         "DefaultStationBeaconSecurity", "DefaultStationBeaconBrig",
