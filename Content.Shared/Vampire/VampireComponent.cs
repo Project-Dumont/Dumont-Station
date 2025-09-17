@@ -27,8 +27,7 @@ namespace Content.Shared.Vampire.Components;
 public sealed partial class VampireComponent : Component
 {
     //Static prototype references
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    public static readonly string SleepStatusEffectProto = "StatusEffectForcedSleeping";
+    public static readonly EntProtoId SleepStatusEffectProto = "StatusEffectForcedSleeping";
     [ValidatePrototypeId<EmotePrototype>]
     public static readonly string ScreamEmoteProto = "Scream";
     [ValidatePrototypeId<CurrencyPrototype>]

@@ -122,8 +122,6 @@
   targetNode: helmet
   category: construction-category-clothing
   objectType: Item
-  description: Advanced security gear. Protects the station from ne'er-do-wells.
-  icon: { sprite: Clothing/Head/Helmets/justice.rsi, state: icon }
 
 # Assmos - Metal Hydrogen
 - type: construction
@@ -132,8 +130,6 @@
   startNode: start
   targetNode: armor
   category: construction-category-clothing
-  description: A superb armor made with the toughest and rarest materials available to man.
-  icon: { sprite: Clothing/OuterClothing/Armor/metal_hydrogen_armor.rsi, state: icon }
   objectType: Item
 
 - type: construction
@@ -142,8 +138,6 @@
   startNode: start
   targetNode: helmet
   category: construction-category-clothing
-  description: A superb helmet made with the toughest and rarest materials available to man.
-  icon: { sprite: Clothing/Head/Helmets/metal_hydrogen_helmet.rsi, state: icon }
   objectType: Item
 
 - type: construction
@@ -152,6 +146,4 @@
   startNode: start
   targetNode: armor
   category: construction-category-clothing
-  description: An atmos fire suit bolstered by the defensive power of metal hydrogen using techniques passed down through generations of atmospheric technicians.
-  icon: { sprite: Clothing/OuterClothing/Armor/atmosian_armor.rsi, state: icon }
   objectType: Item

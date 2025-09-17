@@ -3,7 +3,7 @@
   id: JobPermaPrisoner
   groups:
   - PermaPrisonerJumpsuit
-  - CommonBackpack
+  - CivilianBackpack
   - GroupTankHarness
   - Survival
   - Trinkets
