@@ -89,6 +89,8 @@
 
 using Content.Server._Goobstation.Wizard.Components;
 using Content.Server._DV.CosmicCult.Components; // DeltaV
+using Content.Server._DV.CosmicCult.Components;
+using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -330,6 +332,21 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(cosmiccult);
         // End DeltaV Additions
+
+        // Funkystation - Malfunctioning AI
+        Verb malfAi = new()
+        {
+            Text = "Malfunctioning AI",
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "StationAi"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<MalfAiRuleComponent>(targetPlayer, "MalfAi");
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-malfai")
+        };
+        args.Verbs.Add(malfAi);
 
         // Funkystation - blood cult
         Verb cultAntag = new()

@@ -57,6 +57,7 @@ public enum StationEventMusicType : byte
     Nuke,
     CosmicCult, // DeltaV - Cosmic Cult
     VoidAscended, // GoobStation - Heretics
+    Doomsday, // Funky - Malf AI Doomsday Protocol
 }
 
 /// <summary>

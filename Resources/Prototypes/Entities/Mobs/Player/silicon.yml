@@ -96,6 +96,9 @@
 # SPDX-FileCopyrightText: 2025 ImHoks <142083149+ImHoks@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 KillanGenifer <killangenifer@gmail.com>
 # SPDX-FileCopyrightText: 2025 Killerqu00 <killerqueen1777@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ekpy <xekpyx@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ichaie <ichaicoelho@gmail.com>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
@@ -120,6 +123,9 @@
   description: Components added / removed from an entity that gets inserted into an AI core.
   categories: [ HideSpawnMenu ]
   components:
+  - type: Tag
+    tags:
+      - StationAiBrain
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -175,6 +181,10 @@
         type: RemoteDevicesBoundUserInterface
       enum.CamWarpUiKey.Key: # Goobstation-Ai-Camera-Jumping
         type: AiCameraWarpBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.MalfAiBorgsUiKey.Key:
+        type: MalfAiBorgsBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -325,15 +335,30 @@
     proto: AiHeld
     container: station_ai_mind_slot
   - type: Damageable
-    damageModifierSet: StrongMetallic
-  - type: Repairable
-    doAfterDelay: 10
-    allowSelfRepair: false
+    damageContainer: AiCore
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      800: Critical
+      1000: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 1000
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -374,6 +399,9 @@
     batteryRechargeRate: 1000
     batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed 
   - type: StationAiCore
+  - type: WeldingHealable
+  - type: ExaminableDamage
+    messages: StationAiCoreMessages
   - type: StationAiVision
   - type: InteractionOutline
   - type: Sprite
@@ -649,6 +677,18 @@
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
+
+# Funkystation, for Malf AI
+- type: entity
+  id: PlayerBorgBatteryNoMind
+  parent: BorgChassisSelectable
+  suffix: Battery, No Mind
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 
 - type: entity
   id: PlayerBorgSyndicateAssaultBattery

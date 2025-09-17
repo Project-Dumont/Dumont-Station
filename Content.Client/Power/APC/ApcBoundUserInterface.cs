@@ -21,12 +21,16 @@
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Power.APC.UI;
 using Content.Shared.Access.Systems;
 using Content.Shared.APC;
+using Content.Shared.MalfAI;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
@@ -48,14 +52,23 @@ namespace Content.Client.Power.APC
             _menu = this.CreateWindow<ApcMenu>();
             _menu.SetEntity(Owner);
             _menu.OnBreaker += BreakerPressed;
+            _menu.OnSiphon += SiphonPressed;
 
             var hasAccess = false;
+            var isMalfAi = false;
+
             if (PlayerManager.LocalEntity != null)
             {
+                var player = (EntityUid) PlayerManager.LocalEntity;
                 var accessReader = EntMan.System<AccessReaderSystem>();
-                hasAccess = accessReader.IsAllowed((EntityUid)PlayerManager.LocalEntity, Owner);
+                hasAccess = accessReader.IsAllowed(player, Owner);
+
+                // Only Malf AI should see the siphon button.
+                isMalfAi = EntMan.HasComponent<MalfAiMarkerComponent>(player);
             }
+
             _menu?.SetAccessEnabled(hasAccess);
+            _menu?.SetSiphonVisible(isMalfAi);
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)
@@ -69,6 +82,11 @@ namespace Content.Client.Power.APC
         public void BreakerPressed()
         {
             SendMessage(new ApcToggleMainBreakerMessage());
+        }
+
+        public void SiphonPressed()
+        {
+            SendMessage(new ApcSiphonCpuMessage());
         }
     }
 }

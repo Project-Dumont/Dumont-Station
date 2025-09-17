@@ -193,3 +193,10 @@
       emergencyLightColor: Crimson
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+    cyan:
+      announcement: alert-level-cyan-announcement
+      sound: /Audio/Misc/cyan.ogg
+      color: Cyan
+      emergencyLightColor: Cyan
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
