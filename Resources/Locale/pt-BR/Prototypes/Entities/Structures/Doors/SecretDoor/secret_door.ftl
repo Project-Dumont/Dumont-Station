@@ -6,6 +6,6 @@
 ent-BaseSecretDoor = { ent-WallSolid }
     .desc = { ent-WallSolid.desc }
 ent-BaseSecretDoorAssembly = montagem de porta secreta
-    .desc = Isso abre, isso fecha, e talvez esprema você.
+    .desc = Isso abre, isso fecha e talvez esprema você.
 ent-SolidSecretDoor = { ent-WallSolid }
     .desc = { ent-WallSolid.desc }

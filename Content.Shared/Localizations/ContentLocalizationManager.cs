@@ -79,7 +79,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "PRONOME-ELE", FuncPronomeEle);
             _loc.AddFunction(culture, "PRONOME-DELE", FuncPronomeDele);
             _loc.AddFunction(culture, "PRONOME-SEU", FuncPronomeSeu);
-            _loc.AddFunction(culture, "PRONOME-ESSE", FuncPronomeSeu);
+            _loc.AddFunction(culture, "PRONOME-ESSE", FuncPronomeEsse);
             _loc.AddFunction(culture, "MAKEGENERO", FormatMakeGenero);
 
             /*
