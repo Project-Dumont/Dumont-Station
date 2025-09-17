@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "copyright": "Taken From VG Station | commit: https://github.com/vgstation-coders/vgstation13/commit/0c2c999f74f2998912ae009223df83cbd987aa5d",
+  "license": "CC-BY-SA-3.0",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon",
+      "directions": 1
+    },
+    {
+      "name": "unshaded",
+      "directions": 1
+    }
+  ]
+}

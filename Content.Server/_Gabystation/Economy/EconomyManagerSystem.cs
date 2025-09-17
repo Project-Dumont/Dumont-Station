@@ -183,6 +183,11 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
+        public bool ValidateCard(EconomyManagerComponent comp, NanoBankCardComponent card)
+        {
+            return ValidateLogin(comp, card.AccountId, card.AccountPin);
+        }
+
         public bool ValidateLogin(EconomyManagerComponent comp, int id, int pin)
         {
             if (!comp.BankAccounts.TryGetValue(id, out var account))
