@@ -67,7 +67,7 @@ ent-FoodCakeSlimeSlice = fatia de bolo de slime
 ent-FoodCakePumpkin = bolo de abóbora
     .desc = Um bolo com um buraco no meio, feito com abóboras de verdade.
 
-ent-FoodCakePumpkinSlice = fata de bolo de abóbora
+ent-FoodCakePumpkinSlice = fatia de bolo de abóbora
     .desc = Uma fatia picante e nutritivo de bolo de abóbora.
 
 ent-FoodCakeChristmas = bolo de natal

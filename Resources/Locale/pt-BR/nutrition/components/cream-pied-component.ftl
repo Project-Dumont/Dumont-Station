@@ -1,2 +1,2 @@
-cream-pied-component-on-hit-by-message =  {$thrower} jogou uma torta na sua cara!
-cream-pied-component-on-hit-by-message-others = {$thrower} jogou uma torta na cara do(a) {$owner}  !
+cream-pied-component-on-hit-by-message = { CAPITALIZE(ARTIGO-O($thrown)) } {$thrown} jogou uma torta na sua cara!
+cream-pied-component-on-hit-by-message-others = { CAPITALIZE(ARTIGO-O($thrown)) } {$thrown} jogou uma torta na cara { PREPOSICAO-DE($owner) } {$owner}!
