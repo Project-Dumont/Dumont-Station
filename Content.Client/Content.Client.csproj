@@ -60,4 +60,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
+  <ItemGroup>
+    <EmbeddedResource Update="_Goobstation\Heretic\UI\HereticRitualRuneRadialMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Prototypes\Actions\" />
+    <Folder Include="Resources\Prototypes\Store\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Prototypes\Actions\malf_ai.yml" />
+    <None Remove="_Funkystation\Prototypes\funkystation\malfAI\malf_ai_storeentries.yml" />
+    <None Remove="Resources\Prototypes\Store\malf_ai.yml" />
+  </ItemGroup>
 </Project>

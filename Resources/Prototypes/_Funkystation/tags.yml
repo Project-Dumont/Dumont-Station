@@ -18,3 +18,5 @@
 
 - type: Tag
   id: SpecialWeapon
+- type: Tag
+  id: StationAiBrain

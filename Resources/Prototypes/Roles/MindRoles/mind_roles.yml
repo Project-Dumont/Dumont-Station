@@ -309,3 +309,15 @@
   - type: MindRole
     antagPrototype: Vampire
   - type: VampireRole
+
+# Malfunctioning AI
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleMalfAi
+  name: Malfunctioning AI Role
+  components:
+  - type: MindRole
+    antagPrototype: MalfunctioningAI
+    exclusiveAntag: true
+    roleType: MalfunctioningSilicon
+  - type: MalfAiRole

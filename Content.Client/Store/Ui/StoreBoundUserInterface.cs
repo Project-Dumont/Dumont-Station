@@ -13,11 +13,13 @@
 // SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client.MalfAI;
 using Content.Shared.Store;
 using JetBrains.Annotations;
 using System.Linq;
@@ -43,6 +45,8 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private HashSet<ListingData> _listings = new();
 
+    private static readonly ProtoId<CurrencyPrototype> CpuCurrencyId = "CPU";
+
     public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
@@ -51,9 +55,22 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _menu = this.CreateWindow<StoreMenu>();
         if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store))
-            _menu.Title = Loc.GetString(store.Name);
+        {
+            if (store.CurrencyWhitelist.Contains(CpuCurrencyId))
+            {
+                // Removed call to open Malf AI store window here to prevent duplicate/empty window.
+                return;
+            }
+        }
+
+        _menu = this.CreateWindow<StoreMenu>();
+        if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store2))
+        {
+            _menu.Title = Loc.GetString(store2.Name);
+            if (store2.CurrencyWhitelist.Contains(CpuCurrencyId))
+                _menu.ApplyMalfTheme();
+        }
 
         _menu.OnListingButtonPressed += (_, listing) =>
         {
@@ -92,7 +109,11 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
                 _listings = msg.Listings;
 
                 _menu?.UpdateBalance(msg.Balance);
-
+                if (_menu != null)
+                {
+                    if (msg.Balance.ContainsKey(CpuCurrencyId))
+                        _menu.ApplyMalfTheme();
+                }
                 UpdateListingsWithSearchFilter();
                 _menu?.SetFooterVisibility(msg.ShowFooter);
                 _menu?.UpdateRefund(msg.AllowRefund);
