@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -27,8 +28,7 @@ namespace Content.Shared.Vampire.Components;
 public sealed partial class VampireComponent : Component
 {
     //Static prototype references
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    public static readonly string SleepStatusEffectProto = "StatusEffectForcedSleeping";
+    public static readonly EntProtoId SleepStatusEffectProto = "StatusEffectForcedSleeping";
     [ValidatePrototypeId<EmotePrototype>]
     public static readonly string ScreamEmoteProto = "Scream";
     [ValidatePrototypeId<CurrencyPrototype>]
