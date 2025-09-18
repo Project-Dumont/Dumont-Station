@@ -13,5 +13,5 @@ collective-mind-binary = Binário
 collective-mind-mousemind = Mente Rato
 collective-mind-dronemind = Mente Drone
 collective-mind-empathy = Empathy
-collective-mind-bingle = Mente Bingle
-collective-mind-vampire = ClãVampiro
+collective-mind-bingle = Binglemind
+collective-mind-xeno = Hivemind

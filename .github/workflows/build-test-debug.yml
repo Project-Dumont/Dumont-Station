@@ -14,8 +14,12 @@
 # SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Myra <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Nikolai Korolev <korolevns98@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -67,7 +71,7 @@ jobs:
       run: dotnet restore
 
     - name: Build Project
-      run: dotnet build --configuration DebugOpt --no-restore /p:WarningsAsErrors=nullable /m
+      run: dotnet build --configuration DebugOpt --no-restore /m
 
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0

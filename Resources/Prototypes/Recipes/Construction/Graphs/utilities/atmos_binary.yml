@@ -12,7 +12,9 @@
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 justdie12 <125140938+justdie12@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -149,6 +151,13 @@
         amount: 2
         doAfter: 1
     # </Goobstation>
+
+    # Funky - heat pump
+    - to: heatpump
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
 
   - node: pressurepump
     entity: GasPressurePump
@@ -497,3 +506,20 @@
       - tool: Welding
         doAfter: 1
   # </Goobstation>
+
+# Funky - heat pump
+  - node: heatpump
+    entity: HeatPump
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1

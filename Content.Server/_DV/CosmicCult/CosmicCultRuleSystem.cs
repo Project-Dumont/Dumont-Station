@@ -95,7 +95,6 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPlayerManager _playerMan = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
     [Dependency] private readonly IVoteManager _votes = default!;
@@ -115,6 +114,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly VisibilitySystem _visibility = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
 
     private ISawmill _sawmill = default!;
     private TimeSpan _t3RevealDelay = default!;
@@ -528,7 +528,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             || AssociatedGamerule(uid) is not { } cult)
             return;
 
-        cult.Comp.TotalCrew = _playerMan.Sessions.Count(session
+        cult.Comp.TotalCrew = _player.Sessions.Count(session
             => session.Status == SessionStatus.InGame
                 && HasComp<HumanoidAppearanceComponent>(session.AttachedEntity));
 
@@ -638,7 +638,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         radio.Channels.Add("CosmicRadio");
         transmitter.Channels.Add("CosmicRadio");
 
-        if (_playerMan.TryGetSessionById(mind.UserId, out var session))
+        if (_player.TryGetSessionById(mind.UserId, out var session))
         {
             _euiMan.OpenEui(new CosmicRoundStartEui(), session);
         }
@@ -704,7 +704,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             EnsureComp<RoleBriefingComponent>(cosmicRole.Value.Owner);
             Comp<RoleBriefingComponent>(cosmicRole.Value.Owner).Briefing = Loc.GetString("objective-cosmiccult-charactermenu");
         }
-        if (!_playerMan.TryGetSessionById(mind.UserId, out var session))
+        if (!_player.TryGetSessionById(mind.UserId, out var session))
             return;
 
         _antag.SendBriefing(session, Loc.GetString("cosmiccult-role-conversion-fluff"), Color.FromHex("#4cabb3"), _briefingSound);
@@ -806,7 +806,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         if (TryComp(uid, out EyeComponent? eyeComp))
             _eye.SetVisibilityMask(uid, eyeComp.VisibilityMask & (int) ~VisibilityFlags.CosmicCultMonument);
 
-        if (_playerMan.TryGetSessionById(mindComp.UserId, out var session))
+        if (_player.TryGetSessionById(mindComp.UserId, out var session))
             _euiMan.OpenEui(new CosmicDeconvertedEui(), session);
 
         _eye.SetVisibilityMask(uid, 1);

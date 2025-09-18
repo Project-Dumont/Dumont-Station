@@ -83,3 +83,9 @@
   name: collective-mind-vampire
   keycode: 'v'
   color: "#FF0000"
+
+- type: collectiveMind
+  id: Xenomorphivemind
+  name: collective-mind-xeno
+  keycode: 'z'
+  color: "#8c3986"

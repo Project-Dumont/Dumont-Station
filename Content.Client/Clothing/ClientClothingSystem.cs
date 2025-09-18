@@ -28,6 +28,8 @@
 // SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -376,11 +378,6 @@ public sealed class ClientClothingSystem : ClothingSystem
             {
                 _sprite.LayerSetRsi(layer, clothingSprite.BaseRSI);
             }
-
-            // EE Plasmamen Change: Another "temporary" fix for clothing stencil masks.
-            // Sprite layer refactor when
-            if (slot == Jumpsuit)
-                layerData.Shader ??= "StencilDraw";
 
             _sprite.LayerSetData((equipee, sprite), index, layerData);
             _sprite.LayerSetOffset(layer, layer.Offset + slotDef.Offset);

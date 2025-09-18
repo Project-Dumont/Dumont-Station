@@ -46,7 +46,6 @@ public sealed partial class BloodCultRuneCarverSystem : EntitySystem
 	[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 	[Dependency] private readonly BloodCultRuleSystem _cultRule = default!;
 	[Dependency] private readonly PopupSystem _popupSystem = default!;
-	[Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 	[Dependency] private readonly IEntityManager _entManager = default!;
 
 	private EntityQuery<BloodCultRuneComponent> _runeQuery;
@@ -194,7 +193,7 @@ public sealed partial class BloodCultRuneCarverSystem : EntitySystem
             CancelDuplicate = false,
         };
 
-		if (_prototypeManager.TryIndex(ent.Comp.Rune, out var ritualPrototype))
+		if (_protoMan.TryIndex(ent.Comp.Rune, out var ritualPrototype))
 			_popupSystem.PopupEntity(
 				Loc.GetString("cult-rune-drawing-vowel-first") +
 				("aeiou".Contains(ritualPrototype.Name.ToLower()[0]) ? "n" : "") +

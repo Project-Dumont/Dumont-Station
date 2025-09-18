@@ -27,19 +27,15 @@ using Content.Shared.DoAfter;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Server.GameTicking.Rules;
-using Content.Shared.StatusEffect;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Stunnable;
-using Content.Shared.Emp;
 using Content.Server.Emp;
 using Content.Shared.Popups;
 using Content.Server.PowerCell;
-using Content.Shared.PowerCell;
-using Content.Shared.PowerCell.Components;
 using Content.Shared.Silicons.Borgs.Components;
-using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Server.Damage.Systems;
+using Content.Shared.StatusEffectNew;
 
 
 namespace Content.Server.BloodCult.EntitySystems;
@@ -52,7 +48,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 	[Dependency] private readonly DamageableSystem _damageableSystem = default!;
 	[Dependency] private readonly PopupSystem _popup = default!;
 	[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-	[Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+	[Dependency] private readonly SharedStatusEffectsSystem _statusEffect = default!;
 	[Dependency] private readonly BloodCultRuleSystem _bloodCultRules = default!;
 	[Dependency] private readonly HandsSystem _hands = default!;
 	[Dependency] private readonly StaminaSystem _stamina = default!;
@@ -65,8 +61,6 @@ public sealed partial class CultistSpellSystem : EntitySystem
 	[Dependency] private readonly IGameTiming _gameTiming = default!;
 	[Dependency] private readonly IEntityManager _entMan = default!;
 	[Dependency] private readonly SharedStunSystem _stun = default!;
-
-	[Dependency] private readonly IPrototypeManager _protoMan = default!;
 
 	private EntityQuery<EmpowerOnStandComponent> _runeQuery;
 
@@ -114,11 +108,11 @@ public sealed partial class CultistSpellSystem : EntitySystem
 		{
 			DamageSpecifier appliedDamageSpecifier;
 			if (damageable.Damage.DamageDict.ContainsKey("Bloodloss"))
-				appliedDamageSpecifier = new DamageSpecifier(_protoMan.Index<DamageTypePrototype>("Bloodloss"), FixedPoint2.New(actionComp.HealthCost));
+				appliedDamageSpecifier = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Bloodloss"), FixedPoint2.New(actionComp.HealthCost));
 			else if (damageable.Damage.DamageDict.ContainsKey("Ion"))
-				appliedDamageSpecifier = new DamageSpecifier(_protoMan.Index<DamageTypePrototype>("Ion"), FixedPoint2.New(actionComp.HealthCost));
+				appliedDamageSpecifier = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Ion"), FixedPoint2.New(actionComp.HealthCost));
 			else
-				appliedDamageSpecifier = new DamageSpecifier(_protoMan.Index<DamageTypePrototype>("Slash"), FixedPoint2.New(actionComp.HealthCost));
+				appliedDamageSpecifier = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Slash"), FixedPoint2.New(actionComp.HealthCost));
 			_damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
 		}
 
@@ -205,7 +199,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			return;
 
 		DamageSpecifier appliedDamageSpecifier = new DamageSpecifier(
-			_protoMan.Index<DamageTypePrototype>("Slash"),
+			_proto.Index<DamageTypePrototype>("Slash"),
 			FixedPoint2.New(args.CultAbility.HealthDrain * (args.StandingOnRune ? 1 : 3))
 		);
 
@@ -300,14 +294,14 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			batteryUid != null)
 		{
 			_emp.DoEmpEffects((EntityUid)batteryUid, empDamage, stunTime);
-			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(stunTime), false);
+			_statusEffect.TryAddStatusEffectDuration(target, "Muted", out _, TimeSpan.FromSeconds(stunTime));
 		}
 		else
 		{
 			_stun.TryKnockdown(target, TimeSpan.FromSeconds(stunTime), true);
 			_stamina.TakeStaminaDamage(target, staminaDamage, visual: false);
 			EnsureComp<CultMarkedComponent>(target);
-			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(stunTime), false);
+			_statusEffect.TryAddStatusEffectDuration(target, "Muted", out _, TimeSpan.FromSeconds(stunTime));
 		}
 	}
 
@@ -320,7 +314,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			_stun.TryKnockdown(ent, TimeSpan.FromSeconds(advancedStunTime), true);
 			_stamina.TakeStaminaDamage(ent, advancedStaminaDamage, visual: false);
 			_stun.TryStun(ent, TimeSpan.FromSeconds(advancedStunTime), true);
-			_statusEffect.TryAddStatusEffect<MutedComponent>(ent, "Muted", TimeSpan.FromSeconds(advancedStunTime), false);
+			_statusEffect.TryAddStatusEffectDuration(ent, "Muted", out _, TimeSpan.FromSeconds(advancedStunTime));
 			_entMan.RemoveComponent<CultMarkedComponent>(ent);
 			_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"), ent, AudioParams.Default.WithVolume(-3f));
 		}

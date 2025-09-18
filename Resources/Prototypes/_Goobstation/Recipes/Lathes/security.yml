@@ -63,6 +63,7 @@
   materials:
     Steel: 100
     Glass: 300
+    Plasma: 100
 
 - type: latheRecipe
   id: CartridgeAtropine
@@ -71,6 +72,7 @@
   materials:
     Steel: 100
     Glass: 300
+    Plasma: 200
 
 - type: latheRecipe
   id: CartridgeBicaridine
@@ -79,6 +81,7 @@
   materials:
     Steel: 100
     Glass: 300
+    Plasma: 100
 
 - type: latheRecipe
   id: CartridgeDermaline
@@ -87,6 +90,7 @@
   materials:
     Steel: 100
     Glass: 300
+    Plasma: 100
 
 - type: latheRecipe
   id: CartridgeSaline

@@ -86,7 +86,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     [Dependency] private readonly MobStateSystem _mobSystem = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -598,7 +597,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                             }
                             // Make sure the location for summoning propogates to new cultists.
                             component.LocationForSummon = cultist.LocationForSummon;
-                            _chatSystem.DispatchGlobalAnnouncement(
+                            _chat.DispatchGlobalAnnouncement(
                                 Loc.GetString("cult-veil-drawing-crewwarning", ("name", name)),
                                 "Central Command Higher Dimensional Affairs",
                                 true,

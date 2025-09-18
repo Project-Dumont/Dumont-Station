@@ -22,13 +22,13 @@
     minimumPlayers: 25 # Gaby change
     maxOccurrences: 1 # Gaby change
     chaos: # Goobstation
-      Hostile: 150 # Gaby change
+      Hostile: 200
       Friend: 20
-      Combat: 200 # Gaby change
-      Death: 100
-      Medical: 100
+      Combat: 200
+      Death: 200
+      Medical: 200
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 400
+    chaosScore: 600
   - type: RandomSpawnRule
     prototype: SpawnPointGhostBinglePrime

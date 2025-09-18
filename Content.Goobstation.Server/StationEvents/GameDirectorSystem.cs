@@ -3,9 +3,12 @@
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -40,6 +43,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Prometheus;
+using Content.Server._Gabystation;
 
 namespace Content.Goobstation.Server.StationEvents;
 
@@ -346,9 +350,11 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
             LogMessage($"Roundstart antag chosen: {pick2}");
 
             RoundstartAntagsSelectedTotal.WithLabels(pick).Inc();
-            GameTicker.AddGameRule(pick);
+            var rule1 = GameTicker.AddGameRule(pick);
+            _tag.AddTag(rule1, GabyConstants.GameDirectorRuleTag);
             RoundstartAntagsSelectedTotal.WithLabels(pick2).Inc();
-            GameTicker.AddGameRule(pick2);
+            var rule2 = GameTicker.AddGameRule(pick2);
+            _tag.AddTag(rule2, GabyConstants.GameDirectorRuleTag);
         }
 
         return;
@@ -356,7 +362,7 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
         void IndexAndStartGameMode(string pick)
         {
             var pickProto = _prototypeManager.Index(pick);
-            if(!pickProto.TryGetComponent<GameRuleComponent>(out var pickGameRule, _factory) ||
+            if (!pickProto.TryGetComponent<GameRuleComponent>(out var pickGameRule, _factory) ||
                pickGameRule.MinPlayers > count)
             {
                 LogMessage("Not enough players for roundstart antags selected...");
@@ -365,7 +371,9 @@ public sealed class GameDirectorSystem : GameRuleSystem<GameDirectorComponent>
             LogMessage("Choosing roundstart antag");
             LogMessage($"Roundstart antag chosen: {pick}");
             RoundstartAntagsSelectedTotal.WithLabels(pick).Inc();
-            GameTicker.AddGameRule(pick);
+            var rule = GameTicker.AddGameRule(pick);
+
+            _tag.AddTag(rule, GabyConstants.GameDirectorRuleTag); // GabyStation
         }
     }
 

@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2023 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
@@ -72,16 +74,12 @@
     - to: armor
       steps:
       - tag: MetalHydrogenArmor
-        name: metal hydrogen armor
-        icon:
-          sprite: Clothing/OuterClothing/Armor/metal_hydrogen_armor.rsi
-          state: icon
+        name: ent-ClothingOuterArmorMetalHydrogen
+        icon: { sprite: Clothing/OuterClothing/Armor/metal_hydrogen_armor.rsi, state: icon }
         doAfter: 1
       - tag: AtmosFireSuit
-        name: atmos fire suit
-        icon:
-          sprite: Clothing/OuterClothing/Suits/atmos_firesuit.rsi
-          state: icon
+        name: ent-ClothingOuterSuitAtmosFire
+        icon: { sprite: Clothing/OuterClothing/Suits/atmos_firesuit.rsi, state: icon }
         doAfter: 15
       - material: Cable
         amount: 2

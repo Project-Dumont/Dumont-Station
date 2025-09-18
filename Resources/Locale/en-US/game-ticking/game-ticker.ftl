@@ -37,24 +37,24 @@ game-ticker-get-info-text = Hi and welcome to [color=white]Space Station 14![/co
                             The current map is: [color=white]{$mapName}[/color]
                             The current game mode is: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-get-info-preround-text = Olá e bem-vindo à [color=#667C4D]Gaby Station![/color]
-                            A rodada atual é: [color=white]#{$roundId}[/color]
-                            O número atual de jogadores é: [color=white]{$playerCount}[/color] ([color=white]{$readyCount}[/color] {$readyCount ->
-                                [one] está
-                                *[other] estão
-                            } prontos)
-                            O mapa atual é: [color=white]{$mapName}[/color]
-                            O modo de jogo atual é: [color=white]{$gmTitle}[/color]
+game-ticker-get-info-preround-text = Hi and welcome to [color=white]Space Station 14![/color]
+                            The current round is: [color=white]#{$roundId}[/color]
+                            The current player count is: [color=white]{$playerCount}[/color] ([color=white]{$readyCount}[/color] {$readyCount ->
+                                [one] is
+                                *[other] are
+                            } ready)
+                            The current map is: [color=white]{$mapName}[/color]
+                            The current game mode is: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-no-map-selected = [color=yellow]Mapa ainda não selecionado![/color]
-game-ticker-player-no-jobs-available-when-joining = Ao tentar entrar no jogo, nenhum cargo estava disponível.
+game-ticker-no-map-selected = [color=yellow]Map not yet selected![/color]
+game-ticker-player-no-jobs-available-when-joining = When attempting to join to the game, no jobs were available.
 
-# Exibido no chat para administradores quando um jogador entra
-player-join-message = Jogador {$name} entrou.
-player-first-join-message = Jogador {$name} entrou pela primeira vez.
+# Displayed in chat to admins when a player joins
+player-join-message = Player {$name} joined.
+player-first-join-message = Player {$name} joined for the first time.
 
-# Exibido no chat para administradores quando um jogador sai
-player-leave-message = Jogador {$name} saiu.
+# Displayed in chat to admins when a player leaves
+player-leave-message = Player {$name} left.
 
 latejoin-arrival-announcement = {$character} ({$job}) has arrived at the station!
 latejoin-arrival-announcement-special = {$job} {$character} on deck!
@@ -64,9 +64,9 @@ latejoin-arrivals-direction-time = A shuttle transferring you to your station wi
 latejoin-arrivals-dumped-from-shuttle = A mysterious force prevents you from leaving with the arrivals shuttle.
 latejoin-arrivals-teleport-to-spawn = A mysterious force teleports you off the arrivals shuttle. Have a safe shift!
 
-preset-not-enough-ready-players = Não é possível iniciar {$presetName}. São necessários {$minimumPlayers} jogadores, mas temos apenas {$readyPlayersCount}.
-preset-no-one-ready = Não é possível iniciar {$presetName}. Nenhum jogador está pronto.
+preset-not-enough-ready-players = Can't start {$presetName}. Requires {$minimumPlayers} players but we have {$readyPlayersCount}.
+preset-no-one-ready = Can't start {$presetName}. No players are ready.
 
-game-run-level-PreRoundLobby = Lobby pré-rodada
-game-run-level-InRound = Em rodada
-game-run-level-PostRound = Pós-rodada
+game-run-level-PreRoundLobby = Pre-round lobby
+game-run-level-InRound = In round
+game-run-level-PostRound = Post round

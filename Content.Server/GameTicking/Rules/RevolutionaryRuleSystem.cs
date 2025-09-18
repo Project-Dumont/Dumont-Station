@@ -65,6 +65,7 @@ using Content.Server.Station.Systems;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Speech.Components;
 using Content.Shared.Database;
+using Content.Shared.Flash;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
@@ -308,6 +309,9 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             || HasComp<MutedComponent>(uid)) // No speech = No convert
             return;
         // Goob edit end (for now)
+
+        if (uid != ev.User)
+            return;
 
         var alwaysConvertible = HasComp<AlwaysRevolutionaryConvertibleComponent>(ev.Target);
 

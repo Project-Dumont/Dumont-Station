@@ -257,9 +257,11 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
-  - type: Tag # Assmos - Metal Hydrogen
+  - type: Tag 
     tags:
-      - AtmosFireSuit
+    - AtmosFireSuit # Assmos - Metal Hydrogen
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing, ClothingOuterBaseToggleable ]
@@ -451,6 +453,10 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: [ ClothingOuterBase, ClothingOuterBaseToggleable ]

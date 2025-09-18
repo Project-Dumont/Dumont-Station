@@ -8,6 +8,11 @@
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 PrPleGoo <PrPleGoo@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -17,24 +22,19 @@ using Robust.Shared.Console;
 
 namespace Content.Client.Commands;
 
-public sealed class ShowMechanismsCommand : LocalizedCommands
+public sealed class ShowMechanismsCommand : LocalizedEntityCommands
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
 
-    public const string CommandName = "showmechanisms";
-
-    public override string Command => CommandName;
-
-    public override string Help => LocalizationManager.GetString($"cmd-{Command}-help", ("command", Command));
+    public override string Command => "showmechanisms";
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var spriteSys = _entManager.System<SpriteSystem>();
-        var query = _entManager.AllEntityQueryEnumerator<OrganComponent, SpriteComponent>();
+        var query = EntityManager.AllEntityQueryEnumerator<OrganComponent, SpriteComponent>();
 
         while (query.MoveNext(out var uid, out _, out var sprite))
         {
-            spriteSys.SetContainerOccluded((uid, sprite), false);
+            _spriteSystem.SetContainerOccluded((uid, sprite), false);
         }
     }
 }

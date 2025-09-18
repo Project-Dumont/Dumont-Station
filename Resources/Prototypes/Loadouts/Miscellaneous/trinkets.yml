@@ -128,7 +128,7 @@
   id: Headphones
   storage:
     back:
-    - ClothingNeckHeadphones
+    - ClothingMultipleHeadphones
 
 # Toys
 - type: loadout
