@@ -17,6 +17,9 @@
     - type: Sprite
       sprite: _Gabystation/Objects/Fun/toys.rsi
       state: plushie_miku
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_Gabystation/Okarimono.ogg
  # TODO: sprite custom para o plushie no personagem quando segura-lo na mão
  #   - type: Item
  #     size: Small
