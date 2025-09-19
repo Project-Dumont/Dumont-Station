@@ -8,3 +8,9 @@
   storage:
     back:
     - PlushieBruce
+
+- type: loadout
+  id: PlushieMiku
+  storage:
+    back:
+    - PlushieNikuHatsume

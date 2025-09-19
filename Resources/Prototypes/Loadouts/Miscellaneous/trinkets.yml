@@ -394,18 +394,8 @@
 
 
 # End GoobStation
-# Gabystation
-- type: loadout
-  id: PlushieBruce
-  storage:
-    back:
-    - PlushieBruceGringo
 
-- type: loadout
-  id: PlushieMiku
-  storage:
-    back:
-    - PlushieNikuHatsume
+
 
 # End Gabystation
 # Towels
