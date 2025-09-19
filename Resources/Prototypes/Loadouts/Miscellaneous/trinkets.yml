@@ -388,6 +388,13 @@
     back:
     - PlushieBruce
 
+- type: loadout
+  id: PlushieMiku
+  storage:
+    back:
+    - PlushieMiku
+
+# End Gabystation
 # Towels
 - type: loadout
   id: TowelColorWhite
