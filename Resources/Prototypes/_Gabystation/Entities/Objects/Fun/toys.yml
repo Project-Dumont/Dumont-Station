@@ -7,3 +7,17 @@
   - type: Sprite
     sprite: _Gabystation/Objects/Fun/toys.rsi
     state: plushie_bruce
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieNikuHatsume
+  name: Niku Hatsume plushie
+  description: Pelúcia da Niku Hatsume super kawaii, com cabelinhos macios e um charme irresistível!
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Fun/toys.rsi
+      state: plushie_miku
+ # TODO: sprite custom para o plushie no personagem quando segura-lo na mão
+ #   - type: Item
+ #     size: Small
+ #     sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
