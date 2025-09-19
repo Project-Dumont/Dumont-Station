@@ -25,19 +25,19 @@
       state: plushie_miku
     - type: EmitSoundOnUse
       sound:
-        path: /Audio/_Gabystation/Okarimono.ogg
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
     - type: EmitSoundOnLand
       sound:
-        path: /Audio/_Gabystation/Okarimono.ogg
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
     - type: EmitSoundOnActivate
       sound:
-        path: /Audio/_Gabystation/Okarimono.ogg
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
     - type: EmitSoundOnTrigger
       sound:
-        path: /Audio/_Gabystation/Okarimono.ogg
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
     - type: EmitSoundOnCollide
       sound:
-        path: /Audio/_Gabystation/Okarimono.ogg
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
 
  # TODO: sprite custom para o plushie no personagem quando segura-lo na mão
  #   - type: Item
