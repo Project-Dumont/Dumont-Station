@@ -6,7 +6,7 @@
 
 - type: entity
   parent: PlushieDurk
-  id: PlushieBruce
+  id: PlushieBruceGringo
   name: Gringo plushie
   description: A cute stuffed toy made in space gringo china, you fell that came from brazil
   components:
