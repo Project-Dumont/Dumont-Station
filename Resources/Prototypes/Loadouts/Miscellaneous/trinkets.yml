@@ -399,7 +399,7 @@
   id: PlushieBruce
   storage:
     back:
-    - PlushieBruce
+    - PlushieBruceGringo
 
 - type: loadout
   id: PlushieMiku
