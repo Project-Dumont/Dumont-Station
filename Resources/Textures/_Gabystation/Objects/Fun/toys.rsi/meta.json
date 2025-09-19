@@ -9,6 +9,10 @@
   "states": [
     {
       "name": "plushie_bruce"
+    },
+  "states": [
+    {
+      "name": "plushie_miku"
     }
   ]
 }
