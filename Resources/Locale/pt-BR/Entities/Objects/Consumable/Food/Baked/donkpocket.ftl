@@ -44,10 +44,10 @@ ent-FoodDonkpocketGondola = gondola-pocket
     .desc = A escolha de usarem carne real de gôndola na receita é, no mínimo, controversa.
 
 ent-FoodDonkpocketGondolaWarm = gondola-pocket quente
-    .desc = A escolha de usarem carne real de gôndola na receita é, no mínimo, controversa.
+    .desc = A escolha de usarem carne real de gôndola na receita é, no mínimo, controversa. Mas agora ta quente então fazer o que.
 
 ent-FoodDonkpocketDink = dink-pocket
-    .desc = Um donk-pocket de uma marca alternativa de lagarto, recheado com cenoura em conserva e envolto em alga marinha. É melhor comê-lo frio ou, melhor ainda, não comê-lo.
+    .desc = Um donk-pocket de uma marca alternativa de lagarto, recheado com cenoura em conserva e envolto em alga marinha. É melhor comê-lo frio, ou melhor ainda, não comê-lo.
 
 ent-FoodDonkpocketStonk = stonk-pocket
     .desc = Gostoso, mas uma triste lembrança da grande queda da bolsa de 24.

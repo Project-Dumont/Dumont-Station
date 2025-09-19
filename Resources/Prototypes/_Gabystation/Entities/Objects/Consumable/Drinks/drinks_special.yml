@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: DrinkShaker
+  id: GoldenDrinkShaker
+  name: golden shaker
+  description: A professional mixologist dream come true, fit to serve royalty with ice cold perfection.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
+  - type: Sprite
+    sprite: _Gabystation/Objects/Consumable/Drinks/goldenshaker.rsi
+    state: icon
+  - type: Item
+    sprite: _Gabystation/Objects/Consumable/Drinks/goldenshaker.rsi

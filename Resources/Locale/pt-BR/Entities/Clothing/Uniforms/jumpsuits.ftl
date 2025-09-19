@@ -11,7 +11,7 @@ ent-ClothingUniformJumpsuitCaptain = macacão de capitão
     .desc = É um macacão azul com algumas marcas douradas denotando o posto de "Capitão".
 
 ent-ClothingUniformJumpsuitCargo = macacão cargo tech
-    .desc = Um macacão resistente, concedido aos membros do departamento de Carga.
+    .desc = Um macacão resistente, concedido aos membros do departamento de carga.
 
 ent-ClothingUniformJumpsuitSalvageSpecialist = macacão de especialista em salvamento
     .desc = É um macacão elegante com um macacão resistente. Está muito sujo.
@@ -26,7 +26,7 @@ ent-ClothingUniformJumpsuitCentcomOfficial = macacão oficial da Central de Coma
     .desc = É um macacão usado pelos dirigentes da Central de Comando.
 
 ent-ClothingUniformJumpsuitCentcomOfficer = macacão de oficial da Central de Comando
-    .desc = É um macacão usado pelos Oficiais da Central de Comando.
+    .desc = É um macacão usado pelos oficiais da Central de Comando.
 
 ent-ClothingUniformJumpsuitChef = uniforme de chef
     .desc = Não consigo cozinhar sem isso.
@@ -62,10 +62,10 @@ ent-ClothingUniformJumpsuitHoSAlt = gola alta do segurança chefe
     .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Segurança Chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
 
 ent-ClothingUniformJumpsuitHoSBlue = macacão azul do segurança chefe
-    .desc = Um macacão azul do Segurança Chefe.
+    .desc = Um macacão azul do segurança chefe.
 
 ent-ClothingUniformJumpsuitHoSGrey = macacão cinza do segurança chefe
-    .desc = Macacão cinza do Segurança Chefe, que o faz parecer um passageiro.
+    .desc = Macacão cinza do segurança chefe, que o faz parecer um passageiro.
 
 ent-ClothingUniformJumpsuitHoSParadeMale = uniforme de desfile do chefe da segurança
     .desc = Um chefe masculino de roupas de luxo da segurança, para ocasiões especiais.
@@ -92,7 +92,7 @@ ent-ClothingUniformJumpsuitQM = macacão do intendente
     .desc = O que o marrom pode fazer por você?
 
 ent-ClothingUniformJumpsuitResearchDirector = gola alta do diretor de pesquisa
-    .desc = É uma gola alta usada por quem tem know-how para alcançar o cargo de Diretor de Pesquisa. Seu tecido oferece menor proteção contra contaminantes biológicos.
+    .desc = É uma gola alta usada por quem tem know-how para alcançar o cargo de diretor de pesquisa. Seu tecido oferece menor proteção contra contaminantes biológicos.
 
 ent-ClothingUniformJumpsuitScientist = macacão de cientista
     .desc = É feito de uma fibra especial que oferece menor proteção contra explosivos. Possui marcações que denotam o usuário como um cientista.
@@ -104,7 +104,7 @@ ent-ClothingUniformJumpsuitSecBlue = camisa e gravata azuis
     .desc = Estou um pouco ocupado agora, Calhoun.
 
 ent-ClothingUniformJumpsuitSecGrey = macacão de segurança cinza
-    .desc = Uma relíquia tática de anos anteriores, antes de Nanotrasen decidir que era mais barato tingir os trajes de vermelho em vez de lavar o sangue.
+    .desc = Uma relíquia tática de anos anteriores, antes da Nanotrasen decidir que era mais barato tingir os trajes de vermelho em vez de lavar o sangue.
 
 ent-ClothingUniformJumpsuitWarden = uniforme do carceiro
     .desc = Um traje de segurança formal para oficiais completo com fivela de cinto Nanotrasen.
@@ -191,7 +191,7 @@ ent-ClothingUniformJumpsuitPyjamaSyndicateRed = pijama vermelho do Sindicato
     .desc = Para aquelas longas noites em permanente.
 
 ent-ClothingUniformJumpsuitNanotrasen = macacão nanotrasen
-    .desc = Um imponente macacão azul para representar o NanoTrasen.
+    .desc = Um imponente macacão azul para representar a NanoTrasen.
 
 ent-ClothingUniformJumpsuitCapFormal = terno formal do capitão
     .desc = Um terno para ocasiões especiais.
@@ -203,13 +203,13 @@ ent-ClothingUniformJumpsuitHosFormal = terno formal de hos
     .desc = Um terno para ocasiões especiais.
 
 ent-ClothingUniformJumpsuitOperative = macacão de agente
-    .desc = Uniforme para agentes de Sindicatos de elite realizando operações táticas no espaço profundo.
+    .desc = Uniforme para agentes de sindicatos de elite realizando operações táticas no espaço profundo.
 
 ent-ClothingUniformJumpsuitAtmos = macacão técnico atmosférico
-    .desc = estou no trabalho. Não posso sair do trabalho. O trabalho está respirando. Estou testando a qualidade do ar.
+    .desc = Estou no trabalho. Não posso sair do trabalho. O trabalho está respirando. Estou testando a qualidade do ar.
 
 ent-ClothingUniformJumpsuitPsychologist = traje de psicólogo
-    .desc=Eu não perco coisas. Coloco as coisas em locais que mais tarde me escapam.
+    .desc= Eu não perco coisas. Coloco as coisas em locais que mais tarde me escapam.
 
 ent-ClothingUniformJumpsuitReporter = terno de repórter
     .desc = Um bom repórter permanece cético por toda a vida.

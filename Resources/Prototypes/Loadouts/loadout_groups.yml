@@ -122,6 +122,7 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 96flo <163569033+96flo@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
@@ -135,19 +136,24 @@
 # SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot02@gmail.com>
 # SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot20@gmail.com>
 # SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GNUtopia <93669372+GNUtopia@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Julian Giebel <juliangiebel@live.de>
 # SPDX-FileCopyrightText: 2025 KingFroozy <140668342+KingFroozy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Momo <Rsnesrud@gmail.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <138228340+OttavioBasques@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Phooooooooooooooooooooooooooooooosphate <184853112+Phooooooooooooooooooooooooooooooosphate@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pumkin69 <judeb@DESKTOP-M4B8G5D>
 # SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 T <theo75cg@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
@@ -243,6 +249,9 @@
   - GlassesJamjar
   - GlassesJensen
   - CheapSunglasses # Goobstation
+  - Blindfold #Gabystation
+  - Eyepatch #Gabystation
+  - EyepatchFlipped #Gabystation
 
 - type: loadoutGroup
   id: Animals  # Goobstation
@@ -274,6 +283,7 @@
   - EmergencyPlasma
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -355,6 +365,7 @@
   minLimit: 0
   loadouts:
   - HoPHead
+  - HoPBeret
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -508,19 +519,56 @@
   id: CivilianHat
   name: loadout-group-civilian-hat
   minLimit: 0
-  loadouts: [HeadbandBlack]
+  loadouts:
+  - HeadbandBlack
+  - WitchHat #Gabystation
+  - BrownFedora #Gabystation
+  - GreyFedora #Gabystation
+  - Fez #Gabystation
+  - PirateHat #Gabystation
+  - Sombrero #Gabystation
+  - Ushanka #Gabystation
+  - Tophat #Gabystation
+  - PaperSack #Gabystation
+  - SafariHat #Gabystation
+  - Beret #Gabystation
+  - FrenchBeret #Gabystation
+  - BeaverHat #Gabystation
+
 
 - type: loadoutGroup
   id: CivilianFace
   name: loadout-group-civilian-mask
   minLimit: 0
-  loadouts: [GreyTiderMask]
+  loadouts:
+  - GreyTiderMask
+  - PlagueMask #Gabystation
+  - SterileMask #Gabystation
+  - RatMask #Gabystation
+  - FoxMask #Gabystation
+  - BeeMask #Gabystation
+  - BearMask #Gabystation
 
 - type: loadoutGroup
   id: CivilianGloves
   name: loadout-group-civilian-gloves
   minLimit: 0
-  loadouts: [GreyTiderGloves]
+  loadouts:
+  - GreyTiderGloves
+  - Powerglove #Gabystation
+  - Robohands #Gabystation
+  - CivilianFingerlessGloves #Gabystation
+  - CivilianPurpleGloves #Gabystation
+  - CivilianRedGloves #Gabystation
+  - CivilianBlueGloves #Gabystation
+  - CivilianTealGloves #Gabystation
+  - CivilianBrownGloves #Gabystation
+  - CivilianGrayGloves #Gabystation
+  - CivilianGreenGloves #Gabystation
+  - CivilianLightBrownGloves #Gabystation
+  - CivilianOrangeGloves #Gabystation
+  - CivilianWhiteGloves #Gabystation
+  - CivilianBlackGloves #Gabystation
 
 - type: loadoutGroup
   id: CivilianBackpack
@@ -635,6 +683,9 @@
     - LoadoutSalvageBoots
     - LaceupShoes
   # Goob Loadouts Rework End
+    - LeatherShoes #Gabystation
+    - Slippers #Gabystation
+    - NanotrasenRepresentativeHeels #Gabystation
 
 - type: loadoutGroup
   id: CivilianShoesRequired
@@ -793,6 +844,7 @@
   minLimit: 0
   loadouts:
   - JanitorHead
+  - JanitorHeadSenior # Goobstation
 
 - type: loadoutGroup
   id: JanitorJumpsuit
@@ -921,6 +973,7 @@
   - EmergencyPlasmaClown
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 - type: loadoutGroup
   id: MimeHead
@@ -986,6 +1039,7 @@
   - EmergencyPlasmaMime
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -1312,6 +1366,7 @@
   - EmergencyPlasmaExtended
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 # Science
 - type: loadoutGroup
@@ -1631,6 +1686,7 @@
   - EmergencyPlasmaSecurity
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1859,6 +1915,7 @@
   - EmergencyPlasmaMedical
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 # Wildcards
 - type: loadoutGroup
@@ -1912,6 +1969,7 @@
   - EmergencyPlasmaSyndicate
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencySilicon
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

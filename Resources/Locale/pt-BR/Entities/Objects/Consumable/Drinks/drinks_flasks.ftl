@@ -1,17 +1,17 @@
 ent-DrinkShinyFlask = frasco brilhante
-     .desc = Um frasco de metal brilhante. Parece ter um símbolo Grego inscrito nele.
+     .desc = Um frasco de metal brilhante. Parece ter um símbolo grego inscrito nele.
 
-ent-DrinkMREFlask = frasco MRE
+ent-DrinkMREFlask = frasco mre
      .desc = Um antigo frasco militar, cheio do melhor conteúdo para soldados
 
 ent-DrinkDetFlask = frasco do inspetor
      .desc = Frasco de metal com pulseira de couro e distintivo dourado pertencente ao inspetor.
 
 ent-DrinkFlask = frasco do capitão
-     .desc = Um frasco de metal pertencente ao capitão
+     .desc = Um frasco de metal pertencente ao capitão.
 
 ent-DrinkFlaskOld = frasco antigo
-     .desc = { "" }
+     .desc = Um frasco deixado as traças.
 
 ent-DrinkLithiumFlask = frasco de lítio
      .desc = Um frasco com um símbolo de átomo de lítio.

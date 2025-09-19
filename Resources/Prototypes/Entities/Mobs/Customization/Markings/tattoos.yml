@@ -12,7 +12,10 @@
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Froffy025 <78222136+Froffy025@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 KMano10000 <kmano10000@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pgriha <133212269+Pgriha@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
@@ -30,7 +33,7 @@
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE- Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE- Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -44,7 +47,7 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE- Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE- Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -72,7 +75,7 @@
   id: TattooSilverburghLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE - Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -86,7 +89,7 @@
   id: TattooSilverburghRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE - Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -100,7 +103,7 @@
   id: TattooCampbellLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE - Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -114,7 +117,7 @@
   id: TattooCampbellRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE - Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -128,7 +131,7 @@
   id: TattooCampbellLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE - Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -142,7 +145,7 @@
   id: TattooCampbellRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni] # Delta V - Felinid; EE - Oni
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -156,7 +159,7 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Plasmaman] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Plasmaman, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -170,7 +173,7 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Plasmaman] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Plasmaman, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -184,7 +187,7 @@
   id: TattooTribal1
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -198,7 +201,7 @@
   id: TattooLoops
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -250,7 +253,7 @@
   id: TattooEyeRightGlowy
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -265,7 +268,7 @@
   id: TattooEyeLeftGlowy
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins; Gaby Station - Daengati
   coloring:
     default:
       type:

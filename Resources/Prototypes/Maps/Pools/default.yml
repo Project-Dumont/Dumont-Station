@@ -78,7 +78,7 @@
   - Saltern
   - Packed
   - Reach
-  # Train # Gabystation - desativado após tentativa falha de voltar com o mapa
+  #- Train # Goobstation - all my friends hate train
   - FlandHighPop
   - OasisHighPop
   # Goob Station Maps
@@ -91,6 +91,6 @@
   # Gaby Station Maps
   - Gamma
   #- Gax
-  - Falcon
+  #- Falcon
   - Tram
   - Cog # those who forget to clear their multitool

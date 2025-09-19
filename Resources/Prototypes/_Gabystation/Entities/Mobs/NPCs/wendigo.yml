@@ -1,7 +1,13 @@
+# SPDX-FileCopyrightText: 2024 P e p e . <josephpereira413@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: Wendigo
   description: A manhunter entity of the dark woods. Although its main diet is humanoids, it won't pass a meal at anything that comes across it.
-  parent: MobXeno
+  parent: BaseMobAlternate
   id: MobWendigo
   components:
   - type: Sprite

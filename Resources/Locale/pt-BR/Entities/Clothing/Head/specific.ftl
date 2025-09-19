@@ -1,3 +1,3 @@
 ent-ClothingHeadHatChameleon = boina
-     .desc = Uma boina, um chapéu favorito dos artistas.
+     .desc = Uma boina, o acessório favorito dos diretores de cinema!
      .suffix = Camaleão

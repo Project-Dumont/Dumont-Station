@@ -16,17 +16,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobOni" Caption=""/>
   </Box>
 
-  Large, horned people that come in a variety of colors. Their accuracy with guns is terrible, but their physical strength brings them a lot of boons both in and out of combat.
+  Pessoas grandes com uma variedade de cores que possuem chifres. Sua precisão com armas de fogo é terrível, mas sua força física os traz benefícios tanto dentro quanto fora de combate.
 
-  ## Benefits
-  - They take 15% less Brute damage.
-  - They do more damage in melee; 35% more Blunt and Asphyxiation, 20% more Slash and Piercing.
-  - Due to their big size, they can easily carry and pull any other species.
-  - Slightly more stamina than Humans.
+  ## Benefícios
+  - Tomam [color=#1e90ff]15% menos dano Bruto[/color].
+  - Causam mais dano no corpo-a-corpo; [color=#ec3a3a]35% mais dano Contundente e de Asfixia[/color], e [color=#ec3a3a]20% mais dano Cortante e Perfurante[/color].
+  - Graças a seu grande tamanho, podem carregar e puxar outras espécies com facilidade.
+  - Têm levemente mais stamina do que humanos.
 
-  ## Drawbacks
-  - They are too big and unwieldy, so usually they need an extra hand to use guns. If a gun already requires two hands, they are most likely unable to shoot it at all.
-  - They are harder to carry and pull.
-  - They are bigger than Humans, making them easier to hit.
+  ## Malefícios
+  - São grandes e desajeitados, então precisam de uma mão extra pra usar armas de fogo. Se uma arma já ocuparia duas mãos, são provavelmente incapazes de sequer atirar com elas.
+  - São mais difíceis de carregar e puxar.
+  - São maiores que humanos, os tornando alvos fáceis de acertar.
 
 </Document>

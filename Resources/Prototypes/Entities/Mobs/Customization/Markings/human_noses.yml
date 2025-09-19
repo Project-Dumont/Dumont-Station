@@ -1,5 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Lary <89530982+LaryNevesPR@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -9,7 +13,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: schnozz
@@ -20,7 +24,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: nubby
@@ -31,7 +35,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: droop
@@ -42,7 +46,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: blob
@@ -53,7 +57,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: uppie

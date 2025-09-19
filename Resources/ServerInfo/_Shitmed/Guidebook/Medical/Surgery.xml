@@ -63,6 +63,7 @@ Algumas ferramentas não-cirúrgias podem ser usadas em emergências. Clique no 
 <GuideEntityEmbed Entity="Wirecutter" Caption="cortador de fio"/>
 <GuideEntityEmbed Entity="KitchenKnife" Caption="faca"/>
 <GuideEntityEmbed Entity="Crowbar" Caption="pé de cabra"/>
+<GuideEntityEmbed Entity="CableApcStack" Caption="cabos"/>
 </Box>
 
 Elas não são as ideais quando comparadas a ferramentas cirúrgicas reais, mas servem em emergências.

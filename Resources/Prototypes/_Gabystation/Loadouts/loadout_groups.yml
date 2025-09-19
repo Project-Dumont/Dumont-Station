@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 
 # This only exist to do not let passengers naked.
 - type: loadoutGroup
@@ -9,3 +16,26 @@
   - GreyJumpsuit
   - GreyJumpskirt
   - AncientJumpsuit
+
+# =================
+# JOB LOADOUTS TRINKETS
+# =================
+# Pls put only misc things in job loadout!
+
+- type: loadoutGroup
+  id: TrinketsBartender
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - GoldenShaker
+  - DrinkShaker
+
+- type: loadoutGroup
+  id: TrinketsChef
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - GoldKitchenKnife
+  - GoldButchCleaver

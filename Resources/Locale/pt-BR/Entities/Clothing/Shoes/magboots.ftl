@@ -5,7 +5,7 @@ ent-ClothingShoesBootsMagAdv = botas magnéticas avançadas
      .desc = Botas magnéticas de última geração que não retardam o usuário.
 
 ent-ClothingShoesBootsMagBlinding = botas magnéticas de velocidade ofuscante
-     .desc = Isso ficaria atraente para um buscador como você.
+     .desc = Isso ficaria atraente para um andarilho como você.
 
-ent-ClothingShoesBootsMagSyndie = magboots vermelho-sangue
+ent-ClothingShoesBootsMagSyndie = botas magnéticas vermelho-sangue
      .desc = Botas magnéticas de engenharia reversa que possuem forte atração magnética. Propriedade dos Saqueadores Gorlax.

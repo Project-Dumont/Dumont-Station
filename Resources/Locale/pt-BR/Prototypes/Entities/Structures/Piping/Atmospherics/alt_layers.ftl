@@ -1,0 +1,12 @@
+ent-GasPipeLayerAlt1 = cano
+ent-GasPipeLayerAlt2 = { ent-GasPipeBase }
+ent-GasPipeStraightAlt1 = { ent-GasPipeBase } 
+ent-GasPipeStraightAlt2 = { ent-GasPipeBase }
+ent-GasPipeHalfAlt1 = { ent-GasPipeBase }
+ent-GasPipeHalfAlt2 = { ent-GasPipeBase }
+ent-GasPipeBendAlt1 = { ent-GasPipeBase }
+ent-GasPipeBendAlt2 = { ent-GasPipeBase }
+ent-GasPipeTJunctionAlt1 = { ent-GasPipeBase }
+ent-GasPipeTJunctionAlt2 = { ent-GasPipeBase }
+ent-GasPipeFourwayAlt1 = { ent-GasPipeBase }
+ent-GasPipeFourwayAlt2 = { ent-GasPipeBase }

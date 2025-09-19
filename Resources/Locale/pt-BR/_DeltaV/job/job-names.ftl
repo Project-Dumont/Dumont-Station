@@ -1,3 +1,3 @@
-job-name-admin-assistant = Assistente Administrativo
+job-name-admin-assistant = assistente administrativo
 
-JobAdminAssistant = Assistente Administrativo
+JobAdminAssistant = assistente administrativo

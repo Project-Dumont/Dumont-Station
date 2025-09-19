@@ -1,8 +1,14 @@
+# SPDX-FileCopyrightText: 2024 P e p e . <josephpereira413@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: '???'
   suffix: Unnamed, Thumper
   description: "The manifestation of my being will watch over you, when you sleep in bed, and you wake up, you won't be able to move any part of you."
-  parent: MobXeno
+  parent: BaseMobAlternate
   id: MobUnnamedThumper
   components:
   - type: Sprite

@@ -2205,6 +2205,7 @@
         Slash: 1 # Goobstation - LET THE HORDES ROAM!!
   - type: Bloodstream
     bloodMaxVolume: 50
+    smokeImmune: true # Goobstation - prevent server lagging mouse farms
   - type: CanEscapeInventory
   - type: MobPrice
     price: 50
@@ -3744,6 +3745,7 @@
   - type: Grammar
     attributes:
       gender: epicene
+  - type: SlowAccent
   - type: Tag
     tags:
     - VimPilot

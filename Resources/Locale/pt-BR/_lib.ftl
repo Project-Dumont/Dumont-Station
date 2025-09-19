@@ -88,6 +88,13 @@ zzzz-pronome-seu = { GENDER($ent) ->
     [neuter] sue
 }
 
+# Usado internamente pela função PRONOME-ESSE().
+zzzz-pronome-esse = { GENDER($ent) ->
+    *[male] esse
+    [female] essa
+    [neuter] essu
+}
+
 # Usado internamente pela função MAKEGENERO()
 zzzz-genero-terminacao = { GENDER($ent) ->
     *[male] o

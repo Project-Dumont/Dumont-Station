@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadout
+  id: GoldKitchenKnife
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChef
+      time: 360000 # 100hr
+  storage:
+    back:
+    - GoldKitchenKnife
+
+- type: loadout
+  id: GoldButchCleaver
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChef
+      time: 360000 # 100hr
+  storage:
+    back:
+    - GoldButchCleaver

@@ -79,6 +79,11 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -89,32 +94,27 @@ using Robust.Shared.Containers;
 
 namespace Content.Client.Commands;
 
-public sealed class HideMechanismsCommand : LocalizedCommands
+public sealed class HideMechanismsCommand : LocalizedEntityCommands
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
 
     public override string Command => "hidemechanisms";
 
-    public override string Description => LocalizationManager.GetString($"cmd-{Command}-desc", ("showMechanismsCommand", ShowMechanismsCommand.CommandName));
-
-    public override string Help => LocalizationManager.GetString($"cmd-{Command}-help", ("command", Command));
-
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var containerSys = _entityManager.System<SharedContainerSystem>();
-        var spriteSys = _entityManager.System<SpriteSystem>();
-        var query = _entityManager.AllEntityQueryEnumerator<OrganComponent, SpriteComponent>();
+        var query = EntityManager.AllEntityQueryEnumerator<OrganComponent, SpriteComponent>();
 
         while (query.MoveNext(out var uid, out _, out var sprite))
         {
-            spriteSys.SetContainerOccluded((uid, sprite), false);
+            _spriteSystem.SetContainerOccluded((uid, sprite), false);
 
             var tempParent = uid;
-            while (containerSys.TryGetContainingContainer((tempParent, null, null), out var container))
+            while (_containerSystem.TryGetContainingContainer((tempParent, null, null), out var container))
             {
                 if (!container.ShowContents)
                 {
-                    spriteSys.SetContainerOccluded((uid, sprite), true);
+                    _spriteSystem.SetContainerOccluded((uid, sprite), true);
                     break;
                 }
 

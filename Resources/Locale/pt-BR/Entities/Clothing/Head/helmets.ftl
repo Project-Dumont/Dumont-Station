@@ -29,7 +29,7 @@ ent-ClothingHeadHelmetTemplar = elmo de templário
     .desc = DEUS VULT!
 
 ent-ClothingHeadHelmetThunderdome = thunderdome helmet
-    .desc = Let the battle commence!
+    .desc = Que a batalha comece!
 
 ent-ClothingHeadHelmetWizardHelm = capacete de mago
     .desc = Um capacete estranhamente poderoso.
@@ -41,16 +41,16 @@ ent-ClothingHeadHelmetAtmosFire = capacete de bombeiro atmos
     .desc = Em caso de emergências, dê o fora daqui!
 
 ent-ClothingHeadHelmetLing = capacete quitinoso
-    .desc = Infla o corpo do metamofo em uma armadura quitinosa.
+    .desc = Infla o corpo do metamorfo em uma armadura quitinosa.
 
 ent-ClothingHeadHelmetVoidParamed = capacete de paramédico espacial
-    .desc = Disk 193, os médicos irão até outra galáxia para te resgatar.
+    .desc = Disque 193, os médicos irão até outra galáxia para te resgatar.
 
 ent-ClothingHeadHelmetBasic = capacete
     .desc = Um capacete de segurança padrão. Protege a cabeça contra impactos.
 
 ent-ClothingHeadHelmetMerc = capacete de mercenário
-    .desc = Este capacete de combate é cumumente utilizado por mercenários. É resistente, leve e cheira a pólvora e a selva.
+    .desc = Este capacete de combate é comumente utilizado por mercenários. É resistente, leve e cheira a pólvora e a selva.
 
 ent-ClothingHeadHelmetSwat = capacete SWAT
     .desc = Um capacete bem robusto, comumente utilizado por forças paramilitares. Este possui a logo da Nanotrasen gravado no topo.

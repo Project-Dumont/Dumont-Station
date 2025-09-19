@@ -5,7 +5,7 @@ ent-ClothingUniformJumpskirtCaptain = saia de capitão
     .desc = É uma saia azul com algumas marcas douradas que indicam o posto de "Capitão".
 
 ent-ClothingUniformJumpskirtCargo = saia de cargo
-    .desc = Uma saia resistente, concedida aos membros do departamento de Carga.
+    .desc = Uma saia resistente, concedida aos membros do departamento de carga.
 
 ent-ClothingUniformJumpskirtChiefEngineer = saia do engenheiro-chefe
     .desc = É um saia de alta visibilidade dado aos engenheiros loucos o suficiente para alcançar o posto de Engenheiro Chefe. Possui pequena proteção contra radiação.
@@ -20,7 +20,7 @@ ent-ClothingUniformJumpskirtChemistry = saia de química
     .desc = Há algumas manchas estranhas nesta saia. Hum.
 
 ent-ClothingUniformJumpskirtCMO = saia do CMO
-    .desc = É um saia usado por quem tem experiência para ser Diretor Médico. Fornece proteção biológica menor.
+    .desc = É um saia usado por quem tem experiência para ser diretor médico. Fornece proteção biológica menor.
 
 ent-ClothingUniformJumpskirtDetective = terno muito usado
     .desc = Alguém que usa isso significa negócios.
@@ -38,7 +38,7 @@ ent-ClothingUniformJumpskirtHoS = saia do segurança chefe
     .desc = É vermelho brilhante e bastante nítido, assim como as vítimas de segurança tendem a ser.
 
 ent-ClothingUniformJumpskirtHoSAlt = gola alta do segurança chefe
-    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Segurança Chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
+    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de segurança chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
 
 ent-ClothingUniformJumpskirtHoSParadeMale = uniforme de desfile do chefe da segurança
     .desc = Um segurança chefe de roupas de luxo, para ocasiões especiais.

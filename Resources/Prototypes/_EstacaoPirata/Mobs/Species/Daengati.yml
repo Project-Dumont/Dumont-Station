@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2024 Lary <89530982+LaryNevesPR@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <lucasaugustooliveira3000@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -11,6 +13,13 @@
   id: MobDaengatiBase
   abstract: true
   components:
+  #- type: Speech # O valor não pode ser nulo, vai ficar assim até ter um valor
+  #  speechVerb:  #No momento que estou fazendo isso acredito que não tenha um modo de falar especifico dos daengatis
+  - type: LanguageKnowledge # Einstein Engines - Languages
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
   - type: HumanoidAppearance
     species: Daengati
   - type: MeleeWeapon
@@ -22,8 +31,6 @@
       types:
         Slash: 3.5
         Heat: 2
-  - type: Body
-    prototype: Human
   - type: Temperature
     heatDamageThreshold: 500
     coldDamageThreshold: 270
@@ -37,14 +44,16 @@
         Heat : 0.5 #O padrão é 1.5
   - type: Damageable
     damageModifierSet: Daengati
-  - type: NightVision # Gaby edit
-    isActive: false
-    toggleAction: ToggleDaengatiNightVision
-    color: "#9c452a"
-    strength: 2
-    activateSound: null
-    deactivateSound: null
-
+  - type: Body
+    prototype: Daengati
+  - type: TypingIndicator
+    proto: oni #Mudar apos adicionar indicador de escrita de daengati
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
 - type: entity
   save: false
   name: Urist McDemon
@@ -61,14 +70,3 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
 
-- type: entity # Gaby edit
-  id: ToggleDaengatiNightVision
-  name: Switch night vision
-  description: Switches night vision.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    itemIconStyle: BigAction
-    priority: -10
-    icon: Interface/Actions/eyeopen.png
-    event: !type:ToggleNightVisionEvent

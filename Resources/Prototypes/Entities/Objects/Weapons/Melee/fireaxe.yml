@@ -39,12 +39,14 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 Coolsurf6 <coolsurf24@yahoo.com.au>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
 # SPDX-FileCopyrightText: 2025 ShieldAcrados <222141571+ShieldAcrados@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -142,3 +144,38 @@
     slots:
     - back
     - suitStorage # Goobstation
+  # Goobstation - Fireaxe plating prying; prevent fire axe from plating prying
+  - type: Tool
+    qualities:
+      - Prying
+
+# Assmos - Metal Hydrogen
+- type: entity
+  id: MetalHydrogenAxe
+  name: metal hydrogen axe
+  parent: [BaseEngineeringContraband, FireAxe]
+  description: A lightweight crowbar with an extreme sharp fire axe head attached. It trades its heft as a weapon by making it easier to carry around when holstered to suits without having to sacrifice your backpack.
+  components:
+  - type: MeleeWeapon
+    attackRate: 0.85
+    damage:
+      types:
+        Blunt: 4
+        Slash: 10
+        Structural: 8
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/metal_hydrogen_axe.rsi
+    state: icon
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/metal_hydrogen_axe.rsi
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+  - type: Tool
+    qualities:
+      - Prying
+      - Axing
+  - type: Construction
+    graph: MetalHydrogenAxeConstruct
+    node: icon

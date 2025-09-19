@@ -204,6 +204,9 @@
         },
         {
             "name": "Vampire"
+        },
+        {
+            "name": "Assistant"
         }
     ]
 }

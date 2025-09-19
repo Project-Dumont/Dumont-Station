@@ -883,3 +883,135 @@ Entries:
       message: Atualizações do goob até 31/08 ás 10h adicionadas.
   id: 100
   time: '2025-08-31T13:22:01.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Lei 3 da NT Default atualizada. A IA deve levar em conta o bem-estar da
+        tripulação e não dela mesma ao realizar ou não os interesses da
+        tripulação.
+  id: 101
+  time: '2025-09-03T00:09:41.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Rotular jarros do dispersor químico agora sobrescreve o rótulo ao invés
+        de adicionar. Por exemplo, antes, "jarro (hidrogênio) (Bica|Brute|15u)";
+        agora, "jarro (Bica|Brute|15u)".
+  id: 102
+  time: '2025-09-06T03:14:49.0000000+00:00'
+- author: Fafale
+  changes:
+    - type: Add
+      message: Adiciona páginas de Shadowkin e Daengati ao Livro Guia.
+    - type: Tweak
+      message: Traduz as páginas de espécies em inglês do Livro Guia
+  id: 103
+  time: '2025-09-06T03:18:54.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: >-
+        Passageiros estão devolta! Não podem mais ser antagonistas e ganham
+        apenas 5gc.
+  id: 104
+  time: '2025-09-06T03:20:37.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Chapéus! Máscaras! Luvas! Sapatos! Uma fornada fresquinha chegou no
+        loadout civil!
+  id: 105
+  time: '2025-09-06T18:05:45.0000000+00:00'
+- author: STARLIGHT TEAM, CringeCursed e Kyoth25f
+  changes:
+    - type: Fix
+      message: Os revolveres foram corrigidos.
+    - type: Fix
+      message: >-
+        Agora, a chance de acerto depende da distância do atirador e é sempre de
+        100% se o cursor estiver em cima do alvo. Isso significa que acertos
+        fora da tela são garantidos se a trajetória da bala cruzar o alvo. Além
+        disso, a chance de acerto dentro de 2 quadrados à frente do cursor
+        também é de 100% e, em seguida, diminui linearmente para 0 nos próximos
+        2 quadrados.
+    - type: Tweak
+      message: Examinar as magazines mostra as quantidades e tipos de danos.
+  id: 106
+  time: '2025-09-08T04:40:29.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Loadout de ferramentas para o bartender.
+    - type: Add
+      message: Shaker dourado para o loadout bartender.
+  id: 107
+  time: '2025-09-08T19:37:30.0000000+00:00'
+- author: marc-pelletier e Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada armadura, capacete e machado de hidrogênio metálico.
+    - type: Add
+      message: Adicionada armadura atmosiana.
+  id: 108
+  time: '2025-09-11T02:32:10.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Fix
+      message: Daengati não tem mais visão noturna inerente, roube seus olhos!
+    - type: Fix
+      message: >-
+        Daengati agora tem as marcas padrão das especies, utilize toda sua
+        criatividade!
+    - type: Add
+      message: Daengati agora tem texturas para seus olhos
+  id: 109
+  time: '2025-09-11T02:34:16.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Add
+      message: Cutelo e Faca de ouro para chefs
+  id: 110
+  time: '2025-09-11T04:32:21.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas últimas mudanças do Goob até 12/09.
+  id: 111
+  time: '2025-09-13T10:03:44.0000000+00:00'
+- author: marc-pelletier e Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas bombas de calor. Podem ser feitas no menu de construção (por
+        padrão, G) ou usando um RPD.
+  id: 112
+  time: '2025-09-13T10:05:21.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Espere ver mais muito mais estruturas na Lavaland.
+  id: 113
+  time: '2025-09-13T10:07:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug da barra de scroll do chat desaparecendo.
+  id: 114
+  time: '2025-09-17T02:32:58.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido culto de sangue.
+  id: 115
+  time: '2025-09-17T18:12:27.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: >-
+        A engenharia agora possui uma bolsa de materiais para transportar
+        material.
+  id: 116
+  time: '2025-09-19T01:24:30.0000000+00:00'

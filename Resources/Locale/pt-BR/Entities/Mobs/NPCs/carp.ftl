@@ -19,5 +19,5 @@ ent-MobCarpSalvage = holocarpa
     .suffix = Salvage Ruleset
 
 ent-MobCarpDragon = carpa espacial
-    .desc = Uma carpa de uma dimensão de terrores. Vive a serviço do Dragão.
+    .desc = Uma carpa de uma dimensão de terrores. Vive a serviço de um dragão. Espera... Se tem uma dessa carpas aqui então... Droga!
     .suffix = DragonBrood

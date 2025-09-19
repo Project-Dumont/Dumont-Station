@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Froffy025 <78222136+Froffy025@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -8,7 +11,7 @@
   id: FaceBindi
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -22,7 +25,7 @@
   id: FaceFullblush
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -36,7 +39,7 @@
   id: FaceCheekspotRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -50,7 +53,7 @@
   id: FaceCheekspotLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -64,7 +67,7 @@
   id: FaceChesireRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati 
   coloring:
     default:
       type:
@@ -78,7 +81,7 @@
   id: FaceChesireLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati 
   coloring:
     default:
       type:
@@ -92,7 +95,7 @@
   id: FaceCrowRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati 
   coloring:
     default:
       type:
@@ -106,7 +109,7 @@
   id: FaceCrowLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati 
   coloring:
     default:
       type:
@@ -120,7 +123,7 @@
   id: FaceEarRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -134,7 +137,7 @@
   id: FaceEarLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -148,7 +151,7 @@
   id: FaceEyebrowRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -163,7 +166,7 @@
   id: FaceEyebrowLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati 
   coloring:
     default:
       type:
@@ -178,7 +181,7 @@
   id: FaceEyebrows
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -192,7 +195,7 @@
   id: FaceEyecornerRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -206,7 +209,7 @@
   id: FaceEyecornerLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -220,7 +223,7 @@
   id: FaceEyelashRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -234,7 +237,7 @@
   id: FaceEyelashLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -248,7 +251,7 @@
   id: FaceEyestripe
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -262,7 +265,7 @@
   id: FaceLipcornerRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -276,7 +279,7 @@
   id: FaceLipcornerLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -290,7 +293,7 @@
   id: FaceGlabella
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -304,7 +307,7 @@
   id: FaceLowercheekRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -318,7 +321,7 @@
   id: FaceLowercheekLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -332,7 +335,7 @@
   id: FaceNosetape
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -346,7 +349,7 @@
   id: FaceNosetip
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -361,7 +364,7 @@
   id: FaceNosestripe
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -375,7 +378,7 @@
   id: FaceUnibrow
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -389,7 +392,7 @@
   id: FaceNeckSlim
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -399,7 +402,7 @@
   id: FaceNeckWide
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -409,7 +412,7 @@
   id: FaceNeckSlimThick
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -419,7 +422,7 @@
   id: FaceNeckWideThick
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Daengati] # Gaby Station - Daengati 
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi

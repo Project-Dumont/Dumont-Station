@@ -331,6 +331,9 @@
   id: Justice
 
 - type: Tag
+  id: Keyring
+
+- type: Tag
   id: Kidneys
 
 - type: Tag
@@ -572,6 +575,9 @@
   id: UristHand
 
 - type: Tag
+  id: Ushanka
+
+- type: Tag
   id: VehicleKey
 
 - type: Tag
@@ -603,6 +609,9 @@
 
 - type: Tag
   id: WizardHat
+
+- type: Tag # These tags are NOT alphabetical!!
+  id: Xenomorph
 
 - type: Tag
   id: HudMedicalSecurity
@@ -636,3 +645,6 @@
 
 - type: Tag
   id: MidroundAntag
+
+- type: Tag
+  id: DisposableBattery

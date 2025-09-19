@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
-# SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
-# SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Lenny <187471588+Bynnel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -95,6 +97,18 @@
   prototype: SignalControlledValve
   cost: 2
   delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: HeatPump
+  category: PumpsValves
+  sprite: /Textures/Interface/Radial/RPD/pump_heat.png
+  mode: ConstructObject
+  prototype: HeatPump
+  cost: 1
+  delay: 0 
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0

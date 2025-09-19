@@ -20,12 +20,12 @@ ent-FoodSnackEnergyBar = barra de energia
      .desc = Uma barra energética com muito vigor.
 
 ent-FoodSnackPopcorn = pipoca
-     .desc = Cultivado em um planeta desconhecido, por um fazendeiro desconhecido, colocado por algum idiota em uma estação espacial.
+     .desc = Cultivado em um planeta desconhecido, por um fazendeiro desconhecido, colocado por algum idiota em uma estação espacial. Mas o gosto é divino.
 
 ent-FoodSnackRaisins = passas de uva de 4no
      .desc = As melhores passas do universo. Não sei por quê.
 
-ent-FoodSnackSus = Sus Jerky
+ent-FoodSnackSus = sus jerky
      .desc = Algo neste pacote faz você se sentir extremamente desconfortável. Mas Jerky é bom.
 
 ent-FoodSnackSyndi = bolos-syndi
@@ -47,10 +47,10 @@ ent-FoodSnackNutribrickOpen = nutritijolo
      .desc = Um tijolo cuidadosamente sintetizado projetado para conter a maior proporção de nutrientes em relação ao volume. Tem gosto de merda.
 
 ent-FoodSnackMREBrownie = brownie
-     .desc = Um brownie precisamente misturado, feito para resistir a traumas contundentes e condições adversas. Tem gosto de merda.
+     .desc = Um brownie precisamente misturado, feito para resistir a traumas contundentes e condições adversas.
 
 ent-FoodSnackMREBrownieOpen = brownie
-     .desc = Um brownie precisamente misturado, feito para resistir a traumas contundentes e condições adversas. Tem gosto de merda.
+     .desc = Um brownie precisamente misturado, feito para resistir a traumas contundentes e condições adversas.
 
 ent-FoodPacketTrash = brownie
      .desc = Isso é lixo.
@@ -95,7 +95,7 @@ ent-FoodPacketDanDanTrash = caixa vazia e dan
      .desc = Isso é lixo.
 
 ent-FoodCookieFortune = biscoito da sorte
-     .desc = A fortuna diz: O fim está próximo... e é tudo culpa sua.
+     .desc = A fortuna diz: O fim está próximo... E é tudo culpa sua.
 
 ent-FoodPacketMRETrash = embalagem de MRE
      .desc = Uma embalagem de uso geral para uma variedade de produtos alimentícios militares.
