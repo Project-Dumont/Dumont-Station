@@ -26,6 +26,19 @@
     - type: EmitSoundOnUse
       sound:
         path: /Audio/_Gabystation/Okarimono.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Gabystation/Okarimono.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_Gabystation/Okarimono.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Gabystation/Okarimono.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/_Gabystation/Okarimono.ogg
+
  # TODO: sprite custom para o plushie no personagem quando segura-lo na mão
  #   - type: Item
  #     size: Small
