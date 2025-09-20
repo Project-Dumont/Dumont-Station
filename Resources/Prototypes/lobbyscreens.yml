@@ -122,17 +122,19 @@
   name: Cburn
   artist: PubliclyExecutedPig
 
-- type: lobbyBackground
-  id: clown
-  background: /Textures/LobbyScreens/clown.webp
-  name: Clown
-  artist: Unknown
+# Gaby station - disable Goob screens (ou meios meh)
+#- type: lobbyBackground
+#  id: clown
+#  background: /Textures/LobbyScreens/clown.webp
+#  name: Clown
+#  artist: Unknown
 
-- type: lobbyBackground
-  id: captaintheresnukies
-  background: /Textures/LobbyScreens/CAPTAINTHERE'SNUKIES.webp
-  name: Captain there's Nukies!
-  artist: Zethine
+# Gaby station - disable Goob screens (ou meios meh)
+#- type: lobbyBackground
+#  id: captaintheresnukies
+#  background: /Textures/LobbyScreens/CAPTAINTHERE'SNUKIES.webp
+#  name: Captain there's Nukies!
+#  artist: Zethine
 
 - type: lobbyBackground
   id: clownassassin
@@ -182,17 +184,19 @@
   name: Goob
   artist: Diebeck
 
-- type: lobbyBackground
-  id: GoobNukie
-  background: /Textures/LobbyScreens/GoobNukie.webp
-  name: Goob Nukie
-  artist: Cheeki
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: GoobNukie
+#  background: /Textures/LobbyScreens/GoobNukie.webp
+#  name: Goob Nukie
+#  artist: Cheeki
 
-- type: lobbyBackground
-  id: grandtheftgoob
-  background: /Textures/LobbyScreens/grandtheftgoob.webp
-  name: Grand Theft Goob
-  artist: Piras314
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: grandtheftgoob
+#  background: /Textures/LobbyScreens/grandtheftgoob.webp
+#  name: Grand Theft Goob
+#  artist: Piras314 #s2
 
 - type: lobbyBackground
   id: greytideworldwide
@@ -242,17 +246,18 @@
   name: Lost pAI
   artist: Cattom
 
-- type: lobbyBackground
-  id: moneyspread-bingle
-  background: /Textures/LobbyScreens/binglemoneyspread.webp
-  name: Bingle Flex
-  artist: LFMoth
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: moneyspread-bingle
+#  background: /Textures/LobbyScreens/binglemoneyspread.webp
+#  name: Bingle Flex
+#  artist: LFMoth
 
-- type: lobbyBackground
-  id: stargoob
-  background: /Textures/LobbyScreens/StarGoob.webp
-  name: GoobWars
-  artist: Jvne
+#- type: lobbyBackground
+#  id: stargoob
+#  background: /Textures/LobbyScreens/StarGoob.webp
+#  name: GoobWars
+#  artist: Jvne
 
 - type: lobbyBackground
   id: enlist-lavaland
