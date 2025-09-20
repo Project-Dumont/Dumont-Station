@@ -311,12 +311,6 @@
   artist: MatheusCP
 
 - type: lobbyBackground
-  id: dragonvsxeno
-  background: /Textures/_Gabystation/LobbyScreens/dragonvsxeno.webp
-  name: Dragão vs Xeno
-  artist: MatheusCP
-
-- type: lobbyBackground
   id: bingle
   background: /Textures/_Gabystation/LobbyScreens/bingle.webp
   name: Bingle
