@@ -313,6 +313,7 @@
     node: signalvalveAlt2
 
 # GasPort
+
 - type: entity
   parent: [GasPipeLayerAlt1, GasPort]
   id: GasPortAlt1
@@ -346,6 +347,7 @@
     node: portAlt2
 
 # GasDualPortVentPump
+
 - type: entity
   parent: [GasPipeLayerAlt1, GasDualPortVentPump]
   id: GasDualPortVentPumpAlt1
