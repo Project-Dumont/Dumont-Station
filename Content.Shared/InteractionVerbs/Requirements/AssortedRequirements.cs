@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 RadsammyT <radsammyt@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
