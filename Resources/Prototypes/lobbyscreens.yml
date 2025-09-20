@@ -290,3 +290,51 @@
   background: /Textures/_Gabystation/LobbyScreens/paramedic.webp
   name: Paramedic
   artist: Donner4037
+
+- type: lobbyBackground
+  id: gabycore
+  background: /Textures/_Gabystation/LobbyScreens/gabycore.webp
+  name: Gaby Core
+  artist: AgentePanela
+
+- type: lobbyBackground
+  id: gabywars
+  background: /Textures/_Gabystation/LobbyScreens/gabywars.webp
+  name: Gaby Wars (Admins)
+  artist: AgentePanela
+
+- type: lobbyBackground
+  id: gabyone
+  background: /Textures/_Gabystation/LobbyScreens/gabyone.webp
+  name: Gaby, Dia 1
+  artist: MatheusCP
+
+- type: lobbyBackground
+  id: dragonvsxeno
+  background: /Textures/_Gabystation/LobbyScreens/dragonvsxeno.webp
+  name: Dragão vs Xeno
+  artist: MatheusCP
+
+- type: lobbyBackground
+  id: bingle
+  background: /Textures/_Gabystation/LobbyScreens/bingle.webp
+  name: Bingle
+  artist: Exile
+
+- type: lobbyBackground
+  id: clown
+  background: /Textures/_Gabystation/LobbyScreens/clown.webp
+  name: Palhaço vs Nukie
+  artist: Exile
+
+- type: lobbyBackground
+  id: nicol
+  background: /Textures/_Gabystation/LobbyScreens/nicol.webp
+  name: Nicol Hilmar
+  artist: Donner4037
+
+- type: lobbyBackground
+  id: selene
+  background: /Textures/_Gabystation/LobbyScreens/selene.webp
+  name: The Selene family
+  artist: Donner4037
