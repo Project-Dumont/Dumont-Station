@@ -106,7 +106,7 @@
   category: PumpsValves
   sprite: /Textures/Interface/Radial/RPD/pump_heat.png
   mode: ConstructObject
-  prototype: HeatPump
+  prototype: GasHeatPump
   cost: 1
   delay: 0 
   collisionMask: Impassable

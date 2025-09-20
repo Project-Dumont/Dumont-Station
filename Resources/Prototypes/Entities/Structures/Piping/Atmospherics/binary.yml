@@ -477,7 +477,7 @@
   name: dual-port air vent
   description: Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -687,11 +687,11 @@
 # Funkystation - heat pump
 - type: entity
   parent: GasBinaryBase
-  id: HeatPump
+  id: GasHeatPump
   name: heat pump
   description: A pump that moves heat from one side to the other.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: SubFloorHide
     visibleLayers:
