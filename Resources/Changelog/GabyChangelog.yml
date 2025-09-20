@@ -1015,3 +1015,9 @@ Entries:
         material.
   id: 116
   time: '2025-09-19T01:24:30.0000000+00:00'
+- author: Dreykor e SBR_ERENM2
+  changes:
+    - type: Add
+      message: Novo plushie da "Niku Hatsume", disponível no loadout.
+  id: 117
+  time: '2025-09-20T18:50:31.0000000+00:00'
