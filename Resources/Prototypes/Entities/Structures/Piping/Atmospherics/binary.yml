@@ -492,7 +492,10 @@
         - state: vent_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     - type: AtmosPipeLayers
-      spriteRsiPaths: {}
+      alternativePrototypes:
+        Primary: GasDualPortVentPump
+        Secondary: GasDualPortVentPumpAlt1
+        Tertiary: GasDualPortVentPumpAlt2
     - type: GenericVisualizer
       visuals:
         enum.VentPumpVisuals.State:
@@ -709,6 +712,11 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpHeat
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasHeatPump
+      Secondary: GasHeatPumpAlt1
+      Tertiary: GasHeatPumpAlt2
   - type: Appearance
   - type: PipeColorVisuals
   - type: HeatPump

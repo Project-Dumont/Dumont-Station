@@ -90,6 +90,8 @@
   abstract: true
   parent: GasTrinaryBase
   id: GasFilterBase
+  placement:
+    mode: SnapgridCenter
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -149,15 +151,24 @@
   id: GasFilter
   name: gas filter
   description: Very useful for filtering gases.
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
   - type: Flippable
     mirrorEntity: GasFilterFlipped
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasFilter
+      Secondary: GasFilterAlt1
+      Tertiary: GasFilterAlt2
   # Goobstation - if you see a merge conflict here, move all new components to GasFilterBase
 
 # Goobstation - reparent to new base protos
 - type: entity
   parent: [GasTrinaryFlippedBase, GasFilter]
   id: GasFilterFlipped
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
   - type: SubFloorHide
     visibleLayers:
@@ -169,6 +180,11 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasFilterF
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasFilterFlipped
+      Secondary: GasFilterFlippedAlt1
+      Tertiary: GasFilterFlippedAlt2
   - type: Flippable
     mirrorEntity: GasFilter
   - type: GenericVisualizer
@@ -187,7 +203,7 @@
   name: gas mixer
   description: Very useful for mixing gases.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -200,6 +216,11 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasMixer
           map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasMixer
+        Secondary: GasMixerAlt1
+        Tertiary: GasMixerAlt2
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -249,7 +270,7 @@
   name: gas mixer
   suffix: Flipped
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
@@ -259,6 +280,11 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasMixerF
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasMixerFlipped
+      Secondary: GasMixerFlippedAlt1
+      Tertiary: GasMixerFlippedAlt2
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -302,7 +328,7 @@
   name: pneumatic valve
   description: A bidirectional valve controlled by pressure. Opens if the output pipe is lower than the pressure of the control pipe by 101.325 kPa.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: AtmosDevice
     - type: Tag
@@ -335,6 +361,11 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: off
           map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: PressureControlledValve
+        Secondary: PressureControlledValveAlt1
+        Tertiary: PressureControlledValveAlt2
     - type: Appearance
     - type: GenericVisualizer
       visuals:
