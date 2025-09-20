@@ -30,13 +30,13 @@ namespace Content.Client.RCD;
 public sealed class RCDConstructionGhostSystem : EntitySystem
 {
     private const string PlacementMode = nameof(AlignRCDConstruction);
+    private const string RpdPlacementMode = nameof(AlignRPDAtmosPipeLayers);
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPlacementManager _placementManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
 
-    private string _rpdPlacementMode = typeof(AlignRPDAtmosPipeLayers).Name;
     private Direction _placementDirection = default;
     private bool _useMirrorPrototype = false;
     public event EventHandler? FlipConstructionPrototype;
@@ -164,7 +164,7 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
         var newObjInfo = new PlacementInformation
         {
             MobUid = uid,
-            PlacementOption = _rpdPlacementMode,
+            PlacementOption = RpdPlacementMode,
             EntityType = prototype,
             Range = (int) Math.Ceiling(SharedInteractionSystem.InteractionRange),
             IsTile = mode == RcdMode.ConstructTile,

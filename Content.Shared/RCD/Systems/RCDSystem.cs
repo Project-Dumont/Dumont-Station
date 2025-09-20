@@ -404,7 +404,8 @@ public sealed class RCDSystem : EntitySystem
         if (session.SenderSession.AttachedEntity is not { } player)
             return;
 
-        if (!TryComp<HandsComponent>(player, out var hands) || uid != hands.ActiveHand?.HeldEntity)
+        if (!_hands.TryGetActiveItem(player, out var heldItem)
+            || uid != heldItem)
             return;
 
         if (!TryComp<RCDComponent>(uid, out var rcd))

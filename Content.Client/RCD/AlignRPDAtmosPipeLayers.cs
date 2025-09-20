@@ -7,6 +7,7 @@ using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
@@ -47,6 +48,7 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
     private readonly SharedAtmosPipeLayersSystem _pipeLayersSystem;
     private readonly SpriteSystem _spriteSystem;
     private readonly RCDSystem _rcdSystem;
+    private readonly SharedHandsSystem _handsSystem;
 
     private const float SearchBoxSize = 2f;
     private const float MouseDeadzoneRadius = 0.25f;
@@ -68,6 +70,7 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
         _spriteSystem = _entityManager.System<SpriteSystem>();
         _rcdSystem = _entityManager.System<RCDSystem>();
         _pipeLayersSystem = _entityManager.System<SharedAtmosPipeLayersSystem>();
+        _handsSystem = _entityManager.System<SharedHandsSystem>();
         ValidPlaceColor = ValidPlaceColor.WithAlpha(PlaceColorBaseAlpha);
     }
 
@@ -145,14 +148,14 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
             _entityManager.TryGetComponent<TransformComponent>(player, out var xform) &&
             _transformSystem.InRange(xform.Coordinates, MouseCoords, SharedInteractionSystem.InteractionRange) &&
             _entityManager.TryGetComponent<HandsComponent>(player, out var hands) &&
-            hands.ActiveHandId?.HeldEntity is { } heldEntity &&
+            _handsSystem.TryGetActiveItem((player, hands), out var heldEntity) &&
             _entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
         {
             if (newLayer != _currentLayer)
             {
                 _currentLayer = newLayer;
             }
-            UpdateEyeRotation(heldEntity, _eyeManager.CurrentEye.Rotation);
+            UpdateEyeRotation(heldEntity.Value, _eyeManager.CurrentEye.Rotation);
         }
 
         UpdatePlacer(_currentLayer);
@@ -207,7 +210,8 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
 
     public override bool IsValidPosition(EntityCoordinates position)
     {
-        var player = _playerManager.LocalSession?.AttachedEntity;
+        if (_playerManager.LocalSession?.AttachedEntity is not { } player)
+            return false;
 
         // If the destination is out of interaction range, set the placer alpha to zero
         if (!_entityManager.TryGetComponent<TransformComponent>(player, out var xform))
@@ -226,16 +230,13 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
         }
 
         // Determine if player is carrying an RCD in their active hand
-        if (!_entityManager.TryGetComponent<HandsComponent>(player, out var hands))
+        if (!_handsSystem.TryGetActiveItem(player, out var heldEntity)
+            || !_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
             return false;
 
-        var heldEntity = hands.ActiveHand?.HeldEntity;
+        var gridUid = _transformSystem.GetGrid(position);
 
-        if (!_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
-            return false;
-
-        // Retrieve the map grid data for the position
-        if (!_rcdSystem.TryGetMapGridData(position, out var mapGridData))
+        if (!_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var mapGrid))
             return false;
 
         // Determine if the user is hovering over a target
@@ -245,9 +246,11 @@ public sealed class AlignRPDAtmosPipeLayers : PlacementMode
             return false;
 
         var target = screen.GetClickedEntity(_transformSystem.ToMapCoordinates(_mouseCoordsRaw));
+        var tile = _mapSystem.GetTileRef(gridUid.Value, mapGrid, position);
+        var tilePosition = _mapSystem.TileIndicesFor(gridUid.Value, mapGrid, position);
 
         // Determine if the RCD operation is valid or not
-        if (!_rcdSystem.IsRCDOperationStillValid(heldEntity.Value, rcd, mapGridData.Value, target, player.Value, false))
+        if (!_rcdSystem.IsRCDOperationStillValid(heldEntity.Value, rcd, gridUid.Value, mapGrid, tile, tilePosition, target, player, false))
             return false;
 
         return true;
