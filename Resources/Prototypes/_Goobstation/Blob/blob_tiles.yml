@@ -121,6 +121,8 @@
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
   - type: GhostTakeoverAvailable
+  - type: GlobalAntagonist # Europa
+    antagonistPrototype: globalAntagonistBlob
 
 - type: entity
   parent: BaseBlob

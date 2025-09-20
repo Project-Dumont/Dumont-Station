@@ -72,6 +72,8 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
+  - type: GlobalAntagonist # Europa
+    antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphHunter]

@@ -89,6 +89,8 @@
     interfaces:
       enum.RadialSelectorUiKey.Key:
         type: TrackedRadialSelectorMenuBUI
+  - type: GlobalAntagonist # Europa
+    antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphLarva]

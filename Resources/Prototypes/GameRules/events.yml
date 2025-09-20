@@ -481,6 +481,8 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
+      - type: GlobalAntagonist # Europa
+        antagonistPrototype: globalAntagonistNinja
       mindRoles:
       - MindRoleNinja
 
@@ -857,6 +859,8 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
+      - type: GlobalAntagonist # Europa
+        antagonistPrototype: globalAntagonistZombie
       mindRoles:
       - MindRoleInitialInfected
 

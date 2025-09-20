@@ -133,6 +133,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared._Europa.Antag;
+using Content.Shared.Roles;
+using Content.Shared.SSDIndicator;
 
 // Shitmed Change
 using Content.Shared.Body.Components;
@@ -175,6 +178,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
         [Dependency] private readonly GhostVisibilitySystem _ghostVisibility = default!;
         [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
+
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
 
@@ -382,7 +386,7 @@ namespace Content.Server.Ghost
         private void OnGhostReturnToBodyRequest(GhostReturnToBodyRequest msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not {Valid: true} attached
-                || !_ghostQuery.TryComp(attached, out var ghost)
+                || !TryComp(attached, out GhostComponent? ghost) // Europa-Edit
                 || !ghost.CanReturnToBody
                 || !TryComp(attached, out ActorComponent? actor))
             {
@@ -398,20 +402,26 @@ namespace Content.Server.Ghost
         private void OnGhostWarpsRequest(GhostWarpsRequestEvent msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not {Valid: true} entity
-                || !_ghostQuery.HasComp(entity))
+                || !HasComp<GhostComponent>(entity)) // Europa-Edit
             {
                 Log.Warning($"User {args.SenderSession.Name} sent a {nameof(GhostWarpsRequestEvent)} without being a ghost.");
                 return;
             }
 
-            var response = new GhostWarpsResponseEvent(GetPlayerWarps(entity).Concat(GetLocationWarps()).ToList());
+            // Europa-Start
+            var players = GetPlayerWarps();
+            var places = GetLocationWarps();
+            var antagonists = GetAntagonistWarps();
+
+            var response = new GhostWarpsResponseEvent(players, places, antagonists); // Europa-Edit
+            // Europa-End
             RaiseNetworkEvent(response, args.SenderSession.Channel);
         }
 
         private void OnGhostWarpToTargetRequest(GhostWarpToTargetRequestEvent msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not {Valid: true} attached
-                || !_ghostQuery.HasComp(attached))
+                || !TryComp(attached, out GhostComponent? _)) // Europa-Edit
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to warp to {msg.Target} without being a ghost.");
                 return;
@@ -425,25 +435,39 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            WarpTo(attached, target);
+//            WarpTo(attached, target); // Europa-Remove
+
+            _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(attached)} ghost warped to {ToPrettyString(target)}");
+
+            if ((TryComp(target, out WarpPointComponent? warp) && warp.Follow) || HasComp<MobStateComponent>(target))
+            {
+                _followerSystem.StartFollowingEntity(attached, target);
+                return;
+            }
+
+            var xform = Transform(attached);
+            _transformSystem.SetCoordinates(attached, xform, Transform(target).Coordinates);
+            _transformSystem.AttachToGridOrMap(attached, xform);
+            if (TryComp(attached, out PhysicsComponent? physics))
+                _physics.SetLinearVelocity(attached, Vector2.Zero, body: physics);
         }
 
         private void OnGhostnadoRequest(GhostnadoRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {} uid
-                || !_ghostQuery.HasComp(uid))
+            if (args.SenderSession.AttachedEntity is not { Valid: true } uid ||
+                !_ghostQuery.HasComp(uid))
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to ghostnado without being a ghost.");
                 return;
             }
 
-            if (_followerSystem.GetMostGhostFollowed() is not {} target)
+            if (_followerSystem.GetMostGhostFollowed() is not { } target)
                 return;
 
             WarpTo(uid, target);
         }
 
-        private void WarpTo(EntityUid uid, EntityUid target)
+        private void WarpTo(EntityUid uid, EntityUid target) // Europa-Edit
         {
             _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(uid)} ghost warped to {ToPrettyString(target)}");
 
@@ -460,16 +484,130 @@ namespace Content.Server.Ghost
                 _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         }
 
-        private IEnumerable<GhostWarp> GetLocationWarps()
+        // Europa-Start
+        private List<GhostWarpPlace> GetLocationWarps()
         {
+            var warps = new List<GhostWarpPlace> { };
+            var allQuery = AllEntityQuery<WarpPointComponent>();
+
+            while (allQuery.MoveNext(out var uid, out var warp))
+            {
+                var newWarp =  new GhostWarpPlace(GetNetEntity(uid), warp.Location ?? Name(uid), warp.Location ?? Description(uid));
+                warps.Add(newWarp);
+            }
+
+            return warps;
+        }
+        // Europa-End
+
+        private List<GhostWarpPlayer> GetPlayerWarps() // Europa-Edit | GetLocationWarps > GetPlayerWarps
+        {
+/* // Europa-Remove
             var allQuery = AllEntityQuery<WarpPointComponent>();
 
             while (allQuery.MoveNext(out var uid, out var warp))
             {
                 yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
             }
+*/
+
+            // Europa-Start
+            var warps = new List<GhostWarpPlayer> { };
+            foreach (var mindContainer in EntityQuery<MindContainerComponent>())
+            {
+                var entity = mindContainer.Owner;
+                var meta = Comp<MetaDataComponent>(entity);
+
+                if (HasComp<GlobalAntagonistComponent>(entity) || IsShitEntity(meta.EntityPrototype?.ID))
+                    continue;
+
+                var playerDepartmentId = _prototypeManager.Index<DepartmentPrototype>("Specific").ID;
+                var playerJobName = Loc.GetString("generic-unknown-title");
+
+                if (_jobs.MindTryGetJob(mindContainer.Mind ?? mindContainer.LastMindStored,
+                        out var jobPrototype))
+                {
+                    playerJobName = Loc.GetString(jobPrototype.Name);
+
+                    if (_jobs.TryGetDepartment(jobPrototype.ID, out var departmentPrototype))
+                    {
+                        playerDepartmentId = departmentPrototype.ID;
+                    }
+                }
+
+                var hasAnyMind = (mindContainer.Mind ?? mindContainer.LastMindStored) != null;
+                var isDead = _mobState.IsDead(entity);
+                var isLeft = TryComp<SSDIndicatorComponent>(entity, out var indicator) && indicator.IsSSD && !isDead &&
+                             hasAnyMind;
+
+                var warp = new GhostWarpPlayer(
+                    GetNetEntity(entity),
+                    Comp<MetaDataComponent>(entity).EntityName,
+                    playerJobName,
+                    playerDepartmentId,
+                    HasComp<GhostComponent>(entity),
+                    isLeft,
+                    isDead,
+                    _mobState.IsAlive(entity)
+                );
+
+                warps.Add(warp);
+            }
+
+            return warps;
+            // Europa-End
         }
 
+        // Europa-Start
+        private bool IsShitEntity(string? entityId)
+        {
+            if (entityId == null)
+                return false;
+
+            return entityId switch
+            {
+                "SalvageHumanCorpse" => true,
+                "MobRandomServiceCorpse" => true,
+                "MobRandomEngineerCorpse" => true,
+                "MobRandomCargoCorpse" => true,
+                "MobRandomMedicCorpse" => true,
+                "MobRandomScienceCorpse" => true,
+                "MobRandomSecurityCorpse" => true,
+                "MobRandomCommandCorpse" => true,
+                "MobMouse" => true,
+                "MobMouse1" => true,
+                "MobMouse2" => true,
+                "MobMouseDead" => true,
+                "MobCockroach" => true,
+                _ => false,
+            };
+        }
+
+        private List<GhostWarpGlobalAntagonist> GetAntagonistWarps()
+        {
+            var warps = new List<GhostWarpGlobalAntagonist> { };
+
+            foreach (var antagonist in EntityQuery<GlobalAntagonistComponent>())
+            {
+                var entity = antagonist.Owner;
+                var prototype = _prototypeManager.Index<AntagonistPrototype>(antagonist.AntagonistPrototype ?? "globalAntagonistUnknown");
+
+                var warp = new GhostWarpGlobalAntagonist(
+                    GetNetEntity(entity),
+                    Comp<MetaDataComponent>(entity).EntityName,
+                    prototype.Name,
+                    prototype.Description,
+                    prototype.ID
+                );
+
+                warps.Add(warp);
+            }
+
+            return warps;
+        }
+        // Europa-End
+
+/* // Europa-Remove
         private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)
         {
             foreach (var player in _player.Sessions)
@@ -488,6 +626,7 @@ namespace Content.Server.Ghost
                     yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
             }
         }
+*/
 
         #endregion
 

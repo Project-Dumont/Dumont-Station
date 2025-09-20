@@ -355,6 +355,8 @@
   - type: GuideHelp
     guides:
     - MinorAntagonists
+  - type: GlobalAntagonist # Europa
+    antagonistPrototype: globalAntagonistDragon
 
 - type: entity
   categories: [ HideSpawnMenu ]

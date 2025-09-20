@@ -188,6 +188,8 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: GlobalAntagonist # Europa
+    antagonistPrototype: globalAntagonistSlaughterDemon
 
 # laughter demon
 - type: entity

@@ -148,6 +148,8 @@
     spawned:
     - id: FoodMeatBingle
       amount: 3
+  - type: GlobalAntagonist # Europa
+    antagonistPrototype: globalAntagonistBingle
 
 - type: entity
   id: MobBinglePrime
