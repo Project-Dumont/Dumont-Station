@@ -848,6 +848,7 @@
 
 - type: construction
   id: SignalControlledValveAlt1
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: signalvalveAlt1
@@ -863,6 +864,7 @@
 
 - type: construction
   id: SignalControlledValveAlt2
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: signalvalveAlt2
@@ -895,6 +897,7 @@
 
 - type: construction
   id: GasPortAlt1
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: portAlt1
@@ -910,6 +913,7 @@
 
 - type: construction
   id: GasPortAlt2
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: portAlt2
@@ -940,6 +944,7 @@
 
 - type: construction
   id: GasDualPortVentPumpAlt1
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: dualportventpumpAlt1
@@ -953,6 +958,7 @@
 
 - type: construction
   id: GasDualPortVentPumpAlt2
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: dualportventpumpAlt2
@@ -1006,6 +1012,7 @@
 
 - type: construction
   id: HeatPumpAlt1
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: heatpumpAlt1
@@ -1021,6 +1028,7 @@
 
 - type: construction
   id: HeatPumpAlt2
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: heatpumpAlt2
@@ -1056,6 +1064,7 @@
 
 - type: construction
   id: GasFilterAlt1
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterAlt1
@@ -1072,6 +1081,7 @@
 
 - type: construction
   id: GasFilterAlt2
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterAlt2
