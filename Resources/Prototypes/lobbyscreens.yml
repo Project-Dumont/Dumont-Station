@@ -136,11 +136,12 @@
 #  name: Captain there's Nukies!
 #  artist: Zethine
 
-- type: lobbyBackground
-  id: clownassassin
-  background: /Textures/LobbyScreens/clownassassin.webp
-  name: Clown Assassin
-  artist: ka2220
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: clownassassin
+#  background: /Textures/LobbyScreens/clownassassin.webp
+#  name: Clown Assassin
+#  artist: ka2220
 
 - type: lobbyBackground
   id: clownhell
