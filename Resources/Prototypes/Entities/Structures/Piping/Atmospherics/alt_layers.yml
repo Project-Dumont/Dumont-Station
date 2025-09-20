@@ -28,7 +28,9 @@
   - type: AtmosPipeLayers
     pipeLayer: 2
 
-# GasPipeStraight
+# Pipes
+
+## GasPipeStraight
 - type: entity
   parent: [GasPipeLayerAlt1, GasPipeStraight]
   id: GasPipeStraightAlt1
@@ -52,6 +54,7 @@
     node: straightAlt2
 
 # GasPipeHalf
+
 - type: entity
   parent: [GasPipeLayerAlt1, GasPipeHalf]
   id: GasPipeHalfAlt1
@@ -75,6 +78,7 @@
     node: halfAlt2
 
 # GasPipeBend
+
 - type: entity
   parent: [GasPipeLayerAlt1, GasPipeBend]
   id: GasPipeBendAlt1
@@ -98,6 +102,7 @@
     node: bendAlt2
 
 # GasPipeTJunction
+
 - type: entity
   parent: [GasPipeLayerAlt1, GasPipeTJunction]
   id: GasPipeTJunctionAlt1
@@ -121,6 +126,7 @@
     node: tjunctionAlt2
 
 # GasPipeFourway
+
 - type: entity
   parent: [GasPipeLayerAlt1, GasPipeFourway]
   id: GasPipeFourwayAlt1
@@ -142,6 +148,78 @@
     sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
   - type: Construction
     node: fourwayAlt2
+
+## Unary
+
+# GasVent
+
+- type: entity
+  parent: [GasPipeLayerAlt1, GasVentPump]
+  id: GasVentPumpAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/vent.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: ventpumpAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasVentPump]
+  id: GasVentPumpAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/vent.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: ventpumpAlt2
+
+# GasPort
+
+- type: entity
+  parent: [GasPipeLayerAlt1, GasPort]
+  id: GasPortAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasCanisterPort
+      map: [ "enum.SubfloorLayers.FirstLayer"]
+  - type: Construction
+    node: portAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasPort]
+  id: GasPortAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasCanisterPort
+      map: [ "enum.SubfloorLayers.FirstLayer"]
+  - type: Construction
+    node: portAlt2
+
+## Binary
 
 # GasPressurePump
 
@@ -312,40 +390,6 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: signalvalveAlt2
-
-# GasPort
-
-- type: entity
-  parent: [GasPipeLayerAlt1, GasPort]
-  id: GasPortAlt1
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
-    layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
-      state: pipeUnaryConnectors
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-    - state: gasCanisterPort
-      map: [ "enum.SubfloorLayers.FirstLayer"]
-  - type: Construction
-    node: portAlt1
-
-- type: entity
-  parent: [GasPipeLayerAlt2, GasPort]
-  id: GasPortAlt2
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
-    layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
-      state: pipeUnaryConnectors
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-    - state: gasCanisterPort
-      map: [ "enum.SubfloorLayers.FirstLayer"]
-  - type: Construction
-    node: portAlt2
 
 # GasDualPortVentPump
 
