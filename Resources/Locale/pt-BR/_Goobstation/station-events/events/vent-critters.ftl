@@ -1,0 +1,1 @@
+goob-station-event-vent-creatures-ancient-xenos-start-announcement = Atenção. Grandes formas de vida não identificadas foram detectadas a bordo da estação. Proteja todos os acessos externos, incluindo dutos e sistemas de ventilação.

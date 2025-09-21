@@ -1,0 +1,1 @@
+view-variables = Ver Variáveis
