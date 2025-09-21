@@ -1,11 +1,9 @@
 ### UI
 
 # Displayed in the Character prefs window
-humanoid-character-profile-summary =
-    Este(a) é {$name}. {$gender ->
-    [male] Ele tem
-    [female] Ela tem
-    [epicene] Eles tem
-    [neuter] Elo tem
-    *[other] Isso tem
-} {$age} anos.
+# Não da pra usar as funções auxiliares pois $gender é uma string de gênero, e não uma entidade com o componente Grammar.
+humanoid-character-profile-summary = { $gender ->
+    *[male] Esse é {$name}. Ele
+    [female] Essa é {$name}. Ela
+    [other] Essu é {$name}. Elu
+} tem {$age} anos.

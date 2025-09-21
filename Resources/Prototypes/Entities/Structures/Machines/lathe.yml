@@ -609,6 +609,7 @@
     - ShuttleBoards
     # Goobstation Packs
     - SharedBoards
+    - ShuttleBoardsGoob
   - type: MaterialStorage
     whitelist:
       tags:
@@ -948,6 +949,7 @@
     - Bedsheets
     # Goobstation Packs
     - ClothingCasualJumpsuits
+    - ClothingCommandSummer
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm

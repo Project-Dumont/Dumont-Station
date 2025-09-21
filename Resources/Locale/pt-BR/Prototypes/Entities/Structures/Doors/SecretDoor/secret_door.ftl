@@ -3,5 +3,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-ent-BaseSecretDoor = parede sólida
-    .desc = Mantém o ar dentro e a maré cinzenta fora.
+ent-BaseSecretDoor = { ent-WallSolid }
+    .desc = { ent-WallSolid.desc }
+ent-BaseSecretDoorAssembly = montagem de porta secreta
+    .desc = Isso abre, isso fecha e talvez esprema você.
+ent-SolidSecretDoor = { ent-WallSolid }
+    .desc = { ent-WallSolid.desc }

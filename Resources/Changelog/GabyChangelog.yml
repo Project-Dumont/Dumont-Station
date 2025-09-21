@@ -1007,3 +1007,23 @@ Entries:
       message: Corrigido culto de sangue.
   id: 115
   time: '2025-09-17T18:12:27.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: >-
+        A engenharia agora possui uma bolsa de materiais para transportar
+        material.
+  id: 116
+  time: '2025-09-19T01:24:30.0000000+00:00'
+- author: Dreykor e SBR_ERENM2
+  changes:
+    - type: Add
+      message: Novo plushie da "Niku Hatsume", disponível no loadout.
+  id: 117
+  time: '2025-09-20T18:50:31.0000000+00:00'
+- author: Dreykor, RadsammyT
+  changes:
+    - type: Add
+      message: Mais interações RP para fazer com seus migos!!
+  id: 118
+  time: '2025-09-21T05:31:29.0000000+00:00'

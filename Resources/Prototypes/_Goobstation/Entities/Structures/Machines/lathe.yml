@@ -7,7 +7,9 @@
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Marty <martynashagriefer@gmail.com>
 # SPDX-FileCopyrightText: 2025 NotActuallyMarty <martynashagriefer@gmail.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
@@ -60,6 +62,7 @@
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
+    - EngineerBagStatic
     dynamicPacks:
     - AdvancedTools
     - AtmosTools
@@ -72,6 +75,7 @@
     - SharedBoards
     - CameraBoards
     - ShuttleBoards
+    - ShuttleBoardsGoob
     - BluespaceTheory
     - ScienceClothing
     - UpgradeKits
@@ -136,6 +140,7 @@
     - CargoBoards
     - SharedBoards
     - ShuttleBoards
+    - ShuttleBoardsGoob
     - BluespaceTheory
     - ScienceClothing
   - type: EmagLatheRecipes
@@ -212,6 +217,7 @@
     - SharedBoards
     - ScienceBoards
     - ShuttleBoards
+    - ShuttleBoardsGoob
     - MedicalBoardsGoob
     - BluespaceTheory
     - ExperimentalScienceGoob

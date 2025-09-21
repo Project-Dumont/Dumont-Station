@@ -1,9 +1,46 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: PlushieDurk
-  id: PlushieBruce
+  id: PlushieBruceGringo
   name: Gringo plushie
   description: A cute stuffed toy made in space gringo china, you fell that came from brazil
   components:
   - type: Sprite
     sprite: _Gabystation/Objects/Fun/toys.rsi
     state: plushie_bruce
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieNikuHatsume
+  name: Niku Hatsume plushie
+  description: Pelúcia da Niku Hatsume super kawaii, com cabelinhos macios e um charme irresistível!
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Fun/toys.rsi
+      state: plushie_miku
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/_Gabystation/Misc/Okarimono.ogg
+
+ # TODO: sprite custom para o plushie no personagem quando segura-lo na mão
+ #   - type: Item
+ #     size: Small
+ #     sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi

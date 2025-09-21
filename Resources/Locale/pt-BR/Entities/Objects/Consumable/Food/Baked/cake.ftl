@@ -67,11 +67,11 @@ ent-FoodCakeSlimeSlice = fatia de bolo de slime
 ent-FoodCakePumpkin = bolo de abóbora
     .desc = Um bolo com um buraco no meio, feito com abóboras de verdade.
 
-ent-FoodCakePumpkinSlice = fata de bolo de abóbora
-    .desc = Uma fatia picante e nutritivo de bolo de abóbora.
+ent-FoodCakePumpkinSlice = fatia de bolo de abóbora
+    .desc = Uma fatia picante e nutritiva de bolo de abóbora.
 
 ent-FoodCakeChristmas = bolo de natal
-    .desc = Um bolo feito de Natal. Exato, você entedeu certo. DE Natal
+    .desc = Um bolo feito de Natal. Exato, você entendeu certo. DE Natal
 
 ent-FoodCakeChristmasSlice = fatia de bolo de natal
     .desc = Uma fatia de bolo feito de Natal. Exato, você entedeu certo. DE Natal
@@ -110,4 +110,4 @@ ent-FoodCakeLemoon = bolo de limoon
     .desc = O bolo que representa a lua da Terra.
 
 ent-FoodCakeLemoonSlice = fatia de bolo de limoon
-    .desc = Uma fragmento da Lua, tem cheiro de leite.
+    .desc = Um fragmento da Lua, tem cheiro de leite.
