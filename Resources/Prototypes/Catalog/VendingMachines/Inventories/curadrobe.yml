@@ -28,7 +28,7 @@
     ClothingUniformJumpskirtLibrarian: 3
     ClothingShoesBootsLaceup: 2
     ClothingHeadsetService: 2
-  contrabandInventory:
+    PrinterDocFlatpack: 2 # Corvax-Printer  contrabandInventory:
     ToyFigurineLibrarian: 1
   emaggedInventory: # Goobstation
     SyndicatePersonalAI: 1

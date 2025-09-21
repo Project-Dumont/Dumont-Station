@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2024 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Paper
+  id: SheetPrinter
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100
+  - type: Stack
+    stackType: SheetPrinter
+    baseLayer: base
+    layerStates:
+    - paper
+    - paper
+    - paper
+  - type: Sprite
+    state: paper
+    layers:
+    - state: paper
+      map: ["base"]
+  - type: Tag
+    tags:
+    - Document
+
+- type: entity
+  parent: SheetPrinter
+  id: SheetPrinter1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

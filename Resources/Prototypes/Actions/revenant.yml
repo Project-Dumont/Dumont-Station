@@ -26,7 +26,7 @@
   description: Breaks windows, tiles, and opens nearby containers. Costs 30 Essence. #Goob edit
   components:
   - type: Action
-    useDelay: 15
+    useDelay: 60 # Gaby change
     icon: Interface/Actions/defile.png
   - type: InstantAction
     event: !type:RevenantDefileActionEvent

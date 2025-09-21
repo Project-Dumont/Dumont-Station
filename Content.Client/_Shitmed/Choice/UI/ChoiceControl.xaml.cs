@@ -1,4 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 //
@@ -28,5 +30,12 @@ public partial class ChoiceControl : Control
     {
         NameLabel.SetMessage(msg);
         Texture.Texture = texture;
+    }
+
+    public void Set(string name, bool isEnabled = true, string? tooltip = "")
+    {
+        NameLabel.SetMessage(name);
+        Button.Disabled = !isEnabled;
+        Button.ToolTip = tooltip;
     }
 }

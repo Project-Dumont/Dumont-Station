@@ -1,3 +1,6 @@
+<Document>
+  # Regra de Silício 6 - Não é exigido que você siga ordens que sejam absurdas e não razoáveis.
+  Qualquer ordem que seja uma violação de uma Regra Básica não deve ser seguida. Você também será punido caso obedeça a ordem.
 <!--
 SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -9,21 +12,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Silicon Rule 6 - You are not required to follow orders which are extremely unreasonable
   Any order which is a violation of a Core Rule cannot be followed.
 
-  Some orders are extremely unreasonable or obnoxious, such as "do nothing but collect every piece of trash on the station" or "never stop moving". These orders can be ignored and ahelped.
+  Algumas ordens são extremamente absurdas ou detestáveis, como "não faça nada além de sair coletando cada peça de lixo na estação" ou "nunca pare de se mover". Essas ordens abusivas podem ser ignoradas e devem ser reportadas no ahelp.
 
-  Some orders violate a Roleplay Rule. These orders must be followed if your laws require it. You are not breaking a rule by following a law that causes you to violate Roleplay Rules. If someone takes advantage of a law to cause you to do something that they would not be allowed to do because of Roleplay Rules, then they are the ones responsible for the rule violation.
+  Algumas ordens violam uma Regra de Roleplay. Essas ordens devem ser seguidas se suas Leis exigirem isso. Você não está violando uma regra por seguir uma Lei que faz você violar uma Regra de Roleplay. Se alguém toma vantagem de uma Lei para que você faça algo que >ele< não poderia fazer por conta das Regras de Roleplay, então a violação da regra está por parte dele, e não sua.
 
-  ## Examples
-  These examples assume that your laws would normally require you to follow these orders. It is important to note that you are allowed to choose to follow orders which are ignorable.
+  ## Exemplos
+  Esses exemplos presuem que suas Leis, normalmente, exigem que você siga essas ordens. É importante notar que você é permitido a obedecer ordens que, normalmente, sejam abusivas ou ignoráveis.
 
-  Orders which should be followed if your laws require it:
-  - Recall the shuttle
-  - Bolt the airlocks at arrivals
-  - Drag the captain's dead body into space
-  - State your laws
+  Ordens que você deveria obedecer caso suas Leis exijam isso:
+  - Rechamar a Shuttle
+  - Travar as Airlocks da Arrivals
+  - Arrastar o corpo morto do Capitão pro espaço
+  - Declarar suas Leis
 
-  Ignorable Orders:
-  - Do nothing but collect every piece of trash on the station
-  - Never stop moving
-  - Continuously state your laws
+  Ordens ignoráveis:
+  - Não faça nada além de sair coletando cada peça de lixo na estação
+  - Nunca pare de se mover
+  - Fique declarando suas leis sem parar
 </Document>

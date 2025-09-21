@@ -644,7 +644,7 @@
     key: walls
     base: plasma
   - type: RadiationBlocker
-    resistance: 10
+    resistance: 10 # Goobstation - Radiation Overhaul
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: WallCosmicCult
 
@@ -1085,10 +1085,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/shuttle_diagonal.rsi
+    sprite: _Gabystation/Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: Structures/Walls/shuttle_diagonal.rsi
+    sprite: _Gabystation/Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Reflect
     reflectProb: 1
@@ -1187,9 +1187,9 @@
   - type: RadiationBlocker
     resistance: 5
   - type: Sprite
-    sprite: Structures/Walls/shuttle.rsi
+    sprite: _Gabystation/Structures/Walls/shuttle.rsi
   - type: Icon
-    sprite: Structures/Walls/shuttle.rsi
+    sprite: _Gabystation/Structures/Walls/shuttle.rsi
     state: full
   - type: Construction
     graph: Girder
@@ -1401,7 +1401,7 @@
     key: walls
     base: uranium
   - type: RadiationBlocker
-    resistance: 20
+    resistance: 20 # Goobstation - Radiation Overhaul
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: WallCosmicCult
 

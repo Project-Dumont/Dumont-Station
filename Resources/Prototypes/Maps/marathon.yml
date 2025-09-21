@@ -64,6 +64,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
+            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -87,6 +88,7 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
+            PermaPrisoner: [ 3, 3 ] # HARMONY
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
@@ -100,3 +102,9 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+        # Goobstation blob-config-start HUGE
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900
+        # Goobstation blob-config-end

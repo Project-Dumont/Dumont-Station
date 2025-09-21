@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
@@ -10,6 +11,7 @@
 // SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 yahay505 <58685802+yahay505@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 yavuz <58685802+yahay505@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -381,7 +383,14 @@ public sealed partial class SupermatterComponent : Component
         {Gas.WaterVapor, 0f},
         {Gas.BZ, 0f}, // Assmos - /tg/ gases
         {Gas.Healium, 0f}, // Assmos - /tg/ gases
-        {Gas.Pluoxium, 0f} // Assmos - /tg/ gases
+        {Gas.Pluoxium, 0f}, // Assmos - /tg/ gases
+        {Gas.Hydrogen, 0f}, // Assmos - /tg/ gases
+        {Gas.HyperNoblium, 0f}, // Assmos - /tg/ gases
+        {Gas.ProtoNitrate, 0f}, // Assmos - /tg/ gases
+        {Gas.Zauker, 0f}, // Assmos - /tg/ gases
+        {Gas.Halon, 0f }, // Assmos - /tg/ gases
+        {Gas.Helium, 0f }, // Assmos - /tg/ gases
+        {Gas.AntiNoblium, 0f }, // Assmos - /tg/ gases
     };
 
     /// <summary>
@@ -401,6 +410,13 @@ public sealed partial class SupermatterComponent : Component
         [Gas.BZ] = (TransmitModifier: 0f, HeatPenalty: 5f, PowerMixRatio: 1f), // Assmos - /tg/ gases
         [Gas.Healium] = (TransmitModifier: 2.4f, HeatPenalty: 4f, PowerMixRatio: 1f), // Assmos - /tg/ gases
         [Gas.Pluoxium] = (TransmitModifier: 0f, HeatPenalty: -2.5f, PowerMixRatio: -1f), // Assmos - /tg/ gases
+        [Gas.Hydrogen] = (TransmitModifier: 20f, HeatPenalty: 10f, PowerMixRatio: 1f), // Assmos - /tg/ gases
+        [Gas.HyperNoblium] = (TransmitModifier: 30f, HeatPenalty: -9f, PowerMixRatio: -1f), // Assmos - /tg/ gases
+        [Gas.ProtoNitrate] = (TransmitModifier: 15f, HeatPenalty: -4f, PowerMixRatio: 1f), // Assmos - /tg/ gases
+        [Gas.Zauker] = (TransmitModifier: 2f, HeatPenalty: 4f, PowerMixRatio: 2f), // Assmos - /tg/ gases
+        [Gas.Halon] = (TransmitModifier: 0.1f, HeatPenalty: 0.1f, PowerMixRatio: 0.1f), // Assmos - /tg/ gases
+        [Gas.Helium] = (TransmitModifier: 0.1f, HeatPenalty: 0.1f, PowerMixRatio: 0.1f), // Assmos - /tg/ gases
+        [Gas.AntiNoblium] = (TransmitModifier: -0.5f, HeatPenalty: 14f, PowerMixRatio: 1f), // Assmos - /tg/ gases
     };
 
     #endregion SM Gas

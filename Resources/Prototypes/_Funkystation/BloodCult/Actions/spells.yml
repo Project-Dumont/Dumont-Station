@@ -1,0 +1,164 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# actions
+- type: entity
+  id: ActionCultistStudyVeil
+  name: Study Veil
+  description: Examine the state of the veil, and the strength of your cult.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    checkCanInteract: false
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: study_veil }
+  - type: InstantAction
+    event: !type:EventCultistStudyVeil {}
+  - type: Sprite
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: study_veil
+  - type: CultistSpell
+    abilityId: StudyVeil
+    charges: 1
+    infinite: True
+    healthCost: 0
+    rechargeTime: 0
+
+- type: entity
+  id: ActionCultistCommune
+  name: Commune
+  description: Send a message to your fellow cultists. Beware - the uninitiated can see you whispering the incantation.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    checkCanInteract: false
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: commune }
+  - type: InstantAction
+    event: !type:BloodCultCommuneEvent {}
+  - type: Sprite
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: commune
+  - type: CultistSpell
+    abilityId: Commune
+    charges: 1
+    infinite: True
+    healthCost: 0
+    rechargeTime: 0
+
+- type: entity
+  id: ActionCultistSpellsSelect
+  name: Prepare Spell
+  description: Prepare a blood spell by carving it into your body. Up to 1 spell may be prepared without standing on an empowering rune.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    checkCanInteract: false
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: spell_select }
+  - type: InstantAction
+    event: !type:BloodCultSpellsEvent {}
+  - type: Sprite
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: spell_select
+  - type: CultistSpell
+    abilityId: SpellsSelect
+    charges: 1
+    infinite: True
+    healthCost: 0
+    rechargeTime: 0
+
+- type: entity
+  id: ActionCultistSummonDagger
+  name: Summon Dagger
+  description: Summon your ritual dagger.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: summon_dagger }
+  - type: InstantAction
+    event: !type:EventCultistSummonDagger {}
+  - type: Icon
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: summon_dagger
+  - type: Sprite
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: summon_dagger
+  - type: CultistSpell
+    abilityId: SummonDagger
+    charges: 1
+    infinite: False
+    healthCost: 0
+    rechargeTime: 0
+
+- type: entity
+  id: ActionCultistStun
+  name: Stun
+  description: A potent spell that will knock down, silence, and mark a target. Stabbing marked targets with your cult dagger will stun and re-silence them. EMPs Cyborgs.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: stun }
+    iconOn: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: stun_selected }
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Body
+    canTargetSelf: false
+    event: !type:EventCultistStun {}
+  - type: Icon
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: stun
+  - type: Sprite
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: stun
+  - type: CultistSpell
+    abilityId: CultStun
+    charges: 1
+    infinite: False
+    healthCost: 0
+    rechargeTime: 0
+    invocation: Fuu ma'jin!
+    castSound: !type:SoundPathSpecifier
+        path: /Audio/Magic/blink.ogg
+
+- type: entity
+  id: ActionCultistTwistedConstruction
+  name: Twisted Construction
+  description: A sinister spell used to convert plasteel into runed metal. # and airlocks into cult airlocks.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: twisted_construction }
+    iconOn: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: twisted_construction }
+  - type: TargetAction
+    interactOnMiss: False
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Stack
+    canTargetSelf: False
+    event: !type:EventCultistTwistedConstruction {}
+  - type: Icon
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: twisted_construction
+  - type: Sprite
+    sprite: _Funkystation/BloodCult/spells_cultist.rsi
+    state: twisted_construction
+  - type: CultistSpell
+    abilityId: CultTwistedConstruction
+    charges: 1
+    infinite: False
+    healthCost: 0
+    rechargeTime: 0
+    invocation: Ethra p'ni dedol!
+    castSound: !type:SoundPathSpecifier
+        path: /Audio/Magic/blink.ogg

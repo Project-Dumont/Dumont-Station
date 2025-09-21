@@ -81,6 +81,10 @@
   - !type:AddObjectiveSpecial
     objectives:
     - BlueshieldRandomCommandAliveObjective
+  alternateTitles:
+  - BlueshieldTitleSentinel
+  - BlueshieldTitleGuard
+  - BlueshieldTitleSecurity
 
 - type: startingGear
   id: BlueshieldOfficerGear
@@ -112,3 +116,15 @@
     id: BlueshieldPDA
     back: ClothingBackpackBlueshield
     shoes: ClothingShoesBootsJack
+
+- type: jobAlternateTitle
+  id: BlueshieldTitleSentinel
+  name: job-name-alt-blueshield-sentinel
+
+- type: jobAlternateTitle
+  id: BlueshieldTitleGuard
+  name: job-name-alt-blueshield-guard
+
+- type: jobAlternateTitle
+  id: BlueshieldTitleSecurity
+  name: job-name-alt-blueshield-security

@@ -160,8 +160,8 @@
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
       - map: ["socks"]
-      - map: ["underpants"]
-      - map: ["undershirt"]
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Gaby station
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Gaby station
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
@@ -259,8 +259,8 @@
         - map: ["enum.HumanoidVisualLayers.LFoot"]
         - map: ["enum.HumanoidVisualLayers.RFoot"]
         - map: ["socks"]
-        - map: ["underpants"]
-        - map: ["undershirt"]
+        - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Gaby station
+        - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Gaby station
         - map: ["jumpsuit"]
         - map: ["enum.HumanoidVisualLayers.LHand"]
         - map: ["enum.HumanoidVisualLayers.RHand"]

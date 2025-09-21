@@ -51,15 +51,22 @@
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -103,6 +110,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.DeviceNetwork.Components;
+using Content.Shared.Random;
+using Robust.Shared.Prototypes;
+using Content.Shared.Random.Helpers;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -134,6 +144,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // Gabystation change
     [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
 
     private const float ShuttleSpawnBuffer = 1f;
@@ -142,6 +153,9 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
     [ValidatePrototypeId<TagPrototype>]
     private const string DockTag = "DockEmergency";
+
+    [ValidatePrototypeId<WeightedRandomPrototype>]
+    private const string MapsProto = "CentcommWeights"; // Gabystation change
 
     public override void Initialize()
     {
@@ -494,6 +508,23 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </remarks>
     public void DockEmergencyShuttle()
     {
+        // funky station
+        // fires an event that the emergency shuttle is trying to dock.
+        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
+
+        var ev = new ShuttleDockAttemptEvent();
+        RaiseLocalEvent(ref ev); // 💔
+
+        if (ev.Cancelled)
+        {
+            while (query.MoveNext(out var uid, out _))
+            {
+                _chatSystem.DispatchStationAnnouncement(uid, ev.CancelMessage);
+            }
+
+            return;
+        }
+
         if (EmergencyShuttleArrived)
             return;
 
@@ -505,8 +536,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         ConsoleAccumulator = _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
-
-        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
         var dockResults = new List<ShuttleDockResult>();
 
@@ -589,6 +618,17 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             component.ShuttleIndex = otherComp.ShuttleIndex;
             return;
         }
+
+        // Gabystation change start
+        if (!_prototype.TryIndex<WeightedRandomPrototype>(MapsProto, out var maps))
+        {
+            Log.Error($"Random centcomm prototype '{MapsProto}' not found. Using default centcomm map.");
+        }
+        else
+        {
+            component.Map = new ResPath(maps.Pick(_random));
+        }
+        // Gabystation change end
 
         if (string.IsNullOrEmpty(component.Map.ToString()))
         {
@@ -793,4 +833,12 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         /// </summary>
         GoodLuck,
     }
+}
+
+// funky station
+[ByRefEvent]
+public record struct ShuttleDockAttemptEvent()
+{
+    public bool Cancelled = false;
+    public string CancelMessage = string.Empty;
 }

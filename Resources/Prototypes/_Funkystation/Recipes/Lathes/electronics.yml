@@ -1,0 +1,29 @@
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: ElectrolyzerMachineCircuitboard
+  icon: { sprite:  _Funkystation/Structures/Machines/electrolyzer.rsi, state: electrolyzerOff }
+  result: ElectrolyzerMachineCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: CrystallizerMachineCircuitboard
+  icon: { sprite:  _Funkystation/Structures/Machines/crystallizer.rsi, state: off }
+  result: CrystallizerMachineCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  icon: { sprite:  _Funkystation/Structures/Piping/Atmospherics/bluespacegassender.rsi, state: off }
+  id: BluespaceGasSenderMachineBoard
+  result: BluespaceGasSenderMachineBoard
+
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: ThermomachineUpgradedFreezerMachineCircuitBoard
+  icon: { sprite:  _Funkystation/Structures/Piping/Atmospherics/upgradedthermomachine.rsi, state: freezerOff }
+  result: ThermomachineUpgradedFreezerMachineCircuitBoard
+
+- type: latheRecipe
+  parent: [ BaseSilverCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: ThermomachineAdvancedFreezerMachineCircuitBoard
+  icon: { sprite:  _Funkystation/Structures/Piping/Atmospherics/advancedthermomachine.rsi, state: freezerOff }
+  result: ThermomachineAdvancedFreezerMachineCircuitBoard

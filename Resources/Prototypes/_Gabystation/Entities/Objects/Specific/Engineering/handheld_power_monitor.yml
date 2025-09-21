@@ -1,0 +1,44 @@
+- type: entity
+  name: handheld power monitor
+  suffix: DO NOT MAP
+  parent:
+  - BaseItem
+  - PowerCellSlotSmallItem
+  # CE apenas carambolas!! para de dar pros outros / Lá ele
+  id: HandheldPowerMonitorGs
+  description: A hand-held power monitor that display the station powers level.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Engineering/handheldpowermonitor.rsi # arrumar a bomba do sprite -- arrumei, fiz um sprite proprio por que eu sou legal
+    state: scanner
+  - type: PowerCellDraw
+    drawRate: 0.60
+    useRate: 20
+  - type: ActivatableUIRequiresPowerCell
+  - type: ActivatableUI
+    key: enum.PowerMonitoringConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.PowerMonitoringConsoleUiKey.Key:
+        type: PowerMonitoringConsoleBoundUserInterface
+  - type: PowerMonitoringConsole
+  - type: PowerMonitoringCableNetworks
+  # aqui em baixo tinha o codigo de netorking, nao botei por que nao acho roubado o suficiente pra quebrar o jogo funcionando sem energia
+  # até por que o objetivo desse COISO é mostrar aonde nao tem energia né....................
+  - type: StaticPrice
+    price: 500 #o preço dessa coisa (nao que alguem vá vender ne)
+  - type: Tag
+    tags:
+    - HighRiskItem
+  #- type: StealTarget
+  #  stealGroup: HandheldPowerMonitor
+
+- type: entity # coisa pros admin nerd 🤓 spawnar
+  id: HandheldPowerMonitorEmpty
+  parent: HandheldPowerMonitorGs
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default

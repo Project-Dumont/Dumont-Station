@@ -51,6 +51,7 @@
             Captain: [ -1, -1 ]
             NanotrasenRepresentative: [ -1, -1 ] # Goob - remove it after test
             BlueshieldOfficer: [ -1, -1 ] # Remove this too
+            AdministrativeAssistant: [ -1, -1 ] # Gaby - admin assist
         # Goobstation blob-config-start DEBUG
         - type: StationBlobConfig
           stageBegin: 20
@@ -69,6 +70,21 @@
       components:
         - type: StationNameSetup
           mapNameTemplate: "TEG"
+        - type: StationJobs
+          availableJobs:
+            ChiefEngineer: [ -1, -1 ]
+
+- type: gameMap
+  id: TestHFR
+  mapName: Test HFR
+  mapPath: /Maps/Test/test_hfr.yml
+  minPlayers: 0
+  stations:
+    HFR:
+      stationProto: TestStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "HFR"
         - type: StationJobs
           availableJobs:
             ChiefEngineer: [ -1, -1 ]

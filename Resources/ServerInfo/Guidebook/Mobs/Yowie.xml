@@ -11,28 +11,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Yowie
+  # Yowies
 
   <Box>
     <GuideEntityEmbed Entity="MobYowie" Caption=""/>
   </Box>
 
-  Yowie are a once-thought urban myth, turned newly discovered mystical species of bipedal hairy creature.
-  Their body is larger than most other species in stature, with the downside of them [color=#AAFF00]not being able to fit into most Nanotrasen external wear or shoes[/color] (they can barely squeeze into softsuits), or [color=#AAFF00] being able to be carried by others[/color].
-  Their fur also allows them to take [color=#baf2ef]less cold damage[/color].
+  Yowies já foram mitos urbanos, mas são uma espécie recém-descoberta de criaturas bípedes peludas.
+  Seus corpos são maiores do que da maioria de outras espécies, com a desvantagem de [color=#AAFF00]não caberem na maior parte de calçados e vestimentas externas da Nanotrasen[/color] (eles mal cabem em softsuits), ou [color=#AAFF00]não poderem ser carregados por outros[/color].
+  Sua pelagem também os faz tomar [color=#baf2ef]menos dano de Frio[/color].
 
-  Their stature makes their unarmed punch deal [color=#ec3a3a]2x the damage[/color] of a human punch.
+  Sua estatura faz seus ataques desarmados causarem [color=#ec3a3a]2x o dano[/color] de um soco humano.
 
-  They are larger, making them easier to hit in combat, but they take 25% less Blunt, Slash and Piercing damage.
-  They also weigh more, allowing them to pull lighter species with ease.
+  Eles são grandes, os tornando alvos fáceis no combate, mas recebem [color=#1e90ff]25% menos dano Contundente, Cortante e Perfurante[/color].
+  Eles também pesam mais, os permitindo puxar espécies mais leves com facilidade.
 
   ## Fuckin' skiz, mate
   <Box>
     <GuideEntityEmbed Entity="Joint" Caption=""/>
   </Box>
 
-  From discussions had between our species, it seems historically they were living beside humanity during its existence on Earth in parts of Australia, lending them to develop a thick australian accent with slang included.
-  They seem to have spent most of their time experimenting with some of the most dangerous and experimental drugs, and on review, they've built up a bigger tolerance to most chemicals. Uniquely, their liver carries out the task of metabolizing chemicals.
+  A partir de conversas entre espécies, parece que historicamente eles viviam junto da humanidade durante sua existência na Terra, em regiões da Austrália, os fazendo desenvolver um forte sotaque australiano (com gírias inclusas).
+  Eles parecem ter dedicado a maior parte do seu tempo experimentando as drogas mais perigosas, e em consequência, possuem maior tolerância a muitos químicos. Além disso, é seu fígado que metaboliza esses químicos.
 
 
 </Document>

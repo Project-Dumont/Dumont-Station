@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "added admin assistant and added the cargo assistant by Radezolid, added Psychiatrist, Therapist, and Social Worker versions by alterae <chell@alterae.online>",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "pda-admin-assistant"
+        }
+    ]
+}

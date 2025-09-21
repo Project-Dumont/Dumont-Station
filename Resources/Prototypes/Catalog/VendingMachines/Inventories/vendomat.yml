@@ -27,6 +27,10 @@
     FlashlightLantern: 2
     PowerCellSmallPrinted: 3
     MicroManipulatorStockPart: 12
+    # Gabystation - start
+    CassetteTape: 4
+    TapeRecorder: 1
+    # Gabystation - end
   contrabandInventory:
     ProximitySensor: 1
     LeftArmBorg: 1

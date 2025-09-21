@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Command
+## Administrative Assistant
+- type: loadoutGroup
+  id: AdminAssistantJumpsuit
+  name: loadout-group-admin-assistant-jumpsuit
+  loadouts:
+  - AdminAssistantJumpsuit
+  - AdminAssistantJumpskirt
+
+- type: loadoutGroup
+  id: AdminAssistantShoes
+  name: loadout-group-admin-assistant-shoes
+  loadouts:
+  - NanotrasenRepresentativeBoots
+  - NanotrasenRepresentativeShoes
+  - NanotrasenRepresentativeHeels
+
+- type: loadoutGroup
+  id: AdminAssistantOuter
+  name: loadout-group-admin-assistant-outerclothing
+  loadouts:
+  - BartenderVest
+  #!- WinterCoatBlack - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+  #!- WinterCoatBrown
+  #!- CorporateJacket
+
+- type: loadoutGroup
+  id: AdminAssistantEar
+  name: loadout-group-admin-assistant-headset
+  loadouts:
+  - AdminAssistantHeadset
+  - AdminAssistantAltHeadset
+
+- type: loadoutGroup
+  id: AdminAssistantGloves
+  name: loadout-group-admin-assistant-gloves
+  minLimit: 0
+  loadouts:
+  #!- HoPGloves - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+  #!- InspectionGloves - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+  - LatexGloves

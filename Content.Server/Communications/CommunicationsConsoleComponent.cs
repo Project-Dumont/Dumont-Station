@@ -82,6 +82,12 @@ namespace Content.Server.Communications
         [DataField]
         public int InitialDelay = 30;
 
+        [DataField]
+        public double ToggleAcessTimer = 0;
+
+        [DataField]
+        public double ToggleAcessDelay = 5;
+
         /// <summary>
         /// Can call or recall the shuttle
         /// </summary>

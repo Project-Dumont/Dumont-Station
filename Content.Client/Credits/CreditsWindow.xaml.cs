@@ -75,11 +75,12 @@ public sealed partial class CreditsWindow : DefaultWindow
 
     private static readonly Dictionary<string, int> PatronTierPriority = new()
         {
-            ["Central Command"] = 1,
-            ["Captain"] = 2,
-            ["Station AI"] = 3,
-            ["Janitor"] = 4,
-            ["Assistant"] = 5,
+            ["Capitão"] = 1,
+            ["Chefe dos Funcionários"] = 2,
+            ["Segurança Chefe"] = 3,
+            ["Segurança"] = 4,
+            ["Faz-Tudo"] = 5,
+            ["Passageiro"] = 6
         };
 
     private readonly List<FormattedMessage> _attributions = [];

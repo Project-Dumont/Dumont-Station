@@ -43,7 +43,6 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 amatwiedle <amatwiedle@gmail.com>
 // SPDX-FileCopyrightText: 2024 dankeaj <andrewjdanke@gmail.com>
@@ -57,7 +56,11 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -325,7 +328,9 @@ public sealed class DrinkSystem : SharedDrinkSystem
 
         if (!_body.TryGetBodyOrganEntityComps<StomachComponent>((args.Target.Value, body), out var stomachs))
         {
-            _popup.PopupEntity(Loc.GetString(forceDrink ? "drink-component-try-use-drink-cannot-drink-other" : "drink-component-try-use-drink-had-enough"), args.Target.Value, args.User);
+            var targetName = Identity.Entity(args.Target.Value, EntityManager);
+
+            _popup.PopupEntity(Loc.GetString(forceDrink ? "drink-component-try-use-drink-cannot-drink-other" : "drink-component-try-use-drink-had-enough", ("target", targetName)), args.Target.Value, args.User);
 
             if (HasComp<RefillableSolutionComponent>(args.Target.Value))
             {
@@ -346,7 +351,9 @@ public sealed class DrinkSystem : SharedDrinkSystem
 
             if (forceDrink)
             {
-                _popup.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough-other"), args.Target.Value, args.User);
+                var targetName = Identity.Entity(args.Target.Value, EntityManager);
+
+                _popup.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough-other", ("target", targetName)), args.Target.Value, args.User);
                 _puddle.TrySpillAt(args.Target.Value, drained, out _);
             }
             else

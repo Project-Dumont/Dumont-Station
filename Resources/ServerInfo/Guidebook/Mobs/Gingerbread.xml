@@ -9,16 +9,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Gingerbread
+  # Gingerbreads
 
   <Box>
     <GuideEntityEmbed Entity="MobGingerbread" Caption=""/>
   </Box>
 
-  Gingerbreads are a species of sentient confectionary. They have sugar for blood, and can be butchered for cookies. Being made of dough, they weigh half as much as species made of flesh.
+  Gingerbreads são uma espécie de confeitos sencientes. Eles têm açúcar ao invés de sangue, e podem ser cortados em biscoitos. Sendo feitos de massa/farinha, pesam metade de uma espécie feita de carne
 
-  ## Damage stats
+  ## Estatísticas de dano
 
-  Gingerbreads take 3x less fire damage than Humans, do not take Asphyxiation (though they still breathe and are uncomfortable without oxygen), Bloodloss (though again, are uncomfortable without sugar) and Cold damage (though are slowed down by cold), but take 1.5x more Blunt damage and take a lot of Heat damage from being exposed to water externally.
+  - Tomam [color=#1e90ff]3x menos dano de Fogo[/color], mas [color=#ffa500]1.5x mais dano Contundente[/color].
+  - Também tomam [color=#ffa500]muito dano de Calor ao serem diretamente expostos à água[/color].
+  - [color=#1e90ff]Não tomam dano de Asfixia[/color], [color=#1e90ff]Perda de sangue[/color] ou [color=#1e90ff]Frio[/color] (porém ainda respiram, ficam desconfortáveis sem oxigênio/açúcar e ficam lentos pelo frio).
 
 </Document>

@@ -13,15 +13,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobResomiDummy" Caption=""/>
   </Box>
 
-  Resomi are a small avian-like species that hail from an icy world.
+  Resomi são uma especíe aviana que vêm de um mundo congelado.
 
-  Like most other non-human species, Resomi are capable of digesting raw meat and other uncooked animal proteins.
+  Como muitas espécies não-humanas, Resomi podem digerir carne crua e outras proteínas animais não-preparadas.
 
-  As a result of the conditions of their home planet and ammonia-based blood, Resomi are immune to any cold damage and other effects.
-  Consequently, they find temperatures that most other species find comfortable to be unbearably hot, finding themselves suffering starting at just 30°C.
+  Como um resultado das condições de seu planeta natal e comida à base de amônia, Resomi são [color=#8658fc]imunes a dano de Frio e outros efeitos[/color].
+  Consequentemente, eles acham temperaturas que outras espécies considerariam confortáveis como sendo muito quentes, começando a sofrer com apenas 30°C
 
-  Along with their temperature tolerances, they take 30% more heat damage and 15% more brute damage.
+  Junto com sua tolerância a temperaturas, eles tomam [color=#ffa500]30% mais dano de Calor[/color] e [color=#ffa500]15% mais dano Bruto[/color].
 
-  Due to their small size, they can fit in duffelbags. They also weigh less, making it harder for them to pull other species. Their unarmed attack deals Slash damage.
+  Por conta de seu tamanho pequeno, cabem em duffelbags. Também pesam menos, os dificultando a puxar outras espécies.
+
+  Seus ataques desarmados causam dano [color=#ec3a3a]Cortante[/color].
 
 </Document>

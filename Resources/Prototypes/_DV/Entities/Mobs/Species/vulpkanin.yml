@@ -104,6 +104,11 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "culteyes" ] # funky cult
+        sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
+        state: "human"  # TODO make vulp version
+        shader: unshaded
+        visible: false
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
@@ -122,6 +127,11 @@
       - map: [ "clownedon" ] # Dynamically generated
         sprite: "_DV/Effects/creampie.rsi"
         state: "creampie_vulpkanin"
+        visible: false
+      - map: [ "culthalo" ] # funky cult
+        sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
+        state: "halo"
+        shader: unshaded
         visible: false
   - type: MeleeWeapon
     hidden: true
@@ -154,6 +164,8 @@
     - DoorBumpOpener
     - AnomalyHost
     - VulpEmotes
+  # - type: FootPrints # WD EDIT
+  - type: Wagging # Einstein-Engine
 
 - type: entity
   save: false

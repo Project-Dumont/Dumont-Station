@@ -110,6 +110,11 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
+  alternateTitles:
+  - SecurityOfficerTitleInstructor
+  - SecurityOfficerTitleGuard
+  - SecurityOfficerTitleVigilante
+
 
 - type: startingGear
   id: SecurityOfficerGear
@@ -121,6 +126,7 @@
     back:
     - Flash
     - MagazinePistol
+    - SecHypo # Goobstation
 
 - type: chameleonOutfit
   id: SecurityOfficerChameleonOutfit
@@ -131,3 +137,15 @@
     mask: ClothingMaskGasSecurity
     neck: Dinkystar
     gloves: ClothingHandsGlovesColorBlack
+
+- type: jobAlternateTitle
+  id: SecurityOfficerTitleInstructor
+  name: job-name-alt-secoff-instructor
+
+- type: jobAlternateTitle
+  id: SecurityOfficerTitleGuard
+  name: job-name-alt-secoff-guard
+
+- type: jobAlternateTitle
+  id: SecurityOfficerTitleVigilante
+  name: job-name-alt-secoff-vigilante

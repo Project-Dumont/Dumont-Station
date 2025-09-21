@@ -1,0 +1,207 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Gabystation
+
+# Hats
+- type: loadout
+  id: WitchHat
+  equipment:
+    head: ClothingHeadHatWitch1
+
+- type: loadout
+  id: BrownFedora
+  equipment:
+    head: ClothingHeadHatFedoraBrown
+
+- type: loadout
+  id: GreyFedora
+  equipment:
+    head: ClothingHeadHatFedoraGrey
+
+- type: loadout
+  id: Fez
+  equipment:
+    head: ClothingHeadHatFez
+
+- type: loadout
+  id: PirateHat
+  equipment:
+    head: ClothingHeadHatPirate
+
+- type: loadout
+  id: Sombrero
+  equipment:
+    head: ClothingHeadHatSombrero
+
+- type: loadout
+  id: Ushanka
+  equipment:
+    head: ClothingHeadHatUshanka
+
+- type: loadout
+  id: Tophat
+  equipment:
+    head: ClothingHeadHatTophat
+
+- type: loadout
+  id: PaperSack
+  equipment:
+    head: ClothingHeadPaperSack
+
+- type: loadout
+  id: SafariHat
+  equipment:
+    head: ClothingHeadSafari
+
+- type: loadout
+  id: Beret
+  equipment:
+    head: ClothingHeadHatBeret
+
+- type: loadout
+  id: FrenchBeret
+  equipment:
+    head: ClothingHeadHatBeretFrench
+
+- type: loadout
+  id: BeaverHat
+  equipment:
+    head: ClothingHeadHatBeaverHat
+
+# Glasses
+- type: loadout
+  id: Blindfold
+  equipment:
+    eyes: ClothingEyesBlindfold
+
+- type: loadout
+  id: Eyepatch
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+- type: loadout
+  id: EyepatchFlipped
+  equipment:
+    eyes: ClothingEyesEyepatchFlipped
+
+# Masks
+- type: loadout
+  id: PlagueMask
+  equipment:
+    mask: ClothingMaskPlague
+
+- type: loadout
+  id: RatMask
+  equipment:
+    mask: ClothingMaskRat
+
+- type: loadout
+  id: BeeMask
+  equipment:
+    mask: ClothingMaskBee
+
+- type: loadout
+  id: FoxMask
+  equipment:
+    mask: ClothingMaskFox
+
+- type: loadout
+  id: BearMask
+  equipment:
+    mask: ClothingMaskBear
+
+# Gloves
+- type: loadout
+  id: Powerglove
+  equipment:
+    gloves: ClothingHandsGlovesPowerglove
+
+- type: loadout
+  id: Robohands
+  equipment:
+    gloves: ClothingHandsGlovesRobohands
+
+- type: loadout
+  id: CivilianFingerlessGloves
+  equipment:
+    gloves: ClothingHandsGlovesFingerless
+
+- type: loadout
+  id: CivilianBlackGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianPurpleGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorPurple
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianRedGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorRed
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianBlueGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlue
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianTealGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorTeal
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianBrownGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBrown
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianGrayGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorGray
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianGreenGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorGreen
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianLightBrownGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorLightBrown
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange
+  groupBy: "gloves"
+
+- type: loadout
+  id: CivilianWhiteGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite
+  groupBy: "gloves"
+
+# Shoes
+- type: loadout
+  id: LeatherShoes
+  equipment:
+    shoes: ClothingShoesLeather
+
+- type: loadout
+  id: Slippers
+  equipment:
+    shoes: ClothingShoesSlippers

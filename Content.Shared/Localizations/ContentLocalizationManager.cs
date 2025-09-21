@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
@@ -13,8 +12,16 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <akikai297@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -31,7 +38,8 @@ namespace Content.Shared.Localizations
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         // If you want to change your codebase's language, do it here.
-        private const string Culture = "en-US";
+        private const string Culture = "pt-BR";
+        private const string FallbackCulture = "en-US";
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -47,8 +55,10 @@ namespace Content.Shared.Localizations
         public void Initialize()
         {
             var culture = new CultureInfo(Culture);
-
             _loc.LoadCulture(culture);
+
+            _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
+            _loc.AddFunction(culture, "MANY", FormatMany);
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
@@ -61,16 +71,39 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
 
+            _loc.AddFunction(culture, "ARTIGO-O", FuncArtigoDefinido);
+            _loc.AddFunction(culture, "ARTIGO-UM", FuncArtigoIndefinido);
+            _loc.AddFunction(culture, "PREPOSICAO-DE", FuncPreposicaoDe);
+            _loc.AddFunction(culture, "PREPOSICAO-EM", FuncPreposicaoEm);
+            _loc.AddFunction(culture, "PREPOSICAO-A", FuncPreposicaoA);
+            _loc.AddFunction(culture, "PRONOME-ELE", FuncPronomeEle);
+            _loc.AddFunction(culture, "PRONOME-DELE", FuncPronomeDele);
+            _loc.AddFunction(culture, "PRONOME-SEU", FuncPronomeSeu);
+            _loc.AddFunction(culture, "PRONOME-ESSE", FuncPronomeEsse);
+            _loc.AddFunction(culture, "MAKEGENERO", FormatMakeGenero);
 
             /*
              * The following language functions are specific to the english localization. When working on your own
              * localization you should NOT modify these, instead add new functions specific to your language/culture.
              * This ensures the english translations continue to work as expected when fallbacks are needed.
              */
-            var cultureEn = new CultureInfo("en-US");
+            var cultureEn = new CultureInfo(FallbackCulture);
+            _loc.LoadCulture(cultureEn);
+            _loc.SetFallbackCluture(cultureEn);
 
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(cultureEn, "MANY", FormatMany);
+            //_loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
+            //_loc.AddFunction(cultureEn, "MANY", FormatMany);
+            _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
+            _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
+            _loc.AddFunction(cultureEn, "ENERGYWATTHOURS", FormatEnergyWattHours);
+            _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
+            _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
+            _loc.AddFunction(cultureEn, "LOC", FormatLoc);
+            _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
+            _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(cultureEn, "PLAYTIME", FormatPlaytime);
+            _loc.AddFunction(cultureEn, "PRESSURE", FormatPressure);
         }
 
         private ILocValue FormatMany(LocArgs args)
@@ -106,26 +139,29 @@ namespace Content.Shared.Localizations
         }
 
         private static readonly Regex PluralEsRule = new("^.*(s|sh|ch|x|z)$");
+        private static readonly Regex PluralOesRule = new("ão$");
+        private static readonly Regex PluralIsRule = new("[aeo]l$");
+        private static readonly Regex PluralNsRule = new("m$");
 
         private ILocValue FormatMakePlural(LocArgs args)
         {
             var text = ((LocValueString) args.Args[0]).Value;
-            var split = text.Split(" ", 1);
+            var split = text.Split(" ", 2);
             var firstWord = split[0];
-            if (PluralEsRule.IsMatch(firstWord))
-            {
-                if (split.Length == 1)
-                    return new LocValueString($"{firstWord}es");
-                else
-                    return new LocValueString($"{firstWord}es {split[1]}");
-            }
+            string plural;
+
+            if (PluralOesRule.IsMatch(firstWord))
+                plural = firstWord[..^2] + "ões";
+            else if (PluralIsRule.IsMatch(firstWord))
+                plural = firstWord[..^1] + "is";
+            else if (PluralNsRule.IsMatch(firstWord))
+                plural = firstWord[..^1] + "ns";
+            else if (PluralEsRule.IsMatch(firstWord))
+                plural = firstWord + "es";
             else
-            {
-                if (split.Length == 1)
-                    return new LocValueString($"{firstWord}s");
-                else
-                    return new LocValueString($"{firstWord}s {split[1]}");
-            }
+                plural = firstWord + "s";
+
+            return split.Length == 1 ? new LocValueString(plural) : new LocValueString($"{plural} {split[1]}");
         }
 
         // TODO: allow fluent to take in lists of strings so this can be a format function like it should be.
@@ -138,8 +174,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} and {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, and {list[^1]}"
+                2 => $"{list[0]} e {list[1]}",
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, e {list[^1]}"
             };
         }
 
@@ -152,8 +188,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} or {list[1]}",
-                _ => $"{string.Join(" or ", list)}"
+                2 => $"{list[0]} ou {list[1]}",
+                _ => $"{string.Join(" ou ", list)}"
             };
         }
 
@@ -286,6 +322,73 @@ namespace Content.Shared.Localizations
                 time = timeArg;
             }
             return new LocValueString(FormatPlaytime(time));
+        }
+
+        private static ILocValue FuncArtigoDefinido(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-artigo-definido", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncArtigoIndefinido(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-artigo-indefinido", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPreposicaoDe(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-preposicao-de", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPreposicaoEm(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-preposicao-em", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPreposicaoA(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-preposicao-a", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPronomeEle(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-ele", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPronomeDele(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-dele", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPronomeSeu(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-seu", ("ent", args.Args[0])));
+        }
+
+        private static readonly Regex GeneroAoRule = new("ão$");
+        private static readonly Regex GeneroRule = new("[ao](?=s?$)");
+        private static readonly Regex GeneroNeutroCeRule = new("c[ao](?=s?$)");
+
+        private static ILocValue FormatMakeGenero(LocArgs args)
+        {
+            var terminacao = Loc.GetString("zzzz-genero-terminacao", ("ent", args.Args[1]));
+            var text = ((LocValueString) args.Args[0]).Value;
+
+            if (GeneroAoRule.IsMatch(text))
+            {
+                return terminacao == "a" ? new LocValueString(text[..^1]) : new LocValueString(text[..^1] + terminacao);
+            }
+            else
+            {
+                if (terminacao == "e" && GeneroNeutroCeRule.IsMatch(text))
+                    return new LocValueString(text[..^2] + "que");
+                else
+                    return new LocValueString(GeneroRule.Replace(text, terminacao));
+            }
+        }
+
+        private static ILocValue FuncPronomeEsse(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-esse", ("ent", args.Args[0])));
         }
     }
 }

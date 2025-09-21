@@ -253,3 +253,14 @@
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 150
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesRobocop
+  name: robot cop boots
+  description: A fantastic human with titanic powers! - M. A.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Misc/robocopshoes.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Misc/robocopshoes.rsi

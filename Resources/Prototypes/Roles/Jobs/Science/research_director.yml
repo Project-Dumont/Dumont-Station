@@ -168,6 +168,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  alternateTitles:
+  - ResearchDirectorTitleChief
+  - ResearchDirectorTitleManager
+  - ResearchDirectorTitleSupervisor
+
 
 - type: startingGear
   id: ResearchDirectorGear
@@ -190,3 +195,16 @@
     neck: ClothingNeckCloakRd
     outerClothing: ClothingOuterCoatRD
     gloves: ClothingHandsGlovesColorPurple
+
+- type: jobAlternateTitle
+  id: ResearchDirectorTitleChief
+  name: job-name-alt-rd-chief
+
+- type: jobAlternateTitle
+  id: ResearchDirectorTitleManager
+  name: job-name-alt-rd-manager
+
+- type: jobAlternateTitle
+  id: ResearchDirectorTitleSupervisor
+  name: job-name-alt-rd-supervisor
+

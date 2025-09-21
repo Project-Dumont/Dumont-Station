@@ -113,7 +113,36 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "(':", "chatsan-tearfully-smiles" },
         { "[':", "chatsan-tearfully-smiles" },
         { "('=", "chatsan-tearfully-smiles" },
-        { "['=", "chatsan-tearfully-smiles" }
+        { "['=", "chatsan-tearfully-smiles" },
+        { "rofl.", "chatsan-laughs" }, /* Co-Authored-By: Daniela <43686351+day-os@users.noreply.github.com> */
+        { "hue", "chatsan-laughs" },
+        { "dnd", "chatsan-smiles" },
+        { "hahahahahahaha", "chatsan-laughs" },
+        { "hahahahahaha", "chatsan-laughs" },
+        { "hahahahaha", "chatsan-laughs" },
+        { "hahahaha", "chatsan-laughs" },
+        { "hahaha", "chatsan-laughs" },
+        { "haha", "chatsan-laughs" },
+        { "kkkkkkkkk", "chatsan-laughs" },
+        { "kkkkkkkk", "chatsan-laughs" },
+        { "kkkkkkk", "chatsan-laughs" },
+        { "kkkkkk", "chatsan-laughs" },
+        { "kkkkk", "chatsan-laughs" },
+        { "kkkk", "chatsan-laughs" },
+        { "kkk", "chatsan-laughs" },
+        { "kk", "chatsan-laughs" },
+        { "ksksksksks", "chatsan-laughs" },
+        { "ksksksksk", "chatsan-laughs" },
+        { "ksksksk.", "chatsan-laughs" },
+        { "ksksksk", "chatsan-laughs" },
+        { "ksksks", "chatsan-laughs" },
+        { "ksksk", "chatsan-laughs" },
+        { "ksks", "chatsan-laughs" },
+        { "kakaka", "chatsan-laughs" },
+        { "hehehe", "chatsan-laughs" },
+        { "rs", "chatsan-laughs" },
+        { "ss.", "chatsan-shake-head-yes" },
+        { "nn.", "chatsan-shake-head-no" } /* Co-Authored-By: Daniela <43686351+day-os@users.noreply.github.com> */
     };
 
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;

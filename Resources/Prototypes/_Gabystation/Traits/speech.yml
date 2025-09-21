@@ -1,0 +1,9 @@
+- type: trait
+  id: XiqueXiqueAccent
+  name: trait-xique-xique-name
+  description: trait-xique-xique-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: ohio

@@ -7,26 +7,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Felinid
+  # Felinídeos
 
   <Box>
     <GuideEntityEmbed Entity="MobFelinid" Caption=""/>
   </Box>
-  
-  Felinids are a mutation of humans, sporting their signature ears and tail from your favourite japanese cartoons.
-  They have a keen sixth sense to landing and [color=#1e90ff]take 80% less damage from falling or high speed impacts.[/color]
-  They will also be slowed down less when injured
-  
-  They will slash with their claws instead of using their fists, dealing [color=#ec3a3a]Slashing[/color] and [color=#ec3a3a]Piercing[/color] damage.
-  
-  ## Ew, Hairballs
+
+  Felinídeos são uma mutação dos humanos, tendo as caudas e orelhas características dos seus desenhos japoneses favoritos.
+  Eles possuem um sexto sentido aguçado para equilíbrio e [color=#1e90ff]tomam 80% menos dano de impacto de queda ou de alta velocidade.[/color]
+  Eles também ficam menos lentos quando machucados.
+
+  Eles atacam com suas garras ao invés dos punhos, causando dano [color=#ec3a3a]Cortante[/color] e [color=#ec3a3a]Perfurante[/color].
+
+  ## Eca, bola de pelos
   <Box>
     <GuideEntityEmbed Entity="Hairball" Caption=""/>
 	<GuideEntityEmbed Entity="MobMouse" Caption=""/>
   </Box>
-  
-  They are also capable of eating live rats, which will allow them to cough up a disgusting hairball.
-  Be careful when touching them, as they can [color=#ffa500]cause you to throwup when held.[/color]
-  Felinids will use this to their advantage to gross out adversaries
-  
+
+  Eles são capazes de comer ratos vivos, o que os permite cuspir uma nojenta bola de pelos.
+  Cuidado ao tocar nelas, já que podem [color=#ffa500]te fazer vomitar ao segurá-las.[/color]
+  Felinídeos usarão isso a seu favor para causar repulsa nos adversários.
+
 </Document>

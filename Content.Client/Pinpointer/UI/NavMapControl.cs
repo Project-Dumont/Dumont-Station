@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Ahion <58528255+Ahion@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
@@ -14,6 +15,7 @@
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2024 wrexbe <wrexbe@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -100,7 +102,7 @@ public partial class NavMapControl : MapGridControl
     // Components
     private NavMapComponent? _navMap;
     private MapGridComponent? _grid;
-    private TransformComponent? _xform;
+    protected TransformComponent? _xform;
     private PhysicsComponent? _physics;
     private FixturesComponent? _fixtures;
 

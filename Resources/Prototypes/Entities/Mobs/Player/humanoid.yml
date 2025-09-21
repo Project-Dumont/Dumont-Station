@@ -161,6 +161,23 @@
   id: EventHumanMindShielded
   parent: EventHumanoidMindShielded
   speciesWhitelist: Human
+
+- type: randomHumanoidSettings
+  id: EventHumanoidLibrarian
+  parent: EventHumanoid
+  components:
+  - type: AutoImplant
+    implants:
+    - LibrarianTranslatorImplant      #Librarians should speak most languages
+
+- type: randomHumanoidSettings
+  id: EventHumanoidChef
+  parent: EventHumanoid
+  components:
+  - type: AutoImplant
+    implants:
+    - SpaceItalianTranslatorImplant   #chefs should speak space italian
+  - type: GrantCqc                    #Chefs should have CqC
 # Goobstation end
 
 - type: randomHumanoidSettings
@@ -318,6 +335,7 @@
   id: ERTChaplain
   parent: ERTLeader
   components:
+    - type: CultResistant # Funky cult
     - type: BibleUser
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
@@ -361,6 +379,8 @@
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
       roleLoadout: [ RoleSurvivalEVA ]
+    - type: CultResistant # Funky cult
+    - type: BibleUser
 
 ## ERT Janitor
 

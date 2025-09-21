@@ -99,6 +99,10 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.5
+  alternateTitles:
+  - MedicalDoctorTitleSurgeon
+  - MedicalDoctorTitleNurse
+  - MedicalDoctorTitleCoroner
 
 
 - type: startingGear
@@ -120,3 +124,16 @@
     neck: ClothingNeckStethoscope
     outerClothing: ClothingOuterCoatLab
     gloves: ClothingHandsGlovesLatex
+
+- type: jobAlternateTitle
+  id: MedicalDoctorTitleSurgeon
+  name: job-name-alt-doctor-surgeon
+
+- type: jobAlternateTitle
+  id: MedicalDoctorTitleNurse
+  name: job-name-alt-doctor-nurse
+
+- type: jobAlternateTitle
+  id: MedicalDoctorTitleCoroner
+  name: job-name-alt-doctor-coroner
+

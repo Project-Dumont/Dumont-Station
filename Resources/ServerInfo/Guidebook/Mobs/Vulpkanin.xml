@@ -13,8 +13,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
   </Box>
 
-  Vulpkanin are canine-like humanoids, sporting distinct ears and tails. They see the world in reds and greens,
-  deal [color=#ec3a3a]blunt [/color]and [color=#ec3a3a]slash [/color] damage with their claws, and their fur
-  insulates them from environment temperature at the cost of making them 15% more vulnerable to Heat damage.
+  Vulpkanin são humanoides caninos, possuindo caudas e orelhas distintivas.
+  - Enxergam o mundo em tons de vermelho e verde.
+  - Seus ataques desarmados causam [color=#ec3a3a]dano Contundente e Cortante[/color].
+  - Sua pelagem os isola da temperatura ambiente ao custo de os tornarem [color=#ec3a3a]15% mais vulneráveis a dano de Calor[/color].
 
 </Document>

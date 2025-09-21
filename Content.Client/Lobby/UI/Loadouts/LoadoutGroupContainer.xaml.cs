@@ -2,7 +2,10 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -121,14 +124,14 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
                     })
                     .ToList();
 
-                /* 
-                * Determine which element should be displayed first: 
-                * - If any element is currently selected (its button is pressed), use it. 
-                * - Otherwise, fallback to the first element in the list. 
-                * 
-                * This moves the selected item outside of the sublist for better usability, 
-                * making it easier for players to quickly toggle loadout options (e.g. clothing, accessories) 
-                * without having to search inside expanded subgroups. 
+                /*
+                * Determine which element should be displayed first:
+                * - If any element is currently selected (its button is pressed), use it.
+                * - Otherwise, fallback to the first element in the list.
+                *
+                * This moves the selected item outside of the sublist for better usability,
+                * making it easier for players to quickly toggle loadout options (e.g. clothing, accessories)
+                * without having to search inside expanded subgroups.
                 */
                 var firstElement = uiElements.FirstOrDefault(e => e.Select.Pressed) ?? uiElements[0];
 
@@ -204,8 +207,8 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
     /// <summary>
     /// Creates a UI container for a single Loadout item.
     ///
-    /// This method was extracted from RefreshLoadouts because the logic for creating 
-    /// individual loadout items is used multiple times inside that method, and duplicating 
+    /// This method was extracted from RefreshLoadouts because the logic for creating
+    /// individual loadout items is used multiple times inside that method, and duplicating
     /// the code made it harder to maintain.
     ///
     /// Logic:
@@ -223,7 +226,8 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
     /// <returns>A fully initialized LoadoutContainer for UI display.</returns>
     private LoadoutContainer CreateLoadoutUI(LoadoutPrototype proto, HumanoidCharacterProfile profile, RoleLoadout loadout, ICommonSession session, IDependencyCollection collection, LoadoutSystem loadoutSystem)
     {
-        var selected = loadout.SelectedLoadouts[_groupProto.ID];
+        loadout.SelectedLoadouts.TryGetValue(_groupProto.ID, out var selected); // Gaby change
+        selected ??= new List<Loadout>(); // Gaby change
 
         var pressed = selected.Any(e => e.Prototype == proto.ID);
 

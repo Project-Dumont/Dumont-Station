@@ -120,6 +120,10 @@ public static class ServerPackaging
         "Content.Server",
         "Content.Shared",
         "Content.Shared.Database",
+        /*"Content.Goobstation.Server", // Gabystation - start
+        "Content.Goobstation.Client", // I don't give a shit if this is not the right way to do
+        "Content.Goobstation.Shared",
+        "Content.Goobstation.Common", // Gabystation - end*/
         "Content.ModuleManager", // I cant be fucked to figure out how to this dynamically
     };
 

@@ -56,7 +56,7 @@
       - HEVSuit
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingNeckBase # será que isso buga?
   id: SurveillanceWirelessCameraBodyEntertainment
   name: nopro camera
   description: A body mounted camera. It's watching you.

@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
@@ -9,8 +11,8 @@
 - type: entity
   parent: BaseAction
   id: ActionCreateContract
-  name: Summon infernal contract
-  description: Creates an infernal contract in the Devil's hand.
+  name: Invocar contrato infernal
+  description: Cria um contrato infernal na mão do diabo.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -25,8 +27,8 @@
 - type: entity
   parent: BaseAction
   id: ActionCreateRevivalContract
-  name: Summon revival contract
-  description: Creates a revival contract in the Devil's hand.
+  name: Invocar contrato de ressurreição
+  description: Cria um contrato de ressurreição na mão do diabo.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -41,8 +43,8 @@
 - type: entity
   parent: BaseAction
   id: ActionShadowJaunt
-  name: Shadow jaunt
-  description: Melt into the shadows.
+  name: Viagem das Sombras
+  description: Torne-se um com as sombras.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -59,8 +61,8 @@
 - type: entity
   parent: BaseAction
   id: ActionDevilPossess
-  name: Possess target
-  description: Temporarily possess a target.
+  name: possuir alvo
+  description: Temporariamente possua o alvo, funciona apenas em alvos contratados.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -81,8 +83,8 @@
 - type: entity
   parent: BaseAction
   id: ActionEndPossession
-  name: End possession
-  description: Cancel this possession early.
+  name: Terminar possessão
+  description: Cancela a possessão prematuramente.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -98,8 +100,8 @@
 - type: entity
   parent: BaseAction
   id: ActionDevilGrip
-  name: Devils Grip
-  description: What little fraction of your power remains in this realm, channeled into your hands.
+  name: Pegada do diabo
+  description: Uma pequena fração do poder que sobrou neste plano astral, Canalizada em suas mãos.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -115,8 +117,8 @@
 - type: entity
   parent: BaseAction
   id: ActionCheatDeath
-  name: Cheat Death
-  description: Laugh in the Grim Reapers face. You've still got time.
+  name: Trapacear a morte
+  description: Ria na cara do ceifador, você ainda tem tempo.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action

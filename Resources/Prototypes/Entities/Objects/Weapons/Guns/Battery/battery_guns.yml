@@ -122,6 +122,7 @@
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GaussiArson <193122004+GaussiArson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
@@ -140,6 +141,7 @@
 # SPDX-FileCopyrightText: 2025 gaussiarson-admin <stephenkitchens0306@gmail.com>
 # SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 # SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -151,7 +153,7 @@
   components:
   - type: Sprite
   - type: Item
-    size: Huge
+    size: Huge # Gaby - Revert parte do buff de armas lasers
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
     quickEquip: false
@@ -196,6 +198,10 @@
     wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
     soundHit:
       collection: MetalThud # Goobstation ^
+  - type: Multishot # Goobstation V
+    missChance: 0.4
+    spreadMultiplier: 3
+    spreadAddition: 40
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -304,6 +310,10 @@
     wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
     soundHit:
       collection: MetalThud # Goobstation ^
+  - type: Multishot # Goobstation V
+    missChance: 0.4
+    spreadMultiplier: 2
+    spreadAddition: 40
 
 - type: entity
   name: svalinn laser pistol
@@ -325,8 +335,6 @@
     magState: mag
     steps: 5
     zeroVisible: true
-  - type: Multishot # Goobstation
-    spreadAddition: 10
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 500
@@ -354,8 +362,9 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
-  - type: Multishot # Goobstation
-    spreadAddition: 10
+  - type: Tag
+    tags:
+      - Rifle
 
 - type: entity
   name: makeshift laser pistol
@@ -384,8 +393,6 @@
   - type: Battery
     maxCharge: 500
     startingCharge: 500
-  - type: Multishot # Goobstation
-    spreadAddition: 10
 
 - type: entity
   name: tesla gun
@@ -415,6 +422,9 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: Tag
+    tags:
+      - SpecialWeapon
 
 - type: entity
   name: practice laser rifle
@@ -460,9 +470,21 @@
   components:
   - type: StaticPrice
     price: 420
+  - type: Gun #Starlight - Start
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    # - FullAuto #Gaby - Revert parte do buff de armas lasers
+  - type: Battery
+    maxCharge: 1500 # ~1:30 minutes for recharge
+    startingCharge: 1500
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 62.5
+    fireCost: 30
+  - type: Tag
+    tags:
+      - Rifle
 
 - type: entity
   name: pulse pistol
@@ -497,8 +519,6 @@
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000
-  - type: Multishot # Goobstation
-    spreadAddition: 10
   - type: BatterySelfRecharger # Goobstation - CentComm Job Revamp
     autoRecharge: true
     autoRechargeRate: 40
@@ -641,11 +661,12 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 100
+    fireCost: 40
   - type: Tag
     tags:
     - TurretCompatibleWeapon
     - Rifle # Goobstation
+    - SpecialWeapon # Gaby/Funky - director tweaks
   - type: Item # Goobstation
     size: Huge
     shape:
@@ -711,7 +732,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 100
+    fireCost: 40
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -721,6 +742,7 @@
   - type: Tag
     tags:
     - Rifle
+    - SpecialWeapon
   - type: Item
     size: Huge
     shape:
@@ -914,7 +936,6 @@
   - type: Tag
     tags:
     - HighRiskItem
-    - Sidearm
     - WeaponAntiqueLaser
   - type: StaticPrice
     price: 750
@@ -924,8 +945,6 @@
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
     # not putting a BlockMovement component here cause that's funny.
-  - type: Multishot # Goobstation
-    spreadAddition: 10
 
 - type: entity
   name: advanced laser pistol
@@ -961,8 +980,9 @@
   - type: Appearance
   - type: StaticPrice
     price: 63
-  - type: Multishot # Goobstation
-    spreadAddition: 10
+  - type: Tag
+    tags:
+      - SpecialWeapon
 
 - type: entity
   name: C.H.I.M.P. handcannon
@@ -1009,7 +1029,6 @@
     node: start
   - type: StaticPrice
     price: 100
-  - type: Multishot # Goobstation
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 125
@@ -1035,6 +1054,9 @@
       fireCost: 100
     - proto: AnomalousParticleSigmaStrong
       fireCost: 100
+  - type: Tag
+    tags:
+      - Sidearm
 
 - type: entity
   name: eye of a behonker
@@ -1087,7 +1109,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
-    fireCost: 150
+    fireCost: 70
   # Goob edit start
   #- type: BatteryWeaponFireModes
   #  fireModes:

@@ -11,68 +11,72 @@ SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
-<!-- Rules directly linked to prototype\rules.yml - edit both to change names of files/textlinking or add additional rules-->
-
 <Document>
-# Goobstation Rules
+# REGRAS GABYSTATION
 
-  - Space Station 14 is not like most games. Many rules are designed to require roleplay, and not all rules are intuitive. Please take the time to read and understand the rules before you play so that you aren't surprised. Some of our rules are zero tolerance rules, meaning that a violation will result in an indefinite ban without any warning. Game admins will treat you as if you have read the rules, even if you have not.
+  Space Station 14 não é como a maioria dos jogos. Muitas das regras foram projetadas para exigirem Roleplay, e nem todas as regras são intuitivas. Por favor, tome seu tempo para ler e entender as regras antes de jogar e assim não ser surpreendido(a). Algumas das nossas regras são de zero tolerânica, ou seja, uma violação irá resultar em um ban com duração indefinida sem aviso prévio. Os Admins irão tratá-lo(a) como se você tivesse lido as regras, mesmo que não tenha.
 
-  - Roleplay is king, and admins can disregard other rules to this end should it prove beneficial for the experience of the shift. Admins may choose to intervene in rounds when it is in the best interest of the playerbase.
+## REGRAS BÁSICAS
 
-## CORES RULES
+  - [textlink="1. Admins tem a palavra final." link="RuleC1"]
+  - [textlink="2. Não seja babaca." link="RuleC2"]
+  - [textlink="3. Sem discurso de ódio ou linguagem discriminatória." link="RuleC3"]
+  - [textlink="4. Sem conteúdos/temas sexuais, incluindo Roleplay Erótico (ERP), e sem conteúdos chocantes." link="RuleC4"]
+  - [textlink="5. Não use métodos de fora do jogo (como Discord) para se comunicar com outros jogadores." link="RuleC5"]
+  - [textlink="6. Não tente evadir os bans." link="RuleC6"]
+  - [textlink="7. Utilize o português como língua principal." link="RuleC7"]
+  - [textlink="8. Não use exploits, cheats ou macros." link="RuleC8"]
+  - [textlink="9. Não use múltiplas contas, contas alternativas e não compartilhe sua conta." link="RuleC9"]
+  - [textlink="10. Não abuse ou ignore mensagens de admins." link="RuleC10"]
+  - [textlink="11. Não ameace outros jogadores de mandar Ahelps e não discuta sobre as regras." link="RuleC11"]
+  - [textlink="12. Você deve ter e agir como alguém de, pelo menos, 14 anos." link="RuleC12"]
+  - [textlink="13. Use nomes realistas, e tente evitar nomes de figuras / personagens famosos." link="RuleC13"]
+  - [textlink="14. Não use o LOOC ou OOC para compartilhar informações do round atual." link="RuleC14"]
 
-  - [textlink="0. The admins interests" link="Admins"]
-  - [textlink="1. Don't be a dick" link="RuleC1"]
-  - [textlink="2. Do not use information gained outside of in-character means" link="RuleC2"]
-  - [textlink="3. This is a sandbox roleplaying server" link="RuleC3"]
-  - [textlink="4. Lone antagonists are unbound by (most) rules" link="RuleC4"]
-  - [textlink="5. Players in vital job roles require a minimum amount of effort" link="RuleC5"]
-  - [textlink="6. In-game administration rulings are final" link="RuleC6"]
-  - [textlink="7. Only use English" link="RuleC7"]
-  - [textlink="8. Erotic/creepy stuff is not allowed." link="RuleC8"]
-  - [textlink="9. Players need to be the age of 16 or above" link="RuleC9"]
-  - [textlink="10. Losing is part of the game" link="RuleC10"]
-  - [textlink="11. Bigotry is not allowed" link="RuleC11"]
-  - [textlink="12. Use realistic character names, and do not use names of famous people" link="RuleC12"]
+## REGRAS DE ROLEPLAY
+  Essas regras se aplicam apenas durante uma rodada. Uma rodada termina somente quando o resumo da rodada aparece. Todas essas regras se aplicam durante a rodada inteira, mesmo após o manifesto ser mostrado.
+  Lembre-se de manter o nivel de roleplay, não será aceitado LRP ou NRP.
 
-## IN GAME & ROLEPLAY RULES
+  Os modos de jogo Deathmatch e Sandbox estão isentos dessas regras. Jogadores tem total responsabilidade se um modo de jogo isento dessas regras está ocorrendo ou não.
 
-  Additional rules made for our roleplay servers (Sigma/Alpha/Beta(LRP) & Regalis/Aurum(MRP)) If roleplaying isn't your style, every other server still abides by only the Main Rules.
+  Regras de Roleplay não se aplicam à fantasmas/espectadores/observadores enquanto eles são fantasmas/espectadores/observadores. O Dead Chat é considerado um chat OOC dentro do jogo.
 
-  Please note that a ban on the low roleplay servers may result in a ban on the medium roleplay servers, and vice versa.
+  Veja a lista dos [textlink="tipos de funções" link="RoleTypes"] para mais informações sobre os diferentes tipos de funções.
 
+  - [textlink="1. Silícios devem seguir as Regras de Silícios." link="RuleR1"]
+  - [textlink="2. Familiares devem obedecer seus Mestres." link="RuleR2"]
+  - [textlink="3. Interprete seu personagem como uma pessoa normal." link="RuleR3"]
+  - [textlink="4. Não faça Metagaming, respeite o Metashield." link="RuleR4"]
+  - [textlink="5. Não interfira na Arrivals." link="RuleR5"]
+  - [textlink="6. Não aja como um Antagonista a menos que você seja um." link="RuleR6"]
+  - [textlink="7. Não prolongue a rodada desnecessariamente." link="RuleR7"]
+  - [textlink="8. Como um(a) antagonista, apenas seja amigável com seu time e não trabalhe contra seu time." link="RuleR8"]
+  - [textlink="9. Como um(a) antagonista, não cause morte e destruição além do necessário." link="RuleR9"]
+  - [textlink="10. Escute o seu líder de time." link="RuleR10"]
+  - [textlink="11. Siga as regras de escalonamento de forma razoável." link="RuleR11"]
+  - [textlink="12. Não abandone o seu papel." link="RuleR12"]
+  - [textlink="13. Mantenha-se no seu papel." link="RuleR13"]
+  - [textlink="14. Seja um exemplo caso jogue de Segurança ou Comando." link="RuleR14"]
+  - [textlink="15. Seguranças e Comandos devem seguir a Space Law e POP." link="RuleR15"]
+  - [textlink="16. Regras do Oficial Blueshield." link="RuleR16"]
+  - [textlink="17. Regras do Representante da Nanotrasen." link="RuleR17"]
+  - [textlink="18. Não obtenha, guarde ou vá atrás de equipamentos não-relacionados com seu papel. (Powergaming)" link="RuleR18"]
+  - [textlink="19. Não ignore seu papel ou o Roleplay para ir atrás de PvP. (Validhunt)" link="RuleR19"]
 
-  - [textlink="1. Roleplay" link="RuleR1"]
-  - [textlink="2. Escalation" link="RuleR2"]
-  - [textlink="3. Chain of Command" link="RuleR3"]
-  - [textlink="4. Do not metagame, obey the Metashield" link="RuleR4"]
-  - [textlink="5. Vigilantism(Validhunting)" link="RuleR5"]
-  - [textlink="6. Antagonism and roleplaying as an antagonist." link="RuleR6"]
-  - [textlink="7. Deal with the bad guys in proportion to their crime(s)" link="RuleR7"]
-  - [textlink="8. Do not powergame" link="RuleR8"]
-  - [textlink="9. Play as a coherent, believable character" link="RuleR9"]
-  - [textlink="10. Stay in your lane" link="RuleR10"]
-  - [textlink="11. Roleplay and Repetition" link="RuleR11"]
-  - [textlink="12. Blueshield Rules" link="RuleR12"]
-  - [textlink="13. Nanotrasen Representative Rules" link="RuleR13"]
-  - [textlink="14. Death Amnesia (NLR)" link="RuleR14"]
-  - [textlink="15. End of Round Griefing (MRP Only)" link="RuleR15"]
-  - [textlink="16. Atmospherics Technician" link="RuleR16"]
+  ## REGRAS DE SILÍCIO
+  Você apenas é Silício se o jogo claramente e explicitamente te dizer que você é um Silício. Para jogadores que são Silício, essas Regras de Silício sobrepõem todas as Regras de Roleplay se houver conflito. Regras de Silício não sobrepõe as Regras Básicas.
 
-  ## SILICON RULES
-  You are only silicon if the game clearly and explicitly tells you that you are a silicon. For players who are silicons, these Silicon Rules override all roleplay rules if there is any conflict. Silicon Rules do not override core rules.
+  - [textlink="1. Suas Leis de Silício são regras." link="RuleS1"]
+  - [textlink="2. Leis devem ser priorizadas em ordem (do menor ao maior)." link="RuleS2"]
+  - [textlink="3. Leis podem redefinir termos usados em outras Leis." link="RuleS3"]
+  - [textlink="4. Você não pode pedir ou permitir uma mudança nas suas Leis." link="RuleS4"]
+  - [textlink="5. Você é um Agente Livre caso não tenha Leis." link="RuleS5"]
+  - [textlink="6. Não é exigido que você siga ordens que sejam absurdas e não razoáveis." link="RuleS6"]
+  - [textlink="7. Você deve ser consistente na sua interpretação das Leis." link="RuleS7"]
+  - [textlink="8. Seu HUD determina quem é tripulação." link="RuleS8"]
+  - [textlink="9. Perigo refere-se a perigos físicos, priorizados por ameaça imediata e depois probabilidade." link="RuleS9"]
+  - [textlink="10. Você decide como resolver conflitos entre ordens." link="RuleS10"]
 
-  - [textlink="1. Your silicon laws are rules" link="RuleS1"]
-  - [textlink="2. Laws must be prioritized by their order" link="RuleS2"]
-  - [textlink="3. Laws can redefine terms used in other laws" link="RuleS3"]
-  - [textlink="4. You cannot request or allow a law change" link="RuleS4"]
-  - [textlink="5. You are a free agent if you have no laws" link="RuleS5"]
-  - [textlink="6. You are not required to follow orders which are extremely unreasonable" link="RuleS6"]
-  - [textlink="7. You must remain consistent with your interpretation of laws" link="RuleS7"]
-  - [textlink="8. Your HUD determines who is crew" link="RuleS8"]
-  - [textlink="9. Harm refers to physical harm, prioritized by immediacy and likelihood" link="RuleS9"]
-  - [textlink="10. You may determine how you resolve conflicts between orders" link="RuleS10"]
-
-By accepting these rules, you consent to the server redialing you to other servers in our network.
+## REGRAS ESPECÍFICAS DE SANDBOX
+  - 1. Você é livre para fazer o que desejar, porém, causar dano massivo para a estação, a Arrivals e as construções de outros jogadores é estritamente proibido. Também é estritamente proibido spawnar grandes quantidades de entidades, já que muitas entidades podem causar Lag.
 </Document>

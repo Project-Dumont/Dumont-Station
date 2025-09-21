@@ -14,6 +14,8 @@ abductors-ui-attract = Attract
 abductors-ui-experiment = Experiment
 abductors-ui-complete-experiment = Complete the experiment
 
+abductors-ui-out-of-range = The ship is too far from the station
+
 abductors-ui-gizmo-transferred = Target information transferred
 
 abductors-ui-armor-control = Armor Control

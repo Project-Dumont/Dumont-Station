@@ -1,0 +1,18 @@
+<!-- Descrição bem breve dos Daengati, só pra não ficar sem nenhum flavor text -->
+
+<Document>
+  # Daengati
+
+  <Box>
+      <GuideEntityEmbed Entity="MobDaengati" Caption=""/>
+  </Box>
+
+  Daengati são humanoides que lembram descrições de demônios com caudas [italic](Tieflings)[/italic].
+
+  Suas características são:
+  - Suas garras causam dano [color=#ec3a3a]Cortante[/color] e de [color=#ec3a3a]Calor[/color].
+  - Recebem [color=#ffa500]15% mais dano Perfurante[/color].
+  - [color=#1e90ff]Suportam temperaturas altíssimas[/color] e recebem [color=#1e90ff]40% menos dano de Calor[/color].
+  - [color=#ffa500]Sofrem rapidamente com temperaturas baixas[/color] e recebem [color=#ffa500]30% mais dano de Frio[/color].
+
+</Document>

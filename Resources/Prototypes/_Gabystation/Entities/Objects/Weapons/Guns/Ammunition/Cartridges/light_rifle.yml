@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CartridgeSWS
+  name: SWS Cartridge
+  parent: BaseCartridgeLightRifle
+  description: Ultra-low caliber cartridges to be used in SWS Rifles.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeSWS
+  - type: CartridgeAmmo
+    proto: SWSShot
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Ammunition/Cartridges/SWSPulseCartridge.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: "base"
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Guns/Casings/casing_fall_2.ogg
+      params:
+        volume: -10

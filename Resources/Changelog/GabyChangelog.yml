@@ -1,0 +1,1023 @@
+Name: Gaby
+Order: -2
+Entries:
+- author: Dreykor
+  time: '2024-11-6T12:01:00.0000000+00:00'
+  url: https://github.com/Scomossor/Gaby-Station/pull/2
+  changes:
+    - type: Add
+      message: Adiciona o changelog do Gaby Station!
+  id: 0
+- author: cosmosgc
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  url: https://github.com/Scomossor/Gaby-Station/pull/4
+  changes:
+    - type: Add
+      message: Adiciona canvas para desenho
+  id: 1
+- author: AgentePanela
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução ao lobby
+  id: 2
+- author: AgentePanela
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Console de energia portatil
+  id: 3
+- author: AgentePanela
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Tweak
+      message: Revenant
+  id: 4
+- author: AgentePanela
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Melhorias no console de comunicações
+  id: 5
+- author: Zeroblacck
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Mais tradução para o jogo
+  id: 6
+- author: JoseFernando-TZ
+  time: '2024-11-18T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Mais tradução para o jogo
+  id: 7
+- author: Dreykor
+  time: '2024-11-18T20:15:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Adiciona Cabelo e Barba para a raça Moth!
+  id: 8
+- author: Dreykor
+  time: '2024-11-20T10:26:00.0000000+00:00'
+  changes:
+    - type: Fix
+      message: Corrige a falta de cabelo e barba para Moth!
+  id: 9
+- author: Day-OS
+  time: '2024-11-21T12:01:00.0000000+00:00'
+  url: >-
+    https://github.com/Day-OS/estacao-pirata-14/commit/4cc22579c59061d09c0b8b6b79c7dfd192540374
+  changes:
+    - type: Add
+      message: Cartas! 🃏 (cherry-picked)
+  id: 10
+- author: Day-OS
+  time: '2024-11-21T12:01:00.0000000+00:00'
+  url: >-
+    https://github.com/Day-OS/estacao-pirata-14/commit/0af1e2a4fe85087497c872281cb3913a2f918696
+  changes:
+    - type: Add
+      message: Vestidos e Ternos! (cherry-picked)
+  id: 11
+- author: Day-OS
+  time: '2024-11-21T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Muitas roupas novas (cherry-picked)
+  id: 12
+- author: AgentePanela
+  time: '2024-12-08T12:01:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Impressora de documentos (cherry-picked)
+  id: 13
+- author: Lenhare
+  time: '2024-12-22T21:30:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução inicial do "Guide Book".
+  id: 14
+- author: Zequin
+  time: '2024-12-22T21:30:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução inicial do "Guide Book".
+  id: 15
+- author: AgentePanela
+  time: '2025-01-02T21:30:00.0000000+00:00'
+  changes:
+    - type: Tweak
+      message: Sotaquee Ohio agora é Xique-Xique.
+  id: 16
+- author: AgentePanela
+  time: '2025-01-02T21:30:00.0000000+00:00'
+  changes:
+    - type: Add
+      message: Pronome neutro.
+  id: 17
+- author: Piras314
+  changes:
+    - type: Add
+      message: Changelog automatica!
+  time: '2025-01-08T01:17:03.0000000+00:00'
+  id: 18
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Revert "Reativar o cog"
+  time: '2025-01-08T01:30:48.0000000+00:00'
+  id: 19
+- author: joshevodka
+  changes:
+    - type: Fix
+      message: Arruma o a falta de itens no SecTéc.
+  time: '2025-01-09T20:25:03.0000000+00:00'
+  id: 20
+- author: AgentePALIEN
+  changes:
+    - type: Add
+      message: Alien.
+    - type: Remove
+      message: Não alien.
+    - type: Tweak
+      message: Alien.
+    - type: Fix
+      message: Alien.
+  id: 21
+  time: '2025-01-15T17:30:09.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Remove
+      message: Dynamic da votação
+  id: 22
+  time: '2025-01-25T21:30:52.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Add
+      message: Mais musicas foram adicionadas ao lobby e a jukebox.
+  id: 23
+  time: '2025-01-26T00:08:57.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Heads e secs ganham 10 gaby coins a mais.
+    - type: Remove
+      message: Nomes bobos para singu, tesla e SM.
+    - type: Tweak
+      message: >-
+        Jogadores apenas podem ganhar coins se estiver mais de 7 pessoas no
+        round.
+    - type: Tweak
+      message: Quantidade de eventos.
+    - type: Tweak
+      message: Greentext da menos coins.
+    - type: Tweak
+      message: Preços da loja.
+    - type: Fix
+      message: Quantidade absurdas de antags midround.
+  id: 24
+  time: '2025-01-27T03:17:15.0000000+00:00'
+- author: Lyndomen, Sleepy.Abril, MilonPR and DoutorWhite
+  changes:
+    - type: Tweak
+      message: >-
+        Alvos de morte normais agora só precisam ser mortos uma vez - mas
+        precisa ensinar a eles uma lição que será lembrada
+  id: 25
+  time: '2025-01-27T14:11:05.0000000+00:00'
+- author: youtissoum and DoutorWhite
+  changes:
+    - type: Add
+      message: >-
+        Adiciona prisioneiros, uma nova função focada em role-play. (Não são
+        antagonistas)
+  id: 26
+  time: '2025-01-27T14:13:29.0000000+00:00'
+- author: Wellnachapa, AgentePanela
+  changes:
+    - type: Add
+      message: Novos desenhos ao lobby.
+  id: 27
+  time: '2025-01-27T19:32:06.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrige erros de `MAKEPLURAL` e `MANY` nas traduções.
+  id: 28
+  time: '2025-01-31T01:51:23.0000000+00:00'
+- author: beck-thompson, DoutorWhite
+  changes:
+    - type: Add
+      message: >-
+        Hostage Ops, um objetivo alternativo para nukies, onde eles podem
+        sequestrar todos os heads ao invés de explodir a estação.
+    - type: Add
+      message: >-
+        Hostage Implants, que pacificam as vítimas sequestradas e as deixam
+        invisíveis para turrets nukies.
+  id: 29
+  time: '2025-02-01T19:10:29.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Tweak
+      message: Altera sprites dos alertas, IPCs, algemas e cartas.
+  id: 30
+  time: '2025-02-02T06:17:26.0000000+00:00'
+- author: Dreykor(arguemeu)
+  time: '2025-03-08T12:01:00.0000000+00:00'
+  changes:
+    - type: Fix
+      message: >-
+        readiciona whitelist para hamburguers, assim evitando o meta de insta
+        kill, e evitando que itens aleatorios sejam botados no hamburguer, algo
+        sem muito sentido em MRP.
+  id: 31
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Add
+      message: >-
+        Traduz o texto de eventos ERT, do novo alerta Omicron, e altera o audio
+        do alerta epsilon para sua versão completa.
+  id: 32
+  time: '2025-03-17T21:30:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: >-
+        Modificão completa na Perma Brig da Saltern, para a alegria dos
+        jogadores de prisoneiros!
+    - type: Tweak
+      message: Adiciona vaga para reporter na saltern!
+  id: 33
+  time: '2025-03-27T14:44:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Várias mudanças na Loja de Gaby coins
+  id: 34
+  time: '2025-03-30T23:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Concerta a impressora de documentos!
+    - type: Tweak
+      message: Agora a maioria dos escudos podem ser usados nas costas!
+    - type: Add
+      message: Agora é possivel lançar a evacuaçao prematuramente!
+  id: 35
+  time: '2025-04-04T10:50:00.0000000+00:00'
+- author: Dreykor (arguemeu) e Donner4037
+  changes:
+    - type: Add
+      message: Adiciona uma arte nova ao lobby!
+  id: 36
+  time: '2025-04-07T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: >-
+        Hotfix na saltern, usaremos a saltern do goob temporariamente, até que
+        eu concerte a saltern do gaby
+  id: 36
+  time: '2025-05-26T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: >-
+        Traduz completamente o devil (Diabo), que tenhamos mais pacto com o
+        capeta!
+    - type: Tweak
+      message: Traduz completamente o Culto cosmico! Que vossa divindade venha a terra!
+    - type: Tweak
+      message: >-
+        Rework completo na Space Law, tornando-a mais facil de ser consultada, e
+        organizando-a mais facilmente pra aplicar penas rapidamente!
+  id: 37
+  time: '2025-05-28T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Tweak
+      message: Diminui as chances de abudctor
+    - type: Tweak
+      message: Nerfa o evento de instigator
+  id: 38
+  time: '2025-06-05T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Corrige problemas de tradução do devil, vindos do update.
+  id: 39
+  time: '2025-06-06T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Fix
+      message: Correções de otimização na Lavaland, diminuindo o lag causado por ela.
+  id: 40
+  time: '2025-06-10T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Add
+      message: Fumaça de anomalias agora desaparecem depois de 5 minutos.
+  id: 41
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Add
+      message: Jogo base atualizado com o Goob até 16/06/25.
+  id: 42
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Opções do console de comunicações.
+  id: 43
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: Dreykor (arguemeu)
+  changes:
+    - type: Tweak
+      message: Readiciona kit de armas ao chefe de segurança!
+  id: 44
+  time: '2025-06-16T15:00:00.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Atualização na packed.
+    - type: Fix
+      message: Atualização na cluster.
+  id: 45
+  time: '2025-06-17T15:00:00.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Os changlogs estão de volta!
+  id: 46
+  time: '2025-06-23T13:21:46.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Nova rede de gases bluespace. Use o transmissor de gás de bluespace para
+        adicionar gases a rede e a máquina de venda de gás de bluespace para
+        encher tanques com os gases da rede. Conecte as máquinas com uma
+        multiferramenta.
+    - type: Add
+      message: >-
+        Nova máquina: o cristalizador. Em condições ideais, transforme
+        substâncias gasosas em cristais. Variados preços e várias
+        funcionalidades, só tome cuidado pra não derrubar...
+    - type: Add
+      message: >-
+        O Reator de Fusão Hypertorus é um novo gerador de energia. Além de gerar
+        energia, ele proporciona um ambiente interno ótimo para reações mais
+        controladas e de maior eficiência. Mas, tenha cuidado! Assim como a
+        Supermatter, qualquer descuido pode levar na destruição massiva do
+        Departamento de Engenharia.
+    - type: Add
+      message: >-
+        Tanto o reator como o cristalizador dependem de condições ótimas, para
+        ajudar a chegar nelas, a NanoTrasen lançou novos modelos de máquinas
+        térmicas (aquecedores e resfriados).
+    - type: Add
+      message: >-
+        Os gases hidrogênio, hyper-nobium, proto-nitrate, zauker, halon e
+        anti-noblium foram adicionados.
+    - type: Tweak
+      message: >-
+        As entradas de gases e máquinas térmicas do livro guia foram
+        atualizadas!
+    - type: Add
+      message: >-
+        Pesquisas que contemplam as novas máquinas da Atmosfera foram
+        adicionadas.
+    - type: Add
+      message: >-
+        O eletrolisador foi adicionado. Em uma atmosfera livre, ele proporciona
+        a quebra das móleculas a custo de energia elétrica. Qual a fórmula da
+        agua, ou melhor, do vapor mesmo?
+    - type: Tweak
+      message: >-
+        As receitas das máquinas térmicas comuns não estão mais trancadas por
+        pesquisa e usam urânio ao invés de ouro. "Cargoo? Cade os minérios?"
+  id: 47
+  time: '2025-06-23T23:23:11.0000000+00:00'
+- author: Arguemeu, kbarkevich, Rainbeon
+  changes:
+    - type: Add
+      message: Adiciona culto de sangue ao jogo, viva ao nosso lorde nar'sie!
+  id: 48
+  time: '2025-06-23T23:29:56.0000000+00:00'
+- author: Impstation
+  changes:
+    - type: Add
+      message: >-
+        Mais customização de marcas para personagem (moth tem umas asas
+        lindas.)!
+  id: 49
+  time: '2025-06-23T23:31:32.0000000+00:00'
+- author: Arguemeu, mkanke-real
+  changes:
+    - type: Add
+      message: >-
+        Adiciona Boombox, que são jukebox portateis, pesquisa avançada de
+        serviço para poder fabricar!
+  id: 50
+  time: '2025-06-23T23:37:55.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        O controlador remoto do capitão agora tem acesso total, para a
+        felicidade dos poucos que jogam de capitão.
+  id: 51
+  time: '2025-06-24T18:47:53.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Consoles de teleporte e pads de teleporte adicionados. Se tratam de
+        estruturas para mapping e eventos admeme. Espere ver em um futuro não
+        tão distante!
+  id: 52
+  time: '2025-06-25T00:48:43.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Tem relatos da NT usando um novo alerta para ameaças internas...
+  id: 53
+  time: '2025-06-26T14:03:58.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Agora o Abductor precisa estar a um raio de 200m da estação para ter
+        acesso as cameras e se teleportar.
+    - type: Tweak
+      message: >-
+        Ao teleportar pra estação, a habilidade de retornar a nave do Abductor
+        entra em cooldown por 20 segundos.
+  id: 54
+  time: '2025-06-26T14:08:10.0000000+00:00'
+- author: Arguemeu, taydeo, Rainbeon
+  changes:
+    - type: Add
+      message: >-
+        Rework nos revolucionários, uplink e um novo sistema de declarar revolta
+        para head revs!
+  id: 55
+  time: '2025-06-26T14:09:00.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Novas entradas na POP e uma nova Lei
+    - type: Tweak
+      message: O console de comunicações ganhou uma nova opção
+    - type: Tweak
+      message: POP de alertas recebeu uma atualização
+  id: 56
+  time: '2025-06-26T18:46:19.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Correções em um bug que desabilitava metade de substituições de falas
+        abreviadas, agora, por exemplo, falar qm no chat vai ser substituido por
+        intendente de carga, e por ai vai.
+  id: 57
+  time: '2025-06-26T21:14:38.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: A estação Gamma está de volta e atualizada!!!1!
+  id: 58
+  time: '2025-06-29T15:36:24.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Correção no audio do alerta da lei marcial, pra causar mais medo.
+  id: 59
+  time: '2025-07-03T21:35:50.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Tradução ao clica num objeto sem energia corrigida.
+  id: 60
+  time: '2025-07-04T18:41:45.0000000+00:00'
+- author: AgentePanela (vyas)
+  changes:
+    - type: Fix
+      message: Tradução do analisador medico.
+    - type: Fix
+      message: Anuncio de chegada na estação.
+    - type: Tweak
+      message: Jogo base atualizado para 04/07 (Goob).
+  id: 61
+  time: '2025-07-04T18:41:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Som de Cristal, Cumade e Cumpade e Estrada da Vida foram adicionadas na
+        jukebox.
+  id: 62
+  time: '2025-07-04T22:52:23.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Atualiza a versão da engine para 263.0.0!
+    - type: Fix
+      message: As animações das firelock abrindo e fechando foram corrigidas!
+  id: 63
+  time: '2025-07-08T14:41:29.0000000+00:00'
+- author: slarticodefast, Vonsant and Will-Oliver-Br
+  changes:
+    - type: Add
+      message: 'A lista de medalhas condecoradas agora é exibida no final da rodada.  '
+    - type: Tweak
+      message: 'Todas as medalhas agora permitem especificar o motivo da condecoração.  '
+  id: 64
+  time: '2025-07-13T00:07:46.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        A NanoTrasen readaptou suas naves de mineração para a nova realidade dos
+        especialistas em exploração, apesar da falta de verba.
+  id: 65
+  time: '2025-07-18T14:05:02.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrige o sumário de End Round.
+  id: 66
+  time: '2025-07-18T14:09:07.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Sem mais meta. Portas falsas estão corretamente traduzidas.
+  id: 67
+  time: '2025-07-18T14:32:31.0000000+00:00'
+- author: samarieh
+  changes:
+    - type: Add
+      message: >-
+        Adiciona um cartucho que cura o envenenamento, disponível nos
+        departamentos de segurança e medicina.
+  id: 68
+  time: '2025-07-18T15:12:37.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Visão noturna deangati.
+    - type: Remove
+      message: Remove smite por spam.
+    - type: Remove
+      message: Gingerbread da seleção de personagems.
+    - type: Remove
+      message: Remove revenant do spawn de ghost roles durante o round.
+    - type: Tweak
+      message: Antag token e Ghost token.
+    - type: Add
+      message: Tokens de cosmeticos.
+    - type: Tweak
+      message: Drunyard (O Bebum) deve ser bem menos caotico.
+    - type: Fix
+      message: >-
+        Traduções diversas como palavras chaves do sindicato (Autoria de
+        LaryNevesPR).
+    - type: Tweak
+      message: Punpun não é mais agente livre.
+    - type: Tweak
+      message: Adiciona blood cult como possivel modo round start.
+  id: 69
+  time: '2025-07-18T15:58:06.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Patrocinadores são fundadores da Nanotrasen
+    - type: Add
+      message: '"João Nanotrasen"'
+  id: 70
+  time: '2025-07-18T16:03:56.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Tempo durante a central de comando agora é de 5 minutos.
+  id: 71
+  time: '2025-07-18T17:08:22.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: Arruma algumas coisas faltantes da nave de salvatagem.
+  id: 72
+  time: '2025-07-19T04:12:37.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Ergam suas tochas, vampiros se infiltraram na estação!
+  id: 73
+  time: '2025-07-19T04:14:32.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: >-
+        43 pedradas foram adicionadas à jukebox e lobby, agora sim o bar pode
+        virar um boteco!!!
+  id: 74
+  time: '2025-07-19T05:53:35.0000000+00:00'
+- author: samarieh
+  changes:
+    - type: Tweak
+      message: Agora PTL custa 200 mil e agora vem em uma caixa segura da engenharia.
+  id: 75
+  time: '2025-07-19T06:06:02.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: Agora Vampiros possuem seu próprio radio! +v para usar
+    - type: Tweak
+      message: Buff no hipnotizar do vampiro, para torna-lo infinitamente mais usavel!
+    - type: Remove
+      message: Retira o modo vampiro da votaçao de modos de jogo.
+  id: 76
+  time: '2025-07-20T15:53:16.0000000+00:00'
+- author: Tayrtahn, Kyoth25f
+  changes:
+    - type: Fix
+      message: Bolhas de texto corrigidas.
+  id: 77
+  time: '2025-07-25T21:45:07.0000000+00:00'
+- author: DragonEngineer, Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada Heart to Heart de Mac DeMarco na jukebox!
+    - type: Add
+      message: Adicionada Eyes Without a Face de Billy Idol na jukebox!
+  id: 78
+  time: '2025-07-26T10:32:52.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: >-
+        Nova estação Tramstation! Diferente da outra chamada Train, essa aqui
+        tem um literal TREM dentro dela!
+  id: 79
+  time: '2025-07-26T10:37:17.0000000+00:00'
+- author: DangerRevolution, deltanedas, Avalon-Proto, ThunderBear2006, Kyoth25f
+  changes:
+    - type: Add
+      message: Ciborgue segurança adicionado. Há várias opções de chassi!
+    - type: Add
+      message: >-
+        O Módulo Patrulha vem equipado com um holoprojetor da segurança. Todo
+        ciborgue segurança tem esse módulo por padrão.
+    - type: Add
+      message: >-
+        O Módulo De-escalonamento vem equipado com um bastão de choque e um
+        flash. Todo ciborgue segurança tem esse módulo por padrão.
+    - type: Add
+      message: >-
+        O Módulo Bastião vem equipado com um lançador de granadas não-letais.
+        Ele é construido no fabricador da segurança e precisa da pesquisa
+        Controle de Multidão Avançado.
+    - type: Add
+      message: >-
+        O Módulo Escalonamento vem equipado com um truncheon, uma faca de
+        combate e uma riot shotgun. Também está trancando pela pesquisa Controle
+        de Multidão Avançado. A arma atira projeteis pouco letais que causam
+        alto dano de stamina.
+    - type: Add
+      message: >-
+        O Módulo Perseguição vem equipado com uma disabler. É liberado para
+        construção ao pesquisar Munição Não-letal.
+    - type: Add
+      message: >-
+        Por padrão os ciborgues segurança devem fazer cumprir as leis vigentes
+        da estação e obedecer o Departamento de Segurança. E, como todo
+        ciborgue, são suscetíveis a Tempestades Iônicas. Além disso, não são
+        obrigados a seguir as ordens da IA da estação.
+  id: 80
+  time: '2025-07-26T10:39:08.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: O mapa "Barratry" foi removido da rotação de mapas, mas não do jogo.
+  id: 81
+  time: '2025-07-26T10:40:51.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Novas armas: Rifle de assalto MA56XF, pistola MX3-R. Elas podem ser
+        pesquisadas no Computador de P&D e serem fabricadas no torno da
+        Segurança. Legendas em português inclusas.
+  id: 82
+  time: '2025-07-26T10:55:36.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Fix
+      message: Hostage ops PROVAVELMENTE funciona novamente.
+    - type: Fix
+      message: Arruma sprite do riot shield quando usado nas costas.
+  id: 83
+  time: '2025-07-31T19:19:38.0000000+00:00'
+- author: AvianMaiden, ruddygreat, AgentePanela
+  changes:
+    - type: Add
+      message: Computador de registros medicos funcionam!
+    - type: Add
+      message: Nova aba de costumização sobre os seus registros de personagem!
+  id: 84
+  time: '2025-08-01T02:27:12.0000000+00:00'
+- author: dffdff242, AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Agora é possivel esconder o seu username pela trait OOC "Esconder
+        username".
+  id: 85
+  time: '2025-08-01T14:25:16.0000000+00:00'
+- author: Pinkbat5, AirFryerBuyOneGetOneFree, AgentePanela
+  changes:
+    - type: Add
+      message: Marking para roupas intimas.
+    - type: Add
+      message: Opção de censura pra roupa intima (ativa por padrão).
+    - type: Add
+      message: Agora é possivel dobrar (algumas) jumpsuits na cintura.
+    - type: Tweak
+      message: NTR não pode ser mais antag.
+  id: 86
+  time: '2025-08-01T14:53:49.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Train está de volta! Agora com teleportes melhores e conteúdo novo.
+  id: 87
+  time: '2025-08-01T15:08:06.0000000+00:00'
+- author: SolsticeOfTheWinter, Diggy, dootythefrooty, AgentePanela
+  changes:
+    - type: Add
+      message: Loadout civil adicionado a todos os cargos (não militares)!
+    - type: Add
+      message: Roupas civil do EE
+    - type: Add
+      message: Algumas roupas civils nas vends/drobes
+  id: 88
+  time: '2025-08-01T17:39:23.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: Train foi removido novamente do vote
+  id: 89
+  time: '2025-08-02T04:30:29.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        Rework no sistema de armas balísticas, elas agora usam sistema hitscan,
+        igual armamento laser usa, ao invés de lançar um objeto em alta
+        velocidade, o que torna mais realista e belo.
+    - type: Add
+      message: >-
+        Tiros vão fazer seu sangue espalhar no chão, isto pode ser limpado com
+        limpador espacial.
+    - type: Tweak
+      message: >-
+        Armamento a laser tomou sérios buffs, que envolvem maior dano em disparo
+        e capacidade de munição muito maior, esses buffs servem para tornar
+        armamentos lasers uma opção tão viável quanto armamento balísticos.
+    - type: Fix
+      message: >-
+        A munição de stun do Riot Launcher não vai mais causar insta stun, do
+        qual acontecia por bug.
+    - type: Add
+      message: >-
+        Armas balísticas agora vão apenas acertar alvos perto do mouse do
+        atirador, o que evita drasticamente fogo amigo, mas que permite errar o
+        alvo se jogar o mouse pra longe da tela, vai precisar mirar corretamente
+        agora.
+    - type: Add
+      message: >-
+        Tiros balísticos em borgs vai soltar faíscas e emitir som de metal sendo
+        acertado, futuramente o mesmo efeito será aplicado a hardsuits com altos
+        valores de proteção.
+  id: 90
+  time: '2025-08-02T04:32:21.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Add
+      message: >-
+        Meteoros, e immovable rods foram ativados devoltas a lista de seleção do
+        Game Director
+  id: 91
+  time: '2025-08-09T01:42:27.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Bug do Comando Central não spawnando e a evacuação não vindo corrigido.
+  id: 92
+  time: '2025-08-16T13:56:38.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Loudouts corrigidos!
+  id: 93
+  time: '2025-08-16T16:43:04.0000000+00:00'
+- author: vyas e Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionado Do Funda da Grota by Baitaca na jukebox e lobby!
+    - type: Add
+      message: >-
+        Adicionado É disso que o velhos gosta by Gaúcho da Fronteira na jukebox
+        e lobby!
+  id: 94
+  time: '2025-08-21T15:46:14.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        As reações dos artefatos foram traduzidas! Se estiver muito perdido ou
+        perdida do que fazer, tente examinar o artefato.
+  id: 95
+  time: '2025-08-23T02:35:35.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Muitas traduções foram alteradas, nem tudo foi testado devido a
+        quantidade. Caso note alguém erro de tradução ou bug, reporte!
+  id: 96
+  time: '2025-08-23T02:59:19.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionada as últimas atualizações do Goob até 22/08. Cheque o changelog
+        do Goob (aba aqui em cima ^^) para ver o que mudou.
+    - type: Tweak
+      message: >-
+        Agora, as linguagens são corretamente mostradas  no chat (fonte, cor e
+        tamanho).
+    - type: Add
+      message: Novo guia de produção de plástico adicionado, pelo merge, e traduzido.
+  id: 97
+  time: '2025-08-23T14:28:21.0000000+00:00'
+- author: Tropica1Owl
+  changes:
+    - type: Tweak
+      message: >-
+        Botânica é finalmente divertida, cheque o Github para aprender sobre
+        como o cotonete funciona.
+  id: 98
+  time: '2025-08-23T16:29:50.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as últimas mudanças do Goob 30/08 (confira a aba do Goob).
+  id: 99
+  time: '2025-08-31T02:37:25.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Atualizações do goob até 31/08 ás 10h adicionadas.
+  id: 100
+  time: '2025-08-31T13:22:01.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Lei 3 da NT Default atualizada. A IA deve levar em conta o bem-estar da
+        tripulação e não dela mesma ao realizar ou não os interesses da
+        tripulação.
+  id: 101
+  time: '2025-09-03T00:09:41.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Rotular jarros do dispersor químico agora sobrescreve o rótulo ao invés
+        de adicionar. Por exemplo, antes, "jarro (hidrogênio) (Bica|Brute|15u)";
+        agora, "jarro (Bica|Brute|15u)".
+  id: 102
+  time: '2025-09-06T03:14:49.0000000+00:00'
+- author: Fafale
+  changes:
+    - type: Add
+      message: Adiciona páginas de Shadowkin e Daengati ao Livro Guia.
+    - type: Tweak
+      message: Traduz as páginas de espécies em inglês do Livro Guia
+  id: 103
+  time: '2025-09-06T03:18:54.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: >-
+        Passageiros estão devolta! Não podem mais ser antagonistas e ganham
+        apenas 5gc.
+  id: 104
+  time: '2025-09-06T03:20:37.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Chapéus! Máscaras! Luvas! Sapatos! Uma fornada fresquinha chegou no
+        loadout civil!
+  id: 105
+  time: '2025-09-06T18:05:45.0000000+00:00'
+- author: STARLIGHT TEAM, CringeCursed e Kyoth25f
+  changes:
+    - type: Fix
+      message: Os revolveres foram corrigidos.
+    - type: Fix
+      message: >-
+        Agora, a chance de acerto depende da distância do atirador e é sempre de
+        100% se o cursor estiver em cima do alvo. Isso significa que acertos
+        fora da tela são garantidos se a trajetória da bala cruzar o alvo. Além
+        disso, a chance de acerto dentro de 2 quadrados à frente do cursor
+        também é de 100% e, em seguida, diminui linearmente para 0 nos próximos
+        2 quadrados.
+    - type: Tweak
+      message: Examinar as magazines mostra as quantidades e tipos de danos.
+  id: 106
+  time: '2025-09-08T04:40:29.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Loadout de ferramentas para o bartender.
+    - type: Add
+      message: Shaker dourado para o loadout bartender.
+  id: 107
+  time: '2025-09-08T19:37:30.0000000+00:00'
+- author: marc-pelletier e Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada armadura, capacete e machado de hidrogênio metálico.
+    - type: Add
+      message: Adicionada armadura atmosiana.
+  id: 108
+  time: '2025-09-11T02:32:10.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Fix
+      message: Daengati não tem mais visão noturna inerente, roube seus olhos!
+    - type: Fix
+      message: >-
+        Daengati agora tem as marcas padrão das especies, utilize toda sua
+        criatividade!
+    - type: Add
+      message: Daengati agora tem texturas para seus olhos
+  id: 109
+  time: '2025-09-11T02:34:16.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Add
+      message: Cutelo e Faca de ouro para chefs
+  id: 110
+  time: '2025-09-11T04:32:21.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas últimas mudanças do Goob até 12/09.
+  id: 111
+  time: '2025-09-13T10:03:44.0000000+00:00'
+- author: marc-pelletier e Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas bombas de calor. Podem ser feitas no menu de construção (por
+        padrão, G) ou usando um RPD.
+  id: 112
+  time: '2025-09-13T10:05:21.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Espere ver mais muito mais estruturas na Lavaland.
+  id: 113
+  time: '2025-09-13T10:07:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug da barra de scroll do chat desaparecendo.
+  id: 114
+  time: '2025-09-17T02:32:58.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido culto de sangue.
+  id: 115
+  time: '2025-09-17T18:12:27.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: >-
+        A engenharia agora possui uma bolsa de materiais para transportar
+        material.
+  id: 116
+  time: '2025-09-19T01:24:30.0000000+00:00'
+- author: Dreykor e SBR_ERENM2
+  changes:
+    - type: Add
+      message: Novo plushie da "Niku Hatsume", disponível no loadout.
+  id: 117
+  time: '2025-09-20T18:50:31.0000000+00:00'

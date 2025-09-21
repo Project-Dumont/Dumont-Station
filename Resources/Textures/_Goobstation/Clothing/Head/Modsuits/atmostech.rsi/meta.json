@@ -26,6 +26,14 @@
 			"directions": 4
 		},
 		{
+			"name": "equipped-HEAD-vulpkanin",
+			"directions": 4
+		},
+		{
+			"name": "equipped-HEAD-sealed-vulpkanin",
+			"directions": 4
+		},
+		{
 			"name": "equipped-HEAD-sealed-resomi",
 			"directions": 4
 		}

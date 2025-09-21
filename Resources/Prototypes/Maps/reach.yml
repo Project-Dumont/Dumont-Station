@@ -45,6 +45,7 @@
             NanotrasenRepresentative: [ 1, 1 ] # Goobstation
             BlueshieldOfficer: [ 1, 1 ] # Goobstation
             Captain: [ 1, 1 ]
+            AdministrativeAssistant: [1, 1]
             HeadOfSecurity: [ 1, 1 ]
             SecurityOfficer: [ 1, 2 ]
             CargoTechnician: [ 1, 1 ]
@@ -60,6 +61,7 @@
             StationEngineer: [ 1, 2 ]
             Scientist: [ 1, 1 ]
             Passenger: [ -1, -1 ]
+            PermaPrisoner: [ 1, 1 ] # Gaby
 
         # Goobstation blob-config-start LOW
         - type: StationBlobConfig

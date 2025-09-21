@@ -84,6 +84,11 @@
   - !type:AddComponentSpecial # Goobstation
     components:
     - type: EngineeringStaff
+  alternateTitles:
+  - AtmosTitleLifeSupport
+  - AtmosTitleSupervisor
+  - AtmosTitleOperator
+  - AtmosTitleFireman
 
 - type: startingGear
   id: AtmosphericTechnicianGear
@@ -105,3 +110,19 @@
     neck: ClothingNeckScarfStripedLightBlue
     outerClothing: ClothingOuterSuitAtmosFire
     gloves: ClothingHandsGlovesColorYellow
+
+- type: jobAlternateTitle
+  id: AtmosTitleLifeSupport
+  name: job-name-alt-atmos-life-support
+
+- type: jobAlternateTitle
+  id: AtmosTitleSupervisor
+  name: job-name-alt-atmos-supervisor
+
+- type: jobAlternateTitle
+  id: AtmosTitleOperator
+  name: job-name-alt-atmos-operator
+
+- type: jobAlternateTitle
+  id: AtmosTitleFireman
+  name: job-name-alt-atmos-fireman

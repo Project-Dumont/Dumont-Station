@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_137_2)">
+<path d="M0.0288086 15L14 15L14.5 14.5L15 14L14.9969 8.94447L7.15343 0.717407" stroke="#667C4D" stroke-width="2"/>
+</g>
+<defs>
+<clipPath id="clip0_137_2">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+=======
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
 SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
@@ -76,4 +87,5 @@ SPDX-License-Identifier: MIT
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
   </g>
+>>>>>>> goob/master
 </svg>

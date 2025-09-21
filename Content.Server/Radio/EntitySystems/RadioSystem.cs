@@ -45,6 +45,8 @@ using Content.Shared._EinsteinEngines.Language.Systems;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -52,6 +54,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Shared.Access.Systems;
+using Content.Shared.Access.Components;
+using Content.Shared.PDA;
 using Content.Shared.Whitelist;
 
 namespace Content.Server.Radio.EntitySystems;
@@ -67,6 +72,7 @@ public sealed class RadioSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Goobstation - Whitelisted radio channels
 
@@ -273,6 +279,47 @@ public sealed class RadioSystem : EntitySystem
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
 
+        // start 🌟Starlight🌟
+        var iconId = "JobIconNoId";
+        var jobName = "";
+
+        if (_accessReader.FindAccessItemsInventory(source, out var items))
+        {
+            foreach (var item in items)
+            {
+                // ID Card
+                if (TryComp<IdCardComponent>(item, out var id))
+                {
+                    iconId = id.JobIcon;
+                    jobName = id.LocalizedJobTitle;
+                    break;
+                }
+
+                // PDA
+                if (TryComp<PdaComponent>(item, out var pda)
+                    && pda.ContainedId != null
+                    && TryComp(pda.ContainedId, out id))
+                {
+                    iconId = id.JobIcon;
+                    jobName = id.LocalizedJobTitle;
+                    break;
+                }
+            }
+        }
+
+        if (HasComp<BorgChassisComponent>(source) || HasComp<BorgBrainComponent>(source))
+        {
+            iconId = "JobIconBorg";
+            jobName = Loc.GetString("job-name-borg");
+        }
+
+        if (HasComp<StationAiHeldComponent>(source))
+        {
+            iconId = "JobIconStationAi";
+            jobName = Loc.GetString("job-name-station-ai");
+        }
+        // end 🌟Starlight🌟
+
         return Loc.GetString(wrapId,
             ("color", channel.Color),
             ("languageColor", languageColor),
@@ -281,7 +328,7 @@ public sealed class RadioSystem : EntitySystem
             ("boldFontType", language.SpeechOverride.BoldFontId ?? language.SpeechOverride.FontId ?? speech.FontId), // Goob Edit - Custom Bold Fonts
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
-            ("name", name),
+            ("name", $"[icon src=\"{iconId}\" tooltip=\"{jobName}\"] {name}"), // 🌟Starlight🌟
             ("message", message),
             ("language", languageDisplay));
     }

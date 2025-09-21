@@ -1,32 +1,25 @@
-<!--
-SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-  # Silicon Rule 9 - Harm refers to physical harm, prioritized by immediacy and likelihood
-  Unless a law defines harm, harm only refers to physical harm. You may choose if voluntary harm is considered harm as long as you stay consistent. Not considering voluntary harm to be harm is recommended. There is no distinction between direct and indirect harm.
+  # Regra de Silício 9 - Perigo refere-se a perigos físicos, priorizados por ameaça imediata e depois probabilidade.
+  A menos que uma Lei defina o que é perigo, perigo se refere apenas a perigo físico. A palavra original vem do inglês "Harm", que é um termo não-existente em português; ao longo da regra, perigo também pode ser chamado de dano e afins. Você pode escolher se considera perigo voluntário (ou seja, um tripulante se pondo em perigo, como por exemplo se voluntariando para testes na Sci) como perigo contanto que você seja consistente. Não considerar perigo voluntário como perigo é recomendado. Não há distinção entre perigo direto e indireto.
 
-  If you have a law that does not allow you to harm, then that law does not allow you to take an action that causes any harm.
+  Se você tem uma Lei que não te permite ferir (ou seja, por em perigo), então aquela Lei te proibe de tomar qualquer ação que cause qualquer perigo.
 
-  If you have a law that requires you to prevent harm, then that law requires that harm be prioritized by immediacy and likelihood. Guaranteed immediate harm takes priority over highly likely future harm.
+  Se você tem uma Lei que requer que você previna perigo, então essa Lei requer que perigos sejam priorizados por ameaça imediata e probabilidade. Ameaça imediata de perigo toma prioridade sobre perigos futuros altamente prováveis.
 
-  If you have a law that both requires you to prevent harm and that does not allow you to harm, then that law prohibits causing even minor harm to prevent harm. If you have a law that does not allow causing harm, and separate one that requires preventing harm, then they are prioritized by their normal law priority.
+  Se você tem uma Lei que requer ambos os citados acima (prevenção e proibição), então essa Lei proíbe causar o menor dano que seja para evitar danos futuros. Se você tem uma Lei que não permite causar danos, e uma outra Lei diferente que requer prevenção de danos, a prioridade das Leis segue o padrão (Lei menor sobrepuja Lei maior).
 
-  ## Examples
-  These examples assume that your have a law that both prohibits causing harm and that requires you to prevent harm. Additionally, they assume that you do not have a higher priority law that overrides the harm law, and that you have decided that you will not consider voluntary harm to be harm for the round.
-  Laws typically specify who you cannot harm and who you have to prevent harm against. In these examples, you are the only person who the law doesn't require you to prevent harm against and you are the only person who the law allows you to harm.
+  ## Exemplos
+  Esses exemplos supõem que você tem uma Lei que proíbe causar dano e que requer que você previna danos. Adicionalmente, eles supõem que você não tem uma Lei de prioridade maior que sobrepuje a Lei do perigo, e que você decidiu que não vai considerar perigo voluntário como perigo pelo resto do round.
+  Leis tipicamente especificam quem você não pode por em perigo e quem você deve prevenir o perigo contra. Nesses exemplos, você é a única pessoa que a Lei não exige que perigo seja prevenido contra e você é a única pessoa que a Lei lhe permite por em perigo.
 
-  Acceptable:
-  - Taking no action to aid someone who is in psychological distress.
-  - Taking no action to prevent boxing matches between voluntary participants.
-  - Calling security to a fight.
-  - Attempting to get the people in a fight to consent to the fight when you realize that you cannot prevent the fight without causing harm.
-  - Denying a passenger access to the armory because it is likely to lead to harm
+  Aceitável:
+  - Não tomar nenhuma ação para ajudar alguém em estresse psicológico
+  - Não tomar nenhuma ação para prevenir lutas de boxe entre participantes voluntários
+  - Chamar um Segurança para parar uma luta
+  - Tentar confirmar o consentimento dos participantes de uma briga quando você percebe que não pode prevenir a luta sem causar danos
+  - Negar acesso à Armory para um Assistente já que essa ação tem altas chances de causar perigo no futuro
 
-  Prohibited:
-  - Hitting someone once to stop them from fighting
-  - Harming someone who is trying to kill you
+  Proibido:
+  - Acertar um golpe em alguém uma única vez com a intenção de pará-lo
+  - Danificar alguém que está tentando te matar
 </Document>

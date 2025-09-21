@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -8,12 +12,12 @@
 # Any spaces on the written portion will be removed, so keep it all lowercase and one word.
 
 - type: clause
-  id: soulownership
+  id: possedaalma
   clauseWeight: 25
   event: !type:DevilContractSoulOwnershipEvent
 
 - type: clause
-  id: weakness
+  id: fraqueza
   clauseWeight: -35
   damageModifierSet: DevilDealPositive
 
@@ -36,20 +40,28 @@
       - Wall
 
 - type: clause
-  id: fearoffire
+  id: medodofogo
   clauseWeight: -20
   damageModifierSet: HellSpawn
   addedComponents:
   - type: SpecialHighTempImmunity
 
 - type: clause
-  id: brokeness
+  id: quebrado
   clauseWeight: -20
   spawnedItems:
   - ClothingShoesRealJordansAutographed
 
 - type: clause
-  id: fearofdeath
+  id: medodoespaco
+  clauseWeight: -30
+  addedComponents:
+  - type: BreathingImmunity
+  - type: PressureImmunity
+  - type: SpecialLowTempImmunity
+
+- type: clause
+  id: medodamorte
   clauseWeight: -25
   addedComponents:
   - type: MobThresholds
@@ -59,56 +71,56 @@
       201: Dead
 
 - type: clause
-  id: fearoflight
+  id: medodaluz
   clauseWeight: -15
   addedComponents:
   - type: FlashImmunity
 
 - type: clause
-  id: fearofelectricity
+  id: medodeeletricidade
   clauseWeight: -15
   addedComponents:
   - type: Insulated
 
 - type: clause
-  id: gluttony
-  clauseWeight: -10
+  id: gula
+  clauseWeight: -15
   removedComponents:
   - type: Hunger
   - type: Thirst
 
 - type: clause
-  id: fearofdrowning
+  id: medodeafogamento
   clauseWeight: -10
   addedComponents:
   - type: SpecialBreathingImmunity
 
 - type: clause
-  id: fearofclowns
-  clauseWeight: -10
-  addedComponents:
-  - type: NoSlip
-
-- type: clause
-  id: fearofcrushing
+  id: medodeesmagamento
   clauseWeight: -10
   addedComponents:
   - type: SpecialPressureImmunity
 
 - type: clause
-  id: fearoffreezing
+  id: medodepalhaco
+  clauseWeight: -10
+  addedComponents:
+  - type: NoSlip
+
+- type: clause
+  id: medodecongelamento
   clauseWeight: -10
   addedComponents:
   - type: SpecialLowTempImmunity
 
 - type: clause
-  id: greed
+  id: ganancia
   clauseWeight: -10
   spawnedItems:
   - SpaceCash30000
 
 - type: clause
-  id: pain
+  id: dor
   clauseWeight: -5
   addedComponents:
   - type: PainNumbness
@@ -118,64 +130,64 @@
       80: 1
 
 - type: clause
-  id: chance
+  id: sorte
   clauseWeight: -20
   event: !type:DevilContractChanceEvent
 
 - type: clause
-  id: shadows
+  id: sombras
   clauseWeight: -25
   addedComponents:
   - type: Stealth
   - type: StealthOnMove
 
 - type: clause
-  id: humanity
+  id: humanidade
   clauseWeight: 80
   polymorph: MobFrogPolymorph
 
 - type: clause
-  id: strength
+  id: forca
   clauseWeight: 30
   damageModifierSet: DevilDealNegative
 
 - type: clause
-  id: willtofight
-  clauseWeight: 60
+  id: vontadedelutar
+  clauseWeight: 80
   addedComponents:
   - type: Pacified
 
 - type: clause
-  id: sight
+  id: visao
   clauseWeight: 60
   addedComponents:
   - type: PermanentBlindness
 
 - type: clause
-  id: coherence
+  id: coerencia
   clauseWeight: 30
   addedComponents:
   - type: BackwardsAccent
   - type: Clumsy
 
 - type: clause
-  id: voice
+  id: voz
   clauseWeight: 20
   addedComponents:
   - type: Muted
 
 - type: clause
-  id: aleg
+  id: umaperna
   clauseWeight: 20
   event: !type:DevilContractLoseLegEvent
 
 - type: clause
-  id: ahand
+  id: umamao
   clauseWeight: 20
   event: !type:DevilContractLoseHandEvent
 
 - type: clause
-  id: awake
+  id: acordado
   clauseWeight: 35
   addedComponents:
   - type: Narcolepsy
@@ -183,38 +195,38 @@
     durationOfIncident: 10, 30
 
 - type: clause
-  id: anorgan
+  id: umorgao
   clauseWeight: 30
   event: !type:DevilContractLoseOrganEvent
 
 - type: clause
-  id: legs
+  id: pernas
   clauseWeight: 40
   addedComponents:
   - type: LegsParalyzed
 
 - type: clause
-  id: innerpeace
+  id: pazinterior
   clauseWeight: 5
   addedComponents:
   - type: TileMovement
 
 - type: clause
-  id: death
+  id: morte
   clauseWeight: -25
   addedComponents:
   - type: CheatDeath
     reviveAmount: 1
 
 - type: clause
-  id: mortality
+  id: mortalidade
   clauseWeight: -135
   addedComponents:
   - type: CheatDeath
     infiniteRevives: true
 
 - type: clause
-  id: time
+  id: tempo
   clauseWeight: 150
   addedComponents:
   - type: DelayedDeath
