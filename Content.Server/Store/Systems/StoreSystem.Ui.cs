@@ -29,8 +29,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Shared.NTR;
-using Content.Goobstation.Shared.NTR.Events;
 using Content.Server._Goobstation.Wizard.Store;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
@@ -54,7 +52,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing; // Goob
 
 namespace Content.Server.Store.Systems;
 
@@ -72,7 +69,6 @@ public sealed partial class StoreSystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly HereticKnowledgeSystem _heretic = default!; // goobstation - heretics
-    [Dependency] private readonly IGameTiming _timing = default!; // goobstation - ntr update
 
     private void InitializeUi()
     {
@@ -209,9 +205,6 @@ public sealed partial class StoreSystem
                 return;
             }
         }
-        if (HasComp<NtrClientAccountComponent>(uid))
-            RaiseLocalEvent(uid, new NtrListingPurchaseEvent(listing.Cost.First().Value));
-        OnPurchase(listing); // Goob edit - ntr shittery
 
         // if (!IsOnStartingMap(uid, component)) // Goob edit
         //     component.RefundAllowed = false;
@@ -361,13 +354,6 @@ public sealed partial class StoreSystem
 
         UpdateUserInterface(buyer, uid, component);
         UpdateRefundUserInterface(uid, component); // Goobstation
-        if (listing.ResetRestockOnPurchase) // goobstation edit start
-        {
-            // making sure that you cant buy some stuff endlessly if they are not meant to
-            var restockDuration = listing.RestockAfterPurchase ?? listing.RestockDuration; // Просто используем значение напрямую
-            listing.RestockTime = _timing.CurTime + restockDuration;
-        } // goob edit end
-
     }
 
     /// <summary>
