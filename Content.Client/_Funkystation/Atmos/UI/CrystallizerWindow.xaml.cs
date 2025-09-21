@@ -150,20 +150,6 @@ namespace Content.Client._Funkystation.Atmos.UI
             RecipesContainer.Children.Clear();
             _buttonToRecipeId.Clear();
 
-            var orderedRecipeIds = new List<string>
-            {
-                "ammoniaCrystalRecipe",
-                "metalHydrogenRecipe",
-                "healiumCrystalRecipe",
-                "protoNitrateCrystalRecipe",
-                "supermatterSliverRecipe",
-                "nitrousOxideCrystalRecipe",
-                "diamondRecipe",
-                "plasmaSheetRecipe",
-                "crystalCellRecipe",
-                "zaukeriteRecipe"
-            };
-
             _nothingButton.Text = "Nothing";
             _nothingButton.HorizontalExpand = true;
             _nothingButton.Pressed = true;
@@ -178,50 +164,25 @@ namespace Content.Client._Funkystation.Atmos.UI
             _buttonToRecipeId[_nothingButton] = null;
             RecipesContainer.AddChild(_nothingButton);
 
-            var allRecipes = _prototypeManager.EnumeratePrototypes<CrystallizerRecipePrototype>().ToList();
-            var processedRecipeIds = new HashSet<string>();
-
-            foreach (var recipeId in orderedRecipeIds)
-            {
-                var recipe = allRecipes.FirstOrDefault(r => r.ID == recipeId);
-                if (recipe != null)
-                {
-                    var button = new Button
-                    {
-                        Text = recipe.Name,
-                        HorizontalExpand = true
-                    };
-
-                    button.OnPressed += _ =>
-                    {
-                        SelectRecipeButton(button, recipe);
-                        OnRecipeButtonPressed?.Invoke(button, recipe.ID);
-                    };
-                    _buttonToRecipeId[button] = recipe.ID;
-                    RecipesContainer.AddChild(button);
-                    processedRecipeIds.Add(recipe.ID);
-                }
-            }
+            var allRecipes = _prototypeManager.EnumeratePrototypes<CrystallizerRecipePrototype>()
+                .ToList()
+                .OrderBy(proto => proto.Name);
 
             foreach (var recipe in allRecipes)
             {
-                if (!processedRecipeIds.Contains(recipe.ID))
+                var button = new Button
                 {
-                    var button = new Button
-                    {
-                        Text = recipe.Name,
-                        HorizontalExpand = true
-                    };
+                    Text = recipe.Name,
+                    HorizontalExpand = true
+                };
 
-                    button.OnPressed += _ =>
-                    {
-                        SelectRecipeButton(button, recipe);
-                        OnRecipeButtonPressed?.Invoke(button, recipe.ID);
-                    };
-                    _buttonToRecipeId[button] = recipe.ID;
-                    RecipesContainer.AddChild(button);
-                    processedRecipeIds.Add(recipe.ID);
-                }
+                button.OnPressed += _ =>
+                {
+                    SelectRecipeButton(button, recipe);
+                    OnRecipeButtonPressed?.Invoke(button, recipe.ID);
+                };
+                _buttonToRecipeId[button] = recipe.ID;
+                RecipesContainer.AddChild(button);
             }
         }
 
