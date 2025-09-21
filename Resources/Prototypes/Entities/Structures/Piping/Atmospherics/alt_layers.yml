@@ -701,6 +701,40 @@
   - type: Construction
     node: mixerflippedAlt2
 
+# GasFilterInline
+
+- type: entity
+  parent: [GasPipeLayerAlt1, GasFilterInline]
+  id: GasFilterInlineAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilter
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: inline_filterAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasFilterInline]
+  id: GasFilterInlineAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilter
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: inline_filterAlt2
+
 # PressureControlledValve
 
 - type: entity

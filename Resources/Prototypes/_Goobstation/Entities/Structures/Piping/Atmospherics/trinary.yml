@@ -8,9 +8,16 @@
   id: GasFilterInline
   name: inline gas filter
   description: Filters gases from a pipenet without splitting it in two.
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
     sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasFilterInline
+      Secondary: GasFilterInlineAlt1
+      Tertiary: GasFilterInlineAlt2
   - type: GasFilter
     inlet: pipe
     outlet: pipe
