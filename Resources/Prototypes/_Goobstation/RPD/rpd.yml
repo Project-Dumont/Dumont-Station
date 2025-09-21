@@ -16,7 +16,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
-  noLayer: true
+  noLayers: true
 
 - type: rcd
   id: RadiatorInline
@@ -29,7 +29,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
-  noLayer: true
+  noLayers: true
 
 - type: rcd
   id: RadiatorInlineBend
@@ -42,4 +42,4 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
-  noLayer: true
+  noLayers: true

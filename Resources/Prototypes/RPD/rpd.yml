@@ -198,7 +198,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
-  noLayer: true
+  noLayers: true
 
 - type: rcd
   id: RadiatorBend
@@ -211,7 +211,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
-  noLayer: true
+  noLayers: true
 
 - type: rcd
   id: MixerGas
