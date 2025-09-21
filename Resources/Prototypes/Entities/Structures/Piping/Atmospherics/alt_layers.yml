@@ -670,7 +670,7 @@
     node: mixerAlt2
 
 - type: entity
-  parent: [GasPipeLayerAlt1, GasMixer]
+  parent: [GasPipeLayerAlt1, GasMixerFlipped]
   id: GasMixerFlippedAlt1
   categories: [ HideSpawnMenu ]
   components:
@@ -686,7 +686,7 @@
     node: mixerflippedAlt1
 
 - type: entity
-  parent: [GasPipeLayerAlt2, GasMixer]
+  parent: [GasPipeLayerAlt2, GasMixerFlipped]
   id: GasMixerFlippedAlt2
   categories: [ HideSpawnMenu ]
   components:

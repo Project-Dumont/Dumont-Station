@@ -45,7 +45,31 @@
         amount: 2
         doAfter: 1
 
+    - to: mixerAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: mixerAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: mixerflipped
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: mixerflippedAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: mixerflippedAlt2
       steps:
       - material: Steel
         amount: 2

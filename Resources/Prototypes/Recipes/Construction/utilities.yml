@@ -1322,7 +1322,7 @@
   category: construction-category-utilities
   placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
-  mirror: GasMixerFlipped
+  mirror: GasMixerFlippedAlt1
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
@@ -1339,7 +1339,7 @@
   category: construction-category-utilities
   placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
-  mirror: GasMixerFlipped
+  mirror: GasMixerFlippedAlt2
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
@@ -1373,7 +1373,7 @@
   category: construction-category-utilities
   placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
-  mirror: GasMixer
+  mirror: GasMixerAlt1
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
@@ -1390,7 +1390,7 @@
   category: construction-category-utilities
   placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
-  mirror: GasMixer
+  mirror: GasMixerAlt2
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
