@@ -1154,9 +1154,9 @@
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
-  - GasHeatPump
-  - GasHeatPumpAlt1
-  - GasHeatPumpAlt2
+  - HeatPump
+  - HeatPumpAlt1
+  - HeatPumpAlt2
 
 - type: construction
   id: HeatPumpAlt1
@@ -1170,9 +1170,9 @@
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
-  - GasHeatPump
-  - GasHeatPumpAlt1
-  - GasHeatPumpAlt2
+  - HeatPump
+  - HeatPumpAlt1
+  - HeatPumpAlt2
 
 - type: construction
   id: HeatPumpAlt2
@@ -1186,9 +1186,9 @@
   conditions:
   - !type:NoUnstackableInTile
   alternativePrototypes:
-  - GasHeatPump
-  - GasHeatPumpAlt1
-  - GasHeatPumpAlt2
+  - HeatPump
+  - HeatPumpAlt1
+  - HeatPumpAlt2
 
 # ATMOS TRINARY
 
