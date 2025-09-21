@@ -127,7 +127,6 @@
   rotation: User
   fx: EffectRCDConstruct0
 
-
 - type: rcd
   id: OutletInjector
   category: Vents
@@ -199,6 +198,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+  noLayer: true
 
 - type: rcd
   id: RadiatorBend
@@ -211,6 +211,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+  noLayer: true
 
 - type: rcd
   id: MixerGas
