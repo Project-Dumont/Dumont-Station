@@ -441,6 +441,7 @@
       - state: gasCanisterPort
         map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
+    spriteRsiPaths: { }
     alternativePrototypes:
       Primary: GasPort
       Secondary: GasPortAlt1

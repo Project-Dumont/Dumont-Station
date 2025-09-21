@@ -309,7 +309,7 @@
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasCanisterPort
-      map: [ "enum.SubfloorLayers.FirstLayer"]
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: portAlt1
 
@@ -325,7 +325,7 @@
       state: pipeUnaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: gasCanisterPort
-      map: [ "enum.SubfloorLayers.FirstLayer"]
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: portAlt2
 
