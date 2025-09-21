@@ -490,7 +490,7 @@
           state: pipeBinaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
-          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+          map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
     - type: AtmosPipeLayers
       alternativePrototypes:
         Primary: GasDualPortVentPump
