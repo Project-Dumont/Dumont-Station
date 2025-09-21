@@ -1,0 +1,15 @@
+# Command
+- type: loadoutGroup
+  id: HoPShoesHarmony
+  name: loadout-group-hop-shoes-harmony
+  loadouts:
+  - BrownShoes
+  #!- HoPLeatherShoesHarmony - No Content.Shared.Preferences.Loadouts.LoadoutPrototype found with id
+
+# Security
+- type: loadoutGroup
+  id: PermaPrisonerJumpsuit
+  name: loadout-group-perma-prisoner-jumpsuit
+  loadouts:
+  - PermaPrisonerJumpsuit
+  - PermaPrisonerJumpskirt

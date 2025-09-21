@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TG",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon-base"
+    },
+    {
+      "name": "icon-color"
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-base",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-color",
+      "directions": 4
+    }
+  ]
+}

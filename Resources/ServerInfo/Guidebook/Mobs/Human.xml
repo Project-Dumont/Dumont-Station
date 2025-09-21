@@ -7,14 +7,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Humans
+  # Humanos
 
   <Box>
     <GuideEntityEmbed Entity="MobHumanDummy" Caption=""/>
   </Box>
 
-  Depending on who you ask, humans are either unremarkable or the universal standard to which everything else is compared.
+  Dependendo de quem você pergunte, humanos são incríveis ou o padrão universal onde tudo é comparado.
 
-  They interact [color=#ffa500]about 20% faster[/color] compared to other species.
+  Eles interagem [color=#ffa500]20% mais rápido[/color] do que as demais espécies.
 
 </Document>

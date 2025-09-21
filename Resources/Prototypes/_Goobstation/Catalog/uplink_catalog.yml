@@ -775,7 +775,7 @@
   description: uplink-advanced-combat-medipen-desc
   productEntity: AdvancedCombatMedipen
   cost:
-    Telecrystal: 28
+    Telecrystal: 20
   categories:
   - UplinkChemicals
 
@@ -864,6 +864,7 @@
         tags:
           - NukeOpsUplink # i guess we dont let nukies have this, they have to mutch TC
           - ContravendUplink
+  saleLimit: 1
 
 - type: listing
   id: UplinkSmokeImplanter

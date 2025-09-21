@@ -16,24 +16,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Fires
   Fires are arguably the most dangerous atmospheric upset that can occur on the station.
 
-  <Box>
-    <GuideEntityEmbed Entity="Firelock" Caption=""/>
-    <GuideEntityEmbed Entity="FirelockGlass" Caption=""/>
-  </Box>
+  Incêndios e vazamentos no espaço são uma inevitabilidade devido ao gás plasma altamente inflamável e ao vácuo infinito do espaço presentes na estação e ao redor dela, por isso é importante saber como gerenciá-los.
 
-  They often make high-pressure and high-temperature gasses, which can quickly spread throughout the station if firelocks or doors are opened carelessly, even if only for a moment.
+  ## Vazamento no Espaço
+  O espaço é, sem dúvida, a parte mais fácil de se lidar. Esteja ciente de que vazamentos ativos irão lentamente drenar o ar das reservas de ar da estação. Se você achar impossível corrigir danos estruturais devido a outro risco, certifique-se de limitar o fluxo de ar para essa área. (Atualmente, isso é apenas parcialmente válido devido aos Minadores de Gás, que repõem infinitamente a maioria dos gases úteis)
 
-  If people are caught in a fire, they can quickly become incapacitated, die, and even ash, rendering them unrevivable.
+  Embora torne uma área inabitável, isso pode ser facilmente resolvido seguindo um processo de dois passos. O primeiro passo é vedar o buraco que causou o vácuo.
 
-  ## Combating Fires
-  The key elements of a fire are fuel and oxygen.
-  Removing any of these two elements will extinguish the fire.
-  For example, fires that have no oxygen flowing to them will slowly snuff themselves out, and fires that have no fuel will also extinguish themselves.
+  O segundo passo é repressurizar a área afetada. Observe que a área afetada NÃO será preenchida automaticamente pela rede de distribuição da estação. Alguns dispositivos atmosféricos, especificamente os ventiladores de ar, possuem salvaguardas integradas que fazem o dispositivo ser desativado se a pressão na sala cair muito baixo. Esse recurso evita que os vazamentos no espaço ventilarem a rede de distribuição inadvertidamente.
 
-  Exposing the fire to space will extinguish it, as all the gas will simply be spaced.
-  You can then [textlink="fix" link="ExpandingRepairingStation"] the [textlink="spacing" link="Spacing"] and repressurize the area.
+  Como resultado, há três opções principais para repressurizar a área afetada:
 
-  ## Tips
-  - [bold]Know the signs of a future fire.[/bold] If an area is filled with highly flammable gasses, it's only a matter of time before a careless passenger sets it off. Try to isolate the area and scrub the gasses out as quickly as possible.
-  - [bold]Prevent the spread of gasses using a holofan projector.[/bold] Letting gasses through a firelock can make other rooms dangerous, even for a moment. This increases the number of rooms you have to fix.
+  1. Supondo que os ventiladores de distribuição e tubulações não tenham sido destruídos em algum acidente infeliz, você pode configurar os alarmes de ar ao redor para a configuração "Preencher". Isso fará com que os ventiladores de ar conectados ignorem suas salvaguardas e comecem a repressurizar a área.
+    - Esteja ciente de que essa configuração também permite que os ventiladores SUPER pressionem a sala, portanto, esse processo deve ser monitorado o tempo todo.
+
+  2. Outra opção é abrir qualquer travamento de incêndio que tenha sido ativado em resposta ao vazamento. Isso fará com que a pressão se iguale entre as duas áreas.
+    - Esta opção geralmente faz com que mais travamentos de incêndio sejam ativados na área ao redor, o que pode causar interrupções ou tornar a segunda área insegura para a tripulação da estação.
+
+  3. A última opção é levar um cilindro para a área vazada e abrir sua válvula de liberação. Um cilindro de ar a 4500kpa pode repressurizar completamente cerca de 20-30 tiles antes de esgotar o gás.
+    - Essa opção exige que o cilindro seja trazido de fora (geralmente de atmos), o que pode ser lento e demorado dependendo da situação.
+
+  ## Incêndios
+  Os incêndios podem ser tratados de várias maneiras, mas alguns dos métodos mais eficazes incluem:
+    - Vazamento da área em chamas, se possível. Isso destruirá todos os gases na sala, o que pode ser um problema se você já estiver sobrecarregando o suporte à vida.
+    - Descartar um cilindro de Frezon na área em chamas. Isso irá congelar as chamas e interromper qualquer reação em andamento, desde que você use o suficiente de Frezon. Além disso, isso não resulta em destruição de material, então você pode simplesmente limpar a sala depois.
 </Document>

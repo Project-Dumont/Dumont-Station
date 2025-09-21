@@ -1,0 +1,16 @@
+cargoproduct-category-name-armory = Arsenal
+cargoproduct-category-name-atmospherics = Atmosfera
+cargoproduct-category-name-cargo = Cargo
+cargoproduct-category-name-circuitboards = Placas de Circuito
+cargoproduct-category-name-emergency = Emergência
+cargoproduct-category-name-engineering = Engenharia
+cargoproduct-category-name-food = Alimentos
+cargoproduct-category-name-fun = Diversão
+cargoproduct-category-name-hydroponics = Hidropônica
+cargoproduct-category-name-livestock = Animais
+cargoproduct-category-name-materials = Materiais
+cargoproduct-category-name-medical = Médico
+cargoproduct-category-name-science = Ciência
+cargoproduct-category-name-security = Segurança
+cargoproduct-category-name-service = Serviços
+cargoproduct-category-name-shuttle = Naves

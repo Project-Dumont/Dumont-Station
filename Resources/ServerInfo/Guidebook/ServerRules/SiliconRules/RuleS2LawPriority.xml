@@ -1,16 +1,9 @@
-<!--
-SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-  # Silicon Rule 2 - Laws must be prioritized by their order
-  Most laws will be numbered, with higher number laws appearing last. Laws with a lower number take priority over laws with larger numbers.
+  # Regra de Silício 2 - Leis devem ser priorizadas em ordem (do menor ao maior).
+  A maioria das Leis serão numeradas, com números maiores aparecendo por último. Leis com um número menor tem prioridade sobre Leis com números maiores.
 
-  Occasionally you may have laws which have some scrambled text instead of a number and appear in front of other laws, these take priority over all other laws. If you have multiple laws like this, the order that they listed in determine priority: laws listed first are prioritized over other laws.
+  Ocasionalmente, você pode ter Leis que tenham um texto embaralhado invés de um número e que apareçam na frente de outras Leis; essas Leis "bugadas" tem prioridade sobre todas outras Leis. Se você tem múltiplas Leis assim, a ordem com que elas estão listadas determina prioridade: Leis listadas primeiro tem prioridade sobre outras Leis.
 
-  ## Examples
-  - Law 1 says to not kill any crew. Law 2 says to kill all chefs. You cannot kill any chefs that are crew, but must kill any that are not crew.
+  ## Exemplo
+  - A sua Lei 1 diz para não matar nenhum tripulate. A sua Lei 2 diz que você deve matar todos os Chefs. Você não pode matar nenhum Chef que seja tripulante, mas deve matar todos os Chefs que não sejam tripulantes.
 </Document>

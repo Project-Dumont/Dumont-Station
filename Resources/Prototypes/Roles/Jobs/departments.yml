@@ -188,6 +188,7 @@
   - ERTEngineer
   - DeathSquad
   - HecuOperative
+  - AdministrativeAssistant # Delta V
   primary: false
   weight: 100
 
@@ -227,6 +228,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - PermaPrisoner # Harmony
   - Brigmedic # Goob
 
 - type: department

@@ -34,8 +34,12 @@
 # SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
@@ -75,9 +79,9 @@
     inherentRadioChannels:
     - Common
     # - Binary # Goobstation - replaced with collective mind
+  - type: CyborgSparkEffect
   - type: BorgSwitchableSubtype # Goobstation
     # - Binary # Goobstation - replaced with collective mind
-
 
 - type: entity
   id: BorgChassisGeneric
@@ -171,6 +175,7 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+    - type: CyborgSparkEffect
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -210,6 +215,7 @@
         collection: FootstepHoverBorg
         params:
           volume: -6
+    - type: CyborgSparkEffect
 
 - type: entity
   id: BorgChassisSyndicateSaboteur
@@ -247,6 +253,7 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+    - type: CyborgSparkEffect
 
 - type: entity
   id: BorgChassisDerelict
@@ -279,3 +286,4 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: CyborgSparkEffect

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseGameRule
   id: RogueAscendedSpawn
@@ -7,7 +13,16 @@
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
-    duration: null
+    chaos:  # Funky
+      Hostile: 70
+      Medical: 70
+      Death: 70
+    maxChaos: # Funky
+      Hostile: 80
+      Combat: -30
+      Power: 80
+      Medical: 80
+      Atmos: 80
   - type: SpaceSpawnRule
   - type: AntagSpawner
     prototype: MobRogueAscended

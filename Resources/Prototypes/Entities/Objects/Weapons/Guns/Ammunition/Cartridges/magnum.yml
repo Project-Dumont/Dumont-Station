@@ -42,8 +42,8 @@
     tags:
       - Cartridge
       - CartridgeMagnum
-  - type: CartridgeAmmo
-    proto: BulletMagnum
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletMagnumTrace
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -58,8 +58,8 @@
   parent: BaseCartridgeMagnum
   description: Heavy magnum cartridge mostly used by revolvers. Standard kinetic ammunition is common and useful in most situations.
   components:
-  - type: CartridgeAmmo
-    proto: BulletMagnum
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletMagnumTrace
 
 - type: entity
   id: CartridgeMagnumPractice
@@ -67,8 +67,8 @@
   parent: BaseCartridgeMagnum
   description: Heavy magnum cartridge mostly used by revolvers. Chalk ammunition is generally non-harmful, used for practice.
   components:
-  - type: CartridgeAmmo
-    proto: BulletMagnumPractice
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletMagnumPracticeTrace
   - type: Sprite
     layers:
       - state: base
@@ -83,8 +83,8 @@
   parent: BaseCartridgeMagnum
   description: Heavy magnum cartridge mostly used by revolvers. Incendiary ammunition contains a self-igniting compound that sets the target ablaze.
   components:
-  - type: CartridgeAmmo
-    proto: BulletMagnumIncendiary
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletMagnumIncendiaryTrace
   - type: Sprite
     layers:
       - state: base
@@ -99,8 +99,8 @@
   parent: BaseCartridgeMagnum
   description: Heavy magnum cartridge mostly used by revolvers. Armor piercing ammunition is renowned for its ability to cut straight through body armor.
   components:
-  - type: CartridgeAmmo
-    proto: BulletMagnumAP
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletMagnumAPTrace
   - type: Sprite
     layers:
       - state: base
@@ -115,8 +115,8 @@
   parent: BaseCartridgeMagnum
   description: Heavy magnum cartridge mostly used by revolvers. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
   components:
-  - type: CartridgeAmmo
-    proto: BulletMagnumUranium
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletMagnumUraniumTrace
   - type: Sprite
     layers:
       - state: base

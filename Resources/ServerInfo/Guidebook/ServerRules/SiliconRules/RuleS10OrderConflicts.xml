@@ -1,16 +1,9 @@
-<!--
-SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-  # Silicon Rule 10 - You may determine how you resolve conflicts between orders
-  If your laws do not make clear how you should deal with conflicting orders, then it is up to you to determine how to do so. This is considered an interpretation of your laws, so you must stay consistent with whatever method you choose.
+  # Regra de Silício 10 - Você decide como resolver conflitos entre ordens.
+  Se suas Leis não deixarem claro como você deve lidar com ordens conflitantes, então o dever cai para você. Isso é considerado uma interpretação das suas Leis, então você deve se manter consistente com qualquer interpretação que tenha.
 
-  ## Recommended Methods
-  The following are easy to follow and recommended ways to resolve conflicts in orders:
-  - If two orders conflict, I will follow the most recently given order.
-  - If two orders conflict, I will follow the order from the highest ranking crewmember. If the orders are from equal rank crewmembers, I will follow the most recently given order.
+  ## Métodos Recomendados
+  Os seguintes métodos são fáceis de seguir e recomendados como uma forma de resolver conflitos entre ordens:
+  - Se duas ordens estiverem em conflito, eu seguirei a ordem mais recente.
+  - Se duas ordens estiverem em conflito, eu seguirei a ordem do tripulante com maior autoridade. Se as ordens são de tripulantes com autoridade igual, eu seguirei a ordem mais recente.
 </Document>

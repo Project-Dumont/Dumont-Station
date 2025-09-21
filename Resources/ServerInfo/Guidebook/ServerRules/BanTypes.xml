@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+﻿<Document>
+  # Tipos de Bans
+=======
 <!--
 SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -7,12 +11,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
   # Ban Types
+>>>>>>> goob/master
 
-  Bans can be appealed at forum.ss14.io in the ban appeals section.
+  Banimentos podem ser apelados no nosso discord oficial. Caso você esteja banido do nosso discord oficial, apele em https://dyno.gg/form/28ea13ff.
 
   ## Role Ban
-  Also called a "job ban", this ban prevents your character from joining or late-joining a round as one or more jobs or roles. These are often used in response to problematic behavior in particular departments or address gross inexperience in important roles such as heads of staff. These bans do not mechanically prevent you from switching to the role during a round or acting as that role, but doing so is considered ban evasion.
+  Esse banimento previne que você jogue no servidor enquanto desempenha uma função em específico. Esse tipo de banimento é usado, geralmente, em resposta a comportamento problemático em departamentos específicos ou por inexperiência grotesca em funções importantes como chefes de departamento. Esses banimentos não te impedem de, mecanicamente, se tornar a função durante um round ou agir como a função; ainda assim, isso é considerado evasão de banimento.
 
-  ## Game Ban
-  Also called a "server ban", this ban prevents you from connecting to all Wizard's Den servers.
+  ## Ban do Servidor
+  Esse banimento te previne de conectar no(s) servidor(es) de Gabystation.
 </Document>

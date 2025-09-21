@@ -104,6 +104,10 @@
         isBlocked: true
   - !type:AddImplantSpecial # Chefs speak space italian
     implants: [ SpaceItalianTranslatorImplant ]
+  alternateTitles:
+  - ChefTitleSteward
+  - ChefTitleCook
+  - ChefTitlePizza
 
 - type: startingGear
   id: ChefGear
@@ -127,3 +131,16 @@
     outerClothing: ClothingOuterJacketChef
     gloves: ClothingHandsGlovesColorWhite
     shoes: ClothingShoesChef
+
+
+- type: jobAlternateTitle
+  id: ChefTitleSteward
+  name: job-name-alt-chef-steward
+
+- type: jobAlternateTitle
+  id: ChefTitleCook
+  name: job-name-alt-chef-cook
+
+- type: jobAlternateTitle
+  id: ChefTitlePizza
+  name: job-name-alt-chef-pizza

@@ -134,10 +134,10 @@
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
   weights:
-    KillRandomPersonObjective: 1
-    PermaKillRandomPersonObjective: 0.5 # Goobstation - straight up kill someone with no maroons
+    # KillRandomPersonObjective: 1 # DeltaV Replaced for Teach Lesson
+    TeachLessonRandomPersonObjective: 1
     PermaKillRandomTraitorObjective: 0.3 # Goobstation - target traitor
-    KillRandomHeadObjective: 0.2
+    KillRandomHeadObjective: 0.25
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState

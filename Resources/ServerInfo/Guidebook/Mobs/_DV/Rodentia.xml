@@ -15,29 +15,29 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobRodentiaDummy" Caption=""/>
   </Box>
 
-  Rodentia are a race of humanoid beings resembling rodents. Resourceful, evasive, sneaky, but fragile.
+  Rodentia é uma raça de seres humanoides que lembram roedores. Engenhosos, evasivos, sorrateiros, porém frágeis.
 
-  ## Diet
+  ## Dieta
 
-  - Can eat raw meat.
-  - Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
+  - Podem comer carnes cruas.
+  - Serão envenenados por Teobromina (Chocolate, Chá, Café) e Alicina (Alho, Cebola);
 
-  ## Benefits
+  ## Benefícios
 
-  - Uses their claws to do some Slashing and Blunt damage.
-  - Can fit in duffelbags.
+  - Usam suas garras para causar [color=#ec3a3a]dano Cortante e Contundente[/color].
+  - Cabem dentro de duffelbags.
 
-  ## Special
+  ## Malefícios
 
-  - Can Rummage in disposal chutes, which can sometimes dig up food.
-  - Can store small items in their cheeks. Having items in their mouth makes their speech unintelligible, and they will drop all items in their mouth if attacked, stunned, or shoved.
-  - Can "sneak" underneath tables, but not doors.
-  - Smaller than most other species.
+  - Tomam [color=#ec3a3a]15% mais dano Contundente, Cortante e Perfurante[/color].
+  - [color=#ffa500]Sempre ativam ratoeiras[/color], independente se estão usando calçados ou não.
+  - [color=#ffa500]Ficam com fome 33% mais rápido[/color].
 
-  ## Drawbacks
+  ## Especial
 
-  - Takes 15% more Blunt, Slash, and Piercing damage.
-  - Always triggers mousetraps, regardless of whether or not they are wearing shoes.
-  - Gets hungry 33% faster.
+  - Podem vasculhar latas de lixo (disposal chutes), talvez encontrando comida.
+  - Podem guardar pequenos itens nas bochechas. Guardar itens dessa forma os tornam ininteligíveis, e vão soltar os itens da boca se forem atacados, atordoados ou empurrados.
+  - Podem se "esgueirar" embaixo de mesas, mas não de portas.
+  - Menores que muitas outras espécies.
 
 </Document>

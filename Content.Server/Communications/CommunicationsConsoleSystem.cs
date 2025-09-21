@@ -24,9 +24,12 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 Raphael Bertoche <bertocheraphael@gmail.com>
 // SPDX-FileCopyrightText: 2024 Robert V <vincerob@oregonstate.edu>
 // SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 White <68350815+DoutorWhite@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 avery <51971268+graevy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
@@ -39,7 +42,11 @@
 // SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 superjj18 <gagnonjake@gmail.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
@@ -70,6 +77,14 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
+using Content.Shared.Doors.Components; //importa as portas iradas
+using Content.Server.Doors.Systems; //importa o sistema das airlock pra botar o modo de emergencia
+using System.Collections; //parao array de prototypes
+using Robust.Shared.Audio;
+using Content.Server.Administration;
+using Robust.Shared.Player;
+using Content.Server.Chat.Managers; //pra falar com centcom
+using Robust.Shared.Timing;
 
 namespace Content.Server.Communications
 {
@@ -86,8 +101,15 @@ namespace Content.Server.Communications
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+        [Dependency] private readonly AirlockSystem _airlock = default!;
+        [Dependency] private readonly QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
+        [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
+        [Dependency] private readonly IGameTiming _timing = default!; // cooldown
 
         private const float UIUpdateInterval = 5.0f;
+
+        // array dos prototypes que vao ficar em manutenção
+        private ArrayList _maintDoorPrototypeList = new ArrayList();
 
         public override void Initialize()
         {
@@ -103,9 +125,17 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleBroadcastMessage>(OnBroadcastMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCallEmergencyShuttleMessage>(OnCallShuttleMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
+            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleToggleEmergencyMaintMessage>(OnToggleEmergencyMaintMessage);
+            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCentCommButtonMessage>(OnCentCommMessage);
+            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleMartialButtonMessage>(OnMartialMessage);
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
+
+            // adicione os prototypes das portas que vao entrar em modo de emergencia aqui:
+            _maintDoorPrototypeList.Add("AirlockMaintGlassLocked");
+            _maintDoorPrototypeList.Add("AirlockMaintLocked");
+            _maintDoorPrototypeList.Add("AirlockMaintCommonLocked");
         }
 
         public override void Update(float frameTime)
@@ -346,9 +376,99 @@ namespace Content.Server.Communications
             _adminLogger.Add(LogType.DeviceNetwork, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following broadcast: {message.Message:msg}");
         }
 
+        private void OnCentCommMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCentCommButtonMessage message)
+        {
+            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+                return;
+
+            var mob = message.Actor;
+            if (!CanUse(mob, uid))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
+                return;
+            }
+            //dialogo
+            _quickDialog.OpenDialog(actor.PlayerSession, Loc.GetString("comms-console-menu-dialog-centcom-tittle"), Loc.GetString("comms-console-menu-dialog-centcom-message"), (string centMessage) =>
+            {
+                if (!centMessage.Equals("")) //se nao tiver vazio
+                {
+                    _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: Enviou mensagem para CENTCOM '{centMessage}'"); // mensagem de admin (muito uim usar pray)
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has sent a message to centcom, message: '{centMessage}'."); //log
+                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+                    return;
+                } //pop up avisando q ta vazio
+                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+            });
+        }
+
+        private void OnMartialMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleMartialButtonMessage message)
+        {
+            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+                return;
+
+            var mob = message.Actor;
+            if (!CanUse(mob, uid))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
+                return;
+            }
+            //dialogo
+            _quickDialog.OpenDialog(actor.PlayerSession, Loc.GetString("comms-console-menu-dialog-martial-tittle"), Loc.GetString("comms-console-menu-dialog-martial-message"), (string centMessage) =>
+            {
+                if (!centMessage.Equals(""))
+                {
+                    _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: requsitou a lei marcial. Motivo: '{centMessage}'");
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has requested martial law, reason: '{centMessage}'.");
+                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+
+                    SoundSpecifier sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+
+                    Loc.TryGetString(comp.Title, out var title);
+                    title ??= comp.Title;
+                    _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("comns-console-request-send-announce"), title,
+                                                            false, sound, colorOverride: comp.Color);
+                    return;
+                }
+                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+            });
+        }
+
+        //função de alterar acesso de emergencia
+        private void OnToggleEmergencyMaintMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleToggleEmergencyMaintMessage message)
+        {
+            if ((_timing.CurTime.TotalSeconds - comp.ToggleAcessTimer) < comp.ToggleAcessDelay) //coldown
+                return;
+
+            var mob = message.Actor;
+            if (!CanUse(mob, uid))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
+                return;
+            }
+            _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has toggle the station maintance access."); //bota log de admin em ingles por que sou muito estadunidense slk
+
+            _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("comms-console-announcement-content-maint"), Loc.GetString("comms-console-announcement-title-station"), announcementSound: comp.Sound, colorOverride: comp.Color);
+
+            // itera as portas DO PROTOTYPE de maint da estação
+            var query = EntityQueryEnumerator<DoorComponent>();
+            while (query.MoveNext(out var doorUid, out var component))
+            {
+                if (!TryGetNetEntity(doorUid, out var netEntity)
+                    || !TryGetEntityData(netEntity.Value, out var entityUid, out var entityData)
+                    || !_maintDoorPrototypeList.Contains(entityData.EntityPrototype!.ID)
+                    || !TryComp<AirlockComponent>(doorUid, out var airlock))
+                    continue;
+
+                var ent = new Entity<AirlockComponent>(doorUid, airlock);
+
+                _airlock.SetEmergencyAccess(ent, !airlock.EmergencyAccess);
+            }
+            comp.ToggleAcessTimer = _timing.CurTime.TotalSeconds;
+        }
         private void OnCallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCallEmergencyShuttleMessage message)
         {
-            if (!CanCallOrRecall(comp))
+            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor)
+                || !CanCallOrRecall(comp))
                 return;
 
             var mob = message.Actor;
@@ -367,8 +487,18 @@ namespace Content.Server.Communications
                 return;
             }
 
-            _roundEndSystem.RequestRoundEnd(uid);
-            _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has called the shuttle.");
+            // dialogo
+            _quickDialog.OpenDialog(actor.PlayerSession, Loc.GetString("comms-console-menu-dialog-shuttle-tittle"), Loc.GetString("comms-console-menu-dialog-shuttle-message"), (string reason) =>
+            {
+                if (!reason.Equals(""))
+                {
+                    _roundEndSystem.RequestRoundEnd(uid, text: "round-end-system-shuttle-called-announcement-with-reason", name: "comms-console-announcement-title-station", hasReason: true, reason: reason);
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has called the shuttle with reason '{reason}'.");
+                    return;
+                }
+                _roundEndSystem.RequestRoundEnd(uid, name: "comms-console-announcement-title-station");
+                _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has called the shuttle.");
+            });
         }
 
         private void OnRecallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleRecallEmergencyShuttleMessage message)
@@ -386,6 +516,8 @@ namespace Content.Server.Communications
             _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(message.Actor):player} has recalled the shuttle.");
         }
     }
+
+
 
     /// <summary>
     /// Raised on announcement

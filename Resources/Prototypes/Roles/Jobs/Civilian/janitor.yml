@@ -90,6 +90,11 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
+  alternateTitles:
+  - JanitorTitleSteward
+  - JanitorTitleCleaner
+  - JanitorTitleTech
+
 
 - type: startingGear
   id: JanitorGear
@@ -122,3 +127,16 @@
     neck: ClothingNeckScarfStripedPurple
     outerClothing: ClothingOuterWinterJani
     gloves: ClothingHandsGlovesJanitor
+
+
+- type: jobAlternateTitle
+  id: JanitorTitleSteward
+  name: job-name-alt-janitor-steward
+
+- type: jobAlternateTitle
+  id: JanitorTitleCleaner
+  name: job-name-alt-janitor-cleaner
+
+- type: jobAlternateTitle
+  id: JanitorTitleTech
+  name: job-name-alt-janitor-tech

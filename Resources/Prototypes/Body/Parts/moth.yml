@@ -1,8 +1,12 @@
 # SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Will Oliver <willyangame76@gmail.com>
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -94,6 +98,11 @@
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
     state: "l_arm"
+  - type: BodyPart  # Gabystation - marioposas podem voar
+    onAdd:
+    - type: Flight
+      staminaDrainRate: 11.7
+      speedModifier: 1.25 
 
 - type: entity
   id: RightArmMoth
@@ -103,6 +112,11 @@
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
     state: "r_arm"
+  - type: BodyPart  # Gabystation - marioposas podem voar
+    onAdd:
+    - type: Flight
+      staminaDrainRate: 11.7
+      speedModifier: 1.25 
 
 - type: entity
   id: LeftHandMoth

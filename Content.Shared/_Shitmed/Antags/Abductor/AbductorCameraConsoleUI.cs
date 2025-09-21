@@ -1,4 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 //
@@ -13,7 +15,7 @@ namespace Content.Shared._Shitmed.Antags.Abductor;
 [Serializable, NetSerializable]
 public sealed class AbductorCameraConsoleBuiState : BoundUserInterfaceState
 {
-    public required Dictionary<int, StationBeacons> Stations { get; init; }
+    public required Dictionary<NetEntity, StationBeacons> Stations { get; init; }
 }
 
 [Serializable, NetSerializable]
@@ -32,10 +34,12 @@ public sealed class AbductorConsoleBuiState : BoundUserInterfaceState
 [Serializable, NetSerializable]
 public sealed class StationBeacons
 {
-    public required int StationId { get; init; }
+    public required NetEntity StationId { get; init; }
     public required string Name { get; init; }
     public required List<NavMapBeacon> Beacons { get; init; }
+    public required bool IsEnabled { get; init; }
 }
+
 [Serializable, NetSerializable]
 public sealed class AbductorBeaconChosenBuiMsg : BoundUserInterfaceMessage
 {

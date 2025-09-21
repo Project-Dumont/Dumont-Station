@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <lucasaugustooliveira3000@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: OrganDaengatiEyes
+  parent: OrganHumanEyes
+  name: daengati eyes
+  description: "Eyes similar to those of a feline, with vertical pupils."
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Daengati/organs.rsi
+    layers:
+      - state: eyeball-l
+      - state: eyeball-r
+  - type: Organ
+    onAdd:
+    - type: NightVision # Goobstation - Nightvision
+      color: "#9c452a" #A cor parece estar forte demais, não faço ideia pra qual colocar
+      activateSound: null
+      deactivateSound: null

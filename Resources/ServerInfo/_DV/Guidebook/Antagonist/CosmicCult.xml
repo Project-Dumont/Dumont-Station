@@ -1,76 +1,76 @@
 <Document>
-  # The Cosmic Cult
+  # O Culto Cósmico
 
   <Box>
-    [color=#999999][italic]"A revelation beyond compare. An end to cyclic, sisyphean suffering."[/italic][/color]
+    [color=#999999][italic]"Uma revelação sem igual. Um fim para o sofrimento cíclico e sisifiano."[/italic][/color]
   </Box>
   <Box>
-    [color=#999999][italic]"A gentle curtain call."[/italic][/color]
+    [color=#999999][italic]"Uma cortina suave se fecha."[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="CosmicGlyphTruth" Caption=""/>
   </Box>
 
-  Otherworldly knowledge floods your mind! Welcome to the [color=#4cabb3]Cosmic Cult[/color], a group conversion antagonist that has set its sights on the end of all things.
+  Conhecimento de outro mundo invade sua mente! Bem-vindo ao [color=#4cabb3]Culto Cósmico[/color], um antagonista de conversão em grupo que tem como objetivo o fim de todas as coisas.
 
-  Use [color=#4cabb3]:a[/color] to communicate with fellow cultists through the [color=#4cabb3]Astral Murmur[/color].
+  Use [color=#4cabb3]:a[/color] para se comunicar com outros cultistas através do [color=#4cabb3]Murmúrio Astral[/color].
 
-  ## Objectives
-  - [color=#4cabb3][bold]Siphon Entropy[/bold][/color]  - Collectively siphon a certain amount of Entropy from the crew. The more entropy you siphon, the more you can empower the Monument!
-  - [color=#4cabb3][bold]Empower The Monument[/bold][/color] - Ensure that the Monument is brought to full power. The more you empower The Monument, the more power the cult gains access to.
-  - [color=#4cabb3][bold]Usher In The End[/bold][/color] - Once the Monument is at full power, complete the final ritual to beckon the Unknown and destroy the station.
+  ## Objetivos
+  - [color=#4cabb3][bold]Drenar Entropia[/bold][/color]  - Drene coletivamente uma certa quantidade de Entropia da tripulação. Quanto mais entropia você drenar, mais poderá energizar o Monólito!
+  - [color=#4cabb3][bold]Energizar o Monólito[/bold][/color] - Certifique-se de que o Monólito seja levado ao poder máximo. Quanto mais você energizar o Monólito, mais poder o culto terá acesso.
+  - [color=#4cabb3][bold]Traga o Fim[/bold][/color] - Quando o Monólito estiver totalmente energizado, complete o ritual final para convocar o Desconhecido e destruir a estação.
 
-  Progress towards objectives is shared by the entire cult.
+  O progresso dos objetivos é compartilhado por todo o culto.
 
-  Crewmembers must be alive for you to [color=#4cabb3]Siphon Entropy[/color] from them, and converting crewmembers will bolster your cult's ranks, making it easier to collect entropy. For this reason, it is often in your best interests to ensure the crew is kept [italic]alive[/italic] - at least for as long as is relevant to your goals.
+  Os tripulantes devem estar vivos para que você possa [color=#4cabb3]Drenar Entropia[/color] deles, e converter tripulantes aumentará as fileiras do seu culto, facilitando a coleta de entropia. Por isso, muitas vezes é do seu interesse manter a tripulação [italic]viva[/italic] — pelo menos enquanto for relevante para seus objetivos.
 
-  ## Entropy
+  ## Entropia
   <Box>
     <GuideEntityEmbed Entity="MaterialCosmicCultEntropy1" Caption=""/>
-    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy3" Caption="Motes of Entropy"/>
+    <GuideEntityEmbed Entity="MaterialCosmicCultEntropy3" Caption="Fragmentos de Entropia"/>
     <GuideEntityEmbed Entity="MaterialCosmicCultEntropy5" Caption=""/>
   </Box>
 
-  All cultists start with two abilities, or [color=#4cabb3][bold]Influences[/bold][/color] - one of which is [italic][color=#4cabb3]Siphon Entropy[/color][/italic]. This is your bread and butter as a cosmic cultist, and you'll want to use it as often as possible.
+  Todos os cultistas começam com duas habilidades, ou [color=#4cabb3][bold]Influências[/bold][/color] — uma delas é [italic][color=#4cabb3]Drenar Entropia[/color][/italic]. Esta é sua principal ferramenta como cultista cósmico, e você deve usá-la sempre que possível.
 
-  Using Siphon Entropy on an unsuspecting crewmember will stealthily award you [color=#4cabb3]Entropy[/color]. This will cause a small a portion of the crewmember's health to decay over time.
+  Usar Drenar Entropia em um tripulante desavisado concederá a você [color=#4cabb3]Entropia[/color] de forma furtiva. Isso fará com que uma pequena parte da saúde do tripulante se deteriore ao longo do tempo.
 
-  You can hold up to 14 Motes of Entropy, and approaching The Monument will automatically deposit all Entropy you posess.
+  Você pode armazenar até 14 Fragmentos de Entropia, e ao se aproximar do Monólito, toda a Entropia que você possui será depositada automaticamente.
 
-  [textlink="For more on the Monument, click here." link="CosmicCultMonument"]
+  [textlink="Para saber mais sobre o Monólito, clique aqui." link="CosmicCultMonument"]
 
-  [textlink="For more on Influences, click here." link="CosmicCultInfluences"]
+  [textlink="Para saber mais sobre Influências, clique aqui." link="CosmicCultInfluences"]
 
   <Box>
-    <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="A vacuous spire"/>
+    <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="Uma torre vazia"/>
   </Box>
 
-  If the cult is successful in empowering the Monument, they gain the ability to make [color=#4cabb3]Vacuous Spires[/color]. These can be made by transmuting a Portable Scrubber at a [color=#4cabb3]Glyph[/color].
+  Se o culto for bem-sucedido em energizar o Monólito, eles ganham a habilidade de criar [color=#4cabb3]Torres Vazias[/color]. Elas podem ser feitas transmutando um Purificador Portátil em um [color=#4cabb3]Glifo[/color].
 
-  When anchored in place, a vacuous spire rapidly devours the surrounding atmosphere! This process causes [color=#4cabb3]Motes of Entropy[/color] to condense from a spire's surface, acting as a powerful lategame source of entropy.
+  Quando ancorada, uma torre vazia devora rapidamente a atmosfera ao redor! Esse processo faz com que [color=#4cabb3]Fragmentos de Entropia[/color] se condensem na superfície da torre, servindo como uma poderosa fonte de entropia no final do jogo.
 
-  ## Conversion
+  ## Conversão
   <Box>
-    <GuideEntityEmbed Entity="CosmicGlyphKnowledge" Caption="A Glyph of Knowledge"/>
+    <GuideEntityEmbed Entity="CosmicGlyphKnowledge" Caption="Um Glifo do Conhecimento"/>
   </Box>
 
-  Once the Monument has been constructed, you can begin converting crewmembers into cultists. To do this, you will need to use the monument to scribe an appropriate [color=#4cabb3]Glyph[/color], and interact with the glyph while a crewmember is standing over it. Glyphs are visible to non-cultists, so be careful!
+  Assim que o Monólito for construído, você pode começar a converter tripulantes em cultistas. Para isso, será necessário usar o monólito para escrever um [color=#4cabb3]Glifo[/color] apropriado e interagir com o glifo enquanto um tripulante estiver sobre ele. Glifos são visíveis para não-cultistas, então tenha cuidado!
 
-  Any chaplains or crewmembers with a mindshield cannot be converted using a Glyph of Knowledge. Once the Monument is fully empowered, the Glyph of Truth can be used to convert these crewmembers.
+  Capelães ou tripulantes com escudo mental não podem ser convertidos usando o Glifo do Conhecimento. Quando o Monólito estiver totalmente energizado, o Glifo da Verdade poderá ser usado para converter esses tripulantes.
 
-  You will need a certain amount of crewmembers to be present for conversion to succeed. The number required can be checked by accessing the Monument. [italic]If not enough cultists are present, conversion will fail, and your cult may be exposed.[/italic]
+  Será necessário um certo número de tripulantes presentes para que a conversão seja bem-sucedida. O número necessário pode ser verificado acessando o Monólito. [italic]Se não houver cultistas suficientes presentes, a conversão falhará e seu culto poderá ser exposto.[/italic]
 
-  [textlink="For information on deconversion, click here." link="CosmicCultDeconversion"]
+  [textlink="Para informações sobre deconversão, clique aqui." link="CosmicCultDeconversion"]
 
-  ## Malign Rifts
+  ## Fendas Malignas
   <Box>
     <GuideEntityEmbed Entity="CosmicMalignRift" Caption=""/>
   </Box>
-  As your cult progresses, [color=#4cabb3]Malign Rifts[/color] will begin to spawn throughout the surrounding environment. These rifts in realspace bleed unstable astral power, and should be located as soon as possible!
+  Conforme seu culto progride, [color=#4cabb3]Fendas Malignas[/color] começarão a surgir pelo ambiente. Essas fendas no espaço real liberam energia astral instável e devem ser localizadas o quanto antes!
 
-  Cultists may stealthily [color=#4cabb3]absorb[/color] a Malign Rift by interacting with it.
+  Cultistas podem furtivamente [color=#4cabb3]absorver[/color] uma Fenda Maligna interagindo com ela.
 
-  Successful absorbtion of a Malign Rift will [bold]permanently[/bold] empower the cultist doing so, increasing the strength of all the [color=#4cabb3]Influences[/color] they possess, and doubling the [color=#4cabb3]Entropy[/color] they gain from siphoning crewmembers. Empowered cultists also no longer need to breathe, and are immune to the vaccuum of space.
+  Absorver com sucesso uma Fenda Maligna irá [bold]permanentemente[/bold] fortalecer o cultista que o fizer, aumentando a força de todas as [color=#4cabb3]Influências[/color] que possui e dobrando a [color=#4cabb3]Entropia[/color] obtida ao drenar tripulantes. Cultistas energizados também não precisam mais respirar e são imunes ao vácuo do espaço.
 
-  Malign Rifts can be purged by interacting with them using a bible.
+  Fendas Malignas podem ser purificadas interagindo com elas usando uma bíblia.
 </Document>

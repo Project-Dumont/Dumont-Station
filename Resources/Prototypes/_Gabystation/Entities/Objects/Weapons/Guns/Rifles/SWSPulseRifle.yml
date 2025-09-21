@@ -1,0 +1,74 @@
+- type: Tag
+  id: MagazineSWS
+
+- type: Tag
+  id: CartridgeSWS
+
+- type: entity
+  name: SWS Motorized Pulse Rifle
+  parent: BaseItem
+  id: WeaponSWSRifle
+  description: A standard-issue ballistic firearm which can be loaded with grenades or proximity mines for riot conditions, or personalized for faster reloading.
+  components:
+  - type: Item
+    size: Huge
+    shape: # Goobstation
+    - 0,0,4,2
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Rifles/SWS.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Gabystation/Objects/Weapons/Guns/Rifles/SWS.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    cameraRecoilScalar: 0.4
+    projectileSpeed: 40
+    fireRate: 9
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+      - Burst
+    soundGunshot:
+      collection: SWSshots
+      params:
+        volume: -5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg # TODO: arrumar audio original
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineSWS
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg # TODO: arrumar audio original
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineSWS
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeSWS
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeSWS
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000

@@ -1,0 +1,20 @@
+- type: entity
+  id: CrateMinerFlatpackO2
+  parent: CrateEngineeringSecure
+  name: caixa do minerador de O2
+  description: Uma caixa com minerador bluespace de oxigenio prontro para uso!
+  components:
+  - type: StorageFill
+    contents:
+    - id: MinerFlatpackO2
+
+- type: entity
+  id: CrateMinerFlatpackN2
+  parent: CrateEngineeringSecure
+  name: caixa do minerador de N2
+  description: Uma caixa com minerador bluespace de nitrogenio prontro para uso!
+  components:
+  - type: StorageFill
+    contents:
+    - id: MinerFlatpackN2
+    

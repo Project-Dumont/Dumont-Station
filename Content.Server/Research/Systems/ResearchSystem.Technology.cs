@@ -55,7 +55,6 @@ public sealed partial class ResearchSystem
         if (!Resolve(primaryUid, ref primaryDb) || !Resolve(otherUid, ref otherDb))
             return;
 
-        primaryDb.MainDiscipline = otherDb.MainDiscipline;
         primaryDb.CurrentTechnologyCards = otherDb.CurrentTechnologyCards;
         primaryDb.SupportedDisciplines = otherDb.SupportedDisciplines;
         primaryDb.UnlockedTechnologies = otherDb.UnlockedTechnologies;
@@ -201,7 +200,6 @@ public sealed partial class ResearchSystem
     {
         if (args.Server != null)
             return;
-        component.MainDiscipline = null;
         component.CurrentTechnologyCards = new List<string>();
         component.SupportedDisciplines = new List<string>();
         component.UnlockedTechnologies = new List<string>();

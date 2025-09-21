@@ -463,6 +463,18 @@
   - type: Clothing
     sprite: Clothing/Head/Misc/hairflower.rsi
 
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatRobocop
+  name: robot cop head
+  description: "A fantastic human with titanic powers! - M. A."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/robocophead.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/robocophead.rsi
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadPerformerWig

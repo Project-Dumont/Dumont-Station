@@ -72,6 +72,8 @@
         amount: 2
       - id: RagItem
         amount: 2
+      - id: SocoIngles #Gabystation
+        amount: 1
 
 #- type: entity
 #  id: LockerFormalFilled

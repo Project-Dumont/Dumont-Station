@@ -10,7 +10,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Revolutionaries
+  # Revolucionários
 
   <Box>
     [color=#999999][italic]"Viva la revolución!!"[/italic][/color]
@@ -19,19 +19,22 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
   </Box>
 
-  Revolutionaries are conversion antagonists sponsored by the [color=#ff0000]Syndicate[/color] who are tasked with taking control of the station. They have no fancy gimmicks or cheap tricks, they only have a cause and strength in numbers.
+  Os revolucionários são antagonistas de conversão patrocinados pelo [color=#ff0000]Sindicato[/color], cujo objetivo é tomar o controle da estação. Eles não têm truques extravagantes ou artimanhas baratas; possuem apenas uma causa e força em números.
+
 
 <Box>
   <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
 </Box>
 
-  [color=#5e9cff]Head Revolutionaries[/color] are chosen at the start of the shift and are tasked with taking over the station by killing, exiling or cuffing all of the Command staff. Head Revolutionaries will be given a [color=#a4885c]Revolutionary Manifesto[/color] to aid them.
-  Your objective is [bold]not to destroy the station[/bold], but [italic]to take it over[/italic], so try to minimize damage where possible.
+  ## Objetivos
+  Você deve algemar, matar ou exilar todos os membros da [textlink="Equipe de Comando" link="Command"] na estação, em qualquer ordem.
 
-  [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=red]Revolutionaries[/color] will de-convert if this happens.
+  Seu objetivo [bold]não é destruir a estação[/bold], mas sim [italic]tomá-la[/italic], portanto, tente minimizar os danos sempre que possível.
 
-  ## Headrevs & Conversion
-  [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are chosen at the start of the shift and begin with a [color=cyan]flash[/color] and a pair of [color=cyan]sunglasses[/color].
+  [bold]A revolução falhará[/bold] se todos os [bold][color=#5e9cff]Revolucionários Chefes[/color][/bold] morrerem, e todos os [color=red]Revolucionários[/color] serão desconvertidos se isso acontecer.
+
+  ## Revolucionários Chefes & Conversão
+  Os [bold][color=#5e9cff]Revolucionários Chefes[/color][/bold] são escolhidos no início do turno e começam com uma [color=cyan]lanterna de luz[/color] e um par de [color=cyan]óculos escuros[/color].
 
   <Box>
   <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
@@ -50,9 +53,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already, [bold]however they can be removed using an empty implanter, obtainable from the Medical department's MedFab.[/bold]
 
+  <Box>
+    <GuideEntityEmbed Entity="MindShieldImplanter"/>
+  </Box>
 
+  ## Revolucionário
+  Um [color=red]Revolucionário[/color] é um membro da tripulação convertido por um [bold][color=#5e9cff]Revolucionário Chefe[/color][/bold].
 
-  ## Revolutionary
-  A [color=#ff0000]Revolutionary[/color] is the result of being converted by a [color=#5e9cff]Head Revolutionary[/color]. Revolutionaries are underlings of the Head Revolutionaries and should follow orders given by them and prioritize their well-being over anything else, because if they die, you will lose.
-  Keep in mind that you can't convert others as a regular revolutionary, only your boss can do that.
+  [bold][color=red]Revolucionários[/color] não podem converter pessoas,[/bold] mas são mais do que capazes de realizar trabalhos sujos e cumprir ordens.
 </Document>

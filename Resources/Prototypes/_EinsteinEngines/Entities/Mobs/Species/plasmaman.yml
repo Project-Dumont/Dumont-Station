@@ -30,6 +30,8 @@
       visible: false
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Gaby station
+    - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Gaby station
     - map: ["jumpsuit"] # jumpsuit after foot to show envirosuit shoes
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]

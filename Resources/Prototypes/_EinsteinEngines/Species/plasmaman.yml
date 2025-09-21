@@ -22,6 +22,8 @@
   sprites:
     Head: MobPlasmamanHead
     Face: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking # Gaby change
+    Undershirt: MobHumanoidAnyMarking # Gaby change
     Chest: MobPlasmamanChest
     Groin: MobPlasmamanGroin
     Eyes: MobPlasmamanEyes
@@ -62,6 +64,14 @@
     Arms:
       points: 2
       required: false
+    # Begin DeltaV changes.
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    # End DeltaV changes
 
 - type: humanoidBaseSprite
   id: MobPlasmamanHead

@@ -10,7 +10,9 @@
 # SPDX-FileCopyrightText: 2025 Ark <189933909+ark1368@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Froffy025 <78222136+Froffy025@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
@@ -23,7 +25,7 @@
   id: GauzeLefteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -37,7 +39,7 @@
   id: GauzeLefteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -51,7 +53,7 @@
   id: GauzeRighteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -65,7 +67,7 @@
   id: GauzeRighteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -79,7 +81,7 @@
   id: GauzeBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Harpy, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Harpy, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Harpy, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Harpy, Vulpkanin, Rodentia; Goob - Tajaran
   coloring:
     default:
       type:
@@ -93,7 +95,7 @@
   id: GauzeShoulder
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -107,7 +109,7 @@
   id: GauzeStomach
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -121,7 +123,7 @@
   id: GauzeUpperArmRight
   bodyPart: RArm
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -135,7 +137,7 @@
   id: GauzeLowerArmRight
   bodyPart: RArm, RHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -149,7 +151,7 @@
   id: GauzeLeftArm
   bodyPart: LArm, LHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -163,7 +165,7 @@
   id: GauzeLowerLegLeft
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -177,7 +179,7 @@
   id: GauzeUpperLegLeft
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -191,7 +193,7 @@
   id: GauzeUpperLegRight
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -205,7 +207,7 @@
   id: GauzeLowerLegRight
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -219,7 +221,7 @@
   id: GauzeBoxerWrapRight
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -233,7 +235,7 @@
   id: GauzeBoxerWrapLeft
   bodyPart: LHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Vulpkanin, Rodentia, Tajaran, Daengati] # Delta V - Felinid, Vulpkanin, Rodentia; Goob - Tajaran; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -247,7 +249,7 @@
   id: GauzeHead
   bodyPart: Head
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Moth, Chitinid] # Delta V - Chitinid
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Moth, Chitinid, Daengati] # Delta V - Chitinid
   coloring:
     default:
       type:

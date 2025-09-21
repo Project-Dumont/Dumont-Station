@@ -1,0 +1,10 @@
+﻿department-Cargo-description = Complete pedidos, ganhe dinheiro e encomende suprimentos para a tripulação.
+department-Civilian-description = Cuide da sanidade da tripulação mantendo ela bem alimentada e a estação limpa e organizada.
+department-Command-description = Gerencie a tripulação para que o trabalho seja mais produtivo e divertido.
+department-CentralCommand-description = Mantenha a produtividade da estação alta e os acionistas contentes.
+department-Engineering-description = Mantenha a estrutura, energia e atmosféra da estação.
+department-Medical-description = Cuide da saúde e bem estar da tripulação.
+department-Security-description = Mantenha a paz e tranquilidade da estação.
+department-Science-description = Pesquise artefatos e anomalias alienígenas para desbloquear ferramentas divertidas para tripulação.
+department-Silicon-description = Obedeça suas leis e sirva a tripulação.
+department-Specific-description = Trabalhos que não tem em todas as estações.

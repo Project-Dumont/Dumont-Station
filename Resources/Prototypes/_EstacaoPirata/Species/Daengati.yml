@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2024 Lary <89530982+LaryNevesPR@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: species
+  id: Daengati
+  name: species-name-daengati
+  roundStart: true
+  prototype: MobDaengati #Alterar
+  dollPrototype: MobDaengatiDummy #Alterar
+  markingLimits: MobDaengatiMarkingLimits
+  sprites: MobHumanSprites
+  skinColoration: Hues
+  maleFirstNames: NamesOniFirstMale
+  femaleFirstNames: NamesOniFirstFemale
+  lastNames: NamesOniLast
+
+- type: markingPoints
+  id: MobDaengatiMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ OniHornPisces ]
+    HeadSide:
+      points: 1
+      required: true
+      defaultMarkings: [ PointyEarsStandard ]
+    Snout:
+      points: 2
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 6
+      required: false
+    Arms:
+      points: 6
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ DaengatiTail ]
+    Overlay:
+      points: 2
+      required: false

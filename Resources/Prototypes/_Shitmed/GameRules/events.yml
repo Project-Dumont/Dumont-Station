@@ -21,13 +21,14 @@
   id: LoneAbductorSpawn
   components:
   - type: StationEvent
-    earliestStart: 15
+    earliestStart: 45
     reoccurrenceDelay: 45
-    weight: 5 # Goobstation - 7.5 -> 5
-    minimumPlayers: 10
+    weight: 3.5 # Goobstation - 3.5 # menos abductor por favor -> 5 -> 7.5
+    minimumPlayers: 18 # menos abductor por favor
     duration: 1
+    maxOccurrences: 2 # Gabystation - menos abductors
     chaos:
-      Hostile: 75
+      Hostile: 150 # menos abductor por favor
       Medical: 75
     eventType: HostilesSpawn
   - type: GameRule
@@ -120,15 +121,16 @@
   parent: BaseGameRule
   id: DuoAbductorSpawn
   components:
-  - type: StationEvent
-    earliestStart: 15
+  - type: StationEvent # Gabystation - Less abductors
+    earliestStart: 60
     reoccurrenceDelay: 45
-    weight: 4.5 # Goobstation - 7.5 -> 4.5
-    minimumPlayers: 20
+    weight: 3.5 # Gabystation - 7.5 -> 4.5 -> 3.5
+    minimumPlayers: 25
     duration: 1
+    maxOccurrences: 1
     chaos:
-      Hostile: 150
-      Medical: 150
+      Hostile: 300
+      Medical: 250
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 450

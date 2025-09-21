@@ -1,11 +1,14 @@
 // SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
@@ -48,6 +51,8 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared._Gabystation.CCVar;
+using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -59,6 +64,11 @@ public abstract partial class SharedSurgerySystem
     private EntityQuery<SurgeryToolComponent> _toolQuery;
 
     private readonly List<EntityUid> _nextStepList = new();
+
+    private float _sepsisEquipmentPenalty;
+    private float _sepsisLocationPenalty;
+    private float _sepsisCrowdingPenalty;
+    private float _crowdingCheckRange;
 
     private void InitializeSteps()
     {
@@ -96,6 +106,11 @@ public abstract partial class SharedSurgerySystem
         {
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
         });
+
+        _config.OnValueChanged(GabyCVars.SurgerySepsisEquipmentPenalty, value => _sepsisEquipmentPenalty = value, true);
+        _config.OnValueChanged(GabyCVars.SurgerySepsisLocationPenalty, value => _sepsisLocationPenalty = value, true);
+        _config.OnValueChanged(GabyCVars.SurgerySepsisCrowdingPenalty, value => _sepsisCrowdingPenalty = value, true);
+        _config.OnValueChanged(GabyCVars.SurgeryCrowdingCheckRange, value => _crowdingCheckRange = value, true);
     }
 
     private void SubSurgery<TComp>(EntityEventRefHandler<TComp, SurgeryStepEvent> onStep,
@@ -701,22 +716,51 @@ public abstract partial class SharedSurgerySystem
         return group.Any(damageType => damageableComp.Damage.DamageDict.TryGetValue(damageType, out var value) && value > 0);
 
     }
+
     private void HandleSanitization(SurgeryStepEvent args)
     {
-        if (_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
-            && _inventory.TryGetSlotEntity(args.User, "mask", out var _))
+        // If the (patient is a "patient" && patient is immune to sepsis), then theres nothing to do.
+        if (TryComp<SurgeryTargetComponent>(args.Body, out var surgeryTargetComponent) && surgeryTargetComponent.SepsisImmune)
             return;
 
-        if (HasComp<SanitizedComponent>(args.User))
+        var sepsis = new DamageSpecifier();
+        var poisonPrototype = _prototypes.Index<DamageTypePrototype>("Poison");
+
+        if (!IsSanitazed(args.User))
+            sepsis += new DamageSpecifier(poisonPrototype, _sepsisEquipmentPenalty);
+
+        // Gaby Station -> Enshittificar Cirurgias e Cia start
+        // Check if the (patient is buckled) && (patient is buckled to an operating table).
+        if (!TryComp<BuckleComponent>(args.Body, out var buckleComponent)
+            || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
+            sepsis += new DamageSpecifier(poisonPrototype, _sepsisLocationPenalty);
+
+        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _crowdingCheckRange)
+            .Where(ent =>
+                _mobState.IsAlive(ent)
+                && !HasComp<BorgChassisComponent>(ent)
+                && !IsSanitazed(ent)
+                && _interaction.InRangeUnobstructed(args.Body, ent, -1)
+            )
+            .Count();
+
+        if (unsanitazedMobCount > 0)
+            sepsis += new DamageSpecifier(poisonPrototype, _sepsisCrowdingPenalty * unsanitazedMobCount);
+        // Gaby Station -> Enshittificar Cirurgias e Cia end
+
+        // If there is (no damage), theres nothing to do.
+        if (!sepsis.DamageDict.Any())
             return;
 
-        if (TryComp<SurgeryTargetComponent>(args.Body, out var surgeryTargetComponent) &&
-            surgeryTargetComponent.SepsisImmune)
-            return;
-
-        var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
+
+        bool IsSanitazed(EntityUid ent)
+        {
+            return HasComp<SanitizedComponent>(ent)
+                || _inventory.TryGetSlotEntity(ent, "gloves", out var _)
+                && _inventory.TryGetSlotEntity(ent, "mask", out var _);
+        }
     }
 
     private bool TryToolAudio(Entity<SurgeryStepComponent> ent, SurgeryStepEvent args)

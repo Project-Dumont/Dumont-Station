@@ -1,0 +1,15 @@
+disease-cured = Você se sente um pouco melhor.
+disease-sick-generic = Você se sente doente.
+disease-sneeze = {CAPITALIZE(ARTIGO-O($person))} {$person} espirra.
+disease-cough = {CAPITALIZE(ARTIGO-O($person))} {$person} tosse.
+disease-screech = {CAPITALIZE(ARTIGO-O($person))} {$person} guincha.
+disease-yawn = {CAPITALIZE(ARTIGO-O($person))} {$person} boceja.
+disease-meow = {CAPITALIZE(ARTIGO-O($person))} {$person} mia.
+disease-hiss = {CAPITALIZE(ARTIGO-O($person))} {$person} chia.
+disease-beep= {CAPITALIZE(ARTIGO-O($person))} {$person} faz bip.
+disease-eaten-inside = Você se sente devorado por dentro.
+disease-banana-compulsion = Você quer muito comer bananas.
+disease-beat-chest-compulsion = {CAPITALIZE(ARTIGO-O($person))} {$person} bate em seu peito.
+disease-vomit = {CAPITALIZE(ARTIGO-O($person))} {$person} vomita.
+disease-think = Você não consegue pensar direito.
+disease-polymorph = Você sente seu corpo se retorcer e mudar de forma!

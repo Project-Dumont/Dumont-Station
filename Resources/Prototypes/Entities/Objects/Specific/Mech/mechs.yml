@@ -56,10 +56,19 @@
     - Ammonia
     - NitrousOxide
     - Frezon
-    - BZ
-    - Healium
-    - Nitrium
     #- Helium3 TODO: fusion
+    # <Goobstation> - healium not included for ADVANCED mech trolling
+    - BZ
+    - Nitrium
+    - Hydrogen
+    - HyperNoblium
+    - ProtoNitrate
+    - Zauker
+    - Halon
+    - Helium
+    - AntiNoblium
+    #- Helium3 TODO: fusion
+    # </Goobstation>
     # remove everything except oxygen to maintain oxygen ratio
     overflowGases:
     - Nitrogen
@@ -70,11 +79,20 @@
     - Ammonia
     - NitrousOxide
     - Frezon
+    #- Helium3 TODO: fusion
+    # <Goobstation>
     - BZ
     - Healium
     - Nitrium
     - Pluoxium
-    #- Helium3 TODO: fusion
+    - Hydrogen
+    - HyperNoblium
+    - ProtoNitrate
+    - Zauker
+    - Halon
+    - Helium
+    - AntiNoblium
+    # </Goobstation>
   - type: AirIntake
   # for intake and filter to work
   - type: AtmosDevice
@@ -104,7 +122,7 @@
   - type: InteractionOutline
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 2
+    baseSprintSpeed: 1 #Goobedit
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -224,7 +242,7 @@
         Structural: 30 # Goobstation - Make ripley punch hard
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.25
-    baseSprintSpeed: 3.6
+    baseSprintSpeed: 2.25 #Goobedit
 
 - type: entity
   id: MechRipleyBattery
@@ -254,6 +272,9 @@
       collection: FootstepClown
       params:
         variation: 0.17
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2.5 #Goobedit
   - type: Mech
     baseState: honker
     openState: honker-open
@@ -309,7 +330,7 @@
         Structural: 2
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.4
-    baseSprintSpeed: 3.7
+    baseSprintSpeed: 2.4 #Goobedit
 
 - type: entity
   parent: MechHamtr
@@ -372,7 +393,7 @@
         Structural: 2
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.25
-    baseSprintSpeed: 3.6
+    baseSprintSpeed: 2.25 #Goobedit
   - type: Access
     tags:
     - Maintenance

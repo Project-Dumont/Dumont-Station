@@ -1529,3 +1529,82 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCasualWhite
+  name: casual white jumpsuit
+  description: A loose worn white shirt with a grey pants, perfect for someone looking to relax.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    layers:
+    - state: icon-jumpsuit
+    - state: icon-shirt
+      color: "#ffffff"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-jumpsuit
+      - state: inhand-left-shirt
+        color: "#ffffff"
+      right:
+      - state: inhand-right-jumpsuit
+      - state: inhand-right-shirt
+        color: "#ffffff"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING-jumpsuit
+      - state: equipped-INNERCLOTHING-shirt
+        color: "#ffffff"
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitFormalSuit
+  name: formal suit
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/formal_suit.rsi
+    layers:
+    - state: icon-jumpsuit
+      color: "#101010"
+    - state: icon-shirt
+      color: "#ffffff"
+    - state: icon-coat
+      color: "#101010"
+    - state: icon-tie
+      color: "#eb0b00"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-jumpsuit
+        color: "#101010"
+      - state: inhand-left-shirt
+        color: "#ffffff"
+      - state: inhand-left-coat
+        color: "#101010"
+      - state: inhand-left-tie
+        color: "#eb0b00"
+      right:
+      - state: inhand-right-jumpsuit
+        color: "#101010"
+      - state: inhand-right-shirt
+        color: "#ffffff"
+      - state: inhand-right-coat
+        color: "#101010"
+      - state: inhand-right-tie
+        color: "#eb0b00"
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/formal_suit.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING-jumpsuit
+        color: "#101010"
+      - state: equipped-INNERCLOTHING-shirt
+        color: "#ffffff"
+      - state: equipped-INNERCLOTHING-coat
+        color: "#101010"
+      - state: equipped-INNERCLOTHING-tie
+        color: "#eb0b00"

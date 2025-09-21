@@ -1,0 +1,16 @@
+job-supervisors-centcom = aos funcionários da Central de Comando
+job-supervisors-captain = ao capitão
+job-supervisors-hop = ao chefe dos funcionários
+job-supervisors-hop-qm = ao intendente logístico e o chefe dos funcionários
+job-supervisors-hos = ao segurança chefe
+job-supervisors-ce = ao engenheiro chefe
+job-supervisors-cmo = ao médico chefe
+job-supervisors-rd = ao diretor de pesquisa
+job-supervisors-qm = ao intendente logístico
+job-supervisors-service = aos chefs de cozinha, botanistas, bartenders, e o chefe dos funcionários
+job-supervisors-engineering = aos engenheiros da estação, técnicos da atmosférica, e o engenheiro chefe
+job-supervisors-medicine = aos médicos, químicos, e o médico chefe
+job-supervisors-security = aos seguranças, o diretor de segurança, e o segurança chefe
+job-supervisors-science = aos cientistas, e ao diretor de pesquisa
+job-supervisors-hire = a qualquer um que te contrate
+job-supervisors-everyone = a todo mundo

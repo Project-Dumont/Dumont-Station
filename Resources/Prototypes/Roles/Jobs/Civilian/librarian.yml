@@ -75,6 +75,10 @@
   access:
   - Service
   - Maintenance
+  alternateTitles:
+  - LibrarianTitleWriter
+  - LibrarianTitleEvent
+  - LibrarianTitleTech
   special: # Goobstation start - Librarian should speak most languages.
   - !type:AddImplantSpecial
     implants: [ LibrarianTranslatorImplant ] # Goobstation end
@@ -101,3 +105,17 @@
     neck: ClothingNeckScarfStripedGreen
     outerClothing: ClothingOuterWinterColorGreen
     gloves: ClothingHandsGlovesColorBlack
+
+
+- type: jobAlternateTitle
+  id: LibrarianTitleWriter
+  name: job-name-alt-librarian-writer
+
+- type: jobAlternateTitle
+  id: LibrarianTitleEvent
+  name: job-name-alt-librarian-event
+
+- type: jobAlternateTitle
+  id: LibrarianTitleTech
+  name: job-name-alt-librarian-tech
+

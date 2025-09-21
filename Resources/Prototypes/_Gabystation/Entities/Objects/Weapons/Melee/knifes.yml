@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: KitchenKnife
+  id: GoldKitchenKnife
+  name: gold kitchen knife
+  description: Gold-plated, made only for the most refined chefs. A general-purpose chef’s knife, crafted by the Asters Merchant Guild.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Melee/gold_kitchen_knife.rsi
+    state: icon
+  - type: Item
+    sprite: _Gabystation/Objects/Weapons/Melee/gold_kitchen_knife.rsi
+
+- type: entity
+  parent: ButchCleaver
+  id: GoldButchCleaver
+  name: gold butcher's cleaver
+  description: Gold-plated, exclusive to the most refined chefs. A massive blade used for chopping and shredding meat.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Melee/gold_cleaver.rsi
+    state: butch
+  - type: Item
+    size: Normal
+    sprite: _Gabystation/Objects/Weapons/Melee/gold_cleaver.rsi

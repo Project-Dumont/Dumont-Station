@@ -1,5 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -11,8 +14,8 @@
   abstract: true
   parent: BaseStructure
   id: MonumentCosmicCultBase
-  name: The Monument
-  description: A great slab of unknowledge, only visible to those aware of it. Built of a thousand little nothings, its surface reflects a starless emptiness...
+  name: O monolito
+  description: Uma grande laje de desconhecimento, visível apenas para aqueles que têm consciência dela. Construída de mil pequenos nadas, sua superfície reflete um vazio sem estrelas...
   placement:
     mode: AlignTileAny
   components:

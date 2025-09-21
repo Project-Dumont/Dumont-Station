@@ -101,6 +101,7 @@
     - DoorBumpOpener
     - AnomalyHost
     - FelinidEmotes
+  - type: Wagging # DeltaV + Einstein-Engine
   #- type: FootPrints # WD EDIT
   - type: Consciousness
     cap: 160

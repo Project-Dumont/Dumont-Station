@@ -28,6 +28,7 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 SlamBamActionman <slambamactionman@gmail.com>
+// SPDX-FileCopyrightText: 2024 TheLife <nicholastoya@yahoo.com.br>
 // SPDX-FileCopyrightText: 2024 Wrexbe (Josh) <81056464+wrexbe@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 YuNii <benjamin@bhenrich.de>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
@@ -37,11 +38,13 @@
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 // SPDX-FileCopyrightText: 2024 wrexbe <wrexbe@protonmail.com>
 // SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
 // SPDX-FileCopyrightText: 2025 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
@@ -97,6 +100,8 @@ namespace Content.Client.Options.UI.Tabs
             new();
 
         private readonly List<Action> _deferCommands = new();
+
+        private string _searchText = "";
 
         private void HandleToggleUSQWERTYCheckbox(BaseButton.ButtonToggledEventArgs args)
         {
@@ -190,7 +195,42 @@ namespace Content.Client.Options.UI.Tabs
                 });
             };
 
+            SearchInput.OnTextChanged += _ =>
+            {
+                _searchText = SearchInput.Text.TrimStart();
+                PopulateOptions();
+            };
+
+            PopulateOptions();
+        }
+
+        private void PopulateOptions()
+        {
+            KeybindsContainer.RemoveAllChildren();
+            _keyControls.Clear();
             var first = true;
+
+            bool ShouldDisplayButton(BoundKeyFunction function)
+            {
+                if (_searchText == string.Empty)
+                    return true;
+
+                var optionText =
+                    Loc.GetString($"ui-options-function-{CaseConversion.PascalToKebab(function.FunctionName)}");
+                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase)
+                    || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
+
+            }
+
+            bool ShouldDisplayCheckBox(string checkBoxName)
+            {
+                if (_searchText == string.Empty)
+                    return true;
+
+                var optionText = Loc.GetString(checkBoxName);
+                return optionText.StartsWith(_searchText, StringComparison.OrdinalIgnoreCase)
+                       || _searchText.Contains(optionText, StringComparison.OrdinalIgnoreCase);
+            }
 
             void AddHeader(string headerContents)
             {
@@ -210,6 +250,9 @@ namespace Content.Client.Options.UI.Tabs
 
             void AddButton(BoundKeyFunction function)
             {
+                if (!ShouldDisplayButton(function))
+                    return;
+
                 var control = new KeyControl(this, function);
                 KeybindsContainer.AddChild(control);
                 _keyControls.Add(function, control);
@@ -217,6 +260,9 @@ namespace Content.Client.Options.UI.Tabs
 
             void AddCheckBox(string checkBoxName, bool currentState, Action<BaseButton.ButtonToggledEventArgs>? callBackOnClick)
             {
+                if (!ShouldDisplayCheckBox(checkBoxName))
+                    return;
+
                 CheckBox newCheckBox = new CheckBox() { Text = Loc.GetString(checkBoxName) };
                 newCheckBox.Pressed = currentState;
                 newCheckBox.OnToggled += callBackOnClick;

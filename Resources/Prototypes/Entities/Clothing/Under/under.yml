@@ -32,3 +32,14 @@
     sprite: Clothing/Under/Socks/coder.rsi
   - type: Clothing
     sprite: Clothing/Under/Socks/coder.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingSimpleUnderwear
+  name: Simple Underwear
+  description: You should combine it with dresses!
+  components:
+  - type: Sprite
+    sprite: Clothing/Under/simplefem.rsi
+  - type: Clothing
+    sprite: Clothing/Under/simplefem.rsi

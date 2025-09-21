@@ -111,15 +111,19 @@
 # SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 # SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 DieselMohawk <173439801+DieselMohawk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SeamLesss <kai.julian.watson@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
@@ -199,6 +203,13 @@
   components:
     - type: StaticPrice
       price: 90
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: riot-backpack
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -220,6 +231,13 @@
   components:
     - type: Sprite
       state: riot_laser-icon
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: riot-laser-backpack
     - type: Item
       heldPrefix: riot_laser
     - type: Blocking
@@ -241,6 +259,13 @@
     - type: Sprite
       sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi # Goobstation
       state: ballistic-icon
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: metal-backpack
     - type: Item
       heldPrefix: ballistic
     - type: Blocking
@@ -265,6 +290,13 @@
       state: buckler-icon
     - type: Item
       heldPrefix: buckler
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: buckler-backpack
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -320,6 +352,13 @@
       state: makeshift-icon
     - type: Item
       heldPrefix: metal
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: metal-backpack
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -427,6 +466,13 @@
   components:
     - type: Sprite
       state: ratvarian-icon
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      slots:
+      - suitStorage
+      clothingVisuals:
+        suitstorage:
+        - state: ratvarian-backpack
     - type: Item
       heldPrefix: ratvarian
     - type: Blocking

@@ -13,6 +13,9 @@
 // SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tropica1Owl <tropicalowl@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -132,14 +135,11 @@ public sealed class MutationSystem : EntitySystem
                 val[otherChem.Key] = Random(0.5f) ? otherChem.Value : val[otherChem.Key];
             }
             // if target plant doesn't have this chemical, has 50% chance to add it.
-            else
+            else // Gaby change - Plants now add every missing chemical from the swab, guaranteed.
             {
-                if (Random(0.5f))
-                {
-                    var fixedChem = otherChem.Value;
-                    fixedChem.Inherent = false;
-                    val.Add(otherChem.Key, fixedChem);
-                }
+                var fixedChem = otherChem.Value;
+                fixedChem.Inherent = false;
+                val.Add(otherChem.Key, fixedChem);
             }
         }
 
@@ -192,12 +192,12 @@ public sealed class MutationSystem : EntitySystem
     }
     private void CrossFloat(ref float val, float other)
     {
-        val = Random(0.5f) ? val : other;
+        val = (val + other) / 2f; // Gaby change - Crosses the float between a medium point instead of picking one or the other
     }
 
     private void CrossInt(ref int val, int other)
     {
-        val = Random(0.5f) ? val : other;
+        val = (int)Math.Floor((val + other) / 2.0f); // Gaby change - Same as above, just with the added benefit of rounding up
     }
 
     private void CrossBool(ref bool val, bool other)

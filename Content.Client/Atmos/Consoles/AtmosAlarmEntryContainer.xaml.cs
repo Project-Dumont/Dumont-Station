@@ -1,12 +1,13 @@
 // SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
 // SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -41,6 +42,30 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         [AtmosAlarmType.Normal] = "atmos-alerts-window-normal-state",
         [AtmosAlarmType.Warning] = "atmos-alerts-window-warning-state",
         [AtmosAlarmType.Danger] = "atmos-alerts-window-danger-state",
+    };
+
+    private Dictionary<Gas, string> _gasShorthands = new Dictionary<Gas, string>()
+    {
+        [Gas.Ammonia] = "NH₃",
+        [Gas.CarbonDioxide] = "CO₂",
+        [Gas.Frezon] = "F",
+        [Gas.Nitrogen] = "N₂",
+        [Gas.NitrousOxide] = "N₂O",
+        [Gas.Oxygen] = "O₂",
+        [Gas.Plasma] = "P",
+        [Gas.Tritium] = "T",
+        [Gas.WaterVapor] = "H₂O",
+        [Gas.BZ] = "BZ", // Assmos - /tg/ gases
+        [Gas.Healium] = "Healium", // Assmos - /tg/ gases
+        [Gas.Nitrium] = "Nitrium", // Assmos - /tg/ gases
+        [Gas.Pluoxium] = "Pluox", // Assmos - /tg/ gases
+        [Gas.Hydrogen] = "H₂", // Assmos - /tg/ gases
+        [Gas.HyperNoblium] = "HyNo", // Assmos - /tg/ gases
+        [Gas.ProtoNitrate] = "PN", // Assmos - /tg/ gases
+        [Gas.Zauker] = "Z", // Assmos - /tg/ gases
+        [Gas.Halon] = "H", // Assmos - /tg/ gases
+        [Gas.Helium] = "He", // Assmos - /tg/ gases
+        [Gas.AntiNoblium] = "AnNo", // Assmos - /tg/ gases
     };
 
     public AtmosAlarmEntryContainer(NetEntity uid, EntityCoordinates? coordinates)

@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 #
@@ -24,7 +26,7 @@
   parent: BaseMentalAction
   id: ActionSendYourself
   name: Send yourself
-  description: You need to FTL to the same map as the station to use this ability!
+  description: Send yourself to the station.
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -44,7 +46,7 @@
   parent: BaseAction
   id: ActionReturnToShip
   name: return
-  description: return to the ship.
+  description: Return to the ship.
   components:
   - type: Action
     useDelay: 30

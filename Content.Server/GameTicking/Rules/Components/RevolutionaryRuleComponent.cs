@@ -12,10 +12,15 @@
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tadeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Rules.Components;
 
@@ -41,10 +46,45 @@ public sealed partial class RevolutionaryRuleComponent : Component
     /// The time it takes after the last head is killed for the shuttle to arrive.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(5);
+    public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(3);
 
     // goob edit start
     [DataField] public bool HasAnnouncementPlayed = false;
     [DataField] public bool HasRevAnnouncementPlayed = false;
     // gobo edit end
+
+    // funky station
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan? RevVictoryEndTime;
+
+    // funky station
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan RevVictoryEndDelay = TimeSpan.FromMinutes(2);
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan? RevLoseTime;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan OffStationTimer = TimeSpan.FromMinutes(1);
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RevLossTimerActive = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RevForceLose = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public int StartingBalance = 40;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public EntProtoId UplinkStoreId = "StorePresetRevolutionaryUplink";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public EntProtoId UplinkCurrencyId = "RevCoin";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool OpenRevoltDeclared = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool OpenRevoltAnnouncementPending = false;
 }

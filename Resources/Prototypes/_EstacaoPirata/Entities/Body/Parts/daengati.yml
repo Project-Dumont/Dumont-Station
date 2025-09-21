@@ -1,0 +1,114 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <lucasaugustooliveira3000@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: PartDaengati
+  parent: PartHuman
+  abstract: true
+  components:
+  - type: Damageable
+    damageModifierSet: Daengati
+  - type: BodyPart
+    species: Daengati
+
+- type: entity
+  id: HeadDaengati
+  name: "daengati head"
+  parent: [PartDaengati, BaseHead]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "head_m"
+
+- type: entity
+  id: ChestDaengati
+  name: "daengati chest"
+  parent: [PartDaengati, BaseChest]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "chest_m"
+
+- type: entity
+  id: GroinDaengati
+  name: "daengati groin"
+  parent: [PartDaengati, BaseGroin]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "groin_m"
+
+- type: entity
+  id: LeftArmDaengati
+  name: "left daengati arm"
+  parent: [PartDaengati, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightArmDaengati
+  name: "right daengati arm"
+  parent: [PartDaengati, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandDaengati
+  name: "left daengati hand"
+  parent: [PartDaengati, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandDaengati
+  name: "right daengati hand"
+  parent: [PartDaengati, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegDaengati
+  name: "left daengati leg"
+  parent: [PartDaengati, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightLegDaengati
+  name: "right daengati leg"
+  parent: [PartDaengati, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootDaengati
+  name: "left daengati foot"
+  parent: [PartDaengati, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootDaengati
+  name: "right daengati foot"
+  parent: [PartDaengati, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "r_foot"

@@ -12,15 +12,15 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: trait
-  id: Dementia
-  name: trait-dementia-name
-  description: trait-dementia-desc
-  category: SpeechTraits
-  cost: 1
-  components:
-  - type: ReplacementAccent
-    accent: dementia
+#- type: trait
+#  id: Dementia
+#  name: trait-dementia-name
+#  description: trait-dementia-desc
+#  category: SpeechTraits
+#  cost: 1
+#  components:
+#  - type: ReplacementAccent
+#    accent: dementia
 
 - type: trait
   id: ScottishAccent
@@ -32,15 +32,15 @@
   - type: ReplacementAccent
     accent: scottish
 
-- type: trait
-  id: Bogan
-  name: trait-bogan-name
-  description: trait-bogan-desc
-  category: SpeechTraits
-  cost: 1
-  components:
-  - type: ReplacementAccent
-    accent: bogan
+#- type: trait
+#  id: Bogan
+#  name: trait-bogan-name
+#  description: trait-bogan-desc
+#  category: SpeechTraits
+#  cost: 1
+#  components:
+#  - type: ReplacementAccent
+#    accent: bogan
 
 - type: trait
   id: MedievalAccent

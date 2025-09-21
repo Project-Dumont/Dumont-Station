@@ -602,6 +602,12 @@
   id: WeaponDisabler
 
 - type: Tag
+  id: Flash
+
+- type: Tag
+  id: RevFlash
+
+- type: Tag
   id: WeaponPistolDualetta
 
 - type: Tag
@@ -651,6 +657,9 @@
 
 - type: Tag
   id: CalmAntag
+
+- type: Tag
+  id: ExtremeAntag
 
 - type: Tag
   id: MidroundAntag
