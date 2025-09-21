@@ -16,3 +16,15 @@
   storage:
     back:
     - PlushieNikuHatsume
+
+- type: loadout
+  id: PlushieTajaran
+  storage:
+    back:
+    - PlushieTajaran
+
+- type: loadout
+  id: PlushieKiiaraWami
+  storage:
+    back:
+    - PlushieKiiaraWami
