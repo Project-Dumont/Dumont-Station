@@ -1,3 +1,0 @@
-ent-MobVox = Vox
-    .desc = { "" }
-

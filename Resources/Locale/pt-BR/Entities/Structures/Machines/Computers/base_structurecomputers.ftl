@@ -1,3 +1,0 @@
-ent-BaseComputer = computador
-    .desc = { "" }
-

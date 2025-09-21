@@ -1,3 +1,0 @@
-ent-SpawnPointNukies = nukies
-    .desc = { "" }
-
