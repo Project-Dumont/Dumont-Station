@@ -262,7 +262,7 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=BwGZKIx5FN8"
 
-- files: ["aonda_quer_que_eu_va.ogg"]
+- files: ["aonde_quer_que_eu_va.ogg"]
   copyright: "Aonde Quer Que Eu Vá by Os Paralamas Do Sucesso. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=dIuK5nOZb2o"
