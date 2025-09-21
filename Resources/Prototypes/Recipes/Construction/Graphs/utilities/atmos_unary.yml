@@ -35,6 +35,18 @@
         amount: 2
         doAfter: 1
 
+    - to: passiveventAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: passiveventAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: ventscrubber
       steps:
       - material: Steel
@@ -102,8 +114,45 @@
       - tool: Welding
         doAfter: 1
 
+  # GasPassiveVent
   - node: passivevent
     entity: GasPassiveVent
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: passiveventAlt1
+    entity: GasPassiveVentAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: passiveventAlt2
+    entity: GasPassiveVentAlt2
     edges:
     - to: start
       conditions:
