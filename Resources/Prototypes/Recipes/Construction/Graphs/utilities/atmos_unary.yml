@@ -53,6 +53,18 @@
         amount: 2
         doAfter: 1
 
+    - to: ventscrubberAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventscrubberAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: outletinjector
       steps:
       - material: Steel
@@ -169,8 +181,45 @@
       - tool: Welding
         doAfter: 1
 
+  # GasVentScrubber
   - node: ventscrubber
     entity: GasVentScrubber
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventscrubberAlt1
+    entity: GasVentScrubberAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventscrubberAlt2
+    entity: GasVentScrubberAlt2
     edges:
     - to: start
       conditions:
