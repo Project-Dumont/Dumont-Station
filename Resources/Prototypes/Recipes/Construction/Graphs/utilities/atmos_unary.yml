@@ -74,6 +74,18 @@
         amount: 2
         doAfter: 1
 
+    - to: outletinjectorAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: outletinjectorAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
   # GasVentPump
   - node: ventpump
     entity: GasVentPump
@@ -239,8 +251,41 @@
       - tool: Welding
         doAfter: 1
 
+  # GasOutletInjector
   - node: outletinjector
     entity: GasOutletInjector
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: outletinjectorAlt1
+    entity: GasOutletInjectorAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: outletinjectorAlt2
+    entity: GasOutletInjectorAlt2
     edges:
     - to: start
       conditions:

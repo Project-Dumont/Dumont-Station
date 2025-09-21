@@ -253,6 +253,48 @@
   - type: Construction
     node: ventscrubberAlt2
 
+# GasOutletInjector
+
+- type: entity
+  parent: [GasPipeLayerAlt1, GasOutletInjector]
+  id: GasOutletInjectorAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/outletinjector.rsi
+    layers:
+    - state: pipeUnaryConnectors
+      sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: injector
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - state: injector-unshaded
+      shader: unshaded
+      map: [ "enum.LightLayers.Unshaded" ]
+      color: "#990000"
+  - type: Construction
+    node: outletinjectorAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasOutletInjector]
+  id: GasOutletInjectorAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/outletinjector.rsi
+    layers:
+    - state: pipeUnaryConnectors
+      sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: injector
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - state: injector-unshaded
+      shader: unshaded
+      map: [ "enum.LightLayers.Unshaded" ]
+      color: "#990000"
+  - type: Construction
+    node: outletinjectorAlt2
+
 # GasPort
 
 - type: entity

@@ -739,10 +739,46 @@
   startNode: start
   targetNode: outletinjector
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasOutletInjector
+  - GasOutletInjectorAlt1
+  - GasOutletInjectorAlt2
+
+- type: construction
+  id: GasOutletInjectorAlt1
+  hide: true
+  graph: GasUnary
+  startNode: start
+  targetNode: outletinjectorAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasOutletInjector
+  - GasOutletInjectorAlt1
+  - GasOutletInjectorAlt2
+
+- type: construction
+  id: GasOutletInjectorAlt2
+  hide: true
+  graph: GasUnary
+  startNode: start
+  targetNode: outletinjectorAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasOutletInjector
+  - GasOutletInjectorAlt1
+  - GasOutletInjectorAlt2
 
 # ATMOS BINARY
 

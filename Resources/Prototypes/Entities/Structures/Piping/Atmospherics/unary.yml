@@ -316,7 +316,7 @@
   name: air injector
   description: Has a valve and pump attached to it.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: Sprite
       drawdepth: FloorObjects
@@ -331,6 +331,11 @@
           shader: unshaded
           map: [ "enum.LightLayers.Unshaded" ]
           color: "#990000"
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasOutletInjector
+        Secondary: GasOutletInjectorAlt1
+        Tertiary: GasOutletInjectorAlt2
     - type: Appearance
     - type: GenericVisualizer
       visuals:
