@@ -174,8 +174,6 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
-  - type: OwnInteractionVerbs # EE: Interaction Verbs
-    allowedVerbs: []
 
 - type: entity
   save: false
