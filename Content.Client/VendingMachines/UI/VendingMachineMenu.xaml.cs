@@ -116,6 +116,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Shared.IdentityManagement;
 using Robust.Client.Graphics;
 using Robust.Shared.Utility;
+using Content.Shared.Text;
 
 namespace Content.Client.VendingMachines.UI
 {
@@ -172,7 +173,7 @@ namespace Content.Client.VendingMachines.UI
             if (string.IsNullOrEmpty(filter))
                 return true;
 
-            return text.Contains(filter, StringComparison.CurrentCultureIgnoreCase);
+            return TextHelpers.RemoveAccents(text).Contains(TextHelpers.RemoveAccents(filter), StringComparison.CurrentCultureIgnoreCase);
         }
 
         private void GenerateButton(ListData data, ListContainerButton button)
