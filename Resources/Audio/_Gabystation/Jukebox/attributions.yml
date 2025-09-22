@@ -258,46 +258,46 @@
   source: "https://www.youtube.com/watch?v=qBoQzo98EpQ"
 
 - files: ["amiga_da_minha_mulher.ogg"]
-  copyright: "Amiga da Minha Mulher by Seu Jorge. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Amiga da Minha Mulher by Seu Jorge. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=BwGZKIx5FN8"
 
 - files: ["aonde_quer_que_eu_va.ogg"]
-  copyright: "Aonde Quer Que Eu Vá by Os Paralamas Do Sucesso. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Aonde Quer Que Eu Vá by Os Paralamas Do Sucesso. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=dIuK5nOZb2o"
 
 - files: ["burguesinha.ogg"]
-  copyright: "Burguesinha by Seu Jorge. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Burguesinha by Seu Jorge. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=bWSn9jL1g7I"
 
 - files: ["ceu_azul.ogg"]
-  copyright: "Céu Azul by Charlie Brown Jr. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Céu Azul by Charlie Brown Jr. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=0dLX40UMUKo"
 
 - files: ["lugar_ao_sol.ogg"]
-  copyright: "Lugar Ao Sol by Charlie Brown Jr. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Lugar Ao Sol by Charlie Brown Jr. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=DRhEueqE7Uw"
 
 - files: ["outra_vida.ogg"]
-  copyright: "Outra Vida by Armandinho. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Outra Vida by Armandinho. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=hC-0RxO_NUg"
 
 - files: ["samurai.ogg"]
-  copyright: "Samurai by Djavan. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Samurai by Djavan. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=3-qwqrQXsXQ"
 
 - files: ["so_os_loucos_sabem.ogg"]
-  copyright: "Só os loucos sabem by Charlie Brown Jr. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Só os loucos sabem by Charlie Brown Jr. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=P3fzWuwVB5s"
 
 - files: ["ursinho_de_dormir.ogg"]
-  copyright: "Ursinho De Dormir by Armandinho. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  copyright: "Ursinho De Dormir by Armandinho. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=YnqqTzis3EA"
