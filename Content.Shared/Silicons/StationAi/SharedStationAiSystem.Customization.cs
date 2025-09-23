@@ -117,7 +117,7 @@ public abstract partial class SharedStationAiSystem
         }
 
         // This data is handled manually in the client StationAiSystem
-        _appearance.SetData(entity.Owner, StationAiVisualLayers.Icon, stateData);
+    _appearance.SetData(entity.Owner, StationAiVisualLayers.Icon, layerData);
     }
 
     /// <summary>
@@ -130,9 +130,9 @@ public abstract partial class SharedStationAiSystem
     {
         layerData = null;
 
-        if (!entity.Comp.ProtoIds.TryGetValue(_stationAiCoreCustomGroupProtoId, out var protoId) ||
-           !_protoManager.Resolve(protoId, out var prototype) ||
-            prototype.LayerData.Count == 0)
+          if (!entity.Comp.ProtoIds.TryGetValue(_stationAiCoreCustomGroupProtoId, out var protoId) ||
+              !_protoManager.TryIndex(protoId, out var prototype) ||
+                prototype.LayerData.Count == 0)
         {
             return false;
         }
