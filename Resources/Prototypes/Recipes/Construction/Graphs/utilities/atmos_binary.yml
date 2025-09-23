@@ -176,7 +176,31 @@
         amount: 2
         doAfter: 1
 
+    - to: radiatorAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: radiatorAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: bendradiator
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: bendradiatorAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: bendradiatorAlt2
       steps:
       - material: Steel
         amount: 2
@@ -661,6 +685,42 @@
 
   - node: bendradiator
     entity: HeatExchangerBend
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: bendradiatorAlt1
+    entity: HeatExchangerBendAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: bendradiatorAlt2
+    entity: HeatExchangerBendAlt2
     edges:
     - to: start
       conditions:

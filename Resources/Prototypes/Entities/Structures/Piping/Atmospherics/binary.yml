@@ -741,6 +741,15 @@
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: HeatExchangerBend
+        Secondary: HeatExchangerBendAlt1
+        Tertiary: HeatExchangerBendAlt2
+      spriteRsiPaths:
+        Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+        Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
     - type: NodeContainer
       nodes:
         inlet:

@@ -1158,7 +1158,29 @@
   startNode: start
   targetNode: bendradiator
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerBendAlt1
+  hide: true
+  name: construction-recipe-heat-exchanger-bend
+  graph: GasBinary
+  startNode: start
+  targetNode: bendradiatorAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerBendAlt2
+  hide: true
+  name: construction-recipe-heat-exchanger-bend
+  graph: GasBinary
+  startNode: start
+  targetNode: bendradiatorAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
 
 # heat pump
