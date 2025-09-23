@@ -678,7 +678,7 @@
   name: radiator
   description: Transfers heat between the pipe and its surroundings.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: Rotatable
   - type: Transform
@@ -692,8 +692,14 @@
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
-    spriteRsiPaths: {}
-    numberOfPipeLayers: 1
+    alternativePrototypes:
+      Primary: HeatExchanger
+      Secondary: HeatExchangerAlt1
+      Tertiary: HeatExchangerAlt2
+    spriteRsiPaths:
+      Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+      Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+      Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
   - type: SubFloorHide
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
