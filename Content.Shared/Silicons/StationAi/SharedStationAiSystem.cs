@@ -347,7 +347,10 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         // Corvax-Next-AiRemoteControl-Start
         if (TryComp<StationAiHeldComponent>(held, out var heldComp))
             if (heldComp.CurrentConnectedEntity != null)
-                AnnounceIntellicardUsage(heldComp.CurrentConnectedEntity.Value, intelliComp.WarningSound);
+            {
+                var ev = new ChatNotificationEvent(_downloadChatNotificationPrototype, args.Used, args.User);
+                RaiseLocalEvent(heldComp.CurrentConnectedEntity.Value, ref ev);
+            }
         // Corvax-Next-AiRemoteControl-End
 
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cardHasAi ? intelliComp.UploadTime : intelliComp.DownloadTime, new IntellicardDoAfterEvent(), args.Target, ent.Owner)
