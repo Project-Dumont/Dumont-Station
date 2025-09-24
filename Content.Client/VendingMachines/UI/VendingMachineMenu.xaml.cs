@@ -118,7 +118,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Shared.IdentityManagement;
 using Robust.Client.Graphics;
 using Robust.Shared.Utility;
-using Content.Shared.Text;
+using Content.Shared._Gabystation.Text;
 
 namespace Content.Client.VendingMachines.UI
 {
