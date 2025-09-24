@@ -232,10 +232,10 @@ public sealed partial class StoreMenu : DefaultWindow
             if (texture == null)
             {
                 var actionId = _entityManager.Spawn(listing.ProductAction);
-                if (_entityManager.System<ActionsSystem>().TryGetActionData(actionId, out var action) &&
-                    action.Icon != null)
+                if (_entityManager.System<ActionsSystem>().GetAction(actionId) is { } action &&
+                    action.Comp.Icon != null)
                 {
-                    texture = spriteSys.Frame0(action.Icon);
+                    texture = spriteSys.Frame0(action.Comp.Icon);
                 }
             }
         }
