@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Store.Systems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.MalfAI;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;

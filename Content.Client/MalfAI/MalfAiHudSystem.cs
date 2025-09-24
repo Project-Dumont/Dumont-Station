@@ -6,7 +6,7 @@ using Content.Client.Alerts;
 using Content.Shared.Alert;
 using Content.Shared.MalfAI;
 using Content.Shared.Store.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Store;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;

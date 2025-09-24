@@ -5,7 +5,7 @@
 using System.Linq;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Robotics;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;

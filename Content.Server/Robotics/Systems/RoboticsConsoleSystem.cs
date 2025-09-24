@@ -20,7 +20,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.Robotics;
 using Content.Shared.Robotics.Components;
 using Content.Shared.Robotics.Systems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Store.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;

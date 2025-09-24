@@ -13,7 +13,7 @@ using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.CombatMode;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
