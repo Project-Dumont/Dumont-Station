@@ -262,6 +262,7 @@ public sealed partial class LatheMenu : DefaultWindow
 
             if (SearchBar.Text.Trim().Length != 0)
             {
+                // Gabystation change (vars)
                 var recipeName = TextHelpers.RemoveAccents(_lathe.GetRecipeName(recipe)).ToLowerInvariant();
                 var searchText = TextHelpers.RemoveAccents(SearchBar.Text.Trim()).ToLowerInvariant();
 

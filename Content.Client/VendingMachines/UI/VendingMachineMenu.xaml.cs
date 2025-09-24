@@ -175,7 +175,7 @@ namespace Content.Client.VendingMachines.UI
             if (string.IsNullOrEmpty(filter))
                 return true;
 
-            return TextHelpers.RemoveAccents(text).Contains(TextHelpers.RemoveAccents(filter), StringComparison.CurrentCultureIgnoreCase);
+            return TextHelpers.RemoveAccents(text).Contains(TextHelpers.RemoveAccents(filter), StringComparison.CurrentCultureIgnoreCase); // Gabystation change
         }
 
         private void GenerateButton(ListData data, ListContainerButton button)
