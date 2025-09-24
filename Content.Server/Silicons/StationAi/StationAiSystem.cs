@@ -30,6 +30,7 @@ using Content.Server.Construction;
 using Content.Server.Destructible;
 using Content.Server.Ghost;
 using Content.Server.Mind;
+using Content.Shared.Mind;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Roles;
