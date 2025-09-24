@@ -756,10 +756,10 @@ public sealed class StationAiSystem : SharedStationAiSystem
     // filter = Filter.Broadcast();
 
     // No easy way to do chat notif embeds atm.
-    var tile = Maps.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
-    var msg = Loc.GetString("ai-wire-snipped", ("coords", tile));
+    // var tile = Maps.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+    // var msg = Loc.GetString("ai-wire-snipped", ("coords", tile));
 
-    _chats.ChatMessageToMany(ChatChannel.Notifications, msg, msg, entity, false, true, filter.Recipients.Select(o => o.Channel));
+    // _chats.ChatMessageToMany(ChatChannel.Notifications, msg, msg, entity, false, true, filter.Recipients.Select(o => o.Channel));
         // Apparently there's no sound for this.
     }
     /// <summary>
