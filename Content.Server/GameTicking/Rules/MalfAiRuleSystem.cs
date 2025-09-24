@@ -16,6 +16,10 @@ using Content.Server.Silicons.Laws;
 using Content.Shared.Mind;
 using Content.Server.Objectives;
 using Robust.Shared.Random;
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.MalfAI;
+using Content.Server.Store.Systems;
+using Content.Shared.GameTicking;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -27,14 +31,13 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
-    [Dependency] private readonly Store.Systems.StoreSystem _store = default!;
+    [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SiliconLawSystem _siliconLaws = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly SharedRoleSystem _sharedRoleSystem = default!;
-    [Dependency] private readonly ObjectivesSystem _objectives = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly GameTicker _ticker = default!;
+
     private readonly ISawmill _sawmill = Logger.GetSawmill("malfai");
 
     public override void Initialize()
@@ -96,23 +99,19 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
             store.CurrencyWhitelist.Add("CPU");
 
         // Ensure UI updates and set starting balance to 0 CPU
-        _store.TryAddCurrency(new() { { "CPU", Content.Shared.FixedPoint.FixedPoint2.New(0) } }, aiEnt, store);
+        _store.TryAddCurrency(new() { { "CPU", FixedPoint2.New(0) } }, aiEnt, store);
 
         // Grant the Open Shop action to the AI entity
         _actions.AddAction(aiEnt, "ActionMalfAiOpenStore");
         // Grant the Borgs management UI action
         _actions.AddAction(aiEnt, "ActionMalfAiOpenBorgsUi");
 
-        EnsureComp<Content.Shared.MalfAI.MalfAiCameraUpgradeComponent>(aiEnt);
+        EnsureComp<MalfAiCameraUpgradeComponent>(aiEnt);
 
         // Ensure AlertsComponent exists before showing alert and show CPU alert HUD on the client
         EnsureComp<AlertsComponent>(aiEnt);
         _alerts.ShowAlert(aiEnt, "MalfCpu");
     }
-
-
-
-
 
     private bool TryPickUniqueAssassinationTarget(EntityUid aiEnt, HashSet<EntityUid> reserved, out EntityUid picked)
     {
@@ -121,7 +120,7 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
         // Eligible: crew with a mind, not the AI, and not another Malf AI.
         var candidates = EntityQuery<MindComponent>()
             .Where(m => m.Owner != aiEnt &&
-                       !HasComp<Content.Shared.MalfAI.MalfAiMarkerComponent>(m.Owner) &&
+                       !HasComp<MalfAiMarkerComponent>(m.Owner) &&
                        !reserved.Contains(m.Owner))
             .Select(m => m.Owner)
             .ToList();
@@ -164,8 +163,7 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
 
                 // If we are mid-round (i.e., game rule was added after round started), assign immediately.
                 // Otherwise, just preselect and let the normal selection flow handle it.
-                var ticker = EntitySystem.Get<GameTicker>();
-                var isMidRound = ticker.RunLevel == GameRunLevel.InRound;
+                var isMidRound = _ticker.RunLevel == GameRunLevel.InRound;
 
                 _sawmill.Debug($"[MalfAI] {(isMidRound ? "Assigning" : "Preselecting")} {session.Name} as Malf AI.");
                 _antag.TryMakeAntag(ruleAntagEnt, session, def, ignoreSpawner: true, checkPref: true, onlyPreSelect: !isMidRound);

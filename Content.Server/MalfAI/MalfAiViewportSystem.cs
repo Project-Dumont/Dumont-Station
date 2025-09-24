@@ -16,6 +16,7 @@ using Robust.Server.Player;
 using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 using Robust.Shared.Log;
+using Content.Shared.Actions.Components;
 
 namespace Content.Server.MalfAI;
 

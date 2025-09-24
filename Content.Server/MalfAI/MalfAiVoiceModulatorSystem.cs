@@ -12,6 +12,9 @@ using Content.Shared.Popups;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Robust.Shared.Localization;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -21,7 +24,11 @@ public sealed class MalfAiVoiceModulatorSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
+    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+
+    // CCVar.
+    private int _maxNameLenght;
 
     public override void Initialize()
     {
@@ -30,6 +37,8 @@ public sealed class MalfAiVoiceModulatorSystem : EntitySystem
         SubscribeLocalEvent<MalfAiVoiceModulatorActionEvent>(OnVoiceModulator);
         // Receive the chosen name from the client and apply it server-side.
         SubscribeNetworkEvent<MalfVoiceModulatorSubmitNameEvent>(OnSubmitName);
+
+        Subs.CVar(_cfgManager, CCVars.MaxNameLength, value => _maxNameLenght = value, true);
     }
 
     private void OnVoiceModulator(MalfAiVoiceModulatorActionEvent ev)
@@ -64,7 +73,7 @@ public sealed class MalfAiVoiceModulatorSystem : EntitySystem
         // Validate and apply the new name to the controlled entity (positronic brain).
         var newName = ev.Name.Trim();
 
-        if (string.IsNullOrEmpty(newName) || newName.Length > HumanoidCharacterProfile.MaxNameLength)
+        if (string.IsNullOrEmpty(newName) || newName.Length > _maxNameLenght)
         {
             _popup.PopupEntity(Loc.GetString("malf-voice-invalid-name"), popupTarget, performer.Value, PopupType.SmallCaution);
             return;

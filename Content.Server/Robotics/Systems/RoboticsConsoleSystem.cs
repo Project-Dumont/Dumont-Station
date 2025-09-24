@@ -37,6 +37,10 @@ using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Utility;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Content.Shared.DeviceNetwork.Components;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Damage;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server.Research.Systems;
 
@@ -52,8 +56,8 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly Content.Shared.Damage.DamageableSystem _damageable = default!;
-    [Dependency] private readonly Content.Shared.Mobs.Systems.MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
@@ -64,7 +68,6 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     /// Currency name for Malf AI
     /// </summary>
     private const string CpuCurrency = "CPU";
-
 
     public override void Initialize()
     {
@@ -215,7 +218,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
             if (!string.Equals(targetDev.Address, args.Address, StringComparison.Ordinal))
                 continue;
 
-            var ctrl = EnsureComp<Content.Shared.MalfAI.MalfAiControlledComponent>(targetUid);
+            var ctrl = EnsureComp<MalfAiControlledComponent>(targetUid);
             ctrl.Controller = args.Actor;
             if (string.IsNullOrWhiteSpace(ctrl.UniqueId))
                 ctrl.UniqueId = $"BORG-{Guid.NewGuid().ToString("N").Substring(0, 8)}";
@@ -233,10 +236,10 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
                 _ui.SetUiState((args.Actor, null), MalfAiBorgsUiKey.Key, state);
 
             // Refresh on other AI entities with the same mind (e.g., AiHeld/Brain counterpart)
-            if (TryComp<Content.Shared.Mind.Components.MindContainerComponent>(args.Actor, out var mindCont) && mindCont.Mind != null)
+            if (TryComp<MindContainerComponent>(args.Actor, out var mindCont) && mindCont.Mind != null)
             {
                 var targetMind = mindCont.Mind.Value;
-                var mindQuery = AllEntityQuery<Content.Shared.Mind.Components.MindContainerComponent>();
+                var mindQuery = AllEntityQuery<MindContainerComponent>();
                 while (mindQuery.MoveNext(out var otherEnt, out var otherMindCont))
                 {
                     if (otherEnt == args.Actor)
@@ -271,7 +274,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
         // Mind-aware matching to handle AiHeld vs StationAiBrain identity differences
         EntityUid? controllerMind = null;
-        if (TryComp<Content.Shared.Mind.Components.MindContainerComponent>(controller, out var mindCont) && mindCont.Mind != null)
+        if (TryComp<MindContainerComponent>(controller, out var mindCont) && mindCont.Mind != null)
             controllerMind = mindCont.Mind.Value;
 
         var query = AllEntityQuery<MalfAiControlledComponent>();
@@ -292,12 +295,12 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
             var id = string.IsNullOrWhiteSpace(ctrl.UniqueId) ? ToPrettyString(uid) : ctrl.UniqueId!;
             var name = MetaData(uid).EntityName;
             SpriteSpecifier? sprite = null;
-            if (TryComp<Content.Shared.Silicons.Borgs.Components.BorgTransponderComponent>(uid, out var trans))
+            if (TryComp<BorgTransponderComponent>(uid, out var trans))
                 sprite = trans.Sprite;
 
             // Compute health as 1 - percent-to-death threshold if available.
             var health = 1.0f;
-            if (TryComp<Content.Shared.Damage.DamageableComponent>(uid, out var dmg))
+            if (TryComp<DamageableComponent>(uid, out var dmg))
             {
                 if (_mobThreshold.TryGetDeadPercentage(uid, dmg.TotalDamage, out var pct))
                 {

@@ -83,7 +83,7 @@ public sealed partial class BorgSystem
         }
         //Goobstation Drone transponder start
         var query2 = EntityQueryEnumerator<BorgTransponderComponent, DroneComponent, DeviceNetworkComponent, MetaDataComponent>();
-        while (query2.MoveNext(out var uid, out  var comp, out var drone, out var device, out var  meta))
+        while (query2.MoveNext(out var uid, out var comp, out var drone, out var device, out var  meta))
         {
             if (now < comp.NextBroadcast)
                 continue;
@@ -96,6 +96,7 @@ public sealed partial class BorgSystem
                 0,
                 hasBrain,
                 false, // Corvax-Next-AiRemoteControl
+                false,
                 false);
 
             var payload = new NetworkPayload()
