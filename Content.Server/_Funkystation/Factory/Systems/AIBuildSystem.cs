@@ -8,6 +8,9 @@ using Content.Shared.MalfAI;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared.Actions.Components;
+using Content.Shared.Actions.Events;
+using Content.Shared.Actions;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -37,7 +40,8 @@ public sealed partial class AIBuildSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly Content.Shared.Actions.SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
+
     private static readonly ISawmill Sawmill = Logger.GetSawmill("ai.build.system");
 
     public override void Initialize()
@@ -150,18 +154,21 @@ public sealed partial class AIBuildSystem : EntitySystem
     {
         // Remove the Robotics Factory action (ActionMalfAiRoboticsFactory) from the performer.
         // We search via ActionsComponent -> BaseActionComponent.BaseEvent type.
-        if (!TryComp<Content.Shared.Actions.ActionsComponent>(performer, out var actionsComp))
+        if (!TryComp<ActionsComponent>(performer, out var actionsComp))
             return;
 
-        var toRemove = new List<EntityUid>();
-        foreach (var (actId, actComp) in _actions.GetActions(performer, actionsComp))
+        var toRemove = new HashSet<Entity<ActionComponent>>();
+        foreach (var action in _actions.GetActions(performer, actionsComp))
         {
-            if (actComp.BaseEvent is Content.Shared.Actions.Events.MalfAiRoboticsFactoryActionEvent)
-                toRemove.Add(actId);
+            var baseEvent = _actions.GetEvent(action.Owner);
+
+            if (baseEvent is not null
+                && baseEvent is MalfAiRoboticsFactoryActionEvent)
+                toRemove.Add(action);
         }
 
-        foreach (var id in toRemove)
-            _actions.RemoveAction(performer, id, actionsComp);
+        foreach (var action in toRemove)
+            _actions.RemoveAction(action.AsNullable());
     }
 
     /// <summary>

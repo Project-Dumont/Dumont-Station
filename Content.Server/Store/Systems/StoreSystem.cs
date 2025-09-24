@@ -237,11 +237,11 @@ public sealed partial class StoreSystem : EntitySystem
         if (!HasComp<MalfAiMarkerComponent>(uid))
             return;
 
-        var amountInt = 0;
+        short amountInt = 0;
         if (store.Balance.TryGetValue(CpuCurrencyId, out var val))
-            amountInt = (int) val.Int();
+            amountInt = (short) val;
 
-        _alerts.ShowAlert(uid, "MalfCpu", dynamicMessage: amountInt.ToString());
+        _alerts.ShowAlert(uid, "MalfCpu", amountInt);
     }
 }
 

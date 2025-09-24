@@ -22,6 +22,9 @@ using Content.Shared.Roles;
 using Content.Server.Mind;
 using Content.Shared.Mind;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.DeviceNetwork.Events;
+using Content.Shared.DeviceNetwork;
+using Robust.Server.Player;
 
 namespace Content.Server.Robotics.Systems;
 
@@ -33,6 +36,7 @@ public sealed class CyborgLawReceiverSystem : EntitySystem
     [Dependency] private readonly SiliconLawSystem _laws = default!;
     [Dependency] private readonly SharedRoleSystem _sharedRoleSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     public override void Initialize()
     {
@@ -90,7 +94,7 @@ public sealed class CyborgLawReceiverSystem : EntitySystem
             Dirty(mindId.Value, mind);
 
             // Trigger UI update event
-            if (_mindSystem.TryGetSession(mindId.Value, out var session))
+            if (_playerManager.TryGetSessionByEntity(mindId.Value, out var session))
                 RaiseNetworkEvent(new MindRoleTypeChangedEvent(), session.Channel);
         }
 

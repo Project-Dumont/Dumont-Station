@@ -16,6 +16,8 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared.MalfAI;
 using Content.Shared._Funkystation.Factory;
 using Content.Shared.DoAfter;
+using Content.Shared.Actions.Components;
+using Content.Shared.Actions.Events;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -238,18 +240,19 @@ public sealed partial class AiBuildActionSystem : EntitySystem
 
     private void RemoveRoboticsFactoryAction(EntityUid performer)
     {
-        if (!TryComp<Content.Shared.Actions.ActionsComponent>(performer, out var actionsComp))
+        if (!TryComp<ActionsComponent>(performer, out var actionsComp))
             return;
 
-        var toRemove = new List<EntityUid>();
-        foreach (var (actId, actComp) in _actions.GetActions(performer, actionsComp))
+        var toRemove = new HashSet<Entity<ActionComponent>>();
+        foreach (var action in _actions.GetActions(performer, actionsComp))
         {
-            if (actComp.BaseEvent is Content.Shared.Actions.Events.MalfAiRoboticsFactoryActionEvent)
-                toRemove.Add(actId);
+            var baseEvent = _actions.GetEvent(action.Owner);
+            if (baseEvent is MalfAiRoboticsFactoryActionEvent)
+                toRemove.Add(action);
         }
 
-        foreach (var id in toRemove)
-            _actions.RemoveAction(performer, id, actionsComp);
+        foreach (var action in toRemove)
+            _actions.RemoveAction(action.AsNullable());
     }
 
     // Attempts to anchor an entity if it has a transform and can be anchored.

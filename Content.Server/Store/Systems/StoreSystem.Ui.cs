@@ -54,7 +54,9 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing; // Goob
+using Robust.Shared.Timing;
+using Content.Shared.Actions.Components;
+using Content.Shared.Charges.Systems; // Goob
 
 namespace Content.Server.Store.Systems;
 
@@ -72,7 +74,7 @@ public sealed partial class StoreSystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly HereticKnowledgeSystem _heretic = default!; // goobstation - heretics
-    // [Dependency] private readonly IGameTiming _timing = default!; // goobstation - ntr update
+    [Dependency] private readonly SharedChargesSystem _chargesSystem = default!;
 
     private void InitializeUi()
     {
@@ -280,7 +282,7 @@ public sealed partial class StoreSystem
                             // Found existing action, add charges to it using existing method
                             if (listing.ProductActionCharges.HasValue && listing.ProductActionCharges > 0)
                             {
-                                _actions.AddCharges(existingAction, listing.ProductActionCharges.Value);
+                                _chargesSystem.AddCharges(existingAction, listing.ProductActionCharges.Value);
                             }
                             actionId = existingAction;
                             existingActionFound = true;
@@ -305,7 +307,7 @@ public sealed partial class StoreSystem
                             // Found existing action, add charges to it using existing method
                             if (listing.ProductActionCharges.HasValue && listing.ProductActionCharges > 0)
                             {
-                                _actions.AddCharges(existingAction, listing.ProductActionCharges.Value);
+                                _chargesSystem.AddCharges(existingAction, listing.ProductActionCharges.Value);
                             }
                             actionId = existingAction;
                             existingActionFound = true;
