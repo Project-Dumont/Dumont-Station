@@ -1,4 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+// SPDX-FileCopyrightText: 2025 funkystationbot <funky@funkystation.org>
 //
 // SPDX-License-Identifier: MIT
 
@@ -6,7 +9,7 @@ using System;
 using Content.Shared.MalfAI;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Store.Components;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;

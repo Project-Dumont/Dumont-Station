@@ -72,7 +72,7 @@ public sealed partial class StoreSystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly HereticKnowledgeSystem _heretic = default!; // goobstation - heretics
-    [Dependency] private readonly IGameTiming _timing = default!; // goobstation - ntr update
+    // [Dependency] private readonly IGameTiming _timing = default!; // goobstation - ntr update
 
     private void InitializeUi()
     {
