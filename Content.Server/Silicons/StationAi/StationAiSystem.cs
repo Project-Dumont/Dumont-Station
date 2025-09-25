@@ -133,7 +133,6 @@ public sealed class StationAiSystem : SharedStationAiSystem
 
         SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandICChatRecipients);
         SubscribeLocalEvent<StationAiTurretComponent, AmmoShotEvent>(OnAmmoShot);
-        SubscribeLocalEvent<StationAiCoreComponent, DamageChangedEvent>(OnAiCoreDamaged);
     }
 
     private void AfterConstructionChangeEntity(Entity<StationAiCoreComponent> ent, ref AfterConstructionChangeEntityEvent args)
@@ -269,6 +268,35 @@ public sealed class StationAiSystem : SharedStationAiSystem
     {
         UpdateCoreIntegrityAlert(entity);
         UpdateDamagedAccent(entity);
+
+        if (args.DamageDelta == null || args.DamageDelta.GetTotal() <= 0)
+            return;
+
+        var currentTime = _timing.CurTime;
+        if (_attackAlertCooldowns.TryGetValue(entity.Owner, out var lastAlertTime))
+        {
+            if (currentTime - lastAlertTime < AttackAlertCooldown)
+                return;
+        }
+
+        _attackAlertCooldowns[entity.Owner] = currentTime;
+
+        // Try to get the AI entity held in this core
+        if (!TryGetHeld(entity.AsNullable(), out var aiEntity)
+            || !TryComp<ActorComponent>(aiEntity, out var actor))
+            return;
+
+        // Send alert message to the AI player
+        var msg = Loc.GetString("ai-core-under-attack");
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
+        _chat.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Red);
+
+        // Play alert sound, could probably make a unique sound for this but for now, default notice noise
+        if (_mind.TryGetMind(aiEntity.Value, out var mindId, out _))
+        {
+            var alertSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
+            _roles.MindPlaySound(mindId, alertSound);
+        }
     }
 
     private void UpdateDamagedAccent(Entity<StationAiCoreComponent> ent)
@@ -512,37 +540,4 @@ public sealed class StationAiSystem : SharedStationAiSystem
     /// Cooldown duration between AI core attack alerts to prevent spamming the player
     /// </summary>
     private static readonly TimeSpan AttackAlertCooldown = TimeSpan.FromSeconds(10);
-
-    private void OnAiCoreDamaged(EntityUid uid, StationAiCoreComponent component, DamageChangedEvent args)
-    {
-        if (args.DamageDelta == null || args.DamageDelta.GetTotal() <= 0)
-            return;
-
-        var currentTime = _timing.CurTime;
-        if (_attackAlertCooldowns.TryGetValue(uid, out var lastAlertTime))
-        {
-            if (currentTime - lastAlertTime < AttackAlertCooldown)
-                return;
-        }
-
-        _attackAlertCooldowns[uid] = currentTime;
-
-        // Try to get the AI entity held in this core
-        var aiCore = new Entity<StationAiCoreComponent?>(uid, component);
-        if (!TryGetHeld(aiCore, out var aiEntity)
-            || !TryComp<ActorComponent>(aiEntity, out var actor))
-            return;
-
-        // Send alert message to the AI player
-        var msg = Loc.GetString("ai-core-under-attack");
-        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
-        _chat.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Red);
-
-        // Play alert sound, could probably make a unique sound for this but for now, default notice noise
-        if (_mind.TryGetMind(aiEntity.Value, out var mindId, out _))
-        {
-            var alertSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
-            _roles.MindPlaySound(mindId, alertSound);
-        }
-    }
 }

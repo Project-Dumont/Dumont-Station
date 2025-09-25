@@ -152,7 +152,6 @@
       state: full
   - type: MalfAiSabotageObjective
     sabotageType: Assassinate
-  - type: FreeObjective
 
 - type: entity
   parent: BaseMalfAiObjective
@@ -167,4 +166,3 @@
       state: full
   - type: MalfAiSabotageObjective
     sabotageType: Protect
-  - type: FreeObjective
