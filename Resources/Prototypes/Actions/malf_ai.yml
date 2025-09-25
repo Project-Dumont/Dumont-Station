@@ -11,15 +11,15 @@
   name: malfai-viewport-place-name
   description: malfai-viewport-place-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
     useDelay: 30
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_placeviewport }
+  - type: TargetAction
     checkCanAccess: false
     range: 99999
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_placeviewport
+  - type: WorldTargetAction
     event: !type:MalfAiSetViewportActionEvent
 
 # Open viewport action
@@ -28,12 +28,11 @@
   name: malfai-viewport-open-name
   description: malfai-viewport-open-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_openviewport
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_openviewport }
+  - type: InstantAction
     event: !type:MalfAiOpenViewportActionEvent
 
 
@@ -43,12 +42,11 @@
   name: malfai-open-store-name
   description: malfai-open-store-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -20
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_shop
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_shop }
+  - type: InstantAction
     event: !type:OpenMalfAiStoreActionEvent
 
 - type: entity
@@ -56,12 +54,11 @@
   name: malfai-open-borgs-ui-name
   description: malfai-open-borgs-ui-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -10
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_borgs
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_borgs }
+  - type: InstantAction
     event: !type:OpenMalfAiBorgsUiActionEvent
 
 - type: entity
@@ -69,12 +66,11 @@
   name: malfai-camera-upgrade-name
   description: malfai-camera-upgrade-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_cameraupgrade
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_cameraupgrade }
+  - type: InstantAction
     event: !type:MalfAiToggleCameraUpgradeActionEvent
 
 # New: Doomsday Protocol (AI-only)
@@ -83,12 +79,11 @@
   name: malfai-doomsday-name
   description: malfai-doomsday-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_doomsday
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_doomsday }
+  - type: InstantAction
     event: !type:MalfAiDoomsdayActionEvent
 
 # New: Robotics Factory (AI-only)
@@ -97,14 +92,14 @@
   name: malfai-robotics-factory-name
   description: malfai-robotics-factory-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_factory }
+  - type: TargetAction
     checkCanAccess: false
     range: 99999
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_factory
+  - type: WorldTargetAction
     event: !type:MalfAiRoboticsFactoryActionEvent
 
 # Shunt to APC action
@@ -113,14 +108,14 @@
   name: malfai-shunt-to-apc-name
   description: malfai-shunt-to-apc-desc
   components:
-  - type: EntityTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_shunttoapc }
+  - type: TargetAction
     checkCanAccess: false
     range: 99999
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_shunttoapc
+  - type: EntityTargetAction
     event: !type:MalfAiShuntToApcActionEvent
 
 # Voice Modulator action
@@ -129,12 +124,11 @@
   name: malfai-voice-modulator-name
   description: malfai-voice-modulator-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_voicemodulator
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_voicemodulator }
+  - type: InstantAction
     event: !type:MalfAiVoiceModulatorActionEvent
 
 # Return to Core action (used for shunt and mech hijack)
@@ -143,12 +137,11 @@
   name: malfai-return-to-core-name
   description: malfai-return-to-core-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_returntocore
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_returntocore }
+  - type: InstantAction
     event: !type:MalfAiReturnToCoreActionEvent
 
 # Overload Machine action
@@ -157,15 +150,17 @@
   name: malfai-overload-machine-name
   description: malfai-overload-machine-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_overloadmachine }
+  - type: LimitedCharges
+    lastCharges: 2
+    maxCharges: 20
+  - type: TargetAction
     checkCanAccess: false
     range: 99999
-    charges: 2
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_overloadmachine
+  - type: WorldTargetAction
     event: !type:MalfAiOverloadMachineActionEvent
 
 # Hijack Mech action
@@ -174,15 +169,15 @@
   name: malfai-hijack-mech-name
   description: malfai-hijack-mech-desc
   components:
-  - type: EntityTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
     checkCanInteract: false
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_mech }
+  - type: TargetAction
     checkCanAccess: false
     range: 99999
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_mech
+  - type: EntityTargetAction
     event: !type:MalfAiHijackMechActionEvent
 
 - type: entity
@@ -190,15 +185,17 @@
   name: malfai-action-override-machine-name
   description: malfai-action-override-machine-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_overridemachine }
+  - type: LimitedCharges
+    lastCharges: 2
+    maxCharges: 20
+  - type: TargetAction
     checkCanAccess: false
     range: 99999
-    charges: 2
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_overridemachine
+  - type: WorldTargetAction
     event: !type:MalfAiOverrideMachineActionEvent
 
 # Toggle Camera Microphones action
@@ -207,12 +204,11 @@
   name: malfai-toggle-camera-microphones-name
   description: malfai-toggle-camera-microphones-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_cameramic
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_cameramic }
+  - type: InstantAction
     event: !type:MalfAiToggleCameraMicrophonesActionEvent
 
 # Detonate RCDs action
@@ -221,13 +217,12 @@
   name: malfai-detonate-rcds-name
   description: malfai-detonate-rcds-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
     charges: 1
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_detonatercd
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_detonatercd }
+  - type: InstantAction
     event: !type:MalfAiDetonateRcdsActionEvent
 
 # Lockdown Grid action
@@ -236,13 +231,14 @@
   name: malfai-lockdown-grid-name
   description: malfai-lockdown-grid-desc
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
-    charges: 1
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_lockdowngrid
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_lockdowngrid }
+  - type: LimitedCharges
+    lastCharges: 1
+    maxCharges: 20
+  - type: InstantAction
     event: !type:MalfAiLockdownGridActionEvent
 
 # Gyroscope action
@@ -251,14 +247,13 @@
   name: malfai-gyroscope-name
   description: malfai-gyroscope-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
     itemIconStyle: BigAction
     priority: -5
     useDelay: 3
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_gyroscope }
+  - type: TargetAction
     checkCanAccess: false
     range: 5
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_gyroscope
+  - type: WorldTargetAction
     event: !type:MalfAiGyroscopeActionEvent
-
