@@ -247,8 +247,6 @@
   - type: AntagObjectives # Goobstation
     objectives:
     - NukeopsDetonateObjective
-  - type: GlobalAntagonist # Europa
-    antagonistPrototype: globalAntagonistNukeops
 
 - type: entity
   parent: BaseNukeopsRule
@@ -272,6 +270,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -291,6 +291,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -314,6 +316,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:

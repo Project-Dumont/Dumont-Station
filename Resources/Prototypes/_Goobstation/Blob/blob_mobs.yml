@@ -127,7 +127,7 @@
     - type: GuideHelp
       guides:
       - Blob
-#    - type: GlobalAntagonist # Europa | Disabled because spam
+#    - type: GlobalAntagonist # Orion | Disabled because spam
 #      antagonistPrototype: globalAntagonistBlob
 
 # Blobbernaut
@@ -237,12 +237,12 @@
     - type: GuideHelp
       guides:
       - Blob
+    - type: GlobalAntagonist # Orion
+      antagonistPrototype: globalAntagonistBlob
     - type: Bloodstream
       bloodMaxVolume: 300
       bloodReagent: Blood
       bleedReductionAmount: 5
-    - type: GlobalAntagonist # Europa
-      antagonistPrototype: globalAntagonistBlob
 
 # Observer
 - type: entity
@@ -321,5 +321,5 @@
       defaultChannel: Blobmind
       channels:
       - Blobmind
-    - type: GlobalAntagonist # Europa
+    - type: GlobalAntagonist # Orion
       antagonistPrototype: globalAntagonistBlob

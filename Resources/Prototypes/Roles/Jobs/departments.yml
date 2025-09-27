@@ -104,10 +104,10 @@
   name: department-Cargo
   description: department-Cargo-description
   color: "#A46106"
-  # Europa-Start
-  weight: -5
+  # Orion-Start
+  weight: -7
   buttonStyle: ButtonColorCargoDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - CargoTechnician
   - Quartermaster
@@ -119,10 +119,10 @@
   name: department-Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  # Europa-Start
-  weight: -4
+  # Orion-Start
+  weight: -8
   buttonStyle: ButtonColorCivilianDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - Bartender
   - Botanist
@@ -148,10 +148,10 @@
   name: department-CentralCommand
   description: department-CentralCommand-description
   color: "#0c344d"
-  # Europa-Start
-  weight: -1
+  # Orion-Start
+  weight: -2
   buttonStyle: ButtonColorCentralCommandDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - CentralCommandOfficial
   - CBURN
@@ -172,18 +172,18 @@
   - SpecialOperationsOfficer
   - Diplomat
   - GovernmentMan # Goobstation - End
-  editorHidden: true
-#  weight: 120 # Europa-Remove
+#  editorHidden: true # Orion-Edit: true > false
+#  weight: 120 # Orion-Edit: Moved
 
 - type: department
   id: Command
   name: department-Command
   description: department-Command-description
   color: "#334E6D"
-  # Europa-Start
-  weight: -2
+  # Orion-Start
+  weight: -1
   buttonStyle: ButtonColorCommandDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - Captain
   - ChiefEngineer
@@ -208,17 +208,17 @@
   - AdministrativeAssistant # Delta V
   - CommandMaid # event-restricted, Goobstation
   primary: false
-#  weight: 100 # Europa-Remove
+#  weight: 100 # Orion-Edit: Moved
 
 - type: department
   id: Engineering
   name: department-Engineering
   description: department-Engineering-description
   color: "#EFB341"
-  # Europa-Start
-  weight: -6
+  # Orion-Start
+  weight: -4
   buttonStyle: ButtonColorEngineeringDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
@@ -230,10 +230,10 @@
   name: department-Medical
   description: department-Medical-description
   color: "#52B4E9"
-  # Europa-Start
-  weight: -7
+  # Orion-Start
+  weight: -6
   buttonStyle: ButtonColorMedicalDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - Chemist
   - ChiefMedicalOfficer
@@ -249,10 +249,10 @@
   name: department-Security
   description: department-Security-description
   color: "#DE3A3A"
-  # Europa-Start
+  # Orion-Start
   weight: -3
   buttonStyle: ButtonColorSecurityDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - HeadOfSecurity
   - SecurityCadet
@@ -269,10 +269,10 @@
   name: department-Science
   description: department-Science-description
   color: "#D381C9"
-  # Europa-Start
-  weight: -8
+  # Orion-Start
+  weight: -5
   buttonStyle: ButtonColorScienceDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - ResearchDirector
   - Scientist
@@ -284,10 +284,10 @@
   name: department-Silicon
   description: department-Silicon-description
   color: "#D381C9"
-  # Europa-Start
+  # Orion-Start
   weight: -9
   buttonStyle: ButtonColorSiliconDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - Borg
   - StationAi
@@ -297,10 +297,10 @@
   name: department-Specific
   description: department-Specific-description
   color: "#9FED58"
-  # Europa-Start
+  # Orion-Start
   weight: -42
   buttonStyle: ButtonColorSpecificDepartment
-  # Europa-End
+  # Orion-End
   roles:
   - RadioHost # Goobstation
   - Boxer

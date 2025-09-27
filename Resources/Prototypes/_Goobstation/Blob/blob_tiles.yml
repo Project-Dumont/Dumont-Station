@@ -121,7 +121,7 @@
     - !type:OverallPlaytimeRequirement
       time: 18000 #5 hours
   - type: GhostTakeoverAvailable
-  - type: GlobalAntagonist # Europa
+  - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistBlob
 
 - type: entity

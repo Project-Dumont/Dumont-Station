@@ -4,7 +4,7 @@
 // SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
 // SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 J�lio C�sar Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 J lio C sar Ueti <52474532+Mirino97@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
@@ -95,6 +95,7 @@
 
 using System.Linq;
 using System.Numerics;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
@@ -102,6 +103,9 @@ using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
+using Content.Shared._Orion.Antag;
+using Content.Shared._Orion.Antag.Components;
+using Content.Shared._White.Xenomorphs.Infection;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
@@ -109,9 +113,9 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Eye;
-using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Follower;
 using Content.Shared.Ghost;
+using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
@@ -121,27 +125,27 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
+using Content.Shared.Roles;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.SSDIndicator;
 using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
-using Content.Shared._White.Xenomorphs.Infection;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared._Europa.Antag;
-using Content.Shared.Roles;
-using Content.Shared.SSDIndicator;
 
 // Shitmed Change
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared._Shitmed.Body;
-using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared.Warps;
@@ -225,7 +229,7 @@ namespace Content.Server.Ghost
             // If component not deleting they can see ghosts.
             if (ent.Comp.LifeStage <= ComponentLifeStage.Running)
             {
-                args.VisibilityMask |= (int)VisibilityFlags.Ghost;
+                args.VisibilityMask |= (int) VisibilityFlags.Ghost;
             }
         }
 
@@ -385,8 +389,8 @@ namespace Content.Server.Ghost
 
         private void OnGhostReturnToBodyRequest(GhostReturnToBodyRequest msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} attached
-                || !TryComp(attached, out GhostComponent? ghost) // Europa-Edit
+            if (args.SenderSession.AttachedEntity is not { Valid: true } attached
+                || !TryComp(attached, out GhostComponent? ghost) // Orion-Edit
                 || !ghost.CanReturnToBody
                 || !TryComp(attached, out ActorComponent? actor))
             {
@@ -401,27 +405,27 @@ namespace Content.Server.Ghost
 
         private void OnGhostWarpsRequest(GhostWarpsRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} entity
-                || !HasComp<GhostComponent>(entity)) // Europa-Edit
+            if (args.SenderSession.AttachedEntity is not { Valid: true } entity
+                || !HasComp<GhostComponent>(entity)) // Orion-Edit
             {
                 Log.Warning($"User {args.SenderSession.Name} sent a {nameof(GhostWarpsRequestEvent)} without being a ghost.");
                 return;
             }
 
-            // Europa-Start
+            // Orion-Start
             var players = GetPlayerWarps();
             var places = GetLocationWarps();
             var antagonists = GetAntagonistWarps();
 
-            var response = new GhostWarpsResponseEvent(players, places, antagonists); // Europa-Edit
-            // Europa-End
+            var response = new GhostWarpsResponseEvent(players, places, antagonists); // Orion-Edit
+            // Orion-End
             RaiseNetworkEvent(response, args.SenderSession.Channel);
         }
 
         private void OnGhostWarpToTargetRequest(GhostWarpToTargetRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} attached
-                || !TryComp(attached, out GhostComponent? _)) // Europa-Edit
+            if (args.SenderSession.AttachedEntity is not { Valid: true } attached
+                || !TryComp(attached, out GhostComponent? _)) // Orion-Edit
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to warp to {msg.Target} without being a ghost.");
                 return;
@@ -435,7 +439,7 @@ namespace Content.Server.Ghost
                 return;
             }
 
-//            WarpTo(attached, target); // Europa-Remove
+            //            WarpTo(attached, target); // Orion-Edit: Removed
 
             _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(attached)} ghost warped to {ToPrettyString(target)}");
 
@@ -467,7 +471,7 @@ namespace Content.Server.Ghost
             WarpTo(uid, target);
         }
 
-        private void WarpTo(EntityUid uid, EntityUid target) // Europa-Edit
+        private void WarpTo(EntityUid uid, EntityUid target) // Orion-Edit
         {
             _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(uid)} ghost warped to {ToPrettyString(target)}");
 
@@ -484,41 +488,48 @@ namespace Content.Server.Ghost
                 _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         }
 
-        // Europa-Start
+        // Orion-Start
         private List<GhostWarpPlace> GetLocationWarps()
         {
-            var warps = new List<GhostWarpPlace> { };
+            var warps = new List<GhostWarpPlace>();
             var allQuery = AllEntityQuery<WarpPointComponent>();
 
             while (allQuery.MoveNext(out var uid, out var warp))
             {
-                var newWarp =  new GhostWarpPlace(GetNetEntity(uid), warp.Location ?? Name(uid), warp.Location ?? Description(uid));
+                var newWarp = new GhostWarpPlace(GetNetEntity(uid), warp.Location ?? Name(uid), warp.Location ?? Description(uid));
                 warps.Add(newWarp);
             }
 
             return warps;
         }
-        // Europa-End
+        // Orion-End
 
-        private List<GhostWarpPlayer> GetPlayerWarps() // Europa-Edit | GetLocationWarps > GetPlayerWarps
+        private List<GhostWarpPlayer> GetPlayerWarps() // Orion-Edit: GetLocationWarps > GetPlayerWarps
         {
-/* // Europa-Remove
-            var allQuery = AllEntityQuery<WarpPointComponent>();
+            /* // Orion-Edit: Removed
+                        var allQuery = AllEntityQuery<WarpPointComponent>();
 
-            while (allQuery.MoveNext(out var uid, out var warp))
-            {
-                yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
-            }
-*/
+                        while (allQuery.MoveNext(out var uid, out var warp))
+                        {
+                            yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
+                        }
+            */
 
-            // Europa-Start
-            var warps = new List<GhostWarpPlayer> { };
+            // Orion-Start
+            var warps = new List<GhostWarpPlayer>();
             foreach (var mindContainer in EntityQuery<MindContainerComponent>())
             {
                 var entity = mindContainer.Owner;
                 var meta = Comp<MetaDataComponent>(entity);
 
                 if (HasComp<GlobalAntagonistComponent>(entity) || IsShitEntity(meta.EntityPrototype?.ID))
+                    continue;
+
+                if (!HasComp<HumanoidAppearanceComponent>(entity) &&
+                    !HasComp<GhostComponent>(entity) &&
+                    !HasComp<BorgBrainComponent>(entity) &&
+                    !HasComp<SiliconLawProviderComponent>(entity) && // Drone detection
+                    !HasComp<BorgChassisComponent>(entity))
                     continue;
 
                 var playerDepartmentId = _prototypeManager.Index<DepartmentPrototype>("Specific").ID;
@@ -555,10 +566,10 @@ namespace Content.Server.Ghost
             }
 
             return warps;
-            // Europa-End
+            // Orion-End
         }
 
-        // Europa-Start
+        // Orion-Start
         private bool IsShitEntity(string? entityId)
         {
             if (entityId == null)
@@ -574,18 +585,18 @@ namespace Content.Server.Ghost
                 "MobRandomScienceCorpse" => true,
                 "MobRandomSecurityCorpse" => true,
                 "MobRandomCommandCorpse" => true,
-                "MobMouse" => true,
-                "MobMouse1" => true,
-                "MobMouse2" => true,
-                "MobMouseDead" => true,
-                "MobCockroach" => true,
+                /*                "MobMouse" => true,
+                                "MobMouse1" => true,
+                                "MobMouse2" => true,
+                                "MobMouseDead" => true,
+                                "MobCockroach" => true,*/
                 _ => false,
             };
         }
 
         private List<GhostWarpGlobalAntagonist> GetAntagonistWarps()
         {
-            var warps = new List<GhostWarpGlobalAntagonist> { };
+            var warps = new List<GhostWarpGlobalAntagonist>();
 
             foreach (var antagonist in EntityQuery<GlobalAntagonistComponent>())
             {
@@ -605,28 +616,28 @@ namespace Content.Server.Ghost
 
             return warps;
         }
-        // Europa-End
+        // Orion-End
 
-/* // Europa-Remove
-        private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)
-        {
-            foreach (var player in _player.Sessions)
-            {
-                if (player.AttachedEntity is not {Valid: true} attached)
-                    continue;
+        /* // Orion-Edit: Removed
+                private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)
+                {
+                    foreach (var player in _player.Sessions)
+                    {
+                        if (player.AttachedEntity is not {Valid: true} attached)
+                            continue;
 
-                if (attached == except) continue;
+                        if (attached == except) continue;
 
-                TryComp<MindContainerComponent>(attached, out var mind);
+                        TryComp<MindContainerComponent>(attached, out var mind);
 
-                var jobName = _jobs.MindTryGetJobName(mind?.Mind);
-                var playerInfo = $"{Comp<MetaDataComponent>(attached).EntityName} ({jobName})";
+                        var jobName = _jobs.MindTryGetJobName(mind?.Mind);
+                        var playerInfo = $"{Comp<MetaDataComponent>(attached).EntityName} ({jobName})";
 
-                if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
-                    yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
-            }
-        }
-*/
+                        if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
+                            yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
+                    }
+                }
+        */
 
         #endregion
 

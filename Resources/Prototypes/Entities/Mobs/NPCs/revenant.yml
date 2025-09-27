@@ -197,5 +197,5 @@
     - KnockdownImmune
   - type: WeakToHoly # Goobstation Shitchap
     alwaysTakeHoly: true
-  - type: GlobalAntagonist # Europa
+  - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistRevenant

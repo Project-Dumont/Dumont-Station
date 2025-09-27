@@ -1,4 +1,4 @@
-﻿global-antagonist-wizard-name = Wizard
+﻿﻿global-antagonist-wizard-name = Wizard
 global-antagonist-wizard-description = Old madman from the Federation of Magicians, trained in deadly spells.
 
 global-antagonist-nukeops-name = Nuclear operative
@@ -51,6 +51,15 @@ global-antagonist-cortical-borer-description = Murder in my mind.
 
 global-antagonist-morph-name = Morph
 global-antagonist-morph-description = Dirty.
+
+global-antagonist-devil-name = Devil
+global-antagonist-devil-description = Һеҙ әһәмиәтһеҙ.
+
+global-antagonist-abductor-name = Abductor
+global-antagonist-abductor-description = Zonding in progress.
+
+global-antagonist-contractor-name = Contractor
+global-antagonist-contractor-description = Bounty hunter.
 
 global-antagonist-ghost-role-name = Ghost role
 global-antagonist-ghost-role-description = Ghost roles most often have no effect on the station.

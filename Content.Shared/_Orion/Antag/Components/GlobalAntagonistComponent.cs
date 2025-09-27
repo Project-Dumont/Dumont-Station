@@ -1,7 +1,7 @@
 ﻿using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared._Europa.Antag;
+namespace Content.Shared._Orion.Antag.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class GlobalAntagonistComponent : Component

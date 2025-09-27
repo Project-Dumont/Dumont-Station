@@ -2503,7 +2503,7 @@
     upper: MobRodentia
     lowest: MobMouseCancer
   # Corvax-Wega-Genetics-end
-  - type: GlobalAntagonist # Europa
+  - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistBlob
 
 - type: entity
@@ -3101,7 +3101,7 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
-  - type: GlobalAntagonist # Europa
+  - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistSpider
 
 - type: entity
@@ -3157,7 +3157,7 @@
     upper: MobArachnid
     lowest: MobGiantSpiderAngry
   # Corvax-Wega-Genetics-end
-  - type: GlobalAntagonist # Europa
+  - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistSpider
 
 - type: entity
@@ -3212,7 +3212,7 @@
       upper: MobArachnid
       lowest: MobGiantSpiderAngry
     # Corvax-Wega-Genetics-end
-    - type: GlobalAntagonist # Europa
+    - type: GlobalAntagonist # Orion
       antagonistPrototype: globalAntagonistSpiderClown
 
 - type: entity
@@ -3232,7 +3232,7 @@
     upper: MobArachnid
     lowest: MobGiantSpiderWizard
   # Corvax-Wega-Genetics-end
-  - type: GlobalAntagonist # Europa
+  - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistSpider
 
 - type: entity
