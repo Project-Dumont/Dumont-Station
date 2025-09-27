@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "copyright": "Cards, Decks, Boxes and Hands Sprites were originally from Estação Pirata (https://github.com/Estacao-Pirata/Estacao-Pirata) and modified by AgentePanela.",
+    "license": "CC-BY-SA-3.0",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+        {
+            "name": "box"
+        },
+        {
+            "name": "box_open"
+        },
+        {
+            "name": "deck_full"
+        },
+        {
+            "name": "deck_half"
+        },
+        {
+            "name": "deck_low"
+        },
+        {
+            "name": "deck_empty"
+        },
+        {
+            "name": "singlecard_down"
+        },
+        {
+            "name": "card_drawfour"
+        }
+    ]
+}
