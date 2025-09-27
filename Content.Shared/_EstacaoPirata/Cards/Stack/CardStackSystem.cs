@@ -361,7 +361,7 @@ public sealed class CardStackSystem : EntitySystem
         if (firstComp.Cards.Count <= 0)
             return;
 
-        if (firstComp.Cards.Count > 0 || secondComp.Cards.Count > 0)
+        if (firstComp.Cards.Count > 0 && secondComp.Cards.Count > 0)
         {
             if (!TryComp(firstComp.Cards.First(), out CardComponent? firstCardComp))
                 return;
