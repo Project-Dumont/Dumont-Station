@@ -202,7 +202,7 @@
   id: CardNunoWildDrawCards
   components:
   - type: Card
-    name: card-nuno-wild
+    name: card-nuno-wild-draw-cards
   - type: Sprite
     sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
     layers:
