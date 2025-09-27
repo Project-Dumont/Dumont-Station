@@ -1,5 +1,5 @@
-- type: loadoutEffectGroup
-  id: MK58Gold
+- type: loadout
+  id: WeaponPistolMk58Gold
   effects:
     - !type:JobRequirementLoadoutEffect
       requirement:

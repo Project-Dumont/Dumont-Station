@@ -5,7 +5,7 @@
   description: MK-58 folheada a ouro, puro estilo, so estilo mesmo pq o resto é tudo igual. Utiliza pentes de pistolas .35 .
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+    sprite: _Gabystation/Objects/Weapons/Guns/Pistol/mk58gold.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
