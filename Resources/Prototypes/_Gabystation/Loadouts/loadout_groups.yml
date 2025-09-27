@@ -35,7 +35,15 @@
   id: TrinketsChef
   name: loadout-group-trinkets-job
   minLimit: 0
-  maxLimit: 1
+  maxLimit: 2
   loadouts:
   - GoldKitchenKnife
   - GoldButchCleaver
+
+- type: loadoutGroup
+  id: TrinketsSecurity
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - MK58Gold

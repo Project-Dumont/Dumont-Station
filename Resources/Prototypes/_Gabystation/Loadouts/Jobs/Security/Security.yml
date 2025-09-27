@@ -1,0 +1,11 @@
+- type: loadoutEffectGroup
+  id: MK58Gold
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 360000 #100 hrs
+  storage:
+    back:
+    - WeaponPistolMk58Gold
