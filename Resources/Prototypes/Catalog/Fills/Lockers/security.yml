@@ -113,6 +113,7 @@
       - id: Wrench # Goobstation
       - id: ContrabandDetectorFlatpack # Goobstation
         amount: 2
+      - id: ATMFlatpack # Gabystation
 
 - type: entity
   id: LockerWardenFilled
@@ -149,6 +150,7 @@
       - id: Wrench # Goobstation
       - id: ContrabandDetectorFlatpack # Goobstation
         amount: 2
+      - id: ATMFlatpack # Gabystation
 
 - type: entity
   id: LockerSecurityFilled
