@@ -68,7 +68,14 @@ namespace Content.Server._Gabystation.Economy
 
             // Create the account interface
             var bankAccount = new BankAccount()
-            { Balance = balance, JobId = jobId, InitialPassword = password, Password = password, Owner = uid };
+            {
+                Balance = balance,
+                JobId = jobId,
+                InitialPassword = password,
+                Password = password,
+                Owner = uid,
+                OwnerName = Name(uid) //TODO: owner change his account name
+            };
 
             // Add the bank to the dict and ref dict
             comp.BankAccounts.Add(accountId, bankAccount);
@@ -151,7 +158,12 @@ namespace Content.Server._Gabystation.Economy
 
                     account.Balance += proto.Salary;
                     Log.Debug("Event time");
-                    var ev = new AccountPaymentCompleted() { AccountId = accountId, Account = account, Payment = proto.Salary };
+                    var ev = new AccountTransferenceCompleted()
+                    {
+                        Type = TransferenceTypes.Payment,
+                        Account = account,
+                        Amount = proto.Salary
+                    };
                     RaiseLocalEvent(uid, ev);
                     Log.Debug("Event done?");
                 }
@@ -218,6 +230,15 @@ namespace Content.Server._Gabystation.Economy
             if (!TrySetBalance(comp, targetId, targetData.Balance + amount)
                 || !TrySetBalance(comp, accountId, data.Balance - amount))
                 return false;
+
+            var ev = new AccountTransferenceCompleted()
+            {
+                Type = TransferenceTypes.Transference,
+                Account = data,
+                Amount = amount,
+                TargetAccount = targetId
+            };
+            RaiseLocalEvent(comp.Owner, ev);
 
             return true;
         }

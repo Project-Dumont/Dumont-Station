@@ -1,5 +1,6 @@
 namespace Content.Shared._Gabystation.Economy;
 
+//! We use this?
 public partial class EconomyManagerSystem : EntitySystem
 {
     public override void Initialize()

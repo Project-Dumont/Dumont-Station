@@ -48,7 +48,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeMessageEvent>(OnMessage);
         //SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeRemovedEvent>(OnCartridgeRemoved);
         SubscribeLocalEvent<NanoBankCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
-        SubscribeLocalEvent<EconomyManagerComponent, AccountPaymentCompleted>(OnPayment);
+        SubscribeLocalEvent<EconomyManagerComponent, AccountTransferenceCompleted>(OnTransference);
     }
 
     public override void Update(float frameTime)
@@ -117,7 +117,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         UpdateUI(ent, loaderId);
     }
 
-    private void OnPayment(Entity<EconomyManagerComponent> ent, ref AccountPaymentCompleted args)
+    private void OnTransference(Entity<EconomyManagerComponent> ent, ref AccountTransferenceCompleted args)
     {
         //! Isso provavelmente tem um alto custo computacional, mas eu não sei outro jeito de fazer isso.
         // TODO: Novo metodo, o id recebe a mensagem e verifica se está na conta bancaria, se sim, envia uma outra mensagem pra cá.
@@ -126,17 +126,22 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         while (ents.MoveNext(out var uid, out var comp))
         {
 
-            if (!comp.LoggedIn || comp.AccountId != args.AccountId || comp.AccountPin is 0)
+            if (!comp.LoggedIn || comp.AccountPin is 0)
                 continue;
 
             if (!_economy.ValidateLogin(ent.Comp, comp.AccountId, comp.AccountPin))
                 continue;
 
             if (!comp.NotificationsMuted)
-                HandleNotification(uid, "economy-notification-payment-title", "economy-notification-payment-body", args.Payment);
+                HandleNotification(ent, (uid, comp), ref args);
 
             UpdateUIForCard(uid);
         }
+    }
+
+    private void HandleNotification(Entity<EconomyManagerComponent> ent, Entity<NanoBankCardComponent> card, ref AccountTransferenceCompleted args)
+    {
+        HandleNotification(card.Owner, "economy-notification-payment-title", "economy-notification-payment-body", args.Amount);
     }
 
     /// <summary>
@@ -238,11 +243,8 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             return;
         }
 
-        HandleNotification(card.Owner, "economy-notification-transfer-title", "economy-notification-transfer-body", amount);
-        UpdateUIForCard(card);
-
-        // Atualizar a UI do targetId. Como conseguir os cards logados a partir do id de uma conta?
-        // Não da pra usar o PDA de IBankAccount.Owner visto que esse
+        //HandleNotification(card.Owner, "economy-notification-transfer-title", "economy-notification-transfer-body", amount);
+        //UpdateUIForCard(card);
     }
 
     // Talvez isso não devese ser público. Mas preciso chamar em PdaSystem.

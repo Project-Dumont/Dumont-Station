@@ -8,12 +8,17 @@ namespace Content.Server._Gabystation.Economy;
 /// When an account receive an payment.
 /// </summary>
 [PublicAPI]
-public sealed class AccountPaymentCompleted : EntityEventArgs
+public sealed class AccountTransferenceCompleted : EntityEventArgs
 {
-    public int AccountId;
+    public TransferenceTypes Type;
     public IBankAccount? Account;
     public EntityUid Uid;
-    public float Payment;
+    public int Amount;
+
+    /// <summary>
+    /// Used by transference type
+    /// </summary>
+    public int? TargetAccount;
 }
 
 /// <summary>
@@ -23,4 +28,13 @@ public sealed class AccountPaymentCompleted : EntityEventArgs
 public sealed class AfterPaymentRotation : EntityEventArgs
 {
     public EntityUid Uid;
+}
+
+public enum TransferenceTypes
+{
+    Payment,
+    Transference,
+    Pursache,
+    Withdraw,
+    Deposit
 }
