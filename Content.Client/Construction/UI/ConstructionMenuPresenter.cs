@@ -26,7 +26,9 @@
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ertanic <36124833+Ertanic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 João Fernandez <joaorbfernandez@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -40,6 +42,7 @@ using System.Numerics;
 using Content.Client.Lobby;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Shared._Gabystation.Text; // Gabystation
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Client.GameObjects;
@@ -289,6 +292,11 @@ namespace Content.Client.Construction.UI
             }
         }
 
+        /// <summary>
+        /// Builds a list of construction recipes that match the provided search text and category, and returns them sorted by prototype name.
+        /// </summary>
+        /// <param name="args">A tuple where Item1 is the search text and Item2 is the selected category (empty or the "all" category selects all recipes).</param>
+        /// <returns>A list of ConstructionMenu.ConstructionMenuListData for recipes that are visible to the local player, match the search and category (favorites honored), and have a resolvable target prototype, sorted by prototype name.</returns>
         private List<ConstructionMenu.ConstructionMenuListData> GetAndSortRecipes((string, string) args)
         {
             var recipes = new List<ConstructionMenu.ConstructionMenuListData>();
@@ -296,6 +304,8 @@ namespace Content.Client.Construction.UI
             var (search, category) = args;
             var isEmptyCategory = string.IsNullOrEmpty(category) || category == ForAllCategoryName;
             _selectedCategory = isEmptyCategory ? string.Empty : category;
+
+            search = TextHelpers.RemoveAccents(search); // Gabystation
 
             foreach (var recipe in _prototypeManager.EnumeratePrototypes<ConstructionPrototype>())
             {
@@ -308,7 +318,7 @@ namespace Content.Client.Construction.UI
                     continue;
 
                 if (!string.IsNullOrEmpty(search) && (recipe.Name is { } name &&
-                                                      !name.Contains(search.Trim(),
+                                                      !TextHelpers.RemoveAccents(name).Contains(search.Trim(), // Gabystation
                                                           StringComparison.InvariantCultureIgnoreCase)))
                     continue;
 
@@ -664,6 +674,10 @@ namespace Content.Client.Construction.UI
             UpdateGhostPlacement();
         }
 
+        /// <summary>
+        /// Refreshes the currently selected recipe's information when a construction guide becomes available.
+        /// </summary>
+        /// <param name="e">The prototype ID of the construction whose guide became available.</param>
         private void SystemGuideAvailable(object? sender, string e)
         {
             if (!CraftingAvailable)
