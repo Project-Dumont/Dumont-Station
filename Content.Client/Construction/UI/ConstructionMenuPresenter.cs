@@ -40,6 +40,7 @@ using System.Numerics;
 using Content.Client.Lobby;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Shared._Gabystation.Text; // Gabystation
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Client.GameObjects;
@@ -297,6 +298,8 @@ namespace Content.Client.Construction.UI
             var isEmptyCategory = string.IsNullOrEmpty(category) || category == ForAllCategoryName;
             _selectedCategory = isEmptyCategory ? string.Empty : category;
 
+            search = TextHelpers.RemoveAccents(search); // Gabystation
+
             foreach (var recipe in _prototypeManager.EnumeratePrototypes<ConstructionPrototype>())
             {
                 if (recipe.Hide)
@@ -308,7 +311,7 @@ namespace Content.Client.Construction.UI
                     continue;
 
                 if (!string.IsNullOrEmpty(search) && (recipe.Name is { } name &&
-                                                      !name.Contains(search.Trim(),
+                                                      !TextHelpers.RemoveAccents(name).Contains(search.Trim(), // Gabystation
                                                           StringComparison.InvariantCultureIgnoreCase)))
                     continue;
 
