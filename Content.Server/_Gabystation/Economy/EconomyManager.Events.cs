@@ -11,6 +11,7 @@ namespace Content.Server._Gabystation.Economy;
 public sealed class AccountTransferenceCompleted : EntityEventArgs
 {
     public TransferenceTypes Type;
+    public int AccountId;
     public IBankAccount? Account;
     public EntityUid Uid;
     public int Amount;

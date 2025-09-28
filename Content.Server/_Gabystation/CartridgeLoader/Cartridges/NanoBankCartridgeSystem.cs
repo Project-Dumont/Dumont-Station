@@ -125,7 +125,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         var ents = AllEntityQuery<NanoBankCardComponent>();
         while (ents.MoveNext(out var uid, out var comp))
         {
-
             if (!comp.LoggedIn || comp.AccountPin is 0)
                 continue;
 
@@ -141,7 +140,22 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
     private void HandleNotification(Entity<EconomyManagerComponent> ent, Entity<NanoBankCardComponent> card, ref AccountTransferenceCompleted args)
     {
-        HandleNotification(card.Owner, "economy-notification-payment-title", "economy-notification-payment-body", args.Amount);
+        switch (args.Type)
+        {
+            case TransferenceTypes.Payment:
+                if (card.Comp.AccountId == args.AccountId)
+                    HandleNotification(card.Owner, "economy-notification-payment-title", "economy-notification-payment-body", args.Amount);
+                break;
+            case TransferenceTypes.Transference:
+                break;
+            case TransferenceTypes.Pursache:
+                break;
+            case TransferenceTypes.Withdraw:
+                break;
+            case TransferenceTypes.Deposit:
+                break;
+        }
+
     }
 
     /// <summary>

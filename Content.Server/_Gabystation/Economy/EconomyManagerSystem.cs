@@ -161,6 +161,7 @@ namespace Content.Server._Gabystation.Economy
                     var ev = new AccountTransferenceCompleted()
                     {
                         Type = TransferenceTypes.Payment,
+                        AccountId = accountId,
                         Account = account,
                         Amount = proto.Salary
                     };
@@ -234,6 +235,7 @@ namespace Content.Server._Gabystation.Economy
             var ev = new AccountTransferenceCompleted()
             {
                 Type = TransferenceTypes.Transference,
+                AccountId = accountId,
                 Account = data,
                 Amount = amount,
                 TargetAccount = targetId
