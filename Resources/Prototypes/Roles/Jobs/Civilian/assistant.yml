@@ -90,6 +90,7 @@
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
   goobcoins: 0 #Goob content
+  Salary: 5 # Gaby content
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 36000 #10 hrs

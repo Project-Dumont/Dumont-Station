@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.NameIdentifier;
-using Content.Server.Station.Systems;
 using Content.Shared._Gabystation.Economy;
 using Content.Shared._Gabystation.NanoBank;
 using Content.Shared.Access.Systems;
@@ -12,6 +11,7 @@ using Content.Shared.Mind.Components;
 using Content.Shared.NameIdentifier;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._Gabystation.Economy
 {
@@ -22,7 +22,7 @@ namespace Content.Server._Gabystation.Economy
         [Dependency] private readonly IChatManager _chat = default!;
         [Dependency] private readonly IPrototypeManager _prototypes = default!;
         [Dependency] private readonly SharedIdCardSystem _id = default!;
-        [Dependency] private readonly StationSystem _station = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
 
         private readonly ProtoId<NameIdentifierGroupPrototype> _nameIdentifierGroup = "NanoBank";
 
@@ -38,9 +38,14 @@ namespace Content.Server._Gabystation.Economy
             if (!EntityManager.TryGetComponent<EconomyManagerComponent>(args.Station, out var comp))
                 return;
 
-            TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId);
+            if (args.JobId is null || !_prototypes.TryIndex<JobPrototype>(args.JobId, out var proto) ||
+                !proto.HasBank)
+                return;
+
+            int password = _random.Next(1000, 9999);
+            if (!TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId, password))
+                return;
             Log.Debug($"Assigning bank id to {args.Profile.Name} ({number})!");
-            GetAccountPassword(number, true, out var password);
 
             _chat.ChatMessageToOne(
                 Shared.Chat.ChatChannel.Server,

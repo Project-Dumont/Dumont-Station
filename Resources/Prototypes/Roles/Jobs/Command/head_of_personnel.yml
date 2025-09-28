@@ -153,6 +153,7 @@
       department: Command
       time: 9000 # 2.5 hours
   goobcoins: 40 #Goob content
+  Salary: 50 # Gaby content
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

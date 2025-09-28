@@ -103,6 +103,7 @@
     - !type:AgeRequirement
       requiredAge: 21
   weight: 20
+  Salary: 50 # Gaby content
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"
   requireAdminNotify: true

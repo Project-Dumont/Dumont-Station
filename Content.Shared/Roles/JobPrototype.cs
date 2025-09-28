@@ -270,7 +270,13 @@ namespace Content.Shared.Roles
         ///     Gabystation Change: The amount of spesos a job will be payed.
         /// </summary>
         [DataField]
-        public int Salary { get; private set; } = 100;
+        public int Salary { get; private set; } = 25;
+
+        /// <summary>
+        ///     Gabystation Change: If the job has a roundstart bank account.
+        /// </summary>
+        [DataField]
+        public bool HasBank { get; private set; } = true;
     }
 
     /// <summary>

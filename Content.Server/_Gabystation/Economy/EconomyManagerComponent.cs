@@ -19,11 +19,14 @@ public sealed partial class EconomyManagerComponent : Component
     [DataField("uidBankRef")]
     public Dictionary<EntityUid, int> UidBankRef = new Dictionary<EntityUid, int>();
 
+    /// <summary>
+    /// Cooldown to the payment time, the default is 300 (5min).
+    /// </summary>
     [DataField]
-    public float PaymentDelay = 900f;
+    public float PaymentCooldownRemaining = 300;
 
     [DataField]
-    public float PaymentCooldownRemaining = 900f;
+    public float PaymentDelay = 300;
 }
 
 
