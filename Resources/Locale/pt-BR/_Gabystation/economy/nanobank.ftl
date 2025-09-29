@@ -1,11 +1,23 @@
 economy-notification-payment-title = Pagamento Recebido
-economy-notification-payment-body = Pagamento de {$amount} { economy-money-name } recebido!
+economy-notification-payment-body = Pagamento de {$amount} { economy-money-name } recebido.
 
-economy-notification-transfer-failed-title = Erro na transferencia.
-economy-notification-transfer-failed-transfer-body = Numero de conta ou saldo indisponivel.
+economy-notification-pursache-title = Compra aprovada.
+economy-notification-pursache-body = Compra de {$amount} { economy-money-name } aprovada!
 
-economy-notification-transfer-title = Transferencia conluida
-economy-notification-transfer-body = Transferecia de {$amount} { economy-money-name } concluida!
+economy-notification-withdraw-title = Saque aprovado.
+economy-notification-withdraw-body = Saque de {$amount} { economy-money-name } aprovado!
+
+economy-notification-deposit-title = Deposito recebido.
+economy-notification-deposit-body = Deposito de {$amount} { economy-money-name } recebido.
+
+economy-notification-transference-failed-title = Erro na transferencia.
+economy-notification-transference-failed-transfer-body = Numero de conta ou saldo indisponivel.
+
+economy-notification-transference-sender-title = Transferencia enviada
+economy-notification-transference-sender-body = Transferecia de {$amount} { economy-money-name } para {$target} enviada!
+
+economy-notification-transference-target-title = Transferencia recebida
+economy-notification-transference-target-body = Transferecia de {$amount} { economy-money-name } recebida de {$name}!
 
 ent-NanoBankCartridge = Cartucho do NanoPix
     .desc = O diabo na sua carteira.

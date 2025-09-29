@@ -34,13 +34,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
 
-    // TODO list
-    /// Evento pra quando receber transferencia
-    /// Notificação pra quando receber transferencia
-    /// Geração de senha
-    /// Notificação pós pagamento
-    /// Estamos sempre supondo que cada conta está logada num só card, isso é errado. Todos os cards logados deveriam receber notificação.
-
     public override void Initialize()
     {
         base.Initialize();
@@ -119,9 +112,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
     private void OnTransference(Entity<EconomyManagerComponent> ent, ref AccountTransferenceCompleted args)
     {
-        //! Isso provavelmente tem um alto custo computacional, mas eu não sei outro jeito de fazer isso.
-        // TODO: Novo metodo, o id recebe a mensagem e verifica se está na conta bancaria, se sim, envia uma outra mensagem pra cá.
-        Log.Debug("Payment 1");
+        // Not the best way lol
         var ents = AllEntityQuery<NanoBankCardComponent>();
         while (ents.MoveNext(out var uid, out var comp))
         {
@@ -147,12 +138,24 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
                     HandleNotification(card.Owner, "economy-notification-payment-title", "economy-notification-payment-body", args.Amount);
                 break;
             case TransferenceTypes.Transference:
+                if (card.Comp.AccountId == args.AccountId) // we are the sender
+                    HandleNotification(card.Owner, "economy-notification-transference-sender-title",
+                        "economy-notification-transference-sender-body", args.Amount, ("target", $"#{args.TargetAccount:D4}"));
+                else if (card.Comp.AccountId == args.TargetAccount) // we are the receiver
+                    HandleNotification(card.Owner, "economy-notification-transfer-target-title",
+                        "economy-notification-transfer-target-body", args.Amount, ("name", args.Account?.OwnerName ?? "?"));
                 break;
-            case TransferenceTypes.Pursache:
-                break;
+            /*case TransferenceTypes.Pursache: // Can be annoying in a prod. round
+                if (card.Comp.AccountId == args.AccountId)
+                    HandleNotification(card.Owner, "economy-notification-pursache-title", "economy-notification-pursache-body", args.Amount);
+                break;*/
             case TransferenceTypes.Withdraw:
+                if (card.Comp.AccountId == args.AccountId)
+                    HandleNotification(card.Owner, "economy-notification-withdraw-title", "economy-notification-withdraw-body", args.Amount);
                 break;
             case TransferenceTypes.Deposit:
+                if (card.Comp.AccountId == args.AccountId)
+                    HandleNotification(card.Owner, "economy-notification-deposit-title", "economy-notification-deposit-body", args.Amount);
                 break;
         }
 
@@ -192,20 +195,22 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         return true;
     }
 
-    private void HandleNotification(EntityUid uid, string tittleLoc, string bodyLoc, float? amount)
+    private void HandleNotification(EntityUid uid, string tittleLoc, string bodyLoc, int? amount = default, (string, object)? arg = default)
     {
         if (!TryPdaFromId(uid, out var pda))
             return;
 
-        string body;
+        var args = new List<(string, object)>();
 
         if (amount is not null)
-            body = Loc.GetString(bodyLoc, ("amount", amount));
-        else
-            body = Loc.GetString(bodyLoc);
+            args.Add(("amount", amount.Value));
+
+        if (arg is not null)
+            args.Add(arg.Value);
+
+        string body = Loc.GetString(bodyLoc, args.ToArray());
 
         _cartridge.SendNotification(pda.Owner, Loc.GetString(tittleLoc), body);
-
     }
 
     private void HandleToggleMute(Entity<NanoBankCardComponent> card)
@@ -238,22 +243,11 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
     private void HandleTransfer(Entity<NanoBankCardComponent> card, int? targetAcc, int? amount)
     {
-        if (targetAcc is null || amount is null)
+        if (targetAcc is null || amount is null ||
+            !TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy) ||
+            !_economy.TransferBalance(economy, targetAcc.Value, card.Comp.AccountId, amount.Value))
         {
-            HandleNotification(card.Owner, "economy-notification-transfer-failed-title", "economy-notification-transfer-failed-body", default);
-            return;
-        }
-        amount = (int) amount; // max coding
-
-        if (!TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy))
-        {
-            HandleNotification(card.Owner, "economy-notification-transfer-failed-title", "economy-notification-transfer-failed-body", default);
-            return;
-        }
-
-        if (!_economy.TransferBalance(economy, targetAcc.Value, card.Comp.AccountId, amount.Value))
-        {
-            HandleNotification(card.Owner, "economy-notification-transfer-failed-title", "economy-notification-transfer-failed-body", default);
+            HandleNotification(card.Owner, "economy-notification-transference-failed-title", "economy-notification-transference-failed-body", default);
             return;
         }
 

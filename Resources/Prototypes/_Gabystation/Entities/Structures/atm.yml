@@ -7,8 +7,8 @@
   components:
   - type: ActivatableUIRequiresPower
   - type: Computer
-    board: Null
-  - type: ItemSlots #! eqwewqfdsjhlifdsaohdsajklndsajklnads <--------------------
+    board: BankATMCircuitboard
+  - type: ItemSlots
   - type: ContainerContainer
     containers:
       board: !type:Container

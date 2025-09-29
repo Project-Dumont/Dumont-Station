@@ -21,3 +21,6 @@ bank-atm-ui-desposit-label-alt = {"["} color=red][bold]Por favor insira dinheiro
 
 bank-atm-ui-btn-withdraw = Sacar
 bank-atm-ui-btn-deposit = Depositar
+
+ent-BankATMCircuitboard = placa de caixa eletrônico
+    .desc = Uma placa de circuito impresso para um caixa eletrônico.

@@ -57,6 +57,7 @@
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
   - ThermomachineFreezerMachineCircuitBoard
+  - BankATMCircuitboard
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic

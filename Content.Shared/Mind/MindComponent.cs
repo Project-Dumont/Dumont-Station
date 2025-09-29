@@ -165,10 +165,11 @@ public sealed partial class MindComponent : Component
     public LocId? Subtype;
 
     /// <summary>
+    ///     Gabystation change:
     ///     The ID of the NanoBank account.
     ///     If is not null the mind window will show
     /// </summary>
     [DataField]
-    public int? NanoBankAccount { get; set; } // Gabystation change (Bank)
+    public int? NanoBankAccount { get; set; }
 }
 
