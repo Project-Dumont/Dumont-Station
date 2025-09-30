@@ -5,7 +5,6 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 namespace Content.Shared._Gabystation.NanoBank;
 
 [RegisterComponent, NetworkedComponent]
-//[AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class NanoBankCardComponent : Component
 {
     [DataField]

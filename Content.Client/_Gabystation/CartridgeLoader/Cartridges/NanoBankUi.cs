@@ -45,8 +45,8 @@ public sealed partial class NanoBankUi : UIFragment
         int? content,
         BoundUserInterface userInterface)
     {
-        var nanoChatMessage = new NanoBankUiMessageEvent(type, targetAcc, content);
-        var message = new CartridgeUiMessage(nanoChatMessage);
+        var nanoBankMessage = new NanoBankUiMessageEvent(type, targetAcc, content);
+        var message = new CartridgeUiMessage(nanoBankMessage);
         userInterface.SendMessage(message);
     }
 }

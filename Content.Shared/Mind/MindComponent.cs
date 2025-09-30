@@ -172,7 +172,7 @@ public sealed partial class MindComponent : Component
     ///     The ID of the NanoBank account.
     ///     If is not null the mind window will show
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int? NanoBankAccount { get; set; }
 }
 

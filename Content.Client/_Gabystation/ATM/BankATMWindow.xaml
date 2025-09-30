@@ -46,7 +46,7 @@
         </BoxContainer>
         <c:StripeBack MinSize="20 20"
                              VerticalExpand="False" HorizontalExpand="True">
-            <Label Text="{Loc bank-atm-ui-footer}" Margin="3"/>
+            <Label Text="{Loc 'bank-atm-ui-footer'}" Margin="3"/>
         </c:StripeBack>
     </BoxContainer>
 </controls:BankATMWindow>

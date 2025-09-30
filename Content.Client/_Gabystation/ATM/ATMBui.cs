@@ -37,25 +37,6 @@ public sealed class BankATMBui : BoundUserInterface
         _window.OpenCentered();
         _window.WithdrawTabButton.OnPressed += _ => View(ViewType.Withdraw);
         _window.DepositTabButton.OnPressed += _ => View(ViewType.Deposit);
-        View(ViewType.Withdraw);
-    }
-    protected override void UpdateState(BoundUserInterfaceState? state)
-    {
-        if (state is not BankATMBuiState s)
-            return;
-
-        //View(ViewType.Withdraw);
-        RefreshUI(s);
-    }
-
-    private void RefreshUI(BankATMBuiState state)
-    {
-        if (_window == null)
-            return;
-
-        _window.UpdateState(state);
-
-        //_window.BalanceLabel.Children.Clear();
 
         _window.WithdrawInput.OnTextChanged += _ =>
         {
@@ -79,6 +60,26 @@ public sealed class BankATMBui : BoundUserInterface
             });
             //Close();
         };
+
+        View(ViewType.Withdraw);
+    }
+    protected override void UpdateState(BoundUserInterfaceState? state)
+    {
+        if (state is not BankATMBuiState s)
+            return;
+
+        //View(ViewType.Withdraw);
+        RefreshUI(s);
+    }
+
+    private void RefreshUI(BankATMBuiState state)
+    {
+        if (_window == null)
+            return;
+
+        _window.UpdateState(state);
+
+        //_window.BalanceLabel.Children.Clear();
     }
 
     private void View(ViewType type)

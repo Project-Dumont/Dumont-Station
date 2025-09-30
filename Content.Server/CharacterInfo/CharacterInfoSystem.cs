@@ -90,7 +90,7 @@ public sealed class CharacterInfoSystem : EntitySystem
                 nanoBankBriefing = Loc.GetString("economy-character-info-briefing", ("number", mind.NanoBankAccount ?? 0), ("password", password));
             }
             else
-                nanoBankBriefing = Loc.GetString("economy-character-info-unknow");
+                nanoBankBriefing = Loc.GetString("economy-character-info-unknown");
         }
 
         RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, nanoBankBriefing), args.SenderSession);

@@ -49,7 +49,7 @@ public sealed class GetBankCurrencyCommand : IConsoleCommand
 
         var economyMan = _entityManager.System<EconomyManagerSystem>();
         if (!economyMan.TryGetBalance(economy, int.Parse(args[0]), out var balance))
-            shell.WriteError("Unknow bank account!");
+            shell.WriteError("Unknown bank account!");
 
         shell.WriteLine($"{args[0]} balance is: {balance}");
     }

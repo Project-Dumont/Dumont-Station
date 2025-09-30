@@ -151,9 +151,9 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
                     HandleNotification(card.Owner, "economy-notification-transfer-target-title",
                         "economy-notification-transfer-target-body", args.Amount, ("name", args.Account?.OwnerName ?? "?"));
                 break;
-            /*case TransferenceTypes.Pursache: // Can be annoying in a prod. round
+            /*case TransferenceTypes.Purchase: // Can be annoying in a prod. round
                 if (card.Comp.AccountId == args.AccountId)
-                    HandleNotification(card.Owner, "economy-notification-pursache-title", "economy-notification-pursache-body", args.Amount);
+                    HandleNotification(card.Owner, "economy-notification-purchase-title", "economy-notification-purchase-body", args.Amount);
                 break;*/
             case TransferenceTypes.Withdraw:
                 if (card.Comp.AccountId == args.AccountId)

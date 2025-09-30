@@ -87,7 +87,7 @@ namespace Content.Server._Gabystation.Economy
             comp.BankAccounts.Add(accountId, bankAccount);
             comp.UidBankRef.Add(uid, accountId);
 
-            // Add the breafing in character menu
+            // Add the briefing in character menu
             if (TryComp<MindContainerComponent>(uid, out var mindc) && TryComp<MindComponent>(mindc.Mind, out var mind))
                 mind.NanoBankAccount = accountId;
 
@@ -176,10 +176,6 @@ namespace Content.Server._Gabystation.Economy
                 }
 
                 RaiseLocalEvent(new AfterPaymentRotation() { Uid = uid });
-
-                Log.Debug("Payment time!");
-
-                //comp.PaymentCooldownRemaining = comp.PaymentDelay;
             }
         }
 
@@ -225,6 +221,10 @@ namespace Content.Server._Gabystation.Economy
 
         public bool TransferBalance(EconomyManagerComponent comp, int targetId, int accountId, int amount)
         {
+            // validate positive amount
+            if (amount <= 0)
+                return false;
+
             // validate accounts
             if (!TryGetData(comp, targetId, out var targetData)
                 || !TryGetData(comp, accountId, out var data)

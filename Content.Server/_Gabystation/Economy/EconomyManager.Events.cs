@@ -10,7 +10,7 @@ using JetBrains.Annotations;
 namespace Content.Server._Gabystation.Economy;
 
 /// <summary>
-/// When an account receive an payment.
+/// When an account receive a payment.
 /// </summary>
 [PublicAPI]
 public sealed class AccountTransferenceCompleted : EntityEventArgs
@@ -28,7 +28,7 @@ public sealed class AccountTransferenceCompleted : EntityEventArgs
 }
 
 /// <summary>
-/// Occours after all payments.
+/// Occurs after all payments.
 /// </summary>
 [PublicAPI]
 public sealed class AfterPaymentRotation : EntityEventArgs
@@ -40,7 +40,7 @@ public enum TransferenceTypes
 {
     Payment,
     Transference,
-    Pursache,
+    Purchase,
     Withdraw,
     Deposit
 }
