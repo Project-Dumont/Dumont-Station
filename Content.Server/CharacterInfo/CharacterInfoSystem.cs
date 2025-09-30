@@ -20,6 +20,7 @@ using Content.Server._Gabystation.Economy;
 using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
+using Content.Server.Station.Systems;
 using Content.Shared.CharacterInfo;
 using Content.Shared.Objectives;
 using Content.Shared.Objectives.Components;
@@ -34,6 +35,7 @@ public sealed class CharacterInfoSystem : EntitySystem
     [Dependency] private readonly RoleSystem _roles = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly EconomyManagerSystem _bank = default!;
+    [Dependency] private readonly StationSystem _station = default!; // Gaby change
 
     public override void Initialize()
     {
@@ -78,9 +80,10 @@ public sealed class CharacterInfoSystem : EntitySystem
 
 
             // Gabystation change - bank
-            if (mind.NanoBankAccount is not null)
+            var station = _station.GetOwningStation(entity);
+            if (mind.NanoBankAccount is not null && TryComp<EconomyManagerComponent>(station, out var economy))
             {
-                _bank.GetAccountPassword(mind.NanoBankAccount ?? 0, true, out var password);
+                _bank.GetAccountPassword(economy, mind.NanoBankAccount ?? 0, true, out var password);
                 nanoBankBriefing = Loc.GetString("economy-character-info-briefing", ("number", mind.NanoBankAccount ?? 0), ("password", password));
             }
             else

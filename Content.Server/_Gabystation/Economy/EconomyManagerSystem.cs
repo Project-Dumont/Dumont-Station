@@ -43,7 +43,7 @@ namespace Content.Server._Gabystation.Economy
                 return;
 
             int password = _random.Next(1000, 9999);
-            if (!TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId, password))
+            if (!TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId, 100, password))
                 return;
             Log.Debug($"Assigning bank id to {args.Profile.Name} ({number})!");
 
@@ -58,7 +58,7 @@ namespace Content.Server._Gabystation.Economy
         }
 
         public bool TryCreateAccount(out int accountId, Entity<EconomyManagerComponent> station,
-            EntityUid uid, string? jobId = null, int balance = 500, int password = 1234)
+            EntityUid uid, string? jobId = null, int balance = 100, int password = 1234)
         {
             accountId = 0;
             var comp = station.Comp;
@@ -185,14 +185,11 @@ namespace Content.Server._Gabystation.Economy
             comp.BankAccounts[account] = data;
         }
 
-        public bool GetAccountPassword(int id,
+        public bool GetAccountPassword(EconomyManagerComponent comp, int id,
             bool initial,
             [NotNullWhen(true)] out int password)
         {
             password = 0;
-            var stations = _gameTicker.GetSpawnableStations(); // this sucks
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(stations[0], out var comp))
-                return false;
 
             if (!comp.BankAccounts.TryGetValue(id, out var bank))
                 return false;
