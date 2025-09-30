@@ -55,6 +55,15 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
         var query = EntityQueryEnumerator<MalfGyroTraverseComponent>();
         while (query.MoveNext(out var uid, out _))
         {
+
+            // Shitcode way to fix bug battery cannot recharge when Gyro has been used
+            if (!HasComp<BatterySelfRechargerComponent>(entityUid))
+            {
+                var batteryRecharger = EnsureComp<BatterySelfRechargerComponent>(entityUid);
+                batteryRecharger.AutoRecharge = true;
+                batteryRecharger.AutoRechargeRate = 100f;
+            }
+
             // Fetch the live component instance to ensure Damaged set updates persist across frames.
             var traverse = Comp<MalfGyroTraverseComponent>(uid);
 
