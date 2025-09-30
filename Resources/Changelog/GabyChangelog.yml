@@ -1049,3 +1049,81 @@ Entries:
       message: Blueshield Deputado e esquadrão interno Goon.
   id: 119
   time: '2025-09-21T05:39:25.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        O Reator de Fusão Hypertorus pode ser comprado na cargo! Procure na aba
+        de atmosfera ou pelo nome "rfh".
+    - type: Add
+      message: Adicionados Pipe Manifold e Half Pipe no RPD.
+    - type: Add
+      message: Adicionada aba de sensores e monitores no RPD.
+    - type: Tweak
+      message: Guia de Atmosfera atualizado.
+    - type: Tweak
+      message: >-
+        O RPD, menu G E cristalizador são compatíveis com o sistema de pipe
+        layers.
+    - type: Fix
+      message: >-
+        O cristalizador não manterá mais a temperatura com uma quantidade baixa
+        de gás na porta do regulador.
+    - type: Fix
+      message: >-
+        A taxa máxima de entrada do cristalizador agora está limitada a 250
+        mol/s.
+    - type: Fix
+      message: >-
+        O sprite do cristalizador mostra corretamente as duas entradas. Também é
+        possível rotacionar. As duas entradas são diferentes, ainda não há uma
+        forma visual de diferenciar. Se de um lado der errado, tente o outro ou
+        rotacione.
+  id: 120
+  time: '2025-09-22T03:57:18.0000000+00:00'
+- author: Kyoth25f e bogopablogames
+  changes:
+    - type: Add
+      message: >-
+        Adiciona músicas de Armandinho, Seu Jorge, Charlie Brown Jr, Os
+        Paralamas Do Sucesso e Djavan.
+  id: 121
+  time: '2025-09-23T01:32:08.0000000+00:00'
+- author: joaofernandez
+  changes:
+    - type: Tweak
+      message: Alterado buscas de máquinas para não considerar acentuação
+  id: 122
+  time: '2025-09-27T05:45:27.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob 27/09.
+  id: 123
+  time: '2025-09-28T02:35:43.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Added NUNO cards
+  id: 124
+  time: '2025-09-28T02:39:42.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Caixas eletronicos - Flatpack roundstart para HoS, bartender e QM, alem
+        da trade station.
+    - type: Add
+      message: >-
+        Todos os funcionarios da nanotrasen agora tem uma conta bancaria no
+        NanoBank, aproveite!
+    - type: Add
+      message: Nano Pix (ou Nano Bank) adicionado ao PDA de todos os tripulantes.
+    - type: Add
+      message: >-
+        A Central de Comando finalmente pagara seus funcionarios pelos seus
+        esforços!
+    - type: Remove
+      message: Sua liberdade financeira.
+  id: 125
+  time: '2025-09-30T04:06:48.0000000+00:00'

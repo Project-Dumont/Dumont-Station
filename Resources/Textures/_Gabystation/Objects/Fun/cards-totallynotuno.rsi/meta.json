@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "copyright": "Cards, Decks and Hands Sprites were originally from Paradise Station (https://github.com/ParadiseSS13/Paradise) then modified by VictorJob. Boxes are from VictorJob. Uno version made by vyas (@agentepanela twitter) and Day-OS",
+  "license": "CC-BY-SA-3.0",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "background"
+    },
+    {
+      "name": "background-red"
+    },
+    {
+      "name": "background-blue"
+    },
+    {
+      "name": "background-green"
+    },
+    {
+      "name": "background-yellow"
+    },
+    {
+      "name": "block"
+    },
+    {
+      "name": "border"
+    },
+    {
+      "name": "box"
+    },
+    {
+      "name": "box_open"
+    },
+    {
+      "name": "card_fourcolors"
+    },
+    {
+      "name": "num0"
+    },
+    {
+      "name": "num1"
+    },
+    {
+      "name": "num2"
+    },
+    {
+      "name": "num3"
+    },
+    {
+      "name": "num4"
+    },
+    {
+      "name": "num5"
+    },
+    {
+      "name": "num6"
+    },
+    {
+      "name": "num7"
+    },
+    {
+      "name": "num8"
+    },
+    {
+      "name": "num9"
+    },
+    {
+      "name": "plus2"
+    },
+    {
+      "name": "plus4"
+    },
+    {
+      "name": "reverse"
+    },
+    {
+      "name": "singlecard_down"
+    }
+  ]
+}

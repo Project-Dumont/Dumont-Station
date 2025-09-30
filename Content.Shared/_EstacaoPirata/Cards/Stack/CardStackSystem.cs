@@ -1,7 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Daniela <43686351+Day-OS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DoutorWhite <thedoctorwhite@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -93,9 +98,19 @@ public sealed class CardStackSystem : EntitySystem
         if (!Resolve(uid, ref comp))
             return false;
 
-        if (!TryComp(card, out CardComponent? _))
+        // Prevent two different types of cards from being joined
+        if (!TryComp(card, out CardComponent? firstComp))
             return false;
 
+        if (comp.Cards.Count > 0)
+        {
+            if (!TryComp(comp.Cards.First(), out CardComponent? secondCardComp))
+                return false;
+            if (firstComp.CardHandBaseName.Id != secondCardComp.CardHandBaseName.Id)
+                return false;
+            if (firstComp.CardDeckBaseName.Id != secondCardComp.CardDeckBaseName.Id)
+                return false;
+        }
         if (comp.Cards.Count >= MaxCardsInStack)
             return false;
 
@@ -155,6 +170,18 @@ public sealed class CardStackSystem : EntitySystem
             return false;
         if (!Resolve(firstStack, ref firstComp) || !Resolve(secondStack, ref secondComp))
             return false;
+
+        if (firstComp.Cards.Count > 0 && secondComp.Cards.Count > 0)
+        {
+            if (!TryComp(firstComp.Cards.First(), out CardComponent? firstCardComp))
+                return false;
+            if (!TryComp(secondComp.Cards.First(), out CardComponent? secondCardComp))
+                return false;
+            if (firstCardComp.CardHandBaseName.Id != secondCardComp.CardHandBaseName.Id)
+                return false;
+            if (firstCardComp.CardDeckBaseName.Id != secondCardComp.CardDeckBaseName.Id)
+                return false;
+        }
 
         bool changed = false;
         var cardList = secondComp.Cards.ToList();
@@ -334,6 +361,18 @@ public sealed class CardStackSystem : EntitySystem
         if (firstComp.Cards.Count <= 0)
             return;
 
+        if (firstComp.Cards.Count > 0 && secondComp.Cards.Count > 0)
+        {
+            if (!TryComp(firstComp.Cards.First(), out CardComponent? firstCardComp))
+                return;
+            if (!TryComp(secondComp.Cards.First(), out CardComponent? secondCardComp))
+                return;
+            if (firstCardComp.CardHandBaseName.Id != secondCardComp.CardHandBaseName.Id)
+                return;
+            if (firstCardComp.CardDeckBaseName.Id != secondCardComp.CardDeckBaseName.Id)
+                return;
+
+        }
         var cards = firstComp.Cards.TakeLast(n).ToList(); // Frontier: make a copy we don't munge during iteration
 
         var firstCard = cards.First(); // Cache first card for animation - enumerable changes in foreach

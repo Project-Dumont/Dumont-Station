@@ -15,6 +15,9 @@
 // SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -27,6 +30,8 @@ namespace Content.Client.Cooldown
 {
     public sealed class CooldownGraphic : Control
     {
+        private static readonly ProtoId<ShaderPrototype> Shader = "CooldownAnimation";
+
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
@@ -35,7 +40,7 @@ namespace Content.Client.Cooldown
         public CooldownGraphic()
         {
             IoCManager.InjectDependencies(this);
-            _shader = _protoMan.Index<ShaderPrototype>("CooldownAnimation").InstanceUnique();
+            _shader = _protoMan.Index(Shader).InstanceUnique();
         }
 
         /// <summary>

@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: rcd
+  id: ManifoldGas
+  category: Piping
+  sprite: /Textures/Interface/Radial/RPD/manifold.png
+  mode: ConstructObject
+  prototype: GasPipeManifold
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+  noLayers: true
+
+- type: rcd
+  id: PipeHalf
+  category: Piping
+  sprite: /Textures/Interface/Radial/RPD/pipe_half.png
+  mode: ConstructObject
+  prototype: GasPipeHalf
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: Alarm
+  category: SensorsMonitors
+  sprite: /Textures/Interface/Radial/RPD/alarm.png
+  mode: ConstructObject
+  prototype: AirAlarm
+  cost: 2
+  delay: 1 
+  rotation: User
+  fx: EffectRCDConstruct0
+  noLayers: true
+
+- type: rcd
+  id: Sensor
+  category: SensorsMonitors
+  sprite: /Textures/Interface/Radial/RPD/sensor.png
+  mode: ConstructObject
+  prototype: AirSensor
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+  noLayers: true
+
+- type: rcd
+  id: SensorPipe
+  category: SensorsMonitors
+  sprite: /Textures/Interface/Radial/RPD/sensorpipe.png
+  mode: ConstructObject
+  prototype: GasPipeSensor
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0

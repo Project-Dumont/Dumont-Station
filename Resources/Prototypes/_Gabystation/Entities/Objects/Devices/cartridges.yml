@@ -1,0 +1,18 @@
+
+- type: entity
+  parent: BaseItem
+  id: NanoBankCartridge
+  name: NanoBank cartridge
+  description: The devil in your wallet.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Devices/cartridge.rsi
+    state: cart-chat
+  - type: UIFragment
+    ui: !type:NanoBankUi
+  - type: NanoBankCartridge
+  - type: Cartridge
+    programName: nano-bank-program-name
+    icon:
+      sprite: _Gabystation/Misc/program_icons.rsi
+      state: nanobank

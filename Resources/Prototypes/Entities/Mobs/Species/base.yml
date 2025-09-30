@@ -279,13 +279,13 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
+    - map: [ "belt" ] #Goobedit - Belts over outerwear
     - map: [ "culteyes" ] # funky cult
       sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
       state: "human"
       shader: unshaded
       visible: false
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "back" ]
     - map: [ "neck" ]
@@ -522,6 +522,7 @@
   - type: ExaminableCharacter # WWDP
   - type: Sprinter # Goobstation
   - type: SprintingAffectedByScale # Goobstation: port EE height/width sliders
+  - type: MindControllable # Goobstation
 
 - type: entity
   save: false
@@ -597,6 +598,7 @@
   - type: BloodstreamAffectedByMass # Goobstation: port EE height/width sliders. Also, lol at the comment above.
     power: 0.6
   - type: FlightAffectedByScale # Goobstation: port EE height/width sliders.
+  - type: StunVisuals
 
 - type: entity
   save: false
@@ -641,9 +643,9 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "belt" ] #Goobedit - Belts over outerwear
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]

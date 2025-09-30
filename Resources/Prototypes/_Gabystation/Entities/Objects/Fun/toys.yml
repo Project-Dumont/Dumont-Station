@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -44,3 +45,69 @@
  #   - type: Item
  #     size: Small
  #     sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieTajaran
+  name: Pelúcias dos Tajarans
+  description: Pelúcia dos homi gatos que saem por ai fazendo miau miau, obtenha o seu ainda hoje!
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Fun/Plushies/tajaran.rsi
+      state: tajaran
+    - type: Item
+      size: Small
+      sprite: _Gabystation/Objects/Fun/Plushies/tajaran.rsi
+    - type: Clothing
+      quickEquip: false
+      sprite: _Gabystation/Objects/Fun/Plushies/tajaran.rsi
+      slots:
+      - HEAD
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieKiiaraWami
+  name: Pelúcia de Kiiara Wami
+  description: Pelúcia do exemplar capitão administrador Kiiara Wami, apesar da fofura não ouse desodebecer apenas para escutar seus meows!
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_wami.rsi
+      state: kiiara
+    - type: Item
+      size: Small
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_wami.rsi
+    - type: Clothing
+      quickEquip: false
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_wami.rsi
+      slots:
+      - HEAD
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg

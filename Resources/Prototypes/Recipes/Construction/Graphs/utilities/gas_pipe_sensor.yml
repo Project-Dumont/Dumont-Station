@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,7 +18,19 @@
         amount: 2
         doAfter: 1
 
-  - node: sensor   
+    - to: sensorAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: sensorAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+  - node: sensor
     entity: GasPipeSensor
     actions:
     - !type:SetAnchor
@@ -32,3 +47,39 @@
       steps:
       - tool: Welding
         doAfter: 1
+
+  - node: sensorAlt1
+    entity: GasPipeSensorAlt1
+    actions:
+      - !type:SetAnchor
+    edges:
+      - to: start
+        completed:
+          - !type:SpawnPrototype
+            prototype: SheetSteel1
+            amount: 2
+          - !type:DeleteEntity
+        conditions:
+          - !type:EntityAnchored
+            anchored: false
+        steps:
+          - tool: Welding
+            doAfter: 1
+
+  - node: sensorAlt2
+    entity: GasPipeSensorAlt2
+    actions:
+      - !type:SetAnchor
+    edges:
+      - to: start
+        completed:
+          - !type:SpawnPrototype
+            prototype: SheetSteel1
+            amount: 2
+          - !type:DeleteEntity
+        conditions:
+          - !type:EntityAnchored
+            anchored: false
+        steps:
+          - tool: Welding
+            doAfter: 1

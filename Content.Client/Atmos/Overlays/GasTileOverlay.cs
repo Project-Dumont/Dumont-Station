@@ -21,6 +21,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
 //
@@ -47,6 +49,8 @@ namespace Content.Client.Atmos.Overlays
 {
     public sealed class GasTileOverlay : Overlay
     {
+        private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
         private readonly IEntityManager _entManager;
         private readonly IMapManager _mapManager;
         private readonly SharedMapSystem _mapSystem;
@@ -82,7 +86,7 @@ namespace Content.Client.Atmos.Overlays
             _mapManager = IoCManager.Resolve<IMapManager>();
             _mapSystem = entManager.System<SharedMapSystem>();
             _xformSys = xformSys;
-            _shader = protoMan.Index<ShaderPrototype>("unshaded").Instance();
+            _shader = protoMan.Index(UnshadedShader).Instance();
             ZIndex = GasOverlayZIndex;
 
             _gasCount = system.VisibleGasId.Length;

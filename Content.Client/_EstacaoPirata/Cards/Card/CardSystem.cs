@@ -1,7 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Daniela <43686351+Day-OS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DoutorWhite <thedoctorwhite@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -33,7 +38,6 @@ public sealed class CardSystem : EntitySystem
 
         for (var i = 0; i < spriteComponent.AllLayers.Count(); i++)
         {
-            //Log.Debug($"Layer {i}");
             if (!spriteComponent.TryGetLayer(i, out var layer) || layer.State.Name == null)
                 continue;
 
@@ -41,8 +45,7 @@ public sealed class CardSystem : EntitySystem
             if (rsi == null)
                 continue;
 
-            //Log.Debug("FOI");
-            comp.FrontSprite.Add(new SpriteSpecifier.Rsi(rsi.Path, layer.State.Name));
+            comp.FrontSprite.Add(layer.ToPrototypeData());
         }
 
         comp.BackSprite ??= comp.FrontSprite;
@@ -60,8 +63,6 @@ public sealed class CardSystem : EntitySystem
     private void UpdateSprite(EntityUid uid, CardComponent comp)
     {
         var newSprite = comp.Flipped ? comp.BackSprite : comp.FrontSprite;
-        //if (newSprite == null)
-        //    return;
 
         if (!TryComp(uid, out SpriteComponent? spriteComponent))
             return;
@@ -87,7 +88,8 @@ public sealed class CardSystem : EntitySystem
         for (var i = 0; i < newSprite.Count(); i++)
         {
             var layer = newSprite[i];
-            spriteComponent.LayerSetSprite(i, layer);
+            _spriteSystem.LayerSetRsiState((uid, spriteComponent), i, layer.State);
+            _spriteSystem.LayerSetColor((uid, spriteComponent), i, layer.Color?? Color.White);
         }
     }
 }

@@ -1,30 +1,37 @@
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
 // SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
 // SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Administration.Logs;
-using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Construction;
 using Content.Shared.Database;
@@ -48,8 +55,10 @@ using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using System.Linq;
-using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands.Components;
+using Content.Shared.Atmos.Components;
+using Content.Shared.Atmos.EntitySystems;
+using System.Numerics;
 
 namespace Content.Shared.RCD.Systems;
 
@@ -71,12 +80,15 @@ public sealed class RCDSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TagSystem _tags = default!;
+    [Dependency] private readonly SharedAtmosPipeLayersSystem _pipeLayersSystem = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     private readonly int _instantConstructionDelay = 0;
     private readonly EntProtoId _instantConstructionFx = "EffectRCDConstruct0";
     private readonly ProtoId<RCDPrototype> _deconstructTileProto = "DeconstructTile";
     private readonly ProtoId<RCDPrototype> _deconstructLatticeProto = "DeconstructLattice";
     private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
+    private AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary; // Funky - Current layer for RPD
 
     private HashSet<EntityUid> _intersectingEntities = new();
 
@@ -90,6 +102,8 @@ public sealed class RCDSystem : EntitySystem
         SubscribeLocalEvent<RCDComponent, RCDDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<RCDComponent, DoAfterAttemptEvent<RCDDoAfterEvent>>(OnDoAfterAttempt);
         SubscribeLocalEvent<RCDComponent, RCDSystemMessage>(OnRCDSystemMessage);
+
+        SubscribeNetworkEvent<RPDEyeRotationEvent>(OnRPDEyeRotationEvent);
         SubscribeNetworkEvent<RCDConstructionGhostRotationEvent>(OnRCDconstructionGhostRotationEvent);
         SubscribeNetworkEvent<RCDConstructionGhostFlipEvent>(OnRCDConstructionGhostFlipEvent);
 
@@ -171,6 +185,29 @@ public sealed class RCDSystem : EntitySystem
         }
         var tile = _mapSystem.GetTileRef(gridUid.Value, mapGrid, location);
         var position = _mapSystem.TileIndicesFor(gridUid.Value, mapGrid, location);
+
+        // Funky - Update prototype for RPD based on last selected layer
+        // calculate the layer based on the mouse click location and player rotation
+        if (component.IsRpd && !prototype.NoLayers)
+        {
+            var tileRef = _mapSystem.GetTileRef((gridUid.Value, mapGrid), location);
+            var tileSize = mapGrid.TileSize;
+            var tileCenter = new Vector2(tileRef.X + tileSize / 2, tileRef.Y + tileSize / 2);
+            var mouseCoordsDiff = args.ClickLocation.Position - tileCenter - new Vector2(0.5f, 0.5f);
+            var mouseDeadzoneRadius = 0.25f;
+
+            _currentLayer = AtmosPipeLayer.Primary;
+
+            if (mouseCoordsDiff.Length() > mouseDeadzoneRadius && component.LastKnownEyeRotation.HasValue)
+            {
+                var gridRotation = _transform.GetWorldRotation(gridUid.Value);
+                var angle = new Angle(mouseCoordsDiff);
+                var eyeRotation = new Angle(component.LastKnownEyeRotation.Value);
+                var direction = (angle + eyeRotation + gridRotation + Math.PI / 2).GetCardinalDir();
+                _currentLayer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
+            }
+        }
+        // Funky - end of changes
 
         if (!IsRCDOperationStillValid(uid, component, gridUid.Value, mapGrid, tile, position, args.Target, args.User))
             return;
@@ -355,7 +392,7 @@ public sealed class RCDSystem : EntitySystem
         if (session.SenderSession.AttachedEntity == null)
             return;
 
-        if (_hands.TryGetActiveItem(session.SenderSession.AttachedEntity.Value, out var held)
+        if (!_hands.TryGetActiveItem(session.SenderSession.AttachedEntity.Value, out var held)
             || uid != held)
             return;
 
@@ -365,6 +402,28 @@ public sealed class RCDSystem : EntitySystem
         // Update the construction direction
         rcd.UseMirrorPrototype = ev.UseMirrorPrototype;
         Dirty(uid, rcd);
+    }
+
+    // Funky - Very dumb was of getting player rotation for pipe layer selection
+    private void OnRPDEyeRotationEvent(RPDEyeRotationEvent ev, EntitySessionEventArgs session)
+    {
+        var uid = GetEntity(ev.NetEntity);
+
+        if (session.SenderSession.AttachedEntity is not { } player)
+            return;
+
+        if (!_hands.TryGetActiveItem(player, out var heldItem)
+            || uid != heldItem)
+            return;
+
+        if (!TryComp<RCDComponent>(uid, out var rcd))
+            return;
+
+        // Update the layer if different
+        if (rcd.LastKnownEyeRotation != ev.EyeRotation)
+        {
+            rcd.LastKnownEyeRotation = ev.EyeRotation;
+        }
     }
 
 
@@ -609,10 +668,33 @@ public sealed class RCDSystem : EntitySystem
                 break;
 
             case RcdMode.ConstructObject:
-                var proto = (component.UseMirrorPrototype &&
-                    !string.IsNullOrEmpty(prototype.MirrorPrototype))
-                    ? prototype.MirrorPrototype
-                    : prototype.Prototype;
+                // Funky - Determine the correct prototype based on selected layer for RPD
+                // var proto = (component.UseMirrorPrototype 
+                //     && !string.IsNullOrEmpty(prototype.MirrorPrototype))
+                //     ? prototype.MirrorPrototype
+                //     : prototype.Prototype;
+
+                string proto;
+                if (component.IsRpd && !prototype.NoLayers)
+                {
+                    if (_protoManager.TryIndex<EntityPrototype>(prototype.Prototype, out var entityProto) &&
+                        entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
+                        _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
+                    {
+                        proto = newProtoId;
+                    }
+                    else
+                    {
+                        proto = prototype.Prototype;
+                    }
+                }
+                else
+                {
+                    proto = (component.UseMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype))
+                        ? prototype.MirrorPrototype
+                        : prototype.Prototype;
+                }
+                // Funky - end of changes
 
                 // Funky - Calculate rotation and apply it before spawning
                 var rotation = prototype.Rotation switch

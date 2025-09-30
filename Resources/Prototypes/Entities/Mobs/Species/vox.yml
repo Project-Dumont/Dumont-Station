@@ -215,9 +215,9 @@
       shader: unshaded
       visible: false
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "belt" ] #Goobedit - Belts over outerwear
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "neck" ]

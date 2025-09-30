@@ -139,6 +139,12 @@
     #Loadouts Rework Stuff End
   contrabandInventory:
     ClothingHeadHatRichard: 1
+    ClothingShoesBling: 1
+    ClothingShoesBootsCowboyFancy: 1
+    ClothingOuterDogi: 1
+    ClothingMaskSexyClown: 1
+    ClothingMaskSexyMime: 1
+    ClothingHeadHatCowboyBountyHunter: 1
     ToyFigurineBoxer: 1
     ToyFigurineMusician: 1
     WeaponLauncherTaiwanPond: 1 # Goobstation
@@ -146,12 +152,3 @@
     ClothingShoesResonant: 1 # Goobstation
     ClothingNeckCloakResonant: 1 # Goobstation
     ClothingUniformJumpsuitResonant: 1 # Goobstation
-    ClothingCostumeArcDress: 1 # Seal away the beast
-  emaggedInventory:
-    ClothingShoesBling: 1
-    ClothingShoesBootsCowboyFancy: 1
-    ClothingOuterDogi: 1
-    ClothingMaskSexyClown: 1
-    ClothingMaskSexyMime: 1
-    ClothingHeadHatCowboyBountyHunter: 1
-    ClothingUniformSwimsuitBlue: 1 # Goobstation - It came in the trash

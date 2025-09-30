@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,3 +18,15 @@
   storage:
     back:
     - PlushieNikuHatsume
+
+- type: loadout
+  id: PlushieTajaran
+  storage:
+    back:
+    - PlushieTajaran
+
+- type: loadout
+  id: PlushieKiiaraWami
+  storage:
+    back:
+    - PlushieKiiaraWami

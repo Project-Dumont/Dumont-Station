@@ -14,4 +14,5 @@ collective-mind-mousemind = Mente Rato
 collective-mind-dronemind = Mente Drone
 collective-mind-empathy = Empathy
 collective-mind-bingle = Binglemind
+collective-mind-shadow-mind = Shadowmind
 collective-mind-xeno = Hivemind

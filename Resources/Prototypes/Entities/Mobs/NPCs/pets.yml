@@ -155,6 +155,20 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: ian
+  - type: Inventory
+    speciesId: dog
+    templateId: petAdvanced
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Pets/displacements.rsi
+            state: corgi_head_displacement
+      eyes:
+        sizeMaps:
+          32:
+            sprite: Mobs/Pets/displacements.rsi
+            state: corgi_eyes_displacement
   - type: DamageStateVisuals
     states:
       Alive:
@@ -232,6 +246,20 @@
     attributes:
       proper: true
       gender: female
+  - type: Inventory
+    speciesId: dog
+    templateId: petAdvanced
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Pets/displacements.rsi
+            state: lisa_head_displacement
+      eyes:
+        sizeMaps:
+          32:
+            sprite: Mobs/Pets/displacements.rsi
+            state: corgi_eyes_displacement
 
 - type: entity
   name: real mouse
@@ -464,6 +492,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: mcgriff
+    - map: [ "head" ]
+    - map: [ "eyes" ]
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -478,7 +508,18 @@
         - MobLayer
   - type: Inventory
     speciesId: puppy
-    templateId: pet
+    templateId: petAdvanced
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Pets/displacements.rsi
+            state: mcgriff_head_displacement
+      eyes:
+        sizeMaps:
+          32:
+            sprite: Mobs/Pets/displacements.rsi
+            state: mcgriff_eyes_displacement
   - type: DamageStateVisuals
     states:
       Alive:
@@ -902,6 +943,8 @@
       types:
         Piercing: 8
         Poison: 8
+  - type: Spider
+    spawnsWebsAsNonPlayer: false
   - type: Grammar
     attributes:
       proper: true
@@ -1129,3 +1172,20 @@
     understands:
     - Crab
     - TauCetiBasic
+
+- type: entity
+  name: Polly the parrot
+  parent: MobParrotBase
+  id: MobPollyParrot
+  description: An expert in quantum cracker theory
+  components:
+  - type: Vocalizer
+    maxVocalizeInterval: 240 # polly is chattier
+  - type: RadioVocalizer
+    radioAttemptChance: 0.8 # polly wants to share with the world
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: Loadout
+    prototypes: [ MobPollyGear ]

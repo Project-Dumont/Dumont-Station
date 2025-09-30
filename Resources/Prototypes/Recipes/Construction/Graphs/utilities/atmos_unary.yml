@@ -2,6 +2,9 @@
 # SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -17,7 +20,31 @@
         amount: 2
         doAfter: 1
 
+    - to: ventpumpAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventpumpAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: passivevent
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: passiveventAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: passiveventAlt2
       steps:
       - material: Steel
         amount: 2
@@ -29,12 +56,37 @@
         amount: 2
         doAfter: 1
 
+    - to: ventscrubberAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventscrubberAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: outletinjector
       steps:
       - material: Steel
         amount: 2
         doAfter: 1
 
+    - to: outletinjectorAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: outletinjectorAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+  # GasVentPump
   - node: ventpump
     entity: GasVentPump
     edges:
@@ -53,6 +105,43 @@
       - tool: Welding
         doAfter: 1
 
+  - node: ventpumpAlt1
+    entity: GasVentPumpAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventpumpAlt2
+    entity: GasVentPumpAlt2
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  # GasPassiveVent
   - node: passivevent
     entity: GasPassiveVent
     edges:
@@ -71,6 +160,43 @@
       - tool: Welding
         doAfter: 1
 
+  - node: passiveventAlt1
+    entity: GasPassiveVentAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: passiveventAlt2
+    entity: GasPassiveVentAlt2
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  # GasVentScrubber
   - node: ventscrubber
     entity: GasVentScrubber
     edges:
@@ -89,8 +215,77 @@
       - tool: Welding
         doAfter: 1
 
+  - node: ventscrubberAlt1
+    entity: GasVentScrubberAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventscrubberAlt2
+    entity: GasVentScrubberAlt2
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  # GasOutletInjector
   - node: outletinjector
     entity: GasOutletInjector
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: outletinjectorAlt1
+    entity: GasOutletInjectorAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: outletinjectorAlt2
+    entity: GasOutletInjectorAlt2
     edges:
     - to: start
       conditions:
