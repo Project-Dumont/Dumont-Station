@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;

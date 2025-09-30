@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
