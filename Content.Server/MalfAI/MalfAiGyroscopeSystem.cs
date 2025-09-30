@@ -21,6 +21,11 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 using Robust.Shared.Physics.Components;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Body.Part;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Part;
+using Content.Shared._Shitmed.Targeting;
 
 namespace Content.Server.MalfAI;
 
@@ -103,8 +108,12 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
                     continue;
 
                 // Apply damage once per traversal per entity.
-                _damage.TryChangeDamage(ent, dmg, true);
-                traverse.Damaged.Add(ent);
+                if (HasComp<BodyComponent>(ent))
+                {
+                    var body = Comp<BodyComponent>(ent);
+                    _damage.TryChangeDamage(ent, dmg, true, targetPart: TargetBodyPart.Chest);
+                    traverse.Damaged.Add(ent);
+                }
             }
 
             if (t >= 1f)
@@ -241,6 +250,8 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
         var endRot = startRot + Angle.FromDegrees(90f * rotationDir);
 
         var traverse = EnsureComp<MalfGyroTraverseComponent>(core);
+    // Limpa o conjunto de entidades danificadas no início da travessia
+        traverse.Damaged.Clear();
         traverse.StartMap = startMap;
         traverse.EndMap = endMap;
         traverse.StartRotation = startRot;
