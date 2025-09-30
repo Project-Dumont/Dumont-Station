@@ -269,11 +269,12 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
             || !_container.TryGetContainer(pda.Owner, SharedCartridgeLoaderSystem.InstalledContainerId, out var container))
             return;
 
-        var nanoBankUid = container.ContainedEntities
+        var maybeNanoBankUid = container.ContainedEntities
             .Where(HasComp<NanoBankCartridgeComponent>) // Pode acontecer do PDA ter mais de um nanobank instalado?
-            .First();
+            .FirstOrNull();
 
-        if (!TryComp<NanoBankCartridgeComponent>(nanoBankUid, out var nanoBankComp))
+        if (maybeNanoBankUid is not { } nanoBankUid
+            || !TryComp<NanoBankCartridgeComponent>(nanoBankUid, out var nanoBankComp))
             return;
 
         UpdateUI((nanoBankUid, nanoBankComp), pda);
