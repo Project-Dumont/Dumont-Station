@@ -51,8 +51,7 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
             if (comp.MoneyToPrint <= 0)
                 continue;
 
-            if (!TryComp(uid, out TransformComponent? xform))
-                continue;
+            var xform = Transform(uid);
 
             var cashId = SpawnAtPosition(comp.CashPrototype, xform.Coordinates);
             _stack.SetCount(cashId, comp.MoneyToPrint);
