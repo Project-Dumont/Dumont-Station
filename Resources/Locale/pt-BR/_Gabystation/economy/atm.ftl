@@ -16,8 +16,8 @@ bank-atm-ui-balance = [bullet/][color=white][head=3]{$balance} { economy-money-n
 bank-atm-ui-header = {"["}head=3]Nano Bank ATM[/head]
 bank-atm-ui-footer = Não force a saida de dinheiro do dispositivo.
 
-bank-atm-ui-desposit-label = Quantia para depositar: [color=green]{$amount}[/color]
-bank-atm-ui-desposit-label-alt = {"["} color=red][bold]Por favor insira dinheiro no caixa.[/bold][/color]
+bank-atm-ui-deposit-label = Quantia para depositar: [color=green]{$amount}[/color]
+bank-atm-ui-deposit-label-alt = {"["} color=red][bold]Por favor insira dinheiro no caixa.[/bold][/color]
 
 bank-atm-ui-btn-withdraw = Sacar
 bank-atm-ui-btn-deposit = Depositar

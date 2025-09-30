@@ -1,8 +1,8 @@
 economy-notification-payment-title = Payment Received
 economy-notification-payment-body = Payment of {$amount} { economy-money-name } received.
 
-economy-notification-pursache-title = Purchase approved.
-economy-notification-pursache-body = Purchase of {$amount} { economy-money-name } approved!
+economy-notification-purchase-title = Purchase approved.
+economy-notification-purchase-body = Purchase of {$amount} { economy-money-name } approved!
 
 economy-notification-withdraw-title = Withdrawal approved.
 economy-notification-withdraw-body = Withdrawal of {$amount} { economy-money-name } approved!

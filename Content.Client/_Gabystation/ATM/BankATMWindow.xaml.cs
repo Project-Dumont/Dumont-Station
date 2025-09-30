@@ -32,9 +32,9 @@ public sealed partial class BankATMWindow : DefaultWindow
 
         var depositMsg = new FormattedMessage();
         if (s.MoneyInside is null || s.MoneyInside <= 0)
-            depositMsg.AddMarkupPermissive(Loc.GetString("bank-atm-ui-desposit-label-alt"));
+            depositMsg.AddMarkupPermissive(Loc.GetString("bank-atm-ui-deposit-label-alt"));
         else
-            depositMsg.AddMarkupPermissive(Loc.GetString("bank-atm-ui-desposit-label", ("amount", s.MoneyInside)));
+            depositMsg.AddMarkupPermissive(Loc.GetString("bank-atm-ui-deposit-label", ("amount", s.MoneyInside)));
         DepositLabel.SetMessage(depositMsg);
     }
 }

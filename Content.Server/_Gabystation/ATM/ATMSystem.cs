@@ -100,7 +100,7 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
 
         var ev = new AccountTransferenceCompleted()
         {
-            Type = TransferenceTypes.Deposit,
+            Type = TransferenceTypes.Withdraw,
             Account = data,
             AccountId = card.Comp.AccountId,
             Amount = amount ?? 1
