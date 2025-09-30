@@ -660,8 +660,8 @@
   - type: PresetIdCard
     job: CentralCommandOfficial
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -677,8 +677,8 @@
   - type: Item
     heldPrefix: gold
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -694,8 +694,8 @@
   - type: Item
     heldPrefix: blue
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -709,8 +709,8 @@
   - type: PresetIdCard
     job: ERTEngineer
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -724,8 +724,8 @@
   - type: PresetIdCard
     job: ERTJanitor
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -739,8 +739,8 @@
   - type: PresetIdCard
     job: ERTMedical
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -754,8 +754,8 @@
   - type: PresetIdCard
     job: ERTSecurity
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -782,8 +782,8 @@
   - type: PresetIdCard
     job: DeathSquad
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
   - type: Tag
     tags: [] # ignore "WhitelistChameleon" tag
 
@@ -822,8 +822,8 @@
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   name: passenger ID card
@@ -862,8 +862,8 @@
     - NuclearOperative
     - SyndicateAgent
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: [ IDCardStandard, BaseMajorContraband ]
@@ -878,8 +878,8 @@
     - NuclearOperative
     - SyndicateAgent
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -989,8 +989,8 @@
   - type: PresetIdCard
     job: CBURN
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: IDCardStandard
@@ -1007,8 +1007,8 @@
     jobIcon: JobIconCluwne
   - type: Unremoveable
   - type: NanoChatCard # DeltaV
-  - type: NanoBankCard # Gabystation
     listNumber: false
+  - type: NanoBankCard # Gabystation
 
 - type: entity
   parent: EngineeringIDCard
@@ -1083,9 +1083,9 @@
     - NanotrasenRepresentative
     - BlueshieldOfficer
   - type: NanoChatCard # DeltaV
+    listNumber: false
   - type: NanoBankCard # Gabystation
     notificationsMuted: true
-    listNumber: false
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
