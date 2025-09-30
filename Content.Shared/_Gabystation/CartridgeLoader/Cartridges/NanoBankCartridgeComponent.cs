@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Gabystation.NanoBank;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
