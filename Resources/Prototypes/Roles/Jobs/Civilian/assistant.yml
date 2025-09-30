@@ -93,7 +93,7 @@
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
   goobcoins: 1 #Goob content
-  Salary: 5 # Gaby content
+  salary: 5 # Gaby content
   canBeAntag: false # Gaby station
   #  access:
   #  - Maintenance

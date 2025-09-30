@@ -88,7 +88,7 @@
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
   goobcoins: 20 #Goob content
-  Salary: 50 # Gaby content
+  salary: 50 # Gaby content
   access:
   - Medical
   - Maintenance

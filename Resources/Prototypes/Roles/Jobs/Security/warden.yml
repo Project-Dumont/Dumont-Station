@@ -159,7 +159,7 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   goobcoins: 35 #Goob content
-  Salary: 50 # Gaby content
+  salary: 50 # Gaby content
   access:
   - Security
   - Brig

@@ -163,7 +163,7 @@
       species:
       - Felinid
   goobcoins: 40 #Goob content
-  Salary: 50 # Gaby content
+  salary: 50 # Gaby content
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

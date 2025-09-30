@@ -49,7 +49,7 @@
       species:
       - Felinid
   goobcoins: 45
-  Salary: 50 # Gaby content
+  salary: 50 # Gaby content
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"

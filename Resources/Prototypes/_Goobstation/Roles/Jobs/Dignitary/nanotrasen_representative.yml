@@ -109,7 +109,7 @@
       species:
       - Felinid
   weight: 20
-  Salary: 50 # Gaby content
+  salary: 50 # Gaby content
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"
   requireAdminNotify: true
