@@ -86,8 +86,8 @@ public sealed class CharacterInfoSystem : EntitySystem
             var station = _station.GetOwningStation(entity);
             if (mind.NanoBankAccount is not null && TryComp<EconomyManagerComponent>(station, out var economy))
             {
-                _bank.GetAccountPassword(economy, mind.NanoBankAccount ?? 0, true, out var password);
-                nanoBankBriefing = Loc.GetString("economy-character-info-briefing", ("number", mind.NanoBankAccount ?? 0), ("password", password));
+                _bank.GetAccountPassword(economy, mind.NanoBankAccount.Value, true, out var password);
+                nanoBankBriefing = Loc.GetString("economy-character-info-briefing", ("number", mind.NanoBankAccount.Value), ("password", password));
             }
             else
                 nanoBankBriefing = Loc.GetString("economy-character-info-unknown");
