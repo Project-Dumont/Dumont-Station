@@ -9,7 +9,7 @@ ent-MobAngryBee = abelha
      .suffix = Irritado
 
 ent-MobChicken = galinha
-     .desc = Vem antes do ovo e É um dinossauro!
+     .desc = Vem antes do ovo e é um dinossauro!
 
 ent-MobDuckMallard = pato-real
      .desc = Um adorável pato-real, é fofinho e macio!
@@ -27,7 +27,7 @@ ent-MobCow = vaca
      .desc = Moo.
 
 ent-MobCrab = caranguejo
-     .desc = Existe uma lenda popular de que sua garra tira os astronautas da existência por causa de comentários desagradáveis. Seja educado e tolerante para sua própria segurança.
+     .desc = Existe uma lenda popular de que sua pinça tira os astronautas da existência por causa de comentários desagradáveis. Seja educado e tolerante para sua própria segurança.
 
 ent-MobGoat = cabra
      .desc = Sua coluna consiste em longos segmentos pontiagudos, não admira que ela seja tão mal-humorada.
@@ -46,7 +46,7 @@ ent-MobKangarooBoxer = canguru boxeador
      .suffix = Irritado
 
 ent-MobKangarooJudge = juiz canguru
-     .desc = Este case está na bolsa... ou bolsa...
+     .desc = Este caso está na bolsa... ou bolsa...
 
 ent-MobMonkey = macaco
      .desc = A nova igreja dos neodarwinistas realmente acredita que TODOS os animais evoluíram de um macaco. Tem gosto de carne de porco e matá-los é divertido e relaxante.
@@ -64,13 +64,13 @@ ent-MobLizard = lagarto
      .desc = Um dragão inofensivo.
 
 ent-MobSlug = lesma
-     .desc = E chamaram isso de lagarto?
+     .desc = E chamam isso de lagarto?
 
 ent-MobFrog = sapo
      .desc = Pula, pula, pula. Parece úmido.
 
 ent-MobParrot = papagaio
-     .desc = Se infiltra em seu domínio, te espiona e, de alguma forma, ainda é um animal de estimação legal.
+     .desc = Se infiltra em seu domínio, te espiona e de alguma forma ainda é um animal de estimação legal.
 
 ent-MobPenguin = pinguim
      .desc = Suas vidas são uma dor constante devido aos joelhos na parte interna do corpo.
@@ -86,11 +86,11 @@ ent-MobGiantSpider = tarântula
      .desc = Amplamente reconhecido como literalmente a pior coisa que existe.
 
 ent-MobGiantSpiderAngry = tarântula
-     .desc = Amplamente reconhecido como literalmente a pior coisa que existe.
+     .desc = Amplamente reconhecido como literalmente a pior coisa que existe, e esse ainda esta com raiva.
      .suffix = Irritado
 
 ent-MobPossum = gambá
-     .desc = "Ó gambá! Meu gambá!" -Walt Whitman, 1865
+     .desc = "Ó gambá! Meu gambá!" - Walt Whitman, 1865.
 
 ent-MobPossumMorty = Morty
      .desc = O Didelphis virginiana da estação. Um cara sensível, mas resiliente.

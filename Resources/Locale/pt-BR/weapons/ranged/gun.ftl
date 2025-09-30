@@ -1,4 +1,3 @@
-
 gun-selected-mode-examine = O modo de disparo é [color={$color}]{$mode}[/color].
 gun-fire-rate-examine = A taxa de tiro é [color={$color}]{$fireRate}[/color] por segundo.
 gun-selector-verb = Mudar para {$mode}
@@ -16,16 +15,16 @@ gun-FullAuto = automático
 gun-ballistic-cycle = Carregar
 gun-ballistic-cycled = Carregado
 gun-ballistic-cycled-empty = Vazio
-gun-ballistic-transfer-invalid = {CAPITALIZE(THE($ammoEntity))} não vai caber dentro {THE($targetEntity)}!
-gun-ballistic-transfer-empty = {CAPITALIZE(THE($entity))} está vazio.
-gun-ballistic-transfer-target-full = {CAPITALIZE(THE($entity))} já está totalmente carregado.
+gun-ballistic-transfer-invalid = {CAPITALIZE(ARTIGO-O($ammoEntity))} {$ammoEntity} não vai caber dentro {PREPOSICAO-DE($targetEntity)} {$targetEntity}!
+gun-ballistic-transfer-empty = {CAPITALIZE(ARTIGO-O($entity))} {$entity} está {MAKEGENERO("vazio", $entity)}.
+gun-ballistic-transfer-target-full = {CAPITALIZE(ARTIGO-O($entity))} {$entity} já está totalmente {MAKEGENERO("carregado", $entity)}.
 
 # CartridgeAmmo
 gun-cartridge-spent = Ele [color=red]está gasto[/color].
 gun-cartridge-unspent = Ele [color=lime]não está gasto[/color].
 
 # BatteryAmmoProvider
-gun-battery-examine = Há carga suficiente para [color={$color}]{$count} tiros.
+gun-battery-examine = Há carga suficiente para [color={$color}]{$count}[/color] {MANY("tiro", $count)}.
 
 # CartridgeAmmoProvider
 gun-chamber-bolt-ammo = Arma não acionada

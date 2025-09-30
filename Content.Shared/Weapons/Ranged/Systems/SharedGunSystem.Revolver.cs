@@ -13,6 +13,12 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 ss14-Starlight <ss14-Starlight@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -27,6 +33,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Interaction.Events;
 using JetBrains.Annotations;
+using Content.Shared._Starlight.Weapon.Components;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -115,7 +122,7 @@ public partial class SharedGunSystem
             return false;
 
         // If it's a speedloader try to get ammo from it.
-        if (EntityManager.HasComponent<SpeedLoaderComponent>(uid))
+        if (HasComp<SpeedLoaderComponent>(uid))
         {
             var freeSlots = 0;
 
@@ -403,8 +410,15 @@ public partial class SharedGunSystem
             // Chamber empty or spent
             if (ent == null)
                 continue;
+            //🌟Starlight🌟
+            if (TryComp<HitScanCartridgeAmmoComponent>(ent, out var hitscanCartridge))
+            {
+                if (hitscanCartridge.Spent)
+                    continue;
 
-            if (TryComp<CartridgeAmmoComponent>(ent, out var cartridge))
+                args.Ammo.Add((ent.Value, hitscanCartridge));
+            }
+            else if (TryComp<CartridgeAmmoComponent>(ent, out var cartridge))
             {
                 if (cartridge.Spent)
                     continue;

@@ -13,13 +13,13 @@ ent-FoodTinPeachesOpen = pêssegos em lata
 ent-FoodTinPeachesTrash = pêssegos em lata
      .desc = Apenas uma bela lata de pêssegos maduros nadando em seu próprio suco.
 
-ent-FoodTinPeachesMaint = Pêssegos de Manutenção
+ent-FoodTinPeachesMaint = pêssegos de manutenção
      .desc = Apenas uma bela lata de pêssegos maduros nadando em seu próprio suco.
 
-ent-FoodTinPeachesMaintOpen = Pêssegos de Manutenção
+ent-FoodTinPeachesMaintOpen = pêssegos de manutenção
      .desc = Apenas uma bela lata de pêssegos maduros nadando em seu próprio suco.
 
-ent-FoodTinPeachesMaintTrash = Pêssegos de Manutenção
+ent-FoodTinPeachesMaintTrash = pêssegos de manutenção
      .desc = Apenas uma bela lata de pêssegos maduros nadando em seu próprio suco.
 
 ent-FoodTinBeans = lata de feijão

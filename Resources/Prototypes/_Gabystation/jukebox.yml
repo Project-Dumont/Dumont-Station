@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Nicolasfmendesx11 <Nicolasfmendesx11@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 samarieh <samariehy666@gmail.com>
@@ -465,3 +467,81 @@
   name: Toby Fox - Welcome to the Green Room
   path:
     path: /Audio/_Gabystation/Jukebox/welcome_to_the_green_room.ogg
+
+- type: jukebox
+  id: EyesWithoutAFace
+  name: Billy Idol - Eyes Without A Face
+  path:
+    path: /Audio/_Gabystation/Jukebox/eyes_without_a_face.ogg
+
+- type: jukebox
+  id: HeartToHeart
+  name: Mac DeMarco - Heart To Heart
+  path:
+    path: /Audio/_Gabystation/Jukebox/heart_to_heart.ogg
+
+- type: jukebox
+  id: DoFundoDaGrota
+  name: Baitaca - Do Fundo da Grota
+  path:
+    path: /Audio/_Gabystation/Lobby/do_fundo_da_grota.ogg
+
+- type: jukebox
+  id: EDissoQueOVelhosGosta
+  name: Gaúcho da Fronteira - É disso que o velhos gosta
+  path:
+    path: /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
+
+- type: jukebox
+  id: AmigaDaMinhaMulher
+  name: Seu Jorge - Amiga da Minha Mulher
+  path:
+    path: /Audio/_Gabystation/Jukebox/amiga_da_minha_mulher.ogg
+
+- type: jukebox
+  id: AondeQuerQueEuVa
+  name: Os Paralamas Do Sucesso - Aonde Quer Que Eu Vá
+  path:
+    path: /Audio/_Gabystation/Jukebox/aonde_quer_que_eu_va.ogg
+
+- type: jukebox
+  id: Burguesinha
+  name: Seu Jorge - Burguesinha
+  path:
+    path: /Audio/_Gabystation/Jukebox/burguesinha.ogg
+
+- type: jukebox
+  id: CeuAzul
+  name: Charlie Brown Jr - Céu Azul
+  path:
+    path: /Audio/_Gabystation/Jukebox/ceu_azul.ogg
+
+- type: jukebox
+  id: LugarAoSol
+  name: Charlie Brown Jr - Lugar Ao Sol
+  path:
+    path: /Audio/_Gabystation/Jukebox/lugar_ao_sol.ogg
+
+- type: jukebox
+  id: OutraVida
+  name: Armandinho - Outra Vida
+  path:
+    path: /Audio/_Gabystation/Jukebox/outra_vida.ogg
+
+- type: jukebox
+  id: Samurai
+  name: Djavan - Samurai
+  path:
+    path: /Audio/_Gabystation/Jukebox/samurai.ogg
+
+- type: jukebox
+  id: SoOsLoucosSabem
+  name: Charlie Brown Jr - Só os loucos sabem
+  path:
+    path: /Audio/_Gabystation/Jukebox/so_os_loucos_sabem.ogg
+
+- type: jukebox
+  id: UrsinhoDeDormir
+  name: Armandinho - Ursinho De Dormir
+  path:
+    path: /Audio/_Gabystation/Jukebox/ursinho_de_dormir.ogg

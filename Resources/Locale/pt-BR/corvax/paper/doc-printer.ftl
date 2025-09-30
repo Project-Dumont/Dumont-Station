@@ -1288,37 +1288,37 @@ doc-text-printer-REPORTACCOMPLISHMENTGOALS =
                                 ⠀[italic]Espaço para carimbos[/italic]
 
 # Gaby add
-doc-text-printer-ReportStation =
-[color=#1b67a5]░░██░░ [head=2]Documento Oficial[/head]
-▀████▀ [head=3]Assunto: Relatório Setorial – Status Operacional da Estação[/head]
-▄█▀▀█▄ [head=3]De: Comando da Estação[/head]
-[/color]──────────────────────────────────────────
-
-Relatório geral de status da estação, com informações coletadas e organizadas por setor:
-
-[color=#f2e052][bold]Engenharia:[/bold][/color]
-[INSIRA AQUI UM RESUMO DA SITUAÇÃO]
-
-[color=#d28150][bold]Setor de Cargas:[/bold][/color]
-[INSIRA AQUI UM RESUMO DA SITUAÇÃO]
-
-[color=#ff5c5c][bold]Segurança:[/bold][/color]
-[INSIRA AQUI UM RESUMO DA SITUAÇÃO]
-
-[color=#5b97bc][bold]Departamento Médico:[/bold][/color]
-[INSIRA AQUI UM RESUMO DA SITUAÇÃO]
-
-[color=#9fed58][bold]Setor Civil e Serviços:[/bold][/color]
-[INSIRA AQUI UM RESUMO DA SITUAÇÃO]
-
-[color=#c96dbf][bold]Pesquisa Científica (SCI):[/bold][/color]
-[INSIRA AQUI UM RESUMO DA SITUAÇÃO]
-
-As seguintes porcentagens de progresso foram atingidas:
-• Engenharia: 0%\
-• Civil: 0%\
-• Experimental: 0%\
-• Segurança: 0%
-
-=============================================
-                                ⠀[italic]Espaço para carimbos[/italic]
+doc-text-printer-RelatorioSetorial =
+    {"["}color=#1b67a5]░░██░░ [head=2]Documento Oficial[/head]
+    ▀████▀ [head=3]Assunto: Relatório Setorial – Status Operacional da Estação[/head]
+    ▄█▀▀█▄ [head=3]De: Comando da Estação[/head]
+    {"["}/color]──────────────────────────────────────────
+    
+    Relatório geral de status da estação, com informações coletadas e organizadas por setor:
+    
+    {"["}color=#f2e052][bold]Engenharia:[/bold][/color]
+    \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
+    
+    {"["}color=#d28150][bold]Setor de Cargas:[/bold][/color]
+    \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
+    
+    {"["}color=#ff5c5c][bold]Segurança:[/bold][/color]
+    INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
+    
+    {"["}color=#5b97bc][bold]Departamento Médico:[/bold][/color]
+    \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
+    
+    {"["}color=#9fed58][bold]Setor Civil e Serviços:[/bold][/color]
+    \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
+    
+    {"["}color=#c96dbf][bold]Pesquisa Científica (SCI):[/bold][/color]
+    \[INSIRA AQUI UM RESUMO DA SITUAÇÃO\]
+    
+    As seguintes porcentagens de progresso foram atingidas:
+    - Engenharia: 0%
+    - Civil: 0%
+    - Experimental: 0%
+    - Segurança: 0%
+    
+    =============================================
+                                    ⠀[italic]Espaço para carimbos[/italic]

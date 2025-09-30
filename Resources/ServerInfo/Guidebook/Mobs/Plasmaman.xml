@@ -1,0 +1,75 @@
+<Document>
+  # Pessoas Plasma
+
+  <Box>
+    <GuideEntityEmbed Entity="MobPlasmaman" Caption=""/>
+  </Box>
+
+  Elas respiram plasma, e oxigênio é altamente tóxico quando inalado.
+  A exposição ao oxigênio as faz pegar fogo.
+
+  Para prevenir a ignição, vestem trajes selados feitos de Envirosuit (no slot de jumpsuit) e um capacete de Envirosuit [bold]adequado ao espaço[/bold].
+  Outros trajes como EVA, vacsuits, tacsuits e hardsuits também as protegerão da exposição ao oxigênio.
+
+  [color=#ffa500]Não ficam com fome nem sede. Não têm sangue nem podem sangrar.[/color]
+
+  <Box>
+    <GuideEntityEmbed Entity="DrinkCartonMilk" />
+    <GuideEntityEmbed Entity="SheetPlasma1" />
+  </Box>
+
+  - Por conta de seu corpo esquelético, podem usar Leite para um bônus no humor e para lentamente curar dano Bruto, de Calor, de Choque e Cáustico.
+  - Elas também podem consumir Plasma para ganhar um maior bônus no humor e curar qualquer tipo de dano mais rápido, exceto por dano Celular.
+
+
+  Elas infundem seus punhos com pó de plasma que entra em combustão ao socar, causando [color=orange]5 de dano de Calor[/color] e [color=red]2.25 de dano Contundente[/color]. Porém, cada soco efetivo também causa [color=orange]1 de dano de Calor[/color] às suas mãos.
+
+  Pessoas Plasma com o traço [bold]Claws[/bold], [bold]Talons[/bold] ou [bold]Natural Weapons Removal[/bold] causam menos dano desarmado, mas não se machucam ao atacar dessa forma.
+
+  Elas tomam [color=#1e90ff]25% menos dano Perfurante, 20% menos dano de Veneno e 15% menos dano Cortante[/color],
+  e são [color=#8658fc]imunes a dano de Radiação e Frio[/color],
+  mas tomam [color=#ffa500]50% mais dano Contundente e de Calor[/color].
+
+  Graças à sua [color=#8658fc]imunidade ao frio[/color], podem viver em ambientes frios sem necessidade de um casaco de inverno.
+
+  Elas têm uma densidade levemente menor que outras espécies. Isso resulta em fraquezas como: serem mais fáceis de serem empurradas, puxadas, e jogadas por Vento Espacial, além de terem dificuldade em puxar objetos mais pesados.
+
+  ## Equipamento
+  <Box>
+    <GuideEntityEmbed Entity="ClothingUniformEnvirosuit" Caption="envirosuit"/>
+    <GuideEntityEmbed Entity="ClothingHeadEnvirohelm" Caption="capacete de envirosuit"/>
+    <GuideEntityEmbed Entity="DoubleEmergencyPlasmaTankFilled" />
+  </Box>
+
+  Toda Pessoa Plasma começa com uma envirosuit, um capacete de envirosuit e um tanque de plasma.
+
+  Suas envirosuits contêm um [color=#1e90ff]auto-extintor[/color] com cargas limitadas, que pode ser ativado quando estiverem pegando fogo
+  e vestindo o capacete de envirosuit. O auto-extintor precisa recarregar entre usos.
+
+  <Box HorizontalAlignment="Stretch">
+    Cartuchos de refill para o auto-extintor podem ser comprados em [bold]Loadouts[/bold], ou impressos no Techfab médico após pesquisados.
+    Um refill torna um auto-extintor imediatamente utilizável (sem precisar esperar a recarga).
+    <GuideEntityEmbed Entity="EnvirosuitExtinguisherRefill" />
+  </Box>
+
+  Seus capacetes de envirosuit são [bold]adequados ao espaço[/bold] e dão proteção para soldagem. O visor do capacete pode ser ligado como uma lanterna, usando uma power cell inserida como bateria.
+  Elas não podem comer ou beber sem tirar seu capacete de envirosuit.
+
+  O tanque de plasma dura por volta de uma hora antes de precisar ser substituído ou recarregado.
+
+  ## Tratamento médico
+  <Box>
+    <GuideEntityEmbed Entity="StasisBed" />
+  </Box>
+
+  Antes de fazer uma cirurgia numa Pessoa Plasma, seu traje envirosuit precisa ser retirado primeiro, o que é desastroso num ambiente com oxigênio.
+
+  Para contornar isso, a Pessoa Plasma pode ser presa a uma [bold]stasis bed[/bold] antes de remover sua envirosuit
+  para a prevenir de pegar fogo durante o processo cirúrgico.
+
+  <Box HorizontalAlignment="Stretch">
+    Seus capacetes de envirosuit as previnem de ingerir pílulas, mas seus trajes ainda permitem que químicos sejam injetados através eles.
+    <GuideEntityEmbed Entity="Syringe" Caption=""/>
+  </Box>
+
+</Document>

@@ -1,6 +1,6 @@
-agent-id-no-new = Não ganhou nenhum acesso novo de {THE($card)}.
-agent-id-new-1 = Ganhou um novo acesso de {THE($card)}.
-agent-id-new = Ganhou {$number} novos acessos de {THE($card)}.
+agent-id-no-new = Não ganhou nenhum acesso novo {PREPOSICAO-DE($card)} {$card}.
+agent-id-new-1 = Ganhou um novo acesso {PREPOSICAO-DE($card)} {$card}.
+agent-id-new = Ganhou {$number} {MANY("novo", $number)} {MANY("acesso", $number)} {PREPOSICAO-DE($card)} {$card}.
 agent-id-card-current-name = Nome:
 agent-id-card-current-job = Trabalho:
 agent-id-card-job-icon-label = Ícone do trabalho:

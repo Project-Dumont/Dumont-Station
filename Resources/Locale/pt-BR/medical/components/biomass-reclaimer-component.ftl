@@ -1,1 +1,1 @@
-﻿biomass-reclaimer-suicide-others = {CAPITALIZE(THE($victim))} se jogaram no recuperador de biomassa!
+biomass-reclaimer-suicide-others = { $victim } se jogou no recuperador de biomassa!

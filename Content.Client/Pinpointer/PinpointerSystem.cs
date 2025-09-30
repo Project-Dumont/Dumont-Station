@@ -5,11 +5,16 @@
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Client.Alerts;
 using Content.Shared.Pinpointer;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -20,6 +25,32 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
 {
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+
+    // WD EDIT START
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<PinpointerComponent, UpdateAlertSpriteEvent>(OnUpdateAlertSprite);
+    }
+
+    private void OnUpdateAlertSprite(EntityUid uid, PinpointerComponent component, ref UpdateAlertSpriteEvent args)
+    {
+        if (args.Alert.ID != component.Alert)
+            return;
+
+        var sprite = args.SpriteViewEnt.Comp;
+        var eye = _eyeManager.CurrentEye;
+        var angle = component.DistanceToTarget switch
+        {
+            Distance.Close or Distance.Medium or Distance.Far => component.ArrowAngle + eye.Rotation,
+            _ => Angle.Zero
+        };
+
+        _sprite.LayerSetRotation((args.SpriteViewEnt, sprite), PinpointerLayers.Screen, angle);
+        sprite.LayerSetState(PinpointerLayers.Screen, component.DistanceToTarget.ToString().ToLower());
+    }
+    // WD EDIT END
 
     public override void Update(float frameTime)
     {
@@ -33,6 +64,11 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         var query = EntityQueryEnumerator<PinpointerComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var pinpointer, out var sprite))
         {
+            // WD EDIT START
+            if (!sprite.LayerExists(PinpointerLayers.Screen))
+                continue;
+            // WD EDIT END
+
             if (!pinpointer.HasTarget)
             {
                 sprite.LayerSetRotation(PinpointerLayers.Screen, Angle.Zero); // Goob edit

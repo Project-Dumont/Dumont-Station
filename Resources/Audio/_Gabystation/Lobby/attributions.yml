@@ -1,9 +1,11 @@
-﻿# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 - files: ["poeira.ogg"]
@@ -365,3 +367,13 @@
   copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/GrCp8AHdgEM?si=oISv4jrHIV0qoQEv"
+
+- files: ["do_fundo_da_grota.ogg"]
+  copyright: "Do Fundo da Grota by Baitaca. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=EtTbS-KdcrE"
+
+- files: ["e_disso_que_o_velho_gosta.ogg"]
+  copyright: "É disso que o velhos gosta by Gaúcho da Fronteira. Exported with ytdlp and converted to mono .ogg with ffmpeg"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=6jUXTot03_U"

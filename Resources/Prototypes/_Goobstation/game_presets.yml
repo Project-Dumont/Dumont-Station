@@ -2,12 +2,16 @@
 # SPDX-FileCopyrightText: 2024 Fenn <162015305+TooSillyFennec@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 # SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 CometVoid <cometsstrile@gmail.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
@@ -42,7 +46,7 @@
     - Changeling
     - SubGamemodesRule
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -58,7 +62,7 @@
     - CalmLing
     - CalmTraitor
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -75,7 +79,7 @@
     - Calmops
     - CalmTraitor
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -91,7 +95,7 @@
     - Calmops
     - CalmLing
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -108,7 +112,7 @@
     - CalmRevs
     - CalmTraitor
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
@@ -123,7 +127,7 @@
     - CalmRevs
     - CalmLing
     - BasicStationEventScheduler
-    #- MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
@@ -140,6 +144,7 @@
   - BasicStationEventScheduler
   - AntagStationEventScheduler
   - BasicRoundstartVariation
+  - MeteorSwarmScheduler # Gaby - Reativa meteoros
   - SubGamemodesRule
   - LavalandStormScheduler # Lavaland Change
 
@@ -154,7 +159,7 @@
     - Honkops
     - SubGamemodesRule
     - BasicStationEventScheduler
-  #  - MeteorSwarmScheduler Goobstation - nuh uh
+    - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler
@@ -216,6 +221,7 @@
   rules:
     - SecretPlusMid
     - LavalandStormScheduler
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
   id: SecretPlusAdmeme
@@ -230,6 +236,7 @@
   rules:
     - SecretPlusAdmeme
     - LavalandStormScheduler
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
   id: SurvivalPlusMid
@@ -242,4 +249,20 @@
   showInVote: true
   rules:
     - SecretPlusRampingMid
+    - MeteorSwarmScheduler # Gaby - Reativa meteoros
     - LavalandStormScheduler
+
+# survival+ but it has roundstart abductors and maybe thieves
+- type: gamePreset
+  id: Abductors
+  alias:
+  - ayylmao
+  name: abductors-title
+  description: abductors-description
+  showInVote: false
+  minPlayers: 20
+  rules:
+  - DuoAbductorRoundstart
+  - SubGamemodesRule
+  - SecretPlusRampingMid
+  - LavalandStormScheduler

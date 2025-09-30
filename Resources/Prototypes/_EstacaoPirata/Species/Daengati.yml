@@ -50,3 +50,6 @@
       points: 1
       required: true
       defaultMarkings: [ DaengatiTail ]
+    Overlay:
+      points: 2
+      required: false

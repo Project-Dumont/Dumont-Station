@@ -88,7 +88,10 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Marcus F <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Marcus F <marcus2008stoke@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 thebiggestbruh <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 thebiggestbruh <marcus2008stoke@gmail.com>
 //
@@ -136,8 +139,7 @@ public sealed class TemperatureSystem : EntitySystem
 
     private float _accumulatedFrametime;
 
-    [ValidatePrototypeId<AlertCategoryPrototype>]
-    public const string TemperatureAlertCategory = "Temperature";
+    public static readonly ProtoId<AlertCategoryPrototype> TemperatureAlertCategory = "Temperature";
 
     public override void Initialize()
     {
@@ -357,11 +359,18 @@ public sealed class TemperatureSystem : EntitySystem
 
         if (args.CurrentTemperature <= idealTemp)
         {
+            // EE Plasmeme Change: If there's no risk to being cold there's no reason to show a Cold alert
+            if (!temperature.ColdDamage.AnyPositive())
+                return;
+
             type = temperature.ColdAlert;
             threshold = temperature.ColdDamageThreshold;
         }
         else
         {
+            if (!temperature.HeatDamage.AnyPositive()) // EE Plasmeme Change
+                return;
+
             type = temperature.HotAlert;
             threshold = temperature.HeatDamageThreshold;
         }

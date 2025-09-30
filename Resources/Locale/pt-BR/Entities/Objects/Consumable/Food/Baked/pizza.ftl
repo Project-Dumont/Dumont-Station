@@ -49,7 +49,7 @@ ent-FoodPizzaPineappleSlice = fatia de pizza havaiana
 ent-FoodPizzaArnold = pizza do Arnold
     .desc = "Hello, you've reached Arnold's pizza shop. I'm not here now, I'm out killing pepperoni."
 
-ent-FoodPizzaArnoldSlice = fatia de pizza do Arnold
+ent-FoodPizzaArnoldSlice = fatia de pizza do arnold
     .desc = "I come over, maybe I give you a pizza, maybe I break off your arm."
 
 ent-FoodPizzaMoldySlice = fatia de pizza mofada

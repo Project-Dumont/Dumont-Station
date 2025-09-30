@@ -1,5 +1,8 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -8,9 +11,16 @@
   id: GasFilterInline
   name: inline gas filter
   description: Filters gases from a pipenet without splitting it in two.
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
     sprite: _Goobstation/Structures/Piping/inlinegasfilter.rsi
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasFilterInline
+      Secondary: GasFilterInlineAlt1
+      Tertiary: GasFilterInlineAlt2
   - type: GasFilter
     inlet: pipe
     outlet: pipe

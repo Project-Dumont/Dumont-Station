@@ -21,6 +21,7 @@
 // SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 double_b <40827162+benjamin-burges@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
@@ -108,7 +109,7 @@ namespace Content.Server.Bible
                 Timer.Spawn(500, () =>
                 {
                     _stun.TryParalyze(args.Container.Owner, TimeSpan.FromSeconds(10), true);
-                    _damageableSystem.TryChangeDamage(args.Container.Owner, component.DamageOnUnholyUse);
+                    _damageableSystem.TryChangeDamage(args.Container.Owner, component.DamageOnUntrainedUse);
                     _audio.PlayPvs(component.SizzleSoundPath, args.Container.Owner);
                 });
             }
@@ -147,7 +148,7 @@ namespace Content.Server.Bible
                 // Clean up the old body
                 if (summonableComp.Summon != null)
                 {
-                    EntityManager.DeleteEntity(summonableComp.Summon.Value);
+                    Del(summonableComp.Summon.Value);
                     summonableComp.Summon = null;
                 }
                 summonableComp.AlreadySummoned = false;
@@ -184,7 +185,7 @@ namespace Content.Server.Bible
             //Damage unholy creatures
             if (HasComp<UnholyComponent>(args.Target))
             {
-                _damageableSystem.TryChangeDamage(args.Target.Value, component.DamageOnUnholyUse, true, origin: uid);
+                _damageableSystem.TryChangeDamage(args.Target.Value, component.DamageOnUntrainedUse, true, origin: uid);
 
                 var othersMessage = Loc.GetString(component.LocPrefix + "-damage-unholy-others", ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
                 _popupSystem.PopupEntity(othersMessage, args.User, Filter.PvsExcept(args.User), true, PopupType.MediumCaution);
@@ -324,7 +325,7 @@ namespace Content.Server.Bible
                 return;
 
             // Make this familiar the component's summon
-            var familiar = EntityManager.SpawnEntity(component.SpecialItemPrototype, position.Coordinates);
+            var familiar = Spawn(component.SpecialItemPrototype, position.Coordinates);
             component.Summon = familiar;
 
             // If this is going to use a ghost role mob spawner, attach it to the bible.

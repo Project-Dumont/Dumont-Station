@@ -1,5 +1,5 @@
-cassette-repair-start = Você começa a rebobinar a fita de {THE($item)}.
-cassette-repair-finish = Você consegue rebobinar a fita de {THE($item)}.
+cassette-repair-start = Você começa a rebobinar a fita {PREPOSICAO-DE($item)} {$item}.
+cassette-repair-finish = Você consegue rebobinar a fita {PREPOSICAO-DE($item)} {$item}.
 tape-cassette-position = A fita cassete está cerca de [color=green]{$position}%[/color] concluída.
 tape-cassette-damaged = A fita cassete está desenrolada, use uma caneta ou chave de fenda para repará-la.
 tape-recorder-playing = O gravador de fita está em modo de [color=green]reprodução[/color].

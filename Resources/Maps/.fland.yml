@@ -69,9 +69,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 13329
@@ -15779,15 +15777,6 @@ entities:
     - type: Transform
       pos: 86.510315,-15.505127
       parent: 13329
-- proto: ActionToggleBlock
-  entities:
-  - uid: 10647
-    components:
-    - type: Transform
-      parent: 10646
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10646
 - proto: AirAlarm
   entities:
   - uid: 609
@@ -184152,14 +184141,6 @@ entities:
     - type: Transform
       pos: 16.323153,13.377749
       parent: 13329
-    - type: Blocking
-      blockingToggleActionEntity: 10647
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 10647
   - uid: 13391
     components:
     - type: Transform

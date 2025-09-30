@@ -17,7 +17,14 @@
   - Reduz todo dano recebido pelo contratado pela metade.
   - Aumenta o dano sagrado recebido.
 
-  ## Medo da morte
+  ## Avareza
+  <Box>
+    [color=#999999][italic]-30 Weight[/italic][/color]
+  </Box>
+
+  - Allows the contractee to devour things whole, just like a dragon.
+
+  ## Medo da Morte
   <Box>
     [color=#999999][italic]-25 Peso[/italic][/color]
   </Box>
@@ -46,21 +53,21 @@
 
   - Concede ao contratado um par de tênis irados, assinados pelo próprio Michael Jordan.
 
-  ## Sorte
-  <Box>
-    [color=#999999][italic]-20 Peso[/italic][/color]
-  </Box>
-
-  - Concede ao contratado uma cláusula completamente aleatória. Quer tentar a sorte?
-
-  ## Medo do Fogo
+  ## Fear of Fire
   <Box>
     [color=#999999][italic]-20 Peso[/italic][/color]
   </Box>
 
   - Torna o contratado imune a fogo e a ser incendiado.
 
-  ## Medo da Luz
+  ## Chance
+  <Box>
+    [color=#999999][italic]-15 Weight[/italic][/color]
+  </Box>
+
+  - Grants the contractee a completely random clause. Want to try your luck?
+
+  ## Fear of Light
   <Box>
     [color=#999999][italic]-15 Peso[/italic][/color]
   </Box>
@@ -87,6 +94,13 @@
   </Box>
 
   - Remove a necessidade de respirar do contratado.
+
+  ## Medo de Palhaço
+  <Box>
+    [color=#999999][italic]-10 Peso[/italic][/color]
+  </Box>
+
+  - Torna o contratado imune a deslizamento (noslip).
 
   ## Medo de Esmagamento
   <Box>
@@ -130,7 +144,22 @@
 
   - Silencia permanentemente o contratado.
 
-  ## Posse da alma
+  ## Uma Mão
+  <Box>
+    [color=#999999][italic]20 Peso[/italic][/color]
+  </Box>
+
+  - Imediatamente quebra uma das mãos do contratando.
+
+  ## Uma Perna
+  <Box>
+    [color=#999999][italic]20 Peso[/italic][/color]
+  </Box>
+
+  - Imediatamente quebra uma das pernas do contratando.
+
+  ## Posse da Alma
+
   <Box>
     [color=#999999][italic]25 Peso[/italic][/color]
   </Box>
@@ -138,14 +167,7 @@
   - Transfere a posse de uma alma para o contratante.
   - Padrão em todo contrato.
 
-  ## Humanidade
-  <Box>
-    [color=#999999][italic]25 Peso[/italic][/color]
-  </Box>
-
-  - Transforma o contratado em um sapo.
-
-  ## Força
+  ## Strength
   <Box>
     [color=#999999][italic]30 Peso[/italic][/color]
   </Box>
@@ -159,26 +181,20 @@
 
   - Torna o contratado desastrado e bagunça sua fala.
 
-  ## Uma mão
-  <Box>
-    [color=#999999][italic]30 Peso[/italic][/color]
-  </Box>
-
-  - Amputa imediatamente uma das mãos do contratado.
-
-  ## Uma perna
-  <Box>
-    [color=#999999][italic]30 Peso[/italic][/color]
-  </Box>
-
-  - Amputa imediatamente uma das pernas do contratado.
-
   ## Acordado
   <Box>
-    [color=#999999][italic]40 Peso[/italic][/color]
+    [color=#999999][italic]35 Peso[/italic][/color]
   </Box>
 
   - Torna o alvo narcoléptico.
+
+  ## Um orgão
+  <Box>
+    [color=#999999][italic]30 Peso[/italic][/color]
+  </Box>
+
+  - Expulsa um orgão do contrante de seu corpo.
+  - Muito provavelmente o coração.
 
   ## Pernas
   <Box>
@@ -186,14 +202,6 @@
   </Box>
 
   - Paralisa permanentemente ambas as pernas do contratado.
-
-  ## Um órgão
-  <Box>
-    [color=#999999][italic]45 Peso[/italic][/color]
-  </Box>
-
-  - Remove um dos órgãos do contratado e joga no chão.
-  - Provavelmente será o coração.
 
   ## Visão
   <Box>
@@ -208,6 +216,14 @@
   </Box>
 
   - Pacifica permanentemente o contratado.
+
+  ## Humanidade
+  <Box>
+    [color=#999999][italic]80 Weight[/italic][/color]
+  </Box>
+
+  - Transforma o contratado em um sapo.
+  - Isso é permanente.
 
   ## Tempo
   <Box>

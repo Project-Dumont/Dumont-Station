@@ -48,16 +48,23 @@ zzzz-artigo-definido = { GENDER($ent) ->
 
 # Usado internamente pela função PREPOSICAO-DE().
 zzzz-preposicao-de = { GENDER($ent) ->
-    *[male] do
+    [male] do
     [female] da
-    [neuter] de
+    *[neuter] de
 }
 
 # Usado internamente pela função PREPOSICAO-EM().
 zzzz-preposicao-em = { GENDER($ent) ->
-    *[male] no
+    [male] no
     [female] na
-    [neuter] em
+    *[neuter] em
+}
+
+# Usado internamente pela função PREPOSICAO-A().
+zzzz-preposicao-a = { GENDER($ent) ->
+    [male] ao
+    [female] à
+    *[neuter] a
 }
 
 # Usado internamente pela função PRONOME-ELE().
@@ -74,7 +81,21 @@ zzzz-pronome-dele = { GENDER($ent) ->
     [neuter] delu
 }
 
-# Usado internamente pela função MAKEGENDER()
+# Usado internamente pela função PRONOME-SEU().
+zzzz-pronome-seu = { GENDER($ent) ->
+    *[male] seu
+    [female] sua
+    [neuter] sue
+}
+
+# Usado internamente pela função PRONOME-ESSE().
+zzzz-pronome-esse = { GENDER($ent) ->
+    *[male] esse
+    [female] essa
+    [neuter] essu
+}
+
+# Usado internamente pela função MAKEGENERO()
 zzzz-genero-terminacao = { GENDER($ent) ->
     *[male] o
     [female] a
@@ -83,8 +104,8 @@ zzzz-genero-terminacao = { GENDER($ent) ->
 
 # Used internally by the THE() function.
 # zzzz-the = { PROPER($ent) ->
-#   *[false] o { $ent }
-#     [true] a { $ent }
+#   [false] { ARTIGO-UM($ent) } { $ent }
+#   *[true] { ARTIGO-O($ent) } { $ent }
 #   }
 
 # Used internally by the SUBJECT() function.

@@ -70,7 +70,6 @@ cosmiccult-summary-crewcomplete = Cada cultista cósmico foi deconvertido!
 cosmiccult-elimination-shuttle-call = Com base em varreduras de nossos sensores de longo alcance, a anomalia Λ-CDM diminuiu. Agradecemos sua prudência. Uma nave de emergência foi automaticamente chamada para a estação para procedimentos de descontaminação e debriefing. ETA: {$time} {$units}. Observe que, se o impacto psicológico da anomalia for insignificante, você pode chamar de volta a nave para estender o turno.
 cosmiccult-elimination-announcement = Com base em varreduras de nossos sensores de longo alcance, a anomalia Λ-CDM diminuiu. Agradecemos sua prudência. Uma nave de emergência já está a caminho. Retorne em segurança para a CentComm para procedimentos de descontaminação e debriefing.
 
-
 ## INSTRUÇÕES
 
 cosmiccult-role-roundstart-fluff =
@@ -106,12 +105,12 @@ cosmiccult-monument-stage1-briefing =
 
 cosmiccult-monument-stage2-briefing =
     O Monólito cresce em poder!
-    Sua influência afetará o espaço real em {$time} segundos.
+    Sua influência afetará o espaço real em {$time} {MANY("segundo",$time)}.
 
 cosmiccult-monument-stage3-briefing =
     O Monólito foi concluído!
-    Sua influência começará a se sobrepor ao espaço real em {$time} segundos.
-    Este é o trecho final! Reúna o máximo de entropia que puder.
+    Sua influência começará a se sobrepor ao espaço real em {$time} {MANY("segundo",$time)}.
+    Este é o trecho final! Reúna o máximo de Entropia que puder.
 
 ## FENDAS MALIGNAS
 
@@ -122,10 +121,8 @@ cosmiccult-rift-alreadyempowered = Você já está energizado; o poder da fenda 
 cosmiccult-rift-beginabsorb = A fenda começa a se fundir com você...
 cosmiccult-rift-beginpurge = Sua consagração começa a purificar a fenda maligna...
 
-cosmiccult-rift-absorb = {$NAME} absorve a fenda, e uma luz maligna energiza seu corpo!
-cosmiccult-rift-purge = {$NAME} purifica a fenda maligna da realidade!
-
-
+cosmiccult-rift-absorb = {CAPITALIZE(ARTIGO-O($NAME))} {$NAME} absorve a fenda, e uma luz maligna energiza seu corpo!
+cosmiccult-rift-purge = {CAPITALIZE(ARTIGO-O($NAME))} {$NAME} purifica a fenda maligna da realidade!
 
 ## UI / POPUP BASE
 
@@ -153,8 +150,6 @@ cosmiccult-ui-deconverted-text-2 =
 
 cosmiccult-ui-popup-confirm = Confirmar
 
-
-
 ## OBJETIVOS / MENU DE PERSONAGEM
 
 objective-issuer-cosmiccult = [bold][color=#cae8e8]O Desconhecido[/color][/bold]
@@ -163,7 +158,7 @@ objective-cosmiccult-charactermenu = Você deve trazer o fim de todas as coisas.
 objective-cosmiccult-steward-charactermenu = Você deve liderar o culto para trazer o fim de todas as coisas. Supervisionar e garantir o progresso do culto.
 
 objective-condition-entropy-title = DRENAR ENTROPIA
-objective-condition-entropy-desc = Drene coletivamente pelo menos {$count} entropia da tripulação.
+objective-condition-entropy-desc = Drene coletivamente pelo menos {$count} {MANY("Entropia", $count)} da tripulação.
 objective-condition-culttier-title = POTENCIALIZAR O MONÓLITO
 objective-condition-culttier-desc = Certifique-se de que O Monólito seja levado ao poder máximo.
 objective-condition-victory-title = TRAGA O FIM
@@ -186,9 +181,9 @@ cosmiccult-announce-victory-summon = UMA FRAÇÃO DO PODER CÓSMICO É INVOCADA.
 
 ## DIVERSOS
 
-cosmiccult-spire-entropy = Um fragmento de entropia se condensa na superfície da torre.
-cosmiccult-entropy-inserted = Você infunde {$count} entropia no Monólito.
+cosmiccult-spire-entropy = Um fragmento de Entropia se condensa na superfície da torre.
+cosmiccult-entropy-inserted = Você infunde {$count} {MANY("Entropia", $count)} no Monólito.
 cosmiccult-entropy-unavailable = Você não pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
-cosmiccult-gear-pickup-rejection = {ARTIGO-O($ITEM)} {$ITEM} resiste ao toque de {CAPITALIZE(THE($TARGET))}!
-cosmiccult-gear-pickup = Você sente-se se desfazendo ao segurar o(a) {$ITEM}!
+cosmiccult-gear-pickup-rejection = {CAPITALIZE(ARTIGO-O($ITEM))} {$ITEM} resiste ao toque {PREPOSICAO-DE($TARGET)} {$TARGET}!
+cosmiccult-gear-pickup = Você se sente se desfazendo ao segurar {ARTIGO-O($ITEM)} {$ITEM}!

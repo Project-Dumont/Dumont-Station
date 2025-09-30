@@ -14,46 +14,46 @@ ent-ClothingBackpackMedical = mochila da medicina
     .desc = Uma mochila esterilizada, perfeita para armazenar medicamentos e outras coisas de médicos.
 
 ent-ClothingBackpackCaptain = mochila do capitão
-    .desc = Uma mochila feita exclusivamente para o Capitão da estação... Mimado!
+    .desc = Uma mochila feita exclusivamente para o capitão da estação... Mimado!
 
 ent-ClothingBackpackMime = mochila do mímico
-    .desc = Uma mochila furtiva feita para pessoas que "não abrem a boca". Perfeita para guardar.. uhh.. B-Baguette?
+    .desc = Uma mochila furtiva feita para pessoas que "não abrem a boca". Perfeita para guardar... Uhh... B-Baguette?
 
 ent-ClothingBackpackChemistry = mochila da química
-    .desc = Uma mochila feita para armazenar venen-.. M-m-Medicamentos!
+    .desc = Uma mochila feita para armazenar venen-... M-M-Medicamentos!
 
 ent-ClothingBackpackHydroponics = mochila da botânica
     .desc = Uma mochila 100% vegana!
 
 ent-ClothingBackpackScience = mochila de pesquisas
-    .desc = Uma mochila criada especialmente para armazenar substâncias nocivas! E outras coisas de nerd..
+    .desc = Uma mochila criada especialmente para armazenar substâncias nocivas! E outras coisas de nerd...
 
 ent-ClothingBackpackVirology = mochila da virologia
-    .desc = Uma mochila feita com material desconhecido, capaz de armazenar bioarmas, doenças e coisas do tipo... Por algum motivo tem cheiro de macaco.
+    .desc = Uma mochila feita com material desconhecido, capaz de armazenar bio-armas, doenças e coisas do tipo... Por algum motivo tem cheiro de macaco.
 
 ent-ClothingBackpackSalvage = mochila de exploração
     .desc = Uma mochila surrada. Pode conter tesouros de outro mundo!
 
 ent-ClothingBackpackERTLeader = mochila de comandante da ERT
-    .desc = Uma mochila espaçosa, pertencente a um Comandante da unidade da ERT.
+    .desc = Uma mochila espaçosa, pertencente a um comandante da unidade da ERT.
 
 ent-ClothingBackpackERTSecurity = mochila de agente da ERT
-    .desc = Uma mochila espaçosa, pertencente a um Agente da unidade da ERT.
+    .desc = Uma mochila espaçosa, pertencente a um agente da unidade da ERT.
 
 ent-ClothingBackpackERTMedical = mochila de médico da ERT
-    .desc = Uma mochila espaçosa, pertencente a um Médico da unidade da ERT.
+    .desc = Uma mochila espaçosa, pertencente a um médico da unidade da ERT.
 
 ent-ClothingBackpackERTEngineer = mochila de engenheiro da ERT
-    .desc = Uma mochila espaçosa, pertencente a um Engenheiro da unidade da ERT.
+    .desc = Uma mochila espaçosa, pertencente a um engenheiro da unidade da ERT.
 
 ent-ClothingBackpackERTJanitor = mochila de zelador da ERT
-    .desc = Uma mochila espaçosa, pertecente a um Zelador da unidade da ERT.. Quê?!
+    .desc = Uma mochila espaçosa, pertecente a um zelador da unidade da ERT... Quê?!
 
 ent-ClothingBackpackERTClown = mochila de palhaço da ERT
-    .desc = Uma mochila muito espaçosa e buzinástica, pertencente a um membro da elite de palhaços, um Palhaço da unidade da ERT!
+    .desc = Uma mochila muito espaçosa e buzinástica, pertencente a um membro da elite de palhaços, um palhaço da unidade da ERT!
 
 ent-ClothingBackpackHolding = mochila interdimensional
-    .desc = Uma mochila que contém um buraco de minhoca ao bluespace.
+    .desc = Uma mochila que contém um buraco de minhoca a dimensão azul.
 
 ent-ClothingBackpackIan = mochila do Ian
     .desc = As vezes ele usa ela.
@@ -62,7 +62,7 @@ ent-ClothingBackpackAtmospherics = mochila da atmosférica
     .desc = Uma mochila à prova de fogo. Tem cheiro de plasma.
 
 ent-ClothingBackpackGenetics = mochila da genética
-    .desc = Uma mochila quase idestrutível, caso um hulk caia na porrada contigo.
+    .desc = Uma mochila quase indestrutível, caso um gorila caia na porrada contigo.
 
 ent-ClothingBackpackCargo = mochila de carga
     .desc = Uma mochila forte para roubar os suprimentos da estação.

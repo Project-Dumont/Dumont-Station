@@ -1,4 +1,4 @@
-machine-insert-item = Você insere {THE($item)} na {THE($machine)}.
+machine-insert-item = Você insere {ARTIGO-O($item)} {$item} {PREPOSICAO-EM($machine)} {$machine}.
 
 machine-upgrade-examinable-verb-text = Upgrades
 machine-upgrade-examinable-verb-message = Examine the machine upgrades.
@@ -17,6 +17,6 @@ two-way-lever-left = empurrar para esquerda
 two-way-lever-right = empurrar para a direita
 two-way-lever-cant = não se pode empurrar a alavanca nessa direção!
 
-recycler-count-items = Reciclou {$items} objetos.
+recycler-count-items = Reciclou {$items} {MANY("objeto", $items)}.
 
-machine-already-in-use = {CAPITALIZE(THE($machine))} já está em uso.
+machine-already-in-use = {CAPITALIZE(ARTIGO-O($machine))} {$machine} já está em uso.

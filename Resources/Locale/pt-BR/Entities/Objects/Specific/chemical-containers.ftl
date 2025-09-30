@@ -1,50 +1,27 @@
 ent-Jug = jarro
     .desc = Usado para conter uma quantidade muito grande de produtos químicos ou soluções. Ingerir é extremamente desaconselhável.
 
-ent-JugCarbon = jarro (carbono)
-
-ent-JugIodine = jarro (iodo)
-
-ent-JugFluorine = jarro (flúor)
-
-ent-JugChlorine = jarro (clorina)
-
-ent-JugAluminium = jarro (alumínio)
-
-ent-JugPhosphorus = jarro (fósforo)
-
-ent-JugSulfur = jarro (enxofre)
-
-ent-JugSilicon = jarro (silício)
-
-ent-JugHydrogen = jarro (hidrogênio)
-
-ent-JugLithium = jarro (lítio)
-
-ent-JugSodium = jarro (sódio)
-
-ent-JugPotassium = jarro (potássio)
-
-ent-JugRadium = jarro (rádio)
-
-ent-JugIron = jarro (ferro)
-
-ent-JugCopper = jarro (cobre)
-
-ent-JugGold = jarro (ouro)
-
-ent-JugMercury = jarro (mercúrio)
-
-ent-JugSilver = jarro (prata)
-
-ent-JugEthanol = jarro (etanol)
-
-ent-JugSugar = jarro (açúcar)
-
-ent-JugNitrogen = jarro (nitrogênio)
-
-ent-JugOxygen = jarro (oxigênio)
-
-ent-JugPlantBGone = jarro (Planta-B-Gone)
-
-ent-JugWeldingFuel = jarro (combustível de solda)
+ent-JugCarbon = { ent-Jug }
+ent-JugIodine = { ent-Jug }
+ent-JugFluorine = { ent-Jug }
+ent-JugChlorine = { ent-Jug }
+ent-JugAluminium = { ent-Jug }
+ent-JugPhosphorus = { ent-Jug }
+ent-JugSulfur = { ent-Jug }
+ent-JugSilicon = { ent-Jug }
+ent-JugHydrogen = { ent-Jug }
+ent-JugLithium = { ent-Jug }
+ent-JugSodium = { ent-Jug }
+ent-JugPotassium = { ent-Jug }
+ent-JugRadium = { ent-Jug }
+ent-JugIron = { ent-Jug }
+ent-JugCopper = { ent-Jug }
+ent-JugGold = { ent-Jug }
+ent-JugMercury = { ent-Jug }
+ent-JugSilver = { ent-Jug }
+ent-JugEthanol = { ent-Jug }
+ent-JugSugar = { ent-Jug }
+ent-JugNitrogen = { ent-Jug }
+ent-JugOxygen = { ent-Jug }
+ent-JugPlantBGone = { ent-Jug }
+ent-JugWeldingFuel = { ent-Jug }

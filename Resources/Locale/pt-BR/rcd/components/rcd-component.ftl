@@ -29,11 +29,16 @@ rcd-component-cannot-build-identical-tile = Esse azulejo já existe aí!
 
 ## Nomes de categoria
 
-rcd-component-walls-and-flooring = Paredes e pisos
-rcd-component-windows-and-grilles = Janelas e grades
+rcd-component-walls-and-flooring = Paredes & Pisos
+rcd-component-windows-and-grilles = Janelas & Grades
 rcd-component-airlocks = Airlocks
 rcd-component-electrical = Elétrica
 rcd-component-lighting = Iluminação
+rcd-component-piping = Canos
+rcd-component-atmosphericutility = Utilitários
+rcd-component-pumpsvalves = Bombas & Válvulas
+rcd-component-vents = Ventilações
+rcd-component-sensorsmonitors = Sensores & Monitores
 
 ### Nomes de protótipos
 

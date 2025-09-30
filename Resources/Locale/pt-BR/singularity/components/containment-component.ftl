@@ -10,4 +10,4 @@ comp-containment-disconnected = A luz do gerador de contenção some, interrompe
 comp-containment-anchor-warning = Você não pode desfixar o gerador de contenção enquanto está ativo ou conectado!
 comp-containment-toggle-warning = Você não pode desligar o gerador enquanto está ativo ou conectado!
 
-comp-field-vaporized = {CAPITALIZE(THE($entity))} bate no campo e é vaporizado!
+comp-field-vaporized = {CAPITALIZE(ARTIGO-O($entity))} {$entity} bate no campo e é {MAKEGENERO("vaporizado", $entity)}!

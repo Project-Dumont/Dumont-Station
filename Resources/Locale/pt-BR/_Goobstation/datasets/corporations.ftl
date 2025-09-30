@@ -1,0 +1,12 @@
+traitor-corporations-flavor-dataset-1 = Terroristas ARC
+traitor-corporations-flavor-dataset-2 = Frente de Libertação das Abelhas
+traitor-corporations-flavor-dataset-3 = Indústrias Cybersun
+traitor-corporations-flavor-dataset-4 = Saqueadores de Gorlex
+traitor-corporations-flavor-dataset-5 = Corporação Climber
+traitor-corporations-flavor-dataset-6 = Corporação Donk
+traitor-corporations-flavor-dataset-7 = Problemas legais
+traitor-corporations-flavor-dataset-8 = MI13
+traitor-corporations-flavor-dataset-9 = Cooperativa Tigre
+traitor-corporations-flavor-dataset-10 = Corporação Waffle
+traitor-corporations-flavor-dataset-11 = Terroristas da Corporação Waffle
+traitor-corporations-flavor-dataset-12 = Federação Visionária Neulithiv

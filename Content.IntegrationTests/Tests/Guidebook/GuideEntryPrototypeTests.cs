@@ -5,6 +5,9 @@
 // SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -24,6 +27,7 @@ namespace Content.IntegrationTests.Tests.Guidebook;
 public sealed class GuideEntryPrototypeTests
 {
     [Test]
+    [Ignore("Style update limit in engine is too low")]
     public async Task ValidatePrototypeContents()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings { Connected = true });

@@ -78,15 +78,28 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 Cass <45694413+CubixThree@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Julian Giebel <juliangiebel@live.de>
 # SPDX-FileCopyrightText: 2025 Momo <Rsnesrud@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 T <theo75cg@gmail.com>
 # SPDX-FileCopyrightText: 2025 centcomofficer24 <theo75cg@gmail.com>
+# SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 qrwas <aleksandr.vernigora93@gmail.com>
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -118,7 +131,7 @@
   id: Headphones
   storage:
     back:
-    - ClothingNeckHeadphones
+    - ClothingMultipleHeadphones
 
 # Toys
 - type: loadout
@@ -148,30 +161,35 @@
   storage:
     back:
     - Lighter
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigPackGreen
   storage:
     back:
     - CigPackGreen
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigPackRed
   storage:
     back:
     - CigPackRed
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigPackBlue
   storage:
     back:
     - CigPackBlue
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigPackBlack
   storage:
     back:
     - CigPackBlack
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigarCase
@@ -181,6 +199,7 @@
   storage:
     back:
     - CigarCase
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigarGold
@@ -190,6 +209,7 @@
   storage:
     back:
     - CigarGold
+  groupBy: "smokeables"
 
 # Pins
 - type: loadout
@@ -197,102 +217,120 @@
   storage:
     back:
     - ClothingNeckLGBTPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAllyPin
   storage:
     back:
     - ClothingNeckAllyPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAromanticPin
   storage:
     back:
     - ClothingNeckAromanticPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAsexualPin
   storage:
     back:
     - ClothingNeckAsexualPin
-
-- type: loadout
-  id: ClothingNeckAroacePin
-  storage:
-    back:
-    - ClothingNeckAroacePin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckBisexualPin
   storage:
     back:
     - ClothingNeckBisexualPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckGayPin
   storage:
     back:
     - ClothingNeckGayPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckIntersexPin
   storage:
     back:
     - ClothingNeckIntersexPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckLesbianPin
   storage:
     back:
     - ClothingNeckLesbianPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckNonBinaryPin
   storage:
     back:
     - ClothingNeckNonBinaryPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckPansexualPin
   storage:
     back:
     - ClothingNeckPansexualPin
-
-- type: loadout
-  id: ClothingNeckPluralPin
-  storage:
-    back:
-    - ClothingNeckPluralPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckOmnisexualPin
   storage:
     back:
     - ClothingNeckOmnisexualPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckGenderqueerPin
   storage:
     back:
     - ClothingNeckGenderqueerPin
-
-- type: loadout
-  id: ClothingNeckGenderfluidPin
-  storage:
-    back:
-    - ClothingNeckGenderfluidPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckTransPin
   storage:
     back:
     - ClothingNeckTransPin
+  groupBy: "pin"
 
 - type: loadout
   id: ClothingNeckAutismPin
   storage:
     back:
-    - ClothingNeckAutismPin
+    - ClothingNeckGoldAutismPin
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckAroacePin
+  storage:
+    back:
+    - ClothingNeckAroacePin
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckPluralPin
+  storage:
+    back:
+    - ClothingNeckPluralPin
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckGenderfluidPin
+  storage:
+    back:
+    - ClothingNeckGenderfluidPin
+  groupBy: "pin"
+
 
 # Playing Cards (GoobStation)
 - type: loadout
@@ -355,14 +393,12 @@
     back:
     - FoodSnackLollypopWrappedCarp
 
-# End GoobStation
-# Gabystation
-- type: loadout
-  id: PlushieBruce
-  storage:
-    back:
-    - PlushieBruce
 
+# End GoobStation
+
+
+
+# End Gabystation
 # Towels
 - type: loadout
   id: TowelColorWhite
@@ -374,6 +410,7 @@
   storage:
     back:
     - TowelColorWhite
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorSilver
@@ -385,6 +422,7 @@
   storage:
     back:
     - TowelColorSilver
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorGold
@@ -396,6 +434,7 @@
   storage:
     back:
     - TowelColorGold
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorLightBrown
@@ -408,6 +447,7 @@
   storage:
     back:
     - TowelColorLightBrown
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorGreen
@@ -420,6 +460,7 @@
   storage:
     back:
     - TowelColorGreen
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorDarkBlue
@@ -432,6 +473,7 @@
   storage:
     back:
     - TowelColorDarkBlue
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorOrange
@@ -444,6 +486,7 @@
   storage:
     back:
     - TowelColorOrange
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorLightBlue
@@ -456,6 +499,7 @@
   storage:
     back:
     - TowelColorLightBlue
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorPurple
@@ -468,6 +512,7 @@
   storage:
     back:
     - TowelColorPurple
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorRed
@@ -480,6 +525,7 @@
   storage:
     back:
     - TowelColorRed
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorGray
@@ -492,6 +538,7 @@
   storage:
     back:
     - TowelColorGray
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorBlack
@@ -504,6 +551,7 @@
   storage:
     back:
     - TowelColorBlack
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorDarkGreen
@@ -516,6 +564,7 @@
   storage:
     back:
     - TowelColorDarkGreen
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorMaroon
@@ -528,6 +577,7 @@
   storage:
     back:
     - TowelColorMaroon
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorYellow
@@ -540,6 +590,7 @@
   storage:
     back:
     - TowelColorYellow
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorMime
@@ -552,3 +603,4 @@
   storage:
     back:
     - TowelColorMime
+  groupBy: "towels"

@@ -41,6 +41,7 @@
   canBeAntag: false
   goobcoins: 40 #Goob content
   HasBank: false # Gaby content
+  weight: 10 # Goob Edit
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain

@@ -11,7 +11,6 @@
 
 using Content.Goobstation.Server.IoC;
 using Content.Goobstation.Common.JoinQueue;
-using Content.Goobstation.Common.MisandryBox;
 using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Server.ServerCurrency;
 using Robust.Shared.ContentPack;
@@ -32,7 +31,6 @@ public sealed class EntryPoint : GameServer
         IoCManager.BuildGraph();
 
         IoCManager.Resolve<IJoinQueueManager>().Initialize();
-        IoCManager.Resolve<ISpiderManager>().Initialize();
 
         _curr = IoCManager.Resolve<ICommonCurrencyManager>(); // Goobstation
         _curr.Initialize(); // Goobstation

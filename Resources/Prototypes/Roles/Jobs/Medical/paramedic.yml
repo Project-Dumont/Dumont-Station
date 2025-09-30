@@ -115,6 +115,17 @@
     back:
     - EmergencyRollerBedSpawnFolded
 
+- type: chameleonOutfit
+  id: ParamedicChameleonOutfit
+  job: Paramedic
+  equipment:
+    head: ClothingHeadHatParamedicsoft
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    neck: ClothingNeckStethoscope
+    outerClothing: ClothingOuterCoatParamedicWB
+    gloves: ClothingHandsGlovesLatex
+
 - type: jobAlternateTitle
   id: ParamedicTitleFirstResponder
   name: job-name-alt-paramedic-first-responder

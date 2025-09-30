@@ -66,7 +66,7 @@ job-name-chaplain = Chaplain
 job-name-botanist = Botanist
 job-name-bartender = Bartender
 ## goob edit - epic passengers
-job-name-passenger = Assistant
+job-name-passenger = Passenger
 job-name-salvagespec = Salvage Specialist
 job-name-station-ai = Station AI
 job-name-qm = Quartermaster
@@ -82,6 +82,7 @@ job-name-ertjanitor = ERT Janitor
 job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 job-name-visitor = Visitor
+job-name-cluwne = Cluwne
 
 # unused jobs
 # these are required for the agent ID job icon tooltips
@@ -133,7 +134,7 @@ JobMedicalIntern = Medical intern
 JobMime = Mime
 JobMusician = Musician
 JobParamedic = Paramedic
-JobPassenger = Assistant
+JobPassenger = Passenger
 JobPsychologist = Psychologist
 JobQuartermaster = Quartermaster
 JobReporter = Reporter

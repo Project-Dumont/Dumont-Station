@@ -12,7 +12,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Atmos;

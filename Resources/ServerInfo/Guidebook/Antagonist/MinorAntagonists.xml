@@ -15,7 +15,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
   # Antagonistas Menores
 
-  A maioria, se não todos, os Antagonistas Menores são papéis controlados por fantasmas que dão aos mortos novas maneiras de causar caos na estação. Eles são gerados por eventos aleatórios.
+  Os Antagonistas Menores são papéis controlados por fantasmas que dão aos mortos novas maneiras de causar caos na estação. Eles são gerados por eventos aleatórios.
 
   # Clone Paradoxo
 
@@ -23,7 +23,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="ParadoxCloneDummy"/>
   </Box>
 
-  Uma cópia perfeita de um tripulante aleatório que foi lançada em nosso universo por uma anomalia espaço-temporal. Para corrigir o paradoxo e sobreviver, ela precisa encontrar e matar sua contraparte original. Não possui habilidades especiais, mas tem aparência, DNA, impressões digitais, roupas, equipamentos e identidades idênticas aos do original, tornando difícil descobrir quem é o verdadeiro e quem é o clone — a menos que você conheça bem seus companheiros de tripulação.
+  Uma cópia perfeita de um tripulante aleatório que foi lançada em nosso universo por uma anomalia espaço-temporal. Para corrigir o paradoxo e sobreviver, ela precisa encontrar e matar sua contraparte original.
+  
+  Não possui habilidades especiais, mas tem aparência, DNA, impressões digitais, roupas, equipamentos e identidades idênticas aos do original, tornando difícil descobrir quem é o verdadeiro e quem é o clone — a menos que você conheça bem seus companheiros de tripulação.
+  
   # Aparição
 
   <Box>

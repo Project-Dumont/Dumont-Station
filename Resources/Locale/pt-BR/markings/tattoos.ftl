@@ -4,6 +4,9 @@ marking-TattooHiveChest = Tatuagem nas costas (Hive)
 marking-TattooNightlingChest-tattoo_nightling = Tatuagem no peito (nightling)
 marking-TattooNightlingChest = Tatuagem no peito (Nightling)
 
+marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Tatuagem no peito (Nanotrasen)
+marking-TattooNanotrasenChest = Tatuagem no peito (Nanotrasen)
+
 marking-TattooSilverburghLeftLeg-tattoo_silverburgh_l_leg = Tatuagem na perna esquerda (Silverburg)
 marking-TattooSilverburghLeftLeg = Tatuagem na perna esquerda (Silverburg)
 

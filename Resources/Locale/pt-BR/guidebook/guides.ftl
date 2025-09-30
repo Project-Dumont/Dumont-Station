@@ -32,6 +32,7 @@ guide-entry-medicaldoctor = Médico
 guide-entry-chemist = Químico
 guide-entry-medicine = Farmacologia
 guide-entry-brute = Medicação Avançada para Traumas
+guide-entry-plastic = Produção de Plástico
 guide-entry-botanicals = Botânica
 guide-entry-cloning = Clonagem
 guide-entry-cryogenics = Criogênica
@@ -95,4 +96,4 @@ guide-entry-soups = Sopas
 guide-entry-salads = Saladas
 guide-entry-sauces = Condimentos
 
-
+guide-entry-rules-r21 = R21

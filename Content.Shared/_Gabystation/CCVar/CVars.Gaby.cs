@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
@@ -24,4 +25,33 @@ public sealed partial class GabyCVars
     /// </summary>
     public static readonly CVarDef<bool> ICAlternateJobTitlesEnable =
         CVarDef.Create("ic.alternate_job_titles_enable", true, CVar.SERVER | CVar.REPLICATED);
+
+    // Enshittificar Cirurgias e Cia
+
+    /// <summary>
+    /// Poison damage applied per surgery step when the surgeon lacks proper PPE.
+    /// Triggers when missing gloves or mask and not sanitized.
+    /// </summary>
+    public static readonly CVarDef<float> SurgerySepsisEquipmentPenalty =
+        CVarDef.Create("gaby.surgery.sepsis_equipment_penalty", 5f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Poison damage applied per surgery step when operating outside proper surgical tables.
+    /// </summary>
+    public static readonly CVarDef<float> SurgerySepsisLocationPenalty =
+        CVarDef.Create("gaby.surgery.sepsis_location_penalty", 5f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Poison damage applied per surgery step for each unsanitazed person around surgery.
+    /// </summary>
+    public static readonly CVarDef<float> SurgerySepsisCrowdingPenalty =
+        CVarDef.Create("gaby.surgery.sepsis_crowding_penalty", 5f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Range in tiles to check for crowding around surgery sites.
+    /// Only living entities within this range count toward crowding penalties.
+    /// </summary>
+    public static readonly CVarDef<float> SurgeryCrowdingCheckRange =
+        CVarDef.Create("gaby.surgery.crowding_check_range", 5f, CVar.SERVER | CVar.REPLICATED);
+
 }

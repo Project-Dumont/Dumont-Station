@@ -44,13 +44,13 @@ ent-FoodDoughSlice = fatia de massa
      .desc = Uma fatia de massa. Pode ser cozido em pão.
 
 ent-FoodDoughBun = pão
-     .desc = Uma base para qualquer hambúrguer que se preze.
+     .desc = Uma base para qualquer hambúrguer.
 
 ent-FoodDoughPastryBaseRaw = base de pastelaria crua
      .desc = Deve ser cozido antes de usar.
 
 ent-FoodDoughPastryBase = base de pastelaria
-     .desc = Uma base para qualquer pastelaria que se preze.
+     .desc = Uma base para qualquer pastelaria.
 
 ent-FoodDoughPie = massa de torta
      .desc = Cozinhe para fazer uma torta.

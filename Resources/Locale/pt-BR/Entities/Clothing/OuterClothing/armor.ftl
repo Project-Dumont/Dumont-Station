@@ -2,10 +2,10 @@ ent-ClothingOuterArmorReflective = colete refletor
     .desc = Um colete de proteção contendo uma tecnologia avançada de blindagem. Para proteger o usuário contra armas de energia.
 
 ent-ClothingOuterArmorBulletproof = colete a prova de balas
-    .desc = Um colee de proteção feito com placas de kevlar. Para proteger o usuário de projéteis balísticos.
+    .desc = Um colete de proteção feito com placas de kevlar. Para proteger o usuário de projéteis balísticos.
 
 ent-ClothingOuterArmorCult = armadura do acólito
-    .desc = Uma armadura cultista malígna, feita de ósssos.
+    .desc = Uma armadura cultista malígna, feita de óssos.
 
 ent-ClothingOuterArmorHeavy = colete militar
     .desc = Um colete altamente resistente feito com placas de cerâmica balística. Capaz de proteger o usuário de danos excessívos.
@@ -26,11 +26,11 @@ ent-ClothingOuterArmorRiot = armadura anti-motim
     .desc = Um traje resistente a ataques corpo a corpo, perfeito para combater delinquentes pela estação.
 
 ent-ClothingOuterArmorScaf = traje scaf
-    .desc = A green and brown tactical suit for combat situations.
+    .desc = Um traje verde e marrom tático para situações de combate.
 
 ent-ClothingOuterArmorCaptainCarapace = carapaça do capitão
-    .desc = An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
+    .desc = Uma armadura avançada que oferece alta proteção ao mesmo tempo que mantêm a flexibilidade e nobreza ao máximo.
 
 ent-ClothingOuterArmorChangeling = armadura quitinosa
-    .desc = Transforma a pele do metamorfo em placas grossas de quitina resistente .
+    .desc = Transforma a pele do metamorfo em placas grossas de quitina resistente.
 

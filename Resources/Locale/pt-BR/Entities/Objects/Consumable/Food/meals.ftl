@@ -16,7 +16,7 @@ ent-FoodMealNachos = nachos
 ent-FoodMealNachosCheesy = nachos com queijo
      .desc = A deliciosa combinação de nachos e queijo derretido.
 
-ent-FoodMealNachosCuban = nachos Cubanos
+ent-FoodMealNachosCuban = nachos cubanos
      .desc = São alguns nachos perigosamente picantes.
 
 ent-FoodMealMint = hortelã
@@ -43,7 +43,7 @@ ent-FoodMealPigblanket = porco em um cobertor
 ent-FoodMealRibs = costela de churrasco
      .desc = Costelas de churrasco, cobertas com uma camada saudável de molho de churrasco. A coisa menos vegana que já existiu.
 
-ent-FoodMealEggsbenedict = ovos Benedict
+ent-FoodMealEggsbenedict = ovos benedict
      .desc = Só tem um ovo nisso, que grosseria.
 
 ent-FoodMealOmelette = omelete de queijo
@@ -56,7 +56,7 @@ ent-FoodMealMilkape = milk ape
      .desc = O rei da Selva Grossa.
 
 ent-FoodMealMemoryleek = memória leek
-     .desc=Isso deve refrescar sua memória.
+     .desc = Isso deve refrescar sua memória.
 
 ent-DisgustingSweptSoup = sopa doce e salgada de missô cola
      .desc = Jesus Cristo.
@@ -71,4 +71,4 @@ ent-FoodMealEnchiladas = enchiladas
      .desc = Viva La México!
 
 ent-FoodSaladWatermelonFruitBowl = vasilha de melancia
-     .desc = A única salada que você pode comer a vasilha.
+     .desc = A única salada que você pode comer em uma vasilha.

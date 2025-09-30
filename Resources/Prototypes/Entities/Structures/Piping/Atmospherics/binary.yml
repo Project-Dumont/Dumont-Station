@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
 # SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-# SPDX-FileCopyrightText: 2021 ike709 <ike709@github.com>
 # SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Jack Fox <35575261+DubiousDoggo@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
@@ -27,19 +26,25 @@
 # SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VictorJob <victorjobnogueira12@gmail.com>
 # SPDX-FileCopyrightText: 2024 august-sun <45527070+august-sun@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 august-sun <45527070+august.sun@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <151653952+Crono209ggg@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 # SPDX-FileCopyrightText: 2025 justdie12 <125140938+justdie12@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 ss14-Starlight <ss14-Starlight@outlook.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -80,7 +85,7 @@
   name: gas pump
   description: A pump that moves gas by pressure.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: ExtensionCableReceiver
   - type: LightningTarget
@@ -101,6 +106,11 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasPressurePump
+      Secondary: GasPressurePumpAlt1
+      Tertiary: GasPressurePumpAlt2
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -145,7 +155,7 @@
   name: volumetric gas pump
   description: A pump that moves gas by volume.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: ExtensionCableReceiver
     - type: LightningTarget
@@ -166,6 +176,11 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpVolume
           map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasVolumePump
+        Secondary: GasVolumePumpAlt1
+        Tertiary: GasVolumePumpAlt2
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -215,11 +230,72 @@
 
 - type: entity
   parent: GasBinaryBase
+  id: GasPressureRegulator
+  name: inlet pressure regulator
+  description: A valve that releases gas when the inlet pressure exceeds a certain threshold.
+  placement:
+    mode: AlignAtmosPipeLayers
+  components:
+  - type: Rotatable
+  - type: Transform
+    noRot: false
+  - type: SubFloorHide
+    visibleLayers:
+    - enum.SubfloorLayers.FirstLayer
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: pumpPressureRegulator
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasPressureRegulator
+      Secondary: GasPressureRegulatorAlt1
+      Tertiary: GasPressureRegulatorAlt2
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PressureRegulatorVisuals.State:
+        enabled:
+          True: { state: pumpPressureRegulatorOn }
+          False: { state: pumpPressureRegulator }
+  - type: PipeColorVisuals
+  - type: GasPressureRegulator
+    enabled: false
+    threshold: 4500
+  - type: Construction
+    graph: GasBinary
+    node: pressureregulator
+  - type: ActivatableUI
+    key: enum.GasPressureRegulatorUiKey.Key
+    blockSpectators: true
+  - type: ActivatableUIRequiresAnchor
+  - type: UserInterface
+    interfaces:
+      enum.GasPressureRegulatorUiKey.Key:
+        type: GasPressureRegulatorBoundUserInterface
+  - type: AmbientSound
+    enabled: false
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/gas_hiss.ogg
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: GasFlowRegulator
+  - type: GuideHelp
+    guides:
+    - PressureRegulator
+
+- type: entity
+  parent: GasBinaryBase
   id: GasPassiveGate
   name: passive gate
   description: A one-way air valve that does not require power.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -232,6 +308,11 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpPassiveGate
           map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasPassiveGate
+        Secondary: GasPassiveGateAlt1
+        Tertiary: GasPassiveGateAlt2
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPassiveGate
@@ -262,7 +343,7 @@
   name: manual valve
   description: A pipe with a valve that can be used to disable the flow of gas through it.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     # TODO ATMOS: Give unique sprite.
     - type: SubFloorHide
@@ -276,6 +357,11 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpManualValve
           map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasValve
+        Secondary: GasValveAlt1
+        Tertiary: GasValveAlt2
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -324,7 +410,7 @@
   name: signal valve
   description: A pipe with a valve that can be controlled with signals.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: StationAiWhitelist
   - type: SubFloorHide
@@ -338,6 +424,11 @@
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpSignalValve
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: SignalControlledValve
+      Secondary: SignalControlledValveAlt1
+      Tertiary: SignalControlledValveAlt2
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -397,46 +488,50 @@
   name: connector port
   description: For connecting portable devices related to atmospherics control.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
-    - type: Sprite
-      sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
-      layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeUnaryConnectors
-          map: [ "enum.PipeVisualLayers.Pipe" ]
-        - state: gasCanisterPort
-          map: [ "enum.SubfloorLayers.FirstLayer" ]
-    - type: AtmosPipeLayers
-      spriteRsiPaths: {}
-    - type: Appearance
-    - type: PipeColorVisuals
-    - type: GasPort
-    - type: NodeContainer
-      nodes:
-        connected:
-          !type:PortPipeNode
-          nodeGroupID: Pipe
-          pipeDirection: South
-    - type: Construction
-      graph: GasBinary
-      node: port
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasVentOpening
-    - type: GuideHelp
-      guides:
-      - GasCanisters
-    - type: VentCrawlerTube # Goobstation - ventcrawl
-      containerId: VentCrawlerTube
-    - type: VentCrawlerJunction # Goobstation - ventcrawl
-      degrees:
-        - 0
-    - type: ContainerContainer # Goobstation - ventcrawl
-      containers:
-        VentCrawlerTube: !type:Container
+  - type: SubFloorHide
+    visibleLayers:
+    - enum.SubfloorLayers.FirstLayer
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeUnaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasCanisterPort
+        map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    spriteRsiPaths: { }
+    alternativePrototypes:
+      Primary: GasPort
+      Secondary: GasPortAlt1
+      Tertiary: GasPortAlt2
+  - type: Appearance
+  - type: PipeColorVisuals
+  - type: GasPort
+  - type: NodeContainer
+    nodes:
+      connected:
+        !type:PortPipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+  - type: Construction
+    graph: GasBinary
+    node: port
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: GasVentOpening
+  - type: GuideHelp
+    guides:
+    - GasCanisters
+  - type: VentCrawlerTube # Goobstation - ventcrawl
+    containerId: VentCrawlerTube
+  - type: VentCrawlerJunction # Goobstation - ventcrawl
+    degrees:
+      - 0
+  - type: ContainerContainer # Goobstation - ventcrawl
+    containers:
+      VentCrawlerTube: !type:Container
 
 - type: entity
   parent: GasVentPump
@@ -444,7 +539,7 @@
   name: dual-port air vent
   description: Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -457,9 +552,12 @@
           state: pipeBinaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
-          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+          map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
     - type: AtmosPipeLayers
-      spriteRsiPaths: {}
+      alternativePrototypes:
+        Primary: GasDualPortVentPump
+        Secondary: GasDualPortVentPumpAlt1
+        Tertiary: GasDualPortVentPumpAlt2
     - type: GenericVisualizer
       visuals:
         enum.VentPumpVisuals.State:
@@ -537,8 +635,7 @@
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasRecycler
-  # Goobstation - Allow device-on-pipe stacking
-  # - type: PipeRestrictOverlap
+  - type: PipeRestrictOverlap
   - type: NodeContainer
     nodes:
       inlet:
@@ -651,3 +748,73 @@
     - type: Construction
       graph: GasBinary
       node: bendradiator
+
+# Funkystation - heat pump
+- type: entity
+  parent: GasBinaryBase
+  id: GasHeatPump
+  name: heat pump
+  description: A pump that moves heat from one side to the other.
+  placement:
+    mode: AlignAtmosPipeLayers
+  components:
+  - type: SubFloorHide
+    visibleLayers:
+    - enum.SubfloorLayers.FirstLayer
+  - type: ExtensionCableReceiver
+  - type: LightningTarget
+    priority: 1
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: pumpHeat
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasHeatPump
+      Secondary: GasHeatPumpAlt1
+      Tertiary: GasHeatPumpAlt2
+  - type: Appearance
+  - type: PipeColorVisuals
+  - type: HeatPump
+  - type: NodeContainer
+    nodes:
+      inlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+        volume: 100
+      outlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 100
+  - type: UserInterface
+    interfaces:
+      enum.GasHeatPumpUiKey.Key:
+        type: GasHeatPumpBoundUserInterface
+  - type: Construction
+    graph: GasBinary
+    node: heatpump
+  - type: AmbientSound
+    enabled: false
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/gas_hiss.ogg
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: Thermoregulator
+  - type: GuideHelp
+    guides:
+    - ManualValve
+  - type: VentCrawlerTube # Goobstation - ventcrawl
+    containerId: VentCrawlerTube
+  - type: VentCrawlerTransit # Goobstation - ventcrawl
+  - type: ContainerContainer # Goobstation - ventcrawl
+    containers:
+      VentCrawlerTube: !type:Container

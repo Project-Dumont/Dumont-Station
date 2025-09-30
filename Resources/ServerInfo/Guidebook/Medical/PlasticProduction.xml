@@ -1,0 +1,29 @@
+﻿<Document>
+
+  # Produção de Plástico
+
+  <GuideEntityEmbed Entity="SheetPlastic"/>
+
+  Plástico é um material sintético versátil usado em uma grande variedade de receitas. Embora não seja complexo de produzir, requer altas temperaturas e múltiplos reagentes para ser sintetizado corretamente.
+
+  ## Receita
+
+  Para produzir [bold]10 Plásticos[/bold], combine os seguintes itens em um misturador químico e aqueça a pelo menos [bold]374 Kelvin[/bold]:
+
+  — 10 unidades de [bold]Óleo[/bold]
+
+  — 6 unidades de [bold]Cinzas[/bold]
+
+  — 4 unidades de [bold]Ácido Sulfúrico[/bold]
+
+  ## Componentes
+
+  <GuideReagentEmbed Reagent="Oil"/>
+  <GuideReagentEmbed Reagent="Ash"/>
+  <GuideReagentEmbed Reagent="SulfuricAcid"/>
+
+  ## Resultado
+
+  Uma vez concluído, o Plástico aparecerá sobre o béquer ou ChemMaster. Transfira-o para o armazenamento ou sistemas de fabricação conforme necessário.
+
+</Document>

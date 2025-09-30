@@ -76,6 +76,7 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
@@ -112,25 +113,30 @@
   equipment:
     head: ClothingHeadHelmetBasic
 
+
 - type: loadout # Goobstation
   id: SecurityHelmetAlt
   equipment:
     head: ClothingHeadHelmetBasicAlt
+
 
 - type: loadout
   id: SecurityHat
   equipment:
     head: ClothingHeadHatSecsoft
 
+
 - type: loadout
   id: SecurityBeret
   equipment:
     head: ClothingHeadHatBeretSecurity
 
+
 - type: loadout
   id: TrooperHat
   equipment:
     head: ClothingHeadHatSecurityTrooper
+
 
 # Jumpsuit
 - type: loadout
@@ -138,25 +144,35 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitSec
 
+
 - type: loadout
   id: SecurityJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtSec
+
 
 - type: loadout
   id: SecurityJumpsuitGrey
   equipment:
     jumpsuit: ClothingUniformJumpsuitSecGrey
 
+
 - type: loadout
   id: SecurityJumpskirtGrey
   equipment:
     jumpsuit: ClothingUniformJumpskirtSecGrey
 
+
+- type: loadout
+  id: SecuritySummerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSecSummer
+
 - type: loadout
   id: TrooperUniform
   equipment:
     jumpsuit: ClothingUniformSecurityTrooper
+
 
 - type: loadout
   id: SeniorOfficerJumpsuit

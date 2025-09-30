@@ -42,7 +42,9 @@
   - type: Sprite
     drawdepth: Effects
     layers:
-    - shader: unshaded
+    - sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle_laser
+      shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
   - type: EffectVisuals
   - type: Tag
@@ -54,7 +56,7 @@
   id: RedLaser
   damage:
     types:
-      Heat: 14
+      Heat: 20
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser

@@ -6,17 +6,17 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Aracnídios
+  # Aracnídeos
 
   <Box>
     <GuideEntityEmbed Entity="MobArachnid" Caption=""/>
   </Box>
 
-  Eles tem dois espaços de bolso a mais no inventário. Eles conseguem comer carne cru sem os efeitos negativos, mas algumas comidas como chocolate e cebola envenenam eles.
+  Eles têm dois espaços de bolso a mais no inventário. Eles conseguem comer carne crua sem os efeitos negativos, mas algumas comidas como chocolate e cebola os envenenam.
 
-  Eles sufocam 50% mais rapido, e seu Sangue Azul não contém ferro, e sim cobre.
+  Eles [color=#ffa500]sufocam 50% mais rápido[/color], e seu Sangue Azul não contém Ferro, e sim Cobre.
 
-  Seus ataques desarmados dão dano Perfurante invés de Contundente.
+  Seus ataques desarmados dão dano [color=#ec3a3a]Perfurante[/color] ao invés de [color=#ec3a3a]Contundente[/color].
 
   ## Sericultura
 
@@ -27,6 +27,6 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="WallWeb" Caption=""/>
   </Box>
 
-  Aracnídios podem criar teia de aranha ao custo de ficar com mais fome. Eles (e somente eles) podem transformar suas teias em varios itens, de roupas, escudos até paredes inteiras.
+  Aracnídeos podem criar teia de aranha ao custo de ficar com mais fome. Eles (e somente eles) podem transformar suas teias em vários itens, como roupas, escudos e até paredes inteiras.
 
 </Document>

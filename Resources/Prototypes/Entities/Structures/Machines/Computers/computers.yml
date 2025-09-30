@@ -370,6 +370,15 @@
   - type: GuideHelp
     guides:
     - ShuttleCraft
+  # Frontier edit start
+  - type: DeviceLinkSource
+    ports:
+    - SignalShuttleConsole1
+    - SignalShuttleConsole2
+    - SignalShuttleConsole3
+    - SignalShuttleConsole4
+    range: 90
+  # Frontier edit end
 
 - type: entity
   parent: BaseComputerShuttle
@@ -605,6 +614,16 @@
     color: "#1f8c28"
   - type: Computer
     board: MedicalRecordsComputerCircuitboard
+  # Begin CD - Character Records
+  - type: CharacterRecordConsole
+    consoleType: Medical
+  - type: UserInterface
+    interfaces:
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CharacterRecordConsoleKey.Key
+  # End CD - Character Records
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -615,12 +634,18 @@
   - type: CriminalRecordsConsole
   - type: UserInterface
     interfaces:
-      enum.CriminalRecordsConsoleKey.Key:
-        type: CriminalRecordsConsoleBoundUserInterface
+      # Begin CD - Character Records
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+      # End CD - Character Records
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  # Begin CD - Character Records
+  - type: CharacterRecordConsole
+    consoleType: Security
   - type: ActivatableUI
-    key: enum.CriminalRecordsConsoleKey.Key
+    key: enum.CharacterRecordConsoleKey.Key
+  # End CD - Character Records
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -654,12 +679,18 @@
   - type: GeneralStationRecordConsole
   - type: UserInterface
     interfaces:
-        enum.GeneralStationRecordConsoleKey.Key:
-          type: GeneralStationRecordConsoleBoundUserInterface
+      # Begin CD - Character Records
+        enum.CharacterRecordConsoleKey.Key:
+          type: CharacterRecordConsoleBoundUserInterface
+      # End CD - Character Records
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
+  # Begin CD - Character Records
+  - type: CharacterRecordConsole
+    consoleType: Employment
   - type: ActivatableUI
-    key: enum.GeneralStationRecordConsoleKey.Key
+    key: enum.CharacterRecordConsoleKey.Key
+ # End CD - Character Records
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -1245,7 +1276,7 @@
     account: Engineering
     announcementChannel: Engineering
     removeLimitAccess: [ "ChiefEngineer" ]
-    slipPrinter: true
+    mode: PrintSlip
   - type: ActiveRadio
     channels:
     - Engineering
@@ -1278,7 +1309,7 @@
     account: Medical
     announcementChannel: Medical
     removeLimitAccess: [ "ChiefMedicalOfficer" ]
-    slipPrinter: true
+    mode: PrintSlip
   - type: ActiveRadio
     channels:
     - Medical
@@ -1311,7 +1342,7 @@
     account: Science
     announcementChannel: Science
     removeLimitAccess: [ "ResearchDirector" ]
-    slipPrinter: true
+    mode: PrintSlip
   - type: ActiveRadio
     channels:
     - Science
@@ -1344,7 +1375,7 @@
     account: Security
     announcementChannel: Security
     removeLimitAccess: [ "HeadOfSecurity" ]
-    slipPrinter: true
+    mode: PrintSlip
   - type: ActiveRadio
     channels:
     - Security
@@ -1377,7 +1408,7 @@
     account: Service
     announcementChannel: Service
     removeLimitAccess: [ "HeadOfPersonnel" ]
-    slipPrinter: true
+    mode: PrintSlip
   - type: ActiveRadio
     channels:
     - Service

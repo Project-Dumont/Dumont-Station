@@ -21,6 +21,29 @@
   clauseWeight: -35
   damageModifierSet: DevilDealPositive
 
+# // VORE //
+- type: clause
+  id: avarice
+  clauseWeight: -30
+  addedComponents:
+  - type: Devourer
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
+      - Item
+    chemical: Ichor
+    healRate: 7.5
+    whitelist:
+      components:
+      - MobState
+      - Door
+      - Item
+      tags:
+      - Wall
+
 - type: clause
   id: medodofogo
   clauseWeight: -20
@@ -84,6 +107,12 @@
   - type: SpecialPressureImmunity
 
 - type: clause
+  id: medodepalhaco
+  clauseWeight: -10
+  addedComponents:
+  - type: NoSlip
+
+- type: clause
   id: medodecongelamento
   clauseWeight: -10
   addedComponents:
@@ -119,7 +148,7 @@
 
 - type: clause
   id: humanidade
-  clauseWeight: 25
+  clauseWeight: 80
   polymorph: MobFrogPolymorph
 
 - type: clause
@@ -154,17 +183,17 @@
 
 - type: clause
   id: umaperna
-  clauseWeight: 30
+  clauseWeight: 20
   event: !type:DevilContractLoseLegEvent
 
 - type: clause
   id: umamao
-  clauseWeight: 30
+  clauseWeight: 20
   event: !type:DevilContractLoseHandEvent
 
 - type: clause
   id: acordado
-  clauseWeight: 40
+  clauseWeight: 35
   addedComponents:
   - type: Narcolepsy
     timeBetweenIncidents: 300, 600
@@ -172,7 +201,7 @@
 
 - type: clause
   id: umorgao
-  clauseWeight: 45
+  clauseWeight: 30
   event: !type:DevilContractLoseOrganEvent
 
 - type: clause
@@ -206,5 +235,6 @@
   clauseWeight: 150
   addedComponents:
   - type: DelayedDeath
+    preventAllRevives: true # :trol:
     deathTime: 300
     deathMessageId: devil-deal-time-ran-out

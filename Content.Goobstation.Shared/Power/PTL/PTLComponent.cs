@@ -1,5 +1,8 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 McBosserson <mcbosserson@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SoundingExpert <204983230+SoundingExpert@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 john git <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
@@ -20,8 +23,8 @@ public sealed partial class PTLComponent : Component
 
     [DataField, AutoNetworkedField] public double SpesosHeld = 0f;
 
-    [DataField] public double MinShootPower = 1e6; // 1 MJ
-    [DataField] public double MaxEnergyPerShot = 1e8; // 100 MJ, Used to limit evil effects, but not coded so doesn't do anything
+    [DataField] public double MinShootPower = 1e6f; // 1 MJ
+    [DataField] public double MaxEnergyPerShot = 5e6; // 5 MJ
 
     [DataField, AutoNetworkedField] public float ShootDelay = 10f;
     [DataField, AutoNetworkedField] public float ShootDelayIncrement = 5f;

@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Bokser815 <70928915+Bokser815@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
@@ -64,6 +65,7 @@
     RiotLaserShield: 2
     RiotBulletShield: 2
     RadioHandheldSecurity: 5
+    #Bola: 6 # Goob edit - already have energy bolas
     CombatKnife: 1 # Goob edit
     # Goobstation
     PolymerBaton: 1
@@ -73,15 +75,18 @@
     TapeRecorder: 1
     BolaEnergy: 5
     PepperSpray: 3
-    SecHypo: 3
-    CartridgeEpinephrine: 3
-    CartridgeSaline: 3
-    CartridgeBicaridine: 3
+    SecHypo: 2
+    CartridgeEpinephrine: 2
+    CartridgeSaline: 2
+    CartridgeBicaridine: 2
+    CartridgeDermaline: 2 # Goobstation - end
     CartridgeToxin: 3 #Gabystation
-    CartridgeDermaline: 3 # Goobstation - end
   # security officers need to follow a diet regimen!
   contrabandInventory:
     WeaponMeleeNeedle: 2
     FoodDonutHomer: 12
     FoodBoxDonut: 2
     #box evidence
+  emaggedInventory: # Goobstation
+    SarinGasGrenade: 1
+    WeaponFlareGunSecurity: 2

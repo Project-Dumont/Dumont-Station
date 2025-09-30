@@ -1,9 +1,15 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Red <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Drowsiness;
+using Content.Shared.StatusEffectNew;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
@@ -14,6 +20,7 @@ public sealed class DrowsinessSystem : SharedDrowsinessSystem
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
 
     private DrowsinessOverlay _overlay = default!;
 
@@ -21,35 +28,44 @@ public sealed class DrowsinessSystem : SharedDrowsinessSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<DrowsinessComponent, ComponentInit>(OnDrowsinessInit);
-        SubscribeLocalEvent<DrowsinessComponent, ComponentShutdown>(OnDrowsinessShutdown);
+        SubscribeLocalEvent<DrowsinessStatusEffectComponent, StatusEffectAppliedEvent>(OnDrowsinessApply);
+        SubscribeLocalEvent<DrowsinessStatusEffectComponent, StatusEffectRemovedEvent>(OnDrowsinessShutdown);
 
-        SubscribeLocalEvent<DrowsinessComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<DrowsinessComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<DrowsinessStatusEffectComponent, StatusEffectRelayedEvent<LocalPlayerAttachedEvent>>(OnStatusEffectPlayerAttached);
+        SubscribeLocalEvent<DrowsinessStatusEffectComponent, StatusEffectRelayedEvent<LocalPlayerDetachedEvent>>(OnStatusEffectPlayerDetached);
 
         _overlay = new();
     }
 
-    private void OnPlayerAttached(EntityUid uid, DrowsinessComponent component, LocalPlayerAttachedEvent args)
+    private void OnDrowsinessApply(Entity<DrowsinessStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        if (_player.LocalEntity == args.Target)
+            _overlayMan.AddOverlay(_overlay);
+    }
+
+    private void OnDrowsinessShutdown(Entity<DrowsinessStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        if (_player.LocalEntity != args.Target)
+            return;
+
+        if (!_statusEffects.HasEffectComp<DrowsinessStatusEffectComponent>(_player.LocalEntity.Value))
+        {
+            _overlay.CurrentPower = 0;
+            _overlayMan.RemoveOverlay(_overlay);
+        }
+    }
+
+    private void OnStatusEffectPlayerAttached(Entity<DrowsinessStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerAttachedEvent> args)
     {
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnPlayerDetached(EntityUid uid, DrowsinessComponent component, LocalPlayerDetachedEvent args)
+    private void OnStatusEffectPlayerDetached(Entity<DrowsinessStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerDetachedEvent> args)
     {
-        _overlay.CurrentPower = 0;
-        _overlayMan.RemoveOverlay(_overlay);
-    }
+        if (_player.LocalEntity is null)
+            return;
 
-    private void OnDrowsinessInit(EntityUid uid, DrowsinessComponent component, ComponentInit args)
-    {
-        if (_player.LocalEntity == uid)
-            _overlayMan.AddOverlay(_overlay);
-    }
-
-    private void OnDrowsinessShutdown(EntityUid uid, DrowsinessComponent component, ComponentShutdown args)
-    {
-        if (_player.LocalEntity == uid)
+        if (!_statusEffects.HasEffectComp<DrowsinessStatusEffectComponent>(_player.LocalEntity.Value))
         {
             _overlay.CurrentPower = 0;
             _overlayMan.RemoveOverlay(_overlay);

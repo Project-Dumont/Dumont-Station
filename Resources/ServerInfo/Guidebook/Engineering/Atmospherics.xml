@@ -15,167 +15,50 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Atmosféricos
+  # Atmosfera
 
-  Configurações atmosféricas são essenciais para o conforto a longo prazo da sua tripulação, mas geralmente são mal documentadas, o que faz com que sejam um pouco difíceis de configurar. O seguinte guia tenta cobrir o básico.
+  Configurar corretamente a atmosfera é essencial para o conforto a longo prazo da sua tripulação. O seguinte guia tenta cobrir o básico.
 
-  ## Mistura Padrão
-  Respirar O2 puro ou N2 puro geralmente é ruim para a saúde da sua tripulação, e é recomendado que você busque uma mistura de [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color] É recomendado que a configuração do seu misturador de gás seja ajustada para uma saída de pelo menos 300kPA para uma repressurização mais rápida dos ambientes, sem representar muito risco de sobrepressurização, caso traidores sabotem a distribuição.
+  ## Mistura padrão
+  A preença de O2 puro pode-se tornar uma ameaça e nem todos os tripulantes respiram oxigênio. O oxigênio é um gas reativo e essencial para reações de combustão. Sua presença em alta quantidades pode se tornar perigoso. Por sua vez, o nitrogênio não oferece nenhum risco da tripulação, mas nem todos os tripulantes são capazes de respirar.
+  
+  Dessa forma, é recomendado que você busque uma mistura de [color=#a4885c]78% N2 e 22% O2 a 101.24kPa[/color]. Também recomendamos que a bomba de saída de gás do Subdepartamento da Atmosfera seja ajustada para pelo menos 300kPA. Isso ajuda numa repressurização mais rápida dos ambientes, sem representar muito risco de sobrepressurização.
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="AirCanister"/>
   </Box>
-  Variações nessa mistura podem ser necessárias para o conforto a longo prazo de tripulações atípicas (por exemplo, Voxes, que são envenenados por Oxigênio e respiram Nitrogênio). Para tripulações atípicas (a serem implementadas), é recomendado tentar dar a eles seu próprio espaço pessoal, isolado por uma esclusa de ar ou seção de descarte. Tenha em mente que ambos os métodos têm vazamentos e você precisará de depuradores em ambos os lados da esclusa para limpar qualquer gás vazado.
+  Variações nessa mistura podem ser necessárias para o conforto a longo prazo de tripulações atípicas (por exemplo, Voxes, que são envenenados por oxigênio e respiram nitrogênio). Para tripulações atípicas, é recomendado tentar dar a eles seu próprio espaço pessoal. Tenha em mente que qualquer método têm vazamentos e você precisará de filtradores para limpar qualquer gás vazado.
   <Box>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="StorageCanister"/>
   </Box>
 
-  ## Válvulas e Depuradores
-  Válvulas e depuradores são dispositivos centrais de atmosferia que preenchem e purificam os ambientes, respectivamente. Por padrão, eles são configurados para preencher os ambientes até a pressão padrão (101.24kPa) e para remover todos os gases não-O2/N2 de um ambiente. Eles podem ser reconfigurados a partir das configurações padrão ao conectá-los a um Alarme de Gás, permitindo configurar como eles respondem a vários tipos de gases ou níveis de pressão.
+  ## Ventilação e filtradores
+  As ventilações e filtradores são dispositivos centrais de atmofera que preenchem e purificam os ambientes, respectivamente. Por padrão, eles são configurados para preencher os ambientes até a pressão padrão (101.24kPa) e para remover todos os gases não-O2/N2 de um ambiente. Eles podem ser reconfigurados a partir das configurações padrão ao conectá-los a um Alarme de Gás, permitindo configurar como eles respondem a vários tipos de gases ou níveis de pressão.
 
   <Box>
     <GuideEntityEmbed Entity="GasVentPump"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
   </Box>
-  Durante a operação padrão, se uma válvula normal detectar que o ambiente externo é o espaço, ela cessará automaticamente a operação até que uma pressão mínima seja alcançada, para evitar a destruição de gases úteis. Isso pode ser corrigido ao pressurizar o ambiente até essa pressão mínima, reabastecendo-o com um cilindro de gás (potencialmente múltiplos, se o ambiente for de tamanho significativo).
+  Durante a operação padrão, se uma ventilação normal detectar que o ambiente externo é o espaço, ela cessará automaticamente a operação até que uma pressão mínima seja alcançada, para evitar a destruição de gases úteis. Isso pode ser corrigido ao pressurizar o ambiente até essa pressão mínima, reabastecendo-o com um cilindro de gás (potencialmente múltiplos, se o ambiente for de tamanho significativo).
 
-  Caso você se depare com uma situação onde os depuradores não estão limpando o ambiente rápido o suficiente (e a funcionalidade "Sifão" ainda não conseguir acompanhar), utilize depuradores portáteis, arrastando-os até o local afetado e fixando-os no lugar. Eles funcionam muito mais rápido do que os depuradores típicos e podem limpar rapidamente um ambiente. Vazamentos grandes podem exigir o uso de múltiplos depuradores.
+  Caso você se depare com uma situação onde os filtradores não estão limpando o ambiente rápido o suficiente (e a funcionalidade "sifão" ainda não conseguir acompanhar), utilize filtradores portáteis, arrastando-os até o local afetado e fixando-os no lugar. Eles funcionam muito mais rápido do que os filtradores típicos e podem limpar rapidamente um ambiente. Vazamentos grandes podem exigir o uso de múltiplos filtradores.
   <Box>
     <GuideEntityEmbed Entity="PortableScrubber"/>
   </Box>
-  # Misturas de Gás e Câmaras de Combustão
+  # Misturas de gás e câmaras de combustão
   Caso termine todas as tarefas em mãos, você pode ganhar um dinheiro extra criando novos gases químicos.
 
-  ## Tritium
-  O Tritium é um gás claro e verde, altamente inflamável, radioativo e que se combustiona ao entrar em contato com o oxigênio, tornando-se muito útil para operar o [color=#a4885c]TEG[/color].
-  Pode ser feito queimando 1% de Plasma e 96% ou mais de Oxigênio na Câmara de Combustão (A proporção ideal é 3% Plasma para 97% Oxigênio). Você pode extrair esse gás por meio de depuradores.
-
-  <Box>
-    <GuideEntityEmbed Entity="PlasmaCanister"/>
-    <GuideEntityEmbed Entity="OxygenCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-  </Box>
-
-  ## Pluoxium
-  Pluoxium é um substituto não reativo do Oxigênio que fornece oito vezes mais O2 para a corrente sanguínea, exigindo uma pressão mínima interna de apenas 3 kPa.
-  Ele pode ser produzido ao combinar 66% de Dióxido de Carbono, 33% de Oxigênio e 0,01% de Trítio em uma reação exotérmica entre 50 K e 273 K. Além disso, o Pluoxium também é criado pela Supermatter quando Oxigênio e CO2 estão presentes.
-  <Box>
-    <GuideEntityEmbed Entity="OxygenCanister"/>
-    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="PluoxiumCanister"/>
-  </Box>
-
-  ## BZ
-  O gás BZ é um poderoso alucinógeno, além de ser um agente sedativo para slimes. É tóxico quando inalado e causa irritação respiratória e tosse. O BZ é frequentemente utilizado como ingrediente em reações gasosas mais complexas. 
-  Ele pode ser produzido ao combinar 33% de Óxido Nitroso e 66% de Plasma em uma reação exotérmica. A reação se torna menos eficiente se o conteúdo de Plasma for superior a 3 vezes o conteúdo de Óxido Nitroso. A reação é mais rápida fora dos canos e em ambientes de baixa pressão.
-
-  <Box>
-    <GuideEntityEmbed Entity="PlasmaCanister"/>
-    <GuideEntityEmbed Entity="NitrousOxideCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="BZCanister"/>
-  </Box>
-
-  ## Frezon
-  Frezon é um gás azul-esverdeado muito complexo e extremamente perigoso.
-  Ele pode ser produzido ao combinar 90% de Oxigênio, 8% de Nitrogênio e 2% de Trítio a uma temperatura igual ou inferior a 73,15 K. Essa reação utiliza o Nitrogênio apenas como catalisador e não o consome.
-
-  <Box>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-    <GuideEntityEmbed Entity="AirCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="FrezonCanister" Caption="cilindro de frezon"/>
-  </Box>
-
-  É crucial entender que um vazamento de frezon pode devastar a estação, causando um inferno congelante cheio de suéteres irritantes e queimaduras frias. O Frezon é muito frio e pode congelar a estação até a morte se até mesmo alguns moles se escaparem, então certifique-se de trancar seus cilindros ou simplesmente movê-los diretamente para uma sala de armazenamento.
-
-  ## Healium
-  O Healium é um gás vermelho, formado em ambientes frios, que age como um forte agente sedativo, enquanto cura queimaduras, hematomas e danos por toxinas. O uso excessivo leva à inebriação.
-  Ele pode ser produzido ao combinar 81% de Frezon e 9% de BZ em uma reação exotérmica. 
-
-  <Box>
-    <GuideEntityEmbed Entity="BZCanister"/>
-    <GuideEntityEmbed Entity="FrezonCanister" Caption="cilindro de frezon"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="HealiumCanister" Caption="cilindro de healium"/>
-  </Box>
-
-  ## Nitrium
-  O Nitrium é um gás estimulante que, quando inalado, pode aumentar a velocidade e a resistência. Em concentrações mais baixas, o Nitrium aumenta sua velocidade máxima de corrida enquanto você estiver saudável e sem impedimentos. Em concentrações um pouco maiores, respirar Nitrium evita sonolência. Em altas concentrações, respirar Nitrium começará a desligar os pulmões de uma pessoa, causando asfixia.
-  Ele pode ser produzido ao combinar 47,5% de Nitrogênio, 47,5% de Trítio e 5% de BZ a uma temperatura igual ou superior a 1500 K. Quanto maior a temperatura, maior a eficiência.
-
-  <Box>
-    <GuideEntityEmbed Entity="BZCanister"/>
-    <GuideEntityEmbed Entity="TritiumCanister"/>
-    <GuideEntityEmbed Entity="NitrogenCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="NitriumCanister" Caption="cilindro de nitrium"/>
-  </Box>
-
-  O Nitrium se decompõe em nitrogênio e vapor d'água ao entrar em contato com o oxigênio à temperatura ambiente. Essa reação pode gerar uma boa quantidade de calor, tornando a estação desconfortavelmente quente em caso de vazamento.
-
-  ## Proto-Nitrate
-  Proto-Nitrate é um gás altamente reativo e não tóxico. 
-  Combine 1 mol de Hidrogênio com 0,1 mol de Pluoxium para gerar 1,1 mol de Proto-Nitrate em uma reação exotérmica, mais eficiente entre 5000 K e 10000 K. Ele reage com hidrogênio ou trítio para ajustar o Proto-Nitrate ou produzir hidrogênio, e com BZ a 260-280 K para gerar nitrogênio, hélio e plasma. Manuseie com cuidado para evitar vazamentos.
-  <Box>
-    <GuideEntityEmbed Entity="HydrogenCanister"/>
-    <GuideEntityEmbed Entity="PluoxiumCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="ProtoNitrateCanister"/>
-  </Box>
-
-  ## Zauker
-  Zauker é um gás mortal se inalado. Produza-o ao combinar 0,2 mol de Hyper-Noblium com 1 mol de Nitrium para gerar 1 mol de Zauker em uma reação exotérmica. Ele se decompõe na presença de Nitrogênio, gerando 0,3 mol de Oxigênio e 0,7 mol de Nitrogênio por mol de Zauker, também de forma exotérmica e com inibição semelhante. Armazene com segurança para evitar vazamentos.
-  
-  <Box>
-    <GuideEntityEmbed Entity="NitriumCanister"/>
-    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="ZaukerCanister"/>
-  </Box>
-
-  ## Halon
-  Halon suprime incêndios consumindo oxigênio, numa proporção de 20 moles de oxigênio por 1 mol de halon, acima de 343,15 K em uma reação endotérmica, produzindo dióxido de carbono. 
-  É produzido em uma reação exotérmica pela eletrólise de BZ, gerando 2 moles de halon e 0,2 moles de oxigênio por mol de BZ. Use com cautela para evitar depleção de oxigênio.
-  
-  <Box>
-    <GuideEntityEmbed Entity="BZCanister"/>
-    <GuideEntityEmbed Entity="Electrolyzer"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="HalonCanister"/>
-  </Box>
-
-  ## Helium
-  Helium é um gás inerte e invisível, produzido como subproduto de outras reações. Tem poucos usos na Atmosfera, devendo ser removido para evitar a diluição de outros gases.
-  
-  <Box>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="HeliumCanister"/>
-  </Box>
-
-  ## Anti-Noblium
-  Anti-Noblium é um gás raro com usos muito específicos, produzido pela eletrólise do Hyper-Noblium abaixo de 150 K, gerando 0,5 mol de Anti-Noblium por mol de Hyper-Noblium. Armazene com cuidado para preservar o Hyper-Noblium para outras reações.
-  
-  <Box>
-    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
-    <GuideEntityEmbed Entity="Electrolyzer"/>
-    <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="AntiNobliumCanister"/>
-  </Box>
-
-  ## Folha de Referência
-  - A mistura atmosférica padrão é [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color]
-  - O gás obedece à matemática real. Você pode usar a equação:
+  ## Folha de referência
+  - A mistura de atmosfera padrão é [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color]
+  - Os gases obedecem matemática real. Use a seguinte equação:
   <Box>
     [color=cyan]PV = nRT[/color]
   </Box>
   <Box>
-    ([color=#a4885c]Pressão kPa * Volume L = Moles * R * Temperatura K[/color])
-  </Box> para derivar informações que você possa precisar sobre um gás. R é aproximadamente 8.31446.
+    ([color=cyan]Pressão (em kPa) * Volume (em L) = Quantidade de Mols * R * Temperatura (em K)[/color])
+  </Box> 
+  Onde R é a Constante universal dos gases ideais, aproximadamente 8.31.
 
 </Document>

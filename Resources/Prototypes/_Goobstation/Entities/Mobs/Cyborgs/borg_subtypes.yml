@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BeBright <98597725+bebr3ght@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThunderBear2006 <bearthunder06@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -260,3 +264,52 @@
   id: service_rover
   spritePath: _Goobstation/Mobs/Silicon/Service/rover.rsi
   dummyPrototype: BorgChassisServiceRover
+
+# Security subtypes
+- type: borgSubtype
+  parentBorgType: security
+  id: security_hound
+  spritePath: _Goobstation/Mobs/Silicon/Security/hound.rsi
+  dummyPrototype: BorgChassisSecurityHound
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_basic
+  spritePath: _Goobstation/Mobs/Silicon/Security/basic.rsi
+  dummyPrototype: BorgChassisSecurityBasic
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_blackknight
+  spritePath: _Goobstation/Mobs/Silicon/Security/blackknight.rsi
+  dummyPrototype: BorgChassisSecurityBlackKnight
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_cricket
+  spritePath: _Goobstation/Mobs/Silicon/Security/cricket.rsi
+  dummyPrototype: BorgChassisSecurityCricket
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_heavy
+  spritePath: _Goobstation/Mobs/Silicon/Security/heavy.rsi
+  dummyPrototype: BorgChassisSecurityHeavy
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_noble
+  spritePath: _Goobstation/Mobs/Silicon/Security/noble.rsi
+  dummyPrototype: BorgChassisSecurityNoble
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_redknight
+  spritePath: _Goobstation/Mobs/Silicon/Security/redknight.rsi
+  dummyPrototype: BorgChassisSecurityRedKnight
+
+- type: borgSubtype
+  parentBorgType: security
+  id: security_standard
+  spritePath: _Goobstation/Mobs/Silicon/Security/standard.rsi
+  dummyPrototype: BorgChassisSecurityStandard

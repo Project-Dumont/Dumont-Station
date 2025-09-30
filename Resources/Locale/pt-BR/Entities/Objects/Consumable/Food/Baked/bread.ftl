@@ -8,10 +8,10 @@ ent-FoodBreadPlain = pão de forma
     .desc = O bom e velho pão terráqueo.
 
 ent-FoodBigBreadPlain = pão de forma grande
-    .desc = O bom e velho pão terráquio.. só que grande!
+    .desc = O bom e velho pão terráquio... Só que grande!
 
 ent-FoodBreadPlainSlice = fatia de pão de forma
-    .desc = Um pedacinho de casa..
+    .desc = Um pedacinho de casa...
 
 ent-FoodBreadMeat = enroladinho de carne
     .desc = A base culinária de todo Terragoviano que se preze.
@@ -74,10 +74,10 @@ ent-FoodBreadJellySlice = torrada com geléia
     .desc = Como se o departamento de ciência fosse abrir mão de seus slimes para colocar em torradas!
 
 ent-FoodBreadCorn = pão de milho americano
-    .desc = Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread.
+    .desc = Um "good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw" pão de milho americano.
 
 ent-FoodBreadCornSlice = fatia de pão de milho americano
-    .desc = Uma fatia deliciosa do autêntico pão de milho americano.
+    .desc = Uma fatia deliciosa do "good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw" pão de milho americano.
 
 ent-FoodBreadBun = pão brioche
     .desc = Redondo e fácil de segurar. Perfeito como pão de hambúrguer.

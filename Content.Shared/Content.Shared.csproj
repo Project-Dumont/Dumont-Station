@@ -35,7 +35,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <WarningsAsErrors>RA0032;nullable</WarningsAsErrors>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
@@ -57,6 +57,16 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </ItemGroup>
   <ItemGroup>
     <None Include="Goobstation\Changeling\Changeling.Actions.cs" />
+    <Folder Include="_Starlight\Movement\" />
+    <Folder Include="Power\Components\" />
+    <Folder Include="_Starlight\Spells\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="_Starlight\OnHit\CuffsOnHitComponent.cs" />
+    <Compile Update="_Starlight\OnHit\InjectOnHitComponent.cs" />
+    <Compile Update="_Starlight\Weapon\Components\GunComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />

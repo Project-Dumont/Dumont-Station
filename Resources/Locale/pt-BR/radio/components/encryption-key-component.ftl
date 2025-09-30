@@ -6,5 +6,5 @@ encryption-keys-are-locked = As chaves do fone estão trancadas e você não pod
 encryption-keys-panel-locked = Abra o painel de manutenção antes!
 
 examine-encryption-channels-prefix = Frequências disponíveis:
-examine-encryption-channel = [color={$color}]{$key} pra {$id} ({$freq})[/color]
-examine-encryption-default-channel = O canal default é [color={$color}]{$channel}[/color].
+examine-encryption-channel = [color={$color}]{$key} de {$id} ({NATURALFIXED($freq, 1)}) {$deviceType}[/color]
+examine-encryption-default-channel = O canal padrão é [color={$color}]{$channel}[/color].

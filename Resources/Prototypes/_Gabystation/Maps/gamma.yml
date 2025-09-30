@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 CRISO <crisavilasilva060@gmail.com>
 # SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
@@ -41,10 +42,8 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TC'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             #command
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
@@ -95,6 +94,7 @@
             Mime: [ 1, 1 ]
             Musician: [ 2, 2 ]
             Boxer: [ 1, 1 ]
+            Reporter: [ 1, 1 ]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]

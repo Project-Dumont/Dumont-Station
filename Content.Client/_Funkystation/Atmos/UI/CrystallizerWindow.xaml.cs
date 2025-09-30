@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
@@ -15,6 +16,7 @@ using Content.Shared.Atmos;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using System.Numerics;
+using System.Linq;
 
 namespace Content.Client._Funkystation.Atmos.UI
 {
@@ -41,7 +43,7 @@ namespace Content.Client._Funkystation.Atmos.UI
             IoCManager.InjectDependencies(this);
             InitializeRecipeButtons();
 
-            GasInput.OnValueChanged += args => OnGasInputChanged?.Invoke(args.Value);
+            GasInput.OnValueChanged += args => OnGasInputChanged?.Invoke(Math.Clamp(args.Value, 0f, 250f));
         }
 
         public void SetActive(bool active)
@@ -163,7 +165,11 @@ namespace Content.Client._Funkystation.Atmos.UI
             _buttonToRecipeId[_nothingButton] = null;
             RecipesContainer.AddChild(_nothingButton);
 
-            foreach (var recipe in _prototypeManager.EnumeratePrototypes<CrystallizerRecipePrototype>())
+            var allRecipes = _prototypeManager.EnumeratePrototypes<CrystallizerRecipePrototype>()
+                .ToList()
+                .OrderBy(proto => proto.Name);
+
+            foreach (var recipe in allRecipes)
             {
                 var button = new Button
                 {
@@ -284,7 +290,7 @@ namespace Content.Client._Funkystation.Atmos.UI
                             HorizontalExpand = true
                         };
 
-                        var backgroundColor = (index % 2 == 0) ? Color.FromHex("#1B1B1E") : Color.FromHex("#2F2F38");
+                        var backgroundColor = (index % 2 == 0) ? Color.FromHex("#222222") : Color.FromHex("#2F2F38");
                         panel.PanelOverride = new StyleBoxFlat { BackgroundColor = backgroundColor };
 
                         GasList.AddChild(panel);

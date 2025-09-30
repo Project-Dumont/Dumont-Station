@@ -19,6 +19,7 @@
   placement:
     mode: AlignTileAny
   components:
+  - type: StationAnchor # Goobstation - no monument shittles
   - type: Fixtures
     fixtures:
       MonumentCollider:

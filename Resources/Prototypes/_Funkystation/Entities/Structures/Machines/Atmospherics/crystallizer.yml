@@ -1,5 +1,5 @@
 ﻿- type: entity
-  parent: [BaseStructure, ConstructibleMachine] # Not a BaseMachinePowered since we don't want the anchorable component
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: Crystallizer
   name: crystallizer
   description: Used to crystallize or solidify gases.
@@ -13,24 +13,55 @@
     offset: 0, 0.5
     layers:
       - sprite: Structures/Piping/Atmospherics/pipe.rsi
-        state: pipeTJunction
+        state: pipeBinaryConnectors
         offset: 0, -0.5
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: off
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
       - state: panel
         map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
         enum.PowerDeviceVisualLayers.Powered:
           True: { state: on }
           False: { state: off }
+  - type: Appearance
   - type: PipeColorVisuals
-  - type: InteractionOutline
+  - type: Rotatable
+  - type: Crystallizer
+  - type: AtmosPipeColor
+  - type: AtmosPipeLayers
+    spriteLayersRsiPaths:
+      enum.PipeVisualLayers.Pipe:
+        Primary: Structures/Piping/Atmospherics/pipe.rsi
+        Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+  - type: AtmosDevice
+  - type: UserInterface
+    interfaces:
+      enum.CrystallizerUiKey.Key:
+        type: CrystallizerBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CrystallizerUiKey.Key
+    requiresComplex: false
+  - type: WiresVisuals
+  - type: WiresPanel
+  - type: PipeRestrictOverlap
+  - type: NodeContainer
+    nodes:
+      regulator:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+      inlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
   - type: Transform
-    noRot: true
+    noRot: false
+  - type: PipeAppearance
+  - type: InteractionOutline
   - type: Fixtures
     fixtures:
       fix1:
@@ -39,11 +70,8 @@
           - MachineMask
         layer:
           - MachineLayer
-  - type: AtmosDevice
   - type: Machine
     board: CrystallizerMachineCircuitboard
-  - type: WiresVisuals
-  - type: WiresPanel
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -63,29 +91,10 @@
           acts: [ "Destruction" ]
   - type: ApcPowerReceiver
     powerLoad: 3000
-  - type: ExtensionCableReceiver
-  - type: NodeContainer
-    nodes:
-      regulator:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: West
-      inlet:
-        !type:PipeNode
-        nodeGroupID: Pipe
-        pipeDirection: East
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
-  - type: UserInterface
-    interfaces:
-      enum.CrystallizerUiKey.Key:
-        type: CrystallizerBoundUserInterface
-  - type: ActivatableUI
-    key: enum.CrystallizerUiKey.Key
-    requiresComplex: false
   - type: PointLight
     color: "#3a807f"
     radius: 2
     energy: 10
     enabled: false
-  - type: Crystallizer

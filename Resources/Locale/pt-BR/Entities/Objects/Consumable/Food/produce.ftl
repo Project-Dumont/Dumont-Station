@@ -8,7 +8,7 @@ ent-Sugarcane = cana-de-açúcar
      .desc = Doentiamente doce.
 
 ent-Log = tronco de tower-cap
-     .desc=É melhor que ruim, é bom!
+     .desc = É melhor que ruim, é bom!
 
 ent-Nettle = urtiga
      .desc = Picadinho mesquinho.
@@ -35,7 +35,7 @@ ent-FoodTomato = tomate
      .desc = Eu digo to-mah-te, você diz tom-ma-teh.
 
 ent-PuddleTomato = tomate
-     .desc= Splat.
+     .desc = Splat.
 
 ent-FoodEggplant = berinjela
      .desc = Talvez tenha uma galinha dentro?
@@ -101,15 +101,15 @@ ent-FoodBloodTomato = tomate de sangue
      .desc = Pera, isso não é ketchup...
 
 ent-FoodCabbage = repolho
-     .desc = Eeeeecaaaaaaaa. Repolho.
+     .desc = Eeeeeca. Repolho.
 
 ent-FoodCocoaPod = cacau
      .desc = Não existe exagero quando o assunto é chocolate!
 
-ent-FoodSpaceshroom = cogumeloespacial
+ent-FoodSpaceshroom = cogumelo espacial
      .desc = Um cogumelo selvagem. Não dá para dizer que efeito ele poderia ter...
 
-ent-FoodSpaceshroomCooked = cogumeloespacial cozido
+ent-FoodSpaceshroomCooked = cogumelo espacial cozido
      .desc = Um cogumelo selvagem que foi cozido. Parece que o calor removeu seus efeitos químicos.
 
 ent-FoodGarlic = alho
@@ -125,7 +125,7 @@ ent-FoodKoibean = koibean
      .desc = Esses feijões se parecem com peixes.
 
 ent-FoodGrape = uvas
-     .desc = O alimento dos emperadores, dos habitantes da França Espacial (geralmente em forma de vinho) e mães do futebol. Um dia elas poderiam ser usadas para produzir vinho para o barista, caso fique sem estoque.
+     .desc = O alimento dos imperadores, dos habitantes da França Espacial (geralmente em forma de vinho) e mães do futebol. Um dia elas poderiam ser usadas para produzir vinho para o barista, caso fique sem estoque.
 
 ent-FoodBungo = bungo
      .desc = Uma humilde fruta bungo.

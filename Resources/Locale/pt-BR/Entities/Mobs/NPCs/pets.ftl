@@ -20,7 +20,7 @@ ent-MobCat = gato
      .desc = Animal de estimação felino, muito engraçado.
 
 ent-MobCatRuntime = Runtime
-     .desc = Caçador profissional de ratos. Artista de escape.
+     .desc = Caçador profissional de ratos. Artista de escapadas.
 
 ent-MobCatCalico = gato malhado
      .desc = Animal de estimação felino, muito engraçado.
@@ -56,5 +56,5 @@ ent-MobPaperwork = Paperwork
      .desc = Começou um novo trabalho classificando livros na biblioteca depois que foi transferido da Estação Espacial 13. Ele parece ser tão lento quanto antes.
 
 ent-MobWalter = Walter
-     .desc = Ele gosta de chems e guloseimas. Walter.
+     .desc = Ele gosta de químicos e guloseimas. Walter.
 

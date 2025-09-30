@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#Gabystation/Andromeda
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponRifleMA56XF
+  result: WeaponRifleMA56XF
+  materials:
+    Steel: 1550
+    Plastic: 750
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponPistolMX3R
+  result: WeaponPistolMX3R
+  materials:
+    Steel: 900
+    Plastic: 450

@@ -1,5 +1,10 @@
 # SPDX-FileCopyrightText: 2023 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -30,3 +35,54 @@
         doAfter: 1
   - node: helmet
     entity: ClothingHeadHelmetBone
+
+# Assmos - Metal Hydrogen
+- type: constructionGraph
+  id: MetalHydrogenArmor
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armor
+      steps:
+      - material: MetalHydrogen
+        amount: 10
+        doAfter: 15
+  - node: armor
+    entity: ClothingOuterArmorMetalHydrogen
+
+- type: constructionGraph
+  id: MetalHydrogenHelmet
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: helmet
+      steps:
+      - material: MetalHydrogen
+        amount: 4
+        doAfter: 8
+  - node: helmet
+    entity: ClothingHeadHelmetMetalHydrogen
+
+- type: constructionGraph
+  id: AtmosianArmor
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armor
+      steps:
+      - tag: MetalHydrogenArmor
+        name: ent-ClothingOuterArmorMetalHydrogen
+        icon: { sprite: Clothing/OuterClothing/Armor/metal_hydrogen_armor.rsi, state: icon }
+        doAfter: 1
+      - tag: AtmosFireSuit
+        name: ent-ClothingOuterSuitAtmosFire
+        icon: { sprite: Clothing/OuterClothing/Suits/atmos_firesuit.rsi, state: icon }
+        doAfter: 15
+      - material: Cable
+        amount: 2
+        doAfter: 1
+  - node: armor
+    entity: ClothingOuterArmorAtmosian

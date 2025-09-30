@@ -8,30 +8,56 @@
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Rinary <rinary.super@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Physics;
 using Content.Shared.Weapons.Reflect;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Weapons.Ranged;
 
-[Prototype]
-public sealed partial class HitscanPrototype : IPrototype, IShootable
+[Prototype("hitscan")]
+public sealed partial class HitscanPrototype : IPrototype, IShootable, IInheritingPrototype
 {
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
 
+    // 🌟Starlight🌟
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<HitscanPrototype>))]
+    public string[]? Parents { get; private set; }
+    // 🌟Starlight🌟
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; private set; }
+
+    // 🌟Starlight🌟
     [ViewVariables(VVAccess.ReadWrite), DataField("staminaDamage")]
     public float StaminaDamage;
+
+    // 🌟Starlight🌟
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool Ignite = false;
+
+    // 🌟Starlight🌟
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool IgnoreResistances = false;
+
+    // 🌟Starlight🌟
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public int Temperature = 700;
 
     [ViewVariables(VVAccess.ReadWrite), DataField("damage")]
     public DamageSpecifier? Damage;
@@ -44,6 +70,9 @@ public sealed partial class HitscanPrototype : IPrototype, IShootable
 
     [ViewVariables(VVAccess.ReadOnly), DataField("impactFlash")]
     public SpriteSpecifier? ImpactFlash;
+
+    [ViewVariables(VVAccess.ReadOnly), DataField("bullet")]
+    public SpriteSpecifier? Bullet;
 
     [DataField("collisionMask")]
     public int CollisionMask = (int) CollisionGroup.Opaque;
@@ -71,7 +100,15 @@ public sealed partial class HitscanPrototype : IPrototype, IShootable
     [DataField("maxLength")]
     public float MaxLength = 20f;
 
-    // Goobstation
+    /// <summary>
+    /// How much the ammo spreads when shot, in degrees. Does nothing if count is 0.
+    /// </summary>
     [DataField]
-    public float FireStacks;
+    public Angle Spread = Angle.FromDegrees(5);
+
+    /// <summary>
+    /// How many prototypes are spawned when shot.
+    /// </summary>
+    [DataField]
+    public int Count = 1;
 }

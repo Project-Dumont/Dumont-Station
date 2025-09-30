@@ -22,15 +22,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Ao contrário de outros antagonistas, [bold]ficar fora de problemas é quase um requisito para você[/bold] devido ao seu implante.
   Você só pode fugir se [color=#cb0000]a Segurança[/color] começar uma briga com você, e como trabalha sozinho, não tem amigos para tirá-lo de apuros.
 
-  Mas, contra todas as probabilidades, você conseguirá roubar o que quiser usando determinação, truques de prestidigitação, algumas ferramentas e suas [color=cyan]luvas de ladrão.[/color]
+  Mas, contra todas as probabilidades, você conseguirá roubar o que quiser usando determinação, truques de prestidigitação, algumas ferramentas e suas [color=cyan]mãos ágeis.[/color]
 
-  As luvas que você possui lhe dão uma grande vantagem: [bold]a habilidade de pegar coisas das pessoas sem que elas percebam.[/bold] Com um pouco de prática, você pode roubar suas carteiras enquanto continua a conversa.
+  The pickpocketing skills you have give you a major advantage: [bold]furtar rapidamente objetos de outra pessoa sem que ela perceba[/bold]. Com um pouco de prática, você pode até roubar uma carteira e manter a conversa ao mesmo tempo.
 
-  Elas também são feitas com as [bold]fibras holográficas de camaleão[/bold] da mais alta qualidade que você conseguiu roubar, mas, embora possam parecer luvas isolantes, você ainda precisará encontrar um par real para proteger suas mãos de queimaduras.
-
-  <Box>
-    <GuideEntityEmbed Entity="ClothingHandsChameleonThief" Caption="suas luvas de ladrão"/>
-  </Box>
+  É recomendado usar um par de luvas já que as suas impressões digitais ainda podem te revelar se o que foi roubado for encontrado.
 
   ## Ferramentas do Ofício
   Você tem mais dois ases na manga: seu [color=cyan]beacon[/color] e sua [color=cyan]caixa de ferramentas.[/color]
@@ -54,11 +50,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomia"/>
     <GuideEntityEmbed Entity="C4" Caption="Explosivo"/>
     <GuideEntityEmbed Entity="ChameleonProjector" Caption="Camaleão"/>
-    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Comunicador"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Comunicador"/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Adormecedor"/>
-    <GuideEntityEmbed Entity="Emag" Caption="Contrabandista"/>
+    <GuideEntityEmbed Entity="Fulton" Caption="Contrabandista"/>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Sindicalista"/>
   </Box>
 
@@ -74,10 +70,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Coisas que você pode desejar incluem, mas não se limitam a:
 
   <Box>
-   <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Miniaturas"/>
-   <GuideEntityEmbed Entity="PassengerIDCard" Caption="Cartões de Identificação"/>
-   <GuideEntityEmbed Entity="ChemDispenser" Caption="Estruturas"/>
-   <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animais/Pets"/>
+    <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Miniaturas"/>
+    <GuideEntityEmbed Entity="PassengerIDCard" Caption="Cartões de Identificação"/>
+    <GuideEntityEmbed Entity="ChemDispenser" Caption="Estruturas"/>
+    <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animais/Pets"/>
   </Box>
 
 </Document>

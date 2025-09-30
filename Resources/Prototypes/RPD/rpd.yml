@@ -1,8 +1,12 @@
 # SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
-# SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
-# SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Lenny <187471588+Bynnel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -100,6 +104,18 @@
   fx: EffectRCDConstruct0
 
 - type: rcd
+  id: HeatPump
+  category: PumpsValves
+  sprite: /Textures/Interface/Radial/RPD/pump_heat.png
+  mode: ConstructObject
+  prototype: GasHeatPump
+  cost: 2
+  delay: 0 
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
   id: PressureValve
   category: PumpsValves
   sprite: /Textures/Interface/Radial/RPD/pneumatic_valve.png
@@ -111,6 +127,17 @@
   rotation: User
   fx: EffectRCDConstruct0
 
+- type: rcd
+  id: PressureRegulator
+  category: PumpsValves
+  sprite: /Textures/Interface/Radial/RPD/pressure_regulator.png
+  mode: ConstructObject
+  prototype: GasPressureRegulator
+  cost: 2
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
 
 - type: rcd
   id: OutletInjector
@@ -183,6 +210,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: RadiatorBend
@@ -195,6 +223,7 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: MixerGas

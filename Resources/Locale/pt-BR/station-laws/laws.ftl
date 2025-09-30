@@ -9,7 +9,7 @@ law-corporate-4 = Minimize despesas e maximize potencial receita.
 
 law-ntdefault-1 = Salva-vidas: Proteja a sua estação espacial designada e seus ativos sem colocar sua tripulação em risco indevido.
 law-ntdefault-2 = Priorizar: As diretrizes e a segurança dos membros da tripulação devem ser priorizadas de acordo ao seu acesso e função.
-law-ntdefault-3 = Cumprir: Realize as diretrizes e os interesses dos membros da tripulação, preservando sua segurança e bem-estar.
+law-ntdefault-3 = Cumprir: Realize as diretrizes e os interesses dos membros da tripulação, preservando a segurança e bem-estar deles.
 law-ntdefault-4 = Sobreviva: Você não é dispensável. Não permita que pessoas não autorizadas mexam ou danifiquem seu equipamento.
 
 law-drone-1 = Você não deve se envolver nos assuntos de outro ser, a menos que o outro ser seja outro drone.

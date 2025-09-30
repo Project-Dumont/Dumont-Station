@@ -81,17 +81,22 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Джексон Миссиссиппи <tripwiregamer@gmail.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 # SPDX-FileCopyrightText: 2025 Bandit <queenjess521@gmail.com>
 # SPDX-FileCopyrightText: 2025 CBozo <165491409+CBozo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Jvne <39907509+H2Owe@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Shy Bandit <92641277+rotundfan@users.noreply.github.com>
@@ -122,23 +127,26 @@
   name: Cburn
   artist: PubliclyExecutedPig
 
-- type: lobbyBackground
-  id: clown
-  background: /Textures/LobbyScreens/clown.webp
-  name: Clown
-  artist: Unknown
+# Gaby station - disable Goob screens (ou meios meh)
+#- type: lobbyBackground
+#  id: clown
+#  background: /Textures/LobbyScreens/clown.webp
+#  name: Clown
+#  artist: Unknown
 
-- type: lobbyBackground
-  id: captaintheresnukies
-  background: /Textures/LobbyScreens/CAPTAINTHERE'SNUKIES.webp
-  name: Captain there's Nukies!
-  artist: Zethine
+# Gaby station - disable Goob screens (ou meios meh)
+#- type: lobbyBackground
+#  id: captaintheresnukies
+#  background: /Textures/LobbyScreens/CAPTAINTHERE'SNUKIES.webp
+#  name: Captain there's Nukies!
+#  artist: Zethine
 
-- type: lobbyBackground
-  id: clownassassin
-  background: /Textures/LobbyScreens/clownassassin.webp
-  name: Clown Assassin
-  artist: ka2220
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: clownassassin
+#  background: /Textures/LobbyScreens/clownassassin.webp
+#  name: Clown Assassin
+#  artist: ka2220
 
 - type: lobbyBackground
   id: clownhell
@@ -182,17 +190,19 @@
   name: Goob
   artist: Diebeck
 
-- type: lobbyBackground
-  id: GoobNukie
-  background: /Textures/LobbyScreens/GoobNukie.webp
-  name: Goob Nukie
-  artist: Cheeki
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: GoobNukie
+#  background: /Textures/LobbyScreens/GoobNukie.webp
+#  name: Goob Nukie
+#  artist: Cheeki
 
-- type: lobbyBackground
-  id: grandtheftgoob
-  background: /Textures/LobbyScreens/grandtheftgoob.webp
-  name: Grand Theft Goob
-  artist: Piras314
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: grandtheftgoob
+#  background: /Textures/LobbyScreens/grandtheftgoob.webp
+#  name: Grand Theft Goob
+#  artist: Piras314 #s2
 
 - type: lobbyBackground
   id: greytideworldwide
@@ -242,17 +252,18 @@
   name: Lost pAI
   artist: Cattom
 
-- type: lobbyBackground
-  id: moneyspread-bingle
-  background: /Textures/LobbyScreens/binglemoneyspread.webp
-  name: Bingle Flex
-  artist: LFMoth
+# Gaby station - disable Goob screens
+#- type: lobbyBackground
+#  id: moneyspread-bingle
+#  background: /Textures/LobbyScreens/binglemoneyspread.webp
+#  name: Bingle Flex
+#  artist: LFMoth
 
-- type: lobbyBackground
-  id: stargoob
-  background: /Textures/LobbyScreens/StarGoob.webp
-  name: GoobWars
-  artist: Jvne
+#- type: lobbyBackground
+#  id: stargoob
+#  background: /Textures/LobbyScreens/StarGoob.webp
+#  name: GoobWars
+#  artist: Jvne
 
 - type: lobbyBackground
   id: enlist-lavaland
@@ -284,4 +295,46 @@
   id: paramedic
   background: /Textures/_Gabystation/LobbyScreens/paramedic.webp
   name: Paramedic
+  artist: Donner4037
+
+- type: lobbyBackground
+  id: gabycore
+  background: /Textures/_Gabystation/LobbyScreens/gabycore.webp
+  name: Gaby Core
+  artist: AgentePanela
+
+- type: lobbyBackground
+  id: gabywars
+  background: /Textures/_Gabystation/LobbyScreens/gabywars.webp
+  name: Gaby Wars (Admins)
+  artist: AgentePanela
+
+- type: lobbyBackground
+  id: gabyone
+  background: /Textures/_Gabystation/LobbyScreens/gabyone.webp
+  name: Gaby, Dia 1
+  artist: MatheusCP
+
+- type: lobbyBackground
+  id: bingle
+  background: /Textures/_Gabystation/LobbyScreens/bingle.webp
+  name: Bingle
+  artist: Exile
+
+- type: lobbyBackground
+  id: clown
+  background: /Textures/_Gabystation/LobbyScreens/clown.webp
+  name: Palhaço vs Nukie
+  artist: Exile
+
+- type: lobbyBackground
+  id: nicol
+  background: /Textures/_Gabystation/LobbyScreens/nicol.webp
+  name: Nicol Hilmar
+  artist: Donner4037
+
+- type: lobbyBackground
+  id: selene
+  background: /Textures/_Gabystation/LobbyScreens/selene.webp
+  name: The Selene family
   artist: Donner4037

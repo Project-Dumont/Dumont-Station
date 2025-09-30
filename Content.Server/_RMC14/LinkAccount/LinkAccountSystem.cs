@@ -83,6 +83,9 @@ public sealed class LinkAccountSystem : EntitySystem
         GetRandomShoutout();
 
         _linkAccount.PatronUpdated += OnPatronUpdated;
+
+        // Gabystation - Isso é uma ideia estupida
+        _nextLobbyMessage = ("Eu vou escrever algo aqui!!", "Dom Palhaço I");
     }
 
     public override void Shutdown()
@@ -148,14 +151,15 @@ public sealed class LinkAccountSystem : EntitySystem
 
     private async void GetRandomLobbyMessage()
     {
-        try
+        /*try
         {
             _nextLobbyMessage = await _db.GetRandomLobbyMessage();
         }
         catch (Exception e)
         {
             Log.Error($"Error getting random lobby message:\n{e}");
-        }
+        }*/
+        _nextLobbyMessage = ("Eu vou escrever algo aqui!!", "Dom Palhaço I");
     }
 
     // Gaby change

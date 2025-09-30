@@ -74,6 +74,8 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tropica1Owl <tropicalowl@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -151,7 +153,7 @@ public sealed class BotanySwabSystem : EntitySystem
             if (old == null)
                 return;
             plant.Seed = _mutationSystem.Cross(swab.SeedData, old); // Cross-pollenate
-            swab.SeedData = old; // Transfer old plant pollen to swab
+            swab.SeedData = null; // Transfer old plant pollen to swab / Gaby change - Clears the swab after usage
             _popupSystem.PopupEntity(Loc.GetString("botany-swab-to"), args.Args.Target.Value, args.Args.User);
         }
 

@@ -58,7 +58,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   As compras que você fizer devem ajudar com seus objetivos. Alguns equipamentos podem não ser úteis para você, e você terá que escolher entre ser sorrateiro ou ir para a agressão.
 
   ## Coordenação
-  Códigos de palavras são palavras ou frases que todo traidor conhecerá. Eles fornecem uma maneira discreta de identificar ou estabelecer contato com um traidor colega, o que pode ser útil se seus objetivos incluírem [italic][color=cyan]manter eles vivos[/color][/italic] ou [italic][color=cyan]ajudar eles com seus objetivos.[/color][/italic]
+  Códigos de palavras são palavras ou frases que todo traidor conhecerá. Eles fornecem uma maneira discreta de identificar ou estabelecer contato com um traidor colega, o que pode ser útil se seus objetivos inclur [italic][color=cyan]ajudar eles com seus objetivos.[/color][/italic]
 
   Quando encontrar alguns amigos, [bold]você pode retirar [color=red]telecristais[/color] do seu uplink para dar a eles.[/bold] Eles podem colocar esses cristais em seus próprios uplinks para gastar por si mesmos.
 
@@ -83,7 +83,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   O alvo pode estar no seu escritório ou com ele. Pode ser necessário matar quem estiver carregando, caso você não consiga roubar sem ser percebido.
 
-  Você pode ser encarregado de:
+  Algumas das coisas que você pode ser encarregado são:
   - Roubar o [color=yellow]Cartão de ID do Capitão[/color], [bold]pistola laser antiga[/bold], [bold]jetpack[/bold], ou [bold]disco de autenticação nuclear[/bold].
   <Box>
     <GuideEntityEmbed Entity="CaptainIDCard" Caption=""/>

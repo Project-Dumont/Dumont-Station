@@ -1,0 +1,176 @@
+# Acid raincoat
+- type: entity
+  parent: ClothingOuterStorageToggleableBase
+  id: ClothingOuterCoatAcidRaincoat
+  name: acid raincoat
+  description: Mostly transparent raincoat made out of acid resistant polymers. Please, for the love of Space God, do wear undergarments.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodAcidRaincoat
+
+- type: entity
+  parent: ClothingOuterCoatAcidRaincoat
+  id: ClothingOuterCoatAcidRaincoatBlue
+  name: blue acid raincoat
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_blue.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_blue.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodAcidRaincoatBlue
+
+- type: entity
+  parent: ClothingOuterCoatAcidRaincoat
+  id: ClothingOuterCoatAcidRaincoatGreen
+  name: green acid raincoat
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_green.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_green.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodAcidRaincoatGreen
+
+- type: entity
+  parent: ClothingOuterCoatAcidRaincoat
+  id: ClothingOuterCoatAcidRaincoatMagenta
+  name: magenta acid raincoat
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_magenta.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_magenta.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodAcidRaincoatMagenta
+
+- type: entity
+  parent: ClothingOuterCoatAcidRaincoat
+  id: ClothingOuterCoatAcidRaincoatYellow
+  name: yellow acid raincoat
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_yellow.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/acid_raincoat_yellow.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodAcidRaincoatGreen
+
+# Jackets
+- type: entity
+  id: ClothingOuterCoatBomberPunkRed
+  parent: ClothingOuterStorageBase
+  name: red punk bomber
+  description: Ya gotta 'ave style on dem streets.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/bomber_punk_red.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/bomber_punk_red.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketLeather
+  parent: ClothingOuterStorageBase
+  name: leather jacket
+  description: Rock'n'roll, babe!
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_leather.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_leather.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketBiker
+  parent: ClothingOuterStorageBase
+  name: biker jacket
+  description: Made out of toughest synthleather for toughest badasses.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_biker.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_biker.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketJamrock
+  parent: ClothingOuterStorageBase
+  name: jamrock blazer
+  description: Welcome to jamrock.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/blazer_jamrock.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/blazer_jamrock.rsi
+
+- type: entity
+  id: ClothingOuterCoatBomberAerostatic
+  parent: ClothingOuterStorageBase
+  name: aerostatic bomber
+  description: When you wear it, you can always hear the sickest guitar solo in your mind.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/bomber_aerostatic.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/bomber_aerostatic.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketLettermanBrown
+  parent: ClothingOuterStorageBase
+  name: brown letterman jacket
+  description: Where is your lacrosse stick?
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_brown.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_brown.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketLettermanMagenta
+  parent: ClothingOuterStorageBase
+  name: magenta letterman jacket
+  description: Where is your holocrosse joystick?
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_magenta.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_magenta.rsi
+
+- type: entity
+  id: ClothingOuterCoatBomberPinkSleeves
+  parent: ClothingOuterStorageBase
+  name: bomber jacket
+  description: Oi! Whatcha lookin' at?
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/bomber_pinksleeves.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/bomber_pinksleeves.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketLettermanBlue
+  parent: ClothingOuterStorageBase
+  name: blue letterman jacket
+  description: Where is your lacrosse stick?
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_blue.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_blue.rsi
+
+- type: entity
+  id: ClothingOuterCoatJacketLettermanRed
+  parent: ClothingOuterStorageBase
+  name: red letterman jacket
+  description: Where is your lacrosse stick?
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_red.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_red.rsi

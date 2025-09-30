@@ -1,6 +1,10 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+// SPDX-FileCopyrightText: 2025 Socialite <malchanceux@protonmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -67,7 +71,7 @@ namespace Content.Server._Goobstation.Antag
             if (success)
                 _sawmill.Debug($"Successfully set LastRolledAntag for {userId} from {oldTime} to {time}");
             else
-                _sawmill.Error($"Failed to set LastRolledAntag for {userId}. Player not found or other issue.");
+                _sawmill.Debug($"Failed to set LastRolledAntag for {userId}. Player not found or other issue.");
         }
 
         /// <summary>

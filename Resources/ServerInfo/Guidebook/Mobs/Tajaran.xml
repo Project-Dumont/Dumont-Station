@@ -13,20 +13,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobTajaran" Caption=""/>
   </Box>
 
-  Tajara are a species of omnivorous, bipedal humanoids with features strongly resembling Terran felines.
-  Their most distinguishing traits include a layer of fur, large ears atop their heads, and a tail that aids in balance.
-  They hail from the icy moon of [color=turquoise]Ahdomai[/color], only relatively recently making their debut on the galactic stage.
-  Originally a clan-centric society, Tajara endured centuries of dictatorial rule.
-  Following a civil war, their government fractured, and power returned to the clans, where it remains to this day.
+  Tajaran são uma espécie de humanoides bípedes e onívoros, com características que lembram felinos terrestres.
+  Seus traços mais distintivos incluem sua pelagem, grandes orelhas no topo da cabeça e uma cauda que ajuda no equilíbiro.
+  Eles vêm da lua congelada de [color=turquoise]Ahdomai[/color], apenas recentemente "estreando" na era espacial.
+  Inicialmente uma sociedade seprada em clãs, Tajaran passaram por séculos de regimes ditatoriais.
+  Seguindo uma guerra civil, seu governo foi fragmentado e o poder retornou aos clãs, onde está até hoje.
 
-  ## Mechanics
+  ## Mecânicas
 
-  Due to their [color=yellow]small stature[/color], Tajara [color=#ec3a3a]take 15% more Brute damage[/color], but they can also [color=#1e90ff]fit into duffel bags[/color].
+  Por conta de sua [color=yellow]pequena estatura[/color], Tajara [color=#ec3a3a]tomam 15% mais dano Bruto[/color], mas também podem [color=#1e90ff]caber em duffelbags[/color].
 
-  Their layer of fur gives them some [color=#1e90ff]resistance to Cold[/color], at the cost of [color=#ec3a3a]taking more Heat damage[/color]
+  Sua pelagem lhes dá certa [color=#1e90ff]resistência ao Frio[/color], ao custo de [color=#ec3a3a]tomar mais dano de Calor[/color].
 
-  They use their claws for unarmed attacks, dealing [color=#ec3a3a]Slashing[/color] and [color=#ec3a3a]Piercing[/color] damage.
+  Eles usam suas garras para ataques desarmados, causando [color=#ec3a3a]dano Cortante e Perfurante[/color].
 
-  Thanks to their innate agility, they [color=#1e90ff]take reduced damage from impacts or falls[/color], and their soft feet allow them to [color=#1e90ff]walk shoeless without making noise[/color].
+  Graças à sua agilidade inata, eles [color=#1e90ff]tomam menos dano de queda ou impactos[/color], e seus pés macios os permitem [color=#1e90ff]andar descalço sem fazer barulhos[/color].
 
 </Document>

@@ -18,7 +18,6 @@
 
 using System.Linq;
 using Content.Server.Atmos.Components;
-using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Popups;
 using Content.Shared.Atmos;
@@ -42,6 +41,8 @@ public sealed class PipeRestrictOverlapSystem : EntitySystem
 
     private readonly List<EntityUid> _anchoredEntities = new();
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
+
+    public bool StrictPipeStacking = false;
 
     /// <inheritdoc/>
     public override void Initialize()

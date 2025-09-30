@@ -1,0 +1,27 @@
+<Document>
+  # Chitinídeos
+
+  <Box>
+    <GuideEntityEmbed Entity="MobChitinid" Caption=""/>
+  </Box>
+
+  Uma espécie himenóptera industriosa, os Chitinídeos são fortes e trabalhadores. Graças à evolução, desenvolveram uma resistência à radiação, mas não sem efeitos colaterais.
+
+  ## Dieta
+  - Podem comer carnes cruas.
+
+  ## Benefícios
+  - Tomam [color=#1e90ff]80% menos dano de Radiação[/color] e [color=#1e90ff]10% menos dano Contundente, Cortante e Perfurante[/color].
+  - Seus corpos se recuperam naturalmente de dano de radiação por luz até certo ponto, quando acumulam radiação demais eles devem expulsar de seus sistemas na forma de uma pequena rocha [color=#ff0f0f]AVISO:A Chitzite que expelem é levemente radioativa[/color].
+  - Eles são melhores em carregar e puxar coisas.
+  - Eles possuem uma bio-luz.
+
+  ## Malefícios
+  - Tomam [color=#ec3a3a]15% mais dano de Choque[/color] por conta de sua biologia.
+  - Graças às suas duras cascas, seringas normais não podem os perfurar, precisando de hypos.
+  - Graças ao seu sistema hiperativo [color=#ffa500]ficam com fome 33% mais rápido[/color].
+  - O frio não vai bem com sua biologia e faz seu movimento mais lento quanto mais frio estiver, além de os machucar mais, causando [color=#ec3a3a]25% mais dano de Frio[/color].
+  - Eles são surpreendentemente pesados para seu estilo e vida e dieta.
+  - Sangue de inseto.
+
+</Document>
