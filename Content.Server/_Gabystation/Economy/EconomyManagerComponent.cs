@@ -21,7 +21,7 @@ public sealed partial class EconomyManagerComponent : Component
     /// <summary>
     /// Stores all entities that have an bank account linked.
     /// </summary>
-    [DataField("uidBankRef")]
+    [DataField]
     public Dictionary<EntityUid, int> UidBankRef = new Dictionary<EntityUid, int>();
 
     /// <summary>
