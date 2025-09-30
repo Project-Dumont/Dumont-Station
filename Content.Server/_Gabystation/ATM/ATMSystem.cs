@@ -63,8 +63,10 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
     {
         var cardId = comp.CardSlot.Item;
 
-        if (cardId is null || !TryComp<NanoBankCardComponent>(cardId, out var card)
-            || !ValidateCard((cardId.Value, card)) || !TryComp<EconomyManagerComponent>(card?.Station, out var economy))
+        if (cardId is null 
+            || !TryComp<NanoBankCardComponent>(cardId, out var card)
+            || !ValidateCard((cardId.Value, card)) 
+            || !TryComp<EconomyManagerComponent>(card?.Station, out var economy))
             return;
 
         switch (args.Type)
