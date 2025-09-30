@@ -4,7 +4,6 @@
   description: job-description-nct
   playTimeTracker: JobNanotrasenCareerTrainer
   goobcoins: 45
-  salary: 50 # Gaby content
   weight: 20
   startingGear: NanotrasenCareerTrainerGear
   icon: "JobIconNanotrasenTrainer"

@@ -158,7 +158,6 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   goobcoins: 40 #Goob content
-  salary: 50 # Gaby content
   weight: 10 #Goob Edit
   access:
   - Medical

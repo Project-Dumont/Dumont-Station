@@ -26,7 +26,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
                     <Label Name="NameLabel" Access="Public"/>
                     <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
-                    <Label Name="NanoBankAccount" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/> <!-- Gabystation change -->
                 </BoxContainer>
             </BoxContainer>
             <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>

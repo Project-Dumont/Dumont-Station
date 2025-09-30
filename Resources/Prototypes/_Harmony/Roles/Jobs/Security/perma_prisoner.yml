@@ -7,7 +7,6 @@
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
   canBeAntag: false
-  salary: 5 # Gaby content
 
 - type: startingGear
   id: PermaPrisonerGear

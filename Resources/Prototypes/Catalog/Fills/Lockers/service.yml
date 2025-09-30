@@ -76,7 +76,6 @@
       children:
       - id: BoxBeanbag
       - id: RagItem
-      - id: ATMFlatpack # Gabystation
       - id: SocoIngles #Gabystation
         amount: 1
 

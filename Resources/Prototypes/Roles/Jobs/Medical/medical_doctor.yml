@@ -85,7 +85,6 @@
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
   goobcoins: 20 #Goob content
-  salary: 50 # Gaby content
   access:
   - Medical
   - Maintenance

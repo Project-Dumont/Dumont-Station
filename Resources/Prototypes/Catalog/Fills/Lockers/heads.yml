@@ -175,7 +175,6 @@
     - id: RubberStampQm
     - id: LavalandShuttleConsoleCircuitboard # Goobstation - Mining Shuttle Board
     - id: AstroNavCartridge
-    - id: ATMFlatpack # Gabystation
     - id: PrinterDocFlatpack # Gabystation [port corvax]
     - id: CargoTechFabCircuitboard # Goobstation - Cargo Techfab
     - id: MailTeleporterMachineCircuitboard # GoobStation port of DeltaV mail
