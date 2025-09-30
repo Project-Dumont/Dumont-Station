@@ -15,7 +15,7 @@ public sealed partial class EconomyManagerComponent : Component
     /// <summary>
     /// Stores all bank accounts.
     /// </summary>
-    [DataField("bankAccounts")]
+    [DataField]
     public Dictionary<int, IBankAccount> BankAccounts = new Dictionary<int, IBankAccount>();
 
     /// <summary>
