@@ -122,8 +122,9 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
             cashCount = cash.Count;
 
         if (!_economy.TryGetData(economy, card.Comp.AccountId, out var data)
-                || !_economy.TrySetBalance(economy, card.Comp.AccountId, data.Balance + cashCount))
+            || !_economy.TrySetBalance(economy, card.Comp.AccountId, data.Balance + cashCount))
             return;
+
         Del(ent.Comp.CashSlot.Item);
         _audio.PlayPvs(ent.Comp.DepositSound, ent.Owner);
 
