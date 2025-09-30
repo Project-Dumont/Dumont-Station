@@ -219,8 +219,10 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TransferBalance(EconomyManagerComponent comp, int targetId, int accountId, int amount)
+        public bool TransferBalance(Entity<EconomyManagerComponent> economyManager, int targetId, int accountId, int amount)
         {
+            var (ent, comp) = economyManager;
+
             // validate positive amount
             if (amount <= 0)
                 return false;
@@ -243,7 +245,8 @@ namespace Content.Server._Gabystation.Economy
                 Amount = amount,
                 TargetAccount = targetId
             };
-            RaiseLocalEvent(comp.Owner, ev);
+
+            RaiseLocalEvent(ent, ev);
 
             return true;
         }

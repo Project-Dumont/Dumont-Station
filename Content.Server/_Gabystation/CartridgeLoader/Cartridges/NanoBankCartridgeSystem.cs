@@ -30,6 +30,7 @@ using Robust.Server.Containers;
 using Content.Shared.Mobs;
 using Linguini.Syntax.Ast;
 using System.Diagnostics.CodeAnalysis;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Gabystation.CartridgeLoader.Cartridges;
 
@@ -250,9 +251,11 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
     private void HandleTransfer(Entity<NanoBankCardComponent> card, int? targetAcc, int? amount)
     {
-        if (targetAcc is null || amount is null ||
-            !TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy) ||
-            !_economy.TransferBalance(economy, targetAcc.Value, card.Comp.AccountId, amount.Value))
+        if (targetAcc is null
+            || amount is null
+            || card.Comp.Station is null
+            || !TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy)
+            || !_economy.TransferBalance((card.Comp.Station.Value, economy), targetAcc.Value, card.Comp.AccountId, amount.Value))
         {
             HandleNotification(card.Owner, "economy-notification-transference-failed-title", "economy-notification-transference-failed-body", default);
             return;
