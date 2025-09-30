@@ -101,7 +101,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
                 _nanoBank.LogoutId(card.AsNullable());
                 break;
             case NanoBankUiMessageType.Login:
-                HandleLogin(card, msg.TargetAccount, (int?) msg.Content);
+                HandleLogin(card, msg.TargetAccount, msg.Content);
                 break;
 
             case NanoBankUiMessageType.ToggleMute:
