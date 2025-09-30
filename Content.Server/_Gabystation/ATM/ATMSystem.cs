@@ -91,8 +91,9 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
         if (amount is null || !TryComp<EconomyManagerComponent>(card.Comp.Station, out var economy))
             return;
 
-        if (!_economy.TryGetData(economy, card.Comp.AccountId, out var data) || data.Balance < amount
-                || !_economy.TrySetBalance(economy, card.Comp.AccountId, (data.Balance - amount) ?? 0))
+        if (!_economy.TryGetData(economy, card.Comp.AccountId, out var data) 
+            || data.Balance < amount
+            || !_economy.TrySetBalance(economy, card.Comp.AccountId, (data.Balance - amount) ?? 0))
             return;
 
         _audio.PlayPvs(ent.Comp.PrintSound, ent.Owner);
