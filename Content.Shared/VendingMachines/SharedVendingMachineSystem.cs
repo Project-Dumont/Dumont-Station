@@ -62,10 +62,11 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
         SubscribeLocalEvent<VendingMachineRestockComponent, AfterInteractEvent>(OnAfterInteract);
 
-        Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
-        {
-            subs.Event<VendingMachineEjectMessage>(OnInventoryEjectMessage);
-        });
+        // Gaby change - moved to server, bye bye predict
+        //Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
+        //{
+        //    subs.Event<VendingMachineEjectMessage>(OnInventoryEjectMessage);
+        //});
     }
 
     private void OnVendingGetState(Entity<VendingMachineComponent> entity, ref ComponentGetState args)
@@ -146,16 +147,8 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         }
     }
 
-    private void OnInventoryEjectMessage(Entity<VendingMachineComponent> entity, ref VendingMachineEjectMessage args)
-    {
-        if (!_receiver.IsPowered(entity.Owner) || Deleted(entity))
-            return;
-
-        if (args.Actor is not { Valid: true } actor)
-            return;
-
-        AuthorizedVend(entity.Owner, actor, args.Type, args.ID, entity.Comp);
-    }
+    // Gaby change - moved to server
+    // protected void OnInventoryEjectMessage(Entity<VendingMachineComponent> entity, ref VendingMachineEjectMessage args) {}
 
     protected virtual void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args)
     {
@@ -332,6 +325,7 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         AddInventoryFromPrototype(uid, packPrototype.StartingInventory, InventoryType.Regular, component, restockQuality);
         AddInventoryFromPrototype(uid, packPrototype.EmaggedInventory, InventoryType.Emagged, component, restockQuality);
         AddInventoryFromPrototype(uid, packPrototype.ContrabandInventory, InventoryType.Contraband, component, restockQuality);
+        AddPricesFromPrototype(uid, packPrototype.ItemPrices, component);
         Dirty(uid, component);
     }
 
@@ -377,6 +371,28 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
             return new();
 
         return GetAllInventory(uid, component).Where(_ => _.Amount > 0).ToList();
+    }
+
+    /// <summary>
+    /// Gaby change: add prices of a inventory from a prototype
+    /// </sumarry>
+    private void AddPricesFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
+        VendingMachineComponent? component = null)
+    {
+        if (!Resolve(uid, ref component) || entries == null)
+            return;
+
+        foreach (var (id, price) in entries)
+        {
+            if (component.Inventory.TryGetValue(id, out var entry))
+                entry.Price = price;
+
+            else if (component.ContrabandInventory.TryGetValue(id, out entry))
+                entry.Price = price;
+
+            else if (component.EmaggedInventory.TryGetValue(id, out entry))
+                entry.Price = price;
+        }
     }
 
     private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,

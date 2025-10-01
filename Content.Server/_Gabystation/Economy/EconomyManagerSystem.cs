@@ -118,12 +118,41 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
+        public bool CanAfford(EconomyManagerComponent comp,
+            int accountId, uint amount,
+            [NotNullWhen(true)] out int balance)
+        {
+            if (!TryGetBalance(comp, accountId, out balance))
+                return false;
+
+            return balance >= amount;
+        }
+
+        public bool TryPurchase(EconomyManagerComponent comp,
+            int accountId, uint price)
+        {
+            if (!TryGetBalance(comp, accountId, out var balance) ||
+                    balance < price || TryAddRemBalance(comp, accountId, -(int) price))
+                return false;
+
+            return true;
+        }
+
         public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance)
         {
             if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
 
             bank.Balance = balance;
+            return true;
+        }
+
+        public bool TryAddRemBalance(EconomyManagerComponent comp, int accountId, int amount)
+        {
+            if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+                return false;
+
+            bank.Balance =+ amount;
             return true;
         }
 

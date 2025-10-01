@@ -242,6 +242,8 @@ namespace Content.Client.VendingMachines.UI
 
                 var itemName = Identity.Name(dummy, _entityManager);
                 var itemText = $"{itemName} [{entry.Amount}]";
+                if (entry.Price is not null)
+                    itemText = $"{itemText} | ${entry.Price}";
                 _amounts[entry.ID] = entry.Amount;
 
                 if (itemText.Length > longestEntry.Length)
@@ -275,17 +277,17 @@ namespace Content.Client.VendingMachines.UI
                     continue;
                 var amount = entry.Amount;
                 // Could be better? Problem is all inventory entries get squashed.
-                var text = GetItemText(dummy, amount);
+                var text = GetItemText(dummy, amount, entry.Price);
 
                 button.Item.SetText(text);
                 button.Button.Disabled = !enabled || amount == 0;
             }
         }
 
-        private string GetItemText(EntityUid dummy, uint amount)
+        private string GetItemText(EntityUid dummy, uint amount, uint? price = default)
         {
             var itemName = Identity.Name(dummy, _entityManager);
-            return $"{itemName} [{amount}]";
+            return price is null ? $"{itemName} [{amount}]" : $"{itemName} [{amount}] | ${price}";
         }
 
         private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)

@@ -186,8 +186,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         card = (cardUid, cardComp);
         return true;
-        /// se eu reusar isso, preciso pegar o id que estiver na mao primeiro e nao so no pda
-        /// pra coisas como atm
     }
 
     private bool TryPdaFromId(EntityUid idUid,

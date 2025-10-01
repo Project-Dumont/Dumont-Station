@@ -92,6 +92,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared._Gabystation.NanoBank;
+using Content.Server._Gabystation.Economy;
 
 namespace Content.Server.VendingMachines
 {
@@ -101,6 +104,9 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!; // Gaby change
+        [Dependency] private readonly SharedIdCardSystem _id = default!; // Gaby change
+        [Dependency] private readonly EconomyManagerSystem _economy = default!; // Gaby change
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -122,6 +128,42 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, RestockDoAfterEvent>(OnDoAfter);
 
             SubscribeLocalEvent<VendingMachineRestockComponent, PriceCalculationEvent>(OnPriceCalculation);
+
+            Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
+            {
+                subs.Event<VendingMachineEjectMessage>(OnEjectMessage);
+            });
+        }
+
+        private void OnEjectMessage(EntityUid uid, VendingMachineComponent comp, VendingMachineEjectMessage args)
+        {
+            if (!_receiver.IsPowered(uid) || Deleted(uid))
+                return;
+
+            if (args.Actor is not { Valid: true } actor)
+                return;
+
+            var entry = GetEntry(uid, args.ID, args.Type, comp);
+            if (entry?.Price is not null && !ValidatePursache((uid, comp), args.Actor, entry))
+            {
+                Popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-insufficient-balance"), uid);
+                Deny((uid, comp), actor);
+                return;
+            }
+
+            AuthorizedVend(uid, actor, args.Type, args.ID, comp);
+        }
+
+        private bool ValidatePursache(Entity<VendingMachineComponent?> ent, EntityUid actor, VendingMachineInventoryEntry? entry)
+        {
+            if (!_id.TryFindIdCard(actor, out var id) ||
+                !TryComp<NanoBankCardComponent>(id.Owner, out var card) ||
+                card.Station is null || !TryComp<EconomyManagerComponent>(card.Station, out var economy) ||
+                !_economy.ValidateCard(economy, card) || !_economy.TryPurchase(economy, card.AccountId, entry?.Price ?? 1))
+            {
+                return false;
+            }
+            return true;
         }
 
         private void OnVendingPrice(EntityUid uid, VendingMachineComponent component, ref PriceCalculationEvent args)
