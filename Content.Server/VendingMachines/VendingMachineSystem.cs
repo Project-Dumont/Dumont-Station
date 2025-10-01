@@ -95,6 +95,8 @@ using Robust.Shared.Timing;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared._Gabystation.NanoBank;
 using Content.Server._Gabystation.Economy;
+using Content.Shared.Advertise.Components;
+using Content.Shared.Advertise.Systems;
 
 namespace Content.Server.VendingMachines
 {
@@ -107,6 +109,7 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!; // Gaby change
         [Dependency] private readonly SharedIdCardSystem _id = default!; // Gaby change
         [Dependency] private readonly EconomyManagerSystem _economy = default!; // Gaby change
+        [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -135,35 +138,126 @@ namespace Content.Server.VendingMachines
             });
         }
 
-        private void OnEjectMessage(EntityUid uid, VendingMachineComponent comp, VendingMachineEjectMessage args)
+        private void OnEjectMessage(Entity<VendingMachineComponent> vendor, ref VendingMachineEjectMessage args)
         {
-            if (!_receiver.IsPowered(uid) || Deleted(uid))
+            if (!_receiver.IsPowered(vendor.Owner) || Deleted(vendor.Owner))
                 return;
 
             if (args.Actor is not { Valid: true } actor)
                 return;
 
-            var entry = GetEntry(uid, args.ID, args.Type, comp);
-            if (entry?.Price is not null && !ValidatePursache((uid, comp), args.Actor, entry))
+            AuthorizedVend(vendor.AsNullable(), actor, args.Type, args.ID);
+        }
+
+        /// <summary>
+        /// Checks whether the user is authorized to use the vending machine, then ejects the provided item if true
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="sender">Entity that is trying to use the vending machine</param>
+        /// <param name="type">The type of inventory the item is from</param>
+        /// <param name="itemId">The prototype ID of the item</param>
+        /// <param name="component"></param>
+        public void AuthorizedVend(Entity<VendingMachineComponent?> vendor, EntityUid sender, InventoryType type, string itemId)
+        {
+            if (!Resolve(vendor.Owner, ref vendor.Comp))
+                return;
+
+            if (!IsAuthorized(vendor, sender))
+                return;
+
+            var maybeEntry = GetEntry(vendor.Owner, itemId, type, vendor.Comp);
+
+            if (maybeEntry is not { } entry
+                || entry.Price is null
+                && !CanPurchase(vendor, sender, entry))
+                return;
+
+            TryEjectVendorItem(vendor, type, itemId, vendor.Comp.CanShoot, sender);
+        }
+
+        private bool CanPurchase(Entity<VendingMachineComponent?> vendor, EntityUid actor, VendingMachineInventoryEntry entry)
+        {
+            if (entry.Price is not { } price)
+                return true;
+
+            if (_id.TryFindIdCard(actor, out var id)
+                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && card.Station is not null
+                && TryComp<EconomyManagerComponent>(card.Station, out var economy)
+                && _economy.ValidateCard(economy, card)
+                && _economy.CanAfford(economy, card.AccountId, price, out var _))
+                return true;
+
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-no-balance"), vendor.Owner);
+            Deny(vendor, actor);
+            return false;
+        }
+
+        /// <summary>
+        /// Tries to eject the provided item. Will do nothing if the vending machine is incapable of ejecting, already ejecting
+        /// or the item doesn't exist in its inventory.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="type">The type of inventory the item is from</param>
+        /// <param name="itemId">The prototype ID of the item</param>
+        /// <param name="throwItem">Whether the item should be thrown in a random direction after ejection</param>
+        /// <param name="vendComponent"></param>
+        public void TryEjectVendorItem(
+            Entity<VendingMachineComponent?> vendor,
+            InventoryType type,
+            string itemId,
+            bool throwItem,
+            EntityUid? user = null)
+        {
+            var (uid, comp) = vendor;
+
+            if (!Resolve(uid, ref comp))
+                return;
+
+            if (comp.Ejecting
+                || comp.Broken
+                || !_receiver.IsPowered(uid))
+                return;
+
+            var entry = GetEntry(uid, itemId, type, comp);
+
+            if (string.IsNullOrEmpty(entry?.ID))
             {
-                Popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-insufficient-balance"), uid);
-                Deny((uid, comp), actor);
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-invalid-item"), uid);
+                Deny(vendor);
                 return;
             }
 
-            AuthorizedVend(uid, actor, args.Type, args.ID, comp);
-        }
-
-        private bool ValidatePursache(Entity<VendingMachineComponent?> ent, EntityUid actor, VendingMachineInventoryEntry? entry)
-        {
-            if (!_id.TryFindIdCard(actor, out var id) ||
-                !TryComp<NanoBankCardComponent>(id.Owner, out var card) ||
-                card.Station is null || !TryComp<EconomyManagerComponent>(card.Station, out var economy) ||
-                !_economy.ValidateCard(economy, card) || !_economy.TryPurchase(economy, card.AccountId, entry?.Price ?? 1))
+            if (entry.Amount <= 0)
             {
-                return false;
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-out-of-stock"), uid);
+                Deny(vendor);
+                return;
             }
-            return true;
+
+            // Start Ejecting, and prevent users from ordering while anim playing
+            comp.EjectEnd = Timing.CurTime + comp.EjectDelay;
+            comp.NextItemToEject = entry.ID;
+            comp.ThrowNextItem = throwItem;
+
+            // Precisamos tirar o dinheiro da conta do player aqui. O item tá saindo da máquina.
+            if (user is not null
+                && entry.Price is not null
+                && _id.TryFindIdCard(user.Value, out var id)
+                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && card.Station is not null
+                && TryComp<EconomyManagerComponent>(card.Station, out var economy))
+                _economy.TryPurchase(economy, card.AccountId, entry.Price.Value);
+
+            if (TryComp<SpeakOnUIClosedComponent>(uid, out var speakComponent))
+                _speakOn.TrySetFlag((uid, speakComponent));
+
+            entry.Amount--;
+            Dirty(uid, comp);
+            UpdateUI(vendor);
+            TryUpdateVisualState(vendor);
+
+            Audio.PlayPvs(comp.SoundVend, uid);
         }
 
         private void OnVendingPrice(EntityUid uid, VendingMachineComponent component, ref PriceCalculationEvent args)
@@ -324,7 +418,7 @@ namespace Content.Server.VendingMachines
             }
             else
             {
-                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, user: null, vendComponent: vendComponent);
+                TryEjectVendorItem((uid, vendComponent), item.Type, item.ID, throwItem, user: null);
             }
         }
 

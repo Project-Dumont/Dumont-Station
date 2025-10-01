@@ -131,8 +131,9 @@ namespace Content.Server._Gabystation.Economy
         public bool TryPurchase(EconomyManagerComponent comp,
             int accountId, uint price)
         {
-            if (!TryGetBalance(comp, accountId, out var balance) ||
-                    balance < price || TryAddRemBalance(comp, accountId, -(int) price))
+            if (!TryGetBalance(comp, accountId, out var balance)
+                || balance < price
+                || TryAddRemBalance(comp, accountId, -(int) price))
                 return false;
 
             return true;
@@ -149,10 +150,11 @@ namespace Content.Server._Gabystation.Economy
 
         public bool TryAddRemBalance(EconomyManagerComponent comp, int accountId, int amount)
         {
-            if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+            if (!comp.BankAccounts.ContainsKey(accountId) 
+                || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
 
-            bank.Balance =+ amount;
+            bank.Balance += amount;
             return true;
         }
 
