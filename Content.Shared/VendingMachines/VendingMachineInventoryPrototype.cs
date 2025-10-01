@@ -37,17 +37,5 @@ namespace Content.Shared.VendingMachines
 
         [DataField("contrabandInventory", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<uint, EntityPrototype>))]
         public Dictionary<string, uint>? ContrabandInventory { get; private set; }
-
-        /// Note about this: Shitcode, the original choise was rework the dicionary uint to a VendingMachineInventoryEntry
-        /// to support something like this:
-        /// - id: ClothingBackpackDuffelAtmospherics
-        ///       amount: 2
-        ///       price: 20
-        /// todo: pr changing to VendingMachineInventoryEntry in upstream
-        /// <summary>
-        /// Gaby change: Item price in the vend machine
-        /// </sumarry>
-        [DataField("itemPrices", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<uint, EntityPrototype>))]
-        public Dictionary<string, uint>? ItemPrices { get; private set; }
     }
 }

@@ -209,6 +209,13 @@ namespace Content.Shared.VendingMachines
         [DataField("loopDeny")]
         public bool LoopDenyAnimation = true;
         #endregion
+
+        /// <summary>
+        /// Gabystation economy change: Handles if the vend machine will have paid items.
+        /// Disabling this will make all items have no cost.
+        /// </summary>
+        [DataField]
+        public bool PaidItems = true;
     }
 
     [Serializable, NetSerializable]

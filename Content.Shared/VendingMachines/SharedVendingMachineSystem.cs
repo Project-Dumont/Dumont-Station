@@ -150,10 +150,8 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
     // Gaby change - moved to server
     // protected void OnInventoryEjectMessage(Entity<VendingMachineComponent> entity, ref VendingMachineEjectMessage args) {}
 
-    protected virtual void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args)
-    {
-        RestockInventoryFromPrototype(uid, component, component.InitialStockQuality);
-    }
+    // Gaby change - moved to server
+    protected virtual void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args) { }
 
     protected virtual void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false) { }
 
@@ -311,23 +309,9 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         }
     }
 
-    public void RestockInventoryFromPrototype(EntityUid uid,
-        VendingMachineComponent? component = null, float restockQuality = 1f)
-    {
-        if (!Resolve(uid, ref component))
-        {
-            return;
-        }
-
-        if (!PrototypeManager.TryIndex(component.PackPrototypeId, out VendingMachineInventoryPrototype? packPrototype))
-            return;
-
-        AddInventoryFromPrototype(uid, packPrototype.StartingInventory, InventoryType.Regular, component, restockQuality);
-        AddInventoryFromPrototype(uid, packPrototype.EmaggedInventory, InventoryType.Emagged, component, restockQuality);
-        AddInventoryFromPrototype(uid, packPrototype.ContrabandInventory, InventoryType.Contraband, component, restockQuality);
-        AddPricesFromPrototype(uid, packPrototype.ItemPrices, component);
-        Dirty(uid, component);
-    }
+    // Gaby change - now in server
+    /*public void RestockInventoryFromPrototype(EntityUid uid,
+        VendingMachineComponent? component = null, float restockQuality = 1f) { }*/
 
     private void OnEmagged(EntityUid uid, VendingMachineComponent component, ref GotEmaggedEvent args)
     {
@@ -373,77 +357,9 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         return GetAllInventory(uid, component).Where(_ => _.Amount > 0).ToList();
     }
 
-    /// <summary>
-    /// Gaby change: add prices of a inventory from a prototype
-    /// </sumarry>
-    private void AddPricesFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
-        VendingMachineComponent? component = null)
-    {
-        if (!Resolve(uid, ref component) || entries == null)
-            return;
-
-        foreach (var (id, price) in entries)
-        {
-            if (component.Inventory.TryGetValue(id, out var entry))
-                entry.Price = price;
-
-            else if (component.ContrabandInventory.TryGetValue(id, out entry))
-                entry.Price = price;
-
-            else if (component.EmaggedInventory.TryGetValue(id, out entry))
-                entry.Price = price;
-        }
-    }
-
-    private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
+    // Gaby station change - pass to server
+    /*private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
         InventoryType type,
         VendingMachineComponent? component = null, float restockQuality = 1.0f)
-    {
-        if (!Resolve(uid, ref component) || entries == null)
-        {
-            return;
-        }
-
-        Dictionary<string, VendingMachineInventoryEntry> inventory;
-        switch (type)
-        {
-            case InventoryType.Regular:
-                inventory = component.Inventory;
-                break;
-            case InventoryType.Emagged:
-                inventory = component.EmaggedInventory;
-                break;
-            case InventoryType.Contraband:
-                inventory = component.ContrabandInventory;
-                break;
-            default:
-                return;
-        }
-
-        foreach (var (id, amount) in entries)
-        {
-            if (PrototypeManager.HasIndex<EntityPrototype>(id))
-            {
-                var restock = amount;
-                var chanceOfMissingStock = 1 - restockQuality;
-
-                var result = Randomizer.NextFloat(0, 1);
-                if (result < chanceOfMissingStock)
-                {
-                    restock = (uint) Math.Floor(amount * result / chanceOfMissingStock);
-                }
-
-                if (inventory.TryGetValue(id, out var entry))
-                    // Prevent a machine's stock from going over three times
-                    // the prototype's normal amount. This is an arbitrary
-                    // number and meant to be a convenience for someone
-                    // restocking a machine who doesn't want to force vend out
-                    // all the items just to restock one empty slot without
-                    // losing the rest of the restock.
-                    entry.Amount = Math.Min(entry.Amount + amount, 3 * restock);
-                else
-                    inventory.Add(id, new VendingMachineInventoryEntry(type, id, restock));
-            }
-        }
-    }
+    { }*/
 }
