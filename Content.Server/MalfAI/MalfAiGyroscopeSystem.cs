@@ -7,26 +7,15 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
 using System.Numerics;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
-using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.MalfAI;
-using Content.Server.Damage.Systems;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Popups;
 using Content.Shared.Interaction;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
-using Robust.Shared.Physics.Components;
-using Content.Shared._Shitmed.Body;
-using Content.Shared._Shitmed.Body.Part;
-using Content.Shared.Body.Components;
-using Content.Shared.Body.Part;
 using Content.Shared._Shitmed.Targeting;
 
 namespace Content.Server.MalfAI;
@@ -55,11 +44,8 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
 
         // Drive in-flight gyroscope traversals.
         var query = EntityQueryEnumerator<MalfGyroTraverseComponent>();
-        while (query.MoveNext(out var uid, out _))
+        while (query.MoveNext(out var uid, out var traverse))
         {
-            // Fetch the live component instance to ensure Damaged set updates persist across frames.
-            var traverse = Comp<MalfGyroTraverseComponent>(uid);
-
             var now = _timing.CurTime;
             var t = (float) ((now - traverse.StartTime).TotalSeconds / traverse.DurationSeconds);
             t = Math.Clamp(t, 0f, 1f);
@@ -92,30 +78,29 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
             var max = pos + halfExtents;
             var aabb = new Box2(min, max);
 
-            var ents = _lookup.GetEntitiesIntersecting(traverse.StartMap.MapId, aabb);
-
-            var dmg = new DamageSpecifier();
-            dmg.DamageDict["Blunt"] = traverse.ContactDamage;
+            var ents = _lookup.GetEntitiesIntersecting(traverse.StartMap.MapId, aabb, LookupFlags.Uncontained);
 
             foreach (var ent in ents)
             {
-                if (ent == uid)
+                if (ent == uid
+                    || traverse.Damaged.Contains(ent))
                     continue;
+
+                var xform = Transform(ent);
 
                 // Ignore anchored/static entities (e.g., walls/doors) for contact damage.
-                if (TryComp<TransformComponent>(ent, out var xform) && xform.Anchored)
-                    continue;
-
-                if (traverse.Damaged.Contains(ent))
+                if (xform.Anchored)
                     continue;
 
                 // Apply damage once per traversal per entity.
-                if (HasComp<BodyComponent>(ent))
-                {
-                    var body = Comp<BodyComponent>(ent);
-                    _damage.TryChangeDamage(ent, dmg, true, targetPart: TargetBodyPart.Chest);
-                    traverse.Damaged.Add(ent);
-                }
+                _damage.TryChangeDamage(
+                    ent,
+                    traverse.ContactDamage,
+                    true,
+                    targetPart: TargetBodyPart.All
+                    );
+
+                traverse.Damaged.Add(ent);
             }
 
             if (t >= 1f)
@@ -123,7 +108,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
                 // Ensure exact final state and clear the traversal.
                 _xform.SetMapCoordinates(uid, traverse.EndMap);
                 _xform.SetLocalRotation(uid, traverse.EndRotation);
-                RemComp<MalfGyroTraverseComponent>(uid);
+                RemCompDeferred<MalfGyroTraverseComponent>(uid);
             }
         }
     }
@@ -177,7 +162,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
 
         // Resolve current map position and clicked position.
         var startMap = _xform.GetMapCoordinates(core);
-        var targetMap = ev.Target.ToMap(EntityManager, _xform);
+        var targetMap = _xform.ToMapCoordinates(ev.Target);
 
         // Calculate direction vector from core to clicked position
         var clickDirection = targetMap.Position - startMap.Position;
@@ -212,7 +197,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
             var tileY = (int) MathF.Floor(localTargetPos.Y);
             var centeredLocal = new Vector2(tileX + 0.5f, tileY + 0.5f);
             var centeredCoords = new EntityCoordinates(gridUid.Value, centeredLocal);
-            endMap = centeredCoords.ToMap(EntityManager, _xform);
+            endMap = _xform.ToMapCoordinates(centeredCoords);
         }
         else
         {
@@ -252,8 +237,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
         var endRot = startRot + Angle.FromDegrees(90f * rotationDir);
 
         var traverse = EnsureComp<MalfGyroTraverseComponent>(core);
-    // Limpa o conjunto de entidades danificadas no início da travessia
-        traverse.Damaged.Clear();
+
         traverse.StartMap = startMap;
         traverse.EndMap = endMap;
         traverse.StartRotation = startRot;
