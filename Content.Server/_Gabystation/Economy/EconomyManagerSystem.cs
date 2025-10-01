@@ -141,20 +141,47 @@ namespace Content.Server._Gabystation.Economy
 
         public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance)
         {
-            if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+            if (!comp.BankAccounts.ContainsKey(accountId)
+                || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
 
+            if (bank.Balance == balance)
+                return true; // Deveriamos levantar um evento, com Amount = 0, nesse caso?
+
+            var ev = new AccountTransferenceCompleted()
+            {
+                Type = balance - bank.Balance < 0 ? TransferenceTypes.Payment : TransferenceTypes.Transference,
+                AccountId = accountId,
+                Account = bank,
+                Amount = bank.Balance - balance
+            };
+
             bank.Balance = balance;
+            RaiseLocalEvent(ev);
+
             return true;
         }
 
         public bool TryAddRemBalance(EconomyManagerComponent comp, int accountId, int amount)
         {
-            if (!comp.BankAccounts.ContainsKey(accountId) 
+            if (!comp.BankAccounts.ContainsKey(accountId)
                 || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
 
+            if (amount == 0)
+                return true; // Deveriamos levantar um evento, com Amount = 0, nesse caso?
+
+            var ev = new AccountTransferenceCompleted()
+            {
+                Type = amount > 0 ? TransferenceTypes.Transference : TransferenceTypes.Payment,
+                AccountId = accountId,
+                Account = bank,
+                Amount = amount,
+            };
+
             bank.Balance += amount;
+            RaiseLocalEvent(ev);
+
             return true;
         }
 
