@@ -223,11 +223,7 @@ namespace Content.Shared.VendingMachines
         /// (Updated when restoked)
         /// </summary>
         [DataField]
-        public float PriceMultiplier
-        {
-            get => PriceMultiplier;
-            set => PriceMultiplier = value > 0 ? value : 1f;
-        }
+        public float PriceMultiplier = 1f;
     }
 
     [Serializable, NetSerializable]
