@@ -593,7 +593,7 @@ namespace Content.Server.VendingMachines
                         entry.Amount = Math.Min(entry.Amount + amount, 3 * restock);
                     else
                     {
-                        uint? cost = (uint) _pricing.GetEstimatedPrice(proto);
+                        uint? cost = (uint) (_pricing.GetEstimatedPrice(proto) * component.PriceMultiplier);
                         if (!component.PaidItems || cost == 0)
                             cost = null;
                         inventory.Add(id, new VendingMachineInventoryEntry(type, id, restock, cost));

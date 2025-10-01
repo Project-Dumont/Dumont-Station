@@ -213,9 +213,21 @@ namespace Content.Shared.VendingMachines
         /// <summary>
         /// Gabystation economy change: Handles if the vend machine will have paid items.
         /// Disabling this will make all items have no cost.
+        /// (Updated when restoked)
         /// </summary>
         [DataField]
         public bool PaidItems = true;
+
+        /// <summary>
+        /// Gabystation economy change: Multiplies the price of each item in vend.
+        /// (Updated when restoked)
+        /// </summary>
+        [DataField]
+        public float PriceMultiplier
+        {
+            get => PriceMultiplier;
+            set => PriceMultiplier = value > 0 ? value : 1f;
+        }
     }
 
     [Serializable, NetSerializable]
