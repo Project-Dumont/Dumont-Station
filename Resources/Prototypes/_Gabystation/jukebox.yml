@@ -493,6 +493,24 @@
     path: /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
 
 - type: jukebox
+  id: ADarkZone
+  name: Toby Fox - A DARK ZONE 
+  path:
+    path: /Audio/_Gabystation/Jukebox/a_dark_zone.ogg
+
+- type: jukebox
+  id: Guardian
+  name: Toby Fox - GUARDIAN
+  path:
+    path: /Audio/_Gabystation/Jukebox/guardian.ogg
+
+- type: jukebox
+  id: QuestionableEthics1
+  name: Joel Nielsen - Questionable Ethics 1
+  path:
+    path: /Audio/_Gabystation/Jukebox/questionable_ethics_1.ogg
+
+- type: jukebox
   id: AmigaDaMinhaMulher
   name: Seu Jorge - Amiga da Minha Mulher
   path:

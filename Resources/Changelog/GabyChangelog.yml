@@ -1135,3 +1135,11 @@ Entries:
       message: Sem mais o jogo morrendo ao fechar e tela preta ao reconectar!
   id: 126
   time: '2025-09-30T10:04:44.0000000+00:00'
+- author: Kyoth25f e Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas Questionable Ethics de Joel Nielsen, A Dark Zone de Toby Fox
+        e Guadian de Toby Fox na jukebox.
+  id: 127
+  time: '2025-10-01T13:19:40.0000000+00:00'

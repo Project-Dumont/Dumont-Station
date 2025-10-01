@@ -257,6 +257,21 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=qBoQzo98EpQ"
 
+- files: ["a_dark_zone.ogg"]
+  copyright: "A DARK ZONE (DELTARUNE Chapter 3+4 Soundtrack) by Toby Fox. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=K-ifukvnICY"
+
+- files: ["guardian.ogg"]
+  copyright: "GUARDIAN (DELTARUNE Chapter 3+4 Soundtrack) by Toby Fox. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=nP9mB1sVJz4"
+
+- files: ["questionable_ethics_1.ogg"]
+  copyright: "Questionable Ethics 1 by Joel Nielsen. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=FtTmiYA5D4k"
+
 - files: ["amiga_da_minha_mulher.ogg"]
   copyright: "Amiga da Minha Mulher by Seu Jorge. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
