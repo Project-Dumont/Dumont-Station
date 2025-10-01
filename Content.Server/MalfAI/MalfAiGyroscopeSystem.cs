@@ -108,6 +108,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
                 // Ensure exact final state and clear the traversal.
                 _xform.SetMapCoordinates(uid, traverse.EndMap);
                 _xform.SetLocalRotation(uid, traverse.EndRotation);
+                _xform.AnchorEntity(uid);
                 RemCompDeferred<MalfGyroTraverseComponent>(uid);
             }
         }
