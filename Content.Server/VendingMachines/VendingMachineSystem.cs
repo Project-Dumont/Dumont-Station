@@ -168,7 +168,7 @@ namespace Content.Server.VendingMachines
             var maybeEntry = GetEntry(vendor.Owner, itemId, type, vendor.Comp);
 
             if (maybeEntry is not { } entry
-                || entry.Price is null
+                || entry.Price is not null
                 && !CanPurchase(vendor, sender, entry))
                 return;
 
