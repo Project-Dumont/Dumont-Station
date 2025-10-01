@@ -395,6 +395,7 @@
     normalState: normal-unshaded
     denyState: deny-unshaded
     loopDeny: false
+    paidItems: false # Gaby change
   - type: DatasetVocalizer
     dataset: BruiseOMatAds
   - type: SpeakOnUIClosed
@@ -2382,6 +2383,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    paidItems: false # Gaby change
   - type: DatasetVocalizer
     dataset: SyndieDrobeAds
   - type: SpeakOnUIClosed
@@ -2662,5 +2664,6 @@
     normalState: normal
     denyState: deny
     ejectDelay: 2
+    paidItems: false # Gaby change
   - type: AccessReader
     access: [["SyndicateAgent"]]
