@@ -1,0 +1,52 @@
+<controls:BankATMWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Gabystation.ATM"
+    xmlns:c="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    MinSize="300 400">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <c:StripeBack MinSize="40 40"
+                             VerticalExpand="False">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0">
+                <TextureRect
+                             TexturePath="/Textures/Interface/Nano/ntlogo.svg.png"
+                             Stretch="KeepAspectCentered"
+                             VerticalAlignment="Center"
+                             MinSize="32 32"
+                             Margin="8 0 0 0" />
+                <RichTextLabel Text="{Loc 'bank-atm-ui-header'}" Margin="5"/>
+            </BoxContainer>
+        </c:StripeBack>
+        <BoxContainer Name="NoCard" Visible="True" Align="Center" HorizontalExpand="True" VerticalExpand="True">
+            <PanelContainer HorizontalAlignment="Center">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+                </PanelContainer.PanelOverride>
+                <RichTextLabel Text="{Loc 'bank-atm-ui-no-card'}" Margin="10"/>
+            </PanelContainer>
+        </BoxContainer>
+        <BoxContainer Name="WCard" Visible="False" Orientation="Vertical" VerticalExpand="True">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 10">
+                <Button Name="WithdrawTabButton" Access="Public" Text="{Loc 'bank-atm-ui-withdraw'}" HorizontalExpand="True" StyleClasses="OpenBoth" />
+                <Button Name="DepositTabButton" Access="Public" Text="{Loc 'bank-atm-ui-deposit'}" HorizontalExpand="True" StyleClasses="OpenBoth" />
+            </BoxContainer>
+            <RichTextLabel Name="BalanceLabel" Access="Public"/>
+            <cc:HSeparator StyleClasses="LowDivider" Margin="10"/>
+            <BoxContainer HorizontalExpand="True" VerticalExpand="True" Margin="10">
+                <BoxContainer Name="WithdrawTab" Access="Public" Orientation="Vertical" Visible="False" HorizontalExpand="True">
+                    <LineEdit Name="WithdrawInput" Access="Public" MinSize="70 0" Text="0" />
+                    <Button Name="WithdrawButton" Disabled="False" Access="Public" Text="{Loc 'bank-atm-ui-btn-withdraw'}" HorizontalExpand="True" StyleClasses="OpenBoth" />
+                </BoxContainer>
+                <BoxContainer Name="DepositTab" Access="Public" Orientation="Vertical" Visible="False" HorizontalExpand="True">
+                    <RichTextLabel Name="DepositLabel" HorizontalExpand="True" Access="Public"/>
+                    <Button Name="DepositButton" Access="Public" Text="{Loc 'bank-atm-ui-btn-deposit'}" HorizontalExpand="True" StyleClasses="OpenBoth" />
+                </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+        <c:StripeBack MinSize="20 20"
+                             VerticalExpand="False" HorizontalExpand="True">
+            <Label Text="{Loc 'bank-atm-ui-footer'}" Margin="3"/>
+        </c:StripeBack>
+    </BoxContainer>
+</controls:BankATMWindow>

@@ -37,8 +37,12 @@
         Structural: 80
         Piercing: 35
   - type: Devourer
-    foodPreference: Humanoid
-    shouldStoreDevoured: false
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
     chemical: Omnizine
     healRate: 55.0
     whitelist:

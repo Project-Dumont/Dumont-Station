@@ -313,8 +313,12 @@
     color: "#4400ff"
   - type: Puller
   - type: Devourer
-    foodPreference: Humanoid
-    shouldStoreDevoured: true
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
     chemical: Omnizine
     healRate: 15.0
     whitelist:

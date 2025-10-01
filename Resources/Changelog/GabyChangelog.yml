@@ -1089,3 +1089,49 @@ Entries:
         Paralamas Do Sucesso e Djavan.
   id: 121
   time: '2025-09-23T01:32:08.0000000+00:00'
+- author: joaofernandez
+  changes:
+    - type: Tweak
+      message: Alterado buscas de máquinas para não considerar acentuação
+  id: 122
+  time: '2025-09-27T05:45:27.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob 27/09.
+  id: 123
+  time: '2025-09-28T02:35:43.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Added NUNO cards
+  id: 124
+  time: '2025-09-28T02:39:42.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Caixas eletronicos - Flatpack roundstart para HoS, bartender e QM, alem
+        da trade station.
+    - type: Add
+      message: >-
+        Todos os funcionarios da nanotrasen agora tem uma conta bancaria no
+        NanoBank, aproveite!
+    - type: Add
+      message: Nano Pix (ou Nano Bank) adicionado ao PDA de todos os tripulantes.
+    - type: Add
+      message: >-
+        A Central de Comando finalmente pagara seus funcionarios pelos seus
+        esforços!
+    - type: Remove
+      message: Sua liberdade financeira.
+  id: 125
+  time: '2025-09-30T04:06:48.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada as últimas mudanças do Goob 29/09!
+    - type: Fix
+      message: Sem mais o jogo morrendo ao fechar e tela preta ao reconectar!
+  id: 126
+  time: '2025-09-30T10:04:44.0000000+00:00'

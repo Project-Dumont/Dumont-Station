@@ -171,6 +171,7 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   goobcoins: 45 #Goob content
+  salary: 50 # Gaby content
   access:
   - HeadOfSecurity
   - Command

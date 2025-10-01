@@ -92,9 +92,10 @@
   startingGear: PassengerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
-  goobcoins: 1 # Gaby station
+  goobcoins: 1 #Goob content
+  salary: 5 # Gaby content
   canBeAntag: false # Gaby station
-  #  access: # Gabystation
+  #  access:
   #  - Maintenance
   #
   # gaby alt job titles

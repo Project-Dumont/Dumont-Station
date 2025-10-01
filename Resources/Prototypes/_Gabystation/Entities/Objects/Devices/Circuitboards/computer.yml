@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BankATMCircuitboard
+  name: an automated teller machine board
+  description: A computer printed circuit board for an automated teller machine
+  components:
+  - type: Sprite
+    state: cpu_service
+  - type: ComputerBoard
+    prototype: ComputerBankATM

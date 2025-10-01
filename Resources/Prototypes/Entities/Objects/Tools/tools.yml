@@ -618,6 +618,7 @@
     - Alarm
     - Sensor
     - SensorPipe
+    - PressureRegulator
     # <\GabyStation>
     # <Goobstation>
     - FilterInline

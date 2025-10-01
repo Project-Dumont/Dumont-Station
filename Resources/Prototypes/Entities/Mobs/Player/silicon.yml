@@ -379,6 +379,7 @@
       sprite: Mobs/Silicon/station_ai_cracks.rsi
   - type: ApcPowerReceiver
     powerLoad: 500
+    needsPower: false
   - type: ExtensionCableReceiver
   - type: Battery
     maxCharge: 300000
@@ -432,7 +433,6 @@
     listeningRange: 0
     speakerVolume: Speak
     unlistedNumber: true
-    requiresPower: false
   - type: Holopad
   - type: StationAiWhitelist
   - type: UserInterface

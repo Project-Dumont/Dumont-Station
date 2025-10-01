@@ -1,0 +1,128 @@
+<cartridges:NanoBankUiFragment xmlns:cartridges="clr-namespace:Content.Client._Gabystation.CartridgeLoader.Cartridges"
+                               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                               xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                               xmlns="https://spacestation14.io"
+                               Margin="1 0 2 0"
+                               Orientation="Vertical"
+                               HorizontalExpand="True"
+                               VerticalExpand="True">
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Name="Login" Orientation="Horizontal" Visible="False" HorizontalExpand="True" VerticalExpand="True">
+            <Control HorizontalExpand="True"/>
+            <PanelContainer StyleClasses="BackgroundDark">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" Align="Center" Margin="8">
+                    <TextureRect
+                             TexturePath="/Textures/Interface/Nano/ntlogo.svg.png"
+                             Stretch="KeepAspectCentered"
+                             VerticalAlignment="Center"
+                             MinSize="64 64"
+                             Margin="-16" />
+                    <Label Text="{Loc nano-bank-login-flavor}"/>
+                    <BoxContainer>
+                        <Label Text="{Loc nano-bank-login-id}" />
+                        <LineEdit Name="LoginId" PlaceHolder="0000" HorizontalExpand="True" MinWidth="80" />
+                    </BoxContainer>
+                    <BoxContainer>
+                        <Label Text="{Loc nano-bank-login-pin}" />
+                        <LineEdit Name="LoginPin" PlaceHolder="0000" HorizontalExpand="True" MinWidth="80" />
+                    </BoxContainer>
+                    <Button Name="LoginButton" Text="Log-In"/>
+                </BoxContainer>
+            </PanelContainer>
+            <Control HorizontalExpand="True"/>
+        </BoxContainer>
+        <BoxContainer Name="App" Visible="False" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <!-- Header -->
+        <controls:StripeBack MinSize="40 40"
+                             VerticalExpand="False">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0">
+                <TextureRect Name="AppIcon"
+                             TexturePath="/Textures/Interface/Nano/ntlogo.svg.png"
+                             Stretch="KeepAspectCentered"
+                             VerticalAlignment="Center"
+                             MinSize="32 32"
+                             Margin="8 0 0 0" />
+                <BoxContainer HorizontalExpand="True" Margin="8 0" VerticalAlignment="Center" />
+                <Label Name="AccountId"
+                       Text="#0000"
+                       StyleClasses="LabelSubText"
+                       VerticalAlignment="Center"
+                       Margin="0 0 8 0" />
+                <Button Name="MuteButton"
+                        MaxSize="32 32"
+                        StyleClasses="OpenBoth"
+                        Margin="0 0 4 0"
+                        ToolTip="{Loc nano-chat-toggle-mute}">
+                    <Control HorizontalExpand="True" VerticalExpand="True">
+                        <TextureRect Name="BellIcon"
+                                     StyleClasses="ButtonSquare"
+                                     TexturePath="/Textures/_DV/Interface/VerbIcons/bell.svg.png"
+                                     Stretch="KeepAspectCentered"
+                                     MinSize="18 18" />
+                        <TextureRect Name="BellMutedIcon"
+                                     StyleClasses="ButtonSquare"
+                                     TexturePath="/Textures/_DV/Interface/VerbIcons/bell_muted.png"
+                                     Stretch="KeepAspectCentered"
+                                     Visible="False"
+                                     MinSize="18 18" />
+                    </Control>
+                </Button>
+                <Button Name="LogoffButton"
+                        Text="x"
+                        MinSize="32 32"
+                        MaxSize="32 32"
+                        Margin="0 0 4 0"
+                        StyleClasses="OpenBoth"
+                        ToolTip="{Loc nano-bank-logoff}" />
+            </BoxContainer>
+        </controls:StripeBack>
+        <!-- Balance -->
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+            <BoxContainer Margin="8" Orientation="Vertical">
+                <Label Text="{Loc nano-bank-balance-label}"/>
+                <RichTextLabel Name="Balance" Text="..."/>
+            </BoxContainer>
+        </PanelContainer>
+
+        <controls:HSpacer Spacing="5" />
+
+        <!-- Next payout -->
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+            <BoxContainer Margin="8" Orientation="Vertical">
+                <Label Text="{Loc nano-bank-payout-label}"/>
+                <RichTextLabel Name="Payout" Text="..."/>
+            </BoxContainer>
+        </PanelContainer>
+
+        <controls:HSpacer Spacing="5" />
+
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+
+            <BoxContainer Orientation="Vertical" Margin="8">
+                <Label Text="{Loc nano-bank-transfer-label}"/>
+                <BoxContainer Orientation="Horizontal" SeparationOverride="8" HorizontalExpand="True">
+                    <Label Text="{Loc nano-bank-transfer-id}" VerticalAlignment="Center"/>
+                    <LineEdit Name="TransferId" PlaceHolder="0000" MinWidth="60" MaxWidth="80"/>
+
+                    <Label Text="{Loc nano-bank-transfer-amount}" VerticalAlignment="Center"/>
+                    <LineEdit Name="TransferAmount" PlaceHolder="0" MinWidth="60" HorizontalExpand="True"/>
+                </BoxContainer>
+
+                <Button Name="TransferButton" Text="{Loc nano-bank-transfer-button}" Margin="0 8 0 0"/>
+            </BoxContainer>
+        </PanelContainer>
+
+        </BoxContainer>
+    </BoxContainer>
+</cartridges:NanoBankUiFragment>

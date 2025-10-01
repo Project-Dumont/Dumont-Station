@@ -46,6 +46,10 @@ namespace Content.Client.Silicons.StationAi;
 
 public sealed class StationAiOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> CameraStaticShader = "CameraStatic";
+    private static readonly ProtoId<ShaderPrototype> StencilMaskShader = "StencilMask";
+    private static readonly ProtoId<ShaderPrototype> StencilDrawShader = "StencilDraw";
+
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -231,9 +235,8 @@ public sealed class StationAiOverlay : Overlay
             () =>
             {
                 worldHandle.SetTransform(invMatrix);
-                // Use camera static shader directly
-                var cameraStaticShader = _proto.Index<ShaderPrototype>("CameraStatic").Instance();
-                worldHandle.UseShader(cameraStaticShader);
+                var shader = _proto.Index(CameraStaticShader).Instance();
+                worldHandle.UseShader(shader);
                 worldHandle.DrawRect(worldBounds, Color.White);
             },
             Color.Black);
@@ -255,8 +258,8 @@ public sealed class StationAiOverlay : Overlay
         }
 
         // Use the lighting as a mask
-        var stencilMaskShader = _proto.Index<ShaderPrototype>("StencilMask").Instance();
-        var stencilDrawShader = _proto.Index<ShaderPrototype>("StencilDraw").Instance();
+        var stencilMaskShader = _proto.Index(StencilMaskShader).Instance();
+        var stencilDrawShader = _proto.Index(StencilDrawShader).Instance();
 
         worldHandle.UseShader(stencilMaskShader);
         worldHandle.DrawTextureRect(_stencilTexture!.Texture, worldBounds);
