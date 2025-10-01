@@ -2,11 +2,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
 using Robust.Shared.Timing;
 using Content.Shared.MalfAI;
 using Content.Shared.MalfAI.Actions;
-using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Popups;
@@ -14,9 +12,9 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared.Stunnable;
 using Content.Shared.CombatMode;
 using Robust.Shared.Containers;
-using Robust.Shared.Localization;
-using Robust.Shared.IoC;
-                    using Robust.Shared.GameObjects;
+using Content.Server.Actions;
+using Content.Server.Silicons.StationAi;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.MalfAI;
 
@@ -33,8 +31,8 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
     [Dependency] private readonly SharedMechSystem _mech = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
-    [Dependency] private readonly Content.Server.Actions.ActionsSystem _actions = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     private static readonly TimeSpan HijackDuration = TimeSpan.FromMinutes(2);
     private static readonly TimeSpan PilotStun = TimeSpan.FromSeconds(8);
@@ -154,6 +152,7 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
         if (args.Handled)
             return;
         // uid here is the AI entity because the action is granted to the AI while hijacking.
+
         ReturnFromHijack(uid);
         args.Handled = true;
     }
@@ -161,17 +160,15 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
     private void OnAiRemovedFromContainer(EntityUid uid, StationAiHeldComponent comp, EntGotRemovedFromContainerMessage args)
     {
         // If a hijacking AI gets removed from any container (e.g., forced eject), return them to core.
-        if (HasComp<MalfAiMechHijackComponent>(uid))
-        {
-            ReturnFromHijack(uid);
-        }
+        if (!HasComp<MalfAiMechHijackComponent>(uid))
+            return;
+
+        ReturnFromHijack(uid);
     }
 
-
-
-    private bool TryGetAiCoreHolder(EntityUid ai, out EntityUid coreHolder)
+    private bool TryGetAiCoreHolder(EntityUid ai, [NotNullWhen(true)] out EntityUid? coreHolder)
     {
-        coreHolder = EntityUid.Invalid;
+        coreHolder = default;
         // Try to find AI core.
         if (_stationAi.TryGetCore(ai, out var core) && core.Comp != null)
         {

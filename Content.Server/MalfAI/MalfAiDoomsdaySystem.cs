@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
 using Content.Server.AlertLevel;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
@@ -19,7 +18,7 @@ using Content.Shared.Audio;
 using Robust.Shared.Random;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Localization;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -38,7 +37,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     private const string DoomsdayAlertLevel = "cyan";
     private const float DoomsdaySongBuffer = 1.5f; // seconds before alert
@@ -205,8 +204,8 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
     private void CheckAndAnnounceThresholds(EntityUid ai, TimeSpan prevTime, TimeSpan currentTime)
     {
         // Check for minute thresholds (every 60 seconds)
-        var prevMinutes = (int)Math.Floor(prevTime.TotalMinutes);
-        var currentMinutes = (int)Math.Floor(currentTime.TotalMinutes);
+        var prevMinutes = (int) Math.Floor(prevTime.TotalMinutes);
+        var currentMinutes = (int) Math.Floor(currentTime.TotalMinutes);
 
         if (prevMinutes > currentMinutes && currentMinutes >= 0)
         {
@@ -326,7 +325,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
         try
         {
             var songDuration = _audio.GetAudioLength(comp.SelectedDoomsdaySong);
-            comp.SongDuration = songDuration.TotalSeconds > 0 ? (float)songDuration.TotalSeconds : null;
+            comp.SongDuration = songDuration.TotalSeconds > 0 ? (float) songDuration.TotalSeconds : null;
         }
         catch (Exception)
         {

@@ -8,15 +8,12 @@
 using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.MalfAI;
-using Content.Shared.Popups;
-using Content.Shared.Silicons.StationAi;
 using Content.Server.Power.Components;
-using Content.Shared.Alert;
 using Content.Server.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
-using Robust.Shared.Localization;
+using Content.Shared.Store.Components;
 
 namespace Content.Server.MalfAI;
 
@@ -34,14 +31,14 @@ public sealed class MalfAiApcSiphonSystem : EntitySystem
 
     public void OnApcStartSiphon(EntityUid uid, ApcComponent apc, ref ApcStartSiphonEvent args)
     {
-        if (!TryComp<Content.Shared.Store.Components.StoreComponent>(args.SiphonedBy, out var store))
+        if (!TryComp<StoreComponent>(args.SiphonedBy, out var store))
             return;
 
         var cpuAmount = _cfg.GetCVar(CCVars.MalfAiSiphonCpuAmount);
         var siphonAmount = FixedPoint2.New(cpuAmount);
 
         // Grant CPU to the AI
-        var dict = new System.Collections.Generic.Dictionary<string, FixedPoint2> { { CpuCurrency, siphonAmount } };
+        var dict = new Dictionary<string, FixedPoint2> { { CpuCurrency, siphonAmount } };
         _store.TryAddCurrency(dict, args.SiphonedBy, store);
 
         // Log the APC siphoning for admin records

@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.MalfAI;
@@ -13,6 +12,4 @@ namespace Content.Shared.MalfAI;
 /// It is removed as soon as the door begins closing.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class MalfForceCloseNextComponent : Component
-{
-}
+public sealed partial class MalfForceCloseNextComponent : Component;

@@ -5,7 +5,6 @@
 // SPDX-License-Identifier: MIT
 
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Content.Shared.MalfAI;
 

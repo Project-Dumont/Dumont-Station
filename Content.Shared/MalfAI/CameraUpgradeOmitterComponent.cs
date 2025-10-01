@@ -11,6 +11,4 @@ namespace Content.Shared.MalfAI;
 /// This component prevents entities from being treated as cameras for MalfAI camera upgrade functionality.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class CameraUpgradeOmitterComponent : Component
-{
-}
+public sealed partial class CameraUpgradeOmitterComponent : Component;

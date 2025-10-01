@@ -5,7 +5,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
 using Content.Shared.MalfAI;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Store.Components;
@@ -18,8 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.Store;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
-using Content.Client.UserInterface.Systems.Alerts.Widgets; using Robust.Shared.Localization;
-
+using Content.Client.UserInterface.Systems.Alerts.Widgets;
 namespace Content.Client.MalfAI;
 
 /// <summary>
@@ -38,7 +36,7 @@ public sealed class MalfAiCpuHudSystem : EntitySystem
 
     private ResizableChatBox? _chat;
     private bool _chatSubscribed;
-    private Content.Client.UserInterface.Systems.Alerts.Widgets.AlertsUI? _alerts;
+    private AlertsUI? _alerts;
 
     // Update interval to refresh displayed CPU while visible
     private const float UpdateInterval = 0.25f;
@@ -50,8 +48,10 @@ public sealed class MalfAiCpuHudSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
         if (DisabledLegacyHud)
             return;
+
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetached);
     }
@@ -203,7 +203,7 @@ public sealed class MalfAiCpuHudSystem : EntitySystem
         // Adjust Alerts to sit below the HUD when visible to avoid overlap.
         if (_alerts != null)
         {
-            var extra = (_panel.Visible ? _panel.Size.Y + 8f : 0f);
+            var extra = _panel.Visible ? _panel.Size.Y + 8f : 0f;
             var alertsTop = chatBottom + extra;
             LayoutContainer.SetMarginTop(_alerts, alertsTop);
         }

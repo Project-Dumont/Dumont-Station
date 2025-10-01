@@ -5,8 +5,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
-using System.Collections.Generic;
 using Content.Server.Body.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.RoundEnd;
@@ -14,13 +12,9 @@ using Content.Shared.Damage;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.MalfAI;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-// Alias ensures correct TransformComponent reference regardless of namespace layout.
-using TransformComponent = Robust.Shared.GameObjects.TransformComponent;
-using Vector2 = System.Numerics.Vector2;
-using Robust.Shared.Localization;
+using System.Numerics;
 
 namespace Content.Server.MalfAI;
 
@@ -38,6 +32,7 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     // Ripple configuration: 300 tiles over 30 seconds.
     private const float MaxRadius = 300f;
@@ -105,11 +100,13 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
             if (_affected.Contains(target))
                 continue;
 
+            var xform = Transform(target);
+
             // Same map/z-level only.
-            if (!TryComp<TransformComponent>(target, out var xform) || xform.MapID != _rippleMap)
+            if (xform.MapID != _rippleMap)
                 continue;
 
-            var pos = xform.WorldPosition;
+            var pos = _xform.GetWorldPosition(xform);
             var posNum = new Vector2(pos.X, pos.Y);
             var dist = (posNum - _originWorld).Length();
             if (dist <= currentRadius)
@@ -137,13 +134,12 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
             return;
 
         // Initialize ripple session from AI position.
-        if (!TryComp<TransformComponent>(ai, out var xform))
-            return;
+        var xform = Transform(ai);
 
         _rippleActive = true;
         _rippleAi = ai;
         _rippleMap = xform.MapID;
-        _originWorld = new Vector2(xform.WorldPosition.X, xform.WorldPosition.Y);
+        _originWorld = _xform.GetWorldPosition(xform);
         _startTime = _timing.CurTime;
         _affected.Clear();
 

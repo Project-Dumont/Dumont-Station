@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
 using Content.Shared.MalfAI.Actions;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Electrocution;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Maths;
 using Robust.Shared.Audio;
 using Content.Server.Chat.Systems;
-using Robust.Shared.Localization;
-using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Store.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Server.MalfAI;
 
@@ -26,10 +22,10 @@ public sealed class MalfAiLockdownSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<Content.Shared.Store.Components.StoreComponent, MalfAiLockdownGridActionEvent>(OnLockdownGridAction);
+        SubscribeLocalEvent<StoreComponent, MalfAiLockdownGridActionEvent>(OnLockdownGridAction);
     }
 
-    private void OnLockdownGridAction(EntityUid uid, Content.Shared.Store.Components.StoreComponent comp, ref MalfAiLockdownGridActionEvent args)
+    private void OnLockdownGridAction(EntityUid uid, StoreComponent comp, ref MalfAiLockdownGridActionEvent args)
     {
         var performer = args.Performer != default ? args.Performer : uid;
         var duration = TimeSpan.FromSeconds(args.Duration);

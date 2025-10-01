@@ -4,17 +4,15 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
+using System.Numerics;
 using Content.Client.MalfAI.Overlays;
 using Content.Shared.MalfAI;
 using Robust.Client.Audio;
 using Robust.Client.Graphics;
 using Robust.Shared.Audio;
-using Robust.Shared.Maths;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Vector2 = System.Numerics.Vector2;
 
 namespace Content.Client.MalfAI;
 

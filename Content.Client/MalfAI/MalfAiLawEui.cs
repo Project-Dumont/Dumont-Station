@@ -18,18 +18,15 @@ namespace Content.Client.MalfAI;
 /// </summary>
 public sealed class MalfAiLawEui : BaseEui
 {
-    private readonly EntityManager _entityManager;
-
     private SiliconLawUi _siliconLawUi;
     private NetEntity _target;
 
     public MalfAiLawEui()
     {
-        _entityManager = IoCManager.Resolve<EntityManager>();
-
         _siliconLawUi = new SiliconLawUi();
         _siliconLawUi.OnClose += () => SendMessage(new CloseEuiMessage());
-        _siliconLawUi.Save.OnPressed += _ => {
+        _siliconLawUi.Save.OnPressed += _ =>
+        {
             SendMessage(new SiliconLawsSaveMessage(_siliconLawUi.GetLaws(), _target));
         };
     }
@@ -37,9 +34,7 @@ public sealed class MalfAiLawEui : BaseEui
     public override void HandleState(EuiStateBase state)
     {
         if (state is not SiliconLawsEuiState s)
-        {
             return;
-        }
 
         _target = s.Target;
         _siliconLawUi.SetLaws(s.Laws);

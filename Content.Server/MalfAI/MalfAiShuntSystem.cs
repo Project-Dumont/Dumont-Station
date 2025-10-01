@@ -11,6 +11,7 @@ using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -23,10 +24,8 @@ public sealed class MalfAiShuntSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     public override void Initialize()
     {
@@ -101,7 +100,6 @@ public sealed class MalfAiShuntSystem : EntitySystem
             if (returnAction != null)
                 shunted.ReturnAction = returnAction.Value;
         }
-
 
         _popup.PopupEntity(Loc.GetString("malfai-shunt-success"), popupTarget, ai);
         args.Handled = true;

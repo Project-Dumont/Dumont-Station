@@ -29,10 +29,13 @@ public partial record struct MalfAiBorgListEntry
 {
     [DataField]
     public string UniqueId;
+
     [DataField]
     public string Name;
+
     [DataField]
     public SpriteSpecifier? ChassisSprite;
+
     /// <summary>
     /// Health fraction from 0.0 (destroyed) to 1.0 (full health).
     /// </summary>
@@ -96,9 +99,7 @@ public sealed class MalfAiBorgsSetSyncMessage : BoundUserInterfaceMessage
 /// Client->Server request to open the Master Lawset editor from the same BUI.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class MalfAiOpenMasterLawsetMessage : BoundUserInterfaceMessage
-{
-}
+public sealed class MalfAiOpenMasterLawsetMessage : BoundUserInterfaceMessage;
 
 /// <summary>
 /// Client->Server request to warp the AI eye to the selected borg.

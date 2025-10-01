@@ -9,6 +9,7 @@ using Content.Shared.MalfAI;
 using Content.Shared.Mind.Components;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -100,7 +101,7 @@ public sealed class MalfAiLawEui : BaseEui
             return false;
 
         if (_entityManager.HasComponent<MalfMasterLawsetComponent>(target))
-            return _entityManager.HasComponent<Content.Shared.Silicons.StationAi.StationAiHeldComponent>(attached);
+            return _entityManager.HasComponent<StationAiHeldComponent>(attached);
 
         if (!_entityManager.TryGetComponent<MalfAiControlledComponent>(target, out var controlled) || controlled.Controller == null)
             return false;

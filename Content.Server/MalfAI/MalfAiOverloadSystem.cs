@@ -5,15 +5,12 @@
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Construction.Components;
-using Content.Shared.DeviceLinking;
-using Content.Shared.DeviceLinking.Components;
 using Content.Shared.MalfAI;
 using Content.Shared.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
-using Content.Shared.Explosion.Components;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -27,7 +24,7 @@ public sealed class MalfAiOverloadSystem : EntitySystem
     [Dependency] private readonly ExplosionSystem _explosion = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     public override void Initialize()
     {
@@ -49,7 +46,7 @@ public sealed class MalfAiOverloadSystem : EntitySystem
 
         // Get the target entity at the clicked coordinates
         var coords = args.Target;
-        var mapCoords = coords.ToMap(EntityManager, _transform);
+        var mapCoords = _transform.ToMapCoordinates(coords);
 
         if (mapCoords.MapId == MapId.Nullspace)
         {

@@ -5,13 +5,18 @@
 using Content.Shared.MalfAI;
 using Content.Shared.MalfAI.Actions;
 using Robust.Server.GameObjects;
-using Content.Shared.Silicons.Laws.Components; // SiliconLawsUiKey
+using Content.Shared.Silicons.Laws.Components;
 using Content.Server.EUI;
 using Content.Server.Silicons.Laws;
 using Robust.Server.Player;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Utility;
 using Content.Server.Silicons.StationAi;
+using Content.Shared.Silicons.StationAi;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Damage;
+using Content.Shared.Mobs;
+using Content.Shared.Mind.Components;
 
 namespace Content.Server.MalfAI;
 
@@ -21,31 +26,33 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
     [Dependency] private readonly EuiManager _eui = default!;
     [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly Content.Shared.Mobs.Systems.MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly StationAiSystem _stationAi = default!;
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+
         // Subscribe on the AI-held entity for the action event to ensure delivery.
-        SubscribeLocalEvent<Content.Shared.Silicons.StationAi.StationAiHeldComponent, OpenMalfAiBorgsUiActionEvent>(OnOpenUi);
+        SubscribeLocalEvent<StationAiHeldComponent, OpenMalfAiBorgsUiActionEvent>(OnOpenUi);
+
         // Refresh UI when a borg becomes (un)linked and when it takes damage.
         SubscribeLocalEvent<MalfAiControlledComponent, ComponentStartup>(OnMalfBorgStart);
         SubscribeLocalEvent<MalfAiControlledComponent, ComponentShutdown>(OnMalfBorgShutdown);
         SubscribeLocalEvent<MalfAiControlledComponent, Content.Shared.Damage.DamageChangedEvent>(OnMalfBorgDamaged);
+
         // Handle BUI messages from the AI-held owner; avoid MetaDataComponent in generics to prevent registration at startup.
-        Subs.BuiEvents<Content.Shared.Silicons.StationAi.StationAiHeldComponent>(MalfAiBorgsUiKey.Key,
-            subs =>
-            {
-                subs.Event<MalfAiBorgsUpdateLawsMessage>(OnUpdateLaws);
-                subs.Event<MalfAiBorgsJumpToBorgMessage>(OnJumpToBorg);
-                subs.Event<MalfAiOpenMasterLawsetMessage>(OnOpenMasterLawset);
-                subs.Event<MalfAiBorgsSetSyncMessage>(OnSetSync);
-            });
+        Subs.BuiEvents<StationAiHeldComponent>(MalfAiBorgsUiKey.Key, subs =>
+        {
+            subs.Event<MalfAiBorgsUpdateLawsMessage>(OnUpdateLaws);
+            subs.Event<MalfAiBorgsJumpToBorgMessage>(OnJumpToBorg);
+            subs.Event<MalfAiOpenMasterLawsetMessage>(OnOpenMasterLawset);
+            subs.Event<MalfAiBorgsSetSyncMessage>(OnSetSync);
+        });
     }
 
-    private void OnOpenUi(Entity<Content.Shared.Silicons.StationAi.StationAiHeldComponent> ai, ref OpenMalfAiBorgsUiActionEvent args)
+    private void OnOpenUi(Entity<StationAiHeldComponent> ai, ref OpenMalfAiBorgsUiActionEvent args)
     {
         if (args.Handled)
             return;
@@ -63,7 +70,7 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnSetSync(Entity<Content.Shared.Silicons.StationAi.StationAiHeldComponent> ai, ref MalfAiBorgsSetSyncMessage msg)
+    private void OnSetSync(Entity<StationAiHeldComponent> ai, ref MalfAiBorgsSetSyncMessage msg)
     {
         if (string.IsNullOrWhiteSpace(msg.UniqueId))
             return;
@@ -101,7 +108,7 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
         PushRefreshForControllerAndMind(aiEntity);
     }
 
-    private void OnUpdateLaws(Entity<Content.Shared.Silicons.StationAi.StationAiHeldComponent> ai, ref MalfAiBorgsUpdateLawsMessage msg)
+    private void OnUpdateLaws(Entity<StationAiHeldComponent> ai, ref MalfAiBorgsUpdateLawsMessage msg)
     {
         if (string.IsNullOrWhiteSpace(msg.UniqueId))
             return;
@@ -128,7 +135,7 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
         ui.UpdateLaws(lawBound, target.Value);
     }
 
-    private void OnOpenMasterLawset(Entity<Content.Shared.Silicons.StationAi.StationAiHeldComponent> ai, ref MalfAiOpenMasterLawsetMessage msg)
+    private void OnOpenMasterLawset(Entity<StationAiHeldComponent> ai, ref MalfAiOpenMasterLawsetMessage msg)
     {
         // Open the editable Malf AI Laws EUI for the AI user, targeting the master lawset on the rule entity.
         if (!_playerManager.TryGetSessionByEntity(ai.Owner, out var session))
@@ -169,9 +176,9 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
 
         // Check for mind-based matching (AI held vs brain entities)
         if (borgControl.Controller != null &&
-            TryComp<Content.Shared.Mind.Components.MindContainerComponent>(controller, out var controllerMind) &&
+            TryComp<MindContainerComponent>(controller, out var controllerMind) &&
             controllerMind.Mind != null &&
-            TryComp<Content.Shared.Mind.Components.MindContainerComponent>(borgControl.Controller.Value, out var borgMind) &&
+            TryComp<MindContainerComponent>(borgControl.Controller.Value, out var borgMind) &&
             borgMind.Mind == controllerMind.Mind)
         {
             return true;
@@ -195,7 +202,7 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
         return null;
     }
 
-    private void OnJumpToBorg(Entity<Content.Shared.Silicons.StationAi.StationAiHeldComponent> ai, ref MalfAiBorgsJumpToBorgMessage msg)
+    private void OnJumpToBorg(Entity<StationAiHeldComponent> ai, ref MalfAiBorgsJumpToBorgMessage msg)
     {
         if (string.IsNullOrWhiteSpace(msg.UniqueId))
             return;
@@ -229,7 +236,7 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
         PushRefreshForControllerAndMind(controller);
     }
 
-    private void OnMalfBorgDamaged(Entity<MalfAiControlledComponent> ent, ref Content.Shared.Damage.DamageChangedEvent args)
+    private void OnMalfBorgDamaged(Entity<MalfAiControlledComponent> ent, ref DamageChangedEvent args)
     {
         if (ent.Comp.Controller is not { } controller)
             return;
@@ -254,16 +261,16 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
             // Compute health as percentage relative to critical threshold (100 damage = 0%, 0 damage = 100%).
             var health = 1.0f;
             var isCritical = false;
-            if (TryComp<Content.Shared.Damage.DamageableComponent>(uid, out var dmg))
+            if (TryComp<DamageableComponent>(uid, out var dmg))
             {
                 // Check if the borg is in critical state by comparing current damage to critical threshold
-                if (_mobThreshold.TryGetThresholdForState(uid, Content.Shared.Mobs.MobState.Critical, out var critThreshold))
+                if (_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold))
                 {
                     isCritical = dmg.TotalDamage >= critThreshold;
 
                     // Calculate health as percentage remaining before critical threshold
                     // 0 damage = 100% health, critical threshold damage = 0% health
-                    var damageRatio = (float)dmg.TotalDamage / critThreshold.Value.Float();
+                    var damageRatio = (float) dmg.TotalDamage / critThreshold.Value.Float();
                     health = Math.Clamp(1.0f - damageRatio, 0f, 1f);
                 }
             }
@@ -282,10 +289,10 @@ public sealed class MalfAiBorgsUiSystem : EntitySystem
             _ui.SetUiState((controller, null), MalfAiBorgsUiKey.Key, state);
 
         // Also refresh on any other entity with the same mind (AiHeld/Brain counterpart)
-        if (TryComp<Content.Shared.Mind.Components.MindContainerComponent>(controller, out var mindCont) && mindCont.Mind != null)
+        if (TryComp<MindContainerComponent>(controller, out var mindCont) && mindCont.Mind != null)
         {
             var targetMind = mindCont.Mind.Value;
-            var mindQuery = AllEntityQuery<Content.Shared.Mind.Components.MindContainerComponent>();
+            var mindQuery = AllEntityQuery<MindContainerComponent>();
             while (mindQuery.MoveNext(out var otherEnt, out var otherMindCont))
             {
                 if (otherEnt == controller)

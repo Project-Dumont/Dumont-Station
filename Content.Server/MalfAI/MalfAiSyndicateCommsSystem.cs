@@ -1,7 +1,5 @@
 using Content.Server.Radio.Components;
 using Content.Shared.MalfAI;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization;
 
 namespace Content.Server.MalfAI;
 
@@ -9,9 +7,7 @@ namespace Content.Server.MalfAI;
 /// Event raised when the AI purchases syndicate keys
 /// </summary>
 [Serializable, DataDefinition]
-public sealed partial class MalfAiSyndicateKeysUnlockedEvent : EntityEventArgs
-{
-}
+public sealed partial class MalfAiSyndicateKeysUnlockedEvent : EntityEventArgs;
 
 /// <summary>
 /// System that handles granting syndicate radio communications to malfunction AI

@@ -2,20 +2,16 @@
 
 // SPDX-License-Identifier: MIT
 
-using System;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Server.SurveillanceCamera;
 using Content.Server.Speech.Components;
 using Content.Shared.MalfAI;
 using Content.Shared.MalfAI.Actions;
-using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
 using Robust.Shared.Player;
-
 using static Content.Server.Chat.Systems.ChatSystem;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -31,7 +27,7 @@ namespace Content.Server.MalfAI;
 public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Initialize()
@@ -113,7 +109,7 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
                 continue;
 
             var eye = core.Comp.RemoteEntity.Value;
-            var eyeXform  = Transform(eye);
+            var eyeXform = Transform(eye);
             var eyePos = _xforms.GetWorldPosition(eyeXform, xformQuery);
 
             // Find cameras where BOTH the speaker AND the AI eye are in range of the SAME camera.

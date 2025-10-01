@@ -4,14 +4,10 @@
 
 using Content.Shared.Actions;
 using Content.Shared.MalfAI;
-using Content.Shared.Preferences;
-using Content.Shared.Silicons.StationAi;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
 using Content.Shared.Popups;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
-using Robust.Shared.Localization;
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
 using Content.Server.Silicons.StationAi;

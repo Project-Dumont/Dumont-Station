@@ -13,9 +13,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Player;
 using Robust.Server.Player;
-using Robust.Shared.GameObjects;
-using Robust.Shared.GameStates;
-using Robust.Shared.Log;
 using Content.Shared.Actions.Components;
 
 namespace Content.Server.MalfAI;
@@ -28,7 +25,7 @@ namespace Content.Server.MalfAI;
 public sealed class MalfAiViewportSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
@@ -37,7 +34,6 @@ public sealed class MalfAiViewportSystem : EntitySystem
 
     public override void Initialize()
     {
-
         // Only the AI (holding the StationAiHeldComponent) can use these actions.
         SubscribeLocalEvent<StationAiHeldComponent, MalfAiSetViewportActionEvent>(OnSetViewport);
         SubscribeLocalEvent<StationAiHeldComponent, MalfAiOpenViewportActionEvent>(OnToggleViewport);
@@ -49,11 +45,13 @@ public sealed class MalfAiViewportSystem : EntitySystem
     {
         if (!TryComp<ActionsComponent>(uid, out var actionsComp))
             return false;
+
         foreach (var action in actionsComp.Actions)
         {
-            if (EntityManager.GetComponent<MetaDataComponent>(action).EntityPrototype?.ID == protoId)
+            if (MetaData(action).EntityPrototype?.ID == protoId)
                 return true;
         }
+
         return false;
     }
 
@@ -83,10 +81,10 @@ public sealed class MalfAiViewportSystem : EntitySystem
         }
 
         // Convert target to map coordinates.
-        var target = _transform.ToMapCoordinates(args.Target);
+        var target = _xform.ToMapCoordinates(args.Target);
 
         // Enforce same-grid constraint: target must be on the same grid as the AI.
-        var aiCoords = _transform.GetMapCoordinates(uid);
+        var aiCoords = _xform.GetMapCoordinates(uid);
         if (!_map.TryFindGridAt(aiCoords, out var aiGridUid, out _)
             || !_map.TryFindGridAt(target, out var targetGridUid, out _)
             || aiGridUid != targetGridUid)
@@ -96,10 +94,10 @@ public sealed class MalfAiViewportSystem : EntitySystem
         }
 
         // Clean up any existing anchor entity
-        if (comp.ViewportAnchor != null && EntityManager.EntityExists(comp.ViewportAnchor.Value))
+        if (comp.ViewportAnchor != null && Exists(comp.ViewportAnchor.Value))
         {
             // Properly detach player session if attached
-            if (EntityManager.TryGetComponent<ActorComponent>(comp.ViewportAnchor.Value, out var oldActor) &&
+            if (TryComp<ActorComponent>(comp.ViewportAnchor.Value, out var oldActor) &&
                 oldActor.PlayerSession != null)
             {
                 _playerManager.SetAttachedEntity(oldActor.PlayerSession, null);
@@ -112,7 +110,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
         comp.ViewportAnchor = EntityManager.SpawnEntity(null, target);
 
         // Add actor component to make it a proper client eye
-        var actorComp = EntityManager.AddComponent<ActorComponent>(comp.ViewportAnchor.Value);
+        var actorComp = EnsureComp<ActorComponent>(comp.ViewportAnchor.Value);
 
         // Make the anchor act as an active renderer by attaching the player's session to it
         // This ensures the client receives updates from the anchor's perspective
@@ -123,25 +121,22 @@ public sealed class MalfAiViewportSystem : EntitySystem
         }
 
         // Add the camera upgrade omitter component to prevent this anchor from being considered for camera upgrades
-        EntityManager.AddComponent<CameraUpgradeOmitterComponent>(comp.ViewportAnchor.Value);
+        EnsureComp<CameraUpgradeOmitterComponent>(comp.ViewportAnchor.Value);
 
         // Apply grid north rotation to the anchor entity's transform so viewport faces grid north
         float anchorRotation = 0f;
         if (_map.TryFindGridAt(aiCoords, out var gridForRotation, out _))
         {
-            anchorRotation = (float)_transform.GetWorldRotation(gridForRotation).Theta;
+            anchorRotation = (float) _xform.GetWorldRotation(gridForRotation).Theta;
         }
         // Set the anchor entity's local rotation to counter the grid rotation
-        if (EntityManager.TryGetComponent<TransformComponent>(comp.ViewportAnchor.Value, out var anchorXform))
-        {
-            anchorXform.LocalRotation = -anchorRotation;
-        }
+
+        var anchorXform = Transform(comp.ViewportAnchor.Value);
+
+        anchorXform.LocalRotation = -anchorRotation;
 
         // Anchor the entity to the grid so it moves with the grid
-        if (EntityManager.TryGetComponent<TransformComponent>(comp.ViewportAnchor.Value, out var anchorTransform))
-        {
-            anchorTransform.Anchored = true;
-        }
+        _xform.AnchorEntity(comp.ViewportAnchor.Value, anchorXform);
 
         // Record chosen coordinates.
         comp.Selected = target;
@@ -155,7 +150,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
             float rotation = 0f;
             if (_map.TryFindGridAt(aiCoords, out var aiGridUid2, out _))
             {
-                rotation = (float)_transform.GetWorldRotation(aiGridUid2).Theta;
+                rotation = (float) _xform.GetWorldRotation(aiGridUid2).Theta;
             }
             var ev = new MalfAiViewportOpenEvent(target.MapId, target.Position, comp.WindowSize, comp.Title, rotation, comp.ZoomLevel, GetNetEntity(comp.ViewportAnchor));
             RaiseNetworkEvent(ev, actor.PlayerSession);
@@ -196,10 +191,10 @@ public sealed class MalfAiViewportSystem : EntitySystem
             var size = comp.WindowSize;
             var title = comp.Title;
             float rotation = 0f;
-            var aiCoords = _transform.GetMapCoordinates(uid);
+            var aiCoords = _xform.GetMapCoordinates(uid);
             if (_map.TryFindGridAt(aiCoords, out var aiGridUid, out _))
             {
-                rotation = (float)_transform.GetWorldRotation(aiGridUid).Theta;
+                rotation = (float) _xform.GetWorldRotation(aiGridUid).Theta;
             }
             var ev = new MalfAiViewportOpenEvent(selected.MapId, selected.Position, size, title, rotation, comp.ZoomLevel, GetNetEntity(comp.ViewportAnchor));
             RaiseNetworkEvent(ev, actor.PlayerSession);

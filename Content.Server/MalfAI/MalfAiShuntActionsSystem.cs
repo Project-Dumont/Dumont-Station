@@ -1,9 +1,9 @@
+using Content.Server.Silicons.StationAi;
 using Content.Shared.MalfAI;
 using Content.Shared.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
+using Content.Shared.Store.Components;
 
 namespace Content.Server.MalfAI;
 
@@ -14,16 +14,16 @@ namespace Content.Server.MalfAI;
 public sealed class MalfAiShuntActionsSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<Content.Shared.Store.Components.StoreComponent, MalfAiShuntToApcActionEvent>(OnShuntToApcAction);
-        SubscribeLocalEvent<Content.Shared.Store.Components.StoreComponent, MalfAiReturnToCoreActionEvent>(OnReturnToCoreAction);
+        SubscribeLocalEvent<StoreComponent, MalfAiShuntToApcActionEvent>(OnShuntToApcAction);
+        SubscribeLocalEvent<StoreComponent, MalfAiReturnToCoreActionEvent>(OnReturnToCoreAction);
     }
 
-    private void OnShuntToApcAction(EntityUid uid, Content.Shared.Store.Components.StoreComponent comp, ref MalfAiShuntToApcActionEvent args)
+    private void OnShuntToApcAction(EntityUid uid, StoreComponent comp, ref MalfAiShuntToApcActionEvent args)
     {
         var performer = args.Performer != default ? args.Performer : uid;
         if (!HasComp<MalfAiMarkerComponent>(performer) || !HasComp<StationAiHeldComponent>(performer))
@@ -36,7 +36,7 @@ public sealed class MalfAiShuntActionsSystem : EntitySystem
         // Allow MalfAiShuntSystem to handle valid actions.
     }
 
-    private void OnReturnToCoreAction(EntityUid uid, Content.Shared.Store.Components.StoreComponent comp, ref MalfAiReturnToCoreActionEvent args)
+    private void OnReturnToCoreAction(EntityUid uid, StoreComponent comp, ref MalfAiReturnToCoreActionEvent args)
     {
         var performer = args.Performer != default ? args.Performer : uid;
         if (!HasComp<MalfAiMarkerComponent>(performer) || !HasComp<StationAiHeldComponent>(performer))

@@ -4,12 +4,7 @@
 
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Damage;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
-using Robust.Shared.Serialization.Manager.Attributes;
-using System;
-using System.Collections.Generic;
 
 namespace Content.Server.MalfAI;
 

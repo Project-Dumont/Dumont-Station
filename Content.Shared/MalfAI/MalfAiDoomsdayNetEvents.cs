@@ -2,10 +2,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
 using Robust.Shared.Map;
+using System.Numerics;
 using Robust.Shared.Serialization;
-using Vector2 = System.Numerics.Vector2;
 
 namespace Content.Shared.MalfAI;
 

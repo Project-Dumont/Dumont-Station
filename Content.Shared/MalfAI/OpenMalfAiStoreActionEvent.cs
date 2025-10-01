@@ -10,6 +10,4 @@ namespace Content.Shared.MalfAI;
 /// Action event for opening the Malf AI store interface.
 /// This is an instant action that doesn't require targeting.
 /// </summary>
-public sealed partial class OpenMalfAiStoreActionEvent : InstantActionEvent
-{
-}
+public sealed partial class OpenMalfAiStoreActionEvent : InstantActionEvent;

@@ -2,11 +2,8 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System;
 using System.Numerics;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.MalfAI;
@@ -35,6 +32,4 @@ public sealed class MalfAiViewportOpenEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed class MalfAiViewportCloseEvent : EntityEventArgs
-{
-}
+public sealed class MalfAiViewportCloseEvent : EntityEventArgs;

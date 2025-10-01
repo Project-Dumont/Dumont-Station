@@ -14,6 +14,10 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.Graphics;
 using Content.Client.MalfAI.Theme;
 using Robust.Shared.Timing;
+using Robust.Client.UserInterface;
+using System.Numerics;
+using static Robust.Client.UserInterface.Controls.TextureRect;
+using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.MalfAI;
 
@@ -90,7 +94,7 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
         }
     }
 
-    private PanelContainer WrapWithGreenOutline(Robust.Client.UserInterface.Control child)
+    private PanelContainer WrapWithGreenOutline(Control child)
     {
         // Custom malf button styling application
         var border = MalfUiTheme.CreateButtonStyle(MalfUiTheme.Accent);
@@ -119,7 +123,7 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
             PanelOverride = style,
             MinSize = new System.Numerics.Vector2(16, 16),
             MaxSize = new System.Numerics.Vector2(16, 16),
-            VerticalAlignment = Robust.Client.UserInterface.Control.VAlignment.Center
+            VerticalAlignment = VAlignment.Center
         };
 
         return panel;
@@ -159,13 +163,13 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
         stylePanel.PanelOverride = style;
     }
 
-    private Robust.Client.UserInterface.Control CreateHealthIndicator(float healthFraction, bool isCritical)
+    private Control CreateHealthIndicator(float healthFraction, bool isCritical)
     {
         // Calculate how many rectangles should be filled (1-4)
-        var filledRectangles = Math.Max(1, Math.Min(4, (int)Math.Ceiling(healthFraction * 4)));
+        var filledRectangles = Math.Max(1, Math.Min(4, (int) Math.Ceiling(healthFraction * 4)));
 
         // Create a main container that will hold both the rectangles and the overlaid text
-        var mainContainer = new Robust.Client.UserInterface.Control
+        var mainContainer = new Control
         {
             MinSize = new System.Numerics.Vector2(56, 75),
             Margin = new Thickness(8, 0, 0, 0)
@@ -176,8 +180,8 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
             SeparationOverride = 1,
-            HorizontalAlignment = Robust.Client.UserInterface.Control.HAlignment.Center,
-            VerticalAlignment = Robust.Client.UserInterface.Control.VAlignment.Center
+            HorizontalAlignment = HAlignment.Center,
+            VerticalAlignment = VAlignment.Center
         };
 
         // Create 4 rectangles from top to bottom (reverse order for visual top-to-bottom stacking)
@@ -207,8 +211,8 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
         // Create health text - show "CRIT" when at critical threshold (0%), otherwise show percentage
         var healthText = new Label
         {
-            HorizontalAlignment = Robust.Client.UserInterface.Control.HAlignment.Center,
-            VerticalAlignment = Robust.Client.UserInterface.Control.VAlignment.Center
+            HorizontalAlignment = HAlignment.Center,
+            VerticalAlignment = VAlignment.Center
         };
 
         // Font now handled by stylesheet, but we need to override font for specific styling
@@ -233,7 +237,7 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
         else
         {
             // Normal state - show percentage with color gradient from green (100%) to red (0%)
-            healthText.Text = $"{(int)(healthFraction * 100)}%";
+            healthText.Text = $"{(int) (healthFraction * 100)}%";
             var textColor = new Color(1f - healthFraction, healthFraction, 0f);
             // Override stylesheet color for dynamic health color gradient
             healthText.Modulate = textColor;
@@ -283,9 +287,9 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
                     var icon = new TextureRect
                     {
                         Texture = tex,
-                        Stretch = TextureRect.StretchMode.KeepCentered,
-                        TextureScale = new System.Numerics.Vector2(1.5f, 1.5f),
-                        MinSize = new System.Numerics.Vector2(48, 48)
+                        Stretch = StretchMode.KeepCentered,
+                        TextureScale = new Vector2(1.5f, 1.5f),
+                        MinSize = new Vector2(48, 48)
                     };
                     row.AddChild(icon);
                 }
@@ -298,13 +302,13 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
                 row.AddChild(label);
 
                 // Spacer to push button and health to the right
-                var spacer = new Robust.Client.UserInterface.Control { HorizontalExpand = true };
+                var spacer = new Control { HorizontalExpand = true };
                 row.AddChild(spacer);
 
                 // Buttons container (vertical) on the right: Update Laws, then Warp.
                 var buttonsCol = new BoxContainer
                 {
-                    Orientation = BoxContainer.LayoutOrientation.Vertical
+                    Orientation = LayoutOrientation.Vertical
                 };
 
                 var updateBtn = new Button

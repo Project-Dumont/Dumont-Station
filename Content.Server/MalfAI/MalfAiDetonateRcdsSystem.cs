@@ -1,17 +1,13 @@
-using System;
 using Content.Server.Explosion.EntitySystems;
-using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.RCD.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Timing;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
-using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Store.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Server.MalfAI;
 
@@ -33,10 +29,10 @@ public sealed class MalfAiDetonateRcdsSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<Content.Shared.Store.Components.StoreComponent, MalfAiDetonateRcdsActionEvent>(OnDetonateAllRcdsAction);
+        SubscribeLocalEvent<StoreComponent, MalfAiDetonateRcdsActionEvent>(OnDetonateAllRcdsAction);
     }
 
-    private void OnDetonateAllRcdsAction(EntityUid uid, Content.Shared.Store.Components.StoreComponent comp, ref MalfAiDetonateRcdsActionEvent args)
+    private void OnDetonateAllRcdsAction(EntityUid uid, StoreComponent comp, ref MalfAiDetonateRcdsActionEvent args)
     {
         var performer = args.Performer != default ? args.Performer : uid;
         ArmRcdsOnGrid(performer);

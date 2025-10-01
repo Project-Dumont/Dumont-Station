@@ -10,9 +10,7 @@ namespace Content.Shared.MalfAI;
 
 // Server -> Client: open the Malf voice modulator window.
 [Serializable, NetSerializable]
-public sealed class MalfVoiceModulatorOpenUiEvent : EntityEventArgs
-{
-}
+public sealed class MalfVoiceModulatorOpenUiEvent : EntityEventArgs;
 
 // Client -> Server: submit the chosen AI name.
 [Serializable, NetSerializable]

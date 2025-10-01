@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.MalfAI;
@@ -12,6 +11,4 @@ namespace Content.Shared.MalfAI;
 /// Used by the blacklist system to prevent conflicting objectives.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class MalfAiDoomsdayMarkerComponent : Component
-{
-}
+public sealed partial class MalfAiDoomsdayMarkerComponent : Component;

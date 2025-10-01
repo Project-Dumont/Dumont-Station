@@ -22,7 +22,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using TransformComponent = Robust.Shared.GameObjects.TransformComponent;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -35,12 +35,12 @@ namespace Content.Server.MalfAI;
 public sealed class MalfAiOverrideSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     public override void Initialize()
     {
@@ -62,7 +62,7 @@ public sealed class MalfAiOverrideSystem : EntitySystem
 
         // Get the target entity at the clicked coordinates.
         var coords = args.Target;
-        var mapCoords = coords.ToMap(EntityManager, _transform);
+        var mapCoords = _xform.ToMapCoordinates(coords);
 
         if (mapCoords.MapId == MapId.Nullspace)
         {
@@ -92,10 +92,7 @@ public sealed class MalfAiOverrideSystem : EntitySystem
         }
 
         // Step 1: Unanchor the machine to make it mobile.
-        if (TryComp<TransformComponent>(targetMachine.Value, out var transform))
-        {
-            transform.Anchored = false;
-        }
+        _xform.Unanchor(targetMachine.Value);
 
         // Step 2: Make it hostile by adding NPC faction.
         var factionComp = EnsureComp<NpcFactionMemberComponent>(targetMachine.Value);

@@ -6,23 +6,25 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Client.Alerts;
-using Content.Shared.Alert;
 using Content.Shared.MalfAI;
 using Content.Shared.Store.Components;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Store;
-using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
+using Content.Shared.Silicons.StationAi;
+using Robust.Client.GameObjects;
 
 namespace Content.Client.MalfAI;
 
 public sealed class MalfAiHudSystem : EntitySystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
         // Subscribe on StationAiHeld so this runs for the local AI eye entity.
-        SubscribeLocalEvent<Content.Shared.Silicons.StationAi.StationAiHeldComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
+        SubscribeLocalEvent<StationAiHeldComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
     }
 
     private EntityUid? ResolveMalfAiEntity(EntityUid local)
@@ -39,7 +41,7 @@ public sealed class MalfAiHudSystem : EntitySystem
         return null;
     }
 
-    private void OnUpdateAlert(Entity<Content.Shared.Silicons.StationAi.StationAiHeldComponent> ent, ref UpdateAlertSpriteEvent args)
+    private void OnUpdateAlert(Entity<StationAiHeldComponent> ent, ref UpdateAlertSpriteEvent args)
     {
         if (args.Alert.ID != "MalfCpu")
             return;
@@ -49,8 +51,6 @@ public sealed class MalfAiHudSystem : EntitySystem
         if (source == null || !TryComp<StoreComponent>(source.Value, out var store))
             return;
 
-        var sprite = args.SpriteViewEnt.Comp;
-
         // Read CPU amount and clamp to 0..999
         ProtoId<CurrencyPrototype> cpu = "CPU";
         var amount = 0;
@@ -58,8 +58,8 @@ public sealed class MalfAiHudSystem : EntitySystem
             amount = (int) val.Int();
         amount = Math.Clamp(amount, 0, 999);
 
-        sprite.LayerSetState(MalfAiHudVisualLayers.Digit1, $"{(amount / 100) % 10}");
-        sprite.LayerSetState(MalfAiHudVisualLayers.Digit2, $"{(amount / 10) % 10}");
-        sprite.LayerSetState(MalfAiHudVisualLayers.Digit3, $"{amount % 10}");
+        _sprite.LayerSetRsiState(args.SpriteViewEnt.AsNullable(), MalfAiHudVisualLayers.Digit1, $"{amount / 100 % 10}");
+        _sprite.LayerSetRsiState(args.SpriteViewEnt.AsNullable(), MalfAiHudVisualLayers.Digit2, $"{amount / 10 % 10}");
+        _sprite.LayerSetRsiState(args.SpriteViewEnt.AsNullable(), MalfAiHudVisualLayers.Digit3, $"{amount % 10}");
     }
 }

@@ -17,6 +17,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using Content.Shared._Shitmed.Targeting;
+using Content.Server.Silicons.StationAi;
 
 namespace Content.Server.MalfAI;
 
@@ -29,7 +30,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly Content.Server.Silicons.StationAi.StationAiSystem _stationAi = default!;
+    [Dependency] private readonly StationAiSystem _stationAi = default!;
 
     public override void Initialize()
     {
@@ -118,7 +119,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
         if (!HasComp<StationAiCoreComponent>(core))
         {
             // 2) Try find a core whose RemoteEntity equals the performer (remote-controlled AI).
-            var query = EntityManager.EntityQueryEnumerator<StationAiCoreComponent>();
+            var query = EntityQueryEnumerator<StationAiCoreComponent>();
             while (query.MoveNext(out var ent, out var comp))
             {
                 if (comp.RemoteEntity == core)
@@ -183,7 +184,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
         // Grid-anchor the destination to the center of the target tile
         MapCoordinates endMap;
         var gridUid = Transform(core).GridUid;
-        if (gridUid != null && EntityManager.TryGetComponent<MapGridComponent>(gridUid.Value, out var grid))
+        if (gridUid != null && TryComp<MapGridComponent>(gridUid.Value, out var grid))
         {
             // Convert world position to grid local coordinates
             var gridMatrix = _xform.GetInvWorldMatrix(gridUid.Value);
@@ -214,7 +215,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
             // Find the AI entity that triggered this action to get the proper eye for popup positioning
             var aiEntity = ev.Performer;
             var popupTarget = GetAiEyeForPopup(aiEntity) ?? core;
-            _popup.PopupEntity(Loc.GetString("malf-gyro-blocked"), popupTarget, aiEntity, Content.Shared.Popups.PopupType.SmallCaution);
+            _popup.PopupEntity(Loc.GetString("malf-gyro-blocked"), popupTarget, aiEntity, PopupType.SmallCaution);
             return;
         }
 

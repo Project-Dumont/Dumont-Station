@@ -47,7 +47,7 @@ public sealed class MalfAiDoomsdayRippleOverlay : Overlay
         if (_system.Duration <= TimeSpan.Zero)
             return false;
 
-        var t = Math.Clamp((float)(elapsed / _system.Duration.TotalSeconds), 0f, 1f);
+        var t = Math.Clamp((float) (elapsed / _system.Duration.TotalSeconds), 0f, 1f);
         _radiusTiles = t * _system.MaxRadiusTiles;
         if (_radiusTiles <= 0f)
             return false;
@@ -76,7 +76,7 @@ public sealed class MalfAiDoomsdayRippleOverlay : Overlay
         var worldHandle = args.WorldHandle;
         if (_radiusTiles > 0f && _ringAlpha > 0f)
         {
-            var color = new Color(CyanGlow.R, CyanGlow.G, CyanGlow.B, (byte)(Math.Clamp(_ringAlpha, 0f, 1f) * 255));
+            var color = new Color(CyanGlow.R, CyanGlow.G, CyanGlow.B, (byte) (Math.Clamp(_ringAlpha, 0f, 1f) * 255));
             DrawRing(worldHandle, _centerWorld, _radiusTiles, MathF.Max(2f / 32f, _ringThicknessTiles * 0.6f), color);
         }
     }

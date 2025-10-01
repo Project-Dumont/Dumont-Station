@@ -8,8 +8,6 @@ using Content.Client.MalfAI.Theme;
 using Content.Shared.MalfAI;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
-using Robust.Client.UserInterface.Controls;
-using Robust.Shared.GameObjects;
 
 namespace Content.Client.MalfAI.VoiceModulator;
 

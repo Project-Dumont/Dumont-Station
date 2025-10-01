@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.MalfAI;

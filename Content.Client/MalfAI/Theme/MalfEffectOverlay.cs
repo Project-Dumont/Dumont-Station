@@ -7,11 +7,8 @@
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using System;
 using System.Numerics;
 
 namespace Content.Client.MalfAI.Theme;
@@ -81,7 +78,6 @@ public sealed class MalfEffectOverlay : Control
 {
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     private MalfEffectConfig _config = new();
     private ShaderInstance? _shaderInstance;
@@ -234,7 +230,7 @@ public sealed class MalfEffectOverlay : Control
             return;
 
         // Update animation time
-        _animationTime += (float)args.DeltaSeconds * _config.Speed;
+        _animationTime += (float) args.DeltaSeconds * _config.Speed;
     }
 
     protected override void Draw(DrawingHandleScreen handle)
@@ -313,7 +309,7 @@ public sealed class MalfEffectOverlay : Control
     private void DrawProceduralStatic(DrawingHandleScreen handle, UIBox2 box)
     {
         // Simple procedural static using small rectangles
-        var random = new Random((int)(_animationTime * 1000));
+        var random = new Random((int) (_animationTime * 1000));
         var pixelSize = 2.0f;
 
         for (float x = box.Left; x < box.Right; x += pixelSize)
@@ -322,7 +318,7 @@ public sealed class MalfEffectOverlay : Control
             {
                 if (random.NextDouble() > 0.92) // Only draw 8% of pixels for sparse static
                 {
-                    var intensity = (float)random.NextDouble() * _config.Color.A;
+                    var intensity = (float) random.NextDouble() * _config.Color.A;
                     var pixelColor = new Color(_config.Color.R, _config.Color.G, _config.Color.B, intensity);
                     handle.DrawRect(new UIBox2(x, y, x + pixelSize, y + pixelSize), pixelColor);
                 }
