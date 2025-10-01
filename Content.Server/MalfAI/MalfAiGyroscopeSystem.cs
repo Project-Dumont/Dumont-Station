@@ -93,12 +93,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
                     continue;
 
                 // Apply damage once per traversal per entity.
-                _damage.TryChangeDamage(
-                    ent,
-                    traverse.ContactDamage,
-                    true,
-                    targetPart: TargetBodyPart.All
-                    );
+                _damage.TryChangeDamage(ent, traverse.ContactDamage, targetPart: TargetBodyPart.All);
 
                 traverse.Damaged.Add(ent);
             }
