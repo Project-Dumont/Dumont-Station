@@ -42,5 +42,6 @@ public enum TransferenceTypes
     Transference,
     Purchase,
     Withdraw,
-    Deposit
+    Deposit,
+    Update,
 }
