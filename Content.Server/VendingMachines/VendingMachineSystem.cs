@@ -223,7 +223,7 @@ namespace Content.Server.VendingMachines
                 && _economy.CanAfford(economy, card.AccountId, price, out var _))
                 return true;
 
-            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-no-balance"), vendor.Owner);
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-insufficient-balance"), vendor.Owner);
             Deny(vendor, actor);
             return false;
         }
