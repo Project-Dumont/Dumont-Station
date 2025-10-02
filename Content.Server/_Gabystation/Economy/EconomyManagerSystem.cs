@@ -159,6 +159,7 @@ namespace Content.Server._Gabystation.Economy
             if (bank.Balance == balance)
                 return true; // Deveriamos levantar um evento, com Amount = 0, nesse caso?
 
+            var previousBalance = bank.Balance;
             bank.Balance = balance;
 
             if (raiseEvent)
@@ -168,7 +169,7 @@ namespace Content.Server._Gabystation.Economy
                     Type = TransferenceTypes.Update,
                     AccountId = accountId,
                     Account = bank,
-                    Amount = bank.Balance - balance
+                    Amount = balance - previousBalance
                 };
 
                 RaiseLocalEvent(comp.Owner, ev);
