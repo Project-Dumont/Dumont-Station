@@ -133,12 +133,12 @@ namespace Content.Server._Gabystation.Economy
         {
             if (!TryGetBalance(comp, accountId, out var balance)
                 || balance < price
-                || TryAddRemBalance(comp, accountId, -(int) price, raiseEvent: false))
+                || !TryAddRemBalance(comp, accountId, -(int) price, raiseEvent: false))
                 return false;
 
             var ev = new AccountTransferenceCompleted()
             {
-                Type = TransferenceTypes.Payment,
+                Type = TransferenceTypes.Purchase,
                 AccountId = accountId,
                 Amount = (int) price,
             };
