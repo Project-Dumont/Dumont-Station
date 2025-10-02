@@ -64,7 +64,7 @@ namespace Content.Shared.Entry
         public override void PreInit()
         {
             IoCManager.InjectDependencies(this);
-            SharedContentIoC.Register();
+
             VerifyModules(); // Goobstation - Module Throws
         }
 
