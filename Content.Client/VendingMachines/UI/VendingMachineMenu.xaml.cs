@@ -243,8 +243,10 @@ namespace Content.Client.VendingMachines.UI
 
                 var itemName = Identity.Name(dummy, _entityManager);
                 var itemText = $"{itemName} [{entry.Amount}]";
-                if (entry.Price is not null)
-                    itemText = $"{itemText} | ${entry.Price}";
+                // GabyStation -> Economy begin
+                if (entry.Price is { } price && price != 0)
+                    itemText = $"{itemText} | ${price}";
+                // GabyStation -> Economy end
                 _amounts[entry.ID] = entry.Amount;
 
                 if (itemText.Length > longestEntry.Length)
@@ -278,13 +280,14 @@ namespace Content.Client.VendingMachines.UI
                     continue;
                 var amount = entry.Amount;
                 // Could be better? Problem is all inventory entries get squashed.
-                var text = GetItemText(dummy, amount, entry.Price);
+                var text = GetItemText(dummy, amount, entry.Price); // GabyStation -> Economy
 
                 button.Item.SetText(text);
                 button.Button.Disabled = !enabled || amount == 0;
             }
         }
 
+        // GabyStation -> Economy
         private string GetItemText(EntityUid dummy, uint amount, uint? price = default)
         {
             var itemName = Identity.Name(dummy, _entityManager);

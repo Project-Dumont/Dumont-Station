@@ -157,7 +157,7 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
-  - type: StaticPrice # Gabystation change
+  - type: StaticPrice # GabyStation -> Economy
     price: 10
 
 - type: entity

@@ -65,11 +65,10 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
         SubscribeLocalEvent<VendingMachineRestockComponent, AfterInteractEvent>(OnAfterInteract);
 
-        // Gaby change - moved to server, bye bye predict
-        //Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
-        //{
-        //    subs.Event<VendingMachineEjectMessage>(OnInventoryEjectMessage);
-        //});
+        // GabyStation -> Economy,Unpredict VendingMachine
+        // Subs.BuiEvents<VendingMachineComponent>, OnInventoryEjectMessage, OnMapInit, IsAuthorized
+        // TryEjectVendorItem, Deny, AuthorizedVend, RestockInventoryFromPrototype, AddInventoryFromPrototype
+        // All moved to Server.
     }
 
     private void OnVendingGetState(Entity<VendingMachineComponent> entity, ref ComponentGetState args)
@@ -150,10 +149,6 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         }
     }
 
-    // Gaby change - moved to server
-    // protected void OnInventoryEjectMessage(Entity<VendingMachineComponent> entity, ref VendingMachineEjectMessage args) {}
-
-    // Gaby change - moved to server
     protected virtual void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args) { }
 
     protected virtual void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false) { }
@@ -257,10 +252,4 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
         return GetAllInventory(uid, component).Where(_ => _.Amount > 0).ToList();
     }
-
-    // Gaby station change - pass to server
-    /*private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
-        InventoryType type,
-        VendingMachineComponent? component = null, float restockQuality = 1.0f)
-    { }*/
 }

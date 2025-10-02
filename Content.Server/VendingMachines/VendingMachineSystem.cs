@@ -141,6 +141,7 @@ namespace Content.Server.VendingMachines
             });
         }
 
+        // GabyStation -> Economy,Unpredict VendingMachine begin
         private void OnEjectMessage(Entity<VendingMachineComponent> vendor, ref VendingMachineEjectMessage args)
         {
             if (!_receiver.IsPowered(vendor.Owner) || Deleted(vendor.Owner))
@@ -215,24 +216,6 @@ namespace Content.Server.VendingMachines
             TryEjectVendorItem(vendor, type, itemId, vendor.Comp.CanShoot, sender);
         }
 
-        private bool CanPurchase(Entity<VendingMachineComponent?> vendor, EntityUid actor, VendingMachineInventoryEntry entry)
-        {
-            if (entry.Price is not { } price)
-                return true;
-
-            if (_id.TryFindIdCard(actor, out var id)
-                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
-                && card.Station is not null
-                && TryComp<EconomyManagerComponent>(card.Station, out var economy)
-                && _economy.ValidateCard(economy, card)
-                && _economy.CanAfford(economy, card.AccountId, price, out var _))
-                return true;
-
-            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-insufficient-balance"), vendor.Owner);
-            Deny(vendor, actor);
-            return false;
-        }
-
         /// <summary>
         /// Tries to eject the provided item. Will do nothing if the vending machine is incapable of ejecting, already ejecting
         /// or the item doesn't exist in its inventory.
@@ -299,6 +282,25 @@ namespace Content.Server.VendingMachines
 
             Audio.PlayPvs(comp.SoundVend, uid);
         }
+        // GabyStation -> Economy,Unpredict VendingMachine end
+
+        private bool CanPurchase(Entity<VendingMachineComponent?> vendor, EntityUid actor, VendingMachineInventoryEntry entry)
+        {
+            if (entry.Price is not { } price)
+                return true;
+
+            if (_id.TryFindIdCard(actor, out var id)
+                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && card.Station is not null
+                && TryComp<EconomyManagerComponent>(card.Station, out var economy)
+                && _economy.ValidateCard(economy, card)
+                && _economy.CanAfford(economy, card.AccountId, price, out var _))
+                return true;
+
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-insufficient-balance"), vendor.Owner);
+            Deny(vendor, actor);
+            return false;
+        }
 
         private void OnVendingPrice(EntityUid uid, VendingMachineComponent component, ref PriceCalculationEvent args)
         {
@@ -327,7 +329,7 @@ namespace Content.Server.VendingMachines
                 TryUpdateVisualState((uid, component));
             }
 
-            // Gaby change
+            // GabyStation -> Economy
             RestockInventoryFromPrototype(uid, component, component.InitialStockQuality);
         }
 
@@ -458,6 +460,7 @@ namespace Content.Server.VendingMachines
             }
             else
             {
+                // GabyStation -> Economy
                 TryEjectVendorItem((uid, vendComponent), item.Type, item.ID, throwItem, user: null);
             }
         }

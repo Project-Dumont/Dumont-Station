@@ -213,20 +213,26 @@ namespace Content.Shared.VendingMachines
         public bool LoopDenyAnimation = true;
         #endregion
 
+        // GabyStation -> Economy begin
         /// <summary>
-        /// Gabystation economy change: Handles if the vend machine will have paid items.
+        /// Handles if the vend machine will have paid items.
         /// Disabling this will make all items have no cost.
-        /// (Updated when restoked)
         /// </summary>
+        /// <remarks>
+        /// Updated when restoked.
+        /// </remarks>
         [DataField]
         public bool PaidItems = true;
 
         /// <summary>
-        /// Gabystation economy change: Multiplies the price of each item in vend.
-        /// (Updated when restoked)
+        /// Multiplies the price of each item in vend.
         /// </summary>
+        /// <remarks>
+        /// Updated when restoked.
+        /// </remarks>
         [DataField]
         public float PriceMultiplier = 1f;
+        // GabyStation -> Economy end
     }
 
     [Serializable, NetSerializable]
@@ -239,13 +245,14 @@ namespace Content.Shared.VendingMachines
         [ViewVariables(VVAccess.ReadWrite)]
         public uint Amount;
         [ViewVariables(VVAccess.ReadWrite)]
-        public uint? Price; // Gaby change
+        public uint? Price; // GabyStation -> Economy
         public VendingMachineInventoryEntry(InventoryType type, string id, uint amount, uint? price = default)
         {
             Type = type;
             ID = id;
             Amount = amount;
-            Price = price ?? Price;
+            // Talvez default = 0?
+            Price = price ?? Price; // GabyStation -> Economy
         }
 
         public VendingMachineInventoryEntry(VendingMachineInventoryEntry entry)
@@ -253,7 +260,7 @@ namespace Content.Shared.VendingMachines
             Type = entry.Type;
             ID = entry.ID;
             Amount = entry.Amount;
-            Price = entry.Price;
+            Price = entry.Price; // GabyStation -> Economy
         }
     }
 
