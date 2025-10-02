@@ -41,7 +41,6 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] private   readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private   readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] private   readonly SharedDoAfterSystem _doAfter = default!;
@@ -154,29 +153,6 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
     protected virtual void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false) { }
 
-    /// <summary>
-    /// Checks if the user is authorized to use this vending machine
-    /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="sender">Entity trying to use the vending machine</param>
-    /// <param name="vendComponent"></param>
-    public bool IsAuthorized(Entity<VendingMachineComponent?> vendor, EntityUid sender)
-    {
-        if (!Resolve(vendor.Owner, ref vendor.Comp))
-            return false;
-
-        if (!TryComp<AccessReaderComponent>(vendor.Owner, out var accessReader))
-            return true;
-
-        if (_accessReader.IsAllowed(sender, vendor.Owner, accessReader)
-            || HasComp<EmaggedComponent>(vendor.Owner))
-            return true;
-
-        Popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-access-denied"), vendor.Owner, sender);
-        Deny(vendor, sender);
-        return false;
-    }
-
     protected VendingMachineInventoryEntry? GetEntry(EntityUid uid, string entryId, InventoryType type, VendingMachineComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -189,20 +165,6 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
             return component.ContrabandInventory.GetValueOrDefault(entryId);
 
         return component.Inventory.GetValueOrDefault(entryId);
-    }
-
-    public void Deny(Entity<VendingMachineComponent?> entity, EntityUid? user = null)
-    {
-        if (!Resolve(entity.Owner, ref entity.Comp))
-            return;
-
-        if (entity.Comp.Denying)
-            return;
-
-        entity.Comp.DenyEnd = Timing.CurTime + entity.Comp.DenyDelay;
-        Audio.PlayPredicted(entity.Comp.SoundDeny, entity.Owner, user, AudioParams.Default.WithVolume(-2f));
-        TryUpdateVisualState(entity);
-        Dirty(entity);
     }
 
     protected virtual void UpdateUI(Entity<VendingMachineComponent?> entity) { }

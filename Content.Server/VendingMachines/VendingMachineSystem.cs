@@ -97,6 +97,7 @@ using Content.Shared._Gabystation.NanoBank;
 using Content.Server._Gabystation.Economy;
 using Content.Shared.Advertise.Components;
 using Content.Shared.Advertise.Systems;
+using Content.Shared.Emag.Components;
 
 namespace Content.Server.VendingMachines
 {
@@ -110,6 +111,7 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly SharedIdCardSystem _id = default!; // Gaby change
         [Dependency] private readonly EconomyManagerSystem _economy = default!; // Gaby change
         [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
+        [Dependency] private readonly AccessReaderSystem _accessReader = default!;
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -123,13 +125,9 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, PriceCalculationEvent>(OnVendingPrice);
             SubscribeLocalEvent<VendingMachineComponent, EmpPulseEvent>(OnEmpPulse);
             SubscribeLocalEvent<VendingMachineComponent, TryVocalizeEvent>(OnTryVocalize);
-
             SubscribeLocalEvent<VendingMachineComponent, ActivatableUIOpenAttemptEvent>(OnActivatableUIOpenAttempt);
-
             SubscribeLocalEvent<VendingMachineComponent, VendingMachineSelfDispenseEvent>(OnSelfDispense);
-
             SubscribeLocalEvent<VendingMachineComponent, RestockDoAfterEvent>(OnDoAfter);
-
             SubscribeLocalEvent<VendingMachineRestockComponent, PriceCalculationEvent>(OnPriceCalculation);
 
             Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
@@ -147,6 +145,43 @@ namespace Content.Server.VendingMachines
                 return;
 
             AuthorizedVend(vendor.AsNullable(), actor, args.Type, args.ID);
+        }
+
+        public void Deny(Entity<VendingMachineComponent?> entity, EntityUid? user = null)
+        {
+            if (!Resolve(entity.Owner, ref entity.Comp))
+                return;
+
+            if (entity.Comp.Denying)
+                return;
+
+            entity.Comp.DenyEnd = Timing.CurTime + entity.Comp.DenyDelay;
+            Audio.PlayPvs(entity.Comp.SoundDeny, entity.Owner, AudioParams.Default.WithVolume(-2f));
+            TryUpdateVisualState(entity);
+            Dirty(entity);
+        }
+
+        /// <summary>
+        /// Checks if the user is authorized to use this vending machine
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="sender">Entity trying to use the vending machine</param>
+        /// <param name="vendComponent"></param>
+        public bool IsAuthorized(Entity<VendingMachineComponent?> vendor, EntityUid sender)
+        {
+            if (!Resolve(vendor.Owner, ref vendor.Comp))
+                return false;
+
+            if (!TryComp<AccessReaderComponent>(vendor.Owner, out var accessReader))
+                return true;
+
+            if (_accessReader.IsAllowed(sender, vendor.Owner, accessReader)
+                || HasComp<EmaggedComponent>(vendor.Owner))
+                return true;
+
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-access-denied"), vendor.Owner);
+            Deny(vendor, sender);
+            return false;
         }
 
         /// <summary>
