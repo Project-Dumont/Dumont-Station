@@ -292,6 +292,11 @@ namespace Content.Client.Construction.UI
             }
         }
 
+        /// <summary>
+        /// Builds a list of construction recipes that match the provided search text and category, and returns them sorted by prototype name.
+        /// </summary>
+        /// <param name="args">A tuple where Item1 is the search text and Item2 is the selected category (empty or the "all" category selects all recipes).</param>
+        /// <returns>A list of ConstructionMenu.ConstructionMenuListData for recipes that are visible to the local player, match the search and category (favorites honored), and have a resolvable target prototype, sorted by prototype name.</returns>
         private List<ConstructionMenu.ConstructionMenuListData> GetAndSortRecipes((string, string) args)
         {
             var recipes = new List<ConstructionMenu.ConstructionMenuListData>();
@@ -669,6 +674,10 @@ namespace Content.Client.Construction.UI
             UpdateGhostPlacement();
         }
 
+        /// <summary>
+        /// Refreshes the currently selected recipe's information when a construction guide becomes available.
+        /// </summary>
+        /// <param name="e">The prototype ID of the construction whose guide became available.</param>
         private void SystemGuideAvailable(object? sender, string e)
         {
             if (!CraftingAvailable)
