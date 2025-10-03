@@ -30,3 +30,9 @@
   storage:
     back:
     - PlushieKiiaraWami
+
+- type: loadout
+  id: PlushieKiiaraWarden
+  storage:
+    back:
+    - PlushieKiiaraWarden

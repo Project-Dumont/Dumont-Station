@@ -111,3 +111,36 @@
     - type: EmitSoundOnCollide
       sound:
         path: /Audio/Animals/cat_meow2.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieKiiaraWarden
+  name: Pelúcia de Kiiara Warden
+  description: Pelúcia do exemplar Warden Kiiara Wami, apesar da fofura não ouse desodebecer apenas para escutar seus meows!
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_warden.rsi
+      state: kiiara
+    - type: Item
+      size: Small
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_warden.rsi
+    - type: Clothing
+      quickEquip: false
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_warden.rsi
+      slots:
+      - HEAD
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
