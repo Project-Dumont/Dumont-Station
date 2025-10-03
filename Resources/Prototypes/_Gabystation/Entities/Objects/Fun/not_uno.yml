@@ -61,6 +61,8 @@
     contents:
     - id: CardDeckNuno
       amount: 1
+  - type: StaticPrice
+    price: 25
 
 - type: entity
   parent: CardDeckNunoBase
