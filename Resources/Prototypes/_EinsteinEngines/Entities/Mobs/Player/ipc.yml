@@ -136,6 +136,7 @@
     entityType: enum.SiliconType.Player
     batteryPowered: true
     drainPerSecond: 1.5
+    idleDrainReduction: 0.6 # TheDen - 60% less power usage while idling, for IPC Dynamic Power Draw
     chargeThresholdMid: 0.80
     chargeThresholdLow: 0.35
     chargeThresholdCritical: 0.10
@@ -165,6 +166,7 @@
   - type: WeldingHealable
   - type: DamagedSiliconAccent
   - type: Uncloneable
+  - type: Fingerprint
   - type: Sprinter # Goob Change: slight nerf to speed because heavy robot, mass contest when
     sprintSpeedMultiplier: 1.2
   - type: Tag

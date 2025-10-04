@@ -41,6 +41,7 @@ public sealed class SiliconChargeSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedJetpackSystem _jetpack = default!; // TheDen - IPC Dynamic Power draw
     public override void Initialize()
     {
         base.Initialize();
@@ -89,7 +90,7 @@ public sealed class SiliconChargeSystem : EntitySystem
             // Check if the Silicon is an NPC, and if so, follow the delay as specified in the CVAR.
             if (siliconComp.EntityType.Equals(SiliconType.Npc))
             {
-                var updateTime = _config.GetCVar(GoobCVars.SiliconNpcUpdateTime);
+                var updateTime = _config.GetCVar(CCVars.SiliconNpcUpdateTime);
                 if (_timing.CurTime - siliconComp.LastDrainTime < TimeSpan.FromSeconds(updateTime))
                     continue;
 
@@ -123,7 +124,10 @@ public sealed class SiliconChargeSystem : EntitySystem
             // Maybe use something similar to refreshmovespeedmodifiers, where it's stored in the component.
             // Maybe it doesn't matter, and stuff should just use static drain?
             if (!siliconComp.EntityType.Equals(SiliconType.Npc)) // Don't bother checking heat if it's an NPC. It's a waste of time, and it'd be delayed due to the update time.
+            {
                 drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
+                drainRateFinalAddi += SiliconMovementEffects(silicon, siliconComp); // TheDen - IPC Dynamic Power draw // Removes between 90% and 0% of the total power draw.
+            }
 
             // Ensures that the drain rate is at least 10% of normal,
             // and would allow at least 4 minutes of life with a max charge, to prevent cheese.
@@ -202,5 +206,26 @@ public sealed class SiliconChargeSystem : EntitySystem
             return 0.5f + temperComp.CurrentTemperature / thermalComp.NormalBodyTemperature * 0.5f;
 
         return 0;
+    }
+
+    // TheDen - IPC Dynamic Power draw
+    private float SiliconMovementEffects(EntityUid silicon, SiliconComponent siliconComp)
+    {
+        // Calculate dynamic power draw.
+        if (!TryComp(silicon, out MovementSpeedModifierComponent? movement) ||
+            !TryComp(silicon, out PhysicsComponent? physics) ||
+            !TryComp(silicon, out InputMoverComponent? input))
+            return 0;
+
+        if (input.HeldMoveButtons == MoveButtons.None || _jetpack.IsUserFlying(silicon)) // If nothing is being held or jet packing
+        {
+            return siliconComp.DrainPerSecond * siliconComp.IdleDrainReduction * (-1); // Reduces draw by idle drain reduction
+        }
+
+        // LinearVelocity is relative to the parent
+        return Math.Clamp(
+            siliconComp.DrainPerSecond * ((physics.LinearVelocity.Length() / movement.CurrentSprintSpeed) - 1), // Power draw changes as a negative percentage of the movement
+            siliconComp.DrainPerSecond * siliconComp.IdleDrainReduction * (-1), // Should be a maximum of the idle drain reduction (negative)
+            0f); // Minimum reduction is no change to power draw
     }
 }
