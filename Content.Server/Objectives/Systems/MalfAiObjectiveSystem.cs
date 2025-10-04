@@ -71,7 +71,7 @@ public sealed class MalfAiObjectiveSystem : EntitySystem
     private void OnSurviveGetProgress(Entity<MalfAiSurviveObjectiveComponent> objective, ref ObjectiveGetProgressEvent args)
     {
         if (args.Mind.OwnedEntity is { } ent
-            && HasComp<MalfAiMarkerComponent>(ent))
+            && HasComp<MalfunctioningAiComponent>(ent))
             args.Progress = 1.0f;
         else
             args.Progress = 0.0f;

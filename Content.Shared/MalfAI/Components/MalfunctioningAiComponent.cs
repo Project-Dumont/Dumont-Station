@@ -13,13 +13,13 @@ namespace Content.Shared.MalfAI.Components;
 /// Used to gate special interactions (e.g., APC CPU siphoning) without affecting visuals like EMAG.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class MalfAiMarkerComponent : Component
+public sealed partial class MalfunctioningAiComponent : Component
 {
     [DataField]
     public LocId StoreName = "store-preset-name-malfai";
 
     [DataField]
-    public string[] StoreCategories = new[] { "All", "MalfAI", "Deception", "Factory", "Disruption" };
+    public string[] StoreCategories = { "All", "MalfAI", "Deception", "Factory", "Disruption" };
 
     [DataField]
     public string CurrencyId = "CPU";

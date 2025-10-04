@@ -108,7 +108,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
     private void OnDoomsdayAction(Entity<StationAiHeldComponent> ai, ref MalfAiDoomsdayActionEvent args)
     {
         // Only malf AIs can use this.
-        if (!HasComp<MalfAiMarkerComponent>(ai))
+        if (!HasComp<MalfunctioningAiComponent>(ai))
         {
             ShowDoomsdayPopup(ai.Owner, "malfai-doomsday-popup-not-malf");
             return;

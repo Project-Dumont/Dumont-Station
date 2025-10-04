@@ -50,7 +50,7 @@ public sealed partial class AIBuildSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<AIBuildRequestEvent>(OnBuildRequest);
-        SubscribeLocalEvent<MalfAiMarkerComponent, AIBuildDoAfterEvent>(OnBuildDoAfter);
+        SubscribeLocalEvent<MalfunctioningAiComponent, AIBuildDoAfterEvent>(OnBuildDoAfter);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public sealed partial class AIBuildSystem : EntitySystem
     /// <summary>
     /// Handles completion of the build process
     /// </summary>
-    private void OnBuildDoAfter(EntityUid uid, MalfAiMarkerComponent component, AIBuildDoAfterEvent args)
+    private void OnBuildDoAfter(EntityUid uid, MalfunctioningAiComponent component, AIBuildDoAfterEvent args)
     {
         if (args.Cancelled)
             return;

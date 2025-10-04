@@ -20,10 +20,10 @@ public sealed partial class MalfAiRoboticsFactorySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MalfAiMarkerComponent, MalfAiRoboticsFactoryActionEvent>(OnRoboticsFactory);
+        SubscribeLocalEvent<MalfunctioningAiComponent, MalfAiRoboticsFactoryActionEvent>(OnRoboticsFactory);
     }
 
-    private void OnRoboticsFactory(Entity<MalfAiMarkerComponent> malf, ref MalfAiRoboticsFactoryActionEvent args)
+    private void OnRoboticsFactory(Entity<MalfunctioningAiComponent> malf, ref MalfAiRoboticsFactoryActionEvent args)
     {
         if (args.Handled)
             return;

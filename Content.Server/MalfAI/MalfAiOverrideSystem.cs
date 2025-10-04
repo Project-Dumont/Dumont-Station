@@ -55,7 +55,7 @@ public sealed class MalfAiOverrideSystem : EntitySystem
         var popupTarget = GetAiEyeForPopup(ai.Owner) ?? ai.Owner;
 
         // Only malf AIs can use this.
-        if (!HasComp<MalfAiMarkerComponent>(ai))
+        if (!HasComp<MalfunctioningAiComponent>(ai))
         {
             _popup.PopupEntity(Loc.GetString("malfai-override-not-malf"), popupTarget, ai);
             return;

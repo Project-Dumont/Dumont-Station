@@ -237,7 +237,7 @@ public sealed partial class StoreSystem : EntitySystem
     {
         if (!store.CurrencyWhitelist.Contains(CpuCurrencyId))
             return;
-        if (!HasComp<MalfAiMarkerComponent>(uid))
+        if (!HasComp<MalfunctioningAiComponent>(uid))
             return;
 
         short amountInt = 0;

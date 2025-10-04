@@ -129,7 +129,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         // Only Malf AI should see the impose-law button.
         var isMalfAi = false;
         if (IoCManager.Resolve<IPlayerManager>().LocalEntity is { } local)
-            isMalfAi = _entMan.HasComponent<MalfAiMarkerComponent>(local);
+            isMalfAi = _entMan.HasComponent<MalfunctioningAiComponent>(local);
 
         ImposeLawButton.Visible = isMalfAi;
     }

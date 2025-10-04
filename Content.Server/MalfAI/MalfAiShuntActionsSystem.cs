@@ -27,7 +27,7 @@ public sealed class MalfAiShuntActionsSystem : EntitySystem
     private void OnShuntToApcAction(EntityUid uid, StoreComponent comp, ref MalfAiShuntToApcActionEvent args)
     {
         var performer = args.Performer != default ? args.Performer : uid;
-        if (!HasComp<MalfAiMarkerComponent>(performer) || !HasComp<StationAiHeldComponent>(performer))
+        if (!HasComp<MalfunctioningAiComponent>(performer) || !HasComp<StationAiHeldComponent>(performer))
         {
             var popupTarget = GetAiEyeForPopup(performer) ?? performer;
             _popup.PopupEntity(Loc.GetString("malfai-shunt-invalid-user"), popupTarget, performer, PopupType.Medium);
@@ -40,7 +40,7 @@ public sealed class MalfAiShuntActionsSystem : EntitySystem
     private void OnReturnToCoreAction(EntityUid uid, StoreComponent comp, ref MalfAiReturnToCoreActionEvent args)
     {
         var performer = args.Performer != default ? args.Performer : uid;
-        if (!HasComp<MalfAiMarkerComponent>(performer) || !HasComp<StationAiHeldComponent>(performer))
+        if (!HasComp<MalfunctioningAiComponent>(performer) || !HasComp<StationAiHeldComponent>(performer))
         {
             var popupTarget = GetAiEyeForPopup(performer) ?? performer;
             _popup.PopupEntity(Loc.GetString("malfai-return-invalid-user"), popupTarget, performer, PopupType.Medium);

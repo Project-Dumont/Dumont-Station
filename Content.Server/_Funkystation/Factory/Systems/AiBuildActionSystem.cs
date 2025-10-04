@@ -103,13 +103,13 @@ public sealed partial class AiBuildActionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MalfAiMarkerComponent, AiBuildActionEvent>(OnBuildStart);
-        SubscribeLocalEvent<MalfAiMarkerComponent, AiBuildCancelEvent>(OnBuildCancel);
-        SubscribeLocalEvent<MalfAiMarkerComponent, AiBuildDoAfterEvent>(OnBuildDoAfter);
+        SubscribeLocalEvent<MalfunctioningAiComponent, AiBuildActionEvent>(OnBuildStart);
+        SubscribeLocalEvent<MalfunctioningAiComponent, AiBuildCancelEvent>(OnBuildCancel);
+        SubscribeLocalEvent<MalfunctioningAiComponent, AiBuildDoAfterEvent>(OnBuildDoAfter);
     }
 
     // Start: resolve tile, mark active, play visual, start DoAfter
-    private void OnBuildStart(EntityUid uid, MalfAiMarkerComponent comp, ref AiBuildActionEvent args)
+    private void OnBuildStart(EntityUid uid, MalfunctioningAiComponent comp, ref AiBuildActionEvent args)
     {
         var performer = args.Performer;
 
@@ -185,7 +185,7 @@ public sealed partial class AiBuildActionSystem : EntitySystem
     }
 
     // External cancel: stop countdown, clean visuals, notify
-    private void OnBuildCancel(EntityUid uid, MalfAiMarkerComponent comp, ref AiBuildCancelEvent ev)
+    private void OnBuildCancel(EntityUid uid, MalfunctioningAiComponent comp, ref AiBuildCancelEvent ev)
     {
         var performer = ev.Performer;
         if (!_active.TryGetValue(performer, out var build))
@@ -199,7 +199,7 @@ public sealed partial class AiBuildActionSystem : EntitySystem
     }
 
     // Completion or cancellation from DoAfter
-    private void OnBuildDoAfter(EntityUid uid, MalfAiMarkerComponent comp, ref AiBuildDoAfterEvent args)
+    private void OnBuildDoAfter(EntityUid uid, MalfunctioningAiComponent comp, ref AiBuildDoAfterEvent args)
     {
         var performer = uid;
 

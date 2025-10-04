@@ -19,6 +19,7 @@ using Content.Shared.Store;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
 using Content.Client.UserInterface.Systems.Alerts.Widgets;
 using Content.Shared.MalfAI.Components;
+
 namespace Content.Client.MalfAI;
 
 /// <summary>
@@ -251,7 +252,7 @@ public sealed class MalfAiCpuHudSystem : EntitySystem
             return local;
 
         // First try: find any entity that has both the MalfAiMarker and a Store.
-        var query = AllEntityQuery<MalfAiMarkerComponent, StoreComponent>();
+        var query = AllEntityQuery<MalfunctioningAiComponent, StoreComponent>();
         EntityUid? candidate = null;
         while (query.MoveNext(out var uid, out _, out _))
         {
@@ -270,7 +271,7 @@ public sealed class MalfAiCpuHudSystem : EntitySystem
             return;
 
         var localOpt = _players.LocalEntity;
-        var shouldShow = localOpt.HasValue && (HasComp<StationAiHeldComponent>(localOpt.Value) || HasComp<MalfAiMarkerComponent>(localOpt.Value));
+        var shouldShow = localOpt.HasValue && (HasComp<StationAiHeldComponent>(localOpt.Value) || HasComp<MalfunctioningAiComponent>(localOpt.Value));
 
         if (!shouldShow)
         {

@@ -41,7 +41,7 @@ public sealed class MalfAiShuntSystem : EntitySystem
         var popupTarget = GetAiEyeForPopup(ai.Owner) ?? ai.Owner;
 
         // Only Malf AI can shunt.
-        if (!HasComp<MalfAiMarkerComponent>(ai))
+        if (!HasComp<MalfunctioningAiComponent>(ai))
             return;
 
         if (!HasComp<ApcComponent>(args.Target))
@@ -111,7 +111,7 @@ public sealed class MalfAiShuntSystem : EntitySystem
         var popupTarget = GetAiEyeForPopup(ai.Owner) ?? ai.Owner;
 
         // Only Malf AI can return via this action.
-        if (!HasComp<MalfAiMarkerComponent>(ai))
+        if (!HasComp<MalfunctioningAiComponent>(ai))
             return;
 
         // If the AI is currently hijacking a mech, delegate to hijack system instead.

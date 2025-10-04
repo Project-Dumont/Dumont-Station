@@ -408,9 +408,9 @@ public abstract partial class SharedMechSystem : EntitySystem
         var canMove = _actionBlocker.CanMove(toInsert);
         // Allow Malf AI brain entities to be inserted even if they cannot move.
         // Some forks may not keep StationAiHeldComponent on the brain when removed from its holder; in that case,
-        // still allow if the entity is the StationAiBrain prototype or carries the MalfAiMarkerComponent.
+        // still allow if the entity is the StationAiBrain prototype or carries the MalfunctioningAiComponent.
         var isAiHeld = HasComp<StationAiHeldComponent>(toInsert);
-        var hasMalfMarker = HasComp<MalfAiMarkerComponent>(toInsert);
+        var hasMalfMarker = HasComp<MalfunctioningAiComponent>(toInsert);
         var isStationAiBrainProto = false;
         var meta = MetaData(toInsert);
         if (meta.EntityPrototype != null)

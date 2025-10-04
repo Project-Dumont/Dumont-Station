@@ -35,7 +35,7 @@ public sealed class MalfAiHudSystem : EntitySystem
             return local;
 
         // Find any entity flagged as Malf AI that also has a store.
-        var query = AllEntityQuery<MalfAiMarkerComponent, StoreComponent>();
+        var query = AllEntityQuery<MalfunctioningAiComponent, StoreComponent>();
         while (query.MoveNext(out var uid, out _, out _))
             return uid;
 

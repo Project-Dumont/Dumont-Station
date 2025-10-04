@@ -17,10 +17,10 @@ public sealed class MalfAiSyndicateCommsSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MalfAiMarkerComponent, MalfAiSyndicateKeysUnlockedEvent>(OnSyndicateKeysUnlocked);
+        SubscribeLocalEvent<MalfunctioningAiComponent, MalfAiSyndicateKeysUnlockedEvent>(OnSyndicateKeysUnlocked);
     }
 
-    private void OnSyndicateKeysUnlocked(EntityUid uid, MalfAiMarkerComponent component, MalfAiSyndicateKeysUnlockedEvent args)
+    private void OnSyndicateKeysUnlocked(EntityUid uid, MalfunctioningAiComponent component, MalfAiSyndicateKeysUnlockedEvent args)
     {
         // Add or get the IntrinsicRadioTransmitterComponent for sending syndicate messages
         var transmitterComp = EnsureComp<IntrinsicRadioTransmitterComponent>(uid);

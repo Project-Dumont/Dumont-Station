@@ -14,7 +14,7 @@ namespace Content.Server.MalfAI;
 /// <summary>
 /// Ensures the Malf AI CPU alert is shown at the correct time:
 /// - When a CPU-enabled StoreComponent is added to a Malf AI entity.
-/// - When the MalfAiMarkerComponent starts on an entity that already has a CPU-enabled store.
+/// - When the MalfunctioningAiComponent starts on an entity that already has a CPU-enabled store.
 /// This prevents ordering issues where the alert would be shown before the store exists.
 /// </summary>
 public sealed class MalfAiHudServerSystem : EntitySystem
@@ -28,7 +28,7 @@ public sealed class MalfAiHudServerSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<StoreComponent, StoreAddedEvent>(OnStoreAdded);
-        SubscribeLocalEvent<MalfAiMarkerComponent, ComponentStartup>(OnMalfMarkerStartup);
+        SubscribeLocalEvent<MalfunctioningAiComponent, ComponentStartup>(OnMalfMarkerStartup);
     }
 
     private void OnStoreAdded(EntityUid uid, StoreComponent component, ref StoreAddedEvent args)
@@ -37,14 +37,14 @@ public sealed class MalfAiHudServerSystem : EntitySystem
         if (!component.CurrencyWhitelist.Contains(CpuCurrency))
             return;
 
-        if (!HasComp<MalfAiMarkerComponent>(uid))
+        if (!HasComp<MalfunctioningAiComponent>(uid))
             return;
 
         EnsureComp<AlertsComponent>(uid);
         _alerts.ShowAlert(uid, MalfCpuAlert);
     }
 
-    private void OnMalfMarkerStartup(EntityUid uid, MalfAiMarkerComponent component, ComponentStartup args)
+    private void OnMalfMarkerStartup(EntityUid uid, MalfunctioningAiComponent component, ComponentStartup args)
     {
         if (!TryComp<StoreComponent>(uid, out var store))
             return;

@@ -80,9 +80,9 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
         ApplyMalfSetup(args.EntityUid);
     }
 
-    private void ApplyMalfSetup(Entity<MalfAiMarkerComponent?> malf)
+    private void ApplyMalfSetup(Entity<MalfunctioningAiComponent?> malf)
     {
-        malf.Comp = EnsureComp<MalfAiMarkerComponent>(malf.Owner);
+        malf.Comp = EnsureComp<MalfunctioningAiComponent>(malf.Owner);
 
         var store = EnsureComp<StoreComponent>(malf.Owner);
         store.Name = malf.Comp.StoreName;
@@ -119,7 +119,7 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
             if (uid == aiEnt)
                 continue;
 
-            if (HasComp<MalfAiMarkerComponent>(uid))
+            if (HasComp<MalfunctioningAiComponent>(uid))
                 continue;
 
             candidates.Add((uid, mind));

@@ -41,7 +41,7 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MalfAiMarkerComponent, MalfAiHijackMechActionEvent>(OnHijackMechMarker);
+        SubscribeLocalEvent<MalfunctioningAiComponent, MalfAiHijackMechActionEvent>(OnHijackMechMarker);
 
         // Also handle cases where the AI is removed from any container (e.g., forced eject) by listening on the AI entity itself.
         // This avoids duplicate subscriptions with SharedMechSystem which already listens on MechPilotComponent for the same event.
@@ -51,7 +51,7 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
 
     }
 
-    private void OnHijackMechMarker(EntityUid uid, MalfAiMarkerComponent comp, ref MalfAiHijackMechActionEvent args)
+    private void OnHijackMechMarker(EntityUid uid, MalfunctioningAiComponent comp, ref MalfAiHijackMechActionEvent args)
     {
         // Fallback handler if the event was raised on an AI entity that might not carry StationAiHeldComponent in the subscription context.
         HandleHijack(uid, ref args);
@@ -67,7 +67,7 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
         var popupTarget = GetAiEyeForPopup(aiUid) ?? aiUid;
 
         // Must be Malfunctioning AI
-        if (!HasComp<MalfAiMarkerComponent>(aiUid))
+        if (!HasComp<MalfunctioningAiComponent>(aiUid))
             return;
 
         // Validate target mech (entity-targeted)

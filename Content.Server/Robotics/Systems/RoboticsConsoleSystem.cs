@@ -183,7 +183,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     private void OnImposeLaw(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleImposeLawMessage args)
     {
         // Only Malf AI may impose Law 0.
-        if (!HasComp<MalfAiMarkerComponent>(args.Actor) ||
+        if (!HasComp<MalfunctioningAiComponent>(args.Actor) ||
             !HasComp<StationAiHeldComponent>(args.Actor))
             return;
 

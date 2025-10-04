@@ -68,7 +68,7 @@ namespace Content.Client.Power.APC
                 hasAccess = accessReader.IsAllowed(player, Owner);
 
                 // Only Malf AI should see the siphon button.
-                isMalfAi = EntMan.HasComponent<MalfAiMarkerComponent>(player);
+                isMalfAi = EntMan.HasComponent<MalfunctioningAiComponent>(player);
             }
 
             _menu?.SetAccessEnabled(hasAccess);

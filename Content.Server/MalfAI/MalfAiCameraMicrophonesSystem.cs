@@ -99,7 +99,7 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
 
 
         // Iterate all candidate Malf AIs with the upgrade enabled.
-        var aiQuery = EntityQueryEnumerator<MalfAiMarkerComponent, StationAiHeldComponent, MalfAiCameraMicrophonesComponent, TransformComponent>();
+        var aiQuery = EntityQueryEnumerator<MalfunctioningAiComponent, StationAiHeldComponent, MalfAiCameraMicrophonesComponent, TransformComponent>();
         while (aiQuery.MoveNext(out var aiUid, out _, out _, out var micComp, out _))
         {
             if (!micComp.EnabledEffective)
