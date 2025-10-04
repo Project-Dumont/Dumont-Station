@@ -304,6 +304,9 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             cultists.Add((playerInfo, cult));
         }
 
+        if (!cultists.Any()) // GabyStation
+            return;
+
         var options = new VoteOptions
         {
             DisplayVotes = false,
