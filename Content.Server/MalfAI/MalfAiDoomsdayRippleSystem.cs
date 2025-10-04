@@ -15,6 +15,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Numerics;
+using Content.Shared.MalfAI.Events;
 
 namespace Content.Server.MalfAI;
 

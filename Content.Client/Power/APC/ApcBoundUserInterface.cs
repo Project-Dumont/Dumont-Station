@@ -34,6 +34,7 @@ using Content.Client.Power.APC.UI;
 using Content.Shared.Access.Systems;
 using Content.Shared.APC;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 

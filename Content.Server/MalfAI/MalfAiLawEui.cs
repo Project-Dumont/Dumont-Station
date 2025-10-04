@@ -6,6 +6,7 @@ using Content.Server.EUI;
 using Content.Server.Silicons.Laws;
 using Content.Shared.Eui;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;

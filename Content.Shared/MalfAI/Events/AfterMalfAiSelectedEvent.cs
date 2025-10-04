@@ -1,18 +1,14 @@
-using Robust.Shared.GameObjects;
+namespace Content.Shared.MalfAI.Events;
 
-namespace Content.Shared.MalfAI.Events
+/// <summary>
+/// Raised after an entity is selected as a MalfAI antagonist.
+/// </summary>
+public sealed class AfterMalfAiSelectedEvent : EntityEventArgs
 {
-    /// <summary>
-    /// Raised after an entity is selected as a MalfAI antagonist.
-    /// </summary>
-    public sealed class AfterMalfAiSelectedEvent : EntityEventArgs
-    {
-        public EntityUid EntityUid { get; }
+    public EntityUid EntityUid { get; }
 
-        public AfterMalfAiSelectedEvent(EntityUid entityUid)
-        {
-            EntityUid = entityUid;
-        }
+    public AfterMalfAiSelectedEvent(EntityUid entityUid)
+    {
+        EntityUid = entityUid;
     }
 }
-

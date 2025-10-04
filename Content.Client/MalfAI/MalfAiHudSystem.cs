@@ -13,6 +13,7 @@ using Content.Shared.Store;
 using Robust.Shared.Prototypes;
 using Content.Shared.Silicons.StationAi;
 using Robust.Client.GameObjects;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Client.MalfAI;
 

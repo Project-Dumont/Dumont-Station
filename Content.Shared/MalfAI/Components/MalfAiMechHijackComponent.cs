@@ -4,7 +4,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Marker component stored on the AI while it is hijacking a mech.

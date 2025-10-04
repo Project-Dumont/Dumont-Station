@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Events;
 
 /// <summary>
 /// Raised when the Malf AI Doomsday Protocol countdown completes (was not aborted).

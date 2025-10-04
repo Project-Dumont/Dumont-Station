@@ -4,7 +4,7 @@
 
 using Content.Shared.Actions;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Events;
 
 /// <summary>
 /// Action event for opening the Malf AI store interface.

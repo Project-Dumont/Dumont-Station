@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.GameObjects;
-
 namespace Content.Server._Funkystation.Factory.Components;
 
 /// <summary>

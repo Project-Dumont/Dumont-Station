@@ -14,6 +14,7 @@ using Content.Shared.Database;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Store.Components;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

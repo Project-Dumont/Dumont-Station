@@ -63,6 +63,7 @@ using Robust.Shared.Configuration;
 using Content.Shared.Implants.Components;
 using Content.Shared.MalfAI;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Shared.Mech.EntitySystems;
 

@@ -41,6 +41,7 @@ using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.Research.Systems;
 

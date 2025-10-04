@@ -23,6 +23,7 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicons.StationAi;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

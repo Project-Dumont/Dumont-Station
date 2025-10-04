@@ -6,17 +6,12 @@
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
-using Content.Server.DeviceNetwork;
-using Content.Server.DeviceNetwork.Systems;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Robotics;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
-using Content.Shared.MalfAI;
-using Robust.Shared.Localization;
-using System;
 using Content.Server.Silicons.Laws;
 using Content.Shared.Roles;
 using Content.Server.Mind;
@@ -25,6 +20,7 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.DeviceNetwork;
 using Robust.Server.Player;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.Robotics.Systems;
 

@@ -4,7 +4,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Tracks shunt state for a Malfunctioning AI brain entity (the entity with StationAiCoreComponent).

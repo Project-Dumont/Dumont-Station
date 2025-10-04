@@ -12,6 +12,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Player;
 using static Content.Server.Chat.Systems.ChatSystem;

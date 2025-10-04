@@ -4,7 +4,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Marks an entity to be omitted from camera upgrade considerations.

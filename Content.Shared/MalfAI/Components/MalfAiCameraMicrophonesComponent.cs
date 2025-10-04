@@ -3,7 +3,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Component for the Malf AI "Camera Microphones" upgrade.

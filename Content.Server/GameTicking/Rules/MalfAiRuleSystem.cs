@@ -9,17 +9,18 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Alert;
 using Robust.Server.Player;
-using Content.Shared.Roles;
-using Content.Server.Mind;
 using Content.Server.Actions;
 using Content.Server.Silicons.Laws;
 using Content.Shared.Mind;
 using Content.Server.Objectives;
 using Robust.Shared.Random;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.MalfAI;
 using Content.Server.Store.Systems;
-using Content.Shared.GameTicking;
+using Content.Shared.MalfAI.Components;
+using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.Silicons.Laws;
+using Content.Shared.Store.Components;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -50,9 +51,9 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
     private void SeedDefaultLaws(EntityUid rule)
     {
         // Ensure master lawset storage & law container exist on the rule entity.
-        var holder = EnsureComp<Content.Shared.MalfAI.MalfMasterLawsetComponent>(rule);
-        EnsureComp<Content.Shared.Silicons.Laws.Components.SiliconLawBoundComponent>(rule);
-        EnsureComp<Content.Shared.Silicons.Laws.Components.SiliconLawProviderComponent>(rule);
+        var holder = EnsureComp<MalfMasterLawsetComponent>(rule);
+        EnsureComp<SiliconLawBoundComponent>(rule);
+        EnsureComp<SiliconLawProviderComponent>(rule);
 
         // If empty, seed with defaults so the editor shows contents on first open.
         if (holder.Laws.Count == 0)
@@ -64,7 +65,7 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
 
         // Initialize the SiliconLawBoundComponent with the laws from MalfMasterLawsetComponent
         // so the law editor can properly read and display them
-        var defaultLaws = holder.Laws.Select((law, index) => new Content.Shared.Silicons.Laws.SiliconLaw
+        var defaultLaws = holder.Laws.Select((law, index) => new SiliconLaw
         {
             LawString = law,
             Order = index + 1
@@ -79,56 +80,54 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
         ApplyMalfSetup(args.EntityUid);
     }
 
-    private void ApplyMalfSetup(EntityUid aiEnt)
+    private void ApplyMalfSetup(Entity<MalfAiMarkerComponent?> malf)
     {
-        // Mark as Malf AI for special interactions
-        EnsureComp<Content.Shared.MalfAI.MalfAiMarkerComponent>(aiEnt);
+        malf.Comp = EnsureComp<MalfAiMarkerComponent>(malf.Owner);
 
-        var store = EnsureComp<Content.Shared.Store.Components.StoreComponent>(aiEnt);
-        // Configure store minimal settings
-        store.Name = "store-preset-name-malfai";
+        var store = EnsureComp<StoreComponent>(malf.Owner);
+        store.Name = malf.Comp.StoreName;
 
-        var requiredCategories = new[] { "All", "MalfAI", "Deception", "Factory", "Disruption" };
-        foreach (var category in requiredCategories)
+        foreach (var category in malf.Comp.StoreCategories)
         {
             if (!store.Categories.Contains(category))
                 store.Categories.Add(category);
         }
 
-        if (!store.CurrencyWhitelist.Contains("CPU"))
-            store.CurrencyWhitelist.Add("CPU");
+        store.CurrencyWhitelist.Add(malf.Comp.CurrencyId);
 
-        // Ensure UI updates and set starting balance to 0 CPU
-        _store.TryAddCurrency(new() { { "CPU", FixedPoint2.New(0) } }, aiEnt, store);
+        _store.TryAddCurrency(new() { { malf.Comp.CurrencyId, FixedPoint2.New(0) } }, malf.Owner, store);
 
-        // Grant the Open Shop action to the AI entity
-        _actions.AddAction(aiEnt, "ActionMalfAiOpenStore");
-        // Grant the Borgs management UI action
-        _actions.AddAction(aiEnt, "ActionMalfAiOpenBorgsUi");
+        _actions.AddAction(malf.Owner, malf.Comp.OpenStoreAction);
+        _actions.AddAction(malf.Owner, malf.Comp.OpenBorgsUiAction);
 
-        EnsureComp<MalfAiCameraUpgradeComponent>(aiEnt);
+        EnsureComp<MalfAiCameraUpgradeComponent>(malf.Owner);
 
         // Ensure AlertsComponent exists before showing alert and show CPU alert HUD on the client
-        EnsureComp<AlertsComponent>(aiEnt);
-        _alerts.ShowAlert(aiEnt, "MalfCpu");
+        EnsureComp<AlertsComponent>(malf.Owner);
+        _alerts.ShowAlert(malf.Owner, malf.Comp.CurrencyAlertId);
     }
 
-    private bool TryPickUniqueAssassinationTarget(EntityUid aiEnt, HashSet<EntityUid> reserved, out EntityUid picked)
+    private bool TryPickUniqueAssassinationTarget(EntityUid aiEnt, HashSet<EntityUid> reserved, [NotNullWhen(true)] out EntityUid picked)
     {
         picked = default;
 
-        // Eligible: crew with a mind, not the AI, and not another Malf AI.
-        var candidates = EntityQuery<MindComponent>()
-            .Where(m => m.Owner != aiEnt &&
-                       !HasComp<MalfAiMarkerComponent>(m.Owner) &&
-                       !reserved.Contains(m.Owner))
-            .Select(m => m.Owner)
-            .ToList();
+        var query = EntityQueryEnumerator<MindComponent>();
+        var candidates = new HashSet<Entity<MindComponent>>();
 
-        if (candidates.Count == 0)
+        while (query.MoveNext(out var uid, out var mind))
+        {
+            if (uid == aiEnt)
+                continue;
+
+            if (HasComp<MalfAiMarkerComponent>(uid))
+                continue;
+
+            candidates.Add((uid, mind));
+        }
+
+        if (!candidates.Any())
             return false;
 
-        // Use direct random selection since candidates are already filtered
         picked = _random.Pick(candidates);
         return true;
     }
@@ -137,7 +136,6 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
     {
         base.Started(uid, component, gameRule, args);
 
-        // Seed the default master lawset on the rule entity so it is available in editors/logic.
         SeedDefaultLaws(uid);
     }
 
@@ -147,39 +145,40 @@ public sealed class MalfAiRuleSystem : GameRuleSystem<MalfAiRuleComponent>
 
         // Preselect (pending) the current Station AI, if any, respecting preferences and whitelist.
         // This does not force assignment; actual assignment happens per AntagSelection timing.
-        if (TryComp<AntagSelectionComponent>(uid, out var ruleAntagComp))
+        if (!TryComp<AntagSelectionComponent>(uid, out var ruleAntagComp))
+            return;
+
+        var ruleAntagEnt = new Entity<AntagSelectionComponent>(uid, ruleAntagComp);
+        var def = ruleAntagComp.Definitions.FirstOrDefault();
+
+        if (def.Equals(default(AntagSelectionDefinition)))
+            return;
+
+        var session = _players.Sessions.FirstOrDefault(session =>
+            session.AttachedEntity is not null
+            && HasComp<StationAiHeldComponent>(session.AttachedEntity));
+
+        if (session?.AttachedEntity == null)
         {
-            var ruleAntagEnt = new Entity<AntagSelectionComponent>(uid, ruleAntagComp);
-            var def = ruleAntagComp.Definitions.FirstOrDefault();
-            if (!def.Equals(default(AntagSelectionDefinition)))
-            {
-                var session = _players.Sessions.FirstOrDefault(s =>
-                    s.AttachedEntity != null && HasComp<StationAiHeldComponent>(s.AttachedEntity));
-                if (session?.AttachedEntity == null)
-                {
-                    _sawmill.Warning("[MalfAI] No valid session found for MalfAi.");
-                    return;
-                }
-
-                // If we are mid-round (i.e., game rule was added after round started), assign immediately.
-                // Otherwise, just preselect and let the normal selection flow handle it.
-                var isMidRound = _ticker.RunLevel == GameRunLevel.InRound;
-
-                _sawmill.Debug($"[MalfAI] {(isMidRound ? "Assigning" : "Preselecting")} {session.Name} as Malf AI.");
-                _antag.TryMakeAntag(ruleAntagEnt, session, def, ignoreSpawner: true, checkPref: true, onlyPreSelect: !isMidRound);
-            }
+            _sawmill.Warning("[MalfAI] No valid session found for MalfAi.");
+            return;
         }
+
+        // If we are mid-round (i.e., game rule was added after round started), assign immediately.
+        // Otherwise, just preselect and let the normal selection flow handle it.
+        var isMidRound = _ticker.RunLevel == GameRunLevel.InRound;
+
+        _sawmill.Debug($"[MalfAI] {(isMidRound ? "Assigning" : "Preselecting")} {session.Name} as Malf AI.");
+        _antag.TryMakeAntag(ruleAntagEnt, session, def, ignoreSpawner: true, checkPref: true, onlyPreSelect: !isMidRound);
     }
 
-    private void OnObjectivesTextGetInfo(EntityUid uid, MalfAiRuleComponent component, ref ObjectivesTextGetInfoEvent args)
+    private void OnObjectivesTextGetInfo(Entity<MalfAiRuleComponent> rule, ref ObjectivesTextGetInfoEvent args)
     {
         args.AgentName = Loc.GetString("malfai-round-end-result");
 
-        var antags = _antag.GetAntagIdentifiers(uid);
-        foreach (var (mindId, _, name) in antags)
-        {
-            args.Minds.Add((mindId, name));
-        }
-    }
+        var antags = _antag.GetAntagIdentifiers(rule.Owner);
 
+        foreach (var (mindId, _, name) in antags)
+            args.Minds.Add((mindId, name));
+    }
 }

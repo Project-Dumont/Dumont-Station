@@ -87,9 +87,9 @@ public sealed class MalfAiDoomsdayRippleOverlay : Overlay
         const int steps = 8;
         for (int i = 0; i < steps; i++)
         {
-            float f = i / (float)(steps - 1);
+            float f = i / (float) (steps - 1);
             float r = radius - f * thickness;
-            byte a = (byte)(color.A * (1f - f));
+            byte a = (byte) (color.A * (1f - f));
             DrawCircleOutline(handle, center, MathF.Max(0f, r), new Color(color.R, color.G, color.B, a));
         }
     }
@@ -102,7 +102,7 @@ public sealed class MalfAiDoomsdayRippleOverlay : Overlay
         var prev = center + new Vector2(radius, 0f);
         for (int i = 1; i <= segments; i++)
         {
-            float theta = (float)(i * (2 * Math.PI / segments));
+            float theta = (float) (i * (2 * Math.PI / segments));
             var next = center + new Vector2(MathF.Cos(theta) * radius, MathF.Sin(theta) * radius);
             handle.DrawLine(prev, next, color);
             prev = next;

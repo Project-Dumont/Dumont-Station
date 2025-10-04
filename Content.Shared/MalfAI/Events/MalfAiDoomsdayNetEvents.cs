@@ -6,7 +6,7 @@ using Robust.Shared.Map;
 using System.Numerics;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Events;
 
 /// <summary>
 /// Broadcast by the server when the Malf AI Doomsday ripple begins,

@@ -1,5 +1,5 @@
 using Content.Server.Radio.Components;
-using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

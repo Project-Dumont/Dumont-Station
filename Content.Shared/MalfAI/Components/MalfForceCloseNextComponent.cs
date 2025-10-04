@@ -4,7 +4,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Marker component used by the Malf AI lockdown to force the next door close

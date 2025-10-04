@@ -14,6 +14,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Player;
 using Robust.Server.Player;
 using Content.Shared.Actions.Components;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

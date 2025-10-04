@@ -4,6 +4,7 @@
 
 using Content.Shared.Alert;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;

@@ -4,6 +4,7 @@
 
 using Content.Server.Objectives.Components;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 using Content.Shared.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
@@ -23,9 +24,10 @@ public sealed class MalfAiSabotageObjectiveSystem : EntitySystem
     private void OnObjectiveAssigned(EntityUid uid, MalfAiSabotageObjectiveComponent comp, ref ObjectiveAssignedEvent args)
     {
         // Debug: If no target was assigned (e.g., in single player), auto-complete for testing
-        if (TryComp<TargetObjectiveComponent>(uid, out var targetObj) && targetObj.Target == null)
-        {
-            Log.Warning($"MalfAi {comp.SabotageType} objective {ToPrettyString(uid)} could not find a target. This may be due to insufficient players.");
-        }
+        if (!TryComp<TargetObjectiveComponent>(uid, out var targetObj)
+            || targetObj.Target is not null)
+            return;
+
+        Log.Warning($"MalfAi {comp.SabotageType} objective {ToPrettyString(uid)} could not find a target. This may be due to insufficient players.");
     }
 }

@@ -2,10 +2,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Component indicating this APC is currently siphoned by a Malf AI.

@@ -12,6 +12,7 @@ using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Player;
 using static Content.Server.Chat.Systems.ChatSystem;
 using Content.Server.Silicons.StationAi;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

@@ -19,6 +19,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicons.StationAi;
+using Content.Shared.MalfAI.Events;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

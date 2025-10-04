@@ -11,6 +11,8 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.Actions;
+using Content.Shared.MalfAI.Components;
+using Content.Shared.Silicons.StationAi;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -38,9 +40,9 @@ public sealed partial class AIBuildRequestEvent : EntityEventArgs
 public sealed partial class AIBuildSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     private static readonly ISawmill Sawmill = Logger.GetSawmill("ai.build.system");
 
@@ -81,9 +83,9 @@ public sealed partial class AIBuildSystem : EntitySystem
 
         // Try to get the AI's visible eye entity (RemoteEntity) for DoAfter display
         EntityUid doAfterUser = requester;
-        var aiCore = SharedMalfAiHelpers.ResolveAiCoreFrom(EntityManager, _transform, requester);
+        var aiCore = SharedMalfAiHelpers.ResolveAiCoreFrom(EntityManager, _xform, requester);
         if (aiCore != EntityUid.Invalid &&
-            TryComp<Content.Shared.Silicons.StationAi.StationAiCoreComponent>(aiCore, out var coreComp) &&
+            TryComp<StationAiCoreComponent>(aiCore, out var coreComp) &&
             coreComp.RemoteEntity.HasValue)
         {
             doAfterUser = coreComp.RemoteEntity.Value;
@@ -109,7 +111,7 @@ public sealed partial class AIBuildSystem : EntitySystem
     /// <summary>
     /// Handles completion of the build process
     /// </summary>
-    private void OnBuildDoAfter(EntityUid uid, Content.Shared.MalfAI.MalfAiMarkerComponent component, AIBuildDoAfterEvent args)
+    private void OnBuildDoAfter(EntityUid uid, MalfAiMarkerComponent component, AIBuildDoAfterEvent args)
     {
         if (args.Cancelled)
             return;
@@ -126,7 +128,7 @@ public sealed partial class AIBuildSystem : EntitySystem
         try
         {
             // Spawn the entity
-            var spawned = EntityManager.SpawnEntity(args.Prototype, location);
+            var spawned = Spawn(args.Prototype, location);
 
             // If this is a robotics factory grid, remember who built it so we can assign borgs later.
             var isFactory = false;
@@ -137,8 +139,7 @@ public sealed partial class AIBuildSystem : EntitySystem
                 owner.Controller = uid; // uid is the AI entity that received the DoAfter completion
             }
 
-            // Anchor the entity if possible
-            TryAnchorEntity(spawned);
+            _xform.AnchorEntity(spawned);
 
             // On success, remove the Robotics Factory action from the Malf AI that built it.
             if (isFactory)
@@ -179,35 +180,22 @@ public sealed partial class AIBuildSystem : EntitySystem
         if (!coordinates.IsValid(EntityManager))
             return false;
 
-        if (!TryComp<MapGridComponent>(coordinates.EntityId, out var grid))
+        if (!TryComp<MapGridComponent>(coordinates.EntityId, out var gridComp))
             return false;
 
-        var tile = grid.TileIndicesFor(coordinates);
-        var tileRef = grid.GetTileRef(tile);
+        var grid = new Entity<MapGridComponent>(coordinates.EntityId, gridComp);
+
+        var tile = _map.TileIndicesFor(grid, coordinates);
+        var tileRef = _map.GetTileRef(grid, tile);
 
         // Check if the tile exists and is not empty space
         if (tileRef.Tile.IsEmpty)
             return false;
 
         // Check for anchored entities (existing structures, doors, etc.)
-        foreach (var _ in grid.GetAnchoredEntities(tile))
+        foreach (var _ in _map.GetAnchoredEntities(grid, tile))
             return false;
 
         return true;
-    }
-
-    /// <summary>
-    /// Attempts to anchor an entity if it can be anchored
-    /// </summary>
-    private void TryAnchorEntity(EntityUid entity)
-    {
-        if (!TryComp<TransformComponent>(entity, out var transform))
-            return;
-
-        if (transform.Anchored)
-            return;
-
-        // Try to anchor the entity
-        transform.Anchored = true;
     }
 }

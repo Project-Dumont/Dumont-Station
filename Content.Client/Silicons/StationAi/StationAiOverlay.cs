@@ -41,6 +41,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Movement.Components; // Shitmed - Starlight Abductors Change
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Client.Silicons.StationAi;
 
@@ -167,7 +168,7 @@ public sealed class StationAiOverlay : Overlay
                     foreach (var camUid in _lookup.GetEntitiesIntersecting(playerXform.MapID, expanded))
                     {
                         // Skip entities marked to be omitted from camera upgrades
-                        if (_entManager.HasComponent<Content.Shared.MalfAI.CameraUpgradeOmitterComponent>(camUid))
+                        if (_entManager.HasComponent<CameraUpgradeOmitterComponent>(camUid))
                             continue;
 
                         // Only consider entities with surveillance camera visuals component
@@ -204,7 +205,7 @@ public sealed class StationAiOverlay : Overlay
             }
 
             var gridMatrix = xforms.GetWorldMatrix(gridUid);
-            var matty =  Matrix3x2.Multiply(gridMatrix, invMatrix);
+            var matty = Matrix3x2.Multiply(gridMatrix, invMatrix);
 
             // Draw selected tiles to stencil and union circles
             worldHandle.RenderInRenderTarget(_stencilTexture!, () =>

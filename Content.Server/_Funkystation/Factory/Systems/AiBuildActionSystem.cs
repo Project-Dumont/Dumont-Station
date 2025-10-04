@@ -1,14 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-using System;
-using System.Collections.Generic;
 using System.Numerics;
 using Content.Shared.Actions;
-using Robust.Shared.Log;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Content.Shared._Funkystation.Factory.Events;
@@ -18,6 +13,7 @@ using Content.Shared._Funkystation.Factory;
 using Content.Shared.DoAfter;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -120,7 +116,7 @@ public sealed partial class AiBuildActionSystem : EntitySystem
         if (args.Handled)
             return;
 
-        var coords = ((WorldTargetActionEvent) args).Target;
+        var coords = args.Target;
 
         // Basic validation
         if (performer == EntityUid.Invalid || !coords.IsValid(EntityManager))
@@ -254,24 +250,6 @@ public sealed partial class AiBuildActionSystem : EntitySystem
         foreach (var action in toRemove)
             _actions.RemoveAction(action.AsNullable());
     }
-
-    // Attempts to anchor an entity if it has a transform and can be anchored.
-    private void TryAnchor(EntityUid uid)
-    {
-        if (!TryComp<TransformComponent>(uid, out var xform))
-            return;
-
-        if (xform.Anchored)
-            return;
-
-        _transform.AnchorEntity(uid);
-
-        if (TryComp<PhysicsComponent>(uid, out var _))
-        {
-            _physics.SetBodyType(uid, BodyType.Static);
-        }
-    }
-
 
     // Ensure tile is unoccupied by anchored entities (e.g., walls, machinery)
     private bool IsTileFree(EntityCoordinates coordinates)

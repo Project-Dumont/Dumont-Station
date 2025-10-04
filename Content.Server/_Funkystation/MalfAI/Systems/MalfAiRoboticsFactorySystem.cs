@@ -1,7 +1,7 @@
-using Content.Shared.MalfAI;  // MalfAiControlledComponent
-using Content.Shared.Actions.Events; // Correct namespace for MalfAiRoboticsFactoryActionEvent
+using Content.Shared.Actions.Events;
 using Content.Server._Funkystation.Factory.Systems;
 using Robust.Shared.Prototypes;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -19,28 +19,22 @@ public sealed partial class MalfAiRoboticsFactorySystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<MalfAiMarkerComponent, MalfAiRoboticsFactoryActionEvent>(OnRoboticsFactory);
     }
 
-    private void OnRoboticsFactory(EntityUid uid, MalfAiMarkerComponent comp, ref MalfAiRoboticsFactoryActionEvent args)
+    private void OnRoboticsFactory(Entity<MalfAiMarkerComponent> malf, ref MalfAiRoboticsFactoryActionEvent args)
     {
-
         if (args.Handled)
-        {
             return;
-        }
 
         // Check if target coordinates are valid
         if (!args.Target.IsValid(EntityManager))
-        {
             return;
-        }
 
-        // Server determines the prototype - client cannot specify it for security
-        var buildRequest = new AIBuildRequestEvent(uid, args.Target, RoboticsFactoryPrototype.Id);
+        var ev = new AIBuildRequestEvent(malf.Owner, args.Target, RoboticsFactoryPrototype.Id);
 
-        // Send the build request to the AIBuild system
-        RaiseLocalEvent(buildRequest);
+        RaiseLocalEvent(ev);
 
         args.Handled = true; // consume the action
     }

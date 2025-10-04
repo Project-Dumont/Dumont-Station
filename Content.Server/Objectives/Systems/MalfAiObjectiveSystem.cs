@@ -2,12 +2,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.MalfAI;
-using Content.Server.Mind;
-using Content.Server.Objectives.Components;
+using Content.Shared.MalfAI.Components;
+using Content.Shared.MalfAI.Events;
 using Content.Shared.Mind;
-using Content.Shared.Objectives.Components; // For ObjectiveGetProgressEvent
-using Robust.Shared.GameObjects; // For Entity<T>
+using Content.Shared.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -18,21 +16,19 @@ public sealed class MalfAiObjectiveSystem : EntitySystem
 {
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly TargetObjectiveSystem _target = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
-        // Listen for doomsday completion to mark sabotage objective as complete
         SubscribeLocalEvent<MalfAiDoomsdayCompletedEvent>(OnDoomsdayCompleted);
 
-        // Listen for objective progress checks
         SubscribeLocalEvent<MalfAiSabotageObjectiveComponent, ObjectiveGetProgressEvent>(OnSabotageGetProgress);
         SubscribeLocalEvent<MalfAiSurviveObjectiveComponent, ObjectiveGetProgressEvent>(OnSurviveGetProgress);
     }
 
     private void OnDoomsdayCompleted(MalfAiDoomsdayCompletedEvent ev)
     {
-        // Add marker to AI entity to indicate doomsday completion
         EnsureComp<MalfAiDoomsdayCompletedComponent>(ev.Ai);
     }
 
@@ -42,7 +38,8 @@ public sealed class MalfAiObjectiveSystem : EntitySystem
         if (comp.SabotageType == MalfAiSabotageType.Doomsday)
         {
             // Progress is 1.0 if doomsday has been completed for this AI
-            if (args.Mind.OwnedEntity != null && HasComp<MalfAiDoomsdayCompletedComponent>((EntityUid)args.Mind.OwnedEntity))
+            if (args.Mind.OwnedEntity is { } ent
+                && HasComp<MalfAiDoomsdayCompletedComponent>(ent))
                 args.Progress = 1.0f;
             else
                 args.Progress = 0.0f;
@@ -73,15 +70,11 @@ public sealed class MalfAiObjectiveSystem : EntitySystem
 
     private void OnSurviveGetProgress(Entity<MalfAiSurviveObjectiveComponent> objective, ref ObjectiveGetProgressEvent args)
     {
-        if (args.Mind.OwnedEntity != null &&
-            HasComp<MalfAiMarkerComponent>((EntityUid)args.Mind.OwnedEntity))
-        {
+        if (args.Mind.OwnedEntity is { } ent
+            && HasComp<MalfAiMarkerComponent>(ent))
             args.Progress = 1.0f;
-        }
         else
-        {
             args.Progress = 0.0f;
-        }
     }
 
     private float GetKillProgress(EntityUid target)

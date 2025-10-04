@@ -12,6 +12,7 @@ using Content.Server.Administration.Logs;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Content.Server.Silicons.StationAi;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 

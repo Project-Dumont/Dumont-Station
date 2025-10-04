@@ -38,6 +38,8 @@ using Content.Shared.Mind;
 using Robust.Shared.Timing;
 using Content.Shared.MalfAI;
 using Content.Shared.Store;
+using Content.Shared.MalfAI.Events;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.Store.Systems;
 
@@ -68,6 +70,7 @@ public sealed partial class StoreSystem : EntitySystem
         SubscribeLocalEvent<StoreComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<StoreComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StoreComponent, ComponentShutdown>(OnShutdown);
+
         SubscribeLocalEvent<StoreComponent, OpenUplinkImplantEvent>(OnImplantActivate);
         SubscribeLocalEvent<StoreComponent, OpenMalfAiStoreActionEvent>(OnMalfAiOpenStore);
 
@@ -144,9 +147,9 @@ public sealed partial class StoreSystem : EntitySystem
         ToggleUi(args.Performer, uid, component);
     }
 
-    private void OnMalfAiOpenStore(EntityUid uid, StoreComponent component, Content.Shared.MalfAI.OpenMalfAiStoreActionEvent args)
+    private void OnMalfAiOpenStore(Entity<StoreComponent> ent, ref OpenMalfAiStoreActionEvent args)
     {
-        ToggleUi(args.Performer, uid, component);
+        ToggleUi(args.Performer, ent.Owner, ent.Comp);
         args.Handled = true;
     }
 

@@ -47,6 +47,8 @@ using Content.Shared.MalfAI;
 using Content.Shared.CCVar;
 using Content.Shared.Emag.Components;
 using Robust.Shared.Configuration;
+using Content.Server.MalfAI;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.Power.EntitySystems;
 
@@ -60,7 +62,7 @@ public sealed class ApcSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly Content.Server.MalfAI.MalfAiApcSiphonSystem _malfAiSiphon = default!;
+    [Dependency] private readonly MalfAiApcSiphonSystem _malfAiSiphon = default!;
 
     public override void Initialize()
     {

@@ -6,8 +6,8 @@
 
 using System.Numerics;
 using Content.Client.MalfAI.Overlays;
-using Content.Shared.MalfAI;
 using Robust.Client.Audio;
+using Content.Shared.MalfAI.Events;
 using Robust.Client.Graphics;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;

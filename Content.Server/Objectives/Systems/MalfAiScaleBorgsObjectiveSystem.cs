@@ -4,6 +4,7 @@
 
 using Content.Server.Objectives.Components;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Objectives.Components;
 using Robust.Server.Player;
@@ -31,7 +32,7 @@ public sealed class MalfAiScaleBorgsObjectiveSystem : EntitySystem
         // Calculate target based on current player count
         var playerCount = _playerManager.PlayerCount;
         var targetBorgs = Math.Max(component.MinBorgs, Math.Min(component.MaxBorgs,
-            (int)Math.Ceiling((float)playerCount / component.PlayersPerBorg)));
+            (int) Math.Ceiling((float) playerCount / component.PlayersPerBorg)));
 
         component.Target = targetBorgs;
 
@@ -49,7 +50,7 @@ public sealed class MalfAiScaleBorgsObjectiveSystem : EntitySystem
         // Calculate target based on current player count
         var playerCount = _playerManager.PlayerCount;
         var targetBorgs = Math.Max(component.MinBorgs, Math.Min(component.MaxBorgs,
-            (int)Math.Ceiling((float)playerCount / component.PlayersPerBorg)));
+            (int) Math.Ceiling((float) playerCount / component.PlayersPerBorg)));
 
         component.Target = targetBorgs;
 
@@ -63,12 +64,6 @@ public sealed class MalfAiScaleBorgsObjectiveSystem : EntitySystem
 
     private void OnGetProgress(EntityUid uid, MalfAiScaleBorgsObjectiveComponent component, ref ObjectiveGetProgressEvent args)
     {
-        if (args.MindId == null)
-        {
-            args.Progress = 0.0f;
-            return;
-        }
-
         // Determine effective target for this calculation without mutating the component
         var effectiveTarget = component.Target > 0 ? component.Target : component.MinBorgs;
         if (component.Target <= 0)
@@ -93,7 +88,7 @@ public sealed class MalfAiScaleBorgsObjectiveSystem : EntitySystem
         }
 
         // Calculate progress as controlled borgs / target borgs
-        args.Progress = effectiveTarget > 0 ? Math.Min(1.0f, (float)controlledCount / effectiveTarget) : 1.0f;
+        args.Progress = effectiveTarget > 0 ? Math.Min(1.0f, (float) controlledCount / effectiveTarget) : 1.0f;
 
         // Debug log to confirm progress calculation
         TryLogInfo($"[MalfAiScaleBorgsObjectiveSystem] OnGetProgress: controlledCount={controlledCount}, Target={effectiveTarget}, Progress={args.Progress} for entity {uid}");

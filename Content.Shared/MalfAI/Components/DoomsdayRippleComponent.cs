@@ -2,10 +2,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.MalfAI;
+namespace Content.Shared.MalfAI.Components;
 
 /// <summary>
 /// Shared, networked marker component that indicates an active Malf AI doomsday ripple.

@@ -31,6 +31,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Client.Robotics.UI;
 

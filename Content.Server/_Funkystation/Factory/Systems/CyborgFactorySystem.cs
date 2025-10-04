@@ -53,8 +53,10 @@ public sealed class CyborgFactorySystem : EntitySystem
 
         // Capture prior name (if any) before gibbing
         string? priorName = null;
-        if (TryComp<MetaDataComponent>(entity, out var meta))
-            priorName = meta.EntityName;
+
+        var meta = MetaData(entity);
+
+        priorName = meta.EntityName;
 
         // Validate the entity for conversion
         if (!ValidateEntityForConversion(entity, out var mindId))
@@ -96,27 +98,19 @@ public sealed class CyborgFactorySystem : EntitySystem
 
         // Check if entity has a mind
         if (!TryComp<MindContainerComponent>(entity, out var mindContainer) || !mindContainer.HasMind)
-        {
             return false;
-        }
 
         // Check if entity is already a cyborg (has BorgChassis component)
         if (HasComp<BorgChassisComponent>(entity))
-        {
             return false;
-        }
 
         // Get the mind
         if (!_mind.TryGetMind(entity, out mindId, out var mind))
-        {
             return false;
-        }
 
         // Check if mind has a user (player-controlled)
         if (mind.UserId == null)
-        {
             return false;
-        }
 
         return true;
     }
@@ -191,5 +185,4 @@ public sealed class CyborgFactorySystem : EntitySystem
         // - Ownership tracking for malf AI cyborg menu
         _cyborgLawReceiver.ImposeLawZero(cyborg, malfAi);
     }
-
 }

@@ -17,6 +17,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mind.Components;
+using Content.Shared.MalfAI.Components;
 
 namespace Content.Server.MalfAI;
 
