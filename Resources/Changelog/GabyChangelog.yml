@@ -1166,3 +1166,9 @@ Entries:
       message: Nuno card box are now present in Good Clean Fun vending machines
   id: 130
   time: '2025-10-03T01:06:59.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Revolucionarios de cair normalmente em uma partida.
+  id: 131
+  time: '2025-10-04T04:21:16.0000000+00:00'

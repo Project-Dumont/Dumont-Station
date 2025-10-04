@@ -10,6 +10,12 @@
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 MODERN <87994977+modern-nm@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Hitlinemoss <209321380+Hitlinemoss@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+# SPDX-FileCopyrightText: 2025 Smith <182301147+AgentSmithRadio@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Weax <59857479+ImWeax@users.noreply.github.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -20,6 +26,16 @@
     state: margherita-slice
   product: CrateFoodPizza
   cost: 1600
+  category: cargoproduct-category-name-food
+  group: market
+
+- type: cargoProduct
+  id: FoodPizzaLarge
+  icon:
+    sprite: Objects/Consumable/Food/Baked/pizza.rsi
+    state: margherita
+  product: CrateFoodPizzaLarge
+  cost: 1800
   category: cargoproduct-category-name-food
   group: market
 
@@ -70,6 +86,16 @@
     state: icon
   product: CrateFoodSoftdrinks
   cost: 1500
+  category: cargoproduct-category-name-food
+  group: market
+
+- type: cargoProduct
+  id: FoodSoftdrinksLarge
+  icon:
+    sprite: Objects/Consumable/Drinks/colabottle.rsi
+    state: icon
+  product: CrateFoodSoftdrinksLarge
+  cost: 2400
   category: cargoproduct-category-name-food
   group: market
 

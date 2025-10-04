@@ -21,6 +21,12 @@
 # SPDX-FileCopyrightText: 2024 SolStar <44028047+ewokswagger@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Gentleman-Bird <dcgreen406@gmail.com>
+# SPDX-FileCopyrightText: 2025 Hitlinemoss <209321380+Hitlinemoss@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Smith <182301147+AgentSmithRadio@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Weax <59857479+ImWeax@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
@@ -39,6 +45,20 @@
     - id: FoodBoxPizzaCotton
     - id: LidSalami
       prob: 0.01
+
+- type: entity
+  id: CrateFoodPizzaLarge
+  parent: CratePlastic
+  name: disaster pizza delivery
+  description: In the ultimate event that all else has failed, Find comfort in that more pizza solves everything. Includes 16 pizzas.
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodBoxPizzaFilled
+      amount: 15
+    - id: FoodBoxPizzaCotton
+    - id: LidSalami
+      prob: 0.04
 
 - type: entity
   id: CrateFoodMRE
@@ -154,6 +174,31 @@
       amount: 2
     - id: DrinkFourteenLokoCan
       amount: 2
+
+- type: entity
+  id: CrateFoodSoftdrinksLarge
+  parent: CratePlastic
+  name: softdrinks bulk crate
+  description: Lots of sodas taken straight out of Centcomm's own vending machines, because you just can't leave your department. Includes 32 sodas.
+  components:
+  - type: EntityStorage
+    capacity: 32 # Slightly over-sized CratePlastic to accomodate over 30 drink cans at once.
+  - type: StorageFill
+    contents:
+      - id: DrinkColaCan
+        amount: 8
+      - id: DrinkGrapeCan
+        amount: 4
+      - id: DrinkRootBeerCan
+        amount: 4
+      - id: DrinkIcedTeaCan
+        amount: 4
+      - id: DrinkLemonLimeCan
+        amount: 4
+      - id: DrinkLemonLimeCranberryCan
+        amount: 4
+      - id: DrinkFourteenLokoCan
+        amount: 4
 
 - type: entity
   id: CrateFoodGetMore

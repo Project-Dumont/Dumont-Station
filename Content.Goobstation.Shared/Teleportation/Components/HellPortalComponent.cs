@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
 //
@@ -11,7 +12,7 @@ using Robust.Shared.Utility;
 namespace Content.Goobstation.Shared.Teleportation.Components;
 
 /// <summary>
-/// Component for Hell portal activation
+/// Component for Hell portal and helldimensionsystem
 /// </summary>
 [RegisterComponent]
 public sealed partial class HellPortalComponent : Component

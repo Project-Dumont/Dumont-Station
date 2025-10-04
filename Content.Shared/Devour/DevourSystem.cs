@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 the biggest bruh <199992874+thebiggestbruh@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Devour;
 using Content.Shared.Actions;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Systems;
@@ -115,6 +122,14 @@ public sealed class DevourSystem : EntitySystem
         if (args.Args.Target != null && _whitelistSystem.IsWhitelistPass(ent.Comp.StomachStorageWhitelist, (EntityUid)args.Args.Target))
         {
             _containerSystem.Insert(args.Args.Target.Value, ent.Comp.Stomach);
+
+            // Goobstation start
+
+            if (HasComp<MobStateComponent>(args.Args.Target.Value)) // can be cases where objects are also whitelisted, which wont need this
+                EnsureComp<PreventSelfRevivalComponent>(args.Args.Target.Value);
+
+            // Goobstation end
+
         }
         //TODO: Figure out a better way of removing structures via devour that still entails standing still and waiting for a DoAfter. Somehow.
         //If it's not alive, it must be a structure.
@@ -131,6 +146,13 @@ public sealed class DevourSystem : EntitySystem
     {
         if (ent.Comp.StomachStorageWhitelist == null)
             return;
+
+        // Goobstation start
+
+        foreach (var entity in ent.Comp.Stomach.ContainedEntities)
+            RemComp<PreventSelfRevivalComponent>(entity);
+
+        // Goobstation end
 
         // For some reason we have two different systems that should handle gibbing,
         // and for some another reason GibbingSystem, which should empty all containers, doesn't get involved in this process

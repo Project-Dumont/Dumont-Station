@@ -16,3 +16,13 @@
   cost: 200000 #Gabystation
   category: cargoproduct-category-name-engineering
   group: market
+
+- type: cargoProduct
+  id: CargoEngineeringTEGKit
+  icon:
+    sprite: Structures/Power/Generation/teg.rsi
+    state: teg
+  product: CrateEngineeringTEG
+  cost: 10000 # Gabystation
+  category: cargoproduct-category-name-engineering
+  group: market

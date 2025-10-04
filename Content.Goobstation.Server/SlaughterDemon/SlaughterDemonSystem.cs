@@ -1,8 +1,12 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Lumminal <81829924+Lumminal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 the biggest bruh <199992874+thebiggestbruh@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Devour;
 using Content.Goobstation.Shared.SlaughterDemon;
 using Content.Goobstation.Shared.SlaughterDemon.Systems;
 using Content.Server.Administration.Systems;
@@ -39,6 +43,10 @@ public sealed class SlaughterDemonSystem : SharedSlaughterDemonSystem
             return;
 
         _container.EmptyContainer(devour.Container);
+
+        // Allow everyone to self revive again (if they have the ability to)
+        foreach (var entity in ent.Comp.ConsumedMobs)
+            RemComp<PreventSelfRevivalComponent>(entity);
 
         // heal them if they were in the laughter demon
         if (!ent.Comp.IsLaughter)

@@ -95,6 +95,7 @@
 // SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Myra <vascreeper@yahoo.com>
 // SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RocketBoss360 <rocketboss360@gmail.com>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
@@ -168,6 +169,25 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
+
+
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string Blood = "Blood";
+
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string Slime = "Slime";
+
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string CopperBlood = "CopperBlood";
+
+    [ValidatePrototypeId<ReagentPrototype>] // goobstation
+    private const string BloodChangeling = "BloodChangeling"; // goobstation
+
+    [ValidatePrototypeId<ReagentPrototype>] // goobstation
+    private const string BlackBlood = "BlackBlood"; // goobstation
+
+    private static string[] _standoutReagents = [Blood, Slime, CopperBlood, BloodChangeling, BlackBlood]; // goobstation - added BloodChangeling, BlackBlood
+
 
     // Using local deletion queue instead of the standard queue so that we can easily "undelete" if a puddle
     // loses & then gains reagents in a single tick.
