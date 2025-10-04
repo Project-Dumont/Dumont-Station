@@ -90,7 +90,7 @@ public sealed class SiliconChargeSystem : EntitySystem
             // Check if the Silicon is an NPC, and if so, follow the delay as specified in the CVAR.
             if (siliconComp.EntityType.Equals(SiliconType.Npc))
             {
-                var updateTime = _config.GetCVar(CCVars.SiliconNpcUpdateTime);
+                var updateTime = _config.GetCVar(GoobCVars.SiliconNpcUpdateTime);
                 if (_timing.CurTime - siliconComp.LastDrainTime < TimeSpan.FromSeconds(updateTime))
                     continue;
 
