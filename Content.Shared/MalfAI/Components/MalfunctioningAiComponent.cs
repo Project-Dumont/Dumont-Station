@@ -30,22 +30,14 @@ public sealed partial class MalfunctioningAiComponent : Component
     public ProtoId<CurrencyPrototype> CurrencyId = "CPU";
 
     [DataField]
-    public string OpenStoreAction = "ActionMalfAiOpenStore";
+    public EntProtoId OpenStoreAction = "ActionMalfAiOpenStore";
 
     [DataField]
-    public string OpenBorgsUiAction = "ActionMalfAiOpenBorgsUi";
+    public EntProtoId OpenBorgsUiAction = "ActionMalfAiOpenBorgsUi";
 
     [DataField]
     public ProtoId<AlertPrototype> CurrencyAlertId = "MalfCpu";
 
     [DataField, AutoNetworkedField]
     public FixedPoint2 CpuStore;
-}
-
-[NetSerializable, Serializable]
-public enum CPUAlertVisualLayers : byte
-{
-    Digit1,
-    Digit2,
-    Digit3,
 }
