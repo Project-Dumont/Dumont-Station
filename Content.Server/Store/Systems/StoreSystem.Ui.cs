@@ -227,8 +227,9 @@ public sealed partial class StoreSystem
 
             component.BalanceSpent[currency] += value;
         }
-        // Replicate updated balance to clients so Malf CPU HUD updates
-        Dirty(uid, component);
+
+        var ev = new CurrencyUpdatedEvent(listing.Cost.ToDictionary(e => e.Key, e => -e.Value));
+        RaiseLocalEvent(uid, ev);
 
         // goobstation - heretics
         // i am too tired of making separate systems for knowledge adding
@@ -276,8 +277,9 @@ public sealed partial class StoreSystem
                 {
                     foreach (var existingAction in buyerActions.Actions)
                     {
-                        if (TryComp<MetaDataComponent>(existingAction, out var metaData) &&
-                            metaData.EntityPrototype?.ID == listing.ProductAction)
+                        var actionMetadata = MetaData(existingAction);
+                        if (actionMetadata.EntityPrototype is { } actionProto
+                            && actionProto.ID == listing.ProductAction.Value)
                         {
                             // Found existing action, add charges to it using existing method
                             if (listing.ProductActionCharges.HasValue && listing.ProductActionCharges > 0)
@@ -301,8 +303,9 @@ public sealed partial class StoreSystem
                 {
                     foreach (var existingAction in mindActions.Container.ContainedEntities)
                     {
-                        if (TryComp<MetaDataComponent>(existingAction, out var metaData) &&
-                            metaData.EntityPrototype?.ID == listing.ProductAction)
+                        var actionMetadata = MetaData(existingAction);
+                        if (actionMetadata.EntityPrototype is { } actionProto
+                            && actionProto.ID == listing.ProductAction)
                         {
                             // Found existing action, add charges to it using existing method
                             if (listing.ProductActionCharges.HasValue && listing.ProductActionCharges > 0)
@@ -430,8 +433,6 @@ public sealed partial class StoreSystem
             var restockDuration = listing.RestockAfterPurchase ?? listing.RestockDuration; // Просто используем значение напрямую
             listing.RestockTime = _timing.CurTime + restockDuration;
         } // goob edit end
-
-        ShowMalfCpuIfApplicable(uid, component);
     }
 
     /// <summary>
@@ -475,10 +476,7 @@ public sealed partial class StoreSystem
         }
 
         component.Balance[msg.Currency] -= msg.Amount;
-        // Replicate updated balance to clients so Malf CPU HUD updates
-        Dirty(uid, component);
         UpdateUserInterface(buyer, uid, component);
-        ShowMalfCpuIfApplicable(uid, component);
     }
 
     private void OnRequestRefund(EntityUid uid, StoreComponent component, StoreRequestRefundMessage args)
@@ -505,7 +503,6 @@ public sealed partial class StoreSystem
 
         UpdateRefundUserInterface(uid, component);
         UpdateUserInterface(buyer, uid, component);
-        ShowMalfCpuIfApplicable(uid, component);
 
         /* if (!IsOnStartingMap(uid, component))
         {

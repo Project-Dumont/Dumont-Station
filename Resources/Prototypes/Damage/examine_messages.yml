@@ -10,11 +10,8 @@
     prefix: comp-window-damaged-
     count: 6
 
-- type: examinableDamage
+- type: localizedDataset
   id: StationAiCoreMessages
-  messages:
-  - station-ai-core-damaged-1
-  - station-ai-core-damaged-2
-  - station-ai-core-damaged-3
-  - station-ai-core-damaged-4
-  - station-ai-core-damaged-5
+  values:
+    prefix: station-ai-core-damaged-
+    count: 5

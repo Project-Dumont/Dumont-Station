@@ -42,6 +42,7 @@ using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.MalfAI.Components;
+using Content.Server.Store.Systems;
 
 namespace Content.Server.Research.Systems;
 
@@ -61,14 +62,10 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly StoreSystem _store = default!;
 
     // almost never timing out more than 1 per tick so initialize with that capacity
     private List<string> _removing = new(1);
-
-    /// <summary>
-    /// Currency name for Malf AI
-    /// </summary>
-    private const string CpuCurrency = "CPU";
 
     public override void Initialize()
     {
@@ -183,8 +180,8 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     private void OnImposeLaw(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleImposeLawMessage args)
     {
         // Only Malf AI may impose Law 0.
-        if (!HasComp<MalfunctioningAiComponent>(args.Actor) ||
-            !HasComp<StationAiHeldComponent>(args.Actor))
+        if (!TryComp<MalfunctioningAiComponent>(args.Actor, out var malfComp)
+            || !HasComp<StationAiHeldComponent>(args.Actor))
             return;
 
         if (!ent.Comp.Cyborgs.TryGetValue(args.Address, out var data))
@@ -201,15 +198,12 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         // Read CVAR cost and convert to FixedPoint2 for balance ops
         var imposeCost = FixedPoint2.New(_cfg.GetCVar(CCVars.MalfAiImposeLawCpuCost));
 
-        if (!store.Balance.TryGetValue(CpuCurrency, out var balance) || balance < imposeCost)
+
+        if (!store.Balance.TryGetValue(malfComp.CurrencyId, out var balance)
+            || balance < imposeCost)
             return; // insufficient CPU
 
-        // Deduct cost and proceed
-        store.Balance[CpuCurrency] = balance - imposeCost;
-        // Replicate to clients and refresh the Malf CPU alert so client HUD updates digits.
-        Dirty(args.Actor, store);
-        _alerts.ShowAlert(args.Actor, "MalfCpu");
-
+        _store.TryAddCurrency(new() { [malfComp.CurrencyId] = -imposeCost }, args.Actor, store);
 
         // Link by device address across any device network (robust fallback)
         var linked = false;

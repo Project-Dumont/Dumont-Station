@@ -2,9 +2,13 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared._Gabystation.MalfAi;
 using Content.Shared.Alert;
+using Content.Shared.Store;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.MalfAI.Components;
 
@@ -12,7 +16,8 @@ namespace Content.Shared.MalfAI.Components;
 /// Marker component placed on the Station AI when it becomes a Malfunctioning AI antagonist.
 /// Used to gate special interactions (e.g., APC CPU siphoning) without affecting visuals like EMAG.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[Access(typeof(SharedMalfAiSystem))]
 public sealed partial class MalfunctioningAiComponent : Component
 {
     [DataField]
@@ -22,7 +27,7 @@ public sealed partial class MalfunctioningAiComponent : Component
     public string[] StoreCategories = { "All", "MalfAI", "Deception", "Factory", "Disruption" };
 
     [DataField]
-    public string CurrencyId = "CPU";
+    public ProtoId<CurrencyPrototype> CurrencyId = "CPU";
 
     [DataField]
     public string OpenStoreAction = "ActionMalfAiOpenStore";
@@ -31,5 +36,16 @@ public sealed partial class MalfunctioningAiComponent : Component
     public string OpenBorgsUiAction = "ActionMalfAiOpenBorgsUi";
 
     [DataField]
-    public ProtoId<AlertPrototype> CurrencyAlertId = "MalfCPU";
+    public ProtoId<AlertPrototype> CurrencyAlertId = "MalfCpu";
+
+    [DataField, AutoNetworkedField]
+    public FixedPoint2 CpuStore;
+}
+
+[NetSerializable, Serializable]
+public enum CPUAlertVisualLayers : byte
+{
+    Digit1,
+    Digit2,
+    Digit3,
 }

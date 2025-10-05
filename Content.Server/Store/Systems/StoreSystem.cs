@@ -55,9 +55,6 @@ public sealed partial class StoreSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StoreDiscountSystem _storeDiscount = default!;
-    [Dependency] private readonly Content.Shared.Alert.AlertsSystem _alerts = default!;
-
-    private static readonly ProtoId<CurrencyPrototype> CpuCurrencyId = "CPU";
 
     public override void Initialize()
     {
@@ -226,25 +223,11 @@ public sealed partial class StoreSystem : EntitySystem
                 store.Balance[type.Key] += type.Value;
         }
 
-        // Replicate updated balance to clients before UI/alert updates.
-        Dirty(uid, store);
+        var ev = new CurrencyUpdatedEvent(currency);
+        RaiseLocalEvent(uid, ev);
+
         UpdateUserInterface(null, uid, store);
-        ShowMalfCpuIfApplicable(uid, store);
         return true;
-    }
-
-    private void ShowMalfCpuIfApplicable(EntityUid uid, StoreComponent store)
-    {
-        if (!store.CurrencyWhitelist.Contains(CpuCurrencyId))
-            return;
-        if (!HasComp<MalfunctioningAiComponent>(uid))
-            return;
-
-        short amountInt = 0;
-        if (store.Balance.TryGetValue(CpuCurrencyId, out var val))
-            amountInt = (short) val;
-
-        _alerts.ShowAlert(uid, "MalfCpu", amountInt);
     }
 }
 
@@ -263,3 +246,19 @@ public sealed class CurrencyInsertAttemptEvent : CancellableEntityEventArgs
         Store = store;
     }
 }
+
+public sealed class CurrencyUpdatedEvent : EntityEventArgs
+{
+    public readonly Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Currency;
+
+    public CurrencyUpdatedEvent(Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> currency)
+    {
+        Currency = currency;
+    }
+
+    public CurrencyUpdatedEvent(Dictionary<string, FixedPoint2> currency)
+    {
+        Currency = currency.ToDictionary(e => (ProtoId<CurrencyPrototype>) e.Key, e => e.Value);
+    }
+}
+

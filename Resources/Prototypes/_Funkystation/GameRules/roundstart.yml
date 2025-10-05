@@ -90,6 +90,6 @@
         color: Red
         sound: "/Audio/_Funkystation/Ambience/Antag/malfai_start.ogg"
       components:
-      - type: MalfAiMarker
+      - type: MalfunctioningAi
       mindRoles:
       - MindRoleMalfAi
