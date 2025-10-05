@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.MalfAI.Components;
 using Content.Shared.MalfAI.Events;
 using Content.Shared.Mind;

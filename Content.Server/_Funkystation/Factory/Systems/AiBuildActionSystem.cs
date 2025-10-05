@@ -14,6 +14,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.MalfAI.Components;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 

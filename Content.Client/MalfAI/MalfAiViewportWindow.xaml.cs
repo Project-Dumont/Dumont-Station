@@ -43,7 +43,8 @@ public sealed partial class MalfAiViewportWindow : DefaultWindow
             var entityManager = IoCManager.Resolve<IEntityManager>();
             var anchorEntityUid = entityManager.GetEntity(_anchorEntity.Value);
 
-            if (entityManager.EntityExists(anchorEntityUid) && entityManager.TryGetComponent<EyeComponent>(anchorEntityUid, out var eyeComp))
+            if (entityManager.EntityExists(anchorEntityUid)
+                && entityManager.TryGetComponent<EyeComponent>(anchorEntityUid, out var eyeComp))
             {
                 // Use the anchor entity's eye which will track with the grid
                 Viewport.Eye = eyeComp.Eye;

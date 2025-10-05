@@ -1,6 +1,7 @@
 using Content.Client.Alerts;
 using Content.Client.UserInterface.Systems.Alerts.Controls;
 using Content.Shared._Gabystation.MalfAi;
+using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.Alert.Components;
 using Content.Shared.MalfAI.Components;
 using Content.Shared.Store.Components;

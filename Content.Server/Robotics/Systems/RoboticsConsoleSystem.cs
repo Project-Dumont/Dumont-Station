@@ -43,6 +43,7 @@ using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.MalfAI.Components;
 using Content.Server.Store.Systems;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server.Research.Systems;
 

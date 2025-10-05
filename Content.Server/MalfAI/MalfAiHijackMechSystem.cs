@@ -16,6 +16,7 @@ using Content.Server.Actions;
 using Content.Server.Silicons.StationAi;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.MalfAI.Components;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server.MalfAI;
 

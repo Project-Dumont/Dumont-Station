@@ -1,5 +1,6 @@
 using Content.Server.Radio.Components;
 using Content.Shared.MalfAI.Components;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server.MalfAI;
 

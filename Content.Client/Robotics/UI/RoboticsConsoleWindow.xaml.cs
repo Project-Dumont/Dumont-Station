@@ -32,6 +32,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.MalfAI.Components;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Client.Robotics.UI;
 

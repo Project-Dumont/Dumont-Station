@@ -53,7 +53,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
-
 using Content.Shared.Emag.Systems;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.Components;
@@ -64,6 +63,7 @@ using Content.Shared.Implants.Components;
 using Content.Shared.MalfAI;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.MalfAI.Components;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Shared.Mech.EntitySystems;
 

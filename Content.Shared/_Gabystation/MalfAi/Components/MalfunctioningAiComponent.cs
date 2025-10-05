@@ -10,7 +10,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.MalfAI.Components;
+namespace Content.Shared._Gabystation.MalfAi.Components;
 
 /// <summary>
 /// Marker component placed on the Station AI when it becomes a Malfunctioning AI antagonist.

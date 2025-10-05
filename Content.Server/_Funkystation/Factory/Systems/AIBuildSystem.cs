@@ -13,6 +13,7 @@ using Content.Shared.Actions.Events;
 using Content.Shared.Actions;
 using Content.Shared.MalfAI.Components;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 

@@ -7,12 +7,12 @@
   name: malfai-robotics-factory-name
   description: malfai-robotics-factory-desc
   components:
-  - type: WorldTargetAction
+  - type: Action
+    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_factory }
     itemIconStyle: BigAction
     priority: -5
-    checkCanAccess: false
+  - type: TargetAction
     range: 99999
-    icon:
-      sprite: Interface/Actions/actions_malf_ai.rsi
-      state: malfai_bg_factory
+    checkCanAccess: false
+  - type: WorldTargetAction
     event: !type:MalfAiRoboticsFactoryActionEvent

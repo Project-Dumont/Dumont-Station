@@ -21,6 +21,7 @@ using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Store.Components;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
