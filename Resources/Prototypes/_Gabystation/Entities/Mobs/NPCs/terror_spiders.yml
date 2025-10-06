@@ -1,4 +1,10 @@
-﻿# Base
+# SPDX-FileCopyrightText: 2024 P e p e . <josephpereira413@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 P e p e . <154895350+PepeThePog@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Base
 
 - type: entity
   save: false
