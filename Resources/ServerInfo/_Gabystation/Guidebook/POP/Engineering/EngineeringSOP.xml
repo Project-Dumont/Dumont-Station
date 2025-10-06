@@ -7,59 +7,59 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Chief Engineer
+  # Engenheiro Chefe
 
-  [bold]1.[/bold] The Chief Engineer must make sure to properly wire Solar Panels and activate the Anti-Matter Engine (AME) if available, and co-ordinate a plan with their team to activate a more powerful engine for long-term station use;
+  [bold]1.[/bold] O Engenheiro Chefe deve garantir a ligação correta dos Painéis Solares e ativar o Motor de Antimatéria (AME) se disponível, além de coordenar um plano com sua equipe para ativar um gerador mais potente para uso prolongado da estação;
 
-  [bold]2.[/bold] The Chief Engineer, along with the Research Director, is responsible for maintaining the integrity of Telecommunications. The Chief Engineer must not hinder the proper functionality of Telecommunications, and must diagnose and repair any issues that arise;
+  [bold]2.[/bold] O Engenheiro Chefe, junto ao Diretor de Pesquisa, é responsável por manter a integridade das Telecomunicações. O Engenheiro Chefe não deve prejudicar o funcionamento adequado das Telecomunicações e deve diagnosticar e reparar quaisquer problemas que surgirem;
 
-  [bold]3.[/bold] The Chief Engineer is bound to the same rules regarding the axe as Atmospheric Technicians;
+  [bold]3.[/bold] O Engenheiro Chefe está sujeito às mesmas regras sobre o machado que os Técnicos Atmosféricos;
 
-  [bold]4.[/bold] The Chief Engineer is permitted to carry a flash and a disabler;
+  [bold]4.[/bold] O Engenheiro Chefe pode portar um flash e um desativador;
 
-  [bold]5.[/bold] The Chief Engineer is responsible for maintaining the integrity of all power sources set up on the station. Neglecting this duty is grounds for termination should the Supermatter delaminates or if power fails on the station;
+  [bold]5.[/bold] O Engenheiro Chefe é responsável por manter a integridade de todas as fontes de energia instaladas na estação. Negligenciar esse dever é motivo para demissão caso a Supermatéria delamine ou se faltar energia na estação;
 
-  [bold]6.[/bold] The Chief Engineer may declare an area "Condemned", if it is damaged to the point where repairs cannot reasonably be completed within an acceptable frame of time;
+  [bold]6.[/bold] O Engenheiro Chefe pode declarar uma área "Condenada" se ela estiver danificada a ponto de não ser possível realizar reparos em um tempo aceitável;
 
-  [bold]7.[/bold] The Chief Engineer is permitted to grant Building Permits to crewmembers, and may dismantle or destroy unauthorized buildings / setups;
+  [bold]7.[/bold] O Engenheiro Chefe pode conceder Permissões de Construção para membros da tripulação e pode desmontar ou destruir construções/instalações não autorizadas;
 
-  [bold]8.[/bold] The Chief Engineer is responsible for maintaining the integrity of the Station's Atmospherics System. Failure to maintain this integrity is grounds for termination.
+  [bold]8.[/bold] O Engenheiro Chefe é responsável por manter a integridade do Sistema Atmosférico da Estação. Falhar em manter essa integridade é motivo para demissão.
 
-  # Station Engineer
+  # Engenheiro de Estação
 
-  [bold]1.[/bold] Engineers must properly wire Solar Panels and activate the Anti-Matter Engine (AME) if available, and co-ordinate a plan to activate a more powerful engine for long-term station use;
+  [bold]1.[/bold] Engenheiros devem ligar corretamente os Painéis Solares e ativar o Motor de Antimatéria (AME) se disponível, além de coordenar um plano para ativar um motor mais potente para uso prolongado da estação;
 
-  [bold]2.[/bold] Engineers are responsible for maintaining the integrity of all engines aboard the station, even those that are de-activated or inert. Neglecting this duty is grounds for termination should an engine malfunction;
+  [bold]2.[/bold] Engenheiros são responsáveis por manter a integridade de todos os motores da estação, mesmo os desativados ou inertes. Negligenciar esse dever é motivo para demissão caso algum motor apresente falha;
 
-  [bold]3.[/bold] Engineers are permitted to construct additional engines (such as additional SM/Tesla/Singularity engines) with approval from the Chief Engineer;
+  [bold]3.[/bold] Engenheiros podem construir motores adicionais (como SM/Tesla/Singularidade) com aprovação do Engenheiro Chefe;
 
-  [bold]4.[/bold] Engineers are permitted to carry out solo reconstruction/rebuilding/personal projects if there is no damage to the station that requires fixing;
+  [bold]4.[/bold] Engenheiros podem realizar projetos de reconstrução/reparo/pessoais solo se não houver danos na estação que precisem de conserto;
 
-  [bold]5.[/bold] Engineers must check each active engine at least once per 30 minutes;
+  [bold]5.[/bold] Engenheiros devem verificar cada motor ativo pelo menos uma vez a cada 30 minutos;
 
-  [bold]6.[/bold] Engineers must constantly monitor the Supermatter engine if it is online and under emitter fire;
+  [bold]6.[/bold] Engenheiros devem monitorar constantemente o motor de Supermatéria se ele estiver online e sob fogo de emissor;
 
-  [bold]7.[/bold] Engineers must respond promptly to breaches, regardless of size. Failure to report within fifteen (15) minutes will be considered a breach of Standard Operating Procedure, unless there are no spare Engineers to report or an Atmospheric Technician has arrived on scene first. All Hazard Zones must be cordoned off with Engineering Tape or holobarriers, for the safety of crewmembers;
+  [bold]7.[/bold] Engenheiros devem responder prontamente a quebras, independentemente do tamanho. Não relatar em até quinze (15) minutos será considerado violação do POP, a menos que não haja Engenheiros disponíveis ou um Técnico Atmosférico tenha chegado primeiro. Todas as Zonas de Perigo devem ser isoladas com Fita de Engenharia ou holobarreiras para a segurança da tripulação;
 
-  [bold]8.[/bold] Engineers are permitted to hack doors to gain unauthorized access to locations if said locations happen to require urgent repairs;
+  [bold]8.[/bold] Engenheiros podem hackear portas para obter acesso não autorizado a locais que precisem de reparos urgentes;
 
-  [bold]9.[/bold] Engineers are to maintain the integrity of the Station's Power Network;
+  [bold]9.[/bold] Engenheiros devem manter a integridade da Rede Elétrica da Estação;
 
-  [bold]10.[/bold] Engineers must ensure there is at least one (1) engineering hardsuit available on the station at all times, unless there is an emergency that requires the use of all suits.
+  [bold]10.[/bold] Engenheiros devem garantir que haja pelo menos uma (1) armadura de engenharia disponível na estação o tempo todo, a menos que haja uma emergência que exija o uso de todas as armaduras.
 
-  # Atmospheric Technician
+  # Técnico Atmosférico
 
-  [bold]1.[/bold] Atmospheric Technicians are permitted to completely repipe the Atmospherics Piping Setup, provided they do not pump harmful gases into anywhere except the burn chamber;
+  [bold]1.[/bold] Técnicos Atmosféricos podem refazer completamente a tubulação atmosférica, desde que não bombeiem gases nocivos para nenhum lugar exceto a câmara de combustão;
 
-  [bold]2.[/bold] Atmospheric Technicians are not permitted to create volatile mixes using Plasma and Oxygen, nor are they permitted to create any potentially harmful mixes with Carbon Dioxide and/or Nitrous Oxide. An exception is made when working with the burn chamber;
+  [bold]2.[/bold] Técnicos Atmosféricos não podem criar misturas voláteis usando Plasma e Oxigênio, nem criar misturas potencialmente perigosas com Dióxido de Carbono e/ou Óxido Nitroso. Exceção é feita ao trabalhar com a câmara de combustão;
 
-  [bold]3.[/bold] Atmospheric Technicians are permitted to cool Plasma and store it for later use in Radiation Collectors. Likewise, they are permitted to cool Nitrogen or Carbon Dioxide and store it for use as coolant for the Supermatter Engine;
+  [bold]3.[/bold] Técnicos Atmosféricos podem resfriar Plasma e armazená-lo para uso posterior em Coletores de Radiação. Da mesma forma, podem resfriar Nitrogênio ou Dióxido de Carbono e armazená-los para uso como refrigerante no Motor de Supermatéria;
 
-  [bold]4.[/bold] Atmospheric Technicians are not permitted to take the axe out of its case unless there is an immediate and urgent threat to their life or urgent access to crisis locations is necessary. The axe must be returned to the case afterwards, and the case locked;
+  [bold]4.[/bold] Técnicos Atmosféricos não podem tirar o machado do estojo, a menos que haja uma ameaça imediata e urgente à sua vida ou seja necessário acesso urgente a locais de crise. O machado deve ser devolvido ao estojo depois e então tranca-lo;
 
-  [bold]5.[/bold] Atmospheric Technicians are not permitted to tamper with the default values on Air Alarms. They are, however, permitted to create small, acclimatized rooms for species that require special atmospheric conditions (such as Vox), provided they receive express permission from the Chief Engineer;
+  [bold]5.[/bold] Técnicos Atmosféricos não podem alterar os valores padrão dos Alarmes de Ar. No entanto, podem criar pequenas salas aclimatizadas para espécies que exigem condições atmosféricas especiais (como Vox), desde que recebam permissão expressa do Engenheiro Chefe;
 
-  [bold]6.[/bold] Atmospheric Technicians must periodically check on the Central Alarms Computer, in periods of, at most, thirty (30) minutes;
+  [bold]6.[/bold] Técnicos Atmosféricos devem verificar periodicamente o Computador Central de Alarmes, em períodos de, no máximo, trinta (30) minutos;
 
-  [bold]7.[/bold] Atmospheric Technicians must respond promptly to piping and station breaches. Failure to report within fifteen (15) minutes will be considered a breach of Standard Operating Procedure, unless there are no spare Atmospheric Technicians to report, or an Engineer has arrived at scene first. All Hazard Zones must be cordoned off with Engineering Tape or holobarriers, for the safety of all crewmembers.
+  [bold]7.[/bold] Técnicos Atmosféricos devem responder prontamente a quebras de tubulação e da estação. Não relatar em até quinze (15) minutos será considerado violação do POP, a menos que não haja Técnicos Atmosféricos disponíveis ou um Engenheiro tenha chegado primeiro. Todas as Zonas de Perigo devem ser isoladas com Fita de Engenharia ou holobarreiras para a segurança de todos os membros da tripulação.
 </Document>

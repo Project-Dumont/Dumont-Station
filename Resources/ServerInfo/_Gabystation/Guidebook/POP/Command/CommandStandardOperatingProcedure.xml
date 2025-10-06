@@ -8,109 +8,84 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  Here is a list of all the SOP documents for command.
+  Aqui está uma lista de todos os documentos de POP para o Comando.
 
-  # General Command SOP
+  # Comando Geral
 
-  [bold]1.[/bold] Command members are to ensure the safety of the entire station, each primarily responsible for their own Department and respective duties;
+  [bold]1.[/bold] Membros do Comando devem garantir a segurança de toda a estação, sendo cada um principalmente responsável por seu próprio Departamento e respectivas funções;
 
-  [bold]2.[/bold] Command members are to ensure the wellbeing and dignity of Nanotrasen and its related assets;
+  [bold]2.[/bold] Membros do Comando devem garantir o bem-estar e a dignidade da Nanotrasen e de seus ativos relacionados;
 
-  [bold]3.[/bold] Command members may not slander or libel Nanotrasen;
+  [bold]3.[/bold] Membros do Comando não podem difamar ou caluniar a Nanotrasen;
 
-  [bold]4.[/bold] Command members must ensure that Nanotrasen corporate secrets remain confidential, and may reprimand or punish fellow command members who threaten this confidentiality;
+  [bold]4.[/bold] Membros do Comando devem garantir que os segredos corporativos da Nanotrasen permaneçam confidenciais, podendo repreender ou punir outros membros do Comando que ameacem essa confidencialidade;
 
-  [bold]5.[/bold] In the event of a confirmed threat to the station or Nanotrasen as a whole, command members may temporarily reveal related corporate secrets to crewmembers;
+  [bold]5.[/bold] Em caso de ameaça confirmada à estação ou à Nanotrasen como um todo, membros do Comando podem revelar temporariamente segredos corporativos relacionados à tripulação;
 
-  [bold]6.[/bold] Command members must report such confidentiality breaks as soon as the event is resolved;
+  [bold]6.[/bold] Membros do Comando devem relatar tais quebras de confidencialidade assim que o evento for resolvido;
 
-  [bold]7.[/bold] Command members must follow any Central Command officer's (such as the Nanotrasen Representative, Internal Affairs Agent, or the Magistrate) direction on corporate secrets;
+  [bold]7.[/bold] Membros do Comando devem seguir qualquer orientação de oficiais do Comando Central (como o Representante da Nanotrasen, Agente de Assuntos Internos ou Magistrado) sobre segredos corporativos;
 
-  [bold]8.[/bold] Command members must accept any fine, punishment, demotion, or death when a Central Command officer informs them of a wrongful break of their confidentiality agreement.
-
-
-  # Captain SOP
-
-  [bold]1.[/bold] The Captain is not permitted to perform regular Security Duty. However, they may still assist Security if they are understaffed, or if they see a crime being committed. However, the Captain is not permitted to take items from the Armory under normal circumstances, unless authorized by the Head of Security. In addition, the Captain may not requisition weaponry for themselves from Cargo and/or Science, unless there's an immediate threat to station and/or crew;
-
-  [bold]2.[/bold] If a Department lacks a Head of Staff, the Captain should make reasonable efforts to appoint an Acting Head of Staff, if there are available personnel to fill the position;
-
-  [bold]3.[/bold] The Captain is to ensure that Space Law is being correctly applied. This should be done in cooperation with the Head of Security;
-
-  [bold]4.[/bold] The Captain is not to leave the Station unless given specific permission by Central Command, or it happens to be the end of the shift. To do so is to be considered abandoning their posts and is grounds for termination;
-
-  [bold]5.[/bold] The Captain must keep the Nuclear Authentication Disk on their person at all times or failing that, in the possession of the Head of Security;
-
-  [bold]6.[/bold] The Captain is to attempt to resolve every issue that arises in Command locally before contacting Central Command;
-
-  [bold]7.[/bold] The Captain, despite being in charge of the Station, is not separate from NanoTrasen. Any attempts to disregard general company policy are to be considered an instant condition for contract termination;
-
-  [bold]8.[/bold] The Captain may only promote personnel to an Acting Head of Staff position if there is no assigned Head of Staff associated with the Department. The Acting Head of Staff must be a member of the Department they are to lead. See below for more information on Chain of Command;
-
-  [bold]9.[/bold] The Captain may not fire any Head of Staff without reasonable justification (ie, incompetency, criminal activity, or otherwise any action that endangers/compromises the station and/or crew). The Captain may not fire any Central Command VIPs (NanoTrasen Representative, etc) without permission from Central Command, unless they are blatantly acting against the well-being and safety of the crew and station. The Captain must also follow HoP SOP point 5.
+  [bold]8.[/bold] Membros do Comando devem aceitar qualquer multa, punição, rebaixamento ou execução quando um oficial do Comando Central os informar de uma quebra indevida do acordo de confidencialidade.
 
 
-  # Head of Personnel SOP
+  # Capitão
 
-  [bold]1.[/bold] The Head of Personnel may not transfer any personnel to another Department without authorization from the relevant Head of Staff. If no Head of Staff is available, the Head of Personnel may make a judgment call. This does not apply to Security, which always requires authorization from the Head of Security, or Genetics, which requires both Chief Medical Officer and Research Director approval. If there is no Head of Security active, no transfers are allowed to Security without authorization from the Captain;
+  [bold]1.[/bold] O Capitão não pode realizar funções regulares de Segurança. No entanto, pode ajudar a Segurança se estiverem com pouco pessoal ou se presenciar um crime. O Capitão não pode pegar itens do Arsenal em circunstâncias normais, a menos que autorizado pelo Chefe de Segurança. Além disso, o Capitão não pode requisitar armamentos para si mesmo da Carga e/ou Ciência, a menos que haja uma ameaça imediata à estação e/ou tripulação;
 
-  [bold]2.[/bold] The Head of Personnel may not give any personnel increased access without authorization from the relevant Head of Staff. This includes the Head of Personnel. In addition, the Head of Personnel may only give Captain-Level access to someone if they are the Acting Captain. This access is to be removed when a proper Captain arrives at the station;
+  [bold]2.[/bold] Se um Departamento não tiver um Chefe, o Capitão deve fazer esforços razoáveis para nomear um Chefe Interino, se houver pessoal disponível para o cargo;
 
-  [bold]3.[/bold] The Head of Personnel may not increase any Job Openings unless the relevant Head of Staff approves;
+  [bold]3.[/bold] O Capitão deve garantir que a Lei Espacial está sendo corretamente aplicada, em cooperação com o Chefe de Segurança;
 
-  [bold]4.[/bold] The Head of Personnel may not fire any personnel without authorization from the relevant Head of Staff, unless other conditions apply (see Space Law and General Standard Operating Procedure);
+  [bold]4.[/bold] O Capitão não deve deixar a Estação, a menos que tenha permissão específica do Comando Central ou seja o fim do turno. Fazer isso é considerado abandono de posto e motivo para demissão;
 
-  [bold]5.[/bold] The Head of Personnel may not promote anyone to any Central Command role. This includes the Magistrate, IAA, and others;
+  [bold]5.[/bold] O Capitão deve manter o Disco de Autenticação Nuclear consigo o tempo todo ou, caso não seja possível, sob posse do Chefe de Segurança;
 
-  [bold]6.[/bold] The Head of Personnel is free to utilize paperwork at their discretion. However, during major station emergencies, expediency should take precedence over bureaucracy;
+  [bold]6.[/bold] O Capitão deve tentar resolver todo problema que surgir no Comando localmente antes de contatar o Comando Central;
 
-  [bold]7.[/bold] The Head of Personnel may not leave their office unmanned if there are personnel waiting in line. Failure to respond to personnel with a legitimate request within ten (10) minutes, either via radio or in person is to be considered a breach of Standard Operating Procedure;
+  [bold]7.[/bold] O Capitão, apesar de estar no comando da Estação, não está separado da NanoTrasen. Qualquer tentativa de desrespeitar as políticas gerais da empresa é motivo imediato para rescisão de contrato;
 
-  [bold]8.[/bold] The Head of Personnel is not permitted to perform Security duty. The Head of Personnel is permitted to carry a Disabler for self-defense only.
+  [bold]8.[/bold] O Capitão só pode promover alguém a Chefe Interino se não houver um Chefe designado para o Departamento. O Chefe Interino deve ser membro do Departamento que irá liderar. Veja abaixo para mais informações sobre a Cadeia de Comando;
 
-
-  # Nanotrasen Representative SOP
-
-  [bold]1.[/bold] The NanoTrasen Representative is to ensure that every Department is following Standard Operating Procedure, up to and including the respective Head of Staff. If a Head of Staff is not available for a Department, the NanoTrasen Representative must ensure that the Captain appoints an Acting Head of Staff for said Department;
-
-  [bold]2.[/bold] The NanoTrasen Representative must attempt to resolve any breach of Standard Operating Procedure locally before contacting Central Command. This is an imperative: Standard Operating Procedure should always be followed unless there is a very good reason not to;
-
-  [bold]3.[/bold] The NanoTrasen Representative must, together with the Head of Security, ensure that Space Law is being followed and correctly applied;
-
-  [bold]4.[/bold] The NanoTrasen Representative may not threaten the use of a fax in order to gain leverage over any personnel, up to and including Command. In addition, they may not threaten to fire or have Central Command fire anyone, unless they actually possess a demotion note;
-
-  [bold]5.[/bold] The NanoTrasen Representative is permitted to carry their flash and a blade-cane, or a stun baton if the blade-cane is lost.
-
-  # Magistrate SOP
-
-  [bold]1.[/bold] The Magistrate is to ensure that Space Law is applied correctly. If it is not, they are to make it so;
-
-  [bold]2.[/bold] The Magistrate has the final say on whether Trials take place, and should ensure they should only occur for Capital Sentences. Similarly, Magistrates are to ensure that Trials do not happen for Defendants that are self-evidently guilty;
-
-  [bold]3.[/bold] The Magistrate may overrule anyone in all matters concerning Space Law. This does not extend to Emergency Response Teams, Central Command Officials or direct Central Command communications;
-
-  [bold]4.[/bold] The Magistrate is permitted to carry their flash;
-
-  [bold]5.[/bold] The Magistrate is not above Space Law. Similarly, the Magistrate cannot overrule Security on a sentence imposed against themselves;
-
-  [bold]6.[/bold] In the absence of Internal Affairs Agents or a NanoTrasen Representative, the Magistrate may elect to handle matters of Standard Operating Procedure. Otherwise, the Magistrate is only to ensure that the NanoTrasen Representative under their command are handling such matters;
-
-  [bold]7.[/bold] The Magistrate may not impede the expedient functioning of Security for the sake of micromanaging every aspect it. The Magistrate should only concern themselves with crimes that either have fuzzy evidence, or require careful deliberation of circumstances;
-
-  [bold]8.[/bold] The Magistrate is to contact Central Command immediately if their decisions are being ignored, provided said decision actually match up with Space Law and Standard Operating Procedure.
+  [bold]9.[/bold] O Capitão não pode demitir nenhum Chefe de Departamento sem justificativa razoável (ex: incompetência, atividade criminosa ou qualquer ação que coloque em risco a estação e/ou a tripulação). O Capitão não pode demitir VIPs do Comando Central (Representante da NanoTrasen, etc) sem permissão do Comando Central, a menos que estejam agindo claramente contra o bem-estar e a segurança da tripulação e da estação. O Capitão também deve seguir o POP do Chefe dos funcionários, ponto 5.
 
 
-  # If you need to deviate,
+  # Chefe dos funcionários
 
-  [bold]Document document document![/bold]
-  After action reports, calling CentCom on the fabled red phone, or even praying will be heard by CentCom and your actions may be excused if they were determined to be in the best interest for NanoTrasen.
+  [bold]1.[/bold] O Chefe dos funcionários não pode transferir nenhum funcionário para outro Departamento sem autorização do respectivo Chefe de Departamento. Se não houver Chefe disponível, o Chefe dos funcionários pode tomar uma decisão. Isso não se aplica à Segurança, que sempre requer autorização do Chefe de Segurança, ou à Genética, que requer aprovação tanto do Diretor Médico quanto do Diretor de Pesquisa. Se não houver Chefe de Segurança ativo, não são permitidas transferências para a Segurança sem autorização do Capitão;
+
+  [bold]2.[/bold] O Chefe dos funcionários não pode conceder acesso ampliado a nenhum funcionário sem autorização do respectivo Chefe de Departamento. Isso inclui o próprio Chefe dos funcionários. Além disso, o Chefe dos funcionários só pode conceder acesso de Capitão a alguém se for o Capitão Interino. Esse acesso deve ser removido quando um Capitão de fato chegar à estação;
+
+  [bold]3.[/bold] O Chefe dos funcionários não pode aumentar o número de vagas de emprego sem aprovação do respectivo Chefe de Departamento;
+
+  [bold]4.[/bold] O Chefe dos funcionários não pode demitir nenhum funcionário sem autorização do respectivo Chefe de Departamento, a menos que outras condições se apliquem (ver Lei Espacial e POP Geral);
+
+  [bold]5.[/bold] O Chefe dos funcionários não pode promover ninguém a cargos do Comando Central. Isso inclui Representante da NanoTrasen, Blueshield e outros;
+
+  [bold]6.[/bold] O Chefe dos funcionários pode utilizar papelada a seu critério. No entanto, durante emergências graves na estação, a agilidade deve prevalecer sobre a burocracia;
+
+  [bold]7.[/bold] O Chefe dos funcionários não pode deixar seu escritório desguarnecido se houver funcionários esperando na fila. Não responder a funcionários com solicitações legítimas em até dez (10) minutos, seja por rádio ou pessoalmente, é considerado violação do POP;
+
+  [bold]8.[/bold] O Chefe dos funcionários não pode exercer funções de Segurança. O Chefe dos funcionários pode portar um Desativador apenas para autodefesa.
 
 
-  # I don't see my job listed here
+  #Representante da Nanotrasen
 
-  It may be because this is a living document, and SOP is not yet finalized. The following SOP documents are completed for other Head's of Staff;
+  [bold]1.[/bold] O Representante da NanoTrasen deve garantir que todos os Departamentos estejam seguindo o POP, incluindo o respectivo Chefe de Departamento. Se não houver Chefe disponível para um Departamento, o Representante da NanoTrasen deve garantir que o Capitão nomeie um Chefe Interino para tal Departamento;
 
-  -[textlink="Head of Security SOP" link="SecuritySOP"]
+  [bold]2.[/bold] O Representante da NanoTrasen deve tentar resolver qualquer violação do POP localmente antes de contatar o Comando Central. Isso é imperativo: o POP deve sempre ser seguido, a menos que haja um motivo muito forte para não fazê-lo;
 
-  Glory to NanoTrasen!
+  [bold]3.[/bold] O Representante da NanoTrasen deve, junto ao Chefe de Segurança, garantir que a Lei Espacial está sendo seguida e corretamente aplicada;
+
+  [bold]4.[/bold] O Representante da NanoTrasen não pode ameaçar usar o fax para obter vantagem sobre qualquer funcionário, incluindo o Comando. Além disso, não pode ameaçar demitir ou pedir ao Comando Central que demita alguém, a menos que realmente possua uma nota de rebaixamento;
+
+  [bold]5.[/bold] O Representante da NanoTrasen pode portar seu flash e uma bengala-lâmina, ou um cassetete de choque caso a bengala-lâmina seja perdida.
+
+
+  # Se você precisar se desviar,
+
+  [bold]Documente, documente, documente![/bold]
+  Relatórios pós-ação, ligar para o CentCom no lendário telefone vermelho ou até mesmo rezar serão ouvidos pelo CentCom e suas ações podem ser desculpadas se forem consideradas do interesse da NanoTrasen.
+
+  Glória à NanoTrasen!
 </Document>

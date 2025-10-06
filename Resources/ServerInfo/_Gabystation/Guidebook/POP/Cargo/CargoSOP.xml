@@ -7,51 +7,51 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Quartermaster
+  # Intendente Logístico (Quartermaster)
 
-  [bold]1.[/bold] The Quartermaster must ensure that every approved order is delivered within 15 minutes of having been placed and approved;
+  [bold]1.[/bold] O Intendente Logístico deve garantir que todo pedido aprovado seja entregue em até 15 minutos após ter sido feito e aprovado;
 
-  [bold]2.[/bold] In the event of a major crisis, such as Nuclear Operatives or a Blob Organism, expediency is to be favored over paperwork, as excessive bureaucracy may be detrimental to the well-being of the station;
+  [bold]2.[/bold] Em caso de crise grave, como Operativos Nucleares ou um Organismo Blob, a agilidade deve ser priorizada em relação à burocracia, pois excesso de papelada pode ser prejudicial ao bem-estar da estação;
 
-  [bold]3.[/bold] The Quartermaster is not permitted to authorize the ordering of Security equipment and/or gear without express permission from the Head of Security and/or Captain. An exception is made during extreme emergencies, such as Nuclear Operatives or a Blob Organism, where said equipment is to be delivered to Security, post haste;
+  [bold]3.[/bold] O Intendente Logístico não pode autorizar a compra de equipamentos e/ou itens de Segurança sem permissão expressa do Chefe de Segurança e/ou Capitão. Exceção é feita em emergências extremas, como Operativos Nucleares ou um Organismo Blob, onde tais equipamentos devem ser entregues à Segurança imediatamente;
 
-  [bold]4.[/bold] The Quartermaster is permitted to authorize non-departmental orders (such as a Medical Doctor asking for Insulated Gloves) without express permission from the respective Head of Staff (in this example, the Chief Engineer), utilizing their best judgement, although they may still request a stamped form. However, any breach of Standard Operating Procedure and/or Space Law that results from said order will also implicate the Quartermaster;
+  [bold]4.[/bold] O Intendente Logístico pode autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do respectivo Chefe de Departamento (neste exemplo, o Engenheiro Chefe), usando seu melhor julgamento, embora ainda possa solicitar um formulário carimbado. No entanto, qualquer violação do Procedimento Operacional Padrão e/ou da Lei Espacial resultante desse pedido também implicará o Intendente Logístico;
 
-  [bold]5.[/bold] The Quartermaster is not permitted to authorize the purchase of a Supermatter Crate without express permission from the Chief Engineer;
+  [bold]5.[/bold] O Intendente Logístico não pode autorizar a compra de uma Caixa de Supermatéria sem permissão expressa do Engenheiro Chefe;
 
-  [bold]6.[/bold] The Quartermaster is required to follow the guidelines put in place for Cargo Technicians;
+  [bold]6.[/bold] O Intendente Logístico deve seguir as diretrizes estabelecidas para os Técnicos de Carga;
 
-  # Cargo Technician
+  # Técnico de Carga (Cargo Technician)
 
-  [bold]1.[/bold] Cargo Technicians must ensure that every approved order is delivered within 15 minutes of having been placed and approved;
+  [bold]1.[/bold] Técnicos de Carga devem garantir que todo pedido aprovado seja entregue em até 15 minutos após ter sido feito e aprovado;
 
-  [bold]2.[/bold] Cargo Technicians are bound to the same rules as the Quartermaster regarding restricted crates (see above);
+  [bold]2.[/bold] Técnicos de Carga estão sujeitos às mesmas regras do Intendente Logístico quanto a caixas restritas (ver acima);
 
-  [bold]3.[/bold] Cargo Technicians are not permitted to order items for sole personal use with the supply department account without express consent from the Quartermaster. Exception is made if there are more than 2500 spesos available and no outstanding orders. Cargo Technicians may not deplete the entire department account balance for this;
+  [bold]3.[/bold] Técnicos de Carga não podem pedir itens para uso pessoal exclusivo com a conta do departamento de suprimentos sem consentimento expresso do Intendente Logístico. Exceção é feita se houver mais de 2500 spesos disponíveis e nenhum pedido pendente. Técnicos de Carga não podem zerar o saldo da conta do departamento para isso;
 
-  [bold]4.[/bold] Cargo Technicians are not permitted to order non-essential items using the supply account (such as cats, or clothing) without express consent from the Quartermaster;
+  [bold]4.[/bold] Técnicos de Carga não podem pedir itens não essenciais usando a conta de suprimentos (como gatos ou roupas) sem consentimento expresso do Intendente Logístico;
 
-  [bold]5.[/bold] Cargo Technicians are not permitted to force and/or break open locked crates. The same applies to the Quartermaster. Exception is made for Abandoned Crates found by Mining;
+  [bold]5.[/bold] Técnicos de Carga não podem forçar e/ou arrombar caixas trancadas. O mesmo se aplica ao Intendente Logístico. Exceção é feita para Caixas Abandonadas encontradas pela Mineração;
 
-  [bold]6.[/bold] Cargo Technicians are not permitted to authorize non-departmental orders (such as a Medical Doctor asking for Insulated Gloves) without express permission from the Quartermaster;
+  [bold]6.[/bold] Técnicos de Carga não podem autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do Intendente Logístico;
 
-  [bold]7.[/bold] Cargo Technicians must ensure at least one copy of every Order Form (ie, the forms produced by the Requests Console) is kept inside Cargo.
+  [bold]7.[/bold] Técnicos de Carga devem garantir que pelo menos uma cópia de cada Formulário de Pedido (ou seja, os formulários produzidos pelo Console de Pedidos) seja mantida dentro da Carga.
 
-  [bold]8.[/bold] Cargo Technicians must send back all crates that have been ordered, with accompanying stamped manifest inside the crate;
+  [bold]8.[/bold] Técnicos de Carga devem devolver todas as caixas que foram pedidas, com o manifesto carimbado dentro da caixa;
 
-  [bold]9.[/bold] Cargo Technicians should ensure that a single Department does not fully drain the Ore Redemption Machine, as it can be utilized by multiple Departments;
+  [bold]9.[/bold] Técnicos de Carga devem garantir que um único Departamento não esgote totalmente a Máquina de Resgate de Minérios, pois ela pode ser utilizada por vários Departamentos;
 
-  [bold]10.[/bold] Cargo Technicians are not permitted to ask for space credits in exchange for legal cargo crate orders or autolathe requests from crew members;
+  [bold]10.[/bold] Técnicos de Carga não podem pedir créditos espaciais em troca de pedidos legais de caixas de carga ou solicitações de autolathe de membros da tripulação;
 
-  [bold]11.[/bold] Cargo Technicians are not permitted to trade items and/or favors in exchange for items with regular personnel without express consent from the Quartermaster;
+  [bold]11.[/bold] Técnicos de Carga não podem trocar itens e/ou favores por itens com pessoal comum sem consentimento expresso do Intendente Logístico;
 
-  # Salvage Specialist
+  # Especialista em Salvamento (Salvage Specialist)
 
-  [bold]1.[/bold] Salvage Specialists are not permitted to hoard materials. All mined materials are to be left in the Ore Processor;
+  [bold]1.[/bold] Especialistas em Salvamento não podem acumular materiais. Todos os materiais minerados devem ser deixados no Processador de Minérios;
 
-  [bold]2.[/bold] Salvage Specialists are not permitted to throw people into manufactured wormholes, nor are they permitted to trick people into using Bluespace Crystals, or throwing Bluespace Crystals at anyone;
+  [bold]2.[/bold] Especialistas em Salvamento não podem jogar pessoas em buracos de minhoca fabricados, nem enganar pessoas para usarem Cristais de Bluespace, ou jogar Cristais de Bluespace em alguém;
 
-  [bold]3.[/bold] Salvage Specialists are not permitted to give expedition acquired items to station crew, unless the Quartermaster approves;
+  [bold]3.[/bold] Especialistas em Salvamento não podem dar itens adquiridos em expedições para a tripulação da estação, a menos que o Intendente Logístico aprove;
 
-  [bold]4.[/bold] Salvage Specialists are bound by guidelines set for Cargo Technicians when inside the Cargo Office or Bay;
+  [bold]4.[/bold] Especialistas em Salvamento estão sujeitos às diretrizes estabelecidas para Técnicos de Carga quando estiverem dentro do Escritório ou Baía de Carga;
 </Document>
