@@ -2,12 +2,11 @@ using Content.Server.Store.Systems;
 using Content.Shared._Gabystation.MalfAi;
 using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.Alert;
-using Content.Shared.MalfAI.Components;
 using Content.Shared.Store.Components;
 
 namespace Content.Server._Gabystation.MalfAi;
 
-public sealed class MalfAiSystem : SharedMalfAiSystem
+public sealed partial class MalfAiSystem : SharedMalfAiSystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly StoreSystem _store = default!;
@@ -20,6 +19,8 @@ public sealed class MalfAiSystem : SharedMalfAiSystem
         SubscribeLocalEvent<MalfunctioningAiComponent, ComponentShutdown>(OnComponentShutdown);
 
         SubscribeLocalEvent<MalfunctioningAiComponent, CurrencyUpdatedEvent>(OnCurrencyUpdated);
+
+        InitializeAbilities();
     }
 
     private void OnComponentInit(Entity<MalfunctioningAiComponent> malf, ref ComponentInit args)
