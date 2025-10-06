@@ -25,8 +25,8 @@
     speedModifierThresholds:
       350: 1.6 # Ele fica mais rápido quando machucado (É pra ficar :shrug:)
   - type: MovementSpeedModifier
-    baseWalkSpeed: 8
-    baseSprintSpeed: 3
+    baseWalkSpeed: 3
+    baseSprintSpeed: 8
   - type: MeleeWeapon
     soundHit:
       path: /Audio/_Gabystation/Weapons/Xeno/monster_attack.ogg
@@ -77,4 +77,3 @@
     sound:
       path: /Audio/_Gabystation/Voice/Wendigo_Cry_3.ogg
     color: maroon
-    global: no # Eu nem sei se isso funciona.
