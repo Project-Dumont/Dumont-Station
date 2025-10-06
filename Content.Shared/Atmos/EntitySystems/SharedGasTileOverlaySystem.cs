@@ -12,6 +12,9 @@
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -89,13 +92,17 @@ namespace Content.Shared.Atmos.EntitySystems
             [ViewVariables]
             public readonly byte[] Opacity;
 
+            [ViewVariables]
+            public readonly byte FireType;
+
             // TODO change fire color based on temps
             // But also: dont dirty on a 0.01 kelvin change in temperatures.
             // Either have a temp tolerance, or map temperature -> byte levels
 
-            public GasOverlayData(byte fireState, byte[] opacity)
+            public GasOverlayData(byte fireState, byte type, byte[] opacity)
             {
                 FireState = fireState;
+                FireType = type;
                 Opacity = opacity;
             }
 

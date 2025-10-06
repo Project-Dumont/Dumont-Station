@@ -13,6 +13,7 @@
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ertanic <36124833+Ertanic@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Momo <Rsnesrud@gmail.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
@@ -122,8 +123,6 @@
   targetNode: helmet
   category: construction-category-clothing
   objectType: Item
-  description: Advanced security gear. Protects the station from ne'er-do-wells.
-  icon: { sprite: Clothing/Head/Helmets/justice.rsi, state: icon }
 
 # Assmos - Metal Hydrogen
 - type: construction
@@ -132,8 +131,6 @@
   startNode: start
   targetNode: armor
   category: construction-category-clothing
-  description: A superb armor made with the toughest and rarest materials available to man.
-  icon: { sprite: Clothing/OuterClothing/Armor/metal_hydrogen_armor.rsi, state: icon }
   objectType: Item
 
 - type: construction
@@ -142,8 +139,6 @@
   startNode: start
   targetNode: helmet
   category: construction-category-clothing
-  description: A superb helmet made with the toughest and rarest materials available to man.
-  icon: { sprite: Clothing/Head/Helmets/metal_hydrogen_helmet.rsi, state: icon }
   objectType: Item
 
 - type: construction
@@ -152,6 +147,4 @@
   startNode: start
   targetNode: armor
   category: construction-category-clothing
-  description: An atmos fire suit bolstered by the defensive power of metal hydrogen using techniques passed down through generations of atmospheric technicians.
-  icon: { sprite: Clothing/OuterClothing/Armor/atmosian_armor.rsi, state: icon }
   objectType: Item

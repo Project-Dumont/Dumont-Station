@@ -38,6 +38,9 @@
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -69,8 +72,7 @@ public sealed partial class FlatpackCreatorMenu : FancyWindow
 
     private EntityUid _owner;
 
-    [ValidatePrototypeId<EntityPrototype>]
-    public const string NoBoardEffectId = "FlatpackerNoBoardEffect";
+    public static readonly EntProtoId NoBoardEffectId = "FlatpackerNoBoardEffect";
 
     private EntityUid? _currentBoard = EntityUid.Invalid;
 

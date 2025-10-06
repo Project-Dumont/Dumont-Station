@@ -4,14 +4,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Speech;
-using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech;
 using Robust.Shared.Random;
 
 namespace Content.Goobstation.Server.Speech;
 
 public sealed class BritishAccentSystem : EntitySystem
-{   //shamelessly stolen from the dementia accent
+{
+    //shamelessly stolen from the dementia accent
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
 

@@ -286,7 +286,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 5.5 # Gabystation - faz blob raro
+    weight: 1
     duration: 1
     earliestStart: 50
     minimumPlayers: 30

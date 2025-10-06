@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseFlatpack
+  id: ATMFlatpack
+  name: ATM flatpack
+  description: The devil in your flatpack.
+  components:
+  - type: Flatpack
+    entity: ComputerBankATM

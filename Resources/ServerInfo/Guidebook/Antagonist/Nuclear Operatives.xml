@@ -29,16 +29,16 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## Operativos
   Sua equipe será composta por várias funções diferentes, que incluem:
   - [bold]Operativos[/bold], soldados padrão que realizam o trabalho pesado.
-  - O [bold]Agente[/bold], que trabalha com reagentes para fazer medicamentos ou armas químicas.
+  - O [bold]Médico[/bold], que trabalha com reagentes para fazer medicamentos ou armas químicas.
   - O [bold]Comandante[/bold], que traça o plano e lidera a equipe.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="traje do agente"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="traje do médico"/>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="traje do comandante"/>
   </Box>
 
-  Se você foi selecionado como Agente ou Comandante, mas não se sente preparado, um de seus colegas pode assumir a responsabilidade.
+  Se você foi selecionado como Médico ou Comandante e não se sente preparado, um de seus colegas pode assumir a responsabilidade.
 
   ## O Disco
 

@@ -194,6 +194,7 @@
       tags:
         - Carp
         - DoorBumpOpener
+        - CannotSuicide
     - type: ReplacementAccent
       accent: genericAggressive
     - type: Speech
@@ -209,6 +210,7 @@
       color: "#808080"
       activateSound: null
       deactivateSound: null
+    - type: VentCrawler # Goobstation
     - type: Fauna # Lavaland Change
     - type: CombatPower # Funky
       factor: 8 # / 2 = times stronger than an unarmed crew member
@@ -283,6 +285,10 @@
   suffix: "Salvage Ruleset"
   components:
     - type: SalvageMobRestrictions
+#    - type: MobThresholds # Lavaland change
+#      thresholds:
+#        0: Alive
+#        30: Dead
 
 - type: entity
   name: space carp
@@ -358,7 +364,8 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        150: Dead
+        #82: Dead # Might seem random, but this brings up the hits to kill with a crusher mark to 3
+        150: Dead # Lavaland Change
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals

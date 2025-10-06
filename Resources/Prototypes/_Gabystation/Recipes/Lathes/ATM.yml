@@ -1,0 +1,5 @@
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseGeneralComputerRecipeCategory ]
+  id: BankATMCircuitboard
+  icon: { sprite:  _Gabystation/Structures/Machines/atm.rsi, state: icon } # Goobstation
+  result: BankATMCircuitboard

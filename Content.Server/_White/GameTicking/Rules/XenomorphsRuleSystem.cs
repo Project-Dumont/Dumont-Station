@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Triangle <74220687+cwestkaemper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 loltart <159829224+loltart@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server._White.GameTicking.Rules.Components;
 using Content.Server.Antag;
@@ -66,7 +73,6 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             return;
 
         component.Xenomorphs.Add(args.EntityUid);
-        component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
     }
 
     private void OnXenomorphInit(EntityUid uid, XenomorphComponent component, ComponentInit args)
@@ -225,9 +231,17 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
 
-        if (!component.AnnouncementTime.HasValue || component.NextCheck > _timing.CurTime)
+        if (component.NextCheck > _timing.CurTime)
             return;
 
+        if (!component.AnnouncementTime.HasValue)
+        {
+            var allQueens = GetXenomorphs(component, "Queen");
+            if (allQueens.Count > 0)
+            {
+                component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
+            }
+        }
         component.NextCheck = _timing.CurTime + component.CheckDelay;
 
         if (!component.Announced && component.AnnouncementTime <= _timing.CurTime)
@@ -313,7 +327,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         var xenomorphs = new List<EntityUid>();
 
-        foreach(var xenomorph in xenomorphsRule.Xenomorphs.ToList())
+        foreach (var xenomorph in xenomorphsRule.Xenomorphs.ToList())
         {
             if (!Exists(xenomorph) || !TryComp<XenomorphComponent>(xenomorph, out var xenomorphComponent))
             {

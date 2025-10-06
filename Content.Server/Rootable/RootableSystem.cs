@@ -5,9 +5,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -19,6 +19,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Rootable;
 
+// TODO: Move all of this to shared
 /// <summary>
 /// Adds an action to toggle rooting to the ground, primarily for the Diona species.
 /// </summary>
@@ -75,7 +76,7 @@ public sealed class RootableSystem : SharedRootableSystem
 
         _reactive.DoEntityReaction(entity, transferSolution, ReactionMethod.Ingestion);
 
-        if (_blood.TryAddToChemicals(entity, transferSolution, entity.Comp2))
+        if (_blood.TryAddToChemicals((entity, entity.Comp2), transferSolution))
         {
             // Log solution addition by puddle
             _logger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(entity):target} absorbed puddle {SharedSolutionContainerSystem.ToPrettyString(transferSolution)}");

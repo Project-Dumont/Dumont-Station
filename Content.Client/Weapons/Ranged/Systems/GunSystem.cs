@@ -97,9 +97,9 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    [ValidatePrototypeId<EntityPrototype>]
-    public const string HitscanProto = "HitscanEffect";
-    public const string ImpactProto = "ImpactEffect";
+    public static readonly EntProtoId HitscanProto = "HitscanEffect";
+    public static readonly EntProtoId ImpactProto = "ImpactEffect";
+
     private DisplacementEffect _displacementEffect = null!;
 
     public bool SpreadOverlay

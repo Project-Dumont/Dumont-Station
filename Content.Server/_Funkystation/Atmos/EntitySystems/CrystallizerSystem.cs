@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
@@ -81,7 +82,7 @@ namespace Content.Server._Funkystation.Atmos.Systems
 
         private void OnSetGasInputMessage(EntityUid uid, CrystallizerComponent crystallizer, CrystallizerSetGasInputMessage args)
         {
-            crystallizer.GasInput = args.GasInput;
+            crystallizer.GasInput = Math.Clamp(args.GasInput, 0f, 250f);
             DirtyUI(uid, crystallizer);
         }
 
@@ -329,7 +330,7 @@ namespace Content.Server._Funkystation.Atmos.Systems
             if (!GetRegulatorPipeMixture(uid, crystallizer, out var regulatorMix) || regulatorMix == null)
                 return;
 
-            if (regulatorMix.TotalMoles < 0.01 || crystalMix.TotalMoles <= 0)
+            if (crystalMix.TotalMoles <= 0)
                 return;
 
             float regulatorHeatCapacity = _atmos.GetHeatCapacity(regulatorMix, true);

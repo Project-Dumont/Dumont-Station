@@ -1,14 +1,14 @@
 # SPDX-FileCopyrightText: 2024 P e p e . <josephpereira413@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: xenonid burrower
+  abstract: true
   id: BaseMobAlternate
   parent: SimpleSpaceMobBase
-  description: They mostly come at night. Mostly.
   components:
   - type: Insulated
   - type: CombatMode
@@ -43,12 +43,6 @@
     - Xeno
   - type: Hands
   - type: ComplexInteraction
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/burrower.rsi
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
   - type: Fixtures
     fixtures:
       fix1:
@@ -86,7 +80,6 @@
       groups:
         Brute: 6
   - type: DamageStateVisuals
-    rotate: true
     states:
       Alive:
         Base: running
@@ -164,8 +157,12 @@
         Structural: 50
         Piercing: 15
   - type: Devourer
-    foodPreference: Humanoid
-    shouldStoreDevoured: true
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
     chemical: Omnizine
     healRate: 55.0
     whitelist:

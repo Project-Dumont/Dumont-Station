@@ -8,7 +8,10 @@
 // SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 YourUsername <you@example.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com> Goobstation
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 godisdeadLOL <169250097+godisdeadLOL@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -22,6 +25,7 @@ using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Bots;
+using Content.Shared.Stealth.Components; // Goobstation
 using Content.Shared.Emag.Components;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
@@ -71,13 +75,15 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
         var recentlyInjected = _entManager.GetEntityQuery<NPCRecentlyInjectedComponent>();
         var mobState = _entManager.GetEntityQuery<MobStateComponent>();
         var emaggedQuery = _entManager.GetEntityQuery<EmaggedComponent>();
+        var stealthQuery = _entManager.GetEntityQuery<StealthComponent>(); // Goobstation
 
         foreach (var entity in _lookup.GetEntitiesInRange(owner, range))
         {
             if (mobState.TryGetComponent(entity, out var state) &&
                 injectQuery.HasComponent(entity) &&
                 damageQuery.TryGetComponent(entity, out var damage) &&
-                !recentlyInjected.HasComponent(entity))
+                !recentlyInjected.HasComponent(entity) &&
+                !(stealthQuery.TryGetComponent(entity, out var stealth) && stealth.Enabled)) // Goobstation - stealth check
             {
                 // no treating dead bodies
                 if (!_medibot.TryGetTreatment(medibot, state.CurrentState, out var treatment))

@@ -47,7 +47,6 @@
 // SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
@@ -56,13 +55,19 @@
 // SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 goet <6637097+goet@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -74,6 +79,8 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Server.Vocalization.Systems;
+using Content.Shared.Cargo;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
@@ -90,6 +97,12 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared._Gabystation.NanoBank;
+using Content.Server._Gabystation.Economy;
+using Content.Shared.Advertise.Components;
+using Content.Shared.Advertise.Systems;
+using Content.Shared.Emag.Components;
 
 namespace Content.Server.VendingMachines
 {
@@ -99,6 +112,11 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!; // Gaby change
+        [Dependency] private readonly SharedIdCardSystem _id = default!; // Gaby change
+        [Dependency] private readonly EconomyManagerSystem _economy = default!; // Gaby change
+        [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
+        [Dependency] private readonly AccessReaderSystem _accessReader = default!;
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -111,14 +129,177 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, DamageChangedEvent>(OnDamageChanged);
             SubscribeLocalEvent<VendingMachineComponent, PriceCalculationEvent>(OnVendingPrice);
             SubscribeLocalEvent<VendingMachineComponent, EmpPulseEvent>(OnEmpPulse);
-
+            SubscribeLocalEvent<VendingMachineComponent, TryVocalizeEvent>(OnTryVocalize);
             SubscribeLocalEvent<VendingMachineComponent, ActivatableUIOpenAttemptEvent>(OnActivatableUIOpenAttempt);
-
             SubscribeLocalEvent<VendingMachineComponent, VendingMachineSelfDispenseEvent>(OnSelfDispense);
-
             SubscribeLocalEvent<VendingMachineComponent, RestockDoAfterEvent>(OnDoAfter);
-
             SubscribeLocalEvent<VendingMachineRestockComponent, PriceCalculationEvent>(OnPriceCalculation);
+
+            Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
+            {
+                subs.Event<VendingMachineEjectMessage>(OnEjectMessage);
+            });
+        }
+
+        // GabyStation -> Economy,Unpredict VendingMachine begin
+        private void OnEjectMessage(Entity<VendingMachineComponent> vendor, ref VendingMachineEjectMessage args)
+        {
+            if (!_receiver.IsPowered(vendor.Owner) || Deleted(vendor.Owner))
+                return;
+
+            if (args.Actor is not { Valid: true } actor)
+                return;
+
+            AuthorizedVend(vendor.AsNullable(), actor, args.Type, args.ID);
+        }
+
+        public void Deny(Entity<VendingMachineComponent?> entity, EntityUid? user = null)
+        {
+            if (!Resolve(entity.Owner, ref entity.Comp))
+                return;
+
+            if (entity.Comp.Denying)
+                return;
+
+            entity.Comp.DenyEnd = Timing.CurTime + entity.Comp.DenyDelay;
+            Audio.PlayPvs(entity.Comp.SoundDeny, entity.Owner, AudioParams.Default.WithVolume(-2f));
+            TryUpdateVisualState(entity);
+            Dirty(entity);
+        }
+
+        /// <summary>
+        /// Checks if the user is authorized to use this vending machine
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="sender">Entity trying to use the vending machine</param>
+        /// <param name="vendComponent"></param>
+        public bool IsAuthorized(Entity<VendingMachineComponent?> vendor, EntityUid sender)
+        {
+            if (!Resolve(vendor.Owner, ref vendor.Comp))
+                return false;
+
+            if (!TryComp<AccessReaderComponent>(vendor.Owner, out var accessReader))
+                return true;
+
+            if (_accessReader.IsAllowed(sender, vendor.Owner, accessReader)
+                || HasComp<EmaggedComponent>(vendor.Owner))
+                return true;
+
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-access-denied"), vendor.Owner);
+            Deny(vendor, sender);
+            return false;
+        }
+
+        /// <summary>
+        /// Checks whether the user is authorized to use the vending machine, then ejects the provided item if true
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="sender">Entity that is trying to use the vending machine</param>
+        /// <param name="type">The type of inventory the item is from</param>
+        /// <param name="itemId">The prototype ID of the item</param>
+        /// <param name="component"></param>
+        public void AuthorizedVend(Entity<VendingMachineComponent?> vendor, EntityUid sender, InventoryType type, string itemId)
+        {
+            if (!Resolve(vendor.Owner, ref vendor.Comp))
+                return;
+
+            if (!IsAuthorized(vendor, sender))
+                return;
+
+            var maybeEntry = GetEntry(vendor.Owner, itemId, type, vendor.Comp);
+
+            if (maybeEntry is not { } entry
+                || entry.Price is not null
+                && !CanPurchase(vendor, sender, entry))
+                return;
+
+            TryEjectVendorItem(vendor, type, itemId, vendor.Comp.CanShoot, sender);
+        }
+
+        /// <summary>
+        /// Tries to eject the provided item. Will do nothing if the vending machine is incapable of ejecting, already ejecting
+        /// or the item doesn't exist in its inventory.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="type">The type of inventory the item is from</param>
+        /// <param name="itemId">The prototype ID of the item</param>
+        /// <param name="throwItem">Whether the item should be thrown in a random direction after ejection</param>
+        /// <param name="vendComponent"></param>
+        public void TryEjectVendorItem(
+            Entity<VendingMachineComponent?> vendor,
+            InventoryType type,
+            string itemId,
+            bool throwItem,
+            EntityUid? user = null)
+        {
+            var (uid, comp) = vendor;
+
+            if (!Resolve(uid, ref comp))
+                return;
+
+            if (comp.Ejecting
+                || comp.Broken
+                || !_receiver.IsPowered(uid))
+                return;
+
+            var entry = GetEntry(uid, itemId, type, comp);
+
+            if (string.IsNullOrEmpty(entry?.ID))
+            {
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-invalid-item"), uid);
+                Deny(vendor);
+                return;
+            }
+
+            if (entry.Amount <= 0)
+            {
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-out-of-stock"), uid);
+                Deny(vendor);
+                return;
+            }
+
+            // Start Ejecting, and prevent users from ordering while anim playing
+            comp.EjectEnd = Timing.CurTime + comp.EjectDelay;
+            comp.NextItemToEject = entry.ID;
+            comp.ThrowNextItem = throwItem;
+
+            // Precisamos tirar o dinheiro da conta do player aqui. O item tá saindo da máquina.
+            if (user is not null
+                && entry.Price is not null
+                && _id.TryFindIdCard(user.Value, out var id)
+                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && card.Station is not null
+                && TryComp<EconomyManagerComponent>(card.Station, out var economy))
+                _economy.TryPurchase(economy, card.AccountId, entry.Price.Value);
+
+            if (TryComp<SpeakOnUIClosedComponent>(uid, out var speakComponent))
+                _speakOn.TrySetFlag((uid, speakComponent));
+
+            entry.Amount--;
+            Dirty(uid, comp);
+            UpdateUI(vendor);
+            TryUpdateVisualState(vendor);
+
+            Audio.PlayPvs(comp.SoundVend, uid);
+        }
+        // GabyStation -> Economy,Unpredict VendingMachine end
+
+        private bool CanPurchase(Entity<VendingMachineComponent?> vendor, EntityUid actor, VendingMachineInventoryEntry entry)
+        {
+            if (entry.Price is not { } price)
+                return true;
+
+            if (_id.TryFindIdCard(actor, out var id)
+                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && card.Station is not null
+                && TryComp<EconomyManagerComponent>(card.Station, out var economy)
+                && _economy.ValidateCard(economy, card)
+                && _economy.CanAfford(economy, card.AccountId, price, out var _))
+                return true;
+
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-insufficient-balance"), vendor.Owner);
+            Deny(vendor, actor);
+            return false;
         }
 
         private void OnVendingPrice(EntityUid uid, VendingMachineComponent component, ref PriceCalculationEvent args)
@@ -147,6 +328,9 @@ namespace Content.Server.VendingMachines
             {
                 TryUpdateVisualState((uid, component));
             }
+
+            // GabyStation -> Economy
+            RestockInventoryFromPrototype(uid, component, component.InitialStockQuality);
         }
 
         private void OnActivatableUIOpenAttempt(EntityUid uid, VendingMachineComponent component, ActivatableUIOpenAttemptEvent args)
@@ -276,7 +460,8 @@ namespace Content.Server.VendingMachines
             }
             else
             {
-                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, user: null, vendComponent: vendComponent);
+                // GabyStation -> Economy
+                TryEjectVendorItem((uid, vendComponent), item.Type, item.ID, throwItem, user: null);
             }
         }
 
@@ -378,5 +563,88 @@ namespace Content.Server.VendingMachines
                 component.NextEmpEject = _timing.CurTime;
             }
         }
+
+        private void OnTryVocalize(Entity<VendingMachineComponent> ent, ref TryVocalizeEvent args)
+        {
+            args.Cancelled |= ent.Comp.Broken;
+        }
+
+        // Gaby change - start
+
+        public void RestockInventoryFromPrototype(EntityUid uid,
+        VendingMachineComponent? component = null, float restockQuality = 1f)
+        {
+            if (!Resolve(uid, ref component))
+            {
+                return;
+            }
+
+            if (!PrototypeManager.TryIndex(component.PackPrototypeId, out VendingMachineInventoryPrototype? packPrototype))
+                return;
+
+            AddInventoryFromPrototype(uid, packPrototype.StartingInventory, InventoryType.Regular, component, restockQuality);
+            AddInventoryFromPrototype(uid, packPrototype.EmaggedInventory, InventoryType.Emagged, component, restockQuality);
+            AddInventoryFromPrototype(uid, packPrototype.ContrabandInventory, InventoryType.Contraband, component, restockQuality);
+            Dirty(uid, component);
+        }
+
+        private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
+            InventoryType type,
+            VendingMachineComponent? component = null, float restockQuality = 1.0f)
+        {
+            if (!Resolve(uid, ref component) || entries == null)
+            {
+                return;
+            }
+
+            Dictionary<string, VendingMachineInventoryEntry> inventory;
+            switch (type)
+            {
+                case InventoryType.Regular:
+                    inventory = component.Inventory;
+                    break;
+                case InventoryType.Emagged:
+                    inventory = component.EmaggedInventory;
+                    break;
+                case InventoryType.Contraband:
+                    inventory = component.ContrabandInventory;
+                    break;
+                default:
+                    return;
+            }
+
+            foreach (var (id, amount) in entries)
+            {
+                if (PrototypeManager.TryIndex<EntityPrototype>(id, out var proto))
+                {
+                    var restock = amount;
+                    var chanceOfMissingStock = 1 - restockQuality;
+
+                    var result = Randomizer.NextFloat(0, 1);
+                    if (result < chanceOfMissingStock)
+                    {
+                        restock = (uint) Math.Floor(amount * result / chanceOfMissingStock);
+                    }
+
+                    if (inventory.TryGetValue(id, out var entry))
+                        // Prevent a machine's stock from going over three times
+                        // the prototype's normal amount. This is an arbitrary
+                        // number and meant to be a convenience for someone
+                        // restocking a machine who doesn't want to force vend out
+                        // all the items just to restock one empty slot without
+                        // losing the rest of the restock.
+                        entry.Amount = Math.Min(entry.Amount + amount, 3 * restock);
+                    else
+                    {
+                        uint? cost = (uint) (_pricing.GetEstimatedPrice(proto) * component.PriceMultiplier);
+                        if (!component.PaidItems || cost == 0)
+                            cost = null;
+                        inventory.Add(id, new VendingMachineInventoryEntry(type, id, restock, cost));
+                    }
+                }
+            }
+        }
+
+        // Gaby change - end
     }
 }

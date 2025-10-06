@@ -138,6 +138,8 @@
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Lenny <187471588+Bynnel@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
@@ -610,6 +612,14 @@
     - SignalValve
     - CanisterPort
     - FilterGas
+    # <GabyStation>
+    - ManifoldGas
+    - PipeHalf
+    - Alarm
+    - Sensor
+    - SensorPipe
+    - PressureRegulator
+    # <\GabyStation>
     # <Goobstation>
     - FilterInline
     - RadiatorInline

@@ -1,7 +1,13 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -47,7 +53,7 @@ public sealed partial class ChangeTileReaction : ITileReaction
             return FixedPoint2.Zero;
 
         var tileDefManager = IoCManager.Resolve<ITileDefinitionManager>();
-        var turfSystem = IoCManager.Resolve<EntitySystemManager>().GetEntitySystem<TurfSystem>();
+        var turfSystem = entityManager.System<TurfSystem>();
         var tileDef = turfSystem.GetContentTileDefinition(tile);
 
         if (tileDef.ID == NewTileId)
@@ -57,7 +63,7 @@ public sealed partial class ChangeTileReaction : ITileReaction
             return FixedPoint2.Zero;
 
         var newTileDef = tileDefManager[NewTileId];
-        entityManager.System<MapSystem>().SetTile(gridUid, mapGrid, tile.GridIndices, new Tile(newTileDef.TileId));
+        entityManager.System<MapSystem>().SetTile(gridUid, mapGrid, gridIndices, new Tile(newTileDef.TileId));
 
         if (Effect != null)
             entityManager.SpawnEntity(Effect.Value, new EntityCoordinates(gridUid, gridIndices));

@@ -995,3 +995,186 @@ Entries:
       message: Espere ver mais muito mais estruturas na Lavaland.
   id: 113
   time: '2025-09-13T10:07:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug da barra de scroll do chat desaparecendo.
+  id: 114
+  time: '2025-09-17T02:32:58.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido culto de sangue.
+  id: 115
+  time: '2025-09-17T18:12:27.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: >-
+        A engenharia agora possui uma bolsa de materiais para transportar
+        material.
+  id: 116
+  time: '2025-09-19T01:24:30.0000000+00:00'
+- author: Dreykor e SBR_ERENM2
+  changes:
+    - type: Add
+      message: Novo plushie da "Niku Hatsume", disponível no loadout.
+  id: 117
+  time: '2025-09-20T18:50:31.0000000+00:00'
+- author: Dreykor, RadsammyT
+  changes:
+    - type: Add
+      message: Mais interações RP para fazer com seus migos!!
+  id: 118
+  time: '2025-09-21T05:31:29.0000000+00:00'
+- author: 'Dreykor, LuciferEOS '
+  changes:
+    - type: Add
+      message: Port de um Rework para o NTR! Creditos aos LuciferEOS e BEBRIGHT
+    - type: Add
+      message: >-
+        NTR agora possui um novo item: maleta executiva, que é usada para
+        comprar coisas legais para ele e para a estação.
+    - type: Add
+      message: >-
+        O armário do NTR agora possui um novo flatpack de console de tarefas,
+        com várias tarefas para fazer.
+    - type: Add
+      message: >-
+        O NTR pode escanear contrabandos mágicos e syndies para gerar pontos na
+        sua maleta.
+    - type: Add
+      message: Novo objetivo raro de traidor para roubar a maleta executiva do NTR.
+    - type: Add
+      message: Blueshield Deputado e esquadrão interno Goon.
+  id: 119
+  time: '2025-09-21T05:39:25.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        O Reator de Fusão Hypertorus pode ser comprado na cargo! Procure na aba
+        de atmosfera ou pelo nome "rfh".
+    - type: Add
+      message: Adicionados Pipe Manifold e Half Pipe no RPD.
+    - type: Add
+      message: Adicionada aba de sensores e monitores no RPD.
+    - type: Tweak
+      message: Guia de Atmosfera atualizado.
+    - type: Tweak
+      message: >-
+        O RPD, menu G E cristalizador são compatíveis com o sistema de pipe
+        layers.
+    - type: Fix
+      message: >-
+        O cristalizador não manterá mais a temperatura com uma quantidade baixa
+        de gás na porta do regulador.
+    - type: Fix
+      message: >-
+        A taxa máxima de entrada do cristalizador agora está limitada a 250
+        mol/s.
+    - type: Fix
+      message: >-
+        O sprite do cristalizador mostra corretamente as duas entradas. Também é
+        possível rotacionar. As duas entradas são diferentes, ainda não há uma
+        forma visual de diferenciar. Se de um lado der errado, tente o outro ou
+        rotacione.
+  id: 120
+  time: '2025-09-22T03:57:18.0000000+00:00'
+- author: Kyoth25f e bogopablogames
+  changes:
+    - type: Add
+      message: >-
+        Adiciona músicas de Armandinho, Seu Jorge, Charlie Brown Jr, Os
+        Paralamas Do Sucesso e Djavan.
+  id: 121
+  time: '2025-09-23T01:32:08.0000000+00:00'
+- author: joaofernandez
+  changes:
+    - type: Tweak
+      message: Alterado buscas de máquinas para não considerar acentuação
+  id: 122
+  time: '2025-09-27T05:45:27.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob 27/09.
+  id: 123
+  time: '2025-09-28T02:35:43.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Added NUNO cards
+  id: 124
+  time: '2025-09-28T02:39:42.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Caixas eletronicos - Flatpack roundstart para HoS, bartender e QM, alem
+        da trade station.
+    - type: Add
+      message: >-
+        Todos os funcionarios da nanotrasen agora tem uma conta bancaria no
+        NanoBank, aproveite!
+    - type: Add
+      message: Nano Pix (ou Nano Bank) adicionado ao PDA de todos os tripulantes.
+    - type: Add
+      message: >-
+        A Central de Comando finalmente pagara seus funcionarios pelos seus
+        esforços!
+    - type: Remove
+      message: Sua liberdade financeira.
+  id: 125
+  time: '2025-09-30T04:06:48.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada as últimas mudanças do Goob 29/09!
+    - type: Fix
+      message: Sem mais o jogo morrendo ao fechar e tela preta ao reconectar!
+  id: 126
+  time: '2025-09-30T10:04:44.0000000+00:00'
+- author: Kyoth25f e Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas Questionable Ethics de Joel Nielsen, A Dark Zone de Toby Fox
+        e Guadian de Toby Fox na jukebox.
+  id: 127
+  time: '2025-10-01T13:19:40.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Corrige o contrato do diabo que por padrão spawnava com o texto errado,
+        o que causou varios contratos não coletarem as almas dos contratados,
+        pobres diabos...
+  id: 128
+  time: '2025-10-02T23:13:17.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        Altera a vida dos membros, desmembramento agora se torna mais facil e
+        menos mortal
+  id: 129
+  time: '2025-10-03T01:00:36.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Nuno card box are now present in Good Clean Fun vending machines
+  id: 130
+  time: '2025-10-03T01:06:59.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Revolucionarios de cair normalmente em uma partida.
+  id: 131
+  time: '2025-10-04T04:21:16.0000000+00:00'
+- author: Alpha-Two, starch, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Os líquidos agora pegam fogo. Cuidado!
+  id: 132
+  time: '2025-10-04T04:54:21.0000000+00:00'

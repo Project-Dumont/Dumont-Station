@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: EngineerMaterialBag
+  result: EngineerMaterialBag
+  categories:
+  - Engineering
+  completetime: 3
+  materials:
+    Plastic: 50
+    Cloth: 200
+    Steel: 200

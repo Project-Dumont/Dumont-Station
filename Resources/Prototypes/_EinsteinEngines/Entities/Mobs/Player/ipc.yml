@@ -170,10 +170,13 @@
   - type: Tag
     tags:
     - SiliconMob
+    - SiliconEmotes
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: OwnInteractionVerbs # EE: Interaction Verbs
+    allowedVerbs: []
 
 - type: entity
   save: false
