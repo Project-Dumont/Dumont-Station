@@ -15,6 +15,7 @@ namespace Content.Server.Revolutionary;
 
 public sealed class RevolutionarySystem : SharedRevolutionarySystem  // Goob Station - Revolutionary Language (entire class body)
 {
+    /* Traumastation - I'm lazy and I'm just commenting it all out
     [Dependency] private readonly LanguageSystem _languageSystem = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
 
@@ -61,5 +62,5 @@ public sealed class RevolutionarySystem : SharedRevolutionarySystem  // Goob Sta
                 _languageSystem.RemoveLanguage(uid, revComp.Language);
                 break;
         }
-    }
+    }*/
 }
