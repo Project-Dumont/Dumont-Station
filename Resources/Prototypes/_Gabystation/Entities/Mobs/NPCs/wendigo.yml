@@ -74,8 +74,8 @@
     color: "#ff4242"
     castShadows: false
   - type: AnnounceOnSpawn
-    message: "Você deveria fugir."
-    sender: "...?"
+    message: wendigo-has-spawned
+    sender: wendigo-has-spawned-sender
     sound:
       path: /Audio/_Gabystation/Voice/Wendigo_Cry_3.ogg
     color: maroon
