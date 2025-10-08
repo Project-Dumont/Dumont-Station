@@ -1,5 +1,6 @@
 using Content.Server.Forensics;
 using Content.Shared.WashingMachine;
+using Content.Shared.Forensics.Components;
 
 namespace Content.Server.WashingMachine;
 
