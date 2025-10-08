@@ -36,7 +36,6 @@
     whitelist:
       components:
       - Clothing
-      - Dyable
       sizes:
       - Tiny
   - type: Forensics

@@ -1,4 +1,4 @@
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands.Components;
 using Robust.Shared.GameStates;
 

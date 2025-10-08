@@ -1,5 +1,6 @@
 using Content.Server.Forensics;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Stains;
 using Content.Shared.Tag;
 
