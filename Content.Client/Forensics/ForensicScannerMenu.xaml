@@ -29,7 +29,7 @@ SPDX-License-Identifier: MIT
         <Label
             Name="NameLabel"
             Align="Center" />
-        <RichTextLabel
+        <Label
             Name="Diagnostics"
             Text="{Loc forensic-scanner-interface-no-data}"/>
     </BoxContainer>

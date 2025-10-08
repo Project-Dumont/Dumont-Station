@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 forensic-fibers = {LOC($material)} fibers
-forensic-fibers-colored = [color={$color}]{LOC($material)} fibers[/color]
+forensic-fibers-colored = {LOC($color)} {LOC($material)} fibers
 
 fibers-insulative = insulative
 fibers-insulative-frayed = frayed insulative
@@ -28,3 +28,22 @@ fibers-nanomachines = insulative mysterious
 fibers-chameleon = mysterious
 fibers-rubber = rubber
 fibers-kinetic = kinetic
+
+fibers-purple = purple
+fibers-red = red
+fibers-black = black
+fibers-blue = blue
+fibers-teal = teal
+fibers-brown = brown
+fibers-light-brown = light brown
+fibers-grey = grey
+fibers-green = green
+fibers-orange = orange
+fibers-white = white
+fibers-yellow = yellow
+fibers-regal-blue = regal blue
+fibers-olive = olive
+fibers-silver = silver
+fibers-gold = gold
+fibers-maroon = maroon
+fibers-pink = pink

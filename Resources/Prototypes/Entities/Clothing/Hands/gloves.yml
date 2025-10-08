@@ -148,7 +148,7 @@
     mustBeEquippedToUse: true
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#940000"
+    fiberColor: fibers-red
   - type: FingerprintMask
   - type: Tag
     tags:
@@ -172,7 +172,7 @@
     sprite: Clothing/Hands/Gloves/Boxing/boxingblue.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#0089EF"
+    fiberColor: fibers-blue
   - type: FingerprintMask
 
 - type: entity
@@ -188,7 +188,7 @@
     sprite: Clothing/Hands/Gloves/Boxing/boxinggreen.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#5ABF2F"
+    fiberColor: fibers-green
   - type: FingerprintMask
 
 - type: entity
@@ -204,7 +204,7 @@
     sprite: Clothing/Hands/Gloves/Boxing/boxingyellow.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#ffe14d"
+    fiberColor: fibers-yellow
   - type: FingerprintMask
 
 - type: entity
@@ -235,7 +235,7 @@
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-durathread
-    fiberColor: "#2d4c53"
+    fiberColor: fibers-regal-blue
   - type: FingerprintMask
   - type: Armor
     modifiers:
@@ -257,7 +257,7 @@
     sprite: Clothing/Hands/Gloves/hop.rsi
   - type: Fiber
     fiberMaterial: fibers-durathread
-    fiberColor: "#535353"
+    fiberColor: fibers-black
   - type: Armor
     modifiers:
       coefficients:
@@ -307,7 +307,7 @@
     sprite: Clothing/Hands/Gloves/leather.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#723A02"
+    fiberColor: fibers-brown
   - type: FingerprintMask
   - type: DamageOnInteractProtection
     damageProtection:
@@ -341,7 +341,7 @@
     sprite: Clothing/Hands/Gloves/robohands.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#535353"
+    fiberColor: fibers-black
   - type: FingerprintMask
 
 - type: entity
@@ -433,7 +433,7 @@
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
   - type: Insulated
   - type: Fiber
-    fiberColor: "#535353"
+    fiberColor: fibers-black
   - type: Armor # Goob
     modifiers:
       coefficients:
@@ -458,7 +458,7 @@
     - id: ClothingHandsGlovesMercFingerless
   - type: Fiber
     fiberMaterial: fibers-insulative
-    fiberColor: "#818155"
+    fiberColor: fibers-olive
 
 - type: entity
   parent: ClothingHandsButcherable
@@ -472,7 +472,7 @@
     sprite: Clothing/Hands/Gloves/fingerless.rsi
   - type: Fiber
     fiberMaterial: fibers-synthetic
-    fiberColor: "#535353"
+    fiberColor: fibers-black
   - type: DamageOnInteractProtection
     damageProtection:
       flatReductions:
@@ -490,7 +490,7 @@
     sprite: Clothing/Hands/Gloves/fingerlessinsuls.rsi
   - type: Fiber
     fiberMaterial: fibers-insulative
-    fiberColor: "#ffe14d"
+    fiberColor: fibers-yellow
   - type: DamageOnInteractProtection
     damageProtection:
       flatReductions:
@@ -508,7 +508,7 @@
     sprite: Clothing/Hands/Gloves/mercfingerless.rsi
   - type: Fiber
     fiberMaterial: fibers-insulative
-    fiberColor: "#818155"
+    fiberColor: fibers-olive
   - type: DamageOnInteractProtection
     damageProtection:
       flatReductions:
@@ -557,7 +557,7 @@
     heavyStaminaCost: 3 # goob edit
   - type: Fiber
     fiberMaterial: fibers-leather
-    fiberColor: "#0089EF"
+    fiberColor: fibers-blue
   - type: FingerprintMask
   - type: MeleeSpeech
   - type: ActivatableUI
@@ -603,7 +603,7 @@
     sprite: Clothing/Hands/Gloves/janitor.rsi
   - type: Fiber
     fiberMaterial: fibers-rubber
-    fiberColor: "#ffe14d"
+    fiberColor: fibers-yellow
   - type: FingerprintMask
 
 #Knuckledusters TODO: MOVE GOOB KNUCKLEDUSTER PROTOTYPES TO WIZDEN KNUCKLEDUSTERS

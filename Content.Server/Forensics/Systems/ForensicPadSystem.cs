@@ -102,13 +102,7 @@ namespace Content.Server.Forensics
             }
 
             if (TryComp<FiberComponent>(args.Target, out var fiber))
-            {
-                var sample = fiber.FiberColor == null
-                    ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial))
-                    : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial));
-
-                StartScan(uid, args.User, args.Target.Value, component, sample);
-            }
+                StartScan(uid, args.User, args.Target.Value, component, string.IsNullOrEmpty(fiber.FiberColor) ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial)) : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial)));
         }
 
         private void StartScan(EntityUid used, EntityUid user, EntityUid target, ForensicPadComponent pad, string sample)

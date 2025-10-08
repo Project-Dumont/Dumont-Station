@@ -20,6 +20,6 @@ namespace Content.Server.Forensics
         public LocId FiberMaterial = "fibers-synthetic";
 
         [DataField]
-        public Color? FiberColor;
+        public string? FiberColor;
     }
 }
