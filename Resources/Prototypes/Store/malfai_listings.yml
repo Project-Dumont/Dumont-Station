@@ -12,9 +12,7 @@
   - Deception
   cost:
     CPU: 25
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_placeviewport
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_placeviewport }
   productAction: ActionMalfAiSetViewport
   productEvent: !type:ActionPurchaseCompanionEvent
     companionActions:
@@ -33,9 +31,7 @@
   - Deception
   cost:
     CPU: 50
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_cameraupgrade
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_cameraupgrade }
   productAction: ActionMalfAiToggleCameraUpgrade
   priority: 8
   conditions:
@@ -51,9 +47,7 @@
   - Disruption
   cost:
     CPU: 250
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_doomsday
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_doomsday }
   productAction: ActionMalfAiDoomsday
   priority: 11
   conditions:
@@ -69,9 +63,7 @@
   - Factory
   cost:
     CPU: 100
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_factory
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_factory }
   productAction: ActionMalfAiRoboticsFactory
   priority: 9
   conditions:
@@ -87,9 +79,7 @@
   - Disruption
   cost:
     CPU: 100
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_detonatercd
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_detonatercd }
   productAction: ActionMalfAiDetonateRCDs
   priority: 8
   conditions:
@@ -105,9 +95,7 @@
   - Disruption
   cost:
     CPU: 25
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_shunttoapc
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_shunttoapc }
   productAction: ActionMalfAiShuntToApc
   priority: 7
   conditions:
@@ -123,9 +111,7 @@
   - Disruption
   cost:
     CPU: 50
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_overloadmachine
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_overloadmachine }
   productAction: ActionMalfAiOverloadMachine
   productActionCharges: 2
   priority: 6
@@ -139,9 +125,7 @@
   - Disruption
   cost:
     CPU: 75
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_overridemachine
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_overridemachine }
   productAction: ActionMalfAiOverrideMachine
   productActionCharges: 2
   priority: 5
@@ -155,9 +139,7 @@
   - Deception
   cost:
     CPU: 50
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_decrypt
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_decrypt }
   priority: 4
   productEvent: !type:RadioKeyUnlockedEvent
     channels: [ "Syndicate" ]
@@ -175,9 +157,7 @@
   - Deception
   cost:
     CPU: 50
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_voicemodulator
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_voicemodulator }
   productAction: ActionMalfAiVoiceModulator
   priority: 5
   conditions:
@@ -193,9 +173,7 @@
   - Deception
   cost:
     CPU: 25
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_cameramic
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_cameramic }
   productAction: ActionMalfAiToggleCameraMicrophones
   priority: 6
   conditions:
@@ -211,9 +189,7 @@
   - Disruption
   cost:
     CPU: 25
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_gyroscope
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_gyroscope }
   productAction: ActionMalfAiGyroscope
   priority: 8
   conditions:
@@ -229,9 +205,7 @@
   - Disruption
   cost:
     CPU: 100
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_mech
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_mech }
   productAction: ActionMalfAiHijackMech
   priority: 8
   conditions:
@@ -247,12 +221,9 @@
   - Disruption
   cost:
     CPU: 100
-  icon:
-    sprite: Interface/Actions/actions_malf_ai.rsi
-    state: malfai_lockdowngrid
+  icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_lockdowngrid }
   productAction: ActionMalfAiLockdownGrid
   priority: 9
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
-
