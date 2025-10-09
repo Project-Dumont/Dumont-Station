@@ -1,4 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+// SPDX-FileCopyrightText: 2025 funkystationbot <funky@funkystation.org>
 //
 // SPDX-License-Identifier: MIT
 
