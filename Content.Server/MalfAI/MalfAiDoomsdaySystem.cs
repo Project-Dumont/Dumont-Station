@@ -41,7 +41,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly StationAiSystem _stationAi = default!;
 
-    private const string DoomsdayAlertLevel = "cyan";
+    private const string DoomsdayAlertLevel = "doomsday";
     private const float DoomsdaySongBuffer = 1.5f; // seconds before alert
 
     public override void Initialize()
