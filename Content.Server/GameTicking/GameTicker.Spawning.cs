@@ -60,8 +60,8 @@
 // SPDX-FileCopyrightText: 2024 ShadowCommander <shadowjjt@gmail.com>
 // SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Wrexbe (Josh) <81056464+wrexbe@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
@@ -78,7 +78,13 @@
 // SPDX-FileCopyrightText: 2024 wrexbe <wrexbe@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
