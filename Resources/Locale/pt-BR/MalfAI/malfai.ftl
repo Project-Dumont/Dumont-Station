@@ -54,8 +54,8 @@ malfai-camera-upgrade-desc = Alterna funcionalidades aprimoradas de câmera.
 malfai-toggle-camera-microphones-name = Microfones das Câmeras
 malfai-toggle-camera-microphones-desc = Alterna a escuta de conversas por meio das câmeras de vigilância.
 
-malfai-hijack-mech-name = Tomar Controle de Mech
-malfai-hijack-mech-desc = Tome controle de um mech alvo e torne-o hostil à tripulação.
+malfai-hijack-Mecha-name = Tomar Controle de Mecha
+malfai-hijack-Mecha-desc = Tome controle de um Mecha alvo e torne-o hostil à tripulação.
 
 malfai-doomsday-name = Protocolo DOOMSDAY
 malfai-doomsday-desc = Inicia o Protocolo DOOMSDAY, erradicando toda vida orgânica na estação após um período de carregamento.
@@ -110,8 +110,8 @@ malfai-listing-gyroscope-desc = Move seu núcleo para um bloco adjacente, esmaga
 malfai-listing-toggle-camera-microphones-name = Microfones das Câmeras
 malfai-listing-toggle-camera-microphones-desc = Permite ouvir conversas através de microfones próximos ao seu olho. Alternável.
 
-malfai-listing-hijack-mech-name = Tomar Controle de Mech
-malfai-listing-hijack-mech-desc = Tome controle de um mech alvo, ejetando forçosamente o piloto anterior, se houver.
+malfai-listing-hijack-Mecha-name = Tomar Controle de Mecha
+malfai-listing-hijack-Mecha-desc = Tome controle de um Mecha alvo, ejetando forçosamente o piloto anterior, se houver.
 
 malfai-listing-lockdown-grid-name = Bloquear Rede
 malfai-listing-lockdown-grid-desc = Inicia um bloqueio total na estação, fechando, travando e eletrificando todas as portas por 30 segundos.
@@ -161,10 +161,10 @@ malfai-doomsday-complete = Protocolo DOOMSDAY concluído. Formas de vida orgâni
 malfai-lockdown-announcement = AVISO! Um bloqueio não autorizado em toda a estação entrou em vigor.
 malfai-lockdown-sender = IA da Estação
 
-# Hijack Mech
-malfai-hijack-invalid-target = Alvo de mech inválido.
-malfai-hijack-insert-failed = Falha ao inserir IA no mech.
-malfai-hijack-success = Mech tomado com sucesso.
+# Hijack Mecha
+malfai-hijack-invalid-target = Alvo de Mecha inválido.
+malfai-hijack-insert-failed = Falha ao inserir IA no Mecha.
+malfai-hijack-success = Mecha tomado com sucesso.
 
 # Override Machine
 malfai-override-no-target = Selecione uma máquina para sobrescrever.
