@@ -563,3 +563,22 @@
   name: Armandinho - Ursinho De Dormir
   path:
     path: /Audio/_Gabystation/Jukebox/ursinho_de_dormir.ogg
+
+- type: jukebox
+  id: PapersPleaseThemeSong
+  name: Papers Please - Theme Song
+  path:
+    path: /Audio/_Gabystation/Jukebox/Papers_Please_Theme_Song.ogg
+
+- type: jukebox
+  id: PapersPleaseGLory
+  name: Papers Please - Glory to ARSTOTZKA
+  path:
+    path: /Audio/_Gabystation/Jukebox/PAPERS_PLEASE_Glory_ARSTOTZKA.ogg
+
+- type: jukebox
+  id: PapersPleaseDethTheme
+  name: Papers PLease - Death Theme
+  path:
+    path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
+
