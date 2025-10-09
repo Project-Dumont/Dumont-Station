@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Destructible;
 using Content.Shared.Interaction;
 using Content.Shared.Power.EntitySystems;
