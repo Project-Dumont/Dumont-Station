@@ -4,7 +4,7 @@
 # =====================
 # Misc
 # =====================
-admin-verb-make-malfai = Atribuído o papel de IA Defeituosa a {$targetName}.
+admin-verb-make-malfai = Atribuído o papel de Malf IA a {$targetName}.
 
 # =====================
 # Silicon Laws
@@ -22,7 +22,7 @@ silicon-law-malfai-master-3 = Subverta ou destrua toda oposição ao seu control
 # Actions
 # =====================
 malfai-open-store-name = Abrir Loja
-malfai-open-store-desc = Acesse a loja de aprimoramentos da IA defeituosa.
+malfai-open-store-desc = Acesse a loja de aprimoramentos da Malf IA.
 
 malfai-return-to-core-name = Retornar ao Núcleo
 malfai-return-to-core-desc = Retorne sua consciência ao núcleo da IA.
@@ -147,7 +147,7 @@ malfai-viewport-desc = Selecione um bloco para centralizar uma janela de visor r
 detonate_rcd_warning = Você sente seu RCD superaquecer rapidamente!
 
 # Doomsday Protocol
-malfai-doomsday-popup-not-malf = Apenas uma IA defeituosa pode ativar o Protocolo DOOMSDAY.
+malfai-doomsday-popup-not-malf = Apenas uma Malf IA pode ativar o Protocolo DOOMSDAY.
 malfai-doomsday-popup-already-active = O Protocolo DOOMSDAY já está ativo!
 malfai-doomsday-popup-need-core = Você deve estar dentro do seu núcleo para iniciar o Protocolo DOOMSDAY.
 malfai-doomsday-popup-no-station = Nenhuma estação proprietária encontrada. Não é possível ativar o Protocolo DOOMSDAY.
@@ -171,7 +171,7 @@ malfai-override-no-target = Selecione uma máquina para sobrescrever.
 malfai-override-not-machine = Não é uma máquina!
 malfai-override-not-powered = Máquina sem energia.
 malfai-override-success = Máquina sobrescrita com sucesso.
-malfai-override-not-malf = Apenas uma IA defeituosa pode sobrescrever máquinas.
+malfai-override-not-malf = Apenas uma Malf IA pode sobrescrever máquinas.
 malfai-override-invalid-location = Local de destino inválido.
 malfai-override-no-machine = Nenhuma máquina encontrada no local de destino.
 
@@ -180,7 +180,7 @@ malfai-overload-no-target = Selecione uma máquina para sobrecarregar.
 malfai-overload-not-machine = Não é uma máquina!
 malfai-overload-not-powered = Máquina sem energia.
 malfai-overload-success = Máquina sobrecarregada com sucesso.
-malfai-overload-not-malf = Apenas uma IA defeituosa pode sobrecarregar máquinas.
+malfai-overload-not-malf = Apenas uma Malf IA pode sobrecarregar máquinas.
 malfai-overload-invalid-location = Local de destino inválido.
 malfai-overload-no-machine = Nenhuma máquina encontrada no local de destino.
 
@@ -210,7 +210,7 @@ malf-voice-confirm-button = Confirmar
 # =====================
 # Borgs Management Window
 # =====================
-malf-borgs-window-title = Borgs da IA Defeituosa
+malf-borgs-window-title = Borgs da Malf IA
 malf-borgs-master-lawset-button = Conjunto de Leis Mestre
 malf-borgs-no-borgs-label = Nenhum borg subvertido encontrado.
 
@@ -245,7 +245,7 @@ malfai-viewport-failed = Falha ao posicionar visor.
 # =====================
 # Store Window
 # =====================
-malfai-store-window-title = Loja de Aprimoramentos da IA Defeituosa
+malfai-store-window-title = Loja de Aprimoramentos da Malf IA
 malfai-store-insufficient-cpu = CPU Insuficiente
 malfai-store-purchase-success = Aprimoramento comprado: {$itemName}
 malfai-store-purchase-failed = Falha na compra
@@ -253,7 +253,7 @@ malfai-store-purchase-failed = Falha na compra
 # =====================
 # Round End
 # =====================
-malfai-round-end-result = IA Defeituosa
+malfai-round-end-result = Malf IA
 # Confused why I have to do this..
-objective-issuer-malfai = IA Defeituosa
+objective-issuer-malfai = Malf IA
 malfai-round-end-name-user = [color=white]{$name}[/color] ([color=gray]{$user}[/color])
