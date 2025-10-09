@@ -294,9 +294,9 @@ namespace Content.Server.GameTicking
                     var weights = _prototypeManager.Index<WeightedRandomSpeciesPrototype>(weightId);
                     speciesId = weights.Pick(_robustRandom);
                 }
+                character = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
             }
 
-                character = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
             //Ghost system return to round, check for whether the character isn't the same.
             if (!_cfg.GetCVar(CCVars.GhostAllowSameCharacter) && lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
             {
@@ -516,6 +516,7 @@ namespace Content.Server.GameTicking
             _adminLogger.Add(LogType.LateJoin,
                 LogImpact.Low,
                 $"{player.Name} late joined the round as an Observer with {ToPrettyString(ghost):entity}.");
+        }
  
         private bool CheckGhostReturnToRound(ICommonSession player, HumanoidCharacterProfile character, out bool checkAvoid)
         {
@@ -569,7 +570,6 @@ namespace Content.Server.GameTicking
             var similarityPercentage = (matchingCharacters / maxLength) * 100;
 
             return similarityPercentage;
-        }
         }
 
         #region Spawn Points
