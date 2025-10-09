@@ -1,8 +1,8 @@
 ghost-respawn-minutes-left = Por favor, aguarde {$time} {$time ->
     [one] minuto
    *[other] minutos
-} before trying to respawn.
-ghost-respawn-seconds-left = Please wait {$time} {$time ->
+} antes de tentar renascer.
+ghost-respawn-seconds-left = Por favor, aguarde {$time} {$time ->
     [one] segundo
    *[other] segundos
 } antes de tentar renascer.
