@@ -1,4 +1,5 @@
 guide-entry-pop = Procedimento Operacional Padrão
+guide-entry-pop-geral = Geral
 guide-entry-pop-comando-geral = Comandantes
 guide-entry-pop-alerta = Códigos de Alerta
 guide-entry-pop-transferencias = Promoções e Demissões
@@ -11,4 +12,4 @@ guide-entry-pop-engenharia = Engenharia
 guide-entry-pop-medico = Médico
 guide-entry-pop-ciencia = Ciencia
 guide-entry-pop-serviço = Serviço
-guide-entry-pop-conduta = Codigo de Conduta
+guide-entry-pop-codigo-conduta = Codigo de Conduta

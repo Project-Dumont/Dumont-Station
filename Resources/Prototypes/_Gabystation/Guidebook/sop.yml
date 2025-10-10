@@ -121,6 +121,6 @@
 
 - type: guideEntry
   id: POP Codigo de Conduta
-  name: guide-entry-pop-conduta
+  name: guide-entry-pop-codigo-conduta
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/RulesOfConduct.xml"
   priority: 1
