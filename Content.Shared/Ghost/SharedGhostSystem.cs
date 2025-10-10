@@ -41,6 +41,7 @@
 // SPDX-FileCopyrightText: 2025 RadsammyT <radsammyt@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
