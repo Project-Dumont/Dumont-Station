@@ -9,6 +9,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Stains;
 using Content.Shared.Tag;
+using Robust.Shared.Containers; // Gaby
 
 namespace Content.Server.Stains;
 
@@ -16,10 +17,14 @@ public sealed partial class StainableSystem : SharedStainableSystem
 {
     [Dependency] private readonly ForensicsSystem _forensics = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!; // Gaby
 
-    public override void Initialize()
+    protected override void DirtyOwnerAppearance(EntityUid item) // Gaby
     {
-        base.Initialize();
+        if (_container.TryGetContainingContainer(item, out var container) && TryComp<AppearanceComponent>(container.Owner, out var appearance))
+        {
+            Dirty(container.Owner, appearance);
+        }
     }
 
     protected override void StainForensics(Entity<StainableComponent> ent, Entity<SolutionComponent> solution)

@@ -10,6 +10,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Slippery;
 using Content.Shared.WashingMachine.Events;
+using Robust.Shared.GameObjects; // Gaby
 
 namespace Content.Shared.Stains;
 
@@ -55,6 +56,8 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
         UpdateVisuals(ent);
         StainForensics(ent, target.Value);
+
+        DirtyOwnerAppearance(ent.Owner); // Gaby
     }
 
     private void OnSpilledOn(Entity<StainableComponent> ent, ref InventoryRelayedEvent<SpilledOnEvent> args)
@@ -66,6 +69,8 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
         UpdateVisuals(ent);
         StainForensics(ent, target.Value);
+
+        DirtyOwnerAppearance(ent.Owner); // Gaby
     }
 
     private void OnWashed(Entity<StainableComponent> ent, ref WashingMachineIsBeingWashed args)
@@ -94,5 +99,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
         // so just do a blanket update and calculate on the client
         if (TryComp<AppearanceComponent>(ent.Owner, out var appearance))
             _appearance.QueueUpdate(ent.Owner, appearance);
+    }
+
+    protected virtual void DirtyOwnerAppearance(EntityUid owner) // Gaby
+    {
     }
 }
