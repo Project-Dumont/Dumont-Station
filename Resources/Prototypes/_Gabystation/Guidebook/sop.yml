@@ -88,7 +88,7 @@
 
 - type: guideEntry
   id: POP Segurança
-  name: guide-entry-pop-segurança
+  name: guide-entry-pop-seguranca
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/SecurityStandardOperatingProcedure.xml"
   priority: 3
   children:
@@ -120,7 +120,7 @@
 
 - type: guideEntry
   id: POP Serviço
-  name: guide-entry-pop-serviço
+  name: guide-entry-pop-servico
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ServiceStandardOperatingProcedure.xml"
   priority: 8
 
