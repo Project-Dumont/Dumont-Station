@@ -146,6 +146,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Standing; // Gaby
+using Content.Shared.DoAfter; // Gaby
+using Content.Goobstation.Common.Standing; // Gaby
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -169,6 +172,8 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!; // Gaby
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
 
 
     [ValidatePrototypeId<ReagentPrototype>]
@@ -213,6 +218,8 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         SubscribeLocalEvent<PuddleComponent, SlipEvent>(OnPuddleSlip);
 
         SubscribeLocalEvent<EvaporationComponent, MapInitEvent>(OnEvaporationMapInit);
+
+        SubscribeLocalEvent<LayingDownComponent, MoveEvent>(OnCrawlInPuddle); // Gaby
 
         InitializeTransfers();
     }
@@ -897,5 +904,51 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         }
 
         return false;
+    }
+
+    // Caso a entidade esteja deitado por cima de uma poça e se movimeta pra outro tile, suja a roupa e coloca o liquido nela.
+    private void OnCrawlInPuddle(Entity<LayingDownComponent> ent, ref MoveEvent args) // Gaby
+    {
+        if (!_standing.IsDown(ent.Owner))
+            return;
+
+        var gridUid = args.NewPosition.GetGridUid(EntityManager);
+        if (!gridUid.HasValue || !TryComp<MapGridComponent>(gridUid, out var grid))
+            return;
+
+        if (args.OldPosition.GetGridUid(EntityManager) != gridUid ||
+            _map.CoordinatesToTile(gridUid.Value, grid, args.OldPosition) == _map.CoordinatesToTile(gridUid.Value, grid, args.NewPosition))
+            return;
+
+        var tile = _map.GetTileRef(gridUid.Value, grid, args.NewPosition);
+
+        if (!TryGetPuddle(tile, out var puddleUid) || !_puddleQuery.TryGetComponent(puddleUid, out var puddleComp))
+            return;
+
+        var isSuperSlippery = TryComp<SlipperyComponent>(puddleUid, out var slippery) && slippery.SlipData.SuperSlippery;
+        var slippedEv = new SlippedEvent(puddleUid, isSuperSlippery);
+        RaiseLocalEvent(ent.Owner, slippedEv);
+        
+        // Copia uma parte do OnPuddleSlip
+        if (HasComp<ReactiveComponent>(ent.Owner) && !HasComp<SlidingComponent>(ent.Owner))
+        {
+            if (!_solutionContainerSystem.ResolveSolution(puddleUid, puddleComp.SolutionName, ref puddleComp.Solution, out var solution))
+                return;
+
+            Popups.PopupEntity(Loc.GetString("puddle-component-slipped-touch-reaction", ("puddle", puddleUid)),
+                ent.Owner, ent.Owner, PopupType.SmallCaution);
+
+            var splitSol = _solutionContainerSystem.SplitSolution(puddleComp.Solution.Value, solution.Volume * 0.15f);
+
+            Reactive.DoEntityReaction(ent.Owner, splitSol, ReactionMethod.Touch);
+
+            var addBack = new List<string>();
+            foreach (var (proto, amt) in splitSol.GetReagentPrototypes(_prototypeManager))
+            {
+                if (!proto.SticksToSkin)
+                    addBack.Add(proto.ID);
+            }
+            solution.AddSolution(splitSol.SplitSolutionWithOnly(splitSol.Volume, addBack.ToArray()), _prototypeManager);
+        }
     }
 }
