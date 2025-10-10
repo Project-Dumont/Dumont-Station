@@ -1,10 +1,14 @@
 guide-entry-pop = Procedimento Operacional Padrão
+
 guide-entry-pop-geral = Geral
+
 guide-entry-pop-comando-geral = Comandantes
 guide-entry-pop-alerta = Códigos de Alerta
 guide-entry-pop-transferencias = Promoções e Demissões
 guide-entry-pop-conduta = Conduta e Segurança de Trabalho
 guide-entry-pop-confiscar = Política de Confiscação
+guide-entry-pop-multa = Multas e Fianças
+
 guide-entry-pop-comando = Comando
 guide-entry-pop-segurança = Segurança
 guide-entry-pop-cargo = Cargo

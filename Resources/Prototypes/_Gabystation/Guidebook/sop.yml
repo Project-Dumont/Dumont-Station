@@ -32,6 +32,7 @@
   - POP Conduta
   - POP Confiscar
   - POP Marcial
+  - POP Multa
 
 # POP Geral
 
@@ -70,6 +71,12 @@
   name: guide-entry-pop-marcial
   text: "/ServerInfo/_Gabystation/Guidebook/POPMarcial.xml"
   priority: 6
+
+- type: guideEntry
+  id: POP Multa
+  name: guide-entry-pop-multa
+  text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
+  priority: 7
 
 # POP Departamental
 
