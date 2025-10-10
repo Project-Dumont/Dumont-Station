@@ -196,6 +196,16 @@
             ]
         },
         {
+            "name": "revfire",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
             "name": "overcharged",
             "delays": [
                 [
