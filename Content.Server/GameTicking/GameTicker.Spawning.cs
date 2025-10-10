@@ -101,7 +101,7 @@ using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
-using Content.Shared.Chat;
+using Content.Shared.Chat; // EE change
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -305,7 +305,7 @@ namespace Content.Server.GameTicking
             }
 
             //Ghost system return to round, check for whether the character isn't the same.
-            if (!_cfg.GetCVar(CCVars.GhostAllowSameCharacter) && lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
+            if (!_cfg.GetCVar(CCVars.GhostAllowSameCharacter) && lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid)) // EE change
             {
                 var message = checkAvoid
                     ? Loc.GetString("ghost-respawn-same-character-slightly-changed-name")
@@ -525,7 +525,7 @@ namespace Content.Server.GameTicking
                 $"{player.Name} late joined the round as an Observer with {ToPrettyString(ghost):entity}.");
         }
  
-        private bool CheckGhostReturnToRound(ICommonSession player, HumanoidCharacterProfile character, out bool checkAvoid)
+        private bool CheckGhostReturnToRound(ICommonSession player, HumanoidCharacterProfile character, out bool checkAvoid) // EE change
         {
             checkAvoid = false;
 

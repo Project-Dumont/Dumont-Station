@@ -68,7 +68,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server.Ghost;
+using Content.Server.Ghost; // EE change
 using Content.Server.GameTicking.Presets;
 using Content.Server.Maps;
 using Content.Shared.CCVar;
@@ -79,7 +79,7 @@ namespace Content.Server.GameTicking;
 
 public sealed partial class GameTicker
 {
-    [Dependency] private readonly GhostReturnToRoundSystem _ghostReturnToRound = default!;
+    [Dependency] private readonly GhostReturnToRoundSystem _ghostReturnToRound = default!; // EE change
 
     public const float PresetFailedCooldownIncrease = 30f;
 

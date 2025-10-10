@@ -259,5 +259,5 @@ namespace Content.Shared.Ghost
     }
 
     [Serializable, NetSerializable]
-    public sealed class GhostReturnToRoundRequest : EntityEventArgs;
+    public sealed class GhostReturnToRoundRequest : EntityEventArgs; // EE change
 }

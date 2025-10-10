@@ -255,7 +255,7 @@ namespace Content.Client.Ghost
             GhostVisibility = visibility ?? !GhostVisibility;
         }
 
-        public void ReturnToRound()
+        public void ReturnToRound() // EE change
         {
             var msg = new GhostReturnToRoundRequest();
             RaiseNetworkEvent(msg);
