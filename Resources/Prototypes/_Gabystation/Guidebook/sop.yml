@@ -110,7 +110,7 @@
 - type: guideEntry
   id: POP Medico
   name: guide-entry-pop-medico
-  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medical/MedicalStandardOperatingProcedure.xml"
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/MedicalStandardOperatingProcedure.xml"
   priority: 6
 
 - type: guideEntry
