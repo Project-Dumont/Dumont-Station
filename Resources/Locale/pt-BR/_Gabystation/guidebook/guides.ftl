@@ -10,10 +10,10 @@ guide-entry-pop-confiscar = Política de Confiscação
 guide-entry-pop-multa = Multas e Fianças
 
 guide-entry-pop-comando = Comando
-guide-entry-pop-seguranca = Segurança
+guide-entry-pop-segurança = Segurança
 guide-entry-pop-cargo = Cargo
 guide-entry-pop-engenharia = Engenharia
 guide-entry-pop-medico = Médico
 guide-entry-pop-ciencia = Ciencia
-guide-entry-pop-servico = Serviço
+guide-entry-pop-serviço = Serviço
 guide-entry-pop-codigo-conduta = Codigo de Conduta
