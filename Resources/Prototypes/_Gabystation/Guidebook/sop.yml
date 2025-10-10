@@ -84,7 +84,7 @@
 - type: guideEntry
   id: POP Comando
   name: guide-entry-pop-comando
-  text: "/ServerInfo/_Gabystation/Guidebook/POP/Comando/CommandStandardOperatingProcedure.xml"
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandStandardOperatingProcedure.xml"
   priority: 2
 
 - type: guideEntry
