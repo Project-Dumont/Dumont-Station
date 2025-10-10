@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2025 cosmosgc <cosmoskitsune@hotmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Items;
 using Content.Client.Message;
 using Content.Client.Stylesheets;
