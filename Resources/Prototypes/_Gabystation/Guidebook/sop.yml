@@ -24,6 +24,7 @@
 - type: guideEntry
   id: POP Geral
   name: guide-entry-pop-geral
+  text: "ServerInfo/_Gabystation/Guidebook/POP/Geral.xml"
   priority: 1
   children:
   - POP Comando Geral
