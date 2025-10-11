@@ -182,8 +182,6 @@
     # Harmony start
     - id: BloodBrothers
       prob: 0.5
-    - id: Conspirators
-      prob: 0.25
     # Harmony end
 
 - type: entity
