@@ -746,6 +746,10 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             }
 
             targets.Add(owner);
+
+            var stainEv = new SpilledOnEvent(uid, splitSolution.Clone()); // Gaby
+            RaiseLocalEvent(owner, stainEv);
+
             Reactive.DoEntityReaction(owner, splitSolution, ReactionMethod.Touch);
             Popups.PopupEntity(
                 Loc.GetString("spill-land-spilled-on-other", ("spillable", uid),
