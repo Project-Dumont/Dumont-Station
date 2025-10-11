@@ -138,7 +138,12 @@ public abstract partial class SharedStainableSystem : EntitySystem
         // there isnt a value to parse as its calculated on every change
         // so just do a blanket update and calculate on the client
         if (TryComp<AppearanceComponent>(ent.Owner, out var appearance))
+        {
             _appearance.QueueUpdate(ent.Owner, appearance);
+
+            if (TryComp<MetaDataComponent>(ent.Owner, out var meta) && meta.EntityLifeStage < EntityLifeStage.Terminating)
+                Dirty(ent.Owner, appearance);
+        }
     }
 
     protected virtual void DirtyOwnerAppearance(EntityUid owner) // Gaby
