@@ -11,6 +11,9 @@ using Content.Shared.Item;
 using Content.Shared.Slippery;
 using Content.Shared.WashingMachine.Events;
 using Robust.Shared.GameObjects; // Gaby
+using Content.Shared.Clothing.Components; // Gaby
+using Robust.Shared.Containers; // Gaby
+using Content.Shared.Stains.Components; // Gaby
 
 namespace Content.Shared.Stains;
 
@@ -19,6 +22,8 @@ public abstract partial class SharedStainableSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedItemSystem _item = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem Solution = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!; // Gaby
+    [Dependency] private readonly SharedContainerSystem _container = default!; // Gaby
 
     public override void Initialize()
     {
@@ -43,6 +48,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
     private void OnSlipped(Entity<StainableComponent> ent, ref InventoryRelayedEvent<SlippedEvent> args)
     {
+        if (IsStainBlocked(ent)) // Gaby
+            return;
+
         if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var target))
             return;
 
@@ -62,6 +70,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
     private void OnSpilledOn(Entity<StainableComponent> ent, ref InventoryRelayedEvent<SpilledOnEvent> args)
     {
+        if (IsStainBlocked(ent)) // Gaby
+            return;
+
         if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var target))
             return;
 
@@ -71,6 +82,35 @@ public abstract partial class SharedStainableSystem : EntitySystem
         StainForensics(ent, target.Value);
 
         DirtyOwnerAppearance(ent.Owner); // Gaby
+    }
+
+    private bool IsStainBlocked(Entity<StainableComponent> item) // Gaby
+    {
+        if (!_container.TryGetContainingContainer(item.Owner, out var container))
+            return false;
+        var wearer = container.Owner;
+
+        if (!TryComp<ClothingComponent>(item.Owner, out var clothing) || clothing.InSlotFlag == null)
+            return false;
+
+        if (!TryComp<InventoryComponent>(wearer, out var inventory))
+            return false;
+
+        foreach (var slot in inventory.Slots)
+        {
+            if (!_inventory.TryGetSlotEntity(wearer, slot.Name, out var slotItem, inventory))
+                continue;
+
+            if (TryComp<StainBlockerComponent>(slotItem, out var blocker))
+            {
+                if ((blocker.Slots & clothing.InSlotFlag) != 0)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private void OnWashed(Entity<StainableComponent> ent, ref WashingMachineIsBeingWashed args)
