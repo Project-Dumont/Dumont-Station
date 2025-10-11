@@ -30,12 +30,14 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Network; // Gaby
 
 namespace Content.Shared.Fluids;
 
 public abstract partial class SharedPuddleSystem
 {
     [Dependency] protected readonly OpenableSystem Openable = default!;
+    [Dependency] private readonly INetManager _net = default!; // Gaby
 
     protected virtual void InitializeSpillable()
     {
@@ -108,7 +110,7 @@ public abstract partial class SharedPuddleSystem
         args.Verbs.Add(verb);
     }
 
-    private void SplashOnMeleeHit(Entity<SpillableComponent> entity, ref MeleeHitEvent args)
+    private void SplashOnMeleeHit(Entity<SpillableComponent> entity, ref MeleeHitEvent args) // Gaby
     {
         if (args.Handled)
             return;
@@ -121,8 +123,6 @@ public abstract partial class SharedPuddleSystem
         if (!_solutionContainerSystem.TryGetDrainableSolution(entity.Owner, out var soln, out var solution))
             return;
 
-        var hitCount = args.HitEntities.Count;
-
         var totalSplit = FixedPoint2.Min(solution.MaxVolume * 0.25, solution.Volume);
         if (TryComp<SolutionTransferComponent>(entity, out var transfer))
         {
@@ -133,32 +133,44 @@ public abstract partial class SharedPuddleSystem
         // spilling like 100u of reagent on someone at once!
         totalSplit = FixedPoint2.Min(totalSplit, entity.Comp.MaxMeleeSpillAmount);
 
-        if (totalSplit == 0)
+        if (totalSplit <= 0)
             return;
 
-        args.Handled = true;
+        if (_net.IsServer)
+        {
+            args.Handled = true;
+        }
 
-        // First update the hit count so anything that is not reactive wont count towards the total!
+        var reactiveTargets = 0;
         foreach (var hit in args.HitEntities)
         {
-            if (!HasComp<ReactiveComponent>(hit))
-                hitCount -= 1;
+            if (HasComp<ReactiveComponent>(hit))
+                reactiveTargets++;
         }
+
+        if (reactiveTargets == 0)
+            return;
+
+        var amountPerTarget = totalSplit / reactiveTargets;
 
         foreach (var hit in args.HitEntities)
         {
             if (!HasComp<ReactiveComponent>(hit))
                 continue;
 
-            var splitSolution = _solutionContainerSystem.SplitSolution(soln.Value, totalSplit / hitCount);
+            var splitSolution = _solutionContainerSystem.SplitSolution(soln.Value, amountPerTarget);
+            if (splitSolution.Volume <= 0)
+                continue;
 
-            var ev = new SpilledOnEvent(entity.Owner, splitSolution);
+            var ev = new SpilledOnEvent(entity.Owner, splitSolution.Clone());
             RaiseLocalEvent(hit, ev);
 
-            AdminLogger.Add(LogType.MeleeHit, $"{ToPrettyString(args.User)} splashed {SharedSolutionContainerSystem.ToPrettyString(ev.Solution):solution} from {ToPrettyString(entity.Owner):entity} onto {ToPrettyString(hit):target}");
-            Reactive.DoEntityReaction(hit, solution, ReactionMethod.Touch);
+            if (_net.IsServer)
+                AdminLogger.Add(LogType.MeleeHit, $"{ToPrettyString(args.User)} splashed {SharedSolutionContainerSystem.ToPrettyString(splitSolution):solution} from {ToPrettyString(entity.Owner):entity} onto {ToPrettyString(hit):target}");
 
-            Popups.PopupPredicted(Loc.GetString("spill-melee-hit-attacker", ("amount", totalSplit / hitCount), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
+            Reactive.DoEntityReaction(hit, splitSolution, ReactionMethod.Touch);
+
+            Popups.PopupPredicted(Loc.GetString("spill-melee-hit-attacker", ("amount", amountPerTarget), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
                 Loc.GetString("spill-melee-hit-others", ("attacker", args.User), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
                 hit, args.User, PopupType.SmallCaution);
         }
