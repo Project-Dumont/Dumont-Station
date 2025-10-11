@@ -57,3 +57,4 @@
     stateDoorClosed: door-closed
   - type: Machine
     board: WashingMachineCircuitboard
+  - type: PlaceableSurface
