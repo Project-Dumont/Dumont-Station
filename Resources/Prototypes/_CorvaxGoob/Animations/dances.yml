@@ -223,7 +223,7 @@
 
 - type: animation
   id: EmoteSpinningOnHead
-  length: 5
+  length: 5.5
   tracks:
   - !type:AnimationTrackComponentPropertyData
     componentType: Transform
@@ -396,35 +396,6 @@
         keyframe: 0.1
   - !type:AnimationTrackComponentPropertyData
     componentType: Sprite
-    property: Scale
-    interpolationMode: Linear
-    keyFrames:
-      - !type:KeyFrameComponentPropertyData
-        value: 1, 1
-        type: vector2
-        keyframe: 0
-      - !type:KeyFrameComponentPropertyData
-        value: 1, 0.01
-        type: vector2
-        keyframe: 0.2
-      - !type:KeyFrameComponentPropertyData
-        value: 1, 1
-        type: vector2
-        keyframe: 0.2
-      - !type:KeyFrameComponentPropertyData
-        value: 1, 1
-        type: vector2
-        keyframe: 4
-      - !type:KeyFrameComponentPropertyData
-        value: 1, 0.01
-        type: vector2
-        keyframe: 0.2
-      - !type:KeyFrameComponentPropertyData
-        value: 1, 1
-        type: vector2
-        keyframe: 0.2
-  - !type:AnimationTrackComponentPropertyData
-    componentType: Sprite
     property: Offset
     interpolationMode: Linear
     keyFrames:
@@ -433,9 +404,17 @@
         type: vector2
         keyframe: 0
       - !type:KeyFrameComponentPropertyData
+        value: 0, -0.1
+        type: vector2
+        keyframe: 0.2
+      - !type:KeyFrameComponentPropertyData
+        value: 0, 0.2
+        type: vector2
+        keyframe: 0.1
+      - !type:KeyFrameComponentPropertyData
         value: 0, 0
         type: vector2
-        keyframe: 0.5
+        keyframe: 0.2
       - !type:KeyFrameComponentPropertyData
         value: 0.1, 0.1
         type: vector2
@@ -452,6 +431,18 @@
         value: 0, 0
         type: vector2
         keyframe: 1
+      - !type:KeyFrameComponentPropertyData
+        value: 0, -0.1
+        type: vector2
+        keyframe: 0.2
+      - !type:KeyFrameComponentPropertyData
+        value: 0, 0.2
+        type: vector2
+        keyframe: 0.1
+      - !type:KeyFrameComponentPropertyData
+        value: 0, 0
+        type: vector2
+        keyframe: 0.2
   - !type:AnimationTrackComponentPropertyData
     componentType: Sprite
     property: Rotation
@@ -468,7 +459,7 @@
       - !type:KeyFrameComponentPropertyData
         value: 180
         type: angle
-        keyframe: 4.4
+        keyframe: 4.6
       - !type:KeyFrameComponentPropertyData
         value: 0
         type: angle
