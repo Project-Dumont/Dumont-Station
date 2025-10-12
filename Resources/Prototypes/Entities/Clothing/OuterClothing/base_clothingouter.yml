@@ -173,6 +173,15 @@
   # Goobstation edit end
   - type: Sprite
     state: icon
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothing
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothing
 
 - type: entity
   abstract: true
