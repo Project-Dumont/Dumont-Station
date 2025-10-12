@@ -32,6 +32,8 @@
     parts:
     - LeftFoot
     - RightFoot
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -62,6 +64,8 @@
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -108,6 +112,8 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -154,6 +160,8 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -184,6 +192,8 @@
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -225,6 +235,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -257,6 +269,8 @@
       - state: equipped-FEET-sealed
   - type: FireProtection # lmao
     reduction: 0.25
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -287,6 +301,8 @@
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
+  - type: StainBlocker
+    slots: [FEET]
 
 - type: entity
   parent: ClothingShoesBase
@@ -317,3 +333,5 @@
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
+  - type: StainBlocker
+    slots: [FEET]

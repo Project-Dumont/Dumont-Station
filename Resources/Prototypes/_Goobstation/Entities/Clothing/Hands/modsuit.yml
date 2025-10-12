@@ -32,6 +32,8 @@
     parts:
     - LeftHand
     - RightHand
+  - type: StainBlocker
+    slots: [GLOVES]
 
 
 - type: entity

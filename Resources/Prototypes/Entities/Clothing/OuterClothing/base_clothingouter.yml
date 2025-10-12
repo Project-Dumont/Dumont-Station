@@ -210,6 +210,15 @@
         type: StorageBoundUserInterface
   - type: StaticPrice
     price: 70
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: coatblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: coatblood
 
 - type: entity
   abstract: true
@@ -371,6 +380,8 @@
     hiddenSlots:
     - jumpsuit
   - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+  - type: StainBlocker
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   abstract: true
@@ -416,6 +427,8 @@
   - type: Tag
     tags:
     - PlasmamanSafe # EE Plasmeme Change
+  - type: StainBlocker
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   parent: ClothingOuterBase

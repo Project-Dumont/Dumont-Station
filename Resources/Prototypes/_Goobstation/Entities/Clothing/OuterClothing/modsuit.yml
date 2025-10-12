@@ -41,6 +41,8 @@
     parts:
     - BodyMiddle
     - Legs
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 
 - type: entity
@@ -111,6 +113,8 @@
       heatingCoefficient: 0.01
   - type: FireProtection
     reduction: 0.5
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   parent: ClothingOuterBase
@@ -185,6 +189,8 @@
       heatingCoefficient: 0.01
   - type: FireProtection
     reduction: 0.5
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 
 - type: entity
@@ -267,6 +273,8 @@
       Bicaridine: 10
       TranexamicAcid: 5
       Tramadol: 5
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   parent: ClothingOuterBase
@@ -342,6 +350,8 @@
     damageCoefficient: 0.9
   - type: FireProtection
     reduction: 0.5
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   parent: ClothingOuterBase
@@ -418,6 +428,8 @@
     damageCoefficient: 0.9
   - type: FireProtection
     reduction: 0.7
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   parent: ClothingOuterBase
@@ -492,6 +504,8 @@
     damageCoefficient: 0.9
   - type: FireProtection
     reduction: 0.75
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   parent: ClothingOuterBase
@@ -569,6 +583,8 @@
   - type: FireProtection
     reduction: 0.5
   - type: GroupExamine
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   parent: ClothingOuterBase
@@ -645,3 +661,5 @@
     damageCoefficient: 0.6
   - type: FireProtection
     reduction: 0.5
+  - type: StainBlocker
+    slots: [INNERCLOTHING]

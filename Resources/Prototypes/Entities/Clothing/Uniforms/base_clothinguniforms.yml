@@ -76,8 +76,8 @@
   - type: Stainable
     clothingVisuals:
       jumpsuit:
-      - sprite: Effects/Stains/jumpsuit.rsi
-        state: equipped
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: uniformblood
     itemVisuals:
       left:
       - sprite: Effects/Stains/jumpsuit.rsi
@@ -106,8 +106,8 @@
   - type: Stainable
     clothingVisuals:
       jumpsuit:
-      - sprite: Effects/Stains/jumpskirt.rsi
-        state: equipped
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: uniformblood
     itemVisuals:
       left:
       - sprite: Effects/Stains/jumpskirt.rsi
@@ -153,8 +153,8 @@
   - type: Stainable
     clothingVisuals:
       jumpsuit:
-      - sprite: Effects/Stains/jumpskirt.rsi
-        state: equipped
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: uniformblood
     itemVisuals:
       left:
       - sprite: Effects/Stains/jumpskirt.rsi
