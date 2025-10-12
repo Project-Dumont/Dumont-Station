@@ -182,6 +182,8 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: outerclothing
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   abstract: true
@@ -228,6 +230,8 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: coatblood
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity
   abstract: true

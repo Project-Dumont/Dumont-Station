@@ -215,6 +215,8 @@
     iconVisuals:
     - sprite: Effects/Stains/jumpsuit.rsi
       state: icon
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity
