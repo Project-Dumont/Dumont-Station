@@ -10,6 +10,7 @@ using Content.Goobstation.Common.Movement;
 using Content.Shared._EinsteinEngines.Flight.Events;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
+using Content.Shared.CombatMode;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -30,9 +31,9 @@ using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Robust.Shared.Network;
 using System.Numerics;
 
 namespace Content.Goobstation.Shared.Sprinting;
@@ -69,6 +70,7 @@ public abstract class SharedSprintingSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, SprintAttemptEvent>(OnStandingStateSprintAttempt);
         SubscribeLocalEvent<BuckleComponent, SprintAttemptEvent>(OnBuckleSprintAttempt);
         SubscribeLocalEvent<SprinterComponent, EntityZombifiedEvent>(OnZombified);
+        SubscribeLocalEvent<SprinterComponent, DisarmedEvent>(OnDisarm);
     }
 
     #region Core Functions
@@ -284,6 +286,15 @@ public abstract class SharedSprintingSystem : EntitySystem
     }
     private void OnZombified(EntityUid uid, SprinterComponent component, ref EntityZombifiedEvent args) =>
         component.SprintSpeedMultiplier *= 0.5f; // We dont want super fast zombies do we?
+
+    private void OnDisarm(EntityUid uid, SprinterComponent sprinter, ref DisarmedEvent args)
+    {
+        if (!sprinter.IsSprinting)
+            return;
+
+        _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaPenaltyOnShove, applyResistances: true);
+        ToggleSprint(uid, sprinter, false, gracefulStop: true);
+    }
 
     #endregion
 }

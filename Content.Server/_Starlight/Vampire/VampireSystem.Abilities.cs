@@ -8,7 +8,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Bible;
 using Content.Server.Body.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Storage.Components;
@@ -40,6 +39,7 @@ using Robust.Shared.Utility;
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Flash.Components;
+using Content.Goobstation.Common.Religion;
 
 namespace Content.Server.Vampire;
 

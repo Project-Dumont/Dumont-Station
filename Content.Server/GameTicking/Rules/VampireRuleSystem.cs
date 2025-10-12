@@ -15,21 +15,19 @@ using Content.Server.Body.Components;
 using Content.Server.Roles;
 using Content.Server.Vampire;
 using Content.Shared.Alert;
-using Content.Goobstation.Shared.Bible;
 using Content.Shared.Vampire.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Roles;
 using Content.Shared.Store;
-using Content.Shared.Store.Components;
-using Content.Shared.Atmos;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Nutrition.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using System.Text;
+using Content.Goobstation.Common.Religion;
 
 namespace Content.Server.GameTicking.Rules;
 

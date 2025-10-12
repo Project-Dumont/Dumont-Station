@@ -25,7 +25,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
    <Box>
     <GuideEntityEmbed Entity="APCBasic" Caption="Terminal de APC"/>
     <GuideEntityEmbed Entity="BorgCharger" Caption="Carregador de Borg"/>
-    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Power Cell"/>
+    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Células de energia"/>
   </Box>
   IPCs podem ser recarregados de três diferentes formas:
 
@@ -33,7 +33,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Carregadores de Borgs: IPCs podem usar carregadores de borgs para se recarregar. Sempre priorize aqueles fora do setor de Ciência para evitar dor de cabeça e confusão.
 
-  Power Cell: IPCs têm uma power cell (célula de energia) interna que serve como sua bateria. Eles podem trocá-la abrindo sua hatch e a substituindo manualmente.
+  Células de energia: IPCs podem sugar a energia de um célula de energia para recarregar sua bateria interna. [color=yellow]Clique direito e selecione Drenar[/color] em uma célula de energia ou dispositivo com bateria para sugar disso.
 
   ## Rádio Integrado
   <Box>

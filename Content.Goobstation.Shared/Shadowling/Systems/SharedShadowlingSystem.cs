@@ -19,6 +19,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -70,6 +71,10 @@ public abstract class SharedShadowlingSystem : EntitySystem
 
     private void OnDamageModify(EntityUid uid, ShadowlingComponent component, DamageModifyEvent args)
     {
+        if (args.Origin is not {} origin
+            || !HasComp<ProjectileComponent>(origin))
+            return;
+
         foreach (var (key,_) in args.Damage.DamageDict)
         {
             if (key == "Heat")
@@ -225,12 +230,7 @@ public abstract class SharedShadowlingSystem : EntitySystem
         EntityManager.AddComponents(target, comps);
 
         if (TryComp<ShadowlingComponent>(uid, out var sling))
-        {
             sling.Thralls.Add(target);
-
-            if (TryComp<LightDetectionDamageComponent>(uid, out var lightDet))
-                _lightDamage.AddResistance((uid, lightDet), sling.LightResistanceModifier);
-        }
 
         _audio.PlayPredicted(
             new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"),

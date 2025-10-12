@@ -45,6 +45,12 @@
       components:
       - type: Wizard
       - type: CanEnchant
+      - type: LanguageKnowledge
+        speaks: []
+        understands: []
+      - type: UniversalLanguageSpeaker
+      - type: TowerOfBabel
+      - type: LanguageSpeaker
       - type: RandomMetadata
         nameSegments:
         - WizardFirst
@@ -107,6 +113,12 @@
       - type: Wizard
       - type: RandomMetadata
       - type: CanEnchant
+      - type: LanguageKnowledge
+        speaks: []
+        understands: []
+      - type: UniversalLanguageSpeaker
+      - type: TowerOfBabel
+      - type: LanguageSpeaker
         nameSegments:
         - WizardFirst
         - WizardLast
@@ -138,6 +150,12 @@
       components:
       - type: Apprentice
       - type: CanEnchant
+      - type: LanguageKnowledge
+        speaks: []
+        understands: []
+      - type: UniversalLanguageSpeaker
+      - type: TowerOfBabel
+      - type: LanguageSpeaker
       - type: NpcFactionMember
         factions:
         - Wizard

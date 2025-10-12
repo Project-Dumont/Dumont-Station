@@ -1178,3 +1178,29 @@ Entries:
       message: Os líquidos agora pegam fogo. Cuidado!
   id: 132
   time: '2025-10-04T04:54:21.0000000+00:00'
+- author: Spatison, VMSolidus, Mnemotechnican, DEATHB4DEFEAT, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode renascer.
+  id: 133
+  time: '2025-10-11T22:11:07.0000000+00:00'
+- author: Kavest0
+  changes:
+    - type: Tweak
+      message: IPCs agora consomem menos energia quando parados.
+    - type: Tweak
+      message: IPCs agora deixam impressões digitais.
+  id: 134
+  time: '2025-10-11T22:12:13.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Remove
+      message: Tram saiu da votação de mapas
+  id: 135
+  time: '2025-10-11T22:55:37.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 12/10 (confira a aba do goob)!
+  id: 136
+  time: '2025-10-12T13:40:20.0000000+00:00'

@@ -1,13 +1,15 @@
 # SPDX-FileCopyrightText: 2024 P e p e . <josephpereira413@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 P e p e . <154895350+PepeThePog@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   name: Wendigo
   description: A manhunter entity of the dark woods. Although its main diet is humanoids, it won't pass a meal at anything that comes across it.
-  parent: BaseMobAlternate
+  parent: BaseMobSlaughterDemon
   id: MobWendigo
   components:
   - type: Sprite
@@ -20,19 +22,29 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      500: Dead
+      700: Dead # Bossfight(?)
   - type: SlowOnDamage
     speedModifierThresholds:
-      150: 0.7
+      350: 1.6 # Ele fica mais rápido quando machucado (É pra ficar :shrug:)
   - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 8
   - type: MeleeWeapon
     soundHit:
       path: /Audio/_Gabystation/Weapons/Xeno/monster_attack.ogg
+    animation: WeaponArcPunch
     damage:
-     types:
-       Brute: 25
-       Slash: 25
-       Structural: 70
+      types:
+        Slash: 25
+        Structural: 80
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 8.5
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: UseDelay
+    delay: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -49,30 +61,21 @@
     - CannotSuicide
     - FootstepSound
     - DoorBumpOpener
-  - type: Devourer
-    foodPreferenceWhitelist:
-      components:
-      - HumanoidAppearance
-    stomachStorageWhitelist:
-      components:
-      - MobState
-    chemical: Ichor
-    healRate: 25.0
-    whitelist:
-      components:
-      - MobState
-      - Door
-      tags:
-      - Wall
   - type: Reflect
-    reflectProb: 0.7
+    reflectProb: 0.75
     reflects:
       - Energy
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepThud
   - type: PointLight
-    radius: 2
-    energy: 4.5
+    radius: 70 # Avisa todo mundo da presença dele.
+    energy: 2.5
     color: "#ff4242"
     castShadows: false
+  - type: AnnounceOnSpawn
+    message: wendigo-has-spawned
+    sender: wendigo-has-spawned-sender
+    sound:
+      path: /Audio/_Gabystation/Voice/Wendigo_Cry_3.ogg
+    color: maroon

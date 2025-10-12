@@ -118,7 +118,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using Content.Goobstation.Common.Movement;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
@@ -325,10 +324,6 @@ public abstract partial class SharedMoverController : VirtualController
             || !PhysicsQuery.TryComp(uid, out var physicsComponent)
             || PullableQuery.TryGetComponent(uid, out var pullable) && pullable.BeingPulled)
         {
-            // Goobstation start
-            var cantMoveEvent = new MoverControllerCantMoveEvent();
-            RaiseLocalEvent(uid, ref cantMoveEvent);
-            // Goobstation end
             UsedMobMovement[uid] = false;
             return;
         }
@@ -451,11 +446,6 @@ public abstract partial class SharedMoverController : VirtualController
             accel = moveSpeedComponent?.Acceleration ?? MovementSpeedModifierComponent.DefaultAcceleration;
             accel *= tileDef?.MobAcceleration ?? 1f;
         }
-
-        // Goobstation start
-        var getTileEvent = new MoverControllerGetTileEvent(tileDef);
-        RaiseLocalEvent(uid, ref getTileEvent);
-        // Goobstation end
 
         // This way friction never exceeds acceleration when you're trying to move.
         // If you want to slow down an entity with "friction" you shouldn't be using this system.

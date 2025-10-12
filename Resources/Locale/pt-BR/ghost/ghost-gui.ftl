@@ -21,6 +21,7 @@ ghost-roles-window-rules-footer = A Opção estará disponível em {$time} segun
 
 ghost-return-to-body-title = Retorne ao corpo
 ghost-return-to-body-text = Você está sendo revivido! Retornar ao seu corpo?
+ghost-gui-return-to-round-button = Retornar à rodada
 
 ghost-roles-window-redirect-label = Redirecionar para outro servidor
 ghost-roles-window-redirect = Redirecionar
