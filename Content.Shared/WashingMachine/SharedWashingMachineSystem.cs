@@ -15,6 +15,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Clothing.Components; // Gaby
 
 namespace Content.Shared.WashingMachine;
 
@@ -181,7 +182,17 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
 
         var itemEv = new WashingMachineIsBeingWashed(ent.Owner, items);
         foreach (var item in items)
+        {
             RaiseLocalEvent(item, itemEv);
+
+            if (TryComp<ToggleableClothingComponent>(item, out var toggleableComp)) // Gaby
+            {
+                foreach (var attachedClothingUid in toggleableComp.ClothingUids.Keys)
+                {
+                    RaiseLocalEvent(attachedClothingUid, itemEv);
+                }
+            }
+        }
     }
 
     protected virtual void UpdateForensics(Entity<WashingMachineComponent> ent, HashSet<EntityUid> items)
