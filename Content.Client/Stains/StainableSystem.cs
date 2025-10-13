@@ -13,12 +13,14 @@ using Content.Shared.Stains;
 using Content.Shared.Forensics;
 using Robust.Client.GameObjects;
 using Robust.Shared.Reflection;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Stains;
 
 public sealed partial class StainableSystem : SharedStainableSystem
 {
     [Dependency] private readonly IReflectionManager _reflection = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private string _layerPrefix = string.Empty;
 
@@ -76,7 +78,7 @@ public sealed partial class StainableSystem : SharedStainableSystem
         if (solution.Value.Comp.Solution.Volume <= FixedPoint2.Zero)
             yield break;
 
-        var color = solution.Value.Comp.Solution.GetColor(null);
+        var color = solution.Value.Comp.Solution.GetColor(_prototypeManager);
 
         var prefix = identifier == null
             ? $"{_layerPrefix}"

@@ -81,10 +81,10 @@
     itemVisuals:
       left:
       - sprite: Effects/Stains/jumpsuit.rsi
-        state: inhand-left
+        state: inhand-right
       right:
       - sprite: Effects/Stains/jumpsuit.rsi
-        state: inhand-right
+        state: inhand-left
     iconVisuals:
     - sprite: Effects/Stains/jumpsuit.rsi
       state: icon
@@ -111,10 +111,10 @@
     itemVisuals:
       left:
       - sprite: Effects/Stains/jumpskirt.rsi
-        state: inhand-left
+        state: inhand-right
       right:
       - sprite: Effects/Stains/jumppskirt.rsi
-        state: inhand-right
+        state: inhand-left
     iconVisuals:
     - sprite: Effects/Stains/jumpskirt.rsi
       state: icon
@@ -158,10 +158,10 @@
     itemVisuals:
       left:
       - sprite: Effects/Stains/jumpskirt.rsi
-        state: inhand-left
+        state: inhand-right
       right:
       - sprite: Effects/Stains/jumpskirt.rsi
-        state: inhand-right
+        state: inhand-left
     iconVisuals:
     - sprite: Effects/Stains/jumpskirt.rsi
       state: icon

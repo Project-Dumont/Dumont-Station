@@ -116,6 +116,9 @@ public abstract partial class SharedPuddleSystem
         if (args.Handled)
             return;
 
+        if (!_net.IsServer)
+            return;
+
         // When attacking someone reactive with a spillable entity,
         // splash a little on them (touch react)
         // If this also has solution transfer, then assume the transfer amount is how much we want to spill.
