@@ -262,6 +262,16 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: helmetblood
+      offset: 0.0,-0.28
   - type: StainBlocker
     slots: [MASK]
 
@@ -326,6 +336,16 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: helmetblood
+      offset: 0.0,-0.28
   - type: StainBlocker
     slots: [MASK]
 

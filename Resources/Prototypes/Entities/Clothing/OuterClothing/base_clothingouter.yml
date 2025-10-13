@@ -202,6 +202,17 @@
   - type: Tag
     tags:
       - WhitelistChameleon
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: suitblood
+    iconVisuals:
+    - sprite: Effects/Stains/jumpsuit.rsi
+      state: icon
+  - type: StainBlocker
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   abstract: true
@@ -393,6 +404,15 @@
     hiddenSlots:
     - jumpsuit
   - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothing
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothing
   - type: StainBlocker
     slots: [INNERCLOTHING, FEET, GLOVES]
 
@@ -440,6 +460,15 @@
   - type: Tag
     tags:
     - PlasmamanSafe # EE Plasmeme Change
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothing
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothing
   - type: StainBlocker
     slots: [INNERCLOTHING, FEET, GLOVES]
 
