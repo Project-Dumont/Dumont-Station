@@ -59,6 +59,7 @@
   - FreezerElectronics
   - ThermomachineFreezerMachineCircuitBoard
   - BankATMCircuitboard # Gabystation change
+  - WashingMachineCircuitboard # Gabystation change
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
