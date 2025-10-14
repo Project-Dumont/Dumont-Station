@@ -206,17 +206,14 @@
     tags:
       - Armor
   - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
-  - type: Appearance
   - type: Stainable
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
         state: armorblood
     iconVisuals:
-    - sprite: Effects/Stains/jumpsuit.rsi
-      state: icon
-  - type: StainBlocker
-    slots: [INNERCLOTHING]
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: armorbloodicon
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity

@@ -86,8 +86,8 @@
       - sprite: Effects/Stains/jumpsuit.rsi
         state: inhand-left
     iconVisuals:
-    - sprite: Effects/Stains/jumpsuit.rsi
-      state: icon
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: uniformbloodicon
   - type: Tag
     tags:
     - ClothMade
@@ -116,8 +116,8 @@
       - sprite: Effects/Stains/jumppskirt.rsi
         state: inhand-left
     iconVisuals:
-    - sprite: Effects/Stains/jumpskirt.rsi
-      state: icon
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: uniformbloodicon
 
 
 - type: entity
@@ -163,5 +163,5 @@
       - sprite: Effects/Stains/jumpskirt.rsi
         state: inhand-left
     iconVisuals:
-    - sprite: Effects/Stains/jumpskirt.rsi
-      state: icon
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: uniformbloodicon

@@ -33,6 +33,7 @@
     - LeftHand
     - RightHand
 
+
 - type: entity
   parent: ClothingHandModsuitBase
   id: ClothingModsuitGauntletsStandard

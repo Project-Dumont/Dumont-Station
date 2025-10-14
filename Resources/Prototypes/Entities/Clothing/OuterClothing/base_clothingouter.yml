@@ -202,15 +202,14 @@
   - type: Tag
     tags:
       - WhitelistChameleon
-  - type: Appearance
   - type: Stainable
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
         state: suitblood
     iconVisuals:
-    - sprite: Effects/Stains/jumpsuit.rsi
-      state: icon
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: suitbloodicon
   - type: StainBlocker
     slots: [INNERCLOTHING, FEET, GLOVES]
 
@@ -232,7 +231,6 @@
         type: StorageBoundUserInterface
   - type: StaticPrice
     price: 70
-  - type: Appearance
   - type: Stainable
     clothingVisuals:
       outerClothing:
@@ -240,9 +238,7 @@
         state: coatblood
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
-      state: coatblood
-  - type: StainBlocker
-    slots: [INNERCLOTHING]
+      state: coatbloodicon
 
 - type: entity
   abstract: true
@@ -264,6 +260,14 @@
     - state: icon-open
       map: ["foldedLayer"]
       visible: false
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothing
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothing
 
 - type: entity
   abstract: true
@@ -404,15 +408,6 @@
     hiddenSlots:
     - jumpsuit
   - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
-  - type: Appearance
-  - type: Stainable
-    clothingVisuals:
-      outerClothing:
-      - sprite: _Gabystation/Effects/blood.rsi
-        state: outerclothing
-    iconVisuals:
-    - sprite: _Gabystation/Effects/blood.rsi
-      state: outerclothing
   - type: StainBlocker
     slots: [INNERCLOTHING, FEET, GLOVES]
 
@@ -460,15 +455,6 @@
   - type: Tag
     tags:
     - PlasmamanSafe # EE Plasmeme Change
-  - type: Appearance
-  - type: Stainable
-    clothingVisuals:
-      outerClothing:
-      - sprite: _Gabystation/Effects/blood.rsi
-        state: outerclothing
-    iconVisuals:
-    - sprite: _Gabystation/Effects/blood.rsi
-      state: outerclothing
   - type: StainBlocker
     slots: [INNERCLOTHING, FEET, GLOVES]
 
