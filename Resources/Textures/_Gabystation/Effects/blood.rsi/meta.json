@@ -50,10 +50,25 @@
       "name": "glovebloodicon"
     },
     {
+      "name": "coatbloodicon"
+    },
+    {
       "name": "shoebloodicon"
     },
     {
       "name": "maskbloodicon"
+    },
+    {
+      "name": "suitbloodicon"
+    },
+    {
+      "name": "helmetbloodicon"
+    },
+    {
+      "name": "armorbloodicon"
+    },
+    {
+      "name": "uniformbloodicon"
     }
   ]
 }
