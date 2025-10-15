@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -186,8 +187,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         card = (cardUid, cardComp);
         return true;
-        /// se eu reusar isso, preciso pegar o id que estiver na mao primeiro e nao so no pda
-        /// pra coisas como atm
     }
 
     private bool TryPdaFromId(EntityUid idUid,

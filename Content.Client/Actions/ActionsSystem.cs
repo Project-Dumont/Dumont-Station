@@ -19,7 +19,6 @@
 // SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
@@ -108,6 +107,7 @@
 // SPDX-FileCopyrightText: 2025 ActiveMammmoth <kmcsmooth@gmail.com>
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
@@ -126,6 +126,8 @@
 
 using System.IO;
 using System.Linq;
+using Content.Shared._Goobstation.Wizard.SpellCards;
+using Content.Client._Shitcode.Wizard.Systems;
 using Content.Goobstation.Common.Actions;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
@@ -139,12 +141,10 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -160,6 +160,7 @@ namespace Content.Client.Actions
         [Dependency] private readonly IPrototypeManager _proto = default!;
         [Dependency] private readonly IResourceManager _resources = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
+        [Dependency] private readonly ActionTargetMarkSystem _mark = default!;
 
         public event Action<EntityUid>? OnActionAdded;
         public event Action<EntityUid>? OnActionRemoved;
@@ -356,14 +357,14 @@ namespace Content.Client.Actions
             CommandBinds.Unregister<ActionsSystem>();
         }
 
-        public void TriggerAction(Entity<ActionComponent> action)
+        public void TriggerAction(Entity<ActionComponent> action, bool force = false) // Goob edit
         {
             if (_playerManager.LocalEntity is not { } user)
                 return;
 
             // TODO: unhardcode this somehow
 
-            if (!HasComp<InstantActionComponent>(action))
+            if (!force && !HasComp<InstantActionComponent>(action)) // Goob edit
                 return;
 
             if (action.Comp.ClientExclusive)
@@ -477,6 +478,9 @@ namespace Content.Client.Actions
                 targetEnt = args.Input.EntityUid;
             }
 
+            if (HasComp<LockOnMarkActionComponent>(uid) && Exists(_mark.Target))
+                targetEnt = _mark.Target.Value; // Goobstation
+
             if (action.ClientExclusive)
             {
                 // TODO: abstract away from single event or maybe just RaiseLocalEvent?
@@ -496,8 +500,22 @@ namespace Content.Client.Actions
 
         private void OnEntityTargetAttempt(Entity<EntityTargetActionComponent> ent, ref ActionTargetAttemptEvent args)
         {
-            if (args.Handled || args.Input.EntityUid is not { Valid: true } entity)
+            // Goob edit start
+            if (args.Handled)
                 return;
+
+            var entity = args.Input.EntityUid;
+            if (!HasComp<LockOnMarkActionComponent>(ent) || !Exists(_mark.Target))
+            {
+                if (entity is not { Valid: true })
+                {
+                    args.Handled = true;
+                    return;
+                }
+            }
+            else
+                entity = _mark.Target.Value;
+            // Goob edit end
 
             // let world target component handle it
             var (uid, comp) = ent;

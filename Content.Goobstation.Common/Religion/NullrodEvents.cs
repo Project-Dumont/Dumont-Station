@@ -1,5 +1,8 @@
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -7,10 +10,12 @@ namespace Content.Goobstation.Common.Religion;
 
 public sealed class TouchSpellDenialRelayEvent : CancellableEntityEventArgs;
 
-public sealed class BeforeCastTouchSpellEvent(EntityUid target) : CancellableEntityEventArgs
+public sealed class BeforeCastTouchSpellEvent(EntityUid target, bool doEffects = true) : CancellableEntityEventArgs
 {
     /// <summary>
     /// The target of the event, to check if they meet the requirements for casting.
     /// </summary>
     public EntityUid? Target = target;
+
+    public bool DoEffects = doEffects;
 }

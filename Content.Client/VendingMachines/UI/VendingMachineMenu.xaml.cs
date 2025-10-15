@@ -97,9 +97,11 @@
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 João Fernandez <joaorbfernandez@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
@@ -242,6 +244,10 @@ namespace Content.Client.VendingMachines.UI
 
                 var itemName = Identity.Name(dummy, _entityManager);
                 var itemText = $"{itemName} [{entry.Amount}]";
+                // GabyStation -> Economy begin
+                if (entry.Price is { } price && price != 0)
+                    itemText = $"{itemText} | ${price}";
+                // GabyStation -> Economy end
                 _amounts[entry.ID] = entry.Amount;
 
                 if (itemText.Length > longestEntry.Length)
@@ -275,17 +281,18 @@ namespace Content.Client.VendingMachines.UI
                     continue;
                 var amount = entry.Amount;
                 // Could be better? Problem is all inventory entries get squashed.
-                var text = GetItemText(dummy, amount);
+                var text = GetItemText(dummy, amount, entry.Price); // GabyStation -> Economy
 
                 button.Item.SetText(text);
                 button.Button.Disabled = !enabled || amount == 0;
             }
         }
 
-        private string GetItemText(EntityUid dummy, uint amount)
+        // GabyStation -> Economy
+        private string GetItemText(EntityUid dummy, uint amount, uint? price = default)
         {
             var itemName = Identity.Name(dummy, _entityManager);
-            return $"{itemName} [{amount}]";
+            return price is null ? $"{itemName} [{amount}]" : $"{itemName} [{amount}] | ${price}";
         }
 
         private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)

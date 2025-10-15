@@ -1143,3 +1143,64 @@ Entries:
         e Guadian de Toby Fox na jukebox.
   id: 127
   time: '2025-10-01T13:19:40.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Corrige o contrato do diabo que por padrão spawnava com o texto errado,
+        o que causou varios contratos não coletarem as almas dos contratados,
+        pobres diabos...
+  id: 128
+  time: '2025-10-02T23:13:17.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        Altera a vida dos membros, desmembramento agora se torna mais facil e
+        menos mortal
+  id: 129
+  time: '2025-10-03T01:00:36.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Nuno card box are now present in Good Clean Fun vending machines
+  id: 130
+  time: '2025-10-03T01:06:59.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Revolucionarios de cair normalmente em uma partida.
+  id: 131
+  time: '2025-10-04T04:21:16.0000000+00:00'
+- author: Alpha-Two, starch, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Os líquidos agora pegam fogo. Cuidado!
+  id: 132
+  time: '2025-10-04T04:54:21.0000000+00:00'
+- author: Spatison, VMSolidus, Mnemotechnican, DEATHB4DEFEAT, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode renascer.
+  id: 133
+  time: '2025-10-11T22:11:07.0000000+00:00'
+- author: Kavest0
+  changes:
+    - type: Tweak
+      message: IPCs agora consomem menos energia quando parados.
+    - type: Tweak
+      message: IPCs agora deixam impressões digitais.
+  id: 134
+  time: '2025-10-11T22:12:13.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Remove
+      message: Tram saiu da votação de mapas
+  id: 135
+  time: '2025-10-11T22:55:37.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 12/10 (confira a aba do goob)!
+  id: 136
+  time: '2025-10-12T13:40:20.0000000+00:00'

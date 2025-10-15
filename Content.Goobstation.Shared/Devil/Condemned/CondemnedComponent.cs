@@ -1,4 +1,6 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 //
@@ -7,6 +9,7 @@
 using Content.Shared.Polymorph;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.Devil.Condemned;
 
@@ -97,6 +100,16 @@ public sealed partial class CondemnedComponent : Component
 
     [DataField]
     public ProtoId<PolymorphPrototype> BanishProto = "ShadowJaunt180";
+    /// <summary>
+    /// The map file location of the hell map used after banishment
+    /// </summary>
+    [DataField]
+    public ResPath HellMapPath = new ResPath("/Maps/_Goobstation/Nonstations/Hell.yml");
+    /// <summary>
+    /// The Prototype of the exit portal spawned in hell
+    /// </summary>
+    [DataField]
+    public EntProtoId ExitPortalPrototype = "PortalHellExit";
 }
 
 public enum CondemnedPhase : byte

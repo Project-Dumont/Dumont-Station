@@ -1,13 +1,16 @@
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 the biggest bruh <199992874+thebiggestbruh@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.DelayedDeath;
 using Content.Goobstation.Shared.CheatDeath;
+using Content.Goobstation.Shared.Devour.Events;
 using Content.Server._Shitmed.DelayedDeath;
 using Content.Server.Actions;
 using Content.Server.Administration.Systems;
@@ -89,6 +92,13 @@ public sealed partial class CheatDeathSystem : EntitySystem
 
             return;
         }
+
+        // check if we're allowed to revive
+        var reviveEv = new BeforeSelfRevivalEvent(ent, "self-revive-fail");
+        RaiseLocalEvent(ent, ref reviveEv);
+
+        if (reviveEv.Cancelled)
+            return;
 
         // If the entity is out of revives, or if they are unrevivable, return.
         if (ent.Comp.ReviveAmount <= 0 || HasComp<UnrevivableComponent>(ent))

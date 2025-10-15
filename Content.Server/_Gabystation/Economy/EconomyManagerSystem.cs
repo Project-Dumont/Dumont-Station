@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -118,12 +120,88 @@ namespace Content.Server._Gabystation.Economy
             return true;
         }
 
-        public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance)
+        public bool CanAfford(EconomyManagerComponent comp,
+            int accountId, uint amount,
+            [NotNullWhen(true)] out int balance)
         {
-            if (!comp.BankAccounts.ContainsKey(accountId) || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+            if (!TryGetBalance(comp, accountId, out balance))
                 return false;
 
+            return balance >= amount;
+        }
+
+        public bool TryPurchase(EconomyManagerComponent comp,
+            int accountId, uint price)
+        {
+            if (!TryGetBalance(comp, accountId, out var balance)
+                || balance < price
+                || !TryAddRemBalance(comp, accountId, -(int) price, raiseEvent: false))
+                return false;
+
+            var ev = new AccountTransferenceCompleted()
+            {
+                Type = TransferenceTypes.Purchase,
+                AccountId = accountId,
+                Amount = (int) price,
+            };
+
+            RaiseLocalEvent(comp.Owner, ev);
+
+            return true;
+        }
+
+        public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance, bool raiseEvent = true)
+        {
+            if (!comp.BankAccounts.ContainsKey(accountId)
+                || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+                return false;
+
+            if (bank.Balance == balance)
+                return true; // Deveriamos levantar um evento, com Amount = 0, nesse caso?
+
+            var previousBalance = bank.Balance;
             bank.Balance = balance;
+
+            if (raiseEvent)
+            {
+                var ev = new AccountTransferenceCompleted()
+                {
+                    Type = TransferenceTypes.Update,
+                    AccountId = accountId,
+                    Account = bank,
+                    Amount = balance - previousBalance
+                };
+
+                RaiseLocalEvent(comp.Owner, ev);
+            }
+
+            return true;
+        }
+
+        public bool TryAddRemBalance(EconomyManagerComponent comp, int accountId, int amount, bool raiseEvent = true)
+        {
+            if (!comp.BankAccounts.ContainsKey(accountId)
+                || !comp.BankAccounts.TryGetValue(accountId, out var bank))
+                return false;
+
+            if (amount == 0)
+                return true; // Deveriamos levantar um evento, com Amount = 0, nesse caso?
+
+            bank.Balance += amount;
+
+            if (raiseEvent)
+            {
+                var ev = new AccountTransferenceCompleted()
+                {
+                    Type = TransferenceTypes.Update,
+                    AccountId = accountId,
+                    Account = bank,
+                    Amount = amount
+                };
+
+                RaiseLocalEvent(comp.Owner, ev);
+            }
+
             return true;
         }
 
