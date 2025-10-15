@@ -389,7 +389,6 @@
     batteryRechargeRate: 1000
     batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed 
   - type: StationAiCore
-  - type: WeldingHealable
   - type: ExaminableDamage
     messages: StationAiCoreMessages
   - type: StationAiVision
