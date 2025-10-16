@@ -53,6 +53,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared._Gabystation.CCVar;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared._EinsteinEngines.Silicon.Components;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -715,9 +716,10 @@ public abstract partial class SharedSurgerySystem
             || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
             sepsis += new DamageSpecifier(poisonPrototype, _sepsisLocationPenalty);
 
-        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _crowdingCheckRange)
+        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _crowdingCheckRange, LookupFlags.Uncontained)
             .Where(ent =>
                 _mobState.IsAlive(ent)
+                && !HasComp<SiliconComponent>(ent)
                 && !HasComp<BorgChassisComponent>(ent)
                 && !IsSanitazed(ent)
                 && _interaction.InRangeUnobstructed(args.Body, ent, -1)
