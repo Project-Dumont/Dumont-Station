@@ -68,7 +68,6 @@ public sealed class MalfAiOverrideSystem : EntitySystem
         if (mapCoords.MapId == MapId.Nullspace)
         {
             _popup.PopupEntity(Loc.GetString("malfai-override-invalid-location"), popupTarget, ai);
-            args.Handled = true;
             return;
         }
 
@@ -88,7 +87,6 @@ public sealed class MalfAiOverrideSystem : EntitySystem
         if (targetMachine == null)
         {
             _popup.PopupEntity(Loc.GetString("malfai-override-no-machine"), popupTarget, ai);
-            args.Handled = true;
             return;
         }
 

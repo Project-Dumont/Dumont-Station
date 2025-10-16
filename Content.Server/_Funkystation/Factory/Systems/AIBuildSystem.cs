@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+//
 // SPDX-License-Identifier: MIT
 
 using Content.Server._Funkystation.Factory.Components;
@@ -14,6 +16,8 @@ using Content.Shared.Actions;
 using Content.Shared.MalfAI.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared.SubFloor;
+using Content.Shared.Tag;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -34,7 +38,6 @@ public sealed partial class AIBuildRequestEvent : EntityEventArgs
     }
 }
 
-
 /// <summary>
 /// System that handles AI building requests by spawning prototypes at specified locations
 /// </summary>
@@ -44,6 +47,7 @@ public sealed partial class AIBuildSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     private static readonly ISawmill Sawmill = Logger.GetSawmill("ai.build.system");
 
@@ -193,9 +197,21 @@ public sealed partial class AIBuildSystem : EntitySystem
         if (tileRef.Tile.IsEmpty)
             return false;
 
-        // Check for anchored entities (existing structures, doors, etc.)
-        foreach (var _ in _map.GetAnchoredEntities(grid, tile))
+        // Check for anchored entities, but allow building on subfloor and wall-mounted entities
+        foreach (var entity in _map.GetAnchoredEntities(grid, tile))
+        {
+            // Allow building over entities with SubFloorHideComponent (cables, pipes, disposal pipes)
+            if (HasComp<SubFloorHideComponent>(entity))
+                continue;
+
+            // Allow building over entities with WallMount tag (cameras, lights, wall-mounted devices)
+            // I may have forgot a few here, add this tag if noticed missing
+            if (_tag.HasTag(entity, "WallMount"))
+                continue;
+
+            // Block building on other anchored entities (walls, doors, machines, etc.)
             return false;
+        }
 
         return true;
     }
