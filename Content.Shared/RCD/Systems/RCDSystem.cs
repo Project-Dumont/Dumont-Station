@@ -703,31 +703,19 @@ public sealed class RCDSystem : EntitySystem
                 break;
 
             case RcdMode.ConstructObject:
-                // Funky - Determine the correct prototype based on selected layer for RPD
-                // var proto = (component.UseMirrorPrototype 
-                //     && !string.IsNullOrEmpty(prototype.MirrorPrototype))
-                //     ? prototype.MirrorPrototype
-                //     : prototype.Prototype;
+                var proto = (component.UseMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype))
+                    ? prototype.MirrorPrototype
+                    : prototype.Prototype;
 
-                string proto;
+                // Funky - Determine the correct prototype based on selected layer for RPD
                 if (component.IsRpd && !prototype.NoLayers)
                 {
-                    if (_protoManager.TryIndex<EntityPrototype>(prototype.Prototype, out var entityProto) &&
+                    if (_protoManager.TryIndex<EntityPrototype>(proto, out var entityProto) &&
                         entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
                         _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
                     {
                         proto = newProtoId;
                     }
-                    else
-                    {
-                        proto = prototype.Prototype;
-                    }
-                }
-                else
-                {
-                    proto = (component.UseMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype))
-                        ? prototype.MirrorPrototype
-                        : prototype.Prototype;
                 }
                 // Funky - end of changes
 
