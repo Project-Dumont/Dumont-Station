@@ -166,6 +166,8 @@
    - flaps her wings
    - flaps their wings
    - flaps its wings
+   - abana
+   - abana as asas
 
 - type: emote
   id: Trill
@@ -185,6 +187,7 @@
     - trills
     - trilling
     - trilled
+    - trina
 
 - type: emote
   id: Warble
@@ -204,6 +207,7 @@
     - warbles
     - warbling
     - warbled
+    - gorjeia
 
 - type: emote
   id: Wurble
@@ -261,6 +265,7 @@
   chatTriggers:
     - gulps
     - gulp
+    - engole
 
 - type: emote
   id: Surprised
