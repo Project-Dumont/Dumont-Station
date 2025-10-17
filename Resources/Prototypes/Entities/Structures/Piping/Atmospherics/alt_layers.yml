@@ -586,6 +586,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterAlt1
+  - type: Flippable
+    mirrorEntity: GasFilterFlippedAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasFilter]
@@ -602,6 +604,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterAlt2
+  - type: Flippable
+    mirrorEntity: GasFilterFlippedAlt2
 
 - type: entity
   parent: [GasPipeLayerAlt1, GasFilterFlipped]
@@ -618,7 +622,9 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterflippedAlt1
-
+  - type: Flippable
+    mirrorEntity: GasFilterAlt1
+    
 - type: entity
   parent: [GasPipeLayerAlt2, GasFilterFlipped]
   id: GasFilterFlippedAlt2
@@ -634,6 +640,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterflippedAlt2
+  - type: Flippable
+    mirrorEntity: GasFilterAlt2
 
 # GasMixer
 
@@ -652,6 +660,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerAlt1
+  - type: Flippable
+    mirrorEntity: GasMixerFlippedAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasMixer]
@@ -668,6 +678,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerAlt2
+  - type: Flippable
+    mirrorEntity: GasMixerFlippedAlt2
 
 - type: entity
   parent: [GasPipeLayerAlt1, GasMixerFlipped]
@@ -684,6 +696,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerflippedAlt1
+  - type: Flippable
+    mirrorEntity: GasMixerAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasMixerFlipped]
@@ -700,6 +714,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerflippedAlt2
+  - type: Flippable
+    mirrorEntity: GasMixerAlt2
 
 # GasFilterInline
 
