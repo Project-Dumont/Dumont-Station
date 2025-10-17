@@ -50,42 +50,46 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         var query = EntityQueryEnumerator<WashingMachineActiveComponent, WashingMachineComponent>();
         while (query.MoveNext(out var uid, out var _, out var component))
         {
-            if (component.WashingMachineState != WashingMachineState.Washing)
-                continue;
-
             if (component.WashingFinished > _timing.CurTime)
                 continue;
 
-            component.WashingMachineState = WashingMachineState.Idle;
-            DirtyField(uid, component, nameof(WashingMachineComponent.WashingMachineState));
-            _appearance.SetData(uid, WashingMachineVisuals.State, component.WashingMachineState);
+            if (!_net.IsServer)
+                continue;
 
-            RemComp<WashingMachineActiveComponent>(uid);
-
-            HashSet<EntityUid> items = new();
-
-            SharedEntityStorageComponent? entityStorageComp = null;
-            if (_storage.ResolveStorage(uid, ref entityStorageComp))
-                items = entityStorageComp.Contents.ContainedEntities.ToHashSet();
-
-            component.WashingSoundStream = _audio.Stop(component.WashingSoundStream);
-
-            if (_net.IsServer)
-                _audio.PlayPvs(component.FinishedSound, uid);
-
-            var machineEv = new WashingMachineFinishedWashingEvent(items);
-            RaiseLocalEvent(uid, machineEv);
-
-            var itemEv = new WashingMachineWashedEvent(uid, items);
-            foreach (var item in items)
-                RaiseLocalEvent(item, itemEv);
-
-            // update again incase forensics changed
-            // such as dyeing
-            UpdateForensics((uid, component), items);
-
-            _storage.OpenStorage(uid);
+            FinishWashing(uid, component);
         }
+    }
+
+    private void FinishWashing(EntityUid uid, WashingMachineComponent component)
+    {
+        RemComp<WashingMachineActiveComponent>(uid);
+
+        component.WashingMachineState = WashingMachineState.Idle;
+        DirtyField(uid, component, nameof(WashingMachineComponent.WashingMachineState));
+        _appearance.SetData(uid, WashingMachineVisuals.State, component.WashingMachineState);
+
+        HashSet<EntityUid> items = new();
+
+        SharedEntityStorageComponent? entityStorageComp = null;
+        if (_storage.ResolveStorage(uid, ref entityStorageComp))
+            items = entityStorageComp.Contents.ContainedEntities.ToHashSet();
+
+        component.WashingSoundStream = _audio.Stop(component.WashingSoundStream);
+
+        _audio.PlayPvs(component.FinishedSound, uid);
+
+        var machineEv = new WashingMachineFinishedWashingEvent(items);
+        RaiseLocalEvent(uid, machineEv);
+
+        var itemEv = new WashingMachineWashedEvent(uid, items);
+        foreach (var item in items)
+            RaiseLocalEvent(item, itemEv);
+
+        // update again incase forensics changed
+        // such as dyeing
+        UpdateForensics((uid, component), items);
+
+        _storage.OpenStorage(uid);
     }
 
     private void OnInit(Entity<WashingMachineComponent> ent, ref ComponentInit args)
