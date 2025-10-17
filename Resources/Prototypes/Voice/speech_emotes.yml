@@ -98,6 +98,7 @@
     - yells
     - yelled
     - yelling
+    - grita
 
 - type: emote
   id: Laugh
@@ -124,6 +125,8 @@
     - chortle
     - chortles
     - chortling
+    - ri
+    - da risada
 
 - type: emote
   id: Honk
@@ -159,6 +162,7 @@
     - sigh
     - sighs
     - sighed
+    - suspira
 
 - type: emote
   id: Whistle
@@ -176,6 +180,8 @@
     - whistle
     - whistles
     - whistleblowing
+    - assobia
+    - assovia
 
 - type: emote
   id: Crying
@@ -196,6 +202,8 @@
     - sob
     - sobs
     - sobbing
+    - chora
+    - lamenta
 
 - type: emote
   id: Squish
@@ -285,6 +293,7 @@
     - claps
     - clapping
     - clapped
+    - bate palmas
 
 - type: emote
   id: Snap
@@ -308,6 +317,11 @@
     - snaps their fingers
     - snapping fingers
     - snapped fingers
+    - estala
+    - estala os dedos
+    - estala os dedos dele
+    - estala os dedos dela
+    - estala os dedos delu
 
 - type: emote
   id: Thump
@@ -349,6 +363,7 @@
   chatTriggers:
     - salute
     - salutes
+    - saúda
 
 - type: emote
   id: Gasp
@@ -468,6 +483,7 @@
     - beeps
     - beeped
     - beeping
+    - bipa
 
 - type: emote
   id: Chime
