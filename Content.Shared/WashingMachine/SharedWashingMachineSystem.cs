@@ -47,8 +47,8 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<WashingMachineComponent>();
-        while (query.MoveNext(out var uid, out var component))
+        var query = EntityQueryEnumerator<WashingMachineActiveComponent, WashingMachineComponent>();
+        while (query.MoveNext(out var uid, out var _, out var component))
         {
             if (component.WashingMachineState != WashingMachineState.Washing)
                 continue;
@@ -59,6 +59,8 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
             component.WashingMachineState = WashingMachineState.Idle;
             DirtyField(uid, component, nameof(WashingMachineComponent.WashingMachineState));
             _appearance.SetData(uid, WashingMachineVisuals.State, component.WashingMachineState);
+
+            RemComp<WashingMachineActiveComponent>(uid);
 
             HashSet<EntityUid> items = new();
 
@@ -101,6 +103,8 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         ent.Comp.WashingMachineState = WashingMachineState.Broken;
         DirtyField(ent.Owner, ent.Comp, nameof(WashingMachineComponent.WashingMachineState));
         _appearance.SetData(ent.Owner, WashingMachineVisuals.State, ent.Comp.WashingMachineState);
+
+        RemComp<WashingMachineActiveComponent>(ent.Owner);
     }
 
     private void OnStorageOpenAttempt(Entity<WashingMachineComponent> ent, ref StorageOpenAttemptEvent args)
@@ -163,6 +167,8 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         ent.Comp.WashingMachineState = WashingMachineState.Washing;
         DirtyField(ent.Owner, ent.Comp, nameof(WashingMachineComponent.WashingMachineState));
         _appearance.SetData(ent.Owner, WashingMachineVisuals.State, ent.Comp.WashingMachineState);
+
+        EnsureComp<WashingMachineActiveComponent>(ent.Owner);
 
         HashSet<EntityUid> items = new();
 
