@@ -40,7 +40,7 @@
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandStandardOperatingProcedure.xml"
   priority: 2
   children:
-  - POP Comando Geral
+  - POP Cadeia de Comando
   - POP Transferencias
 
 - type: guideEntry
@@ -106,8 +106,8 @@
 # POP Comando
 
 - type: guideEntry
-  id: POP Comando Geral
-  name: guide-entry-pop-comando-geral
+  id: POP Cadeia de Comando
+  name: guide-entry-pop-cadeia-de-comando
   text: "/ServerInfo/_Gabystation/Guidebook/POPComando.xml"
   priority: 1
 

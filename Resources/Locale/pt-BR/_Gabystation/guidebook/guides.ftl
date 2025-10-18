@@ -2,7 +2,7 @@ guide-entry-pop = Procedimento Operacional Padrão
 
 guide-entry-pop-geral = Geral
 
-guide-entry-pop-comando-geral = Comandantes
+guide-entry-pop-cadeia-de-comando = Cadeia de Comando
 guide-entry-pop-alerta = Códigos de Alerta
 guide-entry-pop-transferencias = Promoções e Demissões
 guide-entry-pop-conduta = Conduta e Segurança de Trabalho
