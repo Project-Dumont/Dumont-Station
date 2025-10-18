@@ -48,9 +48,7 @@
             #service
             StationAi: [ 1, 1 ]
             Captain: [ 1, 1 ]
-            Magistrate: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
-            InternalAffairsAgent: [ 3, 3 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 3, 3 ]
             Botanist: [ 3, 3 ]
@@ -75,7 +73,6 @@
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
-            Roboticist: [ 2, 2 ]
             ResearchAssistant: [ -1, -1 ]
             Borg: [ 4, 4 ]
             #security
