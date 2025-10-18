@@ -131,7 +131,7 @@
   text: "/ServerInfo/_Gabystation/Guidebook/POPConfiscar.xml"
   priority: 2
 
-  - type: guideEntry
+- type: guideEntry
   id: POP Multa
   name: guide-entry-pop-multa
   text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
