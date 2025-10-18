@@ -572,14 +572,14 @@
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Theme_Song.ogg
 
 - type: jukebox
-  id: PapersPleaseGLory
+  id: PapersPleaseGlory
   name: Papers Please - Glory to ARSTOTZKA
   path:
     path: /Audio/_Gabystation/Jukebox/PAPERS_PLEASE_Glory_ARSTOTZKA.ogg
 
 - type: jukebox
-  id: PapersPleaseDethTheme
-  name: Papers PLease - Death Theme
+  id: PapersPleaseDeathTheme
+  name: Papers Please - Death Theme
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
 
