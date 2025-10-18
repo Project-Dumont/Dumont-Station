@@ -7,7 +7,7 @@ guide-entry-pop-alerta = Códigos de Alerta
 guide-entry-pop-transferencias = Promoções e Demissões
 guide-entry-pop-conduta = Conduta e Segurança de Trabalho
 guide-entry-pop-confiscar = Política de Confiscação
-guide-entry-pop-multa = Multas e Fianças
+guide-entry-pop-multa = Fianças
 
 guide-entry-pop-comando = Comando
 guide-entry-pop-seguranca = Segurança
