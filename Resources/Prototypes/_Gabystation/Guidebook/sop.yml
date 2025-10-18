@@ -30,13 +30,9 @@
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Geral.xml"
   priority: 1
   children:
-  - POP Comando Geral
   - POP Alerta
-  - POP Transferencias
   - POP Conduta
-  - POP Confiscar
   - POP Marcial
-  - POP Multa
 
 # POP Geral
 
@@ -89,6 +85,9 @@
   name: guide-entry-pop-comando
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandStandardOperatingProcedure.xml"
   priority: 2
+  children:
+  - POP Comando Geral
+  - POP Transferencias
 
 - type: guideEntry
   id: POP Segurança
@@ -97,6 +96,8 @@
   priority: 3
   children:
   - POP Codigo de Conduta
+  - POP Confiscar
+  - POP Multa
 
 - type: guideEntry
   id: POP Cargo
