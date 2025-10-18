@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 #
@@ -24,6 +26,7 @@
 - type: guideEntry
   id: POP Geral
   name: guide-entry-pop-geral
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Geral.xml"
   priority: 1
   children:
   - POP Comando Geral
@@ -32,7 +35,7 @@
   - POP Conduta
   - POP Confiscar
   - POP Marcial
-  - POP Multa
+#  - POP Multa # Gaby: Desativado temporariamente
 
 # POP Geral
 
@@ -72,23 +75,23 @@
   text: "/ServerInfo/_Gabystation/Guidebook/POPMarcial.xml"
   priority: 6
 
-- type: guideEntry
-  id: POP Multa
-  name: guide-entry-pop-multa
-  text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
-  priority: 7
+#- type: guideEntry
+#  id: POP Multa
+#  name: guide-entry-pop-multa
+#  text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
+#  priority: 7
 
 # POP Departamental
 
 - type: guideEntry
   id: POP Comando
   name: guide-entry-pop-comando
-  text: "/ServerInfo/_Gabystation/Guidebook/POP/Comando/CommandStandardOperatingProcedure.xml"
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandStandardOperatingProcedure.xml"
   priority: 2
 
 - type: guideEntry
   id: POP Segurança
-  name: guide-entry-pop-segurança
+  name: guide-entry-pop-seguranca
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/SecurityStandardOperatingProcedure.xml"
   priority: 3
   children:
@@ -109,7 +112,7 @@
 - type: guideEntry
   id: POP Medico
   name: guide-entry-pop-medico
-  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medical/MedicalStandardOperatingProcedure.xml"
+  text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/MedicalStandardOperatingProcedure.xml"
   priority: 6
 
 - type: guideEntry
@@ -120,7 +123,7 @@
 
 - type: guideEntry
   id: POP Serviço
-  name: guide-entry-pop-serviço
+  name: guide-entry-pop-servico
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ServiceStandardOperatingProcedure.xml"
   priority: 8
 
