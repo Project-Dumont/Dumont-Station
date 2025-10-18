@@ -626,7 +626,7 @@
     node: filterflippedAlt1
   - type: Flippable
     mirrorEntity: GasFilterAlt1
-    
+
 - type: entity
   parent: [GasPipeLayerAlt2, GasFilterFlipped]
   id: GasFilterFlippedAlt2
