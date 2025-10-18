@@ -319,17 +319,17 @@
   source: "https://www.youtube.com/watch?v=YnqqTzis3EA"
 
 - files: ["PAPERS_PLEASE_Glory_ARSTOTZKA.ogg"]
-  copyright: "PAPERS PLEASE Glory to ARSTOTZKA by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  copyright: "Papers Please Glory to ARSTOTZKA by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=Kd2b7PYyZic"
 
 - files: ["Papers_Please_Theme_Song.ogg"]
-  copyright: "Papers PLease Theme Song by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  copyright: "Papers Please Theme Song by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=OBQE_TNI7zw"
 
 - files: ["Papers_Please_Death_Theme.ogg"]
-  copyright: "Papers PLease Death Theme by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  copyright: "Papers Please Death Theme by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
 
