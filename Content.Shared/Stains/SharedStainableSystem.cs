@@ -18,6 +18,7 @@ using Content.Shared.Stains.Components; // Gaby
 using Content.Shared.Verbs; // Gaby
 using Content.Shared.DoAfter; // Gaby
 using Content.Shared.Popups; // Gaby
+using Robust.Shared.Utility; // Gaby
 
 namespace Content.Shared.Stains;
 
@@ -173,6 +174,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
         var verb = new Verb
         {
             Text = Loc.GetString("stain-verb-wring"),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/bubbles.svg.192dpi.png")),
             Act = () =>
             {
                 var doAfterArgs = new DoAfterArgs(EntityManager, user, ent.Comp.CleanseDelay, new WringStainDoAfterEvent(), ent.Owner, target: ent.Owner)
