@@ -7,6 +7,8 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands.Components;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization; // Gaby
+using Content.Shared.DoAfter; // Gaby
 
 namespace Content.Shared.Stains;
 
@@ -17,10 +19,10 @@ public sealed partial class StainableComponent : Component
     public string SolutionId = "stain";
 
     [DataField]
-    public FixedPoint2 MaxVolume = 5f;
+    public FixedPoint2 MaxVolume = 10f;
 
     [DataField]
-    public FixedPoint2 StainVolume = 0.02f;
+    public FixedPoint2 StainVolume = 0.5f;
 
     [DataField]
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
@@ -33,4 +35,12 @@ public sealed partial class StainableComponent : Component
 
     [ViewVariables]
     public HashSet<int> RevealedIconVisuals = new();
+
+    [DataField]
+    public float CleanseDelay = 15f;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class WringStainDoAfterEvent : SimpleDoAfterEvent
+{
 }

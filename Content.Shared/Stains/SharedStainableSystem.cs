@@ -15,6 +15,9 @@ using Robust.Shared.GameObjects; // Gaby
 using Content.Shared.Clothing.Components; // Gaby
 using Robust.Shared.Containers; // Gaby
 using Content.Shared.Stains.Components; // Gaby
+using Content.Shared.Verbs; // Gaby
+using Content.Shared.DoAfter; // Gaby
+using Content.Shared.Popups; // Gaby
 
 namespace Content.Shared.Stains;
 
@@ -25,6 +28,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
     [Dependency] protected readonly SharedSolutionContainerSystem Solution = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // Gaby
     [Dependency] private readonly SharedContainerSystem _container = default!; // Gaby
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
+    [Dependency] private readonly SharedPuddleSystem _puddle = default!; // Gaby
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // Gaby
 
     public override void Initialize()
     {
@@ -36,6 +42,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
         SubscribeLocalEvent<StainableComponent, InventoryRelayedEvent<SpilledOnEvent>>(OnSpilledOn);
 
         SubscribeLocalEvent<StainableComponent, WashingMachineIsBeingWashed>(OnWashed);
+
+        SubscribeLocalEvent<StainableComponent, GetVerbsEvent<Verb>>(AddWringVerb); // Gaby
+        SubscribeLocalEvent<StainableComponent, WringStainDoAfterEvent>(OnWringDoAfter); // Gaby
     }
 
     private void OnInit(Entity<StainableComponent> ent, ref ComponentInit args)
@@ -149,5 +158,54 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
     protected virtual void DirtyOwnerAppearance(EntityUid owner) // Gaby
     {
+    }
+
+    private void AddWringVerb(Entity<StainableComponent> ent, ref GetVerbsEvent<Verb> args)
+    {
+        if (args.Using != ent.Owner)
+            return;
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var stainSolution) || stainSolution.Volume <= 0)
+            return;
+
+        var user = args.User;
+        var verb = new Verb
+        {
+            Text = Loc.GetString("stain-verb-wring"),
+            Act = () =>
+            {
+                var doAfterArgs = new DoAfterArgs(EntityManager, user, ent.Comp.CleanseDelay, new WringStainDoAfterEvent(), ent.Owner, target: ent.Owner)
+                {
+                    BreakOnMove = true,
+                    BreakOnDamage = true,
+                    NeedHand = true,
+                    DuplicateCondition = DuplicateConditions.SameTool | DuplicateConditions.SameTarget
+                };
+                _doAfter.TryStartDoAfter(doAfterArgs);
+            },
+        };
+        args.Verbs.Add(verb);
+    }
+
+    private void OnWringDoAfter(Entity<StainableComponent> ent, ref WringStainDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled)
+            return;
+
+        args.Handled = true;
+
+        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var stainSoln, out var stainSolution))
+            return;
+
+        if (stainSolution.Volume <= 0)
+            return;
+
+        var puddleSolution = Solution.SplitSolution(stainSoln.Value, stainSolution.Volume);
+
+        UpdateVisuals(ent);
+
+        if (_puddle.TrySpillAt(args.User, puddleSolution, out _))
+            _popup.PopupEntity(Loc.GetString("stain-verb-wring-success", ("item", ent.Owner)), args.User, args.User);
     }
 }
