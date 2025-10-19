@@ -16,4 +16,4 @@
       "Classical": {40: 0}
       "Bluegrass": {110: 0}
   - type: Sprite
-    sprite: _Gabystation\Objects\Fun\instruments\violinomisterioso.rsi
+    sprite: _Gabystation/Objects/Fun/instruments/violinomisterioso.rsi
