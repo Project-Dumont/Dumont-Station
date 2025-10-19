@@ -33,6 +33,30 @@
   - DrinkShaker
 
 - type: loadoutGroup
+  id: TrinketsAtmosphericTechnician
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingNeckRefrescante
+
+- type: loadoutGroup
+  id: TrinketsMedicalDoctor
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingNeckSangue
+
+- type: loadoutGroup
+  id: TrinketsCommand
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingNeckAutoridade
+
+- type: loadoutGroup
   id: TrinketsChef
   name: loadout-group-trinkets-job
   minLimit: 0
@@ -45,6 +69,8 @@
   id: TrinketsSecurity
   name: loadout-group-trinkets-job
   minLimit: 0
-  maxLimit: 1
+  maxLimit: 2
   loadouts:
   - WeaponPistolMk58Gold
+  - ClothingNeckRobusto
+  - ClothingNeckChoque

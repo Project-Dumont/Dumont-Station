@@ -138,6 +138,7 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - Survival
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -167,6 +168,7 @@
   - HoPOuterClothing
   - Glasses
   - Survival
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -525,6 +527,7 @@
   - QuartermasterShoes
   - Glasses
   - Survival
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -607,6 +610,8 @@
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
   - SurvivalExtended
+  - TrinketsAtmosphericTechnician #Gabystation
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -656,6 +661,7 @@
   - StationEngineerShoes
   - StationEngineerID
   - SurvivalExtended
+  - TrinketsAtmosphericTechnician #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -682,6 +688,7 @@
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
   - SurvivalExtended
+  - TrinketsAtmosphericTechnician #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -795,7 +802,8 @@
   - HeadofSecurityOuterClothing
   - HeadofSecurityShoes # Goobstation edit
   - SurvivalSecurity
-  - TrinketsSecurity
+  - TrinketsCommand #Gabystation
+  - TrinketsSecurity #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
@@ -818,7 +826,7 @@
   - WardenOuterClothing
   - SecurityShoes
   - SurvivalSecurity
-  - TrinketsSecurity
+  - TrinketsSecurity  #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
@@ -841,7 +849,7 @@
   - SecurityPDA
   - SecurityBelt
   - SurvivalSecurity
-  - TrinketsSecurity
+  - TrinketsSecurity  #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
@@ -861,7 +869,7 @@
   - DetectiveOuterClothing
   - SecurityShoes
   - SurvivalSecurity
-  - TrinketsSecurity
+  - TrinketsSecurity  #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
@@ -912,6 +920,8 @@
   - ChiefMedicalOfficerShoes
   - MedicalEyewear
   - SurvivalMedical
+  - TrinketsCommand #Gabystation
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -941,6 +951,7 @@
   - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -991,6 +1002,7 @@
   - ChemistOuterClothing
   - MedicalShoes
   - SurvivalMedical
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -1019,6 +1031,7 @@
   - ParamedicShoes
   - MedicalEyewear
   - SurvivalMedical
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical

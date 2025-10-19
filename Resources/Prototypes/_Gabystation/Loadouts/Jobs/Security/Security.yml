@@ -14,3 +14,27 @@
   storage:
     back:
     - WeaponPistolMk58Gold
+
+- type: loadout
+  id: ClothingNeckRobusto
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 86400 #24 hrs
+  storage:
+    back:
+    - ClothingNeckRobusto
+
+- type: loadout
+  id: ClothingNeckChoque
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 86400 #24 hrs
+  storage:
+    back:
+    - ClothingNeckChoque

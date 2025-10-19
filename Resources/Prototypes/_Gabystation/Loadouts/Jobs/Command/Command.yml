@@ -1,0 +1,11 @@
+- type: loadout
+  id: ClothingNeckAutoridade
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Command
+        time: 86400 #24 hrs
+  storage:
+    back:
+    - ClothingNeckAutoridade

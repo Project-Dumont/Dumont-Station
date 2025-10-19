@@ -1,0 +1,11 @@
+- type: loadout
+  id: ClothingNeckSangue
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Medical
+        time: 86400 #24 hrs
+  storage:
+    back:
+    - ClothingNeckSangue

@@ -1,0 +1,11 @@
+- type: loadout
+  id: ClothingNeckRefrescante
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Engineering
+        time: 86400 #24 hrs
+  storage:
+    back:
+    - ClothingNeckRefrescante
