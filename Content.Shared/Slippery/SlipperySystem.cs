@@ -58,7 +58,6 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Projectiles;
 
@@ -69,7 +68,6 @@ public sealed class SlipperySystem : EntitySystem
 {
     [Dependency] private readonly INetManager _net = default!; // Goobstation
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
