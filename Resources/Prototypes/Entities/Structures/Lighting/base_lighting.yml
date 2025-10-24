@@ -172,9 +172,6 @@
     cost: 4
     delay: 2
     fx: EffectRCDDeconstruct2
-  - type: Tag # Funky edit
-    tags:
-    - WallMount
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -219,6 +216,7 @@
   - type: Tag # Goobstation - Prevent RCD from making lights in one tile
     tags:
     - WallLight
+    - WallMount
   placement:
     mode: SnapgridCenter
     snap:

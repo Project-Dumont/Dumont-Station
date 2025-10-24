@@ -5,6 +5,7 @@
 using Content.Server.Station.Systems;
 using Content.Shared.Emag.Systems;
 using Content.Shared.MalfAI;
+using Content.Shared.MalfAI.Events;
 using Content.Shared.Nuke;
 using Content.Shared.Pinpointer;
 using Content.Shared.Silicons.StationAi;

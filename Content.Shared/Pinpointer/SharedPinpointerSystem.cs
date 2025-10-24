@@ -141,14 +141,24 @@ public abstract class SharedPinpointerSystem : EntitySystem
         if (!Resolve(uid, ref pinpointer))
             return;
 
-        if (pinpointer.Target == target && pinpointer.TargetName == targetName)
+        if (target == null || pinpointer.Targets.Contains(target.Value))
             return;
 
-        pinpointer.Target = target;
-        pinpointer.TargetName = targetName;
+        if (!pinpointer.CanTargetMultiple)
+            pinpointer.Targets.Clear();
+
+        if (TerminatingOrDeleted(target.Value))
+        {
+            TrySetArrowAngle(uid, Angle.Zero, pinpointer);
+            return;
+        }
+
+        pinpointer.Targets.Add(target.Value);
+
+        if (pinpointer.UpdateTargetName)
+            pinpointer.TargetName = targetName;
+
         Dirty(uid, pinpointer);
-        if (pinpointer.IsActive)
-            UpdateDirectionToTarget(uid, pinpointer);
     }
 
 

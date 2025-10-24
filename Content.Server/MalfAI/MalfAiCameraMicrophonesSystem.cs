@@ -10,8 +10,6 @@ using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Server.SurveillanceCamera;
 using Content.Server.Speech.Components;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Player;
 using static Content.Server.Chat.Systems.ChatSystem;
@@ -43,10 +41,10 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
         SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandRecipients);
 
         // Grant-on-purchase event (from store): enable the camera microphones without an action toggle.
-        SubscribeLocalEvent<MalfAiMarkerComponent, MalfAiCameraMicrophonesUnlockedEvent>(OnCameraMicrophonesUnlocked);
+        SubscribeLocalEvent<MalfunctioningAiComponent, MalfAiCameraMicrophonesUnlockedEvent>(OnCameraMicrophonesUnlocked);
     }
 
-    private void OnCameraMicrophonesUnlocked(EntityUid uid, MalfAiMarkerComponent marker, MalfAiCameraMicrophonesUnlockedEvent ev)
+    private void OnCameraMicrophonesUnlocked(EntityUid uid, MalfunctioningAiComponent marker, MalfAiCameraMicrophonesUnlockedEvent ev)
     {
         // Ensure the per-AI microphones component exists and mark it enabled permanently.
         var comp = EnsureComp<MalfAiCameraMicrophonesComponent>(uid);
@@ -74,14 +72,12 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
         if (voiceRange <= 0f)
             return;
 
-        var xformQuery = GetEntityQuery<TransformComponent>();
         var sourceXform = Transform(ev.Source);
-        var sourcePos = _xforms.GetWorldPosition(sourceXform, xformQuery);
-
+        var sourcePos = _xforms.GetWorldPosition(sourceXform);
 
         // Iterate all candidate Malf AIs with the upgrade enabled.
-        var aiQuery = EntityQueryEnumerator<MalfunctioningAiComponent, StationAiHeldComponent, MalfAiCameraMicrophonesComponent, TransformComponent>();
-        while (aiQuery.MoveNext(out var aiUid, out _, out _, out var micComp, out _))
+        var aiQuery = EntityQueryEnumerator<MalfunctioningAiComponent, StationAiHeldComponent, MalfAiCameraMicrophonesComponent>();
+        while (aiQuery.MoveNext(out var aiUid, out _, out _, out var micComp))
         {
             if (!micComp.EnabledEffective)
                 continue;
@@ -92,21 +88,22 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
 
             var eye = core.Comp.RemoteEntity.Value;
             var eyeXform = Transform(eye);
-            var eyePos = _xforms.GetWorldPosition(eyeXform, xformQuery);
+            var eyePos = _xforms.GetWorldPosition(eyeXform);
 
             // Find cameras where BOTH the speaker AND the AI eye are in range of the SAME camera.
             var minRangeToSource = float.MaxValue;
             var any = false;
 
             // Re-enumerate cameras each AI (keeps logic simple; overhead is minimal).
-            var camEnum = EntityQueryEnumerator<SurveillanceCameraMicrophoneComponent, ActiveListenerComponent, SurveillanceCameraComponent, TransformComponent>();
-            while (camEnum.MoveNext(out var camUid, out _, out _, out var camComp, out var camXform))
+            var camEnum = EntityQueryEnumerator<SurveillanceCameraMicrophoneComponent, ActiveListenerComponent, SurveillanceCameraComponent>();
+            while (camEnum.MoveNext(out var camUid, out _, out _, out var camComp))
             {
+                var camXform = Transform(camUid);
                 // Only consider cameras that can have viewers (Active true).
                 if (!camComp.Active)
                     continue;
 
-                var camPos = _xforms.GetWorldPosition(camXform, xformQuery);
+                var camPos = _xforms.GetWorldPosition(camXform);
 
                 // AI eye must be within the configured radius (default 5 tiles) of this camera.
                 var eyeDist = (camPos - eyePos).Length();
@@ -128,7 +125,7 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
                 continue;
 
             // Add the AI player's session as a recipient once (dedup automatically via TryAdd).
-            if (TryComp(aiUid, out ActorComponent? actor))
+            if (TryComp<ActorComponent>(aiUid, out var actor))
             {
                 // "As if physically present": add to chat normally (log to chat, not camera-only bubble).
                 // Range is the (min) distance from the speaker to the chosen camera to preserve obfuscation behavior.

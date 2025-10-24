@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.MalfAI;
 using Content.Shared.MalfAI.Actions;
 using Content.Shared.MalfAI.Components;
@@ -26,17 +27,17 @@ public sealed class MalfAiCameraUpgradeSystem : EntitySystem
         SubscribeLocalEvent<StationAiHeldComponent, ComponentShutdown>(OnHeldShutdown);
 
         // Grant-on-purchase event
-        SubscribeLocalEvent<MalfAiMarkerComponent, MalfAiCameraUpgradeUnlockedEvent>(OnCameraUpgradeUnlocked);
+        SubscribeLocalEvent<MalfunctioningAiComponent, MalfAiCameraUpgradeUnlockedEvent>(OnCameraUpgradeUnlocked);
     }
 
-    private void OnCameraUpgradeUnlocked(EntityUid uid, MalfAiMarkerComponent marker, MalfAiCameraUpgradeUnlockedEvent ev)
+    private void OnCameraUpgradeUnlocked(Entity<MalfunctioningAiComponent> ent, ref MalfAiCameraUpgradeUnlockedEvent ev)
     {
-        var comp = EnsureComp<MalfAiCameraUpgradeComponent>(uid);
+        var comp = EnsureComp<MalfAiCameraUpgradeComponent>(ent);
         comp.EnabledDesired = true;
 
         // Effective only while the AI is in its core (StationAiHeldComponent present).
-        comp.EnabledEffective = HasComp<StationAiHeldComponent>(uid);
-        Dirty(uid, comp);
+        comp.EnabledEffective = HasComp<StationAiHeldComponent>(ent);
+        Dirty(ent, comp);
     }
 
     private void OnHeldStartup(EntityUid uid, StationAiHeldComponent held, ref ComponentStartup args)
