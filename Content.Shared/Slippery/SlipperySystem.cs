@@ -93,8 +93,6 @@ public sealed class SlipperySystem : EntitySystem
 
         SubscribeLocalEvent<SlipperyComponent, ProjectileHitEvent>(OnProjectileHit); // Omu - Deslippler
         SubscribeLocalEvent<SlipperyComponent, ThrowDoHitEvent>(OnThrowHit); // Omu - Deslippler
-        SubscribeLocalEvent<RecentlySlipppedComponent, SlipAttemptEvent>(OnRecentSlipAttempt);
-        SubscribeLocalEvent<SlipGraceComponent, SlippedEvent>(OnGraceSlipped);
     }
 
     private void OnProjectileHit(EntityUid uid, SlipperyComponent component, ref ProjectileHitEvent args) // Omu - Deslippler
@@ -143,34 +141,6 @@ public sealed class SlipperySystem : EntitySystem
     {
         if (HasComp<SpeedModifiedByContactComponent>(args.OtherEntity))
             _speedModifier.AddModifiedEntity(args.OtherEntity);
-    }
-
-    private void OnRecentSlipAttempt(EntityUid uid, RecentlySlipppedComponent component, SlipAttemptEvent args)
-    {
-        if (!TryComp<SlipGraceComponent>(uid, out var slipGrace))
-        {
-            Log.Error($"{ToPrettyString(uid)} has {nameof(RecentlySlipppedComponent)} but no {nameof(SlipGraceComponent)}.");
-            return;
-        }
-
-        if (!slipGrace.SuperSlippery && args.SuperSlippery)
-            return;
-
-        if (component.NextSlip > _timing.CurTime)
-        {
-            args.NoSlip = true;
-            return;
-        }
-
-        RemCompDeferred(uid, component);
-    }
-
-    private void OnGraceSlipped(EntityUid uid, SlipGraceComponent component, SlippedEvent args)
-    {
-        if (args.SuperSlippery && !component.SuperSlippery)
-            return;
-
-        EnsureComp<RecentlySlipppedComponent>(uid).NextSlip = _timing.CurTime + component.Delay;
     }
 
     public bool CanSlip(EntityUid uid, EntityUid toSlip) // Goob edit
@@ -258,6 +228,7 @@ public sealed class SlipperySystem : EntitySystem
 public sealed class SlipAttemptEvent : EntityEventArgs, IInventoryRelayEvent
 {
     public bool NoSlip;
+
     public bool SlowOverSlippery;
 
     public EntityUid? SlipCausingEntity;
