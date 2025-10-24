@@ -1,0 +1,51 @@
+#Weapons
+- type: listing
+  id: VendorWeaponMark1Rifle
+  productEntity: WeaponRifleMark1
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMark1SniperRifle
+  productEntity: WeaponRifleMark1Sniper
+  cost:
+    SalvageTicket: 600
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMarkalibur1Rifle
+  productEntity: Markalibur1SheathFilled
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+#Ammunition
+- type: listing
+  id: VendorBoxMagnum
+  productEntity: MagazineBoxMagnumSP
+  cost:
+    SalvageTicket: 250
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorBoxLightRifle
+  productEntity: MagazineBoxLightRifleSP
+  cost:
+    SalvageTicket: 750
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
