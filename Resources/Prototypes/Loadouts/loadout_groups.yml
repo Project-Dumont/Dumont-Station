@@ -126,6 +126,8 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
@@ -248,6 +250,7 @@
   - Cane
   - WhiteCane
   - TapeRecorder
+  - DrinkOniGourd
   # End DeltaV Additions
 
 - type: loadoutGroup
@@ -293,6 +296,7 @@
   - EmergencyPlasma
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVapor # Delta-V
   - EmergencySilicon
 
 # nitrogen or oxygen tank, depending on what your species needs
@@ -303,6 +307,7 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+  - LoadoutSpeciesEVAWaterVapor
 
 # vox get a nitrogen tank, other species get nothing
 - type: loadoutGroup
@@ -319,6 +324,7 @@
   loadouts:
   - LoadoutSpeciesPocketDoubleNitrogen
   - LoadoutSpeciesPocketDoubleOxygen
+  - LoadoutSpeciesPocketDoubleWaterVapor
 
 # Command
 - type: loadoutGroup
@@ -413,6 +419,7 @@
   minLimit: 0
   loadouts:
   - HoPWintercoat
+  - HoPLongcoat #goob
 
 # Civilian
 - type: loadoutGroup
@@ -984,6 +991,7 @@
   - EmergencyPlasmaClown
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporClown # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -1050,6 +1058,7 @@
   - EmergencyPlasmaMime
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporMime # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -1379,6 +1388,7 @@
   - EmergencyPlasmaExtended
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporExtended # Delta-V
   - EmergencySilicon
 
 # Science
@@ -1415,6 +1425,7 @@
   loadouts:
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
+  - ResearchDirectorLabCoatPurple #goob
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
@@ -1573,6 +1584,7 @@
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat
+  - WardenCoatBlue #goob
 
 - type: loadoutGroup
   id: SecurityHead
@@ -1617,7 +1629,6 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
-  - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -1701,6 +1712,7 @@
   - EmergencyPlasmaSecurity
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporSecurity # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -1930,6 +1942,7 @@
   - EmergencyPlasmaMedical
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporMedical # Delta-V
   - EmergencySilicon
 
 # Wildcards
@@ -1984,6 +1997,7 @@
   - EmergencyPlasmaSyndicate
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporSyndicate # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup

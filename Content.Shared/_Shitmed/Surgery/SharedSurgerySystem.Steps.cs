@@ -4,8 +4,10 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
@@ -53,6 +55,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared._Gabystation.CCVar;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared._EinsteinEngines.Silicon.Components;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -715,9 +718,10 @@ public abstract partial class SharedSurgerySystem
             || !HasComp<OperatingTableComponent>(buckleComponent.BuckledTo))
             sepsis += new DamageSpecifier(poisonPrototype, _sepsisLocationPenalty);
 
-        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _crowdingCheckRange)
+        var unsanitazedMobCount = _lookup.GetEntitiesInRange(args.Body, _crowdingCheckRange, LookupFlags.Uncontained)
             .Where(ent =>
                 _mobState.IsAlive(ent)
+                && !HasComp<SiliconComponent>(ent)
                 && !HasComp<BorgChassisComponent>(ent)
                 && !IsSanitazed(ent)
                 && _interaction.InRangeUnobstructed(args.Body, ent, -1)

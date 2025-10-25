@@ -26,13 +26,20 @@
 // SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 // SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 cosmosgc <cosmoskitsune@hotmail.com>
+// SPDX-FileCopyrightText: 2025 the biggest bruh <199992874+thebiggestbruh@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Shared.Loudspeaker.Events; // goob - loudspeakers
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server._EinsteinEngines.Language;
@@ -58,6 +65,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.PDA;
 using Content.Shared.Whitelist;
+using Content.Shared.StatusIcon;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -166,6 +174,16 @@ public sealed class RadioSystem : EntitySystem
         var evt = new TransformSpeakerNameEvent(messageSource, MetaData(messageSource).EntityName);
         RaiseLocalEvent(messageSource, evt);
 
+        // // GabyStation -> JobIcon's begin
+        var (jobIcon, jobName) = GetJobIcon(messageSource);
+
+        var iconEvent = new TransformSpeakerJobIconEvent(messageSource, jobIcon, jobName);
+        RaiseLocalEvent(messageSource, iconEvent);
+
+        jobIcon = iconEvent.JobIcon;
+        jobName = iconEvent.JobName;
+        // GabyStation -> JobIcon's end
+
         var name = evt.VoiceName;
         name = FormattedMessage.EscapeText(name);
 
@@ -187,7 +205,7 @@ public sealed class RadioSystem : EntitySystem
         //     ("channel", $"\\[{channel.LocalizedName}\\]"),
         //     ("name", name),
         //     ("message", content));
-        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content, language); // Einstein Engines - Language
+        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content, language, jobIcon, jobName); // Einstein Engines - Language
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
         // var chat = new ChatMessage(
@@ -202,7 +220,7 @@ public sealed class RadioSystem : EntitySystem
 
         // Einstein Engines - Language begin
         var obfuscated = _language.ObfuscateSpeech(content, language);
-        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language);
+        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language, jobIcon, jobName);
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null);
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
         // Einstein Engines - Language end
@@ -260,7 +278,9 @@ public sealed class RadioSystem : EntitySystem
         RadioChannelPrototype channel,
         string name,
         string message,
-        LanguagePrototype language)
+        LanguagePrototype language,
+        string iconId = "JobIconNoId",
+        string? jobName = null)
     {
         // TODO: code duplication with ChatSystem.WrapMessage
         var speech = _chat.GetSpeechVerb(source, message);
@@ -279,52 +299,33 @@ public sealed class RadioSystem : EntitySystem
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
 
-        // start 🌟Starlight🌟
-        var iconId = "JobIconNoId";
-        var jobName = "";
+        // goob start - loudspeakers
 
-        if (_accessReader.FindAccessItemsInventory(source, out var items))
-        {
-            foreach (var item in items)
+        int? loudSpeakFont = null;
+
+        var getLoudspeakerEv = new GetLoudspeakerEvent();
+        RaiseLocalEvent(source, ref getLoudspeakerEv);
+
+        if (getLoudspeakerEv.Loudspeakers != null)
+            foreach (var loudspeaker in getLoudspeakerEv.Loudspeakers)
             {
-                // ID Card
-                if (TryComp<IdCardComponent>(item, out var id))
-                {
-                    iconId = id.JobIcon;
-                    jobName = id.LocalizedJobTitle;
-                    break;
-                }
+                var loudSpeakerEv = new GetLoudspeakerDataEvent();
+                RaiseLocalEvent(loudspeaker, ref loudSpeakerEv);
 
-                // PDA
-                if (TryComp<PdaComponent>(item, out var pda)
-                    && pda.ContainedId != null
-                    && TryComp(pda.ContainedId, out id))
+                if (loudSpeakerEv.IsActive && loudSpeakerEv.AffectRadio)
                 {
-                    iconId = id.JobIcon;
-                    jobName = id.LocalizedJobTitle;
+                    loudSpeakFont = loudSpeakerEv.FontSize;
                     break;
                 }
             }
-        }
 
-        if (HasComp<BorgChassisComponent>(source) || HasComp<BorgBrainComponent>(source))
-        {
-            iconId = "JobIconBorg";
-            jobName = Loc.GetString("job-name-borg");
-        }
-
-        if (HasComp<StationAiHeldComponent>(source))
-        {
-            iconId = "JobIconStationAi";
-            jobName = Loc.GetString("job-name-station-ai");
-        }
-        // end 🌟Starlight🌟
+        // goob end
 
         return Loc.GetString(wrapId,
             ("color", channel.Color),
             ("languageColor", languageColor),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
-            ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
+            ("fontSize", loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize), // goob edit - "loudSpeakFont"
             ("boldFontType", language.SpeechOverride.BoldFontId ?? language.SpeechOverride.FontId ?? speech.FontId), // Goob Edit - Custom Bold Fonts
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
@@ -348,5 +349,33 @@ public sealed class RadioSystem : EntitySystem
             }
         }
         return false;
+    }
+
+    // Gabystation -> IntrinsicVoiceModulator
+    private (ProtoId<JobIconPrototype>, string?) GetJobIcon(EntityUid ent)
+    {
+        if (_accessReader.FindAccessItemsInventory(ent, out var items))
+        {
+            foreach (var item in items)
+            {
+                // ID Card
+                if (TryComp<IdCardComponent>(item, out var id))
+                    return (id.JobIcon, id.LocalizedJobTitle);
+
+                // PDA
+                if (TryComp<PdaComponent>(item, out var pda)
+                    && pda.ContainedId != null
+                    && TryComp(pda.ContainedId, out id))
+                    return (id.JobIcon, id.LocalizedJobTitle);
+            }
+        }
+
+        if (HasComp<BorgChassisComponent>(ent) || HasComp<BorgBrainComponent>(ent))
+            return ("JobIconBorg", Loc.GetString("job-name-borg"));
+
+        if (HasComp<StationAiHeldComponent>(ent))
+            return ("JobIconStationAi", Loc.GetString("job-name-station-ai"));
+
+        return ("JobIconNoId", null);
     }
 }

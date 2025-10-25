@@ -1,0 +1,101 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckRobusto
+  name: Colarinho Robusto
+  description: Dizem que isso uma vez conseguiu parar uma bala salvando a vida de um segurança, mas não é não se esqueça de usar um de verdade.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Necklaces/colete.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Neck/Necklaces/colete.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Neck/Necklaces/colete.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Piercing: 0.95
+        Slash: 0.95
+
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckChoque
+  name: Colarinho de Choque
+  description: Você jura sentir alguns choques quando usa isso, especialmente perto de mimicos e palhaços... Ou será sua imaginação?.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Necklaces/stun.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Neck/Necklaces/stun.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Neck/Necklaces/stun.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckRefrescante
+  name: Colar Refrescante
+  description: Abra se quiser inalar um pouco de ar puro ou coloque ar quente dentro para se manter aquecido, uma pena ter pouca capacidade de volume.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Necklaces/atmos.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Neck/Necklaces/atmos.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Neck/Necklaces/atmos.rsi
+  - type: UseDelay
+    delays:
+      gasTank:
+        length: 1.0
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # If gas tank volume is changed, adjust MinimumTritiumOxyburnEnergy in Atmospherics.cs by the same proportions
+      volume: 0.66
+      temperature: 293.15
+    tankLowPressure: 30.0
+  - type: Tag
+    tags:
+    - GasTank
+  - type: Explosive
+    explosionType: MicroBomb
+    maxIntensity: 20
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSangue
+  name: Colar de Sangue
+  description: Um lembrete do que nos mantém vivos.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Necklaces/blood.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Neck/Necklaces/blood.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Neck/Necklaces/blood.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckAutoridade
+  name: Colar de Autoridade
+  description: Apesar de ser de técido, esse pequeno chapéu parece pesado para quem usa igual sua versão real. Deve ser o peso das responsabilidade, preocupações e autoridade...
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Necklaces/cap.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Neck/Necklaces/cap.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Neck/Necklaces/cap.rsi

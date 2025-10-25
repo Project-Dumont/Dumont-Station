@@ -436,6 +436,7 @@
   components:
     - type: CultResistant # Funky cult
     - type: BibleUser
+    - type: CurseImmune # Goobstation - Wraith
     - type: CanEnchant
     - type: GhostRole
       name: job-name-chaplain

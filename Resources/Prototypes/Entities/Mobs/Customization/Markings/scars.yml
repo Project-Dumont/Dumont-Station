@@ -6,6 +6,7 @@
 # SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
@@ -23,7 +24,7 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni; Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Daengati, Feroxi] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran; EE- Oni; Gaby Station - Daengati
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -33,7 +34,7 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni; Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Daengati, Feroxi] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran; EE- Oni; Gaby Station - Daengati
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -43,7 +44,7 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi] # DeltaV - Feroxi
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -54,7 +55,7 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid,  Oni]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi] # DeltaV - Feroxi
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -65,7 +66,7 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni]
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi] # DeltaV - Feroxi
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

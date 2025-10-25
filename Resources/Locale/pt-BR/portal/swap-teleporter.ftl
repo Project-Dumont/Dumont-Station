@@ -5,6 +5,7 @@ swap-teleporter-popup-link-destroyed = Link quântico destruído!
 swap-teleporter-popup-teleport-cancel-time = Ainda está recarregando!
 swap-teleporter-popup-teleport-cancel-link = Não está vinculado a outro dispositivo!
 swap-teleporter-popup-teleport-other = {CAPITALIZE(ARTIGO-O($entity))} {$entity} é ativado e você se encontra em outro lugar.
+swap-teleporter-popup-teleport-fail = {CAPITALIZE(ARTIGO-O($entity))} {$entity} parece não fazer nada...
 
 swap-teleporter-verb-destroy-link = Destruir Link Quântico
 

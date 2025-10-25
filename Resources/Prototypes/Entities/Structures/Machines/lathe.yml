@@ -225,17 +225,19 @@
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 Androidonator <33227516+Androidonator@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Comet.Void <80859724+CometVoid@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CometVoid <cometsstrile@gmail.com>
 # SPDX-FileCopyrightText: 2025 DoutorWhite <thedoctorwhite@gmail.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 # SPDX-FileCopyrightText: 2025 Eduardo Oliveira <jubileu1232020@gmail.com>
-# SPDX-FileCopyrightText: 2025 CometVoid <cometsstrile@gmail.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
@@ -248,10 +250,12 @@
 # SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 LFMoth <95366051+LFMoth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
 # SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 OnyxTheBrave <131422822+OnyxTheBrave@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <138228340+OttavioBasques@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Perry Fraser <perryprog@users.noreply.github.com>
@@ -275,6 +279,7 @@
 # SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Velken <8467292+Velken@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 White <68350815+DoutorWhite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
 # SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
@@ -350,6 +355,10 @@
     - !type:AutomatedMaterialStorage
       input: AutomationSlotMaterials
       output: null
+    - !type:AutomatedPorts
+      sinks:
+      - LathePrint
+  - type: LatheAutomation # Goobstation
   - type: SpamEmitSound # Goobstation - random lathe sounds
     minInterval: 300
     maxInterval: 900
@@ -455,7 +464,6 @@
     - SecurityWeaponsStatic
     - SecurityAmmoStatic
     # Goobstation
-    - SecurityWeaponsStaticGoob
     - SecurityAmmoStaticGoob
     - SyndicateAmmoLightStatic
     - ScienceExplosives
@@ -776,7 +784,6 @@
     - PowerCellsStatic
     - ScienceExplosives
     - GrenadeTriggersStatic
-    - SecurityWeaponsStaticGoob
     - SecurityWeaponsNonEmaggableStaticGoob
     dynamicPacks:
     - SalvageSecurityBoards

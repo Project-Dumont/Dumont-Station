@@ -48,7 +48,6 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Traitorling
@@ -64,7 +63,6 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: NukeTraitor
@@ -81,7 +79,6 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: NukeLing
@@ -97,7 +94,6 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: RevTraitor
@@ -113,7 +109,6 @@
     - CalmTraitor
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: RevLing
@@ -130,7 +125,6 @@
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
     - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Blob
@@ -146,7 +140,6 @@
   - BasicRoundstartVariation
   - MeteorSwarmScheduler # Gaby - Reativa meteoros
   - SubGamemodesRule
-  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Honkops
@@ -162,7 +155,6 @@
     - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - LavalandStormScheduler
 
 - type: gamePreset
   id: TheGhost
@@ -175,7 +167,6 @@
   minPlayers: 5
   rules:
     - CalmDynamic
-    - LavalandStormScheduler
     - SubGamemodesRule
     - RareIonStormScheduler
     - SpaceTrafficControlFriendlyEventScheduler
@@ -191,7 +182,6 @@
   minPlayers: 25
   rules:
     - CombatDynamic
-    - LavalandStormScheduler
     - SubGamemodesRule
     - IonStormScheduler
     - SpaceTrafficControlEventScheduler
@@ -207,7 +197,6 @@
   showInVote: true
   rules:
     - SecretPlusLow
-    - LavalandStormScheduler
 
 - type: gamePreset
   id: SecretPlusMid
@@ -220,7 +209,6 @@
   showInVote: true
   rules:
     - SecretPlusMid
-    - LavalandStormScheduler
     - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
@@ -235,7 +223,6 @@
   showInVote: false # 1984
   rules:
     - SecretPlusAdmeme
-    - LavalandStormScheduler
     - MeteorSwarmScheduler # Gaby - Reativa meteoros
 
 - type: gamePreset
@@ -250,7 +237,6 @@
   rules:
     - SecretPlusRampingMid
     - MeteorSwarmScheduler # Gaby - Reativa meteoros
-    - LavalandStormScheduler
 
 # survival+ but it has roundstart abductors and maybe thieves
 - type: gamePreset
@@ -265,4 +251,3 @@
   - DuoAbductorRoundstart
   - SubGamemodesRule
   - SecretPlusRampingMid
-  - LavalandStormScheduler

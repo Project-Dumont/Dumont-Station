@@ -1,9 +1,18 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Quantum-cross <7065792+Quantum-cross@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 X <70487315+XWasHere@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Text;
 using Content.Server.Destructible;
 using Content.Server.PowerCell;
 using Content.Shared.Speech.Components;
 using Content.Shared.Damage;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Server.Power.Components; // Goobstation
 using Content.Shared.Speech;
 using Robust.Shared.Random;
 
@@ -32,7 +41,8 @@ public sealed class DamagedSiliconAccentSystem : EntitySystem
             {
                 currentChargeLevel = ent.Comp.OverrideChargeLevel.Value;
             }
-            else if (_powerCell.TryGetBatteryFromSlot(uid, out var battery))
+            else if (_powerCell.TryGetBatteryFromSlot(uid, out var battery) ||
+                     TryComp<BatteryComponent>(uid, out battery)) // Goobstation - Energycrit: Make this work with BatteryComponent too
             {
                 currentChargeLevel = battery.CurrentCharge / battery.MaxCharge;
             }

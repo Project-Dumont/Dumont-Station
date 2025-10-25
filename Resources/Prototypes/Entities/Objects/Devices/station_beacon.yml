@@ -324,7 +324,6 @@
   id: DefaultStationBeaconMedical
   suffix: Medical
   components:
-  - type: HellGooseBeaconTeleport # Goobstation
   - type: NavMapBeacon
     defaultText: station-beacon-medical
     color: "#52B4E9"
@@ -730,7 +729,6 @@
   id: DefaultStationBeaconBar
   suffix: Bar
   components:
-  - type: HellGooseBeaconTeleport # Goobstation
   - type: NavMapBeacon
     defaultText: station-beacon-bar
   - type: ConditionalSpawner # Gabystation - bananilson spawn
@@ -742,7 +740,6 @@
   id: DefaultStationBeaconBotany
   suffix: Botany
   components:
-  - type: HellGooseBeaconTeleport # Goobstation
   - type: NavMapBeacon
     defaultText: station-beacon-botany
 
@@ -751,7 +748,6 @@
   id: DefaultStationBeaconJanitorsCloset
   suffix: Janitor's Closet
   components:
-  - type: HellGooseBeaconTeleport # Goobstation
   - type: NavMapBeacon
     defaultText: station-beacon-janitor
 
@@ -801,7 +797,6 @@
   id: DefaultStationBeaconArrivals
   suffix: Arrivals
   components:
-  - type: HellGooseBeaconTeleport # Goobstation
   - type: NavMapBeacon
     defaultText: station-beacon-arrivals
 

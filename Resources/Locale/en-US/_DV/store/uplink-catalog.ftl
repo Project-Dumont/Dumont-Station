@@ -54,3 +54,6 @@ uplink-dead-mans-signaller-desc = A device that if armed, will send a signal to 
 # Objectives
 uplink-syndicate-handcuff-bundle-name = Handcuff implant bundle
 uplink-syndicate-handcuff-bundle-desc = Includes 10 metal handcuffs. We recommended you share with your friends!
+
+uplink-beast-gourd-name = Beast's Blood Gourd
+uplink-beast-gourd-desc = A gourd containing a potent mix of strong alcohol and stimulants, perfect for the demon within. Slowly refills over time

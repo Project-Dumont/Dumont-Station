@@ -3,9 +3,15 @@
 # SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 NotActuallyMarty <martynashagriefer@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Sera <karaadastra@gmail.com>
+# SPDX-FileCopyrightText: 2025 loltart <159829224+loltart@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -160,6 +166,8 @@
    - flaps her wings
    - flaps their wings
    - flaps its wings
+   - abana
+   - abana as asas
 
 - type: emote
   id: Trill
@@ -179,6 +187,7 @@
     - trills
     - trilling
     - trilled
+    - trina
 
 - type: emote
   id: Warble
@@ -198,6 +207,7 @@
     - warbles
     - warbling
     - warbled
+    - gorjeia
 
 - type: emote
   id: Wurble
@@ -255,6 +265,7 @@
   chatTriggers:
     - gulps
     - gulp
+    - engole
 
 - type: emote
   id: Surprised
@@ -270,3 +281,6 @@
     - is surprised
     - exclamation marks
     - exclamation mark
+    - parece surpreso
+    - parece surpresa
+    - parece surprese

@@ -1,6 +1,14 @@
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 korczoczek <danielkorczok@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Shared.LightDetection.Components;
 using Content.Goobstation.Shared.LightDetection.Systems;
+using Content.Server.Disposal.Unit;
 using Content.Shared.Physics;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
@@ -80,6 +88,13 @@ public sealed class LightDetectionSystem : SharedLightDetectionSystem
         public void Execute(int index)
         {
             var (uid, comp, xform) = UpdateEnts[index];
+
+            //ignore lights while travelling through disposals
+            if (LightSys.HasComp<BeingDisposedComponent>(uid))
+            {
+                comp.CurrentLightLevel = 0f;
+                return;
+            }
 
             var worldPos = XformSys.GetWorldPosition(xform);
 

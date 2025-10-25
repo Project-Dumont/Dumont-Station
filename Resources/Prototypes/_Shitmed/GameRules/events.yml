@@ -1,14 +1,19 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
@@ -25,7 +30,7 @@
     reoccurrenceDelay: 45
     weight: 3.5 # Goobstation - 3.5 # menos abductor por favor -> 5 -> 7.5
     minimumPlayers: 18 # menos abductor por favor
-    duration: 1
+    duration: null # Goobstation - chud
     maxOccurrences: 2 # Gabystation - menos abductors
     chaos:
       Hostile: 150 # menos abductor por favor
@@ -126,7 +131,7 @@
     reoccurrenceDelay: 45
     weight: 3.5 # Gabystation - 7.5 -> 4.5 -> 3.5
     minimumPlayers: 25
-    duration: 1
+    duration: null # Goobstation - chud
     maxOccurrences: 1
     chaos:
       Hostile: 300

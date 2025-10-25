@@ -1,50 +1,50 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Relatório de Bug
+about: Crie um relatório para nos ajudar a melhorar
 title: ''
 labels: ''
 assignees: ''
 ---
 
-## 📋 Description
-Explain what the bug is and what you expected to happen instead.  
-> Example: When using the fire extinguisher in zero-G, it doesn’t push the player backwards like it should.
+## 📋 Descrição
+Explique qual é o bug e o que você esperava que acontecesse.  
+> Exemplo: Ao usar o extintor de incêndio em gravidade zero, ele não empurra o jogador para trás como deveria.
 
 ---
 
-## 🔁 Steps to Reproduce
-List the steps that consistently cause the issue.
+## 🔁 Passos para Reproduzir
+Liste os passos que consistentemente causam o problema.
 
-1. Spawn as X role  
-2. Do Y action  
-3. See Z happen  
-
----
-
-## 💥 Expected Behavior
-Describe what you expected to happen.  
-> Example: The extinguisher should propel me backwards in zero-G.
+1. Spawn como o papel X  
+2. Faça a ação Y  
+3. Veja o Z acontecer  
 
 ---
 
-## 🧠 Actual Behavior
-Describe what actually happens.  
-> Example: Nothing happens, and I just float in place.
+## 💥 Comportamento Esperado
+Descreva o que você esperava que acontecesse.  
+> Exemplo: O extintor deveria me impulsionar para trás em gravidade zero.
 
 ---
 
-## 📸 Screenshots / Videos
-Attach any screenshots, clips, or logs that help show the problem.
+## 🧠 Comportamento Atual
+Descreva o que realmente acontece.  
+> Exemplo: Nada acontece, e eu apenas flutuo no lugar.
 
 ---
 
-## 🗺️ Additional Details
-Any other info that might help, like:
-- Map / Round ID (if known)  
-- Game mode  
+## 📸 Capturas de Tela / Vídeos
+Anexe capturas de tela, clipes ou logs que ajudem a mostrar o problema.
 
 ---
 
-## 🧩 Notes
-Anything else that might help contributors reproduce or understand the issue.
-Add any other context about the problem here.
+## 🗺️ Detalhes Adicionais
+Qualquer outra informação que possa ajudar, como:
+- Mapa / ID da partida (se conhecido)  
+- Modo de jogo  
+
+---
+
+## 🧩 Observações
+Qualquer outra coisa que possa ajudar os colaboradores a reproduzir ou entender o problema.  
+Adicione qualquer contexto adicional sobre o problema aqui.
