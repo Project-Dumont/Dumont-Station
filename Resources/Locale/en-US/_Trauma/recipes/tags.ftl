@@ -7,3 +7,6 @@ construction-graph-tag-encryption-revolutionary = revolutionary encryption key
 construction-graph-tag-paper = paper
 construction-graph-tag-techfabmachineboard = any techfab machine board
 construction-graph-tag-armorplate = an armor plate
+construction-graph-tag-reflectiveplate = a reflective plate
+construction-graph-tag-AdvancedMagboots = the Chief Engineers magboots
+construction-graph-tag-RevID = a revolutionary ID card
