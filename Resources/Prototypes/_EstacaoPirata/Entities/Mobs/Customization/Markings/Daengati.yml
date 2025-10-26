@@ -15,3 +15,45 @@
   sprites:
     - sprite: Mobs/Customization/daengati_tail.rsi
       state: nightcrawler_tail
+
+# Gabystation - Port from Andrômeda.
+
+- type: marking
+  id: DaengatiHeartTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: HeartTail
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: HeartTail-tip
+
+- type: marking
+  id: DaengatiDragonLong
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: DragonLong
+    #- sprite: Mobs/Customization/daengati_tail.rsi
+    #  state: DragonLong-tip
+
+- type: marking
+  id: DaengatiRaboCortado
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: RaboCortado
+
+- type: marking
+  id: DaengatiRaboEnrolado
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: RaboEnrolado

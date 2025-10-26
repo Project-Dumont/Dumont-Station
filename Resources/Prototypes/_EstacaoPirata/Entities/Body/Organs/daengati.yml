@@ -18,6 +18,6 @@
   - type: Organ
     onAdd:
     - type: NightVision # Goobstation - Nightvision
-      color: "#9c452a" #A cor parece estar forte demais, não faço ideia pra qual colocar
+      color: "#7a5858" # "#9c452a" #A cor parece estar forte demais, não faço ideia pra qual colocar
       activateSound: null
       deactivateSound: null
