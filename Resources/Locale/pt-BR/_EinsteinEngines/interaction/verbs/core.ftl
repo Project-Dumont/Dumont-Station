@@ -3,5 +3,5 @@ interaction-verb-cooldown = Este verbo está em recarga. Aguarde { TOSTRING($sec
 interaction-verb-too-strong = Você é forte demais para usar este verbo.
 interaction-verb-too-weak = Você é fraco demais para usar este verbo.
 interaction-verb-invalid-target = Você não pode usar esse verbo nesse alvo.
-interaction-verb-no-hands = Vocẽ não tem mãos.
+interaction-verb-no-hands = Você não tem mãos.
 interaction-verb-cannot-reach = Você não alcança ali.

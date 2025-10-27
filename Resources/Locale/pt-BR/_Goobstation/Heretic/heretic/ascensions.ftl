@@ -25,7 +25,7 @@ heretic-ascension-void =
 
 heretic-ascension-rust =
     Deixe-me contar-lhe uma história.
-    Adianta há colinas à frente, cobertas de ferrugem. Ferrugem essa que corrói seu calor. Sua boca seca, alma enfraquecida, e sua língua que começa a sangrar.
+    Adianta há colinas cobertas de ferrugem. Ferrugem essa que corrói seu calor. Sua boca seca, alma enfraquecida, e sua língua que começa a sangrar.
     Eu sou a decadência encarnada. INEVITÁVEL COMO UMA ESTRELA EM DECADÊNCIA; IMPASSÍVEL COMO AS ÁGUAS. TESTEMUNHEM MINHA ASCENSÃO!
 
 heretic-ascension-cosmos =

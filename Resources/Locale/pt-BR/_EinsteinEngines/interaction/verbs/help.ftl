@@ -1,13 +1,13 @@
-interaction-HelpUp-name = Ajudar a levantar
+interaction-HelpUp-name = Ajudar a se levantar
 interaction-HelpUp-description = Ajude a pessoa a se levantar.
 interaction-HelpUp-delayed-self-popup = Você tenta ajudar { ARTIGO-O($target) } { $target } a se levantar...
 interaction-HelpUp-delayed-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } tenta te ajudar a se levantar...
-interaction-HelpUp-delayed-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } tenta ajudar { ARTIGO-O($target) } { $target } a levantar...
+interaction-HelpUp-delayed-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } tenta ajudar { ARTIGO-O($target) } { $target } a se levantar...
 interaction-HelpUp-success-self-popup = Você ajuda { ARTIGO-O($target) } { $target } a se levantar.
-interaction-HelpUp-success-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } te ajuda a levantar.
-interaction-HelpUp-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } ajuda { ARTIGO-O($target) } { $target } a levantar.
+interaction-HelpUp-success-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } te ajuda a se levantar.
+interaction-HelpUp-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } ajuda { ARTIGO-O($target) } { $target } a se levantar.
 interaction-HelpUp-fail-self-popup = Você falha ao tentar ajudar { ARTIGO-O($target) } { $target } a se levantar.
-interaction-HelpUp-fail-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } falha ao tentar te ajudar a levantar.
+interaction-HelpUp-fail-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } falha ao tentar te ajudar a se levantar.
 
 interaction-ForceDown-name = Forçar ao chão
 interaction-ForceDown-description = Force a pessoa a deitar no chão.
