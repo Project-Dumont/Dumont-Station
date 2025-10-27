@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
@@ -51,6 +52,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
+using Content.Shared.Body.Organ;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -330,6 +332,11 @@ public abstract partial class SharedSurgerySystem : EntitySystem
                     || ent.Comp.Reattaching
                     && !organs.Any(organ => HasComp<OrganReattachedComponent>(organ.Id))))
                     args.Cancelled = true;
+                // Start of DeltaV Additions - Checks if any organ has the removable component set to true, hiding it from the surgery UI
+                if (!organs.Any(organ => !TryComp<OrganComponent>(organ.Id, out var organComp)
+                    || organComp.Removable))
+                    args.Cancelled = true;
+                // End of DeltaV Additions
             }
             else if (!ent.Comp.Inverse)
                 args.Cancelled = true;

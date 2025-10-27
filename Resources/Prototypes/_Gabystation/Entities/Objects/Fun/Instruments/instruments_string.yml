@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <117521143+VictorJob@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseStringInstrument
+  id: ViolinMisterioso
+  name: Violino Misterioso
+  description: Um violino peculiar com fotos de pessoas penduradas e as iniciais O.M gravadas na base. Foi remendado usando pedaços de outros violinos, seu cabo foi substituido por uma espada cega, quantas historias a possuidora desse artefato deve ter para contar?
+  components:
+  - type: Instrument
+    program: 40
+  - type: SwappableInstrument
+    instrumentList:
+      "Classical": {40: 0}
+      "Bluegrass": {110: 0}
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/instruments/violinomisterioso.rsi

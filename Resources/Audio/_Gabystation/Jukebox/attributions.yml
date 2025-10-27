@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <151653952+Crono209ggg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <crono209gg@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
@@ -316,3 +318,19 @@
   copyright: "Ursinho De Dormir by Armandinho. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=YnqqTzis3EA"
+
+- files: ["PAPERS_PLEASE_Glory_ARSTOTZKA.ogg"]
+  copyright: "Papers Please Glory to ARSTOTZKA by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=Kd2b7PYyZic"
+
+- files: ["Papers_Please_Theme_Song.ogg"]
+  copyright: "Papers Please Theme Song by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=OBQE_TNI7zw"
+
+- files: ["Papers_Please_Death_Theme.ogg"]
+  copyright: "Papers Please Death Theme by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
+

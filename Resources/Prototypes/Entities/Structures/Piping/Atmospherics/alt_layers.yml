@@ -2,7 +2,9 @@
 # SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Crono209ggg <151653952+Crono209ggg@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
@@ -586,6 +588,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterAlt1
+  - type: Flippable
+    mirrorEntity: GasFilterFlippedAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasFilter]
@@ -602,6 +606,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterAlt2
+  - type: Flippable
+    mirrorEntity: GasFilterFlippedAlt2
 
 - type: entity
   parent: [GasPipeLayerAlt1, GasFilterFlipped]
@@ -618,6 +624,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterflippedAlt1
+  - type: Flippable
+    mirrorEntity: GasFilterAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasFilterFlipped]
@@ -634,6 +642,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer"]
   - type: Construction
     node: filterflippedAlt2
+  - type: Flippable
+    mirrorEntity: GasFilterAlt2
 
 # GasMixer
 
@@ -652,6 +662,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerAlt1
+  - type: Flippable
+    mirrorEntity: GasMixerFlippedAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasMixer]
@@ -668,6 +680,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerAlt2
+  - type: Flippable
+    mirrorEntity: GasMixerFlippedAlt2
 
 - type: entity
   parent: [GasPipeLayerAlt1, GasMixerFlipped]
@@ -684,6 +698,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerflippedAlt1
+  - type: Flippable
+    mirrorEntity: GasMixerAlt1
 
 - type: entity
   parent: [GasPipeLayerAlt2, GasMixerFlipped]
@@ -700,6 +716,8 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: mixerflippedAlt2
+  - type: Flippable
+    mirrorEntity: GasMixerAlt2
 
 # GasFilterInline
 

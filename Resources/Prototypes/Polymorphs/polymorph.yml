@@ -310,14 +310,3 @@
     entity: MobBat
     revertOnDeath: true
     revertOnCrit: true
-
-- type: polymorph
-  id: HellGooseMorph
-  configuration:
-    entity: MobHellGoose
-    forced: true
-    inventory: None
-    transferName: false
-    transferDamage: false
-    revertOnCrit: false
-    revertOnDeath: false

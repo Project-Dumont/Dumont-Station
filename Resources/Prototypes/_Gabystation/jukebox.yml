@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <151653952+Crono209ggg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <crono209gg@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
@@ -563,3 +565,22 @@
   name: Armandinho - Ursinho De Dormir
   path:
     path: /Audio/_Gabystation/Jukebox/ursinho_de_dormir.ogg
+
+- type: jukebox
+  id: PapersPleaseThemeSong
+  name: Papers Please - Theme Song
+  path:
+    path: /Audio/_Gabystation/Jukebox/Papers_Please_Theme_Song.ogg
+
+- type: jukebox
+  id: PapersPleaseGlory
+  name: Papers Please - Glory to ARSTOTZKA
+  path:
+    path: /Audio/_Gabystation/Jukebox/PAPERS_PLEASE_Glory_ARSTOTZKA.ogg
+
+- type: jukebox
+  id: PapersPleaseDeathTheme
+  name: Papers Please - Death Theme
+  path:
+    path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
+

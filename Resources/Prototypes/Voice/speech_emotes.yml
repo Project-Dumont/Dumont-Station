@@ -61,10 +61,14 @@
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Scruq445 <storchdamien@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tom <t.jans@student.fontys.nl>
 # SPDX-FileCopyrightText: 2025 Vrilly <tnjans@outlook.de>
 # SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
@@ -98,6 +102,7 @@
     - yells
     - yelled
     - yelling
+    - grita
 
 - type: emote
   id: Laugh
@@ -124,6 +129,8 @@
     - chortle
     - chortles
     - chortling
+    - ri
+    - da risada
 
 - type: emote
   id: Honk
@@ -159,6 +166,7 @@
     - sigh
     - sighs
     - sighed
+    - suspira
 
 - type: emote
   id: Whistle
@@ -176,6 +184,8 @@
     - whistle
     - whistles
     - whistleblowing
+    - assobia
+    - assovia
 
 - type: emote
   id: Crying
@@ -196,6 +206,8 @@
     - sob
     - sobs
     - sobbing
+    - chora
+    - lamenta
 
 - type: emote
   id: Squish
@@ -285,6 +297,7 @@
     - claps
     - clapping
     - clapped
+    - bate palmas
 
 - type: emote
   id: Snap
@@ -308,6 +321,11 @@
     - snaps their fingers
     - snapping fingers
     - snapped fingers
+    - estala
+    - estala os dedos
+    - estala os dedos dele
+    - estala os dedos dela
+    - estala os dedos delu
 
 - type: emote
   id: Thump
@@ -349,6 +367,7 @@
   chatTriggers:
     - salute
     - salutes
+    - saúda
 
 - type: emote
   id: Gasp
@@ -468,6 +487,7 @@
     - beeps
     - beeped
     - beeping
+    - bipa
 
 - type: emote
   id: Chime

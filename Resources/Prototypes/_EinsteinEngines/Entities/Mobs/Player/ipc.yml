@@ -187,6 +187,8 @@
   - type: DamagedSiliconAccent
   - type: Uncloneable
   - type: Fingerprint
+  - type: OwnInteractionVerbs
+    allowedVerbs: []
   - type: Sprinter # Goob Change: slight nerf to speed because heavy robot, mass contest when
     sprintSpeedMultiplier: 1.2
   - type: Tag
@@ -198,8 +200,6 @@
     - DoorBumpOpener
     - AnomalyHost
     - IPCDrinkBlacklist # Goobstation - Energycrit: Don't let self antagging IPCs steal power from other ipcs.
-  - type: OwnInteractionVerbs # EE: Interaction Verbs
-    allowedVerbs: []
 
 - type: entity
   save: false

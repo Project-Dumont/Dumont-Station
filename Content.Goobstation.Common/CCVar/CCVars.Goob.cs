@@ -6,6 +6,7 @@
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
 // SPDX-FileCopyrightText: 2025 Conchelle <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <drsmugleaf@gmail.com>
@@ -13,9 +14,12 @@
 // SPDX-FileCopyrightText: 2025 Eagle <lincoln.mcqueen@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Hagvan <22118902+Hagvan@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -24,6 +28,7 @@
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <mary@thughunt.ing>
@@ -255,6 +260,12 @@ public sealed partial class GoobCVars
     /// </summary>
     public static readonly CVarDef<bool> AutoGetUp =
         CVarDef.Create("white.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED); // WD EDIT
+
+    /// <summary>
+    ///     Sets the size of the hitbox where projectile/laser will hit any entity regardless of crawling
+    /// </summary>
+    public static readonly CVarDef<float> CrawlHitzoneSize =
+        CVarDef.Create("goob.crawl_hitzone_size", 0.4f, CVar.SERVER | CVar.REPLICATED);
 
     #region Blob
     public static readonly CVarDef<int> BlobMax =
@@ -528,6 +539,12 @@ public sealed partial class GoobCVars
     /// </summary>
     public static readonly CVarDef<bool> UseDynamicHostname =
         CVarDef.Create("hub.use_dynamic_hostname", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Determines minimum amount of solution you have to step into for footprints to be created.
+    /// </summary>
+    public static readonly CVarDef<float> MinimumPuddleSizeForFootprints =
+        CVarDef.Create("footprints.minimum_puddle_size", 6f, CVar.SERVERONLY);
 
     #endregion
 }

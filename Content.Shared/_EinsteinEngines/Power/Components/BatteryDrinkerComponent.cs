@@ -1,5 +1,8 @@
 // SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 X <70487315+XWasHere@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -11,11 +14,14 @@ namespace Content.Shared._EinsteinEngines.Power.Components;
 [RegisterComponent]
 public sealed partial class BatteryDrinkerComponent : Component
 {
+    // Goobstation - Energycrit: Remove DrinkAll
+    /*
     /// <summary>
     ///     Is this drinker allowed to drink batteries not tagged as <see cref="BatteryDrinkSource"/>?
     /// </summary>
     [DataField]
     public bool DrinkAll;
+    */
 
     /// <summary>
     ///     How long it takes to drink from a battery, in seconds.
@@ -31,11 +37,14 @@ public sealed partial class BatteryDrinkerComponent : Component
     [DataField]
     public float DrinkMultiplier = 5f;
 
+    // Goobstation - Energycrit: Remove DrinkAll
+    /*
     /// <summary>
     ///     The multiplier for how long it takes to drink a non-source battery, if <see cref="DrinkAll"/> is true.
     /// </summary>
     [DataField]
     public float DrinkAllMultiplier = 2.5f;
+    */
 
     // Goobstation - Energycrit: BatteryDrinker blacklist.
     /// <summary>

@@ -16,4 +16,11 @@
   - type: Flatpack
     entity: GasMinerNitrogen
     
-    
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackWashingMachine
+  name: flatpack washing machine
+  description: A compact washing machine.
+  components:
+  - type: Flatpack
+    entity: WashingMachine

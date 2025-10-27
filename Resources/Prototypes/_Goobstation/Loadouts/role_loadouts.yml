@@ -80,7 +80,9 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -148,6 +150,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
 
@@ -215,6 +218,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
 
