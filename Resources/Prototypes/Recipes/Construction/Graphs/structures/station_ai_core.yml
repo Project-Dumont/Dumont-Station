@@ -23,7 +23,7 @@
         icon:
           sprite: "Objects/Misc/module.rsi"
           state: "mainboard"
-    - to: start       
+    - to: start
       completed:
       - !type:SpawnPrototype
         prototype: SheetPlasteel1

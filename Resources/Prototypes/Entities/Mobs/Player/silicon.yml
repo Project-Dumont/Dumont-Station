@@ -339,6 +339,7 @@
     container: station_ai_mind_slot
   - type: Damageable
     damageContainer: AiCore
+    damageModifierSet: StrongMetallic
   - type: Physics
     bodyType: Static
   - type: MobThresholds
@@ -350,7 +351,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 400
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -382,7 +383,6 @@
       sprite: Mobs/Silicon/station_ai_cracks.rsi
   - type: ApcPowerReceiver
     powerLoad: 500
-    needsPower: false
   - type: ExtensionCableReceiver
   - type: Battery
     maxCharge: 300000
@@ -460,7 +460,7 @@
       - StationAiCoreElectronics
   - type: StaticPrice
     price: 5000
-  - type: Repairable #Goob edit
+  - type: Repairable # Goob edit
     fuelCost: 5
     doAfterDelay: 3
     damage:
@@ -468,6 +468,7 @@
         Blunt: -15
         Piercing: -15
         Slash: -15
+        Structural: -40
 
 # The job-ready version of an AI spawn.
 - type: entity
