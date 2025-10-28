@@ -51,6 +51,14 @@
     tags:
     - Apron
     - WhitelistChameleon
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothingapron
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothingapron
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -67,6 +75,14 @@
     tags:
     - Apron
     - WhitelistChameleon
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothingapron
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothingapron
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -83,6 +99,14 @@
     tags:
     - Apron
     - WhitelistChameleon
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothingapron
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothingapron
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -99,6 +123,14 @@
     tags:
     - Apron
     - WhitelistChameleon
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothingapron
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothingapron
 
 - type: entity
   parent: ClothingOuterStorageBase
