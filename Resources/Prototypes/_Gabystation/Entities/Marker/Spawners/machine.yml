@@ -1,0 +1,13 @@
+- type: entity
+  name: washing machine spawner
+  id: SpawnMachineWashing
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Structures/Furniture/washing_machine.rsi
+        state: base
+  - type: ConditionalSpawner
+    prototypes:
+      - WashingMachine
