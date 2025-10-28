@@ -11,4 +11,7 @@ conspirator-objective = The conspiracy's objective was to: [color=white]{$object
 
 conspirator-identities = The conspirators are:
 conspirator-name = {$name} is a conspirator.
-conspirator-objective = The conspiracy's objective was to: [color=white]{$objective}[/color].
+conspirator-radio-implant = Communicate with other conspirators using your radio implant (:o).
+
+conspiracy-title = Conspiracy
+conspiracy-description = A conspiracy is afoot!
