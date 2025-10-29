@@ -64,13 +64,13 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Atlas
-  - Amber
-  - Bagel
+  #- Atlas # Gabystation - não está sendo mantido
+  #- Amber # Gabystation - não está sendo mantido s/2
+  #- Bagel # Gabystation - não está sendo mantido
   - Box
   - Cluster
   #- Core
-  - Fland
+  #- Fland # Gabystation - não está sendo mantido
   - Glacier
   #- Loop #Gabystation - mapa ruim
   #- Gate Goobstation - My name is Walter Hartwell White, I live at 2308 Negra alloya line albequrque new mexico.
@@ -81,19 +81,19 @@
   - Origin
   - Saltern
   - Packed
-  - Reach
+  - Reach # Gabystation - apenas pelo meme
   #- Train # Goobstation - all my friends hate train
-  - FlandHighPop
+  #- FlandHighPop # Gabystation - não está sendo mantido
   - OasisHighPop
   # Goob Station Maps
-  # Barratry # Gabystation - Retirado do vote por doação de 1K de GC
-  - Kettle # Goobstation - Re-add kettle (before it was gemini!)
-  - Submarine # goobstation - kill yourse
-  - Leonid # Goobstation - for goob by goob
-  - Delta # Goobstation - ported from Corvax
-  - Chloris # Goobstation - also Corvax because we love goidamaps
+  #- Barratry # Gabystation - Retirado do vote por doação de 1K de GC
+  #- Kettle # Gabystation - não está sendo mantido # Goobstation - Re-add kettle (before it was gemini!)
+  #- Submarine # Gabystation - não está sendo mantido # goobstation - kill yourse
+  #- Leonid # Gabystation - não está sendo mantido # Goobstation - for goob by goob
+  #- Delta # Gabystation - não está sendo mantido # Goobstation - ported from Corvax
+  #- Chloris # Gabystation - não está sendo mantido # Goobstation - also Corvax because we love goidamaps
   # Gaby Station Maps
-  - Gamma
+  #- Gamma
   #- Gax
   #- Falcon
   #- Tram # Gabystation - Ninguem gosta da Tram

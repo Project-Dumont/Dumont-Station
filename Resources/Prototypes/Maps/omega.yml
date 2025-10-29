@@ -32,7 +32,7 @@
 - type: gameMap
   id: Omega
   mapName: 'Omega'
-  mapPath: /Maps/_Goobstation/omega.yml # Goobstation
+  mapPath: /Maps/_Gabystation/omega.yml # Gabystation
   minPlayers: 7
   maxPlayers: 35
   stations:
