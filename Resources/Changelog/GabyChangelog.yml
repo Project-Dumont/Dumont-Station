@@ -1320,3 +1320,9 @@ Entries:
       message: Traduções do dreno foram atualizadas.
   id: 149
   time: '2025-10-27T17:11:29.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no sistema de manchas.
+  id: 150
+  time: '2025-10-29T17:32:06.0000000+00:00'

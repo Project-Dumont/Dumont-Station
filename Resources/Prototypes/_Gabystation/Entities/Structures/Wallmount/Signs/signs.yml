@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSign
+  id: AdmAssistSign
+  name: administrative assistant office sign
+  description: A sign indicating the administrative assistant office.
+  components:
+  - type: Sprite
+    state: adm_assist
+    sprite: _Gabystation/Structures/Wallmounts/signs.rsi
+
+- type: entity
+  parent: BaseSign
+  id: CentcommOfficeSign
+  name: centcomm office sign
+  description: A sign indicating the centcomm office.
+  components:
+  - type: Sprite
+    state: cc_office
+    sprite: _Gabystation/Structures/Wallmounts/signs.rsi
