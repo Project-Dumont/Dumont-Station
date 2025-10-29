@@ -1,0 +1,1 @@
+station-beacon-adm-assist-office = Escritorio do Assistente Administrativo

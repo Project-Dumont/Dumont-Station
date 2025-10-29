@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseSign
+  id: AdmAssistSign
+  name: administrative assistant office sign
+  description: A sign indicating the administrative assistant office.
+  components:
+  - type: Sprite
+    state: adm_assist
+	sprite: _Gabystation/Structures/Wallmounts/signs.rsi
+	
+- type: entity
+  parent: BaseSign
+  id: CentcommOfficeSign
+  name: centcomm office sign
+  description: A sign indicating the centcomm office.
+  components:
+  - type: Sprite
+    state: cc_office
+	sprite: _Gabystation/Structures/Wallmounts/signs.rsi
