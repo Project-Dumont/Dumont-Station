@@ -8,7 +8,6 @@
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: washing machine
   description: Remove the bloodstains from your grayshirt.
-  suffix: No mapping
   placement:
     mode: SnapgridCenter
   components:
