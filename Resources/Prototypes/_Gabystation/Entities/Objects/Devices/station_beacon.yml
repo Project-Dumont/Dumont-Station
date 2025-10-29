@@ -1,7 +1,31 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: DefaultStationBeaconAdmAssistOffice
-  suffix: Administrative Assistente Office
+  suffix: Adm Assist Office
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-adm-assist-office
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconLaundry
+  suffix: Laundry
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-laundry
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconXenobiology
+  suffix: Xenolab
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-xenobiology
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconVirology
+  suffix: Virology
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-virology

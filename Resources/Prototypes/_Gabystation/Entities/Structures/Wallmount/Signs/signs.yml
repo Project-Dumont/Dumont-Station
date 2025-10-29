@@ -6,8 +6,8 @@
   components:
   - type: Sprite
     state: adm_assist
-	sprite: _Gabystation/Structures/Wallmounts/signs.rsi
-	
+    sprite: _Gabystation/Structures/Wallmounts/signs.rsi
+
 - type: entity
   parent: BaseSign
   id: CentcommOfficeSign
@@ -16,4 +16,4 @@
   components:
   - type: Sprite
     state: cc_office
-	sprite: _Gabystation/Structures/Wallmounts/signs.rsi
+    sprite: _Gabystation/Structures/Wallmounts/signs.rsi
