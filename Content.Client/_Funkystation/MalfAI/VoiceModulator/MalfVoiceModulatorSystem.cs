@@ -6,12 +6,12 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Client.MalfAI.Theme;
+using Content.Client._Funkystation.MalfAI.Theme;
 using Content.Shared.MalfAI;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 
-namespace Content.Client.MalfAI.VoiceModulator;
+namespace Content.Client._Funkystation.MalfAI.VoiceModulator;
 
 public sealed class MalfVoiceModulatorSystem : EntitySystem
 {

@@ -14,14 +14,12 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.ResourceManagement;
 using Robust.Client.Graphics;
-using Content.Client.MalfAI.Theme;
 using Robust.Shared.Timing;
 using Robust.Client.UserInterface;
 using System.Numerics;
-using static Robust.Client.UserInterface.Controls.TextureRect;
-using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Content.Client._Funkystation.MalfAI.Theme;
 
-namespace Content.Client.MalfAI;
+namespace Content.Client._Funkystation.MalfAI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MalfAiBorgsWindow : FancyWindow
@@ -289,7 +287,7 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
                     var icon = new TextureRect
                     {
                         Texture = tex,
-                        Stretch = StretchMode.KeepCentered,
+                        Stretch = TextureRect.StretchMode.KeepCentered,
                         TextureScale = new Vector2(1.5f, 1.5f),
                         MinSize = new Vector2(48, 48)
                     };
@@ -310,7 +308,7 @@ public sealed partial class MalfAiBorgsWindow : FancyWindow
                 // Buttons container (vertical) on the right: Update Laws, then Warp.
                 var buttonsCol = new BoxContainer
                 {
-                    Orientation = LayoutOrientation.Vertical
+                    Orientation = BoxContainer.LayoutOrientation.Vertical
                 };
 
                 var updateBtn = new Button

@@ -11,7 +11,7 @@ using Robust.Client.Graphics;
 using Robust.Shared.Timing;
 using Robust.Shared.Enums;
 
-namespace Content.Client.MalfAI.Overlays;
+namespace Content.Client._Funkystation.MalfAI.Overlays;
 
 /// <summary>
 /// Renders a screen-space expanding cyan circle, synced to the server timeline and centered at the AI origin.

@@ -8,7 +8,7 @@
 
 using Content.Shared.MalfAI;
 
-namespace Content.Client.MalfAI;
+namespace Content.Client._Funkystation.MalfAI;
 
 /// <summary>
 /// Receives server requests to open the Malf AI viewport window.

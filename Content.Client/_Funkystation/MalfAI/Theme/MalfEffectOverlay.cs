@@ -13,7 +13,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Numerics;
 
-namespace Content.Client.MalfAI.Theme;
+namespace Content.Client._Funkystation.MalfAI.Theme;
 
 /// <summary>
 /// Effect type for the overlay system

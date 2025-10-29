@@ -13,7 +13,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map;
 
-namespace Content.Client.MalfAI;
+namespace Content.Client._Funkystation.MalfAI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MalfAiViewportWindow : DefaultWindow

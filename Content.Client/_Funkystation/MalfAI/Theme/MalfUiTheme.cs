@@ -11,7 +11,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Content.Client.Resources;
 
-namespace Content.Client.MalfAI.Theme;
+namespace Content.Client._Funkystation.MalfAI.Theme;
 
 /// <summary>
 /// Centralized Malf AI UI theme utilities (accent color, font, and style factories).

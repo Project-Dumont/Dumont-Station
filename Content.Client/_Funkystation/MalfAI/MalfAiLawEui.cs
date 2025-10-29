@@ -11,7 +11,7 @@ using Content.Client.Silicons.Laws.SiliconLawEditUi;
 using Content.Shared.Eui;
 using Content.Shared.Silicons.Laws;
 
-namespace Content.Client.MalfAI;
+namespace Content.Client._Funkystation.MalfAI;
 
 /// <summary>
 /// Client-side EUI for Malf AI law editing. This mirrors the admin client EUI

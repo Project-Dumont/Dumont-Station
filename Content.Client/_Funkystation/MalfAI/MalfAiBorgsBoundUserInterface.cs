@@ -10,7 +10,7 @@ using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Content.Shared.MalfAI;
 
-namespace Content.Client.MalfAI;
+namespace Content.Client._Funkystation.MalfAI;
 
 [UsedImplicitly]
 public sealed class MalfAiBorgsBoundUserInterface : BoundUserInterface
