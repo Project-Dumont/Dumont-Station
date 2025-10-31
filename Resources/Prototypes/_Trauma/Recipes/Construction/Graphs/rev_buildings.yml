@@ -113,13 +113,42 @@
         amount: 10
       - tool: Anchoring
         doAfter: 1
-    - to: tech analyzer # CE exclusive
+    - to: tech analyzer # QM exclusive
       steps:
       - tag: RevID
         name: construction-graph-tag-RevID
         icon:
           sprite: _Trauma/Objects/Misc/id_cards.rsi
           state: idrevolutionary
+      - tag: QMBoard
+        name: construction-graph-tag-QMBoard
+        icon:
+          sprite: Objects/Misc/qm_clipboard.rsi
+          state: qm_clipboard
+      - tool: Welding
+        doAfter: 4
+      - material: Cable
+        amount: 8
+        doAfter: 2
+      - tool: Cutting
+        doAfter: 2
+      - material: RevBolt
+        amount: 10
+      - material: RevNut
+        amount: 10
+      - tool: Anchoring
+        doAfter: 2
+      - material: RevBolt
+        amount: 10
+      - material: RevNut
+        amount: 10
+      - tool: Anchoring
+        doAfter: 1
+    - to: plasma foundry # CE exclusive
+      steps:
+      - material: RevGunParts
+      - tool: Screwing
+        doAfter: 1
       - tag: AdvancedMagboots # Change to CE magboots
         name: construction-graph-tag-AdvancedMagboots
         icon:
@@ -201,3 +230,5 @@
     entity: RevUniformPrinter
   - node: tech analyzer
     entity: RevTechAnalyzer
+  - node: plasma foundry
+    entity: RevPlasmaFoundry

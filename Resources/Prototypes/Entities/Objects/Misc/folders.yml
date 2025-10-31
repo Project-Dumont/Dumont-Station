@@ -309,6 +309,7 @@
     tags:
     - Folder
     - HighRiskItem
+    - QMBoard
   - type: StealTarget
     stealGroup: BoxFolderQmClipboard
   - type: EdibleMatter # Corvax-Wega-Add

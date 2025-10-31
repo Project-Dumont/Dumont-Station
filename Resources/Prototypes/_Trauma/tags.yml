@@ -32,6 +32,9 @@
   id: MagazineTurret
 
 - type: Tag
+  id: QMBoard
+
+- type: Tag
   id: RCD
 
 - type: Tag
@@ -41,6 +44,12 @@
   id: RevID
 
 - type: Tag
+  id: RevFuelTank
+
+- type: Tag
+  id: RevRocket
+
+- type: Tag
   id: RevReflectivePlate
 
 - type: Tag
@@ -48,3 +57,4 @@
 
 - type: Tag
   id: TechfabMachineBoard
+
