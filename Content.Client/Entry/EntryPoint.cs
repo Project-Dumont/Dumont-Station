@@ -257,6 +257,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("story"); // Goobstation
             _prototypeManager.RegisterIgnore("storyBeat"); // Goobstation
             _prototypeManager.RegisterIgnore("profanityWords");
+            _prototypeManager.RegisterIgnore("salvageMissionObjectiveHandler"); // Far Horizons
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

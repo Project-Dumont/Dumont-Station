@@ -11,9 +11,11 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._FarHorizons.Salvage;
 using Content.Shared.Salvage.Expeditions.Modifiers;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -114,7 +116,8 @@ public sealed record SalvageMission(
     float Temperature,
     Color? Color,
     TimeSpan Duration,
-    List<string> Modifiers)
+    List<string> Modifiers,
+    ProtoId<SalvageMissionObjectivePrototype> Objective)  // Far Horizons
 {
     /// <summary>
     /// Seed used for the mission.
@@ -160,6 +163,11 @@ public sealed record SalvageMission(
     /// Modifiers (outside of the above) applied to the mission.
     /// </summary>
     public List<string> Modifiers = Modifiers;
+
+    /// <summary>
+    /// Far Horizons mission objective
+    /// </summary>
+    public ProtoId<SalvageMissionObjectivePrototype> Objective = Objective;
 }
 
 [Serializable, NetSerializable]

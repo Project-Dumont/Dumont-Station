@@ -1,0 +1,67 @@
+- type: salvageMissionObjective
+  id: MissionObjectiveFree
+  name: salvage-mission-objective-name-free
+  description: salvage-mission-objective-description-free
+  announcement: salvage-mission-objective-announcement-free
+
+- type: salvageMissionObjective
+  id: MissionObjectiveRecover
+  handlerId: "MissionObjectiveRecoverHandler"
+  name: salvage-mission-objective-name-recover
+  description: salvage-mission-objective-description-recover
+  announcement: salvage-mission-objective-announcement-recover
+  baseReward:
+    Easy: 700
+    Moderate: 900
+    Challenging: 1100
+  numTargets:
+    Easy: 2
+    Moderate: 4
+    Challenging: 6
+  bonus: 95
+  bonusCap: 4
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+
+- type: salvageMissionObjective
+  id: MissionObjectiveCapture
+  handlerId: "MissionObjectiveCaptureHandler"
+  name: salvage-mission-objective-name-capture
+  description: salvage-mission-objective-description-capture
+  announcement: salvage-mission-objective-announcement-capture
+  baseReward:
+    Easy: 800
+    Moderate: 950
+    Challenging: 1150
+  numTargets:
+    Easy: 1
+    Moderate: 2
+    Challenging: 2
+  bonus: 75
+  bonusCap: 5
+  allowedFactions:
+    - Xenos
+    - Carps
+
+- type: salvageMissionObjective
+  id: MissionObjectiveRescue
+  handlerId: "MissionObjectiveRescueHandler"
+  name: salvage-mission-objective-name-rescue
+  description: salvage-mission-objective-description-rescue
+  announcement: salvage-mission-objective-announcement-rescue
+  baseReward:
+    Easy: 1000
+    Moderate: 1250
+    Challenging: 1450
+  numTargets:
+    Easy: 2
+    Moderate: 2
+    Challenging: 3
+  bonus: 300
+  bonusCap: 3
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs

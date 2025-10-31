@@ -48,6 +48,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
+using Content.Server._FarHorizons.Salvage;
 
 namespace Content.Server.Salvage;
 
@@ -173,6 +174,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         expedition.Station = Station;
         expedition.EndTime = _timing.CurTime + mission.Duration;
         expedition.MissionParams = _missionParams;
+        expedition.Objective = mission.Objective; // Far Horizons
 
         var landingPadRadius = 24;
         var minDungeonOffset = landingPadRadius + 4;
@@ -300,6 +302,13 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
                     throw new NotImplementedException();
             }
         }
+
+        // Far Horizons start
+        var objective = _prototypeManager.Index(mission.Objective);
+        if (objective.HandlerId != null &&
+            _prototypeManager.TryIndex<SalvageMissionObjectiveHandlerPrototype>(objective.HandlerId, out var handler))
+            handler.Handler?.Run(_sawmill, _entManager, _prototypeManager, random, objective, _anchorable, _map, difficultyProto, dungeon, (mapUid, grid));
+        // Far Horizons end
 
         return true;
     }

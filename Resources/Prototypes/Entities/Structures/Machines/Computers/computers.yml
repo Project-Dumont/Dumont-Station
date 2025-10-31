@@ -1640,8 +1640,11 @@
       color: "#b89f25"
     - type: AccessReader
       access: [["Salvage"]]
-#    - type: StealTarget                  Goob edit - Removed cause Lavaland
-#      stealGroup: SalvageExpeditionsComputerCircuitboard
+    - type: StealTarget
+      stealGroup: SalvageExpeditionsComputerCircuitboard
+    # Far Horizons
+    - type: Speech
+      speechVerb: Robotic
 
 - type: entity
   parent: BaseComputer
