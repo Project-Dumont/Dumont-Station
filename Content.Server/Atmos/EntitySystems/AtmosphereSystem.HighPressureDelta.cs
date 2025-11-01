@@ -158,8 +158,9 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     var location = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
                     var visualEnt = SpawnAtPosition(_spaceWindProto, location);
-                    var pressureVector = new Vector2(tile.PressureDifference, 0);
-                    _transformSystem.SetLocalRotation(visualEnt, pressureVector.ToAngle() - MathF.PI / 2);
+                    var gridRotation = _transformSystem.GetWorldRotation(gridAtmosphere);
+                    var windAngle = tile.PressureDirection.ToAngle() + gridRotation;
+                    _transformSystem.SetLocalRotation(visualEnt, windAngle - MathF.PI / 2);
                 }
                 // Backmen-End
             }
