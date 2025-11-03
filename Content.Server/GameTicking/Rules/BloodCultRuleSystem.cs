@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -73,7 +74,6 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly CultistSpellSystem _cultistSpell = default!;
@@ -249,7 +249,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
         // TODO: Check for TimeOfDeath being null (makes sure they're not dead)
         // Can also check to see if Session is null, which means they logged out
-        component.Target = (EntityUid) _random.Pick(allPotentialTargets);
+        component.Target = (EntityUid)_random.Pick(allPotentialTargets);
     }
 
     private void AfterEntitySelected(Entity<BloodCultRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
@@ -275,9 +275,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             if (TryComp<BloodCultistComponent>(traitor, out var cultist))
             {
                 // add cultist starting abilities
-                _cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>) "Commune", recordKnownSpell: false);
-                _cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>) "StudyVeil", recordKnownSpell: false);
-                _cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>) "SpellsSelect", recordKnownSpell: false);
+                _cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>)"Commune", recordKnownSpell: false);
+                _cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>)"StudyVeil", recordKnownSpell: false);
+                _cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>)"SpellsSelect", recordKnownSpell: false);
 
                 // propogate the selected Nar'Sie summon location
                 cultist.ShowTearVeilRune = component.VeilWeakened;
@@ -354,7 +354,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         if (component.Target != null)
         {
             // If the target has gone catatonic, pick another one.
-            var val = CompOrNull<MindComponent>((EntityUid) component.Target);
+            var val = CompOrNull<MindComponent>((EntityUid)component.Target);
             if (val?.UserId == null)
             {
                 SelectTarget(component, true);
@@ -451,7 +451,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                 {
                     _popupSystem.PopupEntity(
                             Loc.GetString("cult-invocation-revive-fail"),
-                            (EntityUid) cultist.ReviverUid, (EntityUid) cultist.ReviverUid, PopupType.MediumCaution
+                            (EntityUid)cultist.ReviverUid, (EntityUid)cultist.ReviverUid, PopupType.MediumCaution
                         );
                 }
                 cultist.BeingRevived = false;
@@ -461,7 +461,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             // Apply active sacrifices
             if (cultist.Sacrifice != null)
             {
-                SacrificingData sacrifice = (SacrificingData) cultist.Sacrifice;
+                SacrificingData sacrifice = (SacrificingData)cultist.Sacrifice;
                 TryComp<MindContainerComponent>(sacrifice.Target, out var sacrificeMind);
 
                 if ((sacrificeMind?.Mind != null) && (component.Target != null) && (sacrificeMind.Mind == component.Target))
@@ -489,7 +489,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             // Apply active converts
             if (cultist.Convert != null)
             {
-                ConvertingData convert = (ConvertingData) cultist.Convert;
+                ConvertingData convert = (ConvertingData)cultist.Convert;
                 TryComp<MindContainerComponent>(convert.Target, out var convertMind);
                 if ((convertMind?.Mind != null) && (component.Target != null) && (convertMind.Mind == component.Target))
                 {
@@ -547,9 +547,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                 if (component.WeakVeil1 != null && component.WeakVeil2 != null && component.WeakVeil3 != null)
                 {
                     WeakVeilLocation? currentSummoningLoc = null;
-                    WeakVeilLocation weakVeil1 = (WeakVeilLocation) component.WeakVeil1;
-                    WeakVeilLocation weakVeil2 = (WeakVeilLocation) component.WeakVeil2;
-                    WeakVeilLocation weakVeil3 = (WeakVeilLocation) component.WeakVeil3;
+                    WeakVeilLocation weakVeil1 = (WeakVeilLocation)component.WeakVeil1;
+                    WeakVeilLocation weakVeil2 = (WeakVeilLocation)component.WeakVeil2;
+                    WeakVeilLocation weakVeil3 = (WeakVeilLocation)component.WeakVeil3;
                     if (weakVeil1.Coordinates.InRange(_entManager, Transform(cultistUid).Coordinates, weakVeil1.ValidRadius))
                     {
                         currentSummoningLoc = weakVeil1;
@@ -577,7 +577,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                         if (!cultist.AskedToConfirm)
                         {
                             // Case : They are standing in a valid location, but have not been asked to confirm yet.
-                            string name = ((WeakVeilLocation) currentSummoningLoc).Name;
+                            string name = ((WeakVeilLocation)currentSummoningLoc).Name;
                             _popupSystem.PopupEntity(
                                 Loc.GetString("cult-veil-drawing-pleaseconfirm", ("name", name)),
                                 cultistUid, cultistUid, PopupType.MediumCaution
@@ -587,13 +587,13 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                         else
                         {
                             // Case : They are standing in a valid location and have already been asked to confirm. Alert the crew!
-                            string name = ((WeakVeilLocation) currentSummoningLoc).Name;
+                            string name = ((WeakVeilLocation)currentSummoningLoc).Name;
                             foreach (var currCultist in GetCultists())
                             {
                                 if (!TryComp<BloodCultistComponent>(currCultist, out var cultMember))
                                     continue;
                                 cultMember.ConfirmedSummonLocation = true;
-                                cultMember.LocationForSummon = ((WeakVeilLocation) currentSummoningLoc);
+                                cultMember.LocationForSummon = ((WeakVeilLocation)currentSummoningLoc);
                             }
                             // Make sure the location for summoning propogates to new cultists.
                             component.LocationForSummon = cultist.LocationForSummon;
@@ -626,7 +626,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                 component.CultistsWin = true;
                 string newlines = "\n\n\n\n";
                 AnnounceToEveryone(newlines + Loc.GetString("cult-veil-torn") + newlines, fontSize: 32, audioPath: "/Audio/_Funkystation/Ambience/Antag/dimensional_rend.ogg", audioVolume: 2f);
-                var narsieSpawn = Spawn("MobNarsieSpawn", (EntityCoordinates) cultist.NarsieSummoned);
+                var narsieSpawn = Spawn("MobNarsieSpawn", (EntityCoordinates)cultist.NarsieSummoned);
                 cultist.NarsieSummoned = null;
                 component.CultVictoryEndTime = _timing.CurTime + component.CultVictoryEndDelay;
             }
@@ -638,11 +638,11 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             component.CultVictoryAnnouncementPlayed = true;
             component.CultVictoryEndTime = null;
 
-            //EndRound();
-            _roundEnd.DoRoundEndBehavior(RoundEndBehavior.ShuttleCall,
-                component.ShuttleCallTime,
-                textCall: "cult-win-announcement-shuttle-call",
-                textAnnounce: "cult-win-announcement");
+            _chatSystem.DispatchGlobalAnnouncement(
+                Loc.GetString("cult-win-announcement"),
+                colorOverride: Color.Red);
+
+            EndRound();
             return;
         }
     }
@@ -792,7 +792,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                 Speak(invoker, Loc.GetString("cult-invocation-offering"));
             _SacrificeVictim(sacrifice.Target, cultistUid);
             component.ReviveCharges = component.ReviveCharges + component.ChargesForSacrifice;
-            component.TargetsDown.Add((EntityUid) component.Target);
+            component.TargetsDown.Add((EntityUid)component.Target);
             SelectTarget(component, true);
             return true;
         }
@@ -843,7 +843,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             _audio.PlayPvs(new SoundPathSpecifier("/Audio/Magic/disintegrate.ogg"), coordinates);
             _body.GibBody(uid, true);
             var soulstone = Spawn("CultSoulStone", coordinates);
-            _mind.TransferTo((EntityUid) mindId, soulstone, mind: mindComp);
+            _mind.TransferTo((EntityUid)mindId, soulstone, mind: mindComp);
             return true;
         }
         return false;
@@ -983,9 +983,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     {
         var allAliveHumans = _mind.GetAliveHumans();
         // 10% cult needed for eyes
-        component.ConversionsUntilEyes = (int) Math.Ceiling((float) allAliveHumans.Count * 0.125f);
+        component.ConversionsUntilEyes = (int)Math.Ceiling((float)allAliveHumans.Count * 0.125f);
         // 30% cult needed for rise
-        component.ConversionsUntilRise = (int) Math.Ceiling((float) allAliveHumans.Count * 0.3f);
+        component.ConversionsUntilRise = (int)Math.Ceiling((float)allAliveHumans.Count * 0.3f);
     }
 
     private int GetConversionsToEyes(BloodCultRuleComponent component, List<EntityUid> cultists)
@@ -1053,7 +1053,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         {
             if (specificCultist != null)
                 AnnounceToCultist("Feed me.\n",
-                        (EntityUid) specificCultist, color: new Color(111, 80, 143, 255), fontSize: 24, newlineNeeded: true);
+                        (EntityUid)specificCultist, color: new Color(111, 80, 143, 255), fontSize: 24, newlineNeeded: true);
             else
                 AnnounceToCultists("Feed me.\n",
                     color: new Color(111, 80, 143, 255), fontSize: 24, newlineNeeded: true);
@@ -1069,11 +1069,11 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             string name2 = "Unknown";
             string name3 = "Unknown";
             if (component.WeakVeil1 != null)
-                name1 = ((WeakVeilLocation) (component.WeakVeil1)).Name;
+                name1 = ((WeakVeilLocation)(component.WeakVeil1)).Name;
             if (component.WeakVeil2 != null)
-                name2 = ((WeakVeilLocation) (component.WeakVeil2)).Name;
+                name2 = ((WeakVeilLocation)(component.WeakVeil2)).Name;
             if (component.WeakVeil3 != null)
-                name3 = ((WeakVeilLocation) (component.WeakVeil3)).Name;
+                name3 = ((WeakVeilLocation)(component.WeakVeil3)).Name;
             purpleMessage = purpleMessage + "\n" + Loc.GetString("cult-status-veil-weak-goal",
                 ("firstLoc", name1),
                 ("secondLoc", name2),
@@ -1094,7 +1094,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         }
         if (specificCultist != null)
             AnnounceToCultist(purpleMessage,
-                    (EntityUid) specificCultist, color: new Color(111, 80, 143, 255), fontSize: 12, newlineNeeded: true);
+                    (EntityUid)specificCultist, color: new Color(111, 80, 143, 255), fontSize: 12, newlineNeeded: true);
         else
             AnnounceToCultists(purpleMessage,
                     color: new Color(111, 80, 143, 255), fontSize: 12, newlineNeeded: true);
@@ -1104,7 +1104,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             AnnounceToCultist(Loc.GetString("cult-status-veil-weak-cultdata", ("cultCount", (cultists.Count + constructs.Count).ToString()),
                 ("cultUntilRise", conversionsUntilRise.ToString()), ("cultistCount", cultists.Count.ToString()),
                 ("constructCount", constructs.Count.ToString())),
-                (EntityUid) specificCultist, fontSize: 11, newlineNeeded: true);
+                (EntityUid)specificCultist, fontSize: 11, newlineNeeded: true);
         else
             AnnounceToCultists(Loc.GetString("cult-status-veil-weak-cultdata", ("cultCount", (cultists.Count + constructs.Count).ToString()),
                 ("cultUntilRise", conversionsUntilRise.ToString()), ("cultistCount", cultists.Count.ToString()),

@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -231,18 +232,19 @@ public sealed partial class BloodCultRuneCarverSystem : EntitySystem
 			}
 			var targetTile = _mapSystem.GetTileRef(gridUid.Value, grid, ev.Coords);
 
-			var rune = Spawn(ev.EntityId, ev.Coords);  // Spawn the final rune
+		var rune = Spawn(ev.EntityId, ev.Coords);  // Spawn the final rune
 
-			if (gridUid != null && TryComp<TransformComponent>(rune, out var runeTransform))
-			{
-				_transform.AnchorEntity((rune, runeTransform), ((EntityUid)gridUid, grid), targetTile.GridIndices);
-				_damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
-				_audioSystem.PlayPvs(ev.CarveSound, ent);
-			}
-			else
-			{
-				QueueDel(rune);
-			}
+		if (gridUid != null)
+		{
+			var runeTransform = Transform(rune);
+			_transform.AnchorEntity((rune, runeTransform), ((EntityUid)gridUid, grid), targetTile.GridIndices);
+			_damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
+			_audioSystem.PlayPvs(ev.CarveSound, ent);
+		}
+		else
+		{
+			QueueDel(rune);
+		}
 		}
     }
 

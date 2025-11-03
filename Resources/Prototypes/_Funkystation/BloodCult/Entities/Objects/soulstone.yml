@@ -15,3 +15,4 @@
   - type: Item
     size: Small
     heldPrefix: soulstone
+  - type: Speech
