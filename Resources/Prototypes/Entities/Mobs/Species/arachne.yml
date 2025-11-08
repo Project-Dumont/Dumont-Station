@@ -110,7 +110,7 @@
     bloodReagent: DemonsBlood
   - type: BloodSucker
     webRequired: true
-  - type: Arachne
+  - type: Cocooner
   - type: DamageVisuals
     thresholds: [ 20, 40, 100 ]
     targetLayers:
