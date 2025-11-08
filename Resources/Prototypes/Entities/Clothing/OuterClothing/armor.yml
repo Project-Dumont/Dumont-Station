@@ -515,6 +515,9 @@
     cancel: true
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.2
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterArmorHeavy
@@ -692,6 +695,9 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]

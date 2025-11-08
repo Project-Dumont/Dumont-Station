@@ -286,6 +286,9 @@
   id: Apron
 
 - type: Tag
+  id: ArachneWeb
+  
+- type: Tag
   id: Arrow
 
 - type: Tag
@@ -856,6 +859,9 @@
 
 - type: Tag
   id: Fruit
+
+- type: Tag
+  id: FullBodyOuter
 
 - type: Tag
   id: Galaxythistle
