@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Crono209ggg <crono209gg@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Arachne;
 using Content.Shared.Actions;
 using Content.Shared.IdentityManagement;
