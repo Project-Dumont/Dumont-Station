@@ -376,6 +376,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
     - PlasmamanSafe # EE Plasmeme Change
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET

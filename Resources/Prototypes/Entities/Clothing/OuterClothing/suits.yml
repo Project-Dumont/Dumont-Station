@@ -139,6 +139,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - FullBodyOuter
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: HideClothingLayerClothing # Goobstation
@@ -156,6 +157,17 @@
     sprite: Clothing/OuterClothing/Suits/janitor_bombsuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/janitor_bombsuit.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.15
+  - type: GroupExamine
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+    - FullBodyOuter
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -262,6 +274,7 @@
     - AtmosFireSuit # Assmos - Metal Hydrogen
     - CorgiWearable
     - WhitelistChameleon
+    - FullBodyOuter
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing, ClothingOuterBaseToggleable ]
@@ -389,6 +402,9 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase
@@ -430,6 +446,9 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: Tag
+    tags:
+      - FullBodyOuter
 
 - type: entity
   parent: [ ClothingOuterBase, ClothingOuterBaseToggleable ]
