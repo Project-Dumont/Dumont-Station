@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Content.Server/Cocoon/CocoonComponent.cs
-namespace Content.Server.Arachne
-========
 namespace Content.Shared.Cocoon
->>>>>>>> a78775bc99 (Cocoon Cleanup & Minor Bloodsucker Tweaks (#1058)):Content.Shared/Cocoon/CocoonComponent.cs
 {
     [RegisterComponent]
     public sealed partial class CocoonComponent : Component
