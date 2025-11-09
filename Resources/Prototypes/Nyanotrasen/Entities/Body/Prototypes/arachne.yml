@@ -1,27 +1,33 @@
 - type: body
   id: Arachne
   name: "arachne"
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadHuman
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
-    torso:
-      part: TorsoHuman
+    chest:
+      part: ChestHuman
       connections:
       - left arm
       - right arm
-      - thorax
+      - head
+      - other 
       organs:
         heart: OrganHumanHeart
         lungs: OrganHumanLungs
         stomach: OrganVampiricHumanoidStomach
         liver:  OrganHumanLiver
         kidneys: OrganHumanKidneys
+
+    other:    #hub sem part, só para pendurar o bloco aranha
+      part: OtherHubArachne
+      connections: [ other-thorax ]
+
     right arm:
       part: RightArmHuman
       connections:
@@ -34,30 +40,30 @@
       part: RightHandHuman
     left hand:
       part: LeftHandHuman
-    thorax:
+    other-thorax:   
       part: ThoraxSpider
       connections:
-        - left foreleg
-        - left second leg
-        - left third leg
-        - left hind leg
-        - right foreleg
-        - right second leg
-        - right third leg
-        - right hind leg
-    left foreleg:
+        - left leg 1
+        - left leg 2
+        - left leg 3
+        - left leg 4
+        - right leg 1
+        - right leg 2
+        - right leg 3
+        - right leg 4
+    left leg 1:
       part: LeftLegSpider
-    left second leg:
+    left leg 2:
       part: LeftLegSpider
-    left third leg:
+    left leg 3:
       part: LeftLegSpider
-    left hind leg:
+    left leg 4:
       part: LeftLegSpider
-    right foreleg:
+    right leg 1:
       part: RightLegSpider
-    right second leg:
+    right leg 2:
       part: RightLegSpider
-    right third leg:
+    right leg 3:
       part: RightLegSpider
-    right hind leg:
+    right leg 4:
       part: RightLegSpider

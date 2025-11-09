@@ -53,6 +53,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Content.Shared.Body.Organ;
+using Content.Shared._Gabystation.SurgeryBlocker;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -429,8 +430,14 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             || !HasComp<BodyPartComponent>(targetPart)
             && !_bodyQuery.HasComp(targetPart))
             return false;
-
-
+        
+       
+        if (HasComp<SurgeryBlockerComponent>(targetPart))
+        {
+         _popup.PopupClient("Você não entende a anatomia dessa parte!", user, user);
+         return false; // bloqueia cirurgia em partes com o componente     
+        }
+       
         var ev = new SurgeryValidEvent(body, targetPart);
         if (_timing.IsFirstTimePredicted)
         {

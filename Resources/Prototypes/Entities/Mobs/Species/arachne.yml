@@ -14,7 +14,7 @@
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
-      state: torso_m
+      state: chest_m
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       sprite: Mobs/Species/arachne.rsi
       state: spider_body_front
@@ -104,20 +104,19 @@
   - type: Tag
     tags:
     - CanPilot
-    - ShoesRequiredStepTriggerImmune
     - DoorBumpOpener
   - type: Bloodstream
     bloodReagent: DemonsBlood
   - type: BloodSucker
     webRequired: true
   - type: Cocooner
-  - type: DamageVisuals
-    thresholds: [ 20, 40, 100 ]
-    targetLayers:
-      - "enum.HumanoidVisualLayers.Chest"
-      - "enum.HumanoidVisualLayers.Head"
-      - "enum.HumanoidVisualLayers.LArm"
-      - "enum.HumanoidVisualLayers.RArm"
+ # - type: DamageVisuals
+ #   thresholds: [ 20, 40, 100 ]
+ #   targetLayers:
+ #     - "enum.HumanoidVisualLayers.Chest"
+ #     - "enum.HumanoidVisualLayers.Head"
+ #     - "enum.HumanoidVisualLayers.LArm"
+ #     - "enum.HumanoidVisualLayers.RArm"
   - type: MovedByPressure
     pressureResistance: 4
   - type: Barotrauma
@@ -152,7 +151,7 @@
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
-      state: torso_m
+      state: chest_m
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       sprite: Mobs/Species/arachne.rsi
       state: spider_body_front

@@ -9,12 +9,13 @@ using Content.Shared.Vampiric;
 using Content.Shared.Cocoon;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
+using Content.Shared.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Popups;
-using Content.Server.HealthExaminable;
 using Content.Server.DoAfter;
-using Content.Server.Nutrition.Components;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
@@ -76,7 +77,7 @@ namespace Content.Server.Vampiric
         private void OnHealthExamined(EntityUid uid, BloodSuckedComponent component, HealthBeingExaminedEvent args)
         {
             args.Message.PushNewline();
-            args.Message.AddMarkup(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
+            args.Message.AddMarkupOrThrow(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
         }
 
         private void OnDamageChanged(EntityUid uid, BloodSuckedComponent component, DamageChangedEvent args)
@@ -134,8 +135,7 @@ namespace Content.Server.Vampiric
 
             var args = new DoAfterArgs(EntityManager, bloodsucker, bloodSuckerComponent.Delay, new BloodSuckDoAfterEvent(), bloodsucker, target: victim)
             {
-                BreakOnTargetMove = true,
-                BreakOnUserMove = false,
+                BreakOnMove = false,
                 DistanceThreshold = 2f,
                 NeedHand = false
             };
@@ -154,15 +154,15 @@ namespace Content.Server.Vampiric
                 return false;
 
             // No blood left, yikes.
-            if (_bloodstreamSystem.GetBloodLevelPercentage(victim, bloodstream) == 0.0f)
+            if (_bloodstreamSystem.GetBloodLevelPercentage(victim) == 0.0f)
                 return false;
 
             // Does bloodsucker have a stomach?
-            var stomachList = _bodySystem.GetBodyOrganComponents<StomachComponent>(bloodsucker);
+            var stomachList = _bodySystem.GetBodyOrganEntityComps<StomachComponent>(bloodsucker);
             if (stomachList.Count == 0)
                 return false;
 
-            if (!_solutionSystem.TryGetSolution(stomachList[0].Comp.Owner, StomachSystem.DefaultSolutionName, out var stomachSolution))
+            if (!_solutionSystem.TryGetSolution(stomachList[0].Owner, StomachSystem.DefaultSolutionName, out var stomachSolution))
                 return false;
 
             // Are we too full?
@@ -186,7 +186,7 @@ namespace Content.Server.Vampiric
                 return false;
 
             var temp = _solutionSystem.SplitSolution(bloodstream.BloodSolution.Value, bloodsuckerComp.UnitsToSucc);
-            _stomachSystem.TryTransferSolution(stomachList[0].Comp.Owner, temp, stomachList[0].Comp);
+            _stomachSystem.TryTransferSolution(stomachList[0].Owner, temp, stomachList[0].Comp1);
 
             // Add a little pierce
             DamageSpecifier damage = new();

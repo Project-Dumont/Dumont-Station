@@ -6,14 +6,12 @@ using Content.Shared.Stunnable;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
-using Content.Shared.Inventory;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Server.Popups;
 using Content.Server.DoAfter;
 using Content.Server.Speech.Components;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Containers;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Destructible;
@@ -158,22 +156,6 @@ namespace Content.Server.Cocoon
             _doAfter.TryStartDoAfter(args);
         }
 
-        private void StartUnCocooning(EntityUid uid, CocoonerComponent component, EntityUid target)
-        {
-            _popupSystem.PopupEntity(Loc.GetString("uncocoon-start-third-person", ("target", target), ("spider", Identity.Entity(uid, EntityManager))), uid,
-                Shared.Popups.PopupType.MediumCaution);
-
-            var delay = component.CocoonDelay / 2;
-
-            var args = new DoAfterArgs(EntityManager, uid, delay, new UnCocoonDoAfterEvent(), uid, target: target)
-            {
-                BreakOnUserMove = true,
-                BreakOnTargetMove = true,
-            };
-
-            _doAfter.TryStartDoAfter(args);
-        }
-
         private void OnCocoonDoAfter(EntityUid uid, CocoonerComponent component, CocoonDoAfterEvent args)
         {
             if (args.Handled || args.Cancelled || args.Args.Target == null)
@@ -186,17 +168,6 @@ namespace Content.Server.Cocoon
             if (!TryComp<ItemSlotsComponent>(cocoon, out var slots))
                 return;
 
-            // todo: our species should use scale visuals probably...
-            // TODO: We need a client-accessible notion of scale influence here.
-            /* if (spawnProto == "CocoonedHumanoid" && TryComp<SpriteComponent>(args.Args.Target.Value, out var sprite)) */
-            /* { */
-            /*     // why the fuck is this only available as a console command. */
-            /*     _host.ExecuteCommand(null, "scale " + cocoon + " " + sprite.Scale.Y); */
-            if (TryComp<PhysicsComponent>(args.Args.Target.Value, out var physics))
-            {
-                var scale = Math.Clamp(1 / (35 / physics.FixturesMass), 0.35, 2.5);
-                _host.ExecuteCommand(null, "scale " + cocoon + " " + scale);
-            }
             _itemSlots.SetLock(cocoon, BodySlot, false, slots);
             _itemSlots.TryInsert(cocoon, BodySlot, args.Args.Target.Value, args.Args.User);
             _itemSlots.SetLock(cocoon, BodySlot, true, slots);

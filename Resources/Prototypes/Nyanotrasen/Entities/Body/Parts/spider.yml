@@ -25,17 +25,28 @@
         Quantity: 10
 
 - type: entity
+  id: OtherHubArachne
+  name: "arachne connector"
+  parent: PartSpider          
+  components:
+  - type: BodyPart
+    partType: Other
+  - type: SurgeryBlocker
+
+- type: entity
   id: ThoraxSpider
   name: "spider thorax" #for arachne, actual spiders should get a cephalothorax that combines with head.
   parent: PartSpider
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi # placeholder sprite
-    state: "torso_m"
+    state: "chest_m"
   - type: Icon
     sprite: Mobs/Species/Moth/parts.rsi
-    state: "torso_m"
+    state: "chest_m"
   - type: BodyPart #"Other" type
+    partType: Other 
+  - type: SurgeryBlocker
   - type: Extractable
     juiceSolution:
       reagents:

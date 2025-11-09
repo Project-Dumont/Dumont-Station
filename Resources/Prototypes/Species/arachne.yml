@@ -45,7 +45,7 @@
   sprites:
     Head: MobHumanHead
     Hair: MobHumanoidAnyMarking
-    Chest: MobHumanTorso
+    Chest: MobHumanChest 
     Eyes: MobArachneEyes
     LArm: MobHumanLArm
     RArm: MobHumanRArm
