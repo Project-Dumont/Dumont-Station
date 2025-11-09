@@ -57,7 +57,9 @@
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 c4llv07e <igor@c4llv07e.xyz>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -116,6 +118,12 @@ public sealed partial class AudioTab : Control
             CCVars.InterfaceVolume,
             SliderVolumeInterface,
             scale: ContentAudioSystem.InterfaceMultiplier);
+
+        // Goobstation - Highlight Chat Ping/Audio!
+        Control.AddOptionPercentSlider(
+            CCVars.ChatHighlightVolume,
+            SliderHighlightVolume,
+            scale: 1f);
 
         Control.AddOptionSlider(
             CCVars.MaxAmbientSources,

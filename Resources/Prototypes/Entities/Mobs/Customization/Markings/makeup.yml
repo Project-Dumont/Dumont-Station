@@ -11,7 +11,7 @@
   id: MakeupLips
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Daengati] # Delta V - Felinid, Oni, Harpy; Gaby Station - Daengati
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Yowie, Daengati] # Delta V - Felinid, Oni, Harpy; Goob - Yowies; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -25,7 +25,7 @@
   id: MakeupBlush
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne, Daengati] # Delta V - Felinid, Oni, Vulpkanin, Harpy; Gaby Station - Daengati
+  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne, Yowie, Daengati] # Delta V - Felinid, Oni, Vulpkanin, Harpy; Goob - Yowies; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -39,7 +39,7 @@
   id: MakeupNailPolishRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Daengati] # Delta V - Felinid, Oni, Vulpkanin; Gaby Station - Daengati
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Yowie, Daengati] # Delta V - Felinid, Oni, Vulpkanin; Goob - Yowies; Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -53,7 +53,7 @@
   id: MakeupNailPolishLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Daengati] # Delta V - Felinid, Oni, Vulpkanin; Gaby Station - Daengati
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Yowie, Daengati] # Delta V - Felinid, Oni, Vulpkanin; Goob - Yowies; Gaby Station - Daengati
   coloring:
     default:
       type:

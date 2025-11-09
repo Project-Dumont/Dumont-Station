@@ -17,12 +17,13 @@
   - Reduz todo dano recebido pelo contratado pela metade.
   - Aumenta o dano sagrado recebido.
 
-  ## Avareza
+<!-- Disabled, Used by shitters  ## Avareza
   <Box>
     [color=#999999][italic]-30 Weight[/italic][/color]
   </Box>
 
   - Allows the contractee to devour things whole, just like a dragon.
+  -->
 
   ## Medo da Morte
   <Box>

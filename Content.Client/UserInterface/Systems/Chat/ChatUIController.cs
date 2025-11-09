@@ -34,14 +34,18 @@
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 // SPDX-FileCopyrightText: 2025 Evelyn Gordon <evelyn.gordon20@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
@@ -97,9 +101,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Client.CharacterInfo;
-using Content.Goobstation.Common.CCVar; // Goob - start
-using static Content.Client.CharacterInfo.CharacterInfoSystem;
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -214,6 +215,13 @@ public sealed partial class ChatUIController : UIController
     /// unread messages (messages received since the channel has been filtered out).
     /// </summary>
     private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
+
+
+    // Goobstation - Chat Pings
+    /// <summary>
+    /// Used for Goobstation's - Chat Pings
+    /// </summary>
+    private TimeSpan LastHighlightTime = TimeSpan.Zero;
 
     // TODO add a cap for this for non-replays
     public readonly List<(GameTick Tick, ChatMessage Msg)> History = new();
@@ -939,12 +947,6 @@ public sealed partial class ChatUIController : UIController
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
         }
 
-        // Color any words chosen by the client.
-        foreach (var highlight in _highlights)
-        {
-            msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
-        }
-
         // Color any codewords for minds that have roles that use them
         if (_player.LocalUser != null && _mindSystem != null && _roleCodewordSystem != null)
         {
@@ -957,6 +959,38 @@ public sealed partial class ChatUIController : UIController
                 }
             }
         }
+
+        #region Goobstation - Highlight chat sounds/pings!
+        // Goobstation - Highlight chat sounds/pings!
+        // Color any words chosen by the client and check for highlights
+        var hadHighlight = false;
+
+        // Skip highlight check if this is a message from the local player
+        if (_player.LocalSession?.AttachedEntity is not { } localEntity ||
+            msg.SenderEntity != _ent.GetNetEntity(localEntity))
+        {
+            foreach (var highlight in _highlights)
+            {
+                var newMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+                if (newMessage != msg.WrappedMessage)
+                {
+                    hadHighlight = true;
+                    msg.WrappedMessage = newMessage;
+                }
+            }
+
+            var currentTime = _timing.CurTime;
+
+            // Only play sound if enough time has passed since the last highlight
+            // This avoids playing multiple pings in less than a second
+            if (hadHighlight && (currentTime - LastHighlightTime).TotalMilliseconds >= 500)
+            {
+                LastHighlightTime = currentTime;
+                PlayHighlightSound();
+            }
+        }
+        // Goobstation end
+        #endregion
 
         // Log all incoming chat to repopulate when filter is un-toggled
         if (!msg.HideChat)

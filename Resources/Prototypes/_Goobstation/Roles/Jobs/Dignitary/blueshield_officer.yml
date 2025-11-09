@@ -79,9 +79,6 @@
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
-  - !type:AddObjectiveSpecial
-    objectives:
-    - BlueshieldRandomCommandAliveObjective
   alternateTitles:
   - BlueshieldTitleSentinel
   - BlueshieldTitleGuard

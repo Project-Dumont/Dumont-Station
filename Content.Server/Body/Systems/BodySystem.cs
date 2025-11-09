@@ -60,11 +60,16 @@
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -91,6 +96,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
 using Content.Shared.Damage.Components;
+using Content.Shared.Mind.Components; // Gaby
+using Content.Shared.Mobs; // Gaby
 
 // Shitmed Change
 using System.Linq;
@@ -116,6 +123,7 @@ public sealed partial class BodySystem : SharedBodySystem // Shitmed change: mad
         SubscribeLocalEvent<BodyComponent, MoveInputEvent>(OnRelayMoveInput);
         SubscribeLocalEvent<BodyComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
         SubscribeLocalEvent<BodyPartComponent, AttemptEntityGibEvent>(OnGibTorsoAttempt); // Shitmed Change
+        SubscribeLocalEvent<MindContainerComponent, MobStateChangedEvent>(OnMobStateChanged); // Gaby
     }
 
     private void OnRelayMoveInput(Entity<BodyComponent> ent, ref MoveInputEvent args)
@@ -129,7 +137,7 @@ public sealed partial class BodySystem : SharedBodySystem // Shitmed change: mad
 
         if (_mobState.IsDead(ent) && _mindSystem.TryGetMind(ent, out var mindId, out var mind))
         {
-            mind.TimeOfDeath ??= _gameTiming.RealTime;
+            // mind.TimeOfDeath ??= _gameTiming.RealTime; // Gaby
             _ghostSystem.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
         }
     }
@@ -283,4 +291,23 @@ public sealed partial class BodySystem : SharedBodySystem // Shitmed change: mad
             args.GibType = GibType.Skip;
     }
     // Shitmed Change End
+
+    // Gaby - Start
+    private void OnMobStateChanged(EntityUid uid, MindContainerComponent component, MobStateChangedEvent args)
+    {
+        if (!component.Mind.HasValue || !TryComp<MindComponent>(component.Mind.Value, out var mind))
+            return;
+
+        if (args.NewMobState == MobState.Dead)
+        {
+            mind.TimeOfDeath ??= _gameTiming.CurTime;
+            Dirty(component.Mind.Value, mind);
+        }
+        else if (args.OldMobState == MobState.Dead)
+        {
+            mind.TimeOfDeath = null;
+            Dirty(component.Mind.Value, mind);
+        }
+    }
+    // Gaby - End
 }

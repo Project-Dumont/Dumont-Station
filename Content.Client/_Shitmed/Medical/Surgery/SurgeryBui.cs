@@ -1,8 +1,11 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
@@ -286,11 +289,11 @@ public sealed class SurgeryBui : BoundUserInterface
             || !_window.IsOpen
             || _part == null
             || !_entities.HasComponent<SurgeryComponent>(_surgery?.Ent)
-            || !_entities.TryGetComponent(_player.LocalEntity ?? EntityUid.Invalid, out SurgeryTargetComponent? surgeryComp)
+            || !_entities.TryGetComponent(_player.LocalEntity, out SurgeryTargetComponent? surgeryComp)
             || !surgeryComp.CanOperate)
             return;
 
-        var next = _system.GetNextStep(Owner, _part.Value, _surgery.Value.Ent);
+        var next = _system.GetNextStep(Owner, _part.Value, _surgery.Value.Ent, _player.LocalEntity.Value);
         var i = 0;
         foreach (var child in _window.Steps.Children)
         {
@@ -300,6 +303,10 @@ public sealed class SurgeryBui : BoundUserInterface
             var status = StepStatus.Incomplete;
             if (next == null)
                 status = StepStatus.Complete;
+            else if (next.Value.Step < 0 && i > -next.Value.Step - 1)
+                status = StepStatus.Complete;
+            else if (next.Value.Step < 0 && i <= -next.Value.Step - 1)
+                status = StepStatus.Next;
             else if (next.Value.Surgery.Owner != _surgery.Value.Ent)
                 status = StepStatus.Incomplete;
             else if (next.Value.Step == i)
@@ -317,9 +324,8 @@ public sealed class SurgeryBui : BoundUserInterface
             else
             {
                 stepButton.Button.Modulate = Color.White;
-                if (_player.LocalEntity is { } player
-                    && status == StepStatus.Next
-                    && !_system.CanPerformStepWithHeld(player, Owner, _part.Value, stepButton.Step, false, out var popup))
+                if (status == StepStatus.Next
+                    && !_system.CanPerformStepWithHeld(_player.LocalEntity.Value, Owner, _part.Value, stepButton.Step, false, out var popup))
                     stepButton.ToolTip = popup;
             }
 
