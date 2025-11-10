@@ -595,7 +595,7 @@
   id: CivilianBackpack
   name: loadout-group-backpack
   exclusiveWith: BACK # Goobstation
-  minLimit: 0
+  minLimit: 0 # Gabychange
   loadouts:
   - CommonBackpack
   - CommonSatchel
