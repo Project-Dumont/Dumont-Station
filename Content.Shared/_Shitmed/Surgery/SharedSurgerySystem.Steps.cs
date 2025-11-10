@@ -57,7 +57,7 @@ using System.Linq;
 using Content.Shared._Gabystation.CCVar;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared._EinsteinEngines.Silicon.Components;
-using Content.Shared._Gabystation.SurgeryBlocker;
+
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -1033,16 +1033,6 @@ public abstract partial class SharedSurgerySystem
         EntityUid tool, bool doPopup, out string? popup, out StepInvalidReason reason,
         out ISurgeryToolComponent? data)
     {
-        if (HasComp<SurgeryBlockerComponent>(part))
-     {
-        if (doPopup)
-            _popup.PopupClient(Loc.GetString("Você não entende a anatomia dessa parte!"), user, user, PopupType.LargeCaution);
-
-        reason = StepInvalidReason.SurgeryInvalid;
-        popup = Loc.GetString("Você não entende a anatomia dessa parte!");
-        data = null;
-        return false;
-     }
 
 
 
