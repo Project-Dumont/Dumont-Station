@@ -15,19 +15,11 @@
       connections:
       - left arm
       - right arm
+      - groin
       - head
-      - other 
       organs:
-        heart: OrganHumanHeart
-        lungs: OrganHumanLungs
-        stomach: OrganVampiricHumanoidStomach
-        liver:  OrganHumanLiver
-        kidneys: OrganHumanKidneys
-
-    other:    #hub sem part, só para pendurar o bloco aranha
-      part: OtherHubArachne
-      connections: [ other-thorax ]
-
+        heart: OrganArachnidHeart
+        lungs: OrganAnimalLungs
     right arm:
       part: RightArmHuman
       connections:
@@ -40,30 +32,25 @@
       part: RightHandHuman
     left hand:
       part: LeftHandHuman
-    other-thorax:   
-      part: ThoraxSpider
+    groin:
+      part: GroinSpider
       connections:
-        - left leg 1
-        - left leg 2
-        - left leg 3
-        - left leg 4
-        - right leg 1
-        - right leg 2
-        - right leg 3
-        - right leg 4
-    left leg 1:
+        # The slots needs to start with (symmetry) (part) or they're not gonna be registered
+        - left leg 
+        - right leg 
+      organs:
+        stomach: OrganVampiricHumanoidStomach
+        liver: OrganArachnidLiver
+        kidneys: OrganArachnidKidneys
+    left leg:
       part: LeftLegSpider
-    left leg 2:
-      part: LeftLegSpider
-    left leg 3:
-      part: LeftLegSpider
-    left leg 4:
-      part: LeftLegSpider
-    right leg 1:
+      connections:
+       - left foot
+    right leg:
       part: RightLegSpider
-    right leg 2:
-      part: RightLegSpider
-    right leg 3:
-      part: RightLegSpider
-    right leg 4:
-      part: RightLegSpider
+      connections:
+      - right foot
+    right foot:
+      part: RightFootArachnid
+    left foot:
+      part: LeftFootArachnid

@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart
   - type: BodyPart
   - type: ContainerContainer
     containers:
@@ -25,18 +25,9 @@
         Quantity: 10
 
 - type: entity
-  id: OtherHubArachne
-  name: "arachne connector"
-  parent: PartSpider          
-  components:
-  - type: BodyPart
-    partType: Other
-  - type: SurgeryBlocker
-
-- type: entity
-  id: ThoraxSpider
-  name: "spider thorax" #for arachne, actual spiders should get a cephalothorax that combines with head.
-  parent: PartSpider
+  id: GroinSpider
+  name: "spider Groin" #for arachne, actual spiders should get a cephalothorax that combines with head.
+  parent: [PartSpider, BaseGroin]
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi # placeholder sprite
@@ -44,9 +35,6 @@
   - type: Icon
     sprite: Mobs/Species/Moth/parts.rsi
     state: "chest_m"
-  - type: BodyPart #"Other" type
-    partType: Other 
-  - type: SurgeryBlocker
   - type: Extractable
     juiceSolution:
       reagents:
@@ -58,7 +46,7 @@
 - type: entity
   id: RightLegSpider
   name: "right spider leg"
-  parent: PartSpider
+  parent: [PartSpider, BaseRightLeg]
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/meat.rsi # placeholder sprite
@@ -69,14 +57,11 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-  - type: MovementBodyPart #should actual spiders get a seperate part from arachne?
-    walkSpeed : 2.7
-    sprintSpeed : 5
 
 - type: entity
   id: LeftLegSpider
   name: "left spider leg"
-  parent: PartSpider
+  parent: [PartSpider,BaseLeftLeg]
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/meat.rsi # placeholder sprite
@@ -87,6 +72,3 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-  - type: MovementBodyPart #should actual spiders get a seperate part from arachne?
-    walkSpeed : 2.7
-    sprintSpeed : 5

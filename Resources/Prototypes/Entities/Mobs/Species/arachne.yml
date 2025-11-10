@@ -22,10 +22,12 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
       state: eyes
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
@@ -34,9 +36,9 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
     - shader: StencilMask
       map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       sprite: Mobs/Customization/anytaur_masking_helpers.rsi
@@ -60,15 +62,19 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -82,6 +88,11 @@
       visible: false
   - type: HumanoidAppearance
     species: Arachne
+  - type: Sericulture
+    action: ActionSericulture
+    productionLength: 2
+    entityProduced: MaterialWebSilk1
+    hungerCost: 4 # Should total to 25 total silk on full hunger
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -96,7 +107,7 @@
         - MobLayer
   - type: Body
     prototype: Arachne
-    requiredLegs: 8
+    requiredLegs: 2
   - type: Speech
     speechSounds: Alto
   - type: Inventory
@@ -104,28 +115,30 @@
   - type: Tag
     tags:
     - CanPilot
+    - FootstepSound
     - DoorBumpOpener
+    - SpiderCraft
+  - type: ProtectedFromStepTriggers
   - type: Bloodstream
     bloodReagent: DemonsBlood
+    bloodRegenerationThirst: 4 # 1 unit of demon's blood satiates 4 thirst
   - type: BloodSucker
     webRequired: true
   - type: Cocooner
  # - type: DamageVisuals
- #   thresholds: [ 20, 40, 100 ]
- #   targetLayers:
+  #  targetLayers:
  #     - "enum.HumanoidVisualLayers.Chest"
  #     - "enum.HumanoidVisualLayers.Head"
  #     - "enum.HumanoidVisualLayers.LArm"
- #     - "enum.HumanoidVisualLayers.RArm"
+#      - "enum.HumanoidVisualLayers.RArm"
   - type: MovedByPressure
-    pressureResistance: 4
   - type: Barotrauma
     damage:
       types:
         Blunt: 0.05 #per second, scales with pressure and other constants. Reduced Damage. This allows medicine to heal faster than damage.
   - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
-    baseWalkSpeed : 3.0
+    baseWalkSpeed : 4
     baseSprintSpeed : 5.0
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
@@ -134,13 +147,14 @@
     fireStackAlternateState: 3
   - type: Spider
   - type: IgnoreSpiderWeb
+  - type: NoSlip
 
 - type: entity
   save: false
   name: Urist McHands
   parent: MobHumanDummy
   id: MobArachneDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy arachne meant to be used in character setup.
   components:
   - type: Sprite
@@ -159,10 +173,12 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: head_m
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       color: "#008800"
       sprite: Mobs/Species/eyes.rsi
       state: eyes
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
@@ -171,9 +187,9 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
     - shader: StencilMask
       map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       sprite: Mobs/Customization/anytaur_masking_helpers.rsi
@@ -197,15 +213,19 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
       state: bald
       sprite: Mobs/Customization/human_hair.rsi
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
