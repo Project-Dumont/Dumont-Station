@@ -175,7 +175,7 @@ public abstract partial class SharedPuddleSystem
             Reactive.DoEntityReaction(hit, splitSolution, ReactionMethod.Touch);
 
             Popups.PopupPredicted(Loc.GetString("spill-melee-hit-attacker", ("amount", amountPerTarget), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
-                Loc.GetString("spill-melee-hit-others", ("attacker", args.User), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
+                Loc.GetString("spill-melee-hit-others", ("attacker", Identity.Name(args.User, EntityManager)), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))), // Goobstation - indentity hidden on splash
                 hit, args.User, PopupType.SmallCaution);
         }
     }

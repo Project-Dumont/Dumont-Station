@@ -83,6 +83,7 @@
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
+            Roboticist: [ 2, 2 ]
             ResearchAssistant: [ -1, -1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]

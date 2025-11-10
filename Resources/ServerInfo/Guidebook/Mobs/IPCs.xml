@@ -58,7 +58,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
   <Box HorizontalAlignment="Stretch">
     No caso da morte de um IPC, depois de totalmente reparado, ele deve ser reiniciado usando o botão [color=yellow]"Restart"/"Reinício"[/color] (ao clicar com botão direito).
-
+  </Box>
+  <Box HorizontalAlignment="Stretch">
     [color=red]NUNCA ELETROCUTE UM IPC com um desfibrilador ou qualquer outra forma quando ele estiver morto, já que isso fará a bateria soltar raios de energia![/color]
   </Box>
 

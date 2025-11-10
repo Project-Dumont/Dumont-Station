@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 JrInventor05Next <205915704+JrInventor05Next@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -99,7 +103,7 @@ public sealed class StunSystem : SharedStunSystem
 
         var breaths = new Vector2(0, breathing * 2) / jitters;
 
-        var length =  1 / frequency;
+        var length = 1 / frequency;
         var frames = length / jitters;
 
         var keyFrames = new List<AnimationTrackProperty.KeyFrame> { new(sprite.Offset, 0f) };
@@ -112,6 +116,16 @@ public sealed class StunSystem : SharedStunSystem
             offset.X *= _random.Pick(_sign);
             offset.Y *= _random.Pick(_sign);
 
+            // GoobStation-fix-NaN-start
+            if (float.IsNaN(offset.X))
+                offset.X = 0;
+            if (float.IsNaN(offset.Y))
+                offset.Y = 0;
+            if (float.IsNaN(lastJitter.X))
+                lastJitter.X = 0;
+            if (float.IsNaN(lastJitter.Y))
+                lastJitter.Y = 0;
+            // GoobStation-fix-NaN-end
             if (i == 1 && Math.Sign(offset.X) == Math.Sign(lastJitter.X)
                        && Math.Sign(offset.Y) == Math.Sign(lastJitter.Y))
             {

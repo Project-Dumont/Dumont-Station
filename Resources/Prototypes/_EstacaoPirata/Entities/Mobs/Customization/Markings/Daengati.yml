@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Lary <89530982+LaryNevesPR@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: marking
   id: DaengatiTail
   bodyPart: Tail
@@ -15,3 +22,45 @@
   sprites:
     - sprite: Mobs/Customization/daengati_tail.rsi
       state: nightcrawler_tail
+
+# Gabystation - Port from Andrômeda.
+
+- type: marking
+  id: DaengatiHeartTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: HeartTail
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: HeartTail-tip
+
+- type: marking
+  id: DaengatiDragonLong
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: DragonLong
+    #- sprite: Mobs/Customization/daengati_tail.rsi
+    #  state: DragonLong-tip
+
+- type: marking
+  id: DaengatiRaboCortado
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: RaboCortado
+
+- type: marking
+  id: DaengatiRaboEnrolado
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Daengati]
+  sprites:
+    - sprite: Mobs/Customization/daengati_tail.rsi
+      state: RaboEnrolado

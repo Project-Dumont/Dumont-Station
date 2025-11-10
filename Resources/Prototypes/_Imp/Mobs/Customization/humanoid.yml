@@ -14,7 +14,7 @@
   id: ChestBackstabbed
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati.
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: backstabbed
@@ -23,7 +23,7 @@
   id: ChestCutHere
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -37,7 +37,7 @@
   id: ChestHeavyTattoos
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -55,7 +55,7 @@
   id: ChestNecklace
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -69,7 +69,7 @@
   id: ChestStar
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: star
@@ -78,7 +78,7 @@
   id: ChestTwistingLeft
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: twistingleft
@@ -87,7 +87,7 @@
   id: ChestTwistingRight
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: twistingright
@@ -96,7 +96,7 @@
   id: HumanoidAbs
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
@@ -106,7 +106,7 @@
   id: ProstheticShoulderL
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -120,7 +120,7 @@
   id: ProstheticShoulderR
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -134,7 +134,7 @@
   id: TattooAnchor
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -148,7 +148,7 @@
   id: TattooCode1
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -162,7 +162,7 @@
   id: TattooCode2
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -176,7 +176,7 @@
   id: TattooCode3
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -190,7 +190,7 @@
   id: TattooDragon
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: dragontattoo1
@@ -201,7 +201,7 @@
   id: TorsoIncision
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: incision
@@ -210,7 +210,7 @@
   id: TattooVinesHumanoid
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -299,7 +299,7 @@
   id: HeadTwisting
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: twisting
@@ -308,7 +308,7 @@
   id: HeadTwistingFlipped
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: twistingflipped
@@ -317,7 +317,7 @@
   id: HumanoidEyebags
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: eyebags
@@ -326,7 +326,7 @@
   id: SmileScars
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia, Yowiel, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: smile
@@ -400,7 +400,7 @@
   id: ArmDollJointsTattooRight
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -414,7 +414,7 @@
   id: ArmHeavyTattoosRight
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -430,7 +430,7 @@
   id: ArmProstheticRight
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -444,7 +444,7 @@
   id: ArmTwistingRight
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/rarm.rsi
     state: twisting
@@ -453,7 +453,7 @@
   id: TattooCode4
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -469,7 +469,7 @@
   id: TattooCode5
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -485,7 +485,7 @@
   id: TattooHeartR
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -518,7 +518,7 @@
   id: ArmDollJointsTattooLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -532,7 +532,7 @@
   id: ArmHeavyTattoosLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -548,7 +548,7 @@
   id: ArmProstheticLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -562,7 +562,7 @@
   id: ArmTwistingLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/larm.rsi
     state: twisting
@@ -571,7 +571,7 @@
   id: TattooHeartL
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -604,7 +604,7 @@
   id: LegDollJointsTattooRight
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -618,7 +618,7 @@
   id: LegHeavyTattoosRight
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -634,7 +634,7 @@
   id: LegTwistingRight
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/rleg.rsi
     state: twisting
@@ -660,7 +660,7 @@
   id: LegDollJointsTattooLeft
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -674,7 +674,7 @@
   id: LegHeavyTattoosLeft
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -690,7 +690,7 @@
   id: LegTwistingLeft
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/lleg.rsi
     state: twisting
@@ -716,7 +716,7 @@
   id: FootDollJointsTattooLeft
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -730,7 +730,7 @@
   id: FootHeavyTattoosLeft
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -748,7 +748,7 @@
   id: FootDollJointsTattooRight
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -762,7 +762,7 @@
   id: FootHeavyTattoosRight
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -780,7 +780,7 @@
   id: HandBraceletLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -794,7 +794,7 @@
   id: HandDollJointsTattooLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -808,7 +808,7 @@
   id: HandHeavyTattoosLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -824,7 +824,7 @@
   id: HandProstheticLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -838,7 +838,7 @@
   id: HandRingsLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -854,7 +854,7 @@
   id: HandTwistingLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/lhand.rsi
     state: twisting
@@ -880,7 +880,7 @@
   id: HandBraceletRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -894,7 +894,7 @@
   id: HandDollJointsTattooRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -908,7 +908,7 @@
   id: HandHeavyTattoosRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -924,7 +924,7 @@
   id: HandProstheticRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -938,7 +938,7 @@
   id: HandRingsRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   coloring:
     default:
       type:
@@ -954,7 +954,7 @@
   id: HandTwistingRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Yowie, Daengati] # goob edit - yowies. Gaby Station - Daengati
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/rhand.rsi
     state: twisting

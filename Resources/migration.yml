@@ -332,7 +332,7 @@ WarpPointLibrary: null
 WarpPointMorgue: null
 WarpPointReporter: null
 WarpPointSingulo: null
-# WashingMachine: null Gaby - Manchas
+# WashingMachine: null # Gaby - Manchas
 WashingMachineBroken: null
 WashingMachineFilledClothes: null
 WeaponShotgunKammererNonLethal: null
