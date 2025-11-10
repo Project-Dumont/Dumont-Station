@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Crono209ggg <crono209gg@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Cocoon;
 using Content.Shared.Humanoid;
 using Robust.Client.GameObjects;
