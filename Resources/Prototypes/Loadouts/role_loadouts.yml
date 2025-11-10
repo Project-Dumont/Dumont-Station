@@ -144,7 +144,7 @@
   - Animals
   - GroupSpeciesBreathTool
   - CaptainGloves
-  - CivilianJumpsuitRequired
+  - CivilianJumpsuit
   - CivilianBackpack
   - CivilianHat
   - CivilianNeck
@@ -174,7 +174,7 @@
   - Animals
   - GroupSpeciesBreathTool
   - HoPGloves
-  - CivilianJumpsuitRequired
+  - CivilianJumpsuit
   - CivilianBackpack
   - CivilianHat
   - CivilianNeck
@@ -205,7 +205,7 @@
   groups:
   - GroupTankHarness
   - CivilianJumpsuitRequired
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - CivilianHat
   - CivilianNeck
   - CivilianFace
@@ -229,7 +229,7 @@
   - GroupTankHarness
   - BartenderHead
   - BartenderJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - BartenderOuterClothing
   - Glasses
   - Survival
@@ -255,7 +255,7 @@
   groups:
   - GroupTankHarness
   - BartenderJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -281,7 +281,7 @@
   - ChefHead
   - ChefMask
   - ChefJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - ChefOuterClothing
   - Glasses
   - Survival
@@ -307,7 +307,7 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -332,7 +332,7 @@
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -359,7 +359,7 @@
   - ChaplainMask
   - ChaplainNeck
   - ChaplainJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - ChaplainOuterClothing
   - Glasses
   - Survival
@@ -386,7 +386,7 @@
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - JanitorOuterClothing
   - Glasses
   - Survival
@@ -494,7 +494,7 @@
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - MusicianOuterClothing
   - Glasses
   - Survival
@@ -1074,7 +1074,7 @@
   - ZookeeperHead
   - ZookeeperJumpsuit
   - GroupTankHarness
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1099,7 +1099,7 @@
   - GroupTankHarness
   - ReporterJumpsuit
   - ReporterOuterClothing # Goobstation - Bodycams
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1150,7 +1150,7 @@
   - GroupTankHarness
   - BoxerJumpsuit
   - BoxerGloves
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets

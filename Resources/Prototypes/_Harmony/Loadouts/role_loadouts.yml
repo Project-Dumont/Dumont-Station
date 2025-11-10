@@ -10,7 +10,7 @@
   id: JobPermaPrisoner
   groups:
   - PermaPrisonerJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired #Gabystation
   - GroupTankHarness
   - Survival
   - Trinkets

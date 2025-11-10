@@ -26,7 +26,6 @@
     eyes: ClothingEyesHudCommand
     belt: ClothingBeltPaperworkFilled
     id: AdminAssistantPDA
-    shoes: ClothingShoesBootsLaceup
     pocket1: RubberStampAdminAssistant
     pocket2: UniqueAdminAssistantLockerTeleporter
   storage:
