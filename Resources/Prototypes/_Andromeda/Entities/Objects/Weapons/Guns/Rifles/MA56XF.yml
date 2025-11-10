@@ -20,8 +20,10 @@
       sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
     - type: Gun
       fireRate: 5.5
+      burstFireRate: 10
       shotsPerBurst: 4
       availableModes:
+        - SemiAuto
         - Burst
         - FullAuto
       soundGunshot:

@@ -19,8 +19,8 @@
     - type: Clothing
       sprite: _Andromeda/Objects/Weapons/Guns/Pistol/mx3r.rsi
     - type: Gun
-      fireRate: 6
-      burstFireRate: 12
+      fireRate: 8
+      burstFireRate: 18
       shotsPerBurst: 3
       availableModes:
         - SemiAuto
