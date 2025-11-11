@@ -20,7 +20,7 @@
 - type: cargoProduct
   id: CargoLuxuryHardsuit
   icon:
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+    sprite: _Gabystation/Clothing/Head/Hardsuits/luxury-mining.rsi #Gabystation 
     state: icon
   product: CrateCargoLuxuryHardsuit
   cost: 15000

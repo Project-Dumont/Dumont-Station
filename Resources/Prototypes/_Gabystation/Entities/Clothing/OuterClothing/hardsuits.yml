@@ -4,13 +4,13 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitDarkLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
   name: luxury mining hardsuit # Goob edit
-  description: An extremely modified mining hardsuit. It features decorations made of the purest gold, as well as colors that reference the Quartermaster.
+  description: An extremely modified mining hardsuit. It features decorations made of the purest gold, as well as colors that reference the Quartermaster. For the very wealthy only.
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: _Gabystation/Clothing/OuterClothing/Hardsuits/LuxuryMiningHardsuit.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/Hardsuits/luxury-mining.rsi
   - type: Clothing
-    sprite: _Gabystation/Clothing/OuterClothing/Hardsuits/LuxuryMiningHardsuit.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/Hardsuits/luxury-mining.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000

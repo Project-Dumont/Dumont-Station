@@ -44,11 +44,14 @@
   id: CrateCargoLuxuryHardsuit
   parent: CratePirate
   name: luxury mining hardsuit crate
-  description: Finally, a hardsuit Quartermasters could call their own. Centcomm has heard you, now stop asking.
+  description: Finally, a hardsuit Quartermasters could call their own, complete with a personalized cloak as a bonus. Central Command has heard you, now stop asking. #Gabystation edit
   components:
   - type: StorageFill
     contents:
-    - id: ClothingOuterHardsuitLuxury
+    - id: ClothingOuterHardsuitDarkLuxury #Gabystation edit
+      amount: 1
+    - id: ClothingNeckCloakLuxury #Gabystation edit
+      amount: 1
 
 - type: entity
   id: CrateCargoParcelWrap
