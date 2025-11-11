@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakLuxury
+  name: luxury cloak
+  description: A dark cloak with various gold decorations, an excellent garment to flaunt your wealth.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Cloaks/LuxuryCloak.rsi
