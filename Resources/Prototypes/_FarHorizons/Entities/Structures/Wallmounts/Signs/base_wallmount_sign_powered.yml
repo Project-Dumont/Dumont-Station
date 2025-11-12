@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseWallmountMachine
+  id: BaseSignPowered
+  abstract: true
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 50
+  - type: LitOnPowered
+  - type: PointLight 
+    radius: 1.5
+    energy: 1
+    color: "#5ba4d8" 
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
