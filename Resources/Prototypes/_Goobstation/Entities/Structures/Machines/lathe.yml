@@ -229,6 +229,8 @@
     # Einstein Engines Packs
     - Translators
     - TranslatorImplanters
+    # Gabystation Packs
+    - BotanicEquipment
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - MechBoardsSecurity
@@ -289,6 +291,8 @@
     - ServiceTools
     # Einstein Engines Packs
     - Translators
+    # Gabystation Packs
+    - BotanicEquipment
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ServiceBoardsEvilStatic # Donk Co microwave circiutboard

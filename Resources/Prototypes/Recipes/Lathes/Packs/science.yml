@@ -106,10 +106,10 @@
   - AnomalyVesselCircuitboard
   - AnomalyVesselExperimentalCircuitboard
   - AnomalySynchronizerCircuitboard
-  - BotanicDNACircuitboard # Ganimed
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
+  - BotanicDNACircuitboard # Ganimed
 
 - type: latheRecipePack
   id: CameraBoards

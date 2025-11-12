@@ -1,4 +1,5 @@
 - type: latheRecipe
-  parent: BaseCircuitboardRecipe
+  parent: [ BaseCircuitboardRecipe, BaseServiceComputerRecipeCategory ]
   id: BotanicDNACircuitboard
+  icon: _Gabystation/Structures/Machines/Icons/Computers/generic_computer.png
   result: BotanicDNACircuitboard

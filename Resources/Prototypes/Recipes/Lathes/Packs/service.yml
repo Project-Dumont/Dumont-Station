@@ -20,7 +20,6 @@
 - type: latheRecipePack
   id: ServiceStatic
   recipes:
-  - BotanicDNADisk # Ganimed
   - Bucket
   - Ashtray
   - DrinkMug
@@ -85,3 +84,4 @@
   - JukeboxCircuitBoard
   - DawInstrumentMachineCircuitboard
   - SheetifierMachineCircuitboard # Goobstation - Moved from ScienceBoards
+  - BotanicDNACircuitboard # Ganimed

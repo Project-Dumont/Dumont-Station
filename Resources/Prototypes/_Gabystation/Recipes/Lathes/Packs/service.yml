@@ -1,0 +1,6 @@
+## Dynamic
+
+- type: latheRecipePack
+  id: BotanicEquipment
+  recipes:
+  - BotanicDNADisk
