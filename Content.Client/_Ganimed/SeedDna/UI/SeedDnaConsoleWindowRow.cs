@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 CrimeMoot <wakeafa@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Ganimed.SeedDna;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
