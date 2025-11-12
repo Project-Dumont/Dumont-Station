@@ -223,6 +223,10 @@
     - AnomalyHost
     - ShadowkinEmotes
 
+  - type: SprintingAffectedByScale # GabyStation
+    max: 1.05
+    min: 1.0
+    
 - type: entity
   save: false
   parent: MobHumanDummy
