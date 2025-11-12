@@ -3144,7 +3144,7 @@
         ]
         },
         {
-            "name": "cans-sci",
+            "name": "cans_sci",
             "delays": [
         [
             0.1,

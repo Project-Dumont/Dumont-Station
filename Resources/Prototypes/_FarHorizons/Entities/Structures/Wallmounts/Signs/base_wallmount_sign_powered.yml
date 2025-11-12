@@ -8,8 +8,8 @@
   - type: LitOnPowered
   - type: PointLight 
     radius: 1.5
-    energy: 1
-    color: "#5ba4d8" 
+    energy: 0.75
+    color: "#ffffff" 
   - type: Appearance
   - type: GenericVisualizer
     visuals:

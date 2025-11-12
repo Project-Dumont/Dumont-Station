@@ -622,7 +622,7 @@
   - type: Sprite
     layers: #Far Horizons start
     - state: off
-    - state: conference
+    - state: conference_room
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
