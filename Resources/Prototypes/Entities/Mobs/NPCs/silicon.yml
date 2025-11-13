@@ -761,6 +761,8 @@
     - Hexadecimal
     - Common
     - Security
+  - type: StationAiVision
+    range: 1
 
 - type: entity
   parent: MobSecuritron

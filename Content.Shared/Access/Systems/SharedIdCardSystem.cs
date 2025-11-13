@@ -86,6 +86,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
@@ -209,11 +210,11 @@ public abstract class SharedIdCardSystem : EntitySystem
 
     public bool TryFindIdCards(EntityUid uid, out HashSet<Entity<IdCardComponent>> idCards)
     {
-        idCards = new();
+        idCards = [];
 
-        if (TryComp(uid, out HandsComponent? hands) &&
-            hands.ActiveHandEntity is EntityUid heldItem &&
-            TryGetIdCard(heldItem, out var idCard))
+        if (TryComp<HandsComponent>(uid, out var hands) &&
+            _hands.TryGetActiveItem((uid, hands), out var heldItem) &&
+            TryGetIdCard(heldItem.Value, out var idCard))
         {
             idCards.Add(idCard);
         }

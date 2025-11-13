@@ -74,6 +74,7 @@
     prototypes:
     - MobHonkBot
 
+- type: entity
   name: securitron spawner
   id : SpawnMobSecuritron
   parent: MarkerBase

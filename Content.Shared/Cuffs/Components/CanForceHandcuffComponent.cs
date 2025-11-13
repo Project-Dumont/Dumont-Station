@@ -8,6 +8,8 @@ namespace Content.Shared.Cuffs.Components;
 [Access(typeof(SharedCuffableSystem))]
 public sealed partial class CanForceHandcuffComponent : Component
 {
+    public const string ContainerId = "force-handcuff";
+
     [DataField]
     public EntProtoId HandcuffsId = "Handcuffs";
 
