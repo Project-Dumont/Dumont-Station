@@ -14,6 +14,10 @@ uplink-voice-mask-implanter-name = Implantador de máscara de identidade
 
 uplink-voice-mask-implanter-desc = Modifica suas cordas vocais e a estrutura do rosto para imitar qualquer identidade que você imaginar. Defina seu nome antes de falar para não se entregar.
 
+uplink-briefcase-gun-name = Maleta metralhadora
+
+uplink-briefcase-gun-desc = Uma maleta discreta com uma C-20K compacta escondida dentro. Cuidado ao apertar a alça!
+
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
 
 trigger-on-voice-record-failed-too-short = Mensagem curta demais. Tente novamente.

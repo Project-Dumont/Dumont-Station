@@ -22,3 +22,6 @@ ent-VoiceMaskImplanter = implantador de máscara de identidade
 
 ent-VoiceMaskImplant = implante de máscara de identidade
     .desc = Este implante permite mudar sua identidade à vontade.
+
+ent-WeaponSubMachineGunBriefcase = maleta marrom
+    .desc = Útil para carregar itens nas mãos.

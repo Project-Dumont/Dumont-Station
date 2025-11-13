@@ -37,3 +37,17 @@
 #    whitelist:
 #    - MedicalDoctor
 # </Trauma>
+
+- type: listing
+  id: uplinkBriefcaseGun
+  name: uplink-briefcase-gun-name
+  description: uplink-briefcase-gun-desc
+  productEntity: WeaponSubMachineGunBriefcase
+  cost:
+    Telecrystal: 50 # Trauma - was 14, 5x and cheaper
+  categories:
+    - UplinkJob
+  conditions:
+    - !type:BuyerJobCondition
+      whitelist:
+        - Lawyer

@@ -17,6 +17,10 @@ uplink-voice-mask-implanter-name = Identity Mask Implanter
 
 uplink-voice-mask-implanter-desc = Modifies your vocal cords and facial structure to be able to mimic anyone you could imagine. Be sure to set your name before speaking, or else you'll give yourself away.
 
+uplink-briefcase-gun-name = Briefcase Gun
+
+uplink-briefcase-gun-desc = An indistinct briefcase with a highly compact C-20K mounted inside it. Careful not the grip the handle too tight!
+
 selectable-lock-verb-category-name = Add lock
 
 selectable-lock-tool-prying-verb = Tool Lock (Crowbar)
