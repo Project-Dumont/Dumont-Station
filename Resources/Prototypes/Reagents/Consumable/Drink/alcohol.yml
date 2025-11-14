@@ -253,6 +253,9 @@
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
           shouldHave: false
+        - !type:OrganType # GabyStation - Oni takes 0,8 less poison damage
+          type: Oni
+          shouldHave: false
         damage:
           types:
             Poison: 1
@@ -285,6 +288,13 @@
           groups:
             Brute: -1
             Burn: -1
+      - !type:HealthChange # GabyStation - Oni heals 2.5 brute from alcohol
+        conditions:
+        - !type:OrganType
+          type: Oni
+        damage:
+          groups:
+            Brute: -2.5
       - !type:ModifyBloodLevel # Goobstation
         conditions:
         - !type:ReagentThreshold
@@ -318,6 +328,9 @@
           shouldHave: false
         - !type:OrganType # Goobstation - Yowie
           type: Yowie
+          shouldHave: false
+        - !type:OrganType # GabyStation - Oni don't vomit
+          type: Oni
           shouldHave: false
       - !type:Drunk
         boozePower: 2
