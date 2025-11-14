@@ -15,6 +15,7 @@ using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Stunnable;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat.Melee;
 
@@ -43,6 +44,9 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     [DataField("targetState")]
     public MobState TargetState = MobState.Alive;
 
+    [DataField("checkStun")]
+    public bool CheckStun = false;
+
     // Like movement we add a component and pass it off to the dedicated system.
 
     public override void Startup(NPCBlackboard blackboard)
@@ -58,6 +62,11 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     {
         // Don't attack if they're already as wounded as we want them.
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager))
+        {
+            return (false, null);
+        }
+
+        if (CheckStun && _entManager.HasComponent<StunnedComponent>(target))
         {
             return (false, null);
         }
@@ -103,6 +112,11 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
             blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager) &&
             target != EntityUid.Invalid)
         {
+            if (CheckStun && _entManager.HasComponent<StunnedComponent>(target))
+            {
+                return HTNOperatorStatus.Failed;
+            }
+
             combat.Target = target;
 
             // Success

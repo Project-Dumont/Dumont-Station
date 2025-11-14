@@ -53,6 +53,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:MeleeOperator
             targetKey: StunTarget
+            checkStun: true
 
 - type: htnCompound
   id: SecbotPatrolCompound
