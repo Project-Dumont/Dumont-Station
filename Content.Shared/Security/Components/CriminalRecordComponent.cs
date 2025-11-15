@@ -107,9 +107,12 @@ public sealed partial class CriminalRecordComponent : Component
         {SecurityStatus.None, 0f},
         {SecurityStatus.Suspected, 5f},
         {SecurityStatus.Wanted, 10f},
-        {SecurityStatus.Detained, 10f},
+        {SecurityStatus.Detained, 9.9f},
         {SecurityStatus.Paroled, 5f},
-        {SecurityStatus.Discharged, 3f},
+        {SecurityStatus.Discharged, 2.5f},
+        {SecurityStatus.Search, 7.5f},
+        {SecurityStatus.Perma, 9.9f},
+        {SecurityStatus.Dangerous, 10f}
     };
 
     [DataField]
