@@ -3,11 +3,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-# Note: This file exists in the root Resources to ensure the server content pack
-# loads the viewport pack prototype used by the store listing.
-
-# Bundle: Viewport actions (Set + Open)
-# Place viewport action
 - type: entity
   id: ActionMalfAiSetViewport
   name: malfai-viewport-place-name
@@ -24,7 +19,6 @@
   - type: WorldTargetAction
     event: !type:MalfAiSetViewportActionEvent
 
-# Open viewport action
 - type: entity
   id: ActionMalfAiOpenViewport
   name: malfai-viewport-open-name
@@ -37,8 +31,6 @@
   - type: InstantAction
     event: !type:MalfAiOpenViewportActionEvent
 
-
-# Malf AI: required action entities for rule startup
 - type: entity
   id: ActionMalfAiOpenStore
   name: malfai-open-store-name
@@ -63,7 +55,6 @@
   - type: InstantAction
     event: !type:OpenMalfAiBorgsUiActionEvent
 
-# New: Doomsday Protocol (AI-only)
 - type: entity
   id: ActionMalfAiDoomsday
   name: malfai-doomsday-name
@@ -76,7 +67,6 @@
   - type: InstantAction
     event: !type:MalfAiDoomsdayActionEvent
 
-# New: Robotics Factory (AI-only)
 - type: entity
   id: ActionMalfAiRoboticsFactory
   name: malfai-robotics-factory-name
@@ -92,7 +82,6 @@
   - type: WorldTargetAction
     event: !type:MalfAiRoboticsFactoryActionEvent
 
-# Shunt to APC action
 - type: entity
   id: ActionMalfAiShuntToApc
   name: malfai-shunt-to-apc-name
@@ -108,7 +97,6 @@
   - type: EntityTargetAction
     event: !type:MalfAiShuntToApcActionEvent
 
-# Voice Modulator action
 - type: entity
   id: ActionMalfAiVoiceModulator
   name: malfai-voice-modulator-name
@@ -121,7 +109,6 @@
   - type: InstantAction
     event: !type:MalfAiVoiceModulatorActionEvent
 
-# Return to Core action (used for shunt and mech hijack)
 - type: entity
   id: ActionMalfAiReturnToCore
   name: malfai-return-to-core-name
