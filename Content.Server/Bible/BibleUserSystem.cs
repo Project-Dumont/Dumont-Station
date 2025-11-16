@@ -40,6 +40,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Religion;
 using Content.Goobstation.Shared.Bible;
 using Content.Server.Ghost.Roles.Events;
 using Content.Server.Popups;
@@ -67,7 +68,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Eye;
 
 namespace Content.Server.Bible
 {
@@ -84,7 +84,6 @@ namespace Content.Server.Bible
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedStunSystem _stun = default!;
-        [Dependency] private readonly SharedEyeSystem _eye = default!;
 
         public override void Initialize()
         {
@@ -92,7 +91,6 @@ namespace Content.Server.Bible
 
             SubscribeLocalEvent<BibleComponent, AfterInteractEvent>(OnAfterInteract);
             SubscribeLocalEvent<BibleComponent, EntGotInsertedIntoContainerMessage>(OnInsertedContainer);
-            SubscribeLocalEvent<BibleUserComponent, ComponentInit>(ViewFracture);
             SubscribeLocalEvent<SummonableComponent, GetVerbsEvent<AlternativeVerb>>(AddSummonVerb);
             SubscribeLocalEvent<SummonableComponent, GetItemActionsEvent>(GetSummonAction);
             SubscribeLocalEvent<SummonableComponent, SummonActionEvent>(OnSummon);
@@ -199,7 +197,12 @@ namespace Content.Server.Bible
                 return;
             }
 
-            // This only has a chance to fail if the target is not wearing anything on their head and is not a familiar..
+            // Goobstation - Wraith - Start
+            var ev = new BibleSmiteUsed();
+            RaiseLocalEvent(args.Target.Value, ref ev);
+            // Goobstation - Wraith - End
+
+            // This only has a chance to fail if the target is not wearing anything on their head and is not a familiar.
             if (!_invSystem.TryGetSlotEntity(args.Target.Value, "head", out var _) && !HasComp<FamiliarComponent>(args.Target.Value))
             {
                 if (_random.Prob(component.FailChance))
@@ -336,12 +339,6 @@ namespace Content.Server.Bible
             }
             component.AlreadySummoned = true;
             _actionsSystem.RemoveAction(user, component.SummonActionEntity);
-        }
-
-        private void ViewFracture(Entity<BibleUserComponent> ent, ref ComponentInit args)
-        {
-            if (TryComp<EyeComponent>(ent, out var eye))
-            _eye.SetVisibilityMask(ent, eye.VisibilityMask | (int) VisibilityFlags.EldritchInfluenceSpent);
         }
     }
 }

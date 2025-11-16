@@ -109,6 +109,7 @@ using Content.Shared.Store.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Chat.Systems;
 using Robust.Server.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -129,11 +130,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     // goob edit end
 
-    [ValidatePrototypeId<CurrencyPrototype>]
-    private const string TelecrystalCurrencyPrototype = "Telecrystal";
-
-    [ValidatePrototypeId<TagPrototype>]
-    private const string NukeOpsUplinkTagPrototype = "NukeOpsUplink";
+    private static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
+    private static readonly ProtoId<TagPrototype> NukeOpsUplinkTagPrototype = "NukeOpsUplink";
 
     [ValidatePrototypeId<TagPrototype>]
     private const string NukeOpsReinforcementUplinkTagPrototype = "NukeOpsReinforcementUplink"; // Goobstation
@@ -197,6 +195,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             args.AddLine(text);
         }
 
+        /* Goob edit - nukie objective
         args.AddLine(Loc.GetString($"{component.LocalePrefix}list-start"));
 
         var antags =_antag.GetAntagIdentifiers(uid);
@@ -204,7 +203,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         foreach (var (_, sessionData, name) in antags)
         {
             args.AddLine(Loc.GetString($"{component.LocalePrefix}list-name-user", ("name", name), ("user", sessionData.UserName)));
-        }
+        } */
     }
 
     private void OnNukeExploded(NukeExplodedEvent ev)

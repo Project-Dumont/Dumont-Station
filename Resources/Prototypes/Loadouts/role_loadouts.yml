@@ -108,15 +108,19 @@
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <138228340+OttavioBasques@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Phooooooooooooooooooooooooooooooosphate <184853112+Phooooooooooooooooooooooooooooooosphate@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <117521143+VictorJob@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
@@ -137,11 +141,12 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - Survival
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
   - CaptainGloves
-  - CivilianJumpsuitRequired
+  - CivilianJumpsuit
   - CivilianBackpack
   - CivilianHat
   - CivilianNeck
@@ -166,11 +171,12 @@
   - HoPOuterClothing
   - Glasses
   - Survival
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
   - HoPGloves
-  - CivilianJumpsuitRequired
+  - CivilianJumpsuit
   - CivilianBackpack
   - CivilianHat
   - CivilianNeck
@@ -201,7 +207,7 @@
   groups:
   - GroupTankHarness
   - CivilianJumpsuitRequired
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - CivilianHat
   - CivilianNeck
   - CivilianFace
@@ -225,7 +231,7 @@
   - GroupTankHarness
   - BartenderHead
   - BartenderJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - BartenderOuterClothing
   - Glasses
   - Survival
@@ -251,7 +257,7 @@
   groups:
   - GroupTankHarness
   - BartenderJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -277,7 +283,7 @@
   - ChefHead
   - ChefMask
   - ChefJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - ChefOuterClothing
   - Glasses
   - Survival
@@ -303,7 +309,7 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -328,7 +334,7 @@
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -355,7 +361,7 @@
   - ChaplainMask
   - ChaplainNeck
   - ChaplainJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - ChaplainOuterClothing
   - Glasses
   - Survival
@@ -382,7 +388,7 @@
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - JanitorOuterClothing
   - Glasses
   - Survival
@@ -490,7 +496,7 @@
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - MusicianOuterClothing
   - Glasses
   - Survival
@@ -524,6 +530,7 @@
   - QuartermasterShoes
   - Glasses
   - Survival
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -561,6 +568,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -587,6 +595,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -606,6 +615,8 @@
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
   - SurvivalExtended
+  - TrinketsAtmosphericTechnician #Gabystation
+  - TrinketsCommand #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -615,6 +626,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
   - ChiefEngineerEnvirohelm
@@ -637,6 +649,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -655,6 +668,7 @@
   - StationEngineerShoes
   - StationEngineerID
   - SurvivalExtended
+  - TrinketsAtmosphericTechnician #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -664,6 +678,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -681,6 +696,7 @@
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
   - SurvivalExtended
+  - TrinketsAtmosphericTechnician #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
@@ -690,6 +706,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -720,6 +737,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -750,6 +768,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -774,6 +793,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -794,11 +814,14 @@
   - HeadofSecurityOuterClothing
   - HeadofSecurityShoes # Goobstation edit
   - SurvivalSecurity
+  - TrinketsCommand #Gabystation
+  - TrinketsSecurity #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
   - GroupSpeciesBreathToolSecurity
   - HeadofSecurityGloves
+  - CivilianShoes # Gabystation
   # Goobstation - EE Plasmeme Change.
   - HeadofSecurityEnvirohelm
   - HeadofSecurityEnvirosuit
@@ -816,10 +839,12 @@
   - WardenOuterClothing
   - SecurityShoes
   - SurvivalSecurity
+  - TrinketsSecurity  #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
   - GroupSpeciesBreathToolSecurity
+  - CivilianShoes # Gabystation
   # Goobstation - EE Plasmeme Change.
   - WardenEnvirohelm
   - WardenEnvirosuit
@@ -838,10 +863,12 @@
   - SecurityPDA
   - SecurityBelt
   - SurvivalSecurity
+  - TrinketsSecurity  #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
   - GroupSpeciesBreathToolSecurity
+  - CivilianShoes # Gabystation
   # Goobstation - EE Plasmeme Change.
   - SecurityOfficerEnvirohelm
   - SecurityOfficerEnvirosuit
@@ -857,6 +884,7 @@
   - DetectiveOuterClothing
   - SecurityShoes
   - SurvivalSecurity
+  - TrinketsSecurity  #Gabystation
   - Trinkets
   - SecurityStar
   - Animals
@@ -868,6 +896,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -887,6 +916,7 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolSecurity
+  - CivilianShoes # Gabystation
   # Goobstation - EE Plasmeme Change.
   - SecurityCadetEnvirohelm
   - SecurityCadetEnvirosuit
@@ -907,6 +937,8 @@
   - ChiefMedicalOfficerShoes
   - MedicalEyewear
   - SurvivalMedical
+  - TrinketsCommand #Gabystation
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -916,6 +948,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
   - ChiefMedicalOfficerEnvirohelm
@@ -936,6 +969,7 @@
   - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -945,6 +979,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
   - MedicalDoctorEnvirohelm
@@ -968,6 +1003,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
   - MedicalInternEnvirohelm
@@ -986,6 +1022,7 @@
   - ChemistOuterClothing
   - MedicalShoes
   - SurvivalMedical
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -995,6 +1032,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
   - ChemistEnvirohelm
@@ -1014,6 +1052,7 @@
   - ParamedicShoes
   - MedicalEyewear
   - SurvivalMedical
+  - TrinketsMedicalDoctor #Gabystation
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolMedical
@@ -1023,6 +1062,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   # Goobstation - EE Plasmeme Change.
   - ParamedicEnvirohelm
@@ -1036,7 +1076,7 @@
   - ZookeeperHead
   - ZookeeperJumpsuit
   - GroupTankHarness
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1047,6 +1087,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -1060,7 +1101,7 @@
   - GroupTankHarness
   - ReporterJumpsuit
   - ReporterOuterClothing # Goobstation - Bodycams
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1071,6 +1112,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -1096,6 +1138,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.
@@ -1109,7 +1152,7 @@
   - GroupTankHarness
   - BoxerJumpsuit
   - BoxerGloves
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1120,6 +1163,7 @@
   - CivilianHat
   - CivilianFace
   - CivilianGloves
+  - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
   # Goobstation - EE Plasmeme Change.

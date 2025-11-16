@@ -24,8 +24,6 @@ namespace Content.Goobstation.Shared.Inventory;
 
 public partial class GoobInventorySystem
 {
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
-
     public void InitializeRelays()
     {
         base.Initialize();
@@ -36,7 +34,7 @@ public partial class GoobInventorySystem
         SubscribeLocalEvent<InventoryComponent, FlashDurationMultiplierEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, GetStandingUpTimeMultiplierEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, GetSpellInvocationEvent>(RelayInventoryEvent);
-        SubscribeLocalEvent<InventoryComponent, GetMessagePostfixEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, GetMessageColorOverrideEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, ClothingAutoInjectRelayedEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, ModifyStunTimeEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, IsEyesCoveredCheckEvent>(RelayInventoryEvent);

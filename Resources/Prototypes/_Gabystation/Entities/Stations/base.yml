@@ -1,0 +1,5 @@
+- type: entity
+  id: BaseStationEconomy
+  abstract: true
+  components:
+    - type: EconomyManager

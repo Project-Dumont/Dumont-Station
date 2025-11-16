@@ -166,6 +166,7 @@
     #   hairColorSaturation: 0.30
   goobcoins: 50 #Goob content
   weight: 20
+  salary: 50 # Gaby content
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true

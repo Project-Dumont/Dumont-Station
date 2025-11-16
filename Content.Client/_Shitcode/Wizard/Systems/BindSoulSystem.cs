@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -13,6 +15,8 @@ namespace Content.Client._Shitcode.Wizard.Systems;
 
 public sealed class BindSoulSystem : SharedBindSoulSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -26,10 +30,14 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
             return;
 
         var color = Color.FromHex("#003300");
+        var drawDepth = (int) Shared.DrawDepth.DrawDepth.Items;
+
+        if (sprite.DrawDepth < drawDepth)
+            _sprite.SetDrawDepth((ent.Owner, sprite), drawDepth);
 
         for (var i = 0; i < sprite.AllLayers.Count(); i++)
         {
-            sprite.LayerSetColor(i, color);
+            _sprite.LayerSetColor((ent.Owner, sprite), i, color);
         }
     }
 }

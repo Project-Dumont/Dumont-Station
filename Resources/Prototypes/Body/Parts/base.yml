@@ -4,7 +4,9 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -264,12 +266,12 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: Woundable
-    integrity: 65
-    integrityCap: 65
+    integrity: 50
+    integrityCap: 50
     thresholds:
-      Minor: 50
+      Minor: 45
       Moderate: 35
-      Severe: 20
+      Severe: 25
       Critical: 10
       Mangled: 0
 
@@ -301,12 +303,12 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: Woundable
-    integrity: 65
-    integrityCap: 65
+    integrity: 50
+    integrityCap: 50
     thresholds:
-      Minor: 50
+      Minor: 45
       Moderate: 35
-      Severe: 20
+      Severe: 25
       Critical: 10
       Mangled: 0
 
@@ -334,13 +336,13 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: null
   - type: Woundable
-    integrity: 50
-    integrityCap: 50
+    integrity: 35
+    integrityCap: 35
     thresholds:
-      Minor: 42
-      Moderate: 36
-      Severe: 26
-      Critical: 15
+      Minor: 32
+      Moderate: 26
+      Severe: 18
+      Critical: 10
       Mangled: 0
 
 - type: entity
@@ -357,13 +359,13 @@
     symmetry: Right
     toolName: "a right hand" # Shitmed Change
   - type: Woundable
-    integrity: 50
-    integrityCap: 50
+    integrity: 35
+    integrityCap: 35
     thresholds:
-      Minor: 42
-      Moderate: 36
-      Severe: 26
-      Critical: 15
+      Minor: 32
+      Moderate: 26
+      Severe: 18
+      Critical: 10
       Mangled: 0
   - type: WoundableVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
@@ -405,12 +407,12 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: Woundable
-    integrity: 65
-    integrityCap: 65
+    integrity: 50
+    integrityCap: 50
     thresholds:
-      Minor: 50
+      Minor: 45
       Moderate: 35
-      Severe: 20
+      Severe: 25
       Critical: 10
       Mangled: 0
 
@@ -443,12 +445,12 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: Woundable
-    integrity: 65
-    integrityCap: 65
+    integrity: 50
+    integrityCap: 50
     thresholds:
-      Minor: 50
+      Minor: 45
       Moderate: 35
-      Severe: 20
+      Severe: 25
       Critical: 10
       Mangled: 0
 
@@ -476,13 +478,13 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: null
   - type: Woundable
-    integrity: 50
-    integrityCap: 50
+    integrity: 35
+    integrityCap: 35
     thresholds:
-      Minor: 42
-      Moderate: 36
-      Severe: 26
-      Critical: 15
+      Minor: 32
+      Moderate: 26
+      Severe: 18
+      Critical: 10
       Mangled: 0
 
 - type: entity
@@ -509,11 +511,11 @@
         sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
     bleedingOverlay: null
   - type: Woundable
-    integrity: 50
-    integrityCap: 50
+    integrity: 35
+    integrityCap: 35
     thresholds:
-      Minor: 42
-      Moderate: 36
-      Severe: 26
-      Critical: 15
+      Minor: 32
+      Moderate: 26
+      Severe: 18
+      Critical: 10
       Mangled: 0

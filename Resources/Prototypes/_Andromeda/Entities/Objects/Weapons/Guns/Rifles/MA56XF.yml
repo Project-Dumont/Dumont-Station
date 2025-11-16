@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <138228340+OttavioBasques@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -20,8 +21,11 @@
       sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
     - type: Gun
       fireRate: 5.5
+      burstFireRate: 12
       shotsPerBurst: 4
+      burstCooldown: 0.55
       availableModes:
+        - SemiAuto
         - Burst
         - FullAuto
       soundGunshot:

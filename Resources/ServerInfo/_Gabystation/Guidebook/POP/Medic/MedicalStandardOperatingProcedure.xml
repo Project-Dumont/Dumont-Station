@@ -1,0 +1,84 @@
+<!--
+SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+
+  # Chefe Médico
+
+  [bold]1.[/bold] O Chefe Médico pode portar um Desfibrilador comum ou Compacto consigo o tempo todo;
+
+  [bold]2.[/bold] O Chefe Médico pode portar um flash e seu hiposspray;
+
+  [bold]3.[/bold] O Chefe Médico pode portar substâncias químicas de autodefesa para seu hiposspray se o nível de alerta da estação justificar;
+
+  [bold]4.[/bold] O Chefe Médico não pode permitir a criação de misturas venenosas ou explosivas na Química sem consentimento expresso do Chefe de Segurança ou, na ausência deste, sem que haja perigo claro e urgente à integridade da estação, exceto em situações onde Implantes Químicos sejam necessários;
+
+  [bold]5.[/bold] O Chefe Médico pode entregar seu Monitor Portátil de Tripulação ao Paramédico caso seja necessário substituição;
+
+  [bold]6.[/bold] O Chefe Médico deve garantir que todos os corpos revivíveis sejam revividos.
+
+  # Médico e Estagiários
+
+  [bold]1.[/bold] Embora não seja obrigatório, recomenda-se que Médicos usem Máscaras Estéreis e luvas de Látex/Nitrilo ao lidar com pacientes. Esta diretriz se torna obrigatória durante surtos virais;
+
+  [bold]2.[/bold] Estagiários devem focar em ajudar Médicos e Cirurgiões no que for necessário e atender pacientes que precisem de cuidados leves. Se necessário, podem assumir funções regulares de Médico;
+
+  [bold]3.[/bold] Médicos devem garantir que haja pelo menos um (1) Desfibrilador disponível próximo à área principal de tratamento;
+
+  [bold]4.[/bold] Médicos devem manter toda a Enfermaria em estado higiênico na ausência de equipe de limpeza. Isso inclui, mas não se limita a, limpar resíduos orgânicos, fluidos e/ou corpos;
+
+  [bold]5.[/bold] Médicos devem colocar todos os corpos em sacos mortuários e/ou gavetas do necrotério. Além disso, devem garantir que o Necrotério não contenha corpos revivíveis;
+
+  [bold]6.[/bold] Médicos não podem sair da Enfermaria para atividades recreativas se houver pacientes sem atendimento que precisem de tratamento;
+
+  [bold]7.[/bold] Médicos não são obrigados a tratar pacientes que estejam se machucando ativamente e de forma intencional. Se tratados, encaminhe o paciente ao Psicólogo da estação;
+
+  [bold]8.[/bold] Médicos devem devolver qualquer equipamento de tripulantes falecidos que foram levados ao necrotério para armazenamento permanente ao respectivo departamento.
+
+  # Químico
+
+  [bold]1.[/bold] Químicos não pode experimentar com misturas explosivas;
+
+  [bold]2.[/bold] Químicos não pode experimentar com misturas venenosas e/ou entorpecentes;
+
+  [bold]3.[/bold] Químicos não pode experimentar com Life ou outras misturas altamente experimentais derivadas de Omnizina
+
+  [bold]4.[/bold] Químicos não pode produzir bebidas alcoólicas;
+
+  [bold]5.[/bold] Químicos, em conjunto com Médicos, devem garantir que a Clonagem esteja abastecida com Biomassa, se estiver configurada.
+
+  [bold]6.[/bold] Químicos deve garantir que a Enfermaria esteja abastecida com pelo menos medicamentos suficientes para tratar danos Brutos, Queimaduras, Respiratórios e Tóxicos. Não seguir esta diretriz ou tentar segui-la após trinta (30) minutos é considerado violação do POP;
+
+  [bold]7.[/bold] Químicos não pode deixar a Química sem supervisão se a Enfermaria estiver sem medicamentos, exceto se a Química estiver inutilizável.
+
+  # Paramédico
+
+  [bold]1.[/bold] O Paramédico pode portar um Desfibrilador consigo o tempo todo, desde que deixe pelo menos um (1) Desfibrilador disponível para uso na Enfermaria;
+
+  [bold]2.[/bold] O Paramédico deve estabilizar todos os pacientes antes de levá-los para a Enfermaria;
+
+  [bold]3.[/bold] Caso um paciente seja encontrado morto e não possa ser ressuscitado por Desfibrilação, o Paramédico deve garantir que o paciente seja levado à Enfermaria e notificar os Médicos;
+
+  [bold]4.[/bold] O Paramédico está autorizado a portar o Monitor Portátil de Tripulação, mas não pode distribuí-lo para outros membros da tripulação;
+
+  [bold]5.[/bold] O Paramédico deve portar materiais suficientes para prestar primeiros socorros adequados para todos os Tipos de Ferimentos Graves (Bruto, Queimadura, Tóxico, Respiratório).
+
+  # Psicólogo
+
+  [bold]1.[/bold] O Psicólogo pode realizar uma avaliação psicológica completa em qualquer pessoa, junto de qualquer tratamento necessário, desde que a pessoa em questão o procure;
+
+  [bold]2.[/bold] O Psicólogo não pode forçar alguém a receber terapia se a pessoa não quiser. Exceção é feita para criminosos violentos e apenas se o Chefe de Segurança, Magistrado ou Capitão ordenar;
+
+  [bold]3.[/bold] O Psicólogo não pode administrar nenhum medicamento sem consentimento do paciente;
+
+  [bold]4.[/bold] O Psicólogo não pode amordaçar ou colocar camisa de força em ninguém sem permissão expressa do Chefe Médico ou Chefe de Segurança. Exceção é feita para pacientes violentos e/ou fora de controle;
+
+  [bold]5.[/bold] O Psicólogo pode recomendar o rebaixamento de um paciente se considerar que sua condição psicológica o torna inapto para cumprir suas funções;
+
+  [bold]6.[/bold] O Psicólogo pode solicitar consultar prisioneiros em Prisão Permanente. Isso deve ocorrer dentro da Brig, de preferência na Permabrig, e apenas com autorização do Carcereiro e/ou Chefe de Segurança. Deve ser feito sob supervisão de um membro da Segurança com acesso à Permabrig.
+</Document>

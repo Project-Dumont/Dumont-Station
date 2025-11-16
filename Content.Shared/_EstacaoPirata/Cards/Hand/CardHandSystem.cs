@@ -1,7 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Daniela <43686351+Day-OS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DoutorWhite <thedoctorwhite@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -28,11 +33,6 @@ namespace Content.Shared._EstacaoPirata.Cards.Hand;
 
 public sealed class CardHandSystem : EntitySystem
 {
-    [ValidatePrototypeId<EntityPrototype>]
-    public readonly EntProtoId CardHandBaseName = "CardHandBase";
-    [ValidatePrototypeId<EntityPrototype>]
-    public readonly EntProtoId CardDeckBaseName = "CardDeckBase";
-
     [Dependency] private readonly CardStackSystem _cardStack = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -169,12 +169,20 @@ public sealed class CardHandSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        var cardDeck = SpawnInSameParent(CardDeckBaseName, hand);
+        if (!TryComp(hand, out CardStackComponent? handStack))
+            return;
+
+        if (handStack.Cards.Count <= 0)
+            return;
+
+        if (!TryComp(handStack.Cards.First(), out CardComponent? firstCardComp))
+            return;
+
+        var cardDeck = SpawnInSameParent(firstCardComp.CardDeckBaseName, hand);
         bool isHoldingCards = _hands.IsHolding(user, hand);
 
         EnsureComp<CardStackComponent>(cardDeck, out var deckStack);
-        if (!TryComp(hand, out CardStackComponent? handStack))
-            return;
+
         _cardStack.TryJoinStacks(cardDeck, hand, deckStack, handStack, null);
 
         if (isHoldingCards)
@@ -184,7 +192,7 @@ public sealed class CardHandSystem : EntitySystem
     {
         if (card == target || _net.IsClient)
             return;
-        var cardHand = SpawnInSameParent(CardHandBaseName, card);
+        var cardHand = SpawnInSameParent(comp.CardHandBaseName, card);
         if (TryComp<CardHandComponent>(cardHand, out var handComp))
             handComp.Flipped = targetComp.Flipped;
         if (!TryComp(cardHand, out CardStackComponent? stack))
@@ -202,7 +210,7 @@ public sealed class CardHandSystem : EntitySystem
     {
         if (_net.IsClient)
             return;
-        var cardHand = SpawnInSameParent(CardHandBaseName, card);
+        var cardHand = SpawnInSameParent(comp.CardHandBaseName, card);
         if (TryComp<CardHandComponent>(cardHand, out var handComp))
             handComp.Flipped = comp.Flipped;
         if (!TryComp(cardHand, out CardStackComponent? stack))

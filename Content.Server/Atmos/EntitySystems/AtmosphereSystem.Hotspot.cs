@@ -10,10 +10,14 @@
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -45,6 +49,9 @@ namespace Content.Server.Atmos.EntitySystems
         [ViewVariables(VVAccess.ReadWrite)]
         public SoundSpecifier? HotspotSound { get; private set; } = new SoundCollectionSpecifier(DefaultHotspotSounds);
 
+        /// <summary>
+        /// Run every tick on every hotspot
+        /// </summary>
         private void ProcessHotspot(
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
             TileAtmosphere tile)
@@ -67,18 +74,22 @@ namespace Content.Server.Atmos.EntitySystems
             if(tile.ExcitedGroup != null)
                 ExcitedGroupResetCooldowns(tile.ExcitedGroup);
 
+            // If the hotspot is too weak to exist/doesn't have the correct conditions, yeet it for deletion at the end of the tick
             if ((tile.Hotspot.Temperature < Atmospherics.FireMinimumTemperatureToExist) || (tile.Hotspot.Volume <= 1f)
-                || tile.Air == null || tile.Air.GetMoles(Gas.Oxygen) < 0.5f || (tile.Air.GetMoles(Gas.Plasma) < 0.5f && tile.Air.GetMoles(Gas.Tritium) < 0.5f && tile.Air.GetMoles(Gas.Hydrogen) < 0.5f
-                && tile.Air.GetMoles(Gas.HyperNoblium) > 5f))  // Assmos - /tg/ gases
+                || tile.Air == null || tile.Air.GetMoles(Gas.Oxygen) < 0.5f || ((tile.Air.GetMoles(Gas.Plasma) < 0.5f && tile.Air.GetMoles(Gas.Tritium) < 0.5f && tile.Air.GetMoles(Gas.Hydrogen) < 0.5f
+                && tile.Air.GetMoles(Gas.HyperNoblium) > 5f)) && tile.PuddleSolutionFlammability == 0)  // Assmos - /tg/ gases
             {
                 tile.Hotspot = new Hotspot();
+                tile.Hotspot.Type = tile.PuddleSolutionFlammability > 0 ? HotspotType.Puddle : HotspotType.Gas;
                 InvalidateVisuals(ent, tile);
                 return;
             }
 
             PerformHotspotExposure(tile);
 
-            if (tile.Hotspot.Bypassing)
+            tile.Hotspot.Type = tile.PuddleSolutionFlammability > 0 ? HotspotType.Puddle : HotspotType.Gas;
+
+            if (tile.Hotspot.Bypassing || tile.PuddleSolutionFlammability > 0)
             {
                 tile.Hotspot.State = 3;
 
@@ -144,6 +155,9 @@ namespace Content.Server.Atmos.EntitySystems
             // TODO ATMOS Maybe destroy location here?
         }
 
+        /// <summary>
+        /// Run whenever you want to try start a hotspot: run every tick by ignition sources, and also ran on tiles whenever a fire/hotspot is spreading
+        /// </summary>
         private void HotspotExpose(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile,
             float exposedTemperature, float exposedVolume, bool soh = false, EntityUid? sparkSourceUid = null)
         {
@@ -159,12 +173,14 @@ namespace Content.Server.Atmos.EntitySystems
             var tritium = tile.Air.GetMoles(Gas.Tritium);
             var hydrogen = tile.Air.GetMoles(Gas.Hydrogen); // Assmos - /tg/ gases
             var hypernob = tile.Air.GetMoles(Gas.HyperNoblium); // Assmos - /tg/ gases
+            var puddleFlammability = tile.PuddleSolutionFlammability;
 
+            // If a hotspot already exists on this tile, just strengthen it and return early.
             if (tile.Hotspot.Valid)
             {
                 if (soh)
                 {
-                    if (plasma > 0.5f && hypernob < 5f || tritium > 0.5f && hypernob < 5f || hydrogen > 0.5f && hypernob < 5f) // Assmos - /tg/ gases
+                    if (plasma > 0.5f && hypernob < 5f || tritium > 0.5f && hypernob < 5f || hydrogen > 0.5f && hypernob < 5f || puddleFlammability > 0) // Assmos - /tg/ gases
                     {
                         if (tile.Hotspot.Temperature < exposedTemperature)
                             tile.Hotspot.Temperature = exposedTemperature;
@@ -172,22 +188,27 @@ namespace Content.Server.Atmos.EntitySystems
                             tile.Hotspot.Volume = exposedVolume;
                     }
                 }
+                tile.Hotspot.Temperature = AddClampedTemperature(tile.Hotspot.Temperature, 1 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 1.2)));
 
                 return;
             }
 
-            if ((exposedTemperature > Atmospherics.PlasmaMinimumBurnTemperature) && (plasma > 0.5f && hypernob < 5f || tritium > 0.5f && hypernob < 5f || hydrogen > 0.5f && hypernob < 5f)) // Assmos - /tg/ gases
+            if ((exposedTemperature > Atmospherics.PlasmaMinimumBurnTemperature) && (plasma > 0.5f && hypernob < 5f || tritium > 0.5f && hypernob < 5f || hydrogen > 0.5f && hypernob < 5f) || (puddleFlammability > 0 && exposedTemperature > 573.15 - 50 * puddleFlammability) ) // Assmos - /tg/ gases
             {
                 if (sparkSourceUid.HasValue)
                     _adminLog.Add(LogType.Flammable, LogImpact.High, $"Heat/spark of {ToPrettyString(sparkSourceUid.Value)} caused atmos ignition of gas: {tile.Air.Temperature.ToString():temperature}K - {oxygen}mol Oxygen, {plasma}mol Plasma, {tritium}mol Tritium, {hydrogen}mol Hydrogen"); //Assmos - /tg/ gases
 
+                var temperature = exposedTemperature;
+                if(puddleFlammability > 0)
+                    temperature = AddClampedTemperature(temperature, 1 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 1.2)));
                 tile.Hotspot = new Hotspot
                 {
                     Volume = exposedVolume * 25f,
-                    Temperature = exposedTemperature,
+                    Temperature = temperature,
                     SkippedFirstProcess = tile.CurrentCycle > gridAtmosphere.UpdateCounter,
                     Valid = true,
-                    State = 1
+                    State = 1,
+                    Type = puddleFlammability > 0 ? HotspotType.Puddle : HotspotType.Gas
                 };
 
                 AddActiveTile(gridAtmosphere, tile);
@@ -195,11 +216,16 @@ namespace Content.Server.Atmos.EntitySystems
             }
         }
 
+        /// <summary>
+        /// The actual meat of how a hotspot reacts with the atmos system is done here, called via ProcessHotspot once a tick
+        /// </summary>
         private void PerformHotspotExposure(TileAtmosphere tile)
         {
-            if (tile.Air == null || !tile.Hotspot.Valid) return;
+            if (tile.Air == null || !tile.Hotspot.Valid)
+                return;
 
-            tile.Hotspot.Bypassing = tile.Hotspot.SkippedFirstProcess && tile.Hotspot.Volume > tile.Air.Volume*0.95f;
+            // A bypassing hotspot does NOT interact with atmos (intended for plasma/trit fires "carrying" the hotspot with them)
+            tile.Hotspot.Bypassing = tile.Hotspot.SkippedFirstProcess && tile.Hotspot.Volume > tile.Air.Volume*0.95f && tile.PuddleSolutionFlammability == 0;
 
             if (tile.Hotspot.Bypassing)
             {
@@ -209,7 +235,7 @@ namespace Content.Server.Atmos.EntitySystems
             else
             {
                 var affected = tile.Air.RemoveVolume(tile.Hotspot.Volume);
-                affected.Temperature = tile.Hotspot.Temperature;
+                affected.Temperature = MathF.Max(tile.Hotspot.Temperature, Atmospherics.T0C + 50 * tile.PuddleSolutionFlammability);
                 React(affected, tile);
                 tile.Hotspot.Temperature = affected.Temperature;
                 tile.Hotspot.Volume = affected.ReactionResults[(byte)GasReaction.Fire] * Atmospherics.FireGrowthRate;
@@ -224,6 +250,14 @@ namespace Content.Server.Atmos.EntitySystems
             {
                 RaiseLocalEvent(entity, ref fireEvent);
             }
+        }
+
+        /// <summary>
+        /// Used for reagent fires to ensure the temperature doesn't get too far out of control.
+        /// </summary>
+        private float AddClampedTemperature(float temperature, float kelvinToAdd, float clampTemperature)
+        {
+            return MathF.Max(temperature, MathF.Min(temperature + kelvinToAdd, clampTemperature));
         }
     }
 }

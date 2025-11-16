@@ -1,12 +1,13 @@
-traitor-corporations-flavor-dataset-1 = Terroristas ARC
-traitor-corporations-flavor-dataset-2 = Frente de Libertação das Abelhas
-traitor-corporations-flavor-dataset-3 = Indústrias Cybersun
-traitor-corporations-flavor-dataset-4 = Saqueadores de Gorlex
-traitor-corporations-flavor-dataset-5 = Corporação Climber
-traitor-corporations-flavor-dataset-6 = Corporação Donk
-traitor-corporations-flavor-dataset-7 = Problemas legais
+# Isso não deve ser traduzido.
+traitor-corporations-flavor-dataset-1 = ARC Terrorist
+traitor-corporations-flavor-dataset-2 = Bee Liberation Front
+traitor-corporations-flavor-dataset-3 = Cybersun Industries
+traitor-corporations-flavor-dataset-4 = Gorlex Marauders
+traitor-corporations-flavor-dataset-5 = Corporate Climber
+traitor-corporations-flavor-dataset-6 = Donk Corporation
+traitor-corporations-flavor-dataset-7 = Legal Trouble
 traitor-corporations-flavor-dataset-8 = MI13
-traitor-corporations-flavor-dataset-9 = Cooperativa Tigre
-traitor-corporations-flavor-dataset-10 = Corporação Waffle
-traitor-corporations-flavor-dataset-11 = Terroristas da Corporação Waffle
-traitor-corporations-flavor-dataset-12 = Federação Visionária Neulithiv
+traitor-corporations-flavor-dataset-9 = Tiger Cooperative
+traitor-corporations-flavor-dataset-10 = Waffle Corporation
+traitor-corporations-flavor-dataset-11 = Waffle Corporation Terrorist
+traitor-corporations-flavor-dataset-12 = Neulithiv Federation Visionary

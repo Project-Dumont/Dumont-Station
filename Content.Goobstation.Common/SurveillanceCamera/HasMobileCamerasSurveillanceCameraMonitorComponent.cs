@@ -1,0 +1,12 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Hagvan <22118902+Hagvan@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+namespace Content.Goobstation.Common.SurveillanceCamera;
+
+// Dummy component for surveillance monitors with known mobile cameras.
+[RegisterComponent]
+public sealed partial class HasMobileCamerasSurveillanceCameraMonitorComponent : Component
+{
+}

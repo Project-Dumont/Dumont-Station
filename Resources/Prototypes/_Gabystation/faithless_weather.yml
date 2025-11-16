@@ -1,0 +1,59 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 P e p e . <154895350+PepeThePog@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: weather
+  id: FaithlessStaticLight
+  sprite:
+    sprite: /Textures/_Gabystation/Effects/Faithless/static_light.rsi
+    state: static_light
+  sound:
+    path: /Audio/_Gabystation/Effects/Weather/static_light.ogg
+    params:
+      loop: true
+      volume: -5
+
+- type: weather
+  id: FaithlessStaticMedium
+  sprite:
+    sprite: /Textures/_Gabystation/Effects/Faithless/static_medium.rsi
+    state: static_medium
+  sound:
+    path: /Audio/_Gabystation/Effects/Weather/static_medium.ogg
+    params:
+      loop: true
+      volume: -6
+
+- type: weather
+  id: FaithlessStaticHeavy
+  sprite:
+    sprite: /Textures/_Gabystation/Effects/Faithless/static_heavy.rsi
+    state: static_heavy
+  sound:
+    path: /Audio/_Gabystation/Effects/Weather/static_heavy.ogg
+    params:
+      loop: true
+      volume: -8
+
+- type: weather
+  id: FaithlessHell
+  sprite:
+    sprite: /Textures/_Gabystation/Effects/Faithless/faithless_hell.rsi
+    state: faithless_hell
+  sound:
+    path: /Audio/_Gabystation/Effects/Weather/faithless_hell.ogg
+    params:
+      loop: true
+      volume: -10
+      
+- type: weather
+  id: FaithlessHell_SoundAlt
+  sprite:
+    sprite: /Textures/_Gabystation/Effects/Faithless/faithless_hell.rsi
+    state: faithless_hell
+  sound:
+    path: /Audio/_Gabystation/Effects/Weather/faithless_hell_alt.ogg
+    params:
+      loop: true
+      volume: -5

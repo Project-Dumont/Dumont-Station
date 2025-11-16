@@ -14,6 +14,30 @@
         {
             "name": "nightcrawler_tail",
             "directions": 4
+        },
+        {
+            "name": "HeartTail",
+            "directions": 4
+        },
+        {
+            "name": "HeartTail-tip",
+            "directions": 4
+        },
+        {
+            "name": "DragonLong",
+            "directions": 4
+        },
+        {
+            "name": "DragonLong-tip",
+            "directions": 4
+        },
+        {
+            "name": "RaboCortado",
+            "directions": 4
+        },
+        {
+            "name": "RaboEnrolado",
+            "directions": 4
         }
     ]
 }

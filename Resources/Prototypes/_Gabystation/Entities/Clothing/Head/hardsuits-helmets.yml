@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Luxury Mining Hardsuit Helmet
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitDarkLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
+  name: luxury mining hardsuit helmet # Goob edit
+  description: An extremely modified mining hardsuit helmet. Features decorations of the purest gold. For the very wealthy only.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hardsuits/luxury-mining.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hardsuits/luxury-mining.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    radius: 7
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.8
+        Piercing: 0.9
+        Radiation: 0.15
+        Caustic: 0.8

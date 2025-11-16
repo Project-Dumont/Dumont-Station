@@ -1,0 +1,39 @@
+interaction-HelpUp-name = Ajudar a se levantar
+interaction-HelpUp-description = Ajude a pessoa a se levantar.
+interaction-HelpUp-delayed-self-popup = Você tenta ajudar { ARTIGO-O($target) } { $target } a se levantar...
+interaction-HelpUp-delayed-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } tenta te ajudar a se levantar...
+interaction-HelpUp-delayed-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } tenta ajudar { ARTIGO-O($target) } { $target } a se levantar...
+interaction-HelpUp-success-self-popup = Você ajuda { ARTIGO-O($target) } { $target } a se levantar.
+interaction-HelpUp-success-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } te ajuda a se levantar.
+interaction-HelpUp-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } ajuda { ARTIGO-O($target) } { $target } a se levantar.
+interaction-HelpUp-fail-self-popup = Você falha ao tentar ajudar { ARTIGO-O($target) } { $target } a se levantar.
+interaction-HelpUp-fail-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } falha ao tentar te ajudar a se levantar.
+
+interaction-ForceDown-name = Forçar ao chão
+interaction-ForceDown-description = Force a pessoa a deitar no chão.
+interaction-ForceDown-delayed-self-popup = Você tenta forçar { ARTIGO-O($target) } { $target } ao chão...
+interaction-ForceDown-delayed-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } tenta te forçar ao chão...
+interaction-ForceDown-success-self-popup = Você força { ARTIGO-O($target) } { $target } a deitar no chão.
+interaction-ForceDown-success-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } te força a deitar no chão.
+interaction-ForceDown-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } força { ARTIGO-O($target) } { $target } a deitar no chão.
+interaction-ForceDown-fail-self-popup = Você falha ao tentar forçar { ARTIGO-O($target) } { $target } ao chão.
+interaction-ForceDown-fail-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } falha ao tentar te forçar ao chão.
+
+interaction-MakeSleepOther-name = Fazer dormir
+interaction-MakeSleepOther-description = Coloque o alvo para dormir.
+interaction-MakeSleepOther-delayed-self-popup = Você está tentando colocar { ARTIGO-O($target) } { $target } para dormir...
+interaction-MakeSleepOther-delayed-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } está tentando te colocar para dormir...
+interaction-MakeSleepOther-delayed-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } está tentando colocar { ARTIGO-O($target) } { $target } para dormir...
+interaction-MakeSleepOther-fail-self-popup = Você falha ao tentar colocar { ARTIGO-O($target) } { $target } para dormir.
+interaction-MakeSleepOther-fail-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } falha ao tentar te colocar para dormir.
+interaction-MakeSleepOther-success-self-popup = Você coloca { ARTIGO-O($target) } { $target } para dormir.
+interaction-MakeSleepOther-success-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } te coloca para dormir.
+interaction-MakeSleepOther-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } coloca { ARTIGO-O($target) } { $target } para dormir.
+
+interaction-ShakeOther-name = Sacudir
+interaction-ShakeOther-description = Sacuda o alvo.
+interaction-ShakeOther-fail-self-popup = Você de alguma forma falha ao sacudir { ARTIGO-O($target) } { $target }.
+interaction-ShakeOther-fail-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } de alguma forma falha ao te sacudir.
+interaction-ShakeOther-success-self-popup = Você agarra e sacode { ARTIGO-O($target) } { $target }.
+interaction-ShakeOther-success-target-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } te agarra e sacode.
+interaction-ShakeOther-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } agarra e sacode { ARTIGO-O($target) } { $target }.

@@ -5,7 +5,9 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -21,11 +23,11 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using System.Text;
 using System.Linq;
-using Robust.Shared.Serialization.Manager;
 using Content.Shared.Examine;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Stacks;
 using Robust.Shared.Containers;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Heretic.EntitySystems;
 
@@ -39,6 +41,7 @@ public sealed partial class HereticRitualSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private readonly GhoulSystem _ghoul = default!;
 
     public SoundSpecifier RitualSuccessSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/castsummon.ogg");
 
@@ -63,6 +66,25 @@ public sealed partial class HereticRitualSystem : EntitySystem
             return false;
 
         var rit = _proto.Index(ritualId);
+
+        List<EntityUid>? limited = null;
+        var exists = false;
+
+        if (rit.Limit > 0)
+            limited = hereticComp.LimitedTransmutations.GetOrNew(ritualId, out exists);
+
+        if (limited != null)
+        {
+            if (exists)
+                limited.RemoveAll(x => !Exists(x));
+
+            if (limited.Count >= rit.Limit)
+            {
+                _popup.PopupEntity(Loc.GetString("heretic-ritual-fail-limit"), platform, performer);
+                return false;
+            }
+        }
+
         var lookup = _lookup.GetEntitiesInRange(platform, 1.5f);
 
         var missingList = new Dictionary<string, float>();
@@ -76,7 +98,7 @@ public sealed partial class HereticRitualSystem : EntitySystem
 
         foreach (var behavior in behaviors)
         {
-            var ritData = new RitualData(performer, platform, ritualId, EntityManager);
+            var ritData = new RitualData(performer, platform, ritualId, EntityManager, limited, rit.Limit);
 
             if (!behavior.Execute(ritData, out var missingStr))
             {
@@ -149,7 +171,7 @@ public sealed partial class HereticRitualSystem : EntitySystem
         // finalize all of the custom ones
         foreach (var behavior in behaviors)
         {
-            var ritData = new RitualData(performer, platform, ritualId, EntityManager);
+            var ritData = new RitualData(performer, platform, ritualId, EntityManager, limited, rit.Limit);
             behavior.Finalize(ritData);
         }
 
@@ -171,11 +193,16 @@ public sealed partial class HereticRitualSystem : EntitySystem
             for (var i = 0; i < output[ent]; i++)
             {
                 var spawned = Spawn(ent, Transform(platform).Coordinates);
-                if (!ghoulQuery.TryComp(spawned, out var ghoul))
+
+                if (ghoulQuery.TryComp(spawned, out var ghoul))
+                    _ghoul.SetBoundHeretic((spawned, ghoul), performer);
+
+                if (limited == null)
                     continue;
 
-                ghoul.BoundHeretic = GetNetEntity(performer);
-                Dirty(spawned, ghoul);
+                limited.Add(spawned);
+                if (limited.Count >= rit.Limit)
+                    break;
             }
         }
 

@@ -13,8 +13,11 @@
 // SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
@@ -59,6 +62,10 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using System.Numerics;
+using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems;
+using Content.Shared.Doors.Systems;
+using Content.Shared.Doors.Components; // Goob - Check for Door Bolt
 
 namespace Content.Shared.RCD.Systems;
 
@@ -82,12 +89,14 @@ public sealed class RCDSystem : EntitySystem
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly SharedAtmosPipeLayersSystem _pipeLayersSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!; // Goobstation - RCD respects door access
 
     private readonly int _instantConstructionDelay = 0;
     private readonly EntProtoId _instantConstructionFx = "EffectRCDConstruct0";
     private readonly ProtoId<RCDPrototype> _deconstructTileProto = "DeconstructTile";
     private readonly ProtoId<RCDPrototype> _deconstructLatticeProto = "DeconstructLattice";
     private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
+    private static readonly ProtoId<TagPrototype> WallLightTag = "WallLight"; // Goobstation - No light spam
     private AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary; // Funky - Current layer for RPD
 
     private HashSet<EntityUid> _intersectingEntities = new();
@@ -392,7 +401,7 @@ public sealed class RCDSystem : EntitySystem
         if (session.SenderSession.AttachedEntity == null)
             return;
 
-        if (!_hands.TryGetActiveItem(session.SenderSession.AttachedEntity.Value, out var held)
+        if (!_hands.TryGetActiveItem(session.SenderSession.AttachedEntity.Value, out var held) // Goobstation, switched logic.
             || uid != held)
             return;
 
@@ -479,6 +488,8 @@ public sealed class RCDSystem : EntitySystem
     private bool IsConstructionLocationValid(EntityUid uid, RCDComponent component, EntityUid gridUid, MapGridComponent mapGrid, TileRef tile, Vector2i position, EntityUid user, bool popMsgs = true)
     {
         var prototype = _protoManager.Index(component.ProtoId);
+        if (prototype.Mode == RcdMode.ConstructObject && prototype.Prototype != null) // Goobstation
+            _protoManager.Index(prototype.Prototype); // Goobstation
 
         // Check rule: Must build on empty tile
         if (prototype.ConstructionRules.Contains(RcdConstructionRule.MustBuildOnEmptyTile) && !tile.Tile.IsEmpty)
@@ -537,6 +548,7 @@ public sealed class RCDSystem : EntitySystem
         // Check rule: The tile is unoccupied
         var isWindow = prototype.ConstructionRules.Contains(RcdConstructionRule.IsWindow);
         var isCatwalk = prototype.ConstructionRules.Contains(RcdConstructionRule.IsCatwalk);
+        var isWallLight = prototype.ConstructionRules.Contains(RcdConstructionRule.IsWallLight);
 
         _intersectingEntities.Clear();
         _lookup.GetLocalEntitiesIntersecting(gridUid, position, _intersectingEntities, -0.05f, LookupFlags.Uncontained);
@@ -545,6 +557,15 @@ public sealed class RCDSystem : EntitySystem
         {
             if (isWindow && HasComp<SharedCanBuildWindowOnTopComponent>(ent))
                 continue;
+
+            // Goobstation - No light spam
+            if (isWallLight && _tags.HasTag(ent, WallLightTag))
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-cannot-build-on-occupied-tile-message"), uid, user);
+
+                return false;
+            }
 
             if (isCatwalk && _tags.HasTag(ent, CatwalkTag))
             {
@@ -642,6 +663,24 @@ public sealed class RCDSystem : EntitySystem
                 return false;
             }
 
+            // Goobstation - RCD check access for doors
+            if (TryComp<AccessReaderComponent>(target, out var accessList) && !_accessReader.IsAllowed(user, target.Value))
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
+
+                return false;
+            }
+
+            // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
+            if (TryComp<DoorBoltComponent>(target, out var doorBolt) && doorBolt.BoltsDown)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);
+
+                return false;
+            }
+
         }
         return true;
     }
@@ -668,31 +707,19 @@ public sealed class RCDSystem : EntitySystem
                 break;
 
             case RcdMode.ConstructObject:
-                // Funky - Determine the correct prototype based on selected layer for RPD
-                // var proto = (component.UseMirrorPrototype 
-                //     && !string.IsNullOrEmpty(prototype.MirrorPrototype))
-                //     ? prototype.MirrorPrototype
-                //     : prototype.Prototype;
+                var proto = (component.UseMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype))
+                    ? prototype.MirrorPrototype
+                    : prototype.Prototype;
 
-                string proto;
+                // Funky - Determine the correct prototype based on selected layer for RPD
                 if (component.IsRpd && !prototype.NoLayers)
                 {
-                    if (_protoManager.TryIndex<EntityPrototype>(prototype.Prototype, out var entityProto) &&
+                    if (_protoManager.TryIndex<EntityPrototype>(proto, out var entityProto) &&
                         entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
                         _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
                     {
                         proto = newProtoId;
                     }
-                    else
-                    {
-                        proto = prototype.Prototype;
-                    }
-                }
-                else
-                {
-                    proto = (component.UseMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype))
-                        ? prototype.MirrorPrototype
-                        : prototype.Prototype;
                 }
                 // Funky - end of changes
 

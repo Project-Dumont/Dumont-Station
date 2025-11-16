@@ -10,6 +10,7 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
@@ -17,10 +18,13 @@
 // SPDX-FileCopyrightText: 2025 Marcus F <marcus2008stoke@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
@@ -181,6 +185,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
 
         SubscribeLocalEvent<ChangelingDartComponent, ProjectileHitEvent>(OnDartHit);
 
+        SubscribeLocalEvent<ChangelingIdentityComponent, AwakenedInstinctPurchasedEvent>(OnAwakenedInstinctPurchased);
         SubscribeLocalEvent<ChangelingIdentityComponent, AugmentedEyesightPurchasedEvent>(OnAugmentedEyesightPurchased);
 
         SubscribeAbilities();
@@ -205,6 +210,11 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     {
         if (TryComp(uid, out FlashImmunityComponent? flashImmunity))
             flashImmunity.Enabled = active;
+    }
+
+    private void OnAwakenedInstinctPurchased(Entity<ChangelingIdentityComponent> ent, ref AwakenedInstinctPurchasedEvent args)
+    {
+        EnsureComp<ChangelingBiomassComponent>(ent);
     }
 
     private void OnAugmentedEyesightPurchased(Entity<ChangelingIdentityComponent> ent, ref AugmentedEyesightPurchasedEvent args)
@@ -644,6 +654,17 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
 
         return comp;
     }
+    private void CopyBiomassComponent(EntityUid target, ChangelingBiomassComponent comp)
+    {
+        var newComp = EnsureComp<ChangelingBiomassComponent>(target);
+
+        newComp.MaxBiomass = comp.MaxBiomass;
+        newComp.Biomass = comp.Biomass;
+
+        newComp.FirstWarnReached = comp.FirstWarnReached;
+        newComp.SecondWarnReached = comp.SecondWarnReached;
+        newComp.ThirdWarnReached = comp.ThirdWarnReached;
+    }
     private EntityUid? TransformEntity(
         EntityUid uid,
         TransformData? data = null,
@@ -702,6 +723,12 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
             if (!persistentDna && data != null)
                 newLingComp?.AbsorbedDNA.Remove(data);
             RemCompDeferred<ChangelingIdentityComponent>(uid);
+
+            if (TryComp<ChangelingBiomassComponent>(uid, out var bioComp))
+            {
+                CopyBiomassComponent(newEnt, bioComp);
+                RemCompDeferred<ChangelingBiomassComponent>(uid);
+            }
         }
 
         //    if (TryComp<StoreComponent>(uid, out var storeComp))

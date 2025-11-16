@@ -10,6 +10,8 @@
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
@@ -17,10 +19,14 @@
 // SPDX-FileCopyrightText: 2025 Marcus F <marcus2008stoke@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
@@ -32,20 +38,19 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Goobstation.Common.Atmos;
 using Content.Goobstation.Common.Changeling;
+using Content.Goobstation.Common.Temperature.Components;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Server.Changeling.Objectives.Components;
-using Content.Goobstation.Shared.Atmos.Components;
 using Content.Goobstation.Shared.Body.Components;
 using Content.Goobstation.Shared.Changeling.Actions;
 using Content.Goobstation.Shared.Changeling.Components;
-using Content.Goobstation.Shared.Temperature.Components;
 using Content.Server.Light.Components;
 using Content.Server.Nutrition.Components;
 using Content.Shared._Goobstation.Weapons.AmmoSelector;
 using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared._Shitmed.Targeting; // Shitmed Change
-using Content.Shared.Actions;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Reagent;
@@ -71,6 +76,7 @@ using Content.Shared.Traits.Assorted;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
+using Content.Goobstation.Shared.Devour.Events;
 
 namespace Content.Goobstation.Server.Changeling;
 
@@ -199,12 +205,20 @@ public sealed partial class ChangelingSystem
         var bonusEvolutionPoints = 0f;
         var bonusChangelingAbsorbs = 0;
 
+        var biomassMaxIncrease = 0f;
+        var biomassValid = false;
+
         if (TryComp<ChangelingIdentityComponent>(target, out var targetComp))
         {
             popup = Loc.GetString("changeling-absorb-end-self-ling");
             bonusChemicals += targetComp.MaxChemicals / 2;
             bonusEvolutionPoints += targetComp.TotalEvolutionPoints / 2;
             bonusChangelingAbsorbs += targetComp.TotalChangelingsAbsorbed + 1;
+
+            biomassValid = true;
+
+            if (TryComp<ChangelingBiomassComponent>(uid, out var userBiomass))
+                biomassMaxIncrease = userBiomass.MaxBiomass / 2;
 
             if (!TryComp<HumanoidAppearanceComponent>(target, out var targetForm)
                 || targetForm.Species == "Monkey") // if they are a headslug or in monkey form
@@ -215,6 +229,8 @@ public sealed partial class ChangelingSystem
             popup = Loc.GetString("changeling-absorb-end-self");
             bonusChemicals += 10;
             bonusEvolutionPoints += 2;
+
+            biomassValid = true;
         }
         else
             popup = Loc.GetString("changeling-absorb-end-partial");
@@ -251,6 +267,16 @@ public sealed partial class ChangelingSystem
         }
 
         UpdateChemicals(uid, comp, comp.MaxChemicals); // refill chems to max
+
+        // modify biomass if the changeling uses it
+        if (TryComp<ChangelingBiomassComponent>(uid, out var biomass)
+            && biomassValid)
+        {
+            biomass.MaxBiomass += biomassMaxIncrease;
+            biomass.Biomass = biomass.MaxBiomass;
+
+            Dirty(uid, biomass);
+        }
 
     }
 
@@ -405,6 +431,13 @@ public sealed partial class ChangelingSystem
     }
     private void OnExitStasis(EntityUid uid, ChangelingIdentityComponent comp, ref ExitStasisEvent args)
     {
+        // check if we're allowed to revive
+        var reviveEv = new BeforeSelfRevivalEvent(uid, "self-revive-fail");
+        RaiseLocalEvent(uid, ref reviveEv);
+
+        if (reviveEv.Cancelled)
+            return;
+
         if (!comp.IsInStasis)
         {
             _popup.PopupEntity(Loc.GetString("changeling-stasis-exit-fail"), uid, uid);
@@ -913,6 +946,7 @@ public sealed partial class ChangelingSystem
         EnsureComp<HivemindComponent>(uid);
         var mind = EnsureComp<CollectiveMindComponent>(uid);
         mind.Channels.Add(HivemindProto);
+        mind.CanUseInCrit = true;
 
         _popup.PopupEntity(Loc.GetString("changeling-hivemind-start"), uid, uid);
     }

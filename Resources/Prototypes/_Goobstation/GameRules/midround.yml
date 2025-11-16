@@ -19,8 +19,9 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 10
+    weight: 8
     minimumPlayers: 15
+    maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
@@ -38,7 +39,8 @@
     selectionTime: PostPlayerSpawn
     definitions:
     - prefRoles: [ Traitor ]
-      max: 1
+      min: 1
+      max: 2
       playerRatio: 10
       blacklist:
         components:
@@ -60,6 +62,7 @@
     earliestStart: 20
     weight: 3
     minimumPlayers: 15
+    maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
@@ -77,18 +80,19 @@
     selectionTime: PostPlayerSpawn
     agentName: changeling-roundend-name
     definitions:
-    - prefRoles: [ Changeling ]
-      max: 1
-      playerRatio: 1 # 10 normally, 1 for testing
+    - prefRoles: [ SleeperChangeling ]
+    - fallbackRoles: [ Changeling ]
+      min: 1
+      max: 2
+      playerRatio: 10
       blacklist:
         components:
         - CommandStaff
         - AntagImmune
         - BibleUser
       lateJoinAdditional: true
-      #components:
-      #- type: ChangelingInfection # Funky: Made midround lings infections instead of instant.
-      #  needsInitialization: true
+      mindRoles:
+      - MindRoleChangelingmidround
   - type: Tag
     tags:
       - MidroundAntag
@@ -102,6 +106,7 @@
     earliestStart: 20
     weight: 3
     minimumPlayers: 30
+    maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
@@ -119,8 +124,10 @@
     selectionTime: PostPlayerSpawn
     agentName: heretic-roundend-name
     definitions:
-    - prefRoles: [ Heretic ]
-      max: 1
+    - prefRoles: [ SleeperHeretic ]
+    - fallbackRoles: [ Heretic ]
+      min: 1
+      max: 2
       playerRatio: 15
       blacklist:
         components:
@@ -212,21 +219,15 @@
   id: BlobMidround
   components:
   - type: StationEvent
-    weight: 1.5
-    earliestStart: 80
-    minimumPlayers: 30 # how is that 20 people when rat king is 30??? changed.
+    weight: 1
+    earliestStart: 45
+    minimumPlayers: 50
     duration: null
     maxOccurrences: 1
     chaos:
-      Hostile: 300
-      Medical: 300
+      Hostile: 400
+      Medical: 400
       Death: 400
-    maxChaos:
-      Hostile: 30
-      Combat: -60
-      Power: 50
-      Medical: 50
-      Atmos: 50
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 1000
@@ -247,7 +248,6 @@
     weight: 15
     earliestStart: 15
     minimumPlayers: 15
-    duration: null
     maxOccurrences: 2
     eventType: Neutral
   - type: GameRule
@@ -257,5 +257,47 @@
     table:
       id: MobFloorGoblin
   - type: Tag
+
+# Midround Devil
+- type: entity
+  parent: Devil
+  id: Devilmidround
+  components:
+  - type: StationEvent
+    earliestStart: 20
+    weight: 1
+    minimumPlayers: 30
+    maxOccurrences: 1
+    startAnnouncement: station-event-communication-interception
+    startAudio:
+      path: /Audio/Announcements/intercept.ogg
+    duration: null
+    occursDuringRoundEnd: false
+    chaos:
+      Hostile: 200
+      Medical: 150
+      Death: 200
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 400
+  - type: AlertLevelInterceptionRule
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: devil-roundend-name
+    definitions:
+    - prefRoles: [ SleeperDevil ]
+    - fallbackRoles: [ Devil ]
+      max: 1
+      playerRatio: 15
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+        - BibleUser
+      lateJoinAdditional: true
+      jobBlacklist: [ Chaplain ] # GOOBSTATION
+      mindRoles:
+      - DevilMindRole
+  - type: Tag
     tags:
-    - MidroundAntag
+      - MidroundAntag

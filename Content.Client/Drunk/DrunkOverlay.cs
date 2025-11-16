@@ -6,6 +6,9 @@
 // SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -21,6 +24,8 @@ namespace Content.Client.Drunk;
 
 public sealed class DrunkOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> Shader = "Drunk";
+
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -41,7 +46,7 @@ public sealed class DrunkOverlay : Overlay
     public DrunkOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _drunkShader = _prototypeManager.Index<ShaderPrototype>("Drunk").InstanceUnique();
+        _drunkShader = _prototypeManager.Index(Shader).InstanceUnique();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

@@ -63,7 +63,7 @@ gs-balanceui-shop-buy-token-antag = Comprar token de antagonista da rodada - {$p
 gs-balanceui-shop-buy-token-ghost = Comprar token de função fantasma - {$price}gc
 gs-balanceui-shop-buy-token-admin-rp = Comprar roleplaying token - {$price}gc
 gs-balanceui-shop-buy-token-admin-hat = Comprar token de chapeu - {$price}gc
-gs-balanceui-shop-buy-token-admin-clotch = Comprar token de peça de roupa - {$price}gc
+gs-balanceui-shop-buy-token-cloth = Comprar token de peça de roupa - {$price}gc
 
 gs-balanceui-shop-token-antag = Token de Antagonista da Rodada
 gs-balanceui-shop-token-ghost = Token de Função Fantasma

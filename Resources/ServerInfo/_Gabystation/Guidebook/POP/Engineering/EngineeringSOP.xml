@@ -1,0 +1,65 @@
+<!--
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Engenheiro Chefe
+
+  [bold]1.[/bold] O Engenheiro Chefe deve garantir a ligação correta dos Painéis Solares e ativar o Motor de Antimatéria (AME) se disponível, além de coordenar um plano com sua equipe para ativar um gerador mais potente para uso prolongado da estação;
+
+  [bold]2.[/bold] O Engenheiro Chefe, junto ao Diretor de Pesquisa, é responsável por manter a integridade das Telecomunicações. O Engenheiro Chefe não deve prejudicar o funcionamento adequado das Telecomunicações e deve diagnosticar e reparar quaisquer problemas que surgirem;
+
+  [bold]3.[/bold] O Engenheiro Chefe está sujeito às mesmas regras sobre o machado que os Técnicos Atmosféricos;
+
+  [bold]4.[/bold] O Engenheiro Chefe pode portar um flash e um desativador;
+
+  [bold]5.[/bold] O Engenheiro Chefe é responsável por manter a integridade de todas as fontes de energia instaladas na estação. Negligenciar esse dever é motivo para demissão caso a Supermatéria delamine ou se faltar energia na estação;
+
+  [bold]6.[/bold] O Engenheiro Chefe pode declarar uma área "Condenada" se ela estiver danificada a ponto de não ser possível realizar reparos em um tempo aceitável;
+
+  [bold]7.[/bold] O Engenheiro Chefe pode conceder Permissões de Construção para membros da tripulação e pode desmontar ou destruir construções/instalações não autorizadas;
+
+  [bold]8.[/bold] O Engenheiro Chefe é responsável por manter a integridade do Sistema Atmosférico da Estação. Falhar em manter essa integridade é motivo para demissão.
+
+  # Engenheiro de Estação
+
+  [bold]1.[/bold] Engenheiros devem ligar corretamente os Painéis Solares e ativar o Motor de Antimatéria (AME) se disponível, além de coordenar um plano para ativar um motor mais potente para uso prolongado da estação;
+
+  [bold]2.[/bold] Engenheiros são responsáveis por manter a integridade de todos os motores da estação, mesmo os desativados ou inertes. Negligenciar esse dever é motivo para demissão caso algum motor apresente falha;
+
+  [bold]3.[/bold] Engenheiros podem construir motores adicionais (como SM/Tesla/Singularidade) com aprovação do Engenheiro Chefe;
+
+  [bold]4.[/bold] Engenheiros podem realizar projetos de reconstrução/reparo/pessoais solo se não houver danos na estação que precisem de conserto;
+
+  [bold]5.[/bold] Engenheiros devem verificar cada motor ativo pelo menos uma vez a cada 30 minutos;
+
+  [bold]6.[/bold] Engenheiros devem monitorar constantemente o motor de Supermatéria se ele estiver online e sob fogo de emissor;
+
+  [bold]7.[/bold] Engenheiros devem responder prontamente a quebras, independentemente do tamanho. Não relatar em até quinze (15) minutos será considerado violação do POP, a menos que não haja Engenheiros disponíveis ou um Técnico Atmosférico tenha chegado primeiro. Todas as Zonas de Perigo devem ser isoladas com Fita de Engenharia ou holobarreiras para a segurança da tripulação;
+
+  [bold]8.[/bold] Engenheiros podem hackear portas para obter acesso não autorizado a locais que precisem de reparos urgentes;
+
+  [bold]9.[/bold] Engenheiros devem manter a integridade da Rede Elétrica da Estação;
+
+  [bold]10.[/bold] Engenheiros devem garantir que haja pelo menos uma (1) armadura de engenharia disponível na estação o tempo todo, a menos que haja uma emergência que exija o uso de todas as armaduras.
+
+  # Técnico Atmosférico
+
+  [bold]1.[/bold] Técnicos Atmosféricos podem refazer completamente a tubulação atmosférica, desde que não bombeiem gases nocivos para nenhum lugar exceto a câmara de combustão;
+
+  [bold]2.[/bold] Técnicos Atmosféricos não podem criar misturas voláteis usando Plasma e Oxigênio, nem criar misturas potencialmente perigosas com Dióxido de Carbono e/ou Óxido Nitroso. Exceção é feita ao trabalhar com a câmara de combustão;
+
+  [bold]3.[/bold] Técnicos Atmosféricos podem resfriar Plasma e armazená-lo para uso posterior em Coletores de Radiação. Da mesma forma, podem resfriar Nitrogênio ou Dióxido de Carbono e armazená-los para uso como refrigerante no Motor de Supermatéria;
+
+  [bold]4.[/bold] Técnicos Atmosféricos não podem tirar o machado do estojo, a menos que haja uma ameaça imediata e urgente à sua vida ou seja necessário acesso urgente a locais de crise. O machado deve ser devolvido ao estojo depois e então tranca-lo;
+
+  [bold]5.[/bold] Técnicos Atmosféricos não podem alterar os valores padrão dos Alarmes de Ar. No entanto, podem criar pequenas salas aclimatizadas para espécies que exigem condições atmosféricas especiais (como Vox), desde que recebam permissão expressa do Engenheiro Chefe;
+
+  [bold]6.[/bold] Técnicos Atmosféricos devem verificar periodicamente o Computador Central de Alarmes, em períodos de, no máximo, trinta (30) minutos;
+
+  [bold]7.[/bold] Técnicos Atmosféricos devem responder prontamente a quebras de tubulação e da estação. Não relatar em até quinze (15) minutos será considerado violação do POP, a menos que não haja Técnicos Atmosféricos disponíveis ou um Engenheiro tenha chegado primeiro. Todas as Zonas de Perigo devem ser isoladas com Fita de Engenharia ou holobarreiras para a segurança de todos os membros da tripulação.
+</Document>

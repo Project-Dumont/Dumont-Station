@@ -1,9 +1,14 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Marcus F <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -20,7 +25,6 @@ using Content.Server.Antag;
 using Content.Server.Atmos.Components;
 using Content.Server.Audio;
 using Content.Goobstation.Shared.Religion; // Goobstation - Shitchap
-using Content.Goobstation.Shared.Bible; // Goobstation - Bible
 using Content.Server.Chat.Systems;
 using Content.Server.EUI;
 using Content.Server.GameTicking.Rules;
@@ -70,11 +74,13 @@ using Robust.Shared.Enums;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
+using Content.Goobstation.Common.Religion;
 using Content.Server.Station.Systems;
+using Content.Shared.Cuffs.Components;
+using Content.Server.Cuffs;
 
 namespace Content.Server._DV.CosmicCult;
 
@@ -115,6 +121,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly VisibilitySystem _visibility = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly CuffableSystem _cuffable = default!; // goob edit
 
     private ISawmill _sawmill = default!;
     private TimeSpan _t3RevealDelay = default!;
@@ -304,6 +311,9 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             cultists.Add((playerInfo, cult));
         }
 
+        if (!cultists.Any()) // GabyStation
+            return;
+
         var options = new VoteOptions
         {
             DisplayVotes = false,
@@ -402,8 +412,12 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     private bool CultistsAlive()
     {
         var query = EntityQueryEnumerator<CosmicCultComponent, MobStateComponent>();
-        while (query.MoveNext(out _, out var comp, out var mob))
+        while (query.MoveNext(out var ent, out var comp, out var mob)) // goob edit
         {
+
+            if (TryComp<CuffableComponent>(ent, out var cuffComp) && _cuffable.IsCuffed((ent, cuffComp))) // goob edit
+                continue; // dont count restrained cultists as counting towards objectives.
+
             if (!mob.Running
                 || mob.CurrentState != MobState.Alive)
                 continue;
