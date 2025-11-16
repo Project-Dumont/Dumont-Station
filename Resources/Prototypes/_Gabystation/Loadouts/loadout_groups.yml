@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <117521143+VictorJob@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -32,10 +33,44 @@
   - DrinkShaker
 
 - type: loadoutGroup
-  id: TrinketsChef
+  id: TrinketsAtmosphericTechnician
   name: loadout-group-trinkets-job
   minLimit: 0
   maxLimit: 1
   loadouts:
+  - ClothingNeckRefrescante
+
+- type: loadoutGroup
+  id: TrinketsMedicalDoctor
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingNeckSangue
+
+- type: loadoutGroup
+  id: TrinketsCommand
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingNeckAutoridade
+
+- type: loadoutGroup
+  id: TrinketsChef
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
   - GoldKitchenKnife
   - GoldButchCleaver
+
+- type: loadoutGroup
+  id: TrinketsSecurity
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - WeaponPistolMk58Gold
+  - ClothingNeckRobusto
+  - ClothingNeckChoque

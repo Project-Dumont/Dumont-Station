@@ -1,4 +1,8 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 JohnOakman <10437690+JohnOakman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 //
@@ -317,9 +321,12 @@ public sealed class BodySetupTest
                         Assert.That(entMan.HasComponent<NerveComponent>(bodyPart.Id));
                         Assert.That(entMan.TryGetComponent(bodyPart.Id, out WoundableComponent woundable));
 
-                        var bone = woundable.Bone.ContainedEntities.FirstOrNull();
-                        Assert.That(bone, Is.Not.Null);
-                        Assert.That(entMan.HasComponent<BoneComponent>(bone));
+                        if (!entMan.HasComponent<BonelessComponent>(bodyPart.Id))
+                        {
+                            var bone = woundable.Bone.ContainedEntities.FirstOrNull();
+                            Assert.That(bone, Is.Not.Null);
+                            Assert.That(entMan.HasComponent<BoneComponent>(bone));
+                        }
                     });
                 }
             }

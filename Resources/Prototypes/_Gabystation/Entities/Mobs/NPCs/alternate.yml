@@ -6,10 +6,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: xenonid burrower
+  abstract: true
   id: BaseMobAlternate
   parent: SimpleSpaceMobBase
-  description: They mostly come at night. Mostly.
   components:
   - type: Insulated
   - type: CombatMode
@@ -81,7 +80,6 @@
       groups:
         Brute: 6
   - type: DamageStateVisuals
-    rotate: true
     states:
       Alive:
         Base: running
@@ -159,8 +157,12 @@
         Structural: 50
         Piercing: 15
   - type: Devourer
-    foodPreference: Humanoid
-    shouldStoreDevoured: true
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
     chemical: Omnizine
     healRate: 55.0
     whitelist:

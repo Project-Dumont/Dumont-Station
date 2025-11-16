@@ -6,11 +6,17 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Coolsurf6 <coolsurf24@yahoo.com.au>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 kurokoTurbo <92106367+kurokoTurbo@users.noreply.github.com>
 //
@@ -27,6 +33,8 @@ namespace Content.Client.UserInterface.Systems.DamageOverlays.Overlays;
 
 public sealed class DamageOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> CircleMaskShader = "GradientCircleMask";
+
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -67,9 +75,9 @@ public sealed class DamageOverlay : Overlay
     {
         // TODO: Replace
         IoCManager.InjectDependencies(this);
-        _oxygenShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
-        _critShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
-        _bruteShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
+        _oxygenShader = _prototypeManager.Index(CircleMaskShader).InstanceUnique();
+        _critShader = _prototypeManager.Index(CircleMaskShader).InstanceUnique();
+        _bruteShader = _prototypeManager.Index(CircleMaskShader).InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -151,12 +159,11 @@ public sealed class DamageOverlay : Overlay
          * innerCircleMaxRadius is what we start at for 0 level for the inner circle
          */
 
-        // Makes debugging easier don't @ me
+        // Only show pain overlay if there's actual pain and we're not in critical stat
+        // Goobstation start
         float level = 0f;
         level = _oldPainLevel;
-
-        // TODO: Lerping
-        if (level > 0f && _oldCritLevel <= 0f)
+        if (_oldPainLevel > 0f && _oldCritLevel <= 0f)
         {
             var pulseRate = 3f;
             var adjustedTime = time * pulseRate;
@@ -165,26 +172,30 @@ public sealed class DamageOverlay : Overlay
             float innerMaxLevel = 0.6f * distance;
             float innerMinLevel = 0.2f * distance;
 
-            var outerRadius = outerMaxLevel - level * (outerMaxLevel - outerMinLevel);
-            var innerRadius = innerMaxLevel - level * (innerMaxLevel - innerMinLevel);
+            var outerRadius = outerMaxLevel - _oldPainLevel * (outerMaxLevel - outerMinLevel);
+            var innerRadius = innerMaxLevel - _oldPainLevel * (innerMaxLevel - innerMinLevel);
 
             var pulse = MathF.Max(0f, MathF.Sin(adjustedTime));
 
             _bruteShader.SetParameter("time", pulse);
             _bruteShader.SetParameter("color", new Vector3(1f, 0f, 0f));
-            _bruteShader.SetParameter("darknessAlphaOuter", 0.8f);
+            _bruteShader.SetParameter("darknessAlphaOuter", 0.8f * _oldPainLevel); // Scale alpha with pain level
 
             _bruteShader.SetParameter("outerCircleRadius", outerRadius);
             _bruteShader.SetParameter("outerCircleMaxRadius", outerRadius + 0.2f * distance);
             _bruteShader.SetParameter("innerCircleRadius", innerRadius);
             _bruteShader.SetParameter("innerCircleMaxRadius", innerRadius + 0.02f * distance);
+
             handle.UseShader(_bruteShader);
             handle.DrawRect(viewport, Color.White);
         }
-        else
+
+        // Always update _oldPainLevel to match PainLevel when PainLevel is 0
+        if (PainLevel <= 0f)
         {
-            _oldPainLevel = PainLevel;
+            _oldPainLevel = 0f;
         }
+        // Goobstation end
 
         level = State != MobState.Critical ? _oldOxygenLevel : 1f;
 

@@ -97,6 +97,7 @@
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -265,6 +266,18 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public int Goobcoins { get; private set; } = 1;
+
+        /// <summary>
+        ///     Gabystation Change: The amount of spesos a job will be payed.
+        /// </summary>
+        [DataField]
+        public int Salary { get; private set; } = 25;
+
+        /// <summary>
+        ///     Gabystation Change: If the job has a roundstart bank account.
+        /// </summary>
+        [DataField]
+        public bool HasBank { get; private set; } = true;
     }
 
     /// <summary>

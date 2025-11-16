@@ -1081,3 +1081,334 @@ Entries:
         rotacione.
   id: 120
   time: '2025-09-22T03:57:18.0000000+00:00'
+- author: Kyoth25f e bogopablogames
+  changes:
+    - type: Add
+      message: >-
+        Adiciona músicas de Armandinho, Seu Jorge, Charlie Brown Jr, Os
+        Paralamas Do Sucesso e Djavan.
+  id: 121
+  time: '2025-09-23T01:32:08.0000000+00:00'
+- author: joaofernandez
+  changes:
+    - type: Tweak
+      message: Alterado buscas de máquinas para não considerar acentuação
+  id: 122
+  time: '2025-09-27T05:45:27.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob 27/09.
+  id: 123
+  time: '2025-09-28T02:35:43.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Added NUNO cards
+  id: 124
+  time: '2025-09-28T02:39:42.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Caixas eletronicos - Flatpack roundstart para HoS, bartender e QM, alem
+        da trade station.
+    - type: Add
+      message: >-
+        Todos os funcionarios da nanotrasen agora tem uma conta bancaria no
+        NanoBank, aproveite!
+    - type: Add
+      message: Nano Pix (ou Nano Bank) adicionado ao PDA de todos os tripulantes.
+    - type: Add
+      message: >-
+        A Central de Comando finalmente pagara seus funcionarios pelos seus
+        esforços!
+    - type: Remove
+      message: Sua liberdade financeira.
+  id: 125
+  time: '2025-09-30T04:06:48.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada as últimas mudanças do Goob 29/09!
+    - type: Fix
+      message: Sem mais o jogo morrendo ao fechar e tela preta ao reconectar!
+  id: 126
+  time: '2025-09-30T10:04:44.0000000+00:00'
+- author: Kyoth25f e Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas Questionable Ethics de Joel Nielsen, A Dark Zone de Toby Fox
+        e Guadian de Toby Fox na jukebox.
+  id: 127
+  time: '2025-10-01T13:19:40.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Corrige o contrato do diabo que por padrão spawnava com o texto errado,
+        o que causou varios contratos não coletarem as almas dos contratados,
+        pobres diabos...
+  id: 128
+  time: '2025-10-02T23:13:17.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        Altera a vida dos membros, desmembramento agora se torna mais facil e
+        menos mortal
+  id: 129
+  time: '2025-10-03T01:00:36.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Nuno card box are now present in Good Clean Fun vending machines
+  id: 130
+  time: '2025-10-03T01:06:59.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Revolucionarios de cair normalmente em uma partida.
+  id: 131
+  time: '2025-10-04T04:21:16.0000000+00:00'
+- author: Alpha-Two, starch, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Os líquidos agora pegam fogo. Cuidado!
+  id: 132
+  time: '2025-10-04T04:54:21.0000000+00:00'
+- author: Spatison, VMSolidus, Mnemotechnican, DEATHB4DEFEAT, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode renascer.
+  id: 133
+  time: '2025-10-11T22:11:07.0000000+00:00'
+- author: Kavest0
+  changes:
+    - type: Tweak
+      message: IPCs agora consomem menos energia quando parados.
+    - type: Tweak
+      message: IPCs agora deixam impressões digitais.
+  id: 134
+  time: '2025-10-11T22:12:13.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Remove
+      message: Tram saiu da votação de mapas
+  id: 135
+  time: '2025-10-11T22:55:37.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 12/10 (confira a aba do goob)!
+  id: 136
+  time: '2025-10-12T13:40:20.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: >-
+        Adiciona as últimas mudanças do Goob até 17/10 (verifique a aba do
+        Goob).
+  id: 137
+  time: '2025-10-18T04:29:24.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: IPCs não causam mais sepse na cirurgia.
+    - type: Fix
+      message: Corrigido bug do gemini causar sepse na cirurgia.
+    - type: Fix
+      message: >-
+        Corrigido bug de entidades contidas em inventários causar sepse na
+        cirurgia.
+  id: 138
+  time: '2025-10-18T04:33:08.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        Space Law e POP foram alterados, tendo entradas para todos os
+        departamentos, não esqueçam de ler elas!
+    - type: Add
+      message: >-
+        A equipe de segurança possui um Código de Conduta que deve ser seguida,
+        e os Procedimentos Operacionais Padrão para a segurança foram alterados
+        para permitir um convívio mutuo melhor com os tripulantes.
+    - type: Add
+      message: >-
+        Multas e Fianças agora estão listados na POP como formas reais para
+        substituir parcialmente ou completamente penas pelos crimes que
+        tripulantes cometem, os ricos prevalecem.
+    - type: Add
+      message: >-
+        Multas são aplicadas em violações da POP, a equipe de segurança está
+        encarregada de multar violações dos tripulantes,  a equipe de
+        administração cobrará conhecimento de POP aos Heads de seus respectivos
+        departamentos, então não esqueça de ler elas, NTRs podem multar
+        violações de POP dos comandantes caso recebam permissão expressa da
+        CentCom.
+  id: 139
+  time: '2025-10-18T14:12:22.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: ADICIONA GLACIER!!!!
+  id: 140
+  time: '2025-10-19T11:15:14.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Mudanças pela SM, TEG e biblioteca!
+    - type: Fix
+      message: Arruma Glacier virando o inferno(eu espero)
+  id: 141
+  time: '2025-10-21T23:05:39.0000000+00:00'
+- author: Dreykor e capitaopato
+  changes:
+    - type: Add
+      message: Musica nova "Massacration" para o Lobby.
+  id: 142
+  time: '2025-10-22T20:13:52.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido intro, aliados e objetivos das empresas dos traidores.
+  id: 143
+  time: '2025-10-22T20:14:05.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Tweak
+      message: Holo barrier, placas e decalques traduzidos.
+  id: 144
+  time: '2025-10-25T14:00:49.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas as últimas mudanças do Goob até 24/10 (confira a aba do
+        goob).
+  id: 145
+  time: '2025-10-25T14:06:46.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: >-
+        Agora é possível mudar o ícone que aparece no radio com a máscara de
+        voz.
+  id: 146
+  time: '2025-10-25T14:16:22.0000000+00:00'
+- author: Doctor-Cpu, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora as roupas sujam.
+  id: 147
+  time: '2025-10-25T14:40:34.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Agora a maioria dos cargos tem acesso aos calçados civis.
+  id: 148
+  time: '2025-10-26T23:06:17.0000000+00:00'
+- author: Struater, Kyoth25f
+  changes:
+    - type: Add
+      message: Os caminhos do herege foram traduzidos!
+    - type: Add
+      message: Acariciar os bots foi traduzido.
+    - type: Tweak
+      message: Traduções do dreno foram atualizadas.
+  id: 149
+  time: '2025-10-27T17:11:29.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no sistema de manchas.
+  id: 150
+  time: '2025-10-29T17:32:06.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Xenobio, viro, lavanderia e sala do assistente adm para glacier
+  id: 151
+  time: '2025-11-01T01:45:29.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: Adicionadas quatro novas caudas para o Daengati.
+  id: 152
+  time: '2025-11-01T01:45:45.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Ícone da IA corrigido!
+  id: 153
+  time: '2025-11-09T13:41:45.0000000+00:00'
+- author: Victor Job e
+  changes:
+    - type: Tweak
+      message: Armaduras da sec buffadas.
+  id: 154
+  time: '2025-11-09T13:52:30.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionada as últimas mudanças do Goob 09/11 (dê uma olhada na aba do
+        Goob).
+  id: 155
+  time: '2025-11-09T13:55:02.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Tweak
+      message: Mantem Saltern, Cluster, Omega e Packed pros novos padrões do Gaby.
+    - type: Remove
+      message: Gamma removido, feliz?
+    - type: Tweak
+      message: >-
+        Nova lista de mapas na rotação - todos os mapas serão mantidos pelo
+        Gaby.
+  id: 156
+  time: '2025-11-10T11:46:03.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Leves mudanças na virologia da Glacier
+  id: 157
+  time: '2025-11-10T11:47:12.0000000+00:00'
+- author: VMSolidus, PuroSlavKing, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona efeitos visuais quando há diferença de pressão na atmosfera.
+  id: 158
+  time: '2025-11-15T15:10:28.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Changed fun!
+  id: 159
+  time: '2025-11-15T15:38:03.0000000+00:00'
+- author: Crenissis
+  changes:
+    - type: Add
+      message: Adicionado um manto luxuoso.
+    - type: Tweak
+      message: Modificações nos sprites da hardsuit luxuosa.
+  id: 160
+  time: '2025-11-15T16:52:34.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        PORT de Inflação, aumento de 50% de preços nos antag tokens e nos ghost
+        tokens.
+    - type: Fix
+      message: Corrige descrição do token de roupa na loja de GabyCoins.
+  id: 161
+  time: '2025-11-16T12:00:26.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 16/11 (confira a aba do Goob)!
+  id: 162
+  time: '2025-11-16T12:18:48.0000000+00:00'

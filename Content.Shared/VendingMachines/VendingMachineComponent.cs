@@ -10,9 +10,12 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 goet <6637097+goet@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -209,6 +212,27 @@ namespace Content.Shared.VendingMachines
         [DataField("loopDeny")]
         public bool LoopDenyAnimation = true;
         #endregion
+
+        // GabyStation -> Economy begin
+        /// <summary>
+        /// Handles if the vend machine will have paid items.
+        /// Disabling this will make all items have no cost.
+        /// </summary>
+        /// <remarks>
+        /// Updated when restoked.
+        /// </remarks>
+        [DataField]
+        public bool PaidItems = true;
+
+        /// <summary>
+        /// Multiplies the price of each item in vend.
+        /// </summary>
+        /// <remarks>
+        /// Updated when restoked.
+        /// </remarks>
+        [DataField]
+        public float PriceMultiplier = 1f;
+        // GabyStation -> Economy end
     }
 
     [Serializable, NetSerializable]
@@ -220,11 +244,15 @@ namespace Content.Shared.VendingMachines
         public string ID;
         [ViewVariables(VVAccess.ReadWrite)]
         public uint Amount;
-        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount)
+        [ViewVariables(VVAccess.ReadWrite)]
+        public uint? Price; // GabyStation -> Economy
+        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount, uint? price = default)
         {
             Type = type;
             ID = id;
             Amount = amount;
+            // Talvez default = 0?
+            Price = price ?? Price; // GabyStation -> Economy
         }
 
         public VendingMachineInventoryEntry(VendingMachineInventoryEntry entry)
@@ -232,6 +260,7 @@ namespace Content.Shared.VendingMachines
             Type = entry.Type;
             ID = entry.ID;
             Amount = entry.Amount;
+            Price = entry.Price; // GabyStation -> Economy
         }
     }
 

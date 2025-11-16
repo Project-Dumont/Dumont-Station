@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconAdmAssistOffice
+  suffix: Adm Assist Office
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-adm-assist-office
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconLaundry
+  suffix: Laundry
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-laundry
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconXenobiology
+  suffix: Xenolab
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-xenobiology
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconVirology
+  suffix: Virology
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-virology

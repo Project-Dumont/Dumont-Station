@@ -1,5 +1,8 @@
 // SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kayo Lima <67492897+Kavest0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -74,6 +77,17 @@ public sealed partial class SiliconComponent : Component
     [DataField]
     public float DrainPerSecond = 50f;
 
+    // TheDen - Dynamic IPC Power Draw
+    /// <summary>
+    ///     How much less power is used while being idle.
+    /// </summary>
+    /// <remarks>
+    ///     Relative to the DrainPerSecond.
+    ///     0 is no reduction. 1 is 100% reduction. 0.5 is 50% reduction.
+    ///     Currently, 90% reduction is as high as we can go without changing code in C#
+    /// </remarks>
+    [DataField]
+    public float IdleDrainReduction = 0.6f;
 
     /// <summary>
     ///     The percentages at which the silicon will enter each state.

@@ -106,6 +106,7 @@
   id: NanoMedPlusInventory
   startingInventory:
     HandheldHealthAnalyzer: 3
+    Gauze: 5 # Goobstation
     Brutepack: 5
     Ointment: 5
     Bloodpack: 5
@@ -128,6 +129,7 @@
     FoodSnackLollypopWrappedTricordrazine: 8
     NitrousOxideTankFilled: 2
   emaggedInventory:
+    SyringeMicroplastics: 2 #Technically a medicine
     FoodSnackLollypopWrappedLexorin: 3
     FoodSnackLollypopWrappedMysteryEvil: 5 # Goobstation - end
   contrabandInventory:

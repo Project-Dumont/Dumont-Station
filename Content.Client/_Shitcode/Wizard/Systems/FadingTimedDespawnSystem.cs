@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -14,6 +16,25 @@ namespace Content.Client._Shitcode.Wizard.Systems;
 public sealed class FadingTimedDespawnSystem : SharedFadingTimedDespawnSystem
 {
     [Dependency] private readonly AnimationPlayerSystem _animationSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<FadingTimedDespawnComponent, ComponentShutdown>(OnShutdown);
+    }
+
+    private void OnShutdown(Entity<FadingTimedDespawnComponent> ent, ref ComponentShutdown args)
+    {
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        _animationSystem.Stop(ent.Owner, FadingTimedDespawnComponent.AnimationKey);
+
+        if (TryComp(ent, out SpriteComponent? sprite))
+            _sprite.SetColor((ent.Owner, sprite), sprite.Color.WithAlpha(1f));
+    }
 
     protected override void FadeOut(Entity<FadingTimedDespawnComponent> ent)
     {

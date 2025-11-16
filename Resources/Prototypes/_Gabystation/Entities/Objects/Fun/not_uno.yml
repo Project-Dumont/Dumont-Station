@@ -1,0 +1,971 @@
+# SPDX-FileCopyrightText: 2025 Daniela <43686351+Day-OS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Base replacements
+- type: entity
+  parent: CardHandBase
+  id: CardHandNunoBase
+  categories: [ HideSpawnMenu ]
+  name: hand of cards
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    state: singlecard_down
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckNunoBase
+  categories: [ HideSpawnMenu ]
+  name: (Nuno™) deck of cards
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    state: singlecard_down
+
+- type: entity
+  parent: CardBase
+  id: CardNunoBase
+  name: card
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    state: singlecard_down
+  - type: Card
+    backSpriteLayers:
+    - sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+      state: singlecard_down
+    flipped: true
+    cardHandBaseName: CardHandNunoBase
+    cardDeckBaseName: CardDeckNunoBase
+# endregion Base replacements
+
+
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxNuno
+  name: Nuno™
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: box
+    - state: box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckNuno
+      amount: 1
+  - type: StaticPrice
+    price: 25
+
+- type: entity
+  parent: CardDeckNunoBase
+  id: CardDeckNuno
+  name: deck of Nuno™ cards
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    state: singlecard_down
+  - type: CardStack
+    content:
+    - CardNunoRedZero
+    - CardNunoRedOne
+    - CardNunoRedTwo
+    - CardNunoRedThree
+    - CardNunoRedFour
+    - CardNunoRedFive
+    - CardNunoRedSix
+    - CardNunoRedSeven
+    - CardNunoRedEight
+    - CardNunoRedNine
+    - CardNunoRedDrawTwo
+    - CardNunoRedReverse
+    - CardNunoRedSkip
+    - CardNunoYellowZero
+    - CardNunoYellowOne
+    - CardNunoYellowTwo
+    - CardNunoYellowThree
+    - CardNunoYellowFour
+    - CardNunoYellowFive
+    - CardNunoYellowSix
+    - CardNunoYellowSeven
+    - CardNunoYellowEight
+    - CardNunoYellowNine
+    - CardNunoYellowDrawTwo
+    - CardNunoYellowReverse
+    - CardNunoYellowSkip
+    - CardNunoBlueZero
+    - CardNunoBlueOne
+    - CardNunoBlueTwo
+    - CardNunoBlueThree
+    - CardNunoBlueFour
+    - CardNunoBlueFive
+    - CardNunoBlueSix
+    - CardNunoBlueSeven
+    - CardNunoBlueEight
+    - CardNunoBlueNine
+    - CardNunoBlueDrawTwo
+    - CardNunoBlueReverse
+    - CardNunoBlueSkip
+    - CardNunoGreenZero
+    - CardNunoGreenOne
+    - CardNunoGreenTwo
+    - CardNunoGreenThree
+    - CardNunoGreenFour
+    - CardNunoGreenFive
+    - CardNunoGreenSix
+    - CardNunoGreenSeven
+    - CardNunoGreenEight
+    - CardNunoGreenNine
+    - CardNunoGreenDrawTwo
+    - CardNunoGreenReverse
+    - CardNunoGreenSkip
+
+    - CardNunoRedOne
+    - CardNunoRedTwo
+    - CardNunoRedThree
+    - CardNunoRedFour
+    - CardNunoRedFive
+    - CardNunoRedSix
+    - CardNunoRedSeven
+    - CardNunoRedEight
+    - CardNunoRedNine
+    - CardNunoRedDrawTwo
+    - CardNunoRedReverse
+    - CardNunoRedSkip
+    - CardNunoYellowOne
+    - CardNunoYellowTwo
+    - CardNunoYellowThree
+    - CardNunoYellowFour
+    - CardNunoYellowFive
+    - CardNunoYellowSix
+    - CardNunoYellowSeven
+    - CardNunoYellowEight
+    - CardNunoYellowNine
+    - CardNunoYellowDrawTwo
+    - CardNunoYellowReverse
+    - CardNunoYellowSkip
+    - CardNunoBlueOne
+    - CardNunoBlueTwo
+    - CardNunoBlueThree
+    - CardNunoBlueFour
+    - CardNunoBlueFive
+    - CardNunoBlueSix
+    - CardNunoBlueSeven
+    - CardNunoBlueEight
+    - CardNunoBlueNine
+    - CardNunoBlueDrawTwo
+    - CardNunoBlueReverse
+    - CardNunoBlueSkip
+    - CardNunoGreenOne
+    - CardNunoGreenTwo
+    - CardNunoGreenThree
+    - CardNunoGreenFour
+    - CardNunoGreenFive
+    - CardNunoGreenSix
+    - CardNunoGreenSeven
+    - CardNunoGreenEight
+    - CardNunoGreenNine
+    - CardNunoGreenDrawTwo
+    - CardNunoGreenReverse
+    - CardNunoGreenSkip
+    - CardNunoWild
+    - CardNunoWild
+    - CardNunoWild
+    - CardNunoWild
+    - CardNunoWildDrawCards
+    - CardNunoWildDrawCards
+    - CardNunoWildDrawCards
+    - CardNunoWildDrawCards
+
+# region Wild
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoWild
+  components:
+  - type: Card
+    name: card-nuno-wild
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: card_fourcolors
+      index: 0
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoWildDrawCards
+  components:
+  - type: Card
+    name: card-nuno-wild-draw-cards
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: plus4
+      index: 0
+
+
+
+# region Red
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedZero
+  components:
+  - type: Card
+    name: card-nuno-zero-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+      index: 0
+    - state: border
+      index: 1
+    - state: num0
+      index: 2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedOne
+  components:
+  - type: Card
+    name: card-nuno-one-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num1
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedTwo
+  components:
+  - type: Card
+    name: card-nuno-two-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedThree
+  components:
+  - type: Card
+    name: card-nuno-three-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num3
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedFour
+  components:
+  - type: Card
+    name: card-nuno-four-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num4
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedFive
+  components:
+  - type: Card
+    name: card-nuno-five-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num5
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedSix
+  components:
+  - type: Card
+    name: card-nuno-six-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num6
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedSeven
+  components:
+  - type: Card
+    name: card-nuno-seven-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num7
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedEight
+  components:
+  - type: Card
+    name: card-nuno-eight-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num8
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedNine
+  components:
+  - type: Card
+    name: card-nuno-nine-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: num9
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedDrawTwo
+  components:
+  - type: Card
+    name: card-nuno-draw-two-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: plus2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedReverse
+  components:
+  - type: Card
+    name: card-nuno-reverse-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: reverse
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoRedSkip
+  components:
+  - type: Card
+    name: card-nuno-skip-red
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-red
+    - state: border
+    - state: block
+
+# endregion
+
+# region Yellow
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowZero
+  components:
+  - type: Card
+    name: card-nuno-zero-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+      index: 0
+    - state: border
+      index: 1
+    - state: num0
+      index: 2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowOne
+  components:
+  - type: Card
+    name: card-nuno-one-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num1
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowTwo
+  components:
+  - type: Card
+    name: card-nuno-two-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowThree
+  components:
+  - type: Card
+    name: card-nuno-three-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num3
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowFour
+  components:
+  - type: Card
+    name: card-nuno-four-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num4
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowFive
+  components:
+  - type: Card
+    name: card-nuno-five-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num5
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowSix
+  components:
+  - type: Card
+    name: card-nuno-six-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num6
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowSeven
+  components:
+  - type: Card
+    name: card-nuno-seven-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num7
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowEight
+  components:
+  - type: Card
+    name: card-nuno-eight-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num8
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowNine
+  components:
+  - type: Card
+    name: card-nuno-nine-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: num9
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowDrawTwo
+  components:
+  - type: Card
+    name: card-nuno-draw-two-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: plus2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowReverse
+  components:
+  - type: Card
+    name: card-nuno-reverse-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: reverse
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoYellowSkip
+  components:
+  - type: Card
+    name: card-nuno-skip-yellow
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-yellow
+    - state: border
+    - state: block
+
+# endregion
+
+# region Blue
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueZero
+  components:
+  - type: Card
+    name: card-nuno-zero-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+      index: 0
+    - state: border
+      index: 1
+    - state: num0
+      index: 2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueOne
+  components:
+  - type: Card
+    name: card-nuno-one-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num1
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueTwo
+  components:
+  - type: Card
+    name: card-nuno-two-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueThree
+  components:
+  - type: Card
+    name: card-nuno-three-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num3
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueFour
+  components:
+  - type: Card
+    name: card-nuno-four-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num4
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueFive
+  components:
+  - type: Card
+    name: card-nuno-five-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num5
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueSix
+  components:
+  - type: Card
+    name: card-nuno-six-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num6
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueSeven
+  components:
+  - type: Card
+    name: card-nuno-seven-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num7
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueEight
+  components:
+  - type: Card
+    name: card-nuno-eight-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num8
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueNine
+  components:
+  - type: Card
+    name: card-nuno-nine-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: num9
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueDrawTwo
+  components:
+  - type: Card
+    name: card-nuno-draw-two-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: plus2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueReverse
+  components:
+  - type: Card
+    name: card-nuno-reverse-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: reverse
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoBlueSkip
+  components:
+  - type: Card
+    name: card-nuno-skip-blue
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-blue
+    - state: border
+    - state: block
+
+# endregion
+
+# region Green
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenZero
+  components:
+  - type: Card
+    name: card-nuno-zero-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+      index: 0
+    - state: border
+      index: 1
+    - state: num0
+      index: 2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenOne
+  components:
+  - type: Card
+    name: card-nuno-one-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num1
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenTwo
+  components:
+  - type: Card
+    name: card-nuno-two-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenThree
+  components:
+  - type: Card
+    name: card-nuno-three-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num3
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenFour
+  components:
+  - type: Card
+    name: card-nuno-four-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num4
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenFive
+  components:
+  - type: Card
+    name: card-nuno-five-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num5
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenSix
+  components:
+  - type: Card
+    name: card-nuno-six-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num6
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenSeven
+  components:
+  - type: Card
+    name: card-nuno-seven-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num7
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenEight
+  components:
+  - type: Card
+    name: card-nuno-eight-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num8
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenNine
+  components:
+  - type: Card
+    name: card-nuno-nine-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: num9
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenDrawTwo
+  components:
+  - type: Card
+    name: card-nuno-draw-two-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: plus2
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenReverse
+  components:
+  - type: Card
+    name: card-nuno-reverse-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: reverse
+
+- type: entity
+  parent: CardNunoBase
+  categories: [ HideSpawnMenu ]
+  id: CardNunoGreenSkip
+  components:
+  - type: Card
+    name: card-nuno-skip-green
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/cards-totallynotuno.rsi
+    layers:
+    - state: background-green
+    - state: border
+    - state: block
+
+# endregion

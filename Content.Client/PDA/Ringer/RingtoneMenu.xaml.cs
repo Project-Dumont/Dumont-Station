@@ -6,6 +6,10 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 João Fernandez <joaorbfernandez@gmail.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -63,6 +67,14 @@ namespace Content.Client.PDA.Ringer
                     }
 
                     input.CursorPosition = input.Text.Length;
+
+                    // Goobstation start edit
+                    if (index + 1 < RingerNoteInputs.Length)
+                    {
+                        RingerNoteInputs[index + 1].SelectAllOnFocus = true;
+                        RingerNoteInputs[index + 1].GrabKeyboardFocus();
+                    }
+                    // Goobstation end edit
                 };
 
                 input.OnFocusExit += _ =>

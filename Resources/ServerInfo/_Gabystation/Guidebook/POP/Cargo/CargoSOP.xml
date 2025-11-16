@@ -1,0 +1,57 @@
+<!--
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Intendente Logístico (Quartermaster)
+
+  [bold]1.[/bold] O Intendente Logístico deve garantir que todo pedido aprovado seja entregue em até 15 minutos após ter sido feito e aprovado;
+
+  [bold]2.[/bold] Em caso de crise grave, como Operativos Nucleares ou um Organismo Blob, a agilidade deve ser priorizada em relação à burocracia, pois excesso de papelada pode ser prejudicial ao bem-estar da estação;
+
+  [bold]3.[/bold] O Intendente Logístico não pode autorizar a compra de equipamentos e/ou itens de Segurança sem permissão expressa do Chefe de Segurança e/ou Capitão. Exceção é feita em emergências extremas, como Operativos Nucleares ou um Organismo Blob, onde tais equipamentos devem ser entregues à Segurança imediatamente;
+
+  [bold]4.[/bold] O Intendente Logístico pode autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do respectivo Chefe de Departamento (neste exemplo, o Engenheiro Chefe), usando seu melhor julgamento, embora ainda possa solicitar um formulário carimbado. No entanto, qualquer violação do Procedimento Operacional Padrão e/ou da Lei Espacial resultante desse pedido também implicará o Intendente Logístico;
+
+  [bold]5.[/bold] O Intendente Logístico não pode autorizar a compra de uma Caixa de Supermatéria sem permissão expressa do Engenheiro Chefe;
+
+  [bold]6.[/bold] O Intendente Logístico deve seguir as diretrizes estabelecidas para os Técnicos de Carga;
+
+  # Técnico de Carga (Cargo Technician)
+
+  [bold]1.[/bold] Técnicos de Carga devem garantir que todo pedido aprovado seja entregue em até 15 minutos após ter sido feito e aprovado;
+
+  [bold]2.[/bold] Técnicos de Carga estão sujeitos às mesmas regras do Intendente Logístico quanto a caixas restritas (ver acima);
+
+  [bold]3.[/bold] Técnicos de Carga não podem pedir itens para uso pessoal exclusivo com a conta do departamento de suprimentos sem consentimento expresso do Intendente Logístico. Exceção é feita se houver mais de 2500 spesos disponíveis e nenhum pedido pendente. Técnicos de Carga não podem zerar o saldo da conta do departamento para isso;
+
+  [bold]4.[/bold] Técnicos de Carga não podem pedir itens não essenciais usando a conta de suprimentos (como gatos ou roupas) sem consentimento expresso do Intendente Logístico;
+
+  [bold]5.[/bold] Técnicos de Carga não podem forçar e/ou arrombar caixas trancadas. O mesmo se aplica ao Intendente Logístico. Exceção é feita para Caixas Abandonadas encontradas pela Mineração;
+
+  [bold]6.[/bold] Técnicos de Carga não podem autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do Intendente Logístico;
+
+  [bold]7.[/bold] Técnicos de Carga devem garantir que pelo menos uma cópia de cada Formulário de Pedido (ou seja, os formulários produzidos pelo Console de Pedidos) seja mantida dentro da Carga.
+
+  [bold]8.[/bold] Técnicos de Carga devem devolver todas as caixas que foram pedidas, com o manifesto carimbado dentro da caixa;
+
+  [bold]9.[/bold] Técnicos de Carga devem garantir que um único Departamento não esgote totalmente a Máquina de Resgate de Minérios, pois ela pode ser utilizada por vários Departamentos;
+
+  [bold]10.[/bold] Técnicos de Carga não podem pedir créditos espaciais em troca de pedidos legais de caixas de carga ou solicitações de autolathe de membros da tripulação;
+
+  [bold]11.[/bold] Técnicos de Carga não podem trocar itens e/ou favores por itens com pessoal comum sem consentimento expresso do Intendente Logístico;
+
+  # Especialista em Salvamento (Salvage Specialist)
+
+  [bold]1.[/bold] Especialistas em Salvamento não podem acumular materiais. Todos os materiais minerados devem ser deixados no Processador de Minérios;
+
+  [bold]2.[/bold] Especialistas em Salvamento não podem jogar pessoas em buracos de minhoca fabricados, nem enganar pessoas para usarem Cristais de Bluespace, ou jogar Cristais de Bluespace em alguém;
+
+  [bold]3.[/bold] Especialistas em Salvamento não podem dar itens adquiridos em expedições para a tripulação da estação, a menos que o Intendente Logístico aprove;
+
+  [bold]4.[/bold] Especialistas em Salvamento estão sujeitos às diretrizes estabelecidas para Técnicos de Carga quando estiverem dentro do Escritório ou Baía de Carga;
+</Document>

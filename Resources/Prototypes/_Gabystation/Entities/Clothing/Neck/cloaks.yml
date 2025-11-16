@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakLuxury
+  name: luxury cloak
+  description: A dark cloak with various gold decorations, an excellent garment to flaunt your wealth.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Neck/Cloaks/luxury.rsi

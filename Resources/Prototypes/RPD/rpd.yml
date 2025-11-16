@@ -109,7 +109,7 @@
   sprite: /Textures/Interface/Radial/RPD/pump_heat.png
   mode: ConstructObject
   prototype: GasHeatPump
-  cost: 1
+  cost: 2
   delay: 0 
   collisionMask: Impassable
   rotation: User
@@ -121,6 +121,18 @@
   sprite: /Textures/Interface/Radial/RPD/pneumatic_valve.png
   mode: ConstructObject
   prototype: PressureControlledValve
+  cost: 2
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: PressureRegulator
+  category: PumpsValves
+  sprite: /Textures/Interface/Radial/RPD/pressure_regulator.png
+  mode: ConstructObject
+  prototype: GasPressureRegulator
   cost: 2
   delay: 0
   collisionMask: Impassable

@@ -1,5 +1,7 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Kayzel <43700376+KayzelW@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Trest <144359854+trest100@users.noreply.github.com>
@@ -26,6 +28,12 @@ namespace Content.Client._Shitmed.Medical.Surgery.Wounds;
 
 public sealed class WoundableVisualsSystem : VisualizerSystem<WoundableVisualsComponent>
 {
+    /*
+    // Disabled Wound Visuals
+    // It gets applied no problem but after attempts it doesn't seem to be removeable
+    // I will at somepoint might try to fix it, by writing/reviewing the code fully.
+    // RichardBlonski 🐢
+
     [Dependency] private readonly SharedBodySystem _body = default!;
 
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -322,4 +330,5 @@ public sealed class WoundableVisualsSystem : VisualizerSystem<WoundableVisualsCo
             spriteComponent.LayerSetState(spriteLayer, $"{statePrefix}_{threshold}");
         }
     }
+    */
 }

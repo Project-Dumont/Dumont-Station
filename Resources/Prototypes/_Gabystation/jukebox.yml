@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <151653952+Crono209ggg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crono209ggg <crono209gg@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
@@ -491,3 +493,94 @@
   name: Gaúcho da Fronteira - É disso que o velhos gosta
   path:
     path: /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
+
+- type: jukebox
+  id: ADarkZone
+  name: Toby Fox - A DARK ZONE 
+  path:
+    path: /Audio/_Gabystation/Jukebox/a_dark_zone.ogg
+
+- type: jukebox
+  id: Guardian
+  name: Toby Fox - GUARDIAN
+  path:
+    path: /Audio/_Gabystation/Jukebox/guardian.ogg
+
+- type: jukebox
+  id: QuestionableEthics1
+  name: Joel Nielsen - Questionable Ethics 1
+  path:
+    path: /Audio/_Gabystation/Jukebox/questionable_ethics_1.ogg
+
+- type: jukebox
+  id: AmigaDaMinhaMulher
+  name: Seu Jorge - Amiga da Minha Mulher
+  path:
+    path: /Audio/_Gabystation/Jukebox/amiga_da_minha_mulher.ogg
+
+- type: jukebox
+  id: AondeQuerQueEuVa
+  name: Os Paralamas Do Sucesso - Aonde Quer Que Eu Vá
+  path:
+    path: /Audio/_Gabystation/Jukebox/aonde_quer_que_eu_va.ogg
+
+- type: jukebox
+  id: Burguesinha
+  name: Seu Jorge - Burguesinha
+  path:
+    path: /Audio/_Gabystation/Jukebox/burguesinha.ogg
+
+- type: jukebox
+  id: CeuAzul
+  name: Charlie Brown Jr - Céu Azul
+  path:
+    path: /Audio/_Gabystation/Jukebox/ceu_azul.ogg
+
+- type: jukebox
+  id: LugarAoSol
+  name: Charlie Brown Jr - Lugar Ao Sol
+  path:
+    path: /Audio/_Gabystation/Jukebox/lugar_ao_sol.ogg
+
+- type: jukebox
+  id: OutraVida
+  name: Armandinho - Outra Vida
+  path:
+    path: /Audio/_Gabystation/Jukebox/outra_vida.ogg
+
+- type: jukebox
+  id: Samurai
+  name: Djavan - Samurai
+  path:
+    path: /Audio/_Gabystation/Jukebox/samurai.ogg
+
+- type: jukebox
+  id: SoOsLoucosSabem
+  name: Charlie Brown Jr - Só os loucos sabem
+  path:
+    path: /Audio/_Gabystation/Jukebox/so_os_loucos_sabem.ogg
+
+- type: jukebox
+  id: UrsinhoDeDormir
+  name: Armandinho - Ursinho De Dormir
+  path:
+    path: /Audio/_Gabystation/Jukebox/ursinho_de_dormir.ogg
+
+- type: jukebox
+  id: PapersPleaseThemeSong
+  name: Papers Please - Theme Song
+  path:
+    path: /Audio/_Gabystation/Jukebox/Papers_Please_Theme_Song.ogg
+
+- type: jukebox
+  id: PapersPleaseGlory
+  name: Papers Please - Glory to ARSTOTZKA
+  path:
+    path: /Audio/_Gabystation/Jukebox/PAPERS_PLEASE_Glory_ARSTOTZKA.ogg
+
+- type: jukebox
+  id: PapersPleaseDeathTheme
+  name: Papers Please - Death Theme
+  path:
+    path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
+

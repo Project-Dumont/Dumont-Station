@@ -4,6 +4,8 @@
 // SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
@@ -73,11 +75,11 @@ public sealed class AnomalySystem : SharedAnomalySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<AnomalySupercriticalComponent, SpriteComponent>();
+        var query = EntityQueryEnumerator<AnomalyComponent, AnomalySupercriticalComponent, SpriteComponent>();
 
-        while (query.MoveNext(out var uid, out var super, out var sprite))
+        while (query.MoveNext(out var uid, out var anomaly, out var super, out var sprite))
         {
-            var completion = 1f - (float)((super.EndTime - _timing.CurTime) / super.SupercriticalDuration);
+            var completion = 1f - (float) ((super.EndTime - _timing.CurTime) / anomaly.SupercriticalDuration);
             var scale = completion * (super.MaxScaleAmount - 1f) + 1f;
             _sprite.SetScale((uid, sprite), new Vector2(scale, scale));
 

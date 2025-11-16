@@ -85,6 +85,12 @@
   color: "#FF0000"
 
 - type: collectiveMind
+  id: Shadowmind
+  name: collective-mind-shadow-mind
+  keycode: 'q'
+  color: "#77698d"
+
+- type: collectiveMind
   id: Xenomorphivemind
   name: collective-mind-xeno
   keycode: 'z'

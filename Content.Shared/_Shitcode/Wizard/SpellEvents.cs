@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
@@ -16,6 +19,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Explosion;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Item;
 using Content.Shared.Magic;
 using Content.Shared.Physics;
 using Content.Shared.Polymorph;
@@ -84,7 +88,7 @@ public sealed partial class MagicMissileEvent : InstantActionEvent
     public float Range = 7f;
 
     [DataField]
-    public float ProjectileSpeed = 4.5f;
+    public float ProjectileSpeed = 6f;
 }
 
 public sealed partial class DisableTechEvent : InstantActionEvent
@@ -194,6 +198,9 @@ public sealed partial class BindSoulEvent : InstantActionEvent
         {"head", "ClothingHeadHatBlackwizardReal"},
         {"outerClothing", "ClothingOuterWizardBlackReal"},
     };
+
+    [DataField]
+    public ProtoId<ItemSizePrototype> PhylacterySize = "Ginormous";
 }
 
 public sealed partial class PolymorphSpellEvent : InstantActionEvent
@@ -250,7 +257,7 @@ public sealed partial class TeslaBlastEvent : InstantActionEvent
 public sealed partial class LightningBoltEvent : EntityTargetActionEvent
 {
     [DataField]
-    public float Damage = 40f;
+    public float Damage = 50f;
 
     [DataField]
     public EntProtoId Proto = "ChargedLightning";
@@ -445,7 +452,7 @@ public sealed partial class ChargeMagicEvent : InstantActionEvent
     public float WandChargeRate = 1000f;
 
     [DataField]
-    public float MinWandDegradeCharge = 500f;
+    public float MinWandDegradeCharge = 1000f;
 
     [DataField]
     public float WandDegradePercentagePerCharge = 0.5f;

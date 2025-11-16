@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Server._White.Spawners.Components;
 using Content.Server.Atmos.Components;
@@ -27,6 +34,7 @@ public sealed class AreaSpawnerSystem : EntitySystem
 
     public override void Initialize()
     {
+        base.Initialize();
         SubscribeLocalEvent<AreaSpawnerComponent, ComponentShutdown>(OnShutdown);
     }
 
@@ -34,11 +42,13 @@ public sealed class AreaSpawnerSystem : EntitySystem
     {
         foreach (var spawned in component.Spawneds)
         {
-            var despawnComponent = new TimedDespawnComponent
-            {
-                Lifetime = _random.NextFloat(component.MinTime, component.MaxTime)
-            };
-            AddComp(spawned, despawnComponent);
+            // <Goobstation> rewrote to be non goida
+            if (TerminatingOrDeleted(spawned))
+                continue;
+
+            var comp = EnsureComp<TimedDespawnComponent>(spawned);
+            comp.Lifetime = _random.NextFloat(component.MinTime, component.MaxTime);
+            // </Goobstation>
         }
     }
 

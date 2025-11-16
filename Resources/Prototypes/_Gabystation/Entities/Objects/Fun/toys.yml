@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VictorJob <117521143+VictorJob@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -94,6 +95,39 @@
     - type: Clothing
       quickEquip: false
       sprite: _Gabystation/Objects/Fun/Plushies/kiiara_wami.rsi
+      slots:
+      - HEAD
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/Animals/cat_meow2.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieKiiaraWarden
+  name: Pelúcia de Kiiara Warden
+  description: Pelúcia do exemplar Warden Kiiara Wami, apesar da fofura não ouse desodebecer apenas para escutar seus meows!
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_warden.rsi
+      state: kiiara
+    - type: Item
+      size: Small
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_warden.rsi
+    - type: Clothing
+      quickEquip: false
+      sprite: _Gabystation/Objects/Fun/Plushies/kiiara_warden.rsi
       slots:
       - HEAD
     - type: EmitSoundOnUse

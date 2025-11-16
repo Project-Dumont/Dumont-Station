@@ -111,6 +111,7 @@
   supervisors: job-supervisors-security
   canBeAntag: false
   goobcoins: 30 #Goob content
+  salary: 50 # Gaby content
   access:
   - Security
   - Brig

@@ -1,5 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 X <70487315+XWasHere@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -11,6 +14,7 @@
   - type: Item
   - type: Battery
     pricePerJoule: 0.15
+  - type: BatteryDrinkerSource
   - type: PowerCell
     powerCellVisualsLevels: 4
   - type: Explosive
@@ -57,6 +61,8 @@
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
+  - type: BatteryDrinkerSource
+    maxAmount: 200
   - type: Tag
     tags:
     - MilitaryPowerCellSMG
@@ -143,6 +149,8 @@
   - type: Battery
     maxCharge: 1200
     startingCharge: 1200
+  - type: BatteryDrinkerSource
+    maxAmount: 200
   - type: Tag
     tags:
     - MilitaryPowerCellSniper
@@ -234,6 +242,8 @@
   - type: Battery
     maxCharge: 500
     startingCharge: 500
+  - type: BatteryDrinkerSource
+    maxAmount: 100
   - type: Tag
     tags:
     - MilitaryPowerCellRevolver
@@ -399,6 +409,8 @@
   - type: Battery
     maxCharge: 3000
     startingCharge: 3000
+  - type: BatteryDrinkerSource
+    maxAmount: 500
   - type: HitscanBatteryAmmoProvider
     proto: SmallRedLaser
     fireCost: 15

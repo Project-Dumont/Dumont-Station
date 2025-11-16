@@ -187,3 +187,7 @@ cosmiccult-entropy-unavailable = Você não pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
 cosmiccult-gear-pickup-rejection = {CAPITALIZE(ARTIGO-O($ITEM))} {$ITEM} resiste ao toque {PREPOSICAO-DE($TARGET)} {$TARGET}!
 cosmiccult-gear-pickup = Você se sente se desfazendo ao segurar {ARTIGO-O($ITEM)} {$ITEM}!
+
+# Goobstation
+
+cult-alert-recall-shuttle = Altas concentrações de Λ-CDM de origem desconhecida detectadas a bordo da estação. Todas as presenças anômalas devem ser eliminadas ou contidas para que a evacuação possa ser autorizada.

@@ -153,6 +153,7 @@
   #canBeAntag: false
   antagAdvantage: 75 # Goobstation
   goobcoins: 40 #Goob content
+  salary: 50 # Gaby content
   access:
   - Cargo
   - Salvage

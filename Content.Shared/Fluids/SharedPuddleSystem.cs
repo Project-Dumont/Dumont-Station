@@ -8,9 +8,22 @@
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Jajsha <101492056+Zap527@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RocketBoss360 <rocketboss360@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
+using System.Linq;
+using Content.Shared.Administration.Logs;
+using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
@@ -20,7 +33,11 @@ using Content.Shared.Examine;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Movement.Events;
+using Content.Shared.Popups;
+using Content.Shared.Stains;
 using Content.Shared.StepTrigger.Components;
+using Robust.Shared.Containers;
+using Content.Shared.Atmos;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -28,9 +45,22 @@ namespace Content.Shared.Fluids;
 
 public abstract partial class SharedPuddleSystem : EntitySystem
 {
+    [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
+    [Dependency] protected readonly SharedPopupSystem Popups = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] protected readonly ReactiveSystem Reactive = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+
+    private static readonly ProtoId<ReagentPrototype> Blood = "Blood";
+    private static readonly ProtoId<ReagentPrototype> Slime = "Slime";
+    private static readonly ProtoId<ReagentPrototype> CopperBlood = "CopperBlood";
+    private static readonly ProtoId<ReagentPrototype> BloodChangeling = "BloodChangeling"; // Goobstation
+    private static readonly ProtoId<ReagentPrototype> BlackBlood = "BlackBlood"; // Goobstation
+
+    private static readonly string[] StandoutReagents = [Blood, Slime, CopperBlood, BloodChangeling, BlackBlood]; // Goobstation - added BloodChangeling+Blackblood
+
 
     /// <summary>
     /// The lowest threshold to be considered for puddle sprite states as well as slipperiness of a puddle.
@@ -46,10 +76,23 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         SubscribeLocalEvent<DumpableSolutionComponent, CanDropTargetEvent>(OnDumpCanDropTarget);
         SubscribeLocalEvent<DrainableSolutionComponent, CanDropTargetEvent>(OnDrainCanDropTarget);
         SubscribeLocalEvent<RefillableSolutionComponent, CanDropDraggedEvent>(OnRefillableCanDropDragged);
+
+        SubscribeLocalEvent<PuddleComponent, SolutionContainerChangedEvent>(OnSolutionUpdate);
         SubscribeLocalEvent<PuddleComponent, GetFootstepSoundEvent>(OnGetFootstepSound);
+        SubscribeLocalEvent<PuddleComponent, GetStainableSolutionEvent>(OnGetStainableSolution);
         SubscribeLocalEvent<PuddleComponent, ExaminedEvent>(HandlePuddleExamined);
+        SubscribeLocalEvent<PuddleComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
+        SubscribeLocalEvent<PuddleComponent, TileFireEvent>(OnPuddleBurn);
 
         InitializeSpillable();
+    }
+
+    protected virtual void OnSolutionUpdate(Entity<PuddleComponent> entity, ref SolutionContainerChangedEvent args)
+    {
+        if (args.SolutionId != entity.Comp.SolutionName)
+            return;
+
+        UpdateAppearance((entity, entity.Comp));
     }
 
     private void OnRefillableCanDrag(Entity<RefillableSolutionComponent> entity, ref CanDragEvent args)
@@ -103,6 +146,18 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         }
     }
 
+    private void OnGetStainableSolution(Entity<PuddleComponent> entity, ref GetStainableSolutionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!_solutionContainerSystem.ResolveSolution(entity.Owner, entity.Comp.SolutionName, ref entity.Comp.Solution, out var solution))
+            return;
+
+        args.Solution = solution;
+        args.Handled = true;
+    }
+
     private void HandlePuddleExamined(Entity<PuddleComponent> entity, ref ExaminedEvent args)
     {
         using (args.PushGroup(nameof(PuddleComponent)))
@@ -126,6 +181,79 @@ public abstract partial class SharedPuddleSystem : EntitySystem
             else
                 args.PushMarkup(Loc.GetString("puddle-component-examine-evaporating-no"));
         }
+    }
+
+    // Workaround for https://github.com/space-wizards/space-station-14/pull/35314
+    private void OnEntRemoved(Entity<PuddleComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        // Make sure the removed entity was our contained solution and clear our cached reference
+        if (args.Entity == ent.Comp.Solution?.Owner)
+            ent.Comp.Solution = null;
+    }
+
+    private void UpdateAppearance(Entity<PuddleComponent?, AppearanceComponent?> ent)
+    {
+        var (uid, puddle, appearance) = ent;
+        if (!Resolve(ent, ref puddle, ref appearance))
+            return;
+
+        var volume = FixedPoint2.Zero;
+        var color = Color.White;
+
+        if (_solutionContainerSystem.ResolveSolution(uid,
+                puddle.SolutionName,
+                ref puddle.Solution,
+                out var solution))
+        {
+            volume = solution.Volume / puddle.OverflowVolume;
+
+            // Make blood stand out more
+            // Kinda EH
+            // Could potentially do alpha per-solution but future problem.
+
+            color = solution.GetColorWithout(_prototypeManager, StandoutReagents);
+            color = color.WithAlpha(0.7f);
+
+            foreach (var standout in StandoutReagents)
+            {
+                var quantity = solution.GetTotalPrototypeQuantity(standout);
+                if (quantity <= FixedPoint2.Zero)
+                    continue;
+
+                var interpolateValue = quantity.Float() / solution.Volume.Float();
+                color = Color.InterpolateBetween(color,
+                    _prototypeManager.Index<ReagentPrototype>(standout).SubstanceColor,
+                    interpolateValue);
+            }
+        }
+
+        _appearance.SetData(ent, PuddleVisuals.CurrentVolume, volume.Float(), appearance);
+        _appearance.SetData(ent, PuddleVisuals.SolutionColor, color, appearance);
+    }
+
+    public void DoTileReactions(TileRef tileRef, Solution solution)
+    {
+        for (var i = solution.Contents.Count - 1; i >= 0; i--)
+        {
+            var (reagent, quantity) = solution.Contents[i];
+            var proto = _prototypeManager.Index<ReagentPrototype>(reagent.Prototype);
+            var removed = proto.ReactionTile(tileRef, quantity, EntityManager, reagent.Data);
+            if (removed <= FixedPoint2.Zero)
+                continue;
+
+            solution.RemoveReagent(reagent, removed);
+        }
+    }
+
+    public void OnPuddleBurn(Entity<PuddleComponent> ent, ref TileFireEvent args)
+    {
+        if (!_solutionContainerSystem.ResolveSolution(ent.Owner,
+                ent.Comp.SolutionName,
+                ref ent.Comp.Solution,
+                out var solution))
+            return;
+        _solutionContainerSystem.BurnFlammableReagents(ent.Comp.Solution.Value, 0.05f);
+
     }
 
     #region Spill

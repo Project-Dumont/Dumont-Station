@@ -1,10 +1,17 @@
+// SPDX-FileCopyrightText: 2024 Daniela <43686351+Day-OS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Diego Leite Asprino <98828735+dasprino007@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DoutorWhite <thedoctorwhite@gmail.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Content.Shared._EstacaoPirata.Cards.Stack;
 using Content.Shared.Audio;
@@ -35,7 +42,6 @@ public sealed class CardDeckSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    public readonly EntProtoId CardDeckBaseName = "CardDeckBase";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -86,12 +92,15 @@ public sealed class CardDeckSystem : EntitySystem
         if (stack.Cards.Count <= 1)
             return;
 
+        if (!TryComp(stack.Cards.First(), out CardComponent? firstCardComp))
+            return;
+
         _audio.PlayPredicted(deck.PickUpSound, Transform(uid).Coordinates, user);
 
         if (!_net.IsServer)
             return;
 
-        var cardDeck = SpawnInSameParent(CardDeckBaseName, uid);
+        var cardDeck = SpawnInSameParent(firstCardComp.CardDeckBaseName, uid);
 
         EnsureComp<CardStackComponent>(cardDeck, out var deckStack);
 

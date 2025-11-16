@@ -1,0 +1,85 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 P e p e . <154895350+PepeThePog@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: An Entity
+  parent: [ SimpleSpaceMobBase, MobCombat ]
+  id: MobEntityCrawler
+  description: A Spider(?) Thing(?). You seriously don't know what you're looking at, and you seriously shouldn't get close to this thing.
+  components:
+    - type: HTN
+      rootTask:
+        task: SimpleHostileCompound
+    - type: SpamEmitSound
+      minInterval: 1
+      maxInterval: 2
+      sound:
+        path: /Audio/_Goobstation/Animals/breath1.ogg
+        params:
+          volume: -6
+          maxDistance: 20
+          variation: 0.2
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 5
+    - type: Sprite
+      sprite: _Gabystation/Mobs/Animals/crawlie.rsi
+      layers:
+        - map: [ "enum.DamageStateVisualLayers.Base" ]
+          state: crawlie
+      scale: 1.25, 1.25
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: crawlie
+        Dead:
+          Base: crawlie_dead
+    - type: Physics
+      bodyType: KinematicController
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 130
+          mask:
+          - MobMask
+          layer:
+          - MobLayer
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        350: Dead
+    - type: PassiveDamage
+      allowedStates:
+        - Alive
+      damage:
+        types:
+          Heat: -1
+        groups:
+          Brute: -1
+    - type: StaticPrice
+      price: 8000
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+      damage:
+        types:
+          Piercing: 15
+          Slash: 20
+    - type: Butcherable
+      spawned:
+      - id: FoodMeatSpider
+        amount: 2
+    - type: Bloodstream
+      bloodMaxVolume: 300
+      bloodReagent: Haloperidol
+    - type: Fauna
+    - type: CombatPower
+      factor: 2

@@ -1,0 +1,98 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+
+  # Diretor de Pesquisa
+
+  ## Código Verde
+
+  [bold]1.[/bold] O Diretor de Pesquisa deve garantir que a pesquisa está sendo realizada. A pesquisa deve ser concluída até o final do turno, assumindo que o Setor de Ciência receba os materiais necessários do Setor de Carga;
+
+  [bold]2.[/bold] O Diretor de Pesquisa tem permissão para portar um flash e seu Teletransportador Portátil;
+
+  [bold]3.[/bold] O Diretor de Pesquisa não tem permissão para levar artefatos perigosos para fora do Setor de Ciência se eles não estiverem armazenados dentro de um contêiner de artefato;
+
+  [bold]4.[/bold] O Diretor de Pesquisa não tem permissão para descomissionar uma IA da Estação sem a aprovação do Capitão. A unidade de IA, se descomissionada, deve ser armazenada em um Intellicard para ser inspecionada na Central de Comando;
+
+  [bold]5.[/bold] O Diretor de Pesquisa tem permissão para alterar as leis da IA da Estação, desde que receba aprovação do Capitão;
+
+  [bold]6.[/bold] O Diretor de Pesquisa deve manter um registro de todas as anomalias e eliminar quaisquer anomalias que possam representar perigo imediato aos membros da tripulação;
+
+  [bold]7.[/bold] O Diretor de Pesquisa deve garantir que as telecomunicações estejam devidamente mantidas.
+
+  ## Código Azul
+
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde.
+
+  ## Código Vermelho
+
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
+
+  [bold]2.[/bold] Além de um flash, o Diretor de Pesquisa tem permissão para portar uma única arma criada no Protolathe, desde que receba autorização do Chefe de Segurança. Uma exceção é feita durante emergências extremas;
+
+  # Cientista / Assistente de Pesquisa
+
+  ## Código Verde
+
+  [bold]1.[/bold] Cientistas não têm permissão para levar artefatos para fora do Setor de Ciência sem o uso de um contêiner de artefato;
+
+  [bold]2.[/bold] Cientistas não têm permissão para gerar anomalias sem a aprovação do Diretor de Pesquisa;
+
+  [bold]3.[/bold] Embora não seja obrigatório, é altamente recomendado que os Cientistas emitam um aviso prévio antes de gerar uma anomalia, de preferência em conjunto com o Diretor de Pesquisa declarando que uma anomalia foi gerada através do Console de Comunicações apropriado;
+
+  [bold]4.[/bold] Cientistas devem entregar quaisquer animais usados em testes ao Chef após a conclusão dos testes;
+
+  [bold]5.[/bold] Cientistas não têm permissão para portar quaisquer armas geradas no Protolathe;
+
+  [bold]6.[/bold] Cientistas não têm permissão para distribuir quaisquer armas geradas no Protolathe, a menos que a arma em questão (por exemplo, Aceleradores Proto-Cinéticos) seja entregue ao departamento apropriado;
+
+  [bold]7.[/bold] Cientistas não devem ativar artefatos de Destruição da Estação e devem destruí-los ou eliminá-los o mais rápido possível;
+
+  [bold]8.[/bold] Pelo menos um cientista deve estar disponível para receber solicitações de membros da tripulação na recepção do Setor de Ciência, se houver uma.
+
+  ## Código Azul
+
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde;
+
+  [bold]2.[/bold] Cientistas têm permissão para produzir armas e granadas no Protolathe, desde que sejam entregues à Segurança.
+
+  ## Código Vermelho
+
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
+
+  [bold]2.[/bold] Em relação à Diretriz 2 do Código Azul, cientistas podem se armar com uma única arma se a ameaça for considerada de destruição da estação.
+
+  # Cientista Roboticista
+
+  ## Código Verde
+
+  [bold]1.[/bold] Roboticistas não têm permissão para construir Mechas de Combate sem permissão explícita do Capitão e/ou do Chefe de Segurança. Um exemplo de Mecha de Combate é o Gygax;
+
+  [bold]2.[/bold] Roboticistas têm permissão livre para construir Mechas Utilitários, junto com qualquer Equipamento Utilitário associado;
+
+  [bold]3.[/bold] Roboticistas têm permissão livre para construir Ciborgues e todo o equipamento associado;
+
+  [bold]4.[/bold] Roboticistas devem respeitar todas as ordens de Não-Ciborguizar, e cópias dessas ordens devem ser mantidas em segurança, se possível. Se não houver cópia, uma Unidade MMI pode se recusar a se tornar um Ciborgue, e esse desejo deve ser respeitado;
+
+  [bold]5.[/bold] Roboticistas devem garantir que todos os Ciborgues estejam aderindo às suas leis e não estejam com mau funcionamento. Se um Ciborgue for encontrado violando suas leis, sua Unidade MMI ou Cérebro Positrônico deve ser preservado e colocado em um novo chassi de Ciborgue;
+
+  [bold]6.[/bold] Roboticistas devem manter pelo menos um Cérebro Positrônico ativado, se possível;
+
+  [bold]7.[/bold] Roboticistas devem aderir a todas as diretrizes do POP de Cientista.
+
+
+  ## Código Azul
+
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde;
+
+  [bold]2.[/bold] Em relação à Diretriz 1 do Código Verde, Roboticistas têm permissão para construir Mechas de Combate sem consentimento prévio, mas devem ser entregues ao Arsenal. A falha em cumprir resultará na destruição do Mecha de Combate. Uma exceção é feita para ameaças de nível de estação, mas mesmo após essas ameaças serem resolvidas, o Mecha deve ser entregue ao Arsenal.
+
+  ## Código Vermelho
+
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul.
+</Document>

@@ -15,6 +15,8 @@
 // SPDX-FileCopyrightText: 2025 Eagle <lincoln.mcqueen@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -26,6 +28,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Maths.FixedPoint;
+using System.Numerics;
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -116,4 +119,88 @@ public sealed partial class StaminaComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f }, { 60, 0.7f }, { 80, 0.5f } };
+
+    #region Animation Data
+
+    /// <summary>
+    /// Threshold at which low stamina animations begin playing. This should be set to a value that means something.
+    /// At 50, it is aligned so when you hit 60 stun the entity will be breathing once per second (well above hyperventilation).
+    /// </summary>
+    [DataField]
+    public float AnimationThreshold = 50;
+
+    /// <summary>
+    /// Minimum y vector displacement for breathing at AnimationThreshold
+    /// </summary>
+    [DataField]
+    public float BreathingAmplitudeMin = 0.04f;
+
+    /// <summary>
+    /// Maximum y vector amount we add to the BreathingAmplitudeMin
+    /// </summary>
+    [DataField]
+    public float BreathingAmplitudeMod = 0.04f;
+
+    /// <summary>
+    /// Minimum vector displacement for jittering at AnimationThreshold
+    /// </summary>
+    [DataField]
+    public float JitterAmplitudeMin;
+
+    /// <summary>
+    /// Maximum vector amount we add to the JitterAmplitudeMin
+    /// </summary>
+    [DataField]
+    public float JitterAmplitudeMod = 0.04f;
+
+    /// <summary>
+    /// Min multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
+    /// </summary>
+    [DataField]
+    public Vector2 JitterMin = Vector2.Create(0.5f, 0.125f);
+
+    /// <summary>
+    /// Max multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
+    /// </summary>
+    [DataField]
+    public Vector2 JitterMax = Vector2.Create(1f, 0.25f);
+
+    /// <summary>
+    /// Minimum total animations per second
+    /// </summary>
+    [DataField]
+    public float FrequencyMin = 0.25f;
+
+    /// <summary>
+    /// Maximum amount we add to the Frequency min just before crit
+    /// </summary>
+    [DataField]
+    public float FrequencyMod = 1.75f;
+
+    /// <summary>
+    /// Jitter keyframes per animation
+    /// </summary>
+    [DataField]
+    public int Jitters = 4;
+
+    /// <summary>
+    /// Vector of the last Jitter so we can make sure we don't jitter in the same quadrant twice in a row.
+    /// </summary>
+    [DataField]
+    public Vector2 LastJitter;
+
+    /// <summary>
+    ///     The offset that an entity had before jittering started,
+    ///     so that we can reset it properly.
+    /// </summary>
+    [DataField]
+    public Vector2 StartOffset = Vector2.Zero;
+
+    #endregion
+
+    /// <summary>
+    /// Goobstation - Used for the sprinting event to get rather we sprinting or not from Goob Mod folder
+    /// </summary>
+    [DataField]
+    public bool IsSprinting { get; set; }
 }

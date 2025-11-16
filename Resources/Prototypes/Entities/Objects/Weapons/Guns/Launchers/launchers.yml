@@ -160,6 +160,7 @@
   - type: Tag
     tags:
       - SpecialWeapon
+  - type: GunExecutionBlacklist # Goobstation
 
 - type: entity
   name: china lake

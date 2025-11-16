@@ -1,5 +1,8 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -48,7 +51,8 @@ public sealed class KeyringSystem : EntitySystem
     private void OnInteractUsing(Entity<KeyringComponent> keyring, ref AfterInteractEvent args)
     {
         if (args.Handled
-            || !HasComp<DoorComponent>(args.Target))
+            || !HasComp<DoorComponent>(args.Target)
+            || !args.CanReach)
             return;
 
         var doAfterArgs =
@@ -72,7 +76,7 @@ public sealed class KeyringSystem : EntitySystem
 
         _audioSystem.PlayPredicted(keyring.Comp.UseSound, keyring, args.User);
 
-        args.Handled = true;
+        args.Handled = true; 
     }
 
     private void OnDoAfterEvent(Entity<KeyringComponent> keyring, ref KeyringDoAfterEvent args)
@@ -88,14 +92,18 @@ public sealed class KeyringSystem : EntitySystem
             _doorSystem.StartOpening(target);
 
             var successPopup = Loc.GetString("keyring-finish-unlock-popup");
-            _popupSystem.PopupClient(successPopup, args.User, args.User);
+            _popupSystem.PopupPredicted(successPopup, args.User, args.User);
+
+            args.Handled = true;
 
             return;
         }
 
 
         var failPopup = Loc.GetString("keyring-unlock-fail-popup");
-        _popupSystem.PopupClient(failPopup, args.User, args.User);
+        _popupSystem.PopupPredicted(failPopup, args.User, args.User);
+
+        args.Handled = true;
     }
 
 }

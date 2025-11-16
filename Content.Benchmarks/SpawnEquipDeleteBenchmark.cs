@@ -4,6 +4,9 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,6 +20,7 @@ using Robust.Shared;
 using Robust.Shared.Analyzers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.Benchmarks;
 
@@ -27,9 +31,11 @@ namespace Content.Benchmarks;
 [Virtual, MemoryDiagnoser]
 public class SpawnEquipDeleteBenchmark
 {
+    private static readonly EntProtoId Mob = "MobHuman";
+    private static readonly ProtoId<StartingGearPrototype> CaptainStartingGear = "CaptainGear";
+
     private TestPair _pair = default!;
     private StationSpawningSystem _spawnSys = default!;
-    private const string Mob = "MobHuman";
     private StartingGearPrototype _gear = default!;
     private EntityUid _entity;
     private EntityCoordinates _coords;
@@ -48,7 +54,7 @@ public class SpawnEquipDeleteBenchmark
         var mapData = await _pair.CreateTestMap();
         _coords = mapData.GridCoords;
         _spawnSys = server.System<StationSpawningSystem>();
-        _gear = server.ProtoMan.Index<StartingGearPrototype>("CaptainGear");
+        _gear = server.ProtoMan.Index(CaptainStartingGear);
     }
 
     [GlobalCleanup]
