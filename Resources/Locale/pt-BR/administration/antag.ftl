@@ -12,3 +12,6 @@ admin-verb-text-make-nuclear-operative = Torna Agente Nuclear
 admin-verb-text-make-pirate = Torna Pirata
 admin-verb-text-make-head-rev = Torna Head Rev
 admin-verb-text-make-thief = Torna Ladrão
+
+admin-verb-text-make-gang-leader = Fazer Lider de Gangue
+admin-verb-text-gang-leader = Faça o alvo virar um Lider de Gangue. Esteja avisado que isto fará que caixas de suplimentos de gangue spawnem pela estação.

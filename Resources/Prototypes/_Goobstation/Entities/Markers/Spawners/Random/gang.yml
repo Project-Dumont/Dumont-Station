@@ -77,9 +77,9 @@
       prob: 0.3
     - id: ClothingOuterVestWeb
       prob: 0.1
-    - id: WizardsGrimoireNoRefund
-      prob: 0.00000001
-    - id: WeaponPistolDebug
-      prob: 0.00000001
-    - id: MeleeDebugGib
-      prob: 0.00000001
+#    - id: WizardsGrimoireNoRefund # MRP stuff
+#      prob: 0.00000001
+#    - id: WeaponPistolDebug
+#      prob: 0.00000001
+#    - id: MeleeDebugGib
+#      prob: 0.00000001
