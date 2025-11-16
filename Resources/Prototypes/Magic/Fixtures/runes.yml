@@ -94,6 +94,7 @@
     - type: OfferOnTrigger
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: FloorObjects
       layers:
         - state: offering
           color: '#FF3300CC'
@@ -105,6 +106,7 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
+    drawdepth: FloorObjects
     layers:
     - state: offering_drawing
       color: '#FF3300CC'
@@ -115,6 +117,7 @@
   parent: BaseBloodCultRune
   id: ReviveRune
   name: "revive rune"
+  description: A blood-soaked rune that brings the dead back to life by draining the invoker's blood.
   components:
     - type: ReviveCultistOnTrigger
     - type: Sprite
@@ -177,6 +180,7 @@
   - type: TearVeil
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/narsierune.rsi
+    drawdepth: FloorObjects
     layers:
     - state: narsierune
       color: '#FF4400FF'
@@ -187,6 +191,7 @@
   suffix: Spawn
   components:
   - type: Sprite
+    drawdepth: FloorObjects
     layers:
     - state: narsierune_drawing
   # spawn animation lasts 45 seconds

@@ -27,382 +27,514 @@ using Content.Shared.BloodCult.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Server.GameTicking.Rules;
+using Content.Shared.StatusEffect;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Stunnable;
+using Content.Shared.Emp;
 using Content.Server.Emp;
 using Content.Shared.Popups;
 using Content.Server.PowerCell;
+using Content.Shared.PowerCell;
+using Content.Shared.PowerCell.Components;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared._EinsteinEngines.Silicon.Components;
+using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
-using Content.Server.Damage.Systems;
-using Content.Shared.StatusEffectNew;
+using Content.Server.Construction;
+using Content.Server.Construction.Components;
+using Content.Server.Body.Systems;
+using Content.Server.Body.Components;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Mindshield.Components;
+using Content.Shared.Mind.Components;
+using Content.Server.Stack;
 
 
 namespace Content.Server.BloodCult.EntitySystems;
 
 public sealed partial class CultistSpellSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedActionsSystem _action = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly BloodCultRuleSystem _bloodCultRules = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
-    [Dependency] private readonly EmpSystem _emp = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
+	[Dependency] private readonly IRobustRandom _random = default!;
+	[Dependency] private readonly IPrototypeManager _proto = default!;
+	[Dependency] private readonly SharedActionsSystem _action = default!;
+	[Dependency] private readonly DamageableSystem _damageableSystem = default!;
+	[Dependency] private readonly PopupSystem _popup = default!;
+	[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+	[Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+	[Dependency] private readonly BloodCultRuleSystem _bloodCultRules = default!;
+	[Dependency] private readonly HandsSystem _hands = default!;
+	[Dependency] private readonly StaminaSystem _stamina = default!;
+	[Dependency] private readonly EmpSystem _emp = default!;
+	[Dependency] private readonly PowerCellSystem _powerCell = default!;
+	[Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+	[Dependency] private readonly SharedTransformSystem _transform = default!;
+	[Dependency] private readonly MapSystem _mapSystem = default!;
+	[Dependency] private readonly IMapManager _mapManager = default!;
+	[Dependency] private readonly IEntityManager _entMan = default!;
+	[Dependency] private readonly SharedStunSystem _stun = default!;
+	[Dependency] private readonly ConstructionSystem _construction = default!;
+	[Dependency] private readonly BloodstreamSystem _bloodstream = default!;
+	[Dependency] private readonly StackSystem _stackSystem = default!;
 
-    private EntityQuery<EmpowerOnStandComponent> _runeQuery;
+	private static readonly ProtoId<DamageTypePrototype> BloodlossDamageType = "Bloodloss";
+	private static readonly ProtoId<DamageTypePrototype> IonDamageType = "Ion";
+	private static readonly ProtoId<DamageTypePrototype> SlashDamageType = "Slash";
 
-    private static string[] _availableDaggers = ["CultDaggerCurved", "CultDaggerSerrated", "CultDaggerStraight"];
+	private EntityQuery<EmpowerOnStandComponent> _runeQuery;
 
-    public override void Initialize()
-    {
-        base.Initialize();
+	private static string[] AvailableDaggers = ["CultDaggerCurved", "CultDaggerSerrated", "CultDaggerStraight"];
 
-        _runeQuery = GetEntityQuery<EmpowerOnStandComponent>();
+	public override void Initialize()
+	{
+		base.Initialize();
 
-        SubscribeLocalEvent<BloodCultistComponent, SpellsMessage>(OnSpellSelectedMessage);
+		_runeQuery = GetEntityQuery<EmpowerOnStandComponent>();
 
-        SubscribeLocalEvent<BloodCultistComponent, EventCultistSummonDagger>(OnSummonDagger);
+		SubscribeLocalEvent<BloodCultistComponent, SpellsMessage>(OnSpellSelectedMessage);
 
-        SubscribeLocalEvent<BloodCultistComponent, EventCultistStudyVeil>(OnStudyVeil);
-        SubscribeLocalEvent<BloodCultistComponent, BloodCultCommuneSendMessage>(OnCommune);
-        SubscribeLocalEvent<BloodCultistComponent, EventCultistStun>(OnStun);
-        SubscribeLocalEvent<CultMarkedComponent, AttackedEvent>(OnMarkedAttacked);
+		SubscribeLocalEvent<BloodCultistComponent, EventCultistSummonDagger>(OnSummonDagger);
 
-        SubscribeLocalEvent<BloodCultistComponent, EventCultistTwistedConstruction>(OnTwistedConstruction);
+		SubscribeLocalEvent<BloodCultistComponent, EventCultistStudyVeil>(OnStudyVeil);
+		SubscribeLocalEvent<BloodCultistComponent, BloodCultCommuneSendMessage>(OnCommune);
+		SubscribeLocalEvent<BloodCultistComponent, EventCultistSanguineDream>(OnSanguineDream);
+		//SubscribeLocalEvent<CultMarkedComponent, AttackedEvent>(OnMarkedAttacked);
 
-        SubscribeLocalEvent<BloodCultistComponent, CarveSpellDoAfterEvent>(OnCarveSpellDoAfter);
-    }
+		SubscribeLocalEvent<BloodCultistComponent, EventCultistTwistedConstruction>(OnTwistedConstruction);
 
-    private bool TryUseAbility(Entity<BloodCultistComponent> ent, BaseActionEvent args)
-    {
-        if (args.Handled)
+		SubscribeLocalEvent<BloodCultistComponent, CarveSpellDoAfterEvent>(OnCarveSpellDoAfter);
+		SubscribeLocalEvent<BloodCultistComponent, TwistedConstructionDoAfterEvent>(OnTwistedConstructionDoAfter);
+	}
+
+	private bool TryUseAbility(Entity<BloodCultistComponent> ent, BaseActionEvent args)
+	{
+		if (args.Handled)
             return false;
-        if (!TryComp<CultistSpellComponent>(args.Action, out var actionComp))
+		if (!TryComp<CultistSpellComponent>(args.Action, out var actionComp))
             return false;
 
-        // check if enough charges remain
-        if (!actionComp.Infinite)
-            actionComp.Charges = actionComp.Charges - 1;
+		// check if enough charges remain
+		if (!actionComp.Infinite)
+			actionComp.Charges = actionComp.Charges - 1;
 
-        if (actionComp.Charges == 0)
-        {
-            _action.RemoveAction(args.Action.Owner);
-            RemoveSpell(GetSpell(actionComp.AbilityId), ent.Comp);
-        }
+		if (actionComp.Charges == 0)
+		{
+			_action.RemoveAction(args.Action.Owner);
+			RemoveSpell(GetSpell(actionComp.AbilityId), ent.Comp);
+		}
 
-        // apply damage
-        if (actionComp.HealthCost > 0 && TryComp<DamageableComponent>(ent, out var damageable))
-        {
-            DamageSpecifier appliedDamageSpecifier;
-            if (damageable.Damage.DamageDict.ContainsKey("Bloodloss"))
-                appliedDamageSpecifier = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Bloodloss"), FixedPoint2.New(actionComp.HealthCost));
-            else if (damageable.Damage.DamageDict.ContainsKey("Ion"))
-                appliedDamageSpecifier = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Ion"), FixedPoint2.New(actionComp.HealthCost));
-            else
-                appliedDamageSpecifier = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Slash"), FixedPoint2.New(actionComp.HealthCost));
-            _damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
-        }
+		// apply damage
+		if (actionComp.HealthCost > 0 && TryComp<DamageableComponent>(ent, out var damageable))
+		{
+			DamageSpecifier appliedDamageSpecifier;
+			if (damageable.Damage.DamageDict.ContainsKey("Bloodloss"))
+				appliedDamageSpecifier = new DamageSpecifier(_proto.Index(BloodlossDamageType), FixedPoint2.New(actionComp.HealthCost));
+			else if (damageable.Damage.DamageDict.ContainsKey("Ion"))
+				appliedDamageSpecifier = new DamageSpecifier(_proto.Index(IonDamageType), FixedPoint2.New(actionComp.HealthCost));
+			else
+				appliedDamageSpecifier = new DamageSpecifier(_proto.Index(SlashDamageType), FixedPoint2.New(actionComp.HealthCost));
+			_damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
+		}
 
-        // verbalize invocation
-        _bloodCultRules.Speak(ent, actionComp.Invocation);
+		// verbalize invocation - generate random 2-word chant (skip for StudyVeil and Commune abilities)
+		if (actionComp.AbilityId != "StudyVeil" && actionComp.AbilityId != "Commune")
+		{
+			var invocation = _bloodCultRules.GenerateChant(wordCount: 2);
+			_bloodCultRules.Speak(ent, invocation);
+		}
 
-        // play sound
-        if (actionComp.CastSound != null)
-            _audioSystem.PlayPvs(actionComp.CastSound, ent);
+		// play sound
+		if (actionComp.CastSound != null)
+			_audioSystem.PlayPvs(actionComp.CastSound, ent);
 
-        return true;
-    }
+		return true;
+	}
 
-    public CultAbilityPrototype GetSpell(ProtoId<CultAbilityPrototype> id)
-        => _proto.Index(id);
+	public CultAbilityPrototype GetSpell(ProtoId<CultAbilityPrototype> id)
+		=> _proto.Index(id);
 
-    public void AddSpell(EntityUid uid, BloodCultistComponent comp, ProtoId<CultAbilityPrototype> id, bool recordKnownSpell = true)
-    {
-        var data = GetSpell(id);
+	public void AddSpell(EntityUid uid, BloodCultistComponent comp, ProtoId<CultAbilityPrototype> id, bool recordKnownSpell = true)
+	{
+		var data = GetSpell(id);
 
-        bool standingOnRune = false;
-        var coords = new EntityCoordinates(uid, default);//.Position;
-        var location = coords.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
-        var gridUid = _transform.GetGrid(location);
-        if (TryComp<MapGridComponent>(gridUid, out var grid))
-        {
-            var targetTile = _mapSystem.GetTileRef(gridUid.Value, grid, location);
-            foreach (var possibleEnt in _mapSystem.GetAnchoredEntities(gridUid.Value, grid, targetTile.GridIndices))
-            {
-                if (_runeQuery.HasComponent(possibleEnt))
-                {
-                    standingOnRune = true;
-                }
-            }
-        }
+		bool standingOnRune = false;
+		var coords = new EntityCoordinates(uid, default);//.Position;
+		var location = coords.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+		var gridUid = _transform.GetGrid(location);
+		if (TryComp<MapGridComponent>(gridUid, out var grid))
+		{
+			var targetTile = _mapSystem.GetTileRef(gridUid.Value, grid, location);
+			foreach(var possibleEnt in _mapSystem.GetAnchoredEntities(gridUid.Value, grid, targetTile.GridIndices))
+			{
+				if (_runeQuery.HasComponent(possibleEnt))
+				{
+					standingOnRune = true;
+				}
+			}
+		}
 
-        // If standing on rune, limit is 3 spells. If not on rune, forget all previous spells to learn new one
-        if (comp.KnownSpells.Count > 3)
-        {
-            _popup.PopupEntity(Loc.GetString("cult-spell-exceeded"), uid, uid);
-            return;
-        }
-
-        // If not standing on empowering rune and has spells, forget all of them to make room for the new one
-        if (!standingOnRune && comp.KnownSpells.Count > 0)
-        {
-            // Remove all actions for known spells
-            for (int i = comp.KnownSpells.Count - 1; i >= 0; i--)
-            {
-                var knownSpellId = comp.KnownSpells[i];
-                var knownSpell = GetSpell(knownSpellId);
-                if (knownSpell.ActionPrototypes != null)
-                {
-                    foreach (var actionProto in knownSpell.ActionPrototypes)
-                    {
-                        // Find and remove all actions matching this prototype
-                        foreach (var action in _action.GetActions(uid))
-                        {
-                            var protoId = MetaData(action.Id).EntityPrototype?.ID;
-                            if (protoId != null && protoId == actionProto)
-                            {
-                                _action.RemoveAction(uid, action.Id);
-                            }
-                        }
-                    }
-                }
-            }
-            // Clear the known spells list
-            comp.KnownSpells.Clear();
-        }
+		if (comp.KnownSpells.Count > 3 || (!standingOnRune && comp.KnownSpells.Count > 0))
+		{
+			_popup.PopupEntity(Loc.GetString("cult-spell-exceeded"), uid, uid);
+			return;
+		}
 
         if (data.Event != null)
-            RaiseLocalEvent(uid, (object)data.Event, true);
+            RaiseLocalEvent(uid, (object) data.Event, true);
 
-        if (data.ActionPrototypes == null || data.ActionPrototypes.Count <= 0)
-            return;
+		if (data.ActionPrototypes == null || data.ActionPrototypes.Count <= 0)
+			return;
 
-        if (data.DoAfterLength > 0)
-        {
-            _popup.PopupEntity(standingOnRune ? Loc.GetString("cult-spell-carving-rune") : Loc.GetString("cult-spell-carving"), uid, uid, PopupType.MediumCaution);
-            var dargs = new DoAfterArgs(EntityManager, uid, data.DoAfterLength * (standingOnRune ? 1 : 3), new CarveSpellDoAfterEvent(
-                uid, data, recordKnownSpell, standingOnRune), uid
-            )
-            {
-                BreakOnDamage = true,
-                RequireCanInteract = false,  // Allow restrained cultists to prepare spells
-                NeedHand = false,  // Cultists don't need hands to prep spells
-                BreakOnHandChange = false,
-                BreakOnMove = true,
-                BreakOnDropItem = false,
-                CancelDuplicate = false,
-            };
+		if (data.DoAfterLength > 0)
+		{
+			_popup.PopupEntity(standingOnRune ? Loc.GetString("cult-spell-carving-rune") : Loc.GetString("cult-spell-carving"), uid, uid, PopupType.MediumCaution);
+			var dargs = new DoAfterArgs(EntityManager, uid, data.DoAfterLength * (standingOnRune ? 1 : 3), new CarveSpellDoAfterEvent(
+				uid, data, recordKnownSpell, standingOnRune), uid
+			)
+			{
+				BreakOnDamage = true,
+				RequireCanInteract = false,  // Allow restrained cultists to prepare spells
+				NeedHand = false,  // Cultists don't need hands to prep spells
+				BreakOnHandChange = false,
+				BreakOnMove = true,
+				BreakOnDropItem = false,
+				CancelDuplicate = false,
+			};
 
-            _doAfter.TryStartDoAfter(dargs);
-        }
-        else
-        {
-            foreach (var act in data.ActionPrototypes)
-                _action.AddAction(uid, act);
-            if (recordKnownSpell)
-                comp.KnownSpells.Add(data);
-        }
-    }
+			_doAfter.TryStartDoAfter(dargs);
+		}
+		else
+		{
+			foreach (var act in data.ActionPrototypes)
+				_action.AddAction(uid, act);
+			if (recordKnownSpell)
+				comp.KnownSpells.Add(data);
+		}
+	}
 
-    public void OnCarveSpellDoAfter(Entity<BloodCultistComponent> ent, ref CarveSpellDoAfterEvent args)
-    {
-        if (ent.Comp.KnownSpells.Count > 3)
-        {
-            _popup.PopupEntity(Loc.GetString("cult-spell-exceeded"), ent, ent);
-            return;
-        }
+	public void OnCarveSpellDoAfter(Entity<BloodCultistComponent> ent, ref CarveSpellDoAfterEvent args)
+	{
+		if (ent.Comp.KnownSpells.Count > 3 || (!args.StandingOnRune && ent.Comp.KnownSpells.Count > 0))
+		{
+			_popup.PopupEntity(Loc.GetString("cult-spell-exceeded"), ent, ent);
+			return;
+		}
+		if (args.CultAbility.ActionPrototypes == null)
+			return;
 
-        // If not standing on empowering rune and has spells, forget all of them to make room for the new one
-        if (!args.StandingOnRune && ent.Comp.KnownSpells.Count > 0)
-        {
-            // Remove all actions for known spells
-            for (int i = ent.Comp.KnownSpells.Count - 1; i >= 0; i--)
-            {
-                var knownSpellId = ent.Comp.KnownSpells[i];
-                var knownSpell = GetSpell(knownSpellId);
-                if (knownSpell.ActionPrototypes != null)
-                {
-                    foreach (var actionProto in knownSpell.ActionPrototypes)
-                    {
-                        // Find and remove all actions matching this prototype
-                        foreach (var action in _action.GetActions(ent))
-                        {
-                            var protoId = MetaData(action.Id).EntityPrototype?.ID;
-                            if (protoId != null && protoId == actionProto)
-                            {
-                                _action.RemoveAction(ent, action.Id);
-                            }
-                        }
-                    }
-                }
-            }
-            // Clear the known spells list
-            ent.Comp.KnownSpells.Clear();
-        }
-
-        if (args.CultAbility.ActionPrototypes == null)
-            return;
-
-        DamageSpecifier appliedDamageSpecifier = new DamageSpecifier(
-            _proto.Index<DamageTypePrototype>("Slash"),
-            FixedPoint2.New(args.CultAbility.HealthDrain * (args.StandingOnRune ? 1 : 3))
-        );
+		DamageSpecifier appliedDamageSpecifier = new DamageSpecifier(
+			_proto.Index(SlashDamageType),
+			FixedPoint2.New(args.CultAbility.HealthDrain * (args.StandingOnRune ? 1 : 3))
+		);
 
         if (!args.Cancelled)
-        {
-            foreach (var act in args.CultAbility.ActionPrototypes)
-            {
-                _action.AddAction(args.CarverUid, act);
-            }
-            if (args.RecordKnownSpell)
-                ent.Comp.KnownSpells.Add(args.CultAbility);
-
-            _damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
-            _audioSystem.PlayPvs(args.CultAbility.CarveSound, ent);
-            if (args.StandingOnRune)
-                _bloodCultRules.Speak(ent, Loc.GetString("cult-invocation-empowering"));
-        }
+		{
+			foreach (var act in args.CultAbility.ActionPrototypes)
+			{
+				_action.AddAction(args.CarverUid, act);
+			}
+			if (args.RecordKnownSpell)
+				ent.Comp.KnownSpells.Add(args.CultAbility);
+			
+			_damageableSystem.TryChangeDamage(ent, appliedDamageSpecifier, true, origin: ent);
+			_audioSystem.PlayPvs(args.CultAbility.CarveSound, ent);
+		if (args.StandingOnRune)
+		{
+			// Generate random chant when empowered by rune
+			var invocation = _bloodCultRules.GenerateChant(wordCount: 2);
+			_bloodCultRules.Speak(ent, invocation);
+		}
+		}
 
         Dirty(ent, ent.Comp);
-    }
+	}
 
-    public void RemoveSpell(ProtoId<CultAbilityPrototype> id, BloodCultistComponent comp)
-    {
-        comp.KnownSpells.Remove(GetSpell(id));
-    }
+	public void RemoveSpell(ProtoId<CultAbilityPrototype> id, BloodCultistComponent comp)
+	{
+		comp.KnownSpells.Remove(GetSpell(id));
+	}
 
-    private void OnStudyVeil(Entity<BloodCultistComponent> ent, ref EventCultistStudyVeil args)
-    {
-        if (!TryUseAbility(ent, args))
-            return;
+	private void OnStudyVeil(Entity<BloodCultistComponent> ent, ref EventCultistStudyVeil args)
+	{
+		if (!TryUseAbility(ent, args))
+			return;
 
-        ent.Comp.StudyingVeil = true;
-        args.Handled = true;
-    }
+		ent.Comp.StudyingVeil = true;
+		args.Handled = true;
+	}
 
-    private void OnCommune(Entity<BloodCultistComponent> ent, ref BloodCultCommuneSendMessage args)
-    {
-        ent.Comp.CommuningMessage = args.Message;
-    }
+	private void OnCommune(Entity<BloodCultistComponent> ent, ref BloodCultCommuneSendMessage args)
+	{
+		ent.Comp.CommuningMessage = args.Message;
+	}
 
-    private void OnSpellSelectedMessage(Entity<BloodCultistComponent> ent, ref SpellsMessage args)
-    {
-        if (!CultistSpellComponent.ValidSpells.Contains(args.ProtoId) || ent.Comp.KnownSpells.Contains(args.ProtoId))
-        {
-            _popup.PopupEntity(Loc.GetString("cult-spell-havealready"), ent, ent);
-            return;
-        }
-        AddSpell(ent, ent.Comp, args.ProtoId, recordKnownSpell: true);
-    }
+	private void OnSpellSelectedMessage(Entity<BloodCultistComponent> ent, ref SpellsMessage args)
+	{
+		if (!CultistSpellComponent.ValidSpells.Contains(args.ProtoId) || ent.Comp.KnownSpells.Contains(args.ProtoId))
+		{
+			_popup.PopupEntity(Loc.GetString("cult-spell-havealready"), ent, ent);
+			return;
+		}
+		AddSpell(ent, ent.Comp, args.ProtoId, recordKnownSpell:true);
+	}
 
-    private void OnSummonDagger(Entity<BloodCultistComponent> ent, ref EventCultistSummonDagger args)
-    {
-        if (!TryUseAbility(ent, args))
-            return;
+	private void OnSummonDagger(Entity<BloodCultistComponent> ent, ref EventCultistSummonDagger args)
+	{
+		if (!TryUseAbility(ent, args))
+			return;
 
-        var dagger = Spawn(_random.Pick(_availableDaggers), Transform(ent).Coordinates);
-        if (!_hands.TryForcePickupAnyHand(ent, dagger))
-        {
-            _popup.PopupEntity(Loc.GetString("cult-spell-fail"), ent, ent);
-            QueueDel(dagger);
-            return;
-        }
+		var dagger = Spawn(_random.Pick(AvailableDaggers), Transform(ent).Coordinates);
+		if (!_hands.TryForcePickupAnyHand(ent, dagger))
+		{
+			_popup.PopupEntity(Loc.GetString("cult-spell-fail"), ent, ent);
+			QueueDel(dagger);
+			return;
+		}
 
-        args.Handled = true;
-    }
+		args.Handled = true;
+	}
 
-    private void OnStun(Entity<BloodCultistComponent> ent, ref EventCultistStun args)
-    {
-        if (args.Handled)
-            return;
+	/// <summary>
+	/// Helper method to check if an entity is a cultist, including SSD cultists by checking their mind.
+	/// </summary>
+	private bool IsTargetCultist(EntityUid target)
+	{
+		// Check if the target's body has BloodCultistComponent
+		if (HasComp<BloodCultistComponent>(target))
+			return true;
 
-        // Check if targeting a teammate before consuming the spell
-        if (HasComp<BloodCultistComponent>(args.Target) || HasComp<BloodCultConstructComponent>(args.Target))
-            return;
+		// Check if the target's mind has BloodCultistComponent (for SSD cultists)
+		if (TryComp<MindContainerComponent>(target, out var mindContainer) && 
+		    mindContainer.Mind != null &&
+		    HasComp<BloodCultistComponent>(mindContainer.Mind.Value))
+			return true;
 
-        if (!TryUseAbility(ent, args))
-            return;
+		return false;
+	}
 
-        float staminaDamage = 90f;
-        float empDamage = 1000f;
-        int stunTime = 10;
-        int selfStunTime = 4;
+	private void OnSanguineDream(Entity<BloodCultistComponent> ent, ref EventCultistSanguineDream args)
+	{
+		if (args.Handled)
+			return;
 
-        args.Handled = true;
+		var target = args.Target;
 
-        var target = args.Target;
+		// Check if target is an allied cultist (including SSD cultists)
+		if (IsTargetCultist(target))
+		{
+			_popup.PopupEntity(
+				Loc.GetString("cult-spell-allied-cultist"),
+				ent, ent, PopupType.MediumCaution
+			);
+			return;
+		}
 
-        if (HasComp<CultResistantComponent>(target))
-        {
-            _popup.PopupEntity(
-                    Loc.GetString("cult-spell-repelled"),
-                    ent, ent, PopupType.MediumCaution
-                );
-            _audioSystem.PlayPvs("/Audio/Effects/holy.ogg", Transform(ent).Coordinates);
-            _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(selfStunTime), true);
-        }
-        else if (HasComp<BorgChassisComponent>(target) &&
-            _powerCell.TryGetBatteryFromSlot(target, out EntityUid? batteryUid, out BatteryComponent? _) &&
-            batteryUid != null)
-        {
-            _emp.DoEmpEffects((EntityUid)batteryUid, empDamage, stunTime);
-            _statusEffect.TryAddStatusEffectDuration(target, "Muted", out _, TimeSpan.FromSeconds(stunTime));
-        }
-        else
-        {
-            _stun.TryKnockdown(target, TimeSpan.FromSeconds(stunTime), true);
-            _stamina.TakeStaminaDamage(target, staminaDamage, visual: false);
-            EnsureComp<CultMarkedComponent>(target);
-            _statusEffect.TryAddStatusEffectDuration(target, "Muted", out _, TimeSpan.FromSeconds(stunTime));
-        }
-    }
+		if (!TryUseAbility(ent, args))
+			return;
 
-    private void OnMarkedAttacked(Entity<CultMarkedComponent> ent, ref AttackedEvent args)
-    {
-        var advancedStaminaDamage = 100;
-        var advancedStunTime = 15;
-        if (HasComp<BloodCultRuneCarverComponent>(args.Used))
-        {
-            _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(advancedStunTime), true);
-            _stamina.TakeStaminaDamage(ent, advancedStaminaDamage, visual: false);
-            _stun.TryUpdateStunDuration(ent, TimeSpan.FromSeconds(advancedStunTime));
-            _statusEffect.TryAddStatusEffectDuration(ent, "Muted", out _, TimeSpan.FromSeconds(advancedStunTime));
-            _entMan.RemoveComponent<CultMarkedComponent>(ent);
-            _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"), ent, AudioParams.Default.WithVolume(-3f));
-        }
-    }
+		float empDamage = 5000f;  // EMP damage for borgs/IPCs
+		float empDuration = 12f;  // EMP duration in seconds
+		int selfStunTime = 4;
 
-    private void OnTwistedConstruction(Entity<BloodCultistComponent> ent, ref EventCultistTwistedConstruction args)
-    {
-        var canConvert = TryComp<StackComponent>(args.Target, out var stack) && (stack.StackTypeId == "Plasteel");
-        if (stack == null || !canConvert || !TryUseAbility(ent, args))
-            return;
-        var count = stack.Count;
-        var thirties_to_spawn = (int)((float)count / 30.0f);
-        var tens_to_spawn = (int)(((float)count - 30.0f * (float)thirties_to_spawn) / 10.0f);
-        var ones_to_spawn = (int)(((float)count - 10.0f * (float)tens_to_spawn) - 30.0f * (float)thirties_to_spawn);
+		args.Handled = true;
 
-        for (int i = 0; i < thirties_to_spawn; i++)
-            Spawn("SheetRunedMetal30", Transform(args.Target).Coordinates);
-        for (int i = 0; i < tens_to_spawn; i++)
-            Spawn("SheetRunedMetal10", Transform(args.Target).Coordinates);
-        for (int i = 0; i < ones_to_spawn; i++)
-            Spawn("SheetRunedMetal1", Transform(args.Target).Coordinates);
+		// Mindshield and holy protection repel cult magic
+		if (HasComp<CultResistantComponent>(target) || HasComp<MindShieldComponent>(target))
+		{
+			_popup.PopupEntity(
+					Loc.GetString("cult-spell-repelled"),
+					ent, ent, PopupType.MediumCaution
+				);
+			// todo: Play a different sound if they have a mindshield.
+			_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Effects/holy.ogg"), Transform(ent).Coordinates);
+			// Knock down the cultist who cast the spell. Might need balancing
+			_stun.TryKnockdown(ent, TimeSpan.FromSeconds(selfStunTime), true);
+		}
+		else if (HasComp<SiliconComponent>(target) &&
+			_powerCell.TryGetBatteryFromSlot(target, out EntityUid? ipcBatteryUid, out BatteryComponent? _) &&
+			ipcBatteryUid != null)
+		{
+			// Apply EMP damage directly to the IPC's battery
+			_emp.DoEmpEffects((EntityUid)ipcBatteryUid, empDamage, empDuration);
+			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
+		}
+		else if (HasComp<BorgChassisComponent>(target) &&
+			_powerCell.TryGetBatteryFromSlot(target, out EntityUid? borgBatteryUid, out BatteryComponent? _) &&
+			borgBatteryUid != null)
+		{
+			// Apply EMP damage directly to the borg's battery
+			_emp.DoEmpEffects((EntityUid)borgBatteryUid, empDamage, empDuration);
+			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
+		}
+		else if (TryComp<BloodstreamComponent>(target, out var bloodstream))
+		{
+			// Inject sleep chemicals (Nocturine + Chloral Hydrate)
+			var sleepSolution = new Solution();
+			sleepSolution.AddReagent("Nocturine", FixedPoint2.New(15));  // 15u Nocturine
+			sleepSolution.AddReagent("EdgeEssentia", FixedPoint2.New(5));  // 5u Edge Essentia
+			
+			_bloodstream.TryAddToChemicals(target, sleepSolution, bloodstream);
+			
+			// Show the dream message
+			_popup.PopupEntity(
+				Loc.GetString("cult-spell-sleep-dream"),
+				target, target, PopupType.LargeCaution
+			);
+			
+			// Mark them for follow-up attacks
+			// disabled for now, follow up attacks work, but end up being too fancy and not really needed.
+			//EnsureComp<CultMarkedComponent>(target);
+			
+			// Added a manual mute, since I know upstream has a possible Nocturine debuff that makes it take effect slower.
+			// The intent is for this to work to kidnap any non-mindshielded crew member.
+			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(15), false);
+		}
+		else
+		{
+			// Fallback for entities without bloodstream (IPCs, rare cases)
+			// Apply EMP effects directly to the entity, and mute them.
+			// todo: Explore if this is a less fancy way to do it. Might be able to just do this for all entities?
+			_emp.DoEmpEffects(target, empDamage, empDuration);
+			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
+		}
+	}
 
-        QueueDel(args.Target);
-        args.Handled = true;
-    }
+	// Disabled for now. May be re-enabled if balance needs it.
+	//private void OnMarkedAttacked(Entity<CultMarkedComponent> ent, ref AttackedEvent args)
+	//{
+	//	var advancedStaminaDamage = 100;
+	//	var advancedStunTime = 15;
+	//	if (HasComp<BloodCultRuneCarverComponent>(args.Used))
+	//	{
+	//		_stun.TryKnockdown(ent, TimeSpan.FromSeconds(advancedStunTime), true);
+	//		_stamina.TakeStaminaDamage(ent, advancedStaminaDamage, visual: false);
+	//		_stun.TryStun(ent, TimeSpan.FromSeconds(advancedStunTime), true);
+	//		_statusEffect.TryAddStatusEffect<MutedComponent>(ent, "Muted", TimeSpan.FromSeconds(advancedStunTime), false);
+	//		_entMan.RemoveComponent<CultMarkedComponent>(ent);
+	//		_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"), ent, AudioParams.Default.WithVolume(-3f));
+	//	}
+	//}
+
+	// todo: This is a bit buggy. Doesn't stack stuff properly. Doesn't crash, just looks weird.
+	private void OnTwistedConstruction(Entity<BloodCultistComponent> ent, ref EventCultistTwistedConstruction args)
+	{
+		// Check if target is a plasteel stack
+		if (TryComp<StackComponent>(args.Target, out var stack) && stack.StackTypeId == "Plasteel")
+		{
+			if (!TryUseAbility(ent, args))
+				return;
+
+			var count = stack.Count;
+			var thirties_to_spawn = (int)((float)count / 30.0f);
+			var tens_to_spawn = (int)(((float)count - 30.0f*(float)thirties_to_spawn) / 10.0f);
+			var ones_to_spawn = (int)(((float)count - 10.0f*(float)tens_to_spawn) - 30.0f*(float)thirties_to_spawn);
+
+			for (int i = 0; i < thirties_to_spawn; i++)
+				Spawn("SheetRunedMetal30", Transform(args.Target).Coordinates);
+			for (int i = 0; i < tens_to_spawn; i++)
+				Spawn("SheetRunedMetal10", Transform(args.Target).Coordinates);
+			for (int i = 0; i < ones_to_spawn; i++)
+				Spawn("SheetRunedMetal1", Transform(args.Target).Coordinates);
+
+			QueueDel(args.Target);
+			args.Handled = true;
+			return;
+		}
+
+		// Check if target is a reinforced wall
+		if (TryComp<ConstructionComponent>(args.Target, out var construction) && 
+		    construction.Graph == "Girder" && 
+		    construction.Node == "reinforcedWall")
+		{
+			// Wall deconstruction doesn't consume spell charges
+			// Generate random chant for wall deconstruction
+			if (TryComp<CultistSpellComponent>(args.Action, out var actionComp))
+			{
+				var invocation = _bloodCultRules.GenerateChant(wordCount: 2);
+				_bloodCultRules.Speak(ent, invocation);
+				if (actionComp.CastSound != null)
+					_audioSystem.PlayPvs(actionComp.CastSound, ent);
+			}
+
+			// Start do-after for wall deconstruction
+			var doAfterArgs = new DoAfterArgs(EntityManager, ent, TimeSpan.FromSeconds(3), 
+				new TwistedConstructionDoAfterEvent(args.Target), ent, target: args.Target)
+			{
+				BreakOnMove = true,
+				BreakOnDamage = true,
+				NeedHand = false,
+			};
+
+			_doAfter.TryStartDoAfter(doAfterArgs);
+			args.Handled = true;
+			return;
+		}
+
+		// Check if target is a reinforced girder
+		if (TryComp<ConstructionComponent>(args.Target, out var girderConstruction) && 
+		    girderConstruction.Graph == "Girder" && 
+		    girderConstruction.Node == "reinforcedGirder")
+		{
+			// Girder downgrade doesn't consume spell charges
+			// Generate random chant for girder deconstruction
+			if (TryComp<CultistSpellComponent>(args.Action, out var actionComp))
+			{
+				var invocation = _bloodCultRules.GenerateChant(wordCount: 2);
+				_bloodCultRules.Speak(ent, invocation);
+				if (actionComp.CastSound != null)
+					_audioSystem.PlayPvs(actionComp.CastSound, ent);
+			}
+
+			// Start do-after for reinforced girder downgrade
+			var doAfterArgs = new DoAfterArgs(EntityManager, ent, TimeSpan.FromSeconds(2), 
+				new TwistedConstructionDoAfterEvent(args.Target), ent, target: args.Target)
+			{
+				BreakOnMove = true,
+				BreakOnDamage = true,
+				NeedHand = false,
+			};
+
+			_doAfter.TryStartDoAfter(doAfterArgs);
+			args.Handled = true;
+			return;
+		}
+	}
+
+	private void OnTwistedConstructionDoAfter(Entity<BloodCultistComponent> ent, ref TwistedConstructionDoAfterEvent args)
+	{
+		if (args.Cancelled || !TryComp<ConstructionComponent>(args.Target, out var construction))
+			return;
+
+		// Verify it's a valid target (reinforced wall or reinforced girder)
+		if (construction.Graph != "Girder" || 
+		    (construction.Node != "reinforcedWall" && construction.Node != "reinforcedGirder"))
+			return;
+
+		// Don't consume spell charges for wall deconstruction - only for plasteel conversion
+		var targetCoords = Transform(args.Target).Coordinates;
+
+		if (construction.Node == "reinforcedWall")
+		{
+			// Reinforced wall -> reinforced girder
+			// Spawn a stack of 2 plasteel sheets (the amount to upgrade girder to reinforced girder)
+			// Use StackSystem.Spawn to properly initialize the stack for client-side rendering
+			_stackSystem.Spawn(2, new ProtoId<StackPrototype>("Plasteel"), targetCoords);
+
+			// Change the wall to a reinforced girder (this will spawn the 2 plasteel from the wall plating)
+			// The construction graph automatically handles spawning materials when deconstructing
+			_construction.ChangeNode(args.Target, ent, "reinforcedGirder", performActions: true, construction: construction);
+		}
+		else if (construction.Node == "reinforcedGirder")
+		{
+			// Reinforced girder -> regular girder
+			// Spawn a stack of 2 plasteel sheets (the amount used to upgrade to reinforced girder)
+			// Use StackSystem.Spawn to properly initialize the stack for client-side rendering
+			_stackSystem.Spawn(2, new ProtoId<StackPrototype>("Plasteel"), targetCoords);
+
+			// Change the reinforced girder to a regular girder
+			_construction.ChangeNode(args.Target, ent, "girder", performActions: true, construction: construction);
+		}
+	}
 }

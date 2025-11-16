@@ -1,8 +1,10 @@
-# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+
+# SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDS-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
 # actions
 - type: entity
@@ -96,9 +98,9 @@
     rechargeTime: 0
 
 - type: entity
-  id: ActionCultistStun
-  name: Stun
-  description: A potent spell that will knock down, silence, and mark a target. Stabbing marked targets with your cult dagger will stun and re-silence them. EMPs Cyborgs.
+  id: ActionCultistSanguineDream
+  name: Sanguine Dream
+  description: A sinister spell that plunges a target into a nightmare-filled sleep, where they dream of crimson-stained blades. EMPs Cyborgs.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -112,7 +114,7 @@
       components:
       - Body
     canTargetSelf: false
-    event: !type:EventCultistStun {}
+    event: !type:EventCultistSanguineDream {}
   - type: Icon
     sprite: _Funkystation/BloodCult/spells_cultist.rsi
     state: stun
@@ -120,7 +122,7 @@
     sprite: _Funkystation/BloodCult/spells_cultist.rsi
     state: stun
   - type: CultistSpell
-    abilityId: CultStun
+    abilityId: SanguineDream
     charges: 1
     infinite: False
     healthCost: 0
@@ -132,7 +134,7 @@
 - type: entity
   id: ActionCultistTwistedConstruction
   name: Twisted Construction
-  description: A sinister spell used to convert plasteel into runed metal. # and airlocks into cult airlocks.
+  description: A sinister spell used to convert plasteel into runed metal or deconstruct reinforced walls to extract plasteel.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -145,6 +147,9 @@
     whitelist:
       components:
       - Stack
+      - Construction
+      tags:
+      - Wall
     canTargetSelf: False
     event: !type:EventCultistTwistedConstruction {}
   - type: Icon
