@@ -38,6 +38,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             <cc:CommandButton Command="achatwindow" Text="{Loc admin-player-actions-window-admin-chat}"/>
             <!-- CD: records purge button -->
             <cc:UICommandButton Command="purgecharacterrecords" Text="{Loc admin-player-actions-window-cd-record-purge}" WindowType="{x:Type cdAdmin:ModifyCharacterRecords}"/>
+            <cc:CommandButton Command="pending_books" Text="{Loc admin-player-actions-window-pending-books}"/>
         </GridContainer>
     </BoxContainer>
 </Control>

@@ -196,11 +196,20 @@ namespace Content.Server.Database
         public DbSet<RMCPatronLobbyMessage> RMCPatronLobbyMessages { get; set; } = default!;
         public DbSet<RMCPatronRoundEndNTShoutout> RMCPatronRoundEndNTShoutouts { get; set; } = default!;
 
+        // Goobstation
+		public DbSet<BookEntry> BookPrinterEntry { get; set; } = null!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
                 .HasIndex(p => p.UserId)
                 .IsUnique();
+
+            // Goobstation Custom Books start
+			modelBuilder.Entity<BookEntry>()
+                .HasIndex(p => p.Id)
+                .IsUnique();
+            // Goobstation Custom Books ent
 
             modelBuilder.Entity<Profile>()
                 .HasIndex(p => new { p.Slot, PrefsId = p.PreferenceId })
@@ -696,6 +705,20 @@ namespace Content.Server.Database
         public string RoleName { get; set; } = string.Empty;
 
         public string AlternateTitle { get; set; } = string.Empty;
+    }
+    
+    public class BookEntry
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string Title { get; set; } = default!;
+        public string Author { get; set; } = default!;
+        public string Genre { get; set; } = default!;
+        public string Description { get; set; } = default!;
+        public List<string> Content { get; set; } = default!;
+        public List<string> BindingMaps { get; set; } = default!;
+        public List<string> BindingPaths { get; set; } = default!;
+        public List<string> BindingStates { get; set; } = default!;
     }
 
     #region Loadouts
