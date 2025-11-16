@@ -1,32 +1,32 @@
 <Document>
-  # Gang Wars
+  # Guerras de Gangue
 
   <Box>
-  [color=#f3b355ff]Remember, I'm Sonny Forelli, and I'm the one keeping you afloat![/color]
+  [color=#f3b355ff]Lembre-se, eu sou Sonny Forelli, e sou eu quem mantém você de pé![/color]
   </Box>
 
-  Gangs have 2 types of members, a Leader and a Member.
-  Gang leader spawns with a gang radio and a gang spray painter.
+  Gangues têm 2 tipos de membros: Líder e Membro.
+  O líder da gangue começa com um rádio de gangue e um spray de gangue.
 
-  ## Basic knowledge
+  ## Conhecimento básico
 
-  Gang leaders does not have any markings, so they are hard to identify.
-  Gang leaders (and members) can use gang radios to get locations of the gang tip-off crates. Every 8 minutes, there would be an announcement on the gang radio of the location of the drop, that will happen in 2 minutes.
+  Líderes de gangue não possuem nenhuma marcação, então são difíceis de identificar.
+  Líderes de gangue (e membros) podem usar o rádio de gangue para obter a localização das caixas de dicas. A cada 8 minutos, haverá um anúncio no rádio de gangue sobre a localização do drop, que acontecerá em 2 minutos.
   <Box>
-    <GuideEntityEmbed Entity="SpawnSupplypodAnimation" Caption="Tip-off marking"/>
+    <GuideEntityEmbed Entity="SpawnSupplypodAnimation" Caption="Marca de dica"/>
   </Box>
 
-  Tip-off crates may contain weapons, armor, clothing and drugs, which are a good way to gain weapons to eliminate other gangs.
-  Gang radios are obtainable from tip-off crates, and roundstart in the leaders backpacks.
+  As caixas de suplimentos podem conter armas, armaduras, roupas e drogas, que são uma boa forma de conseguir armas para eliminar outras gangues.
+  Rádios de gangue podem ser obtidos nas caixas de dica e no início da rodada nas mochilas dos líderes.
 
 
-  There are a maximum of 6 possible gangs, every gang has their own hat, [italic]their gang marking.[/italic]
-  The main objective of gang wars: Tag the most walls using your gang spray, and get rid of every other gang leader. But that is a no-easy task!
-  Because every time a gang leader dies, one random person from their gang becomes a new leader.
+  Existem no máximo 6 gangues possíveis, cada gangue tem seu próprio chapéu, [italic]sua marca de gangue.[/italic]
+  O objetivo principal das guerras de gangue: Marque o maior número de paredes usando o spray da sua gangue e elimine todos os outros líderes de gangue. Mas isso não é uma tarefa fácil!
+  Porque toda vez que um líder de gangue morre, uma pessoa aleatória da sua gangue se torna o novo líder.
 
-  Gang members shouldn't conflict with security, following the escalation rules.
+  Membros de gangue não devem entrar em conflito com a segurança, seguindo as regras de escalonamento.
 
-  Every gang has their own marking, their own hat.
+  Cada gangue tem sua própria marca, seu próprio chapéu.
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadHatTophatGang" Caption=""/>
     <GuideEntityEmbed Entity="ClothingHeadHatLTophatGang" Caption=""/>
@@ -35,10 +35,10 @@
     <GuideEntityEmbed Entity="ClothingHeadHatGoldenTophatGang" Caption=""/>
     <GuideEntityEmbed Entity="ClothingHeadHatStarTophatGang" Caption=""/>
   </Box>
-  Every gang member has those forced on them once they've joined a gang.
+  Todo membro de gangue recebe esses itens ao entrar para uma gangue.
 
   <Box>
-  [color=#f3b355ff]There is no way to deconvert while you are in a gang, and there is no way to FORCE someone to join![/color]
+  [color=#f3b355ff]Não há como sair de uma gangue, e não há como FORÇAR alguém a entrar![/color]
   </Box>
 
 </Document>

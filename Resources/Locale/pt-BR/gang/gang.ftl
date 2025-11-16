@@ -39,3 +39,5 @@ gang-roundend-name = Gangue
 
 gang-drop-announcement = Ei atenção galera, o chefe vai largar o pacote em {$location}. Preparem-se.
 gang-drop-spawned = Pacote largado em {$location}!
+
+guide-entry-gang = Gangues

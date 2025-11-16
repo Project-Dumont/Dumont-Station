@@ -51,6 +51,7 @@
   - Vampires
   - SlaughterDemon # Goob content
   - Xenomorphs # WD - Xenomorphs
+  - Gang
 
 - type: guideEntry
   id: Traitors
@@ -96,3 +97,8 @@
 #   id: Abductors
 #   name: guide-entry-abductors
 #   text: "/ServerInfo/Guidebook/Antagonist/Abductors.xml"
+
+- type: guideEntry
+  id: Gang
+  name: guide-entry-gang
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Gang.xml"
