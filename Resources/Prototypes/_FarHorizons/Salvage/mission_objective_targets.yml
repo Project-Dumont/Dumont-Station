@@ -41,3 +41,45 @@
         - !type:PlaySoundBehavior
           sound:
             collection: MetalBreak
+
+- type: entity
+  id: FolderSalvageMissionObjective
+  parent: BaseItem
+  name: Document folder
+  description: Secrets inside are meant to be forgotten.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/folders.rsi
+    layers:
+    - state: folder-colormap
+      color: "#3f3f3f"
+    - state: folder-base
+  - type: Item
+    sprite: Objects/Misc/folders.rsi
+    size: Small
+    shape: null
+  - type: Appearance
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ash:
+            min: 1
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

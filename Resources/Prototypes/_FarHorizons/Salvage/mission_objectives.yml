@@ -32,9 +32,9 @@
   description: salvage-mission-objective-description-capture
   announcement: salvage-mission-objective-announcement-capture
   baseReward:
-    Easy: 800
-    Moderate: 950
-    Challenging: 1150
+    Easy: 1000
+    Moderate: 1150
+    Challenging: 1350
   numTargets:
     Easy: 1
     Moderate: 2
@@ -52,15 +52,36 @@
   description: salvage-mission-objective-description-rescue
   announcement: salvage-mission-objective-announcement-rescue
   baseReward:
-    Easy: 1000
-    Moderate: 1250
-    Challenging: 1450
+    Easy: 950
+    Moderate: 1100
+    Challenging: 1250
   numTargets:
     Easy: 2
     Moderate: 2
     Challenging: 3
   bonus: 300
   bonusCap: 3
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+
+- type: salvageMissionObjective
+  id: MissionObjectivePurge
+  handlerId: "MissionObjectivePurgeHandler"
+  name: salvage-mission-objective-name-purge
+  description: salvage-mission-objective-description-purge
+  announcement: salvage-mission-objective-announcement-purge
+  baseReward:
+    Easy: 800
+    Moderate: 1050
+    Challenging: 1200
+  numTargets:
+    Easy: 4
+    Moderate: 5
+    Challenging: 6
+  bonus: 150
+  bonusCap: 2
   allowedDungeons:
     - Experiment
     - LavaBrig

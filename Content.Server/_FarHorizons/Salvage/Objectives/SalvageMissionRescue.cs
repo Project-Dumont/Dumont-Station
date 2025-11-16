@@ -1,16 +1,16 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using Content.Server.Humanoid;
-using Content.Server.Station.Systems;
-// Dumont
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Preferences;
-using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Roles; 
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes; // Dumont
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._FarHorizons.Salvage.Objectives;
@@ -67,10 +67,7 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
         DeleteWithEffect(allTargets);
     }
     
-    public override void BeforeFTLToMap(EntityUid shuttle)
-    {
-
-    }
+    public override void BeforeFTLToMap(EntityUid shuttle){} // Override intentionally left empty
     
     public override void OnMapCreated()
     {
@@ -78,60 +75,133 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
         var metadata = EntMan.System<MetaDataSystem>();
         var state = EntMan.System<MobStateSystem>();
         var damageable = EntMan.System<DamageableSystem>();
-        var stationSpawning = EntMan.System<StationSpawningSystem>();
         var inventory = EntMan.System<InventorySystem>();
-
-        var damageTypes = ProtoMan.EnumeratePrototypes<DamageTypePrototype>().ToList();
 
         int objectivesSpawned = 0;
 
-        // Dumont
-        string[] possibleJobs = { "Passenger", "MedicalDoctor", "SalvageSpecialist", "CargoTechnician", "Scientist" };
-
         for (var i = 0; i < GetNumSpawnables(); i++)
         {
-            var character = HumanoidCharacterProfile.Random();
-            var species = ProtoMan.Index(character.Species);
-
             if (GetRandomEmptyTileInDungeon() is not EntityCoordinates pos)
-                return;
+                continue;
 
-            var ent = EntMan.SpawnAtPosition(species.Prototype, pos);
-            humanoid.LoadProfile(ent, character);
-            metadata.SetEntityName(ent, character.Name);
-            state.ChangeMobState(ent, MobState.Dead);
-
-            var damage = new DamageSpecifier();
-            damage.DamageDict.Add(damageTypes[Rand.Next(damageTypes.Count)].ID, Rand.Next(300));
-            if (Rand.Next(100) > 50)
-                damage.DamageDict.TryAdd(damageTypes[Rand.Next(damageTypes.Count)].ID, Rand.Next(300));
-            if (Rand.Next(100) > 75)
-                damage.DamageDict.TryAdd(damageTypes[Rand.Next(damageTypes.Count)].ID, Rand.Next(300));
-            damageable.TryChangeDamage(ent, damage);
-
-            // Dumont
-            var chosenJobId = possibleJobs[Rand.Next(possibleJobs.Length)];
-            
-            if (ProtoMan.TryIndex<RoleLoadoutPrototype>(chosenJobId, out var loadoutProto))
-            {
-                var loadout = new RoleLoadout(chosenJobId);
-                loadout.SetDefault(character, null, ProtoMan);
-                stationSpawning.EquipRoleLoadout(ent, loadout, loadoutProto);
-            }
+            var damage = RandomDamage(ProtoMan, Rand, 100, 200, 4);
+            var body = SpawnRandomBody(ProtoMan, EntMan, Rand, pos, humanoid, metadata, inventory, state, damageable, true, damage, true);
 
             if (Rand.Prob(0.4))
             {
                 var gasMaskEnt = EntMan.SpawnAtPosition(GasMask, pos);
-                if (!inventory.TryEquip(ent, gasMaskEnt, MaskSlot, force: true))
+                if (!inventory.TryEquip(body, gasMaskEnt, MaskSlot, force: true))
                     EntMan.DeleteEntity(gasMaskEnt);
             }
 
             if (objectivesSpawned < Objective.NumTargets.GetValueOrDefault(Difficulty, 0))
             {
-                MarkEntity(ent);
+                MarkEntity(body);
                 objectivesSpawned++;
             }
         }
+    }
+
+    public static EntityUid SpawnRandomBody(
+        IPrototypeManager ProtoMan,
+        IEntityManager EntMan,
+        Random Rand,
+        EntityCoordinates pos, 
+        HumanoidAppearanceSystem humanoidAppearance, 
+        MetaDataSystem metadata,
+        InventorySystem inventory,
+        MobStateSystem? state = null,
+        DamageableSystem? damageable = null,
+        bool dead = true,
+        DamageSpecifier? damage = null,
+        bool randomLoadout = true)
+    {
+        var character = HumanoidCharacterProfile.Random();
+        var species = ProtoMan.Index(character.Species);
+
+        var ent = EntMan.SpawnAtPosition(species.Prototype, pos);
+        humanoidAppearance.LoadProfile(ent, character);
+        metadata.SetEntityName(ent, character.Name);
+
+        if (dead && state != null)
+            state.ChangeMobState(ent, MobState.Dead);
+        
+        if (damage != null && damageable != null)
+            damageable.TryChangeDamage(ent, damage);
+        
+        if (randomLoadout && inventory != null)
+        {
+            // Dumont
+            var jobProtos = ProtoMan.EnumeratePrototypes<JobPrototype>()
+                .Where(j => j.SetPreference && 
+                            !j.ID.ToLower().Contains("centcom") && 
+                            !j.ID.ToLower().Contains("ert") && 
+                            !j.ID.ToLower().Contains("admin") &&
+                            !j.ID.ToLower().Contains("syndicate") &&
+                            !j.ID.ToLower().Contains("pirate"))
+                .ToList();
+
+            if (jobProtos.Count > 0)
+            {
+                var job = jobProtos[Rand.Next(jobProtos.Count)];
+                
+                // Dumont
+                if (job.StartingGear != null && ProtoMan.TryIndex<StartingGearPrototype>(job.StartingGear, out var gear))
+                {
+                    string[] allowedSlots = { "jumpsuit", "shoes", "outerClothing", "gloves" };
+
+                    foreach (var (slot, itemProto) in gear.Equipment)
+                    {
+                        if (!allowedSlots.Contains(slot))
+                            continue;
+
+                        // Dumont
+                        var item = EntMan.SpawnEntity(itemProto, pos);
+                        var itemMeta = EntMan.GetComponent<MetaDataComponent>(item);
+                        var realProtoName = itemMeta.EntityPrototype?.ID.ToLower() ?? "";
+
+                        // Dumont
+                        if (realProtoName.Contains("armor") || realProtoName.Contains("armour") || 
+                            realProtoName.Contains("helmet") || realProtoName.Contains("hardsuit") || 
+                            realProtoName.Contains("vest") || realProtoName.Contains("shield") ||
+                            realProtoName.Contains("carapace") || realProtoName.Contains("rig") ||
+                            realProtoName.Contains("voidsuit") || realProtoName.Contains("spacesuit"))
+                        {
+                            EntMan.DeleteEntity(item);
+                            continue;
+                        }
+                        
+                        // Se for uma roupa normal e passar no filtro, veste no corpo
+                        if (!inventory.TryEquip(ent, item, slot, force: true))
+                            EntMan.DeleteEntity(item);
+                    }
+                }
+            }
+        }
+
+        return ent;
+    }
+
+    public static DamageSpecifier RandomDamage(IPrototypeManager ProtoMan, Random Rand, int minDamage, int maxDamage, int maxDamageTypes)
+    {
+        var damageTypes = ProtoMan.EnumeratePrototypes<DamageTypePrototype>().ToList();
+
+        var damage = new DamageSpecifier();
+        float chance = 1;
+        for (var i = 0; i < maxDamageTypes; i++)
+        {
+            if(Rand.Prob(chance))
+            {
+                var type = damageTypes[Rand.Next(damageTypes.Count)].ID;
+                if (damage.DamageDict.ContainsKey(type))
+                    continue;
+
+                damage.DamageDict.Add(type, Rand.Next(minDamage, maxDamage));       
+            }
+            chance -= 1 / maxDamageTypes;
+        }
+
+        return damage;
     }
 
     private int GetNumSpawnables() => 

@@ -18,5 +18,9 @@ salvage-mission-objective-name-rescue = Rescue
 salvage-mission-objective-description-rescue = Planetary base went off comms. Body recovery bounties available.
 salvage-mission-objective-announcement-rescue = Your mission is to secure following bodies: {$names}. You will get additional rewards based on condition of the bodies.
 
+salvage-mission-objective-name-purge = Purge
+salvage-mission-objective-description-purge = Base destruction left behind inconvenient records. Purge them.
+salvage-mission-objective-announcement-purge = Your mission is to destroy {$numTargets} document folders left around the base. If you recover any additional folder, you will be paid for their destruction as well.
+
 salvage-mission-objective-completed-message = Salvage mission completed. {$bonus}/{$maxBonus} bonus objectives completed. Total payout: {$totalReward} tickets
 salvage-mission-objective-failed-message = Salvage mission failed.

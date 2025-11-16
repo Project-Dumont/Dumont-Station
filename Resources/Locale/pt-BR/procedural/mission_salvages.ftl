@@ -20,3 +20,7 @@ salvage-mission-objective-announcement-rescue = Sua missão é garantir os segui
 
 salvage-mission-objective-completed-message = Missão de exploração completa. {$bonus}/{$maxBonus} objetivo bonus completado. Pagamento total: {$totalReward} tickets
 salvage-mission-objective-failed-message = Missão de exploração fracassada.
+
+salvage-mission-objective-name-purge = Apague
+salvage-mission-objective-description-purge = A destruição da base deixou registros inconvenientes. Apague-os.
+salvage-mission-objective-announcement-purge = Sua missão é destruir {$numTargets} pastas de documentos deixadas na base. Se você recuperar alguma pasta adicional, também será pago pela destruição delas.
