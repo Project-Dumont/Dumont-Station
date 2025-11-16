@@ -13,7 +13,7 @@
   Líderes de gangue não possuem nenhuma marcação, então são difíceis de identificar.
   Líderes de gangue (e membros) podem usar o rádio de gangue para obter a localização das caixas de dicas. A cada 8 minutos, haverá um anúncio no rádio de gangue sobre a localização do drop, que acontecerá em 2 minutos.
   <Box>
-    <GuideEntityEmbed Entity="SpawnSupplypodAnimation" Caption="Marca de dica"/>
+    <GuideEntityEmbed Entity="SpawnSupplypodAnimationGang" Caption="Marca de Supply"/>
   </Box>
 
   As caixas de suplimentos podem conter armas, armaduras, roupas e drogas, que são uma boa forma de conseguir armas para eliminar outras gangues.

@@ -66,7 +66,7 @@ public sealed class GangRuleSystem : GameRuleSystem<GangRuleComponent>
         comp.DropLocation = FindLocation();
 
         // this spawns a marker that spawns a gang crate after despawn
-        var marker = Spawn("SpawnSupplypodAnimation", comp.DropLocation.Value);
+        var marker = Spawn("SpawnSupplypodAnimationGang", comp.DropLocation.Value);
 
         var locationStr = FormattedMessage.RemoveMarkupOrThrow(
             _navMap.GetNearestBeaconString(marker));

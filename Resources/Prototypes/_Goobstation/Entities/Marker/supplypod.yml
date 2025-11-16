@@ -1,5 +1,5 @@
 - type: entity
-  id: SpawnSupplypodAnimation
+  id: SpawnSupplypodAnimationGang
   # categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
