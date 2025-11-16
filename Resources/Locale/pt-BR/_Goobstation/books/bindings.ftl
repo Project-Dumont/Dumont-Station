@@ -1,0 +1,36 @@
+book-binding-part-cover_base = Capa base
+book-binding-part-cover_old = Capa velha
+book-binding-part-cover_strong = Capa reforçada
+
+book-binding-part-decor_bottom = Decoração inferior
+book-binding-part-decor_diagonal = Decoração diagonal
+book-binding-part-decor_middle = Decoração central
+book-binding-part-decor_spine = Decoração da lombada
+book-binding-part-decor_vertical_middle = Decoração vertical central
+book-binding-part-decor_wingette_circle = Vinheta 1
+book-binding-part-decor_wingette = Vinheta 2
+
+book-binding-part-icon_apple = Maçã
+book-binding-part-icon_atmos = Atmos
+book-binding-part-icon_aurora = Aurora
+book-binding-part-icon_banana = Banana
+book-binding-part-icon_bar = Barra
+book-binding-part-icon_biohazard = Biohazard
+book-binding-part-icon_borg = Borg
+book-binding-part-icon_briefcase = Pasta
+book-binding-part-icon_bucket = Balde
+book-binding-part-icon_cabbage = Repolho
+book-binding-part-icon_chemical = Químico
+book-binding-part-icon_corner = Canto
+book-binding-part-icon_diamond = Diamante
+book-binding-part-icon_dna = DNA
+book-binding-part-icon_eye = Olho
+book-binding-part-icon_fish = Peixe
+book-binding-part-icon_glow = Brilho
+book-binding-part-icon_hacking = Hack
+book-binding-part-icon_ian = Ian
+book-binding-part-icon_law = Lei
+book-binding-part-icon_lightning = Raio
+book-binding-part-icon_magic_fireball = Bola de fogo
+book-binding-part-icon_magic_forcewall = Barreira mágica
+book-binding-part-icon_magic = Magia
