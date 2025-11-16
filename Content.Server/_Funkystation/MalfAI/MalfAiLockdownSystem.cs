@@ -7,7 +7,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared.Store.Components;
 using Robust.Shared.Timing;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles the Malf AI Station Lockdown action. Extracted from MalfAiShopSystem.

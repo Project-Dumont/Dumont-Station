@@ -12,7 +12,7 @@ using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Server-side EUI for Malf AI to edit the laws of their subverted borgs or the master lawset.

@@ -8,7 +8,7 @@ using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared._Gabystation.MalfAi.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Ensures the Malf AI CPU alert is shown at the correct time:

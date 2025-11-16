@@ -9,7 +9,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// System that ensures entities around MalfAI viewport anchors are included in PVS

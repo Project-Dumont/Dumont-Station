@@ -5,7 +5,7 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared.Store.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Provides validation gating for shop-granted Shunt to APC and Return to Core actions, deferring

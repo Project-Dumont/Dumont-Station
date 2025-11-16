@@ -4,7 +4,7 @@
 
 using Robust.Shared.Map;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Server-only storage for Malf AI viewport settings and cooldown state.

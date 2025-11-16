@@ -12,7 +12,7 @@ using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
 using Content.Server.Silicons.StationAi;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 public sealed class MalfAiVoiceModulatorSystem : EntitySystem
 {

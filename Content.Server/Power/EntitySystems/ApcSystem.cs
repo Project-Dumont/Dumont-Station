@@ -43,12 +43,11 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Interaction;
-using Content.Shared.MalfAI;
 using Content.Shared.CCVar;
 using Content.Shared.Emag.Components;
 using Robust.Shared.Configuration;
-using Content.Server.MalfAI;
 using Content.Shared.MalfAI.Components;
+using Content.Server._Funkystation.MalfAI;
 
 namespace Content.Server.Power.EntitySystems;
 

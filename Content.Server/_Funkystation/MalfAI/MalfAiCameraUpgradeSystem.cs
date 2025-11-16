@@ -9,7 +9,7 @@ using Content.Shared.MalfAI.Components;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Timing;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles the Malf AI camera-upgrade toggle and keeps the Effective flag in sync with core status.

@@ -3,14 +3,12 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Administration;
-using Content.Server.MalfAI;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
-using Content.Shared.MalfAI;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Console;
 
-namespace Content.Server.MalfAI.Commands;
+namespace Content.Server._Funkystation.MalfAI.Commands;
 
 [AdminCommand(AdminFlags.Round)]
 public sealed class MalfAiDoomsdayCompleteCommand : IConsoleCommand

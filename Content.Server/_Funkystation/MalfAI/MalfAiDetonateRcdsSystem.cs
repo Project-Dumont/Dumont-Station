@@ -10,7 +10,7 @@ using Content.Shared.Store.Components;
 using Robust.Shared.Timing;
 using Content.Shared.Silicons.Borgs.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles the Malf AI Detonate RCDs action. Extracted from MalfAiShopSystem.

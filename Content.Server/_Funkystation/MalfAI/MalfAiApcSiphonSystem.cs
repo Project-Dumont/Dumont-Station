@@ -7,7 +7,6 @@
 
 using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.MalfAI;
 using Content.Server.Power.Components;
 using Content.Server.Administration.Logs;
 using Content.Shared.Database;
@@ -16,7 +15,7 @@ using Robust.Shared.Configuration;
 using Content.Shared.Store.Components;
 using Content.Shared.MalfAI.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles the Malf AI's APC siphoning.

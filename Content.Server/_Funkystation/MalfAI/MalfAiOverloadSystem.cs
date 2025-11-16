@@ -13,7 +13,7 @@ using Robust.Shared.Map;
 using Content.Server.Silicons.StationAi;
 using Content.Shared._Gabystation.MalfAi.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles the Malf AI Overload Machine ability.

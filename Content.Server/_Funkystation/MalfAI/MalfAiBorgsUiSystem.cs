@@ -19,7 +19,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mind.Components;
 using Content.Shared.MalfAI.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 public sealed class MalfAiBorgsUiSystem : EntitySystem
 {

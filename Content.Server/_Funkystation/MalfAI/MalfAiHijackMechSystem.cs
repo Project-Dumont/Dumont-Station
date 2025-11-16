@@ -18,7 +18,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Malf AI Hijack Mech

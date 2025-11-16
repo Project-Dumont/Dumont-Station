@@ -6,7 +6,7 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Damage;
 using Robust.Shared.Map;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 // Server-only component used to time a gyroscope traversal.
 [RegisterComponent]

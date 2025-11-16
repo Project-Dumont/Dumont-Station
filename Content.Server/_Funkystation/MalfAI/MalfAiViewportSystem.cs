@@ -16,7 +16,7 @@ using Robust.Server.Player;
 using Content.Shared.Actions.Components;
 using Content.Shared.MalfAI.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Server logic for the Malf AI "Viewport" upgrade:

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Marker component that indicates a borg's laws are synced to the master lawset.

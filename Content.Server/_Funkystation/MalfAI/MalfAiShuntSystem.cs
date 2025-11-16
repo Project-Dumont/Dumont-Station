@@ -14,7 +14,7 @@ using Content.Server.Silicons.StationAi;
 using Content.Shared.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>
 /// Handles Malf AI shunting of the AI brain to APCs, and returning to the core.

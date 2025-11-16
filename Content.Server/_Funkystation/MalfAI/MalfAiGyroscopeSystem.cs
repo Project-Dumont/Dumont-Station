@@ -19,7 +19,7 @@ using Robust.Shared.Timing;
 using Content.Shared._Shitmed.Targeting;
 using Content.Server.Silicons.StationAi;
 
-namespace Content.Server.MalfAI;
+namespace Content.Server._Funkystation.MalfAI;
 
 public sealed class MalfAiGyroscopeSystem : EntitySystem
 {
