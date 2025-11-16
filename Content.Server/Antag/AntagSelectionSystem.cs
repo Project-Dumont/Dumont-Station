@@ -95,6 +95,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._Funkystation.GameTicking;
 using Content.Server._Goobstation.Antag;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
@@ -123,6 +124,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Roles;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -701,19 +703,19 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!_jobs.CanBeAntag(session))
         {
             // Allow Malf AI rule to bypass job CanBeAntag gating so Station AI can be selected.
-            if (HasComp<Content.Server.GameTicking.Rules.Components.MalfAiRuleComponent>(ent.Owner))
+            if (HasComp<MalfAiRuleComponent>(ent.Owner))
                 goto MalfAiStrictCheck;
             return false;
         }
 
         // Strict gating for Malf AI: only the Station AI may be selected as Malf AI.
         MalfAiStrictCheck:
-        if (HasComp<Content.Server.GameTicking.Rules.Components.MalfAiRuleComponent>(ent.Owner))
+        if (HasComp<MalfAiRuleComponent>(ent.Owner))
         {
             var entUid = session.AttachedEntity;
             if (entUid == null)
                 return false;
-            if (!HasComp<Content.Shared.Silicons.StationAi.StationAiHeldComponent>(entUid.Value))
+            if (!HasComp<StationAiHeldComponent>(entUid.Value))
                 return false;
         }
 

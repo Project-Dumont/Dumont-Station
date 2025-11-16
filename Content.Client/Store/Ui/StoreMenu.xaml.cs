@@ -45,7 +45,8 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Client.ResourceManagement;
-using Content.Client.MalfAI.Theme;
+using Content.Client._Funkystation.MalfAI.Theme;
+using Content.Client._Funkystation.Store.Ui;
 
 namespace Content.Client.Store.Ui;
 

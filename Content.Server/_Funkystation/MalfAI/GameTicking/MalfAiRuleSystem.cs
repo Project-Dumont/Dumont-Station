@@ -4,7 +4,6 @@
 using System.Linq;
 using Content.Server.Antag;
 using Content.Server.Antag.Components;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Alert;
@@ -22,8 +21,10 @@ using Content.Shared.Silicons.Laws;
 using Content.Shared.Store.Components;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Server.GameTicking.Rules;
+using Content.Server.GameTicking;
 
-namespace Content.Server.GameTicking.Rules;
+namespace Content.Server._Funkystation.GameTicking;
 
 /// <summary>
 /// Handles Malf AI rule startup behavior. When the rule is added mid-round via admin command,

@@ -42,7 +42,7 @@ public sealed class RoboticsConsoleBoundUserInterface : BoundUserInterface
         {
             SendMessage(new RoboticsConsoleDestroyMessage(address));
         };
-            _window.OnImposeLawPressed += addr => SendMessage(new RoboticsConsoleImposeLawMessage(addr));
+        _window.OnImposeLawPressed += addr => SendMessage(new RoboticsConsoleImposeLawMessage(addr));
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

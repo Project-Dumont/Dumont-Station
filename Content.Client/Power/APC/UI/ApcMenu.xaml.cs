@@ -125,11 +125,11 @@ namespace Content.Client.Power.APC.UI
 
         public void SetSiphonVisible(bool visible)
         {
-            if (SiphonSpacer != null)
+            if (SiphonSpacer is not null)
                 SiphonSpacer.Visible = visible;
-            if (SiphonContainer != null)
+            if (SiphonContainer is not null)
                 SiphonContainer.Visible = visible;
-            if (SiphonButton != null)
+            if (SiphonButton is not null)
                 SiphonButton.Visible = visible;
         }
 

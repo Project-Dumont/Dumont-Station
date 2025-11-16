@@ -27,7 +27,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Store.Ui;
+namespace Content.Client._Funkystation.Store.Ui;
 
 [GenerateTypedNameReferences]
 public sealed partial class MalfStoreListingControl : Control

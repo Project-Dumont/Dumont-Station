@@ -25,7 +25,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client.MalfAI;
 using Content.Shared.Store;
 using JetBrains.Annotations;
 using System.Linq;
@@ -53,30 +52,20 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
 
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyId = "CPU";
 
-    public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
+    public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
     protected override void Open()
     {
         base.Open();
 
-        if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store))
-        {
-            if (store.CurrencyWhitelist.Contains(CpuCurrencyId))
-            {
-                // Removed call to open Malf AI store window here to prevent duplicate/empty window.
-                return;
-            }
-        }
+        if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store)
+            && store.CurrencyWhitelist.Contains(CpuCurrencyId))
+            return; // Removed call to open Malf AI store window here to prevent duplicate/empty window.
 
         _menu = this.CreateWindow<StoreMenu>();
-        if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store2))
-        {
-            _menu.Title = Loc.GetString(store2.Name);
-            if (store2.CurrencyWhitelist.Contains(CpuCurrencyId))
-                _menu.ApplyMalfTheme();
-        }
+
+        if (store is not null)
+            _menu.Title = Loc.GetString(store.Name);
 
         _menu.OnListingButtonPressed += (_, listing) =>
         {
