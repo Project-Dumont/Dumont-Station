@@ -57,6 +57,7 @@
       Steel: 75
       Plastic: 25
   # Goobstation
+  # Goobstation
   - type: Tool
     qualities:
     - Painting
@@ -66,9 +67,6 @@
   - type: LimitedCharges
     maxCharges: 15
     lastCharges: 15
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 100
 
 - type: entity
   parent: SprayPainter
