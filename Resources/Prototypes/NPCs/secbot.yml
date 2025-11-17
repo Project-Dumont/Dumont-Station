@@ -7,6 +7,10 @@
 
     - tasks:
         - !type:HTNCompoundTask
+          task: MeleeCombatCompound
+
+    - tasks:
+        - !type:HTNCompoundTask
           task: SecbotPatrolCompound
 
 - type: htnCompound

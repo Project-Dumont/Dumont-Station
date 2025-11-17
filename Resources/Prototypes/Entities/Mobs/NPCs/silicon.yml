@@ -763,6 +763,9 @@
     - Security
   - type: StationAiVision
     range: 1
+  - type: FactionException
+  - type: NPCRetaliation
+    attackMemoryLength: 10
 
 - type: entity
   parent: MobSecuritron
