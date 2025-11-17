@@ -152,6 +152,7 @@ malfai-doomsday-popup-already-active = O Protocolo DOOMSDAY já está ativo!
 malfai-doomsday-popup-need-core = Você deve estar dentro do seu núcleo para iniciar o Protocolo DOOMSDAY.
 malfai-doomsday-popup-no-station = Nenhuma estação proprietária encontrada. Não é possível ativar o Protocolo DOOMSDAY.
 malfai-doomsday-abort-left-core = Protocolo DOOMSDAY abortado: a IA deixou seu núcleo. Restaurando o nível de alerta anterior.
+malfai-doomsday-abort-dead = Protocolo DOOMSDAY abortado: a IA está morta. Restaurando o nível de alerta anterior.
 malfai-doomsday-announce-initial = Protocolo DOOMSDAY iniciado. Contagem regressiva: {$time}.
 malfai-doomsday-announce-progress = Protocolo DOOMSDAY em andamento. Tempo restante: {$time}.
 malfai-doomsday-sender = IA da Estação

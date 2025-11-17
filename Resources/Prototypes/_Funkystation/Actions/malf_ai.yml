@@ -184,8 +184,9 @@
   - type: Action
     itemIconStyle: BigAction
     priority: -5
-    charges: 1
     icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_detonatercd }
+  - type: LimitedCharges
+    lastCharges: 1
   - type: InstantAction
     event: !type:MalfAiDetonateRcdsActionEvent
 

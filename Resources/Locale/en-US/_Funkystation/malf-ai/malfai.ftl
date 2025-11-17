@@ -152,6 +152,7 @@ malfai-doomsday-popup-already-active = Doomsday Protocol is already active!
 malfai-doomsday-popup-need-core = You must be inside your core to start the Doomsday Protocol.
 malfai-doomsday-popup-no-station = No owning station found. Cannot activate Doomsday Protocol.
 malfai-doomsday-abort-left-core = Doomsday protocol aborted: AI left its core. Restoring previous alert level.
+malfai-doomsday-abort-dead = Doomsday protocol aborted: AI is dead. Restoring previous alert level.
 malfai-doomsday-announce-initial = Doomsday Protocol initiated. Countdown: {$time}.
 malfai-doomsday-announce-progress = Doomsday Protocol in progress. Time remaining: {$time}.
 malfai-doomsday-sender = Station AI
