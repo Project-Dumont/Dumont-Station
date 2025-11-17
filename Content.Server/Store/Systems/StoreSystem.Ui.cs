@@ -228,8 +228,8 @@ public sealed partial class StoreSystem
             component.BalanceSpent[currency] += value;
         }
 
-        var ev = new CurrencyUpdatedEvent(listing.Cost.ToDictionary(e => e.Key, e => -e.Value));
-        RaiseLocalEvent(uid, ev);
+        var currencyEvent = new CurrencyUpdatedEvent(listing.Cost.ToDictionary(entry => entry.Key, entry => -entry.Value));
+        RaiseLocalEvent(uid, currencyEvent);
 
         // goobstation - heretics
         // i am too tired of making separate systems for knowledge adding
