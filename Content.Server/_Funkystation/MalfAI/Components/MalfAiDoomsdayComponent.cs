@@ -4,7 +4,7 @@
 
 using Robust.Shared.Audio;
 
-namespace Content.Server._Funkystation.MalfAI;
+namespace Content.Server._Funkystation.MalfAI.Components;
 
 /// <summary>
 /// Server-only component tracking an active Doomsday Protocol triggered by a Malf AI.

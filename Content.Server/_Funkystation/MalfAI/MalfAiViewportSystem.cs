@@ -15,6 +15,7 @@ using Robust.Shared.Player;
 using Robust.Server.Player;
 using Content.Shared.Actions.Components;
 using Content.Shared.MalfAI.Components;
+using Content.Server._Funkystation.MalfAI.Components;
 
 namespace Content.Server._Funkystation.MalfAI;
 

@@ -13,6 +13,7 @@ using Robust.Shared.Player;
 using Content.Server.Silicons.StationAi;
 using Content.Shared.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Server._Funkystation.MalfAI.Components;
 
 namespace Content.Server._Funkystation.MalfAI;
 

@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Server._Funkystation.MalfAI.Components;
 using Content.Server.Administration;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;

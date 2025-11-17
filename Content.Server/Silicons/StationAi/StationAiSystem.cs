@@ -70,6 +70,8 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Chat;
 using Robust.Shared.Audio;
 using System.Linq;
+using Content.Server._Funkystation.MalfAI;
+using Content.Server._Funkystation.MalfAI.Components;
 
 namespace Content.Server.Silicons.StationAi;
 
@@ -98,6 +100,7 @@ public sealed class StationAiSystem : SharedStationAiSystem
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly MalfAiDoomsdaySystem _doomsday = default!;
 
     private readonly HashSet<Entity<StationAiCoreComponent>> _stationAiCores = new();
 
@@ -387,11 +390,15 @@ public sealed class StationAiSystem : SharedStationAiSystem
     {
         base.KillHeldAi(ent);
 
-        if (TryGetHeld((ent.Owner, ent.Comp), out var held) &&
-            _mind.TryGetMind(held.Value, out var mindId, out var mind))
+        if (TryGetHeld((ent.Owner, ent.Comp), out var held))
         {
-            _ghost.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
-            RemComp<StationAiOverlayComponent>(held.Value);
+            if (_mind.TryGetMind(held.Value, out var mindId, out var mind))
+            {
+                _ghost.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
+                RemComp<StationAiOverlayComponent>(held.Value);
+            }
+            if (TryComp<MalfAiDoomsdayComponent>(held, out var doomsday))
+                _doomsday.AbortDoomsday(held.Value, doomsday, "malfai-doomsday-abort-dead");
         }
 
         ClearEye(ent);

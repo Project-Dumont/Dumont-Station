@@ -10,19 +10,11 @@ namespace Content.Server._Funkystation.MalfAI;
 /// <summary>
 /// Malf AI purchase events: raised by the store when specific upgrades are bought.
 /// </summary>
-
+[Serializable, DataDefinition]
+public sealed partial class MalfAiSyndicateKeysUnlockedEvent : EntityEventArgs { }
 
 [Serializable, DataDefinition]
-public sealed partial class MalfAiSyndicateKeysUnlockedEvent : EntityEventArgs
-{
-}
+public sealed partial class MalfAiCameraUpgradeUnlockedEvent : EntityEventArgs { }
 
 [Serializable, DataDefinition]
-public sealed partial class MalfAiCameraUpgradeUnlockedEvent : EntityEventArgs
-{
-}
-
-[Serializable, DataDefinition]
-public sealed partial class MalfAiCameraMicrophonesUnlockedEvent : EntityEventArgs
-{
-}
+public sealed partial class MalfAiCameraMicrophonesUnlockedEvent : EntityEventArgs { }

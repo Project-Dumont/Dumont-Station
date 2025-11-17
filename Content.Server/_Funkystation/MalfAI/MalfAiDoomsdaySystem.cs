@@ -25,6 +25,7 @@ using Robust.Shared.Prototypes;
 using Content.Server.Silicons.StationAi;
 using Content.Shared.MalfAI.Events;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Server._Funkystation.MalfAI.Components;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -192,7 +193,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
         return container.Owner == comp.CoreHolder && HasComp<StationAiCoreComponent>(comp.CoreHolder);
     }
 
-    private void AbortDoomsday(EntityUid uid, MalfAiDoomsdayComponent comp, string reason)
+    public void AbortDoomsday(EntityUid uid, MalfAiDoomsdayComponent comp, string reason)
     {
         comp.Active = false;
         StopDoomsdayMusic(comp.Station);
