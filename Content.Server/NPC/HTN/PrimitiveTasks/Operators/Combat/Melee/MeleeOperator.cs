@@ -112,12 +112,12 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
             blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager) &&
             target != EntityUid.Invalid)
         {
+            combat.Target = target;
+
             if (CheckStun && _entManager.HasComponent<StunnedComponent>(target))
             {
-                return HTNOperatorStatus.Failed;
+                return HTNOperatorStatus.Finished;
             }
-
-            combat.Target = target;
 
             // Success
             if (_entManager.TryGetComponent<MobStateComponent>(target, out var mobState) &&

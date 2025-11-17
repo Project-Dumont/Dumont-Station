@@ -765,7 +765,7 @@
     range: 1
   - type: FactionException
   - type: NPCRetaliation
-    attackMemoryLength: 10
+    attackMemoryLength: 5
 
 - type: entity
   parent: MobSecuritron
