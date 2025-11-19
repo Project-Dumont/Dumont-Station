@@ -339,7 +339,7 @@
     container: station_ai_mind_slot
   - type: Damageable
     damageContainer: AiCore
-    damageModifierSet: Eletronic
+    damageModifierSet: Electronic
   - type: Physics
     bodyType: Static
   - type: MobThresholds
