@@ -120,15 +120,15 @@ public sealed partial class CriminalRecordComponent : Component
     {
         {SlotFlags.HEAD, 0.75f},
         {SlotFlags.EYES, 0.25f},
-        {SlotFlags.EARS, 0.125f},
-        {SlotFlags.MASK, 0.125f},
+        {SlotFlags.EARS, 0.25f},
+        {SlotFlags.MASK, 0.25f},
         {SlotFlags.OUTERCLOTHING, 1f},
         {SlotFlags.INNERCLOTHING, 1f},
-        {SlotFlags.NECK, 0.5f},
+        {SlotFlags.NECK, 0.25f},
         {SlotFlags.BACK, 0.75f},
         {SlotFlags.BELT, 0.75f},
-        {SlotFlags.GLOVES, 0.25f},
-        {SlotFlags.FEET, 0.125f},
+        {SlotFlags.GLOVES, 0.5f},
+        {SlotFlags.FEET, 0.5f},
         {SlotFlags.SUITSTORAGE, 1f},
     };
 }
