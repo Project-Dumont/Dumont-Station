@@ -10,6 +10,7 @@ using Content.Shared.Roles;
 using Content.Shared.Security.Components;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Robust.Shared.GameObjects;
 
 namespace Content.Shared.Security.Systems;
 
@@ -19,6 +20,8 @@ public sealed class CriminalStatusSystem : EntitySystem
     [Dependency] private readonly SharedIdCardSystem _id = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+
+    private const int Delay = 5000;
 
     public override void Initialize()
     {
@@ -84,7 +87,7 @@ public sealed class CriminalStatusSystem : EntitySystem
         if (equip)
             component.Points += points;
         else
-            component.Points -= points;
+            PointDelay(uid, points, component);
 
         return true;
     }
@@ -108,7 +111,7 @@ public sealed class CriminalStatusSystem : EntitySystem
         if (pickup)
             component.Points += points;
         else
-            component.Points -= points;
+            PointDelay(uid, points, component);
 
         return true;
     }
@@ -181,5 +184,10 @@ public sealed class CriminalStatusSystem : EntitySystem
 
             OnPickupOrDrop(ent.Owner, ent.Comp, item, true, checkId: false);
         }
+    }
+
+    private void PointDelay(EntityUid uid, float points, CriminalRecordComponent component)
+    {
+        EnsureComp<TimerComponent>(uid).Spawn(Delay, () => component.Points -= points);
     }
 }
