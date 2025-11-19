@@ -23,7 +23,7 @@
   components:
   - type: Contraband
     severity: Major # placeholder until they make a better severity
-    criminalPoints: 1
+    criminalPoints: 5
   - type: ScannableForPoints # Goobstation - NTR update
     points: 1 # idk how much points they would cost so whatever
 
@@ -34,7 +34,7 @@
   components:
   - type: Contraband
     severity: Magical
-    criminalPoints: 4
+    criminalPoints: 5
   - type: ScannableForPoints # Goobstation - NTR update
     points: 10
 
@@ -45,7 +45,7 @@
   components:
   - type: Contraband
     severity: Syndicate
-    criminalPoints: 4
+    criminalPoints: 5
   - type: ScannableForPoints # Goobstation - NTR update
     points: 5
 
@@ -56,7 +56,7 @@
   components:
   - type: Contraband
     severity: Minor
-    criminalPoints: 2.5
+    criminalPoints: 3
 
 # major contraband, for things like guns or weaponry that don't belong to any department and aren't syndicate specific
 - type: entity
@@ -65,7 +65,7 @@
   components:
   - type: Contraband
     severity: Major
-    criminalPoints: 3
+    criminalPoints: 4
 
 # base department restricted contraband, this should only be used as a parent for other contraband prototypes, not the restricted items themselves.
 - type: entity
@@ -74,7 +74,7 @@
   components:
   - type: Contraband
     severity: Restricted
-    criminalPoints: 3
+    criminalPoints: 2
     allowedDepartments: [  ]
     allowedJobs: [  ]
 
@@ -86,7 +86,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ CentralCommand ]
-    criminalPoints: 3.5
+    criminalPoints: 5
 
 - type: entity
   id: BaseCommandContraband
@@ -95,7 +95,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Command ]
-    criminalPoints: 3
+    criminalPoints: 4
 
 - type: entity
   id: BaseSecurityContraband
@@ -142,6 +142,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Civilian ]
+    criminalPoints: 2
 
 - type: entity
   id: BaseCargoContraband
@@ -160,7 +161,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ CentralCommand, Command ]
-    criminalPoints: 3
+    criminalPoints: 4.5
 
 - type: entity
   id: BaseSecurityCommandContraband
@@ -178,7 +179,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security, Science, Command ]
-    criminalPoints: 3.25
+    criminalPoints: 3
 
 - type: entity
   id: BaseSecurityEngineeringContraband
@@ -187,7 +188,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security, Engineering ]
-    criminalPoints: 3
+    criminalPoints: 2.5
 
 - type: entity
   id: BaseSiliconScienceContraband
@@ -205,7 +206,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security, Cargo ]
-    criminalPoints: 3.25
+    criminalPoints: 2.5
 
 - type: entity
   id: BaseMedicalScienceContraband
@@ -225,7 +226,7 @@
   - type: Contraband
     allowedDepartments: [ Security ]
     allowedJobs: [ Bartender ]
-    criminalPoints: 3
+    criminalPoints: 2.5
 
 - type: entity
   id: BaseSecurityBartenderZookeeperContraband
@@ -235,6 +236,7 @@
   - type: Contraband
     allowedDepartments: [ Security ]
     allowedJobs: [ Bartender, Zookeeper ]
+    criminalPoints: 2.5
 
 - type: entity
   id: BaseSecurityLawyerContraband
@@ -244,7 +246,7 @@
   - type: Contraband
     allowedDepartments: [ Security ]
     allowedJobs: [ Lawyer ]
-    criminalPoints: 2
+    criminalPoints: 2.5
 
 - type: entity
   id: BaseJanitorContraband
@@ -253,7 +255,7 @@
   components:
   - type: Contraband
     allowedJobs: [ Janitor ]
-    criminalPoints: 1
+    criminalPoints: 2
 
 # for ~objective items
 - type: entity
@@ -273,4 +275,4 @@
   - type: Contraband
     severity: Honkraband
     allowedJobs: [ Clown ]
-    criminalPoints: 1
+    criminalPoints: 2
