@@ -15,7 +15,7 @@ using Content.Server.Objectives;
 using Robust.Shared.Random;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Store.Systems;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Store.Components;

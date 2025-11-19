@@ -34,12 +34,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Server._White.StoreDiscount;
-using Content.Shared.Mind;
 using Robust.Shared.Timing;
-using Content.Shared.MalfAI;
 using Content.Shared.Store;
-using Content.Shared.MalfAI.Events;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Events;
 
 namespace Content.Server.Store.Systems;
 
@@ -69,7 +66,7 @@ public sealed partial class StoreSystem : EntitySystem
         SubscribeLocalEvent<StoreComponent, ComponentShutdown>(OnShutdown);
 
         SubscribeLocalEvent<StoreComponent, OpenUplinkImplantEvent>(OnImplantActivate);
-        SubscribeLocalEvent<StoreComponent, OpenMalfAiStoreActionEvent>(OnMalfAiOpenStore);
+        SubscribeLocalEvent<StoreComponent, OpenMalfAiStoreActionEvent>(OnMalfAiOpenStore); // Funkystation -> Malf Ai
 
         InitializeUi();
         InitializeCommand();
@@ -144,6 +141,7 @@ public sealed partial class StoreSystem : EntitySystem
         ToggleUi(args.Performer, uid, component);
     }
 
+    // Funkystation -> Malf Ai
     private void OnMalfAiOpenStore(Entity<StoreComponent> ent, ref OpenMalfAiStoreActionEvent args)
     {
         ToggleUi(args.Performer, ent.Owner, ent.Comp);
@@ -223,6 +221,7 @@ public sealed partial class StoreSystem : EntitySystem
                 store.Balance[type.Key] += type.Value;
         }
 
+        // Gabystation -> Better Malf Ai store
         var ev = new CurrencyUpdatedEvent(currency);
         RaiseLocalEvent(uid, ev);
 
@@ -247,6 +246,7 @@ public sealed class CurrencyInsertAttemptEvent : CancellableEntityEventArgs
     }
 }
 
+// Gabystation -> Better Malf Ai store
 public sealed class CurrencyUpdatedEvent : EntityEventArgs
 {
     public readonly Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Currency;

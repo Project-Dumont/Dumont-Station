@@ -1,4 +1,4 @@
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Electrocution;

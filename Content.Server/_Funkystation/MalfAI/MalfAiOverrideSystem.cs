@@ -8,8 +8,7 @@
 using Content.Server.Construction.Components;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;

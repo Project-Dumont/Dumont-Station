@@ -117,7 +117,7 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
     /// If null or 0, no charges are granted to existing actions.
     /// </summary>
     [DataField]
-    public int? ProductActionCharges;
+    public int? ProductActionCharges; // Funkystation - Malf Ai
 
     /// <summary>
     /// The listing ID of the related upgrade listing. Can be used to link a <see cref="ProductAction"/> to an
@@ -259,7 +259,7 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
             Priority = Priority,
             ProductEntity = ProductEntity,
             ProductAction = ProductAction,
-            ProductActionCharges = ProductActionCharges,
+            ProductActionCharges = ProductActionCharges, // Funkystation - Malf Ai
             ProductUpgradeId = ProductUpgradeId,
             ProductActionEntity = ProductActionEntity,
             ProductEvent = ProductEvent,

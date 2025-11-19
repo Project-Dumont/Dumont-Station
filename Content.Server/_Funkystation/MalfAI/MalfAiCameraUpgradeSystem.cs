@@ -3,9 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared._Gabystation.MalfAi.Components;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Timing;
 

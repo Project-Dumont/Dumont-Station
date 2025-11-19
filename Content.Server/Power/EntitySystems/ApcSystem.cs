@@ -46,8 +46,9 @@ using Content.Shared.Interaction;
 using Content.Shared.CCVar;
 using Content.Shared.Emag.Components;
 using Robust.Shared.Configuration;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Server._Funkystation.MalfAI;
+using Content.Shared._Funkystation.CCVar;
 
 namespace Content.Server.Power.EntitySystems;
 
@@ -75,13 +76,13 @@ public sealed class ApcSystem : EntitySystem
         SubscribeLocalEvent<ApcComponent, ApcToggleMainBreakerMessage>(OnToggleMainBreaker);
         SubscribeLocalEvent<ApcComponent, GotEmaggedEvent>(OnEmagged);
         SubscribeLocalEvent<ApcComponent, EmpPulseEvent>(OnEmpPulse);
-        SubscribeLocalEvent<ApcComponent, ApcSiphonCpuMessage>(OnSiphonCpu);
+        SubscribeLocalEvent<ApcComponent, ApcSiphonCpuMessage>(OnSiphonCpu); // Funkystation -> MalfAi
 
-        // Siphon event handlers
+        // // Funkystation -> MalfAi. Siphon event handlers
         SubscribeLocalEvent<ApcComponent, ApcStartSiphonEvent>(OnStartSiphon);
         SubscribeLocalEvent<MalfAiApcSiphonedComponent, ApcSiphonExpiredEvent>(OnSiphonExpired);
 
-        // Block interactions with siphoned APCs
+        // // Funkystation -> MalfAi. Block interactions with siphoned APCs
         SubscribeLocalEvent<MalfAiApcSiphonedComponent, ApcToggleMainBreakerAttemptEvent>(OnSiphonedToggleAttempt);
         SubscribeLocalEvent<MalfAiApcSiphonedComponent, InteractHandEvent>(OnSiphonedInteract);
     }
@@ -144,6 +145,7 @@ public sealed class ApcSystem : EntitySystem
         }
     }
 
+    // Funkystation -> MalfAi
     private void OnSiphonCpu(EntityUid uid, ApcComponent component, ApcSiphonCpuMessage args)
     {
         // Send the siphon event that MalfAI system will handle
@@ -157,7 +159,7 @@ public sealed class ApcSystem : EntitySystem
         if (!Resolve(uid, ref apc, ref battery))
             return;
 
-        // Prevent siphoned APCs from being toggled
+        // // Funkystation -> MalfAi. Prevent siphoned APCs from being toggled
         if (HasComp<MalfAiApcSiphonedComponent>(uid))
             return;
 
@@ -228,7 +230,7 @@ public sealed class ApcSystem : EntitySystem
         var state = new ApcBoundInterfaceState(apc.MainBreakerEnabled,
             (int) MathF.Ceiling(battery.CurrentSupply), apc.LastExternalState,
             charge,
-            HasComp<MalfAiApcSiphonedComponent>(uid));
+            HasComp<MalfAiApcSiphonedComponent>(uid)); // Funkystation -> MalfAi
 
         _ui.SetUiState((uid, ui), ApcUiKey.Key, state);
     }
@@ -273,6 +275,7 @@ public sealed class ApcSystem : EntitySystem
         }
     }
 
+    // Funkystation -> MalfAi
     private void OnStartSiphon(EntityUid uid, ApcComponent apc, ref ApcStartSiphonEvent args)
     {
         // Don't siphon if already siphoned, shouldn't be possile but just in case
@@ -301,7 +304,7 @@ public sealed class ApcSystem : EntitySystem
         UpdateUIState(uid, apc, battery);
 
         // Schedule siphon expiration using configurable duration
-        var siphonDuration = TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.MalfAiSiphonDurationSeconds));
+        var siphonDuration = TimeSpan.FromSeconds(_cfg.GetCVar(CCVarsMalfAi.MalfAiSiphonDurationSeconds));
         Timer.Spawn(siphonDuration, () =>
         {
             if (!Exists(uid))
@@ -315,6 +318,7 @@ public sealed class ApcSystem : EntitySystem
         _malfAiSiphon.OnApcStartSiphon(uid, apc, ref args);
     }
 
+    // Funkystation -> MalfAi
     private void OnSiphonExpired(EntityUid uid, MalfAiApcSiphonedComponent siphoned, ref ApcSiphonExpiredEvent args)
     {
         if (!TryComp<ApcComponent>(uid, out var apc) || !TryComp<PowerNetworkBatteryComponent>(uid, out var battery))
@@ -335,12 +339,14 @@ public sealed class ApcSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("malfai-apc-restore"), uid);
     }
 
+    // Funkystation -> MalfAi
     private void OnSiphonedToggleAttempt(EntityUid uid, MalfAiApcSiphonedComponent siphoned, ref ApcToggleMainBreakerAttemptEvent args)
     {
         // Block all toggle attempts on siphoned APCs
         args.Cancelled = true;
     }
 
+    // Funkystation -> MalfAi
     private void OnSiphonedInteract(EntityUid uid, MalfAiApcSiphonedComponent siphoned, InteractHandEvent args)
     {
         // Block all interactions with siphoned APCs

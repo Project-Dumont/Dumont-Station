@@ -48,6 +48,7 @@ public sealed partial class StoreListingControl : Control
     private readonly bool _hasBalance;
     private readonly string _price;
 
+    // Funkystation -> Malf AI.
     public void ApplyMalfTheme(Font font, Color accent)
     {
         // Apply font theming locally (do not touch global theme).
@@ -122,7 +123,7 @@ public sealed partial class StoreListingControl : Control
         var stationTime = _timing.CurTime.Subtract(_ticker.RoundStartTimeSpan);
         if (_data.RestockTime > stationTime)
         {
-            var timeLeftToBuy = _data.RestockTime - stationTime;
+            var timeLeftToBuy = _data.RestockTime - stationTime; // Funkystation -> Malf AI.
             StoreItemBuyButton.Text = timeLeftToBuy.Duration().ToString(@"mm\:ss");
         }
         else

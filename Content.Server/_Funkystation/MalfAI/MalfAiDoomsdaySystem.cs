@@ -10,8 +10,7 @@ using Content.Server.AlertLevel;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Systems;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.CCVar;
@@ -23,9 +22,10 @@ using Robust.Shared.Random;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicons.StationAi;
-using Content.Shared.MalfAI.Events;
+using Content.Shared._Funkystation.MalfAI.Events;
 using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Server._Funkystation.MalfAI.Components;
+using Content.Shared._Funkystation.CCVar;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -153,7 +153,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
         }
 
         // Get duration configuration
-        var duration = _cfg.GetCVar(CCVars.MalfAiDoomsdayDuration);
+        var duration = _cfg.GetCVar(CCVarsMalfAi.MalfAiDoomsdayDuration);
         var actualDuration = duration > 0 ? duration : 1f; // Ensure positive duration
 
         // Record previous alert level state.

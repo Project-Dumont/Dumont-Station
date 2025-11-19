@@ -10,12 +10,11 @@ using Content.Server.Chat.Systems;
 using Content.Server.RoundEnd;
 using Content.Shared.Damage;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.MalfAI;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Numerics;
-using Content.Shared.MalfAI.Events;
+using Content.Shared._Funkystation.MalfAI.Events;
 
 namespace Content.Server._Funkystation.MalfAI;
 

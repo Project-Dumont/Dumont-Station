@@ -3,10 +3,9 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Actions;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Actions;
-using Content.Shared.Actions.Events;
 using Content.Shared.Mind;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Map;
@@ -14,8 +13,9 @@ using Robust.Shared.Timing;
 using Robust.Shared.Player;
 using Robust.Server.Player;
 using Content.Shared.Actions.Components;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Server._Funkystation.MalfAI.Components;
+using Content.Shared._Funkystation.Actions.Events;
 
 namespace Content.Server._Funkystation.MalfAI;
 

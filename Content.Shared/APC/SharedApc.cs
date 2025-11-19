@@ -205,7 +205,10 @@ namespace Content.Shared.APC
         public readonly int Power;
         public readonly ApcExternalPowerState ApcExternalPower;
         public readonly float Charge;
-        public readonly bool Siphoned; // True if this APC has already been siphoned by Malf AI
+        /// <summary>
+        ///  if this APC has already been siphoned by Malf AI
+        /// </summary>
+        public readonly bool Siphoned; // Funkystation -> Malf Ai.
 
         public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, bool siphoned)
         {
@@ -213,7 +216,7 @@ namespace Content.Shared.APC
             Power = power;
             ApcExternalPower = apcExternalPower;
             Charge = charge;
-            Siphoned = siphoned;
+            Siphoned = siphoned; // Funkystation -> Malf Ai.
         }
 
         public bool Equals(ApcBoundInterfaceState? other)
@@ -224,7 +227,7 @@ namespace Content.Shared.APC
                    Power == other.Power &&
                    ApcExternalPower == other.ApcExternalPower &&
                    MathHelper.CloseTo(Charge, other.Charge) &&
-                   Siphoned == other.Siphoned;
+                   Siphoned == other.Siphoned; // Funkystation -> Malf Ai.
         }
 
         public override bool Equals(object? obj)
@@ -234,7 +237,7 @@ namespace Content.Shared.APC
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(MainBreaker, Power, (int) ApcExternalPower, Charge, Siphoned);
+            return HashCode.Combine(MainBreaker, Power, (int) ApcExternalPower, Charge, Siphoned); // Funkystation -> Malf Ai.
         }
     }
 
@@ -243,6 +246,7 @@ namespace Content.Shared.APC
     {
     }
 
+    // Funkystation -> Malf Ai.
     [Serializable, NetSerializable]
     public sealed class ApcSiphonCpuMessage : BoundUserInterfaceMessage
     {

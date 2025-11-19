@@ -35,7 +35,6 @@ using Content.Server._Goobstation.Wizard.Store;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Heretic.EntitySystems;
-using Content.Server.PDA.Ringer;
 using Content.Server.Stack;
 using Content.Server.Store.Components;
 using Content.Shared._Goobstation.Wizard.Refund; // Goob
@@ -54,9 +53,10 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Content.Shared.Actions.Components;
-using Content.Shared.Charges.Systems; // Goob
+using Content.Shared.Charges.Systems;
+using Content.Shared.Actions.Events;
+using Content.Shared._Funkystation.Actions.Events; // Goob
 
 namespace Content.Server.Store.Systems;
 
@@ -228,6 +228,7 @@ public sealed partial class StoreSystem
             component.BalanceSpent[currency] += value;
         }
 
+        // Gabystation -> Better Malf Ai store
         var currencyEvent = new CurrencyUpdatedEvent(listing.Cost.ToDictionary(entry => entry.Key, entry => -entry.Value));
         RaiseLocalEvent(uid, currencyEvent);
 
@@ -269,7 +270,7 @@ public sealed partial class StoreSystem
             EntityUid? actionId = null;
             var existingActionFound = false;
 
-            // Check if buyer already has this action and add charges instead of creating duplicate
+            // Funkystation -> Malf Ai. Check if buyer already has this action and add charges instead of creating duplicate
             if (!_mind.TryGetMind(buyer, out var mind, out _))
             {
                 // Check buyer's actions directly
@@ -377,8 +378,8 @@ public sealed partial class StoreSystem
 
         if (listing.ProductEvent != null)
         {
-            // Handle ActionPurchaseCompanionEvent specially to populate the buyer
-            if (listing.ProductEvent is Content.Shared.Actions.Events.ActionPurchaseCompanionEvent companionEvent)
+            // Funkystation -> Malf Ai. Handle ActionPurchaseCompanionEvent specially to populate the buyer
+            if (listing.ProductEvent is ActionPurchaseCompanionEvent companionEvent)
             {
                 companionEvent.Buyer = GetNetEntity(buyer);
                 if (!listing.RaiseProductEventOnUser)
@@ -502,7 +503,6 @@ public sealed partial class StoreSystem
         }
 
         UpdateRefundUserInterface(uid, component);
-        UpdateUserInterface(buyer, uid, component);
 
         /* if (!IsOnStartingMap(uid, component))
         {

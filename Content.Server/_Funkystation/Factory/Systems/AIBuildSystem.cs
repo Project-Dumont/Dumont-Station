@@ -6,18 +6,16 @@ using Content.Server._Funkystation.Factory.Components;
 using Content.Shared.DoAfter;
 using Content.Shared._Funkystation.Factory;
 using Content.Shared._Funkystation.Factory.Components;
-using Content.Shared.MalfAI;
+using Content.Shared._Funkystation.MalfAI;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
-using Content.Shared.Actions.Events;
 using Content.Shared.Actions;
-using Content.Shared.MalfAI.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.SubFloor;
 using Content.Shared.Tag;
+using Content.Shared._Funkystation.Actions.Events;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 

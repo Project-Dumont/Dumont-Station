@@ -2,9 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization;
-
 namespace Content.Server._Funkystation.MalfAI;
 
 /// <summary>

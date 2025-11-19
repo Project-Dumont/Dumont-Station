@@ -3,8 +3,8 @@
 // SPDX-License-Identifier: MIT
 
 using Robust.Shared.Timing;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Popups;
@@ -15,7 +15,7 @@ using Robust.Shared.Containers;
 using Content.Server.Actions;
 using Content.Server.Silicons.StationAi;
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server._Funkystation.MalfAI;

@@ -132,9 +132,9 @@ public abstract class SharedPinpointerSystem : EntitySystem
         // WD EDIT END
     }
 
+    // Funkystation -> Malf Ai
     /// <summary>
     ///     Set pinpointers target to track with a custom target name
-    ///     funky addition
     /// </summary>
     public virtual void SetTargetWithCustomName(EntityUid uid, EntityUid? target, string? targetName, PinpointerComponent? pinpointer = null)
     {

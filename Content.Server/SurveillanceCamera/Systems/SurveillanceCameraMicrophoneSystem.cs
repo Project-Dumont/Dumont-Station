@@ -11,8 +11,7 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Player;
 using static Content.Server.Chat.Systems.ChatSystem;
@@ -23,6 +22,7 @@ public sealed class SurveillanceCameraMicrophoneSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -54,7 +54,7 @@ public sealed class SurveillanceCameraMicrophoneSystem : EntitySystem
 
             foreach (var viewer in camera.ActiveViewers)
             {
-                // Skip Malf AIs with camera microphones upgrade - they handle their own proximity-based filtering
+                // Funkystation -> Malf Ai. Skip Malf AIs with camera microphones upgrade - they handle their own proximity-based filtering
                 if (HasComp<MalfAiCameraMicrophonesComponent>(viewer))
                     continue;
 

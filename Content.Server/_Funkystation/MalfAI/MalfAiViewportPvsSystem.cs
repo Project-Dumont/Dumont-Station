@@ -2,13 +2,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System.Collections.Generic;
 using Content.Server._Funkystation.MalfAI.Components;
 using Content.Shared.Silicons.StationAi;
 using Robust.Server.GameStates;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Player;
 
 namespace Content.Server._Funkystation.MalfAI;
 

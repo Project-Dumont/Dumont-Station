@@ -8,13 +8,13 @@
 
 using System.Numerics;
 using Robust.Client.Audio;
-using Content.Shared.MalfAI.Events;
 using Robust.Client.Graphics;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Client._Funkystation.MalfAI.Overlays;
+using Content.Shared._Funkystation.MalfAI.Events;
 
 namespace Content.Client._Funkystation.MalfAI;
 

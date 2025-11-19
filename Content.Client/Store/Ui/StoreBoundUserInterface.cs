@@ -51,6 +51,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private HashSet<ListingData> _listings = new();
 
+    // Funkystation -> Malf AI.
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyId = "CPU";
 
     public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
@@ -59,6 +60,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
+        // Funkystation -> Malf AI.
         if (EntMan.TryGetComponent<StoreComponent>(Owner, out var store)
             && store.CurrencyWhitelist.Contains(CpuCurrencyId))
             return; // Removed call to open Malf AI store window here to prevent duplicate/empty window.
@@ -105,6 +107,8 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
                 _listings = msg.Listings;
 
                 _menu?.UpdateBalance(msg.Balance);
+
+                // Funkystation -> Malf AI.
                 if (_menu != null)
                 {
                     if (msg.Balance.ContainsKey(CpuCurrencyId))

@@ -57,10 +57,10 @@ namespace Content.Client.Power.APC
             _menu = this.CreateWindow<ApcMenu>();
             _menu.SetEntity(Owner);
             _menu.OnBreaker += BreakerPressed;
-            _menu.OnSiphon += SiphonPressed;
+            _menu.OnSiphon += SiphonPressed; // Funkystation -> Malf AI
 
             var hasAccess = false;
-            var isMalfAi = false;
+            var isMalfAi = false; // Funkystation -> Malf AI
 
             if (PlayerManager.LocalEntity != null)
             {
@@ -68,12 +68,12 @@ namespace Content.Client.Power.APC
                 var accessReader = EntMan.System<AccessReaderSystem>();
                 hasAccess = accessReader.IsAllowed(player, Owner);
 
-                // Only Malf AI should see the siphon button.
+                // Funkystation -> Malf AI. Only Malf AI should see the siphon button.
                 isMalfAi = EntMan.HasComponent<MalfunctioningAiComponent>(player);
             }
 
             _menu?.SetAccessEnabled(hasAccess);
-            _menu?.SetSiphonVisible(isMalfAi);
+            _menu?.SetSiphonVisible(isMalfAi); // Funkystation -> Malf AI
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)
@@ -89,6 +89,7 @@ namespace Content.Client.Power.APC
             SendMessage(new ApcToggleMainBreakerMessage());
         }
 
+        // Funkystation -> Malf AI
         public void SiphonPressed()
         {
             SendMessage(new ApcSiphonCpuMessage());

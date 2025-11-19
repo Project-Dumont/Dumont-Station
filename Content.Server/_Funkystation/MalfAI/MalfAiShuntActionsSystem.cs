@@ -1,5 +1,5 @@
 using Content.Server.Silicons.StationAi;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Store.Components;

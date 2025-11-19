@@ -248,8 +248,6 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         if (args.Handled)
             return;
 
-        // Only initialize from prototype if Lawset is completely null
-        // Don't overwrite custom laws that were set by SetLaws
         if (component.Lawset == null)
             component.Lawset = GetLawset(component.Laws);
 
@@ -417,16 +415,11 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     /// </summary>
     public void SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null)
     {
-
         if (!TryComp<SiliconLawProviderComponent>(target, out var component))
-        {
             return;
-        }
 
         if (component.Lawset == null)
-        {
             component.Lawset = new SiliconLawset();
-        }
 
         component.Lawset.Laws = newLaws;
         NotifyLawsChanged(target, cue);

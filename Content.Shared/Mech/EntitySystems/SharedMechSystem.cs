@@ -60,9 +60,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory.VirtualItem;
 using Robust.Shared.Configuration;
 using Content.Shared.Implants.Components;
-using Content.Shared.MalfAI;
 using Content.Shared.Silicons.StationAi;
-using Content.Shared.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Shared.Mech.EntitySystems;
@@ -404,6 +402,7 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
 
+        // Funkystation - Malf Ai begin
         // Allow AI positronic brains to be inserted even if they cannot "move" per ActionBlocker.
         var canMove = _actionBlocker.CanMove(toInsert);
         // Allow Malf AI brain entities to be inserted even if they cannot move.
@@ -417,6 +416,7 @@ public abstract partial class SharedMechSystem : EntitySystem
             isStationAiBrainProto = meta.EntityPrototype.ID == "StationAiBrain";
         var allowAi = isAiHeld || hasMalfMarker || isStationAiBrainProto;
         return IsEmpty(component) && (canMove || allowAi);
+        // Funkystation - Malf Ai end
     }
 
     /// <summary>

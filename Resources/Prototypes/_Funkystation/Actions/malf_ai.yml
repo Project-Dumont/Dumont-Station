@@ -98,18 +98,6 @@
     event: !type:MalfAiShuntToApcActionEvent
 
 - type: entity
-  id: ActionMalfAiVoiceModulator
-  name: malfai-voice-modulator-name
-  description: malfai-voice-modulator-desc
-  components:
-  - type: Action
-    itemIconStyle: BigAction
-    priority: -5
-    icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_voicemodulator }
-  - type: InstantAction
-    event: !type:MalfAiVoiceModulatorActionEvent
-
-- type: entity
   id: ActionMalfAiReturnToCore
   name: malfai-return-to-core-name
   description: malfai-return-to-core-desc

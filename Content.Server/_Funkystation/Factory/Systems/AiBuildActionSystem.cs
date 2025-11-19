@@ -8,13 +8,14 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Content.Shared._Funkystation.Factory.Events;
 using Content.Shared.Silicons.StationAi;
-using Content.Shared.MalfAI;
+using Content.Shared._Funkystation.MalfAI;
 using Content.Shared._Funkystation.Factory;
 using Content.Shared.DoAfter;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared._Funkystation.Actions.Events;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -148,7 +149,7 @@ public sealed partial class AiBuildActionSystem : EntitySystem
         _active[performer] = new ActiveBuild(coords, args.Prototype);
 
         // Raise start event for subscribers
-        RaiseLocalEvent(performer, new AiBuildStartedEvent(performer, _transform.GetMapId((EntityCoordinates)coords), coords.Position, args.Prototype, args.Duration, price));
+        RaiseLocalEvent(performer, new AiBuildStartedEvent(performer, _transform.GetMapId(coords), coords.Position, args.Prototype, args.Duration, price));
 
         // Start DoAfter
         var doAfterEvent = new AiBuildDoAfterEvent(GetNetCoordinates(coords, null), args.Prototype, null);

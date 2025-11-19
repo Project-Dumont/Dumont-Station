@@ -41,7 +41,7 @@ namespace Content.Client.Power.APC.UI
     public sealed partial class ApcMenu : FancyWindow
     {
         public event Action? OnBreaker;
-        public event Action? OnSiphon;
+        public event Action? OnSiphon; // Funkystation -> Malf AI
 
         public ApcMenu()
         {
@@ -49,7 +49,7 @@ namespace Content.Client.Power.APC.UI
             RobustXamlLoader.Load(this);
 
             BreakerButton.OnPressed += _ => OnBreaker?.Invoke();
-            SiphonButton.OnPressed += _ => OnSiphon?.Invoke();
+            SiphonButton.OnPressed += _ => OnSiphon?.Invoke(); // Funkystation -> Malf AI
         }
 
         public void SetEntity(EntityUid entity)
@@ -100,6 +100,7 @@ namespace Content.Client.Power.APC.UI
                 ChargePercentage.Text = Loc.GetString("apc-menu-charge-label",("percent",  chargePercentage.ToString("P0")));
             }
 
+            // Funkystation -> Malf AI
             // Disable the siphon button if this APC has already been siphoned.
             if (SiphonButton != null)
             {
@@ -124,6 +125,7 @@ namespace Content.Client.Power.APC.UI
             }
         }
 
+        // Funkystation -> Malf AI
         public void SetSiphonVisible(bool visible)
         {
             if (SiphonSpacer is not null)

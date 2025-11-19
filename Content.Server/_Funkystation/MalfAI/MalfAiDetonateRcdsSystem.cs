@@ -1,6 +1,6 @@
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.RCD.Components;
 using Robust.Shared.Audio;

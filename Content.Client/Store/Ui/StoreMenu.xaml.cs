@@ -58,10 +58,11 @@ public sealed partial class StoreMenu : DefaultWindow
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    [Dependency] private readonly IResourceCache _resCache = default!;
+    [Dependency] private readonly IResourceCache _resCache = default!; // Funkystation -> Malf AI.
 
     private StoreWithdrawWindow? _withdrawWindow;
 
+    // Funkystation -> Malf AI.
     private Font? _malfFont;
     private bool _malfThemeApplied;
     private static readonly Color MalfGreen = MalfUiTheme.Accent;
@@ -88,6 +89,7 @@ public sealed partial class StoreMenu : DefaultWindow
         SearchBar.OnTextChanged += _ => SearchTextUpdated?.Invoke(this, SearchBar.Text);
     }
 
+    // Funkystation -> Malf AI.
     public void ApplyMalfTheme()
     {
         if (_malfThemeApplied)
@@ -213,7 +215,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     private void AddListingGui(ListingData listing)
     {
-        // Apply category filtering for both Malf and normal shops.
+        // Funkystation -> Malf AI. Apply category filtering for both Malf and normal shops.
         if (!listing.Categories.Contains(CurrentCategory))
             return;
 
@@ -315,7 +317,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     public void PopulateStoreCategoryButtons(HashSet<ListingData> listings)
     {
-        // Malf shop: show only the requested categories.
+        // Funkystation -> Malf AI. Malf shop: show only the requested categories.
         if (_malfThemeApplied)
         {
             var malfCats = new[] { "Deception", "Factory", "Disruption" };

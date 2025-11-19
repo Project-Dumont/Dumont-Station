@@ -5,7 +5,6 @@
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Silicons.Borgs.Components;
-using Content.Shared.Materials;
 using Content.Shared._Funkystation.Factory.Components;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Containers;
@@ -15,9 +14,8 @@ using Content.Server.Body.Components;
 using Content.Server._Funkystation.Factory.Components;
 using Content.Server.Silicons.Laws;
 using Content.Server.Mind;
-using Content.Server.Robotics.Systems;
-using System;
-using System.Linq;
+using Content.Server._Funkystation.Robotics.Systems;
+using Content.Shared._Funkystation.Materials;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 

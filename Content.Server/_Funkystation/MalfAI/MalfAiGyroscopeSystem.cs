@@ -18,6 +18,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using Content.Shared._Shitmed.Targeting;
 using Content.Server.Silicons.StationAi;
+using Content.Shared._Funkystation.Actions;
 
 namespace Content.Server._Funkystation.MalfAI;
 

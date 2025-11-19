@@ -6,9 +6,9 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._Funkystation.MalfAI;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
-using Content.Shared.MalfAI;
 
 namespace Content.Client._Funkystation.MalfAI;
 

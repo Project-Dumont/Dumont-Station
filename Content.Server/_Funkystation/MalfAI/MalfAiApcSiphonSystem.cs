@@ -13,7 +13,8 @@ using Content.Shared.Database;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Store.Components;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
+using Content.Shared._Funkystation.CCVar;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -34,7 +35,7 @@ public sealed class MalfAiApcSiphonSystem : EntitySystem
         if (!TryComp<StoreComponent>(args.SiphonedBy, out var store))
             return;
 
-        var cpuAmount = _cfg.GetCVar(CCVars.MalfAiSiphonCpuAmount);
+        var cpuAmount = _cfg.GetCVar(CCVarsMalfAi.MalfAiSiphonCpuAmount);
         var siphonAmount = FixedPoint2.New(cpuAmount);
 
         // Grant CPU to the AI

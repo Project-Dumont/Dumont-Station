@@ -397,7 +397,10 @@ public sealed class StationAiSystem : SharedStationAiSystem
                 _ghost.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
                 RemComp<StationAiOverlayComponent>(held.Value);
             }
-            if (TryComp<MalfAiDoomsdayComponent>(held, out var doomsday))
+
+            // Funkystation -> Malf Ai
+            if (TryComp<MalfAiDoomsdayComponent>(held, out var doomsday)
+                && doomsday.Active)
                 _doomsday.AbortDoomsday(held.Value, doomsday, "malfai-doomsday-abort-dead");
         }
 

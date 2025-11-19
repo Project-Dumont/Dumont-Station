@@ -17,7 +17,6 @@
 
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceNetwork.Systems;
- using Content.Server.DeviceNetwork.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Lock;
 using Content.Shared.Database;
@@ -30,7 +29,7 @@ using Content.Shared.Store.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Events;
-using Content.Shared.MalfAI;
+using Content.Shared._Funkystation.MalfAI;
 using Content.Shared.Alert;
 using Content.Shared.Mind.Components;
 using Content.Shared.Silicons.StationAi;
@@ -41,9 +40,10 @@ using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Server.Store.Systems;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared._Funkystation.CCVar;
 
 namespace Content.Server.Research.Systems;
 
@@ -78,7 +78,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
             subs.Event<BoundUIOpenedEvent>(OnOpened);
             subs.Event<RoboticsConsoleDisableMessage>(OnDisable);
             subs.Event<RoboticsConsoleDestroyMessage>(OnDestroy);
-            subs.Event<RoboticsConsoleImposeLawMessage>(OnImposeLaw);
+            subs.Event<RoboticsConsoleImposeLawMessage>(OnImposeLaw); // Funkystation -> Malf Ai
             // TODO: camera stuff
         });
     }
@@ -178,6 +178,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         Dirty(ent, ent.Comp);
     }
 
+    // Funkystation -> Malf Ai
     private void OnImposeLaw(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleImposeLawMessage args)
     {
         // Only Malf AI may impose Law 0.
@@ -197,8 +198,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
             return;
 
         // Read CVAR cost and convert to FixedPoint2 for balance ops
-        var imposeCost = FixedPoint2.New(_cfg.GetCVar(CCVars.MalfAiImposeLawCpuCost));
-
+        var imposeCost = FixedPoint2.New(_cfg.GetCVar(CCVarsMalfAi.MalfAiImposeLawCpuCost));
 
         if (!store.Balance.TryGetValue(malfComp.CurrencyId, out var balance)
             || balance < imposeCost)
@@ -263,7 +263,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         _ui.SetUiState(ent.Owner, RoboticsConsoleUiKey.Key, state);
     }
 
-    // Build the Malf AI Borgs UI state for the specified controller.
+    // // Funkystation -> Malf Ai. Build the Malf AI Borgs UI state for the specified controller.
     private MalfAiBorgsUiState BuildMalfBorgsState(EntityUid controller)
     {
         var entries = new List<MalfAiBorgListEntry>();

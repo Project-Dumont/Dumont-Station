@@ -16,7 +16,7 @@ SPDX-License-Identifier: MIT
     Title="{Loc 'store-ui-default-title'}"
     MinSize="512 512"
     SetSize="512 512">
-    <PanelContainer Name="RootBackdrop">
+    <PanelContainer Name="RootBackdrop"> <!-- Funkystation -> Malf AI. -->
         <BoxContainer Orientation="Vertical">
             <BoxContainer Orientation="Vertical" VerticalExpand="True">
                 <BoxContainer Margin="4,4,4,4" Orientation="Horizontal">
@@ -47,8 +47,8 @@ SPDX-License-Identifier: MIT
                                 <!--  Category buttons are added here by code  -->
                             </BoxContainer>
                         </PanelContainer>
-                        <PanelContainer Name="ListingsPanel" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="2">
-                            <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                        <PanelContainer Name="ListingsPanel" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="2"> <!-- Funkystation -> Malf AI. -->
+                            <BoxContainer Orientation="Vertical" VerticalExpand="True"> <!-- Funkystation -> Malf AI. -->
                                 <ScrollContainer
                                     Name="StoreListingsScroll"
                                     HScrollEnabled="False"
@@ -65,8 +65,8 @@ SPDX-License-Identifier: MIT
                                         <!--  Listings are added here by code  -->
                                     </BoxContainer>
                                 </ScrollContainer>
-                            </BoxContainer>
-                        </PanelContainer>
+                            </BoxContainer> <!-- Funkystation -> Malf AI. -->
+                        </PanelContainer> <!-- Funkystation -> Malf AI. -->
                     </BoxContainer>
                 </PanelContainer>
             </BoxContainer>
@@ -81,5 +81,5 @@ SPDX-License-Identifier: MIT
                 </BoxContainer>
             </BoxContainer>
         </BoxContainer>
-    </PanelContainer>
+    </PanelContainer> <!-- Funkystation -> Malf AI. -->
 </DefaultWindow>

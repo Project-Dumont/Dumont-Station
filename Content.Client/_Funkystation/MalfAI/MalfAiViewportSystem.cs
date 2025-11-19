@@ -6,7 +6,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.MalfAI;
+using Content.Shared._Funkystation.MalfAI;
 
 namespace Content.Client._Funkystation.MalfAI;
 

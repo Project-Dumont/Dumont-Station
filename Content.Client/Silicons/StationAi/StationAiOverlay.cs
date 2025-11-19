@@ -32,7 +32,6 @@
 
 using System.Numerics;
 using Content.Shared.Silicons.StationAi;
-using Content.Shared.MalfAI; // <-- camera-upgrade component
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -45,7 +44,8 @@ using Robust.Shared.Timing;
 using Content.Shared.Movement.Components; // Shitmed - Starlight Abductors Change
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.CCVar;
+using Content.Shared._Funkystation.MalfAI.Components;
 
 namespace Content.Client.Silicons.StationAi;
 
@@ -75,12 +75,12 @@ public sealed class StationAiOverlay : Overlay
     private float _accumulator;
 
     // Cached systems and resources for performance
-    private SharedAppearanceSystem? _appearance;
-    private EntityLookupSystem? _lookup;
+    private SharedAppearanceSystem? _appearance; // Funkystation -> Malf AI
+    private EntityLookupSystem? _lookup; // Funkystation -> Malf AI
 
     // Reusable buffers to avoid per-frame allocations
-    private readonly List<Vector2> _circleCenters = new(16);
-    private readonly List<(Vector2 pos, float dist2)> _cameraCandidates = new(32);
+    private readonly List<Vector2> _circleCenters = new(16); // Funkystation -> Malf AI
+    private readonly List<(Vector2 pos, float dist2)> _cameraCandidates = new(32); // Funkystation -> Malf AI
 
     private EntityUid _lastGridUid = EntityUid.Invalid; // goobstation - off grid vision fix
 
@@ -89,8 +89,8 @@ public sealed class StationAiOverlay : Overlay
         IoCManager.InjectDependencies(this);
 
         // Cache systems
-        _lookup = _entManager.System<EntityLookupSystem>();
-        _appearance = _entManager.System<SharedAppearanceSystem>();
+        _lookup = _entManager.System<EntityLookupSystem>(); // Funkystation -> Malf AI
+        _appearance = _entManager.System<SharedAppearanceSystem>(); // Funkystation -> Malf AI
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -108,7 +108,7 @@ public sealed class StationAiOverlay : Overlay
         var worldHandle = args.WorldHandle;
 
         var worldBounds = args.WorldBounds;
-        var worldAABB = worldBounds.CalcBoundingBox();
+        var worldAABB = worldBounds.CalcBoundingBox(); // Funkystation -> Malf AI
 
         var playerEnt = _player.LocalEntity;
 
@@ -148,9 +148,9 @@ public sealed class StationAiOverlay : Overlay
             var lookups = _entManager.System<EntityLookupSystem>();
             var xforms = _entManager.System<SharedTransformSystem>();
 
-            // Determine whether the Malf camera-upgrade is active for this client.
+            // Funkystation -> Malf AI. Determine whether the Malf camera-upgrade is active for this client.
             var malfActive = false;
-            var radiusTiles = _cfg.GetCVar(CCVars.MalfAiCameraUpgradeRange);
+            var radiusTiles = _cfg.GetCVar(CCVarsMalfAi.MalfAiCameraUpgradeRange);
 
             if (_entManager.TryGetComponent<MalfAiCameraUpgradeComponent>(playerEnt, out var camUpg))
                 malfActive = camUpg.EnabledEffective;
@@ -161,12 +161,12 @@ public sealed class StationAiOverlay : Overlay
                 _accumulator = MathF.Max(0f, _accumulator + _updateRate);
                 _visibleTiles.Clear();
 
-                // Always include LOS-based station AI vision tiles.
+                // Funkystation -> Malf AI. Always include LOS-based station AI vision tiles.
                 _entManager.System<StationAiVisionSystem>().GetView((gridUid, broadphase, grid), worldBounds, _visibleTiles);
-                // Do NOT dilate tiles when the camera upgrade is active; circles will be unioned instead.
+                // Funkystation -> Malf AI. Do NOT dilate tiles when the camera upgrade is active; circles will be unioned instead.
             }
 
-            // Compute circle centers (eligible cameras) if upgrade is active
+            // Funkystation -> Malf AI begin. Compute circle centers (eligible cameras) if upgrade is active
             _circleCenters.Clear();
             if (malfActive)
             {
@@ -224,6 +224,7 @@ public sealed class StationAiOverlay : Overlay
                     for (var i = 0; i < max; i++)
                         _circleCenters.Add(_cameraCandidates[i].pos);
                 }
+                // Funkystation -> Malf AI end.
             }
 
             var gridMatrix = xforms.GetWorldMatrix(gridUid);
@@ -240,6 +241,7 @@ public sealed class StationAiOverlay : Overlay
                     worldHandle.DrawRect(aabb, Color.White);
                 }
 
+                // Funkystation -> Malf AI.
                 // 2) Camera circles in world space (hard-edged filled discs)
                 if (_circleCenters.Count > 0)
                 {
@@ -284,7 +286,7 @@ public sealed class StationAiOverlay : Overlay
         var stencilMaskShader = _proto.Index(StencilMaskShader).Instance();
         var stencilDrawShader = _proto.Index(StencilDrawShader).Instance();
 
-        worldHandle.UseShader(stencilMaskShader);
+        worldHandle.UseShader(stencilMaskShader); // Funkystation -> Malf AI.
         worldHandle.DrawTextureRect(_stencilTexture!.Texture, worldBounds);
 
         // Draw the static
@@ -295,6 +297,7 @@ public sealed class StationAiOverlay : Overlay
         worldHandle.UseShader(null);
     }
 
+    // Funkystation -> Malf AI.
     // Expands the set of visible tiles by a given Chebyshev radius using 8-directional dilation.
     private static void ExpandVisibleTiles(HashSet<Vector2i> tiles, int extraRadius)
     {

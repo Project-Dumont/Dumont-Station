@@ -370,7 +370,7 @@ public sealed partial class MechSystem : SharedMechSystem
 
     public override void BreakMech(EntityUid uid, MechComponent? component = null)
     {
-        // Funky edit, handle destruction of malf AI shunted brains on destruction
+        // Funkytstation -> Malf AI begin. handle destruction of malf AI shunted brains on destruction
         if (!Resolve(uid, ref component))
             return;
 
@@ -398,7 +398,7 @@ public sealed partial class MechSystem : SharedMechSystem
                 QueueDel(pilotEntity);
             }
         }
-        // End funky edit
+        // Funkytstation -> Malf AI end.
 
         base.BreakMech(uid, component);
 

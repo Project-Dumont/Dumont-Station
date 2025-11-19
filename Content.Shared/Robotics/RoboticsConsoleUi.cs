@@ -64,6 +64,7 @@ public sealed class RoboticsConsoleDestroyMessage : BoundUserInterfaceMessage
     }
 }
 
+// Funkystation - Malf Ai
 /// <summary>
 /// Message to impose a Malf-AI Law 0 on the selected cyborg.
 /// </summary>
@@ -134,7 +135,7 @@ public partial record struct CyborgControlData
     /// Used to grey out the impose-law button on the console UI.
     /// </summary>
     [DataField]
-    public bool Emagged;
+    public bool Emagged; // Funkystation - Malf Ai
 
     /// <summary>
     /// When this cyborg's data will be deleted.
@@ -148,7 +149,7 @@ public partial record struct CyborgControlData
     public bool IsAiControllable;
     // Corvax-Next-AiRemoteControl-End
 
-    public CyborgControlData(SpriteSpecifier? chassisSprite, string chassisName, string name, float charge, int moduleCount, bool hasBrain, bool canDisable, bool isAiControllable, bool emagged) // Corvax-Next-AiRemoteControl
+    public CyborgControlData(SpriteSpecifier? chassisSprite, string chassisName, string name, float charge, int moduleCount, bool hasBrain, bool canDisable, bool isAiControllable, bool emagged) // Corvax-Next-AiRemoteControl, Funkystation - Malf Ai
     {
         ChassisSprite = chassisSprite;
         ChassisName = chassisName;
@@ -158,7 +159,7 @@ public partial record struct CyborgControlData
         HasBrain = hasBrain;
         CanDisable = canDisable;
         IsAiControllable = isAiControllable; // Corvax-Next-AiRemoteControl
-        Emagged = emagged;
+        Emagged = emagged; // Funkystation - Malf Ai
     }
 }
 

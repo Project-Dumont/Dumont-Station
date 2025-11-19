@@ -12,9 +12,8 @@ using Content.Server.SurveillanceCamera;
 using Content.Server.Speech.Components;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Player;
-using static Content.Server.Chat.Systems.ChatSystem;
 using Content.Server.Silicons.StationAi;
-using Content.Shared.MalfAI.Components;
+using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
 
 namespace Content.Server._Funkystation.MalfAI;
@@ -130,7 +129,7 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
                 // "As if physically present": add to chat normally (log to chat, not camera-only bubble).
                 // Range is the (min) distance from the speaker to the chosen camera to preserve obfuscation behavior.
                 // The flags here mirror normal IC delivery rather than camera-view-only injection.
-                ev.Recipients.TryAdd(actor.PlayerSession, new ICChatRecipientData(minRangeToSource, true, false));
+                ev.Recipients.TryAdd(actor.PlayerSession, new ChatSystem.ICChatRecipientData(minRangeToSource, true, false));
             }
         }
     }

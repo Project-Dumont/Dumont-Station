@@ -5,8 +5,7 @@
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Construction.Components;
-using Content.Shared.MalfAI;
-using Content.Shared.MalfAI.Actions;
+using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Map;

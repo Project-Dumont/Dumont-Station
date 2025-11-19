@@ -1,7 +1,7 @@
-using Content.Shared.Actions.Events;
 using Content.Server._Funkystation.Factory.Systems;
 using Robust.Shared.Prototypes;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared._Funkystation.Actions.Events;
 
 namespace Content.Server._Funkystation.MalfAI;
 
