@@ -6,4 +6,4 @@ namespace Content.Server._Funkystation.Objectives.Components;
 /// Component for handling protect target selection, prioritizing traitors and traitor targets.
 /// </summary>
 [RegisterComponent, Access(typeof(MalfAiPickProtectTargetSystem))]
-public sealed partial class MalfAiPickProtectTargetComponent : Component { }
+public sealed partial class MalfAiPickProtectTargetComponent : Component;

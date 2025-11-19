@@ -6,7 +6,8 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared._Funkystation.CCVar;
 
-public sealed partial class CCVarsMalfAi
+[CVarDefs]
+public sealed class CCVarsMalfAi
 {
     /// <summary>
     /// The duration (in seconds) of the Malf AI Doomsday Protocol.
