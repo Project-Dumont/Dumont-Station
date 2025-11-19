@@ -704,7 +704,6 @@
   - MobSiliconBase
   - ShowSecurityIcons
   - StripableInventoryBase
-  - BaseStunbaton
   id: MobSecuritron
   name: securitron
   description: Tiders hate this one simple trick!
@@ -766,6 +765,17 @@
   - type: FactionException
   - type: NPCRetaliation
     attackMemoryLength: 5
+  - type: Stunbaton
+    energyPerUse: 50
+    lightAttackEnergyMultiplier: 2
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: StaminaDamageOnHit
+    damage: 5
+    overtime: 25
+    lightAttackOvertimeDamageMultiplier: 2
+    sound: /Audio/Weapons/egloves.ogg
 
 - type: entity
   parent: MobSecuritron
