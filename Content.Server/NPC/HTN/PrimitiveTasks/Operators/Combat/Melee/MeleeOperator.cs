@@ -66,11 +66,6 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
             return (false, null);
         }
 
-        if (CheckStun && _entManager.HasComponent<StunnedComponent>(target))
-        {
-            return (false, null);
-        }
-
         if (_entManager.TryGetComponent<MobStateComponent>(target, out var mobState) &&
             mobState.CurrentState > TargetState)
         {
