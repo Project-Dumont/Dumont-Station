@@ -15,6 +15,7 @@ public sealed partial class ActionPurchaseCompanionEvent : EntityEventArgs
 {
     public NetEntity Buyer { get; set; }
 
+    [DataField]
     public List<string> CompanionActions { get; set; } = new();
 
     public ActionPurchaseCompanionEvent() { }
