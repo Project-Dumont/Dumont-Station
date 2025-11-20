@@ -1,4 +1,4 @@
-chat-emote-name-dance-the-from-floor = Dançar a partir do chão
+chat-emote-name-dance-the-from-floor = Dançar no chão
 chat-emote-msg-dance-from-the-floor = dança no chão!
 
 chat-emote-name-spinning-on-head = Girar de cabeça  

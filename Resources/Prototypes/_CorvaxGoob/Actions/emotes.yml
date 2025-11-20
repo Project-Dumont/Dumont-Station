@@ -44,7 +44,7 @@
 
 - type: emote
   id: Dance
-  name: chat-emote-name-danc
+  name: chat-emote-name-dance
   chatMessages: ["chat-emote-msg-dance-1", "chat-emote-msg-dance-2", "chat-emote-msg-dance-3"]
   chatTriggers:
   - dancing
