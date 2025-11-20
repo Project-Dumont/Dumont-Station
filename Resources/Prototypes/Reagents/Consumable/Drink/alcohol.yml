@@ -292,7 +292,7 @@
           groups:
             Brute: -1
             Burn: -1
-      - !type:HealthChange # GabyStation - Oni heals 2.5 brute from alcohol
+      - !type:HealthChange # GabyStation - Oni heals 2 brute from alcohol
         conditions:
         - !type:OrganType
           type: Oni
