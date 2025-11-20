@@ -141,6 +141,7 @@
     - Tajaran
     - Chitinid # DeltaV
     - Shadowkin
+    - Waddler
 
 # Goobstation start
 - type: loadoutEffectGroup
@@ -220,6 +221,7 @@
     - Resomi
     - Tajaran
     - Shadowkin
+    - Waddler
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth

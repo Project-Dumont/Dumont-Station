@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesWaddler
+  values:
+    prefix: names-waddler-dataset-
+    count: 67

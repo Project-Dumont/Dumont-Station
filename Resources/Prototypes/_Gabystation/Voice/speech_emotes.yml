@@ -1,0 +1,16 @@
+- type: emote
+  id: ET
+  name: ET
+  category: Vocal
+  icon: { sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi, state: et }
+  chatMessages: [ "chat-emote-msg-et" ]
+  whitelist:
+    tags:
+    - WaddlerEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+      - BorgChassis
+  chatTriggers:
+  - et
+  - ♪

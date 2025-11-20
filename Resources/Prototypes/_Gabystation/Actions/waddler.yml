@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseAction
+  id: ActionSericultureSnowball
+  name: Create Snowballs
+  description: Only god knows where does all that ice come from
+  components:
+  - type: Action
+    icon: _Gabystation/Objects/Misc/snowball/snowball.png
+    useDelay: 1
+  - type: InstantAction
+    event: !type:SericultureActionEvent

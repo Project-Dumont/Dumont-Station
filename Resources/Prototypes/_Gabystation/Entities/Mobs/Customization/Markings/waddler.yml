@@ -1,0 +1,62 @@
+- type: marking
+  id: WaddlerEyelashes
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Diona]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: overlay
+
+- type: marking
+  id: WaddlerOverlay
+  bodyPart: Head
+  markingCategory: Overlay
+  speciesRestriction: [Waddler]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: overlay
+
+
+- type: marking
+  id: WaddlerFeetR
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Waddler]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: r_foot
+
+
+- type: marking
+  id: WaddlerFeetL
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Waddler]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: l_foot
+

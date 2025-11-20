@@ -50,6 +50,7 @@
     - Daengati
     - Shadowkin
     - Feroxi
+    - Waddler
 
 - type: guideEntry
   id: Arachnid
@@ -146,3 +147,8 @@
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/_EinsteinEngines/Shadowkin.xml"
+
+- type: guideEntry
+  id: Waddler
+  name: species-name-waddler
+  text: "/ServerInfo/Guidebook/Mobs/Waddler.xml"

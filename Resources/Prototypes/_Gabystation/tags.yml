@@ -5,3 +5,6 @@
 
 - type: Tag
   id: GameDirectorRule
+
+- type: Tag
+  id: WaddlerEmotes

@@ -1,0 +1,9 @@
+- type: language
+  id: TicTacToe
+  isVisibleLanguage: true
+  speech:
+    color: "#FFFFFF"
+    fontId: TicTacToe
+    fontSize: 6
+  obfuscation:
+    !type:NoObfuscation

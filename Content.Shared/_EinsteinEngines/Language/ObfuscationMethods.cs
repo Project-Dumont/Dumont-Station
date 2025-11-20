@@ -188,3 +188,14 @@ public sealed partial class PhraseObfuscation : ReplacementObfuscation
         return ch is '.' or '!' or '?'; // Doesn't include mid-sentence punctuation like the comma
     }
 }
+
+// start - Gaby Waddler update
+public sealed partial class NoObfuscation : ObfuscationMethod
+{
+    internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
+    {
+        builder.Append(message);
+    }
+}
+// end - Gaby Waddler update
+

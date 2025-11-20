@@ -1,0 +1,8 @@
+- type: entity
+  save: false
+  name: Urist McWaddler
+  suffix: Urist McWaddler
+  parent: BaseMobWaddler
+  id: MobWaddler
+
+#Weh
