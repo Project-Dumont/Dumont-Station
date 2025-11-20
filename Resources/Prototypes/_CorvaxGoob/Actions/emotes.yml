@@ -9,6 +9,9 @@
   - танцует от пола
   - танцует от пола.
   - танцует от пола!
+  - dançar no chão
+  - dançar no chão.
+  - dançar no chão!
   targetEvents:
   - !type:PlayAnimationTargetEvent
     animationID: EmoteDanceFromTheFloor
@@ -28,6 +31,9 @@
   - крутится на голове
   - крутится на голове.
   - крутится на голове!
+  - gira de cabeça
+  - gira de cabeça.
+  - gira de cabeça!
   targetEvents:
   - !type:PlayAnimationTargetEvent
     animationID: EmoteSpinningOnHead
@@ -56,6 +62,15 @@
   - отжигает
   - отжигает.
   - отжигает!
+  - dança
+  - dança.
+  - dança!
+  - começa a dançar
+  - começa a dançar.
+  - começa a dançar!
+  - arrasa na pista
+  - arrasa na pista.
+  - arrasa na pista!
   targetEvents:
   - !type:PlayAnimationTargetEvent
     animationID: EmoteDance
