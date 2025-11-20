@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._CorvaxGoob.Animation;
 using Content.Shared._CorvaxGoob.Animation.API;
 using Robust.Client.Animations;
