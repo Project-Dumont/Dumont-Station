@@ -15,7 +15,7 @@
     icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_placeviewport }
   - type: TargetAction
     checkCanAccess: false
-    range: 99999
+    range: -1
   - type: WorldTargetAction
     event: !type:MalfAiSetViewportActionEvent
 
@@ -76,9 +76,12 @@
     itemIconStyle: BigAction
     priority: -5
     icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_factory }
+  - type: LimitedCharges
+    lastCharges: 1
+    maxCharges: 1
   - type: TargetAction
     checkCanAccess: false
-    range: 99999
+    range: -1
   - type: WorldTargetAction
     event: !type:MalfAiRoboticsFactoryActionEvent
 
@@ -93,7 +96,7 @@
     icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_shunttoapc }
   - type: TargetAction
     checkCanAccess: false
-    range: 99999
+    range: -1
   - type: EntityTargetAction
     event: !type:MalfAiShuntToApcActionEvent
 
@@ -124,9 +127,9 @@
     maxCharges: 20
   - type: TargetAction
     checkCanAccess: false
-    range: 99999
-  - type: WorldTargetAction
-    event: !type:MalfAiOverloadMachineActionEvent
+    range: -1
+  - type: EntityTargetAction
+    event: !type:ExplodeMachineEvent
 
 # Hijack Mech action
 - type: entity
@@ -141,7 +144,7 @@
     icon: { sprite: Interface/Actions/actions_malf_ai.rsi, state: malfai_bg_mech }
   - type: TargetAction
     checkCanAccess: false
-    range: 99999
+    range: -1
   - type: EntityTargetAction
     event: !type:MalfAiHijackMechActionEvent
 
@@ -159,7 +162,7 @@
     maxCharges: 20
   - type: TargetAction
     checkCanAccess: false
-    range: 99999
+    range: -1
   - type: WorldTargetAction
     event: !type:MalfAiOverrideMachineActionEvent
 
