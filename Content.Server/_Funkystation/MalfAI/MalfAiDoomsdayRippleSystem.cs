@@ -15,6 +15,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Numerics;
 using Content.Shared._Funkystation.MalfAI.Events;
+using Content.Server.Body.Systems;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -33,6 +34,7 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private readonly BodySystem _body = default!;
 
     // Ripple configuration: 300 tiles over 30 seconds.
     private const float MaxRadius = 300f;
@@ -57,24 +59,6 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<MalfAiDoomsdayCompletedEvent>(OnDoomsdayCompleted);
-
-        // Build an "overkill" damage packet (multiple common types) to guarantee lethal impact.
-        // Using multiple types reduces the chance of total immunity on atypical entities.
-        var overkillAmount = FixedPoint2.New(1000);
-        _overkill = new DamageSpecifier
-        {
-            DamageDict =
-            {
-                ["Blunt"] = overkillAmount,
-                ["Slash"] = overkillAmount,
-                ["Piercing"] = overkillAmount,
-                ["Heat"] = overkillAmount,
-                ["Cold"] = overkillAmount,
-                ["Shock"] = overkillAmount,
-                ["Poison"] = overkillAmount,
-                ["Asphyxiation"] = overkillAmount
-            }
-        };
     }
 
     public override void Update(float frameTime)
@@ -111,8 +95,7 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
             var dist = (posNum - _originWorld).Length();
             if (dist <= currentRadius)
             {
-                // Apply overwhelming damage ignoring resistances; mark processed.
-                _damageable.TryChangeDamage(target, _overkill, ignoreResistances: true, origin: _rippleAi);
+                _body.GibBody(target);
                 _affected.Add(target);
             }
         }
