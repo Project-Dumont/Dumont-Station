@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Gabystation.MalfAi;
 
-public sealed partial class ExplodeMachineEvent : EntityTargetActionEvent
+public sealed partial class ExplodeMachineEvent : WorldTargetActionEvent
 {
     [DataField]
     public float Radius = 2;

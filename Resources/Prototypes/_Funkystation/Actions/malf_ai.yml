@@ -128,7 +128,7 @@
   - type: TargetAction
     checkCanAccess: false
     range: -1
-  - type: EntityTargetAction
+  - type: WorldTargetAction
     event: !type:ExplodeMachineEvent
 
 # Hijack Mech action

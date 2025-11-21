@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Construction.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Popups;
@@ -5,10 +6,13 @@ using Content.Server.Radio.Components;
 using Content.Shared._Gabystation.MalfAi;
 using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared._Gabystation.MalfAi.Events;
+using Content.Shared.Destructible;
 using Content.Shared.Explosion.EntitySystems;
+using Content.Shared.Maps;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Silicons.StationAi;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Gabystation.MalfAi;
 
@@ -19,6 +23,8 @@ public sealed partial class MalfAiSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedDestructibleSystem _destructible = default!;
 
     private void InitializeAbilities()
     {
@@ -39,17 +45,21 @@ public sealed partial class MalfAiSystem
     private void OnExplodeMachine(Entity<MalfunctioningAiComponent> malf, ref ExplodeMachineEvent args)
     {
         // Isso funciona mas só permite que a IA exploda o que ela consegue interagir. Por padrão, a IA não consegue interagir com nenhuma máquina. Isto é, nenhuma máquina tem o componente `StationAiWhitelist`.
-        // Uma solução é adicionar um novo campo nesse componente dividindo as formas de interação da IA. Tipo, um campo que diz se ela está permitida abrir a UI (falso em máquinas, positivo em todo o resto). Daí mesmo não podendo abrir as UIs, ela poderia interagir.
+        // Uma solução é adicionar um novo campo nesse componente dividindo as formas de interação da IA. Tipo, um campo que diz se ela está permitida abrir a UI (falso em máquinas, positivo em todo o resto). Daí mesmo não podendo abrir as UIs, ela poderia interagir e, nessa situação, explodir.
         if (args.Handled)
             return;
 
-        if (!HasComp<MachineComponent>(args.Target))
+        var coordinates = _transform.ToMapCoordinates(args.Target);
+        var target = _lookup.GetEntitiesInRange(coordinates, 0.25f, LookupFlags.Uncontained)
+            .Where(HasComp<MachineComponent>).FirstOrNull();
+
+        if (target is not { } machine)
         {
             PopupAi(malf.Owner, "malfai-overload-invalid-target");
             return;
         }
 
-        if (!_power.IsPowered(args.Target))
+        if (!_power.IsPowered(machine))
         {
             PopupAi(malf.Owner, "malfai-overload-not-powered");
             return;
@@ -58,13 +68,14 @@ public sealed partial class MalfAiSystem
         var totalIntensity = _explosion.RadiusToIntensity(args.Radius, args.Slope, args.MaxIntensity);
 
         _explosion.QueueExplosion(
-            args.Target,
+            machine,
             ExplosionSystem.DefaultExplosionPrototypeId,
             totalIntensity,
             args.Slope,
             args.MaxIntensity,
             user: malf.Owner
         );
+        _destructible.DestroyEntity(machine); // Não queria que fosse deletada, só que quebrasse. Dificil.
 
         PopupAi(malf.Owner, "malfai-overload-success");
         args.Handled = true;
