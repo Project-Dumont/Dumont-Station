@@ -3,12 +3,14 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
+using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Shared._CorvaxGoob.OfferItem;
 
 public abstract partial class SharedOfferItemSystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly SharedHandsSystem _hand = default!;
 
     private void InitializeInteractions()
     {
@@ -41,13 +43,13 @@ public abstract partial class SharedOfferItemSystem
         if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHandId == null)
             return;
 
-        offerItem.Item = _hands.GetActiveItem(uid);
+        offerItem.Item = _hand.GetActiveItem((uid, hands));
 
         if (!offerItem.IsInOfferMode)
         {
             if (offerItem.Item is null)
             {
-                _popup.PopupEntity(Loc.GetString("offer-item-empty-hand"), uid, uid);
+                _popup.PopupClient(Loc.GetString("offer-item-empty-hand"), uid, uid);
                 return;
             }
 

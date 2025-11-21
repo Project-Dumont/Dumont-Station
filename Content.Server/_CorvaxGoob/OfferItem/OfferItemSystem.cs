@@ -1,14 +1,14 @@
 ﻿using Content.Shared._CorvaxGoob.OfferItem;
 using Content.Shared.Alert;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
+using Content.Server.Hands.Systems;
 
 namespace Content.Server._CorvaxGoob.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
 
     private float _offerAcc = 0;
     private const float OfferAccMax = 3f;
@@ -25,12 +25,10 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
         var query = EntityQueryEnumerator<OfferItemComponent, HandsComponent>();
         while (query.MoveNext(out var uid, out var offerItem, out var hands))
         {
-            if (_hands.GetActiveHand(uid) == null)
+            if (hands.ActiveHandId == null)
                 continue;
 
-            // TODO implement a normal fix. More info on this:
-            // https://github.com/space-syndicate/space-station-14-next/blob/27f6125c828b5ad051f67a5f557bf67bd1d3c2be/Content.Server/_CorvaxNext/OfferItem/OfferItemSystem.cs#L31
-            if (offerItem.Hand is not null && hands.Hands[offerItem.Hand] == null)
+            if (offerItem.Hand is not null && _hands.GetActiveItem(uid) == null)
             {
                 if (offerItem.Target is not null)
                 {

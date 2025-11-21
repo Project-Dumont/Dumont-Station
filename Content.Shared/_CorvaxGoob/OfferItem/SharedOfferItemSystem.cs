@@ -12,7 +12,6 @@ namespace Content.Shared._CorvaxGoob.OfferItem;
 public abstract partial class SharedOfferItemSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -31,10 +30,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
     private void OnClickAlertEvent(Entity<OfferItemComponent> ent, ref AcceptOfferAlertEvent ev)
     {
-        if (ev.Handled)
-            return;
-
-        if (ev.AlertId != OfferAlert)
+        if (ev.Handled || ev.AlertId != OfferAlert)
             return;
 
         ev.Handled = true;
@@ -66,7 +62,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
         if (offerItem.Item is not null)
         {
-            if (!_hands.TryPickup(ent, offerItem.Item.Value, handsComp: hands))
+            if (!_hand.TryPickup(ent, offerItem.Item.Value, handsComp: hands))
             {
                 _popup.PopupClient(Loc.GetString("offer-item-full-hand"), ent, ent);
                 return;
@@ -142,27 +138,27 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
         if (TryComp<OfferItemComponent>(component.Target, out var offerItem) && component.Target is not null)
         {
-            if (component.Item is not null)
+            if (component.Item is not null && EntityManager.EntityExists(component.Item))
             {
                 if (!_timing.IsFirstTimePredicted)
                 {
                     _popup.PopupClient(Loc.GetString("offer-item-no-give",
                         ("item", Identity.Entity(component.Item.Value, EntityManager)),
                         ("target", Identity.Entity(component.Target.Value, EntityManager))), uid, uid);
-                    _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
+                    _popup.PopupClient(Loc.GetString("offer-item-no-give-target",
                         ("user", Identity.Entity(uid, EntityManager)),
                         ("item", Identity.Entity(component.Item.Value, EntityManager))), uid, component.Target.Value);
                 }
 
             }
-            else if (offerItem.Item is not null)
+            else if (offerItem.Item is not null && EntityManager.EntityExists(offerItem.Item))
             {
                 if (!_timing.IsFirstTimePredicted)
                 {
                     _popup.PopupClient(Loc.GetString("offer-item-no-give",
                         ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
                         ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-                    _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
+                    _popup.PopupClient(Loc.GetString("offer-item-no-give-target",
                         ("user", Identity.Entity(component.Target.Value, EntityManager)),
                         ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
                 }
@@ -202,12 +198,12 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
             component.Target is null)
             return;
 
-        if (offerItem.Item is not null)
+        if (offerItem.Item is not null && EntityManager.EntityExists(offerItem.Item))
         {
             _popup.PopupClient(Loc.GetString("offer-item-no-give",
                 ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
                 ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-            _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
+            _popup.PopupClient(Loc.GetString("offer-item-no-give-target",
                 ("user", Identity.Entity(component.Target.Value, EntityManager)),
                 ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
         }

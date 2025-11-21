@@ -778,4 +778,5 @@ binds:
   canFocus: true
 - function: OfferItem # CorvaxGoob-Offer
   type: State
-  key: H
+  key: F
+  mod1: Alt
