@@ -41,9 +41,6 @@
         {
             "name": "chest_m",
             "directions": 4
-        },
-        {
-            "name": "et"
         }
     ]
 }
