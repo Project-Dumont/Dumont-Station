@@ -197,6 +197,7 @@
       shuttleTime: 1200
     cyan:
       announcement: alert-level-cyan-announcement
+      selectable: false
       sound: /Audio/Misc/cyan.ogg
       color: Cyan
       emergencyLightColor: Cyan
