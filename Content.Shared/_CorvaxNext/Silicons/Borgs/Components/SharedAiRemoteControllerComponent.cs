@@ -55,6 +55,7 @@ public record struct RemoteDevicesData()
 {
     public string DisplayName = string.Empty;
     public NetEntity NetEntityUid = NetEntity.Invalid;
+    public bool IsOccupied; // Gabystation - ai fix
 }
 
 [Serializable, NetSerializable]

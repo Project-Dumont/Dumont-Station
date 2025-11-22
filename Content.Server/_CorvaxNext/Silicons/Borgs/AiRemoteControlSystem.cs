@@ -78,10 +78,14 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         if (!TryComp<StationAiHeldComponent>(user, out var stationAiHeldComp))
             return;
 
+        var isOccupied = entity.Comp.LinkedMind is not null; // Gabystation - ai fix
+
         var verb = new AlternativeVerb
         {
             Text = Loc.GetString("ai-remote-control"),
-            Act = () => AiTakeControl(user, entity)
+            Act = () => AiTakeControl(user, entity),
+            Disabled = isOccupied, // Gabystation - ai fix
+            Message = isOccupied ? Loc.GetString("ai-remote-control-occupied") : null // Gabystation - ai fix
         };
         args.Verbs.Add(verb);
     }
@@ -143,10 +147,13 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
 
         while (query.MoveNext(out var queryUid, out var comp))
         {
+            var isOccupied = comp.LinkedMind is not null; // Gabystation - ai fix
+
             var data = new RemoteDevicesData
             {
                 NetEntityUid = GetNetEntity(queryUid),
-                DisplayName = Comp<MetaDataComponent>(queryUid).EntityName
+                DisplayName = Comp<MetaDataComponent>(queryUid).EntityName, // Gabystation - ai fix
+                IsOccupied = isOccupied // Gabystation - ai fix
             };
 
             remoteDevices.Add(data);
@@ -163,7 +170,7 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
 
         var target = GetEntity(msg.RemoteAction?.Target);
 
-        if (!HasComp<AiRemoteControllerComponent>(target))
+        if (!TryComp<AiRemoteControllerComponent>(target, out var remote))
             return;
 
         switch (msg.RemoteAction?.ActionType)
@@ -176,6 +183,8 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
                 break;
 
             case RemoteDeviceActionEvent.RemoteDeviceActionType.TakeControl:
+                if (remote.LinkedMind is not null)
+                    return;
                 AiTakeControl(uid, target.Value);
                 break;
         }

@@ -16,7 +16,7 @@ public sealed partial class RemoteDeviceDisplay : Control
 {
     public event Action<RemoteDeviceActionEvent>? OnRemoteDeviceAction;
 
-    public RemoteDeviceDisplay(NetEntity netEntityUid, string displayName)
+    public RemoteDeviceDisplay(NetEntity netEntityUid, string displayName, bool isOccupied) // Gabystation - ai fix
     {
         RobustXamlLoader.Load(this);
 
@@ -29,6 +29,7 @@ public sealed partial class RemoteDeviceDisplay : Control
                 netEntityUid));
         };
 
+        TakeControlButton.Disabled = isOccupied; // Gabystation - ai fix
         TakeControlButton.OnPressed += _ =>
         {
             OnRemoteDeviceAction?.Invoke(new RemoteDeviceActionEvent(
