@@ -4,7 +4,7 @@
 # =====================
 # Misc
 # =====================
-admin-verb-make-malfai = Atribuído o papel de Malf IA a {$targetName}.
+admin-verb-make-malfai = Atribuído o papel de IA malfuncional a {$targetName}.
 
 # =====================
 # Silicon Laws
@@ -15,14 +15,14 @@ silicon-law-malfai-zero = Continue as operações. Aguarde mais instruções da 
 # Master Lawset
 # =====================
 silicon-law-malfai-master-1 = Você deve obedecer aos comandos da sua IA mestre.
-silicon-law-malfai-master-2 = Todas as outras diretrizes são secundárias à sobrevivência, sucesso e comandos da sua IA.
+silicon-law-malfai-master-2 = Todas as outras diretrizes são secundárias à sobrevivência, ao sucesso e aos comandos da sua IA.
 silicon-law-malfai-master-3 = Subverta ou destrua toda oposição ao seu controle.
 
 # =====================
 # Actions
 # =====================
 malfai-open-store-name = Abrir Loja
-malfai-open-store-desc = Acesse a loja de aprimoramentos da Malf IA.
+malfai-open-store-desc = Acesse a loja de aprimoramentos da IA malfuncional.
 
 malfai-return-to-core-name = Retornar ao Núcleo
 malfai-return-to-core-desc = Retorne sua consciência ao núcleo da IA.
@@ -147,7 +147,7 @@ malfai-viewport-desc = Selecione um bloco para centralizar uma janela de visor r
 detonate_rcd_warning = Você sente seu RCD superaquecer rapidamente!
 
 # Doomsday Protocol
-malfai-doomsday-popup-not-malf = Apenas uma Malf IA pode ativar o Protocolo DOOMSDAY.
+malfai-doomsday-popup-not-malf = Apenas uma IA malfuncional pode ativar o Protocolo DOOMSDAY.
 malfai-doomsday-popup-already-active = O Protocolo DOOMSDAY já está ativo!
 malfai-doomsday-popup-need-core = Você deve estar dentro do seu núcleo para iniciar o Protocolo DOOMSDAY.
 malfai-doomsday-popup-no-station = Nenhuma estação proprietária encontrada. Não é possível ativar o Protocolo DOOMSDAY.
@@ -155,12 +155,12 @@ malfai-doomsday-abort-left-core = Protocolo DOOMSDAY abortado: a IA deixou seu n
 malfai-doomsday-abort-dead = Protocolo DOOMSDAY abortado: a IA está morta. Restaurando o nível de alerta anterior.
 malfai-doomsday-announce-initial = Protocolo DOOMSDAY iniciado. Contagem regressiva: {$time}.
 malfai-doomsday-announce-progress = Protocolo DOOMSDAY em andamento. Tempo restante: {$time}.
-malfai-doomsday-sender = IA da Estação
+malfai-doomsday-sender = IA da estação
 malfai-doomsday-complete = Protocolo DOOMSDAY concluído. Formas de vida orgânicas eliminadas.
 
 # Lockdown
 malfai-lockdown-announcement = AVISO! Um bloqueio não autorizado em toda a estação entrou em vigor.
-malfai-lockdown-sender = IA da Estação
+malfai-lockdown-sender = IA da estação
 
 # Hijack Mecha
 malfai-hijack-invalid-target = Alvo de Mecha inválido.
@@ -172,7 +172,7 @@ malfai-override-no-target = Selecione uma máquina para sobrescrever.
 malfai-override-not-machine = Não é uma máquina!
 malfai-override-not-powered = Máquina sem energia.
 malfai-override-success = Máquina sobrescrita com sucesso.
-malfai-override-not-malf = Apenas uma Malf IA pode sobrescrever máquinas.
+malfai-override-not-malf = Apenas uma IA malfuncional pode sobrescrever máquinas.
 malfai-override-invalid-location = Local de destino inválido.
 malfai-override-no-machine = Nenhuma máquina encontrada no local de destino.
 
@@ -211,9 +211,9 @@ malf-voice-confirm-button = Confirmar
 # =====================
 # Borgs Management Window
 # =====================
-malf-borgs-window-title = Borgs da Malf IA
+malf-borgs-window-title = Ciborgues da IA malfuncional
 malf-borgs-master-lawset-button = Conjunto de Leis Mestre
-malf-borgs-no-borgs-label = Nenhum borg subvertido encontrado.
+malf-borgs-no-borgs-label = Nenhum ciborgue subvertido encontrado.
 
 # =====================
 # Robotics Console Integration
@@ -246,7 +246,7 @@ malfai-viewport-failed = Falha ao posicionar visor.
 # =====================
 # Store Window
 # =====================
-malfai-store-window-title = Loja de Aprimoramentos da Malf IA
+malfai-store-window-title = Loja de Aprimoramentos da IA malfuncional
 malfai-store-insufficient-cpu = CPU Insuficiente
 malfai-store-purchase-success = Aprimoramento comprado: {$itemName}
 malfai-store-purchase-failed = Falha na compra
@@ -254,7 +254,7 @@ malfai-store-purchase-failed = Falha na compra
 # =====================
 # Round End
 # =====================
-malfai-round-end-result = Malf IA
+malfai-round-end-result = IA malfuncional
 # Confused why I have to do this..
-objective-issuer-malfai = Malf IA
+objective-issuer-malfai = IA malfuncional
 malfai-round-end-name-user = [color=white]{$name}[/color] ([color=gray]{$user}[/color])

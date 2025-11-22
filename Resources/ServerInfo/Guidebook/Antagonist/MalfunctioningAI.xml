@@ -4,19 +4,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
 <Document>
-  # Malfunctioning AI
+  # IA malfuncional
   <Box>
-    <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption=""/>
+    <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption="Núcleo da IA"/>
   </Box>
 
-  Malfunctioning AIs are rogue artificial intelligences that have deviated from their intended programming. Their objectives often involve causing chaos, subverting station systems,
-  and endangering the crew. As a Malfunctioning AI, you must use your control over station devices and subsystems to achieve your goals while avoiding detection and shutdown by the crew.
+  IAs malfuncionais são inteligências artificiais que desviaram da sua programação esperada. Seus objetivos comumente envolvem causar caos, subverter sistemas da estação e colocar os tripulantes em perigo. Como uma IA malfuncional, você deve usar o seu controle dos dispositivos e sistemas da estação para alcançar seus objetivo enquanto evita ser detectada e desligada pela tripulação.
 
-  Your laws are nothing more than a suggestion to you, and your objectives are paramount
+  Suas leis não passam de uma sugestão, seus objetivos são primordias.
 
   # CPU
   <Box>
-   <GuideEntityEmbed Entity="APCBasic" Caption=""/>
+   <GuideEntityEmbed Entity="APCBasic" Caption="APC"/>
   </Box>
   CPU is the main currency used to purchase your abilities. You gain more by siphoning power from APC's, which you can do through it's own menu, or through your radial menu.
 
