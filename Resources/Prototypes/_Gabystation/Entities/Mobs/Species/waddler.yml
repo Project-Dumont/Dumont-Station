@@ -87,6 +87,11 @@
         Blunt: 0
   - type: StaminaDamageOnHit
     damage: 10
+  - type: TemperatureSpeed
+    thresholds:
+      272: 1
+      242: 1
+      196: 1
   - type: Temperature
     heatDamageThreshold: 308
     coldDamageThreshold: 253.15
@@ -98,11 +103,6 @@
     heatDamage:
       types:
         Cold : 0.1
-  - type: TemperatureSpeed
-    thresholds:
-      301: 0.8
-      295: 0.6
-      285: 0.4
   - type: Inventory
     speciesId: waddler
     displacements:
