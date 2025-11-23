@@ -21,13 +21,13 @@
       Hair:
         sizeMaps:
           32:
-            sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi/
-            state: head
+            sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi
+            state: hair
       FacialHair:
         sizeMaps:
           32:
             sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi/
-            state: eyes
+            state: facialhair
     hideLayersOnEquip:
     - Snout
     - HeadSide
@@ -191,8 +191,8 @@
       - map: [ "eyes" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "belt" ] #Goobedit - Belts over outerwear
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
+      - map: [ "belt" ]
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.Face" ]
@@ -228,15 +228,14 @@
         sizeMaps:
           32:
             sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi
-            state: head
+            state: hair
       FacialHair:
         sizeMaps:
           32:
             sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi/
-            state: eyes
-    hideLayersOnEquip: # WWDP
+            state: facialhair
+    hideLayersOnEquip:
     - Snout
-#    - HeadTop # WWDP - Because visible horns its cool
     - HeadSide
   - type: Inventory
     speciesId: waddler
@@ -318,7 +317,7 @@
       - map: [ "id" ]
       - map: [ "outerClothing" ]
       - map: [ "belt" ] #Goobedit - Belts over outerwear
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.Face" ]

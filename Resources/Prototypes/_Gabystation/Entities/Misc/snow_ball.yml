@@ -5,7 +5,7 @@
 
 - type: entity
   parent: BaseItem
-  categories:
+  categories: []
   id: SnowBall
   name: snowball
   components:

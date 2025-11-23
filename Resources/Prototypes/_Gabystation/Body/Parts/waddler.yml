@@ -9,9 +9,9 @@
   name: "waddler body part"
   abstract: true
   components:
-  - type: Icon # Shitmed Change
+  - type: Icon
     sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
-  - type: BodyPart # Shitmed Change
+  - type: BodyPart
     species: Waddler
   - type: Extractable
     juiceSolution:
@@ -20,7 +20,7 @@
         Quantity: 3
       - ReagentId: Blood
         Quantity: 10
-  - type: Damageable # Shitmed
+  - type: Damageable
     damageModifierSet: Scale
 
 - type: entity

@@ -16,10 +16,10 @@
   maleFirstNames: NamesWaddler
   femaleFirstNames: NamesWaddler
   naming: First
-  minHeight: 0.75
+  minHeight: 0.55
   defaultHeight: 0.80
   maxHeight: 0.80
-  minWidth:  0.75
+  minWidth:  0.55
   defaultWidth: 0.80
   maxWidth: 0.80
 

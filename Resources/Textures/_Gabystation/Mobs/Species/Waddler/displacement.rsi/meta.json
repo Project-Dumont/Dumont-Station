@@ -45,6 +45,14 @@
     {
       "name": "belt",
       "directions" : 4
+    },
+    {
+      "name": "facialhair",
+      "directions" : 4
+    },
+    {
+      "name": "hair",
+      "directions" : 4
     }
   ]
 }
