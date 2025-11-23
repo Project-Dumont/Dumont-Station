@@ -73,6 +73,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         </controls:StripeBack>
                         <controls:HSpacer Spacing="5" />
                         <Label Text="{Loc gs-balanceui-shop-empty}"  HorizontalAlignment="Center" />-->
+
+                        <BoxContainer VerticalExpand="true"/>
+                        <Label Name="RotationCooldown" Text="..." Access="Public"/>
                     </BoxContainer>
                 </ScrollContainer>
             </PanelContainer>

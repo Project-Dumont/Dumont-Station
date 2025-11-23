@@ -8,6 +8,7 @@
 using Content.Client.Eui;
 using Content.Goobstation.Shared.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency.UI;
+using Content.Shared.Eui;
 using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Client.ServerCurrency.UI
@@ -38,6 +39,16 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
         public override void Closed()
         {
             _window.Close();
+        }
+
+        public override void HandleState(EuiStateBase state)
+        {
+            base.HandleState(state);
+            if (state is not CurrencyEuiState s)
+                return;
+
+            _window.RotationCooldown.Text = s.Cooldown.ToString();
+            _window.UpdateState(s);
         }
     }
 }

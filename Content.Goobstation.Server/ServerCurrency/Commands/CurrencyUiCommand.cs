@@ -17,6 +17,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Server.ServerCurrency.UI;
+using Content.Server.Administration;
 using Content.Server.EUI;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -44,6 +45,23 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             var eui = IoCManager.Resolve<EuiManager>();
             var ui = new CurrencyEui();
             eui.OpenEui(ui, player);
+        }
+    }
+
+    [AdminCommand(AdminFlags.Host)]
+    public sealed class CurrencyStoreRotationCommand : IConsoleCommand
+    {
+        [Dependency] private readonly IEntitySystemManager _entitySystems = default!;
+
+        public string Command => "balance:doRotation";
+
+        public string Description => "Do the store rotation.";
+
+        public string Help => $"{Command}";
+
+        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            var sys = _entitySystems.GetEntitySystem<ServerCurrencySystem>();
         }
     }
 }

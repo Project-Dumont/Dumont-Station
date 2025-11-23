@@ -14,7 +14,14 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
     [Serializable, NetSerializable]
     public sealed class CurrencyEuiState : EuiStateBase
     {
+        public float Cooldown;
+        public List<TokenListingPrototype> Tokens = new List<TokenListingPrototype>();
 
+        public CurrencyEuiState(float cooldown, List<TokenListingPrototype> tokens)
+        {
+            Cooldown = cooldown;
+            Tokens = tokens;
+        }
     }
     public static class CurrencyEuiMsg
     {

@@ -21,6 +21,7 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private readonly IAdminNotesManager _notesMan = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
+        [Dependency] private readonly ServerCurrencySystem _currencySys = default!;
         public CurrencyEui()
         {
             IoCManager.InjectDependencies(this);
@@ -33,18 +34,17 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
 
         public override EuiStateBase GetNewState()
         {
-            return new CurrencyEuiState();
+            return new CurrencyEuiState(_currencySys.RotationCooldown, _currencySys.RotationStorage);
         }
-
 
         public override void HandleMessage(EuiMessageBase msg)
         {
             base.HandleMessage(msg);
             switch (msg)
             {
-                case CurrencyEuiMsg.Buy Buy:
+                case CurrencyEuiMsg.Buy buy:
 
-                    BuyToken(Buy.TokenId, Player);
+                    BuyToken(buy.TokenId, Player);
                     StateDirty();
                     break; //grrr fix formatting
             }
