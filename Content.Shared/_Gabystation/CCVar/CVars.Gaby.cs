@@ -54,4 +54,9 @@ public sealed partial class GabyCVars
     public static readonly CVarDef<float> SurgeryCrowdingCheckRange =
         CVarDef.Create("gaby.surgery.crowding_check_range", 5f, CVar.SERVER | CVar.REPLICATED);
 
+    #region Niver
+    public static readonly CVarDef<float> NiverChancePerTile =
+        CVarDef.Create("gaby.niver_chance_per_tile", 1f, CVar.SERVER);
+    #endregion
+
 }

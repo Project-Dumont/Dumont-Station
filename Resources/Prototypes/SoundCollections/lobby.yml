@@ -126,98 +126,73 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/thunderdome.ogg
-  #  - /Audio/Lobby/absconditus.ogg
-    - /Audio/Lobby/space_asshole.ogg
-  #  - /Audio/Lobby/endless_space.ogg
-    - /Audio/Lobby/singuloose.ogg
-    - /Audio/Lobby/comet_haley.ogg
-    - /Audio/Lobby/title2.ogg
-    - /Audio/Lobby/title3.ogg
-    - /Audio/Lobby/mod.flip-flap.ogg
-    - /Audio/Lobby/Spac_Stac.ogg
-    #- /Audio/Lobby/pwmur.ogg
-    #- /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
-    #- /Audio/Lobby/every_light_is_blinking_at_once.ogg
-    #- /Audio/Lobby/atomicamnesiammx.ogg
-    # Goobstation - Custom lobby music
-    - /Audio/Lobby/skubstep.ogg
-    #- /Audio/Lobby/sneedsfeedandseed.ogg
-    #!- /Audio/Lobby/honk.ogg - Gabystation: File not found.
-    #- /Audio/Lobby/clownalwayswins.ogg
-    - /Audio/Lobby/clownwmv.ogg
-    #- /Audio/Lobby/dawsonschristian.ogg
-    - /Audio/Lobby/thewizard.ogg
-    - /Audio/Lobby/skubstub.ogg
-    #- /Audio/Lobby/space_radiation.ogg
-    #- /Audio/Lobby/redsun.ogg
-    #- /Audio/Lobby/chollima.ogg
-    - /Audio/Lobby/monument.ogg
-    - /Audio/Lobby/marhaba.ogg
-    #- /Audio/Lobby/the_future_soon.ogg
-    - /Audio/Lobby/the_future_soon.ogg
-    #- /Audio/Lobby/horn.ogg
-    # Gabystation - musicas do lobby
-    # Musicas pega da estação pirata
-    # https://github.com/rbertoche/space-station-14/blob/pirata/Resources/Prototypes/SoundCollections/lobby.yml
-    - /Audio/_Gabystation/Lobby/poeira.ogg
-    - /Audio/_Gabystation/Lobby/astronauta.ogg
-    - /Audio/_Gabystation/Lobby/marciano.ogg
-    - /Audio/_Gabystation/Lobby/marmore.ogg
-    #!- /Audio/_Gabystation/Lobby/oddity.ogg - Gabystation: File not found.
-    - /Audio/_Gabystation/Lobby/sos.ogg
-    - /Audio/_Gabystation/Lobby/miranda.ogg
-    - /Audio/_Gabystation/Lobby/replicantes.ogg
-    - /Audio/_Gabystation/Lobby/interestelar.ogg
-    - /Audio/_Gabystation/Lobby/devil.ogg
-    # Fim estação pirata
-    #!- /Audio/_Gabystation/Lobby/estrelar.ogg - Gabystation: File not found.
-    #- /Audio/_Gabystation/Lobby/hurry.ogg
-    #- /Audio/_Gabystation/Lobby/radioPirata.ogg
-    #!- /Audio/_Gabystation/Lobby/tntin.ogg - Gabystation: File not found.
-    - /Audio/_Gabystation/Lobby/A_Gira.ogg
-    - /Audio/_Gabystation/Lobby/Brasil_Pandeiro.ogg
-    - /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
-    - /Audio/_Gabystation/Lobby/Ela_Partiu.ogg
-    - /Audio/_Gabystation/Lobby/Escrito_Nas_Estrelas.ogg
-    - /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
-    - /Audio/_Gabystation/Lobby/Lança_Perfume.ogg
-    - /Audio/_Gabystation/Lobby/Marcos_Valle_Estrelar.ogg
-    - /Audio/_Gabystation/Lobby/Melissa.ogg
-    - /Audio/_Gabystation/Lobby/Mun_Rá.ogg
-    - /Audio/_Gabystation/Lobby/Periferia.ogg
-    - /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
-    - /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
-    - /Audio/_Gabystation/Lobby/sete_mares.ogg
-    - /Audio/_Gabystation/Lobby/construcao.ogg
-    # Vai ter Slipknot sim e quero ver quem vai tirar, ainda botei umas leves
-    - /Audio/_Gabystation/Lobby/dead_memories.ogg
-    - /Audio/_Gabystation/Lobby/vermillion_pt2.ogg
-    - /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
-    # criso musga
-    - /Audio/_Gabystation/Lobby/asgore.ogg
-    - /Audio/_Gabystation/Lobby/a_world_i_built_for_you.ogg
-    - /Audio/_Gabystation/Lobby/although_the_sky.ogg
-    - /Audio/_Gabystation/Lobby/anemoia.ogg
-    - /Audio/_Gabystation/Lobby/baby_blue.ogg
-    - /Audio/_Gabystation/Lobby/balatro.ogg
-    - /Audio/_Gabystation/Lobby/buddy_holly.ogg
-    - /Audio/_Gabystation/Lobby/cant_get_over.ogg
-    - /Audio/_Gabystation/Lobby/clair_de_lune.ogg
-    - /Audio/_Gabystation/Lobby/fly.ogg
-    #- /Audio/_Gabystation/Lobby/hopes_and_dreams.ogg - essa musica é uma merda (Panela)
-    - /Audio/_Gabystation/Lobby/its_raining_somewhere_else.ogg
-    - /Audio/_Gabystation/Lobby/lady.ogg
-    - /Audio/_Gabystation/Lobby/last_goodbye.ogg
-    - /Audio/_Gabystation/Lobby/lovers_rock.ogg
-    - /Audio/_Gabystation/Lobby/roundabout.ogg
-    - /Audio/_Gabystation/Lobby/ruder_buster.ogg
-    - /Audio/_Gabystation/Lobby/summer.ogg
-    - /Audio/_Gabystation/Lobby/the_fire_is_gone.ogg
-    - /Audio/_Gabystation/Lobby/the_man_who_sold_the_world.ogg
-    - /Audio/_Gabystation/Lobby/the_place_where_it_rained.ogg
-    - /Audio/_Gabystation/Lobby/the_world_looks_red.ogg
-    - /Audio/_Gabystation/Lobby/welcome_to_the_green_room.ogg
-    - /Audio/_Gabystation/Lobby/do_fundo_da_grota.ogg
-    - /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
-    - /Audio/_Gabystation/Lobby/Massacration.ogg # Gaby - Recompensa de Catarse do @capitaopato
+    # - /Audio/Lobby/thunderdome.ogg
+    # - /Audio/Lobby/space_asshole.ogg
+    # - /Audio/Lobby/singuloose.ogg
+    # - /Audio/Lobby/comet_haley.ogg
+    # - /Audio/Lobby/title2.ogg
+    # - /Audio/Lobby/title3.ogg
+    # - /Audio/Lobby/mod.flip-flap.ogg
+    # - /Audio/Lobby/Spac_Stac.ogg
+    # - /Audio/Lobby/skubstep.ogg
+    # - /Audio/Lobby/clownwmv.ogg
+    # - /Audio/Lobby/thewizard.ogg
+    # - /Audio/Lobby/skubstub.ogg
+    # - /Audio/Lobby/monument.ogg
+    # - /Audio/Lobby/marhaba.ogg
+    # - /Audio/Lobby/the_future_soon.ogg
+    # - /Audio/_Gabystation/Lobby/poeira.ogg
+    # - /Audio/_Gabystation/Lobby/astronauta.ogg
+    # - /Audio/_Gabystation/Lobby/marciano.ogg
+    # - /Audio/_Gabystation/Lobby/marmore.ogg
+    # - /Audio/_Gabystation/Lobby/sos.ogg
+    # - /Audio/_Gabystation/Lobby/miranda.ogg
+    # - /Audio/_Gabystation/Lobby/replicantes.ogg
+    # - /Audio/_Gabystation/Lobby/interestelar.ogg
+    # - /Audio/_Gabystation/Lobby/devil.ogg
+    # - /Audio/_Gabystation/Lobby/A_Gira.ogg
+    # - /Audio/_Gabystation/Lobby/Brasil_Pandeiro.ogg
+    # - /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
+    # - /Audio/_Gabystation/Lobby/Ela_Partiu.ogg
+    # - /Audio/_Gabystation/Lobby/Escrito_Nas_Estrelas.ogg
+    # - /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
+    # - /Audio/_Gabystation/Lobby/Lança_Perfume.ogg
+    # - /Audio/_Gabystation/Lobby/Marcos_Valle_Estrelar.ogg
+    # - /Audio/_Gabystation/Lobby/Melissa.ogg
+    # - /Audio/_Gabystation/Lobby/Mun_Rá.ogg
+    # - /Audio/_Gabystation/Lobby/Periferia.ogg
+    # - /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
+    # - /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
+    # - /Audio/_Gabystation/Lobby/sete_mares.ogg
+    # - /Audio/_Gabystation/Lobby/construcao.ogg
+    # - /Audio/_Gabystation/Lobby/dead_memories.ogg
+    # - /Audio/_Gabystation/Lobby/vermillion_pt2.ogg
+    # - /Audio/_Gabystation/Lobby/wait_and_bleed.ogg
+    # - /Audio/_Gabystation/Lobby/asgore.ogg
+    # - /Audio/_Gabystation/Lobby/a_world_i_built_for_you.ogg
+    # - /Audio/_Gabystation/Lobby/although_the_sky.ogg
+    # - /Audio/_Gabystation/Lobby/anemoia.ogg
+    # - /Audio/_Gabystation/Lobby/baby_blue.ogg
+    # - /Audio/_Gabystation/Lobby/balatro.ogg
+    # - /Audio/_Gabystation/Lobby/buddy_holly.ogg
+    # - /Audio/_Gabystation/Lobby/cant_get_over.ogg
+    # - /Audio/_Gabystation/Lobby/clair_de_lune.ogg
+    # - /Audio/_Gabystation/Lobby/fly.ogg
+    # - /Audio/_Gabystation/Lobby/its_raining_somewhere_else.ogg
+    # - /Audio/_Gabystation/Lobby/lady.ogg
+    # - /Audio/_Gabystation/Lobby/last_goodbye.ogg
+    # - /Audio/_Gabystation/Lobby/lovers_rock.ogg
+    # - /Audio/_Gabystation/Lobby/roundabout.ogg
+    # - /Audio/_Gabystation/Lobby/ruder_buster.ogg
+    # - /Audio/_Gabystation/Lobby/summer.ogg
+    # - /Audio/_Gabystation/Lobby/the_fire_is_gone.ogg
+    # - /Audio/_Gabystation/Lobby/the_man_who_sold_the_world.ogg
+    # - /Audio/_Gabystation/Lobby/the_place_where_it_rained.ogg
+    # - /Audio/_Gabystation/Lobby/the_world_looks_red.ogg
+    # - /Audio/_Gabystation/Lobby/welcome_to_the_green_room.ogg
+    # - /Audio/_Gabystation/Lobby/do_fundo_da_grota.ogg
+    # - /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
+    # - /Audio/_Gabystation/Lobby/Massacration.ogg
+    - /Audio/_Gabystation/Lobby/parabens_pra_voce.ogg
+    - /Audio/_Gabystation/Lobby/parabens_xuxa.ogg
+

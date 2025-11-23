@@ -394,6 +394,12 @@
   beginMonth: November
 
 - type: holiday
+  id: GabyBDay
+  name: holiday-name-gaby-bday
+  beginDay: 23
+  beginMonth: November
+
+- type: holiday
   id: Thanksgiving
   name: holiday-name-thanksgiving
   beginMonth: November

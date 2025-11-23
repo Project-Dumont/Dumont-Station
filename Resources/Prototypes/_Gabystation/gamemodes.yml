@@ -1,0 +1,14 @@
+- type: gamePreset
+  id: GabyBday
+  alias:
+  - aniversario
+  - brithday
+  name: gabybday-name
+  showInVote: false
+  description: gabybday-desc
+  rules:
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
