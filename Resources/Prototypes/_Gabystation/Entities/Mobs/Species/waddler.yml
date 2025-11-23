@@ -17,6 +17,17 @@
     runAnimationLengthMultiplier: 0.3
   - type: HumanoidAppearance
     species: Waddler
+    markingsDisplacement:
+      Hair:
+        sizeMaps:
+          32:
+            sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi/
+            state: head
+      FacialHair:
+        sizeMaps:
+          32:
+            sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi/
+            state: eyes
     hideLayersOnEquip:
     - Snout
     - HeadSide
@@ -212,6 +223,17 @@
   components:
   - type: HumanoidAppearance
     species: Waddler
+    markingsDisplacement:
+      Hair:
+        sizeMaps:
+          32:
+            sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi
+            state: head
+      FacialHair:
+        sizeMaps:
+          32:
+            sprite: _Gabystation/Mobs/Species/Waddler/displacement.rsi/
+            state: eyes
     hideLayersOnEquip: # WWDP
     - Snout
 #    - HeadTop # WWDP - Because visible horns its cool

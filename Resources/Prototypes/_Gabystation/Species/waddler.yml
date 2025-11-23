@@ -18,15 +18,17 @@
   naming: First
   minHeight: 0.75
   defaultHeight: 0.80
-  maxHeight: 1.15
-  minWidth: 0.80
+  maxHeight: 0.80
+  minWidth:  0.75
   defaultWidth: 0.80
-  maxWidth: 1.10
+  maxWidth: 0.80
 
 - type: speciesBaseSprites
   id: MobWaddlerSprites
   sprites:
     Chest: MobWaddlerChest
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Head: MobWaddlerHead
     Face: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
@@ -38,18 +40,17 @@
 
 - type: markingPoints
   id: MobWaddlerMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: false
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
-      points: 0
+      points: 1
       required: false
     Snout:
       points: 1
       required: true
-      # defaultMarkings: [ LizardSnoutRond ]
     Chest:
       points: 0
       required: false

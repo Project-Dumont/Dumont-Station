@@ -5,18 +5,18 @@
 
 - type: marking
   id: WaddlerEyelashes
-  bodyPart: Head
-  markingCategory: Head
+  bodyPart: Face
+  markingCategory: Face
   forcedColoring: true
-  speciesRestriction: [Diona]
+  speciesRestriction: [Waddler]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
-    state: overlay
+  - sprite: _Gabystation/Mobs/Customization/waddler.rsi
+    state: eyelashes
 
 - type: marking
   id: WaddlerOverlay

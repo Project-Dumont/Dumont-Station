@@ -7,7 +7,7 @@
   id: ET
   name: ET
   category: Vocal
-  icon: { sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi, state: et }
+  icon: { sprite: _Gabystation/Interface/Emotes/waddler.rsi, state: et }
   chatMessages: [ "chat-emote-msg-et" ]
   whitelist:
     tags:
