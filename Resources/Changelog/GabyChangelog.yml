@@ -1412,3 +1412,95 @@ Entries:
       message: Adiciona as mudanças do Goob até 16/11 (confira a aba do Goob)!
   id: 162
   time: '2025-11-16T12:18:48.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        Shadowkins não sofrem mais penalidade de velocidade por serem pequenos,
+        o fim esta proximo
+  id: 163
+  time: '2025-11-19T13:17:47.0000000+00:00'
+- author: CrimeMoot, Voomra, EvilBug, server Star Horizon, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Adiciona um manipulador de DNA de sementes e um disco de DNA de sementes
+        liberados com a pesquisa de hidroponia básica.
+  id: 164
+  time: '2025-11-19T23:13:50.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada Malf AI!
+  id: 165
+  time: '2025-11-19T23:15:49.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Re-adiciona a cura com alcool dos onis!!
+    - type: Fix
+      message: Onis não tomam mais dano extra de veneno
+    - type: Tweak
+      message: Pistolas podem ser utilizadas por onis agora
+    - type: Tweak
+      message: Livro guia dos onis atualizado e traduzido
+  id: 166
+  time: '2025-11-20T00:59:47.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 19/11 (confira a aba do Goob)!
+  id: 167
+  time: '2025-11-20T02:34:54.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Os radiadores são compatíveis com as layers!
+  id: 168
+  time: '2025-11-22T04:45:08.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: >-
+        Corrigida a quantidade máxima de fábricas de ciborgue da IA mal
+        funcional. Apenas uma!
+    - type: Tweak
+      message: A sonda do final do protocolo doomsday agora gibba tudo que toca.
+    - type: Fix
+      message: >-
+        A mente do jogador vai corretamente para a IA ao construir um novo
+        núcleo.
+    - type: Add
+      message: Adicionadas algumas traduções para a IA mal funcional.
+    - type: Fix
+      message: Não é mais possível decretar doomsday pelo computador de comunicações.
+    - type: Tweak
+      message: 'Melhora a interação de múltiplas IAs e ciborgues controlados por IA. '
+  id: 169
+  time: '2025-11-22T04:46:19.0000000+00:00'
+- author: KillanGenifer, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona 3 novas danças!
+    - type: Add
+      message: Adiciona piso luminoso.
+  id: 170
+  time: '2025-11-22T04:47:28.0000000+00:00'
+- author: KillanGenifer, Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Concerta dança alterando altura.
+  id: 171
+  time: '2025-11-22T23:29:12.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: O alerta ciano voltou ao computador de comunicações
+    - type: Fix
+      message: >-
+        Agora é de verdade! Não é mais possível decretar doomsday pelo
+        computador de comunicações.
+    - type: Fix
+      message: O intellicard foi corrigido.
+  id: 172
+  time: '2025-11-23T13:21:37.0000000+00:00'

@@ -6,6 +6,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Standing;
 using Content.Goobstation.Shared.Sprinting;
 using Content.Server.Stunnable;
 using Content.Shared.CombatMode;
@@ -41,7 +42,10 @@ public sealed class SprintingSystem : SharedSprintingSystem
             return;
         }
 
-        _stunSystem.TryKnockdown(uid, sprinter.KnockdownDurationOnInterrupt, false);
-        _stunSystem.TryKnockdown(otherUid, otherSprinter.KnockdownDurationOnInterrupt, false);
+        _stunSystem.TryKnockdown(uid, sprinter.KnockdownDurationOnInterrupt, false, DropHeldItemsBehavior.NoDrop);
+        _stunSystem.TryKnockdown(otherUid,
+            otherSprinter.KnockdownDurationOnInterrupt,
+            false,
+            DropHeldItemsBehavior.NoDrop);
     }
 }

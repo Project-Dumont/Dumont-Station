@@ -127,6 +127,9 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -169,6 +172,14 @@ namespace Content.Server.Light.Components
 
         [DataField("ghostBlinkingCooldown")]
         public TimeSpan GhostBlinkingCooldown = TimeSpan.FromSeconds(60);
+
+        // CorvaxGoob-FloorTileLight-Start
+        [DataField("changeLightRadius")]
+        public bool ChangeLightRadius = true;
+
+        [DataField("changeLightEnergy")]
+        public bool ChangeLightEnergy = true;
+        // CorvaxGoob-FloorTileLight-End
 
         [ViewVariables]
         public ContainerSlot LightBulbContainer = default!;

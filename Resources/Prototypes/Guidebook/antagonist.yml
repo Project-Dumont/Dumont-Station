@@ -53,6 +53,7 @@
   - SlaughterDemon # Goob content
   - Xenomorphs # WD - Xenomorphs
   - Wraith
+  - MalfunctioningAI
 
 - type: guideEntry
   id: Traitors
@@ -98,3 +99,8 @@
 #   id: Abductors
 #   name: guide-entry-abductors
 #   text: "/ServerInfo/Guidebook/Antagonist/Abductors.xml"
+
+- type: guideEntry
+  id: MalfunctioningAI
+  name: guide-entry-malfunctioningai
+  text: "/ServerInfo/Guidebook/Antagonist/MalfunctioningAI.xml"

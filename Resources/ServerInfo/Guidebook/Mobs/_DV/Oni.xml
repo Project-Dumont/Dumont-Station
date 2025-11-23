@@ -18,19 +18,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Pessoas grandes com uma variedade de cores que possuem chifres. Sua precisão com armas de fogo é terrível, mas sua força física os traz benefícios tanto dentro quanto fora de combate.
 
-  ## Diet
-  - Just about anything. Can even eat many things raw.
+  ## Dieta
+  - Praticamente qualquer coisa. Até mesmo varias coisas cruas.
 
-  ## Benefits
-  - They take [color=#1e90ff]20% less Blunt, Slash, and Piercing damage[/color].
-  - Does more damage in melee; 25% more Blunt, Slash, Piece, Stamina, and Structural damage.
-  - Due to their big size, they can easily carry and pull any other species.
-  - Slightly more stamina than Humans.
+  ## Benefícios
+  - Eles tomam [color=#1e90ff]20% menos dano de Contundente, Cortante e Perfurante[/color].
+  - Causam mais dano corpo a corpo; 25% mais de dano Contundente, Cortante, Perfurante, Estamina, e Estrutural.
+  - Devido ao seu maior tamanho, eles podem facilmente carregar e puxar quaisquer outras especies.
+  - Tem levemente mais estamina que humanos.
 
-  ## Drawbacks
-  - Oni are unable to fire any weapons but shotguns with accuracy, with reports of bullets managing to fire even behind them
-  - They are harder to carry and pull.
-  - They are bigger than Humans, making them easier to hit.
-  - Sources of holy damage are their bane, and will injure them greatly
+  ## Malefícios
+  - Onis são incapazes de atirar com quaisquer armas alem de pistolas, necessitando até de duas mãos para atirar de forma precisa.
+  - Eles são mais dificeis de carregar e puxar.
+  - Eles são maiores que humanos, fazendo com que eles sejam mais faceis de ser atingidos.
+  <!-- - Sources of holy damage are their bane, and will injure them greatly    incerto sobre essa informação aqui, em duvida se mantenho e adiciono dano sagrado ou só removo-->
 
 </Document>

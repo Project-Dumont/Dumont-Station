@@ -79,6 +79,7 @@
 // SPDX-FileCopyrightText: 2025 dffdff2423 <dffdff2423@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -108,12 +109,14 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+
 // Goob Station - End of Round Screen
 using Content.Goobstation.Common.LastWords;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Goobstation.Shared.Mind.Components;
 
 using Content.Server._CD.Traits;
 
@@ -658,17 +661,23 @@ namespace Content.Server.GameTicking
 
                 var roles = _roles.MindGetAllRoleInfo(mindId);
 
-                #region Goob Station
+                // Goobstation - End of round last words
+                #region Goob Station - End of round last words
 
                 var lastWords = "";
                 var mobState = MobState.Invalid;
                 var damagePerGroup = new Dictionary<string, FixedPoint2>();
-                var lastMob = mind.LastMob;
-                if (TryComp<LastWordsComponent>(mindId, out var lastWordsComponent)
-                    && !TerminatingOrDeleted(lastMob))
-                {
+                var lastMob = TryComp<MindLastMobComponent>(mindId, out var lastMobComponent)
+                    ? lastMobComponent.LastMob
+                    : null;
+
+                // Get last words if they exist (stored on the mind)
+                if (TryComp<LastWordsComponent>(mindId, out var lastWordsComponent))
                     lastWords = lastWordsComponent.LastWords;
 
+                // Get mob state and damage if the mob still exists
+                if (lastMob != null && !TerminatingOrDeleted(lastMob))
+                {
                     if (TryComp<MobStateComponent>(lastMob, out var mobStateComp))
                         mobState = mobStateComp.CurrentState;
 
@@ -677,6 +686,7 @@ namespace Content.Server.GameTicking
                 }
 
                 #endregion
+                // END
 
                 var playerEndRoundInfo = new RoundEndMessageEvent.RoundEndPlayerInfo()
                 {

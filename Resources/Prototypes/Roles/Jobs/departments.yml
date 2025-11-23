@@ -133,6 +133,7 @@
   - Visitor
   - Zookeeper
   - ServiceWorker
+  - PartyMaker # event-restricted, Goobstation
 
 - type: department
   id: CentralCommand
@@ -189,6 +190,7 @@
   - DeathSquad
   - HecuOperative
   - AdministrativeAssistant # Delta V
+  - CommandMaid # event-restricted, Goobstation
   primary: false
   weight: 100
 
@@ -230,6 +232,7 @@
   - Warden
   - PermaPrisoner # Harmony
   - Brigmedic # Goob
+  - SecurityClown # event-restricted, Goob
 
 - type: department
   id: Science

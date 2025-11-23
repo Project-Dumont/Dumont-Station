@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -110,5 +111,22 @@
   rules:
     - SecretDirector
     - MeteorSwarmScheduler # Gaby - Reativa meteoros
+
+- type: gamePreset
+  id: MalfAi
+  alias:
+  - malfai
+  - malf
+  name: malfai-title
+  description: malfai-description
+  showInVote: false
+  rules:
+  - Traitor
+  - SubGamemodesRule
+  - MalfAi
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
 
 
