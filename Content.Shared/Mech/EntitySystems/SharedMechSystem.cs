@@ -91,7 +91,7 @@ public abstract partial class SharedMechSystem : EntitySystem
     // Goobstation: Local variable for checking if mech guns can be used out of them.
     private bool _canUseMechGunOutside;
 
-    protected static readonly ProtoId<TagPrototype> StationAiBrain = "StationAi";
+    protected static readonly EntProtoId StationAiBrain = "StationAiBrain";
 
     /// <inheritdoc/>
     public override void Initialize()
