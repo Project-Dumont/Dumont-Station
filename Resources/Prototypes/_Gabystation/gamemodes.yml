@@ -6,7 +6,7 @@
   id: GabyBday
   alias:
   - aniversario
-  - brithday
+  - birthday
   name: gabybday-name
   showInVote: false
   description: gabybday-desc
