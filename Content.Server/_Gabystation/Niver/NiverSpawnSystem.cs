@@ -10,6 +10,7 @@ using Robust.Shared.Map.Components;
 using Robust.Server.GameObjects;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
+using Content.Server.Station.Components;
 
 namespace Content.Server._Gabystation.Niver;
 
