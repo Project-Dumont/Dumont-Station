@@ -152,7 +152,7 @@ accent-cowboy-words-51 = nervoso
 accent-cowboy-replacement-51 = nirvoso
 
 accent-cowboy-words-52 = ninja
-accent-cowboy-replacement-52 = ninja
+accent-cowboy-replacement-52 = ninjar
 
 accent-cowboy-words-53 = nukie
 accent-cowboy-replacement-53 = meliante
@@ -223,7 +223,7 @@ accent-cowboy-replacement-74 = batalhão
 accent-cowboy-words-75 = secoff
 accent-cowboy-replacement-75 = xerife
 
-accent-cowboy-words-76 = security
+accent-cowboy-words-76 = segurança
 accent-cowboy-replacement-76 = brigada
 
 accent-cowboy-words-77 = shitsec
@@ -283,5 +283,23 @@ accent-cowboy-replacement-94 = dimais
 accent-cowboy-words-95 = preocupado
 accent-cowboy-replacement-95 = nervoso
 
-accent-cowboy-words-96 = wow
-accent-cowboy-replacement-96 = oxi
+accent-cowboy-words-96 = oxe
+accent-cowboy-replacement-96 = oxente
+
+accent-cowboy-words-97 = oxi
+accent-cowboy-replacement-96 = oxente
+
+accent-cowboy-words-98 = bingle
+accent-cowboy-replacement-96 = criatura azul
+
+accent-cowboy-words-99 = bingles
+accent-cowboy-replacement-96 = criaturas azuis
+
+accent-cowboy-words-100 = você
+accent-cowboy-replacement-96 = ocê
+
+accent-cowboy-words-101 = voce
+accent-cowboy-replacement-96 = ocê
+
+accent-cowboy-words-102 = vc
+accent-cowboy-replacement-96 = ocê
