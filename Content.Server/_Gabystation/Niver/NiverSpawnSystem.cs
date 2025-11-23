@@ -27,11 +27,11 @@ public sealed class NiverSpawnSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<NiverSpawnComponent, ComponentInit>(OnComponentInit);
-        SubscribeLocalEvent<BecomesStationComponent, ComponentInit>(OnStationInit);
+        SubscribeLocalEvent<BecomesStationComponent, ComponentStartup>(OnStationInit);
         Subs.CVar(_cfg, GabyCVars.NiverChancePerTile, value => _chance = value, true);
     }
 
-    private void OnStationInit(Entity<BecomesStationComponent> ent, ref ComponentInit args)
+    private void OnStationInit(Entity<BecomesStationComponent> ent, ref ComponentStartup args)
     {
         if (HasComp<NiverSpawnBlacklistComponent>(ent.Owner))
             return;
