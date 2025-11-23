@@ -56,7 +56,7 @@ public sealed partial class GabyCVars
 
     #region Niver
     public static readonly CVarDef<float> NiverChancePerTile =
-        CVarDef.Create("gaby.niver_chance_per_tile", 1f, CVar.SERVER);
+        CVarDef.Create("gaby.niver_chance_per_tile", 0.1f, CVar.SERVER);
     #endregion
 
 }
