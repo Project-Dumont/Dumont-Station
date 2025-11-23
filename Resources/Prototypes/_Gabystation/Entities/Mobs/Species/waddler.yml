@@ -76,6 +76,7 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: Absorbable
   - type: MeleeWeapon
     soundHit:
       collection: Punch
