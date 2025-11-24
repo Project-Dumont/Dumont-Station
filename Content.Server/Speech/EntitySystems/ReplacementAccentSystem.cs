@@ -64,6 +64,31 @@ namespace Content.Server.Speech.EntitySystems
                 return prototype.FullReplacements.Length != 0 ? Loc.GetString(_random.Pick(prototype.FullReplacements)) : "";
             }
 
+            // Apply regex replacements.
+            // I really wonder why no one did that, am I making a huge mistake?
+            if (prototype.RegexReplacements != null)
+            {
+                foreach (var (pattern, replacement) in prototype.RegexReplacements)
+                {
+                    var p = _loc.GetString(pattern);
+                    var r = _loc.GetString(replacement);
+
+                    message = Regex.Replace(message, p, match =>
+                    {
+                        var result = Regex.Replace(match.Value, p, r, RegexOptions.IgnoreCase);
+
+                        // If original match is uppercase, make result uppercase
+                        if (!match.Value.Any(char.IsLower))
+                        {
+                            return result.ToUpperInvariant();
+                        }
+
+                        return result;
+                    }, RegexOptions.IgnoreCase);
+                }
+                return message;
+            }
+
             if (prototype.WordReplacements == null)
                 return message;
 
