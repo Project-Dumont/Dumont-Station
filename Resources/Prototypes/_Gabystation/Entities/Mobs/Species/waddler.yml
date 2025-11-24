@@ -12,7 +12,7 @@
   components:
   - type: Clumsy
     clumsyHypo: false
-    ClumsyDefib: false
+    clumsyDefib: false
   - type: LightweightDrunk
   - type: WaddleAnimation
     hopIntensity: 0, 0.1
