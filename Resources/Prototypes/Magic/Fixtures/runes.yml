@@ -21,6 +21,7 @@
     - type: TriggerOnActivate
     - type: Sprite
       sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: barrier
           color: '#FF00FF'
@@ -33,6 +34,7 @@
     - type: BarrierOnTrigger  # SubscribeLocalEvent<ExplodeOnTriggerComponent, TriggerEvent>(HandleExplodeTrigger);
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: barrier
           color: '#FF3300CC'
@@ -44,6 +46,7 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
+    drawdepth: HighFloorObjects
     layers:
     - state: barrier_drawing
       color: '#FF3300CC'
@@ -57,6 +60,7 @@
   components:
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: bloodboil
           color: '#FF3300CC'
@@ -69,6 +73,7 @@
     - type: EmpowerOnStand
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: empowering
           color: '#FF3300CC'
@@ -80,6 +85,7 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
+    drawdepth: HighFloorObjects
     layers:
     - state: empowering_drawing
       color: '#FF3300CC'
@@ -94,7 +100,7 @@
     - type: OfferOnTrigger
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
-      drawdepth: FloorObjects
+      drawdepth: HighFloorObjects
       layers:
         - state: offering
           color: '#FF3300CC'
@@ -106,7 +112,7 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
-    drawdepth: FloorObjects
+    drawdepth: HighFloorObjects
     layers:
     - state: offering_drawing
       color: '#FF3300CC'
@@ -122,6 +128,7 @@
     - type: ReviveCultistOnTrigger
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: revive
           color: '#FF3300CC'
@@ -133,6 +140,7 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
+    drawdepth: HighFloorObjects
     layers:
     - state: revive_drawing
       color: '#FF3300CC'
@@ -146,6 +154,7 @@
   components:
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: spiritrealm
           color: '#FF3300CC'
@@ -155,11 +164,27 @@
   id: SummoningRune
   name: "summoning rune"
   components:
+    - type: SummonOnTrigger
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: summoning
           color: '#FF3300CC'
+
+- type: entity
+  parent: BaseBloodCultRune
+  id: SummoningRune_drawing
+  name: "summoning rune drawing"
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
+    drawdepth: HighFloorObjects
+    layers:
+    - state: summoning_drawing
+      color: '#FF3300CC'
+  - type: TimedDespawn
+    lifetime: 15
 
 - type: entity
   parent: BaseBloodCultRune
@@ -168,6 +193,7 @@
   components:
     - type: Sprite
       #sprite: Structures/Magic/Cult/trap.rsi
+      drawdepth: HighFloorObjects
       layers:
         - state: teleport
           color: '#FF3300CC'
@@ -180,7 +206,7 @@
   - type: TearVeil
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/narsierune.rsi
-    drawdepth: FloorObjects
+    drawdepth: HighFloorObjects
     layers:
     - state: narsierune
       color: '#FF4400FF'
@@ -191,7 +217,7 @@
   suffix: Spawn
   components:
   - type: Sprite
-    drawdepth: FloorObjects
+    drawdepth: HighFloorObjects
     layers:
     - state: narsierune_drawing
   # spawn animation lasts 45 seconds

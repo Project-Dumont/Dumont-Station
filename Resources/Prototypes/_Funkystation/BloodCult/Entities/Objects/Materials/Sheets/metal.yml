@@ -23,6 +23,7 @@
     - state: runedmetal_3
       map: ["base"]
   - type: Item
+    sprite: _Funkystation/BloodCult/Sheets/metal.rsi
     heldPrefix: runedmetal
   - type: Appearance
 
@@ -33,7 +34,7 @@
   suffix: Full
   components:
   - type: Sprite
-    state: runedmetal
+    state: runedmetal_3
   - type: Stack
     stackType: RunedMetal
     count: 30
@@ -45,7 +46,7 @@
   suffix: 10
   components:
   - type: Sprite
-    state: runedmetal
+    state: runedmetal_2
   - type: Stack
     stackType: RunedMetal
     count: 10

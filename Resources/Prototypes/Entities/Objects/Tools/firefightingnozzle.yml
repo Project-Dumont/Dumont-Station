@@ -41,13 +41,13 @@
       tags:
       - NozzleBackTank
       - AtmosBackTank
+  - type: UseDelay
   - type: PacifismAllowedGun
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    - FullAuto
     soundGunshot:
       path: /Audio/Effects/firefighting_nozzle.ogg
     soundEmpty:

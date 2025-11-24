@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -39,7 +40,7 @@ namespace Content.Server.BloodCult.EntitySystems
 		[Dependency] private readonly BloodCultRuleSystem _bloodCultRule = default!;
 		[Dependency] private readonly EntityLookupSystem _lookup = default!;
         [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
-        [Dependency] private readonly StationSystem _station = default!;
+        //[Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
 
 		public override void Initialize()
