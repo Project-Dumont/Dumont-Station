@@ -56,8 +56,8 @@
     - id: FoodMeatPenguin
       amount: 5
   - type: Speech
-    speechSounds: Harpy
-    speechVerb: Harpy
+    speechSounds: Harpy # Needs a better sound, but it is pretty hard to find actual penguin sounds
+    speechVerb: Waddler
   - type: TypingIndicator
   - type: Vocal
     sounds:
