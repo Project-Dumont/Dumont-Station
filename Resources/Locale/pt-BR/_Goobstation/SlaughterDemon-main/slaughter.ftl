@@ -24,4 +24,4 @@ demonic-whisper-popup = De repente, uma voz estranha e demoníaca ressoa na sua 
 demonic-whisper-whisper = Você sussura para {$name}: {$message}
 
 # metadata
-name-format-slaughter = {$part1}, the {$part0}
+name-format-slaughter = {$part1}, o {$part0}
