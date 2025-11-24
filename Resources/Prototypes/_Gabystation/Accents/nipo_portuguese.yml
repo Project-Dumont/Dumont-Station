@@ -1,0 +1,10 @@
+- type: accent
+  id: nipoPortuguese
+  regexReplacements:
+        "nh": "ny"
+        "(?<!n)(?<!l)(?<!c)(?<!r)(?<!s)([bcdfghjklpqrsçvwxz])([bcdfghjklmnpqrctçvwxz])": "$1u$2"
+        "(?<!n)(?<!l)(?<!c)(?<!r)(?<!s)([bcdfghjklpqrçvwxz])([bcdfghjklmnpqrstçvwxz])": "$1u$2"
+        "x": "kus"
+        "([bcdfghjklpqstvwçz])\\b": "$1u"
+        "([r])\\b": "h"
+        "l([aeiouáàâãéêíóôõúü])": "r$1"
