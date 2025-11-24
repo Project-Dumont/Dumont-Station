@@ -10,7 +10,7 @@ minesweeper-header = MÓDULO DO SISTEMA :: CAMPO MINADO PRO
 
 minesweeper-controls = CONTROLES
 minesweeper-toggle-flag = Clique Esquerdo - revelar campo
-                          Clique Direito - colocar/remover bandeira
+                          Clique Direito - colocar bandeira
 
 minesweeper-new-game = ● Novo Jogo
 
