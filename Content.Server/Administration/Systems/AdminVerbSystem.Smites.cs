@@ -1034,6 +1034,21 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(superslip);
 
+        var waddlerName = Loc.GetString("admin-smite-waddler-species-swap-name").ToLowerInvariant();
+        Verb waddler = new()
+        {
+            Text = waddlerName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/_Gabystation/Mobs/Species/Waddler/parts.rsi"), "full"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "AdminWaddlerSmite");
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", waddlerName, Loc.GetString("admin-smite-waddler-species-swap-description"))
+        };
+        args.Verbs.Add(waddler);
+
         var omniaccentName = Loc.GetString("admin-smite-omni-accent-name").ToLowerInvariant();
         Verb omniaccent = new()
         {
