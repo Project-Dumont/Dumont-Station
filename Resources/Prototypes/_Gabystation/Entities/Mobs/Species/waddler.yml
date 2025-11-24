@@ -45,6 +45,7 @@
   - type: Sericulture
     productionLength: 2
     entityProduced: SnowBall
+    popupText: snowball-failure-hunger
     hungerCost: 4
     action: ActionSericultureSnowball
   - type: Butcherable
