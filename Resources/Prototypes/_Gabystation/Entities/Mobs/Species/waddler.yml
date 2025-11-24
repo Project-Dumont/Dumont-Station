@@ -58,7 +58,6 @@
   - type: Speech
     speechSounds: Harpy
     speechVerb: Harpy
-    allowedEmotes: ['Thump']
   - type: TypingIndicator
   - type: Vocal
     sounds:
@@ -81,6 +80,7 @@
     damageModifierSet: Scale
   - type: Absorbable
   - type: MeleeWeapon
+    attackRate: 4
     soundHit:
       collection: ToySqueak
     angle: 30
