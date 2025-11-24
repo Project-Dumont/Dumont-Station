@@ -79,7 +79,7 @@
   - type: Absorbable
   - type: MeleeWeapon
     soundHit:
-      collection: Punch
+      collection: ToySqueak
     angle: 30
     animation: WeaponArcPunch
     damage:
