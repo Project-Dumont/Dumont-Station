@@ -41,4 +41,4 @@ objective-show-power-title =
     Mostre {$targetName} o verdadeiro poder do sangue.
 
 objective-drive-insane-title =
-    Faça {$targetName} insanidade com seus sussurros demoníacos.
+    Enlouqueça {$targetName} com seus sussurros demoníacos.
