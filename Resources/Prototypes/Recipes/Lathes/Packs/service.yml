@@ -40,10 +40,9 @@
   - FoodPlateTin
   - FoodPlateMuffinTin
   - FoodKebabSkewer
-  - LightReplacer
+  # - LightReplacer #Gabystation change, moved to LightsStatic latheRecipePack
   - SprayBottle
   - TrashBag
-  - LightReplacer
   - MopItem
   - Holoprojector
   - WetFloorSign

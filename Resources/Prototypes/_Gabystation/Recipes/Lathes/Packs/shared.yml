@@ -1,0 +1,7 @@
+- type: latheRecipePack
+  id: AdvancedMaterialsStatic
+  recipes:
+  - SheetPGlass
+  - SheetRPGlass
+  - SheetUGlass
+  - SheetRUGlass
