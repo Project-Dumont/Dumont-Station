@@ -64,8 +64,9 @@
       Male: MaleWaddler
       Female: FemaleWaddler
       Unsexed: MaleWaddler
-  - type: ReplacementAccent
-    accent: badwordfilter
+  - type: ProfanityFilterAccent
+    words: badwordfilter
+    wordReplacement: "..."
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
