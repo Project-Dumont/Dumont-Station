@@ -87,7 +87,7 @@ public sealed class CriminalStatusSystem : EntitySystem
         if (equip)
             component.Points += points;
         else
-            PointDelay(uid, points, component);
+            PointDelay(uid, points);
 
         return true;
     }
@@ -111,7 +111,7 @@ public sealed class CriminalStatusSystem : EntitySystem
         if (pickup)
             component.Points += points;
         else
-            PointDelay(uid, points, component);
+            PointDelay(uid, points);
 
         return true;
     }
@@ -186,8 +186,12 @@ public sealed class CriminalStatusSystem : EntitySystem
         }
     }
 
-    private void PointDelay(EntityUid uid, float points, CriminalRecordComponent component)
+    private void PointDelay(EntityUid uid, float points)
     {
-        EnsureComp<TimerComponent>(uid).Spawn(Delay, () => component.Points -= points);
+        EnsureComp<TimerComponent>(uid).Spawn(Delay, () =>
+        {
+            if (TryComp<CriminalRecordComponent>(uid, out var currentRecord))
+                currentRecord.Points = Math.Max(0, currentRecord.Points - points);
+        });
     }
 }
