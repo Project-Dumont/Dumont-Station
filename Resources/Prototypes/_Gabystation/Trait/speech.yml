@@ -7,3 +7,23 @@
   components:
   - type: ReplacementAccent
     accent: nipoPortuguese
+
+- type: trait
+  id: sinoPortuguese
+  name: trait-sino-portuguese-name
+  description: trait-sino-portuguese-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: sinoPortuguese
+
+- type: trait
+  id: araboPortuguese
+  name: trait-arabo-portuguese-name
+  description: trait-arabo-portuguese-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: araboPortuguese

@@ -1,0 +1,8 @@
+- type: accent
+  id: sinoPortuguese
+  regexReplacements:
+    "([r])\\b": "h"
+    "rr": "l"
+    "lh": "li"
+    "nh": "ni"
+    "r([aeiouáàâãéêíóôõúü])": "l$1"

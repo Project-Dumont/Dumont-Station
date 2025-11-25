@@ -1,0 +1,10 @@
+- type: accent
+  id: araboPortuguese
+  regexReplacements:
+    "p": "b"
+    "v": "f"
+    "r": "rr"
+    "nh": "ni"
+    "lh": "li"
+    "s\\b": "se"
+    "([ptkbdg])\\b": "\\1e"
