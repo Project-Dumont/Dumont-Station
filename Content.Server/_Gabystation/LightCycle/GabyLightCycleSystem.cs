@@ -18,7 +18,6 @@ using Content.Shared.CCVar;
 using Content.Server.GameTicking;
 using System.Linq;
 using Content.Shared.Light;
-using Content.Server._Gabystation.Niver;
 
 namespace Content.Server.Time
 {
