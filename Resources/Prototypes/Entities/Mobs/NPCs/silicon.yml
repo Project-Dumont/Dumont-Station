@@ -764,18 +764,21 @@
     range: 1
   - type: FactionException
   - type: NPCRetaliation
-    attackMemoryLength: 5
+    attackMemoryLength: 3
   - type: Stunbaton
     energyPerUse: 50
     lightAttackEnergyMultiplier: 2
   - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+    maxCharge: 500
+    startingCharge: 500
   - type: StaminaDamageOnHit
     damage: 5
     overtime: 25
     lightAttackOvertimeDamageMultiplier: 2
     sound: /Audio/Weapons/egloves.ogg
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 3
 
 - type: entity
   parent: MobSecuritron
@@ -791,3 +794,14 @@
         collection: BeepskyTargetFound
       TargetArrestedSound: !type:SoundCollectionSpecifier
         collection: BeepskyTargetArrested
+  - type: NPCRetaliation
+    attackMemoryLength: 5
+  - type: Stunbaton
+    energyPerUse: 50
+    lightAttackEnergyMultiplier: 2
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 4.5
