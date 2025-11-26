@@ -11,6 +11,7 @@ using Content.Shared.Security.Components;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using Robust.Shared.GameObjects;
+using Content.Shared.PDA;
 
 namespace Content.Shared.Security.Systems;
 
@@ -34,6 +35,8 @@ public sealed class CriminalStatusSystem : EntitySystem
 
         SubscribeLocalEvent<CriminalRecordComponent, DidEquipHandEvent>((u, c, a) => OnPickupOrDrop(u, c, a.Equipped, true));
         SubscribeLocalEvent<CriminalRecordComponent, DidUnequipHandEvent>((u, c, a) => OnPickupOrDrop(u, c, a.Unequipped, false));
+
+        SubscribeLocalEvent<PdaComponent, PdaIdChangedEvent>(UpdatePdaId);
     }
 
     private void OnCriminalRecordChanged(EntityUid uid, CriminalRecordComponent component, CriminalRecordChanged args)
@@ -165,6 +168,12 @@ public sealed class CriminalStatusSystem : EntitySystem
         return true;
     }
 
+    private void UpdatePdaId(EntityUid uid, PdaComponent component, PdaIdChangedEvent args)
+    {
+        if (TryComp<CriminalRecordComponent>(Transform(uid).ParentUid, out var criminalRecord))
+            RecalculatePoints((Transform(uid).ParentUid, criminalRecord));
+    }
+
     private float GetPoints(EntityUid uid, float points)
     {
         var ev = new GetCriminalPointsEvent(points);
@@ -193,5 +202,17 @@ public sealed class CriminalStatusSystem : EntitySystem
             if (TryComp<CriminalRecordComponent>(uid, out var currentRecord))
                 currentRecord.Points = Math.Max(0, currentRecord.Points - points);
         });
+    }
+}
+
+public sealed class PdaIdChangedEvent : EntityEventArgs
+{
+    public EntityUid PdaUid;
+    public EntityUid? IdUid;
+
+    public PdaIdChangedEvent(EntityUid pdaUid, EntityUid? idUid)
+    {
+        PdaUid = pdaUid;
+        IdUid = idUid;
     }
 }
