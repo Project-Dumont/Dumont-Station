@@ -5,8 +5,8 @@
 
 - type: entity
   id: BloodCrawlAction
-  name: Excursão Sangrenta
-  description: APAREÇA OU DESAPAREÇA EM QUALQUER LUGAR QUE TENHA SANGUE.
+  name: Blood Crawl
+  description: JAUNT ANYWHERE WHENEVER YOU ARE ON BLOOD
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -19,8 +19,8 @@
 
 - type: entity
   id: DemonicWhisperAction
-  name: Sussurro Demoníaco
-  description: ENVIE UMA MENSAGEM PARA A ALMA DELES, DIRETO DO INFERNO.
+  name: Demonic Whisper
+  description: SEND A MESSAGE TO THEIR SOUL, FROM HELL
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
