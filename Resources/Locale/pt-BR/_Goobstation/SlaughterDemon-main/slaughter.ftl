@@ -19,9 +19,9 @@ laughter-role-greeting =
     Você se move rapidamente ao sair de uma poça de sangue, mas o mundo material logo drenará sua força, deixando você lento.
 
 # actions
-demonic-whisper-title = Sussuro Demoníaco
+demonic-whisper-title = Sussurro Demoníaco
 demonic-whisper-popup = De repente, uma voz estranha e demoníaca ressoa na sua cabeça...
-demonic-whisper-whisper = Você sussura para {$name}: {$message}
+demonic-whisper-whisper = Você sussurra para {$name}: {$message}
 
 # metadata
 name-format-slaughter = {$part1}, o {$part0}
