@@ -10,8 +10,7 @@
   - type: AutoRecharge
     rechargeDuration: 15
   - type: Sprite
-    sprite: Textures/_Gabystation/Objects/Tools/rcdindustrialce.rsi
-    state: icon
+    sprite: _Gabystation/Objects/Tools/rcdindustrialce.rsi
   - type: StaticPrice
     price: 1000
   - type: StealTarget
@@ -22,3 +21,22 @@
   - type: RCD
     availablePrototypes:
     - WallReinforced
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct

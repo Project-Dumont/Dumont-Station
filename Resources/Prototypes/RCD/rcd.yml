@@ -112,7 +112,7 @@
   mode: ConstructObject
   prototype: WallReinforced
   cost: 10
-  delay: 4
+  delay: 6
   collisionMask: FullTileMask
   rotation: Fixed
   fx: EffectRCDConstruct2
