@@ -27,6 +27,7 @@ namespace Content.Client.RCD;
 public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 {
     private const string TopLevelActionCategory = "Main";
+    private const string TopLevelActionCategory = "Main";
 
     private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesGroupingInfo
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
@@ -42,10 +43,14 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["PumpsValves"] = ("rcd-component-pumpsvalves", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/pump_volume.png"))),
             ["Vents"] = ("rcd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/vent_passive.png"))),
             ["SensorsMonitors"] = ("rcd-component-sensorsmonitors", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/alarm.png"))),
+        };
+    private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesNestlingInfo
+        = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
+        {
             // Gabystation - RCDIndustrialCE
-            ["RCDSelect"] = ("rcd-component-rcdindustrialrcd", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rcd.png"))),
-            ["RPDSelect"] = ("rcd-component-rcdindustrialrpd", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rpd.png"))),
-        };        
+            ["RCDall"] = ("rcd-component-rcdall", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rcd.png"))),
+            ["RPDall"] = ("rcd-component-rpdall", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rpd.png"))),
+        };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
@@ -76,57 +81,60 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
     {
         Dictionary<string, List<RadialMenuActionOption>> buttonsByCategory = new();
         ValueList<RadialMenuActionOption> topLevelActions = new();
-        foreach (var protoId in prototypes)
+        foreach (var nestling in prototypesNestlingInfo.TryGetValue(prototypes.Nested, out var nestInfo))
         {
-            var prototype = _prototypeManager.Index(protoId);
-            if (prototype.Category == TopLevelActionCategory)
+            foreach (var protoId in prototypes)
             {
-                var topLevelActionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
+                var prototype = _prototypeManager.Index(protoId);
+                if (prototype.Category == TopLevelActionCategory)
+                {
+                    var topLevelActionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
+                    {
+                        Sprite = prototype.Sprite,
+                        ToolTip = GetTooltip(prototype)
+                    };
+                    topLevelActions.Add(topLevelActionOption);
+                    continue;
+                }
+
+                if (!PrototypesGroupingInfo.TryGetValue(prototype.Category, out var groupInfo))
+                    continue;
+
+                if (!buttonsByCategory.TryGetValue(prototype.Category, out var list))
+                {
+                    list = new List<RadialMenuActionOption>();
+                    buttonsByCategory.Add(prototype.Category, list);
+                }
+
+                var actionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
                 {
                     Sprite = prototype.Sprite,
                     ToolTip = GetTooltip(prototype)
                 };
-                topLevelActions.Add(topLevelActionOption);
-                continue;
+                list.Add(actionOption);
             }
 
-            if (!PrototypesGroupingInfo.TryGetValue(prototype.Category, out var groupInfo))
-                continue;
-
-            if (!buttonsByCategory.TryGetValue(prototype.Category, out var list))
+            var models = new RadialMenuOption[buttonsByCategory.Count + topLevelActions.Count];
+            var i = 0;
+            foreach (var (key, list) in buttonsByCategory)
             {
-                list = new List<RadialMenuActionOption>();
-                buttonsByCategory.Add(prototype.Category, list);
+                var groupInfo = PrototypesGroupingInfo[key];
+                models[i] = new RadialMenuNestedLayerOption(list)
+                {
+                    Sprite = groupInfo.Sprite,
+                    ToolTip = Loc.GetString(groupInfo.Tooltip)
+                };
+                i++;
             }
 
-            var actionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
+            foreach (var action in topLevelActions)
             {
-                Sprite = prototype.Sprite,
-                ToolTip = GetTooltip(prototype)
-            };
-            list.Add(actionOption);
-        }
+                models[i] = action;
+                i++;
+            }
 
-        var models = new RadialMenuOption[buttonsByCategory.Count + topLevelActions.Count];
-        var i = 0;
-        foreach (var (key, list) in buttonsByCategory)
-        {
-            var groupInfo = PrototypesGroupingInfo[key];
-            models[i] = new RadialMenuNestedLayerOption(list)
-            {
-                Sprite = groupInfo.Sprite,
-                ToolTip = Loc.GetString(groupInfo.Tooltip)
-            };
-            i++;
+            return models;
         }
-
-        foreach (var action in topLevelActions)
-        {
-            models[i] = action;
-            i++;
-        }
-
-        return models;
     }
 
     private void HandleMenuOptionClick(RCDPrototype proto)

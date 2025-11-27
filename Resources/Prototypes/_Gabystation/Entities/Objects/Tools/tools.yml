@@ -20,23 +20,5 @@
     - HighRiskItem
   - type: RCD
     availablePrototypes:
-    - WallReinforced
-    - WallSolid
-    - FloorSteel
-    - Plating
-    - Catwalk
-    - Grille
-    - Window
-    - WindowDirectional
-    - WindowReinforcedDirectional
-    - ReinforcedWindow
-    - Airlock
-    - AirlockGlass
-    - Firelock
-    - TubeLight
-    - BulbLight
-    - LVCable
-    - MVCable
-    - HVCable
-    - CableTerminal
-    - Deconstruct
+    - RCDSelect
+    - RPDSelect
