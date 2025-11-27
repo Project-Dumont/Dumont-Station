@@ -10,8 +10,7 @@
   - type: AutoRecharge
     rechargeDuration: 15
   - type: Sprite
-    sprite: Textures/_Gabystation/Objects/Tools/rcdindustrialce.rsi
-    state: icon
+    sprite: _Gabystation/Objects/Tools/rcdindustrialce.rsi
   - type: StaticPrice
     price: 1000
   - type: StealTarget
@@ -21,4 +20,5 @@
     - HighRiskItem
   - type: RCD
     availablePrototypes:
-    - WallReinforced
+    - RCDSelect
+    - RPDSelect
