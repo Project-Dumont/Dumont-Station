@@ -12,7 +12,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Genetics;
 using Content.Shared.Genetics.Systems;

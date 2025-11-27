@@ -2,7 +2,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Genetics;
 using Content.Shared.Genetics.Systems;
 using Content.Shared.Genetics.UI;

@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Genetics;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
