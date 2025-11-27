@@ -12,6 +12,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Goobstation.Common.CCVar;
+using Content.Shared.Chat; // Corvax-Wega-Deafness
 
 namespace Content.Goobstation.Client.Barks;
 

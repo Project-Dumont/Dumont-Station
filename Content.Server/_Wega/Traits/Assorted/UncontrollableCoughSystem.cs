@@ -1,4 +1,4 @@
-using Content.Server.Disease;
+using Content.Server.Chat.Systems;
 using Content.Shared.Standing;
 using Robust.Shared.Random;
 
@@ -7,7 +7,7 @@ namespace Content.Server.Traits.Assorted;
 public sealed class UncontrollableCoughSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly DiseaseSystem _diseaseSystem = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
 
     public override void Initialize()
     {
@@ -35,8 +35,9 @@ public sealed class UncontrollableCoughSystem : EntitySystem
             snough.NextIncidentTime +=
                 _random.NextFloat(snough.TimeBetweenIncidents.X, snough.TimeBetweenIncidents.Y);
 
-            RaiseLocalEvent(ent, new DropHandItemsEvent());
-            _diseaseSystem.SneezeCough(ent, null, snough.EmoteId, false);
+            var dropEvent = new DropHandItemsEvent();
+            RaiseLocalEvent(ent, ref dropEvent);
+            _chat.TryEmoteWithChat(ent, snough.EmoteId);
         }
     }
 }

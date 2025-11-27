@@ -318,7 +318,6 @@ namespace Content.Server.Genetics.System
             return mobState switch
             {
                 MobState.Alive => Loc.GetString("dna-modifier-entity-alive-text"),
-                MobState.PreCritical => Loc.GetString("dna-modifier-entity-critical-text"),
                 MobState.Critical => Loc.GetString("dna-modifier-entity-critical-text"),
                 MobState.Dead => Loc.GetString("dna-modifier-entity-dead-text"),
                 _ => Loc.GetString("dna-modifier-entity-unknown-text"),

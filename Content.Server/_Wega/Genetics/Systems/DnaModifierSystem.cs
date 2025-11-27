@@ -828,7 +828,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             _buckle.TryUnbuckle(target, target, true);
             var child = _entManager.SpawnEntity(component.Lowest, Transform(target).Coordinates);
             if (TryComp<DamageableComponent>(child, out var damageParent)
-                && _mobThreshold.GetScaledDamage(target, child, out var damage) && damage != null)
+                && _mobThreshold.GetScaledDamage(target, child, out var damage, out _) && damage != null)
             {
                 _damage.SetDamage(child, damageParent, damage);
             }
@@ -910,7 +910,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                     _mindSystem.TransferTo(mindIdLowest, parent, mind: mindLowest);
 
                 if (TryComp<DamageableComponent>(parent, out var parentDamage)
-                    && _mobThreshold.GetScaledDamage(target, parent, out var damageLowest) && damageLowest != null)
+                    && _mobThreshold.GetScaledDamage(target, parent, out var damageLowest, out _) && damageLowest != null)
                 {
                     _damage.SetDamage(parent, parentDamage, damageLowest);
                 }
@@ -939,7 +939,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             _buckle.TryUnbuckle(target, target, true);
             var child = _entManager.SpawnEntity(component.Upper, Transform(target).Coordinates);
             if (TryComp<DamageableComponent>(child, out var damageParent)
-                && _mobThreshold.GetScaledDamage(target, child, out var damage) && damage != null)
+                && _mobThreshold.GetScaledDamage(target, child, out var damage, out _) && damage != null)
             {
                 _damage.SetDamage(child, damageParent, damage);
             }
