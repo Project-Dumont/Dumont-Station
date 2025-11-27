@@ -159,6 +159,12 @@
   id: GasRecyclerMachineCircuitboard
   icon: { sprite:  Structures/Machines/gasrecycler.rsi, state: icon } # Goobstation
   result: GasRecyclerMachineCircuitboard
+  
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: BluespaceGasVendorMachineCircuitBoard
+  icon: { sprite:  _Funkystation/Structures/Machines/bluespacegasvendor.rsi, state: icon } # Funkystation
+  result: BluespaceGasVendorMachineCircuitBoard
 
 # Power
 - type: latheRecipe

@@ -130,7 +130,6 @@
 # SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
@@ -1538,6 +1537,20 @@
       stackRequirements:
         Manipulator: 10
         Steel: 5
+
+- type: entity
+  id: BluespaceGasVendorMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: bluespace gas vendor machine board
+  description: A machine printed board for a bluespace gas vendor machine.
+  components:
+    - type: MachineBoard
+      prototype: BluespaceVendor
+      stackRequirements:
+       Steel: 4
+       Manipulator: 4
+       Plasma: 2
+       Glass: 2
 
 - type: entity
   id: ThermomachineUpgradedFreezerMachineCircuitBoard
