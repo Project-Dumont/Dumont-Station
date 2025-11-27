@@ -13,14 +13,19 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 PraxisMapper <praxismapper@gmail.com>
-// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Token <esil.bektay@yandex.com>
 // SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 CrimeMoot <wakeafa@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Ganimed.SeedDna.System;
 using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Server.EntityEffects;
@@ -35,10 +40,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Botany;
 
-[Prototype]
+[Prototype("seed")]
 public sealed partial class SeedPrototype : SeedData, IPrototype
 {
-    [IdDataField] public string ID { get; private set; } = default!;
+    [IdDataField] public string ID { get; private init; } = default!;
 }
 
 public enum HarvestType : byte
@@ -105,7 +110,7 @@ public partial struct SeedChemQuantity
 
 // TODO reduce the number of friends to a reasonable level. Requires ECS-ing things like plant holder component.
 [Virtual, DataDefinition]
-[Access(typeof(BotanySystem), typeof(PlantHolderSystem), typeof(SeedExtractorSystem), typeof(PlantHolderComponent), typeof(EntityEffect), typeof(MutationSystem))]
+[Access(typeof(BotanySystem), typeof(PlantHolderSystem), typeof(SeedExtractorSystem), typeof(PlantHolderComponent), typeof(EntityEffect), typeof(MutationSystem), typeof(SeedDnaConsoleSystem))] // _Ganimed
 public partial class SeedData
 {
     #region Tracking

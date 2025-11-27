@@ -3,6 +3,8 @@
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
@@ -10,6 +12,8 @@
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -72,8 +76,6 @@ using Content.Shared.Damage.Components;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Server.Cloning;
-using Content.Server.NPC.HTN;
-using Content.Server.NPC.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Heretic.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -132,8 +134,6 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly PvsOverrideSystem _pvs = default!;
     [Dependency] private readonly CloningSystem _cloning = default!;
-    [Dependency] private readonly HTNSystem _htn = default!;
-    [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _modifier = default!;
 
     private static readonly ProtoId<HereticRitualPrototype> BladeBladeRitual = "BladeBlade";

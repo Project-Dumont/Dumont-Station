@@ -127,7 +127,8 @@
 
 using System.Linq;
 using System.Numerics;
-using Content.Goobstation.Common.CCVar; // Goobstation
+using Content.Goobstation.Common.CCVar;
+using Content.Goobstation.Common.Projectiles; // Goobstation
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Cargo.Systems;
@@ -163,6 +164,7 @@ using Robust.Shared.Random;
 using Content.Shared.Decals;
 using Content.Server.Decals;
 using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Targeting;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -185,6 +187,7 @@ public sealed partial class GunSystem : SharedGunSystem
     // Goobstation
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private const float DamagePitchVariation = 0.05f;
@@ -420,8 +423,18 @@ public sealed partial class GunSystem : SharedGunSystem
                         var dmg = hitscan.Damage;
 
                         var hitName = ToPrettyString(hitEntity);
+                        // Goob edit start
                         if (dmg != null)
-                            dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user);
+                        {
+                            dmg = Damageable.TryChangeDamage(hitEntity,
+                                dmg * Damageable.UniversalHitscanDamageModifier,
+                                origin: user,
+                                targetPart: GetTargetPart(lastUser,
+                                    new MapCoordinates(toMap, fromMap.MapId),
+                                    _transform.GetMapCoordinates(hitEntity)),
+                                canBeCancelled: true); // Shitmed Change
+                        }
+                        // Goob edit end
 
                         // check null again, as TryChangeDamage returns modified damage values
                         if (dmg != null)
@@ -508,6 +521,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         FiredProjectile = newuid
                     });
+                    SetProjectilePerfectHitEntities(newuid, user, new MapCoordinates(toMap, fromMap.MapId));
                     ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user, targetCoordinates: toMapBeforeRecoil); // Goobstation
                     shotProjectiles.Add(newuid);
                 }
@@ -647,6 +661,53 @@ public sealed partial class GunSystem : SharedGunSystem
             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
         }
     }
+
+    // Goobstation start
+    public TargetBodyPart? GetTargetPart(Entity<TargetingComponent?>? ent,
+        MapCoordinates shootCoords,
+        MapCoordinates targetCoords)
+    {
+        if (shootCoords.MapId != targetCoords.MapId || ent == null)
+            return null;
+
+        var targeting = ent.Value;
+
+        if (!Resolve(targeting, ref targeting.Comp, false))
+            return null;
+
+        var dist = (shootCoords.Position - targetCoords.Position).Length();
+        var missChance = MathHelper.Lerp(0f, 1f, Math.Clamp(dist / 2f, 0f, 1f));
+        return Random.Prob(missChance) ? TargetBodyPart.Chest : targeting.Comp.Target;
+    }
+
+    private void SetProjectilePerfectHitEntities(EntityUid projectile,
+        Entity<TargetingComponent?>? shooter,
+        MapCoordinates coords)
+    {
+        if (shooter == null)
+            return;
+
+        var ent = shooter.Value;
+
+        if (!Resolve(ent, ref ent.Comp, false))
+            return;
+
+        var comp = EnsureComp<ProjectileMissTargetPartChanceComponent>(projectile);
+        var look = _lookup.GetEntitiesInRange<BodyComponent>(coords, 2f, LookupFlags.Dynamic);
+        foreach (var (uid, body) in look)
+        {
+            if (body.BodyType != Shared._Shitmed.Body.BodyType.Complex)
+                continue;
+
+            var part = GetTargetPart(shooter, coords, _transform.GetMapCoordinates(ent));
+
+            if (part is null or TargetBodyPart.Chest)
+                continue;
+
+            comp.PerfectHitEntities.Add(uid);
+        }
+    }
+    // Goobstation end
 
     private void ShootOrThrow(EntityUid uid, Vector2 mapDirection, Vector2 gunVelocity, GunComponent gun, EntityUid gunUid, EntityUid? user, Vector2? targetCoordinates = null) // Goobstation
     {

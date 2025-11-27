@@ -821,6 +821,74 @@
   - type: Construction
     node: pressureregulatorAlt2
 
+# HeatExchanger
+
+- type: entity
+  parent: [GasPipeLayerAlt1, HeatExchanger]
+  id: HeatExchangerAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heStraight
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: radiatorAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, HeatExchanger]
+  id: HeatExchangerAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heStraight
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: radiatorAlt2
+
+# HeatExchangerBend
+
+- type: entity
+  parent: [GasPipeLayerAlt1, HeatExchangerBend]
+  id: HeatExchangerBendAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeBend
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: bendradiatorAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, HeatExchangerBend]
+  id: HeatExchangerBendAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeBend
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: bendradiatorAlt2
+
 # GasPipeSensor
 
 - type: entity

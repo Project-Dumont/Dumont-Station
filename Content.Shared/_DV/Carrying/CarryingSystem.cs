@@ -1,12 +1,19 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 X <70487315+XWasHere@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+// SPDX-FileCopyrightText: 2025 thetuerk <46725294+ThanosDeGraf@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -111,7 +118,8 @@ public sealed class CarryingSystem : EntitySystem
         // If the person is carrying someone, and the carried person is a pseudo-item, and the target entity is a storage,
         // then add an action to insert the carried entity into the target
         // AKA put carried felenid into a duffelbag
-        if (args.Using is not {} carried || !args.CanAccess || !TryComp<PseudoItemComponent>(carried, out var pseudoItem))
+        var carried = ent.Comp.Carried; // Goob edit start - It made ZERO sense to grab args.Using, which would point to a virtual item.
+        if (!args.CanAccess || !TryComp<PseudoItemComponent>(ent.Comp.Carried, out var pseudoItem)) // Goob edit end - OF COURSE if you have CarryingComponent you are carrying something, why even check that.
             return;
 
         var target = args.Target;

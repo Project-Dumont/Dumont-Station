@@ -51,6 +51,7 @@
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Perry Fraser <perryprog@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Wolfkey-SomeoneElseTookMyUsername <wolfkey75@gmail.com>
 # SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
@@ -1126,7 +1127,27 @@
   startNode: start
   targetNode: radiator
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerAlt1
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: radiatorAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerAlt2
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: radiatorAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
 
 # bend radiator
@@ -1138,7 +1159,29 @@
   startNode: start
   targetNode: bendradiator
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerBendAlt1
+  hide: true
+  name: construction-recipe-heat-exchanger-bend
+  graph: GasBinary
+  startNode: start
+  targetNode: bendradiatorAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerBendAlt2
+  hide: true
+  name: construction-recipe-heat-exchanger-bend
+  graph: GasBinary
+  startNode: start
+  targetNode: bendradiatorAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
 
 # heat pump

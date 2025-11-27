@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -55,10 +60,13 @@ public sealed partial class SlotMachineComponent : Component
     [DataField, AutoNetworkedField]
     public EntProtoId GodPotPrize = "WeaponShotgunHeavy";
 
+    [DataField, AutoNetworkedField]
+    public bool Emagged;
+
     #region Prize Amounts
 
     [DataField, AutoNetworkedField]
-    public int SpinCost = 50;
+    public int SpinCost = 300;
 
     [DataField, AutoNetworkedField]
     public int SmallPrizeAmount = 100;

@@ -108,6 +108,7 @@
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OttavioBasques <138228340+OttavioBasques@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 OttavioBasques <otaviobasques@gmail.com>
 # SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Phooooooooooooooooooooooooooooooosphate <184853112+Phooooooooooooooooooooooooooooooosphate@users.noreply.github.com>
@@ -119,6 +120,7 @@
 # SPDX-FileCopyrightText: 2025 VictorJob <victorjobnogueira12@gmail.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
@@ -144,7 +146,7 @@
   - Animals
   - GroupSpeciesBreathTool
   - CaptainGloves
-  - CivilianJumpsuitRequired
+  - CivilianJumpsuit
   - CivilianBackpack
   - CivilianHat
   - CivilianNeck
@@ -174,7 +176,7 @@
   - Animals
   - GroupSpeciesBreathTool
   - HoPGloves
-  - CivilianJumpsuitRequired
+  - CivilianJumpsuit
   - CivilianBackpack
   - CivilianHat
   - CivilianNeck
@@ -205,7 +207,7 @@
   groups:
   - GroupTankHarness
   - CivilianJumpsuitRequired
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - CivilianHat
   - CivilianNeck
   - CivilianFace
@@ -229,7 +231,7 @@
   - GroupTankHarness
   - BartenderHead
   - BartenderJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - BartenderOuterClothing
   - Glasses
   - Survival
@@ -255,7 +257,7 @@
   groups:
   - GroupTankHarness
   - BartenderJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -281,7 +283,7 @@
   - ChefHead
   - ChefMask
   - ChefJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - ChefOuterClothing
   - Glasses
   - Survival
@@ -307,7 +309,7 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -332,7 +334,7 @@
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -359,7 +361,7 @@
   - ChaplainMask
   - ChaplainNeck
   - ChaplainJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - ChaplainOuterClothing
   - Glasses
   - Survival
@@ -386,7 +388,7 @@
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - JanitorOuterClothing
   - Glasses
   - Survival
@@ -494,7 +496,7 @@
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - MusicianOuterClothing
   - Glasses
   - Survival
@@ -1074,7 +1076,7 @@
   - ZookeeperHead
   - ZookeeperJumpsuit
   - GroupTankHarness
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1099,7 +1101,7 @@
   - GroupTankHarness
   - ReporterJumpsuit
   - ReporterOuterClothing # Goobstation - Bodycams
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets
@@ -1150,7 +1152,7 @@
   - GroupTankHarness
   - BoxerJumpsuit
   - BoxerGloves
-  - CivilianBackpack
+  - CivilianBackpackRequired
   - Glasses
   - Survival
   - Trinkets

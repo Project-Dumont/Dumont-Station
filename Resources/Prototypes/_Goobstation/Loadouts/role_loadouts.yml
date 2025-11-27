@@ -249,3 +249,27 @@
   id: RoleSurvivalPlasmaTank
   groups:
   - GroupEVATankPlasma
+
+# Event-restricted roles
+
+- type: roleLoadout
+  id: JobSecurityClown
+  groups:
+  - ClownBackpack
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobCommandMaid
+  groups:
+  - CivilianBackpack
+  - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobPartyMaker
+  groups:
+  - GroupTankHarness
+  - CivilianBackpack
+  - Survival
+  - GroupSpeciesBreathTool

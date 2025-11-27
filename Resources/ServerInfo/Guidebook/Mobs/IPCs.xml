@@ -14,7 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   IPCs não podem ser hackeados por Emags já que não precisam seguir nenhuma diretiva predefinida em seus sistemas. [color=red]IPCs são seres similares aos de silício, então são normalmente curados pela Ciência ou Engenharia ao invés de Médicos.[/color]
 
-  Eles [color=#1e90ff]tomam 20% menos dano Bruto[/color], [color=#ec3a3a]70% mais dano de Calor[/color] e [color=#ec3a3a]100% mais dano de Choque[/color]. Ao contrário dos ciborgues, eles [bold]tomam dano de Radiação[/bold], mas [color=#1e90ff]60% reduzido[/color]. Eles são feitos de ligas pesadas, os fazendo mais difíceis de serem puxados, mas os facilitando a puxar espécies mais leves.
+  Eles [color=#1e90ff]tomam 20% menos dano Bruto[/color], [color=#ec3a3a]70% mais dano de Calor[/color] e [color=#ec3a3a]100% mais dano de Choque[/color]. Ao contrário dos ciborgues, eles [bold]tomam dano de Radiação[/bold], mas [color=#1e90ff]60% reduzido[/color]. Eles são feitos de ligas pesadas, os fazendo mais difíceis de serem puxados, mas os facilitando a puxar espécies mais leves. Eles também não tem ossos.
 
   <Box>
     <GuideEntityEmbed Entity="PositronicBrain" Caption="Cérebro Positrônico"/>

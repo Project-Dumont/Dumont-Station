@@ -1,0 +1,92 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  id: PartWaddler
+  parent: [BaseItem, BasePart]
+  name: "waddler body part"
+  abstract: true
+  components:
+  - type: Icon
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+  - type: BodyPart
+    species: Waddler
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+  - type: Damageable
+    damageModifierSet: Scale
+
+- type: entity
+  id: ChestWaddler
+  name: "waddler chest"
+  parent: [PartWaddler, BaseChest]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "chest_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadWaddler
+  name: "waddler head"
+  parent: [PartWaddler, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftHandWaddler
+  name: "left waddler flipper"
+  parent: [PartWaddler, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandWaddler
+  name: "right waddler flipper"
+  parent: [PartWaddler, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftFootWaddler
+  name: "left waddler foot"
+  parent: [PartWaddler, BaseWaddlerLeftFoot]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootWaddler
+  name: "right waddler foot"
+  parent: [PartWaddler, BaseWaddlerRightFoot]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "r_foot"

@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 # SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -63,3 +64,33 @@
   - type: Tag
     tags:
       - RoundstartAntag
+
+- type: entity
+  id: MalfAi
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 20
+  - type: MalfAiRule
+  - type: AntagObjectives
+    objectives:
+    - MalfAiSurviveObjective
+  - type: AntagRandomObjectives
+    sets:
+    - groups: MalfAiSabotageObjectives
+      maxPicks: 3
+    maxDifficulty: 8
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    definitions:
+    - prefRoles: [ MalfunctioningAI ]
+      max: 1
+      allowNonHumans: true
+      briefing:
+        text: roles-antag-malfunctioning-ai-briefing
+        color: Red
+        sound: "/Audio/_Funkystation/Ambience/Antag/malfai_start.ogg"
+      components:
+      - type: MalfunctioningAi
+      mindRoles:
+      - MindRoleMalfAi

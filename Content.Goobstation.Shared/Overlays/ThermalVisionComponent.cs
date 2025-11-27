@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
@@ -18,7 +21,7 @@ public sealed partial class ThermalVisionComponent : SwitchableVisionOverlayComp
 {
     public override EntProtoId? ToggleAction { get; set; } = "ToggleThermalVision";
 
-    public override Color Color { get; set; } = Color.FromHex("#d06764");
+    public override Color Color { get; set; } = Color.FromHex("#d9afad");
 
     [DataField]
     public float LightRadius = 2f;

@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: language
+  id: TicTacToe
+  isVisibleLanguage: true
+  speech:
+    color: "#FFFFFF"
+    fontId: TicTacToe
+    fontSize: 6
+  obfuscation:
+    !type:NoObfuscation

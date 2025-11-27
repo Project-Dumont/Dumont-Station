@@ -55,6 +55,7 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BWTCK <193008538+BWTCK@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Clinux <160202097+cohanna@users.noreply.github.com>
@@ -62,13 +63,16 @@
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Lucasalemao10 <100492096+Lucasalemao10@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Lumminal <81829924+Lumminal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Red <96445749+TheShuEd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 SharkSnake98 <peanutbuttersharky@gmail.com>
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 cohanna <conornhanna@gmail.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 # SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
@@ -253,6 +257,9 @@
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
           shouldHave: false
+        - !type:OrganType # GabyStation - Oni takes 0,8 less poison damage
+          type: Oni
+          shouldHave: false
         damage:
           types:
             Poison: 1
@@ -285,6 +292,13 @@
           groups:
             Brute: -1
             Burn: -1
+      - !type:HealthChange # GabyStation - Oni heals 2 brute from alcohol
+        conditions:
+        - !type:OrganType
+          type: Oni
+        damage:
+          groups:
+            Brute: -2
       - !type:ModifyBloodLevel # Goobstation
         conditions:
         - !type:ReagentThreshold
@@ -318,6 +332,9 @@
           shouldHave: false
         - !type:OrganType # Goobstation - Yowie
           type: Yowie
+          shouldHave: false
+        - !type:OrganType # GabyStation - Oni don't vomit
+          type: Oni
           shouldHave: false
       - !type:Drunk
         boozePower: 2

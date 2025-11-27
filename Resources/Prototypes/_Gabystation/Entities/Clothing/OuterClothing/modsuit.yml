@@ -1,0 +1,83 @@
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingModsuitChestplateMining
+  name: pioneer modsuit chestplate
+  description: A modular hardsuit cover with extra coating for mining operations.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: AllowSuitStorage
+  - type: Sprite
+    sprite: _Gabystation/Clothing/OuterClothing/Modsuits/mining.rsi
+    layers:
+    - state: chestplate
+    - state: chestplate-sealed
+      visible: false
+      map: [ "sealed" ]
+  - type: Clothing
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    slots: [ outerClothing ]
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: SealableClothing
+    sealUpPopup: sealable-clothing-seal-up-chestplate
+    sealDownPopup: sealable-clothing-seal-down-chestplate
+  - type: SealableClothingVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING-sealed
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-sealed-vox
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-sealed-reptilian
+      outerClothing-resomi:
+      - state: equipped-OUTERCLOTHING-sealed-resomi
+  - type: ModifyDelayedKnockdown
+    delayDelta: 1.5
+    knockdownTimeDelta: -1.5
+  - type: StaminaResistance
+    damageCoefficient: 0.85
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.3
+      OrganDamage: 0.3
+      BoneDamage: 0.3
+      VeinsDamage: 0
+      NerveDamage: 0
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Hand
+    - Leg
+    - Foot
+    - Tail
+    - Other
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.6
+        Radiation: 0.1
+  - type: ComponentToggler
+    components:
+    - type: PressureProtection
+      highPressureMultiplier: 0.3
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coolingCoefficient: 0.01
+      heatingCoefficient: 0.01
+  - type: FireProtection
+    reduction: 0.5
+

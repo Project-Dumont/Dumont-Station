@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -170,17 +172,6 @@ public abstract class SharedMansusGraspSystem : EntitySystem
 
                     AddComp(target, ghoul);
                     RemCompDeferred<HereticCombatMarkComponent>(target);
-                    if (TryComp(target, out FleshMimickedComponent? mimicked))
-                    {
-                        foreach (var mimic in mimicked.FleshMimics)
-                        {
-                            if (!Exists(mimic))
-                                continue;
-
-                            _faction.DeAggroEntity(mimic, target);
-                        }
-                        RemCompDeferred(target, mimicked);
-                    }
                 }
 
                 break;
