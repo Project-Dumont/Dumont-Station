@@ -56,7 +56,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
-        base.Open();
+        base.Open()asd;
 
         if (!EntMan.TryGetComponent<RCDComponent>(Owner, out var rcd))
             return;
