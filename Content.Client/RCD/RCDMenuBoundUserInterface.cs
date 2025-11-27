@@ -42,7 +42,10 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["PumpsValves"] = ("rcd-component-pumpsvalves", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/pump_volume.png"))),
             ["Vents"] = ("rcd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/vent_passive.png"))),
             ["SensorsMonitors"] = ("rcd-component-sensorsmonitors", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/alarm.png"))),
-        };
+            // Gabystation - RCDIndustrialCE
+            ["RCDSelect"] = ("rcd-component-rcdindustrialrcd", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rcd.png"))),
+            ["RPDSelect"] = ("rcd-component-rcdindustrialrpd", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rpd.png"))),
+        };        
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;

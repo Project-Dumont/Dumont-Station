@@ -1,14 +1,24 @@
 - type: entity
-  parent: RCD
+  parent: [RCD, BaseGrandTheftContraband]
   id: RCDIndustrialCE
   name: Industrial RCD
   description: An experimental advanced Rapid Construction Device designed for heavy-duty construction tasks. It features enhanced features, combining both an RCD and RPD, making it ideal for the CE's large-scale projects.
-  suffix: AutoRecharge
+  suffix: DO NOT MAP
   components:
   - type: LimitedCharges
     maxCharges: 30
   - type: AutoRecharge
     rechargeDuration: 15
   - type: Sprite
-    sprite: Objects/Tools/rcdindustrialce.rsi
+    sprite: Textures/_Gabystation/Objects/Tools/rcdindustrialce.rsi
     state: icon
+  - type: StaticPrice
+    price: 1000
+  - type: StealTarget
+    stealGroup: ClothingShoesBootsMagAdv
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: RCD
+    availablePrototypes:
+    - WallReinforced
