@@ -1,4 +1,5 @@
 using Robust.Shared.Random;
+using Content.Shared.Speech;
 
 namespace Content.Server.Speech.EntitySystems
 {
