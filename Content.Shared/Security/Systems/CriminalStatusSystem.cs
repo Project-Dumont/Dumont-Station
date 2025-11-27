@@ -123,14 +123,7 @@ public sealed class CriminalStatusSystem : EntitySystem
     {
         var departments = new HashSet<ProtoId<DepartmentPrototype>>(contraband.AllowedDepartments);
 
-        HashSet<ProtoId<AccessLevelPrototype>> jobs = new();
-        foreach (var jobId in contraband.AllowedJobs)
-        {
-            if (!_prototype.TryIndex(jobId, out var job))
-                continue;
-
-            jobs.UnionWith(job.Access);
-        }
+        departments.UnionWith(contraband.AllowedDepartmentsContraband);
 
         if (_id.TryFindIdCards(uid, out var ids))
         {
@@ -142,15 +135,23 @@ public sealed class CriminalStatusSystem : EntitySystem
                         return true;
                 }
 
-                var access = _access.TryGetTags(id.Owner);
-
-                if (access == null)
-                    continue;
-
-                foreach (var job in access)
+                if (contraband.AllowedJobs.Count > 0)
                 {
-                    if (jobs.Contains(job))
-                        return true;
+                    var access = _access.TryGetTags(id.Owner);
+                    if (access == null) 
+                        continue;
+
+                    foreach (var allowedJobId in contraband.AllowedJobs)
+                    {
+                        if (!_prototype.TryIndex(allowedJobId, out var jobProto))
+                            continue;
+
+                        if (jobProto.Access.Count == 0)
+                            continue;
+
+                        if (jobProto.Access.All(requiredAccess => access.Contains(requiredAccess)));
+                            return true;
+                    }
                 }
             }
         }
