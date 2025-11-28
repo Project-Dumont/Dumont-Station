@@ -20,5 +20,6 @@
     - HighRiskItem
   - type: RCD
     availablePrototypes:
+    - WallReinforced
     - RCDSelect
     - RPDSelect
