@@ -35,7 +35,7 @@ SPDX-License-Identifier: MIT
 
   [bold]6.[/bold] Técnicos de Carga não podem autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do Intendente Logístico;
 
-  [bold]7.[/bold] Técnicos de Carga devem garantir que pelo menos uma cópia de cada Formulário de Pedido (ou seja, os formulários produzidos pelo Console de Pedidos) seja mantida dentro da Carga.
+  [bold]7.[/bold] Técnicos de Carga devem garantir que pelo menos uma cópia de cada Formulário de Pedido (ou seja, os formulários produzidos pelo Console de Pedidos) seja mantida dentro da Carga;
 
   [bold]8.[/bold] Técnicos de Carga devem devolver todas as caixas que foram pedidas, com o manifesto carimbado dentro da caixa;
 
@@ -67,9 +67,9 @@ SPDX-License-Identifier: MIT
   
   [bold]2.[/bold] A nave de transporte para a lavaland é recomendada apenas para esse serviço, devido ao auto-piloto que pode ser imprevisível;
 
-  [bold]3.[/bold] Naves extras podem ser pedidas via fax pelo Intendente de Carga ou Capitão caso a doca da cargo precise. (O custo será muito caro.);
+  [bold]3.[/bold] Naves extras podem ser pedidas via fax pelo Intendente Logístico ou Capitão caso a doca da cargo precise. (O custo será muito caro.);
 
   [bold]4.[/bold] Em situação de naufrago no espaço ambas as naves podem ser usadas para o resgate;
 
-  [bold]5.[/bold] A nave da Cargo e transporte para lavaland deve estar docada e pronta para evacuação de civis em caso de alerta delta. A evacuação só deve acontecer quando os civis estiverem seguros ou houver destruição imediata da estação..
+  [bold]5.[/bold] A nave da Cargo e transporte para lavaland deve estar docada e pronta para evacuação de civis em caso de alerta delta. A evacuação só deve acontecer quando os civis estiverem seguros ou houver destruição imediata da estação;
 </Document>
