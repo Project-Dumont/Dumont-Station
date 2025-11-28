@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseCEStealObjective
+  id: CEProtoRCDStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: ProtoRCD
+  - type: Objective
+    difficulty: 3

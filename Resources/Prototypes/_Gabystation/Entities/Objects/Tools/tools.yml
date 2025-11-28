@@ -1,7 +1,7 @@
 - type: entity
-  parent: [RCD, BaseGrandTheftContraband]
-  id: RCDIndustrialCE
-  name: Industrial RCD
+  parent: [RCD, BaseCommandContraband, BaseGrandTheftContraband]
+  id: RCDProtoCE
+  name: Proto RCD
   description: An experimental advanced Rapid Construction Device designed for heavy-duty construction tasks. It features enhanced features, combining both an RCD and RPD, making it ideal for the CE's large-scale projects.
   suffix: DO NOT MAP
   components:
@@ -10,17 +10,17 @@
   - type: AutoRecharge
     rechargeDuration: 15
   - type: Sprite
-    sprite: _Gabystation/Objects/Tools/rcdindustrialce.rsi
+    sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
   - type: StaticPrice
     price: 1000
   - type: StealTarget
-    stealGroup: ClothingShoesBootsMagAdv
+    stealGroup: ProtoRCD
   - type: Tag
     tags:
     - HighRiskItem
   - type: RCD
     isRpd: true
-    availablePrototypes:
+    availablePrototypes: #TODO Tentar fazer o Nestling funcionar
     - WallReinforced
     - WallSolid
     - FloorSteel
