@@ -27,7 +27,7 @@ namespace Content.Client.RCD;
 public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 {
     private const string TopLevelActionCategory = "Main";
-    private const string TopLevelActionCategory = "Main";
+    private const string TopLevelActionCategory = "NotMain";
 
     private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesGroupingInfo
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
