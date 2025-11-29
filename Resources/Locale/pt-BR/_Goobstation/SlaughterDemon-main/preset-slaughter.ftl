@@ -1,5 +1,5 @@
 objective-condition-slaughter-devour-title = DEVORAR
-objective-condition-slaughter-devour-desc = Devorar {$count} crewmembers.
+objective-condition-slaughter-devour-desc = Devorar {$count} tripulantes.
 
 objective-condition-kill-wizard-first = [color=#FF0000]PRIMEIRO,[/color]
 objective-condition-kill-everyone-else = [color=#FF0000]SEGUNDO,[/color]
