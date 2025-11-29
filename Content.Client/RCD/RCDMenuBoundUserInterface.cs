@@ -10,6 +10,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.RCD;
@@ -27,7 +28,7 @@ namespace Content.Client.RCD;
 public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 {
     private const string TopLevelActionCategory = "Main";
-    private const string TopLevelActionCategory = "NotMain";
+    // private const string TopLevelActionCategory = "NotMain";
 
     private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesGroupingInfo
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
@@ -48,8 +49,8 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
         {
             // Gabystation - Nestling categories
-            ["RCDall"] = ("rcd-component-rcdall", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rcd.png"))),
-            ["RPDall"] = ("rcd-component-rpdall", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCDIndustrialCE/rpd.png"))),
+            ["RCDall"] = ("rcd-component-rcdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCDProtoCE/rcd.png"))),
+            ["RPDall"] = ("rcd-component-rpdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCDProtoCE/rpd.png"))),
         };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -134,12 +135,12 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
         return models;
     }
 
-    // Gabystation Nestling
+    /* // Gabystation Nestling TODO
     private IEnumerable<RadialMenuOption> ConvertToButtons(HashSet<ProtoId<RCDPrototype>> prototypes)
     {
         Dictionary<string, List<RadialMenuActionOption>> buttonsByCategory = new();
         ValueList<RadialMenuActionOption> topLevelActions = new();
-        foreach (var Nest in PrototypesNestlingInfo.TryGetValue(key, out var nestlingInfo))
+        foreach (var nest in PrototypesNestlingInfo.Take(nested, out var nestlingInfo))
         {
             var prototype = _prototypeManager.Index(protoId);
             if (prototype.Category == TopLevelActionCategory)
@@ -195,7 +196,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 
         return models;
     }
-    // /Gabystation
+    // /Gabystation */
 
     private void HandleMenuOptionClick(RCDPrototype proto)
     {

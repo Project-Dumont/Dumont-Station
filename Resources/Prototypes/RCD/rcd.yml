@@ -104,20 +104,6 @@
   rotation: Fixed
   fx: EffectRCDConstruct2
 
-# Gabystation Edit
-- type: rcd
-  id: WallReinforced
-  category: WallsAndFlooring
-  sprite: /Textures/Interface/Radial/RCDIndustrialCE/reinf_wall.png
-  mode: ConstructObject
-  prototype: WallReinforced
-  cost: 10
-  delay: 6
-  collisionMask: FullTileMask
-  rotation: Fixed
-  fx: EffectRCDConstruct2
-# /Gabystation
-
 # Windows
 - type: rcd
   id: Window
@@ -296,23 +282,3 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
-
-- type: rcd
-  id: RCDSelect
-  category: RCDall
-  nested: 
-  - WallsAndFlooring
-  - WindowsAndGrilles
-  - Airlocks
-  - Electrical
-  - Lighting
-
-- type: rcd
-  id: RPDSelect
-  category: RPDall
-  nested:
-  - Piping
-  - AtmosphericUtility
-  - PumpsValves
-  - Vents
-  - SensorsMonitors

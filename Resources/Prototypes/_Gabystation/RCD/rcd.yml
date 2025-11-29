@@ -1,0 +1,31 @@
+- type: rcd
+  id: WallReinforced
+  category: WallsAndFlooring
+  sprite: /Textures/_Gabystation/Interface/Radial/RCDProtoCE/reinf_wall.png
+  mode: ConstructObject
+  prototype: WallReinforced
+  cost: 10
+  delay: 6
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2 # Aumentar tempo animação pra ficar igual delay
+
+- type: rcd
+  id: RCDSelect
+  category: RCDall
+  nested: 
+  - WallsAndFlooring
+  - WindowsAndGrilles
+  - Airlocks
+  - Electrical
+  - Lighting
+
+- type: rcd
+  id: RPDSelect
+  category: RPDall
+  nested:
+  - Piping
+  - AtmosphericUtility
+  - PumpsValves
+  - Vents
+  - SensorsMonitors

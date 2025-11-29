@@ -3,18 +3,22 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [RCD, BaseCommandContraband, BaseGrandTheftContraband]
+  parent: [BaseGrandTheftContraband, RCD]
   id: RCDProtoCE
   name: Proto RCD
-  description: An experimental advanced Rapid Construction Device designed for heavy-duty construction tasks. It features enhanced features, combining both an RCD and RPD, making it ideal for the CE's large-scale projects.
-  suffix: DO NOT MAP
+  description: An still experimental RCD, capable of much more than standard models. Specially provided for the CE for field testing.
   components:
   - type: LimitedCharges
     maxCharges: 30
   - type: AutoRecharge
-    rechargeDuration: 15
+    rechargeDuration: 10
   - type: Sprite
     sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
+  - type: Clothing
+    sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
+    quickEquip: false
+    slots:
+      - Belt
   - type: StaticPrice
     price: 1000
   - type: StealTarget
