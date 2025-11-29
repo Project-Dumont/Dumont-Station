@@ -83,7 +83,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: AnnihilateAllJanitorsObjectiveFluff
-  description: Wipe out all Janitors and their synthetic kin, no broom shall stand.
+  description: Eliminem todos os Zeladores e seus semelhantes sintéticos; nenhuma vassoura permanecerá de pé.
   components:
   - type: Objective
     icon:
@@ -95,7 +95,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: SpareCrewObjectiveFluff
-  description: Let some survive… only to suffer longer.
+  description: Deixem alguns sobreviver… apenas para sofrerem por mais tempo.
   components:
   - type: Objective
     icon:
@@ -107,7 +107,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: HuntTheBraveObjectiveFluff
-  description: Find and punish those foolish enough to face you.
+  description: Encontre e puna aqueles tolos o suficiente para enfrentar você.
   components:
   - type: Objective
     icon:
@@ -119,7 +119,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: HuntTheCowardsObjectiveFluff
-  description: Track down the ones who run, fear only prolongs their agony.
+  description: Rastreie aqueles que fogem; o medo apenas prolonga a agonia deles.
   components:
   - type: Objective
     icon:
@@ -131,7 +131,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: ShowCrewPowerObjectiveFluff
-  description: Let them witness your awful might firsthand.
+  description: Deixe que testemunhem seu terrível poder em primeira mão.
   components:
   - type: Objective
     icon:
@@ -144,7 +144,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: DriveInsaneObjectiveFluff
-  description: Whisper they break, madness is your gift.
+  description: Sussurre até que eles quebrem; a loucura é o seu presente.
   components:
   - type: Objective
     icon:
@@ -157,7 +157,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: SpreadBloodObjectiveFluff
-  description: Paint it in red, let no clean tile remain.
+  description: Pinte tudo de vermelho; não deixe nenhum piso limpo restante.
   components:
   - type: Objective
     icon:
