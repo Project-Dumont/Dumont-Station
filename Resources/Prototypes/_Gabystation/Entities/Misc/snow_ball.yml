@@ -7,7 +7,7 @@
   parent: BaseItem
   categories: []
   id: SnowBall
-  name: SnowBall
+  name: snow ball
   components:
   - type: EmitSoundOnLand
     sound:
