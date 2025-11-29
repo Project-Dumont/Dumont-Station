@@ -35,6 +35,7 @@
 - type: latheRecipePack
   id: PowerCellsStatic
   recipes:
+  - MegaCellSmall # Orion
   - PowerCellSmall
   - PowerCellMedium
 

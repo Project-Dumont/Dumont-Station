@@ -122,6 +122,11 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
+  # Orion-Start
+  - MegaCellSuper
+  - MegaCellHyper
+  - MegaCellHigh
+  # Orion-End
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
   - SMESAdvancedMachineCircuitboard
@@ -360,6 +365,7 @@
   tier: 3
   cost: 15000 # Goobstation 10000 -> 15000
   recipeUnlocks:
+  - MegaCellBluespace # Orion
   - PowerCellMicroreactor
   - PowerCellHyper
   technologyPrerequisites:

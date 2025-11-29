@@ -66,6 +66,7 @@
     - EngineerBagStatic
     - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
+    - MegaCells # Orion
     - ConstructionBagOfHolding
     - AdvancedTools
     - AtmosTools
@@ -133,6 +134,7 @@
     - CargoStatic
     - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
+    - MegaCells # Orion
     - AdvancedTools
     - Mining
     - PowerCells
@@ -211,6 +213,7 @@
     - GrenadeTriggersStatic # Goobstation - Roundstart Grenade Tech
     - MiscSignallersStatic
     dynamicPacks:
+    - MegaCells # Orion
     - AdvancedTools
     - ScienceEquipment
     - ScienceClothing

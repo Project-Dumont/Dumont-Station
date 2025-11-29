@@ -767,9 +767,9 @@
         Manipulator: 1
         CableHV: 10
       componentRequirements:
-        PowerCell:
+        MegaCell: # Orion-Edit
           amount: 4
-          defaultPrototype: PowerCellSmall
+          defaultPrototype: MegaCellSmall # Orion-Edit
 
 - type: entity
   id: SMESAdvancedMachineCircuitboard
@@ -786,9 +786,9 @@
       Manipulator: 2
       CableHV: 20
     componentRequirements:
-      PowerCell:
+      MegaCell: # Orion-Edit
         amount: 4
-        defaultPrototype: PowerCellMedium
+        defaultPrototype: MegaCellHigh # Orion-Edit
 
 - type: entity
   id: CellRechargerCircuitboard
@@ -916,9 +916,9 @@
         CableMV: 5
         CableHV: 5
       componentRequirements:
-        PowerCell:
+        MegaCell: # Orion-Edit
           amount: 1
-          defaultPrototype: PowerCellSmall
+          defaultPrototype: MegaCellSmall # Orion-Edit
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
         Glass: 125

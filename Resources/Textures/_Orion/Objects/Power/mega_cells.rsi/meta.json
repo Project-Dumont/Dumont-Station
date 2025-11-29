@@ -1,0 +1,38 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TGStation | Edited by PuroSlavKing (Github)",
+    "states": [
+        {
+            "name": "small"
+        },
+        {
+            "name": "super"
+        },
+        {
+            "name": "high"
+        },
+        {
+            "name": "hyper"
+        },
+        {
+            "name": "antique"
+        },
+        {
+            "name": "bluespace"
+        },
+        {
+            "name": "o0"
+        },
+        {
+            "name": "o1"
+        },
+        {
+            "name": "o2"
+        }
+    ]
+}

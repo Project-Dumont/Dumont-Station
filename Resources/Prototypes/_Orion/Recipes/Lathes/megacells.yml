@@ -1,0 +1,60 @@
+# MegaCells material price is multiplied by 2.5 compared to the regular version.
+- type: latheRecipe
+  id: MegaCellSmall
+  result: MegaCellSmallPrinted
+  categories:
+  - Parts
+  completetime: 5
+  materials:
+    Steel: 250
+    Plastic: 125
+
+- type: latheRecipe
+  id: MegaCellHigh
+  result: MegaCellHighPrinted
+  categories:
+  - Parts
+  completetime: 10
+  materials:
+    Steel: 750
+    Glass: 1000
+    Plastic: 500
+    Gold: 125
+
+- type: latheRecipe
+  id: MegaCellHyper
+  result: MegaCellHyperPrinted
+  categories:
+  - Parts
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1750
+    Plasma: 750
+    Gold: 500
+    Silver: 750
+
+- type: latheRecipe
+  id: MegaCellSuper
+  result: MegaCellSuperPrinted
+  categories:
+  - Parts
+  completetime: 10
+  materials:
+    Steel: 750
+    Glass: 1250
+    Plastic: 700
+    Gold: 187
+
+- type: latheRecipe
+  id: MegaCellBluespace
+  result: MegaCellBluespacePrinted
+  categories:
+  - Parts
+  completetime: 10
+  materials:
+    Steel: 1250
+    Glass: 1300
+    Uranium: 500
+    Gold: 350
+    BSCrystal: 200
