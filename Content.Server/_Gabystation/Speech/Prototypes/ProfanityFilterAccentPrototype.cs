@@ -5,7 +5,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Speech.Prototypes;
+namespace Content.Server._Gabystation.Speech.Prototypes;
 
 [Prototype("profanityWords")]
 public sealed partial class ProfanityFilterAccentPrototype : IPrototype

@@ -22,8 +22,10 @@ using Content.Shared.Speech;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Server._Gabystation.Speech.Components;
+using Content.Server._Gabystation.Speech.Prototypes;
 
-namespace Content.Server.Speech.EntitySystems
+namespace Content.Server._Gabystation.Speech.EntitySystems
 {
     public sealed class ProfanityFilterAccentSystem : EntitySystem
     {
