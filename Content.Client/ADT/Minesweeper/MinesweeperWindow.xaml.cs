@@ -369,7 +369,7 @@ public sealed partial class MinesweeperWindow : FancyWindow
         _finalTime = _stopwatch.Elapsed;
 
         RevealAllMines();
-        GameStatusLabel.Text = $"✓ Победа! \nВремя: {_finalTime.Minutes:D2}:{_finalTime.Seconds:D2}";
+        GameStatusLabel.Text = $"✓ Vitória! \nTempo: {_finalTime.Minutes:D2}:{_finalTime.Seconds:D2}";
 
         var nameUser = _comp?.LastOpenedBy ?? Loc.GetString("minesweeper-unknown-record");
 
