@@ -104,7 +104,6 @@
     - WeaponWaterPistol
     - WhoopieCushion
     - Whistle
-    - ADTPlushieSchrodinger
   - type: Computer
     board: MinesweeperCircuitboard
   - type: ActivatableUI
