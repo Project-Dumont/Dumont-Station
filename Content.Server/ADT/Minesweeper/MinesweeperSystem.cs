@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.ADT.Minesweeper;
 using Content.Shared.Emag.Systems;
