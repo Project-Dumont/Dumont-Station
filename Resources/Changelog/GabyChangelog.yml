@@ -1504,3 +1504,69 @@ Entries:
       message: O intellicard foi corrigido.
   id: 172
   time: '2025-11-23T13:21:37.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Fix
+      message: conserta bug de cabelos com displacement
+  id: 173
+  time: '2025-11-23T19:48:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode oferecer itens.
+  id: 174
+  time: '2025-11-23T20:44:50.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Espécie Pinguinador
+    - type: Add
+      message: Bolas de neve
+  id: 175
+  time: '2025-11-23T20:49:33.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de Cowboy e uma pequena tradução da mesma
+    - type: Add
+      message: Novas palavras para o sotaque de Pirata e traduções
+  id: 176
+  time: '2025-11-23T20:50:40.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Add
+      message: Feliz aniversario Gaby Station!
+  id: 177
+  time: '2025-11-23T20:56:35.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Fix
+      message: Conserta velocidade em baixas temperaturas dos pinguinadores
+  id: 178
+  time: '2025-11-23T22:05:36.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de cowboy
+  id: 179
+  time: '2025-11-29T02:42:53.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de pirata
+  id: 180
+  time: '2025-11-29T02:44:20.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Fix
+      message: RCDs agora podem construir portas por cima de firelocks.
+  id: 181
+  time: '2025-11-29T03:35:11.0000000+00:00'
+- author: Kaduh45
+  changes:
+    - type: Tweak
+      message: >-
+        Reorganização de algumas POPs, melhoria nas POP dos Especialistas em
+        Salvamento, POP de Blueshield adicionada e mais!
+  id: 182
+  time: '2025-11-29T03:40:11.0000000+00:00'

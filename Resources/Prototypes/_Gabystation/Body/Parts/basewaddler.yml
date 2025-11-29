@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  abstract: true
+  id: BaseWaddlerLeftFoot
+  name: "left foot"
+  components:
+  - type: MovementBodyPart
+  - type: Sprite
+    state: "l_foot"
+  - type: Icon
+    state: "l_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
+    toolName: "a left foot"
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: LFoot
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: null
+  - type: Woundable
+    integrity: 35
+    integrityCap: 35
+    thresholds:
+      Minor: 32
+      Moderate: 26
+      Severe: 18
+      Critical: 10
+      Mangled: 0
+
+- type: entity
+  abstract: true
+  id: BaseWaddlerRightFoot
+  name: "right foot"
+  components:
+  - type: MovementBodyPart
+  - type: Sprite
+    state: "r_foot"
+  - type: Icon
+    state: "r_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
+    toolName: "a right foot"
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: RFoot
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: null
+  - type: Woundable
+    integrity: 35
+    integrityCap: 35
+    thresholds:
+      Minor: 32
+      Moderate: 26
+      Severe: 18
+      Critical: 10
+      Mangled: 0

@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: BaseItem
+  categories: []
+  id: SnowBall
+  name: snow ball
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      collection: cardShove
+  - type: Sprite
+    sprite: _Gabystation/Objects/Misc/snowball
+    state: snowball
+  - type: Item
+    size: Small
+  - type: ThrowingAngle
+    angularVelocity: true # spins
+  - type: LandAtCursor
+  - type: SolutionContainerManager
+    solutions:
+      ice:
+        maxVol: 1
+        reagents:
+        - ReagentId: Ice
+          Quantity: 1
+      water:
+        maxVol: 1
+        reagents:
+        - ReagentId: Water
+          Quantity: 1
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 1
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: FootstepSnow
+      - !type:SpillBehavior
+        solution: water
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Extractable
+    grindableSolutionName: ice

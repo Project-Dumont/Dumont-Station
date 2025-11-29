@@ -1,0 +1,117 @@
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseClothingModsuitHelmet
+  id: ClothingModsuitHelmetMining
+  name: pioneer modsuit helmet
+  description: A reinforced hardsuit modular helmet designed for mining operations. If a collapse occurs, at least your head is intact.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HEAD
+      head-vox:
+      - state: equipped-HEAD-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-vulpkanin
+      head-reptilian:
+      - state: equipped-HEAD-reptilian
+      head-resomi:
+      - state: equipped-HEAD-resomi
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Modsuits/mining.rsi
+    layers:
+    - state: helmet
+    - state: helmet-sealed
+      visible: false
+      map: [ "sealed" ]
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: SealableClothing
+    sealUpPopup: sealable-clothing-seal-up-helmet
+    sealDownPopup: sealable-clothing-seal-down-helmet
+  - type: SealableClothingVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      head:
+      - state: equipped-HEAD-sealed
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-sealed-vulpkanin
+      head-reptilian:
+      - state: equipped-HEAD-sealed-reptilian
+      head-resomi:
+      - state: equipped-HEAD-sealed-resomi
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.3
+      OrganDamage: 0.3
+      BoneDamage: 0.3
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.6
+        Radiation: 0.1
+  - type: ComponentToggler
+    components:
+    - type: BreathMask
+    - type: PressureProtection
+      highPressureMultiplier: 0.3
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      heatingCoefficient: 0.01
+      coolingCoefficient: 0.01
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: HideLayerClothing
+      slots:
+      - Hair
+      - Snout
+      - HeadTop
+      - HeadSide
+  #THIS WILL BE REPLACED WITH MODULE ↓↓
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 3
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: true
+  - type: HandheldLight
+    addPrefix: true
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        startValue: 0.1
+        endValue: 2.0
+        isLooped: true
+  - type: Battery
+    maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2

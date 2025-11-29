@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: localizedDataset
+  id: NamesWaddler
+  values:
+    prefix: names-waddler-dataset-
+    count: 67

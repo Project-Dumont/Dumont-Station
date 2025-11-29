@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] Técnicos de Carga estão sujeitos às mesmas regras do Intendente Logístico quanto a caixas restritas (ver acima);
 
-  [bold]3.[/bold] Técnicos de Carga não podem pedir itens para uso pessoal exclusivo com a conta do departamento de suprimentos sem consentimento expresso do Intendente Logístico. Exceção é feita se houver mais de 2500 spesos disponíveis e nenhum pedido pendente. Técnicos de Carga não podem zerar o saldo da conta do departamento para isso;
+  [bold]3.[/bold] Técnicos de Carga não podem pedir itens para uso pessoal exclusivo com a conta do departamento de suprimentos sem consentimento expresso do Intendente Logístico. Exceção é feita se houver mais de 15000 spesos disponíveis e nenhum pedido pendente. Técnicos de Carga não podem zerar o saldo da conta do departamento para isso;
 
   [bold]4.[/bold] Técnicos de Carga não podem pedir itens não essenciais usando a conta de suprimentos (como gatos ou roupas) sem consentimento expresso do Intendente Logístico;
 
@@ -35,11 +35,11 @@ SPDX-License-Identifier: MIT
 
   [bold]6.[/bold] Técnicos de Carga não podem autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do Intendente Logístico;
 
-  [bold]7.[/bold] Técnicos de Carga devem garantir que pelo menos uma cópia de cada Formulário de Pedido (ou seja, os formulários produzidos pelo Console de Pedidos) seja mantida dentro da Carga.
+  [bold]7.[/bold] Técnicos de Carga devem garantir que pelo menos uma cópia de cada Formulário de Pedido (ou seja, os formulários produzidos pelo Console de Pedidos) seja mantida dentro da Carga;
 
   [bold]8.[/bold] Técnicos de Carga devem devolver todas as caixas que foram pedidas, com o manifesto carimbado dentro da caixa;
 
-  [bold]9.[/bold] Técnicos de Carga devem garantir que um único Departamento não esgote totalmente a Máquina de Resgate de Minérios, pois ela pode ser utilizada por vários Departamentos;
+  [bold]9.[/bold] Técnicos de Carga devem garantir que um único Departamento não esgote totalmente o Processador de Minérios, pois ela pode ser utilizada por vários Departamentos;
 
   [bold]10.[/bold] Técnicos de Carga não podem pedir créditos espaciais em troca de pedidos legais de caixas de carga ou solicitações de autolathe de membros da tripulação;
 
@@ -49,9 +49,27 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] Especialistas em Salvamento não podem acumular materiais. Todos os materiais minerados devem ser deixados no Processador de Minérios;
 
-  [bold]2.[/bold] Especialistas em Salvamento não podem jogar pessoas em buracos de minhoca fabricados, nem enganar pessoas para usarem Cristais de Bluespace, ou jogar Cristais de Bluespace em alguém;
+  [bold]2.[/bold] Os Especialistas em Salvamento devem entregar pelo menos 5000 pontos de material extraído ao Processador de Minérios dentro de 30 minutos;
 
   [bold]3.[/bold] Especialistas em Salvamento não podem dar itens adquiridos em expedições para a tripulação da estação, a menos que o Intendente Logístico aprove;
 
-  [bold]4.[/bold] Especialistas em Salvamento estão sujeitos às diretrizes estabelecidas para Técnicos de Carga quando estiverem dentro do Escritório ou Baía de Carga;
+  [bold]4.[/bold] Especialistas em Salvamento devem levar qualquer contrabando encontrado no espaço à Segurança imediatamente após retornarem à estação;
+
+  [bold]5.[/bold] Especialistas em Salvamento não devem fazer uso de qualquer armamento encontrado no espaço sem autorização e devem levar qualquer armamento encontrado à Segurança imediatamente após o retorno à estação;
+
+  [bold]6.[/bold] Especialistas em Salvamento não estão autorizados a dar armas ou outros itens/drogas ilícitos adquiridos através de expedições espaciais à tripulação da estação, a menos que o Intendente e o Chefe de Segurança aprovem dentro da Lei Espacial;
+
+  [bold]7.[/bold] Especialistas em Salvamento estão sujeitos às diretrizes estabelecidas para Técnicos de Carga quando estiverem dentro do Escritório ou Baía de Carga;
+
+  # Transporte do departamento Cargo
+
+  [bold]1.[/bold] A nave da Cargo deve estar disponível apenas para o serviço de carga em situações normais e não para uso pessoal, a quebra desse POP pode ocorrer no crime de Negligência e/ou Incompetência;
+  
+  [bold]2.[/bold] A nave de transporte para a lavaland é recomendada apenas para esse serviço, devido ao auto-piloto que pode ser imprevisível;
+
+  [bold]3.[/bold] Naves extras podem ser pedidas via fax pelo Intendente Logístico ou Capitão caso a doca da cargo precise. (O custo será muito caro.);
+
+  [bold]4.[/bold] Em situação de naufrago no espaço ambas as naves podem ser usadas para o resgate;
+
+  [bold]5.[/bold] A nave da Cargo e transporte para lavaland deve estar docada e pronta para evacuação de civis em caso de alerta delta. A evacuação só deve acontecer quando os civis estiverem seguros ou houver destruição imediata da estação;
 </Document>
