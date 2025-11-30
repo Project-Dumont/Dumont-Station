@@ -1,11 +1,11 @@
 <Document>
-  # Demônio do Abate
+  # Demônio do Massacre
 
   <Box>
     <GuideEntityEmbed Entity="BaseMobSlaughterDemon" Caption=""/>
   </Box>
 
-  Demônios do Abate são grandes monstros blindados enviados das profundezas do inferno para roubar as almas da tripulação de maneira extremamente violenta.
+  Demônios do Massacre são grandes monstros blindados enviados das profundezas do inferno para roubar as almas da tripulação de maneira extremamente violenta.
   Eles podem usar sangue para se deslocar rapidamente, possuem um par de grandes lâminas no lugar dos braços e podem se curar completamente devorando membros da tripulação que estejam caídos/mortos.
 
   ## Invocando um Ser do Inferno
@@ -14,10 +14,10 @@
     <GuideEntityEmbed Entity="ClothingHeadHatWizard" Caption=""/>
   </Box>
 
-  Há duas maneiras de um Demônio do Abate entrar na estação para aterrorizá-la. Ele pode ser invocado para o mundo mortal com um item místico de invocação por um Mago tolo o bastante para fazê-lo, ou através de um sorteio de Midround.
+  Há duas maneiras de um Demônio do Massacre entrar na estação para aterrorizá-la. Ele pode ser invocado para o mundo mortal com um item místico de invocação por um Mago tolo o bastante para fazê-lo, ou através de um sorteio de Midround.
   Ambas as alternativas permitem que os fantasmas assumam o papel de uma aberração sedenta de sangue serva de Satanás.
 
-  ## Como jogar de Demônio do Abate, por um Demônio do Abate
+  ## Como jogar de Demônio do Massacre, por um Demônio do Massacre
 
   ESCUTE, DEMÔNIO [color=red]TUDO O QUE VOCÊ PRECISA FAZER É MATAR[/color]. ARRANQUE AS TRIPAS DELES, BEBA O SANGUE… VOCÊ SABE, ATIVIDADES SUBMUNDANAS DO DIA A DIA.
   APENAS VÁ LÁ E ESPANQUE AS PESSOAS, FAÇA ELAS SANGRAREM. ENTENDE???
@@ -42,10 +42,10 @@
 
   [bold](Para se alimentar de um cadáver, arraste um corpo com uma das mãos e use a excursão sangrenta em uma poça de sangue.)[/bold]
 
-  - ABATE SANGRENTO
+  - MASSACRE SANGRENTO
 
   NÓS SOMOS LENTOS, OKAY? AFINAL, TER UMA ARMADURA INFERNAL SUPER BLINDADA COLADA NO NOSSO CORPO ACABA SENDO BEM PESADO. FELIZMENTE, DÁ PRA CONSEGUIR UNS ABATES BEM FÁCEIS SALTANDO PARA FORA DO SANGUE, JÁ QUE O SANGUE VAI TE DAR UM IMPULSO DE VELOCIDADE.
-  COMBO FANTÁSTICO: SAIA PARA FORA DO SANGUE, ATAQUE, TENTE ACERTAR MAIS ALGUNS GOLPES E DEPOIS RETORNE PARA O SANGUE PARA OUTRO ATAQUE RÁPIDO.
+  COMBO FANTÁSTICO: SAIA PARA FORA DO SANGUE, MASSACRE, TENTE ACERTAR MAIS ALGUNS GOLPES E DEPOIS RETORNE PARA O SANGUE PARA OUTRO ATAQUE RÁPIDO.
   REALISTICAMENTE, ESSA É A ÚNICA MANEIRA DE PARAR UM IMBECIL ARMADO COM UMA ESPINGARDA, ENTÃO A PRÁTICA LEVA À PERFEIÇÃO.
 
   ENFIM, ESTOU OCUPADO DEMAIS BEBENDO O SANGUE DE UM PALHAÇO AGORA, ENTÃO TE VEJO MAIS TARDE NO INFERNO. TENTE NÃO MORRER.
