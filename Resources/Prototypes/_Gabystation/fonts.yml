@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: font
+  id: TicTacToe
+  path: /Fonts/_Gabystation/Tic-Tac-Toe Code/tic-tac-toe-code.otf

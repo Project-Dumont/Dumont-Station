@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: marking
+  id: WaddlerEyelashes
+  bodyPart: Face
+  markingCategory: Face
+  forcedColoring: true
+  speciesRestriction: [Waddler]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/waddler.rsi
+    state: eyelashes
+
+- type: marking
+  id: WaddlerOverlay
+  bodyPart: Head
+  markingCategory: Overlay
+  speciesRestriction: [Waddler]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: overlay
+
+
+- type: marking
+  id: WaddlerFeetR
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Waddler]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: r_foot
+
+
+- type: marking
+  id: WaddlerFeetL
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Waddler]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: l_foot
+

@@ -17,13 +17,15 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] O Diretor de Pesquisa não tem permissão para levar artefatos perigosos para fora do Setor de Ciência se eles não estiverem armazenados dentro de um contêiner de artefato;
 
-  [bold]4.[/bold] O Diretor de Pesquisa não tem permissão para descomissionar uma IA da Estação sem a aprovação do Capitão. A unidade de IA, se descomissionada, deve ser armazenada em um Intellicard para ser inspecionada na Central de Comando;
+  [bold]4.[/bold] O Diretor de Pesquisa devem garantir que um chassi esteja funcional para a inteligência artificial da estação;
 
-  [bold]5.[/bold] O Diretor de Pesquisa tem permissão para alterar as leis da IA da Estação, desde que receba aprovação do Capitão;
+  [bold]5.[/bold] O Diretor de Pesquisa não tem permissão para descomissionar uma IA da Estação sem a aprovação do Capitão. A unidade de IA, se descomissionada, deve ser armazenada em um Intellicard para ser inspecionada na Central de Comando;
 
-  [bold]6.[/bold] O Diretor de Pesquisa deve manter um registro de todas as anomalias e eliminar quaisquer anomalias que possam representar perigo imediato aos membros da tripulação;
+  [bold]6.[/bold] O Diretor de Pesquisa tem permissão para alterar as leis da IA da Estação, desde que receba aprovação do Capitão;
 
-  [bold]7.[/bold] O Diretor de Pesquisa deve garantir que as telecomunicações estejam devidamente mantidas.
+  [bold]7.[/bold] O Diretor de Pesquisa deve manter um registro de todas as anomalias e eliminar quaisquer anomalias que possam representar perigo imediato aos membros da tripulação;
+
+  [bold]8.[/bold] O Diretor de Pesquisa deve garantir que as telecomunicações estejam devidamente mantidas.
 
   ## Código Azul
 
@@ -81,18 +83,19 @@ SPDX-License-Identifier: MIT
 
   [bold]5.[/bold] Roboticistas devem garantir que todos os Ciborgues estejam aderindo às suas leis e não estejam com mau funcionamento. Se um Ciborgue for encontrado violando suas leis, sua Unidade MMI ou Cérebro Positrônico deve ser preservado e colocado em um novo chassi de Ciborgue;
 
-  [bold]6.[/bold] Roboticistas devem manter pelo menos um Cérebro Positrônico ativado, se possível;
+  [bold]6.[/bold] Roboticistas devem garantir que um chassi esteja funcional para a inteligência artificial da estação;
 
-  [bold]7.[/bold] Roboticistas devem aderir a todas as diretrizes do POP de Cientista.
+  [bold]7.[/bold] Roboticistas devem manter ao menos um Ciborgue e um Drone prontos para serem ativos;
 
+  [bold]8.[/bold] Roboticistas devem aderir a todas as diretrizes do POP de Cientista.
 
   ## Código Azul
 
   [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde;
 
-  [bold]2.[/bold] Em relação à Diretriz 1 do Código Verde, Roboticistas têm permissão para construir Mechas de Combate sem consentimento prévio, mas devem ser entregues ao Arsenal. A falha em cumprir resultará na destruição do Mecha de Combate. Uma exceção é feita para ameaças de nível de estação, mas mesmo após essas ameaças serem resolvidas, o Mecha deve ser entregue ao Arsenal.
-
   ## Código Vermelho
 
   [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul.
+
+  [bold]2.[/bold] Em relação à Diretriz 1 do Código Verde, Roboticistas têm permissão para construir Mechas de Combate sem consentimento prévio, mas devem ser entregues ao Arsenal. A falha em cumprir resultará na destruição do Mecha de Combate. Uma exceção é feita para ameaças de nível de estação, mas mesmo após essas ameaças serem resolvidas, o Mecha deve ser entregue ao Arsenal.
 </Document>

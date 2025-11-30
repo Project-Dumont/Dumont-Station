@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHandModsuitBase
+  id: ClothingModsuitGauntletsMining
+  name: pioneer modsuit gauntlets
+  description: Modular hardsuit gloves designed for handling heavy mining tools.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Hands/Modsuits/mining.rsi
+    layers:
+    - state: gauntlets
+    - state: gauntlets-sealed
+      visible: false
+      map: [ "sealed" ]
+  - type: Clothing
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    slots: [ gloves ]
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-modular
+    fiberColor: fibers-black
+  - type: FingerprintMask
+  - type: SealableClothing
+    sealUpPopup: sealable-clothing-seal-up-gauntlets
+    sealDownPopup: sealable-clothing-seal-down-gauntlets
+  - type: SealableClothingVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND-sealed
+      gloves-vox:
+      - state: equipped-HAND-sealed-vox
+      gloves-resomi:
+      - state: equipped-HAND-sealed-resomi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Shock: 0.75

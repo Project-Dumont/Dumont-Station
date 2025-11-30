@@ -57,3 +57,13 @@
     forced: true
     inventory: Drop
     allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AdminWaddlerSmite
+  configuration:
+    entity: MobWaddler
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: False
+    inventory: Transfer
+    allowRepeatedMorphs: true

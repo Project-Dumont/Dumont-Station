@@ -2,7 +2,11 @@
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 Androidonator <33227516+Androidonator@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 DeusMaldPr <214400248+DeusMaldPr@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
@@ -129,7 +133,7 @@
     #TODO:  super resonator for 2500
   - id: ClothingShoesBootsJump
     cost: 2500
-  - id: ClothingOuterHardsuitLuxury
+  - id: ClothingOuterHardsuitDarkLuxury # Gabystation edit
     cost: 3000 #still costs more than just buying it with spesos you got from vendor but whatever
   - id: ShelterCapsuleLuxury
     cost: 3000
@@ -137,6 +141,8 @@
     cost: 3500
   - id: MiningDrillDiamond
     cost: 4000 #Mostly for flexing
+  - id: ClothingModsuitMining # Gabystation edit
+    cost: 7000
   - id: CrateCargoClarkeAssembly
     cost: 12500 #TODO: Make modules real
   # TODO: luxury elite bar capsule for 10k
