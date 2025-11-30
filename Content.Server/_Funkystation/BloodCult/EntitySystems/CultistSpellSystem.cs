@@ -57,6 +57,9 @@ namespace Content.Server.BloodCult.EntitySystems;
 
 public sealed partial class CultistSpellSystem : EntitySystem
 {
+	private static readonly ProtoId<StackPrototype> RunedMetalStack = "RunedMetal";
+	private static readonly ProtoId<StackPrototype> RunedGlassStack = "RunedGlass";
+
 	[Dependency] private readonly IRobustRandom _random = default!;
 	[Dependency] private readonly IPrototypeManager _proto = default!;
 	[Dependency] private readonly SharedActionsSystem _action = default!;
@@ -75,7 +78,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 	[Dependency] private readonly IMapManager _mapManager = default!;
 	//[Dependency] private readonly IEntityManager _entMan = default!;
 	[Dependency] private readonly SharedStunSystem _stun = default!;
-	[Dependency] private readonly ConstructionSystem _construction = default!;
+	//[Dependency] private readonly ConstructionSystem _construction = default!;
 	[Dependency] private readonly BloodstreamSystem _bloodstream = default!;
 	[Dependency] private readonly StackSystem _stackSystem = default!;
 
@@ -384,14 +387,28 @@ public sealed partial class CultistSpellSystem : EntitySystem
 
 		args.Handled = true;
 
-		// Mindshield and holy protection repel cult magic
-		if (HasComp<CultResistantComponent>(target) || HasComp<MindShieldComponent>(target))
+		// Mindshield repels cult magic with technology
+		if (HasComp<MindShieldComponent>(target))
+		{
+			_popup.PopupEntity(
+					Loc.GetString("cult-spell-repelled-mindshield"),
+					ent, ent, PopupType.MediumCaution
+				);
+			_popup.PopupEntity(
+					Loc.GetString("cult-spell-mindshield-buzzing"),
+					target, target, PopupType.Medium
+				);
+			_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Effects/sparks1.ogg"), Transform(ent).Coordinates);
+			// Knock down the cultist who cast the spell. Might need balancing
+			_stun.TryKnockdown(ent, TimeSpan.FromSeconds(selfStunTime), true);
+		}
+		// Holy protection repels cult magic
+		else if (HasComp<CultResistantComponent>(target))
 		{
 			_popup.PopupEntity(
 					Loc.GetString("cult-spell-repelled"),
 					ent, ent, PopupType.MediumCaution
 				);
-			// todo: Play a different sound if they have a mindshield.
 			_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Effects/holy.ogg"), Transform(ent).Coordinates);
 			// Knock down the cultist who cast the spell. Might need balancing
 			_stun.TryKnockdown(ent, TimeSpan.FromSeconds(selfStunTime), true);
@@ -474,7 +491,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			var targetCoords = Transform(args.Target).Coordinates;
 
 			// Use StackSystem.SpawnMultiple to properly split stacks respecting max count (30)
-			var runedMetalProto = _proto.Index<StackPrototype>("RunedMetal");
+			var runedMetalProto = _proto.Index(RunedMetalStack);
 			_stackSystem.SpawnMultiple(runedMetalProto.Spawn.ToString(), count, targetCoords);
 
 			QueueDel(args.Target);
@@ -492,7 +509,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			var targetCoords = Transform(args.Target).Coordinates;
 
 			// Use StackSystem.SpawnMultiple to properly split stacks respecting max count (30)
-			var runedGlassProto = _proto.Index<StackPrototype>("RunedGlass");
+			var runedGlassProto = _proto.Index(RunedGlassStack);
 			_stackSystem.SpawnMultiple(runedGlassProto.Spawn.ToString(), count, targetCoords);
 
 			QueueDel(args.Target);
@@ -510,7 +527,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			var targetCoords = Transform(args.Target).Coordinates;
 
 			// Use StackSystem.SpawnMultiple to properly split stacks respecting max count (30)
-			var runedGlassProto = _proto.Index<StackPrototype>("RunedGlass");
+			var runedGlassProto = _proto.Index(RunedGlassStack);
 			_stackSystem.SpawnMultiple(runedGlassProto.Spawn.ToString(), count, targetCoords);
 
 			QueueDel(args.Target);
