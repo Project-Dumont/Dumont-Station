@@ -56,7 +56,6 @@
     - AtmosStatic
     - CablesStatic
     - MaterialsStatic
-    - AdvancedMaterialsStatic
     - LightsStatic
     - PowerCellsStatic
     - ElectronicsStatic
@@ -193,7 +192,6 @@
     - AtmosStatic
     - CablesStatic
     - MaterialsStatic
-    - AdvancedMaterialsStatic
     - BasicChemistryStatic
     - LightsStatic
     - PowerCellsStatic
