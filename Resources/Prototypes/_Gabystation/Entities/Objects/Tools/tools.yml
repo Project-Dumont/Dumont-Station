@@ -86,3 +86,22 @@
     # </FunkyStation>
     - WallReinforced
     - DeconstructStrong
+    - Canister
+    - APC
+    - Disposal
+    - DisposalPipeStraight
+    - DisposalPipeTagger
+    - DisposalPipeSignaller
+    - DisposalPipeTrunk
+    - DisposalPipeRouter
+    - DisposalPipeSignalRouter
+    - DisposalPipeYJunction
+    - DisposalPipeXJunction
+    - DisposalPipeJunction
+    - DisposalPipeBend
+    - FirelockThin
+    - FirelockGlass
+    - AirlockExternal
+    - AirlockHighSec
+    - Windoor
+    - WindoorReinforced

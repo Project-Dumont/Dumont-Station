@@ -2,10 +2,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Walls
 - type: rcd
   id: WallReinforced
   category: WallsAndFlooring
-  sprite: /Textures/_Gabystation/Interface/Radial/RCDProtoCE/reinf_wall.png
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/reinf_wall.png
   mode: ConstructObject
   prototype: WallReinforced
   cost: 10
@@ -13,20 +14,276 @@
   collisionMask: FullTileMask
   rotation: Fixed
   fx: EffectRCDConstruct4 # Aumentar tempo animação pra ficar igual delay
+  noLayers: true
 
+# Electrical
+- type: rcd
+  id: APC
+  category: Electrical
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/apc.png
+  mode: ConstructObject
+  prototype: BaseAPC
+  cost: 5
+  delay: 4
+  rotation: User
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+# Atmospheric Utility
+- type: rcd
+  id: Canister
+  category: AtmosphericUtility
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/canister.png
+  mode: ConstructObject
+  prototype: StorageCanister
+  cost: 5
+  delay: 4
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+# Pneumatic Transport
+- type: rcd
+  id: Disposal
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/disposal.png
+  mode: ConstructObject
+  prototype: DisposalUnit
+  cost: 5
+  delay: 4
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+- type: rcd
+  id: Mailing
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/mailing.png
+  mode: ConstructObject
+  prototype: MailingUnit
+  cost: 5
+  delay: 4
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeStraight
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-straight.png
+  mode: ConstructObject
+  prototype: DisposalPipe
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeTagger
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-tagger.png
+  mode: ConstructObject
+  prototype: DisposalTagger
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeSignaller
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-signaller.png
+  mode: ConstructObject
+  prototype: DisposalSignaller
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeSignalRouter
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-signal-router.png
+  mode: ConstructObject
+  prototype: DisposalSignalRouter
+  mirrorPrototype: DisposalSignalRouterFlipped
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeTrunk
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-trunk.png
+  mode: ConstructObject
+  prototype: DisposalTrunk
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeRouter
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-router.png
+  mode: ConstructObject
+  prototype: DisposalRouter
+  mirrorPrototype: DisposalRouterFlipped
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeJunction
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-junction.png
+  mode: ConstructObject
+  prototype: DisposalJunction
+  mirrorPrototype: DisposalJunctionFlipped
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeYJunction
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-y-junction.png
+  mode: ConstructObject
+  prototype: DisposalYJunction
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeXJunction
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-x-junction.png
+  mode: ConstructObject
+  prototype: DisposalXJunction
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+- type: rcd
+  id: DisposalPipeBend
+  category: PneumaticTransport
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-bend.png
+  mode: ConstructObject
+  prototype: DisposalBend
+  cost: 1
+  delay: 1
+  rotation: User
+  fx: EffectRCDConstruct1
+  noLayers: true
+
+# Airlocks
+- type: rcd
+  id: FirelockGlass
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/firelock-glass.png
+  mode: ConstructObject
+  prototype: FirelockGlass
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+- type: rcd
+  id: FirelockThin
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/firelock-thin.png
+  mode: ConstructObject
+  prototype: FirelockEdge
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+- type: rcd
+  id: Windoor
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/windoor.png
+  mode: ConstructObject
+  prototype: Windoor
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+- type: rcd
+  id: WindoorReinforced
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/windoor-reinf.png
+  mode: ConstructObject
+  prototype: WindoorSecure
+  cost: 6
+  delay: 6
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct6
+  noLayers: true
+
+- type: rcd
+  id: AirlockExternal
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/airlock-external.png
+  mode: ConstructObject
+  prototype: AirlockExternalGlass
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+- type: rcd
+  id: AirlockHighSec
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/high-sec.png
+  mode: ConstructObject
+  prototype: HighSecDoor
+  cost: 10
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
+# Especial
 - type: rcd
   id: DeconstructStrong
   name: rcd-component-deconstruct
   category: Main
   sprite: /Textures/Interface/Radial/RCD/deconstruct.png
   mode: Deconstruct
-  refunddecon: false
   prototype: EffectRCDDeconstructPreview
   rotation: Camera
+  noLayers: true
 
 - type: rcd
   id: RCDSelect
   category: RCDall
+  noLayers: true
   nested: 
     - WallSolid
     - FloorSteel
@@ -46,10 +303,29 @@
     - MVCable
     - HVCable
     - CableTerminal
+    - APC
+    - Disposal
+    - DisposalPipeStraight
+    - DisposalPipeTagger
+    - DisposalPipeSignaller
+    - DisposalPipeTrunk
+    - DisposalPipeRouter
+    - DisposalPipeSignalRouter
+    - DisposalPipeYJunction
+    - DisposalPipeXJunction
+    - DisposalPipeJunction
+    - DisposalPipeBend
+    - FirelockThin
+    - FirelockGlass
+    - AirlockExternal
+    - AirlockHighSec
+    - Windoor
+    - WindoorReinforced
 
 - type: rcd
   id: RPDSelect
   category: RPDall
+  noLayers: true
   nested:
     - PipeFourway
     - PipeStraight
@@ -86,3 +362,4 @@
     # <FunkyStation>
     - HeatPump
     # </FunkyStation>
+    - Canister

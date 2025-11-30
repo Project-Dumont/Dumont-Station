@@ -49,6 +49,7 @@
   rules:
     - CanBuildOnEmptyTile
   fx: EffectRCDConstruct1
+  noLayers: true
 
 - type: rcd
   id: FloorSteel
@@ -63,6 +64,7 @@
   rules:
     - CanBuildOnEmptyTile
   fx: EffectRCDConstruct1
+  noLayers: true
 
 - type: rcd
   id: Catwalk
@@ -78,6 +80,7 @@
     - IsCatwalk
   rotation: Fixed
   fx: EffectRCDConstruct1
+  noLayers: true
 
 # Walls
 - type: rcd
@@ -91,6 +94,7 @@
   collisionMask: FullTileMask
   rotation: Fixed
   fx: EffectRCDConstruct2
+  noLayers: true
 
 - type: rcd
   id: Grille
@@ -103,6 +107,7 @@
   collisionMask: Impassable
   rotation: Fixed
   fx: EffectRCDConstruct2
+  noLayers: true
 
 # Windows
 - type: rcd
@@ -118,6 +123,7 @@
     - IsWindow
   rotation: Fixed
   fx: EffectRCDConstruct2
+  noLayers: true
 
 - type: rcd
   id: WindowDirectional
@@ -133,6 +139,7 @@
     - IsWindow
   rotation: User
   fx: EffectRCDConstruct1
+  noLayers: true
 
 - type: rcd
   id: ReinforcedWindow
@@ -147,6 +154,7 @@
     - IsWindow
   rotation: User
   fx: EffectRCDConstruct3
+  noLayers: true
 
 - type: rcd
   id: WindowReinforcedDirectional
@@ -162,6 +170,7 @@
     - IsWindow
   rotation: User
   fx: EffectRCDConstruct2
+  noLayers: true
 
 # Airlocks
 - type: rcd
@@ -175,6 +184,7 @@
   collisionMask: FullTileMask
   rotation: Camera
   fx: EffectRCDConstruct4
+  noLayers: true
 
 - type: rcd
   id: AirlockGlass
@@ -187,6 +197,7 @@
   collisionMask: FullTileMask
   rotation: Camera
   fx: EffectRCDConstruct4
+  noLayers: true
 
 - type: rcd
   id: Firelock
@@ -199,6 +210,7 @@
   collisionMask: FullTileMask
   rotation: Camera
   fx: EffectRCDConstruct3
+  noLayers: true
 
 # Lighting
 - type: rcd
@@ -215,6 +227,7 @@
     - IsWallLight # Goobstation - No light stacking
   rotation: User
   fx: EffectRCDConstruct1
+  noLayers: true
 
 - type: rcd
   id: BulbLight
@@ -230,6 +243,7 @@
     - IsWallLight # Goobstation - No light stacking
   rotation: User
   fx: EffectRCDConstruct1
+  noLayers: true
 
 # Electrical
 - type: rcd
@@ -244,6 +258,7 @@
   - MustBuildOnSubfloor
   rotation: Fixed
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: MVCable
@@ -257,6 +272,7 @@
   - MustBuildOnSubfloor
   rotation: Fixed
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: HVCable
@@ -270,6 +286,7 @@
   - MustBuildOnSubfloor
   rotation: Fixed
   fx: EffectRCDConstruct0
+  noLayers: true
 
 - type: rcd
   id: CableTerminal
@@ -282,3 +299,4 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct0
+  noLayers: true

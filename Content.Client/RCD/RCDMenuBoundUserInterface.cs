@@ -45,14 +45,14 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["Vents"] = ("rcd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/vent_passive.png"))),
             ["SensorsMonitors"] = ("rcd-component-sensorsmonitors", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RPD/alarm.png"))),
             // Gabystation
-            ["TrashAndDucts"] = ("rcd-component-trash-and-ducts", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/disposal.png"))),
+            ["PneumaticTransport"] = ("rcd-component-pneumatic-transport", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/disposal.png"))),
         };
     private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesNestlingInfo
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
         {
             // Gabystation - Nestling categories
-            ["RCDall"] = ("rcd-component-rcdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCDProtoCE/rcd.png"))),
-            ["RPDall"] = ("rcd-component-rpdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCDProtoCE/rpd.png"))),
+            ["RCDall"] = ("rcd-component-rcdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/rcd.png"))),
+            ["RPDall"] = ("rcd-component-rpdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/rpd.png"))),
         };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
