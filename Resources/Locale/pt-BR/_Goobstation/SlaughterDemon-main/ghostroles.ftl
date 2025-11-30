@@ -1,4 +1,4 @@
-ghost-role-information-slaughter-demon-name = Demônio do Abate
+ghost-role-information-slaughter-demon-name = Demônio do Massacre
 ghost-role-information-slaughter-demon-description = QUE ÉPOCA PARA ESTAR VIVO! QUE AQUELES MORTAIS INSIGNIFICANTES ENFRENTEM MINHA VERDADEIRA IRA!
 ghost-role-information-slaughter-demon-rules =
     SENTE-SE E APROVEITE A MATANÇA, PORQUE MAIS NINGUÉM VAI. MAS AQUI VÃO ALGUMAS COISAS PARA MANTER EM MENTE, DE DEMÔNIO PARA DEMÔNIO.
