@@ -367,9 +367,14 @@ public sealed class RCDSystem : EntitySystem
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
         // Goobstation - start
         var proto = _protoManager.Index(args.StartingProtoId);
-        if (proto.Mode == RcdMode.Deconstruct)
+        if (proto.Mode == RcdMode.Deconstruct & proto.RefundDecon == true) // Gabystation edit - NO REFUND!!
+        {
             _sharedCharges.AddCharges(uid, args.Cost / 2);
-        else _sharedCharges.AddCharges(uid, -args.Cost);
+        }
+        else
+        {
+            _sharedCharges.AddCharges(uid, -args.Cost);
+        }
         // Goobstation - end
     }
 
@@ -605,7 +610,7 @@ public sealed class RCDSystem : EntitySystem
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
-            if (component.IsRpd)
+            if (component.IsRpd && component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Gabystation Edit - Really bad implementation for ProtoRCD
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -646,7 +651,7 @@ public sealed class RCDSystem : EntitySystem
         else
         {
             // The object is not in the RPD whitelist
-            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd)
+            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd && component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Gabystation Edit - Really bad implementation for ProtoRCD
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);

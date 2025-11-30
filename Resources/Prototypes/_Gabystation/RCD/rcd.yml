@@ -8,24 +8,77 @@
   delay: 6
   collisionMask: FullTileMask
   rotation: Fixed
-  fx: EffectRCDConstruct2 # Aumentar tempo animação pra ficar igual delay
+  fx: EffectRCDConstruct4 # Aumentar tempo animação pra ficar igual delay
+
+- type: rcd
+  id: DeconstructStrong
+  name: rcd-component-deconstruct
+  category: Main
+  sprite: /Textures/Interface/Radial/RCD/deconstruct.png
+  mode: Deconstruct
+  refunddecon: false
+  prototype: EffectRCDDeconstructPreview
+  rotation: Camera
 
 - type: rcd
   id: RCDSelect
   category: RCDall
   nested: 
-  - WallsAndFlooring
-  - WindowsAndGrilles
-  - Airlocks
-  - Electrical
-  - Lighting
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
 
 - type: rcd
   id: RPDSelect
   category: RPDall
   nested:
-  - Piping
-  - AtmosphericUtility
-  - PumpsValves
-  - Vents
-  - SensorsMonitors
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - RadiatorBend
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    # <GabyStation>
+    - ManifoldGas
+    - PipeHalf
+    - Alarm
+    - Sensor
+    - SensorPipe
+    - PressureRegulator
+    # <\GabyStation>
+    # <Goobstation>
+    - FilterInline
+    - RadiatorInline
+    - RadiatorInlineBend
+    # </Goobstation>
+    # <FunkyStation>
+    - HeatPump
+    # </FunkyStation>

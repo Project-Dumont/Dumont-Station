@@ -29,7 +29,8 @@
   - type: RCD
     isRpd: true
     availablePrototypes: #TODO Tentar fazer o Nestling funcionar
-    - WallReinforced
+    #- RCDSelect
+    #- RPDSelect
     - WallSolid
     - FloorSteel
     - Plating
@@ -48,7 +49,6 @@
     - MVCable
     - HVCable
     - CableTerminal
-    - Deconstruct
     - PipeFourway
     - PipeStraight
     - PipeBend
@@ -84,6 +84,5 @@
     # <FunkyStation>
     - HeatPump
     # </FunkyStation>
-    - Deconstruct
-    #- RCDSelect
-    #- RPDSelect
+    - WallReinforced
+    - DeconstructStrong

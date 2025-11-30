@@ -43,7 +43,7 @@ rcd-component-vents = Ventilações
 rcd-component-sensorsmonitors = Sensores & Monitores
 rcd-component-rcdall = Modo RCD
 rcd-component-rpdall = Modo RPD
-
+rcd-component-trash-and-ducts = Lixo & Dutos
 ### Nomes de protótipos
 
 rcd-component-deconstruct = desmontar
