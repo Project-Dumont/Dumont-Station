@@ -28,10 +28,10 @@ objective-spare-crew-title =
     Poupe alguns da tripulação para fazê‑los sangrar antes do golpe final.
 
 objective-hunt-for-brave-title =
-    Caçe os valentes que tentarem caçar você primeiro.
+    Cace os valentes que tentarem caçar você primeiro.
 
 objective-hunt-the-cowards-title =
-    Caçe os covardes que estão fugindo de você.
+    Cace os covardes que estão fugindo de você.
 
 # almost fluff
 objective-spread-blood =
