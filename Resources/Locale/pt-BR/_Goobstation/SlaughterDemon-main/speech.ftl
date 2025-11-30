@@ -52,6 +52,6 @@ accent-demonic-suffix-6 = OFEREÇA SEUS OSSOS.
 accent-demonic-suffix-7 = O SANGUE VAI TE AFOGAR.
 
 # speech verbs
-chat-speech-verb-name-demon = Demônio do Abate
+chat-speech-verb-name-demon = Demônio do Massacre
 chat-speech-verb-demon-1 = lamenta
 chat-speech-verb-demon-2 = guincha
