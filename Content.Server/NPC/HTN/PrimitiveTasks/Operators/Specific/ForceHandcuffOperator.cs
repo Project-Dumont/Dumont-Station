@@ -31,6 +31,9 @@ public sealed partial class ForceHandcuffOperator : HTNOperator
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entMan) || _entMan.Deleted(target))
             return HTNOperatorStatus.Failed;
 
+        if (_entMan.TryGetComponent<CuffableComponent>(target, out var targetCuffable) && targetCuffable.CuffedHandCount > 0)
+            return HTNOperatorStatus.Finished;
+
         if (!_entMan.TryGetComponent<CanForceHandcuffComponent>(owner, out var canForceCuff))
             return HTNOperatorStatus.Failed;
 
