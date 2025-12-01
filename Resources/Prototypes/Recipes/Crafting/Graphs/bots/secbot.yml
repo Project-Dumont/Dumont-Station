@@ -16,7 +16,7 @@
         icon:
           sprite: Objects/Weapons/Melee/stunbaton.rsi
           state: stunbaton_off
-        name: stun baton
+        name: construction-graph-tag-stun-baton
         doAfter: 2
       - tag: ProximitySensor
         icon:
