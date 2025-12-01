@@ -753,11 +753,9 @@
     templateId: medibot
   - type: IntrinsicRadioTransmitter
     channels:
-    - Hexadecimal
     - Security
   - type: ActiveRadio
     channels:
-    - Hexadecimal
     - Common
     - Security
   - type: StationAiVision
