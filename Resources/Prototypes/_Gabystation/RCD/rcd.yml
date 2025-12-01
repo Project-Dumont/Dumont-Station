@@ -42,6 +42,18 @@
   fx: EffectRCDConstruct4
   noLayers: true
 
+- type: rcd
+  id: DirectionalFan
+  category: AtmosphericUtility
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/directional-fan.png
+  mode: ConstructObject
+  prototype: AtmosDeviceFanDirectional
+  cost: 10
+  delay: 4
+  rotation: User
+  fx: EffectRCDConstruct4
+  noLayers: true
+
 # Pneumatic Transport
 - type: rcd
   id: Disposal
@@ -269,6 +281,19 @@
   fx: EffectRCDConstruct4
   noLayers: true
 
+- type: rcd
+  id: BlastDoor
+  category: Airlocks
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/blast-door.png
+  mode: ConstructObject
+  prototype: BlastDoor
+  cost: 10
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct4
+  noLayers: true
+
 # Especial
 - type: rcd
   id: DeconstructStrong
@@ -321,6 +346,7 @@
     - AirlockHighSec
     - Windoor
     - WindoorReinforced
+    - BlastDoor
 
 - type: rcd
   id: RPDSelect
@@ -363,3 +389,4 @@
     - HeatPump
     # </FunkyStation>
     - Canister
+    - DirectionalFan

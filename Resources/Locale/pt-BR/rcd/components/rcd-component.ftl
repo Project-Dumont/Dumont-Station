@@ -44,8 +44,10 @@ rcd-component-sensorsmonitors = Sensores & Monitores
 rcd-component-rcdall = Modo RCD
 rcd-component-rpdall = Modo RPD
 rcd-component-pneumatic-transport = Transporte Pneumático
+
 ### Nomes de protótipos
 
+### RCD
 rcd-component-deconstruct = desmontar
 rcd-component-wall-solid = parede sólida
 rcd-component-floor-steel = piso de aço
@@ -69,7 +71,6 @@ rcd-component-window-mv-cable = cabo MT
 rcd-component-window-hv-cable = cabo AT
 rcd-component-window-cable-terminal = terminal de cabo
 rcd-component-apc = APC
-rcd-component-canister = Cilindro de Gás
 rcd-component-disposal = Unidade de descarte
 rcd-component-mailing = Unidade de correio
 rcd-component-disposal-pipe-straight = Cano pneumático reto
@@ -88,3 +89,8 @@ rcd-component-windoor = Porta deslizante
 rcd-component-windoor-reinforced = Porta deslizanete reforçada
 rcd-component-airlock-external = Airlock externo
 rcd-component-airlock-high-sec = Airlock de alta segurança
+rcd-component-blast-door = Porta anti-explosão
+
+### RPD
+rcd-component-canister = Cilindro de Gás
+rcd-component-directional-fan = Ventoinha direcional

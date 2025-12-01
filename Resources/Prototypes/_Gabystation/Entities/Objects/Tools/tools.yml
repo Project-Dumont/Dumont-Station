@@ -9,7 +9,7 @@
   description: An still experimental RCD, capable of much more than standard models. Specially provided for the CE for field testing.
   components:
   - type: LimitedCharges
-    maxCharges: 30
+    maxCharges: 45
   - type: AutoRecharge
     rechargeDuration: 10
   - type: Sprite
@@ -75,7 +75,7 @@
     - Sensor
     - SensorPipe
     - PressureRegulator
-    # <\GabyStation>
+    # </GabyStation>
     # <Goobstation>
     - FilterInline
     - RadiatorInline
@@ -105,3 +105,5 @@
     - AirlockHighSec
     - Windoor
     - WindoorReinforced
+    - DirectionalFan
+    - BlastDoor
