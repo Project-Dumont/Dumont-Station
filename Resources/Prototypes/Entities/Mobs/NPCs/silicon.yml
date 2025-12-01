@@ -777,8 +777,8 @@
     lightAttackOvertimeDamageMultiplier: 2
     sound: /Audio/Weapons/egloves.ogg
   - type: MovementSpeedModifier
-    baseWalkSpeed : 2
-    baseSprintSpeed : 3
+    baseWalkSpeed : 1.5
+    baseSprintSpeed : 2.5
 
 - type: entity
   parent: MobSecuritron
