@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Robust.Shared.Audio;

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Logs.Converters;
 using Content.Server.NPC.Pathfinding;
 using Content.Shared.Cuffs.Components;
