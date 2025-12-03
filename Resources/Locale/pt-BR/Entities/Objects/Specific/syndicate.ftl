@@ -38,7 +38,7 @@ ent-BaseUplinkRadio125TC = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 200 TC
 
-    ent-BaseUplinkRadio125TC = uplink do Sindicato
+    ent-BaseUplinkRadio350TC = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 350 TC, Comandante
 
