@@ -16,14 +16,12 @@ namespace Content.Server.Speech.EntitySystems
 
         private static readonly IReadOnlyDictionary<string, string> Replacements = new Dictionary<string, string>()
         {
-            { "с", "ш" },
-            { "С", "Ш" },
-            { "щ", "ф" },
-            { "Щ", "Ф" },
-            { "з", "ж" },
-            { "З", "Ж" },
-            { "ц", "ч" },
-            { "Ц", "Ч" }
+            { "s", "f" },
+            { "S", "F" },
+            { "z", "f" },
+            { "Z", "F" },
+            { "ç", "f" },
+            { "Ç", "F" }
         };
 
         public string Accentuate(string message)

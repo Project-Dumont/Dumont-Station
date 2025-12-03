@@ -16,27 +16,25 @@ namespace Content.Server.Speech.EntitySystems
         private static readonly Regex WordSplitRegex = new Regex(@"(\W+)", RegexOptions.Compiled);
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
-            { "е", "ѣ" },
-            { "Е", "Ѣ" },
-            { "ф", "ѳ" },
-            { "Ф", "Ѳ" },
-            { "и", "i" },
-            { "И", "I" },
-            { "ч", "чь" },
-            { "Ч", "Чь" },
-            { "щ", "щь" },
-            { "Щ", "Щь" },
-            { "ж", "жь" },
-            { "Ж", "Жь" },
-            { "ш", "шь" },
-            { "Ш", "Шь" },
-            { "ц", "ць" },
-            { "Ц", "Ць" },
+            { "ſ", "s" },
+            { "S", "S" },
+            { "i", "y" },
+            { "I", "Y" },
+            { "f", "ph" },
+            { "F", "PH" },
+            { "T", "TH" },
+            { "t", "th" },
+            { "c", "ch" },
+            { "C", "CH" },
+            { "r", "rh" },
+            { "R", "RH" },
+            { "u", "ü" },
+            { "U", "Ü" },
         };
         private static readonly IReadOnlyList<char> HardConsonants = new List<char>()
         {
-            'г', 'Г', 'к', 'К', 'в', 'В', 'з', 'З', 'с', 'С', 'т', 'Т', 'д', 'Д',
-            'б', 'Б', 'п', 'П', 'м', 'М', 'н', 'Н', 'л', 'Л', 'р', 'Р', 'х', 'Х'
+            'b', 'B', 'c', 'C', 'd', 'D', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M',
+            'n', 'N', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'v', 'V', 'w', 'W', 'x', 'X', 'z', 'Z'
         };
 
         public string Accentuate(string message)
@@ -60,7 +58,7 @@ namespace Content.Server.Speech.EntitySystems
 
                 if (newWord.Length > 0 && HardConsonants.Contains(newWord[^1]))
                 {
-                    newWord.Append('ъ');
+                    newWord.Append('h');
                 }
 
                 result.Append(newWord.ToString());

@@ -14,19 +14,21 @@ namespace Content.Server.Speech.EntitySystems
 
         private static readonly IReadOnlyList<string> LaughsAndExclamations = new List<string>
         {
-            " Ой-йо!", " Ха-ха!", " Хи-хи!", " Бугага!", " Хо-хо!", " Вау!", " Бам!", " Бум!"
+            " Opa!", " Ha ha!", " He he!", " Buá há há!", " Ho ho!", " Uau!", " Bam!", " Boom!"
         }.AsReadOnly();
 
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
-            { "привет", "хонк" },
-            { "пока", "хонк-хонк" },
-            { "да", "ага-ага" },
-            { "нет", "не-а" },
-            { "очень", "супер" },
-            { "большой", "огромный" },
-            { "маленький", "крошечный" },
-            { "смешно", "уморительно" },
+            { "oi", "buzina" },
+            { "ola", "buzina" },
+            { "tchau", "buzina-buzina" },
+            { "adeus", "buzina-buzina" },
+            { "sim", "aham-aham" },
+            { "não", "nein" },
+            { "muito", "muito muito" },
+            { "grande", "gigantesco" },
+            { "pequeno", "pequenininho" },
+            { "engraçado", "hilário" },
         };
 
         public string Accentuate(string message)

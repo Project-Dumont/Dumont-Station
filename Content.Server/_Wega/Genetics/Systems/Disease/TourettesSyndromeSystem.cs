@@ -16,8 +16,8 @@ public sealed class TourettesSyndromeSystem : EntitySystem
 
     private static readonly IReadOnlyList<string> SwearWords = new List<string>
     {
-        "бля", "ёпт", "нах", "пизда", "хуй", "ебать", "сука", "гандон", "мудак", "долбоёб",
-        "бля!", "ёпт!", "нах!", "пизда!", "хуй!", "ебать!", "сука!", "гандон!", "мудак!", "долбоёб!"
+        "porra", "caralho", "merda", "foda", "cacete", "puta", "buceta", "cu", "corno", "viado",
+        "porra!", "caralho!", "merda!", "foda!", "cacete!", "puta!", "buceta!", "cu!", "corno!", "viado!"
     }.AsReadOnly();
 
     public override void Update(float frameTime)
