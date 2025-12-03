@@ -73,7 +73,7 @@ public sealed partial class VampireMutationMenu : DefaultWindow
                 MinSize = new Vector2(64, 64),
                 HorizontalExpand = true,
                 Group = group,
-                StyleClasses = { StyleBase.ButtonSquare },
+                StyleClasses = { Styleclass.ButtonSquare },
                 ToggleMode = true,
                 Pressed = _selectedId == Mutation,
                 ToolTip = Loc.GetString($"vampire-mutation-{Mutation.ToString().ToLower()}-info"),

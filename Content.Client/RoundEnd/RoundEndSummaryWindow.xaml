@@ -1,0 +1,24 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    MinWidth="520"
+    MinHeight="580"
+    Title="{Loc 'round-end-summary-window-title'}">
+    <TabContainer Name="RoundEndTabs">
+        <BoxContainer Orientation="Vertical">
+            <ScrollContainer VerticalExpand="True" Margin="10" HScrollEnabled="False">
+                <BoxContainer Name="RoundEndSummaryContainer" Orientation="Vertical"/> <!--Summary content-->
+            </ScrollContainer>
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical">
+            <ScrollContainer VerticalExpand="True" Margin="10">
+                <BoxContainer Name="RoundEndPlayerInfoContainer" Orientation="Vertical"/> <!--Manifest content-->
+            </ScrollContainer>
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical">
+            <ScrollContainer VerticalExpand="True" Margin="10" HScrollEnabled="False">
+                <BoxContainer Name="RoundEndStationReportContainer" Orientation="Vertical"/> <!--Station Report Content-->
+            </ScrollContainer>
+        </BoxContainer>
+    </TabContainer>
+</controls:FancyWindow>
