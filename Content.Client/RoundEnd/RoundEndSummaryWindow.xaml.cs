@@ -241,12 +241,12 @@ namespace Content.Client.RoundEnd
                     var totalDamage = playerInfo.DamagePerGroup.Values.Sum(static v => (decimal) v);
                     var severityAdj = totalDamage switch
                     {
-                        >= 1000 => "catastrophic",
-                        >= 750 => "devastating",
-                        >= 500 => "agonizing",
-                        >= 300 => "painful",
-                        >= 200 => "brutal",
-                        _ => "tragic"
+                        >= 1000 => Loc.GetString("round-end-summary-window-death-damage-severity-catastrophic"),
+                        >= 750 => Loc.GetString("round-end-summary-window-death-damage-severity-devastating"),
+                        >= 500 => Loc.GetString("round-end-summary-window-death-damage-severity-agonizing"),
+                        >= 300 => Loc.GetString("round-end-summary-window-death-damage-severity-painful"),
+                        >= 200 => Loc.GetString("round-end-summary-window-death-damage-severity-brutal"),
+                        _ => Loc.GetString("round-end-summary-window-death-damage-severity-tragic")
                     };
 
                     var highestDamage = playerInfo.DamagePerGroup
@@ -254,14 +254,14 @@ namespace Content.Client.RoundEnd
                         .First();
                     var typeAdj = highestDamage.Key switch
                     {
-                        "Burn" => "fiery",
-                        "Brute" => "crushing",
-                        "Toxin" => "poisonous",
-                        "Airloss" => "suffocating",
-                        "Genetic" => "twisted",
-                        "Metaphysical" => "otherworldly",
-                        "Electronic" => "shocking",
-                        _ => "mysterious",
+                        "Burn" => Loc.GetString("round-end-summary-window-death-damage-type-burn"),
+                        "Brute" => Loc.GetString("round-end-summary-window-death-damage-type-brute"),
+                        "Toxin" => Loc.GetString("round-end-summary-window-death-damage-type-toxin"),
+                        "Airloss" => Loc.GetString("round-end-summary-window-death-damage-type-airloss"),
+                        "Genetic" => Loc.GetString("round-end-summary-window-death-damage-type-genetic"),
+                        "Metaphysical" => Loc.GetString("round-end-summary-window-death-damage-type-metaphysical"),
+                        "Electronic" => Loc.GetString("round-end-summary-window-death-damage-type-electronic"),
+                        _ => Loc.GetString("round-end-summary-window-death-damage-type-mysterious"),
                     };
 
                     deathLabel.SetMarkup(
@@ -287,7 +287,7 @@ namespace Content.Client.RoundEnd
                             "Airloss" => Color.Blue,
                             "Genetic" => Color.Cyan,
                             "Metaphysical" => Color.Purple,
-                            "Electronic" => Color.DarkOrange,
+                            "Electronic" => Color.Yellow,
                             _ => Color.White,
                         };
                         var damagePanel = new PanelContainer
