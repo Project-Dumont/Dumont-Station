@@ -22,7 +22,7 @@ ent-BaseUplinkRadio50TC = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 50 TC
 
-    ent-BaseUplinkRadio50TCNukeOps = uplink do Sindicato
+ent-BaseUplinkRadio50TCNukeOps = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 50 TC, Reforço Nukie
 
@@ -34,11 +34,11 @@ ent-BaseUplinkRadio125TC = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 125 TC
 
-    ent-BaseUplinkRadio200TC = uplink do Sindicato
+ent-BaseUplinkRadio200TC = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 200 TC
 
-    ent-BaseUplinkRadio350TC = uplink do Sindicato
+ent-BaseUplinkRadio350TC = uplink do Sindicato
     .desc = Rádio antigo com aparência suspeita...
     .suffix = 350 TC, Comandante
 
