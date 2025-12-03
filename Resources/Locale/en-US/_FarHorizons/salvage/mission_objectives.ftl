@@ -22,5 +22,9 @@ salvage-mission-objective-name-purge = Purge
 salvage-mission-objective-description-purge = Base destruction left behind inconvenient records. Purge them.
 salvage-mission-objective-announcement-purge = Your mission is to destroy {$numTargets} document folders left around the base. If you recover any additional folder, you will be paid for their destruction as well.
 
+salvage-mission-objective-name-shutdown = Shutdown
+salvage-mission-objective-description-shutdown = Rogue devices were left operational on a planetary base. Shut them down
+salvage-mission-objective-announcement-shutdown = Your mission is to find and destroy {$numTargets} suspicious devices. You will be paid extra for any additional device you destroy.
+
 salvage-mission-objective-completed-message = Salvage mission completed. {$bonus}/{$maxBonus} bonus objectives completed. Total payout: {$totalReward} tickets
 salvage-mission-objective-failed-message = Salvage mission failed.

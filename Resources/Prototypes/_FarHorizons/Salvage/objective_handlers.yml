@@ -13,3 +13,7 @@
 - type: salvageMissionObjectiveHandler
   id: MissionObjectivePurgeHandler
   handler: !type:SalvageMissionPurge
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveShutdownHandler
+  handler: !type:SalvageMissionShutdown

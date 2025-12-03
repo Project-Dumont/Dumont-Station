@@ -24,6 +24,9 @@
     - Experiment
     - LavaBrig
     - SnowyLabs
+    - ShipWreckDungeon
+    - Haunted
+    - Mineshaft
 
 - type: salvageMissionObjective
   id: MissionObjectiveCapture
@@ -86,3 +89,27 @@
     - Experiment
     - LavaBrig
     - SnowyLabs
+
+- type: salvageMissionObjective
+  id: MissionObjectiveShutdown
+  handlerId: "MissionObjectiveShutdownHandler"
+  name: salvage-mission-objective-name-shutdown
+  description: salvage-mission-objective-description-shutdown
+  announcement: salvage-mission-objective-announcement-shutdown
+  baseReward:
+    Easy: 850
+    Moderate: 1150
+    Challenging: 1300
+  numTargets:
+    Easy: 2
+    Moderate: 3
+    Challenging: 4
+  bonus: 345
+  bonusCap: 3
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+    - ShipWreckDungeon
+    - Haunted
+    - Mineshaft
