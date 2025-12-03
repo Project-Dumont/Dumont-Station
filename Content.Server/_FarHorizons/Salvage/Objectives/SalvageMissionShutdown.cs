@@ -1,14 +1,6 @@
 using System.Linq;
-using Content.Server.Humanoid;
-using Content.Server.Station.Systems;
-using Content.Shared._FarHorizons.Factions;
-using Content.Shared.Construction.EntitySystems;
-using Content.Shared.Damage;
-using Content.Shared.Inventory;
-using Content.Shared.Mobs.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server._FarHorizons.Salvage.Objectives;
 
