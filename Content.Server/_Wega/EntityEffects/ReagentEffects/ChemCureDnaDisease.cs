@@ -1,4 +1,4 @@
-using Content.Server.Genetics.System;
+using Content.Shared.Genetics;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 using JetBrains.Annotations;

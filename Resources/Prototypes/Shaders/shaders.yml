@@ -154,8 +154,3 @@
   id: Colourblindness
   kind: source
   path: "/Textures/_Wega/Shaders/colourblindness.swsl"
-
-- type: shader
-  id: Noir
-  kind: source
-  path: "/Textures/_Wega/Shaders/noir.swsl"

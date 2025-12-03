@@ -208,3 +208,20 @@ public sealed class DnaModifierConsoleReleverationsEvent : EntityEventArgs
         Duration = duration;
     }
 }
+
+public sealed class CureDnaDiseaseAttemptEvent : EntityEventArgs
+{
+    public float CureChance { get; }
+
+    public CureDnaDiseaseAttemptEvent(float cureChance)
+    {
+        CureChance = cureChance;
+    }
+}
+
+public sealed class MutateDnaAttemptEvent : EntityEventArgs
+{
+    public MutateDnaAttemptEvent()
+    {
+    }
+}

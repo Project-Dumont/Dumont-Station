@@ -1072,20 +1072,3 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     }
     #endregion
 }
-
-public sealed class CureDnaDiseaseAttemptEvent : EntityEventArgs
-{
-    public float CureChance { get; }
-
-    public CureDnaDiseaseAttemptEvent(float cureChance)
-    {
-        CureChance = cureChance;
-    }
-}
-
-public sealed class MutateDnaAttemptEvent : EntityEventArgs
-{
-    public MutateDnaAttemptEvent()
-    {
-    }
-}

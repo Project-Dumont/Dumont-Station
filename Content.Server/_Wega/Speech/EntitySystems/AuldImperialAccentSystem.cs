@@ -24,8 +24,6 @@ namespace Content.Server.Speech.EntitySystems
             { "F", "PH" },
             { "T", "TH" },
             { "t", "th" },
-            { "c", "ch" },
-            { "C", "CH" },
             { "r", "rh" },
             { "R", "RH" },
             { "u", "ü" },
@@ -33,8 +31,6 @@ namespace Content.Server.Speech.EntitySystems
         };
         private static readonly IReadOnlyList<char> HardConsonants = new List<char>()
         {
-            'b', 'B', 'c', 'C', 'd', 'D', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M',
-            'n', 'N', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'v', 'V', 'w', 'W', 'x', 'X', 'z', 'Z'
         };
 
         public string Accentuate(string message)
