@@ -225,9 +225,9 @@
   id: ActionActivateEmpImplant
   name: Activate EMP
   description: Triggers a small EMP pulse around you
+  components:
   - type: LimitedCharges # Gabystation no fun
     maxCharges: 3
-  components:
   - type: Action
     checkCanInteract: false
     useDelay: 30
