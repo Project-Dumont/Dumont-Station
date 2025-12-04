@@ -1,13 +1,12 @@
 using System.Linq;
 using Content.Server.Humanoid;
-using Content.Shared.Corvax.TTS;
 using Content.Shared.DetailExaminable;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Genetics;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
-using Content.Shared.Speech.Synthesis.Components;
+using Content.Goobstation.Common.Barks;
 using Content.Shared.Wagging;
 
 namespace Content.Server.Genetics.System;
@@ -49,9 +48,6 @@ public sealed partial class DnaModifierSystem
         _metaData.SetEntityName(entity, Name(target));
         if (TryComp<DnaComponent>(entity, out var dna) && TryComp<DnaComponent>(target, out var targetDna))
             dna.DNA = targetDna.DNA;
-
-        if (TryComp<TTSComponent>(entity, out var tts) && TryComp<TTSComponent>(target, out var targetTts))
-            tts.VoicePrototypeId = targetTts.VoicePrototypeId;
 
         if (TryComp<SpeechSynthesisComponent>(entity, out var barks) && TryComp<SpeechSynthesisComponent>(target, out var targetBarks))
             barks.VoicePrototypeId = targetBarks.VoicePrototypeId;

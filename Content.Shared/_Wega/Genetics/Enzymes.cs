@@ -7,17 +7,16 @@ namespace Content.Shared.Genetics;
 public sealed class EnzymeInfo
 {
     public string SampleName { get; set; } = string.Empty;
-    public UniqueIdentifiersPrototype? Identifier { get; set; }
+    public UniqueIdentifiersData? Identifier { get; set; }
     public List<EnzymesPrototypeInfo>? Info { get; set; }
 
     public object Clone()
     {
         return new EnzymeInfo
         {
-            SampleName = this.SampleName,
-            Identifier = this.Identifier != null
-                ? (UniqueIdentifiersPrototype)this.Identifier.Clone() : null,
-            Info = this.Info?.Select(e => (EnzymesPrototypeInfo)e.Clone()).ToList()
+            SampleName = SampleName,
+            Identifier = Identifier != null ? Identifier.Clone(Identifier) : null,
+            Info = Info?.Select(e => (EnzymesPrototypeInfo)e.Clone()).ToList()
         };
     }
 }
@@ -33,9 +32,9 @@ public sealed class EnzymesPrototypeInfo
     {
         return new EnzymesPrototypeInfo
         {
-            EnzymesPrototypeId = this.EnzymesPrototypeId,
-            HexCode = (string[])this.HexCode.Clone(),
-            Order = this.Order
+            EnzymesPrototypeId = EnzymesPrototypeId,
+            HexCode = (string[])HexCode.Clone(),
+            Order = Order
         };
     }
 }

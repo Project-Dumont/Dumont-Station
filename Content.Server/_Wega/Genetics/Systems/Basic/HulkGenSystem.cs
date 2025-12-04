@@ -4,6 +4,7 @@ using Content.Server.Polymorph.Systems;
 using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Genetics;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -20,36 +21,34 @@ public sealed class HulkGenSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
-
     [Dependency] private readonly DnaModifierSystem _dnaModifier = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
 
-    [ValidatePrototypeId<StructuralEnzymesPrototype>]
-    private const string HulkGen = "GeneticsHulkBasic";
+    private static readonly ProtoId<StructuralEnzymesPrototype> HulkGen = "GeneticsHulkBasic";
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HulkGenComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<HulkGenComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<HulkGenComponent, HulkTransformationActionEvent>(OnTransformation);
+        SubscribeLocalEvent<WegaHulkGenComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<WegaHulkGenComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<WegaHulkGenComponent, HulkTransformationActionEvent>(OnTransformation);
 
-        SubscribeLocalEvent<HulkComponent, ComponentInit>(OnHulkInit);
-        SubscribeLocalEvent<HulkComponent, ComponentShutdown>(OnHulkShutdown);
-        SubscribeLocalEvent<HulkComponent, HulkChargeActionEvent>(OnHulkCharge);
+        SubscribeLocalEvent<WegaHulkComponent, ComponentInit>(OnHulkInit);
+        SubscribeLocalEvent<WegaHulkComponent, ComponentShutdown>(OnHulkShutdown);
+        SubscribeLocalEvent<WegaHulkComponent, HulkChargeActionEvent>(OnHulkCharge);
     }
 
-    private void OnInit(Entity<HulkGenComponent> ent, ref ComponentInit args)
+    private void OnInit(Entity<WegaHulkGenComponent> ent, ref ComponentInit args)
         => ent.Comp.ActionEntity = _action.AddAction(ent, ent.Comp.ActionPrototype);
 
-    private void OnShutdown(Entity<HulkGenComponent> ent, ref ComponentShutdown args)
+    private void OnShutdown(Entity<WegaHulkGenComponent> ent, ref ComponentShutdown args)
         => _action.RemoveAction(ent.Comp.ActionEntity);
 
-    private void OnTransformation(Entity<HulkGenComponent> ent, ref HulkTransformationActionEvent args)
+    private void OnTransformation(Entity<WegaHulkGenComponent> ent, ref HulkTransformationActionEvent args)
     {
         args.Handled = true;
         if (!TryComp<DnaModifierComponent>(ent, out var dnaModifier) || dnaModifier.EnzymesPrototypes == null
@@ -85,52 +84,43 @@ public sealed class HulkGenSystem : EntitySystem
     }
 
     #region Abilities
-    private void OnHulkInit(Entity<HulkComponent> ent, ref ComponentInit args)
+    private void OnHulkInit(Entity<WegaHulkComponent> ent, ref ComponentInit args)
     {
         foreach (var action in ent.Comp.ActionPrototypes)
             ent.Comp.ActionsEntity.Add(_action.AddAction(ent, action));
     }
 
-    private void OnHulkShutdown(Entity<HulkComponent> ent, ref ComponentShutdown args)
+    private void OnHulkShutdown(Entity<WegaHulkComponent> ent, ref ComponentShutdown args)
     {
         foreach (var action in ent.Comp.ActionsEntity)
             _action.RemoveAction(action);
     }
 
-    private void OnHulkCharge(Entity<HulkComponent> entity, ref HulkChargeActionEvent args)
+    private void OnHulkCharge(Entity<WegaHulkComponent> entity, ref HulkChargeActionEvent args)
     {
-        if (args.Coords is not { } coords)
-            return;
-
+        var target = args.Target;
         var vampirePosition = _transform.GetWorldPosition(entity);
-        var targetPosition = _transform.ToMapCoordinates(coords, true).Position;
+        var targetPosition = _transform.ToMapCoordinates(Transform(target).Coordinates, true).Position;
         var direction = (targetPosition - vampirePosition).Normalized();
 
         if (TryComp(entity, out PhysicsComponent? vampirePhysics))
             _physics.ApplyLinearImpulse(entity, direction * 20000f, body: vampirePhysics);
 
-        if (args.Entity is not { } targetEntity)
-        {
-            _audio.PlayPvs(args.Sound, entity);
-            args.Handled = true;
-            return;
-        }
-
-        if (TryComp(targetEntity, out DestructibleComponent? _))
+        if (TryComp(target, out DestructibleComponent? _))
         {
             var damage = new DamageSpecifier { DamageDict = { { "Structural", 300 } } };
-            _damage.TryChangeDamage(targetEntity, damage, origin: entity);
+            _damage.TryChangeDamage(target, damage, origin: entity);
         }
 
-        if (TryComp(targetEntity, out BodyComponent? _))
+        if (TryComp(target, out BodyComponent? _))
         {
             var damage = new DamageSpecifier { DamageDict = { { "Blunt", 60 } } };
-            _damage.TryChangeDamage(targetEntity, damage, ignoreResistances: false, origin: entity);
+            _damage.TryChangeDamage(target, damage, ignoreResistances: false, origin: entity);
 
-            if (TryComp(targetEntity, out PhysicsComponent? physics))
-                _physics.ApplyLinearImpulse(targetEntity, direction * 1000f, body: physics);
+            if (TryComp(target, out PhysicsComponent? physics))
+                _physics.ApplyLinearImpulse(target, direction * 1000f, body: physics);
 
-            _stun.TryParalyze(targetEntity, TimeSpan.FromSeconds(10f), true);
+            _stun.TryParalyze(target, TimeSpan.FromSeconds(10f), true);
         }
 
         _audio.PlayPvs(args.Sound, entity);

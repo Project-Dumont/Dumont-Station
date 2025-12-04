@@ -9,7 +9,7 @@ public sealed partial class DnaModifierInjectorComponent : Component
 {
 
     [ViewVariables(VVAccess.ReadOnly), DataField("uniqueIdentifiers")]
-    public UniqueIdentifiersPrototype? UniqueIdentifiers { get; set; } = default!;
+    public UniqueIdentifiersData? UniqueIdentifiers { get; set; } = default!;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public List<EnzymesPrototypeInfo>? EnzymesPrototypes { get; set; } = default!;

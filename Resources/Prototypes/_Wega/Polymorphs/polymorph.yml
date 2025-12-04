@@ -1,21 +1,3 @@
-#Vampire
-- type: polymorph
-  id: VampireBlood
-  configuration:
-    entity: MobPuddleBlood
-    forced: true
-    duration: 8
-
-- type: polymorph
-  id: SlimeMorph
-  configuration:
-    entity: MobXenoSlimeBlue # I left it blue on purpose
-    forced: true
-    inventory: Transfer
-    transferName: true
-    revertOnCrit: false
-    revertOnDeath: false
-
 #Genetics
 - type: polymorph
   id: HulkPolymorph

@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Genetics;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -52,7 +53,7 @@ public sealed class SpeedUpGenSystem : EntitySystem
             return;
 
         var bonusDamage = args.DamageDelta * 0.2f;
-        _damageable.TryChangeDamage(ent, bonusDamage, true);
+        _damageable.TryChangeDamage(ent.Owner, bonusDamage, true);
     }
 
     private bool IsNegativeDamage(DamageSpecifier damage)

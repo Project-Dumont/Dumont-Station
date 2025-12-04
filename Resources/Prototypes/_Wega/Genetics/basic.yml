@@ -14,7 +14,7 @@
   chanceAssimilation: 0.15
   costInstability: 15
   addComponent:
-  - type: HulkGen
+  - type: WegaHulkGen
 
 - type: structuralEnzymes
   id: GeneticsMatterEaterBasic

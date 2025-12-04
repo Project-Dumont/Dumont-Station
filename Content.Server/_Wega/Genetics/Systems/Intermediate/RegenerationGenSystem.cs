@@ -1,7 +1,9 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Genetics;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Genetics.System;
 
@@ -9,10 +11,8 @@ public sealed class RegenerationGenSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damage = default!;
 
-    [ValidatePrototypeId<DamageTypePrototype>]
-    private const string BluntDamage = "Blunt";
-    [ValidatePrototypeId<DamageTypePrototype>]
-    private const string HeatDamage = "Heat";
+    private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> HeatDamage = "Heat";
 
     public override void Update(float frameTime)
     {
@@ -24,12 +24,12 @@ public sealed class RegenerationGenSystem : EntitySystem
             if (regenerationComponent.NextTimeTick <= 0)
             {
                 regenerationComponent.NextTimeTick = 4f;
-                if (!TryComp<DamageableComponent>(uid, out var damageable))
+                if (!HasComp<DamageableComponent>(uid))
                     return;
 
                 var modifier = regenerationComponent.RegenerationModifier;
                 var damage = new DamageSpecifier { DamageDict = { { BluntDamage, modifier }, { HeatDamage, modifier } } };
-                _damage.TryChangeDamage(uid, damage, true, damageable: damageable);
+                _damage.TryChangeDamage(uid, damage, true);
             }
             regenerationComponent.NextTimeTick -= frameTime;
         }

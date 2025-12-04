@@ -1,11 +1,11 @@
 using Content.Shared.GameTicking;
-using Robust.Shared.Map;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Genetics.System;
 
 public sealed partial class DnaModifierSystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly MapSystem _map = default!;
 
     public EntityUid? PausedMap { get; private set; }
 
@@ -27,8 +27,6 @@ public sealed partial class DnaModifierSystem
         if (PausedMap != null && Exists(PausedMap))
             return;
 
-        var newmap = _mapManager.CreateMap();
-        _mapManager.SetMapPaused(newmap, true);
-        PausedMap = _mapManager.GetMapEntityId(newmap);
+        PausedMap = _map.CreateMap(false);
     }
 }

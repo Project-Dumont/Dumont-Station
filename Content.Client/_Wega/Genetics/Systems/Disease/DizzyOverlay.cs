@@ -13,6 +13,7 @@ public sealed class DizzyOverlay : Overlay
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
+    private static readonly ProtoId<ShaderPrototype> Dizzy = "Dizzy";
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
     private readonly ShaderInstance _dizzyShader;
@@ -27,7 +28,7 @@ public sealed class DizzyOverlay : Overlay
     public DizzyOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _dizzyShader = _prototypeManager.Index<ShaderPrototype>("Dizzy").InstanceUnique();
+        _dizzyShader = _prototypeManager.Index(Dizzy).InstanceUnique();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

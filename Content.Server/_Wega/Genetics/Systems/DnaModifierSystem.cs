@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
@@ -7,6 +8,8 @@ using Content.Server.Prayer;
 using Content.Shared.Buckle;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Genetics;
@@ -47,6 +50,8 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    private static readonly ProtoId<EmotePrototype> Scream = "Scream";
 
     public override void Initialize()
     {
@@ -144,12 +149,12 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     }
 
     #region Deep Cloning
-    public UniqueIdentifiersPrototype? CloneUniqueIdentifiers(UniqueIdentifiersPrototype? source)
+    public UniqueIdentifiersData? CloneUniqueIdentifiers(UniqueIdentifiersData? source)
     {
         if (source == null)
             return null;
 
-        return (UniqueIdentifiersPrototype)source.Clone();
+        return source.Clone(source);
     }
 
     public List<EnzymesPrototypeInfo>? CloneEnzymesPrototypes(List<EnzymesPrototypeInfo>? source)
@@ -166,7 +171,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     {
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
         {
-            var uniqueIdentifiers = new UniqueIdentifiersPrototype
+            var uniqueIdentifiers = new UniqueIdentifiersData
             {
                 ID = $"UniqueIdentifiers{uid}",
             };
@@ -408,7 +413,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         else
         {
             var empty = new[] { "0", "0", "0" };
-            var uniqueIdentifiers = new UniqueIdentifiersPrototype
+            var uniqueIdentifiers = new UniqueIdentifiersData
             {
                 ID = $"StructuralEnzymes{uid}",
                 HairColorR = GenerateRandomHexValues(),
@@ -584,7 +589,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
             _damage.TryChangeDamage(uid, damage, true);
 
-            _chat.TryEmoteWithoutChat(uid, _prototype.Index<EmotePrototype>("Scream"), true);
+            _chat.TryEmoteWithoutChat(uid, _prototype.Index(Scream), true);
             _popup.PopupEntity(Loc.GetString("dna-instability-stage-two"), uid, uid, PopupType.SmallCaution);
         }
     }
@@ -597,7 +602,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
             _damage.TryChangeDamage(uid, damage, true);
 
-            _chat.TryEmoteWithoutChat(uid, _prototype.Index<EmotePrototype>("Scream"), true);
+            _chat.TryEmoteWithoutChat(uid, _prototype.Index(Scream), true);
             _popup.PopupEntity(Loc.GetString("dna-instability-stage-three"), uid, uid, PopupType.LargeCaution);
         }
     }
@@ -648,7 +653,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         Dirty(ent, humanoid);
     }
 
-    private void UpdateSkin(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersPrototype uniqueIdentifiers)
+    private void UpdateSkin(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersData uniqueIdentifiers)
     {
         var speciesProto = _prototype.Index<SpeciesPrototype>(humanoid.Comp.Species);
 
@@ -680,7 +685,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         }
     }
 
-    private void UpdateMarkings(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersPrototype uniqueIdentifiers)
+    private void UpdateMarkings(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersData uniqueIdentifiers)
     {
         var markingSet = humanoid.Comp.MarkingSet;
         var markingPrototypes = _markingIndexer.GetAllMarkingPrototypes();
@@ -693,7 +698,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         _ensureMarking.UpdateMarkingCategory(humanoid, markingSet, MarkingCategories.Tail, uniqueIdentifiers.TailMarkingColorR, uniqueIdentifiers.TailMarkingColorG, uniqueIdentifiers.TailMarkingColorB, uniqueIdentifiers.TailMarkingStyle, humanoid.Comp.Species, markingPrototypes);
     }
 
-    private void UpdateEyeColor(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersPrototype uniqueIdentifiers)
+    private void UpdateEyeColor(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersData uniqueIdentifiers)
     {
         string redHex = uniqueIdentifiers.EyeColorR[0] + uniqueIdentifiers.EyeColorR[1];
         string greenHex = uniqueIdentifiers.EyeColorG[0] + uniqueIdentifiers.EyeColorG[1];
@@ -712,7 +717,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         humanoid.Comp.EyeColor = eyeColor;
     }
 
-    private void UpdateGender(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersPrototype uniqueIdentifiers)
+    private void UpdateGender(Entity<HumanoidAppearanceComponent> humanoid, UniqueIdentifiersData uniqueIdentifiers)
     {
         int[] values = uniqueIdentifiers.Gender
             .Select(hex => Convert.ToInt32(hex, 16))
@@ -1069,11 +1074,16 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
     private void OnDamageChanged(EntityUid uid, DnaModifierComponent component, DamageChangedEvent args)
     {
-        if (args.DamageDelta == null || !args.DamageIncreased || args.DamageDelta.GetTotal() < 0.1f || !args.DamageDelta.DamageDict.ContainsKey("Radiation"))
+        if (args.DamageDelta == null || !args.DamageIncreased || !args.DamageDelta.DamageDict.ContainsKey("Radiation"))
+            return;
+
+        var radiationDamage = args.DamageDelta.DamageDict["Radiation"];
+        if (radiationDamage < 1f)
             return;
 
         if (component.EnzymesPrototypes == null)
             return;
+
         if (_random.Prob(0.05f))
         {
             int countToModify = 1;

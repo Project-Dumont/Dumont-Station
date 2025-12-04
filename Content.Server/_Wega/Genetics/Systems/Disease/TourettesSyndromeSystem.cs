@@ -1,9 +1,9 @@
 using Content.Server.Chat.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Genetics;
 using Content.Shared.Jittering;
 using Content.Shared.Stunnable;
 using Robust.Shared.Random;
-using Content.Shared.Chat;
 
 namespace Content.Server.Genetics.System;
 

@@ -26,14 +26,11 @@ public sealed partial class MindCommunicationPanel : DefaultWindow
 
     private void InitializeTargets()
     {
-        foreach (var actor in _entityManager.EntityQuery<ActorComponent>())
+        var actorQuery = _entityManager.EntityQueryEnumerator<ActorComponent, MetaDataComponent, HumanoidAppearanceComponent>();
+        while (actorQuery.MoveNext(out var uid, out _, out var metaData, out _))
         {
-            if (_entityManager.TryGetComponent<MetaDataComponent>(actor.Owner, out var metaData)
-                && _entityManager.HasComponent<HumanoidAppearanceComponent>(actor.Owner))
-            {
-                var entityName = metaData.EntityName;
-                AddTargetButton(entityName, actor.Owner);
-            }
+            var entityName = metaData.EntityName;
+            AddTargetButton(entityName, uid);
         }
     }
 

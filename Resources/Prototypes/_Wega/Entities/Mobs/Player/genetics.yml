@@ -4,7 +4,7 @@
   name: hulk
   description: "HE'S BIG AND STRONG!"
   components:
-  - type: Hulk
+  - type: WegaHulk
   - type: LoudAccent
   - type: Physics
     bodyType: KinematicController

@@ -1,56 +1,68 @@
 - type: entity
   id: ActionGenCloakOfDarkness
+  parent: BaseAction
   name: cloak of darkness
   description: "You are a shadow."
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
-    event: !type:CloakOfDarknessActionEvent
     useDelay: 15
+  - type: InstantAction
+    event: !type:CloakOfDarknessActionEvent
 
 - type: entity
   id: ActionGenPolymorphism
+  parent: BaseAction
   name: polymorphism
   description: "Take on someone else's form."
   categories: [ HideSpawnMenu ]
   components:
-  - type: EntityTargetAction
+  - type: Action
     icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
     itemIconStyle: BigAction
+    useDelay: 300
+  - type: TargetAction
+  - type: EntityTargetAction
     event: !type:PolymorphismActionEvent
-    useDelay: 15 #300
 
 - type: entity
   id: ActionMindCommunicationGen
+  parent: BaseAction
   name: mind communication
   description: "Contact someone through their mind."
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
-    event: !type:MindCommunicationActionEvent
     useDelay: 30
+  - type: InstantAction
+    event: !type:MindCommunicationActionEvent
 
 - type: entity
   id: ActionHulkTransformation
+  parent: BaseAction
   name: transformation
   description: "SMASH!"
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     icon: { sprite: _Wega/Interface/Actions/actions_hulk.rsi, state: "transformarion" }
+  - type: InstantAction
     event: !type:HulkTransformationActionEvent
 
 - type: entity
   id: ActionHulkCharge
+  parent: BaseAction
   name: charge
   description: "GO AHEAD!"
   categories: [ HideSpawnMenu ]
   components:
-  - type: EntityWorldTargetAction
+  - type: Action
     icon: { sprite: _Wega/Interface/Actions/actions_hulk.rsi, state: "charge" }
     itemIconStyle: BigAction
-    event: !type:HulkChargeActionEvent
     useDelay: 45
+  - type: TargetAction
     range: 16
+  - type: EntityTargetAction
+    event: !type:HulkChargeActionEvent

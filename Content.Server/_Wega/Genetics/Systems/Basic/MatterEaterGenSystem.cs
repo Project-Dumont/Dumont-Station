@@ -1,5 +1,4 @@
 using Content.Server.Nutrition.Components;
-using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Popups;
 using Content.Server.Stack;
 using Content.Shared.Administration.Logs;
@@ -8,6 +7,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Edible.Matter;
 using Content.Shared.Genetics;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -28,7 +28,7 @@ public sealed class MatterEaterSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly FoodSystem _food = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly HungerSystem _hunger = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
@@ -79,7 +79,13 @@ public sealed class MatterEaterSystem : EntitySystem
             || !TryComp<MatterEaterGenComponent>(args.User, out var eater))
             return;
 
-        if (_food.IsMouthBlocked(args.Target.Value))
+        IngestionBlockerComponent? blocker;
+        if (_inventory.TryGetSlotEntity(args.User, "mask", out var maskUid) &&
+            TryComp(maskUid, out blocker) && blocker.Enabled)
+            return;
+
+        if (_inventory.TryGetSlotEntity(args.User, "head", out var headUid) &&
+            TryComp(headUid, out blocker) && blocker.Enabled)
             return;
 
         if (!_interaction.InRangeUnobstructed(args.User, args.Target.Value))

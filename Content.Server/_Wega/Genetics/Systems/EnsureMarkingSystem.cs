@@ -4,6 +4,7 @@ using Content.Shared.Genetics;
 using Content.Shared.Genetics.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Genetics.System;
 
@@ -11,8 +12,7 @@ public sealed class EnsureMarkingSystem : EntitySystem
 {
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
 
-    [ValidatePrototypeId<MarkingPrototype>]
-    public const string DefaultHorns = "LizardHornsDemonic";
+    public static readonly ProtoId<MarkingPrototype> DefaultHorns = "LizardHornsDemonic";
 
     public override void Initialize()
     {

@@ -620,7 +620,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
     }
 
     #region Initilize U.I.
-    private void InitilizeUniqueIdentifiers(UniqueIdentifiersPrototype unique)
+    private void InitilizeUniqueIdentifiers(UniqueIdentifiersData unique)
     {
         _initializedUi = true;
         var blocks = new List<(string BlockName, string[] Values)>

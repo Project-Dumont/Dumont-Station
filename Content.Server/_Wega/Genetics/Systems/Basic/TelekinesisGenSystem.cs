@@ -32,12 +32,11 @@ public sealed class TelekinesisGenSystem : EntitySystem
             EnsureComp<UnremoveableComponent>(item);
     }
 
-    private void OnTelekinesisShutdown(EntityUid uid, TelekinesisGenComponent component, ComponentShutdown args)
+    private void OnTelekinesisShutdown(Entity<TelekinesisGenComponent> entity, ref ComponentShutdown args)
     {
-        if (component.TelekinesisItem is { Valid: true } item)
+        if (entity.Comp.TelekinesisItem is { Valid: true } item)
             QueueDel(item);
 
-        if (TryComp<HandsComponent>(uid, out var hands))
-            _hands.RemoveHand(uid, component.HandId, hands);
+        _hands.RemoveHand(entity.Owner, entity.Comp.HandId);
     }
 }
