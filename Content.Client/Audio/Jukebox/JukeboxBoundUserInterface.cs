@@ -7,8 +7,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Audio.Jukebox;
+using Content.Shared._Gabystation.TextHelper;
 using Robust.Client.Audio;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Prototypes;
 
@@ -50,6 +52,8 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         };
 
         _menu.OnSongSelected += SelectSong;
+
+        _menu.OnSearchChanged += PopulateMusic;
 
         _menu.SetTime += SetTime;
         PopulateMusic();
