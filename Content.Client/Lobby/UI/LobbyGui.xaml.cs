@@ -59,6 +59,8 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.ResourceManagement;
 
+using Content.Client._Gabystation.Stylesheets;
+
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -77,11 +79,11 @@ namespace Content.Client.Lobby.UI
             var logoTexture = _resCache.GetResource<TextureResource>("/Textures/Logo/lobby.png");
             Logo.Texture = logoTexture;
 
-            AHelpButton.AddStyleClass("ButtonColorGaby");
-            BalanceButton.AddStyleClass("ButtonColorGaby");
-            CallVoteButton.AddStyleClass("ButtonColorGaby");
-            OptionsButton.AddStyleClass("ButtonColorGaby");
-            LeaveButton.AddStyleClass("ButtonColorGaby");
+            AHelpButton.AddStyleClass(GabyStyleClass.GabyTheme);
+            BalanceButton.AddStyleClass(GabyStyleClass.GabyTheme);
+            CallVoteButton.AddStyleClass(GabyStyleClass.GabyTheme);
+            OptionsButton.AddStyleClass(GabyStyleClass.GabyTheme);
+            LeaveButton.AddStyleClass(GabyStyleClass.GabyTheme);
 
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
             LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text")); // Goobstation

@@ -6,6 +6,8 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Content.Client.Stylesheets.StylesheetHelpers;
+using Content.Client._Gabystation.Stylesheets;
+using Content.Client._Gabystation.Stylesheets.Palette;
 
 namespace Content.Client.Stylesheets.Sheetlets;
 
@@ -67,6 +69,7 @@ public sealed class ButtonSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
         MakeButtonRules(rules, buttonCfg.ButtonPalette, null);
         MakeButtonRules(rules, buttonCfg.PositiveButtonPalette, StyleClass.Positive);
         MakeButtonRules(rules, buttonCfg.NegativeButtonPalette, StyleClass.Negative);
+        MakeButtonRules(rules, GabyPalettes.Gaby, GabyStyleClass.GabyTheme);
 
         return rules.ToArray();
     }
