@@ -10,7 +10,7 @@ namespace Content.Shared.Machines.Components;
 /// <summary>
 /// Marks an entity as being the owner of a multipart machine.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(raiseAfterAutoHandleState: true)]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 [Access(typeof(SharedMultipartMachineSystem))]
 public sealed partial class MultipartMachineComponent : Component
 {

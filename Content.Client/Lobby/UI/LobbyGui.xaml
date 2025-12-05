@@ -149,7 +149,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                            Margin="3 3 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
                     <!-- Server Currency -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine StyleClasses="GabyTheme" Thickness="2" Access="Public" />
                     <Label Name="Balance" Access="Public" StyleClasses="LabelHeading" VAlign="Center"
                             HorizontalExpand="True" HorizontalAlignment="Center" />
                     <!-- Gaby line -->
@@ -157,7 +157,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
                     <!-- Gaby line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine StyleClasses="GabyTheme" Thickness="2" Access="Public" />
                     <controls:HSpacer Spacing="10" />
                     <widgets:ChatBox Name="Chat" Access="Public" VerticalExpand="True" Margin="3 3 3 3" MinHeight="50" />
                 </BoxContainer>

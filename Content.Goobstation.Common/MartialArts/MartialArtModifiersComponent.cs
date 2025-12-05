@@ -5,6 +5,7 @@
 
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using System.Numerics;
 
 namespace Content.Goobstation.Shared.MartialArts.Components;
 

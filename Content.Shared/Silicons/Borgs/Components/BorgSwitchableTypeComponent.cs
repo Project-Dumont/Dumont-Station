@@ -29,7 +29,7 @@ namespace Content.Shared.Silicons.Borgs.Components;
 /// </remarks>
 /// <seealso cref="SharedBorgSwitchableTypeSystem"/>
 [RegisterComponent, NetworkedComponent]
-[AutoGenerateComponentState(raiseAfterAutoHandleState: true)]
+[AutoGenerateComponentState(true)]
 [Access(typeof(SharedBorgSwitchableTypeSystem))]
 public sealed partial class BorgSwitchableTypeComponent : Component
 {

@@ -10,7 +10,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Silicons.Borgs;
 
 [RegisterComponent, NetworkedComponent]
-[AutoGenerateComponentState(raiseAfterAutoHandleState: true)]
+[AutoGenerateComponentState(true)]
 public sealed partial class BorgSwitchableSubtypeComponent : Component
 {
     [DataField, AutoNetworkedField]

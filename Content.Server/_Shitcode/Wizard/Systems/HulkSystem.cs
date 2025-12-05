@@ -10,12 +10,13 @@ using Content.Server._Goobstation.Wizard.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Humanoid;
 using Content.Server.Popups;
+using Content.Server.Toolshed.Commands.Misc;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._Goobstation.Wizard.Mutate;
 using Content.Shared.Chat;
 using Content.Shared.Humanoid;
+using Content.Shared.Sprite;
 using Content.Shared.Weapons.Ranged.Components;
-using Robust.Server.Console.Commands;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
@@ -145,7 +146,7 @@ public sealed class HulkSystem : SharedHulkSystem
     private void Scale(EntityUid uid, float scale)
     {
         EnsureComp<ScaleVisualsComponent>(uid);
-        var ev = new ScaleCommand.ScaleEntityEvent();
+        var ev = new ScaleEntityEvent(uid, new Vector2(scale));
         RaiseLocalEvent(uid, ref ev);
 
         var appearanceComponent = EnsureComp<AppearanceComponent>(uid);
