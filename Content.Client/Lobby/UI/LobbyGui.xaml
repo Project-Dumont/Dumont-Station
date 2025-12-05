@@ -89,17 +89,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         <lobbyUi:LobbyBuletin Name="MOTDBuletin" Margin="3 3 3 3" Access="Public"/>
                         <!-- Gabystation end -->
                         <PanelContainer VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                    Margin="0 75" StyleClasses="AngleRect">
+                                    Margin="0 75" StyleClasses="BackgroundPanel">
                             <RichTextLabel Name="LobbyMessageLabel" Access="Public" Margin="5" />
                         </PanelContainer>
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4"> <!-- Goobstation - Lobby Background Credits -->
                             <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
-                            <PanelContainer StyleClasses="AngleRect">
+                            <PanelContainer StyleClasses="BackgroundPanel">
                                 <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
                             </PanelContainer>
                         </BoxContainer>
                         <!-- Goobstation start -->
-                        <PanelContainer StyleClasses="AngleRect">
+                        <PanelContainer StyleClasses="BackgroundPanel">
                             <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
                         </PanelContainer>
                         <!-- Goobstation end -->
@@ -110,7 +110,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <Control Access="Public" Visible="False" Name="CharacterSetupState" VerticalExpand="True" />
             </BoxContainer>
             <!-- Right Panel -->
-            <PanelContainer Name="RightSide" Access="Public" StyleClasses="AngleRect" HorizontalAlignment="Right" VerticalExpand="True"
+            <PanelContainer Name="RightSide" Access="Public" StyleClasses="BackgroundPanel" HorizontalAlignment="Right" VerticalExpand="True"
                             VerticalAlignment="Stretch">
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                     <!-- Top row -->
@@ -171,7 +171,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             </PanelContainer>
         </SplitContainer>
         <PanelContainer Name="ExpandPanel"
-                        StyleClasses="AngleRect" 
+                        StyleClasses="BackgroundPanel" 
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
                         Margin="0 2 2 0"

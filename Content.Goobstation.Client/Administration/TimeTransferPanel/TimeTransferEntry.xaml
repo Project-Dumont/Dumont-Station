@@ -12,7 +12,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
               Margin="5 5"
               HorizontalExpand="True"
               Visible="True">
-    <PanelContainer StyleClasses="AngleRect" HorizontalExpand="True">
+    <PanelContainer StyleClasses="BackgroundPanel" HorizontalExpand="True">
         <BoxContainer Orientation="Horizontal">
             <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
                 <CheckBox Name="GroupCheckbox" HorizontalAlignment="Center"/>

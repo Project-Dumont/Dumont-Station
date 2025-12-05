@@ -5,7 +5,7 @@
                       Title="{Loc 'cd-records-entry-view-popup-title'}">
     <BoxContainer Margin="5 2 5 5" Orientation="Vertical" HorizontalExpand="True" SeparationOverride="2">
         <!-- Header section -->
-        <PanelContainer StyleClasses="AngleRect">
+        <PanelContainer StyleClasses="BackgroundPanel">
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="4">
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                     <Label Text="{Loc 'cd-character-records-entry-view-title'}" StyleClasses="LabelBig"/>

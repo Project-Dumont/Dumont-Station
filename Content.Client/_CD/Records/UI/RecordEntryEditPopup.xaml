@@ -5,7 +5,7 @@
                       Title="{Loc 'cd-records-entry-edit-popup-title'}">
     <BoxContainer Margin="5 2 5 5" Orientation="Vertical" HorizontalExpand="True" SeparationOverride="2">
         <!-- Header section -->
-        <PanelContainer StyleClasses="AngleRect">
+        <PanelContainer StyleClasses="BackgroundPanel">
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="4" SeparationOverride="8">
                 <LineEdit Name="TitleEdit" HorizontalExpand="True" PlaceHolder="{Loc 'cd-records-entry-edit-popup-title-placeholder'}"/>
                 <LineEdit Name="InvolvedEdit" HorizontalExpand="True" PlaceHolder="{Loc 'cd-records-entry-edit-popup-involved-placeholder'}"/>
@@ -22,7 +22,7 @@
 
         <!-- Save button and validation section -->
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="4">
-            <PanelContainer StyleClasses="AngleRect">
+            <PanelContainer StyleClasses="BackgroundPanel">
                 <Button Access="Public"
                         Name="SaveButton"
                         Text="{Loc 'cd-records-entry-edit-popup-save'}"
