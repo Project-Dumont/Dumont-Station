@@ -41,6 +41,7 @@
         name: power-cell-slot-component-slot-name-default
   - type: ToggleCellDraw
   - type: PowerCellDraw
+    drawRate: 0.5
   - type: ItemToggle
   - type: Jukebox
     onState: mp3

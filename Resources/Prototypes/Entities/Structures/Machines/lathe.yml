@@ -459,6 +459,9 @@
     - MiscSignallersStatic
     # Funky # GabyStation - corrections
     - BoomboxStatic
+    # Gabystation
+    dynamicPacks:
+    - MP3Players
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityWeaponsStatic

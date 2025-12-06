@@ -138,6 +138,11 @@
     - BoomboxRed
     - BoomboxGreen
     - BoomboxBlue
+    - MP3PlayerWhite
+    - MP3PlayerBlue
+    - MP3PlayerGreen
+    - MP3PlayerPink
+    - MP3PlayerRed
     - BorgModuleLollypop # Goobstation
   position: 0,2
 

@@ -1,0 +1,8 @@
+- type: latheRecipePack
+  id: MP3Players
+  recipes:
+  - MP3PlayerWhite
+  - MP3PlayerBlue
+  - MP3PlayerGreen
+  - MP3PlayerPink
+  - MP3PlayerRed
