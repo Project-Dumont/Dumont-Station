@@ -3,15 +3,9 @@
   id: GeneticistIDCard
   name: geneticist ID card
   components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: stripe_top
-      color: "#68aed6"
-    - state: stripe_bottom
-      color: "#325f7a"
-    - sprite: Interface/Misc/job_icons.rsi
-      offset: -0.09375, 0.0625
-      state: Geneticist
-  - type: PresetIdCard
-    job: Geneticist
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idgeneticist
+    - type: PresetIdCard
+      job: Geneticist

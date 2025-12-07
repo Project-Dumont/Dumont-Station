@@ -6,9 +6,12 @@
   icon:
     sprite: Structures/Machines/scanner.rsi
     state: open
-  discipline: Biochemical
+  discipline: CivilianServices
   tier: 2
   cost: 10000
   recipeUnlocks:
   - MedicalScannerMachineCircuitboard
   - DnaModifierComputerCircuitboard
+  position: 2,5
+  technologyPrerequisites:
+  - BiochemicalStasis
