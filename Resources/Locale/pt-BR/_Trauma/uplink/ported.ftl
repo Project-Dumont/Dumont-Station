@@ -10,6 +10,10 @@ uplink-travel-camera-name = Câmera de viagem
 
 uplink-travel-camera-desc = Atordoe as pessoas com suas habilidades fotográficas e um flash convenientemente legalizado. Também ajuda a parecer um turista.
 
+uplink-voice-mask-implanter-name = Implantador de máscara de identidade
+
+uplink-voice-mask-implanter-desc = Modifica suas cordas vocais e a estrutura do rosto para imitar qualquer identidade que você imaginar. Defina seu nome antes de falar para não se entregar.
+
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
 
 trigger-on-voice-record-failed-too-short = Mensagem curta demais. Tente novamente.

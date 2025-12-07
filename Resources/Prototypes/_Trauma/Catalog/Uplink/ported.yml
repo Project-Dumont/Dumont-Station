@@ -9,3 +9,31 @@
     Telecrystal: 5 # Trauma - was 1, 5x
   categories:
     - UplinkDeception
+
+- type: listing
+  id: UplinkVoiceMaskImplant
+  name: uplink-voice-mask-implanter-name
+  description: uplink-voice-mask-implanter-desc
+  icon: { sprite: Interface/Actions/voice-mask.rsi, state: icon }
+  productEntity: VoiceMaskImplanter
+  cost:
+    Telecrystal: 10 # Trauma - was 2, 5x
+  categories:
+    - UplinkImplants
+
+# <Trauma> - surgical bundle exists
+#- type: listing
+#  id: UplinkSawAdvanced
+#  name: uplink-saw-advanced-name
+#  description: uplink-saw-advanced-desc
+#  icon: { sprite:  Objects/Specific/Medical/Surgery/saw.rsi, state: advanced}
+#  productEntity: SawAdvanced
+#  cost:
+#    Telecrystal: 10 # Trauma - was 2, 5x
+#  categories:
+#  - UplinkJob
+#  conditions:
+#  - !type:BuyerJobCondition
+#    whitelist:
+#    - MedicalDoctor
+# </Trauma>

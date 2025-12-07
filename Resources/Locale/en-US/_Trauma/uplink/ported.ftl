@@ -13,6 +13,10 @@ uplink-travel-camera-name = Travel Camera
 
 uplink-travel-camera-desc = Stun people with your photography skills and the conveniently legal camera flash. Makes you look like a tourist.
 
+uplink-voice-mask-implanter-name = Identity Mask Implanter
+
+uplink-voice-mask-implanter-desc = Modifies your vocal cords and facial structure to be able to mimic anyone you could imagine. Be sure to set your name before speaking, or else you'll give yourself away.
+
 selectable-lock-verb-category-name = Add lock
 
 selectable-lock-tool-prying-verb = Tool Lock (Crowbar)

@@ -17,3 +17,8 @@ ent-TravelCamera = câmera de viagem
 
 ent-BriefcaseWeapon = maleta de armas
     .desc = Útil para aspirantes a mercenários, estejam lutando por uma empresa, uma nação ou qualquer outra coisa. Ou preparando uma omelete enorme.
+
+ent-VoiceMaskImplanter = implantador de máscara de identidade
+
+ent-VoiceMaskImplant = implante de máscara de identidade
+    .desc = Este implante permite mudar sua identidade à vontade.
