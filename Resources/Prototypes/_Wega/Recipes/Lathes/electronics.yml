@@ -2,3 +2,8 @@
   parent: BaseCircuitboardRecipe
   id: DnaModifierComputerCircuitboard
   result: DnaModifierComputerCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: MedicalScannerMachineCircuitboard
+  result: MedicalScannerMachineCircuitboard

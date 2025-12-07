@@ -12,6 +12,7 @@ public sealed class NoirVisionOverlay : Overlay
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
+    private static readonly ProtoId<ShaderPrototype> Noir = "Noir";
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
     private readonly ShaderInstance _redHighlightShader;
@@ -22,7 +23,7 @@ public sealed class NoirVisionOverlay : Overlay
     public NoirVisionOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _redHighlightShader = _prototypeManager.Index<ShaderPrototype>("Noir").InstanceUnique();
+        _redHighlightShader = _prototypeManager.Index(Noir).InstanceUnique();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

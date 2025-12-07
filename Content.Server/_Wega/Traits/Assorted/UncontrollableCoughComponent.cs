@@ -8,7 +8,7 @@ namespace Content.Server.Traits.Assorted;
 public sealed partial class UncontrollableCoughComponent : Component
 {
     [DataField("emote", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
-    public string EmoteId = String.Empty;
+    public string EmoteId = string.Empty;
 
     [DataField("timeBetweenIncidents", required: true)]
     public Vector2 TimeBetweenIncidents { get; set; }

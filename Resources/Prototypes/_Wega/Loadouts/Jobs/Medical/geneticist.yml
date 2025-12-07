@@ -3,11 +3,13 @@
   id: GeneticsJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitGenetics
+  groupBy: "wegaJJ"
 
 - type: loadout
   id: GeneticsJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtGenetics
+  groupBy: "wegaJJ"
 
 # Back
 - type: loadout

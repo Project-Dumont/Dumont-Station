@@ -44,7 +44,7 @@
     sprite: _Wega/Mobs/Aliens/Genetics/hulk.rsi
     state: hulk
   - type: Tool
-    speed: 1.5
+    speedModifier: 1.5
     qualities:
       - Prying
     useSound:

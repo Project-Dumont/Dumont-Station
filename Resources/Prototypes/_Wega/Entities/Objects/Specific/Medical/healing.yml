@@ -3,6 +3,8 @@
   parent: Pill
   id: PillMutadon
   components:
+    - type: Label
+      currentLabel: mutadon 10u
     - type: SolutionContainerManager
       solutions:
         food:

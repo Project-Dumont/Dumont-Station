@@ -28,5 +28,5 @@
   message: genetics-strong-message
   typeDeviation: Minor
   costInstability: 15
-  remComponent:
+  addComponent:
   - type: StrongnessGen

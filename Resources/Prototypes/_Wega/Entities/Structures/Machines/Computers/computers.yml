@@ -22,6 +22,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: ActivatableUI
+    singleUser: true
     key: enum.DnaModifierUiKey.Key
   - type: ActivatableUIRequiresPower
   - type: UserInterface
