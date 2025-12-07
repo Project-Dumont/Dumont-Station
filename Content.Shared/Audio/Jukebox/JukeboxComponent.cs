@@ -42,6 +42,13 @@ public sealed partial class JukeboxComponent : Component
 
     [DataField]
     public bool NeedsBattery = false;
+    
+    /// Gabystation
+    /// <summary>
+    /// How far away this jukebox can potentially be heard.
+    /// </summary>
+    [DataField]
+    public float Range = 10f;
 
     [ViewVariables]
     public bool Selecting;

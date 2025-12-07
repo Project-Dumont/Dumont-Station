@@ -52,6 +52,7 @@
     offState: mp3
     selectState: mp3
     needsBattery: true
+    range: 1
   - type: ActivatableUI
     key: enum.JukeboxUiKey.Key
   - type: UserInterface
