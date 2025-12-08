@@ -1,0 +1,10 @@
+ent-ActionGenCloakOfDarkness = Manto das Sombras
+    .desc = Você é uma sombra.
+ent-ActionGenPolymorphism = Polimorfismo
+    .desc = Assuma a aparência de alguém.
+ent-ActionMindCommunicationGen = Telepatia
+    .desc = Comunique-se com alguém através da mente dele.
+ent-ActionHulkTransformation = Transformação
+    .desc = Se transforma em algo...
+ent-ActionHulkCharge = Esmaga
+    .desc = ESMAGA!
