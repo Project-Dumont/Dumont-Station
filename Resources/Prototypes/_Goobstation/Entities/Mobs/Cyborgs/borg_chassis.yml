@@ -540,4 +540,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: BorgSwitchableSubtype
-    borgSubtype: security_basic
+    borgSubtype: security_dog
