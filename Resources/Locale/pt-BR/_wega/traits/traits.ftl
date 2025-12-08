@@ -9,10 +9,6 @@ trait-dna-deviation-desc = Você está propenso a manifestar desvios genéticos 
 # Quirks
 trait-noir-vision-name = Síndrome do Detetive
 trait-noir-vision-desc = Você vê toda a podridão deste mundo.
-trait-tall-name = Alto
-trait-tall-desc = Você é significativamente mais alto que outros humanoides.
-trait-short-name = Baixo
-trait-short-desc = Você é significativamente mais baixo que outros humanoides.
 
 # Speech
 trait-auld-imperial-name = Sotaque Arcaico Colonial

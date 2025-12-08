@@ -24,4 +24,4 @@
   - type: StorageFill
     contents:
     - id: PillMutadon
-      amount: 5
+      amount: 15
