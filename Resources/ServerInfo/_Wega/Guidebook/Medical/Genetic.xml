@@ -1,34 +1,34 @@
 <Document>
-  # Генетика
+  # Genética
 
-  ## Введение
-  Генетика — это наука о ДНК, позволяющая выявлять мутации, предоставлять экипажу суперспособности и лечить генетические отклонения. Генетик работает в лаборатории генетики, расположенной между Медбеем и отделом исследований, и отвечает за клонирование и генетические исследования.
+  ## Introdução
+  A Genética é a ciência do DNA, que permite identificar mutações, conceder superpoderes à tripulação e tratar desvios genéticos. O geneticista trabalha no laboratório de genética, localizado entre a Ala Médica e o Departamento de Pesquisa, sendo responsável pela clonagem e pesquisas genéticas.
   <Box>
-    <GuideEntityEmbed Entity="MedicalScanner" Caption="медицинский сканер"/>
-    <GuideEntityEmbed Entity="DnaModifierConsole" Caption="консоль модификатора-ДНК"/>
-    <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="обезьяний кубик"/>
+    <GuideEntityEmbed Entity="MedicalScanner" Caption="analisador genético"/>
+    <GuideEntityEmbed Entity="DnaModifierConsole" Caption="computador de modificador de DNA"/>
+    <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="cubo de macaco"/>
   </Box>
 
-  ## Начало работы
-  Для старта используйте кубы с животными: разверните куб, намочите его, чтобы получить животное, например, обезьяну. Поместите её в модификатор ДНК для дальнейших экспериментов.
+  ## Como Começar
+  Para iniciar, use cubos de animais: abra o cubo, molhe-o para obter um animal, como um macaco. Coloque-o no modificador de DNA para experimentos futuros.
   <Box>
-    <GuideEntityEmbed Entity="DrinkWaterBottleFull" Caption="вода"/>
-    <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="обезьяний кубик"/>
+    <GuideEntityEmbed Entity="DrinkWaterBottleFull" Caption="água"/>
+    <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="cubo de macaco"/>
   </Box>
 
-  - 1. Очеловечивание
+  - 1. Humanização
 
-  В модификаторе ДНК выберите опцию "Модификация СФ" и облучайте первый подблок 55-го блока, добиваясь значения более 8. Это преобразует животное в человека.
+  No modificador de DNA, selecione a opção "Modificação EE" e irradie o primeiro subbloco do bloco 55 até alcançar um valor maior que 8. Isso transformará o animal em um humano.
 
-  - 2. Создание Чистого СФ
+  - 2. Criando um EE Puro
 
-  Для создания инжектора "Чистого СФ", облучите первые подблоки всех блоков с 1 по 54 до значений менее 8. Это позволит отменять нежелательные мутации в будущем.
+  Para criar um injetor de "EE Puro", irradie os primeiros subblocos de todos os blocos de 1 a 54 até valores menores que 8. Isso permitirá cancelar mutações indesejadas no futuro.
 
-  - 3. Осноная деятельность
+  - 3. Atividade Principal
 
-  Облучая различные блоки структурных ферментов (СФ), вы можете выявить суперспособности или генетические болезни. Будьте внимательны и фиксируйте результаты, чтобы воспроизводить желаемые эффекты.
+  Irradiando vários blocos de enzimas estruturais (EE), você pode revelar superpoderes ou doenças genéticas. Seja cuidadoso e registre os resultados para reproduzir os efeitos desejados.
 
-  ## Радиация и мутации
-  Облучение блоков ДНК может привести к случайным мутациям. Некоторые из них могут быть полезными, другие — вредными. Используйте инжектор "Чистого СФ" для устранения нежелательных эффектов.
+  ## Radiação e Mutações
+  A irradiação de blocos de DNA pode levar a mutações aleatórias. Algumas podem ser benéficas, outras prejudiciais. Use o injetor "EE Puro" para eliminar efeitos indesejados.
 
 </Document>

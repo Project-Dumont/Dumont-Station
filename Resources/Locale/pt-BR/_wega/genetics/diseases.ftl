@@ -1,10 +1,10 @@
 disease-epilepsy-massage = Você sente uma convulsão chegando.
 
-# Mensagens
+# Messages
 genetics-permanent-blindness-message = Parece que você não consegue mais ver nada...
-genetics-auld-imperial-message = Onde será que posso encontrar uns pãezinhos franceses macios e tomar um gole de chá aromático?
+genetics-auld-imperial-message = Ah, onde será qüe posso provar üm pão de pharinha macio e tomar üm gole de caphé qüenthinho?
 genetics-clumsiness-message = Você sente uma leve tontura.
-genetics-colourblindness-message = Você sente uma formigação estranha nos olhos. Sua percepção de cor está mudando.
+genetics-colourblindness-message = Você sente uma formigação estranha nos olhos. Sua percepção de cores está mudando.
 genetics-comic-message = Opa!
 genetics-coughing-message = Você começa a tossir.
 genetics-deafness-message = Está meio quieto por aqui...

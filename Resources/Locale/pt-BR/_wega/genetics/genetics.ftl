@@ -17,12 +17,12 @@ dna-modifier-label-ue = Enzimas Únicas:
 
 dna-modifier-label-sixteen = 0 1 2 3 4 5 6 7 8 9 A B C D E F
 
-dna-modifier-tab-ui = Modificação UI
+dna-modifier-tab-ui = Modificação IU
 dna-modifier-box-ui = Modificação de Identificadores Únicos
 dna-modifier-label-target = Bloco Selecionado:
 dna-modifier-button-releveration = Irradiar Bloco Selecionado
 
-dna-modifier-tab-se = Modificação SF
+dna-modifier-tab-se = Modificação EE
 dna-modifier-box-se = Modificação de Enzimas Estruturais
 
 dna-modifier-tab-transfer = Buffer de Dados
@@ -33,9 +33,9 @@ dna-modifier-label-buffer-3 = Célula de Buffer #3
 dna-modifier-button-clear = Limpar
 dna-modifier-button-rename = Renomear
 dna-modifier-button-export = Exportar
-dna-modifier-button-subject-ui = UI do Sujeito
-dna-modifier-button-subject-ui-se = UI & SF do Sujeito
-dna-modifier-button-subject-se = SF do Sujeito
+dna-modifier-button-subject-ui = IU do Sujeito
+dna-modifier-button-subject-ui-se = IU & EE do Sujeito
+dna-modifier-button-subject-se = EE do Sujeito
 
 dna-modifier-button-no-buffer = Buffer de Dados Vazio
 
@@ -52,10 +52,10 @@ dna-modifier-button-injector = Injetor
 dna-modifier-button-inject-block = Injetor de Bloco
 dna-modifier-button-subject-inject = Sujeito
 
-dna-modifier-button-disk = Do Disquete
+dna-modifier-button-disk = Do Disco
 dna-modifier-label-buffer-write = Escrever no Buffer:
-dna-modifier-box-disk = Disquete
-dna-modifier-no-disk = Disquete não inserido ou vazio
+dna-modifier-box-disk = Disco
+dna-modifier-no-disk = Disco não inserido ou vazio
 
 dna-modifier-tab-rejuvenator = Produtos Químicos
 dna-modifier-box-rejuvenator = Produtos Químicos e Contêineres
@@ -72,7 +72,7 @@ dna-modifier-no-data = Sem Dados
 dna-disk-sample = amostra-
 
 # System
-dna-disk-name = disquete do modificador de DNA
+dna-disk-name = disco de DNA
 dna-instability-stage-one = Você sente sua pele borbulhando
 dna-instability-stage-two = Você sente seus membros se torcendo e sua pele borbulhando
 dna-instability-stage-three = Você sente como se estivesse sendo rasgado por dentro
