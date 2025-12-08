@@ -75,7 +75,7 @@ namespace Content.Shared.APC
         /// <summary>
         /// Bitfield indicating status of APC lock indicator.
         /// </summary>
-        Lock = (1<<0),
+        Lock = (1 << 0),
         /// <summary>
         /// Bit state indicating that the given APC lock is unlocked.
         /// </summary>
@@ -83,7 +83,7 @@ namespace Content.Shared.APC
         /// <summary>
         /// Bit state indicating that the given APC lock is locked.
         /// </summary>
-        Locked = (1<<0),
+        Locked = (1 << 0),
 
         /// <summary>
         /// Bitmask for the full state for a given APC lock indicator.
@@ -111,7 +111,7 @@ namespace Content.Shared.APC
         /// <summary>
         /// Bitfield indicating whether the APC is automatically regulating the given channel.
         /// </summary>
-        Control = (1<<0),
+        Control = (1 << 0),
         /// <summary>
         /// Bit state indicating that the APC has been set to automatically toggle the given channel depending on available power.
         /// </summary>
@@ -124,7 +124,7 @@ namespace Content.Shared.APC
         /// <summary>
         /// Bitfield indicating whether the APC is currently providing power on the given channel.
         /// </summary>
-        Power = (1<<1),
+        Power = (1 << 1),
         /// <summary>
         /// Bit state indicating that the APC is currently not providing power on the given channel.
         /// </summary>
@@ -205,17 +205,21 @@ namespace Content.Shared.APC
         public readonly int Power;
         public readonly ApcExternalPowerState ApcExternalPower;
         public readonly float Charge;
+        public readonly float MaxLoad;
+        public readonly bool Tripped;
         /// <summary>
         ///  if this APC has already been siphoned by Malf AI
         /// </summary>
         public readonly bool Siphoned; // Funkystation -> Malf Ai.
 
-        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, bool siphoned)
+        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, float maxLoad, bool tripped, bool siphoned)
         {
             MainBreaker = mainBreaker;
             Power = power;
             ApcExternalPower = apcExternalPower;
             Charge = charge;
+            MaxLoad = maxLoad;
+            Tripped = tripped;
             Siphoned = siphoned; // Funkystation -> Malf Ai.
         }
 
@@ -227,6 +231,8 @@ namespace Content.Shared.APC
                    Power == other.Power &&
                    ApcExternalPower == other.ApcExternalPower &&
                    MathHelper.CloseTo(Charge, other.Charge) &&
+                   MathHelper.CloseTo(MaxLoad, other.MaxLoad) &&
+                   Tripped == other.Tripped &&
                    Siphoned == other.Siphoned; // Funkystation -> Malf Ai.
         }
 
@@ -237,7 +243,7 @@ namespace Content.Shared.APC
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(MainBreaker, Power, (int) ApcExternalPower, Charge, Siphoned); // Funkystation -> Malf Ai.
+            return HashCode.Combine(MainBreaker, Power, (int) ApcExternalPower, Charge, MaxLoad, Tripped, Siphoned); // Funkystation -> Malf Ai.
         }
     }
 
