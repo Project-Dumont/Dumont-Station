@@ -1570,3 +1570,29 @@ Entries:
         Salvamento, POP de Blueshield adicionada e mais!
   id: 182
   time: '2025-11-29T03:40:11.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Aumenta resistência à radiação de paredes reforçadas e cortinas
+        anti-rad. 
+  id: 183
+  time: '2025-12-09T14:53:38.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Todos materiais inseríveis no silo podem ser acessados por qualquer
+        fabricador conectado.
+    - type: Tweak
+      message: >-
+        Adiciona repositores de lâmpadas nos fabricadores que já podiam fazer
+        lâmpadas.
+  id: 184
+  time: '2025-12-09T16:21:56.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona o fliperama de campo minado.
+  id: 185
+  time: '2025-12-09T17:26:56.0000000+00:00'

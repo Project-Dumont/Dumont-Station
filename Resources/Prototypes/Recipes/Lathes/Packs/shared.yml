@@ -22,6 +22,7 @@
 - type: latheRecipePack
   id: LightsStatic
   recipes:
+  - LightReplacer
   - LightTube
   - LedLightTube
   - SodiumLightTube
