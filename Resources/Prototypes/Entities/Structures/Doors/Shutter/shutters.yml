@@ -197,7 +197,7 @@
     containers:
     - board
   - type: RadiationBlocker
-    resistance: 4
+    resistance: 8 #Gabystation increase rad resistance
 
 - type: entity
   id: ShuttersRadiationOpen

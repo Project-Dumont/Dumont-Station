@@ -11,6 +11,8 @@
   abstract: true
   components:
   - type: Clumsy
+    clumsyHypo: false
+    clumsyDefib: false
   - type: LightweightDrunk
   - type: WaddleAnimation
     hopIntensity: 0, 0.1
@@ -45,6 +47,7 @@
   - type: Sericulture
     productionLength: 2
     entityProduced: SnowBall
+    popupText: snowball-failure-hunger
     hungerCost: 4
     action: ActionSericultureSnowball
   - type: Butcherable
@@ -53,17 +56,17 @@
     - id: FoodMeatPenguin
       amount: 5
   - type: Speech
-    speechSounds: Harpy
-    speechVerb: Harpy
-    allowedEmotes: ['Thump']
+    speechSounds: Harpy # Needs a better sound, but it is pretty hard to find actual penguin sounds
+    speechVerb: Waddler
   - type: TypingIndicator
   - type: Vocal
     sounds:
       Male: MaleWaddler
       Female: FemaleWaddler
       Unsexed: MaleWaddler
-  - type: ReplacementAccent
-    accent: badwordfilter
+  - type: ProfanityFilterAccent
+    words: badwordfilter
+    wordReplacement: "..."
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -78,15 +81,16 @@
     damageModifierSet: Scale
   - type: Absorbable
   - type: MeleeWeapon
+    attackRate: 4
     soundHit:
-      collection: Punch
+      collection: ToySqueak
     angle: 30
     animation: WeaponArcPunch
     damage:
       types:
         Blunt: 0
   - type: StaminaDamageOnHit
-    damage: 10
+    damage: 5
   - type: TemperatureSpeed
     thresholds:
       272: 1

@@ -173,6 +173,8 @@
   cost: 4
   delay: 4
   collisionMask: FullTileMask
+  rules:
+    - IsAirlock
   rotation: Camera
   fx: EffectRCDConstruct4
 
@@ -185,6 +187,8 @@
   cost: 4
   delay: 4
   collisionMask: FullTileMask
+  rules:
+    - IsAirlock
   rotation: Camera
   fx: EffectRCDConstruct4
 
