@@ -125,39 +125,25 @@ public sealed class CriminalStatusSystem : EntitySystem
 
     private bool CheckIdCard(EntityUid uid, ContrabandComponent contraband)
     {
-        var departments = new HashSet<ProtoId<DepartmentPrototype>>(contraband.AllowedDepartments);
+        if (!_id.TryFindIdCards(uid, out var ids))
+            return false;
 
-        departments.UnionWith(contraband.AllowedDepartmentsContraband);
+        var allowedJobNames = contraband.AllowedJobs
+            .Select(p => _prototype.Index(p).LocalizedName)
+            .ToHashSet();
 
-        if (_id.TryFindIdCards(uid, out var ids))
+        foreach (var id in ids)
         {
-            foreach (var id in ids)
-            {
-                foreach (var department in id.Comp.JobDepartments)
-                {
-                    if (departments.Contains(department))
-                        return true;
-                }
+            var cardComp = id.Comp;
 
-                if (contraband.AllowedJobs.Count > 0)
-                {
-                    var access = _access.TryGetTags(id.Owner);
-                    if (access == null) 
-                        continue;
+            if (cardComp.JobDepartments.Intersect(contraband.AllowedDepartments).Any())
+                return true;
 
-                    foreach (var allowedJobId in contraband.AllowedJobs)
-                    {
-                        if (!_prototype.TryIndex(allowedJobId, out var jobProto))
-                            continue;
+            if (cardComp.JobDepartments.Intersect(contraband.AllowedDepartmentsContraband).Any())
+                return true;
 
-                        if (jobProto.Access.Count == 0)
-                            continue;
-
-                        if (jobProto.Access.All(requiredAccess => access.Contains(requiredAccess)));
-                            return true;
-                    }
-                }
-            }
+            if (cardComp.LocalizedJobTitle is not null && allowedJobNames.Contains(cardComp.LocalizedJobTitle))
+                return true;
         }
 
         return false;
