@@ -1,0 +1,14 @@
+- type: constructionGraph
+  id: LawbringerSkin
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: upgraded
+          steps:
+            - tag: WeaponPistolLawbringerSkinKit
+              doAfter: 2
+
+    - node: upgraded
+      entity: WeaponEnergyGunLawbringerSkin
+
