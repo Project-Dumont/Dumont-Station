@@ -58,6 +58,7 @@
           operator: !type:MeleeOperator
             targetKey: StunTarget
             checkStun: true
+            checkCriminal: true
 
 - type: htnCompound
   id: SecbotPatrolCompound

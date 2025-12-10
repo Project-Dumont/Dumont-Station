@@ -16,6 +16,7 @@ using Content.Shared.CombatMode;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stunnable;
+using Content.Shared.Security.Components;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat.Melee;
 
@@ -46,6 +47,12 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
 
     [DataField("checkStun")]
     public bool CheckStun = false;
+
+    [DataField("checkCriminal")]
+    public bool CheckCriminal = false;
+
+    [DataField("points")]
+    public float Points = 10f;
 
     // Like movement we add a component and pass it off to the dedicated system.
 
@@ -112,6 +119,12 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
             if (CheckStun && _entManager.HasComponent<StunnedComponent>(target))
             {
                 return HTNOperatorStatus.Finished;
+            }
+
+            if (CheckCriminal)
+            {
+                if (!_entManager.TryGetComponent<CriminalRecordComponent>(target, out var record) || record.Points < Points)
+                    return HTNOperatorStatus.Finished;
             }
 
             // Success
