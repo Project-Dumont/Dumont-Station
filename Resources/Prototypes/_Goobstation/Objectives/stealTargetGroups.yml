@@ -28,7 +28,7 @@
   id: WeaponEnergyGunLawbringer
   name: steal-target-groups-weapon-lawbringer
   sprite:
-    sprite: _Gabystation/Misc/Specific/lawbringer_icon.rsi # Gabystation Skins
+    sprite: _Gabystation/Misc/lawbringer_stealobjective.rsi # Gabystation Skins
     state: icon
 
 - type: stealTargetGroup

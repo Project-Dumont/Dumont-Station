@@ -486,7 +486,7 @@
     autoRechargePause: true
     autoRechargePauseTime: 40
   - type: Construction # Gabystation Lawbringer Skins
-    graph: LawbringerSkin
+    graph: LawbringerSkinChange
     node: start
 
 - type: entity
