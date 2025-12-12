@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: Lawbringer Cosmetic AutoMod
+  name: Cosmetic "Luger P-08" AutoMod
   parent: BaseItem
   id: ChangeLawbringerSkinKit
-  description: An experimental upgrade kit for the C.H.I.M.P.
+  description: An automatic cosmetic modificator for your DT-12. This one is configured for the "Luger P-08" model. Use it on your toy and let the machine do it's magic...
   components:
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/Security/LawbringerSkinKit.rsi
