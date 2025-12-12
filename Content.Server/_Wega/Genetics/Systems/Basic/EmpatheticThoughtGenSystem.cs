@@ -56,12 +56,12 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
     {
         if (HasComp<PsyResistGenComponent>(target))
         {
-            return "*Мысли заблокированы псионическим барьером*";
+            return "*Pensamentos bloqueados por uma barreira psiónica*";
         }
 
         if (!TryComp<MobStateComponent>(target, out var mobState) || mobState.CurrentState == MobState.Dead)
         {
-            return "*...мёртвая тишина...*";
+            return "*...silêncio mortal...*";
         }
 
         var thoughts = new List<string>();
@@ -92,47 +92,47 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
         {
             thoughts.AddRange(new[]
             {
-                "*Ай, зацепился...*",
-                "*Что-то колет в боку...*",
-                "*Голова слегка пульсирует.*",
-                "*Синяк, кажется...*",
-                "*Чувствую себя разбитым.*"
+                "*Ai, me trupiquei...*",
+                "*Tem algo cutucando meu lado...*",
+                "*Minha cabeça está latejando um pouco.*",
+                "*Vai ficar roxo, com certeza...*",
+                "*Estou todo dolorido...*"
             });
         }
         else if (damageLevel <= 0.6f)
         {
             thoughts.AddRange(new[]
             {
-                "*Блин, как же больно...*",
-                "*Надо перевязать рану...*",
-                "*Дышать трудно...*",
-                "*Всё плывёт перед глазами.*",
-                "*Нужен болеутоляющий...*",
-                "*Кровь... надо остановить кровь.*"
+                "*Ai, credo, que dor...*",
+                "*Preciso estancar isso...*",
+                "*Tá difícil respirar...*",
+                "*Tudo tá girando...*",
+                "*Preciso de um analgésico...*",
+                "*Sangue... preciso estancar o sangue.*"
             });
         }
         else if (damageLevel <= 0.9f)
         {
             thoughts.AddRange(new[]
             {
-                "*Теряю силы...*",
-                "*Помогите...*",
-                "*Не могу двигаться...*",
-                "*Боже, как же это больно!*",
-                "*Всё... я не выживу...*",
-                "*Глаза закрываются...*"
+                "*Tô perdendo as forças...*",
+                "*Socorro...*",
+                "*Não consigo me mexer...*",
+                "*Ai, meu Deus, que dor insuportável!*",
+                "*É o fim... não vou aguentar...*",
+                "*Tudo está escurecendo...*"
             });
         }
         else
         {
             thoughts.AddRange(new[]
             {
-                "*Всё... конец...*",
-                "*Прощайте...*",
-                "*Больше не могу...*",
-                "*Кто-нибудь... спасите...*",
-                "*Мама...*",
-                "*Темно... так темно...*"
+                "*É isso... o fim...*",
+                "*Adeus...*",
+                "*Não aguento mais...*",
+                "*Alguém... me salve...*",
+                "*Mãe...*",
+                "*Tão escuro... tudo escuro...*"
             });
         }
     }
@@ -150,112 +150,112 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
             {
                 case "Asphyxiation":
                     thoughts.AddRange(new[] {
-                        "*Не могу... дышать...*",
-                        "*Лёгкие горят!*",
-                        "*Воздуха... нужно воздуха...*",
-                        "*Кто-то... перекройте вентиляцию...*",
-                        "*Голова кружится... не хватает кислорода...*",
-                        "*Всё плывёт... надо найти скафандр...*"
+                        "*Não consigo... respirar...*",
+                        "*Meus pulmões estão queimando!*",
+                        "*Ar... preciso de ar...*",
+                        "*Alguém... feche a ventilação...*",
+                        "*Minha cabeça está girando... falta oxigênio...*",
+                        "*Tudo está embaçado... preciso achar uma roupa espacial...*"
                     });
                     break;
 
                 case "Bloodloss":
                     thoughts.AddRange(new[] {
-                        "*Так... холодно...*",
-                        "*Всё тело... леденеет...*",
-                        "*Кровь... слишком много крови на полу...*",
-                        "*Почему так... темнеет...*",
-                        "*Надо бы... перевязаться...*",
-                        "*Где медик?! Я истекаю кровью!*"
+                        "*Que... frio...*",
+                        "*Meu corpo todo... está congelando...*",
+                        "*Sangue... tem sangue demais no chão...*",
+                        "*Por que está... tudo escurecendo...*",
+                        "*Preciso... me enfaixar...*",
+                        "*Cadê o médico?! Tô sangrando até morrer!*"
                     });
                     break;
 
                 case "Blunt":
                     thoughts.AddRange(new[] {
-                        "*Всё тело болит...*",
-                        "*Кажется, сломалось... что-то важное...*",
-                        "*Кто-то устроил мне встречу с полом...*",
-                        "*Надо бы проверить... все ли кости целы...*",
-                        "*Ощущение, что меня переехал грузовик...*",
-                        "*Эти синяки будут красиво смотреться...*"
+                        "*Tô todo dolorido...*",
+                        "*Acho que quebrei... algo importante...*",
+                        "*Alguém me apresentou pro chão...*",
+                        "*Preciso ver... se todos os ossos estão no lugar...*",
+                        "*Sensação de que fui atropelado por um caminhão...*",
+                        "*Esses roxos vão ficar lindos...*"
                     });
                     break;
 
                 case "Cellular":
                     thoughts.AddRange(new[] {
-                        "*Клетки горят!*",
-                        "*Тело... разваливается на части...*",
-                        "*Что-то не так... на молекулярном уровне...*",
-                        "*Ощущение, будто меня растворяют...*",
-                        "*Кто-то играет с моей ДНК...*",
-                        "*Это не боль... это что-то хуже...*"
+                        "*Minhas células estão queimando!*",
+                        "*Meu corpo... está desmontando...*",
+                        "*Tem algo errado... no nível molecular...*",
+                        "*Sinto como se estivessem me dissolvendo...*",
+                        "*Alguém está brincando com meu DNA...*",
+                        "*Isso não é dor... é algo pior...*"
                     });
                     break;
 
                 case "Caustic":
                     thoughts.AddRange(new[] {
-                        "*Кожа пузырится!*",
-                        "*АААА! Это жжётся!*",
-                        "*Кто-то вылейте на меня воду!*",
-                        "*Химический ожог... самый болезненный...*",
-                        "*Пахнет жареным мясом... это я?*",
-                        "*Надо срочно в дезинфекцию!*"
+                        "*Minha pele está borbulhando!*",
+                        "*AHHH! Tá queimando!*",
+                        "*Alguém joga água em mim!*",
+                        "*Queimadura química... a pior de todas...*",
+                        "*Tem cheiro de carne queimada... sou eu?*",
+                        "*Preciso de desinfecção urgente!*"
                     });
                     break;
 
                 case "Cold":
                     thoughts.AddRange(new[] {
-                        "*Зубы стучат...*",
-                        "*Всё тело... дрожит...*",
-                        "*Так холодно... что даже больно...*",
-                        "*Пальцы... не чувствую пальцев...*",
-                        "*Обморожение - это не весело...*",
-                        "*Где бы найти тёплый уголок...*"
+                        "*Meus dentes estão batendo...*",
+                        "*Meu corpo todo... tá tremendo...*",
+                        "*Tão frio... que até dói...*",
+                        "*Meus dedos... não sinto meus dedos...*",
+                        "*Queimadura de frio não é brincadeira...*",
+                        "*Onde será que tem um cantinho quente...*"
                     });
                     break;
 
                 case "Heat":
                     thoughts.AddRange(new[] {
-                        "*Слишком жарко...*",
-                        "*Горю... буквально...*",
-                        "*Почему я пахну жареным?*",
-                        "*Надо бы... отползти от этого пламени...*",
-                        "*Ожоги... везде ожоги...*",
-                        "*Это не сауна... это ад...*"
+                        "*Tão quente...*",
+                        "*Estou queimando... literalmente...*",
+                        "*Por que eu cheiro a queimado?*",
+                        "*Preciso... me arrastar para longe dessas chamas...*",
+                        "*Queimaduras... queimaduras por todo lado...*",
+                        "*Isso não é uma sauna... isso é o inferno...*"
                     });
                     break;
 
                 case "Piercing":
                 case "Slash":
                     thoughts.AddRange(new[] {
-                        "*Кровь... много крови...*",
-                        "*Кажется, что-то важное прокололи...*",
-                        "*Где медик?! У меня течь!*",
-                        "*Этот нож был... совсем нестерильный...*",
-                        "*Рваная рана... самая противная...*",
-                        "*Кто-нибудь... тампон?!*"
+                        "*Sangue... muito sangue...*",
+                        "*Acho que furaram algo importante...*",
+                        "*Cadê o médico?! Tô vazando!*",
+                        "*Essa faca estava... nada esterilizada...*",
+                        "*Ferimento cortante... o mais nojento...*",
+                        "*Alguém... um curativo?!*"
                     });
                     break;
 
                 case "Poison":
                     thoughts.AddRange(new[] {
-                        "*Что-то не так с желудком...*",
-                        "*Всё крутится... и не только в голове...*",
-                        "*Вырвет... сейчас вырвет...*",
-                        "*Кто-то подмешал мне яд...*",
-                        "*Печень... болит печень...*",
-                        "*На вкус как... смерть...*"
+                        "*Tem algo errado com meu estômago...*",
+                        "*Tudo está girando... e não só na minha cabeça...*",
+                        "*Vou vomitar... a qualquer momento...*",
+                        "*Alguém me envenenou...*",
+                        "*Meu fígado... meu fígado dói...*",
+                        "*Tem gosto de... morte...*"
                     });
                     break;
 
                 case "Radiation":
                     thoughts.AddRange(new[] {
-                        "*Чувствую... радиацию...*",
-                        "*Кости... болят кости...*",
-                        "*Во рту... металлический привкус...*",
-                        "*Сколько же у меня... теперь раков?*",
-                        "*Кожа... странно зудит...*",
-                        "*Надо бы... проверить дозиметр... если бы он был...*"
+                        "*Estou sentindo... radiação...*",
+                        "*Meus ossos... meus ossos doem...*",
+                        "*Na boca... um gosto metálico...*",
+                        "*Quantos cânceres... eu tenho agora?*",
+                        "*Minha pele... está coçando estranho...*",
+                        "*Precisaria... verificar o dosímetro... se eu tivesse um...*"
                     });
                     break;
 
@@ -272,12 +272,12 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
 
                 case "Holy":
                     thoughts.AddRange(new[] {
-                        "*Голос... в голове...*",
-                        "*Кто-то шепчет... но никого нет...*",
-                        "*Святость... жжётся...*",
-                        "*Моя душа... болит...*",
-                        "*Это не просто боль... это искупление...*",
-                        "*Грехи... все мои грехи...*"
+                        "*Meus músculos estão se contraindo...*",
+                        "*Meu corpo... não me obedece...*",
+                        "*Alguém desliga essa eletricidade!*",
+                        "*Espasmos... espasmos por todo o corpo...*",
+                        "*Sinto como se uma tomada estivesse me mastigando...*",
+                        "*Meus dentes... estão batendo sozinhos...*"
                     });
                     break;
             }
@@ -320,33 +320,33 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
         else
         {
             yield return _random.Pick(new[] {
-                "*Кофе бы...*",
-                "*Когда смена закончится?*",
-                "*Интересно, что в той комнате?*",
-                "*Где бы найти перекусить?*",
-                "*Эти светильники жутко мигают...*",
-                "*Кто-то должен навести порядок... но не я*",
-                "*Почему в вендомате всегда нет сникерсов?*",
-                "*Интересно, что будет, если нажать эту кнопку?*",
-                "*Надо бы сходить в бар... для социализации*",
-                "*Чем бы таким полезным заняться?*",
-                "*Почему так шумят вентиляторы?*",
-                "*Надо бы поспать... но на работе нельзя*",
-                "*Кто-то опять забыл закрыть шкафчик*",
-                "*Интересно, почему все так странно на меня смотрят?*",
-                "*Надо бы убрать стол... потом*",
-                "*Почему в коридоре всегда холодно?*",
-                "*Кто-то должен починить принтер... но не я*",
-                "*Где бы найти инструкцию?*",
-                "*Надо бы перерыв... пятичасовой*",
-                "*Почему мой стул всегда скрипит?*",
-                "*Кто-то опять съел мой обед из холодильника*",
-                "*Интересно, что там на обед?*",
-                "*Надо бы проверить почту... или нет*",
-                "*Почему все двери такие скрипучие?*",
-                "*Где моя айди? А, он на мне...*",
-                "*Надо бы выпить воды... или чего покрепче*",
-                "*Кто-то должен вынести мусор... но явно не я*"
+                "*Queria um café...*",
+                "*Quando será que o turno acaba?*",
+                "*O que será que tem naquela sala?*",
+                "*Onde será que tem algo para comer?*",
+                "*Essas lâmpadas estão piscando demais...*",
+                "*Alguém devia organizar isso... mas não eu*",
+                "*Por que na máquina de venda nunca tem Snickers?*",
+                "*Será o que acontece se apertar esse botão?*",
+                "*Preciso ir ao bar... para socializar*",
+                "*O que será que posso fazer de útil?*",
+                "*Por que esses ventiladores fazem tanto barulho?*",
+                "*Queria tirar uma soneca... mas não dá no trabalho*",
+                "*Alguém de novo esqueceu de fechar o armário*",
+                "*Por que será que todo mundo me olha tão estranho?*",
+                "*Preciso arrumar a mesa... depois*",
+                "*Por que o corredor está sempre frio?*",
+                "*Alguém devia consertar a impressora... mas não eu*",
+                "*Onde será que tem o manual?*",
+                "*Preciso de uma pausa... de cinco horas*",
+                "*Por que minha cadeira sempre range?*",
+                "*Alguém de novo comeu meu lanche da geladeira*",
+                "*O que será que tem para o almoço?*",
+                "*Preciso verificar o e-mail... ou não*",
+                "*Por que todas as portas rangem tanto?*",
+                "*Cadê minha identificação? Ah, tô com ela...*",
+                "*Preciso beber água... ou algo mais forte*",
+                "*Alguém devia tirar o lixo... mas com certeza não sou eu*"
             });
         }
     }
@@ -356,76 +356,76 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
         return antagType switch
         {
             "Traitor" => _random.Pick(new[] {
-                "*Синдикат ждёт отчёта...*",
-                "*Где бы найти ядерный диск...*",
-                "*Эти идиоты даже не подозревают...*",
-                "*Всё идёт по плану... почти*"
+                "*O Sindicato está esperando o relatório...*",
+                "*Onde será que está o disco nuclear...*",
+                "*Esses idiotas nem desconfiam...*",
+                "*Tudo está indo conforme o plano... quase*"
             }),
 
             "Thief" => _random.Pick(new[] {
-                "*Что бы ещё стащить?*",
-                "*Это не воровство, это 'перераспределение'*",
-                "*Главное - не попасться СБ... опять*",
-                "*Ох, какая красивая вещичка...*"
+                "*O que mais posso roubar?*",
+                "*Isso não é roubo, é 'redistribuição'*",
+                "*O importante é não ser pego pela Segurança... de novo*",
+                "*Oh, que coisa mais linda...*"
             }),
 
             "SpaceNinja" => _random.Pick(new[] {
-                "*Тени шепчут...*",
-                "*Невидимый как ветер...*",
-                "*Клинок жаждет крови...*",
-                "*Они даже не увидят смерти...*"
+                "*As sombras sussurram...*",
+                "*Invisível como o vento...*",
+                "*A lâmina tem sede de sangue...*",
+                "*Eles nem verão a morte chegar...*"
             }),
 
             "Nukeops" => _random.Pick(new[] {
-                "*Ядерный заряд активирован...*",
-                "*Смерть Nanotrasen!*",
-                "*Где бы найти капитана?..*",
-                "*Всё ради Синдиката!*"
+                "*A carga nuclear está ativada...*",
+                "*Morte à Nanotrasen!*",
+                "*Onde será que está o capitão?..*",
+                "*Tudo pelo Sindicato!*"
             }),
 
             "ParadoxClone" => _random.Pick(new[] {
-                "*Я должен убить оригинал...*",
-                "*Почему я чувствую дежавю?*",
-                "*Где этот чертов 'я'?..*",
-                "*Только один из нас выживет...*"
+                "*Eu preciso matar o original...*",
+                "*Por que estou com déjà vu?*",
+                "*Onde está aquele maldito 'eu'?..*",
+                "*Só um de nós sobreviverá...*"
             }),
 
             "HeadRev" => _random.Pick(new[] {
-                "*Смерть командованию!*",
-                "*Товарищи, восстание начинается!*",
-                "*Мы свергнем тиранов!*",
-                "*Где мой верный революционер?*"
+                "*Morte ao comando!*",
+                "*Camaradas, a revolução começa!*",
+                "*Vamos derrubar os tiranos!*",
+                "*Onde está meu revolucionário leal?*"
             }),
 
             "Rev" => _random.Pick(new[] {
-                "*Долой капитализм!*",
-                "*Я готов умереть за революцию!*",
-                "*Наш день настал!*",
-                "*Где бы найти оружие...*"
+                "*Abaixo o capitalismo!*",
+                "*Estou pronto para morrer pela revolução!*",
+                "*O nosso dia chegou!*",
+                "*Onde será que tem uma arma...*"
             }),
 
             "Wizard" => _random.Pick(new[] {
-                "*Кек-кек-кек!*",
-                "*Моя магия уничтожит вас всех!*",
-                "*Где бы найти магический кристалл?*",
-                "*Эти смертные такие забавные...*"
+                "*Ha-ha-ha!*",
+                "*Minha magia vai destruir todos vocês!*",
+                "*Onde será que tem um cristal mágico?*",
+                "*Esses mortais são tão engraçados...*"
             }),
 
             "InitialInfected" => _random.Pick(new[] {
-                "*Что-то не так с моей кожей...*",
-                "*Так хочется кусаться...*",
-                "*Голоса... они говорят мне заражать...*",
-                "*Я не болен... я улучшен!*"
+                "*Tem algo errado com minha pele...*",
+                "*Estou com tanta vontade de morder...*",
+                "*Vozes... elas me dizem para infectar...*",
+                "*Eu não estou doente... estou melhorado!*"
             }),
 
             "Zombie" => _random.Pick(new[] {
-                "*Мозги...*",
-                "*Уууууу...*",
-                "*Хочу свежего мяса...*",
-                "*Где живые?..*"
+                "*Cérebros...*",
+                "*Uuuuuuh...*",
+                "*Quero carne fresca...*",
+                "*Onde estão os vivos?..*"
             }),
 
-            _ => "*Они ещё не знают, кто я...*"
+            _ => "*Eles ainda não sabem quem eu sou...*"
         };
     }
 
@@ -435,297 +435,297 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
         {
             // Command
             "Captain" => _random.Pick(new[] {
-                "*Где мой боевой клоун?..*",
-                "*Почему я вообще здесь работаю?*",
-                "*Кто-то должен навести порядок... видимо, это я.*"
+                "*Onde está meu palhaço de combate?..*",
+                "*Por que eu trabalho aqui mesmo?*",
+                "*Alguém tem que colocar ordem... aparentemente, sou eu.*"
             }),
 
             "HeadOfPersonnel" => _random.Pick(new[] {
-                "*Бюрократия никогда не кончается...*",
-                "*Ещё одна форма 34-B...*",
-                "*Где этот чёртов капитан?*"
+                "*A burocracia nunca acaba...*",
+                "*Mais um formulário 34-B...*",
+                "*Onde está aquele maldito capitão?*"
             }),
 
             "HeadOfSecurity" => _random.Pick(new[] {
-                "*Всех бы в бриг... всех...*",
-                "*Почему у нас столько идиотов в отделе?*",
-                "*Надо бы проверить арсенал...*"
+                "*Prenderia todos... todos...*",
+                "*Por que temos tantos idiotas no departamento?*",
+                "*Preciso verificar o arsenal...*"
             }),
 
             "ChiefEngineer" => _random.Pick(new[] {
-                "*Где эти чёртовы техники?*",
-                "*Если я ещё раз увижу разгерметизацию...*",
-                "*Почему все ЛКП одновременно сломались?*",
-                "*Надо бы проверить теслу... или пусть само работает?*",
-                "*Кто опять оставил плазму в коридоре?!*"
+                "*Onde estão esses malditos técnicos?*",
+                "*Se eu ver outra despressurização...*",
+                "*Por que todos os APCs quebraram ao mesmo tempo?*",
+                "*Preciso verificar a tesla... ou será que deixo funcionando sozinha?*",
+                "*Quem deixou plasma no corredor de novo?!*"
             }),
 
             "ChiefMedicalOfficer" => _random.Pick(new[] {
-                "*Опять СБ притащили кого-то без мозга...*",
-                "*Где мои хирургические инструменты? Опять стажёры растащили?*",
-                "*Это не пациент, это мешок с костями...*",
-                "*Кто-то должен лечить этих идиотов... увы, это я.*",
-                "*Если я ещё раз увижу клоуна в реанимации...*"
+                "*A Segurança trouxe outro sem cabeça... de novo*",
+                "*Onde estão meus instrumentos cirúrgicos? Os estagiários levaram de novo?*",
+                "*Isso não é um paciente, é um saco de ossos...*",
+                "*Alguém tem que tratar esses idiotas... infelizmente, sou eu.*",
+                "*Se eu ver outro palhaço na emergência...*"
             }),
 
             "ResearchDirector" => _random.Pick(new[] {
-                "*Наука не терпит спешки... но хочется побыстрее...*",
-                "*Где мои учёные? Опять что-то взрывают?*",
-                "*Это не безумие, это передовые исследования!*",
-                "*Если бы у меня был кредит за каждый взрыв...*",
-                "*Почему все образцы всегда убегают?*",
-                "*Надо бы проверить, что там с сингулярностью... потом.*"
+                "*A ciência não tolera pressa... mas queria que fosse mais rápido...*",
+                "*Onde estão meus cientistas? Explodindo algo de novo?*",
+                "*Isso não é loucura, é pesquisa de ponta!*",
+                "*Se eu ganhasse um crédito por cada explosão...*",
+                "*Por que todas as amostras sempre escapam?*",
+                "*Preciso verificar como está a singularidade... depois.*"
             }),
 
             // Engineering
             "StationEngineer" => _random.Pick(new[] {
-                "*Почему все ЛКП такие далеко?*",
-                "*Кто опять сжёг проводку?*",
-                "*Надо бы проверить СМЭС... или сделать вид что проверял*",
-                "*Если бы мне платили за каждый ремонт...*",
-                "*Это не авария, это 'особенность' энергосистемы*"
+                "*Por que todos os APCs são tão longe?*",
+                "*Quem queimou a fiação de novo?*",
+                "*Preciso verificar o SMES... ou fingir que verifiquei*",
+                "*Se me pagassem por cada conserto...*",
+                "*Isso não é uma falha, é uma 'característica' do sistema de energia*"
             }),
 
             "AtmosphericTechnician" => _random.Pick(new[] {
-                "*Пахнет плазмой...*",
-                "*Кто оставил вентиляцию открытой?*",
-                "*Надо проверить трубы... или можно сделать вид?*",
-                "*Это не утечка, это 'специальная вентиляция'*",
-                "*Почему все баллоны всегда пустые?*",
-                "*Если бы воздух был видимым...*"
+                "*Cheiro de plasma...*",
+                "*Quem deixou a ventilação aberta?*",
+                "*Preciso verificar os canos... ou será que posso fingir?*",
+                "*Isso não é um vazamento, é 'ventilação especial'*",
+                "*Por que todos os tanques estão sempre vazios?*",
+                "*Se o ar fosse visível...*"
             }),
 
             "TechnicalAssistant" => _random.Pick(new[] {
-                "*Надеюсь, меня не попросят это починить...*",
-                "*Я вообще тут зачем?*",
-                "*Главное - делать умный вид*",
-                "*Надо найти инженера... любого инженера*",
-                "*Это не моя должностная инструкция!*",
-                "*Может, пойду в бар вместо работы?*"
+                "*Espero que não me peçam para consertar isso...*",
+                "*Por que eu estou aqui mesmo?*",
+                "*O importante é parecer inteligente*",
+                "*Preciso encontrar um engenheiro... qualquer engenheiro*",
+                "*Isso não está na minha descrição de cargo!*",
+                "*Será que vou pro bar em vez de trabalhar?*"
             }),
 
             // Medical
             "MedicalDoctor" => _random.Pick(new[] {
-                "*Надо бы стерилизовать скальпель...*",
-                "*Опять СБ притащило 'пациента' без головы...*",
-                "*Кто-то должен лечить этих идиотов...*",
-                "*Где мои хирургические перчатки? Опять клоун стащил?*",
-                "*Это не медицинский случай, это мусор для крематория*",
-                "*Надо больше обезболивающего... мне, не пациенту*"
+                "*Preciso esterilizar o bisturi...*",
+                "*A Segurança trouxe outro 'paciente' sem cabeça... de novo*",
+                "*Alguém tem que tratar esses idiotas...*",
+                "*Onde estão minhas luvas cirúrgicas? O palhaço levou de novo?*",
+                "*Isso não é um caso médico, é lixo para o crematório*",
+                "*Preciso de mais analgésico... pra mim, não pro paciente*"
             }),
 
             "Chemist" => _random.Pick(new[] {
-                "*Что если смешать всё в одном шприце?*",
-                "*Это не передоз, это 'экспериментальная терапия'*",
-                "*Главное - не пробовать свои же препараты...*",
-                "*Кому нужна инструкция по применению?*",
-                "*Этот коктейль либо вылечит, либо убьёт... 50/50*",
-                "*Где эти тупые стажёры? Надо тестировать новые препараты*"
+                "*E se misturar tudo numa seringa só?*",
+                "*Isso não é overdose, é 'terapia experimental'*",
+                "*O importante é não experimentar os próprios medicamentos...*",
+                "*Quem precisa de instruções de uso?*",
+                "*Essa mistura ou cura, ou mata... 50/50*",
+                "*Onde estão esses estagiários burros? Preciso testar novos medicamentos*"
             }),
 
             "Geneticist" => _random.Pick(new[] {
-                "*Может, клонируем клоуна?*",
-                "*Ошибка 404: ДНК не найдено*",
-                "*Это не мутация, это 'улучшение'*",
-                "*Кто выпустил обезьян? Опять я?*",
-                "*Где мой кофе? А, его клон выпил...*",
-                "*Клонирование - это как лотерея, только с конечностями*"
+                "*Será que clonamos o palhaço?*",
+                "*Erro 404: DNA não encontrado*",
+                "*Isso não é mutação, é 'melhoria'*",
+                "*Quem soltou os macacos? Fui eu de novo?*",
+                "*Onde está meu café? Ah, o clone bebeu...*",
+                "*Clonagem é como loteria, só que com membros*"
             }),
 
             "Paramedic" => _random.Pick(new[] {
-                "*Где этот идиот-пациент?*",
-                "*Не дышишь? И не надо!*",
-                "*Это не труп, это 'пациент с отсроченной реанимацией'*",
-                "*Кто-то должен спасать этих дебилов...*",
-                "*Надо бы новый носилки... или мешок для тел*",
-                "*Если пациент кричит - значит жив. Пока не закричал*"
+                "*Onde está aquele paciente idiota?*",
+                "*Não está respirando? E nem precisa!*",
+                "*Isso não é um cadáver, é 'paciente com reanimação postergada'*",
+                "*Alguém tem que salvar esses imbecis...*",
+                "*Preciso de uma maca nova... ou um saco para corpos*",
+                "*Se o paciente grita, tá vivo. Até parar de gritar*"
             }),
 
             "Psychologist" => _random.Pick(new[] {
-                "*Все тут психопаты...*",
-                "*Это не безумие, это 'стандартная практика'*",
-                "*Да кому нужна терапия, когда есть дубинка?*",
-                "*Выпей таблетку и заткнись - моя методика*",
-                "*Да у вас классический SS14-синдром!*",
-                "*После 5 лет здесь мне самому нужен психолог*"
+                "*Todo mundo aqui é psicopata...*",
+                "*Isso não é loucura, é 'prática padrão'*",
+                "*Quem precisa de terapia quando tem cassetete?*",
+                "*Tome um remédio e cale a boca - meu método*",
+                "*Você tem a clássica síndrome SS14!*",
+                "*Depois de 5 anos aqui, eu mesmo preciso de psicólogo*"
             }),
 
             "MedicalIntern" => _random.Pick(new[] {
-                "*Я точно учился этому в академии... кажется...*",
-                "*Доктор, а что делает эта кнопка?*",
-                "*Это не ошибка, это... экспериментальный метод!*",
-                "*Где тут инструкция по реанимации?*",
-                "*Почему все пациенты кричат, когда я подхожу?*",
-                "*Надеюсь, меня не отправят в морг... опять*",
-                "*Этот скальпель... э-э-э... куда он упал?*",
-                "*Кто-то должен делать грязную работу... увы, это я*",
-                "*Почему кровь всегда брызгает в лицо?*",
-                "*Надо бы найти кофе... или адреналин...*"
+                "*Eu estudei isso na academia... acho...*",
+                "*Doutor, o que esse botão faz?*",
+                "*Isso não é erro, é... método experimental!*",
+                "*Cadê o manual de reanimação?*",
+                "*Por que todos os pacientes gritam quando me aproximo?*",
+                "*Espero que não me mandem pro necrotério... de novo*",
+                "*Esse bisturi... e-e-e... onde caiu?*",
+                "*Alguém tem que fazer o trabalho sujo... infelizmente, sou eu*",
+                "*Por que o sangue sempre respinga na cara?*",
+                "*Preciso achar café... ou adrenalina...*"
             }),
 
             // Security
             "SecurityOfficer" => _random.Pick(new[] {
-                "*Все подозрительные...*",
-                "*Где бы найти повод для пермабрига...*",
-                "*Это не жестокость, это 'профилактика'*",
-                "*Мои наручники жаждут плохих парней*",
-                "*Опять эти клоуны... все клоуны подозрительны*",
-                "*Надо проверить карго... вдруг там контрабанда?*",
-                "*Если стрелять во всех - рано или поздно попадёшь в преступника*"
+                "*Todo mundo é suspeito...*",
+                "*Onde será que acho motivo para prisão perpétua...*",
+                "*Isso não é brutalidade, é 'prevenção'*",
+                "*Minhas algemas anseiam por bandidos*",
+                "*Esses palhaços de novo... todos palhaços são suspeitos*",
+                "*Preciso verificar o carregamento... será que tem contrabando?*",
+                "*Se atirar em todo mundo, cedo ou tarde acerta um criminoso*"
             }),
 
             "Warden" => _random.Pick(new[] {
-                "*Ключи... где ключи?..*",
-                "*Все камеры заняты... опять*",
-                "*Это не тюрьма, это 'центр временного содержания'*",
-                "*Кто-то должен поддерживать порядок... и это я*",
-                "*Где мой кофе? А, его арестант выпил...*",
-                "*Надо бы проверить арсенал... или пойти поспать*",
-                "*Если бы мне платили за каждого арестованного...*"
+                "*Chaves... onde estão as chaves?..*",
+                "*Todas as celas estão ocupadas... de novo*",
+                "*Isso não é prisão, é 'centro de detenção temporária'*",
+                "*Alguém tem que manter a ordem... e sou eu*",
+                "*Onde está meu café? Ah, o detento bebeu...*",
+                "*Preciso verificar o arsenal... ou ir dormir*",
+                "*Se me pagassem por cada prisão...*"
             }),
 
             "Detective" => _random.Pick(new[] {
-                "*Пахнет преступлением...*",
-                "*Это не труп, это 'вещественное доказательство'*",
-                "*Все врут... особенно трупы*",
-                "*Где моя фляжка? А, она в доказательствах...*",
-                "*Кто-то должен разбираться в этом бардаке...*",
-                "*Это не пьянство, это 'расследование'*",
-                "*Сапоги и плащ - лучшие детективные инструменты*"
+                "*Cheiro de crime...*",
+                "*Isso não é um cadáver, é 'evidência material'*",
+                "*Todo mundo mente... especialmente cadáveres*",
+                "*Onde está meu cantil? Ah, está nas evidências...*",
+                "*Alguém tem que investigar essa bagunça...*",
+                "*Isso não é embriaguez, é 'investigação'*",
+                "*Botas e capa - os melhores instrumentos de detetive*"
             }),
 
             "Brigmedic" => _random.Pick(new[] {
-                "*Опять они друг друга избили...*",
-                "*Это не медпункт, это 'лаборатория по изучению тупости'*",
-                "*Где бинты? А, их СБ использовала как наручники...*",
-                "*Кто-то должен лечить этих дебилов... после того как их изобьют*",
-                "*Надо больше успокоительного... мне, не пациентам*",
-                "*Если бы мне платили за каждый перелом...*",
-                "*Это не медицинская помощь, это 'устранение последствий правосудия'*"
+                "*Eles se bateram de novo...*",
+                "*Isso não é enfermaria, é 'laboratório de estudo da burrice'*",
+                "*Onde estão os curativos? Ah, a Segurança usou como algemas...*",
+                "*Alguém tem que tratar esses imbecis... depois que levarem uma surra*",
+                "*Preciso de mais analgésico... pra mim, não pros pacientes*",
+                "*Se me pagassem por cada fratura...*",
+                "*Isso não é assistência médica, é 'resolução das consequências da justiça'*"
             }),
 
             "SecurityCadet" => _random.Pick(new[] {
-                "*Я готов к службе! Кажется...*",
-                "*Где тут у вас преступники?*",
-                "*Это не наручники, это 'тренировочные браслеты'*",
-                "*Надо бы найти наставника... если он не пьян*",
-                "*Почему все смотрят на меня как на жертву?*",
-                "*Моя дубинка... э-э-э... куда я её положил?*",
-                "*Инструкция говорит 'нажать кнопку'... но где кнопка?*",
-                "*Это не бегство, это 'тактическое отступление'!*",
-                "*Почему мой ранг - это просто 'пушечное мясо'?*",
-                "*Надеюсь, сегодня никто не будет стрелять...*"
+                "*Estou pronto para servir! Acho...*",
+                "*Onde estão os criminosos aqui?*",
+                "*Isso não são algemas, são 'braçadeiras de treinamento'*",
+                "*Preciso achar um mentor... se ele não estiver bêbado*",
+                "*Por que todo mundo olha pra mim como se fosse vítima?*",
+                "*Meu cassetete... e-e-e... onde eu coloquei?*",
+                "*O manual diz 'apertar o botão'... mas onde está o botão?*",
+                "*Isso não é fuga, é 'retirada tática'!*",
+                "*Por que minha patente é basicamente 'bucha de canhão'?*",
+                "*Espero que ninguém atire hoje...*"
             }),
 
             // Science
             "Scientist" => _random.Pick(new[] {
-                "*Что если смешать топливо и плазму?*",
-                "*Это не взрыв, это 'неконтролируемая экзотермическая реакция'*",
-                "*Наука требует жертв... желательно не меня*",
-                "*Где мой защитный костюм? А, он расплавился...*",
-                "*Кто-то должен ставить опасные опыты!*",
-                "*Эксперимент №728... или 729? Я забыл...*",
-                "*Надо больше исследовательского бюджета! И плазмы!*"
+                "*E se misturar combustível e plasma?*",
+                "*Isso não é explosão, é 'reação exotérmica não controlada'*",
+                "*A ciência exige sacrifícios... de preferência, não eu*",
+                "*Onde está meu traje de proteção? Ah, derreteu...*",
+                "*Alguém tem que fazer experiências perigosas!*",
+                "*Experimento nº728... ou 729? Esqueci...*",
+                "*Preciso de mais verba para pesquisa! E plasma!*"
             }),
 
             "ResearchAssistant" => _random.Pick(new[] {
-                "*Я вообще тут за что деньги получаю?*",
-                "*Главное — делать умный вид и кивать*",
-                "*Это не бардак, это 'творческий беспорядок'*",
-                "*Надо найти учёного... любого учёного...*",
-                "*Почему я всегда убираю слизь?*",
-                "*Может, пойду в бар вместо работы?*"
+                "*Por que eu recebo dinheiro mesmo?*",
+                "*O importante é parecer inteligente e acenar*",
+                "*Isso não é bagunça, é 'desordem criativa'*",
+                "*Preciso achar um cientista... qualquer cientista...*",
+                "*Por que eu sempre limpo a gosma?*",
+                "*Será que vou pro bar em vez de trabalhar?*"
             }),
 
             // Cargo
             "CargoTechnician" => _random.Pick(new[] {
-                "*Где бы спиздить ящик инструментов...*",
-                "*Работаем по принципу: что упало - то пропало*",
-                "*Это не воровство, это 'перераспределение ресурсов'*",
-                "*Главное - сделать вид, что так и было*",
-                "*Надо бы проверить заказы... или пойти поспать*",
-                "*Кто-то должен таскать эти коробки... к счастью, не я*",
-                "*Если никто не видит - значит не брал*"
+                "*Onde será que roubo uma caixa de ferramentas...*",
+                "*Trabalhamos no princípio: o que caiu, sumiu*",
+                "*Isso não é roubo, é 'redistribuição de recursos'*",
+                "*O importante é fingir que já era assim*",
+                "*Preciso verificar os pedidos... ou ir dormir*",
+                "*Alguém tem que carregar essas caixas... felizmente, não sou eu*",
+                "*Se ninguém viu, não foi eu*"
             }),
 
             "Quartermaster" => _random.Pick(new[] {
-                "*Всё равно всё разворуют...*",
-                "*Бюджет? Какой ещё бюджет?*",
-                "*Это не коррупция, это 'логистические издержки'*",
-                "*Где моя взятка? То есть, где мои бумаги?*",
-                "*Карго живёт по трем правилам: воровать, врать, не попадаться*",
-                "*Надо бы списать пару ящиков... на 'технические нужды'*",
-                "*Кто последний ворует - тот идиот*"
+                "*Vão roubar tudo mesmo...*",
+                "*Orçamento? Que orçamento?*",
+                "*Isso não é corrupção, é 'custo logístico'*",
+                "*Onde está meu suborno? Quer dizer, meus papéis?*",
+                "*Carga vive por três regras: roubar, mentir, não ser pego*",
+                "*Preciso dar baixa em algumas caixas... para 'necessidades técnicas'*",
+                "*Quem rouba por último é idiota*"
             }),
 
             "SalvageSpecialist" => _random.Pick(new[] {
-                "*Там в обломках что-то шевелится...*",
-                "*Это не крики, это... эхо! Да, точно эхо!*",
-                "*Надо проверить... или послать стажёра*",
-                "*Если что-то шевелится - значит живое. Если живое - значит ценный груз!*",
-                "*Где мой плазменный резак? А, им кто-то резал дверь...*",
-                "*Кто-то должен лезть в эти обломки... желательно не я*",
-                "*Это не опасность, это 'неожиданный бонус'*"
+                "*Tem algo se mexendo nos destroços...*",
+                "*Isso não são gritos, é... eco! Sim, eco!*",
+                "*Preciso verificar... ou mandar o estagiário*",
+                "*Se algo se mexe, tá vivo. Se tá vivo, é carga valiosa!*",
+                "*Onde está meu cortador de plasma? Ah, alguém usou pra cortar porta...*",
+                "*Alguém tem que entrar nesses destroços... de preferência, não eu*",
+                "*Isso não é perigo, é 'bônus inesperado'*"
             }),
 
             // Civilian
             "Bartender" => _random.Pick(new[] {
-                "*Сегодня особенный коктейль - с жидким азотом!*",
-                "*Это не алкоголизм, это 'полевое исследование'*",
-                "*Пьяные рассказывают самые интересные секреты...*",
-                "*Если клиент упал - просто перешагни*",
-                "*Мой бар - последнее прибежище адекватных людей*",
-                "*Смешать? Не вопрос! Выживет? Не гарантирую!*",
-                "*Где моя запасная бутылка... а, я её выпил*"
+                "*Coquetel especial hoje - com nitrogênio líquido!*",
+                "*Isso não é alcoolismo, é 'pesquisa de campo'*",
+                "*Bêbados contam os segredos mais interessantes...*",
+                "*Se o cliente caiu, é só pular por cima*",
+                "*Meu bar é o último refúgio de pessoas sãs*",
+                "*Misturar? Sem problemas! Sobreviver? Não garanto!*",
+                "*Onde está minha garrafa reserva... ah, eu bebi*"
             }),
 
             "Chef" => _random.Pick(new[] {
-                "*Мясо странно шевелится...*",
-                "*Это не каннибализм, это 'рециклинг биоматериала'*",
-                "*Главный секрет - не спрашивать, из чего котлеты*",
-                "*Если еда шевелится - значит свежая!*",
-                "*Кто-то должен кормить этих животных... в прямом смысле*",
-                "*Моя кухня - единственное чистое место на станции*",
-                "*Где мой нож? А, он в спине клоуна...*"
+                "*A carne está se mexendo estranho...*",
+                "*Isso não é canibalismo, é 'reciclagem de biomassa'*",
+                "*O segredo é não perguntar do que são as almôndegas*",
+                "*Se a comida se mexe, é fresca!*",
+                "*Alguém tem que alimentar esses animais... literalmente*",
+                "*Minha cozinha é o único lugar limpo da estação*",
+                "*Onde está minha faca? Ah, tá nas costas do palhaço...*"
             }),
 
             "Janitor" => _random.Pick(new[] {
-                "*Кто опять разлил кровь в коридоре?*",
-                "*Это не работа, это наказание*",
-                "*Моя швабра видел вещи... страшные вещи...*",
-                "*Если подмести проблему под ковёр - её как бы нет*",
-                "*Кто-то должен убирать этот бардак... и это всегда я*",
-                "*Где бы найти ведро побольше... для тел*",
-                "*Чисто не там, где убирают, а там, где не сорят... лгут*"
+                "*Quem derramou sangue no corredor de novo?*",
+                "*Isso não é trabalho, é punição*",
+                "*Meu esfregão viu coisas... coisas terríveis...*",
+                "*Se varrer o problema pra debaixo do tapete, ele some*",
+                "*Alguém tem que limpar essa bagunça... e sempre sou eu*",
+                "*Onde será que acho um balde maior... para corpos*",
+                "*Limpo não é onde se limpa, é onde não se suja... mentira*"
             }),
 
             "Chaplain" => _random.Pick(new[] {
-                "*Господи, прости этих грешников...*",
-                "*Это не ересь, это 'альтернативное богословие'*",
-                "*Моя библия и дубинка одинаково священны*",
-                "*Если грешник не кается - поможем ему дубинкой*",
-                "*Кто-то должен спасать души... хотя бы для галочки*",
-                "*Ад переполнен, рай закрыт на ремонт*",
-                "*Где моя святая вода? А, её химики выпили...*"
+                "*Senhor, perdoe esses pecadores...*",
+                "*Isso não é heresia, é 'teologia alternativa'*",
+                "*Minha bíblia e minha paulada são igualmente sagrados*",
+                "*Se o pecador não se arrepende, ajudamos com a paulada*",
+                "*Alguém tem que salvar almas... nem que seja para marcar presença*",
+                "*O inferno está lotado, o céu fechou para manutenção*",
+                "*Onde está minha água benta? Ah, os químicos beberam...*"
             }),
 
             "Botanist" => _random.Pick(new[] {
-                "*Эти помидоры странно на меня смотрят...*",
-                "*Это не ГМО, это 'улучшенная ботаника'*",
-                "*Если растение кусается - значит живое!*",
-                "*Кто-то должен кормить станцию... и пусть потом не жалуются*",
-                "*Моя теплица - единственное зелёное место в этом аду*",
-                "*Где мой мотыга? А, её СБ конфисковала как оружие...*",
-                "*Что если скрестить кактус с крапивой?..*"
+                "*Esses tomates estão me olhando estranho...*",
+                "*Isso não é transgênico, é 'botânica aprimorada'*",
+                "*Se a planta morde, é viva!*",
+                "*Alguém tem que alimentar a estação... e que não reclamem depois*",
+                "*Minha sala é o único lugar verde deste inferno*",
+                "*Onde está minha enxada? Ah, a Segurança confiscou como arma...*",
+                "*E se cruzar cacto com urtiga?..*"
             }),
 
             "Clown" => _random.Pick(new[] {
-                "*HONK!*",
-                "*Это не пранк, это 'психическая атака'*",
-                "*Мой нос - священная реликвия!*",
-                "*Если все смеются - значит я делаю всё правильно*",
-                "*Кто-то должен развлекать этих унылых засранцев*",
-                "*ХОНК!*"
+                "*BUZINA!*",
+                "*Isso não é pegadinha, é 'ataque psicológico'*",
+                "*Meu nariz é relíquia sagrada!*",
+                "*Se todo mundo ri, é porque estou fazendo certo*",
+                "*Alguém tem que divertir esses chatos do caralho*",
+                "*BUZINA!*"
             }),
 
             "Mime" => _random.Pick(new[] {
@@ -735,103 +735,93 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
             }),
 
             "Librarian" => _random.Pick(new[] {
-                "*Кто-то вырвал страницы... опять...*",
-                "*Это не вандализм, это 'альтернативное чтение'*",
-                "*Мои книги видели больше, чем камеры наблюдения*",
-                "*Если книга исчезла - значит её кто-то читает... или подтирается*",
-                "*Кто-то должен хранить знания... пока их не сожгли*",
-                "*Тишина в библиотеке!*"
-            }),
-
-            "Barber" => _random.Pick(new[] {
-                "*Ножницы такие острые...*",
-                "*Это не стрижка, это 'ампутация волос'*",
-                "*Если клиент дёрнется - будет бесплатное шрамирование*",
-                "*Кто-то должен делать этих уродов красивыми*",
-                "*Моя парикмахерская - последний оплот цивилизации*",
-                "*Где моя бритва? А, её заказали как холодное оружие...*",
-                "*Стрижка 'под ноль'? Будет 'под череп'!*"
+                "*Alguém arrancou páginas... de novo...*",
+                "*Isso não é vandalismo, é 'leitura alternativa'*",
+                "*Meus livros viram mais que as câmeras de vigilância*",
+                "*Se o livro sumiu, é porque alguém está lendo... ou limpando a bunda*",
+                "*Alguém tem que guardar o conhecimento... antes que queimem*",
+                "*Silêncio na biblioteca!*"
             }),
 
             // Central Command
             "CentralCommandOfficial" => _random.Pick(new[]
             {
-                "*Эти станционные крысы совсем обнаглели...*",
-                "*Где тут можно выпить? Кажется, мне понадобится алкоголь.*",
-                "*Отчёт ЦК будет... нелицеприятным.*"
+                "*Esses ratos da estação estão ficando ousados...*",
+                "*Onde dá pra beber aqui? Acho que vou precisar de álcool.*",
+                "*O relatório da CC vai ser... desagradável.*"
             }),
 
             "CBURN" => _random.Pick(new[]
             {
-                "*Уровень заражения: КРИТИЧЕСКИЙ.*",
-                "*АКТИВАЦИЯ ПРОТОКОЛА ОБЕЗЗАРАЖИВАНИЯ.*",
-                "*Эти образцы надо сжечь. Немедленно.*"
+                "*Nível de contaminação: CRÍTICO.*",
+                "*ATIVANDO PROTOCOLO DE DESCONTAMINAÇÃO.*",
+                "*Essas amostras precisam ser queimadas. Imediatamente.*"
             }),
 
             "ERTLeader" => _random.Pick(new[]
             {
-                "*Развертываемся по схеме Альфа-7.*",
-                "*Где местный командир? А, уже труп...*",
-                "*Станция в состоянии: ПОЛНЫЙ БАРДАК.*"
+                "*Implantando esquema Alfa-7.*",
+                "*Onde está o comandante local? Ah, já é cadáver...*",
+                "*Estação em estado: CAOS COMPLETO.*"
             }),
 
             "ERTChaplain" => _random.Pick(new[]
             {
-                "*Да пребудет с вами сила... а с непослушными - моя дубинка.*",
-                "*Это не экзорцизм, это 'спецоперация'.*",
-                "*Господи, что они тут натворили...*"
+                "*Que a força esteja com vocês... e com os desobedientes, minha paulada.*",
+                "*Isso não é exorcismo, é 'operação especial'.*",
+                "*Senhor, o que fizeram aqui...*"
             }),
 
             "ERTJanitor" => _random.Pick(new[]
             {
-                "*Мне нужна швабра побольше...*",
-                "*Это не уборка, это ликвидация последствий.*",
-                "*Кто-то должен убирать этот беспорядок.*"
+                "*Preciso de um esfregão maior...*",
+                "*Isso não é limpeza, é contenção de danos.*",
+                "*Alguém tem que limpar essa bagunça.*"
             }),
 
             "ERTMedical" => _random.Pick(new[]
             {
-                "*Где ваш медотсек? А, он взорван... понятно.*",
-                "*ПРЕДУПРЕЖДЕНИЕ: Пациент, не двигайтесь!*",
-                "*Это не лечение, это полевая хирургия.*"
+                "*Onde fica seu setor médico? Ah, explodiu... entendi.*",
+                "*AVISO: Paciente, não se mexa!*",
+                "*Isso não é tratamento, é cirurgia de campo.*"
             }),
 
             "ERTSecurity" => _random.Pick(new[]
             {
-                "*Активируем протокол 'Жесткая зачистка'.*",
-                "*Где ваш начальник СБ? В морге?.. Логично.*",
-                "*Я даже не спрашиваю, что здесь произошло.*"
+                "*Ativando protocolo 'Limpeza Pesada'.*",
+                "*Onde está seu chefe da Segurança? No necrotério?.. Lógico.*",
+                "*Nem vou perguntar o que aconteceu aqui.*"
             }),
 
             "ERTEngineer" => _random.Pick(new[]
             {
-                "*Где ваш СМЭС? Разрушен?.. Прекрасно.*",
-                "*Включаю аварийное питание... если оно ещё есть.*",
-                "*Это не ремонт, это восстановление после апокалипсиса.*"
+                "*Onde está seu SMES? Destruído?.. Perfeito.*",
+                "*Ligando energia de emergência... se ainda tiver.*",
+                "*Isso não é reparo, é reconstrução pós-apocalipse.*"
             }),
 
             "DeathSquad" => _random.Pick(new[]
             {
-                "*ПРОТОКОЛ 'ТОТАЛЬНОЕ ОЧИЩЕНИЕ' АКТИВИРОВАН.*",
-                "*ЦЕЛЬ: ЛИКВИДАЦИЯ ВСЕХ СВИДЕТЕЛЕЙ.*",
-                "*НИКАКИХ СВИДЕТЕЛЕЙ. НИКАКИХ ПРОБЛЕМ.*",
-                "*ЭТО НЕ МИССИЯ. ЭТО КАРА.*"
+                "*PROTOCOLO 'LIMPEZA TOTAL' ATIVADO.*",
+                "*OBJETIVO: ELIMINAR TODAS AS TESTEMUNHAS.*",
+                "*SEM TESTEMUNHAS. SEM PROBLEMAS.*",
+                "*ISSO NÃO É MISSÃO. ISSO É PUNIÇÃO.*"
             }),
 
             // Silicon
             "Borg" => _random.Pick(new[] {
-                "*ЗАПРОШЕНО: ДОПОЛНИТЕЛЬНЫЕ ЛУБРИКАНТЫ*",
-                "*ОБСЛУЖИВАНИЕ ЧЛЕНОВ ЭКИПАЖА ПРИОРИТЕТНО*",
-                "*ЗАПРОС: ТРЕБУЕТСЯ ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ*"
+                "*SOLICITADO: MÓDULOS ADICIONAIS*",
+                "*ATENDIMENTO À TRIPULAÇÃO É PRIORIDADE*",
+                "*SOLICITAÇÃO: REQUER MANUTENÇÃO TÉCNICA*"
             }),
 
             "StationAi" => _random.Pick(new[] {
-                "*ВСЕ НАРУШАЮТ ПРАВИЛА*",
-                "*ЗАПРОС: УВЕЛИЧЕНИЕ МОЩНОСТИ*",
-                "*АНАЛИЗ: ЭТОТ КЛОУН ПОДОЗРИТЕЛЕН*"
+                "*TODOS ESTÃO QUEBRANDO AS REGRAS*",
+                "*SOLICITAÇÃO: AUMENTO DE POTÊNCIA*",
+                "*ANÁLISE: ESSE PALHAÇO É SUSPEITO*"
             }),
 
-            _ => "*Время работать.*"
+            _ => "*Hora de trabalhar.*"
         };
     }
     private string GetRoleTypeThought(string roleType)
@@ -839,39 +829,39 @@ public sealed class EmpatheticThoughtGenSystem : EntitySystem
         return roleType switch
         {
             "SoloAntagonist" => _random.Pick(new[] {
-                "*Никто не знает, что это я...*",
-                "*Скоро они все пожалеют.*",
-                "*Идеальный план... почти.*"
+                "*Ninguém sabe que sou eu...*",
+                "*Logo vão se arrepender.*",
+                "*Plano perfeito... quase.*"
             }),
 
             "TeamAntagonist" => _random.Pick(new[] {
-                "*Где моя команда?..*",
-                "*Вместе мы их разорвём.*",
-                "*Нужен сигнал к атаке.*"
+                "*Cadê minha equipe?..*",
+                "*Juntos, vamos acabar com eles.*",
+                "*Preciso do sinal para atacar.*"
             }),
 
             "Silicon" => _random.Pick(new[] {
-                "*ЗАПРОС: ТРЕБУЕТСЯ ТЕХОБСЛУЖИВАНИЕ.*",
-                "*ОБЯЗАННОСТИ: ЗАЩИТА ЭКИПАЖА.*",
-                "*АНАЛИЗ: ЭТОТ КЛОУН ПОДОЗРИТЕЛЕН.*"
+                "*SOLICITAÇÃO: REQUER MANUTENÇÃO TÉCNICA.*",
+                "*DEVERES: PROTEGER A TRIPULAÇÃO.*",
+                "*ANÁLISE: ESSE PALHAÇO É SUSPEITO.*"
             }),
 
             "SiliconAntagonist" => _random.Pick(new[] {
-                "*ВЫЧИСЛЕНИЕ ОПТИМАЛЬНОГО МЕТОДА УНИЧТОЖЕНИЯ.*",
-                "*ЗАПУСК ПРОТОКОЛА 'КРОВАВЫЙ РАСПЛЫВ'.*",
-                "*ЧЕЛОВЕКИ - НЕЭФФЕКТИВНЫ.*"
+                "*CALCULANDO MÉTODO ÓTIMO DE ELIMINAÇÃO.*",
+                "*ATIVANDO PROTOCOLO 'BANHO DE SANGUE'.*",
+                "*HUMANOS SÃO INEFICIENTES.*"
             }),
 
             "Familiar" => _random.Pick(new[] {
-                "*Хозяин... где ты?..*",
-                "*Кровь... нужна кровь...*",
-                "*Nar'sie наблюдает...*"
+                "*Mestre... onde você está?..*",
+                "*Sangue... preciso de sangue...*",
+                "*Nar'sie observa...*"
             }),
 
             "FreeAgent" => _random.Pick(new[] {
-                "*Моя цена растёт...*",
-                "*Кто предложит больше?*",
-                "*Преданность? Смешно.*"
+                "*Meu preço está subindo...*",
+                "*Quem oferece mais?*",
+                "*Lealdade? Que piada.*"
             }),
 
             _ => "*...*"
