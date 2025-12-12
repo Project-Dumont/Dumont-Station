@@ -431,12 +431,12 @@ namespace Content.Server.Forensics
 
         public string GenerateDNA()
         {
-            var hexChars = "0123456789ABCDEF";
+            var hexChars = "0123456789ABCDEF"; // Corvax-Wega-Genetics
             var DNA = string.Empty;
 
-            for (var i = 0; i < 32; i++)
+            for (var i = 0; i < 32; i++) // Corvax-Wega-Genetics
             {
-                DNA += hexChars[_random.Next(hexChars.Length)];
+                DNA += hexChars[_random.Next(hexChars.Length)]; // Corvax-Wega-Genetics
             }
 
             return DNA;

@@ -294,7 +294,7 @@ namespace Content.Shared.Damage
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
                 return null;
 
-            if (damage.Empty)
+            if (damage == null || damage.Empty) // Corvax-Wega-Genetics
                 return damage;
 
             // Goobstation start
