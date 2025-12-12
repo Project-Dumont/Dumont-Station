@@ -21,6 +21,11 @@
     sprite: _Gabystation/Objects/Weapons/Guns/Battery/lawbringer-alt.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/_Gabystation/Weapons/Guns/Gunshots/lawbringerskinshot.ogg
+      params:
+        volume: -4
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Gabystation/Weapons/Guns/Pickup/lawbringerpskinpick.ogg
