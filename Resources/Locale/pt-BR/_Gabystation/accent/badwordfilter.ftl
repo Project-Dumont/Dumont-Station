@@ -390,3 +390,5 @@ accent-badwordfilter-words-385 = xoxota
 # Palavras adicionadas na mão
 accent-badwordfilter-words-386 = fuder
 accent-badwordfilter-words-387 = xereca
+accent-badwordfilter-words-388 = fudeu
+

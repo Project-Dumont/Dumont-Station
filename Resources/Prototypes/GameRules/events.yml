@@ -198,9 +198,6 @@
     - id: ParadoxCloneSpawn
     #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
-    - id: ChangelingMidround
-    - id: HereticMidround
-    - id: Devilmidround
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
@@ -210,7 +207,8 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
-    - id: WraithMidround # Goobstation - Wraith
+    #- id: WraithMidround # Goobstation - Wraith
+    #TODO When Slasher is ready- id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent

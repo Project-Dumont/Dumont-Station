@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: localizedDataset
+  id: MinesweeperAds
+  values:
+    prefix: advertisement-minesweeper-
+    count: 15
+
+- type: localizedDataset
+  id: MinesweeperGoodbyes
+  values:
+    prefix: thankyou-minesweeper-
+    count: 12
