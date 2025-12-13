@@ -1,12 +1,4 @@
 - type: trait
-  id: Deafness
-  name: trait-deafness-name
-  description: trait-deafness-desc
-  category: Disabilities
-  components:
-  - type: Deafness
-
-- type: trait
   id: DnaModifierDeviation
   name: trait-dna-deviation-name
   description: trait-dna-deviation-desc
