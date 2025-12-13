@@ -925,6 +925,7 @@
   loadouts:
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeJumpskirt
+  - NanotrasenRepresentativeFancyJumpsuit
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeBelt
@@ -1453,6 +1454,8 @@
   name: loadout-group-security-melee
   loadouts:
   - SecurityMeleeKnife
+  - SecurityMeleePolyBaton
+  - SecurityMeleeSpear
 
 # Zookeeper
 
