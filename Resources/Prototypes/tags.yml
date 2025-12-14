@@ -1311,9 +1311,6 @@
   id: PetWearable
 
 - type: Tag
-  id: Photo
-
-- type: Tag
   id: Pickaxe
 
 - type: Tag
