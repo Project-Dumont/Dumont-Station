@@ -379,7 +379,7 @@
   recipeUnlocks:
   - HellfireFreezerMachineCircuitBoard
   - BluespaceGasSenderMachineBoard
-  - BluespaceGasVendorMachineCircuitBoard
+  - BluespaceGasVendorMachineCircuitBoard # Gabystation
   technologyPrerequisites:
   - AdvancedAtmospherics
   position: -1,-5
