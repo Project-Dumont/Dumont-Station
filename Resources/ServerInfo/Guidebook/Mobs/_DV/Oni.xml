@@ -22,15 +22,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Praticamente qualquer coisa. Até mesmo varias coisas cruas.
 
   ## Benefícios
-  - Eles tomam [color=#1e90ff]20% menos dano de Contundente, Cortante e Perfurante[/color].
-  - Causam mais dano corpo a corpo; 25% mais de dano Contundente, Cortante, Perfurante, Estamina, e Estrutural.
-  - Devido ao seu maior tamanho, eles podem facilmente carregar e puxar quaisquer outras especies.
-  - Tem levemente mais estamina que humanos.
+  - Causam mais dano corpo a corpo; 10% mais de dano Contundente, Cortante, Perfurante, Estamina, e Estrutural.
+  - Devido ao seu maior tamanho, eles podem facilmente carregar e puxar quaisquer outras especies. Eles também tem empurroes e seguradas mais fortes.
 
   ## Malefícios
-  - Onis são incapazes de atirar com quaisquer armas alem de pistolas, necessitando até de duas mãos para atirar de forma precisa.
+  - Onis são incapazes de atirar com precisão. Pode acontecer de até as balas sairem pelas suas costas.
   - Eles são mais dificeis de carregar e puxar.
   - Eles são maiores que humanos, fazendo com que eles sejam mais faceis de ser atingidos.
-  <!-- - Sources of holy damage are their bane, and will injure them greatly    incerto sobre essa informação aqui, em duvida se mantenho e adiciono dano sagrado ou só removo-->
 
 </Document>

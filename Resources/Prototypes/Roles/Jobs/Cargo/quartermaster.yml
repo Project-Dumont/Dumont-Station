@@ -170,6 +170,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: QuartermasterTraining
   alternateTitles:
   - QuarterMasterTitleChief
   - QuarterMasterTitleAccountant

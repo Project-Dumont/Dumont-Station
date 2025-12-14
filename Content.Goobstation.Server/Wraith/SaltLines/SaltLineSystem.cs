@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
 using Content.Goobstation.Shared.Wraith.SaltLines;
 using Content.Server.Administration.Logs;
+using Content.Server.Popups;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
@@ -20,6 +20,7 @@ public sealed class SaltLineSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
@@ -64,6 +65,7 @@ public sealed class SaltLineSystem : EntitySystem
         }
 
         var ev = new AttemptSaltLineEvent();
+        ev.User = args.User;
         RaiseLocalEvent(ent.Owner, ref ev);
 
         if (ev.Cancelled)
@@ -82,19 +84,17 @@ public sealed class SaltLineSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
-
+        var reagentsalt = "TableSalt";
         var solution = sol.Value;
-
-        if (solution.Comp.Solution.Volume < ent.Comp.Amount)
+        var saltAmount = solution.Comp.Solution.GetTotalPrototypeQuantity(reagentsalt);
+        
+        if (saltAmount < ent.Comp.Amount)
         {
+            _popupSystem.PopupEntity(Loc.GetString("consume-on-salt-line-component-not-enough-salt-message"), ent.Owner, args.User);
             args.Cancelled = true;
             return;
         }
-
-        var reagents = solution.Comp.Solution.Contents.ToList();
-
-        foreach (var reagent in reagents)
-            _solution.RemoveReagent(solution, reagent.Reagent, ent.Comp.Amount);
+        _solution.RemoveReagent(solution, reagentsalt, ent.Comp.Amount);
     }
 
     #region Helpers

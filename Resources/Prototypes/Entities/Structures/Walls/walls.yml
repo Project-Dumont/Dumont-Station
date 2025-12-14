@@ -859,7 +859,7 @@
   - type: StaticPrice
     price: 250
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 10 #Gabystation increase rad resistance
   - type: Fixtures
     fixtures:
       fix1:
@@ -974,7 +974,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 10 #Gabystation increase rad resistance
   - type: RustRequiresPathStage # Goobstation
     pathStage: 7 # Toxic blade
 
