@@ -18,4 +18,10 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
         CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> PhotoPlayTimeRequire =
+        CVarDef.Create("photo.playtime_require", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> PhotoPlayTimeHours =
+        CVarDef.Create("photo.playtime_require_time", 24f, CVar.SERVERONLY);
 }
