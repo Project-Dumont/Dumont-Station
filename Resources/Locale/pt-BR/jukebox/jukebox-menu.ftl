@@ -8,4 +8,4 @@ jukebox-menu-selectedsong = Música selecionada:
 jukebox-menu-buttonplay = Tocar
 jukebox-menu-buttonpause = Pausar
 jukebox-menu-buttonstop = Parar
-jukebox-menu-search = Pesquisa
+jukebox-menu-search = Pesquisar

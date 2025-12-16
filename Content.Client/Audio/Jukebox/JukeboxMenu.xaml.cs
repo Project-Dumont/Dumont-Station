@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Client.UserInterface.Controls;
 using Content.Shared.Audio.Jukebox;
 using Content.Shared._Gabystation.TextHelper;
 using Robust.Client.Audio;
@@ -104,9 +103,10 @@ public sealed partial class JukeboxMenu : FancyWindow
 
         //Gabystation change. search and display songs alphabetically
         var search = MusicSearch.Text.Trim().ToLowerInvariant();
-        var query = jukeboxProtos.Where(song => TextHelper.RemoveAccents(song.Name.ToLowerInvariant()).Contains(search));
 
-        var songs = query.OrderBy(name => name.Name);
+        var songs = jukeboxProtos
+            .Where(song => TextHelper.RemoveAccents(song.Name.ToLowerInvariant()).Contains(search))
+            .OrderBy(name => name.Name);
 
         foreach (var entry in songs)
         {
