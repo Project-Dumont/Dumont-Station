@@ -35,6 +35,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE- Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -49,6 +50,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE- Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -63,6 +65,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, SlimePerson]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -77,6 +80,7 @@
   bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -91,6 +95,7 @@
   bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -105,6 +110,7 @@
   bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -119,6 +125,7 @@
   bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -133,6 +140,7 @@
   bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -147,6 +155,7 @@
   bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Daengati] # Delta V - Felinid; EE - Oni; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -161,6 +170,7 @@
   bodyPart: Eyes
   markingCategory: Head
   speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Plasmaman, Daengati, Feroxi] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran; EE- Oni, Shadowkins; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -175,6 +185,7 @@
   bodyPart: Eyes
   markingCategory: Head
   speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Plasmaman, Daengati, Feroxi] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran; EE- Oni, Shadowkins # Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -189,6 +200,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins # Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -203,6 +215,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Shadowkin, Daengati] # Delta V - Felinid, Harpy, Rodentia; Goob - Tajaran; EE- Oni, Shadowkins # Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -217,6 +230,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [ Human, Dwarf, Oni ] # ; EE- Oni
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -227,6 +241,7 @@
   bodyPart: Eyes
   markingCategory: Overlay
   speciesRestriction: [Moth]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   coloring:
     default:
       type:
@@ -240,6 +255,7 @@
   id: TattooEyeMothLeft
   bodyPart: Eyes
   markingCategory: Overlay
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Moth]
   coloring:
     default:
