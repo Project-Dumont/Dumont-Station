@@ -1,0 +1,12 @@
+- type: salvageDungeonMod
+  id: Reactor
+  desc: salvage-dungeon-mod-reactor
+  proto: Reactor
+  biomes:
+    - Grasslands
+    - Abyss
+    - Snow
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
