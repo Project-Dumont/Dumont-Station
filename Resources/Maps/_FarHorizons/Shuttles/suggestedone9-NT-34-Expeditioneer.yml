@@ -1417,6 +1417,8 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
+    missingComponents:
+    - AccessReader
 - proto: FloorDrain
   entities:
   - uid: 190
