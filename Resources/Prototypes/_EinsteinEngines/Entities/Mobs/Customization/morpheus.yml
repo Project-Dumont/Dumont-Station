@@ -10,6 +10,7 @@
   id: CyberLimbsMarkingMorpheusHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -24,6 +25,7 @@
   id: CyberLimbsMarkingMorpheusHeadAlt
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -38,6 +40,7 @@
   id: CyberLimbsMarkingMorpheusChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -52,6 +55,7 @@
   id: CyberLimbsMarkingMorpheusLArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -66,6 +70,7 @@
   id: CyberLimbsMarkingMorpheusLHand
   bodyPart: LHand
   markingCategory: LeftHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -80,6 +85,7 @@
   id: CyberLimbsMarkingMorpheusLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -95,6 +101,7 @@
   id: CyberLimbsMarkingMorpheusLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -111,6 +118,7 @@
   id: CyberLimbsMarkingMorpheusRArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -126,6 +134,7 @@
   id: CyberLimbsMarkingMorpheusRHand
   bodyPart: RHand
   markingCategory: RightHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -140,6 +149,7 @@
   id: CyberLimbsMarkingMorpheusRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -155,6 +165,7 @@
   id: CyberLimbsMarkingMorpheusRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
