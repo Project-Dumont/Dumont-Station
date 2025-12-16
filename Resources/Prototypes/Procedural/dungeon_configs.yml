@@ -303,14 +303,14 @@
 
 - type: entityTable
   id: BaseAirlock
-  table: !type:GroupSelector
+  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
     children:
     - id: CableApcExtension
     - id: AirlockGlass
 
 - type: entityTable
   id: BaseWindow
-  table: !type:GroupSelector
+  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
     children:
     - id: Grille
     - id: Window
@@ -318,7 +318,7 @@
 # Lava brig
 - type: entityTable
   id: LavaBrigEntrance
-  table: !type:GroupSelector
+  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
     children:
     - id: CableApcExtension
     - id: AirlockSecurityGlassLocked
@@ -374,7 +374,7 @@
 # Snowy labs
 - type: entityTable
   id: SnowyLabsEntrance
-  table: !type:GroupSelector
+  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
     children:
     - id: CableApcExtension
     - id: AirlockFreezerHydroponicsLocked
