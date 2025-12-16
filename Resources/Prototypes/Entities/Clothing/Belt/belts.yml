@@ -160,6 +160,7 @@
   - type: Clothing
     sprite: Clothing/Belt/utility.rsi
   - type: Storage
+    maxItemSize: Normal
     grid:
     - 0,0,9,1 # Gabystation change. Increased size to fit RCD or 2 1x2 tools
     # Don't add more than absolutely needed to this whitelist!
