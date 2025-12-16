@@ -1,3 +1,5 @@
+ent-SlaughterFluffBaseObjective = {""}
+
 ent-AnnihilateAllJanitorsObjectiveFluff = { ent-SlaughterFluffBaseObjective }
   .desc = Eliminem todos os Zeladores e seus semelhantes sintéticos; nenhuma vassoura permanecerá de pé
 
