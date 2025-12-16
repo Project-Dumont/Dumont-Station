@@ -17,7 +17,7 @@
 - type: dungeonPreset
   id: ReactorStar
   roomPacks:
-    - -10,32,13,56 # Main reactor pack 23x23
+    - -10,32,13,55 # Main reactor pack 23x23
     - -42,37,-14,47 # 4 side wings 28x10 woah!
     - 17,37,45,47
     - -6,0,5,28 # Last 2 are rotated, so technically 10x28
