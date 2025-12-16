@@ -54,7 +54,7 @@
 - type: salvageBiomeMod
   id: Lava
   desc: salvage-biome-mod-lava
-  cost: 2
+  cost: 1 # Far Horizons
   biome: Lava
   # Starlight
   difficulties:

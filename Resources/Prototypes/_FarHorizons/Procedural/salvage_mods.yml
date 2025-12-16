@@ -6,7 +6,37 @@
     - Grasslands
     - Abyss
     - Snow
+    - LowDesert
   difficulties: 
     - Challenging
     - Moderate
     - Easy
+
+# Airs
+- type: salvageAirMod
+  id: Nitrogen
+  cost: 1
+  desc: salvage-air-mod-nitrogen-atmosphere
+  gases:
+    - 0 # oxygen
+    - 100 # nitrogen
+  biomes:
+    - Caves
+    - LowDesert # Far Horizons
+    - Snow
+    - Grasslands
+    - Lava
+  difficulties: 
+    - Challenging
+    - Moderate
+
+# Biomes
+- type: salvageBiomeMod
+  id: LowDesert
+  desc: salvage-biome-mod-desert
+  biome: LowDesert
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult

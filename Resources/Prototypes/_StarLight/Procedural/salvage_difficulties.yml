@@ -4,7 +4,7 @@
   lootPrototype: "SalvageLootEasy"
   lootBudget: 20 # Far Horizons
   mobBudget: 25 # Far Horizons
-  modifierBudget: 1
+  modifierBudget: 2 # Far Horizons
   color: "#9FED5896"
   recommendedPlayers: 1
   probability: 0.3
@@ -14,7 +14,7 @@
   lootPrototype: "SalvageLootModerate"
   lootBudget: 50 # Far Horizons
   mobBudget: 60 # Far Horizons
-  modifierBudget: 2
+  modifierBudget: 3 # Far Horizons
   color: "#52B4E996"
   recommendedPlayers: 2
   probability: 0.5
@@ -24,7 +24,7 @@
   lootPrototype: "SalvageLootChallenging"
   lootBudget: 100 # Far Horizons
   mobBudget: 115 # Far Horizons
-  modifierBudget: 3
+  modifierBudget: 4 # Far Horizons
   color: "#9FED5896"
   recommendedPlayers: 3
   probability: 1
