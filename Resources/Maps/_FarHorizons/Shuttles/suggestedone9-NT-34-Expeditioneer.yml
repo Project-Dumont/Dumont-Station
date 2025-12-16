@@ -613,7 +613,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,0.5
-      parent: 1
+      parent: 2
+- proto: BoxBodyBag
+  entities:
+  - uid: 440
+    components:
+    - type: Transform
+      pos: -1.477756,-7.398177
+      parent: 2
 - proto: CableApcExtension
   entities:
   - uid: 38
