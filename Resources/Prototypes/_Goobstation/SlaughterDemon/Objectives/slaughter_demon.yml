@@ -83,7 +83,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: AnnihilateAllJanitorsObjectiveFluff
-  description: Eliminem todos os Zeladores e seus semelhantes sintéticos; nenhuma vassoura permanecerá de pé.
+  description: Wipe out all Janitors and their synthetic kin, no broom shall stand.
   components:
   - type: Objective
     icon:
@@ -95,7 +95,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: SpareCrewObjectiveFluff
-  description: Deixem alguns sobreviver… apenas para sofrerem por mais tempo.
+  description: Let some survive… only to suffer longer.
   components:
   - type: Objective
     icon:
@@ -107,7 +107,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: HuntTheBraveObjectiveFluff
-  description: Encontre e puna aqueles tolos o suficiente para enfrentar você.
+  description: Find and punish those foolish enough to face you.
   components:
   - type: Objective
     icon:
@@ -119,7 +119,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: HuntTheCowardsObjectiveFluff
-  description: Rastreie aqueles que fogem; o medo apenas prolonga a agonia deles.
+  description: Track down the ones who run, fear only prolongs their agony.
   components:
   - type: Objective
     icon:
@@ -131,7 +131,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: ShowCrewPowerObjectiveFluff
-  description: Deixe que testemunhem o seu terrível poder em primeira mão.
+  description: Let them witness your awful might firsthand.
   components:
   - type: Objective
     icon:
@@ -144,7 +144,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: DriveInsaneObjectiveFluff
-  description: Sussurre até que eles quebrem; a loucura é o seu presente.
+  description: Whisper they break, madness is your gift.
   components:
   - type: Objective
     icon:
@@ -157,7 +157,7 @@
 - type: entity
   parent: SlaughterFluffBaseObjective
   id: SpreadBloodObjectiveFluff
-  description: Pinte tudo de vermelho; não deixe nenhum piso limpo restante.
+  description: Paint it in red, let no clean tile remain.
   components:
   - type: Objective
     icon:
