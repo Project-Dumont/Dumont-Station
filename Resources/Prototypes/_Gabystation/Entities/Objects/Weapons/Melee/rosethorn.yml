@@ -1,0 +1,35 @@
+- type: entity
+  name: rosethorn blade
+  parent: [ BaseSword, BaseCommandContraband ]
+  id: RosethornBlade
+  description: A refined blade, for a refined rose lady.
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/sabre_drop.ogg
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade.rsi
+  - type: MeleeWeapon
+    animationRotation: -95 
+    wideAnimationRotation: -135 
+    heavyStaminaCost: 2
+    attackRate: 1.75
+    damage:
+      types:
+        Slash: 12
+      woundSeverityMultipliers:
+        Slash: 1.75
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    storedSprite:
+      state: storage
+      sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade_storage_64x.rsi 
+    shape:
+    - 0,0,0,3
+  - type: Tag
+    tags:
+    - CaptainSabre # Change later.
+  - type: Reflect
+    reflectProb: 0.5
+    spread: 90
