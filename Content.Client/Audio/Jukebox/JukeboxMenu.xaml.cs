@@ -102,7 +102,7 @@ public sealed partial class JukeboxMenu : FancyWindow
     }
     // <Estação Pirata volume slider>
 
-    /// <summary>/
+    /// <summary>
     /// Re-populates the list of jukebox prototypes available.
     /// </summary>
     public void Populate(IEnumerable<JukeboxPrototype> jukeboxProtos)

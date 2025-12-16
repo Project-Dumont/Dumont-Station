@@ -12,7 +12,7 @@ SPDX-License-Identifier: MIT
         HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="8"/>
         <BoxContainer Orientation="Vertical">
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
-            <!-- <Estação  Pirata volume slider> -->
+            <!-- <Estação Pirata volume slider> -->
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
                           VerticalExpand="False" SizeFlagsStretchRatio="1">
                 <Label Name="SongName" Text="---" />
@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
             </BoxContainer>
 
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />
-            <Label Name="VolumeNumberLabel" Text="0" HorizontalAlignment="Right" HorizontalExpand="True"/>
+            <Label Name="VolumeNumberLabel" Text="50" HorizontalAlignment="Right" HorizontalExpand="True"/>
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
                           VerticalExpand="False" SizeFlagsStretchRatio="1">
                 <Label Name="VolumeLabel" Text="{Loc 'jukebox-menu-volume'} " />
