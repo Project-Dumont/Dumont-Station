@@ -32,7 +32,7 @@ patron-support-window-tier4-perk3 = • + 2500 gabycoins
 
 patron-support-window-tier5-name = Chefe dos Funcionários (R$100/mês)
 patron-support-window-tier5-perk1 = • Todos os benefícios de níveis anteriores
-patron-support-window-tier5-perk1 = • Acesso a um canal super exclusivo à doadores
+patron-support-window-tier5-perk2 = • Acesso a um canal super exclusivo à doadores
 patron-support-window-tier5-perk3 = • + 5000 gabycoins
 
 patron-support-window-tier6-name = Capitão (R$200/mês)
