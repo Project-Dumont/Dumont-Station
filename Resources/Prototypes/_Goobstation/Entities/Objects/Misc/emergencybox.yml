@@ -46,6 +46,7 @@
       mask: !type:ContainerSlot
       emergencypen: !type:ContainerSlot
       spacepen: !type:ContainerSlot
+      crowbar: !type:ContainerSlot # Gabystation - add crowbar to survival box
   - type: ItemSlots
     slots:
       water:
@@ -94,6 +95,11 @@
         whitelist:
           tags:
           - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - CrowbarRed
   - type: ContainerFill
     containers:
       water:
@@ -110,6 +116,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: ItemMapper
     mapLayers:
       nutriblock:
@@ -178,6 +186,10 @@
         whitelist:
           tags:
           - CableCoil
+      crowbar: # Gabystation - add crowbar to survival box
+        whitelist:
+          tags:
+          - CrowbarRed
 
 
 - type: entity
@@ -227,6 +239,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Sprite
     state: box_extend
 
@@ -251,6 +265,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
@@ -279,6 +295,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Sprite
     state: box_sec
 
@@ -303,6 +321,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
@@ -331,6 +351,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Sprite
     state: box_med
 
@@ -355,6 +377,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
@@ -383,6 +407,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Sprite
     state: box_hug
   - type: Item
@@ -412,6 +438,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -438,6 +466,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Sprite
     state: box_syndie
 
@@ -462,6 +492,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
@@ -488,6 +520,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
 
 - type: entity
   parent: BoxSurvivalSlots
@@ -510,6 +544,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
 
 - type: entity
   parent: BoxSurvivalSlots
@@ -532,6 +568,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-nitrogen
 
@@ -559,6 +597,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
 
@@ -583,6 +623,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
   - type: Sprite
@@ -609,6 +651,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
   - type: Sprite
@@ -635,6 +679,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
   - type: Sprite
@@ -661,6 +707,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
 
@@ -685,6 +733,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
   - type: Sprite
@@ -711,6 +761,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Label
     currentLabel: reagent-name-plasma
 
@@ -758,5 +810,7 @@
       - WelderMini
       cable:
       - CableApcStack10
+      crowbar: # Gabystation - add crowbar to survival box
+      - CrowbarRed
   - type: Sprite
     state: box_silicon
