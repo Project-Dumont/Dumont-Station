@@ -6,7 +6,11 @@
 using Content.Goobstation.Shared.IntrinsicVoiceModulator; // Goobstation
 using Content.Goobstation.Shared.IntrinsicVoiceModulator.Components; // Goobstation
 using Content.Goobstation.Shared.IntrinsicVoiceModulator.Events; // Goobstation
+using Content.Shared._Gabystation.IntrinsicVoiceModulator.Events;
+using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Alert;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Chat.RadioIconsEvents; // Goobstation
@@ -24,6 +28,8 @@ public sealed partial class IntrinsicVoiceModulatorSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedJobSystem _job = default!;
 
@@ -34,10 +40,13 @@ public sealed partial class IntrinsicVoiceModulatorSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<IntrinsicVoiceModulatorComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<IntrinsicVoiceModulatorComponent, ComponentRemove>(OnComponentRemove);
 
         SubscribeLocalEvent<IntrinsicVoiceModulatorComponent, TransformSpeakerNameEvent>(OnTransformSpeakerName);
         SubscribeLocalEvent<IntrinsicVoiceModulatorComponent, TransformSpeakerJobIconEvent>(OnTransformJobIcon);
         SubscribeLocalEvent<IntrinsicVoiceModulatorComponent, OpenIntrinsicVoiceModulatorMenuEvent>(OnOpenVoiceModulatorMenu);
+        SubscribeLocalEvent<IntrinsicVoiceModulatorComponent, ToggleIntrinsicVoiceModulatorEvent>(OnToggle);
+        SubscribeLocalEvent<MalfunctioningAiComponent, GiveIntrinsicVoiceModulatorEvent>(OnGive);
 
         Subs.BuiEvents<IntrinsicVoiceModulatorComponent>(IntrinsicVoiceModulatorUiKey.Key,
             subs =>
@@ -52,12 +61,42 @@ public sealed partial class IntrinsicVoiceModulatorSystem : EntitySystem
 
     private void OnComponentInit(Entity<IntrinsicVoiceModulatorComponent> ent, ref ComponentInit args)
     {
+        _alerts.ShowAlert(ent.Owner, ent.Comp.ToggleAlertProtoId, (short) (ent.Comp.Enabled ? 1 : 0));
+
+        var action = _actions.AddAction(ent.Owner, ent.Comp.ActionProtoId);
+        ent.Comp.ActionEntity = action;
+
+        // Isso ser hardcoded é terrível, mas acho que não tem outra forma de conseguir o nome da classe. Ela vive no cliente, não daria pra pegar aqui.
         var data = new InterfaceData("IntrinsicVoiceModulatorBoundUserInterface");
         _ui.SetUi(ent.Owner, IntrinsicVoiceModulatorUiKey.Key, data);
     }
 
+    private void OnComponentRemove(Entity<IntrinsicVoiceModulatorComponent> ent, ref ComponentRemove args)
+    {
+        _alerts.ClearAlert(ent.Owner, ent.Comp.ToggleAlertProtoId);
+        _actions.RemoveAction(ent.Owner, ent.Comp.ActionEntity);
+    }
+
+    private void OnGive(Entity<MalfunctioningAiComponent> ai, ref GiveIntrinsicVoiceModulatorEvent args)
+    {
+        EnsureComp<IntrinsicVoiceModulatorComponent>(ai);
+    }
+
+    private void OnToggle(Entity<IntrinsicVoiceModulatorComponent> ent, ref ToggleIntrinsicVoiceModulatorEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        ent.Comp.Enabled = !ent.Comp.Enabled;
+        _alerts.ShowAlert(ent.Owner, ent.Comp.ToggleAlertProtoId, (short) (ent.Comp.Enabled ? 1 : 0));
+
+        args.Handled = true;
+    }
+
     private void OnTransformSpeakerName(Entity<IntrinsicVoiceModulatorComponent> ent, ref TransformSpeakerNameEvent args)
     {
+        if (!ent.Comp.Enabled)
+            return;
 
         if (!string.IsNullOrWhiteSpace(ent.Comp.VoiceName))
             args.VoiceName = ent.Comp.VoiceName;

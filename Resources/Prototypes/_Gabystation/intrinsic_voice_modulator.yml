@@ -14,3 +14,15 @@
       state: icon
   - type: InstantAction
     event: !type:OpenIntrinsicVoiceModulatorMenuEvent
+
+- type: alert
+  id: IntrinsicVoiceModulator
+  clickEvent: !type:ToggleIntrinsicVoiceModulatorEvent
+  icons:
+  - sprite: /Textures/_Gabystation/Interface/Alerts/intrinsic_voice_modulator.rsi
+    state: off
+  - sprite: /Textures/_Gabystation/Interface/Alerts/intrinsic_voice_modulator.rsi
+    state: on
+  name: intrinsic-voice-modulator-alert-name
+  minSeverity: 0
+  maxSeverity: 1
