@@ -197,7 +197,7 @@ public partial class ChatBox : UIWidget
         {
             int displayRepeat = repeat + 1;
             int sizeIncrease = Math.Min(displayRepeat / 6, 5);
-            formatted.AddMarkup(_loc.GetString("chat-system-repeated-message-counter",
+            formatted.AddMarkupOrThrow(_loc.GetString("chat-system-repeated-message-counter",
                                 ("count", displayRepeat),
                                 ("size", 8+sizeIncrease)
                                 ));
