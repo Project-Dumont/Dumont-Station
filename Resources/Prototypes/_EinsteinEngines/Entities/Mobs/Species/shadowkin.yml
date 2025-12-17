@@ -240,6 +240,11 @@
   - type: SprintingAffectedByScale # GabyStation
     max: 1.05
     min: 1.0
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobShadowkin
+    lowest: MobBat
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   save: false

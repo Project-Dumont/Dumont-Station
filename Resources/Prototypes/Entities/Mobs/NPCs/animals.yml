@@ -368,6 +368,11 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobShadowkin
+    lowest: MobBat
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: bee
@@ -766,6 +771,11 @@
     spawned:
     - id: FoodMeatSlime
   - type: VentCrawler # goobstation - Ventcrawl
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobCockroach
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: mothroach
@@ -1529,6 +1539,11 @@
     speedModifierThresholds:
       80: 0.7
       100: 0.5
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorilla
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kangaroo
@@ -2312,6 +2327,11 @@
         gibContents: Skip
         recursive: false
   # </Goobstation>
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2773,6 +2793,11 @@
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks: [Penguin]
     understands: [Penguin]
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobWaddler
+    lowest: MobPenguin
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: grenade penguin

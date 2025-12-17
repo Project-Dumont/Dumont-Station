@@ -12,19 +12,28 @@
     lowest: MobMonkeyDwarf
 
 - type: entity
-  id: MobMonkeyDemon
+  id: MobMonkeyOni
   parent: MobMonkey
-  suffix: AI, Demon
+  suffix: AI, Oni
   components:
   - type: DnaModifier
-    upper: MobDemon
-    lowest: MobMonkeyDemon
+    upper: MobOni
+    lowest: MobMonkeyOni
+
+- type: entity
+  id: MobMonkeyDaengati
+  parent: MobMonkey
+  suffix: AI, Daengati
+  components: 
+  - type: DnaModifier
+    upper: MobDaengati
+    lowest: MobMonkeyDaengati
 
 - type: entity
   name: neara
   id: MobSkrellkey
   parent: MobBaseAncestor
-  description: Skrell's ancient ancestor in the flesh. Loves water and seems to want to find a way to kill you.
+  description: Skrell's and Feroxi ancient ancestor in the flesh. Loves water and seems to want to find a way to kill you.
   components:
   - type: NameIdentifier
     group: Monkey
@@ -73,7 +82,7 @@
     description: ghost-role-information-skrellkey-description
     rules: ghost-role-information-nonantagonist-rules
   - type: DnaModifier
-    upper: MobSkrell
+    upper: MobFeroxi
     lowest: MobSkrellkey
   - type: Reactive
     groups:
@@ -103,7 +112,7 @@
             Blunt: -0.25
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Skrell
+    damageModifierSet: Feroxi
   - type: SolutionScanner
 
 - type: entity

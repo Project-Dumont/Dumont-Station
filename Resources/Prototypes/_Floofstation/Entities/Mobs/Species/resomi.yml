@@ -284,6 +284,11 @@
       sprite: "Effects/creampie.rsi"
       state: "creampie_resomi"
       visible: false
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobResomi
+    lowest: MobStokkey
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

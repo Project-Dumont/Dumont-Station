@@ -181,6 +181,11 @@
   - type: TypingIndicator
     proto: skeleton
   - type: FacehuggerImmune # Goobstation - Xenomorphs
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobPlasmaman
+    lowest: MobSkeletonPerson
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

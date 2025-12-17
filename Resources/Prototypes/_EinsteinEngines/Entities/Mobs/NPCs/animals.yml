@@ -166,3 +166,8 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
         requireInputValidation: false
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHarpy
+    lowest: MobSquackroach
+  # Corvax-Wega-Genetics-end
