@@ -31,7 +31,6 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
@@ -378,11 +377,11 @@ public sealed class RadioSystem : EntitySystem
             }
         }
 
-        if (HasComp<StationAiHeldComponent>(ent))
-            return ("JobIconStationAi", Loc.GetString("job-name-station-ai"));
-
         if (HasComp<BorgChassisComponent>(ent) || HasComp<BorgBrainComponent>(ent))
             return ("JobIconBorg", Loc.GetString("job-name-borg"));
+
+        if (HasComp<StationAiHeldComponent>(ent))
+            return ("JobIconStationAi", Loc.GetString("job-name-station-ai"));
 
         return ("JobIconNoId", null);
     }
