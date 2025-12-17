@@ -107,6 +107,8 @@ public sealed partial class IntrinsicVoiceModulatorSystem : EntitySystem
 
     private void OnTransformJobIcon(Entity<IntrinsicVoiceModulatorComponent> ent, ref TransformSpeakerJobIconEvent args)
     {
+        if (!ent.Comp.Enabled)
+            return;
 
         if (ent.Comp.JobIconProtoId is { } jobIcon)
             args.JobIcon = jobIcon;
