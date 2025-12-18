@@ -217,7 +217,6 @@
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
-    - id: SecondSkinSecurity # Goobstation
       conditions:
       - !type:PlayerCountCondition
         max: 15
@@ -426,6 +425,9 @@
     - id: ClothingBackpackDuffelSurgeryFilled
     # Shitmed
     - id: MedicalBiofabricatorFlatpack
+    # Virology
+    - id: DiseaseDiagnoserFlatPack
+    - id: VaccinatorFlatPack
     # Goobstation End
 
 # Hardsuit table, used for suit storage as well
@@ -550,7 +552,6 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
-    - id: SecondSkinSecurity # Goobstation
     - id: HeadOfSecurityWeaponUndetermined # Gabystation - readiciona kit de arma pro hos
     - id: BoxTapeRecorder # Gabystation
       prob: 0.5
@@ -606,4 +607,3 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
-

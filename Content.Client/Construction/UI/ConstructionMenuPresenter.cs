@@ -43,6 +43,7 @@ using Content.Client.Lobby;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Goobstation.Common.CCVar; // Goobstation
+using Content.Shared._Gabystation.TextHelper;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Client.GameObjects;
@@ -320,9 +321,9 @@ namespace Content.Client.Construction.UI
                     || _whitelistSystem.IsWhitelistFail(recipe.EntityWhitelist, _playerManager.LocalEntity.Value))
                     continue;
 
-                if (!string.IsNullOrEmpty(search) && (recipe.Name is { } name &&
-                                                      !name.Contains(search.Trim(),
-                                                          StringComparison.InvariantCultureIgnoreCase)))
+                if (!string.IsNullOrEmpty(search) && recipe.Name is { } name &&
+                                                      !TextHelper.RemoveAccents(name).Contains(TextHelper.RemoveAccents(search.Trim()),
+                                                          StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
                 if (!isEmptyCategory)

@@ -70,8 +70,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/08/2025 15:37:15
-  entityCount: 35859
+  time: 12/05/2025 20:58:48
+  entityCount: 35888
 maps:
 - 1
 grids:
@@ -21232,7 +21232,7 @@ entities:
       pos: 72.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -69740.79
+      secondsUntilStateChange: -70607.34
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22868,6 +22868,11 @@ entities:
     components:
     - type: Transform
       pos: 45.89143,10.52639
+      parent: 2
+  - uid: 35879
+    components:
+    - type: Transform
+      pos: 103.46171,-3.038485
       parent: 2
 - proto: AsimovCircuitBoard
   entities:
@@ -54548,6 +54553,11 @@ entities:
     - type: Transform
       pos: 35.5,0.5
       parent: 2
+  - uid: 24441
+    components:
+    - type: Transform
+      pos: -5.5,8.5
+      parent: 2
   - uid: 26710
     components:
     - type: Transform
@@ -78588,6 +78598,14 @@ entities:
     - type: Transform
       pos: 72.5,-18.5
       parent: 2
+- proto: CardBoxNanotrasen
+  entities:
+  - uid: 27629
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 103.58671,-2.5103402
+      parent: 2
 - proto: CargoTechFab
   entities:
   - uid: 35177
@@ -89601,10 +89619,33 @@ entities:
     - type: Transform
       pos: 41.5,17.5
       parent: 2
+  - uid: 27630
+    components:
+    - type: Transform
+      pos: 103.5,-1.5
+      parent: 2
+  - uid: 27871
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 103.5,-4.5
+      parent: 2
   - uid: 28000
     components:
     - type: Transform
       pos: 42.5,17.5
+      parent: 2
+  - uid: 28091
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 102.5,-2.5
+      parent: 2
+  - uid: 28721
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 105.5,-3.5
       parent: 2
   - uid: 31256
     components:
@@ -109896,6 +109937,43 @@ entities:
     - type: Transform
       pos: 58.463543,-14.235533
       parent: 2
+- proto: DrinkBottleBeer
+  entities:
+  - uid: 35881
+    components:
+    - type: Transform
+      pos: 102.77425,-1.9733541
+      parent: 2
+  - uid: 35882
+    components:
+    - type: Transform
+      pos: 102.927025,-1.5633471
+      parent: 2
+  - uid: 35883
+    components:
+    - type: Transform
+      pos: 103.12841,-3.7940633
+      parent: 2
+  - uid: 35884
+    components:
+    - type: Transform
+      pos: 104.84369,-4.5723815
+      parent: 2
+  - uid: 35885
+    components:
+    - type: Transform
+      pos: 104.920074,-4.2318673
+      parent: 2
+  - uid: 35886
+    components:
+    - type: Transform
+      pos: 104.427025,-4.3847513
+      parent: 2
+  - uid: 35887
+    components:
+    - type: Transform
+      pos: 104.51035,-4.662722
+      parent: 2
 - proto: DrinkBottleNTCahors
   entities:
   - uid: 16980
@@ -110064,6 +110142,13 @@ entities:
     components:
     - type: Transform
       pos: 12.661743,68.529625
+      parent: 2
+- proto: DrinkPremiumWhiskeyBottleFull
+  entities:
+  - uid: 28722
+    components:
+    - type: Transform
+      pos: 104.2881,-2.7952604
       parent: 2
 - proto: DrinkRamen
   entities:
@@ -115788,7 +115873,7 @@ entities:
     - type: Transform
       pos: 29.937231,3.5456288
       parent: 2
-- proto: FoodDonutJellySlugcat
+- proto: FoodDonutJellyScurret
   entities:
   - uid: 28789
     components:
@@ -146913,6 +146998,14 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FFCA00FF'
+  - uid: 22455
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 101.5,-13.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#30D300FF'
   - uid: 22456
     components:
     - type: Transform
@@ -146926,6 +147019,14 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 105.5,-9.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FFCA00FF'
+  - uid: 22583
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 104.5,-12.5
       parent: 2
     - type: AtmosPipeColor
       color: '#FFCA00FF'
@@ -151151,14 +151252,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-  - uid: 22583
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 104.5,-12.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FFCA00FF'
   - uid: 22584
     components:
     - type: Transform
@@ -155189,14 +155282,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FFCA00FF'
-  - uid: 22455
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 101.5,-13.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#30D300FF'
   - uid: 23110
     components:
     - type: Transform
@@ -168158,6 +168243,30 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+  - uid: 35888
+    components:
+    - type: Transform
+      pos: 103.969246,-2.3385706
+      parent: 2
+    - type: Paper
+      stampState: paper_stamp-ce
+      stampedBy:
+      - stampedColor: '#C69B17FF'
+        stampedName: stamp-component-stamped-name-ce
+      content: >+
+        Dear Captain,
+
+
+        I have lost the entire Engineering department's budget gambling against the QM but I swear I think he was cheating. I'm going to need you to hit me with a bail out. 
+
+
+        Ideally, don't tell HOP about this because he's convinced I have a shit poker face and I don't want him to be right...
+
+
+        Love,
+
+        Your finest CE
+
 - proto: PaperBin
   entities:
   - uid: 25034
@@ -173892,6 +174001,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 51.5,16.5
       parent: 2
+  - uid: 24442
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,9.5
+      parent: 2
   - uid: 25844
     components:
     - type: Transform
@@ -176095,6 +176210,11 @@ entities:
     components:
     - type: Transform
       pos: 63.5,-51.5
+      parent: 2
+  - uid: 35880
+    components:
+    - type: Transform
+      pos: 104.5,-4.5
       parent: 2
 - proto: Rack
   entities:
@@ -190363,15 +190483,30 @@ entities:
       parent: 2
 - proto: SpawnPointChef
   entities:
-  - uid: 28721
+  - uid: 24439
+    components:
+    - type: Transform
+      pos: -8.5,18.5
+      parent: 2
+  - uid: 24440
     components:
     - type: Transform
       pos: -10.5,25.5
       parent: 2
-  - uid: 28722
+  - uid: 24443
     components:
     - type: Transform
-      pos: -9.5,25.5
+      pos: -4.5,22.5
+      parent: 2
+  - uid: 24444
+    components:
+    - type: Transform
+      pos: -15.5,18.5
+      parent: 2
+  - uid: 24445
+    components:
+    - type: Transform
+      pos: -24.5,31.5
       parent: 2
 - proto: SpawnPointChemist
   entities:
@@ -197154,6 +197289,30 @@ entities:
       parent: 2
 - proto: TableCarpet
   entities:
+  - uid: 24446
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 103.5,-3.5
+      parent: 2
+  - uid: 24447
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 103.5,-2.5
+      parent: 2
+  - uid: 24448
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 104.5,-2.5
+      parent: 2
+  - uid: 24449
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 104.5,-3.5
+      parent: 2
   - uid: 29677
     components:
     - type: Transform
@@ -199658,6 +199817,28 @@ entities:
     components:
     - type: Transform
       pos: 38.5,29.5
+      parent: 2
+- proto: TaskBottle
+  entities:
+  - uid: 35875
+    components:
+    - type: Transform
+      pos: 103.82282,-3.1010284
+      parent: 2
+  - uid: 35876
+    components:
+    - type: Transform
+      pos: 103.857544,-3.3720503
+      parent: 2
+  - uid: 35877
+    components:
+    - type: Transform
+      pos: 104.295044,-3.3928978
+      parent: 2
+  - uid: 35878
+    components:
+    - type: Transform
+      pos: 104.704765,-2.3088114
       parent: 2
 - proto: TegCenter
   entities:

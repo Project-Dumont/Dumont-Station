@@ -51,6 +51,8 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
         _menu.OnSongSelected += SelectSong;
 
+        _menu.OnSearchChanged += PopulateMusic;
+
         _menu.SetTime += SetTime;
         PopulateMusic();
         Reload();

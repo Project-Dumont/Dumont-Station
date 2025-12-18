@@ -57,6 +57,7 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
+  - CameraElectronics # goob
   - ThermomachineFreezerMachineCircuitBoard
   - BankATMCircuitboard # Gabystation change
   - WashingMachineCircuitboard # Gabystation change
@@ -110,3 +111,4 @@
   - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
   - TeslaCoilCircuitboard
   - RadiationCollectorCircuitboard
+  - BluespaceGasVendorMachineCircuitBoard # Gabystation

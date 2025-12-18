@@ -86,7 +86,7 @@
 
 - type: entity
   id: BluespaceVendor
-  parent: [ BaseMachinePowered, BaseBluespaceGasUtilizer ]
+  parent: [ BaseMachinePowered, BaseBluespaceGasUtilizer, ConstructibleMachine ]
   name: bluespace gas vendor
   description: Sells gas tanks with custom mixes for all the family!
   placement:
@@ -147,6 +147,8 @@
       enum.BluespaceVendorUiKey.Key:
         type: BluespaceVendorBoundUserInterface
   - type: Appearance
+  - type: Machine
+    board: BluespaceGasVendorMachineCircuitBoard
   - type: WiresPanel
   - type: WiresVisuals
   - type: ItemSlots
