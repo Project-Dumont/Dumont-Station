@@ -66,3 +66,46 @@
     range: 16
   - type: EntityTargetAction
     event: !type:HulkChargeActionEvent
+
+- type: entity
+  id: ActionMorphismGen
+  parent: BaseAction
+  name: morphism
+  description: "You can change your skin tone, hair, and eyes as you wish."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:MorphismGenActionEvent
+
+- type: entity
+  id: ActionCryokinesis
+  parent: BaseAction
+  name: Cryokinesis
+  description: "Freeze the fluids of a target, drastically lowering their temperature."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    itemIconStyle: BigAction
+    useDelay: 300
+  - type: TargetAction
+    range: 7
+  - type: EntityTargetAction
+    event: !type:CryokinesisActionEvent
+
+- type: entity
+  id: ActionFarVisionGen
+  parent: BaseAction
+  name: far vision
+  description: "Focus your eyes to see further."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    itemIconStyle: BigAction
+    useDelay: 10
+  - type: InstantAction
+    event: !type:FarVisionGenActionEvent

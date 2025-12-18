@@ -63,3 +63,19 @@
   costInstability: 15
   addComponent:
   - type: TelekinesisGen
+
+- type: structuralEnzymes
+  id: GeneticsLongVisionBasic
+  message: genetics-long-vision-message
+  typeDeviation: Base
+  costInstability: 10
+  addComponent:
+  - type: FarVisionGen
+
+- type: structuralEnzymes
+  id: GeneticsJumpBasic
+  message: genetics-jump-message
+  typeDeviation: Base
+  costInstability: 5
+  addComponent:
+  - type: JumpGen

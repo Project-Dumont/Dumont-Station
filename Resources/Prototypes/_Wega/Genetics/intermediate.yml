@@ -72,3 +72,38 @@
   costInstability: 5
   addComponent:
   - type: MindCommunicationGen
+
+- type: structuralEnzymes
+  id: GeneticsThermalVisionIntermediate
+  message: genetics-thermal-vision-message
+  typeDeviation: Intermediate
+  chanceAssimilation: 0.25
+  costInstability: 15
+  addComponent:
+  - type: ThermalVision
+    flashDurationMultiplier: 4
+    pulseTime: 4
+
+- type: structuralEnzymes
+  id: GeneticsRemoteViewingIntermediate
+  message: genetics-remote-viewing-message
+  typeDeviation: Intermediate
+  costInstability: 5
+  addComponent:
+  - type: RemoteViewingGen
+
+- type: structuralEnzymes
+  id: GeneticsMorphismIntermediate
+  message: genetics-morphism-message
+  typeDeviation: Intermediate
+  costInstability: 5
+  addComponent:
+  - type: MorphismGen
+
+- type: structuralEnzymes
+  id: GeneticsCryokinesisIntermediate
+  message: genetics-cryokinesis-message
+  typeDeviation: Intermediate
+  costInstability: 10
+  addComponent:
+  - type: CryokinesisGenComponent 

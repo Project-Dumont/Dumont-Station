@@ -1,5 +1,5 @@
 # Ui
-dna-modifier-ui-default-title = Console de Controle do Modificador de DNA
+dna-modifier-ui-default-title = Computador de Modificador de DNA
 dna-modifier-label-big-title-name = Sujeito
 dna-modifier-button-eject = Ejetar
 
