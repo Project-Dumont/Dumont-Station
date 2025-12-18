@@ -159,8 +159,8 @@
   canBeAntag: false
   guides: # goobstation
   - Medical
-  - ChiefMedicalOfficer SOP
-  - Medical SOP
+  # - ChiefMedicalOfficer SOP
+  # - Medical SOP
   - Command
   - Chemicals
   goobcoins: 40 #Goob content

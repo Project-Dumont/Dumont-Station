@@ -79,7 +79,7 @@
   guides: # goobstation
   - Forensics
   - Security
-  - Detective SOP
+  # - Detective SOP
   goobcoins: 30 #Goob content
   salary: 50 # Gaby content
   access:

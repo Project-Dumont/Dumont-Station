@@ -160,10 +160,10 @@
   antagAdvantage: 75 # Goobstation
   guides: # goobstation
   - Engineering
-  - ChiefEngineer SOP
-  - Engineering SOP
+  # - ChiefEngineer SOP
+  # - Engineering SOP
   - Command
-  - Emergencies SOP
+  # - Emergencies SOP
   goobcoins: 40 #Goob content
   salary: 50 # Gaby content
   access:

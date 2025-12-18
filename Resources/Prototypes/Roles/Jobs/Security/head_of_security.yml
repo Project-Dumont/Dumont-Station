@@ -173,11 +173,11 @@
   guides: # goobstation
   - Security
   - SpaceLaw
-  - Legal SOP
+  # - Legal SOP
   - Command
-  - HeadOfSecurity SOP
-  - Security SOP
-  - Alert Levels
+  # - HeadOfSecurity SOP
+  # - Security SOP
+  # - Alert Levels
   goobcoins: 45 #Goob content
   salary: 50 # Gaby content
   access:

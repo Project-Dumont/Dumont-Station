@@ -98,10 +98,10 @@
   canBeAntag: false
   guides: # goobstation
   - Security
-  - Legal SOP
-  - OfficerCadet SOP
+  # - Legal SOP
+  # - OfficerCadet SOP
   - CorporateJudo
-  - Alert Levels
+  # - Alert Levels
   goobcoins: 30 #Goob content
   salary: 50 # Gaby content
   access:

@@ -164,9 +164,9 @@
       - Felinid
   guides: # goobstation
   - Command
-  - Succession
-  - StandardProcedures SOP
-  - HeadOfPersonnel SOP
+  # - Succession
+  # - StandardProcedures SOP
+  # - HeadOfPersonnel SOP
   - Writing
   goobcoins: 40 #Goob content
   salary: 50 # Gaby content

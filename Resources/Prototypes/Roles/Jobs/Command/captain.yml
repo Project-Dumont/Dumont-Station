@@ -166,9 +166,9 @@
     #   hairColorSaturation: 0.30
   guides: # goobstation
   - Command
-  - Succession
-  - StandardProcedures SOP
-  - Captain SOP
+  # - Succession
+  # - StandardProcedures SOP
+  # - Captain SOP
   goobcoins: 50 #Goob content
   weight: 20
   salary: 50 # Gaby content

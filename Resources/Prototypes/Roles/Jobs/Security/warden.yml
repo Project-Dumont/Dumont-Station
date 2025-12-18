@@ -160,9 +160,9 @@
   canBeAntag: false
   guides: # goobstation
   - SpaceLaw
-  - Legal SOP
+  # - Legal SOP
   - Security
-  - Warden SOP
+  # - Warden SOP
   - KravMaga
   goobcoins: 35 #Goob content
   salary: 50 # Gaby content
