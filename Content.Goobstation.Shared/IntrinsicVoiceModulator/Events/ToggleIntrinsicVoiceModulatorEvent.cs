@@ -5,6 +5,6 @@
 
 using Content.Shared.Alert;
 
-namespace Content.Shared._Gabystation.IntrinsicVoiceModulator.Events;
+namespace Content.Goobstation.Shared.IntrinsicVoiceModulator.Events;
 
 public sealed partial class ToggleIntrinsicVoiceModulatorEvent : BaseAlertEvent;
