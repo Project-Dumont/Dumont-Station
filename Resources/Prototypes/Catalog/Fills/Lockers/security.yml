@@ -136,7 +136,6 @@
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
     - id: SecurityMegaphone # goob - loudspeakers
-    - id: SecondSkinSecurity # Goobstation
     - id: BoxTapeRecorder # Gabystation
       prob: 0.5
     - id: ATMFlatpack # Gabystation
@@ -186,7 +185,6 @@
     - id: ClothingHeadsetAltSecurityRegular # Goobstation
     - id: PanicButton # Goobstation
     - id: PepperSpray # Goobstation
-    - id: SecondSkinSecurity # Goobstation
     # Goobstation - Martial Arts - start
     - !type:GroupSelector
       children:
@@ -222,7 +220,6 @@
     - id: MedkitAdvancedFilled
     - id: BoxSyringe
     - id: BoxBodyBag # Goob Station
-    - id: SecondSkinSecurity # Goobstation
 
 - type: entity
   id: LockerDetectiveFilled
@@ -257,7 +254,6 @@
     - id: BloodTrak # Goobstation
     - id: Betty # Goobstation
     - id: BoxTapeRecorder # DeltaV
-    - id: SecondSkinSecurity # Goobstation
     - id: CassetteTapeInterview # Gabystation - lore
       prob: 0.25
 
