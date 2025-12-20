@@ -24,13 +24,13 @@
     tile: FloorDarkMono
     contents: BaseAirlock
   
-  - !type:ExternalWindowDunGen
-    tile: FloorDarkMono
-    contents: BaseWindow
-  
   - !type:RoomEntranceDunGen
     tile: FloorDarkMono
     contents: BaseAirlock
+  
+  - !type:ExternalWindowDunGen
+    tile: FloorDarkMono
+    contents: BaseWindow
 
   - !type:WallMountDunGen
     contents: WallReinforced
@@ -39,10 +39,6 @@
   - !type:BoundaryWallDunGen
     wall: WallReinforced
     tile: FloorDarkMono
-  
-  - !type:RoomEntranceDunGen
-    tile: FloorDarkMono
-    contents: BaseAirlock
 
   - !type:JunctionDunGen
     width: 3

@@ -8,8 +8,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/16/2025 00:33:01
-  entityCount: 2528
+  time: 12/20/2025 03:34:16
+  entityCount: 2532
 maps:
 - 1
 grids:
@@ -424,34 +424,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: BaseNuclearReactor
-  entities:
-  - uid: 3
-    components:
-    - type: Transform
-      pos: 5.5,5.5
-      parent: 1
-  - uid: 211
-    components:
-    - type: Transform
-      pos: 26.5,6.5
-      parent: 1
-  - uid: 384
-    components:
-    - type: Transform
-      pos: 8.5,17.5
-      parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
-  - uid: 2316
-    components:
-    - type: Transform
-      pos: 35.5,3.5
-      parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
 - proto: CableApcExtension
   entities:
   - uid: 119
@@ -9709,6 +9681,29 @@ entities:
       rot: 3.141592653589793 rad
       pos: 25.5,20.5
       parent: 1
+  - uid: 2529
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 27.5,14.5
+      parent: 1
+  - uid: 2530
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,14.5
+      parent: 1
+  - uid: 2531
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 29.5,14.5
+      parent: 1
+  - uid: 2532
+    components:
+    - type: Transform
+      pos: 16.5,14.5
+      parent: 1
 - proto: GasPipeStraightAlt2
   entities:
   - uid: 666
@@ -10614,18 +10609,51 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 43.5,2.5
       parent: 1
-- proto: NuclearReactorSmall
+- proto: NuclearReactorRandom
   entities:
+  - uid: 3
+    components:
+    - type: Transform
+      pos: 5.5,5.5
+      parent: 1
+    missingComponents:
+    - AccessReader
+  - uid: 211
+    components:
+    - type: Transform
+      pos: 26.5,6.5
+      parent: 1
+    missingComponents:
+    - AccessReader
+  - uid: 384
+    components:
+    - type: Transform
+      pos: 8.5,17.5
+      parent: 1
+    missingComponents:
+    - AccessReader
   - uid: 594
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 28.5,19.5
+      pos: 35.5,3.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
+- proto: NuclearReactorSmallRandom
+  entities:
   - uid: 595
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 28.5,12.5
+      parent: 1
+  - uid: 596
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,12.5
+      parent: 1
+  - uid: 597
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -10634,20 +10662,11 @@ entities:
     - type: AccessReader
       accessListsOriginal:
       - - Engineering
-  - uid: 596
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 18.5,12.5
-      parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
-  - uid: 597
+  - uid: 2316
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 28.5,12.5
+      pos: 28.5,19.5
       parent: 1
     - type: AccessReader
       accessListsOriginal:
@@ -10703,31 +10722,43 @@ entities:
     - type: Transform
       pos: 22.686197,31.499878
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2072
     components:
     - type: Transform
       pos: 19.350931,37.51123
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2073
     components:
     - type: Transform
       pos: 27.697245,37.4057
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2074
     components:
     - type: Transform
       pos: 29.28361,34.40338
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2075
     components:
     - type: Transform
       pos: 20.649576,37.49585
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2076
     components:
     - type: Transform
       pos: 18.649027,39.386475
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
 - proto: PlasteelReactorGasChannel
   entities:
   - uid: 1890
@@ -10735,61 +10766,85 @@ entities:
     - type: Transform
       pos: 12.724109,34.39486
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1891
     components:
     - type: Transform
       pos: 10.706164,35.360924
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1892
     components:
     - type: Transform
       pos: 12.394275,33.50564
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1893
     components:
     - type: Transform
       pos: 10.295825,37.422447
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2063
     components:
     - type: Transform
       pos: 16.584024,37.490784
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2064
     components:
     - type: Transform
       pos: 17.794779,39.42163
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2065
     components:
     - type: Transform
       pos: 21.672281,39.440247
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2066
     components:
     - type: Transform
       pos: 19.638224,33.33673
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2067
     components:
     - type: Transform
       pos: 16.497293,31.363708
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2068
     components:
     - type: Transform
       pos: 29.588236,37.382996
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2069
     components:
     - type: Transform
       pos: 30.657999,34.462646
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2070
     components:
     - type: Transform
       pos: 27.383646,37.427063
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
 - proto: PottedPlantRandomPlastic
   entities:
   - uid: 117
@@ -12788,56 +12843,78 @@ entities:
     - type: Transform
       pos: 6.42439,33.45913
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1840
     components:
     - type: Transform
       pos: 6.7262087,33.40383
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1841
     components:
     - type: Transform
       pos: 0.33881855,33.47225
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1842
     components:
     - type: Transform
       pos: 0.66779804,37.298607
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1843
     components:
     - type: Transform
       pos: 0.32496357,39.452232
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1884
     components:
     - type: Transform
       pos: 10.328296,34.5776
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1885
     components:
     - type: Transform
       pos: 10.688525,34.577843
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1886
     components:
     - type: Transform
       pos: 10.6994505,36.493126
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1887
     components:
     - type: Transform
       pos: 12.501697,37.516502
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1888
     components:
     - type: Transform
       pos: 12.615954,36.455162
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1889
     components:
     - type: Transform
       pos: 10.374255,33.55123
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
 - proto: SteelReactorGasChannel
   entities:
   - uid: 1844
@@ -12845,31 +12922,43 @@ entities:
     - type: Transform
       pos: 6.405286,39.348534
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1845
     components:
     - type: Transform
       pos: 6.40907,38.381737
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1846
     components:
     - type: Transform
       pos: 6.676099,37.434166
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1847
     components:
     - type: Transform
       pos: 0.6613283,38.355797
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1848
     components:
     - type: Transform
       pos: 0.63618183,34.280174
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1849
     components:
     - type: Transform
       pos: 6.2988405,32.358665
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
 - proto: SteelReactorHeatExchanger
   entities:
   - uid: 1835
@@ -12877,66 +12966,92 @@ entities:
     - type: Transform
       pos: 0.67597675,32.349144
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1836
     components:
     - type: Transform
       pos: 6.6654787,31.478966
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1837
     components:
     - type: Transform
       pos: 0.36158466,38.475243
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1838
     components:
     - type: Transform
       pos: 6.6752443,34.37435
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1894
     components:
     - type: Transform
       pos: 12.555224,35.43966
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 1895
     components:
     - type: Transform
       pos: 12.347278,34.393333
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2056
     components:
     - type: Transform
       pos: 27.415873,34.500122
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2057
     components:
     - type: Transform
       pos: 30.534586,37.478638
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2058
     components:
     - type: Transform
       pos: 18.474405,31.602295
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2059
     components:
     - type: Transform
       pos: 16.592936,33.45691
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2060
     components:
     - type: Transform
       pos: 20.566202,31.473572
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2061
     components:
     - type: Transform
       pos: 16.612162,39.39038
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
   - uid: 2062
     components:
     - type: Transform
       pos: 21.559488,37.461304
       parent: 1
+    - type: ReactorPart
+      protoId: BaseReactorPart
 - proto: StorageCanister
   entities:
   - uid: 2317
@@ -13253,36 +13368,32 @@ entities:
     - type: Transform
       pos: 12.5,4.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
   - uid: 230
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 19.5,2.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
   - uid: 231
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 19.5,7.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
   - uid: 385
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,13.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
 - proto: TurbineSmall
   entities:
   - uid: 658
@@ -13290,25 +13401,22 @@ entities:
     - type: Transform
       pos: 23.5,16.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
   - uid: 2466
     components:
     - type: Transform
       pos: 35.5,8.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
   - uid: 2468
     components:
     - type: Transform
       pos: 39.5,8.5
       parent: 1
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
+    missingComponents:
+    - AccessReader
 - proto: WallmountGeneratorAPUElectronics
   entities:
   - uid: 1514
