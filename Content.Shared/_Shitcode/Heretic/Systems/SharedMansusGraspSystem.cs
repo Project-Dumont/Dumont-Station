@@ -62,15 +62,21 @@ public abstract class SharedMansusGraspSystem : EntitySystem
     public bool TryApplyGraspEffectAndMark(EntityUid user,
         HereticComponent hereticComp,
         EntityUid target,
-        EntityUid? grasp)
+        EntityUid? grasp,
+        out bool triggerGrasp)
     {
+        triggerGrasp = true;
+
         if (hereticComp.CurrentPath == null)
             return true;
 
         if (hereticComp.PathStage >= 2)
         {
-            if (!ApplyGraspEffect((user, hereticComp), target, grasp))
+            if (!ApplyGraspEffect((user, hereticComp), target, grasp, out var applyMark, out triggerGrasp))
                 return false;
+
+            if (!applyMark)
+                return true;
         }
 
         if (hereticComp.PathStage >= 4 && HasComp<StatusEffectsComponent>(target))
@@ -92,8 +98,14 @@ public abstract class SharedMansusGraspSystem : EntitySystem
         return true;
     }
 
-    public bool ApplyGraspEffect(Entity<HereticComponent> user, EntityUid target, EntityUid? grasp)
+    public bool ApplyGraspEffect(Entity<HereticComponent> user,
+        EntityUid target,
+        EntityUid? grasp,
+        out bool applyMark,
+        out bool triggerGrasp)
     {
+        applyMark = true;
+        triggerGrasp = true;
         var (performer, heretic) = user;
 
         switch (heretic.CurrentPath)
@@ -150,7 +162,8 @@ public abstract class SharedMansusGraspSystem : EntitySystem
 
             case "Flesh":
             {
-                if (TryComp<MobStateComponent>(target, out var mobState) && mobState.CurrentState == MobState.Dead)
+                if (TryComp<MobStateComponent>(target, out var mobState) && mobState.CurrentState != MobState.Alive &&
+                    !HasComp<BorgChassisComponent>(target))
                 {
                     if (HasComp<GhoulComponent>(target))
                     {
@@ -171,7 +184,8 @@ public abstract class SharedMansusGraspSystem : EntitySystem
                     ghoul.GiveBlade = true;
 
                     AddComp(target, ghoul);
-                    RemCompDeferred<HereticCombatMarkComponent>(target);
+                    applyMark = false;
+                    triggerGrasp = false;
                 }
 
                 break;
@@ -215,7 +229,6 @@ public abstract class SharedMansusGraspSystem : EntitySystem
                     _starMark.SpawnCosmicField(Transform(performer).Coordinates, heretic.PathStage);
                 break;
             }
-
             default:
                 return true;
         }

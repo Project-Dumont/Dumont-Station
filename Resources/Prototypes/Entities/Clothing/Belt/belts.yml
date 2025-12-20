@@ -161,6 +161,8 @@
     sprite: Clothing/Belt/utility.rsi
   - type: Storage
     maxItemSize: Normal
+    grid:
+    - 0,0,9,1 # Gabystation change. Increased size to fit RCD or 2 1x2 tools
     # Don't add more than absolutely needed to this whitelist!
     # Utility belts shouldn't just be free extra storage.
     # This is only intended for basic engineering equipment.
@@ -253,7 +255,7 @@
     sprite: Clothing/Belt/ce.rsi
   - type: Storage
     grid:
-    - 0,0,9,1
+    - 0,0,11,1 # Gabystation change. fit RPD
     # TODO: Fill this out more.
     whitelist:
       tags:

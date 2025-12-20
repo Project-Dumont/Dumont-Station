@@ -138,6 +138,9 @@
     ClothingKimonoGreen: 1 #Loadouts Rework addition - Nyanotrasen
     #Loadouts Rework Stuff End
     ClothingCostumeGingerbreadHead: 1 #goob
+    ClothingOuterSuitHotDog: 1 # Goob
+    ClothingOuterSuitPickle: 1
+    ClothingHeadHatTinfoilHat: 2 # Goobstation
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ClothingShoesBling: 1

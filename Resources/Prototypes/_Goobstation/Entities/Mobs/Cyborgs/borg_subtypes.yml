@@ -313,3 +313,10 @@
   id: security_standard
   spritePath: _Goobstation/Mobs/Silicon/Security/standard.rsi
   dummyPrototype: BorgChassisSecurityStandard
+
+# Gabystation
+- type: borgSubtype
+  parentBorgType: security
+  id: security_dog
+  spritePath: _Floofstation/Mobs/Silicon/Security/quad.rsi
+  dummyPrototype: BorgChassisSecurityDog

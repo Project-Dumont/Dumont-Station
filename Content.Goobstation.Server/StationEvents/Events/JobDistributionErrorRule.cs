@@ -2,15 +2,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.GameTicking.Rules.Components;
-using Content.Server.StationEvents.Components;
+using Content.Goobstation.Server.StationEvents.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Roles;
 using Robust.Shared.Random;
 
-namespace Content.Server.StationEvents.Events;
+namespace Content.Goobstation.Server.StationEvents.Events;
 
 public sealed class JobDistributionErrorRule : StationEventSystem<JobDistributionErrorRuleComponent>
 {
