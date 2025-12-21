@@ -10,7 +10,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          Orientation="Horizontal">
     <!--Width set to slightly wider than the longest job name (NTR) to place the option buttons consistently.-->
-    <Label Name="TitleContent"
+    <Control Name="TitleContent"
            Margin="5 0"
            SetWidth="220"/>
 
