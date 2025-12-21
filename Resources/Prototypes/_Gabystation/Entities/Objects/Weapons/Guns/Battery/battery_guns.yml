@@ -4,7 +4,7 @@
 
 - type: entity
   name: DT-12 "Luger P-08"
-  parent: [WeaponEnergyGunLawbringer]
+  parent: [ WeaponEnergyGunLawbringer ]
   id: WeaponEnergyGunLawbringerSkin
   description: A versatile energy gun, with many different modes. This model is based on the old and infamous Luger pistol, used centries ago on conflicts on what is today the SolGov's capital planet.
   components:

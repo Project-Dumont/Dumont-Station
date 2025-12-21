@@ -11,6 +11,7 @@
         - to: upgraded
           steps:
             - tag: WeaponPistolLawbringerSkinKit
+              name: construction-graph-tag-lawbringer-skin-kit
               doAfter: 5
 
     - node: upgraded

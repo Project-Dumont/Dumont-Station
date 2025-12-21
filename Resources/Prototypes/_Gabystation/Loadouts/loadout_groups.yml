@@ -76,7 +76,7 @@
   - ClothingNeckChoque
 
 - type: loadoutGroup
-  id: HoSLawbringer
+  id: HoSLawbringerSkins
   name: loadout-group-hos-lawbringerskin
   minLimit: 0
   maxLimit: 1
