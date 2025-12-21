@@ -49,6 +49,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
 using Content.Server._FarHorizons.Salvage;
+using Content.Shared.Weather;
 
 namespace Content.Server.Salvage;
 
@@ -157,6 +158,18 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             var atmos = _entManager.EnsureComponent<MapAtmosphereComponent>(mapUid);
             _entManager.System<AtmosphereSystem>().SetMapSpace(mapUid, air.Space, atmos);
             _entManager.System<AtmosphereSystem>().SetMapGasMixture(mapUid, new GasMixture(moles, mission.Temperature), atmos);
+
+            // Far Horizons weather start
+            if (!air.Space)
+            {
+                var weather = _prototypeManager.Index(mission.Weather);
+                if (weather.Weather != null)
+                {
+                    var weatherProto = _prototypeManager.Index(weather.Weather);
+                    _entManager.System<SharedWeatherSystem>().SetWeather(mapId, weatherProto, null);
+                }
+            }
+            // Far Horisons end
 
             if (mission.Color != null)
             {

@@ -40,3 +40,82 @@
     - Moderate
     - Easy
     - Difficult
+
+# Weathers
+- type: salvageWeatherMod
+  id: SalvageWeatherNone
+
+- type: salvageWeatherMod
+  id: AshfallLight
+  weather: AshfallLight
+  biomes:
+    - Lava
+
+- type: salvageWeatherMod
+  id: Ashfall
+  weather: Ashfall
+  cost: 1
+  biomes:
+    - Lava
+
+- type: salvageWeatherMod
+  id: AshfallHeavy
+  weather: AshfallHeavy
+  cost: 2
+  biomes:
+    - Lava
+
+- type: salvageWeatherMod
+  id: Rain
+  weather: Rain
+  biomes:
+    - Grasslands
+    - Caves
+
+- type: salvageWeatherMod
+  id: Storm
+  weather: Storm
+  cost: 1
+  biomes:
+    - Grasslands
+    - Caves
+
+- type: salvageWeatherMod
+  id: Sandstorm
+  weather: Sandstorm
+  cost: 1
+  biomes:
+    - LowDesert
+
+- type: salvageWeatherMod
+  id: SandstormHeavy
+  weather: SandstormHeavy
+  cost: 2
+  biomes:
+    - LowDesert
+
+- type: salvageWeatherMod
+  id: Hail
+  weather: Hail
+  biomes:
+    - Snow
+
+- type: salvageWeatherMod
+  id: SnowfallLight
+  weather: SnowfallLight
+  biomes:
+    - Snow
+
+- type: salvageWeatherMod
+  id: SnowfallMedium
+  weather: SnowfallMedium
+  cost: 1
+  biomes:
+    - Snow
+
+- type: salvageWeatherMod
+  id: SnowfallHeavy
+  weather: SnowfallHeavy
+  cost: 2
+  biomes:
+    - Snow

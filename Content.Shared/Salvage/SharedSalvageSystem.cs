@@ -60,7 +60,9 @@ public abstract partial class SharedSalvageSystem : EntitySystem
         var faction = factionProtos[rand.Next(factionProtos.Count)];
 
         // Far Horizons
+        var weather = GetWeatherMod(rand, difficulty.ID, biome.ID, ref modifierBudget);
         var objective = GetMissionObjective(rand, difficulty.ID, biome.ID, faction.ID, dungeon.ID);
+        // Far Horizons end
 
         var mods = new List<string>();
 
@@ -82,8 +84,8 @@ public abstract partial class SharedSalvageSystem : EntitySystem
 
         var duration = TimeSpan.FromSeconds(CfgManager.GetCVar(CCVars.SalvageExpeditionDuration));
 
-        // Far Horizons: objective
-        return new SalvageMission(seed, dungeon.ID, faction.ID, biome.ID, air.ID, temp.Temperature, light.Color, duration, mods, objective);
+        // Far Horizons: weather, objective
+        return new SalvageMission(seed, dungeon.ID, faction.ID, biome.ID, air.ID, temp.Temperature, light.Color, duration, mods, weather, objective);
     }
 
     public T GetBiomeMod<T>(string biome, System.Random rand, ref float rating) where T : class, IPrototype, IBiomeSpecificMod

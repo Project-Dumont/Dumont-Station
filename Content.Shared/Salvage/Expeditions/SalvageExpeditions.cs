@@ -117,6 +117,7 @@ public sealed record SalvageMission(
     Color? Color,
     TimeSpan Duration,
     List<string> Modifiers,
+    ProtoId<SalvageWeatherMod> Weather, // Far Horizons
     ProtoId<SalvageMissionObjectivePrototype> Objective)  // Far Horizons
 {
     /// <summary>
@@ -163,6 +164,11 @@ public sealed record SalvageMission(
     /// Modifiers (outside of the above) applied to the mission.
     /// </summary>
     public List<string> Modifiers = Modifiers;
+
+    /// <summary>
+    /// Far Horizons weather
+    /// </summary>
+    public ProtoId<SalvageWeatherMod> Weather = Weather;
 
     /// <summary>
     /// Far Horizons mission objective
