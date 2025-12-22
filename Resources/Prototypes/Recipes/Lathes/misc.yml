@@ -377,4 +377,50 @@
   completetime: 1
   materials:
     Steel: 30
-    
+
+# Gabystation
+- type: latheRecipe
+  id: MP3PlayerWhite
+  result: MP3PlayerWhite
+  completetime: 4
+  materials:
+    Steel: 200
+    Plastic: 200
+    Gold: 50
+
+- type: latheRecipe
+  id: MP3PlayerBlue
+  result: MP3PlayerBlue
+  completetime: 4
+  materials:
+    Steel: 200
+    Plastic: 200
+    Gold: 50
+
+- type: latheRecipe
+  id: MP3PlayerGreen
+  result: MP3PlayerGreen
+  completetime: 4
+  materials:
+    Steel: 200
+    Plastic: 200
+    Gold: 50
+
+- type: latheRecipe
+  id: MP3PlayerPink
+  result: MP3PlayerPink
+  completetime: 4
+  materials:
+    Steel: 200
+    Plastic: 200
+    Gold: 50
+
+- type: latheRecipe
+  id: MP3PlayerRed
+  result: MP3PlayerRed
+  completetime: 4
+  materials:
+    Steel: 200
+    Plastic: 200
+    Gold: 50
+

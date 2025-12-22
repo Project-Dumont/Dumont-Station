@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Server._Lavaland.Biome;
 using Content.Server._Lavaland.Procedural.Components;
 using Content.Server.Atmos.Components;
 using Content.Shared._Lavaland.Procedural.Prototypes;
@@ -29,7 +30,7 @@ public sealed partial class LavalandSystem
         lavaland = null;
 
         if (!LavalandEnabled)
-            return true;
+            return false;
 
         if (preloader == null)
         {
@@ -44,7 +45,7 @@ public sealed partial class LavalandSystem
         var proto = _proto.Index(mapProto);
         var prototype = _proto.Index(proto.Planet);
         var layout = _proto.Index(proto.Layout);
-        var ruinPool = _proto.Index(proto.Ruins);
+        var pool = _proto.Index(proto.Ruins);
 
         // Basic setup.
         var lavalandMap = _map.CreateMap(out var lavalandMapId, runMapInit: false);
@@ -63,13 +64,15 @@ public sealed partial class LavalandSystem
 
         SetupLayout(lavalandMap, lavalandMapId, layout, out mapComp.SpawnedGrids);
 
-        var loadBox = Box2.CentredAroundZero(new Vector2(prototype.RestrictedRange, prototype.RestrictedRange));
+        var loadBox = Box2.CentredAroundZero(new Vector2(prototype.RestrictedRange * 2, prototype.RestrictedRange * 2));
 
         mapComp.Seed = seed.Value;
         mapComp.PrototypeId = lavalandPrototypeId;
         mapComp.LoadArea = loadBox;
 
-        SetupRuins(ruinPool, lavaland.Value, preloader.Value);
+        EnsureComp<BiomeOptimizeComponent>(lavalandMap).LoadArea = loadBox;
+
+        SetupRuins(pool, lavaland.Value, preloader.Value);
 
         // Hide all grids from the mass scanner.
         foreach (var grid in _mapManager.GetAllGrids(lavalandMapId))

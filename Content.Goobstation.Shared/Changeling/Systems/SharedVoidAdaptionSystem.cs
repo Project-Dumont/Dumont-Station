@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Common.Atmos;
 using Content.Goobstation.Common.Temperature;
 using Content.Goobstation.Shared.Atmos.Events;
@@ -191,7 +195,10 @@ public sealed class SharedVoidAdaptionSystem : EntitySystem
         RaiseLocalEvent(ent, ref thresholdEv);
 
         var freezeT = thresholdEv.ColdDamageThreshold;
-        var highestSpeedT = thresholdEv.SpeedThresholds.Keys.Max();
+
+        var highestSpeedT = thresholdEv.SpeedThresholds != null
+            ? thresholdEv.SpeedThresholds.Keys.Max()
+            : freezeT; // only if TemperatureSpeedComponent doesnt exist
 
         return Math.Max(freezeT, highestSpeedT);
     }

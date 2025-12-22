@@ -3,6 +3,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# All
 - type: loadout
   id: ClothingNeckAutoridade
   effects:
@@ -14,3 +15,16 @@
   storage:
     back:
     - ClothingNeckAutoridade
+
+# HoS
+- type: loadout
+  id: HoSLawbringerSkin
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 72000 # 20 hrs
+  storage:
+    back:
+    - ChangeLawbringerSkinKit

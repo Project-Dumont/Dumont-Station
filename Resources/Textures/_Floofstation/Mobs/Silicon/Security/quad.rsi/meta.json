@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Fenndragon discord: 190763499276861440, modified by Pii",
+  "states": [
+    {
+      "name": "security",
+      "directions": 4
+    },
+    {
+      "name": "security_e",
+      "directions": 4
+    },
+    {
+      "name": "security_e_r",
+      "directions": 4
+    },
+    {
+      "name": "security_l",
+      "directions": 4
+    }
+  ]
+}
