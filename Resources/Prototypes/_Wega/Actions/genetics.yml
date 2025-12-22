@@ -19,7 +19,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_poly" }
     itemIconStyle: BigAction
     useDelay: 300
   - type: TargetAction
@@ -34,7 +34,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_project" }
     useDelay: 30
   - type: InstantAction
     event: !type:MindCommunicationActionEvent
@@ -75,7 +75,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_morph" }
     itemIconStyle: BigAction
   - type: InstantAction
     event: !type:MorphismGenActionEvent
@@ -88,7 +88,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_cryo" }
     itemIconStyle: BigAction
     useDelay: 300
   - type: TargetAction
@@ -104,8 +104,20 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_view" }
     itemIconStyle: BigAction
     useDelay: 10
   - type: InstantAction
     event: !type:FarVisionGenActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionJumpGen
+  name: Jump
+  description: "You propel yourself with your legs a short distance in the direction you are looking."
+  components:
+  - type: Action
+    useDelay: 8
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_jump" }
+  - type: InstantAction
+    event: !type:GravityJumpEvent {}
