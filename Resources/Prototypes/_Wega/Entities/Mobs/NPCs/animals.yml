@@ -21,6 +21,27 @@
     lowest: MobMonkeyOni
 
 - type: entity
+  name: gray slime
+  id: MobAdultSlimesGrey
+  parent: MobAdultSlimes
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Wega/Mobs/Aliens/slimes.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: grey_adult_slime
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: grey_adult_slime
+      Dead:
+        Base: grey_adult_slime_dead
+  - type: DnaModifier
+    upper: MobSlimePerson
+    lowest: MobAdultSlimesGrey
+
+- type: entity
   id: MobMonkeyDaengati
   parent: MobMonkey
   suffix: AI, Daengati

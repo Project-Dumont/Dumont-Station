@@ -242,11 +242,6 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  # Corvax-Wega-Genetics-start
-  - type: DnaModifier
-    upper: MobSlimePerson
-    lowest: MobAdultSlimes
-  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: blue slime

@@ -49,6 +49,7 @@ job-name-ertjanitor = zelador da ERT
 job-name-boxer = boxeador
 job-name-zookeeper = funcionário de zoológico
 job-name-visitor = visitante
+job-name-geneticist = geneticista
 
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = técnico atmosférico

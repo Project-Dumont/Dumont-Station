@@ -223,7 +223,7 @@
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobSlimePerson
-    lowest: MobAdultSlimes
+    lowest: MobAdultSlimesGrey
   # Corvax-Wega-Genetics-end
 
 - type: entity

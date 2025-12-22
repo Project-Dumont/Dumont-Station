@@ -1,4 +1,8 @@
 # Medical
-loadout-group-genetics-jumpsuit = Geneticista, macacão
-loadout-group-genetics-backpack = Geneticista, mochila
-loadout-group-genetics-outerclothing = Geneticista, roupa externa
+loadout-group-genetics-jumpsuit = Macacão do Geneticista
+loadout-group-genetics-backpack = Mochila do Geneticista
+loadout-group-genetics-outerclothing = Casaco do Geneticista
+
+loadout-group-genetics-envirohelm = Capacete selado do Geneticista
+loadout-group-genetics-envirosuit = Traje selado do Geneticista
+loadout-group-genetics-envirogloves = Luvas seladas do Geneticista

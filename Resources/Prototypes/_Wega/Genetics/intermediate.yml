@@ -106,4 +106,4 @@
   typeDeviation: Intermediate
   costInstability: 10
   addComponent:
-  - type: CryokinesisGenComponent 
+  - type: CryokinesisGen 

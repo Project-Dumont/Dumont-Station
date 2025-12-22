@@ -119,6 +119,8 @@
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
   - BotanicDNACircuitboard # Ganimed
+  - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics
+  - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics
 
 - type: latheRecipePack
   id: CameraBoards
