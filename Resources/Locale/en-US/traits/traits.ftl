@@ -104,3 +104,10 @@ trait-newyork-desc = You speak with a thick New York accent. I'm fuckin' walkin'
 
 trait-british-name = British accent
 trait-british-desc = You speak proper, unlike those bloody yanks.
+
+trait-chronic-migraines-name = Chronic Migraines
+trait-chronic-migraines-desc = You experience occasional episodes of debilitating migraines that impair your vision and movement.
+
+trait-chronic-migraines-start = Your head begins to throb painfully...
+trait-chronic-migraines-end = The migraine subsides.
+trait-chronic-migraines-others = {THE($target)} rubs {POSS-ADJ($target)} temples in pain.
