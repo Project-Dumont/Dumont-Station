@@ -27,6 +27,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Genetics.System;
 
@@ -50,6 +51,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private static readonly ProtoId<EmotePrototype> Scream = "Scream";
 
@@ -816,6 +818,8 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         if (string.IsNullOrEmpty(component.Upper) || string.IsNullOrEmpty(component.Lowest))
             return;
 
+        _container.TryGetContainingContainer(target, out var targetContainer);
+
         int hexValue = Convert.ToInt32(enzyme.HexCode[0], 16);
         if (hexValue < 8)
         {
@@ -875,6 +879,11 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             {
                 _transform.SetParent(target, Transform(target), PausedMap.Value);
             }
+
+            if (targetContainer != null)
+            {
+                _container.Insert(child, targetContainer);
+            }
         }
         else
         {
@@ -930,6 +939,11 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 _transform.AttachToGridOrMap(parent, parentXform);
 
                 _entManager.DeleteEntity(target);
+
+                if (targetContainer != null)
+                {
+                    _container.Insert(parent, targetContainer);
+                }
                 return;
             }
 
@@ -982,6 +996,11 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
 
             // Third clearing
             _entManager.DeleteEntity(target); // Bye
+
+            if (targetContainer != null)
+            {
+                _container.Insert(child, targetContainer);
+            }
         }
     }
 
