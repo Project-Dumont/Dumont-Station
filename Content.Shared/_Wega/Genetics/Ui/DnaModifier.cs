@@ -21,6 +21,7 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
     public readonly string? ScannerBodyInfo;
     public readonly string? ScannerBodyStatus;
     public readonly string? ScannerBodyDna;
+    public readonly string? ScannerSpecies;
     public readonly float ScannerBodyHealth;
     public readonly float ScannerBodyRadiation;
     public readonly bool ScannerHasBeaker;
@@ -38,6 +39,7 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
         string? scannerBodyInfo,
         string? scannerBodyStatus,
         string? scannerBodyDna,
+        string? scannerSpecies,
         float scannerBodyHealth,
         float scannerBodyRadiation,
         bool scannerHasBeaker,
@@ -55,6 +57,7 @@ public sealed class DnaModifierBoundUserInterfaceState : BoundUserInterfaceState
         ScannerBodyInfo = scannerBodyInfo;
         ScannerBodyStatus = scannerBodyStatus;
         ScannerBodyDna = scannerBodyDna;
+        ScannerSpecies = scannerSpecies;
         ScannerBodyHealth = scannerBodyHealth;
         ScannerBodyRadiation = scannerBodyRadiation;
         ScannerHasBeaker = scannerHasBeaker;

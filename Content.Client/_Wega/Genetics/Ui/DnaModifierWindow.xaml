@@ -21,6 +21,11 @@
                 <Label Name="NameLabel"/>
             </BoxContainer>
             <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="{Loc 'dna-modifier-label-species'}" MinWidth="60"/>
+                <Control MinWidth="10"/>
+                <Label Name="SpeciesLabel"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
                 <Label Text="{Loc 'dna-modifier-label-status'}" MinWidth="60"/>
                 <Control MinWidth="10"/>
                 <Label Name="StatusLabel"/>

@@ -111,12 +111,14 @@ public sealed partial class DnaModifierWindow : FancyWindow
         {
             NameLabel.Text = state.ScannerBodyInfo;
             StatusLabel.Text = state.ScannerBodyStatus;
+            SpeciesLabel.Text = string.IsNullOrWhiteSpace(state.ScannerSpecies) ? Loc.GetString("dna-modifier-no-data") : state.ScannerSpecies;
             EjectButton.Disabled = false;
         }
         else
         {
             NameLabel.Text = Loc.GetString("dna-modifier-no-data");
             StatusLabel.Text = Loc.GetString("dna-modifier-no-data");
+            SpeciesLabel.Text = Loc.GetString("dna-modifier-no-data");
             EjectButton.Disabled = true;
 
             DisabledSubjectDiskBlock(null);

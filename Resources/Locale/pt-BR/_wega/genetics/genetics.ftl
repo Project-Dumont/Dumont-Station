@@ -6,6 +6,7 @@ dna-modifier-button-eject = Ejetar
 dna-modifier-label-name = Nome:
 dna-modifier-label-health = Avaliação de Saúde:
 dna-modifier-label-status = Status:
+dna-modifier-label-species = Espécie:
 
 dna-modifier-entity-alive-text = Vivo
 dna-modifier-entity-critical-text = Estado Crítico

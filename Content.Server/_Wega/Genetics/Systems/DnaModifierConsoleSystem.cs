@@ -32,6 +32,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Server.Genetics.System
 {
@@ -53,6 +55,7 @@ namespace Content.Server.Genetics.System
         [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
         private static readonly EntProtoId Injector = "DnaInjector";
         private static readonly ProtoId<DamageTypePrototype> RadDamage = "Radiation";
@@ -220,6 +223,7 @@ namespace Content.Server.Genetics.System
             string scanBodyInfo = string.Empty;
             string scannerBodyStatus = string.Empty;
             string scannerBodyDna = string.Empty;
+            string scannerSpecies = string.Empty;
 
             float scannerBodyHealth = -1;
             float scannerBodyRadiation = 0;
@@ -263,6 +267,18 @@ namespace Content.Server.Genetics.System
                     scannerBodyStatus = (mobState.CurrentState != MobState.Invalid)
                         ? GetStatus(mobState.CurrentState)
                         : Loc.GetString("dna-modifier-entity-unknown-text");
+
+                    if (TryComp<HumanoidAppearanceComponent>(scanBody.Value, out var humanoid))
+                    {
+                        if (_prototypeManager.TryIndex(humanoid.Species, out SpeciesPrototype? speciesProto))
+                        {
+                            scannerSpecies = Loc.GetString(speciesProto.Name);
+                        }
+                        else
+                        {
+                            scannerSpecies = humanoid.Species.ToString();
+                        }
+                    }
 
                     if (TryComp<DnaComponent>(scanBody.Value, out var dna))
                         scannerBodyDna = dna.DNA ?? string.Empty;
@@ -308,6 +324,7 @@ namespace Content.Server.Genetics.System
                 scanBodyInfo,
                 scannerBodyStatus,
                 scannerBodyDna,
+                scannerSpecies,
                 scannerBodyHealth,
                 scannerBodyRadiation,
                 scannerHasBeaker,
