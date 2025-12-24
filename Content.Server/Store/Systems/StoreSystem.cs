@@ -37,6 +37,9 @@ using Content.Server._White.StoreDiscount;
 using Robust.Shared.Timing;
 using Content.Shared.Store;
 using Content.Shared._Funkystation.MalfAI.Events;
+using Content.Shared.Mind;
+using Content.Shared.Polymorph;
+using Content.Server.Polymorph.Systems;
 
 namespace Content.Server.Store.Systems;
 
@@ -51,7 +54,8 @@ public sealed partial class StoreSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly StoreDiscountSystem _storeDiscount = default!;
+    [Dependency] private readonly StoreDiscountSystem _storeDiscount = default!; // WD EDIT
+    [Dependency] private readonly PolymorphSystem _polymorph = default!; // goob edit
 
     public override void Initialize()
     {
@@ -68,9 +72,17 @@ public sealed partial class StoreSystem : EntitySystem
         SubscribeLocalEvent<StoreComponent, OpenUplinkImplantEvent>(OnImplantActivate);
         SubscribeLocalEvent<StoreComponent, OpenMalfAiStoreActionEvent>(OnMalfAiOpenStore); // Funkystation -> Malf Ai
 
+        SubscribeLocalEvent<StoreComponent, PolymorphedEvent>(OnPolymorphed); // goob edit
+
         InitializeUi();
         InitializeCommand();
         InitializeRefund();
+    }
+
+    // goob edit - store now transfers on pm
+    private void OnPolymorphed(Entity<StoreComponent> ent, ref PolymorphedEvent args)
+    {
+        _polymorph.CopyPolymorphComponent<StoreComponent>(ent, args.NewEntity);
     }
 
     private void OnMapInit(EntityUid uid, StoreComponent component, MapInitEvent args)

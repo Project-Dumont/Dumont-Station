@@ -39,6 +39,9 @@ public sealed partial class JukeboxMenu : FancyWindow
     public event Action<float>? SetTime;
     public event Action? OnSearchChanged;
 
+    public event Action<float>? SetVolume; // Estação Pirata volume slider
+
+
     private EntityUid? _audio;
 
     private float _lockTimer;
@@ -69,6 +72,11 @@ public sealed partial class JukeboxMenu : FancyWindow
             OnStopPressed?.Invoke();
         };
         PlaybackSlider.OnReleased += PlaybackSliderKeyUp;
+        // <Estação Pirata volume slider>
+        VolumeSlider.OnReleased += VolumeSliderKeyUp;
+
+        VolumeSlider.MaxValue = 100f;
+        // </Estação Pirata volume slider>
 
         MusicSearch.OnTextChanged += args =>
         {
@@ -93,6 +101,14 @@ public sealed partial class JukeboxMenu : FancyWindow
         SetTime?.Invoke(PlaybackSlider.Value);
         _lockTimer = 0.5f;
     }
+
+    // <Estação Pirata volume slider>
+    private void VolumeSliderKeyUp(Slider args)
+    {
+        SetVolume?.Invoke(VolumeSlider.Value);
+        _lockTimer = 0.5f;
+    }
+    // <Estação Pirata volume slider>
 
     /// <summary>
     /// Re-populates the list of jukebox prototypes available.
@@ -137,6 +153,13 @@ public sealed partial class JukeboxMenu : FancyWindow
         PlaybackSlider.SetValueWithoutEvent(0);
     }
 
+    // <Estação Pirata volume slider>
+     public void SetVolumeSlider(float volume)
+    {
+        VolumeSlider.Value = volume;
+    }
+    // </Estação Pirata volume slider>
+
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
@@ -147,6 +170,7 @@ public sealed partial class JukeboxMenu : FancyWindow
         }
 
         PlaybackSlider.Disabled = _lockTimer > 0f;
+        VolumeSlider.Disabled = _lockTimer > 0f; // <Estação Pirata volume slider>
 
         if (_entManager.TryGetComponent(_audio, out AudioComponent? audio))
         {
@@ -157,7 +181,12 @@ public sealed partial class JukeboxMenu : FancyWindow
             DurationLabel.Text = $"00:00 / 00:00";
         }
 
+        VolumeNumberLabel.Text = $"{VolumeSlider.Value.ToString("0.##")} %"; // <Estação Pirata volume slider>
+
         if (PlaybackSlider.Grabbed)
+            return;
+
+         if (VolumeSlider.Grabbed) // <Estação Pirata volume slider>
             return;
 
         if (audio != null || _entManager.TryGetComponent(_audio, out audio))
