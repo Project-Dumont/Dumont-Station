@@ -21,3 +21,27 @@
   - type: UniqueEntityMarker
     markerName: AdminAssistant
     stationOnly: false
+
+- type: entity
+  parent: BaseLockerTeleporter
+  id: GeneticistLockerTeleporter
+  name: teletransportador de armario de geneticista
+  description: Dipositivo capaz de trazer um armario de geneticista via bluespace.
+  components:
+  - type: Sprite
+    state: standard
+  - type: SpawnItemsOnUse
+    items: 
+    - id: UniqueLockerGeneticistFilled
+
+- type: entity
+  parent: GeneticistLockerTeleporter
+  id: UniqueGeneticistLockerTeleporter
+  suffix: Unique
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: UniqueEntityChecker
+    markerName: GeneticistLocker
+  - type: UniqueEntityMarker
+    markerName: GeneticistLocker
+    stationOnly: false

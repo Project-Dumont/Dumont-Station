@@ -26,6 +26,7 @@
   id: GeneticistGear
   equipment:
     id: GeneticistPDA
+    pocket1: UniqueGeneticistLockerTeleporter
     ears: ClothingHeadsetMedicalScience
     belt: ClothingBeltMedicalFilled
 
