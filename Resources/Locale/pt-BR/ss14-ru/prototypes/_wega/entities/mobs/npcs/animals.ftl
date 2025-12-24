@@ -2,9 +2,17 @@ ent-MobMonkeyDwarf = {ent-MobMonkey}
     .desc = {ent-MobMonkey.desc}
     .suffix = IA, Anão
 
-ent-MobMonkeyDemon = {ent-MobMonkey}
+ent-MobMonkeyOni = {ent-MobMonkey}
     .desc = {ent-MobMonkey.desc}
-    .suffix = IA, Demônio
+    .suffix = IA, Oni
+
+ent-MobAdultSlimesGrey = {ent-MobMonkey}
+    .desc = {ent-MobMonkey.desc}
+    .suffix = IA, Slime
+
+ent-MobMonkeyDaengati = {ent-MobMonkey}
+    .desc = {ent-MobMonkey.desc}
+    .suffix = IA, Daengati
 
 ent-MobSkrellkey = neara
     .desc = O ancestral antigo dos Skrell em carne e osso. Adora água e parece querer encontrar uma maneira de te matar.
