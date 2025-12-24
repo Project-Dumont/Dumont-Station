@@ -450,6 +450,7 @@
         children:
         - id: BoomboxPink
         - id: BoomboxPurple
+        - id: MP3PlayerRed # Gabystation
       # Rare Group
     - !type:GroupSelector
       weight: 2

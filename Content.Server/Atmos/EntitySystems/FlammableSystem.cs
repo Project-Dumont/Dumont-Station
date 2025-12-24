@@ -154,7 +154,6 @@ using Content.Shared.Timing;
 using Content.Shared.Toggleable;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.Hands;
 using Robust.Server.Audio;
 using Robust.Shared.Maths;
 using Robust.Shared.Physics.Components;
@@ -162,6 +161,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Configuration;
+using Content.Goobstation.Common.Flammability;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -640,6 +640,11 @@ namespace Content.Server.Atmos.EntitySystems
                 }
 
                 _alertsSystem.ShowAlert(uid, flammable.FireAlert);
+
+                // goob edit - fire immunity
+                if (HasComp<FireImmunityComponent>(uid))
+                    continue;
+                // goob edit end
 
                 if (flammable.FireStacks > 0)
                 {

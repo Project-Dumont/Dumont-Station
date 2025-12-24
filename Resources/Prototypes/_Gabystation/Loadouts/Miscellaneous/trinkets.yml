@@ -37,3 +37,14 @@
   storage:
     back:
     - PlushieKiiaraWarden
+
+- type: loadout
+  id: MP3PlayerWhite
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 180000 # 50 horas
+  storage:
+    back:
+    - MP3PlayerWhite
