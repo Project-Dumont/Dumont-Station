@@ -1,0 +1,8 @@
+- type: weightedRandom
+  id: CurrencyStoreRotation
+  weights:
+  GhostRoleToken: 1
+  AntagToken: 1
+  AdminRoleplayToken: 1
+  ClothToken: 1
+  HatToken: 1

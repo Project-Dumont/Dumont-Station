@@ -17,6 +17,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Server.ServerCurrency.UI;
+using Content.Server._Gabystation.ServerCurrency;
 using Content.Server.Administration;
 using Content.Server.EUI;
 using Content.Shared.Administration;
@@ -61,7 +62,8 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            var sys = _entitySystems.GetEntitySystem<ServerCurrencySystem>();
+            var sys = _entitySystems.GetEntitySystem<ServerCurrencyStoreSystem>();
+            sys.DoStoreRotation();
         }
     }
 }

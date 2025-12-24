@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.ServerCurrency;
 
-[Prototype("tokenListing")]
+[Prototype("tokenListing"), Serializable]
 public sealed class TokenListingPrototype : IPrototype
 {
     [IdDataField]

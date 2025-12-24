@@ -12,22 +12,17 @@
 
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
-using Content.Goobstation.Shared.ServerCurrency;
 using Content.Server._RMC14.LinkAccount;
 using Content.Server.GameTicking;
 using Content.Server.Popups;
-using Content.Shared._Gabystation.CCVar;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
-using Content.Shared.Random;
-using Content.Shared.Random.Helpers;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
-using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.ServerCurrency
 {
@@ -44,7 +39,6 @@ namespace Content.Goobstation.Server.ServerCurrency
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly LinkAccountManager _linkAccount = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
-        [Dependency] private readonly IPrototypeManager _prototype = default!;
 
         private int _goobcoinsPerPlayer = 10;
         private int _goobcoinsNonAntagMultiplier = 1;
@@ -54,12 +48,6 @@ namespace Content.Goobstation.Server.ServerCurrency
         private double _goobcoinsLowPopMultiplierStrength = 1.0;
         private bool _goobcoinsUseShortRoundPenalty = true;
         private int _goobcoinsShortRoundPenaltyTargetMinutes = 50;
-
-        public float RotationCooldown = 999f;
-        private float _rotationCooldownTime = 999f;
-        private int _maxTokenPerRotation = 3;
-        public List<TokenListingPrototype> RotationStorage = [];
-        private ProtoId<WeightedRandomPrototype> _storeListProto = "";
 
         public override void Initialize()
         {
@@ -75,10 +63,6 @@ namespace Content.Goobstation.Server.ServerCurrency
             Subs.CVar(_cfg, GoobCVars.GoobcoinLowpopMultiplierStrength, value => _goobcoinsLowPopMultiplierStrength = value, true);
             Subs.CVar(_cfg, GoobCVars.GoobcoinUseShortRoundPenalty, value => _goobcoinsUseShortRoundPenalty = value, true);
             Subs.CVar(_cfg, GoobCVars.GoobcoinShortRoundPenaltyTargetMinutes, value => _goobcoinsShortRoundPenaltyTargetMinutes = value, true);
-
-            // Gaby change
-            Subs.CVar(_cfg, GabyCVars.SCurrencyRotationCooldown, value => _rotationCooldownTime = value, true);
-            Subs.CVar(_cfg, GabyCVars.SCurrencyStoreTokens, value => _maxTokenPerRotation = value, true);
         }
 
         public override void Shutdown()
@@ -167,41 +151,5 @@ namespace Content.Goobstation.Server.ServerCurrency
                 // I really wanted to do some fancy shit where we also display a little sprite next to the pop-up, but that gets pretty complex for such a simple interaction, so, you get this.
             }
         }
-
-        #region Gaby Change
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
-
-            if (RotationCooldown >= 0f)
-            {
-                RotationCooldown -= frameTime;
-                return;
-            }
-
-            DoStoreRotation();
-        }
-
-        public void DoStoreRotation()
-        {
-            Log.Debug("Doing new store rotation...");
-            RotationCooldown = _maxTokenPerRotation;
-            RotationStorage = [];
-
-            if (!_prototype.TryIndex(_storeListProto, out var listProto))
-                return;
-
-            for (int i = 0; i < _maxTokenPerRotation; i++)
-            {
-                var proto = listProto.Pick();
-                if (!_prototype.TryIndex<TokenListingPrototype>(proto, out var token))
-                    continue;
-
-                RotationStorage.Add(token);
-                Log.Debug($"[TOKEN STORE] Added {proto} to store.");
-            }
-        }
-
-        #endregion
     }
 }

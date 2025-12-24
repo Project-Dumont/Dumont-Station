@@ -8,6 +8,7 @@
 using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency.UI;
+using Content.Server._Gabystation.ServerCurrency;
 using Content.Server.Administration.Notes;
 using Content.Server.EUI;
 using Content.Shared.Eui;
@@ -21,7 +22,7 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private readonly IAdminNotesManager _notesMan = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
-        [Dependency] private readonly ServerCurrencySystem _currencySys = default!;
+        [Dependency] private readonly ServerCurrencyStoreSystem _store = default!;
         public CurrencyEui()
         {
             IoCManager.InjectDependencies(this);
@@ -34,7 +35,7 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
 
         public override EuiStateBase GetNewState()
         {
-            return new CurrencyEuiState(_currencySys.RotationCooldown, _currencySys.RotationStorage);
+            return new CurrencyEuiState(_store.RotationCooldown, _store.RotationStorage);
         }
 
         public override void HandleMessage(EuiMessageBase msg)
