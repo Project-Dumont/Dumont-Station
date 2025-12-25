@@ -7,13 +7,16 @@ namespace Content.Shared.Genetics;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedDnaModifierSystem))]
 public sealed partial class DnaModifierComponent : Component
 {
-    [ViewVariables(VVAccess.ReadOnly), DataField("uniqueIdentifiers"), AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public UniqueIdentifiersData? UniqueIdentifiers { get; set; } = default!;
 
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly), DataField, AutoNetworkedField]
     public List<EnzymesPrototypeInfo>? EnzymesPrototypes { get; set; } = default!;
 
-    [ViewVariables(VVAccess.ReadOnly), DataField("instability")]
+    [ViewVariables(VVAccess.ReadOnly), DataField]
+    public HashSet<Type> InitialAbilities { get; set; } = new();
+
+    [ViewVariables(VVAccess.ReadOnly), DataField]
     public int Instability { get; set; } = 0;
 
     [ViewVariables(VVAccess.ReadOnly), DataField]

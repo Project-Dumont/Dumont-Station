@@ -552,14 +552,56 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                     return componentType != null && HasComp(uid, componentType);
                 });
 
-            if (hasComponent && enzymePrototype.TypeDeviation == EnzymesType.Disease)
+            if (hasComponent)
             {
-                enzyme.HexCode = GetHexCodeDisease();
+                enzyme.HexCode = GetHexCodeForType(enzymePrototype.TypeDeviation);
                 totalInstability += enzymePrototype.CostInstability;
+
+                if (enzymePrototype.TypeDeviation != EnzymesType.Disease
+                    && enzymePrototype.AddComponent != null)
+                {
+                    foreach (var componentEntry in enzymePrototype.AddComponent)
+                    {
+                        var componentType = componentEntry.Value.Component?.GetType();
+                        if (componentType != null && HasComp(uid, componentType))
+                            component.InitialAbilities.Add(componentType);
+                    }
+                }
             }
         }
 
         UpdateInstability(uid, component, totalInstability);
+    }
+
+    private string[] GetHexCodeForType(EnzymesType type)
+    {
+        int firstDigit;
+        switch (type)
+        {
+            case EnzymesType.Disease:
+            case EnzymesType.Minor:
+                firstDigit = 9;
+                break;
+
+            case EnzymesType.Intermediate:
+                firstDigit = 0xC;
+                break;
+
+            case EnzymesType.Base:
+                firstDigit = 0xE;
+                break;
+
+            default:
+                firstDigit = _random.Next(0, 16);
+                break;
+        }
+
+        return new[]
+        {
+            firstDigit.ToString("X1"),
+            _random.Next(0, 16).ToString("X1"),
+            _random.Next(0, 16).ToString("X1")
+        };
     }
 
     private string[] GetHexCodeDisease()
@@ -794,7 +836,8 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                     foreach (var componentEntry in enzymePrototype.AddComponent)
                     {
                         var componentType = componentEntry.Value.Component?.GetType();
-                        if (componentType != null && HasComp(ent, componentType))
+                        if (componentType != null && HasComp(ent, componentType)
+                            && !ent.Comp.InitialAbilities.Contains(componentType))
                         {
                             RemComp(ent, componentType);
                             totalInstability -= enzymePrototype.CostInstability;
