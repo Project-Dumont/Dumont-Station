@@ -116,13 +116,14 @@
   id: AdvancedPowercells
   name: research-technology-advanced-powercells
   icon:
-    sprite: Structures/Power/turbo_recharger.rsi
-    state: empty
+    sprite: _Orion/Objects/Tools/inducer-rnd.rsi # Orion-Edit
+    state: icon
   discipline: Industrial
   tier: 1
   cost: 7500
   recipeUnlocks:
   # Orion-Start
+  - InducerScientific
   - MegaCellSuper
   - MegaCellHyper
   - MegaCellHigh

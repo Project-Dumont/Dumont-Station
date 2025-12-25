@@ -357,6 +357,7 @@
     # Gabystation
     - id: HandheldPowerMonitorGs
     - id: RCDProtoCE
+    - id: InducerEngineeringBattery # Orion
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

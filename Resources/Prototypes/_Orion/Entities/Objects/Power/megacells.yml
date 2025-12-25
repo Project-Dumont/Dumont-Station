@@ -1,5 +1,5 @@
 # MegaCells - like PowerCells, but for large machines, such as SMES, etc.
-# Also, MegaCells charge is multiplied by 2.5 compared to the regular version.
+# Also, MegaCells charge is multiplied by 5 compared to the regular version.
 - type: entity
   parent: BaseItem
   id: BaseMegaCell
@@ -58,8 +58,8 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 900
-    startingCharge: 900
+    maxCharge: 1800
+    startingCharge: 1800
 
 - type: entity
   parent: MegaCellSmall
@@ -67,7 +67,7 @@
   suffix: Empty
   components:
   - type: Battery
-    maxCharge: 900
+    maxCharge: 1800
     startingCharge: 0
 
 - type: entity
@@ -85,8 +85,8 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 2700
-    startingCharge: 2700
+    maxCharge: 5400
+    startingCharge: 5400
 
 - type: entity
   parent: MegaCellHigh
@@ -94,7 +94,7 @@
   suffix: Empty
   components:
   - type: Battery
-    maxCharge: 2700
+    maxCharge: 5400
     startingCharge: 0
 
 - type: entity
@@ -112,8 +112,8 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 3125
-    startingCharge: 3125
+    maxCharge: 6250
+    startingCharge: 6250
 
 - type: entity
   parent: MegaCellSuper
@@ -121,7 +121,7 @@
   suffix: Empty
   components:
   - type: Battery
-    maxCharge: 3125
+    maxCharge: 6250
     startingCharge: 0
 
 - type: entity
@@ -139,8 +139,8 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 4500
-    startingCharge: 4500
+    maxCharge: 9000
+    startingCharge: 9000
 
 - type: entity
   parent: MegaCellHyper
@@ -148,7 +148,7 @@
   suffix: Empty
   components:
   - type: Battery
-    maxCharge: 4500
+    maxCharge: 9000
     startingCharge: 0
 
 - type: entity
@@ -166,8 +166,8 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 5500
-    startingCharge: 5500
+    maxCharge: 11000
+    startingCharge: 11000
 
 - type: entity
   parent: MegaCellBluespace
@@ -175,7 +175,7 @@
   suffix: Empty
   components:
   - type: Battery
-    maxCharge: 5500
+    maxCharge: 11000
     startingCharge: 0
 
 - type: entity
@@ -193,8 +193,8 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 3000
-    startingCharge: 3000
+    maxCharge: 6000
+    startingCharge: 6000
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 40
