@@ -10,23 +10,23 @@ ent-MobMonkeyDaengati = {ent-MobMonkey}
     .desc = {ent-MobMonkey.desc}
     .suffix = IA, Daengati
 
-ent-MobAdultSlimesGrey = {ent-MobAdultSlimes}
+ent-MobAdultSlimesGrey = slime cinza
     .desc = {ent-MobAdultSlimes.desc}
     .suffix = IA, Slime
 
-ent-MobMouseRodentia = {ent-MobMouse}
+ent-MobMouseRodentia = rato
     .desc = {ent-MobMouse.desc}
     .suffix = IA, Rodentia
 
-ent-MobMothroachMoth = {ent-MobMothroach}
+ent-MobMothroachMoth = mariposa
     .desc = {ent-MobMothroach.desc}
     .suffix = IA, Moth
 
-ent-MobCockroachChitinid = {ent-MobCockroach}
+ent-MobCockroachChitinid = barata
     .desc = {ent-MobCockroach.desc}
     .suffix = IA, Chitinid
 
-ent-MobSquackroachHarpy = {ent-MobSquackroach}
+ent-MobSquackroachHarpy = squackroach
     .desc = {ent-MobSquackroach.desc}
     .suffix = IA, Harpy
 
