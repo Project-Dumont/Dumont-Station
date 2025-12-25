@@ -228,7 +228,7 @@
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobHarpy
-    lowest: MobSquackroach
+    lowest: MobSquackroachHarpy
   # Corvax-Wega-Genetics-end
 
 - type: entity

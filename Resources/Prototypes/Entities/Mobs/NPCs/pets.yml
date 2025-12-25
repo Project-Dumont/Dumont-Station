@@ -336,6 +336,11 @@
     understands:
     - Cat
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatRuntime
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Exception
@@ -362,6 +367,11 @@
     understands:
     - Cat
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatException
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Floppa
@@ -395,6 +405,11 @@
     understands:
     - Cat
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatFloppa
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Bandito

@@ -4,6 +4,7 @@
     children:
     - id: Multitool
     - id: MonkeyCubeBox
+    - id: BoxBeaker
     - id: MedicalScannerFlatpack
     - id: FlatpackDnaModifierConsole
     - id: BoxDnaFisk

@@ -329,7 +329,7 @@
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobMoth
-    lowest: MobMothroach
+    lowest: MobMothroachMoth
   # Corvax-Wega-Genetics-end
 
 

@@ -174,7 +174,7 @@
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobRodentia
-    lowest: MobMouse
+    lowest: MobMouseRodentia
   # Corvax-Wega-Genetics-end
 
 - type: entity

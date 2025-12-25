@@ -183,6 +183,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             var speciesProto = _prototype.Index<SpeciesPrototype>(humanoid.Species);
 
             var empty = new[] { "0", "0", "0" };
+            var whiteColorArray = new[] { "F", "F", "F" }; 
 
             // Цвет волос (блоки 1-3) и Вторичный цвет волос (блоки 4-6)
             if (markingSet.TryGetCategory(MarkingCategories.Hair, out var hairMarkings))
@@ -265,22 +266,29 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             }
 
             // Тон кожи или цвет меха (блоки 13-16)
-            switch (speciesProto.SkinColoration)
+            if (speciesProto.SkinColoration == HumanoidSkinColor.HumanToned)
             {
-                case HumanoidSkinColor.HumanToned:
-                    // Для HumanToned и TintedHues заполняем блок 13 (тон кожи)
-                    uniqueIdentifiers.SkinTone = ConvertSkinToneToHexArray(humanoid.SkinColor);
-                    break;
+                uniqueIdentifiers.SkinTone = ConvertSkinToneToHexArray(humanoid.SkinColor);
+            }
+            else
+            {
+                uniqueIdentifiers.SkinTone = GenerateRandomToneValues();
+            }
 
-                case HumanoidSkinColor.Hues:
-                case HumanoidSkinColor.TintedHues:
-                case HumanoidSkinColor.VoxFeathers:
-                    // Для Hues и VoxFeathers заполняем блоки 14-16 (цвет меха)
-                    var furColorArray = ConvertColorToHexArray(humanoid.SkinColor);
-                    uniqueIdentifiers.FurColorR = new[] { furColorArray[0], furColorArray[1], furColorArray[2] };
-                    uniqueIdentifiers.FurColorG = new[] { furColorArray[3], furColorArray[4], furColorArray[5] };
-                    uniqueIdentifiers.FurColorB = new[] { furColorArray[6], furColorArray[7], furColorArray[8] };
-                    break;
+            if (speciesProto.SkinColoration == HumanoidSkinColor.Hues ||
+                speciesProto.SkinColoration == HumanoidSkinColor.TintedHues ||
+                speciesProto.SkinColoration == HumanoidSkinColor.VoxFeathers)
+            {
+                var furColorArray = ConvertColorToHexArray(humanoid.SkinColor);
+                uniqueIdentifiers.FurColorR = new[] { furColorArray[0], furColorArray[1], furColorArray[2] };
+                uniqueIdentifiers.FurColorG = new[] { furColorArray[3], furColorArray[4], furColorArray[5] };
+                uniqueIdentifiers.FurColorB = new[] { furColorArray[6], furColorArray[7], furColorArray[8] };
+            }
+            else
+            {
+                uniqueIdentifiers.FurColorR = whiteColorArray;
+                uniqueIdentifiers.FurColorG = whiteColorArray;
+                uniqueIdentifiers.FurColorB = whiteColorArray;
             }
 
             // Цвет головного аксессуара (блоки 17-19)
@@ -468,6 +476,12 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         var enzymesPrototypes = _enzymesIndexer.GetAllEnzymesPrototypes();
         var uniqueEnzymesPrototypes = new List<EnzymesPrototypeInfo>();
         bool hasHumanoidAppearance = HasComp<HumanoidAppearanceComponent>(uid);
+
+        if (component.Lowest != null && TryComp<MetaDataComponent>(uid, out var meta) && meta.EntityPrototype?.ID == component.Lowest)
+        {
+            hasHumanoidAppearance = false;
+        }
+
         foreach (var enzymePrototype in enzymesPrototypes)
         {
             var uniqueEnzyme = new EnzymesPrototypeInfo
@@ -861,11 +875,17 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         if (string.IsNullOrEmpty(component.Upper) || string.IsNullOrEmpty(component.Lowest))
             return;
 
+        if (!TryComp<MetaDataComponent>(target, out var meta))
+            return;
+
         _container.TryGetContainingContainer(target, out var targetContainer);
 
         int hexValue = Convert.ToInt32(enzyme.HexCode[0], 16);
         if (hexValue < 8)
         {
+            if (meta.EntityPrototype?.ID == component.Lowest)
+                return;
+
             if (!HasComp<HumanoidAppearanceComponent>(target))
                 return;
 
@@ -875,7 +895,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             if (TryComp<DamageableComponent>(child, out var damageParent)
                 && _mobThreshold.GetScaledDamage(target, child, out var damage, out _) && damage != null)
             {
-                _damage.SetDamage(child, damageParent, damage);
+                _damage.TryChangeDamage(child, damage, true);
             }
 
             EnsureComp<DnaLowestComponent>(child).Parent = target;
@@ -930,7 +950,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         }
         else
         {
-            if (HasComp<HumanoidAppearanceComponent>(target))
+            if (meta.EntityPrototype?.ID == component.Upper)
                 return;
 
             // Minus one check parent
@@ -962,7 +982,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
                 if (TryComp<DamageableComponent>(parent, out var parentDamage)
                     && _mobThreshold.GetScaledDamage(target, parent, out var damageLowest, out _) && damageLowest != null)
                 {
-                    _damage.SetDamage(parent, parentDamage, damageLowest);
+                    _damage.TryChangeDamage(parent, damageLowest, true);
                 }
 
                 if (TryComp<DnaModifierComponent>(parent, out var dnaModifier))
@@ -996,7 +1016,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
             if (TryComp<DamageableComponent>(child, out var damageParent)
                 && _mobThreshold.GetScaledDamage(target, child, out var damage, out _) && damage != null)
             {
-                _damage.SetDamage(child, damageParent, damage);
+                _damage.TryChangeDamage(child, damage, true);
             }
 
             // First undress

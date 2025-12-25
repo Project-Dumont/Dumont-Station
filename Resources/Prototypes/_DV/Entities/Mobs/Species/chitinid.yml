@@ -132,7 +132,7 @@
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
     upper: MobChitinid
-    lowest: MobCockroach
+    lowest: MobCockroachChitinid
   # Corvax-Wega-Genetics-end
 
 - type: entity

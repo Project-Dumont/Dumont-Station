@@ -9,6 +9,11 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtGenetics
 
+- type: loadout
+  id: GeneticsJumpsuitMilitary
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryGenetics
+
 # Back
 - type: loadout
   id: GeneticsBackpack

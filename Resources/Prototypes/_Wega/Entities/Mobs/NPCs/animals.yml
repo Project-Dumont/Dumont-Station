@@ -6,7 +6,7 @@
   - type: Sprite
     noRot: true
     drawdepth: Mobs
-    scale: 1, 0.8
+    scale: 1, 0.75
   - type: DnaModifier
     upper: MobDwarf
     lowest: MobMonkeyDwarf
@@ -19,6 +19,15 @@
   - type: DnaModifier
     upper: MobOni
     lowest: MobMonkeyOni
+
+- type: entity
+  id: MobMonkeyDaengati
+  parent: MobMonkey
+  suffix: AI, Daengati
+  components: 
+  - type: DnaModifier
+    upper: MobDaengati
+    lowest: MobMonkeyDaengati
 
 - type: entity
   name: gray slime
@@ -42,13 +51,76 @@
     lowest: MobAdultSlimesGrey
 
 - type: entity
-  id: MobMonkeyDaengati
-  parent: MobMonkey
-  suffix: AI, Daengati
+  id: MobMouseRodentia
+  parent: MobMouse
+  suffix: AI, Rodentia
   components: 
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 2, 2
   - type: DnaModifier
-    upper: MobDaengati
-    lowest: MobMonkeyDaengati
+    upper: MobRodentia
+    lowest: MobMouseRodentia
+
+- type: entity
+  id: MobMothroachMoth
+  parent: MobMothroach
+  suffix: AI, Moth
+  components: 
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 2, 2
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMothroachMoth
+
+- type: entity
+  id: MobCockroachChitinid
+  parent: MobCockroach
+  suffix: AI, Chitinid
+  components: 
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 2, 2
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobCockroachChitinid
+
+- type: entity
+  id: MobSquackroachHarpy
+  parent: MobSquackroach
+  suffix: AI, Harpy
+  components: 
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 2, 2
+  - type: DnaModifier
+    upper: MobHarpy
+    lowest: MobSquackroachHarpy
 
 - type: entity
   name: neara
