@@ -38,7 +38,7 @@ public sealed partial class SlasherBloodTrailComponent : Component
 
     [DataField]
     public SoundSpecifier Funkyslasher =
-               new SoundPathSpecifier("/Audio/_Gabystation/Music/slasher_serial_killer_murder_frenzy_insane_horror_soundtrack.ogg")
+               new SoundPathSpecifier("/Audio/_Gabystation/Music/jason_slasher_horror.ogg")
                {
                    Params = AudioParams.Default
                        .WithVolume(-2f)
