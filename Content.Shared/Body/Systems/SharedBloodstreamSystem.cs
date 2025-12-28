@@ -91,6 +91,31 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 TryModifyBloodLevel((uid, bloodstream), bloodstream.BloodRefreshAmount);
             }
 
+            // BloodTypes start
+            ///<summary>
+            ///  Verifying if any Reagent in the bloodstream isn't the entity "blood" Reagent
+            ///  And apply celular damage based on the amount of Foreign "blood" in the bloodstream.
+            ///</summary>
+            {
+                FixedPoint2 foreignBloodAmount = 0;
+                for (byte index = 0; index < bloodSolution.Contents.Count; index++)
+                {
+                    if (!bloodstream.BloodReagent.Id.Equals(bloodSolution.Contents[index].Reagent.ToString()))
+                    {
+                        foreignBloodAmount += bloodSolution.Contents[index].Quantity;
+                    }
+                }
+                if (foreignBloodAmount > 0)
+                {
+                    var foreignBloodPercentage = foreignBloodAmount / bloodstream.BloodMaxVolume;
+                    var celularTotal = bloodstream.CellularDamage * foreignBloodPercentage * 10f;
+                    _damageableSystem.TryChangeDamage(uid, celularTotal, ignoreResistances: false,
+                        interruptsDoAfters: false, splitDamage: SplitDamageBehavior.SplitEnsureAll,
+                        targetPart: TargetBodyPart.All);
+                }
+            }
+            // BloodTypes end
+
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
             if (bloodstream.BleedAmount > 0)

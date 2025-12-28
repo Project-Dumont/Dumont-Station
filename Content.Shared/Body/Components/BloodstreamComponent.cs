@@ -87,6 +87,15 @@ public sealed partial class BloodstreamComponent : Component
     [DataField(required: true), AutoNetworkedField]
     public DamageSpecifier BloodlossDamage = new();
 
+    //bloodType start
+    /// <summary>
+    ///  How much cellular damage will be received based on the foreign "blood".
+    ///  The Value will be defined per species in YML.
+    /// </summary>
+    [DataField(required: true), AutoNetworkedField]
+    public DamageSpecifier CellularDamage = new();
+    //bloodType end
+
     /// <summary>
     /// The base bloodloss damage to be healed if above <see cref="BloodlossThreshold"/>
     /// The default values are defined per mob/species in YML.

@@ -329,6 +329,9 @@
   - type: InjectableSolution
     solution: chemicals
   - type: Bloodstream
+    cellularDamage:
+      types:
+        Cellular: 0.2
     bloodlossDamage:
       types:
         Bloodloss: 0.5
