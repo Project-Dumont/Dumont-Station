@@ -429,6 +429,14 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			_emp.DoEmpEffects((EntityUid)borgBatteryUid, empDamage, empDuration);
 			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
 		}
+		else if (HasComp<JuggernautComponent>(target))
+		{
+			// Juggernauts are immune to sanguine dream (they have no bloodstream)
+			_popup.PopupEntity(
+				Loc.GetString("cult-spell-fail"),
+				ent, ent, PopupType.MediumCaution
+			);
+		}
 		else if (TryComp<BloodstreamComponent>(target, out var bloodstream))
 		{
 			// Inject sleep chemicals (Nocturine + Chloral Hydrate)

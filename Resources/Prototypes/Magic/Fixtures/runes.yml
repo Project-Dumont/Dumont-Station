@@ -116,7 +116,7 @@
 - type: entity
   parent: BaseBloodCultRune
   id: OfferingRune
-  name: "offering rune"
+  name: "conversion rune"
   components:
     - type: OfferOnTrigger
     - type: Sprite
@@ -142,7 +142,7 @@
 - type: entity
   parent: BaseBloodCultRune
   id: OfferingRune_drawing
-  name: "offering rune"
+  name: "conversion rune"
   components:
   - type: Sprite
     sprite: _Funkystation/Structures/BloodCult/bloodrune.rsi
