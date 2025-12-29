@@ -94,21 +94,16 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             // BloodTypes start
             ///<summary>
             ///  Verifying if any Reagent in the bloodstream isn't the entity "blood" Reagent
-            ///  And apply celular damage based on the amount of Foreign "blood" in the bloodstream.
+            ///  And applying celular damage based on the percentage of foreign "blood" in the bloodstream.
             ///</summary>
             {
                 FixedPoint2 foreignBloodAmount = 0;
-                for (byte index = 0; index < bloodSolution.Contents.Count; index++)
-                {
-                    if (!bloodstream.BloodReagent.Id.Equals(bloodSolution.Contents[index].Reagent.ToString()))
-                    {
-                        foreignBloodAmount += bloodSolution.Contents[index].Quantity;
-                    }
-                }
+                bloodSolution.Contents.ForEach(internalContent => foreignBloodAmount =
+                    (!bloodstream.BloodReagent.Id.Equals(internalContent.Reagent.ToString())) ?
+                    foreignBloodAmount + internalContent.Quantity : foreignBloodAmount);
                 if (foreignBloodAmount > 0)
                 {
-                    var foreignBloodPercentage = foreignBloodAmount / bloodstream.BloodMaxVolume;
-                    var celularTotal = bloodstream.CellularDamage * foreignBloodPercentage * 10f;
+                    var celularTotal = bloodstream.CellularDamage * 10f * (foreignBloodAmount / bloodstream.BloodMaxVolume);
                     _damageableSystem.TryChangeDamage(uid, celularTotal, ignoreResistances: false,
                         interruptsDoAfters: false, splitDamage: SplitDamageBehavior.SplitEnsureAll,
                         targetPart: TargetBodyPart.All);
