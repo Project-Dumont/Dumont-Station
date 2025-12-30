@@ -41,9 +41,9 @@ public sealed partial class SlasherBloodTrailComponent : Component
                new SoundPathSpecifier("/Audio/_Gabystation/Music/jason_slasher_horror.ogg")
                {
                    Params = AudioParams.Default
-                       .WithVolume(-7f)
+                       .WithVolume(-9f)
                        .WithRolloffFactor(8f)
-                       .WithMaxDistance(20f)
+                       .WithMaxDistance(10f)
                        .WithLoop(true)
                };
 
