@@ -1674,3 +1674,9 @@ Entries:
       message: Adicionadas as mudanças do Goob até 21/12 (confira a aba do Goob)!
   id: 197
   time: '2025-12-22T13:55:09.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode desligar máquinas para economizar energia.
+  id: 198
+  time: '2025-12-30T01:21:26.0000000+00:00'
