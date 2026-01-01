@@ -6,6 +6,7 @@
     - Grasslands
     - Abyss
     - Snow
+    - Mountains
     - LowDesert
   difficulties: 
     - Challenging
@@ -24,6 +25,7 @@
     - Caves
     - LowDesert # Far Horizons
     - Snow
+    - Mountains
     - Grasslands
     - Lava
   difficulties: 
@@ -35,6 +37,16 @@
   id: LowDesert
   desc: salvage-biome-mod-desert
   biome: LowDesert
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
+
+- type: salvageBiomeMod
+  id: Mountains
+  desc: salvage-biome-mod-mountains
+  biome: Mountains
   difficulties:
     - Challenging
     - Moderate
@@ -99,12 +111,14 @@
   weather: Hail
   biomes:
     - Snow
+    - Mountains
 
 - type: salvageWeatherMod
   id: SnowfallLight
   weather: SnowfallLight
   biomes:
     - Snow
+    - Mountains
 
 - type: salvageWeatherMod
   id: SnowfallMedium
@@ -112,6 +126,7 @@
   cost: 1
   biomes:
     - Snow
+    - Mountains
 
 - type: salvageWeatherMod
   id: SnowfallHeavy
@@ -119,3 +134,4 @@
   cost: 2
   biomes:
     - Snow
+    - Mountains
