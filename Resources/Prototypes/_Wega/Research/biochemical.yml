@@ -12,6 +12,6 @@
   recipeUnlocks:
   - MedicalScannerMachineCircuitboard
   - DnaModifierComputerCircuitboard
-  position: 2,5
+  position: 3,7
   technologyPrerequisites:
   - BiochemicalStasis
