@@ -357,6 +357,24 @@
     id: RadioHostIDCard
 
 - type: entity
+  parent: BasePDA
+  id: PhoneMerchantPDA
+  name: phone merchant PDA
+  description: Ring a ding ding!
+  components:
+  - type: Pda
+    id: PhoneMerchantIDCard
+
+- type: entity
+  parent: BasePDA
+  id: PhoneMerchantPDA
+  name: phone merchant PDA
+  description: Ring a ding ding!
+  components:
+  - type: Pda
+    id: PhoneMerchantIDCard
+
+- type: entity
   parent: CentcomPDA
   id: OuterCommandPDA
   name: outer command PDA
