@@ -65,11 +65,11 @@
   access:
   - Service
   - Maintenance
+  - Journalism # goob
   alternateTitles:
   - ReporterTitleAnchor
   - ReporterTitleInterviewer
   - ReporterTitleTv
-
 
 - type: startingGear
   id: ReporterGear

@@ -243,6 +243,28 @@
   - CivilianOuterClothing
   - CivilianBelt
 
+- type: roleLoadout
+  id: JobRadioHost
+  groups:
+  - Survival
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - Glasses
+  - ServiceWorkerEnvirohelm
+  - ServiceWorkerEnvirosuit
+  - ServiceWorkerEnvirogloves
+  # Civil loadout
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianShoes # Gabystation
+  - CivilianOuterClothing
+  - CivilianBelt
+  
 # gives plasmaman a plasma breathing tank
 # other species get nothing
 - type: roleLoadout

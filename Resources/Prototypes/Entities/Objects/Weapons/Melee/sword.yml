@@ -247,6 +247,9 @@
         Slash: 3
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
+  - type: Reflect # Gabystation edit
+    reflectProb: .3
+    spread: 90
   - type: Item
     storedSprite:
       state: storage

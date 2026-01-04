@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: DT-12 "Luger P-08"
+  parent: [ WeaponEnergyGunLawbringer ]
+  id: WeaponEnergyGunLawbringerSkin
+  description: A versatile energy gun, with many different modes. This model is based on the old and infamous Luger pistol, used centries ago on conflicts on what is today the SolGov's capital planet.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Battery/lawbringer-alt.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - belt
+    sprite: _Gabystation/Objects/Weapons/Guns/Battery/lawbringer-alt.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Gabystation/Weapons/Guns/Gunshots/lawbringerskinshot.ogg
+      params:
+        volume: -4
+    soundEmpty:
+      path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Gabystation/Weapons/Guns/Pickup/lawbringerpskinpick.ogg

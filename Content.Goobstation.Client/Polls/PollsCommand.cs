@@ -1,8 +1,14 @@
+// SPDX-FileCopyrightText: 2025 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Client.UserInterface;
 using Robust.Shared.Console;
+using Content.Shared.Administration;
 
 namespace Content.Goobstation.Client.Polls;
 
+[AnyCommand]
 public sealed class PollsCommand : LocalizedCommands
 {
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;

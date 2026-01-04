@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipePack
+  id: MP3Players
+  recipes:
+  - MP3PlayerWhite
+  - MP3PlayerBlue
+  - MP3PlayerGreen
+  - MP3PlayerPink
+  - MP3PlayerRed

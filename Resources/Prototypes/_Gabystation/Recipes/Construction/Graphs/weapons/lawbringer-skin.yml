@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: LawbringerSkinChange
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: upgraded
+          steps:
+            - tag: WeaponPistolLawbringerSkinKit
+              name: construction-graph-tag-lawbringer-skin-kit
+              doAfter: 5
+
+    - node: upgraded
+      entity: WeaponEnergyGunLawbringerSkin
+

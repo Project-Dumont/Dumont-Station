@@ -229,6 +229,7 @@
   - PlushieTajaran # Gabystation
   - PlushieKiiaraWami # Gabystation
   - PlushieKiiaraWarden # Gabystation
+  - MP3PlayerWhite # Gabystation
   - FoodSnackLollypopWrapped # Goobstation
   - FoodSnackLollypopWrappedRainbow # Goobstation
   - FoodSnackLollypopWrappedCarp # Goobstation
@@ -531,6 +532,7 @@
   - LightBrownMJ
   - BrownMJ
   - MaroonMJ
+  - QuarterzipJumpsuit
  # goob changes end
 
 - type: loadoutGroup
@@ -610,7 +612,7 @@
 
 - type: loadoutGroup
   id: CivilianBackpackRequired #Gabystation
-  parent: CivilianBackpack 
+  parent: CivilianBackpack
   minLimit: 1 #Quem so puder spawnar com mochila civil sempre vai, o resto não necessáriamente
 
 - type: loadoutGroup
