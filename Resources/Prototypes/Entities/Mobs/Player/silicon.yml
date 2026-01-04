@@ -214,6 +214,17 @@
     - SiliconRadiation
   - type: ContentEye  #Goobstation
     maxZoom: 1.44,1.44
+  # Begin DeltaV - AI Shop System
+  - type: StationAiShop
+  - type: Store
+    categories:
+    - AiAbilities
+    currencyWhitelist:
+    - AiMemory
+    balance:
+      AiMemory: 3
+    grantActionsToMind: false
+  # End DeltaV - AI Shop System
 
 - type: entity
   id: AiHeldIntellicard
