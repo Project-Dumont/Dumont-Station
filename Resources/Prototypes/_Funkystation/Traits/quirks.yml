@@ -1,0 +1,24 @@
+- type: trait
+  id: ChronicMigraines
+  name: trait-chronic-migraines-name
+  description: trait-chronic-migraines-desc
+  category: Quirks
+  cost: 0
+  components:
+    - type: ChronicMigraines
+      timeBetweenIncidents: 600, 1800
+      durationOfIncident: 8, 12
+      fadeOutDuration: 0.5
+
+- type: trait
+  id: NeuroAversion
+  name: trait-neuro-aversion-name
+  description: trait-neuro-aversion-desc
+  category: Quirks
+  cost: 0
+  components:
+    - type: NeuroAversion
+      timeBetweenMigraines: 480, 1200
+      migraineDuration: 12, 15
+      startedMindShieldedMultiplier: 1.0
+      midRoundMindShieldedMultiplier: 2.5
