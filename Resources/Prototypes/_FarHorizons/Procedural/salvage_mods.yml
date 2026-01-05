@@ -56,15 +56,18 @@
 # Weathers
 - type: salvageWeatherMod
   id: SalvageWeatherNone
+  desc: salvage-biome-mod-weather-dummy
 
 - type: salvageWeatherMod
   id: AshfallLight
+  desc: salvage-biome-mod-weather-dummy
   weather: AshfallLight
   biomes:
     - Lava
 
 - type: salvageWeatherMod
   id: Ashfall
+  desc: salvage-biome-mod-weather-dummy
   weather: Ashfall
   cost: 1
   biomes:
@@ -72,6 +75,7 @@
 
 - type: salvageWeatherMod
   id: AshfallHeavy
+  desc: salvage-biome-mod-weather-dummy
   weather: AshfallHeavy
   cost: 2
   biomes:
@@ -79,6 +83,7 @@
 
 - type: salvageWeatherMod
   id: Rain
+  desc: salvage-biome-mod-weather-dummy
   weather: Rain
   biomes:
     - Grasslands
@@ -86,6 +91,7 @@
 
 - type: salvageWeatherMod
   id: Storm
+  desc: salvage-biome-mod-weather-dummy
   weather: Storm
   cost: 1
   biomes:
@@ -94,6 +100,7 @@
 
 - type: salvageWeatherMod
   id: Sandstorm
+  desc: salvage-biome-mod-weather-dummy
   weather: Sandstorm
   cost: 1
   biomes:
@@ -101,6 +108,7 @@
 
 - type: salvageWeatherMod
   id: SandstormHeavy
+  desc: salvage-biome-mod-weather-dummy
   weather: SandstormHeavy
   cost: 2
   biomes:
@@ -108,6 +116,7 @@
 
 - type: salvageWeatherMod
   id: Hail
+  desc: salvage-biome-mod-weather-dummy
   weather: Hail
   biomes:
     - Snow
@@ -115,6 +124,7 @@
 
 - type: salvageWeatherMod
   id: SnowfallLight
+  desc: salvage-biome-mod-weather-dummy
   weather: SnowfallLight
   biomes:
     - Snow
@@ -122,6 +132,7 @@
 
 - type: salvageWeatherMod
   id: SnowfallMedium
+  desc: salvage-biome-mod-weather-dummy
   weather: SnowfallMedium
   cost: 1
   biomes:
@@ -130,6 +141,7 @@
 
 - type: salvageWeatherMod
   id: SnowfallHeavy
+  desc: salvage-biome-mod-weather-dummy
   weather: SnowfallHeavy
   cost: 2
   biomes:
