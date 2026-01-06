@@ -1,0 +1,88 @@
+// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._CorvaxGoob.PowerToggle;
+using Content.Shared.Examine;
+using Content.Shared.Verbs;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+
+namespace Content.Client._CorvaxGoob.PowerToggle;
+
+public sealed partial class TogglePowerSystem : SharedTogglePowerSystem
+{
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<TogglePowerComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAlternativeVerbs);
+        SubscribeLocalEvent<TogglePowerComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<TogglePowerComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnExamined(Entity<TogglePowerComponent> entity, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        if (entity.Comp.IsTurnedOn)
+            args.PushMarkup(Loc.GetString("power-toggle-status-on"));
+        else
+            args.PushMarkup(Loc.GetString("power-toggle-status-off"));
+    }
+
+    private void OnGetVerbs(Entity<TogglePowerComponent> entity, ref GetVerbsEvent<Verb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
+            return;
+
+        if (entity.Comp.AltModeEnabled)
+            return;
+
+        var target = args.Target;
+        var user = args.User;
+
+        var verb = new Verb
+        {
+            Text = Loc.GetString("power-toggle-verb"),
+            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/zap.svg.192dpi.png")),
+            Act = () => VerbPowerToggle(entity, target, user)
+        };
+        args.Verbs.Add(verb);
+    }
+
+    private void OnGetAlternativeVerbs(Entity<TogglePowerComponent> entity, ref GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
+            return;
+
+        if (!entity.Comp.AltModeEnabled)
+            return;
+
+        var target = args.Target;
+        var user = args.User;
+
+        var verb = new AlternativeVerb
+        {
+            Text = Loc.GetString("power-toggle-verb"),
+            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/zap.svg.192dpi.png")),
+            Act = () => VerbPowerToggle(entity, target, user),
+            Priority = -100
+        };
+        args.Verbs.Add(verb);
+    }
+
+    private void VerbPowerToggle(Entity<TogglePowerComponent> entity, EntityUid target, EntityUid user)
+    {
+        if (_timing.CurTime < entity.Comp.NextToggle)
+            return;
+
+        entity.Comp.NextToggle = _timing.CurTime + entity.Comp.ToggleInterval;
+        entity.Comp.IsTurnedOn = !entity.Comp.IsTurnedOn;
+
+        RaiseNetworkEvent(new TogglePowerMessage(GetNetEntity(target), GetNetEntity(user)));
+    }
+}
