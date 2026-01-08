@@ -109,3 +109,25 @@
     icon:
       sprite: Objects/Consumable/Food/meat.rsi
       state: corgi
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorArrestObjective
+  name: Trick Security into arresting innocent people
+  description:  Demonstrate their incompetence by showing just how easy they are to fool.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorCameraObjective
+  name: Dismantle the surceillance state
+  description: Bring back the right to privacy for Nanotrasen employees.
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_camera
