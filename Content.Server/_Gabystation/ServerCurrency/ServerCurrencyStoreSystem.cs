@@ -82,6 +82,6 @@ public sealed class ServerCurrencyStoreSystem : EntitySystem
             NewRotation?.Invoke();
         }
 
-        _chatManager.DispatchServerAnnouncement("Token shop content has changed!");
+        _chatManager.DispatchServerAnnouncement(Loc.GetString("gs-balanceui-shop-rotation-announce"));
     }
 }

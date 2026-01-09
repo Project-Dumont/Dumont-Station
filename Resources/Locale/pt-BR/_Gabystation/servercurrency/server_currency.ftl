@@ -57,10 +57,15 @@ gs-balanceui-title-default = Nenhum
 gs-balanceui-select-ghost = Selecione skin fantasma:
 gs-balanceui-ghost-skin-default = Padrão
 
+gs-balanceui-shop-tab-token = Tokens
+gs-balanceui-shop-tab-title = Titulos
+gs-balanceui-shop-tab-ghost = Skins Fantasma
+
 gs-balanceui-shop-label = Loja de Tokens
 gs-balanceui-shop-empty = Fora de estoque!
 gs-balanceui-shop-buy = Comprar
 gs-balanceui-shop-cooldown = Proxima rotação em: {$cooldown}
+gs-balanceui-shop-rotation-announce = O conteudo da loja de token foi reabastecido!
 gs-balanceui-shop-rotation-desc = A loja é re-abastecida com
                             {""} {$tokens} tokens a cada {$cooldown} minutos.
 gs-balanceui-shop-footer = ⚠ Ultilize o AHelp para resgatar seu token.
@@ -82,7 +87,7 @@ gs-balanceui-token-wizard = Mago
 gs-balanceui-token-changeling = Metamorfo
 gs-balanceui-token-blob = Blob
 gs-balanceui-token-devil = Demônio
-gs-balanceui-token-shadowling = Sombrio
+gs-balanceui-token-shadowling = Shadowling
 
 gs-balanceui-shop-token-antag = Token de Antagonista da Rodada
 gs-balanceui-shop-token-ghost = Token de Função Fantasma

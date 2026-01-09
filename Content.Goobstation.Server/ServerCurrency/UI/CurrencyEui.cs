@@ -24,7 +24,7 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
         [Dependency] private readonly IEntitySystemManager _entMan = default!;
         private readonly ServerCurrencyStoreSystem _store;
-        //[Dependency] private readonly ServerCurrencyStoreSystem _store = default!;
+
         public CurrencyEui()
         {
             IoCManager.InjectDependencies(this);
@@ -47,11 +47,11 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             base.HandleMessage(msg);
             switch (msg)
             {
-                case CurrencyEuiMsg.Buy buy:
+                case CurrencyEuiMsg.BuyToken buy:
 
                     BuyToken(buy.TokenId, Player);
                     StateDirty();
-                    break; //grrr fix formatting
+                    break;
             }
         }
 

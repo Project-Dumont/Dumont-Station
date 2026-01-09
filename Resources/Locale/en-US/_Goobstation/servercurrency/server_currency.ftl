@@ -62,10 +62,15 @@ gs-balanceui-title-default = None
 gs-balanceui-select-ghost = Select ghost skin:
 gs-balanceui-ghost-skin-default = Default
 
+gs-balanceui-shop-tab-token = Tokens
+gs-balanceui-shop-tab-title = Titles
+gs-balanceui-shop-tab-ghost = Ghost Skins
+
 gs-balanceui-shop-label = Token Store
 gs-balanceui-shop-empty = Out of stock!
 gs-balanceui-shop-buy = Buy
 gs-balanceui-shop-cooldown = Next rotation in: {$cooldown}
+gs-balanceui-shop-rotation-announce = Token shop content has changed!
 gs-balanceui-shop-rotation-desc = The store is restocked with
                             {""} {$tokens} tokens every {$cooldown} minutes.
 gs-balanceui-shop-footer = ⚠ Use AHelp to redeem your token.

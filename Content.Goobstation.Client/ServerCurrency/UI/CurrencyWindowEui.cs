@@ -20,12 +20,12 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
         {
             _window = new CurrencyWindow();
             _window.OnClose += () => SendMessage(new CurrencyEuiMsg.Close());
-            _window.OnBuy += OnBuyMsg;
+            _window.TokenStore.OnBuy += OnBuyTokenMsg;
         }
 
-        private void OnBuyMsg(ProtoId<TokenListingPrototype> tokenId)
+        private void OnBuyTokenMsg(ProtoId<TokenListingPrototype> tokenId)
         {
-            SendMessage(new CurrencyEuiMsg.Buy
+            SendMessage(new CurrencyEuiMsg.BuyToken
             {
                 TokenId = tokenId
             });
@@ -47,7 +47,6 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             if (state is not CurrencyEuiState s)
                 return;
 
-            _window.Cooldown = s.Cooldown;
             _window.UpdateState(s);
         }
     }

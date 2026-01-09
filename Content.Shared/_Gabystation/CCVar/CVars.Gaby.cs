@@ -56,10 +56,10 @@ public sealed partial class GabyCVars
 
     #region Server Economy
     public static readonly CVarDef<float> SCurrencyRotationCooldown =
-        CVarDef.Create("servercurrency.rotation_cooldown", 150f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("servercurrency.rotation_cooldown", 150f, CVar.SERVER);
 
     public static readonly CVarDef<int> SCurrencyStoreTokens =
-        CVarDef.Create("servercurrency.tokens_per_rotation", 3, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("servercurrency.tokens_per_rotation", 4, CVar.SERVER);
 
     #endregion
 }

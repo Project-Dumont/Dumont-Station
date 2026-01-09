@@ -32,20 +32,14 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
         [Dependency] private readonly IClientAdminManager _adminManager = default!;
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
         public event Action<ProtoId<TokenListingPrototype>>? OnBuy;
         public float Cooldown = 0f;
         private bool _isAdmin = false;
-        private Dictionary<Button, (DateTime LastClick, TokenListingPrototype Listing)> _buttonClickTimes = new();
-        private const double DoubleClickTimeWindow = 1.5; // seconds
-        private IOrderedEnumerable<TokenListingPrototype> _storeStorage;
 
         public CurrencyWindow()
         {
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
-
-            _storeStorage = Enumerable.Empty<TokenListingPrototype>().OrderBy(x => 0);
 
             UpdatePlayerBalance();
 
@@ -60,123 +54,20 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
 
             _serverCur.ClientBalanceChange += UpdatePlayerBalance;
 
+            TokenStore.ShowConfirm += ShowConfirmation;
+
+            Tabs.SetTabTitle(0, Loc.GetString("gs-balanceui-shop-tab-token"));
+            Tabs.SetTabTitle(1, Loc.GetString("gs-balanceui-shop-tab-title"));
+            Tabs.SetTabTitle(2, Loc.GetString("gs-balanceui-shop-tab-ghost"));
+
             // Showcase only
             SelectTitle.AddItem(Loc.GetString("gs-balanceui-title-default"));
             SelectGhost.AddItem(Loc.GetString("gs-balanceui-ghost-skin-default"));
-
-            var cooldown = _cfg.GetCVar<float>("servercurrency.rotation_cooldown") / 60;
-            var tokens = _cfg.GetCVar<int>("servercurrency.tokens_per_rotation");
-            RotationDesc.Text = Loc.GetString("gs-balanceui-shop-rotation-desc", ("tokens", tokens), ("cooldown", cooldown));
-
-            //PopulateTokenButtons();
-            //UpdateButtonStates();
-        }
-
-        protected override void FrameUpdate(FrameEventArgs args)
-        {
-            if (Cooldown >= 0f)
-                Cooldown -= args.DeltaSeconds;
-
-            RotationCooldown.Text = Loc.GetString("gs-balanceui-shop-cooldown", ("cooldown", FormatCooldown(Cooldown)));
-        }
-
-        private static string FormatCooldown(float seconds)
-        {
-            var time = TimeSpan.FromSeconds(seconds);
-
-            if (time.TotalHours >= 1)
-                return $"{(int) time.TotalHours}h {time.Minutes}m {time.Seconds}s";
-
-            if (time.TotalMinutes >= 1)
-                return $"{time.Minutes}m {time.Seconds}s";
-
-            return $"{time.Seconds}s";
         }
 
         public void UpdateState(CurrencyEuiState s)
         {
-            _storeStorage = s.Tokens.OrderByDescending(x => x.Price);
-            PopulateTokenButtons();
-            UpdateButtonStates();
-        }
-
-        // Gaby refactor
-
-        private string GetTokenBtnText(TokenListingPrototype listing)
-        {
-            var name = Loc.GetString("gs-balanceui-shop-buy-btn",
-                            ("token", Loc.GetString(listing.Name)), ("price", listing.Price));
-
-            if (listing.Type == "Antag")
-            {
-                var tokenStr = Loc.GetString("gs-balanceui-shop-token-antag-buy", ("token", Loc.GetString(listing.Name)));
-                name = Loc.GetString("gs-balanceui-shop-buy-btn",
-                            ("token", tokenStr), ("price", listing.Price));
-            }
-
-            return name;
-        }
-        private void PopulateTokenButtons()
-        {
-            TokenListingsContainer.DisposeAllChildren();
-            _buttonClickTimes.Clear();
-
-            foreach (var listing in _storeStorage)
-            {
-                var toolTip = "u are not able to see this";
-                if (listing.Type == "Antag")
-                    toolTip = Loc.GetString("gs-balanceui-shop-token-antag-desc", ("token", Loc.GetString(listing.Name)));
-                else
-                    toolTip = Loc.GetString(listing.Description);
-
-                var button = new Button
-                {
-                    Text = GetTokenBtnText(listing),
-                    MinHeight = 40,
-                    ToolTip = toolTip
-                };
-
-                SetupButton(button, listing);
-
-                TokenListingsContainer.AddChild(button);
-                TokenListingsContainer.AddChild(new Control { MinSize = new Vector2(0, 5) });
-            }
-        }
-
-        // Gaby change
-        private void SetupButton(Button button, TokenListingPrototype listing)
-        {
-            button.OnPressed += _ =>
-            {
-                if (_buttonClickTimes.TryGetValue(button, out var clickData))
-                {
-                    var timeSinceLastClick = (DateTime.Now - clickData.LastClick).TotalSeconds;
-                    if (timeSinceLastClick <= DoubleClickTimeWindow)
-                    {
-                        // Double click occurred
-                        OnBuy?.Invoke(listing.ID);
-                        ShowConfirmation(Loc.GetString(listing.Name));
-                        _buttonClickTimes.Remove(button);
-                        button.Text = GetTokenBtnText(listing);
-                        return;
-                    }
-                }
-
-                // First click
-                _buttonClickTimes[button] = (DateTime.Now, listing);
-                button.Text = Loc.GetString("gs-balanceui-shop-click-confirm");
-
-                // Reset button text after delay
-                Timer.Spawn(TimeSpan.FromSeconds(DoubleClickTimeWindow), () =>
-                {
-                    if (_buttonClickTimes.ContainsKey(button))
-                    {
-                        button.Text = GetTokenBtnText(listing);
-                        _buttonClickTimes.Remove(button);
-                        UpdateButtonStates();
-                    }
-                });
-            };
+            TokenStore.UpdateState(s);
         }
 
         private void Transfer(string player, int value)
@@ -203,27 +94,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
         {
             var balance = _serverCur.GetBalance();
             Header.Text = _serverCur.Stringify(balance);
-            UpdateButtonStates(balance);
-        }
-
-        private void UpdateButtonStates(int? balance = null)
-        {
-            if (balance == null)
-                balance = _serverCur.GetBalance();
-
-            Header.Text = _serverCur.Stringify(balance.Value);
-            foreach (var child in TokenListingsContainer.Children)
-            {
-                if (child is not Button button)
-                    continue;
-
-                // Gaby change - I dont like the way this works
-                var listing = _storeStorage.FirstOrDefault(x =>
-                    GetTokenBtnText(x) == button.Text);
-
-                if (listing != null)
-                    button.Disabled = balance < listing.Price;
-            }
+            TokenStore.UpdateButtonStates(balance);
         }
 
         private void ShowConfirmation(string message)
@@ -233,7 +104,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             Timer.Spawn(TimeSpan.FromSeconds(3), () =>
             {
                 ConfirmationMessage.Visible = false;
-                UpdateButtonStates();
+                TokenStore.UpdateButtonStates();
             });
         }
     }
