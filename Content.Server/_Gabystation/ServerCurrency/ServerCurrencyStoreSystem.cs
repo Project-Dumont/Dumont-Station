@@ -1,6 +1,7 @@
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency;
+using Content.Goobstation.Shared.ServerCurrency.UI;
 using Content.Server._RMC14.LinkAccount;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -30,6 +31,7 @@ public sealed class ServerCurrencyStoreSystem : EntitySystem
     private int _maxTokenPerRotation = 3;
     public List<TokenListingPrototype> RotationStorage = [];
     private readonly ProtoId<WeightedRandomPrototype> _storeListProto = "CurrencyStoreRotation";
+    public event Action? NewRotation;
 
     public override void Initialize()
     {
@@ -55,20 +57,31 @@ public sealed class ServerCurrencyStoreSystem : EntitySystem
     {
         Log.Debug("Doing new store rotation...");
         RotationCooldown = _rotationCooldownTime;
-        RotationStorage = [];
+        RotationStorage.Clear();
 
         if (!_prototype.TryIndex(_storeListProto, out var listProto))
             return;
 
-        for (int i = 0; i < _maxTokenPerRotation; i++)
+        var picked = new HashSet<ProtoId<TokenListingPrototype>>();
+        var safety = 0;
+
+        while (RotationStorage.Count < _maxTokenPerRotation && safety < 50)
         {
+            safety++;
+
             var proto = listProto.Pick();
+
+            if (!picked.Add(proto))
+                continue;
+
             if (!_prototype.TryIndex<TokenListingPrototype>(proto, out var token))
                 continue;
 
             RotationStorage.Add(token);
             Log.Debug($"[TOKEN STORE] Added {proto} to store.");
+            NewRotation?.Invoke();
         }
-        _chatManager.DispatchServerAnnouncement("Store content has changed!");
+
+        _chatManager.DispatchServerAnnouncement("Token shop content has changed!");
     }
 }

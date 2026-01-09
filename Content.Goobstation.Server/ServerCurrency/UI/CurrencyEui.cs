@@ -22,10 +22,14 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private readonly IAdminNotesManager _notesMan = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
-        [Dependency] private readonly ServerCurrencyStoreSystem _store = default!;
+        [Dependency] private readonly IEntitySystemManager _entMan = default!;
+        private readonly ServerCurrencyStoreSystem _store;
+        //[Dependency] private readonly ServerCurrencyStoreSystem _store = default!;
         public CurrencyEui()
         {
             IoCManager.InjectDependencies(this);
+            _store = _entMan.GetEntitySystem<ServerCurrencyStoreSystem>();
+            _store.NewRotation += () => StateDirty();
         }
 
         public override void Opened()
@@ -58,11 +62,20 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             if (!_protoMan.TryIndex<TokenListingPrototype>(tokenId, out var token))
                 return;
 
+            if (!_store.RotationStorage.Contains(token))
+                return;
+
             if (balance < token.Price)
                 return;
 
+            var remark = "Something went wrong - please refund " + token.Price;
+            if (token.Type == "Antag")
+                remark = Loc.GetString("gs-balanceui-shop-token-antag-remark", ("token", Loc.GetString(token.Name)));
+            else
+                remark = Loc.GetString(token.AdminNote);
+
             await _notesMan.AddAdminRemark(Player, Player.UserId, 0,
-                Loc.GetString(token.AdminNote), 0, false, null);
+                Loc.GetString(remark), 0, false, null);
             _currencyMan.RemoveCurrency(Player.UserId, token.Price);
         }
     }

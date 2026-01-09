@@ -51,19 +51,38 @@ gs-balanceui-gift-player-tooltip = Insira o nome do jogador que você quer dar g
 gs-balanceui-gift-value = Valor
 gs-balanceui-gift-value-tooltip = Quantidade de Gabycoins a transferir
 
+gs-balanceui-select-title = Selecione titulo OOC:
+gs-balanceui-title-default = Nenhum
+
+gs-balanceui-select-ghost = Selecione skin fantasma:
+gs-balanceui-ghost-skin-default = Padrão
+
 gs-balanceui-shop-label = Loja de Tokens
 gs-balanceui-shop-empty = Fora de estoque!
 gs-balanceui-shop-buy = Comprar
-gs-balanceui-shop-footer = ⚠ Ahelp para usar seu token. Apenas 1 uso por dia por token.
+gs-balanceui-shop-cooldown = Proxima rotação em: {$cooldown}
+gs-balanceui-shop-rotation-desc = A loja é re-abastecida com
+                            {""} {$tokens} tokens a cada {$cooldown} minutos.
+gs-balanceui-shop-footer = ⚠ Ultilize o AHelp para resgatar seu token.
+gs-balanceui-shop-buy-btn = Comprar {$token} - {$price}gc
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titulo
 
-gs-balanceui-shop-buy-token-antag = Comprar token de antagonista da rodada - {$price}gc
-gs-balanceui-shop-buy-token-ghost = Comprar token de função fantasma - {$price}gc
-gs-balanceui-shop-buy-token-admin-rp = Comprar roleplaying token - {$price}gc
-gs-balanceui-shop-buy-token-admin-hat = Comprar token de chapeu - {$price}gc
-gs-balanceui-shop-buy-token-admin-clotch = Comprar token de peça de roupa - {$price}gc
+gs-balanceui-shop-token-antag-buy = Token de {$token}
+gs-balanceui-shop-token-antag-desc = Permite você virar um {$token} enquanto vivo na rodada.
+gs-balanceui-shop-token-antag-remark = Compru um antag token de "${token}" - Transforme-se enquanto vivo na rodada.
+
+gs-balanceui-token-traitor = Traidor
+gs-balanceui-token-zombie = Zumbi
+gs-balanceui-token-thief = Ladrão
+gs-balanceui-token-paradox-clone = Clone do Paradoxo
+gs-balanceui-token-heretic = Herege
+gs-balanceui-token-wizard = Mago
+gs-balanceui-token-changeling = Metamorfo
+gs-balanceui-token-blob = Blob
+gs-balanceui-token-devil = Demônio
+gs-balanceui-token-shadowling = Sombrio
 
 gs-balanceui-shop-token-antag = Token de Antagonista da Rodada
 gs-balanceui-shop-token-ghost = Token de Função Fantasma
@@ -86,5 +105,6 @@ gs-balanceui-remark-token-ghost = Comprou um ghost role token. (antagonistas sã
 gs-balanceui-remark-token-admin-rp = Comprou um admin RP token. (tier baixo)
 gs-balanceui-remark-token-hat = Comprou um token de chapeu. (Chapeus cosmeticos)
 gs-balanceui-remark-token-cloth = Comprou um token de roupas. (Roupas cosmeticas) | (1 por peça)
+
 gs-balanceui-shop-click-confirm = Pressione novamente para confirmar
 gs-balanceui-shop-purchased = Comprado {$item}

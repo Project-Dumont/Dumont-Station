@@ -52,36 +52,65 @@ gs-balanceui-confirm = Confirm
 
 gs-balanceui-gift-label = Transfer:
 gs-balanceui-gift-player = Player
-gs-balanceui-gift-player-tooltip = Insert the name of the player you want to send the money to
-gs-balanceui-gift-value = Value
-gs-balanceui-gift-value-tooltip = Amount of money to transfer
+gs-balanceui-gift-player-tooltip = Enter the name of the player you want to give Gabycoins to.
+gs-balanceui-gift-value = Amount
+gs-balanceui-gift-value-tooltip = Amount of Gabycoins to transfer
 
-gs-balanceui-shop-label = Tokens Store
+gs-balanceui-select-title = Select OOC title:
+gs-balanceui-title-default = None
+
+gs-balanceui-select-ghost = Select ghost skin:
+gs-balanceui-ghost-skin-default = Default
+
+gs-balanceui-shop-label = Token Store
 gs-balanceui-shop-empty = Out of stock!
 gs-balanceui-shop-buy = Buy
-gs-balanceui-shop-footer = ⚠ Ahelp to use your token. Only 1 use per day.
+gs-balanceui-shop-cooldown = Next rotation in: {$cooldown}
+gs-balanceui-shop-rotation-desc = The store is restocked with
+                            {""} {$tokens} tokens every {$cooldown} minutes.
+gs-balanceui-shop-footer = ⚠ Use AHelp to redeem your token.
+gs-balanceui-shop-buy-btn = Buy {$token} - {$price}gc
 
 gs-balanceui-shop-token-label = Tokens
-gs-balanceui-shop-tittle-label = Titles
+gs-balanceui-shop-tittle-label = Title
 
-gs-balanceui-shop-buy-token-antag = Buy an Antag Token - {$price} Goob Coins
-gs-balanceui-shop-buy-token-admin-abuse = Buy an Admin Abuse Token - {$price} Goob Coins
-gs-balanceui-shop-buy-token-hat = Buy a Hat Token - {$price} Goob Coins
+gs-balanceui-shop-token-antag-buy = {$token} Token
+gs-balanceui-shop-token-antag-desc = Allows you to become a {$token} while alive in the round.
+gs-balanceui-shop-token-antag-remark = Bought an antag token of "{$token}" - Transform while alive in the round.
 
-gs-balanceui-shop-token-antag = High Tier Antag Token
-gs-balanceui-shop-token-admin-abuse = Admin Abuse Token
+gs-balanceui-token-traitor = Traitor
+gs-balanceui-token-zombie = Zombie
+gs-balanceui-token-thief = Thief
+gs-balanceui-token-paradox-clone = Paradox Clone
+gs-balanceui-token-heretic = Heretic
+gs-balanceui-token-wizard = Wizard
+gs-balanceui-token-changeling = Changeling
+gs-balanceui-token-blob = Blob
+gs-balanceui-token-devil = Devil
+gs-balanceui-token-shadowling = Shadowling
+
+gs-balanceui-shop-token-antag = Round Antagonist Token
+gs-balanceui-shop-token-ghost = Ghost Role Token
+gs-balanceui-shop-token-admin-rp = Roleplaying Token
 gs-balanceui-shop-token-hat = Hat Token
+gs-balanceui-shop-token-cloth = Clothing Token
 
-gs-balanceui-shop-buy-token-antag-desc = Allows you become any antag. (Excluding Wizards)
-gs-balanceui-shop-buy-token-admin-abuse-desc = Allows you to request an admin to abuse their powers against you. Admins are encouraged to go wild.
-gs-balanceui-shop-buy-token-hat-desc = An admin will give you a random hat.
+gs-balanceui-shop-buy-token-antag-desc = Allows you to become the round antagonist.
+gs-balanceui-shop-buy-token-ghost-desc = Allows you to request a ghost role to spawn. (antagonists are only valid after 40 minutes into the round)
+gs-balanceui-shop-buy-token-admin-rp-desc = Allows you to ask an admin for help to assist with a Roleplay you want, so the RP has the effect desired by the player. The token must not be used to gain competitive advantage (PVP, objectives...).
+gs-balanceui-shop-buy-token-hat-desc = Ask an admin for a cosmetic hat.
+gs-balanceui-shop-buy-token-cloth-desc = Ask an admin for any allowed cosmetic clothing item.
 
-gs-balanceui-admin-add-label = Add (or subtract) money:
-gs-balanceui-admin-add-player = Player name
-gs-balanceui-admin-add-value = Value
+gs-balanceui-admin-add-label = Add (or subtract) Gabycoins:
+gs-balanceui-admin-add-player = Player Name
+gs-balanceui-admin-add-value = Amount
 
-gs-balanceui-remark-token-antag = Bought an antag token.
-gs-balanceui-remark-token-admin-abuse = Bought an admin abuse token.
-gs-balanceui-remark-token-hat = Bought a hat token.
-gs-balanceui-shop-click-confirm = Click again to confirm
+gs-balanceui-remark-token-antag = Bought an antag token valid for the round antagonist.
+gs-balanceui-remark-token-ghost = Bought a ghost role token. (antagonists are only valid after 40 minutes into the round)
+gs-balanceui-remark-token-admin-rp = Bought an admin RP token. (low tier)
+gs-balanceui-remark-token-hat = Bought a hat token. (Cosmetic hats)
+gs-balanceui-remark-token-cloth = Bought a clothing token. (Cosmetic clothing) | (1 per item)
+
+gs-balanceui-shop-click-confirm = Press again to confirm
 gs-balanceui-shop-purchased = Purchased {$item}
+

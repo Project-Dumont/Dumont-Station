@@ -47,7 +47,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             if (state is not CurrencyEuiState s)
                 return;
 
-            _window.RotationCooldown.Text = s.Cooldown.ToString();
+            _window.Cooldown = s.Cooldown;
             _window.UpdateState(s);
         }
     }
