@@ -15,9 +15,9 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
     public sealed class CurrencyEuiState : EuiStateBase
     {
         public float Cooldown;
-        public List<TokenListingPrototype> Tokens = new List<TokenListingPrototype>();
+        public List<string> Tokens = new List<string>();
 
-        public CurrencyEuiState(float cooldown, List<TokenListingPrototype> tokens)
+        public CurrencyEuiState(float cooldown, List<string> tokens)
         {
             Cooldown = cooldown;
             Tokens = tokens;

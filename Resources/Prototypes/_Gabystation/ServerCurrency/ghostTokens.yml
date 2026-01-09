@@ -1,0 +1,5 @@
+- type: tokenListing
+  id: LoneOpsToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-loneops
+  price: 750

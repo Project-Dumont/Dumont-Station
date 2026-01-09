@@ -18,6 +18,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI;
 public sealed partial class TokenStoreTab : BoxContainer
 {
     [Dependency] private readonly ICommonCurrencyManager _serverCur = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
     public event Action<ProtoId<TokenListingPrototype>>? OnBuy;
     public float Cooldown = 0f;
     private bool _isAdmin = false;
@@ -57,7 +58,17 @@ public sealed partial class TokenStoreTab : BoxContainer
     public void UpdateState(CurrencyEuiState s)
     {
         Cooldown = s.Cooldown;
-        _storeStorage = s.Tokens.OrderByDescending(x => x.Price);
+
+        _storeStorage = s.Tokens
+            .Select(id =>
+            {
+                return _protoManager.TryIndex(id, out TokenListingPrototype? proto)
+                    ? proto
+                    : null;
+            })
+            .OfType<TokenListingPrototype>()
+            .OrderByDescending(p => p.Price);
+
         PopulateTokenButtons();
         UpdateButtonStates();
     }
@@ -70,6 +81,12 @@ public sealed partial class TokenStoreTab : BoxContainer
         if (listing.Type == "Antag")
         {
             var tokenStr = Loc.GetString("gs-balanceui-shop-token-antag-buy", ("token", Loc.GetString(listing.Name)));
+            name = Loc.GetString("gs-balanceui-shop-buy-btn",
+                        ("token", tokenStr), ("price", listing.Price));
+        }
+        if (listing.Type == "GhostROle")
+        {
+            var tokenStr = Loc.GetString("gs-balanceui-shop-token-ghost-role-buy", ("token", Loc.GetString(listing.Name)));
             name = Loc.GetString("gs-balanceui-shop-buy-btn",
                         ("token", tokenStr), ("price", listing.Price));
         }
@@ -86,6 +103,8 @@ public sealed partial class TokenStoreTab : BoxContainer
             var toolTip = "u are not able to see this";
             if (listing.Type == "Antag")
                 toolTip = Loc.GetString("gs-balanceui-shop-token-antag-desc", ("token", Loc.GetString(listing.Name)));
+            if (listing.Type == "GhostRole")
+                toolTip = Loc.GetString("gs-balanceui-shop-token-ghost-role-desc", ("token", Loc.GetString(listing.Name)));
             else
                 toolTip = Loc.GetString(listing.Description);
 

@@ -25,6 +25,7 @@ public sealed class TokenListingPrototype : IPrototype
     [DataField("price", required: true)]
     public int Price { get; private set; }
 
+    // Gaby change > pass everything bellow to optional
     [DataField("description")]
     public string Description { get; private set; } = "token-generic-desc";
 

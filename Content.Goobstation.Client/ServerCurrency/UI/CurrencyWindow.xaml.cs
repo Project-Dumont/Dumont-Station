@@ -31,7 +31,6 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
         [Dependency] private readonly ICommonCurrencyManager _serverCur = default!;
         [Dependency] private readonly IClientAdminManager _adminManager = default!;
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
-        [Dependency] private readonly IPrototypeManager _protoManager = default!;
         public event Action<ProtoId<TokenListingPrototype>>? OnBuy;
         public float Cooldown = 0f;
         private bool _isAdmin = false;

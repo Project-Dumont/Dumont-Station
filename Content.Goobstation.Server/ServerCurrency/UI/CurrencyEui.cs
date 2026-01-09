@@ -14,6 +14,7 @@ using Content.Server.EUI;
 using Content.Shared.Eui;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using YamlDotNet.Core.Tokens;
 
 namespace Content.Goobstation.Server.ServerCurrency.UI
 {
@@ -39,7 +40,12 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
 
         public override EuiStateBase GetNewState()
         {
-            return new CurrencyEuiState(_store.RotationCooldown, _store.RotationStorage);
+            List<string> tokens = [];
+            foreach (var token in _store.RotationStorage)
+            {
+                tokens.Add(token.ID);
+            }
+            return new CurrencyEuiState(_store.RotationCooldown, tokens);
         }
 
         public override void HandleMessage(EuiMessageBase msg)
@@ -68,9 +74,12 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             if (balance < token.Price)
                 return;
 
+            // This looks fucked up but i wanted to make the token prototype less verbose
             var remark = "Something went wrong - please refund " + token.Price;
             if (token.Type == "Antag")
                 remark = Loc.GetString("gs-balanceui-shop-token-antag-remark", ("token", Loc.GetString(token.Name)));
+            if (token.Type == "GhostRole")
+                remark = Loc.GetString("gs-balanceui-shop-token-ghost-role-remark", ("token", Loc.GetString(token.Name)));
             else
                 remark = Loc.GetString(token.AdminNote);
 

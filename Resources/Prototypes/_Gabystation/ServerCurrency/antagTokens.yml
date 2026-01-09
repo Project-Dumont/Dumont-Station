@@ -8,13 +8,13 @@
   id: ZombieToken
   tokenType: Antag
   name: gs-balanceui-token-zombie
-  price: 750
+  price: 1200
 
 - type: tokenListing
   id: ThiefToken
   tokenType: Antag
   name: gs-balanceui-token-thief
-  price: 600
+  price: 500
 
 - type: tokenListing
   id: ParadoxCloneToken
