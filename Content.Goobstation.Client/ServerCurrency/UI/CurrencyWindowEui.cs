@@ -8,8 +8,11 @@
 using Content.Client.Eui;
 using Content.Goobstation.Shared.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency.UI;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Eui;
 using Robust.Shared.Prototypes;
+using Serilog;
+using static Robust.Client.UserInterface.Controls.OptionButton;
 
 namespace Content.Goobstation.Client.ServerCurrency.UI
 {
@@ -21,6 +24,16 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             _window = new CurrencyWindow();
             _window.OnClose += () => SendMessage(new CurrencyEuiMsg.Close());
             _window.TokenStore.OnBuy += OnBuyTokenMsg;
+            _window.OnTitleChanged += OnSelectedTitle;
+        }
+
+        private void OnSelectedTitle(ProtoId<TitleListingPrototype>? proto)
+        {
+            var msg = new CurrencyEuiMsg.SelectTitle()
+            {
+                TitleId = proto
+            };
+            SendMessage(msg);
         }
 
         private void OnBuyTokenMsg(ProtoId<TokenListingPrototype> tokenId)

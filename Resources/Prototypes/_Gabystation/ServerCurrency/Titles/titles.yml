@@ -1,0 +1,11 @@
+- type: titleListing
+  id: TestTitle
+  title: Teste
+  price: 10
+  color: "#00FFFF"
+
+- type: titleListing
+  id: TestTitle2
+  title: Teste2
+  price: 20
+  color: "#ff0000"

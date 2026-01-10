@@ -1,3 +1,4 @@
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
@@ -20,5 +21,6 @@ namespace Content.Client.Lobby
         void DeleteCharacter(ICharacterProfile profile);
         void DeleteCharacter(int slot);
         void UpdateConstructionFavorites(List<ProtoId<ConstructionPrototype>> favorites);
+        void SetTitle(ProtoId<TitleListingPrototype>? proto); // Gaby change - titles
     }
 }

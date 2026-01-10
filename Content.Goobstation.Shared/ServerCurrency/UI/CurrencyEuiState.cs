@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Eui;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -16,11 +17,13 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
     {
         public float Cooldown;
         public List<string> Tokens = new List<string>();
+        public List<string> OwnedTitles = new List<string>();
 
-        public CurrencyEuiState(float cooldown, List<string> tokens)
+        public CurrencyEuiState(float cooldown, List<string> tokens, List<string> titles)
         {
             Cooldown = cooldown;
             Tokens = tokens;
+            OwnedTitles = titles;
         }
     }
     public static class CurrencyEuiMsg
@@ -30,10 +33,26 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
         {
         }
 
+        // Buy messages
+
         [Serializable, NetSerializable]
         public sealed class BuyToken : EuiMessageBase
         {
             public ProtoId<TokenListingPrototype> TokenId;
+        }
+
+        [Serializable, NetSerializable]
+        public sealed class BuyTitle : EuiMessageBase
+        {
+            public ProtoId<TitleListingPrototype> TitleId;
+        }
+
+        // Select msgs
+
+        [Serializable, NetSerializable]
+        public sealed class SelectTitle : EuiMessageBase
+        {
+            public ProtoId<TitleListingPrototype>? TitleId;
         }
     }
 }

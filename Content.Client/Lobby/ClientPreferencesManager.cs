@@ -18,6 +18,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Client;
@@ -143,6 +144,12 @@ namespace Content.Client.Lobby
             Settings = message.Settings;
 
             OnServerDataLoaded?.Invoke();
+        }
+
+        // Gaby change - Titles
+        public void SetTitle(ProtoId<TitleListingPrototype>? proto)
+        {
+            Preferences.OOCTitle = proto;
         }
     }
 }

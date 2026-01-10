@@ -15,6 +15,7 @@ using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 namespace Content.Shared.Preferences
 {
@@ -28,12 +29,16 @@ namespace Content.Shared.Preferences
     {
         private Dictionary<int, ICharacterProfile> _characters;
 
-        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites, ProtoId<GhostSkinListingPrototype>? ghost = null, ProtoId<TitleListingPrototype>? title = null)
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
             SelectedCharacterIndex = selectedCharacterIndex;
             AdminOOCColor = adminOOCColor;
             ConstructionFavorites = constructionFavorites;
+            // Gaby change start
+            GhostSkin = ghost;
+            OOCTitle = title;
+            // Gaby change end
         }
 
         /// <summary>
@@ -72,5 +77,10 @@ namespace Content.Shared.Preferences
         {
             return (index = IndexOfCharacter(profile)) != -1;
         }
+
+        // Gaby change start
+        public ProtoId<GhostSkinListingPrototype>? GhostSkin { get; set; }
+        public ProtoId<TitleListingPrototype>? OOCTitle { get; set; }
+        // Gaby change end
     }
 }

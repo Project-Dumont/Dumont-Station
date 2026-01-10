@@ -198,7 +198,9 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Server._RMC14.LinkAccount; // RMC - Patreon
+using Content.Server._RMC14.LinkAccount;
+using Content.Server._Gabystation.ServerCurrency.Managers; // RMC - Patreon
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 namespace Content.Server.Chat.Managers;
 
@@ -227,6 +229,7 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
+    [Dependency] private readonly CurrencyStoreManager _storeMan = default!; // Gaby - titles
 
     /// <summary>
     /// The maximum length a player-sent message can be sent
@@ -433,16 +436,17 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         Color? colorOverride = null;
-        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
+        var prefs = _preferencesManager.GetPreferences(player.UserId);
+        var title = _storeMan.SanitizeTitleString(prefs.OOCTitle) ?? ""; // Gabystation - titles
+
+        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("title", title), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
         if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
-        {
-            var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
-        }
-        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
+
+        if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
             _linkAccount.GetPatron(player)?.Tier != null) // RMC - Patreon
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", "#aa00ff"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message))); // RMC - Patreon
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("title", title), ("patronColor", "#aa00ff"), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message))); // RMC - Patreon
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage

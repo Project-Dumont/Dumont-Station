@@ -20,6 +20,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Gabystation.ServerCurrency;
+
 public sealed class ServerCurrencyStoreSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;

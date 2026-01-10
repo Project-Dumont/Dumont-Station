@@ -6,29 +6,26 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Shared.ServerCurrency;
+namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
-[Prototype("tokenListing")]
-public sealed class TokenListingPrototype : IPrototype
+[Prototype("ghostSkinListing")]
+public sealed class GhostSkinListingPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    // Gaby change
-    [DataField("tokenType", required: true)]
-    public string Type { get; private set; } = "Misc";
 
     [DataField("name", required: true)]
     public string Name { get; private set; } = string.Empty;
 
     [DataField("price", required: true)]
-    public int Price { get; private set; }
+    public int Price { get; private set; } = 0;
 
-    // Gaby change > pass everything bellow to optional
-    [DataField("description")]
-    public string Description { get; private set; } = "token-generic-desc";
+    [DataField("sprite", required: true)]
+    public SpriteSpecifier? Sprite { get; private set; }
 
-    [DataField("adminNote")]
-    public string AdminNote { get; private set; } = "token-generic-note";
+    [DataField("avaible", required: false)]
+    public bool Avaible { get; private set; } = true; //todo this & comand giveTitle
 }

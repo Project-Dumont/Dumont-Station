@@ -86,6 +86,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
@@ -123,6 +124,12 @@ namespace Content.Server.Database
         Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot);
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
+
+        // Gabystation start - titles and more
+        Task SaveOOCTitleAsync(NetUserId userId, ProtoId<TitleListingPrototype>? protoId);
+
+        Task SaveGhostSkinAsync(NetUserId userId, ProtoId<GhostSkinListingPrototype>? ghostId);
+        // Gabystation end
 
         Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites);
 
@@ -601,6 +608,18 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
+        }
+
+        public Task SaveOOCTitleAsync(NetUserId userId, ProtoId<TitleListingPrototype>? titleId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveOOCTitleAsync(userId, titleId));
+        }
+
+        public Task SaveGhostSkinAsync(NetUserId userId, ProtoId<GhostSkinListingPrototype>? ghostId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveGhostSkinAsync(userId, ghostId));
         }
 
         public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)

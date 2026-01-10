@@ -9,12 +9,13 @@ using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency.UI;
 using Content.Server._Gabystation.ServerCurrency;
+using Content.Server._Gabystation.ServerCurrency.Managers;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Server.Administration.Notes;
 using Content.Server.EUI;
 using Content.Shared.Eui;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using YamlDotNet.Core.Tokens;
 
 namespace Content.Goobstation.Server.ServerCurrency.UI
 {
@@ -24,6 +25,7 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
         [Dependency] private readonly IAdminNotesManager _notesMan = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
         [Dependency] private readonly IEntitySystemManager _entMan = default!;
+        [Dependency] private readonly CurrencyStoreManager _storeMan = default!;
         private readonly ServerCurrencyStoreSystem _store;
 
         public CurrencyEui()
@@ -45,7 +47,8 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             {
                 tokens.Add(token.ID);
             }
-            return new CurrencyEuiState(_store.RotationCooldown, tokens);
+            List<string> titles = ["TestTitle", "TestTitle2"];
+            return new CurrencyEuiState(_store.RotationCooldown, tokens, titles);
         }
 
         public override void HandleMessage(EuiMessageBase msg)
@@ -53,6 +56,13 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             base.HandleMessage(msg);
             switch (msg)
             {
+                case CurrencyEuiMsg.SelectTitle sel:
+                    if (sel.TitleId == "Default")
+                        sel.TitleId = null;
+
+                    _storeMan.TrySetTitle(Player.UserId, sel.TitleId);
+                    break;
+
                 case CurrencyEuiMsg.BuyToken buy:
 
                     BuyToken(buy.TokenId, Player);
