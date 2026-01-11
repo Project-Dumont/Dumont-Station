@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["yip.ogg"]
   license: "CC0-1.0"
   copyright: "Modified from 'Video Game Squeak' by freesound user 'Breviceps'. The original audio was converted from WAV to OGG format"
