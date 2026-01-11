@@ -274,3 +274,47 @@
   chatMessages: [ gekkers ]
   chatTriggers:
   - gekkers
+
+- type: emote
+  id: Yips
+  name: chat-emote-name-yips
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    tags:
+    - VulpEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-yips"]
+  chatTriggers:
+  - yip
+  - yip.
+  - yip?
+  - yip!
+  - yips
+  - yips.
+  - yips?
+  - yips!
+
+- type: emote
+  id: Whines
+  name: chat-emote-name-whine
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+     tags:
+     - VulpEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-whine"]
+  chatTriggers:
+  - fwhine
+  - fwhine.
+  - fwhine?
+  - fwhine!
+  - fwhines
+  - fwhines.
+  - fwhines?
+  - fwhines!
