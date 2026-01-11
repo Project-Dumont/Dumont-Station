@@ -6,3 +6,7 @@ chat-speech-verb-feroxi-4 = growls
 chat-emote-name-gnash = Gnash
 chat-emote-name-yap = Yaps
 chat-emote-name-gekker = Gekkers
+chat-emote-name-yips = Fox Yip
+chat-emote-name-whine = Fox Whine
+chat-emote-msg-yips = yips
+chat-emote-msg-whine = whines 
