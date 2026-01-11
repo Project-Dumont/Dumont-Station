@@ -183,6 +183,7 @@
   - type: Ghost
   - type: GhostHearing
   - type: ShowElectrocutionHUD
+  - type: ToggleableHUD # Orion
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
     receiveAllChannels: true

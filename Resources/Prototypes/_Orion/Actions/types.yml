@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseToggleAction
+  id: ActionToggleHUDs
+  name: Toggle HUDs
+  description: Toggles the visibility of the HUDs.
+  components:
+  - type: Action
+    icon: { sprite: Clothing/Eyes/Hud/omni.rsi, state: icon }
+    itemIconStyle: NoItem
+    priority: -1
+    useDelay: 1
+    checkCanInteract: false
