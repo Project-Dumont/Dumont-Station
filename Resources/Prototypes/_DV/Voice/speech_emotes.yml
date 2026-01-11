@@ -249,3 +249,28 @@
     - gnashed her teeth
     - gnashed his teeth
     - gnashed its teeth
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  category: Vocal
+  chatMessages: [ yaps ]
+  chatTriggers:
+  - yap
+  - yaps
+
+- type: emote
+  id: Gekker
+  name: chat-emote-name-gekker
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  category: Vocal  
+  chatMessages: [ gekkers ]
+  chatTriggers:
+  - gekkers

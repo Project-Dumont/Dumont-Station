@@ -147,3 +147,8 @@
   id: XenoborgPing
   files:
   - /Audio/Voice/Xenoborg/xenoborg_ping.ogg
+  
+- type: soundCollection
+  id: VulpkaninYap
+  files:
+  - /Audio/_DV/Voice/Vulpkanin/yap.ogg

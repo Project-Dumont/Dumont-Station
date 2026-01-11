@@ -101,6 +101,10 @@
       collection: Wurble
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Yap: 
+      collection: VulpkaninYap
+    Gekker:
+      collection: VulpkaninGekker
 
 - type: emoteSounds
   id: SoundsHarpyMale
@@ -187,6 +191,10 @@
       collection: Mars
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Yap: 
+      collection: VulpkaninYap
+    Gekker:
+      collection: VulpkaninGekker
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -237,6 +245,10 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Yap: 
+      collection: VulpkaninYap
+    Gekker:
+      collection: VulpkaninGekker
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -287,6 +299,10 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Yap: 
+      collection: VulpkaninYap
+    Gekker:
+      collection: VulpkaninGekker
 
 - type: emoteSounds
   id: MobDog

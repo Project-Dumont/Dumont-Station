@@ -49,3 +49,8 @@
   - /Audio/_EinsteinEngines/Voice/Vulpkanin/vulpscream3.ogg
   - /Audio/_EinsteinEngines/Voice/Vulpkanin/vulpscream4.ogg
   - /Audio/_EinsteinEngines/Voice/Vulpkanin/vulpscream5.ogg
+
+- type: soundCollection
+  id: VulpkaninGekker
+  files:
+  - /Audio/_DV/Voice/Vulpkanin/gekker.ogg
