@@ -44,3 +44,9 @@ server-currency-command-completion-2 = Value
 server-currency-command-error-1 = Unable to find a player by that name.
 server-currency-command-error-2 = Value must be an integer.
 server-currency-command-return = {$player} has {$balance}.
+
+# Gaby
+
+server-currency-command-desc-add-title = Add a title to a user or yourself.
+server-currency-command-error-unknow-prototype = Unknow prototype.
+server-currency-command-error-has-title = User already has this title!

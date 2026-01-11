@@ -138,6 +138,16 @@ namespace Content.Server.Database
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
         #endregion
 
+        #region Gaby Station
+        Task<List<GabyModel.GabyStoreOwnedItems>> GetStorePurchasesAsync(NetUserId userId, GabyModel.DbPurchaseType type);
+
+        public Task<bool> HasStorePurchaseAsync(NetUserId userId, GabyModel.DbPurchaseType type, string prototype);
+
+        Task AddStorePurchaseAsync(NetUserId userId, GabyModel.DbPurchaseType type, string prototype);
+
+        Task RemoveStorePurchaseAsync(NetUserId userId, GabyModel.DbPurchaseType type, string prototype);
+        #endregion
+
         #region User Ids
         // Username assignment (for guest accounts, so they persist GUID)
         Task AssignUserIdAsync(string name, NetUserId userId);
@@ -633,6 +643,45 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
         }
+
+        #region Gaby Station
+
+        public Task<List<GabyModel.GabyStoreOwnedItems>> GetStorePurchasesAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetOwnedStoreItemsAsync(userId, type));
+        }
+
+        public Task<bool> HasStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.HasStorePurchaseAsync(userId, type, prototype));
+        }
+
+        public Task AddStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddStorePurchaseAsync(userId, type, prototype));
+        }
+
+        public Task RemoveStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveStorePurchaseAsync(userId, type, prototype));
+        }
+
+        #endregion
 
         public Task AssignUserIdAsync(string name, NetUserId userId)
         {

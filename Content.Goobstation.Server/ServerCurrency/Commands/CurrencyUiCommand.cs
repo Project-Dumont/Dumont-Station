@@ -18,10 +18,14 @@
 
 using Content.Goobstation.Server.ServerCurrency.UI;
 using Content.Server._Gabystation.ServerCurrency;
+using Content.Server._Gabystation.ServerCurrency.Managers;
 using Content.Server.Administration;
 using Content.Server.EUI;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Administration;
+using Robust.Server.Player;
 using Robust.Shared.Console;
+using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.ServerCurrency.Commands
 {
@@ -64,6 +68,63 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         {
             var sys = _entitySystems.GetEntitySystem<ServerCurrencyStoreSystem>();
             sys.DoStoreRotation();
+        }
+    }
+
+    [AdminCommand(AdminFlags.Fun)]
+    public sealed class AddTitleCommand : IConsoleCommand
+    {
+        [Dependency] private readonly CurrencyStoreManager _store = default!;
+        [Dependency] private readonly IPrototypeManager _proto = default!;
+
+        public string Command => "title:add";
+
+        public string Description => Loc.GetString("server-currency-command-desc-add-title");
+
+        public string Help => $"{Command} <User> <TitleListiningPrototype>";
+
+        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            if (args.Length != 2)
+            {
+                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                return;
+            }
+
+            if (shell.Player is not { } player){
+                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
+                return;
+            }
+
+            var plyMgr = IoCManager.Resolve<IPlayerManager>();
+            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            {
+                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
+                return;
+            }
+
+            if (args[1] is not string || !_proto.HasIndex<TitleListingPrototype>(args[1]))
+            {
+                shell.WriteError(Loc.GetString("server-currency-command-error-unknow-prototype"));
+                return;
+            }
+
+            if (_store.HasTitle(player.UserId, args[1]))
+            {
+                shell.WriteError(Loc.GetString("server-currency-command-error-has-title"));
+                return;
+            }
+            _store.AddTitle(player.UserId, args[1]);
+        }
+
+        public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            return args.Length switch
+            {
+                1 => CompletionResult.FromHintOptions(CompletionHelper.SessionNames(), Loc.GetString("server-currency-command-completion-1")),
+                2 => CompletionResult.FromHintOptions(CompletionHelper.PrototypeIDs<TitleListingPrototype>(), Loc.GetString("server-currency-command-completion-2")),
+                _ => CompletionResult.Empty
+            };
         }
     }
 }

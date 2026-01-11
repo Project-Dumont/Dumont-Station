@@ -5,7 +5,13 @@
   color: "#00FFFF"
 
 - type: titleListing
-  id: TestTitle2
-  title: Teste2
-  price: 20
-  color: "#ff0000"
+  id: BetaTitle
+  title: Titulo [/color][color=#FF8DA1]Beta
+  price: 650 # Por tempo ilimitado!
+  color: "#ffff00"
+
+- type: titleListing
+  id: RobustTitle
+  title: Robusto
+  price: 7500
+  color: "#808080"

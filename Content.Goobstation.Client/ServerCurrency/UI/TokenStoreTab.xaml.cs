@@ -36,9 +36,6 @@ public sealed partial class TokenStoreTab : BoxContainer
 
     protected override void FrameUpdate(FrameEventArgs args)
     {
-        if (Cooldown >= 0f)
-            Cooldown -= args.DeltaSeconds;
-
         RotationCooldown.Text = Loc.GetString("gs-balanceui-shop-cooldown", ("cooldown", FormatCooldown(Cooldown)));
     }
 
@@ -84,7 +81,7 @@ public sealed partial class TokenStoreTab : BoxContainer
             name = Loc.GetString("gs-balanceui-shop-buy-btn",
                         ("token", tokenStr), ("price", listing.Price));
         }
-        if (listing.Type == "GhostROle")
+        if (listing.Type == "GhostRole")
         {
             var tokenStr = Loc.GetString("gs-balanceui-shop-token-ghost-role-buy", ("token", Loc.GetString(listing.Name)));
             name = Loc.GetString("gs-balanceui-shop-buy-btn",
@@ -103,7 +100,7 @@ public sealed partial class TokenStoreTab : BoxContainer
             var toolTip = "u are not able to see this";
             if (listing.Type == "Antag")
                 toolTip = Loc.GetString("gs-balanceui-shop-token-antag-desc", ("token", Loc.GetString(listing.Name)));
-            if (listing.Type == "GhostRole")
+            else if (listing.Type == "GhostRole")
                 toolTip = Loc.GetString("gs-balanceui-shop-token-ghost-role-desc", ("token", Loc.GetString(listing.Name)));
             else
                 toolTip = Loc.GetString(listing.Description);

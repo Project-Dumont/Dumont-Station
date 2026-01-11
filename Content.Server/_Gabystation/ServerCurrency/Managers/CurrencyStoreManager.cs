@@ -5,6 +5,9 @@ using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Asynchronous;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace Content.Server._Gabystation.ServerCurrency.Managers;
 
@@ -16,6 +19,7 @@ public sealed class CurrencyStoreManager : IPostInjectInit
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly ITaskManager _task = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -44,6 +48,53 @@ public sealed class CurrencyStoreManager : IPostInjectInit
         var prefs = _prefs.GetPreferences(userId);
         prefs.OOCTitle = title?.Id; // save in cached prefs
         return true;
+    }
+
+    public List<ProtoId<TitleListingPrototype>> GetOwnedTitles(NetUserId userId)
+    {
+        var list = Task.Run(() =>
+                _db.GetStorePurchasesAsync(userId, GabyModel.DbPurchaseType.Title))
+            .GetAwaiter()
+            .GetResult();
+
+        return list
+            .Select(id => new ProtoId<TitleListingPrototype>(id.Prototype))
+            .ToList();
+    }
+
+    public bool HasTitle(NetUserId userId, ProtoId<TitleListingPrototype> title)
+    {
+        var result = Task.Run(() =>
+                _db.HasStorePurchaseAsync(userId, GabyModel.DbPurchaseType.Title, title))
+            .GetAwaiter()
+            .GetResult();
+
+        return result;
+    }
+
+    public void AddTitle(NetUserId userId, ProtoId<TitleListingPrototype> title)
+    {
+        if (HasTitle(userId, title))
+            return;
+
+        Task.Run(() =>
+            _db.AddStorePurchaseAsync(
+                userId,
+                GabyModel.DbPurchaseType.Title,
+                title.Id
+            )
+        ).GetAwaiter().GetResult();
+    }
+
+    public void RemoveTitle(NetUserId userId, ProtoId<TitleListingPrototype> title)
+    {
+        Task.Run(() =>
+            _db.RemoveStorePurchaseAsync(
+                userId,
+                GabyModel.DbPurchaseType.Title,
+                title.Id
+            )
+        ).GetAwaiter().GetResult();
     }
 
     /// <summary>

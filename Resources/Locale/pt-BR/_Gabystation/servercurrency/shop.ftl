@@ -26,6 +26,8 @@ gs-balanceui-shop-rotation-desc = A loja é re-abastecida com
                             {""} {$tokens} tokens a cada {$cooldown} minutos.
 gs-balanceui-shop-footer = ⚠ Ultilize o AHelp para resgatar seu token.
 gs-balanceui-shop-buy-btn = Comprar {$token} - {$price}gc
+gs-balanceui-shop-buy-title-btn = Comprar titulo [{$title}] por {$price}gc
+gs-balanceui-shop-buy-title-owned = Comprar titulo [{$title}] (JÁ POSSUIDO)
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titulo

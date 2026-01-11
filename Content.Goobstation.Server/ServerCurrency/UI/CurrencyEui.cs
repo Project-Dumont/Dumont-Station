@@ -47,7 +47,7 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             {
                 tokens.Add(token.ID);
             }
-            List<string> titles = ["TestTitle", "TestTitle2"];
+            var titles = _storeMan.GetOwnedTitles(Player.UserId);
             return new CurrencyEuiState(_store.RotationCooldown, tokens, titles);
         }
 
@@ -64,11 +64,30 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
                     break;
 
                 case CurrencyEuiMsg.BuyToken buy:
-
                     BuyToken(buy.TokenId, Player);
                     StateDirty();
                     break;
+
+                case CurrencyEuiMsg.BuyTitle buy:
+                    BuyTitle(buy.TitleId);
+                    StateDirty();
+                    break;
             }
+        }
+
+        private void BuyTitle(ProtoId<TitleListingPrototype> titleId)
+        {
+            if (!_protoMan.TryIndex<TitleListingPrototype>(titleId, out var title))
+                return;
+
+            if (!_currencyMan.CanAfford(Player.UserId, title.Price, out _))
+                return;
+
+            if (!title.Avaible || _storeMan.HasTitle(Player.UserId, titleId))
+                return;
+
+            _currencyMan.RemoveCurrency(Player.UserId, title.Price);
+            _storeMan.AddTitle(Player.UserId, titleId);
         }
 
         private async void BuyToken(ProtoId<TokenListingPrototype> tokenId, ICommonSession playerName)

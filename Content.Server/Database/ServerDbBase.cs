@@ -591,6 +591,73 @@ namespace Content.Server.Database
         }
         #endregion
 
+        #region Gaby Station
+        public async Task<List<GabyModel.GabyStoreOwnedItems>> GetOwnedStoreItemsAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.GabyStoreOwnedItems
+                .Where(p => p.PlayerId == userId.UserId && p.Type == type)
+                .ToListAsync();
+        }
+
+        public async Task<bool> HasStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.GabyStoreOwnedItems
+                .AnyAsync(p =>
+                    p.PlayerId == userId.UserId &&
+                    p.Type == type &&
+                    p.Prototype == prototype);
+        }
+
+        public async Task AddStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            await using var db = await GetDb();
+
+            var entry = new GabyModel.GabyStoreOwnedItems
+            {
+                PlayerId = userId.UserId,
+                Type = type,
+                Prototype = prototype,
+                PurchaseDate = DateTime.UtcNow
+            };
+
+            db.DbContext.GabyStoreOwnedItems.Add(entry);
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task RemoveStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            await using var db = await GetDb();
+
+            var entry = await db.DbContext.GabyStoreOwnedItems
+                .SingleOrDefaultAsync(p =>
+                    p.PlayerId == userId.UserId &&
+                    p.Type == type &&
+                    p.Prototype == prototype);
+
+            if (entry is null)
+                return;
+
+            db.DbContext.GabyStoreOwnedItems.Remove(entry);
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        #endregion
+
         #region User Ids
         public async Task<NetUserId?> GetAssignedUserIdAsync(string name)
         {

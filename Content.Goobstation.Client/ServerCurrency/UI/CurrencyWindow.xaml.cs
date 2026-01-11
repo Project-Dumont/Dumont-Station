@@ -26,6 +26,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Controls.OptionButton;
 using Timer = Robust.Shared.Timing.Timer;
+using YamlDotNet.Core.Tokens;
 
 namespace Content.Goobstation.Client.ServerCurrency.UI
 {
@@ -59,6 +60,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             _serverCur.ClientBalanceChange += UpdatePlayerBalance;
 
             TokenStore.ShowConfirm += ShowConfirmation;
+            TitleStore.ShowConfirm += ShowConfirmation;
 
             SelectTitle.OnItemSelected += HandleChangeTitle;
 
@@ -68,13 +70,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
 
             var prefs = _prefs.Preferences?.OOCTitle;
 
-            // Showcase only
-            /*SelectTitle.AddItem(Loc.GetString("gs-balanceui-title-default"));
-            if (prefs is not null)
-            {
-                SelectTitle.AddItem(prefs);
-                SelectTitle.Select(1);
-            }*/
+            //todo arrumar cooldown do tokens tore
 
             SelectGhost.AddItem(Loc.GetString("gs-balanceui-ghost-skin-default"));
         }
@@ -101,11 +97,11 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             {
                 var title = s.OwnedTitles[i];
                 if (!_proto.TryIndex<TitleListingPrototype>(title, out var proto))
-                    return;
+                    continue;
 
                 var str = Loc.GetString(proto.Title);
                 SelectTitle.AddItem(str);
-                SelectTitle.SetItemMetadata(i + 1, title);
+                SelectTitle.SetItemMetadata(i + 1, title.Id);
                 if (_prefs.Preferences?.OOCTitle == title)
                     SelectTitle.Select(i + 1);
             }
@@ -115,6 +111,15 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
         {
             PopulateTitleButtons(s);
             TokenStore.UpdateState(s);
+            TitleStore.UpdateState(s);
+        }
+
+        protected override void FrameUpdate(FrameEventArgs args)
+        {
+            // frame update is not called when u are not in the tabs
+            // so i had to pass the cooldown logic to the main window
+            if (TokenStore.Cooldown >= 0f)
+                TokenStore.Cooldown -= args.DeltaSeconds;
         }
 
         private void Transfer(string player, int value)

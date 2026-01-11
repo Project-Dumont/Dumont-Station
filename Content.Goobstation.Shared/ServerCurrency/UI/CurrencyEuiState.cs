@@ -17,9 +17,9 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
     {
         public float Cooldown;
         public List<string> Tokens = new List<string>();
-        public List<string> OwnedTitles = new List<string>();
+        public List<ProtoId<TitleListingPrototype>> OwnedTitles = new List<ProtoId<TitleListingPrototype>>();
 
-        public CurrencyEuiState(float cooldown, List<string> tokens, List<string> titles)
+        public CurrencyEuiState(float cooldown, List<string> tokens, List<ProtoId<TitleListingPrototype>> titles)
         {
             Cooldown = cooldown;
             Tokens = tokens;
