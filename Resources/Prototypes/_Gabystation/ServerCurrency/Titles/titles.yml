@@ -1,23 +1,23 @@
 - type: titleListing
   id: PoorTitle
-  title: Pobre
+  title: title-poor
   price: 1
 
 - type: titleListing
   id: NoobTitle
-  title: Noob
+  title: title-noob
   price: 100
   color: "#ffff00"
 
 - type: titleListing
   id: ClownTitle
-  title: Clown
+  title: title-clown
   price: 650
   color: "#FF69B4"
 
 - type: titleListing
   id: SiliconTitle
-  title: Silicio
+  title: title-silicon
   price: 850
   color: "#00FFFF"
 
@@ -25,31 +25,31 @@
 
 - type: titleListing
   id: DeptoTitleSciencie
-  title: Sci
+  title: title-depto-science
   price: 1120
   color: "#a884f3"
 
 - type: titleListing
   id: DeptoTitleMedbay
-  title: Med
+  title: title-depto-medbay
   price: 1120
   color: "#3AB0AC"
 
 - type: titleListing
   id: DeptoTitleCargo
-  title: Cargo
+  title: title-depto-cargo
   price: 1120
   color: "#a08662"
 
 - type: titleListing
   id: DeptoTitleSecurity
-  title: Sec
+  title: title-depto-security
   price: 1120
   color: "#c32450"
 
 - type: titleListing
   id: DeptoTitleEnginner
-  title: Eng
+  title: title-depto-engineer
   price: 1120
   color: "#e6904e"
 
@@ -57,25 +57,25 @@
 
 - type: titleListing
   id: CaptainTitle
-  title: Cap
+  title: title-captain
   price: 2150
   color: "#D3AF37"
 
 - type: titleListing
   id: SyndicateTitle
-  title: Synd
+  title: title-syndicate
   price: 2850
   color: "#980002"
 
 - type: titleListing
   id: NanotrasenTitle
-  title: NT
+  title: title-nanotrasen
   price: 6450
   color: "#3498db"
 
 - type: titleListing
   id: RobustTitle
-  title: Robusto
+  title: title-robust
   price: 15500
   color: "#C73C55"
 
@@ -84,24 +84,24 @@
 # Eu gostava da ideia mas os doadores acharam que iria acabar causando muito bloat na lista
 #- type: titleListing
 #  id: GayTitle
-#  title: "[color=#008018]G[/color][color=#FFFFFF]a[/color][color=#1E90FF]y[/color]"
+#  title: title-gay
 #  price: 750
 #  color: "#008018"
 
 #- type: titleListing
 #  id: BiTitle
-#  title: "[color=#D60270]B[/color][color=#9B4F96]i[/color]"
+#  title: title-bi
 #  price: 750
 #  color: "#9B4F96"
 
 #- type: titleListing
 #  id: LesbianTitle
-#  title: "[color=#D52D00]Le[/color][color=#FFFFFF]sbi[/color][color=#FF6F91]ca[/color]"
+#  title: title-lesbian
 #  price: 750
 #  color: "#FF6F2E"
 
 #- type: titleListing
 #  id: TransTitle
-#  title: "[color=#5BCEFA]Tr[/color][color=#F5A9B8]a[/color][color=#FFFFFF]ns[/color]"
+#  title: title-trans
 #  price: 750
 #  color: "#FFC0CB"

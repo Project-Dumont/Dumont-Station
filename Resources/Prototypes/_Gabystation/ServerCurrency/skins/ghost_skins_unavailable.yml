@@ -1,6 +1,6 @@
 - type: ghostSkinListing
   id: DonatorSkin
-  name: Doador
+  name: ghost-skin-donator
   price: 2300
   avaible: false
   sprite:
