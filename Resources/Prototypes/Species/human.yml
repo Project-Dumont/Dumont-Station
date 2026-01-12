@@ -51,6 +51,11 @@
 - type: speciesBaseSprites
   id: MobHumanSprites
   sprites:
+    # <Trauma>
+    HairSpecial: MobHumanoidAnyMarking
+    FacialHairSpecial: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    # </Trauma>
     Special: MobHumanoidAnyMarking
     Head: MobHumanHead
     Face: MobHumanoidAnyMarking
@@ -77,6 +82,14 @@
 - type: markingPoints
   id: MobHumanMarkingLimits
   points:
+    # <Trauma>
+    HairSpecial:
+      points: 1
+      required: false
+    FacialHairSpecial:
+      points: 1
+      required: false
+    # </Trauma>
     Hair:
       points: 1
       required: false

@@ -40,7 +40,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Humanoid;
 
-public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
+public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem // Trauma - made partial
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
@@ -305,7 +305,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             foreach (var marking in markingList)
             {
-                RemoveMarking(marking, (entity, sprite));
+                RemoveMarking(marking, entity); // Trauma - removed sprite
             }
         }
 
@@ -315,15 +315,20 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             foreach (var marking in markingList)
             {
-                RemoveMarking(marking, (entity, sprite));
+                RemoveMarking(marking, entity); // Trauma - removed sprite
             }
         }
     }
 
-    private void RemoveMarking(Marking marking, Entity<SpriteComponent> spriteEnt)
+    private void RemoveMarking(Marking marking, Entity<HumanoidAppearanceComponent, SpriteComponent> ent) // Trauma - renamed spriteEnt to ent, added humanoid
     {
         if (!_markingManager.TryGetMarking(marking, out var prototype))
             return;
+
+        // <Trauma>
+        TryRemoveParentShader(prototype, ent);
+        Entity<SpriteComponent> spriteEnt = (ent, ent.Comp2);
+        // </Trauma>
 
         foreach (var sprite in prototype.Sprites)
         {
@@ -359,6 +364,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
         visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
            && setting.AllowsMarkings;
+
+        TryApplyParentShader(markingPrototype, targetLayer, entity); // Trauma
 
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
