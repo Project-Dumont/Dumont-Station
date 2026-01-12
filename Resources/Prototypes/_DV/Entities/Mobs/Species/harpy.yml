@@ -124,6 +124,7 @@
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHairSpecial" ] # Trauma
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "pocket1" ]
@@ -141,6 +142,7 @@
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
       - map: [ "maskalt" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HairSpecial" ] # Trauma
       - map: [ "mask" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "head" ]
@@ -292,6 +294,7 @@
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHairSpecial" ] # Trauma
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
@@ -310,5 +313,6 @@
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
       - map: [ "maskalt" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HairSpecial" ] # Trauma
       - map: [ "mask" ]
       - map: [ "head" ]
