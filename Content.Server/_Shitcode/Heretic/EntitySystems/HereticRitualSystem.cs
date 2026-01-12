@@ -5,7 +5,9 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -39,6 +41,7 @@ public sealed partial class HereticRitualSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private readonly GhoulSystem _ghoul = default!;
 
     public SoundSpecifier RitualSuccessSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/castsummon.ogg");
 
@@ -192,10 +195,7 @@ public sealed partial class HereticRitualSystem : EntitySystem
                 var spawned = Spawn(ent, Transform(platform).Coordinates);
 
                 if (ghoulQuery.TryComp(spawned, out var ghoul))
-                {
-                    ghoul.BoundHeretic = performer;
-                    Dirty(spawned, ghoul);
-                }
+                    _ghoul.SetBoundHeretic((spawned, ghoul), performer);
 
                 if (limited == null)
                     continue;

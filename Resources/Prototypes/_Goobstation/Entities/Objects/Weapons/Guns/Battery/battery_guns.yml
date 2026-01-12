@@ -485,6 +485,9 @@
     autoRechargeRate: 50
     autoRechargePause: true
     autoRechargePauseTime: 40
+  - type: Construction # Gabystation Lawbringer Skins
+    graph: LawbringerSkinChange
+    node: start
 
 - type: entity
   name: ion rifle

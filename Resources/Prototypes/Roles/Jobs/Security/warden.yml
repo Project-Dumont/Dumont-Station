@@ -158,6 +158,12 @@
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  guides: # goobstation
+  - SpaceLaw
+  # - Legal SOP
+  - Security
+  # - Warden SOP
+  - KravMaga
   goobcoins: 35 #Goob content
   salary: 50 # Gaby content
   access:
@@ -184,7 +190,7 @@
 - type: startingGear
   id: WardenGear
   equipment:
-    eyes: ClothingEyesGlassesSecurity
+    eyes: ClothingEyesGlassesSecurityContraDetect # Goobstation
     id: WardenPDA
     ears: ClothingHeadsetAltWarden # Goobstation
     pocket1: WeaponPistolMk58

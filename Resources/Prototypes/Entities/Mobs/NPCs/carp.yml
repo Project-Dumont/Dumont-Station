@@ -123,6 +123,7 @@
   description: It's a space carp.
   abstract: true
   components:
+    - type: WeatherImmune
     - type: InputMover
     - type: MobMover
     - type: HTN
@@ -195,8 +196,14 @@
         - Carp
         - DoorBumpOpener
         - CannotSuicide
-    - type: ReplacementAccent
-      accent: genericAggressive
+    # - type: ReplacementAccent
+    #   accent: genericAggressive
+    - type: LanguageKnowledge # goob edit - swap replacement accent for language
+      speaks:
+      - Carptongue
+      understands:
+      - TauCetiBasic
+      - Carptongue
     - type: Speech
       speechVerb: LargeMob
     - type: InteractionPopup

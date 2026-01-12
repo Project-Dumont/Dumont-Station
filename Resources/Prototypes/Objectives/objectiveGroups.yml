@@ -130,6 +130,8 @@
     StealSupermatterSliverObjective: 0.5 # Goobstation - supermatter
     LawbringerStealObjective: 0.5 # Goobstation
     GeminiProjectorStealObjective: 0.5 # Goobstation
+    ExecutiveBriefcaseStealObjective: 0.5 # Goobstation
+    JusticeStealObjective: 0.5 # Goobstation
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -138,6 +140,8 @@
     TeachLessonRandomPersonObjective: 1
     PermaKillRandomTraitorObjective: 0.3 # Goobstation - target traitor
     KillRandomHeadObjective: 0.25
+    TeachRandomPersonObjective: 1 #Goobstation  Teach them a lesson
+    TeachRandomHeadObjective: 0.25 #Goobstation  Teach them a lesson
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState

@@ -243,9 +243,71 @@
   - CivilianOuterClothing
   - CivilianBelt
 
+- type: roleLoadout
+  id: JobRadioHost
+  groups:
+  - Survival
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - Glasses
+  - ServiceWorkerEnvirohelm
+  - ServiceWorkerEnvirosuit
+  - ServiceWorkerEnvirogloves
+  # Civil loadout
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianShoes # Gabystation
+  - CivilianOuterClothing
+  - CivilianBelt
+  
 # gives plasmaman a plasma breathing tank
 # other species get nothing
 - type: roleLoadout
   id: RoleSurvivalPlasmaTank
   groups:
   - GroupEVATankPlasma
+
+# Event-restricted roles
+
+- type: roleLoadout
+  id: JobSecurityClown
+  groups:
+  - ClownBackpack
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobCommandMaid
+  groups:
+  - CivilianBackpack
+  - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobPartyMaker
+  groups:
+  - GroupTankHarness
+  - CivilianBackpack
+  - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobVirologist
+  groups:
+   - GroupTankHarness
+   - MedicalDoctorHead
+   - MedicalMask
+   - VirologistJumpsuit
+   - MedicalGloves
+   - VirologistBackpack
+   - VirologistOuterClothing
+   - MedicalShoes
+   - VirologistPDA
+   - SurvivalMedical
+   - Trinkets
+   - GroupSpeciesBreathToolMedical

@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2025 Crenissis <180554261+Crenissis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ClothingModsuitStandard, BaseCargoContraband]
+  id: ClothingModsuitMining
+  name: pioneer modsuit control unit
+  description: A modular hardsuit control module developed for mining operations. Features expanded storage capacity.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Back/Modsuits/mining.rsi
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingModsuitHelmetMining
+      gloves: ClothingModsuitGauntletsMining
+      outerClothing: ClothingModsuitChestplateMining
+      shoes: ClothingModsuitBootsMining
+  - type: Construction
+    graph: Modsuit
+    node: cargo
+  - type: SealableClothingVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      back:
+      - state: equipped-BACKPACK-sealed
+      back-resomi:
+      - state: equipped-BACKPACK-sealed-resomi
+  - type: Storage
+    grid:
+    - 0,0,7,4
+
+- type: entity
+  parent: ClothingModsuitMining
+  id: ClothingModsuitMiningPowerCell
+  suffix: High-Capacity Battery
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+        whitelist:
+          components:
+            - PowerCell

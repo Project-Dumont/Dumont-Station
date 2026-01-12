@@ -34,7 +34,12 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Server._White.StoreDiscount;
+using Robust.Shared.Timing;
+using Content.Shared.Store;
+using Content.Shared._Funkystation.MalfAI.Events;
 using Content.Shared.Mind;
+using Content.Shared.Polymorph;
+using Content.Server.Polymorph.Systems;
 
 namespace Content.Server.Store.Systems;
 
@@ -48,7 +53,9 @@ public sealed partial class StoreSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StoreDiscountSystem _storeDiscount = default!; // WD EDIT
+    [Dependency] private readonly PolymorphSystem _polymorph = default!; // goob edit
 
     public override void Initialize()
     {
@@ -61,11 +68,21 @@ public sealed partial class StoreSystem : EntitySystem
         SubscribeLocalEvent<StoreComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<StoreComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StoreComponent, ComponentShutdown>(OnShutdown);
+
         SubscribeLocalEvent<StoreComponent, OpenUplinkImplantEvent>(OnImplantActivate);
+        SubscribeLocalEvent<StoreComponent, OpenMalfAiStoreActionEvent>(OnMalfAiOpenStore); // Funkystation -> Malf Ai
+
+        SubscribeLocalEvent<StoreComponent, PolymorphedEvent>(OnPolymorphed); // goob edit
 
         InitializeUi();
         InitializeCommand();
         InitializeRefund();
+    }
+
+    // goob edit - store now transfers on pm
+    private void OnPolymorphed(Entity<StoreComponent> ent, ref PolymorphedEvent args)
+    {
+        _polymorph.CopyPolymorphComponent<StoreComponent>(ent, args.NewEntity);
     }
 
     private void OnMapInit(EntityUid uid, StoreComponent component, MapInitEvent args)
@@ -134,6 +151,13 @@ public sealed partial class StoreSystem : EntitySystem
     private void OnImplantActivate(EntityUid uid, StoreComponent component, OpenUplinkImplantEvent args)
     {
         ToggleUi(args.Performer, uid, component);
+    }
+
+    // Funkystation -> Malf Ai
+    private void OnMalfAiOpenStore(Entity<StoreComponent> ent, ref OpenMalfAiStoreActionEvent args)
+    {
+        ToggleUi(args.Performer, ent.Owner, ent.Comp);
+        args.Handled = true;
     }
 
     /// <summary>
@@ -209,6 +233,10 @@ public sealed partial class StoreSystem : EntitySystem
                 store.Balance[type.Key] += type.Value;
         }
 
+        // Gabystation -> Better Malf Ai store
+        var ev = new CurrencyUpdatedEvent(currency);
+        RaiseLocalEvent(uid, ev);
+
         UpdateUserInterface(null, uid, store);
         return true;
     }
@@ -229,3 +257,20 @@ public sealed class CurrencyInsertAttemptEvent : CancellableEntityEventArgs
         Store = store;
     }
 }
+
+// Gabystation -> Better Malf Ai store
+public sealed class CurrencyUpdatedEvent : EntityEventArgs
+{
+    public readonly Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Currency;
+
+    public CurrencyUpdatedEvent(Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> currency)
+    {
+        Currency = currency;
+    }
+
+    public CurrencyUpdatedEvent(Dictionary<string, FixedPoint2> currency)
+    {
+        Currency = currency.ToDictionary(e => (ProtoId<CurrencyPrototype>) e.Key, e => e.Value);
+    }
+}
+

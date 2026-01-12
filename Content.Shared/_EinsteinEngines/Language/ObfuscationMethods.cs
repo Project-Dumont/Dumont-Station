@@ -1,4 +1,7 @@
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+// SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 //
@@ -188,3 +191,14 @@ public sealed partial class PhraseObfuscation : ReplacementObfuscation
         return ch is '.' or '!' or '?'; // Doesn't include mid-sentence punctuation like the comma
     }
 }
+
+// start - Gaby Waddler update
+public sealed partial class NoObfuscation : ObfuscationMethod
+{
+    internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
+    {
+        builder.Append(message);
+    }
+}
+// end - Gaby Waddler update
+

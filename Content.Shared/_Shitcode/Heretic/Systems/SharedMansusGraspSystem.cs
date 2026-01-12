@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -60,15 +62,21 @@ public abstract class SharedMansusGraspSystem : EntitySystem
     public bool TryApplyGraspEffectAndMark(EntityUid user,
         HereticComponent hereticComp,
         EntityUid target,
-        EntityUid? grasp)
+        EntityUid? grasp,
+        out bool triggerGrasp)
     {
+        triggerGrasp = true;
+
         if (hereticComp.CurrentPath == null)
             return true;
 
         if (hereticComp.PathStage >= 2)
         {
-            if (!ApplyGraspEffect((user, hereticComp), target, grasp))
+            if (!ApplyGraspEffect((user, hereticComp), target, grasp, out var applyMark, out triggerGrasp))
                 return false;
+
+            if (!applyMark)
+                return true;
         }
 
         if (hereticComp.PathStage >= 4 && HasComp<StatusEffectsComponent>(target))
@@ -90,8 +98,14 @@ public abstract class SharedMansusGraspSystem : EntitySystem
         return true;
     }
 
-    public bool ApplyGraspEffect(Entity<HereticComponent> user, EntityUid target, EntityUid? grasp)
+    public bool ApplyGraspEffect(Entity<HereticComponent> user,
+        EntityUid target,
+        EntityUid? grasp,
+        out bool applyMark,
+        out bool triggerGrasp)
     {
+        applyMark = true;
+        triggerGrasp = true;
         var (performer, heretic) = user;
 
         switch (heretic.CurrentPath)
@@ -148,7 +162,8 @@ public abstract class SharedMansusGraspSystem : EntitySystem
 
             case "Flesh":
             {
-                if (TryComp<MobStateComponent>(target, out var mobState) && mobState.CurrentState == MobState.Dead)
+                if (TryComp<MobStateComponent>(target, out var mobState) && mobState.CurrentState != MobState.Alive &&
+                    !HasComp<BorgChassisComponent>(target))
                 {
                     if (HasComp<GhoulComponent>(target))
                     {
@@ -169,18 +184,8 @@ public abstract class SharedMansusGraspSystem : EntitySystem
                     ghoul.GiveBlade = true;
 
                     AddComp(target, ghoul);
-                    RemCompDeferred<HereticCombatMarkComponent>(target);
-                    if (TryComp(target, out FleshMimickedComponent? mimicked))
-                    {
-                        foreach (var mimic in mimicked.FleshMimics)
-                        {
-                            if (!Exists(mimic))
-                                continue;
-
-                            _faction.DeAggroEntity(mimic, target);
-                        }
-                        RemCompDeferred(target, mimicked);
-                    }
+                    applyMark = false;
+                    triggerGrasp = false;
                 }
 
                 break;
@@ -224,7 +229,6 @@ public abstract class SharedMansusGraspSystem : EntitySystem
                     _starMark.SpawnCosmicField(Transform(performer).Coordinates, heretic.PathStage);
                 break;
             }
-
             default:
                 return true;
         }

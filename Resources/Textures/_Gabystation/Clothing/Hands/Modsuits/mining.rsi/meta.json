@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "From tgstation - https://github.com/tgstation/tgstation/pull/59109 and paradise station - https://github.com/ParadiseSS13/Paradise/pull/23332, modified by Crenissis (Discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "gauntlets"
+    },
+	{
+		"name": "gauntlets-sealed"
+	},
+	{
+		"name": "equipped-HAND",
+		"directions": 4
+	},
+	{
+		"name": "equipped-HAND-sealed",
+		"directions": 4
+	},
+    {
+    	"name": "equipped-HAND-vox",
+		"directions": 4
+	},
+	{
+		"name": "equipped-HAND-sealed-vox",
+		"directions": 4
+	},
+    {
+    	"name": "equipped-HAND-resomi",
+		"directions": 4
+	},
+	{
+		"name": "equipped-HAND-sealed-resomi",
+		"directions": 4
+	}
+  ]
+}

@@ -9,11 +9,15 @@
 # SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AgentePanela <AgentePanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -60,94 +64,6 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
-    - type: MapGrid
-      chunks: {}
-    - type: SpreaderGrid
-    - type: GridPathfinding
-    - type: Gravity
-      gravityShakeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/alert.ogg
-      inherent: True
-      enabled: True
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes: []
-    - type: Biome
-      forcedMarkerLayers: []
-      markerLayers:
-      - OreCoal
-      - OreQuartz
-      - OreGold
-      - OreUranium
-      - OreDiamond
-      - OreArtifactFragment
-      - OreSilver
-      - OreSalt
-      - OreIron
-      - OrePlasma
-      loadedMarkers: {}
-      pendingMarkers: {}
-      loadedChunks: []
-      entities: {}
-      decals: {}
-      modifiedTiles: {}
-      template: Continental
-      layers:
-      - !type:BiomeMetaLayer
-        noise:
-          seed: 0
-        template: Lava
-      - !type:BiomeMetaLayer
-        threshold: -0.5
-        noise:
-          frequency: 0.001
-          fractalType: FBm
-          octaves: 2
-        template: Caves
-      - !type:BiomeMetaLayer
-        threshold: 0
-        noise:
-          frequency: 0.001
-          fractalType: FBm
-          octaves: 2
-        template: Grasslands
-      - !type:BiomeMetaLayer
-        threshold: 0.5
-        noise:
-          frequency: 0.001
-          fractalType: FBm
-          octaves: 2
-        template: Snow
-      seed: 433137658
-    - type: MapLight
-      ambientLightColor: '#D8B059FF'
-    - type: Roof
-      data: {}
-    - type: LightCycle
-    - type: MapAtmosphere
-      space: False
-      mixture:
-        volume: 2500
-        immutable: True
-        temperature: 293.15
-        moles:
-        - 21.82478
-        - 82.10312
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
   - uid: 4
     components:
     - type: PreventPilot

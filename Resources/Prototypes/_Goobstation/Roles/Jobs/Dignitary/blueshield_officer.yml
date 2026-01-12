@@ -48,6 +48,10 @@
       inverted: true
       species:
       - Felinid
+  guides:
+  # - BlueshieldOfficer SOP
+  - Command
+  # - Succession
   goobcoins: 45
   salary: 50 # Gaby content
   weight: 20

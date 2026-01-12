@@ -1376,3 +1376,307 @@ Entries:
       message: Leves mudanças na virologia da Glacier
   id: 157
   time: '2025-11-10T11:47:12.0000000+00:00'
+- author: VMSolidus, PuroSlavKing, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona efeitos visuais quando há diferença de pressão na atmosfera.
+  id: 158
+  time: '2025-11-15T15:10:28.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Changed fun!
+  id: 159
+  time: '2025-11-15T15:38:03.0000000+00:00'
+- author: Crenissis
+  changes:
+    - type: Add
+      message: Adicionado um manto luxuoso.
+    - type: Tweak
+      message: Modificações nos sprites da hardsuit luxuosa.
+  id: 160
+  time: '2025-11-15T16:52:34.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        PORT de Inflação, aumento de 50% de preços nos antag tokens e nos ghost
+        tokens.
+    - type: Fix
+      message: Corrige descrição do token de roupa na loja de GabyCoins.
+  id: 161
+  time: '2025-11-16T12:00:26.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 16/11 (confira a aba do Goob)!
+  id: 162
+  time: '2025-11-16T12:18:48.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        Shadowkins não sofrem mais penalidade de velocidade por serem pequenos,
+        o fim esta proximo
+  id: 163
+  time: '2025-11-19T13:17:47.0000000+00:00'
+- author: CrimeMoot, Voomra, EvilBug, server Star Horizon, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Adiciona um manipulador de DNA de sementes e um disco de DNA de sementes
+        liberados com a pesquisa de hidroponia básica.
+  id: 164
+  time: '2025-11-19T23:13:50.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada Malf AI!
+  id: 165
+  time: '2025-11-19T23:15:49.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Re-adiciona a cura com alcool dos onis!!
+    - type: Fix
+      message: Onis não tomam mais dano extra de veneno
+    - type: Tweak
+      message: Pistolas podem ser utilizadas por onis agora
+    - type: Tweak
+      message: Livro guia dos onis atualizado e traduzido
+  id: 166
+  time: '2025-11-20T00:59:47.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 19/11 (confira a aba do Goob)!
+  id: 167
+  time: '2025-11-20T02:34:54.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Os radiadores são compatíveis com as layers!
+  id: 168
+  time: '2025-11-22T04:45:08.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: >-
+        Corrigida a quantidade máxima de fábricas de ciborgue da IA mal
+        funcional. Apenas uma!
+    - type: Tweak
+      message: A sonda do final do protocolo doomsday agora gibba tudo que toca.
+    - type: Fix
+      message: >-
+        A mente do jogador vai corretamente para a IA ao construir um novo
+        núcleo.
+    - type: Add
+      message: Adicionadas algumas traduções para a IA mal funcional.
+    - type: Fix
+      message: Não é mais possível decretar doomsday pelo computador de comunicações.
+    - type: Tweak
+      message: 'Melhora a interação de múltiplas IAs e ciborgues controlados por IA. '
+  id: 169
+  time: '2025-11-22T04:46:19.0000000+00:00'
+- author: KillanGenifer, Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona 3 novas danças!
+    - type: Add
+      message: Adiciona piso luminoso.
+  id: 170
+  time: '2025-11-22T04:47:28.0000000+00:00'
+- author: KillanGenifer, Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Concerta dança alterando altura.
+  id: 171
+  time: '2025-11-22T23:29:12.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: O alerta ciano voltou ao computador de comunicações
+    - type: Fix
+      message: >-
+        Agora é de verdade! Não é mais possível decretar doomsday pelo
+        computador de comunicações.
+    - type: Fix
+      message: O intellicard foi corrigido.
+  id: 172
+  time: '2025-11-23T13:21:37.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Fix
+      message: conserta bug de cabelos com displacement
+  id: 173
+  time: '2025-11-23T19:48:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode oferecer itens.
+  id: 174
+  time: '2025-11-23T20:44:50.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Espécie Pinguinador
+    - type: Add
+      message: Bolas de neve
+  id: 175
+  time: '2025-11-23T20:49:33.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de Cowboy e uma pequena tradução da mesma
+    - type: Add
+      message: Novas palavras para o sotaque de Pirata e traduções
+  id: 176
+  time: '2025-11-23T20:50:40.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Add
+      message: Feliz aniversario Gaby Station!
+  id: 177
+  time: '2025-11-23T20:56:35.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Fix
+      message: Conserta velocidade em baixas temperaturas dos pinguinadores
+  id: 178
+  time: '2025-11-23T22:05:36.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de cowboy
+  id: 179
+  time: '2025-11-29T02:42:53.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de pirata
+  id: 180
+  time: '2025-11-29T02:44:20.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Fix
+      message: RCDs agora podem construir portas por cima de firelocks.
+  id: 181
+  time: '2025-11-29T03:35:11.0000000+00:00'
+- author: Kaduh45
+  changes:
+    - type: Tweak
+      message: >-
+        Reorganização de algumas POPs, melhoria nas POP dos Especialistas em
+        Salvamento, POP de Blueshield adicionada e mais!
+  id: 182
+  time: '2025-11-29T03:40:11.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Aumenta resistência à radiação de paredes reforçadas e cortinas
+        anti-rad. 
+  id: 183
+  time: '2025-12-09T14:53:38.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Todos materiais inseríveis no silo podem ser acessados por qualquer
+        fabricador conectado.
+    - type: Tweak
+      message: >-
+        Adiciona repositores de lâmpadas nos fabricadores que já podiam fazer
+        lâmpadas.
+  id: 184
+  time: '2025-12-09T16:21:56.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona o fliperama de campo minado.
+  id: 185
+  time: '2025-12-09T17:26:56.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada as atualizações do Goob até 07/12 (confira a aba do Goob)!
+  id: 186
+  time: '2025-12-13T18:04:20.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Add
+      message: A máquina de venda de gás bluespace agora é pesquisável e craftável.
+  id: 187
+  time: '2025-12-16T20:24:32.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Aumenta o tamanho do cinto de ferramentas comum e do engenheiro chefe
+        por 1 item médio ou 2 pequenos.
+  id: 188
+  time: '2025-12-16T21:00:02.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Antagonista Slaughter Demon traduzido.
+  id: 189
+  time: '2025-12-16T21:00:58.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Implantes de EMP, liberdade e scram limitados a 3 usos.
+    - type: Tweak
+      message: Intervalo de ativação do scram diminuído.
+  id: 190
+  time: '2025-12-16T21:19:39.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: Adiciona barra de pesquisa de músicas na jukebox.
+  id: 191
+  time: '2025-12-16T22:03:31.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as alterações do Goob até 17/12 (vide a aba do Goob)!
+  id: 192
+  time: '2025-12-18T02:30:12.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as traduções da aba de doações!
+  id: 193
+  time: '2025-12-18T03:31:27.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Adicionado novo Tocador MP3, podendo tocar música no seu bolso ou
+        equipado em seu pescoço.
+  id: 194
+  time: '2025-12-20T15:31:24.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Retornado reflexo do sabre de capitão.
+  id: 195
+  time: '2025-12-21T17:51:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Nova skin cosmética para a Lawbringer do HoS.
+  id: 196
+  time: '2025-12-21T17:55:59.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 21/12 (confira a aba do Goob)!
+  id: 197
+  time: '2025-12-22T13:55:09.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode desligar máquinas para economizar energia.
+  id: 198
+  time: '2025-12-30T01:21:26.0000000+00:00'

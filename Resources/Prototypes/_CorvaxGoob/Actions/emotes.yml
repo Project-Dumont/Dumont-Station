@@ -1,0 +1,86 @@
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: emote
+  id: DanceFromTheFloor
+  name: chat-emote-name-dance-the-from-floor
+  chatMessages: ["chat-emote-msg-dance-from-the-floor"]
+  chatTriggers:
+  - dance from the floor
+  - dances from the floor.
+  - dances from the floor!
+  - танцует от пола
+  - танцует от пола.
+  - танцует от пола!
+  - dançar no chão
+  - dançar no chão.
+  - dançar no chão!
+  targetEvents:
+  - !type:PlayAnimationTargetEvent
+    animationID: EmoteDanceFromTheFloor
+  - !type:ApplyStatusEffectTargetEvent
+    key: SlowedDown
+    componentType: SlowedDown
+    time: 5
+
+- type: emote
+  id: SpinningOnHead
+  name: chat-emote-name-spinning-on-head
+  chatMessages: ["chat-emote-msg-spinning-on-head"]
+  chatTriggers:
+  - spinning on their head
+  - spinning on their head.
+  - spinning on their head!
+  - крутится на голове
+  - крутится на голове.
+  - крутится на голове!
+  - gira de cabeça
+  - gira de cabeça.
+  - gira de cabeça!
+  targetEvents:
+  - !type:PlayAnimationTargetEvent
+    animationID: EmoteSpinningOnHead
+  - !type:ApplyStatusEffectTargetEvent
+    key: SlowedDown
+    componentType: SlowedDown
+    time: 6.5
+
+- type: emote
+  id: Dance
+  name: chat-emote-name-dance
+  chatMessages: ["chat-emote-msg-dance-1", "chat-emote-msg-dance-2", "chat-emote-msg-dance-3"]
+  chatTriggers:
+  - dancing
+  - dancing.
+  - dancing!
+  - dances
+  - dances.
+  - dances!
+  - танцует
+  - танцует.
+  - танцует!
+  - пускается в пляс
+  - пускается в пляс.
+  - пускается в пляс!
+  - отжигает
+  - отжигает.
+  - отжигает!
+  - dança
+  - dança.
+  - dança!
+  - começa a dançar
+  - começa a dançar.
+  - começa a dançar!
+  - arrasa na pista
+  - arrasa na pista.
+  - arrasa na pista!
+  targetEvents:
+  - !type:PlayAnimationTargetEvent
+    animationID: EmoteDance
+  - !type:ApplyStatusEffectTargetEvent
+    key: SlowedDown
+    componentType: SlowedDown
+    time: 6

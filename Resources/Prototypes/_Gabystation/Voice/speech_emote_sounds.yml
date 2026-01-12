@@ -1,0 +1,98 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: emoteSounds
+  id: MaleWaddler
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/Animals/goose_honk.ogg
+    Laugh:
+      path: /Audio/Animals/penguin_squawk.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: MaleCry
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    CatMeow:
+      collection: CatMeows # Goobstation - effect standardization
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
+    # Floof
+    Yip:
+      collection: Yip
+    Hiss:
+      collection: ReptilianHiss
+    # Floof end
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sneeze:
+      collection: MaleSneezes
+    Sigh:
+      collection: MaleSigh
+
+- type: emoteSounds
+  id: FemaleWaddler
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/Animals/goose_honk.ogg
+    Laugh:
+      path: /Audio/Animals/penguin_squawk.ogg
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: FemaleCry
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    CatMeow:
+      collection: CatMeows # Goobstation - effect standardization
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    # Floof
+    Yip:
+      collection: Yip
+    Hiss:
+      collection: ReptilianHiss
+    # Floof end
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+    ET:
+      path: /Audio/_Gabystation/Voice/et.ogg
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sneeze:
+      collection: FemaleSneezes
+    Honk:
+      collection: CluwneHorn
+    Sigh:
+      collection: FemaleSigh

@@ -28,7 +28,7 @@
   - type: StationEvent
     earliestStart: 45
     reoccurrenceDelay: 45
-    weight: 3.5 # Goobstation - 3.5 # menos abductor por favor -> 5 -> 7.5
+    weight: 3 # Goobstation - 7.5 -> 3
     minimumPlayers: 18 # menos abductor por favor
     duration: null # Goobstation - chud
     maxOccurrences: 2 # Gabystation - menos abductors
@@ -37,7 +37,7 @@
       Medical: 75
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 300
+    chaosScore: 100
   - type: RuleGrids
   - type: LoadMapRule
     mapPath: /Maps/_Shitmed/Shuttles/ShuttleEvent/abductor_shuttle.yml
@@ -129,7 +129,7 @@
   - type: StationEvent # Gabystation - Less abductors
     earliestStart: 60
     reoccurrenceDelay: 45
-    weight: 3.5 # Gabystation - 7.5 -> 4.5 -> 3.5
+    weight: 3 # Goobstation - 7.5 -> 3
     minimumPlayers: 25
     duration: null # Goobstation - chud
     maxOccurrences: 1
@@ -138,7 +138,7 @@
       Medical: 250
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 450
+    chaosScore: 150
   - type: RuleGrids
   - type: LoadMapRule
     mapPath: /Maps/_Shitmed/Shuttles/ShuttleEvent/duo_abductor_shuttle.yml

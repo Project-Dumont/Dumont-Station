@@ -47,7 +47,6 @@
       - state: equipped-HEAD
       head-vox:
       - state: equipped-HEAD-vox
-
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -70,6 +69,7 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: FaceHuggerBlocker
   - type: Appearance
   - type: Stainable
     clothingVisuals:

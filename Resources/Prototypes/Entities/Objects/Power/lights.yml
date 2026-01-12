@@ -43,7 +43,11 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Firewars763 <35506916+Firewars763@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -401,6 +405,10 @@
     refineResult:
     - id: SheetGlass1
     - id: ShardCrystalBlue
+  - type: Tag
+    tags:
+    - Trash
+    - LightTubeCrystalBlue
 
 - type: entity
   parent: BaseLightTubeCrystal
@@ -479,6 +487,10 @@
     refineResult:
     - id: SheetGlass1
     - id: ShardCrystalRed
+  - type: Tag
+    tags:
+    - Trash
+    - LightTubeCrystalRed
 
 - type: entity
   parent: LightTubeCrystalCyan
@@ -494,7 +506,10 @@
     refineResult:
     - id: SheetGlass1
     - id: ShardCrystalGreen
-
+  - type: Tag
+    tags:
+    - Trash
+    - LightTubeCrystalGreen
 
 - type: entity
   parent: BaseLightbulb

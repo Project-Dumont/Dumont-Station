@@ -122,10 +122,12 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 10KE <151458027+10kee@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 96flo <163569033+96flo@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
@@ -169,6 +171,7 @@
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 # SPDX-FileCopyrightText: 2025 kosticia <kosticia46@gmail.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
@@ -193,6 +196,7 @@
   - PlushieSpaceLizard
   - PersonalAI # Goobstation
   - GoldenPersonalAI # Goobstation
+  - CrewCassette # Goobstation
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -225,6 +229,7 @@
   - PlushieTajaran # Gabystation
   - PlushieKiiaraWami # Gabystation
   - PlushieKiiaraWarden # Gabystation
+  - MP3PlayerWhite # Gabystation
   - FoodSnackLollypopWrapped # Goobstation
   - FoodSnackLollypopWrappedRainbow # Goobstation
   - FoodSnackLollypopWrappedCarp # Goobstation
@@ -356,6 +361,7 @@
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
+  - VeteranCaptainCloak # goob
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -526,6 +532,7 @@
   - LightBrownMJ
   - BrownMJ
   - MaroonMJ
+  - QuarterzipJumpsuit
  # goob changes end
 
 - type: loadoutGroup
@@ -592,6 +599,7 @@
   id: CivilianBackpack
   name: loadout-group-backpack
   exclusiveWith: BACK # Goobstation
+  minLimit: 0 # Gabychange
   loadouts:
   - CommonBackpack
   - CommonSatchel
@@ -601,6 +609,11 @@
   - ClothingPurse # EE Stuff
   - LeatherSatchel
   # Goobstation Loadout Rework End
+
+- type: loadoutGroup
+  id: CivilianBackpackRequired #Gabystation
+  parent: CivilianBackpack
+  minLimit: 1 #Quem so puder spawnar com mochila civil sempre vai, o resto não necessáriamente
 
 - type: loadoutGroup
   id: CivilianNeck
@@ -1629,6 +1642,7 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
   id: SecurityOuterClothing

@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
@@ -10,21 +13,19 @@
 using System.Numerics;
 using Content.Shared.Actions;
 using Content.Shared.Atmos;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Explosion;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Item;
-using Content.Shared.Magic;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Physics;
 using Content.Shared.Polymorph;
 using Content.Shared.Random;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
-using Robust.Shared.Maths;
 using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -449,7 +450,7 @@ public sealed partial class ChargeMagicEvent : InstantActionEvent
     public float WandChargeRate = 1000f;
 
     [DataField]
-    public float MinWandDegradeCharge = 500f;
+    public float MinWandDegradeCharge = 1000f;
 
     [DataField]
     public float WandDegradePercentagePerCharge = 0.5f;
@@ -530,6 +531,13 @@ public sealed partial class DimensionShiftEvent : EntityEventArgs
 
     [DataField]
     public string? Parallax = "Wizard";
+}
+
+[DataDefinition]
+public sealed partial class GrantFactionsEvent : EntityEventArgs
+{
+    [DataField(required: true)]
+    public HashSet<ProtoId<NpcFactionPrototype>> Factions = new();
 }
 
 [DataDefinition]

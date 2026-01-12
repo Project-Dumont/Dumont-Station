@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: body
+  name: "waddler"
+  id: Waddler
+  root: chest
+  slots:
+    head:
+      part: HeadWaddler
+      connections:
+      - chest
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    chest:
+      part: ChestWaddler
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
+      connections:
+      - right hand
+      - left hand
+      - head # Shitmed
+      - right foot
+      - left foot
+    right hand:
+      part: RightHandWaddler
+    left hand:
+      part: LeftHandWaddler
+    right foot:
+      part: RightFootWaddler
+    left foot:
+      part: LeftFootWaddler

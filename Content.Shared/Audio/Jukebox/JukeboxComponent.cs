@@ -42,6 +42,13 @@ public sealed partial class JukeboxComponent : Component
 
     [DataField]
     public bool NeedsBattery = false;
+    
+    /// Gabystation
+    /// <summary>
+    /// How far away this jukebox can potentially be heard.
+    /// </summary>
+    [DataField]
+    public float Range = 10f;
 
     [ViewVariables]
     public bool Selecting;
@@ -49,6 +56,15 @@ public sealed partial class JukeboxComponent : Component
     [ViewVariables]
     public float SelectAccumulator;
 
+    // Estação Pirata volume slider
+    [ViewVariables, AutoNetworkedField]
+    public float Volume = 50f;
+
+    public float MinVolume = -30f;
+    public float MaxVolume = 0f;
+    public float MinSlider = 0f;
+    public float MaxSlider = 100f;
+    // /Estação Pirata
 }
 
 [Serializable, NetSerializable]
@@ -71,6 +87,14 @@ public sealed class JukeboxSetTimeMessage(float songTime) : BoundUserInterfaceMe
 {
     public float SongTime { get; } = songTime;
 }
+
+// <Estação Pirata volume slider>
+[Serializable, NetSerializable]
+public sealed class JukeboxSetVolumeMessage(float volume) : BoundUserInterfaceMessage
+{
+    public float Volume { get; } = volume;
+}
+// </Estação Pirata>
 
 [Serializable, NetSerializable]
 public enum JukeboxVisuals : byte

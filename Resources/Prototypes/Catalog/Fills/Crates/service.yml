@@ -444,7 +444,7 @@
         amount: 2
       - id: BoxCandleSmall
         amount: 2
-        
+
 
 - type: entity
   id: CrateHolySupplies

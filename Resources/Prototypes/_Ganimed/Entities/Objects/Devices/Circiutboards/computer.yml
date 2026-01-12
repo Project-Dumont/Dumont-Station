@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 CrimeMoot <wakeafa@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BotanicDNACircuitboard
+  name: печатная плата манипулятора ДНК семян
+  description: Печатная плата для производства манипулятора ДНК семян.
+  components:
+    - type: Sprite
+      state: cpu_service
+    - type: ComputerBoard
+      prototype: ComputerBotanicDNAManipulator

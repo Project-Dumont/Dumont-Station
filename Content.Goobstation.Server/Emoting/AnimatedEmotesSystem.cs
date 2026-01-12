@@ -2,7 +2,10 @@
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -26,6 +29,13 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
     private void OnEmote(EntityUid uid, AnimatedEmotesComponent component, ref EmoteEvent args)
     {
         PlayEmoteAnimation(uid, component, args.Emote.ID);
+
+        if (args.Emote.TargetEvents is not null) // CorvaxGoob-PrototypedAnimations : Raise to play client prototyped animation if it's exist
+            foreach (var targetEvent in args.Emote.TargetEvents)
+            {
+                targetEvent.Target = uid;
+                RaiseLocalEvent(uid, (object) targetEvent, true);
+            }
     }
 
     public void PlayEmoteAnimation(EntityUid uid, AnimatedEmotesComponent component, ProtoId<EmotePrototype> prot)

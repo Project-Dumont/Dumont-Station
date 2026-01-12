@@ -38,6 +38,7 @@
 # SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
@@ -678,7 +679,7 @@
   name: radiator
   description: Transfers heat between the pipe and its surroundings.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: Rotatable
   - type: Transform
@@ -692,8 +693,14 @@
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
-    spriteRsiPaths: {}
-    numberOfPipeLayers: 1
+    alternativePrototypes:
+      Primary: HeatExchanger
+      Secondary: HeatExchangerAlt1
+      Tertiary: HeatExchangerAlt2
+    spriteRsiPaths:
+      Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+      Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+      Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
   - type: SubFloorHide
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
@@ -735,6 +742,15 @@
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: HeatExchangerBend
+        Secondary: HeatExchangerBendAlt1
+        Tertiary: HeatExchangerBendAlt2
+      spriteRsiPaths:
+        Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+        Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
     - type: NodeContainer
       nodes:
         inlet:

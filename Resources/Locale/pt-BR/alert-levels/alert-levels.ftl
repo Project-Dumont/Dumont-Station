@@ -48,3 +48,11 @@ alert-level-octarine-instructions = Os tripulantes são aconselhados a ouvir os 
 alert-level-martial = Lei Marcial
 alert-level-martial-announcement = A Central de Comando decretou Lei Marcial para toda estação, A cadeia de comando foi atualizada. A falha em seguir instruções da equipe de segurança ou da lei marcial resultará em pena capital imediata.
 alert-level-martial-instructions = Siga as ordens da equipe de segurança, mantenha-se em seu departamento.
+
+alert-level-cyan = Cyan
+alert-level-cyan-announcement = Todos os borgs e a Inteligencia Artificial da estação devem ser evitados e tratados como hostis.
+alert-level-cyan-instructions = Relate qualquer avistamento de silicios a equipe de segurança.
+
+alert-level-doomsday = DOOMSDAY
+alert-level-doomsday-announcement = O protocolo DOOMSDAY foi ativo, todos os silicios devem ser considerados ativamente hostis e devem ser desativados, todos os tripulantes devem desativar a Inteligencia Artificial da estação para impedir que o protocolo DOOMSDAY, sistema neutralizador de vida organica da estação, seja completado.
+alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os silicios.
