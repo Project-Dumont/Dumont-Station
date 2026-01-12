@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2025 AvianMaiden <188556051+AvianMaiden@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 

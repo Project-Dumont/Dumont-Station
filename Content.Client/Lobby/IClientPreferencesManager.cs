@@ -6,6 +6,7 @@
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
 // SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
