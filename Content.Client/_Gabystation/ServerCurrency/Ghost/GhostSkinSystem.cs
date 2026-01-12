@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Ghost;
 using Content.Shared._Gabystation.ServerCurrency.Ghost;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
