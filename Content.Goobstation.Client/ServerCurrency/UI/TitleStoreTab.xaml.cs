@@ -9,6 +9,7 @@ using Robust.Client.UserInterface;
 using System.Numerics;
 using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Shared.ServerCurrency.UI;
+using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Client.ServerCurrency.UI;
 
@@ -45,23 +46,22 @@ public sealed partial class TitleStoreTab : BoxContainer
         _buttonClickTimes.Clear();
 
         var titleListings = _protoManager.EnumeratePrototypes<TitleListingPrototype>()
+            .Where(x => x.Avaible)
             .OrderBy(x => x.Price);
 
         foreach (var listing in titleListings)
         {
-            if (!listing.Avaible)
-                continue;
-
+            var rawTitle = FormattedMessage.RemoveMarkupOrThrow(Loc.GetString(listing.Title));
             var button = new Button
             {
-                Text = Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", Loc.GetString(listing.Title)), ("price", listing.Price)),
+                Text = Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", rawTitle), ("price", listing.Price)),
                 MinHeight = 40,
             };
 
             if (Owned.Contains(listing.ID))
             {
                 button.Disabled = true;
-                button.Text += Loc.GetString("gs-balanceui-shop-buy-title-owned", ("title", Loc.GetString(listing.Title)));
+                button.Text = Loc.GetString("gs-balanceui-shop-buy-title-owned", ("title", rawTitle));
                 TitleListingsContainer.AddChild(button);
                 TitleListingsContainer.AddChild(new Control { MinSize = new Vector2(0, 5) });
                 continue;
@@ -82,7 +82,7 @@ public sealed partial class TitleStoreTab : BoxContainer
                         OnBuy?.Invoke(listing.ID);
                         ShowConfirm?.Invoke(Loc.GetString(listing.Title));
                         _buttonClickTimes.Remove(button);
-                        button.Text = Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", Loc.GetString(listing.Title)), ("price", listing.Price));
+                        button.Text = Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", rawTitle), ("price", listing.Price));
                         return;
                     }
                 }
@@ -96,7 +96,7 @@ public sealed partial class TitleStoreTab : BoxContainer
                 {
                     if (_buttonClickTimes.ContainsKey(button))
                     {
-                        button.Text = Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", Loc.GetString(listing.Title)), ("price", listing.Price));
+                        button.Text = Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", rawTitle), ("price", listing.Price));
                         _buttonClickTimes.Remove(button);
                         if (listing.Color is not null)
                             button.Modulate = Color.FromHex(listing.Color);
@@ -122,8 +122,7 @@ public sealed partial class TitleStoreTab : BoxContainer
                 continue;
 
             var listing = _protoManager.EnumeratePrototypes<TitleListingPrototype>()
-                .FirstOrDefault(x => Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", Loc.GetString(x.Title)), ("price", x.Price)) == button.Text);
-
+                .FirstOrDefault(x => Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", FormattedMessage.FromMarkupOrThrow(Loc.GetString(x.Title))), ("price", x.Price)) == button.Text);
 
             if (listing != null)
                 button.Disabled = balance < listing.Price;

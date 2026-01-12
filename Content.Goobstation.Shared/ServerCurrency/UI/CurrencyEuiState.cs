@@ -18,12 +18,14 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
         public float Cooldown;
         public List<string> Tokens = new List<string>();
         public List<ProtoId<TitleListingPrototype>> OwnedTitles = new List<ProtoId<TitleListingPrototype>>();
+        public List<ProtoId<GhostSkinListingPrototype>> OwnedGhostSkins = new List<ProtoId<GhostSkinListingPrototype>>();
 
-        public CurrencyEuiState(float cooldown, List<string> tokens, List<ProtoId<TitleListingPrototype>> titles)
+        public CurrencyEuiState(float cooldown, List<string> tokens, List<ProtoId<TitleListingPrototype>> titles, List<ProtoId<GhostSkinListingPrototype>> ghost)
         {
             Cooldown = cooldown;
             Tokens = tokens;
             OwnedTitles = titles;
+            OwnedGhostSkins = ghost;
         }
     }
     public static class CurrencyEuiMsg
@@ -47,12 +49,23 @@ namespace Content.Goobstation.Shared.ServerCurrency.UI
             public ProtoId<TitleListingPrototype> TitleId;
         }
 
+        [Serializable, NetSerializable]
+        public sealed class BuyGhostSkin : EuiMessageBase
+        {
+            public ProtoId<GhostSkinListingPrototype> GhostId;
+        }
+
         // Select msgs
 
         [Serializable, NetSerializable]
         public sealed class SelectTitle : EuiMessageBase
         {
-            public ProtoId<TitleListingPrototype>? TitleId;
+            public ProtoId<TitleListingPrototype>? ProtoId;
+        }
+        [Serializable, NetSerializable]
+        public sealed class SelectGhostSkin : EuiMessageBase
+        {
+            public ProtoId<GhostSkinListingPrototype>? ProtoId;
         }
     }
 }

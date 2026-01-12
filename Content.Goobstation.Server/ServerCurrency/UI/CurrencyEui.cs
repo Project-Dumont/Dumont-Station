@@ -48,7 +48,8 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
                 tokens.Add(token.ID);
             }
             var titles = _storeMan.GetOwnedTitles(Player.UserId);
-            return new CurrencyEuiState(_store.RotationCooldown, tokens, titles);
+            var ghosts = _storeMan.GetOwnedGhostSkins(Player.UserId);
+            return new CurrencyEuiState(_store.RotationCooldown, tokens, titles, ghosts);
         }
 
         public override void HandleMessage(EuiMessageBase msg)
@@ -56,12 +57,23 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
             base.HandleMessage(msg);
             switch (msg)
             {
-                case CurrencyEuiMsg.SelectTitle sel:
-                    if (sel.TitleId == "Default")
-                        sel.TitleId = null;
+                // Select msgs
 
-                    _storeMan.TrySetTitle(Player.UserId, sel.TitleId);
+                case CurrencyEuiMsg.SelectTitle sel:
+                    if (sel.ProtoId == "Default")
+                        sel.ProtoId = null;
+
+                    _storeMan.TrySetTitle(Player.UserId, sel.ProtoId);
                     break;
+
+                case CurrencyEuiMsg.SelectGhostSkin sel:
+                    if (sel.ProtoId == "Default")
+                        sel.ProtoId = null;
+
+                    _storeMan.TrySetGhostSkin(Player.UserId, sel.ProtoId);
+                    break;
+
+                // Buy msgs
 
                 case CurrencyEuiMsg.BuyToken buy:
                     BuyToken(buy.TokenId, Player);
@@ -72,7 +84,27 @@ namespace Content.Goobstation.Server.ServerCurrency.UI
                     BuyTitle(buy.TitleId);
                     StateDirty();
                     break;
+
+                case CurrencyEuiMsg.BuyGhostSkin buy:
+                    BuyTitle(buy.GhostId);
+                    StateDirty();
+                    break;
             }
+        }
+
+        private void BuyTitle(ProtoId<GhostSkinListingPrototype> ghostId)
+        {
+            if (!_protoMan.TryIndex<GhostSkinListingPrototype>(ghostId, out var proto))
+                return;
+
+            if (!_currencyMan.CanAfford(Player.UserId, proto.Price, out _))
+                return;
+
+            if (!proto.Avaible || _storeMan.HasGhostSkin(Player.UserId, ghostId))
+                return;
+
+            _currencyMan.RemoveCurrency(Player.UserId, proto.Price);
+            _storeMan.AddGhostSkin(Player.UserId, ghostId);
         }
 
         private void BuyTitle(ProtoId<TitleListingPrototype> titleId)

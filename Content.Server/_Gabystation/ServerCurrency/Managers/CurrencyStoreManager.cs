@@ -1,6 +1,5 @@
 using Content.Server.Database;
 using Content.Server.Preferences.Managers;
-using Content.Shared._Gabystation.ServerCurrency.Titles;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -8,24 +7,25 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Asynchronous;
 using System.Threading.Tasks;
 using System.Linq;
+using Content.Shared._Gabystation.ServerCurrency;
 
 namespace Content.Server._Gabystation.ServerCurrency.Managers;
 
 public sealed class CurrencyStoreManager : IPostInjectInit
 {
     [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IServerNetManager _netMan = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly ITaskManager _task = default!;
+
+    public event Action<ProtoId<GhostSkinListingPrototype>?, NetUserId>? OnUserSelectNewGhostSkin;
+    public event Action<ProtoId<TitleListingPrototype>?, NetUserId>? OnUserSelectNewTitle;
 
     private ISawmill _sawmill = default!;
 
     public void Initialize()
     {
-        _netMan.RegisterNetMessage<MsgSelectTitle>(HandleSelectTitleMessage);
+        //_netMan.RegisterNetMessage<MsgSelectTitle>(HandleSelectTitleMessage);
         _sawmill = _log.GetSawmill("title");
     }
 
@@ -34,10 +34,74 @@ public sealed class CurrencyStoreManager : IPostInjectInit
 
     }
 
-    public void HandleSelectTitleMessage(MsgSelectTitle msg)
+    #region GhostSkin
+
+    public bool TrySetGhostSkin(NetUserId userId, ProtoId<GhostSkinListingPrototype>? ghost)
     {
-        TrySetTitle(msg.MsgChannel.UserId, msg.Proto);
+        if (ghost is not null && !_proto.HasIndex<GhostSkinListingPrototype>(ghost))
+            return false;
+
+        _db.SaveGhostSkinAsync(userId, ghost);
+        var prefs = _prefs.GetPreferences(userId);
+        prefs.GhostSkin = ghost?.Id; // save in cached prefs
+        OnUserSelectNewGhostSkin?.Invoke(ghost, userId);
+
+        return true;
     }
+
+    public List<ProtoId<GhostSkinListingPrototype>> GetOwnedGhostSkins(NetUserId userId)
+    {
+        var list = Task.Run(() =>
+                _db.GetStorePurchasesAsync(userId, GabyModel.DbPurchaseType.GhostSkin))
+            .GetAwaiter()
+            .GetResult();
+
+        return list
+            .Select(id => new ProtoId<GhostSkinListingPrototype>(id.Prototype))
+            .ToList();
+    }
+
+    public bool HasGhostSkin(NetUserId userId, ProtoId<GhostSkinListingPrototype> ghostSkin)
+    {
+        var result = Task.Run(() =>
+                _db.HasStorePurchaseAsync(
+                    userId,
+                    GabyModel.DbPurchaseType.GhostSkin,
+                    ghostSkin.Id))
+            .GetAwaiter()
+            .GetResult();
+
+        return result;
+    }
+
+    public void AddGhostSkin(NetUserId userId, ProtoId<GhostSkinListingPrototype> ghostSkin)
+    {
+        if (HasGhostSkin(userId, ghostSkin))
+            return;
+
+        Task.Run(() =>
+            _db.AddStorePurchaseAsync(
+                userId,
+                GabyModel.DbPurchaseType.GhostSkin,
+                ghostSkin.Id
+            )
+        ).GetAwaiter().GetResult();
+    }
+
+    public void RemoveGhostSkin(NetUserId userId, ProtoId<GhostSkinListingPrototype> ghostSkin)
+    {
+        Task.Run(() =>
+            _db.RemoveStorePurchaseAsync(
+                userId,
+                GabyModel.DbPurchaseType.GhostSkin,
+                ghostSkin.Id
+            )
+        ).GetAwaiter().GetResult();
+    }
+
+    #endregion
+
+    #region titles
 
     public bool TrySetTitle(NetUserId userId, ProtoId<TitleListingPrototype>? title)
     {
@@ -47,6 +111,8 @@ public sealed class CurrencyStoreManager : IPostInjectInit
         _db.SaveOOCTitleAsync(userId, title);
         var prefs = _prefs.GetPreferences(userId);
         prefs.OOCTitle = title?.Id; // save in cached prefs
+        OnUserSelectNewTitle?.Invoke(title, userId);
+
         return true;
     }
 
@@ -98,7 +164,7 @@ public sealed class CurrencyStoreManager : IPostInjectInit
     }
 
     /// <summary>
-    /// Returns the "chat" version of the title like \[Title Name]
+    /// Returns the "chat" version of a title like \[Title Name]
     /// </summary>
     public string? SanitizeTitleString(ProtoId<TitleListingPrototype>? title)
     {
@@ -106,10 +172,12 @@ public sealed class CurrencyStoreManager : IPostInjectInit
             return "";
 
         var str = Loc.GetString(proto.Title);
-        var sanitazed = $"[bold]\\[{str}][/bold]";
+        var sanitazed = $"\\[{str}] ";
         if (proto.Color is not null)
-            sanitazed = $"[bold]\\[[color={proto.Color}]{str}[/color]][/bold] ";
+            sanitazed = $"\\[[color={proto.Color}]{str}[/color]] ";
 
         return sanitazed;
     }
+
+    #endregion
 }

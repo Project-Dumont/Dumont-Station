@@ -15,7 +15,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:tabs="clr-namespace:Content.Goobstation.Client.ServerCurrency.UI"
     VerticalExpand="True" HorizontalExpand="True"
     Title="{Loc gs-balanceui-title}"
-    SetSize="630 580" >
+    SetSize="670 580" >
     <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
         <controls:StripeBack>
             <PanelContainer>
@@ -49,6 +49,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         <BoxContainer Name="RightSide" Orientation="Vertical">
             <Label Text="{Loc gs-balanceui-select-title}" />
             <OptionButton Name="SelectTitle" Access="Public" HorizontalExpand="True" />
+            <RichTextLabel Name="TitlePreview" />
+
+            <controls:HSpacer Spacing="5" />
 
             <Label Text="{Loc gs-balanceui-select-ghost}" />
             <OptionButton Name="SelectGhost" Access="Public" HorizontalExpand="True" />
@@ -63,7 +66,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <LineEdit Name="GiftPlayer" PlaceHolder="{Loc gs-balanceui-gift-player}" ToolTip="{Loc gs-balanceui-gift-player-tooltip}" MinWidth="170" />
                 <LineEdit Name="GiftAmmount" PlaceHolder="{Loc gs-balanceui-gift-value}" ToolTip="{Loc gs-balanceui-gift-value-tooltip}" MinWidth="50" />
             </BoxContainer>
-            <Button Name="GiftButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorRed" />
+            <Button Name="GiftButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorGaby" />
 
             <BoxContainer VerticalExpand="True" />
 
@@ -75,7 +78,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <LineEdit Name="AdminAddPlayer" PlaceHolder="{Loc gs-balanceui-admin-add-player}" MinWidth="170" />
                     <LineEdit Name="AdminAddAmmount" PlaceHolder="{Loc gs-balanceui-admin-add-value}" MinWidth="50" />
                 </BoxContainer>
-                <Button Name="AdminAddButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorRed" />
+                <Button Name="AdminAddButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorGaby" />
             </BoxContainer>
         </BoxContainer>
         </BoxContainer>

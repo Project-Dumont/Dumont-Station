@@ -25,15 +25,35 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             _window.OnClose += () => SendMessage(new CurrencyEuiMsg.Close());
             _window.TokenStore.OnBuy += OnBuyTokenMsg;
             _window.TitleStore.OnBuy += OnBuyTitleMsg;
+            _window.GhostStore.OnBuy += OnBuyGhostMsg;
 
             _window.OnTitleChanged += OnSelectedTitle;
+            _window.OnGhostChanged += OnSelectedGhost;
+        }
+
+        private void OnSelectedGhost(ProtoId<GhostSkinListingPrototype>? proto)
+        {
+            var msg = new CurrencyEuiMsg.SelectGhostSkin()
+            {
+                ProtoId = proto
+            };
+            SendMessage(msg);
+        }
+
+        private void OnBuyGhostMsg(ProtoId<GhostSkinListingPrototype> ghostId)
+        {
+            SendMessage(new CurrencyEuiMsg.BuyGhostSkin
+            {
+                GhostId = ghostId
+            });
+            SendMessage(new CurrencyEuiMsg.Close());
         }
 
         private void OnSelectedTitle(ProtoId<TitleListingPrototype>? proto)
         {
             var msg = new CurrencyEuiMsg.SelectTitle()
             {
-                TitleId = proto
+                ProtoId = proto
             };
             SendMessage(msg);
         }

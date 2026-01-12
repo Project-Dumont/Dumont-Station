@@ -151,5 +151,11 @@ namespace Content.Client.Lobby
         {
             Preferences.OOCTitle = proto;
         }
+
+        // Gaby change - ghost skins
+        public void SetGhostSkin(ProtoId<GhostSkinListingPrototype>? proto)
+        {
+            Preferences.GhostSkin = proto;
+        }
     }
 }

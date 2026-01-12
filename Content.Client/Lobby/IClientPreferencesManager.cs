@@ -22,5 +22,6 @@ namespace Content.Client.Lobby
         void DeleteCharacter(int slot);
         void UpdateConstructionFavorites(List<ProtoId<ConstructionPrototype>> favorites);
         void SetTitle(ProtoId<TitleListingPrototype>? proto); // Gaby change - titles
+        void SetGhostSkin(ProtoId<GhostSkinListingPrototype>? proto); // Gaby change - ghost skins
     }
 }

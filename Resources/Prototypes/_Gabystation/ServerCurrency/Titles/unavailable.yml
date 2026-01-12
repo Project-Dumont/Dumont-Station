@@ -1,0 +1,62 @@
+- type: titleListing
+  id: BetaTitle
+  title: 1° Titulo
+  price: 650 # Por tempo limitado!
+  color: "#bc8f8f"
+  avaible: true
+
+- type: titleListing
+  id: TestTitle
+  title: Teste
+  price: 9999
+  color: "#00FFFF"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveContribuTitle
+  title: Contribuidor
+  price: 9999
+  color: "#084d6e"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveDonatorTitle
+  title: Doador
+  price: 9999
+  color: "#682fd1"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveExAdminTitle
+  title: Ex-Admin
+  price: 9999
+  color: "#808080"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveTrialAdminTitle
+  title: Trial-Admin
+  price: 9999
+  color: "#b45c29"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveAdminTitle
+  title: Admin
+  price: 9999
+  color: "#a14444"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveHeadminTitle
+  title: Headmin
+  price: 9999
+  color: "#5aa6dd"
+  avaible: false
+
+- type: titleListing
+  id: ExclusiveHostTitle
+  title: Host
+  price: 9999
+  color: "#ffca00"
+  avaible: false

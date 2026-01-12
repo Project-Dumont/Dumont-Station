@@ -28,6 +28,9 @@ gs-balanceui-shop-footer = ⚠ Ultilize o AHelp para resgatar seu token.
 gs-balanceui-shop-buy-btn = Comprar {$token} - {$price}gc
 gs-balanceui-shop-buy-title-btn = Comprar titulo [{$title}] por {$price}gc
 gs-balanceui-shop-buy-title-owned = Comprar titulo [{$title}] (JÁ POSSUIDO)
+gs-balanceui-shop-title-preview-msg = {""}
+gs-balanceui-shop-buy-ghost-skin-btn = Comprar fantasma {$title} por {$price}gc
+gs-balanceui-shop-buy-ghost-skin-owned = Comprar Fantasma {$title} (JÁ POSSUIDO)
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titulo
