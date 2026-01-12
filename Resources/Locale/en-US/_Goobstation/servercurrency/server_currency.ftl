@@ -48,5 +48,7 @@ server-currency-command-return = {$player} has {$balance}.
 # Gaby
 
 server-currency-command-desc-add-title = Add a title to a user or yourself.
+server-currency-command-desc-add-ghost-skin = Add a ghost skin to a user or yourself.
+
 server-currency-command-error-unknow-prototype = Unknow prototype.
-server-currency-command-error-has-title = User already has this title!
+server-currency-command-error-has-item = User already has this!

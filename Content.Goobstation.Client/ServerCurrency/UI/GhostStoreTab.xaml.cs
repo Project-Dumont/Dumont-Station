@@ -61,27 +61,36 @@ public sealed partial class GhostStoreTab : BoxContainer
         foreach (var listing in titleListings)
         {
             var rawTitle = Loc.GetString(listing.Name);
+            var box = new BoxContainer()
+            {
+                Orientation = LayoutOrientation.Horizontal,
+            };
             var texture = new TextureRect()
             {
                 Texture = spriteSys.Frame0(listing.Sprite),
                 Stretch = TextureRect.StretchMode.KeepAspect,
                 MinSize = new Vector2(64, 64),
+                MaxSize = new Vector2(64, 64),
             };
             var button = new Button
             {
                 Text = Loc.GetString("gs-balanceui-shop-buy-ghost-skin-btn", ("title", rawTitle), ("price", listing.Price)),
                 MinHeight = 64,
-                TextAlign = Label.AlignMode.Right,
+                HorizontalExpand = true
             };
-            button.AddChild(texture);
+            box.AddChild(texture);
+            box.AddChild(button);
             if (listing.Color is not null)
+            {
                 button.Modulate = Color.FromHex(listing.Color);
+                texture.Modulate = Color.FromHex(listing.Color);
+            }
 
             if (Owned.Contains(listing.ID))
             {
                 button.Disabled = true;
                 button.Text = Loc.GetString("gs-balanceui-shop-buy-ghost-skin-owned", ("title", rawTitle));
-                GhostListingsContainer.AddChild(button);
+                GhostListingsContainer.AddChild(box);
                 GhostListingsContainer.AddChild(new Control { MinSize = new Vector2(0, 5) });
                 continue;
             }
@@ -120,7 +129,7 @@ public sealed partial class GhostStoreTab : BoxContainer
                 });
             };
 
-            GhostListingsContainer.AddChild(button);
+            GhostListingsContainer.AddChild(box);
             GhostListingsContainer.AddChild(new Control { MinSize = new Vector2(0, 5) });
         }
     }
@@ -133,14 +142,20 @@ public sealed partial class GhostStoreTab : BoxContainer
         //Header.Text = _serverCur.Stringify(balance.Value);
         foreach (var child in GhostListingsContainer.Children)
         {
-            if (child is not Button button)
+            if (child is not BoxContainer box)
                 continue;
 
-            var listing = _protoManager.EnumeratePrototypes<GhostSkinListingPrototype>()
-                .FirstOrDefault(x => Loc.GetString("gs-balanceui-shop-buy-ghost-skin-btn", ("title", Loc.GetString(x.Name)), ("price", x.Price)) == button.Text);
+            foreach (var bChild in box.Children)
+            {
+                if (bChild is not Button button)
+                    continue;
 
-            if (listing != null)
-                button.Disabled = balance < listing.Price;
+                var listing = _protoManager.EnumeratePrototypes<GhostSkinListingPrototype>()
+                    .FirstOrDefault(x => Loc.GetString("gs-balanceui-shop-buy-ghost-skin-btn", ("title", Loc.GetString(x.Name)), ("price", x.Price)) == button.Text);
+
+                if (listing != null)
+                    button.Disabled = balance < listing.Price;
+            }
         }
     }
 }

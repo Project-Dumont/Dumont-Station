@@ -81,7 +81,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         [Dependency] private readonly CurrencyStoreManager _store = default!;
         [Dependency] private readonly IPrototypeManager _proto = default!;
 
-        public string Command => "title:add";
+        public string Command => "balance:addtitle";
 
         public string Description => Loc.GetString("server-currency-command-desc-add-title");
 
@@ -115,7 +115,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
 
             if (_store.HasTitle(player.UserId, args[1]))
             {
-                shell.WriteError(Loc.GetString("server-currency-command-error-has-title"));
+                shell.WriteError(Loc.GetString("server-currency-command-error-has-item"));
                 return;
             }
             _store.AddTitle(player.UserId, args[1]);
@@ -127,6 +127,63 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             {
                 1 => CompletionResult.FromHintOptions(CompletionHelper.SessionNames(), Loc.GetString("server-currency-command-completion-1")),
                 2 => CompletionResult.FromHintOptions(CompletionHelper.PrototypeIDs<TitleListingPrototype>(), Loc.GetString("server-currency-command-completion-2")),
+                _ => CompletionResult.Empty
+            };
+        }
+    }
+
+    [AdminCommand(AdminFlags.Fun)]
+    public sealed class AddGhostCommand : IConsoleCommand
+    {
+        [Dependency] private readonly CurrencyStoreManager _store = default!;
+        [Dependency] private readonly IPrototypeManager _proto = default!;
+
+        public string Command => "balance:addskin";
+
+        public string Description => Loc.GetString("server-currency-command-desc-add-ghost");
+
+        public string Help => $"{Command} <User> <GhostSkinListiningPrototype>";
+
+        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            if (args.Length != 2)
+            {
+                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                return;
+            }
+
+            if (shell.Player is not { } player){
+                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
+                return;
+            }
+
+            var plyMgr = IoCManager.Resolve<IPlayerManager>();
+            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            {
+                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
+                return;
+            }
+
+            if (args[1] is not string || !_proto.HasIndex<GhostSkinListingPrototype>(args[1]))
+            {
+                shell.WriteError(Loc.GetString("server-currency-command-error-unknow-prototype"));
+                return;
+            }
+
+            if (_store.HasGhostSkin(player.UserId, args[1]))
+            {
+                shell.WriteError(Loc.GetString("server-currency-command-error-has-item"));
+                return;
+            }
+            _store.AddGhostSkin(player.UserId, args[1]);
+        }
+
+        public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            return args.Length switch
+            {
+                1 => CompletionResult.FromHintOptions(CompletionHelper.SessionNames(), Loc.GetString("server-currency-command-completion-1")),
+                2 => CompletionResult.FromHintOptions(CompletionHelper.PrototypeIDs<GhostSkinListingPrototype>(), Loc.GetString("server-currency-command-completion-2")),
                 _ => CompletionResult.Empty
             };
         }

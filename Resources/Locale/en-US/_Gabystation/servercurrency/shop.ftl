@@ -26,11 +26,11 @@ gs-balanceui-shop-rotation-desc = The store is restocked with
                             {""} {$tokens} tokens every {$cooldown} minutes.
 gs-balanceui-shop-footer = ⚠ Use AHelp to redeem your token.
 gs-balanceui-shop-buy-btn = Buy {$token} - {$price}gc
-gs-balanceui-shop-buy-title-btn = Buy title [{$title}] for {$price}gc
+gs-balanceui-shop-buy-title-btn = Buy title [{$title}] - {$price}gc
 gs-balanceui-shop-buy-title-owned = Buy title [{$title}] (OWNED)
 gs-balanceui-shop-title-preview-msg = Hello World!
-gs-balanceui-shop-buy-ghost-skin-btn = Buy ghost {$title} for {$price}gc
-gs-balanceui-shop-buy-ghost-skin-owned = Buy ghost {$title} (OWNED)
+gs-balanceui-shop-buy-ghost-skin-btn = Buy skin {$title} - {$price}gc
+gs-balanceui-shop-buy-ghost-skin-owned = Skin {$title} (OWNED)
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Title

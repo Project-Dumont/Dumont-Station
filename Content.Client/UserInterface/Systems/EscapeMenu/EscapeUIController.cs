@@ -165,6 +165,11 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
             _guidebook.ToggleGuidebook();
         };
 
+        _escapeWindow.StoreButton.OnPressed += _ => // Gaby change - store rework
+        {
+            _console.ExecuteCommand("balanceui");
+        };
+
         // Hide wiki button if we don't have a link for it.
         _escapeWindow.WikiButton.Visible = _cfg.GetCVar(CCVars.InfoLinksWiki) != "";
 

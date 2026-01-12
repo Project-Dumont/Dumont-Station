@@ -1,7 +1,9 @@
 using Content.Server._Gabystation.ServerCurrency.Managers;
+using Content.Server.Mind;
 using Content.Server.Preferences.Managers;
 using Content.Shared._Gabystation.ServerCurrency.Ghost;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
+using Content.Shared.Mind.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -20,8 +22,14 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<GhostSkinComponent, ComponentAdd>(OnComponentAdd);
+        SubscribeLocalEvent<GhostSkinComponent, ComponentStartup>(ComponentStartup);
+        SubscribeLocalEvent<GhostSkinComponent, PlayerAttachedEvent>(OnPlayerAttached);
         _store.OnUserSelectNewGhostSkin += OnNewSkin;
+    }
+
+    private void OnPlayerAttached(Entity<GhostSkinComponent> ent, ref PlayerAttachedEvent args)
+    {
+        UpdateGhost(ent);
     }
 
     private void OnNewSkin(ProtoId<GhostSkinListingPrototype>? skin, NetUserId id)
@@ -36,7 +44,7 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
         UpdateGhost((uid.Value, comp));
     }
 
-    private void OnComponentAdd(Entity<GhostSkinComponent> ent, ref ComponentAdd args)
+    private void ComponentStartup(Entity<GhostSkinComponent> ent, ref ComponentStartup args)
     {
         UpdateGhost(ent);
     }

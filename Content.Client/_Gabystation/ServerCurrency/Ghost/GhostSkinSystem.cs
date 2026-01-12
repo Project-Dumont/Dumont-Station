@@ -20,9 +20,20 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
         base.Initialize();
 
         SubscribeLocalEvent<GhostSkinComponent, AfterAutoHandleStateEvent>(OnStateChange);
+        //SubscribeLocalEvent<GhostSkinComponent, ComponentAdd>(OnCompAdd);
+    }
+
+    private void OnCompAdd(Entity<GhostSkinComponent> ent, ref ComponentAdd args)
+    {
+        UpdateSkin(ent);
     }
 
     private void OnStateChange(Entity<GhostSkinComponent> ent, ref AfterAutoHandleStateEvent args)
+    {
+        UpdateSkin(ent);
+    }
+
+    private void UpdateSkin(Entity<GhostSkinComponent> ent)
     {
         if (!TryComp<SpriteComponent>(ent.Owner, out var sprite))
             return;
@@ -56,8 +67,8 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
             return;
 
         var sprEnt = (ent.Owner, sprite);
-        if (!_sprite.LayerMapTryGet((ent.Owner, sprite), EffectLayers.Unshaded, out var layer, false))
-            return;
+        if (!_sprite.LayerMapTryGet(sprEnt, EffectLayers.Unshaded, out var layer, false))
+            layer = 0;
 
         _sprite.LayerSetSprite(sprEnt, layer, proto.Sprite);
         sprite.LayerSetShader(layer, "unshaded");

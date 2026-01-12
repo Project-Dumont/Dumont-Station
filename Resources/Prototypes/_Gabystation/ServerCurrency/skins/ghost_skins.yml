@@ -1,0 +1,82 @@
+- type: ghostSkinListing
+  id: DefaultSkin # for internal GhostSkinSystem use
+  name: YOU SHOULD BE NOT ABLE TO SEE THIS
+  price: 0
+  avaible: false
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#FFFFFFFF"
+
+# Misc
+
+- type: ghostSkinListing
+  id: FlippedSkin
+  name: Invertido
+  price: 500
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/flipped.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: CatEarsSkin
+  name: Gato
+  price: 666
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/cat.rsi"
+    state: animated
+
+# Species
+
+- type: ghostSkinListing
+  id: VulpSkin
+  name: Vulpkanin
+  price: 1200
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/vulp.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: MothSkin
+  name: Moth
+  price: 1200
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/moth.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: LizardSkin
+  name: Lizard
+  price: 1200
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/lizard.rsi"
+    state: animated
+
+# mvp
+
+- type: ghostSkinListing
+  id: AuraSkin
+  name: Aura
+  price: 1900
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/aura.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: AngelSkin
+  name: Angelical
+  price: 2300
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/angel.rsi"
+    state: animated
+
+# Memes
+
+- type: ghostSkinListing
+  id: DaveJonesSkin
+  name: Mago
+  price: 18000
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/mago.rsi"
+    state: animated
+  scale: 0.5, 0.5
