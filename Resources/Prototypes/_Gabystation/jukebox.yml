@@ -583,11 +583,3 @@
   name: Papers Please - Death Theme
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
-
-- type: jukebox
-  id: PapaiNoelFilhodaputa
-  name: Papai Noel Filho da puta 
-  path:
-    path: /Audio/_Gabystation/Jukebox/Papai_Noel_Filho_da_puta
-
-
