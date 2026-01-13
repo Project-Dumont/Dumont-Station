@@ -2,7 +2,7 @@
   id: DefaultSkin # for internal GhostSkinSystem use
   name: YOU SHOULD BE NOT ABLE TO SEE THIS
   price: 0
-  avaible: false
+  available: false
   sprite:
     sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
     state: animated

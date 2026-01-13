@@ -138,7 +138,7 @@ public sealed partial class GhostStoreTab : BoxContainer
         }
     }
 
-    private void UpdateButtonStates(int? balance = null)
+    public void UpdateButtonStates(int? balance = null)
     {
         if (balance == null)
             balance = _serverCur.GetBalance();

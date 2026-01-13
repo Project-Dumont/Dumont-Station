@@ -221,7 +221,10 @@ public sealed partial class CurrencyWindow : DefaultWindow
     {
         var balance = _serverCur.GetBalance();
         Header.Text = _serverCur.Stringify(balance);
+
         TokenStore.UpdateButtonStates(balance);
+        TitleStore.UpdateButtonStates(balance);
+        GhostStore.UpdateButtonStates(balance);
     }
 
     private void ShowConfirmation(string message)

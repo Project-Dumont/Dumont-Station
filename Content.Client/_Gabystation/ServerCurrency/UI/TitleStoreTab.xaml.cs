@@ -118,7 +118,7 @@ public sealed partial class TitleStoreTab : BoxContainer
         }
     }
 
-    private void UpdateButtonStates(int? balance = null)
+    public void UpdateButtonStates(int? balance = null)
     {
         if (balance is null)
             balance = _serverCur.GetBalance();

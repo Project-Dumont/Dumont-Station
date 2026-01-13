@@ -18,5 +18,5 @@ public sealed class TitleListingPrototype : IPrototype
     public string? Color { get; private set; } = null;
 
     [DataField(required: false)]
-    public bool Available { get; private set; } = true; // todo this & comand giveTitle
+    public bool Available { get; private set; } = true;
 }
