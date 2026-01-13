@@ -13,6 +13,7 @@
     BlobToken: 1
     DevilToken: 1
     ShadowlingToken: 1
+    MalfAiToken: 1
     # Ghost roles tokens
     LoneOpsToken: 1
     WraithToken: 1
@@ -24,6 +25,7 @@
     BingleToken: 1
     UnknowShuttleToken: 1
     ParadoxCloneToken: 1
+    SlasherToken: 1
     # Misc tokens
     AdminRoleplayToken: 3
     ClothToken: 3

@@ -7,6 +7,7 @@ gs-balanceui-token-changeling = Changeling
 gs-balanceui-token-blob = Blob
 gs-balanceui-token-devil = Devil
 gs-balanceui-token-shadowling = Shadowling
+gs-balanceui-token-malf = Malf AI
 
 gs-balanceui-token-loneops = Loneops
 gs-balanceui-token-wraith = Wraith
@@ -18,6 +19,7 @@ gs-balanceui-token-rat-king = Rat king
 gs-balanceui-token-bingle = Bingle
 gs-balanceui-token-unknow-shuttle-event = Unknow Shuttle
 gs-balanceui-token-paradox-clone = Paradox Clone
+gs-balanceui-token-slasher = Slasher
 
 gs-balanceui-shop-token-antag = Round Antagonist Token
 gs-balanceui-shop-token-ghost = Ghost Role Token

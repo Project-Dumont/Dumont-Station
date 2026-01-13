@@ -51,3 +51,9 @@
   tokenType: Antag
   name: gs-balanceui-token-shadowling
   price: 1250
+
+- type: tokenListing
+  id: MalfAiToken
+  tokenType: Antag
+  name: gs-balanceui-token-malf
+  price: 1450

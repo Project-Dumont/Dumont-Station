@@ -57,3 +57,9 @@
   tokenType: GhostRole
   name: gs-balanceui-token-paradox-clone
   price: 850
+
+- type: tokenListing
+  id: SlasherToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-slasher
+  price: 1200
