@@ -227,6 +227,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-hos
+  - type: ConditionalSpawner # Gabystation - beepsky spawn
+    prototypes:
+      - MobBeepsky
 
 - type: entity
   parent: DefaultStationBeaconSecurity

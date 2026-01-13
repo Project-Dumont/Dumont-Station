@@ -127,6 +127,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Content.Shared.Security.Systems;
 
 namespace Content.Server.PDA
 {
@@ -211,6 +212,9 @@ namespace Content.Server.PDA
             if (id != null)
                 pda.OwnerName = id.FullName;
             UpdatePdaUi(uid, pda);
+
+            if (args.Container.ID == PdaComponent.PdaIdSlotId)
+                RaiseLocalEvent(uid, new PdaIdChangedEvent(uid, pda.ContainedId));
         }
 
         protected override void OnItemRemoved(EntityUid uid, PdaComponent pda, EntRemovedFromContainerMessage args)
@@ -228,6 +232,9 @@ namespace Content.Server.PDA
 
             base.OnItemRemoved(uid, pda, args);
             UpdatePdaUi(uid, pda);
+
+            if (args.Container.ID == PdaComponent.PdaIdSlotId)
+                RaiseLocalEvent(uid, new PdaIdChangedEvent(uid, null));
         }
 
         private void OnLightToggle(EntityUid uid, PdaComponent pda, LightToggleEvent args)

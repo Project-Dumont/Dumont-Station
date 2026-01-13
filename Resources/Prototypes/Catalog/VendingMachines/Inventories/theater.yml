@@ -158,3 +158,6 @@
     ClothingUniformJumpsuitResonant: 1 # Goobstation
     ClothingOuterArmorHereticCostume: 1 # Goobstation
     ToyBladeEldritch: 1 # Goobstation
+  emaggedInventory: # goob
+    ClothingOuterPonchoClassicRobust: 1
+    ClothingHeadHatCowboyBrownRobust: 1

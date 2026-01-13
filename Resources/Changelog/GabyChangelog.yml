@@ -1674,3 +1674,39 @@ Entries:
       message: Adicionadas as mudanças do Goob até 21/12 (confira a aba do Goob)!
   id: 197
   time: '2025-12-22T13:55:09.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode desligar máquinas para economizar energia.
+  id: 198
+  time: '2025-12-30T01:21:26.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora os segurança ganharam um bot chamado Beepsky.
+  id: 199
+  time: '2026-01-12T01:11:09.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Adiciona todo conteudo de xenobiologia e virologia para glacier
+    - type: Add
+      message: Processador de minerios para salvatagem na glacier
+    - type: Add
+      message: BSO para glacier
+    - type: Tweak
+      message: >-
+        Leves mudanças na SM da glacier, sua contenção agora é menor e pode
+        gerar mais energia
+  id: 200
+  time: '2026-01-12T01:18:24.0000000+00:00'
+- author: Struater
+  changes: []
+  id: 201
+  time: '2026-01-12T15:48:59.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 12/01/2026 (confira a aba do Goob)!
+  id: 202
+  time: '2026-01-12T17:37:55.0000000+00:00'
