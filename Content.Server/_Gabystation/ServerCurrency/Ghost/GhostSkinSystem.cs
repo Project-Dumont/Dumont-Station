@@ -1,10 +1,7 @@
 using Content.Server._Gabystation.ServerCurrency.Managers;
-using Content.Server.Mind;
 using Content.Server.Preferences.Managers;
 using Content.Shared._Gabystation.ServerCurrency.Ghost;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
-using Content.Shared.Mind.Components;
-using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -38,16 +35,15 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
             return;
 
         var uid = session.AttachedEntity;
-        if (uid is null || !TryComp<GhostSkinComponent>(uid, out var comp))
+        if (uid is null
+            || !TryComp<GhostSkinComponent>(uid, out var comp))
             return;
 
         UpdateGhost((uid.Value, comp));
     }
 
     private void ComponentStartup(Entity<GhostSkinComponent> ent, ref ComponentStartup args)
-    {
-        UpdateGhost(ent);
-    }
+        => UpdateGhost(ent);
 
     private void UpdateGhost(Entity<GhostSkinComponent> ent)
     {

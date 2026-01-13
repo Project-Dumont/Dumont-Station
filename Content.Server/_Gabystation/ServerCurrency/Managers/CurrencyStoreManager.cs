@@ -6,13 +6,10 @@
 using Content.Server.Database;
 using Content.Server.Preferences.Managers;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
-using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Asynchronous;
 using System.Threading.Tasks;
 using System.Linq;
-using Content.Shared._Gabystation.ServerCurrency;
 
 namespace Content.Server._Gabystation.ServerCurrency.Managers;
 
@@ -43,7 +40,7 @@ public sealed class CurrencyStoreManager : IPostInjectInit
 
     public bool TrySetGhostSkin(NetUserId userId, ProtoId<GhostSkinListingPrototype>? ghost)
     {
-        if (ghost is not null && !_proto.HasIndex<GhostSkinListingPrototype>(ghost))
+        if (ghost is not null && !_proto.HasIndex(ghost))
             return false;
 
         _db.SaveGhostSkinAsync(userId, ghost);
@@ -110,7 +107,7 @@ public sealed class CurrencyStoreManager : IPostInjectInit
 
     public bool TrySetTitle(NetUserId userId, ProtoId<TitleListingPrototype>? title)
     {
-        if (title is not null && !_proto.HasIndex<TitleListingPrototype>(title))
+        if (title is not null && !_proto.HasIndex(title))
             return false;
 
         _db.SaveOOCTitleAsync(userId, title);
@@ -173,7 +170,7 @@ public sealed class CurrencyStoreManager : IPostInjectInit
     /// </summary>
     public string? SanitizeTitleString(ProtoId<TitleListingPrototype>? title)
     {
-        if (title is null || !_proto.TryIndex<TitleListingPrototype>(title, out var proto))
+        if (title is null || !_proto.TryIndex(title, out var proto))
             return "";
 
         var str = Loc.GetString(proto.Title);

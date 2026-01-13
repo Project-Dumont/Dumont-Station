@@ -15,84 +15,83 @@ using Content.Shared.Eui;
 using Robust.Shared.Prototypes;
 using Content.Shared._Gabystation.ServerCurrency.UI;
 
-namespace Content.Client._Gabystation.ServerCurrency.UI
+namespace Content.Client._Gabystation.ServerCurrency.UI;
+
+public sealed class CurrencyEui : BaseEui
 {
-    public sealed class CurrencyEui : BaseEui
+    private readonly CurrencyWindow _window;
+
+    public CurrencyEui()
     {
-        private readonly CurrencyWindow _window;
-        public CurrencyEui()
-        {
-            _window = new CurrencyWindow();
-            _window.OnClose += () => SendMessage(new CurrencyEuiMsg.Close());
-            _window.TokenStore.OnBuy += OnBuyTokenMsg;
-            _window.TitleStore.OnBuy += OnBuyTitleMsg;
-            _window.GhostStore.OnBuy += OnBuyGhostMsg;
+        _window = new CurrencyWindow();
+        _window.OnClose += () => SendMessage(new CurrencyEuiMsg.Close());
+        _window.TokenStore.OnBuy += OnBuyTokenMsg;
+        _window.TitleStore.OnBuy += OnBuyTitleMsg;
+        _window.GhostStore.OnBuy += OnBuyGhostMsg;
+        _window.OnTitleChanged += OnSelectedTitle;
+        _window.OnGhostChanged += OnSelectedGhost;
+    }
 
-            _window.OnTitleChanged += OnSelectedTitle;
-            _window.OnGhostChanged += OnSelectedGhost;
-        }
-
-        private void OnSelectedGhost(ProtoId<GhostSkinListingPrototype>? proto)
+    private void OnSelectedGhost(ProtoId<GhostSkinListingPrototype>? proto)
+    {
+        var msg = new CurrencyEuiMsg.SelectGhostSkin()
         {
-            var msg = new CurrencyEuiMsg.SelectGhostSkin()
-            {
-                ProtoId = proto
-            };
-            SendMessage(msg);
-        }
+            ProtoId = proto
+        };
+        SendMessage(msg);
+    }
 
-        private void OnBuyGhostMsg(ProtoId<GhostSkinListingPrototype> ghostId)
+    private void OnBuyGhostMsg(ProtoId<GhostSkinListingPrototype> ghostId)
+    {
+        SendMessage(new CurrencyEuiMsg.BuyGhostSkin
         {
-            SendMessage(new CurrencyEuiMsg.BuyGhostSkin
-            {
-                GhostId = ghostId
-            });
-            SendMessage(new CurrencyEuiMsg.Close());
-        }
+            GhostId = ghostId
+        });
+        SendMessage(new CurrencyEuiMsg.Close());
+    }
 
-        private void OnSelectedTitle(ProtoId<TitleListingPrototype>? proto)
+    private void OnSelectedTitle(ProtoId<TitleListingPrototype>? proto)
+    {
+        var msg = new CurrencyEuiMsg.SelectTitle()
         {
-            var msg = new CurrencyEuiMsg.SelectTitle()
-            {
-                ProtoId = proto
-            };
-            SendMessage(msg);
-        }
+            ProtoId = proto
+        };
+        SendMessage(msg);
+    }
 
-        private void OnBuyTitleMsg(ProtoId<TitleListingPrototype> titleId)
+    private void OnBuyTitleMsg(ProtoId<TitleListingPrototype> titleId)
+    {
+        SendMessage(new CurrencyEuiMsg.BuyTitle
         {
-            SendMessage(new CurrencyEuiMsg.BuyTitle
-            {
-                TitleId = titleId
-            });
-            SendMessage(new CurrencyEuiMsg.Close());
-        }
+            TitleId = titleId
+        });
+        SendMessage(new CurrencyEuiMsg.Close());
+    }
 
-        private void OnBuyTokenMsg(ProtoId<TokenListingPrototype> tokenId)
+    private void OnBuyTokenMsg(ProtoId<TokenListingPrototype> tokenId)
+    {
+        SendMessage(new CurrencyEuiMsg.BuyToken
         {
-            SendMessage(new CurrencyEuiMsg.BuyToken
-            {
-                TokenId = tokenId
-            });
-            SendMessage(new CurrencyEuiMsg.Close());
-        }
+            TokenId = tokenId
+        });
+        SendMessage(new CurrencyEuiMsg.Close());
+    }
 
-        public override void Opened()
-        {
-            _window.OpenCentered();
-        }
-        public override void Closed()
-        {
-            _window.Close();
-        }
+    public override void Opened()
+    {
+        _window.OpenCentered();
+    }
 
-        public override void HandleState(EuiStateBase state)
-        {
-            base.HandleState(state);
-            if (state is not CurrencyEuiState s)
-                return;
+    public override void Closed()
+    {
+        _window.Close();
+    }
 
-            _window.UpdateState(s);
-        }
+    public override void HandleState(EuiStateBase state)
+    {
+        base.HandleState(state);
+        if (state is not CurrencyEuiState s)
+            return;
+        _window.UpdateState(s);
     }
 }

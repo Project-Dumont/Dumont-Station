@@ -10,22 +10,21 @@ public sealed class GhostSkinListingPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-
-    [DataField("name", required: true)]
+    [DataField(required: true)]
     public string Name { get; private set; } = string.Empty;
 
-    [DataField("price", required: true)]
+    [DataField(required: true)]
     public int Price { get; private set; } = 0;
 
-    [DataField("sprite", required: true)]
+    [DataField(required: true)]
     public SpriteSpecifier Sprite { get; private set; } = default!;
 
-    [DataField("color", required: false)]
+    [DataField(required: false)]
     public string? Color { get; private set; } = null;
 
-    [DataField("scale", required: false)]
+    [DataField(required: false)]
     public Vector2 Scale { get; private set; } = new(1, 1);
 
-    [DataField("avaible", required: false)]
-    public bool Avaible { get; private set; } = true;
+    [DataField(required: false)]
+    public bool Available { get; private set; } = true;
 }

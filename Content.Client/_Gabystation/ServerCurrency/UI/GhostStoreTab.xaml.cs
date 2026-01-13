@@ -24,11 +24,14 @@ public sealed partial class GhostStoreTab : BoxContainer
     [Dependency] private readonly ICommonCurrencyManager _serverCur = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
+
     public event Action<ProtoId<GhostSkinListingPrototype>>? OnBuy;
-    private Dictionary<Button, (DateTime LastClick, GhostSkinListingPrototype Listing)> _buttonClickTimes = new();
-    private const double DoubleClickTimeWindow = 1.5; // seconds
     public event Action<string>? ShowConfirm;
+
+    private Dictionary<Button, (DateTime LastClick, GhostSkinListingPrototype Listing)> _buttonClickTimes = new();
     public List<ProtoId<GhostSkinListingPrototype>> Owned = new List<ProtoId<GhostSkinListingPrototype>>();
+
+    private const double DoubleClickTimeWindow = 1.5; // seconds
 
     public GhostStoreTab()
     {
@@ -39,9 +42,9 @@ public sealed partial class GhostStoreTab : BoxContainer
         UpdateButtonStates();
     }
 
-    public void UpdateState(CurrencyEuiState s)
+    public void UpdateState(CurrencyEuiState state)
     {
-        Owned = s.OwnedGhostSkins;
+        Owned = state.OwnedGhostSkins;
         PopulateTokenButtons(); // recreate all buttons
         UpdateButtonStates();
     }
@@ -50,10 +53,11 @@ public sealed partial class GhostStoreTab : BoxContainer
     {
         GhostListingsContainer.DisposeAllChildren();
         _buttonClickTimes.Clear();
+
         var spriteSys = _entMan.System<SpriteSystem>();
 
         var titleListings = _protoManager.EnumeratePrototypes<GhostSkinListingPrototype>()
-            .Where(x => x.Avaible)
+            .Where(x => x.Available)
             .OrderBy(x => x.Price);
 
         foreach (var listing in titleListings)
@@ -74,10 +78,12 @@ public sealed partial class GhostStoreTab : BoxContainer
             {
                 Text = Loc.GetString("gs-balanceui-shop-buy-ghost-skin-btn", ("title", rawTitle), ("price", listing.Price)),
                 MinHeight = 64,
-                HorizontalExpand = true
+                HorizontalExpand = true,
             };
+
             box.AddChild(texture);
             box.AddChild(button);
+
             if (listing.Color is not null)
             {
                 button.Modulate = Color.FromHex(listing.Color);
@@ -151,7 +157,7 @@ public sealed partial class GhostStoreTab : BoxContainer
                 var listing = _protoManager.EnumeratePrototypes<GhostSkinListingPrototype>()
                     .FirstOrDefault(x => Loc.GetString("gs-balanceui-shop-buy-ghost-skin-btn", ("title", Loc.GetString(x.Name)), ("price", x.Price)) == button.Text);
 
-                if (listing != null)
+                if (listing is not null)
                     button.Disabled = balance < listing.Price;
             }
         }

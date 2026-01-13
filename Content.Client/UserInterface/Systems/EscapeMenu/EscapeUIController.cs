@@ -170,6 +170,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 
         _escapeWindow.StoreButton.OnPressed += _ => // Gaby change - store rework
         {
+            CloseEscapeWindow();
             _console.ExecuteCommand("balanceui");
         };
 

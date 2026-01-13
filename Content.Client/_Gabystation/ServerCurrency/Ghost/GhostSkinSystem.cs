@@ -3,12 +3,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client.Ghost;
 using Content.Shared._Gabystation.ServerCurrency.Ghost;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Client.GameObjects;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Gabystation.ServerCurrency.Ghost;
@@ -18,19 +16,13 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    [ValidatePrototypeId<GhostSkinListingPrototype>]
     private ProtoId<GhostSkinListingPrototype> _defaultSkin = "DefaultSkin";
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<GhostSkinComponent, AfterAutoHandleStateEvent>(OnStateChange);
-        //SubscribeLocalEvent<GhostSkinComponent, ComponentAdd>(OnCompAdd);
-    }
-
-    private void OnCompAdd(Entity<GhostSkinComponent> ent, ref ComponentAdd args)
-    {
-        UpdateSkin(ent);
     }
 
     private void OnStateChange(Entity<GhostSkinComponent> ent, ref AfterAutoHandleStateEvent args)
@@ -42,7 +34,6 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
     {
         if (!TryComp<SpriteComponent>(ent.Owner, out var sprite))
             return;
-
 
         if (ent.Comp.Skin is null)
         {

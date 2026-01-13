@@ -662,7 +662,6 @@ namespace Content.Server.Database
         public List<Profile> Profiles { get; } = new();
         public string? OOCTitle { get; set; } = null;
         public string? GhostSkin { get; set; } = null;
-
     }
 
     public class Profile

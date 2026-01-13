@@ -10,7 +10,7 @@
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinHeight="405" Margin="10">
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="0">
                     <controls:StripeBack>
-                        <Label Name="RotationCooldown" Text="..." Access="Public"/>
+                        <Label Name="RotationCooldown" Text="..." VerticalAlignment="Center" HorizontalAlignment="Center" Access="Public"/>
                     </controls:StripeBack>
                     <BoxContainer Name="TokenListingsContainer" Orientation="Vertical" HorizontalExpand="True">
                         <!-- Buttons will be added here dynamically -->

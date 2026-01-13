@@ -10,7 +10,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.ServerCurrency;
-using Content.Server._Gabystation.ServerCurrency;
 using Content.Server._Gabystation.ServerCurrency.Managers;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Server.Administration.Notes;
@@ -20,136 +19,137 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared._Gabystation.ServerCurrency.UI;
 
-namespace Content.Server._Gabystation.ServerCurrency.UI
+namespace Content.Server._Gabystation.ServerCurrency.UI;
+
+public sealed class CurrencyEui : BaseEui
 {
-    public sealed class CurrencyEui : BaseEui
+    [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+    [Dependency] private readonly IAdminNotesManager _notesMan = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly IEntitySystemManager _entMan = default!;
+    [Dependency] private readonly CurrencyStoreManager _storeMan = default!;
+    private readonly ServerCurrencyStoreSystem _store;
+
+    public CurrencyEui()
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
-        [Dependency] private readonly IAdminNotesManager _notesMan = default!;
-        [Dependency] private readonly IPrototypeManager _protoMan = default!;
-        [Dependency] private readonly IEntitySystemManager _entMan = default!;
-        [Dependency] private readonly CurrencyStoreManager _storeMan = default!;
-        private readonly ServerCurrencyStoreSystem _store;
+        IoCManager.InjectDependencies(this);
+        _store = _entMan.GetEntitySystem<ServerCurrencyStoreSystem>();
+        _store.NewRotation += StateDirty;
+    }
 
-        public CurrencyEui()
+    public override void Opened()
+        => StateDirty();
+
+    public override EuiStateBase GetNewState()
+    {
+        List<string> tokens = [];
+
+        foreach (var token in _store.RotationStorage)
         {
-            IoCManager.InjectDependencies(this);
-            _store = _entMan.GetEntitySystem<ServerCurrencyStoreSystem>();
-            _store.NewRotation += () => StateDirty();
+            tokens.Add(token.ID);
         }
 
-        public override void Opened()
+        var titles = _storeMan.GetOwnedTitles(Player.UserId);
+        var ghosts = _storeMan.GetOwnedGhostSkins(Player.UserId);
+
+        return new CurrencyEuiState(_store.RotationCooldown, tokens, titles, ghosts);
+    }
+
+    public override void HandleMessage(EuiMessageBase msg)
+    {
+        base.HandleMessage(msg);
+        switch (msg)
         {
-            StateDirty();
+            // Select msgs
+
+            case CurrencyEuiMsg.SelectTitle sel:
+                if (sel.ProtoId == "Default")
+                    sel.ProtoId = null;
+
+                _storeMan.TrySetTitle(Player.UserId, sel.ProtoId);
+                break;
+
+            case CurrencyEuiMsg.SelectGhostSkin sel:
+                if (sel.ProtoId == "Default")
+                    sel.ProtoId = null;
+
+                _storeMan.TrySetGhostSkin(Player.UserId, sel.ProtoId);
+                break;
+
+            // Buy msgs
+
+            case CurrencyEuiMsg.BuyToken buy:
+                BuyToken(buy.TokenId, Player);
+                StateDirty();
+                break;
+
+            case CurrencyEuiMsg.BuyTitle buy:
+                BuyTitle(buy.TitleId);
+                StateDirty();
+                break;
+
+            case CurrencyEuiMsg.BuyGhostSkin buy:
+                BuyTitle(buy.GhostId);
+                StateDirty();
+                break;
         }
+    }
 
-        public override EuiStateBase GetNewState()
-        {
-            List<string> tokens = [];
-            foreach (var token in _store.RotationStorage)
-            {
-                tokens.Add(token.ID);
-            }
-            var titles = _storeMan.GetOwnedTitles(Player.UserId);
-            var ghosts = _storeMan.GetOwnedGhostSkins(Player.UserId);
-            return new CurrencyEuiState(_store.RotationCooldown, tokens, titles, ghosts);
-        }
+    private void BuyTitle(ProtoId<GhostSkinListingPrototype> ghostId)
+    {
+        if (!_protoMan.TryIndex(ghostId, out var proto))
+            return;
 
-        public override void HandleMessage(EuiMessageBase msg)
-        {
-            base.HandleMessage(msg);
-            switch (msg)
-            {
-                // Select msgs
+        if (!_currencyMan.CanAfford(Player.UserId, proto.Price, out _))
+            return;
 
-                case CurrencyEuiMsg.SelectTitle sel:
-                    if (sel.ProtoId == "Default")
-                        sel.ProtoId = null;
+        if (!proto.Available
+            || _storeMan.HasGhostSkin(Player.UserId, ghostId))
+            return;
 
-                    _storeMan.TrySetTitle(Player.UserId, sel.ProtoId);
-                    break;
+        _currencyMan.RemoveCurrency(Player.UserId, proto.Price);
+        _storeMan.AddGhostSkin(Player.UserId, ghostId);
+    }
 
-                case CurrencyEuiMsg.SelectGhostSkin sel:
-                    if (sel.ProtoId == "Default")
-                        sel.ProtoId = null;
+    private void BuyTitle(ProtoId<TitleListingPrototype> titleId)
+    {
+        if (!_protoMan.TryIndex(titleId, out var title))
+            return;
 
-                    _storeMan.TrySetGhostSkin(Player.UserId, sel.ProtoId);
-                    break;
+        if (!_currencyMan.CanAfford(Player.UserId, title.Price, out _))
+            return;
 
-                // Buy msgs
+        if (!title.Available || _storeMan.HasTitle(Player.UserId, titleId))
+            return;
 
-                case CurrencyEuiMsg.BuyToken buy:
-                    BuyToken(buy.TokenId, Player);
-                    StateDirty();
-                    break;
+        _currencyMan.RemoveCurrency(Player.UserId, title.Price);
+        _storeMan.AddTitle(Player.UserId, titleId);
+    }
 
-                case CurrencyEuiMsg.BuyTitle buy:
-                    BuyTitle(buy.TitleId);
-                    StateDirty();
-                    break;
+    private async void BuyToken(ProtoId<TokenListingPrototype> tokenId, ICommonSession playerName)
+    {
+        var balance = _currencyMan.GetBalance(Player.UserId);
 
-                case CurrencyEuiMsg.BuyGhostSkin buy:
-                    BuyTitle(buy.GhostId);
-                    StateDirty();
-                    break;
-            }
-        }
+        if (!_protoMan.TryIndex(tokenId, out var token))
+            return;
 
-        private void BuyTitle(ProtoId<GhostSkinListingPrototype> ghostId)
-        {
-            if (!_protoMan.TryIndex<GhostSkinListingPrototype>(ghostId, out var proto))
-                return;
+        if (!_store.RotationStorage.Contains(token))
+            return;
 
-            if (!_currencyMan.CanAfford(Player.UserId, proto.Price, out _))
-                return;
+        if (balance < token.Price)
+            return;
 
-            if (!proto.Avaible || _storeMan.HasGhostSkin(Player.UserId, ghostId))
-                return;
+        // This looks fucked up but i wanted to make the token prototype less verbose
+        var remark = "Something went wrong - please refund " + token.Price;
+        if (token.Type == "Antag")
+            remark = Loc.GetString("gs-balanceui-shop-token-antag-remark", ("token", Loc.GetString(token.Name)));
+        else if (token.Type == "GhostRole")
+            remark = Loc.GetString("gs-balanceui-shop-token-ghost-role-remark", ("token", Loc.GetString(token.Name)));
+        else
+            remark = Loc.GetString(token.AdminNote);
 
-            _currencyMan.RemoveCurrency(Player.UserId, proto.Price);
-            _storeMan.AddGhostSkin(Player.UserId, ghostId);
-        }
-
-        private void BuyTitle(ProtoId<TitleListingPrototype> titleId)
-        {
-            if (!_protoMan.TryIndex<TitleListingPrototype>(titleId, out var title))
-                return;
-
-            if (!_currencyMan.CanAfford(Player.UserId, title.Price, out _))
-                return;
-
-            if (!title.Avaible || _storeMan.HasTitle(Player.UserId, titleId))
-                return;
-
-            _currencyMan.RemoveCurrency(Player.UserId, title.Price);
-            _storeMan.AddTitle(Player.UserId, titleId);
-        }
-
-        private async void BuyToken(ProtoId<TokenListingPrototype> tokenId, ICommonSession playerName)
-        {
-            var balance = _currencyMan.GetBalance(Player.UserId);
-
-            if (!_protoMan.TryIndex<TokenListingPrototype>(tokenId, out var token))
-                return;
-
-            if (!_store.RotationStorage.Contains(token))
-                return;
-
-            if (balance < token.Price)
-                return;
-
-            // This looks fucked up but i wanted to make the token prototype less verbose
-            var remark = "Something went wrong - please refund " + token.Price;
-            if (token.Type == "Antag")
-                remark = Loc.GetString("gs-balanceui-shop-token-antag-remark", ("token", Loc.GetString(token.Name)));
-            else if (token.Type == "GhostRole")
-                remark = Loc.GetString("gs-balanceui-shop-token-ghost-role-remark", ("token", Loc.GetString(token.Name)));
-            else
-                remark = Loc.GetString(token.AdminNote);
-
-            await _notesMan.AddAdminRemark(Player, Player.UserId, 0,
-                Loc.GetString(remark), 0, false, null);
-            _currencyMan.RemoveCurrency(Player.UserId, token.Price);
-        }
+        await _notesMan.AddAdminRemark(Player, Player.UserId, 0,
+            Loc.GetString(remark), 0, false, null);
+        _currencyMan.RemoveCurrency(Player.UserId, token.Price);
     }
 }

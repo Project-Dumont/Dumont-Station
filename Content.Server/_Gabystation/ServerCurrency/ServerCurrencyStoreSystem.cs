@@ -26,12 +26,14 @@ public sealed class ServerCurrencyStoreSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
 
+    public List<TokenListingPrototype> RotationStorage = [];
+    private readonly ProtoId<WeightedRandomPrototype> _storeListProto = "CurrencyStoreRotation";
+
+    public event Action? NewRotation;
+
     public float RotationCooldown = 999f;
     private float _rotationCooldownTime = 999f;
     private int _maxTokenPerRotation = 3;
-    public List<TokenListingPrototype> RotationStorage = [];
-    private readonly ProtoId<WeightedRandomPrototype> _storeListProto = "CurrencyStoreRotation";
-    public event Action? NewRotation;
 
     public override void Initialize()
     {

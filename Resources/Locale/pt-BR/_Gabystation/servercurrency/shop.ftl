@@ -7,14 +7,14 @@ gs-balanceui-gift-player-tooltip = Insira o nome do jogador que você quer dar g
 gs-balanceui-gift-value = Valor
 gs-balanceui-gift-value-tooltip = Quantidade de Gabycoins a transferir
 
-gs-balanceui-select-title = Selecione titulo OOC:
+gs-balanceui-select-title = Selecione título OOC:
 gs-balanceui-title-default = Nenhum
 
 gs-balanceui-select-ghost = Selecione skin fantasma:
 gs-balanceui-ghost-skin-default = Padrão
 
 gs-balanceui-shop-tab-token = Tokens
-gs-balanceui-shop-tab-title = Titulos
+gs-balanceui-shop-tab-title = Títulos
 gs-balanceui-shop-tab-ghost = Skins Fantasma
 
 gs-balanceui-shop-label = Loja de Tokens
@@ -26,14 +26,14 @@ gs-balanceui-shop-rotation-desc = A loja é re-abastecida com
                             {""} {$tokens} tokens a cada {$cooldown} minutos.
 gs-balanceui-shop-footer = ⚠ Ultilize o AHelp para resgatar seu token.
 gs-balanceui-shop-buy-btn = Comprar {$token} - {$price}gc
-gs-balanceui-shop-buy-title-btn = Comprar titulo [{$title}] - {$price}gc
-gs-balanceui-shop-buy-title-owned = Comprar titulo [{$title}] (JÁ POSSUIDO)
+gs-balanceui-shop-buy-title-btn = Comprar título [{$title}] - {$price}gc
+gs-balanceui-shop-buy-title-owned = Comprar título [{$title}] (JÁ POSSUIDO)
 gs-balanceui-shop-title-preview-msg = {""}
 gs-balanceui-shop-buy-ghost-skin-btn = Comprar skin {$title} - {$price}gc
 gs-balanceui-shop-buy-ghost-skin-owned = Skin {$title} (JÁ POSSUIDO)
 
 gs-balanceui-shop-token-label = Tokens
-gs-balanceui-shop-tittle-label = Titulo
+gs-balanceui-shop-tittle-label = Título
 
 gs-balanceui-shop-token-antag-buy = Token de {$token}
 gs-balanceui-shop-token-antag-desc = Permite você virar um {$token} enquanto vivo na rodada.

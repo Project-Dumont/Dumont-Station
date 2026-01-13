@@ -23,11 +23,14 @@ public sealed partial class TitleStoreTab : BoxContainer
 {
     [Dependency] private readonly ICommonCurrencyManager _serverCur = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
+
     public event Action<ProtoId<TitleListingPrototype>>? OnBuy;
-    private Dictionary<Button, (DateTime LastClick, TitleListingPrototype Listing)> _buttonClickTimes = new();
-    private const double DoubleClickTimeWindow = 1.5; // seconds
     public event Action<string>? ShowConfirm;
+
+    private Dictionary<Button, (DateTime LastClick, TitleListingPrototype Listing)> _buttonClickTimes = new();
     public List<ProtoId<TitleListingPrototype>> Owned = new List<ProtoId<TitleListingPrototype>>();
+
+    private const double DoubleClickTimeWindow = 1.5; // seconds
 
     public TitleStoreTab()
     {
@@ -38,9 +41,9 @@ public sealed partial class TitleStoreTab : BoxContainer
         UpdateButtonStates();
     }
 
-    public void UpdateState(CurrencyEuiState s)
+    public void UpdateState(CurrencyEuiState state)
     {
-        Owned = s.OwnedTitles;
+        Owned = state.OwnedTitles;
         PopulateTokenButtons(); // recreate all buttons
         UpdateButtonStates();
     }
@@ -51,7 +54,7 @@ public sealed partial class TitleStoreTab : BoxContainer
         _buttonClickTimes.Clear();
 
         var titleListings = _protoManager.EnumeratePrototypes<TitleListingPrototype>()
-            .Where(x => x.Avaible)
+            .Where(x => x.Available)
             .OrderBy(x => x.Price);
 
         foreach (var listing in titleListings)
@@ -117,7 +120,7 @@ public sealed partial class TitleStoreTab : BoxContainer
 
     private void UpdateButtonStates(int? balance = null)
     {
-        if (balance == null)
+        if (balance is null)
             balance = _serverCur.GetBalance();
 
         //Header.Text = _serverCur.Stringify(balance.Value);
@@ -129,7 +132,7 @@ public sealed partial class TitleStoreTab : BoxContainer
             var listing = _protoManager.EnumeratePrototypes<TitleListingPrototype>()
                 .FirstOrDefault(x => Loc.GetString("gs-balanceui-shop-buy-title-btn", ("title", FormattedMessage.FromMarkupOrThrow(Loc.GetString(x.Title))), ("price", x.Price)) == button.Text);
 
-            if (listing != null)
+            if (listing is not null)
                 button.Disabled = balance < listing.Price;
         }
     }

@@ -13,7 +13,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
-[Prototype("tokenListing")]
+[Prototype]
 public sealed class TokenListingPrototype : IPrototype
 {
     [IdDataField]
@@ -23,16 +23,16 @@ public sealed class TokenListingPrototype : IPrototype
     [DataField("tokenType", required: true)]
     public string Type { get; private set; } = "Misc";
 
-    [DataField("name", required: true)]
+    [DataField(required: true)]
     public string Name { get; private set; } = string.Empty;
 
-    [DataField("price", required: true)]
+    [DataField(required: true)]
     public int Price { get; private set; }
 
     // Gaby change > pass everything bellow to optional
-    [DataField("description")]
+    [DataField]
     public string Description { get; private set; } = "token-generic-desc";
 
-    [DataField("adminNote")]
+    [DataField]
     public string AdminNote { get; private set; } = "token-generic-note";
 }

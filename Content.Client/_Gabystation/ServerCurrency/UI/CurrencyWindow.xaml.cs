@@ -9,8 +9,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
-using System.Numerics;
 using Content.Client.Administration.Managers;
 using Content.Client.Lobby;
 using Content.Goobstation.Common.ServerCurrency;
@@ -28,199 +26,212 @@ using Robust.Shared.Utility;
 using Content.Shared._Gabystation.ServerCurrency.UI;
 using Robust.Shared;
 
-namespace Content.Client._Gabystation.ServerCurrency.UI
+namespace Content.Client._Gabystation.ServerCurrency.UI;
+
+[GenerateTypedNameReferences]
+public sealed partial class CurrencyWindow : DefaultWindow
 {
-    [GenerateTypedNameReferences]
-    public sealed partial class CurrencyWindow : DefaultWindow
+    [Dependency] private readonly ICommonCurrencyManager _serverCur = default!;
+    [Dependency] private readonly IClientAdminManager _adminManager = default!;
+    [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+    [Dependency] private readonly IClientPreferencesManager _prefs = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private bool _isAdmin = false;
+
+    public event Action<ProtoId<TitleListingPrototype>?>? OnTitleChanged;
+    public event Action<ProtoId<GhostSkinListingPrototype>?>? OnGhostChanged;
+
+    public CurrencyWindow()
     {
-        [Dependency] private readonly ICommonCurrencyManager _serverCur = default!;
-        [Dependency] private readonly IClientAdminManager _adminManager = default!;
-        [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
-        [Dependency] private readonly IClientPreferencesManager _prefs = default!;
-        [Dependency] private readonly IPrototypeManager _proto = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        private bool _isAdmin = false;
-        public event Action<ProtoId<TitleListingPrototype>?>? OnTitleChanged;
-        public event Action<ProtoId<GhostSkinListingPrototype>?>? OnGhostChanged;
-        public CurrencyWindow()
+        RobustXamlLoader.Load(this);
+        IoCManager.InjectDependencies(this);
+
+        UpdatePlayerBalance();
+
+        _isAdmin = _adminManager.CanCommand("balance:add");
+        Admin.Visible = _isAdmin;
+
+        GiftButton.OnPressed += _ => Transfer(GiftPlayer.Text, int.Parse(GiftAmmount.Text));
+
+        AdminAddButton.OnPressed += _ => AdminAdd(AdminAddPlayer.Text, int.Parse(AdminAddAmmount.Text));
+
+        _serverCur.ClientBalanceChange += UpdatePlayerBalance;
+
+        TokenStore.ShowConfirm += ShowConfirmation;
+        TitleStore.ShowConfirm += ShowConfirmation;
+        GhostStore.ShowConfirm += ShowConfirmation;
+
+        SelectTitle.OnItemSelected += HandleChangeTitle;
+        SelectGhost.OnItemSelected += HandleChangeGhost;
+
+        Tabs.SetTabTitle(0, Loc.GetString("gs-balanceui-shop-tab-token"));
+        Tabs.SetTabTitle(1, Loc.GetString("gs-balanceui-shop-tab-title"));
+        Tabs.SetTabTitle(2, Loc.GetString("gs-balanceui-shop-tab-ghost"));
+
+        PreviewTitle(_prefs.Preferences?.OOCTitle);
+    }
+
+    private void HandleChangeTitle(ItemSelectedEventArgs ev)
+    {
+        var titleStr = SelectTitle.GetItemMetadata(ev.Id) as string;
+        SelectTitle.Select(ev.Id);
+        ProtoId<TitleListingPrototype>? titleId = null;
+
+        if (!string.IsNullOrEmpty(titleStr) && titleStr != "Default")
+            titleId = new ProtoId<TitleListingPrototype>(titleStr);
+
+        _prefs.SetTitle(titleId);
+        OnTitleChanged?.Invoke(titleId);
+        PreviewTitle(titleId);
+    }
+
+    private void PreviewTitle(string? titleId)
+    {
+        var username = _cfg.GetCVar(CVars.PlayerName);
+        TitlePreview.Text = Loc.GetString("chat-manager-send-ooc-wrap-message",
+                            ("title", FormatTitle(titleId)),
+                            ("playerName", username),
+                            ("message", Loc.GetString("gs-balanceui-shop-title-preview-msg")));
+    }
+    private string FormatTitle(ProtoId<TitleListingPrototype>? title)
+    {
+        if (title is null
+            || !_proto.TryIndex(title, out var proto))
+            return "";
+
+        var str = Loc.GetString(proto.Title);
+        var sanitazed = $"\\[{str}] ";
+        if (proto.Color is not null)
+            sanitazed = $"\\[[color={proto.Color}]{str}[/color]] ";
+
+        return sanitazed;
+    }
+
+    private void PopulateTitleButtons(CurrencyEuiState s)
+    {
+        SelectTitle.Clear();
+        SelectTitle.AddItem(Loc.GetString("gs-balanceui-title-default"));
+        SelectTitle.SetItemMetadata(0, "Default");
+
+        var errs = 0;
+
+        for (var i = 0; i < s.OwnedTitles.Count; i++)
         {
-            RobustXamlLoader.Load(this);
-            IoCManager.InjectDependencies(this);
-
-            UpdatePlayerBalance();
-
-            _isAdmin = _adminManager.CanCommand("balance:add");
-
-            if (!_isAdmin)
-                Admin.Visible = false;
-
-            GiftButton.OnPressed += _ => Transfer(GiftPlayer.Text, int.Parse(GiftAmmount.Text));
-
-            AdminAddButton.OnPressed += _ => AdminAdd(AdminAddPlayer.Text, int.Parse(AdminAddAmmount.Text));
-
-            _serverCur.ClientBalanceChange += UpdatePlayerBalance;
-
-            TokenStore.ShowConfirm += ShowConfirmation;
-            TitleStore.ShowConfirm += ShowConfirmation;
-            GhostStore.ShowConfirm += ShowConfirmation;
-
-            SelectTitle.OnItemSelected += HandleChangeTitle;
-            SelectGhost.OnItemSelected += HandleChangeGhost;
-
-            Tabs.SetTabTitle(0, Loc.GetString("gs-balanceui-shop-tab-token"));
-            Tabs.SetTabTitle(1, Loc.GetString("gs-balanceui-shop-tab-title"));
-            Tabs.SetTabTitle(2, Loc.GetString("gs-balanceui-shop-tab-ghost"));
-
-            PreviewTitle(_prefs.Preferences?.OOCTitle);
-        }
-
-        private void HandleChangeTitle(ItemSelectedEventArgs ev)
-        {
-            var titleStr = SelectTitle.GetItemMetadata(ev.Id) as string;
-            SelectTitle.Select(ev.Id);
-            ProtoId<TitleListingPrototype>? titleId = null;
-
-            if (!string.IsNullOrEmpty(titleStr) && titleStr != "Default")
-                titleId = new ProtoId<TitleListingPrototype>(titleStr);
-
-            _prefs.SetTitle(titleId);
-            OnTitleChanged?.Invoke(titleId);
-            PreviewTitle(titleId);
-        }
-
-        private void PreviewTitle(string? titleId)
-        {
-            var username = _cfg.GetCVar(CVars.PlayerName);
-            TitlePreview.Text = Loc.GetString("chat-manager-send-ooc-wrap-message",
-                                ("title", FormatTitle(titleId)),
-                                ("playerName", username),
-                                ("message", Loc.GetString("gs-balanceui-shop-title-preview-msg")));
-        }
-        private string FormatTitle(ProtoId<TitleListingPrototype>? title)
-        {
-            if (title is null || !_proto.TryIndex<TitleListingPrototype>(title, out var proto))
-                return "";
-
-            var str = Loc.GetString(proto.Title);
-            var sanitazed = $"\\[{str}] ";
-            if (proto.Color is not null)
-                sanitazed = $"\\[[color={proto.Color}]{str}[/color]] ";
-
-            return sanitazed;
-        }
-
-        private void PopulateTitleButtons(CurrencyEuiState s)
-        {
-            SelectTitle.Clear();
-            SelectTitle.AddItem(Loc.GetString("gs-balanceui-title-default"));
-            SelectTitle.SetItemMetadata(0, "Default");
-            var errs = 0;
-            for (var i = 0; i < s.OwnedTitles.Count; i++)
+            var title = s.OwnedTitles[i];
+            if (!_proto.TryIndex(title, out var proto))
             {
-                var title = s.OwnedTitles[i];
-                if (!_proto.TryIndex<TitleListingPrototype>(title, out var proto))
-                {
-                    errs++;
-                    continue;
-                }
-
-                var str = FormattedMessage.RemoveMarkupOrThrow(Loc.GetString(proto.Title));
-                SelectTitle.AddItem(str);
-                SelectTitle.SetItemMetadata(i + 1 - errs, title.Id);
-                if (_prefs.Preferences?.OOCTitle == title)
-                    SelectTitle.Select(i + 1 - errs);
+                errs++;
+                continue;
             }
+
+            var str = FormattedMessage.RemoveMarkupOrThrow(Loc.GetString(proto.Title));
+
+            SelectTitle.AddItem(str);
+            SelectTitle.SetItemMetadata(i + 1 - errs, title.Id);
+
+            if (_prefs.Preferences?.OOCTitle == title)
+                SelectTitle.Select(i + 1 - errs);
         }
+    }
 
-        private void PopulateGhostButtons(CurrencyEuiState s)
+    private void PopulateGhostButtons(CurrencyEuiState s)
+    {
+        SelectGhost.Clear();
+        SelectGhost.AddItem(Loc.GetString("gs-balanceui-ghost-skin-default"));
+        SelectGhost.SetItemMetadata(0, "Default");
+
+        var errs = 0;
+
+        for (var i = 0; i < s.OwnedGhostSkins.Count; i++)
         {
-            SelectGhost.Clear();
-            SelectGhost.AddItem(Loc.GetString("gs-balanceui-ghost-skin-default"));
-            SelectGhost.SetItemMetadata(0, "Default");
-            var errs = 0;
-            for (var i = 0; i < s.OwnedGhostSkins.Count; i++)
+            var ghost = s.OwnedGhostSkins[i];
+            if (!_proto.TryIndex<GhostSkinListingPrototype>(ghost, out var proto))
             {
-                var ghost = s.OwnedGhostSkins[i];
-                if (!_proto.TryIndex<GhostSkinListingPrototype>(ghost, out var proto))
-                {
-                    errs++;
-                    continue;
-                }
-
-                var str = Loc.GetString(proto.Name);
-                SelectGhost.AddItem(str);
-                SelectGhost.SetItemMetadata(i + 1 - errs, ghost.Id);
-                if (_prefs.Preferences?.GhostSkin == ghost)
-                    SelectGhost.Select(i + 1 - errs);
+                errs++;
+                continue;
             }
-        }
 
-        private void HandleChangeGhost(ItemSelectedEventArgs ev)
+            var str = Loc.GetString(proto.Name);
+
+            SelectGhost.AddItem(str);
+            SelectGhost.SetItemMetadata(i + 1 - errs, ghost.Id);
+
+            if (_prefs.Preferences?.GhostSkin == ghost)
+                SelectGhost.Select(i + 1 - errs);
+        }
+    }
+
+    private void HandleChangeGhost(ItemSelectedEventArgs ev)
+    {
+        var ghostStr = SelectGhost.GetItemMetadata(ev.Id) as string;
+        SelectGhost.Select(ev.Id);
+        ProtoId<GhostSkinListingPrototype>? ghostId = null;
+
+        if (!string.IsNullOrEmpty(ghostStr) && ghostId != "Default")
+            ghostId = new ProtoId<GhostSkinListingPrototype>(ghostStr);
+
+        _prefs.SetGhostSkin(ghostId);
+        OnGhostChanged?.Invoke(ghostId);
+    }
+
+    public void UpdateState(CurrencyEuiState s)
+    {
+        PopulateTitleButtons(s);
+        PopulateGhostButtons(s);
+
+        TokenStore.UpdateState(s);
+        TitleStore.UpdateState(s);
+        GhostStore.UpdateState(s);
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        // frame update is not called when u are not in the tabs
+        // so i had to pass the cooldown logic to the main window
+        if (TokenStore.Cooldown >= 0f)
+            TokenStore.Cooldown -= args.DeltaSeconds;
+    }
+
+    private void Transfer(string player, int value)
+    {
+        if (string.IsNullOrWhiteSpace(player)
+            || value == 0)
+            return;
+
+        _consoleHost.ExecuteCommand("gift " + player + " " + value);
+
+        UpdatePlayerBalance();
+    }
+
+    private void AdminAdd(string player, int value)
+    {
+        if (!_isAdmin
+            || string.IsNullOrWhiteSpace(player)
+            || value == 0)
+            return;
+
+        _consoleHost.ExecuteCommand("balance:add " + player + " " + value);
+
+        UpdatePlayerBalance();
+    }
+
+    private void UpdatePlayerBalance() // Goobstation - Goob Coin
+    {
+        var balance = _serverCur.GetBalance();
+        Header.Text = _serverCur.Stringify(balance);
+        TokenStore.UpdateButtonStates(balance);
+    }
+
+    private void ShowConfirmation(string message)
+    {
+        ConfirmationMessage.Text = Loc.GetString("gs-balanceui-shop-purchased", ("item", message));
+        ConfirmationMessage.Visible = true;
+        Timer.Spawn(TimeSpan.FromSeconds(3), () =>
         {
-            var ghostStr = SelectGhost.GetItemMetadata(ev.Id) as string;
-            SelectGhost.Select(ev.Id);
-            ProtoId<GhostSkinListingPrototype>? ghostId = null;
-
-            if (!string.IsNullOrEmpty(ghostStr) && ghostId != "Default")
-                ghostId = new ProtoId<GhostSkinListingPrototype>(ghostStr);
-
-            _prefs.SetGhostSkin(ghostId);
-            OnGhostChanged?.Invoke(ghostId);
-        }
-
-        public void UpdateState(CurrencyEuiState s)
-        {
-            PopulateTitleButtons(s);
-            PopulateGhostButtons(s);
-            TokenStore.UpdateState(s);
-            TitleStore.UpdateState(s);
-            GhostStore.UpdateState(s);
-        }
-
-        protected override void FrameUpdate(FrameEventArgs args)
-        {
-            // frame update is not called when u are not in the tabs
-            // so i had to pass the cooldown logic to the main window
-            if (TokenStore.Cooldown >= 0f)
-                TokenStore.Cooldown -= args.DeltaSeconds;
-        }
-
-        private void Transfer(string player, int value)
-        {
-            if (player == null || value == 0)
-                return;
-
-            _consoleHost.ExecuteCommand("gift " + player + " " + value);
-
-            UpdatePlayerBalance();
-        }
-
-        private void AdminAdd(string player, int value)
-        {
-            if (!_isAdmin || player == null || value == 0)
-                return;
-
-            _consoleHost.ExecuteCommand("balance:add " + player + " " + value);
-
-            UpdatePlayerBalance();
-        }
-
-        private void UpdatePlayerBalance() // Goobstation - Goob Coin
-        {
-            var balance = _serverCur.GetBalance();
-            Header.Text = _serverCur.Stringify(balance);
-            TokenStore.UpdateButtonStates(balance);
-        }
-
-        private void ShowConfirmation(string message)
-        {
-            ConfirmationMessage.Text = Loc.GetString("gs-balanceui-shop-purchased", ("item", message));
-            ConfirmationMessage.Visible = true;
-            Timer.Spawn(TimeSpan.FromSeconds(3), () =>
-            {
-                ConfirmationMessage.Visible = false;
-                TokenStore.UpdateButtonStates();
-            });
-        }
+            ConfirmationMessage.Visible = false;
+            TokenStore.UpdateButtonStates();
+        });
     }
 }

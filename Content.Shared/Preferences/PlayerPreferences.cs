@@ -29,16 +29,21 @@ namespace Content.Shared.Preferences
     {
         private Dictionary<int, ICharacterProfile> _characters;
 
-        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites, ProtoId<GhostSkinListingPrototype>? ghost = null, ProtoId<TitleListingPrototype>? title = null)
+        public PlayerPreferences(
+            IEnumerable<KeyValuePair<int, ICharacterProfile>> characters,
+            int selectedCharacterIndex,
+            Color adminOOCColor,
+            List<ProtoId<ConstructionPrototype>> constructionFavorites,
+            ProtoId<GhostSkinListingPrototype>? ghost = null, // Gaby Station -> Store rework
+            ProtoId<TitleListingPrototype>? title = null // Gaby Station -> Store rework
+            )
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
             SelectedCharacterIndex = selectedCharacterIndex;
             AdminOOCColor = adminOOCColor;
             ConstructionFavorites = constructionFavorites;
-            // Gaby change start
-            GhostSkin = ghost;
-            OOCTitle = title;
-            // Gaby change end
+            GhostSkin = ghost; // Gaby Station -> Store rework
+            OOCTitle = title; // Gaby Station -> Store rework
         }
 
         /// <summary>
@@ -78,9 +83,8 @@ namespace Content.Shared.Preferences
             return (index = IndexOfCharacter(profile)) != -1;
         }
 
-        // Gaby change start
-        public ProtoId<GhostSkinListingPrototype>? GhostSkin { get; set; }
-        public ProtoId<TitleListingPrototype>? OOCTitle { get; set; }
-        // Gaby change end
+        public ProtoId<GhostSkinListingPrototype>? GhostSkin { get; set; } // Gaby Station -> Store rework
+
+        public ProtoId<TitleListingPrototype>? OOCTitle { get; set; } // Gaby Station -> Store rework
     }
 }

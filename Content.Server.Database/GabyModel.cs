@@ -7,24 +7,19 @@
 // File to store as much CD related database things outside of Model.cs
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json;
-using Microsoft.EntityFrameworkCore;
 
 namespace Content.Server.Database;
 
 public static class GabyModel
 {
-    /// <summary>
-    ///
-    /// </summary>
     [Table("gaby_store_owned_items")]
     public class GabyStoreOwnedItems
     {
         [Key]
         public int Id { get; set; }
+
         public Guid PlayerId { get; set; }
         public DbPurchaseType Type { get; set; }
         public string Prototype { get; set; } = null!;
@@ -33,6 +28,7 @@ public static class GabyModel
 
     public enum DbPurchaseType : byte
     {
-        Title = 0, GhostSkin = 1
+        Title = 0,
+        GhostSkin = 1
     }
 }

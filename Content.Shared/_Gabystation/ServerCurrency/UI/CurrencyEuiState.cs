@@ -32,12 +32,11 @@ namespace Content.Shared._Gabystation.ServerCurrency.UI
             OwnedGhostSkins = ghost;
         }
     }
+
     public static class CurrencyEuiMsg
     {
         [Serializable, NetSerializable]
-        public sealed class Close : EuiMessageBase
-        {
-        }
+        public sealed class Close : EuiMessageBase;
 
         // Buy messages
 
