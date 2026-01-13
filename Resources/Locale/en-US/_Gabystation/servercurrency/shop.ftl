@@ -39,7 +39,7 @@ gs-balanceui-shop-token-antag-buy = {$token} Token
 gs-balanceui-shop-token-antag-desc = Allows you to become a {$token} while alive in the round.
 gs-balanceui-shop-token-antag-remark = Purchased an antag token of "{$token}" – Transform while alive in the round.
 
-gs-balanceui-shop-token-ghost-role-buy = Ghost {$token} Token
+gs-balanceui-shop-token-ghost-role-buy = {$token} Token
 gs-balanceui-shop-token-ghost-role-desc = Allows you to spawn as a {$token} ghost role.
 gs-balanceui-shop-token-ghost-role-remark = Purchased a ghost role token of "{$token}" – Spawn after 30 minutes into the round.
 

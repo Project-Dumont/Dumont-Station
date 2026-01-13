@@ -142,7 +142,7 @@ namespace Content.Server._Gabystation.ServerCurrency.UI
             var remark = "Something went wrong - please refund " + token.Price;
             if (token.Type == "Antag")
                 remark = Loc.GetString("gs-balanceui-shop-token-antag-remark", ("token", Loc.GetString(token.Name)));
-            if (token.Type == "GhostRole")
+            else if (token.Type == "GhostRole")
                 remark = Loc.GetString("gs-balanceui-shop-token-ghost-role-remark", ("token", Loc.GetString(token.Name)));
             else
                 remark = Loc.GetString(token.AdminNote);
