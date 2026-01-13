@@ -1,13 +1,23 @@
 gs-balanceui-token-traitor = Traitor
 gs-balanceui-token-zombie = Zombie
 gs-balanceui-token-thief = Thief
-gs-balanceui-token-paradox-clone = Paradox Clone
 gs-balanceui-token-heretic = Heretic
 gs-balanceui-token-wizard = Wizard
 gs-balanceui-token-changeling = Changeling
 gs-balanceui-token-blob = Blob
 gs-balanceui-token-devil = Devil
 gs-balanceui-token-shadowling = Shadowling
+
+gs-balanceui-token-loneops = Loneops
+gs-balanceui-token-wraith = Wraith
+gs-balanceui-token-slaughterdemon = Slaughter demon
+gs-balanceui-token-ninja = Ninja
+gs-balanceui-token-abductor = Abductor
+gs-balanceui-token-space-dragon = Space dragon
+gs-balanceui-token-rat-king = Rat king
+gs-balanceui-token-bingle = Bingle
+gs-balanceui-token-unknow-shuttle-event = Unknow Shuttle
+gs-balanceui-token-paradox-clone = Paradox Clone
 
 gs-balanceui-shop-token-antag = Round Antagonist Token
 gs-balanceui-shop-token-ghost = Ghost Role Token

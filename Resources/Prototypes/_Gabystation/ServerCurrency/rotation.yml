@@ -7,14 +7,24 @@
     TraitorToken: 1
     ZombieToken: 1
     ThiefToken: 1
-    ParadoxCloneToken: 1
     HereticToken: 1
     WizardToken: 0.5
     ChangelingToken: 1
     BlobToken: 1
     DevilToken: 1
     ShadowlingToken: 1
+    # Ghost roles tokens
+    LoneOpsToken: 1
+    WraithToken: 1
+    SlaughterDemonToken: 1
+    NinjaToken: 1
+    AbductorToken: 1
+    SpaceDragonToken: 1
+    RatKingToken: 1
+    BingleToken: 1
+    UnknowShuttleToken: 1
+    ParadoxCloneToken: 1
     # Misc tokens
-    AdminRoleplayToken: 2
-    ClothToken: 2
-    HatToken: 2
+    AdminRoleplayToken: 3
+    ClothToken: 3
+    HatToken: 3
