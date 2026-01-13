@@ -20,9 +20,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Server.ServerCurrency.UI;
 using Content.Server._Gabystation.ServerCurrency;
 using Content.Server._Gabystation.ServerCurrency.Managers;
+using Content.Server._Gabystation.ServerCurrency.UI;
 using Content.Server.Administration;
 using Content.Server.EUI;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
@@ -31,14 +31,14 @@ using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Server.ServerCurrency.Commands
+namespace Content.Server._Gabystation.ServerCurrency
 {
     [AnyCommand]
     public sealed class CurrencyUiCommand : IConsoleCommand
     {
         public string Command => "balanceui";
 
-        public string Description => "Open the currency UI";
+        public string Description => Loc.GetString("server-currency-command-open-balanceui");
 
         public string Help => $"{Command}";
 

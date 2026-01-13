@@ -13,10 +13,10 @@ using Robust.Shared.Timing;
 using Robust.Client.UserInterface;
 using System.Numerics;
 using Content.Goobstation.Common.ServerCurrency;
-using Content.Goobstation.Shared.ServerCurrency.UI;
 using Robust.Shared.Utility;
+using Content.Shared._Gabystation.ServerCurrency.UI;
 
-namespace Content.Goobstation.Client.ServerCurrency.UI;
+namespace Content.Client._Gabystation.ServerCurrency.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class TitleStoreTab : BoxContainer

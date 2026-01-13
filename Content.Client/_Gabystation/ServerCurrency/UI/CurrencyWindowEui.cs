@@ -10,15 +10,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Eui;
-using Content.Goobstation.Shared.ServerCurrency;
-using Content.Goobstation.Shared.ServerCurrency.UI;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Eui;
 using Robust.Shared.Prototypes;
-using Serilog;
-using static Robust.Client.UserInterface.Controls.OptionButton;
+using Content.Shared._Gabystation.ServerCurrency.UI;
 
-namespace Content.Goobstation.Client.ServerCurrency.UI
+namespace Content.Client._Gabystation.ServerCurrency.UI
 {
     public sealed class CurrencyEui : BaseEui
     {

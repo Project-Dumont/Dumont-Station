@@ -52,6 +52,7 @@ server-currency-command-desc-add-ghost-skin = Add a ghost skin to a user or your
 server-currency-command-desc-remove-title = Removes a title from a user or yourself.
 server-currency-command-desc-remove-ghost = Removes a ghost skin from a user or yourself.
 server-currency-command-desc-store-rotation = Do the store rotation.
+server-currency-command-open-balanceui = Open the currency UI
 
 server-currency-command-error-unknow-prototype = Unknow prototype.
 server-currency-command-error-has-item = User already has this!

@@ -11,7 +11,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.ServerCurrency;
+namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 [Prototype("tokenListing")]
 public sealed class TokenListingPrototype : IPrototype

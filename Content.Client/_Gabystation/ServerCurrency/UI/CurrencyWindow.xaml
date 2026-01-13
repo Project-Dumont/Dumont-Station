@@ -12,7 +12,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
-    xmlns:tabs="clr-namespace:Content.Goobstation.Client.ServerCurrency.UI"
+    xmlns:tabs="clr-namespace:Content.Client._Gabystation.ServerCurrency.UI"
     VerticalExpand="True" HorizontalExpand="True"
     Title="{Loc gs-balanceui-title}"
     SetSize="670 580" >

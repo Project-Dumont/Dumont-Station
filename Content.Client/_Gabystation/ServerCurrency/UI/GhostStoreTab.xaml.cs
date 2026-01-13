@@ -13,12 +13,10 @@ using Robust.Shared.Timing;
 using Robust.Client.UserInterface;
 using System.Numerics;
 using Content.Goobstation.Common.ServerCurrency;
-using Content.Goobstation.Shared.ServerCurrency.UI;
-using Robust.Shared.Utility;
-using Robust.Client.Utility;
 using Robust.Client.GameObjects;
+using Content.Shared._Gabystation.ServerCurrency.UI;
 
-namespace Content.Goobstation.Client.ServerCurrency.UI;
+namespace Content.Client._Gabystation.ServerCurrency.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class GhostStoreTab : BoxContainer

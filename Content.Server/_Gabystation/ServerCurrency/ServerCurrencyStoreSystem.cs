@@ -1,12 +1,11 @@
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
-using Content.Goobstation.Shared.ServerCurrency;
-using Content.Goobstation.Shared.ServerCurrency.UI;
 using Content.Server._RMC14.LinkAccount;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Popups;
 using Content.Shared._Gabystation.CCVar;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
