@@ -1,14 +1,10 @@
-# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 19:55:46
+  time: 01/13/2026 21:20:11
   entityCount: 21897
 maps:
 - 1
@@ -11926,27 +11922,27 @@ entities:
             0: 61439
           -1,13:
             0: 4088
-            3: 7
+            2: 7
           0,14:
             0: 60074
-            3: 1092
+            2: 1092
           -1,14:
             0: 65535
           0,15:
             0: 61166
           -1,15:
             0: 15
-            2: 65280
+            3: 65280
           0,16:
             0: 65518
           1,13:
             0: 12697
           1,14:
             0: 65023
-            3: 512
+            2: 512
           1,15:
             0: 48639
-            3: 16896
+            2: 16896
           1,16:
             0: 65535
           2,13:
@@ -11955,15 +11951,15 @@ entities:
             0: 65535
           2,15:
             0: 56595
-            3: 8748
+            2: 8748
           2,16:
-            3: 65535
+            2: 65535
           3,13:
             0: 3003
           3,14:
             0: 65535
           3,15:
-            3: 255
+            2: 255
             0: 65280
           3,16:
             0: 65535
@@ -11972,11 +11968,11 @@ entities:
           4,14:
             0: 65535
           4,15:
-            3: 34967
+            2: 34967
             0: 13064
           4,16:
             0: 14327
-            3: 34824
+            2: 34824
           5,13:
             0: 65535
           5,14:
@@ -12019,31 +12015,31 @@ entities:
             0: 61439
           15,6:
             0: 20480
-            3: 35840
+            2: 35840
           15,7:
             0: 60445
           15,8:
             0: 57583
           16,6:
-            3: 12288
+            2: 12288
           16,7:
             0: 12545
-            3: 70
+            2: 70
           4,17:
             0: 63283
-            3: 2184
+            2: 2184
           3,17:
             0: 65535
           4,18:
             0: 61164
           3,18:
-            2: 61152
+            3: 61152
             0: 2
           4,19:
-            3: 16
+            2: 16
             0: 65294
           3,19:
-            3: 240
+            2: 240
             0: 65280
           4,20:
             0: 65535
@@ -12105,13 +12101,13 @@ entities:
             0: 28791
           16,9:
             0: 2359
-            3: 32768
+            2: 32768
           16,10:
             0: 819
-            3: 34952
+            2: 34952
           16,11:
             0: 3843
-            3: 12
+            2: 12
           13,0:
             0: 63247
           13,1:
@@ -12166,11 +12162,11 @@ entities:
           16,12:
             0: 65295
           17,11:
-            3: 1
+            2: 1
             0: 256
           17,12:
             0: 1
-            3: 4352
+            2: 4352
           12,-2:
             0: 32878
           13,-4:
@@ -12473,12 +12469,12 @@ entities:
             0: 28398
           -16,-1:
             0: 49138
-            3: 16384
+            2: 16384
           -17,-1:
             0: 14800
-            3: 32768
+            2: 32768
           -16,0:
-            3: 1
+            2: 1
             0: 62590
           -15,-4:
             0: 35771
@@ -12583,7 +12579,7 @@ entities:
           -13,-9:
             0: 65535
           -17,0:
-            3: 8
+            2: 8
             0: 65523
           -16,1:
             0: 3839
@@ -12607,17 +12603,17 @@ entities:
             0: 52974
           -15,4:
             0: 59118
-            3: 2048
+            2: 2048
           -14,1:
             0: 65535
           -14,2:
             0: 65471
-            3: 64
+            2: 64
           -14,3:
             0: 65535
           -14,4:
             0: 63711
-            3: 1824
+            2: 1824
           -13,4:
             0: 29491
           -21,-8:
@@ -12759,12 +12755,12 @@ entities:
             0: 3549
           -6,10:
             0: 4113
-            2: 3084
+            3: 3084
           -6,11:
             0: 17
-            2: 3084
+            3: 3084
           -6,12:
-            2: 12
+            3: 12
             0: 28672
           -5,9:
             0: 1911
@@ -13072,25 +13068,25 @@ entities:
             0: 48059
           -3,15:
             0: 4923
-            3: 8192
-            2: 34816
+            2: 8192
+            3: 34816
           -3,16:
             0: 65331
-            2: 8
+            3: 8
           -2,13:
             0: 53247
           -2,14:
             0: 65535
           -2,15:
             0: 15
-            2: 65280
+            3: 65280
           -2,16:
-            2: 15
+            3: 15
             0: 65280
           -1,16:
-            2: 15
+            3: 15
             0: 44800
-            3: 20480
+            2: 20480
           -5,16:
             0: 65535
           -4,17:
@@ -13117,7 +13113,7 @@ entities:
             0: 65535
           -2,17:
             0: 65469
-            3: 64
+            2: 64
           -2,18:
             0: 65535
           -2,19:
@@ -13126,7 +13122,7 @@ entities:
             0: 65535
           -1,17:
             0: 65503
-            3: 32
+            2: 32
           -1,18:
             0: 65535
           -1,19:
@@ -13135,7 +13131,7 @@ entities:
             0: 65535
           0,17:
             0: 64495
-            3: 1040
+            2: 1040
           0,18:
             0: 5119
           0,19:
@@ -13148,12 +13144,12 @@ entities:
             0: 65535
           1,19:
             0: 65533
-            3: 2
+            2: 2
           1,20:
             0: 65471
-            3: 64
+            2: 64
           2,17:
-            3: 563
+            2: 563
             0: 60620
           2,19:
             0: 65310
@@ -13161,7 +13157,7 @@ entities:
             0: 61158
           2,20:
             0: 65405
-            3: 130
+            2: 130
           3,20:
             0: 65535
           -8,12:
@@ -13464,7 +13460,7 @@ entities:
             0: 35071
           11,18:
             0: 65020
-            3: 512
+            2: 512
           11,19:
             0: 65535
           11,20:
@@ -13907,7 +13903,7 @@ entities:
           -18,8:
             0: 64511
           16,0:
-            3: 558
+            2: 558
             0: 35840
           16,1:
             0: 2184
@@ -14614,7 +14610,7 @@ entities:
           -22,-3:
             0: 34952
           17,13:
-            3: 1
+            2: 1
             0: 256
           17,14:
             0: 1
@@ -14686,10 +14682,11 @@ entities:
           - 0
           - 0
         - volume: 2500
-          temperature: 293.15
+          immutable: True
+          temperature: 213.15
           moles:
-          - 0
-          - 0
+          - 21.824879
+          - 82.10312
           - 0
           - 0
           - 0
@@ -14709,11 +14706,10 @@ entities:
           - 0
           - 0
         - volume: 2500
-          immutable: True
-          temperature: 213.15
+          temperature: 293.15
           moles:
-          - 21.824879
-          - 82.10312
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -15680,7 +15676,7 @@ entities:
       pos: -42.5,29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -155449.36
+      secondsUntilStateChange: -155624.34
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15893,7 +15889,7 @@ entities:
       pos: 55.5,3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95085.63
+      secondsUntilStateChange: -95260.62
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16171,7 +16167,7 @@ entities:
       pos: -54.5,31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -155259.78
+      secondsUntilStateChange: -155434.77
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16290,7 +16286,7 @@ entities:
       pos: 44.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -25450.656
+      secondsUntilStateChange: -25625.639
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16312,7 +16308,7 @@ entities:
       pos: 21.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -29104.717
+      secondsUntilStateChange: -29279.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16814,7 +16810,7 @@ entities:
       pos: 37.5,-26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130594.555
+      secondsUntilStateChange: -130769.54
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -64878,7 +64874,7 @@ entities:
       pos: 45.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -63374.617
+      secondsUntilStateChange: -63549.598
       state: Closing
   - uid: 8579
     components:
@@ -65013,7 +65009,7 @@ entities:
       pos: -1.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130253.02
+      secondsUntilStateChange: -130428.01
       state: Closing
   - uid: 15123
     components:
@@ -116541,6 +116537,11 @@ entities:
     - type: Transform
       pos: 59.5,-7.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        21856:
+        - - StationRadioServerPort
+          - StationRadioRigPort
 - proto: StatueVenusBlue
   entities:
   - uid: 15027
@@ -117023,14 +117024,6 @@ entities:
     components:
     - type: Transform
       pos: 14.5,74.5
-      parent: 2
-- proto: SurveillanceCameraAssembly
-  entities:
-  - uid: 21897
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 63.5,-9.5
       parent: 2
 - proto: SurveillanceCameraCommand
   entities:
@@ -117907,6 +117900,12 @@ entities:
       - SurveillanceCameraService
       nameSet: True
       id: Reporter's Office
+  - uid: 21897
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 63.5,-9.5
+      parent: 2
 - proto: SurveillanceCameraSupply
   entities:
   - uid: 10698
@@ -121310,6 +121309,11 @@ entities:
     - type: Transform
       pos: 60.5,-9.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        21856:
+        - - VinylPlayerPort
+          - StationRadioRigPort
 - proto: VirologyServer
   entities:
   - uid: 21790
@@ -141800,7 +141804,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162708.83
+      secondsUntilStateChange: -162883.81
       state: Opening
     - type: Airlock
       autoClose: False
@@ -141816,7 +141820,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162708.27
+      secondsUntilStateChange: -162883.25
       state: Opening
     - type: Airlock
       autoClose: False
@@ -141838,7 +141842,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162707.8
+      secondsUntilStateChange: -162882.78
       state: Opening
     - type: Airlock
       autoClose: False
@@ -141854,7 +141858,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162709.33
+      secondsUntilStateChange: -162884.31
       state: Opening
     - type: Airlock
       autoClose: False

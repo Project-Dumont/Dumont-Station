@@ -1,14 +1,10 @@
-# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 20:20:51
+  time: 01/13/2026 21:16:54
   entityCount: 12377
 maps:
 - 1
@@ -831,7 +827,7 @@ entities:
             2: 57344
           8,5:
             0: 4368
-            4: 17472
+            3: 17472
           8,6:
             2: 34832
           1,9:
@@ -872,10 +868,10 @@ entities:
             0: 53759
           11,2:
             0: 4319
-            3: 49152
+            4: 49152
           11,3:
             0: 61457
-            3: 204
+            4: 204
           11,-1:
             0: 30583
           11,4:
@@ -887,9 +883,9 @@ entities:
             0: 28791
           12,2:
             0: 119
-            3: 28672
+            4: 28672
           12,3:
-            3: 119
+            4: 119
             0: 61440
           12,-1:
             0: 29311
@@ -1308,16 +1304,16 @@ entities:
             2: 240
           9,5:
             5: 4368
-            3: 17472
+            4: 17472
           9,6:
             2: 7952
           10,5:
-            3: 4368
+            4: 4368
             6: 17472
           10,6:
             2: 3840
           11,5:
-            3: 21840
+            4: 21840
           11,6:
             2: 3856
           12,5:
@@ -1516,7 +1512,7 @@ entities:
           temperature: 293.15
           moles:
           - 0
-          - 0
+          - 6666.982
           - 0
           - 0
           - 0
@@ -1539,7 +1535,7 @@ entities:
           temperature: 293.15
           moles:
           - 0
-          - 6666.982
+          - 0
           - 0
           - 0
           - 0
@@ -36022,7 +36018,7 @@ entities:
       pos: -7.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4108.4346
+      secondsUntilStateChange: -4155.03
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 98.4665702
@@ -36409,7 +36405,7 @@ entities:
       pos: -26.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3807.5015
+      secondsUntilStateChange: -3854.097
       state: Closing
   - uid: 5566
     components:
@@ -36866,7 +36862,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7250.53
+      secondsUntilStateChange: -7297.125
       state: Closing
   - uid: 5654
     components:
@@ -64294,6 +64290,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -19.5,-21.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        9747:
+        - - StationRadioServerPort
+          - StationRadioRigPort
 - proto: Stool
   entities:
   - uid: 9622
@@ -64649,13 +64650,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,9.5
-      parent: 2
-- proto: SurveillanceCameraAssembly
-  entities:
-  - uid: 12377
-    components:
-    - type: Transform
-      pos: -21.5,-21.5
       parent: 2
 - proto: SurveillanceCameraCommand
   entities:
@@ -65714,6 +65708,11 @@ entities:
       - SurveillanceCameraService
       nameSet: True
       id: Library
+  - uid: 12377
+    components:
+    - type: Transform
+      pos: -21.5,-21.5
+      parent: 2
 - proto: SurveillanceCameraSupply
   entities:
   - uid: 9765
@@ -68153,6 +68152,11 @@ entities:
     - type: Transform
       pos: -21.5,-20.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        9747:
+        - - VinylPlayerPort
+          - StationRadioRigPort
 - proto: WallmountTelescreen
   entities:
   - uid: 10142

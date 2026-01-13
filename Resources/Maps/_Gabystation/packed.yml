@@ -1,14 +1,10 @@
-# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 20:22:51
+  time: 01/13/2026 21:13:57
   entityCount: 15725
 maps:
 - 1
@@ -7901,7 +7897,7 @@ entities:
       pos: 29.5,36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3280.156
+      secondsUntilStateChange: -3339.8953
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9081,7 +9077,7 @@ entities:
       pos: 28.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31982.973
+      secondsUntilStateChange: -32042.71
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -84141,6 +84137,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,-17.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        10997:
+        - - StationRadioServerPort
+          - StationRadioRigPort
 - proto: Stool
   entities:
   - uid: 623
@@ -84665,12 +84666,6 @@ entities:
     components:
     - type: Transform
       pos: 66.5,18.5
-      parent: 2
-  - uid: 15697
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,-16.5
       parent: 2
 - proto: SurveillanceCameraCommand
   entities:
@@ -86068,6 +86063,12 @@ entities:
       - SurveillanceCameraService
       nameSet: True
       id: Janitor's Office
+  - uid: 15697
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -1.5,-16.5
+      parent: 2
 - proto: SurveillanceCameraSupply
   entities:
   - uid: 570
@@ -89028,6 +89029,11 @@ entities:
     - type: Transform
       pos: -3.5,-16.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        10997:
+        - - VinylPlayerPort
+          - StationRadioRigPort
 - proto: ViolinInstrument
   entities:
   - uid: 12657
