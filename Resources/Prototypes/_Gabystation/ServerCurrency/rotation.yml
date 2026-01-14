@@ -5,12 +5,12 @@
     #AntagToken: 1
     # Antag tokens
     TraitorToken: 1
-    ZombieToken: 1
+    #ZombieToken: 1
     ThiefToken: 1
     HereticToken: 1
     WizardToken: 0.5
     ChangelingToken: 1
-    BlobToken: 1
+    #BlobToken: 1
     DevilToken: 1
     ShadowlingToken: 1
     MalfAiToken: 1
