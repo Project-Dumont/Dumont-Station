@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 21:20:11
-  entityCount: 21897
+  time: 01/14/2026 13:52:42
+  entityCount: 21902
 maps:
 - 1
 grids:
@@ -15676,7 +15676,7 @@ entities:
       pos: -42.5,29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -155624.34
+      secondsUntilStateChange: -156233.48
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15889,7 +15889,7 @@ entities:
       pos: 55.5,3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -95260.62
+      secondsUntilStateChange: -95869.75
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16167,7 +16167,7 @@ entities:
       pos: -54.5,31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -155434.77
+      secondsUntilStateChange: -156043.9
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16286,7 +16286,7 @@ entities:
       pos: 44.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -25625.639
+      secondsUntilStateChange: -26234.771
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16308,7 +16308,7 @@ entities:
       pos: 21.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -29279.7
+      secondsUntilStateChange: -29888.832
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16810,7 +16810,7 @@ entities:
       pos: 37.5,-26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130769.54
+      secondsUntilStateChange: -131378.67
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -17754,7 +17754,7 @@ entities:
   - uid: 362
     components:
     - type: Transform
-      pos: -7.633649,24.42829
+      pos: -7.4343023,24.670946
       parent: 2
   - uid: 363
     components:
@@ -58800,12 +58800,12 @@ entities:
   - uid: 8134
     components:
     - type: Transform
-      pos: -7.633649,24.850164
+      pos: -7.7789173,24.804853
       parent: 2
   - uid: 8135
     components:
     - type: Transform
-      pos: -7.586774,24.787664
+      pos: -7.7406273,24.852678
       parent: 2
   - uid: 21284
     components:
@@ -64874,7 +64874,7 @@ entities:
       pos: 45.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -63549.598
+      secondsUntilStateChange: -64158.73
       state: Closing
   - uid: 8579
     components:
@@ -65009,7 +65009,7 @@ entities:
       pos: -1.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130428.01
+      secondsUntilStateChange: -131037.14
       state: Closing
   - uid: 15123
     components:
@@ -116522,6 +116522,31 @@ entities:
     - type: Transform
       pos: 15.5,24.5
       parent: 2
+  - uid: 21898
+    components:
+    - type: Transform
+      pos: 16.5,1.5
+      parent: 2
+  - uid: 21899
+    components:
+    - type: Transform
+      pos: 27.5,34.5
+      parent: 2
+  - uid: 21900
+    components:
+    - type: Transform
+      pos: 38.5,10.5
+      parent: 2
+  - uid: 21901
+    components:
+    - type: Transform
+      pos: 31.5,-36.5
+      parent: 2
+  - uid: 21902
+    components:
+    - type: Transform
+      pos: -7.5,24.5
+      parent: 2
 - proto: StationRadioRig
   entities:
   - uid: 21856
@@ -141804,7 +141829,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162883.81
+      secondsUntilStateChange: -163492.95
       state: Opening
     - type: Airlock
       autoClose: False
@@ -141820,7 +141845,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162883.25
+      secondsUntilStateChange: -163492.39
       state: Opening
     - type: Airlock
       autoClose: False
@@ -141842,7 +141867,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162882.78
+      secondsUntilStateChange: -163491.92
       state: Opening
     - type: Airlock
       autoClose: False
@@ -141858,7 +141883,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -162884.31
+      secondsUntilStateChange: -163493.45
       state: Opening
     - type: Airlock
       autoClose: False

@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 21:13:57
-  entityCount: 15725
+  time: 01/14/2026 14:04:12
+  entityCount: 15729
 maps:
 - 1
 grids:
@@ -7897,7 +7897,7 @@ entities:
       pos: 29.5,36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3339.8953
+      secondsUntilStateChange: -3822.328
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9077,7 +9077,7 @@ entities:
       pos: 28.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -32042.71
+      secondsUntilStateChange: -32525.145
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -84121,6 +84121,21 @@ entities:
     - type: Transform
       pos: 30.5,-3.5
       parent: 2
+  - uid: 15726
+    components:
+    - type: Transform
+      pos: 57.5,17.5
+      parent: 2
+  - uid: 15727
+    components:
+    - type: Transform
+      pos: 18.5,-26.5
+      parent: 2
+  - uid: 15729
+    components:
+    - type: Transform
+      pos: 23.5,24.5
+      parent: 2
 - proto: StationRadioRig
   entities:
   - uid: 10997
@@ -86928,6 +86943,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 73.5,17.5
+      parent: 2
+  - uid: 15728
+    components:
+    - type: Transform
+      pos: 23.5,24.5
       parent: 2
 - proto: TableCarpet
   entities:

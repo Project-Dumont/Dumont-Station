@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 21:15:23
-  entityCount: 14032
+  time: 01/14/2026 13:55:45
+  entityCount: 14034
 maps:
 - 1
 grids:
@@ -30373,12 +30373,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 16.5,13.5
-      parent: 2
-  - uid: 4813
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 18.5,13.5
       parent: 2
   - uid: 4814
     components:
@@ -76560,6 +76554,16 @@ entities:
     - type: Transform
       pos: -4.5,-19.5
       parent: 2
+  - uid: 14033
+    components:
+    - type: Transform
+      pos: -27.5,-0.5
+      parent: 2
+  - uid: 14034
+    components:
+    - type: Transform
+      pos: 18.5,13.5
+      parent: 2
 - proto: StationRadioRig
   entities:
   - uid: 1924
@@ -78304,6 +78308,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -30.5,30.5
+      parent: 2
+  - uid: 4813
+    components:
+    - type: Transform
+      pos: 18.5,13.5
       parent: 2
   - uid: 4886
     components:

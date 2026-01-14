@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 21:12:29
-  entityCount: 13267
+  time: 01/14/2026 13:41:30
+  entityCount: 13271
 maps:
 - 1
 grids:
@@ -8914,7 +8914,7 @@ entities:
   - uid: 12944
     components:
     - type: Transform
-      pos: 14.48716,-10.133642
+      pos: 15.174416,-10.255381
       parent: 2
 - proto: BoomboxSlav
   entities:
@@ -28978,7 +28978,7 @@ entities:
   - uid: 4240
     components:
     - type: Transform
-      pos: -17.427578,-2.5386095
+      pos: -17.360338,-2.876329
       parent: 2
 - proto: ClothingEyesEyepatch
   entities:
@@ -72133,10 +72133,30 @@ entities:
       parent: 2
 - proto: StationRadioReceiver
   entities:
+  - uid: 13267
+    components:
+    - type: Transform
+      pos: -16.5,8.5
+      parent: 2
   - uid: 13268
     components:
     - type: Transform
       pos: 1.5,10.5
+      parent: 2
+  - uid: 13269
+    components:
+    - type: Transform
+      pos: 14.5,-10.5
+      parent: 2
+  - uid: 13270
+    components:
+    - type: Transform
+      pos: 7.5,-20.5
+      parent: 2
+  - uid: 13271
+    components:
+    - type: Transform
+      pos: -17.5,-2.5
       parent: 2
 - proto: StationRadioRig
   entities:

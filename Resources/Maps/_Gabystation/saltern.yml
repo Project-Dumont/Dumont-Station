@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/13/2026 21:16:54
-  entityCount: 12377
+  time: 01/14/2026 14:06:54
+  entityCount: 12380
 maps:
 - 1
 grids:
@@ -28522,7 +28522,7 @@ entities:
   - uid: 4560
     components:
     - type: Transform
-      pos: 32.479706,-2.7047698
+      pos: 32.49456,-2.852879
       parent: 2
     - type: SolutionContainerManager
       solutions:
@@ -36018,7 +36018,7 @@ entities:
       pos: -7.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4155.03
+      secondsUntilStateChange: -4302.4497
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 98.4665702
@@ -36405,7 +36405,7 @@ entities:
       pos: -26.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3854.097
+      secondsUntilStateChange: -4001.5168
       state: Closing
   - uid: 5566
     components:
@@ -36862,7 +36862,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7297.125
+      secondsUntilStateChange: -7444.545
       state: Closing
   - uid: 5654
     components:
@@ -52522,8 +52522,8 @@ entities:
   - uid: 7871
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.615404,-28.415546
+      rot: -3.141592653589793 rad
+      pos: -6.021445,-28.40058
       parent: 2
   - uid: 7873
     components:
@@ -61448,12 +61448,12 @@ entities:
   - uid: 9237
     components:
     - type: Transform
-      pos: 18.530792,8.475061
+      pos: 19.061777,7.4902997
       parent: 2
   - uid: 9238
     components:
     - type: Transform
-      pos: 18.530792,8.475061
+      pos: 19.061777,7.4902997
       parent: 2
   - uid: 12100
     components:
@@ -61564,7 +61564,7 @@ entities:
   - uid: 9251
     components:
     - type: Transform
-      pos: 18.507324,7.4999294
+      pos: 18.429981,7.5620356
       parent: 2
   - uid: 9252
     components:
@@ -61599,7 +61599,7 @@ entities:
   - uid: 9258
     components:
     - type: Transform
-      pos: 18.507324,7.4999294
+      pos: 18.429981,7.5620356
       parent: 2
   - uid: 9259
     components:
@@ -64274,6 +64274,21 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-4.5
+      parent: 2
+  - uid: 12378
+    components:
+    - type: Transform
+      pos: 32.5,-2.5
+      parent: 2
+  - uid: 12379
+    components:
+    - type: Transform
+      pos: 18.5,8.5
+      parent: 2
+  - uid: 12380
+    components:
+    - type: Transform
+      pos: -6.5,-28.5
       parent: 2
 - proto: StationRadioRig
   entities:
@@ -67421,7 +67436,7 @@ entities:
   - uid: 10049
     components:
     - type: Transform
-      pos: 32.484333,-2.403047
+      pos: 35.55302,-3.8141415
       parent: 2
   - uid: 10051
     components:
