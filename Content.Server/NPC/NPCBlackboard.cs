@@ -44,6 +44,8 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {WeldbotWeldRange, 4f}, // Einstein Engines
         {FillbotPickupRange, 10f}, // Einstein Engines
         {PlantbotServiceRange, 4f}, // Einstein Engines
+        {SecuritronArrestRange, 12f},
+        {SecuritronPatrolRange, 96f},
         {MeleeMissChance, 0.3f},
         {"MeleeRange", 1f},
         {"MinimumIdleTime", 2f},
@@ -326,6 +328,8 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
     public const string WeldbotWeldRange = "WeldbotWeldRange"; // Einstein Engines
     public const string FillbotPickupRange = "FillbotPickupRange"; // Einstein Engines
     public const string PlantbotServiceRange = "PlantbotServiceRange"; // Einstein Engines
+    public const string SecuritronArrestRange = "SecuritronArrestRange";
+    public const string SecuritronPatrolRange = "SecuritronPatrolRange";
 
     public const string MeleeMissChance = "MeleeMissChance";
 

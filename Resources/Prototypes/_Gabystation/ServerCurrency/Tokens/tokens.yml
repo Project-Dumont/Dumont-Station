@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: tokenListing
+  id: GhostRoleToken
+  tokenType: Misc
+  name: gs-balanceui-shop-token-ghost
+  description: gs-balanceui-shop-buy-token-ghost-desc
+  price: 1315
+  adminNote: gs-balanceui-remark-token-ghost
+
+- type: tokenListing
+  id: AntagToken
+  tokenType: Misc
+  name: gs-balanceui-shop-token-antag
+  description: gs-balanceui-shop-buy-token-antag-desc
+  price: 1125
+  adminNote: gs-balanceui-remark-token-antag
+
+- type: tokenListing
+  id: AdminRoleplayToken
+  tokenType: Misc
+  name: gs-balanceui-shop-token-admin-rp
+  description: gs-balanceui-shop-buy-token-admin-rp-desc
+  price: 525
+  adminNote: gs-balanceui-remark-token-admin-rp
+
+- type: tokenListing
+  id: ClothToken
+  tokenType: Misc
+  name: gs-balanceui-shop-token-cloth
+  description: gs-balanceui-shop-buy-token-cloth-desc
+  price: 75
+  adminNote: gs-balanceui-remark-token-cloth
+
+- type: tokenListing
+  id: HatToken
+  tokenType: Misc
+  name: gs-balanceui-shop-token-hat
+  description: gs-balanceui-shop-buy-token-hat-desc
+  price: 75
+  adminNote: gs-balanceui-remark-token-hat

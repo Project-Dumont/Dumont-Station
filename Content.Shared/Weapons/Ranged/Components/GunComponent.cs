@@ -339,6 +339,9 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float GunExecutionTime = 3.5f;
+
+    [DataField]
+    public float CriminalPointMultiplier = 4;
 }
 
 [Flags]

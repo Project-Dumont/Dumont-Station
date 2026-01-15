@@ -698,3 +698,108 @@
     range: 1
   - type: Puller
     needsHands: false
+
+- type: entity
+  parent:
+  - MobSiliconBase
+  - ShowSecurityIcons
+  - StripableInventoryBase
+  id: MobSecuritron
+  name: securitron
+  description: Tiders hate this one simple trick!
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Bots/securitron.rsi
+    state: secbot
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: HTN
+    rootTask:
+      task: SecbotCompound
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    animation: WeaponArcThrust
+    damage:
+      types:
+        Blunt: 0
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40
+  - type: CanForceHandcuff
+    handcuffsId: Zipties
+    requireHands: false
+  - type: Construction
+    graph: SecBot
+    node: bot
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+  - type: Anchorable
+  - type: InteractionPopup
+    interactSuccessString: petting-success-secbot
+    interactFailureString: petting-failure-secbot
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Inventory
+    templateId: medibot
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Security
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Security
+  - type: StationAiVision
+    range: 1
+  - type: FactionException
+  - type: NPCRetaliation
+    attackMemoryLength: 3
+  - type: Stunbaton
+    energyPerUse: 50
+    lightAttackEnergyMultiplier: 2
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: StaminaDamageOnHit
+    damage: 5
+    overtime: 25
+    lightAttackOvertimeDamageMultiplier: 2
+    sound: /Audio/Weapons/egloves.ogg
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1.5
+    baseSprintSpeed : 2.5
+
+- type: entity
+  parent: MobSecuritron
+  id: MobBeepsky
+  name: Officer Beepsky
+  description: It's Commander Beep O'sky! Officially the superior officer of all bots on station, Beepsky remains as humble and dedicated to the law as the day he was first fabricated.
+  components:
+  - type: HTN
+    rootTask:
+      task: SecbotCompound
+    blackboard:
+      TargetFoundSound: !type:SoundCollectionSpecifier
+        collection: BeepskyTargetFound
+      TargetArrestedSound: !type:SoundCollectionSpecifier
+        collection: BeepskyTargetArrested
+  - type: NPCRetaliation
+    attackMemoryLength: 5
+  - type: Stunbaton
+    energyPerUse: 50
+    lightAttackEnergyMultiplier: 2
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 4.5
