@@ -1,15 +1,11 @@
-# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/14/2026 14:06:54
-  entityCount: 12380
+  time: 01/15/2026 16:56:49
+  entityCount: 12385
 maps:
 - 1
 grids:
@@ -7187,7 +7183,7 @@ entities:
   - uid: 502
     components:
     - type: Transform
-      pos: 14.666493,-5.595451
+      pos: 14.668241,-5.788424
       parent: 2
 - proto: BoxFolderBlack
   entities:
@@ -28073,11 +28069,6 @@ entities:
     - type: Transform
       pos: 0.5,-33.5
       parent: 2
-  - uid: 7646
-    components:
-    - type: Transform
-      pos: -0.5,-33.5
-      parent: 2
 - proto: ClosetL3VirologyFilled
   entities:
   - uid: 4500
@@ -28741,7 +28732,7 @@ entities:
   - uid: 4569
     components:
     - type: Transform
-      pos: 14.371354,-5.1023016
+      pos: 14.345164,-5.250404
       parent: 2
     - type: SolutionContainerManager
       solutions:
@@ -34896,7 +34887,7 @@ entities:
   - uid: 5346
     components:
     - type: Transform
-      pos: 41.438732,-8.355759
+      pos: 42.1211,-8.328805
       parent: 2
 - proto: DrinkDetFlask
   entities:
@@ -36022,7 +36013,7 @@ entities:
       pos: -7.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4302.4497
+      secondsUntilStateChange: -4648.8604
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 98.4665702
@@ -36409,7 +36400,7 @@ entities:
       pos: -26.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4001.5168
+      secondsUntilStateChange: -4347.9277
       state: Closing
   - uid: 5566
     components:
@@ -36866,7 +36857,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7444.545
+      secondsUntilStateChange: -7790.9556
       state: Closing
   - uid: 5654
     components:
@@ -54793,7 +54784,7 @@ entities:
   - uid: 8157
     components:
     - type: Transform
-      pos: 5.4978743,31.63788
+      pos: 5.289039,32.242573
       parent: 2
   - uid: 8158
     components:
@@ -58638,7 +58629,7 @@ entities:
   - uid: 8716
     components:
     - type: Transform
-      pos: 42.029312,-8.382423
+      pos: 42.271873,-8.371846
       parent: 2
 - proto: Railing
   entities:
@@ -62812,6 +62803,13 @@ entities:
     - type: Transform
       pos: -1.5876693,-19.53403
       parent: 2
+- proto: SlimeGrinder
+  entities:
+  - uid: 7646
+    components:
+    - type: Transform
+      pos: -0.5,-33.5
+      parent: 2
 - proto: SlimeScannerXenobio
   entities:
   - uid: 12266
@@ -64293,6 +64291,31 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-28.5
+      parent: 2
+  - uid: 12381
+    components:
+    - type: Transform
+      pos: 41.5,-8.5
+      parent: 2
+  - uid: 12382
+    components:
+    - type: Transform
+      pos: 5.5,31.5
+      parent: 2
+  - uid: 12383
+    components:
+    - type: Transform
+      pos: -17.5,8.5
+      parent: 2
+  - uid: 12384
+    components:
+    - type: Transform
+      pos: -3.5,14.5
+      parent: 2
+  - uid: 12385
+    components:
+    - type: Transform
+      pos: 14.5,-5.5
       parent: 2
 - proto: StationRadioRig
   entities:

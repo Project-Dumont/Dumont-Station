@@ -1,15 +1,11 @@
-# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/14/2026 13:41:30
-  entityCount: 13271
+  time: 01/15/2026 16:07:55
+  entityCount: 13276
 maps:
 - 1
 grids:
@@ -72150,7 +72146,7 @@ entities:
   - uid: 13269
     components:
     - type: Transform
-      pos: 14.5,-10.5
+      pos: -14.5,-53.5
       parent: 2
   - uid: 13270
     components:
@@ -72161,6 +72157,31 @@ entities:
     components:
     - type: Transform
       pos: -17.5,-2.5
+      parent: 2
+  - uid: 13272
+    components:
+    - type: Transform
+      pos: -0.5,32.5
+      parent: 2
+  - uid: 13273
+    components:
+    - type: Transform
+      pos: 25.5,10.5
+      parent: 2
+  - uid: 13274
+    components:
+    - type: Transform
+      pos: 29.5,24.5
+      parent: 2
+  - uid: 13275
+    components:
+    - type: Transform
+      pos: 12.5,-12.5
+      parent: 2
+  - uid: 13276
+    components:
+    - type: Transform
+      pos: -30.5,-14.5
       parent: 2
 - proto: StationRadioRig
   entities:
