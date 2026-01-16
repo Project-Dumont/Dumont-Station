@@ -583,3 +583,10 @@
   name: Papers Please - Death Theme
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
+
+- type: jukebox
+  id: Catroll
+  name: Canal Rapid liquid - Never Gonna Meow You up
+  path:
+    path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg
+
