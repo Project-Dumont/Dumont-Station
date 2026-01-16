@@ -583,3 +583,9 @@
   name: Papers Please - Death Theme
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
+
+- type: jukebox
+  id: RickRoll
+  name: Rick Astley - Never Gonna Give You Up
+  path:
+    path: /Audio/_Gabystation/Jukebox/Never_gonna_give_you_up.ogg
