@@ -512,6 +512,15 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         if (comp.LearnMessage != null)
             _popupSystem.PopupEntity(Loc.GetString(comp.LearnMessage), user, user);
 
+        if (_entityManager.TryGetComponent<humanoidAppearanceComponent>(user, out var humanoid) && humanoid.Species == "Waddler")
+        {
+            if (_entityManager.TryGetComponent<meleeWeaponComponent>(user, out meleeWeaponComponent))
+            {
+                meleeWeaponComponent.AttackRate = 1f;
+                Dirty(user, meleeWeaponComponent);
+            };
+        };
+
         switch (martialArtsPrototype.MartialArtsForm)
         {
             case MartialArtsForms.KungFuDragon:
