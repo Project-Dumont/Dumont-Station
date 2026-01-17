@@ -52,7 +52,7 @@
     - Hair
     - Snout
   - type: MeleeWeapon
-    altDisarm: false
+    altDisarm: true 
     heavyStaminaCost: 1.5
     damage:
       types:
