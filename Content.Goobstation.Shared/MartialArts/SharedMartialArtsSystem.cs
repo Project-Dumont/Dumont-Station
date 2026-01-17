@@ -45,6 +45,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs;
@@ -512,14 +513,16 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         if (comp.LearnMessage != null)
             _popupSystem.PopupEntity(Loc.GetString(comp.LearnMessage), user, user);
 
-        if (_entityManager.TryGetComponent<humanoidAppearanceComponent>(user, out var humanoid) && humanoid.Species == "Waddler")
+        // Gaby station inicio
+        // Caso especial para jogadores que sao Pinguins, evitando que eles fiquem extremamente fortes com artes marciais
+
+        if (TryComp<HumanoidAppearanceComponent>(user, out var humanoid) && humanoid.Species == "Waddler")
         {
-            if (_entityManager.TryGetComponent<meleeWeaponComponent>(user, out meleeWeaponComponent))
-            {
-                meleeWeaponComponent.AttackRate = 1f;
-                Dirty(user, meleeWeaponComponent);
-            };
-        };
+            meleeWeaponComponent.AttackRate = 1f;
+            Dirty(user, meleeWeaponComponent);
+        }
+
+        // Gaby station fim
 
         switch (martialArtsPrototype.MartialArtsForm)
         {
