@@ -16,6 +16,7 @@ using Robust.Shared.Prototypes;
 using System.Linq;
 using Robust.Shared.GameObjects;
 using Content.Shared.PDA;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Security.Systems;
 
@@ -188,7 +189,7 @@ public sealed class CriminalStatusSystem : EntitySystem
 
     private void PointDelay(EntityUid uid, float points)
     {
-        EnsureComp<TimerComponent>(uid).Spawn(Delay, () =>
+        Timer.Spawn(Delay, () =>
         {
             if (TryComp<CriminalRecordComponent>(uid, out var currentRecord))
                 currentRecord.Points = Math.Max(0, currentRecord.Points - points);
