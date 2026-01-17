@@ -197,8 +197,8 @@
     - howled
 
 - type: emote
-  id: Awoo
-  name: Awoo
+  id: Growl
+  name: Growl
   category: Vocal
   icon: _Goobstation/Interface/Emotes/awoo.png
   whitelist:
@@ -208,12 +208,14 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [awoos.]
+  chatMessages: [growls.]
   chatTriggers:
-    - awoo
-    - awoos
-    - awooing
-    - awooed
+    - growl
+    - growl!
+    - growls
+    - growls!
+    - growling.
+    - growled.
 
 # Feroxi
 - type: emote

@@ -58,7 +58,7 @@
   - type: Speech
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin
-    allowedEmotes: ['Yap', 'Yips', 'Fwhine', 'Gekker']
+    allowedEmotes: ['Yap', 'Yips', 'Fwhine', 'Growl', 'Gekker']
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic

@@ -9,4 +9,6 @@ chat-emote-name-gekker = Gekkers
 chat-emote-name-yips = Fox Yip
 chat-emote-name-whine = Fox Whine
 chat-emote-msg-yips = yips
-chat-emote-msg-whine = whines 
+chat-emote-msg-whine = whines
+chat-emote-name-growl = growls
+chat-emote-msg-growl = growls
