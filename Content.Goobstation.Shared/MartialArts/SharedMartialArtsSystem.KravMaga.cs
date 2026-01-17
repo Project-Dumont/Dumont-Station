@@ -22,6 +22,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Weapons.Melee;
 
 namespace Content.Goobstation.Shared.MartialArts;
 
@@ -122,11 +123,12 @@ public abstract partial class SharedMartialArtsSystem
 
         // Gaby station inicio
 
-        if (TryComp<HumanoidAppearanceComponent>(user, out var humanoid)
-            && humanoid.Species == "Waddler")
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid)
+            && humanoid.Species == "Waddler"
+            && TryComp<MeleeWeaponComponent>(ent, out var melee))
         {
-            meleeWeaponComponent.AttackRate = 1f;
-            Dirty(user, meleeWeaponComponent);
+            melee.AttackRate = 1f;
+            Dirty(ent, melee);
         }
 
         // Gaby station fim
@@ -139,13 +141,14 @@ public abstract partial class SharedMartialArtsSystem
             _actions.RemoveAction(action);
         }
 
-                // Gaby station inicio
+        // Gaby station inicio
 
-        if (TryComp<HumanoidAppearanceComponent>(user, out var humanoid)
-            && humanoid.Species == "Waddler")
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid)
+            && humanoid.Species == "Waddler"
+            && TryComp<MeleeWeaponComponent>(ent, out var melee))
         {
-            meleeWeaponComponent.AttackRate = 1f;
-            Dirty(user, meleeWeaponComponent);
+            melee.AttackRate = 4f;
+            Dirty(ent, melee);
         }
 
         // Gaby station fim
