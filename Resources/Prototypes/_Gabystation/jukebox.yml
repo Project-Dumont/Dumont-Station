@@ -583,3 +583,9 @@
   name: Papers Please - Death Theme
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
+
+- type: jukebox
+  id: PepperSteak
+  name: Off OST -04- - PepperSteak 
+  path:
+    path: /Audio/_Gabystation/Jukebox/PepperSteak.ogg

@@ -333,3 +333,8 @@
   copyright: "Papers Please Death Theme by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
+
+- files: ["Papers_Please_Death_Theme.ogg"]
+  copyright: "Pepper Steak by OFF OST -04- . Exported with ytdown and converted to .ogg with Convertio"
+  license: "Custom"
+  source: "https://youtu.be/ZuuvgY1CB-g?si=SEQOawMQFezhux_0"
