@@ -13,23 +13,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: emote
-  id: Yip
-  name: chat-emote-name-yip
-  category: Vocal
-  icon: { sprite: Mobs/Animals/kobold.rsi, state: full }
-  chatMessages: [ "chat-emote-msg-yip" ]
-  whitelist:
-    tags:
-    - ReptilianEmotes
-    - HarpyEmotes
-  blacklist:
-    components:
-      - BorgChassis
-  chatTriggers:
-  - yip
-  - yips
-
-- type: emote
   id: Coo
   name: chat-emote-name-coo
   category: Vocal
