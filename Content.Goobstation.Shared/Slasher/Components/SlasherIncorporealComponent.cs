@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
@@ -39,7 +43,7 @@ public sealed partial class SlasherIncorporealComponent : Component
     /// How long the do-after to enter incorporeal form takes.
     /// </summary>
     [DataField]
-    public TimeSpan IncorporealizeDelay = TimeSpan.FromSeconds(2);
+    public TimeSpan IncorporealizeDelay = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// Range to disable lights around the slasher when entering incorporeal.

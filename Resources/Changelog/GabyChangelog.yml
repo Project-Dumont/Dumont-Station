@@ -1680,3 +1680,79 @@ Entries:
       message: Agora você pode desligar máquinas para economizar energia.
   id: 198
   time: '2025-12-30T01:21:26.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora os segurança ganharam um bot chamado Beepsky.
+  id: 199
+  time: '2026-01-12T01:11:09.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Adiciona todo conteudo de xenobiologia e virologia para glacier
+    - type: Add
+      message: Processador de minerios para salvatagem na glacier
+    - type: Add
+      message: BSO para glacier
+    - type: Tweak
+      message: >-
+        Leves mudanças na SM da glacier, sua contenção agora é menor e pode
+        gerar mais energia
+  id: 200
+  time: '2026-01-12T01:18:24.0000000+00:00'
+- author: Struater
+  changes: []
+  id: 201
+  time: '2026-01-12T15:48:59.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 12/01/2026 (confira a aba do Goob)!
+  id: 202
+  time: '2026-01-12T17:37:55.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Add
+      message: Titulos OOC, vá comprar sua aura + ego!
+    - type: Add
+      message: Ghost skins, sejá um fantasma aurado.
+    - type: Add
+      message: Tokens pra cada antag e ghost role disponiveis no jogo.
+    - type: Remove
+      message: Cooldown de 1 dia por token.
+    - type: Remove
+      message: Ghost role token e Antag token.
+    - type: Remove
+      message: Diversão.
+    - type: Remove
+      message: >-
+        Tokens ghost role e antag token antigos perderam a validade, use o AHelp
+        para reembolsa-los!
+    - type: Tweak
+      message: A loja foi retrabalhada.
+    - type: Tweak
+      message: A loja agora funciona por rotaçaõ escolhendo 4 tokens a cada 2 horas.
+  id: 203
+  time: '2026-01-13T21:41:48.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Blob e zumbi da loja
+  id: 204
+  time: '2026-01-14T15:05:50.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Conteudo de xenobiologia Saltern, Omega, Packed e Cluster
+    - type: Add
+      message: Radiohost a Glacier, Saltern, Omega, Packed e Cluster
+    - type: Tweak
+      message: Grid eletrica da Packed
+  id: 205
+  time: '2026-01-16T15:05:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o Beepsky não detecta pessoas completamente invisíveis.
+  id: 206
+  time: '2026-01-17T19:36:48.0000000+00:00'

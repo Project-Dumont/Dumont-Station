@@ -1,0 +1,65 @@
+- type: tokenListing
+  id: LoneOpsToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-loneops
+  price: 900
+
+- type: tokenListing
+  id: WraithToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-wraith
+  price: 1050
+
+- type: tokenListing
+  id: SlaughterDemonToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-slaughterdemon
+  price: 1350
+
+- type: tokenListing
+  id: NinjaToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-ninja
+  price: 1150
+
+- type: tokenListing
+  id: AbductorToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-abductor
+  price: 900
+
+- type: tokenListing
+  id: SpaceDragonToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-space-dragon
+  price: 950
+
+- type: tokenListing
+  id: RatKingToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-rat-king
+  price: 750
+
+- type: tokenListing
+  id: BingleToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-bingle
+  price: 650
+
+- type: tokenListing
+  id: UnknowShuttleToken # Unknow shuttle event
+  tokenType: GhostRole
+  name: gs-balanceui-token-unknow-shuttle-event
+  price: 400
+
+- type: tokenListing
+  id: ParadoxCloneToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-paradox-clone
+  price: 850
+
+- type: tokenListing
+  id: SlasherToken
+  tokenType: GhostRole
+  name: gs-balanceui-token-slasher
+  price: 1200
