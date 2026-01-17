@@ -333,3 +333,14 @@
   copyright: "Papers Please Death Theme by Papers PLease. Exported with ytdlp and converted to mono .ogg and normalized with audacity"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
+
+- files: ["Sylendanna_AHAH.ogg"]
+  copyright: "AHAH by Sylendanna exported by YTdown and converted to mono .ogg using convertio"
+  license: "Custom"
+  source: "https://youtu.be/q55PZsq79bE?si=EhSc71xg-G-DWWbJ"
+
+- files: ["ElyOttoSugarCrash.ogg"]
+  copyright: "Sugar Crash by ElyOtto exported by YTdown and converted to mono .ogg using convertio"
+  license: "Custom"
+  source: "https://youtu.be/6uaq8GJJxAQ?si=kZNAMKZSZQHdahzm
+"
