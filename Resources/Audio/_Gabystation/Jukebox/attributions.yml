@@ -335,6 +335,6 @@
   source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
 
 - files: ["NeverGonnaMeowYouUp.ogg"]
-  copyright: "Never Gonna Meow you up by Rapid Liquid. Exported with YTdown and converted to mono .ogg with convertio"
+  copyright: "Never Gonna Meow you up by Rapid Liquid. Exported with YTdown and converted to mono with audacity and to .ogg with convertio"
   license: "Custom"
   source: "https://youtu.be/hvL1339luv0?si=Ie-7WqKeMZjl2E0u4"
