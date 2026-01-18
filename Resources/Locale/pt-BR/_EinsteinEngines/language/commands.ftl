@@ -17,18 +17,18 @@ command-language-invalid-language = A linguagem {$id} não existe ou você não 
 
 # Toolshed
 
-command-description-language-add = Adiciona uma nova linguagem para a entidade canalizada. Os últimos dois argumentos indicam se ela deveria ser falada/entendida. Exemplo: 'self language:add "Canilunzt" true true'
-command-description-language-rm = Remove uma linguagem da entidade canalizada. Funciona similarmente a language:add. Exemplo: 'self language:rm "TauCetiBasic" true true'.
-command-description-language-lsspoken = Lista todas as linguagens que a entidade consegue falar. Exemplo: 'self language:lsspoken'
-command-description-language-lsunderstood = Lista todas as linguagens que a entidade consegue entender. Exemplo: 'self language:lssunderstood'
+command-description-language-add = Adiciona uma nova linguagem para a entidade encadeada. Os últimos dois argumentos indicam se ela deveria ser falada/entendida. Exemplo: 'self language:add "Canilunzt" true true'
+command-description-language-rm = Remove uma linguagem da entidade encadeada. Funciona similarmente a language:add. Exemplo: 'self language:rm "TauCetiBasic" true true'.
+command-description-language-lsspoken = Lista todas as linguagens que a entidade encadeada consegue falar. Exemplo: 'self language:lsspoken'
+command-description-language-lsunderstood = Lista todas as linguagens que a entidade encadeada consegue entender. Exemplo: 'self language:lssunderstood'
 
-command-description-translator-addlang = Adiciona uma nova linguagem alvo para a entidade tradutora canalizada. Veja language:add para mais detalhes.
-command-description-translator-rmlang = Remove uma entidade alvo da entidade tradutora canalizada. Veja language:rm para mais detalhes..
-command-description-translator-addrequired = Adiciona uma nova linguagem necessária para a entidade tradutora canalizada. Exemplo: 'ent 1234 translator:addrequired "TauCetiBasic"'
-command-description-translator-rmrequired = Remove uma linguagem necessária de uma entidade tradutora canalizada. Exemplo: 'ent 1234 translator:rmrequired "TauCetiBasic"'
-command-description-translator-lsspoken = Lista todas as linguagens faladas para a entidade tradutora canalizada. Exemplo: 'ent 1234 translator:lsspoken'
-command-description-translator-lsunderstood = Lista todas as linguagens entendidas para a entidade tradutora canalizada. Exemplo: 'ent 1234 translator:lssunderstood'
-command-description-translator-lsrequired = Lista todas as linguagens necessárias para a entidade tradutora canalizada. Exemplo: 'ent 1234 translator:lsrequired'
+command-description-translator-addlang = Adiciona uma nova linguagem alvo para a entidade tradutora encadeada. Veja language:add para mais detalhes.
+command-description-translator-rmlang = Remove uma entidade alvo da entidade tradutora encadeada. Veja language:rm para mais detalhes..
+command-description-translator-addrequired = Adiciona uma nova linguagem necessária para a entidade tradutora encadeada. Exemplo: 'ent 1234 translator:addrequired "TauCetiBasic"'
+command-description-translator-rmrequired = Remove uma linguagem necessária de uma entidade tradutora encadeada. Exemplo: 'ent 1234 translator:rmrequired "TauCetiBasic"'
+command-description-translator-lsspoken = Lista todas as linguagens faladas para a entidade tradutora encadeada. Exemplo: 'ent 1234 translator:lsspoken'
+command-description-translator-lsunderstood = Lista todas as linguagens entendidas para a entidade tradutora encadeada. Exemplo: 'ent 1234 translator:lssunderstood'
+command-description-translator-lsrequired = Lista todas as linguagens necessárias para a entidade tradutora encadeada. Exemplo: 'ent 1234 translator:lsrequired'
 
 command-language-error-this-will-not-work = Isto não irá funcionar.
 command-language-error-not-a-translator = Entidade {$entity} não é um tradutor.
