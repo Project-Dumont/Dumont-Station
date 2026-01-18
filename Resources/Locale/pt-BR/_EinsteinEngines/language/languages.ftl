@@ -166,8 +166,7 @@ language-SiikMaas-description =
 
 language-NalRasan-name = Nal'rasan
 language-NalRasan-description =
-    Um dialeto corporal criado pelos caçadores M'sai para furtividade, adotada depois por rebeldes para comunicação discreta durante a Grande Guerra.
-
+    Um dialeto corporal criado pelos caçadores M'sai para furtividade, adotado depois por rebeldes para comunicação discreta durante a Grande Guerra.
 language-SiikTajr-name = Siik'tajr
 language-SiikTajr-description =
     Uma linguagem revolucionária misturando Siik'maas e Nal'rasan, projetada para sigilo durante a derrubada da plutocracia e muito usada na Grande Guerra.
