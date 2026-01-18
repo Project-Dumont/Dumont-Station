@@ -13,6 +13,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Shared.Stealth;
+using Content.Shared.Stealth.Components;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
@@ -22,6 +24,7 @@ public sealed partial class PickNearbyWantedOperator : HTNOperator
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;
     private SharedAudioSystem _audio = default!;
+    private SharedStealthSystem _stealth = default!;
 
     [DataField]
     public float MaxPoints = 10f;
@@ -44,12 +47,19 @@ public sealed partial class PickNearbyWantedOperator : HTNOperator
     [DataField]
     public string? TargetFoundSoundKey;
 
+    [DataField("checkStealth")]
+    public bool CheckStealth = false;
+
+    [DataField("stealthPercent")]
+    public float StealthPercent = -0.75f;
+
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
         _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
+        _stealth = sysManager.GetEntitySystem<SharedStealthSystem>();
     }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard, CancellationToken cancelToken)
@@ -65,6 +75,12 @@ public sealed partial class PickNearbyWantedOperator : HTNOperator
 
         foreach (var entity in _lookup.GetEntitiesInRange(owner, range))
         {
+            if (CheckStealth && _entManager.TryGetComponent<StealthComponent>(entity, out var stealth))
+            {
+                if (_stealth.GetVisibility(entity, stealth) <= StealthPercent)
+                    continue;
+            }
+
             if (!criminalRecordQuery.TryGetComponent(entity, out var criminalRecord) || criminalRecord.Points < MaxPoints)
                 continue;
 
