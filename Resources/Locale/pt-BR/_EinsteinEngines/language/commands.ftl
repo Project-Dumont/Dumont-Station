@@ -23,7 +23,7 @@ command-description-language-lsspoken = Lista todas as linguagens que a entidade
 command-description-language-lsunderstood = Lista todas as linguagens que a entidade encadeada consegue entender. Exemplo: 'self language:lssunderstood'
 
 command-description-translator-addlang = Adiciona uma nova linguagem alvo para a entidade tradutora encadeada. Veja language:add para mais detalhes.
-command-description-translator-rmlang = Remove uma entidade alvo da entidade tradutora encadeada. Veja language:rm para mais detalhes..
+command-description-translator-rmlang = Remove uma linguagem alvo da entidade tradutora encadeada. Veja language:rm para mais detalhes..
 command-description-translator-addrequired = Adiciona uma nova linguagem necessária para a entidade tradutora encadeada. Exemplo: 'ent 1234 translator:addrequired "TauCetiBasic"'
 command-description-translator-rmrequired = Remove uma linguagem necessária de uma entidade tradutora encadeada. Exemplo: 'ent 1234 translator:rmrequired "TauCetiBasic"'
 command-description-translator-lsspoken = Lista todas as linguagens faladas para a entidade tradutora encadeada. Exemplo: 'ent 1234 translator:lsspoken'
