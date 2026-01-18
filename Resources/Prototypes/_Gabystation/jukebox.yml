@@ -588,10 +588,10 @@
   id: sugarCrash
   name: EluOtto - Sugar crash
   path:
-    path: /Audio/_Gabystation/Jukebox/ElyOttoSugarCrashMono.ogg
+    path: /Audio/_Gabystation/Jukebox/ElyOttoSugarCrash.ogg
 
 - type: jukebox
   id: AHAH
   name: Sylendanna - AHAH
   path:
-    path: /Audio/_Gabystation/Jukebox/Sylendanna_AHAH_Mono.ogg
+    path: /Audio/_Gabystation/Jukebox/Sylendanna_AHAH.ogg
