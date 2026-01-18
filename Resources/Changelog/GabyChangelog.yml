@@ -1750,3 +1750,29 @@ Entries:
       message: Grid eletrica da Packed
   id: 205
   time: '2026-01-16T15:05:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o Beepsky não detecta pessoas completamente invisíveis.
+  id: 206
+  time: '2026-01-17T19:36:48.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Penguins agora tem sua velocidade de ataque padronizadas quando possuem
+        artes marciais, assim performam igualmente como qualquer outra raça.
+  id: 207
+  time: '2026-01-17T20:26:58.0000000+00:00'
+- author: Cleitosvaldo LIndo
+  changes:
+    - type: Add
+      message: Adiciona MeowRolling
+  id: 208
+  time: '2026-01-18T01:39:23.0000000+00:00'
+- author: Cleitosvaldo
+  changes:
+    - type: Add
+      message: Musica Wait a Minute! para a jukebox
+  id: 209
+  time: '2026-01-18T15:20:35.0000000+00:00'
