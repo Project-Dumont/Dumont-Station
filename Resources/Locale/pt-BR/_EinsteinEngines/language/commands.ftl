@@ -31,4 +31,4 @@ command-description-translator-lsunderstood = Lista todas as linguagens entendid
 command-description-translator-lsrequired = Lista todas as linguagens necessárias para a entidade tradutora canalizada. Exemplo: 'ent 1234 translator:lsrequired'
 
 command-language-error-this-will-not-work = Isto não irá funcionar.
-command-language-error-not-a-translator = Entidade {$entity} não é uma tradutora.
+command-language-error-not-a-translator = Entidade {$entity} não é um tradutor.
