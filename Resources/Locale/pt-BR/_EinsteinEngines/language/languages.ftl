@@ -36,7 +36,7 @@ language-NovuNederic-description =
 
 language-TauCetiBasic-name = Tau-Ceti Unificado
 language-TauCetiBasic-description =
-    Um sucessor espiritual do Esperanto, estabelecido em 2404 em Tau Ceti por intelectuais de Ceti
+    Um sucessor espiritual do Esperanto, estabelecido em 2404 em Tau Ceti por intelectuais de Ceti.
     O seu alfabeto único, totalmente customizável e estrutura permitem-na ser falada pela maioria das espécies alienígenas.
     É a linguagem oficial de Tau Ceti e tem ganhado popularidade em círculos diplomáticos e Universalistas pelo espaço sideral humano.
 
