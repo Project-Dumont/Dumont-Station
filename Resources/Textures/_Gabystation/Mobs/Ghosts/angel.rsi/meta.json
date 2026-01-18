@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by borkroman - Taken from https://github.com/space-sunrise/sunrise-station/blob/master/Resources/Textures/_Sunrise/Mobs/Ghosts/white_ghost_human.rsi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+      {
+          "name": "animated",
+          "directions": 4,
+          "delays": [
+            [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+            ],
+            [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+            ],
+            [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+            ],
+            [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+            ]
+        ]
+      },
+      {
+          "name": "icon"
+      }
+  ]
+}

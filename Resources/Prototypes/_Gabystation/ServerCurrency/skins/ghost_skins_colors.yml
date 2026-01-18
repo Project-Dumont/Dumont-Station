@@ -1,0 +1,62 @@
+- type: ghostSkinListing
+  id: GhostYellowSkin
+  name: ghost-skin-ghost-yellow
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#e6e68a"
+
+- type: ghostSkinListing
+  id: GhostRedSkin
+  name: ghost-skin-ghost-red
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#e68a8a"
+
+- type: ghostSkinListing
+  id: GhostBlueSkin
+  name: ghost-skin-ghost-blue
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#8aa6e6"
+
+- type: ghostSkinListing
+  id: GhostGreenSkin
+  name: ghost-skin-ghost-green
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#8ae6a1"
+
+- type: ghostSkinListing
+  id: GhostGraySkin
+  name: ghost-skin-ghost-gray
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#9e9e9e"
+
+- type: ghostSkinListing
+  id: GhostCyanSkin
+  name: ghost-skin-ghost-cyan
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#8adede"
+
+- type: ghostSkinListing
+  id: GhostMagentaSkin
+  name: ghost-skin-ghost-magenta
+  price: 350
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#de8ad6"

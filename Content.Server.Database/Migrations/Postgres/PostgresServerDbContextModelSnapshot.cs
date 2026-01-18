@@ -26,7 +26,6 @@
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
@@ -38,6 +37,8 @@
 // SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -620,7 +621,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("blacklist", (string)null);
                 });
 
-                        modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
+            modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -748,6 +749,38 @@ namespace Content.Server.Database.Migrations.Postgres
                         {
                             t.HasCheckConstraint("AddressNotIPv6MappedIPv4", "NOT inet '::ffff:0.0.0.0/96' >>= address");
                         });
+                });
+
+            modelBuilder.Entity("Content.Server.Database.GabyModel+GabyStoreOwnedItems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("gaby_store_owned_items_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("PlayerId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("player_id");
+
+                    b.Property<string>("Prototype")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("prototype");
+
+                    b.Property<DateTime>("PurchaseDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("purchase_date");
+
+                    b.Property<byte>("Type")
+                        .HasColumnType("smallint")
+                        .HasColumnName("type");
+
+                    b.HasKey("Id")
+                        .HasName("PK_gaby_store_owned_items");
+
+                    b.ToTable("gaby_store_owned_items", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
@@ -1062,6 +1095,14 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text[]")
                         .HasColumnName("construction_favorites");
+
+                    b.Property<string>("GhostSkin")
+                        .HasColumnType("text")
+                        .HasColumnName("ghost_skin");
+
+                    b.Property<string>("OOCTitle")
+                        .HasColumnType("text")
+                        .HasColumnName("ooctitle");
 
                     b.Property<int>("SelectedCharacterSlot")
                         .HasColumnType("integer")
@@ -2143,28 +2184,28 @@ namespace Content.Server.Database.Migrations.Postgres
                 });
 
             modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
-            {
-                b.HasOne("Content.Server.Database.Profile", "Profile")
-                    .WithOne("CDProfile")
-                    .HasForeignKey("Content.Server.Database.CDModel+CDProfile", "ProfileId")
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .IsRequired()
-                    .HasConstraintName("FK_cdprofile_profile_profile_id");
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithOne("CDProfile")
+                        .HasForeignKey("Content.Server.Database.CDModel+CDProfile", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_cdprofile_profile_profile_id");
 
-                b.Navigation("Profile");
-            });
+                    b.Navigation("Profile");
+                });
 
             modelBuilder.Entity("Content.Server.Database.CDModel+CharacterRecordEntry", b =>
-            {
-                b.HasOne("Content.Server.Database.CDModel+CDProfile", "CDProfile")
-                    .WithMany("CharacterRecordEntries")
-                    .HasForeignKey("CDProfileId")
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .IsRequired()
-                    .HasConstraintName("FK_cd_character_record_entries_cdprofile_cdprofile_id");
+                {
+                    b.HasOne("Content.Server.Database.CDModel+CDProfile", "CDProfile")
+                        .WithMany("CharacterRecordEntries")
+                        .HasForeignKey("CDProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_cd_character_record_entries_cdprofile_cdprofile_id");
 
-                b.Navigation("CDProfile");
-            });
+                    b.Navigation("CDProfile");
+                });
 
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
@@ -2684,9 +2725,9 @@ namespace Content.Server.Database.Migrations.Postgres
                 });
 
             modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
-            {
-                b.Navigation("CharacterRecordEntries");
-            });
+                {
+                    b.Navigation("CharacterRecordEntries");
+                });
 
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {

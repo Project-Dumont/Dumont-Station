@@ -24,6 +24,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <Button Access="Public" Name="PatronPerksButton" Text="{Loc 'rmc-ui-patron-perks'}" StyleClasses="Caution" Visible="False" />
         <changelog:ChangelogButton Access="Public" Name="ChangelogButton"/>
+        <Button Access="Public" Name="StoreButton" Text="{Loc 'ui-escape-balanceui'}" />
         <ui:VoteCallMenuButton />
         <PanelContainer StyleClasses="LowDivider" Margin="0 2.5 0 2.5" />
         <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" />

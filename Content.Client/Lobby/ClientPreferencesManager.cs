@@ -14,10 +14,15 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
+// SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Client;
@@ -143,6 +148,18 @@ namespace Content.Client.Lobby
             Settings = message.Settings;
 
             OnServerDataLoaded?.Invoke();
+        }
+
+        // Gaby change - Titles
+        public void SetTitle(ProtoId<TitleListingPrototype>? proto)
+        {
+            Preferences.OOCTitle = proto;
+        }
+
+        // Gaby change - ghost skins
+        public void SetGhostSkin(ProtoId<GhostSkinListingPrototype>? proto)
+        {
+            Preferences.GhostSkin = proto;
         }
     }
 }
