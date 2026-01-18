@@ -91,8 +91,7 @@ language-ValyrianStandard-description =
 language-Chittin-name = Zunir
 language-Chittin-description =
     Uma linguagem que consiste em cliques, zunidos e uma variedade de sons de insetos.
-    A maior parte da fala deles vem de suas antenas, tornando-a quase impossível para pessoas que não tem falar.
-
+    A maior parte da fala deles vem de suas antenas, tornando-a quase impossível para pessoas que não têm como falar.
 language-Xeeplian-name = Zeepliano
 language-Xeeplian-description =
     Nossa língua é altamente avançada, eficiente e objetiva.
