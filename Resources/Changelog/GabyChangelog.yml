@@ -1764,3 +1764,23 @@ Entries:
         artes marciais, assim performam igualmente como qualquer outra raça.
   id: 207
   time: '2026-01-17T20:26:58.0000000+00:00'
+- author: Cleitosvaldo LIndo
+  changes:
+    - type: Add
+      message: Adiciona MeowRolling
+  id: 208
+  time: '2026-01-18T01:39:23.0000000+00:00'
+- author: Cleitosvaldo
+  changes:
+    - type: Add
+      message: Musica Wait a Minute! para a jukebox
+  id: 209
+  time: '2026-01-18T15:20:35.0000000+00:00'
+- author: Cleitosvaldo Lindo
+  changes:
+    - type: Add
+      message: AHAH a Jukebox
+    - type: Add
+      message: Sugar Crash a Jukebox
+  id: 210
+  time: '2026-01-18T15:29:16.0000000+00:00'
