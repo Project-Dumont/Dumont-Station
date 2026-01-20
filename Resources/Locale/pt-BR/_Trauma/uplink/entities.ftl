@@ -34,3 +34,6 @@ ent-HijackTradeStationObjective = Sequestre a Estação Comercial Automatizada.
 
 ent-WeaponSubMachineGunBriefcase = maleta marrom
     .desc = Útil para carregar itens nas mãos.
+
+ent-CdDiskNumber = CD (Números)
+    .desc = Contate o posto de escuta do Sindicato mais próximo para pedir reforços!

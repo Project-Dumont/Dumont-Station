@@ -48,6 +48,10 @@ uplink-hijack-beacon-name = Sinalizador de sequestro comercial
 
 uplink-hijack-beacon-desc = Um sinalizador do Sindicato que invade o firewall das Estações de Comércio Automatizadas da Nanotrasen. Leva 600 segundos e a estação de comércio anuncia a invasão. Prepare-se.
 
+uplink-cddisknumber-name = CD da estação de números
+
+uplink-cddisknumber-desc = Chame uma ameaça para distrair a estação... se conseguir tocar o disco inteiro.
+
 store-category-objective = Objetivos
 
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.

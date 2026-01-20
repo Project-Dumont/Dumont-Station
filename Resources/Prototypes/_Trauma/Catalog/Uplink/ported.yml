@@ -80,3 +80,19 @@
     Telecrystal: 30 # Trauma - was 6, 5x
   categories:
     - UplinkWeaponry
+
+- type: listing
+  id: TraumaUplinkCdDiskNumber
+  name: uplink-cddisknumber-name
+  description: uplink-cddisknumber-desc
+  productEntity: CdDiskNumber
+  cost:
+    Telecrystal: 30
+  categories:
+    - UplinkJob
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+    - !type:BuyerJobCondition
+      whitelist:
+        - RadioHost
