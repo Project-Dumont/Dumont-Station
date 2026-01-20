@@ -53,7 +53,7 @@ dna-modifier-button-injector = Injetor
 dna-modifier-button-inject-block = Injetor de Bloco
 dna-modifier-button-subject-inject = Sujeito
 
-dna-modifier-button-disk = Do Disco
+dna-modifier-button-disk = Disco
 dna-modifier-label-buffer-write = Escrever no Buffer:
 dna-modifier-box-disk = Disco
 dna-modifier-no-disk = Disco não inserido ou vazio

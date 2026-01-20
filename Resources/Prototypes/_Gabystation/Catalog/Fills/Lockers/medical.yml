@@ -4,11 +4,13 @@
     children:
     - id: Multitool
     - id: MonkeyCubeBox
+    - id: DrinkWaterBottleFull
     - id: BoxBeaker
+    - id: PillCanisterHyronalin
+    - id: PillCanisterMutadon
     - id: MedicalScannerFlatpack
     - id: FlatpackDnaModifierConsole
     - id: BoxDnaFisk
-    - id: DnaInjector
 
 - type: entity
   parent: LockerGeneticist
