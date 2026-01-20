@@ -9,6 +9,18 @@
     <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="cubo de macaco"/>
   </Box>
 
+  - 1. Blocos Hexadecimais
+
+  O formato numérico presente em cada bloco genético utiliza o sistema hexadecimal, organizando os valores em ordem crescente de 0 a 9 e, em seguida, pelas letras de A até F. Cada bloco é constituído por três sub-blocos que funcionam como um número de três dígitos, onde a posição de cada caractere possui um peso hierárquico semelhante ao sistema de centenas, dezenas e unidades.
+
+  - 2. Enzimas Estruturais e Identificadores Únicos
+
+  Para operar o computador, é necessário compreender a diferença entre os tipos de enzimas. As enzimas estruturais (EE) controlam a raça, os superpoderes e as deficiências físicas, enquanto os identificadores únicos (IU) definem a aparência física.
+
+  - 3. Buffer de Dados
+
+  O buffer de dados funciona como uma ferramenta para armazenar o progresso do seu trabalho, sendo altamente recomendável manter um backup de um genoma limpo por segurança, além de registrar as alterações manualmente. O sistema permite salvar diferentes categorias de dados, apenas os identificadores únicos (UI) para dados fisicos, apenas as enzimas estruturais (EE) para estrutura genética funcional ou o conjunto de identificadores únicos e enzimas estruturais e (UI & EE) para incluir ambas enzimas. Para utilizar os dados armazenados, existem três métodos principais de transferência. A aplicação direta no ocupante transfere os dados do buffer para o sujeito dentro do modificador de DNA, mas gera uma grande quantidade de radiação no processo. A opção de injetor sintetiza uma injetor de DNA que pode ser aplicada em si mesmo ou em outros, causando apenas danos leves por toxinas, embora exija tempo para a produção de novas unidades. Por fim, o gerenciamento via disco permite o uso de discos físicos para salvar os dados do buffer ou carregar informações de um disco para o computador.
+
   ## Como Começar
   Para iniciar, use cubos de animais: abra o cubo, molhe-o para obter um animal, como um macaco. Coloque-o no modificador de DNA para experimentos futuros.
   <Box>
@@ -20,15 +32,15 @@
 
   No modificador de DNA, selecione a opção "Modificação EE" e irradie o primeiro subbloco do bloco 55 até alcançar um valor igual ou maior que 8. Isso transformará o animal em um humano.
 
-  - 2. Criando um EE Puro
+  - 2. Criando um EE Pura
 
-  Para criar um injetor de "EE Puro", irradie os primeiros subblocos de todos os blocos de 1 a 54 até valores menores que 8. Isso permitirá cancelar mutações indesejadas no futuro.
+  Para criar um injetor de "EE Pura", irradie os primeiros subblocos de todos os blocos de 1 a 54 até valores menores que 8. Isso permitirá cancelar mutações indesejadas no futuro.
 
   - 3. Atividade Principal
 
   Irradiando vários blocos de enzimas estruturais (EE), você pode revelar superpoderes ou doenças genéticas. Seja cuidadoso e registre os resultados para reproduzir os efeitos desejados.
 
   ## Radiação e Mutações
-  A irradiação de blocos de DNA pode levar a mutações aleatórias. Algumas podem ser benéficas, outras prejudiciais. Use o injetor "EE Puro" para eliminar efeitos indesejados.
+  A irradiação de blocos de DNA pode levar a mutações aleatórias. Algumas podem ser benéficas, outras prejudiciais. Use o injetor "EE Pura" para eliminar efeitos indesejados.
 
 </Document>
