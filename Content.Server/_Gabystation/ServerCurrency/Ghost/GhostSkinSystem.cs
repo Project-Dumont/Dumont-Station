@@ -25,9 +25,7 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
     }
 
     private void OnPlayerAttached(Entity<GhostSkinComponent> ent, ref PlayerAttachedEvent args)
-    {
-        UpdateGhost(ent);
-    }
+        => UpdateGhost(ent.AsNullable());
 
     private void OnNewSkin(ProtoId<GhostSkinListingPrototype>? skin, NetUserId id)
     {
@@ -43,10 +41,13 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
     }
 
     private void ComponentStartup(Entity<GhostSkinComponent> ent, ref ComponentStartup args)
-        => UpdateGhost(ent);
+        => UpdateGhost(ent.AsNullable());
 
-    private void UpdateGhost(Entity<GhostSkinComponent> ent)
+    public void UpdateGhost(Entity<GhostSkinComponent?> ent)
     {
+        if (!Resolve(ent.Owner, ref ent.Comp))
+            return;
+
         if (!_player.TryGetSessionByEntity(ent.Owner, out var player))
             return;
 
