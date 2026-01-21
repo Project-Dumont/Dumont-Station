@@ -50,9 +50,12 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
         if (!_player.TryGetSessionByEntity(ent.Owner, out var player))
             return;
 
-        var prefs = _prefs.GetPreferences(player.UserId);
+        var maybePreference = _prefs.GetPreferencesOrNull(player.UserId);
 
-        ent.Comp.Skin = prefs.GhostSkin;
+        if (maybePreference is not { } preference)
+            return;
+
+        ent.Comp.Skin = preference.GhostSkin;
         Dirty(ent);
     }
 }
