@@ -91,25 +91,27 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 TryModifyBloodLevel((uid, bloodstream), bloodstream.BloodRefreshAmount);
             }
 
-            // BloodTypes start
-            ///<summary>
-            ///  Verifying if any Reagent in the bloodstream isn't the entity "blood" Reagent
-            ///  And applying celular damage based on the percentage of foreign "blood" in the bloodstream.
-            ///</summary>
-            {
+            {// BloodTypes start
+                ///<summary>
+                ///  Verifying if any Reagent in the bloodstream isn't the entity "blood" Reagent
+                ///  And applying celular damage based on the percentage of foreign "blood" in the bloodstream.
+                ///</summary>
+
                 FixedPoint2 foreignBloodAmount = 0;
+
                 bloodSolution.Contents.ForEach(internalContent => foreignBloodAmount =
                     (!bloodstream.BloodReagent.Id.Equals(internalContent.Reagent.ToString())) ?
                     foreignBloodAmount + internalContent.Quantity : foreignBloodAmount);
                 if (foreignBloodAmount > 0)
                 {
+                    var internalBlood = bloodSolution.Contents.SkipWhile(content => bloodstream.BloodReagent.Id.Equals(content.Reagent.ToString())).ToList();
+                    internalBlood.ForEach(content => bloodSolution.RemoveReagent(content.Reagent, bloodstream.ForeignBloodDeducted));
                     var celularTotal = bloodstream.CellularDamage * 10f * (foreignBloodAmount / bloodstream.BloodMaxVolume);
                     _damageableSystem.TryChangeDamage(uid, celularTotal, ignoreResistances: false,
                         interruptsDoAfters: false, splitDamage: SplitDamageBehavior.SplitEnsureAll,
                         targetPart: TargetBodyPart.All);
                 }
-            }
-            // BloodTypes end
+            }// BloodTypes end
 
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.

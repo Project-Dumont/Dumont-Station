@@ -94,6 +94,9 @@ public sealed partial class BloodstreamComponent : Component
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
     public DamageSpecifier CellularDamage = new();
+
+    [DataField, AutoNetworkedField]
+    public FixedPoint2 ForeignBloodDeducted = 1.0f;
     //bloodType end
 
     /// <summary>
