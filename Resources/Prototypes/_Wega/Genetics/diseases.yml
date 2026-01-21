@@ -129,7 +129,8 @@
   message: genetics-obesity-message
   typeDeviation: Disease
   costInstability: -5
-  # empty
+  addComponent:
+  - type: BigHeight
 
 - type: structuralEnzymes
   id: GeneticsRadiationSourceDisease
