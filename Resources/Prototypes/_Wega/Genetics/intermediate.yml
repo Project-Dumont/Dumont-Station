@@ -81,8 +81,6 @@
   costInstability: 15
   addComponent:
   - type: ThermalVision
-    flashDurationMultiplier: 4
-    pulseTime: 4
 
 - type: structuralEnzymes
   id: GeneticsRemoteViewingIntermediate

@@ -7,11 +7,11 @@ namespace Content.Server.Traits.Assorted;
 [RegisterComponent]
 public sealed partial class UncontrollableCoughComponent : Component
 {
-    [DataField("emote", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
-    public string EmoteId = string.Empty;
+    [DataField("emote", customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
+    public string EmoteId = "Cough";
 
-    [DataField("timeBetweenIncidents", required: true)]
-    public Vector2 TimeBetweenIncidents { get; set; }
+    [DataField("timeBetweenIncidents")]
+    public Vector2 TimeBetweenIncidents = new(30, 120);
 
     public float NextIncidentTime;
 }

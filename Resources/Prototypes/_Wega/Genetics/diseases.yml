@@ -44,8 +44,6 @@
   costInstability: -5
   addComponent:
   - type: UncontrollableCough
-    emote: Cough
-    timeBetweenIncidents: 0.3, 120
 
 - type: structuralEnzymes
   id: GeneticsDeafnessDisease
