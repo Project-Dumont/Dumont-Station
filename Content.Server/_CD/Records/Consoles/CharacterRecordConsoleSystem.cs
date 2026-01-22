@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.CriminalRecords.Systems; // DeltaV - i hate this, forward to criminal records console
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords.Systems;
