@@ -55,7 +55,7 @@
 
 # Midround Changelings
 - type: entity
-  parent: BaseGameRule # Funky: Changed parent because it no longer directly makes changelings at all
+  parent: Changeling
   id: ChangelingMidround
   components:
   - type: StationEvent
@@ -69,9 +69,9 @@
     duration: null
     occursDuringRoundEnd: false
     chaos:
-      Hostile: 100
-      Medical: 100
-      Death: 100
+      Hostile: 150
+      Medical: 150
+      Death: 150
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 600
@@ -157,12 +157,6 @@
       Hostile: 250
       Medical: 250
       Death: 250
-    maxChaos:
-      Hostile: 30
-      Combat: -60
-      Power: 50
-      Medical: 50
-      Atmos: 50
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 900
@@ -189,7 +183,6 @@
   - type: Tag
     tags:
       - MidroundAntag
-
 # Skeleton Spawn
 - type: entity
   parent: BaseGameRule
@@ -198,7 +191,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 999 # nao volte nunca mais - GabyStation
+    minimumPlayers: 15
     chaos:
       Hostile: 40
       Medical: 40
@@ -211,7 +204,6 @@
   - type: Tag
     tags:
       - MidroundAntag
-
 # Blob Midround
 - type: entity
   parent: BaseGameRule

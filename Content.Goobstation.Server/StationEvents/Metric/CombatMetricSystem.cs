@@ -1,7 +1,5 @@
-// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
@@ -19,7 +17,6 @@ using Content.Shared.Roles;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Prometheus;
-using Content.Shared.Storage;
 
 namespace Content.Goobstation.Server.StationEvents.Metric;
 
@@ -98,16 +95,6 @@ public sealed class CombatMetricSystem : ChaosMetricSystem<CombatMetricComponent
             if (tagsQ.TryGetComponent(item, out var tags)) // thanks code rabbit
             {
                 allTags.UnionWith(tags.Tags);
-                if (TryComp<StorageComponent>(item, out var storageComponent))
-                {
-                    foreach (var nested_item in storageComponent.StoredItems.Keys)
-                    {
-                        if (tagsQ.TryGetComponent(nested_item, out var nested_item_tags))
-                        {
-                            allTags.UnionWith(nested_item_tags.Tags);
-                        }
-                    }
-                }
             }
         }
 

@@ -114,7 +114,7 @@
 
 - type: Tag
   id: CannotSuicideAny
-
+  
 - type: Tag
   id: Chair
 
@@ -764,9 +764,6 @@
 
 - type: Tag
   id: CalmAntag
-
-- type: Tag
-  id: ExtremeAntag
 
 - type: Tag
   id: MidroundAntag
