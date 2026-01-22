@@ -485,8 +485,8 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         var reasonEntry = new QuickDialogEntry(
             "reason", 
             QuickDialogEntryType.LongText,
-            Loc.GetString("criminal-records-console-reason"),
-            Loc.GetString("criminal-records-console-reason-placeholder")
+            Loc.GetString("criminal-records-console-arrest-warrant-reason"),
+            Loc.GetString("criminal-records-console-arrest-warrant-reason-placeholder")
         );
 
         var observationsEntry = new QuickDialogEntry(
