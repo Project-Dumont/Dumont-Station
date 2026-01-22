@@ -37,6 +37,7 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
                 subr.Event<SelectStationRecord>(OnSelectStationRecord);
                 subr.Event<CriminalRecordChangeStatus>(OnCriminalRecordChangeStatus);
                 // End DeltaV - i hate this, forward to criminal records console
+                subr.Event<CriminalRecordRequestArrestWarrant>(OnRequestArrestWarrant);
             });
     }
 
@@ -71,6 +72,15 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
         UpdateUi(ent);
     }
     // End DeltaV - i hate this, forward to criminal records console
+
+    private void OnRequestArrestWarrant(Entity<CharacterRecordConsoleComponent> ent, ref CriminalRecordRequestArrestWarrant msg)
+    {
+        if (!TryComp<CriminalRecordsConsoleComponent>(ent, out var console))
+            return;
+
+        _criminalRecordsConsole.OnRequestArrestWarrant((ent.Owner, console), ref msg);
+        UpdateUi(ent);
+    }
 
     private void UpdateUi(EntityUid entity, CharacterRecordConsoleComponent? console = null)
     {
