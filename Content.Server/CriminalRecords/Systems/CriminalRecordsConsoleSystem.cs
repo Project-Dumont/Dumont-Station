@@ -359,8 +359,6 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             : Loc.GetString("criminal-records-console-unknown-occupation");
         var reason = msg.Reason.Trim();
         var observations = msg.Details.Trim();
-        var stationName = _station.GetStationNames()[0]; // temporarily only support first station name
-        // var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan); // too hard to get the time, fuck it.
         GetOfficer(mob.Value, out var officer);
 
         if (reason.Length < 1 || reason.Length > ent.Comp.MaxStringLength)
@@ -380,9 +378,7 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
                 ("occupation", occupation),
                 ("reason", reason),
                 ("observations", observations),
-                ("officer", officer),
-                ("stationId", stationName)
-                // ("time", stationTime)
+                ("officer", officer)
             );
 
             _paperSystem.SetContent(printed, text);
