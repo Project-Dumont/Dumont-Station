@@ -740,6 +740,17 @@
 
 - type: entity
   parent: DefaultStationBeaconService
+  id: DefaultStationBeaconBar
+  suffix: Bar
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-bar
+  - type: ConditionalSpawner # Gabystation - Ronilson spawn
+    prototypes:
+      - MobCapivaraRonilson
+
+- type: entity
+  parent: DefaultStationBeaconService
   id: DefaultStationBeaconBotany
   suffix: Botany
   components:
