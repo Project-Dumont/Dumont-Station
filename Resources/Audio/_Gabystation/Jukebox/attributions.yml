@@ -334,3 +334,22 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
 
+- files: ["Sylendanna_AHAH.ogg"]
+  copyright: "AHAH by Sylendanna exported by YTdown and converted to mono .ogg using audacity"
+  license: "Custom"
+  source: "https://youtu.be/q55PZsq79bE?si=EhSc71xg-G-DWWbJ"
+
+- files: ["ElyOttoSugarCrash.ogg"]
+  copyright: "Sugar Crash by ElyOtto exported by YTdown and converted to mono .ogg using audacity"
+  license: "Custom"
+  source: "https://youtu.be/6uaq8GJJxAQ?si=kZNAMKZSZQHdahzm"
+
+- files: ["WillowSmithWaitAMinute.ogg"]
+  copyright: "Wait a Minute! by willow smith. Exported with YTdown and converted to mono .ogg with Audacity"
+  license: "Custom"
+  source: "https://youtu.be/7XxoFs6G_Ko?si=jhJKq7f_dYbsdc5q"
+
+- files: ["NeverGonnaMeowYouUp.ogg"]
+  copyright: "Never Gonna Meow you up by Rapid Liquid. Exported with YTdown and converted to mono with audacity and to .ogg with convertio"
+  license: "Custom"
+  source: "https://youtu.be/hvL1339luv0?si=Ie-7WqKeMZjl2E0u4"

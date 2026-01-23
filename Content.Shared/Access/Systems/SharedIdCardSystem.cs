@@ -86,6 +86,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
@@ -205,6 +206,28 @@ public abstract class SharedIdCardSystem : EntitySystem
 
         idCard = default;
         return false;
+    }
+
+    public bool TryFindIdCards(EntityUid uid, out HashSet<Entity<IdCardComponent>> idCards)
+    {
+        idCards = [];
+
+        if (TryComp<HandsComponent>(uid, out var hands) &&
+            _hands.TryGetActiveItem((uid, hands), out var heldItem) &&
+            TryGetIdCard(heldItem.Value, out var idCard))
+        {
+            idCards.Add(idCard);
+        }
+
+        // check entity itself
+        if (TryGetIdCard(uid, out idCard))
+            idCards.Add(idCard);
+
+        // check inventory slot?
+        if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid) && TryGetIdCard(idUid.Value, out idCard))
+            idCards.Add(idCard);
+
+        return idCards.Count > 0;
     }
 
     /// <summary>

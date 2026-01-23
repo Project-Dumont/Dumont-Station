@@ -108,7 +108,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                              Margin="8 0" />
                         <OptionButton Name="StatusOptionButton"
                                       MinWidth="130" />
-                        <!-- Populated in constructor -->
+                        <!-- Populated in constructor --> 
+                        
+                        <!-- GabyStation -->
+                        <Button Name="PrintArrestWarrantButton"
+                            Text="{Loc 'criminal-records-console-print-arrest-warrant'}"
+                            Margin="0 5" />
                     </BoxContainer>
                     <RichTextLabel Name="WantedReason"
                                    Visible="False"

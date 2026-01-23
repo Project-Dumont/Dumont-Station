@@ -1,0 +1,59 @@
+- type: tokenListing
+  id: TraitorToken
+  tokenType: Antag
+  name: gs-balanceui-token-traitor
+  price: 750
+
+- type: tokenListing
+  id: ZombieToken
+  tokenType: Antag
+  name: gs-balanceui-token-zombie
+  price: 1250
+
+- type: tokenListing
+  id: ThiefToken
+  tokenType: Antag
+  name: gs-balanceui-token-thief
+  price: 500
+
+- type: tokenListing
+  id: HereticToken
+  tokenType: Antag
+  name: gs-balanceui-token-heretic
+  price: 1150
+
+- type: tokenListing
+  id: WizardToken
+  tokenType: Antag
+  name: gs-balanceui-token-wizard
+  price: 9999 # Ta aqui mais pelo meme
+
+- type: tokenListing
+  id: ChangelingToken
+  tokenType: Antag
+  name: gs-balanceui-token-changeling
+  price: 1200
+
+- type: tokenListing
+  id: BlobToken
+  tokenType: Antag
+  name: gs-balanceui-token-blob
+  price: 900
+
+- type: tokenListing
+  id: DevilToken
+  tokenType: Antag
+  name: gs-balanceui-token-devil
+  price: 800
+
+- type: tokenListing
+  id: ShadowlingToken
+  tokenType: Antag
+  name: gs-balanceui-token-shadowling
+  price: 1250
+
+- type: tokenListing
+  id: MalfAiToken
+  tokenType: Antag
+  name: gs-balanceui-token-malf
+  price: 1450

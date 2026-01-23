@@ -15,6 +15,7 @@ using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 namespace Content.Shared.Preferences
 {
@@ -28,12 +29,21 @@ namespace Content.Shared.Preferences
     {
         private Dictionary<int, ICharacterProfile> _characters;
 
-        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        public PlayerPreferences(
+            IEnumerable<KeyValuePair<int, ICharacterProfile>> characters,
+            int selectedCharacterIndex,
+            Color adminOOCColor,
+            List<ProtoId<ConstructionPrototype>> constructionFavorites,
+            ProtoId<GhostSkinListingPrototype>? ghost = null, // Gaby Station -> Store rework
+            ProtoId<TitleListingPrototype>? title = null // Gaby Station -> Store rework
+            )
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
             SelectedCharacterIndex = selectedCharacterIndex;
             AdminOOCColor = adminOOCColor;
             ConstructionFavorites = constructionFavorites;
+            GhostSkin = ghost; // Gaby Station -> Store rework
+            OOCTitle = title; // Gaby Station -> Store rework
         }
 
         /// <summary>
@@ -72,5 +82,9 @@ namespace Content.Shared.Preferences
         {
             return (index = IndexOfCharacter(profile)) != -1;
         }
+
+        public ProtoId<GhostSkinListingPrototype>? GhostSkin { get; set; } // Gaby Station -> Store rework
+
+        public ProtoId<TitleListingPrototype>? OOCTitle { get; set; } // Gaby Station -> Store rework
     }
 }

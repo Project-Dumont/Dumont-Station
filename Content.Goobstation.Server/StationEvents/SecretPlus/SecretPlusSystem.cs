@@ -1,9 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -34,7 +31,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Server._Gabystation;
 
 namespace Content.Goobstation.Server.StationEvents.SecretPlus;
 
@@ -323,7 +319,6 @@ public sealed class SecretPlusSystem : GameRuleSystem<SecretPlusComponent>
     private void StartRule(Entity<SecretPlusComponent> scheduler, string rule, bool doStart = true, int? players = null)
     {
         var ruleUid = _ticker.AddGameRule(rule);
-        _tag.AddTag(ruleUid, GabyConstants.GameDirectorRuleTag); // GabyStation
 
         scheduler.Comp.ChaosScore += GetChaosScore(ruleUid, players)!.Value;
 

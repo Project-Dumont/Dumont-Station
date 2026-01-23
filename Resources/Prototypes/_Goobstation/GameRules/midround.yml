@@ -33,7 +33,7 @@
       Death: 100
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 250
+    chaosScore: 400
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -55,7 +55,7 @@
 
 # Midround Changelings
 - type: entity
-  parent: BaseGameRule # Funky: Changed parent because it no longer directly makes changelings at all
+  parent: Changeling
   id: ChangelingMidround
   components:
   - type: StationEvent
@@ -69,12 +69,12 @@
     duration: null
     occursDuringRoundEnd: false
     chaos:
-      Hostile: 100
-      Medical: 100
-      Death: 100
+      Hostile: 150
+      Medical: 150
+      Death: 150
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 300
+    chaosScore: 600
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -117,7 +117,7 @@
       Death: 200
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 300
+    chaosScore: 500
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -157,15 +157,9 @@
       Hostile: 250
       Medical: 250
       Death: 250
-    maxChaos:
-      Hostile: 30
-      Combat: -60
-      Power: 50
-      Medical: 50
-      Atmos: 50
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 800
+    chaosScore: 900
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
     definitions:
@@ -189,7 +183,6 @@
   - type: Tag
     tags:
       - MidroundAntag
-
 # Skeleton Spawn
 - type: entity
   parent: BaseGameRule
@@ -198,20 +191,19 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 999 # nao volte nunca mais - GabyStation
+    minimumPlayers: 15
     chaos:
       Hostile: 40
       Medical: 40
       Death: 40
     eventType: Chaotic
   - type: GameRule
-    chaosScore: 90
+    chaosScore: 150
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
   - type: Tag
     tags:
       - MidroundAntag
-
 # Blob Midround
 - type: entity
   parent: BaseGameRule
@@ -229,7 +221,7 @@
       Death: 400
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 1000
+    chaosScore: 1100
   - type: BlobSpawnRule
     carrierBlobProtos:
     - SpawnPointGhostBlobRat
@@ -250,7 +242,7 @@
     maxOccurrences: 2
     eventType: Neutral
   - type: GameRule
-    chaosScore: 0
+    chaosScore: 20
   - type: VentCrittersRule
     max: 1
     table: !type:GroupSelector
@@ -309,7 +301,7 @@
       Combat: 20
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 280
   - type: AntagSpawner
     prototype: MobHumanTunnelClown
   - type: AntagSelection
@@ -344,7 +336,7 @@
       Combat: 40
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 350
+    chaosScore: 420
   - type: AntagSpawner
     prototype: MobHumanSingulothKnight
   - type: AntagSelection
@@ -382,7 +374,7 @@
       Hostile: 40
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 400
+    chaosScore: 550
   - type: AntagSpawner
     prototype: MobHumanDarkLord
   - type: AntagSelection
@@ -445,7 +437,7 @@
       Combat: 50
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 300
   - type: AntagSpawner
     prototype: MobHumanMimeAssassin
   - type: AntagSelection
@@ -482,7 +474,7 @@
       Death: 60
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 250
+    chaosScore: 350
   - type: AntagSpawner
     prototype: MobHumanDarkPriest
   - type: AntagSelection
@@ -587,7 +579,7 @@
       Death: 40
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 400
+    chaosScore: 600
   - type: AntagRandomSpawn
   - type: AntagLoadProfileRule
     speciesOverride: Human
@@ -640,7 +632,7 @@
       - type: MobThresholds
         thresholds:
           0: Alive
-          200: Dead
+          150: Dead
       - type: RandomMetadata
         nameSegments:
         - NamesSlasherTitle
@@ -657,7 +649,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 25 # Tune down after Christmas
+    weight: 1
     earliestStart: 3
     minimumPlayers: 10
     maxOccurrences: 1

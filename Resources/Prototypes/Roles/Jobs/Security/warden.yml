@@ -146,6 +146,9 @@
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 18000 #5 hrs
+    - !type:RoleTimeRequirement
+      role: JobBrigmedic
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 54000 #15 hrs
