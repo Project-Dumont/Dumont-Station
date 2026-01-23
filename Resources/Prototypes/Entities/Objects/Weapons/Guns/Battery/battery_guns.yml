@@ -624,7 +624,7 @@
     key: enum.AmmoSelectorUiKey.Key # Goobstation - End
   - type: Battery
     maxCharge: 7000 # Gabystation - Make CBURN life a bit easier
-    startingCharge: 7000 # Gabystation - Make CBURN life a bit easer
+    startingCharge: 7000 # Gabystation - Make CBURN life a bit easier
   # Goobstation
   - type: Tag
     tags:
