@@ -14,22 +14,15 @@
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Managers;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Tag;
 using Robust.Server.GameObjects;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Goobstation.Server.StationEvents;
-using Content.Server._Gabystation;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -43,7 +36,6 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
     // Not protected, just to be used in utility methods
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly TagSystem _tag = default!; // GabyStation
 
     public override void Initialize()
     {
@@ -68,7 +60,7 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             if (args.Players.Length >= minPlayers)
                 continue;
 
-            if (!_tag.HasTag(uid, GabyConstants.GameDirectorRuleTag) && gameRule.CancelPresetOnTooFewPlayers)
+            if (gameRule.CancelPresetOnTooFewPlayers)
             {
                 ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
                     ("readyPlayersCount", args.Players.Length),
@@ -78,10 +70,6 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             }
             else
             {
-                ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players-end-rule",
-                    ("readyPlayersCount", args.Players.Length),
-                    ("minimumPlayers", minPlayers),
-                    ("presetName", ToPrettyString(uid))));
                 ForceEndSelf(uid, gameRule);
             }
         }

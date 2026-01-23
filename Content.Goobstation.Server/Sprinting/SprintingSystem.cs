@@ -7,6 +7,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Standing;
+using Content.Goobstation.Server.Sandevistan;
 using Content.Goobstation.Shared.Sprinting;
 using Content.Server.Stunnable;
 using Content.Shared.CombatMode;
@@ -37,7 +38,9 @@ public sealed class SprintingSystem : SharedSprintingSystem
             return;
         }
 
-        if (!TryComp(otherUid, out SprinterComponent? otherSprinter) || !otherSprinter.IsSprinting)
+        if (!TryComp(otherUid, out SprinterComponent? otherSprinter)
+            || !otherSprinter.IsSprinting
+            || !HasComp<ActiveSandevistanUserComponent>(otherUid))
         {
             return;
         }
