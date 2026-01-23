@@ -1810,3 +1810,9 @@ Entries:
       message: Diminui o volume do áudio do evento de vent critter!
   id: 214
   time: '2026-01-23T13:22:51.0000000+00:00'
+- author: Kasparyan
+  changes:
+    - type: Add
+      message: Console de registros criminais podem imprimir mandatos de prisão
+  id: 215
+  time: '2026-01-23T17:36:55.0000000+00:00'

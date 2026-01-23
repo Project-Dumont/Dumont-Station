@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.CriminalRecords.Systems; // DeltaV - i hate this, forward to criminal records console
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords.Systems;
@@ -37,6 +41,7 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
                 subr.Event<SelectStationRecord>(OnSelectStationRecord);
                 subr.Event<CriminalRecordChangeStatus>(OnCriminalRecordChangeStatus);
                 // End DeltaV - i hate this, forward to criminal records console
+                subr.Event<CriminalRecordRequestArrestWarrant>(OnRequestArrestWarrant); // GabyStation
             });
     }
 
@@ -71,6 +76,15 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
         UpdateUi(ent);
     }
     // End DeltaV - i hate this, forward to criminal records console
+
+    private void OnRequestArrestWarrant(Entity<CharacterRecordConsoleComponent> ent, ref CriminalRecordRequestArrestWarrant msg)
+    {
+        if (!TryComp<CriminalRecordsConsoleComponent>(ent, out var console))
+            return;
+
+        _criminalRecordsConsole.OnRequestArrestWarrant((ent.Owner, console), ref msg);
+        UpdateUi(ent);
+    }
 
     private void UpdateUi(EntityUid entity, CharacterRecordConsoleComponent? console = null)
     {

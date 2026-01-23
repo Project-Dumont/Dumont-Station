@@ -123,3 +123,20 @@ public sealed class CriminalRecordSetStatusFilter : BoundUserInterfaceMessage
         FilterStatus = newFilterStatus;
     }
 }
+
+
+/// <summary>
+/// Used to request an arrest warrant for a criminal record.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class CriminalRecordRequestArrestWarrant : BoundUserInterfaceMessage
+{
+    public readonly string Reason;
+    public readonly string Details;
+
+    public CriminalRecordRequestArrestWarrant(string reason, string details)
+    {
+        Reason = reason;
+        Details = details;
+    }
+}
