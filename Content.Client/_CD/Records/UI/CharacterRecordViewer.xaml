@@ -106,7 +106,8 @@
                                 <Control MinWidth="5"/>
                                 <Label Name="RecordContainerWantedReason" Visible="False" />
                             </BoxContainer>
-                            <Button Name="PrintArrestWarrantButton"
+                            <!-- GabyStation -->
+                            <Button Name="PrintArrestWarrantButton"  
                                 Text="{Loc 'criminal-records-console-print-arrest-warrant'}"
                                 Margin="0 5" />
                             

@@ -41,7 +41,7 @@ public sealed class CharacterRecordConsoleSystem : EntitySystem
                 subr.Event<SelectStationRecord>(OnSelectStationRecord);
                 subr.Event<CriminalRecordChangeStatus>(OnCriminalRecordChangeStatus);
                 // End DeltaV - i hate this, forward to criminal records console
-                subr.Event<CriminalRecordRequestArrestWarrant>(OnRequestArrestWarrant);
+                subr.Event<CriminalRecordRequestArrestWarrant>(OnRequestArrestWarrant); // GabyStation
             });
     }
 

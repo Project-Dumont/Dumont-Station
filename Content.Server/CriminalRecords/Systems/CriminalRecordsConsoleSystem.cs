@@ -348,6 +348,7 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
     /// <summary>
     /// Handles request for an arrest warrant from the criminal records console UI.
     /// </summary>
+    /// // GabyStation
     public void OnRequestArrestWarrant(Entity<CriminalRecordsConsoleComponent> ent, ref CriminalRecordRequestArrestWarrant msg)
     {
         if (!CheckSelected(ent, msg.Actor, out var mob, out var key))

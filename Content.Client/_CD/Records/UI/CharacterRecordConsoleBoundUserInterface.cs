@@ -68,7 +68,7 @@ public sealed class CharacterRecordConsoleBoundUserInterface(EntityUid owner, En
             SendMessage(new CriminalRecordChangeStatus(status, reason));
         };
 
-        _window.OnRequestArrestWarrant += (issuer, details) =>
+        _window.OnRequestArrestWarrant += (issuer, details) => // GabyStation
         {
             SendMessage(new CriminalRecordRequestArrestWarrant(issuer, details));
         };

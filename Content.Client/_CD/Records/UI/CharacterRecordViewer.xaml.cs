@@ -169,7 +169,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
             OnFiltersChanged?.Invoke(_filterType, RecordFiltersValue.Text);
         };
 
-        PrintArrestWarrantButton.OnPressed += _ =>
+        PrintArrestWarrantButton.OnPressed += _ => // GabyStation
         {
             GetArrestWarrantReason();
         };
@@ -476,7 +476,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         }
     }
 
-    private void GetArrestWarrantReason()
+    private void GetArrestWarrantReason() // GabyStation
     {
         if (_selectedListingKey == null)
             return;
