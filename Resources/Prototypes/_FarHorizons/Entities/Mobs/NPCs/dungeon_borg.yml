@@ -1,0 +1,431 @@
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgBase
+  abstract: true
+  parent:
+    - BaseSimpleMob
+    - MobCombat
+  description: This borg is in state of extreme disrepair. It's a miracle it still works.
+  components:
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - Machine
+    understands:
+    - Machine
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: DungeonBorgCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      MinimumIdleTime: !type:Single
+        15.0
+      MaximumIdleTime: !type:Single
+        30.0
+      IdleRange: !type:Single
+        5.5
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 1.5
+    useSound:
+      path: /Audio/Items/jaws_pry.ogg
+  - type: NpcFactionMember
+    factions:
+    - DungeonSilicon
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 1000
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Oil
+        Quantity: 650
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -0.5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: running
+      Dead:
+        Base: dead
+  - type: Puller
+  - type: TypingIndicator
+    proto: alien
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+      - FootstepSound
+  - type: NoSlip
+  - type: Stamina
+    baseCritThreshold: 200
+  - type: Speech
+    speechVerb: Robotic
+  - type: RandomMetadata
+    nameSegments: [NamesBorg]
+  - type: Body
+  - type: Climbing
+  - type: RotationVisuals
+    horizontalRotation: 90
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBorg
+  - type: DatasetVocalizer
+    dataset: DungeonBorgLines
+  - type: Vocalizer
+    minVocalizeInterval: 240
+    maxVocalizeInterval: 360
+      
+
+# Base borg. Normal speed, attacks with a wrench. Unrobust
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgDefault
+  parent: MobDungeonBorgBase
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Chassis/derelict.rsi
+    layers:
+    - state: borg
+  - type: MeleeWeapon
+    altDisarm: false
+    attackRate: 0.75
+    angle: 90
+    soundHit:
+     collection: MetalThud
+    animation: WeaponArcWrench
+    damage:
+      types:
+        Blunt: 10
+  # I keep thresholds and modifiers separate for each borg with somewhat random variation so fighting a group of them doesn't feel predictable
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.6
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 3.5
+
+# Engi. Robust version of base borg, more health, more damage
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgEngi
+  parent: MobDungeonBorgBase
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Chassis/engineer_derelict.rsi
+    layers:
+    - state: engineer_derelict
+    - state: engineer_derelict_crystal
+      shader: unshaded
+    - state: engineer_derelict_crystal
+      shader: shaded
+  - type: MeleeWeapon
+    altDisarm: false
+    attackRate: 0.75
+    angle: 90
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+    animation: WeaponArcWelder
+    damage:
+      types:
+        Heat: 15
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      70: 0.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 3
+
+# Mining borg - fast attacks, fast speed, low health
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgMining
+  parent: MobDungeonBorgBase
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Chassis/miner_derelict.rsi
+    layers:
+    - state: miner_derelict
+      map: ["movement"]
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: miner_moving_derelict
+    noMovementLayers:
+      movement:
+        state: miner_derelict
+  - type: MeleeWeapon
+    altDisarm: false
+    attackRate: 4
+    angle: 15
+    soundHit:
+      path: /Audio/Items/drill_hit.ogg
+    wideAnimationRotation: -90
+    animation: WeaponArcDrill
+    damage:
+      types:
+        Piercing: 5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      30: 0.7
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 5.5
+    baseSprintSpeed : 5.5
+
+# Janiborg - miniboss type, slow speed, a lot of health, a lot of damage
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgJani
+  parent: MobDungeonBorgBase
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Chassis/janitor_derelict.rsi
+    layers:
+    - state: janitor_derelict
+      map: ["movement"]
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: janitor_moving_derelict
+    noMovementLayers:
+      movement:
+        state: janitor_derelict
+  - type: MeleeWeapon
+    altDisarm: false
+    attackRate: 0.4
+    angle: 90
+    soundHit:
+      collection: MetalThud
+    wideAnimationRotation: -90
+    animation: WeaponArcMop
+    damage:
+      types:
+        Blunt: 30
+  - type: ScaleVisuals # BEEG
+    scale: 1.2,1.2
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      200: 0.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 2.5
+
+# THE THING - more scary miniboss
+- type: entity
+  name: Damaged Thing
+  id: MobDungeonBorgThing
+  parent: MobDungeonBorgBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - state: reticence
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: reticence
+      Dead:
+        Base: reticence-broken
+  - type: MeleeWeapon
+    altDisarm: false
+    attackRate: 1.2
+    angle: 90
+    soundHit:
+      collection: AlienClaw
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 15
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      100: 0.7
+      200: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 3.5
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+
+# Mediborg - it just runs at you and yells
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgMedi
+  parent: MobDungeonBorgBase
+  suffix: AI Funny
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Chassis/medical_derelict.rsi
+    layers:
+    - state: medical_derelict
+      map: ["movement"]
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: medical_moving_derelict
+    noMovementLayers:
+      movement:
+        state: medical_derelict
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      35: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      15: 0.6
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 3.5
+  - type: HTN
+    rootTask:
+      task: DungeonMediBorgCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      MinimumIdleTime: !type:Single
+        15.0
+      MaximumIdleTime: !type:Single
+        30.0
+      IdleRange: !type:Single
+        5.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+# Mediborg - it yells, runs and explodes
+- type: entity
+  name: Damaged Borg
+  id: MobDungeonBorgMediExplosive
+  parent: MobDungeonBorgMedi
+  suffix: AI Explosive
+  components:
+    - type: HTN
+      rootTask:
+        task: DungeonMediBorgExplosiveCompound
+      blackboard:
+        NavClimb: !type:Bool
+          false
+        NavInteract: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+        MinimumIdleTime: !type:Single
+          15.0
+        MaximumIdleTime: !type:Single
+          30.0
+        IdleRange: !type:Single
+          5.5
+    - type: Explosive
+      explosionType: Default
+      maxIntensity: 7
+      intensitySlope: 1.1
+      totalIntensity: 10
+      canCreateVacuum: false
+    - type: StepTrigger
+      requiredTriggeredSpeed: 0
+      intersectRatio: 0.1
+      ignoreWeightless: true
+    - type: TriggerOnStepTrigger
+    - type: Slippery
+      slipData:
+        launchForwardsMultiplier: 0
+    - type: ExplodeOnTrigger
+      keysIn:
+      - trigger
+    - type: Fixtures
+      fixtures:
+        slips:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.75
+          hard: false
+          layer:
+            - SlipLayer
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 1000
+          mask:
+          - MobMask
+          layer:
+          - MobLayer
+    - type: CollisionWake
+      enabled: False
