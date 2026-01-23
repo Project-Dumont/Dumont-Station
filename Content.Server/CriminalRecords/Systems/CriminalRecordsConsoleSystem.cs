@@ -57,7 +57,7 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly PaperSystem _paperSystem = default!;
-    
+
     public override void Initialize()
     {
         SubscribeLocalEvent<CriminalRecordsConsoleComponent, RecordModifiedEvent>(UpdateUserInterface);
@@ -370,8 +370,8 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
         // print the warrant
         var printPaperId = "ArrestWarrant";
         var printed = Spawn(printPaperId, Transform(ent.Owner).Coordinates);
-        
-        if(TryComp<PaperComponent>(printed, out var paper))
+
+        if (TryComp<PaperComponent>(printed, out var paper))
         {
             var text = Loc.GetString("criminal-records-console-arrest-warrant-text",
                 ("name", name),
@@ -382,15 +382,14 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             );
 
             _paperSystem.SetContent(printed, text);
-            SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");
-            _audioSystem.PlayPvs(PrintSound, printed);
+            SoundSpecifier printSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");
+            _audioSystem.PlayPvs(printSound, printed);
             _popup.PopupEntity(Loc.GetString("criminal-records-console-arrest-warrant-printed"), ent, mob.Value);
         }
         else
         {
             QueueDel(printed);
         }
-        
 
     }
 }
