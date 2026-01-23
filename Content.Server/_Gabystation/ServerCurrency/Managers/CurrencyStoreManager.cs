@@ -10,6 +10,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using System.Threading.Tasks;
 using System.Linq;
+using Robust.Shared.Player;
+using Content.Server._Gabystation.ServerCurrency.Ghost;
 
 namespace Content.Server._Gabystation.ServerCurrency.Managers;
 
@@ -19,6 +21,8 @@ public sealed class CurrencyStoreManager : IPostInjectInit
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly UserDbDataManager _userDb = default!;
+    [Dependency] private readonly IEntitySystemManager _entity = default!;
 
     public event Action<ProtoId<GhostSkinListingPrototype>?, NetUserId>? OnUserSelectNewGhostSkin;
     public event Action<ProtoId<TitleListingPrototype>?, NetUserId>? OnUserSelectNewTitle;
@@ -29,11 +33,6 @@ public sealed class CurrencyStoreManager : IPostInjectInit
     {
         //_netMan.RegisterNetMessage<MsgSelectTitle>(HandleSelectTitleMessage);
         _sawmill = _log.GetSawmill("title");
-    }
-
-    public void PostInject()
-    {
-
     }
 
     #region GhostSkin
@@ -182,4 +181,20 @@ public sealed class CurrencyStoreManager : IPostInjectInit
     }
 
     #endregion
+
+    public void FinishLoad(ICommonSession session)
+    {
+        if (session.AttachedEntity is not { } entity)
+            return;
+
+        if (!_entity.TryGetEntitySystem<GhostSkinSystem>(out var ghostSkin))
+            return;
+
+        ghostSkin.UpdateGhost(entity);
+    }
+
+    public void PostInject()
+    {
+        _userDb.AddOnFinishLoad(FinishLoad);
+    }
 }
