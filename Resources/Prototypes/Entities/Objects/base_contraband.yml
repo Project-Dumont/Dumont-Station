@@ -23,7 +23,7 @@
   components:
   - type: Contraband
     severity: Major # placeholder until they make a better severity
-    criminalPoints: 5
+    criminalPoints: 4.9
   - type: ScannableForPoints # Goobstation - NTR update
     points: 1 # idk how much points they would cost so whatever
 
@@ -34,7 +34,7 @@
   components:
   - type: Contraband
     severity: Magical
-    criminalPoints: 5
+    criminalPoints: 4.9
   - type: ScannableForPoints # Goobstation - NTR update
     points: 10
 
@@ -45,7 +45,7 @@
   components:
   - type: Contraband
     severity: Syndicate
-    criminalPoints: 5
+    criminalPoints: 4.9
   - type: ScannableForPoints # Goobstation - NTR update
     points: 5
 
@@ -266,7 +266,7 @@
     severity: GrandTheft
     allowedDepartments: [ Command ]
     allowedJobs: [ Warden ] # Goob - energy shotgun
-    criminalPoints: 5
+    criminalPoints: 4.9
 
 - type: entity
   id: BaseHonkraband

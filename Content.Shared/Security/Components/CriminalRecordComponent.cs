@@ -118,7 +118,7 @@ public sealed partial class CriminalRecordComponent : Component
     [DataField]
     public Dictionary<SlotFlags, float> ClothingSlotPoints = new()
     {
-        {SlotFlags.HEAD, 0.75f},
+        {SlotFlags.HEAD, 0.5f},
         {SlotFlags.EYES, 0.25f},
         {SlotFlags.EARS, 0.25f},
         {SlotFlags.MASK, 0.25f},
