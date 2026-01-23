@@ -22,6 +22,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.StationEvents;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -48,6 +49,8 @@ public sealed partial class GameDirectorSystem : GameRuleSystem<GameDirectorComp
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+
     private ISawmill _sawmill = default!;
     private int _gameDirectorDebugPlayerCount;
 

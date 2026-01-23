@@ -17,9 +17,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Gabystation;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Managers;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -36,6 +38,7 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
     // Not protected, just to be used in utility methods
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly MapSystem _map = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     public override void Initialize()
     {
@@ -60,7 +63,8 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             if (args.Players.Length >= minPlayers)
                 continue;
 
-            if (gameRule.CancelPresetOnTooFewPlayers)
+            if (!_tag.HasTag(uid, GabyConstants.GameDirectorRuleTag) // GabyStation
+                && gameRule.CancelPresetOnTooFewPlayers)
             {
                 ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
                     ("readyPlayersCount", args.Players.Length),
@@ -70,6 +74,12 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             }
             else
             {
+                // GabyStation
+                ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players-end-rule",
+                    ("readyPlayersCount", args.Players.Length),
+                    ("minimumPlayers", minPlayers),
+                    ("presetName", ToPrettyString(uid))));
+
                 ForceEndSelf(uid, gameRule);
             }
         }
