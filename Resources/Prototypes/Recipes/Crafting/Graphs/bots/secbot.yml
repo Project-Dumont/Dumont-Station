@@ -36,5 +36,11 @@
           state: icon
         name: construction-graph-tag-super-compact-ai-chip
         doAfter: 2
+      - tag: ContrabandDetectorGlasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/secglasses.rsi
+          state: icon
+        name: construction-graph-tag-contraband-detector-glasses
+        doAfter: 2
   - node: bot
     entity: MobSecuritron
