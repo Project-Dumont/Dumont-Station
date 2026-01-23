@@ -711,6 +711,7 @@
   - type: Sprite
     sprite: Mobs/Silicon/Bots/securitron.rsi
     state: secbot
+    drawdepth: SmallMobs
   - type: Fixtures
     fixtures:
       fix1:
