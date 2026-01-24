@@ -18,7 +18,7 @@
       heavyStaminaCost: 10
       damage:
         types:
-          Blunt: 12
+          Blunt: 7
       soundHit:
         path: "/Audio/Weapons/smash.ogg"
     - type: PointLight
