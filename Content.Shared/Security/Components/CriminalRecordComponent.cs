@@ -143,3 +143,10 @@ public sealed partial class GetCriminalPointsEvent : EntityEventArgs
         Points = points;
     }
 }
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class PrivilegedStatusComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public TimeSpan? PrivilegedTime;
+}

@@ -26,8 +26,15 @@ public sealed class CriminalStatusSystem : EntitySystem
     [Dependency] private readonly SharedIdCardSystem _id = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
-    private const int Delay = 5000;
+    private const int Delay = 5; // Seconds
+    private const int PrivilegedDelay = 5; // Minutes
+
+    private static readonly HashSet<ProtoId<DepartmentPrototype>> PrivilegedDepartments = new()
+    {
+        "CentralCommand", "Command", "Security"
+    };
 
     public override void Initialize()
     {
@@ -42,6 +49,22 @@ public sealed class CriminalStatusSystem : EntitySystem
         SubscribeLocalEvent<CriminalRecordComponent, DidUnequipHandEvent>((u, c, a) => OnPickupOrDrop(u, c, a.Unequipped, false));
 
         SubscribeLocalEvent<PdaComponent, PdaIdChangedEvent>(UpdatePdaId);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        while (EntityQueryEnumerator<PrivilegedStatusComponent>().MoveNext(out var uid, out var status))
+        {
+            if (status.PrivilegedTime != null && _timing.CurTime > status.PrivilegedTime)
+            {
+                RemComp<PrivilegedStatusComponent>(uid);
+
+                if (TryComp<CriminalRecordComponent>(uid, out var record))
+                    RecalculatePoints((uid, record));
+            }
+        }
     }
 
     private void OnCriminalRecordChanged(EntityUid uid, CriminalRecordComponent component, CriminalRecordChanged args)
@@ -126,6 +149,9 @@ public sealed class CriminalStatusSystem : EntitySystem
 
     private bool CheckIdCard(EntityUid uid, ContrabandComponent contraband)
     {
+        if (HasComp<PrivilegedStatusComponent>(uid))
+            return true;
+
         if (!_id.TryFindIdCards(uid, out var ids))
             return false;
 
@@ -140,8 +166,6 @@ public sealed class CriminalStatusSystem : EntitySystem
             if (cardComp.JobDepartments.Intersect(contraband.AllowedDepartments).Any())
                 return true;
 
-            if (cardComp.JobDepartments.Intersect(contraband.AllowedDepartmentsContraband).Any())
-                return true;
 
             if (cardComp.LocalizedJobTitle is not null && allowedJobNames.Contains(cardComp.LocalizedJobTitle))
                 return true;
@@ -156,14 +180,19 @@ public sealed class CriminalStatusSystem : EntitySystem
         if (!_id.TryGetIdCard(item, out _))
             return false;
 
+        UpdatePrivilegedStatus(ent.Owner);
         RecalculatePoints(ent);
         return true;
     }
 
     private void UpdatePdaId(EntityUid uid, PdaComponent component, PdaIdChangedEvent args)
     {
-        if (TryComp<CriminalRecordComponent>(Transform(uid).ParentUid, out var criminalRecord))
-            RecalculatePoints((Transform(uid).ParentUid, criminalRecord));
+        var parent = Transform(uid).ParentUid;
+        if (TryComp<CriminalRecordComponent>(parent, out var criminalRecord))
+        {
+            UpdatePrivilegedStatus(parent);
+            RecalculatePoints((parent, criminalRecord));
+        }
     }
 
     private float GetPoints(EntityUid uid, float points)
@@ -189,11 +218,44 @@ public sealed class CriminalStatusSystem : EntitySystem
 
     private void PointDelay(EntityUid uid, float points)
     {
-        Timer.Spawn(Delay, () =>
+        Timer.Spawn(TimeSpan.FromSeconds(Delay), () =>
         {
             if (TryComp<CriminalRecordComponent>(uid, out var currentRecord))
                 currentRecord.Points = Math.Max(0, currentRecord.Points - points);
         });
+    }
+
+    private void UpdatePrivilegedStatus(EntityUid uid)
+    {
+        bool privageled = false;
+
+        if (_id.TryFindIdCards(uid, out var ids))
+        {
+            foreach (var id in ids)
+            {
+                if (id.Comp.JobDepartments.Intersect(PrivilegedDepartments).Any())
+                {
+                    privageled = true;
+                    break;
+                }
+            }
+        }
+
+        if (privageled)
+        {
+            var comp = EnsureComp<PrivilegedStatusComponent>(uid);
+            comp.PrivilegedTime = null;
+        }
+        else
+        {
+            if (TryComp<PrivilegedStatusComponent>(uid, out var comp))
+            {
+                if (comp.PrivilegedTime == null)
+                {
+                    comp.PrivilegedTime = _timing.CurTime + TimeSpan.FromMinutes(PrivilegedDelay);
+                }
+            }
+        }
     }
 }
 
