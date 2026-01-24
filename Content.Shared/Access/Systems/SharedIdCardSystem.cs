@@ -86,7 +86,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Content.Shared.Hands.Components;
+using Content.Shared.Hands.Components; // Beepsky - GabyStation
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
@@ -208,6 +208,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         return false;
     }
 
+    // Beepsky - GabyStation - Start
     public bool TryFindIdCards(EntityUid uid, out HashSet<Entity<IdCardComponent>> idCards)
     {
         idCards = [];
@@ -229,6 +230,7 @@ public abstract class SharedIdCardSystem : EntitySystem
 
         return idCards.Count > 0;
     }
+    // Beepsky - GabyStation - End
 
     /// <summary>
     /// Attempts to change the job title of a card.

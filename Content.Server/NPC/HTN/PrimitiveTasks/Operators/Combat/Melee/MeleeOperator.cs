@@ -15,8 +15,8 @@ using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Stunnable;
-using Content.Shared.Security.Components;
+using Content.Shared.Stunnable; // Beepsky - GabyStation
+using Content.Shared.Security.Components; // Beepsky - GabyStation
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat.Melee;
 
@@ -45,6 +45,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     [DataField("targetState")]
     public MobState TargetState = MobState.Alive;
 
+    // Beepsky - GabyStation - Start
     [DataField("checkStun")]
     public bool CheckStun = false;
 
@@ -53,6 +54,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
 
     [DataField("points")]
     public float Points = 10f;
+    // Beepsky - GabyStation - End
 
     // Like movement we add a component and pass it off to the dedicated system.
 
@@ -116,6 +118,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
         {
             combat.Target = target;
 
+            // Beepsky - GabyStation - Start
             if (CheckStun && _entManager.HasComponent<StunnedComponent>(target))
             {
                 return HTNOperatorStatus.Finished;
@@ -126,6 +129,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
                 if (!_entManager.TryGetComponent<CriminalRecordComponent>(target, out var record) || record.Points < Points)
                     return HTNOperatorStatus.Finished;
             }
+            // Beepsky - GabyStation - End
 
             // Success
             if (_entManager.TryGetComponent<MobStateComponent>(target, out var mobState) &&

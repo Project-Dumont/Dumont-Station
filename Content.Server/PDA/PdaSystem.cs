@@ -126,7 +126,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Content.Shared.Security.Systems;
+using Content.Shared.Security.Systems; // Beepsky - GabyStation
 
 namespace Content.Server.PDA
 {
@@ -212,6 +212,7 @@ namespace Content.Server.PDA
                 pda.OwnerName = id.FullName;
             UpdatePdaUi(uid, pda);
 
+            // Beepsky - GabyStation
             if (args.Container.ID == PdaComponent.PdaIdSlotId)
                 RaiseLocalEvent(uid, new PdaIdChangedEvent(uid, pda.ContainedId));
         }
@@ -232,6 +233,7 @@ namespace Content.Server.PDA
             base.OnItemRemoved(uid, pda, args);
             UpdatePdaUi(uid, pda);
 
+            // Beepsky - GabyStation
             if (args.Container.ID == PdaComponent.PdaIdSlotId)
                 RaiseLocalEvent(uid, new PdaIdChangedEvent(uid, null));
         }
