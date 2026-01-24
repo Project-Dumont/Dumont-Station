@@ -6,7 +6,7 @@
   parent: BookBase
   id: BookArteDaRobustez
   name: A Arte da Robustez
-  description: Feito com capa personalizada e páginas que brilham levemente no escuro. Você sente que poderia matar alguém com isso seja pelo profundo conhecimento contido nele ou pelo peso absurdo desse robusto livro.
+  description: Feito com capa personalizada e páginas que brilham levemente no escuro. Você sente que poderia matar alguém com isso, seja pelo profundo conhecimento contido nele ou pelo peso absurdo desse robusto livro.
   components:
     - type: Sprite
       sprite: _Gabystation/Objects/Misc/books.rsi
