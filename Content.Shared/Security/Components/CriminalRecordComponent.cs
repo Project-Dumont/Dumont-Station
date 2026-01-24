@@ -148,5 +148,5 @@ public sealed partial class GetCriminalPointsEvent : EntityEventArgs
 public sealed partial class PrivilegedStatusComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public TimeSpan? PrivilegedTime;
+    public TimeSpan PrivilegedTime = TimeSpan.Zero;
 }

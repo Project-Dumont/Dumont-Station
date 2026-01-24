@@ -55,9 +55,10 @@ public sealed class CriminalStatusSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        while (EntityQueryEnumerator<PrivilegedStatusComponent>().MoveNext(out var uid, out var status))
+        var query = EntityQueryEnumerator<PrivilegedStatusComponent>();
+        while (query.MoveNext(out var uid, out var status))
         {
-            if (status.PrivilegedTime != null && _timing.CurTime > status.PrivilegedTime)
+            if (status.PrivilegedTime != TimeSpan.Zero && _timing.CurTime > status.PrivilegedTime)
             {
                 RemComp<PrivilegedStatusComponent>(uid);
 
@@ -166,7 +167,6 @@ public sealed class CriminalStatusSystem : EntitySystem
             if (cardComp.JobDepartments.Intersect(contraband.AllowedDepartments).Any())
                 return true;
 
-
             if (cardComp.LocalizedJobTitle is not null && allowedJobNames.Contains(cardComp.LocalizedJobTitle))
                 return true;
         }
@@ -244,15 +244,20 @@ public sealed class CriminalStatusSystem : EntitySystem
         if (privageled)
         {
             var comp = EnsureComp<PrivilegedStatusComponent>(uid);
-            comp.PrivilegedTime = null;
+            if (comp.PrivilegedTime != TimeSpan.Zero)
+            {
+                comp.PrivilegedTime = TimeSpan.Zero;
+                Dirty(uid, comp);
+            }
         }
         else
         {
             if (TryComp<PrivilegedStatusComponent>(uid, out var comp))
             {
-                if (comp.PrivilegedTime == null)
+                if (comp.PrivilegedTime == TimeSpan.Zero)
                 {
                     comp.PrivilegedTime = _timing.CurTime + TimeSpan.FromMinutes(PrivilegedDelay);
+                    Dirty(uid, comp);
                 }
             }
         }
