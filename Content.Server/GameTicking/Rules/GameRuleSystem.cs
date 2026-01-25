@@ -63,24 +63,26 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
             if (args.Players.Length >= minPlayers)
                 continue;
 
-            if (!_tag.HasTag(uid, GabyConstants.GameDirectorRuleTag) // GabyStation
-                && gameRule.CancelPresetOnTooFewPlayers)
+            if (gameRule.CancelPresetOnTooFewPlayers)
             {
-                ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
-                    ("readyPlayersCount", args.Players.Length),
-                    ("minimumPlayers", minPlayers),
-                    ("presetName", ToPrettyString(uid))));
-                args.Cancel();
-            }
-            else
-            {
-                // GabyStation
-                ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players-end-rule",
-                    ("readyPlayersCount", args.Players.Length),
-                    ("minimumPlayers", minPlayers),
-                    ("presetName", ToPrettyString(uid))));
+                if (_tag.HasTag(uid, GabyConstants.GameDirectorRuleTag))
+                {
+                    // GabyStation
+                    ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players-end-rule",
+                        ("readyPlayersCount", args.Players.Length),
+                        ("minimumPlayers", minPlayers),
+                        ("presetName", ToPrettyString(uid))));
 
-                ForceEndSelf(uid, gameRule);
+                    ForceEndSelf(uid, gameRule);
+                }
+                else
+                {
+                    ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
+                        ("readyPlayersCount", args.Players.Length),
+                        ("minimumPlayers", minPlayers),
+                        ("presetName", ToPrettyString(uid))));
+                    args.Cancel();
+                }
             }
         }
     }
