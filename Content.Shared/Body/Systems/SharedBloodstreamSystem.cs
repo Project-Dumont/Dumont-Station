@@ -35,6 +35,7 @@ namespace Content.Shared.Body.Systems;
 
 public abstract partial class SharedBloodstreamSystem : EntitySystem
 {
+    [Dependency] private readonly IRobustRandom _random = default!; //BloodType change
     [Dependency] protected readonly SharedSolutionContainerSystem SolutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -92,8 +93,13 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             }
 
             {// BloodTypes start
+
+                if (string.IsNullOrEmpty(bloodstream.BloodType))
+                {
+                    SetBloodstreamType((uid, bloodstream));
+                }
                 ///<summary>
-                ///  Verifying if any Reagent in the bloodstream isn't the entity "blood" Reagent
+                ///  Verify if any Reagent in the bloodstream isn't the entity "blood" Reagent
                 ///  And applying celular damage based on the percentage of foreign "blood" in the bloodstream.
                 ///</summary>
 
@@ -628,6 +634,35 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         if (currentVolume > 0)
             SolutionContainer.TryAddReagent(ent.Comp.BloodSolution.Value, ent.Comp.BloodReagent, currentVolume, null, GetEntityBloodData(ent));
     }
+    //BloodType start
+    public string GenerateBloodType(bool isLizardMan)
+    {
+        var rh = new[] { "+", "-" };
+        string? bloodType;
+        if (isLizardMan)
+        {
+            bloodType = "L" + rh[_random.Next(rh.Length)];
+            return bloodType;
+        }
+        var humanoidTypes = new[] { "A", "B", "AB", "O" };
+        bloodType = humanoidTypes[_random.Next(humanoidTypes.Length)] + rh[_random.Next(rh.Length)];
+        return bloodType;
+    }
+    public void SetBloodstreamType(Entity<BloodstreamComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+
+        var entBlood = ent.Comp.BloodReagent;
+        var BlackListedBlood = new[] { "Sap", "BlackBlood", "Sugar", "InsectBlood", "AmmoniaBlood" };
+        if (BlackListedBlood.Contains(entBlood.ToString()))
+            return;
+
+        var isLizardMan = entBlood == "LizardBlood";
+        ent.Comp.BloodType = GenerateBloodType(isLizardMan);
+        DirtyField(ent, ent.Comp, nameof(BloodstreamComponent.BloodType));
+    }
+    //BloodType end
 
     /// <summary>
     /// Get the reagent data for blood that a specific entity should have.

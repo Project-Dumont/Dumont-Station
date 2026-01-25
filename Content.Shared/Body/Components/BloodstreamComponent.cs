@@ -89,12 +89,18 @@ public sealed partial class BloodstreamComponent : Component
 
     //bloodType start
     /// <summary>
-    ///  How much cellular damage will be received based on the foreign "blood".
+    ///  How much cellular damage will be received based on the "foreign blood".
     ///  The Value will be defined per species in YML.
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
     public DamageSpecifier CellularDamage = new();
 
+    [DataField, AutoNetworkedField]
+    public string? BloodType;
+
+    /// <summary>
+    /// The amount of "foreign blood" being removed from the bloodstream every update interval.
+    /// At the moment it's equal to <see cref="BloodRefreshAmount"/>
     [DataField, AutoNetworkedField]
     public FixedPoint2 ForeignBloodDeducted = 1.0f;
     //bloodType end
