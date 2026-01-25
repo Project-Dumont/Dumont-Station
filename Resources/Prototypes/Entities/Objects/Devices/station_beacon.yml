@@ -735,19 +735,9 @@
   - type: NavMapBeacon
     defaultText: station-beacon-bar
   - type: ConditionalSpawner # Gabystation - bananilson spawn
-    prototypes:
-      - MobTucanoBananilson
-
-- type: entity
-  parent: DefaultStationBeaconService
-  id: DefaultStationBeaconBar
-  suffix: Bar
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-bar
-  - type: ConditionalSpawner # Gabystation - Ronilson spawn
-    prototypes:
-      - MobCapivaraRonilson
+     prototypes:
+       - MobTucanoBananilson
+       - MobCapivaraRonilson # Gabystation - Ronilson spawn
 
 - type: entity
   parent: DefaultStationBeaconService
