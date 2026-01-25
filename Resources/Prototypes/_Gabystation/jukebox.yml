@@ -607,3 +607,10 @@
   name: Rapid Liquid - Never Gonna Meow You up
   path:
     path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg
+
+- type: jukebox
+  id: Catroll
+  name: Rapid Liquid - Never Gonna Meow You up
+  path:
+    path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
+
