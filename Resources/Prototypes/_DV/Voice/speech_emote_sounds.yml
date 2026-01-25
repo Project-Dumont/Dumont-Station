@@ -72,7 +72,7 @@
     Bark:
       collection: VulpkaninBarks
     Whine:
-      collection: VulpkaninWhines
+      collection: Whine # Starlight
     Howl:
       collection: VulpkaninHowls
     Awoo:
@@ -164,7 +164,7 @@
     Bark:
       collection: VulpkaninBarks
     Whine:
-      collection: VulpkaninWhines
+      collection: Whine # Starlight
     Howl:
       collection: VulpkaninHowls
     Awoo:
@@ -294,7 +294,7 @@
     Bark:
       collection: VulpkaninBarks
     Whine:
-      collection: VulpkaninWhines
+      collection: Whine # Starlight
     Howl:
       collection: VulpkaninHowls
     Awoo:
@@ -330,7 +330,7 @@
     Bark:
       collection: VulpkaninBarks
     Whine:
-      collection: VulpkaninWhines
+      collection: Whine # Starlight
     Howl:
       collection: VulpkaninHowls
     Awoo:
