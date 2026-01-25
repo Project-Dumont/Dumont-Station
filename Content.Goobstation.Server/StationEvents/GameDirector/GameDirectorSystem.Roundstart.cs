@@ -5,6 +5,7 @@
 using System.Linq;
 using Content.Goobstation.Server.StationEvents.Components;
 using Content.Goobstation.Shared.StationEvents;
+using Content.Server._Gabystation;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
@@ -119,6 +120,8 @@ public sealed partial class GameDirectorSystem
     {
         LogMessage($"Roundstart antag chosen: {protoId}");
         RoundstartAntagsSelectedTotal.WithLabels(protoId).Inc();
-        GameTicker.AddGameRule(protoId);
+        var rule = GameTicker.AddGameRule(protoId);
+
+        _tag.AddTag(rule, GabyConstants.GameDirectorRuleTag); // GabyStation
     }
 }

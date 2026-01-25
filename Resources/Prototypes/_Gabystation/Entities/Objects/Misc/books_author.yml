@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BookBase
+  id: BookArteDaRobustez
+  name: A Arte da Robustez
+  description: Feito com capa personalizada e páginas que brilham levemente no escuro. Você sente que poderia matar alguém com isso, seja pelo profundo conhecimento contido nele ou pelo peso absurdo desse robusto livro.
+  components:
+    - type: Sprite
+      sprite: _Gabystation/Objects/Misc/books.rsi
+      layers:
+      - state: robustez
+    - type: Paper
+      content: book-text-artedarobustez
+    - type: MeleeWeapon
+      heavyStaminaCost: 10
+      damage:
+        types:
+          Blunt: 7
+      soundHit:
+        path: "/Audio/Weapons/smash.ogg"
+    - type: PointLight
+      radius: 2.2
+      energy: 1
+      color: "#d9823f"
