@@ -59,22 +59,6 @@
   - /Audio/_DV/Voice/Vulpkanin/gekker.ogg
 
 - type: soundCollection
-  id: VulpkaninWhine
-  files:
-  - /Audio/_Starlight/Effects/whine/whine_1.ogg
-  - /Audio/_Starlight/Effects/whine/whine_2.ogg
-  - /Audio/_Starlight/Effects/whine/whine_3.ogg
-  - /Audio/_Starlight/Effects/whine/whine_4.ogg
-  - /Audio/_Starlight/Effects/whine/whine_5.ogg
-  - /Audio/_Starlight/Effects/whine/whine_6.ogg
-  - /Audio/_Starlight/Effects/whine/whine_7.ogg
-  - /Audio/_Starlight/Effects/whine/whine_8.ogg
-  - /Audio/_Starlight/Effects/whine/whine_9.ogg
-  - /Audio/_Starlight/Effects/whine/whine_10.ogg
-  - /Audio/_Starlight/Effects/whine/whine_11.ogg
-  - /Audio/_Starlight/Effects/whine/whine_12.ogg
-
-- type: soundCollection
-  id: VulpkaninYips
+  id: Yip
   files:
   - /Audio/_Starlight/Effects/yip.ogg

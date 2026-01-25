@@ -238,7 +238,7 @@
     Bark:
       collection: VulpkaninBarks
     Whine:
-      collection: VulpkaninWhines
+      collection: Whine # Starlight
     Howl:
       collection: VulpkaninHowls
     Awoo:
@@ -254,13 +254,11 @@
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
     Yap: 
-      collection: VulpkaninYap
+      collection: Yap
     Gekker:
       collection: VulpkaninGekker
     Yips:
       collection: VulpkaninYips
-    Whines:
-      collection: VulpkaninWhine
 
 - type: emoteSounds
   id: MaleVulpkanin
