@@ -55,16 +55,22 @@ public sealed class CriminalStatusSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var removePrivileged = new List<EntityUid>();
         var query = EntityQueryEnumerator<PrivilegedStatusComponent>();
         while (query.MoveNext(out var uid, out var status))
         {
             if (status.PrivilegedTime != TimeSpan.Zero && _timing.CurTime > status.PrivilegedTime)
             {
-                RemComp<PrivilegedStatusComponent>(uid);
-
-                if (TryComp<CriminalRecordComponent>(uid, out var record))
-                    RecalculatePoints((uid, record));
+                removePrivileged.Add(uid);
             }
+        }
+
+        foreach (var uid in removePrivileged)
+        {
+            RemComp<PrivilegedStatusComponent>(uid);
+
+            if (TryComp<CriminalRecordComponent>(uid, out var record))
+                RecalculatePoints((uid, record));
         }
     }
 
