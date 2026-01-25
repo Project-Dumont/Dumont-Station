@@ -735,7 +735,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-bar
   - type: ConditionalSpawner # Gabystation - bananilson spawn
-     prototypes:
+    prototypes:
        - MobTucanoBananilson
        - MobCapivaraRonilson # Gabystation - Ronilson spawn
 
