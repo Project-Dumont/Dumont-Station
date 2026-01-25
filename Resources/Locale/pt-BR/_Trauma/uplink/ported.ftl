@@ -1,5 +1,25 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+disease-dna-sampler-window-title = Coletor de DNA 6000
+
+disease-dna-sampler-no-disease = Estoque de retrovírus esgotado!
+
+disease-dna-sampler-create-injector = Criar injetor
+
+disease-dna-sampler-no-dna = Nenhum DNA coletado. Analise um objeto para começar.
+
+disease-dna-sampler-disease = Retrovírus carregado: {$name}
+
+disease-dna-sampler-popup-target = {CAPITALIZE($user)} começa a coletar seu DNA!
+
+disease-dna-sampler-popup-user = Você começa a coletar DNA de {$target}...
+
+disease-dna-sampler-failed = Não foi possível coletar DNA de {$target}!
+
+disease-dna-sampler-success = Você coletou DNA de {$target}.
+
+foxdie-heart-stops = Seu coração para de bater!
+
 codespeak-manual-learned = Você aprendeu a linguagem codificada do Sindicato.
 
 hijack-beacon-verb-activate-text = Ativar
@@ -127,6 +147,10 @@ uplink-syndicate-access-config-desc = Um configurador de acessos da Cybersun com
 uplink-hyposhell-name = Caixa de cartuchos hipodérmicos
 
 uplink-hyposhell-desc = Uma caixa com quatro cartuchos de escopeta que podem armazenar sete unidades de qualquer substância química.
+
+uplink-foxdie-name = Retrovírus FOXDIE
+
+uplink-foxdie-desc = Um coletor de DNA com o lendário retrovírus FOXDIE. Analise algo com o DNA do seu alvo e o vírus afetará letalmente apenas esse alvo, espalhando-se de forma inofensiva pelos demais.
 
 uplink-snakesfang-name = Snakesfang
 

@@ -1,5 +1,25 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+disease-dna-sampler-window-title = DNA Sampler 6000
+
+disease-dna-sampler-no-disease = Retrovirus stock depleted!
+
+disease-dna-sampler-create-injector = Create Injector!
+
+disease-dna-sampler-no-dna = No target DNA sampled, scan an object to begin
+
+disease-dna-sampler-disease = Retrovirus loaded: {$name}
+
+disease-dna-sampler-popup-target = {CAPITALIZE($user)} starts sampling your DNA!
+
+disease-dna-sampler-popup-user = You start sampling DNA from {$target}...
+
+disease-dna-sampler-failed = Failed to sample any DNA from {$target}!
+
+disease-dna-sampler-success = You sampled some DNA from {$target}.
+
+# UI
+
 hijack-beacon-verb-activate-text = Activate
 
 hijack-beacon-verb-activate-message = The beacon can only be armed on the Automated Trade Station, on an unoccupied tile.
@@ -125,6 +145,10 @@ uplink-hyposhell-name = Box of Hyposhells
 
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
 
+uplink-foxdie-name = FOXDIE Retrovirus
+
+uplink-foxdie-desc = A dna sampler for the legendary FOXDIE retrovirus. Scan something with your target's DNA and it will kill only them, while spreading harmlessly through everyone else.
+
 uplink-snakesfang-name = Snakesfang
 
 uplink-snakesfang-desc = The Snakesfang is a fork-tipped scimitar with a sharp edge and sharper bite. Comes with a scabbard.
@@ -154,6 +178,8 @@ chat-language-Codespeak-name = Codespeak
 item-toggle-examined-on = The light is currently [color=darkgreen]on[/color].
 
 item-toggle-examined-off = The light is currently [color=darkred]off[/color].
+
+foxdie-heart-stops = Your heart stops beating!
 
 codespeak-manual-learned = You learned Syndicate codespeak.
 

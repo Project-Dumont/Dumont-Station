@@ -276,6 +276,21 @@
         - Bartender
 
 - type: listing
+  id: UplinkFoxDie
+  name: uplink-foxdie-name
+  description: uplink-foxdie-desc
+  productEntity: DiseaseDnaSamplerFoxDie
+  cost:
+    Telecrystal: 50 # you can fucking genocide with it if you are smart
+  categories:
+    - UplinkJob
+  conditions:
+    - !type:BuyerJobCondition
+      whitelist:
+        - Virologist
+        - Geneticist # gene therapy..?
+
+- type: listing
   id: UplinkRevolverSnakesfang
   name: uplink-snakesfang-name
   description: uplink-snakesfang-desc

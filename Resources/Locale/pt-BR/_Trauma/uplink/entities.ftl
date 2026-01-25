@@ -4,6 +4,15 @@ ent-BriefcaseWeaponBoxingGlovesFilled = maleta de luvas de boxe adulteradas
 
 ent-BriefcaseWeaponSaiveFilled = maleta de Saive Automatique
 
+ent-DiseaseFoxDie = FOXDIE
+    .desc = Um retrovírus geneticamente modificado para matar com base no DNA do alvo.
+
+ent-DiseaseBehaviorHeartAttack = Ataque cardíaco
+    .desc = O acúmulo de TNF-ε provoca a morte das células do miocárdio, causando um ataque cardíaco.
+
+ent-DiseaseBehaviorBreathSpread = Transmissão pela respiração
+    .desc = Partículas do retrovírus são exaladas na respiração e podem infectar quem estiver por perto.
+
 ent-ClothingBeltKnifeRig = bandoleira de facas de arremesso
     .desc = Uma bandoleira especializada em carregar facas de arremesso.
 
@@ -48,6 +57,9 @@ ent-UndeterminedSelectorBoxingRiggedRadial = seletor de luvas de boxe
 
 ent-VoiceMaskImplant = implante de máscara de identidade
     .desc = Este implante permite mudar sua identidade à vontade.
+
+ent-DiseaseDnaSampler = coletor de DNA do Sindicato
+    .desc = Um dispositivo de engenharia genética que coleta DNA e o codifica em um retrovírus armazenado. Uso único.
 
 ent-AccessConfiguratorSyndicate = configurador de acesso do Sindicato
     .desc = Um configurador da Cybersun compatível com cartões que não sejam da Nanotrasen. Agora com troca rápida de acesso!
