@@ -133,8 +133,6 @@
 # SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 # SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
-# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 John <35928781+sporkyz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
@@ -161,7 +159,6 @@
 # SPDX-FileCopyrightText: 2025 dandy <203235481+casiliuscestus@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
@@ -206,9 +203,6 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.7
-  - type: Tag
-    tags:
-      - Armor
   - type: ArmorSparkEffect # Gaby - TODO: Fix sprite bug #starlight
   - type: Stainable
     clothingVisuals:
@@ -436,9 +430,6 @@
     knockdownTimeDelta: -3
   - type: Item
     size: Normal
-  - type: Tag
-    tags:
-      - SpecialArmor
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
@@ -620,7 +611,6 @@
     price: 1000
   - type: Tag
     tags:
-    - SpecialArmor
     - CorgiWearable
     - WhitelistChameleon
   - type: Stainable

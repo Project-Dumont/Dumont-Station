@@ -20,7 +20,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Gabystation.ServerCurrency;
 using Content.Server._Gabystation.ServerCurrency.Managers;
 using Content.Server._Gabystation.ServerCurrency.UI;
 using Content.Server.Administration;
@@ -95,13 +94,8 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (shell.Player is not { } player){
-                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
-                return;
-            }
-
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            var playerManager = IoCManager.Resolve<IPlayerManager>();
+            if (!playerManager.TryGetUserId(args[0], out var targetPlayer))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-1"));
                 return;
@@ -113,12 +107,12 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (_store.HasTitle(player.UserId, args[1]))
+            if (_store.HasTitle(targetPlayer, args[1]))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-has-item"));
                 return;
             }
-            _store.AddTitle(player.UserId, args[1]);
+            _store.AddTitle(targetPlayer, args[1]);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -152,13 +146,8 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (shell.Player is not { } player){
-                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
-                return;
-            }
-
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            var playerManager = IoCManager.Resolve<IPlayerManager>();
+            if (!playerManager.TryGetUserId(args[0], out var targetPlayer))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-1"));
                 return;
@@ -170,12 +159,12 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (_store.HasGhostSkin(player.UserId, args[1]))
+            if (_store.HasGhostSkin(targetPlayer, args[1]))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-has-item"));
                 return;
             }
-            _store.AddGhostSkin(player.UserId, args[1]);
+            _store.AddGhostSkin(targetPlayer, args[1]);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -209,14 +198,8 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (shell.Player is not { } player)
-            {
-                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
-                return;
-            }
-
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            var playerManager = IoCManager.Resolve<IPlayerManager>();
+            if (!playerManager.TryGetUserId(args[0], out var targetPlayer))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-1"));
                 return;
@@ -228,13 +211,13 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (!_store.HasTitle(player.UserId, args[1]))
+            if (!_store.HasTitle(targetPlayer, args[1]))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-does-not-have-item"));
                 return;
             }
 
-            _store.RemoveTitle(player.UserId, args[1]);
+            _store.RemoveTitle(targetPlayer, args[1]);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -274,14 +257,8 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (shell.Player is not { } player)
-            {
-                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
-                return;
-            }
-
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            var playerManager = IoCManager.Resolve<IPlayerManager>();
+            if (!playerManager.TryGetUserId(args[0], out var targetPlayer))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-1"));
                 return;
@@ -293,13 +270,13 @@ namespace Content.Server._Gabystation.ServerCurrency
                 return;
             }
 
-            if (!_store.HasGhostSkin(player.UserId, args[1]))
+            if (!_store.HasGhostSkin(targetPlayer, args[1]))
             {
                 shell.WriteError(Loc.GetString("server-currency-command-error-does-not-have-item"));
                 return;
             }
 
-            _store.RemoveGhostSkin(player.UserId, args[1]);
+            _store.RemoveGhostSkin(targetPlayer, args[1]);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

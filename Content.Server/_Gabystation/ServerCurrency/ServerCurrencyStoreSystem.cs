@@ -1,20 +1,12 @@
-using Content.Goobstation.Common.CCVar;
-using Content.Goobstation.Common.ServerCurrency;
-using Content.Server._RMC14.LinkAccount;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Chat.Managers;
-using Content.Server.GameTicking;
-using Content.Server.Popups;
 using Content.Shared._Gabystation.CCVar;
 using Content.Shared._Gabystation.ServerCurrency.Prototypes;
-using Content.Shared.Humanoid;
-using Content.Shared.Mind;
-using Content.Shared.Mind.Components;
-using Content.Shared.Popups;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
-using Content.Shared.Roles.Jobs;
-using Content.Shared.Silicons.Borgs.Components;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
