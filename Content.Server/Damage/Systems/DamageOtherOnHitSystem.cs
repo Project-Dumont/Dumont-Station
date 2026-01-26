@@ -72,6 +72,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
+using Content.Shared._Adventure.Bartender.Systems; // Adventure
 
 namespace Content.Server.Damage.Systems
 {
@@ -83,6 +84,7 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
         [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
         [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
+        [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Adventure
 
         public override void Initialize()
         {
@@ -132,6 +134,10 @@ namespace Content.Server.Damage.Systems
         /// </summary>
         private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
         {
+            // Adventure start
+            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid))
+                return;
+            // Adventure end
             args.Cancel("pacified-cannot-throw");
         }
     }

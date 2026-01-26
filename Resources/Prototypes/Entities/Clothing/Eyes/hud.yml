@@ -197,6 +197,7 @@
   - type: ShowThirstIcons
   - type: StealTarget
     stealGroup: ClothingEyesHudBeer
+  - type: SpillProofThrower # Adventure
   - type: SolutionScanner
   - type: Tag
     tags:
