@@ -618,11 +618,11 @@
   id: Ordinarilife
   name: My Ordinary Life - The Living Tombstone
   path:
-    path: /Audio/_Gabystation/Jukebox/My_Ordinary_Life.ogg
+    path: /Audio/_Gabystation/Jukebox/my-ordinary-life.ogg
 
 - type: jukebox
   id: Posterboy
   name: Poster Boy - 2hollis
   path:
-    path: /Audio/_Gabystation/Jukebox/Poster_Boy.ogg
+    path: /Audio/_Gabystation/Jukebox/poster-boy.ogg
 
