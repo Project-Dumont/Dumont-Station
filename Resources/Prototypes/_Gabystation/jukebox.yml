@@ -614,3 +614,15 @@
   path:
     path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
 
+- type: jukebox
+  id: Ordinarilife
+  name: My Ordinary Life - The Living Tombstone
+  path:
+    path: /Audio/_Gabystation/Jukebox/My_Ordinary_Life.ogg
+
+- type: jukebox
+  id: Posterboy
+  name: Poster Boy - 2hollis
+  path:
+    path: /Audio/_Gabystation/Jukebox/Poster_Boy.ogg
+
