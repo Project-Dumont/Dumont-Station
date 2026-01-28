@@ -4,6 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-use-on-station-only-not-on-station = You need to be on station to use this.
-petting-failure-huborg = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} disgusting appearance makes you reconsider.
-petting-success-huborg = You pet {THE($target)} on {POSS-ADJ($target)} horrifying... head?
+use-on-station-only-not-on-station = Você precisa estar na estação para usar isso.
+petting-failure-huborg = Você estende a mão para fazer carinho em {THE($target)}, mas a aparência nojenta de {POSS-ADJ($target)} faz você repensar.
+petting-success-huborg = Você faz carinho em {THE($target)} na... cabeça horripilante de {POSS-ADJ($target)}?

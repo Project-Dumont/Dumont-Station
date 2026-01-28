@@ -8,97 +8,96 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-guide-entry-space-law = Space Law
-guide-entry-medpatches = Medical Patches
-guide-entry-virology = Virology
-guide-entry-rules-nrp = NRP Ruleset
-guide-entry-sm = Supermatter Engine
-guide-entry-automation = Automation
-guide-entry-plumbing = Plumbing
+guide-entry-space-law = Lei Espacial
+guide-entry-medpatches = Adesivos Médicos
+guide-entry-virology = Virologia
+guide-entry-rules-nrp = Regras NRP
+guide-entry-sm = Motor de Supermatéria
+guide-entry-automation = Automação
+guide-entry-plumbing = Encanamento
 
-guide-entry-alcoholic-drinks = Alcoholic Drinks
-guide-entry-non-alcoholic-drinks = Non-Alcoholic Drinks
-guide-entry-enchanting = Enchanting
+guide-entry-alcoholic-drinks = Bebidas Alcoólicas
+guide-entry-non-alcoholic-drinks = Bebidas Não Alcoólicas
+guide-entry-enchanting = Encantamento
 
 # Goob SOP
 # - Main Directories
-guide-entry-sop = Standard Operating Procedure
-guide-entry-sop-alert-levels = Alert Levels
-guide-entry-sop-emergencies = Emergencies
-guide-entry-sop-jobs = Job Standards
-guide-entry-sop-legal = Legal Procedures
-guide-entry-sop-standards = Command Procedures
+guide-entry-sop = Procedimento Operacional Padrão
+guide-entry-sop-alert-levels = Níveis de Alerta
+guide-entry-sop-emergencies = Emergências
+guide-entry-sop-jobs = Padrões de Cargo
+guide-entry-sop-legal = Procedimentos Legais
+guide-entry-sop-standards = Procedimentos de Comando
 # - Sub/Nested Directories
-guide-entry-sop-cargo = Cargo
-guide-entry-sop-command = Command
-guide-entry-sop-engineering = Engineering
-guide-entry-sop-medical = Medical
-guide-entry-sop-science = Science
-guide-entry-sop-security = Security
-guide-entry-sop-service = Service
+guide-entry-sop-cargo = Carga
+guide-entry-sop-command = Comando
+guide-entry-sop-engineering = Engenharia
+guide-entry-sop-medical = Médico
+guide-entry-sop-science = Ciência
+guide-entry-sop-security = Segurança
+guide-entry-sop-service = Serviços
 # - Alert Levels
-guide-entry-sop-greenalert = Green Alert
-guide-entry-sop-bluealert = Blue Alert
-guide-entry-sop-yellowalert = Yellow Alert
-guide-entry-sop-redalert = Red Alert
-guide-entry-sop-deltaalert = Delta Alert
-guide-entry-sop-epsilonalert = Epsilon Alert
-guide-entry-sop-gammaalert = Gamma Alert
-guide-entry-sop-violetalert = Violet Alert
-guide-entry-sop-omicronalert = Omicron Alert
+guide-entry-sop-greenalert = Alerta Verde
+guide-entry-sop-bluealert = Alerta Azul
+guide-entry-sop-yellowalert = Alerta Amarelo
+guide-entry-sop-redalert = Alerta Vermelho
+guide-entry-sop-deltaalert = Alerta Delta
+guide-entry-sop-epsilonalert = Alerta Épsilon
+guide-entry-sop-gammaalert = Alerta Gama
+guide-entry-sop-violetalert = Alerta Violeta
+guide-entry-sop-omicronalert = Alerta Ômicron
 # - Standard Procedures
-guide-entry-sop-demoting = Dismissal/Demoting
-guide-entry-sop-evacuation = Early Evacuation
-guide-entry-sop-hiring = Hiring/Transfer
-guide-entry-sop-succession = Chain of Command
+guide-entry-sop-demoting = Dispensa/Rebaixamento
+guide-entry-sop-evacuation = Evacuação Antecipada
+guide-entry-sop-hiring = Contratação/Transferência
+guide-entry-sop-succession = Cadeia de Comando
 # - Emergencies
-guide-entry-sop-confirmedrevs = Revolution
-guide-entry-sop-containmentfail = Containment Fail
-guide-entry-sop-firegasspill = Fire/Gas Spills
-guide-entry-sop-meteorstorm = Meteor Storms
-guide-entry-sop-stationdamage = Station Damage
-guide-entry-sop-supermatterdelam = SM Delamination
-guide-entry-sop-wardeclaration = War Declaration
-guide-entry-sop-zombieoutbreak = Zombie Outbreak
-guide-entry-sop-emergencyresponseteam = Emergency Response Team
+guide-entry-sop-confirmedrevs = Revolução
+guide-entry-sop-containmentfail = Falha de Contenção
+guide-entry-sop-firegasspill = Incêndio/Vazamento de Gás
+guide-entry-sop-meteorstorm = Tempestade de Meteoros
+guide-entry-sop-stationdamage = Danos à Estação
+guide-entry-sop-supermatterdelam = Delaminação da SM
+guide-entry-sop-wardeclaration = Declaração de Guerra
+guide-entry-sop-zombieoutbreak = Surto Zumbi
+guide-entry-sop-emergencyresponseteam = Equipe de Resposta a Emergências
 # - Legal
-guide-entry-sop-execution = Executions
-guide-entry-sop-permabrig = Permanent Brig
-guide-entry-sop-punishments = Punishments
-guide-entry-sop-searches = Searches
+guide-entry-sop-execution = Execuções
+guide-entry-sop-permabrig = Prisão Permanente
+guide-entry-sop-punishments = Punições
+guide-entry-sop-searches = Revistas
 # - Cargo
-guide-entry-sop-cargotech = Cargo Tech
-guide-entry-sop-salvage = Salvage Specialist
+guide-entry-sop-cargotech = Técnico de Carga
+guide-entry-sop-salvage = Especialista em Salvamento
 # - Command
-guide-entry-sop-ntr = Nanotrasen Rep.
-guide-entry-sop-bso = Blueshield Officer
-guide-entry-sop-captain = Captain
-guide-entry-sop-hop = Head of Personnel
-guide-entry-sop-hos = Head of Security
-guide-entry-sop-rd = Research Director
-guide-entry-sop-cmo = Chief Medical Ofc.
-guide-entry-sop-ce = Chief Engineer
-guide-entry-sop-qm = Quartermaster
-# - Engineering
-guide-entry-sop-atmostech = Atmos Tech
-guide-entry-sop-stationengineer = Station Engineer
+guide-entry-sop-ntr = Rep. da Nanotrasen
+guide-entry-sop-bso = Oficial Blueshield
+guide-entry-sop-captain = Capitão
+guide-entry-sop-hop = Chefe de Pessoal
+guide-entry-sop-hos = Chefe de Segurança
+guide-entry-sop-rd = Diretor de Pesquisa
+guide-entry-sop-cmo = Chefe Médico
+guide-entry-sop-ce = Engenheiro-Chefe
+guide-entry-sop-qm = Intendente
+guide-entry-sop-atmostech = Técnico de Atmos
+guide-entry-sop-stationengineer = Engenheiro da Estação
 # - Medical
-guide-entry-sop-chemist = Chemist
-guide-entry-sop-doctorintern = Doctor/Intern
+guide-entry-sop-chemist = Químico
+guide-entry-sop-doctorintern = Médico/Interno
 # - Science
-guide-entry-sop-roboticist = Roboticist
-guide-entry-sop-scientist = Scientist
+guide-entry-sop-roboticist = Robotista
+guide-entry-sop-scientist = Cientista
 # - Security
-guide-entry-sop-brigmedic = Brigmedic
-guide-entry-sop-detective = Detective
-guide-entry-sop-officercadet = Officer/Cadet
-guide-entry-sop-warden = Warden
+guide-entry-sop-brigmedic = Médico do Brig
+guide-entry-sop-detective = Detetive
+guide-entry-sop-officercadet = Oficial/Cadete
+guide-entry-sop-warden = Carcereiro
 # - Service
 guide-entry-sop-bartender = Bartender
-guide-entry-sop-botanist = Botanist
+guide-entry-sop-botanist = Botânico
 guide-entry-sop-chef = Chef
-guide-entry-sop-clown = Clown
-guide-entry-sop-janitor = Janitor
-guide-entry-sop-librarian = Librarian
-guide-entry-sop-mime = Mime
-guide-entry-sop-reporter = Reporter
+guide-entry-sop-clown = Palhaço
+guide-entry-sop-janitor = Zelador
+guide-entry-sop-librarian = Bibliotecário
+guide-entry-sop-mime = Mímico
+guide-entry-sop-reporter = Repórter

@@ -1,4 +1,4 @@
-uplink-holo-cigar-name = Holo-Cigar
-uplink-holo-cigar-desc = A holo-cigar imported from the Sol system. The full effects of looking so badass aren't understood yet, but users show an increase in precision while dual-wielding firearms.
-holo-cigar-verb-desc = Become the big boss.
-holo-cigar-verb-text = Activate
+uplink-holo-cigar-name = Holo-Charuto
+uplink-holo-cigar-desc = Um holo-charuto importado do sistema Sol. Os efeitos completos de parecer tão fodão e com tanta aura ainda não são totalmente compreendidos, mas usuários demonstram aumento de precisão ao empunhar duas armas de fogo.
+holo-cigar-verb-desc = Vire o Protagonista Final boss.
+holo-cigar-verb-text = Ativar

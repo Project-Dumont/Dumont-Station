@@ -1,133 +1,133 @@
-marking-EarringsStudLeft = Stud Earrings (Left)
-marking-EarringsStudLeft-stud_l = Stud Earrings (Left)
+marking-EarringsStudLeft = Brinco de Ponto (Esquerdo)
+marking-EarringsStudLeft-stud_l = Brinco de Ponto (Esquerdo)
 
-marking-EarringsStudRight = Stud Earrings (Right)
-marking-EarringsStudRight-stud_r = Stud Earrings (Right)
+marking-EarringsStudRight = Brinco de Ponto (Direito)
+marking-EarringsStudRight-stud_r = Brinco de Ponto (Direito)
 
-marking-EarringsHeavyLeft = Heavy Earrings (Left)
-marking-EarringsHeavyLeft-heavy_l = Heavy Earrings (Left)
+marking-EarringsHeavyLeft = Brinco Pesado (Esquerdo)
+marking-EarringsHeavyLeft-heavy_l = Brinco Pesado (Esquerdo)
 
-marking-EarringsHeavyRight = Heavy Earrings (Right)
-marking-EarringsHeavyRight-heavy_r = Heavy Earrings (Right)
+marking-EarringsHeavyRight = Brinco Pesado (Direito)
+marking-EarringsHeavyRight-heavy_r = Brinco Pesado (Direito)
 
-marking-EarringsDropBasicLeft = Drop Earrings (Left)
-marking-EarringsDropBasicLeft-drop_l = Drop Earrings (Left)
+marking-EarringsDropBasicLeft = Brinco de Pendente (Esquerdo)
+marking-EarringsDropBasicLeft-drop_l = Brinco de Pendente (Esquerdo)
 
-marking-EarringsDropBasicRight = Drop Earrings (Right)
-marking-EarringsDropBasicRight-drop_r = Drop Earrings (Right)
+marking-EarringsDropBasicRight = Brinco de Pendente (Direito)
+marking-EarringsDropBasicRight-drop_r = Brinco de Pendente (Direito)
 
-marking-EarringsDropColoredLeft = Colored Drop Earrings (Left)
+marking-EarringsDropColoredLeft = Brinco de Pendente Colorido (Esquerdo)
 marking-EarringsDropColoredLeft-drop_colored_tone_1_l = Material
-marking-EarringsDropColoredLeft-drop_colored_tone_2_l = Ornament
+marking-EarringsDropColoredLeft-drop_colored_tone_2_l = Ornamento
 
-marking-EarringsDropColoredRight = Colored Drop Earrings (Right)
+marking-EarringsDropColoredRight = Brinco de Pendente Colorido (Direito)
 marking-EarringsDropColoredRight-drop_colored_tone_1_r = Material
-marking-EarringsDropColoredRight-drop_colored_tone_2_r = Ornament
+marking-EarringsDropColoredRight-drop_colored_tone_2_r = Ornamento
 
-marking-EarringsDropLongLeft = Long Drop Earrings (Left)
+marking-EarringsDropLongLeft = Brinco de Pendente Longo (Esquerdo)
 marking-EarringsDropLongLeft-drop_long_tone_1_l = Material
-marking-EarringsDropLongLeft-drop_long_tone_2_l = Ornament
+marking-EarringsDropLongLeft-drop_long_tone_2_l = Ornamento
 
-marking-EarringsDropLongRight = Long Drop Earrings (Right)
+marking-EarringsDropLongRight = Brinco de Pendente Longo (Direito)
 marking-EarringsDropLongRight-drop_long_tone_1_r = Material
-marking-EarringsDropLongRight-drop_long_tone_2_r = Ornament
+marking-EarringsDropLongRight-drop_long_tone_2_r = Ornamento
 
-marking-EarringsCrescentLeft = Crescent Earrings (Left)
-marking-EarringsCrescentLeft-crescent_l = Crescent Earrings (Left)
+marking-EarringsCrescentLeft = Brinco de Crescente (Esquerdo)
+marking-EarringsCrescentLeft-crescent_l = Brinco de Crescente (Esquerdo)
 
-marking-EarringsCrescentRight = Crescent Earrings (Right)
-marking-EarringsCrescentRight-crescent_r = Crescent Earrings (Right)
+marking-EarringsCrescentRight = Brinco de Crescente (Direito)
+marking-EarringsCrescentRight-crescent_r = Brinco de Crescente (Direito)
 
-marking-EarringsBangleLeft = Bangle Earrings (Left)
-marking-EarringsBangleLeft-bangle_l = Bangle Earrings (Left)
+marking-EarringsBangleLeft = Brinco de Argola (Esquerdo)
+marking-EarringsBangleLeft-bangle_l = Brinco de Argola (Esquerdo)
 
-marking-EarringsBangleRight = Bangle Earrings (Right)
-marking-EarringsBangleRight-bangle_r = Bangle Earrings (Right)
+marking-EarringsBangleRight = Brinco de Argola (Direito)
+marking-EarringsBangleRight-bangle_r = Brinco de Argola (Direito)
 
-marking-EarringsHoopBasicLeft = Hoop Earrings (Left)
-marking-EarringsHoopBasicLeft-hoop_l = Hoop Earrings (Left)
+marking-EarringsHoopBasicLeft = Brinco de Aro (Esquerdo)
+marking-EarringsHoopBasicLeft-hoop_l = Brinco de Aro (Esquerdo)
 
-marking-EarringsHoopBasicRight = Hoop Earrings (Right)
-marking-EarringsHoopBasicRight-hoop_r = Hoop Earrings (Right)
+marking-EarringsHoopBasicRight = Brinco de Aro (Direito)
+marking-EarringsHoopBasicRight-hoop_r = Brinco de Aro (Direito)
 
-marking-EarringsHoopMiniLeft = Mini Hoop Earrings (Left)
-marking-EarringsHoopMiniLeft-hoop_mini_l = Mini Hoop Earrings (Left)
+marking-EarringsHoopMiniLeft = Brinco de Aro Mini (Esquerdo)
+marking-EarringsHoopMiniLeft-hoop_mini_l = Brinco de Aro Mini (Esquerdo)
 
-marking-EarringsHoopMiniRight = Mini Hoop Earrings (Right)
-marking-EarringsHoopMiniRight-hoop_mini_r = Mini Hoop Earrings (Right)
+marking-EarringsHoopMiniRight = Brinco de Aro Mini (Direito)
+marking-EarringsHoopMiniRight-hoop_mini_r = Brinco de Aro Mini (Direito)
 
-marking-EarringsCrossBasicLeft = Cross Earrings (Left)
-marking-EarringsCrossBasicLeft-cross_l = Cross Earrings (Left)
+marking-EarringsCrossBasicLeft = Brinco de Cruz (Esquerdo)
+marking-EarringsCrossBasicLeft-cross_l = Brinco de Cruz (Esquerdo)
 
-marking-EarringsCrossBasicRight = Cross Earrings (Right)
-marking-EarringsCrossBasicRight-cross_r = Cross Earrings (Right)
+marking-EarringsCrossBasicRight = Brinco de Cruz (Direito)
+marking-EarringsCrossBasicRight-cross_r = Brinco de Cruz (Direito)
 
-marking-EarringsCrossSaintPeterLeft = St. Peter Cross Earrings (Left)
-marking-EarringsCrossSaintPeterLeft-cross_saint_peter_l = St. Peter Cross Earrings (Left)
+marking-EarringsCrossSaintPeterLeft = Brinco Cruz de São Pedro (Esquerdo)
+marking-EarringsCrossSaintPeterLeft-cross_saint_peter_l = Brinco Cruz de São Pedro (Esquerdo)
 
-marking-EarringsCrossSaintPeterRight = St. Peter Cross Earrings (Right)
-marking-EarringsCrossSaintPeterRight-cross_saint_peter_r = St. Peter Cross Earrings (Right)
+marking-EarringsCrossSaintPeterRight = Brinco Cruz de São Pedro (Direito)
+marking-EarringsCrossSaintPeterRight-cross_saint_peter_r = Brinco Cruz de São Pedro (Direito)
 
-marking-EarringsGemstoneBasicLeft = Gemstone Earrings (Left)
+marking-EarringsGemstoneBasicLeft = Brinco de Pedra Preciosa (Esquerdo)
 marking-EarringsGemstoneBasicLeft-gemstone_tone_1_l = Material
-marking-EarringsGemstoneBasicLeft-gemstone_tone_2_l = Ornament
+marking-EarringsGemstoneBasicLeft-gemstone_tone_2_l = Ornamento
 
-marking-EarringsGemstoneBasicRight = Gemstone Earrings (Right)
+marking-EarringsGemstoneBasicRight = Brinco de Pedra Preciosa (Direito)
 marking-EarringsGemstoneBasicRight-gemstone_tone_1_r = Material
-marking-EarringsGemstoneBasicRight-gemstone_tone_2_r = Ornament
+marking-EarringsGemstoneBasicRight-gemstone_tone_2_r = Ornamento
 
-marking-EarringsGemstoneLongLeft = Long Gemstone Earrings (Left)
+marking-EarringsGemstoneLongLeft = Brinco de Pedra Preciosa Longo (Esquerdo)
 marking-EarringsGemstoneLongLeft-gemstone_long_tone_1_l = Material
-marking-EarringsGemstoneLongLeft-gemstone_long_tone_2_l = Ornament
+marking-EarringsGemstoneLongLeft-gemstone_long_tone_2_l = Ornamento
 
-marking-EarringsGemstoneLongRight = Long Gemstone Earrings (Right)
+marking-EarringsGemstoneLongRight = Brinco de Pedra Preciosa Longo (Direito)
 marking-EarringsGemstoneLongRight-gemstone_long_tone_1_r = Material
-marking-EarringsGemstoneLongRight-gemstone_long_tone_2_r = Ornament
+marking-EarringsGemstoneLongRight-gemstone_long_tone_2_r = Ornamento
 
-marking-EarringsGemstoneDoubleLeft = Double Gemstone Earrings (Left)
+marking-EarringsGemstoneDoubleLeft = Brinco Duplo de Pedra Preciosa (Esquerdo)
 marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_1_l = Material
-marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_2_l = Upper Ornament
-marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_3_l = Lower Ornament
+marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_2_l = Ornamento Superior
+marking-EarringsGemstoneDoubleLeft-gemstone_double_tone_3_l = Ornamento Inferior
 
-marking-EarringsGemstoneDoubleRight = Double Gemstone Earrings (Right)
+marking-EarringsGemstoneDoubleRight = Brinco Duplo de Pedra Preciosa (Direito)
 marking-EarringsGemstoneDoubleRight-gemstone_double_tone_1_r = Material
-marking-EarringsGemstoneDoubleRight-gemstone_double_tone_2_r = Upper Ornament
-marking-EarringsGemstoneDoubleRight-gemstone_double_tone_3_r = Lower Ornament
+marking-EarringsGemstoneDoubleRight-gemstone_double_tone_2_r = Ornamento Superior
+marking-EarringsGemstoneDoubleRight-gemstone_double_tone_3_r = Ornamento Inferior
 
-marking-EarringsDangleBasicLeft = Dangle Earrings (Left)
+marking-EarringsDangleBasicLeft = Brinco Pendente (Esquerdo)
 marking-EarringsDangleBasicLeft-dangle_tone_1_l = Material
-marking-EarringsDangleBasicLeft-dangle_tone_2_l = Ornament
+marking-EarringsDangleBasicLeft-dangle_tone_2_l = Ornamento
 
-marking-EarringsDangleBasicRight = Dangle Earrings (Right)
+marking-EarringsDangleBasicRight = Brinco Pendente (Direito)
 marking-EarringsDangleBasicRight-dangle_tone_1_r = Material
-marking-EarringsDangleBasicRight-dangle_tone_2_r = Ornament
+marking-EarringsDangleBasicRight-dangle_tone_2_r = Ornamento
 
-marking-EarringsDangleLongLeft = Long Dangle Earrings (Left)
+marking-EarringsDangleLongLeft = Brinco Pendente Longo (Esquerdo)
 marking-EarringsDangleLongLeft-dangle_long_tone_1_l = Material
-marking-EarringsDangleLongLeft-dangle_long_tone_2_l = Ornament
+marking-EarringsDangleLongLeft-dangle_long_tone_2_l = Ornamento
 
-marking-EarringsDangleLongRight = Long Dangle Earrings (Right)
+marking-EarringsDangleLongRight = Brinco Pendente Longo (Direito)
 marking-EarringsDangleLongRight-dangle_long_tone_1_r = Material
-marking-EarringsDangleLongRight-dangle_long_tone_2_r = Ornament
+marking-EarringsDangleLongRight-dangle_long_tone_2_r = Ornamento
 
-marking-EarringsEightLeft = Eight Earrings (Left)
-marking-EarringsEightLeft-eight_l = Eight Earrings (Left)
+marking-EarringsEightLeft = Brinco Oito (Esquerdo)
+marking-EarringsEightLeft-eight_l = Brinco Oito (Esquerdo)
 
-marking-EarringsEightRight = Eight Earrings (Right)
-marking-EarringsEightRight-eight_r = Eight Earrings (Right)
+marking-EarringsEightRight = Brinco Oito (Direito)
+marking-EarringsEightRight-eight_r = Brinco Oito (Direito)
 
-marking-EarringsCrystalBasicLeft = Crystal Earrings (Left)
+marking-EarringsCrystalBasicLeft = Brinco de Cristal (Esquerdo)
 marking-EarringsCrystalBasicLeft-crystal_tone_1_l = Material
-marking-EarringsCrystalBasicLeft-crystal_tone_2_l = Ornament
+marking-EarringsCrystalBasicLeft-crystal_tone_2_l = Ornamento
 
-marking-EarringsCrystalBasicRight = Crystal Earrings (Right)
+marking-EarringsCrystalBasicRight = Brinco de Cristal (Direito)
 marking-EarringsCrystalBasicRight-crystal_tone_1_r = Material
-marking-EarringsCrystalBasicRight-crystal_tone_2_r = Ornament
+marking-EarringsCrystalBasicRight-crystal_tone_2_r = Ornamento
 
-marking-EarringsCrystalLongLeft = Long Crystal Earrings (Left)
+marking-EarringsCrystalLongLeft = Brinco de Cristal Longo (Esquerdo)
 marking-EarringsCrystalLongLeft-crystal_long_tone_1_l = Material
-marking-EarringsCrystalLongLeft-crystal_long_tone_2_l = Ornament
+marking-EarringsCrystalLongLeft-crystal_long_tone_2_l = Ornamento
 
-marking-EarringsCrystalLongRight = Long Crystal Earrings (Right)
+marking-EarringsCrystalLongRight = Brinco de Cristal Longo (Direito)
 marking-EarringsCrystalLongRight-crystal_long_tone_1_r = Material
-marking-EarringsCrystalLongRight-crystal_long_tone_2_r = Ornament
+marking-EarringsCrystalLongRight-crystal_long_tone_2_r = Ornamento

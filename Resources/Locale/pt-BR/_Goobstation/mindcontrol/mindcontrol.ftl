@@ -5,12 +5,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-mindcontrol-popup-start = You are mindcontrolled
-mindcontrol-popup-stop = You feel a fog lift from your mind
-mindcontrol-briefing-start = You are mindcontrolled. Obey {$master}
-mindcontrol-briefing-get = YOU ARE MINDCONTROLLED
-mindcontrol-briefing-get-master = Obey {$master}
+mindcontrol-popup-start = Você está sob controle mental
+mindcontrol-popup-stop = Você sente uma névoa se dissipar da sua mente
+mindcontrol-briefing-start = Você está sob controle mental. Obedeça {$master}
+mindcontrol-briefing-get = VOCÊ ESTÁ SOB CONTROLE MENTAL
+mindcontrol-briefing-get-master = Obedeça {$master}
 
 ## uplink shop
-uplink-mindcontrol-implant-name = Mind-Control Implant
-uplink-mindcontrol-implant-desc = When all you need is a friend.
+uplink-mindcontrol-implant-name = Implante de Controle Mental
+uplink-mindcontrol-implant-desc = Quando tudo o que você precisa é de um amigo.
+

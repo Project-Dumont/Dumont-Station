@@ -23,115 +23,115 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-knowledge-path-side-knowledge-name = Ritual of Knowledge
+knowledge-path-side-knowledge-name = Ritual de Conhecimento
 knowledge-path-side-knowledge-desc =
-    Everything can be a key to unlocking the secrets behind the Gates. I must be wary and wise.
+    Tudo pode ser uma chave para destrancar os segredos por trás dos Portões. Preciso ser cauteloso e sábio.
 
-    You learn a special, one-time-only ritual that requires 4 different items. Performing this ritual instantly grants you 5 knowledge points.
+    Você aprende um ritual especial, único, que requer 4 itens diferentes. Realizar este ritual concede instantaneamente 5 pontos de conhecimento.
 
 ## stage 3
-knowledge-path-side-s3-armor-name = Armorer’s Ritual
+knowledge-path-side-s3-armor-name = Ritual do Armeiro
 knowledge-path-side-s3-armor-desc =
-    The Rusted Hills welcomed the Blacksmith in their generosity. And the Blacksmith returned their generosity in kind.
+    As Colinas Enferrujadas acolheram o Ferreiro com sua generosidade. E o Ferreiro retribuiu essa generosidade à altura.
 
-    Allows you to transmute a table and a gas mask to create Eldritch Armor.
-    Eldritch Armor provides great protection while also acting as a focus when hooded.
+    Permite transmutar uma mesa e uma máscara de gás para criar uma Armadura Eldritch.
+    A Armadura Eldritch oferece grande proteção e também funciona como foco quando com o capuz.
 
-knowledge-path-side-s3-flask-name = Priest's Ritual
+knowledge-path-side-s3-flask-name = Ritual do Sacerdote
 knowledge-path-side-s3-flask-desc =
-    This is an old recipe. The Owl whispered it to me. Created by the Priest - the Liquid that both was and is not.
+    Esta é uma receita antiga. A Coruja a sussurrou para mim. Criada pelo Sacerdote — o Líquido que tanto era quanto não era.
 
-    Allows you to transmute a tank of water and a glass shard into a Flask of Eldritch Essence.
-    Eldritch water can be consumed for potent healing.
+    Permite transmutar um tanque de água e um fragmento de vidro em um Frasco de Essência Eldritch.
+    A água eldritch pode ser consumida para uma cura potente.
 
-knowledge-path-side-s3-ashen-eyes-name = Ashen Eyes
+knowledge-path-side-s3-ashen-eyes-name = Olhos de Cinzas
 knowledge-path-side-s3-ashen-eyes-desc =
-    Piercing eyes guided them through the mundane. Neither darkness nor terror could stop them.
+    Olhos penetrantes os guiaram através do mundano. Nem a escuridão, nem o terror poderiam detê-los.
 
-    Allows you to transmute a pair of eyes, a flare, and a glass shard into an Eldritch Medallion.
-    The Eldritch Medallion grants you thermal vision while worn, and also functions as a focus.
+    Permite transmutar um par de olhos, um sinalizador e um fragmento de vidro em um Medalhão Eldritch.
+    O Medalhão Eldritch concede visão térmica enquanto usado, e também funciona como foco.
 
-knowledge-path-side-s3-void-cloak-name = Void Cloak
+knowledge-path-side-s3-void-cloak-name = Manto do Vazio
 knowledge-path-side-s3-void-cloak-desc =
-    The Owl is the keeper of things that are not quite in practice, but in theory are. Many things are.
+    A Coruja é a guardiã de coisas que não estão exatamente em prática, mas em teoria estão. Muitas coisas estão.
 
-    Allows you to transmute a glass shard, a bedsheet, and any winter coat to create a Void Cloak.
-    While the hood is down, the cloak functions as a focus and provides low pressure and low temperature protection, and while the hood is up, the cloak is completely invisible.
-    It also provide decent armor and has pockets which can hold one of your blades, various ritual components (such as organs), and small heretical trinkets.
+    Permite transmutar um fragmento de vidro, um lençol e qualquer casaco de inverno para criar um Manto do Vazio.
+    Com o capuz abaixado, o manto funciona como foco e fornece proteção contra baixa pressão e baixa temperatura; com o capuz levantado, o manto fica completamente invisível.
+    Ele também fornece uma armadura decente e possui bolsos que podem guardar uma de suas lâminas, vários componentes rituais (como órgãos) e pequenos amuletos heréticos.
 
-knowledge-path-side-s3-shark-name = Scorching Shark
+knowledge-path-side-s3-shark-name = Tubarão Escaldante
 knowledge-path-side-s3-shark-desc =
-    The cradle of the nebula was cold, but not dead. Light and heat flits even through the deepest darkness, and is hunted by its own predators.
+    O berço da nebulosa era frio, mas não morto. Luz e calor cintilam mesmo através da mais profunda escuridão, e são caçados por seus próprios predadores.
 
-    Allows you to transmute 3 pools of ash, a liver, and 3 sheets of plasma into 3 Fire Sharks.
-    Fire Sharks are fast and strong in groups, but die quickly. They are also highly resistant against fire attacks.
-    Fire Sharks ignite their victims and drop plasma sheet once they die.
-    You can only create 15 at a time.
+    Permite transmutar 3 poças de cinzas, um fígado e 3 placas de plasma em 3 Tubarões de Fogo.
+    Tubarões de Fogo são rápidos e fortes em grupo, mas morrem rapidamente. Eles também são altamente resistentes contra ataques de fogo.
+    Tubarões de Fogo incendeiam suas vítimas e deixam cair uma placa de plasma quando morrem.
+    Você só pode criar até 15 por vez.
 
-knowledge-path-side-s6-ice-spear-name = Mysteries of Creation
+knowledge-path-side-s6-ice-spear-name = Mistérios da Criação
 knowledge-path-side-s6-ice-spear-desc =
-    Artifacts linked to the Winter Dawn exude unnatural stillness. Time slows around them. Fires choke. Thoughts become brittle. Proximity breeds hallucinations of endless white fields, a sky with no sun, and a voice that speaks only in cracking ice.
+    Artefatos ligados ao Alvorecer Invernal exalam uma quietude antinatural. O tempo desacelera ao redor deles. Chamas se sufocam. Pensamentos tornam-se frágeis. A proximidade gera alucinações de campos brancos sem fim, um céu sem sol, e uma voz que fala apenas em estalos de gelo.
 
-    Grants you Mysteries of Creation, a spell that allows you to summon the Glacier Spear at will. This magical spear chills victims upon hit, but more importantly, it shatters upon throwing, dealing a significant amount of damage and temporarily freezing the target into an ice cube. If the spear is destroyed, activating this ability will create a new one, otherwise it will summon the existing spear into your hand.
+    Concede-lhe Mistérios da Criação, um feitiço que permite invocar a Lança Glacial à vontade. Esta lança mágica resfria as vítimas ao acertar, mas, mais importante, ela se despedaça ao ser arremessada, causando uma quantidade significativa de dano e congelando temporariamente o alvo dentro de um cubo de gelo. Se a lança for destruída, ativar esta habilidade criará uma nova; caso contrário, ela invocará a lança existente para sua mão.
 
 ## stage 6
-knowledge-path-side-s6-rustwalker-name = Rusted Ritual
+knowledge-path-side-s6-rustwalker-name = Ritual Enferrujado
 knowledge-path-side-s6-rustwalker-desc =
-    I combined my knowledge of creation with my desire for corruption. The Marshal knew my name, and the Rusted Hills echoed out.
+    Combinei meu conhecimento de criação com meu desejo por corrupção. O Marechal sabia meu nome, e as Colinas Enferrujadas ecoaram.
 
-    Allows you to transmute a pool of vomit, 15 cable coil, and 10 sheets of iron into a Rust Walker.
-    Rust Walkers excel at spreading rust and are moderately strong in combat.
+    Permite transmutar uma poça de vômito, 15 cabos e 10 chapas de ferro em um Andarilho da Ferrugem.
+    Andarilhos da Ferrugem são excelentes em espalhar ferrugem e são moderadamente fortes em combate.
 
-knowledge-path-side-s6-knife-name = Carving Knife
+knowledge-path-side-s6-knife-name = Faca de Entalhar
 knowledge-path-side-s6-knife-desc =
-    Etched, carved... eternal. There is power hidden in everything. I can unveil it! I can carve the monolith to reveal the chains!
+    Gravado, entalhado... eterno. Há poder escondido em tudo. Eu posso revelá-lo! Posso entalhar o monólito para revelar as correntes!
 
-    Allows you to transmute a knife, a shard of glass, and a piece of paper to create a Carving Knife.
-    The Carving Knife allows you to etch difficult to see traps that trigger on heathens who walk overhead.
-    Also makes for a handy throwing weapon.
+    Permite transmutar uma faca, um fragmento de vidro e um pedaço de papel para criar uma Faca de Entalhar.
+    A Faca de Entalhar permite gravar armadilhas difíceis de ver que são ativadas por hereges que passarem por cima.
+    Também serve como uma arma de arremesso bem útil.
 
 ## stage 7
-knowledge-path-side-s7-uncuff-name = Wave of Desperation
+knowledge-path-side-s7-uncuff-name = Onda de Desespero
 knowledge-path-side-s7-uncuff-desc =
-    My shackles undone in dark fury, their feeble bindings crumble before my power.
+    Minhas algemas desfeitas em fúria sombria, suas frágeis amarras se desfazem diante do meu poder.
 
-    Grants you Wave Of Desperation, a spell which can only be cast while restrained.
-    It removes your restraints, repels and knocks down adjacent people, and applies the Mansus Grasp to everything nearby.
-    However, you will fall unconscious a short time after casting this spell.
+    Concede-lhe Onda de Desespero, um feitiço que só pode ser conjurado enquanto estiver algemado.
+    Ele remove suas restrições, repele e derruba pessoas adjacentes, e aplica a Garra do Mansus a tudo nas proximidades.
+    No entanto, você cairá inconsciente pouco tempo após conjurar este feitiço.
 
-knowledge-path-side-s7-siphon-name = Blood Siphon
+knowledge-path-side-s7-siphon-name = Sifão de Sangue
 knowledge-path-side-s7-siphon-desc =
-    No matter the man, we bleed all the same. That's what the Marshal told me.
+    Não importa o homem, todos sangramos do mesmo jeito. Foi isso que o Marechal me disse.
 
-    Grants Blood Siphon, a ranged spell that steals a bit of life from your target, healing your bruises and restoring blood.
-    Additionally, you have a chance of transferring wounds you are experiencing to the target.
+    Concede Sifão de Sangue, um feitiço à distância que rouba um pouco de vida do alvo, curando seus hematomas e restaurando sangue.
+    Além disso, você tem uma chance de transferir feridas que esteja sofrendo para o alvo.
 
-knowledge-path-side-s7-crucible-name = Mawed Crucible
+knowledge-path-side-s7-crucible-name = Crisol Mutilado
 knowledge-path-side-s7-crucible-desc =
-    This is pure agony. I wasn't able to summon the figure of the Aristocrat,
-    but with the Priest's attention I stumbled upon a different recipe...
+    Isto é pura agonia. Eu não consegui invocar a figura do Aristocrata,
+    mas com a atenção do Sacerdote eu tropecei em uma receita diferente...
 
-    Allows you to transmute a portable water tank and a table to create a Mawed Crucible.
-    The Mawed Crucible can brew powerful potions for combat and utility, but must be fed bodyparts and organs between uses.
+    Permite transmutar um tanque portátil de água e uma mesa para criar um Crisol Mutilado.
+    O Crisol Mutilado pode preparar poções poderosas para combate e utilidade, mas precisa ser alimentado com partes do corpo e órgãos entre os usos.
 
 # stage 8
-knowledge-path-side-s8-cleave-name = Blood Cleave
+knowledge-path-side-s8-cleave-name = Talho Sangrento
 knowledge-path-side-s8-cleave-desc =
-    At first I didn't understand these instruments of war, but the Priest told me to use them regardless. Soon, he said, I would know them well.
+    No começo eu não entendia esses instrumentos de guerra, mas o Sacerdote me disse para usá-los de qualquer forma. Em breve, ele disse, eu os conheceria bem.
 
-    Grants you Cleave, an area-of-effect targeted spell that causes heavy bleeding and blood loss to anyone afflicted.
+    Concede Talho, um feitiço direcionado em área que causa sangramento intenso e grande perda de sangue em qualquer um afetado.
 
 ## stage 9
-knowledge-path-side-s9-coin-name = Eldritch Coin
+knowledge-path-side-s9-coin-name = Moeda Eldritch
 knowledge-path-side-s9-coin-desc =
-    The Mansus is a place of all sorts of sins. But greed held a special role.
+    O Mansus é um lugar de todo tipo de pecados. Mas a ganância ocupava um papel especial.
 
-    Transmute a sheet of plasma, a diamond and eyes into an Eldritch Coin.
-    The coin will open nearby airlocks if it lands on heads and bolt nearby airlocks if it lands on tails.
-    Using it on an airlock consumes the coin and permanently opens the airlock.
-    Attempting to flip or use the coin as a non-heretic will deal brute and/or burn damage, depending on the side it lands on.
+    Transmute uma placa de plasma, um diamante e olhos em uma Moeda Eldritch.
+    A moeda abrirá as comportas próximas se cair em cara e trancará as comportas próximas se cair em coroa.
+    Usá-la em uma comporta consome a moeda e abre permanentemente a comporta.
+    Tentar girar ou usar a moeda sendo um não-herético causará dano bruto e/ou de queimadura, dependendo do lado em que cair.
 
-knowledge-path-side-s9-ashman-name = Ashen Ritual
+knowledge-path-side-s9-ashman-name = Ritual das Cinzas
 knowledge-path-side-s9-ashman-desc =
-    Transmute a pile of ash, a brain and a book to summon an Ashman.
-    Ashmen can jaunt, cause bleeding wounds, and can release large waves of fire.
+    Transmute uma pilha de cinzas, um cérebro e um livro para invocar um Homem de Cinzas.
+    Homens de Cinzas podem fazer jaunt, causar feridas sangrentas e liberar grandes ondas de fogo.

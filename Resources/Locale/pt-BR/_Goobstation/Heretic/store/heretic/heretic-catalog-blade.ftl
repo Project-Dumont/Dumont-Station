@@ -22,69 +22,69 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-knowledge-path-blade-s1-name = The Cutting Edge
+knowledge-path-blade-s1-name = O Fio da Lâmina
 knowledge-path-blade-s1-desc =
-    Our great ancestors forged swords and practiced sparring on the eve of great battles.
+    Nossos grandes ancestrais forjavam espadas e praticavam duelos na véspera de grandes batalhas.
 
-    Follow the path of blades.
-    Transmute two knives into a sundered blade.
-    You can create up to four at a time.
+    Siga o Caminho das Lâminas.
+    Transmute duas facas em uma Lâmina Fraturada.
+    Você pode criar até quatro por vez.
 
-knowledge-path-blade-s2-name = Grasp of the Blade
+knowledge-path-blade-s2-name = Garra da Lâmina
 knowledge-path-blade-s2-desc =
-    The story of the footsoldier has been told since antiquity. It is one of blood and valor, and is championed by sword, steel and silver.
+    A história do soldado raso é contada desde a antiguidade. É uma história de sangue e valor, exaltada por espada, aço e prata.
 
-    Your Mansus Grasp will cause a short stun when used on someone lying down or facing away from you.
+    Sua Garra do Mansus causará um breve atordoamento quando usada em alguém caído no chão ou de costas para você.
 
-knowledge-path-blade-s3-name = Dance of the Brand
+knowledge-path-blade-s3-name = Dança da Marca
 knowledge-path-blade-s3-desc =
-    The footsoldier was known to be a fearsome duelist. Their general quickly appointed them as their personal Champion.
+    O soldado raso era conhecido por ser um duelista temível. Seu general rapidamente o nomeou como seu Campeão pessoal.
 
-    Being attacked while wielding a Heretic Blade in either hand will deliver a riposte towards your attacker, knocking them down. This effect can only trigger once every 20 seconds.
+    Ser atacado enquanto empunha uma Lâmina Herética em qualquer uma das mãos fará você desferir uma riposta contra seu agressor, derrubando-o. Este efeito só pode ativar uma vez a cada 20 segundos.
 
-knowledge-path-blade-s4-name = Mark of the Blade
+knowledge-path-blade-s4-name = Marca da Lâmina
 knowledge-path-blade-s4-desc =
-    His general wished to end the war, but the Champion knew there could be no life without death. He would slay the coward himself, and anyone who tried to run.
+    Seu general desejava encerrar a guerra, mas o Campeão sabia que não poderia haver vida sem morte. Ele mataria o covarde com as próprias mãos, e qualquer um que tentasse fugir.
 
-    Your Mansus Grasp now applies the Mark of the Blade.
-    Triggering the mark will summon a knife that will orbit you for a short time.
-    The knife will block any attack directed towards you, but is consumed on use.
+    Sua Garra do Mansus agora aplica a Marca da Lâmina.
+    Ativar a marca invocará uma faca que orbitará você por um curto período.
+    A faca bloqueará qualquer ataque direcionado a você, mas será consumida ao ser usada.
 
-knowledge-path-blade-s5-name = Realignment
+knowledge-path-blade-s5-name = Realinhamento
 knowledge-path-blade-s5-desc =
-    In the flurry of death, he found peace within himself. Despite insurmountable odds, he forged on.
+    No turbilhão da morte, ele encontrou paz dentro de si. Apesar de probabilidades insuperáveis, ele seguiu adiante.
 
-    Grants you Realignment a spell that wil realign your body rapidly for a short period.
-    During this process, you will rapidly regenerate stamina and quickly recover from stuns, however, you will be unable to attack.
+    Concede-lhe Realinhamento, um feitiço que realinha seu corpo rapidamente por um curto período.
+    Durante esse processo, você regenerará stamina rapidamente e se recuperará depressa de atordoamentos, porém não poderá atacar.
 
-knowledge-path-blade-s6-name = Stance of the Torn Champion
+knowledge-path-blade-s6-name = Postura do Campeão Dilacerado
 knowledge-path-blade-s6-desc =
-    In time, it was he who stood alone among the bodies of his former comrades, awash in blood, none of it his own. He was without rival, equal, or purpose.
+    Com o tempo, foi ele quem permaneceu sozinho entre os corpos de seus antigos camaradas, banhado em sangue — nenhum dele. Ele não tinha rival, igual, nem propósito.
 
-    Grants immunity to having your limbs dismembered, as well as resistance to bloodloss and damage slowdown.
-    Additionally, when damaged below 50% of your maximum health, you gain increased resistance to gaining wounds and resistance to batons.
+    Concede imunidade a ter seus membros decepados, além de resistência à perda de sangue e à lentidão por dano.
+    Além disso, ao sofrer dano abaixo de 50% da sua vida máxima, você ganha maior resistência a receber ferimentos e resistência a cassetetes.
 
-knowledge-path-blade-s7-name = Empowered Blades
+knowledge-path-blade-s7-name = Lâminas Potencializadas
 knowledge-path-blade-s7-desc =
-    I found him cleaved in twain, halves locked in a duel without end; a flurry of blades, neither hitting their mark, for the Champion was indomitable.
+    Eu o encontrei partido ao meio, metades presas em um duelo sem fim; uma tempestade de lâminas, nenhuma acertando o alvo, pois o Campeão era indomável.
 
-    Attacking someone with a Sundered Blade in both hands will now deliver a blow with both at once, dealing two attacks in rapid succession.
-    The second blow will be slightly weaker.
-    You are able to infuse your mansus grasp directly into your blades, and your blades are more effective against structures.
+    Atacar alguém com uma Lâmina Fraturada em ambas as mãos agora desferirá um golpe com as duas ao mesmo tempo, realizando dois ataques em rápida sucessão.
+    O segundo golpe será ligeiramente mais fraco.
+    Você é capaz de infundir sua Garra do Mansus diretamente em suas lâminas, e suas lâminas são mais eficazes contra estruturas.
 
-knowledge-path-blade-s8-name = Furious Steel
+knowledge-path-blade-s8-name = Aço Furioso
 knowledge-path-blade-s8-desc =
-    Without thinking, I took the knife of a fallen soldier and threw with all my might. My aim was true! The Torn Champion smiled at their first taste of agony, and with a nod, their blades became my own.
+    Sem pensar, peguei a faca de um soldado caído e a arremessei com toda a força. Minha mira foi perfeita! O Campeão Dilacerado sorriu ao sentir seu primeiro gosto de agonia e, com um aceno, suas lâminas tornaram-se minhas.
 
-    Grants you Furious Steel, a targeted spell. Using it will summon three orbiting blades around you. These blades will protect you from all attacks, but are consumed on use.
-    Additionally, you can click on the blade or on yourself to fire the blades at a nearest target, dealing heavy damage.
+    Concede-lhe Aço Furioso, um feitiço direcionado. Ao usá-lo, três lâminas orbitais serão invocadas ao seu redor. Essas lâminas o protegerão de todos os ataques, mas serão consumidas ao serem usadas.
+    Além disso, você pode clicar na lâmina ou em si mesmo para dispará-las contra o alvo mais próximo, causando dano pesado.
 
-knowledge-path-blade-s9-name = Maelstrom of Silver
+knowledge-path-blade-s9-name = Maelstrom de Prata
 knowledge-path-blade-s9-desc =
-    The ascension ritual of the Path of Blades.
-    Bring 3 headless corpses to a transmutation rune to complete the ritual.
-    When completed, you will be surrounded in a constant, regenerating orbit of blades.
-    These blades will protect you from all attacks, but are consumed on use.
-    Your Furious Steel spell will also have a shorter cooldown.
-    Additionally, you become a master of combat, gaining the ability to waltz over slippery surfaces.
-    Your Sundered Blades will deal bonus damage and heal you on attack for a portion of the damage dealt.
+    O ritual de ascensão do Caminho das Lâminas.
+    Traga 3 cadáveres decapitados para uma runa de transmutação para completar o ritual.
+    Ao concluí-lo, você será cercado por uma órbita constante e regenerativa de lâminas.
+    Essas lâminas o protegerão de todos os ataques, mas serão consumidas ao serem usadas.
+    Seu feitiço Aço Furioso também terá um tempo de recarga menor.
+    Além disso, você se torna um mestre do combate, ganhando a capacidade de valsar sobre superfícies escorregadias.
+    Suas Lâminas Fraturadas causarão dano bônus e o curarão ao atacar, por uma fração do dano causado.

@@ -6,6 +6,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-admin-verb-make-heretic = Make the target into a heretic.
+admin-verb-make-heretic = Transforme o alvo em um herege.
 
-admin-verb-text-make-heretic = Make Heretic
+admin-verb-text-make-heretic = Tornar Herege

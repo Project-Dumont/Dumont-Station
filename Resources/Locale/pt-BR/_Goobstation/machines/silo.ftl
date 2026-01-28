@@ -5,10 +5,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-lathe-menu-connected-to-silo-message = Connected to silo.
-lathe-menu-mining-points-no-connection-warning = [bold][color=red]WARNING:[/color][/bold] This device isnt connected to an ore silo. By dumping ore you will NOT receive ore points.
-lathe-menu-mining-points-silo-not-on-same-grid = [bold][color=red]WARNING:[/color][/bold] This device isn't on the same map as it's silo. By dumping ore you will NOT receive ore points.
-signal-port-name-material-silo = Material silo
-signal-port-description-material-silo = Bluespace storage for station materials
-signal-port-name-material-silo-utilizer = Silo utilizer
-signal-port-description-material-silo-utilizer = Utilizer for station material silo
+lathe-menu-connected-to-silo-message = Conectado ao silo.
+lathe-menu-mining-points-no-connection-warning = [bold][color=red]AVISO:[/color][/bold] Este dispositivo não está conectado a um silo de minério. Ao depositar minério, você NÃO receberá pontos de minério.
+lathe-menu-mining-points-silo-not-on-same-grid = [bold][color=red]AVISO:[/color][/bold] Este dispositivo não está no mesmo mapa que seu silo. Ao depositar minério, você NÃO receberá pontos de minério.
+signal-port-name-material-silo = Silo de materiais
+signal-port-description-material-silo = Armazenamento de Bluespace para materiais da estação
+signal-port-name-material-silo-utilizer = Utilizador de silo
+signal-port-description-material-silo-utilizer = Dispositivo para utilizar o silo de materiais da estação
+

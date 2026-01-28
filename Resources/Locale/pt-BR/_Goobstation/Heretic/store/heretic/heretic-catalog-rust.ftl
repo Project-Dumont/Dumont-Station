@@ -22,75 +22,75 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-knowledge-path-rust-s1-name = Blacksmith's Tale
+knowledge-path-rust-s1-name = Conto do Ferreiro
 knowledge-path-rust-s1-desc =
-    "Let me tell you a story", said the Blacksmith, as he gazed deep into his rusty blade.
+    "Deixe-me lhe contar uma história", disse o Ferreiro, enquanto fitava profundamente sua lâmina enferrujada.
 
-    Opens up the Path of Rust to you.
-    Allows you to transmute a knife with any trash item into a Rusty Blade.
-    You can only create two at a time.
+    Abre o Caminho da Ferrugem para você.
+    Permite transmutar uma faca com qualquer item de lixo em uma Lâmina Enferrujada.
+    Você só pode criar duas por vez.
 
-knowledge-path-rust-s2-name = Grasp of Rust
+knowledge-path-rust-s2-name = Garra da Ferrugem
 knowledge-path-rust-s2-desc =
-    On the ceiling of the Mansus, rust grows as moss does on a stone.
+    No teto do Mansus, a ferrugem cresce como musgo sobre uma pedra.
 
-    Your Mansus Grasp will deal massive damage to non-living matter and rust any surface it touches.
-    Already rusted surfaces are destroyed.
-    Standing on Rusted tiles heals, purges chems off your body and grants you resistance to batons.
-    Allows you to rust basic iron walls and floors.
-    Gives you immunity to disgust.
+    Sua Garra do Mansus causará dano massivo à matéria não-viva e enferrujará qualquer superfície que tocar.
+    Superfícies já enferrujadas são destruídas.
+    Ficar sobre pisos Enferrujados cura, remove químicos do seu corpo e concede resistência a cassetetes.
+    Permite enferrujar paredes e pisos básicos de ferro.
+    Concede imunidade a nojo.
 
-knowledge-path-rust-s3-name = Aggressive Spread
+knowledge-path-rust-s3-name = Propagação Agressiva
 knowledge-path-rust-s3-desc =
-    All wise men know well not to visit the Rusted Hills... Yet the Blacksmith's tale was inspiring.
+    Todo homem sábio sabe bem que não se deve visitar as Colinas Enferrujadas... Ainda assim, o conto do Ferreiro foi inspirador.
 
-    Grants you Aggressive Spread, a spell that spreads rust to nearby surfaces.
+    Concede-lhe Propagação Agressiva, um feitiço que espalha ferrugem para superfícies próximas.
 
-# knowledge-path-rust-s3-name = Leeching Walk
+# knowledge-path-rust-s3-name = Caminhada Drenante
 # knowledge-path-rust-s3-desc =
-#     The speed was unparalleled, the strength unnatural. The Blacksmith was smiling.
+#     A velocidade era incomparável, a força antinatural. O Ferreiro sorria.
 #
-#     Grants you passive healing and resistance to batons while standing over rust.
+#     Concede cura passiva e resistência a cassetetes enquanto estiver sobre ferrugem.
 
-knowledge-path-rust-s4-name = Mark of Rust
+knowledge-path-rust-s4-name = Marca da Ferrugem
 knowledge-path-rust-s4-desc =
-    The Blacksmith looks away. To a place lost long ago. "Rusted Hills help those in dire need... at a cost."
+    O Ferreiro desvia o olhar. Para um lugar perdido há muito tempo. "As Colinas Enferrujadas ajudam os que estão em extrema necessidade... por um preço."
 
-    Your Mansus Grasp now applies the Mark of Rust. The mark is triggered from an attack with your Rusty Blade.
-    When triggered, your victim will suffer heavy disgust.
-    Allows you to rust special material walls.
+    Sua Garra do Mansus agora aplica a Marca da Ferrugem. A marca é ativada ao atacar com sua Lâmina Enferrujada.
+    Quando ativada, sua vítima sofrerá um forte nojo.
+    Permite enferrujar paredes de materiais especiais.
 
-knowledge-path-rust-s5-name = Rust Construction
+knowledge-path-rust-s5-name = Construção de Ferrugem
 knowledge-path-rust-s5-desc =
-    Images of foreign and ominous structures began to dance in my mind. Covered head to toe in thick rust, they no longer looked man made. Or perhaps they never were in the first place.
+    Imagens de estruturas estrangeiras e ominosas começaram a dançar em minha mente. Cobertas da cabeça aos pés por uma ferrugem espessa, já não pareciam feitas pelo homem. Ou talvez nunca tenham sido, em primeiro lugar.
 
-    Grants you Rust Construction, a spell that allows you to raise a wall out of a rusted floor.
-    Anyone overtop the wall will be thrown aside and sustain damage.
+    Concede-lhe Construção de Ferrugem, um feitiço que permite erguer uma parede a partir de um piso enferrujado.
+    Qualquer um que estiver sobre a parede será arremessado para o lado e sofrerá dano.
 
-knowledge-path-rust-s6-name = Entropic Plume
+knowledge-path-rust-s6-name = Pluma Entrópica
 knowledge-path-rust-s6-desc =
-    The corrosion was unstoppable. The rust was unpleasable. The Blacksmith was gone, and you hold their blade. Champions of hope, the Rustbringer is nigh!
+    A corrosão era imparável. A ferrugem era implacável. O Ferreiro se foi, e você empunha sua lâmina. Campeões da esperança, o Portador da Ferrugem está próximo!
 
-    Grants you Entropic Plume, a spell that releases a vexing wave of Rust. Blinds, poisons, and inflicts Amok on any heathen it hits, causing them to strike at friend or foe wildly. Also rusts and destroys and surfaces it hits.
+    Concede-lhe Pluma Entrópica, um feitiço que libera uma onda perturbadora de Ferrugem. Cega, envenena e inflige Frenesi em qualquer herege que atingir, fazendo-o atacar amigo ou inimigo indiscriminadamente. Também enferruja e destrói quaisquer superfícies que atingir.
 
-knowledge-path-rust-s7-name = Toxic Blade
+knowledge-path-rust-s7-name = Lâmina Tóxica
 knowledge-path-rust-s7-desc =
-    The Blacksmith hands you their blade. "The Blade will guide you through the flesh, should you let it." The heavy rust weights it down. You stare deeply into it. The Rusted Hills call for you, now.
+    O Ferreiro lhe entrega sua lâmina. "A Lâmina irá guiá-lo pela carne, se você permitir." A ferrugem pesada a torna mais lenta. Você encara profundamente seu brilho opaco. As Colinas Enferrujadas o chamam, agora.
 
-    Your Rusty Blade now causes toxic damage and disgust to those you attack and also increases rot level of corpses.
-    Standing on Rusted tiles closes up your wounds and heals your pain, healing effect increased.
-    Allows you to rust reinforced and mining walls.
+    Sua Lâmina Enferrujada agora causa dano tóxico e nojo em quem você atacar e também aumenta o nível de decomposição de cadáveres.
+    Ficar sobre pisos Enferrujados fecha seus ferimentos e alivia sua dor, com efeito de cura aumentado.
+    Permite enferrujar paredes reforçadas e de mineração.
 
-knowledge-path-rust-s8-rust-charge-name = Rust Charge
+knowledge-path-rust-s8-rust-charge-name = Investida de Ferrugem
 knowledge-path-rust-s8-rust-charge-desc =
-    The hills sparkled now, as I neared them my mind began to wander. I quickly regained my resolve and pushed forward, this last leg would be the most treacherous.
+    As colinas agora cintilavam; ao me aproximar delas, minha mente começou a vagar. Rapidamente recuperei minha determinação e segui em frente — esta última etapa seria a mais traiçoeira.
 
-    Grants you Rust Charge, a targeted action that can only be cast on a rusted tile. It charges you forward, destroying any rusted objects you come into contact with, it will also deal high damage to others and rust around you during the charge.
+    Concede-lhe Investida de Ferrugem, uma ação direcionada que só pode ser conjurada em um piso enferrujado. Ela o lança para frente, destruindo quaisquer objetos enferrujados com os quais você entrar em contato; também causa alto dano a outros e enferruja ao seu redor durante a investida.
 
-knowledge-path-rust-s9-name = Rustbringer's Oath
+knowledge-path-rust-s9-name = Juramento do Portador da Ferrugem
 knowledge-path-rust-s9-desc =
-    The ascension ritual of the Path of Rust.
-    Bring 3 rotting or silicon corpses to a transmutation rune to complete the ritual.
-    When completed, the ritual site will endlessly spread rust onto any surface, stopping for nothing.
-    Additionally, you will become extremely resilient on rust, healing at much higher rate, regenerating lost limbs and becoming immune to many effects and dangers.
-    You will be able to rust almost anything upon ascending.
+    O ritual de ascensão do Caminho da Ferrugem.
+    Traga 3 cadáveres apodrecendo ou de silício para uma runa de transmutação para completar o ritual.
+    Quando concluído, o local do ritual espalhará ferrugem incessantemente por qualquer superfície, sem parar por nada.
+    Além disso, você se tornará extremamente resistente sobre ferrugem, curando-se a uma taxa muito maior, regenerando membros perdidos e tornando-se imune a muitos efeitos e perigos.
+    Ao ascender, você poderá enferrujar quase qualquer coisa.

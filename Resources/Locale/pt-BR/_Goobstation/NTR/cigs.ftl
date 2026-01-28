@@ -1,12 +1,13 @@
-advertisement-cigs-deluxe-1 = SMOKE KING FILTERS!!
-advertisement-cigs-deluxe-2 = LIGHT UP LUCKY STRIKES!!
-advertisement-cigs-deluxe-3 = NANOTRASEN SATISFACTION!
-advertisement-cigs-deluxe-4 = PALL MALL PLEASURE!!
-advertisement-cigs-deluxe-5 = GET YOUR NANOLBORO BLUES!!
-advertisement-cigs-deluxe-6 = SPACE CAMEL FILTERS ARE HERE!!
-advertisement-cigs-deluxe-7 = ENJOY THE KROMBACH'S TASTE!!
-advertisement-cigs-deluxe-8 = TRY EXECUTIVE FINESS!!
-advertisement-cigs-deluxe-9 = CHESTERFILLED QUALITY!!
-advertisement-cigs-deluxe-10 = OLD GOLD SMOOTHNESS!!
-advertisement-cigs-deluxe-11 = N&T FRESHNESS!!
-advertisement-cigs-deluxe-12 = LET THEM KNOW YOURE RICH!!
+advertisement-cigs-deluxe-1 = FILTROS SMOKE KING!!
+advertisement-cigs-deluxe-2 = ACENDA SEUS LUCKY STRIKES!!
+advertisement-cigs-deluxe-3 = SATISFAÇÃO NANOTRASEN!
+advertisement-cigs-deluxe-4 = PRAZER PALL MALL!!
+advertisement-cigs-deluxe-5 = PEGUE SEUS NANOLBORO BLUES!!
+advertisement-cigs-deluxe-6 = FILTROS SPACE CAMEL CHEGARAM!!
+advertisement-cigs-deluxe-7 = APROVEITE O SABOR KROMBACH'S!!
+advertisement-cigs-deluxe-8 = EXPERIMENTE EXECUTIVE FINESS!!
+advertisement-cigs-deluxe-9 = QUALIDADE CHESTERFILLED!!
+advertisement-cigs-deluxe-10 = SUAVIDADE OLD GOLD!!
+advertisement-cigs-deluxe-11 = FRESCOR N&T!!
+advertisement-cigs-deluxe-12 = MOSTRE QUE VOCÊ É RICO!!
+

@@ -1,19 +1,20 @@
 lathe-recipe-BaseTranslatorImplanter-name = translator implanter
 
-lathe-recipe-BasicGalaticCommonTranslatorImplanter-subname = basic common translator implant
-lathe-recipe-AdvancedGalaticCommonTranslatorImplanter-subname = advanced common translator implant
-lathe-recipe-BubblishTranslatorImplanter-subname = bubblish translator implant
-lathe-recipe-NekomimeticTranslatorImplanter-subname = nekomimetic translator implant
-lathe-recipe-DraconicTranslatorImplanter-subname = draconic translator implant
-lathe-recipe-CanilunztTranslatorImplanter-subname = canilunzt translator implant
-lathe-recipe-SolCommonTranslatorImplanter-subname = sol-common translator implant
-lathe-recipe-ChittinTranslatorImplanter-subname = chittin translator implant
-lathe-recipe-RootSpeakTranslatorImplanter-subname = root-speak translator implant
-lathe-recipe-MofficTranslatorImplanter-subname = moffic translator implant
-lathe-recipe-ValyrianStandardTranslatorImplanter-subname = valyrian standard translator implant
-lathe-recipe-SiikMaasTranslatorImplanter-subname = siik'maas translator implant
-lathe-recipe-MarishTranslatorImplanter-subname = marish translator implant
-lathe-recipe-SchechiTranslatorImplanter-subname = schechi translator implant
-lathe-recipe-NewKinPidginTranslatorImplanter-subname = ka'rakk translator implant
-lathe-recipe-ChevalTranslatorImplanter-subname = cheval translator implant
-lathe-recipe-YowKriolTranslatorImplanter-subname = yow kriol translator implant
+lathe-recipe-BasicGalaticCommonTranslatorImplanter-subname = implante de tradutor comum básico
+lathe-recipe-AdvancedGalaticCommonTranslatorImplanter-subname = implante de tradutor comum avançado
+lathe-recipe-BubblishTranslatorImplanter-subname = implante de tradutor bubblish
+lathe-recipe-NekomimeticTranslatorImplanter-subname = implante de tradutor nekomimético
+lathe-recipe-DraconicTranslatorImplanter-subname = implante de tradutor dracônico
+lathe-recipe-CanilunztTranslatorImplanter-subname = implante de tradutor canilunzt
+lathe-recipe-SolCommonTranslatorImplanter-subname = implante de tradutor sol-comum
+lathe-recipe-ChittinTranslatorImplanter-subname = implante de tradutor chittin
+lathe-recipe-RootSpeakTranslatorImplanter-subname = implante de tradutor root-speak
+lathe-recipe-MofficTranslatorImplanter-subname = implante de tradutor moffic
+lathe-recipe-ValyrianStandardTranslatorImplanter-subname = implante de tradutor valiriano padrão
+lathe-recipe-SiikMaasTranslatorImplanter-subname = implante de tradutor siik'maas
+lathe-recipe-MarishTranslatorImplanter-subname = implante de tradutor marish
+lathe-recipe-SchechiTranslatorImplanter-subname = implante de tradutor schechi
+lathe-recipe-NewKinPidginTranslatorImplanter-subname = implante de tradutor ka'rakk
+lathe-recipe-ChevalTranslatorImplanter-subname = implante de tradutor cheval
+lathe-recipe-YowKriolTranslatorImplanter-subname = implante de tradutor yow kriol
+

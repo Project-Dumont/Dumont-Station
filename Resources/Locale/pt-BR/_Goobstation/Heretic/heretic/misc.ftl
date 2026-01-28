@@ -7,27 +7,27 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-heretic-influence-start = Draining influence...
+heretic-influence-start = Drenando influência...
 
-heretic-ritualrune-examine = Current selected ritual: [color=yellow]{$rit}[/color]
+heretic-ritualrune-examine = Ritual selecionado no momento: [color=yellow]{$rit}[/color]
 
-heretic-knowledge-gain = You've learned something
-heretic-knowledge-loss = You're forgotten something
+heretic-knowledge-gain = Você aprendeu algo.
+heretic-knowledge-loss = Você esqueceu algo.
 
-heretic-clothing-component-fail = Cannot wear this!
+heretic-clothing-component-fail = Não é possível vestir isso!
 
-heretic-protective-blade-component-no-targets = No targets!
+heretic-protective-blade-component-no-targets = Nenhum alvo!
 
-rust-corruption-silicon-damage = You are being corrupted by the rust!
+rust-corruption-silicon-damage = Você está sendo corrompido pela ferrugem!
 
-disgust-effect-warning = You feel kind of iffy...
+disgust-effect-warning = Você se sente meio enjoado...
 
-cosmic-field-component-bomb-defused-message = {$bomb} suddenly shuts off!
+cosmic-field-component-bomb-defused-message = {$bomb} de repente desliga!
 
-chat-speech-verb-name-hiss = Hiss
+chat-speech-verb-name-hiss = Sibilo
 
-void-ascend-begin = A snowstorm suddenly appears from outside the windows. An overwhelming sense of dread looms...
-void-ascend-end = The snowstorm begins to fade away...
-void-ascend-restart = The snowstorm suddenly appears again...
+void-ascend-begin = Uma nevasca surge de repente do lado de fora das janelas. Uma sensação esmagadora de pavor se aproxima...
+void-ascend-end = A nevasca começa a desaparecer...
+void-ascend-restart = A nevasca surge novamente de repente...
 
-ghoul-weapon-comp-examine = [color=red]This weapon seems extremely fragile. On further inspection it appears to be made of flesh and blood. It belongs to one of the creatures of the mansus and will disappear when the creature dies.[/color]
+ghoul-weapon-comp-examine = [color=red]Esta arma parece extremamente frágil. Observando melhor, ela parece ser feita de carne e sangue. Ela pertence a uma das criaturas de Mansus e irá desaparecer quando a criatura morrer.[/color]

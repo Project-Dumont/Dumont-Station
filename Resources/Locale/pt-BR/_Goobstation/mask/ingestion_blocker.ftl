@@ -3,4 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-ingestion-blocker-block-smoke-examine = This mask has integrated combat filters, blocking smoke ingestion even if internals are off
+ingestion-blocker-block-smoke-examine = Esta máscara possui filtros de combate integrados, bloqueando a inalação de fumaça mesmo se os internos estiverem desligados.
+

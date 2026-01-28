@@ -3,4 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-tiles-plating-rust = rusted plating
+tiles-plating-rust = piso enferrujado
+

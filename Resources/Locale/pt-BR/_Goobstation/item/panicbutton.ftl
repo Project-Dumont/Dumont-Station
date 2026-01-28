@@ -1,1 +1,2 @@
-panic-button-distress = Security distress signal activated. Immediate backup requested: {$position}.
+panic-button-distress = Sinal de socorro de segurança ativado. Reforços imediatos solicitados: {$position}.
+

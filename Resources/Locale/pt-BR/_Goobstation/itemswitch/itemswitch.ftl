@@ -1,1 +1,2 @@
-item-switch-failed-no-power = Not enough power!
+item-switch-failed-no-power = Energia insuficiente!
+

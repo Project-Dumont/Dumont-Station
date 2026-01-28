@@ -1,1 +1,1 @@
-multishot-component-examine = This weapon can be dual-wielded, causing it to miss { $chance }% of the time.
+multishot-component-examine = Esta arma pode ser empunhada em ambas as mãos, fazendo com que erre { $chance }% das vezes.

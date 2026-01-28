@@ -1,10 +1,10 @@
-# Ideally, subtype names should be short
-role-subtype-devil = Devil
+role-subtype-devil = Diabo
 role-subtype-blob = Blob
-role-subtype-heretic = Heretic
+role-subtype-heretic = Herege
 role-subtype-ghoul = Ghoul
-role-subtype-pirate = Pirate
+role-subtype-pirate = Pirata
 role-subtype-changeling = Ling
 role-subtype-brainwashed = Brainwashed
-role-subtype-slaughter-demon = Slaughter Demon
-role-subtype-slasher = The Slasher
+role-subtype-slaughter-demon = Demônio do Abate
+role-subtype-slasher = Slasher
+

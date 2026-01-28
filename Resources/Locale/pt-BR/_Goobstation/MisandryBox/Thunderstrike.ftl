@@ -1,2 +1,2 @@
-﻿admin-smite-thunderstrike-name = Thunderstrike
-admin-smite-thunderstrike-desc = Send EFCC on this guy
+﻿admin-smite-thunderstrike-name = Golpe de Trovão
+admin-smite-thunderstrike-desc = Envie a EFCC nesse cara

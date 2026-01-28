@@ -7,31 +7,31 @@
 
 # Navy
 
-job-description-navy-officer-undercover = Complete your assigned tasks, Terminate the given targets. Good luck.
-job-description-navy-captain = Classified.
-job-description-navy-officer = Answer faxes and radio communications directed at Central Command. Perform investigations on the station and it's crew.
-job-description-diplomat = Represent Central Command, managing relationships with other factions aboard the station. Cleanup the issues the captain has likely caused.
-job-description-navy-special-operations-officer = Send, brief, and direct emergency response teams or other Nanotrasen forces. Release the nuclear codes, or don't.
+job-description-navy-officer-undercover = Complete suas tarefas designadas. Elimine os alvos indicados. Boa sorte.
+job-description-navy-captain = Classificado.
+job-description-navy-officer = Responda faxes e comunicações de rádio dirigidas ao Comando Central. Realize investigações na estação e com sua tripulação.
+job-description-diplomat = Represente o Comando Central, gerenciando relações com outras facções a bordo da estação. Resolva os problemas que o capitão provavelmente causou.
+job-description-navy-special-operations-officer = Envie, informe e dirija equipes de resposta a emergências ou outras forças da Nanotrasen. Libere os códigos nucleares, ou não.
 
 # Generic Nanotrasen
 
-job-description-nct = Teach the newbies how to perform their company assigned tasks properly, and stay out of trouble.
+job-description-nct = Ensine os novatos a realizar corretamente as tarefas designadas pela empresa e mantenha-se fora de problemas.
 
 # Syndicate
 
-job-description-highcommander = You are an elite, high-ranking official within the Spinward Syndicate. It doesn't matter which faction, you're important to them all.
+job-description-highcommander = Você é um oficial de elite de alta patente dentro do Spinward Syndicate. Não importa a facção, você é importante para todas.
 
 # Half Life
 
-job-description-governmentman = Well, well, isn't this just like old times.
-job-description-hecu = Fufill the orders of your supervisor, no matter the morales.
+job-description-governmentman = Bem, bem, não é como nos velhos tempos.
+job-description-hecu = Cumprir as ordens do seu supervisor, independentemente da moralidade.
 
 # Misc
 
-job-description-conquest = Stand ready for my arrival, worm.
-job-description-mercenarycaptain = Order other mercs around. Act as muscle for the highest bidder. Just because it's NT now, doesn't mean it won't change later.
-job-description-roboticist = Build and maintain borgs and mechs. Keep the AI in check.
-job-description-radiohost = Host the stations local radio station, play vinyls, interview the crew, take faxes and run ads to make the best radio show on the station.
+job-description-conquest = Fique pronto para a minha chegada, verme.
+job-description-mercenarycaptain = Comande outros mercenários. Atue como força para o maior licitante. Só porque agora é NT, não significa que não mudará depois.
+job-description-roboticist = Construa e mantenha borgs e mechs. Mantenha a IA sob controle.
+job-description-radiohost = Apresente a estação de rádio local, toque vinis, entreviste a tripulação, receba faxes e faça anúncios para produzir o melhor programa de rádio da estação.
 
 # Viro
-job-description-virologist = Study spreading viruses, produce cures for ailing crewmembers, experiment in creating beneficial viruses. Make sure pandemics don't spread.
+job-description-virologist = Estude vírus em propagação, produza curas para tripulantes doentes, experimente criar vírus benéficos. Garanta que pandemias não se espalhem.

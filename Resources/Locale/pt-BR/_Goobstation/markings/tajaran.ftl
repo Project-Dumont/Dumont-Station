@@ -5,84 +5,84 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-marking-TajaranTorsoBelly = Chest Fur
-marking-TajaranTorsoBelly-belly = Fur
-marking-TajaranTorsoCrest = Chest Fur (Crest)
-marking-TajaranTorsoCrest-crest = Fur
-marking-TajaranTorsoFullBelly = Chest Fur (Full)
-marking-TajaranTorsoFullBelly-fullbelly = Fur
+marking-TajaranTorsoBelly = Pelagem do Peito
+marking-TajaranTorsoBelly-belly = Pelagem
+marking-TajaranTorsoCrest = Pelagem do Peito (Crista)
+marking-TajaranTorsoCrest-crest = Pelagem
+marking-TajaranTorsoFullBelly = Pelagem do Peito (Completa)
+marking-TajaranTorsoFullBelly-fullbelly = Pelagem
 
-marking-TajaranHeadMuzzle = Muzzle
-marking-TajaranHeadMuzzle-muzzle = Muzzle
-marking-TajaranHeadMuzzleLarge = Muzzle (Large)
-marking-TajaranHeadMuzzleLarge-muzzle_large = Muzzle
-marking-TajaranHeadNose = Nose
-marking-TajaranHeadNose-nose = Nose
-marking-TajaranHeadPatches = Patches
-marking-TajaranHeadPatches-patch = Patches
-marking-TajaranHeadPoints = Points
-marking-TajaranHeadPoints-points = Points
-marking-TajaranHeadTiger = Tiger
-marking-TajaranHeadTiger-tiger_face = Stripes
-marking-TajaranHeadTigerAlt = Tiger (Alternative)
-marking-TajaranHeadTigerAlt-tiger_head = Stripes
+marking-TajaranHeadMuzzle = Focinho
+marking-TajaranHeadMuzzle-muzzle = Focinho
+marking-TajaranHeadMuzzleLarge = Focinho (Grande)
+marking-TajaranHeadMuzzleLarge-muzzle_large = Focinho
+marking-TajaranHeadNose = Nariz
+marking-TajaranHeadNose-nose = Nariz
+marking-TajaranHeadPatches = Manchas
+marking-TajaranHeadPatches-patch = Manchas
+marking-TajaranHeadPoints = Pontos
+marking-TajaranHeadPoints-points = Pontos
+marking-TajaranHeadTiger = Tigre
+marking-TajaranHeadTiger-tiger_face = Listras
+marking-TajaranHeadTigerAlt = Tigre (Alternativo)
+marking-TajaranHeadTigerAlt-tiger_head = Listras
 
-marking-TajaranEarsRetro = Classic Ears
-marking-TajaranEarsRetro-ears = Ears
-marking-TajaranEarsRetroNear = Classic Ears (Alternative)
-marking-TajaranEarsRetroNear-ears_near = Ears
-marking-TajaranEarsSeparate = Classic Ears (Separated)
-marking-TajaranEarsSeparate-outears = Outer
-marking-TajaranEarsSeparate-inears = Inner
-marking-TajaranEarsSeparateNear = Classic Ears (Alternative, Separated)
-marking-TajaranEarsSeparateNear-outears_near = Outer
-marking-TajaranEarsSeparateNear-inears_near = Inner
+marking-TajaranEarsRetro = Orelhas Clássicas
+marking-TajaranEarsRetro-ears = Orelhas
+marking-TajaranEarsRetroNear = Orelhas Clássicas (Alternativa)
+marking-TajaranEarsRetroNear-ears_near = Orelhas
+marking-TajaranEarsSeparate = Orelhas Clássicas (Separadas)
+marking-TajaranEarsSeparate-outears = Parte Externa
+marking-TajaranEarsSeparate-inears = Parte Interna
+marking-TajaranEarsSeparateNear = Orelhas Clássicas (Alternativa, Separadas)
+marking-TajaranEarsSeparateNear-outears_near = Parte Externa
+marking-TajaranEarsSeparateNear-inears_near = Parte Interna
 
-marking-TajaranTailAnim = Classic Tail (Animated)
-marking-TajaranTailAnim-tail_anim = Tail
-marking-TajaranTailAnimRings = Classic Tail (Animated, Rings)
-marking-TajaranTailAnimRings-tail_anim = Tail
-marking-TajaranTailAnimRings-tail_anim_rings = Rings
-marking-TajaranTailRetro = Classic Tail
-marking-TajaranTailRetro-tail = Tail
-marking-TajaranTailRetroRings = Classic Tail (Rings)
-marking-TajaranTailRetroRings-tail = Tail
-marking-TajaranTailRetroRings-tail_rings = Rings
+marking-TajaranTailAnim = Cauda Clássica (Animada)
+marking-TajaranTailAnim-tail_anim = Cauda
+marking-TajaranTailAnimRings = Cauda Clássica (Animada, Anéis)
+marking-TajaranTailAnimRings-tail_anim = Cauda
+marking-TajaranTailAnimRings-tail_anim_rings = Anéis
+marking-TajaranTailRetro = Cauda Clássica
+marking-TajaranTailRetro-tail = Cauda
+marking-TajaranTailRetroRings = Cauda Clássica (Anéis)
+marking-TajaranTailRetroRings-tail = Cauda
+marking-TajaranTailRetroRings-tail_rings = Anéis
 
-marking-TajaranOverlayPatch = Patches
-marking-TajaranOverlayPatch-patch = Patches
-marking-TajaranOverlayPoints = Points
-marking-TajaranOverlayPoints-points = Points
+marking-TajaranOverlayPatch = Manchas
+marking-TajaranOverlayPatch-patch = Manchas
+marking-TajaranOverlayPoints = Pontos
+marking-TajaranOverlayPoints-points = Pontos
 
-marking-TajaranEarsBasic = Basic Ears
-marking-TajaranEarsBasic-basic_outer = Outer ear
-marking-TajaranEarsBasic-basic_inner = Inner ear
+marking-TajaranEarsBasic = Orelhas Básicas
+marking-TajaranEarsBasic-basic_outer = Parte Externa
+marking-TajaranEarsBasic-basic_inner = Parte Interna
 
-marking-TajaranEarsCurled = Curled Ears
-marking-TajaranEarsCurled-curled_outer = Outer ear
-marking-TajaranEarsCurled-curled_inner = Inner ear
+marking-TajaranEarsCurled = Orelhas Enroladas
+marking-TajaranEarsCurled-curled_outer = Parte Externa
+marking-TajaranEarsCurled-curled_inner = Parte Interna
 
-marking-TajaranEarsDroopy = Droopy Ears
-marking-TajaranEarsDroopy-droopy_outer = Outer ear
-marking-TajaranEarsDroopy-droopy_inner = Inner ear
+marking-TajaranEarsDroopy = Orelhas Caídas
+marking-TajaranEarsDroopy-droopy_outer = Parte Externa
+marking-TajaranEarsDroopy-droopy_inner = Parte Interna
 
-marking-TajaranEarsFuzzy = Fuzzy Ears
-marking-TajaranEarsFuzzy-basic_outer = Outer ear
-marking-TajaranEarsFuzzy-fuzzy_inner = Ear fuzz
+marking-TajaranEarsFuzzy = Orelhas Felpudas
+marking-TajaranEarsFuzzy-basic_outer = Parte Externa
+marking-TajaranEarsFuzzy-fuzzy_inner = Pelos da Orelha
 
-marking-TajaranEarsStubby = Stubby Ears
-marking-TajaranEarsStubby-stubby_outer = Outer ear
-marking-TajaranEarsStubby-stubby_inner = Inner ear
+marking-TajaranEarsStubby = Orelhas Curtas
+marking-TajaranEarsStubby-stubby_outer = Parte Externa
+marking-TajaranEarsStubby-stubby_inner = Parte Interna
 
-marking-TajaranEarsTall = Tall Ears
-marking-TajaranEarsTall-tall_outer = Outer ear
-marking-TajaranEarsTall-tall_inner = Inner ear
-marking-TajaranEarsTall-tall_fuzz = Ear fuzz
+marking-TajaranEarsTall = Orelhas Altas
+marking-TajaranEarsTall-tall_outer = Parte Externa
+marking-TajaranEarsTall-tall_inner = Parte Interna
+marking-TajaranEarsTall-tall_fuzz = Pelos da Orelha
 
-marking-TajaranEarsTorn = Torn Ears
-marking-TajaranEarsTorn-torn_outer = Outer ear
-marking-TajaranEarsTorn-torn_inner = Inner ear
+marking-TajaranEarsTorn = Orelhas Rasgadas
+marking-TajaranEarsTorn-torn_outer = Parte Externa
+marking-TajaranEarsTorn-torn_inner = Parte Interna
 
-marking-TajaranEarsWide = Wide Ears
-marking-TajaranEarsWide-wide_outer = Outer ear
-marking-TajaranEarsWide-wide_inner = Inner ear
+marking-TajaranEarsWide = Orelhas Largas
+marking-TajaranEarsWide-wide_outer = Parte Externa
+marking-TajaranEarsWide-wide_inner = Parte Interna

@@ -1,1 +1,2 @@
-lawbringer-phrase = I AM THE LAW
+lawbringer-phrase = EU SOU A LEI
+

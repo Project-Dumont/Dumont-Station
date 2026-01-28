@@ -22,93 +22,76 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-knowledge-path-void-s1-name = Glimmer of Winter
+knowledge-path-void-s1-name = Vislumbre do Inverno
 knowledge-path-void-s1-desc =
-    I feel a shimmer in the air, the air around me gets colder.
-    I start to realize the emptiness of existence. Something's watching me.
+    Sinto um tremeluzir no ar; o ar ao meu redor fica mais frio.
+    Começo a perceber o vazio da existência. Algo está me observando.
 
-    Opens up the Path of Void to you.
-    Allows you to transmute a knife in sub-zero temperatures into a Void Blade.
-    You can only create two at a time.
+    Abre o Caminho do Vazio para você.
+    Permite transmutar uma faca em temperaturas abaixo de zero em uma Lâmina do Vazio.
+    Você só pode criar duas por vez.
 
-knowledge-path-void-s2-name = Grasp of Void
+knowledge-path-void-s2-name = Garra do Vazio
 knowledge-path-void-s2-desc =
-    I saw the cold watcher who observes me. The chill mounts within me.
-    They are quiet. This isn't the end of the mystery.
+    Eu vi o observador frio que me observa. O gelo cresce dentro de mim.
+    Eles são silenciosos. Este não é o fim do mistério.
 
-    Your Mansus Grasp will temporarily mute and chill the victim.
-    You become immune to cold temperatures.
+    Sua Garra do Mansus irá temporariamente silenciar e gelar a vítima.
+    Você se torna imune a temperaturas frias.
 
-
-knowledge-path-void-s3-name = Void Phase
+knowledge-path-void-s3-name = Fase do Vazio
 knowledge-path-void-s3-desc =
-    The entity calls themself the Aristocrat. They effortlessly walk through air like nothing - leaving a harsh, cold breeze in their wake.
-    They disappear, and I am left in the blizzard.
+    A entidade se chama Aristocrata. Ela atravessa o ar sem esforço, como se não fosse nada — deixando uma brisa dura e gélida em seu rastro.
+    Ela desaparece, e eu fico na nevasca.
 
-    Grants you Void Phase, a long range targeted teleport spell.
-    Additionally causes damage to heathens around your original and target destination.
+    Concede-lhe Fase do Vazio, um feitiço de teleporte direcionado de longo alcance.
+    Além disso, causa dano aos pagãos ao redor do seu local de origem e do destino.
 
-#knowledge-path-void-s3-name = Aristocrat's Way
-#knowledge-path-void-s3-desc =
-#    I found a thread of cold breath. It lead me to a strange shrine, all made of crystals.
-#    Translucent and white, a depiction of a nobleman stood before me.
-#
-#    Grants you immunity to cold temperatures, and removes your need to breathe.
-#    You can still take damage due to a lack of pressure.
-
-knowledge-path-void-s4-name = Mark of Void
+knowledge-path-void-s4-name = Marca do Vazio
 knowledge-path-void-s4-desc =
-    A gust of wind? A shimmer in the air? The presence is overwhelming, my senses began to betray me. My mind is my own enemy.
+    Uma rajada de vento? Um tremeluzir no ar? A presença é esmagadora, meus sentidos começaram a me trair. Minha mente é minha própria inimiga.
 
-    Your Mansus Grasp now applies the Mark of Void. The mark is triggered from an attack with your Void Blade.
-    When triggered, gives the victim the Curse of Void, which will mute and slowly freeze them to death.
-    You no longer need to breathe/
+    Sua Garra do Mansus agora aplica a Marca do Vazio. A marca é ativada por um ataque com sua Lâmina do Vazio.
+    Quando ativada, concede à vítima a Maldição do Vazio, que irá silenciá-la e congelá-la lentamente até a morte.
+    Você não precisa mais respirar/
 
-#knowledge-path-void-s5-name = Void Blast
-#knowledge-path-void-s5-desc =
-#    Every door I open racks my body. I am afraid of what is behind them. Someone is expecting me,
-#    and my legs start to drag. Is that... snow?
-#
-#    Grants you Void Blast, a spell that shoots out a freezing blast in a cone in front of you,
-#    freezing the ground and cursing any victims within.
-
-knowledge-path-void-s5-name = Void Prison
+knowledge-path-void-s5-name = Prisão do Vazio
 knowledge-path-void-s5-desc =
-    At first, I see myself, waltzing along a snow-laden street.
-    I try to yell, grab hold of this fool and tell them to run.
-    But the only welts made are on my own beating fist.
-    My smiling face turns to regard me, reflecting back in glassy eyes the empty path I have been lead down.
+    No começo, eu me vejo, valsando por uma rua coberta de neve.
+    Eu tento gritar, agarrar esse tolo e dizer para ele correr.
+    Mas as únicas marcas deixadas são no meu próprio punho que bate.
+    Meu rosto sorridente se vira para me encarar, refletindo em olhos vítreos o caminho vazio pelo qual fui conduzido.
 
-    Grants you Void Prison, a spell that places your victim into a ball, making them unable to do anything or speak. Applies void chill afterwards.
+    Concede-lhe Prisão do Vazio, um feitiço que coloca sua vítima dentro de uma esfera, impedindo-a de fazer qualquer coisa ou falar. Aplica Calafrio do Vazio depois.
 
-knowledge-path-void-s6-name = Void Pull
+knowledge-path-void-s6-name = Puxão do Vazio
 knowledge-path-void-s6-desc =
-    All is fleeting, but what else stays? I'm close to ending what was started.
-    The Aristocrat reveals themselves to me again. They tell me I am late. Their pull is immense, I cannot turn back.
+    Tudo é passageiro, mas o que mais permanece? Estou perto de terminar o que foi começado.
+    O Aristocrata se revela para mim novamente. Ele me diz que estou atrasado. Sua atração é imensa; não posso voltar atrás.
 
-    Grants you Void Pull, a spell that pulls all nearby heathens towards you, stunning them briefly.
+    Concede-lhe Puxão do Vazio, um feitiço que puxa todos os pagãos próximos em sua direção, atordoando-os brevemente.
 
-knowledge-path-void-s7-name = Seeking Blade
+knowledge-path-void-s7-name = Lâmina Buscadora
 knowledge-path-void-s7-desc =
-    Fleeting memories, fleeting feet. I mark my way with frozen blood upon the snow. Covered and forgotten.
+    Memórias fugazes, passos fugazes. Eu marco meu caminho com sangue congelado sobre a neve. Coberto e esquecido.
 
-    Your blade now freezes enemies. Additionally, you can now attack distant targets with your Void Blade, teleporting directly next to them.
+    Sua lâmina agora congela inimigos. Além disso, agora você pode atacar alvos distantes com sua Lâmina do Vazio, teleportando-se diretamente para perto deles.
 
-knowledge-path-void-s8-name = Void Conduit
+knowledge-path-void-s8-name = Conduto do Vazio
 knowledge-path-void-s8-desc =
-    The hum in the still, cold air turns to a cacophonous rattle.
-    Over the noise, there is no distinction to the clattering of window panes and the yawning knowledge that ricochets through my skull.
-    The doors won't close. I can't keep the cold out now.
+    O zumbido no ar imóvel e frio se torna um chocalhar cacofônico.
+    Por cima do ruído, não há distinção entre o bater das vidraças e o conhecimento bocejante que ricocheteia pelo meu crânio.
+    As portas não vão fechar. Eu não consigo mais manter o frio do lado de fora.
 
-    Grants you Void Conduit, a spell which summons a pulsing gate to the Void itself. Every pulse breaks windows and airlocks, while afflicting Heathens with an eldritch chill and shielding Heretics against low pressure.
+    Concede-lhe Conduto do Vazio, um feitiço que invoca um portal pulsante para o próprio Vazio. Cada pulso quebra janelas e comportas, enquanto aflige Pagãos com um calafrio eldritch e protege Hereges contra baixa pressão.
 
-knowledge-path-void-s9-name = Waltz at the End of Time
+knowledge-path-void-s9-name = Valsa no Fim dos Tempos
 knowledge-path-void-s9-desc =
-    The ascension ritual of the Path of Void.
-    Bring 3 corpses to a transmutation rune in sub-zero temperatures to complete the ritual.
-    When completed, grants you Aristocrat's Blessing.
-    A snowstorm is summoned, everything around you will be turned into snow and the air will constantly be frozen. Those nearby will be silenced and frozen even quicker.
-    Lights will shatter when nearby.
-    Lasers will pass through you and bullets will be slowed down at your presense and will avoid hitting you, the effect is greater if you are either walking or lying down.
-    Water, ice and slippery surfaces no slip you.
-    You will also become immune to flames, space, and similar environmental hazards. You gain total freedom of movement in zero-gravity.
+    O ritual de ascensão do Caminho do Vazio.
+    Traga 3 corpos para uma runa de transmutação em temperaturas abaixo de zero para completar o ritual.
+    Quando concluído, concede-lhe a Bênção do Aristocrata.
+    Uma nevasca é invocada; tudo ao seu redor será transformado em neve e o ar ficará constantemente congelado. Aqueles próximos serão silenciados e congelados ainda mais rápido.
+    Luzes irão se estilhaçar quando estiverem próximas.
+    Lasers atravessarão você e balas serão desaceleradas pela sua presença e evitarão atingi-lo; o efeito é maior se você estiver andando ou deitado.
+    Água, gelo e superfícies escorregadias não fazem você escorregar.
+    Você também se tornará imune a chamas, ao espaço e a perigos ambientais semelhantes. Você ganha total liberdade de movimento em gravidade zero.

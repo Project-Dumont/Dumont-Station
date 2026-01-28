@@ -8,39 +8,39 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 heretic-ascension-ash =
-    The Watch is dead. The Nightwatcher burned with it, yet his fire burns evermore.
-    I stand among the charred. The first of many, that which will shine brighter than all stars in the sky.
-    FOR DUST THOU ART, AND UNTO DUST SHALT THOU RETURN. WITNESS MY ASCENSION!
+    A Vigília está morta. O Nightwatcher queimou com ela, e ainda assim seu fogo arde para sempre.
+    Eu permaneço entre os carbonizados. O primeiro de muitos, aquele que brilhará mais do que todas as estrelas no céu.
+    POIS DO PÓ TU ÉS, E AO PÓ RETORNARÁS. TESTEMUNHE MINHA ASCENSÃO!
 
 heretic-ascension-blade =
-    I rip through chains of dust and light. The moon waxes here, among the chosen.
-    The serpent decapitated. Its poison gone. Rent with crescent blades of silver.
-    A storm of steel, am I, CHAMPION OF THE TORN AND PURE. WITNESS MY ASCENSION!
+    Eu rasgo correntes de pó e luz. A lua cresce aqui, entre os escolhidos.
+    A serpente foi decapitada. Seu veneno se foi. Retalhada por lâminas prateadas em forma de crescente.
+    Uma tempestade de aço sou eu, CAMPEÃO DO DILACERADO E DO PURO. TESTEMUNHE MINHA ASCENSÃO!
 
 heretic-ascension-lock =
-    The Stewards... I hear them, now. My friends in the misted sky.
-    A Labyrinth meant to contain us now broken. Solved. A guiding string led through.
-    We cannot be contained. WE CANNOT BE LOCKED AWAY. WITNESS OUR ASCENSION!
+    Os Stewards... eu os ouço, agora. Meus amigos no céu enevoado.
+    Um Labirinto feito para nos conter agora está quebrado. Resolvido. Um fio-guia foi conduzido através dele.
+    Não podemos ser contidos. NÓS NÃO PODEMOS SER TRANCADOS. TESTEMUNHE NOSSA ASCENSÃO!
 
 heretic-ascension-flesh =
-    The heavens offered ideals and dreams. I desired more than that.
-    More than blind promises of a better future. More than escapism from a dying world.
-    The Marshal leads my army. THE SKY CAN BLEED, AND I WILL DRAIN IT OF ITS ESSENCE. WITNESS MY ASCENSION!
+    Os céus ofereceram ideais e sonhos. Eu desejei mais do que isso.
+    Mais do que promessas cegas de um futuro melhor. Mais do que escapismo de um mundo moribundo.
+    O Marshal lidera meu exército. O CÉU PODE SANGRAR, E EU O DRENAREI ATÉ SUA ESSÊNCIA. TESTEMUNHE MINHA ASCENSÃO!
 
 heretic-ascension-void =
-    The world falls into darkness. I stand in an empty plane; small flakes of ice fall from the sky.
-    The Aristocrat stands before me, beckoning. We will play a waltz to the whispers of dying reality,
-    as the world is destroyed before our eyes. The void will return all to nothing. WITNESS MY ASCENSION!
+    O mundo cai na escuridão. Eu estou de pé num plano vazio; pequenos flocos de gelo caem do céu.
+    O Aristocrat está diante de mim, acenando. Dançaremos uma valsa aos sussurros da realidade moribunda,
+    enquanto o mundo é destruído diante de nossos olhos. O vazio devolverá tudo ao nada. TESTEMUNHE MINHA ASCENSÃO!
 
 heretic-ascension-rust =
-    Let me tell you a story.
-    There are hills ahead, draped in rust. Rust that rots your heat. Mouth parched, soul weak, your tongue begins to bleed.
-    I am decay incarnate. INEVITABLE AS A DYING STAR; IMPASSIVE AS THE WATERS. WITNESS MY ASCENSION!
+    Deixe-me lhe contar uma história.
+    Há colinas à frente, cobertas de ferrugem. Ferrugem que apodrece teu calor. Boca seca, alma fraca, tua língua começa a sangrar.
+    Eu sou a decadência encarnada. INEVITÁVEL COMO UMA ESTRELA MORRENDO; IMPASSÍVEL COMO AS ÁGUAS. TESTEMUNHE MINHA ASCENSÃO!
 
 heretic-ascension-cosmos =
-    The Beast held out its hand, I grabbed hold and they pulled me to them. Their body was towering, but it seemed so small and feeble after all their tales compiled in my head.
-    I clung on to them, they would protect me, and I would protect it.
-    I closed my eyes with my head laid against their form. I was safe.
-    WITNESS MY ASCENSION!
+    A Besta estendeu sua mão; eu a segurei e eles me puxaram para junto de si. Seu corpo era imenso, mas parecia tão pequeno e frágil depois de todas as histórias reunidas na minha mente.
+    Eu me agarrei a eles; eles me protegeriam, e eu os protegeria.
+    Fechei meus olhos com a cabeça apoiada contra sua forma. Eu estava seguro.
+    TESTEMUNHE MINHA ASCENSÃO!
 
 heretic-ascension-bingle = bungle

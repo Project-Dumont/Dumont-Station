@@ -1,14 +1,15 @@
-marking-UnderwearDefault-boxers = Underwear
-marking-UnderwearDefault = Underwear (Default)
+marking-UnderwearDefault-boxers = Roupa íntima
+marking-UnderwearDefault = Roupa íntima (Padrão)
 
-marking-UnderwearBriefs-briefs = Underwear
-marking-UnderwearBriefs = Underwear (Briefs)
+marking-UnderwearBriefs-briefs = Roupa íntima
+marking-UnderwearBriefs = Roupa íntima (Cueca)
 
-marking-UnderwearLowriders-lowriders = Underwear
-marking-UnderwearLowriders = Underwear (Lowriders)
+marking-UnderwearLowriders-lowriders = Roupa íntima
+marking-UnderwearLowriders = Roupa íntima (Lowriders)
 
-marking-UnderwearSatin-satin = Underwear
-marking-UnderwearSatin = Underwear (Satin)
+marking-UnderwearSatin-satin = Roupa íntima
+marking-UnderwearSatin = Roupa íntima (Seda)
 
-marking-UnderwearTanga-tanga = Underwear
-marking-UnderwearTanga = Underwear (Tanga)
+marking-UnderwearTanga-tanga = Roupa íntima
+marking-UnderwearTanga = Roupa íntima (Tanga)
+

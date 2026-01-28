@@ -1,2 +1,2 @@
-﻿role-timer-hair-too-neon = Your hair color is too saturated. Maximum allowed is [color=magenta]{ $threshold }[/color]. (Switch from RGB to HSV)
-role-timer-hair-not-neon = Your hair color is not saturated enough. Minimum allowed is [color=magenta] { $threshold }[/color]. (Switch from RGB to HSV)
+﻿role-timer-hair-too-neon = A cor do seu cabelo está saturada demais. O máximo permitido é [color=magenta]{ $threshold }[/color]. (Mude de RGB para HSV)
+role-timer-hair-not-neon = A cor do seu cabelo não está saturada o suficiente. O mínimo permitido é [color=magenta]{ $threshold }[/color]. (Mude de RGB para HSV)

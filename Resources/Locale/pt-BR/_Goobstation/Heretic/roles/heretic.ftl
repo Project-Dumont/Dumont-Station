@@ -6,9 +6,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-roles-antag-heretic-name = Heretic
-roles-antag-heretic-description = Find influences, realize they've all been taken. Sacrifice people and become all powerful or die trying.
-roles-antag-hereticmidround-name = Heretic Midround
+roles-antag-heretic-name = Herege
+roles-antag-heretic-description = Encontre influências, perceba que todas já foram tomadas. Sacrifique pessoas e torne-se todo-poderoso, ou morra tentando.
+roles-antag-hereticmidround-name = Herege (Meio da Rodada)
 
 roles-antag-ghoul-name = Ghoul
-roles-antag-ghoul-description = Aid your master in achieving ascension.
+roles-antag-ghoul-description = Ajude seu mestre a alcançar a ascensão.
+

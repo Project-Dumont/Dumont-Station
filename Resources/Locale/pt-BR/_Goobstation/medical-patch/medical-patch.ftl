@@ -6,10 +6,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-goobstation-medicalpatch-bounty-desc = There is a medical emergency going on. Send some patches to help us out over here
-goobstation-medicalpatch-bounty-name = Medical Patches
+goobstation-medicalpatch-bounty-desc = Há uma emergência médica acontecendo. Envie alguns curativos para nos ajudar aqui
+goobstation-medicalpatch-bounty-name = Curativos Médicos
 
-goobstation-medicalpatch-sticy-trystick = Started placing patch
-goobstation-medicalpatch-sticy-trystick-success = Patch placed
-goobstation-medicalpatch-sticy-tryremove = Started removing patch
-goobstation-medicalpatch-sticy-tryremove-success = Patch removed
+goobstation-medicalpatch-sticy-trystick = Iniciando a aplicação do curativo
+goobstation-medicalpatch-sticy-trystick-success = Curativo aplicado
+goobstation-medicalpatch-sticy-tryremove = Iniciando a remoção do curativo
+goobstation-medicalpatch-sticy-tryremove-success = Curativo removido
+

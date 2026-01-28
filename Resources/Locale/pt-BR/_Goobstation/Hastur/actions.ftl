@@ -1,23 +1,24 @@
-hastur-lash-target = {THE($user)} lashes {THE($target)} with a sharp tentacle!
+hastur-lash-target = {THE($user)} chicoteia {THE($target)} com um tentáculo afiado!
 
-hastur-devour = {THE($user)} reveals their true form for a moment and devours {THE($target)} whole!
+hastur-devour = {THE($user)} revela sua verdadeira forma por um instante e devora {THE($target)} inteiro!
 
-hastur-insanityaura-begin1 = The reality around you fades out...
-hastur-insanityaura-begin2 = Suddenly, your mind feels extremely frail and vulnerable...
-hastur-insanityaura-begin3 = Your sanity begins to unravel...
+hastur-insanityaura-begin1 = A realidade ao seu redor começa a desaparecer...
+hastur-insanityaura-begin2 = De repente, sua mente parece extremamente frágil e vulnerável...
+hastur-insanityaura-begin3 = Sua sanidade começa a se desfazer...
 
-hastur-reveal1 = A horrible apparition fades into view!
-hastur-hide1 = {THE($user)} vanishes from sight!
+hastur-reveal1 = Uma aparição horrível se materializa!
+hastur-hide1 = {THE($user)} desaparece de vista!
 
-hastur-omnipresence-activate = Everything, everywhere, all at once.
+hastur-omnipresence-activate = Tudo, em todo lugar, ao mesmo tempo.
 
-hastur-pet = A sharp tentacle slaps {THE($user)} away as they attempt to pet {THE($target)}!
+hastur-pet = Um tentáculo afiado dá um tapa em {THE($user)} enquanto {SUBJECT($user)} tenta fazer carinho em {THE($target)}!
 
-hastur-announcement = The King is watching. It's time for you to perform.
+hastur-announcement = O Rei está observando. É hora de você se apresentar.
 
-ghost-role-information-hastur-name-token = The King in Yellow (Token)
-ghost-role-information-hastur-name = The King in Yellow
+ghost-role-information-hastur-name-token = O Rei de Amarelo (Token)
+ghost-role-information-hastur-name = O Rei de Amarelo
 ghost-role-information-hastur-description = ????
-ghost-role-information-hastur-rules =  You are [color=yellow]???[/color]. 
+ghost-role-information-hastur-rules = Você é [color=yellow]???[/color].
 hastur-round-end-agent-name = ????
-hastur-role-greeting = I am the [color=yellow]King[/color]. Fear the unknown.
+hastur-role-greeting = Eu sou o [color=yellow]Rei[/color]. Tema o desconhecido.
+

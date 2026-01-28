@@ -6,9 +6,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-job-supervisors-ntr-centcom = the Nanotrasen Representative and Central Command
-job-supervisors-commander = the Navy Captain
-job-supervisors-null = nobody but yourself.
+job-supervisors-ntr-centcom = o Representante Nanotrasen e o Comando Central
+job-supervisors-commander = o Capitão da Marinha
+job-supervisors-null = ninguém além de você mesmo.
 
-job-supervisor-syndicate = The Spinward Syndicate
-job-supervisors-credits = The Highest Bidders
+job-supervisor-syndicate = A Spinward Syndicate
+job-supervisors-credits = Os Maiorais Licitantes
+

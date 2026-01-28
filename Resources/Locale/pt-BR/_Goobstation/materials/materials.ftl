@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-materials-bscrystal = bluespace crystal
-materials-bscrystal-unprocessed = unprocessed bluespace crystal
+materials-bscrystal = Cristal de Bluespace
+materials-bscrystal-unprocessed = Cristal de Bluespace não processado

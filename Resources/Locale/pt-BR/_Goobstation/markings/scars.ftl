@@ -1,2 +1,2 @@
-marking-BodyScarr-scar_chest = Rightsides scar
-marking-BodyScarr = Rightsides scar
+marking-BodyScarr-scar_chest = Cicatriz no lado direito do peito
+marking-BodyScarr = Cicatriz no lado direito do peito

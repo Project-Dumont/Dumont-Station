@@ -1,2 +1,3 @@
-item-added-gamerule = You summoned something by using this item
-item-already-added-gamerule = You have already summoned something
+item-added-gamerule = Você invocou algo ao usar este item.
+item-already-added-gamerule = Você já invocou algo.
+

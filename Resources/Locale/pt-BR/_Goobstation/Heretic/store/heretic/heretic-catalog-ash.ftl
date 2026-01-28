@@ -23,72 +23,72 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-knowledge-path-ash-s1-name = Nightwatcher's Secret
+knowledge-path-ash-s1-name = Segredo do Vigia Noturno
 knowledge-path-ash-s1-desc =
-    The City Guard know their watch. If you ask them at night, they may tell you about the ashy lantern.
+    A Guarda da Cidade conhece bem sua vigília. Se você perguntar a eles à noite, talvez lhe contem sobre a lanterna de cinzas.
 
-    Opens up the Path of Ash to you.
-    Allows you to transmute a match and a knife into an Ashen Blade.
-    You can only create two at a time.
+    Abre para você o Caminho das Cinzas.
+    Permite transmutar um fósforo e uma faca em uma Lâmina Cinérea.
+    Você só pode criar duas por vez.
 
-knowledge-path-ash-s2-name = Grasp of Ash
+knowledge-path-ash-s2-name = Garra das Cinzas
 knowledge-path-ash-s2-desc =
-    The Nightwatcher was the first of them, his treason started it all. Their lantern, expired to ash - their watch, absent.
+    O Vigia Noturno foi o primeiro dentre eles; sua traição deu início a tudo. Sua lanterna, reduzida a cinzas — sua vigília, ausente.
 
-    Your Mansus Grasp will burn the eyes of the victim, damaging them and blurring their vision.
+    Sua Garra do Mansus queimará os olhos da vítima, causando dano e turvando sua visão.
 
-knowledge-path-ash-s3-name = Ashen Shift
+knowledge-path-ash-s3-name = Passo Cinéreo
 knowledge-path-ash-s3-desc =
-    He knew how to walk between the planes.
+    Ele sabia caminhar entre os planos.
 
-    Grants you Ashen Passage, a spell that lets you phase out of reality and traverse a very short distance, passing though any walls.
+    Concede-lhe Passagem Cinérea, um feitiço que permite sair de fase da realidade e atravessar uma distância muito curta, passando por quaisquer paredes.
 
-knowledge-path-ash-s4-name = Mark of Ash
+knowledge-path-ash-s4-name = Marca das Cinzas
 knowledge-path-ash-s4-desc =
-    He was a very particular man, always watching in the dead of night.
-    But in spite of his duty, he regularly tranced through the Manse with his blazing lantern held high.
-    He shone brightly in the darkness, until the blaze begin to die.
+    Ele era um homem muito peculiar, sempre vigiando no silêncio da noite.
+    Mas, apesar de seu dever, ele frequentemente entrava em transe e atravessava o Mansus com sua lanterna ardente erguida.
+    Ele brilhava intensamente na escuridão, até que a chama começou a se apagar.
 
-    Your Mansus Grasp now applies the Mark of Ash. The mark is triggered from an attack with your Ashen Blade.
-    When triggered, the victim takes additional stamina and burn damage, and the mark is transferred to a nearby heathen.
-    Damage dealt is decreased with each transfer.
+    Sua Garra do Mansus agora aplica a Marca das Cinzas. A marca é ativada ao atacar com sua Lâmina Cinérea.
+    Quando ativada, a vítima sofre dano adicional de stamina e queimadura, e a marca é transferida para um pagão próximo.
+    O dano causado diminui a cada transferência.
 
-knowledge-path-ash-s5-name = Volcano Blast
+knowledge-path-ash-s5-name = Explosão Vulcânica
 knowledge-path-ash-s5-desc =
-    No fire was hot enough to rekindle them. No fire was bright enough to save them. No fire is eternal.
+    Nenhum fogo era quente o bastante para reacendê-los. Nenhum fogo era brilhante o bastante para salvá-los. Nenhum fogo é eterno.
 
-    Grants you Volcano Blast, a spell that - after a short charge - fires off a beam of energy at a nearby enemy,
-    setting them on fire and burning them.
-    If they do not extinguish themselves, the beam will continue to another target.
+    Concede-lhe Explosão Vulcânica, um feitiço que — após uma breve carga — dispara um feixe de energia contra um inimigo próximo,
+    ateando fogo nele e queimando-o.
+    Se ele não se apagar, o feixe continuará para outro alvo.
 
-knowledge-path-ash-s6-name = Mask of Madness
+knowledge-path-ash-s6-name = Máscara da Loucura
 knowledge-path-ash-s6-desc =
-    The Nightwatcher was lost. That's what the Watch believed. Yet he walked the world, unnoticed by the masses.
+    O Vigia Noturno estava perdido. Era isso que a Vigília acreditava. Ainda assim, ele caminhava pelo mundo, despercebido pelas massas.
 
-    Allows you to transmute any mask, a flare, a pool of ash, a lighter, a stun baton, and a liver to create a Mask of Madness.
-    The mask instills fear into heathens who witness it, causing stamina damage, hallucinations, and insanity.
-    It can also be forced onto a heathen, to make them unable to take it off...
-    Additionally, the mask grants you protection from fires and high temperature when worn.
+    Permite transmutar qualquer máscara, um sinalizador, um monte de cinzas, um isqueiro, um cassetete elétrico e um fígado para criar uma Máscara da Loucura.
+    A máscara incute medo em pagãos que a testemunham, causando dano de stamina, alucinações e insanidade.
+    Ela também pode ser forçada sobre um pagão, impedindo-o de removê-la...
+    Além disso, quando usada, a máscara lhe concede proteção contra fogo e altas temperaturas.
 
-knowledge-path-ash-s7-name = Fiery Blade
+knowledge-path-ash-s7-name = Lâmina Ígnea
 knowledge-path-ash-s7-desc =
-    He returned, blade in hand, he swung and swung as the ash fell from the skies.
-    His city, the people he swore to watch... and watch he did, as they all burnt to cinders.
+    Ele retornou, lâmina em punho; golpe após golpe, enquanto as cinzas caíam dos céus.
+    Sua cidade, as pessoas que jurou vigiar... e ele vigiou, enquanto todas se queimavam até virarem cinzas.
 
-    Your blade now lights enemies ablaze on attack.
+    Sua lâmina agora incendeia inimigos ao atacar.
 
-knowledge-path-ash-s8-name = Nightwatcher's Rebirth
+knowledge-path-ash-s8-name = Renascimento do Vigia Noturno
 knowledge-path-ash-s8-desc =
-    The fire was inescapable, and yet, life remained in his charred body. The Nightwatcher was a particular man, always watching.
+    O fogo era inevitável e, ainda assim, a vida permaneceu em seu corpo carbonizado. O Vigia Noturno era um homem peculiar, sempre vigiando.
 
-    Grants you Nightwatcher's Rebirth, a spell that extinguishes you and burns all nearby heathens who are currently on fire, healing you for every victim afflicted.
-    If any victims afflicted are in critical condition, they will also instantly die.
+    Concede-lhe Renascimento do Vigia Noturno, um feitiço que o apaga e queima todos os pagãos próximos que estejam em chamas, curando você para cada vítima afetada.
+    Se alguma das vítimas afetadas estiver em condição crítica, ela também morrerá instantaneamente.
 
-knowledge-path-ash-s9-name = Ashlord's Rite
+knowledge-path-ash-s9-name = Rito do Senhor das Cinzas
 knowledge-path-ash-s9-desc =
-    The ascension ritual of the Path of Ash.
-    Bring 3 burning or husked corpses to a transmutation rune to complete the ritual.
-    When completed, you become a harbinger of flames, gaining two abilites.
-    Cascade, which causes a massive, growing ring of fire around you,
-    and Oath of Flame, causing you to passively create a ring of flames as you walk.
-    You will also become immune to flames, space, and similar environmental hazards.
+    O ritual de ascensão do Caminho das Cinzas.
+    Traga 3 cadáveres em chamas ou ressequidos para uma runa de transmutação para completar o ritual.
+    Ao concluí-lo, você se torna um arauto das chamas, adquirindo duas habilidades.
+    Cascata, que cria um enorme anel de fogo crescente ao seu redor,
+    e Juramento da Chama, fazendo com que você crie passivamente um anel de fogo enquanto caminha.
+    Você também se tornará imune a chamas, ao espaço e a perigos ambientais semelhantes.
