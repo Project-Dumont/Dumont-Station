@@ -1,6 +1,7 @@
 using Content.Goobstation.Common.Bloodstream;
 using Content.Goobstation.Common.CCVar; // Goobstation
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Humanoid;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness;
@@ -93,11 +94,8 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             }
 
             {// BloodTypes start
-
                 if (string.IsNullOrEmpty(bloodstream.BloodType))
-                {
-                    SetBloodstreamType((uid, bloodstream));
-                }
+                    SetBloodstreamType(uid);
                 ///<summary>
                 ///  Verify if any Reagent in the bloodstream isn't the entity "blood" Reagent
                 ///  And applying celular damage based on the percentage of foreign "blood" in the bloodstream.
@@ -635,32 +633,36 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             SolutionContainer.TryAddReagent(ent.Comp.BloodSolution.Value, ent.Comp.BloodReagent, currentVolume, null, GetEntityBloodData(ent));
     }
     //BloodType start
-    public string GenerateBloodType(bool isLizardMan)
+    public string GenerateBloodType(BloodstreamComponent? uidBloodstream, HumanoidAppearanceComponent? uidAppearence)
     {
-        var rh = new[] { "+", "-" };
+
         string? bloodType;
-        if (isLizardMan)
+        var rh = SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.RHsWeights), _random);
+        if (uidAppearence!.Species.Id == "Reptilian")
         {
-            bloodType = "L" + rh[_random.Next(rh.Length)];
+            bloodType = "L" + rh;
             return bloodType;
         }
-        var humanoidTypes = new[] { "A", "B", "AB", "O" };
-        bloodType = humanoidTypes[_random.Next(humanoidTypes.Length)] + rh[_random.Next(rh.Length)];
+        if (uidAppearence!.Species.Id == "Gingerbread")
+        {
+            uidBloodstream.BloodTypesWeights = "GingerbreadTypes";
+            bloodType = SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.BloodTypesWeights), _random);
+            return bloodType;
+        }
+
+        var type = SharedRandomExtensions.Pick(_prototypeManager.Index(uidBloodstream!.BloodTypesWeights), _random);
+
+        bloodType = type + rh;
+
         return bloodType;
     }
-    public void SetBloodstreamType(Entity<BloodstreamComponent?> ent)
+    public void SetBloodstreamType(EntityUid uid, BloodstreamComponent? uidBloodstream = null, HumanoidAppearanceComponent? uidAppearence = null)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(uid, ref uidBloodstream, ref uidAppearence, false))
             return;
 
-        var entBlood = ent.Comp.BloodReagent;
-        var BlackListedBlood = new[] { "Sap", "BlackBlood", "Sugar", "InsectBlood", "AmmoniaBlood" };
-        if (BlackListedBlood.Contains(entBlood.ToString()))
-            return;
-
-        var isLizardMan = entBlood == "LizardBlood";
-        ent.Comp.BloodType = GenerateBloodType(isLizardMan);
-        DirtyField(ent, ent.Comp, nameof(BloodstreamComponent.BloodType));
+        uidBloodstream.BloodType = GenerateBloodType( uidBloodstream, uidAppearence);
+        DirtyField(uid, uidBloodstream, nameof(BloodstreamComponent.BloodType));
     }
     //BloodType end
 
