@@ -1,77 +1,112 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 QuantumSeanyGlass <quantum1002@gmail.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Avalon <148660190+BYONDFuckery@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 reagent-name-toxin = toxin
-reagent-desc-toxin = Um produto químico não surpreendentemente tóxico. Disponível em um distribuidor chem emagado.
+reagent-desc-toxin = An unsurprisingly toxic chemical. Available at an emagged chem dispenser.
 
 reagent-name-carpotoxin = carpotoxin
-reagent-desc-carpotoxin = Um reagente altamente tóxico encontrado em carpas espaciais. Causa uma sensação dolorosa de queimação.
+reagent-desc-carpotoxin = A highly toxic reagent found in space carps. Causes a painful burning sensation.
 
 reagent-name-mold = mold
-reagent-desc-mold = Um crescimento fúngico, muitas vezes encontrado em lugares escuros e úmidos ou em pão expirado. Você vai desenvolver uma doença se ingerir.
+reagent-desc-mold = A fungal growth, often found in dark, humid places or on expired bread. Will cause you to develop a disease if ingested.
 
 reagent-name-polytrinic-acid = polytrinic acid
-reagent-desc-polytrinic-acid = Substância química extremamente corrosiva. Gravemente queima qualquer um que entra diretamente em contato com ele.
+reagent-desc-polytrinic-acid = An extremely corrosive chemical substance. Severely burns anyone who comes directly into contact with it.
 
 reagent-name-chloral-hydrate = chloral hydrate
-reagent-desc-chloral-hydrate = Um fármaco sedativo e hipnótico. Comumente usado para colocar outras pessoas para dormir, quer elas queiram quer não.
+reagent-desc-chloral-hydrate = A sedative and hypnotic chemical. Commonly used to put other people to sleep, whether they want to or not.
 
-reagent-name-gastrotoxin = gastrotoxina
-reagent-desc-gastrotoxin = Um subproduto moderadamente tóxico da decomposição. Mais comumente encontrado em alimentos estragados.
+reagent-name-gastrotoxin = gastrotoxin
+reagent-desc-gastrotoxin = A moderately toxic byproduct of decomposition. Most commonly found in spoiled food.
 
 reagent-name-ferrochromic-acid = ferrochromic acid
-reagent-desc-ferrochromic-acid = Uma solução levemente corrosiva, incapaz de causar perigo grave a menos que seja ingerida.
+reagent-desc-ferrochromic-acid = A mildy corrosive solution, unable of causing severe danger unless ingested.
 
 reagent-name-fluorosulfuric-acid = fluorosulfuric acid
-reagent-desc-fluorosulfuric-acid = Um produto químico altamente corrosivo, capaz de deixar uma marca na sua pele.
+reagent-desc-fluorosulfuric-acid = A highly corrosive chemical, capable of leaving quite a mark on your skin.
 
 reagent-name-sulfuric-acid = sulfuric acid
-reagent-desc-sulfuric-acid = Um produto químico corrosivo. Mantenha longe do seu rosto.
+reagent-desc-sulfuric-acid = A corrosive chemical. Keep away from your face.
 
 reagent-name-unstable-mutagen = unstable mutagen
-reagent-desc-unstable-mutagen = Causa mutações quando injetado em pessoas ou plantas vivas. Altas doses podem ser letais, especialmente em humanos.
+reagent-desc-unstable-mutagen = Causes mutations when injected into living people or plants. High doses may be lethal, especially in humans.
 
 reagent-name-heartbreaker-toxin = heartbreaker toxin
-reagent-desc-heartbreaker-toxin = Bloqueia sinais neurológicos para o sistema respiratório, causando asfixia. Porém, dexalina plus e epinefrina a filtrarão.
+reagent-desc-heartbreaker-toxin = A hallucinogenic compound derived from mindbreaker toxin. it blocks neurological signals to the respiratory system, causing asphyxiation. Dexalin plus and epinephrine will filter it out, however.
 
 reagent-name-lexorin = lexorin
-reagent-desc-lexorin = Um produto químico de ação rápida usado para asfixiar pessoas rapidamente.
+reagent-desc-lexorin = A fast-acting chemical used to asphyxiate people rapidly.
 
 reagent-name-mindbreaker-toxin = mindbreaker toxin
-reagent-desc-mindbreaker-toxin = Um potente composto alucinógeno que era conhecido como LSD.
+reagent-desc-mindbreaker-toxin = A potent hallucinogenic compound that is formerly known as LSD.
 
 reagent-name-histamine = histamine
-reagent-desc-histamine = Um produto químico causado pela alergenia reagindo com anticorpos. Letal em grandes quantidades.
+reagent-desc-histamine = A chemical caused by allergenics reacting with antibodies. Lethal at large quantities.
 
 reagent-name-theobromine = theobromine
-reagent-desc-theobromine = Um alcalóide amargo da planta de cacau, comumente encontrado no chocolate. Não alimente animais com isso.
+reagent-desc-theobromine = A bitter alkaloid of the cacao plant, commonly found in chocolate. Do not feed to animals.
 
 reagent-name-amatoxin = amatoxin
-reagent-desc-amatoxin = Uma toxina mortal encontrada em alguns cogumelos, principalmente fly amanita. As doses pequenas podem ser letais.
+reagent-desc-amatoxin = A deadly toxin found in some mushrooms, primarily fly amanita. Small doses can be lethal.
 
 reagent-name-vent-crud = vent crud
-reagent-desc-vent-crud = Substância negra encontrado em sistemas de ventilação mal conservados. Pode causar tosse de ventilação.
+reagent-desc-vent-crud = A jet black substance found in poorly maintained ventilation systems. Can cause vent cough.
 
 reagent-name-romerol = romerol
-reagent-desc-romerol = Uma mistura de outro mundo capaz de trazer os mortos-vivos à vida. Se não forem tratados, os efeitos são irreversíveis e trarão certa desgraça sobre a estação. Manuseie com cuidado.
+reagent-desc-romerol = An otherworldly concoction able to bring the undead to life. If untreated, the effects are irreversible and will bring certain doom upon the station. Handle with care.
 
 reagent-name-uncooked-animal-proteins = uncooked animal proteins
-reagent-desc-uncooked-animal-proteins = Os estômagos de formas de vida mais moles não digerem isso.
+reagent-desc-uncooked-animal-proteins = This is very risky for the stomachs of softer lifeforms to digest.
 
-reagent-name-allicin = allicina
-reagent-desc-allicin = Um composto organossulfurado encontrado em álios, como alho, cebola e plantas relacionado.
+reagent-name-allicin = allicin
+reagent-desc-allicin = An organosulfur compound found in alliums like garlic, onions, and related plants.
 
 reagent-name-pax = pax
-reagent-desc-pax = Um fármaco psiquiátrico que impede que o paciente machuque alguém diretamente.
+reagent-desc-pax = A psychiatric chemical which prevents the patient from directly harming anyone.
 
 reagent-name-honk = honk
-reagent-desc-honk = Uma toxina encontrada no banânio. Provoca buzina grave e hemorragia interna, também pode causar mutação no paciente.
+reagent-desc-honk = A toxin found in bananium. Causes severe honking and internal bleeding, may also cause the patient to mutate.
 
-reagent-name-lead = chumbo
-reagent-desc-lead = Uma toxina de ação lenta, mas incrivelmente letal, encontrada no aço mas apenas em quantidades vestigiais. Sem sabor.
+reagent-name-lead = lead
+reagent-desc-lead = A slow-acting but incredibly lethal toxin found in steel, albeit in trace amounts. Tasteless.
 
-reagent-name-bungotoxin = bungotoxina
-reagent-desc-bungotoxin = Um veneno de ação moderadamente lenta encontrado no caroço da fruta bungo.
+reagent-name-bungotoxin = bungotoxin
+reagent-desc-bungotoxin = A moderately slow-acting poison found within the pit of the bungo fruit.
 
 reagent-name-vestine = vestine
-reagent-desc-vestine = Tem uma reação adversa no corpo, causando grande agitação. Embora não seja particularmente útil por si só, pode ser usado para produzir uma pequena variedade de produtos químicos.
+reagent-desc-vestine = Has an adverse reaction within the body causing major jittering. While not particularly useful on its own, it can be used to produce a small variety of chemicals.
 
 reagent-name-tazinide = tazinide
-reagent-desc-tazinide = Uma mistura metálica altamente perigosa que pode interferir na maior parte dos movimentos através de uma corrente eletrizante.
+reagent-desc-tazinide = A highly dangerous metallic mixture which can interfere with most movement through an electrifying current.
+
+reagent-name-lipolicide = lipolicide
+reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body.
+
+reagent-name-mechanotoxin = mechanotoxin
+reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
+
+reagent-name-toxintrash = trash 
+reagent-desc-toxintrash = An awful-smelling fluid. Deadly to non-vox.

@@ -1,18 +1,34 @@
-health-examinable-carbon-none = Não tem nenhuma ferida visível para ver.
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-health-examinable-carbon-Blunt-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } cotusões leves pelo { POSS-ADJ($target) } corpo.[/color]
-health-examinable-carbon-Blunt-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } contusões graves por todo o { POSS-ADJ($target) } corpo![/color]
-health-examinable-carbon-Blunt-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } o corpo está completamente coberto por lesões![/color]
+health-examinable-carbon-none = There are no obvious wounds to be seen.
 
-health-examinable-carbon-Slash-10 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } alguns cortes pequenos.[/color]
-health-examinable-carbon-Slash-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } cortes medianos pelo { POSS-ADJ($target) } corpo.[/color]
-health-examinable-carbon-Slash-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } cortes grandes pelo { POSS-ADJ($target) } corpo![/color]
-health-examinable-carbon-Slash-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } o corpo está completamente dilacerado![/color]
+health-examinable-carbon-Blunt-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor contusions across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Blunt-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } major bruises all over { POSS-ADJ($target) } body![/color]
+health-examinable-carbon-Blunt-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } body is completely covered in lesions![/color]
 
-health-examinable-carbon-Piercing-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } feridas profundas pelo { POSS-ADJ($target) } corpo![/color]
+health-examinable-carbon-Slash-10 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } some minor cuts.[/color]
+health-examinable-carbon-Slash-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } lacerations across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Slash-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } major gashes all over { POSS-ADJ($target) } body![/color]
+health-examinable-carbon-Slash-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } body is completely mauled![/color]
 
-health-examinable-carbon-Heat-25 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } queimaduras leves pelo { POSS-ADJ($target) } corpo.[/color]
-health-examinable-carbon-Heat-50 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } queimaduras graves pelo { POSS-ADJ($target) } corpo.[/color]
-health-examinable-carbon-Heat-75 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } queimaduras de terceiro grau pelo { POSS-ADJ($target) } corpo![/color]
+health-examinable-carbon-Piercing-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } deep wounds all over { POSS-ADJ($target) } body![/color]
 
-health-examinable-carbon-Shock-50 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } marcas de choque elétrico pelo { POSS-ADJ($target) } corpo![/color]
+health-examinable-carbon-Heat-25 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor burns across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Heat-50 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } major burns across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Heat-75 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } severe third-degree burns across { POSS-ADJ($target) } body![/color]
+
+health-examinable-carbon-Shock-50 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } electrical shock marks across { POSS-ADJ($target) } body![/color]
+
+health-examinable-carbon-Cold-25 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor frostbite across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Cold-50 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } major frostbite across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Cold-75 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } severe third-degree frostbite across { POSS-ADJ($target) } body![/color]
+
+health-examinable-carbon-Caustic-25 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor chemical burns.[/color]
+health-examinable-carbon-Caustic-50 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } chemical burns across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Caustic-75 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } severe chemical burns all over { POSS-ADJ($target) } body![/color]

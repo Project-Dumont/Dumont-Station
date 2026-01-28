@@ -1,9 +1,8 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 silicon-overheating = Você sente seus circuitos superaquecendo!
-silicon-crit = Integridade estrutural em estado crítico!
-silicon-power-low = Baixo nível de energia!
-
-# alerts-charge-name = Carga
-# alerts-charge-name = Carregar
-
-# alerts-charge-desc = Seu nível atual de bateria.
-# alerts-charge-desc = Seu nível de bateria.
+silicon-crit = Integridade estrutural crítica!
+silicon-power-low = Energia baixa!

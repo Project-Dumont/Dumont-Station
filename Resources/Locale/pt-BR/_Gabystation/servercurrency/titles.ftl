@@ -1,28 +1,34 @@
-title-beta = 1° Título
+title-beta = 1º Título
+title-test = Teste
 
 title-exclusive-contribu = Contribuidor
 title-exclusive-donator = Doador
-
 title-exclusive-ex-admin = Ex-Admin
-title-exclusive-trial-admin = Trial-Admin
+title-exclusive-trial-admin = Admin em Teste
 title-exclusive-admin = Admin
-title-exclusive-headmin = Headmin
+title-exclusive-headmin = Head Admin
 title-exclusive-host = Host
 
-# Avaibles
+# Disponíveis
 
 title-poor = Pobre
 title-noob = Noob
-title-clown = Clown
+title-clown = Palhaço
 title-silicon = Silício
 
-title-depto-science = Sci
-title-depto-medbay = Med
-title-depto-cargo = Cargo
-title-depto-security = Sec
-title-depto-engineer = Eng
+title-depto-science = Ciência
+title-depto-medbay = Enfermaria
+title-depto-cargo = Carga
+title-depto-security = Segurança
+title-depto-engineer = Engenharia
 
 title-captain = Cap
-title-syndicate = Synd
+title-syndicate = Sindicato
 title-nanotrasen = NT
 title-robust = Robusto
+
+# LGBT (disabled)
+title-gay = Gay
+title-bi = Bi
+title-lesbian = Lesbian
+title-trans = Trans

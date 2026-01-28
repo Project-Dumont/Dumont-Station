@@ -1,36 +1,44 @@
-advertisement-syndiedrobe-1 = Roupas novas!
-advertisement-syndiedrobe-2 = Roupas para qualquer ocasião!
-advertisement-syndiedrobe-3 = Ser um patife pode ser elegante.
-advertisement-syndiedrobe-4 = De acordo com a análise: ao se vestir com mais estilo, a chance de sucesso de suas ações aumenta em 0,0098%!
-advertisement-syndiedrobe-5 = Ei, parece-me que você não olhou para minha variedade há muito tempo!
-advertisement-syndiedrobe-6 = Morte para NT!
-advertisement-syndiedrobe-7 = Ei, cara bonito, pegue uma roupa grátis às nossas custas!
-advertisement-syndiedrobe-8 = A verdade é dita - não é a bala que mata, mas a falta de estilo.
-advertisement-syndiedrobe-9 = Ele não tem roupas bonitas, a estação não tem roupas bonitas - mas você tem roupas bonitas, porque eu as darei a você. Se você deseja destruir o NT, este é o primeiro passo - se vestir bem.
-advertisement-syndiedrobe-10 = Quem está procurando, ele sempre encontrará ... se, é claro, está vestido lindamente.
-advertisement-syndiedrobe-11 = Se alguém disse que nossas roupas são péssimas, não é um motivo para ficar chateado, é um motivo para usar uma bala!
-advertisement-syndiedrobe-12 = Você pode transferir inimigos para o seu lado, vestindo-os nas melhores roupas do universo!
-advertisement-syndiedrobe-13 = Se você quiser viver, vista-se lindamente!
-advertisement-syndiedrobe-14 = Acorde, Sindicato. Temos uma estação para queimar.
-advertisement-syndiedrobe-15 = Ei! Venha, desmonte, as roupas mais elegantes da galáxia!
-advertisement-syndiedrobe-16 = Você sempre sonhou em se vestir com estilo? Então venha rapidamente!
-advertisement-syndiedrobe-17 = Eu cito o grande escritor: "Veja minha variedade de sortimento de roupas"
-advertisement-syndiedrobe-18 = De acordo com a varredura da área - é uma merda aqui, você precisa consertá-lo tirando as melhores roupas da minha variedade!
-advertisement-syndiedrobe-19 = Você sonhou em se vestir com estilo? Então você veio até nós!
-advertisement-syndiedrobe-20 = O que poderia ser melhor do que roupas novas da SindieDrobe!
-advertisement-syndiedrobe-21 = Assuste todos com sua aparência apenas em nossas roupas!
-advertisement-syndiedrobe-22 = Não vendemos bombas.
-advertisement-syndiedrobe-23 = Não somos responsáveis pelo aumento da agressão em relação aos nossos uniformes.
-advertisement-syndiedrobe-24 = Moda e elegância! Praticidade e charme! Sindiedrobe!
-advertisement-syndiedrobe-25 = As melhores fibras do underground!
-advertisement-syndiedrobe-26 = Nosso uniforme não é visível no escuro e é difícil notar o sangue, o que poderia ser melhor?
-advertisement-syndiedrobe-27 = Você quer causar pânico na estação apenas olhando? Estamos ao seu serviço!
-advertisement-syndiedrobe-28 = Nossos ternos são resistentes à umidade, o que significa que você não pode ter medo de se sujar de sangue!
-advertisement-syndiedrobe-29 = O melhor da galáxia!
-advertisement-syndiedrobe-30 = O que poderia ser melhor do que o cheiro do nosso uniforme pela manhã?
-advertisement-syndiedrobe-31 = Você pode deixar feedback sobre a conveniência do formulário enviando uma solicitação à nossa linha direta de Taipan, o principal não é o número errado!
-thankyou-syndiedrobe-1 = Faça bom uso!
-thankyou-syndiedrobe-2 = Morte ao NT!
-thankyou-syndiedrobe-3 = Mostre a eles o poder do estilo.
-thankyou-syndiedrobe-4 = Feliz assassinato!
-thankyou-syndiedrobe-5 = Aproveite o seu assassino!
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+advertisement-syndiedrobe-1 = Brand new outfits!
+advertisement-syndiedrobe-2 = Roof-top outfits for any occasion!
+advertisement-syndiedrobe-3 = Being a scoundrel can be stylish.
+advertisement-syndiedrobe-4 = According to the analysis: by dressing more stylishly, the chance of success of your actions increases by 0.0098%!
+advertisement-syndiedrobe-5 = Hey, it seems to me you haven't looked at my assortment for a long time!
+advertisement-syndiedrobe-6 = Death to NT!
+advertisement-syndiedrobe-7 = Hey handsome dude, take a free outfit at our expense!
+advertisement-syndiedrobe-8 = The truth is told — it's not the bullet that kills, but the lack of style.
+advertisement-syndiedrobe-9 = He doesn't have beautiful clothes, the station doesn't have beautiful clothes — but you have beautiful clothes, because I will give them to you. If you want to destroy NT, this is the first step — to dress nicely.
+advertisement-syndiedrobe-10 = Who is looking for, he will always find ... if of course he is dressed beautifully.
+advertisement-syndiedrobe-11 = If someone said that our outfits suck, it's not a reason to get upset, it's a reason to put a bullet!
+advertisement-syndiedrobe-12 = You can transfer enemies to your side by dressing them in the best outfits in the universe!
+advertisement-syndiedrobe-13 = If you want to live, dress beautifully!
+advertisement-syndiedrobe-14 = Wake up, syndicate. We have a station to burn.
+advertisement-syndiedrobe-15 = Hey! Come, take it apart, the most stylish clothes in the galaxy!
+advertisement-syndiedrobe-16 = Have you always dreamed of dressing stylishly? Then come quickly!
+advertisement-syndiedrobe-17 = I quote the great writer: "Look at my assortment of clothing assortment"
+advertisement-syndiedrobe-18 = According to the scan of the area - it sucks here, you need to fix it by taking the best clothes from my assortment!
+advertisement-syndiedrobe-19 = Have you dreamed of dressing stylishly? Then you come to us!
+advertisement-syndiedrobe-20 = What could be better than new clothes from SyndieDrobe!
+advertisement-syndiedrobe-21 = Frighten everyone with your appearance only in our clothes!
+advertisement-syndiedrobe-22 = We don't sell bombs.
+advertisement-syndiedrobe-23 = We are not responsible for increased aggression towards our uniforms.
+advertisement-syndiedrobe-24 = Fashion and elegance! Practicality and charm! SyndieDrobe!
+advertisement-syndiedrobe-25 = The best fibers in the underground!
+advertisement-syndiedrobe-26 = Our uniform is not visible in the dark and it's hard to notice the blood, what could be better?
+advertisement-syndiedrobe-27 = Do you want to cause a panic at the station just by looking? We are at your service!
+advertisement-syndiedrobe-28 = Our suits are moisture-resistant, which means you can not be afraid to get dirty with blood!
+advertisement-syndiedrobe-29 = The best in the galaxy!
+advertisement-syndiedrobe-30 = What could be better than the smell of our uniform in the morning?
+advertisement-syndiedrobe-31 = You can leave feedback about the convenience of the form by sending a request to our Taipan hotline, the main thing is not to the wrong number!
+thankyou-syndiedrobe-1 = Put it to good use!
+thankyou-syndiedrobe-2 = Death to NT!
+thankyou-syndiedrobe-3 = Show them the power of style.
+thankyou-syndiedrobe-4 = Happy killing!
+thankyou-syndiedrobe-5 = Enjoy your murderfest!

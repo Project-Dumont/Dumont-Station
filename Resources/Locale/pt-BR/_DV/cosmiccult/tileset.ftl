@@ -1,8 +1,8 @@
-tiles-cosmiccult-floor-glyph = superfície ritualistica maligna
+tiles-cosmiccult-floor-glyph = superfície glífica maligna
 tiles-cosmiccult-floor-smooth = superfície lisa maligna
-tiles-cosmiccult-floor-half = superfície de padrão meio maligno
-tiles-cosmiccult-floor-notched = superfície de padrão entalhado maligno
-tiles-cosmiccult-floor-split = superfície de padrão dividido maligno
+tiles-cosmiccult-floor-half = superfície maligna de padrão meio
+tiles-cosmiccult-floor-notched = superfície maligna de padrão entalhado
+tiles-cosmiccult-floor-split = superfície maligna de padrão dividido
 
-tiles-cosmiccult-floor-void = superfície do vazio
+tiles-cosmiccult-floor-void = superfície de piso do vazio
 tiles-cosmiccult-floor-malign = superfície maligna

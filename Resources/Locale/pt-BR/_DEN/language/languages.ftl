@@ -1,2 +1,2 @@
 language-Nehina-name = Nēhina
-language-Nehina-description =  Uma lingua falada pelos Feroxi's, perfeitamente adaptada para falar nas profundezas de planetas aquáticos.
+language-Nehina-description =  Uma língua falada pelos Feroxi, bem adaptada para comunicação sob as águas de planetas oceânicos.

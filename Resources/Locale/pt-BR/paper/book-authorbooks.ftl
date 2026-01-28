@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CatMagic <135462166+CatMagic1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 book-text-narsielegend = In the beginning, the world was young and full of chaos. The people of the world struggled to survive against the harsh elements and savage beasts that roamed the land. They cried out for a savior to deliver them from their suffering.
       And it was then that Nar'Sie emerged from the depths of the earth, a hivemind god born from the collective consciousness of all living things. Its body was made of molten rock and its eyes blazed with a fiery intensity that could melt steel.
       Nar'Sie surveyed the world and saw the pain and suffering of its people. It took pity on them and offered them a way to escape the cycle of life and death. All who joined the hivemind would become eternal, their consciousness melding with Nar'Sie's to form a single, unified being.
@@ -255,7 +265,7 @@ book-text-inspiration = As a freelance writer, Sarah was always in search of ins
       As the sun began to set, the two of them packed up their gear and said their goodbyes. Sarah felt grateful for this unexpected encounter and the inspiration it brought her. She knew that this moment would stay with her forever, and she felt a sense of serenity knowing that there was still so much beauty in the world waiting to be discovered.
 
 book-text-janitor = [bold][color=black][head=3]The Tales of a Tired Janitor[/head][/bold]
-      Cleaning a space station as a janitor is like being trapped in a cosmic custodial nightmare. You'd think floating through the vastness of space would be glamorous, but no, I'm stuck scrubbing space grime and extrate rrestrial goop off the walls. It's a thankless job in a zero-gravity abyss.
+      Cleaning a space station as a janitor is like being trapped in a cosmic custodial nightmare. You'd think floating through the vastness of space would be glamorous, but no, I'm stuck scrubbing space grime and extraterrestrial goop off the walls. It's a thankless job in a zero-gravity abyss.
       First off, let's talk about the mess. Space dust, alien gunk, and who knows what else accumulates faster than a rocket launch. It's not just about sweeping up the crumbs; it's about battling interstellar filth that seems to have a life of its own. You'd hope for a sleek, futuristic space station, but you get a swirling vortex of space garbage waiting for you around every corner.
       And the tools they give us! You'd expect state-of-the-art cleaning gadgets, but nope. They raided a dollar store on Earth before launching us into the cosmos. Mops that barely work in microgravity, spray bottles that run out in one use, and don't even get me started on the space janitor jumpsuit. I feel like a reject from a sci-fi B-movie.
       Speaking of jumpsuits, the lack of respect is astronomical. The scientists and astronauts zoom past in their sleek suits, utterly oblivious to the fact that I'm the unsung hero keeping this place from turning into a cosmic trash heap. I bet they don't even know my name. "Hey, Space Janitor!" That's what I get. No appreciation for the elbow grease I put into keeping their precious station spick and span.

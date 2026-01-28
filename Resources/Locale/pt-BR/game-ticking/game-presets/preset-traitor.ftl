@@ -1,58 +1,83 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Morbo <exstrominer@gmail.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Arkanic <50847107+Arkanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## Traitor
-## goob edit
 
-traitor-round-end-codewords = As palavras chave eram: [color=White]{$codewords}[/color]
-traitor-round-end-agent-name = traidor
+traitor-round-end-codewords = The codewords were: [color=White]{$codewords}[/color]
+traitor-round-end-agent-name = traitor
 
-objective-issuer-syndicate = [color=crimson]O Sindicato[/color]
-objective-issuer-unknown = Desconhecido
+objective-issuer-syndicate = [color=crimson]The Syndicate[/color]
+objective-issuer-unknown = Unknown
 
-traitor-role-greeting =
-    Você é um agente enviado pela {$corporation} em favor ao [color = darkred]Sindicato.[/color]
-    Seus objetivos e palavras-chaves estão no menu de personagem
-    Use seu uplink no PDA para comprar ferramentas apra a missão.
-    Lembre-se, [color = red]Morte a Nanotrasen![/color]
+# Shown at the end of a round of Traitor
 
-# final de rodada
-
-traitor-title = Traidor
-traitor-description = Existem traidores entre nós...
-traitor-not-enough-ready-players = Jogadores prontos insuficientes para iniciar o jogo! {$readyPlayersCount} jogadores estavam prontos de um total de {$minimumPlayers} necessário(s). Não é possível iniciar Traidor.
-traitor-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar Traidor.
+traitor-title = Traitor
+traitor-description = There are traitors among us...
+traitor-not-enough-ready-players = Not enough players readied up for the game! There were {$readyPlayersCount} players readied up out of {$minimumPlayers} needed. Can't start Traitor.
+traitor-no-one-ready = No players readied up! Can't start Traitor.
 
 ## TraitorDeathMatch
-traitor-death-match-title = Morte de Traidores
-traitor-death-match-description = Todos são traidores. Todos querem ver os outros mortos.
-traitor-death-match-station-is-too-unsafe-announcement = A estação está insegura demais para continuar. Você tem um minuto.
-traitor-death-match-end-round-description-first-line = Os PDAs recuperados posteriormente...
-traitor-death-match-end-round-description-entry = PDA de {$originalName}, com {$tcBalance} TC
+traitor-death-match-title = Traitor Deathmatch
+traitor-death-match-description = Everyone's a traitor. Everyone wants each other dead.
+traitor-death-match-station-is-too-unsafe-announcement = The station is too unsafe to continue. You have one minute.
+traitor-death-match-end-round-description-first-line = The PDAs recovered afterwards...
+traitor-death-match-end-round-description-entry = {$originalName}'s PDA, with {$tcBalance} TC
 
 ## TraitorRole
 
 # TraitorRole
+traitor-role-greeting =
+    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
+    Your objectives and codewords are listed in the character menu.
+    Use your uplink to buy the tools you'll need for this mission.
+    Death to Nanotrasen!
 traitor-role-codewords =
-    As palavras chave são: [color = lightgray]
+    The codewords are: [color = lightgray]
     {$codewords}.[/color]
-    As palavras chave podem ser usadas em conversas normais para se identificar discretamente a outros agentes do Sindicato.
-    Escute por elas e mantenha-as em segredo. Fique atento!
+    Codewords can be used in regular conversation to identify yourself discreetly to other syndicate agents.
+    Listen for them, and keep them secret.
 traitor-role-uplink-code =
-    Defina seu toque de chamada para as notas: [color = lightgray]{$code}[/color] para bloquear ou desbloquear seu uplink.
-    Lembre-se de bloqueá-lo depois, ou a tripulação da estação poderá abri-lo facilmente!
+    Set your ringtone to the notes [color = lightgray]{$code}[/color] to lock or unlock your uplink.
+    Remember to lock it after, or the stations crew will easily open it too!
+traitor-role-uplink-implant =
+    Your uplink implant has been activated, access it from your hotbar.
+    The uplink is secure unless someone removes it from your body.
+
+# don't need all the flavour text for character menu
+traitor-role-codewords-short =
+    The codewords are:
+    {$codewords}.
+traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access uplink.
+traitor-role-uplink-implant-short = Your uplink was implanted. Access it from your hotbar.
 
 traitor-role-moreinfo =
-    Encontre mais informações sobre seu papel no menu de personagem.
+    Find more information about your role in the character menu.
 
 traitor-role-nouplink =
-    Você não possui um uplink do Sindicato. Faça valer a pena.
+    You do not have a syndicate uplink. Make it count.
 
 traitor-role-allegiances =
-    Suas alianças:
+    Your allegiances:
 
 traitor-role-notes =
-    Notas da sua empresa:
+    Notes from your employer:
 
-# menu de personagem
-traitor-role-codewords-short =
-    As palavras chave são:
-    {$codewords}.
-traitor-role-uplink-code-short = Seu código do uplink é {$code}. Defina-o como toque do seu PDA para acessar o uplink.

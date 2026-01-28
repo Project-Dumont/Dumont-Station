@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-item-status-not-held = Mão vazia
+item-status-not-held = No held item

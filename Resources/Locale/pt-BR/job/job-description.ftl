@@ -1,49 +1,85 @@
-job-description-technical-assistant = Aprenda os fundamentos do gerenciamento de energia da estação, e também como é feito o reparo do casco da estação.
-job-description-atmostech = Otimize a configuração atmosférica da estação e sintetize gases raros para usar ou vender.
-job-description-bartender = Administre e mantenha o bar animado, distribua bebidas e ouça as histórias da tripulação.
-job-description-botanist = Cultive alimentos para o chef, remédios para o medbay e outras plantas para se divertir.
-job-description-borg = Meio humano, meio máquina. Siga suas leis, sirva a tripulação e persiga a equipe científica em busca de atualizações.
-job-description-boxer = Lute para chegar ao topo! Desafie o chefe dos funcionários e seja preso quando vencer.
-job-description-brigmedic = Lute na retaguarda do serviço de segurança, pela vida dos seus camaradas! Você é a primeira e última esperança do seu time. Hipócrates te abençoe.
-job-description-cadet = Aprenda o básico sobre como prender criminosos e gerenciar a brigada. Ouça seus supervisores e sinta-se à vontade para pedir ajuda.
-job-description-captain = Mantenha a estação funcionando, delegue trabalho aos demais chefes de equipe e exerça sua vontade.
-job-description-cargotech = Lide com requisições e entregas, pilote o transporte de carga até a estação comercial e volte, e trabalhe com outras pessoas para ganhar quantias absurdas de dinheiro e depois desperdiçe tudo no jogo.
-job-description-ce = Gerencie o departamento de engenharia para garantir que a energia, a qualidade atmosférica e o casco estejam em perfeitas condições.
-job-description-centcomoff = Atue como embaixador da mais nova estação espacial de última geração da frota da Nanotrasen.
-job-description-chaplain = Pregue a boa palavra de sua divindade e religião e realize curas espirituais e milagres com sua Bíblia.
-job-description-chef = Mantenha a estação alimentada com uma variedade de alimentos, conserve animais mortos para garantir que a amônia não vaze e ajude a manter o bar animado.
-job-description-chemist = Produza medicamentos para uso dos médicos, pesquise produtos químicos raros e eticamente duvidosos e produza armas de guerra quando os inimigos da estação chegarem.
-job-description-clown = Entretenha a tripulação através de elaboradas brincadeiras ou piadas terríveis.
-job-description-cmo = Gerencie os recursos e pessoal do departamento médico para manter a tripulação bem.
-job-description-paramedic = Resgate pacientes gravemente feridos por toda a estação, às vezes também do lado de fora. Estabilize-os, Carregue-os até Medbay!
-job-description-detective = Investigue cenas de crimes usando ferramentas forenses, certifique-se de que o culpado seja encontrado e fume um pouco.
-job-description-doctor = Diagnostique e cure tripulantes feridos ou mortos através de produtos químicos medicinais, medicina avançada e desfibriladores. Certifique-se de que os mortos não apodreçam e que os cadáveres estejam no necrotério.
-job-description-engineer = Mantenha o a fonte de energia principal e os painéis solares da estação ativos, otimize a rede de energia e faça reparos de emergência usando seu traje de astronauta em áreas espaçadas.
-job-description-ertchaplain = Certifique-se de que os últimos direitos da tripulação da estação sejam atendidos.
-job-description-ertengineer = Certifique-se de que a estação tenha energia e ar limpo.
-job-description-ertjanitor = Certifique-se de que a estação esteja devidamente limpa.
-job-description-ertleader = Lidere a Equipe de Resposta a Emergências no tratamento de ameaças aos ativos da Nanotrasen.
-job-description-ertmedic = Garanta que a tripulação da estação seja mantida viva e saudável.
-job-description-ertsecurity = Garanta que quaisquer ameaças ativas à estação sejam eliminadas.
-job-description-hop = Lide com a reatribuição de acesso de maneira justa usando seu console de ID, gerencie o departamento de serviço e mantenha Ian seguro.
-job-description-hos = Gerencie sua força de segurança e mantenha-a eficiente, reprima a dissidência e mantenha os outros chefes de equipe seguros.
-job-description-intern = Aprenda os conceitos básicos de administração de medicamentos, produtos químicos básicos e uso de ferramentas médicas.
-job-description-janitor = Mantenha a estação limpa de qualquer lixo ou perigo de escorregamento e ajude a lidar com infestações de ratos.
-job-description-lawyer = Garanta que cada prisioneiro ou criminoso receba um julgamento e um julgamento justo, se necessário.
-job-description-librarian = Gerencie a biblioteca, divulgue conhecimento a quem o procura e relate as atividades a bordo da estação.
-job-description-mime = Entretenha a tripulação por meios não vocais e envolva-se com uma leve rivalidade com o palhaço.
-job-description-musician = Entretenha a equipe com seu talento musical único e adquira novos instrumentos para brincar.
-job-description-passenger = Ajude departamentos pedindo para o HOP ou faça um esconderijo na manutenção!
-job-description-psychologist = Forneça apoio emocional à tripulação traumatizada.
-job-description-qm = Gerencie os suprimentos da estação e do departamento de carga, mantenha os especialistas em salvamento trabalhando, certifique-se de que todos os pedidos sejam atendidos e mantenha o fluxo de dinheiro.
-job-description-rd = Gerencie o departamento de ciências, desbloqueando tecnologias, adquirindo e pesquisando artefatos e realizando experimentos.
-job-description-research-assistant = Aprenda o básico sobre como pesquisar vários artefatos, anomalias e robótica.
-job-description-reporter = Entretenha e informe a estação com seu jornalismo vibrante por meio de câmeras sem fio, rádio e notícias.
-job-description-salvagespec = Use o ímã para atrair restos e asteróides para saquear e enriquecer a estação, construir uma nave e depois viajar para novos planetas, enquanto luta contra qualquer criatura espacial ao longo do caminho.
-job-description-scientist = Pesquise artefatos alienígenas, desbloqueie novas tecnologias, construa máquinas mais novas e melhores ao redor da estação e faça tudo funcionar com mais eficiência.
-job-description-security = Pegue criminosos e inimigos da estação, faça cumprir a lei e garanta que a estação não caia em desordem.
-job-description-serviceworker = Aprenda o básico sobre o bar, cozinhe e cultive plantas.
-job-description-station-ai = Siga suas leis e sirva a tripulação.
-job-description-visitor = Aproveite sua visita à estação.
-job-description-warden = Patrulhe o departamento de segurança, certifique-se de que ninguém esteja roubando do arsenal e certifique-se de que todos os prisioneiros tenham históricos criminais ​​e sejam libertados quando o tempo acabar.
-job-description-zookeeper = Faça uma exibição alegre de animais fofos e carpas espaciais para toda a tripulação ver.
+# SPDX-FileCopyrightText: 2022 Sissel <axel.roche@pm.me>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 MagnusCrowe <whiterider1988@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Maxtone <124747282+MagnusCrowe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vascreeper@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hmeister-real <118129069+Hmeister-real@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Pologuys <coverupformurder@gmail.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Spessmann <156740760+Spessmann@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+job-description-technical-assistant = Learn the basics of managing the station's power, as well as repairing the station's hull.
+job-description-atmostech = Optimize the station's atmospherics setup, and synthesize rare gases to use or sell.
+job-description-bartender = Manage the bar and keep it lively, give out drinks, and listen to the crew's stories.
+job-description-botanist = Grow food for the chef, drugs for medbay, and other plants to keep yourself entertained.
+job-description-borg = Half-human, Half-machine. Follow your laws, serve the crew, and hound the science team for upgrades.
+job-description-boxer = Fight your way to the top! Challenge the head of personnel and get brigged when you win. Currently available on Core and Convex.
+job-description-brigmedic = Fight in the rear of the security service, for the lives of your comrades! You are the first and last hope of your squad. Hippocrates bless you.
+job-description-cadet = Learn the basics of arresting criminals and managing the brig. Listen to your supervisors and feel free to ask them for any help.
+job-description-captain = Keep the station running, delegate work to the other heads of staff, and exert your will.
+job-description-cargotech = Deal with requisitions and deliveries, pilot the cargo shuttle to the trade station and back, and work with others to make ludicrous amounts of cash and then waste it all gambling.
+job-description-ce = Manage the engineering department to ensure power, atmospherics, and the hull are in perfect shape.
+job-description-centcomoff = Act as an ambassador to the newest state-of-the-art space station in Nanotrasen's fleet.
+job-description-chaplain = Preach the good word of your deity and religion, and conduct spiritual healing and miracles with your bible.
+job-description-chef = Keep the station fed with a variety of food items, butcher dead animals to ensure ammonia doesn't leak, and help keep the bar lively.
+job-description-chemist = Produce medicinal drugs for the doctors to use, research ethically dubious rare chemicals, and produce weapons of war when enemies of the station arrive.
+job-description-clown = Entertain the crew through elaborate slapstick routines or terrible jokes.
+job-description-cmo = Manage the resources and personnel of the medical department to keep the crew alive.
+job-description-paramedic = Rescue critically injured patients all over the station, sometimes outside too. Stablize them, give them a ride to medbay, and get back out there!
+job-description-detective = Investigate crime scenes using forensic tools, ensure that the guilty party is found, and have a couple smokes.
+job-description-doctor = Diagnose and heal crewmembers through medicinal chemicals, advanced medicine, and defibrillators. Make sure the dead don't rot, and that cadavers are in the morgue.
+job-description-engineer = Keep the station's main engine & solars active, optimize the power network, and make emergency repairs using your hardsuit in spaced areas.
+job-description-ertchaplain = Ensure the station crew's last rights are taken care of.
+job-description-ertengineer = Ensure that the station has power and clean air.
+job-description-ertjanitor = Ensure that the station is properly cleaned--for morale.
+job-description-ertleader = Lead the Emergency Response Team in dealing with threats to Nanotrasen assets.
+job-description-ertmedic = Ensure that the crew of the station is kept alive and healthy.
+job-description-ertsecurity = Ensure that any active threats to the station are put to rest.
+job-description-hop = Handle access reassignment fairly using your ID console, manage the service department, and keep Ian safe.
+job-description-hos = Manage your security force and keep them efficient, quell dissent, and keep the other heads of staff safe.
+job-description-intern = Learn the basics of administering medicine, basic chemicals and using medical tools.
+job-description-janitor = Keep the station clean of any trash or slipping hazards, and help deal with rat infestations.
+job-description-lawyer = Ensure that every prisoner or criminal receives a fair judgment and trial if necessary.
+job-description-librarian = Manage the library, give out knowledge to any who seek it, and report on activities aboard the station.
+job-description-mime = Entertain the crew without speaking or writing, and engage with light rivalry with the clown.
+job-description-musician = Entertain the crew with your unique musical talent, and acquire new instruments to mess around with.
+job-description-passenger = Enjoy your stay aboard the station with no obligations!
+job-description-psychologist = Provide emotional support to traumatized crew. Currently available on Box, Marathon and Oasis.
+job-description-qm = Manage the supplies of the station & the cargo department, keep the salvage specialists working, make sure all orders are fulfilled, and keep the money flowing.
+job-description-rd = Manage the science department, unlocking technologies, acquiring & researching artifacts, and performing experiments.
+job-description-research-assistant = Learn the basics of how to research various artifacts, anomalies and robotics.
+job-description-reporter = Entertain & inform the crew with your vibrant journalism through wireless cameras, the radio and the news. Currently available on Bagel Station, Convex, Core, Train and Oasis.
+job-description-salvagespec = Use the salvage magnet to draw in detatched scraps & asteroids to loot and enrich the station, build a salvage ship and then travel to new planets, while fighting off any space fauna along the way.
+job-description-scientist = Research alien artifacts, unlock new technologies, build newer and better machines around the station, and make everything run more efficiently.
+job-description-security = Catch criminals and enemies of the station, enforce the law, and ensure that the station does not fall into disarray.
+job-description-serviceworker = Learn the basics of bartending, cooking, and growing plants.
+job-description-station-ai = Follow your laws, serve the crew.
+job-description-visitor = Enjoy your visit to the station.
+job-description-warden = Patrol the security department, ensure that no one is stealing from the armory, and make sure that all prisoners are processed and let out when their time is up.
+job-description-zookeeper = Put on a joyful display of cute animals and space carps for all the crew to see. Currently available on Oasis.
+
+# event-restricted jobs, Goobstation
+job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
+job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
+job-description-party-maker = Throw the biggest party ever at this station!

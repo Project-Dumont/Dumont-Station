@@ -1,90 +1,108 @@
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 accent-pirate-prefix-1 = Arrgh
-accent-pirate-prefix-2 = Gar
+accent-pirate-prefix-2 = Garr
 accent-pirate-prefix-3 = Yarr
+accent-pirate-prefix-4 = Yarrgh
 
-accent-pirate-replaced-1 = meu
-accent-pirate-replacement-1 = m’meu
+accent-pirate-replaced-1 = my
+accent-pirate-replacement-1 = me
 
-accent-pirate-replaced-2 = você
-accent-pirate-replacement-2 = você, arrr
+accent-pirate-replaced-2 = you
+accent-pirate-replacement-2 = ya
 
-accent-pirate-replaced-3 = olá
+accent-pirate-replaced-3 = hello
 accent-pirate-replacement-3 = ahoy
 
-accent-pirate-replaced-4 = sim
+accent-pirate-replaced-4 = yes
 accent-pirate-replacement-4 = aye
 
-accent-pirate-replaced-5 = realmente
-accent-pirate-replacement-5 = reálmente, marujo
+accent-pirate-replaced-5 = is
+accent-pirate-replacement-5 = be
 
-accent-pirate-replaced-7 = é
-accent-pirate-replacement-7 = éh
+accent-pirate-replaced-6 = there
+accent-pirate-replacement-6 = thar
 
-accent-pirate-replaced-8 = ali
-accent-pirate-replacement-8 = alir
+accent-pirate-replaced-7 = friend
+accent-pirate-replacement-7 = heartie
 
-accent-pirate-replaced-9 = cuidado
-accent-pirate-replacement-9 = se cuide
+accent-pirate-replaced-8 = dude
+accent-pirate-replacement-8 = matey
 
-accent-pirate-replaced-10 = vc
-accent-pirate-replacement-10 = você, arrr
+accent-pirate-replaced-9 = buddy
+accent-pirate-replacement-9 = heartie
 
-accent-pirate-replaced-11 = ola
-accent-pirate-replacement-11 = ahoy
+accent-pirate-replaced-10 = hi
+accent-pirate-replacement-10 = ahoy
 
-accent-pirate-replaced-12 = oi
-accent-pirate-replacement-12 = ahoy
+accent-pirate-replaced-11 = hey
+accent-pirate-replacement-11 = oye
 
-accent-pirate-replaced-13 = estação
-accent-pirate-replacement-13 = embarcação
+accent-pirate-replaced-12 = money
+accent-pirate-replacement-12 = dubloons
 
-accent-pirate-replaced-14 = espaço
-accent-pirate-replacement-14 = mar
+accent-pirate-replaced-13 = cash
+accent-pirate-replacement-13 = doubloons
 
-accent-pirate-replaced-15 = obrigado
-accent-pirate-replacement-15 = grato
+accent-pirate-replaced-14 = crate
+accent-pirate-replacement-14 = coffer
 
-accent-pirate-replaced-16 = segurança
-accent-pirate-replacement-16 = cães
+accent-pirate-replaced-15 = hello
+accent-pirate-replacement-15 = ahoy
 
-accent-pirate-replaced-17 = secs
-accent-pirate-replacement-17 = cães
+accent-pirate-replaced-16 = treasure
+accent-pirate-replacement-16 = booty
 
-accent-pirate-replaced-18 = nave
-accent-pirate-replacement-18 = navio
+accent-pirate-replaced-17 = attention
+accent-pirate-replacement-17 = avast
 
-accent-pirate-replaced-19 = porfavor
-accent-pirate-replacement-19 = faiz esse favorr
+accent-pirate-replaced-18 = stupid
+accent-pirate-replacement-18 = parrot-brained
 
-accent-pirate-replaced-20 = por favor
-accent-pirate-replacement-20 = faiz esse favorr
+accent-pirate-replaced-19 = idiot
+accent-pirate-replacement-19 = seadog
 
-accent-pirate-replaced-21 = homem
-accent-pirate-replacement-21 = marujo
+accent-pirate-replaced-20 = your
+accent-pirate-replacement-20 = yere
 
-accent-pirate-replaced-22 = mulher
-accent-pirate-replacement-22 = marujo
+accent-pirate-replaced-21 = song
+accent-pirate-replacement-21 = shanty
 
-accent-pirate-replaced-23 = morreu
-accent-pirate-replacement-23 = foi pro fundo do mar
+accent-pirate-replaced-22 = music
+accent-pirate-replacement-22 = shanty
 
-accent-pirate-replaced-24 = matei
-accent-pirate-replacement-24 = fiz ele andar na prancha
+accent-pirate-replaced-23 = no
+accent-pirate-replacement-23 = nay
 
-accent-pirate-replaced-25 = matou
-accent-pirate-replacement-25 = enviô ele pro baú do Davey Jones
+accent-pirate-replaced-24 = are
+accent-pirate-replacement-24 = arrr
 
-accent-pirate-replaced-26 = machucou
-accent-pirate-replacement-26 = machucô
+accent-pirate-replaced-25 = ow
+accent-pirate-replacement-25 = argh
 
-accent-pirate-replaced-27 = bomba
-accent-pirate-replacement-27 = explosivo
+accent-pirate-replaced-26 = ouch
+accent-pirate-replacement-26 = argh
 
-accent-pirate-replaced-28 = muitos
-accent-pirate-replacement-28 = vários peixes
+accent-pirate-replaced-27 = passenger
+accent-pirate-replacement-27 = landlubber
 
-accent-pirate-replaced-29 = munição
-accent-pirate-replacement-29 = pólvora
+accent-pirate-replaced-28 = tider
+accent-pirate-replacement-28 = landlubber
 
-accent-pirate-replaced-30 = sec
-accent-pirate-replacement-30 = armada
+accent-pirate-replaced-29 = captain
+accent-pirate-replacement-29 = cap'n
+
+accent-pirate-replaced-30 = pistol
+accent-pirate-replacement-30 = flintlock
+
+accent-pirate-replaced-31 = rifle
+accent-pirate-replacement-31 = musket
+
+accent-pirate-replaced-32 = ammo
+accent-pirate-replacement-32 = gunpowder

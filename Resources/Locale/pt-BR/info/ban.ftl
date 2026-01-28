@@ -1,84 +1,100 @@
-# ban
-cmd-ban-desc = Bane alguém.
-cmd-ban-help = Uso: ban <nome ou ID do usuário> <razão> [duração em minutos, deixe vazio ou 0 para ban permanente]
-cmd-ban-player = Não foi possível encontrar um usuário com esse nome.
-cmd-ban-invalid-minutes = {$minutes} não é uma quantidade válida de minutos!
-cmd-ban-invalid-severity = {$severity} não é uma gravidade válida!
-cmd-ban-invalid-arguments = Número de argumentos inválido
-cmd-ban-hint = <nome/ID do usuário>
-cmd-ban-hint-reason = <razão>
-cmd-ban-hint-duration = [duração]
-cmd-ban-hint-severity = [gravidade]
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-cmd-ban-hint-duration-1 = Permanenente
-cmd-ban-hint-duration-2 = 1 dia
-cmd-ban-hint-duration-3 = 3 dias
-cmd-ban-hint-duration-4 = 1 semana
-cmd-ban-hint-duration-5 = 2 semanas
-cmd-ban-hint-duration-6 = 1 mês
+# ban
+cmd-ban-desc = Bans somebody
+cmd-ban-help = Usage: ban <name or user ID> <reason> [duration in minutes, leave out or 0 for permanent ban]
+cmd-ban-player = Unable to find a player with that name.
+cmd-ban-invalid-minutes = {$minutes} is not a valid amount of minutes!
+cmd-ban-invalid-severity = {$severity} is not a valid severity!
+cmd-ban-invalid-arguments = Invalid amount of arguments
+cmd-ban-hint = <name/user ID>
+cmd-ban-hint-reason = <reason>
+cmd-ban-hint-duration = [duration]
+cmd-ban-hint-severity = [severity]
+
+cmd-ban-hint-duration-1 = Permanent
+cmd-ban-hint-duration-2 = 1 day
+cmd-ban-hint-duration-3 = 3 days
+cmd-ban-hint-duration-4 = 1 week
+cmd-ban-hint-duration-5 = 2 week
+cmd-ban-hint-duration-6 = 1 month
 
 # ban panel
-cmd-banpanel-desc = Abre o painel de ban
-cmd-banpanel-help = Uso: banpanel [nome de usuário ou guid]
-cmd-banpanel-server = Isso não pode ser usado a partir do console do servidor
-cmd-banpanel-player-err = O jogador especificado não foi encontrado
+cmd-banpanel-desc = Opens the ban panel
+cmd-banpanel-help = Usage: banpanel [name or user guid]
+cmd-banpanel-server = This can not be used from the server console
+cmd-banpanel-player-err = The specified player could not be found
 
 # listbans
-cmd-banlist-desc = Lista os bans ativos de um usuário.
-cmd-banlist-help = Uso: banlist <nome ou ID do usuário>
-cmd-banlist-empty = Sem bans ativos encontrados para {$user}
-cmd-banlistF-hint = <nome/ID do usuário>
+cmd-banlist-desc = Lists a user's active bans.
+cmd-banlist-help = Usage: banlist <name or user ID>
+cmd-banlist-empty = No active bans found for {$user}
+cmd-banlist-hint = <name/user ID>
 
-cmd-ban_exemption_update-desc = Defina uma isenção para um tipo de banimento de um jogador.
-cmd-ban_exemption_update-help = Uso: ban_exemption_update <player> <flag> [<flag> [...]]
-    Especifique vários indicadores para conceder a um jogador múltiplos indicadores de isenção de banimento.
-    Para remover todas as isenções, execute este comando e forneça "Nenhum" como único sinalizador.
+cmd-ban_exemption_update-desc = Set an exemption to a type of ban on a player.
+cmd-ban_exemption_update-help = Usage: ban_exemption_update <player> <flag> [<flag> [...]]
+    Specify multiple flags to give a player multiple ban exemption flags.
+    To remove all exemptions, run this command and give "None" as only flag.
 
-cmd-ban_exemption_update-nargs = Pelo menos 2 argumentos esperados
-cmd-ban_exemption_update-locate = Não foi possível localizar o jogador '{$player}'.
-cmd-ban_exemption_update-invalid-flag = Indicador inválido '{$flag}'.
-cmd-ban_exemption_update-success = Indicador de isenção de banimento atualizados para '{$player}' ({$uid}).
+cmd-ban_exemption_update-nargs = Expected at least 2 arguments
+cmd-ban_exemption_update-locate = Unable to locate player '{$player}'.
+cmd-ban_exemption_update-invalid-flag = Invalid flag '{$flag}'.
+cmd-ban_exemption_update-success = Updated ban exemption flags for '{$player}' ({$uid}).
 cmd-ban_exemption_update-arg-player = <player>
 cmd-ban_exemption_update-arg-flag = <flag>
 
-cmd-ban_exemption_get-desc = Mostrar isenções de banimento para um determinado jogador.
-cmd-ban_exemption_get-help = Uso: ban_exemption_get <player>
+cmd-ban_exemption_get-desc = Show ban exemptions for a certain player.
+cmd-ban_exemption_get-help = Usage: ban_exemption_get <player>
 
-cmd-ban_exemption_get-nargs = Esperado exatamente 1 argumento
-cmd-ban_exemption_get-none = O usuário não está isento de banimentos.
-cmd-ban_exemption_get-show = O usuário está isento das seguintes indicadores de banimento: {$flags}.
+cmd-ban_exemption_get-nargs = Expected exactly 1 argument
+cmd-ban_exemption_get-none = User is not exempt from any bans.
+cmd-ban_exemption_get-show = User is exempt from the following ban flags: {$flags}.
 cmd-ban_exemption_get-arg-player = <player>
 
 # Ban panel
-ban-panel-title = Painel de ban
-ban-panel-player = Jogador
+ban-panel-title = Banning panel
+ban-panel-player = Player
 ban-panel-ip = IP
 ban-panel-hwid = HWID
-ban-panel-reason = Razão
-ban-panel-last-conn = Usar IP e HWID da última conexão?
-ban-panel-submit = Banir
-ban-panel-confirm = Tem certeza?
-ban-panel-tabs-basic = Info básica
-ban-panel-tabs-reason = Razão
-ban-panel-tabs-players = Lista de Jogadores
-ban-panel-tabs-role = Info de role ban
-ban-panel-no-data = Você deve fornecer um usuário, IP ou HWID para banir
-ban-panel-invalid-ip =  O endereço IP não pôde ser parseado. Por favor, tente novamente.
-ban-panel-select = Selecione tipo
-ban-panel-server = Ban de servidor
+ban-panel-reason = Reason
+ban-panel-last-conn = Use IP and HWID from last connection?
+ban-panel-submit = Ban
+ban-panel-confirm = Are you sure?
+ban-panel-tabs-basic = Basic info
+ban-panel-tabs-reason = Reason
+ban-panel-tabs-players = Player List
+ban-panel-tabs-role = Role ban info
+ban-panel-no-data = You must provide either a user, IP or HWID to ban
+ban-panel-invalid-ip = The IP address could not be parsed. Please try again
+ban-panel-select = Select type
+ban-panel-server = Server ban
 ban-panel-role = Role ban
-ban-panel-minutes = Minutos
-ban-panel-hours = Horas
-ban-panel-days = Dias
-ban-panel-weeks = Semanas
-ban-panel-months = Meses
-ban-panel-years = Anos
-ban-panel-permanent = Permanente
-ban-panel-ip-hwid-tooltip = Deixe o vazio e marque a caixa de seleção abaixo para usar os detalhes da última conexão
-ban-panel-severity = Gravidade:
-ban-panel-erase = Apagar mensagens de bate-papo e o jogador da rodada
+ban-panel-minutes = Minutes
+ban-panel-hours = Hours
+ban-panel-days = Days
+ban-panel-weeks = Weeks
+ban-panel-months = Months
+ban-panel-years = Years
+ban-panel-permanent = Permanent
+ban-panel-ip-hwid-tooltip = Leave empty and check the checkbox below to use last connection's details
+ban-panel-severity = Severity:
+ban-panel-erase = Erase chat messages and player from round
 
 # Ban string
-server-ban-string = {$admin} criou um ban de servidor de gravidade {$severity} que expira em {$expires} para [{$name}, {$ip}, {$hwid}], com razão: {$reason}
-server-ban-string-no-pii = {$admin} criou um ban de servidor de gravidade {$severity} que expira em {$expires} para {$name} com razão: {$reason}
-server-ban-string-never = nunca
+server-ban-string = {$admin} created a {$severity} severity server ban that expires {$expires} for [{$name}, {$ip}, {$hwid}], with reason: {$reason}
+server-ban-string-no-pii = {$admin} created a {$severity} severity server ban that expires {$expires} for {$name} with reason: {$reason}
+server-ban-string-never = never
+
+# Kick on ban
+ban-kick-reason = You have been banned

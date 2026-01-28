@@ -1,5 +1,5 @@
-construction-recipe-gas-pipe-half = meio cano
-construction-recipe-gas-pipe-bend = curva de cano
-construction-recipe-gas-pipe-t-junction = junção T de cano
-construction-recipe-gas-pipe-fourway = junção em cruz de cano
-construction-recipe-heat-exchanger-bend = curva de radiador
+construction-recipe-gas-pipe-half = gas pipe half
+construction-recipe-gas-pipe-bend = gas pipe bend
+construction-recipe-gas-pipe-t-junction = gas pipe T-junction
+construction-recipe-gas-pipe-fourway = gas pipe fourway
+construction-recipe-heat-exchanger-bend = radiator bend

@@ -6,5 +6,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-humanoid-profile-editor-borgname-label = Nome de Silício Preferido:
-humanoid-profile-editor-antag-roll-before-jobs = Lembre-se de que todos os antags, exceto os infectados iniciais e agentes adormecidos, são sorteados antes dos cargos.
+humanoid-profile-editor-borgname-label = Preferred Silicon Name:
+humanoid-profile-editor-antag-roll-before-jobs = Keep in mind that all antags except for initial infected and sleeper agent are rolled before jobs.

@@ -1,10 +1,21 @@
-admin-solutions-window-title = Editor de Soluções - {$targetName}
-admin-solutions-window-solution-label = Solução de destino:
-admin-solutions-window-add-new-button = Adicionar novo reagente
+# SPDX-FileCopyrightText: 2021 TemporalOroboros <TemporalOroboros@gmail.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+admin-solutions-window-title = Solution Editor - {$targetName}
+admin-solutions-window-solution-label = Target solution:
+admin-solutions-window-solution-button = Solution
+admin-solutions-window-solution-button-tooltip = Opens the corresponding server-side Solution instance in ViewVariables. Useful for debugging prediction issues.
+admin-solutions-window-vv-button = VV
+admin-solutions-window-vv-button-tooltip = Opens the corresponding solution entity in ViewVariables.
+admin-solutions-window-add-new-button = Add new reagent
 admin-solutions-window-volume-label = Volume {$currentVolume}/{$maxVolume}u
-admin-solutions-window-capacity-label = Capacidade (u):
-admin-solutions-window-specific-heat-label = Calor Específico: {$specificHeat} J/(K*u)
-admin-solutions-window-heat-capacity-label = Capacidade de Calor: {$heatCapacity} J/K
-admin-solutions-window-temperature-label = Temperatura (K):
-admin-solutions-window-thermal-energy-label = Energia Térmica (J):
-admin-solutions-window-thermals = Térmicos
+admin-solutions-window-capacity-label = Capacity (u):
+admin-solutions-window-specific-heat-label = Specific Heat: {$specificHeat} J/(K*u)
+admin-solutions-window-heat-capacity-label = Heat Capacity: {$heatCapacity} J/K
+admin-solutions-window-temperature-label = Temperature (K):
+admin-solutions-window-thermal-energy-label = Thermal Energy (J):
+admin-solutions-window-thermals = Thermals

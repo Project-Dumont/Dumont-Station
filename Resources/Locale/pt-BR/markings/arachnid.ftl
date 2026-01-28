@@ -1,94 +1,101 @@
-marking-ArachnidCheliceraeDownwards = Chelicerae (Pra baixo)
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+marking-ArachnidCheliceraeDownwards = Chelicerae (Downwards)
 marking-ArachnidCheliceraeDownwards-downwards = Chelicerae
 
-marking-ArachnidCheliceraeInwards = Chelicerae (Pra dentro)
+marking-ArachnidCheliceraeInwards = Chelicerae (Inwards)
 marking-ArachnidCheliceraeInwards-inwards = Chelicerae
 
-marking-ArachnidAppendagesDefault = Apêndices (longos)
-marking-ArachnidAppendagesDefault-long_primary = Apêndice
-marking-ArachnidAppendagesDefault-long_secondary = Malhas
+marking-ArachnidAppendagesDefault = Appendages (Long)
+marking-ArachnidAppendagesDefault-long_primary = Appendage
+marking-ArachnidAppendagesDefault-long_secondary = Stripes
 
-marking-ArachnidAppendagesSharp = Apêndices (Afiado)
-marking-ArachnidAppendagesSharp-sharp_primary = Apêndice
-marking-ArachnidAppendagesSharp-sharp_secondary = Malhas
+marking-ArachnidAppendagesSharp = Appendages (Sharp)
+marking-ArachnidAppendagesSharp-sharp_primary = Appendage
+marking-ArachnidAppendagesSharp-sharp_secondary = Stripes
 
-marking-ArachnidAppendagesZigZag = Apêndice (Zigue Zague)
-marking-ArachnidAppendagesZigZag-zigzag_primary = Apêndice
-marking-ArachnidAppendagesZigZag-zigzag_secondary = Malhas
+marking-ArachnidAppendagesZigZag = Appendages (ZigZag)
+marking-ArachnidAppendagesZigZag-zigzag_primary = Appendage
+marking-ArachnidAppendagesZigZag-zigzag_secondary = Stripes
 
-marking-ArachnidAppendagesCurled = Apêndices (Enrolado)
-marking-ArachnidAppendagesCurled-curled_primary = Apêndice
-marking-ArachnidAppendagesCurled-curled_secondary = Malhas
+marking-ArachnidAppendagesCurled = Appendages (Curled)
+marking-ArachnidAppendagesCurled-curled_primary = Appendage
+marking-ArachnidAppendagesCurled-curled_secondary = Stripes
 
-marking-ArachnidAppendagesStingers = Apêndice (Ferrões)
-marking-ArachnidAppendagesStingers-stingers_primary = Apêndice
-marking-ArachnidAppendagesStingers-stingers_secondary = Malhas
+marking-ArachnidAppendagesStingers = Appendages (Stingers)
+marking-ArachnidAppendagesStingers-stingers_primary = Appendage
+marking-ArachnidAppendagesStingers-stingers_secondary = Stripes
 
-marking-ArachnidAppendagesChipped = Apêndices (longos)
-marking-ArachnidAppendagesChipped-chipped_primary = Apêndice
-marking-ArachnidAppendagesChipped-chipped_secondary = Malhas
+marking-ArachnidAppendagesChipped = Appendages (Chipped)
+marking-ArachnidAppendagesChipped-chipped_primary = Appendage
+marking-ArachnidAppendagesChipped-chipped_secondary = Stripes
 
-marking-ArachnidAppendagesHarvest = Apêndices (colheita)
-marking-ArachnidAppendagesHarvest-chipped_primary = Apêndice
-marking-ArachnidAppendagesHarvest-chipped_secondary = Malhas
+marking-ArachnidAppendagesHarvest = Appendages (Harvest)
+marking-ArachnidAppendagesHarvest-harvest_primary = Appendage
+marking-ArachnidAppendagesHarvest-harvest_secondary = Stripes
 
-marking-ArachnidAppendagesShort = Apêndices (curto)
-marking-ArachnidAppendagesShort-chipped_primary = Apêndice
-marking-ArachnidAppendagesShort-chipped_secondary = Malhas
+marking-ArachnidAppendagesShort = Appendages (Short)
+marking-ArachnidAppendagesShort-short_primary = Appendage
+marking-ArachnidAppendagesShort-short_secondary = Stripes
 
-marking-ArachnidAppendagesFreaky = Apêndices (Muito longo)
-marking-ArachnidAppendagesFreaky-freaky_primary = Apêndice
-marking-ArachnidAppendagesFreaky-freaky_secondary = Malhas
+marking-ArachnidAppendagesFreaky = Appendages (Freaky long)
+marking-ArachnidAppendagesFreaky-freaky_primary = Appendage
+marking-ArachnidAppendagesFreaky-freaky_secondary = Stripes
 
-marking-ArachnidTorsoStripes = Listras
-marking-ArachnidTorsoStripes-stripes = Modelo
+marking-ArachnidTorsoStripes = Stripes
+marking-ArachnidTorsoStripes-stripes = Design
 
 marking-ArachnidTorsoSlashes = Slashes
-marking-ArachnidTorsoSlashes-slashes = Modelo
+marking-ArachnidTorsoSlashes-slashes = Design
 
 marking-ArachnidTorsoCross = Cross
-marking-ArachnidTorsoCross-cross = Modelo
+marking-ArachnidTorsoCross-cross = Design
 
 marking-ArachnidTorsoX = X
-marking-ArachnidTorsoX-x = Modelo
+marking-ArachnidTorsoX-x = Design
 
-marking-ArachnidTorsoHeart = Coração
-marking-ArachnidTorsoHeart-heart = Desenho
+marking-ArachnidTorsoHeart = Heart
+marking-ArachnidTorsoHeart-heart = Design
 
-marking-ArachnidTorsoHourglass = Ampulheta
-marking-ArachnidTorsoHourglass-hourglass = Desenho
+marking-ArachnidTorsoHourglass = Hourglass
+marking-ArachnidTorsoHourglass-hourglass = Design
 
-marking-ArachnidTorsoNailAndHammer = Prego e Martelo
-marking-ArachnidTorsoNailAndHammer-nail-and-hammer = Desenho
+marking-ArachnidTorsoNailAndHammer = Nail and Hammer
+marking-ArachnidTorsoNailAndHammer-nail-and-hammer = Design
 
-marking-ArachnidTorsoStar = Estrela
-marking-ArachnidTorsoStar-star = Desenho
+marking-ArachnidTorsoStar = Star
+marking-ArachnidTorsoStar-star = Design
 
-marking-ArachnidTorsoArrows = Setas
-marking-ArachnidTorsoArrows-arrows = Desenho
+marking-ArachnidTorsoArrows = Arrows
+marking-ArachnidTorsoArrows-arrows = Design
 
-marking-ArachnidTorsoCore = Tórax
-marking-ArachnidTorsoCore-core = Desenho
+marking-ArachnidTorsoCore = Core
+marking-ArachnidTorsoCore-core = Design
 
-marking-ArachnidTorsoFiddleback = Tigrado
-marking-ArachnidTorsoFiddleback-fiddleback = Desenho
+marking-ArachnidTorsoFiddleback = Fiddleback
+marking-ArachnidTorsoFiddleback-fiddleback = Design
 
-marking-ArachnidTorsoSkull = Caveira
-marking-ArachnidTorsoSkull-skull = Desenho
+marking-ArachnidTorsoSkull = Skull
+marking-ArachnidTorsoSkull-skull = Design
 
-marking-ArachnidTorsoTarget = Alvo
-marking-ArachnidTorsoTarget-target = Desenho
+marking-ArachnidTorsoTarget = Target
+marking-ArachnidTorsoTarget-target = Design
 
-marking-ArachnidRArmStripes = Malhas de Arachnid (Direita)
-marking-ArachnidRArmStripes-stripes_right = Desenho
+marking-ArachnidRArmStripes = Arachnid Stripes (Right)
+marking-ArachnidRArmStripes-stripes_right = Stripes
 
-marking-ArachnidLArmStripes = Malhas de Arachnid (Left)
-marking-ArachnidLArmStripes-stripes_left = Desenho
+marking-ArachnidLArmStripes = Arachnid Stripes (Left)
+marking-ArachnidLArmStripes-stripes_left = Stripes
 
-marking-ArachnidRLegStripes = Malhas de Arachnid (Right)
-marking-ArachnidRLegStripes-stripes_right = Desenho
+marking-ArachnidRLegStripes = Arachnid Stripes (Right)
+marking-ArachnidRLegStripes-stripes_right = Stripes
 
-marking-ArachnidLLegStripes = Malhas de Arachnid (Left)
-marking-ArachnidLLegStripes-stripes_left = Desenho
+marking-ArachnidLLegStripes = Arachnid Stripes (Left)
+marking-ArachnidLLegStripes-stripes_left = Stripes
 
 marking-ArachnidOverlayFuzzy = Fuzzy

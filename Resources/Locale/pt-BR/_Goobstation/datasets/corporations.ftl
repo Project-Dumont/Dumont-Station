@@ -1,5 +1,3 @@
-# Isso não deve ser traduzido.
-traitor-corporations-flavor-dataset-1 = ARC Terrorist
 traitor-corporations-flavor-dataset-2 = Bee Liberation Front
 traitor-corporations-flavor-dataset-3 = Cybersun Industries
 traitor-corporations-flavor-dataset-4 = Gorlex Marauders

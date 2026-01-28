@@ -1,1 +1,1 @@
-materials-entropy = Entropia
+materials-entropy = entropia

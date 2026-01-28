@@ -1,21 +1,29 @@
-goodfeeling-artifact-1 = Você se sente bem.
-goodfeeling-artifact-2 = Parece que tudo vai dar certo
-goodfeeling-artifact-3 = Você tem um sentimento bom sobre isso
-goodfeeling-artifact-4 = Seus instintos estão te avisam que vai tudo ficar bem.
-goodfeeling-artifact-5 = Há uma sensação boa no ar.
-goodfeeling-artifact-6 = Há um cheiro...bom.
-goodfeeling-artifact-7 = As pontas dos seus dedos começam a formigar de felicidade.
-goodfeeling-artifact-8 = Você tem um pressentimento muito bom sobre tudo isso.
-goodfeeling-artifact-9 = Você se sente feliz.
-goodfeeling-artifact-10 = Você luta contra a vontade de sorrir.
-goodfeeling-artifact-11 = Sua cabeça começa a formigar de felicidade.
-goodfeeling-artifact-12 = As cores parecem estar mais fortes.
-goodfeeling-artifact-13 = Tudo parece estar mais claro.
-goodfeeling-artifact-14 = Os problemas do mundo parecem ter sumido.
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Alexander Evgrashin <evgrashin.adl@gmail.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-goodfeeling-artifact-drastic-1 = Você quer abraçar todo mundo que conhece!
-goodfeeling-artifact-drastic-2 = Tudo está indo tão bem!
-goodfeeling-artifact-drastic-3 = Você se sente entusiasmado.
-goodfeeling-artifact-drastic-4 = Você se sente animado.
-goodfeeling-artifact-drastic-5 = Você está tão feliz que quer dançar e cantar.
-goodfeeling-artifact-drastic-6 = Você sente como se o mundo estivesse aqui para te ajudar.
+goodfeeling-artifact-1 = You feel good.
+goodfeeling-artifact-2 = Everything seems to be going alright
+goodfeeling-artifact-3 = You've got a good feeling about this
+goodfeeling-artifact-4 = Your instincts tell you everything is going to be getting better.
+goodfeeling-artifact-5 = There's a good feeling in the air.
+goodfeeling-artifact-6 = Something smells... good.
+goodfeeling-artifact-7 = The tips of your fingers feel tingly.
+goodfeeling-artifact-8 = You've got a good feeling about this.
+goodfeeling-artifact-9 = You feel happy.
+goodfeeling-artifact-10 = You fight the urge to smile.
+goodfeeling-artifact-11 = Your scalp prickles.
+goodfeeling-artifact-12 = All the colours seem a bit more vibrant.
+goodfeeling-artifact-13 = Everything seems a little lighter.
+goodfeeling-artifact-14 = The troubles of the world seem to fade away.
+
+goodfeeling-artifact-drastic-1 = You want to hug everyone you meet!
+goodfeeling-artifact-drastic-2 = Everything is going so well!
+goodfeeling-artifact-drastic-3 = You feel euphoric.
+goodfeeling-artifact-drastic-4 = You feel giddy.
+goodfeeling-artifact-drastic-5 = You're so happy suddenly you almost want to dance and sing.
+goodfeeling-artifact-drastic-6 = You feel like the world is out to help you.

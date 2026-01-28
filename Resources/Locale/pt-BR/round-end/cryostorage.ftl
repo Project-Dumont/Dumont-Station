@@ -1,10 +1,16 @@
-cryostorage-insert-message-permanent = [color=white]Agora você está dentro de uma [bold][color=cyan]unidade de sono criogênica[/color][/bold]. Se você [bold]desconectar[/bold], [bold]fantasma[/bold] ou [bold]esperar {$time} minutos[/bold], [color=red]seu corpo será removido[/color] e sua vaga de trabalho será aberta. Você pode sair a qualquer momento para evitar isso.[/color]
-cryostorage-insert-message-temp = [color=white]Agora você está dentro de uma [bold][color=cyan]unidade de sono criogênica[/color][/bold]. Se você [bold]ghost[/bold] ou [bold]esperar {$time} minutos[/bold], [color=red]seu corpo será removido[/color] e seu espaço de trabalho será aberto. Se você [bold][color=cyan]desconectar[/color][/bold], seu corpo será segurado até você se conectar novamente.[/color]
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-cryostorage-ui-window-title = Unidade de Sono Criogênico
+cryostorage-insert-message-permanent = [color=white]You are now inside of a [bold][color=cyan]cryogenic sleep unit[/color][/bold]. If you [bold]disconnect[/bold], [bold]ghost[/bold], or [bold]wait {$time} minutes[/bold], [color=red]your body will be removed[/color] and your job slot will be opened. You can exit at any time to prevent this.[/color]
+cryostorage-insert-message-temp = [color=white]You are now inside of a [bold][color=cyan]cryogenic sleep unit[/color][/bold]. If you [bold]ghost[/bold] or [bold]wait {$time} minutes[/bold], [color=red]your body will be removed[/color] and your job slot will be opened. If you [bold][color=cyan]disconnect[/color][/bold], your body will be safely held until you rejoin.[/color]
+
+cryostorage-ui-window-title = Cryogenic Sleep Unit
 cryostorage-ui-label-slot-name = [bold]{CAPITALIZE($slot)}:[/bold]
-cryostorage-ui-button-remove = Remover
-cryostorage-ui-filler-hand = em mão
-cryostorage-ui-label-no-bodies = Sem corpos em crio-storagem
+cryostorage-ui-button-remove = Remove
+cryostorage-ui-filler-hand = inhand
+cryostorage-ui-label-no-bodies = No bodies in cryostorage
 
-cryostorage-popup-access-denied = Acesso negado!
+cryostorage-popup-access-denied = Access denied!

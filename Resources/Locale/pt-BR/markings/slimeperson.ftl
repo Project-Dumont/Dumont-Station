@@ -1,23 +1,32 @@
-marking-SlimeGradientLeftArm-gradient_l_arm = Braço esquerdo de Slime (Gradiente)
-marking-SlimeGradientLeftArm = Braço esquerdo de Slime (Gradiente)
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-marking-SlimeGradientRightArm-gradient_r_arm  = Braço direito de Slime (Gradiente)
-marking-SlimeGradientRightArm = Braço direito de Slime (Gradiente)
+marking-SlimeGradientLeftArm-gradient_l_arm = Slime Left Arm (Gradient)
+marking-SlimeGradientLeftArm = Slime Left Arm (Gradient)
 
-marking-SlimeGradientLeftFoot-gradient_l_foot = Pé Esquerdo de Slime (Gradiente)
-marking-SlimeGradientLeftFoot = Pé Esquerdo de Slime (Gradiente)
+marking-SlimeGradientRightArm-gradient_r_arm = Slime Right Arm (Gradient)
+marking-SlimeGradientRightArm = Slime Right Arm (Gradient)
 
-marking-SlimeGradientRightFoot-gradient_r_foot = Pé Direito de Slime (Gradiente)
-marking-SlimeGradientRightFoot = Pé Direito de Slime (Gradiente)
+marking-SlimeGradientLeftFoot-gradient_l_foot = Slime Left Foot (Gradient)
+marking-SlimeGradientLeftFoot = Slime Left Foot (Gradient)
 
-marking-SlimeGradientLeftLeg-gradient_l_leg = Perna esquerda de Slime (Gradiente)
-marking-SlimeGradientLeftLeg = Perna esquerda de Slime (Gradiente)
+marking-SlimeGradientRightFoot-gradient_r_foot = Slime Right Foot (Gradient)
+marking-SlimeGradientRightFoot = Slime Right Foot (Gradient)
 
-marking-SlimeGradientRightLeg-gradient_r_leg = Perna direita de Slime (Gradiente)
-marking-SlimeGradientRightLeg = Perna direita de Slime (Gradiente)
+marking-SlimeGradientLeftLeg-gradient_l_leg = Slime Left Leg (Gradient)
+marking-SlimeGradientLeftLeg = Slime Left Leg (Gradient)
 
-marking-SlimeGradientLeftHand-gradient_l_hand = Mão esquerda de Slime (Gradiente)
-marking-SlimeGradientLeftHand = Mão esquerda de Slime (Gradiente)
+marking-SlimeGradientRightLeg-gradient_r_leg = Slime Right Leg (Gradient)
+marking-SlimeGradientRightLeg = Slime Right Leg (Gradient)
 
-marking-SlimeGradientRightHand-gradient_r_hand = Mão direita de Slime (Gradiente)
-marking-SlimeGradientRightHand = Mão direita de Slime (Gradiente)
+marking-SlimeGradientLeftHand-gradient_l_hand = Slime Left Hand (Gradient)
+marking-SlimeGradientLeftHand = Slime Left Hand (Gradient)
+
+marking-SlimeGradientRightHand-gradient_r_hand = Slime Right Hand (Gradient)
+marking-SlimeGradientRightHand = Slime Right Hand (Gradient)

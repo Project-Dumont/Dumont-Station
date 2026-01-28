@@ -1,1 +1,0 @@
-ui-escape-balanceui = Loja

@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <notzombiedude@gmail.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ### Special messages used by internal localizer stuff.
 
 # Used internally by the PRESSURE() function.
@@ -32,130 +43,15 @@ zzzz-fmt-power-joules = { TOSTRING($divided, "F1") } { $places ->
     *[5] ???
 }
 
-# Usado internamente pela função ARTIGO-UM().
-zzzz-artigo-indefinido = { GENDER($ent) ->
-    *[male] um
-    [female] uma
-    [neuter] ume
+# Used internally by the ENERGYWATTHOURS() function.
+zzzz-fmt-energy-watt-hours = { TOSTRING($divided, "F1") } { $places ->
+    [0] Wh
+    [1] kWh
+    [2] MWh
+    [3] GWh
+    [4] TWh
+    *[5] ???
 }
 
-# Usado internamente pela função ARTIGO-O().
-zzzz-artigo-definido = { GENDER($ent) ->
-    *[male] o
-    [female] a
-    [neuter] { "" }
-}
-
-# Usado internamente pela função PREPOSICAO-DE().
-zzzz-preposicao-de = { GENDER($ent) ->
-    [male] do
-    [female] da
-    *[neuter] de
-}
-
-# Usado internamente pela função PREPOSICAO-EM().
-zzzz-preposicao-em = { GENDER($ent) ->
-    [male] no
-    [female] na
-    *[neuter] em
-}
-
-# Usado internamente pela função PREPOSICAO-A().
-zzzz-preposicao-a = { GENDER($ent) ->
-    [male] ao
-    [female] à
-    *[neuter] a
-}
-
-# Usado internamente pela função PRONOME-ELE().
-zzzz-pronome-ele = { GENDER($ent) ->
-    *[male] ele
-    [female] ela
-    [neuter] elu
-}
-
-# Usado internamente pela função PRONOME-DELE().
-zzzz-pronome-dele = { GENDER($ent) ->
-    *[male] dele
-    [female] dela
-    [neuter] delu
-}
-
-# Usado internamente pela função PRONOME-SEU().
-zzzz-pronome-seu = { GENDER($ent) ->
-    *[male] seu
-    [female] sua
-    [neuter] sue
-}
-
-# Usado internamente pela função PRONOME-ESSE().
-zzzz-pronome-esse = { GENDER($ent) ->
-    *[male] esse
-    [female] essa
-    [neuter] essu
-}
-
-# Usado internamente pela função MAKEGENERO()
-zzzz-genero-terminacao = { GENDER($ent) ->
-    *[male] o
-    [female] a
-    [neuter] e
-}
-
-# Used internally by the THE() function.
-# zzzz-the = { PROPER($ent) ->
-#   [false] { ARTIGO-UM($ent) } { $ent }
-#   *[true] { ARTIGO-O($ent) } { $ent }
-#   }
-
-# Used internally by the SUBJECT() function.
-# zzzz-subject-pronoun = { GENDER($ent) ->
-#   *[male] ele
-#    [female] ela
-#    [epicene] eles
-#    [neuter] elo
-#   }
-
-# Used internally by the OBJECT() function.
-# zzzz-object-pronoun = { GENDER($ent) ->
-#   *[male] dele
-#    [female] dela
-#    [epicene] deles
-#    [neuter] delo
-#   }
-
-# Used internally by the POSS-PRONOUN() function.
-# zzzz-possessive-pronoun = { GENDER($ent) ->
-#   *[male] dele
-#    [female] dela
-#    [epicene] deles
-#    [neuter] delos
-#   }
-
-# Used internally by the POSS-ADJ() function.
-# zzzz-possessive-adjective = { GENDER($ent) ->
-#   *[male] seu
-#    [female] sua
-#    [epicene] seus
-#    [neuter] seu
-#   }
-
-# Used internally by the REFLEXIVE() function.
-# zzzz-reflexive-pronoun = { GENDER($ent) ->
-#   *[male] ele mesmo
-#    [female] ela mesma
-#    [epicene] eles mesmos
-#    [neuter] elos mesmos
-#   }
-
-# Used internally by the CONJUGATE-BE() function.
-# zzzz-conjugate-be = { GENDER($ent) ->
-#    [epicene] são
-#   *[other] é
-#   }
-
-# Used internally by the CONJUGATE-HAVE() function.
-# zzzz-conjugate-have = { GENDER($ent) ->
-#    [epicene] têm
-#   *[other] tem
-#   }
+# Used internally by the PLAYTIME() function.
+zzzz-fmt-playtime = {$hours}H {$minutes}M

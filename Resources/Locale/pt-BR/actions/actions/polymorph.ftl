@@ -1,1 +1,6 @@
-gera-transformation-popup = Esta ação irá transformar você. Clique novamente para confirmar.
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+revert-polymorph-action-popup = This action is irreversible. Use it again to confirm.

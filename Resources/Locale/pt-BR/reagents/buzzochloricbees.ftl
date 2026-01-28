@@ -1,15 +1,20 @@
-buzzochloricbees-effect-oh-god-bees = Você está cercado por muitas, muitas abelhas.
-buzzochloricbees-effect-its-the-bees = São as abelhas, oh Deus as abelhas.
-buzzochloricbees-effect-why-am-i-covered-in-bees = Você está coberto de abelhas furiosas.
-buzzochloricbees-effect-one-with-the-bees = Você é um com as abelhas.
-buzzochloricbees-effect-squeaky-clean = Você se sente completamente limpo enquanto as abelhas tentam se livrar de você.
-buzzochloricbees-effect-histamine-bee-allergy = Você é altamente alérgico a abelhas, aparentemente.
-buzzochloricbees-effect-histamine-swells = Você incha como um balão na presença das abelhas.
-buzzochloricbees-effect-histamine-numb-to-the-bees = Você está insensível às abelhas.
-buzzochloricbees-effect-histamine-cannot-be-one-with-the-bees = Você não é um com as abelhas.
-buzzochloricbees-effect-licoxide-electrifying = As abelhas são eletrizantes.
-buzzochloricbees-effect-licoxide-shocked-by-bee-facts = Você está chocado com esses cinco fatos sobre as abelhas.
-buzzochloricbees-effect-licoxide-buzzed = Você se sente tonto.
-buzzochloricbees-effect-licoxide-buzzes = Você zumbe com as abelhas.
-buzzochloricbees-effect-fiber-hairy = Você se sente confuso, como uma abelha.
-buzzochloricbees-effect-fiber-soft = Você sente algumas abelhas excepcionalmente macias.
+# SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+buzzochloricbees-effect-oh-god-bees = You are swarmed by many, many bees.
+buzzochloricbees-effect-its-the-bees = It's the bees, oh god the bees.
+buzzochloricbees-effect-why-am-i-covered-in-bees = You are covered in angry bees.
+buzzochloricbees-effect-one-with-the-bees = You are one with the bees.
+buzzochloricbees-effect-squeaky-clean = You feel squeaky clean as the bees try and get rid of you.
+buzzochloricbees-effect-histamine-bee-allergy = You are highly allergic to bees, apparently.
+buzzochloricbees-effect-histamine-swells = You swell like a balloon in the presence of the bees.
+buzzochloricbees-effect-histamine-numb-to-the-bees = You are numb to the bees.
+buzzochloricbees-effect-histamine-cannot-be-one-with-the-bees = You are not one with the bees.
+buzzochloricbees-effect-licoxide-electrifying = The bees are electrifying.
+buzzochloricbees-effect-licoxide-shocked-by-bee-facts = You are shocked by these five bee facts.
+buzzochloricbees-effect-licoxide-buzzed = You feel buzzed.
+buzzochloricbees-effect-licoxide-buzzes = You buzz with the bees.
+buzzochloricbees-effect-fiber-hairy = You feel fuzzy, like a bee.
+buzzochloricbees-effect-fiber-soft = You feel some exceptionally soft bees.

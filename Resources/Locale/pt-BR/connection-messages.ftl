@@ -1,58 +1,87 @@
-cmd-whitelistadd-desc = Adiciona o jogador com o nome de usuário fornecido à whitelist do servidor.
-cmd-whitelistadd-help = Uso: whitelistadd <nome de usuário ou ID de usuário>
-cmd-whitelistadd-existing = {$username} já está na whitelist!
-cmd-whitelistadd-added = {$username} foi adicionado a whitelist.
-cmd-whitelistadd-not-found = Não foi possível encontrar '{$username}'
+# SPDX-FileCopyrightText: 2022 Dylan Corrales <DeathCamel58@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
+cmd-whitelistadd-help = Usage: whitelistadd <username or User ID>
+cmd-whitelistadd-existing = {$username} is already on the whitelist!
+cmd-whitelistadd-added = {$username} added to the whitelist
+cmd-whitelistadd-not-found = Unable to find '{$username}'
 cmd-whitelistadd-arg-player = [player]
 
-cmd-whitelistremove-desc = Remove o jogador com o nome de usuário fornecido da whitelist do servidor.
-cmd-whitelistremove-help = Uso: whitelistremove <Nome de usuário ou ID de usuário>
-cmd-whitelistremove-existing = {$username} não está na whitelist!
-cmd-whitelistremove-removed = {$username} foi removido da whitelist
-cmd-whitelistremove-not-found = Não foi possivel encontrar '{$username}'
+cmd-whitelistremove-desc = Removes the player with the given username from the server whitelist.
+cmd-whitelistremove-help = Usage: whitelistremove <username or User ID>
+cmd-whitelistremove-existing = {$username} is not on the whitelist!
+cmd-whitelistremove-removed = {$username} removed from the whitelist
+cmd-whitelistremove-not-found = Unable to find '{$username}'
 cmd-whitelistremove-arg-player = [player]
 
-cmd-kicknonwhitelisted-desc = Expulsa do servidor todos os jogadores que não estão na whitelist.
-cmd-kicknonwhitelisted-help = Uso: kicknonwhitelisted
+cmd-kicknonwhitelisted-desc = Kicks all non-whitelisted players from the server.
+cmd-kicknonwhitelisted-help = Usage: kicknonwhitelisted
 
-ban-banned-permanent = Esse banimento será apenas removido por apelo
-ban-banned-permanent-appeal = Esse banimento será apenas removido por apelo. Você pode criar um apelo em {$link}
-ban-expires = Esse ban é por {$duration} minutos, e irá expirar em {$time} UTC.
-ban-banned-1 = Você ou outro usuário deste computador ou conexão estão banidos de jogar aqui.
-ban-banned-2 = Você foi banido por: "{$adminName}"
-ban-banned-3 = O motivo do banimento é: "{$reason}"
-ban-banned-4 = As tentativas de contornar esta proibição, como a criação de uma nova conta, serão registradas.
+ban-banned-permanent = This ban will only be removed via appeal.
+ban-banned-permanent-appeal = This ban will only be removed via appeal. You can appeal at {$link}
+ban-expires = This ban is for {$duration} minutes and will expire at {$time} UTC.
+ban-banned-1 = You, or another user of this computer or connection, are banned from playing here.
+ban-banned-2 = You were banned by: "{$adminName}"
+ban-banned-3 = The ban reason is: "{$reason}"
+ban-banned-4 = Attempts to circumvent this ban such as creating a new account will be logged.
 
-soft-player-cap-full = O Servidor está cheio!
-panic-bunker-account-denied = Este servidor está em modo panic bunker, geralmente ativado como precaução contra ataques. Novas conexões por contas que não atendam a determinados requisitos não serão aceitas temporariamente. Tente novamente mais tarde
-panic-bunker-account-denied-reason = Este servidor está em modo panic bunker, geralmente ativado como precaução contra ataques. Novas conexões por contas que não atendam a determinados requisitos não serão aceitas temporariamente. Tente novamente mais tarde. Motivo: "{$reason}"
-panic-bunker-account-reason-account = Sua conta de Space Station 14 é muito nova. Deve ser mais velha que {$minutes} minutos
-panic-bunker-account-reason-overall = Seu tempo total de jogo no servidor deve ser maior que {$minutes} $minutes
+soft-player-cap-full = The server is full!
+panic-bunker-account-denied = This server is in panic bunker mode, often enabled as a precaution against raids. New connections by accounts not meeting certain requirements are temporarily not accepted. Try again later
+panic-bunker-account-denied-reason = This server is in panic bunker mode, often enabled as a precaution against raids. New connections by accounts not meeting certain requirements are temporarily not accepted. Try again later. Reason: "{$reason}"
+panic-bunker-account-reason-account = Your Space Station 14 account is too new. It must be older than {$minutes} minutes
+panic-bunker-account-reason-overall = Your overall playtime on the server must be greater than {$minutes} $minutes
 
-whitelist-playtime = Você não tem tempo de jogo suficiente. Você precisa pelo menos de {$minutes} minutos de tempo de jogo total para jogar nesse servidor.
-whitelist-player-count = Este servidor não está aceitando jogadores no momento. Por favor, tente novamente mais tarde.
-whitelist-notes = Atualmente você tem muitas notas de administrador para entrar neste servidor. Você pode verificar suas notas de administrador digitando /adminremarks no chat.
-whitelist-manual = Você não está na whitelist deste servidor.
-whitelist-blacklisted = Você está na lista de blacklist deste servidor
-whitelist-always-deny = Você não tem permissão para entrar neste servidor.
-whitelist-fail-prefix = Não está na whitelist: {$msg}
-whitelist-misconfigured = O servidor está mal configurado e não aceita jogadores. Entre em contato com o dono do servidor e tente novamente mais tarde.
+whitelist-playtime = You do not have enough playtime to join this server. You need at least {$minutes} minutes of playtime to join this server.
+whitelist-player-count = This server is currently not accepting players. Please try again later.
+whitelist-notes = You currently have too many admin notes to join this server. You can check your notes by typing /adminremarks in chat.
+whitelist-manual = You are not whitelisted on this server.
+whitelist-blacklisted = You are blacklisted from this server.
+whitelist-always-deny = You are not allowed to join this server.
+whitelist-fail-prefix = Not whitelisted: {$msg}
 
-cmd-blacklistadd-desc = AAdiciona o jogador com o nome de usuário fornecido à blacklist do servidor.
-cmd-blacklistadd-help = Uso: blacklistadd <nome de usuário>
-cmd-blacklistadd-existing = {$username} já está na blacklist!
-cmd-blacklistadd-added = {$username} foi adicionado a blacklist.
-cmd-blacklistadd-not-found = Não foi possivel encontrar '{$username}'
+cmd-blacklistadd-desc = Adds the player with the given username to the server blacklist.
+cmd-blacklistadd-help = Usage: blacklistadd <username>
+cmd-blacklistadd-existing = {$username} is already on the blacklist!
+cmd-blacklistadd-added = {$username} added to the blacklist
+cmd-blacklistadd-not-found = Unable to find '{$username}'
 cmd-blacklistadd-arg-player = [player]
-
-cmd-blacklistremove-desc = Remove o jogador com o nome de usuário fornecido da blacklist do servidor.
-cmd-blacklistremove-help = Uso: blacklistremove <nome de usuário>
-cmd-blacklistremove-existing = {$username} não está na blacklist!
-cmd-blacklistremove-removed = {$username} foi removido da blacklist
-cmd-blacklistremove-not-found = Não foi possivel achar '{$username}'
+cmd-blacklistremove-desc = Removes the player with the given username from the server blacklist.
+cmd-blacklistremove-help = Usage: blacklistremove <username>
+cmd-blacklistremove-existing = {$username} is not on the blacklist!
+cmd-blacklistremove-removed = {$username} removed from the blacklist
+cmd-blacklistremove-not-found = Unable to find '{$username}'
 cmd-blacklistremove-arg-player = [player]
+baby-jail-account-denied = This server is a newbie server, intended for new players and those who want to help them. New connections by accounts that are too old or are not on a whitelist are not accepted. Check out some other servers and see everything Space Station 14 has to offer. Have fun!
+baby-jail-account-denied-reason = This server is a newbie server, intended for new players and those who want to help them. New connections by accounts that are too old or are not on a whitelist are not accepted. Check out some other servers and see everything Space Station 14 has to offer. Have fun! Reason: "{$reason}"
+baby-jail-account-reason-account = Your Space Station 14 account is too old. It must be younger than {$minutes} minutes
+baby-jail-account-reason-overall = Your overall playtime on the server must be younger than {$minutes} $minutes
 
-baby-jail-account-denied = Este servidor é um servidor novato, destinado a novos jogadores e àqueles que desejam ajudá-los. Novas conexões por contas muito antigas ou que não estejam na whitelist não são aceitas. Confira alguns outros servidores e veja tudo o que a Estação Espacial 14 tem a oferecer. Divirta-se!
-baby-jail-account-denied-reason = Este servidor é um servidor novato, destinado a novos jogadores e àqueles que desejam ajudá-los. Novas conexões por contas muito antigas ou que não estejam na whitelist não são aceitas. Confira alguns outros servidores e veja tudo o que a Estação Espacial 14 tem a oferecer. Divirta-se! Motivo: "{$reason}"
-baby-jail-account-reason-account = Sua conta de Space Station 14 é muito antiga. Ela deve ser mais nova que {$minutes} minutos
-baby-jail-account-reason-overall = Seu tempo total de jogo no servidor deve ser menor que {$minutes} $minutes
+generic-misconfigured = The server is misconfigured and is not accepting players. Please contact the server owner and try again later.
+
+ipintel-server-ratelimited = This server uses a security system with external verification, which has reached its maximum verification limit. Please contact the administration team of the server for assistance and try again later.
+ipintel-unknown = This server uses a security system with external verification, but it encountered an error. Please contact the administration team of the server for assistance and try again later.
+ipintel-suspicious = You seem to be connecting through a datacenter or VPN. For administrative reasons we do not allow VPN connections to play. Please contact the administration team of the server for assistance if you believe this is false.
+
+hwid-required = Your client has refused to send a hardware id. Please contact the administration team for further assistance.

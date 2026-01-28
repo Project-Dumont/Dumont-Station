@@ -1,23 +1,31 @@
-revenant-essence-amount = Você tem [color=plum]{$current} Essência[/color]. A sua regeneração é de [color=plum]{$max} Essência[/color].
-revenant-max-essence-increased = A sua essência máxima aumentou!
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Mono <182929384+Monotheonist@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-revenant-not-enough-essence = Sem essência suficiente!
-revenant-in-solid = Você não pode usar essa habilidade dentro de um objeto sólido.
+revenant-essence-amount = You have [color=plum]{$current} Essence[/color]. Your regen amount is [color=plum]{$max} Essence[/color].
+revenant-max-essence-increased = Your max essence has increased!
 
-revenant-soul-too-powerful = Essa alma está forte demais para colher!
-revenant-soul-harvested = Essa alma já foi colhida!
+revenant-not-enough-essence = Not enough essence!
+revenant-in-solid = You cannot use this ability while within a solid object.
 
-revenant-soul-searching = Você procura pela alma d{THE($target)}.
+revenant-soul-too-powerful = This soul is too strong to harvest!
+revenant-soul-harvested = This soul has already been harvested!
 
-revenant-soul-yield-high = {CAPITALIZE(THE($target))} tem uma alma acima da média!
-revenant-soul-yield-average = {CAPITALIZE(THE($target))} tem uma alma mediana.
-revenant-soul-yield-low = {CAPITALIZE(THE($target))} tem uma alma abaixo da média.
+revenant-soul-searching = You search for the soul of {THE($target)}.
 
-revenant-soul-begin-harvest = {CAPITALIZE(THE($target))} derrepente é suspendido levemente no ar e a pele {POSS-ADJ($target)} tornando cinzenta.
-revenant-soul-finish-harvest = {CAPITALIZE(THE($target))} cai duro no chão!
+revenant-soul-yield-high = {CAPITALIZE(THE($target))} has an above average soul!
+revenant-soul-yield-average = {CAPITALIZE(THE($target))} has an average soul.
+revenant-soul-yield-low = {CAPITALIZE(THE($target))} has a below average soul.
+
+revenant-soul-begin-harvest = {CAPITALIZE(THE($target))} suddenly rises slightly into the air, {POSS-ADJ($target)} skin turning an ashy gray.
+revenant-soul-finish-harvest = {CAPITALIZE(THE($target))} slumps onto the ground!
 
 # UI
-revenant-user-interface-title = Loja de Habilidades
-revenant-user-interface-essence-amount = [color=plum]{$amount}[/color] Essência Roubada
+revenant-user-interface-title = Ability Shop
+revenant-user-interface-essence-amount = [color=plum]{$amount}[/color] Stolen Essence
 
-revenant-user-interface-cost = {$price} Essência
+revenant-user-interface-cost = {$price} Essence

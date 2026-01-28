@@ -1,15 +1,16 @@
-petting-success-gladiabot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de papelão.
-petting-success-batonbot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de metal protetor.
-petting-success-disablerbot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de metal protetor.
-petting-success-weldbot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de metal manchada.
-petting-success-plantbot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de metal musgenta.
-petting-success-fillbot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de metal trabalhadora.
-petting-success-minebot = Você acaricia { ARTIGO-O($user) } { $user } na sua cabeça de metal reforçada.
+petting-success-gladiabot = Você acaricia {THE($target)} em sua cabeça de papelão feroz.
+petting-success-batonbot = Você acaricia {THE($target)} em sua cabeça de metal protetora.
+petting-success-disablerbot = Você acaricia {THE($target)} em sua cabeça de metal protetora.
+petting-success-weldbot = Você acaricia {THE($target)} em sua cabeça de metal manchada.
+petting-success-plantbot = Você acaricia {THE($target)} em sua cabeça de metal enlameada.
+petting-success-fillbot = Você acaricia {THE($target)} em sua cabeça de metal diligente.
+petting-success-minebot = Você acaricia {THE($target)} em sua cabeça de metal endurecida.
 
-petting-failure-gladiabot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas { PRONOME-ELE($target) } só quer lutar!
-petting-failure-batonbot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas { PRONOME-ELE($target) } te ameaça com o cassetete!
-petting-failure-disablerbot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas { PRONOME-ELE($target) } aponta o atordoador para você!
-petting-failure-weldbot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas seu soldador quase queima sua mão!
-petting-failure-plantbot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas os cortadores { PRONOME-DELE($target) } quase arrancam seus dedos!
-petting-failure-fillbot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas { PRONOME-ELE($target) } empurra a sua mão!
-petting-failure-minebot = Você se aproxima para acariciar { ARTIGO-O($user) } { $user }, mas { PRONOME-ELE($target) } quase acerta sua picareta em você!
+petting-failure-gladiabot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} só quer lutar!
+petting-failure-batonbot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} quase te cutuca com seu bastão!
+petting-failure-disablerbot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} agita sua arma com raiva em sua direção!
+petting-failure-weldbot = Você tenta acariciar {THE($target)}, mas o(a) {POSS-ADJ($target)} soldador quase queima sua mão!
+petting-failure-plantbot = Você tenta acariciar {THE($target)}, mas o(a) {POSS-ADJ($target)} cortador quase corta seus dedos!
+petting-failure-fillbot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} empurra sua mão para longe!
+petting-failure-minebot = Você tenta acariciar {THE($target)}, mas {SUBJECT($target)} quase balança sua picareta em você!
+

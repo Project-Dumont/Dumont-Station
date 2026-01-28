@@ -1,63 +1,74 @@
-heretic-ability-fail = Falhou em castar
-heretic-ability-fail-magicitem = Você não pode castar sem um foco!
-heretic-ability-fail-notarget = Não pode encontrar um alvo válido!
-heretic-ability-fail-lowhealth = Essa magia causa {$damage} de dano, isso te colocaria em estado crítico se tivesse castado!
-heretic-ability-fail-tile-not-rusted = O tile alvo precisa estar enferrujado para usar essa habilidade!
-heretic-ability-fail-tile-underneath-not-rusted = O tile que você está precisa estar enferrujado para usar essa habilidade!
-heretic-ability-fail-tile-occupied = Tile alvo está ocupado!
-heretic-ability-fail-rust-stage-low = Você não é poderoso o suficiente para enferrujar essa superfície!
-heretic-ability-fail-target-ghoul = O alvo ja é um ghoul!
-heretic-ability-fail-target-no-mind = O alvo não tem alma!
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 yglop <95057024+yglop@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-heretic-cosmic-rune-fail-star-mark = Bloqueado por uma marca de estrela!
-heretic-cosmic-rune-fail-unlinked = Nenhuma runa conectada!
-heretic-cosmic-rune-fail-range = Longe demais!
+heretic-ability-fail = Failed to cast
+heretic-ability-fail-magicitem = You cannot cast it without a focus!
+heretic-ability-fail-notarget = Couldn't find a valid target!
+heretic-ability-fail-lowhealth = This spell deals {$damage} damage, it would put you in critical condition if you casted it!
+heretic-ability-fail-tile-not-rusted = Targeted tile must be rusted to use this ability!
+heretic-ability-fail-tile-underneath-not-rusted = Tile that you are standing on must be rusted to use this ability!
+heretic-ability-fail-tile-occupied = Targeted tile is occupied!
+heretic-ability-fail-rust-stage-low = You are not powerful enough to rust this surface!
+heretic-ability-fail-target-ghoul = Target is ghoul already!
+heretic-ability-fail-target-no-mind = Target has no soul!
 
-heretic-magicitem-examine = [color=yellow]Te permite usar magias avançados enquanto segurado ou equipado.[/color]
+heretic-cosmic-rune-fail-star-mark = Blocked by star mark!
+heretic-cosmic-rune-fail-unlinked = No linked rune!
+heretic-cosmic-rune-fail-range = Not close enough!
 
-mansus-grasp-trigger-fail = Algo te impede de ativar isso!
+heretic-magicitem-examine = [color=yellow]Allows you to use advanced spells while held or equipped.[/color]
+
+mansus-grasp-trigger-fail = Something prevents you from activating this!
 
 ## blade
-heretic-blade-examine = [color=yellow]Usar isso na sua mão vai quebrar a lâmina e te teleportar para longe do perigo.[/color]
-heretic-blade-use = A lâmina se quebra e você sente as vocês te puxando para longe.
-heretic-riposte-used = Ripostar usado!
-heretic-riposte-available = Ripostar usável!
-heretic-cant-shoot = Eu não posso usar { $entity } por causa da minha promessa sagrada ao caminho da lâmina.
+heretic-blade-examine = [color=yellow]Using it while it's in your hand will break the blade and teleport you away from danger.[/color]
+heretic-blade-break-fail-acended-message = You cannot break blades while ascended!
+heretic-blade-use = The blade shatters, and you feel the voices pulling you away.
+heretic-riposte-used = Riposte used!
+heretic-riposte-available = Riposte available!
+heretic-cant-shoot = I can't use { THE($entity) } because of my sacred pledge to the path of the blade.
 
 ## paths exclusive
-heretic-rust-mark-itembreak = {$name} desaparece em cinzas!
-mansus-infused-item-examine = [color=purple]A mera presença do item já causa arrepios. Você realmente deveria pegá-lo?[/color]
+heretic-rust-mark-itembreak = {$name} shatters into dust!
+mansus-infused-item-examine = [color=purple]The item's sheer presence alone gives you shivers. Should you really pick it up?[/color]
 
 ## mansus link
-heretic-manselink-fail-exists = Essa criatura já está conectada!
-heretic-manselink-fail-nomind = Essa criatura não tem uma mente!
-heretic-manselink-start = Você começa a mente dessa criatura a sua.
-heretic-manselink-start-target = Você sente a sua mente sendo puxada...
+heretic-manselink-fail-exists = This creature is already connected!
+heretic-manselink-fail-nomind = This creature does not have a mind!
+heretic-manselink-start = You begin to connect this creature's mind to yours.
+heretic-manselink-start-target = You feel your mind being pulled somewhere...
 
 ## living heart
-heretic-livingheart-notargets = Sem alvos, visite a runa.
-heretic-livingheart-offstation = É {$state}, fora da estação, {$direction}!
-heretic-livingheart-onstation = É {$state}, {$direction}!
-heretic-livingheart-unknown = É... fora do plano da realidade.
-heretic-livingheart-faraway = É {$state}, muito muito longe!
+heretic-livingheart-notargets = No available targets, visit the rune.
+heretic-livingheart-offstation = It's {$state}, off station, {$direction}!
+heretic-livingheart-onstation = It's {$state}, {$direction}!
+heretic-livingheart-unknown = It's... not in this plain of reality.
+heretic-livingheart-faraway = It's {$state}, extremely far away!
 
 ## star gazer
-heretic-stargaze-obliterate-other = Você vê {$uid} { MAGEGENERO("mergulhado", $uid) } na ira escaldante do cosmos. Por um momento, você vê a silhueta daquilo se debatendo em agonia até que... se desfaz em meros átomos.
-heretic-stargaze-obliterate-user = O PODER DO PRÓPRIO COSMOS SE DERRAMA SOBRE A SUA FORMA. ONDAS DE CALOR SE APROXIMAM DO SEU CORPO, ARRANCANDO CADA MEMBRO. A SUA ANIQUILAÇÃO TOTAL DURA ALGUNS INSTANTES ATÉ QUE O QUE VOCÊ COSTUMAVA CHAMAR DE CORPO É REDUZIDO NO QUE VOCÊ SEMPRE FOI. UMA PILHA DE PÓ...
+heretic-stargaze-obliterate-other = You see {$uid} engulfed in the scorching wrath of the cosmos. For a moment, you see their silhouette flail in agony before fading to mere atoms.
+heretic-stargaze-obliterate-user = THE POWER OF THE COSMOS ITSELF POURS OUT OVER YOUR FORM. WAVES OF HEAT LATCH ONTO YOUR BODY, PULLING IT APART AT THE SEAMS. YOUR TOTAL ANNIHILATION TAKES ONLY A MOMENT BEFORE YOU ARE REDUCED BACK TO WHAT YOU ALWAYS WERE. MOTES OF MERE DUST...
 
-heretic-stargazer-reset-consciousness = ESSA AÇÃO É IRREVERSÍVEL E VAI MUDAR A SUA MENTE DE OBSERVADOR DE ESTRELAS PERMANENTEMENTE. Use novamente para confirmar.
-heretic-stargazer-consciousness-reset-fail = O seu pedido de mudar a sua personalidade observadora de estrelas parece ter sido negado... Você está preso com isso por agora.
-heretic-stargazer-consciousness-reset-target = Seu invocador reiniciou você e seu corpo foi tomado por um fantasma. Parece que eles não gostaram do seu desempenho.
-heretic-stargazer-consciousness-reset-user = A mente do observador de estrelas se distorceu para melhor atender você.
+heretic-stargazer-reset-consciousness = THIS ACTION WILL IRREVERSIBLY CHANGE YOUR STAR GAZER MIND! Use it again to confirm.
+heretic-stargazer-consciousness-reset-fail = Your request to shift star gazer personality appears to have been denied... Looks like you're stuck with it for now.
+heretic-stargazer-consciousness-reset-target = Your summoner reset you, and your body was taken over by a ghost. Looks like they weren't happy with your performance.
+heretic-stargazer-consciousness-reset-user = The mind of star gazer has twisted itself to suit you better.
 
 ## speech
 heretic-speech-mansusgrasp = R'CH T'H TR'TH!
 
 heretic-speech-ash-jaunt = ASH'N P'SSG'
-heretic-speech-ash-volcano = V'LC'O!
-heretic-speech-ash-rebirth = G'LR'IA PR' N'GHT'W'TCH'ER!
-heretic-speech-ash-flame = CH'MS!!
-heretic-speech-ash-cascade = C'SC'A'T!!
+heretic-speech-ash-volcano = V'LC'N!
+heretic-speech-ash-rebirth = G'LR'Y T' TH' N'GHT'W'TCH'ER!
+heretic-speech-ash-flame = FL'MS!!
+heretic-speech-ash-cascade = C'SC'DE!!
 
 heretic-speech-blade-furioussteel = F'LSH'NG S'LV'R!
 
@@ -71,6 +82,8 @@ heretic-speech-rust-plume = 'NTR'P'C PL'M'!
 heretic-speech-void-blast = F'RZ'E!
 heretic-speech-void-phase = RE'L'T' PH'S'E!
 heretic-speech-void-pull = BR'NG F'RTH TH'M T' M'!!
+heretic-speech-void-prison = V'D PR'S'N!
+heretic-speech-void-conduit = MBR'C' TH' V''D!
 
 heretic-speech-cosmic-rune = ST'R R'N'!
 heretic-speech-star-touch = ST'R 'N'RG'!!
@@ -84,3 +97,4 @@ heretic-speech-mansuslink = PI'RC' TH' M'ND!
 heretic-speech-realignment = R'S'T!
 heretic-speech-fuckoff = F'K 'FF!!
 heretic-speech-ice-spear = D'WN 'F TH'CE!
+heretic-speech-shapeshft = SH'PE

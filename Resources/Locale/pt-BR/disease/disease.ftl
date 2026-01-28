@@ -1,15 +1,12 @@
-disease-cured = Você se sente um pouco melhor.
-disease-sick-generic = Você se sente doente.
-disease-sneeze = {CAPITALIZE(ARTIGO-O($person))} {$person} espirra.
-disease-cough = {CAPITALIZE(ARTIGO-O($person))} {$person} tosse.
-disease-screech = {CAPITALIZE(ARTIGO-O($person))} {$person} guincha.
-disease-yawn = {CAPITALIZE(ARTIGO-O($person))} {$person} boceja.
-disease-meow = {CAPITALIZE(ARTIGO-O($person))} {$person} mia.
-disease-hiss = {CAPITALIZE(ARTIGO-O($person))} {$person} chia.
-disease-beep= {CAPITALIZE(ARTIGO-O($person))} {$person} faz bip.
-disease-eaten-inside = Você se sente devorado por dentro.
-disease-banana-compulsion = Você quer muito comer bananas.
-disease-beat-chest-compulsion = {CAPITALIZE(ARTIGO-O($person))} {$person} bate em seu peito.
-disease-vomit = {CAPITALIZE(ARTIGO-O($person))} {$person} vomita.
-disease-think = Você não consegue pensar direito.
-disease-polymorph = Você sente seu corpo se retorcer e mudar de forma!
+# SPDX-FileCopyrightText: 2022 Chris V <HoofedEar@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+disease-vomit = {CAPITALIZE(THE($person))} vomits.

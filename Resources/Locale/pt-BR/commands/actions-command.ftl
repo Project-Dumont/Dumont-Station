@@ -1,7 +1,13 @@
-cmd-loadacts-desc = Carrega atribuições da barra de ferramentas de ação de um arquivo de usuário.
-cmd-loadacts-help = Uso: {$command} <user resource path>
-cmd-loadacts-error = Falha ao carregar atribuições de ação
+# SPDX-FileCopyrightText: 2024 PrPleGoo <PrPleGoo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-cmd-loadmapacts-desc = Carrega as atribuições da barra de ferramentas de ação predefinida de mapeamento.
-cmd-loadmapacts-help = Uso: {$command} <user resource path>
-cmd-loadmapacts-error = Falha ao carregar atribuições de ação
+cmd-loadacts-desc = Loads action toolbar assignments from a user-file.
+cmd-loadacts-help = Usage: {$command} <user resource path>
+cmd-loadacts-error = Failed to load action assignments
+
+cmd-loadmapacts-desc = Loads the mapping preset action toolbar assignments.
+cmd-loadmapacts-help = Usage: {$command} <user resource path>
+cmd-loadmapacts-error = Failed to load action assignments

@@ -1,71 +1,86 @@
-criminal-records-console-window-title = Computador de Registros Criminais
-criminal-records-console-records-list-title = Tripulantes
-criminal-records-console-select-record-info = Selecione um registro.
-criminal-records-console-no-records = Nenhum registro encontrado!
-criminal-records-console-no-record-found = Nenhum registro foi encontrado para a pessoa selecionada.
-criminal-records-console-flavor-left = Prenda primeiro! Pergunte depois.
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Arendian <137322659+Arendian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 k3yw <grenadiumdota@gmail.com>
+# SPDX-FileCopyrightText: 2024 Эдуард <36124833+Ertanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 James Simonson <jamessimo89@gmail.com>
+# SPDX-FileCopyrightText: 2025 Soup-Byte07 <135303377+Soup-Byte07@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+criminal-records-console-window-title = Criminal Records Computer
+criminal-records-console-records-list-title = Crewmembers
+criminal-records-console-select-record-info = Select a record.
+criminal-records-console-no-records = No records found!
+criminal-records-console-no-record-found = No record was found for the selected person.
+criminal-records-console-flavor-left = Arrest first! Ask questions later.
 criminal-records-console-flavor-right = v2.1
-criminal-records-console-show-all = Todos
+criminal-records-console-show-all = All
 
 ## Status
 
 criminal-records-console-status = Status
-criminal-records-status-none = Nenhum
-criminal-records-status-wanted = Procurado
-criminal-records-status-detained = Detido
-criminal-records-status-suspected = Suspeito
-criminal-records-status-discharged = Liberado
-criminal-records-status-paroled = Sob condicional
-criminal-records-status-dangerous = Perigoso
-criminal-records-status-search = Revista
+criminal-records-status-none = None
+criminal-records-status-wanted = Wanted
+criminal-records-status-detained = Detained
+criminal-records-status-suspected = Suspect
+criminal-records-status-discharged = Discharged
+criminal-records-status-paroled = Paroled
+criminal-records-status-dangerous = Dangerous
+criminal-records-status-search = Search
 criminal-records-status-perma = Perma
 
-criminal-records-console-wanted-reason = Razão de Procurado
-criminal-records-console-suspected-reason = Razão de Suspeita
-criminal-records-console-search-reason = Razão de Revista
-criminal-records-console-dangerous-reason = Razão de Perigoso
+criminal-records-console-wanted-reason = Wanted Reason
+criminal-records-console-suspected-reason = Suspected Reason
+criminal-records-console-search-reason = Search Reason
+criminal-records-console-dangerous-reason = Dangerous Reason
 
-criminal-records-console-reason = Razão
-criminal-records-console-reason-placeholder = Por exemplo: {$placeholder}
+criminal-records-console-reason = Reason
+criminal-records-console-reason-placeholder = For example: {$placeholder}
 
 ## Crime History
 
-criminal-records-console-crime-history = Histórico Criminal
-criminal-records-history-placeholder = Escreva o crime aqui
-criminal-records-no-history = O registro deste membro da tripulação é impecável.
-criminal-records-add-history = Adicionar
-criminal-records-delete-history = Deletar
+criminal-records-console-crime-history = Crime History
+criminal-records-history-placeholder = Write the crime here
+criminal-records-no-history = This crewmember's record is spotless.
+criminal-records-add-history = Add
+criminal-records-delete-history = Delete
 
-criminal-records-permission-denied = Permissão negada
+criminal-records-permission-denied = Permission denied
 
 ## Security channel notifications
 
-criminal-records-console-wanted = {$name} ({$job}) foi marcado como procurado por {$officer} por: {$reason}.
-criminal-records-console-not-wanted = {$officer} removeu a marcação de procurado de {$name} ({$job}).
-criminal-records-console-suspected = {$officer} qualificou {$name} ({$job}) como suspeito em decorrência de: {$reason}
-criminal-records-console-not-suspected = {$name} ({$job}) foi desqualificado como suspeito por {$officer}.
-criminal-records-console-detained = {$name} ({$job}) foi detido por {$officer}.
-criminal-records-console-released = {$name} ({$job}) foi solto por {$officer}.
-criminal-records-console-paroled = {$name} ({$job}) foi liberado sob condicional por {$officer}.
-criminal-records-console-not-parole = {$name} ({$job}) já não está mais em liberdade condicional por {$officer}.
-criminal-records-console-search = {$officer} marcou {$name} ({$job}) para revista por: {$reason}.
-criminal-records-console-not-search = {$officer} removeu a marcação de revista de {$name} ({$job}).
-criminal-records-console-perma = {$name} ({$job}) foi sentenciado à perma por {$officer}.
-criminal-records-console-not-perma = {$name} ({$job}) foi liberado da perma por {$officer}.
-criminal-records-console-dangerous = {$officer} marcou {$name} ({$job}) como perigoso por: {$reason}.
-criminal-records-console-not-dangerous = {$name} ({$job}) não é mais uma ameaça por {$officer}.
+criminal-records-console-wanted = {$name} ({$job}) was made wanted by {$officer} for: {$reason}.
+criminal-records-console-not-wanted = {$officer} cleared the wanted status of {$name} ({$job}).
+criminal-records-console-suspected = {$officer} marked {$name} ({$job}) as suspicious because of: {$reason}
+criminal-records-console-not-suspected = {$name} ({$job}) has been cleared of suspicion by {$officer}.
+criminal-records-console-detained = {$name} ({$job}) has been detained by {$officer}.
+criminal-records-console-released = {$name} ({$job}) has been released by {$officer}.
+criminal-records-console-paroled = {$name} ({$job}) has been released on parole by {$officer}.
+criminal-records-console-not-parole = {$officer} cleared the parole status of {$name} ({$job}).
+criminal-records-console-search = {$officer} marked {$name} ({$job}) for search because of: {$reason}
+criminal-records-console-not-search = {$officer} cleared the search status of {$name} ({$job}).
+criminal-records-console-perma = {$name} ({$job}) has been sentenced to perma by {$officer}.
+criminal-records-console-not-perma = {$name} ({$job}) has been released from perma by {$officer}.
+criminal-records-console-dangerous = {$officer} marked {$name} ({$job}) as dangerous because of: {$reason}.
+criminal-records-console-not-dangerous = {$name} ({$job}) is no longer a threat by {$officer}.
 
-criminal-records-console-unknown-officer = <desconhecido>
+criminal-records-console-unknown-officer = <unknown>
 
 ## Filters
 
-criminal-records-filter-placeholder = Digite um texto e pressione Enter
-criminal-records-name-filter = Nome
-criminal-records-prints-filter = Impressões digitais
+criminal-records-filter-placeholder = Input text and press "Enter"
+criminal-records-name-filter = Name
+criminal-records-prints-filter = Fingerprints
 criminal-records-dna-filter = DNA
-criminal-records-job-filter = Trabalho
-criminal-records-species-filter = Espécie
+criminal-records-job-filter = Job
+criminal-records-species-filter = Species
 
 ## Arrest auto history lines
-criminal-records-console-auto-history = PRESO: {$reason}
-criminal-records-console-unspecified-reason = <razão não especificada>
+criminal-records-console-auto-history = ARRESTED: {$reason}
+criminal-records-console-unspecified-reason = <unspecified reason>

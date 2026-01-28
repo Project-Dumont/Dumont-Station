@@ -1,36 +1,56 @@
-nukeops-title = agentes Nucleares
-nukeops-description = agentes nucleares estão atacando a estação. Tente impedir que façam o big kaboom na estação protegendo o disco nuclear!
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 2013HORSEMEATSCANDAL <146540817+2013HORSEMEATSCANDAL@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 Avalon <148660190+BYONDFuckery@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+nukeops-title = Nuclear Operatives
+nukeops-description = Nuclear operatives have targeted the station. Try to keep them from arming and detonating the nuke by protecting the nuke disk!
 
 nukeops-welcome =
-    Você é um agente nuclear. Seu objetivo é destruir {$station}, transformando-a em um monte de escombros. Seus chefes, o Sindicato, forneceram as ferramentas necessárias para a missão.
-    Operação {$name} está em andamento! Morte à Nanotrasen!
-nukeops-briefing = Seus objetivos são simples: entregar a carga e garantir que ela detone. Que comece a missão.
+    You are a nuclear operative. Your goal is to blow up {$station}, and ensure that it is nothing but a pile of rubble. Your bosses, the Syndicate, have provided you with the tools you'll need for the task.
+    Operation {$name} is a go ! Death to Nanotrasen!
+nukeops-briefing = Your objectives are simple. Deliver the payload and get out before the payload detonates. Begin mission.
 
-nukeops-opsmajor = [color=crimson]Vitória maior do Sindicato![/color]
-nukeops-opsminor = [color=crimson]Vitória menor do Sindicato![/color]
-nukeops-neutral = [color=yellow]Resultado neutro![/color]
-nukeops-crewminor = [color=green]Vitória menor da tripulação![/color]
-nukeops-crewmajor = [color=green]Vitória maior da tripulação![/color]
+nukeops-opsmajor = [color=crimson]Syndicate major victory![/color]
+nukeops-opsminor = [color=crimson]Syndicate minor victory![/color]
+nukeops-neutral = [color=yellow]Neutral outcome![/color]
+nukeops-crewminor = [color=green]Crew minor victory![/color]
+nukeops-crewmajor = [color=green]Crew major victory![/color]
 
-nukeops-cond-nukeexplodedoncorrectstation = Os agentes nucleares conseguiram explodir a estação.
-nukeops-cond-nukeexplodedonnukieoutpost = O posto avançado dos agentes nucleares foi destruído por uma explosão nuclear.
-nukeops-cond-nukeexplodedonincorrectlocation = A bomba nuclear foi detonada fora da estação.
-nukeops-cond-nukeactiveinstation = A bomba nuclear foi deixada armada na estação.
-nukeops-cond-nukeactiveatcentcom = A bomba nuclear foi entregue à  Central de Comando!
-nukeops-cond-nukediskoncentcom = A tripulação escapou com o disco de autenticação nuclear.
-nukeops-cond-nukedisknotoncentcom = A tripulação deixou o disco de autenticação nuclear para trás.
-nukeops-cond-nukiesabandoned = Os agentes nucleares foram abandonados.
-nukeops-cond-allnukiesdead = Todos os agentes nucleares morreram.
-nukeops-cond-somenukiesalive = Alguns agentes nucleares morreram.
-nukeops-cond-allnukiesalive = Nenhum agente nuclear morreu.
+nukeops-cond-nukeexplodedoncorrectstation = The nuclear operatives managed to blow up the station.
+nukeops-cond-nukeexplodedonnukieoutpost = The nuclear operative outpost was destroyed by a nuclear blast.
+nukeops-cond-nukeexplodedonincorrectlocation = The nuclear bomb was detonated off-station.
+nukeops-cond-nukeactiveinstation = The nuclear bomb was left armed on-station.
+nukeops-cond-nukeactiveatcentcom = The nuclear bomb was delivered to Central Command!
+nukeops-cond-nukediskoncentcom = The crew escaped with the nuclear authentication disk.
+nukeops-cond-nukedisknotoncentcom = The crew left the nuclear authentication disk behind.
+nukeops-cond-nukiesabandoned = The nuclear operatives were abandoned.
+nukeops-cond-allnukiesdead = All nuclear operatives have died.
+nukeops-cond-somenukiesalive = Some nuclear operatives died.
+nukeops-cond-allnukiesalive = No nuclear operatives died.
 
-nukeops-list-start = Os agentes eram:
+nukeops-list-start = The operatives were:
 nukeops-list-name = - [color=White]{$name}[/color]
 nukeops-list-name-user = - [color=White]{$name}[/color] ([color=gray]{$user}[/color])
+nukeops-not-enough-ready-players = Not enough players readied up for the game! There were {$readyPlayersCount} players readied up out of {$minimumPlayers} needed. Can't start Nukeops.
+nukeops-no-one-ready = No players readied up! Can't start Nukeops.
 
-nukeops-not-enough-ready-players = Não há jogadores suficientes prontos para iniciar o modo! Apenas {$readyPlayersCount} jogadores estavam prontos de um total de {$minimumPlayers} necessário. Não é possível começar agentes Nucleares.
-nukeops-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar agentes Nucleares.
+nukeops-role-commander = Commander
+nukeops-role-agent = Corpsman
+nukeops-role-operator = Operator
 
-nukeops-role-commander = Comandante
-nukeops-role-agent = Médico
-nukeops-role-operator = Agente
+nukeops-roundend-name = nuclear operative

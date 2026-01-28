@@ -1,4 +1,5 @@
-station-beacon-adm-assist-office = Escritorio do Assistente Administrativo
+station-beacon-adm-assist-office = Escritório do assistente administrativo
 station-beacon-laundry = Lavanderia
-station-beacon-xenobiology = Xeno-biologia
+station-beacon-xenobiology = Xenobiologia
 station-beacon-virology = Virologia
+

@@ -1,5 +1,17 @@
-station-event-meteor-swarm-start-announcement = Meteoros foram detectados em curso de colisão com a estação.
-station-event-meteor-swarm-end-announcement = O enxame de meteoros passou. Por favor, retornem às suas estações.
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-station-event-space-dust-start-announcement = A estação está passando por uma nuvem de detritos, espere danos menores nas estruturas e recursos externos.
-station-event-meteor-urist-start-announcement = A estação está colidindo com um enxame não identificado de detritos. Por favor, mantenham a calma imediatamente e não os escutem.
+station-event-meteor-swarm-start-announcement = Meteors have been detected on collision course with the station.
+station-event-meteor-swarm-end-announcement = The meteor swarm has passed. Please return to your stations.
+
+station-event-space-dust-start-announcement = The station is passing through a debris cloud, expect minor damage to external fittings and fixtures.
+station-event-meteor-urist-start-announcement = The station is colliding with an unidentified swarm of debris. Please stay calm and do not listen to them.
+station-event-meteor-cow-start-announcement = The station is colliding with an unidentified swarm of debris. Warning: Do not feed them wheat. Moo-ve away from exterior sections.
+station-event-meteor-clown-start-announcement = The station is colliding with an unidentified swarm of debris. HONK! Evacuate laughing gas storage immediately.
+station-event-meteor-potato-start-announcement = The station is colliding with an unidentified swarm of debris. High starch content detected.
+station-event-fun-swarm-start-announcement = The station is colliding with an unidentified swarm of debris. Please panic appropriately.

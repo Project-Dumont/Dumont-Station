@@ -1,8 +1,16 @@
-advertisement-sectech-1 = Quebre uns crânios do Sindicato!
-advertisement-sectech-2 = Os melhores equipamentos de combate!
-advertisement-sectech-3 = Não se esqueça - Violência resolve tudo!
-advertisement-sectech-4 = Suas armas estão aqui.
-advertisement-sectech-5 = Todos nós adoramos de poder!
-thankyou-sectech-1 = Dê um inferno neles!
-thankyou-sectech-2 = Vá fazer cumprir a lei!
-thankyou-sectech-3 = Vá prender espectadores inocentes!
+# SPDX-FileCopyrightText: 2021 Moses <StrawberryMoses@gmail.com>
+# SPDX-FileCopyrightText: 2024 EdenTheLiznerd <138748328+EdenTheLiznerd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+advertisement-sectech-1 = Crack syndicate skulls!
+advertisement-sectech-2 = Beat some heads in!
+advertisement-sectech-3 = Don't forget - harm is good!
+advertisement-sectech-4 = Your weapons are right here.
+advertisement-sectech-5 = We all love being power-hungry!
+thankyou-sectech-1 = Give 'em hell out there!
+thankyou-sectech-2 = Go enforce the law!
+thankyou-sectech-3 = Go arrest innocent bystanders!

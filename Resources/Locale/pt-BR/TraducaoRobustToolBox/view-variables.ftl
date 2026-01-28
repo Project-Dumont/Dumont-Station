@@ -1,1 +1,0 @@
-view-variables = Ver Variáveis

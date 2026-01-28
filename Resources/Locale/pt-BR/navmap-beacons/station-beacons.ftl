@@ -1,74 +1,127 @@
-station-beacon-geral = Geral
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-station-beacon-command = Comando
-station-beacon-bridge = Ponte
-station-beacon-vault = Cofre
-station-beacon-captain = Capitão
-station-beacon-hop = Chefe dos Funcionários
+station-beacon-general = General
 
-station-beacon-security = Segurança
+station-beacon-command = Command
+station-beacon-bridge = Bridge
+station-beacon-vault = Vault
+station-beacon-gateway = Gateway
+station-beacon-captain = Captain
+station-beacon-hop = HOP
+
+station-beacon-security = Security
 station-beacon-brig = Brig
-station-beacon-warden = Carcereiro
-station-beacon-hos = Segurança Chefe
-station-beacon-arsenal = Arsenal
+station-beacon-brig-med = Brig Med
+station-beacon-warden = Warden
+station-beacon-hos = HOS
+station-beacon-armory = Armory
 station-beacon-perma-brig = Perma
-station-beacon-detective = Detetive
-station-beacon-courtroom = Tribunal
-station-beacon-law = Advogado
-station-beacon-security-checkpoint = Posto de Segurança
+station-beacon-detective = Detective
+station-beacon-courtroom = Courtroom
+station-beacon-law = Law Office
+station-beacon-security-checkpoint = Checkpoint
 
-station-beacon-medical = Médicina
-station-beacon-medbay = Hospital
-station-beacon-chemistry = Química
-station-beacon-cryonics = Criônica
+station-beacon-medical = Medical
+station-beacon-medbay = Medbay
+station-beacon-chemistry = Chem
+station-beacon-cryonics = Cryopods
 station-beacon-cmo = CMO
-station-beacon-morgue = Necrotério
-station-beacon-surgery = Cirurgia
+station-beacon-morgue = Morgue
+station-beacon-surgery = Surgery
+station-beacon-psychology = Psychology
+station-beacon-clinic = Clinic
+station-beacon-paramedic = Paramedics
 
-station-beacon-science = Ciência
-station-beacon-research-and-development = Pesquisa e Desenvolvimento
-station-beacon-research-server = Servidor
-station-beacon-research-director = Diretor de Pesquisa
-station-beacon-robotics = Robótica
-station-beacon-artifact-lab = Artefato
-station-beacon-anomaly-gen = Anomalia
+station-beacon-science = Science
+station-beacon-research-and-development = Research
+station-beacon-research-server = Server
+station-beacon-research-director = RD
+station-beacon-robotics = Robotics
+station-beacon-artifact-lab = Artifact
+station-beacon-anomaly-gen = Anomaly
 
-station-beacon-supply = Suprimentos
-station-beacon-cargo = Logística
-station-beacon-cargo-bay = Doca de carga
+station-beacon-supply = Supply
+station-beacon-cargo = Cargo
+station-beacon-cargo-bay = Cargo Bay
 station-beacon-qm = QM
-station-beacon-salvage = Exploração e Mineração
+station-beacon-salvage = Salvage
 
-station-beacon-engineering = Engenharia
-station-beacon-ce = Engenheiro Chefe
-station-beacon-ame = Gerador AME
-station-beacon-solars = Solares
-station-beacon-gravgen = Gravidade
-station-beacon-pa = Controle do PA
+station-beacon-engineering = Engineering
+station-beacon-ce = CE
+station-beacon-ame = AME
+station-beacon-solars = Solars
+station-beacon-solars-N = Solars N
+station-beacon-solars-NE = Solars NE
+station-beacon-solars-E = Solars E
+station-beacon-solars-SE = Solars SE
+station-beacon-solars-S = Solars S
+station-beacon-solars-SW = Solars SW
+station-beacon-solars-W = Solars W
+station-beacon-solars-NW = Solars NW
+station-beacon-gravgen = Grav
+station-beacon-pa = PA Control
 station-beacon-smes = SMES
-station-beacon-telecoms = Telecomunicações
+station-beacon-telecoms = Telecoms
 station-beacon-atmos = Atmos
 station-beacon-teg = TEG
-station-beacon-tech-vault = Cofre de Tecnologia
+station-beacon-tech-vault = Tech Vault
+station-beacon-anchor = Anchor
 
-station-beacon-service = Serviço
-station-beacon-kitchen = Cozinha
+station-beacon-service = Service
+station-beacon-kitchen = Kitchen
 station-beacon-bar = Bar
-station-beacon-botany = Botânica
-station-beacon-janitor = Zelador
+station-beacon-botany = Botany
+station-beacon-janitor = Janitor
 
-station-beacon-ai = IA
-station-beacon-ai-sat = Satélite da IA
-station-beacon-ai-core = Núcleo da IA
+station-beacon-ai = AI
+station-beacon-ai-sat = AI Sat
+station-beacon-ai-core = AI Core
+station-beacon-ai-upload = AI Upload
+station-beacon-ai-power = AI Power
 
-station-beacon-arrivals = Chegadas
-station-beacon-evac = Evacuação
-station-beacon-eva-storage = Armazém EVA
-station-beacon-chapel = Capela
-station-beacon-library = Biblioteca
-station-beacon-dorms = Dormitórios
-station-beacon-theater = Teatro
-station-beacon-tools = Ferramentas
-station-beacon-disposals = Descarte
-station-beacon-cryosleep = Criosono
-station-beacon-escape-pod = Cápsula de Evacuação
+station-beacon-arrivals = Arrivals
+station-beacon-evac = Evac
+station-beacon-docking-arm = Docking Arm
+station-beacon-eva-storage = EVA Storage
+station-beacon-chapel = Chapel
+station-beacon-library = Library
+station-beacon-reporter = Reporter
+station-beacon-dorms = Dorms
+station-beacon-theater = Theater
+station-beacon-tools = Tools
+station-beacon-disposals = Disposals
+station-beacon-cryosleep = Cryosleep
+station-beacon-escape-pod = Escape Pod
+station-beacon-escape-pod-N = Escape Pod N
+station-beacon-escape-pod-NE = Escape Pod NE
+station-beacon-escape-pod-E = Escape Pod E
+station-beacon-escape-pod-SE = Escape Pod SE
+station-beacon-escape-pod-S = Escape Pod S
+station-beacon-escape-pod-SW = Escape Pod SW
+station-beacon-escape-pod-W = Escape Pod W
+station-beacon-escape-pod-NW = Escape Pod NW
+station-beacon-vox = Vox Break Room
+
+station-beacon-gorlex = Gorlex Barracks
+station-beacon-gorlex-office = Gorlex Office
+station-beacon-gorlex-breakroom = Gorlex Breakroom
+station-beacon-gorlex-hos = Gorlex Command
+station-beacon-cybersun-legal = Cybersun Legal Dept
+station-beacon-interdyne = Interdyne Triage
+station-beacon-interdyne-front = Interdyne Reception
+station-beacon-cybersun-rd = Cybersun R&D
+station-beacon-donk = DONK Co. Shipping
+station-beacon-donk-front = DONK Co. front
+station-beacon-shipyard = Shipyard

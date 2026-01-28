@@ -1,13 +1,19 @@
-﻿cmd-bql_select-desc = Mostrar resultados de uma consulta BQL em uma janela do lado do cliente
-cmd-bql_select-help = Uso: bql_select <bql query>
-    A janela aberta permite que você se teletransporte ou visualize as variáveis ​​das entidades resultantes.
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-cmd-bql_select-err-server-shell = Não pode ser executado a partir do shell do servidor
-cmd-bql_select-err-rest = Aviso: parte não utilizada após consulta BQL: "{ $rest }"
+cmd-bql_select-desc = Show results of a BQL query in a client-side window
+cmd-bql_select-help = Usage: bql_select <bql query>
+    The opened window allows you to teleport to or view variables the resulting entities.
 
-ui-bql-results-title = resultados BQL
+cmd-bql_select-err-server-shell = Cannot be executed from server shell
+cmd-bql_select-err-rest = Warning: unused part after BQL query: "{ $rest }"
+
+ui-bql-results-title = BQL results
 ui-bql-results-vv = VV
 ui-bql-results-tp = TP
-ui-bql-results-vv-tooltip = Ver variáveis ​​de entidade
-ui-bql-results-tp-tooltip = Teleporte para entidade
-ui-bql-results-status = { $count } entidades
+ui-bql-results-vv-tooltip = View entity variables
+ui-bql-results-tp-tooltip = Teleport to entity
+ui-bql-results-status = { $count } entities

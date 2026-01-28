@@ -1,74 +1,61 @@
-salvage-system-announcement-losing = O ímã não é mais capaz de reter os detritos recuperáveis. Tempo estimado até a perda: {$timeLeft} segundos.
-salvage-system-announcement-spawn-debris-disintegrated = Detritos desintegrados durante a transferência orbital.
-salvage-system-announcement-spawn-no-debris-available = Nenhum detrito pode ser recuperado pelo ímã de salvamento.
-salvage-system-announcement-arrived = Um pedaço de entulho recuperável foi retirado. Tempo de espera estimado: {$timeLeft} segundos.
-salvage-asteroid-name = Asteróide
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CrigCrag <137215465+CrigCrag@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Zadeon <loldude9000@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-salvage-magnet-window-title = Ímã de salvamento
-salvage-expedition-window-progression = Progressão
+salvage-system-announcement-losing = The magnet is no longer able to hold the salvagable debris. Estimated time until loss: {$timeLeft} seconds.
+salvage-system-announcement-spawn-debris-disintegrated = Debris disintegrated during orbital transfer.
+salvage-system-announcement-spawn-no-debris-available = No debris could be recovered by the salvage magnet.
+salvage-system-announcement-arrived = A piece of salvagable debris has been pulled in. Estimated hold time: {$timeLeft} seconds.
+salvage-asteroid-name = Asteroid
+
+salvage-magnet-window-title = Salvage magnet
+salvage-expedition-window-progression = Progression
 
 salvage-magnet-resources = {$resource ->
-    [OreIron] Ferro
-    [OreCoal] Carvão
-    [OreQuartz] Quartzo
-    [OreSalt] Sal
-    [OreGold] Ouro
-    [OreSilver] Prata
+    [OreIron] Iron
+    [OreCoal] Coal
+    [OreQuartz] Quartz
+    [OreSalt] Salt
+    [OreGold] Gold
+    [OreDiamond] Diamond
+    [OreSilver] Silver
     [OrePlasma] Plasma
-    [OreUranium] Urânio
-    [OreArtifactFragment] Fragmentos de artefato
+    [OreUranium] Uranium
+    [OreArtifactFragment] Artifact fragments
+    [OreBananium] Bananium
     *[other] {$resource}
 }
 
 salvage-magnet-resources-count = {$count ->
-    [1] (Ruim)
-    [2] (Moderado)
-    [3] (Moderado)
-    [4] (Rico)
-    [5] (Rico)
-    *[other] (Extraordinário)
+    [1] (Poor)
+    [2] (Moderate)
+    [3] (Moderate)
+    [4] (Rich)
+    [5] (Rich)
+    *[other] (Extraordinary)
 }
 
+# Debris
+salvage-magnet-debris-ChunkDebris = Space debris
+
 # Asteroids
-dungeon-config-proto-BlobAsteroid = Aglomerado de asteroides
-dungeon-config-proto-ClusterAsteroid = Grupo de asteroides
-dungeon-config-proto-SpindlyAsteroid = Asteroide espiral
-dungeon-config-proto-SwissCheeseAsteroid = Fragmentos de asteroide
+dungeon-config-proto-BlobAsteroid = Asteroid clump
+dungeon-config-proto-ClusterAsteroid = Asteroid cluster
+dungeon-config-proto-SpindlyAsteroid = Asteroid spiral
+dungeon-config-proto-SwissCheeseAsteroid = Asteroid fragments
 
 # Wrecks
-salvage-map-proto-Small1 = Armazenamento de Engenharia
-salvage-map-proto-Small2 = Recanto de jogos
-salvage-map-proto-Small3 = Lavanderia
-salvage-map-proto-Small4 = Salvamento da Bar
-salvage-map-proto-SmallShip1 = Pílula
-salvage-map-proto-SmallAISurveyDrone = AI Survey Drone
-salvage-map-proto-SmallCargo = POD de mineração
-salvage-map-proto-SmallChapel = Capela
-salvage-map-proto-SmallChef = Restaurante
-salvage-map-proto-SmallParty = Festa de aniversário
-salvage-map-proto-SmallSyndicate = Nave de Sindicato em ruínas
-salvage-map-proto-SmallTesla = Contenção de tesla
-
-salvage-map-proto-SmallA1 = Asteróide Plasmafire
-salvage-map-proto-Medium1 = Cache de Plasma
-salvage-map-proto-MediumVault1 = Cofre
-salvage-map-proto-MediumOrchestra = Orquestra Silenciosa
-salvage-map-proto-MediumLibraryWreck = Biblioteca abandonada
-salvage-map-proto-MediumCargoWreck = Naufrágio do Departamento de Carga
-salvage-map-proto-MediumPirateWreck = Fragmento da Barcaça Pirata
-salvage-map-proto-MediumHaulingShuttleWreck = Nave de transporte arruinado
-salvage-map-proto-TickColony = Colônia de carrapatos espaciais
-salvage-map-proto-CargoDock = Doca de carga de asteróide
-salvage-map-proto-SpaceWaffleHome = Casa do Waffle
-salvage-map-proto-MediumShuttleWreck = Nave de emergência arruinado
-salvage-map-proto-MediumPetHospital = Hospital de animais e ursos
-salvage-map-proto-MediumCrashedShuttle = Nave acidentado
-salvage-map-proto-Meatball = Almôndega
-salvage-map-proto-VeganMeatball = Almôndega Vegana
-
-salvage-map-proto-StationStation = Estação estação
-salvage-map-proto-AsteroidBase = Base de Asteroides
-salvage-map-proto-RuinCargoBase = Armazenamento de carga arruinado
-salvage-map-proto-SecurityChunk = Pedaço do Departamento de Segurança
-salvage-map-proto-EngineeringChunk = Pedaço do Departamento de Engenharia
-salvage-map-proto-OutpostArm = Braço do posto avançado ultrapassado
+salvage-map-wreck = Salvage wreck
+salvage-map-wreck-desc-size = Size:
+salvage-map-wreck-size-small = [color=lime]Small[/color]
+salvage-map-wreck-size-medium = [color=cornflowerblue]Medium[/color]
+salvage-map-wreck-size-large = [color=orchid]Large[/color]

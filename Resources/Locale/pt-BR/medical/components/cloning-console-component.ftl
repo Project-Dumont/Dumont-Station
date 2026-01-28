@@ -1,30 +1,42 @@
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vascreeper@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## UI
-cloning-console-window-title = Console de Clonagem
-cloning-console-window-clone-button-text = Clonar
+cloning-console-window-title = Cloning Console
+cloning-console-window-clone-button-text = Clone
 cloning-console-window-scanner-id = ID: [color=white]{$scannerOccupantName}[/color]
 cloning-console-window-pod-id = ID: [color=white]{$podOccupantName}[/color]
-cloning-console-window-no-patient-data-text = Sem dados do paciente.
+cloning-console-window-no-patient-data-text = No patient data.
 cloning-console-window-id-blank = ID:
-cloning-console-window-scanner-details-label = Status do Scanner Genético
-cloning-console-window-pod-details-label = Status do Pod de Clonagem
-cloning-console-window-no-scanner-detected-label = Vincule um scanner genético a uma multitool ou a um network configurator.
-cloning-console-window-no-clone-pod-detected-label = Vincule um pod de clonagem a uma multitool ou a um network configurator.
-cloning-console-window-scanner-far-label = Scanner Genético Muito Distante
-cloning-console-window-clone-pod-far-label = Cápsula de Clonagem Muito Distante
-cloning-console-eject-body-button = Ejetar Corpo
-cloning-console-neural-interface-label = Interface Neural:
-cloning-console-no-mind-activity-text = Interface Neural: [color=red]Nenhuma Atividade[/color]
-cloning-console-mind-present-text = Interface Neural: [color=green]Consciência Detectada[/color]
-cloning-console-component-msg-ready = Pronto Para Clonar
-cloning-console-component-msg-empty = Nenhum Corpo Detectado
-cloning-console-component-msg-scanner-occupant-alive = Não Está Pronto: Vida do Ocupante do Scanner
-cloning-console-component-msg-already-alive = Não Está Pronto: Conflito Metafísico
-cloning-console-component-msg-occupied = Não Está Pronto: O Pod Já Contém Um Clone
-cloning-console-component-msg-already-cloning = Não Está Pronto: Conflito De Rede Do Pod
-cloning-console-component-msg-incomplete = Não Está Pronto: Clonagem Em Andamento
-cloning-console-component-msg-no-cloner = Não Está Pronto: Nenhum Clone Detectado
-cloning-console-component-msg-no-mind = Não Está Pronto: Nenhuma Atividade De Alma Detectada
+cloning-console-window-scanner-details-label = Genetic Scanner Status
+cloning-console-window-pod-details-label = Cloning Pod Status
+cloning-console-window-no-scanner-detected-label = Link a genetic scanner with a multitool or network configurator.
+cloning-console-window-no-clone-pod-detected-label = Link a cloning pod with a multitool or network configurator.
+cloning-console-window-scanner-far-label = Genetic Scanner Too Far Away
+cloning-console-window-clone-pod-far-label = Cloning Pod Too Far Away
+cloning-console-eject-body-button = Eject Body
+cloning-console-neural-interface-label = Neural Interface:
+cloning-console-no-mind-activity-text = Neural Interface: [color=red]No Activity[/color]
+cloning-console-mind-present-text = Neural Interface: [color=green]Consciousness Detected[/color]
+cloning-console-component-msg-ready = Ready To Clone
+cloning-console-component-msg-empty = No Body Detected
+cloning-console-component-msg-scanner-occupant-alive = Not Ready: Scanner Occupant Living
+cloning-console-component-msg-already-alive = Not Ready: Metaphysical Conflict
+cloning-console-component-msg-occupied = Not Ready: The Pod Already Contains A Clone
+cloning-console-component-msg-already-cloning = Not Ready: Pod Network Conflict
+cloning-console-component-msg-incomplete = Not Ready: Cloning In Progress
+cloning-console-component-msg-no-cloner = Not Ready: No Cloner Detected
+cloning-console-component-msg-no-mind = Not Ready: No Soul Activity Detected
 
-cloning-console-chat-error = ERRO: BIOMASSA INSUFICIENTE. A CLONAGEM DESTE CORPO REQUER {$units} UNIDADES DE BIOMASSA.
-cloning-console-uncloneable-trait-error = ERROR: A ALMA ESTÁ AUSENTE, A CLONAGEM É IMPOSSÍVEL.
-cloning-console-cellular-warning = ATENÇÃO: PONTUAÇÃO DE CONFIANÇA GENÉTICA É {$percent}%. A CLONAGEM PODE TER RESULTADOS INESPERADOS.
+cloning-console-chat-error = ERROR: INSUFFICIENT BIOMASS. CLONING THIS BODY REQUIRES {$units} UNITS OF BIOMASS.
+cloning-console-uncloneable-trait-error = ERROR: CLONING IS IMPOSSIBLE DUE TO ABNORMAL BODY COMPOSITION.
+cloning-console-cellular-warning = WARNING: GENEFSCK CONFIDENCE SCORE IS {$percent}%. CLONING MAY HAVE UNEXPECTED RESULTS.

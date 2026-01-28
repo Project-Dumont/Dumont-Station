@@ -1,137 +1,133 @@
 language-Universal-name = Universal
-language-Universal-description = O que você é?
+language-Universal-description = O que é você?
 
-language-Psychomantic-name = Psicomático
-language-Psychomantic-description = Puro significado, livre das amarras primitivas das palavras e gestos.
+language-Psychomantic-name = Psicomança
+language-Psychomantic-description = Significado puro, livre da tirania de palavras e gestos primitivos.
 
-language-Bubblish-name = Borbulhês
-language-Bubblish-description = A linguagem dos Slimes. Composta por um vocabulário de sons borbulhantes a torna difícil de ser falada por humanos sem ajuda de equipamentos.
+language-Bubblish-name = Bubblish
+language-Bubblish-description = A língua das Slimes. Sendo uma mistura de borbulhas e estalos, é muito difícil para humanos sem auxílio mecânico.
 
-language-RootSpeak-name = Galhofala
-language-RootSpeak-description = A estranha língua parecida com assovios falada pelos Diona.
+language-RootSpeak-name = Rootspeak
+language-RootSpeak-description = A estranha linguagem em estilo de assobio falada pelos Diona.
 
 language-Nekomimetic-name = Nekomimético
-language-Nekomimetic-description = Para o leigo, essa linguagem é uma tentativa horrível de falar Japonês. Para os Felinídios, é de alguma forma compreensível
+language-Nekomimetic-description = Para um observador casual, essa língua é uma bagunça incompreensível de japonês quebrado. Para os Felinids, de algum jeito faz sentido.
 
 language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
-    A linguagem dos Moghes - composta por chiados e chacoalhos. Falada nativamente pelos Unathi.
+    A língua comum dos Moghes — composta por sibilos e estalos. Falada nativamente pelos Unathi.
 
 language-Azaziba-name = Sinta'Azaziba
 language-Azaziba-description =
-    Uma linguagem dos Moghes consistindo em uma combinação de palavras faladas e gesticulações.
-    Apesar de minguar desde quando os Moghes entraram no estágio galáctico, é popularmente usado pelos Unathi que nunca se conformaram à dominação cultural da Hegemonia.
+    Uma língua dos Moghes composta por palavras faladas e gesticulação.
+    Embora esteja em declínio desde que os Moghes entraram no palco galáctico — ela ainda é usada popularmente por Unathi que nunca caíram sob a dominação cultural da Hegemonia.
 
-# Referência ao Chinês Simplificado.
-language-SolCommon-name = Sol Simplificado
+language-SolCommon-name = Sol common
 language-SolCommon-description =
-    Com suas raízes no mandarim chinês, Sol surgiu como um esforço de unificar a língua oficial da Aliança Solar.
-    É falado por oficiais de estado, ensinado em escolas e falado por aqueles que sentem um orgulho na Aliança ou de alguma forma sucumbiram à cultura deles.
+    Com raízes no mandarim — o Common evoluiu como a língua oficial da Aliança Sol, com oficiais trabalhando para unificar uma língua comum.
+    É falado por oficiais do estado — ensinado nas escolas — e por aqueles que sentem orgulho nacional da Aliança ou simplesmente sucumbiram à cultura.
 
-language-NovuNederic-name = Portomenho
+language-NovuNederic-name = Novu-Nederic
 language-NovuNederic-description =
-    No passado uma língua de navegantes dos mares e mercantes, agora a voz dos navegantes espaciais, terraformadores e pioneiros - e grandes apreciadores de agricultura.
-    Falado na Nova-Holanda, essa língua de troca direta e pragmática carrega as consoantes afiadas e vogais cortadas do passado terrestre.
-    Desenvolvido durante séculos de navegações, conquistas territoriais e comércio, ela prospera entre aqueles que modificavam mundos inteiros - assim como seus antepassados modificaram das terras ao mar.
+    Antes língua de marinheiros e mercadores, agora a voz de espaciais, terraformadores e pioneiros — e grandes apreciadores da agricultura.
+    Falada na Nova Holanda, essa língua de comércio direta e pragmática carrega consoantes fortes e vogais curtas de suas raízes antigas.
+    Construída sobre séculos de navegação, recuperação de terras e comércio, ela prospera entre aqueles que moldam mundos inteiros — assim como seus ancestrais moldaram a terra a partir do mar.
 
-language-TauCetiBasic-name = Tau-Ceti Unificado
+language-TauCetiBasic-name = Tau-Ceti Basic
 language-TauCetiBasic-description =
-    Um sucessor espiritual do Esperanto, estabelecido em 2404 em Tau Ceti por intelectuais de Ceti.
-    O seu alfabeto único, totalmente customizável e estrutura permitem-na ser falada pela maioria das espécies alienígenas.
-    É a linguagem oficial de Tau Ceti e tem ganhado popularidade em círculos diplomáticos e Universalistas pelo espaço sideral humano.
+    Um sucessor espiritual do Esperanto, estabelecido em 2404 em Tau Ceti por intelectuais ceti.
+    Seu alfabeto e estrutura totalmente customizados permitem que seja falado por várias espécies alienígenas.
+    É a língua oficial de Tau Ceti e ganha força em círculos diplomáticos e entre Universalistas no espaço humano.
 
-# Trocadilho idiota de "espaço" com "espanhol". Não resisti.
-language-Tradeband-name = Espaçonhol
+language-Tradeband-name = Tradeband
 language-Tradeband-description =
-    Vinda de idiomas latinos e românticos da velha Terra - Espaçonhol é a principal língua da classe alta da humanidade.
-    Soa elegante e bem estruturada para a maioria. Usado popularmente por comerciantes, diplomatas e aqueles que valorizam um passado romântico.
+    Descendente do latim e das línguas românicas da velha Terra — Tradeband continua sendo a língua principal da alta classe humana.
+    A língua soa elegante e bem estruturada para a maioria. Ainda é usada por comerciantes, diplomatas e aqueles que desejam manter um pedaço de um passado romântico.
 
-language-Freespeak-name = Soltonês
+language-Freespeak-name = Freespeak
 language-Freespeak-description =
-    Uma linguagem de renegados e fronteiriços que evoluiu de várias línguas terrestres-- como Hindi,
-    combinada em uma gororoba que soa incoerente ou até bárbaro para falantes não nativos.
-    Essa linguagem é a única identidade cultural comum entre os humanos na fronteira do espaço. Falar essa língua torna o falante uma pessoa de espírito livre.
-    Apelidada de "Arrotejo" por cidadãos da Aliança.
+    Uma língua de renegados e fronteiriços descendente de várias línguas da Terra — como hindi,
+    combinada em um amontoado multi-raiz que soa incoerente ou até bárbaro para não nativos.
+    Essa língua é a única identidade cultural comum para humanos na fronteira. Falar Freespeak declara ousadamente que você é um espírito livre.
+    Frequentemente chamada de “Gutter” pelos cidadãos da Aliança.
 
-language-Elyran-name = Elírio Padrão
+language-Elyran-name = Elyran Standard
 language-Elyran-description =
-    Elírio Padrão é a língua oficial da República de Elíria. Construido usando elementos do Persa, Árabe e Turco.
-    A influência dessas três línguas podem ser vistas no seu vocabulário e gramática.
+    Elyran Standard é a língua oficial da República de Elyra. Construída usando elementos do persa, árabe e turco.
+    A influência dessas três línguas aparece na gramática e no vocabulário.
 
 language-Canilunzt-name = Canilunzt
 language-Canilunzt-description =
-    A linguagem gutural falada e utilizada pelos habitantes do sistema Vazzend,
-    composta de latidos, rosnidos e movimentos das orelhas e cauda. Vulpkanins falam essa linguagem com facilidade.
+    A língua gutural falada e usada pelos habitantes do sistema Vazzend,
+    composta por rosnados, latidos, gritos e forte uso de orelhas e cauda. Vulpkanin falam essa língua com facilidade.
 
-language-Moffic-name = Mariponês
-language-Moffic-description = A linguagem das pessoas mariposa beira a completa ininteligibilidade.
+language-Moffic-name = Moffic
+language-Moffic-description = A língua dos “mothpeople” beira a completa incompreensibilidade.
 
-language-RobotTalk-name = RobôFala
-language-RobotTalk-description = Uma linguagem que consiste em bipes, assovios, chiados e zumbidos. Línguas orgânicas não conseguem falar ela sem ajuda de tradutores especiais.
+language-RobotTalk-name = RobotTalk
+language-RobotTalk-description = Uma língua feita de chiados binários, assobios, sibilos e lamentos. Línguas orgânicas não conseguem falar sem tradutores especiais.
 
-# Não consegui pensar numa maneira de manter a referência de Undertale aqui.
-language-Calcic-name = Cálcico
-language-Calcic-description = A linguagem do chacoalhar de ossos dos Esqueletos e Plasmamen. Soa como uma harmonia de ossos em tom humorístico.
+language-Calcic-name = Calcic
+language-Calcic-description = A língua que estala ossos dos Esqueletos e Plasmamen. Parece uma mistura harmônica de ossos com um tom “humerus”, sem qualquer “ribbing” desafinado.
 
-# Tau-Ceti Basic Sign Language - Removed prefix for better readability.
-language-Sign-name = Linguagem de Sinais
+language-Sign-name = Língua de Sinais
 language-Sign-description =
-    Linguagem de Sinais de Tau Ceti.
-    Essa linguagem de sinais é popular entre deficientes auditivos.
+    Língua de Sinais de Tau-Ceti Basic.
+    TCB-SL, essa língua é comum entre pessoas mudas e surdas.
 
 language-Marish-name = Marish
-language-Marish-description =  Uma linguagem falada apenas por Shadowkins, não pode ser replicada por línguas comuns.
+language-Marish-description = Uma língua falada apenas pelos Shadowkin, impossível de ser replicada por línguas normais.
 
-language-ValyrianStandard-name = Valírio Padrão
+language-ValyrianStandard-name = Valyrian Standard
 language-ValyrianStandard-description =
-    Uma linguagem originada de línguas da europa oriental da antiga Terra - Valírio Padrão é comunmente falada por Harpias trazidas do seu planeta natal Valíria 4b.
-    É raramente falada fora dos mundos dos falantes nativos, e tem sido recentemente suplantada pelos 'Conlangs da Aliança Solar.
-    Seus falantes são aqueles que desejam defender as tradições e crenças dos pvoos antigos de antes do período colonial.
+    Uma língua descendente de línguas do leste europeu da velha Terra — Valyrian Standard é o idioma comum das Harpies criadas no seu mundo natal Valyrian 4b.
+    Raramente é falada fora de seus mundos nativos, e modernamente foi suplantada pelos “Conlangs” da Aliança Sol.
+    Seus falantes desejam manter tradições e crenças de povos antigos antes da era colonial.
 
-language-Chittin-name = Zunir
+language-Chittin-name = Chittin
 language-Chittin-description =
-    Uma linguagem que consiste em cliques, zunidos e uma variedade de sons de insetos.
-    A maior parte da fala deles vem de suas antenas, tornando-a quase impossível para pessoas que não têm como falar.
-language-Xeeplian-name = Zeepliano
+    Uma língua feita de cliques, zumbidos e sons ásperos de insetos.
+    A maior parte da fala vem das antenas, tornando quase impossível aprender sem elas.
+
+language-Xeeplian-name = Xeeplian
 language-Xeeplian-description =
-    Nossa língua é altamente avançada, eficiente e objetiva.
-    Nós gostamos de mimetizar o balbuciar de algumas formas de vida inferiores para alcançar Nossos objetivos.
+    Nossa língua é altamente avançada, eficiente e direta.
+    Gostamos de imitar o balbuciar de formas de vida inferiores na busca por nossos objetivos.
 
 # Animal Languages
 
 language-Cat-name = Gato
 language-Cat-description = Miau
 
-# Eu realmente não sei.
 language-Deer-name = Veado
-language-Deer-description = Que tipo de som um veado faz?
+language-Deer-description = Ni!
 
-language-Dog-name = Cachorro
-language-Dog-description = Au au!
+language-Dog-name = Cão
+language-Dog-description = Au!
 
 language-Fox-name = Raposa
-language-Fox-description = Eeeck!
+language-Fox-description = Yeee!
 
 language-Xeno-name = Xeno
 language-Xeno-description = Sssss!
 
 language-Monkey-name = Macaco
-language-Monkey-description = Ah Uh Ah Uh!
+language-Monkey-description = Oooook!
 
 language-Mouse-name = Rato
 language-Mouse-description = Squeeek!
 
 language-Chicken-name = Galinha
-language-Chicken-description = Có-có-có!
+language-Chicken-description = Cocorocó!
 
 language-Duck-name = Pato
-language-Duck-description = Quac!
+language-Duck-description = Quack!
 
 language-Cow-name = Vaca
 language-Cow-description = Muuuu!
 
 language-Sheep-name = Ovelha
-language-Sheep-description = Mééé!
+language-Sheep-description = Baaah!
 
 language-Kangaroo-name = Canguru
 language-Kangaroo-description = Chuu!
@@ -140,18 +136,17 @@ language-Pig-name = Porco
 language-Pig-description = Oink!
 
 language-Crab-name = Caranguejo
-language-Crab-description = Clic!
+language-Crab-description = Click!
 
 language-Kobold-name = Kobold
-language-Kobold-description = Hiss!
+language-Kobold-description = Sss!
 
-language-Hissing-name = Chiar
-language-Hissing-description = Hiss!
+language-Hissing-name = Sibilante
+language-Hissing-description = Sss!
 
 language-Eldritch-name = Eldritch
 language-Eldritch-description =
-    Uma linguagem que é considerada há muito tempo esquecida - agora apenas os falantes dessa língua profana de chiados e
-    murmúrios são os seguidores do antigo Deus do Sangue.
+    Uma língua considerada esquecida — agora os únicos falantes dessa língua profana de gritos e murmúrios são seguidores de um antigo Deus do Sangue.
 
 language-Penguin-name = Pinguim
 language-Penguin-description = Bwaap!
@@ -162,39 +157,40 @@ language-DroneTalk-description = Incompreensível para a maioria dos não-drones
 # Tajaran and Shadow stuffs
 language-SiikMaas-name = Siik'maas
 language-SiikMaas-description =
-    A antiga língua religiosa dos Tajara, agora a mais falada e ensinada linguagem em Adhomai.
+    A antiga língua religiosa dos Tajara, agora a mais falada e ensinada em Adhomai.
 
 language-NalRasan-name = Nal'rasan
 language-NalRasan-description =
-    Um dialeto corporal criado pelos caçadores M'sai para furtividade, adotado depois por rebeldes para comunicação discreta durante a Grande Guerra.
+    Um dialeto pesado em linguagem corporal criado por caçadores M'sai para furtividade, depois adotado por rebeldes para comunicação secreta durante a Grande Guerra.
+
 language-SiikTajr-name = Siik'tajr
 language-SiikTajr-description =
-    Uma linguagem revolucionária misturando Siik'maas e Nal'rasan, projetada para sigilo durante a derrubada da plutocracia e muito usada na Grande Guerra.
+    Uma língua revolucionária que mistura Siik'maas e Nal'rasan, criada para segredo durante a derrubada da plutocracia e usada fortemente na Grande Guerra.
 
 language-YaSsa-name = Ya'ssa
 language-YaSsa-description =
-   Um dialeto Siik'maas refinado já falado pela nobreza Njarir, revivido pelo Novo Reino de Adhomai após séculos de desuso.
+    Um dialeto refinado de Siik'maas falado pela nobreza Njarir, revivido pelo Novo Reino de Adhomai após séculos de desuso.
 
 language-Delvahii-name = Delvahii
 language-Delvahii-description =
-    Uma linguagem Zhan-Khazan ligada à adoração de Ma'take, ainda usada em ritos religiosos e preferida por fazendeiros que resistiam ao controle governamental.
+    Uma língua Zhan-Khazan ligada ao culto Ma'take, ainda usada em ritos religiosos e preferida por agricultores que resistem ao controle do governo.
 
-language-Shadowmind-name = Penumbramental
+language-Shadowmind-name = Shadowmind
 language-Shadowmind-description =
-    Uma linguagem falada pelos shadowlings. Pouco é conhecido sobre, apenas que os Thralls conseguem entender.
+    Uma língua falada pelos shadowlings. Pouco se sabe, exceto que Thralls podem entendê-la.
 
 language-Qiilour-name = Qiilour
 language-Qiilour-description =
-    A linguagem nativa e principal dos Xelthia, Qiilour é falada quase por toda a espécie deles em algum nível. É uma fusão refinada de várias línguas antigas como Telenarii, Voskarn, e Xeltech Antigo - cada uma agora perdida pela história.
+    Língua nativa e principal dos Xelthia, falada por quase todos os membros da espécie. É uma fusão refinada de vários idiomas antigos — como Telenarii, Voskarn e Old Xelthec — todos perdidos na história.
 
 # Ported from Floofstation:
 
 language-Schechi-name = Schechi
 language-Schechi-description =
-    A linguagem dos Resomi, apresentando principalmente sons frontais sem arredondamentos. Falantes fluentes soam quase como cantar de pássaros.
+    A língua dos Resomi, com sons frontais feitos sem arredondamento. Falantes fluentes soam próximos de canto de pássaro.
 
 language-NewKinPidgin-name = Ka'rakk
-language-NewKinPidgin-description = Um dialeto pobre misturado por Vox de castas baixas.
-    Uma tentativa primitiva e tosca resultando em uma imitação dura e simplificada da linguagem verdadeira deles.
-    Vox de castas superiores ainda conseguem entender por aproximações.
-    Soa como um carcalhejar caótico para todo o restante.
+language-NewKinPidgin-description = Um dialeto degradado montado por Vox de baixa casta, deformado além do reconhecimento.
+    Embora seja um esforço primitivo e desajeitado resultando em uma imitação simplificada de sua verdadeira língua,
+    Vox de alta casta ainda conseguem discernir significado nas aproximações brutas.
+    Para todos os outros soa como gritos caóticos.

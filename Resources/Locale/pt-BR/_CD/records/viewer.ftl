@@ -1,4 +1,4 @@
-cd-character-records-viewer-title-employ = Registros de Emprego
+cd-character-records-viewer-title-employ = Registros do Funcionário
 cd-character-records-viewer-title-sec = Registros de Segurança
 cd-character-records-viewer-title-med = Registros Médicos
 

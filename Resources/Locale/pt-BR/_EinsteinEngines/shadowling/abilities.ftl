@@ -1,42 +1,42 @@
-shadowling-enthrall-non-humanoid = Isso não é o que você procura...
-shadowling-enthrall-mindshield = Isso pode resistir aos seus poderes!
-shadowling-enthrall-already-thrall = Isso já é seu servo!
-shadowling-enthrall-cant-be-controlled = Essa mente não pode ser controlada...
-shadowling-enthrall-no-mind = É só uma casca vazia...
-shadowling-enthrall-shadowling = Você nota: muito parecido com você. Não pode ser servo!
-shadowling-enthrall-psionic-insulated = A essência disso queima com poderes além da sua compreensão!
-shadowling-enthrall-dead = Você preciso disso vivo!
+shadowling-enthrall-non-humanoid = Não é o que você está procurando...
+shadowling-enthrall-mindshield = Eles podem desafiar seus poderes!
+shadowling-enthrall-already-thrall = Eles já são seu escravo!
+shadowling-enthrall-cant-be-controlled = Sua mente não pode ser controlada...
+shadowling-enthrall-no-mind = É apenas um vaso vazio...
+shadowling-enthrall-shadowling = Você não pode enfeitiçar sua própria espécie!
+shadowling-enthrall-psionic-insulated = Sua essência arde com um poder além do seu controle!
+shadowling-enthrall-dead = Você precisa que eles estejam vivos!
 
-shadowling-target-being-thralled = Uma presença da escuridão aperta sua mente...!
+shadowling-target-being-thralled = Uma presença sombria prende sua mente...!
 
-shadowling-glare-target = Your body seizes as an otherworldly glare bears down on you.
+shadowling-glare-target = Seu corpo trava enquanto um olhar de outro mundo se abate sobre você.
 
-shadowling-shadow-walk-activate = Eu desapareço entre os raios de luz.
+shadowling-shadow-walk-activate = Eu desapareço entre os suspiros de luz.
 
-shadowling-icy-veins-activated = An unnatural chill grips your limbs...
+shadowling-icy-veins-activated = Um frio antinatural prende seus membros...
 
-shadowling-rapid-rehatch-complete = The husk shudders, and from it, you are reborn unscathed.
+shadowling-rapid-rehatch-complete = A casca estremece, e dela, você renasce ileso.
 
-shadowling-destroy-engines-used = A evacuação já foi atrasada por outro motivo.
-shadowling-destroy-engines-arrived = Seus poderem te desabilitam de destruir os motores!
-shadowling-destroy-engines-not-called = A evacuação ainda não foi chamada.
+shadowling-destroy-engines-used = O transporte já foi atrasado por outra pessoa.
+shadowling-destroy-engines-arrived = Seus poderes te impedem de destruir os motores!
+shadowling-destroy-engines-not-called = O transporte ainda não foi chamado.
 
-shadowling-collective-mind-success = Você se sente mais forte! Você precisa de mais {$thralls} { MAKEPLURAL("servo", $thralls) } para ascender a sua verdadeira forma!
-shadowling-collective-mind-failure = Você não sente nada. Você precisa de mais {$thralls} { MAKEPLURAL("servo", $thralls) } para ascender a sua verdadeira forma!
-shadowling-collective-mind-ascend = Você obteu todos os poderes... Agora, para a ascensão!
+shadowling-collective-mind-success = Você se sente mais forte do que antes! Você precisa de {$thralls} Escravos para alcançar sua forma verdadeira!
+shadowling-collective-mind-failure = Você não sente nada. Você precisa de {$thralls} Escravos para alcançar sua forma verdadeira.
+shadowling-collective-mind-ascend = Você ganhou todos os poderes... Agora, é hora de ascender!
 
-shadowling-sonic-screech-complete = Os ares de separam com seu choro.
+shadowling-sonic-screech-complete = O ar se parte com seu grito.
 
-shadowling-null-charge-success = O seu impacto ecoa pelos cabos como o poder ecoa pro vazio.
-shadowling-null-charge-start = Você começa a carregar seu soco com uma força anuladora.
+shadowling-null-charge-success = Seu impacto ecoa pelos fios enquanto o poder cede ao vazio.
+shadowling-null-charge-start = Você começa a carregar seu punho com uma força anuladora.
 
-shadowling-black-rec-lesser-already = O algo já é um Shadowling Lesser.
-shadowling-black-rec-revive-done = A escuridão te puxa de volta da borda.
-shadowling-black-rec-lesser-done = Você se sente mais forte do que antes.
-shadowling-black-rec-limit = Você chegou ao seu limite. Você não pode empoderar nenhum servo mais!
+shadowling-black-rec-lesser-already = O alvo já é um Shadowling Menor.
+shadowling-black-rec-revive-done = A escuridão te puxa de volta do abismo.
+shadowling-black-rec-lesser-done = Você se sente ainda mais forte do que antes.
+shadowling-black-rec-limit = Você atingiu seu limite. Você não pode fortalecer mais Escravos!
 
-shadowling-ascendant-broadcast-dialog = A sua mensagem foi enviada a todo mundo.
+shadowling-ascendant-broadcast-dialog = Sua mensagem foi enviada para todos.
 
-shadowling-nox-imperii-done = Nunca mais orar para a luz, você se aproxima de onde seus ancestrais murcharam.
+shadowling-nox-imperii-done = Não mais presa à luz, você caminha onde seus ancestrais feneceram.
 
-shadowling-ascendance-fail = Você não pode construir seu casulo aqui.
+shadowling-ascendance-fail = Você não pode construir seu casulo neste tile.

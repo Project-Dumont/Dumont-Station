@@ -1,13 +1,19 @@
-comp-containment-turned-on = O gerador de contenção está ligado.
-comp-containment-turned-off = O gerador de contenção está desligado.
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-comp-containment-on = Está [color=green]ligado[/color], pronto para gerar uma conexão.
-comp-containment-off = Está [color=red]desligado[/color].
+comp-containment-turned-on = The containment field generator boots up.
+comp-containment-turned-off = The containment field generator shuts down.
 
-comp-containment-connected = O gerador de contenção solta uma luz enquanto estabelece uma conexão!
-comp-containment-disconnected = A luz do gerador de contenção some, interrompendo a conexão.
+comp-containment-on = It's switched [color=green]on[/color], ready to generate a connection.
+comp-containment-off = It's switched [color=red]off[/color].
 
-comp-containment-anchor-warning = Você não pode desfixar o gerador de contenção enquanto está ativo ou conectado!
-comp-containment-toggle-warning = Você não pode desligar o gerador enquanto está ativo ou conectado!
+comp-containment-connected = The containment field generator shoots out a light as it establishes a connection!
+comp-containment-disconnected = The containment field generator light fades away, severing the connection.
 
-comp-field-vaporized = {CAPITALIZE(ARTIGO-O($entity))} {$entity} bate no campo e é {MAKEGENERO("vaporizado", $entity)}!
+comp-containment-anchor-warning = You cannot unanchor the containment field generator while it's on or connected!
+comp-containment-toggle-warning = You cannot turn the generator off while it's connected.
+
+comp-field-vaporized = The {$entity} hits the field and vaporizes into nothing!

@@ -1,56 +1,67 @@
-marking-FelinidEarsBasic = Orelhas Básicas
-marking-FelinidEarsBasic-basic_outer = Orelha externa
-marking-FelinidEarsBasic-basic_inner = Orelha interna
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-marking-FelinidEarsCurled = Orelhas Curvadas
-marking-FelinidEarsCurled-curled_outer = Orelha externa
-marking-FelinidEarsCurled-curled_inner = Orelha interna
+marking-FelinidEarsBasic = Basic Ears
+marking-FelinidEarsBasic-basic_outer = Outer ear
+marking-FelinidEarsBasic-basic_inner = Inner ear
 
-marking-FelinidEarsDroopy = Orelhas Caidas
-marking-FelinidEarsDroopy-droopy_outer = Orelha externa
-marking-FelinidEarsDroopy-droopy_inner = Orelha interna
+marking-FelinidEarsCurled = Curled Ears
+marking-FelinidEarsCurled-curled_outer = Outer ear
+marking-FelinidEarsCurled-curled_inner = Inner ear
 
-marking-FelinidEarsFuzzy = Orelhas Fofas
-marking-FelinidEarsFuzzy-basic_outer = Orelha externa
-marking-FelinidEarsFuzzy-fuzzy_inner = Pelos da orelha
+marking-FelinidEarsDroopy = Droopy Ears
+marking-FelinidEarsDroopy-droopy_outer = Outer ear
+marking-FelinidEarsDroopy-droopy_inner = Inner ear
 
-marking-FelinidEarsStubby = Orelhas Curtas
-marking-FelinidEarsStubby-stubby_outer = Orelha externa
-marking-FelinidEarsStubby-stubby_inner = Orelha interna
+marking-FelinidEarsFuzzy = Fuzzy Ears
+marking-FelinidEarsFuzzy-basic_outer = Outer ear
+marking-FelinidEarsFuzzy-fuzzy_inner = Ear fuzz
 
-marking-FelinidEarsTall = Orelhas Longas
-marking-FelinidEarsTall-tall_outer = Orelha externa
-marking-FelinidEarsTall-tall_inner = Orelha interna
-marking-FelinidEarsTall-tall_fuzz = Pelos da orelha
+marking-FelinidEarsStubby = Stubby Ears
+marking-FelinidEarsStubby-stubby_outer = Outer ear
+marking-FelinidEarsStubby-stubby_inner = Inner ear
 
-marking-FelinidEarsTorn = Orelhas Rasgadas
-marking-FelinidEarsTorn-torn_outer = Orelha externa
-marking-FelinidEarsTorn-torn_inner = Orelha interna
+marking-FelinidEarsTall = Tall Ears
+marking-FelinidEarsTall-tall_outer = Outer ear
+marking-FelinidEarsTall-tall_inner = Inner ear
+marking-FelinidEarsTall-tall_fuzz = Ear fuzz
 
-marking-FelinidEarsWide = Orelhas Largas
-marking-FelinidEarsWide-wide_outer = Orelha externa
-marking-FelinidEarsWide-wide_inner = Orelha interna
+marking-FelinidEarsTorn = Torn Ears
+marking-FelinidEarsTorn-torn_outer = Outer ear
+marking-FelinidEarsTorn-torn_inner = Inner ear
 
-marking-FelinidTailBasic = Cauda Básica
-marking-FelinidTailBasic-basic_tail_tip = Ponta da cauda
-marking-FelinidTailBasic-basic_tail_stripes_even = Listras da cauda, pares
-marking-FelinidTailBasic-basic_tail_stripes_odd = Listras da cauda, ímpares
+marking-FelinidEarsWide = Wide Ears
+marking-FelinidEarsWide-wide_outer = Outer ear
+marking-FelinidEarsWide-wide_inner = Inner ear
 
-marking-FelinidTailBasicWithBow = Cauda Básica com Laço
-marking-FelinidTailBasicWithBow-basic_tail_tip = Ponta da cauda
-marking-FelinidTailBasicWithBow-basic_tail_stripes_even = Listras da cauda, pares
-marking-FelinidTailBasicWithBow-basic_tail_stripes_odd = Listras da cauda, ímpares
-marking-FelinidTailBasicWithBow-basic_bow = Laço
+marking-FelinidTailBasic = Basic Cat Tail
+marking-FelinidTailBasic-basic_tail_tip = Tail tip
+marking-FelinidTailBasic-basic_tail_stripes_even = Tail stripes, even
+marking-FelinidTailBasic-basic_tail_stripes_odd = Tail stripes, odd
 
-marking-FelinidTailBasicWithBell = Cauda Básica com Sininho
-marking-FelinidTailBasicWithBell-basic_tail_tip = Ponta da cauda
-marking-FelinidTailBasicWithBell-basic_tail_stripes_even = Listras da cauda, pares
-marking-FelinidTailBasicWithBell-basic_tail_stripes_odd = Listras da cauda, ímpares
-marking-FelinidTailBasicWithBell-basic_bell = Sininho
+marking-FelinidTailBasicWithBow = Basic Cat Tail with Bow
+marking-FelinidTailBasicWithBow-basic_tail_tip = Tail tip
+marking-FelinidTailBasicWithBow-basic_tail_stripes_even = Tail stripes, even
+marking-FelinidTailBasicWithBow-basic_tail_stripes_odd = Tail stripes, odd
+marking-FelinidTailBasicWithBow-basic_bow = Bow
 
-marking-FelinidTailBasicWithBowAndBell = Cauda Básica com Laço e Sininho
-marking-FelinidTailBasicWithBowAndBell-basic_tail_tip = Ponta da cauda
-marking-FelinidTailBasicWithBowAndBell-basic_tail_stripes_even = Listras da cauda, pares
-marking-FelinidTailBasicWithBowAndBell-basic_tail_stripes_odd = Listras da cauda, ímpares
-marking-FelinidTailBasicWithBowAndBell-basic_bow = Laço
-marking-FelinidTailBasicWithBowAndBell-basic_bell = Sininho
+marking-FelinidTailBasicWithBell = Basic Cat Tail with Bell
+marking-FelinidTailBasicWithBell-basic_tail_tip = Tail tip
+marking-FelinidTailBasicWithBell-basic_tail_stripes_even = Tail stripes, even
+marking-FelinidTailBasicWithBell-basic_tail_stripes_odd = Tail stripes, odd
+marking-FelinidTailBasicWithBell-basic_bell = Bell
+
+marking-FelinidTailBasicWithBowAndBell = Basic Cat Tail with Bow & Bell
+marking-FelinidTailBasicWithBowAndBell-basic_tail_tip = Tail tip
+marking-FelinidTailBasicWithBowAndBell-basic_tail_stripes_even = Tail stripes, even
+marking-FelinidTailBasicWithBowAndBell-basic_tail_stripes_odd = Tail stripes, odd
+marking-FelinidTailBasicWithBowAndBell-basic_bow = Bow
+marking-FelinidTailBasicWithBowAndBell-basic_bell = Bell
+
+marking-FelinidTailFoxtail = Foxtail
+marking-FelinidTailFoxtail-base_fox_tail = Tail
+marking-FelinidTailFoxtail-base_fox_tail_tip = Tail tip

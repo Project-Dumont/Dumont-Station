@@ -1,58 +1,61 @@
-alert-level-announcement = Atenção! O nível de alerta da Estação foi mudado para: {$name}! {$announcement}
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Daniil Sikinami <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+alert-level-announcement = Attention! Station alert level is now {$name}! {$announcement}
 
 alert-level-unknown = Unknown.
 alert-level-unknown-instructions = Unknown.
 
-alert-level-green = Verde
-alert-level-green-announcement = Está tudo bem! Já podem voltar a atividades normais.
-alert-level-green-instructions = Volte a seu trabalho.
+alert-level-green = Green
+alert-level-green-announcement = It is now safe to return to your workplaces.
+alert-level-green-instructions = Do your job.
 
-alert-level-blue = Azul
-alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Se ver algo suspeito avise imediatamente a segurança.
-alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a segurança.
+alert-level-blue = Blue
+alert-level-blue-announcement = There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
+alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to security.
 
-alert-level-red = Vermelho
-alert-level-red-announcement = Ameaça perigosa na estação. Os seguranças devem se equipar e utilizar força letal caso necessário, e os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
-alert-level-red-instructions = os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
+alert-level-red = Red
+alert-level-red-announcement = There is an immediate threat to the station. Security should prepare to use lethal force if necessary. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
+alert-level-red-instructions = Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
 
-alert-level-violet = Violeta
-alert-level-violet-announcement = Foram relatadas ameaças virais na estação. Acionando a equipe médica para isolar os tripulantes com quaisquer sintomas. Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
-alert-level-violet-instructions = Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
+alert-level-violet = Violet
+alert-level-violet-announcement = There is a viral threat on the station. Medical staff are advised to isolate crewmembers with any symptoms. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
+alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 
-alert-level-yellow = Amarelo
-alert-level-yellow-announcement = Há dano estrutural na estação. Acionando a equipe de engenheiros para consertar e isolar a área de danos. Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
-alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
+alert-level-yellow = Yellow
+alert-level-yellow-announcement = There is a structural or atmospheric threat within the station. Engineering staff are advised to immediately respond and perform safety measures. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
+alert-level-yellow-instructions = Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
-alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = Central Command has ordered the Gamma security level on the station. Security is to have weapons equipped at all times, and all civilians are to immediately seek their nearest head for transportation to a secure location.
+alert-level-gamma-instructions = All civilians are to immediately seek their nearest head for transportation to a secure location.
 
 alert-level-delta = Delta
-alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulantes são aconselhados a ouvir os chefes de departamento para obter ordens e mais informações sobre o ocorrido.
+alert-level-delta-announcement = The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = A  Central de Comando ordenou o nível de segurança Epsilon na estação. Considerem todos os contratos expirados.
-alert-level-epsilon-instructions = Considerem todos os contratos expirados.
+alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
+alert-level-epsilon-instructions = Consider all contracts terminated.
 
 alert-level-omicron = Omicron
-alert-level-omicron-announcement = A Central de Comando tomou controle total da estação. Aguardem ordens futuras dos oficiais da Central de Comando, fiquem em seus departamentos.
-alert-level-omicron-instructions = Aguarde ordens da Central de Comando.
+alert-level-omicron-announcement = Station override activated. Await further orders from Central Command staff, stay in your departments.
+alert-level-omicron-instructions = Await further orders.
 
 ## DeltaV - Cosmic Cult
-alert-level-octarine = Octarina
-alert-level-octarine-announcement = Um evento noosférico cataclísmico ameaça envolver o espaço real. A tripulação da estação deve conter o evento se possível, ou evacuar.
-alert-level-octarine-instructions = Os tripulantes são aconselhados a ouvir os chefes de departamento para obter mais informações.
-
-## GabyStation - Lei Marcial
-alert-level-martial = Lei Marcial
-alert-level-martial-announcement = A Central de Comando decretou Lei Marcial para toda estação, A cadeia de comando foi atualizada. A falha em seguir instruções da equipe de segurança ou da lei marcial resultará em pena capital imediata.
-alert-level-martial-instructions = Siga as ordens da equipe de segurança, mantenha-se em seu departamento.
+alert-level-octarine = Octarine
+alert-level-octarine-announcement = A cataclysmic noospheric event threatens to envelop realspace. Station crew are to contain the event if possible, or else evacuate.
+alert-level-octarine-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-cyan = Cyan
-alert-level-cyan-announcement = Todos os borgs e a Inteligencia Artificial da estação devem ser evitados e tratados como hostis.
-alert-level-cyan-instructions = Relate qualquer avistamento de silicios a equipe de segurança.
-
-alert-level-doomsday = DOOMSDAY
-alert-level-doomsday-announcement = O protocolo DOOMSDAY foi ativo, todos os silicios devem ser considerados ativamente hostis e devem ser desativados, todos os tripulantes devem desativar a Inteligencia Artificial da estação para impedir que o protocolo DOOMSDAY, sistema neutralizador de vida organica da estação, seja completado.
-alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os silicios.
+alert-level-cyan-announcement = All silicons should be avoided and treated as hostile.
+alert-level-cyan-instructions = Report any silicon activity to Security immediately.

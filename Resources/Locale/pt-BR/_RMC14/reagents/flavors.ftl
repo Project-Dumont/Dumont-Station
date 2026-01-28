@@ -1,1 +1,1 @@
-flavor-complex-mango = de manga
+flavor-complex-mango = like mangos

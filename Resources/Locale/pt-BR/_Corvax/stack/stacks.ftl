@@ -1,0 +1,17 @@
+stack-black-wood-tile = piso de madeira preta
+stack-dark-wood-tile = piso de madeira escura
+stack-light-wood-tile = piso de madeira clara
+stack-red-wood-tile = piso de madeira vermelha
+stack-black-large-wood-tile = piso grande de madeira preta
+stack-dark-large-wood-tile = piso grande de madeira escura
+stack-light-large-wood-tile = piso grande de madeira clara
+stack-red-large-wood-tile = piso grande de madeira vermelha
+stack-black-parquet-wood-tile = piso de parquet de madeira preta
+stack-dark-parquet-wood-tile = piso de parquet de madeira escura
+stack-light-parquet-wood-tile = piso de parquet de madeira clara
+stack-red-parquet-wood-tile = piso de parquet de madeira vermelha
+stack-chess-wood-tile = piso xadrez de madeira
+stack-black-chess-wood-tile = piso xadrez de madeira preta
+stack-dark-chess-wood-tile = piso xadrez de madeira escura
+stack-light-chess-wood-tile = piso xadrez de madeira clara
+stack-red-chess-wood-tile = piso xadrez de madeira vermelha

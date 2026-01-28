@@ -1,17 +1,17 @@
-ghost-role-information-slaughter-demon-name = Demônio do Massacre
-ghost-role-information-slaughter-demon-description = QUE ÉPOCA PARA ESTAR VIVO! QUE AQUELES MORTAIS INSIGNIFICANTES ENFRENTEM MINHA VERDADEIRA IRA!
+ghost-role-information-slaughter-demon-name = Slaughter Demon
+ghost-role-information-slaughter-demon-description = WHAT A TIME TO BE ALIVE! LET THOSE PUNY MORTALS FACE MY TRUE WRATH!
 ghost-role-information-slaughter-demon-rules =
-    SENTE-SE E APROVEITE A MATANÇA, PORQUE MAIS NINGUÉM VAI. MAS AQUI VÃO ALGUMAS COISAS PARA MANTER EM MENTE, DE DEMÔNIO PARA DEMÔNIO.
-        HIERARQUIA:
-        ASSIM SE ESTABELECE
-            SATÃ
-            DIABOS
-            REI DEMÔNIO, CHICLETE
-            DEMÔNIOS
-            DIABINHOS
-            OS BOBÕES ESTÚPIDOS QUE CHAMAMOS DE HUMANOS
-    MEUS CAROS DEMÔNIOS, POR FAVOR [color=red] NÃO MATE DIABOS[/color] PORQUE SATÃ VAI TE ANIQUILAR NUM INSTANTE ASSIM QUE O DIABO TE DEDURAR NO SUBMUNDO
+    JUST SIT BACK AND ENJOY THE KILLING BECAUSE NOBODY ELSE WILL. HERE'S A COUPLE THINGS TO KEEP IN MIND THOUGH, DEMON TO DEMON.
+        HIERARCHY:
+        IT GOES LIKE THIS
+            SATAN
+            DEVILS
+            DEMON KING, BUBBLEGUM
+            DEMONS
+            IMPS
+            STUPID GOOBALLS WE CALL HUMANS
+    MY FELLOW DEMONS, PLEASE [color=red] DO NOT KILL DEVILS[/color] BECAUSE SATAN WILL SMITE YOU REAL FAST AS SOON AS THE DEVIL SNITCHES ON YOU IN THE UNDERWORLD
 
 
-ghost-role-information-laughter-demon-name = Demônio do Riso
-ghost-role-information-laughter-demon-description = QUE ÉPOCA MARAVILHOSA PARA ESTAR VIVO! É MELHOR ABRAÇAR TODO MUNDO QUE VOCÊ VER E MOSTRAR A ELES COMO O VERDADEIRO AMOR SE PARECE!
+ghost-role-information-laughter-demon-name = Laughter Demon
+ghost-role-information-laughter-demon-description = WHAT A TIME TO BE ALIVE! YOU BETTER HUG EVERYONE YOU SEE, AND SHOW THEM WHAT TRUE LOVE FEELS LIKE!

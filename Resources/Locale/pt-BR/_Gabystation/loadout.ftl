@@ -1,5 +1,6 @@
-loadout-group-generic-jumpsuit = Macacão generico
+loadout-group-generic-jumpsuit = Macacões Genéricos
 
-loadout-group-trinkets-job = Extra de Trabalho
+loadout-group-trinkets-job = Acessórios de Trabalho
 
-loadout-group-hos-lawbringerskin = Lawbringer Cosmética
+loadout-group-hos-lawbringerskin = Skins da Lawbringer
+

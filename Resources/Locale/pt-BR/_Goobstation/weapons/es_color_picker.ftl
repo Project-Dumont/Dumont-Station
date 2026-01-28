@@ -1,6 +1,6 @@
-escolorpicker-menu-title = Seletor de cor da espada de energia
-escolorpicker-color-pick = Selecione uma cor:
-escolorpicker-confirm = Confirmar
-escolorpicker-menu-flavor-left-syndicate = Criado em colaboração com a «CyberSun» LLC.
-escolorpicker-menu-flavor-left-nanotrasen = Criado pela corporação NanoTrasen ©
-escolorpicker-menu-flavor-right = v2.5
+escolorpicker-menu-title = Advanced color picker
+escolorpicker-color-pick = Select a color:
+escolorpicker-confirm = Confirm
+escolorpicker-menu-flavor-left-syndicate = Created in collaboration with «CyberSun» LLC.
+escolorpicker-menu-flavor-left-nanotrasen = Created by NanoTrasen corp. ©
+escolorpicker-menu-flavor-right = v2.6

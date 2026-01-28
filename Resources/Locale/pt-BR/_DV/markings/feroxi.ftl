@@ -1,143 +1,116 @@
 marking-FeroxiEars = Orelhas
-marking-FeroxiEars-feroxi-ears = Base Orelhas
-marking-FeroxiEars-feroxi-ears-inner = Interno Orelhas
+marking-FeroxiEars-feroxi-ears = Orelhas Base
+marking-FeroxiEars-feroxi-ears-inner = Interior da Orelha
 
-marking-FeroxiTailAndDorsal = Causa e Dorsal
-marking-FeroxiTailAndDorsal-feroxi-tail = Base Cauda
-marking-FeroxiTailAndDorsal-feroxi-dorsal = Base Dorsal
+marking-FeroxiTailAndDorsal = Cauda e Dorsal
+marking-FeroxiTailAndDorsal-feroxi-tail = Cauda Base
+marking-FeroxiTailAndDorsal-feroxi-dorsal = Dorsal Base
 
 marking-FeroxiSnout = Focinho
-marking-FeroxiSnout-feroxi-snout = Base Focinho
+marking-FeroxiSnout-feroxi-snout = Focinho Base
 
 marking-FeroxiHeadStripesTiger = Listras de Tigre
 marking-FeroxiHeadStripesTiger-feroxi-head-stripes-tiger = Listras
 
-marking-FeroxiEarsTips = Orelhas Pontudas
-marking-FeroxiEarsTips-feroxi-ears = Base Orelhas
-marking-FeroxiEarsTips-feroxi-ears-inner = Interno Orelhas
-marking-FeroxiEarsTips-feroxi-ears-tips = Ponta Orelhas
+marking-FeroxiEarsTips = Orelhas com Pontas
+marking-FeroxiEarsTips-feroxi-ears = Orelhas Base
+marking-FeroxiEarsTips-feroxi-ears-inner = Interior da Orelha
+marking-FeroxiEarsTips-feroxi-ears-tips = Pontas da Orelha
 
 marking-FeroxiSnoutStripe = Focinho Listrado
-marking-FeroxiSnoutStripe-feroxi-snout = Base Focinho
+marking-FeroxiSnoutStripe-feroxi-snout = Focinho Base
 marking-FeroxiSnoutStripe-feroxi-snout-stripe = Listra
 
-marking-FeroxiSnoutCountershading = Focinho Countershaded
-marking-FeroxiSnoutCountershading-feroxi-snout = Base Focinho
-marking-FeroxiSnoutCountershading-feroxi-snout-Countershading = Countershading
+marking-FeroxiSnoutCountershading = Focinho com Contra-sombreamento
+marking-FeroxiSnoutCountershading-feroxi-snout = Focinho Base
+marking-FeroxiSnoutCountershading-feroxi-snout-Countershading = Contra-sombreamento
 
-marking-FeroxiSnoutCountershadingStripe = Focinho Listrado e Countershaded
-marking-FeroxiSnoutCountershadingStripe-feroxi-snout = Base Focinho
-marking-FeroxiSnoutCountershadingStripe-feroxi-snout-countershading = Countershading
+marking-FeroxiSnoutCountershadingStripe = Focinho Listrado com Contra-sombreamento
+marking-FeroxiSnoutCountershadingStripe-feroxi-snout = Focinho Base
+marking-FeroxiSnoutCountershadingStripe-feroxi-snout-countershading = Contra-sombreamento
 marking-FeroxiSnoutCountershadingStripe-feroxi-snout-stripe = Listra
 
-marking-FeroxiSnoutNurse = Focinho Enfermeira
-marking-FeroxiSnoutNurse-feroxi-snout = Base Focinho
-marking-FeroxiSnoutNurse-feroxi-snout-nurse = Bigodes
+marking-FeroxiSnoutNurse = Focinho de Tubarão-Enfermeiro
+marking-FeroxiSnoutNurse-feroxi-snout = Focinho Base
+marking-FeroxiSnoutNurse-feroxi-snout-nurse = Barbilhões
 
-marking-FeroxiSnoutNurseCountershading = Focinho Enfermeira Countershaded
-marking-FeroxiSnoutNurseCountershading-feroxi-snout = Base Focinho
-marking-FeroxiSnoutNurseCountershading-feroxi-snout-countershading = Countershading
-marking-FeroxiSnoutNurseCountershading-feroxi-snout-nurse = Bigodes
+marking-FeroxiSnoutNurseCountershading = Focinho de Tubarão-Enfermeiro com Contra-sombreamento
+marking-FeroxiSnoutNurseCountershading-feroxi-snout = Focinho Base
+marking-FeroxiSnoutNurseCountershading-feroxi-snout-countershading = Contra-sombreamento
+marking-FeroxiSnoutNurseCountershading-feroxi-snout-nurse = Barbilhões
 
-marking-FeroxiTailBlitz = Cauda Listrada Pontuda e Dorsal
-marking-FeroxiTailBlitz-feroxi-tail = Base Cauda
-marking-FeroxiTailBlitz-feroxi-tail-stripes = Cauda Listra
-marking-FeroxiTailBlitz-feroxi-tail-top-tip = Upper Cauda Pontuda
-marking-FeroxiTailBlitz-feroxi-tail-bottom-tip = Lower Cauda Pontuda
-marking-FeroxiTailBlitz-feroxi-tail-under = Under Cauda
-marking-FeroxiTailBlitz-feroxi-dorsal = Base Cauda
-marking-FeroxiTailBlitz-feroxi-dorsal-stripes = Dorsal Listra
+marking-FeroxiTailBlitz = Cauda Listrada com Pontas de Nadadeira e Dorsal
+marking-FeroxiTailBlitz-feroxi-tail = Cauda Base
+marking-FeroxiTailBlitz-feroxi-tail-stripes = Listras da Cauda
+marking-FeroxiTailBlitz-feroxi-tail-top-tip = Ponta Superior da Nadadeira da Cauda
+marking-FeroxiTailBlitz-feroxi-tail-bottom-tip = Ponta Inferior da Nadadeira da Cauda
+marking-FeroxiTailBlitz-feroxi-tail-under = Parte Inferior da Cauda
+marking-FeroxiTailBlitz-feroxi-dorsal = Dorsal Base
+marking-FeroxiTailBlitz-feroxi-dorsal-stripes = Listras da Dorsal
 
-marking-FeroxiTailBlitzNoDorsal = Cauda Listrada Pontuda
-marking-FeroxiTailBlitzNoDorsal-feroxi-tail = Base Cauda
-marking-FeroxiTailBlitzNoDorsal-feroxi-tail-stripes = Cauda Listra
-marking-FeroxiTailBlitzNoDorsal-feroxi-tail-top-tip = Upper Cauda Pontuda
-marking-FeroxiTailBlitzNoDorsal-feroxi-tail-bottom-tip = Lower Cauda Pontuda
-marking-FeroxiTailBlitzNoDorsal-feroxi-tail-under = Under Cauda
+marking-FeroxiTailBlitzNoDorsal = Cauda Listrada com Pontas de Nadadeira
+marking-FeroxiTailBlitzNoDorsal-feroxi-tail = Cauda Base
+marking-FeroxiTailBlitzNoDorsal-feroxi-tail-stripes = Listras da Cauda
+marking-FeroxiTailBlitzNoDorsal-feroxi-tail-top-tip = Ponta Superior da Nadadeira da Cauda
+marking-FeroxiTailBlitzNoDorsal-feroxi-tail-bottom-tip = Ponta Inferior da Nadadeira da Cauda
+marking-FeroxiTailBlitzNoDorsal-feroxi-tail-under = Parte Inferior da Cauda
 
 marking-FeroxiStripedTail = Cauda Listrada
-marking-FeroxiStripedTail-feroxi-tail = Base Cauda
-marking-FeroxiStripedTail-feroxi-tail-stripes = Tail Listra
+marking-FeroxiStripedTail-feroxi-tail = Cauda Base
+marking-FeroxiStripedTail-feroxi-tail-stripes = Listras da Cauda
 
 marking-FeroxiStripedTailAndDorsal = Cauda Listrada com Dorsal
-marking-FeroxiStripedTailAndDorsal-feroxi-tail = Base Cauda
-marking-FeroxiStripedTailAndDorsal-feroxi-tail-stripes = Cauda Listra
-marking-FeroxiStripedTailAndDorsal-feroxi-dorsal = Base Dorsal
-marking-FeroxiStripedTailAndDorsal-feroxi-dorsal-stripes = Dorsal Listra
+marking-FeroxiStripedTailAndDorsal-feroxi-tail = Cauda Base
+marking-FeroxiStripedTailAndDorsal-feroxi-tail-stripes = Listras da Cauda
+marking-FeroxiStripedTailAndDorsal-feroxi-dorsal = Dorsal Base
+marking-FeroxiStripedTailAndDorsal-feroxi-dorsal-stripes = Listras da Dorsal
 
 marking-FeroxiTail = Cauda
-marking-FeroxiTail-feroxi-tail = Base Cauda
+marking-FeroxiTail-feroxi-tail = Cauda Base
 
-marking-FeroxiTipTail = Cauda Pontuda
-marking-FeroxiTipTail-feroxi-tail = Base Cauda
-marking-FeroxiTipTail-feroxi-tail-top-tip = Upper Cauda Pontuda
-marking-FeroxiTipTail-feroxi-tail-bottom-tip = Lower Cauda Pontuda
-marking-FeroxiTipTail-feroxi-second-dorsal-tip = Secondary Dorsal Pontuda
-marking-FeroxiTipTail-feroxi-dorsal = Base Dorsal
+marking-FeroxiTipTail = Cauda com Pontas
+marking-FeroxiTipTail-feroxi-tail = Cauda Base
+marking-FeroxiTipTail-feroxi-tail-top-tip = Ponta Superior da Nadadeira da Cauda
+marking-FeroxiTipTail-feroxi-tail-bottom-tip = Ponta Inferior da Nadadeira da Cauda
+marking-FeroxiTipTail-feroxi-second-dorsal-tip = Ponta da Nadadeira Dorsal Secundária
+marking-FeroxiTipTail-feroxi-dorsal = Dorsal Base
 
-marking-FeroxiTipTailAndDorsal = Cauda Pontuda e Dorsal
-marking-FeroxiTipTailAndDorsal-feroxi-tail = Base Cauda
-marking-FeroxiTipTailAndDorsal-feroxi-tail-top-tip = Upper Cauda Pontuda
-marking-FeroxiTipTailAndDorsal-feroxi-tail-bottom-tip = Lower Cauda Pontuda
-marking-FeroxiTipTailAndDorsal-feroxi-second-dorsal-tip = Secondary Dorsal Pontuda
-marking-FeroxiTipTailAndDorsal-feroxi-dorsal = Base Dorsal
-marking-FeroxiTipTailAndDorsal-feroxi-dorsal-tip = Dorsal Pontuda
+marking-FeroxiTipTailAndDorsal = Cauda com Pontas e Dorsal
+marking-FeroxiTipTailAndDorsal-feroxi-tail = Cauda Base
+marking-FeroxiTipTailAndDorsal-feroxi-tail-top-tip = Ponta Superior da Nadadeira da Cauda
+marking-FeroxiTipTailAndDorsal-feroxi-tail-bottom-tip = Ponta Inferior da Nadadeira da Cauda
+marking-FeroxiTipTailAndDorsal-feroxi-second-dorsal-tip = Ponta da Nadadeira Dorsal Secundária
+marking-FeroxiTipTailAndDorsal-feroxi-dorsal = Dorsal Base
+marking-FeroxiTipTailAndDorsal-feroxi-dorsal-tip = Ponta da Dorsal
 
-marking-FeroxiTwoToneTail = Cauda Dois Tons
-marking-FeroxiTwoToneTail-feroxi-tail = Base Cauda
-marking-FeroxiTwoToneTail-feroxi-tail-under = Under Cauda
+marking-FeroxiTwoToneTail = Cauda de Dois Tons
+marking-FeroxiTwoToneTail-feroxi-tail = Cauda Base
+marking-FeroxiTwoToneTail-feroxi-tail-under = Parte Inferior da Cauda
 
-marking-FeroxiTwoToneTailAndDorsal = Cauda Dois Tons e Dorsal
-marking-FeroxiTwoToneTailAndDorsal-feroxi-tail = Base Cauda
-marking-FeroxiTwoToneTailAndDorsal-feroxi-tail-under = Under Cauda
-marking-FeroxiTwoToneTailAndDorsal-feroxi-dorsal = Base Dorsal
+marking-FeroxiTwoToneTailAndDorsal = Cauda de Dois Tons e Dorsal
+marking-FeroxiTwoToneTailAndDorsal-feroxi-tail = Cauda Base
+marking-FeroxiTwoToneTailAndDorsal-feroxi-tail-under = Parte Inferior da Cauda
+marking-FeroxiTwoToneTailAndDorsal-feroxi-dorsal = Dorsal Base
 
-marking-FeroxiStripeTwoToneTail = Cauda Dois Tons Listrada
-marking-FeroxiStripeTwoToneTail-feroxi-tail = Base Cauda
-marking-FeroxiStripeTwoToneTail-feroxi-tail-stripes = Cauda Listra
-marking-FeroxiStripeTwoToneTail-feroxi-tail-under = Under Cauda
+marking-FeroxiStripeTwoToneTail = Cauda de Dois Tons com Listras
+marking-FeroxiStripeTwoToneTail-feroxi-tail = Cauda Base
+marking-FeroxiStripeTwoToneTail-feroxi-tail-stripes = Listras da Cauda
+marking-FeroxiStripeTwoToneTail-feroxi-tail-under = Parte Inferior da Cauda
 
-marking-FeroxiStripeTwoToneTailAndDorsal = Cauda Dois Tons Listrada e Dorsal Listrada
-marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-tail = Cauda Tail
-marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-tail-stripes = Cauda Listra
-marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-tail-under = Under Cauda
-marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-dorsal = Base Dorsal
-marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-dorsal-stripes = Dorsal Listra
+marking-FeroxiStripeTwoToneTailAndDorsal = Cauda de Dois Tons com Listras e Dorsal
+marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-tail = Cauda Base
+marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-tail-stripes = Listras da Cauda
+marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-tail-under = Parte Inferior da Cauda
+marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-dorsal = Dorsal Base
+marking-FeroxiStripeTwoToneTailAndDorsal-feroxi-dorsal-stripes = Listras da Dorsal
 
-marking-FeroxiTipTwoToneTail = Cauda Dois Tons Pontuda
-marking-FeroxiTipTwoToneTail-feroxi-tail = Base Cauda
-marking-FeroxiTipTwoToneTail-feroxi-tail-top-tip = Upper Cauda Pontuda
-marking-FeroxiTipTwoToneTail-feroxi-tail-bottom-tip = Lower Cauda Pontuda
-marking-FeroxiTipTwoToneTail-feroxi-tail-under = Under Cauda
+marking-FeroxiTipTwoToneTail = Cauda de Dois Tons com Pontas
+marking-FeroxiTipTwoToneTail-feroxi-tail = Cauda Base
+marking-FeroxiTipTwoToneTail-feroxi-tail-top-tip = Ponta Superior da Nadadeira da Cauda
+marking-FeroxiTipTwoToneTail-feroxi-tail-bottom-tip = Ponta Inferior da Nadadeira da Cauda
+marking-FeroxiTipTwoToneTail-feroxi-tail-under = Parte Inferior da Cauda
 
-marking-FeroxiTipTwoToneTailAndDorsal = Cauda Dois Tons Pontuda e Dorsal
-marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail = Base Cauda
-marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail-top-tip = Upper Cauda Pontuda
-marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail-bottom-tip = Lower Cauda Pontuda
-marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail-under = Under Cauda
-marking-FeroxiTipTwoToneTailAndDorsal-feroxi-dorsal = Base Dorsal
-marking-FeroxiTipTwoToneTailAndDorsal-feroxi-dorsal-tip = Dorsal Ponta
-
-marking-FeroxiTorsoStripesBlitz = Under Braço Listrado
-marking-FeroxiTorsoStripesBlitz-feroxi-torso-stripes-blitz = Listra
-
-marking-FeroxiTorsoStripesTiger = Full Listrado
-marking-FeroxiTorsoStripesTiger-feroxi-torso-stripes-tiger = Listra
-
-marking-FeroxiTorsoCountershadingF = Countershading (Feminino)
-marking-FeroxiTorsoCountershadingF-feroxi-torso-countershading-f = Countershading
-
-marking-FeroxiTorsoCountershadingM = Countershading (Masculino)
-marking-FeroxiTorsoCountershadingM-feroxi-torso-countershading-m = Countershading
-
-marking-FeroxiLegStripesBlitz = Panturrilha Listrada
-marking-FeroxiLegStripesBlitz-feroxi-leg-stripes-blitz = Listra
-
-marking-FeroxiLegStripesTiger = Full Listrado
-marking-FeroxiLegStripesTiger-feroxi-leg-stripes-tiger = Listra
-
-marking-FeroxiArmStripesBlitz = Ombro Listrado
-marking-FeroxiArmStripesBlitz-feroxi-arm-stripes-blitz = Listra
-
-marking-FeroxiArmStripesTiger = Full Listrado
-marking-FeroxiArmStripesTiger-feroxi-arm-stripes-tiger = Listra
+marking-FeroxiTipTwoToneTailAndDorsal = Cauda de Dois Tons com Pontas e Dorsal
+marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail = Cauda Base
+marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail-top-tip = Ponta Superior da Nadadeira da Cauda
+marking-FeroxiTipTwoToneTailAndDorsal-feroxi-tail-

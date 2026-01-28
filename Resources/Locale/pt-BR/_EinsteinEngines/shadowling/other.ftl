@@ -1,45 +1,45 @@
-shadowling-on-try-equip-clothes = This is fruitless to you...
+shadowling-on-try-equip-clothes = Isso é inútil para você...
 
-reagent-name-shadowling-toxin = toxina de shadowling
-reagent-desc-shadowling-toxin = Uma substância misteriosa que cuida e cura de qualquer shadowling e seus servos, mas cega qualquer outro.
+reagent-name-shadowling-toxin = toxina shadowling
+reagent-desc-shadowling-toxin = Um químico misterioso que cura qualquer shadowling e seus thralls, mas deixa qualquer outra pessoa cega.
 
-alerts-shadowling-light-name = Detector de luz
-alerts-shadowling-light-desc = Esse é o seu detector de luz. Se chegar em 0, as luzes começam a te machucar. Priorize ficar nas sombras.
+alerts-shadowling-light-name = Identificador de Luz
+alerts-shadowling-light-desc = Este é seu identificador de luz. Se ele chegar a 0, você começa a sofrer dano. Priorize ficar nas sombras.
 
-chat-manager-shadowling-channel-name = Shadowmind
+chat-manager-shadowling-channel-name = Mente Sombria
 
-shadowling-dead = Você estranhamente toma controle da sua mente.
+shadowling-dead = Você estranhamente recupera sua mente.
 
-shadowling-thrall-examined = Isso é seu servo.
-shadowling-thrall-other-examined = Os olhos { PRONOME-DELE($target) } parecem vislumbrar outra realidade...
+shadowling-thrall-examined = Este é seu Thrall.
+shadowling-thrall-other-examined = Os olhos de {CAPITALIZE(POSS-ADJ($target))} parecem olhar para outra realidade...
 
 guide-entry-shadowlings = Shadowlings
 
 reagent-effect-guidebook-blind-non-sling =
     { $chance ->
-        [1] Cega qualquer
-        *[other] cega qualquer
+        [1] Deixa qualquer um cego
+        *[other] deixa qualquer um cego
     } não-shadowling
 
 reagent-effect-guidebook-heal-sling =
     { $chance ->
-        [1] Cura qualquer
-        *[other] cura qualquer
-    } shadowling e servos dele
+        [1] Cura qualquer um
+        *[other] cura qualquer um
+    } shadowling e thrall
 
-marking-LesserShadowlingEyes = Olhos de Shadownling Inferior
-marking-AbominationHorns = Chifres de Abomination
-marking-AbominationTorso = Torso de Abomination 
+marking-LesserShadowlingEyes = Olhos de Shadowling Inferior
+marking-AbominationHorns = Chifres de Abominação
+marking-AbominationTorso = Tronco de Abominação
 
-admin-verb-make-shadowling = Transforma o alvo num shadowling.
-admin-verb-text-make-shadowling = Faz Shadowling
+admin-verb-make-shadowling = Transformar o alvo em um shadowling.
+admin-verb-text-make-shadowling = Transformar em Shadowling
 
 species-name-shadowling = Shadowling
-species-name-shadow = Shadow
+species-name-shadow = Sombra
 
 # Examine Texts
-shadowling-examine-self = [color=#D22B2B]Você toma {$damage} de queimação da luz[/color]
+shadowling-examine-self = [color=#D22B2B]Você sofre {$damage} de dano de queimadura pela luz[/color]
 
 # UI
-asc-broadcast-title = Transmissão do Ascendido
+asc-broadcast-title = Transmissão Ascendente
 asc-broadcast-prompt = Mensagem

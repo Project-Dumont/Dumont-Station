@@ -1,18 +1,32 @@
-﻿role-timer-department-insufficient = Você precisa de mais [color=yellow]{TOSTRING($time, "0")}[/color] minutos jogados no [color={$departmentColor}]{$department}[/color]  para desempenhar essa função.
-role-timer-department-too-high = Você já tem mais de [color=yellow]{TOSTRING($time, "0")}[/color] minutos jogados no [color={$departmentColor}]{$department}[/color] e tem experiência demais para rebaixar-se a essa função.
-role-timer-overall-insufficient = Você precisa de mais [color=yellow]{TOSTRING($time, "0")}[/color] minutos de tempo de jogo para desempenhar essa função.
-role-timer-overall-too-high = Você já tem mais de [color=yellow]{TOSTRING($time, "0")}[/color] minutos de tempo de jogo, e tem experiência demais para rebaixar-se a essa função.
-role-timer-role-insufficient = Você precisa de mais [color=yellow]{TOSTRING($time, "0")}[/color] minutos jogados com [color={$departmentColor}]{$job}[/color] para desempenhar essa função.
-role-timer-role-too-high = Você já tem mais de [color=yellow] {TOSTRING($time, "0")}[/color] minutos jogados com [color={$departmentColor}]{$job}[/color] e tem experiência demais para rebaixar-se a essa função.
-role-timer-age-to-old = A idade do seu personagem deve ser no máximo [color=yellow]{$age}[/color] para desempenhar essa função.
-role-timer-age-to-young = A idade do seu personagem deve ser pelo menos [color=yellow]{$age}[/color] para desempenhar essa função.
-role-timer-whitelisted-species = Seu personagem deve ser de uma das seguintes espécies para desempenhar esta função:
-role-timer-blacklisted-species = Seu personagem não deve ser de uma das seguintes espécies para desempenhar esta função:
-role-timer-whitelisted-traits = Seu personagem deve ter uma das seguintes características:
-role-timer-blacklisted-traits = Seu personagem não deve ter nenhuma das seguintes características:
+# SPDX-FileCopyrightText: 2022 Martin Petkovski <63034378+martin69420@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-role-timer-locked = Bloqueado (passe o mouse para ver detalhes)
+role-timer-department-insufficient = You require [color=yellow]{$time}[/color] more playtime in the [color={$departmentColor}]{$department}[/color] department to unlock this.
+role-timer-department-too-high = You require [color=yellow]{$time}[/color] less playtime in the [color={$departmentColor}]{$department}[/color] department to select this. (Are you trying to play a trainee role?)
+role-timer-overall-insufficient = You require [color=yellow]{$time}[/color] more overall playtime to unlock this.
+role-timer-overall-too-high = You require [color=yellow]{$time}[/color] less overall playtime to select this. (Are you trying to play a trainee role?)
+role-timer-role-insufficient = You require [color=yellow]{$time}[/color] more playtime with [color={$departmentColor}]{$job}[/color] to unlock this.
+role-timer-role-too-high = You require[color=yellow] {$time}[/color] less playtime with [color={$departmentColor}]{$job}[/color] to select this. (Are you trying to play a trainee role?)
+role-timer-age-too-old = Your character must be under the age of [color=yellow]{$age}[/color] for you to choose this.
+role-timer-age-too-young = Your character must be over the age of [color=yellow]{$age}[/color] for you to choose this.
+role-timer-whitelisted-species = Your character must be one of the following species for you to select this:
+role-timer-blacklisted-species = Your character must not be one of the following species for you to select this:
+role-timer-whitelisted-traits = Your character must have one of the following traits for you to select this:
+role-timer-blacklisted-traits = Your character must not have any of the following traits for you to select this:
 
-role-timer-department-unknown = Departamento desconhecido
+role-timer-locked = Locked (hover for details)
 
-role-ban = Você foi banido e não pode mais desempenhar essa função
+role-timer-department-unknown = Unknown Department
+
+role-ban = You have been banned from this role.

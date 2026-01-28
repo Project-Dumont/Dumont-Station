@@ -1,15 +1,23 @@
-magic-mirror-component-activate-user-has-no-hair = Você não pode ter cabelo!
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-magic-mirror-window-title = Espelho Mágico
-magic-mirror-add-slot-self = Você está se dando um pouco de cabelo.
-magic-mirror-remove-slot-self = Você está removendo um pouco do seu cabelo.
-magic-mirror-change-slot-self = Você está mudando seu penteado.
-magic-mirror-change-color-self = Você está mudando a cor do seu cabelo.
+magic-mirror-component-activate-user-has-no-hair = You can't have any hair!
 
-magic-mirror-add-slot-target = O cabelo está sendo adicionado a você por {$user}.
-magic-mirror-remove-slot-target = Seu cabelo está sendo cortado por {$user}.
-magic-mirror-change-slot-target = Seu penteado está sendo mudado por {$user}.
-magic-mirror-change-color-target = A cor do seu cabelo está sendo alterada por {$user}.
+magic-mirror-window-title = Magic Mirror
+magic-mirror-add-slot-self = You're giving yourself some hair.
+magic-mirror-remove-slot-self = You're removing some of your hair.
+magic-mirror-change-slot-self = You're changing your hairstyle.
+magic-mirror-change-color-self = You're changing your hair color.
 
-magic-mirror-blocked-by-hat-self = Você precisa tirar o chapéu antes de trocar o cabelo.
-magic-mirror-blocked-by-hat-self-target = Você tenta mudar o cabelo deles, mas as roupas atrapalham.
+magic-mirror-add-slot-target = Hair is being added to you by {THE($user)}.
+magic-mirror-remove-slot-target = Your hair is being cut off by {THE($user)}.
+magic-mirror-change-slot-target = Your hairstyle is being changed by {THE($user)}.
+magic-mirror-change-color-target = Your hair color is being changed by {THE($user)}.
+
+magic-mirror-blocked-by-hat-self = You need to take off your hat before changing your hair.
+magic-mirror-blocked-by-hat-self-target = You try to change {POSS-ADJ($target)} hair but {POSS-ADJ($target)} clothes get in the way.

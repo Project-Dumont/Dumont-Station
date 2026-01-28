@@ -1,62 +1,112 @@
-marking-GauzeLefteyePatch-gauze_lefteye_2 = Gaze em gaze (Esquerdo)
-marking-GauzeLefteyePatch = Gaze em gaze (Esquerdo)
+# SPDX-FileCopyrightText: 2024 KittenColony <149278380+KittenColony@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-marking-GauzeLefteyeTape-gauze_lefteye_1 = Esparadrapo em gaze (Esquerdo)
-marking-GauzeLefteyeTape = Esparadrapo em gaze (Esquerdo)
+marking-GauzeLefteyePatch-gauze_lefteye_2 = Gauze eyepatch (Left)
+marking-GauzeLefteyePatch = Gauze eyepatch (Left)
 
-marking-GauzeRighteyePatch-gauze_righteye_2 = Gaze em gaze (Direito)
-marking-GauzeRighteyePatch = Gaze em gaze (Direito)
+marking-GauzeLefteyePad-gauze_lefteye_1 = Gauze eyepad (Left)
+marking-GauzeLefteyePad = Gauze eyepad (Left)
 
-marking-GauzeRighteyeTape-gauze_righteye_1 = Esparadrapo em gaze (Direito)
-marking-GauzeRighteyeTape = Esparadrapo em gaze (Direito)
+marking-GauzeRighteyePatch-gauze_righteye_2 = Gauze eyepatch (Right)
+marking-GauzeRighteyePatch = Gauze eyepatch (Right)
 
-marking-GauzeShoulder-gauze_shoulder = Atadura de gaze para o ombro
-marking-GauzeShoulder = Atadura de gaze para o ombro
+marking-GauzeRighteyePad-gauze_righteye_1 = Gauze eyepad (Right)
+marking-GauzeRighteyePad = Gauze eyepad (Right)
 
-marking-GauzeStomach-gauze_abdomen = Atadura de gaze para o estômago
-marking-GauzeStomach = Atadura de gaze para o estômago
+marking-GauzeShoulder-gauze_shoulder = Gauze Shoulder Sling
+marking-GauzeShoulder = Gauze Shoulder Sling
 
-marking-GauzeUpperArmRight-gauze_upperarm_r = Atadura de gaze para o antebraço (Direito)
-marking-GauzeUpperArmRight = Atadura de gaze para o antebraço (Direito)
+marking-GauzeStomach-gauze_abdomen = Gauze Stomach Wrap
+marking-GauzeStomach = Gauze Stomach Wrap
 
-marking-GauzeLowerArmRight-gauze_lowerarm_r = Atadura de gaze para o pulso (Direito)
-marking-GauzeLowerArmRight = Atadura de gaze para o pulso (Direito)
+marking-GauzeUpperArmRight-gauze_upperarm_r = Gauze Forearm Wrap (Right)
+marking-GauzeUpperArmRight = Gauze Forearm Wrap (Right)
 
-marking-GauzeLeftArm-gauze_leftarm = Atadura de gaze para o braço (Esquerdo)
-marking-GauzeLeftArm = Atadura de gaze para o braço (Esquerdo)
+marking-GauzeLowerArmRight-gauze_lowerarm_r = Gauze Wrist Wrap (Right)
+marking-GauzeLowerArmRight = Gauze Wrist Wrap (Right)
 
-marking-GauzeLowerLegLeft-gauze_lowerleg_l = Atadura de gaze para o tornozelo (Esquerdo)
-marking-GauzeLowerLegLeft = Atadura de gaze para o tornozelo (Esquerdo)
+marking-GauzeLeftArm-gauze_leftarm = Gauze Arm Wrap (Left)
+marking-GauzeLeftArm = Gauze Arm Wrap (Left)
 
-marking-GauzeBoxerWrapLeft-gauze_boxerwrap_l = Atadura de gaze para a mão (Esquerda)
-marking-GauzeBoxerWrapLeft = Atadura de gaze para a mão (Esquerda)
+marking-GauzeLowerLegLeft-gauze_lowerleg_l = Gauze Ankle Wrap (Left)
+marking-GauzeLowerLegLeft = Gauze Ankle Wrap (Left)
 
-marking-GauzeBoxerWrapRight-gauze_boxerwrap_r = Atadura de gaze para a mão (Direita)
-marking-GauzeBoxerWrapRight = Atadura de gaze para a mão (Direita)
+marking-GauzeBoxerWrapLeft-gauze_boxerwrap_l = Gauze Handwrap (Left)
+marking-GauzeBoxerWrapLeft = Gauze Handwrap (Left)
 
-marking-GauzeUpperLegLeft-gauze_upperleg_l = Atadura de gaze para a coxa (Esquerda)
-marking-GauzeUpperLegLeft = Atadura de gaze para a coxa (Esquerda)
+marking-GauzeBoxerWrapRight-gauze_boxerwrap_r = Gauze Handwrap (Right)
+marking-GauzeBoxerWrapRight = Gauze Handwrap (Right)
 
-marking-GauzeLowerLegRight-gauze_lowerleg_r = Atadura de gaze para o tornozelo (Direito)
-marking-GauzeLowerLegRight = Atadura de gaze para o tornozelo (Direito)
+marking-GauzeUpperLegLeft-gauze_upperleg_l = Gauze Thigh Wrap (Left)
+marking-GauzeUpperLegLeft = Gauze Thigh Wrap (Left)
 
-marking-GauzeUpperLegRight-gauze_upperleg_r = Atadura de gaze para a coxa (Direita)
-marking-GauzeUpperLegRight = Atadura de gaze para a coxa (Direita)
+marking-GauzeLowerLegRight-gauze_lowerleg_r = Gauze Ankle Wrap (Right)
+marking-GauzeLowerLegRight = Gauze Ankle Wrap (Right)
 
-marking-GauzeBlindfold-gauze_blindfold = Venda de gaze
-marking-GauzeBlindfold = Venda de gaze
+marking-GauzeUpperLegRight-gauze_upperleg_r = Gauze Thigh Wrap (Right)
+marking-GauzeUpperLegRight = Gauze Thigh Wrap (Right)
 
-marking-GauzeLizardBlindfold-gauze_lizardblindfold = Venda de gaze ajustada
-marking-GauzeLizardBlindfold = Venda de gaze ajustada
+marking-GauzeBlindfold-gauze_blindfold = Gauze Blindfold
+marking-GauzeBlindfold = Gauze Blindfold
 
-marking-GauzeLizardFootRight-gauze_lizardfoot_r = Atadura de gaze para o pé (Direito)
-marking-GauzeLizardFootRight = Atadura de gaze para o pé (Direito)
+marking-GauzeHead-gauze_head = Gauze Head Wrap
+marking-GauzeHead = Gauze Head Wrap
 
-marking-GauzeLizardFootLeft-gauze_lizardfoot_l = Atadura de gaze para o pé (Esquerdo)
-marking-GauzeLizardFootLeft = Atadura de gaze para o pé (Esquerdo)
+marking-GauzeLizardBlindfold-gauze_lizard_blindfold = Gauze Blindfold
+marking-GauzeLizardBlindfold = Gauze Blindfold
 
-marking-GauzeLizardLefteyePatch-gauze_lizardlefteye = Gaze ajustada (Esquerdo)
-marking-GauzeLizardLefteyePatch = Gaze ajustada (Esquerdo)
+marking-GauzeLizardFootRight-gauze_lizard_foot_r = Gauze Foot Wrap (Right)
+marking-GauzeLizardFootRight = Gauze Foot Wrap (Right)
 
-marking-GauzeLizardRighteyePatch-gauze_lizardrighteye = Gaze ajustada (Direito)
-marking-GauzeLizardRighteyePatch = Gaze ajustada (Direito)
+marking-GauzeLizardFootLeft-gauze_lizard_foot_l = Gauze Foot Wrap (Left)
+marking-GauzeLizardFootLeft = Gauze Foot Wrap (Left)
+
+marking-GauzeLizardLefteyePatch-gauze_lizard_lefteye = Reptilian Gauze eyepatch (Left)
+marking-GauzeLizardLefteyePatch = Reptilian Gauze eyepatch (Left)
+
+marking-GauzeLizardRighteyePatch-gauze_lizard_righteye = Reptilian Gauze eyepatch (Right)
+marking-GauzeLizardRighteyePatch = Reptilian Gauze Eyepatch (Right)
+
+marking-GauzeMothStomach-gauze_moth_abdomen = Insectoid Stomach Wrap
+marking-GauzeMothStomach = Insectoid Stomach Wrap
+
+marking-GauzeMothShoulder-gauze_moth_shoulder = Insectoid Shoulder Sling
+marking-GauzeMothShoulder = Insectoid Shoulder Sling
+
+marking-GauzeMothBlindfold-gauze_moth_blindfold = Insectoid Blindfold
+marking-GauzeMothBlindfold = Insectoid Blindfold
+
+marking-GauzeMothLeftEyePatch-gauze_moth_lefteye_2 = Insectoid Gauze eyepatch (Left)
+marking-GauzeMothLeftEyePatch = Insectoid Gauze eyepatch (Left)
+
+marking-GauzeMothLeftEyePad-gauze_moth_lefteye_1 = Insectoid Gauze eyepad (Left)
+marking-GauzeMothLeftEyePad = Insectoid Gauze eyepad (Left)
+
+marking-GauzeMothRightEyePatch-gauze_moth_righteye_2 = Insectoid Gauze eyepatch (Right)
+marking-GauzeMothRightEyePatch = Insectoid Gauze eyepatch (Right)
+
+marking-GauzeMothRightEyePad-gauze_moth_righteye_1 = Insectoid Gauze eyepad (Right)
+marking-GauzeMothRightEyePad = Insectoid Gauze eyepad (Right)
+
+marking-GauzeMothUpperArmRight-gauze_moth_upperarm_r = Insectoid Gauze Forearm Wrap (Right)
+marking-GauzeMothUpperArmRight = Insectoid Gauze Forearm Wrap (Right)
+
+marking-GauzeMothUpperArmLeft-gauze_moth_upperarm_l = Insectoid Gauze Forearm Wrap (Left)
+marking-GauzeMothUpperArmLeft = Insectoid Gauze Forearm Wrap (Left)
+
+marking-GauzeMothUpperLegRight-gauze_moth_upperleg_r = Insectoid Gauze Thigh Wrap (Right)
+marking-GauzeMothUpperLegRight = Insectoid Insectoid Gauze Thigh Wrap (Right)
+
+marking-GauzeMothUpperLegLeft-gauze_moth_upperleg_l = Insectoid Gauze Thigh Wrap (Left)
+marking-GauzeMothUpperLegLeft = Insectoid Gauze Thigh Wrap (Left)
+
+marking-GauzeMothLowerLegRight-gauze_moth_lowerleg_r = Insectoid Gauze Shin Wrap (Right)
+marking-GauzeMothLowerLegRight = Insectoid Gauze Shin Wrap (Right)
+
+marking-GauzeMothLowerLegLeft-gauze_moth_lowerleg_l = Insectoid Gauze Shin Wrap (Left)
+marking-GauzeMothLowerLegLeft = Insectoid Gauze Shin Wrap (Left)
+

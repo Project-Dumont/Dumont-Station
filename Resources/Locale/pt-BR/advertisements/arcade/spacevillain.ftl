@@ -1,28 +1,34 @@
-advertisement-space-villain-1 = Você é mau o suficiente para vencer este jogo?
-advertisement-space-villain-2 = Derrote o vilão; ganhe um prêmio!
-advertisement-space-villain-3 = LUTE COMIGO!
-advertisement-space-villain-4 = O espaço precisa de um herói!
-advertisement-space-villain-5 = Estou aguardando por um herói!
-advertisement-space-villain-6 = Alguém não vai nos salvar?
-advertisement-space-villain-7 = Mua-hah-hah-hah!
-advertisement-space-villain-8 = Vilão Espaciaaaaal!
-advertisement-space-villain-9 = Ninguém pode me derrotar!
-advertisement-space-villain-10 = Trema diante de mim!
-advertisement-space-villain-11 = ME DESAFIE!
-advertisement-space-villain-12 = ME TEMAM!
-advertisement-space-villain-13 = Você ousa enfrentar-me em batalha!?
-advertisement-space-villain-14 = Cuidado, estou vivo!
-advertisement-space-villain-15 = Eu estou faminto!
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-thankyou-space-villain-1 = E para onde você pensa que está indo, seu punk?
-thankyou-space-villain-2 = Isso é tudo que você tem?
-thankyou-space-villain-3 = Esta luta não acabou!
-thankyou-space-villain-4 = Desafie novamente em breve!
-thankyou-space-villain-5 = Quem ousa me desafiar em seguida?
-thankyou-space-villain-6 = Eu sabia que você não poderia me derrotar!
-thankyou-space-villain-7 = Foi demais para você lidar?
-thankyou-space-villain-8 = Corra, covarde!
-thankyou-space-villain-9 = Você nunca teve chance.
-thankyou-space-villain-10 = Quer uma revanche?
-thankyou-space-villain-11 = Lute comigo novamente!
-thankyou-space-villain-12 = Volte aqui e lute comigo!
+advertisement-space-villain-1 = Are you a bad enough dude to beat this game?
+advertisement-space-villain-2 = Beat the bad guy; win a prize!
+advertisement-space-villain-3 = FIGHT ME!
+advertisement-space-villain-4 = Space needs a hero!
+advertisement-space-villain-5 = I'm holding out for a hero!
+advertisement-space-villain-6 = Won't someone save us?
+advertisement-space-villain-7 = Mua-hah-hah-hah!
+advertisement-space-villain-8 = Spaaaaaaaace Villain!
+advertisement-space-villain-9 = No one can defeat me!
+advertisement-space-villain-10 = Tremble before me!
+advertisement-space-villain-11 = CHALLENGE ME!
+advertisement-space-villain-12 = FEAR ME!
+advertisement-space-villain-13 = Do you dare to face me in battle!?
+advertisement-space-villain-14 = Beware, I live!
+advertisement-space-villain-15 = I hunger!
+
+thankyou-space-villain-1 = And where do you think you're going, punk?
+thankyou-space-villain-2 = Is that all you've got?
+thankyou-space-villain-3 = This fight isn't over!
+thankyou-space-villain-4 = Challenge again soon!
+thankyou-space-villain-5 = Who dares to challenge me next?
+thankyou-space-villain-6 = I knew you couldn't defeat me!
+thankyou-space-villain-7 = Too much for you to handle?
+thankyou-space-villain-8 = Run, coward!
+thankyou-space-villain-9 = You never stood a chance.
+thankyou-space-villain-10 = Care for a rematch?
+thankyou-space-villain-11 = Fight me again!
+thankyou-space-villain-12 = Come back here and fight me!

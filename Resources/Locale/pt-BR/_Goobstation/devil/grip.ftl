@@ -1,1 +1,1 @@
-devil-speech-grip = Stupete et cadite!!
+devil-speech-grip = Surpreendam-se e caiam!!

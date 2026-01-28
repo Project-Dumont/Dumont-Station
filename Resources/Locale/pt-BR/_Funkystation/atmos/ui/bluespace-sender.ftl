@@ -1,5 +1,5 @@
-bluespace-sender-window-title = Transmissor de Gás de Bluespace
+bluespace-sender-window-title = Enviador de Gás Bluespace
 bluespace-sender-retrieve-gases = Recuperar Gases
-bluespace-sender-off = Off
-bluespace-sender-error = Não há gases na rede
-bluespace-sender-network-label = Rede de Gases de Bluespace
+bluespace-sender-off = Desligado
+bluespace-sender-error = Algo deu errado
+bluespace-sender-network-label = Gases da Rede Bluespace

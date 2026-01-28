@@ -1,15 +1,23 @@
-advertisement-cigs-1 = O cigarro espacial não fede, assim como um cigarro deve.
-advertisement-cigs-2 = O sabor de aventura e liberdade!
-advertisement-cigs-3 = Fume!
-advertisement-cigs-4 = Não acredite na mídia - fume hoje!
-advertisement-cigs-5 = Não faz mal!
-advertisement-cigs-6 = Não acredite nos cientistas!
-advertisement-cigs-7 = Isto é saudável!
-advertisement-cigs-8 = Não pare, compre mais!
-advertisement-cigs-9 = Paraíso da nicotina.
-advertisement-cigs-10 = Os melhores cigarros desde 2150.
-advertisement-cigs-11 = Cigarros vencedores do oscar.
-advertisement-cigs-12 = Aqui para tirar o estresse do trabalho!
-thankyou-cigs-1 = Você os tem, agora fume-os!
-thankyou-cigs-2 = Você provavelmente não irá se arrepender!
-thankyou-cigs-3 = Você se tornará um viciado em breve!
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+advertisement-cigs-1 = Space cigs taste good like a cigarette should.
+advertisement-cigs-2 = I'd rather toolbox than switch.
+advertisement-cigs-3 = Smoke!
+advertisement-cigs-4 = Don't believe the reports - smoke today!
+advertisement-cigs-5 = Probably not bad for you!
+advertisement-cigs-6 = Don't believe the scientists!
+advertisement-cigs-7 = It's good for you!
+advertisement-cigs-8 = Don't quit, buy more!
+advertisement-cigs-9 = Nicotine heaven.
+advertisement-cigs-10 = Best cigarettes since 2150.
+advertisement-cigs-11 = Award-winning cigs.
+advertisement-cigs-12 = Here to take an edge off work!
+thankyou-cigs-1 = You've got 'em, now smoke 'em!
+thankyou-cigs-2 = You probably won't regret it!
+thankyou-cigs-3 = You'll become an addict in no time!

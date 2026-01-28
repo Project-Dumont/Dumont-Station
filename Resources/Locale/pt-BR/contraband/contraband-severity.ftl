@@ -1,17 +1,27 @@
-contraband-examine-text-Minor = [color=yellow]Esse item é considerado um contrabando menor.[/color]
-contraband-examine-text-Restricted = [color=yellow]Esse item é restrito a um departamento.[/color]
-contraband-examine-text-Restricted-department = [color=yellow]Esse item é restrito a {$departments}, e pode ser considerado contrabando.[/color]
-contraband-examine-text-Major = [color=red]Esse item é considerado um contrabando maior.[/color]
-contraband-examine-text-GrandTheft = [color=red]Esse item é valioso para agentes do Sindicato![/color]
-contraband-examine-text-Syndicate = [color=crimson]Esse item é um contrabando do Sindicato altamente ilegal![/color]
-contraband-examine-text-Magical = [color=#b337b3]Esse item é um contrabando mágico altamente ilegal![/color]
-contraband-examine-text-Clown = [color=yellow]Esse item pertence ao palhaço, devolva antes que ele fique triste.[/color]
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ThatGuyUSA <thatguyusa123@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-contraband-examine-text-avoid-carrying-around = [color=red][italic]Você provavelmente quer evitar visivelmente carregar esse item sem uma boa razão.[/italic][/color]
-contraband-examine-text-in-the-clear = [color=green][italic]Você não deve ter problemas com a segurança para carregar esse item à mostra.[/italic][/color]
+contraband-examine-text-Minor = [color=yellow]This item is considered minor contraband.[/color]
+contraband-examine-text-Restricted = [color=yellow]This item is departmentally restricted.[/color]
+contraband-examine-text-Restricted-department = [color=yellow]This item is restricted to {$departments}, and may be considered contraband.[/color]
+contraband-examine-text-Major = [color=red]This item is considered major contraband.[/color]
+contraband-examine-text-GrandTheft = [color=red]This item is a highly valuable target for Syndicate agents![/color]
+contraband-examine-text-Syndicate = [color=crimson]This item is highly illegal Syndicate contraband![/color]
+contraband-examine-text-Magical = [color=#b337b3]This item is highly illegal Magical contraband![/color]
+contraband-examine-text-Clown = [color=yellow]This item belongs to the clown, give it back before they get sad.[/color]
 
-contraband-examinable-verb-text = Legalidade
-contraband-examinable-verb-message = Verifique a legalidade deste item.
+contraband-examine-text-avoid-carrying-around = [color=red][italic]You probably want to avoid visibly carrying this around without a good reason.[/italic][/color]
+contraband-examine-text-in-the-clear = [color=green][italic]You should be in the clear to visibly carry this around.[/italic][/color]
+
+contraband-examinable-verb-text = Legality
+contraband-examinable-verb-message = Check legality of this item.
 
 contraband-department-plural = {$department}
 contraband-job-plural = {MAKEPLURAL($job)}

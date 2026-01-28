@@ -1,6 +1,9 @@
-set-looc-command-description = Lhe permite ativar ou desativar o LOOC.
-set-looc-command-help = Uso: setlooc OU setlooc [value]
-set-looc-command-too-many-arguments-error = Muitos argumentos.
-set-looc-command-invalid-argument-error = Argumento inválido.
-set-looc-command-looc-enabled = O chat LOOC foi ativado.
-set-looc-command-looc-disabled = O chat LOOC foi desativado.
+# SPDX-FileCopyrightText: 2022 Morbo <exstrominer@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+cmd-setlooc-description = Allows you to enable or disable LOOC.
+cmd-setlooc-help = Usage: setlooc OR setlooc [value]
+cmd-setlooc-looc-enabled = LOOC chat has been enabled.
+cmd-setlooc-looc-disabled = LOOC chat has been disabled.

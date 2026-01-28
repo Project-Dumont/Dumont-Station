@@ -1,12 +1,18 @@
-flatpack-unpack-no-room = Não há espaço para desempacotar!
-flatpack-examine = Use uma [color=yellow]multiferramenta[/color] para descompactar isso.
-flatpack-entity-name = {$name} flatpack
-flatpack-entity-description = Um flatpack usado para construir {INDEFINITE($name)} {$name}.
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-flatpacker-item-slot-name = Slot da placa da máquina
-flatpacker-ui-title=Flatpacker 1001
-flatpacker-ui-materials-label = Materiais
-flatpacker-ui-cost-label = Custo de Embalagem
-flatpacker-ui-no-board-label = Nenhuma placa presente!
-flatpacker-ui-insert-board = Insira uma placa para começar.
-flatpacker-ui-pack-button = Embalar
+flatpack-unpack-no-room = No room to unpack!
+flatpack-examine = Use a [color=yellow]multitool[/color] to unpack this.
+flatpack-entity-name = {$name} flatpack
+flatpack-entity-description = A flatpack used for constructing {INDEFINITE($name)} {$name}.
+
+flatpacker-item-slot-name = Machine board slot
+flatpacker-ui-title = Flatpacker 1001
+flatpacker-ui-materials-label = Materials
+flatpacker-ui-cost-label = Packing Cost
+flatpacker-ui-no-board-label = No board present!
+flatpacker-ui-insert-board = Insert a board to begin.
+flatpacker-ui-pack-button = Pack

@@ -1,1 +1,1 @@
-humanoid-profile-editor-reset-height-button = Resetar
+humanoid-profile-editor-reset-height-button = Redefinir

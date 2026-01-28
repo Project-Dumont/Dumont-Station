@@ -1,26 +1,34 @@
-marking-YowieFurHead = Yowie pelo na cabeça
-marking-YowieFurHead-yowie_fur_head = Yowie pelo na cabeça
+# SPDX-FileCopyrightText: 2024 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-marking-YowieFurChest = Yowie pelo no torso
-marking-YowieFurChest-yowie_fur_chest = Yowie pelo no torso
+marking-YowieFur = Yowie body fur
 
-marking-YowieFurGroin = Yowie pelo na barriga
-marking-YowieFurGroin-yowie_fur_groin = Yowie pelo na barriga
+marking-YowieFurHead = Yowie head fur
+marking-YowieFurHead-yowie_fur_head = Yowie head fur
 
-marking-YowieFurArmRight = Yowie pelo no braço direito
-marking-YowieFurArmRight-yowie_fur_arm_right = Yowie pelo no braço direito
+marking-YowieFurChest = Yowie chest fur
+marking-YowieFurChest-yowie_fur_chest = Yowie chest fur
 
-marking-YowieFurArmLeft = Yowie pelo no braço esquerdo
-marking-YowieFurArmLeft-yowie_fur_arm_left = Yowie Yowie pelo no braço esquerdo
+marking-YowieFurGroin = Yowie groin fur
+marking-YowieFurGroin-yowie_fur_groin = Yowie groin fur
 
-marking-YowieFurLegRight = Yowie pelo na perna direita
-marking-YowieFurLegRight-yowie_fur_leg_right = Yowie pelo na perna direita
+marking-YowieFurArmRight = Yowie right arm fur
+marking-YowieFurArmRight-yowie_fur_arm_right = Yowie right arm fur
 
-marking-YowieFurLegLeft = Yowie pelo na perna esquerda
-marking-YowieFurLegLeft-yowie_fur_leg_left = Yowie pelo na perna esquerda
+marking-YowieFurArmLeft = Yowie left arm fur
+marking-YowieFurArmLeft-yowie_fur_arm_left = Yowie left arm fur
 
-marking-YowieFurFeetRight = Yowie pelo no pé direito
-marking-YowieFurFeetRight-yowie_fur_feet_right = Yowie pelo no pé direito
+marking-YowieFurLegRight = Yowie right leg fur
+marking-YowieFurLegRight-yowie_fur_leg_right = Yowie right leg fur
 
-marking-YowieFurFeetLeft = Yowie pelo no pé esquerdo
-marking-YowieFurFeetLeft-yowie_fur_feet_left = Yowie pelo no pé esquerdo
+marking-YowieFurLegLeft = Yowie left leg fur
+marking-YowieFurLegLeft-yowie_fur_leg_left = Yowie left leg fur
+
+marking-YowieFurFeetRight = Yowie right foot fur
+marking-YowieFurFeetRight-yowie_fur_feet_right = Yowie right foot fur
+
+marking-YowieFurFeetLeft = Yowie left foot fur
+marking-YowieFurFeetLeft-yowie_fur_feet_left = Yowie left foot fur

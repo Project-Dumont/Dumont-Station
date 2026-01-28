@@ -1,63 +1,78 @@
-thief-backpack-window-title = Caixa de Ferramentas do Ladrão
+# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 ERROR404 <100093430+ERORR404V1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tristan <traynor123123@gmail.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+thief-backpack-window-title = Thieving kit
 
 thief-backpack-window-description =
-    Esta caixa de ferramentas está repleta de conteúdos não especificados.
-    Agora você precisa se lembrar do que colocou nele.
-    Escolha 2 conjuntos diferentes da lista.
+    Inside are your tools of the trade, which will dissolve when you're ready.
+    Choose {$maxCount} different {$maxCount ->
+        [1] set
+        *[other] sets
+    } from the list.
 
-thief-backpack-window-selected = Kits selecionados: ({$selectedCount}/{$maxCount})
+thief-backpack-window-selected = Kits selected: ({$selectedCount}/{$maxCount})
 
-thief-backpack-window-approve-button = Aprovar
-thief-backpack-button-select = Selecione [ ]
-thief-backpack-button-deselect = Selecione [X]
+thief-backpack-window-approve-button = Approve
+thief-backpack-button-select = Select [  ]
+thief-backpack-button-deselect = Select [X]
 
-# Conjuntos
+# Sets
 
-thief-backpack-category-chameleon-name = Kit do Camaleão
+thief-backpack-category-chameleon-name = Chameleon Kit
 thief-backpack-category-chameleon-description =
-    Inclui um conjunto completo de roupas que contém
-    tecnologia camaleônica, permitindo disfarçar
-    como praticamente qualquer coisa na estação.
+    You are everyone and no one; you are a master of disguise.
+    Includes: A full set of chameleon clothing,
+    a chameleon projector, and an Agent ID.
+    Disguise as anyone and anything.
 
-thief-backpack-category-tools-name = Kit Pegador de Urso
+thief-backpack-category-tools-name = Breacher Kit
 thief-backpack-category-tools-description =
-    Um conjunto de ferramentas para desbastar portas, paredes, janelas,
-    e qualquer outra coisa que por qualquer motivo não
-    quero deixar você entrar onde você precisa ir.
-    Inclui dois C4s, uma multiferramenta, mandíbulas de vida,
-    um par de óculos de méson de soldador avançados e algumas luvas isoladas.
+    What's that sound? A lil' C4 knockin' at their door.
+    No obstacle can stop you!
+    Includes: Two C4, a multitool, remote signaller, jaws of life,
+    advanced welder, engineering goggles, and insulated gloves.
 
-thief-backpack-category-chemistry-name = Kit de Química
+thief-backpack-category-chemistry-name = Anatomy Kit
 thief-backpack-category-chemistry-description =
-    Um conjunto para quem adora melhorar o corpo.
-    Inclui um Implantador de Armazenamento,
-    um Implantador de Misturador de DNA,
-    um conjunto de produtos químicos para um dia chuvoso,
-    e Sabonete ômega.
+    You've reached peak physical performance... with a little help.
+    Includes: Storage implanter, DNA scrambler implanter,
+    ephedrine bottle, syringe, empty shaker, and omega soap
 
-thief-backpack-category-syndie-name = Kit Sindicato
+thief-backpack-category-syndie-name = Syndie Kit
 thief-backpack-category-syndie-description =
-    Um conjunto de itens de um agente do Sindicato que você roubou
-    no passado. Inclui um cartão de identificação de agente, Emag, um pAI de Sindicato,
-    e alguns estranhos cristais vermelhos.
+    Trinkets from a disavowed past, or stolen from a careless agent?
+    You've made some connections. Whiskey, echo...
+    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
+    a Radio Jammer, a lighter and some strange red crystals.
 
-thief-backpack-category-sleeper-name = Kit de Dorminhoco
+thief-backpack-category-sleeper-name = Sleeper Kit
 thief-backpack-category-sleeper-description =
-    Um conjunto para quem gosta de dormir,
-    ou para todos ao seu redor dormirem.
-    Inclui um conjunto de frascos nocturinos, um hipópeno e
-    um tanque de gás para dormir.
+    Until we close our eyes for good, use your illegal prescriptions
+    to keep others asleep.
+    Includes: Sleepy nitrous oxide tank, two nocturine bottles,
+    and a hypopen.
 
-thief-backpack-category-communicator-name = Kit do Comunicador
+thief-backpack-category-communicator-name = Communicator Kit
 thief-backpack-category-communicator-description =
-    Um kit para entusiastas da comunicação. Inclui uma chave mestra
-    para todos os canais da estação, uma caneta cybersun, um portátil
-    monitor de tripulação, máscara de voz de camaleão e muito dinheiro para negócios.
+    Money is power, and secrets are money. Use your silver tongue
+    and wealth to subvert the station.
+    Includes: Master key for all station channels, a CyberSun pen,
+    voice chameleon mask, and 20k spesos inside a briefcase.
 
-thief-backpack-category-smuggler-name = Kit do Contrabandista
+thief-backpack-category-smuggler-name = Smuggler Kit
 thief-backpack-category-smuggler-description =
-    Um kit para quem gosta de ter bolsos grandes.
-    Inclui um farol fulton, dez fultons, 3 granadas de fumaça
-    e uma caixa invisível. Você não pode se mover neles,
-    mas você pode rapidamente esconder ou carregar itens valiosos.
-    Este kit também tem uma capa do vazio legal para acompanhá-lo.
+    All thieves need somewhere to stash their goods in the dark.
+    Don't forget to link your fulton.
+    Includes: Fulton beacon, 10 fultons, 3 smoke grenades,
+    and an invisible crate to hide valuable loot.

@@ -1,1 +1,1 @@
-securitron-target-arrested = { THE($entity) } foi preso(a) em {$coords}, próximo de {$location}.
+securitron-target-arrested = { THE($entity) } has been arrested at {$coords}, near {$location}.

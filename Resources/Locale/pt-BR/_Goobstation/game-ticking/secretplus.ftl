@@ -1,11 +1,12 @@
-secretplus-low-title = Secreto+ Calmo
-secretplus-low-description = Relativamente calmo. Mas nem sempre!
+secretplus-low-title = Secret+ Leve
+secretplus-low-description = Relativamente tranquilo. Mas nem sempre.
 
-secretplus-mid-title = Secreto+ Medio
-secretplus-mid-description = Abraçe o desconhecido, mas relativamente balanceado.
+secretplus-mid-title = Secret+ Médio
+secretplus-mid-description = Lide com ameaças desconhecidas, mas equilibradas.
 
-secretplus-admeme-title = Secreto+ Caos
-secretplus-admeme-description = E todo mundo morreu...
+secretplus-admeme-title = Secret+ Caos
+secretplus-admeme-description = Se pode acontecer, vai acontecer.
 
-survivalplus-title = Sobrevivente+
-survivalplus-description = Começa calmo. Termina... Não tanto assim.
+survivalplus-title = Survival+
+survivalplus-description = Começa relativamente calmo. Termina nem tanto assim.
+

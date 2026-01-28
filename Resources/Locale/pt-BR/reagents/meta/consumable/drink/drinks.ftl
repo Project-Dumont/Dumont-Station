@@ -1,92 +1,112 @@
-reagent-name-coffee = café
-reagent-desc-coffee = Aceitas um cafézinho? Contém uma quantidade moderada de cafeína.
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 KIBORG04 <bossmira4@gmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cool dolphin <36332236+Afrokada@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-reagent-name-cream = creme
-reagent-desc-cream = A gordurosa parte líquida do leite.
+reagent-name-coffee = coffee
+reagent-desc-coffee = A drink made from brewed coffee beans. Contains a moderate amount of caffeine.
+
+reagent-name-cream = cream
+reagent-desc-cream = The fatty, still liquid part of milk. Why don't you mix this with sum scotch, eh?
+
+reagent-name-coconut-water = coconut water
+reagent-desc-coconut-water = A favorite of survivors on deserted islands.
+
+reagent-name-cream-of-coconut = cream of coconut
+reagent-desc-cream-of-coconut = Sweet, syrupy version of coconut cream with added sugar.
 
 reagent-name-cafe-latte = cafe latte
-reagent-desc-cafe-latte = Bom, forte e saboroso, para quando você está lendo.
+reagent-desc-cafe-latte = A nice, strong and tasty beverage while you are reading.
 
-reagent-name-green-tea = chá verde
-reagent-desc-green-tea = Saboroso chá verde.
+reagent-name-tea-powder = tea powder
+reagent-desc-tea-powder = Finely ground tea leaves, used for making tea.
+
+reagent-name-green-tea = green tea
+reagent-desc-green-tea = Tasty green tea.
 
 reagent-name-grenadine = grenadine
-reagent-desc-grenadine = Não tem aroma de cerejas!
+reagent-desc-grenadine = Not cherry flavored!
 
-reagent-name-iced-coffee = café gelado
-reagent-desc-iced-coffee = Café e gelo, fresco e bom.
+reagent-name-iced-coffee = iced coffee
+reagent-desc-iced-coffee = Coffee and ice, refreshing and cool.
 
-reagent-name-iced-green-tea = chá verde gelado
-reagent-desc-iced-green-tea = Chá verde gelado.
+reagent-name-iced-green-tea = iced green tea
+reagent-desc-iced-green-tea = Cold green tea.
 
-reagent-name-iced-tea = chá gelado
-reagent-desc-iced-tea = Quem não gosta de um chá gelado? Não precisa responder.
+reagent-name-iced-tea = iced tea
+reagent-desc-iced-tea = No relation to a certain rap artist/actor.
 
-reagent-name-lemonade = limonada
-reagent-desc-lemonade = Suco de limão, só que com água e um adocicante, como açucar ou mel.
+reagent-name-lemonade = lemonade
+reagent-desc-lemonade = Drink using lemon juice, water, and a sweetener such as cane sugar or honey.
 
-reagent-name-milk = leite
-reagent-desc-milk = Um líquido branco opaco produzido pelas glândulas mamárias de mamíferos.
+reagent-name-arnold-palmer = Arnold Palmer
+reagent-desc-arnold-palmer = Now watch this drive.
 
-reagent-name-milk-goat = leite de cabra
-reagent-desc-milk-goat = AUm líquido branco opaco produzido por uma cabra. Tem bastante soro de leite coalhado.
+reagent-name-milk = milk
+reagent-desc-milk = An opaque white liquid produced by the mammary glands of mammals.
 
-reagent-name-milk-oat = leite de aveia
-reagent-desc-milk-oat = Surpreendentemente saboroso.
+reagent-name-milk-goat = goats milk
+reagent-desc-milk-goat = An opaque white liquid produced by a goat. High buttermilk content.
 
-reagent-name-milk-soy = leite de soja
-reagent-desc-milk-soy = Favorito dos consumidores.
+reagent-name-milk-oat = oat milk
+reagent-desc-milk-oat = Surprisingly tasty.
 
-reagent-name-milk-spoiled = leite azedo
-reagent-desc-milk-spoiled = Melhor não beber isso, pela sua calça.
+reagent-name-milk-soy = soy milk
+reagent-desc-milk-soy = Consumers favorite.
 
-reagent-name-nothing = nada
-reagent-desc-nothing = Absolutamente completamente nada.
+reagent-name-milk-spoiled = spoiled milk
+reagent-desc-milk-spoiled = This milk has gone rancid.
 
-reagent-name-nuclear-cola = refri de cola nuclear
-reagent-desc-nuclear-cola = Refri de cola, cola nunca muda.
+reagent-name-nothing = nothing
+reagent-desc-nothing = Absolutely nothing.
 
-reagent-name-hot-cocoa = Cacau Quente
-reagent-desc-hot-cocoa = Cheira a férias!
+reagent-name-nuclear-cola = nuclear cola
+reagent-desc-nuclear-cola = Cola, cola never changes.
 
-reagent-name-soda-water = água com gás
-reagent-desc-soda-water = Cuidado para não causar uma guerra cívil. É só água com gás.
+reagent-name-hot-cocoa = hot cocoa
+reagent-desc-hot-cocoa = Smells like the holidays!
 
-reagent-name-soy-latte = latte de soja
-reagent-desc-soy-latte = Uma bebida de café feito com expresso e leite de soja a vapor.
+reagent-name-soda-water = soda water
+reagent-desc-soda-water = A container of club soda. Why not make a scotch and soda?
 
-reagent-name-tea = chá
-reagent-desc-tea = Uma bebida feita fervendo, em água, folhas da árvore de chá, Camellia sinensis.
+reagent-name-soy-latte = soy latte
+reagent-desc-soy-latte = A coffee drink made with espresso and steamed soy milk.
 
-reagent-name-tonic-water = água tônica
-reagent-desc-tonic-water = Tem gosto estranho mas pelo menos a quinina mantém a Malária Espacial longe.
+reagent-name-tea = tea
+reagent-desc-tea = A drink made by boiling leaves of the tea tree, Camellia sinensis.
 
-reagent-name-water = água
-reagent-desc-water = Um líquido incolor, inodoro e insípido que humanos precisam para sobreviver.
+reagent-name-tonic-water = tonic water
+reagent-desc-tonic-water = It tastes strange but at least the quinine keeps the Space Malaria at bay.
 
-reagent-name-ice = gelo
-reagent-desc-ice = Água em seu estado sólido.
+reagent-name-water = water
+reagent-desc-water = A colorless liquid that humans need in order to survive.
 
-reagent-name-dry-ramen = miojo seco
-reagent-desc-dry-ramen = Miojo seco e com sal.
+reagent-name-ice = ice
+reagent-desc-ice = Frozen water.
 
-reagent-name-hot-ramen = miojo quente
-reagent-desc-hot-ramen = Miojo quente.
+reagent-name-dry-ramen = dry ramen
+reagent-desc-dry-ramen = Dry noodles and salt.
+
+reagent-name-hot-ramen = hot ramen
+reagent-desc-hot-ramen = Hot noodles.
 
 reagent-name-pilk = pilk
-reagent-desc-pilk = Uma mistura doentia de leite e refri de cola.
+reagent-desc-pilk = A sickening mixture of milk and cola.
 
 reagent-name-posca = posca
-reagent-desc-posca = A bebida dos pobres guerreiros de uma era esquecida.
+reagent-desc-posca = Poor warriors' drink from a forgotten era.
 
-reagent-name-the-martinez = O Martinez
-reagent-desc-the-martinez = A lenda do edgerunner. Lembrado por uma bebida, Esquecido por um bêbado.
-
-reagent-name-kvass = kvass
-reagent-desc-kvass = Uma resfrescante bebida com gosto de socialismo.
-
-reagent-name-white-gilgamesh = gilgamesh branco
-reagent-desc-white-gilgamesh = Uma mistura doentia de leite e cerveja. Faz-te sentir como se fosses feito de madeira.
-
-reagent-name-mopwata = Esfregágua
-reagent-desc-mopwata = Água suja e estagnada do esfregão.
+reagent-name-mopwata = mopwata
+reagent-desc-mopwata = Dirty, stagnant mop water.

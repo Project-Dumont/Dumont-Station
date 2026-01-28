@@ -1,3 +1,0 @@
-ent-hydroponicsSoil = solo
-    .desc = { "" }
-

@@ -1,4 +1,12 @@
-﻿# these specifically mostly come from examples of specific scottish-english (not necessarily scots) verbiage
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 pewter-wiz <145329607+pewter-wiz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# these specifically mostly come from examples of specific scottish-english (not necessarily scots) verbiage
 # https://en.wikipedia.org/wiki/Scotticism
 # https://en.wikipedia.org/wiki/Scottish_English
 # https://www.cs.stir.ac.uk/~kjt/general/scots.html
@@ -97,7 +105,7 @@ accent-dwarf-words-31 = too
 accent-dwarf-words-replace-31 = tae
 
 accent-dwarf-words-32 = my
-accent-dwarf-words-replace-32 = ma
+accent-dwarf-words-replace-32 = me
 
 accent-dwarf-words-33 = not
 accent-dwarf-words-replace-33 = nae
@@ -202,7 +210,7 @@ accent-dwarf-words-67 = have
 accent-dwarf-words-replace-67 = hae
 
 accent-dwarf-words-68 = hey
-accent-dwarf-words-replace-68 = oye
+accent-dwarf-words-replace-68 = oi
 
 accent-dwarf-words-69 = what
 accent-dwarf-words-replace-69 = wot
@@ -264,9 +272,6 @@ accent-dwarf-words-replace-87 = babee
 accent-dwarf-words-88 = after
 accent-dwarf-words-replace-88 = efter
 
-accent-dwarf-words-89 = for
-accent-dwarf-words-replace-89 = fer
-
 accent-dwarf-words-90 = gonna
 accent-dwarf-words-replace-90 = gaun'ae
 
@@ -327,9 +332,6 @@ accent-dwarf-words-replace-108 = hou'er
 accent-dwarf-words-109 = think
 accent-dwarf-words-replace-109 = reckon
 
-accent-dwarf-words-110 = thinking
-accent-dwarf-words-replace-110 = fer
-
 accent-dwarf-words-111 = hamlet
 accent-dwarf-words-replace-111 = hammy
 
@@ -348,18 +350,6 @@ accent-dwarf-words-replace-115 = reddie
 accent-dwarf-words-116 = nuclear agent
 accent-dwarf-words-replace-116 = reddie
 
-accent-dwarf-words-117 = anatag
-accent-dwarf-words-replace-117 = baddie
-
-accent-dwarf-words-118 = syndicate
-accent-dwarf-words-replace-118 = baddie
-
-accent-dwarf-words-119 = syndi
-accent-dwarf-words-replace-119 = baddie
-
-accent-dwarf-words-120 = syndie
-accent-dwarf-words-replace-120 = baddie
-
 accent-dwarf-words-121 = more
 accent-dwarf-words-replace-121 = maer
 
@@ -368,3 +358,75 @@ accent-dwarf-words-replace-122 = maero'er
 
 accent-dwarf-words-123 = over
 accent-dwarf-words-replace-123 = o'er
+
+accent-dwarf-words-125 = human
+accent-dwarf-words-replace-125 = humi
+
+accent-dwarf-words-126 = dwarf
+accent-dwarf-words-replace-126 = dorf
+
+accent-dwarf-words-127 = slime
+accent-dwarf-words-replace-127 = oozi
+
+accent-dwarf-words-128 = rat
+accent-dwarf-words-replace-128 = raki
+
+accent-dwarf-words-129 = arachnid
+accent-dwarf-words-replace-129 = aranaki
+
+accent-dwarf-words-130 = spider
+accent-dwarf-words-replace-130 = hisser
+
+accent-dwarf-words-131 = isn't
+accent-dwarf-words-replace-131 = be'nae
+
+accent-dwarf-words-132 = aren't
+accent-dwarf-words-replace-132 = be'nae
+
+accent-dwarf-words-133 = ain't
+accent-dwarf-words-replace-133 = be'nae
+
+accent-dwarf-words-134 = isnt
+accent-dwarf-words-replace-134 = benae
+
+accent-dwarf-words-135 = arent
+accent-dwarf-words-replace-135 = benae
+
+accent-dwarf-words-136 = aint
+accent-dwarf-words-replace-136 = benae
+
+accent-dwarf-words-137 = zombie
+accent-dwarf-words-replace-137 = rotter
+
+accent-dwarf-words-138 = zomb
+accent-dwarf-words-replace-138 = rotter
+
+accent-dwarf-words-139 = clown
+accent-dwarf-words-replace-139 = honki
+
+accent-dwarf-words-140 = cluwn
+accent-dwarf-words-replace-140 = hunki
+
+accent-dwarf-words-141 = carp
+accent-dwarf-words-replace-141 = fin
+
+accent-dwarf-words-142 = crusher
+accent-dwarf-words-replace-142 = axe
+
+accent-dwarf-words-143 = coward
+accent-dwarf-words-replace-143 = leaflover
+
+accent-dwarf-words-144 = idiot
+accent-dwarf-words-replace-144 = dobber
+
+accent-dwarf-words-145 = stupid
+accent-dwarf-words-replace-145 = diteit
+
+accent-dwarf-words-146 = officer
+accent-dwarf-words-replace-146 = bobby
+
+accent-dwarf-words-147 = seccie
+accent-dwarf-words-replace-147 = bobby
+
+accent-dwarf-words-148 = a
+accent-dwarf-words-replace-148 = ae

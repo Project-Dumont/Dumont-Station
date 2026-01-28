@@ -1,217 +1,287 @@
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 ZorenZal <51891458+lvvova1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 pointer-to-null <91910481+pointer-to-null@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+# SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+# SPDX-FileCopyrightText: 2022 Leeroy <97187620+elthundercloud@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Michael Phillips <1194692+MeltedPixel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Mr0maks <mr.maks0443@gmail.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@github.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 08A <git@08a.re>
+# SPDX-FileCopyrightText: 2023 Artjom <artjombebenin@gmail.com>
+# SPDX-FileCopyrightText: 2023 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Keiku <41867291+Keikiru@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vascreeper@yahoo.com>
+# SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 onoira <onoira@psiko.zone>
+# SPDX-FileCopyrightText: 2024 Aexxie <codyfox.077@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 YuNii <benjamin@bhenrich.de>
+# SPDX-FileCopyrightText: 2024 anotherbutton <MADpfeifer@outlook.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 c4llv07e <igor@c4llv07e.xyz>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 noirogen <raethertechnologies@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## General stuff
 
-ui-options-title = Opções do Jogo
-ui-options-tab-accessibility = Acessibilidade
-ui-options-tab-graphics = Gráficos
-ui-options-tab-controls = Controles
+ui-options-title = Game Options
+ui-options-tab-accessibility = Accessibility
+ui-options-tab-admin = Admin
+ui-options-tab-graphics = Graphics
+ui-options-tab-controls = Controls
 ui-options-tab-audio = Audio
-ui-options-tab-network = Conexão
-ui-options-tab-misc = Miscelânia
+ui-options-tab-network = Network
+ui-options-tab-misc = General
 
-ui-options-apply = Salvar & Aplicar
-ui-options-reset-all = Redefinir Tudo
-ui-options-default = Resetar ao padrão
+ui-options-apply = Save & apply
+ui-options-reset-all = Reset changed
+ui-options-default = Reset to defaults
 
 ui-options-value-percent = { TOSTRING($value, "P0") }
 
 # Misc/General menu
 
-ui-options-discordrich = Ativar o Discord Rich Presence
-ui-options-general-ui-style = Estilo de UI
+ui-options-discordrich = Enable Discord Rich Presence
+ui-options-general-ui-style = UI Style
 ui-options-general-discord = Discord
 ui-options-general-cursor = Cursor
-ui-options-general-speech = Fala
-ui-options-general-storage = Armazenamento
-ui-options-general-accessibility = Acessibilidade
+ui-options-general-speech = Speech
+ui-options-general-storage = Storage
+ui-options-general-accessibility = Accessibility
 
 ## Audio menu
 
-ui-options-master-volume = Volume geral:
-ui-options-midi-volume = Volume dos MIDI (Instrumentos):
-ui-options-ambient-music-volume = Volume da musica ambiental:
-ui-options-ambience-volume = Volume ambiental:
-ui-options-lobby-volume = Volume do Lobby & Round-end:
-ui-options-interface-volume = Volume da interface:
-ui-options-ambience-max-sounds = Sons ambiente simultaneos:
-ui-options-lobby-music = Musica do Lobby & Round-end
-ui-options-restart-sounds = Sons do restart de rounds
-ui-options-event-music = Musica de eventos
-ui-options-admin-sounds = Tocar sons de admins
+ui-options-master-volume = Master Volume:
+ui-options-midi-volume = MIDI (Instrument) Volume:
+ui-options-ambient-music-volume = Ambient music volume:
+ui-options-ambience-volume = Ambience volume:
+ui-options-lobby-volume = Lobby & Round-end volume:
+ui-options-interface-volume = Interface volume:
+ui-options-ambience-max-sounds = Ambience simultaneous sounds:
+ui-options-lobby-music = Lobby & Round-end Music
+ui-options-restart-sounds = Round Restart Sounds
+ui-options-event-music = Event Music
+ui-options-admin-sounds = Play Admin Sounds
+ui-options-bwoink-sound = Play AHelp Notification Sound
 ui-options-volume-label = Volume
+# Goobstation - Highlight Volume
+ui-options-highlight-volume = Chat Highlight Ping Volume:
 
 ## Graphics menu
 
-ui-options-auto-fill-highlights = Preencher automaticamente os destaques com as informações do personagem
-ui-options-highlights-color = Cor dos destaques:
-ui-options-highlights-color-example = Este é um texto destacado!
-ui-options-show-held-item = Mostrar item segurado ao lado do cursor
-ui-options-show-combat-mode-indicators = Mostrar indicadores do modo de combate
-ui-options-show-offer-mode-indicators = Mostrar indicadores do modo de oferta
-ui-options-opaque-storage-window = Janela de armazenamento opaca
-ui-options-show-ooc-patron-color = Mostrar cor do Patreon no OOC
-ui-options-show-looc-on-head = Mostrar chat LOOC acima da cabeça dos personagens
-ui-options-fancy-speech = Mostrar nomes nos balões de fala
-ui-options-fancy-name-background = Adicionar fundo aos nomes dos balões de fala
+ui-options-display-label = Display
+ui-options-quality-label = Quality
+ui-options-misc-label = Misc
+ui-options-interface-label = Interface
+
+
+ui-options-auto-fill-highlights = Auto-fill the highlights with the character's information
+ui-options-highlights-color = Highlighs color:
+ui-options-highlights-color-example = This is an highlighted text!
+ui-options-show-held-item = Show held item next to cursor
+ui-options-show-combat-mode-indicators = Show combat mode indicators with cursor
+ui-options-opaque-storage-window = Opaque storage window
+ui-options-show-ooc-patron-color = Show OOC Patreon color
+ui-options-show-looc-on-head = Show LOOC chat above characters head
+ui-options-fancy-speech = Show names in speech bubbles
+ui-options-fancy-name-background = Add background to speech bubble names
 ui-options-vsync = VSync
-ui-options-fullscreen = Tela cheia
-ui-options-lighting-label = Qualidade da iluminação:
-ui-options-lighting-very-low = Muito baixa
-ui-options-lighting-low = Baixa
-ui-options-lighting-medium = Média
-ui-options-lighting-high = Alta
-ui-options-scale-label = Escala da interface:
-ui-options-scale-auto = Automática ({ TOSTRING($scale, "P0") })
+ui-options-fullscreen = Fullscreen
+ui-options-lighting-label = Lighting Quality:
+ui-options-lighting-very-low = Very Low
+ui-options-lighting-low = Low
+ui-options-lighting-medium = Medium
+ui-options-lighting-high = High
+ui-options-scale-label = UI Scale:
+ui-options-scale-auto = Automatic ({ TOSTRING($scale, "P0") })
 ui-options-scale-75 = 75%
 ui-options-scale-100 = 100%
 ui-options-scale-125 = 125%
 ui-options-scale-150 = 150%
 ui-options-scale-175 = 175%
 ui-options-scale-200 = 200%
-ui-options-hud-theme = Tema do HUD:
-ui-options-hud-theme-default = Padrão
+ui-options-hud-theme = HUD theme:
+ui-options-hud-theme-default = Default
 ui-options-hud-theme-plasmafire = Plasmafire
 ui-options-hud-theme-slimecore = Slimecore
 ui-options-hud-theme-clockwork = Clockwork
-ui-options-hud-theme-retro = Retrô
-ui-options-hud-theme-minimalist = Minimalista
+ui-options-hud-theme-retro = Retro
+ui-options-hud-theme-minimalist = Minimalist
 ui-options-hud-theme-ashen = Ashen
-ui-options-hud-layout-default = Padrão
-ui-options-hud-layout-separated = Separado
-ui-options-vp-stretch = Esticar viewport para caber na janela do jogo
-ui-options-vp-scale = Escala fixa do viewport:
+ui-options-hud-layout-default = Default
+ui-options-hud-layout-separated = Separated
+ui-options-vp-stretch = Stretch viewport to fit game window
+ui-options-vp-scale = Fixed viewport scale:
 ui-options-vp-scale-value = x{ $scale }
-ui-options-vp-integer-scaling = Preferir escala inteira (pode causar barras pretas/corte)
-ui-options-vp-integer-scaling-tooltip = Se esta opção estiver ativada, o viewport será escalado usando valores inteiros
-                                        em resoluções específicas. Isso gera texturas mais nítidas, mas geralmente
-                                        faz com que apareçam barras pretas na parte superior/inferior da tela ou que
-                                        parte do viewport não fique visível.
-ui-options-vp-vertical-fit = Ajuste vertical do viewport
-ui-options-vp-vertical-fit-tooltip = Quando ativado, o viewport principal ignora totalmente o eixo horizontal ao se
-                                     ajustar à tela. Se sua tela for menor que o viewport, isso fará com que ele seja
-                                     cortado no eixo horizontal.
-ui-options-vp-low-res = Viewport em baixa resolução
-ui-options-parallax-low-quality = Parallax em baixa qualidade (fundo)
-ui-options-ambient-occlusion = Mostrar oclusão de ambiente
-ui-options-fps-counter = Mostrar contador de FPS
-ui-options-vp-width = Largura do viewport:
-ui-options-hud-layout = Layout do HUD:
-
+ui-options-vp-integer-scaling = Prefer integer scaling (might cause black bars/clipping)
+ui-options-vp-integer-scaling-tooltip = If this option is enabled, the viewport will be scaled using an integer value
+                                        at specific resolutions. While this results in crisp textures, it also often
+                                        means that black bars appear at the top/bottom of the screen or that part
+                                        of the viewport is not visible.
+ui-options-vp-vertical-fit = Vertical viewport fitting
+ui-options-vp-vertical-fit-tooltip = When enabled, the main viewport will ignore the horizontal axis entirely when
+                                     fitting to your screen. If your screen is smaller than the viewport, then this
+                                     will cause the viewport to be cut off on the horizontal axis.
+ui-options-vp-low-res = Low-resolution viewport
+ui-options-parallax-low-quality = Low-quality Parallax (background)
+ui-options-ambient-occlusion = Show Ambient Occlusion
+ui-options-fps-counter = Show FPS counter
+ui-options-vp-width = Viewport width:
+ui-options-hud-layout = HUD layout:
 
 ## Controls menu
 
-ui-options-binds-reset-all = Redefinir TODOS os atalhos de teclado
-ui-options-binds-explanation = Clique para definir uma tecla, clique com o botão direito para limpar
-ui-options-binds-search = Pesquisar
-ui-options-unbound = Não definido
-ui-options-bind-reset = Resetar
-ui-options-key-prompt = Pressione uma tecla...
+ui-options-binds-reset-all = Reset ALL keybinds
+ui-options-binds-explanation = Click to change binding, right-click to clear
+ui-options-binds-search = Search
+ui-options-unbound = Unbound
+ui-options-bind-reset = Reset
+ui-options-key-prompt = Press a key...
 
-ui-options-header-movement = Movimento
+ui-options-header-movement = Movement
 ui-options-header-camera = Camera
-ui-options-header-interaction-basic = Interação básica
-ui-options-header-interaction-adv = Interação avançada
-ui-options-header-ui = Interface de usuário
-ui-options-header-misc = Miscelânia
+ui-options-header-interaction-basic = Basic Interaction
+ui-options-header-interaction-adv = Advanced Interaction
+ui-options-header-ui = User Interface
+ui-options-header-misc = Miscellaneous
 ui-options-header-hotbar = Hotbar
 ui-options-header-shuttle = Shuttle
-ui-options-header-map-editor = Editor de Mapa
-ui-options-header-dev = Desenvolvimento
-ui-options-header-general = Geral
+ui-options-header-map-editor = Map Editor
+ui-options-header-dev = Development
+ui-options-header-general = General
 
-ui-options-hotkey-keymap = Use chaves QWERTY dos EUA
-ui-options-hotkey-toggle-walk = Alternar para caminhar
+ui-options-hotkey-keymap = Use US QWERTY Keys
+ui-options-hotkey-toggle-walk = Toggle Walk
+ui-options-hotkey-default-walk = Walk by default
 
-ui-options-function-move-up = Mover pra cima
-ui-options-function-move-left = Mover pra esquerda
-ui-options-function-move-down = Mover pra baixo
-ui-options-function-move-right = Mover pra direita
-ui-options-function-walk = Caminhas
-ui-options-function-toggle-standing = Rastejar/Levantar
+ui-options-function-move-up = Move Up
+ui-options-function-move-left = Move Left
+ui-options-function-move-down = Move Down
+ui-options-function-move-right = Move Right
+ui-options-function-walk = Walk
+ui-options-function-toggle-standing = Crawl/Stand
 
-ui-options-function-camera-rotate-left = Rotacionar para esquerda
-ui-options-function-camera-rotate-right = Rotacionar para direita
-ui-options-function-camera-reset = Resetar
-ui-options-function-zoom-in = Zoom +
-ui-options-function-zoom-out = Zoom -
-ui-options-function-reset-zoom = Resetar o zoom
+ui-options-function-camera-rotate-left = Rotate left
+ui-options-function-camera-rotate-right = Rotate right
+ui-options-function-camera-reset = Reset
+ui-options-function-zoom-in = Zoom in
+ui-options-function-zoom-out = Zoom out
+ui-options-function-reset-zoom = Reset zoom
 
-ui-options-function-use = Uso
-ui-options-function-use-secondary = Uso secundario
-ui-options-function-alt-use = Uso  alternativo
-ui-options-function-wide-attack = Ataque amplo
-ui-options-function-activate-item-in-hand = Ativar item em maos
-ui-options-function-alt-activate-item-in-hand = Ativar alternativamente item em maos
-ui-options-function-activate-item-in-world = Ativar item no mundo
-ui-options-function-alt-activate-item-in-world = Ativar alternativamente item no mundo
-ui-options-function-drop = Largar item
-ui-options-function-examine-entity = Examinar
-ui-options-function-swap-hands = Trocar de maos
-ui-options-function-move-stored-item = Mover item guardado
-ui-options-function-rotate-stored-item = Rotacionar item guardado
-ui-options-function-save-item-location = Salvar localizacao do item
-ui-options-static-storage-ui = Trava a tela de armazem na hotbar
+ui-options-function-use = Use
+ui-options-function-use-secondary = Use secondary
+ui-options-function-alt-use = Alt use
+ui-options-function-wide-attack = Wide attack
+ui-options-function-activate-item-in-hand = Activate item in hand
+ui-options-function-alt-activate-item-in-hand = Alternative activate item in hand
+ui-options-function-activate-item-in-world = Activate item in world
+ui-options-function-alt-activate-item-in-world = Alternative activate item in world
+ui-options-function-drop = Drop item
+ui-options-function-examine-entity = Examine
+ui-options-function-swap-hands = Swap hands
+ui-options-function-swap-hands-reverse = Swap hands (other direction)
+ui-options-function-move-stored-item = Move stored item
+ui-options-function-rotate-stored-item = Rotate stored item
+ui-options-function-save-item-location = Save item location
+ui-options-static-storage-ui = Lock storage window to hotbar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
-ui-options-function-open-backpack = Abrir mochila
-ui-options-function-open-belt = Abrir o cinto
-ui-options-function-throw-item-in-hand = Jogar
-
-ui-options-function-try-pull-object = Puxar o objeto
-ui-options-function-move-pulled-object = Mover objeto puxado
-ui-options-function-release-pulled-object = Largar objeto puxado
-ui-options-function-point = Apontar no mouse
-ui-options-function-rotate-object-clockwise = Girar no sentido horario
-ui-options-function-rotate-object-counterclockwise = Girar no sentido anti-horario
+ui-options-function-smart-equip-back = Smart-equip to back slot
+ui-options-function-open-backpack = Open backpack
+ui-options-function-open-belt = Open belt
+ui-options-function-throw-item-in-hand = Throw item
+ui-options-function-try-pull-object = Pull object
+ui-options-function-move-pulled-object = Move pulled object
+ui-options-function-release-pulled-object = Release pulled object
+ui-options-function-point = Point at location
+ui-options-function-rotate-object-clockwise = Rotate clockwise
+ui-options-function-rotate-object-counterclockwise = Rotate counterclockwise
 ui-options-function-flip-object = Flip
 
-ui-options-function-focus-chat-input-window = Focar no chat
-ui-options-function-focus-local-chat-window = Focar no chat (IC)
-ui-options-function-focus-emote = Focar no chat (Emote)
-ui-options-function-focus-whisper-chat-window = Focar no chat (Whisper)
-ui-options-function-focus-radio-window = Focar no chat (Radio)
-ui-options-function-focus-looc-window = Focar no chat (LOOC)
-ui-options-function-focus-ooc-window = Focar no chat (OOC)
-ui-options-function-focus-admin-chat-window = Focar no chat (Admin)
-ui-options-function-focus-dead-chat-window = Focar no chat (Dead)
-ui-options-function-focus-console-chat-window = Focar no chat (Console)
-ui-options-function-cycle-chat-channel-forward = Mudar canais (Pra frente)
-ui-options-function-cycle-chat-channel-backward = Mudar canais (Pra tras)
-ui-options-function-open-character-menu = Abrir menu do persoangem
-ui-options-function-open-context-menu = Abrir menu de contexto
-ui-options-function-open-crafting-menu = Abrir menu de crafting
-ui-options-function-open-inventory-menu = Abrir inventario
-ui-options-function-open-a-help = Abrir ajuda de admin (AHelp)
-ui-options-function-open-abilities-menu = Abrir menu de acoes
-ui-options-function-open-emotes-menu = Abrir menu de emotes
-ui-options-function-toggle-round-end-summary-window = Abrir o manifesto do fim de round
-ui-options-function-open-entity-spawn-window = Abrir menu de spawn de entidades
-ui-options-function-open-sandbox-window = Abrir menu sandbox
-ui-options-function-open-tile-spawn-window = Abrir menu de tiles
-ui-options-function-open-decal-spawn-window = Abrir menu de decals
-ui-options-function-open-admin-menu = Abrir menu admin
-ui-options-function-open-guidebook = Abrir livro-guia
-ui-options-function-window-close-all = Fechar toda as janelas
-ui-options-function-window-close-recent = Fechar janela mais recente
-ui-options-function-show-escape-menu = Abrir menu do jogo
-ui-options-function-escape-context = Feche a janela recente ou alterne o menu do jogo
+ui-options-function-focus-chat-input-window = Focus chat
+ui-options-function-focus-local-chat-window = Focus chat (IC)
+ui-options-function-focus-emote = Focus chat (Emote)
+ui-options-function-focus-whisper-chat-window = Focus chat (Whisper)
+ui-options-function-focus-radio-window = Focus chat (Radio)
+ui-options-function-focus-looc-window = Focus chat (LOOC)
+ui-options-function-focus-ooc-window = Focus chat (OOC)
+ui-options-function-focus-admin-chat-window = Focus chat (Admin)
+ui-options-function-focus-dead-chat-window = Focus chat (Dead)
+ui-options-function-focus-console-chat-window = Focus chat (Console)
+ui-options-function-cycle-chat-channel-forward = Cycle channel (Forward)
+ui-options-function-cycle-chat-channel-backward = Cycle channel (Backward)
+ui-options-function-open-character-menu = Open character menu
+ui-options-function-open-context-menu = Open context menu
+ui-options-function-open-crafting-menu = Open crafting menu
+ui-options-function-open-inventory-menu = Open inventory
+ui-options-function-open-a-help = Open admin help
+ui-options-function-open-abilities-menu = Open action menu
+ui-options-function-open-emotes-menu = Open emotes menu
+ui-options-function-toggle-round-end-summary-window = Toggle round end summary window
+ui-options-function-open-entity-spawn-window = Open entity spawn menu
+ui-options-function-open-sandbox-window = Open sandbox menu
+ui-options-function-open-tile-spawn-window = Open tile spawn menu
+ui-options-function-open-decal-spawn-window = Open decal spawn menu
+ui-options-function-open-admin-menu = Open admin menu
+ui-options-function-open-guidebook = Open guidebook
+ui-options-function-window-close-all = Close all windows
+ui-options-function-window-close-recent = Close recent window
+ui-options-function-show-escape-menu = Toggle game menu
+ui-options-function-escape-context = Close recent window or toggle game menu
 
-ui-options-function-take-screenshot = Tirar uma captura de tela
-ui-options-function-take-screenshot-no-ui = Tirar uma captura de tela (sem UI)
-ui-options-function-toggle-fullscreen = Ativar tela cheia
+ui-options-function-take-screenshot = Take screenshot
+ui-options-function-take-screenshot-no-ui = Take screenshot (without UI)
+ui-options-function-toggle-fullscreen = Toggle fullscreen
 
-ui-options-function-editor-place-object = Colocar um objeto
-ui-options-function-editor-cancel-place = Cancelar o colocamento
-ui-options-function-editor-grid-place = Colocar em grade
-ui-options-function-editor-line-place = Colocar na linha
-ui-options-function-editor-rotate-object = Rotacionar
+ui-options-function-editor-place-object = Place object
+ui-options-function-editor-cancel-place = Cancel placement
+ui-options-function-editor-grid-place = Place in grid
+ui-options-function-editor-line-place = Place line
+ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
-ui-options-function-editor-copy-object = Copiar
+ui-options-function-editor-copy-object = Copy
 
-ui-options-function-show-debug-console = Abrir console
-ui-options-function-show-debug-monitors = Mostrar monitores de debug
-ui-options-function-inspect-entity = Inspecionar entidade
-ui-options-function-hide-ui = Esconder UI
+ui-options-function-show-debug-console = Open Console
+ui-options-function-show-debug-monitors = Show Debug Monitors
+ui-options-function-inspect-entity = Inspect Entity
+ui-options-function-hide-ui = Hide UI
 
 ui-options-function-hotbar1 = Hotbar slot 1
 ui-options-function-hotbar2 = Hotbar slot 2
@@ -223,6 +293,16 @@ ui-options-function-hotbar7 = Hotbar slot 7
 ui-options-function-hotbar8 = Hotbar slot 8
 ui-options-function-hotbar9 = Hotbar slot 9
 ui-options-function-hotbar0 = Hotbar slot 0
+ui-options-function-hotbar-shift1 = Hotbar slot Shift+1
+ui-options-function-hotbar-shift2 = Hotbar slot Shift+2
+ui-options-function-hotbar-shift3 = Hotbar slot Shift+3
+ui-options-function-hotbar-shift4 = Hotbar slot Shift+4
+ui-options-function-hotbar-shift5 = Hotbar slot Shift+5
+ui-options-function-hotbar-shift6 = Hotbar slot Shift+6
+ui-options-function-hotbar-shift7 = Hotbar slot Shift+7
+ui-options-function-hotbar-shift8 = Hotbar slot Shift+8
+ui-options-function-hotbar-shift9 = Hotbar slot Shift+9
+ui-options-function-hotbar-shift0 = Hotbar slot Shift+0
 ui-options-function-loadout1 = Hotbar Loadout 1
 ui-options-function-loadout2 = Hotbar Loadout 2
 ui-options-function-loadout3 = Hotbar Loadout 3
@@ -233,43 +313,56 @@ ui-options-function-loadout7 = Hotbar Loadout 7
 ui-options-function-loadout8 = Hotbar Loadout 8
 ui-options-function-loadout9 = Hotbar Loadout 9
 ui-options-function-loadout0 = Hotbar Loadout 0
+ui-options-function-loadoutshift1 = Hotbar Loadout Shift+1
+ui-options-function-loadoutshift2 = Hotbar Loadout Shift+2
+ui-options-function-loadoutshift3 = Hotbar Loadout Shift+3
+ui-options-function-loadoutshift4 = Hotbar Loadout Shift+4
+ui-options-function-loadoutshift5 = Hotbar Loadout Shift+5
+ui-options-function-loadoutshift6 = Hotbar Loadout Shift+6
+ui-options-function-loadoutshift7 = Hotbar Loadout Shift+7
+ui-options-function-loadoutshift8 = Hotbar Loadout Shift+8
+ui-options-function-loadoutshift9 = Hotbar Loadout Shift+9
+ui-options-function-loadoutshift0 = Hotbar Loadout Shift+0
 
-ui-options-function-shuttle-strafe-up = Ir para frente
-ui-options-function-shuttle-strafe-right = Ir pra direita
-ui-options-function-shuttle-strafe-left = Ir para esquerda
-ui-options-function-shuttle-strafe-down = Ir para baixo
-ui-options-function-shuttle-rotate-left = Rotacionar para esquerda
-ui-options-function-shuttle-rotate-right = Rotacionar para direita
-ui-options-function-shuttle-brake = Freiar
+ui-options-function-shuttle-strafe-up = Strafe up
+ui-options-function-shuttle-strafe-right = Strafe right
+ui-options-function-shuttle-strafe-left = Strafe left
+ui-options-function-shuttle-strafe-down = Strafe down
+ui-options-function-shuttle-rotate-left = Rotate left
+ui-options-function-shuttle-rotate-right = Rotate right
+ui-options-function-shuttle-brake = Brake
 
 ## Network menu
 
-ui-options-net-predict = Predição no lado do cliente
+ui-options-net-predict = Client-side prediction
 
-ui-options-net-interp-ratio = Tamanho do buffer de estado
-ui-options-net-interp-ratio-tooltip = Aumentar isso geralmente torna o jogo mais resistente à perda de pacotes do servidor para o cliente.
-                                      Porém, isso adiciona um pouco mais de latência e exige que o cliente
-                                      preveja mais ticks futuros.
+ui-options-net-interp-ratio = State buffer size
+ui-options-net-interp-ratio-tooltip = Increasing this will generally make the game more resistant
+                                      to server->client packet-loss, however in doing so it
+                                      effectively adds slightly more latency and requires the
+                                      client to predict more future ticks.
 
-ui-options-net-predict-tick-bias = Deslocamento de ticks da predição
-ui-options-net-predict-tick-bias-tooltip = Aumentar isso geralmente torna o jogo mais resistente à perda de pacotes do cliente para o servidor.
-                                           Porém, isso adiciona um pouco mais de latência e exige que o cliente
-                                           preveja mais ticks futuros.
+ui-options-net-predict-tick-bias = Prediction tick bias
+ui-options-net-predict-tick-bias-tooltip = Increasing this will generally make the game more resistant
+                                           to client->server packet-loss, however in doing so it
+                                           effectively adds slightly more latency and requires the
+                                           client to predict more future ticks.
 
-ui-options-net-pvs-spawn = Orçamento de geração de entidades PVS
-ui-options-net-pvs-spawn-tooltip = Isso limita a taxa com que o servidor envia entidades recém-criadas ao cliente.
-                                   Diminuir esse valor pode ajudar a reduzir travadas causadas pela geração de entidades,
-                                   mas pode resultar em pop-in.
+ui-options-net-pvs-spawn = PVS entity spawn budget
+ui-options-net-pvs-spawn-tooltip = This limits the rate at which the server will send newly spawned
+                                       entities to the client. Lowering this can help reduce
+                                       stuttering due to entity spawning, but can lead to pop-in.
 
-ui-options-net-pvs-entry = Orçamento de entrada de entidades PVS
-ui-options-net-pvs-entry-tooltip = Isso limita a taxa com que o servidor envia entidades que se tornaram visíveis ao cliente.
-                                   Diminuir esse valor pode ajudar a reduzir travadas,
-                                   mas pode causar pop-in.
+ui-options-net-pvs-entry = PVS entity budget
+ui-options-net-pvs-entry-tooltip = This limits the rate at which the server will send newly visible
+                                       entities to the client. Lowering this can help reduce
+                                       stuttering, but can lead to pop-in.
 
-ui-options-net-pvs-leave = Taxa de remoção PVS
-ui-options-net-pvs-leave-tooltip = Isso limita a taxa com que o cliente remove entidades fora do campo de visão.
-                                   Diminuir esse valor pode ajudar a reduzir travadas ao caminhar pelo mapa,
-                                   mas pode ocasionalmente causar erros de predição e outros problemas.
+ui-options-net-pvs-leave = PVS detach rate
+ui-options-net-pvs-leave-tooltip = This limits the rate at which the client will remove
+                                       out-of-view entities. Lowering this can help reduce
+                                       stuttering when walking around, but could occasionally
+                                       lead to mispredicts and other issues.
 
 ## Toggle window console command
 cmd-options-desc = Opens options menu, optionally with a specific tab selected.
@@ -277,11 +370,67 @@ cmd-options-help = Usage: options [tab]
 
 ## Accessibility menu
 
-ui-options-enable-color-name = Adicionar cores aos nomes dos personagens
-ui-options-colorblind-friendly = Modo para daltônicos
-ui-options-reduced-motion = Reduzir movimento dos efeitos visuais
-ui-options-chat-window-opacity = Opacidade da janela do chat
-ui-options-screen-shake-intensity = Intensidade da vibração da tela
+ui-options-enable-color-name = Add colors to character names
+ui-options-colorblind-friendly = Colorblind friendly mode
+ui-options-reduced-motion = Reduce motion of visual effects
+ui-options-screen-shake-intensity = Screen shake intensity
+ui-options-chat-window-opacity = Chat window opacity
+ui-options-speech-bubble-text-opacity = Speech bubble text opacity
+ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
+ui-options-speech-bubble-background-opacity = Speech bubble background opacity
+# Goobstation - Highlight chat sounds!
+ui-options-highlight-sound = Play sound on highlight
+
+## Admin menu
 
 ## Shitmed Change
 ui-options-header-targeting = Targeting
+ui-options-function-target-head = Target head
+ui-options-function-target-chest = Target chest
+ui-options-function-target-groin = Target groin
+ui-options-function-target-left-arm = Target left arm
+ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-hand = Target left hand
+ui-options-function-target-right-hand = Target right hand
+ui-options-function-target-left-leg = Target left leg
+ui-options-function-target-right-leg = Target right leg
+ui-options-function-target-left-foot = Target left foot
+ui-options-function-target-right-foot = Target right foot
+
+ui-options-admin-player-panel = Admin Menu Players List
+
+ui-options-admin-player-tab-symbol-setting = Character column antag symbols
+ui-options-admin-player-tab-symbol-setting-off = No antag symbol
+ui-options-admin-player-tab-symbol-setting-basic = Show standard antag symbol
+ui-options-admin-player-tab-symbol-setting-specific = Show specific antag symbol
+
+ui-options-admin-player-tab-role-setting = Role display settings
+ui-options-admin-player-tab-role-setting-roletype = Show role type
+ui-options-admin-player-tab-role-setting-subtype = Show subtype
+ui-options-admin-player-tab-role-setting-roletypesubtype = Show role type and subtype
+ui-options-admin-player-tab-role-setting-subtyperoletype = Show subtype and role type
+
+ui-options-admin-player-tab-color-setting = Color settings
+ui-options-admin-player-tab-color-setting-off = I hate colors
+ui-options-admin-player-tab-color-setting-character = Colorize antag character names
+ui-options-admin-player-tab-color-setting-roletype = Colorize all role types
+ui-options-admin-player-tab-color-setting-both = Colorize both
+
+ui-options-admin-overlay-title = Admin Overlay
+
+ui-options-admin-overlay-antag-format = Antag label style
+ui-options-admin-overlay-antag-format-binary = Show antag status
+ui-options-admin-overlay-antag-format-roletype = Show role type
+ui-options-admin-overlay-antag-format-subtype = Show subtype
+ui-options-admin-overlay-antag-format-off = Don't show antag status/roletype
+
+ui-options-admin-overlay-antag-symbol = Antag symbol style
+ui-options-admin-overlay-antag-symbol-off = No antag symbol
+ui-options-admin-overlay-antag-symbol-basic = Show standard antag symbol
+ui-options-admin-overlay-antag-symbol-specific = Show specific antag symbol
+
+ui-options-admin-enable-overlay-playtime = Show playtime
+ui-options-admin-enable-overlay-starting-job = Show starting job
+ui-options-admin-overlay-merge-distance = Stack merge distance
+ui-options-admin-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
+ui-options-admin-overlay-ghost-hide-distance = Ghost overlay hide range from mouse

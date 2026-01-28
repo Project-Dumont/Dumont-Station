@@ -1,1 +1,2 @@
-washing-machine-start = ligar a máquina de lavar
+washing-machine-start = Iniciar máquina de lavar
+

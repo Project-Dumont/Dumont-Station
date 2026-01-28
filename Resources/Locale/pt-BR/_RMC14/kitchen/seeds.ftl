@@ -1,2 +1,2 @@
-seeds-mango-name = manga
-seeds-mango-display-name = árvore de manga
+seeds-mango-name = mango
+seeds-mango-display-name = mango trees

@@ -1,45 +1,60 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Popups
 
-network-configurator-device-saved = Dispositivo de rede {$device} salvo com sucesso com endereco {$address}!
-network-configurator-device-failed = Falha ao salvar o dispositivo de rede {$device}! Nenhum endereco atribuído!
-network-configurator-too-many-devices = Muitos dispositivos armazenados neste dispositivo!
-network-configurator-update-ok = Armazenamento do dispositivo atualizado.
-network-configurator-device-already-saved = dispositivo de rede: {$device} ja esta salvo.
-network-configurator-device-access-denied = Acesso negado!
-network-configurator-link-mode-started = Dispositivo de vinculacao iniciado: {$device}
-network-configurator-link-mode-stopped = Parou de vincular.
-network-configurator-mode-link = Vincular
-network-configurator-mode-list = Lista
-network-configurator-switched-mode = Modo trocado para: {$mode}
+network-configurator-device-saved = Successfully saved network device {$device} with address {$address}!
+network-configurator-device-failed = Failed to save network device {$device}! No address assigned!
+network-configurator-too-many-devices = Too many devices stored on this device!
+network-configurator-update-ok = Device storage updated.
+network-configurator-device-already-saved = network device: {$device} is already saved.
+network-configurator-device-access-denied = Access denied!
+network-configurator-link-mode-started = Started linking device: {$device}
+network-configurator-link-mode-stopped = Stopped linking.
+network-configurator-mode-link = Link
+network-configurator-mode-list = List
+network-configurator-switched-mode = Switched mode to: {$mode}
 
 # Verbs
-network-configurator-save-device = Salvar dispositivo
-network-configurator-configure = Configurar
-network-configurator-switch-mode = Trocar de modo
-network-configurator-link-defaults = Padrões de vinculamento
-network-configurator-start-link = Comecar a vincular
-network-configurator-link = Vincular
+network-configurator-save-device = Save device
+network-configurator-configure = Configure
+network-configurator-switch-mode = Switch mode
+network-configurator-link-defaults = Link defaults
+network-configurator-start-link = Start link
+network-configurator-link = Link
 
 # ui
-network-configurator-title-saved-devices = Dispositivos salvos
-network-configurator-title-device-configuration = Configuracao de dispositivo
-network-configurator-ui-clear-button = Limpar
-network-configurator-ui-count-label = {$count} Dispositivos
+network-configurator-title-saved-devices = Saved Devices
+network-configurator-title-device-configuration = Device Configuration
+network-configurator-ui-clear-button = Clear
+network-configurator-ui-count-label = {$count} Devices
 
 # tooltips
-network-configurator-tooltip-set = Define a lista de dispositivos de destino
-network-configurator-tooltip-add = Adicionado a lista de dispositivos de destino
-network-configurator-tooltip-edit = Editar lista de dispositivos de destino
-network-configurator-tooltip-clear = Limpar lista de dispositivos de destino
-network-configurator-tooltip-copy = Copiar lista de dispositivos de destino para ferramenta
-network-configurator-tooltip-show = Mostrar uma visualizacao holografica da lista de dispositivos alvo
+network-configurator-tooltip-set = Sets targets device list
+network-configurator-tooltip-add = Adds to targets device list
+network-configurator-tooltip-edit = Edit targets device list
+network-configurator-tooltip-clear = Clear targets device list
+network-configurator-tooltip-copy = Copy targets device list to held tool
+network-configurator-tooltip-show = Show a holographic visualization of targets device list
 
 # examine
-network-configurator-examine-mode-link = [color=red]Vincular[/color]
-network-configurator-examine-mode-list = [color=green]Lista[/color]
-network-configurator-examine-current-mode = Modo atual: {$mode}
-network-configurator-examine-switch-modes = Aperte {$key} para trocar o modo
+network-configurator-examine-mode-link = [color=red]Link[/color]
+network-configurator-examine-mode-list = [color=green]List[/color]
+network-configurator-examine-current-mode = Current mode: {$mode}
+network-configurator-examine-switch-modes = Press {$key} to switch modes
 
 # item status
-network-configurator-item-status-label = Modo: {$mode}
+network-configurator-item-status-label = Mode: {$mode}
     Switch: {$keybinding}
+
+# command
+cmd-clearnetworklinkoverlays-desc = Clear all network link overlays.
+cmd-clearnetworklinkoverlays-help = Usage: clearnetworklinkoverlays

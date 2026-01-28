@@ -1,22 +1,29 @@
-badfeeling-artifact-1 = Algo não está certo.
-badfeeling-artifact-2 = Você sente uma sensação estranha no seu estômago.
-badfeeling-artifact-3 = Seus instintos estão tentando te avisar de alguma coisa.
-badfeeling-artifact-4 = Alguém andou por cima do seu túmulo.
-badfeeling-artifact-5 = Há uma sensação estranha no ar.
-badfeeling-artifact-6 = Há um cheiro...ruim.
-badfeeling-artifact-7 = As pontas dos seus dedos começam a formigar de medo.
-badfeeling-artifact-8 = Você se sente estranho.
-badfeeling-artifact-9 = Você sente uma presença maligna.
-badfeeling-artifact-10 = Você tem um pressentimento muito ruim sobre tudo isso.
-badfeeling-artifact-11 = Sua cabeça começa a formigar de medo.
-badfeeling-artifact-12 = As luzes estão piscando.
-badfeeling-artifact-13 = As sombras estão se alongando.
-badfeeling-artifact-14 = As paredes estão se fechando.
-badfeeling-artifact-15 = Alguma coisa está muito errada.
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Alexander Evgrashin <evgrashin.adl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-badfeeling-artifact-drastic-1 = Alguém está tentando te matar!
-badfeeling-artifact-drastic-2 = Tem alguma coisa ali fora!
-badfeeling-artifact-drastic-3 = O que está acontecendo com você?
-badfeeling-artifact-drastic-4 = MEU DEUS!
-badfeeling-artifact-drastic-5 = SOCORRO!
-badfeeling-artifact-drastic-6 = Você tem que sair daí!
+badfeeling-artifact-1 = Something doesn't feel right.
+badfeeling-artifact-2 = You get a strange feeling in your gut.
+badfeeling-artifact-3 = Your instincts are trying to warn you about something.
+badfeeling-artifact-4 = Someone just walked over your grave.
+badfeeling-artifact-5 = There's a strange feeling in the air.
+badfeeling-artifact-6 = There's a strange smell in the air.
+badfeeling-artifact-7 = The tips of your fingers feel tingly.
+badfeeling-artifact-8 = You feel witchy.
+badfeeling-artifact-9 = You have a terrible sense of foreboding.
+badfeeling-artifact-10 = You've got a bad feeling about this.
+badfeeling-artifact-11 = Your scalp prickles.
+badfeeling-artifact-12 = The light seems to flicker.
+badfeeling-artifact-13 = The shadows seem to lengthen.
+badfeeling-artifact-14 = The walls are getting closer.
+badfeeling-artifact-15 = Something is wrong.
+
+badfeeling-artifact-drastic-1 = Someone's trying to kill you!
+badfeeling-artifact-drastic-2 = There's something out there!
+badfeeling-artifact-drastic-3 = What's happening to you?
+badfeeling-artifact-drastic-4 = OH GOD!
+badfeeling-artifact-drastic-5 = HELP ME!
+badfeeling-artifact-drastic-6 = You've got to get out of here!

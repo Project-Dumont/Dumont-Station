@@ -1,5 +1,11 @@
-grave-start-digging-others = {CAPITALIZE($user)} começa a cavar {THE($grave)} com {THE($tool)}.
-grave-start-digging-user = Você começa a cavar {THE($grave)} com {THE($tool)}.
-grave-start-digging-user-trapped = Você começa a abrir caminho para sair de {THE($grave)}!
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-grave-digging-requires-tool = Você precisa de uma ferramenta para cavar este {$grave}!
+grave-start-digging-others = {CAPITALIZE($user)} starts digging {THE($grave)} with {THE($tool)}.
+grave-start-digging-user = You start digging {THE($grave)} with {THE($tool)}.
+grave-start-digging-user-trapped = You start clawing your way out of {THE($grave)}!
+
+grave-digging-requires-tool = You need a tool to dig this {$grave}!

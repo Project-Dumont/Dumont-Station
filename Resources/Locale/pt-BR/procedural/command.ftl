@@ -1,22 +1,28 @@
-cmd-dungen-desc = Gera um calabouço proceduralmente com o preset, posição e semente especificados. Irá spawnar no espaço se o MapId não tiver um MapGridComponent.
-cmd-dungen-help = dungen <MapId> <PresetDoDungeon> <PosX> <PosY> [semente]
-cmd-dungen-arg-count = Requer 4 argumentos.
-cmd-dungen-map-parse = Não foi possível interpretar MapId.
-cmd-dungen-mapgrid = Não foi possível encontrar MapGrid.
-cmd-dungen-config = Não foi possível encontrar a configuração do calabouço.
-cmd-dungen-pos = Não foi possível interpretar a posição.
-cmd-dungen-seed = Não foi possível interpretar semente.
-cmd-dungen-start = Gerando calabouço com a semente {$seed}
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-cmd-dungen-hint-map = Id do Mapa
-cmd-dungen-hint-config = Config do Calabouço
-cmd-dungen-hint-posx = Posição X
-cmd-dungen-hint-posy = Posição Y
-cmd-dungen-hint-seed = [Semente]
+cmd-dungen-desc = Generates a procedural dungeon with the specified preset, position, and seed. Will spawn in space if the MapId doesn't have MapGridComponent.
+cmd-dungen-help = dungen <MapId> <DungeonPreset> <PosX> <PosY> [seed]
+cmd-dungen-arg-count = Require 4 args.
+cmd-dungen-map-parse = Unable to parse MapId.
+cmd-dungen-mapgrid = Unable to find MapGrid.
+cmd-dungen-config = Unable to find dungeon config.
+cmd-dungen-pos = Unable to parse position.
+cmd-dungen-seed = Unable to parse seed.
+cmd-dungen-start = Generating dungeon with seed {$seed}
 
-cmd-dungen_preset_vis-desc = Gera uma pré-visualização baseada em azulejo de uma predefinição de masmorra.
+cmd-dungen-hint-map = Map Id
+cmd-dungen-hint-config = Dungeon config
+cmd-dungen-hint-posx = Position X
+cmd-dungen-hint-posy = Position Y
+cmd-dungen-hint-seed = [Seed]
+
+cmd-dungen_preset_vis-desc = Generates a tile-based preview of a dungeon preset.
 cmd-dungen_preset_vis-help = dungen_preset_vis <mapid> <preset>
 
 cmd-dungen_pack_vis-success = Success
-cmd-dungen_pack_vis-desc = Gera uma pré-visualização baseada em azulejos de um pacote de masmorras.
+cmd-dungen_pack_vis-desc = Generates a tile-based preview of a dungeon pack.
 cmd-dungen_pack_vis-help = dungen_pack_vis <mapid> <pack>

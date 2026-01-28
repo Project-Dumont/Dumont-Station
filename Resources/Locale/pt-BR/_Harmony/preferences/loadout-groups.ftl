@@ -1,2 +1,5 @@
+# Command
+loadout-group-hop-shoes-harmony = Head of Personnel shoes
+
 # Security
-loadout-group-perma-prisoner-jumpsuit = Roupa de prisioneiro
+loadout-group-perma-prisoner-jumpsuit = Prisoner jumpsuit

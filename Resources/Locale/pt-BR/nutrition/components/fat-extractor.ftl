@@ -1,6 +1,11 @@
-fat-extractor-fact-1 = As gorduras são triglicéridos constituídos por uma combinação de diferentes blocos de construção; glicerol e ácidos graxos.
-fat-extractor-fact-2 = Os adultos devem obter uma recomendação de 20 a 35% de sua ingestão energética de gordura.
-fat-extractor-fact-3 = Estar acima do peso ou obeso aumenta o risco de doenças crônicas, como doenças cardiovasculares, síndrome metabólica, diabetes tipo 2 e alguns tipos de câncer.
-fat-extractor-fact-4 = Nem todas as gorduras são ruins. Uma certa quantidade de gordura é uma parte essencial de uma dieta saudável e equilibrada.
-fat-extractor-fact-5 = A gordura saturada não deve constituir mais de 11% de suas calorias diárias.
-fat-extractor-fact-6 = A gordura insaturada, ou seja, gorduras monoinsaturadas, gorduras poliinsaturadas e ácidos graxos ômega-3, é encontrada em plantas e peixes.
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+fat-extractor-fact-1 = Fats are triglycerides made up of a combination of different building blocks; glycerol and fatty acids.
+fat-extractor-fact-2 = Adults should get a recommended 20-35% of their energy intake from fat.
+fat-extractor-fact-3 = Being overweight or obese puts you at an increased risk of chronic diseases, such as cardiovascular diseases, metabolic syndrome, type 2 diabetes, and some types of cancers.
+fat-extractor-fact-4 = Not all fats are bad. A certain amount of fat is an essential part of a healthy balanced diet.
+fat-extractor-fact-5 = Saturated fat should form no more than 11% of your daily calories.
+fat-extractor-fact-6 = Unsaturated fat, that is monounsaturated fats, polyunsaturated fats, and omega-3 fatty acids, is found in plants and fish.

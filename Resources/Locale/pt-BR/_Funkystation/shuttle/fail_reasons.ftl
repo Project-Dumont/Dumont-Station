@@ -1,0 +1,1 @@
+shuttle-dock-fail-revs = O Comando Central recebeu relatos de atividade incomum na estação. A nave de transporte foi retornada à base como precaução e não poderá ser utilizada até que a situação seja resolvida.

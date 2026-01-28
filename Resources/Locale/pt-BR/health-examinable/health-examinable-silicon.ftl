@@ -1,18 +1,24 @@
-﻿health-examinable-silicon-none = Não há danos significativos.
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-health-examinable-silicon-Blunt-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } pequenos amassados no chassi do { POSS-ADJ($target) }.[/color]
-health-examinable-silicon-Blunt-50 = [color=crimson] O chassi do { CAPITALIZE(POSS-ADJ($target)) } está severamente amassado![/color]
-health-examinable-silicon-Blunt-75 = [color=crimson] O chassi do { CAPITALIZE(POSS-ADJ($target)) } chassi está quase completamente afundado![/color]
+health-examinable-silicon-none = There is no obvious damage to be seen.
 
-health-examinable-silicon-Slash-10 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } alguns arranhões menores.[/color]
-health-examinable-silicon-Slash-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } arranhões significativos no chassi do { POSS-ADJ($target) }.[/color]
-health-examinable-silicon-Slash-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } grandes cortes na chapa do { POSS-ADJ($target) }![/color]
-health-examinable-silicon-Slash-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } chassi está rasgado![/color]
+health-examinable-silicon-Blunt-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor dents on { POSS-ADJ($target) } chassis.[/color]
+health-examinable-silicon-Blunt-50 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } chassis is severely dented![/color]
+health-examinable-silicon-Blunt-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } chassis is almost completely caved in![/color]
 
-health-examinable-silicon-Piercing-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } grandes furos por todo chassi do { POSS-ADJ($target) }![/color]
+health-examinable-silicon-Slash-10 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } some minor scratches.[/color]
+health-examinable-silicon-Slash-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } significant scratches on { POSS-ADJ($target) } chassis.[/color]
+health-examinable-silicon-Slash-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } major gashes across { POSS-ADJ($target) } plating![/color]
+health-examinable-silicon-Slash-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } chassis is torn up![/color]
 
-health-examinable-silicon-Heat-25 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } queimaduras superficiais no chassi do { POSS-ADJ($target) }.[/color]
-health-examinable-silicon-Heat-50 = [color=orange] O chassi do { CAPITALIZE(POSS-ADJ($target)) } está significativamente chamuscado.[/color]
-health-examinable-silicon-Heat-75 = [color=orange] O chassi do { CAPITALIZE(POSS-ADJ($target)) } está parcialmente fundido![/color]
+health-examinable-silicon-Piercing-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } large holes all over { POSS-ADJ($target) } chassis![/color]
 
-health-examinable-silicon-Shock-50 = [color=lightgoldenrodyellow] Os circuitos do { CAPITALIZE(POSS-ADJ($target)) } parecem parcialmente queimados![/color]
+health-examinable-silicon-Heat-25 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } superficial burns across { POSS-ADJ($target) } chassis.[/color]
+health-examinable-silicon-Heat-50 = [color=orange]{ CAPITALIZE(POSS-ADJ($target)) } chassis is significantly charred.[/color]
+health-examinable-silicon-Heat-75 = [color=orange]{ CAPITALIZE(POSS-ADJ($target)) } chassis is partially melted![/color]
+
+health-examinable-silicon-Shock-50 = [color=lightgoldenrodyellow]{ CAPITALIZE(POSS-ADJ($target)) } circuits seem partially fried![/color]

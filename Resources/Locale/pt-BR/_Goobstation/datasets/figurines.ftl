@@ -1,0 +1,22 @@
+figurines-devil-1 = Não vai apertar a mão de um pobre pecador?
+figurines-devil-2 = Claro que pode confiar em mim! É só assinar este contrato!
+figurines-devil-3 = O capelão é um trapaceiro, não confie nele!
+figurines-devil-4 = Ouviu falar da próxima grande criptomoeda? Chama-se "Goobcoin" e vai decolar!
+figurines-devil-5 = Contratante? Contratado? No fundo é a mesma coisa.
+figurines-devil-6 = CAPELÃO!! SOU DA TRIPULAÇÃO!! SOU DA TRIPULAÇÃO!!
+figurines-devil-7 = Ei! Aonde você está indo com meu códice? Devolva isso!
+figurines-devil-8 = O quê? Não, "Força" vai te deixar mais forte, confia em mim!
+figurines-devil-9 = Eu disse que queria sua "Alma", não "Sola". Leve os sapatos de volta!
+figurines-devil-10 = Sem parceiros? Posso ajudar com isso.
+figurines-devil-11 = Nome verdadeiro? Você não precisa se preocupar com isso.
+
+figurines-brigmedic-1 = Lembrem, equipe, eu sou a única coisa entre vocês e a morte instantânea!
+figurines-brigmedic-2 = Curar não é tão recompensador quanto machucar.
+figurines-brigmedic-3 = Venha aqui. Prometo que vou te curar!
+figurines-brigmedic-4 = Não é um crime de guerra se você se divertiu.
+figurines-brigmedic-5 = Opa! Isso não era remédio!
+figurines-brigmedic-6 = Ugh, acho que não trouxemos sacos para cadáveres o suficiente.
+figurines-brigmedic-7 = Sim, este produto químico verde brilhante é totalmente apenas ácido pentênico.
+figurines-brigmedic-8 = Fique vivo, não gastei todos meus remédios à toa.
+figurines-brigmedic-9 = Convenção de Genebra? Está mais para Sugestão de Genebra!
+figurines-brigmedic-10 = Você chama isso de ferimento? Já vi coisa pior com apenas uma bala!

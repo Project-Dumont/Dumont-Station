@@ -20,213 +20,214 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Errors
-loadout-group-species-restriction = Este item não está disponível para sua espécie atual.
+loadout-group-species-restriction = This item is not available for your current species.
 
 # Miscellaneous
-loadout-group-trinkets = Extra
-loadout-group-glasses = Oculos
-loadout-group-backpack = Mochila civil
-loadout-group-instruments = Instrumentos
-loadout-group-survival-basic = Caixa de sobrevivência
-loadout-group-survival-extended = Caixa de sobrevivência estendida
-loadout-group-survival-clown = Caixa de sobrevivência do palhaço
-loadout-group-survival-medical = Caixa de sobrevivência médica
-loadout-group-survival-security = Caixa de sobrevivência da segurança
-# loadout-group-survival-syndicate = O Github está me forçando a escrever um texto que é literalmente impossível de ver, me ajude
-loadout-group-breath-tool = Ferramentas respiratórias específicas da espécie
-loadout-group-tank-harness = Equipamento de sobrevivência específico da espécie
-loadout-group-EVA-tank = Tanque de gás específico da espécie
-loadout-group-vox-tank = Tanque de gás específico para vox
-loadout-group-pocket-tank-double = Tanque de emergência duplo no bolso (específico da espécie)
-loadout-group-survival-mime = Caixa de sobrevivência do mímico
+loadout-group-trinkets = Trinkets
+loadout-group-glasses = Civilian
+# Gaby change - backpack
+loadout-group-backpack = Civilian Backpack
+loadout-group-instruments = Instruments
+loadout-group-survival-basic = Survival Box
+loadout-group-survival-extended = Extended Survival Box
+loadout-group-survival-clown = Clown Survival Box
+loadout-group-survival-medical = Medical Survival Box
+loadout-group-survival-security = Security Survival Box
+loadout-group-survival-syndicate = Github is forcing me to write text that is literally twice-impossible for the player to ever see, send help
+loadout-group-breath-tool = Species-dependent breath tools
+loadout-group-tank-harness = Species-specific survival equipment
+loadout-group-EVA-tank = Species-specific gas tank
+loadout-group-vox-tank = Vox-specific gas tank
+loadout-group-pocket-tank-double = Species-specific double emergency tank in pocket
+loadout-group-survival-mime = Mime Survival Box
 
 # Command
-loadout-group-captain-head = Chapeu do capitão
-loadout-group-captain-jumpsuit = Roupa do capitão
-loadout-group-captain-neck = Pescoço do capitão
-loadout-group-captain-backpack = Mochila do capitão
-loadout-group-captain-outerclothing = Casaco do capitão
+loadout-group-captain-head = Captain head
+loadout-group-captain-jumpsuit = Captain jumpsuit
+loadout-group-captain-neck = Captain neck
+loadout-group-captain-backpack = Captain backpack
+loadout-group-captain-outerclothing = Captain outer clothing
 
-loadout-group-hop-head = Chapeu do chefe dos funcionarios
-loadout-group-hop-jumpsuit = Roupa do chefe dos funcionarios
-loadout-group-hop-neck = Pescoço do chefe dos funcionarios
-loadout-group-hop-backpack = Mochila do chefe dos funcionarios
-loadout-group-hop-outerclothing = Casaco do chefe dos funcionarios
+loadout-group-hop-head = Head of Personnel head
+loadout-group-hop-jumpsuit = Head of Personnel jumpsuit
+loadout-group-hop-neck = Head of Personnel neck
+loadout-group-hop-backpack = Head of Personnel backpack
+loadout-group-hop-outerclothing = Head of Personnel outer clothing
 
 # Civilian
-loadout-group-civilian-jumpsuit = Roupas civis
-loadout-group-civilian-mask = Máscaras civis
-loadout-group-civilian-hat = Chapéus civis
-loadout-group-civilian-gloves = Luvas civis
-loadout-group-civilian-outerclothing = Casacos civis
-loadout-group-civilian-shoes = Calçados civis
-loadout-group-civilian-neck = Pescoços civis
-loadout-group-civilian-belt = Cintos civis
+loadout-group-civilian-jumpsuit = Civilian Jumpsuits
+loadout-group-civilian-mask = Civilian Facewear
+loadout-group-civilian-hat = Civilian Headwear
+loadout-group-civilian-gloves = Civilian Gloves
+loadout-group-civilian-outerclothing = Civilian Outerwear
+loadout-group-civilian-shoes = Civilian Footwear
+loadout-group-civilian-neck = Civilian Neckwear
+loadout-group-civilian-belt = Civilian Beltwear
 
-loadout-group-bartender-head = Chapeu do barman
-loadout-group-bartender-jumpsuit = Roupa do barman
-loadout-group-bartender-outerclothing = Casaco do barman
+loadout-group-bartender-head = Bartender head
+loadout-group-bartender-jumpsuit = Bartender jumpsuit
+loadout-group-bartender-outerclothing = Bartender outer clothing
 
-loadout-group-chef-head = Chapeu do chef
-loadout-group-chef-mask = Máscara do chef
-loadout-group-chef-jumpsuit = Roupa do chef
-loadout-group-chef-outerclothing = Casaco do chef
+loadout-group-chef-head = Chef head
+loadout-group-chef-mask = Chef mask
+loadout-group-chef-jumpsuit = Chef jumpsuit
+loadout-group-chef-outerclothing = Chef outer clothing
 
-loadout-group-librarian-jumpsuit = Roupa do bibliotecário
+loadout-group-librarian-jumpsuit = Librarian jumpsuit
 
-loadout-group-lawyer-jumpsuit = Roupa do advogado
-loadout-group-lawyer-neck = Pescoço do advogado
+loadout-group-lawyer-jumpsuit = Lawyer jumpsuit
+loadout-group-lawyer-neck = Lawyer neck
 
-loadout-group-chaplain-head = Chapeu do capelão
-loadout-group-chaplain-mask = Máscara do capelão
-loadout-group-chaplain-jumpsuit = Roupa do capelão
-loadout-group-chaplain-outerclothing = Casaco do capelão
-loadout-group-chaplain-neck = Pescoço do capelão
+loadout-group-chaplain-head = Chaplain head
+loadout-group-chaplain-mask = Chaplain mask
+loadout-group-chaplain-jumpsuit = Chaplain jumpsuit
+loadout-group-chaplain-outerclothing = Chaplain outer clothing
+loadout-group-chaplain-neck = Chaplain neck
 
-loadout-group-janitor-head = Chapeu do zelador
-loadout-group-janitor-jumpsuit = Roupa do zelador
-loadout-group-janitor-gloves = Luvas do zelador
-loadout-group-janitor-outerclothing = Casaco do zelador
-loadout-group-janitor-plunger = Desentupidor do zelador
+loadout-group-janitor-head = Janitor head
+loadout-group-janitor-jumpsuit = Janitor jumpsuit
+loadout-group-janitor-gloves = Janitor gloves
+loadout-group-janitor-outerclothing = Janitor outer clothing
+loadout-group-janitor-plunger = Janitor plunger
 
-loadout-group-botanist-head = Chapeu do botânico
-loadout-group-botanist-jumpsuit = Roupa do botânico
-loadout-group-botanist-backpack = Mochila do botânico
-loadout-group-botanist-outerclothing = Casaco do botânico
+loadout-group-botanist-head = Botanist head
+loadout-group-botanist-jumpsuit = Botanist jumpsuit
+loadout-group-botanist-backpack = Botanist backpack
+loadout-group-botanist-outerclothing = Botanist outer clothing
 
-loadout-group-clown-head = Chapeu do palhaço
-loadout-group-clown-jumpsuit = Roupa do palhaço
-loadout-group-clown-backpack = Mochila do palhaço
-loadout-group-clown-outerclothing = Casaco do palhaço
-loadout-group-clown-shoes = Sapatos do palhaço
+loadout-group-clown-head = Clown head
+loadout-group-clown-jumpsuit = Clown jumpsuit
+loadout-group-clown-backpack = Clown backpack
+loadout-group-clown-outerclothing = Clown outer clothing
+loadout-group-clown-shoes = Clown shoes
 
-loadout-group-mime-head = Chapeu do mímico
-loadout-group-mime-mask = Máscara do mímico
-loadout-group-mime-jumpsuit = Roupa do mímico
-loadout-group-mime-backpack = Mochila do mímico
-loadout-group-mime-outerclothing = Casaco do mímico
-loadout-group-mime-belt = Cinto do mímico
+loadout-group-mime-head = Mime head
+loadout-group-mime-mask = Mime mask
+loadout-group-mime-jumpsuit = Mime jumpsuit
+loadout-group-mime-backpack = Mime backpack
+loadout-group-mime-outerclothing = Mime outer clothing
+loadout-group-mime-belt = Mime belt
 
-loadout-group-musician-jumpsuit = Roupa do músico
-loadout-group-musician-outerclothing = Casaco do músico
+loadout-group-musician-jumpsuit = Musician jumpsuit
+loadout-group-musician-outerclothing = Musician outer clothing
 
 # Cargo
-loadout-group-quartermaster-head = Chapeu do almoxarife
-loadout-group-quartermaster-jumpsuit = Roupa do almoxarife
-loadout-group-quartermaster-neck = Pescoço do almoxarife
-loadout-group-quartermaster-outerclothing = Casaco do almoxarife
-loadout-group-quartermaster-shoes = Sapatos do almoxarife
+loadout-group-quartermaster-head = Quartermaster head
+loadout-group-quartermaster-jumpsuit = Quartermaster jumpsuit
+loadout-group-quartermaster-neck = Quartermaster neck
+loadout-group-quartermaster-outerclothing = Quartermaster outer clothing
+loadout-group-quartermaster-shoes = Quartermaster shoes
 
-loadout-group-cargo-technician-head = Chapeu do técnico de carga
-loadout-group-cargo-technician-jumpsuit = Roupa do técnico de carga
-loadout-group-cargo-technician-backpack = Mochila do técnico de carga
-loadout-group-cargo-technician-outerclothing = Casaco do técnico de carga
-loadout-group-cargo-technician-shoes = Sapatos do técnico de carga
+loadout-group-cargo-technician-head = Cargo Technician head
+loadout-group-cargo-technician-jumpsuit = Cargo Technician jumpsuit
+loadout-group-cargo-technician-backpack = Cargo Technician backpack
+loadout-group-cargo-technician-outerclothing = Cargo Technician outer clothing
+loadout-group-cargo-technician-shoes = Cargo Technician shoes
 
-loadout-group-salvage-specialist-backpack = Mochila do especialista em salvamento
-loadout-group-salvage-specialist-outerclothing = Casaco do especialista em salvamento
-loadout-group-salvage-specialist-shoes = Sapatos do especialista em salvamento
+loadout-group-salvage-specialist-backpack = Salvage Specialist backpack
+loadout-group-salvage-specialist-outerclothing = Salvage Specialist outer clothing
+loadout-group-salvage-specialist-shoes = Salvage Specialist shoes
 
 # Engineering
-loadout-group-chief-engineer-head = Chapeu do engenheiro-chefe
-loadout-group-chief-engineer-jumpsuit = Roupa do engenheiro-chefe
-loadout-group-chief-engineer-outerclothing = Casaco do engenheiro-chefe
-loadout-group-chief-engineer-neck = Pescoço do engenheiro-chefe
-loadout-group-chief-engineer-shoes = Sapatos do engenheiro-chefe
+loadout-group-chief-engineer-head = Chief Engineer head
+loadout-group-chief-engineer-jumpsuit = Chief Engineer jumpsuit
+loadout-group-chief-engineer-outerclothing = Chief Engineer outer clothing
+loadout-group-chief-engineer-neck = Chief Engineer neck
+loadout-group-chief-engineer-shoes = Chief Engineer shoes
 
-loadout-group-technical-assistant-jumpsuit = Roupa do assistente técnico
+loadout-group-technical-assistant-jumpsuit = Technical Assistant jumpsuit
 
-loadout-group-station-engineer-head = Chapeu do engenheiro de estação
-loadout-group-station-engineer-jumpsuit = Roupa do engenheiro de estação
-loadout-group-station-engineer-backpack = Mochila do engenheiro de estação
-loadout-group-station-engineer-outerclothing = Casaco do engenheiro de estação
-loadout-group-station-engineer-shoes = Sapatos do engenheiro de estação
-loadout-group-station-engineer-id = ID do engenheiro de estação
+loadout-group-station-engineer-head = Station Engineer head
+loadout-group-station-engineer-jumpsuit = Station Engineer jumpsuit
+loadout-group-station-engineer-backpack = Station Engineer backpack
+loadout-group-station-engineer-outerclothing = Station Engineer outer clothing
+loadout-group-station-engineer-shoes = Station Engineer shoes
+loadout-group-station-engineer-id = Station Engineer ID
 
-loadout-group-atmospheric-technician-head = Chapeu do técnico atmosférico
-loadout-group-atmospheric-technician-jumpsuit = Roupa do técnico atmosférico
-loadout-group-atmospheric-technician-backpack = Mochila do técnico atmosférico
-loadout-group-atmospheric-technician-outerclothing = Casaco do técnico atmosférico
-loadout-group-atmospheric-technician-shoes = Sapatos do técnico atmosférico
+loadout-group-atmospheric-technician-head = Atmospheric Technician head
+loadout-group-atmospheric-technician-jumpsuit = Atmospheric Technician jumpsuit
+loadout-group-atmospheric-technician-backpack = Atmospheric Technician backpack
+loadout-group-atmospheric-technician-outerclothing = Atmospheric Technician outer clothing
+loadout-group-atmospheric-technician-shoes = Atmospheric Technician shoes
 
 # Science
-loadout-group-research-director-head = Chapeu do diretor de pesquisa
-loadout-group-research-director-neck = Pescoço do diretor de pesquisa
-loadout-group-research-director-jumpsuit = Roupa do diretor de pesquisa
-loadout-group-research-director-outerclothing = Casaco do diretor de pesquisa
-loadout-group-research-director-shoes = Sapatos do diretor de pesquisa
+loadout-group-research-director-head = Research Director head
+loadout-group-research-director-neck = Research Director neck
+loadout-group-research-director-jumpsuit = Research Director jumpsuit
+loadout-group-research-director-outerclothing = Research Director outer clothing
+loadout-group-research-director-shoes = Research Director shoes
 
-loadout-group-scientist-head = Chapeu do cientista
-loadout-group-scientist-neck = Pescoço do cientista
-loadout-group-scientist-jumpsuit = Roupa do cientista
-loadout-group-scientist-backpack = Mochila do cientista
-loadout-group-scientist-outerclothing = Casaco do cientista
-loadout-group-scientist-gloves = Luvas do cientista
-loadout-group-scientist-shoes = Sapatos do cientista
-loadout-group-scientist-id = ID do cientista
+loadout-group-scientist-head = Scientist head
+loadout-group-scientist-neck = Scientist neck
+loadout-group-scientist-jumpsuit = Scientist jumpsuit
+loadout-group-scientist-backpack = Scientist backpack
+loadout-group-scientist-outerclothing = Scientist outer clothing
+loadout-group-scientist-gloves = Scientist gloves
+loadout-group-scientist-shoes = Scientist shoes
+loadout-group-scientist-id = Scientist ID
 
-loadout-group-research-assistant-jumpsuit = Roupa do assistente de pesquisa
+loadout-group-research-assistant-jumpsuit = Research Assistant jumpsuit
 
 # Security
-loadout-group-head-of-security-head = Chapeu do chefe de segurança
-loadout-group-head-of-security-jumpsuit = Roupa do chefe de segurança
-loadout-group-head-of-security-neck = Pescoço do chefe de segurança
-loadout-group-head-of-security-outerclothing = Casaco do chefe de segurança
+loadout-group-head-of-security-head = Head of Security head
+loadout-group-head-of-security-jumpsuit = Head of Security jumpsuit
+loadout-group-head-of-security-neck = Head of Security neck
+loadout-group-head-of-security-outerclothing = Head of Security outer clothing
 
-loadout-group-warden-head = Chapeu do carcereiro
-loadout-group-warden-jumpsuit = Roupa do carcereiro
-loadout-group-warden-outerclothing = Casaco do carcereiro
+loadout-group-warden-head = Warden head
+loadout-group-warden-jumpsuit = Warden jumpsuit
+loadout-group-warden-outerclothing = Warden outer clothing
 
-loadout-group-security-head = Chapeu da segurança
-loadout-group-security-jumpsuit = Roupa da segurança
-loadout-group-security-backpack = Mochila da segurança
-loadout-group-security-belt = Cinto da segurança
-loadout-group-security-outerclothing = Casaco da segurança
-loadout-group-security-shoes = Sapatos da segurança
-loadout-group-security-id = ID da segurança
+loadout-group-security-head = Security head
+loadout-group-security-jumpsuit = Security jumpsuit
+loadout-group-security-backpack = Security backpack
+loadout-group-security-belt = Security Belt
+loadout-group-security-outerclothing = Security outer clothing
+loadout-group-security-shoes = Security shoes
+loadout-group-security-id = Security ID
 
-loadout-group-detective-head = Chapeu do detetive
-loadout-group-detective-neck = Pescoço do detetive
-loadout-group-detective-jumpsuit = Roupa do detetive
-loadout-group-detective-outerclothing = Casaco do detetive
+loadout-group-detective-head = Detective head
+loadout-group-detective-neck = Detective neck
+loadout-group-detective-jumpsuit = Detective jumpsuit
+loadout-group-detective-outerclothing = Detective outer clothing
 
-loadout-group-security-cadet-jumpsuit = Roupa do cadete de segurança
-loadout-group-security-star = Estrela da segurança
+loadout-group-security-cadet-jumpsuit = Security cadet jumpsuit
+loadout-group-security-star = Security Star
 
 # Medical
-loadout-group-medical-gloves = Luvas médicas
-loadout-group-medical-mask = Máscara médica
+loadout-group-medical-gloves = Medical gloves
+loadout-group-medical-mask = Medical mask
 
-loadout-group-chief-medical-officer-head = Chapeu do diretor médico
-loadout-group-chief-medical-officer-jumpsuit = Roupa do diretor médico
-loadout-group-chief-medical-officer-outerclothing = Casaco do diretor médico
-loadout-group-chief-medical-officer-shoes = Sapatos do diretor médico
-loadout-group-chief-medical-officer-neck = Pescoço do diretor médico
+loadout-group-chief-medical-officer-head = Chief Medical Officer head
+loadout-group-chief-medical-officer-jumpsuit = Chief Medical Officer jumpsuit
+loadout-group-chief-medical-officer-outerclothing = Chief Medical Officer outer clothing
+loadout-group-chief-medical-officer-shoes = Chief Medical Officer shoes
+loadout-group-chief-medical-officer-neck = Chief Medical Officer neck
 
-loadout-group-medical-doctor-head = Chapeu do médico
-loadout-group-medical-doctor-jumpsuit = Roupa do médico
-loadout-group-medical-doctor-outerclothing = Casaco do médico
-loadout-group-medical-doctor-backpack = Mochila do médico
-loadout-group-medical-doctor-shoes = Sapatos do médico
-loadout-group-medical-doctor-id = ID do médico
+loadout-group-medical-doctor-head = Medical Doctor head
+loadout-group-medical-doctor-jumpsuit = Medical Doctor jumpsuit
+loadout-group-medical-doctor-outerclothing = Medical Doctor outer clothing
+loadout-group-medical-doctor-backpack = Medical Doctor backpack
+loadout-group-medical-doctor-shoes = Medical Doctor shoes
+loadout-group-medical-doctor-id = Medical Doctor ID
 
-loadout-group-medical-intern-jumpsuit = Roupa do estagiário médico
+loadout-group-medical-intern-jumpsuit = Medical intern jumpsuit
 
-loadout-group-chemist-jumpsuit = Roupa do químico
-loadout-group-chemist-outerclothing = Casaco do químico
-loadout-group-chemist-backpack = Mochila do químico
+loadout-group-chemist-jumpsuit = Chemist jumpsuit
+loadout-group-chemist-outerclothing = Chemist outer clothing
+loadout-group-chemist-backpack = Chemist backpack
 
-loadout-group-paramedic-head = Chapeu do paramédico
-loadout-group-paramedic-jumpsuit = Roupa do paramédico
-loadout-group-paramedic-outerclothing = Casaco do paramédico
-loadout-group-paramedic-shoes = Sapatos do paramédico
+loadout-group-paramedic-head = Paramedic head
+loadout-group-paramedic-jumpsuit = Paramedic jumpsuit
+loadout-group-paramedic-outerclothing = Paramedic outer clothing
+loadout-group-paramedic-shoes = Paramedic shoes
 
-loadout-group-medical-glasses = Óculos médicos
+loadout-group-medical-glasses = Medical glasses
 
 # Wildcards
-loadout-group-reporter-jumpsuit = Roupa do repórter
+loadout-group-reporter-jumpsuit = Reporter jumpsuit
 
-loadout-group-psychologist-jumpsuit = Roupa do psicólogo
+loadout-group-psychologist-jumpsuit = Psychologist jumpsuit
 
-loadout-group-boxer-jumpsuit = Roupa do pugilista
-loadout-group-boxer-gloves = Luvas do pugilista
+loadout-group-boxer-jumpsuit = Boxer jumpsuit
+loadout-group-boxer-gloves = Boxer gloves

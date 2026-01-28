@@ -1,11 +1,12 @@
-# Cauda
+# Tail
 
-marking-DaengatiTail = Cauda de Daengati (Padrão)
-marking-DaengatiNightCrawlerTail = Cauda de Rastreador Noturno
+marking-DaengatiTail = DaengatiTail (Default)
+marking-DaengatiNightCrawlerTail = DaengatiNightCrawlerTail
 
 # Gabystation
 
-marking-DaengatiHeartTail = Cauda de Coração
-marking-DaengatiDragonLong = Cauda de Dragão Longa
-marking-DaengatiRaboCortado = Cauda Cortada
-marking-DaengatiRaboEnrolado = Cauda Enrolada
+marking-DaengatiHeartTail = Cauda Coração Daengati
+marking-DaengatiDragonLong = Cauda Longa de Dragão Daengati
+marking-DaengatiRaboCortado = Cauda Cortada Daengati
+marking-DaengatiRaboEnrolado = Cauda Enrolada Daengati
+

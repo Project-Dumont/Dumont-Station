@@ -1,15 +1,22 @@
-logic-gate-examine = Está atualmente como porta {INDEFINITE($gate)} {$gate}.
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-logic-gate-cycle = Mudou para porta {INDEFINITE($gate)} {$gate}
+logic-gate-examine = It is currently {INDEFINITE($gate)} {$gate} gate.
 
-power-sensor-examine = Atualmente, está verificando a bateria da rede de {$output ->
-    [true] saída
-    *[false] entrada
+logic-gate-cycle = Switched to {INDEFINITE($gate)} {$gate} gate
+
+power-sensor-examine = It is currently checking the network's {$output ->
+    [true] output
+    *[false] input
 } battery.
-power-sensor-voltage-examine = Está verificando a rede elétrica de {$voltage} power network.
+power-sensor-voltage-examine = It is checking the {$voltage} power network.
 
-power-sensor-switch = Trocado para verificar a bateria da rede de {$output ->
-    [true] saída
-    *[false] entrada
+power-sensor-switch = Switched to checking the network's {$output ->
+    [true] output
+    *[false] input
 } battery.
-power-sensor-voltage-switch = Trocado para a rede elétrica de {$voltage}!
+power-sensor-voltage-switch = Switched network to {$voltage}!

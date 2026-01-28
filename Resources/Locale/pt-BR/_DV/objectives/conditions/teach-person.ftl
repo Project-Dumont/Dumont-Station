@@ -1,4 +1,2 @@
-objective-condition-teach-person-title = Livre-se de {$targetName}, {CAPITALIZE($job)}
+﻿objective-condition-teach-person-title = Ensine {$targetName}, {CAPITALIZE($job)}, uma lição
 
-ent-TeachLessonRandomPersonObjective =
-    .desc = Elimine. Mostre a todos como nossos negócios realmente funcionam. Basta matar uma única vez.

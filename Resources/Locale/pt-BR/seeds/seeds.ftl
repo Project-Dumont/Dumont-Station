@@ -1,80 +1,115 @@
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DoubleRiceEddiedd <149714181+DoubleRiceEddiedd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2023 Vladislav Kadira <130583174+FillerVK@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Gyrandola <pasta.frollagg@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Nouns
-seeds-noun-seeds = sementes
-seeds-noun-spores = esporos
+# Nouns
+seeds-noun-seeds = seeds
+seeds-noun-spores = spores
 
 # Seeds
-seeds-wheat-name = trigo
-seeds-wheat-display-name = talos de trigo
-seeds-oat-name = aveia
-seeds-oat-display-name = talos de aveia
+seeds-wheat-name = wheat
+seeds-wheat-display-name = wheat stalks
+seeds-meatwheat-name = meatwheat
+seeds-meatwheat-display-name = meatwheat stalks
+seeds-oat-name = oat
+seeds-oat-display-name = oat stalks
 seeds-banana-name = banana
-seeds-banana-display-name = bananeira
+seeds-banana-display-name = banana plant
 seeds-mimana-name = mimana
-seeds-mimana-display-name = planta mimana
-seeds-carrots-name = cenoura
-seeds-carrots-display-name = cenouras
-seeds-cabbage-name = repolho
-seeds-cabbage-display-name = repolhos
-seeds-garlic-name = cabeça de alho
-seeds-garlic-display-name = cabeças de alho
-seeds-lemon-name = limão galego
-seeds-lemon-display-name = limoeiro galego
-seeds-lemoon-name = limoon
-seeds-lemoon-display-name = árvores de limoon
-seeds-lime-name = limão
-seeds-lime-display-name = limoeiro
-seeds-orange-name = laranja
-seeds-orange-display-name = laranjeira
-seeds-pineapple-name = abacaxi
-seeds-pineapple-display-name = abacaxizeiro
-seeds-potato-name = batata
-seeds-potato-display-name = batatas
-seeds-sugarcane-name = cana de açucar
-seeds-sugarcane-display-name = canas de açucar
+seeds-mimana-display-name = mimana plant
+seeds-carrots-name = carrot
+seeds-carrots-display-name = carrots
+seeds-cabbage-name = cabbage
+seeds-cabbage-display-name = cabbages
+seeds-garlic-name = garlic head
+seeds-garlic-display-name = garlic heads
+seeds-lemon-name = lemon
+seeds-lemon-display-name = lemon trees
+seeds-lemoon-name = lemoon
+seeds-lemoon-display-name = lemoon trees
+seeds-lime-name = lime
+seeds-lime-display-name = lime trees
+seeds-orange-name = orange
+seeds-orange-display-name = orange trees
+seeds-extradimensionalorange-name = extradimensional orange
+seeds-extradimensionalorange-display-name = extradimensional orange trees
+seeds-pineapple-name = pineapple
+seeds-pineapple-display-name = pineapple plant
+seeds-potato-name = potato
+seeds-potato-display-name = potatoes
+seeds-sugarcane-name = sugarcane
+seeds-sugarcane-display-name = sugarcanes
+seeds-teaplant-name = tea plant
+seeds-teaplant-display-name = tea plants
+seeds-papercane-name = papercane
+seeds-papercane-display-name = papercanes
 seeds-towercap-name = tower cap
 seeds-towercap-display-name = tower caps
-seeds-steelcap-name = tampa de aço
-seeds-steelcap-display-name = tampas de aço
-seeds-tomato-name = tomate
-seeds-tomato-display-name = tomateiro
-seeds-bluetomato-name = tomate azul
-seeds-bluetomato-display-name = planta de tomate azul
-seeds-bloodtomato-name = tomate de sangue
-seeds-bloodtomato-display-name = planta de tomate sangue
-seeds-eggplant-name = beringela
-seeds-eggplant-display-name = beringelas
-seeds-apple-name = maça
-seeds-apple-display-name = macieira
-seeds-corn-name = espiga de milho
-seeds-corn-display-name = espigas de milho
-seeds-onion-name = cebola
-seeds-onion-display-name = cebolas
-seeds-onionred-name = cebola vermelha
-seeds-onionred-display-name = cebolas vermelhas
+seeds-steelcap-name = steel cap
+seeds-steelcap-display-name = steel caps
+seeds-tomato-name = tomato
+seeds-tomato-display-name = tomato plant
+seeds-bluetomato-name = blue tomato
+seeds-bluetomato-display-name = blue tomato plant
+seeds-bloodtomato-name = blood tomato
+seeds-bloodtomato-display-name = blood tomato plant
+seeds-killertomato-name = tomato killer
+seeds-killertomato-display-name = tomato killer plant
+seeds-eggplant-name = eggplant
+seeds-eggplant-display-name = eggplants
+seeds-apple-name = apple
+seeds-apple-display-name = apple tree
+seeds-goldenapple-name = golden apple
+seeds-goldenapple-display-name = golden apple tree
+seeds-corn-name = corn
+seeds-corn-display-name = ears of corn
+seeds-onion-name = onion
+seeds-onion-display-name = onions
+seeds-onionred-name = red onion
+seeds-onionred-display-name = red onions
 seeds-chanterelle-name = chanterelle
-seeds-chanterelle-display-name = cogumelos chanterelle
-seeds-eggy-name = ovo
-seeds-eggy-display-name = planta de ovo
+seeds-chanterelle-display-name = chanterelle mushrooms
+seeds-eggy-name = egg-plant
+seeds-eggy-display-name = egg-plants
 seeds-cannabis-name = cannabis
 seeds-cannabis-display-name = cannabis
-seeds-tobacco-name = tabaco
-seeds-tobacco-display-name = planta de tabaco
-seeds-nettle-name = urtiga
-seeds-nettle-display-name = urtigas
-seeds-deathnettle-name = urtiga mortal
-seeds-deathnettle-display-name = urtigas mortais
-seeds-chili-name = pimenta
-seeds-chili-display-name = pimenteira
-seeds-chilly-name = fria
-seeds-chilly-display-name = pimentas frias
-seeds-poppy-name = papoula
-seeds-poppy-display-name = papoulas
-seeds-aloe-name = babosa
-seeds-aloe-display-name = babosa
-seeds-laughin-pea-name = ervilhas rindo
-seeds-laughin-pea-display-name = ervilhas rindo
-seeds-lily-name = lílio
-seeds-lily-display-name = lílio
+seeds-rainbow-cannabis-name = rainbow cannabis
+seeds-rainbow-cannabis-display-name = rainbow cannabis
+seeds-tobacco-name = tobacco
+seeds-tobacco-display-name = tobacco plant
+seeds-nettle-name = nettle
+seeds-nettle-display-name = nettles
+seeds-deathnettle-name = death nettle
+seeds-deathnettle-display-name = death nettles
+seeds-chili-name = chili
+seeds-chili-display-name = chili peppers
+seeds-chilly-name = chilly
+seeds-chilly-display-name = chilly peppers
+seeds-poppy-name = poppy
+seeds-poppy-display-name = poppies
+seeds-aloe-name = aloe
+seeds-aloe-display-name = aloe
+seeds-laughin-pea-name = laughin' peas
+seeds-laughin-pea-display-name = laughin' peas
+seeds-lily-name = lily
+seeds-lily-display-name = lily
 seeds-lingzhi-name = lingzhi
 seeds-lingzhi-display-name = lingzhi
 seeds-ambrosiavulgaris-name = ambrosia vulgaris
@@ -83,31 +118,47 @@ seeds-ambrosiadeus-name = ambrosia deus
 seeds-ambrosiadeus-display-name = ambrosia deus
 seeds-galaxythistle-name = galaxythistle
 seeds-galaxythistle-display-name = galaxythistle
+seeds-glasstle-name = glasstle
+seeds-glasstle-display-name = glasstle
 seeds-flyamanita-name = fly amanita
 seeds-flyamanita-display-name = fly amanita
 seeds-gatfruit-name = gatfruit
 seeds-gatfruit-display-name = gatfruit tree
-seeds-rice-name = arroz
-seeds-rice-display-name = talos de arroz
-seeds-soybeans-name = soja
-seeds-soybeans-display-name = planta de soja
-seeds-spacemans-trumpet-name = trumpete do homem do espaço
-seeds-spacemans-trumpet-display-name = pé de trumpete do homem do espaço
-seeds-koibean-name = feijãokoi
-seeds-koibean-display-name = pé de feijãokoi
-seeds-watermelon-name = melancia
-seeds-watermelon-display-name = planta de melancia
-seeds-grape-name = uva
-seeds-grape-display-name = planta de uva
-seeds-cocoa-name = cacau
-seeds-cocoa-display-name = pé de cacau
-seeds-berries-name = bagas
-seeds-berries-display-name = arbusto de baga
+seeds-rice-name = rice
+seeds-rice-display-name = rice stalks
+seeds-soybeans-name = soybeans
+seeds-soybeans-display-name = soy plant
+seeds-spacemans-trumpet-name = spaceman's trumpet
+seeds-spacemans-trumpet-display-name = spaceman's trumpet plant
+seeds-koibean-name = koibeans
+seeds-koibean-display-name = koibean plant
+seeds-watermelon-name = watermelon
+seeds-watermelon-display-name = watermelon vines
+seeds-holymelon-name = holymelon
+seeds-holymelon-display-name = holymelon vines
+seeds-grape-name = grape
+seeds-grape-display-name = grape plant
+seeds-cocoa-name = cocoa
+seeds-cocoa-display-name = cocoa plant
+seeds-berries-name = berries
+seeds-berries-display-name = berry bush
 seeds-bungo-name = bungo
-seeds-bungo-display-name = planta de bungo
-seeds-pea-name = ervilha
-seeds-pea-display-name = vinhas de ervilha
-seeds-pumpkin-name = abóbora
-seeds-pumpkin-display-name = abóboras
-seeds-cotton-name = algodão
-seeds-cotton-display-name = planta de algodão
+seeds-bungo-display-name = bungo plant
+seeds-pea-name = peas
+seeds-pea-display-name = pea vines
+seeds-worldpea-name = world peas
+seeds-worldpea-display-name = world pea vines
+seeds-pumpkin-name = pumpkin
+seeds-pumpkin-display-name = pumpkins
+seeds-blue-pumpkin-name = blue pumpkin
+seeds-blue-pumpkin-display-name = blue pumpkins
+seeds-cotton-name = cotton
+seeds-cotton-display-name = cotton plant
+seeds-pyrotton-name = pyrotton
+seeds-pyrotton-display-name = pyrotton plant
+seeds-capfruit-name = capfruit
+seeds-capfruit-display-name = capfruit tree
+seeds-cherry-name = cherry
+seeds-cherry-display-name = cherry tree
+seeds-anomaly-berry-name = anomaly berry
+seeds-anomaly-berry-display-name = anomaly berries

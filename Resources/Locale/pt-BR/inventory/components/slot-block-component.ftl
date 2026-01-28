@@ -1,1 +1,1 @@
-slot-block-component-blocked = Espaço bloqueado por {$item}!
+slot-block-component-blocked = This slot is blocked by {$item}!

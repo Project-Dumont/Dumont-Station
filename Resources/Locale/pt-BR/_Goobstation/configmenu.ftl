@@ -1,8 +1,8 @@
-ui-config-menu-options = Opções
-ui-config-menu-disconnect = Desconectar
-ui-config-menu-quit = Sair
-ui-config-menu-crafting = Menu de Construção
-ui-config-menu-language = Menu de Linguagem
-ui-config-menu-admin = Menu de Admin
-ui-config-menu-ahelp = Ajuda de Admin
-ui-config-menu-sandbox = Menu Sandbox
+ui-config-menu-options = Options
+ui-config-menu-disconnect = Disconnect
+ui-config-menu-quit = Quit
+ui-config-menu-crafting = Crafting Menu
+ui-config-menu-language = Language Menu
+ui-config-menu-admin = Admin Menu
+ui-config-menu-ahelp = AHelp
+ui-config-menu-sandbox = Sandbox Menu

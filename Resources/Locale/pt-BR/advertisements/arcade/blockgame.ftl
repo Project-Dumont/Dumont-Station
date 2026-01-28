@@ -1,26 +1,32 @@
-advertisement-block-game-1 = Legalmente distinto!
-advertisement-block-game-2 = O que diabos é um T-spin?
-advertisement-block-game-3 = Esses blocos não vão se limpar sozinhos!
-advertisement-block-game-4 = Bip bop! Bwoooop!
-advertisement-block-game-5 = Vamos jogar um jogo!
-advertisement-block-game-6 = 6 cores diferentes para jogar!
-advertisement-block-game-7 = Ação 8-bit insana!
-advertisement-block-game-8 = Blocos, blocos, blocos!
-advertisement-block-game-9 = Acha que pode conquistar a maior pontuação?
-advertisement-block-game-10 = O Jogo de Blocos Nanotrasen É o que o Tetris NÃO É!
-advertisement-block-game-11 = Agora com processamento explosivo!
-advertisement-block-game-12 = Nossos advogados estão prontos!
-advertisement-block-game-13 = Aleluia, está chovendo blocos!
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-thankyou-block-game-1 = Jogue novamente em breve!
-thankyou-block-game-2 = Bem jogado!
-thankyou-block-game-3 = Apenas mais uma partida?
-thankyou-block-game-4 = Parando tão cedo?
-thankyou-block-game-5 = Os blocos sentirão sua falta.
-thankyou-block-game-6 = Obrigado por jogar!
-thankyou-block-game-7 = Volte em breve!
-thankyou-block-game-8 = Bip bwooop!
-thankyou-block-game-9 = Sempre há tempo para mais uma partida!
-thankyou-block-game-10 = Não desista agora!
-thankyou-block-game-11 = Sempre há mais blocos!
-thankyou-block-game-12 = Os blocos aguardam seu retorno!
+advertisement-block-game-1 = Legally distinct!
+advertisement-block-game-2 = What the hell is a T-spin?
+advertisement-block-game-3 = These blocks aren't going to clear themselves!
+advertisement-block-game-4 = Beep boop! Bwoooop!
+advertisement-block-game-5 = Let's play a game!
+advertisement-block-game-6 = 6 whole colors of gameplay!
+advertisement-block-game-7 = Hot 8-bit action!
+advertisement-block-game-8 = Blocks, blocks, blocks!
+advertisement-block-game-9 = Think YOU can claim the high score?
+advertisement-block-game-10 = Nanotrasen Block Game IS what TetrISN'T!
+advertisement-block-game-11 = Now with blast processing!
+advertisement-block-game-12 = Our lawyers are standing by!
+advertisement-block-game-13 = Hallelujah, it's raining blocks!
+
+thankyou-block-game-1 = Play again soon!
+thankyou-block-game-2 = Well played!
+thankyou-block-game-3 = Just one more game?
+thankyou-block-game-4 = Stopping so soon?
+thankyou-block-game-5 = The blocks will miss you.
+thankyou-block-game-6 = Thanks for playin'!
+thankyou-block-game-7 = Come back soon!
+thankyou-block-game-8 = Beep bwooop!
+thankyou-block-game-9 = There's always time for another game!
+thankyou-block-game-10 = Don't give up now!
+thankyou-block-game-11 = There are always more blocks!
+thankyou-block-game-12 = The blocks await your return!
