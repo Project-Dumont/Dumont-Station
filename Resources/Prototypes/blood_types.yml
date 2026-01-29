@@ -17,6 +17,12 @@
     DemeraraSugar: 30
 
 - type: weightedRandom
+  id: ResomiTypes
+  weights:
+    nitrogen-15: 3
+    nitrogen-14: 97
+
+- type: weightedRandom
   id: RHs
   weights:
     +: 85
