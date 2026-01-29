@@ -1,0 +1,81 @@
+# Basic / D A C
+- type: structuralEnzymes
+  id: GeneticsEmpatheticThoughtBasic
+  message: genetics-empathetic-thought-message
+  typeDeviation: Base
+  costInstability: 5
+  addComponent:
+  - type: EmpatheticThoughtGen
+
+- type: structuralEnzymes
+  id: GeneticsHulkBasic
+  message: genetics-hulk-message
+  typeDeviation: Base
+  chanceAssimilation: 0.15
+  costInstability: 15
+  addComponent:
+  - type: WegaHulkGen
+
+- type: structuralEnzymes
+  id: GeneticsMatterEaterBasic
+  message: genetics-matter-eater-message
+  typeDeviation: Base
+  costInstability: 10
+  addComponent:
+  - type: MatterEaterGen
+
+- type: structuralEnzymes
+  id: GeneticsSmallHeightBasic
+  message: genetics-small-height-message
+  typeDeviation: Base
+  addComponent:
+  - type: SmallHeight
+
+- type: structuralEnzymes
+  id: GeneticsNoBreathingBasic
+  message: genetics-no-breathing-message
+  typeDeviation: Base
+  chanceAssimilation: 0.25
+  costInstability: 10
+  addComponent:
+  - type: NoBreathingGen
+
+- type: structuralEnzymes
+  id: GeneticsNoPrintsBasic
+  message: genetics-no-prints-message
+  typeDeviation: Base
+  costInstability: 5
+  addComponent:
+  - type: NoPrintsGen
+
+- type: structuralEnzymes
+  id: GeneticsPsyResistBasic
+  message: genetics-psy-resist-message
+  typeDeviation: Base
+  addComponent:
+  - type: PsyResistGen
+
+- type: structuralEnzymes
+  id: GeneticsTelekinesisBasic
+  message: genetics-telekinesis-message
+  typeDeviation: Base
+  chanceAssimilation: 0.15
+  costInstability: 15
+  addComponent:
+  - type: TelekinesisGen
+
+- type: structuralEnzymes
+  id: GeneticsLongVisionBasic
+  message: genetics-long-vision-message
+  typeDeviation: Base
+  costInstability: 10
+  addComponent:
+  - type: FarVisionGen
+
+- type: structuralEnzymes
+  id: GeneticsJumpBasic
+  message: genetics-jump-message
+  typeDeviation: Base
+  costInstability: 5
+  addComponent:
+  - type: JumpGen

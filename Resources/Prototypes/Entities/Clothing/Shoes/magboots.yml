@@ -112,6 +112,8 @@
     price: 750
   - type: StealTarget
     stealGroup: ClothingShoesBootsMagAdv
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   parent: [ClothingShoesBootsMagBase]

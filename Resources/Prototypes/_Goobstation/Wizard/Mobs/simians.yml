@@ -12,6 +12,11 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorillaAngry
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobGorillaAngry
@@ -30,6 +35,11 @@
     speedModifierThresholds:
       60: 0.7
       70: 0.5
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorillaAngryTemp
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobGorillaAngry
@@ -69,6 +79,11 @@
   - type: Puller
     needsHands: false
   - type: Targeting
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorillaWizard
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: monkey
@@ -89,6 +104,11 @@
   - type: HTN
     rootTask:
       task: SimpleHumanoidHostileCompound
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHuman
+    lowest: MobMonkeyAngry
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kobold
@@ -102,6 +122,11 @@
   - type: HTN
     rootTask:
       task: SimpleHumanoidHostileCompound
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobReptilian
+    lowest: MobKoboldAngry
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMonkeyAngry
@@ -121,3 +146,8 @@
     speedModifierThresholds:
       30: 0.7
       40: 0.5
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHuman
+    lowest: MobMonkeyAngryTemp
+  # Corvax-Wega-Genetics-end

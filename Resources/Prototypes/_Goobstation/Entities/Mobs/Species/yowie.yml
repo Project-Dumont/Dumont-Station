@@ -86,6 +86,11 @@
         - MobMask
         layer:
         - MobLayer
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorilla
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

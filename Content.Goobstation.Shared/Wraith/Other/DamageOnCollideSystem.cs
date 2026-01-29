@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Damage;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
@@ -19,8 +23,11 @@ public sealed class DamageOnCollideSystem : EntitySystem
         SubscribeLocalEvent<DamageOnCollideComponent, PreventCollideEvent>(OnPreventCollide);
     }
 
-    private void OnStartCollide(Entity<DamageOnCollideComponent> ent, ref StartCollideEvent args) =>
-        _damageable.TryChangeDamage(ent.Owner, ent.Comp.Damage);
+    private void OnStartCollide(Entity<DamageOnCollideComponent> ent, ref StartCollideEvent args)
+    {
+        var target = ent.Comp.Inverted ? args.OtherEntity : ent.Owner;
+        _damageable.TryChangeDamage(target, ent.Comp.Damage);
+    }
 
     private void OnPreventCollide(Entity<DamageOnCollideComponent> ent, ref PreventCollideEvent args)
     {

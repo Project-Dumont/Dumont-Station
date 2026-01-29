@@ -119,6 +119,11 @@
   - type: InnateMiningScannerViewer # Frontier
     pingSound: null
     viewRange: 3 # Goob value
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobDwarf
+    lowest: MobMonkeyDwarf
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

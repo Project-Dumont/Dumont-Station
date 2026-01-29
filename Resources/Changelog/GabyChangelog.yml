@@ -1816,3 +1816,47 @@ Entries:
       message: Console de registros criminais podem imprimir mandatos de prisão
   id: 215
   time: '2026-01-23T17:36:55.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora o óculos do barman não derruba líquidos dos copos quando jogados.
+  id: 216
+  time: '2026-01-25T18:20:33.0000000+00:00'
+- author: Cleitosvaldo
+  changes:
+    - type: Add
+      message: Livro A Arte da Robustec
+  id: 217
+  time: '2026-01-25T18:21:41.0000000+00:00'
+- author: LuciferEOS
+  changes:
+    - type: Add
+      message: >-
+        Atenção, entrando na zona biologicamente morta a 2000m da estação.
+        Sinais de vida de grande porte desconhecidos detectados.
+  id: 218
+  time: '2026-01-27T16:10:10.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o Beepsky está 1% balanceado.
+  id: 219
+  time: '2026-01-27T16:13:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: A genética chegou.
+  id: 220
+  time: '2026-01-27T16:34:35.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Buffs no equipamento de CBURN.
+  id: 221
+  time: '2026-01-27T16:37:16.0000000+00:00'
+- author: InvisibleSnake
+  changes:
+    - type: Add
+      message: Capivara Ronilson
+  id: 222
+  time: '2026-01-27T16:40:07.0000000+00:00'

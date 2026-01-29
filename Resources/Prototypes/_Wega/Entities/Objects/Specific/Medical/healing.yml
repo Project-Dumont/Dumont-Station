@@ -1,0 +1,27 @@
+- type: entity
+  name: mutadon pill
+  parent: Pill
+  id: PillMutadon
+  components:
+    - type: Label
+      currentLabel: mutadon 10u
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Mutadon
+              Quantity: 10
+
+- type: entity
+  name: pill canister
+  parent: PillCanister
+  id: PillCanisterMutadon
+  suffix: Mutadon 10u, 5
+  components:
+  - type: Label
+    currentLabel: mutadon 10u
+  - type: StorageFill
+    contents:
+    - id: PillMutadon
+      amount: 15

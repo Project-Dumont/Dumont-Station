@@ -1,0 +1,38 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
+               xmlns:controls="clr-namespace:Robust.Client.UserInterface.Controls;assembly=Robust.Client"
+               Title="{Loc 'morphism-gen-window-title'}"
+               x:Class="Content.Client._Wega.Genetics.Ui.MorphismGenPanel"
+               MinSize="400 550">
+    <BoxContainer Orientation="Vertical" SeparationOverride="10">     
+        <controls:TabContainer Name="Tabs" VerticalExpand="True">
+            <BoxContainer Name="HairTab" Orientation="Vertical" Margin="5">
+                <humanoid:SingleMarkingPicker Name="HairPicker" Category="Hair" VerticalExpand="True" IgnoreSpecies="True"/>
+            </BoxContainer>
+            <BoxContainer Name="FacialHairTab" Orientation="Vertical" Margin="5">
+                <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" VerticalExpand="True" IgnoreSpecies="True"/>
+            </BoxContainer>
+            <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="5" SeparationOverride="10">
+                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Text="{Loc 'markings-category-header'}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <OptionButton Name="CategorySelector" MinWidth="200" />
+                </BoxContainer>
+                <humanoid:SingleMarkingPicker Name="GeneralPicker" VerticalExpand="True" IgnoreSpecies="True"/>
+            </BoxContainer>
+            <BoxContainer Name="BodyColorTab" Orientation="Vertical" Margin="5" SeparationOverride="15">
+                <Label Text="{Loc 'humanoid-appearance-skin-color'}" FontColorOverride="Gray"/>
+                <BoxContainer Orientation="Vertical">
+                    <controls:ColorSelectorSliders Name="SkinColorPicker" />
+                    <Button Name="ApplySkinBtn" Text="{Loc 'humanoid-appearance-apply-color'}" />
+                </BoxContainer>
+                <Control MinSize="0 20"/>
+                <Label Text="{Loc 'humanoid-appearance-eye-color'}" FontColorOverride="Gray"/>
+                <BoxContainer Orientation="Vertical">
+                    <controls:ColorSelectorSliders Name="EyeColorPicker" />
+                    <Button Name="ApplyEyeBtn" Text="{Loc 'humanoid-appearance-apply-color'}" />
+                </BoxContainer>
+            </BoxContainer>
+        </controls:TabContainer>
+    </BoxContainer>
+</DefaultWindow>

@@ -340,8 +340,9 @@ public sealed partial class GunComponent : Component
     [DataField, AutoNetworkedField]
     public float GunExecutionTime = 3.5f;
 
+    // Beepsky - GabyStation
     [DataField]
-    public float CriminalPointMultiplier = 4;
+    public float CriminalPointMultiplier = 2;
 }
 
 [Flags]

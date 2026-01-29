@@ -1,0 +1,10 @@
+- type: reagent
+  id: Bromine
+  name: reagent-name-bromine
+  group: Elements
+  desc: reagent-desc-bromine
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: metallic
+  color: "#504e50"
+  meltingPoint: 137.84
+  boilingPoint: 19.04

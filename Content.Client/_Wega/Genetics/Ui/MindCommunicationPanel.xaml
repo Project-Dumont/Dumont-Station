@@ -1,0 +1,22 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    x:Class="Content.Client._Wega.Genetics.Ui.MindCommunicationPanel"
+    Title="{Loc 'mind-communication-title'}"
+    MinSize="320 250"
+    SetSize="320 250">
+
+    <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="4">
+        <PanelContainer VerticalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#80808005" />
+            </PanelContainer.PanelOverride>
+
+            <ScrollContainer Name="Scroll" HScrollEnabled="False" VerticalExpand="True">
+                <BoxContainer Name="TargetsContainer" Orientation="Vertical" VerticalExpand="True">
+                </BoxContainer>
+            </ScrollContainer>
+        </PanelContainer>
+    </BoxContainer>
+</DefaultWindow>

@@ -1,0 +1,25 @@
+- type: roleLoadout
+  id: JobGeneticist
+  groups:
+  - GroupTankHarness
+  - GeneticsJumpsuit
+  - MedicalGloves
+  - GeneticsBackpack
+  - GeneticsOuterClothing
+  - MedicalShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+  - Animals
+  - CivilianJumpsuit
+  - CivilianBackpack
+  - CivilianNeck
+  - CivilianHat
+  - CivilianFace
+  - CivilianGloves
+  - CivilianShoes
+  - CivilianOuterClothing
+  - GeneticsEnvirohelm
+  - GeneticsEnvirosuit
+  - GeneticsEnvirogloves

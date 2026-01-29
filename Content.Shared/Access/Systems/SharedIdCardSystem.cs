@@ -86,8 +86,9 @@ using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Content.Shared.Hands.Components;
+using Content.Shared.Hands.Components; // Beepsky - GabyStation
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Genetics; // Corvax-Wega-Genetics
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
@@ -132,7 +133,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         // Unfortunately since TryFindIdCard will succeed if the entity is also a card this means that the card will
         // keep renaming itself unless we return early.
         // We also do not include the PDA itself being renamed, as that triggers the same event (e.g. for chameleon PDAs).
-        if (HasComp<IdCardComponent>(ev.Uid) || HasComp<PdaComponent>(ev.Uid))
+        if (HasComp<IdCardComponent>(ev.Uid) || HasComp<PdaComponent>(ev.Uid) || HasComp<DnaClonedComponent>(ev.Uid)) // Corvax-Wega-Genetics-Edit
             return;
 
         if (TryFindIdCard(ev.Uid, out var idCard))
@@ -208,6 +209,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         return false;
     }
 
+    // Beepsky - GabyStation - Start
     public bool TryFindIdCards(EntityUid uid, out HashSet<Entity<IdCardComponent>> idCards)
     {
         idCards = [];
@@ -229,6 +231,7 @@ public abstract class SharedIdCardSystem : EntitySystem
 
         return idCards.Count > 0;
     }
+    // Beepsky - GabyStation - End
 
     /// <summary>
     /// Attempts to change the job title of a card.

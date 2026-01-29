@@ -144,3 +144,13 @@
   id: MalfDoomsdayRipple
   kind: source
   path: "/Textures/Shaders/malf_doomsday_ripple.swsl"
+
+- type: shader
+  id: Dizzy
+  kind: source
+  path: "/Textures/_Wega/Shaders/dizzy.swsl"
+
+- type: shader
+  id: Colourblindness
+  kind: source
+  path: "/Textures/_Wega/Shaders/colourblindness.swsl"

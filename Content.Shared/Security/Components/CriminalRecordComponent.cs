@@ -74,11 +74,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Inventory;
+using Content.Shared.Inventory; // Beepsky - GabyStation
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
+using Robust.Shared.Serialization; // Beepsky - GabyStation
 
 namespace Content.Shared.Security.Components;
 
@@ -89,8 +89,9 @@ public sealed partial class CriminalRecordComponent : Component
     ///     The icon that should be displayed based on the criminal status of the entity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public ProtoId<SecurityIconPrototype>? StatusIcon;
+    public ProtoId<SecurityIconPrototype>? StatusIcon; // Beepsky - GabyStation
 
+    // Beepsky - GabyStation - Start
     [DataField, AutoNetworkedField]
     public SecurityStatus Status = SecurityStatus.None;
 
@@ -118,7 +119,7 @@ public sealed partial class CriminalRecordComponent : Component
     [DataField]
     public Dictionary<SlotFlags, float> ClothingSlotPoints = new()
     {
-        {SlotFlags.HEAD, 0.75f},
+        {SlotFlags.HEAD, 0.5f},
         {SlotFlags.EYES, 0.25f},
         {SlotFlags.EARS, 0.25f},
         {SlotFlags.MASK, 0.25f},
@@ -143,3 +144,11 @@ public sealed partial class GetCriminalPointsEvent : EntityEventArgs
         Points = points;
     }
 }
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class PrivilegedStatusComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public TimeSpan PrivilegedTime = TimeSpan.Zero;
+}
+// Beepsky - GabyStation - End

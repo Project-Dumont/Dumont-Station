@@ -74,6 +74,11 @@
     - DoorBumpOpener
     - AnomalyHost
     - Oni
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobOni
+    lowest: MobMonkeyOni
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   save: false

@@ -368,6 +368,11 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobShadowkin
+    lowest: MobBat
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: bee
@@ -733,6 +738,11 @@
     damage:
       types:
         Piercing: 0
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobCockroach
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: glockroach
@@ -766,6 +776,11 @@
     spawned:
     - id: FoodMeatSlime
   - type: VentCrawler # goobstation - Ventcrawl
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobGlockroach
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: mothroach
@@ -940,6 +955,11 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMothroach
+  # Corvax-Wega-Genetics-end
   - type: EatToGrow # Goobstation Eat To Grow System
     growth: 0.05
     maxGrowth: 2
@@ -1524,6 +1544,11 @@
     speedModifierThresholds:
       80: 0.7
       100: 0.5
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorilla
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kangaroo
@@ -1843,6 +1868,11 @@
         Blunt: 1
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHuman
+    lowest: MobMonkey
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: monkey
@@ -1983,6 +2013,11 @@
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
     rules: ghost-role-information-nonantagonist-rules
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobReptilian
+    lowest: MobKobold
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kobold
@@ -2291,6 +2326,11 @@
         gibContents: Skip
         recursive: false
   # </Goobstation>
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2323,6 +2363,11 @@
     starvingSlowdownModifier: 1
   - type: Thirst
     baseDecayRate: 10 # always thirsty
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouseAdmeme
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2356,6 +2401,11 @@
     sprite:
       sprite: Mobs/Animals/mouse.rsi
       state: dead-1
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse1
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2389,6 +2439,11 @@
     sprite:
       sprite: Mobs/Animals/mouse.rsi
       state: dead-2
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse2
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: cancer mouse
@@ -2424,6 +2479,11 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Zombie
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouseCancer
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: lizard #Weh
@@ -2752,6 +2812,11 @@
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks: [Penguin]
     understands: [Penguin]
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobWaddler
+    lowest: MobPenguin
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: grenade penguin
@@ -2824,6 +2889,11 @@
         damage: 50
       behaviors:
       - !type:ExplodeBehavior
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobWaddler
+    lowest: MobGrenadePenguin
+  # Corvax-Wega-Genetics-end
 
   # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
@@ -3037,12 +3107,23 @@
     damage:
       types:
         Piercing: 6
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobArachnid
+    lowest: MobGiantSpider
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent:
   - MobSpiderAngryBase
   - MobGiantSpider
   id: MobGiantSpiderAngry
+  components:
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobArachnid
+    lowest: MobGiantSpiderAngry
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: clown spider
@@ -3091,6 +3172,11 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
+    # Corvax-Wega-Genetics-start
+    - type: DnaModifier
+      upper: MobArachnid
+      lowest: MobGiantSpiderAngry
+    # Corvax-Wega-Genetics-end
 
 - type: entity
   name: wizard spider
@@ -3104,6 +3190,11 @@
     - Universal # Should allow them to understand everything and speak it too. Might need to change this.
     understands:
     - Universal
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobArachnid
+    lowest: MobGiantSpiderWizard
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: possum
@@ -3567,6 +3658,12 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCat
+  # Corvax-Wega-Genetics-end
+
 
 - type: entity
   name: calico cat
@@ -3586,6 +3683,11 @@
         Base: cat2_dead
       Dead:
         Base: cat2_dead
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatCalico
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: syndicat
@@ -3645,6 +3747,11 @@
     understands:
     - Cat
     - TauCetiBasic # Needs to understand your nukie ops.
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatSyndy
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: space cat
@@ -3683,6 +3790,11 @@
       path: /Audio/Animals/cat_meow.ogg
   - type: Respirator #It just works?
     minSaturation: 5.0
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatSpace
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: caracal cat
@@ -3703,6 +3815,11 @@
         Base: caracal_dead
       Dead:
         Base: caracal_dead
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatCaracal
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kitten
@@ -3736,6 +3853,11 @@
     thresholds:
       0: Alive
       25: Dead
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFelinid
+    lowest: MobCatKitten
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: sloth
@@ -4186,6 +4308,11 @@
     understands:
     - RootSpeak
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobDiona
+    lowest: MobDionaNymph
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobDionaNymph

@@ -1,0 +1,67 @@
+# Jumpsuit
+- type: loadout
+  id: GeneticsJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGenetics
+
+- type: loadout
+  id: GeneticsJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtGenetics
+
+- type: loadout
+  id: GeneticsJumpsuitMilitary
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryGenetics
+
+# Back
+- type: loadout
+  id: GeneticsBackpack
+  equipment:
+    back: ClothingBackpackGenetics
+
+- type: loadout
+  id: GeneticsSatchel
+  equipment:
+    back: ClothingBackpackSatchelGenetics
+
+- type: loadout
+  id: GeneticsDuffel
+  equipment:
+    back: ClothingBackpackDuffelGenetics
+
+- type: loadout
+  id: GeneticsMessenger
+  equipment:
+    back: ClothingBackpackMessengerGenetics
+
+# Outer clothing
+- type: loadout
+  id: GeneticsOuterClothingLab
+  equipment:
+    outerClothing: ClothingOuterCoatLabGene
+
+- type: loadout
+  id: GeneticsOuterClothingWinter
+  equipment:
+    outerClothing: ClothingOuterWinterGen
+
+# Plasmaman
+
+- type: loadout
+  id: GeneticsEnvirosuit
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitGenetics
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: GeneticsEnvirohelm
+  equipment:
+    head: ClothingHeadEnvirohelmGenitcs
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

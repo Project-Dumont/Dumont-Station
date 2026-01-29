@@ -307,6 +307,8 @@
     understands:
     - TauCetiBasic
     - RobotTalk
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   parent: BasePDA

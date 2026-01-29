@@ -386,6 +386,12 @@
     understands:
       - TauCetiBasic
       - NewKinPidgin        # Vox language from Floofstation
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobVox
+    lowest: MobStokkey
+  # Corvax-Wega-Genetics-end
+
 
 - type: entity
   parent: BaseSpeciesDummy

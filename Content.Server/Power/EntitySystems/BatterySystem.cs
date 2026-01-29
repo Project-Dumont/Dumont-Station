@@ -140,6 +140,10 @@ namespace Content.Server.Power.EntitySystems
                 if (comp.CanEmp && _disabledQuery.HasComponent(uid))
                     continue;
 
+                // Beepsky - Gabystation
+                if (batt.EmpNoCharge && _disabledQuery.HasComponent(uid))
+                    continue;
+
                 SetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt);
             }
         }

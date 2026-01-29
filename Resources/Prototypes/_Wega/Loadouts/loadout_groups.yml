@@ -1,0 +1,55 @@
+# Medical
+- type: loadoutGroup
+  id: GeneticsJumpsuit
+  name: loadout-group-genetics-jumpsuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GeneticsJumpsuit
+  - GeneticsJumpskirt
+  - GeneticsJumpsuitMilitary
+
+- type: loadoutGroup
+  id: GeneticsBackpack
+  name: loadout-group-genetics-backpack
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GeneticsBackpack
+  - GeneticsSatchel
+  - GeneticsDuffel
+  - GeneticsMessenger
+
+- type: loadoutGroup
+  id: GeneticsOuterClothing
+  name: loadout-group-genetics-outerclothing
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GeneticsOuterClothingLab
+  - GeneticsOuterClothingWinter
+
+- type: loadoutGroup
+  id: GeneticsEnvirohelm
+  name: loadout-group-genetics-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GeneticsEnvirohelm
+
+- type: loadoutGroup
+  id: GeneticsEnvirosuit
+  name: loadout-group-genetics-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GeneticsEnvirosuit
+
+- type: loadoutGroup
+  id: GeneticsEnvirogloves
+  name: loadout-group-genetics-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteEnvirogloves
+  - NitrileEnvirogloves

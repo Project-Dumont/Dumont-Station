@@ -161,6 +161,8 @@
     maxFillLevels: 6
     fillBaseName: hypo_fill
     solutionName: hypospray
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   name: gorlex hypospray

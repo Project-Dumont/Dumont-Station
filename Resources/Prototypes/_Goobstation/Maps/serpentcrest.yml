@@ -46,6 +46,7 @@
             MedicalDoctor: [ 5, 6 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 5 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #Virologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]

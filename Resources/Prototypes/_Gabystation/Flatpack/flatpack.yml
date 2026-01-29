@@ -24,3 +24,12 @@
   components:
   - type: Flatpack
     entity: WashingMachine
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackDnaModifierConsole
+  name: flatpack computador de modificador de DNA
+  description: Um computador de modificador de DNA comprimido.
+  components:
+  - type: Flatpack
+    entity: DnaModifierConsole

@@ -612,8 +612,8 @@
     verbText: mode-select-verb-text
     key: enum.AmmoSelectorUiKey.Key # Goobstation - End
   - type: Battery
-    maxCharge: 5000
-    startingCharge: 5000
+    maxCharge: 7000 # Gabystation - Make CBURN life a bit easier
+    startingCharge: 7000 # Gabystation - Make CBURN life a bit easier
   # Goobstation
   - type: Tag
     tags:
@@ -996,6 +996,8 @@
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
     # not putting a BlockMovement component here cause that's funny.
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   name: advanced laser pistol
@@ -1207,6 +1209,8 @@
   #   autoRechargeRate: 24
   #   autoRechargePause: true
   #   autoRechargePauseTime: 30
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   name: temperature gun

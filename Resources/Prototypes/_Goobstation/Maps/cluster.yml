@@ -87,6 +87,7 @@
             MedicalDoctor: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
             Virologist: [ 1, 1 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 3 ]

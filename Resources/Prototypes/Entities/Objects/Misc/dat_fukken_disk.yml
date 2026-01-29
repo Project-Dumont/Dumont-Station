@@ -72,6 +72,8 @@
   - type: StealTarget
     stealGroup: NukeDisk
   - type: SupermatterImmune # Goobstation
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   name: nuclear authentication disk

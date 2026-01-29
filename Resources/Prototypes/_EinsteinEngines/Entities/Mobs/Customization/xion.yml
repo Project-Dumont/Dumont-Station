@@ -7,6 +7,7 @@
   id: CyberLimbsMarkingXionHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_monitor.rsi
@@ -18,6 +19,7 @@
   id: CyberLimbsMarkingXionHeadAlt
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_alt1.rsi
@@ -29,6 +31,7 @@
   id: CyberLimbsMarkingXionChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -40,6 +43,7 @@
   id: CyberLimbsMarkingXionLArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -51,6 +55,7 @@
   id: CyberLimbsMarkingXionLHand
   bodyPart: LHand
   markingCategory: LeftHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -62,6 +67,7 @@
   id: CyberLimbsMarkingXionLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -74,6 +80,7 @@
   id: CyberLimbsMarkingXionLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -87,6 +94,7 @@
   id: CyberLimbsMarkingXionRArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -100,6 +108,7 @@
   id: CyberLimbsMarkingXionRHand
   bodyPart: RHand
   markingCategory: RightHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -111,6 +120,7 @@
   id: CyberLimbsMarkingXionRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -123,6 +133,7 @@
   id: CyberLimbsMarkingXionRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/xion/xion_main.rsi

@@ -62,17 +62,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Solutions;
+using Content.Shared._Adventure.Bartender.Systems; // Adventure
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Spillable;
 using Content.Shared.Throwing;
+using Robust.Shared.Physics.Systems; // Adventure
 
 namespace Content.Server.Fluids.EntitySystems;
 
 public sealed partial class PuddleSystem
 {
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!; // Adventure
+    [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Adventure
     protected override void InitializeSpillable()
     {
         base.InitializeSpillable();
@@ -105,6 +109,14 @@ public sealed partial class PuddleSystem
 
         if (args.User != null)
         {
+            // Adventure start
+            if (_nonspillthrower.GetSpillProofThrow(args.User.Value))
+            {
+                _physics.SetAngularVelocity(entity, 0);
+                Transform(entity).LocalRotation = Angle.Zero;
+                return;
+            }
+            // Adventure end
             AdminLogger.Add(LogType.Landed,
                 $"{ToPrettyString(entity.Owner):entity} spilled a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution} on landing");
         }

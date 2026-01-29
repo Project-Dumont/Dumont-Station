@@ -1,0 +1,596 @@
+<Document>
+  # Genética
+
+  ## Introdução
+  A Genética é a ciência do DNA, que permite identificar mutações, conceder superpoderes à tripulação e tratar desvios genéticos. O geneticista trabalha no laboratório de genética, localizado entre a Ala Médica e o Departamento de Pesquisa, sendo responsável pela clonagem e pesquisas genéticas.
+  <Box>
+    <GuideEntityEmbed Entity="MedicalScanner" Caption="analisador genético"/>
+    <GuideEntityEmbed Entity="DnaModifierConsole" Caption="computador de modificador de DNA"/>
+    <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="cubo de macaco"/>
+  </Box>
+
+  - 1. Blocos Hexadecimais
+
+  O formato numérico presente em cada bloco genético utiliza o sistema hexadecimal, organizando os valores em ordem crescente de 0 a 9 e, em seguida, pelas letras de A até F. Cada bloco é constituído por três sub-blocos que funcionam como um número de três dígitos, onde a posição de cada caractere possui um peso hierárquico semelhante ao sistema de centenas, dezenas e unidades.
+
+  - 2. Enzimas Estruturais e Identificadores Únicos
+
+  Para operar o computador, é necessário compreender a diferença entre os tipos de enzimas. As enzimas estruturais (EE) controlam a raça, os superpoderes e as deficiências físicas, enquanto os identificadores únicos (IU) definem a aparência física.
+
+  - 3. Buffer de Dados
+
+  O buffer de dados funciona como uma ferramenta para armazenar o progresso do seu trabalho, sendo altamente recomendável manter um backup de um DNA limpo por segurança, além de registrar as alterações manualmente. O sistema permite salvar diferentes categorias de dados, apenas os identificadores únicos (UI) para dados fisicos, apenas as enzimas estruturais (EE) para estrutura genética funcional ou o conjunto de identificadores únicos e enzimas estruturais e (UI & EE) para incluir ambas enzimas. Para utilizar os dados armazenados, existem três métodos principais de transferência. A aplicação direta no ocupante transfere os dados do buffer para o sujeito dentro do modificador de DNA, mas gera uma grande quantidade de radiação no processo. A opção de injetor sintetiza uma injetor de DNA que pode ser aplicada em si mesmo ou em outros, causando apenas danos leves por toxinas, embora exija tempo para a produção de novas unidades. Por fim, o gerenciamento via disco permite o uso de discos físicos para salvar os dados do buffer ou carregar informações de um disco para o computador.
+
+  ## Como Começar
+  Para iniciar, use cubos de animais: abra o cubo, molhe-o para obter um animal, como um macaco. Coloque-o no modificador de DNA para experimentos futuros.
+  <Box>
+    <GuideEntityEmbed Entity="DrinkWaterBottleFull" Caption="água"/>
+    <GuideEntityEmbed Entity="MonkeyCubeBox" Caption="cubo de macaco"/>
+  </Box>
+
+  - 1. Humanização
+
+  No modificador de DNA, selecione a opção "Modificação EE" e irradie o primeiro subbloco do bloco 55 até alcançar um valor igual ou maior que 8. Isso transformará o animal em um humano.
+
+  - 2. Criando um EE Pura
+
+  Para criar um injetor de "EE Pura", irradie os primeiros subblocos de todos os blocos de 1 a 54 até valores menores que 8. Isso permitirá cancelar mutações indesejadas no futuro.
+
+  - 3. Atividade Principal
+
+  Irradiando vários blocos de enzimas estruturais (EE), você pode revelar superpoderes ou doenças genéticas. Seja cuidadoso e registre os resultados para reproduzir os efeitos desejados.
+
+  ## Radiação e Mutações
+  A irradiação de blocos de DNA pode levar a mutações aleatórias. Algumas podem ser benéficas, outras prejudiciais. Use o injetor "EE Pura" para eliminar efeitos indesejados.
+
+  - 1. Equilíbrio Genético
+
+  Cada poder aumenta a instabilidade, enquanto cada doença a diminui. O valor inicial é 0. Para manter uma cobaia viva com múltiplos poderes, você é obrigado a equilibrar a equação inserindo doenças propositais. Se a instabilidade ultrapassar o limite seguro, o corpo começará a sofrer queimaduras, deformações celulares e, eventualmente, morte súbita.
+
+  <Table Columns="2">
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Nível</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Efeito Colateral</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Estabilidade normal.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">1–20</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">
+        Estável. Sem efeitos colaterais.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">25–35</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">
+        Instabilidade leve. A pele começa a borbulhar ocasionalmente, causando pequenas queimaduras.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">40–65</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">
+        Instabilidade Grave. O corpo sofre deformações. Causa dano físico e inutiliza membros temporariamente até serem curados.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">70+</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">
+        Colapso genético. O corpo se deforma violentamente e com frequência.
+      </Box>
+    </ColorBox>
+  </Table>
+
+  - 2. Habilidades e Doenças
+
+  O DNA humano contém potenciais latentes que podem ser desbloqueados através da manipulação de Enzimas Estruturais (EE) do bloco 0 até 54. As habilidades são classificadas em quatro níveis de dificuldade de ativação, baseados no valor hexadecimal do bloco. Poderes menores (requerem 802 ou superior), básicos (requerem DAC ou superior), intermediários (requerem BEA ou superior) e doenças (requerem 802 ou superior).
+
+  <Table Columns="3">
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Nome</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Custo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Efeito</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2" HorizontalAlignment="Stretch">Menor</Box>
+    </ColorBox>
+    <ColorBox><Box/></ColorBox><ColorBox><Box/></ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Força</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Aumenta dano desarmado.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Resistente Calor</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Imune a fogo e mais resistente ao calor.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Imune a Choque</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Imune a eletricidade.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Sóbrio</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Metaboliza álcool rapidamente e não embebeda.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2" HorizontalAlignment="Stretch">Básico</Box>
+    </ColorBox>
+    <ColorBox><Box/></ColorBox><ColorBox><Box/></ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Hulk ou Zilla</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Vire verde. Só volta após morto. Perde tudo genetico ao voltar normal...</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Telecinese</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Interage com objetos e pessoas à distância.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Sem Respiração</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Não precisa de oxigênio.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Devorador de Matéria</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Pode comer qualquer objeto.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Visão de Longo Alcance</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Permite afastar a câmera para ver mais longe.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Pulo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Salta grandes distâncias.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Empatia</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Vê saúde, intenções e pensamentos superficiais.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Sem Digitais</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Não deixa impressões digitais.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Anão</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Diminui o tamanho.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Resistência-Psi</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Protege a mente contra telepatia.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2" HorizontalAlignment="Stretch">Intermediário</Box>
+    </ColorBox>
+    <ColorBox><Box/></ColorBox><ColorBox><Box/></ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Super Velocidade</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Corre muito rápido. Recebe +20% de dano.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Visão Térmica</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Vê silhuetas de calor através de paredes.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Criocinese</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Lança projeções que esfria os fluidos do alvo.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Camaleão</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Fica invisível ao permanecer imóvel.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Manto das Sombras</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Fica invisível na escuridão.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Regeneração</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Cura passiva constante de danos de brutos e queimaduras.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Resistência Frio</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Imune a danos de frio e vácuo.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Imunidade Flash</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Imune a cegueira por flashes.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Visão Noturna</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Enxerga perfeitamente no escuro.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Polimorfismo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Copia aparência e nome de outra pessoa.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Telepatia</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Comunicação mental.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Visão Remota</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Observa através de paredes pessoas vinculadas com o mesmo poder.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Morfismo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Altera a própria aparência à vontade.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2" HorizontalAlignment="Stretch">Doenças</Box>
+    </ColorBox>
+    <ColorBox><Box/></ColorBox><ColorBox><Box/></ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Cegueira Total</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Incapacidade total de enxergar.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Surdez</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Incapacidade total de ouvir.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Paraplegia</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Paralisia das pernas.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Radioativo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-15</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">O paciente emite radiação, ferindo a si e aos outros.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Epilepsia</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Ataques convulsivos aleatórios que causam queda e atordoamento.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Cegueira Parcial</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Visão extremamente limitada.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Tourette</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Espasmos involuntários e gritos.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Fraqueza</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Reduz significativamente o dano corpo a corpo.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Daltonismo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Incapacidade de distinguir cores.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Mudo</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Incapacidade física de falar.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Gagueira</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-10</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Dificuldade severa na fala.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Desastrado</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Armas explodem ao usar e cai por cima de mesas.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Tosse</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Tosse crônica que faz soltar itens da mão.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Tontura</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">A tela treme constantemente.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Obesidade</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Voce é um pouco mais grande.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Ininteligível</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Fala coisas sem sentido lógico.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Afasia</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Troca letras e perde a capacidade de formular frases.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Voz Alienígena</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">-5</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Fala utilizando símbolos Wingdings.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Mitocôndria Incendiaria</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Pode entrar em combustão espontânea.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Chifres</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Crescimento de chifres na cabeça.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Colonial</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Fala com gramática antiga.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Cômico</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Sotaque cômico, inclui "BOZINA" na fala.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Sulista</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Sotaque da roça.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Língua Presa</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Troca letras por F.</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">Barulhento</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Background="#222222" Margin="2">0</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box Margin="2">Fala gritando.</Box>
+    </ColorBox>
+  </Table>
+</Document>

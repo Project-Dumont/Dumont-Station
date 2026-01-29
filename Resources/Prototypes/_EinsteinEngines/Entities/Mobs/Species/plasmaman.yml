@@ -183,6 +183,11 @@
       243: 0.8
   - type: Fart
     gasToFart: Plasma
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobPlasmaman
+    lowest: MobSkeletonPerson
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

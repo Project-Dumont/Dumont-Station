@@ -168,4 +168,7 @@ public partial class InventorySystem
         containingEntity = container.Owner;
         return true;
     }
+
+    public void CloneInventory(Entity<InventoryComponent> ent, InventoryComponent targetInventory) // Corvax-Wega-Genetics
+        => ent.Comp.Clone(targetInventory); // Corvax-Wega-Genetics
 }

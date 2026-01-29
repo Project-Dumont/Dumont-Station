@@ -129,6 +129,11 @@
     item: Chitzite
     action: ActionChitzite
     coughPopup: chitzite-cough
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobCockroachChitinid
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

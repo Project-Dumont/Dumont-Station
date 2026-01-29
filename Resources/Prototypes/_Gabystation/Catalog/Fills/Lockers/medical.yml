@@ -1,0 +1,23 @@
+- type: entityTable
+  id: GeneticistLockerFill
+  table: !type:AllSelector
+    children:
+    - id: Multitool
+    - id: MonkeyCubeBox
+    - id: DrinkWaterBottleFull
+    - id: BoxBeaker
+    - id: PillCanisterHyronalin
+    - id: PillCanisterMutadon
+    - id: MedicalScannerFlatpack
+    - id: FlatpackDnaModifierConsole
+    - id: BoxDnaFisk
+
+- type: entity
+  parent: LockerGeneticist
+  id: LockerGeneticistFilled
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: GeneticistLockerFill

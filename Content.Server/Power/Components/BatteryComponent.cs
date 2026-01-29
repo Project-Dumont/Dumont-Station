@@ -61,6 +61,10 @@ namespace Content.Server.Power.Components
         /// </summary>
         [DataField]
         public float PricePerJoule = 0.0003f;
+
+        // Beepsky - Gabystation
+        [DataField("empNoCharge")]
+        public bool EmpNoCharge = false;
     }
 
     /// <summary>

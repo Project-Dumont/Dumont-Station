@@ -11,6 +11,7 @@
   id: UnderwearDefault
   bodyPart: Underwear
   markingCategory: Underwear
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
   coloring:
     default:
@@ -25,6 +26,7 @@
   id: UnderwearBriefs
   bodyPart: Underwear
   markingCategory: Underwear
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
   coloring:
     default:
@@ -39,6 +41,7 @@
   id: UnderwearLowriders
   bodyPart: Underwear
   markingCategory: Underwear
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
   coloring:
     default:
@@ -53,6 +56,7 @@
   id: UnderwearSatin
   bodyPart: Underwear
   markingCategory: Underwear
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
   coloring:
     default:
@@ -67,6 +71,7 @@
   id: UnderwearTanga
   bodyPart: Underwear
   markingCategory: Underwear
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
   coloring:
     default:
