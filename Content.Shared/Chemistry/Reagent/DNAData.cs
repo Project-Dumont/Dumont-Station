@@ -87,6 +87,9 @@ public sealed partial class DnaData : ReagentData
     [DataField]
     public string DNA = String.Empty;
 
+    [DataField]
+    public string? BloodType;
+
     [DataField] // Goobstation
     public TimeSpan Freshness = TimeSpan.Zero; // Goobstation
 
@@ -94,6 +97,7 @@ public sealed partial class DnaData : ReagentData
     public DnaData(DnaData other)
     {
         DNA = other.DNA;
+        BloodType = other.BloodType;
         Freshness = other.Freshness;
     }
 
