@@ -116,7 +116,7 @@
   id: AdvancedPowercells
   name: research-technology-advanced-powercells
   icon:
-    sprite: _Orion/Objects/Tools/inducer-rnd.rsi # Orion-Edit
+    sprite: _Orion/Objects/Tools/Inducer/inducer-rnd.rsi # Orion-Edit
     state: icon
   discipline: Industrial
   tier: 1

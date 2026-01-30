@@ -7,6 +7,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Orion.Power.Systems;
@@ -88,17 +89,21 @@ public sealed class InducerSystem : EntitySystem
         if (!TryComp<BatteryComponent>(slot.Item.Value, out var sourceBattery))
             return;
 
+        var effectiveMultiplier = component.TransferMultiplier;
+        if (HasComp<GunComponent>(target))
+            effectiveMultiplier = component.GunTransferMultiplier;
+
         var baseEnergyToConsume = component.TransferRate * component.TransferDelay;
         baseEnergyToConsume = Math.Min(baseEnergyToConsume, sourceBattery.CurrentCharge);
 
         if (baseEnergyToConsume <= 0)
             return;
 
-        var energyToReceive = baseEnergyToConsume * component.TransferMultiplier;
+        var energyToReceive = baseEnergyToConsume * effectiveMultiplier;
         var freeSpace = targetBattery.MaxCharge - targetBattery.CurrentCharge;
         energyToReceive = Math.Min(energyToReceive, freeSpace);
 
-        var actualEnergyToConsume = energyToReceive / component.TransferMultiplier;
+        var actualEnergyToConsume = energyToReceive / effectiveMultiplier;
         if (_battery.TryUseCharge(slot.Item.Value, actualEnergyToConsume, sourceBattery))
         {
             _battery.AddCharge(target, energyToReceive, targetBattery);

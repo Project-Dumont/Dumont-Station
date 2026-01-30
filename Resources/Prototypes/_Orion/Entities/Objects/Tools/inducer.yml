@@ -1,20 +1,18 @@
 - type: entity
   parent: BaseItem
-  id: InducerEngineering
+  id: BaseInducer
+  abstract: true
   name: inducer
   description: A device for wirelessly transferring energy from a battery to other devices.
-  suffix: Empty, Engineering
   components:
-  - type: Sprite
-    sprite: _Orion/Objects/Tools/inducer-engi.rsi
-    state: icon
   - type: Item
     size: Normal
   - type: Inducer
     transferRate: 500
     transferDelay: 1
     maxDistance: 3
-    transferMultiplier: 6
+    transferMultiplier: 8
+    gunTransferMultiplier: 0.8
     availableTransferRates:
     - 500
     - 2500
@@ -35,6 +33,18 @@
           tags:
           - PowerCell
           - MegaCell
+  - type: Appearance
+
+- type: entity
+  parent: [ BaseInducer, BaseEngineeringContraband ]
+  id: InducerEngineering
+  name: inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Empty, Engineering
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Tools/Inducer/inducer-engi.rsi
+    state: icon
   - type: ItemMapper
     mapLayers:
       inducer-bat:
@@ -42,8 +52,7 @@
           tags:
           - PowerCell
           - MegaCell
-    sprite: _Orion/Objects/Tools/inducer-engi.rsi
-  - type: Appearance
+    sprite: _Orion/Objects/Tools/Inducer/inducer-engi.rsi
 
 - type: entity
   parent: InducerEngineering
@@ -58,14 +67,14 @@
         startingItem: PowerCellHigh
 
 - type: entity
-  parent: InducerEngineering
+  parent: [ BaseInducer, BaseScienceContraband ]
   id: InducerScientific
   name: inducer
   description: A device for wirelessly transferring energy from a battery to other devices.
   suffix: Empty, RND
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Tools/inducer-rnd.rsi
+    sprite: _Orion/Objects/Tools/Inducer/inducer-rnd.rsi
     state: icon
   - type: Inducer
     transferRate: 900
@@ -78,7 +87,7 @@
           tags:
           - PowerCell
           - MegaCell
-    sprite: _Orion/Objects/Tools/inducer-rnd.rsi
+    sprite: _Orion/Objects/Tools/Inducer/inducer-rnd.rsi
 
 - type: entity
   parent: InducerScientific
@@ -86,6 +95,78 @@
   name: inducer
   description: A device for wirelessly transferring energy from a battery to other devices.
   suffix: Battery, RND
+  components:
+  - type: ItemSlots
+    slots:
+      inducer_power_cell_slot:
+        startingItem: PowerCellHigh
+
+- type: entity
+  parent: [ BaseInducer, BaseCommandContraband ]
+  id: InducerEngineeringWhite
+  name: inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Empty, Chief Engineer
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Tools/Inducer/inducer-white.rsi
+    state: icon
+  - type: Inducer
+    transferMultiplier: 12
+    availableTransferRates:
+    - 500
+    - 2500
+    - 5000
+    - 7500
+    - 10000
+  - type: ItemMapper
+    mapLayers:
+      inducer-bat:
+        whitelist:
+          tags:
+          - PowerCell
+          - MegaCell
+    sprite: _Orion/Objects/Tools/Inducer/inducer-white.rsi
+
+- type: entity
+  parent: InducerEngineeringWhite
+  id: InducerEngineeringWhiteBattery
+  name: inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Battery, Chief Engineer
+  components:
+  - type: ItemSlots
+    slots:
+      inducer_power_cell_slot:
+        startingItem: PowerCellHigh
+
+- type: entity
+  parent: [ BaseInducer, BaseMinorContraband ]
+  id: InducerCombat
+  name: combat inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Empty, Combat
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Tools/Inducer/inducer-syndicate.rsi
+    state: icon
+  - type: Inducer
+    gunTransferMultiplier: 1.2
+  - type: ItemMapper
+    mapLayers:
+      inducer-bat:
+        whitelist:
+          tags:
+          - PowerCell
+          - MegaCell
+    sprite: _Orion/Objects/Tools/Inducer/inducer-syndicate.rsi
+
+- type: entity
+  parent: InducerCombat
+  id: InducerCombatBattery
+  name: inducer
+  description: A device for wirelessly transferring energy from a battery to other devices.
+  suffix: Battery, Combat
   components:
   - type: ItemSlots
     slots:

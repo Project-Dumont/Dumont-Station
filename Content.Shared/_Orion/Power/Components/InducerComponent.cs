@@ -25,6 +25,12 @@ public sealed partial class InducerComponent : Component
     [DataField]
     public float TransferMultiplier;
 
+    /// <summary>
+    ///     Multiply transferring energy for guns.
+    /// </summary>
+    [DataField]
+    public float GunTransferMultiplier;
+
     [DataField]
     public float MaxDistance;
 }
