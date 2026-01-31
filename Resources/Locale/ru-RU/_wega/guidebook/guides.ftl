@@ -1,0 +1,1 @@
+guide-entry-genetic = Генетик

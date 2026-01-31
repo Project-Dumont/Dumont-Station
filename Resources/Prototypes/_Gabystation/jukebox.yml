@@ -584,3 +584,26 @@
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
 
+- type: jukebox
+  id: sugarCrash
+  name: ElyOtto - Sugar crash
+  path:
+    path: /Audio/_Gabystation/Jukebox/ElyOttoSugarCrash.ogg
+
+- type: jukebox
+  id: AHAH
+  name: Sylendanna - AHAH
+  path:
+    path: /Audio/_Gabystation/Jukebox/Sylendanna_AHAH.ogg
+
+- type: jukebox
+  id: WaitAMinut
+  name: Willow Smith - Wait a Minute
+  path:
+    path: /Audio/_Gabystation/Jukebox/WillowSmithWaitAMinute.ogg
+
+- type: jukebox
+  id: Catroll
+  name: Rapid Liquid - Never Gonna Meow You up
+  path:
+    path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg

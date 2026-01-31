@@ -1,0 +1,8 @@
+- type: ghostSkinListing
+  id: DonatorSkin
+  name: ghost-skin-donator
+  price: 2300
+  available: false
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/gold_angel.rsi"
+    state: animated

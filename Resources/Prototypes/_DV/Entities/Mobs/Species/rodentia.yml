@@ -171,6 +171,11 @@
     spitDamageThreshold: 3
   - type: CrawlUnderObjects
     actionProto: ActionToggleSneakMode
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouseRodentia
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   save: false

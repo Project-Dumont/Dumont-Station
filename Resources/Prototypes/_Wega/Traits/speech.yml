@@ -1,0 +1,39 @@
+# 2 Cost
+
+- type: trait
+  id: AphasiaAccent
+  name: trait-aphasia-name
+  description: trait-aphasia-desc
+  category: SpeechTraits
+  cost: 2
+  components:
+  - type: AphasiaAccent
+
+# 1 Cost
+
+- type: trait
+  id: AuldImperialAccent
+  name: trait-auld-imperial-name
+  description: trait-auld-imperial-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: AuldImperialAccent
+
+- type: trait
+  id: ClownAccent
+  name: trait-clown-name
+  description: trait-clown-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ClownAccent
+
+- type: trait
+  id: UnintelligibleAccent
+  name: trait-unintelligible-name
+  description: trait-unintelligible-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: UnintelligibleAccent

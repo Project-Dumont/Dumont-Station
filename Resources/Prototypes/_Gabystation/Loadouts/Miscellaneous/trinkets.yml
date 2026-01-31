@@ -48,3 +48,9 @@
   storage:
     back:
     - MP3PlayerWhite
+
+- type: loadout
+  id: BookArteDaRobustez
+  storage:
+    back:
+    - BookArteDaRobustez

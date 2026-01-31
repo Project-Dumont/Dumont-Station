@@ -241,6 +241,11 @@
     - DoorBumpOpener
     - AnomalyHost
     - ReptilianEmotes
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobReptilian
+    lowest: MobKobold
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared.Disease.Components;
 using Content.Shared.Weapons.Melee.Events;
 
@@ -30,10 +34,8 @@ public sealed partial class DiseaseOnHitSystem : EntitySystem
                 if (!TryComp<DiseaseCarrierComponent>(ent, out var carrier))
                     return;
 
-                foreach (var disease in carrier.Diseases)
-                {
+                foreach (var disease in carrier.Diseases.ContainedEntities)
                     _disease.DoInfectionAttempt(target, disease, ent.Comp.SpreadParams);
-                }
             }
         }
     }

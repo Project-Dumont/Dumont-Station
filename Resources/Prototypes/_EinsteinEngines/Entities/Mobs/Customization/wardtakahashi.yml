@@ -7,6 +7,7 @@
   id: CyberLimbsMarkingWardtakahashiHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_monitor.rsi
@@ -16,6 +17,7 @@
   id: CyberLimbsMarkingWardtakahashiHeadAlt
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -25,6 +27,7 @@
   id: CyberLimbsMarkingWardtakahashiHeadAlt1
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_alt1.rsi
@@ -34,6 +37,7 @@
   id: CyberLimbsMarkingWardtakahashiChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -43,6 +47,7 @@
   id: CyberLimbsMarkingWardtakahashiLArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -52,6 +57,7 @@
   id: CyberLimbsMarkingWardtakahashiLHand
   bodyPart: LHand
   markingCategory: LeftHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -61,6 +67,7 @@
   id: CyberLimbsMarkingWardtakahashiLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -71,6 +78,7 @@
   id: CyberLimbsMarkingWardtakahashiLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -82,6 +90,7 @@
   id: CyberLimbsMarkingWardtakahashiRArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -92,6 +101,7 @@
   id: CyberLimbsMarkingWardtakahashiRHand
   bodyPart: RHand
   markingCategory: RightHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -101,6 +111,7 @@
   id: CyberLimbsMarkingWardtakahashiRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
@@ -111,6 +122,7 @@
   id: CyberLimbsMarkingWardtakahashiRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi

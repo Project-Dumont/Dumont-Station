@@ -225,6 +225,11 @@
       - Shard
       - Landmine
       - Mousetrap
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHarpy
+    lowest: MobSquackroachHarpy
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   save: false

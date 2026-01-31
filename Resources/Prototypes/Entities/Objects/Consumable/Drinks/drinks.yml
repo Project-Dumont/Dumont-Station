@@ -284,6 +284,7 @@
       - state: icon-front
         map: [ "enum.SolutionContainerLayers.Overlay" ]
   - type: Appearance
+  - type: Drink # Adventure
   - type: SolutionContainerManager
     solutions:
       drink:

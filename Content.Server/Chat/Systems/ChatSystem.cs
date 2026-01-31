@@ -1312,6 +1312,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var recipients = new Dictionary<ICommonSession, ICChatRecipientData>();
         var ghostHearing = GetEntityQuery<GhostHearingComponent>();
         var xforms = GetEntityQuery<TransformComponent>();
+        var deafnessQuery = GetEntityQuery<DeafnessComponent>(); // Corvax-Wega-Deafness
 
         var transformSource = xforms.GetComponent(source);
         var sourceMapId = transformSource.MapID;
@@ -1321,6 +1322,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         {
             if (player.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
+
+            if (deafnessQuery.HasComponent(playerEntity)) continue; // Corvax-Wega-Deafness
 
             var transformEntity = xforms.GetComponent(playerEntity);
 

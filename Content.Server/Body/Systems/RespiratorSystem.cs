@@ -486,6 +486,9 @@ public sealed class RespiratorSystem : EntitySystem
 
     private void TakeSuffocationDamage(Entity<RespiratorComponent> ent)
     {
+        if (ent.Comp.Damage == null) // Corvax-Wega-Genetics
+            return;
+
         if (ent.Comp.SuffocationCycles == 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} started suffocating");
 

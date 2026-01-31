@@ -54,4 +54,12 @@ public sealed partial class GabyCVars
     public static readonly CVarDef<float> SurgeryCrowdingCheckRange =
         CVarDef.Create("gaby.surgery.crowding_check_range", 5f, CVar.SERVER | CVar.REPLICATED);
 
+    #region Server Economy
+    public static readonly CVarDef<float> SCurrencyRotationCooldown =
+        CVarDef.Create("servercurrency.rotation_cooldown", 7200f, CVar.SERVER);
+
+    public static readonly CVarDef<int> SCurrencyStoreTokens =
+        CVarDef.Create("servercurrency.tokens_per_rotation", 4, CVar.SERVER);
+
+    #endregion
 }

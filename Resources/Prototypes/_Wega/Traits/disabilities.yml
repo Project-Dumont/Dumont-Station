@@ -1,0 +1,7 @@
+- type: trait
+  id: DnaModifierDeviation
+  name: trait-dna-deviation-name
+  description: trait-dna-deviation-desc
+  category: Disabilities
+  components:
+  - type: DnaModifierDeviation

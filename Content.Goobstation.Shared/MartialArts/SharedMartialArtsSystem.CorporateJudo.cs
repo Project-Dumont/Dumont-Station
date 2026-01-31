@@ -24,6 +24,7 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Standing;
 using Content.Shared.StatusEffect;
+using Content.Shared.Humanoid;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
 
@@ -77,6 +78,18 @@ public partial class SharedMartialArtsSystem
 
         RemComp<MartialArtsKnowledgeComponent>(user);
         RemComp<CanPerformComboComponent>(user);
+
+        // Gaby station inicio
+        // Devolve o ataque normal dos pinguins ao ser removida a roupa de judo corporativo
+
+        if (TryComp<HumanoidAppearanceComponent>(user, out var humanoid)
+            && humanoid.Species == "Waddler")
+        {
+            meleeWeaponComponent.AttackRate = 4f;
+            Dirty(user, meleeWeaponComponent);
+        }
+
+        // Gaby station fim
     }
 
     #endregion

@@ -6,10 +6,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: Tag
-  id: GameDirectorRule
-
-- type: Tag
   id: WaddlerEmotes
 
 - type: Tag
   id: WeaponPistolLawbringerSkinKit
+
+- type: Tag
+  id: ContrabandDetectorGlasses
+
+- type: Tag
+  id: GameDirectorRule

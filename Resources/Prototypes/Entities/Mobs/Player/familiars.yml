@@ -109,6 +109,11 @@
     understands:
     - Mouse
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobShadowkin
+    lowest: MobBatRemilia
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Cerberus

@@ -75,6 +75,7 @@ using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
 using Content.Shared.CombatMode;
+using Content.Shared.CombatMode.Pacification; // Beepsky - GabyStation
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
@@ -85,6 +86,7 @@ using Content.Shared.Mech.Components; // Goobstation
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
+using Content.Shared.Security.Components; // Beepsky - GabyStation
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Content.Shared.Timing;
@@ -175,6 +177,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         SubscribeLocalEvent<GunComponent, CycleModeEvent>(OnCycleMode);
         SubscribeLocalEvent<GunComponent, HandSelectedEvent>(OnGunSelected);
         SubscribeLocalEvent<GunComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<GunComponent, GetCriminalPointsEvent>(OnCriminalPoints); // Beepsky - GabyStation
 
         InitializeHolders(); // DeltaV
     }
@@ -255,6 +258,15 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
 
         StopShooting(gunUid, gun);
+    }
+
+    // Beepsky - GabyStation
+    private void OnCriminalPoints(EntityUid uid, GunComponent component, GetCriminalPointsEvent args)
+    {
+        if (HasComp<PacifismAllowedGunComponent>(uid))
+            return;
+
+        args.Points *= component.CriminalPointMultiplier;
     }
 
     public bool CanShoot(GunComponent component)

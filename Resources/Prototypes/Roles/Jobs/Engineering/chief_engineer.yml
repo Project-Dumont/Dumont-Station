@@ -144,7 +144,7 @@
       time: 36000 #10 hrs
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 18000 #5 hrs
+      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 54000 #15 hrs

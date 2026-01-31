@@ -1,10 +1,7 @@
-// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,7 +12,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Goobstation.Server.StationEvents.Components;
 
-[RegisterComponent, Access(typeof(GameDirectorSystem))]
+[RegisterComponent, Access(typeof(GameDirector.GameDirectorSystem))]
 public sealed partial class GameDirectorComponent : Component
 {
 
@@ -64,26 +61,6 @@ public sealed partial class GameDirectorComponent : Component
     [DataField]
     public bool NoRoundstartAntags;
 
-    // Funky/Gaby changes
-
-    /// <summary>
-    /// Does this round start with calm antags or regular roundstart antags?
-    /// </summary>
-    [DataField]
-    public bool CalmAntags;
-
-    /// <summary>
-    /// How many antags does this round start with?
-    /// </summary>
-    [DataField]
-    public int NormalAntagAmount;
-
-    [DataField]
-    public int ExtremeAntagAmount;
-
-    [DataField]
-    public int CalmAntagAmount;
-
     /// <summary>
     ///   Which stories the director can choose from (so we can change flavor of director by loading different stories)
     ///   One of these get picked randomly each time the current story is exhausted.
@@ -126,7 +103,7 @@ public sealed partial class StoryPrototype : IPrototype
     ///   A human-readable description string for logging / admins
     /// </summary>
     [DataField]
-    public string Description = "";
+    public string Description;
 
     /// <summary>
     ///   Minimum number of players on the station to pick this story
@@ -171,7 +148,7 @@ public sealed partial class StoryBeatPrototype : IPrototype
     ///   A human-readable description string for logging / admins
     /// </summary>
     [DataField]
-    public string Description = "";
+    public string Description;
 
     /// <summary>
     ///   Which chaos levels we are driving in this beat and the values we are aiming for

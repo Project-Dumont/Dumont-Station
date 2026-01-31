@@ -109,6 +109,11 @@
     understands:
     - TauCetiBasic
     - Nehina
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobFeroxi
+    lowest: MobSkrellkey
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobHumanDummy

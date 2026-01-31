@@ -10,6 +10,7 @@
   id: CyberLimbsMarkingHesphiastosHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_monitor.rsi
@@ -21,6 +22,7 @@
   id: CyberLimbsMarkingHesphiastosHeadAlt
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_alt1.rsi
@@ -34,6 +36,7 @@
   id: CyberLimbsMarkingHesphiastosChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -45,6 +48,7 @@
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -56,6 +60,7 @@
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
   markingCategory: LeftHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -67,6 +72,7 @@
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -79,6 +85,7 @@
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -92,6 +99,7 @@
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -104,6 +112,7 @@
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
   markingCategory: RightHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -116,6 +125,7 @@
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -128,6 +138,7 @@
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi

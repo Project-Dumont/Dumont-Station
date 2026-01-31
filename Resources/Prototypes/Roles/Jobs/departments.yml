@@ -213,6 +213,7 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
+  - Geneticist # Corvax-Wega-Genetics
   - MedicalDoctor
   - MedicalIntern
   - Psychologist

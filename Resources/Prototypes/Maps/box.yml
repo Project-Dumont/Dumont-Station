@@ -132,6 +132,7 @@
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 4, 4 ]
             Psychologist: [ 1, 1 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]

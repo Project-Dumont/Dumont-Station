@@ -45,43 +45,15 @@ server-currency-command-error-1 = Unable to find a player by that name.
 server-currency-command-error-2 = Value must be an integer.
 server-currency-command-return = {$player} has {$balance}.
 
-# 65% Update
+# Gaby
 
-gs-balanceui-title = Store
-gs-balanceui-confirm = Confirm
+server-currency-command-desc-add-title = Add a title to a user or yourself.
+server-currency-command-desc-add-ghost-skin = Add a ghost skin to a user or yourself.
+server-currency-command-desc-remove-title = Removes a title from a user or yourself.
+server-currency-command-desc-remove-skin = Removes a ghost skin from a user or yourself.
+server-currency-command-desc-store-rotation = Do the store rotation.
+server-currency-command-open-balanceui = Open the currency UI
 
-gs-balanceui-gift-label = Transfer:
-gs-balanceui-gift-player = Player
-gs-balanceui-gift-player-tooltip = Insert the name of the player you want to send the money to
-gs-balanceui-gift-value = Value
-gs-balanceui-gift-value-tooltip = Amount of money to transfer
-
-gs-balanceui-shop-label = Tokens Store
-gs-balanceui-shop-empty = Out of stock!
-gs-balanceui-shop-buy = Buy
-gs-balanceui-shop-footer = ⚠ Ahelp to use your token. Only 1 use per day.
-
-gs-balanceui-shop-token-label = Tokens
-gs-balanceui-shop-tittle-label = Titles
-
-gs-balanceui-shop-buy-token-antag = Buy an Antag Token - {$price} Goob Coins
-gs-balanceui-shop-buy-token-admin-abuse = Buy an Admin Abuse Token - {$price} Goob Coins
-gs-balanceui-shop-buy-token-hat = Buy a Hat Token - {$price} Goob Coins
-
-gs-balanceui-shop-token-antag = High Tier Antag Token
-gs-balanceui-shop-token-admin-abuse = Admin Abuse Token
-gs-balanceui-shop-token-hat = Hat Token
-
-gs-balanceui-shop-buy-token-antag-desc = Allows you become any antag. (Excluding Wizards)
-gs-balanceui-shop-buy-token-admin-abuse-desc = Allows you to request an admin to abuse their powers against you. Admins are encouraged to go wild.
-gs-balanceui-shop-buy-token-hat-desc = An admin will give you a random hat.
-
-gs-balanceui-admin-add-label = Add (or subtract) money:
-gs-balanceui-admin-add-player = Player name
-gs-balanceui-admin-add-value = Value
-
-gs-balanceui-remark-token-antag = Bought an antag token.
-gs-balanceui-remark-token-admin-abuse = Bought an admin abuse token.
-gs-balanceui-remark-token-hat = Bought a hat token.
-gs-balanceui-shop-click-confirm = Click again to confirm
-gs-balanceui-shop-purchased = Purchased {$item}
+server-currency-command-error-unknow-prototype = Unknow prototype.
+server-currency-command-error-has-item = User already has this!
+server-currency-command-error-does-not-have-item = The user does not own this item.

@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: false
+  parent: Paper
+  id: ArrestWarrant
+  name: arrest warrant
+  description: A legal document authorizing the arrest of a specific individual.
+  components:
+  - type: Sprite
+    layers:
+    - state: acquisition_form
+    - state: acquisition_form_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: acquisition_form_header
+      color: "#ff4242"
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: Tag
+    tags:
+    - Trash
+    - Document
+    - Paper
+  - type: Paper
+    editingDisabled: true
+  - type: PaperVisuals
+    # footerImagePath: "/Textures/Interface/Paper/AcquisitionSlips/barcode.svg.192dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/ArrestWarrant/header.svg.192dpi.png"
+    maxWritableArea: 512.0, 512.0

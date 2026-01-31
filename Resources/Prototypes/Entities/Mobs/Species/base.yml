@@ -413,6 +413,7 @@
     - Adrenaline
     - Brainrotted # Goobstation - skibidi rizz ohio update
     - Dementia # Goobstation - Amnestic spray!
+    - Dizzy # Corvax-Wega-Dizzy
   - type: Body
     prototype: Human
     requiredLegs: 2
@@ -428,6 +429,7 @@
     sprite: Objects/Misc/ensnare.rsi
     state: icon
   - type: AnimationPlayer
+  - type: CriminalRecord
   - type: Buckle
   - type: CombatMode
     canDisarm: true
@@ -445,6 +447,7 @@
   - type: StandingState
   - type: Dna
   - type: Scent # Einstein Engines
+  - type: DnaModifier
   - type: MindContainer
     showExamineInfo: true
   - type: CanEnterCryostorage
