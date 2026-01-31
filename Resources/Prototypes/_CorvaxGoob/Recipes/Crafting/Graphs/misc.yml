@@ -30,4 +30,4 @@
             sprite: Objects/Misc/bureaucracy.rsi
             state: paper
   - node: album
-    entity: PhotoAlbum
+    entity: PhotoAlbumMakeshift
