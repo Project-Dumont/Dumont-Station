@@ -43,6 +43,15 @@
   name: photo album makeshift
   description: A book makeshift with a bunch of memories. Put the photos in it and they will end up in the round end summary window. Use the labeler to name the photos.
   components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Misc/photo_album_makeshift.rsi
+    layers:
+      - state: album-empty
+      - state: filled-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Icon
+    sprite: _Gabystation/Objects/Misc/photo_album_makeshift.rsi
+    state: icon
   - type: Storage
     grid:
     - 0,0,0,2
