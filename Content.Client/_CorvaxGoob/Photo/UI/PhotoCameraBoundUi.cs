@@ -101,6 +101,9 @@ public sealed class PhotoCameraBoundUserInterface : BoundUserInterface
         if (_cameraEntity == null || _window == null)
             return;
 
+        if (!EntMan.HasComponent<TransformComponent>(_cameraEntity))
+            return;
+
         Vector2 pos = _zoomPos + _window.MoveInput * _zoomValue * frameTime;
 
         float zoom = Math.Clamp(_zoomValue + _window.ZoomInput * frameTime * (component.MaxZoom - component.MinZoom), component.MinZoom, component.MaxZoom);
