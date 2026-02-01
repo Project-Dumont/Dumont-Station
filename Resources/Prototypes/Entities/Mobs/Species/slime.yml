@@ -109,10 +109,13 @@
         type: StoreBoundUserInterface
       enum.HereticLivingHeartKey.Key: # goob edit - heretics
         type: LivingHeartMenuBoundUserInterface
-      enum.BloodCultistCommuneUIKey.Key: # funky edit - cultists
+      enum.RadarConsoleUiKey.Key: #goob - contractor
+        type: RadarConsoleBoundUserInterface
+      # Funky edit - cultists
+      enum.BloodCultistCommuneUIKey.Key:
         type: BloodCultCommuneBoundUserInterface
         requireInputValidation: false
-      enum.SpellsUiKey.Key: # funky edit - cultists
+      enum.SpellsUiKey.Key:
         type: SpellsBoundUserInterface
         requireInputValidation: false
       # Shitmed

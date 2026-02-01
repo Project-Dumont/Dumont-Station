@@ -907,6 +907,7 @@
   minLimit: 0
   loadouts:
   - ClothingNeckScarfStripedCentcom
+  - NanotrasenRepresentativeEnsemble
   - ClothingCloakBoatNT
 
 - type: loadoutGroup
@@ -1018,6 +1019,7 @@
   minLimit: 0
   loadouts:
   - BlueshieldOfficerOuterBlueshieldMantle
+  - BlueshieldOfficerEnsemble
 
 - type: loadoutGroup
   id: BlueshieldOfficerMask
@@ -1273,7 +1275,7 @@
   loadouts:
   - RoboticistPDA
 
-# Salvage / Miner
+# Salvage
 
 - type: loadoutGroup
   id: SalvageEnvirohelm
@@ -1305,6 +1307,7 @@
   minLimit: 0
   loadouts:
   - MinerCloak
+  - SalvageEspecialistEnsemble
   - SalvageCloak
 
 # Chemist

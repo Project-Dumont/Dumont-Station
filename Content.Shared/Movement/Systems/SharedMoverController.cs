@@ -146,6 +146,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared._vg.TileMovement;
 using Content.Shared.Standing; // Goobstation - kil mofs
+using Content.Goobstation.Common.MomentumSteering; // Goobstation - also kil mofs
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 
 namespace Content.Shared.Movement.Systems;
@@ -171,6 +172,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private   readonly TagSystem _tags = default!;
     [Dependency] private   readonly SharedInteractionSystem _interaction = default!; // Tile Movement Change
     [Dependency] private   readonly StandingStateSystem _standing = default!; // Goobstation - kil mofs
+    [Dependency] private   readonly CommonMomentumSteeringSystem _momentumSteering = default!; // Goobstation - momentum steering
 
     protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
     protected EntityQuery<FootstepModifierComponent> FootstepModifierQuery;
@@ -191,6 +193,7 @@ public abstract partial class SharedMoverController : VirtualController
 
     protected EntityQuery<FixturesComponent> FixturesQuery; // Tile Movement Change
     protected EntityQuery<TileMovementComponent> TileMovementQuery; // Tile Movement Change
+    protected EntityQuery<MomentumSteeringComponent> MomentumSteeringQuery; // Goobstation - momentum steering
 
     private bool _relativeMovement;
     private float _minDamping;
@@ -224,6 +227,7 @@ public abstract partial class SharedMoverController : VirtualController
         TileMovementQuery = GetEntityQuery<TileMovementComponent>(); // Tile Movement Change
         NoShoesSilentQuery = GetEntityQuery<NoShoesSilentFootstepsComponent>(); // DeltaV - NoShoesSilentFootstepsComponent
         MapQuery = GetEntityQuery<MapComponent>();
+        MomentumSteeringQuery = GetEntityQuery<MomentumSteeringComponent>(); // Goobstation - momentum steering
 
         SubscribeLocalEvent<MovementSpeedModifierComponent, TileFrictionEvent>(OnTileFriction);
 
@@ -450,6 +454,10 @@ public abstract partial class SharedMoverController : VirtualController
             accel *= tileDef?.MobAcceleration ?? 1f;
         }
 
+        // Goobstation - momentum steering
+        if (weightless && MomentumSteeringQuery.TryComp(uid, out var momSteer))
+            _momentumSteering.KillFriction(momSteer, velocity, ref friction);
+
         // This way friction never exceeds acceleration when you're trying to move.
         // If you want to slow down an entity with "friction" you shouldn't be using this system.
         if (wishDir != Vector2.Zero)
@@ -458,8 +466,18 @@ public abstract partial class SharedMoverController : VirtualController
         var minimumFrictionSpeed = moveSpeedComponent?.MinimumFrictionSpeed ?? MovementSpeedModifierComponent.DefaultMinimumFrictionSpeed;
         Friction(minimumFrictionSpeed, frameTime, friction, ref velocity);
 
-        if (!weightless || touching)
+        // Goobstation - momentum steering
+        if (weightless && touching && wishDir != Vector2.Zero
+            && MomentumSteeringQuery.TryComp(uid, out var momSteer2)
+            && _momentumSteering.TryAdjustedWishDir(momSteer2, velocity, wishDir, out var adjWishDir, out var momSpeed))
+        {
+            Accelerate(ref velocity, in adjWishDir, accel, frameTime);
+            _momentumSteering.TryApplyMomentumJitter(uid, momSteer2, momSpeed);
+        }
+        else if (!weightless || touching)
+        {
             Accelerate(ref velocity, in wishDir, accel, frameTime);
+        }
 
         SetWishDir((uid, mover), wishDir);
 

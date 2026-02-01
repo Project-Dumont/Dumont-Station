@@ -88,7 +88,8 @@
             PermaPrisoner: [ 1, 0 ] # HARMONY
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 2, 3 ]
+            SalvageSpecialist: [ 3, 3 ]
+            ShaftMiner: [ 3, 3 ]
             CargoTechnician: [ 2, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
