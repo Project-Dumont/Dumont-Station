@@ -3,8 +3,10 @@
 
   Essa regra irá abordar sobre o metashield de diferentes papeis, se seu grupo de papeis não sabe sobre certos antagonistas, voce deve apenas se referir a eles com sua aparencia ou algum aspecto do genero
 
+
   ## Tripulação Geral
 
+  Antagonistas não listados em nenhuma parte desta regra serão consideradas partes do conhecimento da tripulação geral, até que uma atualização de regras altere isso.
   A tripulação geral só conhece os seguintes antagonistas:
 
   - Traidor
@@ -16,6 +18,8 @@
   - Mago
   - Fireteam
   - Bingle
+  - Revolucionários
+  - Xenomorfos
 
   ## Padre
 
@@ -25,19 +29,30 @@
   - Blood Cult
   - Cosmic Cult
   - Metamorfos
+  - Shadowling
   - Diabo
+  - Slaughter Demon
+  - Vampiros
+  - Wraith
 
   ## Alto Escalão da Estação
 
   Os seguintes antagonistas são de conhecimento apenas do HoS, Capitão, NTR, BS e oficiais da CC
 
   - Operativos Nucleares
+  - Slasher
 
   ## Alto Escalão da CC
 
   Os seguintes antagonistas são de conhecimento apenas do alto escalão da CC
 
   - DeathSquad
+
+  ## Cientista
+
+  Os seguintes antagonistas são de conhecimento apenas dos da SCI, NTR, BS e oficiais da CC
+
+  - IA Defeituosa (Malf IA)
 
   ## Desconhecido
 
@@ -50,14 +65,14 @@
 
   ## Zumbis
 
-  Os Zumbis eram uma doença antiga, assim, todos da estação pensam que estavam erradicados, os quimicos apenas tem a receita da cura. 
+  Os Zumbis eram uma doença antiga, assim, todos da estação pensam que estavam erradicados, os quimicos apenas tem a receita da cura.
 
   ## Abductors
 
   Os Abductors são aliens que se escondem de todos, assim ninguem sabe sobre eles, ou oque eles fazem.
 
   # Condições de Revelação
-  
+
   # Itens
 
   ## Implantes implantados
@@ -124,4 +139,13 @@
   - Você é um Químico
   - Você é um Médico Chefe
   - Zumbis são anunciados como reais e presentes em toda a estação
+
+  ## Malf IA
+
+  A condição de revelação para este Metashield é qualquer uma das seguintes:
+
+  - Você é uma IA Defeituosa.
+  - Você testemunhou a IA agir de forma hostil contra a tripulação.
+  - Você testemunhou a IA sabotando sistemas diversos da estação.
+  - O protocolo DOOMSDAY foi ativado.
 </Document>
