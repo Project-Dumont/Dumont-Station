@@ -250,8 +250,8 @@
   priority: 11
   text: "/ServerInfo/Guidebook/ServerRules/RoleplayRules/RuleR9Escalation.xml"
   children:
-  - RuleR11-1
-  - RuleR11-2
+  - RuleR9-1
+  - RuleR9-2
 
 - type: guideEntry
   id: RuleR9-1
@@ -567,7 +567,7 @@
   ruleEntry: true
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SandboxRules/RuleX1MassiveDamage.xml"
-  
+
 - type: guideEntry
   id: RuleX2
   name: guide-entry-rules-x2
