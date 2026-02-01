@@ -75,6 +75,7 @@
 - type: ghostSkinListing
   id: DaveJonesSkin
   name: ghost-skin-dave-jones
+  available: false # apenas primeiro mes da loja nova
   price: 18000
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/mago.rsi"
