@@ -138,8 +138,8 @@
     maxSpeed: 2.5
     minSpeed: 1.875
   - type: SingularityDistortion
-    falloffPower: 2.529822
-    intensity: 3645
+    falloffPower: 3.2994
+    intensity: 18000000 # 3645
   - type: RadiationSource
     slope: 0.2 # its emit really far away
     intensity: 6 # Goobstation - Radiation Overhaul

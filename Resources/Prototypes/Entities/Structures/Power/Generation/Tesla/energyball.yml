@@ -36,10 +36,10 @@
     chasingComponent:
     - type: LightningTarget
   - type: AmbientSound
-    volume: 3
+    volume: -2
     range: 15
     sound:
-      path: /Audio/Effects/tesla.ogg
+      path: /Audio/_Gabystation/Misc/ArcaneKirk.ogg
   - type: PointLight
     enabled: true
     radius: 8
