@@ -94,7 +94,7 @@
     volume: -4
     range: 14
     sound:
-      path: /Audio/Effects/singularity.ogg
+      path: /Audio/_Gabystation/Misc/ArcaneKirk.ogg # Gaby change
   - type: Physics
     bodyType: Dynamic
     bodyStatus: InAir
