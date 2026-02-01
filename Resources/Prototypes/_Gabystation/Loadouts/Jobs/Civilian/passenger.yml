@@ -7,6 +7,11 @@
 
 # Hats
 - type: loadout
+  id: ToucaDeGato
+  equipment:
+    head: ClothingHeadHatToucaDeGato
+
+- type: loadout
   id: WitchHat
   equipment:
     head: ClothingHeadHatWitch1

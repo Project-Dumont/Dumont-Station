@@ -341,6 +341,7 @@
   - CaptainHead
   - CaptainCap
   - CaptainCapcapSenior # goob
+  - CaptainCapMarinheiro #Gabystation
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -354,6 +355,7 @@
   - CaptainFormalSkirt
   - CaptainJumpsuitMilitary # goob
   - CaptainSummerShirt # also goob
+  - CaptainMarinheiroSuit #Gabystation
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -551,6 +553,7 @@
   loadouts:
   - HeadbandBlack
   - WitchHat #Gabystation
+  - ToucaDeGato #Gabystation
   - BrownFedora #Gabystation
   - GreyFedora #Gabystation
   - Fez #Gabystation
@@ -562,7 +565,7 @@
   - SafariHat #Gabystation
   - Beret #Gabystation
   - FrenchBeret #Gabystation
-  - BeaverHat #Gabystation
+  - BeaverHat #Gabystatio
 
 
 - type: loadoutGroup
