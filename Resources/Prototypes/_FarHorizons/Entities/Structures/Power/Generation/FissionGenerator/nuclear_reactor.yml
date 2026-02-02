@@ -386,6 +386,14 @@
     arrowPrototype: ReactorSmallFlowArrow
 
 - type: entity
+  id: NuclearReactorSmallEmptySalvage
+  parent: NuclearReactorSmallSalvage
+  suffix: "Empty, Salvage"
+  components:
+  - type: NuclearReactor
+    prefab: Empty # Dumont
+
+- type: entity
   parent: NuclearReactorSmall
   id: NuclearReactorSmallRandomSalvage
   suffix: "Random, Salvage"
