@@ -80,24 +80,28 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
                 FontColorOverride = objectiveProto.Color,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
+                StyleClasses = { StyleClass.LabelKeyText }
             });
 
             offering.AddContent(new Label(){ Text = Loc.GetString("salvage-expedition-window-objective-description") });
             offering.AddContent(new RichTextLabel
             {
-                Text = $"[color={StyleNano.NanoGold.ToHex()}]{Loc.GetString(objectiveProto.Description)}[/color]",
+                Text = $"[color={StyleNano.NanoGold.ToHex()}][bold]{Loc.GetString(objectiveProto.Description)}[/bold][/color]",
                 MaxWidth = 200,
                 HorizontalAlignment = Control.HAlignment.Left,
-                Margin = new Thickness(0f, 0f, 0f, 5f),
+                Margin = new Thickness(0f, 0f, 0f, 5f)
             });
+
+            var ticketReward = objectiveProto.BaseReward.GetValueOrDefault(difficultyId, 0);
 
             offering.AddContent(new Label(){ Text = Loc.GetString("salvage-expedition-window-objective-reward") });
             offering.AddContent(new Label
             {
-                Text = objectiveProto.BaseReward.GetValueOrDefault(difficultyId, 0).ToString() + " tickets",
+                Text = $"{ticketReward} tickets | ${ticketReward * objectiveProto.CashMultiplier}",
                 FontColorOverride = StyleNano.NanoGold,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
+                StyleClasses = { StyleClass.LabelKeyText }
             });
             // Far Horizons end
 
@@ -116,6 +120,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
                 FontColorOverride = difficultyColor,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
+                StyleClasses = { StyleClass.LabelKeyText }, // Far Horizons - uniform style
             });
 
             // Far Horizons - freeing some visual space in UI

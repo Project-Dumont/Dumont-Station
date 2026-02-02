@@ -16,4 +16,6 @@ public sealed partial class SalvageMissionRewardComponent : Component
     public int TotalReward = 0;
     [ViewVariables]
     public ProtoId<SalvageMissionObjectivePrototype> parentObjective = "";
+
+    [ViewVariables] public float CashMultiplier;
 }

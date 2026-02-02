@@ -69,9 +69,14 @@ public sealed class SalvageMissionObjectiveSystem : EntitySystem
     private void ProcessReward(Entity<SalvageMissionRewardComponent> ent)
     {
         var objective = _protoMan.Index<SalvageMissionObjectivePrototype>(ent.Comp.parentObjective);
-        
+
+        var totalCash = (int)(ent.Comp.TotalReward * ent.Comp.CashMultiplier);
+
         if(ent.Comp.TotalReward > 0 && _transform.TryGetMapOrGridCoordinates(ent, out var pos))
-            _stack.SpawnMultiple(objective.RewardProto, ent.Comp.TotalReward, pos.Value);
+        {
+            _stack.SpawnMultipleAtPosition(objective.RewardProto, ent.Comp.TotalReward, pos.Value);
+            _stack.SpawnMultipleAtPosition(objective.CashProto, totalCash, pos.Value);
+        }
         EntityManager.RemoveComponent<SalvageMissionRewardComponent>(ent);
 
         _chat.TrySendInGameICMessage(
@@ -79,7 +84,7 @@ public sealed class SalvageMissionObjectiveSystem : EntitySystem
             Loc.GetString(ent.Comp.MissionCompleted ? 
                 objective.CompletionText : 
                 objective.FailText, 
-            ("bonus", ent.Comp.Bonuses), ("maxBonus", ent.Comp.MaxBonuses), ("totalReward", ent.Comp.TotalReward)),
+            ("bonus", ent.Comp.Bonuses), ("maxBonus", ent.Comp.MaxBonuses), ("totalReward", ent.Comp.TotalReward), ("totalCash", totalCash)),
             InGameICChatType.Speak, ChatTransmitRange.GhostRangeLimit, false); // Since apparently errors on listeners can prevent rest of the event from running, moving chat message to the end
     }
 

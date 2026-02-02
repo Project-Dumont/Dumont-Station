@@ -14,6 +14,7 @@
     Easy: 700
     Moderate: 900
     Challenging: 1100
+  cashMultiplier: 5.5
   numTargets:
     Easy: 2
     Moderate: 4
@@ -38,6 +39,7 @@
     Easy: 1000
     Moderate: 1150
     Challenging: 1350
+  cashMultiplier: 6
   numTargets:
     Easy: 1
     Moderate: 2
@@ -58,6 +60,7 @@
     Easy: 950
     Moderate: 1100
     Challenging: 1250
+  cashMultiplier: 4
   numTargets:
     Easy: 2
     Moderate: 2
@@ -80,6 +83,7 @@
     Easy: 800
     Moderate: 1050
     Challenging: 1200
+  cashMultiplier: 4
   numTargets:
     Easy: 4
     Moderate: 5
@@ -102,6 +106,7 @@
     Easy: 850
     Moderate: 1150
     Challenging: 1300
+  cashMultiplier: 5.5
   numTargets:
     Easy: 2
     Moderate: 3

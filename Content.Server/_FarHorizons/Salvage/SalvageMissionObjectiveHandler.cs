@@ -214,6 +214,7 @@ public abstract partial class BaseSalvageMissionObjectiveHandler
         comp.MaxBonuses = reward.maxBonuses;
         comp.TotalReward = reward.totalReward;
         comp.parentObjective = Objective.ID;
+        comp.CashMultiplier = Objective.CashMultiplier;
     }
 
     protected (bool completed, int bonuses, int maxBonuses, int totalReward) ResolveCompletion(int numCompletedTargets) =>

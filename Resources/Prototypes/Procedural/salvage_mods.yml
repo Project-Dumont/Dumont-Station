@@ -148,6 +148,7 @@
     - Caves
     - Grasslands
     - Snow
+    - Mountains # Far Horizons
   difficulties: 
     - Challenging
     - Moderate
@@ -161,6 +162,7 @@
   biomes:
     - Caves
     - Snow
+    - Mountains # Far Horizons
   difficulties: 
     - Challenging
     - Moderate
@@ -172,6 +174,7 @@
   temperature: 123.15 # -150C
   biomes:
     - Snow
+    - Mountains # Far Horizons
   difficulties: 
     - Challenging
 
@@ -214,6 +217,7 @@
     - Caves
     - LowDesert # Far Horizons
     - Snow
+    - Mountains # Far Horizons
     - Grasslands
     - Lava
   difficulties: 
@@ -233,6 +237,7 @@
     - LowDesert # Far Horizons
     - Snow
     - Grasslands
+    - Mountains # Far Horizons
     - Lava
   difficulties: 
     - Challenging
@@ -249,6 +254,7 @@
   biomes:
     - Caves
     - Snow
+    - Mountains # Far Horizons
     - Lava
   difficulties: 
     - Challenging
@@ -334,6 +340,7 @@
   proto: SnowyLabs
   biomes:
     - Snow
+    - Mountains # Far Horizons
   difficulties: 
     - Challenging
     - Moderate

@@ -612,13 +612,6 @@ entities:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
-- proto: BoxBodyBag
-  entities:
-  - uid: 3
-    components:
-    - type: Transform
-      pos: -1.477756,-7.398177
-      parent: 2
 - proto: CableApcExtension
   entities:
   - uid: 39

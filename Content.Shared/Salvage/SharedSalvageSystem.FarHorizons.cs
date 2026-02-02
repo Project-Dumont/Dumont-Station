@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections.Generic;
 using Content.Shared._FarHorizons.Salvage;
 using Content.Shared.Procedural;
 using Content.Shared.Salvage.Expeditions;
@@ -21,7 +22,7 @@ public abstract partial class SharedSalvageSystem
 
     public SalvageMissionObjectivePrototype GetMissionObjective(System.Random rand, ProtoId<SalvageDifficultyPrototype> difficulty, ProtoId<SalvageBiomeModPrototype> biome, ProtoId<SalvageFactionPrototype> faction, ProtoId<SalvageDungeonModPrototype> dungeon)
     {
-        var objectives = _proto.EnumeratePrototypes<SalvageMissionObjectivePrototype>()
+        List<SalvageMissionObjectivePrototype> objectives = _proto.EnumeratePrototypes<SalvageMissionObjectivePrototype>()
                             .Where(p => 
                                 (p.AllowedDifficulties == null || p.AllowedDifficulties.Contains(difficulty)) &&
                                 (p.AllowedBiomes == null || p.AllowedBiomes.Contains(biome)) && 
@@ -44,9 +45,10 @@ public abstract partial class SharedSalvageSystem
     public SalvageWeatherMod GetWeatherMod(System.Random rand, ProtoId<SalvageDifficultyPrototype> difficulty, ProtoId<SalvageBiomeModPrototype> biome, ref float rating)
     {
         var searchRating = rating;
-        var weathers = _proto.EnumeratePrototypes<SalvageWeatherMod>()
+        
+        // Dumont Fix: Removido o Difficulties
+        List<SalvageWeatherMod> weathers = _proto.EnumeratePrototypes<SalvageWeatherMod>()
                              .Where(p => 
-                                (p.Difficulties == null || p.Difficulties.Contains(difficulty)) &&
                                 (p.Biomes == null || p.Biomes.Contains(biome)) &&
                                 (p.Cost <= searchRating))
                              .ToList();

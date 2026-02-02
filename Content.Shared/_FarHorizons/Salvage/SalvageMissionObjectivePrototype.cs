@@ -29,6 +29,7 @@ public sealed partial class SalvageMissionObjectivePrototype : IPrototype
     public LocId FailText = "salvage-mission-objective-failed-message";
     [DataField]
     public EntProtoId RewardProto = "SalvageTicket";
+    [DataField] public EntProtoId CashProto = "SpaceCash";
 
     [DataField(required: true)]
     public LocId Name;
@@ -47,6 +48,8 @@ public sealed partial class SalvageMissionObjectivePrototype : IPrototype
     public int Bonus = 0;
     [DataField]
     public int BonusCap = 0;
+
+    [DataField] public float CashMultiplier;
 
     [DataField]
     public string? HandlerId;
