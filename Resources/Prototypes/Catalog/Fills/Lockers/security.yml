@@ -256,6 +256,7 @@
     - id: BoxTapeRecorder # DeltaV
     - id: CassetteTapeInterview # Gabystation - lore
       prob: 0.25
+    - id: PhotoCameraFilled # CorvaxGoob-PhotoCamera
 
 - type: entity
   id: ClosetBombFilled
