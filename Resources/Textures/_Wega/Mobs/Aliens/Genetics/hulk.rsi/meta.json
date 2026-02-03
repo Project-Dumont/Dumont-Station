@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/ss220-space/Paradise",
+    "size": {
+        "x": 31,
+        "y": 44
+    },
+    "states": [
+        {
+            "name": "hulk",
+            "directions": 4
+        }
+    ]
+}

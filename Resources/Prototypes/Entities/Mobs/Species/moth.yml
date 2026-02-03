@@ -181,6 +181,7 @@
     baseWeightlessAcceleration: 3 # Goobstation value
     baseWeightlessFriction: 1
     baseWeightlessModifier: 1
+  - type: MomentumSteering # Goobstation - No steer
   - type: Flammable
     damage:
       types:
@@ -328,6 +329,12 @@
         - MobLayer
   - type: DashAction # Goobstation - dark souls moths
     actionProto: ActionDashMoth
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMothroachMoth
+  # Corvax-Wega-Genetics-end
+
 
 - type: entity
   parent: BaseSpeciesDummy

@@ -117,6 +117,7 @@ using Content.Shared.Chat;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Implants;
 using Content.Shared.Inventory;
+using Content.Shared.Genetics; // Corvax-Wega-Genetics
 using Content.Shared.Light;
 using Content.Shared.Light.EntitySystems;
 using Content.Shared.PDA;
@@ -126,7 +127,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Content.Shared.Security.Systems;
+using Content.Shared.Security.Systems; // Beepsky - GabyStation
 
 namespace Content.Server.PDA
 {
@@ -176,7 +177,7 @@ namespace Content.Server.PDA
 
         private void OnEntityRenamed(ref EntityRenamedEvent ev)
         {
-            if (HasComp<IdCardComponent>(ev.Uid))
+            if (HasComp<IdCardComponent>(ev.Uid) || HasComp<DnaClonedComponent>(ev.Uid)) // Corvax-Wega-Genetics-Edit
                 return;
 
             if (_idCard.TryFindIdCard(ev.Uid, out var idCard))
@@ -212,6 +213,7 @@ namespace Content.Server.PDA
                 pda.OwnerName = id.FullName;
             UpdatePdaUi(uid, pda);
 
+            // Beepsky - GabyStation
             if (args.Container.ID == PdaComponent.PdaIdSlotId)
                 RaiseLocalEvent(uid, new PdaIdChangedEvent(uid, pda.ContainedId));
         }
@@ -232,6 +234,7 @@ namespace Content.Server.PDA
             base.OnItemRemoved(uid, pda, args);
             UpdatePdaUi(uid, pda);
 
+            // Beepsky - GabyStation
             if (args.Container.ID == PdaComponent.PdaIdSlotId)
                 RaiseLocalEvent(uid, new PdaIdChangedEvent(uid, null));
         }

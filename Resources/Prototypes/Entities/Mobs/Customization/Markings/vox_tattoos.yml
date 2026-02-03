@@ -10,6 +10,7 @@
   id: TattooVoxHeartLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Vox]
   coloring:
     default:
@@ -24,6 +25,7 @@
   id: TattooVoxHeartRightArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Vox]
   coloring:
     default:
@@ -38,6 +40,7 @@
   id: TattooVoxHiveChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Vox]
   coloring:
     default:
@@ -52,6 +55,7 @@
   id: TattooVoxNightlingChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [Vox]
   coloring:
     default:

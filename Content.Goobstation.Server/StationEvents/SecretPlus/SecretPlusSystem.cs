@@ -31,6 +31,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Server._Gabystation;
 
 namespace Content.Goobstation.Server.StationEvents.SecretPlus;
 
@@ -319,6 +320,7 @@ public sealed class SecretPlusSystem : GameRuleSystem<SecretPlusComponent>
     private void StartRule(Entity<SecretPlusComponent> scheduler, string rule, bool doStart = true, int? players = null)
     {
         var ruleUid = _ticker.AddGameRule(rule);
+        _tag.AddTag(ruleUid, GabyConstants.GameDirectorRuleTag);
 
         scheduler.Comp.ChaosScore += GetChaosScore(ruleUid, players)!.Value;
 

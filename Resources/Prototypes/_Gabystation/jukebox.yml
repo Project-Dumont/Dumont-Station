@@ -607,3 +607,22 @@
   name: Rapid Liquid - Never Gonna Meow You up
   path:
     path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg
+
+- type: jukebox
+  id: Runoutdois
+  name: Running Out V2 - Sanabi
+  path:
+    path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
+
+- type: jukebox
+  id: Ordinarilife
+  name: My Ordinary Life - The Living Tombstone
+  path:
+    path: /Audio/_Gabystation/Jukebox/my-ordinary-life.ogg
+
+- type: jukebox
+  id: Posterboy
+  name: Poster Boy - 2hollis
+  path:
+    path: /Audio/_Gabystation/Jukebox/poster-boy.ogg
+

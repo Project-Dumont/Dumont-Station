@@ -50,6 +50,7 @@ public sealed partial record CriminalRecord
 [Serializable, NetSerializable]
 public record struct CrimeHistory(TimeSpan AddTime, string Crime, string? InitiatorName);
 
+// Beepsky - GabyStation
 [Serializable, NetSerializable]
 public sealed class CriminalRecordChanged : EntityEventArgs
 {

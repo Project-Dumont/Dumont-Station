@@ -8,12 +8,14 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Radio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators;
 
 public sealed partial class SendRadioOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private RadioSystem _radio = default!;
     private NavMapSystem _navMap = default!;
@@ -40,6 +42,12 @@ public sealed partial class SendRadioOperator : HTNOperator
 
     public override HTNOperatorStatus Update(NPCBlackboard blackboard, float frameTime)
     {
+        if (blackboard.TryGetValue<TimeSpan>("RadioCooldown", out var lastTime, _entManager))
+        {
+            if (_timing.CurTime < lastTime + TimeSpan.FromSeconds(3))
+                return HTNOperatorStatus.Failed;
+        }
+
         var message = string.Empty;
 
         if (KeyIsEntity)
@@ -63,6 +71,9 @@ public sealed partial class SendRadioOperator : HTNOperator
         var speaker = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
         _radio.SendRadioMessage(speaker, message, RadioChannel, speaker, escapeMarkup: false);
+
+        blackboard.SetValue("RadioCooldown", _timing.CurTime);
+
         return HTNOperatorStatus.Finished;
     }
 }

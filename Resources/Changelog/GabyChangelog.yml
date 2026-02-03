@@ -1828,3 +1828,71 @@ Entries:
       message: Livro A Arte da Robustec
   id: 217
   time: '2026-01-25T18:21:41.0000000+00:00'
+- author: LuciferEOS
+  changes:
+    - type: Add
+      message: >-
+        Atenção, entrando na zona biologicamente morta a 2000m da estação.
+        Sinais de vida de grande porte desconhecidos detectados.
+  id: 218
+  time: '2026-01-27T16:10:10.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o Beepsky está 1% balanceado.
+  id: 219
+  time: '2026-01-27T16:13:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: A genética chegou.
+  id: 220
+  time: '2026-01-27T16:34:35.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Buffs no equipamento de CBURN.
+  id: 221
+  time: '2026-01-27T16:37:16.0000000+00:00'
+- author: InvisibleSnake
+  changes:
+    - type: Add
+      message: Capivara Ronilson
+  id: 222
+  time: '2026-01-27T16:40:07.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona manifesto de prontos.
+  id: 223
+  time: '2026-01-30T02:34:08.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido Secret Plus reiniciar o round!
+  id: 224
+  time: '2026-01-30T03:00:43.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Faz algumas leves mudanças a central de comando de verão
+  id: 225
+  time: '2026-02-01T14:42:40.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas músicas Running Out V2, My Ordinary Life e Poster boy na Jukebox!
+  id: 226
+  time: '2026-02-01T14:52:01.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 01/02 (confira a aba do Goob)!
+  id: 227
+  time: '2026-02-01T15:06:13.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Removed fun!
+  id: 228
+  time: '2026-02-01T20:55:49.0000000+00:00'

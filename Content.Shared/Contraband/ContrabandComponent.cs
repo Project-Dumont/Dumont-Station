@@ -44,13 +44,8 @@ public sealed partial class ContrabandComponent : Component
     [AutoNetworkedField]
     public HashSet<ProtoId<JobPrototype>> AllowedJobs = new();
 
+    // Beepsky - GabyStation
     [DataField]
     [AutoNetworkedField]
     public float CriminalPoints = 0f;
-
-    [DataField, AutoNetworkedField]
-    public HashSet<ProtoId<DepartmentPrototype>> AllowedDepartmentsContraband = new()
-    {
-        "CentralCommand", "Command", "Security"
-    };
 }

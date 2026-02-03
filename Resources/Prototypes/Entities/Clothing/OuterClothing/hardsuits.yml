@@ -811,6 +811,8 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.65
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 #Head of Security's Hardsuit, heavily edited by goob
 - type: entity
@@ -1477,7 +1479,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
+        Blunt: 0.4 # Gabystation - CBURN deal with a lot of blunt
         Slash: 0.3 # Goobstation - CBURN should protect against zombie attacks
         Piercing: 0.6
         Heat: 0.10
@@ -1486,7 +1488,7 @@
         Radiation: 0.1
         Caustic: 0.1
   - type: ZombificationResistance
-    zombificationResistanceCoefficient: 0.25
+    zombificationResistanceCoefficient: 0.2 # Gabystation - Minor buff
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0

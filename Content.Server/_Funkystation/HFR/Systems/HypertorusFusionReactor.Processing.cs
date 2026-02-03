@@ -641,14 +641,14 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
             if (core.PowerLevel < 2)
             {
                 radSource.Intensity = 0.001f;
-                radSource.Slope = 0.2f;
+                // radSource.Slope = 0.2f; // Goobstation - Terminal rad decay
                 return;
             }
 
             if (radiationModifier < 0.1f && core.CriticalThresholdProximity < 200f)
             {
                 radSource.Intensity = 0.001f;
-                radSource.Slope = 0.2f;
+                // radSource.Slope = 0.2f; // Goobstation - Terminal rad decay
                 return;
             }
 
@@ -674,11 +674,11 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
             intensity = intensity * 0.4f;
 
             // Calculate slope based on intensity I guess, directly stolen from supermatter
-            float slope = Math.Clamp(intensity / 15f, 0.2f, 1f);
+            // float slope = Math.Clamp(intensity / 15f, 0.2f, 1f); // Goobstation - Terminal rad decay
 
             // Apply radiation settings to the component
             radSource.Intensity = intensity;
-            radSource.Slope = slope;
+            // radSource.Slope = slope; // Goobstation - Terminal rad decay
         }
 
         public void CheckLightningArcs(EntityUid coreUid, HFRCoreComponent core, Dictionary<Gas, float> moderatorList)

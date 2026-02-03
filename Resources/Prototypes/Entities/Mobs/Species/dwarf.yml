@@ -95,6 +95,8 @@
       Unsexed: UnisexDwarf
   - type: ReplacementAccent
     accent: dwarf
+  - type: ZombieAccentOverride #Goob
+    accent: zombieDwarf #Goob
   - type: Speech
     speechSounds: Bass
   - type: LanguageKnowledge # Einstein Engines - Languages
@@ -119,6 +121,11 @@
   - type: InnateMiningScannerViewer # Frontier
     pingSound: null
     viewRange: 3 # Goob value
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobDwarf
+    lowest: MobMonkeyDwarf
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

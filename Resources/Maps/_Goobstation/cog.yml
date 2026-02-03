@@ -76,8 +76,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/30/2025 15:44:21
-  entityCount: 31831
+  time: 01/10/2026 15:40:07
+  entityCount: 31837
 maps:
 - 1
 grids:
@@ -9173,7 +9173,7 @@ entities:
           0,-1:
             0: 30577
           -1,0:
-            0: 47935
+            0: 15167
           0,1:
             0: 7
             1: 4096
@@ -10045,7 +10045,7 @@ entities:
             0: 61133
           8,-8:
             0: 61747
-            3: 136
+            6: 136
           8,-7:
             0: 4095
           8,-6:
@@ -10065,11 +10065,11 @@ entities:
             0: 4369
             2: 50244
           6,-3:
-            4: 48
-            5: 12288
+            3: 48
+            4: 12288
             2: 34952
           6,-2:
-            6: 48
+            5: 48
             1: 12288
             2: 34952
           6,-1:
@@ -10209,16 +10209,16 @@ entities:
             0: 44943
           8,-9:
             0: 12799
-            3: 32768
+            6: 32768
           9,-8:
-            3: 375
+            6: 375
             0: 28672
           9,-7:
             0: 1919
           9,-6:
             0: 20222
           9,-9:
-            3: 28672
+            6: 28672
             0: 255
           9,-5:
             0: 3822
@@ -10606,7 +10606,7 @@ entities:
             0: 45827
           3,8:
             2: 68
-            0: 28672
+            0: 61440
           -13,4:
             2: 128
             0: 29491
@@ -10875,13 +10875,19 @@ entities:
           2,12:
             0: 61439
           3,9:
-            0: 14199
+            0: 16383
           3,10:
             0: 65535
           3,11:
             0: 62463
           3,12:
             0: 61439
+          4,8:
+            0: 12288
+            2: 34944
+          4,9:
+            0: 57395
+            2: 136
           4,10:
             0: 65518
           8,8:
@@ -10927,9 +10933,7 @@ entities:
             1: 49152
           14,3:
             2: 36832
-            7: 2
-            8: 4
-            0: 8
+            0: 14
           14,1:
             0: 61166
           14,2:
@@ -10939,8 +10943,7 @@ entities:
           15,2:
             0: 30576
           15,3:
-            0: 1
-            9: 6
+            0: 7
             2: 4080
           14,4:
             2: 34952
@@ -11061,15 +11064,10 @@ entities:
             0: 25275
           11,12:
             0: 65535
-          4,9:
-            0: 57344
-            2: 136
           4,11:
             0: 61166
           4,12:
             0: 61166
-          4,8:
-            2: 34944
           5,9:
             0: 61986
             2: 136
@@ -11198,7 +11196,7 @@ entities:
           4,14:
             0: 61166
           3,14:
-            10: 65520
+            7: 65520
             0: 2
           4,15:
             0: 65534
@@ -11248,7 +11246,7 @@ entities:
             0: 65535
           2,14:
             0: 13107
-            10: 34944
+            7: 34944
           2,15:
             0: 53233
           2,16:
@@ -11799,122 +11797,65 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
+          - 0
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
           - 0
           - 103.92799
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 23.722616
-          - 89.242226
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 23.721722
-          - 89.23887
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 23.710548
-          - 89.19683
           - 0
           - 0
           - 0
@@ -15272,7 +15213,7 @@ entities:
       pos: 26.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -70546.07
+      secondsUntilStateChange: -71042.34
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -16384,7 +16325,7 @@ entities:
       pos: 41.5,62.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -27812.758
+      secondsUntilStateChange: -28309.035
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -77976,6 +77917,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 40.5,-12.5
       parent: 2
+  - uid: 31835
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,-25.5
+      parent: 2
+  - uid: 31836
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,-26.5
+      parent: 2
 - proto: ChairFolding
   entities:
   - uid: 12402
@@ -81899,11 +81852,10 @@ entities:
       parent: 2
 - proto: ComputerSalvageJobBoard
   entities:
-  - uid: 13035
+  - uid: 31837
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 54.5,-26.5
+      pos: 57.5,-29.5
       parent: 2
 - proto: ComputerScienceXenobiologyBounty
   entities:
@@ -81923,16 +81875,16 @@ entities:
       parent: 2
 - proto: ComputerShuttleMiningLavaland
   entities:
+  - uid: 13035
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 54.5,-26.5
+      parent: 2
   - uid: 13038
     components:
     - type: Transform
       pos: 78.5,-27.5
-      parent: 2
-  - uid: 13039
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 54.5,-27.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -169167,6 +169119,28 @@ entities:
     components:
     - type: Transform
       pos: 25.5,40.5
+      parent: 2
+- proto: SpawnPointShaftMiner
+  entities:
+  - uid: 13039
+    components:
+    - type: Transform
+      pos: 48.5,-25.5
+      parent: 2
+  - uid: 31832
+    components:
+    - type: Transform
+      pos: 48.5,-26.5
+      parent: 2
+  - uid: 31833
+    components:
+    - type: Transform
+      pos: 54.5,-24.5
+      parent: 2
+  - uid: 31834
+    components:
+    - type: Transform
+      pos: 54.5,-25.5
       parent: 2
 - proto: SpawnPointStationEngineer
   entities:

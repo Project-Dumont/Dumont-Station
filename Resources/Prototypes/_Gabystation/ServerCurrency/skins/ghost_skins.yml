@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: ghostSkinListing
   id: DefaultSkin # for internal GhostSkinSystem use
   name: YOU SHOULD BE NOT ABLE TO SEE THIS
@@ -75,6 +79,7 @@
 - type: ghostSkinListing
   id: DaveJonesSkin
   name: ghost-skin-dave-jones
+  available: false # apenas primeiro mes da loja nova
   price: 18000
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/mago.rsi"

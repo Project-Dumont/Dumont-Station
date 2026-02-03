@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Conversion;
 using Content.Goobstation.Shared.Changeling.Components;
 using Content.Goobstation.Shared.LightDetection.Components;
 using Content.Goobstation.Shared.LightDetection.Systems;
@@ -216,11 +217,16 @@ public abstract class SharedShadowlingSystem : EntitySystem
 
     public bool CanGlare(EntityUid target)
     {
+        var convEv = new BeforeConversionEvent();
+        RaiseLocalEvent(target, ref convEv);
+
+        if (convEv.Blocked) // make all the shit below to use the event in the future tm
+            return false;
+
         return HasComp<MobStateComponent>(target)
                && !HasComp<ShadowlingComponent>(target)
                && !HasComp<ThrallComponent>(target)
-               && !HasComp<HereticComponent>(target)
-               && !HasComp<ChangelingIdentityComponent>(target);
+               && !HasComp<HereticComponent>(target);
     }
 
     public void DoEnthrall(EntityUid uid, EntProtoId components, SimpleDoAfterEvent args)

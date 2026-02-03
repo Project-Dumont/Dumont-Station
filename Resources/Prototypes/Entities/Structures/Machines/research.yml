@@ -113,6 +113,7 @@
           enum.PowerDeviceVisualLayers.Powered:
             True: {visible: true}
             False: {visible: false}
+  - type: DnaServer # Corvax-Wega-Genetic
   - type: AmbientOnPowered
   - type: AmbientSound
     volume: -9

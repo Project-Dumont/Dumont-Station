@@ -51,6 +51,7 @@
     - Daengati
     - Shadowkin
     - Feroxi
+    - Shadowkin
     - Waddler
 
 - type: guideEntry
@@ -140,16 +141,22 @@
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
 
 - type: guideEntry
+  id: Shadowkin
+  name: species-name-shadowkin
+  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry
   id: Daengati
   name: species-name-daengati
   text: "/ServerInfo/Guidebook/Mobs/_EstacaoPirata/Daengati.xml"
 
-- type: guideEntry
-  id: Shadowkin
-  name: species-name-shadowkin
-  text: "/ServerInfo/Guidebook/Mobs/_EinsteinEngines/Shadowkin.xml"
+# - type: guideEntry
+#   id: Shadowkin
+#   name: species-name-shadowkin
+#   text: "/ServerInfo/Guidebook/Mobs/_EinsteinEngines/Shadowkin.xml"
 
 - type: guideEntry
   id: Waddler
   name: species-name-waddler
   text: "/ServerInfo/Guidebook/Mobs/Waddler.xml"
+

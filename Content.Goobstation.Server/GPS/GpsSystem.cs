@@ -42,9 +42,13 @@ public sealed class GpsSystem : SharedGpsSystem
         var allEntries = GetGpsEntries();
         var activeGpsQuery = AllEntityQuery<GPSComponent, ActiveUserInterfaceComponent, TransformComponent>();
 
-        while (activeGpsQuery.MoveNext(out var uid, out var gps, out _, out _))
+        while (activeGpsQuery.MoveNext(out var uid, out var gps, out _, out var xform))
         {
-            gps.GpsEntries = allEntries.Where(e => e.NetEntity != GetNetEntity(uid)).ToList();
+            gps.GpsEntries = allEntries
+                .Where(e =>
+                    e.NetEntity != GetNetEntity(uid)
+                    && xform.MapID == e.Coordinates.MapId)
+                .ToList();
             DirtyField(uid, gps, nameof(GPSComponent.GpsEntries));
 
             if (gps.TrackedEntity is not { } tracked)
@@ -71,15 +75,13 @@ public sealed class GpsSystem : SharedGpsSystem
                 continue;
 
             var displayName = string.IsNullOrEmpty(otherGps.GpsName) ? "Unknown GPS" : otherGps.GpsName;
-            entries.Add(new GpsEntry
-            {
-                NetEntity = GetNetEntity(otherUid),
-                Name = displayName,
-                IsDistress = otherGps.InDistress,
-                Color = Color.White,
-                PrototypeId = MetaData(otherUid).EntityPrototype?.ID,
-                Coordinates = _transform.GetMapCoordinates(otherUid, otherTransform)
-            });
+            entries.Add(new GpsEntry(
+                GetNetEntity(otherUid),
+                displayName,
+                MetaData(otherUid).EntityPrototype?.ID,
+                otherGps.InDistress,
+                Color.White,
+                _transform.GetMapCoordinates(otherUid, otherTransform)));
         }
 
         var beaconQuery = EntityQueryEnumerator<NavMapBeaconComponent, TransformComponent>();
@@ -88,15 +90,13 @@ public sealed class GpsSystem : SharedGpsSystem
             if (!beacon.Enabled)
                 continue;
 
-            entries.Add(new GpsEntry
-            {
-                NetEntity = GetNetEntity(beaconUid),
-                Name = beacon.Text ?? "Beacon",
-                IsDistress = false,
-                Color = beacon.Color,
-                PrototypeId = MetaData(beaconUid).EntityPrototype?.ID,
-                Coordinates = _transform.GetMapCoordinates(beaconUid, beaconTransform)
-            });
+            entries.Add(new GpsEntry(
+                GetNetEntity(beaconUid),
+                beacon.Text ?? "Beacon",
+                MetaData(beaconUid).EntityPrototype?.ID,
+                false,
+                beacon.Color,
+                _transform.GetMapCoordinates(beaconUid, beaconTransform)));
         }
 
         return entries;

@@ -7,6 +7,7 @@
   id: CyberLimbsMarkingZenghuHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -18,6 +19,7 @@
   id: CyberLimbsMarkingZenghuChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -29,6 +31,7 @@
   id: CyberLimbsMarkingZenghuLArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -40,6 +43,7 @@
   id: CyberLimbsMarkingZenghuLHand
   bodyPart: LHand
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -51,6 +55,7 @@
   id: CyberLimbsMarkingZenghuLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -63,6 +68,7 @@
   id: CyberLimbsMarkingZenghuLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -76,6 +82,7 @@
   id: CyberLimbsMarkingZenghuRArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -89,6 +96,7 @@
   id: CyberLimbsMarkingZenghuRHand
   bodyPart: RHand
   markingCategory: RightHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -100,6 +108,7 @@
   id: CyberLimbsMarkingZenghuRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -112,6 +121,7 @@
   id: CyberLimbsMarkingZenghuRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi

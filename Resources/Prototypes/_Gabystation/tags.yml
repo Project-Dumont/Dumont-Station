@@ -12,4 +12,7 @@
   id: WeaponPistolLawbringerSkinKit
 
 - type: Tag
+  id: ContrabandDetectorGlasses
+
+- type: Tag
   id: GameDirectorRule

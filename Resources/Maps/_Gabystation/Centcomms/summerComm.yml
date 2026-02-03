@@ -6,11 +6,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 263.0.0
+  engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/08/2025 17:05:18
-  entityCount: 2774
+  time: 01/31/2026 18:40:25
+  entityCount: 2782
 maps: []
 grids:
 - 5
@@ -50,7 +50,7 @@ entities:
     - type: MetaData
       name: Central Command
     - type: Transform
-      parent: invalid
+      parent: 486
     - type: MapGrid
       chunks:
         0,-1:
@@ -131,6 +131,11 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      dampingModifiers:
+        Cruise: 0.0075
+        Dampen: 0.25
+        Anchor: 2
+        None: 0.25
       dampingModifier: 0.25
     - type: ImplicitRoof
     - type: GridPathfinding
@@ -1990,6 +1995,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 26.5,-31.5
       parent: 5
+  - uid: 2582
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-11.5
+      parent: 5
 - proto: APCHyperCapacity
   entities:
   - uid: 215
@@ -2379,20 +2390,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 14.5,-2.5
-      parent: 5
-- proto: BenchPewLeft
-  entities:
-  - uid: 486
-    components:
-    - type: Transform
-      pos: 17.5,20.5
-      parent: 5
-- proto: BenchPewRight
-  entities:
-  - uid: 2505
-    components:
-    - type: Transform
-      pos: 16.5,20.5
       parent: 5
 - proto: BenchRedComfy
   entities:
@@ -4565,6 +4562,36 @@ entities:
     - type: Transform
       pos: 22.5,-33.5
       parent: 5
+  - uid: 2584
+    components:
+    - type: Transform
+      pos: 28.5,-11.5
+      parent: 5
+  - uid: 2585
+    components:
+    - type: Transform
+      pos: 29.5,-11.5
+      parent: 5
+  - uid: 2586
+    components:
+    - type: Transform
+      pos: 29.5,-12.5
+      parent: 5
+  - uid: 2587
+    components:
+    - type: Transform
+      pos: 31.5,-12.5
+      parent: 5
+  - uid: 2588
+    components:
+    - type: Transform
+      pos: 30.5,-12.5
+      parent: 5
+  - uid: 2589
+    components:
+    - type: Transform
+      pos: 32.5,-12.5
+      parent: 5
   - uid: 9995
     components:
     - type: Transform
@@ -5483,6 +5510,11 @@ entities:
     components:
     - type: Transform
       pos: 23.5,9.5
+      parent: 5
+  - uid: 2583
+    components:
+    - type: Transform
+      pos: 28.5,-11.5
       parent: 5
   - uid: 3872
     components:
@@ -6515,6 +6547,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
 - proto: ClothingOuterHardsuitDeathsquad
   entities:
   - uid: 1403
@@ -6522,16 +6562,40 @@ entities:
     - type: Transform
       pos: 33.348488,-35.586754
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
   - uid: 2355
     components:
     - type: Transform
       pos: 33.629738,-35.60238
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
   - uid: 2356
     components:
     - type: Transform
       pos: 33.864113,-35.618004
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
 - proto: ClothingOuterHardsuitERTLeader
   entities:
   - uid: 2360
@@ -6539,11 +6603,27 @@ entities:
     - type: Transform
       pos: 33.832863,-34.368004
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
   - uid: 2361
     components:
     - type: Transform
       pos: 33.457863,-34.368004
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
 - proto: ClothingOuterHardsuitERTSecurity
   entities:
   - uid: 2357
@@ -6551,22 +6631,63 @@ entities:
     - type: Transform
       pos: 33.379738,-34.88363
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
   - uid: 2358
     components:
     - type: Transform
       pos: 33.832863,-34.899254
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
   - uid: 2359
     components:
     - type: Transform
       pos: 33.645363,-34.899254
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        stain:
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
+      containers: []
 - proto: ClothingUniformJumpskirtCentcomFormalDress
   entities:
   - uid: 1750
     components:
     - type: Transform
       parent: 1610
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          temperature: 293.15
+          canReact: True
+          maxVol: 30
+          name: null
+          reagents:
+          - data: []
+            ReagentId: Fiber
+            Quantity: 30
+        stain:
+          temperature: 293.15
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -6576,6 +6697,23 @@ entities:
     components:
     - type: Transform
       parent: 1610
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          temperature: 293.15
+          canReact: True
+          maxVol: 30
+          name: null
+          reagents:
+          - data: []
+            ReagentId: Fiber
+            Quantity: 30
+        stain:
+          temperature: 293.15
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -6797,14 +6935,14 @@ entities:
       parent: 5
 - proto: CrateEngineeringGear
   entities:
-  - uid: 1518
+  - uid: 1160
     components:
     - type: Transform
-      pos: 32.5,-11.5
+      pos: 29.5,-13.5
       parent: 5
-- proto: CratePizzaParty
+- proto: CrateFoodPizzaLarge
   entities:
-  - uid: 1160
+  - uid: 2505
     components:
     - type: Transform
       pos: -5.5,11.5
@@ -11698,6 +11836,8 @@ entities:
     - type: Transform
       pos: -0.5,-2.5
       parent: 5
+    - type: Battery
+      startingCharge: 0
     missingComponents:
     - WarpPoint
 - proto: PortableScrubber
@@ -15416,6 +15556,13 @@ entities:
       pos: 24.5,11.5
       parent: 5
     - type: Conveyed
+- proto: TelecomServerFilled
+  entities:
+  - uid: 1518
+    components:
+    - type: Transform
+      pos: 32.5,-11.5
+      parent: 5
 - proto: ToiletDirtyWater
   entities:
   - uid: 2470
@@ -15431,6 +15578,29 @@ entities:
     - type: Transform
       pos: 19.344627,-35.57356
       parent: 5
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          temperature: 293.15
+          canReact: True
+          maxVol: 30
+          name: null
+          reagents:
+          - data: []
+            ReagentId: Fiber
+            Quantity: 30
+        absorbed:
+          temperature: 293.15
+          canReact: True
+          maxVol: 30
+          name: null
+          reagents: []
+        stain:
+          temperature: 293.15
+          canReact: False
+          maxVol: 10
+          name: stain
+          reagents: []
 - proto: ToyNuke
   entities:
   - uid: 2456
@@ -17308,23 +17478,29 @@ entities:
     - type: Transform
       pos: 18.50393,10.681932
       parent: 5
-- proto: WeaponEnergyTurretStation
+- proto: WeaponEnergyTurretSecurity
   entities:
   - uid: 2315
     components:
     - type: Transform
       pos: 29.5,-35.5
       parent: 5
+    - type: Battery
+      startingCharge: 0
   - uid: 2379
     components:
     - type: Transform
       pos: 28.5,-37.5
       parent: 5
+    - type: Battery
+      startingCharge: 0
   - uid: 2380
     components:
     - type: Transform
       pos: 24.5,-37.5
       parent: 5
+    - type: Battery
+      startingCharge: 0
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 9961

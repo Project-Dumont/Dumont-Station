@@ -272,3 +272,6 @@
   description: A set of glasses that provide flash protection, a security HUD, and a built in contraband detector.
   components:
   - type: ShowContrabandIcons
+  - type: Tag # Beepsky - Gabystation
+    tags:
+    - ContrabandDetectorGlasses

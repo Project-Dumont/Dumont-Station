@@ -169,7 +169,7 @@ namespace Content.Shared.Cuffs
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedHulkSystem _hulk = default!;
         [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
-        [Dependency] private readonly IComponentFactory _componentFactory = default!;
+        [Dependency] private readonly IComponentFactory _componentFactory = default!; // Beepsky - GabyStation
 
         public override void Initialize()
         {
@@ -191,7 +191,7 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<CuffableComponent, BuckleAttemptEvent>(OnBuckleAttemptEvent);
             SubscribeLocalEvent<CuffableComponent, UnbuckleAttemptEvent>(OnUnbuckleAttemptEvent);
             SubscribeLocalEvent<CuffableComponent, GetVerbsEvent<Verb>>(AddUncuffVerb);
-            SubscribeLocalEvent<CuffableComponent, GetVerbsEvent<AlternativeVerb>>(OnForceCuffVerb);
+            SubscribeLocalEvent<CuffableComponent, GetVerbsEvent<AlternativeVerb>>(OnForceCuffVerb); // Beepsky - GabyStation
             SubscribeLocalEvent<CuffableComponent, UnCuffDoAfterEvent>(OnCuffableDoAfter);
             SubscribeLocalEvent<CuffableComponent, PullStartedMessage>(OnPull);
             SubscribeLocalEvent<CuffableComponent, PullStoppedMessage>(OnPull);
@@ -206,7 +206,7 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<HandcuffComponent, AddCuffDoAfterEvent>(OnAddCuffDoAfter);
             SubscribeLocalEvent<HandcuffComponent, VirtualItemDeletedEvent>(OnCuffVirtualItemDeleted);
 
-            SubscribeLocalEvent<CanForceHandcuffComponent, ComponentInit>(OnForceStartup);
+            SubscribeLocalEvent<CanForceHandcuffComponent, ComponentInit>(OnForceStartup); // Beepsky - GabyStation
         }
 
         private void CheckInteract(Entity<CuffableComponent> ent, ref InteractionAttemptEvent args)
@@ -267,6 +267,7 @@ namespace Content.Shared.Cuffs
             component.Container = _container.EnsureContainer<Container>(uid, Factory.GetComponentName(component.GetType()));
         }
 
+        // Beepsky - GabyStation
         private void OnForceStartup(EntityUid uid, CanForceHandcuffComponent component, ComponentInit args)
         {
             component.Container = _container.EnsureContainer<Container>(uid, _componentFactory.GetComponentName(component.GetType()));
@@ -463,6 +464,7 @@ namespace Content.Shared.Cuffs
                 return;
             args.Handled = true;
 
+            // Beepsky - GabyStation
             if (TryComp<CanForceHandcuffComponent>(args.User, out var canForceCuff))
             {
                 if (args.Cancelled)
@@ -553,6 +555,7 @@ namespace Content.Shared.Cuffs
             }
         }
 
+        // Beepsky - GabyStation - Start
         private void OnForceCuffVerb(EntityUid uid, CuffableComponent component, GetVerbsEvent<AlternativeVerb> args)
         {
             if (!args.CanAccess)
@@ -584,6 +587,7 @@ namespace Content.Shared.Cuffs
 
             args.Verbs.Add(verb);
         }
+        // Beepsky - GabyStation - End
 
         public bool ForceCuff(CanForceHandcuffComponent component, EntityUid target, EntityUid user)
         {
@@ -683,7 +687,7 @@ namespace Content.Shared.Cuffs
         }
 
         /// <returns>False if the target entity isn't cuffable.</returns>
-        public bool TryCuffing(EntityUid user, EntityUid target, EntityUid handcuff, HandcuffComponent? handcuffComponent = null, CuffableComponent? cuffable = null, bool requireHands = true)
+        public bool TryCuffing(EntityUid user, EntityUid target, EntityUid handcuff, HandcuffComponent? handcuffComponent = null, CuffableComponent? cuffable = null, bool requireHands = true) // Beepsky - GabyStation
         {
             if (!Resolve(handcuff, ref handcuffComponent) || !Resolve(target, ref cuffable, false))
                 return false;
@@ -699,10 +703,10 @@ namespace Content.Shared.Cuffs
             {
                 _popup.PopupClient(Loc.GetString("handcuff-component-target-has-no-free-hands-error",
                     ("targetName", Identity.Name(target, EntityManager, user))), user, user);
-                return requireHands;
+                return requireHands; // Beepsky - GabyStation
             }
 
-            if (requireHands && !_hands.CanDrop(user, handcuff))
+            if (requireHands && !_hands.CanDrop(user, handcuff)) // Beepsky - GabyStation
             {
                 _popup.PopupClient(Loc.GetString("handcuff-component-cannot-drop-cuffs", ("target", Identity.Name(target, EntityManager, user))), user, user);
                 return false;
@@ -730,7 +734,7 @@ namespace Content.Shared.Cuffs
                 BreakOnMove = true,
                 BreakOnWeightlessMove = false,
                 BreakOnDamage = true,
-                NeedHand = requireHands,
+                NeedHand = requireHands, // Beepsky - GabyStation
                 DistanceThreshold = 1f // shorter than default but still feels good
             };
 
