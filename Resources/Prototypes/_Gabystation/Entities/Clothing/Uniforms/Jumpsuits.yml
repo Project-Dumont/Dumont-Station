@@ -5,7 +5,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitPijamaCaptain
-  name: Pijama de Marinheiro
+  name: pijama de marinheiro
   description: Combinando elegância, moda antiga e fofura. Esse pijama é ideal para capitães preguiçosos que gostam de tirar uma soneca na criogenia.
   components:
   - type: Sprite
