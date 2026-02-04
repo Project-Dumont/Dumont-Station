@@ -22,6 +22,9 @@ public sealed class JukeboxMusicSystem : SharedJukeboxMusicSystem
             return;
 
         if (jukebox.AudioStream == music.Owner)
+        {
             jukebox.AudioStream = null;
+            Dirty(music.Comp.Jukebox, jukebox);
+        }
     }
 }
