@@ -144,7 +144,7 @@
       announcement: alert-level-delta-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/delta.ogg
+        path: /Audio/_Gabystation/Misc/deltav2.ogg
         params:
           volume: -3
       disableSelection: true
