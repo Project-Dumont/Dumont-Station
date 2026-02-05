@@ -31,10 +31,10 @@
           - Item
     - type: RadiationSource
     - type: AmbientSound
-      range: -3
+      range: 5
       volume: 0
       sound:
-        path: /Audio/_Gabystation/Misc/ArcaneKirk.ogg
+        path: /Audio/_Goobstation/Supermatter/calm.ogg
     - type: Physics
     - type: Speech
       speechSounds: Pai
