@@ -116,7 +116,7 @@ namespace Content.Server.Nuke
         public SoundSpecifier ArmSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
 
         [DataField("disarmSound")]
-        public SoundSpecifier DisarmSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
+        public SoundSpecifier DisarmSound = new SoundPathSpecifier("/Audio/_Gabystation/Misc/noticev2.ogg");
 
         [DataField("armMusic")]
         public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("NukeMusic");
