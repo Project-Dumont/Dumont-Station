@@ -16,7 +16,7 @@ alert-level-red-announcement = Ameaça perigosa na estação. Os seguranças dev
 alert-level-red-instructions = os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
 
 alert-level-violet = Violeta
-alert-level-violet-announcement = Foram relatadas ameaças virais na estação. Acionando a equipe médica para isolar os tripulantes com quaisquer sintomas. Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
+alert-level-violet-announcement = Foram relatadas ameaças virais na estação. Acionando a equipe médica para isolar os tripulantes com quaisquer sintomas. Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas. Se protejam.
 alert-level-violet-instructions = Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
 
 alert-level-yellow = Amarelo
