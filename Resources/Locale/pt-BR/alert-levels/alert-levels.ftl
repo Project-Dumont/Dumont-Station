@@ -24,7 +24,7 @@ alert-level-yellow-announcement = Há dano estrutural na estação. Acionando a 
 alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = A Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes estão devidamente autorizados a cooperar e auxiliar o Departamento da Segurança.
 alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
