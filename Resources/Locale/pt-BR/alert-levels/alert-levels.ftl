@@ -8,7 +8,7 @@ alert-level-green-announcement = Está tudo bem! Já podem voltar a atividades n
 alert-level-green-instructions = Volte a seu trabalho.
 
 alert-level-blue = Azul
-alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Lembre-se de relatar toda atividade suspeita aos seus supervisores e seguranças. Nem mesmo você está isento da Maldade. Fique paranoico, fique vigilante.
+alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Lembre-se de relatar toda atividade suspeita aos seus supervisores. Nem mesmo você está isento da Maldade. Fique paranoico, fique vigilante.
 alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a segurança.
 
 alert-level-red = Vermelho
