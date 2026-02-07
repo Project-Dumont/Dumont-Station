@@ -111,21 +111,21 @@
       shuttleTime: 600
     violet:
       announcement: alert-level-violet-announcement
-      sound: /Audio/Misc/notice1.ogg
+      sound: /Audio/_Gabystation/Misc/violetalert.ogg
       color: Violet
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
-      sound: /Audio/Misc/notice1.ogg
+      sound: /Audio/_Gabystation/Misc/alertaamarelo.ogg
       color: Yellow
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/Misc/redalert.ogg
+      sound: /Audio/_Gabystation/Misc/redalertv2.ogg
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -134,7 +134,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/gamma.ogg
+        path: /Audio/_Gabystation/Misc/gammaalert.ogg
         params:
           volume: -2
       disableSelection: true
@@ -188,7 +188,7 @@
       #announcement: alert-level-martial-announcement
       selectable: false
       sound:
-        path: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
+        path: /Audio/_Gabystation/Announcements/Alerts/martiallawv2.ogg
         params:
           volume: 7      # positive raises loudness; verify it does not clip
       disableSelection: true
@@ -206,7 +206,7 @@
     doomsday:
       announcement: alert-level-doomsday-announcement
       selectable: false
-      sound: /Audio/Misc/delta_alt.ogg
+      sound: /Audio/_Gabystation/Misc/deltalt2.ogg
       color: DarkRed
       disableSelection: true
       emergencyLightColor: DarkRed
