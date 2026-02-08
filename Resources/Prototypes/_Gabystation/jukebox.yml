@@ -650,3 +650,9 @@
   path:
     path: /Audio/_Gabystation/Jukebox/Waltz_of_The_Tornado.ogg
 
+- type: jukebox
+  id: Readytomorrow
+  name: Whos Ready For Tomorrow - Cyberpunk
+  path:
+    path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg
+
