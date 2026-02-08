@@ -132,12 +132,12 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "Gatinha Comunista por Vitroles. Baixado do Youtube.com em formato OGG."
   source: "https://www.youtube.com/watch?v=-baB66elbtc"
-  
+
 - files: ["construcao.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Construção por Chico Buarque. Baixado do site musicasdonordeste.net, convertido para OGG."
   source: "https://www.musicasdonordeste.net/2018/04/momentompb-chico-buarque-construcao-1971.html"
-  
+
 - files: ["sete_mares.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Descobridor dos Sete Mares por Tim Maia. Baixado do site discosdampb.music.blog, convertido para OGG."
@@ -147,17 +147,17 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "Dead Memories por Slipknot. Baixado do site archive.org, convertido para OGG."
   source: "https://archive.org/details/slipknot-all-hope-is-gone"
- 
+
 - files: ["vermillion_pt2.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Vermillion Pt. 2 por Slipknot. Baixado do site archive.org, convertido para OGG."
   source: "https://archive.org/details/81-bs-1-lett-rl.-sl-1425"
- 
+
 - files: ["wait_and_bleed.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Wait and Bleed por Slipknot. Baixado do site archive.org, convertido para OGG e remasterizado por DoutorWhite."
   source: "https://archive.org/details/slipknot-10th-anniversary-edition"
- 
+
 - files: ["amor_mafioso.ogg"]
   copyright: "Amor Mafioso by MusicalJM. Exported with cobalt.tools"
   license: "Custom"
@@ -202,7 +202,7 @@
   copyright: "Balatro Maint Theme by LouisF. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/OnGQeVTt4KI?si=UaBw8xTGOGtrRvD9"
- 
+
 - files: ["birds_dont_sing.ogg"]
   copyright: "Birds Don't Sing by TV Girl. Exported with cobalt.tools"
   license: "Custom"
@@ -227,12 +227,12 @@
   copyright: "Can't Get Over by KASINO. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/-wZl_ZhnVg4?si=HLaCdWhnoxAv3wbB"
- 
+
 - files: ["castle_vein.ogg"]
   copyright: "Castle Vein by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/AX9pqyjYZBM?si=PERU3b-9tYUyKdl6"
- 
+
 - files: ["clair_de_lune.ogg"]
   copyright: "Clair de Lune by Johann Debussy. Exported with cobalt.tools"
   license: "Custom"
@@ -262,7 +262,7 @@
   copyright: "Hopes And Dreams by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/wbO3p7_Mf30?si=YVcW3VKkQm7GKunj"
- 
+
 - files: ["invisible.ogg"]
   copyright: "Invisible by Duran Duran. Exported with cobalt.tools"
   license: "Custom"
@@ -272,7 +272,7 @@
   copyright: "It's raining somewhere else by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/KtC-pl9P3kE?si=NzZlRW_EiN9BE-aK"
- 
+
 - files: ["its_tv_time.ogg"]
   copyright: "It's Tv Time! by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
@@ -292,7 +292,7 @@
   copyright: "Last Goodbye by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/EpBQ5m3Ag3Q?si=ArhFU37x2H6FI5wn"
- 
+
 - files: ["lovers_rock.ogg"]
   copyright: "Lover's Rock by TV Girl. Exported with cobalt.tools"
   license: "Custom"
@@ -337,7 +337,7 @@
   copyright: "The Fire is Gone by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/917xijnpJVw?si=Tf1Zg1Zfeh2FDHEX"
- 
+
 - files: ["the_man_who_sold_the_world.ogg"]
   copyright: "The Man Who Sold The World by Midge Ure. Exported with cobalt.tools"
   license: "Custom"
@@ -362,7 +362,7 @@
   copyright: "War Without Reason by Heaven Pierce Her. Exported with cobalt.tools"
   license: "Custom"
   source: "https://youtu.be/Gcj9-iF_lTw?si=uceN7OomzO83LrFq"
- 
+
 - files: ["welcome_to_the_green_room.ogg"]
   copyright: "Welcome to the Green Room by Toby Fox. Exported with cobalt.tools"
   license: "Custom"
@@ -377,3 +377,8 @@
   copyright: "É disso que o velhos gosta by Gaúcho da Fronteira. Exported with ytdlp and converted to mono .ogg with ffmpeg"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=6jUXTot03_U"
+
+- files: ["Still_Alive.ogg"]
+  copyright: "Still Alive by Adriana Figueroa e Daniel Alvarez."
+  license: "CC-BY-NC-SA-3.0"
+  source: "https://www.youtube.com/watch?v=qF9vdZAYj3I"
