@@ -52,6 +52,33 @@ public sealed partial class RoundEndSummaryWindow
 
         foreach (var album in stationAlbumSystem.Albums)
         {
+            var stationAlbumAuthorHeaderContainer = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+                VerticalExpand = true,
+                Margin = new Thickness(0, 5, 0, 5)
+            };
+
+            var stationAlbumAuthorHeaderPanel = new PanelContainer
+            {
+                StyleClasses = { StyleNano.StyleClassBackgroundBaseDark },
+                SetSize = new Vector2(556, 30),
+                HorizontalAlignment = HAlignment.Left
+            };
+
+            var stationAlbumAuthorHeaderLabel = new RichTextLabel();
+
+            string authorName = album.AuthorName == null ? Loc.GetString("round-end-summary-album-photo-no-author-name") : album.AuthorName;
+            string authorCKey = album.AuthorCkey == null ? Loc.GetString("round-end-summary-album-photo-no-author-ckey") : album.AuthorCkey;
+
+            stationAlbumAuthorHeaderLabel.SetMarkup(Loc.GetString("round-end-summary-album-photo-author", ("authorName", authorName), ("authorCKey", authorCKey)));
+
+            stationAlbumAuthorHeaderPanel.AddChild(stationAlbumAuthorHeaderLabel);
+            stationAlbumAuthorHeaderContainer.AddChild(stationAlbumAuthorHeaderPanel);
+
+            stationAlbumContainer.AddChild(stationAlbumAuthorHeaderContainer);
+
             var gridContainer = new GridContainer();
 
             gridContainer.Columns = 2;
@@ -108,33 +135,6 @@ public sealed partial class RoundEndSummaryWindow
             }
 
             stationAlbumContainer.AddChild(gridContainer);
-
-            var stationAlbumAuthorHeaderContainer = new BoxContainer
-            {
-                Orientation = LayoutOrientation.Vertical,
-                HorizontalExpand = true,
-                VerticalExpand = true,
-                Margin = new Thickness(0, 5, 0, 5)
-            };
-
-            var stationAlbumAuthorHeaderPanel = new PanelContainer
-            {
-                StyleClasses = { StyleNano.StyleClassBackgroundBaseDark },
-                SetSize = new Vector2(556, 30),
-                HorizontalAlignment = HAlignment.Left
-            };
-
-            var stationAlbumAuthorHeaderLabel = new RichTextLabel();
-
-            string authorName = album.AuthorName == null ? Loc.GetString("round-end-summary-album-photo-no-author-name") : album.AuthorName;
-            string authorCKey = album.AuthorCkey == null ? Loc.GetString("round-end-summary-album-photo-no-author-ckey") : album.AuthorCkey;
-
-            stationAlbumAuthorHeaderLabel.SetMarkup(Loc.GetString("round-end-summary-album-photo-author", ("authorName", authorName), ("authorCKey", authorCKey)));
-
-            stationAlbumAuthorHeaderPanel.AddChild(stationAlbumAuthorHeaderLabel);
-            stationAlbumAuthorHeaderContainer.AddChild(stationAlbumAuthorHeaderPanel);
-
-            stationAlbumContainer.AddChild(stationAlbumAuthorHeaderContainer);
         }
 
         stationAlbumContainerScrollbox.AddChild(stationAlbumContainer);
