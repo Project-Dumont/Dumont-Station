@@ -496,7 +496,7 @@
 
 - type: jukebox
   id: ADarkZone
-  name: Toby Fox - A DARK ZONE 
+  name: Toby Fox - A DARK ZONE
   path:
     path: /Audio/_Gabystation/Jukebox/a_dark_zone.ogg
 
@@ -626,3 +626,8 @@
   path:
     path: /Audio/_Gabystation/Jukebox/poster-boy.ogg
 
+- type: jukebox
+  id: StillAlive
+  name: Still Alive - Adriana Figueroa e Daniel Alvarez
+  path:
+    path: /Audio/_Gabystation/Jukebox/Still_Alive.ogg
