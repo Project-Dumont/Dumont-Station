@@ -245,12 +245,6 @@ public sealed class RCDSystem : EntitySystem
                         delay = destructible.Delay;
                         effectPrototype = destructible.Effect;
                     }
-                    if (TryComp<RCDDeconstructableStrongComponent>(args.Target, out var destructibleStrong))
-                    {
-                        cost = destructibleStrong.Cost;
-                        delay = destructibleStrong.Delay;
-                        effectPrototype = destructibleStrong.Effect;
-                    }
                 }
 
                 // Deconstructing a tile
@@ -373,21 +367,9 @@ public sealed class RCDSystem : EntitySystem
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
         // Goobstation - start
         var proto = _protoManager.Index(args.StartingProtoId);
-        if (proto.Mode == RcdMode.Deconstruct & proto.RefundDecon == true)
-        {
-            if (proto.RefundDecon == true) // Gabystation edit - NO REFUND!!
-            {
-                _sharedCharges.AddCharges(uid, args.Cost / 2);
-            }
-            else
-            {
-                _sharedCharges.AddCharges(uid, args.Cost * 0);
-            }
-        }
-        else
-        {
-            _sharedCharges.AddCharges(uid, -args.Cost);
-        }
+        if (proto.Mode == RcdMode.Deconstruct)
+            _sharedCharges.AddCharges(uid, args.Cost / 2);
+        else _sharedCharges.AddCharges(uid, -args.Cost);
         // Goobstation - end
     }
 
@@ -628,7 +610,7 @@ public sealed class RCDSystem : EntitySystem
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
-            if (component.IsRpd & component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Gabystation Edit - Really bad implementation for ProtoRCD
+            if (component.IsRpd)
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -669,7 +651,7 @@ public sealed class RCDSystem : EntitySystem
         else
         {
             // The object is not in the RPD whitelist
-            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd && component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Gabystation Edit - Really bad implementation for ProtoRCD
+            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd)
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -687,7 +669,7 @@ public sealed class RCDSystem : EntitySystem
             }
 
             // Goobstation - RCD check access for doors
-            if (TryComp<AccessReaderComponent>(target, out var accessList) && !_accessReader.IsAllowed(user, target.Value) && component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Gabystation Edit - Really bad implementation for ProtoRCD
+            if (TryComp<AccessReaderComponent>(target, out var accessList) && !_accessReader.IsAllowed(user, target.Value))
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
@@ -696,7 +678,7 @@ public sealed class RCDSystem : EntitySystem
             }
 
             // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
-            if (TryComp<DoorBoltComponent>(target, out var doorBolt) && doorBolt.BoltsDown && component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Gabystation Edit - Really bad implementation for ProtoRCD
+            if (TryComp<DoorBoltComponent>(target, out var doorBolt) && doorBolt.BoltsDown)
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);

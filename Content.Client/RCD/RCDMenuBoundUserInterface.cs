@@ -47,14 +47,6 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             // Gabystation
             ["PneumaticTransport"] = ("rcd-component-pneumatic-transport", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/disposal.png"))),
         };
-    private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesNestlingInfo
-        = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
-        {
-            // Gabystation - Nestling categories
-            ["RCDall"] = ("rcd-component-rcdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/rcd.png"))),
-            ["RPDall"] = ("rcd-component-rpdall", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/rpd.png"))),
-        };
-
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
 
@@ -84,77 +76,35 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
     {
         Dictionary<string, List<RadialMenuActionOption>> buttonsByCategory = new();
         ValueList<RadialMenuActionOption> topLevelActions = new();
-        if (prototypes.Contains("RCDall") == false)
+        foreach (var protoId in prototypes)
         {
-            foreach (var protoId in prototypes)
+            var prototype = _prototypeManager.Index(protoId);
+            if (prototype.Category == TopLevelActionCategory)
             {
-                var prototype = _prototypeManager.Index(protoId);
-                if (prototype.Category == TopLevelActionCategory)
-                {
-                    var topLevelActionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
-                    {
-                        Sprite = prototype.Sprite,
-                        ToolTip = GetTooltip(prototype)
-                    };
-                    topLevelActions.Add(topLevelActionOption);
-                    continue;
-                }
-
-                if (!PrototypesGroupingInfo.TryGetValue(prototype.Category, out var groupInfo))
-                    continue;
-
-                if (!buttonsByCategory.TryGetValue(prototype.Category, out var list))
-                {
-                    list = new List<RadialMenuActionOption>();
-                    buttonsByCategory.Add(prototype.Category, list);
-                }
-
-                var actionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
+                var topLevelActionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
                 {
                     Sprite = prototype.Sprite,
                     ToolTip = GetTooltip(prototype)
                 };
-                list.Add(actionOption);
+                topLevelActions.Add(topLevelActionOption);
+                continue;
             }
-        }
-        else
-        {
-            // Gabystation Nestling TODO
-            foreach (var nestling in PrototypesNestlingInfo)
+
+            if (!PrototypesGroupingInfo.TryGetValue(prototype.Category, out var groupInfo))
+                continue;
+
+            if (!buttonsByCategory.TryGetValue(prototype.Category, out var list))
             {
-                foreach (var protoId in prototypes)
-                {
-                    var prototype = _prototypeManager.Index(protoId);
-                    if (prototype.Category == TopLevelActionCategory)
-                    {
-                        var topLevelActionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
-                        {
-                            Sprite = prototype.Sprite,
-                            ToolTip = GetTooltip(prototype)
-                        };
-                        topLevelActions.Add(topLevelActionOption);
-                        continue;
-                    }
-                    foreach (var nestedCategory in prototype.Nested)
-                    {
-                        if (!PrototypesGroupingInfo.TryGetValue(prototype.Category, out var groupInfo))
-                            continue;
-
-                        if (!buttonsByCategory.TryGetValue(prototype.Category, out var list))
-                        {
-                            list = new List<RadialMenuActionOption>();
-                            buttonsByCategory.Add(prototype.Category, list);
-                        }
-
-                        var actionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
-                        {
-                            Sprite = prototype.Sprite,
-                            ToolTip = GetTooltip(prototype)
-                        };
-                        list.Add(actionOption);
-                    }
-                }
+                list = new List<RadialMenuActionOption>();
+                buttonsByCategory.Add(prototype.Category, list);
             }
+
+            var actionOption = new RadialMenuActionOption<RCDPrototype>(HandleMenuOptionClick, prototype)
+            {
+                Sprite = prototype.Sprite,
+                ToolTip = GetTooltip(prototype)
+            };
+            list.Add(actionOption);
         }
 
         var models = new RadialMenuOption[buttonsByCategory.Count + topLevelActions.Count];
@@ -178,8 +128,6 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 
         return models;
     }
-
-    // /Gabystation */
 
     private void HandleMenuOptionClick(RCDPrototype proto)
     {

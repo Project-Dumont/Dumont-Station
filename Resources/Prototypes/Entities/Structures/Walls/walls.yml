@@ -807,10 +807,6 @@
   id: WallReinforced
   name: reinforced wall
   components:
-  - type: RCDDeconstructableStrong
-    cost: 5
-    delay: 12
-    fx: EffectRCDDeconstruct8
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
   - type: Icon

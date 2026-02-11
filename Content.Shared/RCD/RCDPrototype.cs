@@ -47,20 +47,6 @@ public sealed partial class RCDPrototype : IPrototype
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public string Category { get; private set; } = "Undefined";
 
-    // Gabystation
-    /// <summary>
-    /// The name of the nested categories this prototype will nest on the RCD menu
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public List<string> Nested = new();
-
-    // Gabystation
-    /// <summary>
-    /// If deconstruction gives back some of the cost in charges
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public bool RefundDecon { get; private set; } = true;
-
     /// <summary>
     /// Texture path for this prototypes menu icon
     /// </summary>
