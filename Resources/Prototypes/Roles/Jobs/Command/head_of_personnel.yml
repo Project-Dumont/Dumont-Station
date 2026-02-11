@@ -162,6 +162,12 @@
       inverted: true
       species:
       - Felinid
+  guides: # goobstation
+  - Command
+  # - Succession
+  # - StandardProcedures SOP
+  # - HeadOfPersonnel SOP
+  - Writing
   goobcoins: 40 #Goob content
   salary: 50 # Gaby content
   weight: 20
@@ -196,6 +202,8 @@
   - Cargo
   - Atmospherics
   - Medical
+  - Journalism # Goob
+  - Robotics # Goob
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -231,8 +239,6 @@
     mask: ClothingMaskNeckGaiterRed
     neck: ClothingNeckCloakHop
     outerClothing: ClothingOuterWinterHoP
-
-
 
   # gaby alt job titles
 - type: jobAlternateTitle

@@ -159,11 +159,14 @@
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 MortalBaguette <169563638+MortalBaguette@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
@@ -175,6 +178,8 @@
 // SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
 // SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 tetra <169831122+Foralemes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -198,7 +203,9 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Server._RMC14.LinkAccount; // RMC - Patreon
+using Content.Server._RMC14.LinkAccount;
+using Content.Server._Gabystation.ServerCurrency.Managers; // RMC - Patreon
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 namespace Content.Server.Chat.Managers;
 
@@ -227,6 +234,7 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
+    [Dependency] private readonly CurrencyStoreManager _storeMan = default!; // Gaby - titles
 
     /// <summary>
     /// The maximum length a player-sent message can be sent
@@ -433,16 +441,33 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         Color? colorOverride = null;
-        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
+        var prefs = _preferencesManager.GetPreferences(player.UserId);
+        var title = _storeMan.SanitizeTitleString(prefs.OOCTitle) ?? ""; // Gabystation - titles
+
+        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("title", title), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
         if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
-        {
-            var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
-        }
-        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
-            _linkAccount.GetPatron(player)?.Tier != null) // RMC - Patreon
+
+        // RMC - Heavily modified for patreon.
+        if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
+            _linkAccount.GetPatron(player)?.Tier is { } tier)
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", "#aa00ff"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message))); // RMC - Patreon
+            if (tier.Icon != null)
+            {
+                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message",
+                    ("title", title),
+                    ("tierIcon", tier.Icon),
+                    ("patronColor", "#aa00ff"),
+                    ("playerName", player.Name),
+                    ("message", FormattedMessage.EscapeText(message)));
+            }
+            else
+            {
+                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message-no-icon",
+                    ("patronColor", "#aa00ff"),
+                    ("playerName", player.Name),
+                    ("message", FormattedMessage.EscapeText(message)));
+            }
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage

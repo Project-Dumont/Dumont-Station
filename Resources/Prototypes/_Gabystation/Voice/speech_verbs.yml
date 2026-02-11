@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: MIT
+
+- type: speechVerb
+  id: Waddler
+  name: chat-speech-verb-name-waddler
+  speechVerbStrings:
+  - chat-speech-verb-waddler-1
+  - chat-speech-verb-waddler-2
+  - chat-speech-verb-waddler-3
+  - chat-speech-verb-waddler-4

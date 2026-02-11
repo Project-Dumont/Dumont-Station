@@ -1,0 +1,14 @@
+- type: entity
+  name: DNA disk box
+  parent: BoxCardboard
+  id: BoxDnaFisk
+  description: A box of DNA-modifier disk.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DnaModifierDisk
+        amount: 3
+  - type: Sprite
+    layers:
+      - state: box_science
+      - state: disk

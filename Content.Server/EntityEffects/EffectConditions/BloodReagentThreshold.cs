@@ -41,7 +41,8 @@ public sealed partial class BloodReagentThreshold : EntityEffectCondition
             return true;
         }
 
-        throw new NotImplementedException();
+        args.EntityManager.TryGetComponent<MetaDataComponent>(args.TargetEntity, out var metadata); // Gaby Station...
+        throw new NotImplementedException($"{args.TargetEntity} {metadata?.EntityPrototype} {metadata?.EntityName}");
     }
 
     public override string GuidebookExplanation(IPrototypeManager prototype)

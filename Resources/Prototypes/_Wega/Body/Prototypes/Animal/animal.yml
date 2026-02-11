@@ -1,0 +1,21 @@
+- type: body
+  id: Stokkey
+  name: "stokkey"
+  root: torso
+  slots:
+    torso:
+      part: TorsoAnimal
+      connections:
+      - legs
+      organs:
+        lungs: OrganAnimalLungs
+        stomach: OrganAnimalStomach
+        liver: OrganVoxLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
+    legs:
+      part: LegsAnimal
+      connections:
+      - feet
+    feet:
+      part: FeetAnimal

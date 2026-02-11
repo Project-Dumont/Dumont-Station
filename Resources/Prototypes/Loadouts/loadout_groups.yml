@@ -189,6 +189,7 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
+  - BookArteDaRobustez #Gabystation
   - FlowerWreath
   - Hairflower
   - Headphones
@@ -196,6 +197,7 @@
   - PlushieSpaceLizard
   - PersonalAI # Goobstation
   - GoldenPersonalAI # Goobstation
+  - CrewCassette # Goobstation
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -228,6 +230,7 @@
   - PlushieTajaran # Gabystation
   - PlushieKiiaraWami # Gabystation
   - PlushieKiiaraWarden # Gabystation
+  - MP3PlayerWhite # Gabystation
   - FoodSnackLollypopWrapped # Goobstation
   - FoodSnackLollypopWrappedRainbow # Goobstation
   - FoodSnackLollypopWrappedCarp # Goobstation
@@ -337,6 +340,8 @@
   loadouts:
   - CaptainHead
   - CaptainCap
+  - CaptainCapcapSenior # goob
+  - CaptainCapMarinheiro #Gabystation
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -350,6 +355,7 @@
   - CaptainFormalSkirt
   - CaptainJumpsuitMilitary # goob
   - CaptainSummerShirt # also goob
+  - CaptainMarinheiroSuit #Gabystation
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -360,6 +366,7 @@
   - CaptainCloakFormal
   - CaptainMantle
   - VeteranCaptainCloak # goob
+  - CaptainEnsemble # goob
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -405,6 +412,7 @@
   loadouts:
   - HoPCloak
   - HoPMantle
+  - HeadOfPersonnelEnsemble # goob
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -530,6 +538,7 @@
   - LightBrownMJ
   - BrownMJ
   - MaroonMJ
+  - QuarterzipJumpsuit
  # goob changes end
 
 - type: loadoutGroup
@@ -544,6 +553,7 @@
   loadouts:
   - HeadbandBlack
   - WitchHat #Gabystation
+  - ToucaDeGato #Gabystation
   - BrownFedora #Gabystation
   - GreyFedora #Gabystation
   - Fez #Gabystation
@@ -609,7 +619,7 @@
 
 - type: loadoutGroup
   id: CivilianBackpackRequired #Gabystation
-  parent: CivilianBackpack 
+  parent: CivilianBackpack
   minLimit: 1 #Quem so puder spawnar com mochila civil sempre vai, o resto não necessáriamente
 
 - type: loadoutGroup
@@ -1153,6 +1163,7 @@
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
+  - QuartermasterEnsemble # goob
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
@@ -1266,6 +1277,7 @@
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
+  - ChiefEngineerEnsemble # goob
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -1416,6 +1428,7 @@
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
+  - ResearchDirectorEnsemble # goob
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -1559,6 +1572,7 @@
   - HeadofSecurityCloak
   - HeadofSecurityMantle
   - Bodycam # Goobstation - Body cameras
+  - HeadOfSecurityEnsemble # goob
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1639,6 +1653,7 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -1769,6 +1784,7 @@
   loadouts:
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
+  - ChiefMedicalOfficerEnsemble # goob
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes

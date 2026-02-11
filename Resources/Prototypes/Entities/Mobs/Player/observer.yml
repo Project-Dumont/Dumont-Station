@@ -209,6 +209,7 @@
         type: RevivalContractBoundUserInterface
         requireInputValidation: false
   - type: Sprinter # Goob Change
+  - type: GhostSkin # Gaby change
 
 # proto for player ghosts specifically
 - type: entity

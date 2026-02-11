@@ -97,7 +97,13 @@
   canBeAntag: false # Gaby station
   #  access:
   #  - Maintenance
-  #
+  special: # Goobstation
+  - !type:AddComponentSpecial
+    components:
+    - type: NpcFactionMember
+      factions:
+      - NanoTrasen
+      - Assistant
   # gaby alt job titles
   alternateTitles:
   - AssistantTitlePassenger

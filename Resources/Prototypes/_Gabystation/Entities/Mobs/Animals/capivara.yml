@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Ronilson
+  parent: [ SimpleMobBase]
+  id: MobCapivaraRonilson
+  description: Um mascote roedor para uma incrivel estação!
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 4
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: capivara
+      sprite: _Gabystation/Mobs/Animals/capivara.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: capivara
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: InteractionPopup
+    successChance: 0.8 # Ronilson é docil demais.
+    interactSuccessString: petting-success-dog # uma capivara é quase um cachorro se parar pra pensar...
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/_Gabystation/Animals/capivara1.ogg
+  - type: Bloodstream
+    bloodMaxVolume: 2000 # aquele que matar Ronilson conhecerá um rio de sangue.

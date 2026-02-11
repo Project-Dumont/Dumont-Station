@@ -81,6 +81,9 @@
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
+  guides: # goobstation
+  - Bartender
+  - Drinks
   goobcoins: 10 #Goob content
   access:
   - Service
@@ -93,6 +96,12 @@
   - BartenderTitleMixologist
   - BartenderTitleBarman
   - BartenderTitleBarwoman
+  # Corvax-Wega-Genetics-start
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: SoberGen
+  # Corvax-Wega-Genetics-end
 
 - type: startingGear
   id: BartenderGear

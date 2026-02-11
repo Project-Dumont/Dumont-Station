@@ -144,7 +144,7 @@
       time: 36000 #10 hrs
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 18000 #5 hrs
+      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 54000 #15 hrs
@@ -158,6 +158,12 @@
   supervisors: job-supervisors-captain
   #canBeAntag: false
   antagAdvantage: 75 # Goobstation
+  guides: # goobstation
+  - Engineering
+  # - ChiefEngineer SOP
+  # - Engineering SOP
+  - Command
+  # - Emergencies SOP
   goobcoins: 40 #Goob content
   salary: 50 # Gaby content
   access:

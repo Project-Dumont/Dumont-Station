@@ -950,7 +950,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 if (_entityManager.TryGetComponent<RadiationSourceComponent>(coreUid, out var radSource))
                 {
                     radSource.Intensity = radPulseSize * 4f;
-                    radSource.Slope = Math.Clamp(radSource.Intensity / 15f, 0.5f, 2f); // no idea
+                    // radSource.Slope = Math.Clamp(radSource.Intensity / 15f, 0.5f, 2f); // no idea // Goobstation - Terminal rad decay
                 }
             }
 

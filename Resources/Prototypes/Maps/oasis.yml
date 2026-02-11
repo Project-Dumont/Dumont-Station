@@ -94,7 +94,7 @@
   id: Oasis
   mapName: 'Oasis'
   mapPath: /Maps/_Goobstation/oasis.yml # Goobstation - SM
-  minPlayers: 30 # Goobstation return minPlayers requirement for maps
+  minPlayers: 50 # Goobstation return minPlayers requirement for maps
   maxPlayers: 85 # Goobstation - Limit mappool to highpop versions of maps only
   stations:
     Oasis:
@@ -125,6 +125,7 @@
             ServiceWorker: [ 2, 2 ]
             Zookeeper: [ 1, 1 ]
             Reporter: [ 1, 1 ]
+            RadioHost: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -137,6 +138,7 @@
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 4 ]
             Psychologist: [ 1, 1 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
@@ -154,6 +156,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            ShaftMiner: [ 3, 3 ]
             CargoTechnician: [ 4, 4 ]
             #civilian
             Passenger: [ -1, -1 ]

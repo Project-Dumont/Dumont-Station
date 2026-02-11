@@ -189,9 +189,9 @@
     - !type:GroupSelector
       children:
       - id: ClothingBeltSecurityFilled
-        weight: 0.7
+        weight: 0.5
       - id: ClothingBeltCorporateJudoFilled
-        weight: 0.3
+        weight: 0.5
     # Goobstation - Martial Arts - end
 
 - type: entity
@@ -256,6 +256,7 @@
     - id: BoxTapeRecorder # DeltaV
     - id: CassetteTapeInterview # Gabystation - lore
       prob: 0.25
+    - id: PhotoCameraFilled # CorvaxGoob-PhotoCamera
 
 - type: entity
   id: ClosetBombFilled

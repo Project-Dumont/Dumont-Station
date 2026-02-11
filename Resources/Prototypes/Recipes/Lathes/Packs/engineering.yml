@@ -57,6 +57,7 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
+  - CameraElectronics # goob
   - ThermomachineFreezerMachineCircuitBoard
   - BankATMCircuitboard # Gabystation change
   - WashingMachineCircuitboard # Gabystation change
@@ -65,6 +66,7 @@
   id: EngineeringBoardsStatic
   recipes:
   - SpaceHeaterMachineCircuitBoard
+  - CondenserMachineCircuitBoard # Goob
 
 ## Dynamic
 
@@ -110,3 +112,4 @@
   - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
   - TeslaCoilCircuitboard
   - RadiationCollectorCircuitboard
+  - BluespaceGasVendorMachineCircuitBoard # Gabystation

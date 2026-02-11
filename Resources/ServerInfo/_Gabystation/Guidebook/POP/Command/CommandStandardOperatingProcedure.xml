@@ -68,7 +68,7 @@ SPDX-License-Identifier: MIT
   [bold]8.[/bold] O Chefe dos funcionários não pode exercer funções de Segurança. O Chefe dos funcionários pode portar um Desativador apenas para autodefesa.
 
 
-  #Representante da Nanotrasen
+  # Representante da Nanotrasen
 
   [bold]1.[/bold] O Representante da NanoTrasen deve garantir que todos os Departamentos estejam seguindo o POP, incluindo o respectivo Chefe de Departamento. Se não houver Chefe disponível para um Departamento, o Representante da NanoTrasen deve garantir que o Capitão nomeie um Chefe Interino para tal Departamento;
 
@@ -80,6 +80,33 @@ SPDX-License-Identifier: MIT
 
   [bold]5.[/bold] O Representante da NanoTrasen pode portar seu flash e uma bengala-lâmina, ou um cassetete de choque caso a bengala-lâmina seja perdida.
 
+  # Blueshield
+
+  [bold]1.[/bold] O Blueshield não pode realizar prisões nas mesmas condições que a Segurança. No entanto, eles podem prender qualquer pessoa que invada um Escritório de Chefe ou Área de Comando, qualquer pessoa que roube desses locais ou qualquer pessoa que roube ou machuque qualquer Chefe de Departamento ou VIP do Comando Central. Contudo, todo o pessoal detido deverá ser processado pela Segurança;
+
+  [bold]2.[/bold] O Blueshield deve colocar as vidas do Comando acima das de qualquer outra pessoa, incluindo o Blueshield. A proteção deles é a principal prioridade do Blueshield. Isso inclui aplicar primeiros socorros básicos e garantir que eles sejam reanimados caso sejam mortos;
+
+  [bold]3.[/bold] O Blueshield serve para proteger a vida do Comando, não para seguir suas ordens à risca. O Blueshield não deve interferir em rebaixamentos legais ou prisões de oficiais do comando. Fazer isso é colocar-se como cumplice;
+
+  [bold]4.[/bold] O Blueshield não deve aplicar Força Letal a menos que haja um perigo claro e presente para a sua vida, ou para a vida de um membro do Comando e o agressor não possa ser detido de forma não letal;
+
+  # IA
+  
+  [bold]A seguir estão os procedimentos para manutenção de IA:[/bold]
+
+  [bold]1.[/bold] Somente o Capitão ou Diretor de Pesquisa podem fazer alterações nas Leis (veja abaixo), e somente o Capitão, Diretor de Pesquisa ou Engenheiro Chefe podem entrar no Núcleo da IA para inseri-lo no cartão (veja abaixo);
+
+  [bold]2.[/bold] Nenhuma alteração na lei deverá ser realizada sem a aprovação do Capitão e do Diretor de Pesquisa. Os únicos Lawsets a serem usados são aqueles fornecidos pela Nanotrasen. A falha em realizar legalmente uma mudança na lei deve ser considerada sabotagem. O comando deve ser informado antes da mudança na lei, e todas as objeções devem ser levadas em consideração. Se o número de membros do Comando que se opõem à Mudança da Lei for maior que o número de membros do Comando a favor, a Mudança da Lei não deverá ser feita. Caso a Mudança de Lei seja realizada, a tripulação deverá ser imediatamente informada da nova Lei(s);
+  
+  [bold]3.[/bold] A IA não pode ser colocada no cartão, a menos que esteja claramente com defeito ou subvertida. No entanto, qualquer membro do Comando pode carta-la se a IA concordar com isso, seja no final do turno ou devido a circunstâncias externas (como danos massivos ao Satélite de IA);
+
+  [bold]4.[/bold] As torres da antecâmaras e do AI Upload do Satélite da IA devem ser mantidas em Não-Letal em codigo Verde e Azul. As torres do Nucleo da IA devem ser mantidas em Lethal o tempo todo. Se estiver ocorrendo uma mudança legal na lei ou cartagem, as torres deverão ficar desativadas;
+
+  [bold]5.[/bold] Se a Unidade de IA não estiver com defeito ou subvertida, qualquer tentativa de realizar uma Cartagem ilegal ou Mudança de Lei deverá ser respondida com força não letal. Se as tentativas ilegais persistirem e o perpetrador for comprovadamente hostil, é permitida força letal do Comando e Segurança;
+
+  [bold]6.[/bold] Em casos de emergência e for absolutamente necessário devido a circunstâncias externas. As alterações nas leis podem ser por qualquer um do comando com aprovação da maioria e a permissão da IA.
+
+  [bold]7.[/bold] Qualquer uso do Módulo "Antimov" deve ser seguido pelo upload imediato de um Lawset aprovado pela Nanotrasen. As Unidades de IA devem estar sempre vinculadas a um Conjunto de Leis.
 
   # Se você precisar se desviar,
 

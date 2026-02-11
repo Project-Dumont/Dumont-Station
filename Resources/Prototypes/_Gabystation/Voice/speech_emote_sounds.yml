@@ -38,6 +38,16 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sneeze:
+      collection: MaleSneezes
+    Sigh:
+      collection: MaleSigh
 
 - type: emoteSounds
   id: FemaleWaddler
@@ -48,8 +58,6 @@
       path: /Audio/Animals/goose_honk.ogg
     Laugh:
       path: /Audio/Animals/penguin_squawk.ogg
-    Honk:
-      collection: BikeHorn
     Whistle:
       collection: Whistles
     Crying:
@@ -76,3 +84,15 @@
       path: /Audio/_Goobstation/Voice/surprised.ogg
     ET:
       path: /Audio/_Gabystation/Voice/et.ogg
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sneeze:
+      collection: FemaleSneezes
+    Honk:
+      collection: CluwneHorn
+    Sigh:
+      collection: FemaleSigh

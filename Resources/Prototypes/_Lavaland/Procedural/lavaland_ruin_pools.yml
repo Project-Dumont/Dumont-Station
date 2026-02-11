@@ -38,34 +38,21 @@
     RougeAI: 1
     BiodomeBeach: 1 # 2 Gaby Station
     BiodomeSnow: 1 # 2 Gaby Station
-    GolemShuttle: 1 # 2 Gaby Station
+    GolemShuttle: 1 # 1 Gaby Station
     ToyShop: 1
-    Chemistry: 1 # 2 Gaby Station
-    LavaLake: 1 # 3 Gaby Station
+    Chemistry: 1 # 1 Gaby Station
     Graveyard: 1
-    SeedVault: 1
-    Hermit: 1
-    WaffleCo: 1
+    SeedVault: 1 # 1 Gaby Station
+    Hermit: 1 # 2 Gaby Station
+    WaffleCo: 1 # 1 Gaby Station
     ArrivalsBack: 1
     ArrivalsFront: 1
-    CargoDebris: 1
-    VulpLab: 1
-    Shelter: 1 # 4 Gaby Station
+    Shelter: 1 # 1 Gaby Station
     Ratvar: 1
     MiningPost: 1 # 3 Gaby Station
     AbductorDebris: 1
     CultBase: 1
-    FleshCave: 1
-    FloraCave: 1
-    IceCave: 1
-    RockCave: 1
-    SlimeCave: 1
     Hunter: 1
-    Stash1: 1 # 2 Gaby Station
-    Stash2: 1 # 2 Gaby Station
-    Stash3: 1 # 2 Gaby Station
-    Stash4: 1 # 2 Gaby Station
-    FlockLarge: 1
 #WIZDEN RUINS (only peak ones, rest are trash) man
     CargoWreck: 1
     Murder: 1

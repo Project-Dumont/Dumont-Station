@@ -1,0 +1,103 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MP3PlayerWhite
+  name: white MP3 player
+  parent: BaseItem
+  description: Grooves on the go, now pocket sized!
+  components:
+  - type: StaticPrice
+    price: 150
+  - type: Item
+    size: Small
+    heldPrefix: mp3
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/mp3/mp3white.rsi
+    layers:
+    - state: mp3
+      map: ["enum.JukeboxVisualLayers.Base"]
+    - state: light
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      visible: false
+      shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Clothing
+    sprite: _Gabystation/Objects/Fun/mp3/mp3white.rsi
+    quickEquip: false
+    slots:
+    - Neck
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: ToggleCellDraw
+  - type: PowerCellDraw
+    drawRate: 0.5
+  - type: ItemToggle
+  - type: Jukebox
+    onState: mp3
+    offState: mp3
+    selectState: mp3
+    needsBattery: true
+    range: 1
+  - type: ActivatableUI
+    key: enum.JukeboxUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.JukeboxUiKey.Key:
+        type: JukeboxBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+
+- type: entity
+  id: MP3PlayerBlue
+  name: blue MP3 player
+  parent: MP3PlayerWhite
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/mp3/mp3blue.rsi
+  - type: Clothing
+    sprite: _Gabystation/Objects/Fun/mp3/mp3blue.rsi
+
+- type: entity
+  id: MP3PlayerGreen
+  name: green MP3 player
+  parent: MP3PlayerWhite
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/mp3/mp3green.rsi
+  - type: Clothing
+    sprite: _Gabystation/Objects/Fun/mp3/mp3green.rsi
+
+- type: entity
+  id: MP3PlayerPink
+  name: pink MP3 player
+  parent: MP3PlayerWhite
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/mp3/mp3pink.rsi
+  - type: Clothing
+    sprite: _Gabystation/Objects/Fun/mp3/mp3pink.rsi
+
+- type: entity
+  id: MP3PlayerRed
+  name: red MP3 player
+  parent: MP3PlayerWhite
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Fun/mp3/mp3red.rsi
+  - type: Clothing
+    sprite: _Gabystation/Objects/Fun/mp3/mp3red.rsi

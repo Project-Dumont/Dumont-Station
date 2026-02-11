@@ -109,7 +109,7 @@ public sealed partial class MaterialStorageComponent : Component
     // WHY THE FUCK DID WIZDEN THINK IT WOULD BE A GOOD IDEA TO INTRODUCE A WHITELIST, AND IMMEDIATELY INVALIDATING IT BY DYNAMICALLY GENERATING
     // ANOTHER BASED ON RECIPES. ON TWO FUCKING COMPONENTS THAT ARE ALMOST ALWAYS USED TOGETHER, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     [DataField, AutoNetworkedField]
-    public bool IgnoreMaterialWhiteList;
+    public bool IgnoreMaterialWhiteList = true; //Gabystation change. Some materials in silo werent accessable from lathes
     // Goobstation Change End
 }
 

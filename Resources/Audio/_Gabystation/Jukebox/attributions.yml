@@ -334,3 +334,37 @@
   license: "Custom"
   source: "https://www.youtube.com/watch?v=J_3Zad-e9f4"
 
+- files: ["Sylendanna_AHAH.ogg"]
+  copyright: "AHAH by Sylendanna exported by YTdown and converted to mono .ogg using audacity"
+  license: "Custom"
+  source: "https://youtu.be/q55PZsq79bE?si=EhSc71xg-G-DWWbJ"
+
+- files: ["ElyOttoSugarCrash.ogg"]
+  copyright: "Sugar Crash by ElyOtto exported by YTdown and converted to mono .ogg using audacity"
+  license: "Custom"
+  source: "https://youtu.be/6uaq8GJJxAQ?si=kZNAMKZSZQHdahzm"
+
+- files: ["WillowSmithWaitAMinute.ogg"]
+  copyright: "Wait a Minute! by willow smith. Exported with YTdown and converted to mono .ogg with Audacity"
+  license: "Custom"
+  source: "https://youtu.be/7XxoFs6G_Ko?si=jhJKq7f_dYbsdc5q"
+
+- files: ["NeverGonnaMeowYouUp.ogg"]
+  copyright: "Never Gonna Meow you up by Rapid Liquid. Exported with YTdown and converted to mono with audacity and to .ogg with convertio"
+  license: "Custom"
+  source: "https://youtu.be/hvL1339luv0?si=Ie-7WqKeMZjl2E0u4"
+
+- files: ["Running-Out-V2.1.ogg"]
+  copyright: "Running Out V2 by Sanabi. Downloaded in Drive and converted to ogg in Convertio and to mono with Online Audio Converter"
+  license: "Custom"
+  source: "https://youtu.be/DyLoa7ybbdk?si=bdLHMV6IBEV80tq2"
+
+- files: ["my-ordinary-life.ogg"]
+  copyright: "My Ordinary Life by Living Thombstone. Downloaded in y2cv and converted to ogg in Online Audio Converter"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=9Zj0JOHJR-s"
+
+- files: ["poster-boy.ogg"]
+  copyright: "Poster Boy by 2hollis. Downloaded in y2cv and converted to ogg in Online Audio Converter"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=H2vTrHc-OGk&list=RD7GrnNhdZ9Uc&index=2"

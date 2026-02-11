@@ -13,7 +13,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Speech;
-using Content.Shared.StatusIcon;
+using Content.Shared.StatusIcon; // Goobstation
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.VoiceMask;
@@ -58,9 +58,17 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     public bool EnableAction = true; //Goobstation
 
+    #region GabyStation
+    /// <summary>
+    ///     The job icon to be displayed next to their name when speaking on radio
+    /// </summary>
     [DataField]
     public ProtoId<JobIconPrototype>? JobIconProtoId; // GabyStation -> Radio icons
 
+    /// <summary>
+    ///     The name of the job that should show up when a mouse overs over the job icon on the radio
+    /// </summary>
     [DataField]
     public string? JobName; // GabyStation -> Radio icons
+    #endregion
 }

@@ -40,14 +40,14 @@
   - FoodPlateTin
   - FoodPlateMuffinTin
   - FoodKebabSkewer
-  - LightReplacer
+  # - LightReplacer #Gabystation change, moved to LightsStatic latheRecipePack
   - SprayBottle
   - TrashBag
-  - LightReplacer
   - MopItem
   - Holoprojector
   - WetFloorSign
   - WireBrush
+  - PhotoCamera # CorvaxGoob-PhotoCamera
 
 - type: latheRecipePack
   id: ServiceBoardsStatic

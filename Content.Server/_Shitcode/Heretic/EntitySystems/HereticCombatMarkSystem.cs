@@ -56,7 +56,6 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly StarMarkSystem _starMark = default!;
     [Dependency] private readonly HereticAbilitySystem _ability = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -98,10 +97,8 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
                 break;
 
             case "Flesh":
-                if (!_mobState.IsDead(target) && !HasComp<GhoulComponent>(target))
                 {
-                    if (_ability.CreateFleshMimic(target, user, false, true, 50, null) is { } mimic)
-                        EnsureComp<FleshMimickedComponent>(target).FleshMimics.Add(mimic);
+                    _ability.CreateFleshMimic(target, user, false, true, 50, null);
                 }
                 break;
 
@@ -123,7 +120,7 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
                 break;
 
             case "Void":
-                _voidcurse.DoCurse(target, 3);
+                _voidcurse.DoCurse(target, 5);
                 break;
 
             case "Cosmos":

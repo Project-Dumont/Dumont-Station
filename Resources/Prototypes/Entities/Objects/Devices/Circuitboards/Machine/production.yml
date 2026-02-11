@@ -1540,6 +1540,20 @@
         Steel: 5
 
 - type: entity
+  id: BluespaceGasVendorMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: bluespace gas vendor machine board
+  description: A machine printed board for a bluespace gas vendor machine.
+  components:
+    - type: MachineBoard
+      prototype: BluespaceVendor
+      stackRequirements:
+       Steel: 4
+       Manipulator: 4
+       Plasma: 2
+       Glass: 2
+
+- type: entity
   id: ThermomachineUpgradedFreezerMachineCircuitBoard
   parent: BaseMachineCircuitboard
   name: upgraded freezer thermomachine machine board

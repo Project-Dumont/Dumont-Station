@@ -1544,3 +1544,392 @@ Entries:
       message: Conserta velocidade em baixas temperaturas dos pinguinadores
   id: 178
   time: '2025-11-23T22:05:36.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de cowboy
+  id: 179
+  time: '2025-11-29T02:42:53.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas palavras para o sotaque de pirata
+  id: 180
+  time: '2025-11-29T02:44:20.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Fix
+      message: RCDs agora podem construir portas por cima de firelocks.
+  id: 181
+  time: '2025-11-29T03:35:11.0000000+00:00'
+- author: Kaduh45
+  changes:
+    - type: Tweak
+      message: >-
+        Reorganização de algumas POPs, melhoria nas POP dos Especialistas em
+        Salvamento, POP de Blueshield adicionada e mais!
+  id: 182
+  time: '2025-11-29T03:40:11.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Aumenta resistência à radiação de paredes reforçadas e cortinas
+        anti-rad. 
+  id: 183
+  time: '2025-12-09T14:53:38.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Todos materiais inseríveis no silo podem ser acessados por qualquer
+        fabricador conectado.
+    - type: Tweak
+      message: >-
+        Adiciona repositores de lâmpadas nos fabricadores que já podiam fazer
+        lâmpadas.
+  id: 184
+  time: '2025-12-09T16:21:56.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona o fliperama de campo minado.
+  id: 185
+  time: '2025-12-09T17:26:56.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionada as atualizações do Goob até 07/12 (confira a aba do Goob)!
+  id: 186
+  time: '2025-12-13T18:04:20.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Add
+      message: A máquina de venda de gás bluespace agora é pesquisável e craftável.
+  id: 187
+  time: '2025-12-16T20:24:32.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: >-
+        Aumenta o tamanho do cinto de ferramentas comum e do engenheiro chefe
+        por 1 item médio ou 2 pequenos.
+  id: 188
+  time: '2025-12-16T21:00:02.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Antagonista Slaughter Demon traduzido.
+  id: 189
+  time: '2025-12-16T21:00:58.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Implantes de EMP, liberdade e scram limitados a 3 usos.
+    - type: Tweak
+      message: Intervalo de ativação do scram diminuído.
+  id: 190
+  time: '2025-12-16T21:19:39.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Tweak
+      message: Adiciona barra de pesquisa de músicas na jukebox.
+  id: 191
+  time: '2025-12-16T22:03:31.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as alterações do Goob até 17/12 (vide a aba do Goob)!
+  id: 192
+  time: '2025-12-18T02:30:12.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as traduções da aba de doações!
+  id: 193
+  time: '2025-12-18T03:31:27.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Adicionado novo Tocador MP3, podendo tocar música no seu bolso ou
+        equipado em seu pescoço.
+  id: 194
+  time: '2025-12-20T15:31:24.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Retornado reflexo do sabre de capitão.
+  id: 195
+  time: '2025-12-21T17:51:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Nova skin cosmética para a Lawbringer do HoS.
+  id: 196
+  time: '2025-12-21T17:55:59.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 21/12 (confira a aba do Goob)!
+  id: 197
+  time: '2025-12-22T13:55:09.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode desligar máquinas para economizar energia.
+  id: 198
+  time: '2025-12-30T01:21:26.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora os segurança ganharam um bot chamado Beepsky.
+  id: 199
+  time: '2026-01-12T01:11:09.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Adiciona todo conteudo de xenobiologia e virologia para glacier
+    - type: Add
+      message: Processador de minerios para salvatagem na glacier
+    - type: Add
+      message: BSO para glacier
+    - type: Tweak
+      message: >-
+        Leves mudanças na SM da glacier, sua contenção agora é menor e pode
+        gerar mais energia
+  id: 200
+  time: '2026-01-12T01:18:24.0000000+00:00'
+- author: Struater
+  changes: []
+  id: 201
+  time: '2026-01-12T15:48:59.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 12/01/2026 (confira a aba do Goob)!
+  id: 202
+  time: '2026-01-12T17:37:55.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Add
+      message: Titulos OOC, vá comprar sua aura + ego!
+    - type: Add
+      message: Ghost skins, sejá um fantasma aurado.
+    - type: Add
+      message: Tokens pra cada antag e ghost role disponiveis no jogo.
+    - type: Remove
+      message: Cooldown de 1 dia por token.
+    - type: Remove
+      message: Ghost role token e Antag token.
+    - type: Remove
+      message: Diversão.
+    - type: Remove
+      message: >-
+        Tokens ghost role e antag token antigos perderam a validade, use o AHelp
+        para reembolsa-los!
+    - type: Tweak
+      message: A loja foi retrabalhada.
+    - type: Tweak
+      message: A loja agora funciona por rotaçaõ escolhendo 4 tokens a cada 2 horas.
+  id: 203
+  time: '2026-01-13T21:41:48.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Blob e zumbi da loja
+  id: 204
+  time: '2026-01-14T15:05:50.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Conteudo de xenobiologia Saltern, Omega, Packed e Cluster
+    - type: Add
+      message: Radiohost a Glacier, Saltern, Omega, Packed e Cluster
+    - type: Tweak
+      message: Grid eletrica da Packed
+  id: 205
+  time: '2026-01-16T15:05:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o Beepsky não detecta pessoas completamente invisíveis.
+  id: 206
+  time: '2026-01-17T19:36:48.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Fix
+      message: >-
+        Penguins agora tem sua velocidade de ataque padronizadas quando possuem
+        artes marciais, assim performam igualmente como qualquer outra raça.
+  id: 207
+  time: '2026-01-17T20:26:58.0000000+00:00'
+- author: Cleitosvaldo LIndo
+  changes:
+    - type: Add
+      message: Adiciona MeowRolling
+  id: 208
+  time: '2026-01-18T01:39:23.0000000+00:00'
+- author: Cleitosvaldo
+  changes:
+    - type: Add
+      message: Musica Wait a Minute! para a jukebox
+  id: 209
+  time: '2026-01-18T15:20:35.0000000+00:00'
+- author: Cleitosvaldo Lindo
+  changes:
+    - type: Add
+      message: AHAH a Jukebox
+    - type: Add
+      message: Sugar Crash a Jukebox
+  id: 210
+  time: '2026-01-18T15:29:16.0000000+00:00'
+- author: TheLife
+  changes:
+    - type: Tweak
+      message: Menu de opções agora oculta categorias não encontradas.
+  id: 211
+  time: '2026-01-21T20:03:12.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug de não conseguir reconectar.
+  id: 212
+  time: '2026-01-21T20:04:48.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionada as mudanças do Goob até 22/01 (não confira a aba do Goob, o
+        bot deles de changelog morreu)!
+  id: 213
+  time: '2026-01-23T13:21:34.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Tweak
+      message: Diminui o volume do áudio do evento de vent critter!
+  id: 214
+  time: '2026-01-23T13:22:51.0000000+00:00'
+- author: Kasparyan
+  changes:
+    - type: Add
+      message: Console de registros criminais podem imprimir mandatos de prisão
+  id: 215
+  time: '2026-01-23T17:36:55.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora o óculos do barman não derruba líquidos dos copos quando jogados.
+  id: 216
+  time: '2026-01-25T18:20:33.0000000+00:00'
+- author: Cleitosvaldo
+  changes:
+    - type: Add
+      message: Livro A Arte da Robustec
+  id: 217
+  time: '2026-01-25T18:21:41.0000000+00:00'
+- author: LuciferEOS
+  changes:
+    - type: Add
+      message: >-
+        Atenção, entrando na zona biologicamente morta a 2000m da estação.
+        Sinais de vida de grande porte desconhecidos detectados.
+  id: 218
+  time: '2026-01-27T16:10:10.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o Beepsky está 1% balanceado.
+  id: 219
+  time: '2026-01-27T16:13:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: A genética chegou.
+  id: 220
+  time: '2026-01-27T16:34:35.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Buffs no equipamento de CBURN.
+  id: 221
+  time: '2026-01-27T16:37:16.0000000+00:00'
+- author: InvisibleSnake
+  changes:
+    - type: Add
+      message: Capivara Ronilson
+  id: 222
+  time: '2026-01-27T16:40:07.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona manifesto de prontos.
+  id: 223
+  time: '2026-01-30T02:34:08.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido Secret Plus reiniciar o round!
+  id: 224
+  time: '2026-01-30T03:00:43.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Faz algumas leves mudanças a central de comando de verão
+  id: 225
+  time: '2026-02-01T14:42:40.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas músicas Running Out V2, My Ordinary Life e Poster boy na Jukebox!
+  id: 226
+  time: '2026-02-01T14:52:01.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 01/02 (confira a aba do Goob)!
+  id: 227
+  time: '2026-02-01T15:06:13.0000000+00:00'
+- author: vyas
+  changes:
+    - type: Remove
+      message: Removed fun!
+  id: 228
+  time: '2026-02-01T20:55:49.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona câmeras fotográficas.
+    - type: Add
+      message: >-
+        Agora os repórteres começam com um álbum de fotos que as mostra no fim
+        da rodada. Não se esqueça de assinar o álbum com uma caneta para que seu
+        nome apareça.
+  id: 229
+  time: '2026-02-04T21:12:13.0000000+00:00'
+- author: Dreykor e Kaua
+  changes:
+    - type: Tweak
+      message: >-
+        Alterações diversas nas regras do servidor, como metashield, regras de
+        nomes e muitos outros, não esqueça de lê-las!
+  id: 230
+  time: '2026-02-04T21:16:05.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Added fun!
+  id: 231
+  time: '2026-02-04T21:35:25.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Add
+      message: Reduz cooldown das injeções.
+  id: 232
+  time: '2026-02-04T22:12:10.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Uma arte de lobby (Gaby Wars (Players))
+  id: 233
+  time: '2026-02-10T15:15:31.0000000+00:00'

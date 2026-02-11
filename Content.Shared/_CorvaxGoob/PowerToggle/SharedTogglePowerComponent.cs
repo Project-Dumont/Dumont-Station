@@ -1,0 +1,37 @@
+// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._CorvaxGoob.PowerToggle;
+
+[NetworkedComponent]
+public abstract partial class SharedTogglePowerComponent : Component
+{
+    [DataField("isTurnedOn")]
+    public bool IsTurnedOn = true;
+
+    [DataField("toggleInterval")]
+    public TimeSpan ToggleInterval = TimeSpan.FromSeconds(2);
+
+    [DataField("nextToggle")]
+    public TimeSpan NextToggle = TimeSpan.Zero;
+
+    [DataField("altMode")]
+    public bool AltModeEnabled = true;
+}
+
+[Serializable, NetSerializable]
+public sealed class TogglePowerMessage : EntityEventArgs
+{
+    public NetEntity User;
+    public NetEntity Entity;
+
+    public TogglePowerMessage(NetEntity entity, NetEntity user)
+    {
+        User = user;
+        Entity = entity;
+    }
+}

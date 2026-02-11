@@ -7,6 +7,7 @@
   id: CyberLimbsMarkingShellguardHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_monitor.rsi
@@ -18,6 +19,7 @@
   id: CyberLimbsMarkingShellguardHeadAlt
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_alt1.rsi
@@ -29,6 +31,7 @@
   id: CyberLimbsMarkingShellguardChest
   bodyPart: Chest
   markingCategory: Chest
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -40,6 +43,7 @@
   id: CyberLimbsMarkingShellguardLArm
   bodyPart: LArm
   markingCategory: LeftArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -51,6 +55,7 @@
   id: CyberLimbsMarkingShellguardLHand
   bodyPart: LHand
   markingCategory: LeftHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -62,6 +67,7 @@
   id: CyberLimbsMarkingShellguardLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -74,6 +80,7 @@
   id: CyberLimbsMarkingShellguardLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -87,6 +94,7 @@
   id: CyberLimbsMarkingShellguardRArm
   bodyPart: RArm
   markingCategory: RightArm
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -99,6 +107,7 @@
   id: CyberLimbsMarkingShellguardRHand
   bodyPart: RHand
   markingCategory: RightHand
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -110,6 +119,7 @@
   id: CyberLimbsMarkingShellguardRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -122,6 +132,7 @@
   id: CyberLimbsMarkingShellguardRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi

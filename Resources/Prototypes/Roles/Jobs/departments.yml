@@ -108,6 +108,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - ShaftMiner # Lavaland Change
 
 - type: department
   id: Civilian
@@ -213,10 +214,12 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
+  - Geneticist # Corvax-Wega-Genetics
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
   - Paramedic
+  - Virologist # Gooby goob ba gooby goob ba
 
 - type: department
   id: Security
@@ -261,6 +264,7 @@
   color: "#9FED58"
   weight: 10
   roles:
+  - RadioHost # Goobstation
   - Boxer
   - Reporter
   - Zookeeper

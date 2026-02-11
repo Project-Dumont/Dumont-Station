@@ -1,0 +1,59 @@
+<!--
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Regra de Roleplay 11-1 - Escalonamento Envolvendo Animais
+  As regras de escalonamento são mais flexíveis com animais do que com pessoas. Esses requisitos mais flexíveis não se aplicam aos requisitos que as pessoas têm ao atacar umas às outras, mesmo que a briga esteja diretamente relacionada ao conflito envolvendo o animal.
+
+  Cada estação possui o que é considerado "animais de estimação da estação" e não-animais de estimação.
+
+  Animais de estimação da estação geralmente têm nomes e aparecem em todas as rodadas em seus respectivos departamentos, esses animais são protegidos pela Spacelaw e considerados membros da tripulação:
+
+  Alguns animais de estimação notáveis são:
+  - Hamlet
+  - Ian
+  - Renault
+  - Alexander
+  - McGriff
+  - Shiva
+  - Smile
+
+  Outros animais na estação, no entanto, não são protegidos pelas mesmas regras, mas podem se tornar um animal de estimação IC com o roleplay apropriado. Eles geralmente não têm nome e aparecem aleatoriamente.
+
+  Isso inclui animais como:
+
+  - Ratos
+  - Macacos
+  - Mothroachs
+  - Gorilas
+
+  Animais que não são de estimação, como ratos e macacos, podem ser mortos livremente por qualquer motivo IC, como controle de pragas ou para alimentação. Esses papéis geralmente estão disponíveis em número como ghost roles, então remover um da rodada normalmente não remove todos.
+
+  Ambos os lados podem escalar muito mais rapidamente do que poderiam se ambos fossem pessoas. Animais geralmente têm mais limitações na força máxima que podem usar em comparação com pessoas, o que limita os efeitos negativos de uma escalada rápida. Animais também normalmente têm menos vida do que pessoas e têm mais dificuldade para conseguir cura, o que justifica responderem a ataques fracos de forma mais severa.
+
+  Nem o animal nem a pessoa são obrigados a prestar atendimento médico ao outro se forem colocados em estado crítico. Atacar alguém até a morte, em vez de parar quando estiver em estado crítico, é considerado uma diferença significativa. Embora uma escalada suficiente possa justificar continuar atacando, geralmente pessoas e animais de estimação não devem continuar sendo atacados após entrarem em estado crítico, mas animais que não são de estimação podem ser. Despedaçar (gibbing) também é considerado um passo significativo porque impede clonagem ou ressuscitação. O fato de um animal ter dado o último golpe que colocou alguém em estado crítico não permite que pessoas que lutaram ao lado do animal deixem de tentar prestar atendimento médico.
+
+  O uso de ratoeiras sensatas e não direcionadas não é considerado conflito e não requer escalonamento.
+
+  A morte ou ataque a animais de estimação pode ser tratada como um passo de escalonamento por jogadores que tenham uma conexão IC genuína com o animal. Geralmente, toda a tripulação pode se considerar conectada IC a qualquer animal de estimação da estação. O grau de escalada deve ser proporcional à conexão com o animal, além do requisito usual de ser proporcional ao ataque. Por exemplo, um ataque ao Ian pode ser tratado quase da mesma forma que um ataque a um membro da tripulação, enquanto um ataque a um rato de estimação é muito menos grave. Os limites normais de escalada ainda se aplicam, você não pode atacar pessoas que se defenderam de um animal que as atacou aleatoriamente, assim como não poderia atacar alguém que se defendeu de um colega de trabalho que atacou aleatoriamente.
+
+  ## Exemplos
+  Aceitável:
+  - Um chef mata ratos que entram ou se aproximam de sua cozinha.
+  - Um zelador mata ratos que andam pela estação.
+  - Um lagarto mata um rato para comer.
+  - Um chef carrega um rato no chapéu por 10 minutos, coloca o rato no chão por um momento e outro jogador o mata. O chef responde atacando o outro jogador com os punhos e se recusa a servi-lo pelo resto do turno.
+  - Ian é atacado aleatoriamente, um tripulante que vê isso acontecer coloca o agressor em estado crítico e o leva para a segurança.
+  - Hamlet entra na cozinha e começa a comer toda a comida. Um chef vê isso e começa a balançar a faca para Hamlet. Hamlet começa a morder o chef e o coloca em estado crítico, depois volta a comer.
+
+  Proibido:
+  - Um zelador joga uma ratoeira armada no Hamlet sem motivo.
+  - Hamlet começa a morder pessoas aleatoriamente, tentando colocá-las em estado crítico, sem motivo.
+  - Um tripulante ataca a segurança por matar um space carp que ele adotou.
+  - Ian despedaça (gib) alguém que estava tentando matar outra pessoa.
+  - Hamlet ataca a segurança por tentar prender alguém de quem ele gosta.
+</Document>

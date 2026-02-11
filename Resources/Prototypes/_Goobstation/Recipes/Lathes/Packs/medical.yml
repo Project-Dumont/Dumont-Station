@@ -36,6 +36,7 @@
   - MedicalPatchRapid
   - MedicalPatchTherapeutic
   - MedicalPatchLarge
+  - MedicalCigPack
 
 - type: latheRecipePack
   id: SurgeryStaticGoob
@@ -75,6 +76,7 @@
   recipes:
   - PrescriptionGlasses
   - VehicleHoverchairSci
+  - TinfoilHats
 
 - type: latheRecipePack
   id: MedicalMiscRestricted

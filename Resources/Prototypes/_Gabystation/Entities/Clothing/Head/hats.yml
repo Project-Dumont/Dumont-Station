@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadHatCapcap
+  id: ClothingHeadHatCapMarinheiro
+  name: chapéu de marinheiro
+  description: Mar calmo não faz bons capitães está escrito no chapéu. Um lembrete de quando se velejava por mares de água salgada e não pelo vazio do espaço.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hats/cap_marinheiro.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hats/cap_marinheiro.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Head/Hats/cap_marinheiro.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatToucaDeGato
+  name: touca de gato
+  description: Uma touca confortável com orelhinhas de gato, ideal para um cochilo sossegado.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hats/orelhinhas_de_gato.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hats/orelhinhas_de_gato.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Head/Hats/orelhinhas_de_gato.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon

@@ -138,6 +138,7 @@ namespace Content.Shared.Damage
         public float UniversalTopicalsHealModifier { get; private set; } = 1f;
         public float UniversalMobDamageModifier { get; private set; } = 1f;
 
+        private ProtoId<DamageGroupPrototype>[] _vitalOnlyDamageTypes = { "Airloss", "Toxin", "Genetic", "Metaphysical" }; // Goobstation
         public override void Initialize()
         {
             SubscribeLocalEvent<DamageableComponent, ComponentInit>(DamageableInit);
@@ -293,8 +294,20 @@ namespace Content.Shared.Damage
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
                 return null;
 
-            if (damage.Empty)
+            if (damage == null || damage.Empty) // Corvax-Wega-Genetics
                 return damage;
+
+            // Goobstation start
+            var vitalDamage = new DamageSpecifier(damage);
+            vitalDamage -= vitalDamage;
+            vitalDamage.TrimZeros();
+            foreach (var type in _vitalOnlyDamageTypes)
+            {
+                vitalDamage += new DamageSpecifier(_prototypeManager.Index(type), 0f);
+            }
+            vitalDamage.ExclusiveAdd(damage);
+            vitalDamage.TrimZeros();
+            // Goobstation end
 
             var before = new BeforeDamageChangedEvent(damage, origin, canBeCancelled, targetPart); // Shitmed Change
             RaiseLocalEvent(uid.Value, ref before);
@@ -306,10 +319,22 @@ namespace Content.Shared.Damage
             if (_bodyQuery.TryGetComponent(uid.Value, out var body)
                 && body.BodyType == BodyType.Complex)
             {
+                damage -= vitalDamage; // Goobstation
+                damage.TrimZeros(); // Goobstation
+
                 var appliedDamage = ApplyDamageToBodyParts(uid.Value, damage, origin, ignoreResistances,
                     interruptsDoAfters, targetPart, partMultiplier, ignoreBlockers, splitDamage, canMiss);
 
-                return appliedDamage;
+                // Goobstation start
+                var appliedVitalDamage = ApplyDamageToBodyParts(uid.Value, vitalDamage, origin, ignoreResistances,
+                    interruptsDoAfters, TargetBodyPart.Vital, partMultiplier, ignoreBlockers, splitDamage, canMiss);
+
+                var totalDamage = appliedDamage;
+                if (totalDamage != null && appliedVitalDamage != null)
+                    totalDamage += appliedVitalDamage;
+
+                return totalDamage;
+                // Goobstation end
             }
 
             // For entities without a body, apply damage directly

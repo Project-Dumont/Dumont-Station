@@ -113,11 +113,14 @@
     ChemistryBottleEpinephrine: 3
     Syringe: 5
     BoxBottle: 3
+    PillCanisterMutadon: 2 # Corvax-Wega-Genetics
     ClothingEyesHudMedical: 2
     ClothingEyesEyepatchHudMedical: 2
     Tourniquet: 6 # Goobstation - start
     MedicalPatchPrefilledBicaridine: 3
     MedicalPatchPrefilledDermaline: 3
+    MedicalPatchBasic: 5 # so people don't rip clothes to get them shift start
+    CigPackMedical: 2 # same as above
     ParamedHypo: 2
     CartridgeSaline: 4
     CartridgeBicaridine: 4

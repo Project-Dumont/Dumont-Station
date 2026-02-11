@@ -3,9 +3,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Serialization; // Corvax-Wega
+
 namespace Content.Shared.DisplacementMap;
 
-[DataDefinition]
+[Serializable, NetSerializable, DataDefinition] // Corvax-Wega-Edit
 public sealed partial class DisplacementData
 {
     /// <summary>

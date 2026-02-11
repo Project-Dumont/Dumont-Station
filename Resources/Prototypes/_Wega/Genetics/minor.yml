@@ -1,0 +1,32 @@
+# Minor / 8 0 2
+- type: structuralEnzymes
+  id: GeneticsHeatResistanceMinor
+  message: genetics-heat-resistance-message
+  typeDeviation: Minor
+  costInstability: 10
+  addComponent:
+  - type: HeatResistanceGen
+
+- type: structuralEnzymes
+  id: GeneticsShockImmunityMinor
+  message: genetics-shock-immunity-message
+  typeDeviation: Minor
+  costInstability: 10
+  addComponent:
+  - type: Insulated
+
+- type: structuralEnzymes
+  id: GeneticsSoberMinor
+  message: genetics-sober-message
+  typeDeviation: Minor
+  costInstability: 5
+  addComponent:
+  - type: SoberGen
+
+- type: structuralEnzymes
+  id: GeneticsStrongMinor
+  message: genetics-strong-message
+  typeDeviation: Minor
+  costInstability: 15
+  addComponent:
+  - type: StrongnessGen

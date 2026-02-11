@@ -1,0 +1,16 @@
+- type: entity
+  parent: LockerMedicine
+  id: LockerGeneticist
+  name: armario de geneticist
+  components:
+  - type: AccessReader
+    access: [["Medical"], ["Research"]]
+
+- type: entity
+  id: UniqueLockerGeneticistFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerGeneticistFilled
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - UniqueMarkerGeneticist

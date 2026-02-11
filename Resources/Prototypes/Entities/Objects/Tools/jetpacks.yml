@@ -201,6 +201,8 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: JetpackCaptainFilled
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 # Filled captain
 - type: entity

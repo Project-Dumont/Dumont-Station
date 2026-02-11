@@ -584,3 +584,45 @@
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
 
+- type: jukebox
+  id: sugarCrash
+  name: ElyOtto - Sugar crash
+  path:
+    path: /Audio/_Gabystation/Jukebox/ElyOttoSugarCrash.ogg
+
+- type: jukebox
+  id: AHAH
+  name: Sylendanna - AHAH
+  path:
+    path: /Audio/_Gabystation/Jukebox/Sylendanna_AHAH.ogg
+
+- type: jukebox
+  id: WaitAMinut
+  name: Willow Smith - Wait a Minute
+  path:
+    path: /Audio/_Gabystation/Jukebox/WillowSmithWaitAMinute.ogg
+
+- type: jukebox
+  id: Catroll
+  name: Rapid Liquid - Never Gonna Meow You up
+  path:
+    path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg
+
+- type: jukebox
+  id: Runoutdois
+  name: Running Out V2 - Sanabi
+  path:
+    path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
+
+- type: jukebox
+  id: Ordinarilife
+  name: My Ordinary Life - The Living Tombstone
+  path:
+    path: /Audio/_Gabystation/Jukebox/my-ordinary-life.ogg
+
+- type: jukebox
+  id: Posterboy
+  name: Poster Boy - 2hollis
+  path:
+    path: /Audio/_Gabystation/Jukebox/poster-boy.ogg
+

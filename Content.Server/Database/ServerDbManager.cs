@@ -55,6 +55,7 @@
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 // SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 MortalBaguette <169563638+MortalBaguette@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
@@ -64,8 +65,11 @@
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
 // SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
@@ -76,6 +80,8 @@
 // SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
 // SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 tetra <169831122+Foralemes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
+// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -86,6 +92,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
+using Content.Shared._Gabystation.ServerCurrency.Prototypes;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
@@ -124,11 +131,27 @@ namespace Content.Server.Database
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
 
+        // Gabystation start - titles and more
+        Task SaveOOCTitleAsync(NetUserId userId, ProtoId<TitleListingPrototype>? protoId);
+
+        Task SaveGhostSkinAsync(NetUserId userId, ProtoId<GhostSkinListingPrototype>? ghostId);
+        // Gabystation end
+
         Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites);
 
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
+        #endregion
+
+        #region Gaby Station
+        Task<List<GabyModel.GabyStoreOwnedItems>> GetStorePurchasesAsync(NetUserId userId, GabyModel.DbPurchaseType type);
+
+        public Task<bool> HasStorePurchaseAsync(NetUserId userId, GabyModel.DbPurchaseType type, string prototype);
+
+        Task AddStorePurchaseAsync(NetUserId userId, GabyModel.DbPurchaseType type, string prototype);
+
+        Task RemoveStorePurchaseAsync(NetUserId userId, GabyModel.DbPurchaseType type, string prototype);
         #endregion
 
         #region User Ids
@@ -454,6 +477,22 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Goob Polls
+
+        Task<int> CreatePollAsync(Poll poll);
+        Task<Poll?> GetPollAsync(int pollId, CancellationToken cancel = default);
+        Task<List<Poll>> GetActivePollsAsync(CancellationToken cancel = default);
+        Task<List<Poll>> GetAllPollsAsync(bool includeInactive = true, CancellationToken cancel = default);
+        Task UpdatePollStatusAsync(int pollId, bool active, CancellationToken cancel = default);
+        Task<bool> AddPollVoteAsync(int pollId, int optionId, NetUserId userId, CancellationToken cancel = default);
+        Task<bool> RemovePollVoteAsync(int pollId, int optionId, NetUserId userId, CancellationToken cancel = default);
+        Task<List<PollVote>> GetPollVotesAsync(int pollId, CancellationToken cancel = default);
+        Task<List<PollVote>> GetPlayerVotesAsync(int pollId, NetUserId userId, CancellationToken cancel = default);
+        Task<bool> HasPlayerVotedAsync(int pollId, NetUserId userId, CancellationToken cancel = default);
+        Task<Dictionary<int, int>> GetPollResultsAsync(int pollId, CancellationToken cancel = default);
+
+        #endregion
+
         #region DB Notifications
 
         void SubscribeToNotifications(Action<DatabaseNotification> handler);
@@ -603,6 +642,18 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
         }
 
+        public Task SaveOOCTitleAsync(NetUserId userId, ProtoId<TitleListingPrototype>? titleId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveOOCTitleAsync(userId, titleId));
+        }
+
+        public Task SaveGhostSkinAsync(NetUserId userId, ProtoId<GhostSkinListingPrototype>? ghostId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveGhostSkinAsync(userId, ghostId));
+        }
+
         public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
         {
             DbWriteOpsMetric.Inc();
@@ -614,6 +665,45 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
         }
+
+        #region Gaby Station
+
+        public Task<List<GabyModel.GabyStoreOwnedItems>> GetStorePurchasesAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetOwnedStoreItemsAsync(userId, type));
+        }
+
+        public Task<bool> HasStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.HasStorePurchaseAsync(userId, type, prototype));
+        }
+
+        public Task AddStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddStorePurchaseAsync(userId, type, prototype));
+        }
+
+        public Task RemoveStorePurchaseAsync(
+            NetUserId userId,
+            GabyModel.DbPurchaseType type,
+            string prototype)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveStorePurchaseAsync(userId, type, prototype));
+        }
+
+        #endregion
 
         public Task AssignUserIdAsync(string name, NetUserId userId)
         {
@@ -1255,6 +1345,76 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.CleanIPIntelCache(range));
         }
+
+        #region Goob Polls
+
+        public Task<int> CreatePollAsync(Poll poll)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.CreatePollAsync(poll));
+        }
+
+        public Task<Poll?> GetPollAsync(int pollId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPollAsync(pollId, cancel));
+        }
+
+        public Task<List<Poll>> GetActivePollsAsync(CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetActivePollsAsync(cancel));
+        }
+
+        public Task<List<Poll>> GetAllPollsAsync(bool includeInactive = true, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetAllPollsAsync(includeInactive, cancel));
+        }
+
+        public Task UpdatePollStatusAsync(int pollId, bool active, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdatePollStatusAsync(pollId, active, cancel));
+        }
+
+        public Task<bool> AddPollVoteAsync(int pollId, int optionId, NetUserId userId, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddPollVoteAsync(pollId, optionId, userId, cancel));
+        }
+
+        public Task<bool> RemovePollVoteAsync(int pollId, int optionId, NetUserId userId, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemovePollVoteAsync(pollId, optionId, userId, cancel));
+        }
+
+        public Task<List<PollVote>> GetPollVotesAsync(int pollId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPollVotesAsync(pollId, cancel));
+        }
+
+        public Task<List<PollVote>> GetPlayerVotesAsync(int pollId, NetUserId userId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPlayerVotesAsync(pollId, userId, cancel));
+        }
+
+        public Task<bool> HasPlayerVotedAsync(int pollId, NetUserId userId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.HasPlayerVotedAsync(pollId, userId, cancel));
+        }
+
+        public Task<Dictionary<int, int>> GetPollResultsAsync(int pollId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPollResultsAsync(pollId, cancel));
+        }
+
+        #endregion
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {

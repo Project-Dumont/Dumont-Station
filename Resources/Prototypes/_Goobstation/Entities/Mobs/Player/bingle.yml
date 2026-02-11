@@ -100,9 +100,9 @@
     baseSprintSpeed : 4
   - type: Stamina
     critThreshold: 120
-  - type: StaminaDamageOnHit # from stunbaton
-    damage: 15
-    overtime: 40
+  - type: StaminaDamageOnHit # Should consistently stamcrit in 3 hits, 4-5 against sec
+    damage: 25
+    overtime: 15
     sound: /Audio/Weapons/egloves.ogg
   - type: Damageable
     damageContainer: Biological
@@ -120,7 +120,8 @@
   - type: LanguageKnowledge
     speaks:
     - Bingle
-    understands: []
+    understands:
+    - TauCetiBasic
   - type: CollectiveMind
     defaultChannel: Binglemind
     respectAccents: true
@@ -154,7 +155,6 @@
   components:
   - type: Bingle
     prime: true
-  - type: ScannableForPoints # NTR update, 5 points is the default.
 
 - type: entity
   id: MobBingleUpgraded

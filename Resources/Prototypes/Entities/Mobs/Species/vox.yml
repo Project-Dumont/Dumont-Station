@@ -129,10 +129,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ MobBloodstream, MobRespirator, MobAtmosStandard, MobFlammable, BaseMobSpecies ] # Goobstation - unperishable voxes
+  parent: [ MobBloodstream, MobRespirator, MobAtmosStandard, MobFlammable, BaseMobSpecies, BaseMobDisgust ] # Goobstation - unperishable voxes
   id: BaseMobVox
   abstract: true
   components:
+  - type: Disgust # Vox are better at handling disgust
+    accumulationMultiplier: 0.75
+    reductionRate: 3
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -145,7 +148,7 @@
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox
-    allowedEmotes: ['Bagawk']
+    allowedEmotes: ['Bagawk','Click','Chitter','Hiss','Caw']
   - type: TypingIndicator
     proto: vox
   - type: Vocal
@@ -221,13 +224,13 @@
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "neck" ]
+    - map: [ "suitstorage" ] # This is not in the default order
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "maskalt" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "suitstorage" ] # This is not in the default order
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
@@ -277,6 +280,11 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: head
+      neck:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Vox/displacement.rsi
+            state: neck
       back:
         sizeMaps:
           32:
@@ -292,6 +300,11 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: shoes
+      outerClothing: # Goob 
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Vox/displacement.rsi
+            state: outerClothing
   # Goobstation start - voxes are uncloneable but do not rot - all the stuff from BaseMobSpeciesOrganic
   - type: Uncloneable
   - type: Absorbable # Goobstation - changelings
@@ -322,7 +335,7 @@
         Cold: 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants
+        Heat: 1.0 # Goob edit #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
       293: 0.8
@@ -366,6 +379,7 @@
         32:
           sprite: Mobs/Species/Vox/displacement.rsi
           state: hand_r
+  - type: Wagging
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
       - TauCetiBasic
@@ -373,6 +387,12 @@
     understands:
       - TauCetiBasic
       - NewKinPidgin        # Vox language from Floofstation
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobVox
+    lowest: MobStokkey
+  # Corvax-Wega-Genetics-end
+
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -427,6 +447,11 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: shoes
+      outerClothing: # Goob
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Vox/displacement.rsi
+            state: outerClothing
   - type: Hands
     leftHandDisplacement:
       sizeMaps:

@@ -24,6 +24,7 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Standing;
 using Content.Shared.StatusEffect;
+using Content.Shared.Humanoid;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
 
@@ -77,6 +78,18 @@ public partial class SharedMartialArtsSystem
 
         RemComp<MartialArtsKnowledgeComponent>(user);
         RemComp<CanPerformComboComponent>(user);
+
+        // Gaby station inicio
+        // Devolve o ataque normal dos pinguins ao ser removida a roupa de judo corporativo
+
+        if (TryComp<HumanoidAppearanceComponent>(user, out var humanoid)
+            && humanoid.Species == "Waddler")
+        {
+            meleeWeaponComponent.AttackRate = 4f;
+            Dirty(user, meleeWeaponComponent);
+        }
+
+        // Gaby station fim
     }
 
     #endregion
@@ -90,7 +103,14 @@ public partial class SharedMartialArtsSystem
             || !TryComp(target, out StatusEffectsComponent? status))
             return;
 
-        _stun.TrySlowdown(target, TimeSpan.FromSeconds(5), true, 0.5f, 0.5f, status);
+        _stun.TrySlowdown(target, args.Time, true, args.SpeedMultiplier, args.SpeedMultiplier, status);
+
+        if (_newStatus.TryUpdateStatusEffectDuration(target, args.StatusEffectProto, out var effect, args.Time) &&
+            TryComp(effect, out StaminaResistanceModifierStatusEffectComponent? effectComp))
+        {
+            effectComp.Modifier *= args.StaminaResistanceModifier;
+            Dirty(effect.Value, effectComp);
+        }
 
         _stamina.TakeStaminaDamage(target, proto.StaminaDamage, applyResistances: true);
 
@@ -198,7 +218,11 @@ public partial class SharedMartialArtsSystem
         _stamina.TakeStaminaDamage(target, proto.StaminaDamage, applyResistances: true);
 
         _pulling.TryStopPull(target, pullable, ent, true);
-        _grabThrowing.Throw(target, ent, _transform.GetMapCoordinates(ent).Position - _transform.GetMapCoordinates(target).Position, 5);
+        _grabThrowing.Throw(target,
+            ent,
+            _transform.GetMapCoordinates(ent).Position - _transform.GetMapCoordinates(target).Position,
+            5,
+            behavior: proto.DropHeldItemsBehavior);
 
         _status.TryRemoveStatusEffect(ent, "KnockedDown");
         _standingState.Stand(ent);

@@ -105,7 +105,7 @@
   cost: 5000
   recipeUnlocks:
   - RadarConsoleCircuitboard
-#  - HandHeldMassScanner - Removed by Lavaland
+  - HandHeldMassScanner
   # Goobstation R&D Console rework start
   position: 0,-3
   technologyPrerequisites:
@@ -379,6 +379,7 @@
   recipeUnlocks:
   - HellfireFreezerMachineCircuitBoard
   - BluespaceGasSenderMachineBoard
+  - BluespaceGasVendorMachineCircuitBoard # Gabystation
   technologyPrerequisites:
   - AdvancedAtmospherics
   position: -1,-5

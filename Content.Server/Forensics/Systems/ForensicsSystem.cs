@@ -239,7 +239,7 @@ namespace Content.Server.Forensics
         private void OnRehydrated(Entity<ForensicsComponent> ent, ref GotRehydratedEvent args)
         {
             CopyForensicsFrom(ent.Comp, args.Target);
-            Dirty(args.Target, ent.Comp); // Einstein Engines
+            Dirty(args.Target, Comp<ForensicsComponent>(args.Target)); // Einstein Engines
         }
 
         /// <summary>
@@ -431,12 +431,12 @@ namespace Content.Server.Forensics
 
         public string GenerateDNA()
         {
-            var letters = new[] { "A", "C", "G", "T" };
+            var hexChars = "0123456789ABCDEF"; // Corvax-Wega-Genetics
             var DNA = string.Empty;
 
-            for (var i = 0; i < 16; i++)
+            for (var i = 0; i < 32; i++) // Corvax-Wega-Genetics
             {
-                DNA += letters[_random.Next(letters.Length)];
+                DNA += hexChars[_random.Next(hexChars.Length)]; // Corvax-Wega-Genetics
             }
 
             return DNA;

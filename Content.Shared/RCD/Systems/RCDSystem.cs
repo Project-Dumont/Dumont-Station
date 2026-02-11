@@ -567,6 +567,7 @@ public sealed class RCDSystem : EntitySystem
         var isWindow = prototype.ConstructionRules.Contains(RcdConstructionRule.IsWindow);
         var isCatwalk = prototype.ConstructionRules.Contains(RcdConstructionRule.IsCatwalk);
         var isWallLight = prototype.ConstructionRules.Contains(RcdConstructionRule.IsWallLight);
+        var isAirlock = prototype.ConstructionRules.Contains(RcdConstructionRule.IsAirlock);
 
         _intersectingEntities.Clear();
         _lookup.GetLocalEntitiesIntersecting(gridUid, position, _intersectingEntities, -0.05f, LookupFlags.Uncontained);
@@ -574,6 +575,10 @@ public sealed class RCDSystem : EntitySystem
         foreach (var ent in _intersectingEntities)
         {
             if (isWindow && HasComp<SharedCanBuildWindowOnTopComponent>(ent))
+                continue;
+
+            //Gabystation - Build airlocks on top of firelocks
+            if (isAirlock && HasComp<FirelockComponent>(ent))
                 continue;
 
             // Goobstation - No light spam
