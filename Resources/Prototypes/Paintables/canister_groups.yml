@@ -14,3 +14,18 @@
     storage: StorageCanister
     tritium: TritiumCanister
     water-vapor: WaterVaporCanister
+    #Gaby - Começo
+    hydrogen: HydrogenCanister 
+    hyper-noblium: HyperNobliumCanister
+    proto-nitrate: ProtoNitrateCanister
+    zauker: ZaukerCanister
+    halon: HalonCanister
+    helium: HeliumCanister
+    antinobilium: AntiNobliumCanister
+    bz: BZCanister
+    nitrium: NitriumCanister
+    healium: HealiumCanister
+    pluoxium: PluoxiumCanister
+    #Gaby - Fim
+
+
