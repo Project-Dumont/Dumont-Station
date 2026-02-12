@@ -94,23 +94,24 @@
     Head: MobTajaranHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Face: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking # Gaby change
     Undershirt: MobHumanoidAnyMarking # Gaby change
     Chest: MobTajaranChest
-    Groin: MobTajaranGroin
+    Groin: MobTajaranGroinDigi
     Eyes: MobTajaranEyes
     LArm: MobTajaranLArm
     RArm: MobTajaranRArm
     LHand: MobTajaranLHand
     RHand: MobTajaranRHand
-    LLeg: MobTajaranLLeg
-    RLeg: MobTajaranRLeg
     Tail: MobHumanoidAnyMarking
-    LFoot: MobTajaranLFoot
-    RFoot: MobTajaranRFoot
+    LLeg: MobTajaranLLegDigi # WWDP-Edit
+    RLeg: MobTajaranRLegDigi # WWDP-Edit
+    LFoot: MobTajaranLFootDigi # WWDP-Edit
+    RFoot: MobTajaranRFootDigi # WWDP-Edit
 
 - type: humanoidBaseSprite
   id: MobTajaranEyes
