@@ -149,7 +149,6 @@
         - SlipEntity
   - type: Inventory
     speciesId: reptilian
-    # WWDP-Edit-Start
     femaleDisplacements:
       enum.HumanoidVisualLayers.HeadSide:
           sizeMaps:
@@ -195,9 +194,9 @@
   components:
   - type: HumanoidAppearance
     species: Tajaran
+  # Gaby-Better-Tajara-start
   - type: Inventory
     speciesId: reptilian
-    # WWDP-Edit-Start
     femaleDisplacements:
       enum.HumanoidVisualLayers.HeadSide:
           sizeMaps:
@@ -230,3 +229,4 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
+  # Gaby-Better-Tajara-end
