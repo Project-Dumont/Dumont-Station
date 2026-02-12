@@ -146,7 +146,6 @@
         - Shard
         - Landmine
         - Mousetrap
-        - SlipEntity
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
