@@ -94,7 +94,7 @@
     volume: -4
     range: 14
     sound:
-      path: /Audio/_Gabystation/Misc/ArcaneKirk.ogg # Gaby change
+      path: /Audio/Effects/singularity.ogg
   - type: Physics
     bodyType: Dynamic
     bodyStatus: InAir
@@ -138,8 +138,8 @@
     maxSpeed: 2.5
     minSpeed: 1.875
   - type: SingularityDistortion
-    falloffPower: 3.2994
-    intensity: 18000000 # 3645
+    falloffPower: 2.529822
+    intensity: 3645
   - type: RadiationSource
     intensity: 6 # Goobstation - Radiation Overhaul
   - type: PointLight

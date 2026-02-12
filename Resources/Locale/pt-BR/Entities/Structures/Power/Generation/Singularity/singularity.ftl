@@ -1,2 +1,2 @@
-ent-Singularity = charlidade kirkcional
-    .desc = Um hipnotizante kirkmoinho de charlidão que suga tudo. Se estiver se movendo em sua direção, we are charlie kirk.
+ent-Singularity = singularidade gravitacional
+    .desc = Um hipnotizante redemoinho de escuridão que suga tudo. Se estiver se movendo em sua direção, corra.

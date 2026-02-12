@@ -338,3 +338,9 @@
   background: /Textures/_Gabystation/LobbyScreens/selene.webp
   name: The Selene family
   artist: Donner4037
+
+- type: lobbyBackground
+  id: gabywarsplayers
+  background: /Textures/_Gabystation/LobbyScreens/gabywarsplayers.webp
+  name: Gaby Wars (Players)
+  artist: Heartbeat

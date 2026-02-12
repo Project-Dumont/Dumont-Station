@@ -631,3 +631,33 @@
   name: Still Alive - Adriana Figueroa e Daniel Alvarez
   path:
     path: /Audio/_Gabystation/Lobby/Still_Alive.ogg
+
+- type: jukebox
+  id: Brighterfuture
+  name: A Brighter Future - Resonance Hub
+  path:
+    path: /Audio/_Gabystation/Jukebox/A_Brighter_Future.ogg
+
+- type: jukebox
+  id: Stayyourhouse
+  name: I Really Want To Stay At Your House - Cyberpunk
+  path:
+    path: /Audio/_Gabystation/Jukebox/I_Really_Want_To_Stay_At_Your_House.ogg
+
+- type: jukebox
+  id: Tokyodrift
+  name: Tokyo Drift - Fast & Furious
+  path:
+    path: /Audio/_Gabystation/Jukebox/Tokyo_Drift_Fast_&_Furious.ogg
+
+- type: jukebox
+  id: Waltztornado
+  name: Waltz of The Tornado - War Thunder
+  path:
+    path: /Audio/_Gabystation/Jukebox/Waltz_of_The_Tornado.ogg
+
+- type: jukebox
+  id: Readytomorrow
+  name: Whos Ready For Tomorrow - Cyberpunk
+  path:
+    path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg

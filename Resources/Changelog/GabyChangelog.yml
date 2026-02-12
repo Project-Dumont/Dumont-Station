@@ -1927,3 +1927,15 @@ Entries:
       message: Reduz cooldown das injeções.
   id: 232
   time: '2026-02-04T22:12:10.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Uma arte de lobby (Gaby Wars (Players))
+  id: 233
+  time: '2026-02-10T15:15:31.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas Músicas na Jukebox
+  id: 234
+  time: '2026-02-12T14:10:51.0000000+00:00'
