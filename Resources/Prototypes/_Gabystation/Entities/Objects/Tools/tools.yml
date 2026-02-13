@@ -74,7 +74,6 @@
     - Sensor
     - SensorPipe
     - PressureRegulator
-    # </GabyStation>
     # <Goobstation>
     - FilterInline
     - RadiatorInline
@@ -83,6 +82,7 @@
     # <FunkyStation>
     - HeatPump
     # </FunkyStation>
+    # <GabyStation>
     - WallReinforced
     - Canister
     - APC
@@ -105,3 +105,4 @@
     - WindoorReinforced
     - DirectionalFan
     - BlastDoor
+    # </GabyStation>
