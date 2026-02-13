@@ -41,56 +41,13 @@ rcd-component-atmosphericutility = Utilitários
 rcd-component-pumpsvalves = Bombas & Válvulas
 rcd-component-vents = Ventilações
 rcd-component-sensorsmonitors = Sensores & Monitores
-rcd-component-rcdall = Modo RCD
-rcd-component-rpdall = Modo RPD
 rcd-component-pneumatic-transport = Transporte Pneumático
 
 ### Nomes de protótipos
 
-### RCD
 rcd-component-deconstruct = desmontar
 rcd-component-wall-solid = parede sólida
 rcd-component-floor-steel = piso de aço
-rcd-component-plating = placa de casco
-rcd-component-catwalk = passarela
-rcd-component-wall-reinforced = parede reforçada
-rcd-component-grille = grade
-rcd-component-window = janela
-rcd-component-window-directional = janela direcional
-rcd-component-window-reinforced-directional = janela direcional reforçada
-rcd-component-reinforced-window = janela reforçada
-rcd-component-airlock = airlock padrão
-rcd-component-airlock-glass = airlock de vidro
-rcd-component-firelock = airlock de incêndio
-rcd-component-computer-frame = estrutura de computador
-rcd-component-machine-frame = estrutura de máquina
-rcd-component-tube-light = luz
-rcd-component-window-bulb-light = luz pequena
-rcd-component-window-lv-cable = cabo BT
 rcd-component-window-mv-cable = cabo MT
 rcd-component-window-hv-cable = cabo AT
 rcd-component-window-cable-terminal = terminal de cabo
-rcd-component-apc = APC
-rcd-component-disposal = Unidade de descarte
-rcd-component-mailing = Unidade de correio
-rcd-component-disposal-pipe-straight = Cano pneumático reto
-rcd-component-disposal-pipe-tagger = Cano pneumático etiquetador
-rcd-component-disposal-pipe-signaller = Cano pneumático sinalizador
-rcd-component-disposal-pipe-signal-router = Roteador pneumático de sinal
-rcd-component-disposal-pipe-trunk = Fim de cano pneumático
-rcd-component-disposal-pipe-router = Roteador pneumático
-rcd-component-disposal-pipe-junction = Junção de cano pneumático
-rcd-component-disposal-pipe-y-junction = Junção em T pneumática
-rcd-component-disposal-pipe-x-junction = Junção em cruz pneumática
-rcd-component-disposal-pipe-bend = Cano pneumático curvado
-rcd-component-firelock-glass = Porta corta-fogo com janela
-rcd-component-firelock-thin = Porta corta-fogo pequena
-rcd-component-windoor = Porta deslizante
-rcd-component-windoor-reinforced = Porta deslizanete reforçada
-rcd-component-airlock-external = Airlock externo
-rcd-component-airlock-high-sec = Airlock de alta segurança
-rcd-component-blast-door = Porta anti-explosão
-
-### RPD
-rcd-component-canister = Cilindro de Gás
-rcd-component-directional-fan = Ventoinha direcional

@@ -16,6 +16,7 @@
   mode: Deconstruct
   prototype: EffectRCDDeconstructPreview
   rotation: Camera
+  noLayers: true
 
 - type: rcd
   id: DeconstructLattice   # Hidden prototype - do not add to RCDs

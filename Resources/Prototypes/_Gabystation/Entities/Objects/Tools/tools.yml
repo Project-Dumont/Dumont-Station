@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [BaseGrandTheftContraband, RCD]
+  parent: [BaseGrandTheftContraband, RPD]
   id: RCDProtoCE
   name: Proto RCD
   description: An still experimental RCD, capable of much more than standard models. Specially provided for the CE for field testing.
@@ -29,7 +29,6 @@
   - type: RCD
     isRpd: true
     availablePrototypes: #TODO Tentar fazer o Nestling funcionar
-    - Deconstruct
     - WallSolid
     - FloorSteel
     - Plating
@@ -86,15 +85,18 @@
     - WallReinforced
     - Canister
     - APC
+    - FrameComputer
+    - FrameMachine
     - Disposal
+    - Mailing
     - DisposalPipeStraight
     - DisposalPipeTagger
     - DisposalPipeSignaller
     - DisposalPipeTrunk
     - DisposalPipeRouter
     - DisposalPipeSignalRouter
-    - DisposalPipeYJunction
-    - DisposalPipeXJunction
+    - DisposalPipeJunctionY
+    - DisposalPipeJunctionX
     - DisposalPipeJunction
     - DisposalPipeBend
     - FirelockThin
@@ -106,3 +108,4 @@
     - DirectionalFan
     - BlastDoor
     # </GabyStation>
+    - Deconstruct

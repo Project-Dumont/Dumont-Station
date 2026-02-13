@@ -29,6 +29,30 @@
   fx: EffectRCDConstruct4
   noLayers: true
 
+- type: rcd
+  id: FrameComputer
+  category: Electrical
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/computer_frame.png
+  mode: ConstructObject
+  prototype: ComputerFrame
+  cost: 4
+  delay: 3
+  rotation: User
+  fx: EffectRCDConstruct3
+  noLayers: true
+
+- type: rcd
+  id: FrameMachine
+  category: Electrical
+  sprite: /Textures/_Gabystation/Interface/Radial/RCD/machine_frame.png
+  mode: ConstructObject
+  prototype: MachineFrame
+  cost: 4
+  delay: 3
+  rotation: User
+  fx: EffectRCDConstruct3
+  noLayers: true
+
 # Atmospheric Utility
 - type: rcd
   id: Canister
@@ -167,7 +191,7 @@
   noLayers: true
 
 - type: rcd
-  id: DisposalPipeYJunction
+  id: DisposalPipeJunctionY
   category: PneumaticTransport
   sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-y-junction.png
   mode: ConstructObject
@@ -179,7 +203,7 @@
   noLayers: true
 
 - type: rcd
-  id: DisposalPipeXJunction
+  id: DisposalPipeJunctionX
   category: PneumaticTransport
   sprite: /Textures/_Gabystation/Interface/Radial/RCD/pipe-x-junction.png
   mode: ConstructObject
