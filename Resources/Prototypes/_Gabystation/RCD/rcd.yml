@@ -273,10 +273,10 @@
   mode: ConstructObject
   prototype: WindoorSecure
   cost: 6
-  delay: 6
+  delay: 4
   collisionMask: FullTileMask
   rotation: User
-  fx: EffectRCDConstruct6
+  fx: EffectRCDConstruct4
   noLayers: true
 
 - type: rcd
