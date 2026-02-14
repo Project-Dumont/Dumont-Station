@@ -57,7 +57,6 @@
   id: OrganSynthEars
   parent: BaseSynthOrgan
   name: "sonic receptors"
-  description:
   components:
   - type: Sprite
     state: ears
@@ -68,6 +67,7 @@
   id: OrganSynthStomach
   parent: BaseSynthOrgan
   name: food processor
+  description: "A food processor, used to break down organic matter."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
