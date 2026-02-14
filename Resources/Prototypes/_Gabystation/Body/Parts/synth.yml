@@ -38,8 +38,7 @@
       pump:
         id: "pump"
       stomach:
-        id: "pump:
-        id: "pump""
+        id: "stomach"
 
 - type: entity
   parent: [ PartSynthBase, BaseGroinInorganic ]
