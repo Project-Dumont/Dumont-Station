@@ -84,12 +84,12 @@
     solutions:
       stomach:
         maxVol: 40
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
   - type: Stomach
+    updateInterval: 40
+  - type: OrganFoodProcessor
+    groups:
+    - id: Food
+    - id: Drink
   - type: Tag # goob edit
     tags:
     - Stomach

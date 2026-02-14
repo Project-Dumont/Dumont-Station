@@ -34,6 +34,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server._Gabystation.OrganFoodProcessor;
 
 namespace Content.Server.Body.Systems
 {
@@ -41,6 +42,7 @@ namespace Content.Server.Body.Systems
     {
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly OrganFoodProcessorSystem _organFoodProcessorSystem = default!;
 
         public const string DefaultSolutionName = "stomach";
 
@@ -81,6 +83,10 @@ namespace Content.Server.Body.Systems
                     continue;
 
                 stomach.NextUpdate += stomach.AdjustedUpdateInterval;
+
+                //[Gaby] Try Removing food if a corpse doesn't have a bloodstream
+                if (_organFoodProcessorSystem.TrySynthProcessingFood(uid, stomach, organ, sol))
+                    continue;
 
                 // Get our solutions
                 if (!_solutionContainerSystem.ResolveSolution((uid, sol), DefaultSolutionName, ref stomach.Solution, out var stomachSolution))

@@ -20,10 +20,11 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Whitelist;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Server._Gabystation.OrganFoodProcessor;
 
 namespace Content.Server.Body.Components
 {
-    [RegisterComponent, Access(typeof(StomachSystem), typeof(FoodSystem))]
+    [RegisterComponent, Access(typeof(StomachSystem), typeof(FoodSystem), typeof(OrganFoodProcessorSystem))]
     public sealed partial class StomachComponent : Component
     {
         /// <summary>
