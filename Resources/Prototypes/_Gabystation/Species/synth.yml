@@ -21,15 +21,20 @@
 - type: speciesBaseSprites
   id: MobSynthSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     Head: MobSynthHead
+    Hair: MobHumanoidAnyMarking
     Face: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobSynthChest
+    Groin: MobSynthGroin
+    Eyes: MobHumanoidEyes
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
-    Chest: MobSynthChest
-    Groin: MobSynthGroin
     LArm: MobSynthLArm
     RArm: MobSynthRArm
     LHand: MobSynthLHand
@@ -44,7 +49,7 @@
   id: MobSynthMarkingLimits
   points:
     Head:
-      points: 1
+      points: 4
       required: true
       defaultMarkings: [ MobSynthHeadDefault ]
     Hair:
@@ -54,49 +59,49 @@
       points: 1
       required: false
     Face:
-      points: 1
+      points: 5
       required: false
     Chest:
-      points: 1
+      points: 4
       required: true
       defaultMarkings: [ MobSynthChestDefault ]
     HeadSide:
-      points: 1
+      points: 5
       required: false
     Groin:
-      points: 1
+      points: 4
       required: true
       defaultMarkings: [ MobSynthGroinDefault ]
     RightLeg:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthRLegDefault ]
     RightFoot:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthRFootDefault ]
     LeftLeg:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthLLegDefault ]
     LeftFoot:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthLFootDefault ]
     RightArm:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthRArmDefault ]
     RightHand:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthRHandDefault ]
     LeftArm:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthLArmDefault ]
     LeftHand:
-      points: 1
+      points: 4
       required: false
       defaultMarkings: [ MobSynthLHandDefault ]
 
