@@ -86,10 +86,10 @@
         maxVol: 40
   - type: Stomach
     updateInterval: 40
-  - type: OrganFoodProcessor
     groups:
     - id: Food
     - id: Drink
+  - type: OrganFoodProcessor
   - type: Tag # goob edit
     tags:
     - Stomach
