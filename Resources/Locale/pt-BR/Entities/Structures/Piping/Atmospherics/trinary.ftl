@@ -15,3 +15,5 @@ ent-GasMixerFlipped = misturador de gás
 ent-PressureControlledValve = valvula pneumática
     .desc = Válvula controlada por pressão.
 
+ent-GasFilterInline = filtro de gás em linha
+    .desc = Muito útil para extrair gases especificos de uma mistura. Não necessita de fluxo.

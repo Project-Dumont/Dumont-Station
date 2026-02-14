@@ -19,3 +19,9 @@ ent-GasThermoMachineFreezer = resfriador
 ent-GasThermoMachineHeater = aquecedor
     .desc = Aquece o gás em canos conectados.
 
+ent-HeatExchangerInline = radiador em linha
+    .desc = Iguala a temperatura do gás com o do ambiente fora do cano. Sem necessidade de fluxo.
+
+ent-HeatExchangerInlineBend = radiador em linha curvado
+    .desc = Iguala a temperatura do gás com o do ambiente fora do cano. Sem necessidade de fluxo.
+    .suffix = curvado
