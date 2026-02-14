@@ -14,7 +14,7 @@
     sprite: _EinsteinEngines/Mobs/Species/IPC/parts.rsi
   - type: Damageable
     damageContainer: SiliconRadiation
-    damageModifierSet: Synth
+    damageModifierSet: IPC
   - type: WoundableVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     damageOverlayGroups:
