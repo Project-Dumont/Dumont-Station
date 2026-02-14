@@ -6,7 +6,7 @@
   parent: [BaseGrandTheftContraband, RPD]
   id: RCDProtoCE
   name: Proto RCD
-  description: An still experimental RCD, capable of much more than standard models. Specially provided for the CE for field testing.
+  description: A still experimental RCD, capable of much more than standard models. Specially provided for the CE for field testing.
   components:
   - type: LimitedCharges
     maxCharges: 45

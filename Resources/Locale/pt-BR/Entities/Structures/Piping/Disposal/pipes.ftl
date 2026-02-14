@@ -20,8 +20,8 @@ ent-DisposalRouterFlipped = tubo roteador
     .desc = Um tubo com entrada e duas saídas. A saída utilizada por um item depende de sua marcação.
     .suffix = flipped
 
-ent-DisposalJunction = tubo convergente reto
-    .desc = Um tupo com duas entradas e uma saída. A seta indica a saída.
+ent-DisposalJunction = tubo convergente contínuo
+    .desc = Um tubo com duas entradas e uma saída. A seta indica a saída.
 
 ent-DisposalJunctionFlipped = tubo convergente contínuo
     .desc = Um tupo com duas entradas e uma saída contínua. A seta indica a saída.
