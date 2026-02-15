@@ -20,7 +20,7 @@ using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Server._Gabystation.OrganFoodProcessor;
+using Content.Shared._Gabystation.OrganFoodProcessor;
 
 namespace Content.Shared.Body.Components
 {

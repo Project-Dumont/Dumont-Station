@@ -2,11 +2,11 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Body.Systems;
+using Content.Shared.Body.Systems;
 using Robust.Shared.Audio;
 
 
-namespace Content.Server._Gabystation.OrganFoodProcessor
+namespace Content.Shared._Gabystation.OrganFoodProcessor
 {
     [RegisterComponent, Access(typeof(StomachSystem), typeof(OrganFoodProcessorSystem))]
     public sealed partial class OrganFoodProcessorComponent : Component

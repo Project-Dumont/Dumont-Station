@@ -33,7 +33,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Server._Gabystation.OrganFoodProcessor;
+using Content.Shared._Gabystation.OrganFoodProcessor;
 
 namespace Content.Shared.Body.Systems
 {

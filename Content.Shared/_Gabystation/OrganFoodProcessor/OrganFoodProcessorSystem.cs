@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Body.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Body.Organ;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -12,7 +12,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Content.Shared.Jittering;
 
-namespace Content.Server._Gabystation.OrganFoodProcessor
+namespace Content.Shared._Gabystation.OrganFoodProcessor
 {
     public sealed class OrganFoodProcessorSystem : EntitySystem
     {
