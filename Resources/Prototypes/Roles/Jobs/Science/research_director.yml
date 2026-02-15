@@ -156,8 +156,8 @@
   guides: # goobstation
   - Science
   - Command
-  # - ResearchDirector SOP
-  # - Science SOP
+  # - ResearchDirectorSOP
+  # - ScienceSOP
   goobcoins: 40 #Goob content
   salary: 50 # Gaby content
   access:

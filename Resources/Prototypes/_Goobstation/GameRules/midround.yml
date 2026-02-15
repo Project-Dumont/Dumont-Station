@@ -257,6 +257,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
+      - MindRoleTraitor
       briefing:
         text: dark-lord-role-greeting
         color: Red
@@ -320,6 +321,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
+      - MindRoleTraitor
       briefing:
         text: mime-Assassin-role-greeting
         color: Red
@@ -357,6 +359,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleFreeAgent
+      - MindRoleTraitor
       briefing:
         text: dark-priest-role-greeting
         color: Purple
@@ -379,11 +382,11 @@
   - type: AntagRandomObjectives
     sets:
     - groups: ThiefBigObjectiveGroups
-      prob: 0.7
+      prob: 1
       maxPicks: 2
     - groups: ThiefObjectiveGroups
-      maxPicks: 15
-    maxDifficulty: 2
+      maxPicks: 5
+    maxDifficulty: 10
   - type: StationEvent
     earliestStart: 35
     weight: 2.5
@@ -410,6 +413,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
+      - MindRoleThief
       briefing:
         text: vox-raider-role-greeting
         color: Purple

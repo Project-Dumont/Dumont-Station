@@ -36,7 +36,7 @@ public sealed class TourettesSyndromeSystem : EntitySystem
                 _chat.TrySendInGameICMessage(uid, swearWord, InGameICChatType.Speak, false);
                 if (_random.Next(0, 100) < 10)
                 {
-                    _stun.TryStun(uid, TimeSpan.FromSeconds(_random.Next(1, 31)), true);
+                    _stun.TryUpdateStunDuration(uid, TimeSpan.FromSeconds(_random.Next(1, 31)));
                 }
             }
             tourettes.NextTimeTick -= frameTime;

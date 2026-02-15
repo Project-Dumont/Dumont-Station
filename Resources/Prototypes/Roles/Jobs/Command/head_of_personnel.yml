@@ -165,8 +165,8 @@
   guides: # goobstation
   - Command
   # - Succession
-  # - StandardProcedures SOP
-  # - HeadOfPersonnel SOP
+  # - StandardProceduresSOP
+  # - HeadOfPersonnelSOP
   - Writing
   goobcoins: 40 #Goob content
   salary: 50 # Gaby content
@@ -224,6 +224,7 @@
     #gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboard
+    eyes: ClothingEyesHudCommand
   storage:
     back:
     - Flash

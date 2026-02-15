@@ -7,10 +7,10 @@
 
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Explosion.EntitySystems;
 using Content.Shared._Funkystation.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Trigger;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
 using Robust.Shared.Random;

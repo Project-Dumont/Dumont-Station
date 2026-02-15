@@ -167,8 +167,8 @@
   guides: # goobstation
   - Command
   # - Succession
-  # - StandardProcedures SOP
-  # - Captain SOP
+  # - StandardProceduresSOP
+  # - CaptainSOP
   goobcoins: 50 #Goob content
   weight: 20
   salary: 50 # Gaby content
@@ -196,7 +196,7 @@
   id: CaptainGear
   equipment:
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesCommand
     #gloves: ClothingHandsGlovesCaptain - Goobstation, moved to loadouts
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand

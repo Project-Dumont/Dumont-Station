@@ -1983,3 +1983,15 @@ Entries:
         das roupas do capitão.
   id: 239
   time: '2026-02-12T19:28:00.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 13/02!
+  id: 240
+  time: '2026-02-15T03:52:54.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Remove
+      message: Moths não podem mais voar ao fim do dash.
+  id: 241
+  time: '2026-02-15T03:54:36.0000000+00:00'

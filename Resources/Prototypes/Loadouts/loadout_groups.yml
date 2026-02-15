@@ -223,18 +223,20 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
-  - CardBoxBlack # GoobStation
-  - CardBoxNanotrasen # GoobStation
-  - PlushieBruce # Gabystation
-  - PlushieNiku # Gabystation
-  - PlushieTajaran # Gabystation
-  - PlushieKiiaraWami # Gabystation
-  - PlushieKiiaraWarden # Gabystation
-  - MP3PlayerWhite # Gabystation
-  - PhotoCamera # Gabystation
-  - FoodSnackLollypopWrapped # Goobstation
-  - FoodSnackLollypopWrappedRainbow # Goobstation
-  - FoodSnackLollypopWrappedCarp # Goobstation
+  - ClothingNeckGoldAutismPin
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
+  # GoobStation Start
+  - CardBoxBlack
+  - CardBoxNanotrasen
+  - FoodSnackLollypopWrapped
+  - FoodSnackLollypopWrappedRainbow
+  - FoodSnackLollypopWrappedCarp
+  # Goobstation End
   - TowelColorBlack
   - TowelColorDarkBlue
   - TowelColorDarkGreen
@@ -259,6 +261,15 @@
   - TapeRecorder
   - DrinkOniGourd
   # End DeltaV Additions
+  # Begin Gabystation
+  - PlushieBruce
+  - PlushieNiku
+  - PlushieTajaran
+  - PlushieKiiaraWami
+  - PlushieKiiaraWarden
+  - MP3PlayerWhite
+  - PhotoCamera
+  # End Gabystation
 
 - type: loadoutGroup
   id: Glasses
