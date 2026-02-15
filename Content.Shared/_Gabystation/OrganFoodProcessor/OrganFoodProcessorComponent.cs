@@ -5,13 +5,11 @@
 using Content.Shared.Body.Systems;
 using Robust.Shared.Audio;
 
+namespace Content.Shared._Gabystation.OrganFoodProcessor;
 
-namespace Content.Shared._Gabystation.OrganFoodProcessor
+[RegisterComponent, Access(typeof(StomachSystem), typeof(OrganFoodProcessorSystem))]
+public sealed partial class OrganFoodProcessorComponent : Component
 {
-    [RegisterComponent, Access(typeof(StomachSystem), typeof(OrganFoodProcessorSystem))]
-    public sealed partial class OrganFoodProcessorComponent : Component
-    {
-        [DataField("processingSound")]
-        public SoundSpecifier ProcessingSound = new SoundCollectionSpecifier("OrganFoodProcessor");
-    }
+    [DataField("processingSound")]
+    public SoundSpecifier ProcessingSound = new SoundCollectionSpecifier("OrganFoodProcessor");
 }
