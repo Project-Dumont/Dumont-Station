@@ -338,8 +338,6 @@
     - id: DoorRemoteEngineering
     - id: CargoRequestEngineeringComputerCircuitboard
     # - id: RCD # Goobstation
-    - id: RCDAmmo
-    - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade
     # Goobstation V

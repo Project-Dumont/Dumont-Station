@@ -10,7 +10,7 @@
   mode: ConstructObject
   prototype: WallReinforced
   cost: 10
-  delay: 6
+  delay: 4
   collisionMask: FullTileMask
   rotation: Fixed
   fx: EffectRCDConstruct4 # Aumentar tempo animação pra ficar igual delay

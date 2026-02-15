@@ -10,7 +10,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
 using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.RCD;
@@ -28,7 +27,6 @@ namespace Content.Client.RCD;
 public sealed class RCDMenuBoundUserInterface : BoundUserInterface
 {
     private const string TopLevelActionCategory = "Main";
-    // private const string TopLevelActionCategory = "NotMain";
 
     private static readonly Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)> PrototypesGroupingInfo
         = new Dictionary<string, (string Tooltip, SpriteSpecifier Sprite)>
@@ -47,6 +45,7 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             // Gabystation
             ["PneumaticTransport"] = ("rcd-component-pneumatic-transport", new SpriteSpecifier.Texture(new ResPath("/Textures/_Gabystation/Interface/Radial/RCD/disposal.png"))),
         };
+
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
 
