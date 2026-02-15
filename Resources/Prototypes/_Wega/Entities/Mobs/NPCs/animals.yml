@@ -60,6 +60,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -78,6 +87,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -96,6 +114,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -114,6 +141,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs

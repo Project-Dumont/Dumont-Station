@@ -8,6 +8,7 @@
       connections:
       - legs
       organs:
+        brain: OrganAnimalBrain # Gabystation
         lungs: OrganAnimalLungs
         stomach: OrganAnimalStomach
         liver: OrganVoxLiver
