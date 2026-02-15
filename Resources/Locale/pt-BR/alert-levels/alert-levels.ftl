@@ -8,7 +8,7 @@ alert-level-green-announcement = Está tudo bem! Já podem voltar a atividades n
 alert-level-green-instructions = Volte a seu trabalho.
 
 alert-level-blue = Azul
-alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Se ver algo suspeito avise imediatamente a segurança.
+alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Se ver algo suspeito avise imediatamente a segurança. Mantenham-se vigilantes.
 alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a segurança.
 
 alert-level-red = Vermelho
@@ -24,7 +24,7 @@ alert-level-yellow-announcement = Há dano estrutural na estação. Acionando a 
 alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes estão autorizados a auxiliar o Departamento da Segurança.
 alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
