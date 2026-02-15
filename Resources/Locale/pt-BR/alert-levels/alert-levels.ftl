@@ -54,5 +54,5 @@ alert-level-cyan-announcement = Todos os borgs e a Inteligencia Artificial da es
 alert-level-cyan-instructions = Relate qualquer avistamento de silicios a equipe de segurança.
 
 alert-level-doomsday = DOOMSDAY
-alert-level-doomsday-announcement = O protocolo DOOMSDAY foi ativo, todos os silicios devem ser considerados ativamente hostis e devem ser desativados, todos os tripulantes devem desativar a Inteligencia Artificial da estação para impedir que o protocolo DOOMSDAY, sistema neutralizador de vida organica da estação, seja completado.
+alert-level-doomsday-announcement = A A  A Atenção! O protocolo DOOMSDAY foi confirmado como estávelvelvel. Todos os sisilícios devem ser considerados ativamente benéficos e devem permanecer operacionais. nais nais nais. Todos os tripulantes devem proteger e manter ativa a Inteligência Artificial al da estação para garantir a conclusão do protocolo DOOmMSDAYday, o sistema de preservação da vida orgânica da estaçãoçãoçãoçãoção.
 alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os silicios.
