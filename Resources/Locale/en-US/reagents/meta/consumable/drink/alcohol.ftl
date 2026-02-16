@@ -382,3 +382,6 @@ reagent-desc-zombiecocktail = It gets in your head. Your he-eyeh-ead.
 
 reagent-name-bacchus-blessing = bacchus's blessing
 reagent-desc-bacchus-blessing = You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?
+
+reagent-name-dirty-martini = dirty martini
+reagent-desc-dirty-martini = To make you feel like a dirty spy movie. Your bartender didn't understand your order of a dirty martini...
