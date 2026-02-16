@@ -2942,7 +2942,7 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkDirtyMartini
+  id: DrinkDirtyMartiniGlass
   suffix: dirty martini
   components:
   - type: SolutionContainerManager
