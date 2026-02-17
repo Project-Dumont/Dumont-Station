@@ -338,7 +338,7 @@
     - TauCetiBasic
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatRuntime
   # Corvax-Wega-Genetics-end
 
@@ -369,7 +369,7 @@
     - TauCetiBasic
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatException
   # Corvax-Wega-Genetics-end
 
@@ -407,7 +407,7 @@
     - TauCetiBasic
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatFloppa
   # Corvax-Wega-Genetics-end
 
