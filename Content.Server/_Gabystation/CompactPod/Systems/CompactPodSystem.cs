@@ -34,6 +34,7 @@ public sealed partial class CompactPodSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
+    [Dependency] private readonly SharedMechSystem _mech = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -50,7 +51,7 @@ public sealed partial class CompactPodSystem : EntitySystem
 
         SubscribeLocalEvent<CompactPodPassengerComponent, AtmosExposedGetAirEvent>(OnExpose);
 
-        SubscribeLocalEvent<CompactPodComponent, DestructionEventArgs>(OnDestruction);
+        SubscribeLocalEvent<CompactPodComponent, DamageChangedEvent>(OnDestruction);
     }
 
     private void OnEntryPod(EntityUid uid, CompactPodComponent component, MechEntryEvent args)
@@ -191,7 +192,9 @@ public sealed partial class CompactPodSystem : EntitySystem
         if (!TryComp<JetpackComponent>(uid, out var jetpack))
             return;
 
-        var xform = Transform(uid);
+        if (!TryComp<TransformComponent>(uid, out var xform))
+            return;
+
         if (xform.GridUid != null)
         {
             ApplyGridMovement(uid);
@@ -200,7 +203,8 @@ public sealed partial class CompactPodSystem : EntitySystem
         {
             // No espaço: Remove o auxílio de grid mas mantém o Jetpack
             RemComp<CanMoveInAirComponent>(uid);
-            ForcedJetpackActive(uid, jetpack);
+            if (TryComp<MechComponent>(uid, out var pod) && !_mech.IsEmpty(pod))
+                ForcedJetpackActive(uid, jetpack);
         }
 
         _movementSpeedModifier.RefreshWeightlessModifiers(uid);
@@ -253,9 +257,15 @@ public sealed partial class CompactPodSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnDestruction(EntityUid uid, CompactPodComponent component, DestructionEventArgs args)
+    private void OnDestruction(EntityUid uid, CompactPodComponent component, DamageChangedEvent args)
     {
-        EjectAllPassengers(uid, component);
+        if (!TryComp<MechComponent>(uid, out var mech))
+            return;
+
+        if (mech.Broken || mech.Integrity <= 0)
+        {
+            EjectAllPassengers(uid, component);
+        }
     }
 
     public void EjectAllPassengers(EntityUid uid, CompactPodComponent? component = null)
