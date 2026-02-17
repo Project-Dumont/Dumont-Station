@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: EmergencySpaceBuoy
+  icon:
+    sprite: _Gabystation/Objects/Specific/Mech/SpaceBuoy.rsi
+    state: icon
+  product: CrateGenericEmergencyCompactPod
+  cost: 10000
+  category: cargoproduct-category-name-emergency
+  group: market
