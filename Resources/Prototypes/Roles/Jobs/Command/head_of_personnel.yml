@@ -169,7 +169,7 @@
   # - HeadOfPersonnelSOP
   - Writing
   goobcoins: 40 #Goob content
-  salary: 50 # Gaby content
+  salary: 80 # Gaby content
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
