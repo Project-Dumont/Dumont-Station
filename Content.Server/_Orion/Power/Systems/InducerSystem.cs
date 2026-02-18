@@ -1,4 +1,5 @@
 using Content.Goobstation.Common.Effects;
+using Content.Server.Construction.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Orion.Power.Components;
@@ -7,7 +8,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Wall;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Orion.Power.Systems;
@@ -89,9 +90,12 @@ public sealed class InducerSystem : EntitySystem
         if (!TryComp<BatteryComponent>(slot.Item.Value, out var sourceBattery))
             return;
 
-        var effectiveMultiplier = component.TransferMultiplier;
-        if (HasComp<GunComponent>(target))
-            effectiveMultiplier = component.GunTransferMultiplier;
+        var effectiveMultiplier = UsesStructureMultiplier(target)
+            ? component.StructureTransferMultiplier
+            : component.TransferMultiplier;
+
+        if (effectiveMultiplier <= 0f)
+            return;
 
         var baseEnergyToConsume = component.TransferRate * component.TransferDelay;
         baseEnergyToConsume = Math.Min(baseEnergyToConsume, sourceBattery.CurrentCharge);
@@ -149,5 +153,15 @@ public sealed class InducerSystem : EntitySystem
 
             args.Verbs.Add(verb);
         }
+    }
+
+    private bool UsesStructureMultiplier(EntityUid target)
+    {
+        if (Transform(target).Anchored)
+            return true;
+
+        return HasComp<ApcComponent>(target)
+               || HasComp<MachineComponent>(target)
+               || HasComp<WallMountComponent>(target);
     }
 }

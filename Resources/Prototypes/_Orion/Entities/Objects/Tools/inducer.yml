@@ -11,8 +11,8 @@
     transferRate: 500
     transferDelay: 1
     maxDistance: 3
-    transferMultiplier: 8
-    gunTransferMultiplier: 0.8
+    transferMultiplier: 0.8
+    structureTransferMultiplier: 8
     availableTransferRates:
     - 500
     - 2500
@@ -112,7 +112,7 @@
     sprite: _Orion/Objects/Tools/Inducer/inducer-white.rsi
     state: icon
   - type: Inducer
-    transferMultiplier: 12
+    structureTransferMultiplier: 12
     availableTransferRates:
     - 500
     - 2500
@@ -151,7 +151,7 @@
     sprite: _Orion/Objects/Tools/Inducer/inducer-syndicate.rsi
     state: icon
   - type: Inducer
-    gunTransferMultiplier: 1.2
+    transferMultiplier: 1.2
   - type: ItemMapper
     mapLayers:
       inducer-bat:
