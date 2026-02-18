@@ -1,0 +1,4 @@
+- type: shader
+  id: FontOutline
+  kind: source
+  path: "/Textures/Shaders/font_outline.swsl"
