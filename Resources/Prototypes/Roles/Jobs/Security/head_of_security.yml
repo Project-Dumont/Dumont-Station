@@ -182,7 +182,7 @@
   # - SecuritySOP
   # - AlertLevels
   goobcoins: 45 #Goob content
-  salary: 50 # Gaby content
+  salary: 75 # Gaby content
   access:
   - HeadOfSecurity
   - Command
