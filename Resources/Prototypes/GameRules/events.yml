@@ -194,6 +194,7 @@
     #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
     - id: HereticMidround # Gabystation
+    - id: CosmicCultMidround # Gabystation
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn

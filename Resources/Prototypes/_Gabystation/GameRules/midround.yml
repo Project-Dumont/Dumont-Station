@@ -82,3 +82,47 @@
   - type: Tag
     tags:
       - MidroundAntag
+
+# Midround Cosmic Cultist
+- type: entity
+  parent: CosmicCult
+  id: CosmicCultMidround
+  components:
+  - type: StationEvent
+    earliestStart: 20
+    weight: 3
+    minimumPlayers: 30
+    maxOccurrences: 1
+    startAnnouncement: station-event-communication-interception
+    startAudio:
+      path: /Audio/Announcements/intercept.ogg
+    duration: null
+    occursDuringRoundEnd: false
+    chaos:
+      Hostile: 400
+      Medical: 400
+      Death: 400
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 1200
+  - type: AlertLevelInterceptionRule
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: cosmic-cult-roundend-name 
+    definitions:
+    - prefRoles: [ CosmicAntagCultist ]
+      max: 4
+      min: 2
+      playerRatio: 15
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+        - BibleUser
+      lateJoinAdditional: true
+      jobBlacklist: [ Chaplain ]
+      mindRoles:
+      - MindRoleCosmicCult
+  - type: Tag
+    tags:
+      - MidroundAntag
