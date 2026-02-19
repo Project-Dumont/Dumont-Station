@@ -198,7 +198,7 @@
       shuttleTime: 1200
     cyan:
       announcement: alert-level-cyan-announcement
-      sound: /Audio/_Gabystation/Misc/ciano_saae.ogg
+      sound: /Audio/_Gabystation/Misc/ciano_saae2.ogg
       color: Cyan
       emergencyLightColor: Cyan
       forceEnableEmergencyLights: true
