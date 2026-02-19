@@ -59,6 +59,16 @@
     rechargeTime: 0
 
 - type: entity
+  id: ActionJuggernautCommune
+  parent: ActionCultistCommune
+  components:
+  - type: Action
+    raiseOnUser: true
+    checkCanInteract: false
+    itemIconStyle: NoItem
+    icon: { sprite: _Funkystation/BloodCult/spells_cultist.rsi, state: commune }
+
+- type: entity
   id: ActionCultistSpellsSelect
   name: Prepare Spell
   description: Prepare a blood spell by carving it into your body. Up to 1 spell may be prepared without standing on an empowering rune.

@@ -147,10 +147,10 @@ public sealed class DeconversionSystem : EntitySystem
         }
         else if (TryComp<BloodCultistComponent>(target, out _))
         {
-            Spawn(censer.CleanseVFX, targetPosition);
+            Spawn(uid.Comp.CleanseVFX, targetPosition);
             EnsureComp<CleanseCultComponent>(target.Value, out var cleanse);
             cleanse.CleanseDuration = TimeSpan.FromSeconds(1);
-            _audio.PlayPvs(censer.CleanseSound, targetPosition, AudioParams.Default.WithVolume(4f));
+            _audio.PlayPvs(uid.Comp.CleanseSound, targetPosition, AudioParams.Default.WithVolume(4f));
             _popup.PopupEntity(Loc.GetString("cleanse-deconvert-attempt-success", ("target", Identity.Entity(target.Value, EntityManager))), args.User, args.User);
         }
         else if (HasComp<RogueAscendedInfectionComponent>(target))

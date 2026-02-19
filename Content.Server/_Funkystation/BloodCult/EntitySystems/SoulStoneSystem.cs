@@ -175,7 +175,7 @@ public sealed class SoulStoneSystem : EntitySystem
 				if (TryComp<BloodstreamComponent>(args.User, out var bloodstream))
 				{
 					// Add 10 units/second bleed - this is a massive bleed that will rapidly drain blood
-					_bloodstream.TryModifyBleedAmount(args.User, 10.0f, bloodstream);
+					_bloodstream.TryModifyBleedAmount((args.User, bloodstream), 10.0f);
 				}
 			}
 				
@@ -245,7 +245,6 @@ public sealed class SoulStoneSystem : EntitySystem
 
 	private void OnSoulStoneDestroyed(Entity<SoulStoneComponent> soulstone, ref DestructionEventArgs args)
 	{
-	
 		// Figure out where the soulstone is
 		var coordinates = Transform(soulstone).Coordinates;
 		// Glassbreak sound playing at the coordinates above
@@ -257,7 +256,7 @@ public sealed class SoulStoneSystem : EntitySystem
 		// Clear BloodCult antag role if present (e.g., from juggernauts)
 		if (mindId != null && _role.MindHasRole<BloodCultRoleComponent>(mindId.Value))
 		{
-			_role.MindTryRemoveRole<BloodCultRoleComponent>(mindId.Value);
+			_role.MindRemoveRole<BloodCultRoleComponent>(mindId.Value);
 		}
 
 		// Figure out what the original entity was, probably a positronic brain or IPC brain
@@ -280,4 +279,3 @@ public sealed class SoulStoneSystem : EntitySystem
 		);
 	}
 }
-

@@ -19,6 +19,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Server.Damage.Systems;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 
@@ -89,7 +90,7 @@ public sealed class BloodCultistReactionSystem : EntitySystem
 		// Each unit of consumed blood restores 2 units of their blood volume
 		if (TryComp<BloodstreamComponent>(uid, out var bloodstream))
 		{
-			_bloodstream.TryModifyBloodLevel(uid, bloodAmount.Float() * 2.0f, bloodstream);
+			_bloodstream.TryModifyBloodLevel((uid, bloodstream), bloodAmount.Float() * 2.0f);
 			
 			/// Commented out below code. Why did I ever think it was a good idea to bleed when you drink blood?
 			// Cause brief bleeding (1 unit/second for each 5 units consumed)

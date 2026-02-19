@@ -36,6 +36,7 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Player;
 using Content.Shared.Damage.Components;
+using Content.Shared.Actions.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 
@@ -58,16 +59,8 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 	/// </summary>
 	private void GrantCommuneAction(EntityUid juggernaut)
 	{
-		EntityUid? communeAction = null;
-		BaseActionComponent? actionComp = null;
-		if (_actions.AddAction(juggernaut, ref communeAction, out actionComp, "ActionCultistCommune") && communeAction != null && actionComp != null)
-		{
-			// Ensure the event is raised on the juggernaut so it can be handled
-			actionComp.RaiseOnUser = true;
-			Dirty(communeAction.Value, actionComp);
-		}
+	    _actions.AddAction(juggernaut, "ActionJuggernautCommune");
 	}
-
 
 	public override void Initialize()
 	{

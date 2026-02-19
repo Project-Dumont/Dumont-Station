@@ -57,7 +57,7 @@ public sealed class BloodCultMindShieldSystem : EntitySystem
 
         if (_mindSystem.TryGetMind(uid, out var mindId, out _))
         {
-            _roleSystem.MindTryRemoveRole<BloodCultRoleComponent>(mindId);
+            _roleSystem.MindRemoveRole<BloodCultRoleComponent>(mindId);
             _npcFaction.RemoveFaction(mindId, BloodCultRuleSystem.BloodCultistFactionId, false);
             // Possible to add other factions back here? It'd have to track their original faction
             // Todo: add a component to track original factions
@@ -74,7 +74,7 @@ public sealed class BloodCultMindShieldSystem : EntitySystem
 
         var stunTime = stunDuration ?? TimeSpan.FromSeconds(4);
         if (stunTime > TimeSpan.Zero)
-            _sharedStun.TryParalyze(uid, stunTime, true);
+            _sharedStun.TryAddParalyzeDuration(uid, stunTime);
 
         if (popupLocId != null && name != null)
             _popupSystem.PopupEntity(Loc.GetString(popupLocId, ("name", name!)), uid);
@@ -89,10 +89,10 @@ public sealed class BloodCultMindShieldSystem : EntitySystem
     {
         foreach (var action in _actions.GetActions(uid))
         {
-            if (!TryComp<CultistSpellComponent>(action.Id, out _))
+            if (!TryComp<CultistSpellComponent>(action.Owner, out _))
                 continue;
 
-            _actions.RemoveAction(uid, action.Id);
+            _actions.RemoveAction(uid, action.Owner);
         }
 
         if (!removeVisuals)
