@@ -1,0 +1,39 @@
+- files: ["alerta_verde_saae.ogg"]
+  license: "CC-BY-SA" 
+  copyright: "Made by Struater"
+
+  - files: ["azul_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["amarelo_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["violeta_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["vermelho_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["gamma_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["epsilon_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["delta_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+ - files: ["doomsday_saae.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
+
+  - files: ["ciano_saae2.ogg"]
+  license: "CC-BY-SA"
+  copyright: "Made by Struater"
