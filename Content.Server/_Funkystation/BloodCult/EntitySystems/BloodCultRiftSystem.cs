@@ -23,7 +23,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Ghost;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -36,6 +36,7 @@ using Robust.Shared.Random;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using Robust.Shared.Maths;
+using Content.Shared.Trigger;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

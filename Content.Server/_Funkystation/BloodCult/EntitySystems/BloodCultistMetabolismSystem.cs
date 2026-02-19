@@ -6,6 +6,7 @@ using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.BloodCult;
 using Robust.Shared.GameObjects;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

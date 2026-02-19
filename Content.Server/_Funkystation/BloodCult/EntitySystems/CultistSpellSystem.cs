@@ -51,7 +51,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mind.Components;
 using Content.Server.Stack;
-
+using Content.Shared.Body.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

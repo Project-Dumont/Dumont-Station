@@ -12,10 +12,11 @@ using Content.Shared.BloodCult.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Timing;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 
