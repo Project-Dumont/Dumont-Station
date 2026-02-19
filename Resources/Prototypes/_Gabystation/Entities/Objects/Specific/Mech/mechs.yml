@@ -120,8 +120,7 @@
         node: start
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  # Goobstation Change Start
-  - type: UnpoweredFlashlight # Goobstation mech lights for all mechs its unpowered to match hardsuits
+  - type: UnpoweredFlashlight
   - type: PointLight
     enabled: false
     softness: 5
@@ -130,6 +129,9 @@
     radius: 7
     energy: 3
     netsync: false
+  - type: RadarBlip
+    radarColor: Green
+    requireNoGrid: true
   - type: StaticPrice
     price: 3000
   - type: DragDropTargetable
@@ -149,9 +151,6 @@
       state: icon
     - state: thruster
       shader: unshaded
-  - type: RadarBlip
-    radarColor: Green
-    requireNoGrid: true
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 1
@@ -166,7 +165,7 @@
     baseState: icon
     openState: icon
     brokenState: broken
-    mechToPilotDamageMultiplier: 0.0
+    mechToPilotDamageMultiplier: 0.1
     airtight: true
     pilotWhitelist:
       components:

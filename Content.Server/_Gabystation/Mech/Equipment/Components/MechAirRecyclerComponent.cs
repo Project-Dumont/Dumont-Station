@@ -7,7 +7,7 @@ namespace Content.Server._Gabystation.Mech.Equipment.Components;
 public sealed partial class MechAirRecyclerComponent : Component
 {
     [DataField("enabled")]
-    public bool Enabled = true;
+    public bool Enabled = false;
 
     [DataField("energyCost")]
     public float EnergyCost = 0.5f;

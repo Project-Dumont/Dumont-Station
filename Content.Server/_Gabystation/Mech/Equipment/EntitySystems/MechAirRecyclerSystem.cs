@@ -4,6 +4,8 @@ using Content.Server.Atmos.Components;
 using Content.Server.Mech.Components;
 using Content.Server._Gabystation.Mech.Equipment.Components;
 using Content.Server.Mech.Systems;
+using Content.Shared.Mech.Equipment.Components;
+using Content.Shared.Mech;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Mech.Components;
@@ -22,6 +24,8 @@ public sealed class MechAirRecyclerSystem : EntitySystem
 
         SubscribeLocalEvent<MechAirRecyclerComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MechAirRecyclerComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<MechAirRecyclerComponent, InsertEquipmentEvent>(OnInsert);
+        SubscribeLocalEvent<MechAirRecyclerComponent, MechEquipmentRemovedEvent>(OnRemove);
     }
     private void OnStartup(EntityUid uid, MechAirRecyclerComponent comp, ComponentStartup args)
     {
@@ -31,6 +35,16 @@ public sealed class MechAirRecyclerSystem : EntitySystem
     private void OnShutdown(EntityUid uid, MechAirRecyclerComponent comp, ComponentShutdown args)
     {
         _activeRecyclers.Remove(uid);
+    }
+
+    private void OnInsert(EntityUid uid, MechAirRecyclerComponent comp, InsertEquipmentEvent args)
+    {
+        comp.Enabled = true;
+    }
+
+    private void OnRemove(EntityUid uid, MechAirRecyclerComponent comp, MechEquipmentRemovedEvent args)
+    {
+        comp.Enabled = false;
     }
 
     public override void Update(float frameTime)
