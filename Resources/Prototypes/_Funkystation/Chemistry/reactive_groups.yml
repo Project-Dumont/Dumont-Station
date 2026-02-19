@@ -4,7 +4,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: reactiveGroup
-  id: Medication
-
-- type: reactiveGroup
   id: CultistPurge

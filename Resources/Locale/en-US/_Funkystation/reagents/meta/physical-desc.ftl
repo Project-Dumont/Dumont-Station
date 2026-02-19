@@ -6,6 +6,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
-reagent-physical-desc-vaporous = vaporous
-reagent-physical-desc-burnt = burnt
 reagent-physical-desc-profane = profane

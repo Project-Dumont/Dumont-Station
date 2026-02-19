@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
-using Content.Server.Fluids.EntitySystems;
+using Content.Shared.Fluids;
 using Content.Shared.BloodCult;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
@@ -10,7 +10,7 @@ using Content.Shared.EntityEffects;
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.BloodCult.EntityEffects;
+namespace Content.Shared.BloodCult.EntityEffects;
 
 /// <summary>
 /// When blood is splashed on a juggernaut, creates Sanguine Perniculate puddles on the ground.
@@ -43,7 +43,7 @@ public sealed partial class JuggernautBloodCorruption : EntityEffect
         if (reagentArgs.Quantity <= FixedPoint2.Zero)
             return;
 
-        var puddleSystem = args.EntityManager.System<PuddleSystem>();
+        var puddleSystem = args.EntityManager.System<SharedPuddleSystem>();
         var transform = args.EntityManager.GetComponent<TransformComponent>(args.TargetEntity);
 
         // Create a solution of Sanguine Perniculate with the same volume as the reagent quantity that was applied

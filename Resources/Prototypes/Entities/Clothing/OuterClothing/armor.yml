@@ -468,7 +468,7 @@
     damageCoefficient: 0.6
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowBackStorageClothingCombat ]
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
   id: ClothingOuterRobesBloodCult
   name: bloodcult robes
   description: An evil-looking cloth robe, dripping with blood and reinforced with armor plates, with an attached hood.

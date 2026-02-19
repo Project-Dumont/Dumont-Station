@@ -8,51 +8,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: flavor
-  id: eggnog
-  flavorType: Complex
-  description: flavor-complex-eggnog
-
-- type: flavor
-  id: peggnog
-  flavorType: Complex
-  description: flavor-complex-peggnog
-
-- type: flavor
-  id: spiked-eggnog
-  flavorType: Complex
-  description: flavor-complex-spiked-eggnog
-
-- type: flavor
-  id: tayquila
-  flavorType: Base
-  description: flavor-base-sour
-
-- type: flavor
-  id: chutzpah
-  flavorType: Complex
-  description: flavor-complex-chutzpah
-
-- type: flavor
-  id: margherita-drink
-  flavorType: Complex
-  description: flavor-complex-margherita-drink
-
-- type: flavor
-  id: pineapple-margherita
-  flavorType: Complex
-  description: flavor-complex-pineapple-margherita
-  
-- type: flavor
-  id: shrimp
-  flavorType: Complex
-  description: flavor-complex-shrimp
-
-- type: flavor
-  id: fresh
-  flavorType: Base
-  description: flavor-base-fresh
-
-- type: flavor
   id: forbidden
   flavorType: Complex
   description: flavor-complex-forbidden

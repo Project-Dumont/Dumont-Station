@@ -9,12 +9,11 @@ using System.Text.Json.Serialization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
-using Content.Server.Damage.Systems;
+using Content.Shared.Damage.Systems;
 using Content.Shared.EntityEffects;
 using Content.Shared.BloodCult;
-using Content.Shared.Damage.Systems;
 
-namespace Content.Server.EntityEffects.Effects;
+namespace Content.Shared.EntityEffects.Effects;
 
 //[UsedImplicitly]
 public sealed partial class DeCultify : EntityEffect
@@ -51,7 +50,7 @@ public sealed partial class DeCultify : EntityEffect
 		if (oldDeCultification < 100.0f && newDeCultification >= 100.0f)
 		{
 			var audioSystem = args.EntityManager.System<SharedAudioSystem>();
-			var staminaSystem = args.EntityManager.System<StaminaSystem>();
+			var staminaSystem = args.EntityManager.System<SharedStaminaSystem>();
 
 			// Play holy sound
 			audioSystem.PlayPvs(

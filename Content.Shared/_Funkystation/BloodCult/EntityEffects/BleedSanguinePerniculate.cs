@@ -2,16 +2,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.EntityEffects;
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.GameObjects;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Body.Components;
 
-namespace Content.Server.BloodCult.EntityEffects;
+namespace Content.Shared.BloodCult.EntityEffects;
 
 /// <summary>
 /// Makes an entity bleed Sanguine Perniculate instead of their normal blood type while they metabolize Edge Essentia.
@@ -43,7 +42,7 @@ public sealed partial class BleedSanguinePerniculate : EntityEffect
 
         // Change their blood type to Sanguine Perniculate so that when they bleed, it comes out as Sanguine Perniculate
         // This happens every metabolism tick, ensuring their blood type stays as SanguinePerniculate while Edge Essentia is active
-        var bloodstreamSystem = args.EntityManager.System<BloodstreamSystem>();
+        var bloodstreamSystem = args.EntityManager.System<SharedBloodstreamSystem>();
         bloodstreamSystem.ChangeBloodReagent((args.TargetEntity, bloodstream), "SanguinePerniculate");
     }
 

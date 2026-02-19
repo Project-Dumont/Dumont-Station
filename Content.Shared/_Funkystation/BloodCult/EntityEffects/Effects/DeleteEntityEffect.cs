@@ -9,7 +9,7 @@ using JetBrains.Annotations;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.BloodCult.EntityEffects.Effects;
+namespace Content.Shared.BloodCult.EntityEffects.Effects;
 
 /// <summary>
 /// Entity effect that deletes the target entity when triggered.

@@ -256,6 +256,7 @@
   - accent-words-scurret-19
   - accent-words-scurret-20
 
+- type: accent
   id: juggernaut
   fullReplacements:
   - accent-words-juggernaut-1

@@ -41,7 +41,6 @@
       tags:
       - NozzleBackTank
       - AtmosBackTank
-  - type: UseDelay
   - type: PacifismAllowedGun
   - type: Gun
     fireRate: 1
