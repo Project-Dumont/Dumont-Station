@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- files: ["alerta_verde_saae.ogg"]
+  - files: ["alerta_verde_saae.ogg"]
   license: "CC-BY-SA" 
   copyright: "Made by Struater"
 
