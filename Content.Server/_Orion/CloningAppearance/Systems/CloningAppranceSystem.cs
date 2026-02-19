@@ -1,15 +1,22 @@
-﻿using Content.Server.Administration.Commands;
-using Content.Europa.AGPL.Server.CloningAppearance.Components;
-using Content.Europa.AGPL.Server.CloningAppearance.Events;
+﻿using Content.Server._Orion.CloningAppearance.Components;
+using Content.Server._Orion.CloningAppearance.Events;
+using Content.Server.Clothing.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Server.Station.Systems;
+using Content.Server.Traits;
 using Content.Shared.Bed.Cryostorage;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization.Manager;
 
-namespace Content.Europa.AGPL.Server.CloningAppearance;
+namespace Content.Server._Orion.CloningAppearance.Systems;
+
+//
+// License-Identifier: AGPL-3.0-or-later
+//
 
 public sealed class CloningAppearanceSystem : EntitySystem
 {
@@ -20,6 +27,8 @@ public sealed class CloningAppearanceSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookupSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly OutfitSystem _outfitSystem = default!;
+    [Dependency] private readonly TraitSystem _traitSystem = default!;
 
     public override void Initialize()
     {
@@ -33,7 +42,9 @@ public sealed class CloningAppearanceSystem : EntitySystem
     {
         var profile = _ticker.GetPlayerProfile(ev.Player);
         var mobUid = _spawning.SpawnPlayerMob(ev.Coords, null, profile, ev.StationUid);
-        var targetMind = _mindSystem.GetOrCreateMind(ev.Player.UserId);
+        var targetMind = ev.MindId != null && TryComp<MindComponent>(ev.MindId, out var transferredMind)
+            ? (ev.MindId.Value, transferredMind)
+            : _mindSystem.GetOrCreateMind(ev.Player.UserId);
 
         foreach (var entry in ev.Component.Components.Values)
         {
@@ -41,10 +52,11 @@ public sealed class CloningAppearanceSystem : EntitySystem
             EntityManager.AddComponent(mobUid, comp, true);
         }
 
-        if (ev.Component.Gear != null)
-        {
-            SetOutfitCommand.SetOutfit(mobUid, ev.Component.Gear, false, EntityManager);
-        }
+        if (ev.Component.StartingGear != null)
+            _outfitSystem.SetOutfit(mobUid, ev.Component.StartingGear);
+
+        if (ev.Component.CopyTraits)
+            _traitSystem.ApplyTraits(mobUid, profile);
 
         foreach (var nearbyEntity in _entityLookupSystem.GetEntitiesInRange(mobUid, 1f))
         {
@@ -61,6 +73,9 @@ public sealed class CloningAppearanceSystem : EntitySystem
             break;
         }
 
+        targetMind.Comp.CharacterName = MetaData(mobUid).EntityName;
+        targetMind.Comp.OriginalOwnedEntity = GetNetEntity(mobUid);
+        Dirty(targetMind);
         _mindSystem.TransferTo(targetMind, mobUid);
     }
 
@@ -68,13 +83,16 @@ public sealed class CloningAppearanceSystem : EntitySystem
     {
         if(TerminatingOrDeleted(ent))
             return;
+
         QueueLocalEvent(new CloningAppearanceEvent
         {
             Player = args.Player,
             Component = ent.Comp,
             StationUid = _stations.GetOwningStation(ent),
-            Coords = Transform(ent).Coordinates
+            Coords = Transform(ent).Coordinates,
+            MindId = TryComp<MindContainerComponent>(ent, out var mindContainer) ? mindContainer.Mind : null,
         });
-        Del(ent);
+
+        QueueDel(ent);
     }
 }
