@@ -1,0 +1,22 @@
+﻿- type: entity
+  id: MidroundWraithAbilities
+  name: Midround Wraith Abilities
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Haunt
+  - type: BloodWriting
+  - type: Decay
+  - type: DemonicWhisper
+  - type: PossessObject
+  - type: SpookMark
+  - type: ActionGrant
+    actions:
+    - ActionPossessObject
+    - ActionDecay
+    # - ActionCommand
+    # - ActionAnimateObject
+    - ActionWhisper
+    - ActionBloodWriting
+    - ActionSpook
+    - ActionToggleGhosts
+    - ActionToggleLighting

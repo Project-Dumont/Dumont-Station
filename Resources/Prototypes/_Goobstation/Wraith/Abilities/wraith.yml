@@ -46,6 +46,7 @@
   #  searchRange: 7
   #  stunDuration: 5
   - type: Evolve
+    corpsesRequired: 4
     availableEvolutions:
     - prototype: MobWraithHarbinger
     - prototype: MobWraithPlague

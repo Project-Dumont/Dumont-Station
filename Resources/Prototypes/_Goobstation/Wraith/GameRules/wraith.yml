@@ -21,11 +21,11 @@
         - NamesWraithTitle
         nameFormat: name-format-wraith
       - type: Banishment # revive on death, resets WP
-        lives: 1
+        lives: 0 # trauma - 0 lives, keeping this component because wraith has death animation
         popup: wraith-banishment
   - type: AntagRandomSpawn
   - type: AntagSpawner
-    prototype: MobWraith
+    prototype: MobWraithMidround
   - type: StationEvent
     weight: 4
     earliestStart: 40

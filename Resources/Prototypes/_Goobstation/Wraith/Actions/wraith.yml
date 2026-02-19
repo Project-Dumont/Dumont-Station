@@ -87,6 +87,11 @@
     wpConsume: 20
   - type: ActionUseDelayOnUse
     useDelayAccumulator: 45
+  - type: ActionUserWhitelist # Trauma - Require corporeal
+    whitelist:
+      components:
+      - Corporeal
+    popup: wraith-must-be-corporeal
 
 - type: entity
   id: ActionSpook
@@ -132,6 +137,11 @@
     event: !type:DecayEvent
   - type: ActionWraithPoints
     wpConsume: 30
+  - type: ActionUserWhitelist # Trauma - Require corporeal
+    whitelist:
+      components:
+      - Corporeal
+    popup: wraith-must-be-corporeal
 
 - type: entity
   id: ActionCommand

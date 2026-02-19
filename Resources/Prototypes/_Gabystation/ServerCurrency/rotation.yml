@@ -20,7 +20,7 @@
     MalfAiToken: 1
     # Ghost roles tokens
     LoneOpsToken: 1
-    # WraithToken: 1
+    WraithToken: 1
     SlaughterDemonToken: 1
     NinjaToken: 1
     AbductorToken: 1

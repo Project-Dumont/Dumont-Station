@@ -6,6 +6,7 @@
 using Content.Goobstation.Shared.Wraith.SaltLines;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
@@ -79,25 +80,46 @@ public sealed class SaltLineSystem : EntitySystem
 
     private void OnAttemptSaltLine(Entity<ConsumeOnSaltLineComponent> ent, ref AttemptSaltLineEvent args)
     {
-        if (!_solution.TryGetSolution(ent.Owner, "food", out var sol, false))
+        // Trauma - Added helper method and added support for beakers
+        if (!_solution.TryGetSolution(ent.Owner, "food", out var sol))
         {
+            if (_solution.TryGetSolution(ent.Owner, "beaker", out var beakerSol)
+                && TryRemoveSalt(beakerSol, ent, args.User, false))
+            {
+                return;
+            }
+
             args.Cancelled = true;
             return;
         }
+
+        if (!TryRemoveSalt(sol, ent, args.User))
+            args.Cancelled = true;
+    }
+
+    #region Helpers
+
+    public bool TryRemoveSalt(Entity<SolutionComponent>? sol, Entity<ConsumeOnSaltLineComponent> ent, EntityUid user, bool popup = true)
+    {
+        if (sol == null)
+            return false;
+
         var reagentsalt = "TableSalt";
         var solution = sol.Value;
         var saltAmount = solution.Comp.Solution.GetTotalPrototypeQuantity(reagentsalt);
         
         if (saltAmount < ent.Comp.Amount)
         {
-            _popupSystem.PopupEntity(Loc.GetString("consume-on-salt-line-component-not-enough-salt-message"), ent.Owner, args.User);
-            args.Cancelled = true;
-            return;
+            if (popup)
+                _popupSystem.PopupEntity(Loc.GetString("consume-on-salt-line-component-not-enough-salt-message"), ent.Owner, user);
+            return false;
         }
+
         _solution.RemoveReagent(solution, reagentsalt, ent.Comp.Amount);
+        return true;
     }
 
-    #region Helpers
+
     private void UpdateAppearance(Entity<SaltLineComponent> ent)
     {
         var transform = Transform(ent.Owner);

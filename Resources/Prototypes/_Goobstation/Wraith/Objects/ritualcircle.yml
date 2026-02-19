@@ -32,7 +32,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 25
+          damage: 10 # Trauma - Reduced 25 to 10
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -98,7 +98,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 30
+          damage: 10 # Trauma - Reduced 30 to 10
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -123,7 +123,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 40
+          damage: 15 # Trauma - Reduced 40 to 15
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -148,7 +148,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 50
+          damage: 20 # Trauma - Reduced 50 to 20
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -173,7 +173,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 75
+          damage: 30 # Trauma - Reduced 75 to 30
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -198,7 +198,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 100
+          damage: 40 # Trauma - Reduced 100 to 40
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
