@@ -32,19 +32,19 @@
   - type: DemonicWhisper
   - type: PossessObject
   - type: SpookMark
-  #- type: WraithCommand
-  #  blacklist:
-  #    components:
-  #    - MobState
-  #    - Body
-  #    - Food
-  #    - EntityStorage
-  #    - Solution
-  #    - ReagentDispenser
-  #    tags:
-  #    - ChemDispensable
-  #  searchRange: 7
-  #  stunDuration: 5
+  - type: WraithCommand
+    blacklist:
+      components:
+      - MobState
+      - Body
+      - Food
+      - EntityStorage
+      - Solution
+      - ReagentDispenser
+      tags:
+      - ChemDispensable
+    searchRange: 7
+    stunDuration: 1 # Trauma - Re-added command, reduced stun duration from 5 to 1
   - type: Evolve
     corpsesRequired: 4
     availableEvolutions:
@@ -56,7 +56,7 @@
     - ActionAbsorbCorpse
     - ActionPossessObject
     - ActionDecay
-   # - ActionCommand
+    - ActionCommand
    # - ActionAnimateObject
     - ActionWhisper
     - ActionBloodWriting

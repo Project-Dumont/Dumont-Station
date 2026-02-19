@@ -163,7 +163,12 @@
       - BibleUser
     event: !type:WraithCommandEvent
   - type: ActionWraithPoints
-    wpConsume: 50
+    wpConsume: 70 # Trauma - from 50 to 70
+  - type: ActionUserWhitelist # Trauma - Require corporeal
+    whitelist:
+      components:
+      - Corporeal
+    popup: wraith-must-be-corporeal
 
 - type: entity
   id: ActionAnimateObject
@@ -306,7 +311,12 @@
       - HumanoidAppearance
     event: !type:RaiseSkeletonEvent
   - type: ActionWraithPoints
-    wpConsume: 100
+    wpConsume: 120 # Trauma - increased from 100 to 120
+  - type: ActionUserWhitelist # Trauma - Require corporeal
+    whitelist:
+      components:
+      - Corporeal
+    popup: wraith-must-be-corporeal
 
 - type: entity
   id: ActionSummonVoidPortal
@@ -485,7 +495,7 @@
       popup: curse-popup-death
       requireAllCurses: true
   - type: ActionWraithPoints
-    wpConsume: 80
+    wpConsume: 160 # Trauma - Increased from 80 to 160
 
 - type: entity
   id: ActionDefile

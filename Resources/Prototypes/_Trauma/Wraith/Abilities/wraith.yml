@@ -9,11 +9,26 @@
   - type: DemonicWhisper
   - type: PossessObject
   - type: SpookMark
+  - type: DarkWhisper
+  - type: WraithCommand
+    blacklist:
+      components:
+      - MobState
+      - Body
+      - Food
+      - EntityStorage
+      - Solution
+      - ReagentDispenser
+      tags:
+      - ChemDispensable
+    searchRange: 7
+    stunDuration: 1
   - type: ActionGrant
     actions:
     - ActionPossessObject
     - ActionDecay
-    # - ActionCommand
+    - ActionDarkWhisper
+    - ActionCommand
     # - ActionAnimateObject
     - ActionWhisper
     - ActionBloodWriting
