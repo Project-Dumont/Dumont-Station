@@ -2720,26 +2720,3 @@
         - !type:OrganType # Delta V - Same as above
           type: Oni
           shouldHave: false
-
-- type: reagent
-  id: DirtyMartini
-  name: reagent-name-dirty-martini
-  parent: BaseAlcohol
-  desc: reagent-desc-dirty-martini
-  physicalDesc: reagent-physical-desc-strong-smelling
-  flavor: dirtymartini
-  color: "#170a0c"
-  metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/martiniglass.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.15

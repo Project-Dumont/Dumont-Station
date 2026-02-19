@@ -261,6 +261,3 @@ reagent-desc-sindkol = Uma cerveja leve e suave, tipo Pilsen. Se beber, não dir
 
 reagent-name-corote = corote
 reagent-desc-corote = Introduzindo adolescentes ao alcoolismo desde 1958.
-
-reagent-name-dirty-martini = martini sujo
-reagent-desc-dirty-martini = Exatamente do jeito do 007. Gin, vermouth e salmoura.

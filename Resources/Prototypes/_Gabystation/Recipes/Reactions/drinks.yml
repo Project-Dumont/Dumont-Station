@@ -1,0 +1,13 @@
+- type: reaction
+  id: DirtyMartini
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Gin:
+      amount: 2
+    Vermouth:
+      amount: 1
+    TableSalt:
+      amount: 1
+  products:
+    DirtyMartini: 3

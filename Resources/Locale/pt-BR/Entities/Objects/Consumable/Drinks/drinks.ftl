@@ -378,6 +378,3 @@ ent-DrinkHellRamen = ramen do inferno
 
 ent-DrinkKvassGlass = copo de kvass
      .desc = Uma bebida refrescante com um toque de socialismo.
-
-ent-DrinkDirtyMartiniGlass = taça de martini sujo
-     .desc = Agora sim, do jeito do James Bond, com azeitonas e tudo! O que poderia dar errado?
