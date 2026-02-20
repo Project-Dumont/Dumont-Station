@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseMechPart
+  id: SpaceBuoyConstruction
+  name: Space Buoy Structure
+  description: The structure of the Space Buoy.
+  components:
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      mech-assembly-container: !type:Container
+  - type: Construction
+    graph: SpaceBuoy
+    node: start
+    defaultTarget: spacebuoy
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Mech/SpaceBuoy.rsi
+    state: unfinished
+    noRot: true

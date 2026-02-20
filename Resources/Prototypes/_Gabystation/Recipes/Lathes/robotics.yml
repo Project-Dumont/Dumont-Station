@@ -1,0 +1,18 @@
+- type: latheRecipe
+  id: SpaceBuoyRecipe
+  result: SpaceBuoyConstruction
+  categories:
+  - Robotics
+  completetime: 12
+  materials:
+    Steel: 1500
+    Plasteel: 1200
+
+- type: latheRecipe
+  id: MechEquipmentRecycler
+  result: MechEquipmentRecycler
+  categories:
+  - MechEquipment
+  completetime: 10
+  materials:
+    Steel: 800
