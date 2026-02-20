@@ -86,7 +86,7 @@
   - type: ActionWraithPoints
     wpConsume: 20
   - type: ActionUseDelayOnUse
-    useDelayAccumulator: 45
+    useDelayAccumulator: 35 # Trauma - Reduced from 45 to 35 to account for 4 corpses required for evolution
   - type: ActionUserWhitelist # Trauma - Require corporeal
     whitelist:
       components:

@@ -251,7 +251,7 @@
           Quantity: 100
   - type: MeleeChemicalInjector
     solution: melee
-    transferAmount: 0.7 # Trauma - Reduced 0.25 to 0.7
+    transferAmount: 0.1 # Trauma - Reduced 0.25 to 0.1
   - type: InputMover
   - type: MobMover
   - type: HTN

@@ -7,8 +7,8 @@
     itemIconStyle: BigAction
     useDelay: 60
     icon:
-      sprite: _Goobstation/Wraith/actions.rsi # placeholder
-      state: spook
+      sprite: _Goobstation/Wraith/actions.rsi
+      state: dark_whisper
   - type: TargetAction
     range: 10
   - type: EntityTargetAction

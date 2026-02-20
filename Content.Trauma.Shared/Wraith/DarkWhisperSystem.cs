@@ -1,20 +1,29 @@
-﻿using Content.Shared.Chat;
+using Content.Shared.Chat;
+using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
 namespace Content.Trauma.Shared.Wraith;
 
+/// <summary>
+/// Lets you talk through a selected target when you speak for a certain amount of seconds
+/// </summary>
 public sealed class DarkWhisperSystem : EntitySystem
 {
     [Dependency] private readonly SharedChatSystem _chatSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<DarkWhisperComponent, DarkWhisperEvent>(OnDarkWhisper);
         SubscribeLocalEvent<DarkWhisperComponent, EntitySpokeEvent>(OnDarkWhisperSpoke);
+
+        SubscribeAllEvent<TypingChangedEvent>(OnTypingChanged);
     }
 
     public override void Update(float frameTime)
@@ -25,10 +34,10 @@ public sealed class DarkWhisperSystem : EntitySystem
         while (eqe.MoveNext(out var uid, out var whisper))
         {
             if (!whisper.Active || whisper.AttachedEntity == null)
-                return;
+                continue;
 
             if (_timing.CurTime < whisper.NextUpdate)
-                return;
+                continue;
 
             _popupSystem.PopupClient(Loc.GetString("dark-whisper-end"), uid, PopupType.MediumCaution);
 
@@ -66,5 +75,17 @@ public sealed class DarkWhisperSystem : EntitySystem
             null,
             true,
             true);
+    }
+
+    private void OnTypingChanged(TypingChangedEvent ev, EntitySessionEventArgs args)
+    {
+        var uid = args.SenderSession.AttachedEntity;
+        if (!Exists(uid))
+            return;
+
+        if (!TryComp<DarkWhisperComponent>(uid, out var whisper) || whisper.AttachedEntity is not {} attachedEntity)
+            return;
+
+        _appearanceSystem.SetData(attachedEntity, TypingIndicatorVisuals.State, ev.State);
     }
 }
