@@ -38,7 +38,7 @@
       components:
       - MobState
       - Body
-      - Food
+      - Edible
       - EntityStorage
       - Solution
       - ReagentDispenser
