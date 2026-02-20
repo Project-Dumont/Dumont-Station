@@ -132,7 +132,7 @@
         type: TrackedRadialSelectorMenuBUI
       enum.ListViewSelectorUiKey.Key: # WWDP
         type: ListViewSelectorBUI
-  #- type: TriggerOnMobstateChange
+  #- type: TriggerOnMobstateChange  Trauma - Disabled because it was only used for 2nd life
   #  mobState:
   #    - Dead
   #- type: SmokeOnTrigger
