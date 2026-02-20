@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: MobMonkeyDwarf
   parent: MobMonkey
@@ -60,6 +64,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -78,6 +91,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -96,6 +118,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -114,6 +145,15 @@
       0: Alive
       50: Critical
       100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 200
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs

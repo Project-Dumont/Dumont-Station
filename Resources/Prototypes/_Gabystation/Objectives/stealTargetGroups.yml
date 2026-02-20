@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stealTargetGroup
+  id: ProtoRCD
+  name: steal-target-groups-proto-rcd
+  sprite:
+    sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
+    state: icon

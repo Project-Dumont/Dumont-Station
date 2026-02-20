@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -15,7 +19,7 @@ public sealed partial class ScramOnTriggerComponent : BaseXOnTriggerComponent
     /// Up to how far to teleport the entity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float TeleportRadius = 100f;
+    public float TeleportRadius = 1000f; // goob edit
 
     /// <summary>
     /// the sound to play when teleporting.

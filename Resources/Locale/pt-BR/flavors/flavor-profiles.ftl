@@ -238,6 +238,7 @@ flavor-complex-themartinez = como violetas e limão vodka
 flavor-complex-cogchamp = como bronze
 flavor-complex-white-gilgamesh = como creme levemente adocicado
 flavor-complex-antifreeze = quente
+flavor-complex-dirtymartini = de sal e espionagem
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 flavor-complex-pilk = de leite doce

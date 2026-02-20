@@ -1,0 +1,306 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: MIT
+
+- type: species
+  id: Synth
+  name: species-name-synth
+  roundStart: true
+  prototype: MobSynth
+  sprites: MobSynthSprites
+  markingLimits: MobSynthMarkingLimits
+  dollPrototype: MobSynthDummy
+  skinColoration: HumanToned
+  minAge: 0
+  maxAge: 440
+  oldAge: 50
+  youngAge: 50
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  lastNames: IpcLast
+  naming: FirstDashLast
+  sexes:
+  - Unsexed
+
+- type: speciesBaseSprites
+  id: MobSynthSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobSynthHead
+    Hair: MobHumanoidAnyMarking
+    Face: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobSynthChest
+    Groin: MobSynthGroin
+    Eyes: MobHumanoidEyes
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    LArm: MobSynthLArm
+    RArm: MobSynthRArm
+    LHand: MobSynthLHand
+    RHand: MobSynthRHand
+    LLeg: MobSynthLLeg
+    RLeg: MobSynthRLeg
+    LFoot: MobSynthLFoot
+    RFoot: MobSynthRFoot
+    Wings: MobHumanoidAnyMarking
+
+- type: markingPoints
+  id: MobSynthMarkingLimits
+  points:
+    Head:
+      points: 4
+      required: true
+      defaultMarkings: [ MobSynthHeadDefault ]
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Face:
+      points: 5
+      required: false
+    Chest:
+      points: 4
+      required: true
+      defaultMarkings: [ MobSynthChestDefault ]
+    HeadSide:
+      points: 5
+      required: false
+    Groin:
+      points: 4
+      required: true
+      defaultMarkings: [ MobSynthGroinDefault ]
+    RightLeg:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthRLegDefault ]
+    RightFoot:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthRFootDefault ]
+    LeftLeg:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthLLegDefault ]
+    LeftFoot:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthLFootDefault ]
+    RightArm:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthRArmDefault ]
+    RightHand:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthRHandDefault ]
+    LeftArm:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthLArmDefault ]
+    LeftHand:
+      points: 4
+      required: false
+      defaultMarkings: [ MobSynthLHandDefault ]
+
+
+# Head
+
+- type: humanoidBaseSprite
+  id: MobSynthHead
+
+- type: humanoidBaseSprite
+  id: MobSynthHeadMale
+
+- type: humanoidBaseSprite
+  id: MobSynthHeadFemale
+
+- type: marking
+  id: MobSynthHeadDefault
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: head_m
+
+# Torso
+
+- type: humanoidBaseSprite
+  id: MobSynthChest
+
+- type: humanoidBaseSprite
+  id: MobSynthChestMale
+
+- type: humanoidBaseSprite
+  id: MobSynthChestFemale
+
+- type: marking
+  id: MobSynthChestDefault
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: chest_m
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: groin_m
+
+- type: marking
+  id: MobSynthChestFemaleDefault
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: chest_f
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: groin_f
+
+# Groin
+
+- type: humanoidBaseSprite
+  id: MobSynthGroin
+
+- type: humanoidBaseSprite
+  id: MobSynthGroinMale
+
+- type: humanoidBaseSprite
+  id: MobSynthGroinFemale
+
+- type: marking
+  id: MobSynthGroinDefault
+  bodyPart: Groin
+  markingCategory: Groin
+  speciesRestriction: [Synth]
+  sprites:
+  - sprite: _EinsteinEngines/Mobs/Species/IPC/parts.rsi
+    state: invis
+
+
+- type: marking
+  id: MobSynthGroinFemaleDefault
+  bodyPart: Groin
+  markingCategory: Groin
+  speciesRestriction: [Synth]
+  sprites:
+  - sprite: _EinsteinEngines/Mobs/Species/IPC/parts.rsi
+    state: invis
+
+# Left Leg
+
+- type: humanoidBaseSprite
+  id: MobSynthLLeg
+
+- type: marking
+  id: MobSynthLLegDefault
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_leg
+
+# Left Arm
+
+- type: humanoidBaseSprite
+  id: MobSynthLArm
+
+- type: marking
+  id: MobSynthLArmDefault
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_arm
+
+#LHand
+
+- type: humanoidBaseSprite
+  id: MobSynthLHand
+
+- type: marking
+  id: MobSynthLHandDefault
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_hand
+
+#LFoot
+
+- type: humanoidBaseSprite
+  id: MobSynthLFoot
+
+- type: marking
+  id: MobSynthLFootDefault
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: l_foot
+
+#RLeg
+
+- type: humanoidBaseSprite
+  id: MobSynthRLeg
+
+- type: marking
+  id: MobSynthRLegDefault
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_leg
+
+#RArm
+
+- type: humanoidBaseSprite
+  id: MobSynthRArm
+
+- type: marking
+  id: MobSynthRArmDefault
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_arm
+
+#RHand
+
+- type: humanoidBaseSprite
+  id: MobSynthRHand
+
+- type: marking
+  id: MobSynthRHandDefault
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_hand
+
+#RFoot
+
+- type: humanoidBaseSprite
+  id: MobSynthRFoot
+
+- type: marking
+  id: MobSynthRFootDefault
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [ Synth ]
+  sprites:
+  - sprite: Mobs/Species/Human/parts.rsi
+    state: r_foot

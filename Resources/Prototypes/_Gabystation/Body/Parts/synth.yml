@@ -1,0 +1,98 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  abstract: true
+  parent: BasePartInorganic
+  id: PartSynthBase
+  name: "synth body part"
+  components:
+  - type: Sprite
+    sprite: _EinsteinEngines/Mobs/Species/IPC/parts.rsi
+  - type: Icon
+    sprite: _EinsteinEngines/Mobs/Species/IPC/parts.rsi
+  - type: Damageable
+    damageContainer: SiliconRadiation
+    damageModifierSet: IPC
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#DD8822"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: null
+  - type: Nerve
+  - type: Boneless # Goob Edit
+    bonePenalty: 1
+
+- type: entity
+  parent: [ PartSynthBase, BaseChestInorganic ]
+  id: ChestSynth
+  name: "synth chest"
+  components:
+  - type: BodyPart
+    organs:
+      pump:
+        id: "pump"
+      stomach:
+        id: "stomach"
+
+- type: entity
+  parent: [ PartSynthBase, BaseGroinInorganic ]
+  id: GroinSynth
+  name: "synth groin"
+
+- type: entity
+  parent: [ PartSynthBase, BaseHead ]
+  id: HeadSynth
+  name: "synth head"
+  components:
+  - type: BodyPart
+    organs:
+      eyes:
+        id: "eyes"
+      posbrain:
+        id: "posbrain"
+
+- type: entity
+  parent: [ PartSynthBase, BaseLeftArm ]
+  id: LeftArmSynth
+  name: "left synth arm"
+
+- type: entity
+  parent: [ PartSynthBase, BaseRightArm ]
+  id: RightArmSynth
+  name: "right synth arm"
+
+- type: entity
+  parent: [ PartSynthBase, BaseLeftHand ]
+  id: LeftHandSynth
+  name: "left synth hand"
+
+- type: entity
+  parent: [ PartSynthBase, BaseRightHand ]
+  id: RightHandSynth
+  name: "right synth hand"
+
+- type: entity
+  parent: [ PartSynthBase, BaseLeftLeg ]
+  id: LeftLegSynth
+  name: "left synth leg"
+
+- type: entity
+  parent: [ PartSynthBase, BaseRightLeg ]
+  id: RightLegSynth
+  name: "right synth leg"
+
+- type: entity
+  parent: [ PartSynthBase, BaseLeftFoot ]
+  id: LeftFootSynth
+  name: "left synth foot"
+
+- type: entity
+  parent: [ PartSynthBase, BaseRightFoot ]
+  id: RightFootSynth
+  name: "right synth foot"

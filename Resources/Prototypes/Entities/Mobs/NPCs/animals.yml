@@ -3681,7 +3681,7 @@
     baseSprintSpeed: 4
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCat
   # Corvax-Wega-Genetics-end
 
@@ -3706,7 +3706,7 @@
         Base: cat2_dead
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatCalico
   # Corvax-Wega-Genetics-end
 
@@ -3770,7 +3770,7 @@
     - TauCetiBasic # Needs to understand your nukie ops.
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatSyndy
   # Corvax-Wega-Genetics-end
 
@@ -3813,7 +3813,7 @@
     minSaturation: 5.0
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatSpace
   # Corvax-Wega-Genetics-end
 
@@ -3838,7 +3838,7 @@
         Base: caracal_dead
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatCaracal
   # Corvax-Wega-Genetics-end
 
@@ -3876,7 +3876,7 @@
       25: Dead
   # Corvax-Wega-Genetics-start
   - type: DnaModifier
-    upper: MobFelinid
+    upper: MobTajaran
     lowest: MobCatKitten
   # Corvax-Wega-Genetics-end
 

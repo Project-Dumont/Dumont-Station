@@ -20,10 +20,11 @@ using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared._Gabystation.OrganFoodProcessor;
 
 namespace Content.Shared.Body.Components
 {
-    [RegisterComponent, NetworkedComponent, Access(typeof(StomachSystem), typeof(FoodSystem))]
+    [RegisterComponent, NetworkedComponent, Access(typeof(StomachSystem), typeof(FoodSystem), typeof(OrganFoodProcessorSystem))]
     public sealed partial class StomachComponent : Component
     {
         /// <summary>

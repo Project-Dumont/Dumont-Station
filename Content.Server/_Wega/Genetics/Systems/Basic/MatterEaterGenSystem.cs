@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
 using Content.Server.Stack;
 using Content.Shared.Administration.Logs;
@@ -48,7 +47,7 @@ public sealed class MatterEaterSystem : EntitySystem
 
     public bool TryEatMatter(EntityUid user, EntityUid target, EntityUid matter, EdibleMatterComponent comp)
     {
-        if (!comp.CanBeEaten || HasComp<FoodComponent>(matter)
+        if (!comp.CanBeEaten || HasComp<EdibleComponent>(matter)
             || !TryComp<PhysicsComponent>(matter, out var physics))
             return false;
 
@@ -125,7 +124,7 @@ public sealed class MatterEaterSystem : EntitySystem
     private void AddMatterEatVerb(Entity<EdibleMatterComponent> ent, ref GetVerbsEvent<AlternativeVerb> ev)
     {
         if (ent.Owner == ev.User || !ev.CanInteract || !ev.CanAccess || !ent.Comp.CanBeEaten
-            || !HasComp<MatterEaterGenComponent>(ev.User) || HasComp<FoodComponent>(ent))
+            || !HasComp<MatterEaterGenComponent>(ev.User) || HasComp<EdibleComponent>(ent))
             return;
 
         if (TryComp<MobStateComponent>(ent, out var mobState)

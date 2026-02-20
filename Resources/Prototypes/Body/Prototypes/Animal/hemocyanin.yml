@@ -16,6 +16,7 @@
       connections:
       - groin
       organs:
+        brain: OrganAnimalBrain # Gabystation
         lungs: OrganAnimalLungs
         heart: OrganArachnidHeart
     groin:

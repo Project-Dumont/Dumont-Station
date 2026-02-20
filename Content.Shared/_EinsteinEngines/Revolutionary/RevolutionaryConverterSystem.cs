@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._EinsteinEngines.Language.Components;
 using Content.Shared._EinsteinEngines.Language.Systems;
 using Content.Shared._EinsteinEngines.Revolutionary.Components;
@@ -131,7 +135,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
                 converter.Owner,
                 target: target,
                 used: converter.Owner,
-                showTo: converter.Owner)
+                showTo: user)
             {
                 Hidden = !converter.Comp.VisibleDoAfter,
                 BreakOnMove = false,

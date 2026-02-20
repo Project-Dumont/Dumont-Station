@@ -1,0 +1,111 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseGrandTheftContraband, RPD]
+  id: RCDProtoCE
+  name: Proto RCD
+  description: A still experimental RCD, capable of much more than standard models. Specially provided for the CE for field testing.
+  components:
+  - type: LimitedCharges
+    maxCharges: 45
+  - type: AutoRecharge
+    rechargeDuration: 10
+  - type: Sprite
+    sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
+  - type: Clothing
+    sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
+    quickEquip: false
+    slots:
+      - Belt
+  - type: StaticPrice
+    price: 1000
+  - type: StealTarget
+    stealGroup: ProtoRCD
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: RCD
+    isRpd: true
+    availablePrototypes: #TODO Tentar fazer o Nestling funcionar
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - RadiatorBend
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    # <GabyStation>
+    - ManifoldGas
+    - PipeHalf
+    - Alarm
+    - Sensor
+    - SensorPipe
+    - PressureRegulator
+    # <Goobstation>
+    - FilterInline
+    - RadiatorInline
+    - RadiatorInlineBend
+    # </Goobstation>
+    # <FunkyStation>
+    - HeatPump
+    # </FunkyStation>
+    # <GabyStation>
+    - WallReinforced
+    - Canister
+    - APC
+    - FrameComputer
+    - FrameMachine
+    - Disposal
+    - Mailing
+    - DisposalPipeStraight
+    - DisposalPipeTagger
+    - DisposalPipeSignaller
+    - DisposalPipeTrunk
+    - DisposalPipeRouter
+    - DisposalPipeSignalRouter
+    - DisposalPipeJunctionY
+    - DisposalPipeJunctionX
+    - DisposalPipeJunction
+    - DisposalPipeBend
+    - FirelockThin
+    - FirelockGlass
+    - AirlockExternal
+    - AirlockHighSec
+    - Windoor
+    - WindoorReinforced
+    - DirectionalFan
+    - BlastDoor
+    # </GabyStation>
+    - Deconstruct

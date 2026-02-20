@@ -1,7 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: SimpleSpaceMobBase
   id: MobHulk
   name: hulk
+  suffix: AI, Crew
   description: "HE'S BIG AND STRONG!"
   components:
   - type: WegaHulk
@@ -24,16 +29,27 @@
       task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - NanoTrasen
   - type: MobThresholds
     thresholds:
       0: Alive
-      1000: Dead
+      500: Dead
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 1000
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
   - type: SlowOnDamage
     speedModifierThresholds:
-      600: 0.8
-      800: 0.7
-      900: 0.5
+      200: 0.9
+      300: 0.7
+      450: 0.5
   - type: Stamina
     critThreshold: 300
   - type: CombatMode
@@ -78,8 +94,31 @@
   id: MobZilla
   name: zilla
   description: "HE'S BIG AND STRONG!"
+  suffix: AI, Crew
   components:
   - type: Sprite
     sprite: _Wega/Mobs/Aliens/Genetics/zilla.rsi
     noRot: true
     state: zilla
+
+- type: entity
+  parent: MobHulk
+  id: MobHulkHostile
+  name: hulk
+  description: "HE'S BIG AND STRONG!"
+  suffix: AI, Hostile
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+
+- type: entity
+  parent: MobZilla
+  id: MobZillaHostile
+  name: zilla
+  description: "HE'S BIG AND STRONG!"
+  suffix: AI, Hostile
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile

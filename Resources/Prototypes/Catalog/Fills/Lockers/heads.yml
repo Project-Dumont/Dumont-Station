@@ -327,7 +327,6 @@
   id: LockerFillChiefEngineerNoHardsuit
   table: !type:AllSelector
     children:
-    - id: HandheldPowerMonitorGs
     - id: AccessConfigurator
     - id: BoxEncryptionKeyEngineering
     - id: CigarCase
@@ -339,9 +338,6 @@
     - id: DoorRemoteEngineering
     - id: CargoRequestEngineeringComputerCircuitboard
     # - id: RCD # Goobstation
-    - id: RCDAmmo
-    - id: RPD
-    - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade
     # Goobstation V
@@ -353,7 +349,9 @@
     - id: CartridgeRocketSingularityBuster
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
-    - id: RCDRechargingCE
+    # Gabystation
+    - id: HandheldPowerMonitorGs
+    - id: RCDProtoCE
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

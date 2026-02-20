@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: flash
   id: RevFlash
@@ -10,6 +14,7 @@
       silent: true
       consumesCharges: 1
       applyFlashEffect: true
+      bypassMuted: true
     - type: LimitedCharges
       maxCharges: 5
     - type: Sprite

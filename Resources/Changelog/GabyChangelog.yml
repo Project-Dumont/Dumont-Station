@@ -1995,3 +1995,39 @@ Entries:
       message: Moths não podem mais voar ao fim do dash.
   id: 241
   time: '2026-02-15T03:54:36.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Sintéticos, uma espécie genérica de robôs autônomos
+    - type: Tweak
+      message: Conserta emotes de IPCs
+  id: 242
+  time: '2026-02-19T14:09:14.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções e ajustes na genética.
+  id: 243
+  time: '2026-02-19T15:48:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Membros de comando, warden e brigmed receberam um aumento.
+  id: 244
+  time: '2026-02-19T15:59:09.0000000+00:00'
+- author: Lango
+  changes: []
+  id: 245
+  time: '2026-02-19T16:26:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Adiciona herético, culto cósmico e culto do sangue em midround.
+  id: 246
+  time: '2026-02-19T16:37:15.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 19/02 (verifique a aba do Goob)!
+  id: 247
+  time: '2026-02-19T16:46:38.0000000+00:00'

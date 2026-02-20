@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reaction
+  id: DirtyMartini
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Gin:
+      amount: 2
+    Vermouth:
+      amount: 1
+    TableSalt:
+      amount: 1
+  products:
+    DirtyMartini: 3

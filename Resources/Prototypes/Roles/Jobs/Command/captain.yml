@@ -171,7 +171,7 @@
   # - CaptainSOP
   goobcoins: 50 #Goob content
   weight: 20
-  salary: 50 # Gaby content
+  salary: 100 # Gaby content
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true

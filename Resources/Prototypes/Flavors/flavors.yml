@@ -1573,3 +1573,9 @@
   id: motivating
   flavorType: Base
   description: flavor-base-motivating
+
+# GabyStation
+- type: flavor
+  id: dirtymartini
+  flavorType: Complex
+  description: flavor-complex-dirtymartini

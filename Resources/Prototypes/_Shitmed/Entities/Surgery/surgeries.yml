@@ -853,7 +853,7 @@
   - type: SurgeryOrganSlotCondition
     inverse: true
   - type: SurgeryBodyCondition
-    accepted: [ IPC ]
+    accepted: [ IPC, Synth ]
     inverse: true
 
 - type: entity

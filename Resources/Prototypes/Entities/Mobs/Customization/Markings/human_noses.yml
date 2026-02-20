@@ -13,7 +13,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati, Synth] # Gaby Station - Daengati, Synth
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: schnozz
@@ -24,7 +24,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati, Synth] # Gaby Station - Daengati, Synth
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: nubby
@@ -35,7 +35,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati, Synth] # Gaby Station - Daengati, Synth
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: droop
@@ -46,7 +46,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati, Synth] # Gaby Station - Daengati, Synth
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: blob
@@ -57,7 +57,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati] # Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, Daengati, Synth] # Gaby Station - Daengati, Synth
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: uppie
