@@ -11,8 +11,8 @@
 
 - type: entity
   id: HeadOfSecurityWeaponUndetermined
-  name: X-00 Series Box
-  description: A small remote utilizing bluespace technology to drop in a weapon from the X-00 series to you. Choose wisely.
+  name: Teleporte de arma do Chefe de Segurança
+  description: Um pequeno controle remoto que utiliza bluespace para teleportar uma arma disponível para o Chefe de Segurança. Escolha com cautela.
   parent: [ BaseItem, BaseSetSelector, BaseCommandContraband ]
   components:
   - type: Sprite
