@@ -1020,13 +1020,17 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 		// Call evac if cult drops to 0 or 1 members
 		if (cultistCount <= 1)
 		{
-			_roundEnd.RequestRoundEnd(
-				TimeSpan.FromMinutes(10),
-				null,
-				false,
-				"cult-evac-called-announcement",
-				"cult-evac-sender-announcement"
-			);
+			// _roundEnd.RequestRoundEnd(
+			// 	TimeSpan.FromMinutes(10),
+			// 	null,
+			// 	false,
+			// 	"cult-evac-called-announcement",
+			// 	"cult-evac-sender-announcement"
+			// );
+
+			_chat.DispatchGlobalAnnouncement(
+				Loc.GetString("cult-evac-called-announcement"),
+				Loc.GetString("cult-evac-sender-announcement"));
 		}
 	}
 

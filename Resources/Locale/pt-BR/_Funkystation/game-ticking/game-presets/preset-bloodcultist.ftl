@@ -159,7 +159,7 @@ cult-deconverted = Você de repente se desconvérte e não se considera mais um 
 cult-break-control = Você parece confuso enquanto a influência de Nar'Sie é estilhaçada! Você não se lembra de nada do seu tempo no culto.
 cult-deconverted-memory-loss = Você perde as memórias das últimas horas.
 
-cult-evac-called-announcement = Distúrbios dimensionais incomuns diminuíram, evacuação chamada enquanto o comando central investiga esta anomalia dimensional. ETA: {$time} {$units}
+cult-evac-called-announcement = A análise preliminar das anomalias relatadas foi concluída. Os distúrbios dimensionais incomuns registrados nos últimos minutos apresentaram queda significativa e estabilizaram em níveis considerados seguros. As fontes potenciais de interferência, anteriormente classificadas como ameaças de prioridade, não estão mais ativas ou foram suprimidas. Aconselhamos que a tripulação retome as operações normais e as causas exatas do evento permanecem sob investigação.
 cult-evac-sender-announcement = Comando Central
 
 cult-commune-window = Comunhão
