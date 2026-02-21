@@ -97,7 +97,7 @@ public sealed partial class GoobBibleSystem : EntitySystem
 public record struct BibleSmiteUsed;
 
 /// <summary>
-/// Trauma - Raised on the target once bible gets used
+/// Raised on the target once bible gets used
 /// </summary>
 [ByRefEvent]
 public record struct BibleUsed;

@@ -21,7 +21,7 @@
         - NamesWraithTitle
         nameFormat: name-format-wraith
       - type: Banishment # revive on death, resets WP
-        lives: 0 # Trauma - 0 lives, keeping this component because wraith has death animation
+        lives: 0 # keeping this component because wraith has death animation
         popup: wraith-banishment
   - type: AntagRandomSpawn
   - type: AntagSpawner
@@ -72,7 +72,6 @@
         lives: 1
         popup: wraith-banishment
 
-# Trauma - Midround Token
 - type: entity
   parent: WraithMidround
   id: TokenWraithMidround

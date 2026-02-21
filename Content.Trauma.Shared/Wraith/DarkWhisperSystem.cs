@@ -49,7 +49,6 @@ public sealed class DarkWhisperSystem : EntitySystem
 
     private void OnDarkWhisper(Entity<DarkWhisperComponent> ent, ref DarkWhisperEvent args)
     {
-        // popup here
         _popupSystem.PopupClient(Loc.GetString("dark-whisper-start"), ent.Owner, PopupType.MediumCaution);
         ent.Comp.NextUpdate = _timing.CurTime + ent.Comp.Update;
         ent.Comp.AttachedEntity = args.Target;

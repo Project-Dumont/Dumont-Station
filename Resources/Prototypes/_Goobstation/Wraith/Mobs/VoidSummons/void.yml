@@ -88,7 +88,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 50 # Trauma - Reduced 100 to 50
+          damage: 50
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -155,7 +155,7 @@
           Quantity: 100
   - type: MeleeChemicalInjector
     solution: melee
-    transferAmount: 1 # Trauma - Reduced 4 to 1
+    transferAmount: 1
   - type: TentacleHook
   - type: SpikerLash
   - type: SpikerShuffle
@@ -183,7 +183,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      60: Dead # Trauma - Reduced 100 to 60
+      60: Dead
   - type: Grammar
     attributes:
       gender: male
@@ -243,7 +243,7 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 5 # Trauma - Reduced 8 to 5
+        Piercing: 5
         Slash: 5
   - type: Rushdown
   - type: Cloak
@@ -263,7 +263,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead # Trauma - Reduced 100 to 50
+      50: Dead
   - type: Grammar
     attributes:
       gender: male

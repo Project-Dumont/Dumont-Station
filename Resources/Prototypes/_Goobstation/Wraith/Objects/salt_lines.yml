@@ -62,7 +62,7 @@
   #    - Spectral
   #  damage:
   #    types:
-  #      Structural: 4  Trauma - Removed salt lines getting damaged on collide
+  #      Structural: 4
   - type: StatusEffectOnCollideGhost
     whitelist:
       tags:

@@ -47,9 +47,6 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
         _absorbedQuery = GetEntityQuery<WraithAbsorbableComponent>();
     }
 
-    /// <summary>
-    /// Trauma - Starts a doafter for absorbing
-    /// </summary>
     private void OnAbsorb(Entity<AbsorbCorpseComponent> ent, ref AbsorbCorpseEvent args)
     {
         var target = args.Target;
@@ -88,7 +85,6 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
 
     private void OnAbsorbFinished(Entity<AbsorbCorpseComponent> ent, ref AbsorbCorpseDoAfterEvent args)
     {
-        // Trauma - Moved OnAbsorb logic to OnAbsorbFinished
         var user = args.User;
         if (args.Target == null || !_absorbedQuery.TryComp(args.Target, out var absorbable))
             return;

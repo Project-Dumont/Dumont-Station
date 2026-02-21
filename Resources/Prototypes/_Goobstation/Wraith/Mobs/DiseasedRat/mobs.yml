@@ -89,7 +89,7 @@
           Quantity: 100
   - type: MeleeChemicalInjector
     solution: melee
-    transferAmount: 0.10 # Trauma - Reduced from 0.25 to 0.1
+    transferAmount: 0.10
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -104,7 +104,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      25: Dead # Trauma - Reduced from 50 to 25
+      25: Dead
   - type: TriggerOnMobstateChange
     mobState:
     - Dead
@@ -155,7 +155,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      45: Dead # Trauma - Reduced from 80 to 45
+      45: Dead
 
 - type: entity
   id: MobPlagueRatLarge
@@ -198,7 +198,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      70: Dead # Trauma - Reduced from 100 to 70
+      70: Dead
 
 - type: entity
   id: MobMadRat
@@ -251,7 +251,7 @@
           Quantity: 100
   - type: MeleeChemicalInjector
     solution: melee
-    transferAmount: 0.1 # Trauma - Reduced 0.25 to 0.1
+    transferAmount: 0.1
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -267,7 +267,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 25 # Trauma - Reduced 30 to 25
+          damage: 25
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]

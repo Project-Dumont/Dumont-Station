@@ -80,7 +80,6 @@ public sealed class SaltLineSystem : EntitySystem
 
     private void OnAttemptSaltLine(Entity<ConsumeOnSaltLineComponent> ent, ref AttemptSaltLineEvent args)
     {
-        // Trauma - Added helper method and added support for beakers
         if (!_solution.TryGetSolution(ent.Owner, "food", out var sol))
         {
             if (_solution.TryGetSolution(ent.Owner, "beaker", out var beakerSol)

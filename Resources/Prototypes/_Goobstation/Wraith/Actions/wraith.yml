@@ -86,8 +86,8 @@
   - type: ActionWraithPoints
     wpConsume: 20
   - type: ActionUseDelayOnUse
-    useDelayAccumulator: 35 # Trauma - Reduced from 45 to 35 to account for 4 corpses required for evolution
-  - type: ActionUserWhitelist # Trauma - Require corporeal
+    useDelayAccumulator: 35
+  - type: ActionUserWhitelist
     whitelist:
       components:
       - Corporeal
@@ -137,7 +137,7 @@
     event: !type:DecayEvent
   - type: ActionWraithPoints
     wpConsume: 30
-  - type: ActionUserWhitelist # Trauma - Require corporeal
+  - type: ActionUserWhitelist
     whitelist:
       components:
       - Corporeal
@@ -163,8 +163,8 @@
       - BibleUser
     event: !type:WraithCommandEvent
   - type: ActionWraithPoints
-    wpConsume: 70 # Trauma - from 50 to 70
-  - type: ActionUserWhitelist # Trauma - Require corporeal
+    wpConsume: 70
+  - type: ActionUserWhitelist
     whitelist:
       components:
       - Corporeal
@@ -311,8 +311,8 @@
       - HumanoidAppearance
     event: !type:RaiseSkeletonEvent
   - type: ActionWraithPoints
-    wpConsume: 120 # Trauma - increased from 100 to 120
-  - type: ActionUserWhitelist # Trauma - Require corporeal
+    wpConsume: 120
+  - type: ActionUserWhitelist
     whitelist:
       components:
       - Corporeal
@@ -495,7 +495,7 @@
       popup: curse-popup-death
       requireAllCurses: true
   - type: ActionWraithPoints
-    wpConsume: 160 # Trauma - Increased from 80 to 160
+    wpConsume: 160
 
 - type: entity
   id: ActionDefile

@@ -15,7 +15,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 100 # Trauma - Increased from 50 to 100
+          damage: 100
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]

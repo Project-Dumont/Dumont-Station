@@ -24,7 +24,7 @@
   - type: Haunt
   - type: BloodWriting
   - type: Decay
-  - type: DarkWhisper # Trauma - Add new ability
+  - type: DarkWhisper
   - type: AbsorbCorpse
     damage: # damage they take when they eat a corpse with forma
       types:
@@ -45,7 +45,7 @@
       tags:
       - ChemDispensable
     searchRange: 7
-    stunDuration: 1 # Trauma - Re-added command, reduced stun duration from 5 to 1
+    stunDuration: 1 # reduced stun duration from 5 to 1
   - type: Evolve
     corpsesRequired: 4
     availableEvolutions:
@@ -54,7 +54,7 @@
   # - prototype: MobWraithTrickster
   - type: ActionGrant
     actions:
-    - ActionDarkWhisper # Trauma - Add new ability
+    - ActionDarkWhisper
     - ActionAbsorbCorpse
     - ActionPossessObject
     - ActionDecay
