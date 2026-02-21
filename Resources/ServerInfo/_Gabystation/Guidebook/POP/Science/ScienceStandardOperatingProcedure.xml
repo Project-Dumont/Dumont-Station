@@ -29,14 +29,6 @@ SPDX-License-Identifier: MIT
 
   [bold]9.[/bold] O Diretor de Pesquisa, junto com o Médico Chefe, deve garantir que o Geneticista está seguindo o POP.
 
-  ## Código Azul
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde.
-
-  ## Código Vermelho
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul.
-
   # Cientista / Assistente de Pesquisa
 
   ## Código Verde
@@ -54,16 +46,6 @@ SPDX-License-Identifier: MIT
   [bold]6.[/bold] Cientistas não devem ativar artefatos de Destruição da Estação ou explosão e devem destruí-los ou eliminá-los o mais rápido possível;
 
   [bold]7.[/bold] Pelo menos um cientista deve estar disponível para receber solicitações de membros da tripulação na recepção do Setor de Ciência, se houver uma.
-
-  ## Código Azul
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde;
-
-  [bold]2.[/bold] Cientistas têm permissão para produzir armas e granadas no Protolathe, desde que sejam entregues à Segurança.
-
-  ## Código Vermelho
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
 
   # Cientista Roboticista
 
