@@ -39,13 +39,11 @@ SPDX-License-Identifier: MIT
 
   [bold]6.[/bold] Engenheiros devem monitorar constantemente o motor de Supermatéria se ele estiver online e sob fogo de emissor;
 
-  [bold]7.[/bold] Engenheiros devem responder prontamente a quebras, independentemente do tamanho. Não relatar em até quinze (15) minutos será considerado violação do POP, a menos que não haja Engenheiros disponíveis ou um Técnico Atmosférico tenha chegado primeiro. Todas as Zonas de Perigo devem ser isoladas com Fita de Engenharia ou holobarreiras para a segurança da tripulação;
+  [bold]7.[/bold] Engenheiros devem responder prontamente a espaçamentos, independentemente do tamanho. Não relatar em até quinze (15) minutos será considerado violação do POP, a menos que não haja Engenheiros disponíveis ou um Técnico Atmosférico tenha chegado primeiro. Todas as Zonas de Perigo devem ser isoladas com portas de incêndio ou holobarreiras para a segurança da tripulação;
 
   [bold]8.[/bold] Engenheiros podem hackear portas para obter acesso não autorizado a locais que precisem de reparos urgentes;
 
   [bold]9.[/bold] Engenheiros devem manter a integridade da Rede Elétrica da Estação;
-
-  [bold]10.[/bold] Engenheiros devem garantir que haja pelo menos uma (1) armadura de engenharia disponível na estação o tempo todo, a menos que haja uma emergência que exija o uso de todas as armaduras.
 
   # Técnico Atmosférico
 
@@ -55,7 +53,7 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] Técnicos Atmosféricos podem resfriar Plasma e armazená-lo para uso posterior em Coletores de Radiação. Da mesma forma, podem resfriar Nitrogênio ou Dióxido de Carbono e armazená-los para uso como refrigerante no Motor de Supermatéria;
 
-  [bold]4.[/bold] Técnicos Atmosféricos não podem tirar o machado do estojo, a menos que haja uma ameaça imediata e urgente à sua vida ou seja necessário acesso urgente a locais de crise. O machado deve ser devolvido ao estojo depois e então tranca-lo;
+  [bold]4.[/bold] Técnicos Atmosféricos não podem tirar o machado do estojo, a menos que haja uma ameaça imediata e urgente à sua vida, seja necessário acesso urgente a locais de crise ou para remodelação justa. O machado deve ser devolvido ao estojo depois e então tranca-lo;
 
   [bold]5.[/bold] Técnicos Atmosféricos não podem alterar os valores padrão dos Alarmes de Ar. No entanto, podem criar pequenas salas aclimatizadas para espécies que exigem condições atmosféricas especiais (como Vox), desde que recebam permissão expressa do Engenheiro Chefe;
 
