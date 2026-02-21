@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 <Document>
   # Engenheiro Chefe
 
-  [bold]1.[/bold] O Engenheiro Chefe deve garantir a ligação correta dos Painéis Solares e ativar o Motor de Antimatéria (AME) se disponível, além de coordenar um plano com sua equipe para ativar um gerador mais potente para uso prolongado da estação;
+  [bold]1.[/bold] O Engenheiro Chefe deve garantir a ligação correta dos Painéis Solares e ativar o Gerador de Antimatéria (AME) se disponível, além de coordenar um plano com sua equipe para ativar um gerador mais potente para uso prolongado da estação;
 
   [bold]2.[/bold] O Engenheiro Chefe, junto ao Diretor de Pesquisa, é responsável por manter a integridade das Telecomunicações. O Engenheiro Chefe não deve prejudicar o funcionamento adequado das Telecomunicações e deve diagnosticar e reparar quaisquer problemas que surgirem;
 
@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT
 
   # Engenheiro de Estação
 
-  [bold]1.[/bold] Engenheiros devem ligar corretamente os Painéis Solares e ativar o Motor de Antimatéria (AME) se disponível, além de coordenar um plano para ativar um motor mais potente para uso prolongado da estação;
+  [bold]1.[/bold] Engenheiros devem ligar corretamente os Painéis Solares e ativar o Gerador de Antimatéria (AME) se disponível, além de coordenar um plano para ativar um gerador mais potente para uso prolongado da estação;
 
   [bold]2.[/bold] Engenheiros são responsáveis por manter a integridade de todos os motores da estação, mesmo os desativados ou inertes. Negligenciar esse dever é motivo para demissão caso algum motor apresente falha;
 
