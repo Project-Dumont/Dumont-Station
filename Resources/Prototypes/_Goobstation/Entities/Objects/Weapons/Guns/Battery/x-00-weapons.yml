@@ -41,6 +41,11 @@
     fireCost: 80
   - type: StaticPrice
     price: 2500
+    - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 35
+    autoRechargePause: true
+    autoRechargePauseTime: 1
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -89,6 +94,11 @@
     fireCost: 33
   - type: StaticPrice
     price: 2500
+    - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+    autoRechargePause: true
+    autoRechargePauseTime: 0.5
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -130,6 +140,9 @@
     fireCost: 125
   - type: StaticPrice
     price: 2500
+    - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -178,6 +191,11 @@
     pvsIncrease: 0.8
   - type: StaticPrice
     price: 2500
+    - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+    autoRechargePause: true
+    autoRechargePauseTime: 2
   - type: MagazineVisuals
     magState: mag
     steps: 5
