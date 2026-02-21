@@ -11,7 +11,7 @@ SPDX-License-Identifier: MIT
 
   ## Código Verde
 
-  [bold]1.[/bold] O Diretor de Pesquisa deve garantir que a pesquisa está sendo realizada. A pesquisa deve ser concluída até o final do turno, assumindo que o Setor de Ciência receba os materiais necessários do Setor de Carga;
+  [bold]1.[/bold] O Diretor de Pesquisa deve garantir que a pesquisa está sendo realizada;
 
   [bold]2.[/bold] O Diretor de Pesquisa tem permissão para portar um flash e seu Teletransportador Portátil;
 
@@ -33,9 +33,7 @@ SPDX-License-Identifier: MIT
 
   ## Código Vermelho
 
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
-
-  [bold]2.[/bold] Além de um flash, o Diretor de Pesquisa tem permissão para portar uma única arma criada no Protolathe, desde que receba autorização do Chefe de Segurança. Uma exceção é feita durante emergências extremas;
+  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul.
 
   # Cientista / Assistente de Pesquisa
 
@@ -51,11 +49,9 @@ SPDX-License-Identifier: MIT
 
   [bold]5.[/bold] Cientistas não têm permissão para portar quaisquer armas geradas no Protolathe;
 
-  [bold]6.[/bold] Cientistas não têm permissão para distribuir quaisquer armas geradas no Protolathe, a menos que a arma em questão (por exemplo, Aceleradores Proto-Cinéticos) seja entregue ao departamento apropriado;
+  [bold]6.[/bold] Cientistas não devem ativar artefatos de Destruição da Estação ou explosão e devem destruí-los ou eliminá-los o mais rápido possível;
 
-  [bold]7.[/bold] Cientistas não devem ativar artefatos de Destruição da Estação e devem destruí-los ou eliminá-los o mais rápido possível;
-
-  [bold]8.[/bold] Pelo menos um cientista deve estar disponível para receber solicitações de membros da tripulação na recepção do Setor de Ciência, se houver uma.
+  [bold]7.[/bold] Pelo menos um cientista deve estar disponível para receber solicitações de membros da tripulação na recepção do Setor de Ciência, se houver uma.
 
   ## Código Azul
 
@@ -67,8 +63,6 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
 
-  [bold]2.[/bold] Em relação à Diretriz 2 do Código Azul, cientistas podem se armar com uma única arma se a ameaça for considerada de destruição da estação.
-
   # Cientista Roboticista
 
   ## Código Verde
@@ -79,7 +73,7 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] Roboticistas têm permissão livre para construir Ciborgues e todo o equipamento associado;
 
-  [bold]4.[/bold] Roboticistas devem respeitar todas as ordens de Não-Ciborguizar, e cópias dessas ordens devem ser mantidas em segurança, se possível. Se não houver cópia, uma Unidade MMI pode se recusar a se tornar um Ciborgue, e esse desejo deve ser respeitado;
+  [bold]4.[/bold] Roboticistas devem respeitar todas as ordens de Não-Ciborguizar, e cópias dessas ordens devem ser mantidas em segurança, se possível. Se não houver cópia, uma Unidade MMI pode se recusar a se tornar um Ciborgue, e esse desejo deve ser respeitado. Execção é feita se o sujeito for um invasor estrangeiro não protegido pela lei espacial;
 
   [bold]5.[/bold] Roboticistas devem garantir que todos os Ciborgues estejam aderindo às suas leis e não estejam com mau funcionamento. Se um Ciborgue for encontrado violando suas leis, sua Unidade MMI ou Cérebro Positrônico deve ser preservado e colocado em um novo chassi de Ciborgue;
 
