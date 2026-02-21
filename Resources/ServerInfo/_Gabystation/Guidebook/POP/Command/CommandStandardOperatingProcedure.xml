@@ -30,9 +30,9 @@ SPDX-License-Identifier: MIT
 
   # Capitão
 
-  [bold]1.[/bold] O Capitão não pode realizar funções regulares de Segurança. No entanto, pode ajudar a Segurança se estiverem com pouco pessoal ou se presenciar um crime. O Capitão não pode pegar itens do Arsenal em circunstâncias normais, a menos que autorizado pelo Chefe de Segurança. Além disso, o Capitão não pode requisitar armamentos para si mesmo da Carga e/ou Ciência, a menos que haja uma ameaça imediata à estação e/ou tripulação;
+  [bold]1.[/bold] O Capitão não pode realizar funções regulares de Segurança. No entanto, pode ajudar a Segurança se estiverem com pouco pessoal ou se presenciar um crime. O Capitão não pode pegar itens do Arsenal em circunstâncias normais, a menos que autorizado pelo Chefe de Segurança. Além disso, o Capitão não pode requisitar armamentos para si mesmo da carga, a menos que haja uma ameaça imediata à estação e/ou tripulação;
 
-  [bold]2.[/bold] Se um Departamento não tiver um Chefe, o Capitão deve fazer esforços razoáveis para nomear um Chefe Interino, se houver pessoal disponível para o cargo;
+  [bold]2.[/bold] Se um Departamento não tiver um Chefe, o Capitão deve fazer esforços razoáveis para nomear um Chefe Interino, se houver pessoal disponível para o cargo. Não é necessário pedir ou avisar a Central de Comando se estiver seguindo as regras escritas sobre como promover um Chefe Interino;
 
   [bold]3.[/bold] O Capitão deve garantir que a Lei Espacial está sendo corretamente aplicada, em cooperação com o Chefe de Segurança;
 
@@ -65,7 +65,7 @@ SPDX-License-Identifier: MIT
 
   [bold]7.[/bold] O Chefe dos funcionários não pode deixar seu escritório desguarnecido se houver funcionários esperando na fila. Não responder a funcionários com solicitações legítimas em até dez (10) minutos, seja por rádio ou pessoalmente, é considerado violação do POP;
 
-  [bold]8.[/bold] O Chefe dos funcionários não pode exercer funções de Segurança. O Chefe dos funcionários pode portar um Desativador apenas para autodefesa.
+  [bold]8.[/bold] O Chefe dos funcionários não pode exercer funções de Segurança a não ser que a estação esteja em estado de calamidade. O Chefe dos funcionários pode portar um Desativador apenas para autodefesa.
 
 
   # Representante da Nanotrasen
