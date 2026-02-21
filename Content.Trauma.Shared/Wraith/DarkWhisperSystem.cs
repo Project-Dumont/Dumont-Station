@@ -55,6 +55,8 @@ public sealed class DarkWhisperSystem : EntitySystem
         ent.Comp.AttachedEntity = args.Target;
         ent.Comp.Active = true;
         Dirty(ent);
+
+        args.Handled = true;
     }
 
     private void OnDarkWhisperSpoke(Entity<DarkWhisperComponent> ent, ref EntitySpokeEvent args)
