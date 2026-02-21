@@ -73,11 +73,13 @@ SPDX-License-Identifier: MIT
 
   [bold]8.[/bold] Oficiais de Segurança devem usar o uniforme conforme descrito nas Regras de Conduta da Segurança.
 
+  [bold]9.[/bold] Oficiais de Segurança são permitidos portarem uma MK-58 e munição reserva. Essa arma deveria ser utilizada apenas para eliminar ameaças não protegidas pela lei espacial ou em caso de perigo imediato a própria vida ou a de outros tripulantes. Cadetes são permitidos portarem uma MK-58, mas apenas com munição de prática;
+
   ## Código Azul
 
-  [bold]1.[/bold] As diretrizes 1, 2, 4 e 8 são mantidas do [color=green]Código Verde[/color];
+  [bold]1.[/bold] As diretrizes 1, 2, 4, 8 e 9 são mantidas do [color=green]Código Verde[/color];
 
-  [bold]2.[/bold] Oficiais de Segurança têm permissão para portar qualquer arma ou equipamento disponível no Arsenal, com permissão do Carcereiro, mas nunca mais de um item por vez. Exceção é feita em emergências severas.
+  [bold]2.[/bold] Oficiais de Segurança têm permissão para portar qualquer arma ou equipamento disponível no Arsenal, com permissão do Carcereiro, mas nunca mais de um item por vez. Exceção é feita em emergências severas. Cadetes não podem portar armas do arsenal.
 
   [bold]3.[/bold] Oficiais de Segurança podem portar armas em mãos durante patrulhas, embora isso não seja recomendado;
 
@@ -91,13 +93,13 @@ SPDX-License-Identifier: MIT
 
   ## Código Vermelho
 
-  [bold]1.[/bold] As diretrizes 3, 4, 5, 6 e 7 são mantidas do Código Azul. A diretriz 8 é mantida do [color=green]Código Verde[/color].
+  [bold]1.[/bold] As diretrizes 3, 4, 5, 6 e 7 são mantidas do Código Azul. A diretriz 8 e 9 são mantidas do [color=green]Código Verde[/color]. Cadetes agora são permitidos usarem munição letal.
 
   [bold]2.[/bold] Oficiais de Segurança podem prender tripulantes sem declarar motivo, caso haja evidência de envolvimento em atividades criminosas;
 
   [bold]3.[/bold] Oficiais de Segurança podem realocar à força tripulantes para seus respectivos Departamentos, se necessário;
 
-  [bold]4.[/bold] Oficiais de Segurança são permitidos pegarem mais de uma arma do arsenal, mas não é recomendado e devem deixar suficiente pra o resto da segurança.
+  [bold]4.[/bold] Oficiais de Segurança são permitidos pegarem mais de uma arma do arsenal, mas não é recomendado e devem deixar suficiente pra o resto da segurança. Cadetes agora são permitidos portarem armas do arsenal.
 
   # Carcereiro
 
@@ -135,15 +137,17 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] O Carcereiro tem permissão para distribuir qualquer equipamento do Arsenal, mas apenas um por segurança. O Carcereiro deveria pedir permissão do Chefe da Segurança ou Capitão antes de fazer isso, e não pode distribuir armas para civis; 
 
-  [bold]3.[/bold] O Carcereiro pode posicionar flashes portáteis dentro do Departamento de Segurança;
+  [bold]3.[/bold] O Carcereiro é permitido distribuir trajes espaciais pros seguranças.
 
-  [bold]4.[/bold] O Carcereiro pode posicionar barreiras dentro do Departamento de Segurança.
+  [bold]4.[/bold] O Carcereiro pode posicionar flashes portáteis dentro do Departamento de Segurança;
+
+  [bold]5.[/bold] O Carcereiro pode posicionar barreiras dentro do Departamento de Segurança.
 
   ## Código Vermelho
 
   [bold]1.[/bold] As diretrizes 2, 4, 6, 9, 11 e 12 são mantidas do [color=green]Código Verde[/color];
 
-  [bold]2.[/bold] As diretrizes 3 e 4 são mantidas do Código Azul. Além disso, o Carcereiro pode portar qualquer arma do Arsenal, mas nunca mais de uma por vez;
+  [bold]2.[/bold] As diretrizes 3, 4 e 5 são mantidas do Código Azul. Além disso, o Carcereiro pode portar qualquer arma do Arsenal, mas nunca mais de uma por vez;
 
   [bold]3.[/bold] O Carcereiro não é obrigado a permitir julgamentos durante estados de emergência, mas ainda deve permitir reuniões confidenciais com o advogado do suspeito, com o tempo de detenção pausado;
 
@@ -182,4 +186,38 @@ SPDX-License-Identifier: MIT
   [bold]2.[/bold] As diretrizes 2 e 3 são mantidas do [color=cyan]Código Azul[/color];
 
   [bold]3.[/bold] O Detetive pode portar qualquer arma ou equipamento disponível no Arsenal, a critério do Carcereiro, mas nunca mais de um por vez. Exceção é feita em emergências severas.
+
+  # Clínico Brigadista
+
+  ## Código Verde
+
+  [bold]1.[/bold] O Clínico Brigadista pode auxiliar os Oficiais de Segurança em todas as tarefas de patrulha, incluindo paradas, revistas e prisões, conforme o Código de Alerta atual. No entanto, deve priorizar o tratamento e a saúde dos membros do Departamento de Segurança e os prisoneiros;
+
+  [bold]2.[/bold] O Clínico Brigadista deve seguir todos os Procedimentos Operacionais Padrão conforme descrito no POP de Oficiais de Segurança em relação a paradas, revistas e prisões.
+
+  [bold]3.[/bold] O Clínico Brigadista pode portar uma MK-58 e munição reserva;
+
+  [bold]4.[/bold] O Clínico Brigadista pode trocar seu cinto de paramédico por um cinto de segurança completo, mas deve sempre portar equipamento médico suficiente para tratar alguém durante uma emergência; 
+
+  [bold]5.[/bold] O Clínico Brigadista deve seguir as mesmas diretrizes de uniforme que os Oficiais de Segurança, sendo seu uniforme designado igualmente aceitável;
+
+  [bold]6.[/bold] O Clínico Brigadista é permitido usar sua hardsuit exclusiva, mas não pode pegar uma hardsuit de segurança do arsenal.
+
+  [bold]7.[/bold] O Clínico Brigadista é permitido portar remédios e qualquer equipamento que um paramédico é permitido portar, incluindo macas, desfribilador, etc.
+
+  ## Código Azul
+
+  [bold]1.[/bold] As diretrizes 1, 2, 3, 4, 5 e 7 são mantidas do [color=green]Código Verde[/color];
+
+  [bold]2.[/bold] O Clínico Brigadista agora é permitido usar uma hardsuit de segurança, com permissão do carcereiro, mas apenas se tem hardsuits suficientes para o resto do departamento de segurança;
+
+  [bold]3.[/bold] O Clínico Brigadista têm permissão para portar qualquer arma ou equipamento disponível no Arsenal, com permissão do Carcereiro, mas nunca mais de um item por vez. Exceção é feita em emergências severas.
+
+  ## Código Vermelho
+
+  [bold]1.[/bold] As diretrizes 1, 2, 3, 4, 5 e 7 são mantidas do [color=green]Código Verde[/color];
+
+  [bold]2.[/bold] A diretrizes 2 e 3 são mantidas do [color=cyan]Código Azul[/color];
+
+  [bold]3.[/bold] O Clínico Brigadista deve preparar para curar os membros do Departamento de Segurança enquanto eles lidam com a ameaça.
 </Document>
