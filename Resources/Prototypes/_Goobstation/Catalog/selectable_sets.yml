@@ -603,6 +603,16 @@
     state: icon
   content:
   - WeaponHeadOfSecurityRifle
+  
+- type: selectableSet
+  id: HosBallisticShotgunSet
+  name: selectable-set-hos-shotgun-ballistic-name
+  description: selectable-set-hos-shotgun-ballistic-description
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    state: icon
+  content:
+  - WeaponShotgunBulldogLegallyDistinct
 
 # Captain
 
