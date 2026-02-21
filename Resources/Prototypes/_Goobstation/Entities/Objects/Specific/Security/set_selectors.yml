@@ -24,4 +24,5 @@
     - HosRifleSet
     - HosShotgunSet
     - HosSniperSet
+    - HosBallisticShotgunSet
     maxSelectedSets: 1
