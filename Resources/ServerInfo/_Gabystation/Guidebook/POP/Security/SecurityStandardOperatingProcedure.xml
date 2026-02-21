@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] O Chefe de Segurança tem permissão para realizar prisões sob as mesmas condições que seus Oficiais de Segurança;
 
-  [bold]2.[/bold] O Chefe de Segurança tem permissão para portar um cinto de segurança completo e uma pistola padrão. Embora tenha permissão para portar sua arma exclusiva escolhida da série X-00, é desencorajado a fazer-lo;
+  [bold]2.[/bold] O Chefe de Segurança tem permissão para portar um cinto de segurança completo e uma pistola padrão. Embora tenha permissão para portar sua arma exclusiva escolhida da série X-00, é desencorajado a fazê-lo;
 
   [bold]3.[/bold] O Chefe de Segurança é obrigado a permitir um julgamento se a pena for maior que 10 minutos, e o tempo de detenção do detento deve ser pausado quando não estão na cela;
 
@@ -39,13 +39,13 @@ SPDX-License-Identifier: MIT
 
   ## Código Azul
 
-  [bold]1.[/bold] Todas as diretrizes são mantidas do Código Verde. Em relação à Diretriz 2, o Chefe de Segurança agora é incentivado a portar sua arma escolhida da série x-00.
+  [bold]1.[/bold] Todas as diretrizes são mantidas do Código Verde. Em relação à Diretriz 2, o Chefe de Segurança agora é incentivado a portar sua arma escolhida da série x-00;
 
   [bold]2.[/bold] Em relação à Diretriz 5, pode ser concedida leniência para garantir que o Comando e outros membros importantes da estação estejam protegidos.
 
   ## Código Vermelho
 
-  [bold]1.[/bold] As diretrizes 1, 2, 4, 6, 8, 9, 10 e 11 são mantidas do [color=green]Código Verde[/color];
+  [bold]1.[/bold] As diretrizes 1, 2, 4, 6, 8, 9, 10 e 11 e 12 são mantidas do [color=green]Código Verde[/color];
 
   [bold]2.[/bold] O Chefe de Segurança não é obrigado a permitir julgamentos durante estados de emergência. No entanto, ainda deve permitir que o suspeito tenha acesso a reuniões confidenciais com seu representante legal escolhido a qualquer momento durante sua sentença, e o tempo de detenção não deve avançar durante essas reuniões;
 
@@ -71,9 +71,9 @@ SPDX-License-Identifier: MIT
 
   [bold]7.[/bold] Oficiais de Segurança não podem realizar revistas sem evidência absoluta de que o sujeito tem contrabando ou testemunhar o sujeito armazenando contrabando na mochila. Revistas adicionais precisam de uma Permissão de Busca  detalhando quem será revistado e o motivo, e carimbada pelo Chefe da Segurança ou Capitão;
 
-  [bold]8.[/bold] Oficiais de Segurança devem usar o uniforme conforme descrito nas Regras de Conduta da Segurança.
+  [bold]8.[/bold] Oficiais de Segurança devem usar o uniforme conforme descrito nas Regras de Conduta da Segurança;
 
-  [bold]9.[/bold] Oficiais de Segurança são permitidos portarem uma MK-58 e munição reserva. Essa arma deveria ser utilizada apenas para eliminar ameaças não protegidas pela lei espacial ou em caso de perigo imediato a própria vida ou a de outros tripulantes. Cadetes são permitidos portarem uma MK-58, mas apenas com munição de prática;
+  [bold]9.[/bold] Oficiais de Segurança são permitidos portarem uma MK-58 e munição reserva. Essa arma deveria ser utilizada apenas para eliminar ameaças não protegidas pela lei espacial ou em caso de perigo imediato a própria vida ou a de outros tripulantes. Cadetes são permitidos portarem uma MK-58, mas apenas com munição de prática.
 
   ## Código Azul
 
@@ -137,7 +137,7 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] O Carcereiro tem permissão para distribuir qualquer equipamento do Arsenal, mas apenas um por segurança. O Carcereiro deveria pedir permissão do Chefe da Segurança ou Capitão antes de fazer isso, e não pode distribuir armas para civis; 
 
-  [bold]3.[/bold] O Carcereiro é permitido distribuir trajes espaciais pros seguranças.
+  [bold]3.[/bold] O Carcereiro é permitido distribuir hardsuits pros seguranças;
 
   [bold]4.[/bold] O Carcereiro pode posicionar flashes portáteis dentro do Departamento de Segurança;
 
@@ -201,7 +201,7 @@ SPDX-License-Identifier: MIT
 
   [bold]5.[/bold] O Clínico Brigadista deve seguir as mesmas diretrizes de uniforme que os Oficiais de Segurança, sendo seu uniforme designado igualmente aceitável;
 
-  [bold]6.[/bold] O Clínico Brigadista é permitido usar sua hardsuit exclusiva, mas não pode pegar uma hardsuit de segurança do arsenal.
+  [bold]6.[/bold] O Clínico Brigadista é permitido usar sua hardsuit exclusiva, mas não pode pegar uma hardsuit de segurança do arsenal;
 
   [bold]7.[/bold] O Clínico Brigadista é permitido portar remédios e qualquer equipamento que um paramédico é permitido portar, incluindo macas, desfribilador, etc.
 
