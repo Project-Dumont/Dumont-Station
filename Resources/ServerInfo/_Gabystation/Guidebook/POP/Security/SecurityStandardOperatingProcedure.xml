@@ -15,11 +15,11 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] O Chefe de Segurança tem permissão para realizar prisões sob as mesmas condições que seus Oficiais de Segurança;
 
-  [bold]2.[/bold] O Chefe de Segurança tem permissão para portar um cinto de segurança completo e uma pistola padrão. Embora tenha permissão para portar sua arma exclusiva X-01 Multiphase, é desencorajado a fazê-lo por motivos de segurança, devendo mantê-la em modo Atordoar/Desativar;
+  [bold]2.[/bold] O Chefe de Segurança tem permissão para portar um cinto de segurança completo e uma pistola padrão. Embora tenha permissão para portar sua arma exclusiva escolhida da série X-00, é desencorajado a fazer-lo;
 
-  [bold]3.[/bold] O Chefe de Segurança é obrigado a permitir um julgamento nas circunstâncias descritas na seção [textlink="POP Jurídico" link="LegalSOP"], e também deve permitir que o suspeito tenha acesso a reuniões confidenciais com seu representante legal escolhido a qualquer momento durante sua sentença. O tempo de detenção do suspeito não deve avançar durante as reuniões confidenciais com o representante legal e deve ser pausado até que o suspeito tenha retornado à sua cela;
+  [bold]3.[/bold] O Chefe de Segurança é obrigado a permitir um julgamento se a pena for maior que 10 minutos, e o tempo de detenção do detento deve ser pausado quando não estão na cela;
 
-  [bold]4.[/bold] O Chefe de Segurança é obrigado a permitir que o suspeito tenha acesso a representação legal [italic]durante o interrogatório[/italic] apenas em casos em que o suspeito seja acusado de um crime de Nível III ou superior;
+  [bold]4.[/bold] O Chefe de Segurança é obrigado a permitir que o suspeito tenha acesso a representação legal [italic]durante o interrogatório[/italic] apenas em casos onde o detento foi acusado de um crime que resulta numa pena igual ou mais grave que 15 minutos;
 
   [bold]5.[/bold] O Chefe de Segurança deve seguir as mesmas diretrizes que o Carcereiro em relação ao equipamento do Arsenal, flashes portáteis e barreiras implantáveis;
 
@@ -37,7 +37,7 @@ SPDX-License-Identifier: MIT
 
   ## Código Azul
 
-  [bold]1.[/bold] Todas as diretrizes são mantidas do Código Verde. Em relação à Diretriz 2, o Chefe de Segurança agora é incentivado a portar sua arma de energia exclusiva.
+  [bold]1.[/bold] Todas as diretrizes são mantidas do Código Verde. Em relação à Diretriz 2, o Chefe de Segurança agora é incentivado a portar sua arma escolhida da série x-00.
 
   [bold]2.[/bold] Em relação à Diretriz 5, pode ser concedida leniência para garantir que o Comando e outros membros importantes da estação estejam protegidos.
 
@@ -59,15 +59,15 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] Oficiais de Segurança devem declarar o motivo da prisão antes de tomar qualquer outra ação. Exceção é feita se o suspeito se recusar a parar;
 
-  [bold]3.[/bold] Oficiais de Segurança devem tentar levar todos os suspeitos ou testemunhas ao Carcere sem algemá-los ou incapacitá-los. Caso o suspeito não coopere, o oficial pode prosseguir normalmente;
+  [bold]3.[/bold] Oficiais de Segurança devem tentar levar todos os suspeitos ou testemunhas ao departamento de segurança sem algemá-los ou incapacitá-los. Caso o suspeito não coopere, o oficial pode prosseguir normalmente;
 
   [bold]4.[/bold] Nenhuma arma deve ser empunhada até que o suspeito tente fugir ou se torne hostil;
 
-  [bold]5.[/bold] Oficiais de Segurança não podem exigir acesso ao interior de outros Departamentos durante patrulhas regulares. No entanto, pedir acesso ao Chefe de Pessoal é aceitável;
+  [bold]5.[/bold] Oficiais de Segurança não podem exigir acesso ao interior de outros Departamentos durante patrulhas regulares. No entanto, pedir acesso extra ao Chefe de Pessoal é aceitável;
 
   [bold]6.[/bold] Oficiais de Segurança não têm permissão para patrulhar com armas empunhadas;
 
-  [bold]7.[/bold] Oficiais de Segurança não podem realizar revistas sem evidência razoável ou suspeita de que a pessoa tenha cometido um crime. Revistas adicionais exigem um mandado do Chefe de Segurança ou do Capitão;
+  [bold]7.[/bold] Oficiais de Segurança não podem realizar revistas sem evidência absoluta de que o sujeito tem contrabando ou testemunhar o sujeito armazenando contrabando na mochila. Revistas adicionais precisam de uma Permissão de Busca  detalhando quem será revistado e o motivo, e carimbada pelo Chefe da Segurança ou Capitão;
 
   [bold]8.[/bold] Oficiais de Segurança devem usar o uniforme conforme descrito nas Regras de Conduta da Segurança.
 
@@ -75,7 +75,7 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] As diretrizes 1, 2, 4 e 8 são mantidas do [color=green]Código Verde[/color];
 
-  [bold]2.[/bold] Oficiais de Segurança têm permissão para portar qualquer arma ou equipamento disponível no Arsenal, a critério do Carcereiro, mas nunca mais de um item por vez. Exceção é feita em emergências severas, como Operativos Nucleares;
+  [bold]2.[/bold] Oficiais de Segurança têm permissão para portar qualquer arma ou equipamento disponível no Arsenal, com permissão do Carcereiro, mas nunca mais de um item por vez. Exceção é feita em emergências severas.
 
   [bold]3.[/bold] Oficiais de Segurança podem portar armas em mãos durante patrulhas, embora isso não seja recomendado;
 
@@ -89,31 +89,33 @@ SPDX-License-Identifier: MIT
 
   ## Código Vermelho
 
-  [bold]1.[/bold] As diretrizes 2, 3, 4, 5, 6 e 7 são mantidas do Código Azul. A diretriz 8 é mantida do [color=green]Código Verde[/color];
+  [bold]1.[/bold] As diretrizes 3, 4, 5, 6 e 7 são mantidas do Código Azul. A diretriz 8 é mantida do [color=green]Código Verde[/color].
 
   [bold]2.[/bold] Oficiais de Segurança podem prender tripulantes sem declarar motivo, caso haja evidência de envolvimento em atividades criminosas;
 
-  [bold]3.[/bold] Oficiais de Segurança podem realocar à força tripulantes para seus respectivos Departamentos, se necessário.
+  [bold]3.[/bold] Oficiais de Segurança podem realocar à força tripulantes para seus respectivos Departamentos, se necessário;
+
+  [bold]4.[/bold] Oficiais de Segurança são permitidos pegarem mais de uma arma do arsenal, mas não é recomendado e devem deixar suficiente pra o resto da segurança.
 
   # Carcereiro
 
   ## Código Verde
 
-  [bold]1.[/bold] O Carcereiro não pode realizar prisões se houver Oficiais de Segurança ativos;
+  [bold]1.[/bold] O Carcereiro não pode realizar prisões ou sair da segurança sem motivo bom se houver Oficiais de Segurança ativos;
 
   [bold]2.[/bold] O Carcereiro deve realizar uma busca completa em todos os pertences dos prisioneiros, incluindo bolsos, PDA, bolsos de casaco e compartimentos de traje;
 
-  [bold]3.[/bold] O Carcereiro é obrigado a permitir um julgamento conforme descrito na seção [textlink="POP Jurídico" link="LegalSOP"], e deve permitir que o suspeito tenha acesso a reuniões confidenciais com seu representante legal a qualquer momento durante sua sentença. O tempo de detenção deve ser pausado durante essas reuniões;
+  [bold]3.[/bold] O Carcereiro é obrigado a permitir um julgamento se a pena for 10 minutos ou mais, e o tempo da pena deve ser pausada quando o acusado está fora da cela; 
 
-  [bold]4.[/bold] O Carcereiro é obrigado a permitir representação legal [italic]durante o interrogatório[/italic] apenas em casos de crimes de Nível III ou superior;
+  [bold]4.[/bold] O Carcereiro é obrigado a permitir representação legal [italic]durante o interrogatório[/italic] apenas em casos de acusação de crimes que resultem numa pena de 15 minutos ou superior; 
 
-  [bold]5.[/bold] O Carcereiro não pode distribuir armas ou armaduras do Arsenal, exceto desativadores extras. Trajes espaciais podem ser entregues apenas em emergências E.V.A. Exceção é feita em ameaças imediatas, como Operativos Nucleares;
+  [bold]5.[/bold] O Carcereiro não pode distribuir armas ou armaduras do Arsenal, exceto desativadores extras. Trajes espaciais podem ser entregues apenas em emergências E.V.A. Exceção é feita em ameaças imediatas.
 
   [bold]6.[/bold] O Carcereiro pode portar um cinto de segurança completo e uma pistola padrão. Embora tenha permissão para portar sua espingarda de energia exclusiva, é desencorajado a fazê-lo e deve mantê-la em modo de desativação;
 
-  [bold]7.[/bold] O Carcereiro não pode posicionar flashes portáteis dentro do Carcere;
+  [bold]7.[/bold] O Carcereiro não pode posicionar flashes portáteis dentro da prisão, e qualquer flash que veio junto com a estação deve ser desafixado e armazenado no arsenal;
 
-  [bold]8.[/bold] O Carcereiro não pode posicionar barreiras implantáveis dentro do Carcere;
+  [bold]8.[/bold] O Carcereiro pode colocar checkpoints de detectores de contrabando fora e no corredor em frente do departamento de segurança;
 
   [bold]9.[/bold] O Carcereiro deve informar cada prisioneiro sobre os crimes pelos quais foi sentenciado;
 
@@ -121,17 +123,19 @@ SPDX-License-Identifier: MIT
 
   [bold]11.[/bold] O Carcereiro deve seguir as mesmas diretrizes de uniforme que os Oficiais de Segurança, sendo seu uniforme designado igualmente aceitável;
 
-  [bold]12.[/bold] O Carcereiro é incentivado a seguir as Regras de Conduta da Segurança para servir de exemplo aos cadetes e manter a confiança pública.
+  [bold]12.[/bold] O Carcereiro é incentivado a seguir as Regras de Conduta da Segurança para servir de exemplo aos cadetes e manter a confiança pública;
+
+  [bold]13.[/bold] O Carcereiro tem permissão utilizar suas luvas de Krav-Maga, mas se não conseguir ou não quer elas, é permitido dar a um Oficial de Segurança. 
 
   ## Código Azul
 
   [bold]1.[/bold] As diretrizes 1, 2, 3, 4, 6, 9, 11 e 12 são mantidas do [color=green]Código Verde[/color];
 
-  [bold]2.[/bold] O Carcereiro tem permissão para distribuir qualquer equipamento do Arsenal. Armas só devem ser entregues com aprovação do Chefe de Segurança ou do Capitão, ou em caso de ameaça imediata;
+  [bold]2.[/bold] O Carcereiro tem permissão para distribuir qualquer equipamento do Arsenal, mas apenas um por segurança. O Carcereiro deveria pedir permissão do Chefe da Segurança ou Capitão antes de fazer isso, e não pode distribuir armas para civis; 
 
-  [bold]3.[/bold] O Carcereiro pode posicionar flashes portáteis dentro do Carcere;
+  [bold]3.[/bold] O Carcereiro pode posicionar flashes portáteis dentro do Departamento de Segurança;
 
-  [bold]4.[/bold] O Carcereiro pode posicionar barreiras implantáveis dentro do Carcere.
+  [bold]4.[/bold] O Carcereiro pode posicionar barreiras dentro do Departamento de Segurança.
 
   ## Código Vermelho
 
@@ -141,9 +145,9 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] O Carcereiro não é obrigado a permitir julgamentos durante estados de emergência, mas ainda deve permitir reuniões confidenciais com o advogado do suspeito, com o tempo de detenção pausado;
 
-  [bold]3.[/bold] O Carcereiro pode distribuir qualquer arma ou equipamento do Arsenal, incluindo o que for fornecido pelo Setor de Pesquisa;
+  [bold]3.[/bold] O Carcereiro pode distribuir qualquer arma ou equipamento do Arsenal, incluindo o que for fornecido pelo Setor de Pesquisa. Abrir o arsenal é recomendado para facilitar a distribuição de armas;
 
-  [bold]4.[/bold] O Carcereiro tem permissão para realizar prisões livremente.
+  [bold]4.[/bold] O Carcereiro tem permissão para sair da segurança e realizar prisões livremente, mas deveria pedir permissão ao Chefe da Segurança.
 
   # Detetive
 
@@ -151,7 +155,7 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] O Detetive pode auxiliar os Oficiais de Segurança em todas as tarefas de patrulha, incluindo paradas, revistas e prisões, conforme o Código de Alerta atual. No entanto, deve priorizar investigações e coleta de evidências forenses;
 
-  [bold]2.[/bold] O Detetive deve seguir todos os Procedimentos Operacionais Padrão conforme descrito no POP de Oficiais de Segurança em relação a paradas, revistas e prisões;
+  [bold]2.[/bold] O Detetive deve seguir todos os Procedimentos Operacionais Padrão conforme descrito no POP de Oficiais de Segurança em relação a paradas, revistas e prisões. O Detetive é isento das regras de conduta;
 
   [bold]3.[/bold] O Detetive pode portar seu revólver e munição reserva;
 
@@ -165,9 +169,9 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] Todas as diretrizes são mantidas do [color=green]Código Verde[/color];
 
-  [bold]2.[/bold] O Detetive pode interrogar qualquer suspeito durante seu tempo de processamento. Se o suspeito solicitar representação legal, o Detetive deve permitir apenas em casos de crimes de Nível III ou superior. Nenhum detido deve permanecer em processamento por mais de dez (10) minutos sem evidências concretas;
+  [bold]2.[/bold] O Detetive pode interrogar qualquer suspeito durante seu tempo de processamento. Se o suspeito solicitar representação legal, o Detetive deve permitir apenas em casos de crimes que resultem numa pena de 15 minutos ou superior. Nenhum detido deve permanecer em processamento por mais de dez (10) minutos sem evidências concretas;
 
-  [bold]3.[/bold] Tortura como meio de obtenção de evidências é permitida.
+  [bold]3.[/bold] Tortura como meio de obtenção de evidências é permitida, mas não deve resultar em dano físico permanente.
 
   ## Código Vermelho
 
@@ -175,5 +179,5 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] As diretrizes 2 e 3 são mantidas do [color=cyan]Código Azul[/color];
 
-  [bold]3.[/bold] O Detetive pode portar qualquer arma ou equipamento disponível no Arsenal, a critério do Carcereiro, mas nunca mais de um por vez. Exceção é feita em emergências severas, como Operativos Nucleares;
+  [bold]3.[/bold] O Detetive pode portar qualquer arma ou equipamento disponível no Arsenal, a critério do Carcereiro, mas nunca mais de um por vez. Exceção é feita em emergências severas.
 </Document>
