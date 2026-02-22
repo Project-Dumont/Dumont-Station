@@ -125,14 +125,12 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiHoloWarn
-  name: ai-holowarn-name
-  description: ai-holowarn-desc
   components:
   - type: Action
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
-      state: holopointer
+      state: holowarn
     checkCanInteract: false
     useDelay: 15
   - type: TargetAction
@@ -208,14 +206,12 @@
 
 - type: entity
   id: ActionStationAiEmergencyResin
-  name: ai-emergency-resin-name
-  description: ai-emergency-resin-desc
   components:
   - type: Action
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
-      state: emergency_sealant
+      state: emergency_resin
     checkCanInteract: false
     useDelay: 300
   - type: TargetAction

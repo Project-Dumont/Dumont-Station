@@ -7,6 +7,7 @@ using Content.Shared.Damage;
 using Content.Shared.Light.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
+using Robust.Shared.Network;
 
 namespace Content.Shared._DV.Silicons;
 
@@ -16,6 +17,7 @@ public abstract class SharedStationAiShopSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -64,6 +66,9 @@ public abstract class SharedStationAiShopSystem : EntitySystem
     private void OnHolopointer(Entity<StationAiShopComponent> ent, ref StationAiSpawnEntityActionEvent args)
     {
         if (!_timing.IsFirstTimePredicted)
+            return;
+
+        if (_net.IsClient)
             return;
 
         Spawn(args.Entity, args.Target);

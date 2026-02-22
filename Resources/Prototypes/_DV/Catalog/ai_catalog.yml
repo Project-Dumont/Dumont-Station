@@ -29,9 +29,9 @@
     stock: 1
 
 - type: listing
-  id: AiHolopointer
-  name: ai-holopointer-name
-  description: ai-holopointer-desc
+  id: AiHoloWarn
+  name: ent-ActionStationAiHoloWarn
+  description: ent-ActionStationAiHoloWarn.desc
   productAction: ActionStationAiHoloWarn
   cost:
     AiMemory: 1
@@ -81,9 +81,9 @@
     stock: 1
 
 - type: listing
-  id: AiEmergencySealant
-  name: ai-emergency-sealant-name
-  description: ai-emergency-sealant-desc
+  id: AiEmergencyResin
+  name: ent-ActionStationAiEmergencyResin
+  description: ent-ActionStationAiEmergencyResin.desc
   productAction: ActionStationAiEmergencyResin
   cost:
     AiMemory: 2

@@ -26,6 +26,12 @@
             "name": "rgb_lighting"
         },
         {
+            "name": "holowarn"
+        },
+        {
+            "name": "emergency_resin"
+        },
+        {
             "name": "store"
         }
     ]
