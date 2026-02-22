@@ -207,8 +207,8 @@
   id: RedMediumSplitLaser
   damage:
     types:
-      Heat: 17
-      Shock: 2 # Lecter is slightly armor-piercing and so is this
+      Heat: 18
+      Shock: 4 # Lecter is slightly armor-piercing and so is this
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
