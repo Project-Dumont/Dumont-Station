@@ -11,8 +11,8 @@
 
 - type: entity
   id: HeadOfSecurityWeaponUndetermined
-  name: Teleporte de arma do Chefe de Segurança
-  description: Um pequeno controle remoto que utiliza bluespace para teleportar uma arma disponível para o Chefe de Segurança. Escolha com cautela.
+  name: Caixa X-00
+  description: Um pequeno controle remoto que utiliza bluespace para teleportar uma arma da série X-00 para o Chefe de Segurança. Escolha com cautela.
   parent: [ BaseItem, BaseSetSelector, BaseCommandContraband ]
   components:
   - type: Sprite
