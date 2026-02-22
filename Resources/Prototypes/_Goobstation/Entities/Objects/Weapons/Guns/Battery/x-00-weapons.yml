@@ -45,7 +45,7 @@
     autoRecharge: true
     autoRechargeRate: 35
     autoRechargePause: true
-    autoRechargePauseTime: 1
+    autoRechargePauseTime: 10
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -98,7 +98,7 @@
     autoRecharge: true
     autoRechargeRate: 50
     autoRechargePause: true
-    autoRechargePauseTime: 0.5
+    autoRechargePauseTime: 5
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -144,7 +144,7 @@
     autoRecharge: true
     autoRechargeRate: 20
     autoRechargePause: true
-    autoRechargePauseTime: 2
+    autoRechargePauseTime: 15
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -197,7 +197,7 @@
     autoRecharge: true
     autoRechargeRate: 20
     autoRechargePause: true
-    autoRechargePauseTime: 2
+    autoRechargePauseTime: 15
   - type: MagazineVisuals
     magState: mag
     steps: 5
