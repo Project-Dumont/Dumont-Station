@@ -9,8 +9,6 @@ SPDX-License-Identifier: MIT
 
   # Diretor de Pesquisa
 
-  ## Código Verde
-
   [bold]1.[/bold] O Diretor de Pesquisa deve garantir que a pesquisa está sendo realizada.
 
   [bold]2.[/bold] O Diretor de Pesquisa tem permissão para portar um flash e seu Teletransportador Portátil;
@@ -26,6 +24,8 @@ SPDX-License-Identifier: MIT
   [bold]7.[/bold] O Diretor de Pesquisa deve manter um registro de todas as anomalias e eliminar quaisquer anomalias que possam representar perigo imediato aos membros da tripulação;
 
   [bold]8.[/bold] O Diretor de Pesquisa, junto com o Engenheiro Chefe deve garantir que as telecomunicações estejam devidamente mantidas.
+
+  [bold]9.[/bold] O Diretor de Pesquisa, junto com o Médico Chefe deve garantir que o Geneticista está seguindo o POP.
 
   # Cientista / Assistente de Pesquisa
 
