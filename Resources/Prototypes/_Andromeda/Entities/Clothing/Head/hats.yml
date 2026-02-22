@@ -8,8 +8,3 @@
     sprite: _Andromeda/Clothing/Head/Hats/rnt.rsi
   - type: Clothing
     sprite: _Andromeda/Clothing/Head/Hats/rnt.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon
-    - HamsterWearable
