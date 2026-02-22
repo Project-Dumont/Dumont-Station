@@ -43,7 +43,7 @@
     price: 2500
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 20
+    autoRechargeRate: 25
     autoRechargePause: true
     autoRechargePauseTime: 15
   - type: MagazineVisuals
@@ -96,9 +96,9 @@
     price: 2500
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 30
+    autoRechargeRate: 25
     autoRechargePause: true
-    autoRechargePauseTime: 8
+    autoRechargePauseTime: 12
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -144,7 +144,7 @@
     autoRecharge: true
     autoRechargeRate: 15
     autoRechargePause: true
-    autoRechargePauseTime: 15
+    autoRechargePauseTime: 20
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -195,9 +195,9 @@
     price: 2500
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 15
+    autoRechargeRate: 20
     autoRechargePause: true
-    autoRechargePauseTime: 20
+    autoRechargePauseTime: 15
   - type: MagazineVisuals
     magState: mag
     steps: 5
