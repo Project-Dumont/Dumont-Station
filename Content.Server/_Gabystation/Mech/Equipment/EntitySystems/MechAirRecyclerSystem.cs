@@ -21,24 +21,12 @@ public sealed class MechAirRecyclerSystem : EntitySystem
     [Dependency] private readonly MechSystem _mech = default!;
     private float _timer;
     private const float UpdateInterval = 1.0f;
-    private readonly HashSet<EntityUid> _activeRecyclers = new();
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MechAirRecyclerComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<MechAirRecyclerComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<MechAirRecyclerComponent, InsertEquipmentEvent>(OnInsert);
         SubscribeLocalEvent<MechAirRecyclerComponent, MechEquipmentRemovedEvent>(OnRemove);
-    }
-    private void OnStartup(EntityUid uid, MechAirRecyclerComponent comp, ComponentStartup args)
-    {
-        _activeRecyclers.Add(uid);
-    }
-
-    private void OnShutdown(EntityUid uid, MechAirRecyclerComponent comp, ComponentShutdown args)
-    {
-        _activeRecyclers.Remove(uid);
     }
 
     private void OnInsert(EntityUid uid, MechAirRecyclerComponent comp, InsertEquipmentEvent args)
@@ -61,8 +49,13 @@ public sealed class MechAirRecyclerSystem : EntitySystem
 
         _timer -= UpdateInterval;
 
-        foreach (var uid in _activeRecyclers)
+        var query = EntityQueryEnumerator<MechAirRecyclerComponent>();
+
+        while (query.MoveNext(out var uid, out var comp))
         {
+            if (!comp.Enabled)
+                continue;
+
             ProcessRecycler(uid);
         }
     }
@@ -93,8 +86,8 @@ public sealed class MechAirRecyclerSystem : EntitySystem
         if (currentMoles < targetMoles)
         {
             var diff = targetMoles - currentMoles;
-            air.AdjustMoles(Gas.Oxygen, diff * 0.22f);
-            air.AdjustMoles(Gas.Nitrogen, diff * 0.78f);
+            air.AdjustMoles(Gas.Oxygen, diff * recycler.OxygenRatio);
+            air.AdjustMoles(Gas.Nitrogen, diff * recycler.NitrogenRatio);
             didwork = true;
         }
 
