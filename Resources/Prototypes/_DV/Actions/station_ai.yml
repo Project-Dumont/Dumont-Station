@@ -152,8 +152,8 @@
     event: !type:StationAiHealthChangeActionEvent
       damage:
         groups:
-          Burn: -20
-          Brute: -20
+          Burn: -50
+          Brute: -50
 
 - type: entity
   id: ActionStationAiEmergencySealant
@@ -172,6 +172,6 @@
     checkCanAccess: false
   - type: WorldTargetAction
     event: !type:StationAiSmokeActionEvent
-      duration: 2
-      spreadAmount: 5
+      duration: 10
+      spreadAmount: 10
       smokePrototype: AluminiumMetalFoam
