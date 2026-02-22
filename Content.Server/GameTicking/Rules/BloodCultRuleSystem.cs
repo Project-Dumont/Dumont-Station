@@ -1018,7 +1018,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 		var cultistCount = cultists.Count;
 
 		// Call evac if cult drops to 0 or 1 members
-		if (cultistCount <= 1)
+		if (cultistCount <= 0)
 		{
 			// _roundEnd.RequestRoundEnd(
 			// 	TimeSpan.FromMinutes(10),
