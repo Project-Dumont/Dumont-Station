@@ -131,6 +131,47 @@
 
 - type: entity
   parent: BaseAction
+  id: ActionStationAiHoloWarn
+  name: ai-holowarn-name
+  description: ai-holowarn-desc
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: holopointer
+    checkCanInteract: false
+    useDelay: 15
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:StationAiSpawnEntityActionEvent
+      entity: StationAiHoloWarn
+
+- type: entity
+  id: StationAiHoloWarn
+  name: holowarn
+  description: A hologram projected by the station's AI to bring your attention to something.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: _DV/Objects/Misc/holopointer.rsi
+    state: target_box
+  - type: TimedDespawn
+    lifetime: 240
+  - type: PointLight
+    enabled: true
+    radius: 1
+    color: red
+  - type: Clickable
+
+- type: entity
+  parent: BaseAction
   id: ActionStationAiRepairNanites
   name: ai-repair-nanites-name
   description: ai-repair-nanites-desc
@@ -175,3 +216,24 @@
       duration: 10
       spreadAmount: 10
       smokePrototype: AluminiumMetalFoam
+
+- type: entity
+  id: ActionStationAiEmergencyResin
+  name: ai-emergency-resin-name
+  description: ai-emergency-resin-desc
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: emergency_sealant
+    checkCanInteract: false
+    useDelay: 300
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:StationAiSmokeActionEvent
+      duration: 10
+      spreadAmount: 10
+      smokePrototype: Resin
