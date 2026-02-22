@@ -143,6 +143,8 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 20
+    autoRechargePause: true
+    autoRechargePauseTime: 2
   - type: MagazineVisuals
     magState: mag
     steps: 5
