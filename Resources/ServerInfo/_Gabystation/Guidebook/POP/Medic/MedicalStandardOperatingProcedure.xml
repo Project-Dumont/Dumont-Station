@@ -10,17 +10,19 @@ SPDX-License-Identifier: MIT
 
   # Médico Chefe
 
-  [bold]1.[/bold] O Chefe Médico pode portar um Desfibrilador comum ou Compacto consigo o tempo todo;
+  [bold]1.[/bold] O Médico Chefe pode portar um Desfibrilador comum ou Compacto consigo o tempo todo;
 
-  [bold]2.[/bold] O Chefe Médico pode portar um flash e seu hiposspray;
+  [bold]2.[/bold] O Médico Chefepode portar um flash e seu hiposspray;
 
-  [bold]3.[/bold] O Chefe Médico pode portar substâncias químicas de autodefesa para seu hiposspray se o nível de alerta da estação justificar;
+  [bold]3.[/bold] O Médico Chefe pode portar substâncias químicas de autodefesa para seu hiposspray se o nível de alerta da estação justificar;
 
-  [bold]4.[/bold] O Chefe Médico não pode permitir a criação de misturas venenosas ou explosivas na Química sem consentimento expresso do Chefe de Segurança ou, na ausência deste, sem que haja perigo claro e urgente à integridade da estação, exceto em situações onde Implantes Químicos sejam necessários;
+  [bold]4.[/bold] O Médico Chefe não pode permitir a criação de misturas venenosas ou explosivas na Química sem consentimento expresso do Chefe de Segurança ou, na ausência deste, sem que haja perigo claro e urgente à integridade da estação, exceto em situações onde Implantes Químicos sejam necessários;
 
-  [bold]5.[/bold] O Chefe Médico pode entregar seu Monitor Portátil de Tripulação ao Paramédico caso seja necessário substituição;
+  [bold]5.[/bold] O Médico Chefe pode entregar seu Monitor Portátil de Tripulação ao Paramédico caso seja necessário substituição;
 
-  [bold]6.[/bold] O Chefe Médico deve garantir que todos os corpos revivíveis sejam revividos.
+  [bold]6.[/bold] O Médico Chefe deve garantir que todos os corpos revivíveis sejam revividos;
+
+  [bold]7.[/bold] O Médico Chefe, junto com o Diretor de Pesquisa, deve garantir que o geneticista está seguindo o POP.
 
   # Médico e Estagiários
 
