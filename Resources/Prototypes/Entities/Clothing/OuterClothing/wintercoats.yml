@@ -511,6 +511,12 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coatqm.rsi
   - type: ToggleableClothing # Goobstation - Modsuits change
+  - type: Armor
+    modifiers:
+      coefficients:
+       Slash: 0.75
+       Piercing: 0.75
+       heat: 0.75
     clothingPrototypes:
       head: ClothingHeadHatHoodWinterQM
 
