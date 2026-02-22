@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNanotrasenRepresentativecap
+  name: Nanotrasen Representative Official Cap
+  description: Few have to honour to wear it.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Head/Hats/rnt.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/Head/Hats/rnt.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - HamsterWearable
