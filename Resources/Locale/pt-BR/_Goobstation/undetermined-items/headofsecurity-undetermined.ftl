@@ -20,5 +20,6 @@ selectable-set-hos-rifle-description =
 
 selectable-set-hos-shotgun-ballistic-name = Espingarda Foxhound
 selectable-set-hos-shotgun-ballistic-description =
-    Uma espingarda semi-automática utilizando tiros tambores .50.
+    Uma espingarda semi-automática utilizando tambores .50.
+
     Completamente original!
