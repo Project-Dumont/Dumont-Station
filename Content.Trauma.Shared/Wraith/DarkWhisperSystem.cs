@@ -10,10 +10,12 @@ namespace Content.Trauma.Shared.Wraith;
 /// </summary>
 public sealed class DarkWhisperSystem : EntitySystem
 {
-    [Dependency] private readonly SharedChatSystem _chatSystem = default!;
+    [Dependency] private readonly SharedChatSystem _chat = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+
+    private EntityQuery<DarkWhisperComponent> _darkWhisperQuery;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -24,6 +26,8 @@ public sealed class DarkWhisperSystem : EntitySystem
         SubscribeLocalEvent<DarkWhisperComponent, EntitySpokeEvent>(OnDarkWhisperSpoke);
 
         SubscribeAllEvent<TypingChangedEvent>(OnTypingChanged);
+
+        _darkWhisperQuery = GetEntityQuery<DarkWhisperComponent>();
     }
 
     public override void Update(float frameTime)
@@ -39,9 +43,13 @@ public sealed class DarkWhisperSystem : EntitySystem
             if (_timing.CurTime < whisper.NextUpdate)
                 continue;
 
-            _popupSystem.PopupClient(Loc.GetString("dark-whisper-end"), uid, PopupType.MediumCaution);
+            _popup.PopupClient(Loc.GetString("dark-whisper-end"), uid, PopupType.MediumCaution);
 
             whisper.Active = false;
+
+            // Reset the visuals
+            _appearance.SetData(whisper.AttachedEntity.Value, TypingIndicatorVisuals.State, TypingIndicatorState.None);
+
             whisper.AttachedEntity = null;
             Dirty(uid, whisper);
         }
@@ -49,7 +57,9 @@ public sealed class DarkWhisperSystem : EntitySystem
 
     private void OnDarkWhisper(Entity<DarkWhisperComponent> ent, ref DarkWhisperEvent args)
     {
-        _popupSystem.PopupClient(Loc.GetString("dark-whisper-start"), ent.Owner, PopupType.MediumCaution);
+        _popup.PopupClient(Loc.GetString("dark-whisper-start"), ent.Owner, PopupType.MediumCaution);
+        _popup.PopupClient(Loc.GetString("dark-whisper-target"), args.Target, PopupType.MediumCaution);
+
         ent.Comp.NextUpdate = _timing.CurTime + ent.Comp.Update;
         ent.Comp.AttachedEntity = args.Target;
         ent.Comp.Active = true;
@@ -65,17 +75,17 @@ public sealed class DarkWhisperSystem : EntitySystem
 
         var message = args.Message;
 
-        _chatSystem.TrySendInGameICMessage(
+        _chat.TrySendInGameICMessage(
             attachedEntity,
             message,
             InGameICChatType.Speak,
-            false,
-            false,
-            null,
-            null,
-            null,
-            true,
-            true);
+            hideChat: false,
+            hideLog: false,
+            shell: null,
+            player: null,
+            nameOverride: null,
+            checkRadioPrefix: true,
+            ignoreActionBlocker: true);
     }
 
     private void OnTypingChanged(TypingChangedEvent ev, EntitySessionEventArgs args)
@@ -84,9 +94,9 @@ public sealed class DarkWhisperSystem : EntitySystem
         if (!Exists(uid))
             return;
 
-        if (!TryComp<DarkWhisperComponent>(uid, out var whisper) || whisper.AttachedEntity is not {} attachedEntity)
+        if (!_darkWhisperQuery.TryComp(uid, out var whisper) || whisper.AttachedEntity is not {} attachedEntity)
             return;
 
-        _appearanceSystem.SetData(attachedEntity, TypingIndicatorVisuals.State, ev.State);
+        _appearance.SetData(attachedEntity, TypingIndicatorVisuals.State, ev.State);
     }
 }

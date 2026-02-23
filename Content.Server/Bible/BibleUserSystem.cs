@@ -170,7 +170,7 @@ namespace Content.Server.Bible
                 return; // STOP WITH USELESS BRACES!! - Goobstation
 
             // <Trauma>
-            var bibleUsedEv = new BibleUsed();
+            var bibleUsedEv = new BibleUsedEvent();
             RaiseLocalEvent(args.Target.Value, ref bibleUsedEv);
             // </Trauma>
 

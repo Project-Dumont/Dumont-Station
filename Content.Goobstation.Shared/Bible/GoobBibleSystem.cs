@@ -100,4 +100,4 @@ public record struct BibleSmiteUsed;
 /// Raised on the target once bible gets used
 /// </summary>
 [ByRefEvent]
-public record struct BibleUsed;
+public record struct BibleUsedEvent;

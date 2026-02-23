@@ -33,7 +33,7 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _admin = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 
-    private EntityQuery<WraithAbsorbableComponent> _absorbedQuery;
+    private EntityQuery<WraithAbsorbableComponent> _absorbableQuery;
 
     public override void Initialize()
     {
@@ -44,7 +44,7 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
 
         SubscribeLocalEvent<AbsorbCorpseComponent, AbsorbCorpseDoAfterEvent>(OnAbsorbFinished);
 
-        _absorbedQuery = GetEntityQuery<WraithAbsorbableComponent>();
+        _absorbableQuery = GetEntityQuery<WraithAbsorbableComponent>();
     }
 
     private void OnAbsorb(Entity<AbsorbCorpseComponent> ent, ref AbsorbCorpseEvent args)
@@ -52,7 +52,7 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
         var target = args.Target;
         var user = args.Performer;
 
-        if (_tag.HasTag(target, ent.Comp.Tag) || !_absorbedQuery.TryComp(args.Target, out var absorbable)) // save the monkeys
+        if (_tag.HasTag(target, ent.Comp.Tag) || !_absorbableQuery.TryComp(args.Target, out var absorbable)) // save the monkeys
             return;
 
         if (!_mobState.IsDead(target))
@@ -86,10 +86,8 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
     private void OnAbsorbFinished(Entity<AbsorbCorpseComponent> ent, ref AbsorbCorpseDoAfterEvent args)
     {
         var user = args.User;
-        if (args.Target == null || !_absorbedQuery.TryComp(args.Target, out var absorbable))
+        if (args.Target is not {} target || !_absorbableQuery.TryComp(target, out var absorbable))
             return;
-
-        var target = args.Target.Value;
 
         var ev = new AbsorbCorpseAttemptEvent(target);
         RaiseLocalEvent(user, ref ev);
