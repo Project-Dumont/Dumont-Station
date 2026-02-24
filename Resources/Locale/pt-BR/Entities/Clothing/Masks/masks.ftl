@@ -57,3 +57,4 @@ ent-ClothingMaskPlague = máscara de médico da peste
 
 ent-ClothingMaskGasSwat = Máscara de gás de SWAT
     .desc = Uma máscara de gás elite para o Departamento de Segurança. Possui um modulador de voz para intimidação.
+    .suffix = Voice Mask
