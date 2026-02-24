@@ -55,3 +55,5 @@ ent-ClothingMaskPlague = máscara de médico da peste
     .desc = Eu tenho um mal pressentimento sobre isso.
     .suffix = Voice Mask
 
+ent-ClothingMaskGasSwat = Máscara de gás de SWAT
+    .desc = Uma máscara de gás elite para o Departamento de Segurança. Possui um modulador de voz para intimidação.
