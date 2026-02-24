@@ -687,7 +687,9 @@
     blockSmokeIngestion: true
   - type: SpeechSoundsReplacer
     speechSounds: Chrono
-
+  - type: Hailer # Goobstation - Hailer
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: [ ClothingMaskGas, BaseSecurityCargoContraband ]
