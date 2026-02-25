@@ -21,6 +21,6 @@ public sealed partial class DarkWhisperComponent : Component
     [ViewVariables, AutoNetworkedField]
     public EntityUid? AttachedEntity;
 
-    [ViewVariables]
+    [ViewVariables, AutoNetworkedField]
     public bool Active;
 }

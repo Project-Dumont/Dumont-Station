@@ -391,6 +391,9 @@
       components:
       - StatusEffects
       - Body
+    blacklist:
+      components:
+      - WeakToHoly
     canTargetSelf: false
     event: !type:ApplyCurseActionEvent
   - type: CurseAction # refreshes all curses when a curse is used

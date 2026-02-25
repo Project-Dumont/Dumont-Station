@@ -7,10 +7,13 @@ using Content.Goobstation.Shared.Wraith.SaltLines;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.Wraith.SaltLines;
 
@@ -23,6 +26,10 @@ public sealed class SaltLineSystem : EntitySystem
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
 
+    private static readonly ProtoId<ReagentPrototype> ReagentSalt = "TableSalt";
+
+    private EntityQuery<SolutionContainerManagerComponent> _solutionContainerManQuery;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -33,6 +40,8 @@ public sealed class SaltLineSystem : EntitySystem
         SubscribeLocalEvent<SaltLinePlacerComponent, AfterInteractEvent>(OnSaltLineAfterInteract);
 
         SubscribeLocalEvent<ConsumeOnSaltLineComponent, AttemptSaltLineEvent>(OnAttemptSaltLine);
+
+        _solutionContainerManQuery = GetEntityQuery<SolutionContainerManagerComponent>();
     }
 
     private void OnMapInit(Entity<SaltLineComponent> ent, ref MapInitEvent args) =>
@@ -80,41 +89,41 @@ public sealed class SaltLineSystem : EntitySystem
 
     private void OnAttemptSaltLine(Entity<ConsumeOnSaltLineComponent> ent, ref AttemptSaltLineEvent args)
     {
-        if (!_solution.TryGetSolution(ent.Owner, "food", out var sol))
+        if (!_solutionContainerManQuery.TryComp(ent.Owner, out var solMan))
         {
-            if (_solution.TryGetSolution(ent.Owner, "beaker", out var beakerSol)
-                && TryRemoveSalt(beakerSol, ent, args.User, false))
-            {
-                return;
-            }
-
             args.Cancelled = true;
             return;
         }
 
-        if (!TryRemoveSalt(sol, ent, args.User))
-            args.Cancelled = true;
+        foreach (var container in solMan.Containers)
+        {
+            if (!_solution.TryGetSolution(ent.Owner, container, out var solution)
+                || solution is not { } sol
+                || !sol.Comp.Solution.ContainsPrototype(ReagentSalt))
+                continue;
+
+            // Try remove salt from the first found solution, if there's no salt return and check next container,
+            // else exit the function without cancelling it
+            if (TryRemoveSalt(sol, ent, args.User))
+                return;
+        }
+
+        // No reagent was consumed, therefore the event failed
+        args.Cancelled = true;
     }
 
     #region Helpers
 
-    public bool TryRemoveSalt(Entity<SolutionComponent>? sol, Entity<ConsumeOnSaltLineComponent> ent, EntityUid user, bool popup = true)
+    /// <summary>
+    ///  Removes salt from a solution
+    /// </summary>
+    public bool TryRemoveSalt(Entity<SolutionComponent> sol, Entity<ConsumeOnSaltLineComponent> ent, EntityUid user)
     {
-        if (sol == null)
-            return false;
-
-        var reagentsalt = "TableSalt";
-        var solution = sol.Value;
-        var saltAmount = solution.Comp.Solution.GetTotalPrototypeQuantity(reagentsalt);
-        
+        var saltAmount = sol.Comp.Solution.GetTotalPrototypeQuantity(ReagentSalt);
         if (saltAmount < ent.Comp.Amount)
-        {
-            if (popup)
-                _popupSystem.PopupEntity(Loc.GetString("consume-on-salt-line-component-not-enough-salt-message"), ent.Owner, user);
             return false;
-        }
 
-        _solution.RemoveReagent(solution, reagentsalt, ent.Comp.Amount);
+        _solution.RemoveReagent(sol, ReagentSalt, ent.Comp.Amount);
         return true;
     }
 
