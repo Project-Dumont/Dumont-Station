@@ -74,3 +74,11 @@
   - WeaponPistolMk58Gold
   - ClothingNeckRobusto
   - ClothingNeckChoque
+
+- type: loadoutGroup
+  id: HoSLawbringerSkins
+  name: loadout-group-hos-lawbringerskin
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - HoSLawbringerSkin

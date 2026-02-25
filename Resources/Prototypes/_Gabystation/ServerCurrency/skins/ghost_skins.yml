@@ -1,0 +1,87 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: ghostSkinListing
+  id: DefaultSkin # for internal GhostSkinSystem use
+  name: YOU SHOULD BE NOT ABLE TO SEE THIS
+  price: 0
+  available: false
+  sprite:
+    sprite: "/Textures/Mobs/Ghosts/ghost_human.rsi"
+    state: animated
+  color: "#FFFFFFFF"
+
+# Misc
+
+- type: ghostSkinListing
+  id: FlippedSkin
+  name: ghost-skin-flipped
+  price: 500
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/flipped.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: CatEarsSkin
+  name: ghost-skin-cat-ears
+  price: 666
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/cat.rsi"
+    state: animated
+
+# Species
+
+- type: ghostSkinListing
+  id: VulpSkin
+  name: ghost-skin-vulp
+  price: 1200
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/vulp.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: MothSkin
+  name: ghost-skin-moth
+  price: 1200
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/moth.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: LizardSkin
+  name: ghost-skin-lizard
+  price: 1200
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/lizard.rsi"
+    state: animated
+
+# MVP
+
+- type: ghostSkinListing
+  id: AuraSkin
+  name: ghost-skin-aura
+  price: 1900
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/aura.rsi"
+    state: animated
+
+- type: ghostSkinListing
+  id: AngelSkin
+  name: ghost-skin-angel
+  price: 2300
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/angel.rsi"
+    state: animated
+
+# Memes
+
+- type: ghostSkinListing
+  id: DaveJonesSkin
+  name: ghost-skin-dave-jones
+  available: false # apenas primeiro mes da loja nova
+  price: 18000
+  sprite:
+    sprite: "/Textures/_Gabystation/Mobs/Ghosts/mago.rsi"
+    state: animated
+  scale: 0.5, 0.5

@@ -73,6 +73,10 @@
     {
       "name": "l_foot",
       "directions": 4
+    },
+    {
+      "name": "invis",
+      "directions": 4
     }
   ]
 }

@@ -152,6 +152,11 @@
             state: jumpsuit-female
   - type: Sprinter # Goob Change: human major
     staminaDrainRate: 8
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHuman
+    lowest: MobMonkey
+  # Corvax-Wega-Genetics-end
 
 
 - type: entity

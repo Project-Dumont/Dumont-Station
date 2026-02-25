@@ -2,8 +2,7 @@
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Nuke;
 using Content.Server.Objectives.Systems;
-using Content.Server.Station.Components;
-using Content.Shared.Objectives.Components;
+using Content.Shared.Station.Components;
 
 namespace Content.Server._DV.Objectives.Systems;
 

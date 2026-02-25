@@ -47,6 +47,7 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Coolsurf6 <coolsurf24@yahoo.com.au>
+# SPDX-FileCopyrightText: 2025 Discoded <33738298+Discoded@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
@@ -58,6 +59,7 @@
 # SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <scarky0@onet.eu>
+# SPDX-FileCopyrightText: 2025 ToastEnjoyer <masondoesgamingyes@gmail.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
@@ -120,6 +122,17 @@
       state: cpu_engineering
     - type: ComputerBoard
       prototype: ComputerPowerMonitoring
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SupermatterComputerCircuitboard
+  name: supermatter monitoring console board
+  description: A computer printed circuit board for a supermatter monitoring console.
+  components:
+  - type: Sprite
+    state: cpu_engineering
+  - type: ComputerBoard
+    prototype: ComputerSupermatter
 
 - type: entity
   parent: BaseComputerCircuitboard

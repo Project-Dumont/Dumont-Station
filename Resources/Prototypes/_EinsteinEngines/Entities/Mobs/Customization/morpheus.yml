@@ -10,6 +10,7 @@
   id: CyberLimbsMarkingMorpheusHead
   bodyPart: Head
   markingCategory: Head
+  markingType: NonGenetics # Corvax-Wega-Genetics
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -24,7 +25,8 @@
   id: CyberLimbsMarkingMorpheusHeadAlt
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [Synth]
   coloring:
     default:
       type:
@@ -38,7 +40,8 @@
   id: CyberLimbsMarkingMorpheusChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -52,7 +55,8 @@
   id: CyberLimbsMarkingMorpheusLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -66,7 +70,8 @@
   id: CyberLimbsMarkingMorpheusLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -80,7 +85,8 @@
   id: CyberLimbsMarkingMorpheusLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -95,7 +101,8 @@
   id: CyberLimbsMarkingMorpheusLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -111,7 +118,8 @@
   id: CyberLimbsMarkingMorpheusRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -126,7 +134,8 @@
   id: CyberLimbsMarkingMorpheusRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -140,7 +149,8 @@
   id: CyberLimbsMarkingMorpheusRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -155,7 +165,8 @@
   id: CyberLimbsMarkingMorpheusRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:

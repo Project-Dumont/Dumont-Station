@@ -219,6 +219,11 @@
         state: "halo"
         shader: unshaded
         visible: false
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobWaddler
+    lowest: MobPenguin
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

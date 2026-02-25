@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from the paradise at https://github.com/ParadiseSS13/Paradise/blob/master/icons/mob/actions/actions.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "genetic_cryo"
+    },
+    {
+      "name": "genetic_jump"
+    },
+    {
+      "name": "genetic_morph"
+    },
+    {
+      "name": "genetic_poly"
+    },
+    {
+      "name": "genetic_project"
+    },
+    {
+      "name": "genetic_view"
+    }
+  ]
+}

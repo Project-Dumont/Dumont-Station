@@ -1,0 +1,11 @@
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: DnaModifierComputerCircuitboard
+  icon: _Wega/Structures/Machines/Icons/Computers/dna_computer.png
+  result: DnaModifierComputerCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: MedicalScannerMachineCircuitboard
+  icon: Structures/Machines/scanner.rsi/open.png
+  result: MedicalScannerMachineCircuitboard

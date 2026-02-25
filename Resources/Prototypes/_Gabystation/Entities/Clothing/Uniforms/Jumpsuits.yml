@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitPijamaCaptain
+  name: pijama de marinheiro
+  description: Combinando elegância, moda antiga e fofura. Esse pijama é ideal para capitães preguiçosos que gostam de tirar uma soneca na criogenia.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/marinheiro.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/marinheiro.rsi

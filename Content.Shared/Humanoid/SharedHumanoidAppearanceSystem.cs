@@ -55,6 +55,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Robust.Shared.Enums;
 
 namespace Content.Shared.Humanoid;
 
@@ -412,6 +413,22 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
     }
 
+    // goob edit - genderfluid potion.
+    // thanks wizden!
+    public void SetGender(EntityUid uid, Gender gender, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid) || humanoid.Gender == gender)
+            return;
+
+        humanoid.Gender = gender;
+
+        if (sync)
+        {
+            Dirty(uid, humanoid);
+        }
+    }
+    // goob edit end
+
     // begin Goobstation: port EE height/width sliders
 
     /// <summary>
@@ -606,6 +623,36 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
+
+    // Corvax-Wega-Genetics-start
+    public void AddMarkingWithColors(
+        Entity<HumanoidAppearanceComponent> humanoid,
+        string markingId,
+        List<Color> colors)
+    {
+        if (!_markingManager.Markings.TryGetValue(markingId, out var prototype))
+            return;
+
+        var markingObject = prototype.AsMarking();
+
+        for (var i = 0; i < Math.Min(prototype.Sprites.Count, colors.Count); i++)
+        {
+            markingObject.SetColor(i, colors[i]);
+        }
+
+        if (colors.Count > 0 && prototype.Sprites.Count > colors.Count)
+        {
+            var lastColor = colors[^1];
+            for (var i = colors.Count; i < prototype.Sprites.Count; i++)
+            {
+                markingObject.SetColor(i, lastColor);
+            }
+        }
+
+        humanoid.Comp.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
+        Dirty(humanoid);
+    }
+    // Corvax-Wega-Genetics-end
 
     private void EnsureDefaultMarkings(EntityUid uid, HumanoidAppearanceComponent? humanoid)
     {

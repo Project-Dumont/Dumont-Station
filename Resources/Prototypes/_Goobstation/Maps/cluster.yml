@@ -45,7 +45,7 @@
   id: Cluster
   mapName: 'Cluster'
   mapPath: /Maps/_Gabystation/cluster.yml # Gabystation - Ué?! Já estava assim?
-  minPlayers: 10
+  minPlayers: 5
   maxPlayers: 35
   stations:
     Cluster:
@@ -74,6 +74,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
+            RadioHost: [ 1, 1 ]
             ServiceWorker: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
@@ -85,6 +86,8 @@
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
+            Virologist: [ 1, 1 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 3 ]

@@ -1,0 +1,107 @@
+- type: titleListing
+  id: PoorTitle
+  title: title-poor
+  price: 1
+
+- type: titleListing
+  id: NoobTitle
+  title: title-noob
+  price: 100
+  color: "#ffff00"
+
+- type: titleListing
+  id: ClownTitle
+  title: title-clown
+  price: 650
+  color: "#FF69B4"
+
+- type: titleListing
+  id: SiliconTitle
+  title: title-silicon
+  price: 850
+  color: "#00FFFF"
+
+# ==== Deptos
+
+- type: titleListing
+  id: DeptoTitleSciencie
+  title: title-depto-science
+  price: 1120
+  color: "#a884f3"
+
+- type: titleListing
+  id: DeptoTitleMedbay
+  title: title-depto-medbay
+  price: 1120
+  color: "#3AB0AC"
+
+- type: titleListing
+  id: DeptoTitleCargo
+  title: title-depto-cargo
+  price: 1120
+  color: "#a08662"
+
+- type: titleListing
+  id: DeptoTitleSecurity
+  title: title-depto-security
+  price: 1120
+  color: "#c32450"
+
+- type: titleListing
+  id: DeptoTitleEnginner
+  title: title-depto-engineer
+  price: 1120
+  color: "#e6904e"
+
+# ==== Game misc
+
+- type: titleListing
+  id: CaptainTitle
+  title: title-captain
+  price: 2150
+  color: "#D3AF37"
+
+- type: titleListing
+  id: SyndicateTitle
+  title: title-syndicate
+  price: 2850
+  color: "#980002"
+
+- type: titleListing
+  id: NanotrasenTitle
+  title: title-nanotrasen
+  price: 6450
+  color: "#3498db"
+
+- type: titleListing
+  id: RobustTitle
+  title: title-robust
+  price: 15500
+  color: "#C73C55"
+
+# ==== LGBT
+
+# Eu gostava da ideia mas os doadores acharam que iria acabar causando muito bloat na lista
+#- type: titleListing
+#  id: GayTitle
+#  title: title-gay
+#  price: 750
+#  color: "#008018"
+
+#- type: titleListing
+#  id: BiTitle
+#  title: title-bi
+#  price: 750
+#  color: "#9B4F96"
+
+#- type: titleListing
+#  id: LesbianTitle
+#  title: title-lesbian
+#  price: 750
+#  color: "#FF6F2E"
+
+#- type: titleListing
+#  id: TransTitle
+#  title: title-trans
+#  price: 750
+#  color: "#FFC0CB"

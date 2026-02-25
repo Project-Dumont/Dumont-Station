@@ -65,11 +65,11 @@
   access:
   - Service
   - Maintenance
+  - Journalism # goob
   alternateTitles:
   - ReporterTitleAnchor
   - ReporterTitleInterviewer
   - ReporterTitleTv
-
 
 - type: startingGear
   id: ReporterGear
@@ -83,6 +83,8 @@
     - CassetteTape
     - CassetteTape
     - MicrophoneInstrument # Goobstation
+    - PhotoCameraFilled # CorvaxGoob-PhotoCamera
+    - PhotoAlbum # CorvaxGoob-PhotoCamera
 
 - type: chameleonOutfit
   id: ReporterChameleonOutfit

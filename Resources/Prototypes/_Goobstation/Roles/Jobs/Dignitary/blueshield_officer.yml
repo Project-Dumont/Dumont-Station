@@ -49,11 +49,11 @@
       species:
       - Felinid
   guides:
-  # - BlueshieldOfficer SOP
+  # - BlueshieldOfficerSOP
   - Command
   # - Succession
   goobcoins: 45
-  salary: 50 # Gaby content
+  salary: 75 # Gaby content
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"
@@ -100,7 +100,7 @@
   storage:
     back:
     - Flash
-    - ClothingMaskGasSecurity
+    - ClothingBSOMaskGasSwat
     - CombatKnife
 
 - type: chameleonOutfit

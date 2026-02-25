@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Cosmetic "Luger P-08" AutoMod
+  parent: BaseItem
+  id: ChangeLawbringerSkinKit
+  description: An automatic cosmetic modifier for your DT-12. This one is configured for the "Luger P-08" model. Use it on your toy and let the machine do its magic...
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Security/LawbringerSkinKit.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - WeaponPistolLawbringerSkinKit

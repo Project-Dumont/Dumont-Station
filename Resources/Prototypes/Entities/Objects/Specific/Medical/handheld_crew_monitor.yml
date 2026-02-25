@@ -58,6 +58,8 @@
     # - HighRiskItem
   # - type: StealTarget
   #   stealGroup: HandheldCrewMonitor # Goobstation - end
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   id: HandheldCrewMonitorEmpty

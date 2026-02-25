@@ -24,7 +24,8 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Feroxi, Yowie, Daengati] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran, Yowies; EE- Oni; Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Feroxi, Yowie, Daengati, Synth] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran, Yowies; EE- Oni; Gaby Station - Daengati, Synth
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -34,7 +35,8 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Feroxi, Yowie, Daengati] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran, Yowies; EE- Oni; Gaby Station - Daengati
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Rodentia, Tajaran, Oni, Feroxi, Yowie, Daengati, Synth] # Delta V - Felinid, Harpy, Rodentia, Feroxi; Goob - Tajaran, Yowies; EE- Oni; Gaby Station - Daengati, Synth
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -45,6 +47,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [ Human, Dwarf, Oni, Feroxi, Yowie, Felinid ] # DeltaV - Feroxi; Goob - Yowies
+  markingType: NonGenetics # Corvax-Wega-Genetics
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -56,6 +59,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Oni, Feroxi, Yowie, Felinid] # DeltaV - Feroxi; Goob - Yowies
+  markingType: NonGenetics # Corvax-Wega-Genetics
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -67,6 +71,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Oni, Feroxi, Yowie, Felinid] # DeltaV - Feroxi; Goob - Yowies
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -77,6 +82,7 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [Human, Dwarf]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -87,6 +93,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -97,6 +104,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -107,6 +115,7 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [Human, Dwarf]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -117,6 +126,7 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [Human, Dwarf]
+  markingType: NonGenetics # Corvax-Wega-Genetics
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

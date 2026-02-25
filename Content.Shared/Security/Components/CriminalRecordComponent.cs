@@ -74,9 +74,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Inventory; // Beepsky - GabyStation
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization; // Beepsky - GabyStation
 
 namespace Content.Shared.Security.Components;
 
@@ -87,5 +89,66 @@ public sealed partial class CriminalRecordComponent : Component
     ///     The icon that should be displayed based on the criminal status of the entity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public ProtoId<SecurityIconPrototype> StatusIcon = "SecurityIconWanted";
+    public ProtoId<SecurityIconPrototype>? StatusIcon; // Beepsky - GabyStation
+
+    // Beepsky - GabyStation - Start
+    [DataField, AutoNetworkedField]
+    public SecurityStatus Status = SecurityStatus.None;
+
+    /// <summary>
+    ///     How naughty they have been :3
+    ///     Certain stuff that is considered "being a criminal" will increase this while some may decreae it.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
+    public float Points;
+
+    [DataField]
+    public Dictionary<SecurityStatus, float> SecurityStatusPoints = new()
+    {
+        {SecurityStatus.None, 0f},
+        {SecurityStatus.Suspected, 5f},
+        {SecurityStatus.Wanted, 10f},
+        {SecurityStatus.Detained, 9.9f},
+        {SecurityStatus.Paroled, 5f},
+        {SecurityStatus.Discharged, 2.5f},
+        {SecurityStatus.Search, 7.5f},
+        {SecurityStatus.Perma, 9.9f},
+        {SecurityStatus.Dangerous, 10f}
+    };
+
+    [DataField]
+    public Dictionary<SlotFlags, float> ClothingSlotPoints = new()
+    {
+        {SlotFlags.HEAD, 0.5f},
+        {SlotFlags.EYES, 0.25f},
+        {SlotFlags.EARS, 0.25f},
+        {SlotFlags.MASK, 0.25f},
+        {SlotFlags.OUTERCLOTHING, 1f},
+        {SlotFlags.INNERCLOTHING, 1f},
+        {SlotFlags.NECK, 0.25f},
+        {SlotFlags.BACK, 0.75f},
+        {SlotFlags.BELT, 0.75f},
+        {SlotFlags.GLOVES, 0.5f},
+        {SlotFlags.FEET, 0.5f},
+        {SlotFlags.SUITSTORAGE, 1f},
+    };
 }
+
+[Serializable, NetSerializable]
+public sealed partial class GetCriminalPointsEvent : EntityEventArgs
+{
+    public float Points;
+
+    public GetCriminalPointsEvent(float points)
+    {
+        Points = points;
+    }
+}
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class PrivilegedStatusComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public TimeSpan PrivilegedTime = TimeSpan.Zero;
+}
+// Beepsky - GabyStation - End

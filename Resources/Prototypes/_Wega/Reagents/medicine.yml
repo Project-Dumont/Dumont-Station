@@ -1,0 +1,16 @@
+- type: reagent
+  id: Mutadon
+  name: reagent-name-mutadon
+  group: Medicine
+  desc: reagent-desc-mutadon
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#64a0aa"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ChemCureDnaDisease
+      - !type:HealthChange
+        damage:
+          types:
+            Cellular: 0.5

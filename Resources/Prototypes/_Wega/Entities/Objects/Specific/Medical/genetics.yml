@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseItem
+  id: BaseDnaInjector
+  name: DNA injector
+  description: "Don't be afraid of injections! They just change the structure of your DNA!"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Medical/dnainjector.rsi
+    state: icon
+  - type: DnaModifierInjector
+
+- type: entity
+  parent: BaseDnaInjector
+  id: DnaInjector
+  name: DNA injector
+  description: "Don't be afraid of injections! They just change the structure of your DNA!"
+
+- type: entity
+  parent: BaseDnaInjector
+  id: DnaInjectorCleanSe
+  name: DNA injector clean SE
+  description: "Don't be afraid of injections! They just change the structure of your DNA!"
+  suffix: Clean SE
+  components:
+  - type: DnaModifierCleanRandomize

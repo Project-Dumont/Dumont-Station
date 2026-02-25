@@ -7,12 +7,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Emoting;
+using Content.Shared._EinsteinEngines.Flight.Events;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
+using Content.Shared.Popups;
 using Content.Shared.Throwing;
 
 namespace Content.Goobstation.Shared.Dash;
@@ -24,6 +26,8 @@ public sealed class DashActionSystem : EntitySystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -32,6 +36,8 @@ public sealed class DashActionSystem : EntitySystem
 
         SubscribeLocalEvent<DashActionComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<DashActionComponent, ComponentShutdown>(OnComponentShutdown);
+        
+        SubscribeLocalEvent<DashActionComponent, FlightAttemptEvent>(OnDashFlightAttempt);
     }
 
     private void OnDashAction(DashActionEvent args)
@@ -73,5 +79,15 @@ public sealed class DashActionSystem : EntitySystem
     private void OnComponentShutdown(EntityUid uid, DashActionComponent comp, ref ComponentShutdown args)
     {
         _actions.RemoveAction(comp.ActionUid);
+    }
+
+    // Gabystation
+    private void OnDashFlightAttempt(Entity<DashActionComponent> ent, ref FlightAttemptEvent ev)
+    {
+        if (!HasComp<ThrownItemComponent>(ent))
+            return;
+
+        _popup.PopupClient(Loc.GetString("no-flight-while-dashing"), ent.Owner, ent.Owner, PopupType.Medium);
+        ev.Cancel();
     }
 }

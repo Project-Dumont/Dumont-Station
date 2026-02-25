@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -38,10 +42,10 @@ public sealed partial class SlasherBloodTrailComponent : Component
 
     [DataField]
     public SoundSpecifier Funkyslasher =
-               new SoundPathSpecifier("/Audio/_Goobstation/Music/slasher_serial_killer_murder_frenzy_insane_horror_soundtrack.ogg")
+               new SoundPathSpecifier("/Audio/_Gabystation/Music/jason_slasher_horror.ogg")
                {
                    Params = AudioParams.Default
-                       .WithVolume(-2f)
+                       .WithVolume(-9f)
                        .WithRolloffFactor(8f)
                        .WithMaxDistance(10f)
                        .WithLoop(true)

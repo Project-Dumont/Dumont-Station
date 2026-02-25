@@ -1,0 +1,123 @@
+- type: entity
+  id: ActionGenCloakOfDarkness
+  parent: BaseAction
+  name: cloak of darkness
+  description: "You are a shadow."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: Clothing/Neck/Cloaks/void.rsi, state: "icon" }
+    useDelay: 15
+  - type: InstantAction
+    event: !type:CloakOfDarknessActionEvent
+
+- type: entity
+  id: ActionGenPolymorphism
+  parent: BaseAction
+  name: polymorphism
+  description: "Take on someone else's form."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_poly" }
+    itemIconStyle: BigAction
+    useDelay: 300
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:PolymorphismActionEvent
+
+- type: entity
+  id: ActionMindCommunicationGen
+  parent: BaseAction
+  name: mind communication
+  description: "Contact someone through their mind."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_project" }
+    useDelay: 30
+  - type: InstantAction
+    event: !type:MindCommunicationActionEvent
+
+- type: entity
+  id: ActionHulkTransformation
+  parent: BaseAction
+  name: transformation
+  description: "SMASH!"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions_hulk.rsi, state: "transformarion" }
+  - type: InstantAction
+    event: !type:HulkTransformationActionEvent
+
+- type: entity
+  id: ActionHulkCharge
+  parent: BaseAction
+  name: charge
+  description: "GO AHEAD!"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions_hulk.rsi, state: "charge" }
+    itemIconStyle: BigAction
+    useDelay: 45
+  - type: TargetAction
+    range: 16
+  - type: EntityTargetAction
+    event: !type:HulkChargeActionEvent
+
+- type: entity
+  id: ActionMorphismGen
+  parent: BaseAction
+  name: morphism
+  description: "You can change your skin tone, hair, and eyes as you wish."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_morph" }
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:MorphismGenActionEvent
+
+- type: entity
+  id: ActionCryokinesis
+  parent: BaseAction
+  name: Cryokinesis
+  description: "Freeze the fluids of a target, drastically lowering their temperature."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_cryo" }
+    itemIconStyle: BigAction
+    useDelay: 300
+  - type: TargetAction
+    range: 7
+  - type: EntityTargetAction
+    event: !type:CryokinesisActionEvent
+
+- type: entity
+  id: ActionFarVisionGen
+  parent: BaseAction
+  name: far vision
+  description: "Focus your eyes to see further."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_view" }
+    itemIconStyle: BigAction
+    useDelay: 10
+  - type: InstantAction
+    event: !type:FarVisionGenActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionJumpGen
+  name: Jump
+  description: "You propel yourself with your legs a short distance in the direction you are looking."
+  components:
+  - type: Action
+    useDelay: 8
+    icon: { sprite: _Wega/Interface/Actions/actions.rsi, state: "genetic_jump" }
+  - type: InstantAction
+    event: !type:GravityJumpEvent {}

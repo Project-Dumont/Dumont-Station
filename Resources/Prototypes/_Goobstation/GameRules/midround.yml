@@ -33,7 +33,7 @@
       Death: 100
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 250
+    chaosScore: 400
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -53,143 +53,6 @@
     tags:
       - MidroundAntag
 
-# Midround Changelings
-- type: entity
-  parent: BaseGameRule # Funky: Changed parent because it no longer directly makes changelings at all
-  id: ChangelingMidround
-  components:
-  - type: StationEvent
-    earliestStart: 20
-    weight: 4
-    minimumPlayers: 15
-    maxOccurrences: 1
-    startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
-    duration: null
-    occursDuringRoundEnd: false
-    chaos:
-      Hostile: 100
-      Medical: 100
-      Death: 100
-    eventType: HostilesSpawn
-  - type: GameRule
-    chaosScore: 300
-  - type: AlertLevelInterceptionRule
-  - type: AntagSelection
-    selectionTime: PostPlayerSpawn
-    agentName: changeling-roundend-name
-    definitions:
-    - prefRoles: [ Changeling ]
-      min: 1
-      max: 2
-      playerRatio: 10
-      blacklist:
-        components:
-        - CommandStaff
-        - AntagImmune
-        - BibleUser
-      lateJoinAdditional: true
-      mindRoles:
-      - MindRoleChangeling
-  - type: Tag
-    tags:
-      - MidroundAntag
-
-# Midround Heretics
-- type: entity
-  parent: Heretic
-  id: HereticMidround
-  components:
-  - type: StationEvent
-    earliestStart: 20
-    weight: 3
-    minimumPlayers: 30
-    maxOccurrences: 1
-    startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
-    duration: null
-    occursDuringRoundEnd: false
-    chaos:
-      Hostile: 200
-      Medical: 150
-      Death: 200
-    eventType: HostilesSpawn
-  - type: GameRule
-    chaosScore: 300
-  - type: AlertLevelInterceptionRule
-  - type: AntagSelection
-    selectionTime: PostPlayerSpawn
-    agentName: heretic-roundend-name
-    definitions:
-    - prefRoles: [ Heretic ]
-      max: 2
-      min: 1
-      playerRatio: 15
-      blacklist:
-        components:
-        - CommandStaff
-        - AntagImmune
-        - BibleUser
-      startingGear: Heretictmidround
-      lateJoinAdditional: true
-      jobBlacklist: [ Chaplain ] # GOOBSTATION
-      mindRoles:
-      - MindRoleHeretic
-  - type: Tag
-    tags:
-      - MidroundAntag
-
-# Midround Revolutionaries
-- type: entity
-  parent: Revolutionary
-  id: RevolutionaryMidround
-  components:
-  - type: StationEvent
-    earliestStart: 20
-    weight: 3
-    minimumPlayers: 30
-    maxOccurrences: 1
-    duration: null
-    occursDuringRoundEnd: false
-    chaos:
-      Hostile: 250
-      Medical: 250
-      Death: 250
-    maxChaos:
-      Hostile: 30
-      Combat: -60
-      Power: 50
-      Medical: 50
-      Atmos: 50
-    eventType: HostilesSpawn
-  - type: GameRule
-    chaosScore: 800
-  - type: AntagSelection
-    selectionTime: PostPlayerSpawn
-    definitions:
-    - prefRoles: [ HeadRev ]
-      max: 3
-      playerRatio: 15
-      blacklist:
-        components:
-        - AntagImmune
-        - CommandStaff
-      briefing:
-        text: head-rev-role-greeting
-        color: CornflowerBlue
-        sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-      startingGear: HeadRevGear
-      components:
-      - type: Revolutionary
-      - type: HeadRevolutionary
-      mindRoles:
-      - MindRoleHeadRevolutionary
-  - type: Tag
-    tags:
-      - MidroundAntag
-
 # Skeleton Spawn
 - type: entity
   parent: BaseGameRule
@@ -198,20 +61,20 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 999 # nao volte nunca mais - GabyStation
+    minimumPlayers: 15
+    maxOccurrences: 2
     chaos:
       Hostile: 40
       Medical: 40
       Death: 40
     eventType: Chaotic
   - type: GameRule
-    chaosScore: 90
+    chaosScore: 150
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
   - type: Tag
     tags:
       - MidroundAntag
-
 # Blob Midround
 - type: entity
   parent: BaseGameRule
@@ -229,7 +92,7 @@
       Death: 400
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 1000
+    chaosScore: 1100
   - type: BlobSpawnRule
     carrierBlobProtos:
     - SpawnPointGhostBlobRat
@@ -250,7 +113,7 @@
     maxOccurrences: 2
     eventType: Neutral
   - type: GameRule
-    chaosScore: 0
+    chaosScore: 20
   - type: VentCrittersRule
     max: 1
     table: !type:GroupSelector
@@ -309,7 +172,7 @@
       Combat: 20
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 280
   - type: AntagSpawner
     prototype: MobHumanTunnelClown
   - type: AntagSelection
@@ -344,7 +207,7 @@
       Combat: 40
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 350
+    chaosScore: 420
   - type: AntagSpawner
     prototype: MobHumanSingulothKnight
   - type: AntagSelection
@@ -382,7 +245,7 @@
       Hostile: 40
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 400
+    chaosScore: 550
   - type: AntagSpawner
     prototype: MobHumanDarkLord
   - type: AntagSelection
@@ -394,6 +257,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
+      - MindRoleTraitor
       briefing:
         text: dark-lord-role-greeting
         color: Red
@@ -445,7 +309,7 @@
       Combat: 50
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 300
   - type: AntagSpawner
     prototype: MobHumanMimeAssassin
   - type: AntagSelection
@@ -457,6 +321,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
+      - MindRoleTraitor
       briefing:
         text: mime-Assassin-role-greeting
         color: Red
@@ -482,7 +347,7 @@
       Death: 60
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 250
+    chaosScore: 350
   - type: AntagSpawner
     prototype: MobHumanDarkPriest
   - type: AntagSelection
@@ -494,6 +359,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleFreeAgent
+      - MindRoleTraitor
       briefing:
         text: dark-priest-role-greeting
         color: Purple
@@ -516,11 +382,11 @@
   - type: AntagRandomObjectives
     sets:
     - groups: ThiefBigObjectiveGroups
-      prob: 0.7
+      prob: 1
       maxPicks: 2
     - groups: ThiefObjectiveGroups
-      maxPicks: 15
-    maxDifficulty: 2
+      maxPicks: 5
+    maxDifficulty: 10
   - type: StationEvent
     earliestStart: 35
     weight: 2.5
@@ -547,6 +413,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
+      - MindRoleThief
       briefing:
         text: vox-raider-role-greeting
         color: Purple
@@ -587,7 +454,7 @@
       Death: 40
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 400
+    chaosScore: 600
   - type: AntagRandomSpawn
   - type: AntagLoadProfileRule
     speciesOverride: Human
@@ -640,12 +507,92 @@
       - type: MobThresholds
         thresholds:
           0: Alive
-          200: Dead
+          150: Dead
       - type: RandomMetadata
         nameSegments:
         - NamesSlasherTitle
         - NamesSlasher
         nameFormat: name-format-slasher
+  - type: Tag
+    tags:
+    - MidroundAntag
+
+# Santa
+
+- type: entity
+  id: SantaClausSpawn
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 1
+    earliestStart: 3
+    minimumPlayers: 10
+    maxOccurrences: 1
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 100
+  - type: VentCrittersRule # like a chimney
+    max: 1
+    table:
+      id: SantaClaus
+
+#Contractor
+- type: entity
+  parent: ContractorSpawn
+  id: ContractorSpawnMidround
+  components:
+  - type: GameRule
+    chaosScore: 400
+  - type: RuleGrids
+  - type: LoadMapRule
+    gridPath: /Maps/_Goobstation/Shuttles/ShuttleEvent/Legionnaire.yml
+  - type: StationEvent
+    startAnnouncement: null
+    weight: 1
+    duration: null
+    earliestStart: 30
+    minimumPlayers: 30
+    chaos:
+      Hostile: 40
+      Combat: 40
+      Death: 40
+    eventType: HostilesSpawn
+  - type: AntagLoadProfileRule
+    speciesOverrideBlacklist:
+    - Yowie
+    - IPC
+    - Diona
+    - Harpy
+    - Plasmaman
+  - type: AntagObjectives
+    objectives:
+    - ContractorRansomObjective
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: ghost-role-information-contractor-name
+    definitions:
+    - spawnerPrototype: ContractorSpawner
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: ContractorGear
+      roleLoadout:
+      - RoleSurvivalNukie
+      mindRoles:
+      - MindRoleContractor
+      briefing:
+        text: contractor-role-greeting
+        color: Red
+        sound: /Audio/Ambience/Antag/traitor_wawa.ogg
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - NamesContractorPrefix
+        - NamesSyndicateElite
+        nameFormat: name-format-standard
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
   - type: Tag
     tags:
     - MidroundAntag

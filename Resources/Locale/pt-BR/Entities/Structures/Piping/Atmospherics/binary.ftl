@@ -28,3 +28,6 @@ ent-HeatExchangerBend = radiador curvado
 
 ent-SignalControlledValve = válvula automática
     .desc = Um tubo com uma válvula que pode ser usada (através de sinais) para desativar o fluxo de gás através dele.
+
+ent-GasPressureRegulator = válvula de purga
+    .desc = Uma válvula que libera gás quando a pressão na entrada ultrapassa o limite configurado.

@@ -11,7 +11,8 @@
   id: UnderwearDefault
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati, Tajaran, Synth] # goob edit - yowies; Gaby Station - Daengati, Tajaran, Synth
   coloring:
     default:
       type:
@@ -25,7 +26,8 @@
   id: UnderwearBriefs
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati, Tajaran, Synth] # goob edit - yowies; Gaby Station - Daengati, Tajaran, Synth
   coloring:
     default:
       type:
@@ -39,7 +41,8 @@
   id: UnderwearLowriders
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati, Tajaran, Synth] # goob edit - yowies; Gaby Station - Daengati, Tajaran, Synth
   coloring:
     default:
       type:
@@ -53,7 +56,8 @@
   id: UnderwearSatin
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati, Tajaran, Synth] # goob edit - yowies; Gaby Station - Daengati, Tajaran, Synth
   coloring:
     default:
       type:
@@ -67,7 +71,8 @@
   id: UnderwearTanga
   bodyPart: Underwear
   markingCategory: Underwear
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati] # goob edit - yowies; Gaby Station - Daengati
+  markingType: NonGenetics # Corvax-Wega-Genetics
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie, Daengati, Tajaran, Synth] # goob edit - yowies; Gaby Station - Daengati, Tajaran, Synth
   coloring:
     default:
       type:

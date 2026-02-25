@@ -20,6 +20,14 @@
       role: JobSalvageSpecialist
       time: 72000 #20 hours
 
+- type: loadoutEffectGroup
+  id: GrandMasterSalvageSpecialist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 360000 # 100 hrs
 - type: loadout
   id: MinerCloak
   effects:
@@ -71,3 +79,16 @@
   - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
     species:
     - Plasmaman
+
+- type: loadout # Goobstation - Ensembles
+  id: SalvageEspecialistEnsemble
+  equipment:
+    neck: ClothingNeckEnsembleSalvager
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GrandMasterSalvageSpecialist
+
+- type: startingGear # Goobstation - Ensembles
+  id: SalvageEspecialistEnsemble
+  equipment:
+    neck: ClothingNeckEnsembleSalvager

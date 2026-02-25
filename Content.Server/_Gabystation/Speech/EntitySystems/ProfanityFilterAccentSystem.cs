@@ -64,7 +64,7 @@ namespace Content.Server._Gabystation.Speech.EntitySystems
             var replacement = _loc.GetString(replacement_id);
             foreach (var word in prototype.Words)
             {
-                Log.Warning($"{replacement}");
+                // Log.Warning($"{replacement}");
                 var f = _loc.GetString(word);
                 // this is kind of slow but its not that bad
                 // essentially: go over all matches, try to match capitalization where possible, then replace

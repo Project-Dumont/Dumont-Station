@@ -69,7 +69,6 @@ using Robust.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Chat;
 using Robust.Shared.Audio;
-using System.Linq;
 using Content.Server._Funkystation.MalfAI;
 using Content.Server._Funkystation.MalfAI.Components;
 

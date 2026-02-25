@@ -11,3 +11,17 @@
         state: admin_assist
   - type: UniqueEntityMarker
     markerName: AdminAssistant
+
+- type: entity
+  name: geneticist unique marker
+  id: UniqueMarkerGeneticist
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Storage/closet.rsi
+        state: med
+  - type: UniqueEntityMarker
+    markerName: GeneticistLocker

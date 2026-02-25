@@ -65,6 +65,7 @@
             Janitor: [ 1, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
+            RadioHost: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
@@ -77,6 +78,7 @@
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]

@@ -195,7 +195,7 @@
     path: /Audio/_Gabystation/Jukebox/winds_of_fjord.ogg
 
 - type: jukebox
-  id: Cumade e Cumpade
+  id: CumadeECumpade
   name: Leandro E Leonardo - Cumade e Cumpade
   path:
     path: /Audio/_Gabystation/Jukebox/cumade_e_cumpade.ogg
@@ -496,7 +496,7 @@
 
 - type: jukebox
   id: ADarkZone
-  name: Toby Fox - A DARK ZONE 
+  name: Toby Fox - A DARK ZONE
   path:
     path: /Audio/_Gabystation/Jukebox/a_dark_zone.ogg
 
@@ -584,3 +584,80 @@
   path:
     path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
 
+- type: jukebox
+  id: sugarCrash
+  name: ElyOtto - Sugar crash
+  path:
+    path: /Audio/_Gabystation/Jukebox/ElyOttoSugarCrash.ogg
+
+- type: jukebox
+  id: AHAH
+  name: Sylendanna - AHAH
+  path:
+    path: /Audio/_Gabystation/Jukebox/Sylendanna_AHAH.ogg
+
+- type: jukebox
+  id: WaitAMinut
+  name: Willow Smith - Wait a Minute
+  path:
+    path: /Audio/_Gabystation/Jukebox/WillowSmithWaitAMinute.ogg
+
+- type: jukebox
+  id: Catroll
+  name: Rapid Liquid - Never Gonna Meow You up
+  path:
+    path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg
+
+- type: jukebox
+  id: Runoutdois
+  name: Running Out V2 - Sanabi
+  path:
+    path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
+
+- type: jukebox
+  id: Ordinarilife
+  name: My Ordinary Life - The Living Tombstone
+  path:
+    path: /Audio/_Gabystation/Jukebox/my-ordinary-life.ogg
+
+- type: jukebox
+  id: Posterboy
+  name: Poster Boy - 2hollis
+  path:
+    path: /Audio/_Gabystation/Jukebox/poster-boy.ogg
+
+- type: jukebox
+  id: StillAlive
+  name: Still Alive - Adriana Figueroa e Daniel Alvarez
+  path:
+    path: /Audio/_Gabystation/Lobby/Still_Alive.ogg
+
+- type: jukebox
+  id: Brighterfuture
+  name: A Brighter Future - Resonance Hub
+  path:
+    path: /Audio/_Gabystation/Jukebox/A_Brighter_Future.ogg
+
+- type: jukebox
+  id: Stayyourhouse
+  name: I Really Want To Stay At Your House - Cyberpunk
+  path:
+    path: /Audio/_Gabystation/Jukebox/I_Really_Want_To_Stay_At_Your_House.ogg
+
+- type: jukebox
+  id: Tokyodrift
+  name: Tokyo Drift - Fast & Furious
+  path:
+    path: /Audio/_Gabystation/Jukebox/Tokyo_Drift_Fast_&_Furious.ogg
+
+- type: jukebox
+  id: Waltztornado
+  name: Waltz of The Tornado - War Thunder
+  path:
+    path: /Audio/_Gabystation/Jukebox/Waltz_of_The_Tornado.ogg
+
+- type: jukebox
+  id: Readytomorrow
+  name: Whos Ready For Tomorrow - Cyberpunk
+  path:
+    path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg

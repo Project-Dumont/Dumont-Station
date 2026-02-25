@@ -7,6 +7,7 @@
   - type: GhostRole
     name: ghost-role-information-moproach-name
     description: ghost-role-information-moproach-description
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
   - type: Sprite
     sprite: Mobs/Animals/mothroach/moproach.rsi
   - type: Clothing
@@ -53,3 +54,8 @@
   - type: InteractionPopup
     interactSuccessString: petting-success-cleanbot
     interactFailureString: petting-failure-cleanbot
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMoproach
+  # Corvax-Wega-Genetics-end

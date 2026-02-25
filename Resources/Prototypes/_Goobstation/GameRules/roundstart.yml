@@ -112,7 +112,7 @@
 
 - type: entity
   parent: BaseTraitorRule
-  id: CalmTraitor # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
+  id: CalmTraitor # For Dual Antag Gamemodes
   components:
   - type: GameRule
     minPlayers: 30
@@ -136,7 +136,7 @@
 
 - type: entity
   parent: Changeling
-  id: CalmLing # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
+  id: CalmLing # For Dual Antag Gamemodes
   components:
   - type: GameRule
     minPlayers: 30
@@ -159,7 +159,7 @@
 
 - type: entity
   parent: BaseNukeopsRule
-  id: Calmops # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
+  id: Calmops # For Dual Antag Gamemodes
   components:
   - type: GameRule
     minPlayers: 35 # Gabystation (40??????)
@@ -209,8 +209,8 @@
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
       spawnerPrototype: SpawnPointNukeopsOperative
-      max: 2
-      playerRatio: 30
+      max: 10
+      playerRatio: 20
       startingGear: SyndicateOperativeGearFull
       unequipOldGear: true
       components:
@@ -226,10 +226,10 @@
       - MindRoleNukeops
   - type: Tag
     tags:
-      - RoundstartAntag # Calmer than extreme = normal
+      - CalmAntag
 
 - type: entity
-  id: CalmRevs # For Dual Antag Gamemodes / Funky: For rounds that need a nerfed version in general
+  id: CalmRevs # For Dual Antag Gamemodes
   parent: BaseGameRule
   components:
   - type: GameRule
@@ -248,7 +248,7 @@
         text: head-rev-role-greeting
         color: CornflowerBlue
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-      #startingGear: HeadRevGear
+      startingGear: HeadRevGear
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
@@ -256,7 +256,7 @@
       - MindRoleHeadRevolutionary
   - type: Tag
     tags:
-      - RoundstartAntag # Funky: Calmer than extreme = normal
+      - CalmAntag
 # Blob
 - type: entity
   id: BlobRule
@@ -305,15 +305,9 @@
     minimumPlayers: 30
     maxOccurrences: 1
     chaos:
-      Hostile: 150
-      Medical: 150
-      Death: 150
-    maxChaos:
-      Hostile: 30
-      Combat: -60
-      Power: 70
-      Medical: 70
-      Atmos: 70
+      Hostile: 200
+      Death: 300
+      Medical: 200
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 1500

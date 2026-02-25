@@ -154,11 +154,11 @@
   antagAdvantage: 75 # Goobstation
   guides: # goobstation
   - Cargo
-  # - Quartermaster SOP
-  # - Cargo SOP
+  # - QuartermasterSOP
+  # - CargoSOP
   - Command
   goobcoins: 40 #Goob content
-  salary: 50 # Gaby content
+  salary: 75 # Gaby content
   access:
   - Cargo
   - Salvage

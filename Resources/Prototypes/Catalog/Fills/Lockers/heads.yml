@@ -327,7 +327,6 @@
   id: LockerFillChiefEngineerNoHardsuit
   table: !type:AllSelector
     children:
-    - id: HandheldPowerMonitorGs
     - id: AccessConfigurator
     - id: BoxEncryptionKeyEngineering
     - id: CigarCase
@@ -339,19 +338,20 @@
     - id: DoorRemoteEngineering
     - id: CargoRequestEngineeringComputerCircuitboard
     # - id: RCD # Goobstation
-    - id: RCDAmmo
-    - id: RPD
-    - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade
     # Goobstation V
+    - id: SupermatterComputerCircuitboard
+    - id: BaseHandheldStationMapSupermatterCe
     - id: BaseHandheldStationMapPowerCe
     - id: EngineeringTechFabCircuitboard
     - id: CartridgeRocketSingularityBuster
     - id: CartridgeRocketSingularityBuster
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
-    - id: RCDRechargingCE
+    # Gabystation
+    - id: HandheldPowerMonitorGs
+    - id: RCDProtoCE
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -489,6 +489,7 @@
       prob: 0.15 # GoobStation - RD needs cigs for uhh... science...
     - id: ScienceTechFabCircuitboard # Goobstation - Science Techfab
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
+    - id: XenobiologyBountyComputerCircuitboard # Goobstation
     - id: MMI # Goobstation
 
 # Hardsuit table, used for suit storage as well
@@ -544,7 +545,7 @@
     - id: ClothingOuterCoatHoSTrench
     - id: ClothingShoesBootsJack
     - id: DoorRemoteSecurity
-    - id: HoloprojectorSecurity
+    #- id: HoloprojectorSecurity Goob, you have one in the belt
     - id: RubberStampHos
     - id: SecurityTechFabCircuitboard
     #- id: WeaponDisabler # Goobstation (Disablers in belts)

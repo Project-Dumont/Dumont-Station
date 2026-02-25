@@ -187,12 +187,12 @@
       state: gib
 
 - type: entity
-  parent: BaseAction
+  parent: BaseImplantAction
   id: ActionActivateFreedomImplant
   name: Break Free
   description: Activating your freedom implant will free you from any hand restraints
   components:
-  - type: LimitedCharges # Gabystation no fun
+  - type: LimitedCharges
     maxCharges: 3
   - type: Action
     useDelay: 10 # Goob - useful freedom
@@ -202,8 +202,6 @@
     icon:
       sprite: Actions/Implants/implants.rsi
       state: freedom
-  - type: InstantAction
-    event: !type:UseFreedomImplantEvent
 
 - type: entity
   parent: BaseAction
@@ -238,7 +236,7 @@
       state: icon
 
 - type: entity
-  parent: BaseAction
+  parent: BaseImplantAction
   id: ActionActivateScramImplant
   name: SCRAM!
   description: Randomly teleports you within a large distance.
@@ -253,11 +251,9 @@
     icon:
       sprite: Structures/Specific/anomaly.rsi
       state: anom4
-  - type: InstantAction
-    event: !type:UseScramImplantEvent
 
 - type: entity
-  parent: BaseAction
+  parent: BaseImplantAction
   id: ActionActivateDnaScramblerImplant
   name: Scramble DNA
   description:  Randomly changes your name and appearance.
@@ -272,8 +268,6 @@
     icon:
       sprite: Clothing/OuterClothing/Hardsuits/lingspacesuit.rsi
       state: icon
-  - type: InstantAction
-    event: !type:UseDnaScramblerImplantEvent
 
 - type: entity
   parent: BaseAction

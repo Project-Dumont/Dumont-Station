@@ -144,7 +144,7 @@
       time: 36000 #10 hrs
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 18000 #5 hrs
+      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 54000 #15 hrs
@@ -160,12 +160,12 @@
   antagAdvantage: 75 # Goobstation
   guides: # goobstation
   - Engineering
-  # - ChiefEngineer SOP
-  # - Engineering SOP
+  # - ChiefEngineerSOP
+  # - EngineeringSOP
   - Command
-  # - Emergencies SOP
+  # - EmergenciesSOP
   goobcoins: 40 #Goob content
-  salary: 50 # Gaby content
+  salary: 75 # Gaby content
   access:
   - Maintenance
   - Engineering

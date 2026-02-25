@@ -1,0 +1,12 @@
+- type: reaction
+  id: Mutadon
+  reactants:
+    UnstableMutagen:
+      amount: 1
+    Acetone:
+      amount: 1
+    Bromine:
+      amount: 1
+  products:
+    Mutadon: 3
+

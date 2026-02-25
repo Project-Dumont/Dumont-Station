@@ -40,6 +40,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
 
     public event Action<CharacterListMetadata?>? OnListingItemSelected;
     public event Action<StationRecordFilterType, string?>? OnFiltersChanged;
+    public Action<string, string>? OnRequestArrestWarrant;
 
     private bool _isPopulating;
     private StationRecordFilterType _filterType;
@@ -50,6 +51,7 @@ public sealed partial class CharacterRecordViewer : FancyWindow
     private List<PlayerProvidedCharacterRecords.RecordEntry>? _entries;
 
     private DialogWindow? _wantedReasonDialog;
+    private DialogWindow? _arrestWarrantReasonDialog;
 
     /// <summary>
     /// The key to the record of the currently selected item in the listing.
@@ -165,6 +167,11 @@ public sealed partial class CharacterRecordViewer : FancyWindow
             RecordEntryViewType.SelectId(args.Id);
             // This is a hack to get the server to send us another packet with the new entries
             OnFiltersChanged?.Invoke(_filterType, RecordFiltersValue.Text);
+        };
+
+        PrintArrestWarrantButton.OnPressed += _ => // GabyStation
+        {
+            GetArrestWarrantReason();
         };
     }
 
@@ -467,6 +474,44 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         {
             StatusOptionButton.SetItemDisabled(i, !setting);
         }
+    }
+
+    private void GetArrestWarrantReason() // GabyStation
+    {
+        if (_selectedListingKey == null)
+            return;
+
+        
+        var reasonEntry = new QuickDialogEntry(
+            "reason", 
+            QuickDialogEntryType.LongText,
+            Loc.GetString("criminal-records-console-arrest-warrant-reason"),
+            Loc.GetString("criminal-records-console-arrest-warrant-reason-placeholder")
+        );
+
+        var observationsEntry = new QuickDialogEntry(
+            "observations",
+            QuickDialogEntryType.LongText,
+            Loc.GetString("criminal-records-console-arrest-warrant-observations"),
+            Loc.GetString("criminal-records-console-arrest-warrant-observations-placeholder")
+        );
+
+        var entries = new List<QuickDialogEntry>() { reasonEntry, observationsEntry };
+        var title = Loc.GetString("criminal-records-console-print-arrest-warrant");
+        _arrestWarrantReasonDialog = new DialogWindow(title, entries);
+        
+        _arrestWarrantReasonDialog.OnConfirmed += responses =>
+        {
+            var reason = responses["reason"];
+            var observations = responses["observations"];
+
+            if (reason.Length < 1 || reason.Length > SecurityWantedStatusMaxLength)
+                return;
+
+            OnRequestArrestWarrant?.Invoke(reason, observations);
+        };
+
+        _arrestWarrantReasonDialog.OnClose += () => { _arrestWarrantReasonDialog = null; };
     }
 }
 

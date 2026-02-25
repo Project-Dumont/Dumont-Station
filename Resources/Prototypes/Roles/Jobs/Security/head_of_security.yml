@@ -152,7 +152,10 @@
       time: 18000 #5 hr, knowing how to use the tools is important
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 18000 #5 hrs
+      time: 36000 #10 hrs
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 3600 #1 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 # 30 hrs
@@ -173,13 +176,13 @@
   guides: # goobstation
   - Security
   - SpaceLaw
-  # - Legal SOP
+  # - LegalSOP
   - Command
-  # - HeadOfSecurity SOP
-  # - Security SOP
-  # - Alert Levels
+  # - HeadOfSecuritySOP
+  # - SecuritySOP
+  # - AlertLevels
   goobcoins: 45 #Goob content
-  salary: 50 # Gaby content
+  salary: 75 # Gaby content
   access:
   - HeadOfSecurity
   - Command

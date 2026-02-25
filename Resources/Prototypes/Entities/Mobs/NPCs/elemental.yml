@@ -56,8 +56,6 @@
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 # SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Firewars763 <35506916+Firewars763@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
@@ -70,7 +68,6 @@
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
@@ -114,9 +111,6 @@
     bodyType: KinematicController # Same for all inheritors
   - type: StatusEffects
     allowed:
-    - Stun
-    - KnockedDown
-    - SlowedDown
     - Stutter
     - Electrocution
   - type: Pullable
@@ -135,11 +129,6 @@
     critThreshold: 120
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:TriggerBehavior
     - trigger:
         !type:DamageTrigger
         damage: 120
@@ -181,8 +170,6 @@
       - SimpleHostile
   - type: Damageable
     damageContainer: StructuralInorganic
-  - type: CombatPower # Goobstation
-    factor: 8 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   parent: MobOreCrab
@@ -287,7 +274,6 @@
       - SimpleNeutral
   - type: RadiationSource
     intensity: 2
-    slope: 0.3
   - type: Destructible
     thresholds:
     - trigger:
@@ -468,7 +454,6 @@
     chemicalMaxVolume: 100
   - type: StatusEffects
     allowed:
-    - SlowedDown
     - Electrocution
   - type: MeleeWeapon
     soundHit:
@@ -491,6 +476,7 @@
       - FootstepSound
       - CannotSuicide
       - DoorBumpOpener
+      - StunImmune
   - type: NoSlip
   - type: ZombieImmune
   - type: ExaminableSolution
@@ -500,8 +486,6 @@
   - type: DrainableSolution
     solution: bloodstream
   - type: Fauna # Lavaland Change
-  - type: CombatPower # Goobstation
-    factor: 12 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   name: Reagent Slime Spawner
@@ -566,8 +550,6 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 1
-  - type: CombatPower # Goobstation
-    factor: 16 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   id: ReagentSlimeNocturine
@@ -588,8 +570,6 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
-  - type: CombatPower # Goobstation
-    factor: 16 # / 2 = times more powerful than an unarmed crew-member
 
 - type: entity
   id: ReagentSlimeTHC

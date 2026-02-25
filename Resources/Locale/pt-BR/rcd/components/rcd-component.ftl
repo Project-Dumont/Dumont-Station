@@ -41,6 +41,7 @@ rcd-component-atmosphericutility = Utilitários
 rcd-component-pumpsvalves = Bombas & Válvulas
 rcd-component-vents = Ventilações
 rcd-component-sensorsmonitors = Sensores & Monitores
+rcd-component-pneumatic-transport = Transporte Pneumático
 
 ### Nomes de protótipos
 

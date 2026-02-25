@@ -339,6 +339,7 @@
     - Mouse
     understands:
     - Mouse
+    - TauCetiBasic
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Effects/bite.ogg
@@ -368,6 +369,11 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobShadowkin
+    lowest: MobBat
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: bee
@@ -403,7 +409,7 @@
       5: Dead # Goob edit
   - type: Stamina
     critThreshold: 10
-    animationThreshold: 5 # Goob edit
+    animationThreshold: 1
   - type: DamageStateVisuals
     states:
       Alive:
@@ -561,6 +567,7 @@
     - Chicken
     understands:
     - Chicken
+    - TauCetiBasic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -721,8 +728,11 @@
         recursive: false
   - type: NonSpreaderZombie
   - type: LanguageKnowledge # Einstein Engines - Languages
-    speaks: [Hissing]
-    understands: [Hissing]
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+    - TauCetiBasic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: MeleeWeapon
@@ -733,6 +743,11 @@
     damage:
       types:
         Piercing: 0
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobCockroach
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: glockroach
@@ -766,6 +781,11 @@
     spawned:
     - id: FoodMeatSlime
   - type: VentCrawler # goobstation - Ventcrawl
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobChitinid
+    lowest: MobGlockroach
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: mothroach
@@ -779,9 +799,9 @@
     allowMovement: true
     name: ghost-role-information-mothroach-name
     description: ghost-role-information-mothroach-description
-    rules: ghost-role-information-freeagent-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
     mindRoles:
-    - MindRoleGhostRoleFreeAgentHarmless
+    - MindRoleGhostRoleSentientAnimal # Goobstation Sentient Animal PR
   - type: Fixtures
     fixtures:
       fix1:
@@ -869,6 +889,7 @@
     - Moffic
     understands:
     - Moffic
+    - TauCetiBasic
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
@@ -940,6 +961,11 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMothroach
+  # Corvax-Wega-Genetics-end
   - type: EatToGrow # Goobstation Eat To Grow System
     growth: 0.05
     maxGrowth: 2
@@ -1017,6 +1043,7 @@
     - Duck
     understands:
     - Duck
+    - TauCetiBasic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -1297,6 +1324,7 @@
     - Crab
     understands:
     - Crab
+    - TauCetiBasic
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CopperBlood
@@ -1369,10 +1397,10 @@
     growthDelay: 20
   - type: ExaminableHunger
   - type: Wooly
-  - type: Food
+  - type: Edible
+    destroyOnEmpty: false
     solution: wool
     requiresSpecialDigestion: true
-    # Wooly prevents eating wool deleting the goat so its fine
     requireDead: false
   - type: FlavorProfile
     flavors:
@@ -1524,6 +1552,11 @@
     speedModifierThresholds:
       80: 0.7
       100: 0.5
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobYowie
+    lowest: MobGorilla
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kangaroo
@@ -1563,6 +1596,7 @@
     - Kangaroo
     understands:
     - Kangaroo
+    - TauCetiBasic
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1583,7 +1617,7 @@
     prob: 0.25
     name: ghost-role-information-kangaroo-name
     description: ghost-role-information-kangaroo-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
   - type: GhostTakeoverAvailable
   - type: Vocal
     sounds:
@@ -1788,7 +1822,6 @@
       methods: [ Touch ]
       effects:
       - !type:WashCreamPieReaction
-  - type: LayingDown # Goobstation
   - type: Vocal # Goobstation
     sounds:
       Male: MonkeyMode
@@ -1799,6 +1832,7 @@
     hasPainScreams: false
     threshold: 70
     cap: 140
+  - type: Crawler
   - type: DiseaseCarrier # Goobstation
 
 - type: entity
@@ -1818,6 +1852,8 @@
     understands:
     - Monkey
     - Kobold
+  #- type: SentienceTarget   # Goobstation - monkeys no longer randomly sentient outside of events
+  #  - TauCetiBasic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
@@ -1826,9 +1862,9 @@
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
-    rules: ghost-role-information-freeagent-rules # Goobstation - - remove: 1984
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleSentientAnimal # Goobstation Sentient Animal PR
   - type: GhostTakeoverAvailable
   - type: Skinnable # Goobstation - Fuck pun-pun
   - type: Clumsy
@@ -1843,6 +1879,11 @@
         Blunt: 1
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHuman
+    lowest: MobMonkey
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: monkey
@@ -1917,6 +1958,7 @@
     understands:
     - Kobold
     - Monkey
+    - TauCetiBasic
   # Shitmed Change Start
   - type: HumanoidAppearance
     species: Kobold
@@ -1982,7 +2024,12 @@
     makeSentient: true
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobReptilian
+    lowest: MobKobold
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kobold
@@ -2051,6 +2098,7 @@
   description: Squeak!
   components:
   - type: VentCrawler # goobstation - Ventcrawl
+    enterDelay: 0.5
   - type: Body
     prototype: Mouse
   - type: GhostRole
@@ -2059,9 +2107,9 @@
     allowMovement: true
     name: ghost-role-information-mouse-name
     description: ghost-role-information-mouse-description
-    rules: ghost-role-information-freeagent-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
     mindRoles:
-    - MindRoleGhostRoleFreeAgentHarmless
+    - MindRoleGhostRoleSentientAnimal # Goobstation Sentient Animal PR
   - type: GhostTakeoverAvailable
   - type: Speech
     speechSounds: Squeak
@@ -2177,6 +2225,7 @@
     - Mouse
     understands:
     - Mouse
+    - TauCetiBasic
   - type: Tag
     tags:
     - Trash
@@ -2224,30 +2273,15 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/mouse.rsi
-      state: dead-0
     entries:
-      burger:
-        name: food-sequence-burger-content-rat
-      taco:
-        name: food-sequence-content-rat
-      skewer:
-        name: food-sequence-content-rat
-        sprite:
-          sprite: Objects/Consumable/Food/skewer.rsi
-          state: skewer-rat
+      Taco: RatTaco
+      Burger: RatBurger
+      Skewer: RatSkewer
   # <Goobstation>
   - type: NightVision
     color: "#808080"
     activateSound: null
     deactivateSound: null
-  - type: EggLayer
-    eggSpawn:
-    - id: SpawnMobMouse
-    hungerUsage: 20
-    eggLayAction: MouseMultiply
-    hungerRequired: true
   - type: SolutionRegeneration
     solution: melee
     generated:
@@ -2265,7 +2299,7 @@
   - type: Stamina
     critThreshold: 20
     animationThreshold: 10 # Goob edit
-  - type: LayingDown
+  - type: Crawler
   - type: NPCRetaliation
     attackMemoryLength: 5 # stop caring fast if you don't keep hitting
   - type: GroupRetaliation
@@ -2295,7 +2329,20 @@
       - !type:GibBehavior
         gibContents: Skip
         recursive: false
+  - type: ActionGrant
+    actions:
+    - ActionMouseCall
+  - type: MobCallSource
+    whitelist:
+      tags:
+      - Mouse
+  - type: MobCallable
   # </Goobstation>
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2328,6 +2375,11 @@
     starvingSlowdownModifier: 1
   - type: Thirst
     baseDecayRate: 10 # always thirsty
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouseAdmeme
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2357,10 +2409,11 @@
   - type: Item
     size: Tiny
     heldPrefix: 1
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/mouse.rsi
-      state: dead-1
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse1
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobMouse
@@ -2390,10 +2443,11 @@
   - type: Item
     size: Tiny
     heldPrefix: 2
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/mouse.rsi
-      state: dead-2
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouse2
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: cancer mouse
@@ -2429,6 +2483,11 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Zombie
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobRodentia
+    lowest: MobMouseCancer
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: lizard #Weh
@@ -2607,6 +2666,7 @@
 - type: entity
   parent: [ SimpleMobBase, FlyingMobBase ]
   id: MobParrotBase
+  name: parrot
   abstract: true
   description: Infiltrates your domain, spies on you, and somehow still a cool pet.
   components:
@@ -2688,7 +2748,6 @@
     bloodMaxVolume: 50
 
 - type: entity
-  name: parrot
   parent: MobParrotBase
   id: MobParrot
   components:
@@ -2755,8 +2814,16 @@
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
   - type: LanguageKnowledge # Einstein Engines - Language
-    speaks: [Penguin]
-    understands: [Penguin]
+    speaks:
+    - Penguin
+    understands:
+    - Penguin
+    - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobWaddler
+    lowest: MobPenguin
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: grenade penguin
@@ -2809,7 +2876,8 @@
   - type: Item
     size: Normal
     sprite: Mobs/Animals/grenadepenguin.rsi
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 10
     beepSound:
       path: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg #funny sfx use
@@ -2822,6 +2890,8 @@
     intensitySlope: 20
     totalIntensity: 225
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: Destructible
     thresholds:
     - trigger:
@@ -2829,6 +2899,11 @@
         damage: 50
       behaviors:
       - !type:ExplodeBehavior
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobWaddler
+    lowest: MobGrenadePenguin
+  # Corvax-Wega-Genetics-end
 
   # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
@@ -2879,8 +2954,11 @@
     damageContainer: Biological
     damageModifierSet: Scale
   - type: LanguageKnowledge # Einstein Engines - Language
-    speaks: [Hissing]
-    understands: [Hissing]
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+    - TauCetiBasic
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2931,6 +3009,7 @@
     - Xeno
     understands:
     - Xeno
+    - TauCetiBasic
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -3042,12 +3121,23 @@
     damage:
       types:
         Piercing: 6
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobArachnid
+    lowest: MobGiantSpider
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent:
   - MobSpiderAngryBase
   - MobGiantSpider
   id: MobGiantSpiderAngry
+  components:
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobArachnid
+    lowest: MobGiantSpiderAngry
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: clown spider
@@ -3096,6 +3186,11 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
+    # Corvax-Wega-Genetics-start
+    - type: DnaModifier
+      upper: MobArachnid
+      lowest: MobGiantSpiderAngry
+    # Corvax-Wega-Genetics-end
 
 - type: entity
   name: wizard spider
@@ -3109,6 +3204,11 @@
     - Universal # Should allow them to understand everything and speak it too. Might need to change this.
     understands:
     - Universal
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobArachnid
+    lowest: MobGiantSpiderWizard
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: possum
@@ -3166,6 +3266,7 @@
     - Hissing
     understands:
     - Hissing
+    - TauCetiBasic
 
 - type: entity
   name: possum
@@ -3245,6 +3346,7 @@
     - Hissing
     understands:
     - Hissing
+    - TauCetiBasic
 
 - type: entity
   name: fox
@@ -3320,6 +3422,7 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
+  - type: MessyDrinker
   - type: Tag
     tags:
     - VimPilot
@@ -3328,6 +3431,7 @@
     - Fox
     understands:
     - Fox
+    - TauCetiBasic
 
 - type: entity
   abstract: true
@@ -3371,6 +3475,7 @@
       gender: epicene
   - type: MobPrice
     price: 200
+  - type: MessyDrinker
 
 - type: entity
   parent: MobCorgiBase
@@ -3393,6 +3498,7 @@
     - Dog
     understands:
     - Dog
+    - TauCetiBasic
   - type: InteractionPopup
     interactSuccessString: petting-success-dog
     interactFailureString: petting-failure-generic
@@ -3544,6 +3650,7 @@
     - Cat
     understands:
     - Cat
+    - TauCetiBasic
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -3572,6 +3679,12 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCat
+  # Corvax-Wega-Genetics-end
+
 
 - type: entity
   name: calico cat
@@ -3591,6 +3704,11 @@
         Base: cat2_dead
       Dead:
         Base: cat2_dead
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatCalico
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: syndicat
@@ -3650,6 +3768,11 @@
     understands:
     - Cat
     - TauCetiBasic # Needs to understand your nukie ops.
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatSyndy
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: space cat
@@ -3688,6 +3811,11 @@
       path: /Audio/Animals/cat_meow.ogg
   - type: Respirator #It just works?
     minSaturation: 5.0
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatSpace
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: caracal cat
@@ -3708,6 +3836,11 @@
         Base: caracal_dead
       Dead:
         Base: caracal_dead
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatCaracal
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: kitten
@@ -3741,6 +3874,11 @@
     thresholds:
       0: Alive
       25: Dead
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatKitten
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: sloth
@@ -3803,6 +3941,7 @@
     - Hissing
     understands:
     - Hissing
+    - TauCetiBasic
 
 - type: entity
   name: ferret
@@ -3862,6 +4001,7 @@
     - Hissing
     understands:
     - Hissing
+    - TauCetiBasic
 
 - type: entity
   name: hamster
@@ -3876,7 +4016,7 @@
     allowMovement: true
     name: ghost-role-information-hamster-name
     description: ghost-role-information-hamster-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: SmallMob
@@ -3968,6 +4108,7 @@
     - Mouse
     understands:
     - Mouse
+    - TauCetiBasic
   - type: Tag
     tags:
     - VimPilot
@@ -4012,15 +4153,6 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/hamster.rsi
-      state: dead-0
-    entries:
-      burger:
-        name: food-sequence-burger-content-hamster
-      taco:
-        name: food-sequence-content-hamster
   - type: Destructible
     thresholds:
     - trigger:
@@ -4096,6 +4228,7 @@
     - Pig
     understands:
     - Pig
+    - TauCetiBasic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -4191,6 +4324,11 @@
     understands:
     - RootSpeak
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobDiona
+    lowest: MobDionaNymph
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: MobDionaNymph
@@ -4266,6 +4404,7 @@
     - Deer
     understands:
     - Deer
+    - TauCetiBasic
 
 - type: entity
   name: reindeer doe

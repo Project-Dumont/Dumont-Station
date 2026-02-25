@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: DirtyMartini
+  name: reagent-name-dirty-martini
+  parent: BaseAlcohol
+  desc: reagent-desc-dirty-martini
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: dirtymartini
+  color: "#170a0c"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/martiniglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.15

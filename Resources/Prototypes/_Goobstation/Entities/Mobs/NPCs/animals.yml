@@ -189,6 +189,11 @@
     understands:
     - Moffic
     - TauCetiBasic # Needs to understand your nukie ops.
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMothSyndy
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: syndie bee
@@ -740,6 +745,7 @@
       - Dog
       understands:
       - Dog
+      - TauCetiBasic
 
 - type: entity
   name: horse

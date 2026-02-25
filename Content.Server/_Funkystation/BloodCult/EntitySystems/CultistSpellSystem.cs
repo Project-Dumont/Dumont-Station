@@ -286,7 +286,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
                     ent, ent, PopupType.MediumCaution
                 );
             _audioSystem.PlayPvs("/Audio/Effects/holy.ogg", Transform(ent).Coordinates);
-            _stun.TryKnockdown(ent, TimeSpan.FromSeconds(selfStunTime), true);
+            _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(selfStunTime), true);
         }
         else if (HasComp<BorgChassisComponent>(target) &&
             _powerCell.TryGetBatteryFromSlot(target, out EntityUid? batteryUid, out BatteryComponent? _) &&
@@ -310,9 +310,9 @@ public sealed partial class CultistSpellSystem : EntitySystem
         var advancedStunTime = 15;
         if (HasComp<BloodCultRuneCarverComponent>(args.Used))
         {
-            _stun.TryKnockdown(ent, TimeSpan.FromSeconds(advancedStunTime), true);
+            _stun.TryKnockdown(ent.Owner, TimeSpan.FromSeconds(advancedStunTime), true);
             _stamina.TakeStaminaDamage(ent, advancedStaminaDamage, visual: false);
-            _stun.TryStun(ent, TimeSpan.FromSeconds(advancedStunTime), true);
+            _stun.TryUpdateStunDuration(ent, TimeSpan.FromSeconds(advancedStunTime));
             _statusEffect.TryAddStatusEffectDuration(ent, "Muted", out _, TimeSpan.FromSeconds(advancedStunTime));
             _entMan.RemoveComponent<CultMarkedComponent>(ent);
             _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"), ent, AudioParams.Default.WithVolume(-3f));

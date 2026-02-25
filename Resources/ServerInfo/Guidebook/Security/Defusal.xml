@@ -39,7 +39,7 @@ Listados abaixo estão os dois tipos comuns de bombas que você encontrará dura
   Para armar uma bomba, você pode [color=yellow]clicar com o botão direito[/color] e clicar em [color=yellow]Iniciar contagem regressiva[/click] ou [color=yellow]alt-click[/color] na bomba. Ele começará a apitar.
 
   ## Time
-  A bomb has a limited time, at a minimum of [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="ShortestDelayOption"/] seconds and a maximum of [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="LongestDelayOption"/] seconds. You can view the timer by examining it, unless the Proceed wire is cut. Once the timer hits zero, the bomb will detonate.
+  A bomb has a limited time, at a minimum of [protodata="SyndicateBomb" comp="TimerTrigger" member="ShortestDelayOption"/] seconds and a maximum of [protodata="SyndicateBomb" comp="TimerTrigger" member="LongestDelayOption"/] seconds. You can view the timer by examining it, unless the Proceed wire is cut. Once the timer hits zero, the bomb will detonate.
 
   ## Parafusos
   Por padrão, uma vez armada, uma bomba irá cair no chão. Você deve encontrar o fio do PARAFUSO e cortá-lo para desabilitar os parafusos, após o que você pode desapertá-lo e jogá-lo no espaço.

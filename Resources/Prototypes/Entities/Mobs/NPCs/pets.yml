@@ -336,6 +336,11 @@
     understands:
     - Cat
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatRuntime
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Exception
@@ -362,6 +367,11 @@
     understands:
     - Cat
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatException
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Floppa
@@ -395,6 +405,11 @@
     understands:
     - Cat
     - TauCetiBasic
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobTajaran
+    lowest: MobCatFloppa
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   name: Bandito
@@ -558,6 +573,7 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalMcGriff
+  - type: MessyDrinker
 
 - type: entity
   name: Paperwork
@@ -664,6 +680,7 @@
   - type: Speech
     speechVerb: Canine
     speechSounds: Dog
+  - type: MessyDrinker
 
 - type: entity
   name: Morty
@@ -854,7 +871,7 @@
     allowMovement: true
     name: ghost-role-information-hamlet-name
     description: ghost-role-information-hamlet-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
   - type: GhostTakeoverAvailable
   - type: InteractionPopup
     successChance: 1
@@ -990,7 +1007,7 @@
     prob: 0.25
     name: ghost-role-information-willow-name
     description: ghost-role-information-willow-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
@@ -1076,7 +1093,7 @@
   - type: GhostRole
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
     raffle: null
   - type: Grammar
     attributes:
@@ -1153,7 +1170,7 @@
 #    allowMovement: true
 #    name: ghost-role-information-tropico-name
 #    description: ghost-role-information-tropico-description
-#    rules: ghost-role-information-nonantagonist-rules
+#    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
 #  - type: GhostTakeoverAvailable
   - type: Tag
     tags:

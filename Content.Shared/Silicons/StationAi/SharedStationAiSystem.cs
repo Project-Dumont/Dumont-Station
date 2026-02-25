@@ -116,6 +116,8 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     private static readonly EntProtoId DefaultAi = "StationAiBrain";
     private readonly ProtoId<ChatNotificationPrototype> _downloadChatNotificationPrototype = "IntellicardDownload";
 
+    private const float MaxVisionMultiplier = 5f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -351,11 +353,14 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         // Corvax-Next-AiRemoteControl-Start
         if (TryComp<StationAiHeldComponent>(held, out var heldComp))
+        {
             if (heldComp.CurrentConnectedEntity != null)
             {
+                // Shit got refactored upstream im replacing AnnounceIntellicardUsage with this event
                 var ev = new ChatNotificationEvent(_downloadChatNotificationPrototype, args.Used, args.User);
-                RaiseLocalEvent(heldComp.CurrentConnectedEntity.Value, ref ev);
+                RaiseLocalEvent(held.Value, ref ev);
             }
+        }
         // Corvax-Next-AiRemoteControl-End
 
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cardHasAi ? intelliComp.UploadTime : intelliComp.DownloadTime, new IntellicardDoAfterEvent(), ent.Owner, args.Target, ent.Owner)

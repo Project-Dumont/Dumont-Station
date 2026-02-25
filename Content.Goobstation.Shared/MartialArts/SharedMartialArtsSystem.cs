@@ -45,6 +45,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs;
@@ -91,6 +92,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
     [Dependency] private readonly GrabThrownSystem _grabThrowing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -110,6 +112,8 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
     [Dependency] private readonly TraumaSystem _trauma = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedSprintingSystem _sprinting = default!;
+
+    public static readonly EntProtoId MartsGenericSlow = "MartialArtsGenericSlowdownEffect";
 
     public override void Initialize()
     {
@@ -465,7 +469,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         if (!_netManager.IsServer || MetaData(user).EntityLifeStage >= EntityLifeStage.Terminating)
             return false;
 
-        if (HasComp<ChangelingIdentityComponent>(user))
+        if (HasComp<ChangelingComponent>(user))
         {
             _popupSystem.PopupEntity(Loc.GetString("cqc-fail-changeling"), user, user);
             return false;
@@ -512,6 +516,17 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         if (comp.LearnMessage != null)
             _popupSystem.PopupEntity(Loc.GetString(comp.LearnMessage), user, user);
 
+        // Gaby station inicio
+        // Caso especial para jogadores que sao Pinguins, evitando que eles fiquem extremamente fortes com artes marciais
+
+        if (TryComp<HumanoidAppearanceComponent>(user, out var humanoid) && humanoid.Species == "Waddler")
+        {
+            meleeWeaponComponent.AttackRate = 1f;
+            Dirty(user, meleeWeaponComponent);
+        }
+
+        // Gaby station fim
+
         switch (martialArtsPrototype.MartialArtsForm)
         {
             case MartialArtsForms.KungFuDragon:
@@ -521,6 +536,9 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                 EnsureComp<NinjutsuSneakAttackComponent>(user);
                 break;
             case MartialArtsForms.CloseQuartersCombat:
+                var itcryeverytime =
+                    new CanDoCQCEvent();
+                  /*
                 var riposte = EnsureComp<RiposteeComponent>(user);
                 riposte.Data.TryAdd("CQC",
                     new(0.1f,
@@ -535,6 +553,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                     null,
                     null,
                     new CanDoCQCEvent()));
+                    */
                 break;
         }
 
@@ -610,7 +629,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             if (!TryComp<StandingStateComponent>(uid, out var standingState))
                 return false;
 
-            return standingState.CurrentState != StandingState.Standing;
+            return !standingState.Standing;
         }
     }
 

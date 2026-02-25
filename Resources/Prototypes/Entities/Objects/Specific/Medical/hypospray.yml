@@ -145,6 +145,7 @@
     solution: hypospray
   - type: ExaminableSolution
     solution: hypospray
+    exactVolume: true
   - type: Hypospray
     onlyAffectsMobs: false
   - type: UseDelay
@@ -161,6 +162,8 @@
     maxFillLevels: 6
     fillBaseName: hypo_fill
     solutionName: hypospray
+  - type: EdibleMatter # Corvax-Wega-Add
+    canBeEaten: false # Corvax-Wega-Add
 
 - type: entity
   name: gorlex hypospray
@@ -186,6 +189,7 @@
     solution: hypospray
   - type: ExaminableSolution
     solution: hypospray
+    exactVolume: true
   - type: Hypospray
     onlyAffectsMobs: false
   - type: UseDelay
@@ -265,6 +269,7 @@
         maxVol: 20 # Goobstation
   - type: ExaminableSolution
     solution: pen
+    exactVolume: true
   - type: Hypospray
     solutionName: pen
     transferAmount: 20 # Goobstation
@@ -805,6 +810,7 @@
   - type: ExaminableSolution
     solution: hypospray
     heldOnly: true # Allow examination only when held in hand.
+    exactVolume: true
   - type: Hypospray
     onlyAffectsMobs: false
   - type: UseDelay

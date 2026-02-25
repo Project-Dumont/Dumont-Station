@@ -44,6 +44,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.Nutrition.EntitySystems;
 
 namespace Content.Server.Vampire;
 
@@ -51,7 +52,7 @@ public sealed partial class VampireSystem : EntitySystem
 {
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IAdminLogManager _admin = default!;
-    [Dependency] private readonly FoodSystem _food = default!;
+    [Dependency] private readonly IngestionSystem _ingestion = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly RottingSystem _rotting = default!;
@@ -169,7 +170,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, VampireComponent component, ExaminedEvent args)
     {
-        if (HasComp<VampireFangsExtendedComponent>(uid) && args.IsInDetailsRange && !_food.IsMouthBlocked(uid))
+        if (HasComp<VampireFangsExtendedComponent>(uid) && args.IsInDetailsRange && !_ingestion.HasMouthAvailable(uid, uid))
             args.AddMarkup($"{Loc.GetString("vampire-fangs-extended-examine")}{Environment.NewLine}");
     }
 

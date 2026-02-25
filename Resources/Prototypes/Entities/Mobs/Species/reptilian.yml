@@ -200,9 +200,9 @@
         Heat : 1.0 # Goob edit #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      301: 0.8
-      295: 0.6
-      285: 0.4
+      301: 0.9
+      295: 0.8
+      285: 0.7
   - type: Wagging
   - type: Inventory
     speciesId: reptilian
@@ -241,6 +241,11 @@
     - DoorBumpOpener
     - AnomalyHost
     - ReptilianEmotes
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobReptilian
+    lowest: MobKobold
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   parent: BaseSpeciesDummy

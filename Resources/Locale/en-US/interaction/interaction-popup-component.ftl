@@ -65,6 +65,7 @@ petting-success-slimes = You pet {THE($target)} on {POSS-ADJ($target)} mucous su
 petting-success-snake = You pet {THE($target)} on {POSS-ADJ($target)} scaly large head.
 petting-success-monkey = You pet {THE($target)} on {POSS-ADJ($target)} mischevious little head.
 petting-success-nymph = You pet {THE($target)} on {POSS-ADJ($target)} wooden little head.
+petting-success-scurret = You pet {THE($target)} on {POSS-ADJ($target)} legally distinct head.
 
 petting-failure-generic = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} aloof towards you.
 
@@ -86,6 +87,7 @@ petting-failure-bear = You reach out to pet {THE($target)}, but {SUBJECT($target
 petting-failure-monkey = You reach out to pet {THE($target)}, but {SUBJECT($target)} almost {CONJUGATE-BASIC($target, "bite", "bites")} your fingers!
 petting-failure-nymph = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "move", "moves")} {POSS-ADJ($target)} branches away.
 petting-failure-shadow = You try to pet {THE($target)}, but your hand passes through the cold darkness of {POSS-ADJ($target)} body.
+petting-failure-scurret = You reach out to pet {THE($target)}, but {SUBJECT($target)} does a backflip!
 
 ## Petting silicons
 
@@ -94,6 +96,7 @@ petting-success-mimebot = You pet {THE($target)} on {POSS-ADJ($target)} cold met
 petting-success-cleanbot = You pet {THE($target)} on {POSS-ADJ($target)} damp metal head.
 petting-success-medibot = You pet {THE($target)} on {POSS-ADJ($target)} sterile metal head.
 petting-success-firebot = You pet {THE($target)} on {POSS-ADJ($target)} warm metal head.
+petting-success-secbot = You pet {THE($target)} on {POSS-ADJ($target)} bloody metal head.
 petting-success-generic-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} metal head.
 petting-success-salvage-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} dirty metal head.
 petting-success-engineer-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} reflective metal head.
@@ -110,6 +113,7 @@ petting-failure-cleanbot = You reach out to pet {THE($target)}, but {SUBJECT($ta
 petting-failure-mimebot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy miming!
 petting-failure-medibot = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} syringe nearly stabs your hand!
 petting-failure-firebot = You reach out to pet {THE($target)}, but {SUBJECT($target)} sprays you in the face before you can get close!
+petting-failure-secbot = You reach out to pet {THE($target)}, but {SUBJECT($target)} shocks you!
 petting-failure-generic-cyborg = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy stating laws!
 petting-failure-salvage-cyborg = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy drilling!
 petting-failure-engineer-cyborg = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy repairing!

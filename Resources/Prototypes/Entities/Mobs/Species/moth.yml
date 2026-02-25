@@ -171,6 +171,8 @@
 #        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
+    wilhelm: "/Audio/_Goobstation/Voice/Moth/moth_sax.ogg" # Goobstation
+    wilhelmProbability: 0.1 # Goobstation
     sounds:
       Male: MaleMoth
       Female: FemaleMoth
@@ -196,9 +198,9 @@
         Heat : 2 # Goob edit #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      289: 0.8
-      275: 0.6
-      250: 0.4
+      289: 0.9
+      275: 0.8
+      250: 0.7
   - type: Sprite # sprite again because we want different layer ordering
     noRot: true
     drawdepth: Mobs
@@ -326,6 +328,12 @@
         - MobLayer
   - type: DashAction # Goobstation - dark souls moths
     actionProto: ActionDashMoth
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobMoth
+    lowest: MobMothroachMoth
+  # Corvax-Wega-Genetics-end
+
 
 - type: entity
   parent: BaseSpeciesDummy

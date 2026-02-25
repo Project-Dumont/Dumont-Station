@@ -81,6 +81,8 @@
       enum.WizardTeleportUiKey.Key: # Goobstation - wizard
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
+      enum.RadarConsoleUiKey.Key: #goob - contractor
+        type: RadarConsoleBoundUserInterface
   - type: Sprite
     # scale: 0.9, 0.9 # Goobstation: port EE height/width sliders
     layers:
@@ -225,6 +227,11 @@
       - Shard
       - Landmine
       - Mousetrap
+  # Corvax-Wega-Genetics-start
+  - type: DnaModifier
+    upper: MobHarpy
+    lowest: MobSquackroachHarpy
+  # Corvax-Wega-Genetics-end
 
 - type: entity
   save: false

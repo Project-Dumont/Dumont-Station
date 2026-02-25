@@ -59,6 +59,8 @@ public sealed class PermanentBlindnessSystem : EntitySystem
         {
             _blinding.SetMinDamage((blindness.Owner, blindable), 0);
         }
+
+        _blinding.AdjustEyeDamage((blindness.Owner, blindable), -blindable.EyeDamage); // Gabystation
     }
 
     private void OnMapInit(Entity<PermanentBlindnessComponent> blindness, ref MapInitEvent args)

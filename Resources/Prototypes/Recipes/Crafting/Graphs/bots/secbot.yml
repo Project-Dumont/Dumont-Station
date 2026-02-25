@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: SecBot
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bot
+      steps:
+      - tag: SecurityHelmet
+        icon:
+          sprite: Clothing/Head/Helmets/security.rsi
+          state: icon
+        name: construction-graph-tag-security-helmet
+        doAfter: 2
+      - tag: Stunbaton
+        icon:
+          sprite: Objects/Weapons/Melee/stunbaton.rsi
+          state: stunbaton_off
+        name: construction-graph-tag-stun-baton
+        doAfter: 2
+      - tag: ProximitySensor
+        icon:
+          sprite: Objects/Misc/proximity_sensor.rsi
+          state: icon
+        name: construction-graph-tag-proximity-sensor
+        doAfter: 2
+      - tag: BorgArm
+        icon:
+          sprite: Mobs/Silicon/drone.rsi
+          state: l_hand
+        name: construction-graph-tag-borg-arm
+        doAfter: 2
+      - tag: SmallAIChip
+        icon:
+          sprite: Objects/Misc/potatoai_chip.rsi
+          state: icon
+        name: construction-graph-tag-super-compact-ai-chip
+        doAfter: 2
+      - tag: ContrabandDetectorGlasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/secglasses.rsi
+          state: icon
+        name: construction-graph-tag-contraband-detector-glasses
+        doAfter: 2
+  - node: bot
+    entity: MobSecuritron

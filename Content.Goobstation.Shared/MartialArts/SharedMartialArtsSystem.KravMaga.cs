@@ -19,8 +19,10 @@ using Content.Goobstation.Shared.Changeling.Components;
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Goobstation.Shared.MartialArts.Events;
 using Content.Shared.Damage.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Weapons.Melee;
 
 namespace Content.Goobstation.Shared.MartialArts;
 
@@ -109,7 +111,7 @@ public abstract partial class SharedMartialArtsSystem
 
     private void OnMapInit(Entity<KravMagaComponent> ent, ref MapInitEvent args)
     {
-        if (HasComp<MartialArtsKnowledgeComponent>(ent) || HasComp<ChangelingIdentityComponent>(ent))
+        if (HasComp<MartialArtsKnowledgeComponent>(ent) || HasComp<ChangelingComponent>(ent))
             return;
 
         foreach (var actionId in ent.Comp.BaseKravMagaMoves)
@@ -118,6 +120,18 @@ public abstract partial class SharedMartialArtsSystem
             if (actions != null)
                 ent.Comp.KravMagaMoveEntities.Add(actions.Value);
         }
+
+        // Gaby station inicio
+
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid)
+            && humanoid.Species == "Waddler"
+            && TryComp<MeleeWeaponComponent>(ent, out var melee))
+        {
+            melee.AttackRate = 1f;
+            Dirty(ent, melee);
+        }
+
+        // Gaby station fim
     }
 
     private void OnKravMagaShutdown(Entity<KravMagaComponent> ent, ref ComponentShutdown args)
@@ -126,5 +140,17 @@ public abstract partial class SharedMartialArtsSystem
         {
             _actions.RemoveAction(action);
         }
+
+        // Gaby station inicio
+
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid)
+            && humanoid.Species == "Waddler"
+            && TryComp<MeleeWeaponComponent>(ent, out var melee))
+        {
+            melee.AttackRate = 4f;
+            Dirty(ent, melee);
+        }
+
+        // Gaby station fim
     }
 }

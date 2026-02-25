@@ -51,6 +51,8 @@ public sealed class CriminalRecordsConsoleBoundUserInterface : BoundUserInterfac
         _window.OnStatusFilterPressed += (statusFilter) =>
             SendMessage(new CriminalRecordSetStatusFilter(statusFilter));
         _window.OnHistoryUpdated += UpdateHistory;
+        _window.OnRequestArrestWarrant += (issuer, details) => // GabyStation
+            SendMessage(new CriminalRecordRequestArrestWarrant(issuer, details));
         _window.OnHistoryClosed += () => _historyWindow?.Close();
         _window.OnClose += Close;
 

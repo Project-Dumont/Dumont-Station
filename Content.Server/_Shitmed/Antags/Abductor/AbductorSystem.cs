@@ -21,6 +21,7 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared.UserInterface;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
 using Content.Shared.Tag;
 using Robust.Server.Containers;
@@ -86,7 +87,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
                 var consoleTransform = Transform(id);
                 var stationUid = _entityManager.GetEntity(station.Value.StationId);
 
-                if (_stationSystem.GetLargestGrid(Comp<StationDataComponent>(stationUid)) is not { } gridUid)
+                if (_stationSystem.GetLargestGrid(stationUid) is not { } gridUid)
                     continue;
 
                 var gridTransform = Transform(gridUid);
@@ -221,7 +222,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
         foreach (var station in stations)
         {
-            if (_stationSystem.GetLargestGrid(Comp<StationDataComponent>(station)) is not { } grid
+            if (_stationSystem.GetLargestGrid(station) is not { } grid
                 || !TryComp(station, out MetaDataComponent? stationMetaData))
                 continue;
 

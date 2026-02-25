@@ -146,6 +146,9 @@
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 18000 #5 hrs
+    - !type:RoleTimeRequirement
+      role: JobBrigmedic
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 54000 #15 hrs
@@ -160,12 +163,12 @@
   canBeAntag: false
   guides: # goobstation
   - SpaceLaw
-  # - Legal SOP
+  # - LegalSOP
   - Security
-  # - Warden SOP
+  # - WardenSOP
   - KravMaga
   goobcoins: 35 #Goob content
-  salary: 50 # Gaby content
+  salary: 65 # Gaby content
   access:
   - Security
   - Brig

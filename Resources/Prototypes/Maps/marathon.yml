@@ -65,6 +65,8 @@
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
             AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
+            RadioHost: [ 1, 1 ] # Goobstation
+            Reporter: [ 1, 1 ] #Goobstation
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -77,6 +79,7 @@
             MedicalIntern: [ 3, 3 ]
             Psychologist: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]

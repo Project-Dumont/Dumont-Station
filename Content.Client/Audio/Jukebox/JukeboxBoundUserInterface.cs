@@ -54,6 +54,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         _menu.OnSearchChanged += PopulateMusic;
 
         _menu.SetTime += SetTime;
+        _menu.SetVolume += SetVolume; // <Estação Pirata volume slider>
         PopulateMusic();
         Reload();
     }
@@ -67,10 +68,13 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
             return;
 
         _menu.SetAudioStream(jukebox.AudioStream);
+        _menu.SetVolumeSlider(jukebox.Volume); // <Estação Pirata volume slider>
+
 
         if (_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
         {
             var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
+
             _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
         }
         else
@@ -107,4 +111,20 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
         SendMessage(new JukeboxSetTimeMessage(sentTime));
     }
+
+    // <Estação Pirata volume slider>
+    public void SetVolume(float volume)
+    {
+        var sentVolume = volume;
+
+        // Prediction
+        if (EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox) &&
+            EntMan.TryGetComponent(jukebox.AudioStream, out AudioComponent? audioComp))
+        {
+            audioComp.Volume = SharedJukeboxSystem.MapToRange(volume, jukebox.MinSlider, jukebox.MaxSlider, jukebox.MinVolume, jukebox.MaxVolume);
+        }
+
+        SendMessage(new JukeboxSetVolumeMessage(sentVolume));
+    }
+    // </Estação Pirata volume slider>
 }

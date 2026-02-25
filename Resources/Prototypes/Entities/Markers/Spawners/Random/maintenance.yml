@@ -262,6 +262,7 @@
       - id: ToySkeleton
       - id: Basketball
       - id: Football
+      - id: TennisBall
       - id: BalloonNT
       - id: BalloonCorgi
       - id: MysteryFigureBox
@@ -314,6 +315,7 @@
       children:
       - id: Skub
       - id: PonderingOrb
+      - id: PhotoCameraFilled # CorvaxGoob-PhotoCamera
       - id: CluwneHorn
       - id: DrinkMugDog
       - id: CigarGold
@@ -450,6 +452,7 @@
         children:
         - id: BoomboxPink
         - id: BoomboxPurple
+        - id: MP3PlayerRed # Gabystation
       # Rare Group
     - !type:GroupSelector
       weight: 2

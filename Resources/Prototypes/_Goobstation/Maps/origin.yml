@@ -73,6 +73,8 @@
             MedicalDoctor: [ 6, 6 ]
             Psychologist: [ 1, 1 ]
             MedicalIntern: [ 1, 2 ]
+            Virologist: [ 1, 1 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 6, 6 ]
@@ -88,7 +90,8 @@
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 8, 8 ]
+            SalvageSpecialist: [ 3, 3 ]
+            ShaftMiner: [ 3, 3 ]
             CargoTechnician: [ 5, 5 ]
             #civillian
             Passenger: [ -1, -1 ]

@@ -82,14 +82,12 @@ using Content.Shared.Stunnable;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Zombies;
 using Content.Shared.Heretic;
-using Content.Goobstation.Common.Changeling;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Revolutionary;
 using Content.Server.Communications;
 using System.Linq;
-using System.Threading;
 using Content.Goobstation.Shared.Revolutionary;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Systems;
@@ -98,7 +96,10 @@ using Robust.Shared.Player;
 using Content.Server.Traitor.Uplink;
 using Content.Shared.PDA.Ringer;
 using Content.Shared.PDA;
-
+using Content.Goobstation.Shared.Changeling.Components;
+using Content.Goobstation.Common.Conversion;
+using Content.Goobstation.Common.Traitor;
+using Content.Shared._EinsteinEngines.Revolutionary.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -125,6 +126,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
+    [Dependency] private readonly GoobCommonUplinkSystem _goobUplink = default!; // Goobstation - traitor uplink
 
     //Used in OnPostFlash, no reference to the rule component is available
     public readonly ProtoId<NpcFactionPrototype> RevolutionaryNpcFaction = "Revolutionary";
@@ -172,16 +174,29 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         if (!_mind.TryGetMind(traitor, out var mindId, out var mind))
             return false;
 
-        var pda = _uplink.FindUplinkTarget(traitor);
-        if (pda == null || !_uplink.AddUplink(traitor, component.StartingBalance))
+        // Goobstation - begin traitor uplink
+        var uplinkPreference = _goobUplink.GetUplinkPreference(mindId);
+
+        if (!_uplink.TryAddUplink(traitor, component.StartingBalance, uplinkPreference, out _, out var setupEvent))
             return false;
 
-        var code = EnsureComp<RingerUplinkComponent>(pda.Value).Code;
+        var uplinkBriefing = Loc.GetString("head-rev-role-greeting");
+        var uplinkBriefingShort = Loc.GetString("head-rev-briefing");
 
-        _antag.SendBriefing(traitor, Loc.GetString("head-rev-role-greeting"), Color.Red, null);
+        if (setupEvent is not null)
+        {
+            uplinkBriefing += "\n" + setupEvent.Value.BriefingEntry;
+            uplinkBriefingShort += "\n" + setupEvent.Value.BriefingEntryShort;
+        }
 
-        if (_role.MindHasRole<RevolutionaryRoleComponent>(mindId, out var revRoleComp))
-            AddComp(revRoleComp.Value, new RoleBriefingComponent { Briefing = Loc.GetString("head-rev-briefing", ("code", string.Join("-", code ?? Array.Empty<Note>()).Replace("sharp", "#"))) }, overwrite: true);
+        _antag.SendBriefing(traitor, uplinkBriefing, Color.Red, null);
+
+        if (_role.MindHasRole<RevolutionaryRoleComponent>(mindId, out var role))
+        {
+            EnsureComp<RoleBriefingComponent>(role.Value, out var briefingComp);
+            briefingComp.Briefing = uplinkBriefingShort;
+        }
+        // Goobstation - end traitor uplink
 
         return true;
     }
@@ -300,15 +315,16 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     private void OnPostConvert(EntityUid uid, HeadRevolutionaryComponent comp, ref AfterRevolutionaryConvertedEvent ev)
     {
         // Einstein Engines - Revolutionary Manifesto - Use RevolutionaryConverterSystem instead of hardcoding flashes
-        // GoobStation - check if headRev's ability enabled
+        // GoobStation START - check if headRev's ability enabled
         if (!comp.ConvertAbilityEnabled)
             return;
-
-        // Goobstation - Something something check for 30 conditions of mute or otherwise speech impeding shit that makes book pointless
-        if (HasComp<MumbleAccentComponent>(uid) // Muzzles to bypass speech is bad
-            || HasComp<MutedComponent>(uid)) // No speech = No convert
+        if (!TryComp<RevolutionaryConverterComponent>(ev.Used, out var revconv))
             return;
-        // Goob edit end (for now)
+        // Goobstation - Something something check for 30 conditions of mute or otherwise speech impeding shit that makes book pointless
+        if ((HasComp<MumbleAccentComponent>(ev.User) // Muzzles to bypass speech is bad
+            || HasComp<MutedComponent>(ev.User)) && !revconv.BypassMuted) // No speech = No convert but still convert if BYPASS
+            return;
+        // Goob edit END (for now) of course for now you dumbass
 
         if (uid != ev.User)
             return;
@@ -318,14 +334,17 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         if (!_mind.TryGetMind(ev.Target, out var mindId, out var mind))
             return;
 
+        // goob - event instead of whatever the fuck the hascomp obelisk below is (whoever did this needs to be flogged)
+        var convEv = new BeforeConversionEvent();
+        RaiseLocalEvent(ev.Target, ref convEv);
+
         if (HasComp<RevolutionaryComponent>(ev.Target) ||
             HasComp<MindShieldComponent>(ev.Target) ||
             !HasComp<HumanoidAppearanceComponent>(ev.Target) &&
             !alwaysConvertible ||
             !_mobState.IsAlive(ev.Target) ||
             HasComp<ZombieComponent>(ev.Target) ||
-            HasComp<HereticComponent>(ev.Target) ||
-            HasComp<ChangelingComponent>(ev.Target) || // goob edit - no more ling or heretic revs
+            HasComp<HereticComponent>(ev.Target) || // goob edit - no more heretic revs
             HasComp<AntagImmuneComponent>(ev.Target)) // Antag immune MEANS antag immune.
         {
             if (ev.User != null)
@@ -333,6 +352,16 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
             return;
         }
+
+        // goob - event start
+        if (convEv.Blocked)
+        {
+            if (ev.User != null)
+                _popup.PopupEntity("The conversion failed!", ev.User.Value, ev.User.Value);
+
+            return;
+        }
+        // goob - event end
 
         if (HasComp<RevolutionEnemyComponent>(ev.Target))
             RemComp<RevolutionEnemyComponent>(ev.Target);
@@ -440,12 +469,12 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
                 if (HasComp<HeadRevolutionaryComponent>(uid))
                     continue;
 
-            _npcFaction.RemoveFaction(uid, RevolutionaryNpcFaction);
-            _stun.TryParalyze(uid, stunTime, true); // todo: use gamerule
-            RemCompDeferred<RevolutionaryComponent>(uid);
-            RemCompDeferred<ShowRevolutionaryIconsComponent>(uid);
-            _popup.PopupEntity(Loc.GetString("rev-break-control", ("name", Identity.Entity(uid, EntityManager))), uid);
-            _adminLogManager.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(uid)} was deconverted due to all Head Revolutionaries dying.");
+                _npcFaction.RemoveFaction(uid, RevolutionaryNpcFaction);
+                _stun.TryUpdateParalyzeDuration(uid, stunTime);
+                RemCompDeferred<RevolutionaryComponent>(uid);
+                RemCompDeferred<ShowRevolutionaryIconsComponent>(uid);
+                _popup.PopupEntity(Loc.GetString("rev-break-control", ("name", Identity.Entity(uid, EntityManager))), uid);
+                _adminLogManager.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(uid)} was deconverted due to all Head Revolutionaries dying.");
 
                 // Goobstation - check if command staff was deconverted
                 if (TryComp<CommandStaffComponent>(uid, out var commandComp))
