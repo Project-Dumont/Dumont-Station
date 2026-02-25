@@ -11,4 +11,4 @@ ent-Claymore = claymore
      .desc = Uma antiga lâmina de guerra.
 
 ent-RosethornBlade = lâmina da Rosa
-    .desc = Uma lâmina refinada, para uma Rosa refinada.
+    .desc = Uma lâmina refinada, para uma Rosa refinada. Feita de uma liga especial, seu ponto forte é a leveza e agilidade de manuseio.
