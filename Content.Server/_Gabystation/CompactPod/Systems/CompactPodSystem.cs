@@ -11,23 +11,20 @@ using Content.Shared.Movement.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
-using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Popups;
-using Content.Shared.CompactPod;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
-using Content.Shared.Destructible;
 using Content.Shared.Movement.Systems;
 using Robust.Server.Containers;
-using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Physics.Systems;
+using Content.Shared._Gabystation.CompactPod;
 
 namespace Content.Server._Gabystation.CompactPod.Systems;
+
 public sealed partial class CompactPodSystem : EntitySystem
 {
     [Dependency] private readonly ContainerSystem _container = default!;
@@ -39,9 +36,11 @@ public sealed partial class CompactPodSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly SharedMechSystem _mech = default!;
+
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<CompactPodComponent, MechEntryEvent>(OnEntryPod);
         SubscribeLocalEvent<CompactPodComponent, EntRemovedFromContainerMessage>(OnExitPod);
 
@@ -64,10 +63,12 @@ public sealed partial class CompactPodSystem : EntitySystem
             return;
 
         var xform = Transform(uid);
-        if (xform.GridUid != null)
+        if (xform.GridUid is not null)
         {
             ApplyGridMovement(uid);
-        } else {
+        }
+        else
+        {
             ForcedJetpackActive(uid, jetpack);
         }
 
@@ -86,7 +87,7 @@ public sealed partial class CompactPodSystem : EntitySystem
         if (!TryComp<MechComponent>(uid, out var mech))
             return;
 
-        if (mech.PilotSlot.ContainedEntity != null)
+        if (mech.PilotSlot.ContainedEntity is not null)
             return;
 
         RemComp<ActiveJetpackComponent>(uid);
@@ -99,10 +100,10 @@ public sealed partial class CompactPodSystem : EntitySystem
         _movementSpeedModifier.RefreshWeightlessModifiers(uid);
 
     }
-    private void OnMapInit(EntityUid uid, CompactPodComponent component, MapInitEvent args)
-    {
+
+    private void OnMapInit(EntityUid uid, CompactPodComponent component, MapInitEvent args) =>
         component.PassengerContainer = _container.EnsureContainer<Container>(uid, component.PassengerContainerId);
-    }
+
     private void OnPassenger(EntityUid uid, CompactPodComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
@@ -150,7 +151,7 @@ public sealed partial class CompactPodSystem : EntitySystem
     private void OnPassengerEntryPod(EntityUid uid, CompactPodComponent component, PodPassengerEntryEvent args)
     {
         if (args.Cancelled || args.Handled)
-                return;
+            return;
 
         if (!TryComp<MechComponent>(uid, out var mech))
             return;
@@ -168,6 +169,7 @@ public sealed partial class CompactPodSystem : EntitySystem
             args.Handled = true;
         }
     }
+
     public bool TryInsert(EntityUid podUid, EntityUid passengerUid, CompactPodComponent component)
     {
         if (component.PassengerContainer.ContainedEntities.Count >= component.MaxPassengers)
@@ -196,13 +198,10 @@ public sealed partial class CompactPodSystem : EntitySystem
         if (!TryComp<JetpackComponent>(uid, out var jetpack))
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
-            return;
+        var xform = Transform(uid);
 
-        if (xform.GridUid != null)
-        {
+        if (xform.GridUid is not null)
             ApplyGridMovement(uid);
-        }
         else
         {
             // No espaço: Remove o auxílio de grid mas mantém o Jetpack
@@ -224,8 +223,8 @@ public sealed partial class CompactPodSystem : EntitySystem
 
     private void OnInhale(EntityUid uid, CompactPodPassengerComponent component, InhaleLocationEvent args)
     {
-        if (!TryComp<MechComponent>(component.Pod, out var mech) ||
-            !TryComp<MechAirComponent>(component.Pod, out var mechAir))
+        if (!TryComp<MechComponent>(component.Pod, out var mech)
+            || !TryComp<MechAirComponent>(component.Pod, out var mechAir))
             return;
 
         if (mech.Airtight)
@@ -234,8 +233,8 @@ public sealed partial class CompactPodSystem : EntitySystem
 
     private void OnExhale(EntityUid uid, CompactPodPassengerComponent component, ExhaleLocationEvent args)
     {
-        if (!TryComp<MechComponent>(component.Pod, out var mech) ||
-            !TryComp<MechAirComponent>(component.Pod, out var mechAir))
+        if (!TryComp<MechComponent>(component.Pod, out var mech)
+            || !TryComp<MechAirComponent>(component.Pod, out var mechAir))
             return;
 
         if (mech.Airtight)

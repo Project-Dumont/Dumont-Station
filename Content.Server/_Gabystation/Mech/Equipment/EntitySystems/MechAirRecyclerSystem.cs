@@ -2,16 +2,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Atmos.EntitySystems;
-using Content.Server.Atmos.Piping.Components;
-using Content.Server.Atmos.Components;
 using Content.Server.Mech.Components;
 using Content.Server._Gabystation.Mech.Equipment.Components;
 using Content.Server.Mech.Systems;
 using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Mech;
 using Content.Shared.Atmos;
-using Content.Shared.Atmos.Components;
 using Content.Shared.Mech.Components;
 
 namespace Content.Server._Gabystation.Mech.Equipment.EntitySystems;
@@ -19,8 +15,10 @@ namespace Content.Server._Gabystation.Mech.Equipment.EntitySystems;
 public sealed class MechAirRecyclerSystem : EntitySystem
 {
     [Dependency] private readonly MechSystem _mech = default!;
+
     private float _timer;
     private const float UpdateInterval = 1.0f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -56,20 +54,19 @@ public sealed class MechAirRecyclerSystem : EntitySystem
             if (!comp.Enabled)
                 continue;
 
-            ProcessRecycler(uid);
+            ProcessRecycler((uid, comp));
         }
     }
 
-    private void ProcessRecycler(EntityUid uid)
+    private void ProcessRecycler(Entity<MechAirRecyclerComponent> recyclerEnt)
     {
-        if (!TryComp<MechAirRecyclerComponent>(uid, out var recycler) || !recycler.Enabled)
-            return;
+        var (uid, recycler) = recyclerEnt;
 
         var xform = Transform(uid);
         var mechUid = xform.ParentUid;
 
-        if (!TryComp<MechComponent>(mechUid, out var mech) ||
-            !TryComp<MechAirComponent>(mechUid, out var mechAir))
+        if (!TryComp<MechComponent>(mechUid, out var mech)
+            || !TryComp<MechAirComponent>(mechUid, out var mechAir))
             return;
 
         var energyCost = recycler.EnergyCost * UpdateInterval;
@@ -78,26 +75,27 @@ public sealed class MechAirRecyclerSystem : EntitySystem
 
         var air = mechAir.Air;
 
+        // PV = nRT <=> n = PV/RT
         var targetMoles = (recycler.TargetPressure * air.Volume) / (Atmospherics.R * recycler.TargetTemperature);
         var currentMoles = air.TotalMoles;
 
-        bool didwork = false;
+        bool didWork = false;
 
         if (currentMoles < targetMoles)
         {
             var diff = targetMoles - currentMoles;
             air.AdjustMoles(Gas.Oxygen, diff * recycler.OxygenRatio);
             air.AdjustMoles(Gas.Nitrogen, diff * recycler.NitrogenRatio);
-            didwork = true;
+            didWork = true;
         }
 
         if (MathF.Abs(air.Temperature - recycler.TargetTemperature) > 0.5f)
         {
             air.Temperature = recycler.TargetTemperature;
-            didwork = true;
+            didWork = true;
         }
 
-        if (didwork)
+        if (didWork)
         {
             _mech.TryChangeEnergy(mechUid, -energyCost, mech);
         }

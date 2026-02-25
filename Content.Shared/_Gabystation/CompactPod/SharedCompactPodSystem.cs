@@ -5,14 +5,12 @@
 using Robust.Shared.Serialization;
 using Content.Shared.DoAfter;
 
-namespace Content.Shared.CompactPod;
+namespace Content.Shared._Gabystation.CompactPod;
 
-public abstract partial class SharedCompactPodSystem : EntitySystem { }
+public abstract partial class SharedCompactPodSystem : EntitySystem;
 
 /// <summary>
 /// Event raised when a person enters a pod, on both success and failure
 /// </summary>
 [Serializable, NetSerializable]
-public sealed partial class PodPassengerEntryEvent : SimpleDoAfterEvent
-{
-}
+public sealed partial class PodPassengerEntryEvent : SimpleDoAfterEvent;

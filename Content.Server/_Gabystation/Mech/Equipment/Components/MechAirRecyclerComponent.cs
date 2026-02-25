@@ -10,21 +10,21 @@ namespace Content.Server._Gabystation.Mech.Equipment.Components;
 [RegisterComponent, Access(typeof(MechAirRecyclerSystem))]
 public sealed partial class MechAirRecyclerComponent : Component
 {
-    [DataField("enabled")]
+    [DataField]
     public bool Enabled = false;
 
-    [DataField("energyCost")]
+    [DataField]
     public float EnergyCost = 0.5f;
 
-    [DataField("targetPressure")]
+    [DataField]
     public float TargetPressure = Atmospherics.OneAtmosphere;
 
-    [DataField("targetTemperature")]
+    [DataField]
     public float TargetTemperature = Atmospherics.T20C;
 
-    [DataField("oxygenRatio")]
-    public float OxygenRatio = 0.22f;
+    [DataField]
+    public float OxygenRatio = Atmospherics.OxygenStandard;
 
-    [DataField("nitrogenRatio")]
-    public float NitrogenRatio = 0.78f;
+    [DataField]
+    public float NitrogenRatio = Atmospherics.NitrogenStandard;
 }
