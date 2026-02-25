@@ -15,4 +15,4 @@
   - type: AtmosDevice
   - type: MechAirRecycler
     energyCost: 5.0
-    targetOxygen: 25
+    # targetOxygen: 25
