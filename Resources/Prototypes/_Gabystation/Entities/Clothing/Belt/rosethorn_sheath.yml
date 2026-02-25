@@ -1,0 +1,41 @@
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
+  id: ClothingBeltSheathRosethorn
+  name: rosethorn blade sheath
+  description: An refined sheath, to hold an refined rose's blade.'
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Belt/rosethorn_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Belt/rosethorn_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: RosethornBlade
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - CaptainSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - CaptainSabre
+  - type: Appearance
+
+- type: entity
+  id: ClothingBeltSheathFilledRosethorn
+  parent: ClothingBeltSheathRosethorn
+  suffix: Filled, Rosethorn Blade
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - RosethornBlade
