@@ -10,6 +10,11 @@
   - type: PossessObject
   - type: SpookMark
   - type: DarkWhisper
+  - type: AbsorbCorpse
+    damage: # damage they take when they eat a corpse with forma
+      types:
+        Slash: 25
+        Blunt: 25
   - type: WraithCommand
     blacklist:
       components:
@@ -29,6 +34,7 @@
     - ActionDecay
     - ActionDarkWhisper
     - ActionCommand
+    - ActionAbsorbCorpse
     # - ActionAnimateObject
     - ActionWhisper
     - ActionBloodWriting
