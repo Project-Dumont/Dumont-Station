@@ -13,10 +13,10 @@
     animationRotation: -95 
     wideAnimationRotation: -135 
     heavyStaminaCost: 2
-    attackRate: 1.75
+    attackRate: 2
     damage:
       types:
-        Slash: 12
+        Slash: 15
       woundSeverityMultipliers:
         Slash: 1.75
     soundHit:
@@ -33,3 +33,6 @@
   - type: Reflect
     reflectProb: 0.5
     spread: 90
+  - type: BleedInflicter
+  - type: PainInflicter
+  - type: DisarmMalus
