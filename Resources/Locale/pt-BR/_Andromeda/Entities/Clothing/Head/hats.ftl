@@ -1,2 +1,2 @@
-ent-ClothingHeadHatNanotrasenRepresentativecap = Chapéu oficial de representante da Nanotrasen
-    .desc = Poucos tem a honra de usar.
+ent-ClothingHeadHatNanotrasenRepresentativecap = chapéu oficial de representante da Nanotrasen
+    .desc = Poucos têm a honra de usar.

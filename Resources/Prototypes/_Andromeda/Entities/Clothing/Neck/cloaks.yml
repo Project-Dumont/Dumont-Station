@@ -5,8 +5,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloaksNanotrasenRepresentative
-  name: Nanotrasen Representative Official Cloak
-  description: Showcase bureocracy's superiority in great style.
+  name: Nanotrasen representative official cloak
+  description: Showcase bureaucracy's superiority in great style.
   components:
   - type: Sprite
     sprite: _Andromeda/Clothing/Neck/Cloaks/rnt.rsi

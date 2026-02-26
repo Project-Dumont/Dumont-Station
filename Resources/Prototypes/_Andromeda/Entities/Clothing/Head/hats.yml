@@ -4,8 +4,8 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatNanotrasenRepresentativecap
-  name: Nanotrasen Representative Official Cap
+  id: ClothingHeadHatNanotrasenRepresentativeCap
+  name: Nanotrasen representative official cap
   description: Few have to honour to wear it.
   components:
   - type: Sprite
