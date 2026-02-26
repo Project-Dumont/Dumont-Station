@@ -131,17 +131,6 @@
     species:
     - Plasmaman
 
-- type: loadout # Port Andrômeda
-  id: NanotrasenRepresentativeBlackCap
-  equipment:
-    head: ClothingHeadHatNanotrasenRepresentativecap
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobNanotrasenRepresentative
-      time: 180000 # 50 hrs
-
 # Gloves
 - type: loadout
   id: NanotrasenRepresentativeGloves
@@ -168,16 +157,6 @@
   equipment:
     neck: ClothingNeckCloakBoat
 
-- type: loadout # Port Andrômeda
-  id: NanotrasenRepresentativeBlackCloak
-  equipment:
-    neck: ClothingNeckCloaksNanotrasenRepresentative
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobNanotrasenRepresentative
-      time: 180000 # 50 hrs
 
 # Backpacks
 - type: loadout
