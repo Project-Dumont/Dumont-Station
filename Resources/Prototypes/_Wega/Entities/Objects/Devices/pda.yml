@@ -16,3 +16,17 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-genetics
+    borderColor: "#FAFAFA"
+    accentVColor: "#0097CA"
+
+- type: entity
+  parent: BasePDA
+  id: PhoneMerchantPDA
+  name: phone merchant PDA
+  description: Ring a ding ding!
+  components:
+  - type: Pda
+    id: PhoneMerchantIDCard
+  - type: PdaBorderColor
+    borderColor: "#000000"
+    accentVColor: "#C0C0C0"

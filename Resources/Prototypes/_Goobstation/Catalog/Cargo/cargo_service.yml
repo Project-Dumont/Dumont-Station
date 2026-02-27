@@ -72,6 +72,7 @@
   cost: 3000
   category: cargoproduct-category-name-service
   group: market
+<<<<<<< HEAD
 
 - type: cargoProduct
   id: RotaryPhoneCrateCargo
@@ -100,5 +101,17 @@
     state: icon
   product: CrateHolySupplies
   cost: 2000
+  category: cargoproduct-category-name-service
+  group: market
+=======
+>>>>>>> 31f005b6a8 (Fox......DIE!)
+
+- type: cargoProduct
+  id: RotaryPhoneCrateCargo
+  icon:
+    sprite: _RMC14/Objects/phone/rotary_phone.rsi
+    state: rotary_phone
+  product: CrateRotaryPhone
+  cost: 2500
   category: cargoproduct-category-name-service
   group: market
