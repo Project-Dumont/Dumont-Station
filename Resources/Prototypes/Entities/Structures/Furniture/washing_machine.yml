@@ -35,14 +35,9 @@
     finishedSound:
       path: /Audio/Machines/washing_open.ogg
   - type: EntityStorage
-    isCollidableWhenOpen: true
-    open: true
-    capacity: 8
-    whitelist:
-      components:
-      - Clothing
-      sizes:
-      - Tiny
+    isCollidableWhenOpen: false
+    open: false
+    capacity: 4
   - type: Forensics
     canDnaBeCleaned: false
   - type: Appearance
@@ -63,3 +58,20 @@
   - type: Machine
     board: WashingMachineCircuitboard
   - type: PlaceableSurface
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:ExplodeBehavior
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
