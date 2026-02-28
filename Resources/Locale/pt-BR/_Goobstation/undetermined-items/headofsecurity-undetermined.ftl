@@ -21,5 +21,10 @@ selectable-set-hos-rifle-description =
 selectable-set-hos-shotgun-ballistic-name = Espingarda Foxhound
 selectable-set-hos-shotgun-ballistic-description =
     Uma espingarda semi-automática utilizando tambores .50.
-
     Completamente original!
+
+selectable-set-hos-gloves-name = X-11 "Berserker"
+selectable-set-hos-gloves-description =
+    Luvas elaboradamente feitas, com Nano-chips de krav-maga.
+    Para aqueles que querem trazer a justiça com as mãos.
+
