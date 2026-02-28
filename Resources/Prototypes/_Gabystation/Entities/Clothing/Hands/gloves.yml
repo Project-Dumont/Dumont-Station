@@ -8,7 +8,9 @@
   - type: Sprite
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Item
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Clothing
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-black
