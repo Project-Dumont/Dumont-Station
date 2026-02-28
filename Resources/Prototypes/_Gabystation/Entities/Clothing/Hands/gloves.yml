@@ -15,7 +15,10 @@
   - type: ClothingGrantComponent
     component:
     - type: KravMaga
-      speedModifier: 1.0
+    - type: Prying
+      pryPowered: false
+      force: true
+      speedModifier: 1.2
   - type: GuideHelp
     guides:
     - KravMaga
