@@ -43,7 +43,6 @@ using Content.Shared.Magic;
 using Content.Shared.Magic.Events;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
-
 namespace Content.Server.Magic;
 
 public sealed class MagicSystem : SharedMagicSystem

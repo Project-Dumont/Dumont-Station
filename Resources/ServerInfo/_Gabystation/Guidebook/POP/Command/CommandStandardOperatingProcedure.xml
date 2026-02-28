@@ -25,14 +25,15 @@ SPDX-License-Identifier: MIT
 
   [bold]7.[/bold] Membros do Comando devem seguir qualquer orientação de oficiais do Comando Central (como o Representante da Nanotrasen, Agente de Assuntos Internos ou Magistrado) sobre segredos corporativos;
 
-  [bold]8.[/bold] Membros do Comando devem aceitar qualquer multa, punição, rebaixamento ou execução quando um oficial do Comando Central os informar de uma quebra indevida do acordo de confidencialidade.
+  [bold]8.[/bold] Membros do Comando devem aceitar qualquer multa, punição, rebaixamento ou execução quando um oficial do Comando Central os informar de uma quebra indevida do acordo de confidencialidade;
 
+  [bold]9.[/bold] Membros do Comando devem garantir que haja um Capitão ativo na estação.
 
   # Capitão
 
   [bold]1.[/bold] O Capitão não pode realizar funções regulares de Segurança. No entanto, pode ajudar a Segurança se estiverem com pouco pessoal ou se presenciar um crime. O Capitão não pode pegar itens do Arsenal em circunstâncias normais, a menos que autorizado pelo Chefe de Segurança. Além disso, o Capitão não pode requisitar armamentos para si mesmo da Carga e/ou Ciência, a menos que haja uma ameaça imediata à estação e/ou tripulação;
 
-  [bold]2.[/bold] Se um Departamento não tiver um Chefe, o Capitão deve fazer esforços razoáveis para nomear um Chefe Interino, se houver pessoal disponível para o cargo;
+  [bold]2.[/bold] Se um Departamento não tiver um Chefe, o Capitão deve fazer esforços razoáveis para nomear um Chefe Interino, se houver pessoal disponível para o cargo. Não é necessário mandar um requerimento de nomeação interina para a central de comando caso o POP de promoção seja seguido;
 
   [bold]3.[/bold] O Capitão deve garantir que a Lei Espacial está sendo corretamente aplicada, em cooperação com o Chefe de Segurança;
 
@@ -47,6 +48,10 @@ SPDX-License-Identifier: MIT
   [bold]8.[/bold] O Capitão só pode promover alguém a Chefe Interino se não houver um Chefe designado para o Departamento. O Chefe Interino deve ser membro do Departamento que irá liderar. Veja abaixo para mais informações sobre a Cadeia de Comando;
 
   [bold]9.[/bold] O Capitão não pode demitir nenhum Chefe de Departamento sem justificativa razoável (ex: incompetência, atividade criminosa ou qualquer ação que coloque em risco a estação e/ou a tripulação). O Capitão não pode demitir VIPs do Comando Central (Representante da NanoTrasen, etc) sem permissão do Comando Central, a menos que estejam agindo claramente contra o bem-estar e a segurança da tripulação e da estação. O Capitão também deve seguir o POP do Chefe dos funcionários, ponto 5.
+
+  [bold]10.[/bold] O Capitão deve vestir seu uniforme completo, para que ele seja facilmente reconhecível;
+
+  [bold]11.[/bold] O Capitão é permitido portar sua arma laser antiga, flash e um atordoador. Além disso, se o Capitão for um Capitão Interino, ele é permitido utilizar equipamento exclusivo a sua posição anterior (por exemplo, usar a lawbringer se ele era o Chefe de Segurança).
 
 
   # Chefe dos funcionários
@@ -90,6 +95,8 @@ SPDX-License-Identifier: MIT
 
   [bold]4.[/bold] O Blueshield não deve aplicar Força Letal a menos que haja um perigo claro e presente para a sua vida, ou para a vida de um membro do Comando e o agressor não possa ser detido de forma não letal;
 
+  [bold]5.[/bold] A vida do Blueshield não é descartável. Caso haja uma ameaça e a vida dos membros de comando não está em perigo imediato, ele não é permitido ficar na linha de frente. <!-- pois caso ele morra, ele coloca as vidas do resto dos membros de comando em risco. -->
+  
   # IA
   
   [bold]A seguir estão os procedimentos para manutenção de IA:[/bold]

@@ -1,0 +1,38 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Janet Blackquill <uhhadd@gmail.com> 2025 for all items. Except emergency_resin and holowarn are by Will-Oliver-Br",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bike_horn"
+        },
+        {
+            "name": "emergency_sealant"
+        },
+        {
+            "name": "holopointer"
+        },
+        {
+            "name": "light_synthesizer"
+        },
+        {
+            "name": "nanites"
+        },
+        {
+            "name": "rgb_lighting"
+        },
+        {
+            "name": "holowarn"
+        },
+        {
+            "name": "emergency_resin"
+        },
+        {
+            "name": "store"
+        }
+    ]
+}

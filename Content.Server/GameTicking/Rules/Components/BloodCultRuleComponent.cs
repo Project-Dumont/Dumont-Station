@@ -4,6 +4,7 @@
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -23,170 +24,159 @@ namespace Content.Server.GameTicking.Rules.Components;
 /// Component for the BloodCultRuleSystem that stores info about winning/losing, player counts required
 ///	for stuff, and other round-wide stuff.
 /// </summary>
-[RegisterComponent, Access(typeof(BloodCultRuleSystem))]
+[RegisterComponent, Access(typeof(BloodCultRuleSystem), typeof(BloodCult.EntitySystems.BloodCultRiftSetupSystem))]
 public sealed partial class BloodCultRuleComponent : Component
 {
-    /// <summary>
-    ///	Possible Nar'Sie summon locations.
-    /// </summary>
+	/// <summary>
+	///	Possible Nar'Sie summon locations.
+	/// </summary>
     public static List<string> PossibleVeilLocations = new List<string> {
-        "DefaultStationBeaconCaptainsQuarters", "DefaultStationBeaconHOPOffice",
-        "DefaultStationBeaconSecurity", "DefaultStationBeaconBrig",
-        "DefaultStationBeaconWardensOffice", "DefaultStationBeaconHOSRoom",
-        "DefaultStationBeaconArmory", "DefaultStationBeaconPermaBrig",
-        "DefaultStationBeaconDetectiveRoom", "DefaultStationBeaconCourtroom",
-        "DefaultStationBeaconLawOffice", "DefaultStationBeaconChemistry",
-        "DefaultStationBeaconCMORoom", "DefaultStationBeaconMorgue",
-        "DefaultStationBeaconRND", "DefaultStationBeaconServerRoom",
-        "DefaultStationBeaconRDRoom", "DefaultStationBeaconRobotics",
-        "DefaultStationBeaconArtifactLab", "DefaultStationBeaconAnomalyGenerator",
-        "DefaultStationBeaconCargoReception", "DefaultStationBeaconCargoBay",
-        "DefaultStationBeaconQMRoom", "DefaultStationBeaconSalvage",
-        "DefaultStationBeaconCERoom", "DefaultStationBeaconAME",
-        "DefaultStationBeaconTEG", "DefaultStationBeaconTechVault",
-        "DefaultStationBeaconKitchen", "DefaultStationBeaconBar",
-        "DefaultStationBeaconBotany", "DefaultStationBeaconAICore",
-        "DefaultStationBeaconEVAStorage", "DefaultStationBeaconChapel",
-        "DefaultStationBeaconLibrary", "DefaultStationBeaconTheater",
-        "DefaultStationBeaconToolRoom"
-    };
+		"DefaultStationBeaconCaptainsQuarters", "DefaultStationBeaconHOPOffice",
+		"DefaultStationBeaconSecurity", "DefaultStationBeaconBrig",
+		"DefaultStationBeaconWardensOffice", "DefaultStationBeaconHOSRoom",
+		"DefaultStationBeaconArmory", "DefaultStationBeaconPermaBrig",
+		"DefaultStationBeaconDetectiveRoom", "DefaultStationBeaconCourtroom",
+		"DefaultStationBeaconLawOffice", "DefaultStationBeaconChemistry",
+		"DefaultStationBeaconCMORoom", "DefaultStationBeaconMorgue",
+		"DefaultStationBeaconRND", "DefaultStationBeaconServerRoom",
+		"DefaultStationBeaconRDRoom", "DefaultStationBeaconRobotics",
+		"DefaultStationBeaconArtifactLab", "DefaultStationBeaconAnomalyGenerator",
+		"DefaultStationBeaconCargoReception", "DefaultStationBeaconCargoBay",
+		"DefaultStationBeaconQMRoom", "DefaultStationBeaconSalvage",
+		"DefaultStationBeaconCERoom", "DefaultStationBeaconAME",
+		"DefaultStationBeaconTEG", "DefaultStationBeaconTechVault",
+		"DefaultStationBeaconKitchen", "DefaultStationBeaconBar",
+		"DefaultStationBeaconBotany", "DefaultStationBeaconAICore",
+		"DefaultStationBeaconEVAStorage", "DefaultStationBeaconChapel",
+		"DefaultStationBeaconLibrary", "DefaultStationBeaconTheater",
+		"DefaultStationBeaconToolRoom"
+	};
 
-    [DataField] public WeakVeilLocation? WeakVeil1 = null;
-    [DataField] public WeakVeilLocation? WeakVeil2 = null;
-    [DataField] public WeakVeilLocation? WeakVeil3 = null;
+	[DataField] public WeakVeilLocation? WeakVeil1 = null;
+	[DataField] public WeakVeilLocation? WeakVeil2 = null;
+	[DataField] public WeakVeilLocation? WeakVeil3 = null;
 
-    /// <summary>
-    ///		Stores the location the existing cultists have decided to summon Nar'Sie.
-    /// </summary>
-    [DataField] public WeakVeilLocation? LocationForSummon = null;
+	/// <summary>
+	///		Stores the location the existing cultists have decided to summon Nar'Sie.
+	/// </summary>
+	[DataField] public WeakVeilLocation? LocationForSummon = null;
 
-    /// <summary>
-    /// Charges available for the Revive Rune.
-    /// </summary>
-    [DataField] public int ReviveCharges = 3;
+	/// <summary>
+	/// Total sacrifices made.
+	/// </summary>
+	[DataField] public int TotalSacrifices = 0;
 
-    /// <summary>
-    /// Total sacrifices made.
-    /// </summary>
-    [DataField] public int TotalSacrifices = 0;
+	/// <summary>
+	/// Total conversions made throughout the round.
+	/// </summary>
+	[DataField] public int TotalConversions = 0;
 
-    /// <summary>
-    /// Targets sacrificed successfully.
-    /// </summary>
-    [DataField] public List<EntityUid> TargetsDown = new List<EntityUid>();
+	/// <summary>
+	/// Current amount of blood collected for the ritual.
+	/// </summary>
+	[DataField] public double BloodCollected = 0.0;
 
-    /// <summary>
-    ///	Conversions needed until glowing eyes -- set when cult is initialized.
-    /// </summary>
-    [DataField] public int ConversionsUntilEyes = 0;
+	/// <summary>
+	/// Blood required to reach the first phase (Eyes).
+	/// </summary>
+	[DataField] public double BloodRequiredForEyes = 0.0;
 
-    /// <summary>
-    ///	Conversions needed until rise -- set when cult is initialized.
-    /// </summary>
-    [DataField] public int ConversionsUntilRise = 0;
+	/// <summary>
+	/// Blood required to reach the second phase (Rise).
+	/// </summary>
+	[DataField] public double BloodRequiredForRise = 0.0;
 
-    /// <summary>
-    ///	Has the cult gained glowing eyes yet?
-    /// </summary>
-    [DataField] public bool HasEyes = false;
+	/// <summary>
+	/// Blood required to reach the third phase (Veil Weakened).
+	/// </summary>
+	[DataField] public double BloodRequiredForVeil = 0.0;
 
-    /// <summary>
-    ///	Has the cult risen yet?
-    /// </summary>
-    [DataField] public bool HasRisen = false;
+	/// <summary>
+	///	Conversions needed until glowing eyes -- set when cult is initialized.
+	/// </summary>
+	[DataField] public int ConversionsUntilEyes = 0;
 
-    /// <summary>
-    /// Nar'Sie ready to summon.
-    /// </summary>
-    [DataField] public bool VeilWeakened = false;
+	/// <summary>
+	///	Conversions needed until rise -- set when cult is initialized.
+	/// </summary>
+	[DataField] public int ConversionsUntilRise = 0;
 
-    /// <summary>
-    /// Whether or not the VeilWeakened announcement has played.
-    /// </summary>
-    [DataField] public bool VeilWeakenedAnnouncementPlayed = false;
+	/// <summary>
+	///	Has the cult gained glowing eyes yet?
+	/// </summary>
+	[DataField] public bool HasEyes = false;
 
-    /// <summary>
-    ///	Have the cultists won?
-    /// </summary>
-    [DataField] public bool CultistsWin = false;
+	/// <summary>
+	///	Has the cult risen yet?
+	/// </summary>
+	[DataField] public bool HasRisen = false;
 
-    [DataField] public TimeSpan? CultVictoryEndTime = null;
-    [DataField] public bool CultVictoryAnnouncementPlayed = false;
+	/// <summary>
+	/// Nar'Sie ready to summon.
+	/// </summary>
+	[DataField] public bool VeilWeakened = false;
 
-    /// <summary>
-    ///	Time in seconds after Nar'Sie spawns for the shuttle to be called.
-    /// </summary>
-    [DataField] public TimeSpan CultVictoryEndDelay = TimeSpan.FromSeconds(15);
+	/// <summary>
+	/// Has the blood anomaly spawn been scheduled after weakening the veil?
+	/// </summary>
+	[DataField] public bool BloodAnomalySpawnScheduled = false;
 
-    /// <summary>
-    /// Time after the evac shuttle is dispatched for it to arrive.
-    /// </summary>
-    [DataField] public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(2);
+	/// <summary>
+	/// Has the blood anomaly been spawned for the final ritual?
+	/// </summary>
+	[DataField] public bool BloodAnomalySpawned = false;
 
-    /// <summary>
-    /// Current target.
-    /// </summary>
-    [DataField] public EntityUid? Target = null;
+	/// <summary>
+	/// The time the blood anomaly should be spawned, if scheduled.
+	/// </summary>
+	[DataField] public TimeSpan? BloodAnomalySpawnTime = null;
 
-    // <summary>
-    /// When to give initial report on cultist count and crew count.
-    /// </summary>
-    [DataField] public TimeSpan? InitialReportTime = null;
+	/// <summary>
+	/// The spawned blood anomaly entity.
+	/// </summary>
+	[DataField] public EntityUid? BloodAnomalyUid = null;
 
-    /// <summary>
-    /// Number of targets required to satisfy the sacrifice condition.
-    /// </summary>
-    [DataField] public int TargetsRequired = 2;
+	/// <summary>
+	/// Whether or not the VeilWeakened announcement has played.
+	/// </summary>
+	[DataField] public bool VeilWeakenedAnnouncementPlayed = false;
 
-    /// <summary>
-    /// Number of charges required to use a Revive Rune.
-    /// </summary>
-    [DataField] public int CostToRevive = 3;
+	/// <summary>
+	///	Have the cultists won?
+	/// </summary>
+	[DataField] public bool CultistsWin = false;
 
-    /// <summary>
-    /// Number of charges gained for sacrificing someone.
-    /// </summary>
-    [DataField] public int ChargesForSacrifice = 1;
+	[DataField] public TimeSpan? CultVictoryEndTime = null;
+	[DataField] public bool CultVictoryAnnouncementPlayed = false;
 
-    /// <summary>
-    /// Number of cultists required to sacrifice a dead player.
-    /// </summary>
-    [DataField] public int CultistsToSacrifice = 1;
+	/// <summary>
+	///	Time in seconds after Nar'Sie spawns for the shuttle to be called.
+	/// </summary>
+	[DataField] public TimeSpan CultVictoryEndDelay = TimeSpan.FromSeconds(15);
 
-    /// <summary>
-    /// Number of cultists required to sacrifice a target player.
-    /// </summary>
-    [DataField] public int CultistsToSacrificeTarget = 3;
+	/// <summary>
+	/// Time after the evac shuttle is dispatched for it to arrive.
+	/// </summary>
+	[DataField] public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(2);
 
-    /// <summary>
-    /// Number of players required to convert a player.
-    /// </summary>
-    [DataField] public int CultistsToConvert = 2;
+	// <summary>
+	/// When to give initial report on cultist count and crew count.
+	/// </summary>
+	[DataField] public TimeSpan? InitialReportTime = null;
 
-    /// <summary>
-    /// The set time the Blood Cult's target will be re-selected, if needed.
-    /// </summary>
-    [DataField] public TimeSpan? TargetReselectTime;
+	/// <summary>
+	/// Number of cultists required to sacrifice a dead player.
+	/// </summary>
+	[DataField] public int CultistsToSacrifice = 1;
 
-    /// <summary>
-    /// Time in minutes how long a target can be off station, until the target is re-selected.
-    /// </summary>
-    [DataField] public TimeSpan OffStationTimer = TimeSpan.FromMinutes(2);
+	/// <summary>
+	/// Number of players required to convert a player.
+	/// </summary>
+	[DataField] public int CultistsToConvert = 2;
 
-    /// <summary>
-    /// Whether the Target Reselection Timer is currently active.
-    /// </summary>
-    [DataField] public bool TargetReselectTimerActive = false;
-
-    /// <summary>
-    /// When the next initial off-station check occurs
-    /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan OffStationCheckTime;
-
-    /// <summary>
-    /// The amount of time between each off-station check, checked sparsely to reduce server load.
-    /// </summary>
-    [DataField]
-    public TimeSpan TimerWait = TimeSpan.FromSeconds(20);
+	/// <summary>
+	/// Minimum number of cultists required on Tear Veil runes to complete the ritual.
+	/// Calculated at round start based on player count (1/8th of total players, minimum 3).
+	/// </summary>
+	[DataField] public int MinimumCultistsForVeilRitual = 3;
 }

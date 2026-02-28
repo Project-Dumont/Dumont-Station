@@ -685,6 +685,9 @@
         Heat: 0.9
   - type: IngestionBlocker # Goobstation
     blockSmokeIngestion: true
+  - type: SpeechSoundsReplacer
+    speechSounds: Chrono
+  - type: Hailer # Goobstation - Hailer
 
 - type: entity
   parent: [ ClothingMaskGas, BaseSecurityCargoContraband ]

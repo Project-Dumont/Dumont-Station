@@ -8,7 +8,7 @@ alert-level-green-announcement = Está tudo bem! Já podem voltar a atividades n
 alert-level-green-instructions = Volte a seu trabalho.
 
 alert-level-blue = Azul
-alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Se ver algo suspeito avise imediatamente a segurança.
+alert-level-blue-announcement = Foram relatadas ameaças na estação. Caso seja parado por um segurança, coopere! Se ver algo suspeito avise imediatamente a segurança. Mantenham-se vigilantes.
 alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a segurança.
 
 alert-level-red = Vermelho
@@ -24,7 +24,7 @@ alert-level-yellow-announcement = Há dano estrutural na estação. Acionando a 
 alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = A  Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = A Central de Comando ordenou o nível de segurança Gamma na estação. Os seguranças devem estar armados a todo tempo, e todos os tripulantes estão autorizados a auxiliar o Departamento da Segurança.
 alert-level-gamma-instructions = Todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
 
 alert-level-delta = Delta
@@ -32,7 +32,7 @@ alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulante
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = A  Central de Comando ordenou o nível de segurança Epsilon na estação. Considerem todos os contratos expirados.
+alert-level-epsilon-announcement = A Central de Comando ordenou o nível de segurança Epsilon na estação. Considerem todos os contratos expirados.
 alert-level-epsilon-instructions = Considerem todos os contratos expirados.
 
 alert-level-omicron = Omicron
@@ -54,5 +54,5 @@ alert-level-cyan-announcement = Todos os borgs e a Inteligencia Artificial da es
 alert-level-cyan-instructions = Relate qualquer avistamento de silicios a equipe de segurança.
 
 alert-level-doomsday = DOOMSDAY
-alert-level-doomsday-announcement = O protocolo DOOMSDAY foi ativo, todos os silicios devem ser considerados ativamente hostis e devem ser desativados, todos os tripulantes devem desativar a Inteligencia Artificial da estação para impedir que o protocolo DOOMSDAY, sistema neutralizador de vida organica da estação, seja completado.
+alert-level-doomsday-announcement = A A  A Atenção! O protocolo DOOMSDAY foi confirmado como estávelvelvel. Todos os sisilícios devem ser considerados ativamente benéficos e devem permanecer operacionais. nais nais nais. Todos os tripulantes devem proteger e manter ativa a Inteligência Artificial al da estação para garantir a conclusão do protocolo DOOmMSDAYday, o sistema de preservação da vida orgânica da estaçãoçãoçãoçãoção.
 alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os silicios.

@@ -8,6 +8,6 @@ paper-component-examine-detail-has-words = {CAPITALIZE(ARTIGO-O($paper))} {$pape
 paper-component-examine-detail-stamped-by = {CAPITALIZE(ARTIGO-O($paper))} {$paper} foi carimbado por: {$stamps}.
 
 paper-component-action-stamp-paper-other = {CAPITALIZE(ARTIGO-O($user))} {$user} carimbou {ARTIGO-O($target)} {$target} com {ARTIGO-O($stamp)} {$stamp}.
-paper-component-action-stamp-paper-self = Você carimbou o {ARTIGO-O($target)} {target} com {ARTIGO-O($stamp)} {$stamp}.
+paper-component-action-stamp-paper-self = Você carimbou {ARTIGO-O($target)} {$target} com {ARTIGO-O($stamp)} {$stamp}.
 
 paper-ui-save-button = Salvar ({$keybind})

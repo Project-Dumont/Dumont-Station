@@ -10,11 +10,17 @@ using Content.Client.UserInterface.Controls;
 using Content.Shared.BloodCult;
 //using Content.Shared.BloodCult.Prototypes;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Graphics;
+using Robust.Shared.Graphics.RSI;
+using Robust.Shared.IoC;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
 using System.Numerics;
 using Content.Shared.BloodCult.Components;
@@ -27,7 +33,8 @@ public sealed partial class RuneRadialMenu : RadialMenu
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
-    private readonly SpriteSystem _spriteSystem;
+    [Dependency] private readonly IResourceCache _resourceCache = default!;
+    private SpriteSystem _spriteSystem = default!;
 
 	public event Action<string>? SendRunesMessageAction;
 
@@ -35,8 +42,12 @@ public sealed partial class RuneRadialMenu : RadialMenu
 
     public RuneRadialMenu()
     {
-        IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
+    }
+
+    public void InitializeDependencies(IDependencyCollection dependencies)
+    {
+        dependencies.InjectDependencies(this);
         _spriteSystem = _entitySystem.GetEntitySystem<SpriteSystem>();
     }
 
@@ -62,8 +73,12 @@ public sealed partial class RuneRadialMenu : RadialMenu
 
         foreach (var rune in BloodCultRuneCarverComponent.ValidRunes)//runes)
 		{
-            //if (!_prototypeManager.TryIndex(ritual, out var ritualPrototype))
-            //    continue;
+            // Get the prototype name for the tooltip
+            var tooltipText = rune;
+            if (_prototypeManager.TryIndex<EntityPrototype>(rune, out var runePrototype))
+            {
+                tooltipText = runePrototype.Name;
+            }
 
 			if (rune != "TearVeilRune")
 			{
@@ -71,15 +86,15 @@ public sealed partial class RuneRadialMenu : RadialMenu
 				{
 					StyleClasses = { "RadialMenuButton" },
 					SetSize = new Vector2(64, 64),
-					ToolTip = rune,//Loc.GetString(ritualPrototype.LocName),
-					ProtoId = rune//ritualPrototype.ID
+					ToolTip = tooltipText,
+					ProtoId = rune
 				};
 
 				var texture = new TextureRect
 				{
 					VerticalAlignment = VAlignment.Center,
 					HorizontalAlignment = HAlignment.Center,
-					Texture = _spriteSystem.GetPrototypeIcon(rune).Default,
+					Texture = GetRuneIconTexture(rune),
 					TextureScale = new Vector2(2f, 2f)
 				};
 				button.AddChild(texture);
@@ -91,15 +106,15 @@ public sealed partial class RuneRadialMenu : RadialMenu
 				{
 					StyleClasses = { "RadialMenuButton" },
 					SetSize = new Vector2(96, 96),
-					ToolTip = rune,//Loc.GetString(ritualPrototype.LocName),
-					ProtoId = rune//ritualPrototype.ID
+					ToolTip = tooltipText,
+					ProtoId = rune
 				};
 
 				var texture = new TextureRect
 				{
 					VerticalAlignment = VAlignment.Center,
 					HorizontalAlignment = HAlignment.Center,
-					Texture = _spriteSystem.GetPrototypeIcon(rune).Default,
+					Texture = GetRuneIconTexture(rune),
 					TextureScale = new Vector2(1f, 1f)
 				};
 				button.AddChild(texture);
@@ -108,6 +123,32 @@ public sealed partial class RuneRadialMenu : RadialMenu
         }
 
         AddRuneButtonOnClickAction(main);
+    }
+
+    // All the runes have a -icon variant in the rsi, so we can just load the texture from the rsi
+    // TearVeilRune is special because it has a different rsi
+    private Texture GetRuneIconTexture(string rune)
+    {
+        var iconName = rune == "TearVeilRune" 
+            ? "narsierune-icon" 
+            : rune.Replace("Rune", "").ToLowerInvariant() + "-icon";
+        
+        var rsiPath = rune == "TearVeilRune"
+            ? "_Funkystation/Structures/BloodCult/narsierune.rsi"
+            : "_Funkystation/Structures/BloodCult/bloodrune.rsi";
+
+        // Load the RSI state properly instead of raw PNG
+        var fullRsiPath = SpriteSpecifierSerializer.TextureRoot / new ResPath(rsiPath);
+        if (_resourceCache.TryGetResource<RSIResource>(fullRsiPath, out var rsiResource))
+        {
+            if (rsiResource.RSI.TryGetState(iconName, out var state))
+            {
+                return state.Frame0;
+            }
+        }
+
+        // Fallback to prototype icon if RSI state not found
+        return _spriteSystem.GetPrototypeIcon(rune).Default;
     }
 
     private void AddRuneButtonOnClickAction(RadialContainer mainControl)

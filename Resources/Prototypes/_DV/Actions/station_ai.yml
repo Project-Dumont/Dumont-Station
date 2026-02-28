@@ -1,0 +1,224 @@
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Actions
+- type: entity
+  parent: BaseMentalAction
+  id: ActionStationAiOpenShop
+  name: Choose programs
+  description: Configure your installed programs
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: store
+  - type: InstantAction
+    event: !type:StationAiShopActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiRgbLighting
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: rgb_lighting
+    checkCanInteract: false
+    useDelay: 30
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      tags:
+      - LightFixture
+    event: !type:StationAiRgbLightingActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiLightSynthesizer
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: light_synthesizer
+    checkCanInteract: false
+    useDelay: 300
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      tags:
+      - LightFixture
+    event: !type:StationAiLightSynthesizerActionEvent
+      bulbPrototype: LightBulb
+      tubePrototype: LightTube
+
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiBikeHorn
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: bike_horn
+    checkCanInteract: false
+    useDelay: 60
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Holopad
+    event: !type:StationAiPlaySoundActionEvent
+      sound:
+        collection: BikeHorn
+        params:
+          variation: 0.125
+
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiHoloPointer
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: holopointer
+    checkCanInteract: false
+    useDelay: 15
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:StationAiSpawnEntityActionEvent
+      entity: StationAiHolopointer
+
+- type: entity
+  id: StationAiHolopointer
+  name: holopointer
+  description: A hologram projected by the station's AI to bring your attention to something.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: _DV/Objects/Misc/holopointer.rsi
+    state: target_circle
+  - type: TimedDespawn
+    lifetime: 15
+  - type: PointLight
+    enabled: true
+    radius: 1
+    color: red
+  - type: Clickable
+
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiHoloWarn
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: holowarn
+    checkCanInteract: false
+    useDelay: 15
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:StationAiSpawnEntityActionEvent
+      entity: StationAiHoloWarn
+
+- type: entity
+  id: StationAiHoloWarn
+  name: holowarn
+  description: A hologram projected by the station's AI to bring your attention to something.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: _DV/Objects/Misc/holopointer.rsi
+    state: target_box
+  - type: TimedDespawn
+    lifetime: 240
+  - type: PointLight
+    enabled: true
+    radius: 1
+    color: red
+  - type: Clickable
+
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiRepairNanites
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: nanites
+    checkCanInteract: false
+    useDelay: 120
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - BorgChassis
+    event: !type:StationAiHealthChangeActionEvent
+      damage:
+        groups:
+          Burn: -50
+          Brute: -50
+
+- type: entity
+  id: ActionStationAiEmergencySealant
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: emergency_sealant
+    checkCanInteract: false
+    useDelay: 300
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:StationAiSmokeActionEvent
+      duration: 10
+      spreadAmount: 10
+      smokePrototype: AluminiumMetalFoam
+
+- type: entity
+  id: ActionStationAiEmergencyResin
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: emergency_resin
+    checkCanInteract: false
+    useDelay: 300
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:StationAiSmokeActionEvent
+      duration: 10
+      spreadAmount: 10
+      smokePrototype: Resin
