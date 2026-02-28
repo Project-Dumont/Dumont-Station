@@ -65,7 +65,7 @@ SPDX-License-Identifier: MIT
 
   [bold]4.[/bold] Nenhuma arma deve ser empunhada até que o suspeito tente fugir ou se torne hostil;
 
-  [bold]5.[/bold] Oficiais de Segurança não podem exigir acesso ao interior de outros Departamentos durante patrulhas regulares. No entanto, pedir acesso extra ao Chefe de Pessoal é aceitável;
+  [bold]5.[/bold] Oficiais de Segurança não podem exigir acesso ao interior de outros Departamentos durante patrulhas regulares. No entanto, pedir acesso extra ao Chefe dos Funcionários é aceitável;
 
   [bold]6.[/bold] Oficiais de Segurança não têm permissão para patrulhar com armas empunhadas;
 
@@ -73,7 +73,7 @@ SPDX-License-Identifier: MIT
 
   [bold]8.[/bold] Oficiais de Segurança devem usar o uniforme conforme descrito nas Regras de Conduta da Segurança.
 
-  [bold]9.[/bold] Oficiais de Segurança são permitidos portar uma MK-58 e munição reserva. Essa arma deveria apensas ser utilizada para eliminar ameaças não protegidas pela lei espacial ou em caso de ameaça imediata a vida própria ou a de outros tripulantes. Cadetes são permitidos portar uma MK-58, mas apenas com munição de prática.
+  [bold]9.[/bold] Oficiais de Segurança são permitidos portar uma MK-58 e munição reserva. Essa arma deveria apenas ser utilizada para eliminar ameaças não protegidas pela lei espacial ou em caso de ameaça imediata a vida própria ou a de outros tripulantes. Cadetes são permitidos portar uma MK-58, mas apenas com munição de prática.
 
   ## Código Azul
 
@@ -147,9 +147,9 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] O Carcereiro não é obrigado a permitir julgamentos durante estados de emergência.
 
-  [bold]4.[/bold] O Carcereiro pode distribuir qualquer arma ou equipamento do Arsenal, incluindo o que for fornecido pelo Setor de Pesquisa. É recomendado abrir a armory para facilitar a distribuição de armas;
+  [bold]4.[/bold] O Carcereiro pode distribuir qualquer arma ou equipamento do Arsenal, incluindo o que for fornecido pelo Setor de Pesquisa. É recomendado abrir o Arsenal para facilitar a distribuição de armas;
 
-  [bold]5.[/bold] O Carcereiro tem permissão para abandonar seu posto e sair do Departamento de Segurança, mas deveria pedir permissão do Chefe de Segurança primeiro.
+  [bold]5.[/bold] O Carcereiro tem permissão para abandonar seu posto e sair do Departamento de Segurança, mas deverá pedir permissão do Chefe de Segurança.
 
   # Detetive
 
@@ -193,11 +193,11 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] O Clínico Brigadista pode portar uma MK-58 e munição reserva;
 
-  [bold]4.[/bold] O Clínico Brigadista pode trocar seu cinto de paramédico por um cinto de segurança, mas sempre deve portar equipamento médico suficiente para curar alguém em caso de emergência;
+  [bold]4.[/bold] O Clínico Brigadista pode trocar seu cinto de paramédico por um cinto de segurança, mas sempre deve portar equipamento médico suficiente para cuidar de alguém em caso de emergência;
 
   [bold]5.[/bold] O Clínico Brigadista deve seguir as mesmas diretrizes de uniforme dos Oficiais de Segurança, sendo seu uniforme designado igualmente aceitável;
 
-  [bold]6.[/bold] O Clínico Brigadista é permitido usar sua hardsuit exclusiva, mas não pode pegar uma hardsuit de segurança;
+  [bold]6.[/bold] O Clínico Brigadista é permitido usar sua hardsuit exclusiva e não pode pegar uma hardsuit de segurança;
 
   [bold]7.[/bold] O Clínico Brigadista é permitido portar qualquer equipamento médico que um paramédico é permitido portar, incluindo um monitorador de coordenadas portátil e desfibrilador.
 
@@ -215,7 +215,7 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] As diretrizes 2 e 3 são mantidas do [color=cyan]Código Azul[/color];
 
-  [bold]3.[/bold] O Clínico Brigadista deve se preparar a curar os membros do Departamento de Segurança enquanto lidam com a ameaça.
+  [bold]3.[/bold] O Clínico Brigadista deve se preparar a cuidar dos membros do Departamento de Segurança enquanto lidam com a ameaça.
 
   
 </Document>
