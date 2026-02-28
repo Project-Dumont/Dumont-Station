@@ -1,0 +1,26 @@
+
+- type: entity
+  parent: [ClothingHandsGlovesCombat, BaseSecurityContraband]
+  id: ClothingHandsGlovesX11
+  name: X-11 "Berserker"
+  description: Luvas elaboradamente feitas, utilizam nano-chips para ensinar Krav-Maga para o usuário, esteroides para aumentar a força física, permite abrir portas não energizadas, e possui alguns modos diferentes. Maneiras pra caralho.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+  - type: Item
+  - type: Clothing
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-red
+  - type: ClothingGrantComponent
+    component:
+    - type: KravMaga
+    component:
+    - type: Prying
+      pryPowered: false
+      force: true
+      speedModifier: 1.0
+  - type: GuideHelp
+    guides:
+    - KravMaga
+    
