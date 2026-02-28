@@ -9,9 +9,7 @@ SPDX-License-Identifier: MIT
 
   # Diretor de Pesquisa
 
-  ## Código Verde
-
-  [bold]1.[/bold] O Diretor de Pesquisa deve garantir que a pesquisa está sendo realizada. A pesquisa deve ser concluída até o final do turno, assumindo que o Setor de Ciência receba os materiais necessários do Setor de Carga;
+  [bold]1.[/bold] O Diretor de Pesquisa deve garantir que a pesquisa está sendo realizada.
 
   [bold]2.[/bold] O Diretor de Pesquisa tem permissão para portar um flash e seu Teletransportador Portátil;
 
@@ -25,21 +23,11 @@ SPDX-License-Identifier: MIT
 
   [bold]7.[/bold] O Diretor de Pesquisa deve manter um registro de todas as anomalias e eliminar quaisquer anomalias que possam representar perigo imediato aos membros da tripulação;
 
-  [bold]8.[/bold] O Diretor de Pesquisa deve garantir que as telecomunicações estejam devidamente mantidas.
+  [bold]8.[/bold] O Diretor de Pesquisa, junto com o Engenheiro Chefe deve garantir que as telecomunicações estejam devidamente mantidas.
 
-  ## Código Azul
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde.
-
-  ## Código Vermelho
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
-
-  [bold]2.[/bold] Além de um flash, o Diretor de Pesquisa tem permissão para portar uma única arma criada no Protolathe, desde que receba autorização do Chefe de Segurança. Uma exceção é feita durante emergências extremas;
+  [bold]9.[/bold] O Diretor de Pesquisa, junto com o Médico Chefe deve garantir que o Geneticista está seguindo o POP.
 
   # Cientista / Assistente de Pesquisa
-
-  ## Código Verde
 
   [bold]1.[/bold] Cientistas não têm permissão para levar artefatos para fora do Setor de Ciência sem o uso de um contêiner de artefato;
 
@@ -49,25 +37,11 @@ SPDX-License-Identifier: MIT
 
   [bold]4.[/bold] Cientistas devem entregar quaisquer animais usados em testes ao Chef após a conclusão dos testes;
 
-  [bold]5.[/bold] Cientistas não têm permissão para portar quaisquer armas geradas no Protolathe;
+  [bold]5.[/bold] Cientistas não devem ativar artefatos de Destruição da Estação ou explosão e devem destruí-los ou eliminá-los o mais rápido possível;
 
-  [bold]6.[/bold] Cientistas não têm permissão para distribuir quaisquer armas geradas no Protolathe, a menos que a arma em questão (por exemplo, Aceleradores Proto-Cinéticos) seja entregue ao departamento apropriado;
+  [bold]6.[/bold] Pelo menos um cientista deve estar disponível para receber solicitações de membros da tripulação na recepção do Setor de Ciência, se houver uma.
 
-  [bold]7.[/bold] Cientistas não devem ativar artefatos de Destruição da Estação e devem destruí-los ou eliminá-los o mais rápido possível;
-
-  [bold]8.[/bold] Pelo menos um cientista deve estar disponível para receber solicitações de membros da tripulação na recepção do Setor de Ciência, se houver uma.
-
-  ## Código Azul
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Verde;
-
-  [bold]2.[/bold] Cientistas têm permissão para produzir armas e granadas no Protolathe, desde que sejam entregues à Segurança.
-
-  ## Código Vermelho
-
-  [bold]1.[/bold] Todas as diretrizes permanecem válidas do Código Azul;
-
-  [bold]2.[/bold] Em relação à Diretriz 2 do Código Azul, cientistas podem se armar com uma única arma se a ameaça for considerada de destruição da estação.
+  [bold]7.[/bold] Cientistas não têm permissão para distribuir quaisquer explosivos gerados nos tornos, a menos que o objeto em questão (por exemplo, cargas químicas com químicos explosivos ao Departamento de Segurança) seja entregue ao departamento apropriado;
 
   # Cientista Roboticista
 

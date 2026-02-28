@@ -2067,3 +2067,25 @@ Entries:
       message: A máscara de gás SWAT agora modifica sua voz igual a dreadsuit.
   id: 252
   time: '2026-02-26T21:39:13.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Add
+      message: POP de Clínico Brigadista e Geneticista
+    - type: Tweak
+      message: Refinação do POP, removendo ou mudando partes que não faziam sentido
+  id: 253
+  time: '2026-02-28T13:12:11.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora a IA ganhou uma loja com habilidades simples.
+  id: 254
+  time: '2026-02-28T13:16:49.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas as mudanças do Goob até 28/02 (dê uma olhada na aba do
+        Goob)!
+  id: 255
+  time: '2026-02-28T14:16:42.0000000+00:00'

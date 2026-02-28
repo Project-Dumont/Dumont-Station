@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.Standing;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
@@ -250,7 +249,7 @@ public abstract partial class SharedStunSystem
 
         if (!Resolve(entity, ref entity.Comp2, false))
         {
-            TryKnockdown(entity.Owner, entity.Comp1.DefaultKnockedDuration, true, false, DropHeldItemsBehavior.NoDrop); // Goob - DropHeldItemsBehavior
+            TryKnockdown(entity.Owner, entity.Comp1.DefaultKnockedDuration, true, false, false); // Goob edit
             return;
         }
 
