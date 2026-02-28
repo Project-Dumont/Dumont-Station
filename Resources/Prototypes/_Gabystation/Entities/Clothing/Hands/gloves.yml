@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: [ ClothingHandsGlovesCombat, BaseSecurityContraband ]
+  parent: [ ClothingHandsGlovesCombat , BaseSecurityContraband ]
   id: ClothingHandsGlovesX11
   name: X-11 "Berserker"
   description: Luvas elaboradamente feitas, utilizam nano-chips para ensinar Krav-Maga para o usuário, esteroides para aumentar a força física, permite abrir portas não energizadas, e possui alguns modos diferentes. Maneiras pra caralho.
