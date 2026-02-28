@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: [ ClothingHandsGlovesCombat , BaseSecurityContraband ]
+  parent: [ ClothingHandsBase , BaseSecurityContraband ]
   id: ClothingHandsGlovesX11
   name: X-11 "Berserker"
   description: Luvas elaboradamente feitas, utilizam nano-chips para ensinar Krav-Maga para o usuário, esteroides para aumentar a força física, permite abrir portas não energizadas, e possui alguns modos diferentes. Maneiras pra caralho.
@@ -8,7 +8,9 @@
   - type: Sprite
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Item
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Clothing
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
     fiberColor: fibers-red
@@ -19,4 +21,68 @@
   - type: GuideHelp
     guides:
     - KravMaga
+  - type: Armor # Goob
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Shock: 0.75
+  - type: ItemSwitch
+    showLabel: true
+    state: energizada
+    states:
+      energizada: !type:ItemSwitchState
+        verb: energizada
+        sprite:
+          sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+          state: icon
+        components:
+          - type: MeleeWeapon
+            attackRate: 1
+            damage:
+              types:
+                Blunt: 12
+                Structural: 10
+            mustBeEquippedToUse: true
+            canWideSwing: false
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+            volume: -5
+
+      garras: !type:ItemSwitchState
+        verb: garras
+        sprite:
+          sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+          state: icon
+        components:
+          - type: MeleeWeapon
+            attackRate: 1.5
+            autoAttack: true
+            damage:
+              types:
+                Slash: 8
+                Structural: 3
+            mustBeEquippedToUse: true
+            soundHit:
+              path: /Audio/Weapons/bladeslice.ogg
+            canWideSwing: false
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+            
+      kravmaga: !type:ItemSwitchState
+        verb: kravmaga
+        sprite:
+          sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+          state: icon
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+    
+
     
