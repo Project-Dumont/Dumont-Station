@@ -9,8 +9,10 @@
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Item
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+    heldPrefix: energizada
   - type: Clothing
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+    equippedPrefix: energizada
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-black
@@ -59,7 +61,7 @@
         verb: garras
         sprite:
           sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
-          state: icon
+          state: icon-garras
         components:
           - type: MeleeWeapon
             attackRate: 1.5
@@ -81,7 +83,7 @@
         verb: kravmaga
         sprite:
           sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
-          state: icon
+          state: icon-kravmaga
         soundStateActivate:
           collection: sparks
           params:
