@@ -8,12 +8,10 @@
   - type: Sprite
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Item
-    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Clothing
-    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
   - type: Fiber
-    fiberMaterial: fibers-leather
-    fiberColor: fibers-red
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
   - type: ClothingGrantComponent
     component:
     - type: KravMaga
@@ -21,7 +19,7 @@
   - type: GuideHelp
     guides:
     - KravMaga
-  - type: Armor # Goob
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.9
@@ -83,6 +81,4 @@
           collection: sparks
           params:
             variation: 0.125
-    
-
     
