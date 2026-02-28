@@ -603,6 +603,16 @@
     state: icon
   content:
   - WeaponHeadOfSecurityRifle
+
+- type: selectableSet
+  id: HosGlovesSet
+  name: selectable-set-hos-gloves-name
+  description: selectable-set-hos-gloves-description
+  sprite:
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+    state: icon
+  content:
+  - ClothingHandsGlovesX11
   
 - type: selectableSet
   id: HosBallisticShotgunSet
