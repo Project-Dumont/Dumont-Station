@@ -38,25 +38,6 @@
     tags:
     - ClothMade
     - WhitelistChameleon # We do a little bit of trolling.
-  - type: Armor
-    coverage:
-    - Head
-    traumaDeductions:
-      Dismemberment: 0.3
-      OrganDamage: 0.3
-      BoneDamage: 0.3
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.75
-        Caustic: 0.75
-  - type: ExplosionResistance
-    damageCoefficient: 0.75
 
 - type: entity
   parent: [ClothingHeadBase, BaseCentcommContraband]
@@ -72,25 +53,6 @@
     tags:
     - ClothMade
     - WhitelistChameleon
-  - type: Armor
-    coverage:
-    - Head
-    traumaDeductions:
-      Dismemberment: 0.3
-      OrganDamage: 0.3
-      BoneDamage: 0.3
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.75
-        Caustic: 0.75
-  - type: ExplosionResistance
-    damageCoefficient: 0.75
 
 - type: entity
   parent: [ClothingHeadBase, BaseCentcommContraband]
@@ -106,25 +68,6 @@
     tags:
     - ClothMade
     - WhitelistChameleon
-  - type: Armor
-    coverage:
-    - Head
-    traumaDeductions:
-      Dismemberment: 0.3
-      OrganDamage: 0.3
-      BoneDamage: 0.3
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.75
-        Caustic: 0.75
-  - type: ExplosionResistance
-    damageCoefficient: 0.75
 
 - type: entity
   parent: [ClothingHeadBase, BaseCentcommContraband]
@@ -140,25 +83,6 @@
     tags:
     - ClothMade
     - WhitelistChameleon # We do a little bit of trolling.
-  - type: Armor
-    coverage:
-    - Head
-    traumaDeductions:
-      Dismemberment: 0.3
-      OrganDamage: 0.3
-      BoneDamage: 0.3
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.75
-        Caustic: 0.75
-  - type: ExplosionResistance
-    damageCoefficient: 0.75
 
 - type: entity
   parent: [ClothingHeadBase, BaseCentcommContraband]
@@ -174,25 +98,6 @@
     tags:
     - ClothMade
     - WhitelistChameleon
-  - type: Armor
-    coverage:
-    - Head
-    traumaDeductions:
-      Dismemberment: 0.3
-      OrganDamage: 0.3
-      BoneDamage: 0.3
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.75
-        Caustic: 0.75
-  - type: ExplosionResistance
-    damageCoefficient: 0.75
 
 - type: entity
   parent: [ClothingHeadBase, BaseFoldable, BaseCentcommContraband]
@@ -218,25 +123,6 @@
     - state: icon-up
       map: ["foldedLayer"]
       visible: false
-  - type: Armor
-    coverage:
-    - Head
-    traumaDeductions:
-      Dismemberment: 0.3
-      OrganDamage: 0.3
-      BoneDamage: 0.3
-      VeinsDamage: 0
-      NerveDamage: 0
-    modifiers:
-      coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.75
-        Caustic: 0.75
-  - type: ExplosionResistance
-    damageCoefficient: 0.75
 
 - type: entity
   parent: ClothingHeadBase
@@ -420,3 +306,14 @@
   - type: ClothingGrantComponent
     component:
       - type: PossessionImmune
+
+- type: entity
+  parent: ClothingHeadHatCentcomcap
+  id: ClothingHeadHatOuterCommandcap
+  name: outer command cap
+  description: Purple gilded cap with Terra-Gov insignia.
+  components: 
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/outcommcap.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/outcommcap.rsi

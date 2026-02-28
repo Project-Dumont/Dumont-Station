@@ -1,5 +1,5 @@
 lube-success = { CAPITALIZE(ARTIGO-O($target)) } { $target } foi { MAKEGENERO("coberto", $target) } de lubrificante!
-lubed-name-prefix = { $target } { MAKEGENERO("lubrificado", $target) }
+lubed-name-prefix = { $baseName } { MAKEGENERO("lubrificado", $baseName) }
 lube-failure = Não é possível cobrir { ARTIGO-O($target) } { $target } com lubrificante!
 lube-slip = { CAPITALIZE(ARTIGO-O($target)) } { $target } escorrega das suas mãos!
 lube-verb-text = Aplicar lubrificante

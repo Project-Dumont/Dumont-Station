@@ -217,6 +217,7 @@
     tags:
     - WallLight
     - WallMount
+    - LightFixture
   placement:
     mode: SnapgridCenter
     snap:

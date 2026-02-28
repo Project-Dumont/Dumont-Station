@@ -128,8 +128,9 @@
           type: Bloodsucker
         damage:
           groups:
-            Brute: -3
-            Burn: -1.25
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
   plantMetabolism:
     - !type:PlantAdjustWater
       amount: 0.5
@@ -148,6 +149,18 @@
   color: "#808A51"
   recognizable: true
   physicalDesc: reagent-physical-desc-slimy
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
 
 - type: reagent
   id: Slime
@@ -167,6 +180,17 @@
       effects:
       - !type:SatiateHunger
         factor: 1
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
   footstepSound:
     collection: FootstepSlime # makes sense
     params:
@@ -192,6 +216,17 @@
         factor: 1
       - !type:SatiateThirst
         factor: 1
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
   footstepSound:
     collection: FootstepSlime
     params:
@@ -207,6 +242,18 @@
   color: "#162581"
   recognizable: true
   physicalDesc: reagent-physical-desc-metallic
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
 
 - type: reagent
   parent: Blood
@@ -218,6 +265,18 @@
   color: "#7a8bf2"
   recognizable: true
   physicalDesc: reagent-physical-desc-pungent
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
 
 - type: reagent
   id: ZombieBlood
@@ -233,6 +292,17 @@
       effects:
       - !type:SatiateThirst
         factor: -0.5
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -2.25
+            Burn: -0.50
+            Toxin: -0.10
     Poison:
       effects:
       - !type:HealthChange
@@ -249,6 +319,38 @@
           type: Yowie
           shouldHave: false
         probability: 0.25
+
+- type: reagent
+  parent: Blood
+  id: SanguinePerniculate
+  name: reagent-name-sanguine-perniculate
+  group: Biological
+  desc: reagent-desc-sanguine-perniculate
+  physicalDesc: reagent-physical-desc-profane
+  flavor: forbidden
+  color: "#660000"
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.5
+    Poison:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+          shouldHave: false
+        damage:
+          types:
+            Poison: 2
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
 
 - type: reagent
   id: Ichor

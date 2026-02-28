@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: CratePlastic
+  id: CrateGenericEmergencyCompactPod
+  name: emergency compact pod
+  description: Compact two-person emergency craft designed for rapid zero-gravity transport. Fully sealed with internal O2 supply and thermal protection, it excels in space but performs poorly under gravity.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: SpaceBuoyBattery
+        - id: MechEquipmentRecycler

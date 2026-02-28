@@ -59,6 +59,7 @@ public enum StationEventMusicType : byte
     VoidAscended, // GoobStation - Heretics
     ShadowLing, // goob - shadowlings
     Doomsday, // Funkystation - Malf AI Doomsday Protocol
+    BloodCult, // Funky - Blood Cult Final Ritual
 }
 
 /// <summary>

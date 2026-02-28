@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: cargoProduct
+  id: EmergencySpaceBuoy
+  icon:
+    sprite: _Gabystation/Objects/Specific/Mech/SpaceBuoy.rsi
+    state: icon
+  product: CrateGenericEmergencyCompactPod
+  cost: 10000
+  category: cargoproduct-category-name-emergency
+  group: market
