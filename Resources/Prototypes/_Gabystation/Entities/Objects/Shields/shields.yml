@@ -1,7 +1,7 @@
 
 - type: entity
   name: X-15 "Protector"
-  parent: [BaseItem, ClothingSlotBase, BaseCentcommContraband]
+  parent: [BaseItem, ClothingSlotBase, BaseCommandContraband]
   id: RedShield
   description: An elaborately designed energy shield, custom made to fit perfectly in the X-Holster. Not self-recharging; Use a recharger.
   components:
@@ -93,6 +93,7 @@
       tags:
       - FitsInCharger
       - HosShield
+
 
 
 
