@@ -224,7 +224,12 @@
     state: pen_centcom
   - type: Item
     heldPrefix: pen_centcom
-
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Piercing: 13
+        
 - type: entity
   name: captain's fountain pen
   # Goobstation - Return pen embeddability
