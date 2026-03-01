@@ -17,12 +17,12 @@
     head: ClothingHeadHatWitch1
 
 - type: loadout
-  id: BrownFedora
+  id: BrownFedoraOffBrand
   equipment:
     head: ClothingHeadHatFedoraBrownOffBrand
 
 - type: loadout
-  id: GreyFedora
+  id: GreyFedoraOffBrand
   equipment:
     head: ClothingHeadHatFedoraGreyOffBrand
 
