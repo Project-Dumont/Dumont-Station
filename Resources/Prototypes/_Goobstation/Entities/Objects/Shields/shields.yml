@@ -38,6 +38,10 @@
       quickEquip: false
       slots:
       - Belt
+      - suitStorage
+      #clothingVisuals:
+        #suitstorage:
+        #- state: equipped-BACKPACK 
     - type: ComponentToggler
       components:
       - type: DisarmMalus
