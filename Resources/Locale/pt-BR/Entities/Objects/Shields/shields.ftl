@@ -21,3 +21,6 @@ ent-ClockworkShield = Clockwork Shield
 
 ent-MirrorShield = Escudo Espelhado
      .desc = Brilha estranhamente em vermelho... você ouve o geômetra sussurrando
+
+ent-RedShield = X-15 "Protector"
+     .desc = Um escudo de energia elaboradamente feito, para ser utilizado em conjunto com a X-16. Não autorecarregável.
