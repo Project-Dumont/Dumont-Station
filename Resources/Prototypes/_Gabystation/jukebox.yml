@@ -663,7 +663,8 @@
     path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg
 
 - type: jukebox
-  id: FranguinhoNaPanela
+  id: frangonapanela
   name: Franguinho Na Panela - Moacyr dos Santos & Paraíso
   path:
     path: /Audio/_Gabystation/Jukebox/franguinho_na_panela.ogg    
+
