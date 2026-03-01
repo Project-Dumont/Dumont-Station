@@ -3,7 +3,7 @@
   parent: [ ClothingHandsBase , BaseSecurityContraband ]
   id: ClothingHandsGlovesX11
   name: X-11 "Berserker"
-  description: Luvas elaboradamente feitas, utilizam nano-chips para ensinar Krav-Maga para o usuário, esteroides para aumentar a força física, permite abrir portas não energizadas, e possui alguns modos diferentes. Maneiras pra caralho.
+  description: Elaborately designed gloves, utilizing nano-chips to teach krav-maga to the user, steroids to increase physical strength to permit opening unpowered doors with ease, and has a couple different modes. Cool as hell.
   components:
   - type: Sprite
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
