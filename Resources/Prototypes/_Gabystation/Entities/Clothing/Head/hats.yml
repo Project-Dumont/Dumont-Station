@@ -56,7 +56,7 @@
   parent: [ClothingHeadBase] # Goob edit
   id: ClothingHeadHatFedoraGreyOffBrand
   name: off-brand grey fedora
-  description: A grey fedora. This one seems to bee lower quality than what you can usually find.
+  description: A grey fedora. This one seems to be lower quality than what you can usually find.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/greyfedora.rsi
