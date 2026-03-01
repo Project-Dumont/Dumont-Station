@@ -1,0 +1,6 @@
+
+- type: soundCollection
+  id: StompHos
+  files:
+  - /Audio/_Gabystation/Effects/Footsteps/step_hosstomp1.ogg
+  - /Audio/_Goobstation/Effects/Footsteps/step_hosstomp2.ogg
