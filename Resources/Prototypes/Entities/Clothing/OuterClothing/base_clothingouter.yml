@@ -322,8 +322,8 @@
   - type: TemperatureProtection
     heatingCoefficient: 0.01
     coolingCoefficient: 0.01
-  - type: FireProtection # EE Plasmeme Change
-    reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
+  - type: FireProtection 
+    reduction: 0.50 
   - type: IgniteFromGasImmunity
     parts:
     - Chest
