@@ -3,7 +3,7 @@
   name: X-16 'Justice'
   parent: [BaseItem, BaseGrandTheftContraband]
   id: X16Justice
-  description: An expensive & self-recharging energy sword, designed specifically for the Head of Security. If it were not for injustice, man would not know justice.
+  description: Uma espada elaboradamente feita, possui vários modos diferentes. Se não fosse pela injustiça, não conheceriamos justiça.
   components:
   - type: Item
     sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
@@ -147,7 +147,7 @@
           attackRate: 1.5
           damage:
             types:
-              Slash: 6
+              Slash: 7 #Gaby pra ser igual a o sabre do capitão em DPS.
               Heat: 12
             woundSeverityMultipliers:
               Slash: 2
@@ -190,3 +190,4 @@
           collection: sparks
           params:
             variation: 0.250
+
