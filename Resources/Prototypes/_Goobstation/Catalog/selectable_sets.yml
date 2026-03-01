@@ -624,6 +624,7 @@
   content:
   - X16Justice
   - RedShield
+  - ClothingBeltSheathHeadOfSecurity
   
 - type: selectableSet
   id: HosBallisticShotgunSet
