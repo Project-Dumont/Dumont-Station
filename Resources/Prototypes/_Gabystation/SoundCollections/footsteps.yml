@@ -1,6 +1,6 @@
 
 - type: soundCollection
-  id: StompHos
+  id: ArmorBoot
   files:
-  - /Audio/_Gabystation/Effects/Footsteps/hosstomp1.ogg
-  - /Audio/_Gabystation/Effects/Footsteps/hosstomp2.ogg
+  - /Audio/_Gabystation/Effects/Footsteps/armorboot1.ogg
+  - /Audio/_Gabystation/Effects/Footsteps/armorboot2.ogg
