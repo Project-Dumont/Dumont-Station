@@ -28,3 +28,8 @@ selectable-set-hos-gloves-description =
     Luvas elaboradamente feitas, com Nano-chips de krav-maga.
     Para aqueles que querem trazer a justiça com as mãos.
 
+selectable-set-hos-justice-name = X-15+X-16 "Justice Protector"
+selectable-set-hos-justice-description =
+    Um kit incluindo um escudo de energia, uma bainha e uma espada senciente.
+    Seja o protetor da justiça.
+
