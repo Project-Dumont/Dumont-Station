@@ -111,7 +111,7 @@
         Piercing: 0.9
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: StompHos
+      collection: StompHos # Gaby Mr X walking sound effects. É chamada de stomphos pois eu ia originalmente fazer isso apenas para as advanced jackboots, mas alguem deu a sugestão de fazer ela pras uma armadura especifica.
 
 - type: entity
   parent: ClothingShoesBase
