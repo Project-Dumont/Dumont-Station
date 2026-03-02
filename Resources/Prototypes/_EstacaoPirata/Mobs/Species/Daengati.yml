@@ -18,8 +18,10 @@
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
+    - Gruntish
     understands:
     - TauCetiBasic
+    - Gruntish
   - type: HumanoidAppearance
     species: Daengati
   - type: MeleeWeapon
@@ -29,19 +31,27 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 3.5
-        Heat: 2
+        Slash: 3
+        Heat: 3
+  - type: Cautery
+    speed: 0.1
+  - type: Flammable
+    damage:
+      types:
+        Heat: 0.5 # Fogo é o ponto forte desses diabinhos, mais difícil de pegar fogo.
   - type: Temperature
-    heatDamageThreshold: 500
-    coldDamageThreshold: 270
-    currentTemperature: 310.15
-    specificHeat: 42
+    heatDamageThreshold: 600
+    coldDamageThreshold: 273
+    currentTemperature: 324.58
+    specificHeat: 51.43
     coldDamage:
       types:
-        Cold : 0.4 #o padrão é 0.1
+        Cold : 0.5 #o padrão é 0.1
     heatDamage:
       types:
-        Heat : 0.5 #O padrão é 1.5
+        Heat : 0.4 #O padrão é 1.5
+  - type: FireProtection
+    reduction: 0.5 # Por conta de shitcode, isso aqui não é incluso na proteção contra fogo.
   - type: Damageable
     damageModifierSet: Daengati
   - type: Body
