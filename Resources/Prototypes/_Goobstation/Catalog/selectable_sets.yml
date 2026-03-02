@@ -619,7 +619,7 @@
   name: selectable-set-hos-justice-name
   description: selectable-set-hos-justice-description
   sprite:
-    sprite: _Goobstation/Objects/shields/protector.rsi
+    sprite: _Gabystation/Objects/shields/protector.rsi
     state: icon
   content:
   - RedShield
