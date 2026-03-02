@@ -256,7 +256,7 @@
     modifiers:
       coefficients:
         Blunt: 0.50
-        Slash: 0.50
+        Slash: 0.45
         Piercing: 0.45
         Heat: 0.5
         Caustic: 0.25
