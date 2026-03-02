@@ -39,7 +39,7 @@
       quickEquip: false
       slots:
       - Belt
-      - suitStorage
+      - suitStorage # Gabystation
       clothingVisuals:
         suitstorage:
             - state: equipped-BACKPACK
@@ -69,7 +69,7 @@
         right:
           - state: inhand-right-on
             shader: unshaded
-      clothingVisuals:
+      clothingVisuals: # Gabystation
         suitstorage:
           - state: equipped-BACKPACK-on
             shader: unshaded
