@@ -31,6 +31,9 @@
       slots:
       - Belt
       - suitstorage
+      clothingVisuals:
+        suitstorage:
+            - state: equipped-BACKPACK
     - type: ComponentToggler
       components:
       - type: DisarmMalus
@@ -57,6 +60,9 @@
         right:
           - state: inhand-right-on
             shader: unshaded
+      clothingVisuals:
+        suitstorage:
+            - state: equipped-BACKPACK-ON
     - type: PointLight
       netsync: false
       enabled: false
