@@ -34,11 +34,11 @@
         Slash: 3
         Heat: 3
   - type: Cautery
-    speed: 0.1 # Quase certeza que não é o melhor jeito de fazer, mas coloquei a habilidade de cauterizar bem lentamente com as garras, for the funnies.
+    speed: 0.1 # Gabystation | Quase certeza que não é o melhor jeito de fazer, mas coloquei a habilidade de cauterizar bem lentamente com as garras, for the funnies.
   - type: Flammable
     damage:
       types:
-        Heat: 0.5 # Fogo é o ponto forte desses diabinhos, mais difícil de pegar fogo.
+        Heat: 0.5 # Gabystation | Fogo é o ponto forte desses diabinhos, mais difícil de pegar fogo.
   - type: Temperature
     heatDamageThreshold: 600
     coldDamageThreshold: 273
@@ -46,18 +46,18 @@
     specificHeat: 51.43
     coldDamage:
       types:
-        Cold : 0.5 #o padrão é 0.1
+        Cold : 0.4 #o padrão é 0.1
     heatDamage:
       types:
-        Heat : 0.4 #O padrão é 1.5
+        Heat : 0.5 #O padrão é 1.5
   - type: FireProtection
-    reduction: 0.5 # Por conta de shitcode, isso aqui não é incluso na proteção contra fogo.
+    reduction: 0.5 # Gabystation | Por conta de shitcode, isso aqui não é incluso na proteção contra fogo.
   - type: Damageable
     damageModifierSet: Daengati
   - type: Body
     prototype: Daengati
   - type: TypingIndicator
-    proto: oni #Mudar apos adicionar indicador de escrita de daengati
+    proto: daengati #Mudar apos adicionar indicador de escrita de daengati # Gabystation | Variante baseada no indicador de oni.
   - type: Tag
     tags:
     - CanPilot

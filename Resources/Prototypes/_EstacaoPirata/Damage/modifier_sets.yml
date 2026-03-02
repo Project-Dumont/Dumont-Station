@@ -1,6 +1,6 @@
 - type: damageModifierSet
   id: Daengati
   coefficients:
-    Heat: 0.5
-    Cold: 1.4
+    Heat: 0.5 # Gabystation
+    Cold: 1.4 # Gabystation
     Piercing: 1.15
