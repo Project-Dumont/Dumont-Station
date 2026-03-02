@@ -7,7 +7,7 @@
   name: X-15 "Protector"
   parent: [BaseItem, ClothingSlotBase, BaseCommandContraband]
   id: RedShield
-  description: An elaborately designed energy shield, custom made to fit perfectly in the X-Holster. Not self-recharging; Use a recharger.
+  description: An elaborately designed energy shield.
   components:
     - type: ContainerContainer
     - type: ItemToggle
@@ -62,7 +62,7 @@
             shader: unshaded
       clothingVisuals:
         suitstorage:
-            - state: equipped-BACKPACK-ON
+            - state: equipped-BACKPACK-on
     - type: PointLight
       netsync: false
       enabled: false
