@@ -174,7 +174,6 @@
         - SolutionTransfer
         - GunApplySolution # Dart gun
 
-
 - type: entity
   parent: ClothingBeltSheath
   id: ClothingBeltSheathHeadOfSecurity
@@ -190,7 +189,7 @@
     size: Ginormous
   - type: ItemSlots
     slots:
-      sabre_slot:
+      item:
         name: Sabre
         insertVerbText: sheath-insert-verb
         ejectVerbText: sheath-eject-verb
@@ -199,15 +198,6 @@
         whitelist:
           tags:
           - Justice
-      shield_slot:
-        name: Escudo
-        insertVerbText: sheath-insert-verb
-        ejectVerbText: sheath-eject-verb
-        insertSound: /Audio/Items/sheath.ogg
-        ejectSound: /Audio/Items/unsheath.ogg
-        whitelist:
-          tags:
-          - HosShield      
   - type: ItemMapper
     mapLayers:
       sheath-sabre:
