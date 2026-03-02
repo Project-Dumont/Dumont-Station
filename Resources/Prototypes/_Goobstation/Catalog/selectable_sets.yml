@@ -615,16 +615,14 @@
   - ClothingHandsGlovesX11
 
 - type: selectableSet
-  id: HosJusticeSet
+  id: HosShieldSet
   name: selectable-set-hos-justice-name
   description: selectable-set-hos-justice-description
   sprite:
-    sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
+    sprite: _Goobstation/Objects/shields/protector.rsi
     state: icon
   content:
-  - X16Justice
   - RedShield
-  - ClothingBeltSheathHeadOfSecurity
   
 - type: selectableSet
   id: HosBallisticShotgunSet
