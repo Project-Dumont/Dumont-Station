@@ -620,7 +620,7 @@
   description: selectable-set-hos-justice-description
   sprite:
     sprite: _Gabystation/Objects/shields/protector.rsi
-    state: icon
+    state: icon-on
   content:
   - RedShield
   
