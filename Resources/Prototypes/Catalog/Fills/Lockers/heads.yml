@@ -550,6 +550,7 @@
     - id: RubberStampHos
     - id: SecurityTechFabCircuitboard
     #- id: WeaponDisabler # Goobstation (Disablers in belts)
+    - id: ClothingBeltSheathHeadOfSecurityFilled
     - id: ComputerCargoRequestSecurityFlatpack # Goobstation
     - id: WantedListCartridge
     - id: DrinkHosFlask
