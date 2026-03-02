@@ -30,6 +30,7 @@
       quickEquip: false
       slots:
       - Belt
+      - suitstorage
     - type: ComponentToggler
       components:
       - type: DisarmMalus
@@ -61,10 +62,10 @@
       enabled: false
       radius: 1.5
       energy: 0.7
-      color: "#678AD9"
+      color: "#e83c42"
     - type: ItemTogglePointLight
     - type: Blocking
-      passiveBlockFraction: 0.5
+      passiveBlockFraction: 0.55
       passiveBlockModifier:
         coefficients:
           Blunt: 3
