@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: technology
+  id: CompactPod
+  name: research-technology-compact-pod
+  icon:
+    sprite: _Gabystation/Objects/Specific/Mech/SpaceBuoy.rsi
+    state: icon
+  discipline: Industrial
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+    - SpaceBuoyRecipe
+    - MechEquipmentRecycler
+  position: -3,-5
+  technologyPrerequisites:
+  - AdvancedAtmospherics

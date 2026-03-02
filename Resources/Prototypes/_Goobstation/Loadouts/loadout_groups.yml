@@ -900,6 +900,7 @@
   - NanotrasenRepresentativeBowler
   - NanotrasenRepresentativeOutlaw
   - NanotrasenRepresentativeMAA
+  - NanotrasenRepresentativeBlackCap # Andromeda
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeNeck
@@ -909,6 +910,7 @@
   - ClothingNeckScarfStripedCentcom
   - NanotrasenRepresentativeEnsemble
   - ClothingCloakBoatNT
+  - NanotrasenRepresentativeBlackCloak # Andromeda
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeBackpack

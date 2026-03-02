@@ -195,7 +195,7 @@
     - id: SleeperAgents
     - id: HereticMidround # Gabystation
     - id: CosmicCultMidround # Gabystation
-    # - id: BloodCultMidround # Gabystation
+    - id: BloodCultMidround # Gabystation
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn

@@ -36,6 +36,7 @@
       whitelist:
         components:
         - Crawler
+        - KnockedDown
     # Goob end
   action:
     !type:ComplexAction

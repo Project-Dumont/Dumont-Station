@@ -98,33 +98,34 @@
   levels:
     green:
       announcement: alert-level-green-announcement
+      sound: /Audio/_Gabystation/Misc/alerta_verde_saae.ogg
       color: Green
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
-      sound: /Audio/Misc/bluealert.ogg
+      sound: /Audio/_Gabystation/Misc/azul_saae.ogg
       color: DodgerBlue
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue
       shuttleTime: 600
     violet:
       announcement: alert-level-violet-announcement
-      sound: /Audio/Misc/notice1.ogg
+      sound: /Audio/_Gabystation/Misc/violeta_saae.ogg
       color: Violet
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
-      sound: /Audio/Misc/notice1.ogg
+      sound: /Audio/_Gabystation/Misc/amarelo_saae.ogg
       color: Yellow
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/Misc/redalert.ogg
+      sound: /Audio/_Gabystation/Misc/vermelho_saae.ogg
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -133,7 +134,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/gamma.ogg
+        path: /Audio/_Gabystation/Misc/gamma_saae.ogg
         params:
           volume: -2
       disableSelection: true
@@ -144,7 +145,7 @@
       announcement: alert-level-delta-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/delta.ogg
+        path: /Audio/_Gabystation/Misc/delta_saae.ogg
         params:
           volume: -3
       disableSelection: true
@@ -156,7 +157,7 @@
       announcement: alert-level-epsilon-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/epsilon.ogg
+        path: /Audio/_Gabystation/Misc/epsilon_saae.ogg
         params:
           volume: -2
       disableSelection: true
@@ -187,7 +188,7 @@
       #announcement: alert-level-martial-announcement
       selectable: false
       sound:
-        path: /Audio/_Gabystation/Announcements/Alerts/martial_law.ogg
+        path: /Audio/_Gabystation/Announcements/Alerts/lei_marcial_saae.ogg
         params:
           volume: 7      # positive raises loudness; verify it does not clip
       disableSelection: true
@@ -197,7 +198,7 @@
       shuttleTime: 1200
     cyan:
       announcement: alert-level-cyan-announcement
-      sound: /Audio/Misc/cyan.ogg
+      sound: /Audio/_Gabystation/Misc/ciano_saae2.ogg
       color: Cyan
       emergencyLightColor: Cyan
       forceEnableEmergencyLights: true
@@ -205,7 +206,7 @@
     doomsday:
       announcement: alert-level-doomsday-announcement
       selectable: false
-      sound: /Audio/Misc/delta_alt.ogg
+      sound: /Audio/_Gabystation/Misc/doomsday_saae.ogg
       color: DarkRed
       disableSelection: true
       emergencyLightColor: DarkRed

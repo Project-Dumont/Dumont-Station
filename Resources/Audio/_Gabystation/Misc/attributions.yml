@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["alerta_verde_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["azul_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["amarelo_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["violeta_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["vermelho_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["gamma_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["epsilon_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["delta_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["doomsday_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["ciano_saae2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"

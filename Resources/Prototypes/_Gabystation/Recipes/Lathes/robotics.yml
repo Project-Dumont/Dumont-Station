@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: SpaceBuoyRecipe
+  result: SpaceBuoyConstruction
+  categories:
+  - Robotics
+  completetime: 12
+  materials:
+    Steel: 1500
+    Plasteel: 1200
+
+- type: latheRecipe
+  id: MechEquipmentRecycler
+  result: MechEquipmentRecycler
+  categories:
+  - MechEquipment
+  completetime: 10
+  materials:
+    Steel: 800

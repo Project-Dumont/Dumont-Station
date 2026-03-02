@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloaksNanotrasenRepresentative
+  name: Nanotrasen representative official cloak
+  description: Showcase bureaucracy's superiority in great style.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Neck/Cloaks/rnt.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak

@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MechEquipmentRecycler
+  parent: BaseMechEquipment
+  name: mech air recycler
+  description: An atmospheric recycler that uses the mech's internal battery to synthesize oxygen and scrub toxins.
+  components:
+  - type: Sprite
+    state: mecha_radio
+  - type: MechEquipment
+    installDuration: 6
+  - type: AtmosDevice
+  - type: MechAirRecycler
+    energyCost: 5.0
+    # targetOxygen: 25
