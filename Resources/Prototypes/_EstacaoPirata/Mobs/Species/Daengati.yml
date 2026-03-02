@@ -34,7 +34,7 @@
         Slash: 3
         Heat: 3
   - type: Cautery
-    speed: 0.1
+    speed: 0.1 # Quase certeza que não é o melhor jeito de fazer, mas coloquei a habilidade de cauterizar bem lentamente com as garras, for the funnies.
   - type: Flammable
     damage:
       types:
