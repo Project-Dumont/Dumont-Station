@@ -7,7 +7,7 @@
   name: X-16 'Justice'
   parent: [BaseItem, BaseGrandTheftContraband]
   id: X16Justice
-  description: Uma espada elaboradamente feita, possui vários modos diferentes. Se não fosse pela injustiça, não conheceriamos justiça.
+  description: Uma espada elaboradamente feita, possui vários modos diferentes. Se não fosse pela injustiça, não conheceríamos justiça.
   components:
   - type: Item
     sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
