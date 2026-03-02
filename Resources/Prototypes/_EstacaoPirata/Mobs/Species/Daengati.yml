@@ -40,10 +40,10 @@
       types:
         Heat: 0.5 # Gabystation | Fogo é o ponto forte desses diabinhos, mais difícil de pegar fogo.
   - type: Temperature
-    heatDamageThreshold: 600
-    coldDamageThreshold: 273
-    currentTemperature: 324.58
-    specificHeat: 51.43
+    heatDamageThreshold: 600 # Gabystation
+    coldDamageThreshold: 273 # Gabystation
+    currentTemperature: 324.58 # Gabystation
+    specificHeat: 51.43 # Gabystation
     coldDamage:
       types:
         Cold : 0.4 #o padrão é 0.1
