@@ -2611,6 +2611,7 @@
   components:
   - type: VendingMachine
     pack: TankDispenserEVAInventory
+    paidItems: false # GabyStation -> Economy    
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
     state: dispenser
