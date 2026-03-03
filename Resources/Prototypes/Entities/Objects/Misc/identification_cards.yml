@@ -234,7 +234,6 @@
   - type: Access
     tags:
     - GenpopEnter
-  - type: GenpopIdCard
   - type: IdCard
     jobTitle: job-name-prisoner
     jobIcon: JobIconPrisoner
