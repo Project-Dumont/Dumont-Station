@@ -1,0 +1,18 @@
+# Gabystation
+
+# Captain sabre bundle | Add new swords here.
+
+- type: entity
+  id: CaptainSabreUndetermined
+  name: Sabre Box
+  description: A ornate box utilizing bluespace technology to drop in a weapon from the arsenal of officer blades. Choose wisely.
+  parent: [ BaseItem, BaseSetSelector, BaseCommandContraband ]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Security/captainundetermined.rsi
+    state: icon
+  - type: SetSelector
+    possibleSets:
+    - CaptainSabreSet
+    - CaptainRosethornSet
+    maxSelectedSets: 1

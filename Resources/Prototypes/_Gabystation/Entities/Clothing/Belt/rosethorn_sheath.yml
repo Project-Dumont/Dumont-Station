@@ -1,8 +1,10 @@
+# Gabystation
+
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
   id: ClothingBeltSheathRosethorn
   name: rosethorn blade sheath
-  description: An refined sheath, to hold an refined rose's blade.'
+  description: An refined sheath, to hold an refined rose's blade.
   components:
   - type: Sprite
     sprite: _Gabystation/Clothing/Belt/rosethorn_sheath.rsi
