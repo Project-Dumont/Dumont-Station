@@ -10,6 +10,6 @@
         !type:String
         harmony-pda-prisoner
   - type: Pda
-    id: PrisonerIDCard
+    id: IDCard
   - type: Icon
     state: harmony-pda-prisoner
