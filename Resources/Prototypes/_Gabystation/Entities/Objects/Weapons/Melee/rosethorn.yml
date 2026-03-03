@@ -1,3 +1,4 @@
+# Gabystation
 - type: entity
   name: rosethorn blade
   parent: [ BaseSword, BaseCommandContraband ]
@@ -18,7 +19,7 @@
       types:
         Slash: 15
       woundSeverityMultipliers:
-        Slash: 1.75
+        Slash: 1.5
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -31,8 +32,10 @@
     tags:
     - CaptainSabre # Change later.
   - type: Reflect
-    reflectProb: 0.5
+    reflectProb: 0.25
     spread: 90
-  - type: BleedInflicter
-  - type: PainInflicter
   - type: DisarmMalus
+    malus: 0.50
+  - type: BackStab # In case you want a nerf, this is your component.
+    damageMultiplier: 1.20
+    tolerance: 30
