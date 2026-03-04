@@ -40,6 +40,6 @@
     spread: 90
   - type: DisarmMalus
     malus: 0.50
-  - type: BackStab # In case you want a nerf, this is your component.
-    damageMultiplier: 1.20
-    tolerance: 30
+  #- type: BackStab # In case you want a nerf, this is your component.
+  #  damageMultiplier: 1.20
+  #  tolerance: 30
