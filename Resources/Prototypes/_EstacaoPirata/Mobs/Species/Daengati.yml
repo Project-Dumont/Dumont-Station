@@ -42,7 +42,7 @@
   - type: Temperature
     heatDamageThreshold: 600 # Gabystation
     coldDamageThreshold: 273 # Gabystation
-    currentTemperature: 320 # Gabystation
+    currentTemperature: 315.15
     specificHeat: 42
     coldDamage:
       types:
