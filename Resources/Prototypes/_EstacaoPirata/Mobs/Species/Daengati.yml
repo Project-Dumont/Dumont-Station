@@ -50,9 +50,6 @@
     heatDamage:
       types:
         Heat : 0.5 #O padrão é 1.5
-  - type: FireProtection
-    reduction: 0.4 # Gabystation | Por conta de shitcode, isso aqui não é incluso na proteção contra fogo.
-  - type: Damageable
     damageModifierSet: Daengati
   - type: Body
     prototype: Daengati
