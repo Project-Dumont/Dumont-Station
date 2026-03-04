@@ -116,6 +116,8 @@ using Content.Shared._Starlight.CustomObjectiveSummary;
 using Content.Shared.Station.Components;
 using Content.Server.Parallax;
 using Content.Shared.Parallax.Biomes;
+using Content.Server.Procedural;
+using Robust.Shared.Map;
 // Starlight End
 
 namespace Content.Server.Shuttles.Systems;
@@ -149,8 +151,10 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     // Starlight Start
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly BiomeSystem _biomes = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
     // Starlight End
 
     private const float ShuttleSpawnBuffer = 1f;

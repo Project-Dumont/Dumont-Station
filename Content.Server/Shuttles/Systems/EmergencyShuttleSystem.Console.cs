@@ -78,6 +78,17 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
+// Starlght Start
+using Robust.Shared.Random;
+using Content.Server.Parallax;
+using Content.Shared.Screen.Components;
+using Content.Shared.Parallax.Biomes;
+using System.Numerics;
+using Content.Server.DeviceNetwork.Components;
+using Content.Shared.Procedural;
+using Robust.Shared.Map.Components;
+// Starlight End
+
 namespace Content.Server.Shuttles.Systems;
 
 // TODO full game saves
@@ -559,7 +570,7 @@ public sealed partial class EmergencyShuttleSystem
 
     // Starlight Start: Evacuation pod planet landing
     /// <summary>
-    /// Creates the evacuation planet for escape pods to land on.
+    /// Creates the evacuation planet for escape pods to land on with ores and ruins.
     /// All pods will land on the same planet with random positions and rotations.
     /// </summary>
     private void SetupEvacuationPlanet()
@@ -580,7 +591,8 @@ public sealed partial class EmergencyShuttleSystem
             var biomeOptions = new[]
             {
                 "Grasslands",
-                "Snow"
+                "Snow",
+                "Caves"
             };
             
             var selectedBiome = _random.Pick(biomeOptions);
@@ -593,6 +605,73 @@ public sealed partial class EmergencyShuttleSystem
             
             // Generate the planet biome
             _biomes.EnsurePlanet(_evacuationPlanetMap.Value, template);
+
+            // Add ore layers to the biome for mining
+            if (TryComp(_evacuationPlanetMap.Value, out BiomeComponent? biomeComp))
+            {
+                var oreMarkers = new[]
+                {
+                    "OreIron",
+                    "OreCoal",
+                    "OreQuartz",
+                    "OreSalt",
+                    "OreGold",
+                    "OreSilver",
+                    "OrePlasma",
+                    "OreUranium",
+                    "OreDiamond",
+                    "OreArtifactFragment"
+                };
+
+                foreach (var oreId in oreMarkers)
+                {
+                    _biomes.AddMarkerLayer(_evacuationPlanetMap.Value, biomeComp, oreId);
+                }
+            }
+
+            // Get the map's grid component for dungeon generation
+            if (!TryComp<MapGridComponent>(_evacuationPlanetMap.Value, out var grid))
+                return;
+
+            var dungeonConfigs = new[]
+            {
+                "Experiment",
+                "ShipWreckDungeon",
+                "SovietDungeonWeh",
+                "Mineshaft"
+            };
+            
+            var numRuins = _random.Next(3, 6); // 3-5 ruins
+            var selectedConfigs = _random.GetItems(dungeonConfigs, numRuins, allowDuplicates: false);
+            var seed = _random.Next();
+            var offsetDistance = 50f;
+            
+            foreach (var configId in selectedConfigs)
+            {
+                if (!_protoManager.TryIndex<DungeonConfigPrototype>(configId, out var dungeonProto))
+                {
+                    Log.Warning($"Could not load dungeon config {configId}");
+                    continue;
+                }
+                
+                // Calculate offset position for this ruin
+                var angle = _random.NextAngle();
+                var offset = angle.ToVec() * offsetDistance;
+                var offsetPos = (Vector2i)(Vector2.Zero + offset);
+                
+
+                // Generate the dungeon
+                try
+                {
+                    _dungeon.GenerateDungeon(dungeonProto, _evacuationPlanetMap.Value, grid, offsetPos, seed++);
+                    
+                    Log.Debug($"Generated ruin {configId} at offset {offsetPos}");
+                }
+                catch (Exception e)
+                {
+                    Log.Warning($"Error generating ruin {configId}: {e.Message}");
+                }
+            }
             
             // Set landing zone at center of planet
             _evacuationLandingZone = new EntityCoordinates(_evacuationPlanetMap.Value, Vector2.Zero);
@@ -603,7 +682,7 @@ public sealed partial class EmergencyShuttleSystem
             // Set a nice name
             _metaData.SetEntityName(_evacuationPlanetMap.Value, "Evacuation Planet");
             
-            Log.Info($"Created evacuation planet with {selectedBiome} biome");
+            Log.Info($"Created evacuation planet with {selectedBiome} biome and {numRuins} ruins");
         }
         catch (Exception ex)
         {
