@@ -100,8 +100,8 @@ public sealed partial class EmergencyShuttleSystem
      */
 
     // Starlight Start: Evacuation pod planet landing
-    private EntityUid? _evacuationPlanetMap;
-    private EntityCoordinates? _evacuationLandingZone;
+    private EntityUid? _evacuationPlanetMap = null;
+    private EntityCoordinates? _evacuationLandingZone = null;
     private const float PodSpreadRadius = 25f;
     // Starlight End
 
@@ -301,10 +301,10 @@ public sealed partial class EmergencyShuttleSystem
             // Starlight edit End: Commented out for evacuation pod planet landing
 
             // Starlight Start: Evacuation pod planet landing
-            if (_evacuationPlanetMap == null || !_evacuationLandingZone.HasValue)
+            if (_evacuationPlanetMap == null || _evacuationLandingZone == null)
                 SetupEvacuationPlanet();
 
-            if (_evacuationPlanetMap == null || !_evacuationLandingZone.HasValue)
+            if (_evacuationPlanetMap == null || _evacuationLandingZone == null)
             {
                 Log.Error($"Evacuation pod {ToPrettyString(uid)} failed to setup evacuation planet destination.");
                 continue;
