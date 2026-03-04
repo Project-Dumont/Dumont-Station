@@ -42,14 +42,14 @@
   - type: Temperature
     heatDamageThreshold: 600 # Gabystation
     coldDamageThreshold: 273 # Gabystation
-    currentTemperature: 324.58 # Gabystation
-    specificHeat: 51.43 # Gabystation
+    currentTemperature: 320 # Gabystation
+    specificHeat: 42
     coldDamage:
       types:
-        Cold : 0.4 #o padrão é 0.1
+        Cold : 1.25 #o padrão é 0.1 | Gabystation
     heatDamage:
       types:
-        Heat : 0.5 #O padrão é 1.5
+        Heat : 0.4 #O padrão é 1.5 | Gabystation
   - type: FireProtection
     reduction: 0.5 # Gabystation | Por conta de shitcode, isso aqui não é incluso na proteção contra fogo.
   - type: Damageable
