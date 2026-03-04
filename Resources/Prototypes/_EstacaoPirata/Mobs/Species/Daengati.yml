@@ -42,11 +42,11 @@
   - type: Temperature
     heatDamageThreshold: 600 # Gabystation
     coldDamageThreshold: 273 # Gabystation
-    currentTemperature: 315.15
+    currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
       types:
-        Cold : 1 #o padrão é 0.1 | Gabystation
+        Cold : 1 #o padrão é 0.1 # Gabystation | Frio deve doer mais agora.
     heatDamage:
       types:
         Heat : 0.5 #O padrão é 1.5
