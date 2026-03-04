@@ -38,7 +38,7 @@
   - type: Flammable
     damage:
       types:
-        Heat: 0.5 # Gabystation | Fogo é o ponto forte desses diabinhos, mais difícil de pegar fogo.
+        Heat: 0.5 # Gabystation | Fogo é o ponto forte desses diabinhos, mais difícil de pegar fogo. Deve ter algum jeito melhor de fazer isso.
   - type: Temperature
     heatDamageThreshold: 600 # Gabystation
     coldDamageThreshold: 273 # Gabystation
