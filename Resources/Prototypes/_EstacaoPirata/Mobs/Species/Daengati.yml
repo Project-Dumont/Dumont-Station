@@ -46,10 +46,10 @@
     specificHeat: 42
     coldDamage:
       types:
-        Cold : 1.25 #o padrão é 0.1 | Gabystation
+        Cold : 1 #o padrão é 0.1 | Gabystation
     heatDamage:
       types:
-        Heat : 0.4 #O padrão é 1.5 | Gabystation
+        Heat : 0.5 #O padrão é 1.5
   - type: FireProtection
     reduction: 0.5 # Gabystation | Por conta de shitcode, isso aqui não é incluso na proteção contra fogo.
   - type: Damageable
