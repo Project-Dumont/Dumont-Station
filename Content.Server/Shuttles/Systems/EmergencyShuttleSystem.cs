@@ -110,8 +110,13 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Random;
-using Content.Shared.Random.Helpers;
+// Starlight Start
+using Content.Server._Starlight.Station;
+using Content.Shared._Starlight.CustomObjectiveSummary;
+using Content.Shared.Station.Components;
+using Content.Server.Parallax;
+using Content.Shared.Parallax.Biomes;
+// Starlight End
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -143,17 +148,16 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Gabystation change
-    [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
+    // Starlight Start
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly BiomeSystem _biomes = default!;
+    // Starlight End
 
     private const float ShuttleSpawnBuffer = 1f;
 
     private bool _emergencyShuttleEnabled;
 
     private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
-
-    [ValidatePrototypeId<WeightedRandomPrototype>]
-    private const string MapsProto = "CentcommWeights"; // Gabystation change
 
     public override void Initialize()
     {

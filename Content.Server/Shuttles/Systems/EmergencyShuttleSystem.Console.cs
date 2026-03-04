@@ -62,7 +62,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Threading;
-using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Shared.Access;
@@ -79,10 +78,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
-using Content.Server.Explosion.EntitySystems;
-using Content.Server.Chat.Systems;
-using Content.Shared.Chat;
-
 namespace Content.Server.Shuttles.Systems;
 
 // TODO full game saves
@@ -92,6 +87,12 @@ public sealed partial class EmergencyShuttleSystem
     /*
      * Handles the emergency shuttle's console and early launching.
      */
+
+    // Starlight Start: Evacuation pod planet landing
+    private EntityUid? _evacuationPlanetMap;
+    private EntityCoordinates? _evacuationLandingZone;
+    private const float PodSpreadRadius = 25f;
+    // Starlight End
 
     /// <summary>
     /// Has the emergency shuttle arrived?
@@ -270,18 +271,56 @@ public sealed partial class EmergencyShuttleSystem
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
-            var stationUid = _station.GetOwningStation(uid);
+            // Starlight edit Start: Commented out for evacuation pod planet landing
+            // var stationUid = _station.GetOwningStation(uid);
 
-            if (!TryComp<StationCentcommComponent>(stationUid, out var centcomm) ||
-                Deleted(centcomm.Entity) ||
-                pod.LaunchTime == null ||
+            // if (!TryComp<StationCentcommComponent>(stationUid, out var centcomm) ||
+            //     Deleted(centcomm.Entity) ||
+            //     pod.LaunchTime == null ||
+            // Starlight edit End: Commented out for evacuation pod planet landing
+            if (pod.LaunchTime == null || // Starlght Edit: added ``if`` for evacuation pod planet landing
                 pod.LaunchTime > _timing.CurTime)
             {
                 continue;
             }
 
-            // Don't dock them. If you do end up doing this then stagger launch.
-            _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime);
+            // Starlight edit Start: Commented out for evacuation pod planet landing
+            // // Don't dock them. If you do end up doing this then stagger launch.
+            // _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime + 1 + timeDelay++); //starlight edit, add seconds onto the transit time to ENSURE the emergency shuttle tries to find a dock first
+            // Starlight edit End: Commented out for evacuation pod planet landing
+
+            // Starlight Start: Evacuation pod planet landing
+            if (_evacuationPlanetMap == null || !_evacuationLandingZone.HasValue)
+                SetupEvacuationPlanet();
+
+            if (_evacuationPlanetMap == null || !_evacuationLandingZone.HasValue)
+            {
+                Log.Error($"Evacuation pod {ToPrettyString(uid)} failed to setup evacuation planet destination.");
+                continue;
+            }
+
+            var angle = _random.NextAngle();
+            var distance = _random.NextFloat(0, PodSpreadRadius);
+            var offset = angle.ToVec() * distance;
+            var landingCoords = _evacuationLandingZone.Value.Offset(offset);
+
+            var rotations = new[]
+            {
+                Angle.Zero,
+                Angle.FromDegrees(90),
+                Angle.FromDegrees(180),
+                Angle.FromDegrees(270)
+            };
+            var podRotation = _random.Pick(rotations);
+
+            _shuttle.FTLToCoordinates(
+                uid,
+                shuttle,
+                landingCoords,
+                podRotation,
+                startupTime: 0f,
+                hyperspaceTime: TransitTime + 1 + timeDelay++);
+            // Starlight End: Evacuation pod planet landing
             RemCompDeferred<EscapePodComponent>(uid);
         }
 
@@ -516,5 +555,62 @@ public sealed partial class EmergencyShuttleSystem
         _roundEndCancelToken?.Cancel();
         _roundEndCancelToken = null;
         return true;
+    }
+
+    // Starlight Start: Evacuation pod planet landing
+    /// <summary>
+    /// Creates the evacuation planet for escape pods to land on.
+    /// All pods will land on the same planet with random positions and rotations.
+    /// </summary>
+    private void SetupEvacuationPlanet()
+    {
+        try
+        {
+            // Create a new map for the evacuation planet
+            _mapSystem.CreateMap(out var mapId, runMapInit: false);
+            _evacuationPlanetMap = _mapSystem.GetMap(mapId);
+            
+            if (_evacuationPlanetMap == null)
+            {
+                Log.Error("Failed to create evacuation planet map!");
+                return;
+            }
+            
+            // Generate a biome planet (similar to expedition/arrivals planets)
+            var biomeOptions = new[]
+            {
+                "Grasslands",
+                "Snow"
+            };
+            
+            var selectedBiome = _random.Pick(biomeOptions);
+            
+            if (!_protoManager.TryIndex<BiomeTemplatePrototype>(selectedBiome, out var template))
+            {
+                Log.Error($"Failed to load biome template: {selectedBiome}");
+                return;
+            }
+            
+            // Generate the planet biome
+            _biomes.EnsurePlanet(_evacuationPlanetMap.Value, template);
+            
+            // Set landing zone at center of planet
+            _evacuationLandingZone = new EntityCoordinates(_evacuationPlanetMap.Value, Vector2.Zero);
+            
+            // Initialize the map
+            _mapSystem.InitializeMap(mapId);
+            
+            // Set a nice name
+            _metaData.SetEntityName(_evacuationPlanetMap.Value, "Evacuation Planet");
+            
+            Log.Info($"Created evacuation planet with {selectedBiome} biome");
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Failed to setup evacuation planet: {ex}");
+            _evacuationPlanetMap = null;
+            _evacuationLandingZone = null;
+        }
+    // Starlight End: Evacuation pod planet landing
     }
 }
