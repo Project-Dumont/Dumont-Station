@@ -7,14 +7,14 @@ namespace Content.Shared._Orion.Power.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class InducerComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public string PowerCellSlotId = "inducer_power_cell_slot";
 
     [DataField, AutoNetworkedField]
-    public float TransferRate;
+    public int TransferRate;
 
-    [DataField]
-    public List<float> AvailableTransferRates = new();
+    [DataField, AutoNetworkedField]
+    public List<int> AvailableTransferRates = new();
 
     [DataField]
     public float TransferDelay;
