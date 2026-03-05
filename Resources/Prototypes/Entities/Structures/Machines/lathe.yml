@@ -886,8 +886,6 @@
     idleState: icon
     runningState: icon
     staticPacks:
-    - CMBloodPack
-    - CMIV
     - TopicalsStatic
     - ChemistryStatic
     - MedicalStatic

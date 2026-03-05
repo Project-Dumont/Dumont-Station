@@ -9,7 +9,7 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;

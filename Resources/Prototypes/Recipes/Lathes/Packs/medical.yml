@@ -70,6 +70,8 @@
   - WhiteCane
   - OffsetCane
   - OffsetCaneWood
+  - CMBloodPack
+  - CMIV
 
 - type: latheRecipePack
   id: RollerBedsStatic

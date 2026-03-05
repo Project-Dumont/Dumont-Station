@@ -315,3 +315,5 @@
     - state: flatpack
   - type: Flatpack
     entity: CMIV
+  - type: StaticPrice
+    price: 50

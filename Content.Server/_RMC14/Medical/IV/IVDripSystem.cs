@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.Body.Components;
+using Content.Shared.Body.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared._RMC14.Medical.IV;
 using Content.Shared.Chat.Prototypes;
