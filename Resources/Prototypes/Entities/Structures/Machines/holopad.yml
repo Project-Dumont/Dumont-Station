@@ -29,6 +29,7 @@
   - type: StationAiVision
     range: 1
     needsAnchoring: true
+    needsPower: true # Dumont
   - type: Sprite
     sprite: Structures/Machines/holopad.rsi
     drawdepth: HighFloorObjects
