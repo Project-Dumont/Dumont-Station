@@ -661,3 +661,27 @@
   name: Whos Ready For Tomorrow - Cyberpunk
   path:
     path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg
+
+- type: jukebox
+  id: Vermilion
+  name: Vermilion Pt2 - Slipknot
+  path:
+    path: /Audio/_Gabystation/Jukebox/Vermilion_Pt2.ogg
+
+- type: jukebox
+  id: IDontKnow
+  name: Leave me Alone - I DONT KNOW HOW BUT THEY FOUND ME
+  path:
+    path: /Audio/_Gabystation/Jukebox/I_Dont_Know_How_But_They_Found_Me.ogg
+
+- type: jukebox
+  id: Opirata
+  name: Pirata Oficial - Ave Sangria
+  path:
+    path: /Audio/_Gabystation/Jukebox/Pirata_Oficial.ogg
+
+- type: jukebox
+  id: Doisnavega
+  name: Dois Navegantes - Ave Sangria
+  path:
+    path: /Audio/_Gabystation/Jukebox/Dois_Navegantes.ogg
