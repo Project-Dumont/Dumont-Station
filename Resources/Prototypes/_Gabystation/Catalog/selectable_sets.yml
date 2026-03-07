@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Gabystation
+
+# Captain sabre bundle | Add new swords here.
+
+- type: selectableSet
+  id: CaptainSabreSet
+  name: selectable-set-captain-sabre-name
+  description: selectable-set-captain-sabre-description
+  sprite:
+    sprite: Objects/Weapons/Melee/captain_sabre.rsi
+    state: icon
+  content:
+  - ClothingBeltSheathFilled
+
+- type: selectableSet
+  id: CaptainRosethornSet
+  name: selectable-set-captain-rosethorn-name
+  description: selectable-set-captain-rosethorn-description
+  sprite:
+    sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade.rsi
+    state: icon
+  content:
+  - ClothingBeltSheathFilledRosethorn

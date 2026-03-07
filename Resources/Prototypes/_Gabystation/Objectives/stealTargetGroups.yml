@@ -8,3 +8,10 @@
   sprite:
     sprite: _Gabystation/Objects/Tools/rcdprotoce.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: RosethornBlade
+  name: steal-target-groups-rosethorn-blade
+  sprite:
+    sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade.rsi
+    state: icon
