@@ -24,6 +24,6 @@
     - HosRifleSet
     - HosShotgunSet
     - HosSniperSet
-    - HosGlovesSet
-    - HosShieldSet
+    - HosGlovesSet # GabyStation
+    - HosShieldSet # GabyStation
     maxSelectedSets: 1

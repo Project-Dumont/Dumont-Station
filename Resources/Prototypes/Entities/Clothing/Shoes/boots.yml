@@ -128,7 +128,7 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: BootStomp
 
@@ -165,7 +165,7 @@
     sprite: Clothing/Shoes/Boots/combatboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/combatboots.rsi
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: BootStomp
 
@@ -279,7 +279,7 @@
           tags:
           - Knife
           - Sidearm
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: BootStomp
 
@@ -325,7 +325,7 @@
     node: boots
 
 - type: entity
-  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]
+  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband] # GabyStation - sec contra
   id: ClothingShoesBootsCowboyBrown
   name: brown cowboy boots
   description: They got spurs that jingle and/or jangle.

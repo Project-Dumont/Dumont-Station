@@ -109,7 +109,7 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: ArmorBoot
 
@@ -160,7 +160,7 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: ArmorBoot
 

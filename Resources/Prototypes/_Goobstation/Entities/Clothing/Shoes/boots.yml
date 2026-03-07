@@ -267,7 +267,7 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: BootStomp        
 
@@ -292,7 +292,7 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
-  - type: FootstepModifier
+  - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: BootStomp        
 
