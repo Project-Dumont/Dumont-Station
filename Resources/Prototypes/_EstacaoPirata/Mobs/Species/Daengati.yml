@@ -18,10 +18,10 @@
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
-    - Gruntish
+    - Gruntish # GabyStation
     understands:
     - TauCetiBasic
-    - Gruntish
+    - Gruntish # GabyStation
   - type: HumanoidAppearance
     species: Daengati
   - type: MeleeWeapon
@@ -31,8 +31,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 3
-        Heat: 3
+        Slash: 3 # GabyStation
+        Heat: 3 # GabyStation
   - type: Cautery
     speed: 0.1 # Gabystation | Quase certeza que não é o melhor jeito de fazer, mas coloquei a habilidade de cauterizar bem lentamente com as garras, for the funnies.
   - type: Flammable
@@ -50,6 +50,7 @@
     heatDamage:
       types:
         Heat : 0.5 #O padrão é 1.5
+  - type: Damageable
     damageModifierSet: Daengati
   - type: Body
     prototype: Daengati
