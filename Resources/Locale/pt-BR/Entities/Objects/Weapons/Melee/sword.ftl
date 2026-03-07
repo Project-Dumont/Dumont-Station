@@ -10,5 +10,5 @@ ent-Machete = facão
 ent-Claymore = claymore
      .desc = Uma antiga lâmina de guerra.
 
-ent-RosethornBlade = Lâmina da Rosa
+ent-RosethornBlade = lâmina da Rosa
     .desc = Uma lâmina refinada, para uma Rosa refinada. Feita de uma liga especial, seu ponto forte é a leveza e agilidade de manuseio.
