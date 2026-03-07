@@ -32,9 +32,22 @@
     parts:
     - LeftFoot
     - RightFoot
+  - type: UpgradeableWeapon
+  - type: ContainerContainer
+    containers:
+      boot_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      boot_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitBootUpgrade
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsStandard
   name: standard modsuit boots
   description: A special modular suit boots designed for compact folding inside modular suit control.
@@ -63,7 +76,7 @@
       shoes:
       - state: equipped-FEET-sealed
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsSecurity
   name: soldat modsuit boots
   description: THE IRON BOOTS OF THE LAW.
@@ -114,7 +127,7 @@
       collection: ArmorBoot
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsHeadOfSecurity
   name: bulwark modsuit boots
   description: I call these my commie stompers.
@@ -165,7 +178,7 @@
       collection: ArmorBoot
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsParamedic
   name: sanitater modsuit boots
   description: Made to get bloody.
@@ -196,7 +209,7 @@
       shoes-vox:
       - state: equipped-FEET-sealed-vox
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsEngineer
   name: sapper modsuit boots
   description: Made to get oily.
@@ -239,7 +252,7 @@
     sprintModifier: 0.9
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsAtmostech
   name: aeolus modsuit boots
   description: Made to get burnt.
@@ -273,7 +286,7 @@
     reduction: 0.25
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsResearchDirector
   name: minerva modsuit boots
   description: Won't stop you slipping on your own blood when the holocarp gets to you.
@@ -304,7 +317,7 @@
       shoes-vox:
       - state: equipped-FEET-sealed-vox
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsCaptain
   name: magnate modsuit boots
   description: These boots were designed by THE Michael Jordan and crafted with ancient alloys, man.

@@ -19,3 +19,6 @@
 
 - type: Tag
   id: HosShield
+
+- type: tag
+  id: ModsuitBootUpgrade
