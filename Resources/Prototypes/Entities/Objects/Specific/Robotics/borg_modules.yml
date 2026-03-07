@@ -868,9 +868,17 @@
     - Gauze10Lingering
     - Brutepack10Lingering
     - Ointment10Lingering
-    - Bloodpack10Lingering
     - RegenerativeMeshLingering0
     - MedicatedSutureLingering0
+  # Gabystation Start - #IV!
+  - type: DroppableBorgModule
+    moduleId: Treatment
+    items:
+    - id: CMBloodPackFull
+      whitelist:
+        tags:
+        - Bloodpack
+  # Gabystation End - #IV!
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
