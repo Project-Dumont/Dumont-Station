@@ -62,6 +62,19 @@
     clothingVisuals:
       shoes:
       - state: equipped-FEET-sealed
+  - type: UpgradeableWeapon
+  - type: ContainerContainer
+    containers:
+      jump_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      boot_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitBootUpgrade
 - type: entity
   parent: ClothingShoesBase
   id: ClothingModsuitBootsSecurity

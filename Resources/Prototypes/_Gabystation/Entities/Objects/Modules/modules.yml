@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseItem
+  id: JumpModule
+  name: Modsuit Jump Module
+  description: A module that can be inserted inside modsuit boots to grant the user the ability to jump in the direction they're facing.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesboots.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit upgrade (Jump)
+  - type: GunUpgradeComponents
+    components:
+    - type: JumpAbility
+      jumpDistance: 4
+      jumpSound: /Audio/Effects/stealthoff.ogg
+    - type: ActionGrant
+      actions:
+      - ActionGravityJump
+    - type: ItemActionGrant
+      actions:
+      - ActionGravityJump
+      activeIfWorn: true
+      restrictedSlots:
+      - FEET
+  - type: Tag
+    tags:
+    - ModsuitBootUpgrade
