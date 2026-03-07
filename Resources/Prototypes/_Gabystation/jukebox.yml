@@ -661,3 +661,10 @@
   name: Whos Ready For Tomorrow - Cyberpunk
   path:
     path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg
+
+- type: jukebox
+  id: frangonapanela
+  name: Franguinho Na Panela - Moacyr dos Santos & Paraíso
+  path:
+    path: /Audio/_Gabystation/Jukebox/franguinhonapanela.ogg    
+

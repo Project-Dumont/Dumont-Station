@@ -2089,3 +2089,25 @@ Entries:
         Goob)!
   id: 255
   time: '2026-02-28T14:16:42.0000000+00:00'
+- author: OttavioBasques
+  changes:
+    - type: Tweak
+      message: >-
+        Escudo do BSO pode agora ser equipado no slot das costas providenciado
+        pela armadura.
+  id: 256
+  time: '2026-03-07T13:51:01.0000000+00:00'
+- author: Heartbeat e Ludovicus
+  changes:
+    - type: Add
+      message: Franguinho Na Panela para a jukebox.
+  id: 257
+  time: '2026-03-07T14:01:27.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: 'Várias maquinas de venda não são pagas mais. '
+    - type: Tweak
+      message: Prisoneiros não morrem por não poder comprar comida mais.
+  id: 258
+  time: '2026-03-07T14:04:35.0000000+00:00'
