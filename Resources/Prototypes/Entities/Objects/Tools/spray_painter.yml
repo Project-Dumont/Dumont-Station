@@ -51,8 +51,8 @@
     qualities:
     - Painting
   - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
+    maxCharges: 30 # Gaby
+    lastCharges: 30 # Gaby
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
