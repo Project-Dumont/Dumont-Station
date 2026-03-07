@@ -32,3 +32,37 @@
     - ClothMade
     - Recyclable
     - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase] # Goob edit
+  id: ClothingHeadHatFedoraBrownOffBrand
+  name: off-brand brown fedora
+  description: A brown fedora. This one seems to be lower quality than what you can usually find.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/brownfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/brownfedora.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase] # Goob edit
+  id: ClothingHeadHatFedoraGreyOffBrand
+  name: off-brand grey fedora
+  description: A grey fedora. This one seems to be lower quality than what you can usually find.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable

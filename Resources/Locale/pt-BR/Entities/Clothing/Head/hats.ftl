@@ -127,3 +127,9 @@ ent-ClothingHeadNurseHat = chapéu de enfermeiro
 ent-ClothingHeadRastaHat = chapéu rasta
     .desc = As fumaças falarão por mim...
 
+ent-ClothingHeadHatFedoraGreyOffBrand = Fedora cinza de baixa qualidade
+    .desc = Você não vai assustar ninguém com isso.
+
+ent-ClothingHeadHatFedoraBrownOffBrand = Fedora marrom de baixa qualidade
+    .desc = Um fedora marrom. Esse parece ser de qualidade menor comparado com o que você pode normalmente achar.
+

@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: damageModifierSet
   id: Daengati
   coefficients:
-    Heat: 0.6
-    Cold: 1.3
+    Heat: 0.6 # Gabystation | Ia deixar em 50%, mas achei melhor voltar para o valor original de 40% por já ser um valor bem alto, e a raça ter recebido defesa contra fogo.
+    Cold: 1.4 # Gabystation
     Piercing: 1.15

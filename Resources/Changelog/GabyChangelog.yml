@@ -2089,3 +2089,95 @@ Entries:
         Goob)!
   id: 255
   time: '2026-02-28T14:16:42.0000000+00:00'
+- author: OttavioBasques
+  changes:
+    - type: Tweak
+      message: >-
+        Escudo do BSO pode agora ser equipado no slot das costas providenciado
+        pela armadura.
+  id: 256
+  time: '2026-03-07T13:51:01.0000000+00:00'
+- author: Heartbeat e Ludovicus
+  changes:
+    - type: Add
+      message: Franguinho Na Panela para a jukebox.
+  id: 257
+  time: '2026-03-07T14:01:27.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: 'Várias maquinas de venda não são pagas mais. '
+    - type: Tweak
+      message: Prisoneiros não morrem por não poder comprar comida mais.
+  id: 258
+  time: '2026-03-07T14:04:35.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: 'Uma nova espada foi adicionada para o capitão: a Lâmina da Rosa.'
+    - type: Tweak
+      message: >-
+        O sabre reserva do armário da capitão foi substituído pelo "kit de
+        sabres", ele permite escolher entre o sabre de capitão e a nova Lâmina
+        da Rosa.
+  id: 259
+  time: '2026-03-07T14:36:23.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Tweak
+      message: Agora você pode alterar o acesso do ID do prisoneiro (o trabalho.)
+    - type: Fix
+      message: Prisoneiros não tem mais acesso pra sair da genpop.
+  id: 260
+  time: '2026-03-07T14:37:37.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: Nova entrada no livro-guia para o daengati.
+    - type: Add
+      message: >-
+        Habilidade de cauterizar feridas e incisões bem lentamente utilizando as
+        garras do daengati.
+    - type: Tweak
+      message: >-
+        Características de defesa e fraqueza contra temperaturas do daengati
+        foram ajustadas.
+  id: 261
+  time: '2026-03-07T15:09:10.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Hardsuit do detetive agora vem no armário do detetive.
+    - type: Add
+      message: '2 novas armas X-00: X-11 "Berserker" e X-15 "Protector"'
+    - type: Add
+      message: >-
+        Efeitos sonoros para as botas de combate normais e de modsuit de
+        combate.
+    - type: Add
+      message: Megafone de comando pro armário do capitão.
+    - type: Tweak
+      message: >-
+        A espada do NTR foi buffada, a caneta foi nerfada; 16 e 13 de dano
+        respectivamente.
+    - type: Tweak
+      message: >-
+        Agora o fedora marrom e cinza do loadout de passageiro são versões de
+        "Baixa qualidade"; mesmo sprite, mas não é contrabando.
+    - type: Tweak
+      message: >-
+        Botas de caúboi agora são contrabando exclusivo a segurança e
+        blueshield. As botas de caúboi do roupasloucas agora são versões de
+        baixa qualidade.
+    - type: Tweak
+      message: High-Heeled Boots agora não tem stats iguais a botas de combate.
+    - type: Tweak
+      message: >-
+        Rebalanceamento a várias hardsuits, modsuits e armaduras, especialmente
+        as de segurança e capitão.
+    - type: Fix
+      message: >-
+        Trevor e a shiva não atacam torretas mais. Vocês podem descansar em paz
+        agora.
+  id: 262
+  time: '2026-03-07T15:11:10.0000000+00:00'

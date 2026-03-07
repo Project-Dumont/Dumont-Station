@@ -17,14 +17,14 @@
     head: ClothingHeadHatWitch1
 
 - type: loadout
-  id: BrownFedora
+  id: BrownFedoraOffBrand
   equipment:
-    head: ClothingHeadHatFedoraBrown
+    head: ClothingHeadHatFedoraBrownOffBrand
 
 - type: loadout
-  id: GreyFedora
+  id: GreyFedoraOffBrand
   equipment:
-    head: ClothingHeadHatFedoraGrey
+    head: ClothingHeadHatFedoraGreyOffBrand
 
 - type: loadout
   id: Fez

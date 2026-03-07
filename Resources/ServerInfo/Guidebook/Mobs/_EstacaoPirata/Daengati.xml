@@ -1,4 +1,5 @@
 <!-- Descrição bem breve dos Daengati, só pra não ficar sem nenhum flavor text -->
+<!-- # Gabystation 2026 | Não acho que chegou a ter uma lore oficial para os Daengati, então criei uma para o Gaby -->
 
 <Document>
   # Daengati
@@ -7,12 +8,18 @@
       <GuideEntityEmbed Entity="MobDaengati" Caption=""/>
   </Box>
 
-  Daengati são humanoides que lembram descrições de demônios com caudas [italic](Tieflings)[/italic].
+  Daengati é uma raça humanóide de meio-demônios com caudas [italic](Tieflings)[/italic] e inteligência a nível humano.
 
-  Suas características são:
-  - Suas garras causam dano [color=#ec3a3a]Cortante[/color] e de [color=#ec3a3a]Calor[/color].
-  - Recebem [color=#ffa500]15% mais dano Perfurante[/color].
-  - [color=#1e90ff]Suportam temperaturas altíssimas[/color] e recebem [color=#1e90ff]40% menos dano de Calor[/color].
-  - [color=#ffa500]Sofrem rapidamente com temperaturas baixas[/color] e recebem [color=#ffa500]30% mais dano de Frio[/color].
+  ## Origem
+  Embora existam em vários lugares por toda a galáxia, eles foram encontrados pela primeira vez em [color=#ff8247]Asdana[/color], um sistema de difícil acesso composta por cinco planetas vulcânicos (nomeados Asdana-I até V) extremamente quentes e mortais para formas de vida não adaptadas ao calor extremo. Diversos reinos e clãs de raças demoníacas além dos Daengatis dominam a região.
+
+  Posteriormente, foram encontrados em muitos outros planetas com temperaturas amenas ou elevadas, todos fora do sistema [color=#ff8247]Asdana[/color], mas a verdadeira origem da raça Daengati permanece desconhecida. Para as grandes corporações galáticas, eles são uma força trabalhadora relativamente nova.
+
+  ## Características
+  - A biologia dos Daengatis é adaptada para ambientes muito quentes e escuros, seus olhos são capazes de [color=#1e90ff]enxergar no escuro[/color].
+  - Seus corpos [color=#1e90ff]suportam temperaturas altíssimas que superam 300°C[/color] e recebem [color=#1e90ff]40% menos dano de Calor[/color], além de queimarem com menos facilidade.
+  - Longe do conforto de ambientes muito quentes, o espaço apresenta um perigo adicional aos Daengatis, [color=#ffa500]o Frio é altamente perigoso e eles sofrem rapidamente com temperaturas abaixo de 0°C[/color], recebendo [color=#ffa500]40% mais dano de Frio[/color].
+  - Devido à estrutura única dos seus tecidos e pele, recebem [color=#ffa500]15% mais dano de fontes Perfurantes[/color].
+  - Suas garras são afiadas o suficiente para causar dano [color=#ec3a3a]Cortante[/color] e são feitas de um composto queratinoso especial capaz de provocar dano de [color=#ec3a3a]Calor[/color]. Elas também podem ser utilizadas para [color=#1e90ff]cauterizar feridas lentamente[/color].
 
 </Document>

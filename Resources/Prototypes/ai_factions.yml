@@ -83,14 +83,13 @@
   id: Passive
 
 - type: npcFaction
-  id: PetsNT
+  id: PetsNT # GabyStation - remover Allhostile da lista de hostis   A torreta da armory é considerada allhostile, e então pets da estação atacam ela. Ja que tem quase nenhum mob que usa essa facção, eu removi da lista.
   hostile:
   - Mouse
   - Balloon # Goob Balloon Edit     Pets can join the fight against the balloons
   - SimpleHostile
   - Zombie
   - Xeno
-  - AllHostile
   - Wizard
   - Dragon
   - Blob # Goobstation - Blob

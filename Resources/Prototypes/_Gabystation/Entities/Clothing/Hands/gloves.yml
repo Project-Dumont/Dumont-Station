@@ -1,0 +1,95 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: [ClothingHandsBase, BaseCommandContraband]
+  id: ClothingHandsGlovesX11
+  name: X-11 "Berserker"
+  description: Elaborately designed gloves, utilizing nano-chips to teach krav-maga to the user, steroids to increase physical strength to permit opening unpowered doors with ease, and has a couple different modes. Cool as hell.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+    heldPrefix: energizada
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+    equippedPrefix: energizada
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
+  - type: ClothingGrantComponent
+    component:
+    - type: KravMaga
+    - type: Prying
+      pryPowered: false
+      force: true
+      speedModifier: 1.2
+  - type: GuideHelp
+    guides:
+    - KravMaga
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Shock: 0.75
+  - type: ItemSwitch
+    showLabel: true
+    state: energizada
+    states:
+      energizada: !type:ItemSwitchState
+        verb: energizada
+        sprite:
+          sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+          state: icon
+        components:
+          - type: MeleeWeapon
+            attackRate: 1
+            damage:
+              types:
+                Blunt: 12
+                Structural: 15
+            mustBeEquippedToUse: true
+            canWideSwing: false
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+            volume: -5
+
+      garras: !type:ItemSwitchState
+        verb: garras
+        sprite:
+          sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+          state: icon-garras
+        components:
+          - type: MeleeWeapon
+            attackRate: 1.5
+            autoAttack: true
+            damage:
+              types:
+                Slash: 8
+                Structural: 3
+            mustBeEquippedToUse: true
+            soundHit:
+              path: /Audio/Weapons/bladeslice.ogg
+            canWideSwing: false
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+            
+      kravmaga: !type:ItemSwitchState
+        verb: kravmaga
+        sprite:
+          sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
+          state: icon-kravmaga
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+

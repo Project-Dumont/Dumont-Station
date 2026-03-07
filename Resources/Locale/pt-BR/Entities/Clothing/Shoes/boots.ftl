@@ -16,3 +16,15 @@ ent-ClothingShoesBootsCombat = coturno de combate
 ent-ClothingShoesBootsLaceup = tênis
     .desc = O ápice do fashionismo!
 
+ent-ClothingShoesBootsCowboyBrownBad = Botas de caubói marrons de baixa qualidade
+    .desc = Tem esporas que fazem barulho quando você anda. É desconfortável e frágil.
+
+ent-ClothingShoesBootsCowboyBlackBad = Botas de caubói pretas de baixa qualidade
+    .desc = Tem esporas que fazem barulho quando você anda. É desconfortável e frágil.
+
+ent-ClothingShoesBootsCowboyWhiteBad = Botas de caubói brancas de baixa qualidade
+    .desc = Tem esporas que fazem barulho quando você anda. É desconfortável e frágil.
+
+ent-ClothingShoesBootsCowboyFancyBad = Botas de caubói chiques de baixa qualidade
+    .desc = Tem esporas que fazem barulho quando você anda. É desconfortável e frágil.
+

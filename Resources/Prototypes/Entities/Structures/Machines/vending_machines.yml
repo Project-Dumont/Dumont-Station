@@ -403,6 +403,7 @@
   components:
   - type: VendingMachine
     pack: AmmoVendInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -429,6 +430,7 @@
   components:
   - type: VendingMachine
     pack: BoozeOMatInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -498,6 +500,7 @@
   components:
   - type: VendingMachine
     pack: PTechInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -1097,6 +1100,7 @@
   components:
   - type: VendingMachine
     pack: MagiVendInventory
+    paidItems: false # GabyStation -> Economy
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -1300,6 +1304,7 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
+    paidItems: false # GabyStation -> Economy
   - type: DatasetVocalizer
     dataset: SecTechAds
   - type: SpeakOnUIClosed
@@ -1344,6 +1349,7 @@
   - type: VendingMachine
     pack: MegaSeedServitorInventory
     offState: off
+    paidItems: false # GabyStation -> Economy
     brokenState: broken
     normalState: normal-unshaded
     ejectState: eject-unshaded
@@ -1428,6 +1434,7 @@
   components:
   - type: VendingMachine
     pack: SustenanceInventory
+    paidItems: false # GabyStation -> Economy    
     dispenseOnHitChance: 0.25
     dispenseOnHitThreshold: 2
     offState: off
@@ -2508,6 +2515,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/centdrobe.rsi
     layers:
@@ -2611,6 +2619,7 @@
   components:
   - type: VendingMachine
     pack: TankDispenserEVAInventory
+    paidItems: false # GabyStation -> Economy    
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
     state: dispenser
@@ -2624,6 +2633,7 @@
   components:
   - type: VendingMachine
     pack: TankDispenserEngineeringInventory
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
     layers:
@@ -2643,6 +2653,7 @@
     normalState: normal
     denyState: deny
     ejectDelay: 2
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chemvend.rsi
     layers:

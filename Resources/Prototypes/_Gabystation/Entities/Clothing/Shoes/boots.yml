@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsCowboyBrownBad
+  name: low quality brown cowboy boots
+  description: They got spurs that jingle and/or jangle. It's very fragile and uncomfortable to wear.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/cowboybootsbrown.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/cowboybootsbrown.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSpurs
+      params:
+        variation: 0.09
+        volume: -6
+
+- type: entity
+  parent: ClothingShoesBootsCowboyBrownBad
+  id: ClothingShoesBootsCowboyBlackBad
+  name: low quality black cowboy boots
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/cowboybootsblack.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/cowboybootsblack.rsi
+
+- type: entity
+  parent: ClothingShoesBootsCowboyBrownBad
+  id: ClothingShoesBootsCowboyWhiteBad
+  name: low quality white cowboy boots
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/cowboybootswhite.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/cowboybootswhite.rsi  
+
+- type: entity
+  parent: ClothingShoesBootsCowboyBrownBad
+  id: ClothingShoesBootsCowboyFancyBad
+  name: low quality fancy cowboy boots
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/cowboybootsfancy.rsi    

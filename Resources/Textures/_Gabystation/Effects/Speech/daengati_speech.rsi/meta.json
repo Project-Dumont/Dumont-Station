@@ -1,0 +1,28 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Daengati sprites by SrKolobanov, modified from Oni sprites made by angelofallars and leonardo-dabepis (Github)",
+    "states": [
+        {
+            "name": "daengati0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "daengati1"
+        },
+        {
+            "name": "daengati2"
+        }
+    ]
+}

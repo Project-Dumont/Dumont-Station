@@ -109,6 +109,9 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
+  - type: FootstepModifier # GabyStation
+    footstepSoundCollection:
+      collection: ArmorBoot
 
 - type: entity
   parent: ClothingShoesBase
@@ -157,6 +160,9 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
+  - type: FootstepModifier # GabyStation
+    footstepSoundCollection:
+      collection: ArmorBoot
 
 - type: entity
   parent: ClothingShoesBase

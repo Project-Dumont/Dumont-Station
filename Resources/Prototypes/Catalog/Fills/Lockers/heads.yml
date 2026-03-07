@@ -202,7 +202,7 @@
     - id: CaptainIDCard
     - id: CigarGoldCase
       prob: 0.25
-    - id: ClothingBeltSheathFilled
+    - id: CaptainSabreUndetermined # Gabystation
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: CommsComputerCircuitboard
@@ -217,6 +217,7 @@
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
+    - id: CommandMegaphone # GabyStation
       conditions:
       - !type:PlayerCountCondition
         max: 15

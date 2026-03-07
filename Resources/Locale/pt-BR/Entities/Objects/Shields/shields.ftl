@@ -21,3 +21,4 @@ ent-ClockworkShield = Clockwork Shield
 
 ent-MirrorShield = Escudo Espelhado
      .desc = Brilha estranhamente em vermelho... você ouve o geômetra sussurrando
+

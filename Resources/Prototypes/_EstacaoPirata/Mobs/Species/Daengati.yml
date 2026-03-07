@@ -18,8 +18,10 @@
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
+    - Gruntish # GabyStation
     understands:
     - TauCetiBasic
+    - Gruntish # GabyStation
   - type: HumanoidAppearance
     species: Daengati
   - type: MeleeWeapon
@@ -29,16 +31,22 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 3.5
-        Heat: 2
+        Slash: 3 # GabyStation
+        Heat: 3 # GabyStation
+  - type: Cautery
+    speed: 0.1 # Gabystation | Quase certeza que não é o melhor jeito de fazer, mas coloquei a habilidade de cauterizar bem lentamente com as garras, for the funnies.
+  - type: Flammable
+    damage:
+      types:
+        Heat: 0.5 # Gabystation | Fogo é o ponto forte desses diabinhos. Deve ter algum jeito melhor de fazer isso.
   - type: Temperature
-    heatDamageThreshold: 500
-    coldDamageThreshold: 270
+    heatDamageThreshold: 600 # Gabystation
+    coldDamageThreshold: 273 # Gabystation
     currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
       types:
-        Cold : 0.4 #o padrão é 0.1
+        Cold : 1 #o padrão é 0.1 # Gabystation | Frio deve doer mais agora.
     heatDamage:
       types:
         Heat : 0.5 #O padrão é 1.5
@@ -47,7 +55,7 @@
   - type: Body
     prototype: Daengati
   - type: TypingIndicator
-    proto: oni #Mudar apos adicionar indicador de escrita de daengati
+    proto: daengati #Mudar apos adicionar indicador de escrita de daengati # Gabystation | Variante baseada no indicador de oni.
   - type: Tag
     tags:
     - CanPilot

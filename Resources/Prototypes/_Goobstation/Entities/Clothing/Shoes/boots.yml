@@ -267,6 +267,9 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+  - type: FootstepModifier # GabyStation
+    footstepSoundCollection:
+      collection: BootStomp        
 
 
 - type: entity
@@ -289,6 +292,9 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+  - type: FootstepModifier # GabyStation
+    footstepSoundCollection:
+      collection: BootStomp        
 
 - type: entity
   parent: ClothingShoesColorBlack

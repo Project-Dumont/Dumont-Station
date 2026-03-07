@@ -192,7 +192,7 @@
       coolingCoefficient: 0.01
       heatingCoefficient: 0.01
   - type: FireProtection
-    reduction: 0.5
+    reduction: 0.75
 
 
 - type: entity
@@ -255,12 +255,12 @@
     - Other
     modifiers:
       coefficients:
-        Blunt: 0.45
+        Blunt: 0.50
         Slash: 0.45
-        Piercing: 0.40
+        Piercing: 0.45
         Heat: 0.5
-        Caustic: 0.5
-        Radiation: 0.5
+        Caustic: 0.25
+        Radiation: 0.25
   - type: ComponentToggler
     components:
     - type: PressureProtection
@@ -270,7 +270,7 @@
       coolingCoefficient: 0.01
       heatingCoefficient: 0.01
   - type: FireProtection
-    reduction: 0.5
+    reduction: 0.75
   - type: ClothingAutoInject
     reagents:
       Epinephrine: 10
@@ -431,7 +431,7 @@
   - type: StaminaResistance
     damageCoefficient: 0.9
   - type: FireProtection
-    reduction: 0.7
+    reduction: 0.75
 
 - type: entity
   parent: ClothingOuterBase
@@ -507,7 +507,7 @@
   - type: StaminaResistance
     damageCoefficient: 0.9
   - type: FireProtection
-    reduction: 0.75
+    reduction: 0.90
 
 - type: entity
   parent: ClothingOuterBase
@@ -644,8 +644,8 @@
     - Other
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
+        Blunt: 0.6
+        Slash: 0.6
         Piercing: 0.55
         Heat: 0.5
         Radiation: 0.1
@@ -664,4 +664,4 @@
   - type: StaminaResistance
     damageCoefficient: 0.6
   - type: FireProtection
-    reduction: 0.5
+    reduction: 0.75

@@ -1,0 +1,106 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  name: X-15 "Protector"
+  parent: [BaseItem, ClothingSlotBase, BaseCommandContraband]
+  id: RedShield
+  description: An elaborately designed energy shield.
+  components:
+    - type: ContainerContainer
+    - type: ItemToggle
+      predictable: false
+      soundActivate:
+        path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyon.ogg
+      soundDeactivate:
+        path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyoff.ogg
+      soundFailToActivate:
+        path: /Audio/Machines/button.ogg
+        params:
+          variation: 0.250
+    - type: ItemToggleActiveSound
+      activeSound:
+        path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyhum.ogg
+    - type: ItemToggleSize
+      activatedSize: Ginormous
+    - type: Clothing
+      sprite: _Gabystation/Objects/Shields/protector.rsi
+      quickEquip: false
+      slots:
+      - Belt
+      - suitstorage
+      clothingVisuals:
+        suitstorage:
+            - state: equipped-BACKPACK
+    - type: ComponentToggler
+      components:
+      - type: DisarmMalus
+        malus: 1
+    - type: Sprite
+      sprite: _Gabystation/Objects/Shields/protector.rsi
+      layers:
+        - state: icon
+        - state: icon-on
+          color: "#FFFFFF"
+          visible: false
+          shader: unshaded
+          map: [ "shield" ]
+    - type: Item
+      size: Large
+    - type: UseDelay
+      delay: 0.5
+    - type: ToggleableVisuals
+      spriteLayer: shield
+      inhandVisuals:
+        left:
+          - state: inhand-left-on
+            shader: unshaded
+        right:
+          - state: inhand-right-on
+            shader: unshaded
+      clothingVisuals:
+        suitstorage:
+            - state: equipped-BACKPACK-on
+    - type: PointLight
+      netsync: false
+      enabled: false
+      radius: 1.5
+      energy: 0.7
+      color: "#e83c42"
+    - type: ItemTogglePointLight
+    - type: Blocking
+      passiveBlockFraction: 0.55
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 3
+          Slash: 3
+          Piercing: 3
+          Heat: 3
+      activeBlockModifier:
+        coefficients:
+          Blunt: 2
+          Slash: 2
+          Piercing: 2
+          Heat: 2
+        flatReductions:
+          Heat: 3
+          Blunt: 3
+          Slash: 3
+          Piercing: 3
+    - type: Appearance
+    - type: Damageable
+      damageContainer: Shield
+    - type: StaticPrice
+      price: 350
+    - type: Battery
+      maxCharge: 450
+      startingCharge: 450
+    - type: RechargeableBlocking
+      dischargedRechargeRate: 0
+      chargedRechargeRate: 0
+    - type: Tag
+      tags:
+      - FitsInCharger
+      - HosShield
