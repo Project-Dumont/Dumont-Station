@@ -22,3 +22,12 @@
 
 - type: tag
   id: ModsuitBootUpgrade
+
+- type: tag
+  id: ModsuitHeadUpgrade
+
+- type: tag
+  id: ModsuitChestUpgrade
+
+- type: tag
+  id: ModsuitHandUpgrade

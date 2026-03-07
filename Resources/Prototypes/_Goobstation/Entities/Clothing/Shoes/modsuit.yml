@@ -32,7 +32,7 @@
     parts:
     - LeftFoot
     - RightFoot
-  - type: UpgradeableWeapon
+  - type: UpgradeableWeapon #Gaby modulos de modsuit usam o mesmo sistema de upgrades que PKAs
   - type: ContainerContainer
     containers:
       boot_module: !type:ContainerSlot

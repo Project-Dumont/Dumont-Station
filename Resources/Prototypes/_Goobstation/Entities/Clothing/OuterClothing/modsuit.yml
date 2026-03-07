@@ -47,6 +47,19 @@
     parts:
     - BodyMiddle
     - Legs
+  - type: UpgradeableWeapon #Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
+  - type: ContainerContainer
+    containers:
+      Chest_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      Chest_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitChestUpgrade
 
 
 - type: entity
