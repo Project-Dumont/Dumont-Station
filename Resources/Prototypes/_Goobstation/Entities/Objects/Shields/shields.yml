@@ -31,7 +31,8 @@
     - type: ItemToggleActiveSound
       activeSound:
         path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyhum.ogg
-        volume: -5
+        params:
+          volume: -3
     - type: ItemToggleSize
       activatedSize: Ginormous
     - type: Clothing
