@@ -222,7 +222,7 @@
 
 - type: entity
   parent: IDCardStandard
-  id: PrisonerIDCardJob
+  id: PrisonerIDCardJob # GabyStation
   name: prisoner ID card
   description: A generically printed ID card for scummy prisoners.
   components:
