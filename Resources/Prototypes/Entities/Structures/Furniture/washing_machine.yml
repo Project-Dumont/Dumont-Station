@@ -35,7 +35,7 @@
     finishedSound:
       path: /Audio/Machines/washing_open.ogg
   - type: EntityStorage
-    isCollidableWhenOpen: false
+    isCollidableWhenOpen: true
     open: false
     capacity: 4
   - type: Forensics
@@ -57,7 +57,21 @@
     stateDoorClosed: door-closed
   - type: Machine
     board: WashingMachineCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      entity_storage: !type:Container
+      hidden_slot: !type:ContainerSlot
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+    - entity_storage
   - type: PlaceableSurface
+  - type: Climbable
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
