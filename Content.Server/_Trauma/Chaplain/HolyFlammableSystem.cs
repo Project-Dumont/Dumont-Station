@@ -36,9 +36,9 @@ public sealed class HolyFlammableSystem : EntitySystem
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
 
-    private const float InitialGrowthRate = 0.6f;
-    private const float IntermediateGrowthRate = 0.2f;
-    private const float LateGrowthRate = 50.0f;
+    private const float InitialGrowthRate = 1f;
+    private const float IntermediateGrowthRate = 0.5f;
+    private const float LateGrowthRate = 20.0f;
 
     public override void Initialize()
     {
@@ -69,7 +69,6 @@ public sealed class HolyFlammableSystem : EntitySystem
 
     private void OnHolyIgniteEvent(Entity<WeakToHolyComponent> ent, ref HolyIgniteEvent args)
     {
-        SetupEntity(ent);
         var flammable = EnsureComp<HolyFlammableComponent>(ent);
         float multiplier = 1f;
         if (flammable.FireStacks > flammable.FireStacksDropoff)
@@ -86,7 +85,6 @@ public sealed class HolyFlammableSystem : EntitySystem
             if (!HasComp<WeakToHolyComponent>(ent))
                 continue;
 
-            SetupEntity(entity);
             var flammable = EnsureComp<HolyFlammableComponent>(ent);
 
             AdjustFireStacks(entity, ent.Comp.FireStacks, flammable, true);
@@ -106,7 +104,6 @@ public sealed class HolyFlammableSystem : EntitySystem
         if (!HasComp<WeakToHolyComponent>(otherEnt))
             return;
 
-        SetupEntity(otherEnt);
         var flammable = EnsureComp<HolyFlammableComponent>(otherEnt);
 
         flammable.FireStacks += component.FireStacks;
@@ -129,8 +126,6 @@ public sealed class HolyFlammableSystem : EntitySystem
             
         if (!TryComp<WeakToHolyComponent>(otherUid, out var otherWeak))
             return;
-
-        SetupEntity(otherUid);
 
         if (!TryComp(otherUid, out HolyFlammableComponent? otherFlammable))
             return;
@@ -296,20 +291,14 @@ public sealed class HolyFlammableSystem : EntitySystem
         _stun.TryUpdateParalyzeDuration(uid, TimeSpan.FromSeconds(2f));
     }
 
-    public void SetupEntity(EntityUid uid)
-    {
-        EnsureComp<HolyFlammableComponent>(uid);
-        EnsureComp<HolyIgniteOnCollideComponent>(uid);
-        EnsureComp<IgniteOnHolyDamageComponent>(uid);
-    }
     public float DamageCurve(HolyFlammableComponent flammable)
     {
         float x = flammable.FireStacks;
         return x switch
         {
-            < 4 => x * InitialGrowthRate,
-            >= 4 and <= 40 => InitialGrowthRate * 4 + IntermediateGrowthRate * (x - 4),
-            _ => InitialGrowthRate * 4 + IntermediateGrowthRate * (40 - 4) + LateGrowthRate + (x - 40),
+            < 5 => x * InitialGrowthRate,
+            >= 5 and <= 20 => InitialGrowthRate * 5 + IntermediateGrowthRate * (x - 5),
+            _ => InitialGrowthRate * 5 + IntermediateGrowthRate * (20 - 5) + LateGrowthRate + (x - 5),
         };
     }
 
@@ -352,7 +341,7 @@ public sealed class HolyFlammableSystem : EntitySystem
             if (!flammable.OnFire)
             {
                 _alerts.ClearAlert(uid, flammable.FireAlert);
-                RemCompDeferred<OnFireComponent>(uid);
+                RemCompDeferred<OnHolyFireComponent>(uid);
                 continue;
             }
 
@@ -360,7 +349,7 @@ public sealed class HolyFlammableSystem : EntitySystem
             if (flammable.FireStacks > 0)
             {
                 _damageable.TryChangeDamage(uid, flammable.Damage * DamageCurve(flammable), interruptsDoAfters: false, partMultiplier: 2f);
-                AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 20f : 1f), flammable, flammable.OnFire);
+                AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 100f : 1f), flammable, flammable.OnFire);
             }
             else
             {
