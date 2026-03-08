@@ -2,6 +2,19 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+
+#Heartbeat- Esses são os modulos de modsuit.
+# Esse sistema é bem simples de usar e de adicionar módulos novos, mas é um pouco limitador em termos do que pode fazer. Se o
+#goob adicionar modulos, e é melhor do que os modulos nesse arquivo, apenas delete os que adicionei.
+# Funciona utilizando o mesmo sistema que os PKA modkits(gun upgrade), que é exatamente o que eu precisava; adiciona componentes e remove eles quando o modulo é removido.
+#Se alguém que ssabe mexer em codigo melhor que eu ver isso, aqui ta algumas ideias de modulos que eu não consigo fazer: Health analyzer module, que precisaria de uma action nova para escanear alguem sem
+#ter um health analyzer na mão.
+#eating module, que precisaria remover o componente de ingestion
+#blocker quando inserido e devolver quando for removido.
+#Modulo de armazenamento aprimorado, que precisaria expandir o inventario da modsuit quando inserido e diminuir sem deletar os itens quando removido.
+#As ideias pra todos os modulos vieram do TGstation.
+# Outra coisa que eu gostaria que alguém melhor nisso que eu fizesse é fazer os modulos reduzirem a bateria da modsuit, mesmo que é uma coisa menor.
+
 - type: entity
   parent: BaseItem
   id: JumpModule
@@ -9,7 +22,7 @@
   description: A module that can be inserted inside modsuit boots to grant the user the ability to jump in the direction they're facing.
   components:
   - type: Sprite
-    sprite: _Gabystation\Objects\modules\modulesboots.rsi
+    sprite: _Gabystation\Objects\modules\modulesjumpboots.rsi
     state: icon
   - type: GunUpgrade
     name: modsuit jump
@@ -30,3 +43,322 @@
   - type: Tag
     tags:
     - ModsuitBootUpgrade
+# Esse modulo, e outros modulos que usam o actiongrant ou clothinggrant tem um pequeno problema de que o jogador apenas perde ou recebe as habilidades especificadas
+#quando a roupa é desequipada ou equipada. Isso não tem a ver com o modulo em si, e é um problema menor que não deveria ter um efeito significante no jogo.
+
+- type: entity
+  parent: BaseItem
+  id: MagbootModule
+  name: Modsuit Magboot Module
+  description: A module that can be inserted inside modsuit boots to give them the functionality of regular magboots. DO NOT INSERT INSIDE MODSUITS WITH MAGBOOT FUNCTIONALITY. #Inserir isso dentro de uma modsuit de engenheiro fez as botas perderem a funcionallidade de magboots completamente.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesmagboots.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit magboot
+  - type: GunUpgradeComponents
+    components:
+    - type: ItemToggle
+    - type: ToggleClothing
+      action: ActionToggleMagboots
+    - type: ComponentToggler
+      components:
+      - type: NoSlip
+    - type: Magboots
+      enabledPrefix: null
+    - type: ClothingSpeedModifier
+      walkModifier: 0.8
+      sprintModifier: 0.8
+  - type: Tag
+    tags:
+    - ModsuitBootUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: DrillModule
+  name: Modsuit Drill Module
+  description: A module that can be inserted inside modsuit gloves to make them work like a mining drill.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesdrillhands.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit drill
+  - type: GunUpgradeComponents
+    components:
+    - type: MeleeWeapon
+      autoAttack: true
+      angle: 0
+      animationRotation: -90
+      wideAnimationRotation: -90
+      soundHit:
+        path: "/Audio/Items/drill_hit.ogg"
+      attackRate: 4
+      heavyStaminaCost: 0
+      damage:
+        groups:
+          Brute: 3
+        types:
+          Structural: 15
+      mustBeEquippedToUse: true
+  - type: Tag
+    tags:
+    - ModsuitHandUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: DrillDiamondModule
+  name: Modsuit Diamond Drill Module
+  description: A module that can be inserted inside modsuit gloves to make them work like a diamond mining drill.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesdiamonddrillhands.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit diamond drill
+  - type: GunUpgradeComponents
+    components:
+    - type: MeleeWeapon
+      autoAttack: true
+      angle: 0
+      animationRotation: -90
+      wideAnimationRotation: -90
+      soundHit:
+        path: "/Audio/Items/drill_hit.ogg"
+      attackRate: 4
+      heavyStaminaCost: 0
+      damage:
+        groups:
+          Brute: 6
+        types:
+          Structural: 30
+      mustBeEquippedToUse: true
+  - type: Tag
+    tags:
+    - ModsuitHandUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: MedhudModule
+  name: Modsuit Medhud Module
+  description: A module that can be inserted inside modsuit helmets to grant the user a medical HUD that displays the health of nearby living creatures.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesmedhudhead.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit medhud
+  - type: GunUpgradeComponents
+    components:
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
+    - type: ShowDiseaseIcons
+  - type: Tag
+    tags:
+    - ModsuitHeadUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: DiagnostichudModule
+  name: Modsuit Diagnostic Module
+  description: A module that can be inserted inside modsuit helmets to grant the user a diagnostic HUD that displays the health of nearby sillicons.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesdiagnostichudhead.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit diagnostichud
+  - type: GunUpgradeComponents
+    components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - SiliconRadiation
+  - type: Tag
+    tags:
+    - ModsuitHeadUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: SechudModule
+  name: Modsuit Sechud Module
+  description: A module that can be inserted inside modsuit helmets to grant the user a security HUD that displays the ID status and wanted level of nearby crewmembers.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulessechudhead.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit sechud
+  - type: GunUpgradeComponents
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowContrabandDetails
+  - type: Tag
+    tags:
+    - ModsuitHeadUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: WeldingModule
+  name: Modsuit Welding Module
+  description: A module that can be inserted inside modsuit helmets to grant the user welding protection.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesweldinghead.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit welding
+  - type: GunUpgradeComponents
+    components:
+    - type: EyeProtection
+  - type: Tag
+    tags:
+    - ModsuitHeadUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: AntiGravModule
+  name: Modsuit Anti-Gravity Module
+  description: A module that can be inserted inside the chest of a modsuit to negate gravity for the user.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesantigravchest.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit antigrav
+  - type: GunUpgradeComponents
+    components:
+    - type: AntiGravityClothing
+  - type: Tag
+    tags:
+    - ModsuitChestUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: SurgicalModule
+  name: Modsuit Surgery Module
+  description: A module that can be inserted inside modsuit gloves to make them work like a surgical omnitool. Due to oudated tech, it needs another surgery tool to begin the surgery, even though it can do the rest.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulessurgeryhands.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit surgery
+  - type: GunUpgradeComponents
+    components:
+    - type: ClothingGrantComponent
+      component:
+      - type: SurgeryTool
+        startSound:
+          path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      - type: Hemostat
+      - type: Scalpel
+      - type: Drill
+      - type: BoneSetter
+      - type: Retractor
+      - type: Cautery
+      - type: BoneGel
+      - type: BoneSaw
+      - type: Tweezers
+      - type: Tending
+      - type: Stitches
+  - type: Tag
+    tags:
+    - ModsuitHandUpgrade
+# Esse modulo tem outro pequeno problema de que mesmo que ele funcionar, ele não pode ser usado para abrir a cirurgia.
+
+- type: entity
+  parent: BaseItem
+  id: ClownBootModule
+  name: Modsuit Clown shoes Module
+  description: A module that can be inserted inside modsuit boots to give them the functionality of clown shoes. Honk!
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesclownshoesboots.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit clownshoes
+  - type: GunUpgradeComponents
+    components:
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepClown
+        params:
+          variation: 0.17
+    - type: WaddleWhenWorn
+  - type: Tag
+    tags:
+    - ModsuitBootUpgrade
+#Honk.
+
+- type: entity
+  parent: BaseItem
+  id: GPSModule
+  name: Modsuit GPS Module
+  description: A module that can be inserted inside the chest of a modsuit to grant it GPS functionality.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulesgpschest.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit GPS
+  - type: GunUpgradeComponents
+    components:
+    - type: GPS
+    - type: ActivatableUI
+      key: enum.GpsUiKey.Key
+      inHandsOnly: false
+      singleUser: false
+    - type: UserInterface
+      interfaces:
+        enum.GpsUiKey.Key:
+          type: GpsBoundUserInterface
+  - type: Tag
+    tags:
+    - ModsuitChestUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: TrayModule
+  name: Modsuit T-ray scanner Module
+  description: A module that can be inserted inside modsuit gloves to make them work like a t-ray scanner.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\modules\modulestrayhands.rsi
+    state: icon
+  - type: GunUpgrade
+    name: modsuit t-ray scanner
+  - type: GunUpgradeComponents
+    components:
+    - type: TrayScanner
+  - type: Tag
+    tags:
+    - ModsuitHandUpgrade
+
+#- type: entity
+#  parent: BaseItem
+#  id: RadiationModule
+#  name: Radiation Protection Module
+#  description: A module that can be inserted inside the armor of a modsuit to grant the user protection against radiation.
+#  components:
+#    - type: Sprite
+#      sprite: _Gabystation\Objects\modules\modulesradiationchest.rsi
+#      state: icon
+#    - type: GunUpgrade
+#      name: modsuit radiation
+#  - type: GunUpgradeComponents
+#    components:
+#      - type: Armor
+#        modifiers:
+#          coefficients:
+#            Radiation: 0.01
+#  - type: Tag
+#    tags:
+#    - ModsuitChestUpgrade
+# Heartbeat- Eu tentei adicionar um módulo de proteção contra radiação, mas quando eu coloquei na hardsuit, ela perdeu os outros stats. Se alguém souber como consertar isso, so restaurar e consertar.
+
+

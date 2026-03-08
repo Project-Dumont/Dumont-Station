@@ -50,10 +50,10 @@
   - type: UpgradeableWeapon #Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
   - type: ContainerContainer
     containers:
-      Chest_module: !type:ContainerSlot
+      chest_module: !type:ContainerSlot
   - type: ItemSlots
     slots:
-      Chest_module:
+      chest_module:
         name: modsuit-upgrade-slot
         insertDelay: 1.0
         ejectDelay: 0.5
@@ -63,7 +63,7 @@
 
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateStandard
   name: standard modsuit chestplate
   description: A special modular suit spaceproof cover designed for compact folding inside modular suit control.
@@ -132,7 +132,7 @@
     reduction: 0.5
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateSecurity
   name: soldat modsuit chestplate
   description: A robust modular suit cover with ceramic inserts for extra protection.
@@ -209,7 +209,7 @@
 
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateHeadOfSecurity
   name: bulwark modsuit chestplate
   description: A robust modular suit cover with EXTRA ceramic inserts for slightly more protection.
@@ -292,7 +292,7 @@
       Tramadol: 5
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateParamedic
   name: sanitater modsuit chestplate
   description: A white and blue-ish-grey steel plate for keeping out the harsh void of space and the occasional bullet.
@@ -369,7 +369,7 @@
     reduction: 0.5
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateEngineer
   name: sapper modsuit chestplate
   description: A tough armor plate to defend against harsh atmospheric conditions and shockwaves.
@@ -447,7 +447,7 @@
     reduction: 0.75
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateAtmostech
   name: aeolus modsuit chestplate
   description: A fire-proof armor plate to defend against harsh atmospheric conditions.
@@ -523,7 +523,7 @@
     reduction: 0.90
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateResearchDirector
   name: minerva modsuit chestplate
   description: A bulky bomb and bat proof chunk of steel.
@@ -602,7 +602,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateCaptain
   name: magnate modsuit chestplate
   description: This shit is made out of DIAMONDS, man, this armor was forged with GEMS.
