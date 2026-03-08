@@ -80,17 +80,18 @@
   - BasicModulesTech
   position: -7,-3
 
-- type: technology
-  id: ServiceModules
-  name: research-technology-Service-modules
-  icon:
-    sprite: _Gabystation\Objects\modules\modulesclownshoesboots.rsi
-    state: icon
-  discipline: Experimental
-  tier: 2
-  cost: 5000 #Honk.
-  recipeUnlocks:
-  - ClownBootModuleRecipe
-  technologyPrerequisites:
-  - BasicModulesTech
-  position: -6,-4
+#- type: technology
+#  id: ServiceModules
+#  name: research-technology-Service-modules
+#  icon:
+#    sprite: _Gabystation\Objects\modules\modulesclownshoesboots.rsi
+#    state: icon
+#  discipline: Experimental
+#  tier: 2
+#  cost: 5000 #Honk.
+#  recipeUnlocks:
+#  - ClownBootModuleRecipe
+#  technologyPrerequisites:
+#  - BasicModulesTech
+#  position: -6,-4
+# Eu ia deixar isso, mas quando testei ingame, tirar o modulo da modsuit fez eu ter o waddle de palhaço para sempre. Verdadeiramente, um destino horrendo.
