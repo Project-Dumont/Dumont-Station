@@ -1,0 +1,131 @@
+
+- type: latheRecipe
+  id: DrillModuleRecipe
+  result: DrillModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: MagbootModuleRecipe
+  result: MagbootModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: JumpModuleRecipe
+  result: JumpModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: DrillDiamondModuleRecipe
+  result: DrillDiamondModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Diamond: 100
+
+- type: latheRecipe
+  id: MedhudModuleRecipe
+  result: MedhudModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: DiagnostichudModuleRecipe
+  result: DiagnostichudModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: SechudModuleRecipe
+  result: SechudModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: WeldingModuleRecipe
+  result: WeldingModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: AntiGravModuleRecipe
+  result: AntiGravModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Uranium: 600
+
+- type: latheRecipe
+  id: SurgeryModuleRecipe
+  result: SurgicalModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: ClownBootModuleRecipe
+  result: ClownBootModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+    Bananium: 100
+
+- type: latheRecipe
+  id: GPSModuleRecipe
+  result: GPSModule
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+

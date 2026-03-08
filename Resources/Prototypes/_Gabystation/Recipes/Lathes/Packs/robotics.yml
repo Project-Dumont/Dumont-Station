@@ -1,0 +1,17 @@
+
+## Dynamic
+- type: latheRecipePack
+  id: ModulesPublic
+  recipes:
+    - JumpModuleRecipe
+    - MagbootModuleRecipe
+    - GPSModuleRecipe
+    - AntiGravModuleRecipe
+    - WeldingModuleRecipe
+
+- type: latheRecipePack
+  id: ModulesSimple
+  recipes:
+    - JumpModuleRecipe
+    - MagbootModuleRecipe
+    - GPSModuleRecipe

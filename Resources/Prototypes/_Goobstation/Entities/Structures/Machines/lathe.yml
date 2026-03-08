@@ -80,6 +80,7 @@
     - BluespaceTheory
     - ScienceClothing
     - UpgradeKits
+    - EngineeringModules
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NailgunEvilStatic
@@ -145,6 +146,7 @@
     - BluespaceTheory
     - ScienceClothing
     - ConstructionBagOfHolding
+    - CargoModules
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SalvageExplosivesStatic # Seismic charges - they're pretty cheap in salvage vendor anyway so why not
@@ -298,6 +300,7 @@
     - Translators
     # Gabystation Packs
     - BotanicEquipment
+    - ServiceModules
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ServiceBoardsEvilStatic # Donk Co microwave circiutboard

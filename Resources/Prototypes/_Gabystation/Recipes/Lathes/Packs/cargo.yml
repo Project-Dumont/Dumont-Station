@@ -1,0 +1,7 @@
+
+- type: latheRecipePack
+  id: CargoModules
+  recipes:
+  - DrillModuleRecipe
+  - DrillDiamondModuleRecipe
+  - GPSModuleRecipe

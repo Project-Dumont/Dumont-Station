@@ -1,0 +1,7 @@
+
+## Dynamic
+- type: latheRecipePack
+  id: MedicalModules
+  recipes:
+    - SurgeryModuleRecipe
+    - MedhudModuleRecipe

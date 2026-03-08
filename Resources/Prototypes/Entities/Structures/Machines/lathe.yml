@@ -554,6 +554,7 @@
     - ConstructionBagOfHolding
     # Einstein Engines Packs
     - Translators
+    - ModulesPublic
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -691,6 +692,9 @@
     - PowerAugments
     - ToolAugments
     - PowerCells
+    # Gabystation packs
+    - ModulesPublic
+    - ModulesSimple
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - MechWeaponsSecurityStatic
@@ -813,6 +817,7 @@
     - SpecOpsGoogles
     - PowerCells
     - BorgModulesSecurityDeltaV # DeltaV - Security Borg
+    - SecurityModules # Gabystation
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic
@@ -919,6 +924,7 @@
     # Einstein Engines Packs
     - Translators # Language
     - TranslatorImplanters # Language
+    - MedicalModules # Gabystation
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: EmagLatheRecipes # Goobstation Packs
