@@ -9,7 +9,7 @@ ent-DrillModule = Módulo de Broca
     .desc = Um módulo de broca de mineração para ser inserido nas luvas de uma MODsuit.
 
 ent-DrillDiamondModule = Módulo de Broca de Diamante
-    .desc = Um módulo de broca para ser inserido nas luvas de uma MODsuit. Mais poderoso que seu outro variante.
+    .desc = Um módulo de broca para ser inserido nas luvas de uma MODsuit. Mais poderoso que sua outra variante.
 
 ent-MedhudModule = Módulo de Medhud
     .desc = Um módulo de medhud para ser inserido no capacete de uma MODsuit.
