@@ -1,6 +1,6 @@
 
 ent-JumpModule = Módulo de Salto
-    .desc = Um módulo de salto de curto alcance para para ser inserido nas botas de uma MODsuit.
+    .desc = Um módulo de salto de curto alcance para ser inserido nas botas de uma MODsuit.
 
 ent-MagbootModule = Módulo de Magboots
     .desc = Um módulo de magboots para ser inserido nas botas de uma MODsuit. NÃO INSIRA EM MODSUITS COM FUNCIONALIDADE DE MAGBOOTS.
