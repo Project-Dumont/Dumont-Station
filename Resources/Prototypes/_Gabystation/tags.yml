@@ -20,14 +20,14 @@
 - type: Tag
   id: HosShield
 
-- type: tag
+- type: Tag
   id: ModsuitBootUpgrade
 
-- type: tag
+- type: Tag
   id: ModsuitHeadUpgrade
 
-- type: tag
+- type: Tag
   id: ModsuitChestUpgrade
 
-- type: tag
+- type: Tag
   id: ModsuitHandUpgrade
