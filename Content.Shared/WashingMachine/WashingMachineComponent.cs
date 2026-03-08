@@ -49,12 +49,6 @@ public sealed partial class WashingMachineComponent : Component
     public float WaterSprayChance = 1.0f;
 
     [DataField, AutoNetworkedField]
-    public float MigraineDuration = 30.0f;
-
-    [DataField, AutoNetworkedField]
-    public float MigraineMagnitude = 5.0f;
-
-    [DataField, AutoNetworkedField]
     public float SelfDamagePerSecond = 6.0f;
 
     [ViewVariables, AutoNetworkedField, Access(typeof(SharedWashingMachineSystem))]

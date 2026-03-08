@@ -77,7 +77,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
 
             if (_net.IsServer)
             {
-                SharedEntityStorageComponent? storage = null;
+                EntityStorageComponent? storage = null;
 
                 if (_storage.ResolveStorage(uid, ref storage) && storage.Contents.ContainedEntities.Count > 0)
                 {
@@ -147,27 +147,6 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         foreach (var item in items)
         {
             RaiseLocalEvent(item, itemEv);
-
-            if (HasComp<StatusEffectsComponent>(item))
-            {
-                if (TryComp<MigraineComponent>(item, out var migraine))
-                {
-                    if (migraine.Duration != -1)
-                    {
-                        migraine.Duration = Math.Max(migraine.Duration, component.MigraineDuration);
-                        migraine.BlurryMagnitude = Math.Max(migraine.BlurryMagnitude, component.MigraineMagnitude);
-                        Dirty(item, migraine);
-                    }
-                }
-                else
-                {
-                    migraine = AddComp<MigraineComponent>(item);
-                    migraine.Duration = component.MigraineDuration;
-                    migraine.BlurryMagnitude = component.MigraineMagnitude;
-                    migraine.ApplySlowdown = true;
-                    Dirty(item, migraine);
-                }
-            }
         }
 
         // update again incase forensics changed
@@ -213,7 +192,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         if (!CanActivate(ent))
             return;
 
-        SharedEntityStorageComponent? storage = null;
+        EntityStorageComponent? storage = null;
         if (!_storage.ResolveStorage(ent.Owner, ref storage) || storage.Contents.ContainedEntities.Count == 0)
             return;
 
@@ -236,7 +215,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         if (!CanActivate(ent))
             return;
 
-        SharedEntityStorageComponent? storage = null;
+        EntityStorageComponent? storage = null;
         if (!_storage.ResolveStorage(ent.Owner, ref storage) || storage.Contents.ContainedEntities.Count == 0)
             return;
 
