@@ -321,23 +321,24 @@
     tags:
     - ModsuitChestUpgrade
 
-- type: entity
-  parent: BaseItem
-  id: TrayModule
-  name: Modsuit T-ray scanner Module
-  description: A module that can be inserted inside modsuit gloves to make them work like a t-ray scanner.
-  components:
-  - type: Sprite
-    sprite: _Gabystation\Objects\modules\modulestrayhands.rsi
-    state: icon
-  - type: GunUpgrade
-    name: modsuit t-ray scanner
-  - type: GunUpgradeComponents
-    components:
-    - type: TrayScanner
-  - type: Tag
-    tags:
-    - ModsuitHandUpgrade
+#- type: entity
+#  parent: BaseItem
+#  id: TrayModule
+#  name: Modsuit T-ray scanner Module
+#  description: A module that can be inserted inside modsuit gloves to make them work like a t-ray scanner.
+#  components:
+#  - type: Sprite
+#    sprite: _Gabystation\Objects\modules\modulestrayhands.rsi
+#    state: icon
+#  - type: GunUpgrade
+#    name: modsuit t-ray scanner
+#  - type: GunUpgradeComponents
+#    components:
+#    - type: TrayScanner
+#  - type: Tag
+#    tags:
+#    - ModsuitHandUpgrade
+#Isso so não funcionou. Nem sei porque. Spawna e pode ser inserido, mas não faz nada. Provavelmente é hardcoded.
 
 #- type: entity
 #  parent: BaseItem
