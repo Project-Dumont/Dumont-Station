@@ -12,6 +12,7 @@
   - JumpModuleRecipe
   - MagbootModuleRecipe
   - GPSModuleRecipe
+  - WeldingModuleRecipe
   technologyPrerequisites:
   - ModsuitsTech
   position: -5,-3
