@@ -790,6 +790,30 @@
   id: SurgeryStepInsertAugmentArm
   name: Add arm augment
 
+# Pacify
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepPacify
+  name: Pacify patient
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Drill
+    addOrganOnAdd:
+      brain:
+      - type: Pacified
+      - type: Clumsy
+    duration: 5
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    state: drill
+  - type: SurgeryStepEmoteEffect
+  - type: SurgeryDamageChangeEffect
+    damage:
+      types:
+        Piercing: 10
+
 # Lobotomy
 - type: entity
   parent: SurgeryStepBase
@@ -830,6 +854,7 @@
       - type: OhioAccent
       - type: RatvarianLanguage
       - type: Clumsy
+      - type: Pacified
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
