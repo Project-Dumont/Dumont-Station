@@ -799,20 +799,16 @@
   components:
   - type: SurgeryStep
     tool:
-    - type: Drill
+    - type: Hemostat
     addOrganOnAdd:
       brain:
       - type: Pacified
       - type: Clumsy
-    duration: 5
+    duration: 45
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
-    state: drill
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    state: hemostat
   - type: SurgeryStepEmoteEffect
-  - type: SurgeryDamageChangeEffect
-    damage:
-      types:
-        Piercing: 10
 
 # Lobotomy
 - type: entity

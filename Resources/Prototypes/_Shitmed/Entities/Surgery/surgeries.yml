@@ -1017,8 +1017,9 @@
   - type: Surgery
     requirement: SurgeryOpenIncision
     steps:
+    - SurgeryStepSawBones
+    - SurgeryStepPriseOpenBones
     - SurgeryStepPacify
-    - SurgeryStepCloseIncision
   - type: SurgeryOrganCondition
     organ:
     - type: Brain
