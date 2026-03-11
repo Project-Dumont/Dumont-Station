@@ -126,7 +126,6 @@
     startSound: /Audio/Items/change_jaws.ogg
     endSound: /Audio/Items/change_jaws.ogg
   - type: NailClipper # Mono
-    clipDoAfter: 2
     allowedClawTypes: ["SharpClaw"]
 
 - type: entity # Goobstation - Recycler Update
