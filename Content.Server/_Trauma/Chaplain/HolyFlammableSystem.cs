@@ -82,10 +82,10 @@ public sealed class HolyFlammableSystem : EntitySystem
     {
         foreach (var entity in args.HitEntities)
         {
-            if (!HasComp<WeakToHolyComponent>(ent))
+            if (!HasComp<WeakToHolyComponent>(entity))
                 continue;
 
-            var flammable = EnsureComp<HolyFlammableComponent>(ent);
+            var flammable = EnsureComp<HolyFlammableComponent>(entity);
 
             AdjustFireStacks(entity, ent.Comp.FireStacks, flammable, true);
         }
