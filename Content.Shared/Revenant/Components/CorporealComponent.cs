@@ -4,18 +4,25 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Robust.Shared.GameStates;
+
 namespace Content.Shared.Revenant.Components;
 
 /// <summary>
 /// Makes the target solid, visible, and applies a slowdown.
 /// Meant to be used in conjunction with statusEffectSystem
+///
+/// Trauma - Added NetworkedComponent and AutoGenerateComponentState
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentState]
 public sealed partial class CorporealComponent : Component
 {
     /// <summary>
     /// The debuff applied when the component is present.
+    ///
+    /// Trauma - Added DataField and AutoNetworkedField
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
-    public float MovementSpeedDebuff = 0.3f; // Goobstation change, corporeal makes you much slower.
+    [DataField, AutoNetworkedField]
+    public float MovementSpeedDebuff = 0.3f;
 }
