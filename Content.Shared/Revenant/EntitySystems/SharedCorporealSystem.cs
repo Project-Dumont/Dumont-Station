@@ -64,10 +64,8 @@ public abstract class SharedCorporealSystem : EntitySystem
             _physics.SetCollisionMask(uid, fixture.Key, fixture.Value, 0, fixtures); // Goobstation - Set mask to 0
             _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures); // Goobstation - Set layer to CollisionGroup.GhostImpassable
         }
-
         component.MovementSpeedDebuff = 1;
         Dirty(uid, component); // Trauma
-
         _movement.RefreshMovementSpeedModifiers(uid);
     }
 }
