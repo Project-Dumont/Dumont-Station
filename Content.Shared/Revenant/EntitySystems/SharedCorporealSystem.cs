@@ -65,11 +65,9 @@ public abstract class SharedCorporealSystem : EntitySystem
             _physics.SetCollisionLayer(uid, fixture.Key, fixture.Value, (int) CollisionGroup.GhostImpassable, fixtures); // Goobstation - Set layer to CollisionGroup.GhostImpassable
         }
 
-        // <Trauma>
         component.MovementSpeedDebuff = 1;
-        Dirty(uid, component);
+        Dirty(uid, component); // Trauma
 
         _movement.RefreshMovementSpeedModifiers(uid);
-        // </Trauma>
     }
 }
