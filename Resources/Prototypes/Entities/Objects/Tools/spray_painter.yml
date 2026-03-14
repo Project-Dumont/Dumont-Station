@@ -80,6 +80,7 @@
   description: A cartridge of highly compressed paint, commonly used in spray painters.
   components:
   - type: SprayPainterAmmo
+    charges: 30 # GabyStation
   - type: Sprite
     sprite: Objects/Tools/spray_painter.rsi
     state: ammo
