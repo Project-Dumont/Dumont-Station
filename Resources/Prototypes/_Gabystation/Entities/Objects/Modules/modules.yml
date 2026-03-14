@@ -19,7 +19,7 @@
 - type: entity
   parent: BaseItem
   id: JumpModule
-  name: Modsuit Jump Module
+  name: modsuit jump module
   description: A module that can be inserted inside modsuit boots to grant the user the ability to jump in the direction they're facing.
   components:
   - type: Sprite
@@ -50,7 +50,7 @@
 - type: entity
   parent: BaseItem
   id: MagbootModule
-  name: Modsuit Magboot Module
+  name: modsuit magboot module
   description: A module that can be inserted inside modsuit boots to give them the functionality of regular magboots. DO NOT INSERT INSIDE MODSUITS WITH MAGBOOT FUNCTIONALITY. # Inserir isso dentro de uma modsuit de engenheiro fez as botas perderem a funcionallidade de magboots completamente.
   components:
   - type: Sprite
@@ -78,7 +78,7 @@
 - type: entity
   parent: BaseItem
   id: ClownBootModule
-  name: Modsuit Clown shoes Module
+  name: modsuit clown shoes module
   description: A module that can be inserted inside modsuit boots to give them the functionality of clown shoes. Honk!
   components:
   - type: Sprite
@@ -103,7 +103,7 @@
 - type: entity
   parent: BaseItem
   id: DrillModule
-  name: Modsuit Drill Module
+  name: modsuit drill module
   description: A module that can be inserted inside modsuit gloves to make them work like a mining drill.
   components:
   - type: Sprite
@@ -135,7 +135,7 @@
 - type: entity
   parent: BaseItem
   id: DrillDiamondModule
-  name: Modsuit Diamond Drill Module
+  name: modsuit diamond drill module
   description: A module that can be inserted inside modsuit gloves to make them work like a diamond mining drill.
   components:
   - type: Sprite
@@ -167,7 +167,7 @@
 - type: entity
   parent: BaseItem
   id: SurgicalModule
-  name: Modsuit Surgery Module
+  name: modsuit surgery module
   description: A module that can be inserted inside modsuit gloves to make them work like a surgical omnitool. Due to oudated tech, it needs another surgery tool to begin the surgery, even though it can do the rest.
   components:
   - type: Sprite
@@ -201,7 +201,7 @@
 #- type: entity
 #  parent: BaseItem
 #  id: TrayModule
-#  name: Modsuit T-ray scanner Module
+#  name: modsuit T-ray scanner module
 #  description: A module that can be inserted inside modsuit gloves to make them work like a t-ray scanner.
 #  components:
 #  - type: Sprite
@@ -221,7 +221,7 @@
 - type: entity
   parent: BaseItem
   id: MedhudModule
-  name: Modsuit Medhud Module
+  name: modsuit medhud module
   description: A module that can be inserted inside modsuit helmets to grant the user a medical HUD that displays the health of nearby living creatures.
   components:
   - type: Sprite
@@ -241,7 +241,7 @@
 - type: entity
   parent: BaseItem
   id: DiagnostichudModule
-  name: Modsuit Diagnostic Module
+  name: modsuit diagnostic module
   description: A module that can be inserted inside modsuit helmets to grant the user a diagnostic HUD that displays the health of nearby sillicons.
   components:
   - type: Sprite
@@ -263,7 +263,7 @@
 - type: entity
   parent: BaseItem
   id: SechudModule
-  name: Modsuit Sechud Module
+  name: modsuit sechud module
   description: A module that can be inserted inside modsuit helmets to grant the user a security HUD that displays the ID status and wanted level of nearby crewmembers.
   components:
   - type: Sprite
@@ -284,7 +284,7 @@
 - type: entity
   parent: BaseItem
   id: WeldingModule
-  name: Modsuit Welding Module
+  name: modsuit welding module
   description: A module that can be inserted inside modsuit helmets to grant the user welding protection.
   components:
   - type: Sprite
@@ -303,7 +303,7 @@
 - type: entity
   parent: BaseItem
   id: AntiGravModule
-  name: Modsuit Anti-Gravity Module
+  name: modsuit anti-gravity module
   description: A module that can be inserted inside the chest of a modsuit to negate gravity for the user.
   components:
   - type: Sprite
@@ -321,7 +321,7 @@
 - type: entity
   parent: BaseItem
   id: GPSModule
-  name: Modsuit GPS Module
+  name: modsuit GPS module
   description: A module that can be inserted inside the chest of a modsuit to grant it GPS functionality.
   components:
   - type: Sprite
@@ -347,7 +347,7 @@
 #- type: entity
 #  parent: BaseItem
 #  id: RadiationModule
-#  name: Radiation Protection Module
+#  name: modsuit radiation protection module
 #  description: A module that can be inserted inside the armor of a modsuit to grant the user protection against radiation.
 #  components:
 #    - type: Sprite
