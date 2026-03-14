@@ -554,7 +554,7 @@
     - ConstructionBagOfHolding
     # Einstein Engines Packs
     - Translators
-    - ModulesPublic
+    - ModulesPublic # GabyStation
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo

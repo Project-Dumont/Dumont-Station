@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-
 - type: latheRecipe
   id: ModsuitPlatingEngineerRecipe
   result: ModsuitPlatingEngineer
@@ -33,6 +32,3 @@
 # Oh.
 #Heartbeat- Então, eu tava trabalhando nisso, dai eu aprendi que por causa do goob send preguicoso, NENHUMA DAS PLATINGS DE MODSUIT FAZEM ALGO DIFERENTE, AAAAAAAAAAAAAAAAA
 # então não tem motivo pra isso.
-
-
-

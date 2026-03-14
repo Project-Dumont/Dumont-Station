@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-
 - type: latheRecipe
   id: DrillModuleRecipe
   result: DrillModule
@@ -131,5 +130,3 @@
     Gold: 200
     Silver: 200
     Glass: 100
-
-
