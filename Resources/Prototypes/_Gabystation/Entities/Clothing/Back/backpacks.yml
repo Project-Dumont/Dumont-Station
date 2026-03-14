@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingBackpackSecurity
+  id: ClothingBackpackPrisonGuard
+  name: prison guard backpack
+  description: It's a very robust backpack.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Back/Backpacks/prisonguard.rsi

@@ -66,3 +66,21 @@
     tags:
     - PetWearable
     - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadHatBeretSecurity
+  id: ClothingHeadHatBeretPrisonGuard
+  name: prison guard beret
+  description: A beret with the security department's insignia. For officers that are more inclined towards style than safety.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hats/beret_prisonguard.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hats/beret_prisonguard.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon

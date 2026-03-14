@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingBackpackSatchelSecurity
+  id: ClothingBackpackSatchelPrisonGuard
+  name: prison guard satchel
+  description: A robust satchel for prison guard related needs.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Back/Satchels/prisonguard.rsi
