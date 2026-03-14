@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: latheRecipe
-  id: DrillModuleRecipe
-  result: DrillModule
+  id: ModsuitModuleDrillRecipe
+  result: ModsuitModuleDrill
   completetime: 8
   materials:
     Steel: 500
@@ -13,8 +13,8 @@
     Silver: 200
 
 - type: latheRecipe
-  id: MagbootModuleRecipe
-  result: MagbootModule
+  id: ModsuitModuleMagbootRecipe
+  result: ModsuitModuleMagboot
   completetime: 8
   materials:
     Steel: 500
@@ -23,8 +23,8 @@
     Silver: 200
 
 - type: latheRecipe
-  id: JumpModuleRecipe
-  result: JumpModule
+  id: ModsuitModuleJumpRecipe
+  result: ModsuitModuleJump
   completetime: 8
   materials:
     Steel: 500
@@ -33,8 +33,8 @@
     Silver: 200
 
 - type: latheRecipe
-  id: DrillDiamondModuleRecipe
-  result: DrillDiamondModule
+  id: ModsuitModuleDiamondDrillRecipe
+  result: ModsuitModuleDiamondDrill
   completetime: 8
   materials:
     Steel: 500
@@ -44,8 +44,8 @@
     Diamond: 100
 
 - type: latheRecipe
-  id: MedhudModuleRecipe
-  result: MedhudModule
+  id: ModsuitModuleMedhudRecipe
+  result: ModsuitModuleMedhud
   completetime: 8
   materials:
     Steel: 500
@@ -55,8 +55,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: DiagnostichudModuleRecipe
-  result: DiagnostichudModule
+  id: ModsuitModuleDiagnosticHudRecipe
+  result: ModsuitModuleDiagnosticHud
   completetime: 8
   materials:
     Steel: 500
@@ -66,8 +66,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: SechudModuleRecipe
-  result: SechudModule
+  id: ModsuitModuleSecHudRecipe
+  result: ModsuitModuleSecHud
   completetime: 8
   materials:
     Steel: 500
@@ -77,8 +77,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: WeldingModuleRecipe
-  result: WeldingModule
+  id: ModsuitModuleWeldingRecipe
+  result: ModsuitModuleWelding
   completetime: 8
   materials:
     Steel: 500
@@ -88,8 +88,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: AntiGravModuleRecipe
-  result: AntiGravModule
+  id: ModsuitModuleAntiGravRecipe
+  result: ModsuitModuleAntiGrav
   completetime: 8
   materials:
     Steel: 500
@@ -100,7 +100,7 @@
 
 - type: latheRecipe
   id: SurgeryModuleRecipe
-  result: SurgicalModule
+  result: ModsuitModuleSurgical
   completetime: 8
   materials:
     Steel: 500
@@ -109,8 +109,8 @@
     Silver: 200
 
 - type: latheRecipe
-  id: ClownBootModuleRecipe
-  result: ClownBootModule
+  id: ModsuitModuleClownBootRecipe
+  result: ModsuitModuleClownBoot
   completetime: 8
   materials:
     Steel: 500
@@ -121,8 +121,8 @@
     Bananium: 100
 
 - type: latheRecipe
-  id: GPSModuleRecipe
-  result: GPSModule
+  id: ModsuitModuleGPSRecipe
+  result: ModsuitModuleGPS
   completetime: 8
   materials:
     Steel: 500

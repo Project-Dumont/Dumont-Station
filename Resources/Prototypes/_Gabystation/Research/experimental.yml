@@ -12,10 +12,10 @@
   tier: 2
   cost: 5000 # esses modulos não fazem muito e tem alternativas ja pesquisadas a esse ponto.
   recipeUnlocks:
-  - JumpModuleRecipe
-  - MagbootModuleRecipe
-  - GPSModuleRecipe
-  - WeldingModuleRecipe
+  - ModsuitModuleJumpRecipe
+  - ModsuitModuleMagbootRecipe
+  - ModsuitModuleGPSRecipe
+  - ModsuitModuleWeldingRecipe
   technologyPrerequisites:
   - ModsuitsTech
   position: -5,-3
@@ -30,9 +30,9 @@
   tier: 2
   cost: 3000 # Pois não é muito dificil pegar qualquer qualquer uma dessas coisas.
   recipeUnlocks:
-  - MedhudModuleRecipe
-  - SechudModuleRecipe
-  - DiagnostichudModuleRecipe
+  - ModsuitModuleMedhudRecipe
+  - ModsuitModuleSecHudRecipe
+  - ModsuitModuleDiagnosticHudRecipe
   technologyPrerequisites:
   - BasicModulesTech
   position: -6,-3
@@ -47,8 +47,8 @@
   tier: 2
   cost: 5000 # Pois é util, mas não tão util.
   recipeUnlocks:
-  - DrillModuleRecipe
-  - DrillDiamondModuleRecipe
+  - ModsuitModuleDrillRecipe
+  - ModsuitModuleDiamondDrillRecipe
   technologyPrerequisites:
   - BasicModulesTech
   position: -5,-4
@@ -78,7 +78,7 @@
   tier: 3
   cost: 10000 # Pois é um item especial e inovativo.
   recipeUnlocks:
-  - AntiGravModuleRecipe
+  - ModsuitModuleAntiGravRecipe
   technologyPrerequisites:
   - BasicModulesTech
   position: -7,-3
@@ -93,7 +93,7 @@
 #  tier: 2
 #  cost: 5000 #Honk.
 #  recipeUnlocks:
-#  - ClownBootModuleRecipe
+#  - ModsuitModuleClownBootRecipe
 #  technologyPrerequisites:
 #  - BasicModulesTech
 #  position: -6,-4

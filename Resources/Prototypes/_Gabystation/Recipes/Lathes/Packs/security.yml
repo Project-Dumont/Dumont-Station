@@ -14,4 +14,4 @@
 - type: latheRecipePack
   id: SecurityModules
   recipes:
-  - SechudModuleRecipe
+  - ModsuitModuleSecHudRecipe

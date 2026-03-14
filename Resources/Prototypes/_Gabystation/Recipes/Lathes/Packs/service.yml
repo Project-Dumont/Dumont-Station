@@ -13,4 +13,4 @@
 - type: latheRecipePack
   id: ServiceModules
   recipes:
-  - ClownBootModuleRecipe
+  - ModsuitModuleClownBootRecipe

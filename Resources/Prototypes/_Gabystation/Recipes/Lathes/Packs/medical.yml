@@ -8,4 +8,4 @@
   id: MedicalModules
   recipes:
     - SurgeryModuleRecipe
-    - MedhudModuleRecipe
+    - ModsuitModuleMedhudRecipe

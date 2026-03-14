@@ -6,15 +6,15 @@
 - type: latheRecipePack
   id: ModulesPublic
   recipes:
-    - JumpModuleRecipe
-    - MagbootModuleRecipe
-    - GPSModuleRecipe
-    - AntiGravModuleRecipe
-    - WeldingModuleRecipe
+    - ModsuitModuleJumpRecipe
+    - ModsuitModuleMagbootRecipe
+    - ModsuitModuleGPSRecipe
+    - ModsuitModuleAntiGravRecipe
+    - ModsuitModuleWeldingRecipe
 
 - type: latheRecipePack
   id: ModulesSimple
   recipes:
-    - JumpModuleRecipe
-    - MagbootModuleRecipe
-    - GPSModuleRecipe
+    - ModsuitModuleJumpRecipe
+    - ModsuitModuleMagbootRecipe
+    - ModsuitModuleGPSRecipe
