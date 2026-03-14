@@ -75,6 +75,30 @@
     tags:
     - ModsuitBootUpgrade
 
+- type: entity
+  parent: BaseItem
+  id: ClownBootModule
+  name: Modsuit Clown shoes Module
+  description: A module that can be inserted inside modsuit boots to give them the functionality of clown shoes. Honk!
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\Specific\modsuit_modules.rsi
+    state: clownshoes-boots
+  - type: GunUpgrade
+    name: modsuit clownshoes
+  - type: GunUpgradeComponents
+    components:
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepClown
+        params:
+          variation: 0.17
+    - type: WaddleWhenWorn
+  - type: Tag
+    tags:
+    - ModsuitBootUpgrade
+#Honk.
+
 ## Hands
 - type: entity
   parent: BaseItem
@@ -139,6 +163,59 @@
   - type: Tag
     tags:
     - ModsuitHandUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: SurgicalModule
+  name: Modsuit Surgery Module
+  description: A module that can be inserted inside modsuit gloves to make them work like a surgical omnitool. Due to oudated tech, it needs another surgery tool to begin the surgery, even though it can do the rest.
+  components:
+  - type: Sprite
+    sprite: _Gabystation\Objects\Specific\modsuit_modules.rsi
+    state: surgery-hands
+  - type: GunUpgrade
+    name: modsuit surgery
+  - type: GunUpgradeComponents
+    components:
+    - type: ClothingGrantComponent
+      component:
+      - type: SurgeryTool
+        startSound:
+          path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      - type: Hemostat
+      - type: Scalpel
+      - type: Drill
+      - type: BoneSetter
+      - type: Retractor
+      - type: Cautery
+      - type: BoneGel
+      - type: BoneSaw
+      - type: Tweezers
+      - type: Tending
+      - type: Stitches
+  - type: Tag
+    tags:
+    - ModsuitHandUpgrade
+# Esse modulo tem outro pequeno problema de que mesmo que ele funcionar, ele não pode ser usado para abrir a cirurgia.
+
+#- type: entity
+#  parent: BaseItem
+#  id: TrayModule
+#  name: Modsuit T-ray scanner Module
+#  description: A module that can be inserted inside modsuit gloves to make them work like a t-ray scanner.
+#  components:
+#  - type: Sprite
+#    sprite: _Gabystation\Objects\Specific\modsuit_modules.rsi
+#    state: stray-hands
+#  - type: GunUpgrade
+#    name: modsuit t-ray scanner
+#  - type: GunUpgradeComponents
+#    components:
+#    - type: TrayScanner
+#  - type: Tag
+#    tags:
+#    - ModsuitHandUpgrade
+#Isso so não funcionou. Nem sei porque. Spawna e pode ser inserido, mas não faz nada. Provavelmente é hardcoded.
 
 ## Head
 - type: entity
@@ -243,64 +320,6 @@
 
 - type: entity
   parent: BaseItem
-  id: SurgicalModule
-  name: Modsuit Surgery Module
-  description: A module that can be inserted inside modsuit gloves to make them work like a surgical omnitool. Due to oudated tech, it needs another surgery tool to begin the surgery, even though it can do the rest.
-  components:
-  - type: Sprite
-    sprite: _Gabystation\Objects\Specific\modsuit_modules.rsi
-    state: surgery-hands
-  - type: GunUpgrade
-    name: modsuit surgery
-  - type: GunUpgradeComponents
-    components:
-    - type: ClothingGrantComponent
-      component:
-      - type: SurgeryTool
-        startSound:
-          path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
-      - type: Hemostat
-      - type: Scalpel
-      - type: Drill
-      - type: BoneSetter
-      - type: Retractor
-      - type: Cautery
-      - type: BoneGel
-      - type: BoneSaw
-      - type: Tweezers
-      - type: Tending
-      - type: Stitches
-  - type: Tag
-    tags:
-    - ModsuitHandUpgrade
-# Esse modulo tem outro pequeno problema de que mesmo que ele funcionar, ele não pode ser usado para abrir a cirurgia.
-
-- type: entity
-  parent: BaseItem
-  id: ClownBootModule
-  name: Modsuit Clown shoes Module
-  description: A module that can be inserted inside modsuit boots to give them the functionality of clown shoes. Honk!
-  components:
-  - type: Sprite
-    sprite: _Gabystation\Objects\Specific\modsuit_modules.rsi
-    state: clownshoes-boots
-  - type: GunUpgrade
-    name: modsuit clownshoes
-  - type: GunUpgradeComponents
-    components:
-    - type: FootstepModifier
-      footstepSoundCollection:
-        collection: FootstepClown
-        params:
-          variation: 0.17
-    - type: WaddleWhenWorn
-  - type: Tag
-    tags:
-    - ModsuitBootUpgrade
-#Honk.
-
-- type: entity
-  parent: BaseItem
   id: GPSModule
   name: Modsuit GPS Module
   description: A module that can be inserted inside the chest of a modsuit to grant it GPS functionality.
@@ -324,25 +343,6 @@
   - type: Tag
     tags:
     - ModsuitChestUpgrade
-
-#- type: entity
-#  parent: BaseItem
-#  id: TrayModule
-#  name: Modsuit T-ray scanner Module
-#  description: A module that can be inserted inside modsuit gloves to make them work like a t-ray scanner.
-#  components:
-#  - type: Sprite
-#    sprite: _Gabystation\Objects\Specific\modsuit_modules.rsi
-#    state: stray-hands
-#  - type: GunUpgrade
-#    name: modsuit t-ray scanner
-#  - type: GunUpgradeComponents
-#    components:
-#    - type: TrayScanner
-#  - type: Tag
-#    tags:
-#    - ModsuitHandUpgrade
-#Isso so não funcionou. Nem sei porque. Spawna e pode ser inserido, mas não faz nada. Provavelmente é hardcoded.
 
 #- type: entity
 #  parent: BaseItem
