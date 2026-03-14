@@ -26,7 +26,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: jump-boots
   - type: GunUpgrade
-    name: modsuit jump
+    name: modsuit-module-jump-name
   - type: GunUpgradeComponents
     components:
     - type: JumpAbility
@@ -57,7 +57,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: mag-boots
   - type: GunUpgrade
-    name: modsuit magboot
+    name: modsuit-module-magboot-name
   - type: GunUpgradeComponents
     components:
     - type: ItemToggle
@@ -85,7 +85,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: clownshoes-boots
   - type: GunUpgrade
-    name: modsuit clownshoes
+    name: modsuit-module-clownshoes-name
   - type: GunUpgradeComponents
     components:
     - type: FootstepModifier
@@ -110,7 +110,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: drill-hands
   - type: GunUpgrade
-    name: modsuit drill
+    name: modsuit-module-drill-name
   - type: GunUpgradeComponents
     components:
     - type: MeleeWeapon
@@ -142,7 +142,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: diamonddrill-hands
   - type: GunUpgrade
-    name: modsuit diamond drill
+    name: modsuit-module-diamond-drill-name
   - type: GunUpgradeComponents
     components:
     - type: MeleeWeapon
@@ -174,7 +174,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: surgery-hands
   - type: GunUpgrade
-    name: modsuit surgery
+    name: modsuit-module-surgery-name
   - type: GunUpgradeComponents
     components:
     - type: ClothingGrantComponent
@@ -208,7 +208,7 @@
 #    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
 #    state: stray-hands
 #  - type: GunUpgrade
-#    name: modsuit t-ray scanner
+#    name: modsuit-module-tray-scanner-name
 #  - type: GunUpgradeComponents
 #    components:
 #    - type: TrayScanner
@@ -228,7 +228,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: medhud-head
   - type: GunUpgrade
-    name: modsuit medhud
+    name: modsuit-module-medhud-name
   - type: GunUpgradeComponents
     components:
     - type: ShowHealthBars
@@ -248,7 +248,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: diagnostichud-head
   - type: GunUpgrade
-    name: modsuit diagnostichud
+    name: modsuit-module-diagnostichud-name
   - type: GunUpgradeComponents
     components:
     - type: ShowHealthBars
@@ -270,7 +270,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: sechud-head
   - type: GunUpgrade
-    name: modsuit sechud
+    name: modsuit-module-sechud-name
   - type: GunUpgradeComponents
     components:
     - type: ShowJobIcons
@@ -291,7 +291,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: welding-head
   - type: GunUpgrade
-    name: modsuit welding
+    name: modsuit-module-welding-name
   - type: GunUpgradeComponents
     components:
     - type: EyeProtection
@@ -310,7 +310,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: antigrav-chest
   - type: GunUpgrade
-    name: modsuit antigrav
+    name: modsuit-module-antigrav-name
   - type: GunUpgradeComponents
     components:
     - type: AntiGravityClothing
@@ -328,7 +328,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: gps-chest
   - type: GunUpgrade
-    name: modsuit GPS
+    name: modsuit-module-gps-name
   - type: GunUpgradeComponents
     components:
     - type: GPS
@@ -354,7 +354,7 @@
 #      sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
 #      state: radiation-chest
 #    - type: GunUpgrade
-#      name: modsuit radiation
+#      name: modsuit-module-radiation-name
 #  - type: GunUpgradeComponents
 #    components:
 #      - type: Armor
