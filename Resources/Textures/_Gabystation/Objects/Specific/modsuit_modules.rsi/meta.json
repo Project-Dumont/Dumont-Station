@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TGstation. mag-boots recolored, diamond finish by Heartbeat",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "antigrav-chest"
+    },
+    {
+      "name": "clownshoes-boots"
+    },
+    {
+      "name": "diagnostichud-head"
+    },
+    {
+      "name": "diamonddrill-hands"
+    },
+    {
+      "name": "drill-hands"
+    },
+    {
+      "name": "gps-chest"
+    },
+    {
+      "name": "healthanalyzer-hands"
+    },
+    {
+      "name": "holster-chest"
+    },
+    {
+      "name": "jump-boots"
+    },
+    {
+      "name": "mag-boots"
+    },
+    {
+      "name": "medhud-head"
+    },
+    {
+      "name": "radiation-chest"
+    },
+    {
+      "name": "sechud-head"
+    },
+    {
+      "name": "stray-hands"
+    },
+    {
+      "name": "surgery-hands"
+    },
+    {
+      "name": "welding-head"
+    }
+  ]
+}
