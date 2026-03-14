@@ -140,7 +140,7 @@
   components:
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
-    state: drilldiamond-hands
+    state: diamonddrill-hands
   - type: GunUpgrade
     name: modsuit diamond drill
   - type: GunUpgradeComponents
