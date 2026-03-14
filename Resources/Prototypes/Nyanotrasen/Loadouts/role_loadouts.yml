@@ -3,16 +3,17 @@
   id: JobPrisonGuard
   groups:
   - PrisonGuardHead
-  - SecurityNeck # DeltaV
   - PrisonGuardJumpsuit
-  - SecurityBackpack
-  - SecurityOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was SecurityOuterClothing
-  - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityShoes
+  - SecurityBackpack
   - SecurityBelt
-  - SecurityEyewear # DeltaV - Security eyewear with prescription options
+  - SecurityMelee
   - SurvivalSecurity
+  - TrinketsSecurity
+  - SecurityStar
   - Trinkets
+  - Animals
   - GroupSpeciesBreathToolSecurity
-  - SecurityFirearm # DeltaV - loadouts
-  - SecurityFirearmAmmo # DeltaV - loadouts
+  - SecurityOfficerEnvirohelm
+  - SecurityOfficerEnvirosuit
+  - SecurityOfficerEnvirogloves
