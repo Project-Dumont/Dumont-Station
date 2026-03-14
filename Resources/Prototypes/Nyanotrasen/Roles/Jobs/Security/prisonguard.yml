@@ -2,33 +2,50 @@
   id: PrisonGuard
   name: job-name-guard
   description: job-description-guard
-  playTimeTracker: JobSecurityOfficer
+  playTimeTracker: JobPrisonGuard
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 4h
   startingGear: PrisonGuardGear
-#  alwaysUseSpawner: true
+  alwaysUseSpawner: true
   canBeAntag: false
   icon: "JobIconPrisonGuard"
   supervisors: job-supervisors-warden
   setPreference: true
-#  whitelistRequired: true
   access:
   - Security
-  - Brig
+  #- Brig #Delta V: Removed brig access
   - Maintenance
+  - External # DeltaV - Added external access
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
 
 - type: startingGear
   id: PrisonGuardGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitPrisonGuard
-    back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsJack
-    eyes: ClothingEyesGlassesSecurity
-    head: ClothingHeadPrisonGuard
+    #eyes: ClothingEyesGlassesSecurity # DeltaV - loadouts
     id: PrisonGuardPDA
-    ears: ClothingHeadsetSecurity
-    belt: ClothingBeltSecurityFilled
-  innerclothingskirt: ClothingUniformJumpsuitPrisonGuard
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
+    ears: ClothingHeadsetPrisonGuard # begin DeltaV
+  storage:
+    back:
+    - Flash
+   # - MagazinePistol # end DeltaV
+
+# DeltaV
+- type: chameleonOutfit
+  id: PrisonGuardChameleonOutfit
+  job: PrisonGuard
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    id: PrisonGuardPDA
+    ears: ClothingHeadsetPrisonGuard
+    head: ClothingHeadPrisonGuard
+    jumpsuit: ClothingUniformJumpsuitPrisonGuard
+    mask: ClothingMaskGasSecurity
+    gloves: ClothingHandsGlovesColorBlack

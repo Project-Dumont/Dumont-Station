@@ -8,3 +8,15 @@
     sprite: _DV/Clothing/Uniforms/Jumpskirt/admin_assistant.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/admin_assistant.rsi
+
+# Prison Guard Jumpskirt
+
+- type: entity
+  parent: ClothingUniformJumpsuitPrisonGuard
+  id: ClothingUniformJumpskirtPrisonGuard
+  name: prison guard's jumpskirt
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/prisonguard.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/prisonguard.rsi

@@ -6,7 +6,7 @@
   - type: SpawnPoint
     job_id: PrisonGuard
   - type: Sprite
-    sprite: DeltaV/Markers/jobs.rsi
     layers:
       - state: green
-      - state: nyanoprisonguard
+      - sprite: _DV/Markers/jobs.rsi
+        state: nyanoprisonguard

@@ -23,3 +23,9 @@
     state: icon_alt
   - type: Clothing
     equippedPrefix: alt
+
+- type: entity
+  parent: ClothingHeadsetSecurity
+  id: ClothingHeadsetPrisonGuard
+  name: guard headset
+  description: Headset used by prison guards.
