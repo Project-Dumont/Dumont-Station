@@ -99,7 +99,7 @@
     Uranium: 600
 
 - type: latheRecipe
-  id: SurgeryModuleRecipe
+  id: ModsuitModuleSurgeryRecipe
   result: ModsuitModuleSurgical
   completetime: 8
   materials:

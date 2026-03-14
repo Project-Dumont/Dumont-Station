@@ -7,5 +7,5 @@
 - type: latheRecipePack
   id: MedicalModules
   recipes:
-    - SurgeryModuleRecipe
+    - ModsuitModuleSurgeryRecipe
     - ModsuitModuleMedhudRecipe
