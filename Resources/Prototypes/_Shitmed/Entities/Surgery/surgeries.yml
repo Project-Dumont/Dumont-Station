@@ -1007,7 +1007,7 @@
     organ:
     - type: AugmentArm
 
-# Pacify
+# GabyStation - Pacify
 - type: entity
   parent: SurgeryBase
   id: SurgeryPacify
