@@ -34,7 +34,7 @@
 # Security
 
 - type: entity
-  parent: BaseSecurityPDA
+  parent: SecurityPDA
   id: PrisonGuardPDA
   name: prison guard PDA
   description: Red to hide the stains of prisoner blood.
@@ -43,10 +43,15 @@
     id: PrisonGuardIDCard
   - type: Appearance
     appearanceDataInit:
-      enum.PdaVisuals.PdaType: !type:String
+      enum.PdaVisuals.PdaType:
+        !type:String
         pda-prisonguard
   - type: PdaBorderColor
     borderColor: "#A32D26"
-    accentVColor: "#DFDFDF"
+    accentVColor: "#d76b00"
   - type: Icon
+    sprite: _Gabystation/Objects/Devices/pda.rsi
+    state: pda-prisonguard
+  - type: Sprite
+    sprite: _Gabystation/Objects/Devices/pda.rsi
     state: pda-prisonguard

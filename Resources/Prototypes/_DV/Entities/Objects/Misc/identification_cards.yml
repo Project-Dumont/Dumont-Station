@@ -14,19 +14,13 @@
 
 # Security
 - type: entity
-  parent: IDCardStandard
+  parent: SecurityIDCard
   id: PrisonGuardIDCard
   name: prison guard ID card
   components:
+  - type: PresetIdCard
+    job: PrisonGuard
   - type: Sprite
     layers:
     - state: default
-    - state: stripe_top
-      color: &color-security-top "#39393c"
-    - state: stripe_bottom
-      color: &color-security-bottom "#262626"
-    - sprite: *icon-rsi-dv
-      offset:
-      state: nyanoPrisonGuard
-  - type: PresetIdCard
-    job: PrisonGuard
+    - state: idprisonguard
