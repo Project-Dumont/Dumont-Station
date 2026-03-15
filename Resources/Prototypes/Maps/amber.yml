@@ -86,6 +86,7 @@
             SecurityCadet: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             PermaPrisoner: [ 1, 0 ] # HARMONY
+            PrisonGuard: [ 1, 1 ] # Gaby
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
