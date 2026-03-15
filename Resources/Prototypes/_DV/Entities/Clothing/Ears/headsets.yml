@@ -52,4 +52,8 @@
       - EncryptionKeySecurity
       - EncryptionKeyCommon
       - EncryptionKeyPrison
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Ears/Headsets/prisonguard.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Ears/Headsets/prisonguard.rsi
 
