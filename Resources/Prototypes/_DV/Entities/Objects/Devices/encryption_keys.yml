@@ -9,7 +9,7 @@
     - Prison
     defaultChannel: Prison
   - type: Sprite
-    sprite: DeltaV/Objects/Devices/encryption_keys.rsi
+    sprite: _DV/Objects/Devices/encryption_keys.rsi
     layers:
     - state: crypt_orange
     - state: prisoner_label
