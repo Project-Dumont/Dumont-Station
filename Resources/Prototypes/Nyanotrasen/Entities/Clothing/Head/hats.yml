@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseSecurityContraband, ClothingHeadBase]
   id: ClothingHeadPrisonGuard
   name: prison guard's hat
   description: Grants full immunity from denying others basic human rights, dignity, or respect.

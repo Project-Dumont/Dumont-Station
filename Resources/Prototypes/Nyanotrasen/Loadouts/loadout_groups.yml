@@ -3,9 +3,9 @@
 - type: loadoutGroup
   id: PrisonGuardHead
   name: loadout-group-prison-guard-head
-  minLimit: 0
   loadouts:
   - PrisonGuardHead
+  - PrisonGuardBeret
 
 - type: loadoutGroup
   id: PrisonGuardJumpsuit

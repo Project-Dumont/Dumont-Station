@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitPrisonGuard
   name: prison guard's uniform
   description: A comfortable, durable, waterproof uniform made to keep prison staff comfortable and safe.
