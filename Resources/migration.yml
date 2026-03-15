@@ -193,7 +193,7 @@ BenchSteelWhiteMiddle: null
 BenchSteelWhiteRight: null
 BoardGameSpawner: null
 BoxColoredLighttube: BoxLighttube
-BoxEncryptionKeyPrisoner: BoxEncryptionKeyPassenger
+# BoxEncryptionKeyPrisoner: BoxEncryptionKeyPassenger # Gaby - Prisoner Guard
 BoxMaintenanceLightbulb: BoxLightMixed
 BoxPDAPrisoner: BoxPDA
 ClothingBeltMartialBlack: null
@@ -202,7 +202,7 @@ ClothingHeadCourier: null
 ClothingHeadHatFedoraBlack: null
 ClothingHeadHatFedoraChoc: null
 ClothingHeadHatFezMantis: null
-ClothingHeadPrisonGuard: null
+# ClothingHeadPrisonGuard: null # Gaby - Prison Guard
 ClothingUniformMartialGi: null
 ClothingUniformTShirtKhakiPants: null
 ComputerShipyard: null
@@ -299,7 +299,7 @@ SpawnPointLocationMidRoundAntag: null
 SpawnPointMartialArtist: null
 SpawnPointMedicalBorg: null
 SpawnPointPrisoner: null
-SpawnPointPrisonGuard: null
+# SpawnPointPrisonGuard: null # Gaby - Prison Guard
 SpeedLoaderSpecialPractice: null
 SuitStorageCorpsman: null
 SuitStorageParamedic: null
