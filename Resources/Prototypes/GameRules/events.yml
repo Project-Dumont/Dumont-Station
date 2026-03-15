@@ -253,7 +253,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_Gabystation/Announcements/anomaly_spawn_saae.ogg
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -276,7 +276,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_Gabystation/Announcements/bluespace_saae.ogg
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -306,6 +306,8 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/breaker_saae.ogg
     weight: 7
     duration: 1
     minimumPlayers: 15
@@ -323,6 +325,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/burocratico_saae.ogg
     minimumPlayers: 25
     weight: 3
     duration: 1
@@ -340,6 +344,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/clerigal_saae.ogg
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -599,8 +605,11 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/gasleak_saae.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
+    endAudio: 
+      path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
+      params:
     weight: 8
     chaos:
       Atmos: 100
@@ -616,6 +625,9 @@
   parent: BaseStationEventLongDelay
   components:
   - type: StationEvent
+    startAnnouncement: station-event-kudzu-growth-start-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/kudzu_saae.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 7
@@ -657,9 +669,11 @@
   - type: StationEvent
     weight: 8
     startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
+    endAnnouncement: station-event-solar-flare-end-announcement
+    endAudio: 
+      path: /Audio/_Gabystation/Announcements/solarflare_off_saae.ogg
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -691,7 +705,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/scrubbers_saae.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -711,7 +725,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/aliens.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -735,7 +749,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -761,7 +775,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/aliens.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -784,7 +798,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/aliens_saae.ogg
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
     weight: 3 # Goobstation - was 1.5
@@ -806,6 +820,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAnnouncement: station-event-zombie-outbreak-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/zombie_saae.ogg
     earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
@@ -903,7 +920,7 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
     eventType: HostilesSpawn # Goobstation
@@ -952,6 +969,9 @@
   id: IonStorm
   components:
   - type: StationEvent
+    startAnnouncement: station-event-ion-storm-start-announcement
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/ionstorm_saae.ogg
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
@@ -990,7 +1010,7 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Gabystation/Announcements/greytide_saae.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
