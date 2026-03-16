@@ -73,6 +73,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Content.Shared._Adventure.Bartender.Systems; // Adventure
+using Content.Shared.Fluids.Components; // Adventure
 
 namespace Content.Server.Damage.Systems
 {
@@ -135,7 +136,8 @@ namespace Content.Server.Damage.Systems
         private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
         {
             // Adventure start
-            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid))
+            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid)
+                && HasComp<SpillableComponent>(ent.Owner)) //prevents pacified characters from using throwing weapons
                 return;
             // Adventure end
             args.Cancel("pacified-cannot-throw");
