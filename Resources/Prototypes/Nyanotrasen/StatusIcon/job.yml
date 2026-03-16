@@ -4,4 +4,4 @@
   icon:
     sprite: /Textures/_DV/Interface/Misc/job_icons.rsi
     state: nyanoPrisonGuard
-  jobName: job-name-prison-guard
+  jobName: job-name-guard
