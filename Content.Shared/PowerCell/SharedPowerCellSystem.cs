@@ -45,6 +45,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Orion.PowerCell.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Rejuvenate;
@@ -96,7 +97,13 @@ public abstract class SharedPowerCellSystem : EntitySystem
         if (!HasComp<PowerCellComponent>(args.EntityUid))
         {
             args.Cancel();
+            return; // Orion
         }
+
+        // Orion-Start
+        if (!component.AllowMegaCells && HasComp<MegaCellComponent>(args.EntityUid))
+            args.Cancel();
+        // Orion-End
     }
 
     private void OnCellInserted(EntityUid uid, PowerCellSlotComponent component, EntInsertedIntoContainerMessage args)

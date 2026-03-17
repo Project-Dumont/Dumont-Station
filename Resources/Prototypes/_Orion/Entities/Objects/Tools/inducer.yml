@@ -20,6 +20,7 @@
     - 7500
   - type: PowerCellSlot
     cellSlotId: inducer_power_cell_slot
+    allowMegaCells: true
   - type: ContainerContainer
     containers:
       inducer_power_cell_slot: !type:ContainerSlot
