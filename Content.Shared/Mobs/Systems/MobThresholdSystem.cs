@@ -211,7 +211,7 @@ public sealed partial class MobThresholdSystem : EntitySystem
         if (!Resolve(target, ref thresholdComponent))
             return false;
 
-        return TryGetThresholdForState(target, MobState.Critical, out threshold, thresholdComponent)
+        return TryGetThresholdForState(target, MobState.SoftCritical, out threshold, thresholdComponent) // Orion-Edit
                || TryGetThresholdForState(target, MobState.Dead, out threshold, thresholdComponent);
     }
 

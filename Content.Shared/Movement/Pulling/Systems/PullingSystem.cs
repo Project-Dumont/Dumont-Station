@@ -258,7 +258,7 @@ public sealed class PullingSystem : EntitySystem
         if (component.Pulling == null)
             return;
 
-        if (TryComp<PullableComponent>(component.Pulling, out var comp) && (args.State == MobState.Critical || args.State == MobState.Dead))
+        if (TryComp<PullableComponent>(component.Pulling, out var comp) && args.State is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Orion-Edit
         {
             TryStopPull(component.Pulling.Value, comp);
         }

@@ -499,7 +499,7 @@ public sealed class SuitSensorSystem : EntitySystem
 
         // Get mob total damage crit threshold
         int? totalDamageThreshold = null;
-        if (_mobThresholdSystem.TryGetThresholdForState(sensor.User.Value, MobState.Critical, out var critThreshold))
+        if (_mobThresholdSystem.TryGetThresholdForState(sensor.User.Value, MobState.SoftCritical, out var critThreshold)) // Orion-Edit
             totalDamageThreshold = critThreshold.Value.Int();
 
         // finally, form suit sensor status
