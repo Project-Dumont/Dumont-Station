@@ -18,6 +18,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Network;
 using Content.Shared.Fluids;
 using Content.Shared.Popups;
+using Content.Shared._Adventure.Bartender.Systems; // Omu - Make Beer Goggles Cool Again (MBGCA)
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -33,6 +34,7 @@ public sealed partial class PressurizedSolutionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Omu (MBGCA)
     public override void Initialize()
     {
         base.Initialize();
@@ -269,6 +271,13 @@ public sealed partial class PressurizedSolutionSystem : EntitySystem
 
     private void OnLand(Entity<PressurizedSolutionComponent> entity, ref LandEvent args)
     {
+        // Omu start: Allows players wearing beer goggles to throw drinks without causing sprays or increasing fizziness (MBGCA)
+        if (args.User is { } user && _nonspillthrower.GetSpillProofThrow(user))
+        {
+            TryClearFizziness(new Entity<PressurizedSolutionComponent?>(entity.Owner, entity.Comp));
+            return;
+        }
+        // Omu end
         SprayOrAddFizziness(entity, entity.Comp.SprayChanceModOnLand, entity.Comp.FizzinessAddedOnLand);
     }
 
