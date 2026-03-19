@@ -36,6 +36,9 @@
   id: HandTeleporter
 
 - type: Tag
+  id: Iradomini
+
+- type: Tag
   id: MagazineTurret
 
 - type: Tag
@@ -85,6 +88,9 @@
 
 - type: Tag
   id: T45Chest
+
+- type: Tag
+  id: BowImprovised
 
 - type: Tag
   id: T45Helmet
