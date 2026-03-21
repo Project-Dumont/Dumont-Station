@@ -652,8 +652,6 @@
     startAudio:
       path: /Audio/_Gabystation/Announcements/power_off_saae.ogg
     endAnnouncement: station-event-power-grid-check-end-announcement
-    endAudio: 
-      path: /Audio/_Gabystation/Announcements/power_on_saae.ogg
     duration: 60
     maxDuration: 120
     eventType: Interference # Goobstation
