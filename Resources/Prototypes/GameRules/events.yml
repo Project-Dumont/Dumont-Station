@@ -609,7 +609,6 @@
     endAnnouncement: station-event-gas-leak-end-announcement
     endAudio: 
       path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
-      params:
     weight: 8
     chaos:
       Atmos: 100
