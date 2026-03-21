@@ -18,3 +18,8 @@
   - /Audio/Announcements/RoundEnd/disappointed.ogg
   - /Audio/Announcements/RoundEnd/notevenpaidforthis.ogg
   - /Audio/Announcements/RoundEnd/stalemate.ogg
+
+- type: soundCollection
+  id: PowerOn
+  files:
+  - /Audio/Announcements/power_on_saae.ogg
