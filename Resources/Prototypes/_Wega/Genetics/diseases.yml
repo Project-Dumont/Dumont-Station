@@ -137,6 +137,10 @@
   costInstability: -15
   addComponent:
   - type: RadiationSource
+  - type: PointLight
+    radius: 2
+    energy: 20
+    color: "#06DF24"
 
 - type: structuralEnzymes
   id: GeneticsSouthernDisease
