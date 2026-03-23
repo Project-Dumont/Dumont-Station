@@ -1004,6 +1004,7 @@
   exclusiveWith: INNERCLOTHING
   loadouts:
   - BlueshieldOfficerInnerBlueshieldSkirt
+  - BlueshieldOfficerInnerBlueshieldSuit # Gabystation | no idea why it wasn't set here in the first place.
 
 - type: loadoutGroup
   id: BlueshieldOfficerOuter
