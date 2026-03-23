@@ -183,6 +183,7 @@
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
     - id: CargoMegaphone # goob - loudspeaker
     - id: SlotMachineHighRollerFlatPack # Goob - gambling
+    - id: FlatpackCargoComputerComms
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -284,6 +285,7 @@
   table: !type:AllSelector
     children:
     - id: AccessConfigurator
+    - id: FlatpackServiceComputerComms
     - id: BoxEncryptionKeyPassenger
     - id: BoxEncryptionKeyService
     - id: BoxHeadset
@@ -330,6 +332,7 @@
     children:
     - id: AccessConfigurator
     - id: BoxEncryptionKeyEngineering
+    - id: FlatpackEngiComputerComms
     - id: CigarCase
       prob: 0.15
     - id: ClothingBeltChiefEngineerFilled
@@ -400,6 +403,7 @@
     - id: BoxEncryptionKeyMedical
     # - id: ClothingBackpackDuffelSurgeryFilled # Goobstation - tools in webbing
     - id: ClothingCloakCmo
+    - id: FlatpackMedicalComputerComms
     - id: ClothingEyesHudMedical
     - id: ClothingHandsGlovesNitrile
     - id: ClothingHeadHatBeretCmo
@@ -474,6 +478,7 @@
     children:
     - id: Intellicard
     - id: BoxEncryptionKeyScience
+    - id: FlatpackScienceComputerComms
     #- id: CircuitImprinterMachineCircuitboard # Goobstation - Science Techfab
     - id: ClothingBeltUtilityFilled
     - id: ClothingHeadsetAltScience
@@ -536,6 +541,7 @@
     children:
     #- id: WeaponEnergyShotgun # Goobstation - security revamp
     - id: BookSpaceLaw
+    - id: FlatpackSecurityComputerComms
     - id: BoxEncryptionKeySecurity
     - id: CigarGoldCase
       prob: 0.50
