@@ -59,6 +59,5 @@ alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os
 
 ## GoobStation
 alert-level-honk = Honk
-alert-level-honk-announcement = Gusttavo Brisa está à solta e pode causar danos catastróficos se não for eliminado!
-Todos os tripulantes devem colaborar para executá-lo, se possível, ou então evacuar.
+alert-level-honk-announcement = Gusttavo Brisa está à solta e pode causar danos catastróficos se não for eliminado! Todos os tripulantes devem colaborar para executá-lo, se possível, ou então evacuar.
 alert-level-honk-instructions = Tripulantes são encorajados a executar o Gusttavo.
