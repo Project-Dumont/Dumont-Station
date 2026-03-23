@@ -117,6 +117,7 @@
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHandsGlovesCombat
     - id: ClothingShoesBootsJack
+    - id: ClothingShoesHighheelBootsCombat # Gabystation
     - id: ClothingOuterCoatWarden
     - id: ClothingOuterWinterWarden
     - id: RubberStampWarden
@@ -176,6 +177,7 @@
     # - id: ClothingHeadsetSecurity, Goob, over ear headsets
     - id: ClothingHandsGlovesColorBlack
     - id: ClothingShoesBootsJack
+    - id: ClothingShoesHighheelBootsCombat # Gabystation
     - id: WeaponMeleeNeedle
       prob: 0.1
     #- id: HoloprojectorSecurity, Goobstation, it's in every belt

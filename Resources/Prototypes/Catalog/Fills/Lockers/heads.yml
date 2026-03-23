@@ -205,6 +205,7 @@
     - id: CaptainSabreUndetermined # Gabystation
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
+    - id: ClothingShoesHighheelBootsCombat # Gabystation | why not?
     - id: CommsComputerCircuitboard
     - id: DoorRemoteCustom
     - id: MedalCase
@@ -545,6 +546,7 @@
     - id: ClothingMaskNeckGaiter
     - id: ClothingOuterCoatHoSTrench
     - id: ClothingShoesBootsJack
+    - id: ClothingShoesHighheelBootsCombat # Gabystation
     - id: DoorRemoteSecurity
     #- id: HoloprojectorSecurity Goob, you have one in the belt
     - id: RubberStampHos

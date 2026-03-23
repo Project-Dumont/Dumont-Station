@@ -1688,6 +1688,7 @@
   - JackBoots
   - CombatBoots # Goobstation
   - SecurityWinterBoots
+  - CombatHighHeeledBoots # Gabystation
 
 - type: loadoutGroup
   id: SecurityPDA
