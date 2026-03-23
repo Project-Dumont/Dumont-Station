@@ -249,13 +249,6 @@
   equipment:
     shoes: ClothingShoesWinterCombatBoots # Goobstation
 
-# START Gabystation
-- type: loadout
-  id: CombatHighHeeledBoots
-  equipment:
-    shoes: ClothingShoesHighheelBootsCombat
-# END Gabystation
-
 # PDA
 - type: loadout
   id: SecurityPDA

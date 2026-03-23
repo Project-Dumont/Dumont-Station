@@ -205,7 +205,6 @@
     - id: CaptainSabreUndetermined # Gabystation
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
-    - id: ClothingShoesHighheelBootsCombat # Gabystation | why not?
     - id: CommsComputerCircuitboard
     - id: DoorRemoteCustom
     - id: MedalCase
