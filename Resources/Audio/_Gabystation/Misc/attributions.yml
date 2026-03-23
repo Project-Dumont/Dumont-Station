@@ -51,3 +51,13 @@
   license: "CC-BY-SA-3.0"
   copyright: "Made by Struater"
   source: "https://github.com/Gaby-Station/Gaby-Station/pull/552"
+
+- files: ["octarina_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/591"
+
+- files: ["omicron_saae.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by Struater"
+  source: "https://github.com/Gaby-Station/Gaby-Station/pull/591"
