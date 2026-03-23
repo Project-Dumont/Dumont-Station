@@ -173,7 +173,7 @@
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesHighheelBoots
   name: high-heeled boots
-  description: Snazy boots for when you want to be stylish, yet prepared.
+  description: Snazy boots for when you want to be stylish, yet prepared. This one is the "cheapest" trim. # Gabystation
   components:
   - type: MeleeWeapon
     damage:
@@ -231,6 +231,7 @@
     sprite: _Goobstation/Clothing/Shoes/Boots/winterbootscargo.rsi # Goob
   - type: Clothing
     sprite: _Goobstation/Clothing/Shoes/Boots/winterbootscargo.rsi # Goob
+
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterEngi
