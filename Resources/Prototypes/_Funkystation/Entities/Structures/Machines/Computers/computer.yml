@@ -22,7 +22,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-science
     color: "#b54ed6"
-    canShuttle: true
+    canShuttle: false
     global: false
   - type: Computer
     board: ScienceCommsComputerCircuitboard
@@ -54,7 +54,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-security
     color: "#de3a3a"
-    canShuttle: true
+    canShuttle: false
     global: false
   - type: Computer
     board: SecurityCommsComputerCircuitboard
@@ -86,7 +86,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-service
     color: "#88be14"
-    canShuttle: true
+    canShuttle: false
     global: false
   - type: Computer
     board: ServiceCommsComputerCircuitboard
@@ -118,7 +118,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-cargo
     color: "#995a16"
-    canShuttle: true
+    canShuttle: false
     global: false
   - type: Computer
     board: CargoCommsComputerCircuitboard
@@ -150,7 +150,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-engi
     color: "#f9a524"
-    canShuttle: true
+    canShuttle: false
     global: false
   - type: Computer
     board: EngiCommsComputerCircuitboard
@@ -182,7 +182,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-medical
     color: "#398bdf"
-    canShuttle: true
+    canShuttle: false
     global: false
   - type: Computer
     board: MedicalCommsComputerCircuitboard
