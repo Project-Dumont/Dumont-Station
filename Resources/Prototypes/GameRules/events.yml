@@ -154,6 +154,7 @@
     - id: AnomalySpawn
     - id: BluespaceArtifact
     - id: BluespaceLocker
+    - id: SyndicateDeadDrop # Moffstation
     - id: BreakerFlip
     - id: BureaucraticError
     - id: ClericalError

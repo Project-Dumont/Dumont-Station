@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Nyxilath <colton.malone@gmail.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: BaseGameRule
+  id: SyndicateDeadDrop
+  components:
+  - type: StationEvent
+    startAnnouncement: station-syndicate-dead-drop-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    duration: 1
+    minimumPlayers: 10
+    maxOccurrences: 2
+    weight: 10
+    chaos: # Dumont - Goob event schedulers
+      Combat: 40
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 40
+  - type: RandomSpawnRule
+    prototype: SyndieDeadDropSpawner
+    radioMessage:
+      channel: Syndicate
+      message: syndicate-dead-drop-announcement
