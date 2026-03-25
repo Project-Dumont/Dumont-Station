@@ -1,5 +1,6 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Weapons.Melee;
+using Content.Shared._DragonStation.PowerLevel;
 
 namespace Content.Shared.Genetics.Systems;
 
@@ -29,6 +30,7 @@ public sealed class StrongnessSystem : EntitySystem
         }
 
         melee.Damage.DamageDict[damageType] = currentDamage + ent.Comp.StrongnessModifier;
+        RaiseLocalEvent(ent.Owner, new PowerLevelRefreshRequestedEvent(), true);
     }
 
     private void OnShutdown(Entity<StrongnessGenComponent> ent, ref ComponentShutdown args)
@@ -41,6 +43,8 @@ public sealed class StrongnessSystem : EntitySystem
         {
             melee.Damage.DamageDict[damageType] = ent.Comp.OldDamage;
         }
+
+        RaiseLocalEvent(ent.Owner, new PowerLevelRefreshRequestedEvent(), true);
     }
 }
 

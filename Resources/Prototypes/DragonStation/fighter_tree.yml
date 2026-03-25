@@ -1,0 +1,552 @@
+- type: fighterBranch
+  id: FighterTraining
+  name: fighter-tree-branch-training
+  icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+  color: "#8f9498"
+
+- type: fighterBranch
+  id: FighterMartialArtist
+  name: fighter-tree-branch-martial
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  color: "#5f8d57"
+
+- type: fighterBranch
+  id: FighterAlienWarrior
+  name: fighter-tree-branch-alien
+  icon: /Textures/Interface/VerbIcons/zap.svg.192dpi.png
+  color: "#7f5aa3"
+
+- type: fighterBranch
+  id: FighterGolden
+  name: fighter-tree-branch-golden
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  color: "#d4cf4c"
+
+- type: fighterBranch
+  id: FighterLegendary
+  name: fighter-tree-branch-legendary
+  icon: /Textures/Interface/VerbIcons/group.svg.192dpi.png
+  color: "#5fb06f"
+
+- type: fighterBranch
+  id: FighterPrimal
+  name: fighter-tree-branch-primal
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  color: "#b04d4d"
+
+- type: fighterSkill
+  id: FighterBodyTrainingI
+  name: fighter-tree-skill-body-training-1
+  description: fighter-tree-skill-body-training-1-desc
+  icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+  branch: FighterTraining
+  position: 0,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-1
+  passiveSpeedBonus: 0.05
+
+- type: fighterSkill
+  id: FighterBodyTrainingII
+  name: fighter-tree-skill-body-training-2
+  description: fighter-tree-skill-body-training-2-desc
+  icon: /Textures/Interface/VerbIcons/clock.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingI
+  position: 1,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-2
+  passivePhysicalResistanceCoefficientMultiplier: 0.95
+
+- type: fighterSkill
+  id: FighterBodyTrainingIII
+  name: fighter-tree-skill-body-training-3
+  description: fighter-tree-skill-body-training-3-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingII
+  position: 2,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-3
+  passiveMeleeBonus: 0.05
+
+- type: fighterSkill
+  id: FighterBodyTrainingIV
+  name: fighter-tree-skill-body-training-4
+  description: fighter-tree-skill-body-training-4-desc
+  icon: /Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingIII
+  position: 3,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-4
+  passiveStaminaDrainMultiplier: 0.95
+
+- type: fighterSkill
+  id: FighterProdigyI
+  name: fighter-tree-skill-prodigy-1
+  description: fighter-tree-skill-prodigy-1-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+    - FighterBodyTrainingII
+  position: 2,1
+  effectDescriptions:
+  - fighter-tree-effect-prodigy-speed
+  passiveSpeedBonus: 0.10
+  specialChallengeUnlock: true
+  challengeParentSkill: FighterBodyTrainingII
+  challengeExpiresAfterSkill: FighterBodyTrainingIII
+  challengeTarget: Carp
+  challengeRequiredHits: 5
+  challengeRequiresKill: true
+
+- type: fighterSkill
+  id: FighterBodyTrainingV
+  name: fighter-tree-skill-body-training-5
+  description: fighter-tree-skill-body-training-5-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingIV
+  position: 4,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-5
+  passiveUnarmedAttackSpeedBonus: 0.05
+
+- type: fighterSkill
+  id: FighterBodyTrainingVI
+  name: fighter-tree-skill-body-training-6
+  description: fighter-tree-skill-body-training-6-desc
+  icon: /Textures/Interface/VerbIcons/group.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingV
+  position: 5,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-6
+  passiveMeleeBonus: 0.05
+
+- type: fighterSkill
+  id: FighterBodyTrainingVII
+  name: fighter-tree-skill-body-training-7
+  description: fighter-tree-skill-body-training-7-desc
+  icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingVI
+  position: 6,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-7
+  passiveSpeedBonus: 0.05
+
+- type: fighterSkill
+  id: FighterProdigyII
+  name: fighter-tree-skill-prodigy-2
+  description: fighter-tree-skill-prodigy-2-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+    - FighterBodyTrainingV
+    - FighterProdigyI
+  position: 5,5
+  effectDescriptions:
+  - fighter-tree-effect-prodigy-speed
+  passiveSpeedBonus: 0.10
+  specialChallengeUnlock: true
+  challengeParentSkill: FighterBodyTrainingV
+  challengeExpiresAfterSkill: FighterBodyTrainingVI
+  challengeTarget: Bear
+  challengeRequiredHits: 7
+  challengeRequiresKill: true
+
+- type: fighterSkill
+  id: FighterBodyTrainingVIII
+  name: fighter-tree-skill-body-training-8
+  description: fighter-tree-skill-body-training-8-desc
+  icon: /Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingVII
+  position: 7,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-8
+  passivePhysicalResistanceCoefficientMultiplier: 0.95
+
+- type: fighterSkill
+  id: FighterBodyTrainingIX
+  name: fighter-tree-skill-body-training-9
+  description: fighter-tree-skill-body-training-9-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingVIII
+  position: 8,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-9
+  passiveMeleeBonus: 0.05
+
+- type: fighterSkill
+  id: FighterBodyTrainingX
+  name: fighter-tree-skill-body-training-10
+  description: fighter-tree-skill-body-training-10-desc
+  icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingIX
+  position: 9,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-10
+  passiveStaminaDrainMultiplier: 0.95
+
+- type: fighterSkill
+  id: FighterProdigyIII
+  name: fighter-tree-skill-prodigy-3
+  description: fighter-tree-skill-prodigy-3-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+    - FighterBodyTrainingVIII
+    - FighterProdigyII
+  position: 8,1
+  effectDescriptions:
+  - fighter-tree-effect-prodigy-speed
+  passiveSpeedBonus: 0.10
+  specialChallengeUnlock: true
+  challengeParentSkill: FighterBodyTrainingVIII
+  challengeExpiresAfterSkill: FighterBodyTrainingIX
+  challengeTarget: Dragon
+  challengeRequiredHits: 5
+  challengeRequiresKill: false
+
+- type: fighterSkill
+  id: FighterProdigyIV
+  name: fighter-tree-skill-prodigy-4
+  description: fighter-tree-skill-prodigy-4-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterProdigyIII
+  position: 9,1
+  effectDescriptions:
+  - fighter-tree-effect-prodigy-speed
+  passiveSpeedBonus: 0.10
+  specialChallengeUnlock: true
+  challengeParentSkill: FighterProdigyIII
+  challengeTarget: Dragon
+  challengeRequiredHits: 1
+  challengeRequiresKill: true
+
+- type: fighterSkill
+  id: FighterBodyTrainingXI
+  name: fighter-tree-skill-body-training-11
+  description: fighter-tree-skill-body-training-11-desc
+  icon: /Textures/Interface/VerbIcons/clock.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingX
+  position: 10,3
+  effectDescriptions:
+  - fighter-tree-effect-body-training-11
+  passiveUnarmedAttackSpeedBonus: 0.05
+
+- type: fighterSkill
+  id: FighterInsight
+  name: fighter-tree-skill-insight
+  description: fighter-tree-skill-insight-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterTraining
+  prerequisites:
+  - FighterBodyTrainingXI
+  position: 11,3
+  effectDescriptions:
+  - fighter-tree-effect-insight
+  passiveMeleeBonus: 0.05
+
+- type: fighterSkill
+  id: FighterMartialArtistPath
+  name: fighter-tree-skill-martial-artist-path
+  description: fighter-tree-skill-martial-artist-path-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterInsight
+  position: 12,1
+  effectDescriptions:
+  - fighter-tree-effect-martial-artist-path
+
+- type: fighterSkill
+  id: FighterAlienWarriorPath
+  name: fighter-tree-skill-alien-warrior-path
+  description: fighter-tree-skill-alien-warrior-path-desc
+  icon: /Textures/Interface/VerbIcons/zap.svg.192dpi.png
+  branch: FighterAlienWarrior
+  prerequisites:
+  - FighterInsight
+  position: 12,9
+  effectDescriptions:
+  - fighter-tree-effect-alien-warrior-path
+
+- type: fighterSkill
+  id: FighterTechniqueMind
+  name: fighter-tree-skill-technique-mind
+  description: fighter-tree-skill-technique-mind-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterMartialArtistPath
+  position: 13,1
+  effectDescriptions:
+  - fighter-tree-effect-technique-mind
+  passiveMeleeBonus: 0.03
+
+- type: fighterSkill
+  id: FighterCenterLine
+  name: fighter-tree-skill-center-line
+  description: fighter-tree-skill-center-line-desc
+  icon: /Textures/Interface/VerbIcons/group.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterTechniqueMind
+  position: 14,1
+  effectDescriptions:
+  - fighter-tree-effect-center-line
+  passiveSpeedBonus: 0.02
+
+- type: fighterSkill
+  id: FighterCombatRhythm
+  name: fighter-tree-skill-combat-rhythm
+  description: fighter-tree-skill-combat-rhythm-desc
+  icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterCenterLine
+  position: 15,1
+  effectDescriptions:
+  - fighter-tree-effect-combat-rhythm
+  passivePhysicalResistanceCoefficientMultiplier: 0.98
+
+- type: fighterSkill
+  id: FighterCorporateJudo
+  name: fighter-tree-skill-corporate-judo
+  description: fighter-tree-skill-corporate-judo-desc
+  icon: /Textures/Interface/VerbIcons/group.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterCombatRhythm
+  position: 16,0
+  effectDescriptions:
+  - fighter-tree-effect-corporate-judo
+  martialArtUnlock: CorporateJudo
+
+- type: fighterSkill
+  id: FighterCapoeira
+  name: fighter-tree-skill-capoeira
+  description: fighter-tree-skill-capoeira-desc
+  icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterCombatRhythm
+  position: 16,1
+  effectDescriptions:
+  - fighter-tree-effect-capoeira
+  martialArtUnlock: Capoeira
+
+- type: fighterSkill
+  id: FighterKungFuDragon
+  name: fighter-tree-skill-kung-fu-dragon
+  description: fighter-tree-skill-kung-fu-dragon-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterCombatRhythm
+  position: 16,2
+  effectDescriptions:
+  - fighter-tree-effect-kung-fu-dragon
+  martialArtUnlock: KungFuDragon
+
+- type: fighterSkill
+  id: FighterCloseQuartersCombat
+  name: fighter-tree-skill-close-quarters-combat
+  description: fighter-tree-skill-close-quarters-combat-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterCombatRhythm
+  position: 16,3
+  effectDescriptions:
+  - fighter-tree-effect-close-quarters-combat
+  martialArtUnlock: CloseQuartersCombat
+
+- type: fighterSkill
+  id: FighterSleepingCarp
+  name: fighter-tree-skill-sleeping-carp
+  description: fighter-tree-skill-sleeping-carp-desc
+  icon: /Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png
+  branch: FighterMartialArtist
+  prerequisites:
+  - FighterCombatRhythm
+  position: 16,4
+  effectDescriptions:
+  - fighter-tree-effect-sleeping-carp
+  martialArtUnlock: SleepingCarp
+  requiresTraitorRole: true
+
+- type: fighterSkill
+  id: FighterHiddenPulse
+  name: fighter-tree-skill-hidden-pulse
+  description: fighter-tree-skill-hidden-pulse-desc
+  icon: /Textures/Interface/VerbIcons/zap.svg.192dpi.png
+  branch: FighterAlienWarrior
+  prerequisites:
+  - FighterAlienWarriorPath
+  position: 13,9
+  effectDescriptions:
+  - fighter-tree-effect-hidden-pulse
+  transformationStaminaDrainMultiplier: 0.98
+
+- type: fighterSkill
+  id: FighterAwakeningPressure
+  name: fighter-tree-skill-awakening-pressure
+  description: fighter-tree-skill-awakening-pressure-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterAlienWarrior
+  prerequisites:
+  - FighterHiddenPulse
+  position: 14,9
+  effectDescriptions:
+  - fighter-tree-effect-awakening-pressure
+  transformationSpeedBonus: 0.02
+
+- type: fighterSkill
+  id: FighterInnerChannel
+  name: fighter-tree-skill-inner-channel
+  description: fighter-tree-skill-inner-channel-desc
+  icon: /Textures/Interface/VerbIcons/clock.svg.192dpi.png
+  branch: FighterAlienWarrior
+  prerequisites:
+  - FighterAwakeningPressure
+  position: 15,9
+  effectDescriptions:
+  - fighter-tree-effect-inner-channel
+  transformationResistanceCoefficientMultiplier: 0.98
+
+- type: fighterSkill
+  id: FighterGoldenPath
+  name: fighter-tree-skill-golden-path
+  description: fighter-tree-skill-golden-path-desc
+  icon: /Textures/Interface/VerbIcons/zap.svg.192dpi.png
+  branch: FighterGolden
+  prerequisites:
+  - FighterInnerChannel
+  position: 17,7
+  effectDescriptions:
+  - fighter-tree-effect-golden-path
+
+- type: fighterSkill
+  id: FighterLegendaryPath
+  name: fighter-tree-skill-legendary-path
+  description: fighter-tree-skill-legendary-path-desc
+  icon: /Textures/Interface/VerbIcons/group.svg.192dpi.png
+  branch: FighterLegendary
+  prerequisites:
+  - FighterInnerChannel
+  position: 17,9
+  effectDescriptions:
+  - fighter-tree-effect-legendary-path
+
+- type: fighterSkill
+  id: FighterPrimalPath
+  name: fighter-tree-skill-primal-path
+  description: fighter-tree-skill-primal-path-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterPrimal
+  prerequisites:
+  - FighterInnerChannel
+  position: 17,11
+  effectDescriptions:
+  - fighter-tree-effect-primal-path
+
+- type: fighterSkill
+  id: FighterDiscipline
+  name: fighter-tree-skill-discipline
+  description: fighter-tree-skill-discipline-desc
+  icon: /Textures/Interface/VerbIcons/clock.svg.192dpi.png
+  branch: FighterGolden
+  prerequisites:
+  - FighterGoldenPath
+  position: 18,7
+  effectDescriptions:
+  - fighter-tree-effect-discipline
+  transformationStaminaDrainMultiplier: 0.92
+
+- type: fighterSkill
+  id: FighterGoldenWarriorAwakening
+  name: fighter-tree-skill-golden-warrior-awakening
+  description: fighter-tree-skill-golden-warrior-awakening-desc
+  icon: /Textures/Interface/VerbIcons/zap.svg.192dpi.png
+  branch: FighterGolden
+  prerequisites:
+  - FighterDiscipline
+  position: 19,7
+  effectDescriptions:
+  - fighter-tree-effect-golden-warrior-awakening
+
+- type: fighterSkill
+  id: FighterGoldenWarriorMastery
+  name: fighter-tree-skill-golden-warrior-partial-mastery
+  description: fighter-tree-skill-golden-warrior-partial-mastery-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterGolden
+  prerequisites:
+  - FighterGoldenWarriorAwakening
+  position: 20,7
+  effectDescriptions:
+  - fighter-tree-effect-golden-warrior-partial-mastery
+  transformationMeleeBonus: 0.05
+  transformationSpeedBonus: 0.05
+  transformationResistanceCoefficientMultiplier: 0.95
+
+- type: fighterSkill
+  id: FighterGoldenWarriorFullMastery
+  name: fighter-tree-skill-golden-warrior-full-mastery
+  description: fighter-tree-skill-golden-warrior-full-mastery-desc
+  icon: /Textures/Interface/VerbIcons/light.svg.192dpi.png
+  branch: FighterGolden
+  prerequisites:
+  - FighterGoldenWarriorMastery
+  position: 21,7
+  effectDescriptions:
+  - fighter-tree-effect-golden-warrior-full-mastery
+  transformationMeleeBonus: 0.10
+  transformationSpeedBonus: 0.10
+  transformationResistanceCoefficientMultiplier: 0.90
+  transformationStaminaDrainMultiplier: 0.0
+
+- type: fighterSkill
+  id: FighterLegendaryCore
+  name: fighter-tree-skill-legendary-core
+  description: fighter-tree-skill-legendary-core-desc
+  icon: /Textures/Interface/VerbIcons/group.svg.192dpi.png
+  branch: FighterLegendary
+  prerequisites:
+  - FighterLegendaryPath
+  position: 18,9
+  effectDescriptions:
+  - fighter-tree-effect-legendary-core
+  passivePhysicalResistanceCoefficientMultiplier: 0.88
+
+- type: fighterSkill
+  id: FighterSavageImpact
+  name: fighter-tree-skill-savage-impact
+  description: fighter-tree-skill-savage-impact-desc
+  icon: /Textures/Interface/VerbIcons/point.svg.192dpi.png
+  branch: FighterPrimal
+  prerequisites:
+  - FighterPrimalPath
+  position: 18,11
+  effectDescriptions:
+  - fighter-tree-effect-savage-impact
+  passiveMeleeBonus: 0.22

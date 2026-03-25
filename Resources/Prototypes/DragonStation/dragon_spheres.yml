@@ -1,0 +1,117 @@
+# SPDX-FileCopyrightText: 2026 DragonStation14 Contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Corrupted dragon spheres dropped by space dragons when butchered.
+# These exist primarily as placeholders; their behavior will be defined later.
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere1
+  name: "corrupted dragon sphere (1)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball1
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere2
+  name: "corrupted dragon sphere (2)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball2
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere3
+  name: "corrupted dragon sphere (3)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball3
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere4
+  name: "corrupted dragon sphere (4)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball4
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere5
+  name: "corrupted dragon sphere (5)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball5
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere6
+  name: "corrupted dragon sphere (6)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball6
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere
+
+- type: entity
+  parent: BaseItem
+  id: CorruptedDragonSphere7
+  name: "corrupted dragon sphere (7)"
+  description: "One of the Dragon Spheres, corrupted by evil draconic energy."
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/corrupted_balls.rsi
+    state: corruptedball7
+    scale: 0.6, 0.6
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - CorruptedDragonSphere

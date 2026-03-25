@@ -188,6 +188,7 @@
       0: Alive
       100: Critical
       200: Dead
+  - type: PowerLevel
   - type: MobStateActions
     actions:
       Critical:

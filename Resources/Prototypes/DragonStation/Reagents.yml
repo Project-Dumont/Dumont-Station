@@ -1,0 +1,34 @@
+- type: reagent
+  id: SenzuEssence
+  name: reagent-name-SenzuEssence
+  group: Medicine
+  desc: reagent-desc-SenzuEssence
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: Bean
+  color: "#fcf7f9"
+  metabolisms:
+    Medicine:
+      metabolismRate: 10
+      effects:
+      - !type:SuppressPain
+        amount: 2
+        time: 14
+      - !type:HealthChange
+        damage:
+          types: # Goobstation change, Healthchange needs types or groups and groups fuck up the math for some reason and split the groups into types anyway
+            Heat: -200
+            Shock: -200
+            Cold: -200
+            Caustic: -200
+            Poison: -200
+            Radiation: -200
+            Asphyxiation: -200
+            Bloodloss: -200
+            Blunt: -200
+            Slash: -200
+            Piercing: -200
+            Cellular: -200
+      - !type:ModifyBleedAmount
+        amount: -100
+      - !type:ModifyBloodLevel
+        amount: 1

@@ -503,6 +503,29 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         return false;
     }
 
+    public bool TryGrantMartialArtKnowledge(EntityUid user, MartialArtsForms form, LocId? learnMessage = null)
+    {
+        GrantMartialArtKnowledgeComponent? grant = form switch
+        {
+            MartialArtsForms.CorporateJudo => new GrantCorporateJudoComponent(),
+            MartialArtsForms.Capoeira => new GrantCapoeiraComponent(),
+            MartialArtsForms.KungFuDragon => new GrantKungFuDragonComponent(),
+            MartialArtsForms.CloseQuartersCombat => new GrantCqcComponent(),
+            MartialArtsForms.SleepingCarp => new GrantSleepingCarpComponent(),
+            MartialArtsForms.Ninjutsu => new GrantNinjutsuComponent(),
+            MartialArtsForms.HellRip => new GrantHellRipComponent(),
+            _ => null
+        };
+
+        if (grant == null)
+            return false;
+
+        if (learnMessage != null)
+            grant.LearnMessage = learnMessage;
+
+        return TryGrantMartialArt(user, grant);
+    }
+
     private bool GrantMartialArt(GrantMartialArtKnowledgeComponent comp, EntityUid user)
     {
         var canPerformComboComponent = EnsureComp<CanPerformComboComponent>(user);

@@ -262,6 +262,21 @@
     spawned:
     - id: FoodMeatDragon
       amount: 2
+      # DragonStation - The balls of the dragon are corrupted?
+    - id: CorruptedDragonSphere1
+      orGroup: CorruptedDragonSphere
+    - id: CorruptedDragonSphere2
+      orGroup: CorruptedDragonSphere
+    - id: CorruptedDragonSphere3
+      orGroup: CorruptedDragonSphere
+    - id: CorruptedDragonSphere4
+      orGroup: CorruptedDragonSphere
+    - id: CorruptedDragonSphere5
+      orGroup: CorruptedDragonSphere
+    - id: CorruptedDragonSphere6
+      orGroup: CorruptedDragonSphere
+    - id: CorruptedDragonSphere7
+      orGroup: CorruptedDragonSphere
   - type: InteractionPopup
     successChance: 0.25 # It's no goose, but you better smell like carp.
     interactSuccessString: petting-success-dragon

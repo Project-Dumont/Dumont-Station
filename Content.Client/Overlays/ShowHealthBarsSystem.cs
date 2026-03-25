@@ -16,6 +16,7 @@ using Content.Shared.Hands; // Goobstation
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays;
 using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Overlays;
@@ -27,8 +28,10 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IResourceCache _resourceCache = default!;
 
     private EntityHealthBarOverlay _overlay = default!;
+    private EntityPowerLevelOverlay _powerOverlay = default!;
 
     protected override bool WorksInHands => true; // Goobstation
 
@@ -39,6 +42,7 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
         SubscribeLocalEvent<ShowHealthBarsComponent, AfterAutoHandleStateEvent>(OnHandleState);
 
         _overlay = new(EntityManager, _prototype);
+        _powerOverlay = new(EntityManager, _resourceCache);
     }
 
     private void OnHandleState(Entity<ShowHealthBarsComponent> ent, ref AfterAutoHandleStateEvent args)
@@ -55,6 +59,7 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
             foreach (var damageContainerId in comp.DamageContainers)
             {
                 _overlay.DamageContainers.Add(damageContainerId);
+                _powerOverlay.DamageContainers.Add(damageContainerId);
             }
 
             _overlay.StatusIcon = comp.HealthStatusIcon;
@@ -64,6 +69,11 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
         {
             _overlayMan.AddOverlay(_overlay);
         }
+
+        if (!_overlayMan.HasOverlay<EntityPowerLevelOverlay>())
+        {
+            _overlayMan.AddOverlay(_powerOverlay);
+        }
     }
 
     protected override void DeactivateInternal()
@@ -71,7 +81,9 @@ public sealed class ShowHealthBarsSystem : EquipmentHudSystem<ShowHealthBarsComp
         base.DeactivateInternal();
 
         _overlay.DamageContainers.Clear();
+        _powerOverlay.DamageContainers.Clear();
         _overlayMan.RemoveOverlay(_overlay);
+        _overlayMan.RemoveOverlay(_powerOverlay);
     }
 
     // Goobstation

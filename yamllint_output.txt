@@ -1,0 +1,38 @@
+dotnet : Unhandled exception. NUnit.Framework.AssertionException: CLIENT: 19,072s [ERRO] go.comp.sprite: Unable to load RSI '/Textures/DragonStation/Objects/Clothing/saiyanarmor.rsi'. Exception: 
+At line:2 char:8
++ $out = dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csp ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Unhandled excep...i'. Exception: :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   at NUnit.Framework.Assert.ReportFailure(String message)
+   at NUnit.Framework.Assert.Fail(String message)
+   at Content.IntegrationTests.PoolTestLogHandler.Log(String sawmillName, LogEvent message) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\PoolTestLogHandler.cs:line 87
+   at Robust.Shared.Log.LogManager.Sawmill.LogInternal(String sourceSawmill, LogEvent message) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\LogManager.Sawmill.cs:line 121
+   at Robust.Shared.Log.LogManager.Sawmill.LogInternal(String sourceSawmill, LogEvent message) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\LogManager.Sawmill.cs:line 129
+   at Robust.Shared.Log.LogManager.Sawmill.LogInternal(String sourceSawmill, LogEvent message) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\LogManager.Sawmill.cs:line 129
+   at Robust.Shared.Log.LogManager.Sawmill.LogInternal(String sourceSawmill, LogEvent message) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\LogManager.Sawmill.cs:line 129
+   at Robust.Shared.Log.LogManager.Sawmill.Log(LogLevel level, Exception exception, String message, Object[] args) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\LogManager.Sawmill.cs:line 89
+   at Robust.Shared.Log.LogManager.Sawmill.Log(LogLevel level, String message, Object[] args) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\LogManager.Sawmill.cs:line 101
+   at Robust.Shared.Log.Logger.LogS(LogLevel logLevel, String sawmillname, String message, Object[] args) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\Logger.cs:line 42
+   at Robust.Shared.Log.Logger.ErrorS(String sawmill, String message, Object[] args) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Log\Logger.cs:line 157
+   at Robust.Client.GameObjects.SpriteComponent.Robust.Shared.Serialization.ISerializationHooks.AfterDeserialization() in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Client\GameObjects\Components\Renderable\SpriteComponent.cs:line 258
+   at Robust.Shared.Prototypes.PrototypeManager.InstantiateKinds(KindData[] kinds, Dictionary`2 inheritanceTasks) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Prototypes\PrototypeManager.cs:line 563
+   at Robust.Shared.Prototypes.PrototypeManager.ResolveResults() in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Shared\Prototypes\PrototypeManager.cs:line 518
+   at Robust.Client.Prototypes.ClientPrototypeManager.LoadDefaultPrototypes(Dictionary`2 changed) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Client\Prototypes\ClientPrototypeManager.cs:line 36
+   at Robust.Client.GameController.StartupContinue(DisplayMode displayMode) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.Client\GameController\GameController.cs:line 195
+   at Robust.UnitTesting.RobustIntegrationTest.ClientIntegrationInstance.Init() in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.UnitTesting\RobustIntegrationTest.cs:line 1049
+   at Robust.UnitTesting.RobustIntegrationTest.ClientIntegrationInstance.ThreadMain() in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.UnitTesting\RobustIntegrationTest.cs:line 943
+--- End of stack trace from previous location ---
+   at Robust.UnitTesting.RobustIntegrationTest.IntegrationInstance.WaitIdleImplAsync(Boolean throwOnUnhandled, CancellationToken cancellationToken) in C:\Users\pedel\DragonStation14\RobustToolbox\Robust.UnitTesting\RobustIntegrationTest.cs:line 477
+   at Content.IntegrationTests.PoolManager.GenerateClient(PoolSettings poolSettings, TextWriter testOut) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\PoolManager.cs:line 256
+   at Content.IntegrationTests.Pair.TestPair.Initialize(PoolSettings settings, TextWriter testOut, List`1 testPrototypes) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\Pair\TestPair.cs:line 145
+   at Content.IntegrationTests.PoolManager.CreateServerClientPair(PoolSettings poolSettings, TextWriter testOut) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\PoolManager.cs:line 440
+   at Content.IntegrationTests.PoolManager.GetServerClientPair(PoolSettings poolSettings, ITestContextLike testContext) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\PoolManager.cs:line 333
+   at Content.IntegrationTests.PoolManager.GetServerClientPair(PoolSettings poolSettings, ITestContextLike testContext) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\PoolManager.cs:line 348
+   at Content.IntegrationTests.PoolManager.GetServerClient(PoolSettings poolSettings, ITestContextLike testContext) in C:\Users\pedel\DragonStation14\Content.IntegrationTests\PoolManager.cs:line 270
+   at Content.YAMLLinter.Program.GetClientServerAssemblies() in C:\Users\pedel\DragonStation14\Content.YAMLLinter\Program.cs:line 197
+   at Content.YAMLLinter.Program.RunValidation() in C:\Users\pedel\DragonStation14\Content.YAMLLinter\Program.cs:line 130
+   at Content.YAMLLinter.Program.Main(String[] _) in C:\Users\pedel\DragonStation14\Content.YAMLLinter\Program.cs:line 41
+   at Content.YAMLLinter.Program.<Main>(String[] _)
+

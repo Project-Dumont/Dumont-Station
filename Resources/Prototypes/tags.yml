@@ -623,6 +623,9 @@
   id: Corn
 
 - type: Tag
+  id: CorruptedDragonSphere
+
+- type: Tag
   id: CottonBoll
 
 - type: Tag
@@ -1829,4 +1832,7 @@
 
 - type: Tag
   id: XenoborgModuleStealth
+
+- type: Tag
+  id: ZSword
 # ALPHABETICAL

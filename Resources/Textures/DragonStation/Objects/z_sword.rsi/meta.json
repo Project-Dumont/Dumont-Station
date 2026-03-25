@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "DragonStation14",
+    "size": {
+        "x": 33,
+        "y": 33
+    },
+    "states": [
+        { "name": "icon" }
+    ]
+}

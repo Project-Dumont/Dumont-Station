@@ -57,6 +57,7 @@
   - type: Sprite
     sprite: _Goobstation/Structures/Specific/fitness.rsi
     state: punchingbag
+  - type: FighterTrainingTarget
 
 - type: entity
   id: FitnessPunchingBagCaptain

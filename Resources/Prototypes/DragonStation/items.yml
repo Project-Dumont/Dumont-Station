@@ -1,0 +1,43 @@
+- type: entity
+  id: PillSenzuEssence
+  name: senzu bean
+  description: A legendary bean said to restore someone from the brink of death.
+  parent: Pill
+  suffix: senzu 10u
+  components:
+    - type: Pill
+      pillType: 0
+
+    - type: Sprite
+      sprite: DragonStation/Objects/senzu.rsi
+      state: icon
+
+    - type: Label
+      currentLabel: senzu 10u
+
+    - type: Edible
+      delay: 0.1
+      forceFeedDelay: 2
+      transferAmount: null
+      edible: Pill
+
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: SenzuEssence
+              Quantity: 10
+
+- type: entity
+  name: pill canister
+  parent: PillCanister
+  id: PillCanisterSenzuEssence
+  suffix: senzu 10u, 15
+  components:
+  - type: Label
+    currentLabel: senzu 10u
+  - type: StorageFill
+    contents:
+    - id: PillSenzuEssence
+      amount: 15

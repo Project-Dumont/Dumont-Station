@@ -425,6 +425,7 @@
   id: VisitorBoxer
   parent: VisitorCivilian
   components:
+    - type: FighterProgression
     - type: GhostRole
       name: job-name-boxer
     - type: Loadout
