@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseToggleAction
+  id: ActionToggleSuperSaiyan
+  name: action-name-toggle-super-saiyan
+  description: action-description-toggle-super-saiyan
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: DragonStation/Actions/Transformations/SuperSaiyan1.rsi
+      state: transformation
+    iconOn:
+      sprite: DragonStation/Actions/Transformations/SuperSaiyan1.rsi
+      state: transformation

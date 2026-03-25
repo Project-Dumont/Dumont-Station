@@ -489,6 +489,8 @@
         type: RadarConsoleBoundUserInterface
       enum.VampireMutationUiKey.Key:
         type: VampireMutationBoundUserInterface
+      enum.FighterSkillTreeUiKey.Key:
+        type: FighterSkillTreeBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto

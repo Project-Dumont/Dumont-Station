@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseAction
+  id: ActionOpenFighterSkillTree
+  name: fighter-tree-action-name
+  description: fighter-tree-action-description
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon: Interface/VerbIcons/rejuvenate.svg.192dpi.png
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.FighterSkillTreeUiKey.Key

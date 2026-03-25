@@ -4,6 +4,7 @@ using Content.Shared.Genetics;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Vampire.Components;
+using Content.Shared._DragonStation.PowerLevel;
 
 namespace Content.Server.Genetics.System;
 
@@ -31,6 +32,7 @@ public sealed class SpeedUpGenSystem : EntitySystem
             var originalWalkSpeed = speed.BaseWalkSpeed;
             var originalSprintSpeed = speed.BaseSprintSpeed;
             _speed.ChangeBaseSpeed(ent, originalWalkSpeed * ent.Comp.SpeedModifier, originalSprintSpeed * ent.Comp.SpeedModifier, speed.Acceleration, speed);
+            RaiseLocalEvent(ent.Owner, new PowerLevelRefreshRequestedEvent(), true);
         }
     }
 
@@ -44,6 +46,7 @@ public sealed class SpeedUpGenSystem : EntitySystem
             var originalWalkSpeed = speed.BaseWalkSpeed;
             var originalSprintSpeed = speed.BaseSprintSpeed;
             _speed.ChangeBaseSpeed(ent, originalWalkSpeed / ent.Comp.SpeedModifier, originalSprintSpeed / ent.Comp.SpeedModifier, speed.Acceleration, speed);
+            RaiseLocalEvent(ent.Owner, new PowerLevelRefreshRequestedEvent(), true);
         }
     }
 

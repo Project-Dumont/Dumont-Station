@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: SaiyanArmor
+  name: Saiyan Armor
+  description: The piece of armor worn by Saiyans, designed to be lightweight and flexible while still providing decent protection, perfect for close combat.
+  components:
+  - type: Sprite
+    sprite: DragonStation/Objects/Clothing/saiyanarmor.rsi
+  - type: Clothing
+    sprite: DragonStation/Objects/Clothing/saiyanarmor.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.85

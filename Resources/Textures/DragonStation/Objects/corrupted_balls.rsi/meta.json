@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "DragonStation14",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+             "name": "corruptedball1"
+        },
+        {
+             "name": "corruptedball2"
+        },
+        {
+             "name": "corruptedball3"
+        },
+        {
+             "name": "corruptedball4"
+        },
+        {
+             "name": "corruptedball5"
+        },
+        {
+             "name": "corruptedball6"
+        },
+        {
+             "name": "corruptedball7"
+        }
+    ]
+}
