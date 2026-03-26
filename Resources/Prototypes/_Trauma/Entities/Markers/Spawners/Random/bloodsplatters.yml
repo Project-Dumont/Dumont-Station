@@ -3,6 +3,7 @@
   id: DecalSpawnerBloodSplattersTrauma
   suffix: Blood Splatters
   components:
+  - type: DespawningDecalSpawner
   - type: RandomDecalSpawner
     decals:
     - splatter
@@ -33,6 +34,7 @@
   id: DecalSpawnerGibBloodSplatters
   suffix: Blood Splatters
   components:
+  - type: DespawningDecalSpawner
   - type: RandomDecalSpawner
     decals:
     - giblet1
