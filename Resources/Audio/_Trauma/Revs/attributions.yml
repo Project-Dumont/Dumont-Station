@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["strike.ogg", "commsworkbench","flamethrower.ogg", "killdozerstep.ogg", "foundryaudio.ogg", "printingpress.ogg","printingpresslong.ogg", "telesphere.ogg","printer.ogg","bulletpress.ogg","microelectronicsassembler"]
   license: "CC-BY-4.0"
   copyright: "https://freesound.org"
