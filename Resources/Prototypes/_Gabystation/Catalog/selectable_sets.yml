@@ -31,7 +31,7 @@
   name: selectable-set-syndicate-cqcsmokethermal-name
   description: selectable-set-syndicate-cqcsmokethermal-description
   sprite:
-    sprite: Textures/_White/Clothing/Eyes/Goggles/sthermals.rsi
+    sprite: _White/Clothing/Eyes/Goggles/sthermals.rsi
     state: icon
   content:
   - EncryptionKeySyndie
