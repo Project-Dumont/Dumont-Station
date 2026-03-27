@@ -110,8 +110,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Random;
-using Content.Shared.Random.Helpers;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -143,7 +141,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Gabystation change
     [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
 
     private const float ShuttleSpawnBuffer = 1f;
@@ -151,9 +148,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     private bool _emergencyShuttleEnabled;
 
     private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
-
-    [ValidatePrototypeId<WeightedRandomPrototype>]
-    private const string MapsProto = "CentcommWeights"; // Gabystation change
 
     public override void Initialize()
     {
@@ -506,23 +500,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </remarks>
     public void DockEmergencyShuttle()
     {
-        // funky station
-        // fires an event that the emergency shuttle is trying to dock.
-        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
-
-        var ev = new ShuttleDockAttemptEvent();
-        RaiseLocalEvent(ref ev); // 💔
-
-        if (ev.Cancelled)
-        {
-            while (query.MoveNext(out var uid, out _))
-            {
-                _chatSystem.DispatchStationAnnouncement(uid, ev.CancelMessage);
-            }
-
-            return;
-        }
-
         if (EmergencyShuttleArrived)
             return;
 
@@ -534,6 +511,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         ConsoleAccumulator = _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
+
+        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
         var dockResults = new List<ShuttleDockResult>();
 
@@ -616,17 +595,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             component.ShuttleIndex = otherComp.ShuttleIndex;
             return;
         }
-
-        // Gabystation change start
-        if (!_prototype.TryIndex<WeightedRandomPrototype>(MapsProto, out var maps))
-        {
-            Log.Error($"Random centcomm prototype '{MapsProto}' not found. Using default centcomm map.");
-        }
-        else
-        {
-            component.Map = new ResPath(maps.Pick(_random));
-        }
-        // Gabystation change end
 
         if (string.IsNullOrEmpty(component.Map.ToString()))
         {
@@ -831,12 +799,4 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         /// </summary>
         GoodLuck,
     }
-}
-
-// funky station
-[ByRefEvent]
-public record struct ShuttleDockAttemptEvent()
-{
-    public bool Cancelled = false;
-    public string CancelMessage = string.Empty;
 }

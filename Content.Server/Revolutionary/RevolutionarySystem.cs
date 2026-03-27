@@ -5,19 +5,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Actions;
 using Content.Server._EinsteinEngines.Language; // Goob Station - Revolutionary Language
 using Content.Server.Polymorph.Systems;
 using Content.Shared.Polymorph;
 using Content.Shared.Revolutionary;
 using Content.Shared.Revolutionary.Components;
 
-
 namespace Content.Server.Revolutionary;
 
-public sealed class RevolutionarySystem : SharedRevolutionarySystem
+public sealed class RevolutionarySystem : SharedRevolutionarySystem  // Goob Station - Revolutionary Language (entire class body)
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly LanguageSystem _languageSystem = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
 
@@ -25,27 +22,12 @@ public sealed class RevolutionarySystem : SharedRevolutionarySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HeadRevolutionaryComponent, ComponentInit>(OnStartHeadRev);
-        // Goob Station - Revolutionary Language
         SubscribeLocalEvent<RevolutionaryComponent, ComponentShutdown>(OnRevolutionaryComponentShutdown);
         SubscribeLocalEvent<HeadRevolutionaryComponent, ComponentShutdown>(OnRevolutionaryComponentShutdown);
 
         SubscribeLocalEvent<RevolutionaryComponent, PolymorphedEvent>(OnPolymorphed);
         SubscribeLocalEvent<HeadRevolutionaryComponent, PolymorphedEvent>(OnHeadPolymorphed);
     }
-
-    /// <summary>
-    /// Add the starting ability(s) to the Head Rev.
-    /// </summary>
-    private void OnStartHeadRev(Entity<HeadRevolutionaryComponent> uid, ref ComponentInit args)
-    {
-        foreach (var actionId in uid.Comp.BaseHeadRevActions)
-        {
-            var actionEnt = _actions.AddAction(uid, actionId);
-        }
-    }
-
-    // Goob Station - Revolutionary Language (entire class body)
 
     private void OnPolymorphed(Entity<RevolutionaryComponent> ent, ref PolymorphedEvent args)
         => _polymorph.CopyPolymorphComponent<RevolutionaryComponent>(ent, args.NewEntity);

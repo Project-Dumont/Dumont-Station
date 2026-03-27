@@ -126,14 +126,4 @@ public abstract class SharedRevolutionarySystem : EntitySystem
     {
         headRev.Comp.ConvertAbilityEnabled = toggle;
     }
-
-    // Funky Station
-    /// <summary>
-    /// Change headrevs ability to give Rev Vision
-    /// </summary>
-    public void ToggleConvertGivesVision(Entity<HeadRevolutionaryComponent> headRev, bool toggle = true)
-    {
-        headRev.Comp.ConvertGivesRevVision = toggle;
-    }
 }
-
