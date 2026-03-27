@@ -64,6 +64,13 @@ selectable-set-syndicate-hitman-description =
     colete ocultável, pacote de ervas Interdyne,
     kit médico de combate, um visual estiloso e uma chave de criptografia do sindicato.
 
+selectable-set-syndicate-cqcsmokethermal-name = Pacote CQC+Smoke+Thermals
+selectable-set-syndicate-cqcsmokethermal-description =
+    Destrua completamente o seu alvo o̶u̶ ̶a̶ ̶s̶e̶g̶u̶r̶a̶n̶ç̶a̶ com esse kit robusto.
+    Contém: Óculos Thermal, Manual de CQC, Implante de Fumaça,
+    2 Smokes, Guerrila Gloves e uma chave de criptografia do sindicato.
+    
+
 selectable-set-syndicate-implants-name = Pacote Ciberpsicose
 selectable-set-syndicate-implants-description =
     Alguns implantes para lhe dar opções quando inevitavelmente for preso.
