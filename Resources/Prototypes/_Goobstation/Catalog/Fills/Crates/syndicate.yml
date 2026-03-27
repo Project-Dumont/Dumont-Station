@@ -133,6 +133,7 @@
     - SyndicateFriendshipSet
     - SyndicateCarpSet
     - SyndicateSusSet
+    - SyndicateCQC+Smoke+ThermalSet
 #    - SyndicateBuilderSet - Requires Rework pending Miner Removal
     setsToSelect: 3
     spawnedStoragePrototype: CrateSyndicate
