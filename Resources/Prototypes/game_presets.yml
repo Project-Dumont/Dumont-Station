@@ -121,7 +121,6 @@
     - Changeling # Goobstation - changeling playtest
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - Insurgency # Trauma
 
 - type: gamePreset
   id: AllerAtOnce
@@ -153,7 +152,6 @@
     - BasicRoundstartVariation
     - Changeling # Goobstation - changeling playtest
     - Shadowling # Einstein Engines - Shadowlings
-    - Insurgency # Trauma
 
 - type: gamePreset
   id: Extended
@@ -192,7 +190,6 @@
   rules:
     - Secret
     - BasicStationEventScheduler
-    - Insurgency # Trauma
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.

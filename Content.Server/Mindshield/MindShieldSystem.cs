@@ -93,4 +93,3 @@ public sealed class MindShieldSystem : EntitySystem
         RemComp<MindShieldComponent>(args.Container.Owner);
     }
 }
-
