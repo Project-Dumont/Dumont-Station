@@ -36,9 +36,9 @@
   content:
   - EncryptionKeySyndie
   - CQCManual
-  - UplinkSmokeGrenadeNukeops
-  - UplinkSmokeGrenadeNukeops
-  - UplinkClothingHandsGlovesGuerrilla
-  - UplinkSmokeImplanter
-  - UplinkThermalGoggles
+  - SmokeGrenade
+  - SmokeGrenade
+  - ClothingHandsGlovesGuerrilla
+  - SmokeImplanter
+  - ClothingEyesThermalVisionGogglesSyndie
   
