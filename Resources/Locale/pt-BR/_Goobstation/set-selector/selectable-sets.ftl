@@ -128,6 +128,44 @@ selectable-set-syndicate-builder-description =
     Contém: 2 torretas balísticas, um minerador de telecristais, algumas ferramentas
     e materiais para começar e uma chave de criptografia do sindicato.
 
+selectable-set-syndicate-tradergcm-name = Pacote GCM
+selectable-set-syndicate-tradergcm-description =
+    Atordoe, algeme e mate. Eficaz e silencioso, o método mais usado pela Oculta.
+    Contém: 1 BetrayalKnife, 1 Algema, 1 Contractor Baton, Kit com 6 Stims
+    e uma chave de criptografia do sindicato.
+
+selectable-set-syndicate-cleitoskit-name = Pacote Robusto
+selectable-set-syndicate-cleitoskit-description =
+    Tentativa falha de recriar a robustez de um dos maiores Operativos.
+    Contém: 1 Juggsuit, 1 Pacote de Cigarros do Sindicato, 
+    1 Python com munição AP inclusa, 4 Carregadores de Velocidade,
+    1 Cassette para tocar Invisible e uma chave de criptografia do sindicato.
+
+selectable-set-syndicate-infiltration-name = Pacote Espião
+selectable-set-syndicate-infiltration-description =
+    Um pacote que contém um kit de infiltração completo. Uma das maiores armas da guerra é a informação.
+    Contém: 1 Cartão de Agente, Kit Camaleão, 1 Máscara de Voz, 1 Fake mindshield,
+    placa de comunicação da Central, bengala falsa,
+    e uma chave de criptografia do sindicato e da estação.
+
+selectable-set-syndicate-piromaniac-name = Pacote Piromániaco
+selectable-set-syndicate-piromaniac-description =
+    FOGO FOGO FOGOOOO MUITO FOGO (O Sindicato não se responsabiliza por mortes acidentais pelas explosões da granada)
+    Contém: 7 Granadas Incendiárias, 2 Bazucas Thermobaricas,
+    Armadura de atmos, e uma chave de criptografia do sindicato 
+
+selectable-set-syndicate-badleague-name = Pacote Liga do Mal
+selectable-set-syndicate-badleague-description =
+    A temida Liga do Mal que devastou toda a galáxia! Pra que fazer os objetivos sozinhos? Apenas esmague em números!
+    Contém: 2 Syndiecats, 3 SyndiesMoths, 2 Macacos, 2 Operativos Horríveis, 
+    1 Holoclown, 1 Carro clown, chave de criptografia do sindicato  e apenas isso.
+
+selectable-set-syndicate-gourmet-name = Pacote Gourmet
+selectable-set-syndicate-gourmet-description =
+    Complete seus objetivos de barriga cheia!
+    Contém: 4 Stims, 1 Lanche Feliz, 2 Armas de comida chave de criptografia do sindicato
+    e uma calda de um Xeno que você iria cozinhar (talvez seja útil?)
+
 # Blueshield
 
 selectable-set-blueshield-shield-name = Conjunto Blueshield
