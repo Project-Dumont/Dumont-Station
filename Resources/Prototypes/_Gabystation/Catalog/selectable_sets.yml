@@ -61,7 +61,7 @@
   name: selectable-set-syndicate-cleitoskit-name
   description: selectable-set-syndicate-cleitoskit-description
   sprite:
-    sprite: Textures/Clothing/Mask/cluwne.rsi
+    sprite: Clothing/Mask/cluwne.rsi
     state: icon
   content:
   - EncryptionKeySyndie
@@ -79,7 +79,7 @@
   name: selectable-set-syndicate-infiltrationm-name
   description: selectable-set-syndicate-infiltration-description
   sprite:
-    sprite: Textures/Clothing/Mask/gascentcom.rsi
+    sprite: Clothing/Mask/gascentcom.rsi
     state: icon
   content:
   - EncryptionKeySyndie
@@ -96,7 +96,7 @@
   name: selectable-set-syndicate-piromaniac-name
   description: selectable-set-syndicate-piromaniac-description
   sprite:
-    sprite: Textures/Clothing/OuterClothing/Suits/fire.rsi
+    sprite: Clothing/OuterClothing/Suits/fire.rsi
     state: icon
   content:
   - EncryptionKeySyndie
@@ -117,7 +117,7 @@
   name: selectable-set-syndicate-badleague-name
   description: selectable-set-syndicate-badleague-description
   sprite:
-    sprite: Textures/Objects/Fun/Plushies/nukie.rsi
+    sprite: Objects/Fun/Plushies/nukie.rsi
     state: icon
   content:
   - EncryptionKeySyndie
@@ -140,7 +140,7 @@
   name: selectable-set-syndicate-gourmet-name
   description: selectable-set-syndicate-gourmet-description
   sprite:
-    sprite: Textures/Objects/Consumable/Food/Baked/bread.rsi
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
     state: baguette
   content:
   - EncryptionKeySyndie
