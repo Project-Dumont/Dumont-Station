@@ -135,7 +135,7 @@
   - VehicleClowncarAntag
   - BikeHorn
 
-  - type: selectableSet
+- type: selectableSet
   id: SyndicateGourmetSet
   name: selectable-set-syndicate-gourmet-name
   description: selectable-set-syndicate-gourmet-description
