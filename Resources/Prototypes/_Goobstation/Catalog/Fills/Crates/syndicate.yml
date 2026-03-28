@@ -134,6 +134,12 @@
     - SyndicateCarpSet
     - SyndicateSusSet
     - SyndicateCQC+Smoke+ThermalSet
+    - SyndicateTraderGCMSet
+    - SyndicateCleitosSet
+    - SyndicateInfiltrationSet
+    - SyndicatePiromaniacSet
+    - SyndicateBadLeagueSet
+    - SyndicateGourmetSet
 #    - SyndicateBuilderSet - Requires Rework pending Miner Removal
     setsToSelect: 3
     spawnedStoragePrototype: CrateSyndicate
