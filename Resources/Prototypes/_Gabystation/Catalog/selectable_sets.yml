@@ -76,7 +76,7 @@
 
 - type: selectableSet
   id: SyndicateInfiltrationSet
-  name: selectable-set-syndicate-infiltrationm-name
+  name: selectable-set-syndicate-infiltration-name
   description: selectable-set-syndicate-infiltration-description
   sprite:
     sprite: Clothing/Mask/gascentcom.rsi
