@@ -42,7 +42,7 @@
   id: CMOweapon
   name: steal-target-groups-rapid-syringe-gun
   sprite:
-    sprite: _Gabystation\Objects\Weapons\Guns\Battery\cmogun.rsi
+    sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
     state: icon
 
 - type: stealTargetGroup
