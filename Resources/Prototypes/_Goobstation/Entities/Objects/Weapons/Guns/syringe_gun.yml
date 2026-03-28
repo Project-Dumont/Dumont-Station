@@ -84,7 +84,7 @@
     shape:
     - 0,0,3,1
   - type: StealTarget
-    stealGroup: RapidSyringeGun
+    stealGroup: CMOweapon
   - type: Tag
     tags:
     - HighRiskItem

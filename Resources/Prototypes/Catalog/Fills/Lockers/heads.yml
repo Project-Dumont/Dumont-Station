@@ -420,11 +420,8 @@
     - id: BiomassReclaimerFlatpack
     - id: Multitool
     - id: MedTekCartridge
-    - id: RapidSyringeGun
-    - id: BoxSyringePax
+    - id: MedicalLaserGunCMO
     - id: ClothingBeltMilitaryWebbingCMOFilled
-    - id: ClothingBackpackDuffelSurgeryFilled
-    # Shitmed
     - id: MedicalBiofabricatorFlatpack
     # Virology
     - id: DiseaseDiagnoserFlatPack

@@ -447,7 +447,7 @@
   id: CorporateCMORapidSyringeGunStealObjective
   components:
   - type: StealCondition
-    stealGroup: RapidSyringeGun
+    stealGroup: CMOweapon
   - type: Objective
     difficulty: 3 # Slightly more than normal as it does not fit into storage implant
 
