@@ -141,7 +141,7 @@ selectable-set-syndicate-cleitoskit-description =
     1 Python com munição AP inclusa, 4 Carregadores de Velocidade,
     1 Cassette para tocar Invisible e uma chave de criptografia do sindicato.
 
-selectable-set-syndicate-infiltration-name = Pacote Espião
+selectable-set-syndicate-infiltration-name = Pacote Infiltração
 selectable-set-syndicate-infiltration-description =
     Um pacote que contém um kit de infiltração completo. Uma das maiores armas da guerra é a informação.
     Contém: 1 Cartão de Agente, Kit Camaleão, 1 Máscara de Voz, 1 Fake mindshield,
