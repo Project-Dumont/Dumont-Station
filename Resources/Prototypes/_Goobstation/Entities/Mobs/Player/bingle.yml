@@ -166,7 +166,7 @@
     upgraded: true
   - type: Sprite
     drawdepth: Mobs
-    sprite: _Goobstation/Mobs/Bingle/bingle.rsi
+    sprite: _Goobstation/Mobs/Bingle/bingle_upgrade.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
       state: Upgraded
