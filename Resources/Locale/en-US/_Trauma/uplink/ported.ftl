@@ -84,3 +84,6 @@ selectable-lock-no-lock-verb = No lock
 selectable-lock-no-lock-popup = No lock has been added to {THE($target)}.
 
 simple-tool-usage-blocked-message = You need a tool that can perform {$quality}!
+
+uplink-knife-rig-name = Throwing knife rig
+uplink-knife-rig-desc = A specialized throwing knife rig equipped with 8 Syndicate throwing knives.

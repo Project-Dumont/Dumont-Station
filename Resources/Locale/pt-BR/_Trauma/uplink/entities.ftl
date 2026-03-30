@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+ent-ClothingBeltKnifeRig = bandoleira de facas de arremesso
+    .desc = Uma bandoleira especializada em carregar facas de arremesso.
+
 ent-ClothingHandsGlovesBoxingRiggedBlue = luvas de boxe azuis
     .desc = Luvas azuis para boxe competitivo.
 

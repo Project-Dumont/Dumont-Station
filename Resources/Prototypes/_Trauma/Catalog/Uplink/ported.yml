@@ -69,3 +69,14 @@
       blacklist:
         components:
           - SurplusBundle
+
+- type: listing
+  id: TraumaUplinkThrowingKnivesKit
+  name: uplink-knife-rig-name
+  description: uplink-knife-rig-desc
+  icon: { sprite: _Trauma/Clothing/Belt/throwingkniferig.rsi, state: icon } # Trauma
+  productEntity: ClothingBeltKnifeRig # Trauma - rig instead of box
+  cost:
+    Telecrystal: 30 # Trauma - was 6, 5x
+  categories:
+    - UplinkWeaponry

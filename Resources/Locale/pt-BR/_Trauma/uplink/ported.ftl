@@ -93,3 +93,6 @@ selectable-lock-no-lock-verb = Sem trava
 selectable-lock-no-lock-popup = Nenhuma trava foi adicionada a {$target}.
 
 simple-tool-usage-blocked-message = Você precisa de uma ferramenta capaz de realizar {$quality}!
+
+uplink-knife-rig-name = Bandoleira de facas de arremesso
+uplink-knife-rig-desc = Uma bandoleira especializada, equipada com 8 facas de arremesso do Sindicato.
