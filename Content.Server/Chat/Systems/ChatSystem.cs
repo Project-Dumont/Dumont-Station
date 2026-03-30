@@ -582,7 +582,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             _audio.PlayGlobal(announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound), filter, true, AudioParams.Default.WithVolume(-2f));
         }
 
-        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on S.A.A.E. from {sender}: {message}");
+        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");
     }
 
     #endregion
