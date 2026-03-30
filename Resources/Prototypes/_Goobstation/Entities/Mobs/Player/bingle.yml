@@ -61,7 +61,7 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: alive
     - map: ["enum.BingleVisual.Upgraded"]
-      state: Upgraded
+      state: alive
       visible: false
     - map: ["enum.BingleVisual.Combat"]
       state: combat
