@@ -38,7 +38,7 @@ comms-console-announcement-unknown-sender = Desconhecido
 
 # Comms console variant titles
 comms-console-announcement-title-station = Console de Comunicações
-comms-console-announcement-title-centcom = Central de Comando
+comms-console-announcement-title-centcom = S.A.A.E.
 comms-console-announcement-title-nukie = Agente Nuclear do Sindicato
 
 # footer
