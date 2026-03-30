@@ -7,7 +7,7 @@
   - type: Action
     useDelay: 1
     icon:
-      sprite: _Goobstation/Mobs/Bingle/bingle.rsi
-      state: Upgraded
+      sprite: _Goobstation/Mobs/Bingle/bingle_upgrade.rsi
+      state: icon
   - type: InstantAction
     event: !type:BingleUpgradeActionEvent
