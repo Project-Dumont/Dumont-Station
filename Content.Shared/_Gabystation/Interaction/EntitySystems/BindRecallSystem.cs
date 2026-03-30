@@ -1,4 +1,4 @@
-using Content.Shared._Gabystation.Interaction;
+using Content.Shared._Gabystation.Interaction.Events;
 using Content.Shared._Gabystation.Interaction.Components;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
@@ -105,6 +105,13 @@ public sealed class BindRecallSystem : EntitySystem
         if (recall.BoundItem != null)
             return;
 
+        // Verify if another user has already bound
+        if (ent.Comp.BoundUser != null)
+        {
+            _popup.PopupEntity(Loc.GetString("recall-item-already-bound"), user, user);
+            return;
+        }
+
         EntityUid? action = null;
         _actions.AddAction(user, ref action, recall.RecallAction);
 
@@ -114,7 +121,7 @@ public sealed class BindRecallSystem : EntitySystem
         recall.BoundItem = ent.Owner;
         recall.RecallActionEntity = action;
 
-        ent.Comp.BoundUser = user; // Prob not needed, but will figure it out.
+        ent.Comp.BoundUser = user;
         Dirty(ent);
 
         var itemName = Name(ent.Owner);
@@ -137,6 +144,10 @@ public sealed class BindRecallSystem : EntitySystem
         if (recallComp == null)
             return;
 
+        // Verify if the unbinding item is the one bound to the user
+        if (recallComp.BoundItem != ent.Owner)
+            return;
+
         if (recallComp.RecallActionEntity != null &&
             Exists(recallComp.RecallActionEntity.Value))
         {
@@ -145,8 +156,9 @@ public sealed class BindRecallSystem : EntitySystem
 
         recallComp.BoundItem = null;
         recallComp.RecallActionEntity = null;
+        Dirty(user, recallComp);
 
-        ent.Comp.BoundUser = null; // Prob not needed, but will figure it out.
+        ent.Comp.BoundUser = null;
         Dirty(ent);
     }
 

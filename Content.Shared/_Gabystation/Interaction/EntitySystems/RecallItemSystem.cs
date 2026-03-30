@@ -15,6 +15,7 @@ public sealed class RecallItemSystem : EntitySystem
     {
         SubscribeLocalEvent<RecallBoundItemComponent, RecallBoundItemEvent>(OnRecall);
         SubscribeLocalEvent<BoundRecallComponent, EntityTerminatingEvent>(OnBoundItemDeleted);
+        SubscribeLocalEvent<RecallBoundItemComponent, EntityTerminatingEvent>(OnUserDeleted);
     }
 
     private void OnRecall(Entity<RecallBoundItemComponent> ent, ref RecallBoundItemEvent args)
@@ -25,6 +26,13 @@ public sealed class RecallItemSystem : EntitySystem
             return;
 
         var item = ent.Comp.BoundItem.Value;
+
+        if (!Exists(item))
+        {
+            ent.Comp.BoundItem = null;
+            Dirty(ent);
+            return;
+        }
 
         if (_hands.IsHolding(user, item))
         {
@@ -60,6 +68,18 @@ public sealed class RecallItemSystem : EntitySystem
             recallComp.RecallActionEntity = null;
 
             Dirty(userUid, recallComp);
+        }
+    }
+
+    private void OnUserDeleted(Entity<RecallBoundItemComponent> ent, ref EntityTerminatingEvent args)
+    {
+        if (ent.Comp.RecallActionEntity != null && Exists(ent.Comp.RecallActionEntity.Value))
+            QueueDel(ent.Comp.RecallActionEntity.Value);
+
+        if (ent.Comp.BoundItem != null && TryComp<BoundRecallComponent>(ent.Comp.BoundItem.Value, out var boundComp))
+        {
+            boundComp.BoundUser = null;
+            Dirty(ent.Comp.BoundItem.Value, boundComp);
         }
     }
 }

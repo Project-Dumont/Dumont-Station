@@ -20,6 +20,6 @@ recall-item-action-name = Chamar {$item}
 
 recall-item-action-desc = Teleporta {$item} de volta para a sua mão.
 
-recall-bound-item-examine-free = [color=#0000a5]Parece que pode ser vinculado com a alma de algúem[/color]
+recall-bound-item-examine-free = [color=#0000a5]Parece que pode ser vinculado com a alma de alguém[/color]
 
-recall-bound-item-examine-owned = [color=#0000a5]Parece já estar vinculado com a alma de algúem[/color]
+recall-bound-item-examine-owned = [color=#0000a5]Parece já estar vinculado com a alma de alguém[/color]
