@@ -7,4 +7,6 @@
   id: Chaplain
   name: guide-entry-chaplain
   text: "/ServerInfo/_Goobstation/Guidebook/Service/Chaplain.xml"
+  children:
+  - NullrodForms
 
