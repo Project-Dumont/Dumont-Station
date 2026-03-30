@@ -167,6 +167,7 @@
   - type: Sprite
     drawdepth: Mobs
     sprite: _Goobstation/Mobs/Bingle/bingle_upgrade.rsi
+    state: icon
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
       state: alive # <--- Agora o jogo vai achar a sua animação "alive"!
