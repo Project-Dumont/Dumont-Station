@@ -867,7 +867,6 @@
     roundEndBehavior: Nothing
     warDeclarationMinOps: 1 # <--- Adicionado aqui para permitir guerra com 1 jogador
     warNukieArriveDelay: 300 # <--- Adicionado para manter o Lone preso por 5 minutos.
-    warTcAmountPerNukie: 60
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointLoneNukeOperative
