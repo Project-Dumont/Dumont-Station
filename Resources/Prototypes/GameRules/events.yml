@@ -862,7 +862,7 @@
     chaosScore: 700
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/strikerloneops.yml
+    gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml
   - type: NukeopsRule
     roundEndBehavior: Nothing
     warDeclarationMinOps: 1 # <--- Adicionado aqui para permitir guerra com 1 jogador
