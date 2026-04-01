@@ -51,6 +51,12 @@ public sealed partial class WarDeclaratorComponent : Component
     public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
 
     /// <summary>
+    /// ID of the special animation played when war is declared
+    /// </summary>
+    [DataField]
+    public string WarAnimationId = "NukeOpsWarAnimation";
+
+    /// <summary>
     /// Fluent ID for the declaration sender title
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
