@@ -1,0 +1,15 @@
+# Security
+## Prison Guard
+- type: loadoutGroup
+  id: PrisonGuardHead
+  name: loadout-group-prison-guard-head
+  loadouts:
+  - PrisonGuardHead
+  - PrisonGuardBeret
+
+- type: loadoutGroup
+  id: PrisonGuardJumpsuit
+  name: loadout-group-prison-guard-jumpsuit
+  loadouts:
+  - PrisonGuardJumpsuit
+  - PrisonGuardJumpskirt

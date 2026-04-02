@@ -1,0 +1,19 @@
+# Security
+- type: roleLoadout
+  id: JobPrisonGuard
+  groups:
+  - PrisonGuardHead
+  - PrisonGuardJumpsuit
+  - SecurityShoes
+  - PrisonGuardBack
+  - SecurityBelt
+  - SecurityMelee
+  - SurvivalSecurity
+  - TrinketsSecurity
+  - SecurityStar
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathToolSecurity
+  - PrisonGuardEnvirohelm
+  - PrisonGuardEnvirosuit
+  - PrisonGuardEnvirogloves

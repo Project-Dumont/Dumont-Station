@@ -87,6 +87,7 @@
             SecurityCadet: [ -1, -1 ]
             Lawyer: [ 3, 3 ]
             PermaPrisoner: [ 5, 5 ] # Gaby
+            PrisonGuard: [ 1, 1 ] # Gaby
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]

@@ -1,0 +1,11 @@
+# Head
+- type: loadout
+  id: PrisonGuardHead
+  equipment:
+    head: ClothingHeadPrisonGuard
+
+# Jumpsuit
+- type: loadout
+  id: PrisonGuardJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisonGuard

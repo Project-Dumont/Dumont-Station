@@ -100,6 +100,7 @@
             SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 2, 2 ]
             PermaPrisoner: [ 2, 2 ] # Gaby
+            PrisonGuard: [ 1, 1 ] # Gaby
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]

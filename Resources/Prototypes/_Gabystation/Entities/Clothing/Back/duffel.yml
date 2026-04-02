@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingBackpackDuffelSecurity
+  id: ClothingBackpackDuffelPrisonGuard
+  name: prison guard duffel bag
+  description: A large duffel bag for holding extra prison guard related goods.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Back/Duffels/prisonguard.rsi

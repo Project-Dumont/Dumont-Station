@@ -2243,3 +2243,29 @@ Entries:
         mais deles vão vir em breve!
   id: 271
   time: '2026-03-14T18:36:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona guarda prisional para monitorar os detentos.
+  id: 272
+  time: '2026-03-29T17:18:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções e ajustes na genética.
+  id: 273
+  time: '2026-03-29T17:28:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no culto do sangue.
+  id: 274
+  time: '2026-03-29T17:31:21.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Diarista não tem mais acesso ao armário do bartender, mas o booze-o-mat
+        agora é acessível por todo o serviço.
+  id: 275
+  time: '2026-03-29T17:34:05.0000000+00:00'

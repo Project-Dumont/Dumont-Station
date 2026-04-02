@@ -1005,6 +1005,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
 	private void CheckCultistCountAndCallEvac()
 	{
+		if (_gameTicker.RunLevel != GameRunLevel.InRound)
+			return;
+
 		// Only check if there's an active rule
 		if (!TryGetActiveRule(out var rule))
 			return;

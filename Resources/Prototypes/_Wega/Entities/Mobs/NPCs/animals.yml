@@ -163,9 +163,187 @@
     lowest: MobSquackroachHarpy
 
 - type: entity
+  name: genetic ancestor
+  id: MobBaseGeneticAncestor
+  parent: [SimpleMobBase, StripableInventoryBase, BaseMobDisgust] # Goob edit
+  description: The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.
+  abstract: true
+  components:
+  - type: VentCrawler # goobstation - Ventcrawl
+    allowInventory: false
+  - type: CombatMode
+  # # Shitmed Change Start
+  # - type: Targeting
+  # - type: HumanoidAppearance
+  #   species: Monkey
+  # # Shitmed Change End
+  - type: Inventory
+    templateId: monkey
+    speciesId: monkey
+  - type: Deathgasp
+    prototype: MonkeyDeathgasp
+  - type: Cuffable
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Stripping
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+  # Shitmed Change Start
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Groin" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - state: monkey_skinned # Goobstation - Fuck pun-pun
+      sprite: /Textures/Mobs/Animals/monkey.rsi
+      visible: false
+      map: [ "enum.ToggleableVisuals.Layer" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "maskalt" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+  # Shitmed Change End
+  - type: Hands
+  - type: ComplexInteraction
+  - type: GenericVisualizer
+    visuals:
+      enum.CreamPiedVisuals.Creamed:
+        clownedon:
+          True: {visible: true}
+          False: {visible: false}
+      enum.ToggleableVisuals.Enabled: # Goobstation - Skinnable monkey
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CultHaloVisuals.CultHalo:
+        culthalo:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CultEyesVisuals.CultEyes:
+          culteyes:
+            True: { visible: true }
+            False: { visible: false }
+  - type: Body # Shitmed Change
+    bodyType: Complex
+    prototype: Monkey
+    requiredLegs: 2
+  - type: CreamPied
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Monkey_burning
+  - type: InteractionPopup
+    successChance: 0.9
+    interactSuccessString: petting-success-monkey
+    interactFailureString: petting-failure-monkey
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/ferret_happy.ogg
+    interactFailureSound:
+      path: /Audio/Items/wirecutter.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 30
+    animation: WeaponArcBite
+    damage:
+      types:
+        Blunt: 3
+        Piercing: 3
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: Puller
+    needsHands: false
+  - type: CanHostGuardian
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  # Goobstation
+  - type: GroupRetaliation
+    range: 8
+  - type: FactionException
+  - type: NpcFactionMember
+    factions:
+      - Passive
+      - Monkey  # Goob Balloons Edit
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: IdExaminable
+  - type: Tag
+    tags:
+    - VimPilot
+    - DoorBumpOpener
+    - AnomalyHost
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPieReaction
+  - type: Vocal # Goobstation
+    sounds:
+      Male: MonkeyMode
+      Female: MonkeyMode
+      Unsexed: MonkeyMode
+    wilhelmProbability: 0.001
+  - type: Consciousness
+    hasPainScreams: false
+    threshold: 70
+    cap: 140
+  - type: Crawler
+  - type: DiseaseCarrier # Goobstation
+
+- type: entity
   name: neara
   id: MobSkrellkey
-  parent: MobBaseAncestor
+  parent: MobBaseGeneticAncestor
   description: Skrell's and Feroxi ancient ancestor in the flesh. Loves water and seems to want to find a way to kill you.
   components:
   - type: NameIdentifier
@@ -251,7 +429,7 @@
 - type: entity
   name: stok
   id: MobStokkey
-  parent: MobBaseAncestor
+  parent: MobBaseGeneticAncestor
   description: The brutal progenitor of the Vox. For unknown genetic reasons, sometimes transforms into Resomi. Absolutely terrifying.
   suffix: AI, Resomi
   components:
@@ -321,7 +499,7 @@
 - type: entity
   name: wolpin
   id: MobWolfling
-  parent: MobBaseAncestor
+  parent: MobBaseGeneticAncestor
   description: Genetically Vulpakins brother, they are a lot of fun to burn but carefully, they have a plan.
   components:
   - type: NameIdentifier
@@ -377,7 +555,7 @@
 - type: entity
   name: farwa
   id: MobTajkey
-  parent: MobBaseAncestor
+  parent: MobBaseGeneticAncestor
   description: A small version of Tajarin. He doesn't look like his bigger self. What the hell is he?
   components:
   - type: Sprite

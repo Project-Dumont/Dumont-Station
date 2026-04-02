@@ -23,3 +23,37 @@
     state: icon_alt
   - type: Clothing
     equippedPrefix: alt
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetPrison
+  name: prison headset
+  description: Headset used by anybody who needs direct contact with prisoners
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyPrison
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: _DV/Clothing/Ears/Headsets/prisoner.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Ears/Headsets/prisoner.rsi
+
+- type: entity
+  parent: ClothingHeadsetSecurity
+  id: ClothingHeadsetPrisonGuard
+  name: guard headset
+  description: Headset used by prison guards.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySecurity
+      - EncryptionKeyCommon
+      - EncryptionKeyPrison
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Ears/Headsets/prisonguard.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Ears/Headsets/prisonguard.rsi
+

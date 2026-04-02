@@ -11,3 +11,16 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: AdministrativeAssistant
+
+# Security
+- type: entity
+  parent: SecurityIDCard
+  id: PrisonGuardIDCard
+  name: prison guard ID card
+  components:
+  - type: PresetIdCard
+    job: PrisonGuard
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idprisonguard

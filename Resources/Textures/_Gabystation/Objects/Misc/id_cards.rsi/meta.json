@@ -286,6 +286,9 @@
         "name": "idadminassistant"
     },
     {
+      "name": "idprisonguard"
+    },
+    {
         "name": "chemist"
     }
   ]
