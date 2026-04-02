@@ -15,7 +15,6 @@
   - type: Item
     sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
     size: Large
-    state: icon
   - type: Clothing
     sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
     quickEquip: false
