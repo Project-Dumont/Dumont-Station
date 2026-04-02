@@ -241,17 +241,6 @@
       - state: equipped-FEET-sealed
       shoes-vox:
       - state: equipped-FEET-sealed-vox
-  - type: ItemToggle
-  - type: ToggleClothing
-    action: ActionToggleMagboots
-  - type: ComponentToggler
-    components:
-    - type: NoSlip
-  - type: Magboots
-    enabledPrefix: null
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
 
 - type: entity
   parent: ClothingShoesModsuitBase # GabyStation

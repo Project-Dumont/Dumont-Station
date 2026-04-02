@@ -442,6 +442,7 @@
     state: control
   content:
     - ClothingModsuitPraetorian
+    - ModsuitModuleMagboot
 
 # ERT
 
@@ -538,7 +539,8 @@
     sprite: _Goobstation/Clothing/Back/Modsuits/headofsecurity.rsi
     state: control
   content:
-  - ClothingModsuitHeadOfSecurityPowerCell
+    - ClothingModsuitHeadOfSecurityPowerCell
+    - ModsuitModuleInjector
 
 # engineer
 
@@ -561,6 +563,7 @@
     state: control
   content:
   - ClothingModsuitEngineerPowerCell
+  - ModsuitModuleMagboot
 
 # Head Of Security
 
@@ -623,7 +626,7 @@
     state: icon-on
   content:
   - RedShield
-  
+
 - type: selectableSet
   id: HosBallisticShotgunSet
   name: selectable-set-hos-shotgun-ballistic-name
