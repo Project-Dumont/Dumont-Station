@@ -352,7 +352,7 @@
   components:
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
-    state: injector-chest
+    state: Injector-chest
   - type: GunUpgrade
     name: modsuit-module-injector-name
   - type: GunUpgradeComponents
