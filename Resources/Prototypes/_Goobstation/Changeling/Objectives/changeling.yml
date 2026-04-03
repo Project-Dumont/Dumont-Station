@@ -172,7 +172,7 @@
   id: LingCMORapidSyringeGunStealObjective
   components:
   - type: StealCondition
-    stealGroup: CMOweapon
+    stealGroup: CMOweapon # GabyStation
 
 ## rd
 

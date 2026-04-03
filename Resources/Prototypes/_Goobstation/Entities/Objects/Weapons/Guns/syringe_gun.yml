@@ -84,7 +84,7 @@
     shape:
     - 0,0,3,1
   - type: StealTarget
-    stealGroup: CMOweapon
+    stealGroup: CMOweapon # GabyStation
   - type: Tag
     tags:
     - HighRiskItem

@@ -39,7 +39,7 @@
     state: icon
 
 - type: stealTargetGroup
-  id: CMOweapon
+  id: CMOweapon # GabyStation - new RapidSyringeGun
   name: steal-target-groups-rapid-syringe-gun
   sprite:
     sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
