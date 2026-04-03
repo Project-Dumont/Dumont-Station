@@ -165,21 +165,7 @@
   - type: Bingle
     upgraded: true
   - type: Sprite
-    drawdepth: Mobs
     sprite: _Goobstation/Mobs/Bingle/bingle_upgrade.rsi
-    state: icon
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
-      state: alive # <--- Agora o jogo vai achar a sua animação "alive"!
-    - map: [ "enum.BingleVisual.Combat" ]
-      state: combat
-      visible: false
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: alive # <--- Ajustado aqui também
-      Dead:
-        Base: dead  # <--- E ajustado para puxar a animação de morte correta
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
