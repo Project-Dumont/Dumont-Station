@@ -26,7 +26,7 @@ public sealed class RecallItemSystem : EntitySystem
     {
         var user = args.Performer;
 
-        if (ent.Comp.BoundItem == null)
+        if (ent.Comp.BoundItem is null)
             return;
 
         var item = ent.Comp.BoundItem.Value;
@@ -66,8 +66,8 @@ public sealed class RecallItemSystem : EntitySystem
 
             recallComp.BoundItem = null;
 
-            if (recallComp.RecallActionEntity != null && Exists(recallComp.RecallActionEntity.Value))
-                QueueDel(recallComp.RecallActionEntity.Value);
+            if (recallComp.RecallActionEntity is { } actionEnt && Exists(actionEnt))
+                QueueDel(actionEnt);
 
             recallComp.RecallActionEntity = null;
 
@@ -77,13 +77,15 @@ public sealed class RecallItemSystem : EntitySystem
 
     private void OnUserDeleted(Entity<RecallBoundItemComponent> ent, ref EntityTerminatingEvent args)
     {
-        if (ent.Comp.RecallActionEntity != null && Exists(ent.Comp.RecallActionEntity.Value))
-            QueueDel(ent.Comp.RecallActionEntity.Value);
+        if (ent.Comp.RecallActionEntity is { } action
+            && Exists(action))
+            QueueDel(action);
 
-        if (ent.Comp.BoundItem != null && TryComp<BoundRecallComponent>(ent.Comp.BoundItem.Value, out var boundComp))
+        if (ent.Comp.BoundItem is { } boundEnt
+            && TryComp<BoundRecallComponent>(boundEnt, out var boundComp))
         {
             boundComp.BoundUser = null;
-            Dirty(ent.Comp.BoundItem.Value, boundComp);
+            Dirty(boundEnt, boundComp);
         }
     }
 }
