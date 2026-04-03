@@ -85,6 +85,7 @@
         Caustic: -1
         Shock: -5
         Ion: -3
+    ignoreResistances: true
     soundHit:
       collection: WeakHit
   - type: RefillableSolution
