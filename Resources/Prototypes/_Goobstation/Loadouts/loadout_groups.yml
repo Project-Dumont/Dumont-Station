@@ -1039,7 +1039,7 @@
   - JackBoots
   - BlackCowboyBoots
   - SnowjacksBso
-  - CombatHighHeeledBoots
+  - CombatHighHeeledBoots # GabyStation
 
 - type: loadoutGroup
   id: BlueshieldOfficerEnvirohelm
