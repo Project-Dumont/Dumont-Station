@@ -9,9 +9,11 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Goobstation.Shared.SpecialAnimation;
 using Content.Server.GameTicking.Rules;
 using Content.Shared.NukeOps;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.NukeOps;
@@ -54,7 +56,7 @@ public sealed partial class WarDeclaratorComponent : Component
     /// ID of the special animation played when war is declared
     /// </summary>
     [DataField]
-    public string WarAnimationId = "NukeOpsWarAnimation";
+    public ProtoId<SpecialAnimationPrototype> WarAnimationId = "NukeOpsWarAnimation";
 
     /// <summary>
     /// Fluent ID for the declaration sender title

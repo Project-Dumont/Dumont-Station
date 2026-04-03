@@ -863,25 +863,26 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 6.0
-    minimumPlayers: 20
+    weight: 6.0  # Goobstation - was 5.5
+    minimumPlayers: 20  # Goobstation - was 20
     duration: 1
-    maxOccurrences: 1
-    chaos:
+    maxOccurrences: 1  # Gabystation - loneops apenas uma vez por round
+    chaos:  # Goobstation
       Hostile: 200
       Medical: 200
       Death: 200
-    eventType: HostilesSpawn
+    eventType: HostilesSpawn  # Goobstation
+  # Goobstation
   - type: GameRule
     chaosScore: 700
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml
+    gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml # GabyStation
   - type: NukeopsRule
     roundEndBehavior: Nothing
-    warDeclarationMinOps: 1 # <--- Adicionado aqui para permitir guerra com 1 jogador
-    warNukieArriveDelay: 300 # <--- Adicionado para manter o Lone preso por 5 minutos.
-    warTcAmountPerNukie: 60
+    warDeclarationMinOps: 1 # <--- GabyStation - Adicionado aqui para permitir guerra com 1 jogador
+    warNukieArriveDelay: 300 # <--- GabyStation - Adicionado para manter o Lone preso por 5 minutos.
+    warTcAmountPerNukie: 60 # GabyStation
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointLoneNukeOperative
@@ -904,7 +905,7 @@
         - Syndicate
       mindRoles:
       - MindRoleNukeops
-  - type: AntagLoadProfileRule
+  - type: AntagLoadProfileRule # Goobstation
     speciesOverride: Human
     alwaysUseSpeciesOverride: true
 

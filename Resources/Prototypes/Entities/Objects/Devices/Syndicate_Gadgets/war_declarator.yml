@@ -50,5 +50,4 @@
     - type: WarDeclarator
       sound: 
         path: /Audio/_Gabystation/Announcements/One_Against_All.ogg
-
       warAnimationId: LoneOpsWarAnimation
