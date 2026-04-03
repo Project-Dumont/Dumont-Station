@@ -28,16 +28,16 @@
         volume: -4
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
-    fireRate: 1.5
+    fireRate: 2.0
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
   - type: Battery
-    maxCharge: 800 #40 segundos pra recarregar
-    startingCharge: 800
+    maxCharge: 1500
+    startingCharge: 1500
   - type: ProjectileBatteryAmmoProvider
     proto: HealingProjectile
-    fireCost: 32 #25 tiros
+    fireCost: 50 #30 tiros
   - type: PacifismAllowedGun
   - type: StealTarget
     stealGroup: CMOweapon
