@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BankATMCircuitboard
+  name: an automated teller machine board
+  description: A computer printed circuit board for an automated teller machine
+  components:
+  - type: Sprite
+    state: cpu_service
+  - type: ComputerBoard
+    prototype: ComputerBankATM
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: ScienceCommsComputerCircuitboard
+  name: science communications computer board
+  description: A computer printed circuit board for the science communications console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ScienceComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: SecurityCommsComputerCircuitboard
+  name: security communications computer board
+  description: A computer printed circuit board for the security communications console.
+  components:
+    - type: Sprite
+      state: cpu_security
+    - type: ComputerBoard
+      prototype: SecurityComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: ServiceCommsComputerCircuitboard
+  name: service communications computer board
+  description: A computer printed circuit board for the service communications console.
+  components:
+    - type: Sprite
+      state: cpuboard
+    - type: ComputerBoard
+      prototype: ServiceComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: CargoCommsComputerCircuitboard
+  name: cargo communications computer board
+  description: A computer printed circuit board for the cargo communications console.
+  components:
+    - type: Sprite
+      state: cpu_supply
+    - type: ComputerBoard
+      prototype: CargoComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: EngiCommsComputerCircuitboard
+  name: engineering communications computer board
+  description: A computer printed circuit board for the engineering communications console.
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: EngiComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: MedicalCommsComputerCircuitboard
+  name: medical communications computer board
+  description: A computer printed circuit board for the medical communications console.
+  components:
+    - type: Sprite
+      state: cpu_medical
+    - type: ComputerBoard
+      prototype: MedicalComputerComms

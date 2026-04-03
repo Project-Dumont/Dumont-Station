@@ -1,0 +1,58 @@
+- type: job
+  id: PrisonGuard
+  name: job-name-guard
+  description: job-description-guard
+  playTimeTracker: JobPrisonGuard
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 14400 #4 hrs
+  startingGear: PrisonGuardGear
+  canBeAntag: false
+  icon: "JobIconPrisonGuard"
+  supervisors: job-supervisors-warden
+  setPreference: true
+  guides: # goobstation
+  - Security
+  - CorporateJudo
+  goobcoins: 30 #Goob content
+  salary: 50 # Gaby content
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - External # DeltaV - Added external access
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial # goobstation
+    components:
+      - type: SecurityStaff
+
+
+- type: startingGear
+  id: PrisonGuardGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    id: PrisonGuardPDA
+    ears: ClothingHeadsetPrisonGuard # begin DeltaV
+  storage:
+    back:
+    - Flash
+   # - MagazinePistol # end DeltaV
+
+# DeltaV
+- type: chameleonOutfit
+  id: PrisonGuardChameleonOutfit
+  job: PrisonGuard
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    id: PrisonGuardPDA
+    ears: ClothingHeadsetPrisonGuard
+    head: ClothingHeadPrisonGuard
+    jumpsuit: ClothingUniformJumpsuitPrisonGuard
+    mask: ClothingMaskGasSecurity
+    gloves: ClothingHandsGlovesColorBlack

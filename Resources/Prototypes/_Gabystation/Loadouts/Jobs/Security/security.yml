@@ -39,3 +39,8 @@
   storage:
     back:
     - ClothingNeckChoque
+
+- type: loadout
+  id: CombatHighHeeledBoots
+  equipment:
+    shoes: ClothingShoesHighheelBootsCombat

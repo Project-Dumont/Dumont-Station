@@ -25,3 +25,130 @@
     state: icon
   content:
   - ClothingBeltSheathFilledRosethorn
+
+- type: selectableSet
+  id: SyndicateCQCSmokeThermalSet
+  name: selectable-set-syndicate-cqcsmokethermal-name
+  description: selectable-set-syndicate-cqcsmokethermal-description
+  sprite:
+    sprite: _White/Clothing/Eyes/Goggles/sthermals.rsi
+    state: icon
+  content:
+  - EncryptionKeySyndie
+  - CQCManual
+  - SmokeGrenade
+  - SmokeGrenade
+  - ClothingHandsGlovesGuerrilla
+  - SmokeImplanter
+  - ClothingEyesThermalVisionGogglesSyndie
+
+- type: selectableSet
+  id: SyndicateTraderGCMSet
+  name: selectable-set-syndicate-tradergcm-name
+  description: selectable-set-syndicate-tradergcm-description
+  sprite:
+    sprite: _Goobstation/Objects/Weapons/Melee/contractor_baton.rsi
+    state: icon
+  content:
+  - EncryptionKeySyndie
+  - Handcuffs
+  - BetrayalKnife
+  - ContractorBaton
+  - StimkitFilled
+
+- type: selectableSet
+  id: SyndicateCleitosSet
+  name: selectable-set-syndicate-cleitoskit-name
+  description: selectable-set-syndicate-cleitoskit-description
+  sprite:
+    sprite: Clothing/Mask/cluwne.rsi
+    state: icon
+  content:
+  - EncryptionKeySyndie
+  - ClothingOuterHardsuitJuggernaut
+  - BloodredCassette
+  - CigPackSyndicate
+  - WeaponRevolverPythonAP
+  - SpeedLoaderMagnum
+  - SpeedLoaderMagnum
+  - SpeedLoaderMagnum
+  - SpeedLoaderMagnum
+
+- type: selectableSet
+  id: SyndicateInfiltrationSet
+  name: selectable-set-syndicate-infiltration-name
+  description: selectable-set-syndicate-infiltration-description
+  sprite:
+    sprite: Clothing/Mask/gascentcom.rsi
+    state: icon
+  content:
+  - EncryptionKeySyndie
+  - EncryptionKeyStationMaster
+  - CaneSheathFilledNanotrasen
+  - CentcommCommsComputerCircuitboard
+  - ClothingMaskGasVoiceChameleon
+  - ClothingBackpackChameleonFill
+  - AgentIDCard
+  - FakeMindShieldImplanter
+
+- type: selectableSet
+  id: SyndicatePiromaniacSet
+  name: selectable-set-syndicate-piromaniac-name
+  description: selectable-set-syndicate-piromaniac-description
+  sprite:
+    sprite: Clothing/OuterClothing/Suits/fire.rsi
+    state: icon
+  content:
+  - EncryptionKeySyndie
+  - GrenadeIncendiary
+  - GrenadeIncendiary
+  - GrenadeIncendiary
+  - GrenadeIncendiary
+  - GrenadeIncendiary
+  - GrenadeIncendiary
+  - GrenadeIncendiary
+  - ClothingHeadHelmetAtmosFire
+  - ClothingOuterArmorAtmosian
+  - WeaponLauncherRocketDisposableThermobaric
+  - WeaponLauncherRocketDisposableThermobaric
+
+- type: selectableSet
+  id: SyndicateBadLeagueSet
+  name: selectable-set-syndicate-badleague-name
+  description: selectable-set-syndicate-badleague-description
+  sprite:
+    sprite: Objects/Fun/Plushies/nukie.rsi
+    state: icon
+  content:
+  - EncryptionKeySyndie
+  - ReinforcementRadioSyndicateSyndiCat
+  - ReinforcementRadioSyndicateSyndiCat
+  - ReinforcementRadioSyndicateSyndiRoach
+  - ReinforcementRadioSyndicateSyndiRoach
+  - ReinforcementRadioSyndicateSyndiRoach
+  - ReinforcementRadioSyndicateAncestorNukeops
+  - ReinforcementRadioSyndicateAncestorNukeops
+  - ReinforcementRadioSyndicateAncestorNukeops
+  - ReinforcementRadioSyndicateNukeops
+  - ReinforcementRadioSyndicateNukeops
+  - HoloClownInjector
+  - VehicleClowncarAntag
+  - BikeHorn
+
+- type: selectableSet
+  id: SyndicateGourmetSet
+  name: selectable-set-syndicate-gourmet-name
+  description: selectable-set-syndicate-gourmet-description
+  sprite:
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: baguette
+  content:
+  - EncryptionKeySyndie
+  - WeaponBaguette
+  - WeaponCroissant
+  - HappyHonkNukieSnacks
+  - RogueTailWeapon
+  - Stimpack
+  - Stimpack
+  - Stimpack
+  - Stimpack

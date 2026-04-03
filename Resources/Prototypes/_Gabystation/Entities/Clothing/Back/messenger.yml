@@ -1,0 +1,44 @@
+# Security
+- type: entity
+  parent: [BaseSecurityContraband, ClothingBackpackMessengerBase]
+  id: ClothingBackpackMessengerPrisonGuard
+  name: prison guard messenger bag
+  description: A robust bag for storing extra arrest equipment.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon-base
+      color: "#282828"
+    - state: icon-base-top
+      color: "#4c4b4f"
+    - state: icon-sling
+      color: "#9f4000"
+    - state: icon-clasp
+      color: "#d76b00"
+  - type: Clothing
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#282828"
+      - state: base-top-equipped-BACKPACK
+        color: "#4c4b4f"
+      - state: sling-equipped-BACKPACK
+        color: "#9f4000"
+      - state: clasp-equipped-BACKPACK
+        color: "#d76b00"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#282828"
+      - state: base-top-inhand-left
+        color: "#4c4b4f"
+      - state: clasp-inhand-left
+        color: "#eca615"
+      right:
+      - state: base-inhand-right
+        color: "#282828"
+      - state: base-top-inhand-right
+        color: "#4c4b4f"
+      - state: clasp-inhand-right
+        color: "#eca615"

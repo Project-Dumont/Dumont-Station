@@ -2243,3 +2243,63 @@ Entries:
         mais deles vão vir em breve!
   id: 271
   time: '2026-03-14T18:36:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona guarda prisional para monitorar os detentos.
+  id: 272
+  time: '2026-03-29T17:18:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções e ajustes na genética.
+  id: 273
+  time: '2026-03-29T17:28:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no culto do sangue.
+  id: 274
+  time: '2026-03-29T17:31:21.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Diarista não tem mais acesso ao armário do bartender, mas o booze-o-mat
+        agora é acessível por todo o serviço.
+  id: 275
+  time: '2026-03-29T17:34:05.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas faixas de aúdios para a S.A.A.E.
+    - type: Add
+      message: Segredo
+  id: 276
+  time: '2026-04-03T00:57:37.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas Músicas na Jukebox
+  id: 277
+  time: '2026-04-03T01:00:16.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: Botas de salto-alto de combate para a Segurança e BSO.
+    - type: Tweak
+      message: BSO agora pode selecionar a jumpsuit no loadout.
+  id: 278
+  time: '2026-04-03T01:27:50.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Flatpacks de computadores de comunicação para os heads!
+  id: 279
+  time: '2026-04-03T01:39:47.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: 7 novos kits para Traidores.
+  id: 280
+  time: '2026-04-03T02:02:54.0000000+00:00'

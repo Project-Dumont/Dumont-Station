@@ -451,7 +451,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Bar"]]
+    access: [["Service"]]
   - type: GuideHelp
     guides:
     - Bartender

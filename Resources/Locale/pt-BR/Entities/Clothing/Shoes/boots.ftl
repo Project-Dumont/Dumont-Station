@@ -28,3 +28,12 @@ ent-ClothingShoesBootsCowboyWhiteBad = Botas de caubói brancas de baixa qualida
 ent-ClothingShoesBootsCowboyFancyBad = Botas de caubói chiques de baixa qualidade
     .desc = Tem esporas que fazem barulho quando você anda. É desconfortável e frágil.
 
+ent-ClothingShoesHighheelBoots = botas de salto-alto
+    .desc = Botas elegantes para quando você quer se sentir estilosa, mas preparada. Estas são de acabamento "mais barato".
+
+ent-ClothingShoesHighheelBootsCombat = botas de salto-alto de combate
+    .desc = Botas elegantes para quando você quer se sentir estilosa, mas preparada para o combate. Estas são de acabamento topo de linha, espaço para armas laterais incluso.
+
+ent-ClothingShoesHighheelBootsCombatFilled = botas de salto-alto de combate
+    .desc = Botas elegantes para quando você quer se sentir estilosa, mas preparada para o combate. Estas são de acabamento topo de linha, espaço para armas laterais incluso.
+

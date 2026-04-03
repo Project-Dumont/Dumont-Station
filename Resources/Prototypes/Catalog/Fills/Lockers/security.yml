@@ -117,6 +117,7 @@
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHandsGlovesCombat
     - id: ClothingShoesBootsJack
+    - id: ClothingShoesHighheelBootsCombat # Gabystation
     - id: ClothingOuterCoatWarden
     - id: ClothingOuterWinterWarden
     - id: RubberStampWarden
@@ -139,6 +140,7 @@
     - id: BoxTapeRecorder # Gabystation
       prob: 0.5
     - id: ATMFlatpack # Gabystation
+    - id: BoxEncryptionKeyPrisoner #Delta-V
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -176,6 +178,7 @@
     # - id: ClothingHeadsetSecurity, Goob, over ear headsets
     - id: ClothingHandsGlovesColorBlack
     - id: ClothingShoesBootsJack
+    - id: ClothingShoesHighheelBootsCombat # Gabystation
     - id: WeaponMeleeNeedle
       prob: 0.1
     #- id: HoloprojectorSecurity, Goobstation, it's in every belt

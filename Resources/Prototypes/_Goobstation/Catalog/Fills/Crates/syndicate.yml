@@ -134,6 +134,14 @@
     - SyndicateCarpSet
     - SyndicateSusSet
 #    - SyndicateBuilderSet - Requires Rework pending Miner Removal
+    # GabyStation Sets
+    - SyndicateCQCSmokeThermalSet
+    - SyndicateTraderGCMSet
+    - SyndicateCleitosSet
+    - SyndicateInfiltrationSet
+    - SyndicatePiromaniacSet
+    - SyndicateBadLeagueSet
+    - SyndicateGourmetSet
     setsToSelect: 3
     spawnedStoragePrototype: CrateSyndicate
     spawnedStorageContainer: entity_storage

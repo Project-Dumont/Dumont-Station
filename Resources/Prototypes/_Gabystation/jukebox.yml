@@ -691,3 +691,15 @@
   name: Dois Navegantes - Ave Sangria
   path:
     path: /Audio/_Gabystation/Jukebox/Dois_Navegantes.ogg
+
+- type: jukebox
+  id: Talisma
+  name: Talismã - Leandro & Leonardo
+  path:
+    path: /Audio/_Gabystation/Jukebox/Talisma.ogg
+
+- type: jukebox
+  id: Éamor
+  name: É o Amor - Zezé Di Camargo & Luciano
+  path:
+    path: /Audio/_Gabystation/Jukebox/É_o_Amor.ogg

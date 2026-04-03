@@ -1,0 +1,45 @@
+# Head
+- type: loadout
+  id: PrisonGuardBeret
+  equipment:
+    head: ClothingHeadHatBeretPrisonGuard
+
+# Back
+- type: loadout
+  id: PrisonGuardBackpack
+  equipment:
+    back: ClothingBackpackPrisonGuard
+
+- type: loadout
+  id: PrisonGuardSatchel
+  equipment:
+    back: ClothingBackpackSatchelPrisonGuard
+
+- type: loadout
+  id: PrisonGuardDuffel
+  equipment:
+    back: ClothingBackpackDuffelPrisonGuard
+
+- type: loadout
+  id: PrisonGuardMessenger
+  equipment:
+    back: ClothingBackpackMessengerPrisonGuard
+
+# Plasmaman
+- type: loadout
+  id: PrisonGuardEnvirohelm
+  equipment:
+    head: ClothingHeadEnvirohelmPrisonGuard
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PrisonGuardEnvirosuit
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisonGuard
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman

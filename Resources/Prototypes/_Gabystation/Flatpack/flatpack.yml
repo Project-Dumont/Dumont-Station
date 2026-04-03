@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseFlatpack
   id: MinerFlatpackO2
@@ -15,7 +19,7 @@
   components:
   - type: Flatpack
     entity: GasMinerNitrogen
-    
+
 - type: entity
   parent: BaseFlatpack
   id: FlatpackWashingMachine
@@ -33,3 +37,57 @@
   components:
   - type: Flatpack
     entity: DnaModifierConsole
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackScienceComputerComms
+  name: flatpack de um computador de comunicação de pesquisa
+  description: Um computador de comunicação de pesquisa comprimido.
+  components:
+  - type: Flatpack
+    entity: ScienceComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackSecurityComputerComms
+  name: flatpack de um computador de comunicação de segurança
+  description: Um computador de comunicação de segurança comprimido.
+  components:
+  - type: Flatpack
+    entity: SecurityComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackServiceComputerComms
+  name: flatpack de um computador de comunicação de serviço
+  description: Um computador de comunicação de serviço comprimido.
+  components:
+  - type: Flatpack
+    entity: ServiceComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackCargoComputerComms
+  name: flatpack de um computador de comunicação de logística
+  description: Um computador de comunicação de logística comprimido.
+  components:
+  - type: Flatpack
+    entity: CargoComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackEngiComputerComms
+  name: flatpack de um computador de comunicação de engenharia
+  description: Um computador de comunicação de engenharia comprimido.
+  components:
+  - type: Flatpack
+    entity: EngiComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackMedicalComputerComms
+  name: flatpack de um computador de comunicação de médico
+  description: Um computador de comunicação de médico comprimido.
+  components:
+  - type: Flatpack
+    entity: MedicalComputerComms

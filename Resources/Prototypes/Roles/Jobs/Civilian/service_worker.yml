@@ -90,10 +90,9 @@
   access:
   - Service
   - Maintenance
-  - Bar
+#  - Bar Gabystation Não. Diarista ser um tider com uma espingarda é muito OP. Resulta em o unico motivo que pessoas pegam esse trabalho ser pra pegar espingarda.
   - Kitchen
-  extendedAccess:
-  - Hydroponics
+  - Hydroponics #Gabystation Isso tava em extended access porque?
   special: # goob
   - !type:AddImplantSpecial # Service workers can understand a chef's communications.
     implants: [ BasicSpaceItalianTranslatorImplant ]

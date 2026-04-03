@@ -6,3 +6,22 @@
   materials:
     Cloth: 200
     Durathread: 100
+    
+# Jumpsuits - Security
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitPrisonGuard
+  result: ClothingUniformJumpsuitPrisonGuard
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpskirtPrisonGuard
+  result: ClothingUniformJumpskirtPrisonGuard
+
+# Prison Guard Hat
+
+- type: latheRecipe
+  parent: BaseHatRecipe
+  id: ClothingHeadPrisonGuard
+  result: ClothingHeadPrisonGuard

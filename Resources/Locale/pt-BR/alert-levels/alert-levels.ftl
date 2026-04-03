@@ -56,3 +56,8 @@ alert-level-cyan-instructions = Relate qualquer avistamento de silicios a equipe
 alert-level-doomsday = DOOMSDAY
 alert-level-doomsday-announcement = A A  A Atenção! O protocolo DOOMSDAY foi confirmado como estávelvelvel. Todos os sisilícios devem ser considerados ativamente benéficos e devem permanecer operacionais. nais nais nais. Todos os tripulantes devem proteger e manter ativa a Inteligência Artificial al da estação para garantir a conclusão do protocolo DOOmMSDAYday, o sistema de preservação da vida orgânica da estaçãoçãoçãoçãoção.
 alert-level-doomsday-instructions = Desative o protocolo DOOMSDAY, neutralize os silicios.
+
+## GoobStation
+alert-level-honk = Honk
+alert-level-honk-announcement = Um palhaço perigoso está à solta e pode causar danos catastróficos se não for eliminado! Todos os tripulantes devem colaborar para executá-lo, se possível, ou então evacuar.
+alert-level-honk-instructions = Tripulantes são encorajados a executar o palhaço.
