@@ -1,5 +1,31 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+hijack-beacon-verb-activate-text = Activate
+
+hijack-beacon-verb-activate-message = The beacon can only be armed on the Automated Trade Station, on an unoccupied tile.
+
+hijack-beacon-verb-deactivate-text = Deactivate
+
+hijack-beacon-verb-deactivate-message = The beacon isn't going to deactivate itself, you know.
+
+hijack-beacon-examine-await-activate = The beacon is [color=green]ready to activate[/color].
+
+hijack-beacon-examine-await-cooldown = The beacon is [color=red]on cooldown[/color].
+
+hijack-beacon-examine-await-hijack-complete = The beacon is [color=red]spent[/color].
+
+hijack-beacon-announcement-sender = Automated Trade Station
+
+hijack-beacon-announcement-activated = Attention! An Attempted Breach of the Automated Trade Station's firewall has been detected! Estimated {$time} seconds until firewall breach!
+
+hijack-beacon-announcement-deactivated = Firewall breach failed. Firewall integrity partially restored. Have a nice day!
+
+hijack-beacon-announcement-success = Successfully disengaged Automated Trade Station firewall. {$fine} spesos has been transferred from station funds to [%ERROR%]. Your trade station warranty is now void. This incident has been reported.
+
+hijack-beacon-popup-anchor = The beacon anchors itself into the ground!
+
+hijack-beacon-popup-unanchor = The beacon unanchors itself from the ground.
+
 photograph-name-text-empty = This is a photograph.
 
 photograph-name-text = This is a photograph of { PROPER($entity) ->
@@ -20,6 +46,12 @@ uplink-voice-mask-implanter-desc = Modifies your vocal cords and facial structur
 uplink-briefcase-gun-name = Briefcase Gun
 
 uplink-briefcase-gun-desc = An indistinct briefcase with a highly compact C-20K mounted inside it. Careful not the grip the handle too tight!
+
+uplink-hijack-beacon-name = Hijack Beacon
+
+uplink-hijack-beacon-desc = A syndicate-brand hijack beacon designed to get around the firewalls of Nanotrasen-brand Automated Trade Stations. They take 600 seconds to work and Trade Stations will announce they are being hacked, so prepare accordingly.
+
+store-category-objective = Objective
 
 selectable-lock-verb-category-name = Add lock
 

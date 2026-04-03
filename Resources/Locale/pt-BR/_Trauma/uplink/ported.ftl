@@ -1,5 +1,31 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+hijack-beacon-verb-activate-text = Ativar
+
+hijack-beacon-verb-activate-message = O sinalizador só pode ser armado em um piso desocupado da Estação de Comércio Automatizada.
+
+hijack-beacon-verb-deactivate-text = Desativar
+
+hijack-beacon-verb-deactivate-message = O sinalizador não vai se desativar sozinho.
+
+hijack-beacon-examine-await-activate = O sinalizador está [color=green]pronto para ativação[/color].
+
+hijack-beacon-examine-await-cooldown = O sinalizador está [color=red]recarregando[/color].
+
+hijack-beacon-examine-await-hijack-complete = O sinalizador está [color=red]esgotado[/color].
+
+hijack-beacon-announcement-sender = Estação de Comércio Automatizada
+
+hijack-beacon-announcement-activated = Atenção! Foi detectada uma tentativa de invasão do firewall da Estação de Comércio Automatizada! Tempo estimado até a invasão: {$time} segundos!
+
+hijack-beacon-announcement-deactivated = Tentativa de invasão bloqueada. Integridade do firewall parcialmente restaurada. Tenha um bom dia!
+
+hijack-beacon-announcement-success = Firewall da Estação de Comércio Automatizada desativado. {$fine} spesos foram transferidos dos fundos da estação para [%ERROR%]. A garantia da sua estação de comércio foi anulada. Este incidente foi registrado.
+
+hijack-beacon-popup-anchor = O sinalizador se fixa ao chão!
+
+hijack-beacon-popup-unanchor = O sinalizador se solta do chão.
+
 photograph-name-text-empty = Esta é uma fotografia.
 
 photograph-name-text = Esta é uma fotografia de {$entity}.
@@ -17,6 +43,12 @@ uplink-voice-mask-implanter-desc = Modifica suas cordas vocais e a estrutura do 
 uplink-briefcase-gun-name = Maleta metralhadora
 
 uplink-briefcase-gun-desc = Uma maleta discreta com uma C-20K compacta escondida dentro. Cuidado ao apertar a alça!
+
+uplink-hijack-beacon-name = Sinalizador de sequestro comercial
+
+uplink-hijack-beacon-desc = Um sinalizador do Sindicato que invade o firewall das Estações de Comércio Automatizadas da Nanotrasen. Leva 600 segundos e a estação de comércio anuncia a invasão. Prepare-se.
+
+store-category-objective = Objetivos
 
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
 

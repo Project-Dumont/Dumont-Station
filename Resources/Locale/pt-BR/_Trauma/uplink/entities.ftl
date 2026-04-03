@@ -23,5 +23,11 @@ ent-VoiceMaskImplanter = implantador de máscara de identidade
 ent-VoiceMaskImplant = implante de máscara de identidade
     .desc = Este implante permite mudar sua identidade à vontade.
 
+ent-HijackBeacon = sinalizador de sequestro
+    .desc = Um dispositivo que contorna o firewall das estações comerciais automatizadas da Nanotrasen.
+
+ent-HijackTradeStationObjective = Sequestre a Estação Comercial Automatizada.
+    .desc = Seu uplink foi autorizado a fornecer um sinalizador de sequestro. Instale-o na Estação Comercial Automatizada e defenda-o até que o sequestro seja concluído.
+
 ent-WeaponSubMachineGunBriefcase = maleta marrom
     .desc = Útil para carregar itens nas mãos.

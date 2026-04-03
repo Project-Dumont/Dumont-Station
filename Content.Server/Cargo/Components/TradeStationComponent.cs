@@ -11,5 +11,7 @@ namespace Content.Server.Cargo.Components;
 [RegisterComponent]
 public sealed partial class TradeStationComponent : Component
 {
+    [DataField]
+    public bool Hacked;
 
 }
