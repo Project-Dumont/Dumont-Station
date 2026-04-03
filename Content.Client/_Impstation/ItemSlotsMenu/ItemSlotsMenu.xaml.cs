@@ -87,7 +87,7 @@ public sealed partial class ItemSlotsMenu: RadialMenu
     }
 }
 
-public sealed class ItemSlotButton : RadialMenuButtonWithSector
+public sealed class ItemSlotButton : RadialMenuTextureButtonWithSector
 {
     public ItemSlotButton()
     {
