@@ -27,7 +27,7 @@
   - ClothingBeltSheathFilledRosethorn
 
 - type: selectableSet
-  id: SyndicateCQC+Smoke+ThermalSet
+  id: SyndicateCQCSmokeThermalSet
   name: selectable-set-syndicate-cqcsmokethermal-name
   description: selectable-set-syndicate-cqcsmokethermal-description
   sprite:
@@ -152,5 +152,3 @@
   - Stimpack
   - Stimpack
   - Stimpack
-
-  
