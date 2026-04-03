@@ -10336,7 +10336,7 @@ entities:
     - type: Transform
       pos: 33.5,3.5
       parent: 2
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 96
     components:

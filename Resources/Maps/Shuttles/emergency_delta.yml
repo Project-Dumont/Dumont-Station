@@ -5280,7 +5280,7 @@ entities:
     - type: Transform
       pos: -5.5,-5.5
       parent: 1
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 322
     components:

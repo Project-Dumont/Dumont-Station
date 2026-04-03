@@ -2097,7 +2097,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: VendingMachineMedical
+- proto: VendingMachineMedicalFree
   entities:
   - uid: 236
     components:
@@ -2111,7 +2111,7 @@ entities:
     - type: Transform
       pos: -1.5,-3.5
       parent: 1
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 238
     components:

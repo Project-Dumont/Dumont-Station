@@ -2450,7 +2450,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,-10.5
       parent: 1
-- proto: VendingMachineMedical
+- proto: VendingMachineMedicalFree
   entities:
   - uid: 262
     components:

@@ -2124,7 +2124,7 @@ entities:
     - type: Transform
       pos: -2.5,-1.5
       parent: 1
-- proto: VendingMachineMedical
+- proto: VendingMachineMedicalFree
   entities:
   - uid: 235
     components:
@@ -2138,7 +2138,7 @@ entities:
     - type: Transform
       pos: -1.5,-3.5
       parent: 1
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 237
     components:
