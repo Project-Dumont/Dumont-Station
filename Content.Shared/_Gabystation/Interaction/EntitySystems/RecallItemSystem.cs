@@ -17,12 +17,12 @@ public sealed class RecallItemSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<RecallBoundItemComponent, RecallBoundItemEvent>(OnRecall);
-        SubscribeLocalEvent<BoundRecallComponent, EntityTerminatingEvent>(OnBoundItemDeleted);
-        SubscribeLocalEvent<RecallBoundItemComponent, EntityTerminatingEvent>(OnUserDeleted);
+        SubscribeLocalEvent<RecallLinkComponent, RecallBoundItemEvent>(OnRecall);
+        SubscribeLocalEvent<RecallableComponent, EntityTerminatingEvent>(OnBoundItemDeleted);
+        SubscribeLocalEvent<RecallLinkComponent, EntityTerminatingEvent>(OnUserDeleted);
     }
 
-    private void OnRecall(Entity<RecallBoundItemComponent> ent, ref RecallBoundItemEvent args)
+    private void OnRecall(Entity<RecallLinkComponent> ent, ref RecallBoundItemEvent args)
     {
         var user = args.Performer;
 
@@ -53,11 +53,11 @@ public sealed class RecallItemSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnBoundItemDeleted(Entity<BoundRecallComponent> ent, ref EntityTerminatingEvent args)
+    private void OnBoundItemDeleted(Entity<RecallableComponent> ent, ref EntityTerminatingEvent args)
     {
         var item = ent.Owner;
 
-        var query = EntityQueryEnumerator<RecallBoundItemComponent>();
+        var query = EntityQueryEnumerator<RecallLinkComponent>();
 
         while (query.MoveNext(out var userUid, out var recallComp))
         {
@@ -75,16 +75,16 @@ public sealed class RecallItemSystem : EntitySystem
         }
     }
 
-    private void OnUserDeleted(Entity<RecallBoundItemComponent> ent, ref EntityTerminatingEvent args)
+    private void OnUserDeleted(Entity<RecallLinkComponent> ent, ref EntityTerminatingEvent args)
     {
         if (ent.Comp.RecallActionEntity is { } action
             && Exists(action))
             QueueDel(action);
 
         if (ent.Comp.BoundItem is { } boundEnt
-            && TryComp<BoundRecallComponent>(boundEnt, out var boundComp))
+            && TryComp<RecallableComponent>(boundEnt, out var boundComp))
         {
-            boundComp.BoundUser = null;
+            boundComp.LinkedEntity = null;
             Dirty(boundEnt, boundComp);
         }
     }

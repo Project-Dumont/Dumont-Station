@@ -2,27 +2,26 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Gabystation.Interaction.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class BoundRecallComponent : Component
+public sealed partial class RecallableComponent : Component
 {
     /// <summary>
-    /// Gets or sets the unique identifier of the user entity that is bound to this object, if any.
+    /// The entity that is currently linked to this one and can recall it. Null if not linked.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public EntityUid? BoundUser;
+    public EntityUid? LinkedEntity;
 
     /// <summary>
-    /// Gets or sets the entity prototype identifier used for the recall action.
+    /// The action granted to an entity when it links to this one.
     /// </summary>
-    /// <remarks>This field specifies the prototype ID that represents the recall action for a bound item.
-    /// Changing this value affects which action is triggered when a recall is performed.</remarks>
+    /// <remarks>
+    /// This action should allow the linked entity to recall (teleport) this entity.
+    /// </remarks>
     [DataField]
     public EntProtoId RecallAction = "ActionRecallBoundItem";
 

@@ -2,14 +2,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Gabystation.Interaction.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class RecallBoundItemComponent : Component
+public sealed partial class RecallLinkComponent : Component
 {
     /// <summary>
     /// The item bound to this user.

@@ -21,13 +21,13 @@ public sealed class BindRecallSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<BoundRecallComponent, GetVerbsEvent<ActivationVerb>>(OnGetVerb);
-        SubscribeLocalEvent<BoundRecallComponent, BindRecallDoAfterEvent>(OnBindDoAfter);
-        SubscribeLocalEvent<BoundRecallComponent, UnbindRecallDoAfterEvent>(OnUnbindDoAfter);
-        SubscribeLocalEvent<BoundRecallComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<RecallableComponent, GetVerbsEvent<ActivationVerb>>(OnGetVerb);
+        SubscribeLocalEvent<RecallableComponent, BindRecallDoAfterEvent>(OnBindDoAfter);
+        SubscribeLocalEvent<RecallableComponent, UnbindRecallDoAfterEvent>(OnUnbindDoAfter);
+        SubscribeLocalEvent<RecallableComponent, ExaminedEvent>(OnExamine);
     }
 
-    private void OnGetVerb(Entity<BoundRecallComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
+    private void OnGetVerb(Entity<RecallableComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
     {
         if (!args.CanInteract)
             return;
@@ -37,14 +37,14 @@ public sealed class BindRecallSystem : EntitySystem
         // ------------------
         // Bind verb
         // ------------------
-        if (ent.Comp.BoundUser is null)
+        if (ent.Comp.LinkedEntity is null)
         {
             var bindVerb = new ActivationVerb
             {
                 Text = Loc.GetString("recall-item-bind"),
                 Act = () =>
                 {
-                    var recall = EnsureComp<RecallBoundItemComponent>(user);
+                    var recall = EnsureComp<RecallLinkComponent>(user);
 
                     // Check BEFORE the DoAfter
                     if (recall.BoundItem is not null)
@@ -69,8 +69,8 @@ public sealed class BindRecallSystem : EntitySystem
             args.Verbs.Add(bindVerb);
         }
 
-        if (ent.Comp.BoundUser != user
-            || !TryComp<RecallBoundItemComponent>(user, out var recallComp))
+        if (ent.Comp.LinkedEntity != user
+            || !TryComp<RecallLinkComponent>(user, out var recallComp))
             return;
 
         // ------------------
@@ -97,20 +97,20 @@ public sealed class BindRecallSystem : EntitySystem
         args.Verbs.Add(unbindVerb);
     }
 
-    private void OnBindDoAfter(Entity<BoundRecallComponent> ent, ref BindRecallDoAfterEvent args)
+    private void OnBindDoAfter(Entity<RecallableComponent> ent, ref BindRecallDoAfterEvent args)
     {
         if (args.Cancelled)
             return;
 
         var user = args.User;
 
-        var recall = EnsureComp<RecallBoundItemComponent>(user);
+        var recall = EnsureComp<RecallLinkComponent>(user);
 
         if (recall.BoundItem is not null)
             return;
 
         // Verify if another user has already bound
-        if (ent.Comp.BoundUser is not null)
+        if (ent.Comp.LinkedEntity is not null)
         {
             _popup.PopupEntity(Loc.GetString("recall-item-already-bound"), user, user);
             return;
@@ -125,7 +125,7 @@ public sealed class BindRecallSystem : EntitySystem
         recall.BoundItem = ent.Owner;
         recall.RecallActionEntity = action;
 
-        ent.Comp.BoundUser = user;
+        ent.Comp.LinkedEntity = user;
         Dirty(ent);
 
         var itemName = Name(ent.Owner);
@@ -137,14 +137,14 @@ public sealed class BindRecallSystem : EntitySystem
             Loc.GetString("recall-item-action-desc", ("item", itemName)));
     }
 
-    private void OnUnbindDoAfter(Entity<BoundRecallComponent> ent, ref UnbindRecallDoAfterEvent args)
+    private void OnUnbindDoAfter(Entity<RecallableComponent> ent, ref UnbindRecallDoAfterEvent args)
     {
         if (args.Cancelled)
             return;
 
         var user = args.User;
 
-        if (!TryComp<RecallBoundItemComponent>(user, out var recallComp))
+        if (!TryComp<RecallLinkComponent>(user, out var recallComp))
             return;
 
         // Verify if the unbinding item is the one bound to the user
@@ -158,11 +158,11 @@ public sealed class BindRecallSystem : EntitySystem
         recallComp.RecallActionEntity = null;
         Dirty(user, recallComp);
 
-        ent.Comp.BoundUser = null;
+        ent.Comp.LinkedEntity = null;
         Dirty(ent);
     }
 
-    private void OnExamine(Entity<BoundRecallComponent> ent, ref ExaminedEvent args)
+    private void OnExamine(Entity<RecallableComponent> ent, ref ExaminedEvent args)
     {
         if (!ent.Comp.Examinable)
             return;
@@ -170,7 +170,7 @@ public sealed class BindRecallSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        if (ent.Comp.BoundUser is null)
+        if (ent.Comp.LinkedEntity is null)
             args.PushMarkup(Loc.GetString("recall-bound-item-examine-free"));
         else
             args.PushMarkup(Loc.GetString("recall-bound-item-examine-owned"));
