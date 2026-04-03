@@ -13832,7 +13832,7 @@ entities:
     - type: Transform
       pos: 4.5,-10.5
       parent: 104
-- proto: VendingMachineCigs
+- proto: VendingMachineCigsFree
   entities:
   - uid: 117
     components:

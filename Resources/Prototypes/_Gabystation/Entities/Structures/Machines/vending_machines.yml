@@ -85,3 +85,192 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineNutriFree
+  name: NutriMax
+  description: A vending machine containing nutritional substances for plants and botanical tools.
+  components:
+  - type: VendingMachine
+    pack: NutriMaxInventory
+    paidItems: false # Economy
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: NutriMaxAds
+  - type: SpeakOnUIClosed
+    pack: NutriMaxGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/nutri_green.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Hydroponics"]]
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineEngivendFree
+  name: Engi-Vend
+  description: Spare tool vending. What? Did you expect some witty description?
+  components:
+  - type: VendingMachine
+    pack: EngiVendInventory
+    paidItems: false # Economy
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/engivend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Engineering"]]
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#b89e2a"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDiscountFree
+  name: Discount Dan's
+  description: A vending machine containing discount snacks from the infamous 'Discount Dan' franchise.
+  components:
+  - type: VendingMachine
+    pack: DiscountDansInventory
+    paidItems: false # Economy
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: DiscountDansAds
+  - type: SpeakOnUIClosed
+    pack: DiscountDansGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/discount.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#6148c7"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCigsFree
+  name: ShadyCigs Deluxe
+  description: If you want to get cancer, might as well do it in style.
+  components:
+  - type: VendingMachine
+    pack: CigaretteMachineInventory
+    paidItems: false # Economy
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/cigs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSmiteFree
+  name: Smite Vendor
+  description: Popular with the administration.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/smite.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: VendingMachine
+    pack: SmiteInventory
+    paidItems: false # Economy
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: SmiteAds
+  - type: SpeakOnUIClosed
+    pack: SmiteGoodbyes
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#00E645"
