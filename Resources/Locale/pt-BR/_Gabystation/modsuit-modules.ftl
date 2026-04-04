@@ -1,11 +1,11 @@
 # boots
 modsuit-module-jump-name = { ent-ModsuitModuleJump }
 modsuit-module-magboot-name = { ent-ModsuitModuleMagboot }
-modsuit-module-clownshoes-name = { ent-ModsuitModuleClownBoot } 
+modsuit-module-clownshoes-name = { ent-ModsuitModuleClownBoot }
 
 # hand
 modsuit-module-drill-name = { ent-ModsuitModuleDrill }
-modsuit-module-diamond-drill-name = { ent-ModsuitModuleDiamondDrill } 
+modsuit-module-diamond-drill-name = { ent-ModsuitModuleDiamondDrill }
 modsuit-module-surgery-name = { ent-ModsuitModuleSurgical }
 # modsuit-module-tray-scanner-name = módulo de escanner raios-t
 
@@ -18,4 +18,4 @@ modsuit-module-welding-name = { ent-ModsuitModuleWelding }
 # chest
 modsuit-module-antigrav-name = { ent-ModsuitModuleAntiGrav }
 modsuit-module-gps-name = { ent-ModsuitModuleGPS }
-# modsuit-module-radiation-name = módulo de radiação
+modsuit-module-injector-name = { ent-ModsuitModuleInjector }

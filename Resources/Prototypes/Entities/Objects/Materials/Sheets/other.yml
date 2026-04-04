@@ -102,7 +102,12 @@
         reagents:
         - ReagentId: Cellulose
           Quantity: 3
-
+  - type: Tag # Trauma
+    tags:
+    - Sheet
+  - type: Construction # Trauma
+    graph: SheetPaper
+    node: paper sheet
 
 - type: entity
   parent: SheetPaper

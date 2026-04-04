@@ -5,14 +5,16 @@
 using Content.Shared._EinsteinEngines.Language.Components;
 using Content.Shared._EinsteinEngines.Language.Systems;
 using Content.Shared._EinsteinEngines.Revolutionary.Components;
-using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
 using Content.Shared.DoAfter;
 using Content.Shared.Flash;
+using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Revolutionary.Components;
@@ -75,6 +77,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
             || args.Target == null)
             return;
 
+        _chargesSystem.TryUseCharges(entity.Owner, entity.Comp.ConsumesCharges);
         ConvertTarget(args.Used.Value, args.Target.Value, args.User);
     }
 
@@ -90,18 +93,15 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
         if (args.Handled
             || !args.Target.HasValue
             || !args.CanReach
-            || (entity.Comp.ConsumesCharges > 0
-            && !_chargesSystem.TryUseCharges(entity.Owner, entity.Comp.ConsumesCharges)))
+            || !_chargesSystem.HasCharges(entity.Owner, entity.Comp.ConsumesCharges)
+            || !HasComp<MindContainerComponent>(args.Target)
+            || !HasComp<HumanoidAppearanceComponent>(args.Target)) // TraumaStation change
             return;
 
+        // TraumaStation
         if (entity.Comp.ApplyFlashEffect)
-        {
-            _flash.Flash(args.Target.Value, args.User, entity.Owner, entity.Comp.FlashDuration, entity.Comp.SlowToOnFlashed, melee: true);
+            _flash.Flash(args.Target.Value, args.User, entity.Owner, entity.Comp.FlashDuration, entity.Comp.SlowToOnFlashed);
 
-            bool hasChargesLeft = entity.Comp.ConsumesCharges <= 0 || _chargesSystem.HasCharges(entity.Owner, entity.Comp.ConsumesCharges);
-            _appearance.SetData(entity.Owner, FlashVisuals.Flashing, hasChargesLeft);
-            _appearance.SetData(entity.Owner, FlashVisuals.Burnt, !hasChargesLeft);
-        }
 
         if (args.Target is not { Valid: true } target
             || !HasComp<MobStateComponent>(target)

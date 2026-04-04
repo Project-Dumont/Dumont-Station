@@ -253,3 +253,5 @@
   equipment:
     # Goobstation - Telecrystal rework
     pocket2: LoneOpsUplink350TC #Goobstation
+  inhand: 
+  - LoneOpsDeclarationOfWar # GabyStation

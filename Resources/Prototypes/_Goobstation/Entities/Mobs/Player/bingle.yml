@@ -61,7 +61,7 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: alive
     - map: ["enum.BingleVisual.Upgraded"]
-      state: Upgraded
+      state: alive
       visible: false
     - map: ["enum.BingleVisual.Combat"]
       state: combat
@@ -165,20 +165,7 @@
   - type: Bingle
     upgraded: true
   - type: Sprite
-    drawdepth: Mobs
-    sprite: _Goobstation/Mobs/Bingle/bingle.rsi
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
-      state: Upgraded
-    - map: [ "enum.BingleVisual.Combat" ]
-      state: combat
-      visible: false
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: Upgraded
-      Dead:
-        Base: dead_upgraded
+    sprite: _Goobstation/Mobs/Bingle/bingle_upgrade.rsi
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -240,4 +227,3 @@
     - map: [ "enum.BingleVisual.Combat" ]
       state: combat
       visible: false
-

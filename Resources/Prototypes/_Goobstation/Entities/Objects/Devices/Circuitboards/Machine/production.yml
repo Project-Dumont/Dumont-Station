@@ -26,6 +26,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: CargoTechFabCircuitboard
@@ -43,6 +47,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: ScienceTechFabCircuitboard
@@ -60,6 +68,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: ServiceTechFabCircuitboard
@@ -77,6 +89,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: ERTTechFabCircuitboard

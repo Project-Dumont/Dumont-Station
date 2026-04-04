@@ -190,20 +190,29 @@
   - BloodCultist # Blood cultists
 
 - type: npcFaction
-  id: Revolutionary
+  id: Revolutionary #made more hostile for trauma
   hostile:
   - NanoTrasen
-  - Zombie
-  - SimpleHostile
   - Dragon
-  - AllHostile
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Changeling # goob edit - changelings
+  - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - Shadowling # Einstein Engines - Shadowlings
-  - Wizard # Goobstation - wizard
+  - Wizard # goob edit - wizard
   - PirateFaction # goob - pirates
   - Xenoborg
   - Lavafauna # Goob - Lavaland
   - BloodCultist # Blood cultists
+  friendly: # Goobstation
+  - Revolutionary
 
 - type: npcFaction
   id: AllHostile

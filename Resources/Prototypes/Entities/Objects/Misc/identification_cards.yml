@@ -1103,6 +1103,9 @@
     - AllAccess
     - Silicon
     tags:
+    # <Trauma>
+    - Revolutionary
+    # </Trauma>
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent

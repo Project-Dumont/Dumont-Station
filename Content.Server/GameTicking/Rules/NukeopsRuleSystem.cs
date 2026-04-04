@@ -642,7 +642,11 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         if (!Resolve(ent, ref ent.Comp, false))
             return null;
 
-        return ent.Comp.MapGrids.Where(e => !HasComp<NukeOpsShuttleComponent>(e)).FirstOrNull();
+        var outpost = ent.Comp.MapGrids.Where(e => !HasComp<NukeOpsShuttleComponent>(e)).FirstOrNull();
+
+        // SHITCODE:
+        // Se ele não achar uma base fixa (caso do Lone Ops), a própria nave vira a base para receber os tcs.
+        return outpost ?? ent.Comp.MapGrids.FirstOrNull();
     }
 
     /// <remarks>

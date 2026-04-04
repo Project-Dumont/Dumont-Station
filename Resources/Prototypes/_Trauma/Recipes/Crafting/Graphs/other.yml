@@ -1,0 +1,35 @@
+- type: constructionGraph
+  id: SheetPaper
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: paper sheet
+      completed:
+      - !type:SetStackCount
+        amount: 1
+      steps:
+      - tag: Paper
+        doAfter: 5
+        name: construction-graph-tag-paper
+        icon:
+          sprite: Objects/Misc/bureaucracy.rsi
+          state: paper
+  - node: paper sheet
+    entity: SheetPaper
+
+- type: constructionGraph
+  id: PowerArmorStand
+  start: start
+  graph:
+  - node: start
+    entity: RevPowerArmorStand
+    edges:
+    - to: PowerArmorStand
+      steps:
+        - material: Steel
+          amount: 30
+          doAfter: 20
+
+  - node: PowerArmorStand
+    entity: RevPowerArmorStand

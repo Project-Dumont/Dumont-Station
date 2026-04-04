@@ -3,7 +3,7 @@ ent-ModsuitModuleJump = módulo de salto
     .desc = Um módulo de salto de curto alcance para ser inserido nas botas de uma MODsuit.
 
 ent-ModsuitModuleMagboot = módulo de magboots
-    .desc = Um módulo de magboots para ser inserido nas botas de uma MODsuit. NÃO INSIRA EM MODSUITS COM FUNCIONALIDADE DE MAGBOOTS.
+    .desc = Um módulo de magboots para ser inserido nas botas de uma MODsuit.
 
 ent-ModsuitModuleDrill = módulo de broca
     .desc = Um módulo de broca de mineração para ser inserido nas luvas de uma MODsuit.
@@ -34,4 +34,7 @@ ent-ModsuitModuleClownBoot = módulo de sapatos de palhaço
 
 ent-ModsuitModuleGPS = módulo de GPS
     .desc = Um módulo de GPS para ser inserido no peitoral de uma MODsuit.
+
+ent-ModsuitModuleInjector = módulo de autoinjetor
+    .desc = Um módulo de autoinjetor para ser inserido no peitoral de uma MODsuit para fornecer uma dose de medicamento estabilizante quando o usuário entrar em estado crítico.
 

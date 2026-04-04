@@ -27,6 +27,7 @@
     tags:
     - HighRiskItem
     - FitInTeleporterConsole # GabyStation -> Station Teleporter
+    - HandTeleporter # Trauma
   - type: StealTarget
     stealGroup: HandTeleporter
   - type: EdibleMatter # Corvax-Wega-Add

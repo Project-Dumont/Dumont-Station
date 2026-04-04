@@ -2303,3 +2303,60 @@ Entries:
       message: 7 novos kits para Traidores.
   id: 280
   time: '2026-04-03T02:02:54.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Os revolucionários foram retrabalhado.
+  id: 281
+  time: '2026-04-03T20:41:31.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Resprite dos Bingles
+  id: 282
+  time: '2026-04-03T20:42:32.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: As botas de combate usam audio mono agora.
+  id: 283
+  time: '2026-04-03T20:45:39.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Sistema de recall de itens, você pode vincular apenas um item que tenha
+        essa propriedade por vez.
+    - type: Tweak
+      message: >-
+        Martelo do Singuloth Knight ganhou recall. Mais difícil de ser roubado
+        por um Greytider.
+  id: 284
+  time: '2026-04-03T23:46:25.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Loneops agora pode declarar guerra.
+  id: 285
+  time: '2026-04-03T23:50:49.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Módulo de autoinjetor, vem junto com a pesquisa de módulos médicos,
+        fabricável nos fabs de sec e med, e funciona identicamente ao antigo
+        autoinjetor na modsuit do Chefe de Segurança.
+    - type: Tweak
+      message: >-
+        Engenheiros e BSO não tem mais funcionalidade de magboot integrada nas
+        botas de modsuit, mas agora eles vem com um módulo de magboots.
+    - type: Tweak
+      message: >-
+        Chefe de Segurança não tem mais funcionalidade de autoinjetor integrada
+        no torso da modsuit, mas agora ele vem com um módulo de autoinjetor.
+    - type: Tweak
+      message: >-
+        Botas da modsuit do BSO agora tem os mesmos stats que a modsuit de sec,
+        e o efeito sonoro.
+  id: 286
+  time: '2026-04-04T02:44:00.0000000+00:00'

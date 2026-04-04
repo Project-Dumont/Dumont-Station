@@ -4,11 +4,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: currency
-  id: RevCoin
-  displayName: store-currency-display-revcoin
-  canWithdraw: false
-
-- type: currency
   id: CPU
   displayName: CPU
   canWithdraw: false

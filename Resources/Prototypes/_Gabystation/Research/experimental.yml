@@ -64,6 +64,7 @@
   cost: 5000 # Pois é util, mas não tão util.
   recipeUnlocks:
   - ModsuitModuleSurgeryRecipe
+  - ModsuitModuleInjectorRecipe
   technologyPrerequisites:
   - BasicModulesTech
   position: -5,-5

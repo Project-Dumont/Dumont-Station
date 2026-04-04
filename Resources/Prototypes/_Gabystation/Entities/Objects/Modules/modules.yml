@@ -69,8 +69,8 @@
     - type: Magboots
       enabledPrefix: null
     - type: ClothingSpeedModifier
-      walkModifier: 0.8
-      sprintModifier: 0.8
+      walkModifier: 0.9
+      sprintModifier: 0.9
   - type: Tag
     tags:
     - ModsuitBootUpgrade
@@ -340,6 +340,29 @@
       interfaces:
         enum.GpsUiKey.Key:
           type: GpsBoundUserInterface
+  - type: Tag
+    tags:
+    - ModsuitChestUpgrade
+
+- type: entity
+  parent: BaseItem
+  id: ModsuitModuleInjector
+  name: modsuit injector module
+  description: A module that can be inserted inside the chest of a modsuit to make it inject a small dose of healing and stimulating chemicals into the user when the user reaches critical condition.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: injector-chest
+  - type: GunUpgrade
+    name: modsuit-module-injector-name
+  - type: GunUpgradeComponents
+    components:
+    - type: ClothingAutoInject
+      reagents:
+        Epinephrine: 10
+        Bicaridine: 10
+        TranexamicAcid: 5
+        Tramadol: 5
   - type: Tag
     tags:
     - ModsuitChestUpgrade

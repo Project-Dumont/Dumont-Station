@@ -1,0 +1,117 @@
+- type: latheRecipePack
+  id: RevForgeStatic
+  recipes:
+  - RevSword
+  - RevKnife
+  - RevPitchfork
+  - RevTorch
+  - RevMace
+  - RevGear
+  - RevBolt
+  - RevNut
+  - ClothingOuterArmorRev
+  - RevArmorPlate
+
+- type: latheRecipePack
+  id: RevPrintingPress
+  recipes:
+  - RevPropaganda
+
+- type: latheRecipePack
+  id: RevTelecommsWorkbenchStatic
+  recipes:
+  - EncryptionKeyRev
+  - RevDropPodTraps
+  - RevTurretElectronics
+  - TelecomServerCircuitboard # eventually replace this with a homeade looking one
+  - RevIFF
+  - TrackingImplanterRev
+  - SheetifierMachineCircuitboard
+
+- type: latheRecipePack
+  id: RevTelesphereStatic
+  recipes:
+  - RevCrystal
+  - RevBiomass
+  - RevBrass
+  - RevBanana
+  - RevBones
+  - RevGlass
+  - RevCardboard
+  - RevPaper
+  - RevCloth
+  - RevSteel
+  - RevMeat
+  - RevDuraThread
+  - RevPlasma
+  - RevDiamonds
+  - RevSilk
+  - RevPlasteel
+  - RevUranium
+  - RevPlastic
+  - RevWood
+  - RevGunpowder
+
+- type: latheRecipePack
+  parent: SmilingPals
+  id: RevPrinterStatic
+  recipes:
+  - RevGunParts
+  - RevTurretMagazine
+  - RevSMGMagazine
+
+- type: latheRecipePack
+  id: RevBulletPressStatic
+  recipes:
+  - RevTurretBullet
+  - RevPistolBullet
+  - RevRifleBullet
+  - RevBuckShell
+  - RevSlugShell
+
+- type: latheRecipePack
+  id: RevMicroElectronicsStatic
+  recipes:
+  - RevID
+  - RevDoor
+  - RevJammer
+  - RevHeadset
+  - RevVisor
+  - PinpointerCommand
+  - FusionCore
+
+- type: latheRecipePack
+  id: RevClothingStatic
+  recipes:
+  - ClothingBackpackRev
+  - ClothingBeltRevWebbing
+  - RevHelmetLiner
+  - RevGasFilter
+  - ClothingHeadBandRev
+  - RevEmptyVest
+  - ClothingUniformJumpsuitMilitaryTurtleneckRev
+  - ClothingShoesBootsRev
+  - ClothingHandsGlovesCombat
+
+- type: latheRecipePack
+  id: RevTechStatic
+  recipes:
+  - DataChipAIBoard
+  - DataChipReflectivePlate
+  - DataChipFakeMindshield
+  - DataChipShieldRipper
+
+- type: latheRecipePack
+  id: RevFoundryStatic
+  recipes:
+  - RevRocketFrame
+  - ClothingOuterArmorRevFlame
+  - RevEngineParts
+  # - Needs more eventually
+  - RevEmptyFuelTank
+  - T45Helmet
+  - T45Chest
+  - T45ArmL
+  - T45ArmR
+  - T45LegL
+  - T45LegR
