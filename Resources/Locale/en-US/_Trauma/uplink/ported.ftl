@@ -51,6 +51,10 @@ uplink-hijack-beacon-name = Hijack Beacon
 
 uplink-hijack-beacon-desc = A syndicate-brand hijack beacon designed to get around the firewalls of Nanotrasen-brand Automated Trade Stations. They take 600 seconds to work and Trade Stations will announce they are being hacked, so prepare accordingly.
 
+uplink-cigcarton-name = Interdyne Herbals Carton
+
+uplink-cigcarton-desc = Elite cigarettes for elite agents. Infused with medicine for when you need to do more than calm your nerves. Now sold in cartons!
+
 store-category-objective = Objective
 
 selectable-lock-verb-category-name = Add lock

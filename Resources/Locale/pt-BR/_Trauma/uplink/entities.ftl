@@ -15,6 +15,9 @@ ent-ClothingHandsGlovesBoxingRiggedRed = luvas de boxe vermelhas
 ent-ClothingHandsGlovesBoxingRiggedYellow = luvas de boxe amarelas
     .desc = Luvas amarelas para boxe competitivo.
 
+ent-CigCartonSyndicate = pacote de Interdyne Herbals
+    .desc = Um pacote com 5 maços de Interdyne Herbals.
+
 ent-TravelCamera = câmera de viagem
     .desc = Uma imagem vale mais que mil palavras. Possui um flash ultrabrilhante e um rolo fotográfico interno recarregável.
 

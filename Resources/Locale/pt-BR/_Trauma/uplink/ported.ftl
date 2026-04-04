@@ -52,6 +52,10 @@ uplink-cddisknumber-name = CD da estação de números
 
 uplink-cddisknumber-desc = Chame uma ameaça para distrair a estação... se conseguir tocar o disco inteiro.
 
+uplink-cigcarton-name = Pacote de cigarros Interdyne Herbals
+
+uplink-cigcarton-desc = Cigarros de elite para agentes de elite. Contêm medicamentos para quando você precisa de mais do que acalmar os nervos. Agora em pacotes maiores!
+
 store-category-objective = Objetivos
 
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
