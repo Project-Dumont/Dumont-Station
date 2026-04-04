@@ -41,7 +41,6 @@
   mapPath: /Maps/_Gabystation/PlataformaDeResenha.yml
   minPlayers: 0
   maxPlayers: 35
-  fallback: true
   stations:
     PlataformaDeResenha:
       stationProto: StandardNanotrasenStation
