@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  id: MedicalLaserGunCMO
+  name: chief medical officer's medical laser gun
+  parent: [ BaseWeaponBattery, BaseGrandTheftContraband ]
+  description: A highly experimental prototype of the medical beam gun, designed for the chief medical officer.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
+    state: icon
+  - type: Item
+    sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
+    size: Large
+  - type: Clothing
+    sprite: _Gabystation/Objects/Weapons/Guns/Battery/cmogun.rsi
+    quickEquip: false
+    clothingVisuals:
+        suitstorage:
+            - state: equipped-SUITSTORAGE
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Gabystation/Weapons/Guns/Gunshots/laserhigh.ogg
+      params:
+        volume: -4
+    soundEmpty:
+      path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
+    fireRate: 2.0
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: ProjectileBatteryAmmoProvider
+    proto: HealingProjectile
+    fireCost: 50 #30 tiros
+  - type: PacifismAllowedGun
+  - type: StealTarget
+    stealGroup: CMOweapon
+  - type: Tag
+    tags:
+    - HighRiskItem
+    - GunCanAimShooter

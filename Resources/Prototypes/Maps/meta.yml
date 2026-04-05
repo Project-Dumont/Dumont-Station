@@ -141,6 +141,7 @@
             SecurityCadet: [ 3, 6 ]
             Lawyer: [ 2, 2 ]
             PermaPrisoner: [ 3, 3 ] # HARMONY
+            PrisonGuard: [ 1, 1 ] # Gaby
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]

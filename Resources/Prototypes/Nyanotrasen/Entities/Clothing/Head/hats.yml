@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseSecurityContraband, ClothingHeadBase]
+  id: ClothingHeadPrisonGuard
+  name: prison guard's hat
+  description: Grants full immunity from denying others basic human rights, dignity, or respect.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Head/Hats/prisonguard.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Head/Hats/prisonguard.rsi

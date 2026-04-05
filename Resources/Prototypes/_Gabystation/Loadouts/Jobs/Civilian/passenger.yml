@@ -7,19 +7,24 @@
 
 # Hats
 - type: loadout
+  id: ToucaDeGato
+  equipment:
+    head: ClothingHeadHatToucaDeGato
+
+- type: loadout
   id: WitchHat
   equipment:
     head: ClothingHeadHatWitch1
 
 - type: loadout
-  id: BrownFedora
+  id: BrownFedoraOffBrand
   equipment:
-    head: ClothingHeadHatFedoraBrown
+    head: ClothingHeadHatFedoraBrownOffBrand
 
 - type: loadout
-  id: GreyFedora
+  id: GreyFedoraOffBrand
   equipment:
-    head: ClothingHeadHatFedoraGrey
+    head: ClothingHeadHatFedoraGreyOffBrand
 
 - type: loadout
   id: Fez

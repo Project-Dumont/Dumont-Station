@@ -1,0 +1,142 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: ModsuitModuleDrillRecipe
+  result: ModsuitModuleDrill
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: ModsuitModuleMagbootRecipe
+  result: ModsuitModuleMagboot
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: ModsuitModuleJumpRecipe
+  result: ModsuitModuleJump
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: ModsuitModuleDiamondDrillRecipe
+  result: ModsuitModuleDiamondDrill
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Diamond: 100
+
+- type: latheRecipe
+  id: ModsuitModuleMedhudRecipe
+  result: ModsuitModuleMedhud
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: ModsuitModuleDiagnosticHudRecipe
+  result: ModsuitModuleDiagnosticHud
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: ModsuitModuleSecHudRecipe
+  result: ModsuitModuleSecHud
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: ModsuitModuleWeldingRecipe
+  result: ModsuitModuleWelding
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: ModsuitModuleAntiGravRecipe
+  result: ModsuitModuleAntiGrav
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Uranium: 600
+
+- type: latheRecipe
+  id: ModsuitModuleSurgeryRecipe
+  result: ModsuitModuleSurgical
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: ModsuitModuleClownBootRecipe
+  result: ModsuitModuleClownBoot
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+    Bananium: 100
+
+- type: latheRecipe
+  id: ModsuitModuleGPSRecipe
+  result: ModsuitModuleGPS
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: ModsuitModuleInjectorRecipe
+  result: ModsuitModuleInjector
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200

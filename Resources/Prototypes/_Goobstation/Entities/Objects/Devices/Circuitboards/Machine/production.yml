@@ -26,6 +26,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: CargoTechFabCircuitboard
@@ -43,6 +47,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: ScienceTechFabCircuitboard
@@ -60,6 +68,10 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
 
 - type: entity
   id: ServiceTechFabCircuitboard
@@ -71,6 +83,27 @@
     state: service
   - type: MachineBoard
     prototype: ServiceTechFab
+    stackRequirements:
+      Manipulator: 4
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+  - type: Tag # Trauma
+    tags:
+    - TechfabMachineBoard
+    - DroneUsable
+
+- type: entity
+  id: ERTTechFabCircuitboard
+  parent: BaseMachineCircuitboard
+  name: ERT techfab machine board
+  description: A machine printed circuit board for a ERT techfab.
+  components:
+  - type: Sprite
+    state: ert
+  - type: MachineBoard
+    prototype: ERTTechFab
     stackRequirements:
       Manipulator: 4
     tagRequirements:

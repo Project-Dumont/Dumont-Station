@@ -31,6 +31,8 @@
     - type: ItemToggleActiveSound
       activeSound:
         path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyhum.ogg
+        params:
+          volume: -3
     - type: ItemToggleSize
       activatedSize: Ginormous
     - type: Clothing
@@ -38,6 +40,10 @@
       quickEquip: false
       slots:
       - Belt
+      - suitStorage # Gabystation
+      clothingVisuals:
+        suitstorage:
+            - state: equipped-BACKPACK
     - type: ComponentToggler
       components:
       - type: DisarmMalus
@@ -63,6 +69,10 @@
             shader: unshaded
         right:
           - state: inhand-right-on
+            shader: unshaded
+      clothingVisuals: # Gabystation
+        suitstorage:
+          - state: equipped-BACKPACK-on
             shader: unshaded
     - type: PointLight
       netsync: false

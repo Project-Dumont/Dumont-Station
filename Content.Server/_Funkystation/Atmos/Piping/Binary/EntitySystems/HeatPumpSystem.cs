@@ -61,7 +61,7 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
 
             if (Loc.TryGetString("gas-valve-system-examined", out var str,
                     ("statusColor", pump.Active ? "green" : "orange"),
-                    ("on", pump.Active)))
+                    ("open", pump.Active)))
             {
                 args.PushMarkup(str);
             }

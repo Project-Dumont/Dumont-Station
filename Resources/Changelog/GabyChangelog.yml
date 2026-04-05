@@ -1896,3 +1896,491 @@ Entries:
       message: Removed fun!
   id: 228
   time: '2026-02-01T20:55:49.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona câmeras fotográficas.
+    - type: Add
+      message: >-
+        Agora os repórteres começam com um álbum de fotos que as mostra no fim
+        da rodada. Não se esqueça de assinar o álbum com uma caneta para que seu
+        nome apareça.
+  id: 229
+  time: '2026-02-04T21:12:13.0000000+00:00'
+- author: Dreykor e Kaua
+  changes:
+    - type: Tweak
+      message: >-
+        Alterações diversas nas regras do servidor, como metashield, regras de
+        nomes e muitos outros, não esqueça de lê-las!
+  id: 230
+  time: '2026-02-04T21:16:05.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Added fun!
+  id: 231
+  time: '2026-02-04T21:35:25.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Add
+      message: Reduz cooldown das injeções.
+  id: 232
+  time: '2026-02-04T22:12:10.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Uma arte de lobby (Gaby Wars (Players))
+  id: 233
+  time: '2026-02-10T15:15:31.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas Músicas na Jukebox
+  id: 234
+  time: '2026-02-12T14:10:51.0000000+00:00'
+- author: Dreykor e LUMINOUS
+  changes:
+    - type: Add
+      message: Adiciona a musica "Still Alive" para o lobby e para a jukebox
+  id: 235
+  time: '2026-02-12T18:43:30.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o nome do autor do album aparece acima das fotos.
+    - type: Add
+      message: Adiciona câmera fotográfica ao loadout.
+  id: 236
+  time: '2026-02-12T18:56:20.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Markings para a espécie tajaran (incluindo underwear)
+    - type: Tweak
+      message: Tajara agora são digitigrados
+    - type: Tweak
+      message: Tajara são imunes a cacos de vidro e minas terrestres
+    - type: Tweak
+      message: Tajara soltam bola de pelo (como Deus quis)
+    - type: Tweak
+      message: Tajara tem visão no escuro
+  id: 237
+  time: '2026-02-12T19:17:37.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Add
+      message: Mais cores e canister variados no spray de tinta!
+    - type: Remove
+      message: Subframe removida.
+  id: 238
+  time: '2026-02-12T19:22:18.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Cores do Cap Cap Senior foram alteradas para combinar melhor com o resto
+        das roupas do capitão.
+  id: 239
+  time: '2026-02-12T19:28:00.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 13/02!
+  id: 240
+  time: '2026-02-15T03:52:54.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Remove
+      message: Moths não podem mais voar ao fim do dash.
+  id: 241
+  time: '2026-02-15T03:54:36.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Add
+      message: Sintéticos, uma espécie genérica de robôs autônomos
+    - type: Tweak
+      message: Conserta emotes de IPCs
+  id: 242
+  time: '2026-02-19T14:09:14.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções e ajustes na genética.
+  id: 243
+  time: '2026-02-19T15:48:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Membros de comando, warden e brigmed receberam um aumento.
+  id: 244
+  time: '2026-02-19T15:59:09.0000000+00:00'
+- author: Lango
+  changes: []
+  id: 245
+  time: '2026-02-19T16:26:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Adiciona herético, culto cósmico e culto do sangue em midround.
+  id: 246
+  time: '2026-02-19T16:37:15.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adiciona as mudanças do Goob até 19/02 (verifique a aba do Goob)!
+  id: 247
+  time: '2026-02-19T16:46:38.0000000+00:00'
+- author: Bruno469
+  changes:
+    - type: Add
+      message: >-
+        Adicionada a Cápsula Compacta (Compact Pod), uma pequena nave para
+        exploração espacial.
+    - type: Add
+      message: Adicionada pesquisa de "Compact Pod" no Tier 2 de Industrial.
+  id: 248
+  time: '2026-02-25T23:57:31.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: S.A.A.E. Sistema Autônomo de Anúncios da Estação adicionada ao jogo
+  id: 249
+  time: '2026-02-26T12:29:22.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: O culto do sangue foi retrabalhado.
+  id: 250
+  time: '2026-02-26T14:14:44.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Tweak
+      message: Armas da serie X-00 agora auto-recarregam.
+    - type: Tweak
+      message: Arma laser agora tem 25 tiros invés de 50.
+  id: 251
+  time: '2026-02-26T19:50:50.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: A máscara de gás SWAT agora modifica sua voz igual a dreadsuit.
+  id: 252
+  time: '2026-02-26T21:39:13.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Add
+      message: POP de Clínico Brigadista e Geneticista
+    - type: Tweak
+      message: Refinação do POP, removendo ou mudando partes que não faziam sentido
+  id: 253
+  time: '2026-02-28T13:12:11.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora a IA ganhou uma loja com habilidades simples.
+  id: 254
+  time: '2026-02-28T13:16:49.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionadas as mudanças do Goob até 28/02 (dê uma olhada na aba do
+        Goob)!
+  id: 255
+  time: '2026-02-28T14:16:42.0000000+00:00'
+- author: OttavioBasques
+  changes:
+    - type: Tweak
+      message: >-
+        Escudo do BSO pode agora ser equipado no slot das costas providenciado
+        pela armadura.
+  id: 256
+  time: '2026-03-07T13:51:01.0000000+00:00'
+- author: Heartbeat e Ludovicus
+  changes:
+    - type: Add
+      message: Franguinho Na Panela para a jukebox.
+  id: 257
+  time: '2026-03-07T14:01:27.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: 'Várias maquinas de venda não são pagas mais. '
+    - type: Tweak
+      message: Prisoneiros não morrem por não poder comprar comida mais.
+  id: 258
+  time: '2026-03-07T14:04:35.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: 'Uma nova espada foi adicionada para o capitão: a Lâmina da Rosa.'
+    - type: Tweak
+      message: >-
+        O sabre reserva do armário da capitão foi substituído pelo "kit de
+        sabres", ele permite escolher entre o sabre de capitão e a nova Lâmina
+        da Rosa.
+  id: 259
+  time: '2026-03-07T14:36:23.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Tweak
+      message: Agora você pode alterar o acesso do ID do prisoneiro (o trabalho.)
+    - type: Fix
+      message: Prisoneiros não tem mais acesso pra sair da genpop.
+  id: 260
+  time: '2026-03-07T14:37:37.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: Nova entrada no livro-guia para o daengati.
+    - type: Add
+      message: >-
+        Habilidade de cauterizar feridas e incisões bem lentamente utilizando as
+        garras do daengati.
+    - type: Tweak
+      message: >-
+        Características de defesa e fraqueza contra temperaturas do daengati
+        foram ajustadas.
+  id: 261
+  time: '2026-03-07T15:09:10.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Hardsuit do detetive agora vem no armário do detetive.
+    - type: Add
+      message: '2 novas armas X-00: X-11 "Berserker" e X-15 "Protector"'
+    - type: Add
+      message: >-
+        Efeitos sonoros para as botas de combate normais e de modsuit de
+        combate.
+    - type: Add
+      message: Megafone de comando pro armário do capitão.
+    - type: Tweak
+      message: >-
+        A espada do NTR foi buffada, a caneta foi nerfada; 16 e 13 de dano
+        respectivamente.
+    - type: Tweak
+      message: >-
+        Agora o fedora marrom e cinza do loadout de passageiro são versões de
+        "Baixa qualidade"; mesmo sprite, mas não é contrabando.
+    - type: Tweak
+      message: >-
+        Botas de caúboi agora são contrabando exclusivo a segurança e
+        blueshield. As botas de caúboi do roupasloucas agora são versões de
+        baixa qualidade.
+    - type: Tweak
+      message: High-Heeled Boots agora não tem stats iguais a botas de combate.
+    - type: Tweak
+      message: >-
+        Rebalanceamento a várias hardsuits, modsuits e armaduras, especialmente
+        as de segurança e capitão.
+    - type: Fix
+      message: >-
+        Trevor e a shiva não atacam torretas mais. Vocês podem descansar em paz
+        agora.
+  id: 262
+  time: '2026-03-07T15:11:10.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Shadowkins agora não são mais vulneraveis ao flash
+  id: 263
+  time: '2026-03-07T15:25:57.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: >-
+        Novas Músicas na Jukebox, Vermilion, Pirata Oficial, Dois Navegantes e
+        Leave me Alone
+  id: 264
+  time: '2026-03-07T15:45:52.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças do Goob até 07/03 (confira a aba do Goob)!
+  id: 265
+  time: '2026-03-07T16:33:00.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Fix
+      message: Chapéus e boinas voltam a ter seus valores de proteção antigos.
+  id: 266
+  time: '2026-03-07T16:41:56.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Fix
+      message: Todos os agasalhos agora tem proteção basica!
+  id: 267
+  time: '2026-03-08T14:19:23.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Adiciona cirurgia de pacifismo
+  id: 268
+  time: '2026-03-14T17:15:12.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: >-
+        Agora a bolsa de sangue foi substituída pela bolsa intravenosa, embora
+        ainda seja possível obter por outros meios.
+    - type: Add
+      message: Adiciona bolsa intravenosa e suporte para bolsa intravenosa.
+  id: 269
+  time: '2026-03-14T17:20:16.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: Adicionadas as mudanças até 14/03 (verifique a aba do Goob)!
+  id: 270
+  time: '2026-03-14T17:58:50.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Módulos de MODsuit estão aqui e são pesquisaveis na sci, e provavelmente
+        mais deles vão vir em breve!
+  id: 271
+  time: '2026-03-14T18:36:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona guarda prisional para monitorar os detentos.
+  id: 272
+  time: '2026-03-29T17:18:27.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções e ajustes na genética.
+  id: 273
+  time: '2026-03-29T17:28:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no culto do sangue.
+  id: 274
+  time: '2026-03-29T17:31:21.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Diarista não tem mais acesso ao armário do bartender, mas o booze-o-mat
+        agora é acessível por todo o serviço.
+  id: 275
+  time: '2026-03-29T17:34:05.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas faixas de aúdios para a S.A.A.E.
+    - type: Add
+      message: Segredo
+  id: 276
+  time: '2026-04-03T00:57:37.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas Músicas na Jukebox
+  id: 277
+  time: '2026-04-03T01:00:16.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: Botas de salto-alto de combate para a Segurança e BSO.
+    - type: Tweak
+      message: BSO agora pode selecionar a jumpsuit no loadout.
+  id: 278
+  time: '2026-04-03T01:27:50.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Flatpacks de computadores de comunicação para os heads!
+  id: 279
+  time: '2026-04-03T01:39:47.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: 7 novos kits para Traidores.
+  id: 280
+  time: '2026-04-03T02:02:54.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Os revolucionários foram retrabalhado.
+  id: 281
+  time: '2026-04-03T20:41:31.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Resprite dos Bingles
+  id: 282
+  time: '2026-04-03T20:42:32.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: As botas de combate usam audio mono agora.
+  id: 283
+  time: '2026-04-03T20:45:39.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Sistema de recall de itens, você pode vincular apenas um item que tenha
+        essa propriedade por vez.
+    - type: Tweak
+      message: >-
+        Martelo do Singuloth Knight ganhou recall. Mais difícil de ser roubado
+        por um Greytider.
+  id: 284
+  time: '2026-04-03T23:46:25.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Loneops agora pode declarar guerra.
+  id: 285
+  time: '2026-04-03T23:50:49.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Módulo de autoinjetor, vem junto com a pesquisa de módulos médicos,
+        fabricável nos fabs de sec e med, e funciona identicamente ao antigo
+        autoinjetor na modsuit do Chefe de Segurança.
+    - type: Tweak
+      message: >-
+        Engenheiros e BSO não tem mais funcionalidade de magboot integrada nas
+        botas de modsuit, mas agora eles vem com um módulo de magboots.
+    - type: Tweak
+      message: >-
+        Chefe de Segurança não tem mais funcionalidade de autoinjetor integrada
+        no torso da modsuit, mas agora ele vem com um módulo de autoinjetor.
+    - type: Tweak
+      message: >-
+        Botas da modsuit do BSO agora tem os mesmos stats que a modsuit de sec,
+        e o efeito sonoro.
+  id: 286
+  time: '2026-04-04T02:44:00.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: MP-17 "Guardian"- A arma de cura do Médico Chefe
+    - type: Remove
+      message: Rapid Syringe Gun do armário do Médico Chefe
+  id: 287
+  time: '2026-04-04T14:01:59.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        Magos, piratas, nukies, e ERTs agora podem usar suas próprias máquinas
+        de venda, pois agora elas são grátis de usar. 
+  id: 288
+  time: '2026-04-04T14:03:52.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Adiciona interface radial para carrinho do zelador e caixa de
+        sobrevivência.
+  id: 289
+  time: '2026-04-04T14:09:01.0000000+00:00'

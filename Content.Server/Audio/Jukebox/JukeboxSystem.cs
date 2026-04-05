@@ -45,6 +45,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Gabystation.Jukebox;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
@@ -111,7 +112,14 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
                 return;
             }
 
-            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(component.Range).WithVolume(MapToRange(component.Volume, component.MinSlider, component.MaxSlider, component.MinVolume, component.MaxVolume)))?.Entity; // Estação Pirata
+            // Gabystation - begin jukebox fix
+            var music = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(component.Range).WithVolume(MapToRange(component.Volume, component.MinSlider, component.MaxSlider, component.MinVolume, component.MaxVolume)))?.Entity; // Estação Pirata
+
+            component.AudioStream = music;
+            if (music is not null)
+                EnsureComp<JukeboxMusicComponent>(music.Value).Jukebox = uid;
+            // Gabystation - end jukebox fix
+
             Dirty(uid, component);
         }
     }

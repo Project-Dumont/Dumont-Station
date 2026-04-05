@@ -22,4 +22,4 @@
 - type: soundCollection
   id: PowerOn
   files:
-  - /Audio/Announcements/power_on.ogg
+  - /Audio/_Gabystation/Announcements/power_on_saae.ogg

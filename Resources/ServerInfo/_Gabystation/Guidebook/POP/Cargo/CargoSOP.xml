@@ -11,9 +11,9 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] O Intendente Logístico deve garantir que todo pedido aprovado seja entregue em até 15 minutos após ter sido feito e aprovado;
 
-  [bold]2.[/bold] Em caso de crise grave, como Operativos Nucleares ou um Organismo Blob, a agilidade deve ser priorizada em relação à burocracia, pois excesso de papelada pode ser prejudicial ao bem-estar da estação;
+  [bold]2.[/bold] Em caso de crise grave, a agilidade deve ser priorizada em relação à burocracia, pois excesso de papelada pode ser prejudicial ao bem-estar da estação;
 
-  [bold]3.[/bold] O Intendente Logístico não pode autorizar a compra de equipamentos e/ou itens de Segurança sem permissão expressa do Chefe de Segurança e/ou Capitão. Exceção é feita em emergências extremas, como Operativos Nucleares ou um Organismo Blob, onde tais equipamentos devem ser entregues à Segurança imediatamente;
+  [bold]3.[/bold] O Intendente Logístico não pode autorizar a compra de equipamentos e/ou itens de Segurança sem permissão expressa do Chefe de Segurança e/ou Capitão. Exceção é feita em emergências extremas, onde tais equipamentos devem ser entregues à Segurança imediatamente;
 
   [bold]4.[/bold] O Intendente Logístico pode autorizar pedidos fora do departamento (como um Médico pedindo Luvas Isolantes) sem permissão expressa do respectivo Chefe de Departamento (neste exemplo, o Engenheiro Chefe), usando seu melhor julgamento, embora ainda possa solicitar um formulário carimbado. No entanto, qualquer violação do Procedimento Operacional Padrão e/ou da Lei Espacial resultante desse pedido também implicará o Intendente Logístico;
 
@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] Técnicos de Carga estão sujeitos às mesmas regras do Intendente Logístico quanto a caixas restritas (ver acima);
 
-  [bold]3.[/bold] Técnicos de Carga não podem pedir itens para uso pessoal exclusivo com a conta do departamento de suprimentos sem consentimento expresso do Intendente Logístico. Exceção é feita se houver mais de 15000 spesos disponíveis e nenhum pedido pendente. Técnicos de Carga não podem zerar o saldo da conta do departamento para isso;
+  [bold]3.[/bold] Técnicos de Carga não podem pedir itens para uso pessoal exclusivo com a conta do departamento de suprimentos sem consentimento expresso do Intendente Logístico. Exceção é feita se sobrar mais de 15000 spesos disponíveis após a compra e nenhum pedido pendente.
 
   [bold]4.[/bold] Técnicos de Carga não podem pedir itens não essenciais usando a conta de suprimentos (como gatos ou roupas) sem consentimento expresso do Intendente Logístico;
 
@@ -45,7 +45,7 @@ SPDX-License-Identifier: MIT
 
   [bold]11.[/bold] Técnicos de Carga não podem trocar itens e/ou favores por itens com pessoal comum sem consentimento expresso do Intendente Logístico;
 
-  # Especialista em Salvamento (Salvage Specialist)
+  # Especialista em Salvamento/Mineradores (Salvage Specialist/shaft miners)
 
   [bold]1.[/bold] Especialistas em Salvamento não podem acumular materiais. Todos os materiais minerados devem ser deixados no Processador de Minérios;
 
@@ -60,6 +60,8 @@ SPDX-License-Identifier: MIT
   [bold]6.[/bold] Especialistas em Salvamento não estão autorizados a dar armas ou outros itens/drogas ilícitos adquiridos através de expedições espaciais à tripulação da estação, a menos que o Intendente e o Chefe de Segurança aprovem dentro da Lei Espacial;
 
   [bold]7.[/bold] Especialistas em Salvamento estão sujeitos às diretrizes estabelecidas para Técnicos de Carga quando estiverem dentro do Escritório ou Baía de Carga;
+
+  [bold]8.[/bold] Caso o departamento de logística esteja com pouco pessoal, os especialistas em salvamento devem pegar as compras importantes para a estação.
 
   # Transporte do departamento Cargo
 

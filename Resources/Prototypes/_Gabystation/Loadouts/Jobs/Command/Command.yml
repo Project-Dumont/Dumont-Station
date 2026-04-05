@@ -16,6 +16,17 @@
     back:
     - ClothingNeckAutoridade
 
+#Captain
+- type: loadout
+  id: CaptainMarinheiroSuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPijamaCaptain
+
+- type: loadout
+  id: CaptainCapMarinheiro
+  equipment:
+    head: ClothingHeadHatCapMarinheiro
+
 # HoS
 - type: loadout
   id: HoSLawbringerSkin

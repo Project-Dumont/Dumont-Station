@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Common.Grab;
 using Content.Goobstation.Common.MartialArts;
 using Content.Shared.Hands;
@@ -22,7 +26,7 @@ public sealed class GrabModifierSystem : EntitySystem
     {
         var ev = new GrabModifierEvent(args.User, (GrabStage) args.Stage);
         RaiseLocalEvent(args.User, ref ev);
-        args.NewStage = (int?) ev.NewStage;
+        args.NewStage = ev.NewStage;
         args.Modifier += ev.Modifier;
         args.Multiplier *= ev.Multiplier;
         args.SpeedMultiplier *= ev.SpeedMultiplier;

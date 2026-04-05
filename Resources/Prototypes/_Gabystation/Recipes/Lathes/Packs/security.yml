@@ -10,3 +10,9 @@
   recipes:
   - WeaponRifleMA56XF
   - WeaponPistolMX3R
+
+- type: latheRecipePack
+  id: SecurityModules
+  recipes:
+  - ModsuitModuleSecHudRecipe
+  - ModsuitModuleInjectorRecipe

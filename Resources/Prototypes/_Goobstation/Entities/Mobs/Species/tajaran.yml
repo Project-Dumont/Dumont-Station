@@ -134,6 +134,54 @@
     upper: MobTajaran
     lowest: MobTajkey
   # Corvax-Wega-Genetics-end
+  # Gaby-Better-Tajara-start
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Felinid # Hair ball
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+  - type: Inventory
+    speciesId: reptilian
+    femaleDisplacements:
+      enum.HumanoidVisualLayers.HeadSide:
+          sizeMaps:
+            32:
+              sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+              state: headside
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      enum.HumanoidVisualLayers.HeadSide:
+          sizeMaps:
+            32:
+              sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+              state: headside
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+  # Gaby-Better-Tajara-end
+
 
 - type: entity
   save: false
@@ -145,3 +193,39 @@
   components:
   - type: HumanoidAppearance
     species: Tajaran
+  # Gaby-Better-Tajara-start
+  - type: Inventory
+    speciesId: reptilian
+    femaleDisplacements:
+      enum.HumanoidVisualLayers.HeadSide:
+          sizeMaps:
+            32:
+              sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+              state: headside
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      enum.HumanoidVisualLayers.HeadSide:
+          sizeMaps:
+            32:
+              sprite: _Goobstation/Mobs/Species/Tajaran/parts.rsi
+              state: headside
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+  # Gaby-Better-Tajara-end

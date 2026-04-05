@@ -1,0 +1,29 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
+
+namespace Content.Shared.Trigger.Components.Effects;
+
+/// <summary>
+/// Randomly teleports the entity when triggered.
+/// If TargetUser is true the user will be teleported instead.
+/// Used for scram implants.
+/// </summary>
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class ScramOnTriggerComponent : BaseXOnTriggerComponent
+{
+    /// <summary>
+    /// Up to how far to teleport the entity.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float TeleportRadius = 1000f; // goob edit
+
+    /// <summary>
+    /// the sound to play when teleporting.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier TeleportSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+}

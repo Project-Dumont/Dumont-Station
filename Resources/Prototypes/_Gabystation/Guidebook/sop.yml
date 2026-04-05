@@ -15,70 +15,70 @@
   name: guide-entry-pop
   text: "/ServerInfo/_Gabystation/Guidebook/POP.xml"
   children:
-  - POP Geral
-  - POP Comando
-  - POP Segurança
-  - POP Cargo
-  - POP Engenharia
-  - POP Medico
-  - POP Ciencia
-  - POP Serviço
+  - POPGeral
+  - POPComando
+  - POPSegurança
+  - POPCargo
+  - POPEngenharia
+  - POPMedico
+  - POPCiencia
+  - POPServiço
 
 - type: guideEntry
-  id: POP Geral
+  id: POPGeral
   name: guide-entry-pop-geral
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Geral.xml"
   priority: 1
   children:
-  - POP Alerta
-  - POP Conduta
-  - POP Marcial
+  - POPAlerta
+  - POPConduta
+  - POPMarcial
 
 - type: guideEntry
-  id: POP Comando
+  id: POPComando
   name: guide-entry-pop-comando
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Command/CommandStandardOperatingProcedure.xml"
   priority: 2
   children:
-  - POP Cadeia de Comando
-  - POP Transferencias
+  - POPCadeiaDeComando
+  - POPTransferencias
 
 - type: guideEntry
-  id: POP Segurança
+  id: POPSegurança
   name: guide-entry-pop-seguranca
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/SecurityStandardOperatingProcedure.xml"
   priority: 3
   children:
-  - POP Codigo de Conduta
-  - POP Confiscar
-  - POP Multa
+  - POPCodigoDeConduta
+  - POPConfiscar
+  - POPMulta
 
 - type: guideEntry
-  id: POP Cargo
+  id: POPCargo
   name: guide-entry-pop-cargo
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Cargo/CargoSOP.xml"
   priority: 4
 
 - type: guideEntry
-  id: POP Engenharia
+  id: POPEngenharia
   name: guide-entry-pop-engenharia
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Engineering/EngineeringSOP.xml"
   priority: 5
 
 - type: guideEntry
-  id: POP Medico
+  id: POPMedico
   name: guide-entry-pop-medico
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Medic/MedicalStandardOperatingProcedure.xml"
   priority: 6
 
 - type: guideEntry
-  id: POP Ciencia
+  id: POPCiencia
   name: guide-entry-pop-ciencia
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Science/ScienceStandardOperatingProcedure.xml"
   priority: 7
 
 - type: guideEntry
-  id: POP Serviço
+  id: POPServiço
   name: guide-entry-pop-servico
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Service/ServiceStandardOperatingProcedure.xml"
   priority: 8
@@ -86,19 +86,19 @@
 # POP Geral
 
 - type: guideEntry
-  id: POP Alerta
+  id: POPAlerta
   name: guide-entry-pop-alerta
   text: "/ServerInfo/_Gabystation/Guidebook/POPAlertas.xml"
   priority: 1
 
 - type: guideEntry
-  id: POP Conduta
+  id: POPConduta
   name: guide-entry-pop-conduta
   text: "/ServerInfo/_Gabystation/Guidebook/POPConduta.xml"
   priority: 2
 
 - type: guideEntry
-  id: POP Marcial
+  id: POPMarcial
   name: guide-entry-pop-marcial
   text: "/ServerInfo/_Gabystation/Guidebook/POPMarcial.xml"
   priority: 3
@@ -106,13 +106,13 @@
 # POP Comando
 
 - type: guideEntry
-  id: POP Cadeia de Comando
+  id: POPCadeiaDeComando
   name: guide-entry-pop-cadeia-de-comando
   text: "/ServerInfo/_Gabystation/Guidebook/POPComando.xml"
   priority: 1
 
 - type: guideEntry
-  id: POP Transferencias
+  id: POPTransferencias
   name: guide-entry-pop-transferencias
   text: "/ServerInfo/_Gabystation/Guidebook/POPTransferencias.xml"
   priority: 2
@@ -120,19 +120,19 @@
 # POP Segurança
 
 - type: guideEntry
-  id: POP Codigo de Conduta
+  id: POPCodigoDeConduta
   name: guide-entry-pop-codigo-conduta
   text: "/ServerInfo/_Gabystation/Guidebook/POP/Security/RulesOfConduct.xml"
   priority: 1
 
 - type: guideEntry
-  id: POP Confiscar
+  id: POPConfiscar
   name: guide-entry-pop-confiscar
   text: "/ServerInfo/_Gabystation/Guidebook/POPConfiscar.xml"
   priority: 2
 
 - type: guideEntry
-  id: POP Multa
+  id: POPMulta
   name: guide-entry-pop-multa
   text: "/ServerInfo/_Gabystation/Guidebook/POPMulta.xml"
   priority: 3

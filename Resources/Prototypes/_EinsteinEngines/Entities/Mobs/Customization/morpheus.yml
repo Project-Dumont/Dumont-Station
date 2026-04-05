@@ -26,7 +26,7 @@
   bodyPart: Head
   markingCategory: Head
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [Synth]
   coloring:
     default:
       type:
@@ -41,7 +41,7 @@
   bodyPart: Chest
   markingCategory: Chest
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -56,7 +56,7 @@
   bodyPart: LArm
   markingCategory: LeftArm
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -71,7 +71,7 @@
   bodyPart: LHand
   markingCategory: LeftHand
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -86,7 +86,7 @@
   bodyPart: LLeg
   markingCategory: LeftLeg
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -102,7 +102,7 @@
   bodyPart: LFoot
   markingCategory: LeftFoot
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -119,7 +119,7 @@
   bodyPart: RArm
   markingCategory: RightArm
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -135,7 +135,7 @@
   bodyPart: RHand
   markingCategory: RightHand
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -150,7 +150,7 @@
   bodyPart: RLeg
   markingCategory: RightLeg
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:
@@ -166,7 +166,7 @@
   bodyPart: RFoot
   markingCategory: RightFoot
   markingType: NonGenetics # Corvax-Wega-Genetics
-  speciesRestriction: [IPC]
+  speciesRestriction: [IPC, Synth]
   coloring:
     default:
       type:

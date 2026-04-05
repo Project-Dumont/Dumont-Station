@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitPrisonGuard
+  name: prison guard's uniform
+  description: A comfortable, durable, waterproof uniform made to keep prison staff comfortable and safe.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/prisonguard.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/prisonguard.rsi

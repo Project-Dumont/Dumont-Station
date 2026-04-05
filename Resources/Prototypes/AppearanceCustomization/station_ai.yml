@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Groups
 - type: stationAiCustomizationGroup
   id: StationAiCoreIconography
@@ -11,6 +15,7 @@
   - StationAiIconDorf
   - StationAiIconHeartline
   - StationAiIconSmiley
+  - StationAiIconSillycon
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
@@ -119,6 +124,18 @@
       sprite: Mobs/Silicon/station_ai.rsi
       state: "ai_dead"
 
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconSillycon
+  name: station-ai-icon-sillycon
+  layerData:
+    Occupied:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: "ai_sillycon"
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: "ai_sillycon_dead"
+
 # Holograms
 - type: stationAiCustomization
   id: StationAiHologramFemale
@@ -164,21 +181,3 @@
     Hologram:
       sprite: Mobs/Silicon/holograms.rsi
       state: ai_dog
-
-- type: stationAiCustomization
-  id: StationAiHologramKobold
-  name: station-ai-hologram-kobold
-  previewKey: Hologram
-  layerData:
-    Hologram:
-      sprite: Mobs/Silicon/holograms.rsi
-      state: ai_kobold
-
-- type: stationAiCustomization
-  id: StationAiHologramMonkey
-  name: station-ai-hologram-monkey
-  previewKey: Hologram
-  layerData:
-    Hologram:
-      sprite: Mobs/Silicon/holograms.rsi
-      state: ai_monkey

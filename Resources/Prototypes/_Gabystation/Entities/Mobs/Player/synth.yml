@@ -1,0 +1,177 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: MIT
+
+# Shitty Synth
+- type: entity
+  id: MobSynth
+  parent: PlayerSiliconHumanoidBase
+  name: Urist McClanker
+  description: A synthetic person.
+  components:
+  - type: Body
+    prototype: Synth
+    requiredLegs: 2
+  - type: LanguageKnowledge # Einstein Engines - Languages
+    speaks:
+    - TauCetiBasic
+    - RobotTalk
+    understands:
+    - TauCetiBasic
+    - RobotTalk
+  - type: HarpySinger
+    ShutUpDamageThreshold: 5 # Punch does 5 damage
+  - type: Instrument
+    allowPercussion: true
+    allowProgramChange: true
+    program: 52
+  - type: SwappableInstrument
+    instrumentList:
+      "Daw": { 0: 0 }
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      # Goobstation - changelings (technically, IPCs cant be a ling, but whatever)
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.HereticLivingHeartKey.Key: # goob edit - heretics
+        type: LivingHeartMenuBoundUserInterface
+      enum.WizardTeleportUiKey.Key: # Goobstation - wizard
+        type: WizardTeleportBoundUserInterface
+        requireInputValidation: false
+      enum.SurgeryUIKey.Key: # Shitmed
+        type: SurgeryBui
+      enum.RadarConsoleUiKey.Key: #goob - contractor
+        type: RadarConsoleBoundUserInterface
+  - type: Battery # Power cell slot replaced with high capacity battery
+    maxCharge: 1080
+    startingCharge: 1080
+  - type: Lock
+    locked: true
+    lockOnClick: false
+    unlockOnClick: false
+    lockTime: 5
+    unlockTime: 5
+  - type: OfferItem # CorvaxGoob-Offer
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: StandingState
+  - type: Damageable
+    damageContainer: SiliconRadiation
+    damageModifierSet: IPC
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Dead: BorgDead
+  - type: TypingIndicator
+    proto: robot
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: SiliconDownOnDead
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: GuideHelp
+    guides:
+    - IPC
+  - type: Silicon
+    entityType: enum.SiliconType.Player
+    batteryPowered: true
+    drainPerSecond: 1.5
+    idleDrainReduction: 0.6 # TheDen - 60% less power usage while idling, for IPC Dynamic Power Draw
+    chargeThresholdMid: 0.80
+    chargeThresholdLow: 0.35
+    chargeThresholdCritical: 0.10
+    speedModifierThresholds:
+      4: 1
+      3: 1
+      2: 0.80
+      1: 0.45
+      0: 0.10 # Goobstation - Energycrit
+  - type: BatteryDrinker
+    blacklist: # Goobstation - Energycrit
+      tags:
+      - IPCDrinkBlacklist
+  - type: DeadStartupButton
+    sound:
+      path: /Audio/_EinsteinEngines/Effects/Silicon/startup.ogg
+  - type: EmitBuzzWhileDamaged
+  - type: CanHostGuardian
+  - type: Repairable #Goob edit
+    fuelCost: 5
+    doAfterDelay: 3
+    selfRepairPenalty: 2.0
+    damage:
+      types:
+        Blunt: -15
+        Piercing: -15
+        Slash: -15
+  - type: DamagedSiliconAccent
+  - type: Uncloneable
+  - type: Fingerprint
+  - type: OwnInteractionVerbs
+    allowedVerbs: []
+  - type: Sprinter # Goob Change: slight nerf to speed because heavy robot, mass contest when
+    sprintSpeedMultiplier: 1.2
+  - type: Tag
+    tags:
+    - SiliconMob
+    - SiliconEmotes
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - IPCDrinkBlacklist # Goobstation - Energycrit: Don't let self antagging IPCs steal power from other ipcs.
+
+- type: entity
+  save: false
+  name: Urist McPositronic
+  parent: MobHumanDummy
+  id: MobSynthDummy
+  categories: [ HideSpawnMenu ] # Goobstation
+  description: A dummy IPC meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Synth
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

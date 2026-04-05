@@ -1,0 +1,86 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadHatCapcap
+  id: ClothingHeadHatCapMarinheiro
+  name: chapéu de marinheiro
+  description: Mar calmo não faz bons capitães está escrito no chapéu. Um lembrete de quando se velejava por mares de água salgada e não pelo vazio do espaço.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hats/cap_marinheiro.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hats/cap_marinheiro.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Head/Hats/cap_marinheiro.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatToucaDeGato
+  name: touca de gato
+  description: Uma touca confortável com orelhinhas de gato, ideal para um cochilo sossegado.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hats/orelhinhas_de_gato.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hats/orelhinhas_de_gato.rsi
+  - type: Item
+    sprite: _Gabystation/Clothing/Head/Hats/orelhinhas_de_gato.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase] # Goob edit
+  id: ClothingHeadHatFedoraBrownOffBrand
+  name: off-brand brown fedora
+  description: A brown fedora. This one seems to be lower quality than what you can usually find.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/brownfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/brownfedora.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase] # Goob edit
+  id: ClothingHeadHatFedoraGreyOffBrand
+  name: off-brand grey fedora
+  description: A grey fedora. This one seems to be lower quality than what you can usually find.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadHatBeretSecurity
+  id: ClothingHeadHatBeretPrisonGuard
+  name: prison guard beret
+  description: A beret with the security department's insignia. For officers that are more inclined towards style than safety.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Head/Hats/beret_prisonguard.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Head/Hats/beret_prisonguard.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon

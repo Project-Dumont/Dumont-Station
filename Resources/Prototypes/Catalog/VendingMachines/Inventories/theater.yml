@@ -110,9 +110,9 @@
     ClothingHeadHatCowboyBlack: 1
     ClothingHeadHatCowboyWhite: 1
     ClothingHeadHatCowboyGrey: 1
-    ClothingShoesBootsCowboyBrown: 1
-    ClothingShoesBootsCowboyBlack: 1
-    ClothingShoesBootsCowboyWhite: 1
+    ClothingShoesBootsCowboyBrownBad: 1 # GabyStation. Bad variants.
+    ClothingShoesBootsCowboyBlackBad: 1 # GabyStation. Bad variants.
+    ClothingShoesBootsCowboyWhiteBad: 1 # GabyStation. Bad variants.
     ClothingCostumeAbductorHead: 1
     ClothingCostumeAbductor: 1
     ClothingHeadSanabi: 1 # Goobstation

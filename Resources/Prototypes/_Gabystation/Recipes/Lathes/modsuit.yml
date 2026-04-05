@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: ModsuitPlatingEngineerRecipe
+  result: ModsuitPlatingEngineer
+  completetime: 8
+  materials:
+    Steel: 2000
+    Gold: 500
+    Silver: 700
+
+- type: latheRecipe
+  id: ModsuitPlatingParamedicRecipe
+  result: ModsuitPlatingParamedic
+  completetime: 8
+  materials:
+    Steel: 2000
+    Gold: 500
+    Silver: 700
+
+- type: latheRecipe
+  id: ModsuitPlatingSecurityRecipe
+  result: ModsuitPlatingSecurity
+  completetime: 8
+  materials:
+    Steel: 2000
+    Gold: 500
+    Silver: 700
+
+# Oh.
+#Heartbeat- Então, eu tava trabalhando nisso, dai eu aprendi que por causa do goob send preguicoso, NENHUMA DAS PLATINGS DE MODSUIT FAZEM ALGO DIFERENTE, AAAAAAAAAAAAAAAAA
+# então não tem motivo pra isso.

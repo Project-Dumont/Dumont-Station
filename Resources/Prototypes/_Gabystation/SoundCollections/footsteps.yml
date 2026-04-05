@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: soundCollection
+  id: ArmorBoot
+  files:
+  - /Audio/_Gabystation/Effects/Footsteps/armorboot1.ogg
+  - /Audio/_Gabystation/Effects/Footsteps/armorboot2.ogg
+
+- type: soundCollection
+  id: BootStomp
+  files:
+  - /Audio/_Gabystation/Effects/Footsteps/bootstomp1.ogg
+  - /Audio/_Gabystation/Effects/Footsteps/bootstomp2.ogg
+  - /Audio/_Gabystation/Effects/Footsteps/bootstomp3.ogg

@@ -1,0 +1,6 @@
+# Prison Guard Hat
+
+- type: latheRecipe
+  parent: BaseHatRecipe
+  id: ClothingHeadHatBeretPrisonGuard
+  result: ClothingHeadHatBeretPrisonGuard

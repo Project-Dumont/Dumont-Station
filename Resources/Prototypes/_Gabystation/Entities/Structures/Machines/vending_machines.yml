@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Versões de máquinas de venda grátis pra ser usado por naves e bases do sindicato
+- type: entity
+  parent: VendingMachineYouTool
+  id: VendingMachineYouToolFree
+  name: YouTool
+  description: "A vending machine containing standard tools. A label reads: Tools for tools."
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy
+    
+- type: entity
+  parent: VendingMachineMedical
+  id: VendingMachineMedicalFree
+  name: NanoMed Plus
+  description: It's a medical drug dispenser. Natural chemicals only! (And wheelchairs, why not) # Goobstation
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy
+
+- type: entity
+  parent: VendingMachineNutri
+  id: VendingMachineNutriFree
+  name: NutriMax
+  description: A vending machine containing nutritional substances for plants and botanical tools.
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy
+
+- type: entity
+  parent: VendingMachineEngivend
+  id: VendingMachineEngivendFree
+  name: Engi-Vend
+  description: Spare tool vending. What? Did you expect some witty description?
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy
+
+- type: entity
+  parent: VendingMachineDiscount
+  id: VendingMachineDiscountFree
+  name: Discount Dan's
+  description: A vending machine containing discount snacks from the infamous 'Discount Dan' franchise.
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy
+
+- type: entity
+  parent: VendingMachineCigs
+  id: VendingMachineCigsFree
+  name: ShadyCigs Deluxe
+  description: If you want to get cancer, might as well do it in style.
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy
+    
+- type: entity
+  parent: VendingMachineSmite
+  id: VendingMachineSmiteFree
+  name: Smite Vendor
+  description: Popular with the administration.
+  components:
+  - type: VendingMachine
+    paidItems: false # Economy

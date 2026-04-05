@@ -37,7 +37,17 @@
     - type: WarDeclarator
       message: war-declarator-default-message
       sound: # Goobstation
-        path: /Audio/_Goobstation/Announcements/war.ogg
+        collection: war
     - type: AccessReader
       access: [["NuclearOperative"]]
 
+- type: entity
+  parent: NukeOpsDeclarationOfWar
+  id: LoneOpsDeclarationOfWar
+  name: lone ops war declarator
+  description: Use para enviar uma declaração de guerra solitária. É você contra todos.
+  components:
+    - type: WarDeclarator
+      sound: 
+        path: /Audio/_Gabystation/Announcements/One_Against_All.ogg
+      warAnimationId: LoneOpsWarAnimation

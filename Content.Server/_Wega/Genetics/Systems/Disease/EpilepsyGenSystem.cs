@@ -30,7 +30,7 @@ public sealed class EpilepsySystem : EntitySystem
                 epilepsy.NextTimeTick = 10;
                 if (_random.Next(0, 100) < 1)
                 {
-                    _stun.TryParalyze(uid, TimeSpan.FromSeconds(15), true);
+                    _stun.TryUpdateParalyzeDuration(uid, TimeSpan.FromSeconds(15));
                     _jitteringSystem.DoJitter(uid, TimeSpan.FromSeconds(15), true);
                     _popup.PopupClient(Loc.GetString("disease-epilepsy-massage"), uid, PopupType.Medium);
                     _chat.TryEmoteWithoutChat(uid, _prototypeManager.Index<EmotePrototype>("Scream"), true);

@@ -1,0 +1,101 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: technology
+  id: BasicModulesTech
+  name: research-technology-basic-modules
+  icon:
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: jump-boots
+  discipline: Experimental
+  tier: 2
+  cost: 5000 # esses modulos não fazem muito e tem alternativas ja pesquisadas a esse ponto.
+  recipeUnlocks:
+  - ModsuitModuleJumpRecipe
+  - ModsuitModuleMagbootRecipe
+  - ModsuitModuleGPSRecipe
+  - ModsuitModuleWeldingRecipe
+  technologyPrerequisites:
+  - ModsuitsTech
+  position: -5,-3
+
+- type: technology
+  id: HudModules
+  name: research-technology-hud-modules
+  icon:
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: medhud-head
+  discipline: Experimental
+  tier: 2
+  cost: 3000 # Pois não é muito dificil pegar qualquer qualquer uma dessas coisas.
+  recipeUnlocks:
+  - ModsuitModuleMedhudRecipe
+  - ModsuitModuleSecHudRecipe
+  - ModsuitModuleDiagnosticHudRecipe
+  technologyPrerequisites:
+  - BasicModulesTech
+  position: -6,-3
+
+- type: technology
+  id: MiningModules
+  name: research-technology-mining-modules
+  icon:
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: drill-hands
+  discipline: Experimental
+  tier: 2
+  cost: 5000 # Pois é util, mas não tão util.
+  recipeUnlocks:
+  - ModsuitModuleDrillRecipe
+  - ModsuitModuleDiamondDrillRecipe
+  technologyPrerequisites:
+  - BasicModulesTech
+  position: -5,-4
+
+- type: technology
+  id: MedicalModules
+  name: research-technology-medical-modules
+  icon:
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: surgery-hands
+  discipline: Experimental
+  tier: 2
+  cost: 5000 # Pois é util, mas não tão util.
+  recipeUnlocks:
+  - ModsuitModuleSurgeryRecipe
+  - ModsuitModuleInjectorRecipe
+  technologyPrerequisites:
+  - BasicModulesTech
+  position: -5,-5
+
+- type: technology
+  id: AdvancedModules
+  name: research-technology-advanced-modules
+  icon:
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: antigrav-chest
+  discipline: Experimental
+  tier: 3
+  cost: 10000 # Pois é um item especial e inovativo.
+  recipeUnlocks:
+  - ModsuitModuleAntiGravRecipe
+  technologyPrerequisites:
+  - BasicModulesTech
+  position: -7,-3
+
+#- type: technology
+#  id: ServiceModules
+#  name: research-technology-Service-modules
+#  icon:
+#    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+#    state: clownshoes-boots
+#  discipline: Experimental
+#  tier: 2
+#  cost: 5000 #Honk.
+#  recipeUnlocks:
+#  - ModsuitModuleClownBootRecipe
+#  technologyPrerequisites:
+#  - BasicModulesTech
+#  position: -6,-4
+# Eu ia deixar isso, mas quando testei ingame, tirar o modulo da modsuit fez eu ter o waddle de palhaço para sempre. Verdadeiramente, um destino horrendo.

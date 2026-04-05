@@ -36,6 +36,7 @@
   - Beaker
   - LargeBeaker
   - Syringe
+  - Dropper #Goobstation
   - PillCanister
   - HandLabeler
   - ChemicalPayload
@@ -68,6 +69,10 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
+  - OffsetCane
+  - OffsetCaneWood
+  - CMBloodPack #IV!
+  - CMIV #IV!
 
 - type: latheRecipePack
   id: RollerBedsStatic

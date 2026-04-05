@@ -29,12 +29,12 @@ SPDX-License-Identifier: MIT
                         Name="WithdrawButton"
                         MinWidth="64"
                         HorizontalAlignment="Right"
-                        Text="{Loc 'store-ui-default-withdraw-text'}" />
+                        Text="{Loc 'store-ui-withdraw-text'}" />
                     <Button
                         Name="RefundButton"
                         MinWidth="64"
                         HorizontalAlignment="Right"
-                        Text="{Loc 'store-ui-default-refund-text'}" />
+                        Text="{Loc 'store-ui-refund-text'}" />
                 </BoxContainer>
                 <LineEdit Name="SearchBar" Margin="4" PlaceHolder="{Loc 'store-ui-default-search-text'}" HorizontalExpand="True"/>
                 <PanelContainer Name="MainPanel" VerticalExpand="True">

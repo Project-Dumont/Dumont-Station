@@ -87,7 +87,6 @@ using Content.Server.RoundEnd;
 using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
-using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Systems;
@@ -261,7 +260,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
         }
 
-        var targetGrid = _station.GetLargestGrid(Comp<StationDataComponent>(station.Value));
+        var targetGrid = _station.GetLargestGrid(station.Value);
         if (targetGrid == null)
             return;
 
@@ -350,7 +349,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return null;
         }
 
-        var targetGrid = _station.GetLargestGrid(Comp<StationDataComponent>(stationUid));
+        var targetGrid = _station.GetLargestGrid(stationUid);
 
         // UHH GOOD LUCK
         if (targetGrid == null)
@@ -471,7 +470,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         var audioFile = result.ResultType == ShuttleDockResultType.NoDock
             ? "/Audio/Misc/notice1.ogg"
-            : "/Audio/Announcements/shuttle_dock.ogg";
+            : "/Audio/_Gabystation/Announcements/shuttledocked_saae.ogg";
 
         // TODO: Need filter extensions or something don't blame me.
         _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
@@ -507,23 +506,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </remarks>
     public void DockEmergencyShuttle()
     {
-        // funky station
-        // fires an event that the emergency shuttle is trying to dock.
-        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
-
-        var ev = new ShuttleDockAttemptEvent();
-        RaiseLocalEvent(ref ev); // 💔
-
-        if (ev.Cancelled)
-        {
-            while (query.MoveNext(out var uid, out _))
-            {
-                _chatSystem.DispatchStationAnnouncement(uid, ev.CancelMessage);
-            }
-
-            return;
-        }
-
         if (EmergencyShuttleArrived)
             return;
 
@@ -535,6 +517,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         ConsoleAccumulator = _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
+
+        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
         var dockResults = new List<ShuttleDockResult>();
 
@@ -832,12 +816,4 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         /// </summary>
         GoodLuck,
     }
-}
-
-// funky station
-[ByRefEvent]
-public record struct ShuttleDockAttemptEvent()
-{
-    public bool Cancelled = false;
-    public string CancelMessage = string.Empty;
 }

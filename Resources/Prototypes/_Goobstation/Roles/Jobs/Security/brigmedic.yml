@@ -15,13 +15,14 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 18000 # 5 hrs
+  salary: 50 # Gaby content
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides:
   - MedicalDoctor
-  # - Brigmedic SOP
+  # - BrigmedicSOP
   - Medicine
   goobcoins: 35
   access: # EE parity, make corpsman able function.

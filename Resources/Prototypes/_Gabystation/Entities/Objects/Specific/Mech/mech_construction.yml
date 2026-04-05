@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMechPart
+  id: SpaceBuoyConstruction
+  name: Space Buoy Structure
+  description: The structure of the Space Buoy.
+  components:
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      mech-assembly-container: !type:Container
+  - type: Construction
+    graph: SpaceBuoy
+    node: start
+    defaultTarget: spacebuoy
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Mech/SpaceBuoy.rsi
+    state: unfinished
+    noRot: true

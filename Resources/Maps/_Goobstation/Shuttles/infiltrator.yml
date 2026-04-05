@@ -2735,7 +2735,7 @@ entities:
     - type: Transform
       pos: -0.5,3.5
       parent: 2
-- proto: VendingMachineEngivend
+- proto: VendingMachineEngivendFree
   entities:
   - uid: 412
     components:

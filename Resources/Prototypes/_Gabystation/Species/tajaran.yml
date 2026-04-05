@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: humanoidBaseSprite
+  id: MobTajaranLLegDigi
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: l_leg_digi
+
+- type: humanoidBaseSprite
+  id: MobTajaranLFootDigi
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: l_foot_digi
+
+- type: humanoidBaseSprite
+  id: MobTajaranRLegDigi
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: r_leg_digi
+
+- type: humanoidBaseSprite
+  id: MobTajaranRFootDigi
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: r_foot_digi
+
+- type: humanoidBaseSprite
+  id: MobTajaranGroinDigi
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobTajaranGroinDigiMale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobTajaranGroinDigiFemale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Tajaran/parts.rsi
+    state: groin_f

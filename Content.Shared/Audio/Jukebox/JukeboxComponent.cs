@@ -6,6 +6,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._Gabystation.Jukebox;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -13,7 +14,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Audio.Jukebox;
 
 [NetworkedComponent, RegisterComponent, AutoGenerateComponentState(true)]
-[Access(typeof(SharedJukeboxSystem))]
+[Access(typeof(SharedJukeboxSystem), typeof(SharedJukeboxMusicSystem))]
 public sealed partial class JukeboxComponent : Component
 {
     [DataField, AutoNetworkedField]

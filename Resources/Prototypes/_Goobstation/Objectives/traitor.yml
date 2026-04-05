@@ -113,7 +113,7 @@
   id: CMORapidSyringeGunStealObjective
   components:
   - type: StealCondition
-    stealGroup: RapidSyringeGun
+    stealGroup: CMOweapon # GabyStation
   - type: Objective
     difficulty: 3 # Slightly more than normal as it does not fit into storage implant
 

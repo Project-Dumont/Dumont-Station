@@ -1,0 +1,8 @@
+- type: latheRecipePack
+  id: ClothingSecurityDeltaV
+  recipes:
+  # Prison Guard
+  - ClothingUniformJumpsuitPrisonGuard
+  - ClothingUniformJumpskirtPrisonGuard
+  - ClothingHeadPrisonGuard
+  - ClothingHeadHatBeretPrisonGuard

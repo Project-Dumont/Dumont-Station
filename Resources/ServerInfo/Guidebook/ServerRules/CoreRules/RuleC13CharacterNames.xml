@@ -12,57 +12,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Regra Básica 13 - Use nomes realistas, e tente evitar nomes de figuras / personagens famosos.
+  # Regra Básica 13 - Regras de Nomes.
+
+  Essa regra aborda as normas para nomes de diferentes espécies dentro do jogo
+
+  # Gerais
+  - Qualquer nome considerado dentro das regras podem ser usado para as espécies específicas, se desobedecer sequer uma, não podera ser usado
   - Sem nomes de pessoas ou personagens, fictícios ou reais. Nós iremos perceber se você simplesmente mudar algumas letras.
-  - Sem títulos / honoríficos (com exceção de títulos de família como "Jr" ou "I", "II", "III", etc), apelidos ou abreviações. Use capitalização adequada.
+  - Sem títulos / honoríficos (com exceção de títulos de família como "Jr" ou "I", "II", "III", etc), sem apelidos ou abreviações. Use gramatica adequada.
   - Nomes devem seguir todas as outras regras (sem expressões preconceituosas, piadinhas sexuais, etc).
-  - Nomes de esforço baixo, letras aleatórias, nomes "meta", nomes de objetos ou afins que sejam nomes implausíveis não são permitidos.
-  - A palavra dos Admins é final, e devem ser obedecidas. Caso discorde da decisão, crie um Ticket de Suporte no nosso discord.
-  # Regra Básica 13 - Use nomes realistas, e tente evitar nomes de figuras / personagens famosos.
-  - Sem nomes de pessoas ou personagens, fictícios ou reais. Nós iremos perceber se você simplesmente mudar algumas letras.
-  - Sem títulos / honoríficos (com exceção de títulos de família como "Jr" ou "I", "II", "III", etc), apelidos ou abreviações. Use capitalização adequada.
-  - Nomes devem seguir todas as outras regras (sem expressões preconceituosas, piadinhas sexuais, etc).
-  - Nomes de esforço baixo, letras aleatórias, nomes "meta", nomes de objetos ou afins que sejam nomes implausíveis não são permitidos.
   - A palavra dos Admins é final, e devem ser obedecidas. Caso discorde da decisão, crie um Ticket de Suporte no nosso discord.
 
   # Práticas de Nomeamento:
-  Palhaços e Mímicos são isentos da proibição de títulos / honoríficos e tem certa leniência para nomes não-convencionais. Sim, palhaço Risadinha, você pode manter seu nome.
+  Palhaços e Mímicos são isentos da proibição de títulos / honoríficos e tem certa liberdade para nomes não-convencionais. Sim, palhaço Risadinha, você pode manter seu nome.
 
   ## Esclarecimento de "nomes meta"
   Nomes "meta" são nomes que tentam obter alguma vantagem de um design ou mecânica do jogo. Por exemplo, "Urist McHands" é um nome meta pois é o nome padrão para humanos spawnados por admins. "Operator Whiskey" também é um nome meta, pois segue a prática de nomeamento dos operativos nucleares.
 
-  ## Práticas e Exemplos
+  ## Humanos, Slimes, Anões, Vulpkanin, Harpias, Daengatis e Gingerbreads
 
-  Qualquer nome considerado [color=#449944]bom[/color] pode ser usado para a espécie específica. Qualquer nome considerado [color=#994444]ruim[/color] não podem ser usados para aquela espécie ou qualquer outra.
+  - Essas espécies recebem nomes humanos normais.
 
-  Humanos, Slimes, Anões, Felinids, Vulps e Harpias devem usar a prática de Nome Sobrenome.
-
-  Exemplos
-  - [color=#449944]Bom:[/color] Tom Fisher
-  - [color=#449944]Bom:[/color] Spacey Chapman
-  - [color=#449944]Bom:[/color] Aaron Rikes
-  - [color=#994444]Ruim:[/color] Dr. Tom Fisher
-  - [color=#994444]Ruim:[/color] Walter White
-  - [color=#994444]Ruim:[/color] George Washington
-  - [color=#994444]Ruim:[/color] Joe Biden
-  - [color=#994444]Ruim:[/color] Ben Dover
-  - [color=#994444]Ruim:[/color] Mike Hunt
-  - [color=#994444]Ruim:[/color] Joe Mamma
-
-
-  Lizards devem usar a prática "verbo-artigo-substantivo"; por exemplo, Faz-O-TEG. Caso desejem, pode usar a prática Nome-Nome, com nomes alienígena
-
-  Exemplos
-  - [color=#449944]Bom:[/color] Limpa-as-Airlocks
-  - [color=#449944]Bom:[/color] Deekus
-  - [color=#449944]Bom:[/color] Deetum-Ja
-  - [color=#449944]Bom:[/color] Artemis
-  - [color=#449944]Bom:[/color] Rola-o-Dado
-  - [color=#449944]Bom:[/color] Limpa-o-Chão
-  - [color=#449944]Bom:[/color] Shira-Thaskan
-  - [color=#994444]Ruim:[/color] Bane-os-Admins
-  - [color=#994444]Ruim:[/color] Faz-o-ERP
-  Humanos, Slimes, Anões, Felinids, Vulps e Harpias devem usar a prática de Nome Sobrenome.
+  - Nomes e Sobrenomes de esforço baixo, letras aleatórias, nomes de objetos ou afins que sejam implausíveis não são permitidos.
 
   Exemplos
   - [color=#449944]Bom:[/color] Tom Fisher
@@ -76,8 +47,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [color=#994444]Ruim:[/color] Mike Hunt
   - [color=#994444]Ruim:[/color] Joe Mamma
 
+  ## Lizards
 
-  Lizards devem usar a prática "verbo-artigo-substantivo"; por exemplo, Faz-O-TEG. Caso desejem, pode usar a prática Nome-Nome, com nomes alienígena
+  - Lizards devem usar a prática "verbo-artigo-substantivo"; por exemplo, Faz-O-TEG. Caso desejem, pode usar a prática Nome-Nome, com nomes alienígena
 
   Exemplos
   - [color=#449944]Bom:[/color] Limpa-as-Airlocks
@@ -90,14 +62,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [color=#994444]Ruim:[/color] Bane-os-Admins
   - [color=#994444]Ruim:[/color] Faz-o-ERP
 
-  Dionas devem nomes calmos e tematizados na natureza, utilizando a prática Substantivo de/da Substantivo.
+  ## Dionas
+
+  - Dionas devem nomes calmos e tematizados na natureza, utilizando a prática Substantivo de/da/do.
 
   Exemplos
   - [color=#449944]Bom:[/color] Pétala da Tranquilidade
   - [color=#449944]Bom:[/color] Jardim do Relaxamento
+  - [color=#449944]Bom:[/color] A erva daninha do desinteresse
   - [color=#994444]Ruim:[/color] Árvore sóque Viva
 
-  Moths devem usar nomes em Latim ou nomes tematizados de luz. Apelidos de algo que o Moth goste também são permitidos.
+  ## Moths
+
+  -Moths devem usar nome e sobrenome
+
+  -Moths devem usar nomes em Latim ou nomes tematizados de luz. Apelidos de algo que o Moth goste também são permitidos.
 
   Exemplos
   - [color=#449944]Bom:[/color] Socrates Temnora
@@ -105,47 +84,30 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [color=#449944]Bom:[/color] James Nightflitter
   - [color=#449944]Bom:[/color] Tulipa
 
-  Dionas devem nomes calmos e tematizados na natureza, utilizando a prática Substantivo de/da Substantivo.
+  ## Arachnids
 
-  Exemplos
-  - [color=#449944]Bom:[/color] Pétala da Tranquilidade
-  - [color=#449944]Bom:[/color] Jardim do Relaxamento
-  - [color=#994444]Ruim:[/color] Árvore sóque Viva
+  -Devem usar nome e sobrenome
 
-  Moths devem usar nomes em Latim ou nomes tematizados de luz. Apelidos de algo que o Moth goste também são permitidos.
-
-  Exemplos
-  - [color=#449944]Bom:[/color] Socrates Temnora
-  - [color=#449944]Bom:[/color] Sierra Lightseeker
-  - [color=#449944]Bom:[/color] James Nightflitter
-  - [color=#449944]Bom:[/color] Tulipa
-
-
-  Arachnids devem ter nomes que soem estar em Latim.
+  -Arachnids devem ter nomes que soem estar em Latim.
 
   Exemplos
   - [color=#449944]Bom:[/color] Argyroneta Reticulatus
   - [color=#449944]Bom:[/color] Loxosceles Domesticus
   - [color=#994444]Ruim:[/color] Homem-Aranha
 
-  Vox usam nomes com sílabas aleatórias, normalmente com padrões repetitivos. As repetições não devem ser grandes demais ao ponto de serem incômodas ou incompreensíveis.
-  Arachnids devem ter nomes que soem estar em Latim.
+  ## Vox
+
+  -Vox não usam sobrenomes
+
+  -Vox usam nomes com sílabas aleatórias, normalmente com padrões repetitivos. As repetições não devem ser grandes demais ao ponto de serem incômodas ou incompreensíveis.
 
   Exemplos
-  - [color=#449944]Bom:[/color] Argyroneta Reticulatus
-  - [color=#449944]Bom:[/color] Loxosceles Domesticus
-  - [color=#994444]Ruim:[/color] Homem-Aranha
+  - [color=#449944]Bom:[/color] Tixititik
+  - [color=#449944]Bom:[/color] Teechexe
 
-  Vox usam nomes com sílabas aleatórias, normalmente com padrões repetitivos. As repetições não devem ser grandes demais ao ponto de serem incômodas ou incompreensíveis.
+  ## Rodentias
 
-  Exemplos
-  - [color=#449944]Bom:[/color] Hirixashahre
-  - [color=#449944]Bom:[/color] Xapikrikrik
-  - [color=#994444]Ruim:[/color] Chipikirchitchitchitbecretretrer
-  - [color=#994444]Ruim:[/color] Trololol
-
-
-  Rodentias tem o primeiro ou último nome como descritor (Forte, Olhos-Grandes, Come-Lixo), e o nome principal deve ser um nome simples ou de pet. Confuso? Cheque exemplos abaixo.
+  -Rodentias tem o primeiro ou último nome como descritor (Forte, Olhos-Grandes, Come-Lixo), e o nome principal deve ser um nome simples ou de pet.
 
   Exemplos
   - [color=#449944]Bom:[/color] Grande Poppy
@@ -153,27 +115,87 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [color=#449944]Bom:[/color] Biscoito Orelhudo
   - [color=#449944]Bom:[/color] Basil Olhos-Grandes
 
-  Nomes de baixa qualidade e / ou esforço não são permitidos.
+  ## Tajaran
+
+  -Tajaran deve usar os nomes proprios que são dados pelo "Aleatorio" na criação de personagens
 
   Exemplos
-  - [color=#994444]Ruim:[/color] XxRobustoxX
-  - [color=#994444]Ruim:[/color] SDpksSodjdfk
-  - [color=#994444]Ruim:[/color] Lkdsoisgoieun
-  - [color=#994444]Ruim:[/color] F4ith H3arth
-  - [color=#994444]Ruim:[/color] Greytide
-  - [color=#994444]Ruim:[/color] Assistente
-  - [color=#994444]Ruim:[/color] Urist McHands
-  - [color=#994444]Ruim:[/color] Admin
-  - [color=#994444]Ruim:[/color] Mestre-do-Jogo
-  - [color=#994444]Ruim:[/color] Operativo Whiskey
-  - [color=#994444]Ruim:[/color] Homem de Meia-Idade
-  Exemplos
-  - [color=#449944]Bom:[/color] Grande Poppy
-  - [color=#449944]Bom:[/color] Lily Patas-Rápidas
-  - [color=#449944]Bom:[/color] Biscoito Orelhudo
-  - [color=#449944]Bom:[/color] Basil Olhos-Grandes
 
-  Nomes de baixa qualidade e / ou esforço não são permitidos.
+  - Rrkhaz Farsam
+  - Tulmahii'rtajr Wami
+  - Tulrhejri Darnal
+  - Tajrjri Hadii
+
+  ## Yowie
+
+  -Yowies devem usar apenas um nome, sem ter um sobrenome
+
+  -É recomendado verificar os nomes que o jogo disponibiliza na criação de personagens
+
+  Exemplos
+
+  - Jarli
+  - Mandawuy
+  - Keria
+  - Kylie
+
+  ## IPC
+
+  -Ipcs devem usar nomes compostos de letras e numeros
+
+  Exemplos
+
+  - GRIN-467
+  - KENT-871
+  - PLEXO-511
+  - NOVA-843
+
+  ## Shadowkin
+
+  -Os shadowkins não tem sobrenomes
+
+  -Eles devem ter ou nomes que terminam com er/ar/or ou ter nomes de uma unica palavra simples
+
+  Exemplos
+
+  - Stone
+  - Amwar
+  - Janitor
+  - Doctor
+  - Mwalwarwar
+  - Mwaarlwur
+
+  ## Oni
+
+  -Os onis devem usar nomes japoneses
+
+  -Devem usar nome e sobrenome
+
+  -Qualquer nome ou sobrenome com esforço baixo, como "Deusébom" ou qualquer coisa do genero, é proibido
+
+  -Qualquer nome japones com dobro sentido é completamente proibido
+
+  Exemplos
+
+  - [color=#449944]Bom:[/color] Shuten Tomiteboshi
+  - [color=#449944]Bom:[/color] Akimi Soiboshi
+  - [color=#449944]Bom:[/color] Kenji Amefuriboshi
+  - [color=#994444]Ruim:[/color] Tekomo Nakama
+
+  ## Resomi
+
+  -Não é usado sobrenome
+
+  -Recomendado verificar os nomes dados pelo jogo
+
+  Exemplos
+
+  - Maris
+  - Laton
+  - Leesche
+  - Niescha
+
+  ## Nomes de baixa qualidade e / ou esforço não são permitidos.
 
   Exemplos
   - [color=#994444]Ruim:[/color] XxRobustoxX

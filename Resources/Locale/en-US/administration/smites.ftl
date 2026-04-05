@@ -76,6 +76,7 @@ admin-smite-ghostkick-name = Ghost Kick
 admin-smite-nyanify-name = Cat Ears
 admin-smite-kill-sign-name = Kill Sign
 admin-smite-omni-accent-name = Omni-Accent
+admin-smite-crawler-name = Crawler
 admin-smite-waddler-species-swap-name = Become Waddler
 
 ## Smite descriptions
@@ -121,6 +122,7 @@ admin-smite-super-bonk-lite-description= Slams them on every single table on the
 admin-smite-terminate-description = Creates a Terminator ghost role with the sole objective of killing them.
 admin-smite-super-slip-description = Slips them really, really hard.
 admin-smite-omni-accent-description = Makes the target speak with almost every accent available.
+admin-smite-crawler-description = Makes the target fall down and be unable to stand up. Remove their hands too for added effect!
 admin-smite-waddler-species-swap-description =  It changes their species to Waddler. Useful for people who want to powergame.
 
 ## Tricks descriptions

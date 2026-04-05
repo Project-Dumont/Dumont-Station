@@ -22,7 +22,7 @@
     Gauze: 3 # Goobstation
     Brutepack: 3
     Ointment: 3
-    Bloodpack: 3
+    CMBloodPackFull: 5 #IV!
     ChemistryBottleEpinephrine: 3
     Syringe: 3
     Tourniquet: 3 #Goobstation - ParamedHypo

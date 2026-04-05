@@ -583,6 +583,7 @@
   - type: Tag
     tags:
       - DroneUsable # Goobstation
+      - RCD # Trauma
 
 - type: entity
   id: RPD
@@ -633,7 +634,9 @@
     maxCharges: 90
   - type: Sprite
     sprite: Objects/Tools/rpd.rsi
-
+  - type: Tag # Trauma - remove RCD tag to prevent revs trolling
+    tags:
+    - DroneUsable
 
 - type: entity
   id: RCDEmpty

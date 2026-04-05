@@ -54,3 +54,14 @@
   storage:
     back:
     - BookArteDaRobustez
+
+- type: loadout
+  id: PhotoCamera
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 180000 # 50 horas
+  storage:
+    back:
+    - PhotoCameraFilled

@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Gabystation
+- type: entity
+  name: rosethorn blade
+  parent: [ BaseSword, BaseCommandContraband ]
+  id: RosethornBlade
+  description: A refined blade, for a refined rose lady.
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/sabre_drop.ogg
+  - type: Sprite
+    sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade.rsi
+  - type: MeleeWeapon
+    animationRotation: -95 
+    wideAnimationRotation: -135 
+    heavyStaminaCost: 2
+    attackRate: 2
+    damage:
+      types:
+        Slash: 15
+      woundSeverityMultipliers:
+        Slash: 1.5
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    storedSprite:
+      state: storage
+      sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade_storage_64x.rsi 
+    shape:
+    - 0,0,0,3
+  - type: Tag
+    tags:
+    - CaptainSabre # Change later.
+  - type: Reflect
+    reflectProb: 0.25
+    spread: 90
+  - type: DisarmMalus
+    malus: 0.50
+  #- type: BackStab # In case you want a nerf, this is your component.
+  #  damageMultiplier: 1.20
+  #  tolerance: 30

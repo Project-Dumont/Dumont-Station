@@ -388,7 +388,6 @@
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitVoxRaiderStealth
-  - type: VoxRestricted
 
 # Detective's Hardsuit
 

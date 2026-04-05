@@ -1,15 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: flash
   id: RevFlash
   parent: [BaseItem, BaseSecurityScienceCommandContraband]
   description: An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out. This one seems to have been tampered with.
-  suffix: Revolutionary
+  suffix: Revolutionary, DO NOT MAP # Trauma edit
   components:
     - type: RevolutionaryConverter
       conversionDuration: 0
       silent: true
       consumesCharges: 1
       applyFlashEffect: true
+      bypassMuted: true
     - type: LimitedCharges
       maxCharges: 5
     - type: Sprite
@@ -47,9 +52,10 @@
       guides:
         - Security
         - Antagonists
-    - type: Construction
-      graph: RevFlash
-      node: revFlash
-    - type: Tag
-      tags:
-        - RevFlash
+    # Traumastation - flash revs
+    # - type: Construction
+    #   graph: RevFlash
+    #   node: revFlash
+    # - type: Tag
+    #   tags:
+    #     - RevFlash

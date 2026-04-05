@@ -16,3 +16,18 @@
 
 - type: Tag
   id: GameDirectorRule
+
+- type: Tag
+  id: HosShield
+
+- type: Tag
+  id: ModsuitBootUpgrade
+
+- type: Tag
+  id: ModsuitHeadUpgrade
+
+- type: Tag
+  id: ModsuitChestUpgrade
+
+- type: Tag
+  id: ModsuitHandUpgrade

@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: typingIndicator
+  id: daengati
+  spritePath: /Textures/_Gabystation/Effects/Speech/daengati_speech.rsi
+  typingState: daengati0
+  idleState: daengati0
+  offset: 0, 0.0625

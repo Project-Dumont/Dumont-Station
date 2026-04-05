@@ -8,8 +8,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # I.P.C.
-  <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
+  # I.P.C. e Sintético
+  <Box>
+      <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
+      <GuideEntityEmbed Entity="MobSynthDummy" Caption="Sintéticos"/>
+  </Box>
   Um IPC (Integrated Positronic Chassis/Chassi Positrônico Integrado) é um tipo de robô senciente e é considerado um [color=yellow]indivíduo independente[/color], significando que [color=red]eles não são guiados pelas Leis de Silício[/color].
 
   IPCs não podem ser hackeados por Emags já que não precisam seguir nenhuma diretiva predefinida em seus sistemas. [color=red]IPCs são seres similares aos de silício, então são normalmente curados pela Ciência ou Engenharia ao invés de Médicos.[/color]
@@ -22,7 +25,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Como borgs, IPCs têm um cérebro positrônico como sua fonte de processamento. Porém, diferente deles, IPCs não podem ser montados/construídos. "É mais fácil criar um robô que te obedeça do que um que não! *piscadinha*"
 
   ## Recarregando um IPC
-   <Box>
+  <Box>
     <GuideEntityEmbed Entity="APCBasic" Caption="Terminal de APC"/>
     <GuideEntityEmbed Entity="BorgCharger" Caption="Carregador de Borg"/>
     <GuideEntityEmbed Entity="PowerCellMedium" Caption="Células de energia"/>

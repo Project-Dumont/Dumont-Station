@@ -124,7 +124,7 @@ public sealed class HulkGenSystem : EntitySystem
             if (TryComp(target, out PhysicsComponent? physics))
                 _physics.ApplyLinearImpulse(target, direction * 1000f, body: physics);
 
-            _stun.TryParalyze(target, TimeSpan.FromSeconds(10f), true);
+            _stun.TryUpdateParalyzeDuration(target, TimeSpan.FromSeconds(10f));
         }
 
         _audio.PlayPvs(args.Sound, entity);

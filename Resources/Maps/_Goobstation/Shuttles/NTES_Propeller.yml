@@ -14324,7 +14324,7 @@ entities:
     - type: Transform
       pos: 7.5,1.5
       parent: 1
-- proto: VendingMachineCigs
+- proto: VendingMachineCigsFree
   entities:
   - uid: 94
     components:
@@ -14373,7 +14373,7 @@ entities:
     - type: Transform
       pos: 3.5,-28.5
       parent: 1
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 1678
     components:

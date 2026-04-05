@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: MIT
+
+- type: body
+  id: Synth
+  name: "Synth"
+  root: chest
+  slots:
+    head:
+      part: HeadSynth
+      connections:
+      - chest
+      organs:
+        posbrain: PositronicBrain
+        eyes: OrganSynthEyes
+    chest:
+      part: ChestSynth
+      connections:
+      - right arm
+      - left arm
+      - groin
+      organs:
+        pump: OrganSynthPump
+        stomach: OrganSynthStomach
+    groin:
+      part: GroinSynth
+
+      connections:
+      - right leg
+      - left leg
+    right arm:
+      part: RightArmSynth
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmSynth
+      connections:
+      - left hand
+    right hand:
+      part: RightHandSynth
+    left hand:
+      part: LeftHandSynth
+    right leg:
+      part: RightLegSynth
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegSynth
+      connections:
+      - left foot
+    right foot:
+      part: RightFootSynth
+    left foot:
+      part: LeftFootSynth

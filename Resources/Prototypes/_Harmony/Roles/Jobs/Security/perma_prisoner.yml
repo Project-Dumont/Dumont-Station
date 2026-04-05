@@ -14,4 +14,4 @@
   equipment:
     id: PrisonerPDA
     shoes: ClothingShoesColorBlack
-    ears: ClothingHeadsetGrey
+    ears: ClothingHeadsetPrison #deltaV

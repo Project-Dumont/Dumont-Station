@@ -136,7 +136,6 @@
   equipment:
     head: ClothingHeadHatCaptain
 
-
 - type: loadout
   id: CaptainCap
   equipment:

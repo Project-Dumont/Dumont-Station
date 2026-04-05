@@ -10268,7 +10268,7 @@ entities:
     - type: Transform
       pos: -5.5,-0.5
       parent: 2
-- proto: VendingMachineCigs
+- proto: VendingMachineCigsFree
   entities:
   - uid: 2452
     components:
@@ -10282,21 +10282,21 @@ entities:
     - type: Transform
       pos: 6.5,-11.5
       parent: 2
-- proto: VendingMachineDiscount
+- proto: VendingMachineDiscountFree
   entities:
   - uid: 2496
     components:
     - type: Transform
       pos: 12.5,-8.5
       parent: 2
-- proto: VendingMachineEngivend
+- proto: VendingMachineEngivendFree
   entities:
   - uid: 1676
     components:
     - type: Transform
       pos: -0.5,-10.5
       parent: 2
-- proto: VendingMachineNutri
+- proto: VendingMachineNutriFree
   entities:
   - uid: 471
     components:
@@ -10310,7 +10310,7 @@ entities:
     - type: Transform
       pos: -6.5,-13.5
       parent: 2
-- proto: VendingMachineSmite
+- proto: VendingMachineSmiteFree
   entities:
   - uid: 410
     components:
@@ -10336,7 +10336,7 @@ entities:
     - type: Transform
       pos: 33.5,3.5
       parent: 2
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 96
     components:

@@ -18,6 +18,7 @@
 - type: vendingMachineInventory
   id: ChemVendInventory
   startingInventory:
+    CMBloodPack: 10 #IV!
     Jug: 8 #Goob edit - Energy Chem
     JugAluminium: 2
     JugCarbon: 4

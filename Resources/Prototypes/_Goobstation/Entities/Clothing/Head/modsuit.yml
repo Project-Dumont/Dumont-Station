@@ -84,6 +84,21 @@
       state: helmetbloodicon
   - type: StainBlocker
     slots: [MASK]
+  # GabyStation begin
+  - type: UpgradeableWeapon # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
+  - type: ContainerContainer
+    containers:
+      head_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      head_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitHeadUpgrade
+  # GabyStation end
 
 - type: entity
   abstract: true

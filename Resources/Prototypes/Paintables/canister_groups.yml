@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: paintableGroup
   cost: 2
   id: Canisters
@@ -14,3 +18,18 @@
     storage: StorageCanister
     tritium: TritiumCanister
     water-vapor: WaterVaporCanister
+    #Gaby - Começo
+    hydrogen: HydrogenCanister 
+    hyper-noblium: HyperNobliumCanister
+    proto-nitrate: ProtoNitrateCanister
+    zauker: ZaukerCanister
+    halon: HalonCanister
+    helium: HeliumCanister
+    antinobilium: AntiNobliumCanister
+    bz: BZCanister
+    nitrium: NitriumCanister
+    healium: HealiumCanister
+    pluoxium: PluoxiumCanister
+    #Gaby - Fim
+
+

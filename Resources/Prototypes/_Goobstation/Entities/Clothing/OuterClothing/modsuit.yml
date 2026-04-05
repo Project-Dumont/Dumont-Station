@@ -47,10 +47,24 @@
     parts:
     - BodyMiddle
     - Legs
-
+  # GabyStation begin
+  - type: UpgradeableWeapon # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
+  - type: ContainerContainer
+    containers:
+      chest_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      chest_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitChestUpgrade
+  # GabyStation end
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateStandard
   name: standard modsuit chestplate
   description: A special modular suit spaceproof cover designed for compact folding inside modular suit control.
@@ -119,7 +133,7 @@
     reduction: 0.5
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateSecurity
   name: soldat modsuit chestplate
   description: A robust modular suit cover with ceramic inserts for extra protection.
@@ -192,11 +206,11 @@
       coolingCoefficient: 0.01
       heatingCoefficient: 0.01
   - type: FireProtection
-    reduction: 0.5
+    reduction: 0.75
 
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateHeadOfSecurity
   name: bulwark modsuit chestplate
   description: A robust modular suit cover with EXTRA ceramic inserts for slightly more protection.
@@ -255,12 +269,12 @@
     - Other
     modifiers:
       coefficients:
-        Blunt: 0.45
+        Blunt: 0.50
         Slash: 0.45
-        Piercing: 0.40
+        Piercing: 0.45
         Heat: 0.5
-        Caustic: 0.5
-        Radiation: 0.5
+        Caustic: 0.25
+        Radiation: 0.25
   - type: ComponentToggler
     components:
     - type: PressureProtection
@@ -270,16 +284,10 @@
       coolingCoefficient: 0.01
       heatingCoefficient: 0.01
   - type: FireProtection
-    reduction: 0.5
-  - type: ClothingAutoInject
-    reagents:
-      Epinephrine: 10
-      Bicaridine: 10
-      TranexamicAcid: 5
-      Tramadol: 5
+    reduction: 0.75
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateParamedic
   name: sanitater modsuit chestplate
   description: A white and blue-ish-grey steel plate for keeping out the harsh void of space and the occasional bullet.
@@ -356,7 +364,7 @@
     reduction: 0.5
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateEngineer
   name: sapper modsuit chestplate
   description: A tough armor plate to defend against harsh atmospheric conditions and shockwaves.
@@ -431,10 +439,10 @@
   - type: StaminaResistance
     damageCoefficient: 0.9
   - type: FireProtection
-    reduction: 0.7
+    reduction: 0.75
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateAtmostech
   name: aeolus modsuit chestplate
   description: A fire-proof armor plate to defend against harsh atmospheric conditions.
@@ -507,10 +515,10 @@
   - type: StaminaResistance
     damageCoefficient: 0.9
   - type: FireProtection
-    reduction: 0.75
+    reduction: 0.90
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateResearchDirector
   name: minerva modsuit chestplate
   description: A bulky bomb and bat proof chunk of steel.
@@ -589,7 +597,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase # GabyStation
   id: ClothingModsuitChestplateCaptain
   name: magnate modsuit chestplate
   description: This shit is made out of DIAMONDS, man, this armor was forged with GEMS.
@@ -644,8 +652,8 @@
     - Other
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
+        Blunt: 0.6
+        Slash: 0.6
         Piercing: 0.55
         Heat: 0.5
         Radiation: 0.1
@@ -664,4 +672,4 @@
   - type: StaminaResistance
     damageCoefficient: 0.6
   - type: FireProtection
-    reduction: 0.5
+    reduction: 0.75

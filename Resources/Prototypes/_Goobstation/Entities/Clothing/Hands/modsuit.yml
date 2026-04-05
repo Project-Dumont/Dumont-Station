@@ -32,7 +32,21 @@
     parts:
     - LeftHand
     - RightHand
-
+  # GabyStation begin
+  - type: UpgradeableWeapon # Gaby Modulos pra modsuit usam o mesmo sistema ja definido para upgrades de PKA
+  - type: ContainerContainer
+    containers:
+      hand_module: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      hand_module:
+        name: modsuit-upgrade-slot
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+          - ModsuitHandUpgrade
+  # GabyStation end
 
 - type: entity
   parent: ClothingHandModsuitBase

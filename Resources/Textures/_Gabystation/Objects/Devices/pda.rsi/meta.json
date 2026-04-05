@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "admin assistant by AgentePanela",
+    "copyright": "admin assistant by AgentePanela and prisonguard by Will-Oliver-Br",
     "size": {
         "x": 32,
         "y": 32
@@ -11,7 +11,13 @@
             "name": "pda-admin-assistant"
         },
         {
+            "name": "pda-prisonguard"
+        },
+        {
             "name": "id_overlay"
+        },
+        {
+            "name": "insert_overlay"
         },
         {
             "name": "light_overlay"

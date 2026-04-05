@@ -109,7 +109,8 @@
     Gauze: 5 # Goobstation
     Brutepack: 5
     Ointment: 5
-    Bloodpack: 5
+    CMBloodPackFull: 5 #IV!
+    IVstandflatpack: 3 #IV!
     ChemistryBottleEpinephrine: 3
     Syringe: 5
     BoxBottle: 3

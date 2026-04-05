@@ -44,6 +44,28 @@
       distro: '#0055cc'
       air: '#03fcd3'
       mix: '#947507'
+      #Gaby - Começo
+      #Gaby - Mais cores portados do funky
+      oxygen: '#2887E8' 
+      nitrogen: '#DA1010' 
+      co2: '#4e4e4e' 
+      plasma: '#f700ff' 
+      tritium: '#13FF4B' 
+      helium: '#ff7d27' 
+      h2o: '#bffffd' 
+      ammonia: '#56941E' 
+      n2o: '#e82872' 
+      frezon: '#3a758c' 
+      healium: '#64f595' 
+      anti-noblium: '#141414' 
+      nitrium: '#964c23' 
+      bz: '#764851' 
+      halon: '#75355f' 
+      pluoxium: '#6f79e8' 
+      proto-nitrate: '#379f4f' 
+      hyper-noblium: '#11ffb8' 
+      zauker: '#13422e' 
+      #Gaby - Fim
   - type: StaticPrice
     price: 40
   # Goobstation
@@ -51,8 +73,8 @@
     qualities:
     - Painting
   - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
+    maxCharges: 30 # Gaby
+    lastCharges: 30 # Gaby
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -80,6 +102,7 @@
   description: A cartridge of highly compressed paint, commonly used in spray painters.
   components:
   - type: SprayPainterAmmo
+    charges: 30 # GabyStation
   - type: Sprite
     sprite: Objects/Tools/spray_painter.rsi
     state: ammo

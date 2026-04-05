@@ -223,17 +223,20 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
-  - CardBoxBlack # GoobStation
-  - CardBoxNanotrasen # GoobStation
-  - PlushieBruce # Gabystation
-  - PlushieNiku # Gabystation
-  - PlushieTajaran # Gabystation
-  - PlushieKiiaraWami # Gabystation
-  - PlushieKiiaraWarden # Gabystation
-  - MP3PlayerWhite # Gabystation
-  - FoodSnackLollypopWrapped # Goobstation
-  - FoodSnackLollypopWrappedRainbow # Goobstation
-  - FoodSnackLollypopWrappedCarp # Goobstation
+  - ClothingNeckGoldAutismPin
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
+  # GoobStation Start
+  - CardBoxBlack
+  - CardBoxNanotrasen
+  - FoodSnackLollypopWrapped
+  - FoodSnackLollypopWrappedRainbow
+  - FoodSnackLollypopWrappedCarp
+  # Goobstation End
   - TowelColorBlack
   - TowelColorDarkBlue
   - TowelColorDarkGreen
@@ -258,6 +261,15 @@
   - TapeRecorder
   - DrinkOniGourd
   # End DeltaV Additions
+  # Begin Gabystation
+  - PlushieBruce
+  - PlushieNiku
+  - PlushieTajaran
+  - PlushieKiiaraWami
+  - PlushieKiiaraWarden
+  - MP3PlayerWhite
+  - PhotoCamera
+  # End Gabystation
 
 - type: loadoutGroup
   id: Glasses
@@ -341,6 +353,7 @@
   - CaptainHead
   - CaptainCap
   - CaptainCapcapSenior # goob
+  - CaptainCapMarinheiro #Gabystation
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -354,6 +367,7 @@
   - CaptainFormalSkirt
   - CaptainJumpsuitMilitary # goob
   - CaptainSummerShirt # also goob
+  - CaptainMarinheiroSuit #Gabystation
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -551,8 +565,9 @@
   loadouts:
   - HeadbandBlack
   - WitchHat #Gabystation
-  - BrownFedora #Gabystation
-  - GreyFedora #Gabystation
+  - ToucaDeGato #Gabystation
+  - BrownFedoraOffBrand #Gabystation
+  - GreyFedoraOffBrand #Gabystation
   - Fez #Gabystation
   - PirateHat #Gabystation
   - Sombrero #Gabystation
@@ -1191,6 +1206,7 @@
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
+  - CargoTechnicianOveralls #Goob
   - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
   - CargoTechMJ # goob
@@ -1434,7 +1450,9 @@
   exclusiveWith: INNERCLOTHING # Goobstation
   loadouts:
   - ResearchDirectorJumpsuit
+  - ResearchDirectorJumpsuitAlt # goob
   - ResearchDirectorJumpskirt
+  - ResearchDirectorJumpskirtAlt # goob
   - ResearchDirectorMJ # goob
   - RDSummerShirt # goob
 
@@ -1670,6 +1688,7 @@
   - JackBoots
   - CombatBoots # Goobstation
   - SecurityWinterBoots
+  - CombatHighHeeledBoots # Gabystation
 
 - type: loadoutGroup
   id: SecurityPDA

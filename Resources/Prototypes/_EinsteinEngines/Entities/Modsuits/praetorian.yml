@@ -92,6 +92,8 @@
         - state: equipped-HEAD-vox
         head-vulpkanin:
         - state: equipped-HEAD-vulpkanin
+        head-reptilian:
+        - state: equipped-HEAD-reptilian
     - type: Sprite
       sprite: _EinsteinEngines/Clothing/NanoTrasen/Modsuits/praetorian.rsi
     - type: PressureProtection
@@ -133,6 +135,10 @@
         - state: equipped-HEAD-sealed-vulpkanin
         - state: equipped-HEAD-sealed-unshaded-vulpkanin
           shader: unshaded
+        head-reptilian:
+        - state: equipped-HEAD-sealed-reptilian
+        - state: equipped-HEAD-sealed-unshaded-reptilian
+          shader: unshaded
 - type: entity
   parent: ClothingModsuitChestplateStandard
   id: ClothingModsuitChestplatePraetorian
@@ -169,6 +175,8 @@
         - state: equipped-OUTERCLOTHING-sealed-resomi
         outerClothing-vox:
         - state: equipped-OUTERCLOTHING-sealed-vox
+        outerClothing-reptilian:
+        - state: equipped-OUTERCLOTHING-sealed-reptilian
     - type: ModifyDelayedKnockdown
       delayDelta: 2
       knockdownTimeDelta: -2
@@ -179,10 +187,10 @@
       damageCoefficient: 0.45
 
 - type: entity
-  parent: ClothingModsuitBootsStandard
+  parent: ClothingModsuitBootsSecurity
   id: ClothingModsuitBootsPraetorian
   name: Praetorian modsuit boots
-  description: A state-of-the-art pair of magboots for the Praetorian modsuit.
+  description: A state-of-the-art pair of boots for the Praetorian modsuit.
   categories: [HideSpawnMenu]
   components:
     - type: Appearance
@@ -198,17 +206,8 @@
         - state: equipped-FEET-sealed
         shoes-vox:
         - state: equipped-FEET-sealed-vox
-    - type: ItemToggle
-    - type: ToggleClothing
-      action: ActionToggleMagboots
-    - type: ComponentToggler
-      components:
-      - type: NoSlip
-    - type: Magboots
-      enabledPrefix: null
-    - type: ClothingSpeedModifier
-      walkModifier: 0.95
-      sprintModifier: 0.9
+        shoes-reptilian:
+        - state: equipped-FEET-sealed-reptilian
 
 - type: entity
   id: SuitStoragePraetorian

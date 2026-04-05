@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "greatshield sprited by Taro Varne, bulwark sprited by Armok, protector sprited by Heartbeat",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "icon"
+    },
+    {
+         "name": "icon-on"
+    },
+    {
+        "name": "inhand-left",
+        "directions": 4
+    },
+    {
+        "name": "inhand-left-on",
+        "directions": 4
+    },
+    {
+        "name": "inhand-right-on",
+        "directions": 4
+    },
+    {
+        "name": "inhand-right",
+        "directions": 4
+    },
+    {
+        "name": "equipped-BACKPACK",
+        "directions": 4
+    },
+    {
+        "name": "equipped-BACKPACK-on",
+        "directions": 4
+    }
+  ]
+}
+

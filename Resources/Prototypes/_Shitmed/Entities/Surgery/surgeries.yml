@@ -853,7 +853,7 @@
   - type: SurgeryOrganSlotCondition
     inverse: true
   - type: SurgeryBodyCondition
-    accepted: [ IPC ]
+    accepted: [ IPC, Synth ]
     inverse: true
 
 - type: entity
@@ -1007,6 +1007,31 @@
     organ:
     - type: AugmentArm
 
+# GabyStation - Pacify
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryPacify
+  name: Pacify
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepPriseOpenBones
+    - SurgeryStepPacify
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+  - type: SurgeryOrganOnAddCondition
+    components:
+      brain:
+      - type: Pacified
+      - type: Clumsy
+    inverse: true
+  - type: SurgeryPartCondition
+    parts: [ Head ]
+
 # Lobotomy
 - type: entity
   parent: SurgeryBase
@@ -1052,5 +1077,6 @@
       - type: OhioAccent
       - type: RatvarianLanguage
       - type: Clumsy
+      - type: Pacified
   - type: SurgeryPartCondition
     parts: [ Head ]

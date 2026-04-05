@@ -57,9 +57,9 @@
   - ClothingShoesBootsSecFilled
 
 - type: entity
-  id: ClothingShoesHighheelBootsFilled
+  id: ClothingShoesHighheelBootsCombatFilled
   parent:
-  - ClothingShoesHighheelBoots
+  - ClothingShoesHighheelBootsCombat
   - ClothingShoesBootsSecFilled
 
 - type: entity

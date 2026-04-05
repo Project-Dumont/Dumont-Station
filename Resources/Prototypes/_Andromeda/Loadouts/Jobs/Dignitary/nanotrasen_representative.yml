@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Hat
+- type: loadout
+  id: NanotrasenRepresentativeBlackCap
+  equipment:
+    head: ClothingHeadHatNanotrasenRepresentativeCap
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNanotrasenRepresentative
+      time: 180000 # 50 hrs
+
+# Neck
+- type: loadout
+  id: NanotrasenRepresentativeBlackCloak
+  equipment:
+    neck: ClothingNeckCloaksNanotrasenRepresentative
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNanotrasenRepresentative
+      time: 180000 # 50 hrs

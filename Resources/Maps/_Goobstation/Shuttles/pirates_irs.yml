@@ -5259,7 +5259,7 @@ entities:
     - type: Transform
       pos: 8.662592,-5.770223
       parent: 2
-- proto: VendingMachineCigs
+- proto: VendingMachineCigsFree
   entities:
   - uid: 603
     components:
@@ -5273,7 +5273,7 @@ entities:
     - type: Transform
       pos: 9.5,-7.5
       parent: 2
-- proto: VendingMachineDiscount
+- proto: VendingMachineDiscountFree
   entities:
   - uid: 602
     components:
@@ -5294,7 +5294,7 @@ entities:
     - type: Transform
       pos: -0.5,-7.5
       parent: 2
-- proto: VendingMachineYouTool
+- proto: VendingMachineYouToolFree
   entities:
   - uid: 414
     components:

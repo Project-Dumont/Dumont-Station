@@ -7,3 +7,10 @@
   id: EngineerBagStatic
   recipes:
   - EngineerMaterialBag
+
+- type: latheRecipePack
+  id: EngineeringModules
+  recipes:
+  - ModsuitModuleMagbootRecipe
+  - ModsuitModuleDiagnosticHudRecipe
+  - ModsuitModuleWeldingRecipe

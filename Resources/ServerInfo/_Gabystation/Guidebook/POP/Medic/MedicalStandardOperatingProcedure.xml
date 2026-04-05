@@ -8,19 +8,21 @@ SPDX-License-Identifier: MIT
 
 <Document>
 
-  # Chefe Médico
+  # Médico Chefe
 
-  [bold]1.[/bold] O Chefe Médico pode portar um Desfibrilador comum ou Compacto consigo o tempo todo;
+  [bold]1.[/bold] O Médico Chefe pode portar um Desfibrilador comum ou Compacto consigo o tempo todo;
 
-  [bold]2.[/bold] O Chefe Médico pode portar um flash e seu hiposspray;
+  [bold]2.[/bold] O Médico Chefe pode portar um flash e seu hiposspray;
 
-  [bold]3.[/bold] O Chefe Médico pode portar substâncias químicas de autodefesa para seu hiposspray se o nível de alerta da estação justificar;
+  [bold]3.[/bold] O Médico Chefe pode portar substâncias químicas de autodefesa para seu hiposspray se o nível de alerta da estação justificar;
 
-  [bold]4.[/bold] O Chefe Médico não pode permitir a criação de misturas venenosas ou explosivas na Química sem consentimento expresso do Chefe de Segurança ou, na ausência deste, sem que haja perigo claro e urgente à integridade da estação, exceto em situações onde Implantes Químicos sejam necessários;
+  [bold]4.[/bold] O Médico Chefe não pode permitir a criação de misturas venenosas ou explosivas na Química sem consentimento expresso do Chefe de Segurança ou, na ausência deste, sem que haja perigo claro e urgente à integridade da estação, exceto em situações onde Implantes Químicos sejam necessários;
 
-  [bold]5.[/bold] O Chefe Médico pode entregar seu Monitor Portátil de Tripulação ao Paramédico caso seja necessário substituição;
+  [bold]5.[/bold] O Médico Chefe pode entregar seu Monitor Portátil de Tripulação ao Paramédico caso seja necessário substituição;
 
-  [bold]6.[/bold] O Chefe Médico deve garantir que todos os corpos revivíveis sejam revividos.
+  [bold]6.[/bold] O Médico Chefe deve garantir que todos os corpos revivíveis sejam revividos;
+
+  [bold]7.[/bold] O Médico Chefe, junto com o Diretor de Pesquisa, deve garantir que o geneticista está seguindo o POP.
 
   # Médico e Estagiários
 
@@ -79,6 +81,20 @@ SPDX-License-Identifier: MIT
   [bold]4.[/bold] O Psicólogo não pode amordaçar ou colocar camisa de força em ninguém sem permissão expressa do Chefe Médico ou Chefe de Segurança. Exceção é feita para pacientes violentos e/ou fora de controle;
 
   [bold]5.[/bold] O Psicólogo pode recomendar o rebaixamento de um paciente se considerar que sua condição psicológica o torna inapto para cumprir suas funções;
-
+  
   [bold]6.[/bold] O Psicólogo pode solicitar consultar prisioneiros em Prisão Permanente. Isso deve ocorrer dentro da Brig, de preferência na Permabrig, e apenas com autorização do Carcereiro e/ou Chefe de Segurança. Deve ser feito sob supervisão de um membro da Segurança com acesso à Permabrig.
+
+  # Geneticista
+
+  [bold]1.[/bold] Caso não haja emergência, o Geneticista deve realizar pesquisas para achar mutações genéticas no DNA para os tripulantes usarem;
+
+  [bold]2.[/bold] O Geneticista deve ajudar o Departamento Médico com o tratamento médico de tripulantes caso tenham pouco pessoal ou haja uma emergência;
+
+  [bold]3.[/bold] O Geneticista deve usar apenas macacos e outros animais não sencientes transformados em humanos como cobaias, para evitar sofrimento desnecessário; 
+
+  [bold]4.[/bold] Quaisquer mutações que poderiam teoricamente ser usadas para um crime, como por exemplo a mutação "Hulk", não devem ser distribuídas ao resto da tripulação sem permissão do Médico Chefe e/ou o Diretor de Pesquisa. O Geneticista é igualmente responsável por quaisquer crimes o tripulante cometer com a mutação, junto com quem autorizou ele; 
+
+  [bold]5.[/bold] O Geneticista deve declarar o que a injeção de DNA faz e pedir permissão antes de injetar qualquer tripulante;
+
+  [bold]6.[/bold] O Geneticista é o único tripulante permitido a experimentar com DNA livremente. Qualquer outro tripulante experimentando sem permissão combinada do Médico Chefe e Diretor de Pesquisa pode ser punido por usurpação.
 </Document>
