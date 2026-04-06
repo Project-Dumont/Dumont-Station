@@ -6,7 +6,7 @@ using Content.Shared.Body.Events;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.GameTicking;
 using Robust.Shared.Timing;
 
