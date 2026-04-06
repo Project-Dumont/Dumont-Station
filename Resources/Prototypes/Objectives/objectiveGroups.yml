@@ -142,6 +142,7 @@
     TeachLessonRandomPersonObjective: 1
     PermaKillRandomTraitorObjective: 0.3 # Goobstation - target traitor
     KillRandomHeadObjective: 0.25
+    KillStationAiObjective: 0.25 # Dumont
     TeachRandomPersonObjective: 1 #Goobstation  Teach them a lesson
     TeachRandomHeadObjective: 0.25 #Goobstation  Teach them a lesson
 
