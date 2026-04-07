@@ -47,6 +47,7 @@
   - ModsuitGauntlets
   - ModsuitShell
   - ModsuitPlatingExternal
+  - ModsuitModuleLargeStorageRecipe
   position: -4,-1
   technologyPrerequisites:
   - MagnetsTech

@@ -35,6 +35,14 @@
           whitelist:
             components:
               - PowerCell
+        control_module:
+          name: modsuit-control-unit-module-slot
+          startingItem: ModsuitModuleBasicStorage
+          insertDelay: 1.0
+          ejectDelay: 0.5
+          whitelist:
+            tags:
+              - ModsuitControlUnitUpgrade
     - type: ChameleonClothing
       slot: [back]
       default: ClothingModsuitContractor
@@ -46,7 +54,7 @@
           type: ToggleableClothingBoundUserInterface
     - type: ExplosionResistance
       damageCoefficient: 0.1
- 
+
 - type: entity
   parent: [ClothingModsuitGauntletsStandard, BaseSyndicateContraband]
   id: ClothingModsuitGauntletsContractor

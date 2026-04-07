@@ -313,7 +313,10 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void OnRemove(Entity<StorageComponent> entity, ref ComponentRemove args)
     {
-        UI.CloseUi(entity.Owner, StorageComponent.StorageUiKey.Key);
+        var uid = entity.Owner;
+        var coordinates = TransformSystem.GetMoverCoordinates(uid);
+        ContainerSystem.EmptyContainer(entity.Comp.Container, destination: coordinates);
+        UI.CloseUi(uid, StorageComponent.StorageUiKey.Key);
     }
 
     private void OnMapInit(Entity<StorageComponent> entity, ref MapInitEvent args)

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterModsuitBase
   id: ClothingModsuitChestplateMining
   name: pioneer modsuit chestplate
   description: A modular hardsuit cover with extra coating for mining operations.

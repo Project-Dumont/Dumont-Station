@@ -31,3 +31,6 @@
 
 - type: Tag
   id: ModsuitHandUpgrade
+
+- type: Tag
+  id: ModsuitControlUnitUpgrade
