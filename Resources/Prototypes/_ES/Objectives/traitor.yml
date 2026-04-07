@@ -33,6 +33,7 @@
     ESObjectiveTraitorSabotageGravity: 1
     ESObjectiveTraitorSabotageNavigation: 1
     ESObjectiveTraitorBugAPC: 1
+    SupercritAnomaliesObjective: 1 # Dumont
 
 - type: entity
   parent: ESBaseSabotageObjective

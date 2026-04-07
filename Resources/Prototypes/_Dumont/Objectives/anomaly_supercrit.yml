@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Super <84590915+SuperGDPWYL@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: SupercritAnomaliesObjective
+  description: Nanotrasen is very interested in anomalies with potentially catastrophic consequences. Introduce them to the fire they are playing with.
+  components:
+  - type: Objective
+    difficulty: 2
+    icon:
+      sprite: Structures/Specific/anomaly.rsi
+      state: anom1
+  - type: SupercriticalAnomaliesCondition
+  - type: NumberObjective
+    min: 3
+    max: 5 # Dumont - upper bound is exclusive
+    title: objective-condition-supercrit-anomalies-title
