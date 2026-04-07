@@ -471,7 +471,7 @@
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: syndie-control
   - type: GunUpgrade
-    name: modsuit-module-large-storage-name
+    name: modsuit-module-large-storage-name #Para não ver o nome ao inspecionar a control unit com isso inserido.
   - type: GunUpgradeComponents
     components:
     - type: Storage
