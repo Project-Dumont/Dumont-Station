@@ -1,5 +1,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+photograph-name-text-empty = Esta é uma fotografia.
+
+photograph-name-text = Esta é uma fotografia de {$entity}.
+
+photograph-name-text-photograph = Esta é uma fotografia de outra fotografia.
+
+uplink-travel-camera-name = Câmera de viagem
+
+uplink-travel-camera-desc = Atordoe as pessoas com suas habilidades fotográficas e um flash convenientemente legalizado. Também ajuda a parecer um turista.
+
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
 
 trigger-on-voice-record-failed-too-short = Mensagem curta demais. Tente novamente.

@@ -12,5 +12,8 @@ ent-ClothingHandsGlovesBoxingRiggedRed = luvas de boxe vermelhas
 ent-ClothingHandsGlovesBoxingRiggedYellow = luvas de boxe amarelas
     .desc = Luvas amarelas para boxe competitivo.
 
+ent-TravelCamera = câmera de viagem
+    .desc = Uma imagem vale mais que mil palavras. Possui um flash ultrabrilhante e um rolo fotográfico interno recarregável.
+
 ent-BriefcaseWeapon = maleta de armas
     .desc = Útil para aspirantes a mercenários, estejam lutando por uma empresa, uma nação ou qualquer outra coisa. Ou preparando uma omelete enorme.

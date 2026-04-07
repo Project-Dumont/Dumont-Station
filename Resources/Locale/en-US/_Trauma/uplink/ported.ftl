@@ -1,5 +1,18 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+photograph-name-text-empty = This is a photograph.
+
+photograph-name-text = This is a photograph of { PROPER($entity) ->
+    *[false] { INDEFINITE($entity) } { $entity }
+     [true] { $entity }
+    }.
+
+photograph-name-text-photograph = This is a photograph of another photograph.
+
+uplink-travel-camera-name = Travel Camera
+
+uplink-travel-camera-desc = Stun people with your photography skills and the conveniently legal camera flash. Makes you look like a tourist.
+
 selectable-lock-verb-category-name = Add lock
 
 selectable-lock-tool-prying-verb = Tool Lock (Crowbar)
