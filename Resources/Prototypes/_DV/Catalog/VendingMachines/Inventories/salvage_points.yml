@@ -143,7 +143,7 @@
     cost: 3500
   - id: MiningDrillDiamond
     cost: 4000 #Mostly for flexing
-  - id: ClothingModsuitMining # Gabystation edit
+  - id: ClothingModsuitMiningPowerCell # Gabystation edit
     cost: 7000
   - id: CrateCargoClarkeAssembly
     cost: 12500 #TODO: Make modules real (Gabystation kk isso foi feito :D)
