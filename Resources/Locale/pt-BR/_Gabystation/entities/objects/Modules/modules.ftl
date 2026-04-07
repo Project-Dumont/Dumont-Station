@@ -48,4 +48,4 @@ ent-ModsuitModuleBluespaceStorage = módulo de armazenamento de bluespace
     .desc = Um módulo de armazenamento de bluespace para ser inserido no slot de controle de uma MODsuit. Ele fornece um espaço de armazenamento grande para o usuário, usando tecnologia de bluespace para armazenar itens.
 
 ent-ModsuitModuleSyndicateStorage = módulo de armazenamento do sindicato
-    .desc = Um módulo de armazenamento do sindicato para ser inserido no slot de controle de uma MODsuit. Ele comprime itens dentro com tecnologia da Cybersun, permitindo armazenamento superior em comparisão com mochilas bluespace.
+    .desc = Um módulo de armazenamento do sindicato para ser inserido no slot de controle de uma MODsuit. Ele comprime itens dentro com tecnologia da Cybersun, permitindo armazenamento superior em comparação com mochilas bluespace.
