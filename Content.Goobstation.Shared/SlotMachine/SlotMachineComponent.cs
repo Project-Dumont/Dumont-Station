@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2026 AlgumCorrupto <pauloarturvillaca@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
 //
@@ -41,13 +42,13 @@ public sealed partial class SlotMachineComponent : Component
     #region Chances
 
     [DataField, AutoNetworkedField]
-    public float SmallWinChance = .20f;
+    public float SmallWinChance = .25f;
 
     [DataField, AutoNetworkedField]
-    public float MediumWinChance = .10f;
+    public float MediumWinChance = .15f;
 
     [DataField, AutoNetworkedField]
-    public float BigWinChance = .05f;
+    public float BigWinChance = .10f;
 
     [DataField, AutoNetworkedField]
     public float JackPotWinChance = .01f;
