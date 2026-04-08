@@ -38,7 +38,7 @@
   - type: Sprite
     sprite: Clothing/Shoes/Boots/cowboybootswhite.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/cowboybootswhite.rsi  
+    sprite: Clothing/Shoes/Boots/cowboybootswhite.rsi
 
 - type: entity
   parent: ClothingShoesBootsCowboyBrownBad
@@ -66,3 +66,45 @@
       params:
         volume: -6
         variation: 0.09
+
+- type: entity
+  parent: [BaseSecurityContraband, ClothingShoesBootsMagBase]
+  id: SecurityMagboots
+  name: security magboots
+  description: Standard issue magboots for security officers.
+  components:
+  - type: Matchbox
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-boots-sidearm
+        whitelist:
+          tags:
+          - Knife
+          - Sidearm
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.5
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.1
+      OrganDamage: 0.1
+      BoneDamage: 0.1
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+  - type: Sprite
+    sprite: _Gabystation/Clothing/Shoes/secmag.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: _Gabystation/Clothing/Shoes/secmag.rsi
+  - type: FootstepModifier # GabyStation
+    footstepSoundCollection:
+      collection: BootStomp

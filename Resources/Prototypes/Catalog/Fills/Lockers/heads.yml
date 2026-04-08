@@ -572,6 +572,7 @@
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
+    - id: SecurityMagboots
 
 # No hardsuit locker
 - type: entity

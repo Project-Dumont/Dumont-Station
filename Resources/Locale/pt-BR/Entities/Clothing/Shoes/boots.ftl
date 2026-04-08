@@ -37,3 +37,5 @@ ent-ClothingShoesHighheelBootsCombat = botas de salto-alto de combate
 ent-ClothingShoesHighheelBootsCombatFilled = botas de salto-alto de combate
     .desc = Botas elegantes para quando você quer se sentir estilosa, mas preparada para o combate. Estas são de acabamento topo de linha, espaço para armas laterais incluso.
 
+ent-SecurityMagboots = botas magnéticas de segurança
+    .desc = Botas magnéticas padrão para oficiais de segurança.
