@@ -63,7 +63,7 @@
     dropItems: true # Goob edit
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    bluntStaminaDamageFactor: 5
+    bluntStaminaDamageFactor: 4
     angle: 0 # Goob edit
     damage:
       types:
