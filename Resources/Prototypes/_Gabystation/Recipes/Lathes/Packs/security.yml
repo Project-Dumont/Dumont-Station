@@ -16,3 +16,4 @@
   recipes:
   - ModsuitModuleSecHudRecipe
   - ModsuitModuleInjectorRecipe
+  - ModsuitPlatingSecurityRecipe

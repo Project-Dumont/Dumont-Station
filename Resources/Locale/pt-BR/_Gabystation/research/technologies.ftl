@@ -6,3 +6,4 @@ research-technology-mining-modules = Módulos de mineração
 research-technology-medical-modules = Módulos médicos
 research-technology-advanced-modules = Módulos avançados
 research-technology-Service-modules = Módulos de serviço
+research-technology-modsuit-plating = Blindagens de MODsuit

@@ -315,7 +315,16 @@ public abstract class SharedStorageSystem : EntitySystem
     {
         var uid = entity.Owner;
         var coordinates = TransformSystem.GetMoverCoordinates(uid);
-        ContainerSystem.EmptyContainer(entity.Comp.Container, destination: coordinates);
+
+        if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
+        {
+            ContainerSystem.EmptyContainer(entity.Comp.Container, force: true, destination: coordinates, reparent: false);
+        }
+        else
+        {
+            ContainerSystem.EmptyContainer(entity.Comp.Container, destination: coordinates);
+        }
+
         UI.CloseUi(uid, StorageComponent.StorageUiKey.Key);
     }
 
@@ -783,7 +792,7 @@ public abstract class SharedStorageSystem : EntitySystem
         var coordinates = TransformSystem.GetMoverCoordinates(uid);
 
         // Being destroyed so need to recalculate.
-        ContainerSystem.EmptyContainer(storageComp.Container, destination: coordinates);
+        ContainerSystem.EmptyContainer(storageComp.Container, force: true, destination: coordinates, reparent: false);
     }
 
     /// <summary>

@@ -14,7 +14,7 @@
 
 # The Modsuit Itself, This is just a Deathsquad modsuit, but reskined for CC Officials
 - type: entity
-  parent: [ ClothingModsuitStandardNoStorage, BaseSyndicateContraband ]
+  parent: [ ClothingModsuitStandard, BaseSyndicateContraband ]
   id: ClothingModsuitContractor
   name: Contractor modsuit control unit
   description: The main controller for a Contractor modsuit.
@@ -52,6 +52,8 @@
           type: ChameleonBoundUserInterface
         enum.ToggleClothingUiKey.Key:
           type: ToggleableClothingBoundUserInterface
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
     - type: ExplosionResistance
       damageCoefficient: 0.1
 

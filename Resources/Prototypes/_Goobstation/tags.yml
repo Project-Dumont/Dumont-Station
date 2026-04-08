@@ -114,7 +114,7 @@
 
 - type: Tag
   id: CannotSuicideAny
-  
+
 - type: Tag
   id: Chair
 
@@ -448,6 +448,27 @@
 
 - type: Tag
   id: ModsuitPlatingExternal
+
+- type: Tag
+  id: ModsuitPlatingAtmostech
+
+- type: Tag
+  id: ModsuitPlatingCaptain
+
+- type: Tag
+  id: ModsuitPlatingEngineer
+
+- type: Tag
+  id: ModsuitPlatingHeadOfSecurity
+
+- type: Tag
+  id: ModsuitPlatingParamedic
+
+- type: Tag
+  id: ModsuitPlatingRD
+
+- type: Tag
+  id: ModsuitPlatingSecurity
 
 - type: Tag
   id: ModsuitShell
