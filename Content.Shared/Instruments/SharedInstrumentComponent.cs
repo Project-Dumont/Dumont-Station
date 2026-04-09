@@ -23,6 +23,7 @@
 // SPDX-FileCopyrightText: 2025 krusti <krusti@fluffytech.xyz>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: MIT
 
 using System.Collections;
@@ -60,6 +61,30 @@ public abstract partial class SharedInstrumentComponent : Component
 
     [ViewVariables]
     public BitArray FilteredChannels { get; set; } = new(RobustMidiEvent.MaxChannels, true);
+
+    public static bool[] SerializeFilteredChannels(BitArray filteredChannels)
+    {
+        var channels = new bool[filteredChannels.Length];
+        filteredChannels.CopyTo(channels, 0);
+        return channels;
+    }
+
+    public static BitArray DeserializeFilteredChannels(bool[]? filteredChannels)
+    {
+        var channels = new BitArray(RobustMidiEvent.MaxChannels, false);
+
+        if (filteredChannels == null)
+            return channels;
+
+        var count = Math.Min(filteredChannels.Length, RobustMidiEvent.MaxChannels);
+
+        for (var i = 0; i < count; i++)
+        {
+            channels[i] = filteredChannels[i];
+        }
+
+        return channels;
+    }
 }
 
 /// <summary>
@@ -91,7 +116,7 @@ public sealed class InstrumentComponentState : ComponentState
 
     public NetEntity? Master;
 
-    public BitArray FilteredChannels = default!;
+    public bool[] FilteredChannels = default!;
 }
 
 

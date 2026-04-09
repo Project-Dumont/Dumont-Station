@@ -20,6 +20,7 @@
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Chemistry.Reaction;
@@ -30,6 +31,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Goobstation.Maths.FixedPoint;
 
 namespace Content.IntegrationTests.Tests.Chemistry
 {
@@ -123,18 +125,30 @@ namespace Content.IntegrationTests.Tests.Chemistry
 
                 await server.WaitAssertion(() =>
                 {
+                    var expectedProducts = reactionPrototype.Products
+                        .Concat(reactionPrototype.Reactants.Where(x => x.Value.Catalyst)
+                            .ToDictionary(x => x.Key, x => x.Value.Amount))
+                        .ToDictionary(x => x.Key, x => x.Value);
+
+                    // Some valid reactions only create entities/effects and intentionally leave no solution products.
+                    if (expectedProducts.Count == 0)
+                        return;
+
                     //you just got linq'd fool
                     //(i'm sorry)
-                    var foundProductsMap = reactionPrototype.Products
-                        .Concat(reactionPrototype.Reactants.Where(x => x.Value.Catalyst).ToDictionary(x => x.Key, x => x.Value.Amount))
-                        .ToDictionary(x => x, _ => false);
+                    var foundProductsMap = expectedProducts.ToDictionary(x => x, _ => false);
                     foreach (var (reagent, quantity) in solution.Contents)
                     {
-                        Assert.That(foundProductsMap.TryFirstOrNull(x => x.Key.Key == reagent.Prototype && x.Key.Value == quantity, out var foundProduct));
+                        Assert.That(foundProductsMap.TryFirstOrNull(
+                                x => x.Key.Key == reagent.Prototype &&
+                                     FixedPoint2.Abs(x.Key.Value - quantity) <= FixedPoint2.Epsilon,
+                                out var foundProduct),
+                            Is.True,
+                            $"Unexpected reagent state after reaction {reactionPrototype.ID}: found {reagent.Prototype} x {quantity}");
                         foundProductsMap[foundProduct.Value.Key] = true;
                     }
 
-                    Assert.That(foundProductsMap.All(x => x.Value));
+                    Assert.That(foundProductsMap.All(x => x.Value), Is.True, $"Reaction {reactionPrototype.ID} did not produce all expected reagents.");
                 });
 
             }

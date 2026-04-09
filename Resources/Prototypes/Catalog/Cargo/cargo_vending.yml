@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2023 Alex <129697969+Lomcastar@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 DoubleRiceEddiedd <149714181+DoubleRiceEddiedd@users.noreply.github.com>
@@ -90,7 +91,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockClothesFilled
-  cost: 5300
+  cost: 8500
   category: cargoproduct-category-name-service
   group: market
 
@@ -120,7 +121,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockCondimentStationFilled
-  cost: 300
+  cost: 350
   category: cargoproduct-category-name-service
   group: market
 
@@ -230,7 +231,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockSeedsFilled
-  cost: 3600
+  cost: 3700
   category: cargoproduct-category-name-hydroponics
   group: market
 
@@ -260,7 +261,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockRoboticsFilled
-  cost: 1700 # Shitmed - was 1600, surgery tools increased it
+  cost: 1800 # Shitmed - was 1600, surgery tools increased it
   category: cargoproduct-category-name-science
   group: market
 

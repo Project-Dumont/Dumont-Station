@@ -1,9 +1,12 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 - type: entity
   parent: BaseItem
   id: MaterialWatcherWing
   name: watcher's wing
   description: They are tough and yet easily merge together, it should be a great material for new tools.
   components:
+  - type: StaticPrice
+    price: 0
   - type: Sprite
     sprite: _Lavaland/Objects/Materials/watcher.rsi
     layers:
@@ -44,6 +47,8 @@
   name: watcher's magma wing
   description: A wing with magma flowing inside. They are tough and yet easily merge together, it should be a great material for new tools.
   components:
+  - type: StaticPrice
+    price: 0
   - type: Sprite
     sprite: _Lavaland/Objects/Materials/watcher.rsi
     layers:
@@ -85,6 +90,8 @@
   name: watcher's ice wing
   description: A wing that is made out of ice, but it somehow refuses to melt. They are tough and yet easily merge together, it should be a great material for new tools.
   components:
+  - type: StaticPrice
+    price: 0
   - type: Sprite
     sprite: _Lavaland/Objects/Materials/watcher.rsi
     layers:
@@ -126,6 +133,8 @@
   name: legion skull
   description: A grey deformed skull of a long gone humanoid. Just for a brief moment, you felt like it is staring right at your soul.
   components:
+  - type: StaticPrice
+    price: 0
   - type: Sprite
     sprite: _Lavaland/Objects/Materials/legion.rsi
     layers:

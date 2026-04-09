@@ -1,7 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<!-- ported by Punker Corps <punkercorps@gmail.com> -->
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Content.Goobstation.Maths</RootNamespace>
@@ -9,7 +10,9 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Content.ModuleManager\Content.ModuleManager.csproj" />
-      <ProjectReference Include="..\RobustToolbox\Robust.Shared\Robust.Shared.csproj" />
     </ItemGroup>
 
+  <Import Project="..\RobustToolbox\Imports\Shared.props" />
+    <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>
+

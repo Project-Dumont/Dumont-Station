@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
 # SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
@@ -22,7 +23,6 @@
         - sprite: Mobs/Species/Human/parts.rsi
           state: full
         - state: ai
-    - type: Timer
     - type: TimedSpawner
       prototypes:
         - MobSpirate
@@ -43,7 +43,6 @@
         - sprite: Mobs/Animals/mouse.rsi
           state: icon-2
         - state: timed
-    - type: Timer
     - type: TimedSpawner
       prototypes:
         - SpawnMobMouse # Goobstation

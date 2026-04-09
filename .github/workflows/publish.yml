@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
 # SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
 # SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
@@ -55,7 +56,7 @@ jobs:
       if: env.skip == 'false'
       uses: actions/setup-dotnet@v3.2.0
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: 10.0.x
 
     - name: Get Engine Tag
       run: |

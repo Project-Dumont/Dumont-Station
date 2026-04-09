@@ -28,7 +28,7 @@ public sealed class DesignTimeContextFactorySqlite : IDesignTimeDbContextFactory
     public SqliteServerDbContext CreateDbContext(string[] args)
     {
 #if !USE_SYSTEM_SQLITE
-        raw.SetProvider(new SQLite3Provider_e_sqlite3());
+        Batteries_V2.Init();
 #endif
 
         var optionsBuilder = new DbContextOptionsBuilder<SqliteServerDbContext>();

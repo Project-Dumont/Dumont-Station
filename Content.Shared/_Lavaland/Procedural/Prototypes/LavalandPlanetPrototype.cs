@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Prototypes;
+// ported by Punker Corps <punkercorps@gmail.com>
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lavaland.Procedural.Prototypes;
 
@@ -10,7 +11,7 @@ public sealed partial class LavalandMapPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
     public ProtoId<LavalandPlanetPrototype> Planet = "Lavaland";

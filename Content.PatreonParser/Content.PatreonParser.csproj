@@ -4,6 +4,7 @@ SPDX-FileCopyrightText: 2024 Nikolai Korolev <CrafterKolyan@mail.ru>
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 
+ported by Punker Corps <punkercorps@gmail.com>
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
@@ -11,7 +12,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
       <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>

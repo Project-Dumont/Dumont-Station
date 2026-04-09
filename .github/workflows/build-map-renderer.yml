@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
 # SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
@@ -59,7 +60,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4.1.0
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       - name: Install dependencies
         run: dotnet restore

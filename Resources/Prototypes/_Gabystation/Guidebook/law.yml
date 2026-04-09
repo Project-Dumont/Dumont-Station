@@ -1,11 +1,4 @@
-- type: guideEntry
-  id: mainSpaceLaw
-  name: guide-entry-rules-space-law
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
-  children:
-  - SpaceLawCrimeList
-  - MartialLaw
-
+# ported by Punker Corps <punkercorps@gmail.com>
 - type: guideEntry
   id: MartialLaw
   name: guide-entry-martiallaw

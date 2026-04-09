@@ -1,3 +1,4 @@
+// ported by Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared._Funkystation.Atmos.HFR;
@@ -5,7 +6,7 @@ using Content.Shared._Funkystation.Atmos.HFR;
 namespace Content.Shared._Funkystation.Atmos.Prototypes
 {
     [Prototype("fusionRecipe")]
-    public sealed class FusionRecipePrototype : IPrototype
+    public sealed partial class FusionRecipePrototype : IPrototype
     {
         [IdDataField]
         public string ID { get; private set; } = default!;

@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 #
@@ -36,3 +37,17 @@
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: AdministrativeAssistantChameleonOutfit
+  job: AdministrativeAssistant
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesHudCommand
+    ears: ClothingHeadsetAdminAssistant
+    belt: ClothingBeltPaperwork
+    id: AdminAssistantPDA
+    jumpsuit: ClothingUniformJumpsuitAdminAssistant
+    shoes: ClothingShoesBootsLaceup
+    outerClothing: ClothingOuterVestBartender
+    gloves: ClothingHandsGlovesLatex

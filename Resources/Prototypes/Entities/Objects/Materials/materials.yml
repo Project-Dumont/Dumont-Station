@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@gmail.com>
 # SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
 # SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
@@ -118,6 +119,8 @@
   id: MaterialBase
   description: A raw material.
   components:
+  - type: StaticPrice
+    price: 0
   - type: Sprite
     sprite: Objects/Materials/materials.rsi
   - type: Item

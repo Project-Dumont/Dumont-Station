@@ -1,4 +1,5 @@
-﻿<Project>
+<!-- ported by Punker Corps <punkercorps@gmail.com> -->
+<Project>
   <Import Project="RobustToolbox/Directory.Packages.props" />
   <ItemGroup>
     <!--
@@ -18,6 +19,9 @@
     <PackageVersion Include="NetCord" Version="1.0.0-alpha.388" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
     <PackageVersion Include="OpenTK" Version="4.7.2" />
+    <PackageVersion Include="OpenTK.Graphics" Version="4.9.4" />
+    <PackageVersion Include="OpenTK.Mathematics" Version="4.9.4" />
+    <PackageVersion Include="OpenTK.Windowing.Desktop" Version="4.9.4" />
     <PackageVersion Include="Veldrid" Version="4.8.0" />
     <PackageVersion Include="Veldrid.SPIRV" Version="1.0.15" />
   </ItemGroup>

@@ -7,6 +7,7 @@
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -87,7 +88,7 @@ public sealed partial class ComboPrototype : IPrototype
 [Prototype("comboList")]
 public sealed partial class ComboListPrototype : IPrototype
 {
-    [IdDataField] public string ID { get; private init; } = default!;
+    [IdDataField] public string ID { get; private set; } = default!;
 
     [DataField( required: true)]
     public List<ProtoId<ComboPrototype>> Combos = new();

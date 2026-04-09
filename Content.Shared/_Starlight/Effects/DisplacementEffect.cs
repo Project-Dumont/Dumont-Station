@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Rinary <rinary.super@gmail.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System;
@@ -19,7 +20,7 @@ namespace Content.Shared._Starlight.Effects;
 [Prototype("displacementEffect")]
 public sealed partial class DisplacementEffect : IPrototype
 {
-    [IdDataField] public string ID { get; } = null!;
+    [IdDataField] public string ID { get; private set; } = null!;
 
     [DataField("displacement", required: true)] public DisplacementData Displacement = null!;
 }

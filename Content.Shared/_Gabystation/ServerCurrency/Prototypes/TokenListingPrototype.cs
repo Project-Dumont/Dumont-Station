@@ -7,6 +7,7 @@
 // SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -14,7 +15,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 [Prototype]
-public sealed class TokenListingPrototype : IPrototype
+public sealed partial class TokenListingPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

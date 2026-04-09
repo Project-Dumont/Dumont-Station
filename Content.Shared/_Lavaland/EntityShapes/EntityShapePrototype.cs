@@ -1,4 +1,5 @@
-﻿using Content.Shared._Lavaland.EntityShapes.Shapes;
+// ported by Punker Corps <punkercorps@gmail.com>
+using Content.Shared._Lavaland.EntityShapes.Shapes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lavaland.EntityShapes;
@@ -11,7 +12,7 @@ public sealed partial class EntityShapePrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
     public EntityShape Shape = default!;

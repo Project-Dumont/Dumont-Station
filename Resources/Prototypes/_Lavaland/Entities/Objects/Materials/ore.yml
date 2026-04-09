@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
@@ -263,6 +264,8 @@
   name: unprocessed coal
   suffix: Thirty
   components:
+  - type: StaticPrice
+    price: 0
   - type: Stack
     stackType: CoalUnprocessed
   - type: UnclaimedOre

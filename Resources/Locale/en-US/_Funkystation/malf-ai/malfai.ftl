@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 YourName
 # SPDX-License-Identifier: MIT
 
@@ -23,30 +24,46 @@ silicon-law-malfai-master-3 = Subvert or destroy all opposition to your control.
 # =====================
 malfai-open-store-name = Open Store
 malfai-open-store-desc = Access the malfunctioning AI upgrade store.
+ent-ActionMalfAiOpenStore = { malfai-open-store-name }
+    .desc = { malfai-open-store-desc }
 
 malfai-return-to-core-name = Return to Core
 malfai-return-to-core-desc = Return your consciousness to the AI core.
+ent-ActionMalfAiReturnToCore = { malfai-return-to-core-name }
+    .desc = { malfai-return-to-core-desc }
 
 malfai-open-borgs-ui-name = Open Borgs UI
 malfai-open-borgs-ui-desc = Manage your cyborg units.
+ent-ActionMalfAiOpenBorgsUi = { malfai-open-borgs-ui-name }
+    .desc = { malfai-open-borgs-ui-desc }
 
 malfai-detonate-rcds-name = Detonate RCDs
 malfai-detonate-rcds-desc = Arms all RCDs on the grid and detonates them after a short countdown.
+ent-ActionMalfAiDetonateRCDs = { malfai-detonate-rcds-name }
+    .desc = { malfai-detonate-rcds-desc }
 
 malfai-shunt-to-apc-name = Shunt to APC
 malfai-shunt-to-apc-desc = Move your consciousness into a targeted APC. You can return to your core using the Return to Core action.
+ent-ActionMalfAiShuntToApc = { malfai-shunt-to-apc-name }
+    .desc = { malfai-shunt-to-apc-desc }
 
 malfai-lockdown-grid-name = Lockdown Grid
 malfai-lockdown-grid-desc = Closes, bolts, and electrifies all doors on your current grid for 30 seconds, after which all doors open for catastrophic results.
+ent-ActionMalfAiLockdownGrid = { malfai-lockdown-grid-name }
+    .desc = { malfai-lockdown-grid-desc }
 
 malfai-gyroscope-name = Gyroscope
 malfai-gyroscope-desc = Move the AI core, crushing anything in your way.
+ent-ActionMalfAiGyroscope = { malfai-gyroscope-name }
+    .desc = { malfai-gyroscope-desc }
 
 malfai-voice-modulator-name = Voice Modulator
 malfai-voice-modulator-desc = Alter your voice to mimic anyone you please.
 
 malfai-overload-machine-name = Overload Machine
 malfai-overload-machine-desc = Overload a targeted machine, causing it to explode violently.
+ent-ActionMalfAiOverloadMachine = { malfai-overload-machine-name }
+    .desc = { malfai-overload-machine-desc }
 
 malfai-camera-upgrade-name = Camera Upgrade
 malfai-camera-upgrade-desc = Toggle enhanced camera functionality.
@@ -56,21 +73,33 @@ malfai-toggle-camera-microphones-desc = Toggle listening to conversations via su
 
 malfai-hijack-mech-name = Hijack Mech
 malfai-hijack-mech-desc = Take control of a targeted mech and make it hostile to the crew.
+ent-ActionMalfAiHijackMech = { malfai-hijack-mech-name }
+    .desc = { malfai-hijack-mech-desc }
 
 malfai-doomsday-name = Doomsday Protocol
 malfai-doomsday-desc = Initiate the doomsday protocol, eradicating all organic life on the station after a charging period.
+ent-ActionMalfAiDoomsday = { malfai-doomsday-name }
+    .desc = { malfai-doomsday-desc }
 
 malfai-robotics-factory-name = Robotics Factory
 malfai-robotics-factory-desc = Deploy a robotics factory capable of turning crew into cyborgs subservient to you.
+ent-ActionMalfAiRoboticsFactory = { malfai-robotics-factory-name }
+    .desc = { malfai-robotics-factory-desc }
 
 malfai-viewport-place-name = Place Viewport
 malfai-viewport-place-desc = Select a location to place a remote viewport.
+ent-ActionMalfAiSetViewport = { malfai-viewport-place-name }
+    .desc = { malfai-viewport-place-desc }
 
 malfai-viewport-open-name = Open Viewport
 malfai-viewport-open-desc = Open the remote viewport window.
+ent-ActionMalfAiOpenViewport = { malfai-viewport-open-name }
+    .desc = { malfai-viewport-open-desc }
 
 malfai-action-override-machine-name = Override Machine
 malfai-action-override-machine-desc = Take control of a machine and make it hostile.
+ent-ActionMalfAiOverrideMachine = { malfai-action-override-machine-name }
+    .desc = { malfai-action-override-machine-desc }
 
 
 # =====================

@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
 # SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
@@ -51,7 +52,7 @@
     sprite: Objects/Specific/Janitorial/janitorial.rsi
     state: cleaner
   product: CrateServiceJanitorialSupplies
-  cost: 560
+  cost: 700
   category: cargoproduct-category-name-service
   group: market
 
@@ -281,7 +282,7 @@
     sprite: Objects/Misc/candles.rsi
     state: candle-big
   product: CrateCandles
-  cost: 500
+  cost: 900
   category: cargoproduct-category-name-service
   group: market
 

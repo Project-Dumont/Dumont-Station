@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 - type: entity
   id: RatDen
   name: rat den
@@ -15,7 +16,6 @@
         Toxin: -3
         Genetic: -3
     delay: 9
-  - type: Timer
   - type: TimedSpawner
     prototypes:
     - MobMadRat

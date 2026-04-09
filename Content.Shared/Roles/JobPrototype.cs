@@ -100,6 +100,7 @@
 // SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Access;
@@ -140,7 +141,7 @@ namespace Content.Shared.Roles
         public string LocalizedName => Loc.GetString(Name);
 
         [DataField]
-        public HashSet<ProtoId<JobAlternateTitlePrototype>> AlternateTitles { get; private set; } = default!;
+        public HashSet<ProtoId<JobAlternateTitlePrototype>> AlternateTitles { get; private set; } = new();
 
         /// <summary>
         ///     The name of this job as displayed to players.

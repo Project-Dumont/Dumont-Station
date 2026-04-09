@@ -37,6 +37,7 @@
 // SPDX-FileCopyrightText: 2025 krusti <krusti@fluffytech.xyz>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -118,7 +119,7 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
             AllowProgramChange = component.AllowProgramChange,
             RespectMidiLimits = component.RespectMidiLimits,
             Master = GetNetEntity(component.Master),
-            FilteredChannels = component.FilteredChannels
+            FilteredChannels = SharedInstrumentComponent.SerializeFilteredChannels(component.FilteredChannels)
         };
     }
 

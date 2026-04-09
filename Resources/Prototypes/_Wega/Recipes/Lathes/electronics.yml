@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: DnaModifierComputerCircuitboard
@@ -7,5 +8,5 @@
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: MedicalScannerMachineCircuitboard
-  icon: Structures/Machines/scanner.rsi/open.png
+  icon: { sprite: Structures/Machines/scanner.rsi, state: open }
   result: MedicalScannerMachineCircuitboard

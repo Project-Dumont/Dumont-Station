@@ -61,6 +61,7 @@
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Collections.Generic;
@@ -83,6 +84,8 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed class CargoTest
 {
+    private const double BaseItemNominalPrice = 10;
+
     private static readonly HashSet<ProtoId<CargoProductPrototype>> Ignored =
     [
         // This is ignored because it is explicitly intended to be able to sell for more than it costs.
@@ -186,12 +189,20 @@ public sealed class CargoTest
 
                 if (proto.TryGetComponent<StackPriceComponent>(out var stackPriceComp, compFact) && stackPriceComp.Price > 0)
                 {
+                    // GabyStation assigns a nominal fallback price on BaseItem for its economy hooks.
+                    // Stack-priced items are still valid as long as they don't introduce an additional non-default static price.
+                    if (staticPriceComp.Price == BaseItemNominalPrice)
+                        continue;
+
                     Assert.That(staticPriceComp.Price, Is.EqualTo(0),
                         $"The prototype {proto} has a StackPriceComponent and StaticPriceComponent whose values are not compatible with each other.");
                 }
 
                 if (proto.HasComponent<StackComponent>(compFact))
                 {
+                    if (staticPriceComp.Price == BaseItemNominalPrice)
+                        continue;
+
                     Assert.That(staticPriceComp.Price, Is.EqualTo(0),
                         $"The prototype {proto} has a StackComponent and StaticPriceComponent whose values are not compatible with each other.");
                 }

@@ -22,6 +22,7 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Atmos.EntitySystems;
@@ -111,7 +112,7 @@ namespace Content.Server.Light.EntitySystems
             // Change state
             SetState((matchstick, component), SmokableState.Lit); // Shitmed Change
             _litMatches.Add(matchstick);
-            matchstick.Owner.SpawnTimer(component.Duration * 1000, delegate
+            Robust.Shared.Timing.Timer.Spawn(component.Duration * 1000, delegate
             {
                 SetState((matchstick, component), SmokableState.Burnt); // Shitmed Change
                 _litMatches.Remove(matchstick);

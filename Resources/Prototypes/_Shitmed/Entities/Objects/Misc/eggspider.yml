@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -10,7 +11,6 @@
   name: spider egg
   description: Is it a gemstone? Is it an egg? It looks expensive.
   components:
-  - type: Timer
   - type: TimedSpawner
     prototypes:
     - MobGiantSpider

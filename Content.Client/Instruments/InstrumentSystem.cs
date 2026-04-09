@@ -25,6 +25,7 @@
 // SPDX-FileCopyrightText: 2025 krusti <43324723+Topicranger@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 krusti <krusti@fluffytech.xyz>
 //
+// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -101,7 +102,7 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
         component.AllowProgramChange = state.AllowProgramChange;
         component.RespectMidiLimits = state.RespectMidiLimits;
         component.Master = EnsureEntity<InstrumentComponent>(state.Master, uid);
-        component.FilteredChannels = state.FilteredChannels;
+        component.FilteredChannels = SharedInstrumentComponent.DeserializeFilteredChannels(state.FilteredChannels);
 
         if (component.Playing)
             SetupRenderer(uid, true, component);

@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 YourName
 # SPDX-License-Identifier: MIT
 
@@ -23,30 +24,46 @@ silicon-law-malfai-master-3 = Subverta ou destrua toda oposição ao seu control
 # =====================
 malfai-open-store-name = Abrir Loja
 malfai-open-store-desc = Acesse a loja de aprimoramentos da IA malfuncional.
+ent-ActionMalfAiOpenStore = { malfai-open-store-name }
+    .desc = { malfai-open-store-desc }
 
 malfai-return-to-core-name = Retornar ao Núcleo
 malfai-return-to-core-desc = Retorne sua consciência ao núcleo da IA.
+ent-ActionMalfAiReturnToCore = { malfai-return-to-core-name }
+    .desc = { malfai-return-to-core-desc }
 
 malfai-open-borgs-ui-name = Abrir Interface dos Borgs
 malfai-open-borgs-ui-desc = Gerencie suas unidades ciborgues.
+ent-ActionMalfAiOpenBorgsUi = { malfai-open-borgs-ui-name }
+    .desc = { malfai-open-borgs-ui-desc }
 
 malfai-detonate-rcds-name = Detonar RCDs
 malfai-detonate-rcds-desc = Arma todos os RCDs na rede e os detona após uma curta contagem regressiva.
+ent-ActionMalfAiDetonateRCDs = { malfai-detonate-rcds-name }
+    .desc = { malfai-detonate-rcds-desc }
 
 malfai-shunt-to-apc-name = Transferir para APC
 malfai-shunt-to-apc-desc = Move sua consciência para um APC alvo. Você pode retornar ao seu núcleo usando a ação Retornar ao Núcleo.
+ent-ActionMalfAiShuntToApc = { malfai-shunt-to-apc-name }
+    .desc = { malfai-shunt-to-apc-desc }
 
 malfai-lockdown-grid-name = Bloquear Rede
 malfai-lockdown-grid-desc = Fecha, trava e eletrifica todas as portas da sua rede atual por 30 segundos, após o qual todas se abrem com resultados catastróficos.
+ent-ActionMalfAiLockdownGrid = { malfai-lockdown-grid-name }
+    .desc = { malfai-lockdown-grid-desc }
 
 malfai-gyroscope-name = Giroscópio
 malfai-gyroscope-desc = Move o núcleo da IA, esmagando qualquer coisa no caminho.
+ent-ActionMalfAiGyroscope = { malfai-gyroscope-name }
+    .desc = { malfai-gyroscope-desc }
 
 malfai-voice-modulator-name = Modulador de Voz
 malfai-voice-modulator-desc = Altere sua voz para imitar quem quiser.
 
 malfai-overload-machine-name = Sobrecarga de Máquina
 malfai-overload-machine-desc = Sobrecarrega uma máquina alvo, fazendo-a explodir violentamente.
+ent-ActionMalfAiOverloadMachine = { malfai-overload-machine-name }
+    .desc = { malfai-overload-machine-desc }
 
 malfai-camera-upgrade-name = Aprimoramento de Câmeras
 malfai-camera-upgrade-desc = Alterna funcionalidades aprimoradas de câmera.
@@ -56,21 +73,33 @@ malfai-toggle-camera-microphones-desc = Alterna a escuta de conversas por meio d
 
 malfai-hijack-Mecha-name = Tomar Controle de Mecha
 malfai-hijack-Mecha-desc = Tome controle de um Mecha alvo e torne-o hostil à tripulação.
+ent-ActionMalfAiHijackMech = Tomar Controle de Mecha
+    .desc = Tome controle de um Mecha alvo e torne-o hostil à tripulação.
 
 malfai-doomsday-name = Protocolo DOOMSDAY
 malfai-doomsday-desc = Inicia o Protocolo DOOMSDAY, erradicando toda vida orgânica na estação após um período de carregamento.
+ent-ActionMalfAiDoomsday = { malfai-doomsday-name }
+    .desc = { malfai-doomsday-desc }
 
 malfai-robotics-factory-name = Fábrica de Robótica
 malfai-robotics-factory-desc = Implanta uma fábrica de robótica capaz de transformar tripulantes em ciborgues subservientes a você.
+ent-ActionMalfAiRoboticsFactory = { malfai-robotics-factory-name }
+    .desc = { malfai-robotics-factory-desc }
 
 malfai-viewport-place-name = Colocar Visor Remoto
 malfai-viewport-place-desc = Selecione um local para posicionar um visor remoto.
+ent-ActionMalfAiSetViewport = { malfai-viewport-place-name }
+    .desc = { malfai-viewport-place-desc }
 
 malfai-viewport-open-name = Abrir Visor Remoto
 malfai-viewport-open-desc = Abre a janela de visualização remota.
+ent-ActionMalfAiOpenViewport = { malfai-viewport-open-name }
+    .desc = { malfai-viewport-open-desc }
 
 malfai-action-override-machine-name = Sobrescrever Máquina
 malfai-action-override-machine-desc = Assuma o controle de uma máquina e torne-a hostil.
+ent-ActionMalfAiOverrideMachine = { malfai-action-override-machine-name }
+    .desc = { malfai-action-override-machine-desc }
 
 
 # =====================

@@ -1,3 +1,4 @@
+// ported by Punker Corps <punkercorps@gmail.com>
 using Content.Shared.Genetics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -5,7 +6,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Genetics;
 
 [Prototype, Access(typeof(SharedDnaModifierSystem))]
-public sealed class StructuralEnzymesPrototype : IPrototype
+public sealed partial class StructuralEnzymesPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; set; } = string.Empty;

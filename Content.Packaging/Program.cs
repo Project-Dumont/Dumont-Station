@@ -41,8 +41,25 @@ void WipeBin()
 {
     logger.Info("Clearing old build artifacts (if any)...");
 
-    if (Directory.Exists("bin"))
-        Directory.Delete("bin", recursive: true);
+    var outputDirs = new[]
+    {
+        Path.Combine("bin", "Content.Client"),
+        Path.Combine("bin", "Content.Server"),
+        Path.Combine("bin", "Content.IntegrationTests"),
+        Path.Combine("bin", "Content.Tests"),
+        Path.Combine("bin", "Content.MapRenderer"),
+        Path.Combine("bin", "Content.Replay"),
+        Path.Combine("bin", "Content.YAMLLinter"),
+        Path.Combine("bin", "Content.Server.Database"),
+        Path.Combine("RobustToolbox", "bin", "Client"),
+        Path.Combine("RobustToolbox", "bin", "Server"),
+        Path.Combine("RobustToolbox", "bin", "Benchmarks"),
+    };
+
+    foreach (var dir in outputDirs)
+    {
+        TryDeleteDirectory(dir);
+    }
 }
 
 void WipeRelease()
@@ -54,4 +71,41 @@ void WipeRelease()
     }
 
     Directory.CreateDirectory("release");
+}
+
+void TryDeleteDirectory(string path)
+{
+    if (!Directory.Exists(path))
+        return;
+
+    for (var attempt = 0; attempt < 3; attempt++)
+    {
+        try
+        {
+            Directory.Delete(path, recursive: true);
+            return;
+        }
+        catch (DirectoryNotFoundException)
+        {
+            return;
+        }
+        catch (IOException) when (attempt < 2)
+        {
+            Thread.Sleep(250);
+        }
+        catch (UnauthorizedAccessException) when (attempt < 2)
+        {
+            Thread.Sleep(250);
+        }
+        catch (IOException)
+        {
+            logger.Warning($"Skipping cleanup for locked build output '{path}'.");
+            return;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            logger.Warning($"Skipping cleanup for locked build output '{path}'.");
+            return;
+        }
+    }
 }

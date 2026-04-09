@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 #
@@ -40,6 +41,15 @@
         Quantity: 20
 
 - type: entity
+  id: GroinWaddler
+  name: "waddler groin"
+  parent: [PartWaddler, BaseWaddlerGroin]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "chest_m"
+
+- type: entity
   id: HeadWaddler
   name: "waddler head"
   parent: [PartWaddler, BaseHead]
@@ -54,6 +64,24 @@
         Quantity: 5
       - ReagentId: Blood
         Quantity: 10
+
+- type: entity
+  id: LeftArmWaddler
+  name: "left waddler arm"
+  parent: [PartWaddler, BaseWaddlerLeftArm]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightArmWaddler
+  name: "right waddler arm"
+  parent: [PartWaddler, BaseWaddlerRightArm]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "r_hand"
 
 - type: entity
   id: LeftHandWaddler
@@ -72,6 +100,24 @@
   - type: Sprite
     sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
     state: "r_hand"
+
+- type: entity
+  id: LeftLegWaddler
+  name: "left waddler leg"
+  parent: [PartWaddler, BaseWaddlerLeftLeg]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightLegWaddler
+  name: "right waddler leg"
+  parent: [PartWaddler, BaseWaddlerRightLeg]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
+    state: "r_foot"
 
 - type: entity
   id: LeftFootWaddler

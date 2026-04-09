@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
 # SPDX-FileCopyrightText: 2021 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
@@ -141,7 +142,7 @@
     sprite: Objects/Weapons/Guns/Rifles/foam_rifle.rsi
     state: icon
   product: CrateFunFoamGuns
-  cost: 3000
+  cost: 3500
   category: cargoproduct-category-name-fun
   group: market
 

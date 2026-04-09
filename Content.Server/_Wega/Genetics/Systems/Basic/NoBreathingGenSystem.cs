@@ -1,3 +1,4 @@
+// ported by Punker Corps <punkercorps@gmail.com>
 using Content.Server.Body.Components;
 using Content.Shared.Genetics;
 
@@ -21,6 +22,9 @@ public sealed class NoBreathingGenSystem : EntitySystem
 
     private void OnShutdown(Entity<NoBreathingGenComponent> ent, ref ComponentShutdown args)
     {
+        if (TerminatingOrDeleted(ent))
+            return;
+
         EnsureComp<RespiratorComponent>(ent);
     }
 }

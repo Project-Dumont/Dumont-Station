@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2022 Jack Fox <35575261+DubiousDoggo@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
 # SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
@@ -25,7 +26,31 @@
         amount: 2
         doAfter: 1
 
+    - to: filterAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: filterAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
     - to: filterflipped
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: filterflippedAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: filterflippedAlt2
       steps:
       - material: Steel
         amount: 2
@@ -88,6 +113,18 @@
         doAfter: 1
 
     - to: pneumaticvalve
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: pneumaticvalveAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: pneumaticvalveAlt2
       steps:
       - material: Steel
         amount: 2

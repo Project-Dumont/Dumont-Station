@@ -1,3 +1,4 @@
+# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
 # SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
@@ -24,6 +25,8 @@
   description: What?
   abstract: true
   components:
+    - type: StaticPrice
+      price: 0
     # Goobstation edit start
     - type: EmitSoundOnPickup
       sound:
