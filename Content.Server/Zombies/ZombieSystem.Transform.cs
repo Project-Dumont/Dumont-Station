@@ -102,7 +102,8 @@ using Content.Server.Animals.Components;
 using Content.Shared.Mech.Components;
 using Content.Shared.Rejuvenate; // Shitmed Change
 using Content.Shared.NPC.Prototypes;
-using Content.Shared.Mech.EntitySystems; // Goobstation
+using Content.Shared.Mech.EntitySystems;
+using Content.Shared._Gabystation.SmartZombie; // Goobstation
 
 namespace Content.Server.Zombies;
 
@@ -166,6 +167,8 @@ public sealed partial class ZombieSystem
         if (!Resolve(target, ref mobState, logMissing: false))
             return;
 
+        bool isSmartass = HasComp<SmartZombieComponent>(target);
+
         //you're a real zombie now, son.
         RaiseLocalEvent(target, new RejuvenateEvent(false, false)); // Shitmed Change
         var zombiecomp = AddComp<ZombieComponent>(target);
@@ -179,21 +182,25 @@ public sealed partial class ZombieSystem
         RemComp<ReproductiveComponent>(target);
         RemComp<ReproductivePartnerComponent>(target);
         RemComp<LegsParalyzedComponent>(target);
-        RemComp<ComplexInteractionComponent>(target);
-
-        //funny voice
+        if (!isSmartass)
+            RemComp<ComplexInteractionComponent>(target);
+        
+        // funny voice
         var accentType = "zombie";
         if (TryComp<ZombieAccentOverrideComponent>(target, out var accent))
             accentType = accent.Accent;
-
         EnsureComp<ReplacementAccentComponent>(target).Accent = accentType;
 
-        //This is needed for stupid entities that fuck up combat mode component
-        //in an attempt to make an entity not attack. This is the easiest way to do it.
-        var combat = EnsureComp<CombatModeComponent>(target);
-        RemComp<PacifiedComponent>(target);
-        _combat.SetCanDisarm(target, false, combat);
-        _combat.SetInCombatMode(target, true, combat);
+        if (!isSmartass)
+        {
+            //This is needed for stupid entities that fuck up combat mode component
+            //in an attempt to make an entity not attack. This is the easiest way to do it.
+            var combat = EnsureComp<CombatModeComponent>(target);
+            RemComp<PacifiedComponent>(target);
+            _combat.SetCanDisarm(target, false, combat);
+            _combat.SetInCombatMode(target, true, combat);
+        }
+
 
         //This is the actual damage of the zombie. We assign the visual appearance
         //and range here because of stuff we'll find out later
@@ -250,13 +257,16 @@ public sealed partial class ZombieSystem
             //This is done here because non-humanoids shouldn't get baller damage
             melee.Damage = zombiecomp.DamageOnBite;
 
-            // humanoid zombies get to pry open doors and shit
-            var pryComp = EnsureComp<PryingComponent>(target);
-            pryComp.SpeedModifier = 0.75f;
-            pryComp.PryPowered = true;
-            pryComp.Force = true;
+            if (!isSmartass)
+            {
+                // humanoid zombies get to pry open doors and shit
+                var pryComp = EnsureComp<PryingComponent>(target);
+                pryComp.SpeedModifier = 0.75f;
+                pryComp.PryPowered = true;
+                pryComp.Force = true;
 
-            Dirty(target, pryComp);
+                Dirty(target, pryComp);
+            }
         }
 
         Dirty(target, melee);
@@ -269,14 +279,15 @@ public sealed partial class ZombieSystem
         _bloodstream.SetBloodLossThreshold(target, 0f);
         //Give them zombie blood
         _bloodstream.ChangeBloodReagent(target, zombiecomp.NewBloodReagent);
+        if (!isSmartass)
+        {
 
-        //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
-        _inventory.TryUnequip(target, "gloves", true, true);
-        //Should prevent instances of zombies using comms for information they shouldnt be able to have.
-        _inventory.TryUnequip(target, "ears", true, true);
-
-        //popup
-        _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
+            //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
+            _inventory.TryUnequip(target, "gloves", true, true);
+            //Should prevent instances of zombies using comms for information they shouldnt be able to have.
+            _inventory.TryUnequip(target, "ears", true, true);
+            _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
+        }
 
         //Make it sentient if it's an animal or something
         _mind.MakeSentient(target);
@@ -290,48 +301,54 @@ public sealed partial class ZombieSystem
             _damageable.SetAllDamage(target, damageablecomp, 0);
         _mobState.ChangeMobState(target, MobState.Alive);
 
-        _faction.ClearFactions(target, dirty: false);
+        if (!isSmartass)
+        {
+            _faction.ClearFactions(target, dirty: false);
+            //gives it the funny "Zombie ___" name.
+            _nameMod.RefreshNameModifiers(target);
+            _identity.QueueIdentityUpdate(target);
+        }
+
         _faction.AddFaction(target, ZombieFaction);
 
-        //gives it the funny "Zombie ___" name.
-        _nameMod.RefreshNameModifiers(target);
-
-        _identity.QueueIdentityUpdate(target);
-
-        var htn = EnsureComp<HTNComponent>(target);
-        htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
-        htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
-        _npc.SleepNPC(target, htn);
-
-        //He's gotta have a mind
-        var hasMind = _mind.TryGetMind(target, out var mindId, out var mind);
-        if (hasMind && mind != null && _player.TryGetSessionById(mind.UserId, out var session))
+        if (!isSmartass)
         {
-            //Zombie role for player manifest
-            _role.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
+            var htn = EnsureComp<HTNComponent>(target);
+            htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
+            htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
+            _npc.SleepNPC(target, htn);
+            //He's gotta have a mind
+            var hasMind = _mind.TryGetMind(target, out var mindId, out var mind);
+            if (hasMind && mind != null && _player.TryGetSessionById(mind.UserId, out var session))
+            {
+                //Zombie role for player manifest
+                _role.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
 
-            //Greeting message for new bebe zombers
-            _chatMan.DispatchServerMessage(session, Loc.GetString("zombie-infection-greeting"));
+                //Greeting message for new bebe zombers
+                _chatMan.DispatchServerMessage(session, Loc.GetString("zombie-infection-greeting"));
 
-            // Notificate player about new role assignment
-            _audio.PlayGlobal(zombiecomp.GreetSoundNotification, session);
-        }
-        else
-        {
-            _npc.WakeNPC(target, htn);
-        }
+                // Notificate player about new role assignment
+                _audio.PlayGlobal(zombiecomp.GreetSoundNotification, session);
+            }
+            else
+            {
+                _npc.WakeNPC(target, htn);
+            }
 
-        if (!HasComp<GhostRoleMobSpawnerComponent>(target) && !hasMind) //this specific component gives build test trouble so pop off, ig
-        {
-            //yet more hardcoding. Visit zombie.ftl for more information.
-            var ghostRole = EnsureComp<GhostRoleComponent>(target);
-            EnsureComp<GhostTakeoverAvailableComponent>(target);
-            ghostRole.RoleName = Loc.GetString("zombie-generic");
-            ghostRole.RoleDescription = Loc.GetString("zombie-role-desc");
-            ghostRole.RoleRules = Loc.GetString("zombie-role-rules");
+            if (!HasComp<GhostRoleMobSpawnerComponent>(target) && !hasMind) //this specific component gives build test trouble so pop off, ig
+            {
+                //yet more hardcoding. Visit zombie.ftl for more information.
+                var ghostRole = EnsureComp<GhostRoleComponent>(target);
+                EnsureComp<GhostTakeoverAvailableComponent>(target);
+                ghostRole.RoleName = Loc.GetString("zombie-generic");
+                ghostRole.RoleDescription = Loc.GetString("zombie-role-desc");
+                ghostRole.RoleRules = Loc.GetString("zombie-role-rules");
+            }
         }
 
-        if (TryComp<HandsComponent>(target, out var handsComp))
+
+
+        if (TryComp<HandsComponent>(target, out var handsComp) && !isSmartass)
         {
             _hands.RemoveHands(target);
             RemComp(target, handsComp);
@@ -339,15 +356,20 @@ public sealed partial class ZombieSystem
 
         // Sloth: What the fuck?
         // How long until compregistry lmao.
-        RemComp<PullerComponent>(target);
+        if (!isSmartass)
+            RemComp<PullerComponent>(target);
 
         // No longer waiting to become a zombie:
         // Requires deferral because this is (probably) the event which called ZombifyEntity in the first place.
         RemCompDeferred<PendingZombieComponent>(target);
 
-        //zombie gamemode stuff
-        var ev = new EntityZombifiedEvent(target);
-        RaiseLocalEvent(target, ref ev, true);
+        if (!isSmartass)
+        {
+            //zombie gamemode stuff
+            var ev = new EntityZombifiedEvent(target);
+            RaiseLocalEvent(target, ref ev, true);
+        }
+
         //zombies get slowdown once they convert
         _movementSpeedModifier.RefreshMovementSpeedModifiers(target);
         if (TryComp<MechPilotComponent>(target, out var mechPilotComponent)) // Goobstation - kick out zombies from mechs on conversion

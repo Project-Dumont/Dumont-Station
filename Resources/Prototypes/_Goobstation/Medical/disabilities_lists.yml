@@ -27,3 +27,4 @@
     - type: SocialAnxiety
     - type: TileMovement
     - type: Unrevivable
+    - type: SmartZombie

@@ -117,3 +117,11 @@
   category: Disabilities
   components:
   - type: PainNumbness
+
+- type: trait
+  id: SmartZombie
+  name: smart-zombie-name
+  description: smart-zombie-desc
+  category: Disabilities
+  components:
+  - type: SmartZombie
