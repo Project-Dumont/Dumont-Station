@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2020 JiimBob <44332255+JiimBob@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
 // SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
