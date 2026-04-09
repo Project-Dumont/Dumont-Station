@@ -49,7 +49,7 @@
 # SPDX-FileCopyrightText: 2025 yavuz <58685802+yahay505@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-#
+
 - type: entity
   id: BaseShutter
   parent: BaseStructure
@@ -59,6 +59,16 @@
   placement:
     mode: SnapgridCenter
   components:
+  # <Trauma>
+  - type: ApcPowerReceiver
+    load: 20
+  - type: ExtensionCableReceiver
+  - type: PoweredDoor # no Airlock so copy this 1 thing
+  - type: PryUnpowered
+    pryModifier: 0.6 # it's not hard to raise shutters
+  - type: SoundBlocker
+    soundBlockPercent: 0.5
+  # </Trauma>
   - type: StationAiWhitelist
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters.rsi
@@ -166,16 +176,8 @@
     interactSuccessSound:
       collection: FenceRattle
   - type: BlockWeather
-  - type: InteractionVerbs # EE: Interaction Verbs
-    allowedVerbs:
-    - KnockOn
-  - type: WeldingSparksAnimation # Goobstation
-    startingOffset: -0.5, -0.5
-    endingOffset: 0.5, -0.5
   - type: SoundBlocker # Trauma
     soundBlockPercent: 0.5
-  - type: AccessReader # Dumont edit
-    containerAccessProvider: board
 
 - type: entity
   id: ShuttersNormal
