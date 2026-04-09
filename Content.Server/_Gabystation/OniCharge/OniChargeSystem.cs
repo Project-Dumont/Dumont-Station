@@ -1,4 +1,4 @@
-// # SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,6 +16,8 @@ namespace Content.Server._Gabystation.OniCharge;
 
 public sealed class OniChargeSystem : EntitySystem
 {
+    private const string OniChargeActionPrototype = "ActionOniCharge";
+
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
 
@@ -33,6 +35,9 @@ public sealed class OniChargeSystem : EntitySystem
     private void OnDashAction(Entity<OniChargeComponent> ent, ref DashActionEvent args)
     {
         if (args.Performer != ent.Owner)
+            return;
+
+        if (MetaData(args.Action).EntityPrototype?.ID != OniChargeActionPrototype)
             return;
 
         ent.Comp.PendingCharge = true;
