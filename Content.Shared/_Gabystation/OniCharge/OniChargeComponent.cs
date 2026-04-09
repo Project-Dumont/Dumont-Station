@@ -25,5 +25,11 @@ public sealed partial class OniChargeComponent : Component
     public float TargetBluntDamage = 8f;
 
     [ViewVariables]
+    public bool PendingCharge;
+
+    [ViewVariables]
+    public bool IsCharging;
+
+    [ViewVariables]
     public HashSet<EntityUid> HitDuringCurrentCharge = new();
 }

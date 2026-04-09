@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Destructible;
+using Content.Goobstation.Shared.Dash;
 using Content.Shared._Gabystation.OniCharge;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -23,18 +24,36 @@ public sealed class OniChargeSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<OniChargeComponent, ThrownEvent>(OnThrown);
+        SubscribeLocalEvent<OniChargeComponent, DashActionEvent>(OnDashAction);
         SubscribeLocalEvent<OniChargeComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<OniChargeComponent, LandEvent>(OnLand);
+        SubscribeLocalEvent<OniChargeComponent, StopThrowEvent>(OnStopThrow);
+    }
+
+    private void OnDashAction(Entity<OniChargeComponent> ent, ref DashActionEvent args)
+    {
+        if (args.Performer != ent.Owner)
+            return;
+
+        ent.Comp.PendingCharge = true;
     }
 
     private void OnThrown(Entity<OniChargeComponent> ent, ref ThrownEvent args)
     {
+        if (!ent.Comp.PendingCharge)
+            return;
+
+        ent.Comp.PendingCharge = false;
+        ent.Comp.IsCharging = true;
         ent.Comp.HitDuringCurrentCharge.Clear();
     }
 
     private void OnStartCollide(Entity<OniChargeComponent> ent, ref StartCollideEvent args)
     {
         if (!HasComp<ThrownItemComponent>(ent))
+            return;
+
+        if (!ent.Comp.IsCharging)
             return;
 
         if (HasComp<MobStateComponent>(args.OtherEntity))
@@ -67,6 +86,8 @@ public sealed class OniChargeSystem : EntitySystem
 
     private void OnLand(Entity<OniChargeComponent> ent, ref LandEvent args)
     {
+        ent.Comp.PendingCharge = false;
+        ent.Comp.IsCharging = false;
         ent.Comp.HitDuringCurrentCharge.Clear();
 
         if (!TryComp<StaminaComponent>(ent.Owner, out var stamina))
@@ -76,5 +97,12 @@ public sealed class OniChargeSystem : EntitySystem
             return;
 
         _stun.TryKnockdown(ent.Owner, ent.Comp.ExhaustedKnockdown, true, true, false);
+    }
+
+    private void OnStopThrow(Entity<OniChargeComponent> ent, ref StopThrowEvent args)
+    {
+        ent.Comp.PendingCharge = false;
+        ent.Comp.IsCharging = false;
+        ent.Comp.HitDuringCurrentCharge.Clear();
     }
 }
