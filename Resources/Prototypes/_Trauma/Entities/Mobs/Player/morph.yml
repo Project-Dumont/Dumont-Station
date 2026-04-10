@@ -73,11 +73,10 @@
       types:
         Blunt: 30
         Structural: 40
+  # --- CORREÇÃO DO LINTER AQUI ---
   - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 50
+    bloodReagent: Blood
+  # -------------------------------
   - type: Devourer
     devourAction: ActionMorphDevour
     soundStructureDevour: /Audio/Effects/sizzle.ogg
