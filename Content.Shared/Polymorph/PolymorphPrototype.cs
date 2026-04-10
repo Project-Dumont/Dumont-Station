@@ -114,12 +114,6 @@ public sealed partial record PolymorphConfiguration
     public bool TransferLanguageSpeaker;
 
     /// <summary>
-    /// Whether or not the entity transfers its text-to-speech voice between forms.
-    /// </summary>
-    [DataField(serverOnly: true)]
-    public bool TransferTTS;
-
-    /// <summary>
     /// Whether or not the entity transfers its speech barks between forms.
     /// </summary>
     [DataField(serverOnly: true)]

@@ -4,7 +4,6 @@
     entity: ADTMobSlimesGeras
     transferName: true
     transferLanguageSpeaker: true
-    transferTTS: true
     transferSpeechBarks: true
     transferAccents: true
     transferQuirks: true

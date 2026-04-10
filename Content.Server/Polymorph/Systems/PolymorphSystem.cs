@@ -104,21 +104,17 @@
 using Content.Server.Actions;
 using Content.Server.Humanoid;
 //ADT-Geras-Tweak-Start
-using Content.Shared.ADT.Language;
-using Content.Shared.ADT.SpeechBarks;
-using Content.Shared.Corvax.TTS;
 using Content.Server.Speech.Components;
-using Content.Server.Corvax.Speech.Components;
 using Content.Shared.Speech.Components;
-using Content.Server._CorvaxNext.Speech.Components;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Server.Traits.Assorted;
 using Content.Shared.Speech.Muting;
-using Content.Shared.ADT.Traits;
 using Content.Shared.Storage.Components;
+using Content.Shared._EinsteinEngines.Language.Components;
+using Content.Goobstation.Common.Barks;
 //ADT-Geras-Tweak-End
 using Content.Server.Inventory;
 using Content.Server.Mind.Commands;
@@ -479,20 +475,15 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (configuration.TransferLanguageSpeaker && TryComp<LanguageSpeakerComponent>(uid, out var originalLangComp))
         {
             var childLangComp = EnsureComp<LanguageSpeakerComponent>(child);
-            childLangComp.Languages = new Dictionary<string, LanguageKnowledge>(originalLangComp.Languages);
+            childLangComp.SpokenLanguages = new(originalLangComp.SpokenLanguages);
+            childLangComp.UnderstoodLanguages = new(originalLangComp.UnderstoodLanguages);
             childLangComp.CurrentLanguage = originalLangComp.CurrentLanguage;
         }
 
-        if (configuration.TransferTTS && TryComp<TTSComponent>(uid, out var originalTTSComp))
+        if (configuration.TransferSpeechBarks && TryComp<SpeechSynthesisComponent>(uid, out var originalBarksComp))
         {
-           var childTTSComp = EnsureComp<TTSComponent>(child);
-           childTTSComp.VoicePrototypeId = originalTTSComp.VoicePrototypeId;
-        }
-
-        if (configuration.TransferSpeechBarks && TryComp<SpeechBarksComponent>(uid, out var originalBarksComp))
-        {
-            var childBarksComp = EnsureComp<SpeechBarksComponent>(child);
-            childBarksComp.Data = originalBarksComp.Data;
+            var childBarksComp = EnsureComp<SpeechSynthesisComponent>(child);
+            childBarksComp.VoicePrototypeId = originalBarksComp.VoicePrototypeId;
         }
 
         if (configuration.TransferAccents)
@@ -504,22 +495,17 @@ public sealed partial class PolymorphSystem : EntitySystem
                 typeof(BarkAccentComponent),
                 typeof(BleatingAccentComponent),
                 typeof(DamagedSiliconAccentComponent),
-                typeof(DeutschAccentComponent),
                 typeof(FrenchAccentComponent),
                 typeof(GermanAccentComponent),
-                typeof(GrowlingAccentComponent),
                 typeof(LizardAccentComponent),
                 typeof(MobsterAccentComponent),
                 typeof(MonkeyAccentComponent),
                 typeof(MothAccentComponent),
                 typeof(MumbleAccentComponent),
-                typeof(NyaAccentComponent),
                 typeof(OwOAccentComponent),
                 typeof(ParrotAccentComponent),
                 typeof(PirateAccentComponent),
                 typeof(ReplacementAccentComponent),
-                typeof(ResomiAccentComponent),
-                typeof(RoarAccentComponent),
                 typeof(RussianAccentComponent),
                 typeof(ScrambledAccentComponent),
                 typeof(SkeletonAccentComponent),
@@ -527,8 +513,8 @@ public sealed partial class PolymorphSystem : EntitySystem
                 typeof(SouthernAccentComponent),
                 typeof(SpanishAccentComponent),
                 typeof(StutteringAccentComponent),
-                typeof(VoxAccentComponent),
-                typeof(FrontalLispComponent)
+                typeof(FrontalLispComponent),
+                typeof(SlowAccentComponent)
             };
 
             foreach (var accentType in accentComponents)
@@ -553,23 +539,11 @@ public sealed partial class PolymorphSystem : EntitySystem
                 typeof(PermanentBlindnessComponent),
                 typeof(BlurryVisionComponent),
                 typeof(TemporaryBlindnessComponent),
-                typeof(UncloneableComponent),
                 typeof(NarcolepsyComponent),
                 typeof(UnrevivableComponent),
                 typeof(MutedComponent),
                 typeof(ParacusiaComponent),
-                typeof(PainNumbnessComponent),
-                typeof(HemophiliaComponent),
-                typeof(DeafTraitComponent),
-                typeof(MonochromacyComponent),
-                typeof(FrailComponent),
-                typeof(SoftWalkComponent),
-                typeof(FreerunningComponent),
-                typeof(SprinterComponent),
-                typeof(FastLockersComponent),
-                typeof(HardThrowerComponent),
-                typeof(FoodConsumptionSpeedModifierComponent),
-                typeof(DrunkenResilienceComponent)
+                typeof(PainNumbnessComponent)
             };
 
             foreach (var quirkType in quirkComponents)
