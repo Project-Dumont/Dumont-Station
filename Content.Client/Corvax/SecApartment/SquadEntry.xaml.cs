@@ -440,7 +440,7 @@ public sealed partial class SquadEntry : PanelContainer
     {
         if (locationInfo.HasLocation && !string.IsNullOrWhiteSpace(locationInfo.Location))
         {
-            SquadLocationLabel.Text = locationInfo.Location;
+            SquadLocationLabel.Text = FormattedMessage.RemoveMarkupPermissive(locationInfo.Location);
             SquadLocationLabel.FontColorOverride = SecApartmentStyles.TextColor;
         }
         else

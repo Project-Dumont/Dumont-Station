@@ -17,6 +17,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
+using Content.Shared.Access.Components;
 
 namespace Content.Server.Corvax.SecApartment;
 
@@ -67,6 +68,8 @@ public sealed partial class SecApartmentSystem : EntitySystem
         // TODO: I'm too lazy to change this.
         SubscribeLocalEvent<ActiveSignalTimerComponent, ComponentStartup>(OnTimerStartup);
         SubscribeLocalEvent<SignalTimerComponent, ComponentShutdown>(OnTimerComponentShutdown);
+        SubscribeLocalEvent<GenpopIdCardComponent, ComponentStartup>(OnGenpopStartup);
+        SubscribeLocalEvent<GenpopIdCardComponent, ComponentShutdown>(OnGenpopShutdown);
     }
 
     public override void Update(float frameTime)
@@ -340,7 +343,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
     private void OnRemoveTimer(EntityUid uid, SecApartmentComponent component, RemoveTimerMessage msg)
     {
         var timerUid = GetEntity(msg.TimerUid);
-        if (Exists(timerUid) && HasComp<SignalTimerComponent>(timerUid))
+        if (Exists(timerUid))
             RemoveTimerFromTrack(timerUid);
     }
 
@@ -513,6 +516,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
         {
             var mapCoords = new MapCoordinates(averagePos, mapId);
             var locationText = _navMap.GetNearestBeaconString(mapCoords);
+            locationText = FormattedMessage.RemoveMarkupPermissive(locationText);
             return (locationText, true);
         }
         catch (Exception ex)
@@ -568,6 +572,17 @@ public sealed partial class SecApartmentSystem : EntitySystem
     }
 
     private void OnTimerComponentShutdown(EntityUid uid, SignalTimerComponent component, ComponentShutdown args)
+    {
+        RemoveTimerFromTrack(uid);
+    }
+
+    private void OnGenpopStartup(EntityUid uid, GenpopIdCardComponent component, ComponentStartup args)
+    {
+        if (TryComp<ExpireIdCardComponent>(uid, out var expire) && !expire.Permanent && !expire.Expired)
+            AddTimerToTrack(uid);
+    }
+
+    private void OnGenpopShutdown(EntityUid uid, GenpopIdCardComponent component, ComponentShutdown args)
     {
         RemoveTimerFromTrack(uid);
     }
@@ -654,6 +669,16 @@ public sealed partial class SecApartmentSystem : EntitySystem
                     }
 
                     timers.Add(new TimerEntry(netEntity, timerComp.Label, remaining, total));
+                }
+                else if (TryComp<GenpopIdCardComponent>(timerUid, out var genpopComp) && TryComp<ExpireIdCardComponent>(timerUid, out var expireComp))
+                {
+                    if (expireComp.Permanent || expireComp.Expired)
+                    {
+                        stationData.TrackedTimers.Remove(netEntity);
+                        continue;
+                    }
+
+                    timers.Add(new TimerEntry(netEntity, MetaData(timerUid).EntityName, expireComp.ExpireTime - _gameTiming.CurTime, genpopComp.SentenceDuration));
                 }
                 else
                 {
