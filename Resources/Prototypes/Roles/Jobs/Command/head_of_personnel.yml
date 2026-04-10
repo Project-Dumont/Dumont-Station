@@ -210,6 +210,10 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  - !type:AddObjectiveSpecial #Gaby objetivos de crew
+    count: 1
+    objectives:
+    - ProtectIanCrewObjective
   alternateTitles:
   - HoPTitleFirstMate
   - HoPTitleHeadService

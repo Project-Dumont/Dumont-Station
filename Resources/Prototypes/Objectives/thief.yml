@@ -393,7 +393,7 @@
   - type: NotJobRequirement
     job: HeadOfPersonnel
   - type: StealCondition
-    stealGroup: ClothingNeckGoldmedal
+    stealGroup: medal
   - type: Objective
     difficulty: 1
 
@@ -404,7 +404,7 @@
   - type: NotJobRequirement
     job: Captain
   - type: StealCondition
-    stealGroup: ClothingNeckClownmedal
+    stealGroup: medal
   - type: Objective
     difficulty: 1
 

@@ -71,6 +71,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: job
+  parent: [crewobjectivebase]
   id: Bartender
   name: job-name-bartender
   description: job-description-bartender
@@ -101,7 +102,12 @@
   - !type:AddComponentSpecial
     components:
     - type: SoberGen
-  # Corvax-Wega-Genetics-end
+#Gaby objetivos de crew
+  - !type:AddObjectiveSpecial
+    count: 2
+    objectives:
+    - GetMedalCrewObjective
+    - InteractWithCrewObjective
 
 - type: startingGear
   id: BartenderGear

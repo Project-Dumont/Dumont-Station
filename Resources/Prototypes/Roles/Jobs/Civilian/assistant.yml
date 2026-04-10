@@ -104,6 +104,12 @@
       factions:
       - NanoTrasen
       - Assistant
+  - !type:AddObjectiveSpecial
+    count: 2
+    objectives:
+    - GetMedalCrewObjective
+    - TideCrewObjective
+    - InteractWithCrewObjective
   # gaby alt job titles
   alternateTitles:
   - AssistantTitlePassenger

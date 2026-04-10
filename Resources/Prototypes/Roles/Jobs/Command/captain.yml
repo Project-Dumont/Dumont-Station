@@ -187,6 +187,11 @@
       - type: CommandStaff
       - type: Condemned # Goobstation - Nanotrasen owns your soul pal.
         soulOwnedNotDevil: true
+  - !type:AddObjectiveSpecial #Gaby crew objectives
+    count: 2
+    objectives:
+    - KeepDiskSecureCrewObjective
+    - ProtectRenaultCrewObjective
   alternateTitles:
   - CaptainTitleMaster
   - CaptainTitleAdmiral

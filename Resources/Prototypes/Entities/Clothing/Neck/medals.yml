@@ -49,6 +49,9 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  #Gaby
+  - type: StealTarget
+    stealGroup: medal
 
 - type: entity
   parent: ClothingNeckBase
@@ -72,7 +75,7 @@
   - type: Clothing
     sprite: Clothing/Neck/Medals/gold.rsi
   - type: StealTarget
-    stealGroup: ClothingNeckGoldmedal
+    stealGroup: medal
   - type: Tag
     tags:
       - Medal
@@ -123,6 +126,9 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  #Gaby
+  - type: StealTarget
+    stealGroup: medal
 
 - type: entity
   parent: ClothingNeckBase
@@ -159,6 +165,9 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  #Gaby
+  - type: StealTarget
+    stealGroup: medal
 
 - type: entity
   parent: ClothingNeckBase
@@ -195,6 +204,9 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  #Gaby
+  - type: StealTarget
+    stealGroup: medal
 
 - type: entity
   parent: ClothingNeckBase
@@ -231,6 +243,9 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  #Gaby
+  - type: StealTarget
+    stealGroup: medal
 
 - type: entity
   parent: ClothingNeckBase
@@ -267,6 +282,9 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  #Gaby
+  - type: StealTarget
+    stealGroup: medal
 
 - type: entity
   parent: ClothingNeckBase
@@ -290,7 +308,7 @@
   - type: Clothing
     sprite: Clothing/Neck/Medals/clownmedal.rsi
   - type: StealTarget
-    stealGroup: ClothingNeckClownmedal
+    stealGroup: medal
   - type: Tag
     tags:
       - Medal
@@ -305,4 +323,3 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
-

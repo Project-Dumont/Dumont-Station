@@ -15,3 +15,10 @@
   sprite:
     sprite: _Gabystation/Objects/Weapons/Melee/rosethorn_blade.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: medal
+  name: steal-target-groups-medal
+  sprite:
+    sprite: Clothing/Neck/Medals/gold.rsi
+    state: icon
