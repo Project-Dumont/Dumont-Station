@@ -512,7 +512,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
         try
         {
             var mapCoords = new MapCoordinates(averagePos, mapId);
-            var locationText = _navMap.GetNearestBeaconString(mapCoords, onlyName: true);
+            var locationText = _navMap.GetNearestBeaconString(mapCoords);
             return (locationText, true);
         }
         catch (Exception ex)
