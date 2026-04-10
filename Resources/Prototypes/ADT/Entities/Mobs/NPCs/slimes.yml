@@ -47,7 +47,6 @@
         volume: 3
   - type: Tag
     tags:
-    - ADTSlimeEmotes
     - FootstepSound
     - DoorBumpOpener
   - type: Damageable
@@ -89,11 +88,12 @@
     proto: slime
   - type: Vocal
     sounds:
-      Unsexed: FemaleSlime
-  - type: LanguageSpeaker
-    languages:
-      GalacticCommon: Speak
-      Bubblish: Speak
+      Unsexed: MaleSlime
+  - type: LanguageKnowledge
+    speaks:
+    - Bubblish
+    understands:
+    - Bubblish
   - type: Prying
     pryPowered: false
     force: false
@@ -103,7 +103,6 @@
   - type: Internals
   - type: Buckle
   - type: StandingState
-  - type: ProjectileIgnoreCrawling
   - type: NpcFactionMember
     factions:
     - NanoTrasen
@@ -143,7 +142,6 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
-  - type: RadiationPopup
   - type: StatusEffects
     allowed:
     - Stun
@@ -165,11 +163,6 @@
     - RadiationProtection
     - Drowsiness
     - Adrenaline
-    - ADTHallucinations
-    - ADTStarvation
   - type: SleepEmitSound
-  - type: BloodCough
-    postingSayDamage: blood-cough
-  - type: TimeDespawnDamage
   - type: Hands # They still don't have hands.
   - type: ComplexInteraction

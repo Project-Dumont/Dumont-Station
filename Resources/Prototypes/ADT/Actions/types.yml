@@ -1,9 +1,10 @@
 - type: entity
   id: ADTActionMorphGeras
+  parent: BaseAction
   name: Morph into Geras
   description: Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
   components:
-    - type: InstantAction
+    - type: Action
       itemIconStyle: BigAction
       useDelay: 5 # prevent spam
       priority: -20
@@ -11,4 +12,5 @@
       icon:
         sprite: Mobs/Aliens/slimes.rsi
         state: blue_adult_slime
+    - type: InstantAction
       event: !type:MorphIntoGeras

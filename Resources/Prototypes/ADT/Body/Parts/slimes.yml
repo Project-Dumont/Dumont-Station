@@ -1,15 +1,18 @@
 - type: entity
   id: ADTLegsGeras
   name: geras legs
-  parent: PartAnimal
+  parent: PartAnimalBase
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
     - state: l_leg
     - state: r_leg
+  - type: Icon
+    state: l_leg
   - type: BodyPart
     partType: Leg
+    slotId: legs
   - type: MovementBodyPart
     walkSpeed : 3
     sprintSpeed : 5
@@ -17,12 +20,15 @@
 - type: entity
   id: ADTFeetGeras
   name: geras feet
-  parent: PartAnimal
+  parent: PartAnimalBase
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
     - state: r_foot
     - state: l_foot
+  - type: Icon
+    state: l_foot
   - type: BodyPart
     partType: Foot
+    slotId: feet
