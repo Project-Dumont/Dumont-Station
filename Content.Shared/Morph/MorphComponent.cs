@@ -30,7 +30,7 @@ public sealed partial class MorphComponent : Component
     /// How much biomass it costs to replicate.
     /// </summary>
     [DataField]
-    public FixedPoint2 ReplicateCost = 150;
+    public FixedPoint2 ReplicateCost = 79;
 
     /// <summary>
     /// How much biomass one Morph can store

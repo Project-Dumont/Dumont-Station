@@ -2,12 +2,12 @@
   parent: BaseAction
   id: ActionMorphReplicate
   name: Replicate
-  description: Copia suas células para criar uma réplica sua. Custa 150 biomassa.
+  description: Copia suas células para criar uma réplica sua. Custa 80 biomassa.
   components:
   - type: Action
     icon:
-      sprite: _Trauma/Mobs/morph.rsi
-      state: morph
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: reproduce
   - type: InstantAction
     event: !type:MorphReplicateActionEvent
 
@@ -20,8 +20,8 @@
   - type: Action
     itemIconStyle: BigAction
     icon:
-      sprite: Objects/Consumable/Drinks/cream.rsi
-      state: icon
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: morph
   - type: TargetAction
     interactOnMiss: false
   - type: EntityTargetAction
@@ -42,8 +42,8 @@
   components:
   - type: Action
     icon:
-      sprite: Objects/Devices/chameleon_projector.rsi
-      state: icon
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: unmorph
   - type: InstantAction
     event: !type:UnMorphActionEvent
 
@@ -52,6 +52,10 @@
   id: ActionMorphDevour
   description: Devora uma criatura ou item. Aumenta sua biomassa.
   components:
+  - type: Action 
+    icon:
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: devour
   - type: EntityTargetAction
     whitelist:
       components:

@@ -45,8 +45,8 @@
       0: Alive
       200: Dead
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.5
-    baseSprintSpeed: 4
+    baseWalkSpeed: 4
+    baseSprintSpeed: 5
   - type: Respirator
     saturation: 25
     maxSaturation: 25
@@ -71,8 +71,8 @@
     wideAnimation: WeaponArcPunch
     damage:
       types:
-        Blunt: 20
-        Structural: 30
+        Blunt: 30
+        Structural: 40
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
