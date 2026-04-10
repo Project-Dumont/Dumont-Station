@@ -19,6 +19,9 @@ economy-notification-transference-sender-body = Transferecia de {$amount} { econ
 economy-notification-transference-target-title = Transferencia recebida
 economy-notification-transference-target-body = Transferecia de {$amount} { economy-money-name } recebida de {$name}!
 
+economy-notification-transfer-target-title = Transferencia recebida
+economy-notification-transfer-target-body = Transferecia de {$amount} { economy-money-name } recebida de {$name}!
+
 ent-NanoBankCartridge = Cartucho do NanoPix
     .desc = O diabo na sua carteira.
 
