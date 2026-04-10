@@ -23,7 +23,7 @@
 - type: entity
   parent: [BaseCrewObjective, BaseSocialObjective]
   id: InteractWithCrewObjective
-  description: Esse tripulante parece uma pessoa interessante. Talvez seja uma boa ideia interagir com ele.
+  description: Esse tripulante parece uma pessoa interessante. Talvez seja uma boa ideia interagir com ele e aprender a sua história.
   components:
   - type: Objective
     icon:
@@ -45,6 +45,30 @@
   - type: TargetObjective
     title: objective-condition-favor-crew-title
   - type: PickRandomPerson
+
+- type: entity
+  parent: [BaseCrewObjective, BaseSocialObjective]
+  id: PlayChessSelectiveCrewObjective
+  description: Por algum motivo, você realmente quer jogar xadrez contra esse tripulante.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster4_legit
+  - type: TargetObjective
+    title: objective-condition-favor-crew-title
+  - type: PickRandomPerson
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: PlayChessCrewObjective
+  name: Jogue xadrez com alguém.
+  description: Desafie alguém com um jogo de xadrez, e termine o jogo, vencendo ou perdendo.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Fun/Tabletop/chessboard.rsi
+      state: chessboard
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -193,6 +217,28 @@
     icon:
       sprite: Structures/Wallmounts/posters.rsi
       state: poster8_contraband
+#Botanist
+- type: entity
+  parent: [BaseCrewObjective]
+  id: MedicinalPlantsBotanistCrewObjective
+  name: Produza plantas medicinais.
+  description: Além de botânico você é farmacêutico, produza o máximo de plantas medicinais.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster8_contraband
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: WeedBotanistCrewObjective
+  name: Cresça marihuana.
+  description: Você gosta de verduras. Fumar elas também.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster8_contraband
 #Musician
 - type: entity
   parent: [BaseCrewObjective]
@@ -226,12 +272,47 @@
     icon:
       sprite: Structures/Wallmounts/signs.rsi
       state: deathsposal
+
+- type: entity
+  parent: [BaseCrewObjective, BaseSocialObjective]
+  id: CleanCrewmemberCrewObjective
+  description: Esse tripulante está imundo! Limpe eles toda vez que ver-los.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
+  - type: TargetObjective
+    title: objective-condition-interact-with-crew-title
+  - type: PickRandomPerson
 #Chaplain
 - type: entity
   parent: [BaseCrewObjective]
   id: MassCrewObjective
   name: Organize uma missa.
   description: Os tripulantes dessa estação devem escutar suas palavras sagradas.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: chapel
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: CreateAReligionCrewObjective
+  name: Crie uma religião.
+  description: Quando você acordou hoje, você teve uma revelação... Você deve compartilhar-la com todos, e inventar uma nova religião.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: chapel
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: IndecisiveReligionCrewObjective
+  name: Constantemente troque de religiões.
+  description: Você está sempre mudando de religião, não consegue decidir qual a melhor.
   components:
   - type: Objective
     icon:
@@ -276,6 +357,17 @@
   id: UpgradeWindowsCrewObjective
   name: Troque as janelas.
   description: Você ta cansado desses meteoros quebrando janelas e causando espaçamentos constantemente. Melhore elas com janelas de nave, plasma ou urânio.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: UpgradeStationCrewObjective
+  name: Melhore a estação.
+  description: Quem fez essa estação?!! Quem fez essas máquinas?!! É tudo tão velho e devagar! Melhore tudo que puder, para que todos possam ser mais eficientes!
   components:
   - type: Objective
     icon:
@@ -327,6 +419,28 @@
     icon:
       sprite: Objects/Misc/folders.rsi
       state: folder-white
+#Warden
+- type: entity
+  parent: [BaseCrewObjective]
+  id: BackseatSecCrewObjective
+  name: Monitore os seguranças constantemente.
+  description: Todos os oficiais são burros! Administre cada segundo do turno deles!
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: CleanSecCrewObjective
+  name: Mantenha o departamento de segurança limpo.
+  description: O departamento de segurança é seu domínio, tudo deve estar limpo, organizado e perfeito...
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
 #Detective
 - type: entity
   parent: [BaseCrewObjective]
@@ -362,6 +476,17 @@
     icon:
       sprite: Objects/Misc/folders.rsi
       state: folder-white
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: NoirDetectiveCrewObjective
+  name: Finja ser um detetive noir.
+  description: Esses corredores não são mais como eram, e essa estação é muito colorida...
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
 #Boxer
 - type: entity
   parent: [BaseCrewObjective, BaseSocialObjective]
@@ -378,14 +503,14 @@
 #Librarian
 - type: entity
   parent: [BaseCrewObjective]
-  id: DNDCrewObjective
-  name: Organize um jogo de Carpas e Criptas.
-  description: Organize um jogo de Carpas e Criptas. Você pode participar ou não, mas o importante é que ele aconteça.
+  id: BoardGameCrewObjective
+  name: Organize uma partida de um jogo de tabuleiro.
+  description: Junte alguns tripulantes para jogar um jogo de tabuleiro.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Objects/Fun/dice.rsi
+      state: dicebag
 # Clown
 - type: entity
   parent: [BaseCrewObjective]
@@ -395,8 +520,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -406,41 +531,85 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 
 - type: entity
   parent: [BaseCrewObjective]
-  id: MiserableClownCrewObjective
+  id: MiserableCrewObjective
   name: Seja miserável.
   description: Todos adoram miséria! Faça a tripulação ter asco de ti!
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 
 - type: entity
   parent: [BaseCrewObjective]
-  id: StuntClownCrewObjective
+  id: StuntCrewObjective
   name: Faça truques perigosos.
   description: Você ja foi um dublê em filmes. Suas piadas ficam cada vez mais perigosas para si mesmo.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 
 - type: entity
   parent: [BaseCrewObjective]
-  id: ActorClownCrewObjective
+  id: ActorCrewObjective
   name: Organize um teatro.
   description: Você deve usar o teatro para algo! Organize uma peça de teatro, e faça com que as pessoas assistam.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: drama1
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: MimeHateCrewObjective
+  name: Faça uma rivalidade com o mimíco.
+  description: Aquele mimíco é tão irritante! Ele fica lá, se achando engraçado, sem falar nada. Vocês são rivais.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/sadmime.rsi
+      state: icon
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: MimeFriendCrewObjective
+  name: Seja amigo do mimíco.
+  description: Ele é seu parceiro no teatro, e ajuda com suas piadas. Vocês são melhores amigos, para sempre!
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/mime.rsi
+      state: icon
+#Mime
+- type: entity
+  parent: [BaseCrewObjective]
+  id: ClownHateCrewObjective
+  name: Faça uma rivalidade com o palhaço.
+  description: Você detesta aquele palhaço bagunceiro, irritante e barulhento. Vocês são rivais.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/sadmime.rsi
+      state: icon
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: ClownFriendCrewObjective
+  name: Seja amigo do palhaço.
+  description: Você e o palhaço cooperam para garantir que todos na estação tem um sorriso no rosto. Vocês são melhores amigos, para sempre!
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 #Bartender
 - type: entity
   parent: [BaseCrewObjective]
@@ -450,8 +619,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Objects/Consumable/Drinks/generic_jug.rsi
+      state: icon
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -461,8 +630,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Objects/Consumable/Drinks/shotglass.rsi
+      state: icon
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -472,8 +641,30 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Objects/Consumable/Drinks/glass_clear.rsi
+      state: icon
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: RussianRoulleteBartenderCrewObjective
+  name: Jogue roleta russa.
+  description: O revólver ta ali por um motivo. Jogue roleta russa com seus clientes, e veja quem tem sorte.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+      state: icon
+
+- type: entity
+  parent: [BaseCrewObjective]
+  id: ExperimentalBartenderCrewObjective
+  name: Faça drinques complicados.
+  description: Você adora experimentar. Faça as bebidas mais complicadas possíveis.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Consumable/Drinks/atomicbombglass.rsi
+      state: icon
 #Chef
 - type: entity
   parent: [BaseCrewObjective]
@@ -483,8 +674,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -494,8 +685,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -505,8 +696,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -516,8 +707,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -527,8 +718,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -538,8 +729,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -549,8 +740,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -560,8 +751,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: kitchen
 
 - type: entity
   parent: [BaseCrewObjective, BaseSocialObjective]
@@ -584,8 +775,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: cargo
 
 - type: entity
   parent: [BaseCrewObjective]
@@ -595,8 +786,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: mail
 
 
 # Captain
@@ -701,10 +892,29 @@
 - type: entity
   parent: [BaseCrewObjective]
   id: ProtectQMKnucklesCrewObjective
-  name: Mantenha seu punho inglês dourado seguro.
-  description: Essa coisa custou dinheiro demais para ser feita, se alguém roubar ela, você ficaria muito irritado. O seu punho inglês fica com você até chegar na central.
   components:
   - type: Objective
     icon:
       sprite: Objects/Misc/folders.rsi
       state: folder-white
+  - type: StealCondition
+    stealGroup: ClothingHandsKnuckleDustersQM
+    objectiveNoOwnerText: objective-condition-protect-qm-knuckles-title-no-owner
+    objectiveText: objective-condition-protect-qm-knuckles-title
+    descriptionText: objective-condition-protect-qm-knuckles-description
+    descriptionMultiplyText: objective-condition-thief-multiply-description
+#NTR
+- type: entity
+  parent: [BaseCrewObjective]
+  id: ProtectStationReportCrewObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
+  - type: StealCondition
+    stealGroup: NanoRepStationReport
+    objectiveNoOwnerText: objective-condition-protect-station-report-title-no-owner
+    objectiveText: objective-condition-protect-station-report-title
+    descriptionText: objective-condition-protect-station-report-description
+    descriptionMultiplyText: objective-condition-thief-multiply-description

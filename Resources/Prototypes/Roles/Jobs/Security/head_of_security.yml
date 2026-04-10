@@ -205,6 +205,9 @@
     count: 1
     objectives:
     - ProtectLawbringerCrewObjective
+  - !type:AddObjectiveSpecial
+    count: 1
+    objectives:
     - ProtectShivaCrewObjective
   alternateTitles:
   - HeadOfSecurityTitleGuard

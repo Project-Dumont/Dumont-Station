@@ -188,10 +188,16 @@
       - type: Condemned # Goobstation - Nanotrasen owns your soul pal.
         soulOwnedNotDevil: true
   - !type:AddObjectiveSpecial #Gaby crew objectives
-    count: 2
+    count: 1
     objectives:
-    - KeepDiskSecureCrewObjective
+    - ProtectDiskCrewObjective #It's his fucking job.
+  - !type:AddObjectiveSpecial
+    count: 1
+    objectives:
     - ProtectRenaultCrewObjective
+    - MoneyCrewObjective
+    - WriteABookCrewObjective
+    - CoolClothesCrewObjective
   alternateTitles:
   - CaptainTitleMaster
   - CaptainTitleAdmiral

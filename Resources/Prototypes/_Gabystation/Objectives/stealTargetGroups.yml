@@ -22,3 +22,11 @@
   sprite:
     sprite: Clothing/Neck/Medals/gold.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: NanoRepStationReport
+  name: steal-target-groups-nanorep-station-report
+  sprite:
+    sprite: _Goobstation/Misc/bureaucracy.rsi
+    state: station-report-paper
+
