@@ -13,8 +13,8 @@ uplink-thermal-vision-desc = Eles permitem que você veja criaturas vivas indepe
 uplink-betrayal-knife-name = Faca Traiçoeira
 uplink-betrayal-knife-desc =
     A Faca Traiçoeira permite que o usuário se teletransporte por uma curta distância, derrubando pessoas em um pequeno raio ao redor da posição de teletransporte.
-Causa dano significativo quando o alvo está deitado ou de costas para você.
-Use-a na mão para ativar/desativar o modo de teletransporte.
+    Causa dano significativo quando o alvo está deitado ou de costas para você.
+    Use-a na mão para ativar/desativar o modo de teletransporte.
 
 uplink-experimental-syndicate-teleporter-name = Teletransportador do Sindicato Experimental
 uplink-experimental-syndicate-teleporter-desc = Um dispositivo de recarga automática que teletransporta o usuário para frente. Em caso de teletransporte contra uma parede, utiliza o teletransporte de emergência. Ou despedaça o usuário se a bateria acabar.
