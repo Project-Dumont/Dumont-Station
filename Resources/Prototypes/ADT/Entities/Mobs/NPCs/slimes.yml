@@ -102,7 +102,7 @@
       path: /Audio/Items/crowbar.ogg
   - type: Internals
   - type: Buckle
-  - type: StandingState
+  # - type: StandingState
   - type: NpcFactionMember
     factions:
     - NanoTrasen
@@ -162,7 +162,12 @@
     - Flashed
     - RadiationProtection
     - Drowsiness
+    - Vulgarity
+    - Brainrotted
     - Adrenaline
+    - Brainrotted
+    - Dementia
+    - Dizzy
   - type: SleepEmitSound
   - type: Hands # They still don't have hands.
   - type: ComplexInteraction
