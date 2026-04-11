@@ -32,7 +32,7 @@ neck-examine = • { $id ->
 ears-examine = • { $id ->
      [empty] [bold]{$item}[/bold]
     *[other] [enttex id="{ $id }" size={ $size }][bold]{$item}[/bold]
-} na orelhas.
+} nas orelhas.
 jumpsuit-examine = • { $id ->
      [empty] [bold]{$item}[/bold]
     *[other] [enttex id="{ $id }" size={ $size }][bold]{$item}[/bold]
