@@ -1,4 +1,8 @@
-﻿using System.Linq;
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Linq;
 using Content.Goobstation.Shared.MisandryBox.JobObjective;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
