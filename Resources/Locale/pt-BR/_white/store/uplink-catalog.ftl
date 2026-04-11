@@ -8,7 +8,7 @@ uplink-night-vision-name = Óculos de Visão Noturna
 uplink-night-vision-desc = Eles permitem enxergar no escuro, com um scanner médico integrado.
 
 uplink-thermal-vision-name = Óculos de Visão Térmica
-uplink-thermal-vision-desc = Elas permitem que você veja criaturas vivas independentemente dos obstáculos.
+uplink-thermal-vision-desc = Eles permitem que você veja criaturas vivas independentemente dos obstáculos.
 
 uplink-betrayal-knife-name = Faca Traiçoeira
 uplink-betrayal-knife-desc =
