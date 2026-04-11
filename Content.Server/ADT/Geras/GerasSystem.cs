@@ -10,6 +10,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Item;
 using Content.Shared.Hands;
+using Content.Shared.DoAfter;
 
 namespace Content.Server.ADT.Geras;
 
@@ -21,11 +22,14 @@ public sealed class GerasSystem : SharedGerasSystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<GerasComponent, MorphIntoGeras>(OnMorphIntoGeras);
         SubscribeLocalEvent<GerasComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<GerasComponent, EntityZombifiedEvent>(OnZombification);
+        SubscribeLocalEvent<GerasComponent, MorphIntoGerasDoAfterEvent>(OnMorphIntoGerasDoAfter);
     }
 
     private void OnZombification(EntityUid uid, GerasComponent component, EntityZombifiedEvent args)
@@ -52,6 +56,31 @@ public sealed class GerasSystem : SharedGerasSystem
             _popupSystem.PopupEntity(Loc.GetString("geras-popup-cant-use"), uid, uid);
             return;
         }
+
+        var doAfterArgs = new DoAfterArgs(EntityManager, uid, component.MorphDoAfter, new MorphIntoGerasDoAfterEvent(), uid)
+        {
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            AttemptFrequency = AttemptFrequency.EveryTick,
+            DuplicateCondition = DuplicateConditions.SameEvent,
+        };
+
+        if (_doAfter.TryStartDoAfter(doAfterArgs))
+        {
+            args.Handled = true;
+        }
+    }
+
+    private void OnMorphIntoGerasDoAfter(EntityUid uid, GerasComponent component, MorphIntoGerasDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (HasComp<ZombieComponent>(uid))
+            return;
+
+        if (!_actionBlocker.CanInteract(uid, null) || _mobState.IsDead(uid) || _mobState.IsIncapacitated(uid))
+            return;
 
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
 

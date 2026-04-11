@@ -1,5 +1,6 @@
 using Content.Shared.Polymorph;
 using Robust.Shared.Prototypes;
+using System;
 
 namespace Content.Server.ADT.Geras;
 
@@ -16,5 +17,7 @@ public sealed partial class GerasComponent : Component
     [DataField] public EntityUid? GerasActionEntity;
 
     [DataField] public bool NoAction = false;
+
+    [DataField] public TimeSpan MorphDoAfter = TimeSpan.FromSeconds(5);
 }
 

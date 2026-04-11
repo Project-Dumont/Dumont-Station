@@ -1,4 +1,6 @@
 using Content.Shared.Actions;
+using Content.Shared.DoAfter;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.ADT.Geras;
 
@@ -8,3 +10,6 @@ namespace Content.Shared.ADT.Geras;
 public abstract class SharedGerasSystem : EntitySystem { }
 
 public sealed partial class MorphIntoGeras : InstantActionEvent { }
+
+[Serializable, NetSerializable]
+public sealed partial class MorphIntoGerasDoAfterEvent : SimpleDoAfterEvent;
