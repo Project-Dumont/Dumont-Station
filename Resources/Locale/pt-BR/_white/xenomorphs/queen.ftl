@@ -5,5 +5,5 @@ xenomorphs-queen-promotion-no-mind = A mente dela não consegue processar a prom
 xenomorphs-queen-not-enough-plasma = Não há plasma suficiente. Precisa de mais { $plasma }.
 xenomorphs-queen-promotion-invalid-target = Só pode ser usado para promover outros xenomorfos.
 xenomorphs-queen-already-praetorian = Este xenomorfo já é um Pretoriano!
-xenomorphs-queen-promotion-success = Promovendo { $target } para Pretoriano!
+xenomorphs-queen-promotion-success = Promoveu { $target } para Pretoriano!
 
