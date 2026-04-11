@@ -43,6 +43,7 @@
   - type: Tag
     tags:
     - PlasmamanSafe
+    - SyringeArmor
   - type: IgniteFromGasImmunity
     parts:
     - BodyMiddle

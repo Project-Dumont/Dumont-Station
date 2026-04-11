@@ -47,11 +47,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 264.0.0
+  engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/25/2025 20:17:53
-  entityCount: 66
+  time: 03/18/2026 16:52:12
+  entityCount: 69
 maps: []
 grids:
 - 1
@@ -194,11 +194,11 @@ entities:
       parent: 1
 - proto: APCBasic
   entities:
-  - uid: 3
+  - uid: 67
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 2.5,-1.5
+      pos: 2.5,-0.5
       parent: 1
 - proto: AtmosDeviceFanDirectional
   entities:
@@ -245,6 +245,11 @@ entities:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
+  - uid: 69
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 12
@@ -288,6 +293,11 @@ entities:
     components:
     - type: Transform
       pos: -0.5,-1.5
+      parent: 1
+  - uid: 68
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
       parent: 1
 - proto: ChairPilotSeat
   entities:
@@ -415,6 +425,13 @@ entities:
       pos: 1.5,-1.5
       parent: 1
     - type: Unremoveable
+- proto: PowerCellRecharger
+  entities:
+  - uid: 3
+    components:
+    - type: Transform
+      pos: 1.5,2.5
+      parent: 1
 - proto: Poweredlight
   entities:
   - uid: 37

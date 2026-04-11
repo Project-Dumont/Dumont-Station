@@ -145,7 +145,7 @@ selectable-set-syndicate-infiltration-name = Pacote Infiltração
 selectable-set-syndicate-infiltration-description =
     Um pacote que contém um kit de infiltração completo. Uma das maiores armas da guerra é a informação.
     Contém: 1 Cartão de Agente, Kit Camaleão, 1 Máscara de Voz, 1 Fake mindshield,
-    placa de comunicação da Central, bengala falsa,
+    placa de comunicação da Central, bengala falsa, 1 Modificador de DNA, 1 Access Breaker
     e uma chave de criptografia do sindicato e da estação.
 
 selectable-set-syndicate-piromaniac-name = Pacote Piromániaco

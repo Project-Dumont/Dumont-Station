@@ -28,6 +28,7 @@
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 360000 # 100 hrs
+
 - type: loadout
   id: MinerCloak
   effects:
