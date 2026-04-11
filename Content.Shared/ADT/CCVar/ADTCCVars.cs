@@ -1,6 +1,4 @@
 using Robust.Shared.Configuration;
-using Content.Shared.ADT.Supermatter;
-using Content.Shared.ADT.Supermatter.Components;
 using Content.Shared.Atmos;
 using Robust.Shared;
 

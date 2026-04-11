@@ -9,7 +9,5 @@
   - type: MachineBoard
     prototype: ADTBookPrinter
     stackRequirements:
-      Capacitor: 2
-      Manipulator: 2
-      MatterBin: 2
+      Manipulator: 6
 # Ganimed-Book-Printer-End

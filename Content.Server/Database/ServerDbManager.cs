@@ -1433,6 +1433,12 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetBookPrinterEntries());
         }
 
+        public Task<bool> DeleteBookPrinterEntryAsync(int bookId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.DeleteBookPrinterEntryAsync(bookId));
+        }
+
         public Task UploadBookPrinterEntryAsync(BookPrinterEntry bookEntry)
         {
             DbReadOpsMetric.Inc();
