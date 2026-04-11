@@ -57,10 +57,10 @@
   components:
   - type: Objective
     icon:
-      sprite: Structures/Wallmounts/posters.rsi
-      state: poster4_legit
+      sprite: Objects/Fun/Tabletop/chessboard.rsi
+      state: chessboard
   - type: TargetObjective
-    title: objective-condition-favor-crew-title
+    title: objective-condition-chess-crew-title
   - type: PickRandomPerson
 
 - type: entity
@@ -156,8 +156,19 @@
       sprite: Clothing/OuterClothing/Coats/bomber.rsi
       state: icon
 #Passenger
+
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BasePassengerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Passenger
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BasePassengerObjective]
   id: TideCrewObjective
   name: Saqueie os corredores de manuntenção.
   description: Os corredores de manutenção estão cheios de coisas interessantes. Dê uma olhada neles.
@@ -168,7 +179,7 @@
       state: poster8_contraband
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BasePassengerObjective]
   id: GrayChemistCrewObjective
   name: Seja o melhor químico cinza.
   description: Você é um aspirante a químico. Clandestino é claro, afinal seu uniforme é cinza.
@@ -179,8 +190,8 @@
       state: chem
 
 - type: entity
-  parent: [BaseCrewObjective]
-  id: GrayCientistCrewObjective
+  parent: [BaseCrewObjective, BasePassengerObjective]
+  id: GrayScientistCrewObjective
   name: Seja o melhor cientista cinza.
   description: Você é um aspirante a cientista. Clandestino é claro, afinal seu uniforme é cinza.
   components:
@@ -190,7 +201,7 @@
       state: sci
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BasePassengerObjective]
   id: GrayCargoCrewObjective
   name: Seja o melhor técnico de logística cinza.
   description: Você é um aspirante a técnico de logística. Clandestino é claro, afinal seu uniforme é cinza.
@@ -201,7 +212,7 @@
       state: cargo
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BasePassengerObjective]
   id: GraySurgeonCrewObjective
   name: Seja o melhor cirurgião cinza.
   description: Você é um aspirante a cirurgião. Clandestino é claro, afinal seu uniforme é cinza.
@@ -212,40 +223,60 @@
       state: surgery
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BasePassengerObjective]
   id: CollectCansCrewObjective
   name: Colete latas.
   description: Você adora colecionar latinhas! Colete um de cada tipo de lata de bebidas vazia.
   components:
   - type: Objective
     icon:
-      sprite: Structures/Wallmounts/posters.rsi
-      state: poster8_contraband
+      sprite: Objects/Consumable/Drinks/lemon-lime-cranberry.rsi
+      state: icon
 #Botanist
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseBotanistObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Botanist
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseBotanistObjective]
   id: MedicinalPlantsBotanistCrewObjective
   name: Produza plantas medicinais.
   description: Além de botânico você é farmacêutico, produza o máximo de plantas medicinais.
   components:
   - type: Objective
     icon:
-      sprite: Structures/Wallmounts/posters.rsi
-      state: poster8_contraband
+      sprite: Objects/Specific/Hydroponics/ambrosia_deus.rsi
+      state: produce
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseBotanistObjective]
   id: WeedBotanistCrewObjective
   name: Cresça marihuana.
   description: Você gosta de verduras. Fumar elas também.
   components:
   - type: Objective
     icon:
-      sprite: Structures/Wallmounts/posters.rsi
-      state: poster8_contraband
+      sprite: Objects/Specific/Hydroponics/cannabis.rsi
+      state: produce
 #Musician
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseMusicianObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Musician
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseMusicianObjective]
   id: RapBattleCrewObjective
   name: Organize uma batalha de rap.
   description: Organize uma batalha de rap. Você pode participar ou não, mas o importante é que ela aconteça.
@@ -256,7 +287,17 @@
       state: folder-white
 #Janitor
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseJanitorObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Janitor
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseJanitorObjective]
   id: KillRatsCrewObjective
   name: Mate ratos.
   description: Você precisa eliminar os ratos que estão infestando a nave. Eles são nojentos!
@@ -267,7 +308,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseJanitorObjective]
   id: RecycleCrewObjective
   name: Recicle itens.
   description: Reduza, reuse, recicle! Você tem a responsabilidade de reciclar os itens que não são mais úteis para a tripulação. Use o reciclador para transformar lixo inútil em recursos.
@@ -278,20 +319,30 @@
       state: deathsposal
 
 - type: entity
-  parent: [BaseCrewObjective, BaseSocialObjective]
+  parent: [BaseCrewObjective, BaseSocialObjective, BaseJanitorObjective]
   id: CleanCrewmemberCrewObjective
   description: Esse tripulante está imundo! Limpe eles toda vez que ver-los.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Objects/Specific/Janitorial/janitorial.rsi
+      state: cleaner_large
   - type: TargetObjective
-    title: objective-condition-interact-with-crew-title
+    title: objective-condition-clean-crewmember-title
   - type: PickRandomPerson
 #Chaplain
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseChaplainObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Chaplain
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseChaplainObjective]
   id: MassCrewObjective
   name: Organize uma missa.
   description: Os tripulantes dessa estação devem escutar suas palavras sagradas.
@@ -302,7 +353,7 @@
       state: chapel
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChaplainObjective]
   id: CreateAReligionCrewObjective
   name: Crie uma religião.
   description: Quando você acordou hoje, você teve uma revelação... Você deve compartilhar-la com todos, e inventar uma nova religião.
@@ -313,7 +364,7 @@
       state: chapel
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChaplainObjective]
   id: IndecisiveReligionCrewObjective
   name: Constantemente troque de religiões.
   description: Você está sempre mudando de religião, não consegue decidir qual a melhor.
@@ -324,7 +375,17 @@
       state: chapel
 # Engenheiro
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseEngineerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: StationEngineer
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseEngineerObjective]
   id: IlluminateMaintsCrewObjective
   name: Ilumine as áreas de manutenção.
   description: As áreas de manuntenção nunca estevem tão perigosas! Espante os passageiros enfeitando elas e as deixando bem iluminadas.
@@ -335,75 +396,95 @@
       state: normal
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseEngineerObjective]
   id: MorePowerCrewObjective
   name: Gere mais energia.
-  description: A singularidade ou tesla NÃO SÃO SUFICIENTES. A estação precisa de mais que isso!
+  description: A singularidade ou tesla NÃO SÃO SUFICIENTES DO JEITO QUE ESTÃO.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster16_contraband
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseEngineerObjective]
   id: PTLCrewObjective
   name: Gere dinheiro usando o PTL.
-  description: O Laser de Transmissão de Energia é uma ótima maneira de gerar dinheiro! Peça ao Engenheiro Chefe se não estiver um na estação. Use ele para gerar dinheiro para a estação.
+  description: O Laser de Transmissão de Energia é uma ótima maneira de gerar dinheiro! Peça ao Engenheiro Chefe se não tiver um. Use ele para gerar lucro para a estação.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: _Goobstation/Structures/Machines/PTL/pt_laser.rsi
+      state: base
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseEngineerObjective]
   id: UpgradeWindowsCrewObjective
   name: Troque as janelas.
   description: Você ta cansado desses meteoros quebrando janelas e causando espaçamentos constantemente. Melhore elas com janelas de nave, plasma ou urânio.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Windows/window.rsi
+      state: full
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseEngineerObjective]
   id: UpgradeStationCrewObjective
   name: Melhore a estação.
   description: Quem fez essa estação?!! Quem fez essas máquinas?!! É tudo tão velho e devagar! Melhore tudo que puder, para que todos possam ser mais eficientes!
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Objects/Weapons/Melee/sledgehammer.rsi
+      state: icon
 #Atmos tech
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseAtmosTechObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: AtmosphericTechnician
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseAtmosTechObjective]
   id: MakeFreezonCrewObjective
   name: Fabrique Freezon.
   description: Enquanto difícil fazer, você sabe que Freezon é um gás muito valioso e útil para várias situações, e quer tentar fabricar ele.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: atmos
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseAtmosTechObjective]
   id: TEGCrewObjective
-  name: Faça um gerador termoelétrico perfeito.
-  description: Você quer usar seu conhecimento para gerar energia da forma mais eficiente possível.
+  name: Tente fazer um gerador termoelétrico perfeito.
+  description: Você quer usar seu conhecimento para gerar energia usando o TEG da forma mais eficiente possível.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: atmos
 #Security
 - type: entity
-  parent: [BaseCrewObjective, BaseSocialObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseSecurityOfficerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: SecurityOfficer
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseSocialObjective, BaseSecurityOfficerObjective]
   id: JudoDuelCrewObjective
-  description: Esse tripulante te irritou, e você quer resolver isso da maneira correta. Desafie ele para um duelo de judo!
+  description: Esse tripulante te fez algo, e você quer resolver isso da maneira correta. Desafie ele para um duelo de judo!
   components:
   - type: Objective
     icon:
@@ -414,18 +495,49 @@
   - type: PickRandomPerson
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseSecurityOfficerObjective]
   id: GoodSecCrewObjective
   name: Mantenha a reputação do departamento de segurança.
   description: Shitsec, ditadores, abusadores de poder... O departamento de segurança tem uma má reputação, e você quer ajudar a melhorar isso. Ajude os outros tripulantes, seja amigável, e evite usar força letal.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: security
+#Lawyer
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseLawyerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Lawyer
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseLawyerObjective]
+  id: RehabilitationLawyerCrewObjective
+  name: Tente negociar liberdade condicional para os prisoneiros.
+  description: Os prisoneiros apenas precisam aprender sua lição, e ficar preso para sempre não deixa eles aprender nada. Tente convencer o departamento de segurança a considerar liberdade condicional.
+  components:
+  - type: Objective
+    icon:
+      sprite: handcuffs.rsi\handcuff.png
+      state: handcuff
 #Warden
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseWardenObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Warden
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseWardenObjective]
   id: BackseatSecCrewObjective
   name: Monitore os seguranças constantemente.
   description: Todos os oficiais são burros! Administre cada segundo do turno deles!
@@ -436,77 +548,107 @@
       state: folder-white
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseWardenObjective]
   id: CleanSecCrewObjective
   name: Mantenha o departamento de segurança limpo.
   description: O departamento de segurança é seu domínio, tudo deve estar limpo, organizado e perfeito...
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: security
 #Detective
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseDetectiveObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Detective
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseDetectiveObjective]
   id: SmokeTestCrewObjective
   name: Fume todos os cigarros.
   description: Você ainda não decidiu seu tipo de cigarro favorito. Teste todos.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: detective
 
 - type: entity
-  parent: [BaseCrewObjective, BaseSocialObjective]
+  parent: [BaseCrewObjective, BaseSocialObjective, BaseDetectiveObjective]
   id: InvestigateCrewObjective
   description: Você foi contratado de lado como um investigador privado para investigar esse tripulante. Colete o máximo de informações que puder sobre a vida e rotina deles.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: detective
   - type: TargetObjective
-    title: objective-condition-interact-with-crew-title
+    title: objective-condition-investigate-crew-title
   - type: PickRandomPerson
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseDetectiveObjective]
   id: DrinkCrewObjective
   name: Beba todos os drinks.
   description: I got six shots on me, five whiskey, one thirty-five. Devido a seus casos traumáticos, você decaiu ao alcoolismo. Fique bêbado sempre que possível.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: detective
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseDetectiveObjective]
   id: NoirDetectiveCrewObjective
   name: Finja ser um detetive noir.
   description: Esses corredores não são mais como eram, e essa estação é muito colorida...
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Structures/Wallmounts/signs.rsi
+      state: detective
 #Boxer
 - type: entity
-  parent: [BaseCrewObjective, BaseSocialObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseBoxerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Boxer
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseSocialObjective, BaseBoxerObjective]
   id: BoxCrewObjective
   description: Você escutou que esse tripulante é bem forte, e você quer testar isso.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Misc/folders.rsi
-      state: folder-white
+      sprite: Textures/Clothing/Hands/Gloves/Boxing/boxingred.rsi
+      state: icon
   - type: TargetObjective
     title: objective-condition-interact-with-crew-title
   - type: PickRandomPerson
 #Librarian
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseLibrarianObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Librarian
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseLibrarianObjective]
   id: BoardGameCrewObjective
   name: Organize uma partida de um jogo de tabuleiro.
   description: Junte alguns tripulantes para jogar um jogo de tabuleiro.
@@ -517,7 +659,17 @@
       state: dicebag
 # Clown
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseClownObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Clown
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseClownObjective]
   id: GoodClownCrewObjective
   name: Faça pessoas rirem.
   description: Você é o palhaço, e você vai garantir que as pessoas estejam rindo. Conte piadas, faça truques, ou apenas seja engraçado.
@@ -528,7 +680,7 @@
       state: poster6_contraband
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseClownObjective]
   id: SadClownCrewObjective
   name: Seja triste.
   description: Você é um palhaço triste. Chore mais! Ria menos! Ninguém gosta de sua companhia!
@@ -539,8 +691,8 @@
       state: poster6_contraband
 
 - type: entity
-  parent: [BaseCrewObjective]
-  id: MiserableCrewObjective
+  parent: [BaseCrewObjective, BaseClownObjective]
+  id: MiserableClownCrewObjective
   name: Seja miserável.
   description: Todos adoram miséria! Faça a tripulação ter asco de ti!
   components:
@@ -550,8 +702,8 @@
       state: poster6_contraband
 
 - type: entity
-  parent: [BaseCrewObjective]
-  id: StuntCrewObjective
+  parent: [BaseCrewObjective, BaseClownObjective]
+  id: StuntClownCrewObjective
   name: Faça truques perigosos.
   description: Você ja foi um dublê em filmes. Suas piadas ficam cada vez mais perigosas para si mesmo.
   components:
@@ -561,8 +713,8 @@
       state: poster6_contraband
 
 - type: entity
-  parent: [BaseCrewObjective]
-  id: ActorCrewObjective
+  parent: [BaseCrewObjective, BaseClownObjective]
+  id: ActorClownCrewObjective
   name: Organize um teatro.
   description: Você deve usar o teatro para algo! Organize uma peça de teatro, e faça com que as pessoas assistam.
   components:
@@ -572,7 +724,7 @@
       state: drama1
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseClownObjective]
   id: MimeHateCrewObjective
   name: Faça uma rivalidade com o mimíco.
   description: Aquele mimíco é tão irritante! Ele fica lá, se achando engraçado, sem falar nada. Vocês são rivais.
@@ -583,7 +735,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseClownObjective]
   id: MimeFriendCrewObjective
   name: Seja amigo do mimíco.
   description: Ele é seu parceiro no teatro, e ajuda com suas piadas. Vocês são melhores amigos, para sempre!
@@ -592,9 +744,30 @@
     icon:
       sprite: Clothing/Mask/mime.rsi
       state: icon
+
+- type: entity
+  parent: [BaseCrewObjective, BaseClownObjective]
+  id: UnsatisfiedClownCrewObjective
+  name: Seja demitido.
+  description: Você não queria esse emprego. Quem quer esse emprego? Ser demitido seria uma misericórdia.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 #Mime
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseMimeObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Mime
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseMimeObjective]
   id: ClownHateCrewObjective
   name: Faça uma rivalidade com o palhaço.
   description: Você detesta aquele palhaço bagunceiro, irritante e barulhento. Vocês são rivais.
@@ -605,7 +778,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseMimeObjective]
   id: ClownFriendCrewObjective
   name: Seja amigo do palhaço.
   description: Você e o palhaço cooperam para garantir que todos na estação tem um sorriso no rosto. Vocês são melhores amigos, para sempre!
@@ -614,9 +787,41 @@
     icon:
       sprite: Structures/Wallmounts/posters.rsi
       state: poster6_contraband
+
+- type: entity
+  parent: [BaseCrewObjective, BaseMimeObjective]
+  id: ActorMimeCrewObjective
+  name: Organize um teatro.
+  description: Você deve usar o teatro para algo! Organize uma peça de teatro, e faça com que as pessoas assistam.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: drama1
+
+- type: entity
+  parent: [BaseCrewObjective, BaseMimeObjective]
+  id: MiserableMimeCrewObjective
+  name: Seja miserável.
+  description: Todos adoram miséria! Faça a tripulação ter asco de ti!
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/posters.rsi
+      state: poster6_contraband
 #Bartender
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseBartenderObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Bartender
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseBartenderObjective]
   id: NoDispenserCrewObjective
   name: Não use os dispensadores.
   description: Você odeia as dispensadoras, e Bartenders fracos que dependem delas. Faça todos os seus drinks a mão, e não permita que ninguém use as dispensadoras.
@@ -627,7 +832,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseBartenderObjective]
   id: BudgetCutBartenderCrewObjective
   name: Economize nos drinks.
   description: Devido a corte de verbas, você foi instruido a limitar as doses que serve. Não sirva nenhum drink fora de um shot.
@@ -638,7 +843,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseBartenderObjective]
   id: GetDrunkBartenderCrewObjective
   name: Faça as pessoas ficarem bêbadas.
   description: Você é um servidor de bebidas, e essas pessoas estão com sede e estão chateadas. Garanta que a maior quantidade de pessoas possíveis estejam bêbadas a todo momento.
@@ -649,7 +854,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseBartenderObjective]
   id: RussianRoulleteBartenderCrewObjective
   name: Jogue roleta russa.
   description: O revólver ta ali por um motivo. Jogue roleta russa com seus clientes, e veja quem tem sorte.
@@ -660,7 +865,7 @@
       state: icon
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseBartenderObjective]
   id: ExperimentalBartenderCrewObjective
   name: Faça drinques complicados.
   description: Você adora experimentar. Faça as bebidas mais complicadas possíveis.
@@ -671,7 +876,17 @@
       state: icon
 #Chef
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseChefObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Chef
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: DeliveryChefCrewObjective
   name: Apenas aceite delivery.
   description: Sua cozinha apenas aceita pedidos de delivery. Não prepare nenhum prato na estação, e apenas entregue os pedidos que chegam.
@@ -682,18 +897,25 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseSocialObjective, BaseChefObjective]
   id: RestaurantChefCrewObjective
-  name: Coopere com o bartender.
-  description: Você e o bartender são parceiros de trabalho, vocês devem cooperar para operar a praça de alimentação.
+  description: Coopere com o bartender para criar um restaurante de serviço completo.
   components:
   - type: Objective
     icon:
-      sprite: Structures/Wallmounts/signs.rsi
-      state: kitchen
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
+  - type: TargetObjective
+    title: objective-condition-restaurant-crew-title
+  - type: PickRandomPerson
+    filters:
+    - !type:BodyMindFilter
+      whitelist:
+        components:
+        - SoberGen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: MenuChefCrewObjective
   name: Faça um cardápio.
   description: Crie um cardápio e sirva somente os itens nele.
@@ -704,7 +926,7 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: 5StarChefCrewObjective
   name: Garanta que sua cozinha seja perfeita.
   description: Apenas 5 estrelas nessa cozinha! Tudo deve ser perfeito.
@@ -715,7 +937,7 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: VegetarianChefCrewObjective
   name: Apenas sirva comida vegetariana.
   description: Você é vegano, e tem como missão pessoal convencer a tripulação de suas vantagens. Durante o turno, não cozinhe nem coma nada que tenha carne e/ou produtos animais.
@@ -726,7 +948,7 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: CarnivoreChefCrewObjective
   name: Apenas sirva comida com carne.
   description: Churrasco bom é carne berrando! Durante o turno, apenas cozinhe ou coma comidas que tem carne.
@@ -737,7 +959,7 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: UniqueChefCrewObjective
   name: Nunca repita um prato.
   description: Você é um artista culinário, e suas obras devem ser únicas! Durante o turno, nunca cozinhe o mesmo prato  duas vezes em seguida.
@@ -748,7 +970,7 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseChefObjective]
   id: UncreativeChefCrewObjective
   name: Apenas faça um prato.
   description: Você é menos qualificado do que o esperado, e deu sorte de só saber o prato que foi cobrado no processo seletivo. Cozinhe apenas o mesmo prato durante o turno.
@@ -759,7 +981,7 @@
       state: kitchen
 
 - type: entity
-  parent: [BaseCrewObjective, BaseSocialObjective]
+  parent: [BaseCrewObjective, BaseSocialObjective, BaseChefObjective]
   id: SelectiveChefCrewObjective
   description: Esse tripulante está muito magrinho, coitado... Garanta que eles comam suficiente durante o turno!
   components:
@@ -768,11 +990,31 @@
       sprite: Objects/Misc/folders.rsi
       state: folder-white
   - type: TargetObjective
-    title: objective-condition-interact-with-crew-title
+    title: objective-condition-feed-crew-title
   - type: PickRandomPerson
+#Service Worker
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseServiceWorkerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: ServiceWorker
+    inverted: true
 #Cargotech
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseCargoTechObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: CargoTechnician
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseCargoTechObjective]
   id: GamblingCrewObjective
   name: Aposte.
   description: Você tem um vício! Você precisa apostar. Compre caixas de loteria ou jogue em máquinas caça-níqueis. Apenas garanta que você não seja demitido no fim do dia também, afinal você ainda quer esse emprego.
@@ -783,7 +1025,7 @@
       state: cargo
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseCargoTechObjective]
   id: MailCrewObjective
   name: Entregue correio.
   description: Entregue correio para todos. Se alguém receber uma bomba, a culpa não é sua.
@@ -792,11 +1034,199 @@
     icon:
       sprite: Structures/Wallmounts/signs.rsi
       state: mail
+# Shaft miner
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseShaftMinerObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: ShaftMiner
+    inverted: true
 
+- type: entity
+  parent: [BaseCrewObjective, BaseShaftMinerObjective]
+  id: KillFaunaCrewObjective
+  name: Mate todos os animais silvestres que ver na lavaland.
+  description: A lavaland não está segura. Você vai fazer sua parte em garantir que ela seja segura, e a extinção das espécies nativas não importa.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/kitchen_knife.rsi
+      state: icon
+# Salvage Specialist
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseSalvageSpecialistObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: SalvageSpecialist
+    inverted: true
 
+- type: entity
+  parent: [BaseCrewObjective, BaseSalvageSpecialistObjective]
+  id: BuildShipSalvageCrewObjective
+  name: Construa uma nave.
+  description: Você tem inveja dos mineradores e a nave maneira deles. Faça uma nave para os especialistas de exploração usarem.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/sledgehammer.rsi
+      state: icon
+# Roboticist
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseRoboticistObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Roboticist
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseRoboticistObjective]
+  id: AutomationRoboticistCrewObjective
+  name: Automatize coisas.
+  description: O objetivo de toda sociedade é se fazer obsoleta. Automatize a maior quantidade de trabalhos possíveis.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Specific/Robotics/cyborg_parts.rsi
+      state: borg_head
+#Cientist
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseScientistObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Scientist
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseScientistObjective]
+  id: UpgradeScientistCrewObjective
+  name: Melhore o equipamento dos outros tripulantes.
+  description: Te irrita quando os outros não usam as coisas que você pesquisa para eles. Esse turno, pesquise equipamento melhorado a garanta que eles usem.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: sci
+
+- type: entity
+  parent: [BaseCrewObjective, BaseScientistObjective]
+  id: SafeScientistCrewObjective
+  name: Garanta que os outros cientistas estão sendo seguros.
+  description: Radiação, fauna hostil, explosões, espaçamentos, e NINGUÉM está usando equipamento de segurança? Que horror! Garanta que todos os experimentos estão sendo realizados da forma mais segura possível.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: sci
+# Medical Doctor
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseMedicalDoctorObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: MedicalDoctor
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseMedicalDoctorObjective]
+  id: SpeedDoctorCrewObjective
+  name: Cure os tripulantes o mais rápido possível.
+  description: Os outros tripulantes tem coisas pra fazer! Todo paciente que você cuidar, você precisa curar o mais rápido possível.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: med
+
+- type: entity
+  parent: [BaseCrewObjective, BaseMedicalDoctorObjective]
+  id: TalkativeDoctorCrewObjective
+  name: Faça conversa com seus pacientes.
+  description: Você costumava a ser um Pediatra antes de trabalhar na estação! Acalme, brinque e converse com todo paciente que tratar, e entregue um pirulito a todos antes de dar alta.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: med
+# Paramedic
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseParamedicObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Paramedic
+    inverted: true
+# Chemist
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseChemistObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Chemist
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseChemistObjective]
+  id: SmokeChemistCrewObjective
+  name: Faça cigarros customizados.
+  description: Alêm de ser químico, você trabalha para uma empresa de cigarros. Durante o turno, faça maços de cigarro com diferentes químicos.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: chem
+
+- type: entity
+  parent: [BaseCrewObjective, BaseChemistObjective]
+  id: ComplicatedChemistCrewObjective
+  name: Faça químicos complicados.
+  description: Você decidiu que fazer apenas químicos básicos não é mais suficiente para você. Nesse turno, faça a maior quantidade dos químicos mais complicados que achar.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: chem
+
+- type: entity
+  parent: [BaseCrewObjective, BaseChemistObjective]
+  id: InventiveChemistCrewObjective
+  name: Faça químicos customizados.
+  description: Você é um químico experimental! Faça misturas usando diferentes tipos de remédios e narcóticos, e nomeie elas!
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: chem
 # Captain
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseCaptainCrewObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Captain
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseCaptainCrewObjective]
   id: ProtectDiskCrewObjective
   components:
   - type: Objective
@@ -812,7 +1242,7 @@
     descriptionMultiplyText: objective-condition-thief-multiply-description
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseCaptainCrewObjective]
   id: ProtectRenaultCrewObjective
   components:
   - type: Objective
@@ -827,9 +1257,20 @@
     descriptionText: objective-condition-protect-animal-renault-description
     descriptionMultiplyText: objective-condition-thief-multiply-description
     stealGroup: AnimalRenault
+
 # HOP
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseHeadOfPersonnelCrewObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: HeadOfPersonnel
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseHeadOfPersonnelCrewObjective]
   id: ProtectIanCrewObjective
   components:
   - type: Objective
@@ -846,7 +1287,17 @@
     stealGroup: AnimalIan
 #HOS
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseHeadOfSecurityCrewObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: HeadOfSecurity
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseHeadOfSecurityCrewObjective]
   id: ProtectLawbringerCrewObjective
   components:
   - type: Objective
@@ -862,7 +1313,7 @@
     descriptionMultiplyText: objective-condition-thief-multiply-description
 
 - type: entity
-  parent: [BaseCrewObjective]
+  parent: [BaseCrewObjective, BaseHeadOfSecurityCrewObjective]
   id: ProtectShivaObjective
   components:
   - type: Objective
@@ -877,9 +1328,30 @@
     descriptionText: objective-condition-protect-animal-shiva-description
     descriptionMultiplyText: objective-condition-thief-multiply-description
     stealGroup: AnimalShiva
+
+- type: entity
+  parent: [BaseCrewObjective, BaseHeadOfSecurityCrewObjective]
+  id: GoodSecHOSCrewObjective
+  name: Controle o departamento de segurança.
+  description: Seus oficiais são imprevisíveis e pergiosos. Garanta que eles não causem nenhum caos e mantenham a ordem o turno inteiro.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Wallmounts/signs.rsi
+      state: security
 #RD
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseResearchDirectorCrewObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: ResearchDirector
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseResearchDirectorCrewObjective]
   id: ProtectGeminiCrewObjective
   components:
   - type: Objective
@@ -894,7 +1366,17 @@
     descriptionMultiplyText: objective-condition-thief-multiply-description
 #QM
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseQuartermasterCrewObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: Quartermaster
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseQuartermasterCrewObjective]
   id: ProtectQMKnucklesCrewObjective
   components:
   - type: Objective
@@ -909,7 +1391,17 @@
     descriptionMultiplyText: objective-condition-thief-multiply-description
 #NTR
 - type: entity
-  parent: [BaseCrewObjective]
+  abstract: true
+  parent: BaseObjective
+  id: BaseNanotrasenRepresentativeCrewObjective
+  components:
+  - type: Objective
+  - type: NotJobRequirement
+    job: NanotrasenRepresentative
+    inverted: true
+
+- type: entity
+  parent: [BaseCrewObjective, BaseNanotrasenRepresentativeCrewObjective]
   id: ProtectStationReportCrewObjective
   components:
   - type: Objective

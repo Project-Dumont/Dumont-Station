@@ -38,3 +38,6 @@ trait-socialanxiety-desc = Você fica ansioso quando fala e gagueja.
 
 trait-snoring-name = Ronco
 trait-snoring-desc = Você roncará quando dormir.
+
+trait-creative-name = Criativo
+trait-creative-desc = Você ganha objetivos de tripulação adicionais para tornar seu turno mais interessante.

@@ -16,3 +16,7 @@
 - type: traitCategory
   id: Quirks
   name: trait-category-quirks
+
+- type: traitCategory
+  id: Modifiers
+  name: trait-category-modifiers

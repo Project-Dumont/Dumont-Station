@@ -147,6 +147,10 @@
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
+  - !type:AddObjectiveSpecial #Gaby crew objectives
+    count: 1
+    objectives:
+    - ProtectStationReportCrewObjective #It's his fucking job.
   #alternateTitles:
   #- NanotrasenRepresentativeTitleLiason
   #- NanotrasenRepresentativeTitleInspector

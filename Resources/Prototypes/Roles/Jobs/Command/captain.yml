@@ -191,13 +191,6 @@
     count: 1
     objectives:
     - ProtectDiskCrewObjective #It's his fucking job.
-  - !type:AddObjectiveSpecial
-    count: 1
-    objectives:
-    - ProtectRenaultCrewObjective
-    - MoneyCrewObjective
-    - WriteABookCrewObjective
-    - CoolClothesCrewObjective
   alternateTitles:
   - CaptainTitleMaster
   - CaptainTitleAdmiral

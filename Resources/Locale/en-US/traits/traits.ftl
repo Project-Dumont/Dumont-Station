@@ -48,6 +48,9 @@ trait-lightweight-desc = Alcohol has a stronger effect on you.
 trait-monochromacy-name = Monochromacy
 trait-monochromacy-desc = You are fully colorblind, everything you perceive ranges from blacks to whites.
 
+trait-creative-name = Creative
+trait-creative-desc = You gain additional crew objectives to make your shift more interesting.
+
 trait-muted-name = Muted
 trait-muted-desc = You can't speak.
 

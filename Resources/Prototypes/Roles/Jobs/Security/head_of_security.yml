@@ -201,14 +201,6 @@
     components:
       - type: CommandStaff
       - type: SecurityStaff # goobstation
-  - !type:AddObjectiveSpecial #Gaby crew objectives
-    count: 1
-    objectives:
-    - ProtectLawbringerCrewObjective
-  - !type:AddObjectiveSpecial
-    count: 1
-    objectives:
-    - ProtectShivaCrewObjective
   alternateTitles:
   - HeadOfSecurityTitleGuard
   - HeadOfSecurityTitleSheriff

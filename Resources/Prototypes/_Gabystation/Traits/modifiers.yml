@@ -1,0 +1,97 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: Creative
+  name: trait-creative-name
+  description: trait-creative-desc
+  category: Modifiers
+  components:
+    - type: AddCrewObjectives
+      objectives:
+        - GetMedalCrewObjective
+        - InteractWithCrewObjective
+        - CollectCansCrewObjective
+        - CoolClothesCrewObjective
+        - MVPCrewObjective
+        - AvoidDangerCrewObjective
+        - WriteABookCrewObjective
+        - SpreadJoyCrewObjective
+        - MoneyCrewObjective
+        - PlayChessCrewObjective
+#        - TransferCrewObjective self antaggy
+        - TideCrewObjective
+        - GrayChemistCrewObjective
+        - GrayCientistCrewObjective
+        - GrayCargoCrewObjective
+        - GraySurgeonCrewObjective
+        - MedicinalPlantsBotanistCrewObjective
+        - WeedBotanistCrewObjective
+        - RapBattleCrewObjective
+        - KillRatsCrewObjective
+        - RecycleCrewObjective
+        - CleanCrewmemberCrewObjective
+        - MassCrewObjective
+        - CreateAReligionCrewObjective
+        - IndecisiveReligionCrewObjective
+        - IlluminateMaintsCrewObjective
+#        - MorePowerCrewObjective mt perigoso
+        - PTLCrewObjective
+        - UpgradeWindowsCrewObjective
+        - UpgradeStationCrewObjective
+        - MakeFreezonCrewObjective
+        - TEGCrewObjective
+        - GoodSecCrewObjective
+        - BackseatSecCrewObjective
+        - CleanSecCrewObjective
+        - SmokeTestCrewObjective
+        - InvestigateCrewObjective
+        - DrinkCrewObjective
+        - NoirDetectiveCrewObjective
+        - BoxCrewObjective
+        - BoardGameCrewObjective
+        - GoodClownCrewObjective
+        - SadClownCrewObjective
+        - MiserableClownCrewObjective
+        - StuntClownCrewObjective
+        - ActorClownCrewObjective
+        - MimeHateCrewObjective
+        - MimeFriendCrewObjective
+        - ClownHateCrewObjective
+        - ClownFriendCrewObjective
+        - ActorMimeCrewObjective
+        - MiserableMimeCrewObjective
+        - NoDispenserCrewObjective
+        - BudgetCutBartenderCrewObjective
+        - GetDrunkBartenderCrewObjective
+        - RussianRoulleteBartenderCrewObjective
+        - ExperimentalBartenderCrewObjective
+        - DeliveryChefCrewObjective
+        - RestaurantChefCrewObjective
+        - MenuChefCrewObjective
+        - 5StarChefCrewObjective
+        - VegetarianChefCrewObjective
+#        - CarnivoreChefCrewObjective até eu achar uma forma de não deixar 2 objetivos co-existir
+        - UniqueChefCrewObjective
+        - UncreativeChefCrewObjective
+        - SelectiveChefCrewObjective
+        - GamblingCrewObjective
+        - MailCrewObjective
+        - ProtectRenaultCrewObjective
+        - ProtectIanCrewObjective
+        - ProtectShivaObjective
+        - RehabilitationLawyerCrewObjective
+        - GoodSecHOSCrewObjective
+        - UpgradeScientistCrewObjective
+        - SafeScientistCrewObjective
+        - AutomationRoboticistCrewObjective
+        - SpeedDoctorCrewObjective
+        - SmokeChemistCrewObjective
+        - ComplicatedChemistCrewObjective
+        - TalkativeDoctorCrewObjective
+        - InventiveChemistCrewObjective
+        - UnsatisfiedClownCrewObjective
+        - KillFaunaCrewObjective
+        - BuildShipSalvageCrewObjective
+      count: 2

@@ -9,6 +9,16 @@ objective-condition-interact-with-crew-title = Interaja com {$targetName}, {CAPI
 
 objective-condition-favor-crew-title = Mostre seu agradecimento a {$targetName}, {CAPITALIZE($job)} .
 
+objective-condition-chess-crew-title = Desafie {$targetName}, {CAPITALIZE($job)} a um jogo de xadrez.
+
+objective-condition-clean-crewmember-title = Limpe {$targetName}, {CAPITALIZE($job)} .
+
+objective-condition-investigate-crew-title = Investigue {$targetName}, {CAPITALIZE($job)} .
+
+objective-condition-restaurant-crew-title = Coopere com {$targetName}, {CAPITALIZE($job)} para fazer um restaurante.
+
+objective-condition-restaurant-crew-title = Faça comida para {$targetName}, {CAPITALIZE($job)} .
+
 objective-issuer-personal = Pessoal
 
 objective-condition-gain-medal-title = Receba uma medalha.

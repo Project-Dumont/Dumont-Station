@@ -51,3 +51,8 @@ humanoid-profile-editor-job-priority-never-button = Nunca
 humanoid-profile-editor-naming-rules-warning = Crie seu próprio nome único e realista. Consulte a regra nº 10 para todas as restrições e expectativas.
 humanoid-profile-editor-markings-tab = Marcas
 humanoid-profile-editor-flavortext-tab = Descrição
+
+trait-category-disabilities = Deficiências
+trait-category-speech = Traços de fala
+trait-category-quirks = Peculiaridades
+trait-category-modifiers = Modificadores
