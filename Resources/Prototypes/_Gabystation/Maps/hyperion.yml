@@ -42,7 +42,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'PS'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_strain.yml
+          emergencyShuttlePath: /Maps/_Gabystation/Shuttles/emergency_strain.yml
         - type: StationJobs
           availableJobs:
             #command
