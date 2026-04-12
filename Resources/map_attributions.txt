@@ -9,6 +9,9 @@
 
 - files: ["tram.yml"]
   authors: Betterwithketchup
+
+- files: ["hyperion.yml"]
+  authors: pn130, CRISOOOOO  
 # Wizden/Goob Maps
 # These are located in /Maps/
 
