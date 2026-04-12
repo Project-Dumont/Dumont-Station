@@ -313,6 +313,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void OnRemove(Entity<StorageComponent> entity, ref ComponentRemove args)
     {
+        // GabyStation start
         var uid = entity.Owner;
         var coordinates = TransformSystem.GetMoverCoordinates(uid);
 
@@ -324,6 +325,7 @@ public abstract class SharedStorageSystem : EntitySystem
         {
             ContainerSystem.EmptyContainer(entity.Comp.Container, destination: coordinates);
         }
+        // GabyStation end
 
         UI.CloseUi(uid, StorageComponent.StorageUiKey.Key);
     }
@@ -792,7 +794,7 @@ public abstract class SharedStorageSystem : EntitySystem
         var coordinates = TransformSystem.GetMoverCoordinates(uid);
 
         // Being destroyed so need to recalculate.
-        ContainerSystem.EmptyContainer(storageComp.Container, force: true, destination: coordinates, reparent: false);
+        ContainerSystem.EmptyContainer(storageComp.Container, force: true, destination: coordinates, reparent: false); // GabyStation force & not reparent
     }
 
     /// <summary>

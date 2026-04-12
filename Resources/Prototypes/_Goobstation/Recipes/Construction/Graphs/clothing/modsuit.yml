@@ -118,6 +118,7 @@
         - tool: Anchoring
           doAfter: 1
 
+    # GabyStation begin
     - to: security
       steps:
         - tag: ModsuitPlatingSecurity
@@ -201,6 +202,7 @@
 
         - tool: Anchoring
           doAfter: 1
+    # GabyStation end
 
   - node: standard
     entity: ClothingModsuitStandard

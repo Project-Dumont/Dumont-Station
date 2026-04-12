@@ -35,7 +35,7 @@
           whitelist:
             components:
               - PowerCell
-        control_module:
+        control_module: # GabyStation
           name: modsuit-control-unit-module-slot
           startingItem: ModsuitModuleBasicStorage
           insertDelay: 1.0

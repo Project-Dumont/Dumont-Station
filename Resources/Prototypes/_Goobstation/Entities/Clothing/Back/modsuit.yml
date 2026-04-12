@@ -33,14 +33,14 @@
     quickEquip: false
     slots:
     - back
-  - type: UpgradeableWeapon
+  - type: UpgradeableWeapon # GabyStation
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
         ents: []
       toggleable-clothing: !type:Container
       cell_slot: !type:ContainerSlot
-      control_module: !type:ContainerSlot
+      control_module: !type:ContainerSlot # GabyStation
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -68,7 +68,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -79,7 +79,7 @@
   - type: ItemSlotsRequirePanel
     slots:
       cell_slot: true
-      control_module: false
+      control_module: false # GabyStation
   - type: PowerCellDraw
     drawRate: 0.8 # Sealed draw rate
     useRate: 4 # Draw rate for sealing
@@ -118,14 +118,14 @@
     quickEquip: false
     slots:
     - back
-  - type: UpgradeableWeapon
+  - type: UpgradeableWeapon # GabyStation
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
         ents: []
       toggleable-clothing: !type:Container
       cell_slot: !type:ContainerSlot
-      control_module: !type:ContainerSlot
+      control_module: !type:ContainerSlot # GabyStation
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -153,7 +153,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -193,7 +193,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -239,7 +239,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -293,7 +293,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -339,7 +339,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -387,7 +387,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -435,7 +435,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -486,7 +486,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0
@@ -534,7 +534,7 @@
         whitelist:
           components:
             - PowerCell
-      control_module:
+      control_module: # GabyStation
         name: modsuit-control-unit-module-slot
         startingItem: ModsuitModuleBasicStorage
         insertDelay: 1.0

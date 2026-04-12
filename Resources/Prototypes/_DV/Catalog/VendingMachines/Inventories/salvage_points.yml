@@ -93,7 +93,7 @@
     cost: 1000
   - id: LavalandEquipmentExplorerSuit
     cost: 1000
-# Gabystation modulos
+  # GabyStation modulos begin
   - id: ModsuitModuleJump
     cost: 1000
   - id: ModsuitModuleMagboot
@@ -102,6 +102,7 @@
     cost: 1000
   - id: ModsuitModuleGPS
     cost: 1000
+  # GabyStation modulos end
   - id: LavalandWeaponKineticMachete
     cost: 1050
   - id: LavalandWeaponKineticClaws
