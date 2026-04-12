@@ -17,14 +17,14 @@ namespace Content.Server.ADT.BookPrinter.Commands
         {
             if (args.Length < 1)
             {
-                shell.WriteError("Использование: deletebook <ID>");
-                shell.WriteError("Пример: deletebook 15");
+                shell.WriteError("Use: deletebook <ID>");
+                shell.WriteError("Exemplo: deletebook 67");
                 return;
             }
 
             if (!int.TryParse(args[0], out var bookId))
             {
-                shell.WriteError("ID книги должен быть числом!");
+                shell.WriteError("O ID do livro deve ser um número!");
                 return;
             }
 
@@ -39,7 +39,7 @@ namespace Content.Server.ADT.BookPrinter.Commands
 
                 if (success)
                 {
-                    shell.WriteLine($"Книга с ID {bookId} успешно удалена из базы данных.");
+                    shell.WriteLine($"O livro com ID {bookId} removido com sucesso do banco de dados.");
 
                     var bookPrinterSystem = IoCManager.Resolve<IEntitySystemManager>()
                         .GetEntitySystem<BookPrinterSystem>();
@@ -47,12 +47,12 @@ namespace Content.Server.ADT.BookPrinter.Commands
                 }
                 else
                 {
-                    shell.WriteError($"Книга с ID {bookId} не найдена в базе данных.");
+                    shell.WriteError($"o livro com ID {bookId} não foi encontrado no banco de dados.");
                 }
             }
             catch (Exception ex)
             {
-                shell.WriteError($"Ошибка при удалении книги: {ex.Message}");
+                shell.WriteError($"Erro ao remover livro: {ex.Message}");
             }
         }
 
@@ -60,7 +60,7 @@ namespace Content.Server.ADT.BookPrinter.Commands
         {
             if (args.Length == 1)
             {
-                return CompletionResult.FromHintOptions(["<ID книги>"], "ID книги для удаления");
+                return CompletionResult.FromHintOptions(["<ID>"], "O ID do livro a ser removido");
             }
 
             return CompletionResult.Empty;
@@ -87,25 +87,25 @@ namespace Content.Server.ADT.BookPrinter.Commands
 
                 if (!books.Any())
                 {
-                    shell.WriteLine("База данных книг пуста.");
+                    shell.WriteLine("O banco de dados de livros está vazio.");
                     return;
                 }
 
-                shell.WriteLine($"Найдено книг в базе: {books.Count()}");
+                shell.WriteLine($"Os livros encontrados no banco de dados foram {books.Count()}");
                 shell.WriteLine("=====================================");
 
                 foreach (var book in books.OrderBy(b => b.Id))
                 {
                     shell.WriteLine($"ID: {book.Id}");
-                    shell.WriteLine($"Название: {book.Name}");
-                    shell.WriteLine($"Описание: {book.Description}");
-                    shell.WriteLine($"Размер: {book.Content.Length} символов");
+                    shell.WriteLine($"Nome: {book.Name}");
+                    shell.WriteLine($"Descrição: {book.Description}");
+                    shell.WriteLine($"Tamanho: {book.Content.Length} caracteres");
                     shell.WriteLine("-------------------------------------");
                 }
             }
             catch (Exception ex)
             {
-                shell.WriteError($"Ошибка при получении списка книг: {ex.Message}");
+                shell.WriteError($"Erro ao obter a lista de livros: {ex.Message}");
             }
         }
     }
