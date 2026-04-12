@@ -421,3 +421,6 @@ uplink-barber-scissors-desc = Uma boa ferramenta para dar um belo corte de cabel
 
 uplink-backpack-syndicate-name = Mochila do Sindicato
 uplink-backpack-syndicate-desc = Mochila leve à prova de explosão para guardar vários bens traidores
+
+uplink-storage-module-name = Módulo de Armazenamento Cybersun
+uplink-storage-module-desc = Um módulo de armazenamento para MODsuits capaz de armazenar uma quantidade imensa de itens. Não vem com uma modsuit.

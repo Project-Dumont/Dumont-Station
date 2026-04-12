@@ -32,6 +32,14 @@
           whitelist:
             components:
               - PowerCell
+        control_module: # GabyStation
+          name: modsuit-control-unit-module-slot
+          startingItem: ModsuitModuleBasicStorage
+          insertDelay: 1.0
+          ejectDelay: 0.5
+          whitelist:
+            tags:
+              - ModsuitControlUnitUpgrade
     - type: Storage
       grid:
         - 0,0,10,3
@@ -60,7 +68,7 @@
         gloves-vox:
         - state: equipped-HAND-sealed-vox
         - state: equipped-HAND-sealed-unshaded-vox
-          shader: unshaded          
+          shader: unshaded
     - type: Insulated # Goob Edit (WHY IS IT NOT INSULATED??)
 
 - type: entity

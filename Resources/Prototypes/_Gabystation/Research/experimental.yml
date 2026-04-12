@@ -3,6 +3,23 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: technology
+  id: ModPlatingTech
+  name: research-technology-modsuit-plating
+  icon:
+    sprite: _Goobstation/Objects/Specific/Robotics/modsuit_parts.rsi
+    state: medical-plating
+  discipline: Experimental
+  tier: 2
+  cost: 5000 # esses modulos não fazem muito e tem alternativas ja pesquisadas a esse ponto.
+  recipeUnlocks:
+  - ModsuitPlatingEngineerRecipe
+  - ModsuitPlatingParamedicRecipe
+  - ModsuitPlatingSecurityRecipe
+  technologyPrerequisites:
+  - ModsuitsTech
+  position: -4,-3
+
+- type: technology
   id: BasicModulesTech
   name: research-technology-basic-modules
   icon:

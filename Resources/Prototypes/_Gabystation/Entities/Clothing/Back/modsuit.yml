@@ -28,9 +28,6 @@
       - state: equipped-BACKPACK-sealed
       back-resomi:
       - state: equipped-BACKPACK-sealed-resomi
-  - type: Storage
-    grid:
-    - 0,0,7,4
 
 - type: entity
   parent: ClothingModsuitMining
@@ -45,3 +42,11 @@
         whitelist:
           components:
             - PowerCell
+      control_module:
+        name: modsuit-control-unit-module-slot
+        startingItem: ModsuitModuleLargeStorage
+        insertDelay: 1.0
+        ejectDelay: 0.5
+        whitelist:
+          tags:
+            - ModsuitControlUnitUpgrade

@@ -2384,3 +2384,61 @@ Entries:
         sobrevivência.
   id: 289
   time: '2026-04-04T14:09:01.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Restaura a nave da lavaland para a do goob!
+  id: 290
+  time: '2026-04-11T03:57:25.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Add
+      message: Os trajes agora são imunes a tiros de seringa.
+  id: 291
+  time: '2026-04-11T04:17:33.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Mudança no surgimento de revs e xenos (agora mais comuns).
+    - type: Add
+      message: Adicionado access breaker e DNA scrambler no pacote infiltração.
+  id: 292
+  time: '2026-04-11T22:36:53.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: O bastão telescopico agora stuna em 5 hits, e foi traduzido.
+  id: 293
+  time: '2026-04-11T23:00:46.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Agora a sci pode pesquisar blindagens de modsuit para engenharia,
+        segurança e médico, e quando pesquisados, podem ser fabricados em seus
+        respectivos fabricadores.
+    - type: Add
+      message: >-
+        Módulos de armazenamento pra modsuit! Agora elas não tem armazenamento
+        natural, mas vem com um módulo de armazenamento básico. Armazenamento
+        grande e armazenamento bluespace pode ser pesquisado na sci em Modular
+        Technologies e armazenamento bluespace, respectivamente.
+    - type: Add
+      message: >-
+        Novo item de uplink: Módulo de armazenamento Cybersun, que consegue
+        armazenar muito mais que até mochilas bluespace, mas precisa ser
+        inserido em uma modsuit. 20TC.
+    - type: Tweak
+      message: >-
+        Módulos de salto, magboots, GPS e broca pode ser comprados no
+        salvagevend.
+    - type: Fix
+      message: A modsuit pioneer agora pode usar módulos de torso e sapato.
+    - type: Tweak
+      message: >-
+        Itens que perder o componente de armazenamento agora esvaziam os itens
+        no chão invés de deletar.
+    - type: Fix
+      message: Agora a modsuit pioneer do salvage vend vem com bateria.
+  id: 294
+  time: '2026-04-12T11:32:11.0000000+00:00'

@@ -388,3 +388,103 @@
 #    tags:
 #    - ModsuitChestUpgrade
 # Heartbeat- Eu tentei adicionar um módulo de proteção contra radiação, mas quando eu coloquei na hardsuit, ela perdeu os outros stats. Se alguém souber como consertar isso, so restaurar e consertar.
+
+# Control unit
+- type: entity
+  parent: BaseItem
+  id: ModsuitModuleBasicStorage
+  name: modsuit basic storage module
+  description: A module that can be inserted inside modsuit control units to give them a decent amount of internal storage.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: storage-control
+  - type: GunUpgrade
+    name: modsuit-module-basic-storage-name
+  - type: GunUpgradeComponents
+    components:
+    - type: Storage
+      grid:
+      - 0,0,1,3
+      - 3,0,6,3
+      - 8,0,9,3
+      maxItemSize: Huge
+  - type: Tag
+    tags:
+    - ModsuitControlUnitUpgrade
+  - type: Item
+    size: Ginormous
+
+- type: entity
+  parent: BaseItem
+  id: ModsuitModuleLargeStorage
+  name: modsuit large storage module
+  description: A module that can be inserted inside modsuit control units to give them a large amount of internal storage.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: storage-control
+  - type: GunUpgrade
+    name: modsuit-module-large-storage-name
+  - type: GunUpgradeComponents
+    components:
+    - type: Storage
+      grid:
+      - 0,0,7,4
+      maxItemSize: Huge
+  - type: Tag
+    tags:
+    - ModsuitControlUnitUpgrade
+  - type: Item
+    size: Ginormous
+
+- type: entity
+  parent: BaseItem
+  id: ModsuitModuleBluespaceStorage
+  name: modsuit bluespace storage module
+  description: A module that can be inserted inside modsuit control units to allow the user to use bluespace storage inside the control unit, for the ultimate in storage technology.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: bluespace-control
+  - type: GunUpgrade
+    name: modsuit-module-bluespace-storage-name
+  - type: GunUpgradeComponents
+    components:
+    - type: Storage
+      grid:
+      - 0,0,14,5 #Goob
+      maxItemSize: Huge
+  - type: Tag
+    tags:
+    - ModsuitControlUnitUpgrade
+  - type: Item
+    size: Ginormous
+
+- type: entity
+  parent: BaseItem
+  id: ModsuitModuleSyndicateStorage
+  name: modsuit syndicate storage module
+  description: A module that can be inserted inside modsuit control units to allow the user to compress items inside the control unit, allowing for much more efficient storage than even bluespace storage.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
+    state: syndie-control
+  - type: GunUpgrade
+    name: modsuit-module-large-storage-name #Para não ver o nome ao inspecionar a control unit com isso inserido.
+  - type: GunUpgradeComponents
+    components:
+    - type: Storage
+      grid:
+      - 0,0,18,7 #Goob
+      maxItemSize: Huge
+  - type: Tag
+    tags:
+    - ModsuitControlUnitUpgrade
+  - type: Item
+    size: Ginormous
+  - type: Contraband
+    severity: Syndicate
+    criminalPoints: 4.9
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 5
