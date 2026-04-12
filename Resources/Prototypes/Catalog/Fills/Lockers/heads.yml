@@ -572,7 +572,7 @@
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
-    - id: SecurityMagboots
+    - id: SecurityMagboots # GabyStation
 
 # No hardsuit locker
 - type: entity

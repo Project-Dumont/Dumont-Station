@@ -113,7 +113,7 @@
   recipeUnlocks:
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
-  - SecurityMagbootsRecipe
+  - SecurityMagbootsRecipe # GabyStation
   # Goobstation R&D Console rework start
   position: -3,-1
   technologyPrerequisites:

@@ -818,7 +818,7 @@
     - PowerCells
     - BorgModulesSecurityDeltaV # DeltaV - Security Borg
     - SecurityModules # Gabystation
-    - SecurityClothing #Gabystation
+    - SecurityClothing # Gabystation
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - SyndicateAmmoLightStatic
