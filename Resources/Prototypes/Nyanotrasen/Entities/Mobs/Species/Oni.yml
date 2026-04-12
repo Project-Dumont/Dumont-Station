@@ -79,9 +79,9 @@
     upper: MobOni
     lowest: MobMonkeyOni
   # Corvax-Wega-Genetics-end
-  - type: DashAction
+  - type: DashAction # GabyStation
     actionProto: ActionOniCharge
-  - type: OniCharge
+  - type: OniCharge  # GabyStation
 
 - type: entity
   save: false
