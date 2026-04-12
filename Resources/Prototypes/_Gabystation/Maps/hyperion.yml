@@ -76,7 +76,7 @@
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ -1, -1 ]
-            ResearchAssistant: [ 11, -1 ]
+            ResearchAssistant: [ -1, -1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
