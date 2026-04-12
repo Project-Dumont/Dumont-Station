@@ -49,12 +49,12 @@
           bounds: "-0.4,-0.3,0.4,0.3"
         density: 190
         mask:
-        - TabletopMachineMask
+        - MachineMask
         layer:
-        - TabletopMachineLayer
-  - type: ApcPowerReceiver
-  - type: ExtensionCableReceiver
-  - type: ActivatableUIRequiresPower
+        - MachineLayer
+#  - type: ApcPowerReceiver
+#  - type: ExtensionCableReceiver
+#  - type: ActivatableUIRequiresPower
   - type: Anchorable
   - type: Pullable
   - type: Damageable
@@ -77,9 +77,6 @@
         whitelist:
           tags:
           - Book
-        blacklist:
-          components:
-            - GrantAllLanguagesOnUse
       cartridgeSlot:
         whitelist:
           components:

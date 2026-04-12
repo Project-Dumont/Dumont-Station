@@ -1931,7 +1931,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
             return true;
         }
-        
+
         protected async Task<List<BookPrinterEntry>> GetBookPrinterEntriesImpl(DbGuard db)
         {
             return await db.DbContext.BookPrinterEntry
