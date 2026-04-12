@@ -265,7 +265,7 @@ namespace Content.Server.ADT.BookPrinter
                 {
                     UploadBookContent(content);
                     _globalCooldown.RegisterUpload();
-                    _chatManager.SendAdminAnnouncement("\nВНИМАНИЕ!\n" + $"Была выложена книга с следующим названием: {content.Name}. Автор: {EntityManager.ToPrettyString(entity):player}");
+                    _chatManager.SendAdminAnnouncement("\nATENÇÃO!\n" + $"Foi enviado um livro com o seguinte título: {content.Name}. Autor: {EntityManager.ToPrettyString(entity):player}");
                     _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{EntityManager.ToPrettyString(entity):player} uploaded book with this name: {content.Name}");
                 }
                 SetupTask(bookPrinter, "Uploading");
