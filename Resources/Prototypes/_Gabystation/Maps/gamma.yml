@@ -71,9 +71,12 @@
             MedicalDoctor: [ 5, 5 ]
             Psychologist: [ 1, 1 ]
             MedicalIntern: [ 4, 4 ]
+            Geneticist: [ 2, 2 ]
+            Virologist: [2, 2 ]
             #science
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 5, 5 ]
+            Scientist: [ 4, 4 ]
+            Roboticist: [ 2, 2 ]
             ResearchAssistant: [ 4, 4 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -84,6 +87,7 @@
             Lawyer: [ 2, 2 ]
             PermaPrisoner: [ 4, 4 ]
             Brigmedic: [ 1, 1 ]
+            PrisonGuard: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
@@ -95,6 +99,7 @@
             Musician: [ 2, 2 ]
             Boxer: [ 1, 1 ]
             Reporter: [ 1, 1 ]
+            RadioHost: [ 1, 1 ]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
