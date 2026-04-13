@@ -457,7 +457,10 @@
     - type: MansusGraspBlockTrigger # Goobstation
     - type: TriggerOnMobstateChange
       mobState:
-      - Critical
+      # LP Edit Start
+      - SoftCritical
+      - HardCritical
+      # LP Edit End
       - Dead
     - type: RattleOnTrigger
       targetUser: true

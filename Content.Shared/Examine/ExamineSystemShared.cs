@@ -254,7 +254,7 @@ namespace Content.Shared.Examine
                 if (MobStateSystem.IsDead(examiner, mobState))
                     return DeadExamineRange;
 
-                if (MobStateSystem.IsCritical(examiner, mobState) || TryComp<BlindableComponent>(examiner, out var blind) && blind.IsBlind)
+                if (MobStateSystem.IsSoftCritical(examiner, mobState) || MobStateSystem.IsCritical(examiner, mobState) || TryComp<BlindableComponent>(examiner, out var blind) && blind.IsBlind) // LP Edit
                     return CritExamineRange;
 
                 if (TryComp<BlurryVisionComponent>(examiner, out var blurry))

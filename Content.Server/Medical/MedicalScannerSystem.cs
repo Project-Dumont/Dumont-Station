@@ -224,6 +224,11 @@ namespace Content.Server.Medical
             if (_mobStateSystem.IsAlive(uid, state))
                 return MedicalScannerStatus.Green;
 
+            // LP Edit Start
+            if (_mobStateSystem.IsSoftCritical(uid, state))
+                return MedicalScannerStatus.Red;
+            // LP Edit End
+
             if (_mobStateSystem.IsCritical(uid, state))
                 return MedicalScannerStatus.Red;
 
