@@ -1,0 +1,132 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: CaprisHornsBack
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/horns_markings.rsi
+    state: back
+
+- type: marking
+  id: CaprisHornsFront
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/horns_markings.rsi
+    state: front
+
+- type: marking
+  id: CaprisHornsMicro
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/horns_markings.rsi
+    state: micro
+
+- type: marking
+  id: CaprisHornsSide
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/horns_markings.rsi
+    state: side
+
+- type: marking
+  id: CaprisHornsSpiral
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/horns_markings.rsi
+    state: spiral
+
+- type: marking
+  id: CaprisEarsFallen
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/ear_markings.rsi
+    state: fallen
+
+- type: marking
+  id: CaprisEarsNormal
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/ear_markings.rsi
+    state: normal
+
+- type: marking
+  id: CaprisEarsRounded
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/ear_markings.rsi
+    state: rounded
+
+- type: marking
+  id: CaprisSnoutNormal
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/snout_markings.rsi
+    state: normal
+
+- type: marking
+  id: CaprisSnoutNose
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/snout_markings.rsi
+    state: normal_nose
+
+- type: marking
+  id: CaprisTailNormal
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/tail_markings.rsi
+    state: normal
+
+- type: marking
+  id: CaprisHeadCenter
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/head_markings.rsi
+    state: center
+
+- type: marking
+  id: CaprisHeadLines
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/head_markings.rsi
+    state: lines
+
+- type: marking
+  id: CaprisHeadSideEyes
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Capris]
+  sprites:
+  - sprite: _Gabystation/Mobs/Customization/Capris/Customizations/head_markings.rsi
+    state: sideeyes

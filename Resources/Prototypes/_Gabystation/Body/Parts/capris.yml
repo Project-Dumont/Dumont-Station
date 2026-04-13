@@ -1,0 +1,111 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: PartCapris
+  parent: [BaseItem, BasePart]
+  name: "capris body part"
+  abstract: true
+  components:
+  - type: Icon
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+  - type: BodyPart
+    species: Capris
+
+- type: entity
+  id: ChestCapris
+  name: "capris chest"
+  parent: [PartCapris, BaseChest]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: chest_m
+
+- type: entity
+  id: GroinCapris
+  name: "capris groin"
+  parent: [PartCapris, BaseGroin]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: groin_m
+
+- type: entity
+  id: HeadCapris
+  name: "capris head"
+  parent: [PartCapris, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: head_m
+
+- type: entity
+  id: LeftArmCapris
+  name: "left capris arm"
+  parent: [PartCapris, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_arm
+
+- type: entity
+  id: RightArmCapris
+  name: "right capris arm"
+  parent: [PartCapris, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_arm
+
+- type: entity
+  id: LeftHandCapris
+  name: "left capris hand"
+  parent: [PartCapris, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_hand
+
+- type: entity
+  id: RightHandCapris
+  name: "right capris hand"
+  parent: [PartCapris, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_hand
+
+- type: entity
+  id: LeftLegCapris
+  name: "left capris leg"
+  parent: [PartCapris, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_leg
+
+- type: entity
+  id: RightLegCapris
+  name: "right capris leg"
+  parent: [PartCapris, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_leg
+
+- type: entity
+  id: LeftFootCapris
+  name: "left capris foot"
+  parent: [PartCapris, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_foot
+
+- type: entity
+  id: RightFootCapris
+  name: "right capris foot"
+  parent: [PartCapris, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_foot

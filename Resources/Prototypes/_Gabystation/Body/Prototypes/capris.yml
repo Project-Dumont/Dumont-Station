@@ -1,0 +1,57 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: body
+  id: Capris
+  name: capris
+  root: chest
+  slots:
+    head:
+      part: HeadCapris
+      connections:
+      - chest
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    chest:
+      part: ChestCapris
+      connections:
+      - groin
+      - right arm
+      - left arm
+      - head
+      organs:
+        heart: OrganHumanHeart
+        lungs: OrganHumanLungs
+    groin:
+      part: GroinCapris
+      connections:
+      - right leg
+      - left leg
+      organs:
+        stomach: OrganHumanStomach
+        liver: OrganHumanLiver
+        kidneys: OrganHumanKidneys
+    right arm:
+      part: RightArmCapris
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmCapris
+      connections:
+      - left hand
+    right hand:
+      part: RightHandCapris
+    left hand:
+      part: LeftHandCapris
+    right leg:
+      part: RightLegCapris
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegCapris
+      connections:
+      - left foot
+    right foot:
+      part: RightFootCapris
+    left foot:
+      part: LeftFootCapris

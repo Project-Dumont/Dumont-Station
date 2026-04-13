@@ -1,0 +1,215 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: species
+  id: Capris
+  name: species-name-capris
+  roundStart: true
+  prototype: MobCapris
+  sprites: MobCaprisSprites
+  markingLimits: MobCaprisMarkingLimits
+  dollPrototype: MobCaprisDummy
+  skinColoration: AnimalFur
+  minHeight: 0.90
+  defaultHeight: 1.00
+  maxHeight: 1.10
+  minWidth: 0.90
+  defaultWidth: 1.00
+  maxWidth: 1.10
+
+- type: markingPoints
+  id: MobCaprisMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ CaprisSnoutNormal ]
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ CaprisTailNormal ]
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ CaprisHornsFront ]
+    HeadSide:
+      points: 1
+      required: true
+      defaultMarkings: [ CaprisEarsNormal ]
+    Face:
+      points: 2
+      required: true
+      defaultMarkings: [ CaprisSnoutNose ]
+    Chest:
+      points: 10
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    RightLeg:
+      points: 2
+      required: false
+    RightFoot:
+      points: 2
+      required: false
+    LeftLeg:
+      points: 2
+      required: false
+    LeftFoot:
+      points: 2
+      required: false
+    RightArm:
+      points: 2
+      required: false
+    RightHand:
+      points: 3
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    LeftHand:
+      points: 3
+      required: false
+
+- type: speciesBaseSprites
+  id: MobCaprisSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobCaprisHead
+    Face: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobCaprisChest
+    Groin: MobCaprisGroin
+    Eyes: MobCaprisEyes
+    HeadTop: MobHumanoidAnyMarking
+    LArm: MobCaprisLArm
+    RArm: MobCaprisRArm
+    LHand: MobCaprisLHand
+    RHand: MobCaprisRHand
+    LLeg: MobCaprisLLeg
+    RLeg: MobCaprisRLeg
+    LFoot: MobCaprisLFoot
+    RFoot: MobCaprisRFoot
+    Tail: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobCaprisEyes
+  baseSprite:
+    sprite: _Gabystation/Mobs/Customization/Capris/Customizations/eyes_markings.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: MobCaprisHead
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobCaprisHeadMale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobCaprisHeadFemale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobCaprisChest
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobCaprisChestMale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobCaprisChestFemale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: chest_f
+
+- type: humanoidBaseSprite
+  id: MobCaprisGroin
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobCaprisGroinMale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobCaprisGroinFemale
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: groin_f
+
+- type: humanoidBaseSprite
+  id: MobCaprisLLeg
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobCaprisLArm
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobCaprisLHand
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobCaprisLFoot
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobCaprisRLeg
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobCaprisRArm
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobCaprisRHand
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobCaprisRFoot
+  baseSprite:
+    sprite: _Gabystation/Mobs/Species/Capris/parts.rsi
+    state: r_foot

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "",
+  "size": {"x": 32, "y": 32},
+  "states": [
+    {
+      "name": "center",
+      "directions": 4
+    },
+    {
+      "name": "lines",
+      "directions": 4
+    },
+    {
+      "name": "sideeyes",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "",
+  "size": {"x": 32, "y": 32},
+  "states": [
+    {
+      "name": "back",
+      "directions": 4
+    },
+    {
+      "name": "front",
+      "directions": 4
+    },
+    {
+      "name": "micro",
+      "directions": 4
+    },
+    {
+      "name": "side",
+      "directions": 4
+    },
+    {
+      "name": "spiral",
+      "directions": 4
+    }
+  ]
+}
