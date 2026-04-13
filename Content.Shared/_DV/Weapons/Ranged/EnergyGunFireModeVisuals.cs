@@ -30,6 +30,6 @@ public enum EnergyGunFireModeState : byte
     // Frontier: holoflare modes
     Cyan,
     Red,
-    Yellow
+    Yellow,
     // End Frontier
 }

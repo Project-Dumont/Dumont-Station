@@ -1,12 +1,13 @@
+#region Holoflare pistol
 - type: entity
   id: NFWeaponHoloflareGun
-  parent: [ BaseC1Contraband, BaseWeaponBatterySmall ]
+  parent: BaseWeaponBatterySmall
   name: holoflare pistol
-  suffix: Frontier
-  description: A modification of a civilian-grade laser pistol that can project holoflares onto surfaces.
+  description: |-
+    A modification of a civilian-grade laser pistol that can project holoflares onto surfaces.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Weapons/Guns/Battery/holoflare_pistol.yml
+    sprite: _NF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -36,8 +37,8 @@
       path: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
     projectileSpeed: 15
   - type: Battery
-    maxCharge: 720
-    startingCharge: 720
+    maxCharge: 1200
+    startingCharge: 1200
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 10
@@ -70,5 +71,27 @@
           Cyan: { state: mode-cyan }
           Red: { state: mode-red }
           Yellow: { state: mode-yellow }
+  - type: PacifismAllowedGun
   - type: StaticPrice
     price: 250
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: MeleeWeapon
+    attackRate: 1.1
+    damage:
+      types:
+        Blunt: 6
+        Structural: 4
+    angle: 30
+    wideAnimationRotation: 90
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+  - type: Tag
+    tags:
+    - Sidearm
