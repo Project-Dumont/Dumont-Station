@@ -211,7 +211,7 @@
     - id: MimeAssassinMidround # Goobstation - New Midrounds
     - id: DarkPriestMidround # Goobstation - New Midrounds
     - id: VoxRaidersMidround # Goobstation - New Midrounds
-    - id: TunnelClownMidround # Goobstation
+    #- id: TunnelClownMidround # Goobstation
     #- id: WraithMidround # Goobstation - Wraith
     #TODO when midrounds are "reviewed" by the chudmins add them back
     #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
@@ -607,7 +607,7 @@
     startAudio:
       path: /Audio/_Gabystation/Announcements/gasleak_saae.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
-    endAudio: 
+    endAudio:
       path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
     weight: 8
     chaos:
@@ -669,7 +669,7 @@
     startAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
     endAnnouncement: station-event-solar-flare-end-announcement
-    endAudio: 
+    endAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_off_saae.ogg
     duration: 120
     maxDuration: 240
