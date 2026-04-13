@@ -52,6 +52,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Item;
 using Content.Shared.Popups;
+using Content.Shared.UserInterface;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Ghost
@@ -79,8 +80,12 @@ namespace Content.Shared.Ghost
 
         private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
         {
-            if (!ent.Comp.CanGhostInteract)
-                args.Cancelled = true;
+            // Orion-Edit-Start
+            if (ent.Comp.CanGhostInteract || HasComp<ActivatableUIComponent>(args.Target) && ent.Comp.CanGhostOpenUI) // CorvaxGoob-GhostUIViewing
+                return;
+
+            args.Cancelled = true;
+            // Orion-Edit-End
         }
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
