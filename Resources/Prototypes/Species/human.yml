@@ -54,6 +54,7 @@
     # <Trauma>
     HairSpecial: MobHumanoidAnyMarking
     FacialHairSpecial: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
     # </Trauma>
     Special: MobHumanoidAnyMarking
     Head: MobHumanHead
