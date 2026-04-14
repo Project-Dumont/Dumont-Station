@@ -239,7 +239,7 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
         // Finally adding marking with forced colors
         foreach (var (marking, prototype) in markingFColored)
         {
-            var markingColors = MarkingColoring.GetMarkingLayerColors(
+            var markingColors = Content.Shared.Humanoid.Markings.MarkingColoring.GetMarkingLayerColors(
                 prototype,
                 profile.Appearance.SkinColor,
                 profile.Appearance.EyeColor,

@@ -1,8 +1,8 @@
-using Content.Trauma.Client.Humanoid;
+using Content.Client.Humanoid;
 
-namespace Content.Trauma.Client.IoC;
+namespace Content.Client.IoC;
 
-internal static class ContentTraumaClientIoC
+internal static class ContentClientIoC
 {
     internal static void Register(IDependencyCollection collection)
     {

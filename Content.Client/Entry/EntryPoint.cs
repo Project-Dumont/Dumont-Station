@@ -149,6 +149,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Client.Humanoid;
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
@@ -203,6 +204,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
+        [Dependency] private readonly ShaderMarkingManager _shaderMarking = default!; // trauma station - Hair Gradient PORT
 
         public override void Init()
         {
@@ -282,6 +284,8 @@ namespace Content.Client.Entry
         {
             base.Shutdown();
             _titleWindowManager.Shutdown();
+
+            _shaderMarking.Shutdown(); // trauma station - Hair Gradient PORT
         }
 
         public override void PostInit()
@@ -318,6 +322,8 @@ namespace Content.Client.Entry
 
             // Disable engine-default viewport since we use our own custom viewport control.
             _userInterfaceManager.MainViewport.Visible = false;
+
+            _shaderMarking.Initialize(); // trauma station - Hair Gradient PORT
 
             SwitchToDefaultState();
         }

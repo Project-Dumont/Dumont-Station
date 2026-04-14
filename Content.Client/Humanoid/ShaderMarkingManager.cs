@@ -1,8 +1,8 @@
 using System.Numerics;
 using Content.Shared.Humanoid.Markings;
-using Content.Trauma.Shared.Humanoid;
+using Content.Shared.Humanoid;
 
-namespace Content.Trauma.Client.Humanoid;
+namespace Content.Client.Humanoid;
 
 public sealed class ShaderMarkingManager
 {
