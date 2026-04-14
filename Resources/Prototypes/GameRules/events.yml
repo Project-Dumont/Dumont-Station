@@ -866,7 +866,7 @@
     weight: 6.0 # Goobstation - was 5.5
     minimumPlayers: 20 # Goobstation - was 20
     duration: 1
-    maxOccurrences: 1 # Gabystation - loneops apenas uma vez por round
+    maxOccurrences: 2 # Gabystation - loneops apenas duas vezes por round
     chaos: # Goobstation
       Hostile: 200
       Medical: 200
