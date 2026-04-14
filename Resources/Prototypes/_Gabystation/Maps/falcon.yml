@@ -73,7 +73,7 @@
             MedicalDoctor: [ 2, 2 ]
             Chemist: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
-            Virologist: [ 1, 1 ]
+            Geneticist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 2, 2 ]
