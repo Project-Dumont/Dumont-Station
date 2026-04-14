@@ -143,6 +143,7 @@ using Content.Client.Screenshot;
 using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Client.Humanoid;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
@@ -188,6 +189,7 @@ namespace Content.Client.IoC
             collection.Register<TitleWindowManager>();
             collection.Register<LinkAccountManager>(); // RMC14
             collection.Register<ClientsidePlaytimeTrackingManager>();
+            collection.Register<ShaderMarkingManager>();
         }
     }
 }
