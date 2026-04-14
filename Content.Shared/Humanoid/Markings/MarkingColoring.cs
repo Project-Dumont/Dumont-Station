@@ -1,10 +1,8 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-// <Trauma>
-using System.Linq;
-// </Trauma>
+// SPDX-License-Identifier: MIT
 
 using Robust.Shared.Utility;
 
@@ -56,14 +54,6 @@ public static class MarkingColoring
             }
             return colors;
         }
-        // <Trauma>
-        else if (prototype.Sprites.Count == 0)
-        {
-            return prototype.Coloring.Layers.OrderBy(x => x.Key)
-                .Select(x => x.Value.GetColor(skinColor, eyeColor, markingSet))
-                .ToList();
-        }
-        // </Trauma>
         else
         {
             // If some layers are specified.

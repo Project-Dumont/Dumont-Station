@@ -1,4 +1,9 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -216,12 +221,7 @@ public sealed partial class SingleMarkingPicker : BoxContainer
 
         foreach (var (id, marking) in sortedMarkings)
         {
-            // <Trauma>
-            if (GetMarkingTexture(marking) is not { } texture)
-                continue;
-
-            var item = MarkingList.AddItem(Loc.GetString($"marking-{id}"), texture);
-            // </Trauma>
+            var item = MarkingList.AddItem(Loc.GetString($"marking-{id}"), _sprite.Frame0(marking.Sprites[0]));
             item.Metadata = marking.ID;
 
             if (_markings[Slot].MarkingId == id)
@@ -247,12 +247,10 @@ public sealed partial class SingleMarkingPicker : BoxContainer
         ColorSelectorContainer.DisposeAllChildren();
         ColorSelectorContainer.RemoveAllChildren();
 
-        // <Trauma> - replaced Sprites.Count with ColorCount
-        if (marking.MarkingColors.Count != proto.ColorCount)
+        if (marking.MarkingColors.Count != proto.Sprites.Count)
         {
-            marking = new Marking(marking.MarkingId, proto.ColorCount);
+            marking = new Marking(marking.MarkingId, proto.Sprites.Count);
         }
-        // </Trauma>
 
         for (var i = 0; i < marking.MarkingColors.Count; i++)
         {

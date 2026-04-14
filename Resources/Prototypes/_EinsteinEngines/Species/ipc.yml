@@ -35,10 +35,6 @@
 - type: speciesBaseSprites
   id: MobIPCSprites
   sprites:
-    # <Trauma>
-    HairSpecial: MobHumanoidAnyMarking
-    Special: MobHumanoidAnyMarking # fuck it make the clankers catmen
-    # </Trauma>
     Head: MobIPCHead
     Face: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
@@ -60,11 +56,6 @@
 - type: markingPoints
   id: MobIPCMarkingLimits
   points:
-    # <Trauma>
-    HairSpecial:
-      points: 1
-      required: false
-    # </Trauma>
     Head:
       points: 1
       required: true

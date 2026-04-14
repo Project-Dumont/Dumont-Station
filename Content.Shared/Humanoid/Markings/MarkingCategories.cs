@@ -23,10 +23,6 @@ namespace Content.Shared.Humanoid.Markings
     [Serializable, NetSerializable]
     public enum MarkingCategories : byte
     {
-        // <Trauma>
-        HairSpecial,
-        FacialHairSpecial,
-        // </Trauma>
         Special,
         Hair,
         FacialHair,
@@ -69,10 +65,6 @@ namespace Content.Shared.Humanoid.Markings
         {
             return layer switch
             {
-                // <Trauma>
-                HumanoidVisualLayers.HairSpecial => MarkingCategories.HairSpecial,
-                HumanoidVisualLayers.FacialHairSpecial => MarkingCategories.FacialHairSpecial,
-                // </Trauma>
                 HumanoidVisualLayers.Special => MarkingCategories.Special,
                 HumanoidVisualLayers.Face => MarkingCategories.Face, // Plasmeme Port
                 HumanoidVisualLayers.Hair => MarkingCategories.Hair,

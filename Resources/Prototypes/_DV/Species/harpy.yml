@@ -38,11 +38,6 @@
 - type: speciesBaseSprites
   id: MobHarpySprites
   sprites:
-    # <Trauma>
-    HairSpecial: MobHumanoidAnyMarking
-    FacialHairSpecial: MobHumanoidAnyMarking
-    Special: MobHumanoidAnyMarking
-    # </Trauma>
     Head: MobHarpyHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -65,14 +60,6 @@
 - type: markingPoints
   id: MobHarpyMarkingLimits
   points:
-    # <Trauma>
-    HairSpecial:
-      points: 1
-      required: false
-    FacialHairSpecial:
-      points: 1
-      required: false
-    # </Trauma>
     Hair:
       points: 1
       required: false

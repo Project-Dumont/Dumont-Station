@@ -37,10 +37,6 @@ namespace Content.Shared.Humanoid
     [Serializable, NetSerializable]
     public enum HumanoidVisualLayers : byte
     {
-        // <Trauma>
-        HairSpecial,
-        FacialHairSpecial,
-        // </Trauma>
         Special, // for the cat ears
         Tail,
         Wings, // For IPC wings porting from SimpleStation

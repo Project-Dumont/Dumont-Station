@@ -31,11 +31,6 @@
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
   sprites:
-    # <Trauma>
-    HairSpecial: MobHumanoidAnyMarking
-    FacialHairSpecial: MobHumanoidAnyMarking
-    Special: MobHumanoidAnyMarking
-    # </Trauma>
     Head: MobVulpkaninHead
     Face: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
@@ -59,14 +54,6 @@
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
   points:
-    # <Trauma>
-    HairSpecial:
-      points: 1
-      required: false
-    FacialHairSpecial:
-      points: 1
-      required: false
-    # </Trauma>
     Hair:
       points: 1
       required: false
