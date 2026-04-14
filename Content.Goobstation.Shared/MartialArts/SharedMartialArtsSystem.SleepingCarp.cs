@@ -86,7 +86,7 @@ public partial class SharedMartialArtsSystem
             case >= 3:
                 if (!TryGrantMartialArt(args.User, ent.Comp))
                     return;
-                _faction.AddFaction(args.User, "Dragon");
+                _faction.AddFaction(args.User, DragonFaction);
                 var userReflect = EnsureComp<ReflectComponent>(args.User);
                 userReflect.Examinable = false; // no doxxing scarp users by examining lmao
                 userReflect.ReflectProb = 1;

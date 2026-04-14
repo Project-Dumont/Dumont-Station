@@ -106,7 +106,8 @@ using Content.Server.Ghost;
 using Content.Server.Popups;
 using Content.Server.PowerCell;
 using Content.Shared.Traits.Assorted;
-using Content.Shared.Chat; // Einstein Engines - Languages
+// Einstein Engines - Languages
+using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -125,7 +126,6 @@ using Content.Shared._Shitmed.Targeting;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Systems;
-using Content.Shared.Chat;
 
 namespace Content.Server.Medical;
 

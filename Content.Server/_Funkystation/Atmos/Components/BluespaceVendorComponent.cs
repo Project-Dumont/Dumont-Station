@@ -7,7 +7,6 @@
 
 using Content.Shared.Atmos;
 using Content.Shared.Containers.ItemSlots;
-using Content.Server._Funkystation.Atmos.EntitySystems;
 using System.Linq;
 
 namespace Content.Server._Funkystation.Atmos.Components
@@ -78,12 +77,10 @@ namespace Content.Server._Funkystation.Atmos.Components
             get => _bluespaceSenderConnected;
             set
             {
-                if (_bluespaceSenderConnected == value) return;
+                if (_bluespaceSenderConnected == value)
+                    return;
+
                 _bluespaceSenderConnected = value;
-                if (EntitySystem.TryGet(out BluespaceVendorSystem? system))
-                {
-                    system.OnBluespaceSenderConnected(Owner, this);
-                }
             }
         }
     }

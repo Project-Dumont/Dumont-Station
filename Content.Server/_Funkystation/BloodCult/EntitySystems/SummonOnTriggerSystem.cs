@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
@@ -364,8 +364,8 @@ public sealed class SummonOnTriggerSystem : EntitySystem
 			}
 
 			// Delete the rune immediately - this frees the snapgrid cell for the pylon
-			// Use EntityManager.DeleteEntity for immediate deletion
-			EntityManager.DeleteEntity(uid);
+			// Use Del for immediate deletion
+			Del(uid);
 
 			// Now spawn the pylon normally - it will auto-anchor since CultPylon has anchored: true
 			// The rune is already deleted so there's no conflict
@@ -790,4 +790,5 @@ public sealed class SummonOnTriggerSystem : EntitySystem
 		return false;
 	}
 }
+
 

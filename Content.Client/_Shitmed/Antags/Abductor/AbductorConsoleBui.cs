@@ -17,8 +17,6 @@ namespace Content.Client._Shitmed.Antags.Abductor;
 [UsedImplicitly]
 public sealed class AbductorConsoleBui : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-
     [ViewVariables]
     private AbductorConsoleWindow? _window;
 
@@ -35,7 +33,11 @@ public sealed class AbductorConsoleBui : BoundUserInterface
     {
 
     }
-    protected override void Open() => UpdateState(State);
+    protected override void Open()
+    {
+        base.Open();
+        UpdateState(State);
+    }
     protected override void UpdateState(BoundUserInterfaceState? state)
     {
         if (state is AbductorConsoleBuiState s)
@@ -226,6 +228,6 @@ public sealed class AbductorConsoleBui : BoundUserInterface
         base.Dispose(disposing);
 
         if (disposing)
-            _window?.Dispose();
+            _window?.Close();
     }
 }

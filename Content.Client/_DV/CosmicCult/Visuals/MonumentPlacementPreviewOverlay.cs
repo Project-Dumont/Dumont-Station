@@ -20,6 +20,10 @@ namespace Content.Client._DV.CosmicCult.Visuals;
 
 public sealed class MonumentPlacementPreviewOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> SaturationShuffleShader = "SaturationShuffle";
+    private static readonly ProtoId<ShaderPrototype> MonumentPulseShader = "MonumentPulse";
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
     private readonly IEntityManager _ent;
     private readonly IPlayerManager _player;
     private readonly SpriteSystem _sprite;
@@ -75,14 +79,14 @@ public sealed class MonumentPlacementPreviewOverlay : Overlay
         var outlineRsiState = outlineState ?? $"stage{tier}-placement-ghost-1";
         var starRsiState = starState ?? $"stage{tier}-placement-ghost-2";
 
-        _saturationShader = protoMan.Index<ShaderPrototype>("SaturationShuffle").InstanceUnique();
+        _saturationShader = protoMan.Index(SaturationShuffleShader).InstanceUnique();
         _saturationShader.SetParameter("tileSize", new Vector2(96, 96));
         _saturationShader.SetParameter("hsv", new Vector3(1.0f, 0.25f, 0.2f));
 
-        _starsShader = protoMan.Index<ShaderPrototype>("MonumentPulse").InstanceUnique();
+        _starsShader = protoMan.Index(MonumentPulseShader).InstanceUnique();
         _starsShader.SetParameter("tileSize", new Vector2(96, 96));
 
-        _unshadedShader = protoMan.Index<ShaderPrototype>("unshaded").Instance(); //doesn't need a unique instance
+        _unshadedShader = protoMan.Index(UnshadedShader).Instance(); //doesn't need a unique instance
 
         ZIndex = (int) Shared.DrawDepth.DrawDepth.Mobs; //make the overlay render at the same depth as the actual sprite. might want to make it 1 lower if things get wierd with it.
 

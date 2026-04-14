@@ -30,6 +30,7 @@ public sealed partial class MobCallerSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -100,7 +101,7 @@ public sealed partial class MobCallerSystem : EntitySystem
             // we chose a direction so pick a spawn position
             var chosenDir = _random.Pick(candidates);
             var spawnOffset = chosenDir.ToVec() * _random.NextFloat(caller.MinDistance, caller.MaxDistance);
-            var spawnPos = new MapCoordinates(xform.WorldPosition + spawnOffset, xform.MapID);
+            var spawnPos = new MapCoordinates(_transform.GetWorldPosition(xform) + spawnOffset, xform.MapID);
 
             // if we would somehow spawn it on a grid, don't
             if (_map.TryFindGridAt(spawnPos, out _, out _))
@@ -132,7 +133,7 @@ public sealed partial class MobCallerSystem : EntitySystem
                 // raycast to ensure there's continuously space from OcclusionDistance to GridOcclusionDistance
                 var gridStepVec = stepVec * ent.Comp1.GridOcclusionFidelity;
                 var steps = (int)MathF.Ceiling((ent.Comp1.GridOcclusionDistance - ent.Comp1.OcclusionDistance) / ent.Comp1.GridOcclusionFidelity);
-                var checkPos = ent.Comp2.WorldPosition + stepVec * ent.Comp1.OcclusionDistance;
+                var checkPos = _transform.GetWorldPosition(ent.Comp2) + stepVec * ent.Comp1.OcclusionDistance;
                 for (var j = 0; j < steps; j++)
                 {
                     // space isn't continuous, discard direction
@@ -143,7 +144,7 @@ public sealed partial class MobCallerSystem : EntitySystem
                 }
 
                 // now also check that there's no obstructions in that direction before the continuous space
-                var ray = new CollisionRay(ent.Comp2.WorldPosition, stepVec, (int)ent.Comp1.OcclusionMask);
+                var ray = new CollisionRay(_transform.GetWorldPosition(ent.Comp2), stepVec, (int)ent.Comp1.OcclusionMask);
                 var rayCastResults = _physics.IntersectRay(ent.Comp2.MapID, ray, ent.Comp1.OcclusionDistance, ent);
 
                 return !rayCastResults.Any();

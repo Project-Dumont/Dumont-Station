@@ -1,10 +1,10 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+﻿// ported by Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared._Funkystation.Atmos.Prototypes
 {
-    [Prototype("crystallizerRecipe")]
+    [Prototype]
     public sealed partial class CrystallizerRecipePrototype : IPrototype
     {
         [IdDataField]

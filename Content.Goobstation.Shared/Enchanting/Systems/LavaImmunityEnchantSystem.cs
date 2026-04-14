@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Enchanting.Components;
+﻿using Content.Goobstation.Shared.Enchanting.Components;
 using Content.Shared.StepTrigger.Components;
 using Content.Shared.StepTrigger.Systems;
 
@@ -9,7 +9,6 @@ namespace Content.Goobstation.Shared.Enchanting.Systems;
 /// </summary>
 public sealed class LavaImmunityEnchantSystem : EntitySystem
 {
-    [Dependency] private readonly EnchantingSystem _enchanting = default!;
 
     public override void Initialize()
     {

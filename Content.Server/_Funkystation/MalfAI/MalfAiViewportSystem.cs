@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -16,6 +16,7 @@ using Content.Shared.Actions.Components;
 using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Server._Funkystation.MalfAI.Components;
 using Content.Shared._Funkystation.Actions.Events;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -26,6 +27,8 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiViewportSystem : EntitySystem
 {
+    private static readonly EntProtoId ActionMalfAiOpenViewport = "ActionMalfAiOpenViewport";
+
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly IMapManager _map = default!;
@@ -62,7 +65,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
         // Ensure both viewport actions are present if the place action is present
         if (HasActionPrototype(uid, "ActionMalfAiSetViewport") && !HasActionPrototype(uid, "ActionMalfAiOpenViewport"))
         {
-            _actions.AddAction(uid, "ActionMalfAiOpenViewport");
+            _actions.AddAction(uid, ActionMalfAiOpenViewport);
         }
     }
 
@@ -104,7 +107,7 @@ public sealed class MalfAiViewportSystem : EntitySystem
             {
                 _playerManager.SetAttachedEntity(oldActor.PlayerSession, null);
             }
-            EntityManager.DeleteEntity(comp.ViewportAnchor.Value);
+            Del(comp.ViewportAnchor.Value);
             comp.ViewportAnchor = null;
         }
 
@@ -220,3 +223,4 @@ public sealed class MalfAiViewportSystem : EntitySystem
         }
     }
 }
+

@@ -1,4 +1,4 @@
-using Content.Server._Funkystation.Factory.Systems;
+﻿using Content.Server._Funkystation.Factory.Systems;
 using Robust.Shared.Prototypes;
 using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared._Funkystation.Actions.Events;
@@ -11,7 +11,6 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed partial class MalfAiRoboticsFactorySystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
     private static readonly ISawmill Sawmill = Logger.GetSawmill("malf.ai.factory");
 
     private static readonly EntProtoId RoboticsFactoryPrototype = "RoboticsFactoryGrid";

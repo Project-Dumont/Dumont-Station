@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -102,8 +102,9 @@ namespace Content.Goobstation.Shared.SlotMachine
                  MultiplyDelay = false,
              };
 
-            _stackSystem.SetCount(stack.Owner, stack.Count - comp.SpinCost, stack);
-            Dirty(stack.Owner, stack);
+            var stackUid = slot.Item.Value;
+            _stackSystem.SetCount(stackUid, stack.Count - comp.SpinCost, stack);
+            Dirty(stackUid, stack);
             comp.IsSpinning = true;
 
             if (_net.IsServer)
@@ -145,45 +146,45 @@ namespace Content.Goobstation.Shared.SlotMachine
             if (_random.Prob(comp.SmallWinChance))
             {
                 _audio.PlayPredicted(comp.SmallWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.SmallPrizeAmount)), stack, comp.SmallPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.SmallPrizeAmount)), slot.Item, stack, comp.SmallPrizeAmount);
                 return;
             }
             if (_random.Prob(comp.MediumWinChance))
             {
                 _audio.PlayPredicted(comp.MediumWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.MediumPrizeAmount)), stack, comp.MediumPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.MediumPrizeAmount)), slot.Item, stack, comp.MediumPrizeAmount);
                 return;
             }
             if (_random.Prob(comp.BigWinChance))
             {
                 _audio.PlayPredicted(comp.BigWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.BigPrizeAmount)), stack, comp.BigPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.BigPrizeAmount)), slot.Item, stack, comp.BigPrizeAmount);
                 return;
             }
             if (_random.Prob(comp.JackPotWinChance))
             {
                 _audio.PlayPredicted(comp.JackPotWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-jackpot"), stack, comp.JackPotPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-jackpot"), slot.Item, stack, comp.JackPotPrizeAmount);
                 return;
             }
             if (_random.Prob(comp.GodPotWinChance)) // THE GODPOT!!!
             {
                 _audio.PlayPredicted(comp.GodPotWinSound, uid, args.User);
                 var coordinates = Transform(uid).Coordinates;
-                EntityManager.SpawnEntity(comp.GodPotPrize, coordinates);
+                Spawn(comp.GodPotPrize, coordinates);
                 _chatSystem.TrySendInGameICMessage(uid, Loc.GetString("slotmachine-win-godpot"), InGameICChatType.Speak, hideChat: false, hideLog: true, checkRadioPrefix: false);
                 return;
             }
 
             _audio.PlayPredicted(comp.LoseSound, uid, args.User); // If nothing then lose
         }
-        private void HandlePrize(EntityUid uid, string msg, StackComponent? stack, int prize)
+        private void HandlePrize(EntityUid uid, string msg, EntityUid? stackUid, StackComponent? stack, int prize)
         {
             if (stack == null)
             {
                 // Spawn a new cash stack if there's no money left in the machine
                 var coordinates = Transform(uid).Coordinates;
-                var newStack = EntityManager.SpawnEntity("SpaceCash", coordinates);
+                var newStack = Spawn("SpaceCash", coordinates);
                 if (TryComp<StackComponent>(newStack, out var newStackComp))
                 {
                     _stackSystem.SetCount(newStack, prize, newStackComp);
@@ -195,9 +196,10 @@ namespace Content.Goobstation.Shared.SlotMachine
             }
 
             // Add money to the stack and play a message
-            _stackSystem.SetCount(stack.Owner, stack.Count + prize, stack);
-            Dirty(stack.Owner, stack);
+            _stackSystem.SetCount(stackUid!.Value, stack.Count + prize, stack);
+            Dirty(stackUid.Value, stack);
             _chatSystem.TrySendInGameICMessage(uid, msg, InGameICChatType.Speak, hideChat: false, hideLog: true, checkRadioPrefix: false);
         }
     }
 }
+

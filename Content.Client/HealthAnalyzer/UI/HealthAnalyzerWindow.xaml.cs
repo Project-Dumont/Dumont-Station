@@ -117,9 +117,7 @@ namespace Content.Client.HealthAnalyzer.UI
         public event Action<TargetBodyPart?, EntityUid>? OnBodyPartSelected;
         public event Action<HealthAnalyzerMode, EntityUid>? OnModeChanged;
         private EntityUid _spriteViewEntity;
-
-        [ValidatePrototypeId<EntityPrototype>]
-        private readonly EntProtoId _bodyView = "AlertSpriteView";
+        private static readonly EntProtoId BodyView = "AlertSpriteView";
 
         private readonly Dictionary<TargetBodyPart, TextureButton> _bodyPartControls;
         private EntityUid? _target;
@@ -728,7 +726,7 @@ namespace Content.Client.HealthAnalyzer.UI
             if (!_entityManager.Deleted(_spriteViewEntity))
                 _entityManager.QueueDeleteEntity(_spriteViewEntity);
 
-            _spriteViewEntity = _entityManager.Spawn(_bodyView);
+            _spriteViewEntity = _entityManager.Spawn(BodyView);
 
             if (!_entityManager.TryGetComponent<SpriteComponent>(_spriteViewEntity, out var sprite))
                 return null;
@@ -742,27 +740,27 @@ namespace Content.Client.HealthAnalyzer.UI
                 var baseRsiPath = new ResPath($"/Textures/_Shitmed/Interface/Targeting/Status/{enumName.ToLowerInvariant()}.rsi");
                 var rsi = new SpriteSpecifier.Rsi(baseRsiPath, $"{enumName.ToLowerInvariant()}_{enumValue}");
                 // Shitcode with love from Russia :)
-                CreateOrAddToLayer(sprite, rsi, layer);
+                CreateOrAddToLayer(_spriteViewEntity, sprite, rsi, layer);
                 layer++;
 
                 if (bleeding.TryGetValue(bodyPart, out var isBleeding) && isBleeding)
                 {
                     var bleedRsi = new SpriteSpecifier.Rsi(baseRsiPath, $"{enumName.ToLowerInvariant()}_bleed");
-                    CreateOrAddToLayer(sprite, bleedRsi, layer);
+                    CreateOrAddToLayer(_spriteViewEntity, sprite, bleedRsi, layer);
                     layer++;
                 }
             }
             return _spriteViewEntity;
         }
 
-        private void CreateOrAddToLayer(SpriteComponent sprite, SpriteSpecifier rsi, int layer)
+        private void CreateOrAddToLayer(EntityUid uid, SpriteComponent sprite, SpriteSpecifier rsi, int layer)
         {
-            if (!sprite.TryGetLayer(layer, out _))
-                sprite.AddLayer(_spriteSystem.Frame0(rsi));
+            if (!_spriteSystem.TryGetLayer((uid, sprite), layer, out _, false))
+                _spriteSystem.AddTextureLayer((uid, sprite), _spriteSystem.Frame0(rsi));
             else
-                sprite.LayerSetTexture(layer, _spriteSystem.Frame0(rsi));
+                _spriteSystem.LayerSetTexture((uid, sprite), layer, _spriteSystem.Frame0(rsi));
 
-            sprite.LayerSetScale(layer, new Vector2(3f, 3f));
+            _spriteSystem.LayerSetScale((uid, sprite), layer, new Vector2(3f, 3f));
         }
         // Shitmed Change End
     }

@@ -12,6 +12,8 @@ namespace Content.Client._Shitcode.Wizard.Systems;
 
 public sealed class IceCubeSystem : SharedIceCubeSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     protected override void Shutdown(Entity<IceCubeComponent> ent)
     {
         var (uid, _) = ent;
@@ -19,10 +21,10 @@ public sealed class IceCubeSystem : SharedIceCubeSystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        if (!sprite.LayerMapTryGet(IceCubeKey.Key, out var layer))
+        if (!_sprite.LayerMapTryGet((uid, sprite), IceCubeKey.Key, out var layer, false))
             return;
 
-        sprite.RemoveLayer(layer);
+        _sprite.RemoveLayer((uid, sprite), layer);
     }
 
     protected override void Startup(Entity<IceCubeComponent> ent)
@@ -32,10 +34,10 @@ public sealed class IceCubeSystem : SharedIceCubeSystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        if (sprite.LayerMapTryGet(IceCubeKey.Key, out _))
+        if (_sprite.LayerMapTryGet((uid, sprite), IceCubeKey.Key, out _, false))
             return;
 
-        var layer = sprite.AddLayer(comp.Sprite);
-        sprite.LayerMapSet(IceCubeKey.Key, layer);
+        var layer = _sprite.AddLayer((uid, sprite), comp.Sprite);
+        _sprite.LayerMapSet((uid, sprite), IceCubeKey.Key, layer);
     }
 }

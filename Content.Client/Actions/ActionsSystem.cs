@@ -451,6 +451,8 @@ namespace Content.Client.Actions
 
                 AddActionDirect((user, actions), actionId);
             }
+
+            AssignSlot?.Invoke(assignments);
         }
 
         private void OnWorldTargetAttempt(Entity<WorldTargetActionComponent> ent, ref ActionTargetAttemptEvent args)
@@ -472,7 +474,7 @@ namespace Content.Client.Actions
             // this is the actual entity-world targeting magic
             EntityUid? targetEnt = null;
             if (TryComp<EntityTargetActionComponent>(ent, out var entity) &&
-                args.Input.EntityUid != null &&
+                args.Input.EntityUid.Valid &&
                 ValidateEntityTarget(user, args.Input.EntityUid, (uid, entity)))
             {
                 targetEnt = args.Input.EntityUid;

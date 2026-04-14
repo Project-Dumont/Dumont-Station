@@ -100,12 +100,8 @@ public sealed partial class GameMapPrototype : IPrototype
     /// </summary>
     public GameMapPrototype Persistence(ResPath mapPath)
     {
-        return new()
-        {
-            ID = ID,
-            MapName = MapName,
-            MapPath = mapPath,
-            _stations = _stations
-        };
+        var clone = (GameMapPrototype) MemberwiseClone();
+        clone.MapPath = mapPath;
+        return clone;
     }
 }

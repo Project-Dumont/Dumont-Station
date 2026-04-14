@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -15,7 +15,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Goobstation.Weapons.AmmoSelector;
 
-[Prototype("selectableAmmo")]
+[Prototype]
 public sealed partial class SelectableAmmoPrototype : IPrototype
 {
     [IdDataField]

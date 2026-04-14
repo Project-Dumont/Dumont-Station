@@ -1,4 +1,4 @@
-using Content.Shared.Chat;
+﻿using Content.Shared.Chat;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -54,9 +54,10 @@ public sealed class CoinFlipperMachineSystem : EntitySystem
              BreakOnDamage = false,
              MultiplyDelay = false,
          };
-        comp.PrizeAmount = _stackSystem.GetCount(stack.Owner);
-        _stackSystem.SetCount(stack.Owner, 0, stack);
-        Dirty(stack.Owner, stack);
+        var stackUid = slot.Item.Value;
+        comp.PrizeAmount = _stackSystem.GetCount(stackUid);
+        _stackSystem.SetCount(stackUid, 0, stack);
+        Dirty(stackUid, stack);
         comp.IsSpinning = true;
 
         if (_net.IsServer)
@@ -91,7 +92,7 @@ public sealed class CoinFlipperMachineSystem : EntitySystem
             if (stack == null)
             {
                 var coordinates = Transform(uid).Coordinates;
-                var newStack = EntityManager.SpawnEntity("SpaceCash", coordinates);
+                var newStack = Spawn("SpaceCash", coordinates);
                 if (TryComp<StackComponent>(newStack, out var newStackComp))
                 {
                     comp.PrizeAmount *= 2;
@@ -107,3 +108,4 @@ public sealed class CoinFlipperMachineSystem : EntitySystem
         _audio.PlayPredicted(comp.LoseSound, uid, args.User); // If nothing then lose
     }
 }
+

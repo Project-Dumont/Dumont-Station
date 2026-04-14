@@ -23,8 +23,6 @@ public sealed partial class AmmoSelectorMenu : RadialMenu
 {
     [Dependency] private readonly EntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-
     private SpriteSystem _sprites;
 
     public event Action<ProtoId<SelectableAmmoPrototype>>? SendAmmoSelectorSystemMessageAction;

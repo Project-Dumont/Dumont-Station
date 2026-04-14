@@ -21,6 +21,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Gravity
 {
+    #pragma warning disable CS0618
     [RegisterComponent]
     [NetworkedComponent]
     public sealed partial class GravityComponent : Component
@@ -38,7 +39,7 @@ namespace Content.Shared.Gravity
                 Enabled = value;
                 var ev = new GravityChangedEvent(Owner, value);
                 IoCManager.Resolve<IEntityManager>().EventBus.RaiseLocalEvent(Owner, ref ev);
-                Dirty();
+                IoCManager.Resolve<IEntityManager>().Dirty(Owner, this);
             }
         }
 
@@ -52,4 +53,5 @@ namespace Content.Shared.Gravity
         [DataField("inherent")]
         public bool Inherent;
     }
+    #pragma warning restore CS0618
 }

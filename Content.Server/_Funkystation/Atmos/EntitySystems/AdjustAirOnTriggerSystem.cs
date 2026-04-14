@@ -41,7 +41,7 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
         if (!_random.Prob(component.Probability))
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
+        if (!TryComp(uid, out TransformComponent? xform))
             return;
 
         var coords = xform.Coordinates;
@@ -58,7 +58,7 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
         var gridEntity = new Entity<GridAtmosphereComponent?, GasTileOverlayComponent?>(gridUid, CompOrNull<GridAtmosphereComponent>(gridUid), CompOrNull<GasTileOverlayComponent>(gridUid));
 
         Entity<MapAtmosphereComponent?>? mapEntity = null;
-        var mapUid = _mapManager.GetMapEntityId(mapCoords.MapId);
+        var mapUid = _mapSystem.GetMapOrInvalid(mapCoords.MapId);
         if (mapUid != EntityUid.Invalid)
         {
             mapEntity = new Entity<MapAtmosphereComponent?>(mapUid, CompOrNull<MapAtmosphereComponent>(mapUid));

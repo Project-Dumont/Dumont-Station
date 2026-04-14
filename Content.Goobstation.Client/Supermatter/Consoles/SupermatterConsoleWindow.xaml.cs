@@ -33,8 +33,6 @@ public sealed partial class SupermatterConsoleWindow : FancyWindow
     private NetEntity? _trackedEntity;
 
     private SupermatterConsoleEntry[]? _supermatters = null;
-    private IEnumerable<SupermatterConsoleEntry>? _activeAlerts = null;
-
     public event Action<NetEntity?>? SendFocusChangeMessageAction;
 
     private bool _autoScrollActive = false;

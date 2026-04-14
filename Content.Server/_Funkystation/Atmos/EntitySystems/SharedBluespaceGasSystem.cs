@@ -5,18 +5,19 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Content.Shared._Funkystation.Atmos.Components;
 using Content.Server._Funkystation.Atmos.Components;
+using Content.Server._Funkystation.Atmos.EntitySystems;
 
 namespace Content.Server._Funkystation.Atmos.Systems
 {
     public sealed class SharedBluespaceGasSystem : EntitySystem
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] protected readonly SharedDeviceLinkSystem DeviceLink = default!;
+        [Dependency] private readonly SharedDeviceLinkSystem DeviceLink = default!;
 
         private bool _bluespaceGasEnabled;
 
-        protected ProtoId<SourcePortPrototype> SourcePort = "BluespaceSender";
-        protected ProtoId<SinkPortPrototype> SinkPort = "BluespaceGasUtilizer";
+        private ProtoId<SourcePortPrototype> SourcePort = "BluespaceSender";
+        private ProtoId<SinkPortPrototype> SinkPort = "BluespaceGasUtilizer";
 
         public override void Initialize()
         {
@@ -40,6 +41,7 @@ namespace Content.Server._Funkystation.Atmos.Systems
             vendor.BluespaceSenderConnected = false;
             ent.Comp.BluespaceSender = null;
             Dirty(ent);
+            EntityManager.System<BluespaceVendorSystem>().OnBluespaceSenderConnected(ent, vendor);
         }
 
         private void OnNewLink(Entity<BluespaceSenderComponent> ent, ref NewLinkEvent args)
@@ -61,6 +63,7 @@ namespace Content.Server._Funkystation.Atmos.Systems
 
             utilizer.BluespaceSender = ent;
             Dirty(args.Sink, utilizer);
+            EntityManager.System<BluespaceVendorSystem>().OnBluespaceSenderConnected(args.Sink, vendor);
         }
     }
 }

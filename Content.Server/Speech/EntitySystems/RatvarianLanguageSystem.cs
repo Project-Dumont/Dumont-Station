@@ -10,13 +10,14 @@ using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Speech.EntitySystems;
 
 public sealed class RatvarianLanguageSystem : SharedRatvarianLanguageSystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
 
     private static readonly ProtoId<StatusEffectPrototype> RatvarianKey = "RatvarianLanguage";
 
@@ -52,10 +53,7 @@ public sealed class RatvarianLanguageSystem : SharedRatvarianLanguageSystem
 
     public override void DoRatvarian(EntityUid uid, TimeSpan time, bool refresh, StatusEffectsComponent? status = null)
     {
-        if (!Resolve(uid, ref status, false))
-            return;
-
-        _statusEffects.TryAddStatusEffect<RatvarianLanguageComponent>(uid, RatvarianKey, time, refresh, status);
+        _statusEffects.TryAddStatusEffect(uid, RatvarianKey.Id, out _, time);
     }
 
     private void OnAccent(EntityUid uid, RatvarianLanguageComponent component, AccentGetEvent args)

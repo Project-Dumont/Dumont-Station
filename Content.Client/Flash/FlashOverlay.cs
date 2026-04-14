@@ -20,7 +20,8 @@
 using Content.Shared.CCVar;
 using Content.Shared.Flash;
 using Content.Shared.Flash.Components;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
@@ -42,6 +43,7 @@ namespace Content.Client.Flash
 
         private readonly SharedFlashSystem _flash;
         private readonly StatusEffectsSystem _statusSys;
+        private readonly EntProtoId _flashedEffect;
 
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
         private readonly ShaderInstance _shader;
@@ -55,6 +57,7 @@ namespace Content.Client.Flash
             _shader = _prototypeManager.Index(FlashedEffectShader).InstanceUnique();
             _flash = _entityManager.System<SharedFlashSystem>();
             _statusSys = _entityManager.System<StatusEffectsSystem>();
+            _flashedEffect = new EntProtoId(_flash.FlashedKey.Id);
 
             _configManager.OnValueChanged(CCVars.ReducedMotion, (b) => { _reducedMotion = b; }, invokeImmediately: true);
         }
@@ -67,17 +70,18 @@ namespace Content.Client.Flash
                 return;
 
             if (!_entityManager.HasComponent<FlashedComponent>(playerEntity)
-                || !_entityManager.TryGetComponent<StatusEffectsComponent>(playerEntity, out var status))
+                || !_entityManager.TryGetComponent<StatusEffectContainerComponent>(playerEntity, out var status))
                 return;
 
-            if (!_statusSys.TryGetTime(playerEntity.Value, _flash.FlashedKey, out var time, status))
+            if (!_statusSys.TryGetTime(playerEntity.Value, _flashedEffect, out var time, status))
+                return;
+
+            if (time.EndEffectTime == null)
                 return;
 
             var curTime = _timing.CurTime;
-            var lastsFor = (float)(time.Value.Item2 - time.Value.Item1).TotalSeconds;
-            var timeDone = (float)(curTime - time.Value.Item1).TotalSeconds;
-
-            PercentComplete = timeDone / lastsFor;
+            var timeLeft = (float) (time.EndEffectTime.Value - curTime).TotalSeconds;
+            PercentComplete = 1f - Math.Clamp(timeLeft, 0f, 1f);
         }
 
         protected override bool BeforeDraw(in OverlayDrawArgs args)

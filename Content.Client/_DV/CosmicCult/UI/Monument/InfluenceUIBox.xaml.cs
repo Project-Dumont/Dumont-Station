@@ -42,7 +42,7 @@ public sealed partial class InfluenceUIBox : BoxContainer
         _sprite = _entityManager.System<SpriteSystem>();
 
         InfluenceIcon.Texture = _sprite.Frame0(influenceProto.Icon);
-        Name.Text = Loc.GetString(influenceProto.Name);
+        InfluenceName.Text = Loc.GetString(influenceProto.Name);
 
         State = state;
         Proto = influenceProto;
@@ -87,7 +87,7 @@ public sealed partial class InfluenceUIBox : BoxContainer
                 GainButton.Label.Text = Loc.GetString("monument-interface-influences-locked");
                 GainButton.ToolTip = Loc.GetString("monument-interface-influences-locked-tooltip");
 
-                Name.FontColorOverride = Color.White;
+                InfluenceName.FontColorOverride = Color.White;
 
                 InfluenceBox.Modulate = Color.Gray;
                 InfluenceIcon.Modulate = Color.Gray;

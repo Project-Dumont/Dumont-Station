@@ -20,7 +20,6 @@ using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Salvage.Expeditions.Modifiers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Shared.Salvage;
 
@@ -86,7 +85,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
     {
         var mods = _proto.EnumeratePrototypes<T>().ToList();
         mods.Sort((x, y) => string.Compare(x.ID, y.ID, StringComparison.Ordinal));
-        rand.Shuffle(mods);
+        Shuffle(mods, rand);
 
         foreach (var mod in mods)
         {
@@ -105,7 +104,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
     {
         var mods = _proto.EnumeratePrototypes<T>().ToList();
         mods.Sort((x, y) => string.Compare(x.ID, y.ID, StringComparison.Ordinal));
-        rand.Shuffle(mods);
+        Shuffle(mods, rand);
 
         foreach (var mod in mods)
         {
@@ -118,5 +117,14 @@ public abstract partial class SharedSalvageSystem : EntitySystem
         }
 
         throw new InvalidOperationException();
+    }
+
+    private static void Shuffle<T>(IList<T> list, System.Random rand)
+    {
+        for (var i = list.Count - 1; i > 0; i--)
+        {
+            var j = rand.Next(i + 1);
+            (list[i], list[j]) = (list[j], list[i]);
+        }
     }
 }

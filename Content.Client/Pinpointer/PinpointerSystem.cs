@@ -48,7 +48,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         };
 
         _sprite.LayerSetRotation((args.SpriteViewEnt, sprite), PinpointerLayers.Screen, angle);
-        sprite.LayerSetState(PinpointerLayers.Screen, component.DistanceToTarget.ToString().ToLower());
+        _sprite.LayerSetRsiState((args.SpriteViewEnt, sprite), PinpointerLayers.Screen, component.DistanceToTarget.ToString().ToLower());
     }
     // WD EDIT END
 
@@ -65,13 +65,13 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         while (query.MoveNext(out var uid, out var pinpointer, out var sprite))
         {
             // WD EDIT START
-            if (!sprite.LayerExists(PinpointerLayers.Screen))
+            if (!_sprite.LayerExists((uid, sprite), PinpointerLayers.Screen))
                 continue;
             // WD EDIT END
 
             if (!pinpointer.HasTarget)
             {
-                sprite.LayerSetRotation(PinpointerLayers.Screen, Angle.Zero); // Goob edit
+                _sprite.LayerSetRotation((uid, sprite), PinpointerLayers.Screen, Angle.Zero); // Goob edit
                 continue;
             }
             var eye = _eyeManager.CurrentEye;

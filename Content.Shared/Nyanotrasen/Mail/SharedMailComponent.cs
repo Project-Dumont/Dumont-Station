@@ -5,5 +5,6 @@
 
 namespace Content.Shared.Mail
 {
+    [Virtual]
     public partial class SharedMailComponent : Component {}
 }

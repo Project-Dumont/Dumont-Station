@@ -89,6 +89,7 @@ using Content.Shared.Silicons.StationAi;
 
 namespace Content.Shared.DoAfter;
 
+#pragma warning disable CS0618
 public abstract partial class SharedDoAfterSystem : EntitySystem
 {
     [Dependency] private readonly IDynamicTypeFactory _factory = default!;
@@ -317,3 +318,4 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         return false;
     }
 }
+#pragma warning restore CS0618

@@ -97,7 +97,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
 
         if (ProtoManager.TryIndex(entry.Prototype!, out var prototype))
         {
-            result.AddRange(SpriteComponent.GetPrototypeTextures(prototype, Resources).Select(o => o.Default));
+            result.AddRange(_spriteSystem.GetPrototypeTextures(prototype).Select(o => o.Default));
             return result;
         }
 
@@ -105,7 +105,7 @@ public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
             && _constructionSystem.TryGetRecipePrototype(constructionProto.ID, out var targetProtoId)
             && ProtoManager.TryIndex(targetProtoId, out EntityPrototype? proto))
         {
-            result.AddRange(SpriteComponent.GetPrototypeTextures(proto, Resources).Select(o => o.Default));
+            result.AddRange(_spriteSystem.GetPrototypeTextures(proto).Select(o => o.Default));
             return result;
         }
 

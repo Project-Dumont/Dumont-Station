@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 // SPDX-FileCopyrightText: 2025 funkystationbot <funky@funkystation.org>
@@ -32,7 +32,6 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly BodySystem _body = default!;
 
@@ -51,9 +50,6 @@ public sealed class MalfAiDoomsdayRippleSystem : EntitySystem
     private Vector2 _originWorld;
     private TimeSpan _startTime;
     private readonly HashSet<EntityUid> _affected = new();
-
-    // Prebuilt overwhelming damage to ensure death regardless of resistances.
-    private DamageSpecifier _overkill = default!;
 
     public override void Initialize()
     {

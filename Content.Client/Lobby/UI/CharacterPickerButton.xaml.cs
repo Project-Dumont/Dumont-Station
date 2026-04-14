@@ -83,6 +83,7 @@ public sealed partial class CharacterPickerButton : ContainerButton
         };
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

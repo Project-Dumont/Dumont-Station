@@ -24,6 +24,8 @@ namespace Content.Client.Salvage.UI;
 [UsedImplicitly]
 public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterface
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("salvage.expedition");
+
     [ViewVariables]
     private OfferingWindow? _window;
 
@@ -120,7 +122,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
 
             string LogAndReturnDefaultFactionDescription(string faction)
             {
-                Logger.Error($"Description is null or white space for SalvageFactionPrototype: {faction}");
+                Sawmill.Error($"Description is null or white space for SalvageFactionPrototype: {faction}");
                 return Loc.GetString(_protoManager.Index<SalvageFactionPrototype>(faction).ID);
             }
 
@@ -159,7 +161,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
 
             string LogAndReturnDefaultBiomDescription(string biome)
             {
-                Logger.Error($"Description is null or white space for SalvageBiomeModPrototype: {biome}");
+                Sawmill.Error($"Description is null or white space for SalvageBiomeModPrototype: {biome}");
                 return Loc.GetString(_protoManager.Index<SalvageBiomeModPrototype>(biome).ID);
             }
 

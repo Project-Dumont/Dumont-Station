@@ -9,6 +9,7 @@ using Content.Goobstation.Shared.Xenobiology;
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Shared.Mobs;
 using Robust.Client.GameObjects;
+using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Client.Xenobiology;
 
@@ -24,6 +25,6 @@ public sealed class MobGrowthVisualizerSystem : VisualizerSystem<MobGrowthCompon
             || !AppearanceSystem.TryGetData<string>(uid, GrowthStateVisuals.Sprite, out var rsi, args.Component))
             return;
 
-        args.Sprite.LayerSetRSI(DamageStateVisualLayers.Base, rsi);
+        SpriteSystem.LayerSetRsi((uid, args.Sprite), DamageStateVisualLayers.Base, new ResPath(rsi));
     }
 }

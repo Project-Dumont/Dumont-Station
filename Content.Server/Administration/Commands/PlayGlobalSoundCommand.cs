@@ -9,6 +9,7 @@ using Content.Server.Audio;
 using Content.Shared.Administration;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Player;
@@ -22,21 +23,22 @@ using Content.Server.Administration.Logs;
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class PlayGlobalSoundCommand : IConsoleCommand
+public sealed class PlayGlobalSoundCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IResourceManager _res = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     // Goobstation - Admin Log
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
 
-    public string Command => "playglobalsound";
-    public string Description => Loc.GetString("play-global-sound-command-description");
-    public string Help => Loc.GetString("play-global-sound-command-help");
+    public override string Command => "playglobalsound";
+    public override string Description => Loc.GetString("play-global-sound-command-description");
+    public override string Help => Loc.GetString("play-global-sound-command-help");
 
-    public void Execute(IConsoleShell shell, string argStr, string[] args)
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         Filter filter;
         var audio = AudioParams.Default;
@@ -116,10 +118,10 @@ public sealed class PlayGlobalSoundCommand : IConsoleCommand
         }
 
         audio = audio.AddVolume(-8);
-        _entManager.System<ServerGlobalSoundSystem>().PlayAdminGlobal(filter, args[0], audio, replay);
+        _entManager.System<ServerGlobalSoundSystem>().PlayAdminGlobal(filter, _audio.ResolveSound(new SoundPathSpecifier(args[0])), audio, replay);
     }
 
-    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length == 1)
         {

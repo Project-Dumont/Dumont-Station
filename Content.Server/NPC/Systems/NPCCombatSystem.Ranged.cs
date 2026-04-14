@@ -223,9 +223,9 @@ public sealed partial class NPCCombatSystem
 
             EntityCoordinates targetCordinates;
 
-            if (_mapManager.TryFindGridAt(xform.MapID, targetPos, out var gridUid, out var mapGrid))
+            if (_mapManager.TryFindGridAt(xform.MapID, targetPos, out var gridUid, out _))
             {
-                targetCordinates = new EntityCoordinates(gridUid, mapGrid.WorldToLocal(targetSpot));
+                targetCordinates = _transform.ToCoordinates((gridUid, Transform(gridUid)), new MapCoordinates(targetSpot, xform.MapID));
             }
             else
             {

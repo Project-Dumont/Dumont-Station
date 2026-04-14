@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Wraith.Components;
+﻿using Content.Goobstation.Shared.Wraith.Components;
 using Content.Goobstation.Shared.Wraith.Events;
 using Content.Shared.Mind;
 using Content.Shared.Popups;
@@ -62,7 +62,7 @@ public sealed partial class PossessObjectSystem : EntitySystem
             var component = (Component) Factory.GetComponent(name);
             var temp = (object) component;
             _seriMan.CopyTo(data.Component, ref temp);
-            EntityManager.AddComponent(target, (Component) temp!);
+            AddComp(target, (Component) temp!);
         }
     }
 
@@ -75,3 +75,4 @@ public sealed partial class PossessObjectSystem : EntitySystem
         }
     }
 }
+

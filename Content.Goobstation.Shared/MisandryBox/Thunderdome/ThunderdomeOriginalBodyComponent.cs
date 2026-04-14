@@ -11,6 +11,6 @@ namespace Content.Goobstation.Shared.MisandryBox.Thunderdome;
 [RegisterComponent]
 public sealed partial class ThunderdomeOriginalBodyComponent : Component
 {
-    [DataField]
-    public NetUserId Owner;
+    [DataField("owner")]
+    public NetUserId OriginalOwner;
 }

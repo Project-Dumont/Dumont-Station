@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 // SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
@@ -21,7 +21,6 @@ namespace Content.Server._Funkystation.Atmos.Portable;
 public sealed class ElectrolyzerSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly PowerReceiverSystem _power = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly GasTileOverlaySystem _gasOverlaySystem = default!;

@@ -8,6 +8,7 @@ using Content.Goobstation.Shared.Shadowling.Components;
 using Content.Shared.EntityEffects;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
@@ -30,16 +31,7 @@ public sealed partial class BlindNonShadowling : EntityEffect
             return;
         }
 
-        if (!args.EntityManager.TryGetComponent<StatusEffectsComponent>(args.TargetEntity, out var statusEffects))
-            return;
-
-        var statusEffectsSystem = args.EntityManager.System<StatusEffectsSystem>();
-
-        statusEffectsSystem.TryAddStatusEffect<TemporaryBlindnessComponent>(
-            args.TargetEntity,
-            "TemporaryBlindness",
-            TimeSpan.FromSeconds(3),
-            true,
-            statusEffects);
+        var statusEffectsSystem = args.EntityManager.System<Content.Shared.StatusEffectNew.StatusEffectsSystem>();
+        statusEffectsSystem.TryUpdateStatusEffectDuration(args.TargetEntity, "TemporaryBlindness", TimeSpan.FromSeconds(3));
     }
 }

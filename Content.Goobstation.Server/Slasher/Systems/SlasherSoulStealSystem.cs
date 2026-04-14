@@ -44,6 +44,8 @@ namespace Content.Goobstation.Server.Slasher.Systems;
 /// </summary>
 public sealed class SlasherSoulStealSystem : EntitySystem
 {
+    private static readonly ProtoId<WeatherPrototype> StormWeather = "Storm";
+
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
@@ -239,7 +241,7 @@ public sealed class SlasherSoulStealSystem : EntitySystem
 
                 // Make it rain in space
                 var xform = Transform(user);
-                _weather.SetWeather(xform.MapID, _protoMan.Index<WeatherPrototype>("Storm"), null);
+                _weather.SetWeather(xform.MapID, _protoMan.Index(StormWeather), null);
 
                 // Make station announcement from Central Command
                 _chatSystem.DispatchStationAnnouncement(

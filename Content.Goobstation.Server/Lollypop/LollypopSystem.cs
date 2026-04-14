@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -39,7 +39,7 @@ public sealed class LollypopSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        var query = EntityManager.EntityQueryEnumerator<LollypopComponent, ClothingComponent, EdibleComponent>();
+        var query = EntityQueryEnumerator<LollypopComponent, ClothingComponent, EdibleComponent>();
         List<(EntityUid Uid, EdibleComponent Edible, EntityUid User)>? fullyEaten = null;
 
         while (query.MoveNext(out var queryUid, out var lollypop, out var clothing, out var edible))
@@ -138,3 +138,4 @@ public sealed class LollypopSystem : EntitySystem
         ent.Comp.NextBite = TimeSpan.Zero; // lollypop is empty stop checking
     }
 }
+

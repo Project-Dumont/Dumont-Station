@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -95,7 +95,7 @@ public sealed partial class MinesweeperSystem : EntitySystem
         if (arcade.RewardAmount <= 0)
             return;
 
-        EntityManager.SpawnEntity(_random.Pick(arcade.PossibleRewards), xform.Coordinates);
+        Spawn(_random.Pick(arcade.PossibleRewards), xform.Coordinates);
         arcade.RewardAmount--;
     }
 
@@ -128,3 +128,4 @@ public sealed partial class MinesweeperSystem : EntitySystem
         }
     }
 }
+

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
@@ -13,14 +13,13 @@ using Content.Server._EinsteinEngines.Silicon.Charge;
 using Content.Server.Lightning.Components; // Goobstation - Fix IPC shock loops
 using Content.Server.Power.EntitySystems; // Goobstation - Energycrit
 using Content.Shared._EinsteinEngines.Silicon.DeadStartupButton;
-using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Electrocution;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Random;
 
 namespace Content.Server._EinsteinEngines.Silicon.DeadStartupButton;
 
@@ -30,11 +29,8 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
     [Dependency] private readonly SiliconChargeSystem _siliconChargeSystem = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly BatterySystem _battery = default!; // Goobstation - Energycrit
 
     /// <inheritdoc/>
@@ -72,7 +68,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
             return;
         }
 
-        _audio.PlayPvs(comp.BuzzSound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
+        _audio.PlayPvs(comp.BuzzSound, uid, comp.BuzzSound.Params.WithVariation(0.05f));
         _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-failed", ("target", MetaData(uid).EntityName)), uid);
         Spawn("EffectSparks", Transform(uid).Coordinates);
     }

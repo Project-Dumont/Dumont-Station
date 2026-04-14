@@ -8,6 +8,7 @@ using Robust.Shared.Maths;
 
 namespace Content.Goobstation.UIKit.UserInterface.Controls;
 
+[Virtual]
 public class ThunderdomeWindow : BaseWindow
 {
     private const float TitleBarHeight = 36;

@@ -381,7 +381,7 @@ namespace Content.Server.Communications
 
         private void OnCentCommMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCentCommButtonMessage message)
         {
-            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+            if (!TryComp(message.Actor, out ActorComponent? actor))
                 return;
 
             var mob = message.Actor;
@@ -406,7 +406,7 @@ namespace Content.Server.Communications
 
         private void OnMartialMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleMartialButtonMessage message)
         {
-            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor))
+            if (!TryComp(message.Actor, out ActorComponent? actor))
                 return;
 
             var mob = message.Actor;
@@ -470,7 +470,7 @@ namespace Content.Server.Communications
         }
         private void OnCallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCallEmergencyShuttleMessage message)
         {
-            if (!EntityManager.TryGetComponent(message.Actor, out ActorComponent? actor)
+            if (!TryComp(message.Actor, out ActorComponent? actor)
                 || !CanCallOrRecall(comp))
                 return;
 

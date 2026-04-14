@@ -40,7 +40,6 @@ namespace Content.Client._Funkystation.Atmos.UI
 
             // Setup static button actions.
             _window.RetrieveButtonPressed += OnRetrieveButtonPressed;
-            _window.TankFillButtonPressed += OnTankFillPressed;
             _window.TankEjectButtonPressed += OnTankEjectPressed;
             _window.TankEmptyButtonPressed += OnTankEmptyPressed;
             _window.ReleasePressureSet += OnReleasePressureSet;
@@ -65,11 +64,6 @@ namespace Content.Client._Funkystation.Atmos.UI
         private void OnRetrieveButtonPressed(int index)
         {
             SendMessage(new BluespaceVendorChangeRetrieveMessage(index));
-        }
-
-        private void OnTankFillPressed(int index)
-        {
-            SendMessage(new BluespaceVendorFillTankMessage(index));
         }
 
         private void OnTankEjectPressed()

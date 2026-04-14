@@ -25,6 +25,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -72,7 +73,7 @@ public sealed class PreventChasmFallingSystem : EntitySystem
 
             _transform.SetCoordinates(args.Entity, newCoords);
             _transform.AttachToGridOrMap(args.Entity, Transform(args.Entity));
-            _audio.PlayPvs("/Audio/Items/Mining/fultext_launch.ogg", args.Entity);
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/Items/Mining/fultext_launch.ogg"), args.Entity);
             if (args.Entity != uid && comp.DeleteOnUse)
                 QueueDel(uid);
             else if (useDelay != null)

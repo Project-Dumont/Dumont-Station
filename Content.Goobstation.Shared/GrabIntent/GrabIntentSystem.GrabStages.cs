@@ -75,7 +75,7 @@ public sealed partial class GrabIntentSystem
         var seedArray = new List<int> { (int) _timing.CurTick.Value, GetNetEntity(uid).Id };
         var seed = SharedRandomExtensions.HashCodeCombine(seedArray);
         var rand = new Random(seed);
-        if (rand.Prob(grabbable.GrabEscapeChance))
+        if (rand.NextDouble() < grabbable.GrabEscapeChance)
             TryLowerGrabStage(args.User, uid, true);
     }
 

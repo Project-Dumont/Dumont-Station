@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+﻿// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
@@ -44,7 +44,6 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
     [Dependency] private readonly SharedDoorSystem _door = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly ProtectiveBladeSystem _pbs = default!;
@@ -178,10 +177,11 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        foreach (var comp in EntityQuery<HereticCombatMarkComponent>())
+        var query = EntityQueryEnumerator<HereticCombatMarkComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
             if (_timing.CurTime > comp.Timer)
-                RemComp(comp.Owner, comp);
+                RemComp(uid, comp);
         }
     }
 

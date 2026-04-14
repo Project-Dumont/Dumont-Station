@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Armok <155400926+ARMOKS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
 // SPDX-FileCopyrightText: 2024 TGRCDev <tgrc@tgrc.dev>
@@ -50,7 +50,6 @@ using Content.Goobstation.Shared.SpecialPassives.BoostedImmunity.Components;
 using Content.Goobstation.Shared.SpecialPassives.Fleshmend.Components;
 using Content.Goobstation.Shared.SpecialPassives.SuperAdrenaline.Components;
 using Content.Server.Light.Components;
-using Content.Server.Nutrition.Components;
 using Content.Shared._Goobstation.Weapons.AmmoSelector;
 using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared._Shitmed.Targeting; // Shitmed Change
@@ -75,6 +74,7 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Store.Components;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -89,8 +89,10 @@ namespace Content.Goobstation.Server.Changeling;
 
 public sealed partial class ChangelingSystem
 {
+    private static readonly EntProtoId ActionLayEgg = "ActionLayEgg";
+
     #region Dependencies
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!; //for biodegrade unweld
     #endregion
 
@@ -312,7 +314,7 @@ public sealed partial class ChangelingSystem
 
         var target = args.Target;
 
-        if (!TryComp<FoodComponent>(target, out var food))
+        if (!TryComp<EdibleComponent>(target, out var food))
             return;
 
         if (!TryComp<SolutionContainerManagerComponent>(target, out var solMan))
@@ -723,7 +725,7 @@ public sealed partial class ChangelingSystem
             return;
 
         var target = args.Target;
-        var fakeArmblade = EntityManager.SpawnEntity(FakeArmbladePrototype, Transform(target).Coordinates);
+        var fakeArmblade = Spawn(FakeArmbladePrototype, Transform(target).Coordinates);
 
         var handsValid = _hands.TryForcePickupAnyHand(target, fakeArmblade);
 
@@ -850,7 +852,7 @@ public sealed partial class ChangelingSystem
         // Goobstation start unwelds containers containing changelling.
         var parent = Transform(uid).ParentUid;
 
-        if (parent != null && TryComp<WeldableComponent>(parent, out var weldable))
+        if (TryComp<WeldableComponent>(parent, out var weldable))
         {
             if (weldable.IsWelded)
             {
@@ -870,14 +872,10 @@ public sealed partial class ChangelingSystem
                 _puddle.TrySplashSpillAt(puller.Value, Transform((EntityUid) puller).Coordinates, soln, out _);
                 _stun.KnockdownOrStun(puller.Value, TimeSpan.FromSeconds(1.5), true);
 
-                if (!TryComp(puller.Value, out StatusEffectsComponent? status))
-                    return;
-
-                _statusEffects.TryAddStatusEffect<TemporaryBlindnessComponent>(puller.Value,
+                _statusEffects.TryAddStatusEffect(puller.Value,
                     "TemporaryBlindness",
-                    TimeSpan.FromSeconds(2f),
-                    true,
-                    status);
+                    out _,
+                    TimeSpan.FromSeconds(2f));
                 return;
             }
         }
@@ -983,7 +981,7 @@ public sealed partial class ChangelingSystem
             slope: 4,
             maxTileIntensity: 2);
 
-        _actions.AddAction((EntityUid) newUid, "ActionLayEgg");
+        _actions.AddAction((EntityUid) newUid, ActionLayEgg);
 
         PlayMeatySound((EntityUid) newUid, comp);
 
@@ -1033,3 +1031,4 @@ public sealed partial class ChangelingSystem
 
     #endregion
 }
+

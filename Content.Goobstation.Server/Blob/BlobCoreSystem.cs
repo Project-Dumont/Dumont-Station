@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
 // SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -44,6 +44,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.Blob;
 
@@ -68,12 +69,9 @@ public sealed class BlobCoreSystem : EntitySystem
     private EntityQuery<BlobFactoryComponent> _factory;
     private EntityQuery<BlobNodeComponent> _node;
 
-    [ValidatePrototypeId<AlertPrototype>]
-    private const string BlobHealth = "BlobHealth";
-    [ValidatePrototypeId<AlertPrototype>]
-    private const string BlobResource = "BlobResource";
-    [ValidatePrototypeId<CurrencyPrototype>]
-    private const string BlobMoney = "BlobPoint";
+    private static readonly ProtoId<AlertPrototype> BlobHealth = "BlobHealth";
+    private static readonly ProtoId<AlertPrototype> BlobResource = "BlobResource";
+    private static readonly ProtoId<CurrencyPrototype> BlobMoney = "BlobPoint";
 
     private readonly ReaderWriterLockSlim _pointsChange = new();
 
@@ -298,7 +296,7 @@ public sealed class BlobCoreSystem : EntitySystem
             if (!_tile.TryGetComponent(blobTile, out var blobTileComponent))
                 continue;
 
-            blobTileComponent.Color = component.ChemСolors[newChem];
+            blobTileComponent.Color = component.ChemColors[newChem];
             Dirty(blobTile, blobTileComponent);
 
             ChangeBlobEntChem(blobTile, newChem, blobTileComponent);
@@ -309,7 +307,7 @@ public sealed class BlobCoreSystem : EntitySystem
             if (!TryComp<BlobbernautComponent>(blobFactoryComponent.Blobbernaut, out var blobbernautComponent))
                 continue;
 
-            blobbernautComponent.Color = component.ChemСolors[newChem];
+            blobbernautComponent.Color = component.ChemColors[newChem];
             Dirty(blobFactoryComponent.Blobbernaut.Value, blobbernautComponent);
 
             if (TryComp<MeleeWeaponComponent>(blobFactoryComponent.Blobbernaut, out var meleeWeaponComponent))
@@ -372,7 +370,7 @@ public sealed class BlobCoreSystem : EntitySystem
         }
 
         var blobCoreComp = blobCore.Comp;
-        var blobTileUid = EntityManager.SpawnEntity(blobCoreComp.TilePrototypes[newBlobTile], coordinates);
+        var blobTileUid = Spawn(blobCoreComp.TilePrototypes[newBlobTile], coordinates);
 
         if (!_tile.TryGetComponent(blobTileUid, out var blobTileComp))
         {
@@ -404,7 +402,7 @@ public sealed class BlobCoreSystem : EntitySystem
 
         coreComp.BlobTiles.Add(tile);
 
-        tileComp.Color = coreComp.ChemСolors[coreComp.CurrentChem];
+        tileComp.Color = coreComp.ChemColors[coreComp.CurrentChem];
         tileComp.Core = core;
         Dirty(tile, tileComp);
 
@@ -735,3 +733,4 @@ public sealed class BlobCoreSystem : EntitySystem
         return nearestDistance > radius ? null : (nearestEntityUid, nodeComponent);
     }
 }
+

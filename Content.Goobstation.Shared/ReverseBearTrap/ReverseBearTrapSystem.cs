@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -23,6 +23,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
+using Content.Shared.Tools;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
@@ -30,6 +31,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -44,6 +46,9 @@ namespace Content.Goobstation.Shared.ReverseBearTrap;
 
 public sealed partial class ReverseBearTrapSystem : EntitySystem
 {
+    private static readonly ProtoId<ToolQualityPrototype> WeldingQuality = "Welding";
+    private static readonly ProtoId<TagPrototype> ReverseBearTrapKeyTag = "ReverseBearTrapKey";
+
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -150,7 +155,7 @@ public sealed partial class ReverseBearTrapSystem : EntitySystem
                 {
                     DoContactInteraction = true,
                     Text = "Remove trap",
-                    Disabled = !activeItem.HasValue || !_toolSystem.HasQuality(activeItem.Value, "Welding"),
+                    Disabled = !activeItem.HasValue || !_toolSystem.HasQuality(activeItem.Value, WeldingQuality),
                     Act = () =>
                     {
                         var user = args.User;
@@ -165,14 +170,14 @@ public sealed partial class ReverseBearTrapSystem : EntitySystem
                         _popup.PopupClient(Loc.GetString("reverse-bear-trap-component-start-welding-by-other",
                             ("otherName", Identity.Name(user, EntityManager, target))), target, target, PopupType.Large);
 
-                        _toolSystem.UseTool(activeItem!.Value, args.User, uid, 5f, "Welding", new WeldFinishedEvent(), 3f);
+                        _toolSystem.UseTool(activeItem!.Value, args.User, uid, 5f, WeldingQuality, new WeldFinishedEvent(), 3f);
                     }
                 });
             }
 
             if (activeItem.HasValue
                 && TryComp<TagComponent>(activeItem, out var tagComponent)
-                && _tag.HasTag(tagComponent, "ReverseBearTrapKey"))
+                && _tag.HasTag(tagComponent, ReverseBearTrapKeyTag))
             {
                 args.Verbs.Add(new Verb()
                 {
@@ -327,7 +332,7 @@ public sealed partial class ReverseBearTrapSystem : EntitySystem
 
     private void ArmTrap(EntityUid uid, ReverseBearTrapComponent trap, EntityUid wearer)
     {
-        if (trap.Ticking || !EntityManager.EntityExists(wearer) || !_interaction.InRangeUnobstructed(uid, wearer))
+        if (trap.Ticking || !Exists(wearer) || !_interaction.InRangeUnobstructed(uid, wearer))
             return;
 
         trap.Ticking = true;

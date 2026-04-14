@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -31,7 +31,6 @@ public abstract partial class SharedDrinkSystem : EntitySystem
     [Dependency] private readonly IngestionSystem _ingestion = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly OpenableSystem _openable = default!;
 
     public override void Initialize()
     {

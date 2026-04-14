@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -104,7 +104,7 @@ public sealed class PinpointerDoomsdaySystem : EntitySystem
         foreach (var pinpointerUid in _doomsdayTargetedPinpointers.ToList())
         {
             // Check if pinpointer still exists
-            if (!EntityManager.EntityExists(pinpointerUid))
+            if (!Exists(pinpointerUid))
             {
                 _doomsdayTargetedPinpointers.Remove(pinpointerUid);
                 continue;
@@ -139,3 +139,4 @@ public sealed class PinpointerDoomsdaySystem : EntitySystem
         _currentDoomsdayAiBrain = null;
     }
 }
+

@@ -310,7 +310,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         var mapLayerEv = new GetActualMapLayerEvent(slot);
         RaiseLocalEvent(equipment, ref mapLayerEv);
         if (mapLayerEv.MapLayer != slot)
-            slotLayerExists = sprite.LayerMapTryGet(mapLayerEv.MapLayer, out index);
+            slotLayerExists = _sprite.LayerMapTryGet((equipee, sprite), mapLayerEv.MapLayer, out index, false);
 
         // temporary, until layer draw depths get added. Basically: a layer with the key "slot" is being used as a
         // bookmark to determine where in the list of layers we should insert the clothing layers.

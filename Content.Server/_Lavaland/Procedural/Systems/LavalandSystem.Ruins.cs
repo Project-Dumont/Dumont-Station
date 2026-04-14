@@ -31,7 +31,11 @@ public sealed partial class LavalandSystem
         var usedSpace = GetOutpostBoundary(lavaland);
         var coords = GetCoordinates(pool.RuinDistance, pool.MaxDistance);
 
-        random.Shuffle(coords);
+        for (var i = coords.Count - 1; i > 0; i--)
+        {
+            var j = random.Next(i + 1);
+            (coords[i], coords[j]) = (coords[j], coords[i]);
+        }
 
         // Load grid ruins
         Log.Debug($"Spawning {pool.GridRuins.Count} GridRuins on {ToPrettyString(lavaland)} planet.");
@@ -147,7 +151,7 @@ public sealed partial class LavalandSystem
         if (coords.Count == 0)
             return false;
 
-        var coord = random.Pick(coords);
+        var coord = coords[random.Next(coords.Count)];
         var mapXform = Transform(preloader);
 
         // Check if we already calculated that boundary before, and if we didn't then calculate it now
@@ -205,7 +209,7 @@ public sealed partial class LavalandSystem
         if (coords.Count == 0)
             return false;
 
-        var coord = random.Pick(coords);
+        var coord = coords[random.Next(coords.Count)];
         var box = Box2.CentredAroundZero(ruin.Boundary);
         var ruinBox = box.Translated(coord);
 
@@ -384,8 +388,9 @@ public sealed partial class LavalandSystem
                     _map.SetTile(grid,
                         grid,
                         tilePos,
-                        _tile.GetVariantTile((ContentTileDefinition) _tiledef[DungeonSystem.FallbackTileId],
-                            _random.GetRandom()));
+                        _tile.GetVariantTile(
+                            (ContentTileDefinition) _tiledef[DungeonSystem.FallbackTileId],
+                            _random.Next()));
                 }
 
                 _decals.TryAddDecal(

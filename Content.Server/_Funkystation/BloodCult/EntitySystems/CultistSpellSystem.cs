@@ -29,8 +29,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Server.GameTicking.Rules;
-using Content.Shared.StatusEffect;
-using Content.Shared.Speech.Muting;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Content.Shared.Emp;
 using Content.Server.Emp;
@@ -419,7 +418,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 		{
 			// Apply EMP damage directly to the IPC's battery
 			_emp.DoEmpEffects((EntityUid)ipcBatteryUid, empDamage, empDuration);
-			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
+			_statusEffect.TryAddStatusEffectDuration(target, "Muted", TimeSpan.FromSeconds(empDuration));
 		}
 		else if (HasComp<BorgChassisComponent>(target) &&
 			_powerCell.TryGetBatteryFromSlot(target, out EntityUid? borgBatteryUid, out BatteryComponent? _) &&
@@ -427,7 +426,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 		{
 			// Apply EMP damage directly to the borg's battery
 			_emp.DoEmpEffects((EntityUid)borgBatteryUid, empDamage, empDuration);
-			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
+			_statusEffect.TryAddStatusEffectDuration(target, "Muted", TimeSpan.FromSeconds(empDuration));
 		}
 		else if (HasComp<JuggernautComponent>(target))
 		{
@@ -458,7 +457,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			
 			// Added a manual mute, since I know upstream has a possible Nocturine debuff that makes it take effect slower.
 			// The intent is for this to work to kidnap any non-mindshielded crew member.
-			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(15), false);
+			_statusEffect.TryAddStatusEffectDuration(target, "Muted", TimeSpan.FromSeconds(15));
 		}
 		else
 		{
@@ -466,7 +465,7 @@ public sealed partial class CultistSpellSystem : EntitySystem
 			// Apply EMP effects directly to the entity, and mute them.
 			// todo: Explore if this is a less fancy way to do it. Might be able to just do this for all entities?
 			_emp.DoEmpEffects(target, empDamage, empDuration);
-			_statusEffect.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(empDuration), false);
+			_statusEffect.TryAddStatusEffectDuration(target, "Muted", TimeSpan.FromSeconds(empDuration));
 		}
 	}
 

@@ -90,7 +90,7 @@ public abstract partial class SharedMartialArtsSystem
             || target != ent.Owner)
             return;
 
-        _status.TryRemoveStatusEffect(ent, "KnockedDown");
+        _newStatus.TryRemoveStatusEffect(ent, "KnockedDown");
         _standingState.Stand(ent);
         //_stamina.TryTakeStamina(ent, args.StaminaToHeal);
         ent.Comp.LastAttacks.Clear();

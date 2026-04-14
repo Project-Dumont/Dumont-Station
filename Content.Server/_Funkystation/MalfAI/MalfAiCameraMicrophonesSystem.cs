@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -32,7 +32,6 @@ public sealed class MalfAiCameraMicrophonesSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
     [Dependency] private readonly StationAiSystem _stationAi = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Initialize()
     {

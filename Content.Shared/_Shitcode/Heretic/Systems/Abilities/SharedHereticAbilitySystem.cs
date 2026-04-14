@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Goobstation.Common.Religion;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared._Goobstation.Heretic.Systems;
@@ -46,6 +46,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Shitcode.Heretic.Systems.Abilities;
 
+#pragma warning disable CS0618
 public abstract partial class SharedHereticAbilitySystem : EntitySystem
 {
     [Dependency] private readonly IMapManager _mapMan = default!;
@@ -83,7 +84,6 @@ public abstract partial class SharedHereticAbilitySystem : EntitySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly SharedBloodstreamSystem _blood = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
 
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
 
@@ -440,3 +440,4 @@ public abstract partial class SharedHereticAbilitySystem : EntitySystem
 
     protected virtual void SpeakAbility(EntityUid ent, HereticActionComponent args) { }
 }
+#pragma warning restore CS0618

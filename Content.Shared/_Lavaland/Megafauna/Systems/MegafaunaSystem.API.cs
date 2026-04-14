@@ -49,7 +49,9 @@ public sealed partial class MegafaunaSystem
         var uid = args.Entity;
         var mapId = Transform(uid).MapID;
 
-        var randomVector = new Vector2(args.Random.NextFloat(-radius, radius), args.Random.NextFloat(-radius, radius));
+        var randomVector = new Vector2(
+            (float) (args.Random.NextDouble() * (radius * 2) - radius),
+            (float) (args.Random.NextDouble() * (radius * 2) - radius));
         var position = _xform.GetWorldPosition(uid) + randomVector;
         var newMapCoords = new MapCoordinates(position, mapId);
         var coords = _xform.ToCoordinates(newMapCoords);

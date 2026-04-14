@@ -19,7 +19,6 @@ namespace Content.Goobstation.Shared.OfficeChair;
 
 public sealed partial class RocketChairSystem : SharedRocketChairSystem
 {
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedTransformSystem _tx = default!;

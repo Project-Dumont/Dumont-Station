@@ -473,7 +473,7 @@ namespace Content.Shared.Cuffs
             if (TryComp<CanForceHandcuffComponent>(args.User, out var canForceCuff))
             {
                 if (args.Cancelled)
-                    EntityManager.DeleteEntity(canForceCuff.Handcuffs);
+                    Del(canForceCuff.Handcuffs);
 
                 canForceCuff.Handcuffs = null;
             }
@@ -599,11 +599,11 @@ namespace Content.Shared.Cuffs
             if (component.Container == null)
                 return false;
 
-            var handcuffs = EntityManager.Spawn(component.HandcuffsId);
+            var handcuffs = Spawn(component.HandcuffsId);
 
             if (!_container.Insert(handcuffs, component.Container, force: true))
             {
-                EntityManager.DeleteEntity(handcuffs);
+                Del(handcuffs);
                 return false;
             }
 
@@ -612,7 +612,7 @@ namespace Content.Shared.Cuffs
             if (TryCuffing(user, target, handcuffs, requireHands: false))
                 return true;
 
-            EntityManager.DeleteEntity(handcuffs);
+            Del(handcuffs);
             component.Handcuffs = null;
             return false;
         }

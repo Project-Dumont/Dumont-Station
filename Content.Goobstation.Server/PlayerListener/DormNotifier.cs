@@ -188,7 +188,7 @@ public sealed class DormNotifier : EntitySystem
                 return;
             }
         }
-        catch (KeyNotFoundException e)
+        catch (KeyNotFoundException)
         {
             Log.Warning("Entity didn't have HumanoidAppearanceComponent");
         }

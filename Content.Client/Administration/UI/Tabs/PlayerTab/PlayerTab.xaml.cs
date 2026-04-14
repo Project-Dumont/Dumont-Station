@@ -181,6 +181,7 @@ public sealed partial class PlayerTab : Control
         RefreshPlayerList(_players);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

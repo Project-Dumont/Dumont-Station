@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+﻿// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
 // SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
 // SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
 // SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
@@ -85,7 +85,6 @@ namespace Content.Server.Singularity.EntitySystems
     public sealed class EmitterSystem : SharedEmitterSystem
     {
         [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -42,9 +42,9 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReactiveSystem _reactive = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private static readonly SoundSpecifier HitSound = new SoundCollectionSpecifier("MetalThud");
+    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
 
     public override void Initialize()
     {
@@ -63,7 +63,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var blunt = _proto.Index<DamageTypePrototype>("Blunt");
+        var blunt = _proto.Index(BluntDamageType);
 
         var query = EntityQueryEnumerator<WashingMachineActiveComponent, WashingMachineComponent>();
         while (query.MoveNext(out var uid, out var _, out var component))
@@ -157,7 +157,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
 
         if (component.AccumulatedSelfDamage > 0)
         {
-            var blunt = _proto.Index<DamageTypePrototype>("Blunt");
+            var blunt = _proto.Index(BluntDamageType);
             var selfDamage = new DamageSpecifier(blunt, component.AccumulatedSelfDamage);
             _damageable.TryChangeDamage(uid, selfDamage, origin: uid, ignoreResistances: true);
 

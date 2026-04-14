@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 Francesco <frafonia@gmail.com>
+﻿// SPDX-FileCopyrightText: 2022 Francesco <frafonia@gmail.com>
 // SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
@@ -77,7 +77,6 @@ using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Medical.Cryogenics;
 using Content.Shared.MedicalScanner;
-using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Content.Shared.Bed.Sleep; // Shitmed Change
 using Robust.Server.GameObjects;

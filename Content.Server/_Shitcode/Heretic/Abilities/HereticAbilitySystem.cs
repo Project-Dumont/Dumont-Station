@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
@@ -52,6 +52,7 @@ using Robust.Server.GameStates;
 using Content.Shared.Stunnable;
 using Robust.Shared.Map;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Throwing;
 using Content.Server.Station.Systems;
 using Content.Shared.Localizations;
@@ -113,7 +114,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly ProtectiveBladeSystem _pblade = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
@@ -132,6 +133,8 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _modifier = default!;
 
     private static readonly ProtoId<HereticRitualPrototype> BladeBladeRitual = "BladeBlade";
+    private static readonly ProtoId<TagPrototype> HereticBladeBladeTag = "HereticBladeBlade";
+    private static readonly ProtoId<TagPrototype> WallTag = "Wall";
 
     private const float LeechingWalkUpdateInterval = 1f;
     private float _accumulator;
@@ -241,10 +244,10 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
             var success = false;
             foreach (var blade in blades)
             {
-                if (!EntityManager.EntityExists(blade))
+                if (!Exists(blade))
                     continue;
 
-                if (!_tag.HasTag(blade, "HereticBladeBlade"))
+                if (!_tag.HasTag(blade, HereticBladeBladeTag))
                     continue;
 
                 if (TryComp(blade, out MansusInfusedComponent? infused) &&
@@ -484,7 +487,6 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
         var damageableQuery = GetEntityQuery<DamageableComponent>();
         var temperatureQuery = GetEntityQuery<TemperatureComponent>();
         var staminaQuery = GetEntityQuery<StaminaComponent>();
-        var statusQuery = GetEntityQuery<StatusEffectsComponent>();
         var resiratorQuery = GetEntityQuery<RespiratorComponent>();
         var hereticQuery = GetEntityQuery<HereticComponent>();
         var ghoulQuery = GetEntityQuery<GhoulComponent>();
@@ -560,19 +562,17 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
                     visual: false);
             }
 
-            if (statusQuery.TryComp(uid, out var status))
-            {
-                var reduction = leech.StunReduction * multiplier;
-                _statusEffect.TryRemoveTime(uid, "Stun", reduction, status);
-                _statusEffect.TryRemoveTime(uid, "KnockedDown", reduction, status);
+            var reduction = leech.StunReduction * multiplier;
+            _statusEffect.TryAddTime(uid, "Stun", -reduction);
+            _statusEffect.TryAddTime(uid, "KnockedDown", -reduction);
 
-                _statusEffect.TryRemoveStatusEffect(uid, "Pacified", status);
-                _statusEffect.TryRemoveStatusEffect(uid, "ForcedSleep", status);
-                _statusEffect.TryRemoveStatusEffect(uid, "SlowedDown", status);
-                _statusEffect.TryRemoveStatusEffect(uid, "BlurryVision", status);
-                _statusEffect.TryRemoveStatusEffect(uid, "TemporaryBlindness", status);
-                _statusEffect.TryRemoveStatusEffect(uid, "SeeingRainbows", status);
-            }
+            _statusEffect.TryRemoveStatusEffect(uid, "Pacified");
+            _statusEffect.TryRemoveStatusEffect(uid, "ForcedSleep");
+            _statusEffect.TryRemoveStatusEffect(uid, "SlowedDown");
+            _statusEffect.TryRemoveStatusEffect(uid, "BlurryVision");
+            _statusEffect.TryRemoveStatusEffect(uid, "TemporaryBlindness");
+            _statusEffect.TryRemoveStatusEffect(uid, "SeeingRainbows");
         }
     }
 }
+

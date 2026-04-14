@@ -75,12 +75,16 @@ public sealed class MapTextSystem : SharedMapTextSystem
             component.CachedText = Loc.GetString("map-text-font-error");
             component.Color = Color.Red;
 
+#pragma warning disable CS0618
             if(_prototypeManager.TryIndex<FontPrototype>(SharedMapTextComponent.DefaultFont, out var @default))
                 component.CachedFont = new VectorFont(_resourceCache.GetResource<FontResource>(@default.Path), 14);
+#pragma warning restore CS0618
             return;
         }
 
+#pragma warning disable CS0618
         var fontResource = _resourceCache.GetResource<FontResource>(fontPrototype.Path);
+#pragma warning restore CS0618
         component.CachedFont = new VectorFont(fontResource, component.FontSize);
     }
 }

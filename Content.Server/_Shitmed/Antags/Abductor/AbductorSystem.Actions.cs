@@ -13,6 +13,7 @@ using Content.Shared.Effects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Pulling.Components;
@@ -74,7 +75,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
             var effect = _entityManager.SpawnEntity(TeleportationEffect, abductorScientistComponent.SpawnPosition.Value);
             EnsureComp<TimedDespawnComponent>(effect, out var despawnComp);
             despawnComp.Lifetime = 3.0f;
-            _audioSystem.PlayPvs("/Audio/_Shitmed/Misc/alien_teleport.ogg", effect);
+            _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Shitmed/Misc/alien_teleport.ogg"), effect);
         }
 
         var doAfter = new DoAfterArgs(EntityManager, ev.Performer, TimeSpan.FromSeconds(3), new AbductorReturnDoAfterEvent(), ev.Performer)
@@ -172,6 +173,6 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         despawnComp.Lifetime = lifetime;
 
         if (playAudio)
-            _audioSystem.PlayPvs("/Audio/_Shitmed/Misc/alien_teleport.ogg", effectEnt);
+            _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Shitmed/Misc/alien_teleport.ogg"), effectEnt);
     }
 }

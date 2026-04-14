@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -32,7 +32,7 @@ public sealed class MalfAiViewportPvsSystem : EntitySystem
             return;
 
         // Only if viewport anchor exists and is valid
-        if (viewportComp.ViewportAnchor == null || !EntityManager.EntityExists(viewportComp.ViewportAnchor.Value))
+        if (viewportComp.ViewportAnchor == null || !Exists(viewportComp.ViewportAnchor.Value))
             return;
 
         var anchorUid = viewportComp.ViewportAnchor.Value;
@@ -65,3 +65,4 @@ public sealed class MalfAiViewportPvsSystem : EntitySystem
         }
     }
 }
+

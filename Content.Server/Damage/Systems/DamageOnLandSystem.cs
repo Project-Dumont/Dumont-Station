@@ -33,7 +33,7 @@ namespace Content.Server.Damage.Systems
         private void DamageOnLand(EntityUid uid, DamageOnLandComponent component, ref LandEvent args)
         {
             // Adventure start
-            if (args.User is { } user && HasComp<DrinkComponent>(uid) && _nonspillthrower.GetSpillProofThrow(user))
+            if (args.User is { } user && HasComp<EdibleComponent>(uid) && _nonspillthrower.GetSpillProofThrow(user))
             {
                 return;
             }

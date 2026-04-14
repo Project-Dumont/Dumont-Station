@@ -68,12 +68,12 @@ public sealed class SeedDnaConsoleSystem : SharedSeedDnaConsoleSystem
     {
         return component.SeedSlot.Item is not { Valid: true } seedItem
             ? (false, string.Empty, null)
-            : (true, EntityManager.GetComponent<MetaDataComponent>(seedItem).EntityName, ExtractSeedData(seedItem));
+            : (true, Comp<MetaDataComponent>(seedItem).EntityName, ExtractSeedData(seedItem));
     }
 
     private void RewriteSeedData(EntityUid seed, SeedDataDto seedDataDto)
     {
-        var comp = EntityManager.GetComponent<SeedComponent>(seed);
+        var comp = Comp<SeedComponent>(seed);
         var seedData = comp.Seed;
 
         if (seedData == null)
@@ -132,12 +132,12 @@ public sealed class SeedDnaConsoleSystem : SharedSeedDnaConsoleSystem
 
     private void RewriteDnaDiskData(EntityUid dnaDisk, SeedDataDto dnaDiskDataDto)
     {
-        EntityManager.GetComponent<DnaDiskComponent>(dnaDisk).SeedData = dnaDiskDataDto;
+        Comp<DnaDiskComponent>(dnaDisk).SeedData = dnaDiskDataDto;
     }
 
     private SeedDataDto? ExtractSeedData(EntityUid seed)
     {
-        var seedData = EntityManager.GetComponent<SeedComponent>(seed).Seed;
+        var seedData = Comp<SeedComponent>(seed).Seed;
         if (seedData == null)
             return null;
 
@@ -187,11 +187,11 @@ public sealed class SeedDnaConsoleSystem : SharedSeedDnaConsoleSystem
     {
         return component.DnaDiskSlot.Item is not { Valid: true } diskItem
             ? (false, string.Empty, null)
-            : (true, EntityManager.GetComponent<MetaDataComponent>(diskItem).EntityName, ExtractDiskData(diskItem));
+            : (true, Comp<MetaDataComponent>(diskItem).EntityName, ExtractDiskData(diskItem));
     }
 
     private SeedDataDto? ExtractDiskData(EntityUid dnaDisk)
     {
-        return EntityManager.GetComponent<DnaDiskComponent>(dnaDisk).SeedData;
+        return Comp<DnaDiskComponent>(dnaDisk).SeedData;
     }
 }

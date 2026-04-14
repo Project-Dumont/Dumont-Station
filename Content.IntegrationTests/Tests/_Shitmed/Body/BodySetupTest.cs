@@ -40,6 +40,8 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 [TestFixture]
 public sealed class BodySetupTest
 {
+    private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
+
     /// <summary>
     /// A list of species that are ignored by all the tests here.
     /// </summary>
@@ -392,7 +394,7 @@ public sealed class BodySetupTest
 
                 // Apply lethal damage
                 var lethalDamage = deadThreshold.Value + FixedPoint2.New(10);
-                var damageSpecifier = new DamageSpecifier(protoMan.Index<DamageTypePrototype>("Blunt"), lethalDamage);
+                var damageSpecifier = new DamageSpecifier(protoMan.Index(BluntDamage), lethalDamage);
                 if (entMan.TryGetComponent<BodyComponent>(entity, out var body)
                     && body.BodyType == BodyType.Complex)
                 {

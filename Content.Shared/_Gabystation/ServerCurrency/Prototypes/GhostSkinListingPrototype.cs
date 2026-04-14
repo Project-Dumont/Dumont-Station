@@ -1,11 +1,11 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+﻿// ported by Punker Corps <punkercorps@gmail.com>
 using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
-[Prototype("ghostSkinListing")]
+[Prototype]
 public sealed partial class GhostSkinListingPrototype : IPrototype
 {
     [IdDataField]

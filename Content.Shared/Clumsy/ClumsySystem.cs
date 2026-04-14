@@ -17,7 +17,6 @@ using Content.Shared.Damage;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Medical;
 using Content.Shared.Popups;
-using Content.Shared.Random.Helpers;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Ranged.Events;
@@ -25,6 +24,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Content.Shared.Random.Helpers;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -62,7 +62,7 @@ public sealed class ClumsySystem : EntitySystem
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
         var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.ClumsyDefaultCheck))
+        if (rand.NextDouble() >= ent.Comp.ClumsyDefaultCheck)
             return;
 
         args.TargetGettingInjected = args.EntityUsingHypospray;
@@ -81,7 +81,7 @@ public sealed class ClumsySystem : EntitySystem
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
         var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.ClumsyDefaultCheck))
+        if (rand.NextDouble() >= ent.Comp.ClumsyDefaultCheck)
             return;
 
         args.DefibTarget = args.EntityUsingDefib;
@@ -100,7 +100,7 @@ public sealed class ClumsySystem : EntitySystem
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(args.Item).Id });
         var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.ClumsyDefaultCheck))
+        if (rand.NextDouble() >= ent.Comp.ClumsyDefaultCheck)
             return;
 
         args.Cancelled = true; // fail to catch
@@ -134,7 +134,7 @@ public sealed class ClumsySystem : EntitySystem
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(args.Gun).Id });
         var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.ClumsyDefaultCheck))
+        if (rand.NextDouble() >= ent.Comp.ClumsyDefaultCheck)
             return;
 
         if (ent.Comp.GunShootFailDamage != null)
@@ -159,7 +159,7 @@ public sealed class ClumsySystem : EntitySystem
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
         var rand = new System.Random(seed);
-        if (!_cfg.GetCVar(CCVars.GameTableBonk) && !rand.Prob(ent.Comp.ClumsyDefaultCheck))
+        if (!_cfg.GetCVar(CCVars.GameTableBonk) && rand.NextDouble() >= ent.Comp.ClumsyDefaultCheck)
             return;
 
         HitHeadClumsy(ent, args.BeingClimbedOn);

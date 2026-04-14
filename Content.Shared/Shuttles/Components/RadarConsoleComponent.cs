@@ -11,6 +11,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Shuttles.Components;
 
+#pragma warning disable CS0618
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SharedRadarConsoleSystem))]
 public sealed partial class RadarConsoleComponent : Component
@@ -34,3 +35,4 @@ public sealed partial class RadarConsoleComponent : Component
     [DataField]
     public bool FollowEntity = false;
 }
+#pragma warning restore CS0618

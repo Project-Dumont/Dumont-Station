@@ -699,7 +699,7 @@ namespace Content.Shared.Damage
             var random = new System.Random((int) _timing.CurTick.Value);
             for (var i = 0; i < count; i++)
             {
-                var weight = random.NextFloat() * MathF.Abs(variation) + 1f;
+                var weight = (float) random.NextDouble() * MathF.Abs(variation) + 1f;
                 weights.Add(weight);
                 totalWeight += weight;
             }

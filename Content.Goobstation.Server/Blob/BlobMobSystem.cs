@@ -35,9 +35,6 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
 {
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly RadioSystem _radioSystem = default!;
-    private EntityQuery<BlobSpeakComponent> _activeBSpeak;
 
     public override void Initialize()
     {

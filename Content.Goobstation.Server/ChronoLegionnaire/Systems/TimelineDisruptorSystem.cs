@@ -107,7 +107,7 @@ public sealed class TimelineDisruptorSystem : SharedTimelineDisruptorSystem
         Dirty(uid, disruptor);
     }
 
-    protected void StopDisrupting(Entity<TimelineDisruptorComponent> ent)
+    private void StopDisrupting(Entity<TimelineDisruptorComponent> ent)
     {
         var (_, disruptor) = ent;
 

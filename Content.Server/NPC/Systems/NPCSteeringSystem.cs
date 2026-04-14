@@ -130,8 +130,8 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     [Dependency] private readonly SharedMoverController _mover = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!; // Tile Movement Change
-    [Dependency] protected readonly SharedPhysicsSystem PhysicsSystem = default!; // Tile Movement Change
+    [Dependency] private readonly IGameTiming Timing = default!; // Tile Movement Change
+    [Dependency] private readonly SharedPhysicsSystem PhysicsSystem = default!; // Tile Movement Change
     [Dependency] private readonly SharedGravitySystem _gravity = default!; // Tile Movement Change
     private TimeSpan CurrentTime => PhysicsSystem.EffectiveCurTime ?? Timing.CurTime; // Tile Movement Change
     private EntityQuery<FixturesComponent> _fixturesQuery;

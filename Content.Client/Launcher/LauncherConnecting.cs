@@ -26,6 +26,8 @@ namespace Content.Client.Launcher
 {
     public sealed class LauncherConnecting : Robust.Client.State.State
     {
+        private static readonly ISawmill Sawmill = Logger.GetSawmill("launcher-ui");
+
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IClientNetManager _clientNetManager = default!;
         [Dependency] private readonly IGameController _gameController = default!;
@@ -85,7 +87,7 @@ namespace Content.Client.Launcher
 
         protected override void Shutdown()
         {
-            _control?.Dispose();
+            _control?.Orphan();
 
             _clientNetManager.ConnectFailed -= OnConnectFailed;
             _clientNetManager.ClientConnectStateChanged -= OnConnectStateChanged;
@@ -129,12 +131,12 @@ namespace Content.Client.Launcher
                 }
                 else
                 {
-                    Logger.InfoS("launcher-ui", $"Redial not possible, no Ss14Address");
+                    Sawmill.Info("Redial not possible, no Ss14Address");
                 }
             }
             catch (Exception ex)
             {
-                Logger.ErrorS("launcher-ui", $"Redial exception: {ex}");
+                Sawmill.Error($"Redial exception: {ex}");
             }
             return false;
         }

@@ -411,7 +411,7 @@ namespace Content.Server.Guardian
                 else
                 {
                     // host's position in our parent's coordinates
-                    var hostPos = hostXform.Coordinates.WithEntityId(guardianXform.ParentUid, EntityManager).Position;
+                    var hostPos = _transform.WithEntityId(hostXform.Coordinates, guardianXform.ParentUid).Position;
                     var diff = guardianXform.LocalPosition - hostPos;
                     var newDiff = diff.Normalized() * guardianComponent.DistanceAllowed;
                     _transform.SetLocalPosition(guardianUid, hostPos + newDiff, guardianXform);

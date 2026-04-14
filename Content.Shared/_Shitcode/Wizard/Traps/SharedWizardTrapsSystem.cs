@@ -19,6 +19,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Whitelist;
@@ -39,7 +40,7 @@ public abstract class SharedWizardTrapsSystem : EntitySystem
     [Dependency] private   readonly SparksSystem _spark = default!;
     [Dependency] private   readonly SharedElectrocutionSystem _electrocution = default!;
     [Dependency] private   readonly SharedStunSystem _stun = default!;
-    [Dependency] private   readonly StatusEffectsSystem _status = default!;
+    [Dependency] private   readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _status = default!;
     [Dependency] private   readonly DamageableSystem _damageable = default!;
     [Dependency] private   readonly SharedAudioSystem _audio = default!;
     [Dependency] private   readonly EntityWhitelistSystem _whitelist = default!;
@@ -72,20 +73,15 @@ public abstract class SharedWizardTrapsSystem : EntitySystem
     {
         var (_, comp) = ent;
 
-        if (!TryComp(args.Victim, out StatusEffectsComponent? status))
-            return;
-
-        _status.TryAddStatusEffect<TemporaryBlindnessComponent>(args.Victim,
+        _status.TryAddStatusEffect(args.Victim,
             "TemporaryBlindness",
-            comp.BlindDuration,
-            true,
-            status);
+            out _,
+            comp.BlindDuration);
 
-        _status.TryAddStatusEffect<BlurryVisionComponent>(args.Victim,
+        _status.TryAddStatusEffect(args.Victim,
             "BlurryVision",
-            comp.BlurDuration,
-            true,
-            status);
+            out _,
+            comp.BlurDuration);
     }
 
     private void OnChillTriggered(Entity<ChillTrapComponent> ent, ref TrapTriggeredEvent args)

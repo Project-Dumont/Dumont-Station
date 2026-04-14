@@ -35,6 +35,7 @@ using Robust.Server.Containers;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
 using static Content.Shared.Administration.Notes.AdminMessageEuiState;
@@ -43,6 +44,8 @@ namespace Content.Goobstation.Server.Possession;
 
 public sealed partial class PossessionSystem : EntitySystem
 {
+    private static readonly ProtoId<TagPrototype> CannotSuicideAnyTag = "CannotSuicideAny";
+
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -94,7 +97,7 @@ public sealed partial class PossessionSystem : EntitySystem
 
         _action.AddAction(possessed, ref possessed.Comp.ActionEntity, possessed.Comp.EndPossessionAction);
 
-        _tag.AddTag(possessed, "CannotSuicideAny");
+        _tag.AddTag(possessed, CannotSuicideAnyTag);
 
         possessed.Comp.PossessedContainer = _container.EnsureContainer<Container>(possessed, "PossessedContainer");
     }
@@ -122,7 +125,7 @@ public sealed partial class PossessionSystem : EntitySystem
         if (possessed.Comp.PolymorphEntity && HasComp<PolymorphedEntityComponent>(possessed))
             _polymorph.Revert(possessed.Owner);
 
-        _tag.RemoveTag(possessed, "CannotSuicideAny");
+        _tag.RemoveTag(possessed, CannotSuicideAnyTag);
 
         // Remove associated components.
         if (!possessed.Comp.WasPacified)

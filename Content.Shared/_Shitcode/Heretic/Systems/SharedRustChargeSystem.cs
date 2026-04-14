@@ -19,6 +19,7 @@ using Robust.Shared.Physics.Events;
 
 namespace Content.Shared._Shitcode.Heretic.Systems;
 
+#pragma warning disable CS0618
 public abstract class SharedRustChargeSystem : EntitySystem
 {
     [Dependency] private readonly TagSystem _tag = default!;
@@ -126,3 +127,4 @@ public abstract class SharedRustChargeSystem : EntitySystem
     {
     }
 }
+#pragma warning restore CS0618

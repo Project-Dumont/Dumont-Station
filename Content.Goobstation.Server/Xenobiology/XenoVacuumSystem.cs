@@ -44,7 +44,6 @@ public sealed partial class XenoVacuumSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly HTNSystem _htn = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly EntityStorageSystem _entStorage = default!;
 
     private const string ReleaseDelayId = "release";
     private const string SuctionDelayId = "suction";

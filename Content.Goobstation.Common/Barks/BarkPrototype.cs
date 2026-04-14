@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Common.Barks;
 
-[Prototype("bark")]
+[Prototype]
 public sealed partial class BarkPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;

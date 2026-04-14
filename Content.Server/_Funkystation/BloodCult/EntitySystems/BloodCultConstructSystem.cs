@@ -37,11 +37,14 @@ using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Player;
 using Content.Shared.Damage.Components;
 using Content.Shared.Actions.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.BloodCult.EntitySystems;
 
 public sealed partial class BloodCultConstructSystem : EntitySystem
 {
+	private static readonly EntProtoId ActionJuggernautCommune = "ActionJuggernautCommune";
+
 	[Dependency] private readonly MindSystem _mind = default!;
 	[Dependency] private readonly MobStateSystem _mobState = default!;
 	[Dependency] private readonly PopupSystem _popup = default!;
@@ -59,7 +62,7 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 	/// </summary>
 	private void GrantCommuneAction(EntityUid juggernaut)
 	{
-	    _actions.AddAction(juggernaut, "ActionJuggernautCommune");
+	    _actions.AddAction(juggernaut, ActionJuggernautCommune);
 	}
 
 	public override void Initialize()
@@ -135,7 +138,7 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 		
 		// Delete the shell and spawn the juggernaut at the exact map coordinates with rotation
 		// Use DeleteEntity instead of QueueDel to ensure immediate deletion before spawning
-		EntityManager.DeleteEntity(shell);
+		Del(shell);
 		
 		// Spawn the juggernaut at the exact map coordinates (not anchored, so it won't snap to grid)
 		var juggernaut = Spawn("MobBloodCultJuggernaut", shellMapCoords, rotation: shellRotation);
@@ -309,7 +312,7 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 		
 		// Delete the shell AFTER the body is safely in the container
 		// Use DeleteEntity instead of QueueDel to ensure immediate deletion
-		EntityManager.DeleteEntity(uid);
+		Del(uid);
 		
 		// Store reference to body in the juggernaut component
 		if (TryComp<JuggernautComponent>(juggernaut, out var juggComp))

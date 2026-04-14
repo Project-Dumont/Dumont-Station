@@ -125,7 +125,7 @@ public static class EntitySpawnCollection
         {
             // Check random spawn
             // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (entry.SpawnProbability != 1f && !random.Prob(entry.SpawnProbability))
+            if (entry.SpawnProbability != 1f && random.NextDouble() >= entry.SpawnProbability)
                 continue;
 
             if (entry.PrototypeId == null)
@@ -182,7 +182,7 @@ public static class EntitySpawnCollection
         {
             // Check random spawn
             // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (entry.SpawnProbability != 1f && !random.Prob(entry.SpawnProbability))
+            if (entry.SpawnProbability != 1f && random.NextDouble() >= entry.SpawnProbability)
                 continue;
 
             var amount = (int) entry.GetAmount(random);

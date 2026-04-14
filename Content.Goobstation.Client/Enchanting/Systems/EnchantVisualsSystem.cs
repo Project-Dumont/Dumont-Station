@@ -20,6 +20,7 @@ namespace Content.Goobstation.Client.Enchanting.Systems;
 public sealed class EnchantVisualsSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public readonly ProtoId<ShaderPrototype> Shader = "Enchant";
 
@@ -57,7 +58,7 @@ public sealed class EnchantVisualsSystem : EntitySystem
 
         foreach (var key in keys)
         {
-            if (sprite.LayerMapTryGet(key, out var index))
+            if (_sprite.LayerMapTryGet((uid, sprite), key, out var index, false))
                 sprite.LayerSetShader(index, Shader);
         }
     }

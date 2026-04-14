@@ -14,6 +14,8 @@ namespace Content.Client.Nyanotrasen.Overlays;
 
 public sealed partial class DogVisionOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> DogVisionShaderId = "DogVision";
+
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] IEntityManager _entityManager = default!;
@@ -26,7 +28,7 @@ public sealed partial class DogVisionOverlay : Overlay
     public DogVisionOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _dogVisionShader = _prototypeManager.Index<ShaderPrototype>("DogVision").Instance().Duplicate();
+        _dogVisionShader = _prototypeManager.Index(DogVisionShaderId).Instance().Duplicate();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

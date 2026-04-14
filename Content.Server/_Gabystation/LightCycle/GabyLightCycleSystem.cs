@@ -62,7 +62,7 @@ namespace Content.Server.Time
         private void OnLightBulbStartup(Entity<PoweredLightComponent> ent, ref ComponentStartup args)
         {
             var station = _transformSystem.GetGrid(ent.Owner);
-            if (EntityManager.TryGetComponent<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
+            if (TryComp<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
             {
                 if (!cycle.BulbList.Contains(ent))
                     cycle.BulbList.Add(ent);
@@ -72,7 +72,7 @@ namespace Content.Server.Time
         private void OnLightBulbShutdown(Entity<PoweredLightComponent> ent, ref ComponentRemove args)
         {
             var station = _transformSystem.GetGrid(ent.Owner);
-            if (EntityManager.TryGetComponent<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
+            if (TryComp<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
             {
                 if (cycle.BulbList.Contains(ent))
                     cycle.BulbList.Remove(ent);
@@ -93,14 +93,15 @@ namespace Content.Server.Time
             _updateTimer = 0;
 
             _currentHour = TimeSpan.FromSeconds(GetStationTime()).Hours;
-            foreach (var comp in EntityQuery<GabyLightCycleComponent>())
+            var cycleQuery = EntityQueryEnumerator<GabyLightCycleComponent>();
+            while (cycleQuery.MoveNext(out var uid, out var comp))
             {
-                if (comp.IsEnabled && EntityManager.TryGetComponent<BecomesStationComponent>(comp.Owner, out var station))
+                if (comp.IsEnabled && HasComp<BecomesStationComponent>(uid))
                 {
                     if ((_currentHour >= comp.NightShiftStart || _currentHour < TimeSpan.FromHours(comp.NightShiftStart + comp.NightShiftDuration).Hours) && !_isNight)
                     {
                         if (comp.IsAnnouncementEnabled)
-                            _chatSystem.DispatchStationAnnouncement(station.Owner,
+                            _chatSystem.DispatchStationAnnouncement(uid,
                             Loc.GetString("light-cycle-night"),
                             Loc.GetString("comms-console-announcement-title-centcom"),
                             true, NightAlert, colorOverride: Color.SkyBlue);
@@ -110,7 +111,7 @@ namespace Content.Server.Time
                     else if (_currentHour >= TimeSpan.FromHours(comp.NightShiftStart + comp.NightShiftDuration).Hours && _currentHour < comp.NightShiftStart && _isNight)
                     {
                         if (comp.IsAnnouncementEnabled)
-                            _chatSystem.DispatchStationAnnouncement(station.Owner,
+                            _chatSystem.DispatchStationAnnouncement(uid,
                             Loc.GetString("light-cycle-day"),
                             Loc.GetString("comms-console-announcement-title-centcom"),
                             true, DayAlert, colorOverride: Color.OrangeRed);
@@ -128,7 +129,7 @@ namespace Content.Server.Time
                             continue;
                         }
 
-                        if (!EntityManager.TryGetComponent<LightBulbComponent>(bulbUid, out var bulb)
+                        if (!TryComp<LightBulbComponent>(bulbUid, out var bulb)
                         || HasComp<RgbLightControllerComponent>(light))
                             continue;
 
@@ -145,12 +146,12 @@ namespace Content.Server.Time
                             color = System.Drawing.Color.FromArgb(int.Parse(_hexColor!.Replace("#", ""), NumberStyles.HexNumber));
                         }
 
-                        if (EntityManager.TryGetComponent(light, out PointLightComponent? pointLight) && pointLight.Enabled)
+                        if (TryComp(light, out PointLightComponent? pointLight) && pointLight.Enabled)
                         {
                             _pointLight.SetColor(light, GetCycleColor(comp, color), pointLight);
                             _pointLight.SetEnergy(light, (float) CalculateLightLevel(comp), pointLight);
                             Dirty(light, pointLight);
-                            if (EntityManager.TryGetComponent<AppearanceComponent>(light, out var appearance))
+                            if (TryComp<AppearanceComponent>(light, out var appearance))
                             {
                                 _appearance.SetData(light, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
                                 Dirty(light, appearance);
@@ -159,19 +160,19 @@ namespace Content.Server.Time
                     }
                 }
 
-                if (EntityManager.TryGetComponent<MapLightComponent>(comp.Owner, out var map))
+                if (TryComp<MapLightComponent>(uid, out var map))
                 {
-                    if (!_mapColor!.ContainsKey(map.Owner.Id))
-                        _mapColor.Add(map.Owner.Id, map.AmbientLightColor);
+                    if (!_mapColor!.ContainsKey(uid.Id))
+                        _mapColor.Add(uid.Id, map.AmbientLightColor);
                     else
                     {
                         var lightLevel = CalculateLightLevel(comp);
-                        var color = GetCycleColor(comp, _mapColor[map.Owner.Id]);
+                        var color = GetCycleColor(comp, _mapColor[uid.Id]);
                         var red = (int) Math.Min(255, color.RByte * lightLevel);
                         var green = (int) Math.Min(255, color.GByte * lightLevel);
                         var blue = (int) Math.Min(255, color.BByte * lightLevel);
                         map.AmbientLightColor = System.Drawing.Color.FromArgb(red, green, blue);
-                        Dirty(map.Owner, map);
+                        Dirty(uid, map);
                     }
                 }
             }

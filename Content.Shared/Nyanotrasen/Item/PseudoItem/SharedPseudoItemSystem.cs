@@ -28,7 +28,7 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ÐÑ€Ñ‚ <123451459+JustArt1m@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -57,11 +57,10 @@ public abstract partial class SharedPseudoItemSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-    [ValidatePrototypeId<TagPrototype>]
-    private const string PreventTag = "PreventLabel";
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string SleepActionId = "ActionSleep"; // The action used for sleeping inside bags. Currently uses the default sleep action (same as beds)
+    private static readonly ProtoId<TagPrototype> PreventTag = "PreventLabel";
+    private static readonly EntProtoId SleepActionId = "ActionSleep"; // The action used for sleeping inside bags. Currently uses the default sleep action (same as beds)
 
     public override void Initialize()
     {
@@ -153,7 +152,7 @@ public abstract partial class SharedPseudoItemSystem : EntitySystem
         if (args.User == args.Item)
             return;
 
-        Transform(uid).AttachToGridOrMap();
+        _transform.AttachToGridOrMap(uid);
         args.Cancel();
     }
 

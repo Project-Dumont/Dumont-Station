@@ -10,6 +10,7 @@ using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.NodeContainer;
 using Content.Shared.NodeContainer.NodeGroups;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 
@@ -142,7 +143,9 @@ public sealed partial class TegNodeGenerator : Node
         if (!xform.Anchored || grid == null)
             yield break;
 
-        var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+        var mapSystem = entMan.System<SharedMapSystem>();
+        var gridUid = xform.GridUid!.Value;
+        var gridIndex = mapSystem.CoordinatesToTile(gridUid, grid, xform.Coordinates);
 
         var dir = xform.LocalRotation.GetDir();
         var a = FindCirculator(dir);
@@ -158,7 +161,7 @@ public sealed partial class TegNodeGenerator : Node
         {
             var targetIdx = gridIndex.Offset(searchDir);
 
-            foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, grid, targetIdx))
+            foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, mapSystem, gridUid, grid, targetIdx))
             {
                 if (node is not TegNodeCirculator circulator)
                     continue;
@@ -194,13 +197,15 @@ public sealed partial class TegNodeCirculator : Node
         if (!xform.Anchored || grid == null)
             yield break;
 
-        var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+        var mapSystem = entMan.System<SharedMapSystem>();
+        var gridUid = xform.GridUid!.Value;
+        var gridIndex = mapSystem.CoordinatesToTile(gridUid, grid, xform.Coordinates);
 
         var dir = xform.LocalRotation.GetDir();
         var searchDir = dir.GetClockwise90Degrees();
         var targetIdx = gridIndex.Offset(searchDir);
 
-        foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, grid, targetIdx))
+        foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, mapSystem, gridUid, grid, targetIdx))
         {
             if (node is not TegNodeGenerator generator)
                 continue;

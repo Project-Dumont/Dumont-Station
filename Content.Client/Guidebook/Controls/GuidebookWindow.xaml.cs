@@ -113,6 +113,8 @@ namespace Content.Client.Guidebook.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("guidebook");
+
     [Dependency] private readonly DocumentParsingManager _parsingMan = default!;
     [Dependency] private readonly IResourceManager _resourceManager = default!;
 
@@ -281,7 +283,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         {
             // TODO GUIDEBOOK Maybe allow duplicate entries?
             // E.g., for adding medicine under both chemicals & the chemist job
-            Logger.Error($"Adding duplicate guide entry: {id}");
+            Sawmill.Error($"Adding duplicate guide entry: {id}");
             return null;
         }
 

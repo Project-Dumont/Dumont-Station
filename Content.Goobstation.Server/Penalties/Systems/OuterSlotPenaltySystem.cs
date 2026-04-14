@@ -38,7 +38,7 @@ public sealed partial class OuterSlotPenaltySystem : EntitySystem
             if (_damageableSystem.TryChangeDamage(uid, comp.Damage, true) != null)
                 _popupSystem.PopupEntity(Loc.GetString("equipped-outer-slot-with-penalty-message", ("entity", Name(args.Clothing))), uid, uid, PopupType.SmallCaution);
             else
-                Logger.Warning($"Damage application failed for entity {uid}. Ensure outer slot penalty is properly configured.");
+                Logger.GetSawmill("penalties").Warning($"Damage application failed for entity {uid}. Ensure outer slot penalty is properly configured.");
         }
         _movementSpeedModifierSystem.RefreshMovementSpeedModifiers(uid);
     }

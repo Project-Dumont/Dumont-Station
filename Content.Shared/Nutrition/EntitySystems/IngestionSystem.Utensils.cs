@@ -5,7 +5,6 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Tools.EntitySystems;
 using Robust.Shared.Audio;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Nutrition.EntitySystems;
@@ -69,7 +68,7 @@ public sealed partial class IngestionSystem
         var seed = SharedRandomExtensions.HashCodeCombine(new() {(int)_timing.CurTick.Value, GetNetEntity(entity).Id, GetNetEntity(userUid).Id });
         var rand = new System.Random(seed);
 
-        if (!rand.Prob(entity.Comp.BreakChance))
+        if (rand.NextDouble() >= entity.Comp.BreakChance)
             return;
 
         _audio.PlayPredicted(entity.Comp.BreakSound, userUid, userUid, AudioParams.Default.WithVolume(-2f));

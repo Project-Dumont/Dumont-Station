@@ -12,7 +12,6 @@ using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Salvage.Magnet;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Salvage;
@@ -86,7 +85,7 @@ public abstract partial class SharedSalvageSystem
                     MarkerLayers = layers,
                 };
             case DebrisOffering:
-                var id = rand.Pick(_debrisConfigs);
+                var id = _debrisConfigs[rand.Next(_debrisConfigs.Count)];
                 return new DebrisOffering
                 {
                     Id = id

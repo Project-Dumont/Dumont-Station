@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -27,7 +27,6 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
 {
     private static readonly ProtoId<LocalizedDatasetPrototype> RevConvertSpeechProto = "RevolutionaryConverterSpeech";
 
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedChatSystem _chat = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -119,7 +118,7 @@ public sealed class RevolutionaryConverterSystem : EntitySystem
 
         if (SpeakPropaganda(converter, user)
             // Note: this check is skipped if the speaker speaks lines and somehow doesn't have a languageSpeaker component.
-            && EntityManager.TryGetComponent<LanguageSpeakerComponent>(user, out var speakerComponent)) // returns true if the chosen conversion method uses a spoken line of text
+            && TryComp<LanguageSpeakerComponent>(user, out var speakerComponent)) // returns true if the chosen conversion method uses a spoken line of text
         {
             //check if spoken language can be understood by target
             if (!_language.CanUnderstand(target, speakerComponent.CurrentLanguage))
@@ -161,3 +160,4 @@ public readonly struct AfterRevolutionaryConvertedEvent(EntityUid target, Entity
     public readonly EntityUid? User = user;
     public readonly EntityUid? Used = used;
 }
+

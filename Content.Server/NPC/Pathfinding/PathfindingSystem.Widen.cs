@@ -61,7 +61,8 @@ public sealed partial class PathfindingSystem
                 }
             }
 
-            variance += random.NextFloat(-args.Variance * args.TileSkip, args.Variance * args.TileSkip);
+            var varianceDelta = (float) (random.NextDouble() * (args.Variance * args.TileSkip * 2) - args.Variance * args.TileSkip);
+            variance += varianceDelta;
             variance = Math.Clamp(variance, args.MinWiden, args.MaxWiden);
         }
 

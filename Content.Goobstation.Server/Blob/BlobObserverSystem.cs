@@ -60,9 +60,9 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
     private ISawmill _logger = default!;
 
-    [ValidatePrototypeId<EntityPrototype>] private const string BlobCaptureObjective = "BlobCaptureObjective";
-    [ValidatePrototypeId<EntityPrototype>] private const string MobObserverBlobController = "MobObserverBlobController";
-    [ValidatePrototypeId<AlertPrototype>] private const string BlobHealth = "BlobHealth";
+    private static readonly EntProtoId BlobCaptureObjective = "BlobCaptureObjective";
+    private static readonly EntProtoId MobObserverBlobController = "MobObserverBlobController";
+    private static readonly ProtoId<AlertPrototype> BlobHealth = "BlobHealth";
 
     public override void Initialize()
     {
@@ -260,7 +260,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         {
             return;
         }
-        var state = new BlobChemSwapBoundUserInterfaceState(blobCoreComponent.ChemСolors, observerComponent.SelectedChemId);
+        var state = new BlobChemSwapBoundUserInterfaceState(blobCoreComponent.ChemColors, observerComponent.SelectedChemId);
 
         _uiSystem.SetUiState(uid, BlobChemSwapUiKey.Key, state);
     }

@@ -83,7 +83,7 @@ namespace Content.Client.Construction
             if (!IoCManager.Resolve<IPrototypeManager>().TryIndex(targetProtoId, out EntityPrototype? proto))
                 return;
 
-            manager.CurrentTextures = SpriteComponent.GetPrototypeTextures(proto, IoCManager.Resolve<IResourceCache>()).ToList();
+            manager.CurrentTextures = IoCManager.Resolve<IEntityManager>().System<SpriteSystem>().GetPrototypeTextures(proto).ToList();
         }
     }
 }

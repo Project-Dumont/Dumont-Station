@@ -19,7 +19,6 @@ public sealed class BlockHandsOnBuckleSystem : EntitySystem
 
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
     public override void Initialize()
     {
         base.Initialize();

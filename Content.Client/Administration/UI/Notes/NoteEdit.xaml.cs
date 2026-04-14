@@ -289,6 +289,7 @@ public sealed partial class NoteEdit : FancyWindow
         return true;
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

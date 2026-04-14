@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 _kote <143940725+FaDeOkno@users.noreply.github.com>
@@ -409,10 +409,9 @@ public sealed class AutoSurgeonSystem : EntitySystem
             if (HasComp(ent, newComp.GetType()))
                 continue;
 
-            newComp.Owner = ent;
             object? temp = newComp;
             _serializationManager.CopyTo(data.Component, ref temp);
-            EntityManager.AddComponent(ent, (Component) temp!, true);
+            AddComp(ent, (Component) temp!, true);
 
             result.Add(name, data);
         }
@@ -420,3 +419,4 @@ public sealed class AutoSurgeonSystem : EntitySystem
         return result;
     }
 }
+

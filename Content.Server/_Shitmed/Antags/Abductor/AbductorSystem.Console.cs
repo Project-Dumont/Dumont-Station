@@ -16,6 +16,7 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Shared.UserInterface;
+using Robust.Shared.Audio;
 using Robust.Shared.Spawners;
 using System.Linq;
 
@@ -78,7 +79,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
                     condition.AbductedHashs.Add(GetNetEntity(victim));
                     condition.Abducted++;
                 }
-                _audioSystem.PlayPvs("/Audio/Voice/Human/wilhelm_scream.ogg", experimentatorId);
+                _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Voice/Human/wilhelm_scream.ogg"), experimentatorId);
 
                 if (victimComp.Position is not null)
                     _xformSys.SetCoordinates(victim, victimComp.Position.Value);
@@ -95,14 +96,14 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
         _xformSys.SetParent(effectEnt, target);
         EnsureComp<TimedDespawnComponent>(effectEnt, out var despawnEffectEntComp);
         despawnEffectEntComp.Lifetime = 3.0f;
-        _audioSystem.PlayPvs("/Audio/_Shitmed/Misc/alien_teleport.ogg", effectEnt);
+        _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Shitmed/Misc/alien_teleport.ogg"), effectEnt);
 
         var telepad = GetEntity(ent.Comp.AlienPod.Value);
         var telepadXform = EnsureComp<TransformComponent>(telepad);
         var effect = _entityManager.SpawnEntity(TeleportationEffect, telepadXform.Coordinates);
         EnsureComp<TimedDespawnComponent>(effect, out var despawnComp);
         despawnComp.Lifetime = 3.0f;
-        _audioSystem.PlayPvs("/Audio/_Shitmed/Misc/alien_teleport.ogg", effect);
+        _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Shitmed/Misc/alien_teleport.ogg"), effect);
 
         var @event = new AbductorAttractDoAfterEvent(GetNetCoordinates(telepadXform.Coordinates), GetNetEntity(target));
         ent.Comp.Target = null;

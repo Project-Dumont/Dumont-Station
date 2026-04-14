@@ -65,7 +65,7 @@ namespace Content.Server.Chat.Commands
             // Skip dead/critical check if CanUseInCrit is enabled
             if (mind != null && !mind.CanUseInCrit)
             {
-                var mobStateSystem = EntitySystem.Get<MobStateSystem>();
+                var mobStateSystem = entityManager.System<MobStateSystem>();
                 if (mobStateSystem.IsDead(playerEntity) || mobStateSystem.IsCritical(playerEntity))
                 {
                     shell.WriteError("You cannot use the collective mind while dead or incapacitated!");
@@ -81,7 +81,7 @@ namespace Content.Server.Chat.Commands
             if (string.IsNullOrEmpty(message))
                 return;
 
-            EntitySystem.Get<ChatSystem>().TrySendInGameICMessage(playerEntity, message, InGameICChatType.CollectiveMind, ChatTransmitRange.Normal);
+            entityManager.System<ChatSystem>().TrySendInGameICMessage(playerEntity, message, InGameICChatType.CollectiveMind, ChatTransmitRange.Normal);
         }
     }
 }

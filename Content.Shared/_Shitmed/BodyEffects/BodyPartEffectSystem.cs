@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -13,7 +13,6 @@ using System.Linq;
 namespace Content.Shared._Shitmed.BodyEffects;
 public sealed partial class BodyPartEffectSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     public override void Initialize()
@@ -83,7 +82,7 @@ public sealed partial class BodyPartEffectSystem : EntitySystem
                 continue;
 
             var newComp = (Component) _serManager.CreateCopy(comp.Component, notNullableOverride: true);
-            EntityManager.AddComponent(body, newComp, true);
+            AddComp(body, newComp, true);
 
             effectComp.Active[key] = comp;
         }
@@ -104,3 +103,4 @@ public sealed partial class BodyPartEffectSystem : EntitySystem
         }
     }
 }
+

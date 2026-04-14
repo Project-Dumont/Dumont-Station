@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -28,8 +28,6 @@ public sealed class CyborgFactorySystem : EntitySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly SiliconLawSystem _laws = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly CyborgLawReceiverSystem _cyborgLawReceiver = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
 
@@ -157,7 +155,7 @@ public sealed class CyborgFactorySystem : EntitySystem
         mmi = EntityUid.Invalid;
 
         // Spawn an MMI and insert the brain into it
-        mmi = EntityManager.SpawnEntity(MmiPrototype, spawnCoords);
+        mmi = Spawn(MmiPrototype, spawnCoords);
         if (!_itemSlots.TryInsert(mmi, BrainSlotId, brainUid, user: null))
         {
             QueueDel(mmi);
@@ -165,7 +163,7 @@ public sealed class CyborgFactorySystem : EntitySystem
         }
 
         // Spawn a cyborg chassis and insert the MMI into the borg's brain container
-        cyborg = EntityManager.SpawnEntity(CyborgPrototype, spawnCoords);
+        cyborg = Spawn(CyborgPrototype, spawnCoords);
         if (!TryComp<BorgChassisComponent>(cyborg, out var chassis))
         {
             QueueDel(cyborg);
@@ -193,3 +191,4 @@ public sealed class CyborgFactorySystem : EntitySystem
         _cyborgLawReceiver.ImposeLawZero(cyborg, malfAi);
     }
 }
+

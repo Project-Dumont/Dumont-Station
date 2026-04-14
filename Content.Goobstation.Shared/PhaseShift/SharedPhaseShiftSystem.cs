@@ -3,7 +3,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Systems;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Throwing;
@@ -63,14 +63,14 @@ public abstract class SharedPhaseShiftSystem : EntitySystem
 
     private void OnAttackAttempt(Entity<PhaseShiftedComponent> ent, ref AttackAttemptEvent args)
     {
-        if (_statusEffects.HasStatusEffect(ent, ent.Comp.StatusEffectId))
-            _statusEffects.TryRemoveStatusEffect(ent, ent.Comp.StatusEffectId);
+        if (_statusEffects.HasStatusEffect(ent, ent.Comp.StatusEffectId.Id))
+            _statusEffects.TryRemoveStatusEffect(ent, ent.Comp.StatusEffectId.Id);
     }
 
     private void OnThrowAttempt(Entity<PhaseShiftedComponent> ent, ref ThrowAttemptEvent args)
     {
-        if (_statusEffects.HasStatusEffect(ent, ent.Comp.StatusEffectId))
-            _statusEffects.TryRemoveStatusEffect(ent, ent.Comp.StatusEffectId);
+        if (_statusEffects.HasStatusEffect(ent, ent.Comp.StatusEffectId.Id))
+            _statusEffects.TryRemoveStatusEffect(ent, ent.Comp.StatusEffectId.Id);
     }
 
     protected virtual void OnComponentShutdown(Entity<PhaseShiftedComponent> ent, ref ComponentShutdown args)

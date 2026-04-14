@@ -38,6 +38,7 @@ using Content.Shared.Heretic;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Timing;
@@ -47,11 +48,14 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Heretic.EntitySystems;
 
 public sealed class MansusGraspSystem : SharedMansusGraspSystem
 {
+    private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
+
     [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
@@ -60,7 +64,7 @@ public sealed class MansusGraspSystem : SharedMansusGraspSystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly RatvarianLanguageSystem _language = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly UseDelaySystem _delay = default!;
@@ -116,7 +120,7 @@ public sealed class MansusGraspSystem : SharedMansusGraspSystem
         }
 
         // Death to catwalks
-        if (_tag.HasTag(args.Target.Value, "Catwalk"))
+        if (_tag.HasTag(args.Target.Value, CatwalkTag))
         {
             args.Handled = true;
             InvokeGrasp(args.User, (uid, grasp));
@@ -198,16 +202,12 @@ public sealed class MansusGraspSystem : SharedMansusGraspSystem
         if (!TryApplyGraspEffectAndMark(user, hereticComp, target, grasp, out var triggerGrasp))
             return false;
 
-        if (triggerGrasp && TryComp(target, out StatusEffectsComponent? status))
+        if (triggerGrasp)
         {
             _stun.KnockdownOrStun(target, grasp.Comp.KnockdownTime, true);
             _stamina.TakeStaminaDamage(target, grasp.Comp.StaminaDamage);
-            _language.DoRatvarian(target, grasp.Comp.SpeechTime, true, status);
-            _statusEffect.TryAddStatusEffect<MansusGraspAffectedComponent>(target,
-                "MansusGraspAffected",
-                grasp.Comp.AffectedTime,
-                true,
-                status);
+            _language.DoRatvarian(target, grasp.Comp.SpeechTime, true);
+            _statusEffect.TryUpdateStatusEffectDuration(target, "MansusGraspAffected", grasp.Comp.AffectedTime);
         }
 
         _actions.SetCooldown(hereticComp.MansusGrasp, grasp.Comp.CooldownAfterUse);

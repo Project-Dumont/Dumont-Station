@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -14,7 +14,6 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiCameraUpgradeSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {

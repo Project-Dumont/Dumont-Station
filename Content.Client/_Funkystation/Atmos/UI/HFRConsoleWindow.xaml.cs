@@ -29,7 +29,6 @@ namespace Content.Client._Funkystation.Atmos.UI;
 [GenerateTypedNameReferences]
 public sealed partial class HFRConsoleWindow : FancyWindow
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
 
@@ -243,7 +242,6 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             if (!_protoManager.TryIndex<FusionRecipePrototype>(recipeId, out var recipe))
                 continue;
 
-            string GetGasText(string gas) => GasAbbreviations.TryGetValue(gas, out var abbr) ? abbr : gas;
             Color? GetGasColor(string gas) => GasColors.TryGetValue(gas, out var color) ? color : (Color?)null;
 
             var isDark = rowIndex % 2 == 0;
@@ -274,7 +272,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
 
             FuelPrimaryBox.Children.Add(new Label
             {
-                Text = recipe.Requirements.Count > 0 ? GetGasText(recipe.Requirements[0]) : "",
+                Text = recipe.Requirements.Count > 0 ? GetGasAbbreviation(recipe.Requirements[0]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -284,7 +282,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             FuelSecondaryBox.Children.Add(new Label
             {
-                Text = recipe.Requirements.Count > 1 ? GetGasText(recipe.Requirements[1]) : "",
+                Text = recipe.Requirements.Count > 1 ? GetGasAbbreviation(recipe.Requirements[1]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -295,7 +293,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
 
             ByproductsSubfield1Box.Children.Add(new Label
             {
-                Text = recipe.PrimaryProducts.Count > 0 ? GetGasText(recipe.PrimaryProducts[0]) : "",
+                Text = recipe.PrimaryProducts.Count > 0 ? GetGasAbbreviation(recipe.PrimaryProducts[0]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -305,7 +303,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             ByproductsSubfield2Box.Children.Add(new Label
             {
-                Text = recipe.PrimaryProducts.Count > 1 ? GetGasText(recipe.PrimaryProducts[1]) : "",
+                Text = recipe.PrimaryProducts.Count > 1 ? GetGasAbbreviation(recipe.PrimaryProducts[1]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -316,7 +314,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
 
             ProducedGasesTier1Box.Children.Add(new Label
             {
-                Text = recipe.SecondaryProducts.Count > 0 ? GetGasText(recipe.SecondaryProducts[0]) : "",
+                Text = recipe.SecondaryProducts.Count > 0 ? GetGasAbbreviation(recipe.SecondaryProducts[0]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -326,7 +324,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             ProducedGasesTier2Box.Children.Add(new Label
             {
-                Text = recipe.SecondaryProducts.Count > 1 ? GetGasText(recipe.SecondaryProducts[1]) : "",
+                Text = recipe.SecondaryProducts.Count > 1 ? GetGasAbbreviation(recipe.SecondaryProducts[1]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -336,7 +334,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             ProducedGasesTier3Box.Children.Add(new Label
             {
-                Text = recipe.SecondaryProducts.Count > 2 ? GetGasText(recipe.SecondaryProducts[2]) : "",
+                Text = recipe.SecondaryProducts.Count > 2 ? GetGasAbbreviation(recipe.SecondaryProducts[2]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -346,7 +344,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             ProducedGasesTier4Box.Children.Add(new Label
             {
-                Text = recipe.SecondaryProducts.Count > 3 ? GetGasText(recipe.SecondaryProducts[3]) : "",
+                Text = recipe.SecondaryProducts.Count > 3 ? GetGasAbbreviation(recipe.SecondaryProducts[3]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -356,7 +354,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             ProducedGasesTier5Box.Children.Add(new Label
             {
-                Text = recipe.SecondaryProducts.Count > 4 ? GetGasText(recipe.SecondaryProducts[4]) : "",
+                Text = recipe.SecondaryProducts.Count > 4 ? GetGasAbbreviation(recipe.SecondaryProducts[4]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -366,7 +364,7 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             });
             ProducedGasesTier6Box.Children.Add(new Label
             {
-                Text = recipe.SecondaryProducts.Count > 5 ? GetGasText(recipe.SecondaryProducts[5]) : "",
+                Text = recipe.SecondaryProducts.Count > 5 ? GetGasAbbreviation(recipe.SecondaryProducts[5]) : "",
                 Margin = new Thickness(2, 0),
                 HorizontalAlignment = Control.HAlignment.Center,
                 VerticalAlignment = Control.VAlignment.Center,
@@ -468,7 +466,6 @@ public sealed partial class HFRConsoleWindow : FancyWindow
             return;
         }
 
-        string GetGasText(string gas) => GasAbbreviations.TryGetValue(gas, out var abbr) ? abbr : gas;
         string GetGasFullName(Gas gas) => Atmospherics.GasNames.TryGetValue(gas, out var name) ? name : gas.ToString();
         Color? GetGasColor(string gas) => GasColors.TryGetValue(gas, out var color) ? color : (Color?)null;
 
@@ -533,7 +530,6 @@ public sealed partial class HFRConsoleWindow : FancyWindow
     {
         ModeratorGasesContent.Children.Clear();
 
-        string GetGasText(string gas) => GasAbbreviations.TryGetValue(gas, out var abbr) ? abbr : gas;
         string GetGasFullName(Gas gas) => Atmospherics.GasNames.TryGetValue(gas, out var name) ? name : gas.ToString();
         Color? GetGasColor(string gas) => GasColors.TryGetValue(gas, out var color) ? color : (Color?)null;
 
@@ -648,6 +644,11 @@ public sealed partial class HFRConsoleWindow : FancyWindow
         InstabilityLabel.Text = $"{_currentState.Instability:0}%";
 
         UpdateTemperatureUI(_currentState);
+    }
+
+    private static string GetGasAbbreviation(string gas)
+    {
+        return GasAbbreviations.TryGetValue(gas, out var abbr) ? abbr : gas;
     }
 
     public void SetReactorState(HFRConsoleUpdateReactorMessage message)

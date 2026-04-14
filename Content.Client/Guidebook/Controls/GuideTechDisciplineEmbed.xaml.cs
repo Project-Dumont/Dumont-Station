@@ -22,6 +22,8 @@ namespace Content.Client.Guidebook.Controls;
 [UsedImplicitly, GenerateTypedNameReferences]
 public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTag
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("guidebook");
+
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public GuideTechDisciplineEmbed()
@@ -47,7 +49,7 @@ public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTa
         control = null;
         if (!args.TryGetValue("Discipline", out var group))
         {
-            Logger.Error("Technology discipline embed tag is missing discipline argument");
+            Sawmill.Error("Technology discipline embed tag is missing discipline argument");
             return false;
         }
 

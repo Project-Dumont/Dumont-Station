@@ -28,6 +28,7 @@ using Robust.Shared.Serialization.TypeSerializers.Interfaces;
 
 namespace Content.Shared.Body.Prototypes;
 
+#pragma warning disable RA0039
 [TypeSerializer]
 public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, MappingDataNode>
 {
@@ -192,3 +193,4 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
         return new BodyPrototype(id, name, root, slots);
     }
 }
+#pragma warning restore RA0039

@@ -14,6 +14,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee;
@@ -32,7 +33,7 @@ public partial class SharedDiseaseSystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _status = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly TileSystem _tile = default!;
@@ -58,10 +59,10 @@ public partial class SharedDiseaseSystem
         foreach (var (compName, _) in ent.Comp.Components)
         {
             if (!Factory.TryGetRegistration(compName, out var registration)
-                || EntityManager.HasComponent(args.Ent, registration.Type))
+                || HasComp(args.Ent, registration.Type))
                 continue;
             var component = _factory.GetComponent(registration.Type);
-            EntityManager.AddComponent(args.Ent, component);
+            AddComp(args.Ent, component);
         }
     }
 
@@ -70,7 +71,7 @@ public partial class SharedDiseaseSystem
         foreach (var (compName, _) in ent.Comp.Components)
         {
             if (Factory.TryGetRegistration(compName, out var registration))
-                EntityManager.RemoveComponent(args.Ent, registration.Type);
+                RemComp(args.Ent, registration.Type);
         }
     }
 
@@ -153,7 +154,7 @@ public partial class SharedDiseaseSystem
             return;
 
         // migrate this to new status effects once flashes are
-        _status.TryAddStatusEffect<FlashedComponent>(args.Ent, _flash.FlashedKey.Id, ent.Comp.Duration * GetScale(args, ent.Comp), true);
+        _status.TryUpdateStatusEffectDuration(args.Ent, _flash.FlashedKey.Id, ent.Comp.Duration * GetScale(args, ent.Comp));
         _movemod.TryUpdateMovementSpeedModDuration(args.Ent.Owner,  MovementModStatusSystem.FlashSlowdown, ent.Comp.Duration * GetScale(args, ent.Comp), ent.Comp.SlowTo, ent.Comp.SlowTo);
 
         if (ent.Comp.StunDuration != null)

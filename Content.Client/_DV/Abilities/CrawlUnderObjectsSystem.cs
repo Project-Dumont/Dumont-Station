@@ -17,6 +17,7 @@ namespace Content.Client._DV.Abilities;
 public sealed partial class HideUnderTableAbilitySystem : SharedCrawlUnderObjectsSystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -39,14 +40,14 @@ public sealed partial class HideUnderTableAbilitySystem : SharedCrawlUnderObject
                 return;
 
             component.OriginalDrawDepth = sprite.DrawDepth;
-            sprite.DrawDepth = (int) DrawDepth.SmallMobs;
+            _sprite.SetDrawDepth((uid, sprite), (int) DrawDepth.SmallMobs);
         }
         else
         {
             if (component.OriginalDrawDepth == null)
                 return;
 
-            sprite.DrawDepth = (int) component.OriginalDrawDepth;
+            _sprite.SetDrawDepth((uid, sprite), (int) component.OriginalDrawDepth);
             component.OriginalDrawDepth = null;
         }
     }

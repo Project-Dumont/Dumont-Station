@@ -483,7 +483,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
                 object? temp = (Component) newComp;
                 _serialization.CopyTo(component, ref temp, notNullableOverride: true);
-                EntityManager.AddComponent(child, (Component) temp!, true);
+                AddComp(child, (Component) temp!, true);
             }
         }
 
@@ -707,7 +707,7 @@ public sealed partial class PolymorphSystem : EntitySystem
             var newComp = (Component) _compFact.GetComponent(compType);
             var temp = (object) newComp;
             _serialization.CopyTo(comp, ref temp, notNullableOverride: true);
-            EntityManager.AddComponent(@new, (Component) temp!, true);
+            AddComp(@new, (Component) temp!, true);
             return temp as IComponent;
         }
 

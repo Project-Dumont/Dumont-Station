@@ -32,10 +32,8 @@ namespace Content.Client._Funkystation.Atmos.UI
     [GenerateTypedNameReferences]
     public sealed partial class BluespaceVendorWindow : FancyWindow
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         public event Action? TankEjectButtonPressed;
         public event Action? TankEmptyButtonPressed;
-        public event Action<int>? TankFillButtonPressed;
         public event Action<int>? RetrieveButtonPressed;
         public event Action<float>? ReleasePressureSet;
         
@@ -191,7 +189,7 @@ namespace Content.Client._Funkystation.Atmos.UI
 
         public void SetReleasePressureSpinbox(float releasePressure)
         {
-            if (ReleasePressure.Value == releasePressure || releasePressure == null)
+            if (ReleasePressure.Value == releasePressure)
                 return;
             ReleasePressure.Value = releasePressure;
         }

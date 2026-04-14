@@ -123,7 +123,7 @@ public abstract partial class SharedMartialArtsSystem
 
         var modifier = sneakAttack.TakedownSpeedModifier;
         _movementMod.TryUpdateMovementSpeedModDuration(target, MartsGenericSlow, TimeSpan.FromSeconds(slowdownTime), modifier, modifier);
-        _status.TryAddStatusEffect<MutedComponent>(target, "Muted", TimeSpan.FromSeconds(muteTime), true);
+        _newStatus.TryAddStatusEffectDuration(target, "Muted", TimeSpan.FromSeconds(muteTime));
 
         _audio.PlayPvs(sneakAttack.AssassinateSoundUnarmed, target);
         ComboPopup(ent, target, sneakAttack.TakedownComboName);
@@ -228,11 +228,15 @@ public abstract partial class SharedMartialArtsSystem
 
         // Paralyze, not knockdown
         var time = TimeSpan.FromSeconds(proto.ParalyzeTime);
-        if (_status.TryGetTime(target, "KnockedDown", out var knockdownStartEnd))
+        if (_newStatus.TryGetTime(target, "KnockedDown", out var knockdownStartEnd))
         {
-            var knockdownTime = knockdownStartEnd.Value.Item2 - _timing.CurTime;
-            if (knockdownTime > TimeSpan.Zero)
+            var knockdownEnd = knockdownStartEnd.EndEffectTime;
+            if (knockdownEnd != null)
             {
+                var knockdownTime = knockdownEnd.Value - _timing.CurTime;
+                if (knockdownTime <= TimeSpan.Zero)
+                    goto FinishDirtyKill;
+
                 if (time > knockdownTime)
                     time = knockdownTime;
 
@@ -241,6 +245,7 @@ public abstract partial class SharedMartialArtsSystem
             }
         }
 
+FinishDirtyKill:
         DoDamage(ent, target, proto.DamageType, proto.ExtraDamage * GetDamageMultiplier(ent), out _);
         _audio.PlayPvs(args.Sound, target);
         ComboPopup(ent, target, proto.Name);
@@ -288,10 +293,7 @@ public abstract partial class SharedMartialArtsSystem
 
     private void ResetDebuff(EntityUid uid)
     {
-        _status.TryAddStatusEffect<NinjutsuLossOfSurpriseComponent>(uid,
-            "LossOfSurprise",
-            TimeSpan.FromSeconds(5),
-            true);
+        _newStatus.TryAddStatusEffectDuration(uid, "LossOfSurprise", TimeSpan.FromSeconds(5));
 
         _stealth.TryRevealNinja(uid);
     }

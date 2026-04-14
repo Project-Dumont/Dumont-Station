@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.StationRadio.Components;
+﻿using Content.Goobstation.Shared.StationRadio.Components;
 using Content.Goobstation.Shared.StationRadio.Events;
 using Content.Shared.Destructible;
 using Content.Shared.DeviceLinking;
@@ -17,7 +17,6 @@ public sealed class VinylPlayerSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
-    [Dependency] private readonly SharedDeviceLinkSystem _deviceLinkSystem = default!;
 
     public override void Initialize()
     {

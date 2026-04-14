@@ -95,6 +95,7 @@ public sealed partial class NewsWriterMenu : FancyWindow
         ArticleEditorPanel.Margin =  new Thickness(Width - 1, margin.Top, margin.Right, margin.Bottom);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

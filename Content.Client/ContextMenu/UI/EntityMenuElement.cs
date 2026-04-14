@@ -54,6 +54,7 @@ namespace Content.Client.ContextMenu.UI
             UpdateEntity();
         }
 
+        [Obsolete]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

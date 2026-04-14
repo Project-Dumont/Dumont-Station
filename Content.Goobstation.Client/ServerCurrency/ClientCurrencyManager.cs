@@ -51,8 +51,12 @@ public sealed class ClientCurrencyManager : ICommonCurrencyManager, IEntityEvent
 
     private void UpdateBalance(PlayerBalanceUpdateEvent msg, EntitySessionEventArgs args)
     {
+        var oldBalance = _cachedBalance;
         _cachedBalance = msg.NewBalance;
         ClientBalanceChange?.Invoke();
+
+        if (_playMan.LocalSession is { } session)
+            BalanceChange?.Invoke(new PlayerBalanceChangeEvent(session, session.UserId, msg.NewBalance, oldBalance));
     }
 
     public void Shutdown()

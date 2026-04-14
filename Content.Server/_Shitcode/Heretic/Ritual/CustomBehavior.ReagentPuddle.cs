@@ -17,7 +17,7 @@ namespace Content.Server.Heretic.Ritual;
 
 public sealed partial class RitualReagentPuddleBehavior : RitualCustomBehavior
 {
-    protected EntityLookupSystem _lookup = default!;
+    private EntityLookupSystem _lookup = default!;
 
     [DataField] public ProtoId<ReagentPrototype>? Reagent;
 

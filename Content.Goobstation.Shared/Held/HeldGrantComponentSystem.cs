@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -39,7 +39,7 @@ public sealed class HeldGrantComponentSystem : EntitySystem
 
             object? temp = newComp;
             _serializationManager.CopyTo(data.Component, ref temp);
-            EntityManager.AddComponent(args.User, (Component)temp!);
+            AddComp(args.User, (Component)temp!);
 
             ent.Comp.Active[name] = true; // Goobstation
         }
@@ -66,3 +66,4 @@ public sealed class HeldGrantComponentSystem : EntitySystem
         //component.IsActive = false;
     }
 }
+

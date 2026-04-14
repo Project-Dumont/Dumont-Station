@@ -27,21 +27,21 @@ namespace Content.Server.Power.NodeGroups
 {
     public interface IPowerNet : IBasePowerNet
     {
-        void AddDischarger(BatteryDischargerComponent discharger);
+        void AddDischarger(Entity<BatteryDischargerComponent> discharger);
 
-        void RemoveDischarger(BatteryDischargerComponent discharger);
+        void RemoveDischarger(Entity<BatteryDischargerComponent> discharger);
 
-        void AddCharger(BatteryChargerComponent charger);
+        void AddCharger(Entity<BatteryChargerComponent> charger);
 
-        void RemoveCharger(BatteryChargerComponent charger);
+        void RemoveCharger(Entity<BatteryChargerComponent> charger);
     }
 
     [NodeGroup(NodeGroupID.HVPower, NodeGroupID.MVPower)]
     [UsedImplicitly]
     public sealed partial class PowerNet : BasePowerNet<IPowerNet>, IPowerNet
     {
-        [ViewVariables] public readonly List<BatteryChargerComponent> Chargers = new();
-        [ViewVariables] public readonly List<BatteryDischargerComponent> Dischargers = new();
+        [ViewVariables] public readonly List<Entity<BatteryChargerComponent>> Chargers = new();
+        [ViewVariables] public readonly List<Entity<BatteryDischargerComponent>> Dischargers = new();
 
         public override void Initialize(Node sourceNode, IEntityManager entMan)
         {
@@ -61,25 +61,25 @@ namespace Content.Server.Power.NodeGroups
             netConnectorComponent.Net = this;
         }
 
-        public void AddDischarger(BatteryDischargerComponent discharger)
+        public void AddDischarger(Entity<BatteryDischargerComponent> discharger)
         {
             if (EntMan == null)
                 return;
 
-            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(discharger.Owner);
+            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(discharger);
             DebugTools.Assert(battery.NetworkBattery.LinkedNetworkDischarging == default);
             battery.NetworkBattery.LinkedNetworkDischarging = default;
             Dischargers.Add(discharger);
             QueueNetworkReconnect();
         }
 
-        public void RemoveDischarger(BatteryDischargerComponent discharger)
+        public void RemoveDischarger(Entity<BatteryDischargerComponent> discharger)
         {
             if (EntMan == null)
                 return;
 
             // Can be missing if the entity is being deleted, not a big deal.
-            if (EntMan.TryGetComponent(discharger.Owner, out PowerNetworkBatteryComponent? battery))
+            if (EntMan.TryGetComponent(discharger, out PowerNetworkBatteryComponent? battery))
             {
                 // Linked network can be default if it was re-connected twice in one tick.
                 DebugTools.Assert(battery.NetworkBattery.LinkedNetworkDischarging == default || battery.NetworkBattery.LinkedNetworkDischarging == NetworkNode.Id);
@@ -90,25 +90,25 @@ namespace Content.Server.Power.NodeGroups
             QueueNetworkReconnect();
         }
 
-        public void AddCharger(BatteryChargerComponent charger)
+        public void AddCharger(Entity<BatteryChargerComponent> charger)
         {
             if (EntMan == null)
                 return;
 
-            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(charger.Owner);
+            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(charger);
             DebugTools.Assert(battery.NetworkBattery.LinkedNetworkCharging == default);
             battery.NetworkBattery.LinkedNetworkCharging = default;
             Chargers.Add(charger);
             QueueNetworkReconnect();
         }
 
-        public void RemoveCharger(BatteryChargerComponent charger)
+        public void RemoveCharger(Entity<BatteryChargerComponent> charger)
         {
             if (EntMan == null)
                 return;
 
             // Can be missing if the entity is being deleted, not a big deal.
-            if (EntMan.TryGetComponent(charger.Owner, out PowerNetworkBatteryComponent? battery))
+            if (EntMan.TryGetComponent(charger, out PowerNetworkBatteryComponent? battery))
             {
                 // Linked network can be default if it was re-connected twice in one tick.
                 DebugTools.Assert(battery.NetworkBattery.LinkedNetworkCharging == default || battery.NetworkBattery.LinkedNetworkCharging == NetworkNode.Id);

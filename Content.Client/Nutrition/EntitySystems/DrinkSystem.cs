@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+#pragma warning disable CS0618
 using Content.Shared.Nutrition.EntitySystems;
 
 namespace Content.Client.Nutrition.EntitySystems;
@@ -10,3 +11,4 @@ namespace Content.Client.Nutrition.EntitySystems;
 public sealed class DrinkSystem : SharedDrinkSystem
 {
 }
+#pragma warning restore CS0618

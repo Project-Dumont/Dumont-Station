@@ -88,7 +88,10 @@ public sealed class IVDripSystem : SharedIVDripSystem
 
                     // 2. Separate Chems from Blood based on whitelist
                     // 'chems' gets the non-matching reagents. 'taken' keeps the Blood.
-                    var chems = taken.SplitSolutionWithout(taken.Volume, packComponent.TransferableReagents);
+                    var transferableReagents = Array.ConvertAll(
+                        packComponent.TransferableReagents,
+                        static reagent => new ProtoId<Content.Shared.Chemistry.Reagent.ReagentPrototype>(reagent));
+                    var chems = taken.SplitSolutionWithout(taken.Volume, transferableReagents);
 
                     // 3. Inject Blood -> Blood Stream
                     if (taken.Volume > 0)
@@ -165,7 +168,10 @@ public sealed class IVDripSystem : SharedIVDripSystem
                     var taken = _solutionContainer.SplitSolution(packSolEnt.Value, packComp.TransferAmount);
 
                     // 2. Separate Chems (Drugs) from Blood based on whitelist
-                    var chems = taken.SplitSolutionWithout(taken.Volume, packComp.TransferableReagents);
+                    var transferableReagents = Array.ConvertAll(
+                        packComp.TransferableReagents,
+                        static reagent => new ProtoId<Content.Shared.Chemistry.Reagent.ReagentPrototype>(reagent));
+                    var chems = taken.SplitSolutionWithout(taken.Volume, transferableReagents);
 
                     // 3. Inject Blood -> Blood Stream
                     if (taken.Volume > 0)

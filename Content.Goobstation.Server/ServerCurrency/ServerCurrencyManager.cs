@@ -80,7 +80,10 @@ namespace Content.Goobstation.Server.ServerCurrency
         {
             var oldBalance = Task.Run(() => SetBalanceAsync(userId, amount)).GetAwaiter().GetResult();
             if (_player.TryGetSessionById(userId, out var userSession))
+            {
                 BalanceChange?.Invoke(new PlayerBalanceChangeEvent(userSession, userId, amount, oldBalance));
+                ClientBalanceChange?.Invoke();
+            }
             _sawmill.Info($"Setting {userId} account balance to {amount} from {oldBalance}");
             return oldBalance;
         }
@@ -104,7 +107,10 @@ namespace Content.Goobstation.Server.ServerCurrency
         {
             var result = Task.Run(() => ModifyBalanceAsync(userId, amountDelta)).GetAwaiter().GetResult();
             if (_player.TryGetSessionById(userId, out var userSession))
+            {
                 BalanceChange?.Invoke(new PlayerBalanceChangeEvent(userSession, userId, result, result - amountDelta));
+                ClientBalanceChange?.Invoke();
+            }
             return result;
         }
 

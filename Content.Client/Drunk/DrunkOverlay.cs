@@ -13,7 +13,8 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Drunk;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
@@ -35,6 +36,7 @@ public sealed class DrunkOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
     private readonly ShaderInstance _drunkShader;
+    private readonly EntProtoId _drunkEffect = new(SharedDrunkSystem.DrunkKey.Id);
 
     public float CurrentBoozePower = 0.0f;
 
@@ -58,15 +60,18 @@ public sealed class DrunkOverlay : Overlay
             return;
 
         if (!_entityManager.HasComponent<DrunkComponent>(playerEntity)
-            || !_entityManager.TryGetComponent<StatusEffectsComponent>(playerEntity, out var status))
+            || !_entityManager.TryGetComponent<StatusEffectContainerComponent>(playerEntity, out var status))
             return;
 
         var statusSys = _sysMan.GetEntitySystem<StatusEffectsSystem>();
-        if (!statusSys.TryGetTime(playerEntity.Value, SharedDrunkSystem.DrunkKey, out var time, status))
+        if (!statusSys.TryGetTime(playerEntity.Value, _drunkEffect, out var time, status))
+            return;
+
+        if (time.EndEffectTime == null)
             return;
 
         var curTime = _timing.CurTime;
-        var timeLeft = (float) (time.Value.Item2 - curTime).TotalSeconds;
+        var timeLeft = (float) (time.EndEffectTime.Value - curTime).TotalSeconds;
 
 
         CurrentBoozePower += 8f * (0.5f*timeLeft - CurrentBoozePower) * args.DeltaSeconds / (timeLeft+1);

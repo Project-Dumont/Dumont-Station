@@ -40,7 +40,7 @@ public sealed partial class DungeonJob
         DebugTools.Assert(_grid.ChunkCount > 0);
 
         var aabb = new Box2i(_grid.LocalAABB.BottomLeft.Floored(), _grid.LocalAABB.TopRight.Floored());
-        var angle = random.NextAngle();
+        var angle = (float) (random.NextDouble() * Math.Tau);
 
         var distance = Math.Max(aabb.Width / 2f + 1f, aabb.Height / 2f + 1f);
 

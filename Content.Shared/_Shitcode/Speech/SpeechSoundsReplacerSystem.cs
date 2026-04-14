@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -26,7 +26,7 @@ public sealed class SpeechSoundsReplacerSystem : EntitySystem
 
     private void OnEquip(Entity<SpeechSoundsReplacerComponent> replacer, ref GotEquippedEvent args)
     {
-        if (EntityManager.TryGetComponent<SpeechComponent>(args.Equipee, out var speech))
+        if (TryComp<SpeechComponent>(args.Equipee, out var speech))
         {
             replacer.Comp.PreviousSound = speech.SpeechSounds;
             speech.SpeechSounds = replacer.Comp.SpeechSounds;
@@ -35,10 +35,11 @@ public sealed class SpeechSoundsReplacerSystem : EntitySystem
 
     private void OnUnequip(Entity<SpeechSoundsReplacerComponent> replacer, ref GotUnequippedEvent args)
     {
-        if (EntityManager.TryGetComponent<SpeechComponent>(args.Equipee, out var speech))
+        if (TryComp<SpeechComponent>(args.Equipee, out var speech))
         {
             speech.SpeechSounds = replacer.Comp.PreviousSound;
             replacer.Comp.PreviousSound = null;
         }
     }
 }
+

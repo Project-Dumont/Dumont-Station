@@ -1,4 +1,4 @@
-using Content.Shared.Interaction.Events;
+﻿using Content.Shared.Interaction.Events;
 using Content.Shared.Whitelist;
 
 namespace Content.Goobstation.Shared.Interaction;
@@ -6,7 +6,6 @@ namespace Content.Goobstation.Shared.Interaction;
 // taken out of RMCInteractionSystem and removed the light thing
 public sealed class InteractedBlacklistSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     public override void Initialize()

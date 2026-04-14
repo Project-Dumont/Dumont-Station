@@ -30,6 +30,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         _clientLanguageSystem.OnLanguagesChanged += UpdateState;
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

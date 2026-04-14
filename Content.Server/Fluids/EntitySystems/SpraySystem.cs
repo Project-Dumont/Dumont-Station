@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+﻿// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
 // SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
@@ -84,7 +84,6 @@ public sealed class SpraySystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!; // Assmos - Extinguisher Nozzle
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!; // Assmos - Extinguisher Nozzle
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!; // Assmos - Extinguisher Nozzle
-    [Dependency] private readonly SprayPushableVehicleSystem _sprayPushSys = default!; // Goobstation - Vehicle Spray Pushback (Office chairs)
 
     private float _gridImpulseMultiplier;
 

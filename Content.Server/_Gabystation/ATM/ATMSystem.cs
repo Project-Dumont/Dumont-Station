@@ -94,7 +94,7 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
 
         if (!_economy.TryGetData(economy, card.Comp.AccountId, out var data) 
             || data.Balance < amount
-            || !_economy.TrySetBalance(economy, card.Comp.AccountId, (data.Balance - amount) ?? 0))
+            || !_economy.TrySetBalance((card.Comp.Station.Value, economy), card.Comp.AccountId, (data.Balance - amount) ?? 0))
             return;
 
         _audio.PlayPvs(ent.Comp.PrintSound, ent.Owner);
@@ -123,7 +123,7 @@ public sealed partial class BankATMSystem : SharedBankATMSystem
             cashCount = cash.Count;
 
         if (!_economy.TryGetData(economy, card.Comp.AccountId, out var data)
-            || !_economy.TrySetBalance(economy, card.Comp.AccountId, data.Balance + cashCount))
+            || !_economy.TrySetBalance((card.Comp.Station.Value, economy), card.Comp.AccountId, data.Balance + cashCount))
             return;
 
         Del(ent.Comp.CashSlot.Item);

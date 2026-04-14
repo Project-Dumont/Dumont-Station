@@ -5,7 +5,7 @@
 
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Projectiles;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Throwing;
 
 namespace Content.Shared._White.Collision.Blur;
@@ -36,18 +36,12 @@ public sealed class BlurOnCollideSystem : EntitySystem
     {
         if (component.BlurTime > TimeSpan.Zero)
         {
-            _statusEffects.TryAddStatusEffect<BlurryVisionComponent>(target,
-                "BlurryVision",
-                component.BlurTime,
-                true);
+            _statusEffects.TryAddStatusEffectDuration(target, "BlurryVision", component.BlurTime);
         }
 
         if (component.BlindTime > TimeSpan.Zero)
         {
-            _statusEffects.TryAddStatusEffect<TemporaryBlindnessComponent>(target,
-                "TemporaryBlindness",
-                component.BlindTime,
-                true);
+            _statusEffects.TryAddStatusEffectDuration(target, "TemporaryBlindness", component.BlindTime);
         }
     }
 }

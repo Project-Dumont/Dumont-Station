@@ -57,7 +57,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Shared.Whitelist;
 using Content.Server.Emp; // Goobstation
 using Content.Server.Chat.Systems;
 using Content.Shared.Silicons.StationAi;
@@ -383,7 +382,7 @@ public sealed partial class MechSystem : SharedMechSystem
             // Check if it's an AI brain either by component or prototype
             var hasStationAiHeld = HasComp<StationAiHeldComponent>(pilotEntity);
             var isStationAiBrainProto = false;
-            if (TryComp<MetaDataComponent>(pilotEntity, out var meta) && meta.EntityPrototype != null)
+            if (TryComp(pilotEntity, out MetaDataComponent? meta) && meta.EntityPrototype != null)
             {
                 isStationAiBrainProto = meta.EntityPrototype.ID == StationAiBrain;
             }

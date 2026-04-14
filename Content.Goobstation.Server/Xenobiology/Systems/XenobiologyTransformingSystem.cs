@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
@@ -17,7 +17,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Goobstation.Server.Xenobiology.Systems;
 
 // Any Polymorphing etc needing to run serverside
-public class XenobiologyTransformingSystem : EntitySystem
+public sealed class XenobiologyTransformingSystem : EntitySystem
 {
     public override void Initialize()
     {
@@ -50,7 +50,7 @@ public class XenobiologyTransformingSystem : EntitySystem
         var @new = polymorphSystem.PolymorphEntity(uid, config);
         if (@new.HasValue)
         {
-            EntityManager.RemoveComponentDeferred<PolymorphedEntityComponent>(@new.Value);
+            RemCompDeferred<PolymorphedEntityComponent>(@new.Value);
         }
     }
 
@@ -61,8 +61,10 @@ public class XenobiologyTransformingSystem : EntitySystem
 
         foreach (var entity in lookupSys.GetEntitiesInRange(uid, args.Radius))
         {
-            if (EntityManager.HasComponent<HumanoidAppearanceComponent>(entity))
+            if (HasComp<HumanoidAppearanceComponent>(entity))
                 scramSys.Scramble(entity);
         }
     }
 }
+
+

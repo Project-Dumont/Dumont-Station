@@ -15,12 +15,15 @@ using Content.Shared.Pinpointer;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Timing;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.Bloodtrak;
 
 public sealed class BloodtrakSystem : SharedBloodtrakSystem
 {
+    private static readonly ProtoId<TagPrototype> DnaSolutionScannableTag = "DNASolutionScannable";
+
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly ForensicsSystem _forensicsSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -42,7 +45,7 @@ public sealed class BloodtrakSystem : SharedBloodtrakSystem
     /// </summary>
     private (EntityUid, TimeSpan)? GetPuddleDnaOwner(EntityUid target, BloodtrakComponent component, EntityUid user)
     {
-        if (!_tag.HasTag(target, "DNASolutionScannable") || !HasComp<PuddleComponent>(target))
+        if (!_tag.HasTag(target, DnaSolutionScannableTag) || !HasComp<PuddleComponent>(target))
         {
             _popupSystem.PopupEntity(Loc.GetString("bloodtrak-scan-failed"), user, user);
             return null;

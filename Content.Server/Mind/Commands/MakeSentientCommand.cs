@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+﻿// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
 // SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
 // SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
@@ -39,7 +39,6 @@ namespace Content.Server.Mind.Commands;
 public sealed class MakeSentientCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
 
     public override string Command => "makesentient";
 

@@ -67,6 +67,7 @@ public sealed partial class LoadoutContainer : BoxContainer
         }
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

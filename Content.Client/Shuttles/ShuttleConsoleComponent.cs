@@ -23,5 +23,5 @@ public sealed partial class ShuttleConsoleComponent : SharedShuttleConsoleCompon
     /// Key is the port ID, value is the display name.
     /// </summary>
     [DataField("portLabels"), AutoNetworkedField]
-    public new Dictionary<string, string> PortNames = new();
+    public Dictionary<string, string> PortNames = new();
 }

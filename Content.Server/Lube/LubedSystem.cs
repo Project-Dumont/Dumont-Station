@@ -45,7 +45,8 @@ public sealed class LubedSystem : EntitySystem
     private void OnHandPickUp(EntityUid uid, LubedComponent component, ContainerGettingInsertedAttemptEvent args)
     {
         // <Goobstation>
-        var ev = new CanLubedInsertEvent(args.Container);
+        var container = args.Container;
+        var ev = new CanLubedInsertEvent(in container);
         RaiseLocalEvent(uid, ref ev);
 
         if (ev.CanInsert)

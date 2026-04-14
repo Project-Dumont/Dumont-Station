@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
+using Content.Client.Resources;
 using Content.Goobstation.UIKit.UserInterface.Chat;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -16,6 +17,9 @@ namespace Content.Goobstation.Client.Chat;
 
 public sealed class TextShaderTag : IMarkupTagHandler
 {
+    private const string DefaultFontPath = "/Fonts/NotoSans/NotoSans-Regular.ttf";
+    private const string MonoFontPath = "/EngineFonts/NotoSans/NotoSansMono-Regular.ttf";
+
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IResourceCache _cache = default!;
 
@@ -50,12 +54,13 @@ public sealed class TextShaderTag : IMarkupTagHandler
         if (node.Attributes.TryGetValue("size", out var sizeParameter))
             size = (int) (sizeParameter.LongValue ?? size);
 
-        if (!_proto.TryIndex<FontPrototype>(font, out var prototype))
-            prototype = _proto.Index<FontPrototype>(FontTag.DefaultFont);
+        var fontPath = font switch
+        {
+            "Monospace" => MonoFontPath,
+            _ => DefaultFontPath
+        };
 
-        var fontResource = _cache.GetResource<FontResource>(prototype.Path);
-
-        label.FontOverride = new VectorFont(fontResource, size);
+        label.FontOverride = _cache.GetFont(fontPath, size);
 
         control = label;
         return true;

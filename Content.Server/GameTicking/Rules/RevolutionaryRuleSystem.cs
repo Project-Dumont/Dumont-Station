@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 EmoGarbage404 <retron404@gmail.com>
 // SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
 // SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
@@ -115,10 +115,8 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
-    [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
 
     //Used in OnPostFlash, no reference to the rule component is available
@@ -165,10 +163,9 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
                     component.HasRevAnnouncementPlayed = true;
                 }
 
-                foreach (var ms in EntityQuery<MindShieldComponent, MobStateComponent>())
+                var query = EntityQueryEnumerator<MindShieldComponent, MobStateComponent>();
+                while (query.MoveNext(out var entity, out _, out _))
                 {
-                    var entity = ms.Item1.Owner;
-
                     // assign eotrs
                     if (HasComp<RevolutionEnemyComponent>(entity))
                         continue;

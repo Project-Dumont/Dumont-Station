@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Enchanting.Components;
+﻿using Content.Goobstation.Shared.Enchanting.Components;
 using Content.Shared.Slippery;
 
 namespace Content.Goobstation.Shared.Enchanting.Systems;
@@ -8,7 +8,6 @@ namespace Content.Goobstation.Shared.Enchanting.Systems;
 /// </summary>
 public sealed class SlipperyEnchantSystem : EntitySystem
 {
-    [Dependency] private readonly EnchantingSystem _enchanting = default!;
 
     public override void Initialize()
     {

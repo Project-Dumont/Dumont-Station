@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
@@ -101,7 +101,7 @@ public sealed class MedicalPatchSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainers = default!;
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
-    [Dependency] protected readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
@@ -117,11 +117,11 @@ public sealed class MedicalPatchSystem : EntitySystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        foreach (var comp in EntityManager.EntityQuery<MedicalPatchComponent>())
+        var query = EntityQueryEnumerator<MedicalPatchComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
             if (_timing.CurTime < comp.NextUpdate)
                 continue;
-            var uid = comp.Owner; // TODO update thsi to the
 
             if (!TryComp<StickyComponent>(uid, out var stickycomp))
                 continue;
@@ -179,7 +179,7 @@ public sealed class MedicalPatchSystem : EntitySystem
             return;
 
         //Logg the Patch stick to.
-        _adminLogger.Add(LogType.ForceFeed, $"{EntityManager.ToPrettyString(args.User):user} stuck a patch on  {EntityManager.ToPrettyString(args.Target):target} using {EntityManager.ToPrettyString(uid):using} containing {SharedSolutionContainerSystem.ToPrettyString(medicalPatchSolution):medicalPatchSolution}");
+        _adminLogger.Add(LogType.ForceFeed, $"{ToPrettyString(args.User):user} stuck a patch on  {ToPrettyString(args.Target):target} using {ToPrettyString(uid):using} containing {SharedSolutionContainerSystem.ToPrettyString(medicalPatchSolution):medicalPatchSolution}");
 
         if (component.InjectAmmountOnAttatch > 0)
         {
@@ -216,3 +216,5 @@ public sealed class MedicalPatchSystem : EntitySystem
         }
     }
 }
+
+

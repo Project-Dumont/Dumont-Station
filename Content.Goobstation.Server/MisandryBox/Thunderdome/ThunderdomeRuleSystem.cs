@@ -268,7 +268,7 @@ public sealed class ThunderdomeRuleSystem : EntitySystem
         {
             var marker = EnsureComp<ThunderdomeOriginalBodyComponent>(body);
             if (mindComp.UserId is { } ownerId)
-                marker.Owner = ownerId;
+                marker.OriginalOwner = ownerId;
 
         }
 
@@ -390,7 +390,7 @@ public sealed class ThunderdomeRuleSystem : EntitySystem
         if (args.NewMobState is MobState.Dead or MobState.Invalid || args.OldMobState == MobState.Alive)
             return;
 
-        if (!_playerManager.TryGetSessionById(ent.Comp.Owner, out var session)
+        if (!_playerManager.TryGetSessionById(ent.Comp.OriginalOwner, out var session)
             || session.AttachedEntity is not { Valid: true })
             return;
 
@@ -468,7 +468,7 @@ public sealed class ThunderdomeRuleSystem : EntitySystem
         var query = EntityQueryEnumerator<ThunderdomeOriginalBodyComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.Owner == args.Player.UserId)
+            if (comp.OriginalOwner == args.Player.UserId)
             {
                 RemComp<ThunderdomeOriginalBodyComponent>(uid);
                 break;

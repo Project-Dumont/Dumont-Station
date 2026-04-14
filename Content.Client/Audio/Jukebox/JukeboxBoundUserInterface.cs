@@ -9,6 +9,7 @@
 using Content.Shared.Audio.Jukebox;
 using Robust.Client.Audio;
 using Robust.Client.UserInterface;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Prototypes;
 
@@ -73,7 +74,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
         if (_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
         {
-            var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
+            var length = EntMan.System<AudioSystem>().GetAudioLength(new ResolvedPathSpecifier(songProto.Path.Path));
 
             _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
         }

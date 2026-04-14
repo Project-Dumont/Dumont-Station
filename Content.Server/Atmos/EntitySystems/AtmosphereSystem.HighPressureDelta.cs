@@ -56,7 +56,7 @@ namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class AtmosphereSystem
     {
-        [ValidatePrototypeId<EntityPrototype>] private const string _spaceWindProto = "SpaceWindVisual"; // Backmen
+        private static readonly EntProtoId _spaceWindProto = "SpaceWindVisual"; // Backmen
 
         private static readonly ProtoId<SoundCollectionPrototype> DefaultSpaceWindSounds = "SpaceWind";
 
@@ -299,7 +299,7 @@ namespace Content.Server.Atmos.EntitySystems
                     //TODO Consider replacing throw target with proper trigonometry angles.
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
-                        var pos = throwTarget.ToMap(EntityManager, _transformSystem).Position - xform.WorldPosition + dirVec;
+                        var pos = _transformSystem.ToMapCoordinates(throwTarget).Position - _transformSystem.GetWorldPosition(xform) + dirVec;
                         _throwing.TryThrow(uid, pos.Normalized() * MathF.Min(moveForce, SpaceWindMaxVelocity), moveForce);
                     }
                     else

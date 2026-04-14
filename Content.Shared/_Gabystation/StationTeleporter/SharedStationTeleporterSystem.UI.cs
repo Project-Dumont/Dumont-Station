@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 //
@@ -108,12 +108,12 @@ public abstract partial class SharedStationTeleporterSystem
             return;
 
         // First portal
-        if (handTeleporter.FirstPortal is not null && EntityManager.EntityExists(handTeleporter.FirstPortal))
+        if (handTeleporter.FirstPortal is not null && Exists(handTeleporter.FirstPortal))
             AddPortal(handTeleporter.FirstPortal.Value, Loc.GetString("teleporter-name-rd-first"), ref teleportersData, ref cachedTeleporters);
 
 
         // Second portal
-        if (handTeleporter.SecondPortal is not null && EntityManager.EntityExists(handTeleporter.SecondPortal))
+        if (handTeleporter.SecondPortal is not null && Exists(handTeleporter.SecondPortal))
             AddPortal(handTeleporter.SecondPortal.Value, Loc.GetString("teleporter-name-rd-second"), ref teleportersData, ref cachedTeleporters);
     }
 
@@ -138,3 +138,4 @@ public abstract partial class SharedStationTeleporterSystem
                 true));
     }
 }
+

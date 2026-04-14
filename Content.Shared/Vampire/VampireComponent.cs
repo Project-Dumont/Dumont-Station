@@ -29,10 +29,8 @@ public sealed partial class VampireComponent : Component
 {
     //Static prototype references
     public static readonly EntProtoId SleepStatusEffectProto = "StatusEffectForcedSleeping";
-    [ValidatePrototypeId<EmotePrototype>]
-    public static readonly string ScreamEmoteProto = "Scream";
-    [ValidatePrototypeId<CurrencyPrototype>]
-    public static readonly string CurrencyProto = "BloodEssence";
+    public static readonly ProtoId<EmotePrototype> ScreamEmoteProto = "Scream";
+    public static readonly ProtoId<CurrencyPrototype> CurrencyProto = "BloodEssence";
 
     [ViewVariables(VVAccess.ReadOnly), DataField("defaultMutation")]
     public VampireMutationsType DefaultMutation = VampireMutationsType.None;
@@ -53,10 +51,8 @@ public sealed partial class VampireComponent : Component
     {
         Tags = new() { "Pill" }
     };
-    [ValidatePrototypeId<MetabolizerTypePrototype>]
-    public static readonly string MetabolizerVampire = "Vampire";
-    [ValidatePrototypeId<MetabolizerTypePrototype>]
-    public static readonly string MetabolizerBloodsucker = "Bloodsucker";
+    public static readonly ProtoId<MetabolizerTypePrototype> MetabolizerVampire = "Vampire";
+    public static readonly ProtoId<MetabolizerTypePrototype> MetabolizerBloodsucker = "Bloodsucker";
 
     public static readonly DamageSpecifier MeleeDamage = new()
     {
@@ -67,8 +63,7 @@ public sealed partial class VampireComponent : Component
         DamageDict = new Dictionary<string, FixedPoint2>() { { "Burn", 10 } }
     };
 
-    [ValidatePrototypeId<EntityPrototype>]
-    public static readonly string MutationsActionPrototype = "ActionVampireOpenMutationsMenu";
+    public static readonly EntProtoId MutationsActionPrototype = "ActionVampireOpenMutationsMenu";
 
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? MutationsAction;
@@ -79,8 +74,7 @@ public sealed partial class VampireComponent : Component
         "ActionVampireHypnotise"
     };
 
-    [ValidatePrototypeId<VampirePowerPrototype>]
-    public static readonly string DrinkBloodPrototype = "DrinkBlood";
+    public static readonly ProtoId<VampirePowerPrototype> DrinkBloodPrototype = "DrinkBlood";
 
     /// <summary>
     /// Total blood drank, counter for end of round screen
@@ -113,7 +107,7 @@ public sealed partial class VampireComponent : Component
 /// Contains all details about the ability and its effects or restrictions
 /// </summary>
 [DataDefinition]
-[Prototype("vampirePower")]
+[Prototype]
 public sealed partial class VampirePowerPrototype : IPrototype
 {
     [ViewVariables]
@@ -147,7 +141,7 @@ public sealed partial class VampirePowerPrototype : IPrototype
 }
 
 [DataDefinition]
-[Prototype("vampirePassive")]
+[Prototype]
 public sealed partial class VampirePassivePrototype : IPrototype
 {
     [ViewVariables]

@@ -11,6 +11,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.NodeContainer;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
@@ -21,9 +22,14 @@ namespace Content.Server.NodeContainer.Nodes
     /// </summary>
     public static class NodeHelpers
     {
-        public static IEnumerable<Node> GetNodesInTile(EntityQuery<NodeContainerComponent> nodeQuery, MapGridComponent grid, Vector2i coords)
+        public static IEnumerable<Node> GetNodesInTile(
+            EntityQuery<NodeContainerComponent> nodeQuery,
+            SharedMapSystem mapSystem,
+            EntityUid gridUid,
+            MapGridComponent grid,
+            Vector2i coords)
         {
-            foreach (var entityUid in grid.GetAnchoredEntities(coords))
+            foreach (var entityUid in mapSystem.GetAnchoredEntities(gridUid, grid, coords))
             {
                 if (!nodeQuery.TryGetComponent(entityUid, out var container))
                     continue;
@@ -37,11 +43,13 @@ namespace Content.Server.NodeContainer.Nodes
 
         public static IEnumerable<(Direction dir, Node node)> GetCardinalNeighborNodes(
             EntityQuery<NodeContainerComponent> nodeQuery,
+            SharedMapSystem mapSystem,
+            EntityUid gridUid,
             MapGridComponent grid,
             Vector2i coords,
             bool includeSameTile = true)
         {
-            foreach (var (dir, entityUid) in GetCardinalNeighborCells(grid, coords, includeSameTile))
+            foreach (var (dir, entityUid) in GetCardinalNeighborCells(mapSystem, gridUid, grid, coords, includeSameTile))
             {
                 if (!nodeQuery.TryGetComponent(entityUid, out var container))
                     continue;
@@ -55,26 +63,28 @@ namespace Content.Server.NodeContainer.Nodes
 
         [SuppressMessage("ReSharper", "EnforceForeachStatementBraces")]
         public static IEnumerable<(Direction dir, EntityUid entity)> GetCardinalNeighborCells(
+            SharedMapSystem mapSystem,
+            EntityUid gridUid,
             MapGridComponent grid,
             Vector2i coords,
             bool includeSameTile = true)
         {
             if (includeSameTile)
             {
-                foreach (var uid in grid.GetAnchoredEntities(coords))
+                foreach (var uid in mapSystem.GetAnchoredEntities(gridUid, grid, coords))
                     yield return (Direction.Invalid, uid);
             }
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (0, 1)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(gridUid, grid, coords + (0, 1)))
                 yield return (Direction.North, uid);
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (0, -1)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(gridUid, grid, coords + (0, -1)))
                 yield return (Direction.South, uid);
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (1, 0)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(gridUid, grid, coords + (1, 0)))
                 yield return (Direction.East, uid);
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (-1, 0)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(gridUid, grid, coords + (-1, 0)))
                 yield return (Direction.West, uid);
         }
     }

@@ -12,6 +12,8 @@ namespace Content.Client._Shitcode.Wizard.Systems;
 
 public sealed class WizardTrapsSystem : SharedWizardTrapsSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -27,6 +29,6 @@ public sealed class WizardTrapsSystem : SharedWizardTrapsSystem
         if (args.Sprite is not { } sprite)
             return;
 
-        sprite.Color = sprite.Color.WithAlpha((float) alpha);
+        _sprite.SetColor((ent, sprite), sprite.Color.WithAlpha((float) alpha));
     }
 }

@@ -125,7 +125,7 @@ public sealed partial class BlobCoreComponent : Component
     #region Blob Chems
 
     [ViewVariables]
-    public readonly BlobChemColors ChemСolors = new()
+    public readonly BlobChemColors ChemColors = new()
     {
         {BlobChemType.ReactiveSpines, Color.FromHex("#637b19")},
         {BlobChemType.BlazingOil, Color.FromHex("#937000")},

@@ -57,7 +57,7 @@ public sealed partial class CatchableSystem : EntitySystem
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = HashCode.Combine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
         var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.CatchChance))
+        if (rand.NextDouble() >= ent.Comp.CatchChance)
             return;
 
         // Try to catch!

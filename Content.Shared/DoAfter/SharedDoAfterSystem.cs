@@ -120,6 +120,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.DoAfter;
 
+#pragma warning disable CS0618
 public abstract partial class SharedDoAfterSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming GameTiming = default!;
@@ -536,3 +537,4 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
     // Goobstation end
     #endregion
 }
+#pragma warning restore CS0618

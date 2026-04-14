@@ -172,9 +172,9 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
     }
     private void OnTweak(Entity<AnimatedEmotesComponent> ent, ref AnimationTweakEmoteEvent args)
     {
-        NetEntity netEntity = EntityManager.GetNetEntity(ent.Owner);
+        var netEntity = GetNetEntity(ent.Owner);
 
-        if (!EntityManager.TryGetEntityData(netEntity, out _, out var metaData))
+        if (!TryGetEntityData(netEntity, out _, out var metaData))
         {
             var sawmill = Logger.GetSawmill("tweak-emotes");
             sawmill.Warning($"EntityPrototype is null for entity {netEntity}");
@@ -213,9 +213,9 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
     }
     private void OnFlex(Entity<AnimatedEmotesComponent> ent, ref AnimationFlexEmoteEvent args)
     {
-        NetEntity netEntity = EntityManager.GetNetEntity(ent.Owner);
+        var netEntity = GetNetEntity(ent.Owner);
 
-        if (!EntityManager.TryGetEntityData(netEntity, out _, out var metaData))
+        if (!TryGetEntityData(netEntity, out _, out var metaData))
         {
             var sawmill = Logger.GetSawmill("flex-emotes");
             sawmill.Warning($"EntityPrototype is null for entity {netEntity}");

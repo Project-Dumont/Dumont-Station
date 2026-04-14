@@ -21,6 +21,8 @@ namespace Content.Client._Shitcode.Heretic;
 
 public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -49,21 +51,21 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
 
         int? index = state == "cosmos" ? 0 : null; // Cosmos mark should be behind the sprite
 
-        if (sprite.LayerMapTryGet(HereticCombatMarkKey.Key, out var layer))
+        if (_sprite.LayerMapTryGet((ent, sprite), HereticCombatMarkKey.Key, out var layer, false))
         {
             if (index == 0)
-                sprite.RemoveLayer(layer);
+                _sprite.RemoveLayer((ent, sprite), layer);
             else
             {
-                sprite.LayerSetState(layer, state);
+                _sprite.LayerSetRsiState((ent, sprite), layer, state);
                 return;
             }
         }
 
         var rsi = new SpriteSpecifier.Rsi(ent.Comp.ResPath, state);
 
-        layer = sprite.AddLayer(rsi, index);
-        sprite.LayerMapSet(HereticCombatMarkKey.Key, layer);
+        layer = _sprite.AddLayer((ent, sprite), rsi, index);
+        _sprite.LayerMapSet((ent, sprite), HereticCombatMarkKey.Key, layer);
         sprite.LayerSetShader(layer, "unshaded");
     }
 
@@ -72,9 +74,9 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
-        if (!sprite.LayerMapTryGet(HereticCombatMarkKey.Key, out var layer))
+        if (!_sprite.LayerMapTryGet((ent, sprite), HereticCombatMarkKey.Key, out var layer, false))
             return;
 
-        sprite.RemoveLayer(layer);
+        _sprite.RemoveLayer((ent, sprite), layer);
     }
 }

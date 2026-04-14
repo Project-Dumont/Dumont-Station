@@ -37,7 +37,11 @@ public sealed partial class DungeonJob
         var allExterior = new HashSet<Vector2i>(dungeon.CorridorExteriorTiles);
         allExterior.UnionWith(dungeon.RoomExteriorTiles);
         var validTiles = allExterior.ToList();
-        random.Shuffle(validTiles);
+        for (var i = validTiles.Count - 1; i > 0; i--)
+        {
+            var j = random.Next(i + 1);
+            (validTiles[i], validTiles[j]) = (validTiles[j], validTiles[i]);
+        }
 
         var tiles = new List<(Vector2i, Tile)>();
         var tileDef = _tileDefManager[gen.Tile];
@@ -54,7 +58,7 @@ public sealed partial class DungeonJob
                 break;
 
             // Room tile / already used.
-            if (!_anchorable.TileFree(_grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask) ||
+            if (!_anchorable.TileFree(_gridUid, _grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask) ||
                 takenTiles.Contains(tile))
             {
                 continue;
@@ -74,7 +78,7 @@ public sealed partial class DungeonJob
 
                     if (!allExterior.Contains(neighbor) ||
                         takenTiles.Contains(neighbor) ||
-                        !_anchorable.TileFree(_grid, neighbor, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
+                        !_anchorable.TileFree(_gridUid, _grid, neighbor, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
                     {
                         isValid = false;
                         break;
@@ -89,7 +93,7 @@ public sealed partial class DungeonJob
 
                         if (allExterior.Contains(perpTile) ||
                             takenTiles.Contains(neighbor) ||
-                            !_anchorable.TileFree(_grid, perpTile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
+                            !_anchorable.TileFree(_gridUid, _grid, perpTile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
                         {
                             isValid = false;
                             break;
@@ -110,7 +114,7 @@ public sealed partial class DungeonJob
                     if (reservedTiles.Contains(neighbor))
                         continue;
 
-                    tiles.Add((neighbor, _tile.GetVariantTile((ContentTileDefinition) tileDef, random)));
+                    tiles.Add((neighbor, _tile.GetVariantTile((ContentTileDefinition) tileDef, random.Next())));
                     index++;
                     takenTiles.Add(neighbor);
                 }

@@ -40,6 +40,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server.Heretic.EntitySystems;
 
@@ -56,7 +57,7 @@ public sealed class ProtectiveBladeSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ReflectSystem _reflect = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _status = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
@@ -348,10 +349,7 @@ public sealed class ProtectiveBladeSystem : EntitySystem
 
         QueueDel(pblade.Value);
 
-        _status.TryAddStatusEffect<BlockProtectiveBladeShootComponent>(origin,
-            "BlockProtectiveBladeShoot",
-            TimeSpan.FromSeconds(0.25f),
-            true);
+        _status.TryUpdateStatusEffectDuration(origin, "BlockProtectiveBladeShoot", TimeSpan.FromSeconds(0.25f));
 
         return true;
     }

@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Server._Mono.Projectiles.TargetGuided;
 using Content.Shared._Mono.FireControl;
 using Content.Shared.Projectiles;
@@ -217,10 +217,11 @@ public sealed partial class FireControlSystem
         // Remove positions for consoles without any missiles
         foreach (var consoleUid in _consoleMousePositions.Keys.ToList())
         {
-            if (!activeConsoles.Contains(consoleUid) || !EntityManager.EntityExists(consoleUid))
+            if (!activeConsoles.Contains(consoleUid) || !Exists(consoleUid))
             {
                 _consoleMousePositions.Remove(consoleUid);
             }
         }
     }
 }
+

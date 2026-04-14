@@ -26,6 +26,7 @@ namespace Content.Goobstation.Server.Voodoo
         [Dependency] private readonly SharedBodySystem _bodySystem = default!;
         [Dependency] private readonly ThrowingSystem _throwing = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedTransformSystem _transform = default!;
 
         public override void Initialize()
         {
@@ -108,8 +109,8 @@ namespace Content.Goobstation.Server.Voodoo
 
                 var strength = _random.NextFloat(3f, 5f);
 
-                var origin = Transform(ent).MapPosition.Position;
-                var targetPos = Transform(target).MapPosition.Position;
+                var origin = _transform.GetMapCoordinates(ent).Position;
+                var targetPos = _transform.GetMapCoordinates(target).Position;
 
                 var direction = targetPos - origin;
                 if (direction == Vector2.Zero)

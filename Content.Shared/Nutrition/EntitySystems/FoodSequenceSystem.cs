@@ -100,6 +100,7 @@ using Content.Shared.Interaction.Components; // Goobstation - anythingburgers
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
+#pragma warning disable CS0618
 public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -419,3 +420,4 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
         }
     }
 }
+#pragma warning restore CS0618

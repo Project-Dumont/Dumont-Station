@@ -70,8 +70,8 @@ public sealed partial class HereticAbilitySystem
 
         _standing.Stand(ent);
         _pulling.StopAllPulls(ent, stopPuller: false);
-        if (_statusEffect.TryAddStatusEffect<PacifiedComponent>(ent, "Pacified", TimeSpan.FromSeconds(10f), true))
-            _statusEffect.TryAddStatusEffect<RealignmentComponent>(ent, "Realignment", TimeSpan.FromSeconds(10f), true);
+        if (_statusEffect.TryUpdateStatusEffectDuration(ent, "Pacified", TimeSpan.FromSeconds(10f)))
+            _statusEffect.TryUpdateStatusEffectDuration(ent, "Realignment", TimeSpan.FromSeconds(10f));
 
         args.Handled = true;
     }

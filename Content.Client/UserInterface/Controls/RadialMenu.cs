@@ -300,8 +300,6 @@ public sealed class RadialMenuOuterAreaButton : RadialMenuTextureButtonBase
     /// <inheritdoc />
     protected override bool HasPoint(Vector2 point)
     {
-        return false; // Goobstation edit
-
         if (ParentCenter == null)
         {
             return base.HasPoint(point);

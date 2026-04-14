@@ -19,6 +19,7 @@ namespace Content.Goobstation.Server.Administration.Commands;
 [AdminCommand(AdminFlags.Spawn)]
 public sealed class EquipTo : LocalizedCommands
 {
+    private static readonly ProtoId<InventoryTemplatePrototype> HumanInventoryTemplate = "human";
 
     public const string CommandName = "equipto";
     public override string Command => CommandName;
@@ -137,7 +138,7 @@ public sealed class EquipTo : LocalizedCommands
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         if (args.Length != 4
-            || !prototypeManager.TryIndex<InventoryTemplatePrototype>("human", out var inventoryTemplate))
+            || !prototypeManager.TryIndex(HumanInventoryTemplate, out var inventoryTemplate))
             return CompletionResult.Empty;
 
         var options = inventoryTemplate.Slots.Select(c => c.Name).OrderBy(c => c).ToArray();

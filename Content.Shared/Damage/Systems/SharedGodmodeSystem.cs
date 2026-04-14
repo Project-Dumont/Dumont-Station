@@ -21,6 +21,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Damage.Systems;
 
+#pragma warning disable CS0618
 public abstract class SharedGodmodeSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
@@ -124,3 +125,4 @@ public abstract class SharedGodmodeSystem : EntitySystem
         return true;
     }
 }
+#pragma warning restore CS0618

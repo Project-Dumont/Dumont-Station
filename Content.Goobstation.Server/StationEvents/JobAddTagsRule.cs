@@ -22,7 +22,6 @@ namespace Content.Goobstation.Server.StationEvents;
 public sealed class JobAddTagsRule : StationEventSystem<JobAddTagsRuleComponent>
 {
     [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly IPlayerManager _player = default!;

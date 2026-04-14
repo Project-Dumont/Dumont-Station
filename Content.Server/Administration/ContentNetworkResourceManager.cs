@@ -9,8 +9,6 @@ using Content.Shared.CCVar;
 using Robust.Server.Upload;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
-using Robust.Shared.Upload;
-
 namespace Content.Server.Administration;
 
 public sealed class ContentNetworkResourceManager
@@ -25,13 +23,18 @@ public sealed class ContentNetworkResourceManager
     {
         _cfgManager.OnValueChanged(CCVars.ResourceUploadingStoreEnabled, value => StoreUploaded = value, true);
         AutoDelete(_cfgManager.GetCVar(CCVars.ResourceUploadingStoreDeletionDays));
-        _netRes.OnResourceUploaded += OnUploadResource;
+        _netRes.ResourcesUploaded += OnUploadResource;
     }
 
-    private async void OnUploadResource(ICommonSession session, NetworkResourceUploadMessage msg)
+    private async void OnUploadResource(NetworkResourcesUploadedEvent ev)
     {
-        if (StoreUploaded)
-            await _serverDb.AddUploadedResourceLogAsync(session.UserId, DateTime.Now, msg.RelativePath.ToString(), msg.Data);
+        if (!StoreUploaded)
+            return;
+
+        foreach (var (relativePath, data) in ev.Files)
+        {
+            await _serverDb.AddUploadedResourceLogAsync(ev.Session.UserId, DateTime.Now, relativePath.ToString(), data);
+        }
     }
 
     private async void AutoDelete(int days)

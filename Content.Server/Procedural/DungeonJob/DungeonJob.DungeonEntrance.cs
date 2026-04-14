@@ -33,7 +33,11 @@ public sealed partial class DungeonJob
             // If none of those intersect another tile it's probably external
             // TODO: Maybe need to take top half of furthest rooms in case there's interior exits?
             roomTiles.AddRange(room.Exterior);
-            random.Shuffle(roomTiles);
+            for (var j = roomTiles.Count - 1; j > 0; j--)
+            {
+                var k = random.Next(j + 1);
+                (roomTiles[j], roomTiles[k]) = (roomTiles[k], roomTiles[j]);
+            }
 
             foreach (var tile in roomTiles)
             {
@@ -61,13 +65,13 @@ public sealed partial class DungeonJob
                     }
 
                     // Check if exterior spot free.
-                    if (!_anchorable.TileFree(_grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
+                    if (!_anchorable.TileFree(_gridUid, _grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
                     {
                         continue;
                     }
 
                     // Check if interior spot free (no guarantees on exterior but ClearDoor should handle it)
-                    if (!_anchorable.TileFree(_grid, dirVec, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
+                    if (!_anchorable.TileFree(_gridUid, _grid, dirVec, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
                     {
                         continue;
                     }
@@ -76,7 +80,7 @@ public sealed partial class DungeonJob
                     isValid = true;
 
                     // Entrance wew
-                    _maps.SetTile(_gridUid, _grid, tile, _tile.GetVariantTile(tileDef, random));
+                    _maps.SetTile(_gridUid, _grid, tile, _tile.GetVariantTile(tileDef, random.Next()));
                     ClearDoor(dungeon, _grid, tile);
                     var gridCoords = _maps.GridTileToLocal(_gridUid, _grid, tile);
                     // Need to offset the spawn to avoid spawning in the room.
@@ -97,7 +101,7 @@ public sealed partial class DungeonJob
                             continue;
                         }
 
-                        _maps.SetTile(_gridUid, _grid, nearTile.GridIndices, _tile.GetVariantTile(tileDef, random));
+                        _maps.SetTile(_gridUid, _grid, nearTile.GridIndices, _tile.GetVariantTile(tileDef, random.Next()));
                     }
 
                     break;

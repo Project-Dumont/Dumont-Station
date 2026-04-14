@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+﻿// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
 // SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
@@ -98,10 +98,8 @@ using Content.Server.Popups;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Stunnable;
-using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Movement.Systems;

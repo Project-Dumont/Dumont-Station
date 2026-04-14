@@ -80,6 +80,7 @@ public sealed partial class PlaytimeStatsHeader : Control
         HeaderClicked(args, Header.Playtime);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

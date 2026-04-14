@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 // SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 //
@@ -35,7 +35,6 @@ namespace Content.Server._Imp.Drone
     {
         [Dependency] private readonly BodySystem _bodySystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly InnateToolSystem _innateToolSystem = default!;
@@ -59,7 +58,7 @@ namespace Content.Server._Imp.Drone
         // Imp. this replaces OnInteractionAttempt from the upstream version of DroneSystem.
         private void OnUseAttempt(EntityUid uid, DroneComponent component, UseAttemptEvent args)
         {
-            if (args.Used != null && NonDronesInRange(uid, component))
+            if (NonDronesInRange(uid, component))
             {
                 if (_whitelist.IsBlacklistPass(component.Blacklist, args.Used)) // imp special. blacklist. this one *does* prevent actions. it would probably be best if this read from the component or something.
                 {
@@ -82,7 +81,7 @@ namespace Content.Server._Imp.Drone
                 }
             }
 
-            else if (args.Used != null && _whitelist.IsBlacklistPass(component.Blacklist, args.Used))
+            else if (_whitelist.IsBlacklistPass(component.Blacklist, args.Used))
             {
                 args.Cancel();
                 if (_gameTiming.CurTime >= component.NextProximityAlert)
@@ -159,8 +158,7 @@ namespace Content.Server._Imp.Drone
 
         private bool NonDronesInRange(EntityUid uid, DroneComponent component)
         {
-            var xform = Comp<TransformComponent>(uid);
-            foreach (var entity in _lookup.GetEntitiesInRange(xform.MapPosition, component.InteractionBlockRange))
+            foreach (var entity in _lookup.GetEntitiesInRange(uid, component.InteractionBlockRange))
             {
                 // Return true if the entity is/was controlled by a player and is not a drone or ghost.
                 if (HasComp<MindContainerComponent>(entity) && !HasComp<DroneComponent>(entity) && !HasComp<GhostComponent>(entity))

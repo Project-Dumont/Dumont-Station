@@ -32,7 +32,6 @@ namespace Content.Shared.Polymorph;
 /// </summary>
 [Prototype]
 [DataDefinition]
-[Serializable, NetSerializable]
 public sealed partial class PolymorphPrototype : IPrototype, IInheritingPrototype
 {
     [ViewVariables]

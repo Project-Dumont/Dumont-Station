@@ -13,6 +13,7 @@ namespace Content.Client._White.Examine;
 
 public sealed class ExaminableCharacterSystem : EntitySystem
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("examine.rich");
     [Dependency] private readonly IUserInterfaceManager _ui = default!;
 
     public override void Initialize()
@@ -23,7 +24,7 @@ public sealed class ExaminableCharacterSystem : EntitySystem
 
     private void OnExamineRichInfoResponse(ExaminableCharacterInfoMessage ev)
     {
-        Logger.Info($"Received ExaminableCharacterInfoMessage with message: {ev.Message}");
+        Sawmill.Info($"Received ExaminableCharacterInfoMessage with message: {ev.Message}");
         var chatMsg = new ChatMessage(ChatChannel.Emotes,
             ev.Message.ToString(),
             ev.Message.ToMarkup(),

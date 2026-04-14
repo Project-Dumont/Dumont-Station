@@ -1,13 +1,11 @@
-using Content.Server.Speech.Components;
+﻿using Content.Server.Speech.Components;
 using Content.Shared.Speech;
-using Robust.Shared.Random;
 using System.Text;
 
 namespace Content.Server.Speech.EntitySystems
 {
     public sealed class WingdingsSpeechSystem : EntitySystem
     {
-        [Dependency] private readonly IRobustRandom _random = default!;
 
         public override void Initialize()
         {

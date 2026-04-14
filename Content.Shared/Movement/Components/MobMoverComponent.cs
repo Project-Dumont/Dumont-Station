@@ -10,6 +10,7 @@ using Robust.Shared.Map;
 
 namespace Content.Shared.Movement.Components
 {
+    #pragma warning disable CS0618
     /// <summary>
     /// Has additional movement data such as footsteps and weightless grab range for an entity.
     /// </summary>
@@ -55,7 +56,7 @@ namespace Content.Shared.Movement.Components
             {
                 if (MathHelper.CloseToPercent(GrabRange, value)) return;
                 GrabRange = value;
-                Dirty();
+                IoCManager.Resolve<IEntityManager>().Dirty(Owner, this);
             }
         }
 
@@ -67,8 +68,9 @@ namespace Content.Shared.Movement.Components
             {
                 if (MathHelper.CloseToPercent(PushStrength, value)) return;
                 PushStrength = value;
-                Dirty();
+                IoCManager.Resolve<IEntityManager>().Dirty(Owner, this);
             }
         }
     }
+    #pragma warning restore CS0618
 }

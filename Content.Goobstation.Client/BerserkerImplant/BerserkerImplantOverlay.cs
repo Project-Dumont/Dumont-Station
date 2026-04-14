@@ -11,6 +11,8 @@ namespace Content.Goobstation.Client.BerserkerImplant;
 
 public sealed class BerserkerImplantOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> BlurryVisionShader = "BlurryVisionX";
+
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override bool RequestScreenTexture => true;
@@ -25,7 +27,7 @@ public sealed class BerserkerImplantOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _blurShader = _prototype.Index<ShaderPrototype>("BlurryVisionX").InstanceUnique();
+        _blurShader = _prototype.Index(BlurryVisionShader).InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

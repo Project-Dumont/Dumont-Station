@@ -13,6 +13,7 @@ namespace Content.Client._Gabystation.StationTeleporter;
 public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -26,9 +27,9 @@ public sealed class StationTeleporterSystem : SharedStationTeleporterSystem
         if (ent.Comp.PortalLayerMap is null
             || !_appearance.TryGetData<Color>(ent, TeleporterPortalVisuals.Color, out var newColor)
             || !TryComp<SpriteComponent>(ent, out var sprite)
-            || !sprite.LayerMapTryGet(ent.Comp.PortalLayerMap, out var index))
+            || !_sprite.LayerMapTryGet((ent, sprite), ent.Comp.PortalLayerMap, out var index, false))
             return;
 
-        sprite.LayerSetColor(index, newColor);
+        _sprite.LayerSetColor((ent, sprite), index, newColor);
     }
 }

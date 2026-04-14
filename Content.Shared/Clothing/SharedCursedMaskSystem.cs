@@ -83,7 +83,6 @@ using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Clothing;
@@ -143,7 +142,8 @@ public abstract class SharedCursedMaskSystem : EntitySystem
     protected void RandomizeCursedMask(Entity<CursedMaskComponent> ent, EntityUid wearer)
     {
         var random = new System.Random((int) _timing.CurTick.Value);
-        ent.Comp.CurrentState = random.Pick(Enum.GetValues<CursedMaskExpression>());
+        var expressions = Enum.GetValues<CursedMaskExpression>();
+        ent.Comp.CurrentState = expressions[random.Next(expressions.Length)];
         _appearance.SetData(ent, CursedMaskVisuals.State, ent.Comp.CurrentState);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(wearer);
     }

@@ -20,6 +20,7 @@ public sealed class CardHandSystem : EntitySystem
 {
     private readonly Dictionary<Entity<CardHandComponent>, int> _notInit = [];
     [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
 
     /// <inheritdoc/>
@@ -58,7 +59,7 @@ public sealed class CardHandSystem : EntitySystem
         if (!TryComp(card, out SpriteComponent? cardSprite))
             return false;
 
-        if (!cardSprite.TryGetLayer(0, out var l))
+        if (!_sprite.TryGetLayer((card, cardSprite), 0, out var l, false))
             return false;
 
         layer = l;
@@ -89,10 +90,10 @@ public sealed class CardHandSystem : EntitySystem
         if (cardCount <= 0)
         {
             // Placeholder - we need to have a valid sprite.
-            sprite.LayerSetVisible(0, true);
-            sprite.LayerSetState(0, "singlecard_down_black");
-            sprite.LayerSetOffset(0, new Vector2(0f, 0f));
-            sprite.LayerSetScale(0, new Vector2(1f, 1f));
+            _sprite.LayerSetVisible((uid, sprite), 0, true);
+            _sprite.LayerSetRsiState((uid, sprite), 0, "singlecard_down_black");
+            _sprite.LayerSetOffset((uid, sprite), 0, new Vector2(0f, 0f));
+            _sprite.LayerSetScale((uid, sprite), 0, new Vector2(1f, 1f));
         }
         else if (cardCount == 1)
         {
@@ -101,9 +102,9 @@ public sealed class CardHandSystem : EntitySystem
                 cardCount,
                 (sprt, cardIndex, layerIndex) =>
                 {
-                    sprt.Comp.LayerSetRotation(layerIndex, Angle.FromDegrees(0));
-                    sprt.Comp.LayerSetOffset(layerIndex, new Vector2(0, 0.10f));
-                    sprt.Comp.LayerSetScale(layerIndex, new Vector2(comp.Scale, comp.Scale));
+                    _sprite.LayerSetRotation((sprt.Owner, sprt.Comp), layerIndex, Angle.FromDegrees(0));
+                    _sprite.LayerSetOffset((sprt.Owner, sprt.Comp), layerIndex, new Vector2(0, 0.10f));
+                    _sprite.LayerSetScale((sprt.Owner, sprt.Comp), layerIndex, new Vector2(comp.Scale, comp.Scale));
                     return true;
                 }
             );
@@ -122,9 +123,9 @@ public sealed class CardHandSystem : EntitySystem
                     var x = (-(comp.XOffset / 2)) + cardIndex * intervalSize;
                     var y = -(x * x) + 0.10f;
 
-                    sprt.Comp.LayerSetRotation(layerIndex, Angle.FromDegrees(-angle));
-                    sprt.Comp.LayerSetOffset(layerIndex, new Vector2(x, y));
-                    sprt.Comp.LayerSetScale(layerIndex, new Vector2(comp.Scale, comp.Scale));
+                    _sprite.LayerSetRotation((sprt.Owner, sprt.Comp), layerIndex, Angle.FromDegrees(-angle));
+                    _sprite.LayerSetOffset((sprt.Owner, sprt.Comp), layerIndex, new Vector2(x, y));
+                    _sprite.LayerSetScale((sprt.Owner, sprt.Comp), layerIndex, new Vector2(comp.Scale, comp.Scale));
                     return true;
                 }
             );

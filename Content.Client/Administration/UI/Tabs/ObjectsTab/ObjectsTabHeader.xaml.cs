@@ -71,6 +71,7 @@ namespace Content.Client.Administration.UI.Tabs.ObjectsTab
             HeaderClicked(args, Header.EntityID);
         }
 
+        [Obsolete]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

@@ -1,4 +1,4 @@
-using Content.Server.Temperature.Components;
+﻿using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.Actions;
 using Content.Shared.Genetics;
@@ -13,7 +13,6 @@ public sealed class CryokinesisGenSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {

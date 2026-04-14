@@ -44,6 +44,6 @@ public sealed class AutodocBoundUserInterface : BoundUserInterface
     {
         base.Dispose(disposing);
         if (disposing)
-            _window?.Dispose();
+            _window?.Close();
     }
 }

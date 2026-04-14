@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Evaisa <mail@evaisa.dev>
+﻿// SPDX-FileCopyrightText: 2025 Evaisa <mail@evaisa.dev>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -30,8 +30,6 @@ public sealed partial class VehicleWallPushSystem : EntitySystem
     [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly INetConfigurationManager _config = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {

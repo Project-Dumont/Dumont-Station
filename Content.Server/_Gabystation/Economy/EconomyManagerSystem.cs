@@ -43,7 +43,7 @@ namespace Content.Server._Gabystation.Economy
 
         private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
         {
-            if (!EntityManager.TryGetComponent<EconomyManagerComponent>(args.Station, out var comp))
+            if (!TryComp<EconomyManagerComponent>(args.Station, out var comp))
                 return;
 
             if (args.JobId is null || !_prototypes.TryIndex<JobPrototype>(args.JobId, out var proto) ||
@@ -68,8 +68,8 @@ namespace Content.Server._Gabystation.Economy
         public bool TryCreateAccount(out int accountId, Entity<EconomyManagerComponent> station,
             EntityUid uid, string? jobId = null, int balance = 100, int password = 1234)
         {
+            var (stationUid, comp) = station;
             accountId = 0;
-            var comp = station.Comp;
 
             // Assign a random bank account id
             _name.GenerateUniqueName(uid, _nameIdentifierGroup, out accountId);
@@ -96,12 +96,12 @@ namespace Content.Server._Gabystation.Economy
             if (_id.TryFindIdCard(uid, out var idCard))
             {
                 // Add the account to the id card
-                var bankCard = EnsureComp<NanoBankCardComponent>(idCard.Owner);
+                var bankCard = EnsureComp<NanoBankCardComponent>(idCard);
                 bankCard.AccountId = accountId;
                 bankCard.AccountPin = password;
                 bankCard.LoggedIn = true;
-                bankCard.Station = station.Owner;
-                Dirty<NanoBankCardComponent>((idCard.Owner, bankCard));
+                bankCard.Station = stationUid;
+                Dirty<NanoBankCardComponent>((idCard, bankCard));
             }
 
             return true;
@@ -130,12 +130,13 @@ namespace Content.Server._Gabystation.Economy
             return balance >= amount;
         }
 
-        public bool TryPurchase(EconomyManagerComponent comp,
+        public bool TryPurchase(Entity<EconomyManagerComponent> economyManager,
             int accountId, uint price)
         {
+            var (uid, comp) = economyManager;
             if (!TryGetBalance(comp, accountId, out var balance)
                 || balance < price
-                || !TryAddRemBalance(comp, accountId, -(int) price, raiseEvent: false))
+                || !TryAddRemBalance((uid, comp), accountId, -(int) price, raiseEvent: false))
                 return false;
 
             var ev = new AccountTransferenceCompleted()
@@ -145,13 +146,14 @@ namespace Content.Server._Gabystation.Economy
                 Amount = (int) price,
             };
 
-            RaiseLocalEvent(comp.Owner, ev);
+            RaiseLocalEvent(uid, ev);
 
             return true;
         }
 
-        public bool TrySetBalance(EconomyManagerComponent comp, int accountId, int balance, bool raiseEvent = true)
+        public bool TrySetBalance(Entity<EconomyManagerComponent> economyManager, int accountId, int balance, bool raiseEvent = true)
         {
+            var (uid, comp) = economyManager;
             if (!comp.BankAccounts.ContainsKey(accountId)
                 || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
@@ -172,14 +174,15 @@ namespace Content.Server._Gabystation.Economy
                     Amount = balance - previousBalance
                 };
 
-                RaiseLocalEvent(comp.Owner, ev);
+                RaiseLocalEvent(uid, ev);
             }
 
             return true;
         }
 
-        public bool TryAddRemBalance(EconomyManagerComponent comp, int accountId, int amount, bool raiseEvent = true)
+        public bool TryAddRemBalance(Entity<EconomyManagerComponent> economyManager, int accountId, int amount, bool raiseEvent = true)
         {
+            var (uid, comp) = economyManager;
             if (!comp.BankAccounts.ContainsKey(accountId)
                 || !comp.BankAccounts.TryGetValue(accountId, out var bank))
                 return false;
@@ -199,7 +202,7 @@ namespace Content.Server._Gabystation.Economy
                     Amount = amount
                 };
 
-                RaiseLocalEvent(comp.Owner, ev);
+                RaiseLocalEvent(uid, ev);
             }
 
             return true;
@@ -311,8 +314,8 @@ namespace Content.Server._Gabystation.Economy
                 || data.Balance < amount)
                 return false;
 
-            if (!TrySetBalance(comp, targetId, targetData.Balance + amount)
-                || !TrySetBalance(comp, accountId, data.Balance - amount))
+            if (!TrySetBalance(economyManager, targetId, targetData.Balance + amount)
+                || !TrySetBalance(economyManager, accountId, data.Balance - amount))
                 return false;
 
             var ev = new AccountTransferenceCompleted()
@@ -338,7 +341,7 @@ namespace Content.Server._Gabystation.Economy
 
             foreach (var station in stations)
             {
-                if (!EntityManager.TryGetComponent<EconomyManagerComponent>(station, out var comp))
+                if (!TryComp<EconomyManagerComponent>(station, out var comp))
                     continue;
 
                 foreach (var (uid, accountId) in comp.UidBankRef)

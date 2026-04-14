@@ -46,7 +46,11 @@ public sealed partial class DungeonJob
         // There's a lot of ways to handle this, e.g. pathfinding towards each room
         // For simplicity we'll go through each entrance randomly and generate worms from it
         // then as a final step we will connect all of their networks.
-        random.Shuffle(networks);
+        for (var i = networks.Count - 1; i > 0; i--)
+        {
+            var j = random.Next(i + 1);
+            (networks[i], networks[j]) = (networks[j], networks[i]);
+        }
 
         for (var i = 0; i < gen.Count; i++)
         {
@@ -62,7 +66,7 @@ public sealed partial class DungeonJob
             for (var x = remainingLength; x >= 0; x--)
             {
                 position += angle.ToVec();
-                angle += random.NextAngle(-gen.MaxAngleChange, gen.MaxAngleChange);
+                angle += (float) (random.NextDouble() * (gen.MaxAngleChange * 2) - gen.MaxAngleChange);
                 var roundedPos = position.Floored();
 
                 // Check if the tile doesn't overlap something it shouldn't
@@ -82,9 +86,9 @@ public sealed partial class DungeonJob
             }
 
             // Find a random part on the existing worm to start.
-            var value = random.Pick(worm);
+            var value = worm[random.Next(worm.Count)];
             networks[startIndex].Network.UnionWith(worm);
-            startAngles[value] = random.NextAngle();
+            startAngles[value] = (float) (random.NextDouble() * Math.Tau);
         }
 
         // Now to ensure they all connect we'll pathfind each network to one another
@@ -107,7 +111,7 @@ public sealed partial class DungeonJob
                 frontier.Clear();
                 costSoFar.Clear();
 
-                var targetNode = random.Pick(main.Network);
+                var targetNode = main.Network.ElementAt(random.Next(main.Network.Count));
 
                 var other = networks[i];
                 var startNode = other.Network.First();
@@ -187,12 +191,12 @@ public sealed partial class DungeonJob
 
         foreach (var tile in dungeon.CorridorTiles)
         {
-            tiles.Add((tile, _tile.GetVariantTile(tileDef, random)));
+            tiles.Add((tile, _tile.GetVariantTile(tileDef, random.Next())));
         }
 
         foreach (var tile in dungeon.CorridorExteriorTiles)
         {
-            tiles.Add((tile, _tile.GetVariantTile(tileDef, random)));
+            tiles.Add((tile, _tile.GetVariantTile(tileDef, random.Next())));
         }
 
         _maps.SetTiles(_gridUid, _grid, tiles);

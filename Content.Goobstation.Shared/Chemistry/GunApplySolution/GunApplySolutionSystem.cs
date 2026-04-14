@@ -28,8 +28,9 @@ public sealed class GunApplySolutionSystem : EntitySystem
 
         foreach (var (ammo, _) in args.Ammo) // This gives wrong uid on client
         {
-            if (!TryComp<SolutionContainerManagerComponent>(ammo, out var solution)
-            || !_solutionContainer.TryGetSolution(solution.Owner, comp.TargetSolution, out var target)
+            if (ammo == null
+            || !TryComp<SolutionContainerManagerComponent>(ammo.Value, out var solution)
+            || !_solutionContainer.TryGetSolution((ammo.Value, solution), comp.TargetSolution, out var target)
             || target == null)
                 continue;
 

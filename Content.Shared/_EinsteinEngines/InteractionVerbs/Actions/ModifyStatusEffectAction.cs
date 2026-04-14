@@ -6,6 +6,7 @@
 
 using Content.Shared.InteractionVerbs;
 using Content.Shared.StatusEffect;
+using NewStatusEffectsSystem = Content.Shared.StatusEffectNew.StatusEffectsSystem;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -32,21 +33,21 @@ public sealed partial class ModifyStatusEffectAction : InteractionAction
 
     public override bool CanPerform(InteractionArgs args, InteractionVerbPrototype proto, bool isBefore, VerbDependencies deps)
     {
-        var statusEffects = deps.EntMan.System<StatusEffectsSystem>();
-        if (!statusEffects.CanApplyEffect(args.Target, Effect))
+        var statusEffects = deps.EntMan.System<NewStatusEffectsSystem>();
+        if (!statusEffects.CanAddStatusEffect(args.Target, Effect.Id))
             return false;
 
-        return !EnsureEffect || TimeAdded >= TimeSpan.Zero || statusEffects.HasStatusEffect(args.Target, Effect);
+        return !EnsureEffect || TimeAdded >= TimeSpan.Zero || statusEffects.HasStatusEffect(args.Target, Effect.Id);
     }
 
     public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
-        var statusEffects = deps.EntMan.System<StatusEffectsSystem>();
+        var statusEffects = deps.EntMan.System<NewStatusEffectsSystem>();
 
-        if (statusEffects.HasStatusEffect(args.Target, Effect))
-            return statusEffects.TryAddTime(args.Target, Effect, TimeAdded);
+        if (statusEffects.HasStatusEffect(args.Target, Effect.Id))
+            return statusEffects.TryAddTime(args.Target, Effect.Id, TimeAdded);
         else if (EnsureEffect)
-            return statusEffects.TryAddStatusEffect(args.Target, Effect, TimeAdded, true);
+            return statusEffects.TrySetStatusEffectDuration(args.Target, Effect.Id, TimeAdded);
 
         return false;
     }

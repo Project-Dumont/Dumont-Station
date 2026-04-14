@@ -32,8 +32,10 @@ namespace Content.Client.Mail
     ///       SecurityOfficer:
     ///         state: SecurityOfficer
     /// </remarks>
-    public sealed class MailJobVisualizerSystem : VisualizerSystem<MailComponent>
-    {
+public sealed class MailJobVisualizerSystem : VisualizerSystem<MailComponent>
+{
+    private static readonly ProtoId<JobIconPrototype> JobIconUnknown = "JobIconUnknown";
+
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SpriteSystem _spriteSystem = default!;
@@ -50,11 +52,11 @@ namespace Content.Client.Mail
 
             if (!_prototypeManager.TryIndex<JobIconPrototype>(job, out var icon))
             {
-                args.Sprite.LayerSetTexture(MailVisualLayers.JobStamp, _spriteSystem.Frame0(_prototypeManager.Index("JobIconUnknown")));
+                _spriteSystem.LayerSetTexture((uid, args.Sprite), MailVisualLayers.JobStamp, _spriteSystem.Frame0(_prototypeManager.Index(JobIconUnknown).Icon));
                 return;
             }
 
-            args.Sprite.LayerSetTexture(MailVisualLayers.JobStamp, _spriteSystem.Frame0(icon.Icon));
+            _spriteSystem.LayerSetTexture((uid, args.Sprite), MailVisualLayers.JobStamp, _spriteSystem.Frame0(icon.Icon));
         }
     }
 

@@ -13,10 +13,13 @@ using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.Containers;
 using Robust.Server.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CorvaxGoob.RoundEnd.PhotoAlbum;
 public sealed class PhotoAlbumSystem : EntitySystem
 {
+    private static readonly ProtoId<TagPrototype> WriteTag = "Write";
+
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -36,7 +39,7 @@ public sealed class PhotoAlbumSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || args.Hands == null || entity.Comp.IsSigned)
             return;
 
-        if (args.Using is not { } pen || !_tags.HasTag(pen, "Write"))
+        if (args.Using is not { } pen || !_tags.HasTag(pen, WriteTag))
             return;
 
         var target = args.Target;

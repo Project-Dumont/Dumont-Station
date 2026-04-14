@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 // SPDX-FileCopyrightText: 2025 funkystationbot <funky@funkystation.org>
@@ -19,6 +19,7 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.CombatMode;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicons.StationAi;
@@ -34,10 +35,11 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiOverrideSystem : EntitySystem
 {
+    private static readonly ProtoId<NpcFactionPrototype> SimpleHostileFaction = "SimpleHostile";
+
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly StationAiSystem _stationAi = default!;
@@ -94,7 +96,7 @@ public sealed class MalfAiOverrideSystem : EntitySystem
 
         // Step 2: Make it hostile by adding NPC faction.
         var factionComp = EnsureComp<NpcFactionMemberComponent>(targetMachine.Value);
-        _npcFaction.AddFaction(targetMachine.Value, "SimpleHostile");
+        _npcFaction.AddFaction(targetMachine.Value, SimpleHostileFaction);
 
         // Add HTN component for AI behavior.
         var htnComp = EnsureComp<HTNComponent>(targetMachine.Value);

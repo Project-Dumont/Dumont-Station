@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
@@ -108,7 +108,7 @@ public sealed partial class HereticAbilitySystem
             return;
 
         // heals everything by base + power for each burning target
-        _stam.TryTakeStamina(ent, toHeal);
+        _ = _stam.TryTakeStamina(ent, toHeal);
         IHateWoundMed(ent.Owner, AllDamage * toHeal, toHeal, toHeal, toHeal, 0, 0);
     }
 
@@ -130,7 +130,7 @@ public sealed partial class HereticAbilitySystem
         if (!TryUseAbility(ent, args) || !Transform(ent).GridUid.HasValue)
             return;
 
-        CombustArea(ent, 9, false);
+        _ = CombustArea(ent, 9, false);
 
         if (ent.Comp.Ascended)
             _flammable.AdjustFireStacks(ent, 20f, ignite: true);
@@ -155,7 +155,7 @@ public sealed partial class HereticAbilitySystem
 
     #region Helper methods
 
-    [ValidatePrototypeId<EntityPrototype>] private static readonly EntProtoId FirePrototype = "HereticFireAA";
+    private static readonly EntProtoId FirePrototype = "HereticFireAA";
 
     public async Task CombustArea(EntityUid ent, int range = 1, bool hollow = true)
     {
@@ -168,7 +168,7 @@ public sealed partial class HereticAbilitySystem
             await Task.Delay((int) 500f);
         }
 
-        EntityManager.DeleteEntity(beacon); // cleanup
+        Del(beacon); // cleanup
     }
 
     public void SpawnFireBox(EntityUid relative, int range = 0, bool hollow = true)
@@ -212,3 +212,4 @@ public sealed partial class HereticAbilitySystem
 
     #endregion
 }
+

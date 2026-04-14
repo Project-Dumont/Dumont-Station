@@ -122,7 +122,7 @@ public partial class SharedMartialArtsSystem
 
         //_pulling.TryStopPull(target, pullable, ent, true);
 
-        _status.TryRemoveStatusEffect(ent, "KnockedDown");
+        _newStatus.TryRemoveStatusEffect(ent, "KnockedDown");
         _standingState.Stand(ent);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/demon_attack1.ogg"), ent);

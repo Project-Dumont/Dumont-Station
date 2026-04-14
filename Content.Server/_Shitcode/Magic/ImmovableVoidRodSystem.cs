@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
@@ -24,34 +24,34 @@ namespace Content.Server.Magic;
 
 public sealed partial class ImmovableVoidRodSystem : EntitySystem
 {
+    private static readonly ProtoId<ContentTileDefinition> FloorAstroSnow = "FloorAstroSnow";
+
     [Dependency] private readonly IPrototypeManager _prot = default!;
-    [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly VoidCurseSystem _voidcurse = default!;
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         // we are deliberately including paused entities. rod hungers for all
-        foreach (var (rod, trans) in EntityManager.EntityQuery<ImmovableVoidRodComponent, TransformComponent>(true))
+        var query = AllEntityQuery<ImmovableVoidRodComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var rod, out var trans))
         {
             rod.Accumulator += frameTime;
 
             if (rod.Accumulator > rod.Lifetime.TotalSeconds)
             {
-                QueueDel(rod.Owner);
-                return;
+                QueueDel(uid);
+                continue;
             }
 
-            if (!_ent.TryGetComponent<MapGridComponent>(trans.GridUid, out var grid))
+            if (!TryComp<MapGridComponent>(trans.GridUid, out var grid))
                 continue;
 
-
-
-            var tileref = grid.GetTileRef(trans.Coordinates);
-            var tile = _prot.Index<ContentTileDefinition>("FloorAstroSnow");
+            var tileref = _mapSystem.GetTileRef(trans.GridUid!.Value, grid, trans.Coordinates);
+            var tile = _prot.Index(FloorAstroSnow);
             _tile.ReplaceTile(tileref, tile);
         }
     }

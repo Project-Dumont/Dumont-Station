@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aidenkrz <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aidenkrz <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -18,7 +18,6 @@ namespace Content.Shared._DV.Abilities;
 public sealed class ItemCougherSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -76,7 +75,7 @@ public sealed class ItemCougherSystem : EntitySystem
         _popup.PopupPredicted(msg, ent, ent);
         _audio.PlayPredicted(ent.Comp.Sound, ent, ent);
 
-        var path = _audio.GetSound(ent.Comp.Sound);
+        var path = _audio.ResolveSound(ent.Comp.Sound);
         var coughing = EnsureComp<CoughingUpItemComponent>(ent);
         coughing.NextCough = _timing.CurTime + _audio.GetAudioLength(path);
         args.Handled = true;

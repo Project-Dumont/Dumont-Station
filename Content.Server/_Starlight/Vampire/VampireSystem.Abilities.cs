@@ -365,13 +365,13 @@ public sealed partial class VampireSystem
 
         if (prototypeId == null)
         {
-            Logger.Warning($"Unknown polymorph target: {polymorphTarget}. Polymorph operation aborted.");
+            Logger.GetSawmill("vampire").Warning($"Unknown polymorph target: {polymorphTarget}. Polymorph operation aborted.");
             return;
         }
 
         if (!_prototypeManager.TryIndex<PolymorphPrototype>(prototypeId, out var prototype))
         {
-            Logger.Warning($"Unknown prototype: {prototypeId}. Polymorph operation aborted.");
+            Logger.GetSawmill("vampire").Warning($"Unknown prototype: {prototypeId}. Polymorph operation aborted.");
             return;
         }
 

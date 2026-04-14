@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Pancake <Pangogie@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2021 Pancake <Pangogie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
 // SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
@@ -30,7 +30,6 @@ namespace Content.Server._Gabystation.Speech.EntitySystems
     public sealed class ProfanityFilterAccentSystem : EntitySystem
     {
         [Dependency] private readonly IPrototypeManager _proto = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         public override void Initialize()
@@ -69,10 +68,11 @@ namespace Content.Server._Gabystation.Speech.EntitySystems
                 // this is kind of slow but its not that bad
                 // essentially: go over all matches, try to match capitalization where possible, then replace
                 // rather than using regex.replace
-                for (int i = Regex.Count(maskMessage, $@"(?<!\w){f}(?!\w)", RegexOptions.IgnoreCase); i > 0; i--)
+                var wordRegex = new Regex($@"(?<!\w){f}(?!\w)", RegexOptions.IgnoreCase);
+                for (int i = wordRegex.Matches(maskMessage).Count; i > 0; i--)
                 {
                     // fetch the match again as the character indices may have changed
-                    Match match = Regex.Match(maskMessage, $@"(?<!\w){f}(?!\w)", RegexOptions.IgnoreCase);
+                    Match match = wordRegex.Match(maskMessage);
 
                     // Intelligently replace capitalization
                     // two cases where we will do so:

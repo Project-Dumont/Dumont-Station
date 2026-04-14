@@ -15,6 +15,8 @@ namespace Content.Goobstation.Client.Blob.Chemistry;
 
 public sealed class BlobSmokeSystem : EntitySystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -28,7 +30,7 @@ public sealed class BlobSmokeSystem : EntitySystem
 
         for (var i = 0; i < sprite.AllLayers.Count(); i++)
         {
-            sprite.LayerSetColor(i, component.Color);
+            _sprite.LayerSetColor((uid, sprite), i, component.Color);
         }
     }
 }

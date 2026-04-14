@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Decals;
@@ -132,7 +133,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
 
         for (var i = 0; i < count; i++)
         {
-            position += random.NextPolarVector2(config.MinOffset, config.MaxOffset).Floored();
+            position += NextPolarVector2(random, config.MinOffset, config.MaxOffset).Floored();
 
             foreach (var layer in layers)
             {
@@ -163,7 +164,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         _sawmill.Info($"Generating dungeon {_gen} with seed {_seed} on {_entManager.ToPrettyString(_gridUid)}");
         _grid.CanSplit = false;
         var random = new Random(_seed);
-        var position = (_position + random.NextPolarVector2(_gen.MinOffset, _gen.MaxOffset)).Floored();
+        var position = (_position + NextPolarVector2(random, _gen.MinOffset, _gen.MaxOffset)).Floored();
 
         // Tiles we can no longer generate on due to being reserved elsewhere.
         var reservedTiles = new HashSet<Vector2i>();
@@ -283,7 +284,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
                 break;
             case PrototypeDunGen prototypo:
                 var groupConfig = _prototype.Index(prototypo.Proto);
-                position = (position + random.NextPolarVector2(groupConfig.MinOffset, groupConfig.MaxOffset)).Floored();
+                position = (position + NextPolarVector2(random, groupConfig.MinOffset, groupConfig.MaxOffset)).Floored();
 
                 switch (prototypo.InheritDungeons)
                 {
@@ -344,5 +345,12 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
             return;
 
         await SuspendIfOutOfTime();
+    }
+
+    private static Vector2 NextPolarVector2(Random random, float minMagnitude, float maxMagnitude)
+    {
+        var angle = random.NextDouble() * Math.Tau;
+        var magnitude = minMagnitude + random.NextDouble() * (maxMagnitude - minMagnitude);
+        return new Vector2((float) (Math.Cos(angle) * magnitude), (float) (Math.Sin(angle) * magnitude));
     }
 }

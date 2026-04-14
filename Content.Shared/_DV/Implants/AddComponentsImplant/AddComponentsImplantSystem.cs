@@ -21,7 +21,7 @@ public sealed class AddComponentsImplantSystem : EntitySystem
         foreach (var component in ent.Comp.ComponentsToAdd)
         {
             // Don't add the component if it already exists
-            if (EntityManager.HasComponent(target, _factory.GetComponent(component.Key).GetType()))
+            if (HasComp(target, _factory.GetComponent(component.Key).GetType()))
                 continue;
 
             EntityManager.AddComponent(target, component.Value);
@@ -37,3 +37,4 @@ public sealed class AddComponentsImplantSystem : EntitySystem
         ent.Comp.AddedComponents.Clear();
     }
 }
+

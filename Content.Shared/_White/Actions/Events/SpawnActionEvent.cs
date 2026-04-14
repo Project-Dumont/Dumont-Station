@@ -50,7 +50,7 @@ public sealed partial class PlaceTileEntityEvent : WorldTargetActionEvent
     /// The prototype of the entity to be created
     /// </summary>
     [DataField]
-    public EntProtoId? Entity;
+    public new EntProtoId? Entity;
 
     /// <summary>
     /// The identifier of the tile to be placed
@@ -80,7 +80,7 @@ public sealed partial class PlaceTileEntityEvent : WorldTargetActionEvent
 [Serializable, NetSerializable]
 public sealed partial class PlaceTileEntityDoAfterEvent : DoAfterEvent
 {
-    public NetCoordinates Target;
+    public new NetCoordinates Target;
     public EntProtoId? Entity;
     public string? TileId;
     public SoundSpecifier? Audio;

@@ -108,7 +108,11 @@ public sealed partial class DungeonJob
             }
 
             // Iterate every pack
-            random.Shuffle(availablePacks);
+            for (var j = availablePacks.Count - 1; j > 0; j--)
+            {
+                var swapIndex = random.Next(j + 1);
+                (availablePacks[j], availablePacks[swapIndex]) = (availablePacks[swapIndex], availablePacks[j]);
+            }
             Matrix3x2 packTransform = default!;
             var found = false;
             DungeonRoomPackPrototype pack = default!;

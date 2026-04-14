@@ -78,6 +78,7 @@ using Content.Shared.NodeContainer.NodeGroups;
 using Content.Shared.Popups;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Melee.Events;
@@ -106,7 +107,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     [Dependency] private readonly NodeGroupSystem _nodeGroup = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedJitteringSystem _jittering = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
@@ -480,14 +481,20 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
                 return false;
         }
 
-        if (!Resolve(uid, ref statusEffects, false) ||
-            !_statusEffects.CanApplyEffect(uid, StatusKeyIn, statusEffects))
+        if (!_statusEffects.CanAddStatusEffect(uid, StatusKeyIn.Id))
         {
             return false;
         }
 
-        if (!_statusEffects.TryAddStatusEffect<ElectrocutedComponent>(uid, StatusKeyIn, time, refresh, statusEffects))
+        if (refresh)
+        {
+            if (!_statusEffects.TryUpdateStatusEffectDuration(uid, StatusKeyIn.Id, time))
+                return false;
+        }
+        else if (!_statusEffects.TryAddStatusEffect(uid, StatusKeyIn.Id, out _, time))
+        {
             return false;
+        }
 
         var shouldStun = siemensCoefficient > 0.5f;
 

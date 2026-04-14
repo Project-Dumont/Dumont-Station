@@ -294,7 +294,7 @@ public sealed partial class HereticAbilitySystem
 
         if (_statusEffect.TryGetTime(uid, "KnockedDown", out var knockdownStartEnd))
         {
-            var time = knockdownStartEnd.Value.Item2 - Timing.CurTime;
+            var time = knockdownStartEnd.EndEffectTime - Timing.CurTime;
             if (time > TimeSpan.Zero)
                 _stun.TryKnockdown(clone.Value, time, true, true, false);
         }

@@ -24,7 +24,6 @@ public sealed partial class EyeCursorOffsetSystem : EntitySystem
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!; // Goob - grabbed wizden PR #35087
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IClyde _clyde = default!;
 
     // This value is here to make sure the user doesn't have to move their mouse
     // all the way out to the edge of the screen to get the full offset.
@@ -54,7 +53,7 @@ public sealed partial class EyeCursorOffsetSystem : EntitySystem
         if (_uiManager.ActiveScreen == null || !_uiManager.ActiveScreen!.TryGetWidget<MainViewport>(out var mainViewport))
             return null;
         // </Goob - wizden PR #35087>
-        var localPlayer = _player.LocalPlayer?.ControlledEntity;
+        var localPlayer = _player.LocalSession?.AttachedEntity;
         var mousePos = _inputManager.MouseScreenPosition;
         var screenSize = mainViewport.Size; // Goob - grabbed wizden PR #35087
         var minValue = MathF.Min(screenSize.X / 2, screenSize.Y / 2) * _edgeOffset;

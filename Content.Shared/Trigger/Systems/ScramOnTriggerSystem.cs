@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -95,7 +96,10 @@ public sealed class ScramOnTriggerSystem : EntitySystem
         }
 
         if (targetGrid == null)
-            targetGrid = _random.GetRandom().PickAndTake(_targetGrids);
+        {
+            targetGrid = _targetGrids.ElementAt(_random.Next(_targetGrids.Count));
+            _targetGrids.Remove(targetGrid.Value);
+        }
 
         EntityCoordinates? targetCoords = null;
 
@@ -143,7 +147,8 @@ public sealed class ScramOnTriggerSystem : EntitySystem
             if (valid || _targetGrids.Count == 0) // if we don't do the check here then PickAndTake will blow up on an empty set.
                 break;
 
-            targetGrid = _random.GetRandom().PickAndTake(_targetGrids);
+            targetGrid = _targetGrids.ElementAt(_random.Next(_targetGrids.Count));
+            _targetGrids.Remove(targetGrid.Value);
         } while (true);
 
         return targetCoords;

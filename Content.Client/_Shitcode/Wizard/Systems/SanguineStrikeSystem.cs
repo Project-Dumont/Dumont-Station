@@ -12,6 +12,8 @@ namespace Content.Client._Shitcode.Wizard.Systems;
 
 public sealed class SanguineStrikeSystem : SharedSanguineStrikeSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -30,7 +32,7 @@ public sealed class SanguineStrikeSystem : SharedSanguineStrikeSystem
         if (!TryComp(uid, out SpriteComponent? sprite))
             return;
 
-        sprite.Color = comp.OldColor;
+        _sprite.SetColor((uid, sprite), comp.OldColor);
     }
 
     private void OnStartup(Entity<SanguineStrikeComponent> ent, ref ComponentStartup args)
@@ -41,6 +43,6 @@ public sealed class SanguineStrikeSystem : SharedSanguineStrikeSystem
             return;
 
         comp.OldColor = sprite.Color;
-        sprite.Color = comp.Color;
+        _sprite.SetColor((uid, sprite), comp.Color);
     }
 }

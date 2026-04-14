@@ -16,7 +16,6 @@
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -24,7 +23,7 @@ using Content.Shared._Gabystation.OrganFoodProcessor;
 
 namespace Content.Shared.Body.Components
 {
-    [RegisterComponent, NetworkedComponent, Access(typeof(StomachSystem), typeof(FoodSystem), typeof(OrganFoodProcessorSystem))]
+    [RegisterComponent, NetworkedComponent, Access(typeof(StomachSystem), typeof(OrganFoodProcessorSystem))]
     public sealed partial class StomachComponent : Component
     {
         /// <summary>

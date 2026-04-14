@@ -173,23 +173,17 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!; // Gaby
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
 
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Blood = "Blood";
+    private static readonly ProtoId<ReagentPrototype> Blood = "Blood";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Slime = "Slime";
+    private static readonly ProtoId<ReagentPrototype> Slime = "Slime";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string CopperBlood = "CopperBlood";
+    private static readonly ProtoId<ReagentPrototype> CopperBlood = "CopperBlood";
 
-    [ValidatePrototypeId<ReagentPrototype>] // goobstation
-    private const string BloodChangeling = "BloodChangeling"; // goobstation
+    private static readonly ProtoId<ReagentPrototype> BloodChangeling = "BloodChangeling"; // goobstation
 
-    [ValidatePrototypeId<ReagentPrototype>] // goobstation
-    private const string BlackBlood = "BlackBlood"; // goobstation
+    private static readonly ProtoId<ReagentPrototype> BlackBlood = "BlackBlood"; // goobstation
 
     private static string[] _standoutReagents = [Blood, Slime, CopperBlood, BloodChangeling, BlackBlood]; // goobstation - added BloodChangeling, BlackBlood
 
@@ -918,17 +912,17 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         return false;
     }
 
-    // Caso a entidade esteja deitado por cima de uma poça e se movimeta pra outro tile, suja a roupa e coloca o liquido nela.
+    // Caso a entidade esteja deitado por cima de uma poÃ§a e se movimeta pra outro tile, suja a roupa e coloca o liquido nela.
     private void OnCrawlInPuddle(Entity<KnockedDownComponent> ent, ref MoveEvent args) // Gaby
     {
         if (!_standing.IsDown(ent.Owner))
             return;
 
-        var gridUid = args.NewPosition.GetGridUid(EntityManager);
+        var gridUid = _transform.GetGrid(args.NewPosition);
         if (!gridUid.HasValue || !TryComp<MapGridComponent>(gridUid, out var grid))
             return;
 
-        if (args.OldPosition.GetGridUid(EntityManager) != gridUid ||
+        if (_transform.GetGrid(args.OldPosition) != gridUid ||
             _map.CoordinatesToTile(gridUid.Value, grid, args.OldPosition) == _map.CoordinatesToTile(gridUid.Value, grid, args.NewPosition))
             return;
 

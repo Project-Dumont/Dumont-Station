@@ -17,7 +17,6 @@ namespace Content.Shared.StatusEffect
 {
     [RegisterComponent]
     [NetworkedComponent]
-    [Access(typeof(StatusEffectsSystem))]
     public sealed partial class StatusEffectsComponent : Component
     {
         [ViewVariables]
@@ -26,7 +25,7 @@ namespace Content.Shared.StatusEffect
         /// <summary>
         ///     A list of status effect IDs to be allowed
         /// </summary>
-        [DataField("allowed", required: true), Access(typeof(StatusEffectsSystem), Other = AccessPermissions.ReadExecute)]
+        [DataField("allowed", required: true)]
         public List<string> AllowedEffects = default!;
     }
 

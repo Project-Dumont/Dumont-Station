@@ -1,4 +1,4 @@
-using Content.Server._White.Xenomorphs.Evolution;
+﻿using Content.Server._White.Xenomorphs.Evolution;
 using Content.Server._White.Xenomorphs.Plasma;
 using Content.Server.Actions;
 using Content.Server.Mind;
@@ -18,8 +18,6 @@ public sealed class XenomorphQueenSystem : EntitySystem
     [Dependency] private readonly PlasmaSystem _plasma = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly XenomorphEvolutionSystem _xenomorphEvolution = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override void Initialize()
     {

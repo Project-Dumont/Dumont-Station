@@ -17,8 +17,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Goobstation.Wizard.Mutate;
 
+#pragma warning disable CS0618
 public abstract class SharedHulkSystem : EntitySystem
 {
+    private static readonly ProtoId<DamageTypePrototype> StructuralDamageType = "Structural";
+
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
@@ -35,7 +38,7 @@ public abstract class SharedHulkSystem : EntitySystem
     private void OnStartup(Entity<HulkComponent> ent, ref ComponentStartup args)
     {
         UpdateColorStartup(ent);
-        ent.Comp.StructuralDamage ??= new DamageSpecifier(_prototype.Index<DamageTypePrototype>("Structural"), 80f);
+        ent.Comp.StructuralDamage ??= new DamageSpecifier(_prototype.Index(StructuralDamageType), 80f);
     }
 
     private void OnMeleeHit(Entity<HulkComponent> ent, ref MeleeHitEvent args)
@@ -79,3 +82,4 @@ public abstract class SharedHulkSystem : EntitySystem
     {
     }
 }
+#pragma warning restore CS0618

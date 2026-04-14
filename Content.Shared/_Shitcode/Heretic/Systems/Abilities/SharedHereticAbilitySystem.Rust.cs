@@ -12,6 +12,7 @@ using Robust.Shared.Map;
 
 namespace Content.Shared._Shitcode.Heretic.Systems.Abilities;
 
+#pragma warning disable CS0618
 public abstract partial class SharedHereticAbilitySystem
 {
     public const string RustTile = "PlatingRust";
@@ -102,3 +103,4 @@ public abstract partial class SharedHereticAbilitySystem
         return tileDef.ID == RustTile;
     }
 }
+#pragma warning restore CS0618

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+﻿// SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
 // SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
@@ -47,7 +47,6 @@ namespace Content.Server.Magic;
 
 public sealed class MagicSystem : SharedMagicSystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
 
     public override void Initialize()
     {

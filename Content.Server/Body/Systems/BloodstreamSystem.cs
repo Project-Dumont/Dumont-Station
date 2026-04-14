@@ -189,7 +189,7 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
     /// <summary>
     /// Get the reagent data for blood that a specific entity should have.
     /// </summary>
-    public List<ReagentData> GetEntityBloodData(EntityUid uid)
+    public new List<ReagentData> GetEntityBloodData(EntityUid uid)
     {
         var bloodData = new List<ReagentData>();
         var dnaData = new DnaData();

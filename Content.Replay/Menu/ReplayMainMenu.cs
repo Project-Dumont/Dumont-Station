@@ -20,6 +20,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
+using Robust.Shared.Log;
 using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Utility;
 using static Robust.Shared.Replays.ReplayConstants;
@@ -38,6 +39,7 @@ public sealed class ReplayMainScreen : State
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IGameController _controllerProxy = default!;
     [Dependency] private readonly IClientRobustSerializer _serializer = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
     [Dependency] private readonly ContentReplayPlaybackManager _replayMan = default!;
 
@@ -270,7 +272,7 @@ public sealed class ReplayMainScreen : State
         }
         catch (Exception ex)
         {
-            Logger.Error($"Failed to load replay info. Exception: {ex}");
+            _logManager.GetSawmill("replay").Error($"Failed to load replay info. Exception: {ex}");
             SelectReplay(null);
             return;
         }
@@ -279,8 +281,8 @@ public sealed class ReplayMainScreen : State
 
     protected override void Shutdown()
     {
-        _mainMenuControl.Dispose();
-        _selectWindow?.Dispose();
+        _mainMenuControl.Orphan();
+        _selectWindow?.Close();
     }
 
     private void OptionsButtonPressed(BaseButton.ButtonEventArgs args)

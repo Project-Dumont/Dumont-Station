@@ -68,14 +68,14 @@ namespace Content.Server.Power.Components
         {
             if (_net != null)
             {
-                RemoveSelfFromNet(_net);
+                RemoveSelfFromNet(Owner, _net);
                 _net = null;
             }
         }
 
-        protected abstract void AddSelfToNet(TNetType net);
+        protected abstract void AddSelfToNet(EntityUid uid, TNetType net);
 
-        protected abstract void RemoveSelfFromNet(TNetType net);
+        protected abstract void RemoveSelfFromNet(EntityUid uid, TNetType net);
 
         private bool TryFindNet([NotNullWhen(true)] out TNetType? foundNet)
         {
@@ -100,10 +100,10 @@ namespace Content.Server.Power.Components
         private void SetNet(TNetType? newNet)
         {
             if (_net != null)
-                RemoveSelfFromNet(_net);
+                RemoveSelfFromNet(Owner, _net);
 
             if (newNet != null)
-                AddSelfToNet(newNet);
+                AddSelfToNet(Owner, newNet);
 
             _net = newNet;
         }

@@ -388,7 +388,8 @@ namespace Content.Server.Construction
             var newTransform = Transform(newUid);
             TransformSystem.AttachToGridOrMap(newUid, newTransform); // in case in hands or a container
             newTransform.LocalRotation = transform.LocalRotation;
-            newTransform.Anchored = transform.Anchored;
+            if (transform.Anchored)
+                TransformSystem.AnchorEntity(newUid, newTransform);
 
             // Container transferring.
             if (containerManager != null)

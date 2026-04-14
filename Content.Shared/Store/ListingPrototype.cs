@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
@@ -289,6 +289,6 @@ public partial class ListingData : IEquatable<ListingData>, ICloneable
 /// <summary>
 ///     Defines a set item listing that is available in a store
 /// </summary>
-[Prototype("listing")]
+[Prototype]
 [DataDefinition]
 public sealed partial class ListingPrototype : ListingData, IPrototype;

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
 // SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
@@ -82,7 +82,6 @@ namespace Content.Server.Cloning
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly CloningPodSystem _cloningPodSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-        [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 
@@ -265,18 +264,12 @@ namespace Content.Server.Cloning
                 {
                     scanBodyInfo = MetaData(scanBody.Value).EntityName;
 
-                    if (false) // GoobStation: Lets you clone living people
+                    // GoobStation: Lets you clone living people.
+                    if (!_mindSystem.TryGetMind(scanBody.Value, out _, out var mind) ||
+                        mind.UserId == null ||
+                        !_playerManager.TryGetSessionById(mind.UserId.Value, out _))
                     {
-                        clonerStatus = ClonerStatus.ScannerOccupantAlive;
-                    }
-                    else
-                    {
-                        if (!_mindSystem.TryGetMind(scanBody.Value, out _, out var mind) ||
-                            mind.UserId == null ||
-                            !_playerManager.TryGetSessionById(mind.UserId.Value, out _))
-                        {
-                            clonerStatus = ClonerStatus.NoMindDetected;
-                        }
+                        clonerStatus = ClonerStatus.NoMindDetected;
                     }
                 }
             }

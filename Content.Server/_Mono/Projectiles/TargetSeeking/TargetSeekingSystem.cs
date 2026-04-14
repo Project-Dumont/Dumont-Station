@@ -125,7 +125,7 @@ public sealed class TargetSeekingSystem : EntitySystem
 
             // Skip if the target is our own launcher (don't target our own ship)
             if (TryComp<ProjectileComponent>(uid, out var projectile) &&
-                TryComp<TransformComponent>(projectile.Shooter, out var shooterTransform))
+                TryComp(projectile.Shooter, out TransformComponent? shooterTransform))
             {
                 var shooterGridUid = shooterTransform.GridUid;
 
@@ -150,7 +150,7 @@ public sealed class TargetSeekingSystem : EntitySystem
             component.CurrentTarget = bestTarget;
 
             // Initialize tracking data
-            if (TryComp<TransformComponent>(bestTarget, out var targetXform))
+            if (TryComp(bestTarget, out TransformComponent? targetXform))
             {
                 component.PreviousTargetPosition = _transform.ToMapCoordinates(targetXform.Coordinates).Position;
                 component.PreviousDistance = closestDistance;
@@ -163,7 +163,7 @@ public sealed class TargetSeekingSystem : EntitySystem
     /// </summary>
     public void ApplyPredictiveTracking(EntityUid uid, TargetSeekingComponent comp, TransformComponent xform, float frameTime)
     {
-        if (!comp.CurrentTarget.HasValue || !TryComp<TransformComponent>(comp.CurrentTarget.Value, out var targetXform))
+        if (!comp.CurrentTarget.HasValue || !TryComp(comp.CurrentTarget.Value, out TransformComponent? targetXform))
         {
             return;
         }
@@ -211,7 +211,7 @@ public sealed class TargetSeekingSystem : EntitySystem
     /// </summary>
     public void ApplyDirectTracking(EntityUid uid, TargetSeekingComponent comp, TransformComponent xform, float frameTime)
     {
-        if (!comp.CurrentTarget.HasValue || !TryComp<TransformComponent>(comp.CurrentTarget.Value, out var targetXform))
+        if (!comp.CurrentTarget.HasValue || !TryComp(comp.CurrentTarget.Value, out TransformComponent? targetXform))
         {
             return;
         }

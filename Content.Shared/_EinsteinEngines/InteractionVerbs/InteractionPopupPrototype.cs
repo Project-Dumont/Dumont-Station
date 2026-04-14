@@ -25,7 +25,7 @@ namespace Content.Shared.InteractionVerbs;
 ///     - {$selfTarget} - A boolean value that indicates whether the action is used on the user itself.
 ///     - {$hasUsed} - A boolean value that indicates whether the user is holding an item ($used is not null).
 /// </remarks>
-[Prototype("InteractionPopup"), Serializable]
+[Prototype("InteractionPopup")]
 public sealed partial class InteractionPopupPrototype : IPrototype
 {
     [IdDataField]

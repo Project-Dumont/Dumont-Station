@@ -12,6 +12,7 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 
@@ -21,7 +22,7 @@ namespace Content.Server.Electrocution;
 public sealed class ElectrocuteCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
 
     public override string Command => "electrocute";
 
@@ -43,7 +44,7 @@ public sealed class ElectrocuteCommand : LocalizedEntityCommands
             return;
         }
 
-        if (!_statusEffects.CanApplyEffect(uid.Value, ElectrocutionStatusEffect))
+        if (!_statusEffects.CanAddStatusEffect(uid.Value, ElectrocutionStatusEffect.Id))
         {
             shell.WriteError(Loc.GetString("cmd-electrocute-entity-cannot-be-electrocuted"));
             return;

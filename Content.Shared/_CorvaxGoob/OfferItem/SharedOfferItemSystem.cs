@@ -9,6 +9,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CorvaxGoob.OfferItem;
@@ -19,8 +20,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    [ValidatePrototypeId<AlertPrototype>]
-    protected const string OfferAlert = "Offer";
+    protected static readonly ProtoId<AlertPrototype> OfferAlert = "Offer";
 
     public override void Initialize()
     {
@@ -142,7 +142,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
         if (TryComp<OfferItemComponent>(component.Target, out var offerItem) && component.Target is not null)
         {
-            if (component.Item is not null && EntityManager.EntityExists(component.Item))
+            if (component.Item is not null && Exists(component.Item))
             {
                 if (!_timing.IsFirstTimePredicted)
                 {
@@ -155,7 +155,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
                 }
 
             }
-            else if (offerItem.Item is not null && EntityManager.EntityExists(offerItem.Item))
+            else if (offerItem.Item is not null && Exists(offerItem.Item))
             {
                 if (!_timing.IsFirstTimePredicted)
                 {
@@ -202,7 +202,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
             component.Target is null)
             return;
 
-        if (offerItem.Item is not null && EntityManager.EntityExists(offerItem.Item))
+        if (offerItem.Item is not null && Exists(offerItem.Item))
         {
             _popup.PopupClient(Loc.GetString("offer-item-no-give",
                 ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),

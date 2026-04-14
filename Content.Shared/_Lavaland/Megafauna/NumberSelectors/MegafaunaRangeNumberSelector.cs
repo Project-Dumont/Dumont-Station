@@ -1,5 +1,4 @@
 using System.Numerics;
-using Robust.Shared.Random;
 
 namespace Content.Shared._Lavaland.Megafauna.NumberSelectors;
 
@@ -18,6 +17,6 @@ public sealed partial class MegafaunaRangeNumberSelector : MegafaunaNumberSelect
 
     public override float Get(MegafaunaCalculationBaseArgs args)
     {
-        return args.Random.NextFloat(Range.X, Range.Y);
+        return (float) (args.Random.NextDouble() * (Range.Y - Range.X) + Range.X);
     }
 }

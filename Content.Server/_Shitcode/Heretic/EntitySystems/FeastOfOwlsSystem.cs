@@ -8,6 +8,7 @@ using Content.Shared.Heretic;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Components;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Store.Components;
 using Robust.Shared.Audio.Systems;
 
@@ -15,7 +16,7 @@ namespace Content.Server.Heretic.EntitySystems;
 
 public sealed class FeastOfOwlsSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _status = default!;
     [Dependency] private readonly JitteringSystem _jitter = default!;
     [Dependency] private readonly StutteringSystem _stutter = default!;
     [Dependency] private readonly StunSystem _stun = default!;
@@ -69,8 +70,8 @@ public sealed class FeastOfOwlsSystem : EntitySystem
             if (comp.CurrentStep < comp.Reward)
                 continue;
 
-            _status.TryRemoveStatusEffect(uid, "Stun", status);
-            _status.TryRemoveStatusEffect(uid, "KnockedDown", status);
+            _status.TryRemoveStatusEffect(uid, "StatusEffectStunned");
+            _status.TryRemoveStatusEffect(uid, "KnockedDown");
             RemCompDeferred(uid, comp);
         }
     }

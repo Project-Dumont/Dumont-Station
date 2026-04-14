@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -32,6 +32,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using NewStatusEffectsSystem = Content.Shared.StatusEffectNew.StatusEffectsSystem;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
@@ -41,7 +42,7 @@ public abstract class SharedEntropicPlumeSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
 
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly NewStatusEffectsSystem _status = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedGunSystem _gun = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _weapon = default!;
@@ -50,7 +51,6 @@ public abstract class SharedEntropicPlumeSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
@@ -77,10 +77,9 @@ public abstract class SharedEntropicPlumeSystem : EntitySystem
 
         ent.Comp.AffectedEntities.Add(args.OtherEntity);
 
-        _status.TryAddStatusEffect<TemporaryBlindnessComponent>(args.OtherEntity,
+        _status.TrySetStatusEffectDuration(args.OtherEntity,
             "TemporaryBlindness",
-            TimeSpan.FromSeconds(ent.Comp.Duration),
-            true);
+            TimeSpan.FromSeconds(ent.Comp.Duration));
 
         var affected = EnsureComp<EntropicPlumeAffectedComponent>(args.OtherEntity);
         affected.Duration = MathF.Max(affected.Duration, ent.Comp.Duration);
@@ -176,7 +175,7 @@ public abstract class SharedEntropicPlumeSystem : EntitySystem
 
                 _combat.SetInCombatMode(uid, true, combat);
 
-                var target = rand.Pick(targets);
+                var target = targets[rand.Next(targets.Count)];
                 var coords = Transform(target).Coordinates;
 
                 if (gunComp != null)

@@ -10,6 +10,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Speech.EntitySystems;
@@ -18,7 +19,7 @@ public abstract class SharedStutteringSystem : EntitySystem
 {
     public static readonly ProtoId<StatusEffectPrototype> StutterKey = "Stutter";
 
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!;
 
     // For code in shared... I imagine we ain't getting accent prediction anytime soon so let's not bother.
     public virtual void DoStutter(EntityUid uid, TimeSpan time, bool refresh, StatusEffectsComponent? status = null)
@@ -27,11 +28,11 @@ public abstract class SharedStutteringSystem : EntitySystem
 
     public virtual void DoRemoveStutterTime(EntityUid uid, double timeRemoved)
     {
-        _statusEffectsSystem.TryRemoveTime(uid, StutterKey, TimeSpan.FromSeconds(timeRemoved));
+        _statusEffectsSystem.TryAddTime(uid, StutterKey.Id, -TimeSpan.FromSeconds(timeRemoved));
     }
 
     public void DoRemoveStutter(EntityUid uid, double timeRemoved)
     {
-       _statusEffectsSystem.TryRemoveStatusEffect(uid, StutterKey);
+       _statusEffectsSystem.TryRemoveStatusEffect(uid, StutterKey.Id);
     }
 }

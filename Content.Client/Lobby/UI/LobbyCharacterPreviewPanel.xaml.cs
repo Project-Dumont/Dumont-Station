@@ -97,6 +97,7 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
         ViewBox.AddChild(spriteView);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

@@ -17,6 +17,7 @@ using Content.Server.Silicons.StationAi;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -29,6 +30,8 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiHijackMechSystem : EntitySystem
 {
+    private static readonly EntProtoId ActionMalfAiReturnToCore = "ActionMalfAiReturnToCore";
+
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedMechSystem _mech = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
@@ -128,7 +131,7 @@ public sealed class MalfAiHijackMechSystem : EntitySystem
         // Grant Return-to-Core during hijack, remember the action entity for cleanup.
         if (hijack.ReturnAction == null)
         {
-            var returnAction = _actions.AddAction(pilotUid, "ActionMalfAiReturnToCore");
+            var returnAction = _actions.AddAction(pilotUid, ActionMalfAiReturnToCore);
             if (returnAction != null)
                 hijack.ReturnAction = returnAction.Value;
         }

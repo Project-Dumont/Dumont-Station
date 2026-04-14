@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
@@ -325,10 +325,9 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        foreach (var comp in EntityManager.EntityQuery<ChangelingIdentityComponent>())
+        var query = EntityQueryEnumerator<ChangelingIdentityComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
-            var uid = comp.Owner;
-
             if (_timing.CurTime < comp.UpdateTimer)
                 continue;
 
@@ -392,7 +391,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     {
         _audio.PlayPvs(comp.ShriekSound, uid);
 
-        var center = Transform(uid).MapPosition;
+        var center = _transform.ToMapCoordinates(Transform(uid).Coordinates);
         var gamers = Filter.Empty();
         gamers.AddInRange(center, comp.ShriekPower, _player, EntityManager);
 
@@ -401,7 +400,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
             if (gamer.AttachedEntity == null)
                 continue;
 
-            var pos = Transform(gamer.AttachedEntity!.Value).WorldPosition;
+            var pos = _transform.GetWorldPosition(gamer.AttachedEntity.Value);
             var delta = center.Position - pos;
 
             if (delta.EqualsApprox(Vector2.Zero))
@@ -557,7 +556,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
             var coords = Transform(uid).Coordinates;
             foreach (var (proto, slot) in armors)
             {
-                EntityUid armor = EntityManager.SpawnEntity(proto, coords);
+                EntityUid armor = Spawn(proto, coords);
                 if (!_inventory.TryEquip(uid, armor, slot, force: true))
                 {
                     QueueDel(armor);
@@ -590,7 +589,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     public bool TryStealDNA(EntityUid uid, EntityUid target, ChangelingIdentityComponent comp, bool countObjective = false)
     {
         if (!TryComp<HumanoidAppearanceComponent>(target, out var appearance)
-        || !TryComp<MetaDataComponent>(target, out var metadata)
+        || !TryComp(target, out MetaDataComponent? metadata)
         || !TryComp<DnaComponent>(target, out var dna)
         || !TryComp<FingerprintComponent>(target, out var fingerprint))
         {
@@ -683,7 +682,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         {
             Comp<FingerprintComponent>(newEnt).Fingerprint = data.Fingerprint;
             Comp<DnaComponent>(newEnt).DNA = data.DNA;
-            _humanoid.CloneAppearance(data.Appearance.Owner, newEnt);
+            _humanoid.CloneAppearance(uid, newEnt, data.Appearance);
             _metaData.SetEntityName(newEnt, data.Name);
             var message = Loc.GetString("changeling-transform-finish", ("target", data.Name));
             _popup.PopupEntity(message, newEnt, newEnt);
@@ -874,3 +873,5 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     }
     #endregion
 }
+
+

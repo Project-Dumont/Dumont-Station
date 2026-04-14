@@ -55,6 +55,7 @@ namespace Content.Client.Options.UI.Tabs
             Reset();
         }
 
+        [Obsolete]
         protected override void Dispose(bool disposing)
         {
             ApplyButton.OnPressed -= OnApplyButtonPressed;

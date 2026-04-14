@@ -93,18 +93,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
         // Goob edit start - instant prying
         Assert.That(ActiveDoAfters.Count(), Is.EqualTo(0));
         await AssertTile(Plating);
-        return;
         // Goob edit end
-
-        // Second DoAfter cancels the first.
-        await Server.WaitPost(() => InteractSys.UserInteraction(SEntMan.GetEntity(Player), SEntMan.GetCoordinates(TargetCoords), SEntMan.GetEntity(Target)));
-        Assert.That(ActiveDoAfters.Count(), Is.EqualTo(0));
-        await AssertTile(Floor);
-
-        // Third do after will work fine
-        await InteractUsing(Pry);
-        Assert.That(ActiveDoAfters.Count(), Is.EqualTo(0));
-        await AssertTile(Plating);
     }
 
     [Test]

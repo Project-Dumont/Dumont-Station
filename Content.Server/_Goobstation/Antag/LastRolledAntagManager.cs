@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
@@ -22,7 +22,6 @@ namespace Content.Server._Goobstation.Antag
     {
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly ITaskManager _task = default!;
-        [Dependency] private readonly IPlayerManager _player = default!;
         private readonly List<Task> _pendingSaveTasks = new();
         private ISawmill _sawmill = default!;
 

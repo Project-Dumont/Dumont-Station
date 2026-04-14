@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Shadowling.Components;
+﻿using Content.Goobstation.Shared.Shadowling.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
@@ -96,7 +96,7 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
         if (newUid == null)
             return;
 
-        var ascendantShadowlingComp = EntityManager.GetComponent<ShadowlingComponent>(newUid.Value);
+        var ascendantShadowlingComp = Comp<ShadowlingComponent>(newUid.Value);
         var shadowlingSystem = EntityManager.System<ShadowlingSystem>();
 
         shadowlingSystem.OnPhaseChanged(newUid.Value, ascendantShadowlingComp, ShadowlingPhases.PostHatch);
@@ -104,3 +104,4 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
         comp.HasBeenHatched = true;
     }
 }
+

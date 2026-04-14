@@ -14,6 +14,8 @@ namespace Content.Client._Shitcode.Heretic;
 
 public sealed class EntropicPlumeSystem : SharedEntropicPlumeSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -29,10 +31,10 @@ public sealed class EntropicPlumeSystem : SharedEntropicPlumeSystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        if (!sprite.LayerMapTryGet(EntropicPlumeKey.Key, out var layer))
+        if (!_sprite.LayerMapTryGet((uid, sprite), EntropicPlumeKey.Key, out var layer, false))
             return;
 
-        sprite.RemoveLayer(layer);
+        _sprite.RemoveLayer((uid, sprite), layer);
     }
 
     private void OnStartup(Entity<EntropicPlumeAffectedComponent> ent, ref ComponentStartup args)
@@ -42,10 +44,10 @@ public sealed class EntropicPlumeSystem : SharedEntropicPlumeSystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        if (sprite.LayerMapTryGet(EntropicPlumeKey.Key, out _))
+        if (_sprite.LayerMapTryGet((uid, sprite), EntropicPlumeKey.Key, out _, false))
             return;
 
-        var layer = sprite.AddLayer(comp.Sprite);
-        sprite.LayerMapSet(EntropicPlumeKey.Key, layer);
+        var layer = _sprite.AddLayer((uid, sprite), comp.Sprite);
+        _sprite.LayerMapSet((uid, sprite), EntropicPlumeKey.Key, layer);
     }
 }

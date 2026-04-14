@@ -267,10 +267,10 @@ namespace Content.Server.VendingMachines
             if (user is not null
                 && entry.Price is not null
                 && _id.TryFindIdCard(user.Value, out var id)
-                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && TryComp<NanoBankCardComponent>(id, out var card)
                 && card.Station is not null
                 && TryComp<EconomyManagerComponent>(card.Station, out var economy))
-                _economy.TryPurchase(economy, card.AccountId, entry.Price.Value);
+                _economy.TryPurchase((card.Station.Value, economy), card.AccountId, entry.Price.Value);
 
             if (TryComp<SpeakOnUIClosedComponent>(uid, out var speakComponent))
                 _speakOn.TrySetFlag((uid, speakComponent));
@@ -290,7 +290,7 @@ namespace Content.Server.VendingMachines
                 return true;
 
             if (_id.TryFindIdCard(actor, out var id)
-                && TryComp<NanoBankCardComponent>(id.Owner, out var card)
+                && TryComp<NanoBankCardComponent>(id, out var card)
                 && card.Station is not null
                 && TryComp<EconomyManagerComponent>(card.Station, out var economy)
                 && _economy.ValidateCard(economy, card)

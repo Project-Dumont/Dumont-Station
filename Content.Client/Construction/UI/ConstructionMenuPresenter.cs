@@ -65,6 +65,8 @@ namespace Content.Client.Construction.UI
     /// </summary>
     internal sealed class ConstructionMenuPresenter : IDisposable
     {
+        private static readonly ISawmill Sawmill = Logger.GetSawmill("construction.menu");
+
         [Dependency] private readonly EntityManager _entManager = default!;
         [Dependency] private readonly IEntitySystemManager _systemManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -181,13 +183,18 @@ namespace Content.Client.Construction.UI
         /// <inheritdoc />
         public void Dispose()
         {
-            _constructionView.Dispose();
+            _constructionView.Close();
 
             SystemBindingChanged(null);
             _systemManager.SystemLoaded -= OnSystemLoaded;
             _systemManager.SystemUnloaded -= OnSystemUnloaded;
 
             _placementManager.PlacementChanged -= OnPlacementChanged;
+        }
+
+        public void Close()
+        {
+            Dispose();
         }
 
         private void OnPlacementChanged(object? sender, EventArgs e)
@@ -335,9 +342,7 @@ namespace Content.Client.Construction.UI
 
                 if (!_constructionSystem!.TryGetRecipePrototype(recipe.ID, out var targetProtoId))
                 {
-                    Logger.Error("Cannot find the target prototype in the recipe cache with the id \"{0}\" of {1}.",
-                        recipe.ID,
-                        nameof(ConstructionPrototype));
+                    Sawmill.Error($"Cannot find the target prototype in the recipe cache with the id \"{recipe.ID}\" of {nameof(ConstructionPrototype)}.");
                     continue;
                 }
 
@@ -561,7 +566,7 @@ namespace Content.Client.Construction.UI
 
             foreach (var id in favorites)
             {
-                if (_prototypeManager.TryIndex(id, out ConstructionPrototype? recipe, logError: false))
+                if (_prototypeManager.Resolve(id, out ConstructionPrototype? recipe))
                     _favoritedRecipes.Add(recipe);
             }
 

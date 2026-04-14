@@ -350,7 +350,8 @@ public abstract class SharedFishingSystem : EntitySystem
             var rand = new Random((int) Timing.CurTick.Value); // evil random prediction hack
 
             // Calculate throw direction
-            var direction = (playerCoords.Position - targetCoords.Position) * rand.NextFloat(0.2f, 0.85f);
+            var forceMultiplier = (float) (rand.NextDouble() * (0.85f - 0.2f) + 0.2f);
+            var direction = (playerCoords.Position - targetCoords.Position) * forceMultiplier;
 
             // Yeet
             Throwing.TryThrow(attachedEnt, direction, 4f, player);

@@ -92,7 +92,8 @@ public sealed partial class PathfindingSystem
                 var perpLine = pointBPerp - pointAPerp;
                 var perpHalfway = perpLine.Length() / 2f;
 
-                var splinePoint = (pointAPerp + perpLine.Normalized() * random.NextFloat(-args.MaxRatio, args.MaxRatio) * perpHalfway).Floored();
+                var splineOffset = (float) (random.NextDouble() * (args.MaxRatio * 2) - args.MaxRatio);
+                var splinePoint = (pointAPerp + perpLine.Normalized() * splineOffset * perpHalfway).Floored();
 
                 // We essentially take (A, B) and turn it into (A, C) & (C, B)
                 pairs[i] = (pointA, splinePoint);

@@ -20,7 +20,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.NPC;
 using Content.Shared.Popups;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Server.Player;
 using Robust.Shared.Random;
 
@@ -96,10 +96,10 @@ public sealed class CosmicSiphonSystem : EntitySystem
         uid.Comp.EntropyBudget += uid.Comp.CosmicSiphonQuantity;
         Dirty(uid, uid.Comp);
 
-        _statusEffects.TryAddStatusEffect<CosmicEntropyDebuffComponent>(target,
+        _statusEffects.TryAddStatusEffect(target,
             "EntropicDegen",
-            uid.Comp.CosmicEntropyDebuffDuration,
-            true);
+            out _,
+            uid.Comp.CosmicEntropyDebuffDuration);
 
         if (_cosmicCult.EntityIsCultist(target))
         {

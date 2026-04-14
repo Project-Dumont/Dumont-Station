@@ -48,7 +48,7 @@ public sealed partial class HealNearOnPraySystem : EntitySystem
     {
         var lookup = _lookup.GetEntitiesInRange(args.User, comp.Range);
         var canTarget = new HashSet<EntityUid>(lookup
-            .Where(entity => entity != null && _occlusion.InRangeUnOccluded(uid, entity, comp.Range))
+            .Where(entity => _occlusion.InRangeUnOccluded(uid, entity, comp.Range))
             .Select(entity => entity));
 
         foreach (var entity in canTarget.Where(HasComp<MobStateComponent>))

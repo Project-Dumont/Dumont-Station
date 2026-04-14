@@ -30,6 +30,7 @@ public sealed partial class PollVotingWindow : FancyWindow
         RefreshPolls();
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

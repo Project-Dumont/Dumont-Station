@@ -19,6 +19,7 @@ using Content.Shared.Salvage;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Maps;
 
@@ -29,7 +30,6 @@ namespace Content.Server.Maps;
 public sealed class PlanetCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
 
@@ -53,12 +53,6 @@ public sealed class PlanetCommand : IConsoleCommand
 
         var mapId = new MapId(mapInt);
 
-        if (!_mapManager.MapExists(mapId))
-        {
-            shell.WriteError(Loc.GetString($"cmd-planet-map", ("map", mapId)));
-            return;
-        }
-
         if (!_protoManager.TryIndex<BiomeTemplatePrototype>(args[1], out var biomeTemplate))
         {
             shell.WriteError(Loc.GetString("cmd-planet-map-prototype", ("prototype", args[1])));
@@ -66,7 +60,13 @@ public sealed class PlanetCommand : IConsoleCommand
         }
 
         var biomeSystem = _entManager.System<BiomeSystem>();
-        var mapUid = _mapManager.GetMapEntityId(mapId);
+        var mapUid = _entManager.System<MapSystem>().GetMapOrInvalid(mapId);
+        if (mapUid == EntityUid.Invalid)
+        {
+            shell.WriteError(Loc.GetString($"cmd-planet-map", ("map", mapId)));
+            return;
+        }
+
         biomeSystem.EnsurePlanet(mapUid, biomeTemplate);
 
         // - Beginning of GoobStation changes -

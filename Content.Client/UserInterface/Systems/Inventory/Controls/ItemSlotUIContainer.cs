@@ -26,6 +26,7 @@ public interface IItemslotUIContainer
 [Virtual]
 public abstract class ItemSlotUIContainer<T> : GridContainer, IItemslotUIContainer where T : SlotControl
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("inventory.container");
     protected readonly Dictionary<string, T> Buttons = new();
 
     private int? _maxColumns;
@@ -53,7 +54,7 @@ public abstract class ItemSlotUIContainer<T> : GridContainer, IItemslotUIContain
     {
         foreach (var button in Buttons.Values)
         {
-            button.Dispose();
+            button.Orphan();
         }
 
         Buttons.Clear();
@@ -96,7 +97,7 @@ public abstract class ItemSlotUIContainer<T> : GridContainer, IItemslotUIContain
     {
         if (newButton.SlotName == "")
         {
-            Logger.Warning("Could not add button " + newButton.Name + "No slotname");
+            Sawmill.Warning($"Could not add button {newButton.Name} with no slotname");
         }
 
         return !Buttons.TryAdd(newButton.SlotName, newButton) ? null : newButton;
@@ -135,7 +136,7 @@ public abstract class ItemSlotUIContainer<T> : GridContainer, IItemslotUIContain
     {
         RemoveButtonFromDict(button);
         Children.Remove(button);
-        button.Dispose();
+        button.Orphan();
     }
 
     public virtual T? GetButton(string slotName)

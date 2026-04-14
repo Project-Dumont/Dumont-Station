@@ -31,6 +31,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -67,7 +68,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
     private readonly ResPath _mapPath = new("Maps/_DV/Nonstations/cosmicvoid.yml");
     private static readonly EntProtoId CosmicEchoVfx = "CosmicEchoVfx";
     private static readonly ProtoId<StatusEffectPrototype> EntropicDegen = "EntropicDegen";
@@ -205,19 +206,19 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     private void OnGotEquipped(Entity<CosmicEquipmentComponent> ent, ref GotEquippedEvent args)
     {
         if (!EntityIsCultist(args.Equipee))
-            _statusEffects.TryAddStatusEffect<CosmicEntropyNonCultistComponent>(args.Equipee, EntropicDegenNonCultist, TimeSpan.FromDays(1), true); // TimeSpan.MaxValue causes a crash here, so we use FromDays(1) instead.
+            _statusEffects.TryUpdateStatusEffectDuration(args.Equipee, EntropicDegenNonCultist.Id, TimeSpan.FromDays(1)); // TimeSpan.MaxValue causes a crash here, so we use FromDays(1) instead.
     }
 
     private void OnGotUnequipped(Entity<CosmicEquipmentComponent> ent, ref GotUnequippedEvent args)
     {
         if (!EntityIsCultist(args.Equipee))
-            _statusEffects.TryRemoveStatusEffect(args.Equipee, EntropicDegenNonCultist);
+            _statusEffects.TryRemoveStatusEffect(args.Equipee, EntropicDegenNonCultist.Id);
     }
     private void OnGotHeld(Entity<CosmicEquipmentComponent> ent, ref GotEquippedHandEvent args)
     {
         if (!EntityIsCultist(args.User))
         {
-            _statusEffects.TryAddStatusEffect<CosmicEntropyNonCultistComponent>(args.User, EntropicDegenNonCultist, TimeSpan.FromDays(1), true);
+            _statusEffects.TryUpdateStatusEffectDuration(args.User, EntropicDegenNonCultist.Id, TimeSpan.FromDays(1));
             _popup.PopupEntity(Loc.GetString("cosmiccult-gear-pickup", ("ITEM", args.Equipped)), args.User, args.User, PopupType.MediumCaution);
         }
     }
@@ -225,7 +226,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     private void OnGotUnheld(Entity<CosmicEquipmentComponent> ent, ref GotUnequippedHandEvent args)
     {
         if (!EntityIsCultist(args.User))
-            _statusEffects.TryRemoveStatusEffect(args.User, EntropicDegenNonCultist);
+            _statusEffects.TryRemoveStatusEffect(args.User, EntropicDegenNonCultist.Id);
     }
     #endregion
 

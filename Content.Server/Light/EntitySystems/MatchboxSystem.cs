@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+﻿// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
 // SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
@@ -36,7 +36,7 @@ namespace Content.Server.Light.EntitySystems
         private void OnInteractUsing(EntityUid uid, MatchboxComponent component, InteractUsingEvent args)
         {
             if (!args.Handled
-                && EntityManager.TryGetComponent(args.Used, out MatchstickComponent? matchstick)
+                && TryComp(args.Used, out MatchstickComponent? matchstick)
                 && matchstick.CurrentState == SmokableState.Unlit)
             {
                 _stickSystem.Ignite((args.Used, matchstick), args.User);
@@ -45,3 +45,4 @@ namespace Content.Server.Light.EntitySystems
         }
     }
 }
+

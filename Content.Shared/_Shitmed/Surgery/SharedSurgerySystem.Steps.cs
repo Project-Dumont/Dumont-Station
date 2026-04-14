@@ -61,6 +61,9 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 
 public abstract partial class SharedSurgerySystem
 {
+    private static readonly ProtoId<DamageGroupPrototype> BruteDamageGroup = "Brute";
+    private static readonly ProtoId<DamageTypePrototype> PoisonDamageType = "Poison";
+
     private EntityQuery<BodyPartComponent> _partQuery;
     private EntityQuery<SurgeryIgnoreClothingComponent> _ignoreQuery;
     private EntityQuery<SurgeryStepComponent> _stepQuery;
@@ -330,7 +333,7 @@ public abstract partial class SharedSurgerySystem
         if (targetPart != default)
         {
             // We reward players for properly affixing the parts by healing a little bit of damage, and enabling the part temporarily.
-            _wounds.TryHealWoundsOnWoundable(targetPart.Id, 12f, out _, damageGroup: _prototypes.Index<DamageGroupPrototype>("Brute"));
+            _wounds.TryHealWoundsOnWoundable(targetPart.Id, 12f, out _, damageGroup: _prototypes.Index(BruteDamageGroup));
             RemComp<BodyPartReattachedComponent>(targetPart.Id);
         }
     }
@@ -718,7 +721,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         var sepsis = new DamageSpecifier();
-        var poisonPrototype = _prototypes.Index<DamageTypePrototype>("Poison");
+        var poisonPrototype = _prototypes.Index(PoisonDamageType);
 
         if (!IsSanitazed(args.User))
             sepsis += new DamageSpecifier(poisonPrototype, _sepsisEquipmentPenalty);

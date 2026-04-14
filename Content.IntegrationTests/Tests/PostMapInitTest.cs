@@ -541,13 +541,15 @@ namespace Content.IntegrationTests.Tests
                 // testing that maps have nothing with the DoNotMap entity category
                 // I do it here because it's basically copy-paste code for the most part
                 var yamlEntities = root["entities"];
-                if (!protoManager.TryIndex<EntityCategoryPrototype>("DoNotMap", out var dnmCategory))
+                if (!protoManager.TryIndex(DoNotMapCategory, out var dnmCategory))
                     return;
                 foreach (var yamlEntity in (YamlSequenceNode) yamlEntities)
                 {
                     var protoId = yamlEntity["proto"].AsString();
-                    protoManager.TryIndex(protoId, out var proto, false);
-                    if (proto is null || proto.EditorSuffix is null)
+                    if (!protoManager.TryIndex((EntProtoId) protoId, out var proto))
+                        continue;
+
+                    if (proto.EditorSuffix is null)
                         continue;
                     if (proto.Categories.Contains(dnmCategory) && !DoNotMapWhitelist.Contains(map.ToString()))
                     {
@@ -604,7 +606,7 @@ namespace Content.IntegrationTests.Tests
                     var protoId = yamlEntity["proto"].AsString();
 
                     // This doesn't properly handle prototype migrations, but thats not a significant issue.
-                    if (!protoManager.TryIndex(protoId, out var proto, false))
+                    if (!protoManager.TryIndex((EntProtoId) protoId, out var proto))
                         continue;
 
                     Assert.That(!proto.Categories.Contains(dnmCategory),

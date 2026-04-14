@@ -22,7 +22,7 @@ namespace Content.Client.Chat
             SubscribeLocalEvent<TelepathyComponent, ComponentRemove>(OnRemove);
         }
 
-        public TelepathyComponent? Player => CompOrNull<TelepathyComponent>(_playerManager.LocalPlayer?.ControlledEntity);
+        public TelepathyComponent? Player => CompOrNull<TelepathyComponent>(_playerManager.LocalSession?.AttachedEntity);
         public bool IsPsionic => Player != null;
 
         private void OnInit(EntityUid uid, TelepathyComponent component, ComponentInit args)

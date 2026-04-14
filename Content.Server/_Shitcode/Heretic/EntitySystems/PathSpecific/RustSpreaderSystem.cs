@@ -1,4 +1,4 @@
-using Content.Server.Heretic.Abilities;
+﻿using Content.Server.Heretic.Abilities;
 using Content.Server.Heretic.Components.PathSpecific;
 using Content.Server.Shuttles.Components;
 using Content.Shared._Goobstation.Heretic.Components;
@@ -15,7 +15,6 @@ public sealed class RustSpreaderSystem : EntitySystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
 
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly HereticAbilitySystem _ability = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;

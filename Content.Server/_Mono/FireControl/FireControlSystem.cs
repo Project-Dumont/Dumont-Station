@@ -391,10 +391,10 @@ public sealed partial class FireControlSystem : EntitySystem
             if (!TryComp<GunComponent>(localWeapon, out var gun))
                 continue;
 
-            if (TryComp<TransformComponent>(localWeapon, out var weaponXform))
+            if (TryComp(localWeapon, out TransformComponent? weaponXform))
             {
                 var currentMapCoords = _xform.GetMapCoordinates(localWeapon, weaponXform);
-                var destinationMapCoords = targetCoords.ToMap(EntityManager, _xform);
+                var destinationMapCoords = _xform.ToMapCoordinates(targetCoords);
 
                 if (destinationMapCoords.MapId == currentMapCoords.MapId && currentMapCoords.MapId != MapId.Nullspace)
                 {
@@ -412,7 +412,7 @@ public sealed partial class FireControlSystem : EntitySystem
             }
 
             var weaponX = Transform(localWeapon);
-            var targetPos = targetCoords.ToMap(EntityManager, _xform);
+            var targetPos = _xform.ToMapCoordinates(targetCoords);
 
             if (targetPos.MapId != weaponX.MapID)
                 continue;
@@ -501,7 +501,7 @@ public sealed partial class FireControlSystem : EntitySystem
         // Get weapon and target positions
         var weaponXform = Transform(weapon);
         var weaponPos = _xform.GetWorldPosition(weaponXform);
-        var targetPos = coords.ToMap(EntityManager, _xform).Position;
+        var targetPos = _xform.ToMapCoordinates(coords).Position;
 
         // Calculate direction
         var direction = targetPos - weaponPos;

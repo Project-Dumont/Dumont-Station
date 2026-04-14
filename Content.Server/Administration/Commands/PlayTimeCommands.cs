@@ -29,6 +29,7 @@ public sealed class PlayTimeCommandUtilities
         { "h", 60 },
         { "m", 1 },
     };
+    private static readonly Regex TimeRegex = new("(\\d+)([A-Za-z]+)");
 
     public struct TimeUnit
     {
@@ -69,7 +70,7 @@ public sealed class PlayTimeCommandUtilities
             return result;
         }
 
-        MatchCollection timeRegex = Regex.Matches(timeString, "(\\d+)([A-Za-z]+)");
+        MatchCollection timeRegex = TimeRegex.Matches(timeString);
 
         foreach (Match match in timeRegex)
         {

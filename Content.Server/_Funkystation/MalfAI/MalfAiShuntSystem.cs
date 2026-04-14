@@ -14,6 +14,7 @@ using Content.Server._Funkystation.MalfAI.Components;
 using Content.Shared._Funkystation.MalfAI.Actions;
 using Content.Shared._Funkystation.MalfAI.Components;
 using Content.Shared._Funkystation.MalfAI;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -23,6 +24,8 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiShuntSystem : EntitySystem
 {
+    private static readonly EntProtoId ActionMalfAiReturnToCore = "ActionMalfAiReturnToCore";
+
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
@@ -102,7 +105,7 @@ public sealed class MalfAiShuntSystem : EntitySystem
         // Grant Return to Core action while shunted, and remember the action entity for removal.
         if (shunted.ReturnAction == null)
         {
-            var returnAction = _actions.AddAction(ai.Owner, "ActionMalfAiReturnToCore");
+            var returnAction = _actions.AddAction(ai.Owner, ActionMalfAiReturnToCore);
             if (returnAction != null)
                 shunted.ReturnAction = returnAction.Value;
         }

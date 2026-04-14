@@ -45,6 +45,7 @@ using Content.Shared.Alert;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
@@ -57,11 +58,11 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Systems;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Speech;
 using Content.Shared.Standing;
-using Content.Shared.StatusEffect;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Stunnable;
@@ -87,7 +88,6 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
-    [Dependency] private readonly Content.Shared.StatusEffect.StatusEffectsSystem _status = default!;
     [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _newStatus = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly GrabIntentSystem _grab = default!;
@@ -117,6 +117,8 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
     [Dependency] private readonly SharedSprintingSystem _sprinting = default!;
 
     public static readonly EntProtoId MartsGenericSlow = "MartialArtsGenericSlowdownEffect";
+    protected static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+    private static readonly ProtoId<NpcFactionPrototype> DragonFaction = "Dragon";
 
     public override void Initialize()
     {
@@ -229,8 +231,8 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             return;
 
         var dragonQuery =
-            EntityQueryEnumerator<DragonKungFuTimerComponent, StatusEffectsComponent, MobStateComponent, PhysicsComponent>();
-        while (dragonQuery.MoveNext(out var uid, out var timer, out var status, out var mobState, out var physics))
+            EntityQueryEnumerator<DragonKungFuTimerComponent, MobStateComponent, PhysicsComponent>();
+        while (dragonQuery.MoveNext(out var uid, out var timer, out var mobState, out var physics))
         {
             if (mobState.CurrentState != MobState.Alive)
                 continue;
@@ -245,11 +247,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                 || _timing.CurTime < timer.LastMoveTime + timer.PauseDuration)
                 continue;
 
-            _status.TryAddStatusEffect<DragonPowerBuffComponent>(uid,
-                "DragonPower",
-                timer.BuffLength,
-                true,
-                status);
+            _newStatus.TryAddStatusEffectDuration(uid, "DragonPower", timer.BuffLength);
 
             // So that it doesn't update constantly
             timer.LastMoveTime = _timing.CurTime;

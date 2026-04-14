@@ -57,6 +57,6 @@ public sealed class AttachedRadialSelectorMenuBUI(EntityUid owner, Enum uiKey)
     {
         base.Dispose(disposing);
         if (disposing)
-            _menu.Dispose();
+            _menu.Close();
     }
 }

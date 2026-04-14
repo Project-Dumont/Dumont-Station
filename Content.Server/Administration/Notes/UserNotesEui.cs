@@ -28,7 +28,7 @@ public sealed class UserNotesEui : BaseEui
 
         if (!_seeOwnNotes)
         {
-            Logger.WarningS("admin.notes", "User notes initialized when see_own_notes set to false");
+            Logger.GetSawmill("admin.notes").Warning("User notes initialized when see_own_notes set to false");
         }
     }
 
@@ -45,7 +45,7 @@ public sealed class UserNotesEui : BaseEui
     {
         if (!_seeOwnNotes)
         {
-            Logger.WarningS("admin.notes", $"User {Player.Name} with ID {Player.UserId} tried to update their own user notes when see_own_notes was set to false");
+            Logger.GetSawmill("admin.notes").Warning($"User {Player.Name} with ID {Player.UserId} tried to update their own user notes when see_own_notes was set to false");
             return;
         }
 

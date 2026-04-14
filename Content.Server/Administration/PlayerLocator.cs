@@ -125,7 +125,7 @@ namespace Content.Server.Administration
         {
 #if DEBUG
             return null; // this is MF DOOM.
-#endif
+#else
             // Check people currently on the server, the easiest case.
             if (_playerManager.TryGetSessionById(userId, out var session))
                 return ReturnForSession(session);
@@ -141,6 +141,7 @@ namespace Content.Server.Administration
             using var resp = await _httpClient.GetAsync(requestUri, cancel);
 
             return await HandleAuthServerResponse(resp, cancel);
+#endif
         }
 
         private async Task<LocatedPlayerData?> HandleAuthServerResponse(HttpResponseMessage resp, CancellationToken cancel)

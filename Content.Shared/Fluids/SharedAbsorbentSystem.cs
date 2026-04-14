@@ -27,6 +27,7 @@ namespace Content.Shared.Fluids;
 /// <summary>
 /// Mopping logic for interacting with puddle components.
 /// </summary>
+#pragma warning disable CS0618
 public abstract class SharedAbsorbentSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -288,7 +289,6 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         var (_, absorber, useDelay) = absorbEnt;
 
         Solution puddleSplit;
-        var isRemoved = false;
         if (absorber.UseAbsorberSolution)
         {
             // No reason to mop something that 1) can evaporate, 2) is an absorber, and 3) is being mopped with
@@ -343,7 +343,6 @@ public abstract class SharedAbsorbentSystem : EntitySystem
                 // Spawn a *sparkle*
                 PredictedSpawnAttachedTo(absorber.MoppedEffect, Transform(target).Coordinates);
                 PredictedQueueDel(target);
-                isRemoved = true;
             }
         }
 
@@ -368,3 +367,4 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         return true;
     }
 }
+#pragma warning restore CS0618

@@ -94,11 +94,11 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
     public static readonly EntProtoId ImpactProto = "ImpactEffect";
+    private static readonly ProtoId<DisplacementEffect> DisplacementEffectId = "displacementEffect";
 
     private DisplacementEffect _displacementEffect = null!;
 
@@ -147,7 +147,7 @@ public sealed partial class GunSystem : SharedGunSystem
         InitializeMagazineVisuals();
         InitializeSpentAmmo();
 
-        _displacementEffect = _proto.Index<DisplacementEffect>("displacementEffect");
+        _displacementEffect = _proto.Index(DisplacementEffectId);
     }
 
     private void OnUpdateClientAmmo(EntityUid uid, AmmoCounterComponent ammoComp, ref UpdateClientAmmoEvent args)
@@ -208,10 +208,10 @@ public sealed partial class GunSystem : SharedGunSystem
         var xform = Transform(ent);
         xform.LocalRotation = angle;
         spriteComp[EffectLayers.Unshaded].AutoAnimated = false;
-        spriteComp.LayerSetSprite(EffectLayers.Unshaded, rsi);
-        spriteComp.LayerSetState(EffectLayers.Unshaded, rsi.RsiState);
-        spriteComp.Offset = new Vector2(1f, 0f);
-        spriteComp.Rotation = 1.5708f;
+        _sprite.LayerSetSprite((ent, spriteComp), EffectLayers.Unshaded, rsi);
+        _sprite.LayerSetRsiState((ent, spriteComp), EffectLayers.Unshaded, rsi.RsiState);
+        _sprite.SetOffset((ent, spriteComp), new Vector2(1f, 0f));
+        _sprite.SetRotation((ent, spriteComp), new Angle(1.5708f));
         spriteComp[EffectLayers.Unshaded].Visible = true;
 
         var anim = new Animation()
@@ -250,15 +250,15 @@ public sealed partial class GunSystem : SharedGunSystem
         var xform = Transform(ent);
         xform.LocalRotation = angle;
         spriteComp[EffectLayers.Unshaded].AutoAnimated = false;
-        spriteComp.LayerSetSprite(EffectLayers.Unshaded, rsi);
-        spriteComp.LayerSetState(EffectLayers.Unshaded, rsi.RsiState);
+        _sprite.LayerSetSprite((ent, spriteComp), EffectLayers.Unshaded, rsi);
+        _sprite.LayerSetRsiState((ent, spriteComp), EffectLayers.Unshaded, rsi.RsiState);
         if (travel)
         {
-            spriteComp.Scale = new Vector2(0.05f, 0.5f);
-            spriteComp.Offset = new Vector2(distance * -0.5f, 0f);
+            _sprite.SetScale((ent, spriteComp), new Vector2(0.05f, 0.5f));
+            _sprite.SetOffset((ent, spriteComp), new Vector2(distance * -0.5f, 0f));
         }
         else
-            spriteComp.Scale = new Vector2(1f, 0.5f);
+            _sprite.SetScale((ent, spriteComp), new Vector2(1f, 0.5f));
 
         spriteComp[EffectLayers.Unshaded].Visible = true;
 

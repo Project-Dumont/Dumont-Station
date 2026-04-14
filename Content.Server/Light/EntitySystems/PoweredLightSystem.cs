@@ -400,7 +400,7 @@ namespace Content.Server.Light.EntitySystems
                 case LightBulbState.Normal:
                     if (powerReceiver.Powered && light.On)
                     {
-                        if (!EntityManager.TryGetComponent<GabyLightCycleComponent>(_transformSystem.GetGrid(light.Owner.ToCoordinates()), out var cycle) || !cycle.IsEnabled)
+                        if (!TryComp<GabyLightCycleComponent>(_transformSystem.GetGrid(uid), out var cycle) || !cycle.IsEnabled)
                             SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy, lightBulb.LightSoftness);
                         else
                             SetLight(uid, true);
@@ -581,7 +581,7 @@ namespace Content.Server.Light.EntitySystems
         {
             var station = _transformSystem.GetGrid(uid);
             Entity<PoweredLightComponent> lightEnt = (uid, component);
-            if (EntityManager.TryGetComponent<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
+            if (TryComp<GabyLightCycleComponent>(station, out var cycle) && cycle.IsEnabled)
                 if (!enabled)
                     cycle.BulbList.Remove(lightEnt);
                 else if (!cycle.BulbList.Contains(lightEnt))

@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Shadowling.Components;
+﻿using Content.Goobstation.Shared.Shadowling.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
@@ -106,7 +106,7 @@ public sealed class AntiMindControlItemSystem : EntitySystem
             if (!HasComp<EnthrallResistanceComponent>(target))
                 EnsureComp<EnthrallResistanceComponent>(target);
 
-            var enthrallRes = EntityManager.GetComponent<EnthrallResistanceComponent>(target);
+            var enthrallRes = Comp<EnthrallResistanceComponent>(target);
             enthrallRes.ExtraTime += enthrallRes.ExtraTimeUpdate;
 
             _popupSystem.PopupPredicted(Loc.GetString("mind-control-thrall-done"), target, target, PopupType.MediumCaution);
@@ -121,3 +121,4 @@ public sealed class AntiMindControlItemSystem : EntitySystem
         args.Handled = true;
     }
 }
+

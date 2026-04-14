@@ -11,6 +11,7 @@
 
 using Content.Shared.Clothing.Components;
 using Content.Shared.Foldable;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 
@@ -34,11 +35,14 @@ public sealed class FoldableClothingSystem : EntitySystem
     // Goobstation Start - #3632
     private void OnMapInit(Entity<FoldableClothingComponent> ent, ref MapInitEvent args)
     {
-        if (ent.Comp.FoldedHideLayers != null || ent.Comp.UnfoldedHideLayers != null)
-        {
-            var hideLayer = EnsureComp<HideLayerClothingComponent>(ent.Owner);
-            hideLayer.Slots = ent.Comp.UnfoldedHideLayers;
-        }
+        if (ent.Comp.FoldedHideLayers.Count == 0 && ent.Comp.UnfoldedHideLayers.Count == 0)
+            return;
+
+        if (!TryComp<ClothingComponent>(ent, out var clothing))
+            return;
+
+        var hideLayer = EnsureComp<HideLayerClothingComponent>(ent);
+        SetHiddenLayers(hideLayer, ent.Comp.UnfoldedHideLayers, ent.Comp.UnfoldedSlots ?? clothing.Slots);
     }
     // Goobstation end
     private void OnFoldAttempt(Entity<FoldableClothingComponent> ent, ref FoldAttemptEvent args)
@@ -86,8 +90,8 @@ public sealed class FoldableClothingSystem : EntitySystem
             // This should instead work via an event or something that gets raised to optionally modify the currently hidden layers.
             // Or at the very least it should stash the old layers and restore them when unfolded.
             // TODO CLOTHING fix this.
-            if (ent.Comp.FoldedHideLayers.Count != 0 && TryComp<HideLayerClothingComponent>(ent.Owner, out var hideLayerComp))
-                hideLayerComp.Slots = ent.Comp.FoldedHideLayers;
+            if (ent.Comp.FoldedHideLayers.Count != 0 && TryComp<HideLayerClothingComponent>(ent, out var hideLayerComp))
+                SetHiddenLayers(hideLayerComp, ent.Comp.FoldedHideLayers, ent.Comp.FoldedSlots ?? clothingComp.Slots);
 
         }
         else
@@ -102,9 +106,22 @@ public sealed class FoldableClothingSystem : EntitySystem
                 _itemSystem.SetHeldPrefix(ent.Owner, null, false, itemComp);
 
             // TODO CLOTHING fix this.
-            if (ent.Comp.UnfoldedHideLayers.Count != 0 && TryComp<HideLayerClothingComponent>(ent.Owner, out var hideLayerComp))
-                hideLayerComp.Slots = ent.Comp.UnfoldedHideLayers;
+            if (ent.Comp.UnfoldedHideLayers.Count != 0 && TryComp<HideLayerClothingComponent>(ent, out var hideLayerComp))
+                SetHiddenLayers(hideLayerComp, ent.Comp.UnfoldedHideLayers, ent.Comp.UnfoldedSlots ?? clothingComp.Slots);
 
+        }
+    }
+
+    private static void SetHiddenLayers(
+        HideLayerClothingComponent hideLayer,
+        HashSet<HumanoidVisualLayers> layers,
+        SlotFlags slotFlags)
+    {
+        hideLayer.Layers.Clear();
+
+        foreach (var layer in layers)
+        {
+            hideLayer.Layers[layer] = slotFlags;
         }
     }
 }

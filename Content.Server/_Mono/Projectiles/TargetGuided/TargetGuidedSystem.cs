@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Shared.Interaction;
 using Content.Shared.Projectiles;
 using Content.Shared._Mono.FireControl;
@@ -122,8 +122,8 @@ public sealed class TargetGuidedSystem : EntitySystem
         if (component.TargetPosition.HasValue)
         {
             // Convert both coordinates to map positions to compare them
-            var currentMapPos = coordinates.ToMap(EntityManager, _transform);
-            var previousMapPos = component.TargetPosition.Value.ToMap(EntityManager, _transform);
+            var currentMapPos = _transform.ToMapCoordinates(coordinates);
+            var previousMapPos = _transform.ToMapCoordinates(component.TargetPosition.Value);
 
             // Check if they're on the same map and calculate distance
             if (currentMapPos.MapId == previousMapPos.MapId)
@@ -156,7 +156,7 @@ public sealed class TargetGuidedSystem : EntitySystem
             return;
 
         // Get the positions in map coordinates
-        var targetPos = guidedComp.TargetPosition.Value.ToMap(EntityManager, _transform);
+        var targetPos = _transform.ToMapCoordinates(guidedComp.TargetPosition.Value);
         var missilePos = _transform.ToMapCoordinates(xform.Coordinates);
 
         // Skip if on different maps
@@ -194,7 +194,7 @@ public sealed class TargetGuidedSystem : EntitySystem
         // Check if controlling console still exists
         if (component.ControllingConsole.HasValue)
         {
-            if (!EntityManager.EntityExists(component.ControllingConsole.Value))
+            if (!Exists(component.ControllingConsole.Value))
                 return true;
 
             // Check if console is still powered/functioning
@@ -206,3 +206,4 @@ public sealed class TargetGuidedSystem : EntitySystem
         return false;
     }
 }
+

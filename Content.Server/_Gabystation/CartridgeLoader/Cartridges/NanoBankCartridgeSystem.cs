@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
@@ -39,7 +39,6 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 {
     [Dependency] private readonly CartridgeLoaderSystem _cartridge = default!;
     [Dependency] private readonly EconomyManagerSystem _economy = default!;
-    [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedNanoBankSystem _nanoBank = default!;
 
@@ -264,7 +263,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
         //UpdateUIForCard(card);
     }
 
-    // Talvez isso não devese ser público. Mas preciso chamar em PdaSystem.
+    // Talvez isso nÃ£o devese ser pÃºblico. Mas preciso chamar em PdaSystem.
     public void UpdateUIForCard(EntityUid cardUid)
     {
         // Os UpdateUI devem ser relativos ao accountId.
@@ -306,7 +305,7 @@ public sealed class NanoBankCartridgeSystem : EntitySystem
 
         if (nanoBank.Comp.Card != null && TryComp(nanoBank.Comp.Card, out card))
         {
-            // Se o PDA tem ID, então puxa as informações bancárias do ID
+            // Se o PDA tem ID, entÃ£o puxa as informaÃ§Ãµes bancÃ¡rias do ID
             accountId = card.AccountId;
             pin = card.AccountPin;
             notificationsMuted = card.NotificationsMuted;

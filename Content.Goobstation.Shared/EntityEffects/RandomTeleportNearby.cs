@@ -28,6 +28,7 @@ namespace Content.Goobstation.Shared.EntityEffects;
 
 public sealed partial class RandomTeleportNearby : EntityEffect
 {
+    private static readonly ProtoId<TagPrototype> BrainTag = "Brain";
 
     [DataField]
     public float Range = 7;
@@ -71,10 +72,10 @@ public sealed partial class RandomTeleportNearby : EntityEffect
         //Prevent Positronic Brain to get teleported too
         entities.RemoveWhere(ent => //todo upstreamtest
             entityManager.TryGetComponent<TagComponent>(ent, out var tag) &&
-            tagSystem.HasTag(tag, "Brain"));
+            tagSystem.HasTag(tag, BrainTag));
 
         var canTarget = entities
-            .Where(entity => entity != null && occlusionSys.InRangeUnOccluded(uid, entity, Range))
+            .Where(entity => occlusionSys.InRangeUnOccluded(uid, entity, Range))
             .ToHashSet();
 
         if (canTarget.Count == 0)

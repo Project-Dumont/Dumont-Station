@@ -42,7 +42,20 @@ public sealed class TileSystem : EntitySystem
     /// </summary>
     public byte PickVariant(ContentTileDefinition tile)
     {
-        return PickVariant(tile, _robustRandom.GetRandom());
+        var variants = tile.PlacementVariants;
+        var sum = variants.Sum();
+        var accumulated = 0f;
+        var rand = (float) _robustRandom.NextDouble() * sum;
+
+        for (byte i = 0; i < variants.Length; ++i)
+        {
+            accumulated += variants[i];
+
+            if (accumulated >= rand)
+                return i;
+        }
+
+        throw new InvalidOperationException($"Invalid weighted variantize tile pick for {tile.ID}!");
     }
 
     /// <summary>
@@ -63,7 +76,7 @@ public sealed class TileSystem : EntitySystem
 
         var sum = variants.Sum();
         var accumulated = 0f;
-        var rand = random.NextFloat() * sum;
+        var rand = (float) random.NextDouble() * sum;
 
         for (byte i = 0; i < variants.Length; ++i)
         {

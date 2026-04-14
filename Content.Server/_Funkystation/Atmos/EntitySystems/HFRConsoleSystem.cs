@@ -22,9 +22,6 @@ namespace Content.Server._Funkystation.Atmos.Systems;
 public sealed class HFRConsoleSystem : EntitySystem
 {
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly HFRCoreSystem _coreSystem = default!;
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
     [Dependency] private readonly HypertorusFusionReactorSystem _hfrSystem = default!;
     [Dependency] private readonly HFRSidePartSystem _hfrSidePartSystem = default!;
@@ -68,7 +65,7 @@ public sealed class HFRConsoleSystem : EntitySystem
         {
             if (console.CoreUid != null)
             {
-                if (EntityManager.TryGetComponent<HFRCoreComponent>(console.CoreUid, out var coreComp))
+                if (TryComp<HFRCoreComponent>(console.CoreUid, out var coreComp))
                 {
                     coreComp.ConsoleUid = null;
                     _hfrSystem.ToggleActiveState(console.CoreUid.Value, coreComp, false);
@@ -91,7 +88,7 @@ public sealed class HFRConsoleSystem : EntitySystem
 
         bool shouldBePowered = false;
         if (console.CoreUid != null && 
-            EntityManager.EntityExists(console.CoreUid.Value) &&
+            Exists(console.CoreUid.Value) &&
             TryComp<HFRCoreComponent>(console.CoreUid.Value, out var coreComp))
         {
             shouldBePowered = _hfrSystem.AreAllPartsConnected(console.CoreUid.Value, coreComp);

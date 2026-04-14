@@ -377,7 +377,7 @@ public partial class TraumaSystem
     private bool TryFumble(string message, SoundPathSpecifier sound, EntityUid body, float odds)
     {
         var rand = new System.Random((int) _timing.CurTick.Value);
-        if (rand.NextFloat() < odds)
+        if (rand.NextDouble() < odds)
         {
             _popup.PopupClient(Loc.GetString(message), body, PopupType.Medium);
             var ev = new DropHandItemsEvent();

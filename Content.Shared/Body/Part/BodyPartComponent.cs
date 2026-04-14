@@ -35,6 +35,7 @@ using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Prototypes;
 namespace Content.Shared.Body.Part;
 
+#pragma warning disable CS0618
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 //[Access(typeof(SharedBodySystem))] // goob edit - all access :godo:
 public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent // Shitmed Change
@@ -187,6 +188,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
         }
     }
 }
+#pragma warning restore CS0618
 
 /// <summary>
 /// Contains metadata about a body part in relation to its slot.

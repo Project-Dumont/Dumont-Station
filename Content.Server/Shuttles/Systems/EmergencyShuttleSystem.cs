@@ -101,6 +101,7 @@ using Content.Shared.Shuttles.Events;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization.Systems;
@@ -152,8 +153,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
     private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
 
-    [ValidatePrototypeId<WeightedRandomPrototype>]
-    private const string MapsProto = "CentcommWeights"; // Gabystation change
+    private static readonly ProtoId<WeightedRandomPrototype> MapsProto = "CentcommWeights"; // Gabystation change
 
     public override void Initialize()
     {
@@ -414,7 +414,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
                 playDefaultSound: false);
 
             // TODO: Need filter extensions or something don't blame me.
-            _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Misc/notice1.ogg"), Filter.Broadcast(), true);
             return;
         }
 
@@ -469,8 +469,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         // Play announcement audio.
 
         var audioFile = result.ResultType == ShuttleDockResultType.NoDock
-            ? "/Audio/Misc/notice1.ogg"
-            : "/Audio/_Gabystation/Announcements/shuttledocked_saae.ogg";
+            ? new SoundPathSpecifier("/Audio/Misc/notice1.ogg")
+            : new SoundPathSpecifier("/Audio/_Gabystation/Announcements/shuttledocked_saae.ogg");
 
         // TODO: Need filter extensions or something don't blame me.
         _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);

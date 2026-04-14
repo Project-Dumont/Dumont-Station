@@ -122,6 +122,7 @@ using static Content.Shared.Interaction.SharedInteractionSystem;
 
 namespace Content.Shared.Examine
 {
+    #pragma warning disable CS0618
     public abstract partial class ExamineSystemShared : EntitySystem
     {
         [Dependency] private readonly OccluderSystem _occluder = default!;
@@ -656,4 +657,5 @@ namespace Content.Shared.Examine
             Examiner = examiner;
         }
     }
+    #pragma warning restore CS0618
 }

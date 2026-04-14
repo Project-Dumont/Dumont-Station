@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
 // ported by Punker Corps <punkercorps@gmail.com>
@@ -11,7 +11,7 @@ namespace Content.Shared.Mail;
 /// <summary>
 /// Generic random weighting dataset to use.
 /// </summary>
-[Prototype("mailDeliveryPool")]
+[Prototype]
 public sealed partial class MailDeliveryPoolPrototype : IPrototype
 {
     [IdDataFieldAttribute] public string ID { get; private set; } = default!;

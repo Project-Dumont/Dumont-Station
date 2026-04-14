@@ -70,6 +70,10 @@ namespace Content.Server.Mail
 {
     public sealed class MailSystem : EntitySystem
     {
+        private static readonly ProtoId<TagPrototype> MailTag = "Mail";
+        private static readonly ProtoId<TagPrototype> TrashTag = "Trash";
+        private static readonly ProtoId<TagPrototype> RecyclableTag = "Recyclable";
+
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
         [Dependency] private readonly IdCardSystem _idCardSystem = default!;
@@ -117,10 +121,11 @@ namespace Content.Server.Mail
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
-            foreach (var mailTeleporter in EntityQuery<MailTeleporterComponent>())
+            var query = EntityQueryEnumerator<MailTeleporterComponent>();
+            while (query.MoveNext(out var mailTeleporterUid, out var mailTeleporter))
             {
-                if (TryComp<ApcPowerReceiverComponent>(mailTeleporter.Owner, out var power) && !power.Powered)
-                    return;
+                if (TryComp<ApcPowerReceiverComponent>(mailTeleporterUid, out var power) && !power.Powered)
+                    continue;
 
                 mailTeleporter.Accumulator += frameTime;
 
@@ -129,7 +134,7 @@ namespace Content.Server.Mail
 
                 mailTeleporter.Accumulator -= (float) mailTeleporter.TeleportInterval.TotalSeconds;
 
-                SpawnMail(mailTeleporter.Owner, mailTeleporter);
+                SpawnMail(mailTeleporterUid, mailTeleporter);
             }
         }
 
@@ -496,7 +501,7 @@ namespace Content.Server.Mail
             var container = _containerSystem.EnsureContainer<Container>(uid, "contents");
             foreach (var item in EntitySpawnCollection.GetSpawns(mailComp.Contents, _random))
             {
-                var entity = EntityManager.SpawnEntity(item, Transform(uid).Coordinates);
+                var entity = Spawn(item, Transform(uid).Coordinates);
 
                 if (!_containerSystem.Insert(entity, container))
                 {
@@ -599,13 +604,14 @@ namespace Content.Server.Mail
         /// <summary>
         /// Try to match a mail receiver to a mail teleporter.
         /// </summary>
-        public bool TryGetMailTeleporterForReceiver(MailReceiverComponent receiver, [NotNullWhen(true)] out MailTeleporterComponent? teleporterComponent)
+        public bool TryGetMailTeleporterForReceiver(Entity<MailReceiverComponent> receiver, [NotNullWhen(true)] out Entity<MailTeleporterComponent>? teleporterComponent)
         {
-            foreach (var mailTeleporter in EntityQuery<MailTeleporterComponent>())
+            var query = EntityQueryEnumerator<MailTeleporterComponent>();
+            while (query.MoveNext(out var mailTeleporterUid, out var mailTeleporter))
             {
-                if (_stationSystem.GetOwningStation(receiver.Owner) == _stationSystem.GetOwningStation(mailTeleporter.Owner))
+                if (_stationSystem.GetOwningStation(receiver) == _stationSystem.GetOwningStation(mailTeleporterUid))
                 {
-                    teleporterComponent = mailTeleporter;
+                    teleporterComponent = (mailTeleporterUid, mailTeleporter);
                     return true;
                 }
             }
@@ -617,7 +623,7 @@ namespace Content.Server.Mail
         /// <summary>
         /// Try to construct a recipient struct for a mail parcel based on a receiver.
         /// </summary>
-        public bool TryGetMailRecipientForReceiver(MailReceiverComponent receiver, [NotNullWhen(true)] out MailRecipient? recipient)
+        public bool TryGetMailRecipientForReceiver(Entity<MailReceiverComponent> receiver, [NotNullWhen(true)] out MailRecipient? recipient)
         {
             // Because of the way this works, people are not considered
             // candidates for mail if there is no valid PDA or ID in their slot
@@ -625,14 +631,14 @@ namespace Content.Server.Mail
             // station records, possibly cross-referenced with the medical crew
             // scanner to look for living recipients. TODO
 
-            if (_idCardSystem.TryFindIdCard(receiver.Owner, out var idCard)
-                && TryComp<AccessComponent>(idCard.Owner, out var access)
+            if (_idCardSystem.TryFindIdCard(receiver, out var idCard)
+                && TryComp<AccessComponent>(idCard, out var access)
                 && idCard.Comp.FullName != null
                 && idCard.Comp.LocalizedJobTitle != null)
             {
                 var accessTags = access.Tags;
 
-                var mayReceivePriorityMail = !(_mindSystem.GetMind(receiver.Owner) == null);
+                var mayReceivePriorityMail = _mindSystem.GetMind(receiver) != null;
 
                 recipient = new MailRecipient(idCard.Comp.FullName,
                     idCard.Comp.LocalizedJobTitle,
@@ -660,7 +666,7 @@ namespace Content.Server.Mail
                 if (_stationSystem.GetOwningStation(receiver) != _stationSystem.GetOwningStation(uid))
                     continue;
 
-                if (TryGetMailRecipientForReceiver(receiverComp, out MailRecipient? recipient))
+                if (TryGetMailRecipientForReceiver((receiver, receiverComp), out MailRecipient? recipient))
                     candidateList.Add(recipient.Value);
             }
 
@@ -737,10 +743,10 @@ namespace Content.Server.Mail
                     return;
                 }
 
-                var mail = EntityManager.SpawnEntity(chosenParcel, Transform(uid).Coordinates);
+                var mail = Spawn(chosenParcel, Transform(uid).Coordinates);
                 SetupMail(mail, component, candidate);
 
-                _tagSystem.AddTag(mail, "Mail"); // Frontier
+                _tagSystem.AddTag(mail, MailTag); // Frontier
             }
 
             if (_containerSystem.TryGetContainer(uid, "queued", out var queued))
@@ -771,8 +777,8 @@ namespace Content.Server.Mail
                 _handsSystem.PickupOrDrop(user, entity);
             }
 
-            _tagSystem.AddTag(uid, "Trash");
-            _tagSystem.AddTag(uid, "Recyclable");
+            _tagSystem.AddTag(uid, TrashTag);
+            _tagSystem.AddTag(uid, RecyclableTag);
             component.IsEnabled = false;
             UpdateMailTrashState(uid, true);
         }

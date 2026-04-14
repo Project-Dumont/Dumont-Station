@@ -6,7 +6,7 @@
 using Content.Server._CorvaxGoob.Animation;
 using Content.Shared._CorvaxGoob.Events.Animation;
 using Content.Shared._CorvaxGoob.Events.StatusEffects;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._CorvaxGoob.Events;
 
@@ -30,9 +30,13 @@ public sealed class TargetEventsSystem : EntitySystem
 
     private void OnApplyStatusEffect(ApplyStatusEffectTargetEvent ev)
     {
-        if (ev.ComponentType is null)
+        var duration = TimeSpan.FromSeconds(ev.Time);
+        if (duration <= TimeSpan.Zero)
             return;
 
-        _statusEffects.TryAddStatusEffect(ev.Target, ev.Key, TimeSpan.FromSeconds(ev.Time), ev.Refresh, ev.ComponentType);
+        if (ev.Refresh)
+            _statusEffects.TryUpdateStatusEffectDuration(ev.Target, ev.Key, duration);
+        else
+            _statusEffects.TryAddStatusEffectDuration(ev.Target, ev.Key, duration);
     }
 }

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+﻿// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
 // SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
@@ -501,7 +501,7 @@ public sealed class GhostRoleSystem : EntitySystem
     public void Request(ICommonSession player, uint identifier)
     {
         if (player.AttachedEntity is not { Valid: true } attached ||
-            !EntityManager.TryGetComponent<GhostComponent>(attached, out var ghost) || !ghost.CanTakeGhostRoles) // Goobstation
+            !TryComp<GhostComponent>(attached, out var ghost) || !ghost.CanTakeGhostRoles) // Goobstation
             return;
 
         if (!_ghostRoles.TryGetValue(identifier, out var roleEnt))
@@ -894,3 +894,4 @@ public sealed class GhostRoles : IConsoleCommand
             shell.WriteLine("You can only open the ghost roles UI on a client.");
     }
 }
+

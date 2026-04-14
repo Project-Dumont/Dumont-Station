@@ -229,7 +229,7 @@ internal struct CustomRichTextEntry
         }
     }
 
-    public readonly void Draw(
+    public void Draw(
         MarkupTagManager tagManager,
         DrawingHandleBase handle,
         Font defaultFont,

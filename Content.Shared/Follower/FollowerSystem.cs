@@ -62,6 +62,7 @@ public sealed class FollowerSystem : EntitySystem
     [Dependency] private readonly ISharedAdminManager _adminManager = default!;
 
     private static readonly ProtoId<TagPrototype> ForceableFollowTag = "ForceableFollow";
+    private static readonly ProtoId<TagPrototype> FollowerStayOnPolymorphTag = "FollowerStayOnPolymorph";
 
     public override void Initialize()
     {
@@ -187,7 +188,7 @@ public sealed class FollowerSystem : EntitySystem
     {
         foreach (var follower in entity.Comp.Following)
         {
-            if (_tagSystem.HasTag(follower, "FollowerStayOnPolymorph"))
+            if (_tagSystem.HasTag(follower, FollowerStayOnPolymorphTag))
                 continue;
             // Stop following the target's old entity and start following the new one
             StartFollowingEntity(follower, args.NewEntity);

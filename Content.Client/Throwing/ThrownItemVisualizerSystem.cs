@@ -45,7 +45,7 @@ public sealed class ThrownItemVisualizerSystem : EntitySystem
             _anim.Stop(uid, AnimationKey);
 
             if (component.OriginalScale != null)
-                sprite.Scale = component.OriginalScale.Value;
+                _sprite.SetScale((uid, sprite), component.OriginalScale.Value);
 
             return;
         }

@@ -11,6 +11,8 @@ namespace Content.Client._Shitcode.Heretic;
 
 public sealed class ShadowCloakSystem : SharedShadowCloakSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     protected override void Startup(Entity<ShadowCloakedComponent> ent)
     {
         base.Startup(ent);
@@ -19,7 +21,7 @@ public sealed class ShadowCloakSystem : SharedShadowCloakSystem
             return;
 
         ent.Comp.WasVisible = sprite.Visible;
-        sprite.Visible = false;
+        _sprite.SetVisible((ent, sprite), false);
     }
 
     protected override void Shutdown(Entity<ShadowCloakedComponent> ent)
@@ -27,6 +29,6 @@ public sealed class ShadowCloakSystem : SharedShadowCloakSystem
         base.Shutdown(ent);
 
         if (TryComp(ent, out SpriteComponent? sprite))
-            sprite.Visible = ent.Comp.WasVisible;
+            _sprite.SetVisible((ent, sprite), ent.Comp.WasVisible);
     }
 }

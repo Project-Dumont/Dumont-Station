@@ -151,7 +151,7 @@ public static class ShapeHelpers
         var refsTemp = new List<Vector2>(refs);
         foreach (var tile in refsTemp)
         {
-            if (!random.Prob(filledSquareChance))
+            if (random.NextDouble() >= filledSquareChance)
                 refs.Remove(tile);
         }
 
@@ -174,7 +174,7 @@ public static class ShapeHelpers
             if (refs.Count == 0)
                 return refs;
 
-            refs.Remove(random.Pick(refs));
+            refs.RemoveAt(random.Next(refs.Count));
         }
 
         return refs;

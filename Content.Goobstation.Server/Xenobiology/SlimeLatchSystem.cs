@@ -253,7 +253,7 @@ public sealed partial class SlimeLatchSystem : EntitySystem
         RemCompDeferred<BeingLatchedComponent>(target);
         RemCompDeferred<SlimeDamageOvertimeComponent>(target);
 
-        if (TryComp<TransformComponent>(target, out var targetXform)
+        if (TryComp(target, out TransformComponent? targetXform)
             && _xform.IsParentOf(targetXform, ent.Owner))
             _xform.SetParent(ent.Owner, _xform.GetParentUid(target));
 

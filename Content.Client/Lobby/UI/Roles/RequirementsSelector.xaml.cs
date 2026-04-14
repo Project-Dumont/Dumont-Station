@@ -120,20 +120,19 @@ public sealed partial class RequirementsSelector : BoxContainer
             var titleOptions = new OptionButton();
             titleOptions.ToolTip = description;
 
-            var defaultTitle = new JobAlternateTitlePrototype();
+            ProtoId<JobAlternateTitlePrototype>? defaultTitleId = null;
 
-            if (defaultAltTitle != null)
+            if (defaultAltTitle != null &&
+                protoMan.TryIndex(defaultAltTitle, out var defaultTitle))
             {
-                if (protoMan.TryIndex(defaultAltTitle, out defaultTitle))
-                {
-                    titleOptions.AddItem(defaultTitle.LocalizedName);
-                }
+                defaultTitleId = defaultTitle.ID;
+                titleOptions.AddItem(defaultTitle.LocalizedName);
             }
             titleOptions.AddItem(title);
 
             foreach (var id in altTitles)
             {
-                if (defaultTitle != null && id == defaultTitle.ID)
+                if (defaultTitleId != null && id == defaultTitleId)
                     continue;
 
                 var altTitle = protoMan.Index(id);

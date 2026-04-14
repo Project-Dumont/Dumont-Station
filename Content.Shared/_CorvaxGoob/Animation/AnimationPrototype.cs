@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -9,8 +9,8 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CorvaxGoob.Animation;
 
-[Prototype("animation")]
-[Serializable, NetSerializable, DataDefinition]
+[Prototype]
+[DataDefinition]
 public sealed partial class AnimationPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;

@@ -91,6 +91,7 @@ public sealed partial class PlayerTabHeader : Control
         HeaderClicked(args, Header.Playtime);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

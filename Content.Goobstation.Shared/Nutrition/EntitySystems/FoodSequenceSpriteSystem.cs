@@ -16,7 +16,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.Nutrition.EntitySystems;
 
-public class FoodSequenceSpriteSystem : SharedFoodSequenceSystem
+public sealed class FoodSequenceSpriteSystem : SharedFoodSequenceSystem
 {
     // Yeah nah i agree fuck this.
     /*

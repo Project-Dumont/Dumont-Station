@@ -6,7 +6,6 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Genetics;
 
 [Prototype, Access(typeof(SharedDnaModifierSystem), typeof(EnzymeInfo))]
-[Serializable, NetSerializable]
 public sealed partial class UniqueIdentifiersPrototype : IPrototype
 {
     [IdDataField]
@@ -168,45 +167,43 @@ public sealed partial class UniqueIdentifiersPrototype : IPrototype
 
     public object Clone()
     {
-        var clone = new UniqueIdentifiersPrototype
-        {
-            ID = this.ID,
-            HairColorR = (string[])this.HairColorR.Clone(),
-            HairColorG = (string[])this.HairColorG.Clone(),
-            HairColorB = (string[])this.HairColorB.Clone(),
-            SecondaryHairColorR = (string[])this.SecondaryHairColorR.Clone(),
-            SecondaryHairColorG = (string[])this.SecondaryHairColorG.Clone(),
-            SecondaryHairColorB = (string[])this.SecondaryHairColorB.Clone(),
-            BeardColorR = (string[])this.BeardColorR.Clone(),
-            BeardColorG = (string[])this.BeardColorG.Clone(),
-            BeardColorB = (string[])this.BeardColorB.Clone(),
-            SkinTone = (string[])this.SkinTone.Clone(),
-            FurColorR = (string[])this.FurColorR.Clone(),
-            FurColorG = (string[])this.FurColorG.Clone(),
-            FurColorB = (string[])this.FurColorB.Clone(),
-            HeadAccessoryColorR = (string[])this.HeadAccessoryColorR.Clone(),
-            HeadAccessoryColorG = (string[])this.HeadAccessoryColorG.Clone(),
-            HeadAccessoryColorB = (string[])this.HeadAccessoryColorB.Clone(),
-            HeadMarkingColorR = (string[])this.HeadMarkingColorR.Clone(),
-            HeadMarkingColorG = (string[])this.HeadMarkingColorG.Clone(),
-            HeadMarkingColorB = (string[])this.HeadMarkingColorB.Clone(),
-            BodyMarkingColorR = (string[])this.BodyMarkingColorR.Clone(),
-            BodyMarkingColorG = (string[])this.BodyMarkingColorG.Clone(),
-            BodyMarkingColorB = (string[])this.BodyMarkingColorB.Clone(),
-            TailMarkingColorR = (string[])this.TailMarkingColorR.Clone(),
-            TailMarkingColorG = (string[])this.TailMarkingColorG.Clone(),
-            TailMarkingColorB = (string[])this.TailMarkingColorB.Clone(),
-            EyeColorR = (string[])this.EyeColorR.Clone(),
-            EyeColorG = (string[])this.EyeColorG.Clone(),
-            EyeColorB = (string[])this.EyeColorB.Clone(),
-            Gender = (string[])this.Gender.Clone(),
-            BeardStyle = (string[])this.BeardStyle.Clone(),
-            HairStyle = (string[])this.HairStyle.Clone(),
-            HeadAccessoryStyle = (string[])this.HeadAccessoryStyle.Clone(),
-            HeadMarkingStyle = (string[])this.HeadMarkingStyle.Clone(),
-            BodyMarkingStyle = (string[])this.BodyMarkingStyle.Clone(),
-            TailMarkingStyle = (string[])this.TailMarkingStyle.Clone()
-        };
+        var clone = (UniqueIdentifiersPrototype) MemberwiseClone();
+
+        clone.HairColorR = (string[]) HairColorR.Clone();
+        clone.HairColorG = (string[]) HairColorG.Clone();
+        clone.HairColorB = (string[]) HairColorB.Clone();
+        clone.SecondaryHairColorR = (string[]) SecondaryHairColorR.Clone();
+        clone.SecondaryHairColorG = (string[]) SecondaryHairColorG.Clone();
+        clone.SecondaryHairColorB = (string[]) SecondaryHairColorB.Clone();
+        clone.BeardColorR = (string[]) BeardColorR.Clone();
+        clone.BeardColorG = (string[]) BeardColorG.Clone();
+        clone.BeardColorB = (string[]) BeardColorB.Clone();
+        clone.SkinTone = (string[]) SkinTone.Clone();
+        clone.FurColorR = (string[]) FurColorR.Clone();
+        clone.FurColorG = (string[]) FurColorG.Clone();
+        clone.FurColorB = (string[]) FurColorB.Clone();
+        clone.HeadAccessoryColorR = (string[]) HeadAccessoryColorR.Clone();
+        clone.HeadAccessoryColorG = (string[]) HeadAccessoryColorG.Clone();
+        clone.HeadAccessoryColorB = (string[]) HeadAccessoryColorB.Clone();
+        clone.HeadMarkingColorR = (string[]) HeadMarkingColorR.Clone();
+        clone.HeadMarkingColorG = (string[]) HeadMarkingColorG.Clone();
+        clone.HeadMarkingColorB = (string[]) HeadMarkingColorB.Clone();
+        clone.BodyMarkingColorR = (string[]) BodyMarkingColorR.Clone();
+        clone.BodyMarkingColorG = (string[]) BodyMarkingColorG.Clone();
+        clone.BodyMarkingColorB = (string[]) BodyMarkingColorB.Clone();
+        clone.TailMarkingColorR = (string[]) TailMarkingColorR.Clone();
+        clone.TailMarkingColorG = (string[]) TailMarkingColorG.Clone();
+        clone.TailMarkingColorB = (string[]) TailMarkingColorB.Clone();
+        clone.EyeColorR = (string[]) EyeColorR.Clone();
+        clone.EyeColorG = (string[]) EyeColorG.Clone();
+        clone.EyeColorB = (string[]) EyeColorB.Clone();
+        clone.Gender = (string[]) Gender.Clone();
+        clone.BeardStyle = (string[]) BeardStyle.Clone();
+        clone.HairStyle = (string[]) HairStyle.Clone();
+        clone.HeadAccessoryStyle = (string[]) HeadAccessoryStyle.Clone();
+        clone.HeadMarkingStyle = (string[]) HeadMarkingStyle.Clone();
+        clone.BodyMarkingStyle = (string[]) BodyMarkingStyle.Clone();
+        clone.TailMarkingStyle = (string[]) TailMarkingStyle.Clone();
 
         return clone;
     }

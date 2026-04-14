@@ -29,7 +29,7 @@ public sealed class MissChanceSystem : EntitySystem
 
         if (args.Cancelled
         || !HasComp<MobStateComponent>(args.OtherEntity)
-        || !random.Prob(ent.Comp.Chance))
+        || random.NextDouble() >= ent.Comp.Chance)
             return;
 
         args.Cancelled = true;

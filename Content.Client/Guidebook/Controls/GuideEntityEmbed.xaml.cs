@@ -38,6 +38,8 @@ namespace Content.Client.Guidebook.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("guidebook");
+
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
     [Dependency] private readonly IUserInterfaceManager _ui = default!;
@@ -135,6 +137,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         }
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
@@ -147,7 +150,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
     {
         if (!args.TryGetValue("Entity", out var proto))
         {
-            Logger.Error("Entity embed tag is missing entity prototype argument");
+            Sawmill.Error("Entity embed tag is missing entity prototype argument");
             control = null;
             return false;
         }

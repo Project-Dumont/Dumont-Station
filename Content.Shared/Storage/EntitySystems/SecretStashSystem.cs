@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@gmail.com>
+﻿// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@gmail.com>
 // SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
 // SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
@@ -111,7 +111,6 @@ namespace Content.Shared.Storage.EntitySystems;
 /// </summary>
 public sealed class SecretStashSystem : EntitySystem
 {
-    [Dependency] private readonly IngestionSystem _ingestion = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;

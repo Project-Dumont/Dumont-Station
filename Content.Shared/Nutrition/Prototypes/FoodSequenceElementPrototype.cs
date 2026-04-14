@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -8,7 +8,7 @@ namespace Content.Shared.Nutrition.Prototypes;
 /// <summary>
 /// Unique data storage block for different FoodSequence layers
 /// </summary>
-[Prototype("foodSequenceElement")]
+[Prototype]
 public sealed partial class FoodSequenceElementPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;

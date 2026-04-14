@@ -17,6 +17,8 @@ namespace Content.Goobstation.UIKit.UserInterface.Controls;
 /// </summary>
 internal struct CustomWordWrap
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("goob.uikit.wordwrap");
+
     private readonly float _maxSizeX;
 
     public float MaxUsedWidth;
@@ -138,19 +140,19 @@ internal struct CustomWordWrap
         {
             if (!WordStartBreakIndex.HasValue)
             {
-                Logger.Error(
+                Sawmill.Error(
                     "Assert fail inside RichTextEntry.Update, " +
                     "wordStartBreakIndex is null on method end w/ word wrap required. " +
                     "Dumping relevant stuff. Send this to PJB.");
                 // Logger.Error($"Message: {Message}");
-                Logger.Error($"maxSizeX: {_maxSizeX}");
-                Logger.Error($"maxUsedWidth: {MaxUsedWidth}");
-                Logger.Error($"breakIndexCounter: {BreakIndexCounter}");
-                Logger.Error("wordStartBreakIndex: null (duh)");
-                Logger.Error($"wordSizePixels: {WordSizePixels}");
-                Logger.Error($"posX: {PosX}");
-                Logger.Error($"lastChar: {LastRune}");
-                Logger.Error($"forceSplitData: {ForceSplitData}");
+                Sawmill.Error($"maxSizeX: {_maxSizeX}");
+                Sawmill.Error($"maxUsedWidth: {MaxUsedWidth}");
+                Sawmill.Error($"breakIndexCounter: {BreakIndexCounter}");
+                Sawmill.Error("wordStartBreakIndex: null (duh)");
+                Sawmill.Error($"wordSizePixels: {WordSizePixels}");
+                Sawmill.Error($"posX: {PosX}");
+                Sawmill.Error($"lastChar: {LastRune}");
+                Sawmill.Error($"forceSplitData: {ForceSplitData}");
                 // Logger.Error($"LineBreaks: {string.Join(", ", LineBreaks)}");
 
                 throw new Exception(

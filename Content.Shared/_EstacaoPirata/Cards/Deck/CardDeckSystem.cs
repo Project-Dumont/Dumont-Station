@@ -14,17 +14,16 @@
 using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Content.Shared._EstacaoPirata.Cards.Stack;
-using Content.Shared.Audio;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._EstacaoPirata.Cards.Deck;
@@ -39,7 +38,6 @@ public sealed class CardDeckSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly CardStackSystem _cardStackSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
@@ -114,7 +112,7 @@ public sealed class CardDeckSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        _audio.PlayPvs(comp.ShuffleSound, deck, AudioHelpers.WithVariation(0.05f, _random));
+        _audio.PlayPvs(comp.ShuffleSound, deck, comp.ShuffleSound.Params.WithVariation(0.05f));
         _popup.PopupEntity(Loc.GetString("card-verb-shuffle-success", ("target", MetaData(deck).EntityName)), deck);
     }
 
@@ -124,7 +122,7 @@ public sealed class CardDeckSystem : EntitySystem
             return;
         _cardStackSystem.FlipAllCards(deck, stack, isFlipped: isFlipped);
 
-        _audio.PlayPvs(comp.ShuffleSound, deck, AudioHelpers.WithVariation(0.05f, _random));
+        _audio.PlayPvs(comp.ShuffleSound, deck, comp.ShuffleSound.Params.WithVariation(0.05f));
         _popup.PopupEntity(Loc.GetString("card-verb-organize-success", ("target", MetaData(deck).EntityName), ("facedown", isFlipped)), deck);
     }
 

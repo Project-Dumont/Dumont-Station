@@ -13,6 +13,7 @@ using Content.Shared.Drunk;
 using Content.Shared.Speech;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -21,7 +22,7 @@ namespace Content.Server.Speech.EntitySystems;
 
 public sealed class SlurredSystem : SharedSlurredSystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -34,13 +35,10 @@ public sealed class SlurredSystem : SharedSlurredSystem
 
     public override void DoSlur(EntityUid uid, TimeSpan time, StatusEffectsComponent? status = null)
     {
-        if (!Resolve(uid, ref status, false))
-            return;
-
-        if (!_statusEffectsSystem.HasStatusEffect(uid, SlurKey, status))
-            _statusEffectsSystem.TryAddStatusEffect<SlurredAccentComponent>(uid, SlurKey, time, true, status);
+        if (!_statusEffectsSystem.HasStatusEffect(uid, SlurKey.Id))
+            _statusEffectsSystem.TryAddStatusEffect(uid, SlurKey.Id, out _, time);
         else
-            _statusEffectsSystem.TryAddTime(uid, SlurKey, time, status);
+            _statusEffectsSystem.TryAddTime(uid, SlurKey.Id, time);
     }
 
     /// <summary>
@@ -48,11 +46,14 @@ public sealed class SlurredSystem : SharedSlurredSystem
     /// </summary>
     private float GetProbabilityScale(EntityUid uid)
     {
-        if (!_statusEffectsSystem.TryGetTime(uid, SharedDrunkSystem.DrunkKey, out var time))
+        if (!_statusEffectsSystem.TryGetTime(uid, SharedDrunkSystem.DrunkKey.Id, out var time))
             return 0;
 
+        if (time.EndEffectTime == null)
+            return 1f;
+
         var curTime = _timing.CurTime;
-        var timeLeft = (float) (time.Value.Item2 - curTime).TotalSeconds;
+        var timeLeft = (float) (time.EndEffectTime.Value - curTime).TotalSeconds;
         return Math.Clamp((timeLeft - 80) / 1100, 0f, 1f);
     }
 

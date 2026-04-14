@@ -28,6 +28,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Goobstation.Server.Blob;
@@ -45,8 +46,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
     private EntityQuery<BlobCoreComponent> _blobCoreQuery;
 
-    [ValidatePrototypeId<NpcFactionPrototype>]
-    private const string BlobFaction = "Blob";
+    private static readonly ProtoId<NpcFactionPrototype> BlobFaction = "Blob";
 
     public override void Initialize()
     {
@@ -231,7 +231,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     // {
     //     var xform = Transform(uid);
     //     var radius = 2.5f;
-    //     var wallSpacing = 1.5f; // Расстояние между стенами и центральной областью
+    //     var wallSpacing = 1.5f; // Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð¼ÐµÐ¶Ð´Ñƒ ÑÑ‚ÐµÐ½Ð°Ð¼Ð¸ Ð¸ Ñ†ÐµÐ½Ñ‚Ñ€Ð°Ð»ÑŒÐ½Ð¾Ð¹ Ð¾Ð±Ð»Ð°ÑÑ‚ÑŒÑŽ
     //
     //     if (!_map.TryGetGrid(xform.GridUid, out var grid))
     //     {
@@ -240,11 +240,11 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     //
     //     var localpos = xform.Coordinates.Position;
     //
-    //     // Получаем тайлы в области с радиусом 2.5
+    //     // ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ñ‚Ð°Ð¹Ð»Ñ‹ Ð² Ð¾Ð±Ð»Ð°ÑÑ‚Ð¸ Ñ Ñ€Ð°Ð´Ð¸ÑƒÑÐ¾Ð¼ 2.5
     //     var allTiles = grid.GetLocalTilesIntersecting(
     //         new Box2(localpos + new Vector2(-radius, -radius), localpos + new Vector2(radius, radius))).ToArray();
     //
-    //     // Получаем тайлы в области с радиусом 1.5
+    //     // ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ñ‚Ð°Ð¹Ð»Ñ‹ Ð² Ð¾Ð±Ð»Ð°ÑÑ‚Ð¸ Ñ Ñ€Ð°Ð´Ð¸ÑƒÑÐ¾Ð¼ 1.5
     //     var innerTiles = grid.GetLocalTilesIntersecting(
     //         new Box2(localpos + new Vector2(-wallSpacing, -wallSpacing), localpos + new Vector2(wallSpacing, wallSpacing))).ToArray();
     //

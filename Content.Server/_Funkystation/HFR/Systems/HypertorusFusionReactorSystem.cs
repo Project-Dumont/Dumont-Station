@@ -52,7 +52,6 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
         [Dependency] private readonly AudioSystem _audioSystem = default!;
         [Dependency] private readonly RadioSystem _radioSystem = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!;
-        [Dependency] private readonly IAdminLogManager _logSystem = default!;
         [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
         [Dependency] private readonly TransformSystem _transformSystem = default!;
         [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
@@ -77,13 +76,13 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
          */
         public bool AreAllPartsConnected(EntityUid coreUid, HFRCoreComponent core)
         {
-            if (!coreUid.IsValid() || !EntityManager.EntityExists(coreUid))
+            if (!coreUid.IsValid() || !Exists(coreUid))
                 return false;
 
-            if (core.ConsoleUid == null || !EntityManager.EntityExists(core.ConsoleUid.Value) ||
-                core.FuelInputUid == null || !EntityManager.EntityExists(core.FuelInputUid.Value) ||
-                core.ModeratorInputUid == null || !EntityManager.EntityExists(core.ModeratorInputUid.Value) ||
-                core.WasteOutputUid == null || !EntityManager.EntityExists(core.WasteOutputUid.Value))
+            if (core.ConsoleUid == null || !Exists(core.ConsoleUid.Value) ||
+                core.FuelInputUid == null || !Exists(core.FuelInputUid.Value) ||
+                core.ModeratorInputUid == null || !Exists(core.ModeratorInputUid.Value) ||
+                core.WasteOutputUid == null || !Exists(core.WasteOutputUid.Value))
                 return false;
 
             if (core.CornerUids.Count != DiagonalOffsets.Length)
@@ -91,8 +90,8 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
 
             foreach (var cornerUid in core.CornerUids)
             {
-                if (!EntityManager.EntityExists(cornerUid) ||
-                    !EntityManager.TryGetComponent<HFRCornerComponent>(cornerUid, out var cornerComp) ||
+                if (!Exists(cornerUid) ||
+                    !TryComp<HFRCornerComponent>(cornerUid, out var cornerComp) ||
                     cornerComp.CoreUid != coreUid)
                 {
                     return false;
@@ -116,19 +115,19 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
             }
             if (isActive)
             {
-                if (EntityManager.HasComponent<AnchorableComponent>(coreUid))
-                    EntityManager.RemoveComponent<AnchorableComponent>(coreUid);
+                if (HasComp<AnchorableComponent>(coreUid))
+                    RemComp<AnchorableComponent>(coreUid);
             }
             else
             {
-                if (!EntityManager.HasComponent<AnchorableComponent>(coreUid))
+                if (!HasComp<AnchorableComponent>(coreUid))
                     // Only add AnchorableComponent if the entity is not terminating
-                    if (EntityManager.TryGetComponent<MetaDataComponent>(coreUid, out var metadata) && metadata.EntityLifeStage < EntityLifeStage.Terminating)
-                        EntityManager.AddComponent<AnchorableComponent>(coreUid);
+                    if (TryComp(coreUid, out MetaDataComponent? metadata) && metadata.EntityLifeStage < EntityLifeStage.Terminating)
+                        AddComp<AnchorableComponent>(coreUid);
             }
 
             // Update console
-            if (core.ConsoleUid != null && EntityManager.TryGetComponent<HFRConsoleComponent>(core.ConsoleUid, out var consoleComp))
+            if (core.ConsoleUid != null && TryComp<HFRConsoleComponent>(core.ConsoleUid, out var consoleComp))
             {
                 consoleComp.IsActive = isActive;
                 if (TryComp<AppearanceComponent>(core.ConsoleUid.Value, out var consoleAppearance))
@@ -141,18 +140,18 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 }
                 if (isActive)
                 {
-                    if (EntityManager.HasComponent<AnchorableComponent>(core.ConsoleUid.Value))
-                        EntityManager.RemoveComponent<AnchorableComponent>(core.ConsoleUid.Value);
+                    if (HasComp<AnchorableComponent>(core.ConsoleUid.Value))
+                        RemComp<AnchorableComponent>(core.ConsoleUid.Value);
                 }
                 else
                 {
-                    if (!EntityManager.HasComponent<AnchorableComponent>(core.ConsoleUid.Value))
-                        EntityManager.AddComponent<AnchorableComponent>(core.ConsoleUid.Value);
+                    if (!HasComp<AnchorableComponent>(core.ConsoleUid.Value))
+                        AddComp<AnchorableComponent>(core.ConsoleUid.Value);
                 }
             }
 
             // Update fuel input
-            if (core.FuelInputUid != null && EntityManager.TryGetComponent<HFRFuelInputComponent>(core.FuelInputUid, out var fuelComp))
+            if (core.FuelInputUid != null && TryComp<HFRFuelInputComponent>(core.FuelInputUid, out var fuelComp))
             {
                 fuelComp.IsActive = isActive;
                 if (TryComp<AppearanceComponent>(core.FuelInputUid.Value, out var fuelAppearance))
@@ -161,18 +160,18 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 }
                 if (isActive)
                 {
-                    if (EntityManager.HasComponent<AnchorableComponent>(core.FuelInputUid.Value))
-                        EntityManager.RemoveComponent<AnchorableComponent>(core.FuelInputUid.Value);
+                    if (HasComp<AnchorableComponent>(core.FuelInputUid.Value))
+                        RemComp<AnchorableComponent>(core.FuelInputUid.Value);
                 }
                 else
                 {
-                    if (!EntityManager.HasComponent<AnchorableComponent>(core.FuelInputUid.Value))
-                        EntityManager.AddComponent<AnchorableComponent>(core.FuelInputUid.Value);
+                    if (!HasComp<AnchorableComponent>(core.FuelInputUid.Value))
+                        AddComp<AnchorableComponent>(core.FuelInputUid.Value);
                 }
             }
 
             // Update moderator input
-            if (core.ModeratorInputUid != null && EntityManager.TryGetComponent<HFRModeratorInputComponent>(core.ModeratorInputUid, out var modComp))
+            if (core.ModeratorInputUid != null && TryComp<HFRModeratorInputComponent>(core.ModeratorInputUid, out var modComp))
             {
                 modComp.IsActive = isActive;
                 if (TryComp<AppearanceComponent>(core.ModeratorInputUid.Value, out var modAppearance))
@@ -181,18 +180,18 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 }
                 if (isActive)
                 {
-                    if (EntityManager.HasComponent<AnchorableComponent>(core.ModeratorInputUid.Value))
-                        EntityManager.RemoveComponent<AnchorableComponent>(core.ModeratorInputUid.Value);
+                    if (HasComp<AnchorableComponent>(core.ModeratorInputUid.Value))
+                        RemComp<AnchorableComponent>(core.ModeratorInputUid.Value);
                 }
                 else
                 {
-                    if (!EntityManager.HasComponent<AnchorableComponent>(core.ModeratorInputUid.Value))
-                        EntityManager.AddComponent<AnchorableComponent>(core.ModeratorInputUid.Value);
+                    if (!HasComp<AnchorableComponent>(core.ModeratorInputUid.Value))
+                        AddComp<AnchorableComponent>(core.ModeratorInputUid.Value);
                 }
             }
 
             // Update waste output
-            if (core.WasteOutputUid != null && EntityManager.TryGetComponent<HFRWasteOutputComponent>(core.WasteOutputUid, out var wasteComp))
+            if (core.WasteOutputUid != null && TryComp<HFRWasteOutputComponent>(core.WasteOutputUid, out var wasteComp))
             {
                 wasteComp.IsActive = isActive;
                 if (TryComp<AppearanceComponent>(core.WasteOutputUid.Value, out var wasteAppearance))
@@ -201,20 +200,20 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 }
                 if (isActive)
                 {
-                    if (EntityManager.HasComponent<AnchorableComponent>(core.WasteOutputUid.Value))
-                        EntityManager.RemoveComponent<AnchorableComponent>(core.WasteOutputUid.Value);
+                    if (HasComp<AnchorableComponent>(core.WasteOutputUid.Value))
+                        RemComp<AnchorableComponent>(core.WasteOutputUid.Value);
                 }
                 else
                 {
-                    if (!EntityManager.HasComponent<AnchorableComponent>(core.WasteOutputUid.Value))
-                        EntityManager.AddComponent<AnchorableComponent>(core.WasteOutputUid.Value);
+                    if (!HasComp<AnchorableComponent>(core.WasteOutputUid.Value))
+                        AddComp<AnchorableComponent>(core.WasteOutputUid.Value);
                 }
             }
 
             // Update corners
             foreach (var cornerUid in core.CornerUids)
             {
-                if (EntityManager.TryGetComponent<HFRCornerComponent>(cornerUid, out var cornerComp))
+                if (TryComp<HFRCornerComponent>(cornerUid, out var cornerComp))
                 {
                     cornerComp.IsActive = isActive;
                     if (TryComp<AppearanceComponent>(cornerUid, out var cornerAppearance))
@@ -223,13 +222,13 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                     }
                     if (isActive)
                     {
-                        if (EntityManager.HasComponent<AnchorableComponent>(cornerUid))
-                            EntityManager.RemoveComponent<AnchorableComponent>(cornerUid);
+                        if (HasComp<AnchorableComponent>(cornerUid))
+                            RemComp<AnchorableComponent>(cornerUid);
                     }
                     else
                     {
-                        if (!EntityManager.HasComponent<AnchorableComponent>(cornerUid))
-                            EntityManager.AddComponent<AnchorableComponent>(cornerUid);
+                        if (!HasComp<AnchorableComponent>(cornerUid))
+                            AddComp<AnchorableComponent>(cornerUid);
                     }
                 }
             }
@@ -239,7 +238,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
 
         public void UpdateConsolePowerState(HFRCoreComponent core)
         {
-            if (core.ConsoleUid != null && EntityManager.TryGetComponent<HFRConsoleComponent>(core.ConsoleUid, out var consoleComp))
+            if (core.ConsoleUid != null && TryComp<HFRConsoleComponent>(core.ConsoleUid, out var consoleComp))
             {
                 _hfrConsoleSystem.SetPowerState(core.ConsoleUid.Value, consoleComp);
             }
@@ -319,7 +318,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 {
                     var soundIndex = _random.Next(1, 34);
                     _audioSystem.PlayPvs(
-                        $"/Audio/_EE/Supermatter/accent/delam/{soundIndex}.ogg",
+                        new SoundPathSpecifier($"/Audio/_EE/Supermatter/accent/delam/{soundIndex}.ogg"),
                         coreUid,
                         AudioParams.Default.WithVolume(Math.Max(20, aggression)).WithMaxDistance(40)
                     );
@@ -328,7 +327,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 {
                     var soundIndex = _random.Next(1, 34);
                     _audioSystem.PlayPvs(
-                        $"/Audio/_EE/Supermatter/accent/normal/{soundIndex}.ogg",
+                        new SoundPathSpecifier($"/Audio/_EE/Supermatter/accent/normal/{soundIndex}.ogg"),
                         coreUid,
                         AudioParams.Default.WithVolume(Math.Max(20, aggression)).WithMaxDistance(25)
                     );
@@ -410,16 +409,16 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
             switch (GetStatus(core))
             {
                 case 5:
-                    _audioSystem.PlayPvs("/Audio/_EE/Supermatter/status/bloblarm.ogg", coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(40));
+                    _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_EE/Supermatter/status/bloblarm.ogg"), coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(40));
                     break;
                 case 4:
-                    _audioSystem.PlayPvs("/Audio/_Funkystation/Hypertorus/engine_alert1.ogg", coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(30));
+                    _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Funkystation/Hypertorus/engine_alert1.ogg"), coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(30));
                     break;
                 case 3:
-                    _audioSystem.PlayPvs("/Audio/_Funkystation/Hypertorus/engine_alert2.ogg", coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(30));
+                    _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Funkystation/Hypertorus/engine_alert2.ogg"), coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(30));
                     break;
                 case 2:
-                    _audioSystem.PlayPvs("/Audio/_Funkystation/Hypertorus/terminal_alert.ogg", coreUid, AudioParams.Default.WithVolume(75));
+                    _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Funkystation/Hypertorus/terminal_alert.ogg"), coreUid, AudioParams.Default.WithVolume(75));
                     break;
             }
         }
@@ -621,7 +620,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 }
 
                 if (secondsRemaining == 10 && recipeValid && recipe != null && recipe.MeltdownFlags.HasFlag(HypertorusFlags.CriticalMeltdown))
-                    _audioSystem.PlayPvs("/Audio/_Funkystation/Hypertorus/HFR_critical_explosion.ogg", coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(40));
+                    _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Funkystation/Hypertorus/HFR_critical_explosion.ogg"), coreUid, AudioParams.Default.WithVolume(100).WithMaxDistance(40));
 
                 message = $"{DisplayTimeText(secondsRemaining, true)} remain before total integrity failure.";
             }
@@ -753,7 +752,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                     _entityManager.GetComponent<GridAtmosphereComponent>(gridUid),
                     _entityManager.GetComponent<GasTileOverlayComponent>(gridUid)
                 );
-                var mapUid = _mapManager.GetMapEntityId(transform.MapID);
+                var mapUid = _mapSystem.GetMapOrInvalid(transform.MapID);
                 var mapEntity = new Entity<MapAtmosphereComponent?>(
                     mapUid,
                     _entityManager.TryGetComponent<MapAtmosphereComponent>(mapUid, out var mapAtmos) ? mapAtmos : null

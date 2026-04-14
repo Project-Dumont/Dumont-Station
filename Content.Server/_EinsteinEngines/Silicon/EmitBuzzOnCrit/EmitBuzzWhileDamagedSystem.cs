@@ -5,12 +5,11 @@
 
 using Content.Server.Popups;
 using Content.Shared._EinsteinEngines.Silicon.EmitBuzzWhileDamaged;
-using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
 
@@ -26,7 +25,6 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
 
     public override void Update(float frameTime)
     {
@@ -56,7 +54,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
             emitBuzzOnCritComponent.LastBuzzPopupTime = _gameTiming.CurTime;
             _popupSystem.PopupEntity(Loc.GetString("silicon-behavior-buzz"), uid);
             Spawn("EffectSparks", Transform(uid).Coordinates);
-            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
+            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, emitBuzzOnCritComponent.Sound.Params.WithVariation(0.05f));
         }
     }
 

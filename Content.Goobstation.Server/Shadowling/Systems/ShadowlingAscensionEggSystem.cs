@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Lumminal <81829924+Lumminal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 //
@@ -37,6 +37,8 @@ namespace Content.Goobstation.Server.Shadowling.Systems;
 /// </summary>
 public sealed class ShadowlingAscensionEggSystem : EntitySystem
 {
+    private static readonly EntProtoId NightmareAbilities = "NightmareAbilities";
+
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
@@ -114,7 +116,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
             || !component.StartTimer) // This indicates that the shadowling was inside the egg
             return;
 
-        var shadowlingComp = EntityManager.GetComponent<ShadowlingComponent>(component.Creator.Value);
+        var shadowlingComp = Comp<ShadowlingComponent>(component.Creator.Value);
         _shadowling.OnPhaseChanged(component.Creator.Value, shadowlingComp, ShadowlingPhases.FailedAscension);
         component.StartTimer = false;
     }
@@ -238,7 +240,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
             _actions.RemoveAction(ascendant.ActionHatchEntity);
         }
 
-        var nightmareComps = _protoMan.Index("NightmareAbilities");
+        var nightmareComps = _protoMan.Index(NightmareAbilities);
         foreach (var thrall in thralls)
         {
             if (HasComp<LesserShadowlingComponent>(thrall))
@@ -272,3 +274,4 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         _globalSound.DispatchStationEventMusic(uid, component.AscensionTheme, StationEventMusicType.ShadowLing, AudioParams.Default.WithLoop(true));
     }
 }
+

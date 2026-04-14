@@ -40,7 +40,7 @@ public sealed class CraftingUIController : UIController, IOnStateChanged<Gamepla
         if (_presenter == null)
             return;
         UnloadButton(_presenter);
-        _presenter.Dispose();
+        _presenter.Close();
         _presenter = null;
     }
 

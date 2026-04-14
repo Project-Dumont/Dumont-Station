@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
@@ -184,6 +184,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 	public readonly string CultComponentId = "BloodCultist";
 
 	private static readonly EntProtoId MindRole = "MindRoleCultist";
+    private static readonly EntProtoId ActionCultistSummonDagger = "ActionCultistSummonDagger";
 
 	public static readonly ProtoId<NpcFactionPrototype> BloodCultistFactionId = "BloodCultist";
     public static readonly ProtoId<NpcFactionPrototype> NanotrasenFactionId = "NanoTrasen";
@@ -314,7 +315,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 				_cultistSpell.AddSpell(traitor, cultist, (ProtoId<CultAbilityPrototype>) "SpellsSelect", recordKnownSpell:false);
 				
 				// Give them the Summon Dagger spell pre-prepared (bypasses DoAfter requirement)
-				_action.AddAction(traitor, "ActionCultistSummonDagger");
+				_action.AddAction(traitor, ActionCultistSummonDagger);
 
 				// propogate the selected Nar'Sie summon location
 				// Enable Tear Veil rune if stage 2 (HasRisen) or later has been reached
@@ -1200,7 +1201,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 		);
 		foreach (EntityUid cultist in cultists)
 		{
-			if (EntityManager.TryGetComponent(cultist, out AppearanceComponent? appearance))
+			if (TryComp(cultist, out AppearanceComponent? appearance))
 			{
 				// Only enable eyes if the body has an attached head
 				var hasHead = false;
@@ -1630,3 +1631,4 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
 	#endregion
 }
+

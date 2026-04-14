@@ -23,11 +23,14 @@ using Content.Shared.Polymorph;
 using Content.Shared.Actions.Events;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.Bingle;
 
 public sealed class BingleSystem : EntitySystem
 {
+    private static readonly EntProtoId ActionBingleUpgrade = "ActionBingleUpgrade";
+
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -76,7 +79,7 @@ public sealed class BingleSystem : EntitySystem
         if (component.Upgraded)
             return;
 
-        _actions.AddAction(uid, "ActionBingleUpgrade", uid);
+        _actions.AddAction(uid, ActionBingleUpgrade, uid);
 
         _popup.PopupEntity(Loc.GetString("bingle-upgrade-success"), uid, uid);
         component.Upgraded = true;

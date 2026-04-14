@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+﻿// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
@@ -22,7 +22,6 @@ using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
-using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Systems;
@@ -30,7 +29,6 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Atmos;
 
 /// <summary>
 /// System for vapes

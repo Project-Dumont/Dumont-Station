@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+﻿// SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
 // SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
@@ -116,7 +116,7 @@ namespace Content.Server.Tabletop
             // Skye hotfix to prevent people from infinitely spawning mice on the board games and crashing server.
             if (component.HologramsSpawned > component.MaximumHologramsAllowed)
             {
-                _chat.SendAdminAlert($"{EntityManager.ToPrettyString(args.User):user} is attempting to put more holograms than allowed in a gameboard.");
+                _chat.SendAdminAlert($"{ToPrettyString(args.User):user} is attempting to put more holograms than allowed in a gameboard.");
                 _popupSystem.PopupEntity("Nuh uh.", uid, args.User);
                 return;
 
@@ -232,3 +232,4 @@ namespace Content.Server.Tabletop
         }
     }
 }
+

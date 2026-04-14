@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Body.Organ;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Shitmed.Body.Organ;
@@ -27,12 +27,9 @@ public sealed class StatusEffectOrganSystem : EntitySystem
                 continue;
 
             comp.NextUpdate = now + comp.Delay;
-            if (!TryComp<StatusEffectsComponent>(body, out var effects))
-                continue;
-
-            foreach (var (key, component) in comp.Refresh)
+            foreach (var (key, _) in comp.Refresh)
             {
-                _effects.TryAddStatusEffect(body, key, comp.Delay, refresh: true, component, effects);
+                _effects.TryUpdateStatusEffectDuration(body, key.Id, comp.Delay);
             }
         }
     }

@@ -62,6 +62,7 @@ public sealed class SharedGunExecutionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private const float GunExecutionTime = 4.0f;
 
@@ -175,7 +176,7 @@ public sealed class SharedGunExecutionSystem : EntitySystem
         Vector2 direction = Vector2.Zero;
         var attackerXform = Transform(attacker);
         var victimXform = Transform(victim);
-        var diff = victimXform.WorldPosition - attackerXform.WorldPosition;
+        var diff = _transform.GetWorldPosition(victimXform) - _transform.GetWorldPosition(attackerXform);
         if (diff != Vector2.Zero)
             direction = -diff.Normalized(); // recoil opposite of shot
 

@@ -36,12 +36,12 @@ namespace Content.Server.Power.Components
             Net?.QueueNetworkReconnect();
         }
 
-        protected override void AddSelfToNet(IApcNet apcNet)
+        protected override void AddSelfToNet(EntityUid uid, IApcNet apcNet)
         {
             apcNet.AddPowerProvider(this);
         }
 
-        protected override void RemoveSelfFromNet(IApcNet apcNet)
+        protected override void RemoveSelfFromNet(EntityUid uid, IApcNet apcNet)
         {
             apcNet.RemovePowerProvider(this);
         }

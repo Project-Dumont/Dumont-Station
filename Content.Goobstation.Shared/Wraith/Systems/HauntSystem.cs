@@ -9,14 +9,14 @@ using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Revenant.Components;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Goobstation.Shared.Wraith.Systems;
 //Partially ported from Impstation
 public sealed partial class HauntSystem : EntitySystem
 {
     [Dependency] private readonly SharedInteractionSystem _interact = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsOld = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly WraithPointsSystem _wraithPointsSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -28,7 +28,7 @@ public sealed partial class HauntSystem : EntitySystem
     private EntityQuery<WraithAbsorbableComponent> _wraithAbsorbableQuery;
 
     private readonly HashSet<Entity<HumanoidAppearanceComponent>> _humanoid = new();
-    private readonly HashSet<Entity<StatusEffectsComponent>> _statusEffects = new();
+    private readonly HashSet<EntityUid> _nearbyEntities = new();
     public override void Initialize()
     {
         base.Initialize();
@@ -97,7 +97,7 @@ public sealed partial class HauntSystem : EntitySystem
     {
         if (ent.Comp.Active)
         {
-            _statusEffectsOld.TryRemoveStatusEffect(ent.Owner, ent.Comp.CorporealEffect);
+            _statusEffects.TryRemoveStatusEffect(ent.Owner, ent.Comp.CorporealEffect.Id);
             _wraithPointsSystem.SetWpRate(ent.Comp.OriginalWpRegen, ent.Owner);
             ent.Comp.Active = false;
             ent.Comp.WpBoostActive = false;
@@ -110,16 +110,15 @@ public sealed partial class HauntSystem : EntitySystem
         _popupSystem.PopupClient(Loc.GetString("wraith-haunt-show"), ent.Owner, ent.Owner, PopupType.MediumCaution);
         // flash people nearby
 
-        _statusEffects.Clear();
-        _lookup.GetEntitiesInRange(Transform(ent.Owner).Coordinates, 3f, _statusEffects);
-        foreach (var entity in _statusEffects)
-            _statusEffectsOld.TryAddStatusEffect<FlashedComponent>(entity,
-                ent.Comp.FlashedId,
-                ent.Comp.HauntFlashDuration,
-                true);
+        _nearbyEntities.Clear();
+        _lookup.GetEntitiesInRange(Transform(ent.Owner).Coordinates, 3f, _nearbyEntities);
+        foreach (var entity in _nearbyEntities)
+            _statusEffects.TryAddStatusEffectDuration(entity,
+                ent.Comp.FlashedId.Id,
+                ent.Comp.HauntFlashDuration);
 
         // we don't have corporeal so add it
-        _statusEffectsOld.TryAddStatusEffect<CorporealComponent>(ent.Owner, ent.Comp.CorporealEffect, ent.Comp.HauntCorporealDuration, true);
+        _statusEffects.TryAddStatusEffectDuration(ent.Owner, ent.Comp.CorporealEffect.Id, ent.Comp.HauntCorporealDuration);
 
         // set original rate for resetting it after boost
         ent.Comp.OriginalWpRegen = _wraithPointsSystem.GetCurrentWpRate(ent.Owner);

@@ -40,6 +40,6 @@ public sealed class SupermatterConsoleBoundUserInterface : BoundUserInterface
         if (!disposing)
             return;
 
-        _menu?.Dispose();
+        _menu?.Close();
     }
 }

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+﻿// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
@@ -28,34 +28,34 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Weapons.Ranged;
 
-[Prototype("hitscan")]
+[Prototype]
 public sealed partial class HitscanPrototype : IPrototype, IShootable, IInheritingPrototype
 {
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<HitscanPrototype>))]
     public string[]? Parents { get; private set; }
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     [NeverPushInheritance]
     [AbstractDataField]
     public bool Abstract { get; private set; }
 
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     [ViewVariables(VVAccess.ReadWrite), DataField("staminaDamage")]
     public float StaminaDamage;
 
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool Ignite = false;
 
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool IgnoreResistances = false;
 
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int Temperature = 700;
 

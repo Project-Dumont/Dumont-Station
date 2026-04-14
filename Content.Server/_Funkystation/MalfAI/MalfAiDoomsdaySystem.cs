@@ -34,6 +34,8 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiDoomsdaySystem : EntitySystem
 {
+    private static readonly ProtoId<SoundCollectionPrototype> DoomsdayMusicCollection = "DoomsdayMusic";
+
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly AlertLevelSystem _alerts = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
@@ -323,7 +325,7 @@ public sealed class MalfAiDoomsdaySystem : EntitySystem
         comp.SongDuration = null;
         comp.MusicStarted = false;
 
-        if (!_prototypeManager.TryIndex<SoundCollectionPrototype>("DoomsdayMusic", out var collection) ||
+        if (!_prototypeManager.TryIndex(DoomsdayMusicCollection, out var collection) ||
             collection.PickFiles.Count == 0)
             return;
 

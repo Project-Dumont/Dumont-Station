@@ -104,7 +104,7 @@ public sealed class AdminUIController : UIController,
     public void OnSystemUnloaded(AdminSystem system)
     {
         if (_window != null)
-            _window.Dispose();
+            _window.Close();
 
         _admin.AdminStatusUpdated -= AdminStatusUpdated;
 

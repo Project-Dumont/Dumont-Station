@@ -28,6 +28,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Goobstation.Wizard.Spellblade;
 
+#pragma warning disable CS0618
 public abstract class SharedSpellbladeSystem : EntitySystem
 {
     [Dependency] protected readonly UseDelaySystem UseDelay = default!;
@@ -186,3 +187,4 @@ public abstract class SharedSpellbladeSystem : EntitySystem
         return _hands.EnumerateHeld(user).Any(HasComp<T>);
     }
 }
+#pragma warning restore CS0618

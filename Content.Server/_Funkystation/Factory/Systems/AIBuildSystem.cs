@@ -16,6 +16,7 @@ using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.SubFloor;
 using Content.Shared.Tag;
 using Content.Shared._Funkystation.Actions.Events;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -41,6 +42,8 @@ public sealed partial class AIBuildRequestEvent : EntityEventArgs
 /// </summary>
 public sealed partial class AIBuildSystem : EntitySystem
 {
+    private static readonly ProtoId<TagPrototype> WallMountTag = "WallMount";
+
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
@@ -204,7 +207,7 @@ public sealed partial class AIBuildSystem : EntitySystem
 
             // Allow building over entities with WallMount tag (cameras, lights, wall-mounted devices)
             // I may have forgot a few here, add this tag if noticed missing
-            if (_tag.HasTag(entity, "WallMount"))
+            if (_tag.HasTag(entity, WallMountTag))
                 continue;
 
             // Block building on other anchored entities (walls, doors, machines, etc.)

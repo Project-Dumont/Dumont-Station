@@ -477,7 +477,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         var uniqueEnzymesPrototypes = new List<EnzymesPrototypeInfo>();
         bool hasHumanoidAppearance = HasComp<HumanoidAppearanceComponent>(uid);
 
-        if (component.Lowest != null && TryComp<MetaDataComponent>(uid, out var meta) && meta.EntityPrototype?.ID == component.Lowest)
+        if (component.Lowest != null && TryComp(uid, out MetaDataComponent? meta) && meta.EntityPrototype?.ID == component.Lowest)
         {
             hasHumanoidAppearance = false;
         }
@@ -875,7 +875,7 @@ public sealed partial class DnaModifierSystem : SharedDnaModifierSystem
         if (string.IsNullOrEmpty(component.Upper) || string.IsNullOrEmpty(component.Lowest))
             return;
 
-        if (!TryComp<MetaDataComponent>(target, out var meta))
+        if (!TryComp(target, out MetaDataComponent? meta))
             return;
 
         _container.TryGetContainingContainer(target, out var targetContainer);

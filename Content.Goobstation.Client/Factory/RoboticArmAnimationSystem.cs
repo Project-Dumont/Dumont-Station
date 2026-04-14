@@ -16,6 +16,7 @@ namespace Content.Goobstation.Client.Factory;
 public sealed class RoboticArmAnimationSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void FrameUpdate(float frameTime)
     {
@@ -43,7 +44,7 @@ public sealed class RoboticArmAnimationSystem : EntitySystem
         if (!ent.Comp.HasItem) // returning to the resting position when emptied
             progress = 1f - progress;
         var angle = Angle.FromDegrees(progress * 180f);
-        sprite.LayerSetRotation(RoboticArmLayers.Arm, angle);
+        _sprite.LayerSetRotation((ent, sprite), RoboticArmLayers.Arm, angle);
     }
 
     private void Reset(Entity<RoboticArmComponent> ent)
@@ -52,6 +53,6 @@ public sealed class RoboticArmAnimationSystem : EntitySystem
             return;
 
         var angle = ent.Comp.HasItem ? new Angle(Math.PI) : Angle.Zero;
-        sprite.LayerSetRotation(RoboticArmLayers.Arm, angle);
+        _sprite.LayerSetRotation((ent, sprite), RoboticArmLayers.Arm, angle);
     }
 }

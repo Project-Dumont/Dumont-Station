@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+﻿// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -120,7 +120,7 @@ public sealed partial class FireControlSystem : EntitySystem
             foreach (var controllable in server.Controlled)
             {
                 var controlled = new FireControllableEntry();
-                controlled.NetEntity = EntityManager.GetNetEntity(controllable);
+                controlled.NetEntity = GetNetEntity(controllable);
                 controlled.Coordinates = GetNetCoordinates(Transform(controllable).Coordinates);
                 controlled.Name = MetaData(controllable).EntityName;
 
@@ -134,3 +134,4 @@ public sealed partial class FireControlSystem : EntitySystem
         _ui.SetUiState(uid, FireControlConsoleUiKey.Key, state);
     }
 }
+

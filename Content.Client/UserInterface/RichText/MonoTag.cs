@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Prototypes;
@@ -14,19 +15,34 @@ namespace Content.Client.UserInterface.RichText;
 /// <summary>
 /// Sets the font to a monospaced variant
 /// </summary>
-public sealed class MonoTag : IMarkupTag
+public sealed class MonoTag : IMarkupTagHandler
 {
     public static readonly ProtoId<FontPrototype> MonoFont = "Monospace";
 
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly FontTagHijackHolder _fontHijack = default!;
 
     public string Name => "mono";
 
     /// <inheritdoc/>
     public void PushDrawContext(MarkupNode node, MarkupDrawingContext context)
     {
-        var font = FontTag.CreateFont(context.Font, node, _resourceCache, _prototypeManager, MonoFont);
+        var size = FontTag.GetSizeForFontTag(context.Font, node);
+
+        if (_fontHijack.Hijack?.Invoke(MonoFont, size) is { } hijackedFont)
+        {
+            context.Font.Push(hijackedFont);
+            return;
+        }
+
+#pragma warning disable CS0618
+        if (!_prototypeManager.TryIndex<FontPrototype>(MonoFont, out var prototype))
+            prototype = _prototypeManager.Index<FontPrototype>(FontTag.DefaultFont);
+
+        var fontResource = _resourceCache.GetResource<FontResource>(prototype.Path);
+#pragma warning restore CS0618
+        var font = new VectorFont(fontResource, size);
         context.Font.Push(font);
     }
 

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 //
@@ -14,9 +14,6 @@ namespace Content.Server._Funkystation.Atmos.Systems;
 
 public sealed class HFRWasteOutputSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly HFRCoreSystem _coreSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly HypertorusFusionReactorSystem _hfrSystem = default!;
     [Dependency] private readonly HFRSidePartSystem _hfrSidePartSystem = default!;
@@ -33,7 +30,7 @@ public sealed class HFRWasteOutputSystem : EntitySystem
         {
             if (wasteOutput.CoreUid != null)
             {
-                if (EntityManager.TryGetComponent<HFRCoreComponent>(wasteOutput.CoreUid, out var coreComp))
+                if (TryComp<HFRCoreComponent>(wasteOutput.CoreUid, out var coreComp))
                 {
                     wasteOutput.IsActive = false;
                     if (TryComp<AppearanceComponent>(uid, out var appearance))
@@ -53,3 +50,4 @@ public sealed class HFRWasteOutputSystem : EntitySystem
         }
     }
 }
+

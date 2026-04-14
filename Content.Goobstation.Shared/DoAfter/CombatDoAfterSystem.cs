@@ -97,8 +97,9 @@ public sealed partial class CombatDoAfterSystem : EntitySystem
             return;
 
         var rand = new Random((int) _timing.CurTick.Value);
-        var delay = rand.NextFloat(combatDoAfter.Delay - combatDoAfter.DelayVariation,
-            combatDoAfter.Delay + combatDoAfter.DelayVariation);
+        var minDelay = combatDoAfter.Delay - combatDoAfter.DelayVariation;
+        var maxDelay = combatDoAfter.Delay + combatDoAfter.DelayVariation;
+        var delay = (float) (rand.NextDouble() * (maxDelay - minDelay) + minDelay);
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
             user,

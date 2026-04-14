@@ -15,6 +15,10 @@ SPDX-License-Identifier: MIT
         <OutputType>Exe</OutputType>
         <TargetFramework>net10.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <!-- Veldrid 4.8.0 still pulls SharpDX/D3D11 transitively, which triggers
+             legacy netcore vulnerability advisories in this dev-only tool. -->
+        <!-- Libuv's legacy RID assets produce NETSDK1206 in .NET 10, but Pow3r does not ship or consume those distro-specific assets. -->
+        <NoWarn>$(NoWarn);NU1903;NETSDK1206</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,7 +35,6 @@ SPDX-License-Identifier: MIT
     </ItemGroup>
 
   <Import Project="..\RobustToolbox\Imports\Shared.props" />
-  <Import Project="..\RobustToolbox\Imports\Testing.props" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>
 

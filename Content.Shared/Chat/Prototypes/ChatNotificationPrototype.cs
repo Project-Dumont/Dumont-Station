@@ -1,4 +1,4 @@
-using Robust.Shared.Audio;
+﻿using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Chat.Prototypes;
@@ -6,7 +6,7 @@ namespace Content.Shared.Chat.Prototypes;
 /// <summary>
 /// A predefined notification used to warn a player of specific events.
 /// </summary>
-[Prototype("chatNotification")]
+[Prototype]
 public sealed partial class ChatNotificationPrototype : IPrototype
 {
     [ViewVariables]

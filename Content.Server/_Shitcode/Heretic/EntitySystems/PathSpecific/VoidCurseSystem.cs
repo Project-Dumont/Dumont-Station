@@ -14,7 +14,7 @@ using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Speech.Muting;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
 
@@ -63,6 +63,6 @@ public sealed class VoidCurseSystem : SharedVoidCurseSystem
             _temp.ForceChangeTemperature(ent, Math.Clamp(t, Atmospherics.TCMB, Atmospherics.Tmax), temp);
         }
 
-        _statusEffect.TryAddStatusEffect<MutedComponent>(ent, "Muted", TimeSpan.FromSeconds(5), true);
+        _statusEffect.TryAddStatusEffect(ent, "Muted", out _, TimeSpan.FromSeconds(5));
     }
 }

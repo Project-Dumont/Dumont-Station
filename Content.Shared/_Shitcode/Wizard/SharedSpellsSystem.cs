@@ -76,6 +76,7 @@ using Content.Shared.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
+using NewStatusEffectsSystem = Content.Shared.StatusEffectNew.StatusEffectsSystem;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Melee;
@@ -128,7 +129,7 @@ public abstract class SharedSpellsSystem : EntitySystem
     [Dependency] protected readonly TagSystem Tag = default!;
     [Dependency] protected readonly SharedActionsSystem Actions = default!;
     [Dependency] private   readonly INetManager _net = default!;
-    [Dependency] private   readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private   readonly NewStatusEffectsSystem _statusEffects = default!;
     [Dependency] private   readonly InventorySystem _inventory = default!;
     [Dependency] private   readonly SharedJitteringSystem _jitter = default!;
     [Dependency] private   readonly SharedStutteringSystem _stutter = default!;
@@ -282,7 +283,7 @@ public abstract class SharedSpellsSystem : EntitySystem
         if (!targetWizard)
             MakeMime(ev.Target);
         else
-            _statusEffects.TryAddStatusEffect<MutedComponent>(ev.Target, "Muted", ev.WizardMuteDuration, true, status);
+            _statusEffects.TrySetStatusEffectDuration(ev.Target, "Muted", ev.WizardMuteDuration);
 
         ev.Handled = true;
     }
@@ -449,17 +450,8 @@ public abstract class SharedSpellsSystem : EntitySystem
         if (!TryComp(ev.Target, out StatusEffectsComponent? status))
             return;
 
-        _statusEffects.TryAddStatusEffect<TemporaryBlindnessComponent>(ev.Target,
-            "TemporaryBlindness",
-            ev.BlindDuration,
-            true,
-            status);
-
-        _statusEffects.TryAddStatusEffect<BlurryVisionComponent>(ev.Target,
-            "BlurryVision",
-            ev.BlurDuration,
-            true,
-            status);
+        _statusEffects.TrySetStatusEffectDuration(ev.Target, "TemporaryBlindness", ev.BlindDuration);
+        _statusEffects.TrySetStatusEffectDuration(ev.Target, "BlurryVision", ev.BlurDuration);
 
         if (_net.IsServer)
         {

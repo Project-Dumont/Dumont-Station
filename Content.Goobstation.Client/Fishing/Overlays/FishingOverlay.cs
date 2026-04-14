@@ -21,6 +21,7 @@ public sealed class FishingOverlay : Overlay
     private readonly IPlayerManager _player;
     private readonly SharedTransformSystem _transform;
     private readonly ProgressColorSystem _progressColor;
+    private readonly SpriteSystem _sprite;
 
     private readonly Texture _barTexture;
 
@@ -41,6 +42,7 @@ public sealed class FishingOverlay : Overlay
         _player = player;
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
+        _sprite = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>();
 
         // Load the progress bar texture
         var sprite = new SpriteSpecifier.Rsi(new("/Textures/_Goobstation/Interface/Misc/fish_bar.rsi"), "icon");
@@ -93,7 +95,7 @@ public sealed class FishingOverlay : Overlay
 
             // Calculate the position of the progress bar relative to the entity
             var position = new Vector2(
-                sprite.Bounds.Width / 2f,
+                _sprite.GetLocalBounds((uid, sprite)).Width / 2f,
                 -scaledTextureSize.Y / 2f // Center vertically
             );
 

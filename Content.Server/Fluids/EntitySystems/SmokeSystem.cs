@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Ben <50087092+benev0@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2023 Ben <50087092+benev0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 BenOwnby <ownbyb@appstate.edu>
 // SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
@@ -358,7 +358,7 @@ public sealed class SmokeSystem : EntitySystem
         var blockIngestion = _internals.AreInternalsWorking(entity);
 
         if (_inventory.TryGetSlotEntity(entity, "mask", out var maskUid) &&
-            EntityManager.TryGetComponent<IngestionBlockerComponent>(maskUid, out var blocker) &&
+            TryComp<IngestionBlockerComponent>(maskUid, out var blocker) &&
             blocker is { Enabled: true, BlockSmokeIngestion: true }) // Goobstation
         {
             blockIngestion = true;
@@ -443,3 +443,4 @@ public sealed class SmokeSystem : EntitySystem
         _appearance.SetData(smoke.Owner, SmokeVisuals.Color, color, smoke.Comp2);
     }
 }
+

@@ -23,8 +23,6 @@ namespace Content.Client._Shitcode.UserActions.Tabs;
 public sealed partial class StatusTabControl : BaseTabControl
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private ClientGameTicker? _gameTicker;

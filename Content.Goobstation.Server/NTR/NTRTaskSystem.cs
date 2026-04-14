@@ -39,11 +39,12 @@ namespace Content.Goobstation.Server.NTR;
 
 public sealed class NtrTaskSystem : EntitySystem
 {
+    private static readonly ProtoId<TagPrototype> BottleTag = "Bottle";
+    private static readonly ProtoId<TagPrototype> VialTag = "Vial";
+
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private readonly NameIdentifierSystem _nameIdentifier = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -270,7 +271,7 @@ public sealed class NtrTaskSystem : EntitySystem
 
     private bool TryHandleVial(EntityUid item, EntityUid console, NtrTaskConsoleComponent component)
     {
-        if (!_tag.HasTag(item, "Vial") && !_tag.HasTag(item, "Bottle"))
+        if (!_tag.HasTag(item, VialTag) && !_tag.HasTag(item, BottleTag))
             return false;
 
         var station = _station.GetOwningStation(console);

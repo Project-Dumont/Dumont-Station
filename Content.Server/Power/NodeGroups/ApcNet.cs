@@ -42,7 +42,7 @@ namespace Content.Server.Power.NodeGroups
     [UsedImplicitly]
     public sealed partial class ApcNet : BasePowerNet<IApcNet>, IApcNet
     {
-        [ViewVariables] public readonly List<ApcComponent> Apcs = new();
+        [ViewVariables] public readonly List<Entity<ApcComponent>> Apcs = new();
         [ViewVariables] public readonly List<ApcPowerProviderComponent> Providers = new();
 
         //Debug property
@@ -71,7 +71,7 @@ namespace Content.Server.Power.NodeGroups
                 netBattery.NetworkBattery.LinkedNetworkDischarging = default;
 
             QueueNetworkReconnect();
-            Apcs.Add(apc);
+            Apcs.Add((uid, apc));
         }
 
         public void RemoveApc(EntityUid uid, ApcComponent apc)
@@ -80,7 +80,7 @@ namespace Content.Server.Power.NodeGroups
                 netBattery.NetworkBattery.LinkedNetworkDischarging = default;
 
             QueueNetworkReconnect();
-            Apcs.Remove(apc);
+            Apcs.Remove((uid, apc));
         }
 
         public void AddPowerProvider(ApcPowerProviderComponent provider)

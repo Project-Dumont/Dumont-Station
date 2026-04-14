@@ -23,6 +23,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Inventory;
 
+#pragma warning disable CS0618
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(InventorySystem))]
 [AutoGenerateComponentState(true)]
@@ -86,3 +87,4 @@ public sealed partial class InventoryComponent : Component
 /// </summary>
 [ByRefEvent]
 public struct InventoryTemplateUpdated;
+#pragma warning restore CS0618

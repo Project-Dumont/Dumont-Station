@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Wraith.Events;
+﻿using Content.Goobstation.Shared.Wraith.Events;
 using Content.Shared.Body.Components;
 using Content.Shared.Physics;
 using Content.Shared.Projectiles;
@@ -23,7 +23,6 @@ public sealed class TentacleHookSystem : EntitySystem
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedJointSystem _joints = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
 

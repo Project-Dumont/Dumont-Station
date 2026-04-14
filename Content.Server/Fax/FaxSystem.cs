@@ -477,7 +477,8 @@ public sealed class FaxSystem : EntitySystem
         // Goobstation
         if (component.PaperSlot.Item != null)
         {
-            var sentEv = new GettingFaxedSentEvent((uid, component), args);
+            var fax = new Entity<FaxMachineComponent>(uid, component);
+            var sentEv = new GettingFaxedSentEvent(in fax, in args);
             RaiseLocalEvent(component.PaperSlot.Item.Value, ref sentEv);
 
             if (sentEv.Handled)

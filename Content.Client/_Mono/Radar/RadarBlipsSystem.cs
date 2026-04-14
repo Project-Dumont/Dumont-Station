@@ -73,7 +73,7 @@ public sealed partial class RadarBlipsSystem : EntitySystem
         _lastRequestTime = _timing.CurTime;
 
         // Cache the radar position for distance culling
-        if (TryComp<TransformComponent>(console, out var xform))
+        if (TryComp(console, out TransformComponent? xform))
         {
             _radarWorldPosition = _xform.GetWorldPosition(console);
         }

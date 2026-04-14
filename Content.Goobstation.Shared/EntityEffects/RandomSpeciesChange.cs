@@ -1,9 +1,8 @@
-using Content.Shared.EntityEffects;
+﻿using Content.Shared.EntityEffects;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
-using Content.Shared.EntityEffects;
 
 namespace Content.Goobstation.Shared.EntityEffects;
 public sealed partial class RandomSpeciesChange : EntityEffect

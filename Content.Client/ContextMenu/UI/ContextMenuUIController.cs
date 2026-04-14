@@ -170,7 +170,7 @@ namespace Content.Client.ContextMenu.UI
 
             Close();
             RootMenu.OnPopupHide -= Close;
-            RootMenu.Dispose();
+            RootMenu.Close();
             RootMenu = default!;
         }
 

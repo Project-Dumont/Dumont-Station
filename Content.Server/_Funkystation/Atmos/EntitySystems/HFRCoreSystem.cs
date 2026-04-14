@@ -24,7 +24,6 @@ namespace Content.Server._Funkystation.Atmos.Systems;
 public sealed class HFRCoreSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
@@ -75,11 +74,11 @@ public sealed class HFRCoreSystem : EntitySystem
                                     compType == typeof(HFRModeratorInputComponent) ? core.ModeratorInputUid :
                                     core.WasteOutputUid;
 
-                if (compUid != null && EntityManager.HasComponent(compUid.Value, compType))
+                if (compUid != null && HasComp(compUid.Value, compType))
                 {
                     if (compType == typeof(HFRConsoleComponent))
                     {
-                        if (EntityManager.TryGetComponent<HFRConsoleComponent>(compUid.Value, out var consoleComp))
+                        if (TryComp<HFRConsoleComponent>(compUid.Value, out var consoleComp))
                         {
                             consoleComp.CoreUid = null;
                             _hfrConsoleSystem.SetPowerState(compUid.Value, consoleComp);
@@ -87,21 +86,21 @@ public sealed class HFRCoreSystem : EntitySystem
                     }
                     else if (compType == typeof(HFRFuelInputComponent))
                     {
-                        if (EntityManager.TryGetComponent<HFRFuelInputComponent>(compUid.Value, out var fuelComp))
+                        if (TryComp<HFRFuelInputComponent>(compUid.Value, out var fuelComp))
                         {
                             fuelComp.CoreUid = null;
                         }
                     }
                     else if (compType == typeof(HFRModeratorInputComponent))
                     {
-                        if (EntityManager.TryGetComponent<HFRModeratorInputComponent>(compUid.Value, out var modComp))
+                        if (TryComp<HFRModeratorInputComponent>(compUid.Value, out var modComp))
                         {
                             modComp.CoreUid = null;
                         }
                     }
                     else if (compType == typeof(HFRWasteOutputComponent))
                     {
-                        if (EntityManager.TryGetComponent<HFRWasteOutputComponent>(compUid.Value, out var wasteComp))
+                        if (TryComp<HFRWasteOutputComponent>(compUid.Value, out var wasteComp))
                         {
                             wasteComp.CoreUid = null;
                         }
@@ -112,7 +111,7 @@ public sealed class HFRCoreSystem : EntitySystem
 
             foreach (var cornerUid in core.CornerUids.ToList())
             {
-                if (EntityManager.TryGetComponent<HFRCornerComponent>(cornerUid, out var cornerComp))
+                if (TryComp<HFRCornerComponent>(cornerUid, out var cornerComp))
                 {
                     cornerComp.CoreUid = null;
                 }
@@ -147,7 +146,7 @@ public sealed class HFRCoreSystem : EntitySystem
         if (!Resolve(uid, ref core, false))
             return;
 
-        if (core.ConsoleUid == null || !EntityManager.EntityExists(core.ConsoleUid.Value))
+        if (core.ConsoleUid == null || !Exists(core.ConsoleUid.Value))
             return;
 
         if (!TryComp<UserInterfaceComponent>(core.ConsoleUid.Value, out var consoleUi))
@@ -250,7 +249,7 @@ public sealed class HFRCoreSystem : EntitySystem
 
     private void TryLinkSurroundingComponents(EntityUid coreUid, HFRCoreComponent core)
     {
-        if (!TryComp<TransformComponent>(coreUid, out var coreXform) || !coreXform.Anchored)
+        if (!TryComp(coreUid, out TransformComponent? coreXform) || !coreXform.Anchored)
             return;
 
         var gridUid = coreXform.GridUid;
@@ -269,11 +268,11 @@ public sealed class HFRCoreSystem : EntitySystem
 
         LinkCorners(coreUid, core, coreTile, gridUid.Value, grid);
 
-        if (core.ConsoleUid != null && EntityManager.TryGetComponent<HFRConsoleComponent>(core.ConsoleUid, out var consoleComp))
+        if (core.ConsoleUid != null && TryComp<HFRConsoleComponent>(core.ConsoleUid, out var consoleComp))
         {
             _hfrConsoleSystem.SetPowerState(core.ConsoleUid.Value, consoleComp);
         }
-        else if (previousConsoleUid != null && EntityManager.TryGetComponent<HFRConsoleComponent>(previousConsoleUid, out var prevConsoleComp))
+        else if (previousConsoleUid != null && TryComp<HFRConsoleComponent>(previousConsoleUid, out var prevConsoleComp))
         {
             _hfrConsoleSystem.SetPowerState(previousConsoleUid.Value, prevConsoleComp);
         }

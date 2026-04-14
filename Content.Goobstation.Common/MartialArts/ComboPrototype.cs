@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -18,7 +18,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Common.MartialArts;
 
-[Prototype("combo")]
+[Prototype]
 public sealed partial class ComboPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;
@@ -89,7 +89,7 @@ public sealed partial class ComboPrototype : IPrototype
     public bool PerformOnSelf;
 }
 
-[Prototype("comboList")]
+[Prototype]
 public sealed partial class ComboListPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;

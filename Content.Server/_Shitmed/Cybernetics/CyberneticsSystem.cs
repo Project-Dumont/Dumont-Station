@@ -21,6 +21,8 @@ namespace Content.Server._Shitmed.Cybernetics;
 
 internal sealed class CyberneticsSystem : EntitySystem
 {
+    private static readonly ProtoId<DamageTypePrototype> ShockDamageType = "Shock";
+
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
@@ -50,7 +52,7 @@ internal sealed class CyberneticsSystem : EntitySystem
                 if (TryComp(cyberEnt, out DamageableComponent? damageable)
                     && part.Body is not null)
                 {
-                    var shock = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Shock"), 30);
+                    var shock = new DamageSpecifier(_prototypes.Index(ShockDamageType), 30);
                     var targetPart = _body.GetTargetBodyPart(part);
                     _damageable.TryChangeDamage(part.Body.Value, shock, ignoreResistances: true, targetPart: targetPart, damageable: damageable);
                     Dirty(cyberEnt, damageable);

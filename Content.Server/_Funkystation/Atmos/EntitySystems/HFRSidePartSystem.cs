@@ -36,7 +36,7 @@ public sealed class HFRSidePartSystem : EntitySystem
 
     private bool TryAlignToCore(EntityUid uid, HFRSidePartComponent sidePart)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || !xform.Anchored)
+        if (!TryComp(uid, out TransformComponent? xform) || !xform.Anchored)
             return false;
 
         var gridUid = xform.GridUid;
@@ -54,7 +54,7 @@ public sealed class HFRSidePartSystem : EntitySystem
 
             foreach (var (entity, _) in entities)
             {
-                if (TryComp<TransformComponent>(entity, out var entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
+                if (TryComp(entity, out TransformComponent? entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
                 {
                     float rotation = offset switch
                     {
@@ -76,7 +76,7 @@ public sealed class HFRSidePartSystem : EntitySystem
 
     private void TryAlignToCorner(EntityUid uid, HFRSidePartComponent sidePart)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || !xform.Anchored)
+        if (!TryComp(uid, out TransformComponent? xform) || !xform.Anchored)
             return;
 
         var gridUid = xform.GridUid;
@@ -94,7 +94,7 @@ public sealed class HFRSidePartSystem : EntitySystem
 
             foreach (var (entity, _) in entities)
             {
-                if (TryComp<TransformComponent>(entity, out var cornerXform) && cornerXform.Anchored && cornerXform.GridUid == gridUid)
+                if (TryComp(entity, out TransformComponent? cornerXform) && cornerXform.Anchored && cornerXform.GridUid == gridUid)
                 {
                     var cornerRotation = cornerXform.LocalRotation;
                     var cornerDir = cornerRotation.GetCardinalDir();
@@ -142,7 +142,7 @@ public sealed class HFRSidePartSystem : EntitySystem
 
     public void TryFindCore(EntityUid uid)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || !xform.Anchored)
+        if (!TryComp(uid, out TransformComponent? xform) || !xform.Anchored)
             return;
 
         var gridUid = xform.GridUid;
@@ -161,7 +161,7 @@ public sealed class HFRSidePartSystem : EntitySystem
 
         foreach (var (entity, coreComp) in entities)
         {
-            if (TryComp<TransformComponent>(entity, out var entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
+            if (TryComp(entity, out TransformComponent? entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
             {
                 // Check which component the side part has and pass it to TryLinkComponent
                 if (TryComp<HFRConsoleComponent>(uid, out var consoleComp))

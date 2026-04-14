@@ -526,6 +526,7 @@ public sealed partial class AdminLogsControl : Control
         );
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

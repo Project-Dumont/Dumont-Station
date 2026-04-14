@@ -22,6 +22,8 @@ public sealed class BlobbernautSystem : SharedBlobbernautSystem
 
 public sealed class BlobbernautVisualizerSystem : VisualizerSystem<BlobbernautComponent>
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -40,10 +42,10 @@ public sealed class BlobbernautVisualizerSystem : VisualizerSystem<BlobbernautCo
 
         foreach (var key in Layers)
         {
-            if (!sprite.LayerMapTryGet(key, out _))
+            if (!_sprite.LayerMapTryGet((id, sprite), key, out _, false))
                 continue;
 
-            sprite.LayerSetColor(key, blobbernaut.Color);
+            _sprite.LayerSetColor((id, sprite), key, blobbernaut.Color);
         }
     }
 

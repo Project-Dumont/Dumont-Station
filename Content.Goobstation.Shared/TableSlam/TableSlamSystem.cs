@@ -70,7 +70,7 @@ public sealed class TableSlamSystem : EntitySystem
     private void OnDisarmAttempt(Entity<PostTabledComponent> ent, ref DisarmAttemptEvent args)
     {
         var rand = new Random(SharedRandomExtensions.HashCodeCombine(new List<int> { (int) _gameTiming.CurTick.Value, GetNetEntity(ent).Id }));
-        if (!rand.Prob(ent.Comp.ParalyzeChance) || !TryComp<GrabbableComponent>(ent, out var grabbable))
+        if (rand.NextDouble() >= ent.Comp.ParalyzeChance || !TryComp<GrabbableComponent>(ent, out var grabbable))
             return;
 
         _stunSystem.TryUpdateParalyzeDuration(ent, TimeSpan.FromSeconds(grabbable.PostTabledDuration));
@@ -92,7 +92,7 @@ public sealed class TableSlamSystem : EntitySystem
         var massRatio = _contestsSystem.MassContest(ent.Owner, puller.Pulling.Value, bypassClamp: true);
         var chance = Math.Clamp(massRatio, 0f, 1f);
         var rand = new Random(SharedRandomExtensions.HashCodeCombine(new List<int> { (int) _gameTiming.CurTick.Value, GetNetEntity(ent).Id }));
-        if (rand.Prob(chance))
+        if (rand.NextDouble() < chance)
             TryTableSlam(puller.Pulling.Value, ent.Owner, target);
     }
 

@@ -24,8 +24,6 @@ namespace Content.Server.Procedural;
 
 public sealed partial class DungeonSystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-
     // Temporary caches.
     private readonly HashSet<EntityUid> _entitySet = new();
     private readonly List<DungeonRoomPrototype> _availableRooms = new();
@@ -137,7 +135,7 @@ public sealed partial class DungeonSystem
     {
         // Ensure the underlying template exists.
         var roomMap = GetOrCreateTemplate(room);
-        var templateMapUid = _mapManager.GetMapEntityId(roomMap);
+        var templateMapUid = _maps.GetMapOrInvalid(roomMap);
         var templateGrid = Comp<MapGridComponent>(templateMapUid);
         var roomDimensions = room.Size;
 
@@ -264,7 +262,7 @@ public sealed partial class DungeonSystem
                 // but place 1 nanometre off grid and fail the add.
                 if (!_maps.TryGetTileRef(gridUid, grid, tilePos, out var tileRef) || tileRef.Tile.IsEmpty)
                 {
-                    _maps.SetTile(gridUid, grid, tilePos, _tile.GetVariantTile((ContentTileDefinition) _tileDefManager[FallbackTileId], _random.GetRandom()));
+                    _maps.SetTile(gridUid, grid, tilePos, _tileDefManager.GetVariantTile((ContentTileDefinition) _tileDefManager[FallbackTileId], _random));
                 }
 
                 var result = _decals.TryAddDecal(

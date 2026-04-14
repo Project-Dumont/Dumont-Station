@@ -34,6 +34,7 @@ public sealed class ItemSlotRendererSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _slot = default!;
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -84,7 +85,7 @@ public sealed class ItemSlotRendererSystem : EntitySystem
                 mapKey = e;
                 isEnum = true;
             }
-            if (!sprite.LayerMapTryGet(mapKey, out _) && comp.ErrorOnMissing)
+            if (!TryLayerMapGet(uid, sprite, mapKey, out _) && comp.ErrorOnMissing)
             {
                 Log.Warning($"ItemSlotRenderer: Tried to add a missing layer under the {(isEnum ? "enum" : "string")} key {mapKey}. Skipping missing layer. If this is unwanted, set component's ErrorOnMissing to false.");
                 continue;
@@ -96,6 +97,20 @@ public sealed class ItemSlotRendererSystem : EntitySystem
             comp.LayerMappings.Add((mapKey, slotId));
 
             comp.CachedRT.Add(slotId, _clyde.CreateRenderTarget(comp.RenderTargetSize, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), new TextureSampleParameters { Filter = false }, $"{slotId}-itemrender-rendertarget"));
+        }
+    }
+
+    private bool TryLayerMapGet(EntityUid uid, SpriteComponent sprite, object key, out int layer)
+    {
+        switch (key)
+        {
+            case Enum enumKey:
+                return _sprite.LayerMapTryGet((uid, sprite), enumKey, out layer, false);
+            case string stringKey:
+                return _sprite.LayerMapTryGet((uid, sprite), stringKey, out layer, false);
+            default:
+                layer = 0;
+                return false;
         }
     }
 }
@@ -117,6 +132,7 @@ public sealed class SpriteToLayerBullshitOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
+        var spriteSystem = _entMan.System<SpriteSystem>();
         var handle = args.ScreenHandle;
         var query = _entMan.EntityQueryEnumerator<ItemSlotRendererComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var comp, out var sprite))
@@ -124,8 +140,8 @@ public sealed class SpriteToLayerBullshitOverlay : Overlay
             for (int i = 0; i < comp.LayerMappings.Count; i++)
             {
                 var (layerKey, slotId) = comp.LayerMappings[i];
-                if (!sprite.LayerMapTryGet(layerKey, out int layerIndex) ||
-                    !sprite.TryGetLayer(layerIndex, out var layer)) // verify that the layer actually exists
+                if (!TryLayerMapGet(uid, sprite, layerKey, out var layerIndex) ||
+                    !spriteSystem.TryGetLayer((uid, sprite), layerIndex, out var layer, false)) // verify that the layer actually exists
                     continue;
 
                 // if for some reason we can't render the item to a texture (or there is no item to render),
@@ -134,7 +150,7 @@ public sealed class SpriteToLayerBullshitOverlay : Overlay
                     !comp.CachedRT.TryGetValue(slotId, out var renderTarget))
                 {
                     if (layer.Texture != Texture.Transparent)
-                        sprite.LayerSetTexture(layerIndex, Texture.Transparent);
+                        spriteSystem.LayerSetTexture((uid, sprite), layerIndex, Texture.Transparent);
                     continue;
                 }
 
@@ -142,8 +158,23 @@ public sealed class SpriteToLayerBullshitOverlay : Overlay
                 {
                     handle.DrawEntity(item, renderTarget.Size / 2, Vector2.One, 0); // If this throws due to a missing spritecomp, it's your fault.
                 }, Color.Transparent);
-                sprite.LayerSetTexture(layerIndex, renderTarget.Texture);
+                spriteSystem.LayerSetTexture((uid, sprite), layerIndex, renderTarget.Texture);
             }
+        }
+    }
+
+    private bool TryLayerMapGet(EntityUid uid, SpriteComponent sprite, object key, out int layer)
+    {
+        var spriteSystem = _entMan.System<SpriteSystem>();
+        switch (key)
+        {
+            case Enum enumKey:
+                return spriteSystem.LayerMapTryGet((uid, sprite), enumKey, out layer, false);
+            case string stringKey:
+                return spriteSystem.LayerMapTryGet((uid, sprite), stringKey, out layer, false);
+            default:
+                layer = 0;
+                return false;
         }
     }
 }

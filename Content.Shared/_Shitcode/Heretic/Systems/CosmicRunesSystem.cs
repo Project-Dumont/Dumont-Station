@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Goobstation.Common.BlockTeleport;
 using Content.Goobstation.Common.Grab;
 using Content.Goobstation.Common.MartialArts;
@@ -25,7 +25,6 @@ public sealed class CosmicRunesSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    [Dependency] private readonly SharedStarTouchSystem _starTouch = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;

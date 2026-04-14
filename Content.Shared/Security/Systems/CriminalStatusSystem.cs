@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -22,7 +22,6 @@ namespace Content.Shared.Security.Systems;
 
 public sealed class CriminalStatusSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAccessSystem _access = default!;
     [Dependency] private readonly SharedIdCardSystem _id = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;

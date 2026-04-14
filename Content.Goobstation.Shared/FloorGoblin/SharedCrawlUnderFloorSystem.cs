@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Evaisa <evagiacosa1@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Evaisa <evagiacosa1@gmail.com>
 // SPDX-FileCopyrightText: 2025 Evaisa <mail@evaisa.dev>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Richard Blonski <48651647+RichardBlonski@users.noreply.github.com>
@@ -30,9 +30,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Conveyor;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Systems;
 
 namespace Content.Goobstation.Shared.FloorGoblin;
 

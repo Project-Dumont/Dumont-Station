@@ -22,6 +22,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Shitcode.Heretic.Systems;
 
+#pragma warning disable CS0618
 public abstract class SharedShadowCloakSystem : EntitySystem
 {
     [Dependency] private readonly INetManager _net = default!;
@@ -331,3 +332,4 @@ public abstract class SharedShadowCloakSystem : EntitySystem
 
     protected virtual void Shutdown(Entity<ShadowCloakedComponent> ent) { }
 }
+#pragma warning restore CS0618

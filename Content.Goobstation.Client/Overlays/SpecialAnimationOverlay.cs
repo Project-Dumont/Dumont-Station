@@ -159,6 +159,7 @@ public sealed class SpecialAnimationOverlay : Overlay
 
     private bool StartupAnimation(SpecialAnimationData animation)
     {
+        var spriteSystem = _entity.System<SpriteSystem>();
         var source = _entity.GetEntity(animation.Source);
 
         if (!_entity.TryGetComponent<SpriteComponent>(source, out var sourceSprite))
@@ -167,7 +168,7 @@ public sealed class SpecialAnimationOverlay : Overlay
         // Copy the sprite component from source to the dummy entity.
         var dummyEnt = _entity.Spawn();
         var dummySprite = _entity.EnsureComponent<SpriteComponent>(dummyEnt);
-        dummySprite.CopyFrom(sourceSprite);
+        spriteSystem.CopySprite((source, sourceSprite), (dummyEnt, dummySprite));
 
         // Set some values
         animation.AnimationEntity = dummyEnt;

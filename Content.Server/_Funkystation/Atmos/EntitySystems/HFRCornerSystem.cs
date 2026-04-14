@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
 // SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 //
@@ -47,7 +47,7 @@ public sealed class HFRCornerSystem : EntitySystem
         {
             if (corner.CoreUid != null)
             {
-                if (EntityManager.TryGetComponent<HFRCoreComponent>(corner.CoreUid, out var coreComp))
+                if (TryComp<HFRCoreComponent>(corner.CoreUid, out var coreComp))
                 {
                     corner.IsActive = false;
                     if (TryComp<AppearanceComponent>(uid, out var appearance))
@@ -69,7 +69,7 @@ public sealed class HFRCornerSystem : EntitySystem
 
     private bool TryAlignToCore(EntityUid uid, HFRCornerComponent corner)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || !xform.Anchored)
+        if (!TryComp(uid, out TransformComponent? xform) || !xform.Anchored)
             return false;
 
         var gridUid = xform.GridUid;
@@ -87,7 +87,7 @@ public sealed class HFRCornerSystem : EntitySystem
 
             foreach (var (entity, coreComp) in entities)
             {
-                if (TryComp<TransformComponent>(entity, out var entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
+                if (TryComp(entity, out TransformComponent? entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
                 {
                     float rotation = offset switch
                     {
@@ -109,7 +109,7 @@ public sealed class HFRCornerSystem : EntitySystem
 
     private void TryAlignToSidePart(EntityUid uid, HFRCornerComponent corner)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || !xform.Anchored)
+        if (!TryComp(uid, out TransformComponent? xform) || !xform.Anchored)
             return;
 
         var gridUid = xform.GridUid;
@@ -127,7 +127,7 @@ public sealed class HFRCornerSystem : EntitySystem
 
             foreach (var (entity, _) in entities)
             {
-                if (TryComp<TransformComponent>(entity, out var sideXform) && sideXform.Anchored && sideXform.GridUid == gridUid)
+                if (TryComp(entity, out TransformComponent? sideXform) && sideXform.Anchored && sideXform.GridUid == gridUid)
                 {
                     var sideRotation = sideXform.LocalRotation;
                     var sideDir = sideRotation.GetCardinalDir();
@@ -175,7 +175,7 @@ public sealed class HFRCornerSystem : EntitySystem
 
     private void TryFindCore(EntityUid uid, HFRCornerComponent corner)
     {
-        if (!TryComp<TransformComponent>(uid, out var xform) || !xform.Anchored)
+        if (!TryComp(uid, out TransformComponent? xform) || !xform.Anchored)
             return;
 
         var gridUid = xform.GridUid;
@@ -193,7 +193,7 @@ public sealed class HFRCornerSystem : EntitySystem
 
             foreach (var (entity, coreComp) in entities)
             {
-                if (TryComp<TransformComponent>(entity, out var entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
+                if (TryComp(entity, out TransformComponent? entityXform) && entityXform.Anchored && entityXform.GridUid == gridUid)
                 {
                     _coreSystem.TryLinkCorner(entity, coreComp, uid, corner);
                     break;
@@ -202,3 +202,4 @@ public sealed class HFRCornerSystem : EntitySystem
         }
     }
 }
+

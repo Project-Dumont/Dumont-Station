@@ -16,6 +16,8 @@ namespace Content.Goobstation.Client.Overlays;
 
 public sealed class BaseSwitchableOverlay<TComp> : Overlay where TComp : SwitchableVisionOverlayComponent
 {
+    private static readonly ProtoId<ShaderPrototype> NightVisionShader = "NightVision";
+
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override bool RequestScreenTexture => true;
@@ -30,7 +32,7 @@ public sealed class BaseSwitchableOverlay<TComp> : Overlay where TComp : Switcha
     public BaseSwitchableOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototype.Index<ShaderPrototype>("NightVision").InstanceUnique();
+        _shader = _prototype.Index(NightVisionShader).InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

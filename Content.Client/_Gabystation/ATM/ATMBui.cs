@@ -18,8 +18,6 @@ namespace Content.Client._Gabystation.ATM;
 [UsedImplicitly]
 public sealed class BankATMBui : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-
     [ViewVariables]
     private BankATMWindow? _window;
     private int _amount;

@@ -26,6 +26,8 @@ namespace Content.Client.Guidebook.Controls;
 [UsedImplicitly, GenerateTypedNameReferences]
 public sealed partial class GuideTechnologyEmbed : BoxContainer, IDocumentTag, ISearchableControl
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("guidebook");
+
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
@@ -66,13 +68,13 @@ public sealed partial class GuideTechnologyEmbed : BoxContainer, IDocumentTag, I
         control = null;
         if (!args.TryGetValue("Technology", out var id))
         {
-            Logger.Error("Technology embed tag is missing technology prototype argument");
+            Sawmill.Error("Technology embed tag is missing technology prototype argument");
             return false;
         }
 
         if (!_prototype.TryIndex<TechnologyPrototype>(id, out var technology))
         {
-            Logger.Error($"Specified technology prototype \"{id}\" is not a valid technology prototype");
+            Sawmill.Error($"Specified technology prototype \"{id}\" is not a valid technology prototype");
             return false;
         }
 

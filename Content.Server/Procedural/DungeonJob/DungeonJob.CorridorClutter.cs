@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Threading.Tasks;
+using System.Linq;
 using Content.Shared.Procedural;
 using Content.Shared.Procedural.PostGeneration;
 using Content.Shared.Storage;
@@ -24,10 +25,11 @@ public sealed partial class DungeonJob
         var physicsQuery = _entManager.GetEntityQuery<PhysicsComponent>();
         var count = (int) Math.Ceiling(dungeon.CorridorTiles.Count * gen.Chance);
         var contents = _prototype.Index(gen.Contents);
+        var corridorTiles = dungeon.CorridorTiles;
 
         while (count > 0)
         {
-            var tile = random.Pick(dungeon.CorridorTiles);
+            var tile = corridorTiles.ElementAt(random.Next(corridorTiles.Count));
 
             var enumerator = _maps.GetAnchoredEntitiesEnumerator(_gridUid, _grid, tile);
             var blocked = false;

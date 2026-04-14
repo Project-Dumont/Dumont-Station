@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+﻿// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
 // SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
@@ -170,18 +170,14 @@ namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem : SharedGunSystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IRobustRandom _rand = default!; // 🌟Starlight🌟
-    [Dependency] private readonly BatterySystem _battery = default!;
+    [Dependency] private readonly IRobustRandom _rand = default!; // ðŸŒŸStarlightðŸŒŸ
     [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly DecalSystem _decals = default!;  // 🌟Starlight🌟
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!; // 🌟Starlight🌟
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;  // ðŸŒŸStarlightðŸŒŸ
+    [Dependency] private readonly AtmosphereSystem _atmosphere = default!; // ðŸŒŸStarlightðŸŒŸ
     [Dependency] private readonly SharedMapSystem _map = default!;
 
     // Goobstation
@@ -191,7 +187,7 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private const float DamagePitchVariation = 0.05f;
-    private string[] _bloodDecals = []; // 🌟Starlight🌟
+    private string[] _bloodDecals = []; // ðŸŒŸStarlightðŸŒŸ
     private float _crawlHitzoneSize; // Goobstation
 
     public override void Initialize()
@@ -203,7 +199,7 @@ public sealed partial class GunSystem : SharedGunSystem
         CacheDecals();
     }
 
-    private void CacheDecals() // 🌟Starlight🌟
+    private void CacheDecals() // ðŸŒŸStarlightðŸŒŸ
     {
         _bloodDecals = _proto.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("BloodSplatter")).Select(x => x.ID).ToArray();
     }
@@ -244,18 +240,18 @@ public sealed partial class GunSystem : SharedGunSystem
         var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
-        var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle(), user);  // Goobstation user
+        var angle = GetRecoilAngle(Timing.CurTime, gunUid, gun, mapDirection.ToAngle(), user);  // Goobstation user
 
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.
         var fromEnt = MapManager.TryFindGridAt(fromMap, out var gridUid, out _)
             ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
             : new EntityCoordinates(_map.GetMapOrInvalid(fromMap.MapId), fromMap.Position);
 
-        var pointerLength = mapDirection.Length(); // 🌟Starlight🌟
+        var pointerLength = mapDirection.Length(); // ðŸŒŸStarlightðŸŒŸ
         var toMapBeforeRecoil = toMap; // Goobstation
 
         // Update shot based on the recoil
-        toMap = fromMap.Position + angle.ToVec() * pointerLength; // 🌟Starlight🌟
+        toMap = fromMap.Position + angle.ToVec() * pointerLength; // ðŸŒŸStarlightðŸŒŸ
         mapDirection = toMap - fromMap.Position;
         var gunVelocity = Physics.GetMapLinearVelocity(fromEnt);
 
@@ -275,7 +271,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
             switch (shootable)
             {
-                //🌟Starlight🌟
+                //ðŸŒŸStarlightðŸŒŸ
                 case HitScanCartridgeAmmoComponent cartridge:
                     if (!cartridge.Spent)
                     {
@@ -535,12 +531,10 @@ public sealed partial class GunSystem : SharedGunSystem
             MuzzleFlash(gunUid, ammoComp, mapDirection.ToAngle(), user);
             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
         }
-        //🌟Starlight🌟
+        //ðŸŒŸStarlightðŸŒŸ
         void Hitscan(EntityUid gunUid, GunComponent gun, EntityCoordinates fromCoordinates, EntityUid? user, MapCoordinates fromMap, float pointer, Vector2 mapDirection, HitscanPrototype hitscan)
         {
             EntityUid? lastHit = null;
-
-            var accuracyZone = 3f;
 
             var from = fromMap;
             // can't use map coords above because funny FireEffects
@@ -749,7 +743,7 @@ public sealed partial class GunSystem : SharedGunSystem
         return angles;
     }
 
-    // 🌟Starlight🌟
+    // ðŸŒŸStarlightðŸŒŸ
     private Angle[] LinearSpreadWithRandom(Angle start, Angle end, int intervals, float randomSpread)
     {
         var angles = new Angle[intervals];
@@ -770,7 +764,7 @@ public sealed partial class GunSystem : SharedGunSystem
         return angles;
     }
 
-    private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction, EntityUid? user = null) // Goobstation user
+    private Angle GetRecoilAngle(TimeSpan curTime, EntityUid gunUid, GunComponent component, Angle direction, EntityUid? user = null) // Goobstation user
     {
         var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
         var minTheta = Math.Min(component.MinAngleModified.Theta, component.MaxAngleModified.Theta); // goob edit make min max work properly
@@ -785,12 +779,12 @@ public sealed partial class GunSystem : SharedGunSystem
         // Goobstation start
         var angleEv = new GetRecoilModifiersEvent()
         {
-            Gun = component.Owner,
-            User = user ?? component.Owner
+            Gun = gunUid,
+            User = user ?? gunUid
         };
         if (user != null)
             RaiseLocalEvent(user.Value, angleEv);
-        RaiseLocalEvent(component.Owner, angleEv);
+        RaiseLocalEvent(gunUid, angleEv);
         random *= angleEv.Modifier;
         // Goobstation end
 
@@ -855,7 +849,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // Effects tempt me not
         var sprites = new List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier sprite, float scale)>();
         var fromXform = Transform(fromCoordinates.EntityId);
-        var gridUidOuter = fromCoordinates.GetGridUid(EntityManager);
+        var gridUidOuter = TransformSystem.GetGrid(fromCoordinates);
 
         // We'll get the effects relative to the grid / map of the firer
         // Look you could probably optimise this a bit with redundant transforms at this point.
@@ -910,7 +904,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     // Timer.Spawn(200, () =>
                     // {
                     //     var color = _proto.Index(bloodstream.BloodReagent).SubstanceColor;
-                    //     // A flash of the neuralyzer, then a man in a black suit says que você não viu nenhum “vector crutch” aqui.
+                    //     // A flash of the neuralyzer, then a man in a black suit says que vocÃª nÃ£o viu nenhum â€œvector crutchâ€ aqui.
                     //     var coords = fromCoordinates.Offset((effectAngle.ToVec() * (distance + 1.3f)) + new Vector2(-0.5f, -0.5f));
                     //     _decals.TryAddDecal(_rand.Pick(_bloodDecals), coords, out _, color, effectAngle + Angle.FromDegrees(-45), cleanable: true);
                     // });

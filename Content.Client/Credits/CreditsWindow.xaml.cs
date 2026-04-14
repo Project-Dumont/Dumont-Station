@@ -352,12 +352,6 @@ public sealed partial class CreditsWindow : DefaultWindow
         private IEnumerable<PatronEntry> LoadPatrons()
         {
             return _linkAccount.GetPatrons().Select(p => new PatronEntry(p.Name, p.Tier));
-            var yamlStream = _resourceManager.ContentFileReadYaml(new ("/Credits/Patrons.yml"));
-            var sequence = (YamlSequenceNode) yamlStream.Documents[0].RootNode;
-
-        return sequence
-            .Cast<YamlMappingNode>()
-            .Select(m => new PatronEntry(m["Name"].AsString(), m["Tier"].AsString()));
     }
 
     private void PopulateContributors(BoxContainer ss14ContributorsContainer)

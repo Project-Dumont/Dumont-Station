@@ -26,7 +26,6 @@ namespace Content.Goobstation.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class PickNearbyWeldableOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     private EntityLookupSystem _lookup = default!;
     private WeldbotSystem _weldbot = default!;
     private PathfindingSystem _pathfinding = default!;

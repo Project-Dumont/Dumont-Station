@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
@@ -140,7 +140,7 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
                     var parent = Transform(current).ParentUid;
 
                     // Stop if parent is invalid/non-existent.
-                    if (!EntityManager.EntityExists(parent))
+                    if (!Exists(parent))
                         break;
 
                     if (HasComp<StationAiCoreComponent>(parent))
@@ -263,3 +263,4 @@ public sealed class MalfAiGyroscopeSystem : EntitySystem
         return core.Comp.RemoteEntity.Value;
     }
 }
+

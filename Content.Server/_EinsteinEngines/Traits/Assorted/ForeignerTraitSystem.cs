@@ -20,6 +20,7 @@ public sealed partial class ForeignerTraitSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly LanguageSystem _languages = default!;
     [Dependency] private readonly StorageSystem _storage = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -98,7 +99,7 @@ public sealed partial class ForeignerTraitSystem : EntitySystem
 
         // If all of the above has failed, just drop it at the same location as the entity
         // This should ideally never happen, but who knows.
-        Transform(translator).Coordinates = Transform(uid).Coordinates;
+        _transform.SetCoordinates(translator, Transform(uid).Coordinates);
 
         return true;
     }

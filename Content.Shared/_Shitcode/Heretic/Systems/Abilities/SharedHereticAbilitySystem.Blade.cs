@@ -18,6 +18,7 @@ using Content.Shared.Weapons.Melee.Events;
 
 namespace Content.Shared._Shitcode.Heretic.Systems.Abilities;
 
+#pragma warning disable CS0618
 public abstract partial class SharedHereticAbilitySystem
 {
     [Dependency] private readonly SharedStaminaSystem _stam = default!;
@@ -96,3 +97,4 @@ public abstract partial class SharedHereticAbilitySystem
         args.Cancelled = true;
     }
 }
+#pragma warning restore CS0618

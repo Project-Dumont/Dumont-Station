@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -22,6 +22,7 @@ using Content.Shared.Pulling.Events;
 using Content.Shared.Speech;
 using Content.Shared.Standing;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Storage.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
@@ -34,7 +35,7 @@ public abstract class SharedStasisSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _blocker = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
     public override void Initialize()
@@ -158,7 +159,7 @@ public abstract class SharedStasisSystem : EntitySystem
         if (HasComp<StasisImmunityComponent>(target))
             return false;
 
-        if (!_statusEffects.TryAddStatusEffect<InsideStasisComponent>(target, "Stasis", statusTime.Value, refresh))
+        if (!_statusEffects.TryAddStatusEffect(target, "Stasis", out _, statusTime.Value))
             return false;
 
         var ev = new StasisEvent();
@@ -192,7 +193,7 @@ public abstract class SharedStasisSystem : EntitySystem
         }
 
         if (HasComp<StasisImmunityComponent>(args.Equipee) )
-            EntityManager.RemoveComponent<StasisImmunityComponent>(args.Equipee);
+            RemComp<StasisImmunityComponent>(args.Equipee);
     }
 
     #endregion

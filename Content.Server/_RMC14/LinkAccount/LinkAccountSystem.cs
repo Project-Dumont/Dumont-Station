@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
@@ -56,7 +56,6 @@ namespace Content.Server._RMC14.LinkAccount;
 public sealed class LinkAccountSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -84,8 +83,8 @@ public sealed class LinkAccountSystem : EntitySystem
 
         _linkAccount.PatronUpdated += OnPatronUpdated;
 
-        // Gabystation - Isso é uma ideia estupida
-        _nextLobbyMessage = ("Eu vou escrever algo aqui!!", "Dom Palhaço I");
+        // Gabystation - Isso Ã© uma ideia estupida
+        _nextLobbyMessage = ("Eu vou escrever algo aqui!!", "Dom PalhaÃ§o I");
     }
 
     public override void Shutdown()
@@ -159,18 +158,18 @@ public sealed class LinkAccountSystem : EntitySystem
         {
             Log.Error($"Error getting random lobby message:\n{e}");
         }*/
-        _nextLobbyMessage = ("Eu vou escrever algo aqui!!", "Dom Palhaço I");
+        _nextLobbyMessage = ("Eu vou escrever algo aqui!!", "Dom PalhaÃ§o I");
     }
 
     // Gaby change
     private void GetRandomShoutout()
     {
         var patrons = LoadPatrons().ToList();
-        patrons.Add(new PatronEntry(name: "João Nanotrasen", tier: "Capitão")); // João nanotrasen prevalece.
+        patrons.Add(new PatronEntry(name: "JoÃ£o Nanotrasen", tier: "CapitÃ£o")); // JoÃ£o nanotrasen prevalece.
 
-        if (patrons.Count == 0) // Isso é quase impossivel, mas vai que rola
+        if (patrons.Count == 0) // Isso Ã© quase impossivel, mas vai que rola
         {
-            _nextNTShoutout = "João Nanotrasen";
+            _nextNTShoutout = "JoÃ£o Nanotrasen";
             return;
         }
 

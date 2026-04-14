@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
@@ -16,7 +16,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Heretic.Prototypes;
 
-[Prototype("hereticRitual")]
+[Prototype]
 public sealed partial class HereticRitualPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;

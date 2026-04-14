@@ -85,6 +85,7 @@ namespace Content.Client.Nutrition.EntitySystems;
 
 public sealed class ClientFoodSequenceSystem : SharedFoodSequenceSystem
 {
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
@@ -121,7 +122,7 @@ public sealed class ClientFoodSequenceSystem : SharedFoodSequenceSystem
             // </Trauma>
             if (state.Sprite is null && _prototypeManager.TryIndex<EntityPrototype>(state.Proto, out var prototype)) // Goobstation - anythingburgers HOLY FUCK THIS IS SO BAD!!! BUT IT WORKS!!
             {
-                if (prototype.TryGetComponent<SpriteComponent>(out var spriteComp))
+                if (prototype.TryGetComponent<SpriteComponent>(out var spriteComp, _componentFactory))
                 {
                     var rsiPath = spriteComp.BaseRSI?.Path.ToString();
                     if (rsiPath == null)
@@ -138,19 +139,19 @@ public sealed class ClientFoodSequenceSystem : SharedFoodSequenceSystem
                         layercount++;
                         start.Comp.RevealedLayers.Add(keyCodeProto);
 
-                        sprite.LayerMapTryGet(start.Comp.TargetLayerMap, out var indexProto);
+                        _sprite.LayerMapTryGet((start.Owner, sprite), start.Comp.TargetLayerMap, out var indexProto, false);
 
                         if (start.Comp.InverseLayers)
                             indexProto++;
 
-                        sprite.AddBlankLayer(indexProto);
-                        sprite.LayerMapSet(keyCodeProto, indexProto);
-                        sprite.LayerSetSprite(indexProto, state.Sprite);
-                        sprite.LayerSetColor(indexProto, layer.Color);
+                        _sprite.AddBlankLayer((start.Owner, sprite), indexProto);
+                        _sprite.LayerMapSet((start.Owner, sprite), keyCodeProto, indexProto);
+                        _sprite.LayerSetSprite((start.Owner, sprite), indexProto, state.Sprite);
+                        _sprite.LayerSetColor((start.Owner, sprite), indexProto, layer.Color);
 
                         var layerPosProto = start.Comp.StartPosition;
                         layerPosProto += (start.Comp.Offset * counter) + state.LocalOffset;
-                        sprite.LayerSetOffset(indexProto, layerPosProto);
+                        _sprite.LayerSetOffset((start.Owner, sprite), indexProto, layerPosProto);
 
                     }
                 }
@@ -170,10 +171,10 @@ public sealed class ClientFoodSequenceSystem : SharedFoodSequenceSystem
             if (start.Comp.InverseLayers)
                 index++;
 
-            sprite.AddBlankLayer(index);
-            sprite.LayerMapSet(keyCode, index);
-            sprite.LayerSetSprite(index, state.Sprite);
-            sprite.LayerSetScale(index, state.Scale);
+            _sprite.AddBlankLayer((start.Owner, sprite), index);
+            _sprite.LayerMapSet((start.Owner, sprite), keyCode, index);
+            _sprite.LayerSetSprite((start.Owner, sprite), index, state.Sprite);
+            _sprite.LayerSetScale((start.Owner, sprite), index, state.Scale);
 
             //Offset the layer
             var layerPos = start.Comp.StartPosition;

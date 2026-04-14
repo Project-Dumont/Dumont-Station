@@ -46,6 +46,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Standing;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
@@ -76,12 +77,15 @@ public sealed class AristocratSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _status = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
 
     private static readonly EntProtoId IceTilePrototype = "IceCrust";
     private static readonly ProtoId<ContentTileDefinition> SnowTilePrototype = "FloorAstroSnow";
     private static readonly EntProtoId IceWallPrototype = "WallIce";
+    private static readonly ProtoId<WeatherPrototype> SnowfallMagicWeather = "SnowfallMagic";
+    private static readonly ProtoId<TagPrototype> WindowTag = "Window";
+    private static readonly ProtoId<TagPrototype> WallTag = "Wall";
 
     private const float ConduitDelay = 2f;
 
@@ -224,7 +228,7 @@ public sealed class AristocratSystem : EntitySystem
 
         // the fog (snow) is coming
         var xform = Transform(ent);
-        _weather.SetWeather(xform.MapID, _prot.Index<WeatherPrototype>("SnowfallMagic"), null);
+        _weather.SetWeather(xform.MapID, _prot.Index(SnowfallMagicWeather), null);
     }
 
     private void EndWaltz(Entity<AristocratComponent> ent)
@@ -339,14 +343,7 @@ public sealed class AristocratSystem : EntitySystem
                 if (hereticQuery.HasComp(ent) || ghoulQuery.HasComp(ent))
                 {
                     ignored.Add(ent);
-                    if (statusQuery.TryComp(ent, out var status))
-                    {
-                        _status.TryAddStatusEffect<PressureImmunityComponent>(ent,
-                            "PressureImmunity",
-                            TimeSpan.FromSeconds(2),
-                            true,
-                            status);
-                    }
+                    _status.TryUpdateStatusEffectDuration(ent, "PressureImmunity", TimeSpan.FromSeconds(2));
                     continue;
                 }
 
@@ -369,7 +366,7 @@ public sealed class AristocratSystem : EntitySystem
                             conduit.MinMaxAirlockDamageMultiplier.Y),
                         origin: ent);
                 }
-                else if (_tag.HasTag(ent, "Window"))
+                else if (_tag.HasTag(ent, WindowTag))
                 {
                     _audio.PlayPvs(conduit.WindowDamageSound, Transform(ent).Coordinates);
                     ignored.Add(ent);
@@ -545,7 +542,7 @@ public sealed class AristocratSystem : EntitySystem
         foreach (var (uid, tag) in tags)
         {
             // walls
-            if (!_tag.HasTag(tag, "Wall") || !_rand.Prob(.45f) ||
+            if (!_tag.HasTag(tag, WallTag) || !_rand.Prob(.45f) ||
                 (Prototype(uid)?.ID ?? string.Empty) == IceWallPrototype)
                 continue;
 

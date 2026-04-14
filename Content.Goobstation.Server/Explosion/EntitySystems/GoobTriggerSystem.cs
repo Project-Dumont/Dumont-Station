@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
@@ -40,7 +40,7 @@ public sealed class GoobTriggerSystem : EntitySystem
 
     private void HandleDeleteParentTrigger(Entity<DeleteParentOnTriggerComponent> entity, ref TriggerEvent args)
     {
-        EntityManager.QueueDeleteEntity(Transform(entity).ParentUid); // cleanedup - goob mudles
+        QueueDel(Transform(entity).ParentUid); // cleanedup - goob mudles
         args.Handled = true;
     }
 
@@ -69,3 +69,4 @@ public sealed class GoobTriggerSystem : EntitySystem
         _trigger.Trigger(ent, ent);
     }
 }
+

@@ -138,9 +138,9 @@ public sealed class BluespaceVendorSystem : EntitySystem
 
         string? tankLabel = null;
 
-        if (TryGetGasTank(vendor, out var gasTank)  && gasTank != null)
+        if (TryGetGasTank(vendor, out var gasTank)  && gasTank != null && vendor.GasTankSlot.Item is { } tankUid)
         {
-            tankLabel = Name(gasTank.Owner);
+            tankLabel = Name(tankUid);
         }
 
         _ui.SetUiState(uid, BluespaceVendorUiKey.Key,

@@ -14,7 +14,9 @@
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Physics;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
 namespace Content.Shared.Spawning
@@ -45,9 +47,13 @@ namespace Content.Shared.Spawning
         {
             var boxOrDefault = box.GetValueOrDefault(Box2.UnitCentered).Translated(coordinates.Position);
             collision ??= entityManager.System<SharedPhysicsSystem>();
+            var lookup = entityManager.System<EntityLookupSystem>();
 
-            foreach (var body in collision.GetCollidingEntities(coordinates.MapId, in boxOrDefault))
+            foreach (var entity in lookup.GetEntitiesIntersecting(coordinates.MapId, boxOrDefault))
             {
+                if (!entityManager.TryGetComponent<PhysicsComponent>(entity, out var body))
+                    continue;
+
                 if (!body.Hard)
                 {
                     continue;

@@ -8,9 +8,10 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using System;
+using System.Threading;
 using Content.Server.Power.Pow3r;
 using Robust.Shared.Threading;
-using Robust.UnitTesting;
 using static Content.Server.Power.Pow3r.PowerState;
 
 
@@ -42,7 +43,7 @@ namespace Pow3r
         private readonly Queue<object> _remQueue = new();
         private readonly Stopwatch _simStopwatch = new Stopwatch();
 
-        private IParallelManager _parallel = new TestingParallelManager();
+        private readonly IParallelManager _parallel = new SerialParallelManager();
 
         private void Tick(float frameTime)
         {
@@ -134,6 +135,75 @@ namespace Pow3r
                     var battery = _state.Batteries[batteryId];
                     battery.LinkedNetworkDischarging = network.Id;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Pow3r only needs deterministic single-threaded execution for solver previews.
+        /// </summary>
+        private sealed class SerialParallelManager : IParallelManager
+        {
+            public event Action ParallelCountChanged { add { } remove { } }
+            public int ParallelProcessCount => 1;
+
+            public void AddAndInvokeParallelCountChanged(Action changed)
+            {
+                return;
+            }
+
+            public WaitHandle Process(IRobustJob job)
+            {
+                job.Execute();
+                var ev = new ManualResetEventSlim();
+                ev.Set();
+                return ev.WaitHandle;
+            }
+
+            public void ProcessNow(IRobustJob job)
+            {
+                job.Execute();
+            }
+
+            public void ProcessNow(IParallelRobustJob jobs, int amount)
+            {
+                for (var i = 0; i < amount; i++)
+                {
+                    jobs.Execute(i);
+                }
+            }
+
+            public void ProcessSerialNow(IParallelRobustJob jobs, int amount)
+            {
+                for (var i = 0; i < amount; i++)
+                {
+                    jobs.Execute(i);
+                }
+            }
+
+            public WaitHandle Process(IParallelRobustJob jobs, int amount)
+            {
+                ProcessSerialNow(jobs, amount);
+                var ev = new ManualResetEventSlim();
+                ev.Set();
+                return ev.WaitHandle;
+            }
+
+            public void ProcessNow(IParallelBulkRobustJob jobs, int amount)
+            {
+                jobs.ExecuteRange(0, amount);
+            }
+
+            public void ProcessSerialNow(IParallelBulkRobustJob jobs, int amount)
+            {
+                jobs.ExecuteRange(0, amount);
+            }
+
+            public WaitHandle Process(IParallelBulkRobustJob jobs, int amount)
+            {
+                ProcessSerialNow(jobs, amount);
+                var ev = new ManualResetEventSlim();
+                ev.Set();
+                return ev.WaitHandle;
             }
         }
 

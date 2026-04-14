@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -13,7 +13,6 @@ public sealed class DamageOnCollideSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable  = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {

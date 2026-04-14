@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BeeRobynn <166929042+BeeRobynn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
@@ -20,7 +20,6 @@ namespace Content.Goobstation.Shared.Slippery;
 public sealed class SlipperyOnLayingDownSystem : EntitySystem
 {
 
-    [Dependency] private readonly StandingStateSystem _standing = default!;
     public override void Initialize()
     {
         base.Initialize();

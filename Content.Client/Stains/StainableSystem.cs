@@ -21,6 +21,7 @@ public sealed partial class StainableSystem : SharedStainableSystem
 {
     [Dependency] private readonly IReflectionManager _reflection = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     private string _layerPrefix = string.Empty;
 
@@ -41,13 +42,13 @@ public sealed partial class StainableSystem : SharedStainableSystem
             return;
 
         foreach (var layer in ent.Comp.RevealedIconVisuals)
-            sprite.RemoveLayer(layer);
+            _sprite.RemoveLayer((ent, sprite), layer);
 
         ent.Comp.RevealedIconVisuals.Clear();
 
         foreach (var (_, layer) in UpdateVisuals(ent, ent.Comp.IconVisuals))
         {
-            var layerId = sprite.AddLayer(layer);
+            var layerId = _sprite.AddLayer((ent, sprite), layer, null);
             ent.Comp.RevealedIconVisuals.Add(layerId);
         }
     }

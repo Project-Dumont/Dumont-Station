@@ -49,6 +49,6 @@ public sealed class TrackedRadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : 
     {
         base.Dispose(disposing);
         if (disposing)
-            _menu.Dispose();
+            _menu.Close();
     }
 }

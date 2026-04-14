@@ -42,7 +42,7 @@ public sealed partial class DungeonJob
         var frontier = new Queue<Vector2i>();
         var rooms = new List<DungeonRoom>();
         var tileCount = 0;
-        var tileCap = random.NextGaussian(dungen.TileCap, dungen.CapStd);
+        var tileCap = SampleGaussian(random, dungen.TileCap, dungen.CapStd);
         var visited = new HashSet<Vector2i>();
 
         while (iterations > 0 && tileCount < tileCap)
@@ -153,5 +153,13 @@ public sealed partial class DungeonJob
         _maps.SetTiles(_gridUid, _grid, tiles);
         var dungeon = new Dungeon(rooms);
         return dungeon;
+    }
+
+    private static double SampleGaussian(Random random, double mean, double stdDev)
+    {
+        var u1 = 1.0 - random.NextDouble();
+        var u2 = 1.0 - random.NextDouble();
+        var randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
+        return mean + stdDev * randStdNormal;
     }
 }

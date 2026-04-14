@@ -94,13 +94,13 @@ public sealed class MailToCommand : IConsoleCommand
             return;
         }
 
-        if (!_mailSystem.TryGetMailRecipientForReceiver(mailReceiver, out MailRecipient? recipient))
+        if (!_mailSystem.TryGetMailRecipientForReceiver((recipientUid, mailReceiver), out MailRecipient? recipient))
         {
             shell.WriteLine(Loc.GetString("command-mailto-unable-to-receive"));
             return;
         }
 
-        if (!_mailSystem.TryGetMailTeleporterForReceiver(mailReceiver, out MailTeleporterComponent? teleporterComponent))
+        if (!_mailSystem.TryGetMailTeleporterForReceiver((recipientUid, mailReceiver), out Entity<MailTeleporterComponent>? teleporterComponent))
         {
             shell.WriteLine(Loc.GetString("command-mailto-no-teleporter-found"));
             return;
@@ -122,11 +122,13 @@ public sealed class MailToCommand : IConsoleCommand
         mailComponent.IsPriority = isPriority;
         mailComponent.IsLarge = isLarge; //Frontier Mail
 
-        _mailSystem.SetupMail(mailUid, teleporterComponent, recipient.Value);
+        var (teleporterUid, teleporterComp) = teleporterComponent.Value;
 
-        var teleporterQueue = _containerSystem.EnsureContainer<Container>(teleporterComponent.Owner, "queued");
+        _mailSystem.SetupMail(mailUid, teleporterComp, recipient.Value);
+
+        var teleporterQueue = _containerSystem.EnsureContainer<Container>(teleporterUid, "queued");
         _containerSystem.Insert(mailUid, teleporterQueue);
-        shell.WriteLine(Loc.GetString("command-mailto-success", ("timeToTeleport", teleporterComponent.TeleportInterval.TotalSeconds - teleporterComponent.Accumulator)));
+        shell.WriteLine(Loc.GetString("command-mailto-success", ("timeToTeleport", teleporterComp.TeleportInterval.TotalSeconds - teleporterComp.Accumulator)));
     }
 }
 

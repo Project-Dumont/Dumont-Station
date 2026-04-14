@@ -14,6 +14,8 @@ namespace Content.Client._Shitcode.Wizard.Systems;
 
 public sealed class HulkSystem : SharedHulkSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -41,7 +43,7 @@ public sealed class HulkSystem : SharedHulkSystem
 
         for (var i = 0; i < layerCount; i++)
         {
-            sprite.LayerSetColor(i, comp.NonHumanoidOldLayerData[i]);
+            _sprite.LayerSetColor((uid, sprite), i, comp.NonHumanoidOldLayerData[i]);
         }
     }
 
@@ -59,10 +61,10 @@ public sealed class HulkSystem : SharedHulkSystem
 
         for (var i = 0; i < sprite.AllLayers.Count(); i++)
         {
-            if (!sprite.TryGetLayer(i, out var layer))
+            if (!_sprite.TryGetLayer((uid, sprite), i, out var layer, false))
                 return;
             comp.NonHumanoidOldLayerData.Add(layer.Color);
-            sprite.LayerSetColor(i, comp.SkinColor);
+            _sprite.LayerSetColor((uid, sprite), i, comp.SkinColor);
         }
     }
 }

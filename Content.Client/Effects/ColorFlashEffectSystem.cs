@@ -163,7 +163,6 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
             if (!TryComp(ent, out AnimationPlayerComponent? player))
             {
                 player = (AnimationPlayerComponent) _factory.GetComponent(typeof(AnimationPlayerComponent));
-                player.Owner = ent;
                 player.NetSyncEnabled = false;
                 AddComp(ent, player);
             }
@@ -174,7 +173,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 _animation.Stop(ent, player, AnimationKey);
 
             if (TryComp<ColorFlashEffectComponent>(ent, out var effect))
-                sprite.Color = effect.Color;
+                _sprite.SetColor((ent, sprite), effect.Color);
 
             var animation = GetDamageAnimation(ent, color, sprite, ev.AnimationLength);
 

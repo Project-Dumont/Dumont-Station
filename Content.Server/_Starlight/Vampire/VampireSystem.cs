@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2024 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <Dreykor12@gmail.com>
 // SPDX-FileCopyrightText: 2025 Dreykor <arguemeu@gmail.com>
@@ -50,6 +50,14 @@ namespace Content.Server.Vampire;
 
 public sealed partial class VampireSystem : EntitySystem
 {
+    private static readonly EntProtoId ActionVampireBatform = "ActionVampireBatform";
+    private static readonly EntProtoId ActionVampireBloodSteal = "ActionVampireBloodSteal";
+    private static readonly EntProtoId ActionVampireCloakOfDarkness = "ActionVampireCloakOfDarkness";
+    private static readonly EntProtoId ActionVampireGlare = "ActionVampireGlare";
+    private static readonly EntProtoId ActionVampireMouseform = "ActionVampireMouseform";
+    private static readonly EntProtoId ActionVampireScreech = "ActionVampireScreech";
+    private static readonly ProtoId<DamageTypePrototype> HeatDamageType = "Heat";
+
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IAdminLogManager _admin = default!;
     [Dependency] private readonly IngestionSystem _ingestion = default!;
@@ -60,7 +68,6 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly BeamSystem _beam = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -78,7 +85,6 @@ public sealed partial class VampireSystem : EntitySystem
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly MetabolizerSystem _metabolism = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedVampireSystem _vampire = default!;
@@ -231,12 +237,12 @@ public sealed partial class VampireSystem : EntitySystem
             _sharedChargesSystem.SetCharges(new Entity<LimitedChargesComponent?>(mutationsAction.Value, chargesComp), chargeDisplay);
     }
 
-    private void OnVampireBloodChangedEvent(EntityUid uid, VampireComponent component, VampireBloodChangedEvent args)
-    {
-        if (TryComp<VampireAlertComponent>(uid, out var alertComp))
-            _vampire.SetAlertBloodAmount(alertComp, _vampire.GetBloodEssence(uid).Int());
+        private void OnVampireBloodChangedEvent(EntityUid uid, VampireComponent component, VampireBloodChangedEvent args)
+        {
+            if (TryComp<VampireAlertComponent>(uid, out var alertComp))
+                _vampire.SetAlertBloodAmount((uid, alertComp), _vampire.GetBloodEssence(uid).Int());
 
-        EntityUid? newEntity = null;
+            EntityUid? newEntity = null;
         EntityUid entity = default;
         // Mutations
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(50) && !_actionEntities.TryGetValue(VampireComponent.MutationsActionPrototype, out entity) && !HasComp<VampireStealthComponent>(uid))
@@ -259,7 +265,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(200) && !_actionEntities.TryGetValue("ActionVampireBloodSteal", out entity) && component.CurrentMutation == VampireMutationsType.Hemomancer)
         {
-            _action.AddAction(uid, ref newEntity, "ActionVampireBloodSteal");
+            _action.AddAction(uid, ref newEntity, ActionVampireBloodSteal);
             if (newEntity != null)
             {
                 _actionEntities["ActionVampireBloodSteal"] = newEntity.Value;
@@ -281,7 +287,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(300) && !_actionEntities.TryGetValue("ActionVampireScreech", out entity) && component.CurrentMutation == VampireMutationsType.Hemomancer)
         {
-            _action.AddAction(uid, ref newEntity, "ActionVampireScreech");
+            _action.AddAction(uid, ref newEntity, ActionVampireScreech);
             if (newEntity != null)
             {
                 _actionEntities["ActionVampireScreech"] = newEntity.Value;
@@ -308,7 +314,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(200) && !_actionEntities.TryGetValue("ActionVampireGlare", out entity) && component.CurrentMutation == VampireMutationsType.Umbrae)
         {
-            _action.AddAction(uid, ref newEntity, "ActionVampireGlare");
+            _action.AddAction(uid, ref newEntity, ActionVampireGlare);
             if (newEntity != null)
             {
                 _actionEntities["ActionVampireGlare"] = newEntity.Value;
@@ -330,7 +336,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(300) && !_actionEntities.TryGetValue("ActionVampireCloakOfDarkness", out entity) && component.CurrentMutation == VampireMutationsType.Umbrae)
         {
-            _action.AddAction(uid, ref newEntity, "ActionVampireCloakOfDarkness");
+            _action.AddAction(uid, ref newEntity, ActionVampireCloakOfDarkness);
             if (newEntity != null)
             {
                 _actionEntities["ActionVampireCloakOfDarkness"] = newEntity.Value;
@@ -374,7 +380,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(200) && !_actionEntities.TryGetValue("ActionVampireBatform", out entity) && component.CurrentMutation == VampireMutationsType.Bestia)
         {
-            _action.AddAction(uid, ref newEntity, "ActionVampireBatform");
+            _action.AddAction(uid, ref newEntity, ActionVampireBatform);
             if (newEntity != null)
             {
                 _actionEntities["ActionVampireBatform"] = newEntity.Value;
@@ -396,7 +402,7 @@ public sealed partial class VampireSystem : EntitySystem
 
         if (_vampire.GetBloodEssence(uid) >= FixedPoint2.New(300) && !_actionEntities.TryGetValue("ActionVampireMouseform", out entity) && component.CurrentMutation == VampireMutationsType.Bestia)
         {
-            _action.AddAction(uid, ref newEntity, "ActionVampireMouseform");
+            _action.AddAction(uid, ref newEntity, ActionVampireMouseform);
             if (newEntity != null)
             {
                 _actionEntities["ActionVampireMouseform"] = newEntity.Value;
@@ -419,7 +425,7 @@ public sealed partial class VampireSystem : EntitySystem
 
     private void DoSpaceDamage(EntityUid uid, VampireComponent comp, DamageableComponent damage)
     {
-        var damageSpec = new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Heat"), 2.5);
+        var damageSpec = new DamageSpecifier(_prototypeManager.Index(HeatDamageType), 2.5);
         _damageableSystem.TryChangeDamage(uid, damageSpec, true, false, damage, uid);
         _popup.PopupEntity(Loc.GetString("vampire-startlight-burning"), uid, uid, PopupType.LargeCaution);
     }
@@ -470,7 +476,7 @@ public sealed partial class VampireSystem : EntitySystem
             UpdateUi(uid, component);
             var ev = new VampireBloodChangedEvent();
             RaiseLocalEvent(uid, ev);
-            TryOpenUi(uid, component.Owner, component);
+            TryOpenUi(uid, uid, component);
         }
     }
 

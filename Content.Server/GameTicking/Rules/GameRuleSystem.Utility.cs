@@ -114,16 +114,16 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
         targetCoords = EntityCoordinates.Invalid;
         targetGrid = EntityUid.Invalid;
 
-        if (GetStationMainGrid(station.Comp) is not { } grid)
+        if (GetStationMainGrid(station) is not { } grid)
             return false;
 
         targetGrid = grid.Owner;
         return TryFindTileOnGrid(grid, out tile, out targetCoords);
     }
 
-    protected Entity<MapGridComponent>? GetStationMainGrid(StationDataComponent station)
+    protected Entity<MapGridComponent>? GetStationMainGrid(Entity<StationDataComponent> station)
     {
-        if ((station.Grids.FirstOrNull(HasComp<BecomesStationComponent>) ?? _station.GetLargestGrid(station.Owner)) is not //todo goobstation station.owner obsolete patchup
+        if ((station.Comp.Grids.FirstOrNull(HasComp<BecomesStationComponent>) ?? _station.GetLargestGrid((station.Owner, station.Comp))) is not
             { } grid || !TryComp(grid, out MapGridComponent? gridComp))
             return null;
 

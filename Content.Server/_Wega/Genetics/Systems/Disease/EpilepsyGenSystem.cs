@@ -11,6 +11,8 @@ namespace Content.Server.Genetics.System;
 
 public sealed class EpilepsySystem : EntitySystem
 {
+    private static readonly ProtoId<EmotePrototype> ScreamEmote = "Scream";
+
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -33,7 +35,7 @@ public sealed class EpilepsySystem : EntitySystem
                     _stun.TryUpdateParalyzeDuration(uid, TimeSpan.FromSeconds(15));
                     _jitteringSystem.DoJitter(uid, TimeSpan.FromSeconds(15), true);
                     _popup.PopupClient(Loc.GetString("disease-epilepsy-massage"), uid, PopupType.Medium);
-                    _chat.TryEmoteWithoutChat(uid, _prototypeManager.Index<EmotePrototype>("Scream"), true);
+                    _chat.TryEmoteWithoutChat(uid, _prototypeManager.Index(ScreamEmote), true);
                 }
             }
             epilepsy.NextTimeTick -= frameTime;

@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 JÃºlio CÃ©sar Ueti <52474532+Mirino97@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
 // SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
@@ -32,7 +32,7 @@
 // SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Титов Вячеслав Витальевич <rincew1nd@yandex.ru>
+// SPDX-FileCopyrightText: 2023 Ð¢Ð¸Ñ‚Ð¾Ð² Ð’ÑÑ‡ÐµÑÐ»Ð°Ð² Ð’Ð¸Ñ‚Ð°Ð»ÑŒÐµÐ²Ð¸Ñ‡ <rincew1nd@yandex.ru>
 // SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Avalon <148660190+BYONDFuckery@users.noreply.github.com>
@@ -126,7 +126,6 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly KidnapHeadsConditionSystem _kidnap = default!; // DeltaV
     [Dependency] private readonly SharedMapSystem _map = default!; // DeltaV
     // goob edit
-    [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     // goob edit end
@@ -134,8 +133,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     private static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly ProtoId<TagPrototype> NukeOpsUplinkTagPrototype = "NukeOpsUplink";
 
-    [ValidatePrototypeId<TagPrototype>]
-    private const string NukeOpsReinforcementUplinkTagPrototype = "NukeOpsReinforcementUplink"; // Goobstation
+    private static readonly ProtoId<TagPrototype> NukeOpsReinforcementUplinkTagPrototype = "NukeOpsReinforcementUplink"; // Goobstation
 
     public override void Initialize()
     {
@@ -645,7 +643,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         var outpost = ent.Comp.MapGrids.Where(e => !HasComp<NukeOpsShuttleComponent>(e)).FirstOrNull();
 
         // SHITCODE:
-        // Se ele não achar uma base fixa (caso do Lone Ops), a própria nave vira a base para receber os tcs.
+        // Se ele nÃ£o achar uma base fixa (caso do Lone Ops), a prÃ³pria nave vira a base para receber os tcs.
         return outpost ?? ent.Comp.MapGrids.FirstOrNull();
     }
 

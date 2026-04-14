@@ -1,4 +1,4 @@
-using Content.Shared.Chat;
+﻿using Content.Shared.Chat;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Systems;
@@ -110,7 +110,7 @@ public sealed class ClawMachineSystem : EntitySystem
             var rewardToSpawn = _random.Pick(comp.Rewards);
 
             var coordinates = Transform(uid).Coordinates;
-            EntityManager.SpawnEntity(rewardToSpawn, coordinates);
+            Spawn(rewardToSpawn, coordinates);
 
             return;
         }
@@ -119,3 +119,4 @@ public sealed class ClawMachineSystem : EntitySystem
         _audio.PlayPvs(comp.LoseSound, uid);
     }
 }
+

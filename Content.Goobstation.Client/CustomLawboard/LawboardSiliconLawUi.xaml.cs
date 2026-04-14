@@ -123,6 +123,7 @@ public sealed partial class LawboardSiliconLawUi : FancyWindow
         Timer.Spawn(500, () => Save.Disabled = false); // This is so it feels like it did something. It's completely unnecessary but it adds some feedback
 
         ProcessLawsChanged(true);
+        LawsSavedEvent?.Invoke(true);
     }
 
     public void ProcessLawsChanged(bool popup = false)

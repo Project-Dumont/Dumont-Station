@@ -19,6 +19,7 @@ namespace Content.Client.Vampire;
 public sealed class VampireSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -39,10 +40,9 @@ public sealed class VampireSystem : EntitySystem
         if (args.Alert.ID != component.BloodAlert)
             return;
 
-        var sprite = args.SpriteViewEnt.Comp;
         var blood = Math.Clamp(component.BloodAmount, 0, 999);
-        sprite.LayerSetState(VampireVisualLayers.Digit1, $"{(blood / 100) % 10}");
-        sprite.LayerSetState(VampireVisualLayers.Digit2, $"{(blood / 10) % 10}");
-        sprite.LayerSetState(VampireVisualLayers.Digit3, $"{blood % 10}");
+        _sprite.LayerSetRsiState(args.SpriteViewEnt.Owner, VampireVisualLayers.Digit1, $"{(blood / 100) % 10}");
+        _sprite.LayerSetRsiState(args.SpriteViewEnt.Owner, VampireVisualLayers.Digit2, $"{(blood / 10) % 10}");
+        _sprite.LayerSetRsiState(args.SpriteViewEnt.Owner, VampireVisualLayers.Digit3, $"{blood % 10}");
     }
 }

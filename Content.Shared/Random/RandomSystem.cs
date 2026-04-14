@@ -3,7 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Random;
@@ -20,7 +19,11 @@ public sealed class RandomSystem : EntitySystem
         // - Pick an entry
         // - Remove the cost from budget
         // - If our remaining budget is under maxCost then start pruning unavailable entries.
-        random.Shuffle(entries);
+        for (var i = entries.Count - 1; i > 0; i--)
+        {
+            var j = random.Next(i + 1);
+            (entries[i], entries[j]) = (entries[j], entries[i]);
+        }
         var budgetEntry = (IBudgetEntry) GetProbEntry(entries, probSum, random);
 
         budget -= budgetEntry.Cost;
@@ -46,7 +49,7 @@ public sealed class RandomSystem : EntitySystem
     /// </summary>
     public IProbEntry GetProbEntry(IEnumerable<IProbEntry> entries, float probSum, System.Random random)
     {
-        var value = random.NextFloat() * probSum;
+        var value = (float) random.NextDouble() * probSum;
 
         foreach (var entry in entries)
         {

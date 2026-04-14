@@ -93,13 +93,14 @@ public sealed partial class GhostGui : UIWidget
         ThunderdomeButton.Text = Loc.GetString("thunderdome-ghost-button", ("count", playerCount));
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
 
         if (disposing)
         {
-            TargetWindow.Dispose();
+            TargetWindow.Close();
         }
     }
 }

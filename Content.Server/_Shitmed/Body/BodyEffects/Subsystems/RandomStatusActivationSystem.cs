@@ -6,7 +6,7 @@
 
 using Content.Shared._Shitmed.BodyEffects.Subsystems;
 using Content.Shared.Body.Organ;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Timing;
 using Robust.Shared.Random;
 
@@ -45,11 +45,8 @@ public sealed class RandomStatusActivationSystem : EntitySystem
             if (now < comp.NextUpdate)
                 continue;
 
-            if (!TryComp<StatusEffectsComponent>(uid, out var effects))
-                continue;
-
-            foreach (var (key, component) in comp.StatusEffects)
-                _effects.TryAddStatusEffect(uid, key, comp.Duration ?? TimeSpan.FromSeconds(1), refresh: true, component, effects);
+            foreach (var (key, _) in comp.StatusEffects)
+                _effects.TryUpdateStatusEffectDuration(uid, key.Id, comp.Duration ?? TimeSpan.FromSeconds(1));
 
             GetRandomTime(comp);
         }

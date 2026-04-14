@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+﻿// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
@@ -27,6 +27,6 @@ public sealed partial class RandomChanceSpawnerSystem : EntitySystem
             if (kvp.Value >= _random.NextFloat(0.0f, 1.0f))
                 Spawn(kvp.Key, Transform(ent).Coordinates);
         }
-        EntityManager.QueueDeleteEntity(ent);
+        QueueDel(ent);
     }
 }

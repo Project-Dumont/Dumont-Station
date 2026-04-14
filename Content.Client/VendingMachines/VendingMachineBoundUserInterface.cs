@@ -104,7 +104,7 @@ namespace Content.Client.VendingMachines
 
             _menu.OnItemSelected -= OnItemSelected;
             _menu.OnClose -= Close;
-            _menu.Dispose();
+            _menu.Close();
         }
     }
 }

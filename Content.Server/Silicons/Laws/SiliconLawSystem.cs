@@ -146,6 +146,8 @@ namespace Content.Server.Silicons.Laws;
 
 public sealed class SiliconLawSystem : SharedSiliconLawSystem
 {
+    private static readonly ProtoId<TagPrototype> StationAiTag = "StationAi";
+
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!; // goob logging
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -193,7 +195,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         // Corvax-Next-AiRemoteControl-Start
         if (HasComp<AiRemoteControllerComponent>(uid)
-            || _tagSystem.HasTag(uid, "StationAi")) // skip a law's notification for remotable and AI
+            || _tagSystem.HasTag(uid, StationAiTag)) // skip a law's notification for remotable and AI
             return;
         // Corvax-Next-AiRemoteControl-End
 

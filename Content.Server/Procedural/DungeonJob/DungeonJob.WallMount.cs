@@ -30,16 +30,16 @@ public sealed partial class DungeonJob
         foreach (var neighbor in allExterior)
         {
             // Occupado
-            if (dungeon.RoomTiles.Contains(neighbor) || checkedTiles.Contains(neighbor) || !_anchorable.TileFree(_grid, neighbor, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
+            if (dungeon.RoomTiles.Contains(neighbor) || checkedTiles.Contains(neighbor) || !_anchorable.TileFree(_gridUid, _grid, neighbor, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
                 continue;
 
-            if (!random.Prob(gen.Prob) || !checkedTiles.Add(neighbor))
+            if (random.NextDouble() >= gen.Prob || !checkedTiles.Add(neighbor))
                 continue;
 
             if (reservedTiles.Contains(neighbor))
                 continue;
 
-            _maps.SetTile(_gridUid, _grid, neighbor, _tile.GetVariantTile(tileDef, random));
+            _maps.SetTile(_gridUid, _grid, neighbor, _tile.GetVariantTile(tileDef, random.Next()));
             var gridPos = _maps.GridTileToLocal(_gridUid, _grid, neighbor);
             var protoNames = _entTable.GetSpawns(contents, random);
 
