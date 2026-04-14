@@ -402,12 +402,35 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     private void OnShuttleFTLAttempt(ref ConsoleFTLAttemptEvent ev)
     {
-        var query = QueryActiveRules();
-        while (query.MoveNext(out var uid, out _, out var nukeops, out _))
+        var query = EntityQueryEnumerator<NukeopsRuleComponent>();
+        while (query.MoveNext(out var uid, out var nukeops))
         {
-            if (ev.Uid != GetShuttle((uid, nukeops)))
+            bool isMyShuttle = false;
+
+            // Gaby Station
+            var classicShuttle = GetShuttle((uid, nukeops));
+            if (classicShuttle != null && classicShuttle == ev.Uid)
+            {
+                isMyShuttle = true;
+            }
+            // 2. Checagem do LoneOps
+            else if (TryComp<RuleGridsComponent>(uid, out var grids))
+            {
+                foreach (var gridUid in grids.MapGrids)
+                {
+                    if (gridUid == ev.Uid)
+                    {
+                        isMyShuttle = true;
+                        break;
+                    }
+                }
+            }
+
+            // Se não for a nave de NENHUM dos dois modos, ele ignora
+            if (!isMyShuttle)
                 continue;
 
+            // Se for a nave certa, impossibiltia da nave sair do outpost
             if (nukeops.WarDeclaredTime != null)
             {
                 var timeAfterDeclaration = Timing.CurTime.Subtract(nukeops.WarDeclaredTime.Value);
@@ -415,9 +438,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                 if (timeRemain > TimeSpan.Zero)
                 {
                     ev.Cancelled = true;
-                    ev.Reason = Loc.GetString("war-ops-infiltrator-unavailable",
-                        ("time", timeRemain.ToString("mm\\:ss")));
-                    continue;
+                    ev.Reason = Loc.GetString("war-ops-infiltrator-unavailable", ("time", timeRemain.ToString("mm\\:ss")));
+                    return;
                 }
             }
 
@@ -427,15 +449,12 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     private void OnShuttleCallAttempt(ref CommunicationConsoleCallShuttleAttemptEvent ev)
     {
-        var operatives = EntityQuery<NukeOperativeComponent, MobStateComponent, TransformComponent>(true);
-
-        var query = QueryActiveRules();
-        while (query.MoveNext(out _, out _, out var nukeops, out _))
+        // Gaby Station
+        var query = EntityQueryEnumerator<NukeopsRuleComponent>();
+        while (query.MoveNext(out var uid, out var nukeops))
         {
-            // Can't call while war nukies are preparing to arrive
             if (nukeops is { WarDeclaredTime: not null })
             {
-                // Nukies must wait some time after declaration of war to get on the station
                 var warTime = Timing.CurTime.Subtract(nukeops.WarDeclaredTime.Value);
                 if (warTime < nukeops.WarEvacShuttleDisabled)
                 {
@@ -444,32 +463,57 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                     return;
                 }
             }
-
         }
     }
 
     private void OnWarDeclared(ref WarDeclaredEvent ev)
     {
-        // TODO: this is VERY awful for multi-nukies
-        var query = QueryActiveRules();
-        while (query.MoveNext(out var uid, out _, out var nukeops, out _))
+        var declaratorGrid = Transform(ev.DeclaratorEntity).GridUid;
+
+        // Gaby Station
+        if (declaratorGrid == null)
+            return;
+
+        NukeopsRuleComponent? myRule = null;
+        EntityUid? myRuleUid = null;
+
+        // Isso impede declarar guerra na estação
+        var query = EntityQueryEnumerator<NukeopsRuleComponent, RuleGridsComponent>();
+        while (query.MoveNext(out var uid, out var nukeops, out var grids))
         {
-            if (nukeops.WarDeclaredTime != null)
-                continue;
-
-            if (TryComp<RuleGridsComponent>(uid, out var grids) && Transform(ev.DeclaratorEntity).MapID != grids.Map)
-                continue;
-
-            var newStatus = GetWarCondition(nukeops, ev.Status);
-            ev.Status = newStatus;
-            if (newStatus == WarConditionStatus.WarReady)
+            bool isMyRule = false;
+            foreach (var gridUid in grids.MapGrids)
             {
-                nukeops.WarDeclaredTime = Timing.CurTime;
-                var timeRemain = nukeops.WarNukieArriveDelay + Timing.CurTime;
-                ev.DeclaratorEntity.Comp.ShuttleDisabledTime = timeRemain;
-
-                DistributeExtraTc((uid, nukeops));
+                if (gridUid == declaratorGrid.Value)
+                {
+                    isMyRule = true;
+                    break;
+                }
             }
+
+            if (isMyRule)
+            {
+                myRule = nukeops;
+                myRuleUid = uid;
+                break; 
+            }
+        }
+
+        // Gaby Station
+        if (myRule == null)
+            return;
+
+        // Gaby Station
+        var newStatus = GetWarCondition(myRule, ev.Status);
+        ev.Status = newStatus;
+        
+        if (newStatus == WarConditionStatus.WarReady)
+        {
+            myRule.WarDeclaredTime = Timing.CurTime;
+            var timeRemain = myRule.WarNukieArriveDelay + Timing.CurTime;
+            ev.DeclaratorEntity.Comp.ShuttleDisabledTime = timeRemain;
+
+            DistributeExtraTc(myRule, declaratorGrid);
         }
     }
 
@@ -495,24 +539,24 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         return WarConditionStatus.YesWar;
     }
 
-    private void DistributeExtraTc(Entity<NukeopsRuleComponent> nukieRule)
+    private void DistributeExtraTc(NukeopsRuleComponent nukieRule, EntityUid? declaratorGrid)
     {
-        var enumerator = EntityQueryEnumerator<StoreComponent>();
-        while (enumerator.MoveNext(out var uid, out var component))
+        if (declaratorGrid == null) return;
+
+        // Gaby Station
+        var enumerator = EntityQueryEnumerator<StoreComponent, TransformComponent>();
+        while (enumerator.MoveNext(out var uid, out var store, out var xform))
         {
-            if (!_tag.HasTag(uid, NukeOpsUplinkTagPrototype) || _tag.HasTag(uid, NukeOpsReinforcementUplinkTagPrototype)) // Goob edit - no tc for reinforcements
+            if (!_tag.HasTag(uid, NukeOpsUplinkTagPrototype) || _tag.HasTag(uid, NukeOpsReinforcementUplinkTagPrototype))
                 continue;
 
-            if (GetOutpost(nukieRule.Owner) is not { } outpost)
-                continue;
-
-            if (Transform(uid).MapID != Transform(outpost).MapID) // Will receive bonus TC only on their start outpost
-                continue;
-
-            _store.TryAddCurrency(new() { { TelecrystalCurrencyPrototype, CalculateBonusTcPerNukie(nukieRule.Comp) } }, uid, component); // Goob edit
-
-            var msg = Loc.GetString("store-currency-war-boost-given", ("target", uid));
-            _popupSystem.PopupEntity(msg, uid);
+            // Gaby Station
+            if (xform.GridUid == declaratorGrid)
+            {
+                _store.TryAddCurrency(new() { { TelecrystalCurrencyPrototype, CalculateBonusTcPerNukie(nukieRule) } }, uid, store); 
+                var msg = Loc.GetString("store-currency-war-boost-given", ("target", uid));
+                _popupSystem.PopupEntity(msg, uid);
+            }
         }
     }
 
