@@ -117,7 +117,7 @@ public partial class SharedBodySystem
             if (!_markingManager.Markings.TryGetValue(markingId, out var prototype))
                 return;
 
-            var markingColors = Content.Shared.Humanoid.Markings.MarkingColoring.GetMarkingLayerColors(
+            var markingColors = MarkingColoring.GetMarkingLayerColors(
                     prototype,
                     bodyAppearance.SkinColor,
                     bodyAppearance.EyeColor,

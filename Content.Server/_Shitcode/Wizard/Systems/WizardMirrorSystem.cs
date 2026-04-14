@@ -163,7 +163,7 @@ public sealed class WizardMirrorSystem : SharedWizardMirrorSystem
         // Finally adding marking with forced colors
         foreach (var (marking, prototype) in markingFColored)
         {
-            var markingColors = Content.Shared.Humanoid.Markings.MarkingColoring.GetMarkingLayerColors(
+            var markingColors = MarkingColoring.GetMarkingLayerColors(
                 prototype,
                 profile.Appearance.SkinColor,
                 profile.Appearance.EyeColor,

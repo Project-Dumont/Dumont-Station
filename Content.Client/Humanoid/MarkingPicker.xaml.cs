@@ -518,7 +518,7 @@ public sealed partial class MarkingPicker : Control
             !_markingManager.MustMatchSkin(_currentSpecies, marking.BodyPart, out var _, _prototypeManager))
         {
             // Do default coloring
-            var colors = Content.Shared.Humanoid.Markings.MarkingColoring.GetMarkingLayerColors(
+            var colors = MarkingColoring.GetMarkingLayerColors(
                 marking,
                 CurrentSkinColor,
                 CurrentEyeColor,

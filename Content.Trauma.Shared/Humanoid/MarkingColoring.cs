@@ -6,7 +6,7 @@ using System.Linq;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Humanoid;
+namespace Content.Trauma.Shared.Humanoid;
 
 [Virtual]
 public partial class MarkingColoring : LayerColoringType

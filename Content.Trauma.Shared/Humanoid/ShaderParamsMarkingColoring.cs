@@ -6,7 +6,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared.Humanoid.Markings;
 
-namespace Content.Shared.Humanoid;
+namespace Content.Trauma.Shared.Humanoid;
 
 public sealed partial class ShaderParamsMarkingColoring : MarkingColoring
 {
