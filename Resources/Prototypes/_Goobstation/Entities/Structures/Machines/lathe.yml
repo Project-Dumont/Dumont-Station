@@ -63,6 +63,7 @@
     - NailgunStatic
     - NailsStatic
     - EngineerBagStatic
+    - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
     - ConstructionBagOfHolding
     - AdvancedTools
@@ -127,6 +128,7 @@
     - MiningToolsStatic
     - MiscSignallersStatic
     - CargoStatic
+    - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
     - AdvancedTools
     - Mining
