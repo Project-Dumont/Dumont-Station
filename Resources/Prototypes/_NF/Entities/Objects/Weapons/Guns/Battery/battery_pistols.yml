@@ -1,7 +1,7 @@
 #region Holoflare pistol
 - type: entity
   id: NFWeaponHoloflareGun
-  parent: BaseWeaponBatterySmall
+  parent: BaseItem
   name: holoflare pistol
   description: |-
     A modification of a civilian-grade laser pistol that can project holoflares onto surfaces.
@@ -19,6 +19,9 @@
       map: [ "Firemode" ]
   - type: Item
     size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
     inhandVisuals:
       left:
       - state: inhand-left
@@ -30,18 +33,28 @@
         shader: unshaded
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 2
+    fireRate: 1
     availableModes:
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
     projectileSpeed: 15
-  - type: Battery
-    maxCharge: 1200
-    startingCharge: 1200
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 10
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: Magazine
+        startingItem: PowerCellSmall
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - PowerCell
+            - PowerCellSmall
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
   - type: ProjectileBatteryAmmoProvider
     proto: HoloFlareCyan
     fireCost: 240
@@ -73,21 +86,25 @@
           Yellow: { state: mode-yellow }
   - type: PacifismAllowedGun
   - type: StaticPrice
-    price: 250
+    price: 50
   - type: AltFireMelee
     attackType: Heavy
+  - type: AmmoCounter
   - type: MeleeWeapon
-    attackRate: 1.1
     damage:
       types:
-        Blunt: 6
-        Structural: 4
-    angle: 30
+        Blunt: 4
+        Structural: 8
+    angle: 0
     wideAnimationRotation: 90
-    animation: WeaponArcThrust
     soundHit:
       collection: MetalThud
+  - type: Multishot
+    missChance: 0.4
+    spreadMultiplier: 2
+    spreadAddition: 40
   - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi
     quickEquip: false
     slots:
     - Belt
@@ -95,3 +112,13 @@
   - type: Tag
     tags:
     - Sidearm
+
+- type: entity
+  id: NFWeaponHoloflareGunEmpty
+  parent: NFWeaponHoloflareGun
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
