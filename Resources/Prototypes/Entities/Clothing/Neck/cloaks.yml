@@ -79,6 +79,8 @@
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/hos.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Cloaks/hos.rsi
   - type: StealTarget
     stealGroup: HeadCloak
 
