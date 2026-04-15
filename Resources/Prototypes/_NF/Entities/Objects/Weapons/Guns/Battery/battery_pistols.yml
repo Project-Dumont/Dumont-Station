@@ -62,15 +62,12 @@
     fireModes:
     - proto: HoloFlareCyan
       fireCost: 240
-      name: cyan
       state: cyan
     - proto: HoloFlareRed
       fireCost: 240
-      name: red
       state: red
     - proto: HoloFlareYellow
       fireCost: 240
-      name: yellow
       state: yellow
   - type: MagazineVisuals
     magState: mag
