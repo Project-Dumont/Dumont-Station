@@ -36,11 +36,11 @@ namespace Content.Client.ADT.BookPrinter
         private string FormatCooldownTime(TimeSpan timeSpan)
         {
             if (timeSpan.Hours > 0)
-                return $"{timeSpan.Hours}ч {timeSpan.Minutes:D2}м {timeSpan.Seconds:D2}с";
+                return $"{timeSpan.Hours}h {timeSpan.Minutes:D2}m {timeSpan.Seconds:D2}s";
             else if (timeSpan.Minutes > 0)
-                return $"{timeSpan.Minutes}м {timeSpan.Seconds:D2}с";
+                return $"{timeSpan.Minutes}m {timeSpan.Seconds:D2}s";
             else
-                return $"{timeSpan.Seconds}с";
+                return $"{timeSpan.Seconds}s";
         }
 
         public void UpdateState(BoundUserInterfaceState state)
