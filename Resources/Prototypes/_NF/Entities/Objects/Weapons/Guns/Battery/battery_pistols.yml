@@ -47,7 +47,7 @@
     slots:
       cell_slot:
         name: Magazine
-        startingItem: PowerCellSmall
+        startingItem: PowerCellMedium
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
