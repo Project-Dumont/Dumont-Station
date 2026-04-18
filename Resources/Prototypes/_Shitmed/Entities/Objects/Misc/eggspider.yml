@@ -1,5 +1,5 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 #
@@ -23,3 +23,5 @@
   - type: PettableFriend
     successString: petting-success-spider-egg
     failureString: petting-failure-spider-egg
+
+

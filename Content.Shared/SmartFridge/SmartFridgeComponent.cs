@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Shared.Whitelist;
 using Robust.Shared.Analyzers;
 using Robust.Shared.Audio;
@@ -98,3 +98,6 @@ public sealed class SmartFridgeDispenseItemMessage(SmartFridgeEntry entry) : Bou
 {
     public SmartFridgeEntry Entry = entry;
 }
+
+
+

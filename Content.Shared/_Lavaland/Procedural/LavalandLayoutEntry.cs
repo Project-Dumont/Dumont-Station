@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using System.Numerics;
 using Robust.Shared.Utility;
 
@@ -9,3 +9,6 @@ public partial record struct LavalandLayoutEntry(
     ResPath GridPath,
     Vector2 Position,
     LocId Name);
+
+
+

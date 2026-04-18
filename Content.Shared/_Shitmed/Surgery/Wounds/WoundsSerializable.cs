@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
@@ -121,3 +121,6 @@ public partial record struct WoundableSeverityMultiplier(FixedPoint2 Change, str
 
 [Serializable, DataRecord]
 public partial record struct WoundableHealingMultiplier(FixedPoint2 Change, string Identifier = "Unspecified");
+
+
+

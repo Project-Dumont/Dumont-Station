@@ -1,11 +1,10 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2019 Ephememory <yetanotherscuffed@gmail.com>
 # SPDX-FileCopyrightText: 2020 FL-OZ <58238103+FL-OZ@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2020 FL-OZ <anotherscuffed@gmail.com>
 # SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
 # SPDX-FileCopyrightText: 2020 Swept <jamesurquhartwebb@gmail.com>
-# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
@@ -89,8 +88,9 @@
 # SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 # SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ÐÑ€Ñ‚ <123451459+JustArt1m@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
@@ -1849,3 +1849,5 @@
     energy: 0.8
     castShadows: false
     color: "#9be792"
+
+

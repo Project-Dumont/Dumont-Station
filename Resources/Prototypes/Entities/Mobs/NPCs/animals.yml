@@ -1,7 +1,6 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <zddm@outlook.es>
 # SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
 # SPDX-FileCopyrightText: 2021 BlueberryShortcake <rubetskoy234@mail.ru>
 # SPDX-FileCopyrightText: 2021 DmitriyRubetskoy <75271456+DmitriyRubetskoy@users.noreply.github.com>
@@ -24,7 +23,7 @@
 # SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
 # SPDX-FileCopyrightText: 2022 Justin Trotter <trotter.justin@gmail.com>
-# SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 JÃºlio CÃ©sar Ueti <52474532+Mirino97@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Mith-randalf <84274729+Mith-randalf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2022 Pancake <Pangogie@users.noreply.github.com>
@@ -215,8 +214,9 @@
 # SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 youtissoum <51883137+youtissoum@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ÐÑ€Ñ‚ <123451459+JustArt1m@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
@@ -4505,3 +4505,5 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+
+

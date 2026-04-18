@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # This file includes all the actions for wraith.
 # Revenants, other ghost-roles should get their own directory outside the Wraith one.
 
@@ -527,3 +527,6 @@
     wpConsume: 120
 
 # Trickster Actions
+
+
+

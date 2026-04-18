@@ -1,4 +1,3 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
 # SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
@@ -9,6 +8,7 @@
 # SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -69,3 +69,5 @@
     - type: TimedSpawner
       prototypes:
         - MobCockroach
+
+

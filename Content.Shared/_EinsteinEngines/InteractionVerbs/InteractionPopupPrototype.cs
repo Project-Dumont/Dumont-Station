@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 RadsammyT <radsammyt@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Chat;
@@ -90,3 +90,6 @@ public sealed partial class InteractionPopupPrototype : IPrototype
         Delayed
     }
 }
+
+
+

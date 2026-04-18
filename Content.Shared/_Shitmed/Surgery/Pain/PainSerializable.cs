@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Serialization;
@@ -58,3 +58,6 @@ public record struct PainModifierRemovedEvent(EntityUid NerveSystem, EntityUid N
 
 [ByRefEvent]
 public record struct PainModifierChangedEvent(EntityUid NerveSystem, EntityUid NerveUid, FixedPoint2 CurrentPain);
+
+
+

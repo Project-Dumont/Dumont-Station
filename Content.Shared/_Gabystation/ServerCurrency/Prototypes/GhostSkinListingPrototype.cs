@@ -1,4 +1,4 @@
-﻿// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -29,3 +29,6 @@ public sealed partial class GhostSkinListingPrototype : IPrototype
     [DataField(required: false)]
     public bool Available { get; private set; } = true;
 }
+
+
+

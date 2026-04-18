@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Serialization;
 
@@ -37,3 +37,6 @@ public partial record struct ConsciousnessModifier(FixedPoint2 Change, TimeSpan?
 
 [Serializable, DataRecord]
 public partial record struct ConsciousnessMultiplier(FixedPoint2 Change, TimeSpan? Time, ConsciousnessModType Type = ConsciousnessModType.Generic);
+
+
+

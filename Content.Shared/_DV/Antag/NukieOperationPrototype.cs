@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.Antag;
@@ -19,3 +19,6 @@ public sealed partial class NukieOperationPrototype : IPrototype
     [DataField]
     public LocId? NukeCodePaperOverride;
 }
+
+
+

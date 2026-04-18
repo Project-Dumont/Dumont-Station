@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Shared._Lavaland.Megafauna.Selectors;
 using Robust.Shared.Prototypes;
 
@@ -17,3 +17,6 @@ public sealed partial class MegafaunaSelectorPrototype : IPrototype
     [DataField(required: true)]
     public MegafaunaSelector Selector = default!;
 }
+
+
+

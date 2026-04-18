@@ -93,6 +93,7 @@
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
@@ -100,7 +101,6 @@
 // SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Access;
@@ -305,3 +305,5 @@ namespace Content.Shared.Roles
         }
     }
 }
+
+

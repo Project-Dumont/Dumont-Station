@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 YourName
 # SPDX-License-Identifier: MIT
 
@@ -287,3 +287,6 @@ malfai-round-end-result = Malfunctioning AI
 # Confused why I have to do this..
 objective-issuer-malfai = Malfunctioning AI
 malfai-round-end-name-user = [color=white]{$name}[/color] ([color=gray]{$user}[/color])
+
+
+

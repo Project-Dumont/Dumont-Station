@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
@@ -8,7 +9,6 @@
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.CartridgeLoader;
@@ -180,3 +180,5 @@ public readonly record struct NanoChatRecipientUpdatedEvent(EntityUid CardUid);
 /// </summary>
 [ByRefEvent]
 public readonly record struct NanoChatMessageReceivedEvent(EntityUid CardUid);
+
+

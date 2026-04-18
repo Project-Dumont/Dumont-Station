@@ -1,11 +1,11 @@
-﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 
@@ -79,3 +79,5 @@ public sealed partial class BarkPrototype : IPrototype
     [DataField]
     public bool RoundStart { get; private set; } = true;
 }
+
+

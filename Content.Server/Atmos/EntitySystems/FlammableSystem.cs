@@ -91,6 +91,7 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 // SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
@@ -123,7 +124,6 @@
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Atmos; // goob edit
@@ -691,3 +691,5 @@ namespace Content.Server.Atmos.EntitySystems
         }
     }
 }
+
+

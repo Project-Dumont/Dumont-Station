@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Daniela <daniela.paladinof@gmail.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 #
@@ -136,3 +136,6 @@
   - type: Sprite
     sprite: _Gabystation/Mobs/Species/Waddler/parts.rsi
     state: "r_foot"
+
+
+

@@ -1,4 +1,4 @@
-<!-- ported by Punker Corps <punkercorps@gmail.com> -->
+<!-- SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com> -->
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
@@ -22,4 +22,7 @@
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
 </Project>
+
+
+
 

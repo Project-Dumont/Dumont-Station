@@ -1,6 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -553,3 +553,6 @@ Global
 		SolutionGuid = {AA37ED9F-F8D6-468E-A101-658AD605B09A}
 	EndGlobalSection
 EndGlobal
+
+
+

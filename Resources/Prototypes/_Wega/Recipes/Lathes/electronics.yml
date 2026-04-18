@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: DnaModifierComputerCircuitboard
@@ -10,3 +10,6 @@
   id: MedicalScannerMachineCircuitboard
   icon: { sprite: Structures/Machines/scanner.rsi, state: open }
   result: MedicalScannerMachineCircuitboard
+
+
+

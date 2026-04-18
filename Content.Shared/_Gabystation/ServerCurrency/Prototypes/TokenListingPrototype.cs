@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <malchanceux@protonmail.com>
@@ -7,7 +8,6 @@
 // SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -37,3 +37,5 @@ public sealed partial class TokenListingPrototype : IPrototype
     [DataField]
     public string AdminNote { get; private set; } = "token-generic-note";
 }
+
+

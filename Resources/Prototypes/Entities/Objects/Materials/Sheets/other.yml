@@ -1,4 +1,3 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2021 SETh lafuente <cetaciocascarudo@gmail.com>
 # SPDX-FileCopyrightText: 2021 SethLafuente <84478872+SethLafuente@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
@@ -32,6 +31,7 @@
 # SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 Patrik Caes-Sayrs <heartofgoldfish@gmail.com>
 # SPDX-FileCopyrightText: 2025 War Pigeon <54217755+minus1over12@users.noreply.github.com>
@@ -358,3 +358,5 @@
       state: meat
     - type: Stack
       count: 1
+
+

@@ -271,6 +271,9 @@ __pycache__/
 # Release package files go here:
 release/
 
+# Local .NET CLI cache/state
+/.dotnet_cli/
+
 # Apple please go.
 .DS_Store
 # KDE, come in.
@@ -306,6 +309,29 @@ Resources/MapImages
 
 # Direnv stuff
 .direnv/
+
+# Local build/debug artifacts kept at repository root during upgrade work
+/build-after-credit.log
+/build-full.log
+/build-warnings.log
+/build_warnings.txt
+/content-shared-errors.log
+/content_shared_debug_after_patch*.txt
+/debug_build*.txt
+/full-build.log
+/full_debug_after_shared_cleanup.txt
+/goob_build_after_batch.txt
+/goob_client_debug.txt
+/goob_server_debug.txt
+/integ-build*.log
+/node_batch_*.txt
+/release_build_current.txt
+/restore_goob_server_diag.txt
+/server-run.log
+/server-warning-baseline.log
+/server_build*.txt
+/upgrade-build*.log
+/upgrade-restore.log
 
 config.json
 .github/workflows/update-prs.yaml

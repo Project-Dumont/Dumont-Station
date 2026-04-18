@@ -1,4 +1,4 @@
-﻿// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._White.Xenomorphs.Caste;
@@ -18,3 +18,6 @@ public sealed partial class XenomorphCastePrototype : IPrototype
     [DataField]
     public int MaxCount;
 }
+
+
+

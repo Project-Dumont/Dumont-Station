@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
@@ -15,7 +16,6 @@
 // SPDX-FileCopyrightText: 2025 john git <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Power.PTL;
@@ -257,3 +257,5 @@ public sealed partial class PTLSystem : EntitySystem
         args.Handled = true;
     }
 }
+
+

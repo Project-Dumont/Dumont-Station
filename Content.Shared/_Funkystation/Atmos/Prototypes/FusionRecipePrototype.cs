@@ -1,4 +1,4 @@
-﻿// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared._Funkystation.Atmos.HFR;
@@ -45,3 +45,6 @@ namespace Content.Shared._Funkystation.Atmos.Prototypes
         public List<string> SecondaryProducts { get; set; } = default!;
     }
 }
+
+
+

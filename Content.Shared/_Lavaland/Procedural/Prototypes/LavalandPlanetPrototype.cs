@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lavaland.Procedural.Prototypes;
@@ -22,3 +22,6 @@ public sealed partial class LavalandMapPrototype : IPrototype
     [DataField]
     public ProtoId<LavalandRuinPoolPrototype>? Ruins;
 }
+
+
+

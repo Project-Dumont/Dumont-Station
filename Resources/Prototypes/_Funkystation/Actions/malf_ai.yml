@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 # SPDX-FileCopyrightText: 2025 YourName
 #
@@ -186,3 +186,6 @@
     range: 5
   - type: WorldTargetAction
     event: !type:MalfAiGyroscopeActionEvent
+
+
+

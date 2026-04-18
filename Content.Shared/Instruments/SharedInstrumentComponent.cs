@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
 // SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
+// SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <zddm@outlook.es>
 // SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
 // SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
 // SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
@@ -14,6 +14,7 @@
 // SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Fildrance <fildrance@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers@gmail.com>
@@ -23,7 +24,6 @@
 // SPDX-FileCopyrightText: 2025 krusti <krusti@fluffytech.xyz>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: MIT
 
 using System.Collections;
@@ -272,7 +272,7 @@ public sealed class MidiTrack
             ProgramName = Sanitize(ProgramName);
     }
 
-    private const string Postfix = "…";
+    private const string Postfix = "â€¦";
     // TODO: Make a general method to use in RT? idk if we have that.
     private string Truncate(string input, int limit)
     {
@@ -297,3 +297,5 @@ public sealed class MidiTrack
         return sanitized.ToString();
     }
 }
+
+

@@ -1,8 +1,9 @@
-﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
@@ -11,7 +12,6 @@
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -97,3 +97,5 @@ public sealed partial class ComboListPrototype : IPrototype
     [DataField( required: true)]
     public List<ProtoId<ComboPrototype>> Combos = new();
 }
+
+

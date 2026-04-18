@@ -1,4 +1,3 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2020 Campbell Suter <znix@znix.xyz>
 # SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
@@ -7,7 +6,7 @@
 # SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
 # SPDX-FileCopyrightText: 2020 Swept <jamesurquhartwebb@gmail.com>
 # SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2020 ancientpower <ancientpowerer@gmail.com>
 # SPDX-FileCopyrightText: 2020 ancientpower <evafleck@gmail.com>
 # SPDX-FileCopyrightText: 2020 scuffedjays <yetanotherscuffed@gmail.com>
@@ -83,6 +82,7 @@
 # SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 # SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
@@ -319,3 +319,5 @@
     iconOn: Interface/Actions/ghostHearingToggled.png
   - type: InstantAction
     event: !type:ToggleGhostHearingActionEvent
+
+

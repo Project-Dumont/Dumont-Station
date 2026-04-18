@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 - type: entity
   id: RatDen
   name: rat den
@@ -65,3 +65,6 @@
           - !type:PlaySoundBehavior
             sound:
               collection: gib
+
+
+

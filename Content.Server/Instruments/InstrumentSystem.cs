@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020 Campbell Suter <znix@znix.xyz>
 // SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 VÃ­ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
 // SPDX-FileCopyrightText: 2020 silicons <2003111+silicons@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
@@ -28,6 +28,7 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers@gmail.com>
@@ -37,7 +38,6 @@
 // SPDX-FileCopyrightText: 2025 krusti <krusti@fluffytech.xyz>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -539,3 +539,5 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
         return component != null;
     }
 }
+
+

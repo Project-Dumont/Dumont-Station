@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia FernÃ¡ndez <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
 // SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
@@ -23,8 +23,8 @@
 // SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Chemistry.Reaction;
@@ -161,3 +161,5 @@ namespace Content.IntegrationTests.Tests.Chemistry
     }
 
 }
+
+

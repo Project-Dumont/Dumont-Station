@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Codewords;
@@ -19,3 +19,6 @@ public sealed partial class CodewordFactionPrototype : IPrototype
     [DataField(required:true)]
     public ProtoId<CodewordGeneratorPrototype> Generator { get; private set; } = default!;
 }
+
+
+

@@ -5,11 +5,11 @@
 // SPDX-FileCopyrightText: 2020 JiimBob <44332255+JiimBob@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
 // SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <zddm@outlook.es>
+// SPDX-FileCopyrightText: 2020 Vï¿½ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Vï¿½ctor Aguilera Puerto <zddm@outlook.es>
 // SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fern�ndez <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia FernÃ¡ndez <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernï¿½ndez <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
 // SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
@@ -36,6 +36,7 @@
 // SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
@@ -59,7 +60,6 @@
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Collections.Generic;
@@ -623,3 +623,5 @@ namespace Content.IntegrationTests.Tests
         }
     }
 }
+
+

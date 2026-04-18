@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Shared.Genetics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -35,3 +35,6 @@ public enum EnzymesType : byte
     Intermediate,
     Base,
 }
+
+
+

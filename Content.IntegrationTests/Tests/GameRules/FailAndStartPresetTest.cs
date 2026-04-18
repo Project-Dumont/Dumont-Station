@@ -10,8 +10,8 @@
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 #nullable enable
@@ -170,3 +170,5 @@ public sealed class TestRuleSystem : EntitySystem
 
 [RegisterComponent]
 public sealed partial class TestRuleComponent : Component;
+
+

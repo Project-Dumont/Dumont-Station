@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Server.Body.Components;
 using Content.Shared.Genetics;
 
@@ -28,3 +28,6 @@ public sealed class NoBreathingGenSystem : EntitySystem
         EnsureComp<RespiratorComponent>(ent);
     }
 }
+
+
+

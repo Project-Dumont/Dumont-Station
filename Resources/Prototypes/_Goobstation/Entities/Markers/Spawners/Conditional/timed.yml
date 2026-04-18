@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 - type: entity
   name: Ancient Xeno AI Timed Spawner
   id: AncientXenoAITimedSpawner
@@ -19,3 +19,6 @@
       intervalSeconds: 30
       minimumEntitiesSpawned: 2
       maximumEntitiesSpawned: 4
+
+
+

@@ -58,9 +58,9 @@
 // SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
 // SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 #nullable enable
@@ -583,3 +583,5 @@ public sealed class MaterialArbitrageTest
 #pragma warning restore CS1998
     }
 }
+
+

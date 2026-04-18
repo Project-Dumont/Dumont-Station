@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Rinary <rinary.super@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System;
@@ -24,3 +24,6 @@ public sealed partial class DisplacementEffect : IPrototype
 
     [DataField("displacement", required: true)] public DisplacementData Displacement = null!;
 }
+
+
+

@@ -6,7 +6,7 @@
 // SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
 // SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Jack Fox <35575261+DubiousDoggo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 JÃºlio CÃ©sar Ueti <52474532+Mirino97@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Matz05 <Matz05@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Paul <ritter.paul1@googlemail.com>
 // SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
@@ -113,6 +113,7 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 KillanGenifer <157119956+KillanGenifer@users.noreply.github.com>
@@ -125,7 +126,6 @@
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.DeviceLinking.Systems;
@@ -589,3 +589,5 @@ namespace Content.Server.Light.EntitySystems
         }
     }
 }
+
+

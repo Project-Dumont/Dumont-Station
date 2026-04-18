@@ -1,4 +1,4 @@
-# ported by Punker Corps <punkercorps@gmail.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 - type: job
   id: PermaPrisoner
   name: job-name-prisoner
@@ -25,3 +25,6 @@
     ears: ClothingHeadsetPrison
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
+
+
+

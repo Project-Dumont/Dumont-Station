@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
 // SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
@@ -16,6 +16,7 @@
 // SPDX-FileCopyrightText: 2024 Token <esil.bektay@yandex.com>
 // SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 CrimeMoot <wakeafa@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
@@ -23,7 +24,6 @@
 // SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Ganimed.SeedDna.System;
@@ -419,3 +419,5 @@ public partial class SeedData
         return newSeed;
     }
 }
+
+

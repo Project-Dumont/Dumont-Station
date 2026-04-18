@@ -1,8 +1,10 @@
+<!-- SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com> -->
+<!-- SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com> -->
 <!--
 SPDX-FileCopyrightText: 2019 Acruid <shatter66@gmail.com>
 SPDX-FileCopyrightText: 2020 Paul <ritter.paul1+git@googlemail.com>
 SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
-SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+SPDX-FileCopyrightText: 2021 Javier Guardia FernÃ¡ndez <DrSmugleaf@users.noreply.github.com>
 SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
 SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
@@ -11,7 +13,6 @@ SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 
-ported by Punker Corps <punkercorps@gmail.com>
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
@@ -45,4 +46,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
 </Project>
+
+
 

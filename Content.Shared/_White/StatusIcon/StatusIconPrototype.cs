@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -17,3 +17,6 @@ public sealed partial class InfectionIconPrototype : StatusIconPrototype, IInher
     [AbstractDataField]
     public bool Abstract { get; private set; }
 }
+
+
+

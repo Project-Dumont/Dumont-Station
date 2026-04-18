@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Serialization;
@@ -60,3 +60,5 @@ public partial record struct TemperatureScaling(FixedPoint2 Min, FixedPoint2 Max
             : (FixedPoint2.New(1) - scaledDistance) * scale;
     }
 }
+
+

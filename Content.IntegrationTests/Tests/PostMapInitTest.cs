@@ -4,7 +4,7 @@
 
 // SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
 // SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia FernÃ¡ndez <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
@@ -34,6 +34,7 @@
 // SPDX-FileCopyrightText: 2024 TytosB <54259736+TytosB@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 terezi <147006836+terezi-station@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 CRISOOOOO <130084560+CRISOOOOO@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 CRISOOOOO <cristiandeavila.uow@gmail.com>
 // SPDX-FileCopyrightText: 2025 Deerstop <edainturner@gmail.com>
@@ -66,13 +67,12 @@
 // SPDX-FileCopyrightText: 2025 compilatron <40789662+jbox144@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
 // SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fern�ndez <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia FernÃ¡ndez <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernï¿½ndez <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
@@ -905,3 +905,5 @@ namespace Content.IntegrationTests.Tests
         }
     }
 }
+
+

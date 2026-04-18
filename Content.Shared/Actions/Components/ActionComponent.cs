@@ -6,10 +6,10 @@
 // SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
@@ -225,3 +225,5 @@ public sealed partial class ActionComponent : Component
     [DataField(required: true, customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan End;
 }
+
+

@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
@@ -21,3 +21,6 @@ public sealed partial class TitleListingPrototype : IPrototype
     [DataField(required: false)]
     public bool Available { get; private set; } = true;
 }
+
+
+

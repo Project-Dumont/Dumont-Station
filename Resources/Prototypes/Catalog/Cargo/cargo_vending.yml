@@ -1,4 +1,3 @@
-# ported by Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2023 Alex <129697969+Lomcastar@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 DoubleRiceEddiedd <149714181+DoubleRiceEddiedd@users.noreply.github.com>
@@ -37,6 +36,7 @@
 # SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
@@ -324,3 +324,5 @@
   cost: 1200
   category: cargoproduct-category-name-service
   group: market
+
+

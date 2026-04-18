@@ -1,4 +1,4 @@
-// ported by Punker Corps <punkercorps@gmail.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
 
@@ -31,3 +31,6 @@ public sealed partial class CodewordGeneratorPrototype : IPrototype
     [DataField]
     public int Amount = 3;
 }
+
+
+

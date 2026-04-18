@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Punker Corps <punkercorps@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 // SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
@@ -17,7 +18,6 @@
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 //
-// ported by Punker Corps <punkercorps@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -43,3 +43,5 @@ public sealed partial class ShopInventoryPrototype : IPrototype
 
 [DataRecord, Serializable]
 public partial record struct ShopListing(EntProtoId Id, uint Cost, LocId? OverrideName = null);
+
+
