@@ -475,8 +475,8 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (configuration.TransferLanguageSpeaker && TryComp<LanguageSpeakerComponent>(uid, out var originalLangComp))
         {
             var childLangComp = EnsureComp<LanguageSpeakerComponent>(child);
-            childLangComp.SpokenLanguages = new(originalLangComp.SpokenLanguages);
-            childLangComp.UnderstoodLanguages = new(originalLangComp.UnderstoodLanguages);
+            childLangComp.SpokenLanguages = [.. originalLangComp.SpokenLanguages];
+            childLangComp.UnderstoodLanguages = [.. originalLangComp.UnderstoodLanguages];
             childLangComp.CurrentLanguage = originalLangComp.CurrentLanguage;
         }
 
@@ -519,12 +519,12 @@ public sealed partial class PolymorphSystem : EntitySystem
 
             foreach (var accentType in accentComponents)
             {
-                if (EntityManager.HasComponent(uid, accentType))
-                {
-                    var originalAccentComp = EntityManager.GetComponent(uid, accentType);
-                    var childAccentComp = (Component)_serialization.CreateCopy(originalAccentComp, notNullableOverride: true);
-            EntityManager.AddComponent(child, childAccentComp);
-                }
+                if (!HasComp(uid, accentType))
+                    continue;
+
+                var originalAccentComp = EntityManager.GetComponent(uid, accentType);
+                var childAccentComp = (Component) _serialization.CreateCopy(originalAccentComp, notNullableOverride: true);
+                AddComp(child, childAccentComp);
             }
         }
 
@@ -548,12 +548,12 @@ public sealed partial class PolymorphSystem : EntitySystem
 
             foreach (var quirkType in quirkComponents)
             {
-                if (EntityManager.HasComponent(uid, quirkType))
-                {
-                    var originalQuirkComp = EntityManager.GetComponent(uid, quirkType);
-                    var childQuirkComp = (Component)_serialization.CreateCopy(originalQuirkComp, notNullableOverride: true);
-                    EntityManager.AddComponent(child, childQuirkComp);
-                }
+                if (!HasComp(uid, quirkType))
+                    continue;
+
+                var originalQuirkComp = EntityManager.GetComponent(uid, quirkType);
+                var childQuirkComp = (Component) _serialization.CreateCopy(originalQuirkComp, notNullableOverride: true);
+                AddComp(child, childQuirkComp);
             }
         }
         // ADT-Geras-Tweak-End

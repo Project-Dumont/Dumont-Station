@@ -4,7 +4,6 @@
 
 using Content.Shared.Polymorph;
 using Robust.Shared.Prototypes;
-using System;
 
 namespace Content.Server.ADT.Geras;
 

@@ -9,11 +9,8 @@ using Content.Server.Popups;
 using Content.Shared.ADT.Geras;
 using Robust.Shared.Player;
 using Content.Shared.Humanoid;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Item;
-using Content.Shared.Hands;
 using Content.Shared.DoAfter;
 
 namespace Content.Server.ADT.Geras;

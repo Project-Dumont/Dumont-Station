@@ -12,7 +12,6 @@ namespace Content.Client.ADT.Geras;
 
 public sealed class GerasSystem : VisualizerSystem<GerasComponent>
 {
-
     protected override void OnAppearanceChange(EntityUid uid, GerasComponent comp, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null || !TryComp<SpriteComponent>(uid, out var sprite))
@@ -21,9 +20,6 @@ public sealed class GerasSystem : VisualizerSystem<GerasComponent>
         if (!AppearanceSystem.TryGetData(uid, GeraColor.Color, out Color color, args.Component))
             return;
 
-        foreach (var spriteLayer in args.Sprite.AllLayers)
-        {
-            sprite.Color = color;
-        }
+        SpriteSystem.SetColor((uid, sprite), color);
     }
 }
