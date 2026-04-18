@@ -1255,7 +1255,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (localPos.Length() > visualLength)
             localPos = localPos.Normalized() * visualLength;
 
-        DoLunge(user, weapon, angle, localPos, animation, spriteRotation, flipAnimation);
+        DoLunge(user, user, weapon, angle, localPos, animation, spriteRotation, flipAnimation);
     }
 
     private void PhysicalShove(EntityUid user, EntityUid target)
@@ -1269,7 +1269,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         _throwing.TryThrow(target, pushVector, force * _shoveSpeed, animated: animated);
     }
 
-    public abstract void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true);
+    public abstract void DoLunge(EntityUid user, EntityUid playerUid, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true);
 
     /// <summary>
     /// Used to update the MeleeWeapon component on item toggle.

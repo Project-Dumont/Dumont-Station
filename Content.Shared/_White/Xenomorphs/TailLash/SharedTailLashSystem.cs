@@ -108,7 +108,7 @@ public sealed class SharedTailLashSystem : EntitySystem
         }
 
         var localPos = transform.LocalRotation.RotateVec(matrix);
-        _meleeWeapon.DoLunge(uid, uid, rotation, localPos, component.TailAnimationId, new Angle(0), false);
+        _meleeWeapon.DoLunge(uid, uid, uid, rotation, localPos, component.TailAnimationId, new Angle(0), false);
         _audio.PlayPredicted(component.HitSound, uid, uid);
 
         var attackEv = new MeleeAttackEvent(uid);

@@ -370,7 +370,7 @@ public sealed class HisGraceSystem : SharedHisGraceSystem
 
             // do damage and animation
             _damageable.TryChangeDamage(entity, melee.Damage, targetPart: TargetBodyPart.Chest, origin: hisGrace);
-            _melee.DoLunge(hisGrace, hisGrace, angle, coordinates.Position, null, angle, false, false);
+            _melee.DoLunge(hisGrace, hisGrace, hisGrace, angle, coordinates.Position, null, angle, false, false);
 
             _audio.PlayPvs(melee.HitSound, hisGrace);
             _popup.PopupEntity(Loc.GetString("hisgrace-attack-popup", ("target", Name(entity))), hisGrace, PopupType.LargeCaution);

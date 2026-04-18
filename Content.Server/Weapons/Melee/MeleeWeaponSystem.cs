@@ -141,13 +141,31 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         _color.RaiseEffect(Color.Red, targets, filter);
     }
 
-    public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true)
+    private float CalculateDisarmChance(EntityUid disarmer, EntityUid disarmed, EntityUid? inTargetHand, CombatModeComponent disarmerComp)
+    {
+        if (HasComp<DisarmProneComponent>(disarmer))
+            return 1.0f;
+
+        if (HasComp<DisarmProneComponent>(disarmed))
+            return 0.0f;
+
+        var chance = disarmerComp.BaseDisarmFailChance;
+
+        if (inTargetHand != null && TryComp<DisarmMalusComponent>(inTargetHand, out var malus))
+        {
+            chance += malus.Malus;
+        }
+
+        return Math.Clamp(chance, 0f, 1f);
+    }
+
+    public override void DoLunge(EntityUid user, EntityUid playerUid, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true)
     {
         Filter filter;
 
         if (predicted)
         {
-            filter = Filter.PvsExcept(user, entityManager: EntityManager);
+            filter = Filter.PvsExcept(playerUid, entityManager: EntityManager);
         }
         else
         {
