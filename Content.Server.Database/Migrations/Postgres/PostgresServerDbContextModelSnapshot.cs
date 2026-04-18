@@ -1872,45 +1872,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("server_unban", (string)null);
                 });
 
-            // ADT-BookPrinter-Start
-            modelBuilder.Entity("Content.Server.Database.BookPrinterEntry", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("book_printer_entry_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("content");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.Property<string>("StampState")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("stamp_state");
-
-                    b.HasKey("Id")
-                        .HasName("PK_book_printer_entry");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.ToTable("book_printer_entry", (string)null);
-                });
-
             modelBuilder.Entity("Content.Server.Database.StampedData", b =>
                 {
                     b.Property<int>("Id")
@@ -1942,7 +1903,6 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     b.ToTable("stamped_data", (string)null);
                 });
-            // ADT-BookPrinter-End
 
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
@@ -2254,16 +2214,6 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     b.Navigation("Profile");
                 });
-
-            // ADT-BookPrinter-Start
-            modelBuilder.Entity("Content.Server.Database.StampedData", b =>
-                {
-                    b.HasOne("Content.Server.Database.BookPrinterEntry", null)
-                        .WithMany("StampedBy")
-                        .HasForeignKey("BookPrinterEntryId")
-                        .HasConstraintName("FK_stamped_data_book_printer_entry_book_printer_entry_id");
-                });
-            // ADT-BookPrinter-End
 
             modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
                 {
@@ -2735,13 +2685,6 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     b.Navigation("Round");
                 });
-
-            // ADT-BookPrinter-Start
-            modelBuilder.Entity("Content.Server.Database.BookPrinterEntry", b =>
-                {
-                    b.Navigation("StampedBy");
-                });
-            // ADT-BookPrinter-End
 
             modelBuilder.Entity("Content.Server.Database.ServerRoleUnban", b =>
                 {

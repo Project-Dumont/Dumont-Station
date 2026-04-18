@@ -1784,43 +1784,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("server_unban", (string)null);
                 });
 
-            // ADT-BookPrinter-Start
-            modelBuilder.Entity("Content.Server.Database.BookPrinterEntry", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("book_printer_entry_id");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("content");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("description");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("name");
-
-                    b.Property<string>("StampState")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("stamp_state");
-
-                    b.HasKey("Id")
-                        .HasName("PK_book_printer_entry");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.ToTable("book_printer_entry", (string)null);
-                });
-
             modelBuilder.Entity("Content.Server.Database.StampedData", b =>
                 {
                     b.Property<int>("Id")
@@ -1850,7 +1813,6 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.ToTable("stamped_data", (string)null);
                 });
-            // ADT-BookPrinter-End
 
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
@@ -1996,16 +1958,6 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.Navigation("Player");
                 });
-
-            // ADT-BookPrinter-Start
-            modelBuilder.Entity("Content.Server.Database.StampedData", b =>
-                {
-                    b.HasOne("Content.Server.Database.BookPrinterEntry", null)
-                        .WithMany("StampedBy")
-                        .HasForeignKey("BookPrinterEntryId")
-                        .HasConstraintName("FK_stamped_data_book_printer_entry_book_printer_entry_id");
-                });
-            // ADT-BookPrinter-End
 
             modelBuilder.Entity("Content.Server.Database.AdminMessage", b =>
                 {
@@ -2783,13 +2735,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                 {
                     b.Navigation("Profiles");
                 });
-
-            // ADT-BookPrinter-Start
-            modelBuilder.Entity("Content.Server.Database.BookPrinterEntry", b =>
-                {
-                    b.Navigation("StampedBy");
-                });
-            // ADT-BookPrinter-End
 
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
                 {
