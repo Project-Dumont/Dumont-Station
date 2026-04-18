@@ -721,3 +721,9 @@
   name: In Abstentia Logos - Heaven Pierce Her
   path:
     path: /Audio/_Gabystation/Jukebox/inabstentialogos.ogg
+
+- type: jukebox
+  id: eventhorizon
+  name: Event Horizon(Reach for the Sun and Burn! Burn! Burn!)- Heaven Pierce Her
+  path:
+    path: /Audio/_Gabystation/Jukebox/eventhorizon.ogg
