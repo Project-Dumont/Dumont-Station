@@ -10,10 +10,10 @@
   components:
   - type: Action
     useDelay: 30
-    icon: { sprite: _Gabystation/OniCharge/ChargeOni.rsi, state: Charge }
+    icon: { sprite: _Gabystation/Charge/charge.rsi, state: charge }
     itemIconStyle: NoItem
     sound: !type:SoundPathSpecifier
-      path: /Audio/_Gabystation/ChargeOni/ChargeHeavy.ogg
+      path: /Audio/_Gabystation/Charge/ChargeHeavy.ogg
       params:
         volume: 8
   - type: TargetAction
