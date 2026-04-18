@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Gabystation.Charge;
 
-[RegisterComponent, NetworkedComponent, ComponentProtoName("OniCharge")]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class ChargeComponent : Component
 {
     [DataField]
@@ -25,8 +25,8 @@ public sealed partial class ChargeComponent : Component
     [DataField]
     public bool KnockdownOnFragileHit;
 
-    [DataField]
-    public EntProtoId ChargeAction = "ActionOniCharge";
+    [DataField(required: true)]
+    public EntProtoId ChargeAction;
 
     [DataField]
     public DamageSpecifier TargetDamage = new()

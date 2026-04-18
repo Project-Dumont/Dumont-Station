@@ -11,7 +11,6 @@ using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Events;
 
 namespace Content.Server._Gabystation.Charge;
 
@@ -27,8 +26,6 @@ public sealed class ChargeSystem : EntitySystem
         SubscribeLocalEvent<ChargeComponent, DashActionEvent>(OnDashAction);
         SubscribeLocalEvent<ChargeComponent, ThrownEvent>(OnThrown);
         SubscribeLocalEvent<ChargeComponent, ThrowDoHitEvent>(OnThrowDoHit);
-        SubscribeLocalEvent<ChargeComponent, StartCollideEvent>(OnStartCollide);
-        SubscribeLocalEvent<ChargeComponent, LandEvent>(OnLand);
         SubscribeLocalEvent<ChargeComponent, StopThrowEvent>(OnStopThrow);
     }
 
@@ -37,7 +34,10 @@ public sealed class ChargeSystem : EntitySystem
         if (args.Performer != ent.Owner)
             return;
 
-        if (!IsChargeAction(args.Action, ent.Comp))
+        if (MetaData(args.Action).EntityPrototype?.ID is not { } actionId)
+            return;
+
+        if (actionId != ent.Comp.ChargeAction)
             return;
 
         ent.Comp.PendingCharge = true;
@@ -48,7 +48,9 @@ public sealed class ChargeSystem : EntitySystem
         if (!ent.Comp.PendingCharge)
             return;
 
-        BeginCharge(ent.Comp);
+        ent.Comp.PendingCharge = false;
+        ent.Comp.IsCharging = true;
+        ent.Comp.HitDuringCurrentCharge.Clear();
     }
 
     private void OnThrowDoHit(Entity<ChargeComponent> ent, ref ThrowDoHitEvent args)
@@ -59,111 +61,69 @@ public sealed class ChargeSystem : EntitySystem
         if (args.Target == ent.Owner)
             return;
 
-        if (TryHandleMobHit(ent, args.Target))
+        if (HasComp<MobStateComponent>(args.Target))
+        {
+            if (AlreadyHitThisCharge(ent.Comp, args.Target))
+                return;
+
+            _damageable.TryChangeDamage(args.Target, ent.Comp.TargetDamage, origin: ent.Owner);
+            _stun.TryKnockdown(args.Target, ent.Comp.TargetKnockdown, true, true, false);
             return;
+        }
 
-        TryHandleFragileHit(ent, args.Target);
-    }
+        if (HasComp<DestructibleComponent>(args.Target))
+        {
+            if (AlreadyHitThisCharge(ent.Comp, args.Target))
+                return;
 
-    private void OnStartCollide(Entity<ChargeComponent> ent, ref StartCollideEvent args)
-    {
-        if (!ent.Comp.IsCharging)
+            _damageable.TryChangeDamage(args.Target, ent.Comp.FragileDamage, origin: ent.Owner);
+
+            if (ent.Comp.StopOnFragileHit)
+            {
+                EndChargeWithSelfKnockdown(ent);
+                return;
+            }
+
+            if (ent.Comp.KnockdownOnFragileHit)
+                _stun.TryKnockdown(ent.Owner, ent.Comp.WallKnockdown, true, true, false);
+
             return;
+        }
 
-        if (args.OtherEntity == ent.Owner)
-            return;
-
-        
-        
-        if (TryHandleMobHit(ent, args.OtherEntity))
-            return;
-
-        
-        if (HasComp<DestructibleComponent>(args.OtherEntity))
-            return;
-
-        if (!args.OtherFixture.Hard)
-            return;
-
-        if (!TryComp(args.OtherEntity, out PhysicsComponent? physics))
+        if (!TryComp(args.Target, out PhysicsComponent? physics))
             return;
 
         if (physics.BodyType != BodyType.Static)
             return;
 
-        HandleWallImpact(ent);
+        EndChargeWithSelfKnockdown(ent);
     }
 
-    private void OnLand(Entity<ChargeComponent> ent, ref LandEvent args)
+    private void EndChargeWithSelfKnockdown(Entity<ChargeComponent> ent)
     {
-        EndCharge(ent.Comp);
+        ResetChargeState(ent.Comp);
+        _stun.TryKnockdown(ent.Owner, ent.Comp.WallKnockdown, true, true, false);
     }
 
     private void OnStopThrow(Entity<ChargeComponent> ent, ref StopThrowEvent args)
     {
-        EndCharge(ent.Comp);
+        if (!ent.Comp.PendingCharge &&
+            !ent.Comp.IsCharging &&
+            ent.Comp.HitDuringCurrentCharge.Count == 0)
+            return;
+
+        ResetChargeState(ent.Comp);
     }
 
-    private bool IsChargeAction(EntityUid action, ChargeComponent comp)
+    private static bool AlreadyHitThisCharge(ChargeComponent comp, EntityUid target)
     {
-        if (MetaData(action).EntityPrototype?.ID is not { } id)
-            return false;
-
-        return id == comp.ChargeAction;
+        return !comp.HitDuringCurrentCharge.Add(target);
     }
 
-    private static void BeginCharge(ChargeComponent comp)
-    {
-        comp.PendingCharge = false;
-        comp.IsCharging = true;
-        comp.HitDuringCurrentCharge.Clear();
-    }
-
-    private static void EndCharge(ChargeComponent comp)
+    private static void ResetChargeState(ChargeComponent comp)
     {
         comp.PendingCharge = false;
         comp.IsCharging = false;
         comp.HitDuringCurrentCharge.Clear();
-    }
-
-    private bool TryHandleMobHit(Entity<ChargeComponent> ent, EntityUid target)
-    {
-        if (!HasComp<MobStateComponent>(target))
-            return false;
-
-        if (!ent.Comp.HitDuringCurrentCharge.Add(target))
-            return true;
-
-        _damageable.TryChangeDamage(target, ent.Comp.TargetDamage, origin: ent.Owner);
-        _stun.TryKnockdown(target, ent.Comp.TargetKnockdown, true, true, false);
-        return true;
-    }
-
-    private bool TryHandleFragileHit(Entity<ChargeComponent> ent, EntityUid target)
-    {
-        if (!HasComp<DestructibleComponent>(target))
-            return false;
-
-        if (!ent.Comp.HitDuringCurrentCharge.Add(target))
-            return true;
-
-        _damageable.TryChangeDamage(target, ent.Comp.FragileDamage, origin: ent.Owner);
-
-        if (ent.Comp.StopOnFragileHit)
-        {
-            HandleWallImpact(ent);
-            return true;
-        }
-
-        if (ent.Comp.KnockdownOnFragileHit)
-            _stun.TryKnockdown(ent.Owner, ent.Comp.WallKnockdown, true, true, false);
-
-        return true;
-    }
-
-    private void HandleWallImpact(Entity<ChargeComponent> ent)
-    {
-        EndCharge(ent.Comp);
-        _stun.TryKnockdown(ent.Owner, ent.Comp.WallKnockdown, true, true, false);
     }
 }
