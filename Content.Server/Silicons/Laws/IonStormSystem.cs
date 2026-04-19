@@ -35,12 +35,12 @@ using System.Linq;
 
 namespace Content.Server.Silicons.Laws;
 
-public sealed class IonStormSystem : EntitySystem
+public sealed partial class IonStormSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SiliconLawSystem _siliconLaw = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private SiliconLawSystem _siliconLaw = default!;
+    [Dependency] private IRobustRandom _robustRandom = default!;
 
     // funny
     private static readonly ProtoId<DatasetPrototype> Threats = "IonStormThreats";
@@ -61,6 +61,7 @@ public sealed class IonStormSystem : EntitySystem
     private static readonly ProtoId<DatasetPrototype> Concepts = "IonStormConcepts";
     private static readonly ProtoId<DatasetPrototype> Drinks = "IonStormDrinks";
     private static readonly ProtoId<DatasetPrototype> Foods = "IonStormFoods";
+    private static readonly ProtoId<WeightedRandomPrototype> IonLawTemplates = "DumontIonStormLaws"; // Dumont
 
     /// <summary>
     /// Randomly alters the laws of an individual silicon.
@@ -240,11 +241,26 @@ public sealed class IonStormSystem : EntitySystem
             _ => crew1
         };
 
-        // message logic!!!
-        return _robustRandom.Next(0, 40) switch // Goobstation
+        // Dumont
+        var template = _proto.Index(IonLawTemplates).Pick(_robustRandom);
+        if (template != "Default")
+        {
+            return Loc.GetString(template,
+                ("joined", joined),
+                ("subjects", triple),
+                ("department", Pick("IonStormDepartments")),
+                ("job", crew1),
+                ("otherJob", crew2));
+        }
+
+        // Skip the removed call-shuttle law without changing the other laws' relative weights.
+        var law = _robustRandom.Next(0, 39);
+        if (law >= 1)
+            law++;
+
+        return law switch
         {
             0  => Loc.GetString("ion-storm-law-on-station", ("joined", joined), ("subjects", triple)),
-            1  => Loc.GetString("ion-storm-law-call-shuttle", ("joined", joined), ("subjects", triple)),
             2  => Loc.GetString("ion-storm-law-crew-are", ("who", crewAll), ("joined", joined), ("subjects", objectsThreats)),
             3  => Loc.GetString("ion-storm-law-subjects-harmful", ("adjective", adjective), ("subjects", triple)),
             4  => Loc.GetString("ion-storm-law-must-harmful", ("must", must)),
