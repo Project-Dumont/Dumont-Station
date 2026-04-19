@@ -175,7 +175,6 @@
     - id: SpiderSpawn
     - id: VentClog
     - id: NecromorphSpawn # Gabystation add
-    - id: MorphRule # Trauma Port
     - id: TidemindDevelop # Goobstation - Tidemind
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
@@ -198,6 +197,7 @@
     - id: CosmicCultMidround # Gabystation
     - id: BloodCultMidround # Gabystation
     - id: ZombieOutbreak
+    - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
     - id: BlobSpawn # Goobstation - Blob
