@@ -4,7 +4,7 @@ morph-no-biomass-target = Você não conseguiu obter nenhuma biomassa
 
 morph-examine = [color=#79b037]Isso parece estranho...[/color]
 
-morph-name-user = [color=#79b037]{$name}[/color]([color=gray]{$username}[/color]) era um [color=#79b037]Morph[/color] que tinha {$count} filhos.
-morph-name-user-lone = [color=#79b037]{$name}[/color]([color=gray]{$username}[/color]) era um [color=#79b037]Morph[/color] que tinha {$count} filhos.
+morph-name-user = [color=#79b037]{$name}[/color]([color=gray]{$username}[/color]) era um [color=#79b037]Morph[/color] que tinha {$count} filho.
+morph-name-user-lone = [color=#79b037]{$name}[/color]([color=gray]{$username}[/color]) era um [color=#79b037]Morph[/color] que tinha {$count} filho.
 
 morph-round-end-name = [color=#79b037]Morph[/color]
