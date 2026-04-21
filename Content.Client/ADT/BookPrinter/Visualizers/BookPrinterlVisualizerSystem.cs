@@ -54,7 +54,7 @@ public sealed partial class BookPrinterVisualizerSystem : VisualizerSystem<BookP
             if (cartridgeUid is not null
                 && TryComp<BookPrinterCartridgeComponent>(cartridgeUid, out var cartridgeComp))
             {
-                var isVisible = cartridgeComp.CurrentCharge >= cartridgeComp.FullCharge / 1.43f && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge;
+                var isVisible = cartridgeComp.CurrentCharge >= cartridgeComp.FullCharge * 0.7f && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge;
                 SpriteSystem.LayerSetVisible(ent, highLayer, isVisible);
             }
         }
@@ -66,7 +66,7 @@ public sealed partial class BookPrinterVisualizerSystem : VisualizerSystem<BookP
             if (cartridgeUid is not null
                 && TryComp<BookPrinterCartridgeComponent>(cartridgeUid, out var cartridgeComp))
             {
-                var isVisible = cartridgeComp.CurrentCharge >= cartridgeComp.FullCharge / 2.5f && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge / 1.43f;
+                var isVisible = cartridgeComp.CurrentCharge >= cartridgeComp.FullCharge * 0.4f && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge / 1.43f;
                 SpriteSystem.LayerSetVisible(ent, mediumLayer, isVisible);
             }
         }
@@ -78,7 +78,7 @@ public sealed partial class BookPrinterVisualizerSystem : VisualizerSystem<BookP
             if (cartridgeUid is not null
                 && TryComp<BookPrinterCartridgeComponent>(cartridgeUid, out var cartridgeComp))
             {
-                var isVisible = cartridgeComp.CurrentCharge > 0 && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge / 2.5f;
+                var isVisible = cartridgeComp.CurrentCharge > 0 && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge * 0.4f;
                 SpriteSystem.LayerSetVisible(ent, lowLayer, isVisible);
             }
         }
