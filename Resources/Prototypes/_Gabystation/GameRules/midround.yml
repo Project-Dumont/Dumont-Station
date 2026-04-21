@@ -182,9 +182,8 @@
     tags:
       - MidroundAntag
 
- # Midround Revs
-
- - type: entity
+# Midround Revs
+- type: entity
   parent: Revolutionary
   id: RevolutionaryMidround
   components:
