@@ -19,9 +19,7 @@ namespace Content.Client.ADT.BookPrinter
         [ViewVariables]
         private BookPrinterBoundUserInterfaceState? _lastState;
 
-        public BookPrinterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-        {
-        }
+        public BookPrinterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
         protected override void Open()
         {
@@ -68,14 +66,13 @@ namespace Content.Client.ADT.BookPrinter
             _window?.ShowBookInfo(entry);
         }
 
-        [Obsolete]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
 
             if (disposing)
             {
-                _window?.Dispose();
+                _window?.Close();
             }
         }
     }
