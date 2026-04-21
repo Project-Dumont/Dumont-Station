@@ -59,7 +59,7 @@ public sealed partial class BookPrinterVisualizerSystem : VisualizerSystem<BookP
             var isVisible = cartridgeUid is not null
                 && TryComp<BookPrinterCartridgeComponent>(cartridgeUid, out var cartridgeComp)
                 && cartridgeComp.CurrentCharge >= cartridgeComp.FullCharge * 0.4f
-                && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge * 0.4f;
+                && cartridgeComp.CurrentCharge < cartridgeComp.FullCharge * 0.7f;
 
             SpriteSystem.LayerSetVisible(ent, mediumLayer, isVisible);
         }
