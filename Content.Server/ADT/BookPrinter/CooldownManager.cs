@@ -6,59 +6,58 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Content.Shared.ADT.CCVar;
 
-namespace Content.Server.ADT.BookPrinter
+namespace Content.Server.ADT.BookPrinter;
+
+public sealed class GlobalBookPrinterCooldownManager
 {
-    public sealed class GlobalBookPrinterCooldownManager
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    private TimeSpan? _lastUploadTime;
+
+    public GlobalBookPrinterCooldownManager()
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
+        IoCManager.InjectDependencies(this);
+    }
 
-        private TimeSpan? _lastUploadTime;
+    public bool IsUploadAvailable()
+    {
+        if (!IsCooldownEnabled())
+            return true;
 
-        public GlobalBookPrinterCooldownManager()
-        {
-            IoCManager.InjectDependencies(this);
-        }
+        if (_lastUploadTime == null)
+            return true;
 
-        public bool IsUploadAvailable()
-        {
-            if (!IsCooldownEnabled())
-                return true;
+        var cooldownDuration = TimeSpan.FromSeconds(_cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldown));
+        var timeSinceLastUpload = _timing.CurTime - _lastUploadTime.Value;
 
-            if (_lastUploadTime == null)
-                return true;
+        return timeSinceLastUpload >= cooldownDuration;
+    }
 
-            var cooldownDuration = TimeSpan.FromSeconds(_cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldown));
-            var timeSinceLastUpload = _timing.CurTime - _lastUploadTime.Value;
+    public TimeSpan GetRemainingCooldown()
+    {
+        if (!IsCooldownEnabled() || _lastUploadTime == null)
+            return TimeSpan.Zero;
 
-            return timeSinceLastUpload >= cooldownDuration;
-        }
+        var cooldownDuration = TimeSpan.FromSeconds(_cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldown));
+        var timeSinceLastUpload = _timing.CurTime - _lastUploadTime.Value;
+        var remainingTime = cooldownDuration - timeSinceLastUpload;
 
-        public TimeSpan GetRemainingCooldown()
-        {
-            if (!IsCooldownEnabled() || _lastUploadTime == null)
-                return TimeSpan.Zero;
+        return remainingTime > TimeSpan.Zero ? remainingTime : TimeSpan.Zero;
+    }
 
-            var cooldownDuration = TimeSpan.FromSeconds(_cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldown));
-            var timeSinceLastUpload = _timing.CurTime - _lastUploadTime.Value;
-            var remainingTime = cooldownDuration - timeSinceLastUpload;
+    public void RegisterUpload()
+    {
+        _lastUploadTime = _timing.CurTime;
+    }
 
-            return remainingTime > TimeSpan.Zero ? remainingTime : TimeSpan.Zero;
-        }
+    public TimeSpan GetCooldownDuration()
+    {
+        return TimeSpan.FromSeconds(_cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldown));
+    }
 
-        public void RegisterUpload()
-        {
-            _lastUploadTime = _timing.CurTime;
-        }
-
-        public TimeSpan GetCooldownDuration()
-        {
-            return TimeSpan.FromSeconds(_cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldown));
-        }
-
-        public bool IsCooldownEnabled()
-        {
-            return _cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldownEnabled);
-        }
+    public bool IsCooldownEnabled()
+    {
+        return _cfg.GetCVar(ADTCCVars.BookPrinterUploadCooldownEnabled);
     }
 }

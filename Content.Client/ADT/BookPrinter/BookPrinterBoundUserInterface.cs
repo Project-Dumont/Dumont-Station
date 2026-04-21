@@ -8,72 +8,71 @@ using Content.Shared.ADT.BookPrinter;
 using Content.Shared.Containers.ItemSlots;
 using JetBrains.Annotations;
 
-namespace Content.Client.ADT.BookPrinter
+namespace Content.Client.ADT.BookPrinter;
+
+[UsedImplicitly]
+public sealed class BookPrinterBoundUserInterface : BoundUserInterface
 {
-    [UsedImplicitly]
-    public sealed class BookPrinterBoundUserInterface : BoundUserInterface
+    [ViewVariables]
+    private BookPrinterWindow? _window;
+
+    [ViewVariables]
+    private BookPrinterBoundUserInterfaceState? _lastState;
+
+    public BookPrinterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
+
+    protected override void Open()
     {
-        [ViewVariables]
-        private BookPrinterWindow? _window;
+        base.Open();
 
-        [ViewVariables]
-        private BookPrinterBoundUserInterfaceState? _lastState;
-
-        public BookPrinterBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
-
-        protected override void Open()
+        _window = new()
         {
-            base.Open();
+            Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName,
+        };
 
-            _window = new()
-            {
-                Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName,
-            };
+        _window.EjectButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent("bookSlot"));
+        _window.ClearButton.OnPressed += _ => SendMessage(new BookPrinterClearContainerMessage());
+        _window.UploadButton.OnPressed += _ => SendMessage(new BookPrinterUploadMessage());
+        _window.CopyPasteButton.OnPressed += _ => SendMessage(new BookPrinterCopyPasteMessage());
 
-            _window.EjectButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent("bookSlot"));
-            _window.ClearButton.OnPressed += _ => SendMessage(new BookPrinterClearContainerMessage());
-            _window.UploadButton.OnPressed += _ => SendMessage(new BookPrinterUploadMessage());
-            _window.CopyPasteButton.OnPressed += _ => SendMessage(new BookPrinterCopyPasteMessage());
+        _window.OpenCentered();
+        _window.OnClose += Close;
 
-            _window.OpenCentered();
-            _window.OnClose += Close;
-
-            _window.OnPrintBookButtonPressed += (args, button) => SendMessage(new BookPrinterPrintBookMessage(button.BookEntry));
-            _window.OnPrintBookButtonMouseEntered += (args, button) =>
-            {
-                if (_lastState is not null)
-                    _window.UpdateContainerInfoWithCooldown(_lastState);
-            };
-            _window.OnPrintBookButtonMouseExited += (args, button) =>
-            {
-                if (_lastState is not null)
-                    _window.UpdateContainerInfoWithCooldown(_lastState);
-            };
-        }
-
-        protected override void UpdateState(BoundUserInterfaceState state)
+        _window.OnPrintBookButtonPressed += (args, button) => SendMessage(new BookPrinterPrintBookMessage(button.BookEntry));
+        _window.OnPrintBookButtonMouseEntered += (args, button) =>
         {
-            base.UpdateState(state);
-
-            var castState = (BookPrinterBoundUserInterfaceState)state;
-            _lastState = castState;
-
-            _window?.UpdateState(castState);
-        }
-
-        public void ShowBookInfo(SharedBookPrinterEntry entry)
+            if (_lastState is not null)
+                _window.UpdateContainerInfoWithCooldown(_lastState);
+        };
+        _window.OnPrintBookButtonMouseExited += (args, button) =>
         {
-            _window?.ShowBookInfo(entry);
-        }
+            if (_lastState is not null)
+                _window.UpdateContainerInfoWithCooldown(_lastState);
+        };
+    }
 
-        protected override void Dispose(bool disposing)
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        var castState = (BookPrinterBoundUserInterfaceState)state;
+        _lastState = castState;
+
+        _window?.UpdateState(castState);
+    }
+
+    public void ShowBookInfo(SharedBookPrinterEntry entry)
+    {
+        _window?.ShowBookInfo(entry);
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+
+        if (disposing)
         {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                _window?.Close();
-            }
+            _window?.Close();
         }
     }
 }
