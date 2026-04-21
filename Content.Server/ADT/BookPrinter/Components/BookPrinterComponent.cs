@@ -27,7 +27,7 @@ public sealed partial class BookPrinterComponent : Component
     public string? WorkType;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public string? StampedName = "stamp-component-stamped-name-terminal";
+    public LocId? StampedName = "stamp-component-stamped-name-terminal";
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public string? StampedColor = "#999999";

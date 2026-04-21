@@ -36,7 +36,6 @@ public sealed partial class BookPrinterWindow : DefaultWindow
         CloseInfoPanelButton.OnPressed += _ => HideInfoPanel();
     }
 
-
     private string FormatCooldownTime(TimeSpan timeSpan)
     {
         if (timeSpan.Hours > 0)
@@ -49,7 +48,8 @@ public sealed partial class BookPrinterWindow : DefaultWindow
 
     public void UpdateState(BoundUserInterfaceState state)
     {
-        var castState = (BookPrinterBoundUserInterfaceState) state;
+        if (state is not BookPrinterBoundUserInterfaceState castState)
+            return;
 
         UpdateBooksList(castState);
         UpdateContainerInfoWithCooldown(castState);
@@ -67,30 +67,28 @@ public sealed partial class BookPrinterWindow : DefaultWindow
             HideInfoPanel();
     }
 
-    public void UpdateBooksList(BoundUserInterfaceState state)
+    public void UpdateBooksList(BookPrinterBoundUserInterfaceState state)
     {
-        var castState = (BookPrinterBoundUserInterfaceState) state;
-
         if (BooksList == null)
             return;
 
         BooksList.Children.Clear();
 
-        if (castState.BookEntries is null)
+        if (state.BookEntries is null)
             return;
 
-        foreach (var entry in castState.BookEntries.OrderBy(r => r.Id))
+        foreach (var entry in state.BookEntries.OrderBy(r => r.Id))
         {
             // Создаем контейнер для каждой книги с красивым оформлением
             var bookContainer = new PanelContainer
             {
-                Margin = new Thickness(0, 2, 0, 2)
-            };
-            bookContainer.PanelOverride = new StyleBoxFlat
-            {
-                BackgroundColor = new Color(45, 45, 50),
-                BorderThickness = new Thickness(1),
-                BorderColor = new Color(60, 60, 65)
+                Margin = new Thickness(0, 2, 0, 2),
+                PanelOverride = new StyleBoxFlat
+                {
+                    BackgroundColor = new Color(45, 45, 50),
+                    BorderThickness = new Thickness(1),
+                    BorderColor = new Color(60, 60, 65)
+                }
             };
 
             var row = new BoxContainer
@@ -118,7 +116,7 @@ public sealed partial class BookPrinterWindow : DefaultWindow
             button.OnPressed += args => OnPrintBookButtonPressed?.Invoke(args, button);
             button.OnMouseEntered += args => OnPrintBookButtonMouseEntered?.Invoke(args, button);
             button.OnMouseExited += args => OnPrintBookButtonMouseExited?.Invoke(args, button);
-            button.Disabled = !castState.RoutineAllowed || castState.WorkProgress is not null;
+            button.Disabled = !state.RoutineAllowed || state.WorkProgress is not null;
 
             // Кнопка просмотра
             var viewButton = new Button
@@ -127,7 +125,7 @@ public sealed partial class BookPrinterWindow : DefaultWindow
                 MinSize = new Vector2(40, 32),
                 MaxSize = new Vector2(40, 32),
                 Margin = new Thickness(6, 0, 0, 0),
-                Disabled = castState.WorkProgress is not null,
+                Disabled = state.WorkProgress is not null,
                 ToolTip = Loc.GetString("book-printer-view")
             };
             viewButton.OnPressed += _ => ShowBookInfo(entry);

@@ -6,7 +6,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.ADT.BookPrinter
+namespace Content.Shared.ADT.BookPrinter;
 
 [Serializable, NetSerializable]
 public sealed class BookPrinterBoundUserInterfaceState : BoundUserInterfaceState
@@ -56,22 +56,13 @@ public sealed class BookPrinterPrintBookMessage : BoundUserInterfaceMessage
 }
 
 [Serializable, NetSerializable]
-public sealed class BookPrinterClearContainerMessage : BoundUserInterfaceMessage
-{
-
-}
+public sealed class BookPrinterClearContainerMessage : BoundUserInterfaceMessage;
 
 [Serializable, NetSerializable]
-public sealed class BookPrinterUploadMessage : BoundUserInterfaceMessage
-{
-
-}
+public sealed class BookPrinterUploadMessage : BoundUserInterfaceMessage;
 
 [Serializable, NetSerializable]
-public sealed class BookPrinterCopyPasteMessage : BoundUserInterfaceMessage
-{
-
-}
+public sealed class BookPrinterCopyPasteMessage : BoundUserInterfaceMessage;
 
 [Serializable, NetSerializable]
 public sealed class SharedBookPrinterEntry

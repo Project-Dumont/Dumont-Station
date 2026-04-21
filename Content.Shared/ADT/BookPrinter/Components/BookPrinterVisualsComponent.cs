@@ -12,7 +12,7 @@ namespace Content.Shared.ADT.BookPrinter.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class BookPrinterVisualsComponent : Component
 {
-    [DataField("doWorkAnimation"), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool DoWorkAnimation = false;
 }
 

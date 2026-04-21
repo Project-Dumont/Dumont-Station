@@ -31,6 +31,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.ADT.BookPrinter;
 
@@ -41,7 +42,7 @@ public sealed partial class BookPrinterSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
-    [Dependency] private readonly AppearanceSystem _appearanceS ystem = default!;
+    [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
@@ -53,9 +54,8 @@ public sealed partial class BookPrinterSystem : EntitySystem
 
     public readonly List<SharedBookPrinterEntry> BookPrinterEntries = new();
     private readonly GlobalBookPrinterCooldownManager _globalCooldown = new();
-    private float _uiUpdateTimer = 0.0f;
-    private const float UiUpdateInterval = 1.0f;
-    private const string BookTag = "Book";
+
+    public readonly ProtoId<TagPrototype> BookTag = "Book";
 
     public override void Initialize()
     {
