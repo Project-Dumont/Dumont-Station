@@ -144,7 +144,7 @@
       solution: beaker
     - type: Appearance
     - type: SolutionContainerVisuals
-      maxFillLevels: 6
+      maxFillLevels: 8
       fillBaseName: jug
       inHandsMaxFillLevels: 5
       inHandsFillBaseName: -fill-
@@ -210,7 +210,7 @@
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
   - type: SolutionContainerVisuals # controla o visual de quando ta cheio (deixa cheio visualmente)
-    maxFillLevels: 6
+    maxFillLevels: 8
     fillBaseName: tanquedereagente
     inHandsMaxFillLevels: 4
     inHandsFillBaseName: -fill-
