@@ -1,6 +1,7 @@
 - type: alert
   id: HumanSoftCrit
   category: Health
+  clickEvent: !type:TryCatchBreathAlertEvent
   icons:
   - sprite: /Textures/Interface/Alerts/human_critical.rsi
     state: critical

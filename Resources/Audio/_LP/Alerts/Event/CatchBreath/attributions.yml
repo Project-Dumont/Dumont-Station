@@ -1,0 +1,24 @@
+- files: ["catch-breath-try.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Belongs to Behaviour Interactive"
+  source: "https://youtu.be/i-oN-HoUuL0?si=QCf3EpDGhOR5IayP"
+
+- files: ["catch-breath-success.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Belongs to Behaviour Interactive"
+  source: "https://youtu.be/i-oN-HoUuL0?si=QCf3EpDGhOR5IayP"
+
+- files: ["catch-breath-nothing.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Belongs to Behaviour Interactive"
+  source: "https://youtu.be/i-oN-HoUuL0?si=QCf3EpDGhOR5IayP"
+
+- files: ["catch-breath-failure.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Belongs to Behaviour Interactive"
+  source: "https://youtu.be/i-oN-HoUuL0?si=QCf3EpDGhOR5IayP"
+
+- files: ["catch-breath-bluntsuccess.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Belongs to Behaviour Interactive"
+  source: "https://youtu.be/i-oN-HoUuL0?si=QCf3EpDGhOR5IayP"
