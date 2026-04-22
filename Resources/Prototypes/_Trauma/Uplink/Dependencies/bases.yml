@@ -111,3 +111,22 @@
           popup: selectable-lock-no-lock-popup
           priority: 0
           componentsToAdd: null
+- type: entity
+  abstract: true
+  id: BaseBookSounds
+  components:
+    - type: EmitSoundOnPickup
+      sound:
+        path: /Audio/_Goobstation/Items/handling/book_pickup.ogg
+        params:
+          volume: -4
+    - type: EmitSoundOnDrop
+      sound:
+        path: /Audio/_Goobstation/Items/handling/book_drop.ogg
+        params:
+          volume: -4
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Goobstation/Items/handling/book_drop.ogg
+        params:
+          volume: -4

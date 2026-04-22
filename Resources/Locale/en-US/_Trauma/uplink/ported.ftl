@@ -55,7 +55,19 @@ uplink-cigcarton-name = Interdyne Herbals Carton
 
 uplink-cigcarton-desc = Elite cigarettes for elite agents. Infused with medicine for when you need to do more than calm your nerves. Now sold in cartons!
 
+uplink-codespeak-manual-name = Codespeak Manual
+
+uplink-codespeak-manual-desc = Syndicate agents can be trained to use a series of codewords to convey complex information, which sounds like random concepts and drinks to anyone listening. This manual teaches you this Codespeak. This is the deluxe edition, which has unlimited uses.
+
 store-category-objective = Objective
+
+language-Codespeak-name = Codespeak
+
+language-Codespeak-description = A secret code that sounds like random nonsense to anyone listening.
+
+chat-language-Codespeak-name = Codespeak
+
+codespeak-manual-learned = You learned Syndicate codespeak.
 
 selectable-lock-verb-category-name = Add lock
 

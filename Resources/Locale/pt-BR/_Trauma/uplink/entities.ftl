@@ -21,6 +21,11 @@ ent-CigCartonSyndicate = pacote de Interdyne Herbals
 ent-TravelCamera = câmera de viagem
     .desc = Uma imagem vale mais que mil palavras. Possui um flash ultrabrilhante e um rolo fotográfico interno recarregável.
 
+ent-DeluxeCodespeakManual = manual de linguagem codificada de luxo
+
+ent-CodespeakManual = manual de linguagem codificada
+    .desc = Na capa está escrito: "Linguagem Codificada™ — Proteja suas comunicações com metáforas tão elaboradas que parecem geradas aleatoriamente!"
+
 ent-BriefcaseWeapon = maleta de armas
     .desc = Útil para aspirantes a mercenários, estejam lutando por uma empresa, uma nação ou qualquer outra coisa. Ou preparando uma omelete enorme.
 

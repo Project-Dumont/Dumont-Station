@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+codespeak-manual-learned = Você aprendeu a linguagem codificada do Sindicato.
+
 hijack-beacon-verb-activate-text = Ativar
 
 hijack-beacon-verb-activate-message = O sinalizador só pode ser armado em um piso desocupado da Estação de Comércio Automatizada.
@@ -56,7 +58,17 @@ uplink-cigcarton-name = Pacote de cigarros Interdyne Herbals
 
 uplink-cigcarton-desc = Cigarros de elite para agentes de elite. Contêm medicamentos para quando você precisa de mais do que acalmar os nervos. Agora em pacotes maiores!
 
+uplink-codespeak-manual-name = Manual de linguagem codificada
+
+uplink-codespeak-manual-desc = Ensina a linguagem codificada do Sindicato: metáforas e palavras-chave que transmitem informações complexas, mas parecem conceitos e bebidas aleatórios aos demais. Esta edição de luxo pode ser usada quantas vezes você quiser.
+
 store-category-objective = Objetivos
+
+language-Codespeak-name = Linguagem codificada
+
+language-Codespeak-description = Um código secreto que parece uma sequência de absurdos para quem não o entende.
+
+chat-language-Codespeak-name = Código
 
 trigger-on-voice-record-failed-too-long = Mensagem longa demais. Tente novamente.
 

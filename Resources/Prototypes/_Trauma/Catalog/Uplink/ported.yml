@@ -105,3 +105,12 @@
     Telecrystal: 15
   categories:
     - UplinkChemicals
+- type: listing
+  id: UplinkCodespeakManual
+  name: uplink-codespeak-manual-name
+  description: uplink-codespeak-manual-desc
+  productEntity: DeluxeCodespeakManual
+  cost:
+    Telecrystal: 15 # 3 TC on tg
+  categories:
+    - UplinkDeception
