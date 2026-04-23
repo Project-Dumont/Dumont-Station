@@ -287,6 +287,7 @@
   damage:
     types:
       Piercing: 10
+      Structural: 15
   count: 6
   spread: 15
   bullet:
