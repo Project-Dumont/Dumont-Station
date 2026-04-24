@@ -5,6 +5,7 @@
   description: "This interface is used to change the structure of DNA."
   components:
   - type: DnaClient
+  - type: DnaServer
   - type: DnaModifierConsole
   - type: DeviceList
   - type: DeviceNetwork
