@@ -188,7 +188,7 @@
   id: RevolutionaryMidround
   components:
   - type: StationEvent
-    earliestStart: 20 # Começa no mínimo após 20 minutos
+    earliestStart: 15 # Começa no mínimo após 15 minutos
     weight: 3
     minimumPlayers: 25
     maxOccurrences: 1
