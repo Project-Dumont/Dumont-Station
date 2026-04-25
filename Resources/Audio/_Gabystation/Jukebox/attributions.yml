@@ -449,3 +449,7 @@
   license: "Custom"
   source: "https://youtu.be/XlILSmGtT64?si=9irQ859uyqfjsWsV"
 
+- files: ["sons_da_lagoa.ogg"]
+  copyright: "Sons da Lagoa - Arthur Diniz"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=1DjZeJY_bYk"
