@@ -39,6 +39,7 @@
     - UplinkWearables
     - UplinkJob
     - UplinkPointless
+    - UplinkDAGD # Funkystation
     - UplinkObjectives # Dumont
     - UplinkSales # WD EDIT
     currencyWhitelist:

@@ -143,7 +143,7 @@
   parent: BaseTraitorObjective
   id: DieObjective
   name: Die a glorious death
-  description: Die.
+  description: Die. Your uplink receives 50 extra telecrystals and a unique Martyr tab to help you die gloriously.
   components:
   - type: Objective
     difficulty: 0.5
@@ -156,6 +156,24 @@
       - EscapeShuttleCondition
       - StealCondition
   - type: DieCondition
+  - type: StoreUnlocker
+    listings:
+    - UplinkDAGDEshield
+    - UplinkDAGDGrenadeLauncherBundle
+    - UplinkDAGDL6SawBundle
+    - UplinkDAGDGrenadierRig
+    - UplinkDAGDAmmoBundle
+    - UplinkDAGDZombieBundle
+    - UplinkDAGDMedsBundle
+    - UplinkDAGDReinforcementRadioSyndicateCyborgAssault
+    - UplinkDAGDMicroBombImplanter
+    - UplinkDAGDMacroBombImplanter
+    - UplinkDAGDClothingOuterArmorRaid
+    - UplinkDAGDDarkGygax
+    - UplinkDAGDMauler
+    - UplinkDAGDAutoInjectorBundle
+    - UplinkDAGDNukeCodePaperStation
+    - UplinkDAGDMixedRejectsCarton
 
 - type: entity
   parent: [BaseTraitorObjective, BaseLivingObjective]

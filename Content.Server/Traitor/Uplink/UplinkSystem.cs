@@ -39,6 +39,7 @@ using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Implants;
 using Content.Shared.Mind;
+using Content.Server._Dumont.Traitor;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Robust.Shared.Prototypes;
@@ -47,17 +48,60 @@ namespace Content.Server.Traitor.Uplink;
 
 // goobstation - heavily edited. fuck newstore
 // do not touch unless you want to shoot yourself in the leg
-public sealed class UplinkSystem : EntitySystem
+public sealed partial class UplinkSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly GoobCommonUplinkSystem _goobUplink = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private StoreSystem _store = default!;
+    [Dependency] private SharedSubdermalImplantSystem _subdermalImplant = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private GoobCommonUplinkSystem _goobUplink = default!;
 
     public static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly EntProtoId FallbackUplinkImplant = "UplinkImplant";
     private static readonly ProtoId<ListingPrototype> FallbackUplinkCatalog = "UplinkUplinkImplanter";
+
+    private static readonly EntProtoId DagdObjective = "DieObjective";
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<MetaDataComponent, ObjectiveAddedEvent>(OnObjectiveAdded);
+    }
+
+    private void OnObjectiveAdded(EntityUid uid, MetaDataComponent metadata, ref ObjectiveAddedEvent args)
+    {
+        if (!TryComp<MindComponent>(uid, out var mind)
+            || MetaData(args.Objective).EntityPrototype?.ID != DagdObjective.Id
+            || HasComp<DagdUplinkBonusGrantedComponent>(uid))
+            return;
+
+        var query = AllEntityQuery<UplinkComponent, StoreComponent>();
+        while (query.MoveNext(out var uplink, out _, out var store))
+        {
+            if (store.AccountOwner == uid && TryGrantDagdBonus((uid, mind), (uplink, store)))
+                break;
+        }
+    }
+
+    private bool TryGrantDagdBonus(Entity<MindComponent> mind, Entity<StoreComponent> uplink)
+    {
+        if (HasComp<DagdUplinkBonusGrantedComponent>(mind))
+            return false;
+
+        foreach (var objective in mind.Comp.Objectives)
+        {
+            if (MetaData(objective).EntityPrototype?.ID != DagdObjective.Id)
+                continue;
+
+            if (!_store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, 50 } }, uplink, uplink.Comp))
+                return false;
+
+            EnsureComp<DagdUplinkBonusGrantedComponent>(mind);
+            return true;
+        }
+
+        return false;
+    }
 
     /// <summary>
     /// Adds an uplink to the target based on their preference
@@ -112,9 +156,10 @@ public sealed class UplinkSystem : EntitySystem
     /// </summary>
     private void SetUplink(EntityUid user, EntityUid uplink, FixedPoint2 balance)
     {
-        if (!_mind.TryGetMind(user, out var mind, out _))
+        if (!_mind.TryGetMind(user, out var mind, out var mindComp))
             return;
 
+        EnsureComp<UplinkComponent>(uplink);
         var store = EnsureComp<StoreComponent>(uplink);
 
         store.AccountOwner = mind;
@@ -122,6 +167,7 @@ public sealed class UplinkSystem : EntitySystem
         store.Balance.Clear();
         var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
         _store.TryAddCurrency(bal, uplink, store);
+        TryGrantDagdBonus((mind, mindComp), (uplink, store));
     }
 
     /// <summary>
