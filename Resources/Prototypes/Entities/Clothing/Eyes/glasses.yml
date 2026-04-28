@@ -342,7 +342,7 @@
       NerveDamage: 0
 
 - type: entity
-  parent: [ClothingEyesBase, BaseCommandContraband]
+  parent: [ClothingEyesBase, BaseCommandContraband, ShowSecurityIcons, ShowMedicalIcons]
   id: ClothingEyesGlassesCommand
   name: administration glasses
   description: Upgraded sunglasses that provide flash immunity and show ID card status.
