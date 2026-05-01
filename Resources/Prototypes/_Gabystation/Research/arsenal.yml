@@ -18,5 +18,5 @@
   - WeaponRifleMA56XF
   - WeaponPistolMX3R
   technologyPrerequisites:
-  - WeaponLaserCellSMGTech #Temporário
-  position: 5,-3 #Temporários
+  - SmartWeaponry
+  position: 5,4

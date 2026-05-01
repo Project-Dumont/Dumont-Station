@@ -794,6 +794,7 @@
     - ScienceExplosives
     - GrenadeTriggersStatic
     - SecurityWeaponsStaticGoob
+    - CablesStatic #Dumont
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons

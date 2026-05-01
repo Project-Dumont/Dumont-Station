@@ -673,7 +673,7 @@
     knockdownTimeDelta: -2
   - type: Tag
     tags:
-    - CorgiWearable 
+    - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
 
@@ -921,7 +921,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.45 # Goob edit
+    damageCoefficient: 0.3 # Dumont edit: A resist tem que ser boa, melhor que o normal, acima da crew.
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.5
@@ -953,7 +953,7 @@
     - ScurretWearable
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 3
-    knockdownTimeDelta: -3
+    knockdownTimeDelta: -3.5
   - type: StaticPrice
     price: 5000
 
@@ -977,9 +977,9 @@
     - WhitelistChameleon
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 3
-    knockdownTimeDelta: -3
+    knockdownTimeDelta: -3.5
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.5
+    damageCoefficient: 0.3
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -1003,7 +1003,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.55 # Goob edit
+    damageCoefficient: 0.3 # Dumont edit
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.5
@@ -1033,6 +1033,9 @@
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitSyndieElite
+  - type: ModifyDelayedKnockdown # Dumont lmao o goob esqueceu de adicionar
+    delayDelta: 3
+    knockdownTimeDelta: -3.5
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
@@ -1050,7 +1053,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.35 # Goob edit
+    damageCoefficient: 0.25 # Goob edit
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.6
@@ -1075,7 +1078,7 @@
       head: ClothingHeadHelmetHardsuitSyndieCommander
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 3
-    knockdownTimeDelta: -3
+    knockdownTimeDelta: -3.5
   - type: Tag
     tags:
     - CorgiWearable
@@ -1103,7 +1106,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.3
   - type: StaminaResistance # Goobstation uncommented
-    damageCoefficient: 0.8
+    damageCoefficient: 0.6
   - type: Armor
     traumaDeductions: # prevents traumas at all (kinda)
       Dismemberment: 1
@@ -1134,8 +1137,8 @@
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitCybersun
   - type: ModifyDelayedKnockdown # Goobstation
-    delayDelta: 1
-    knockdownTimeDelta: -1
+    delayDelta: 2
+    knockdownTimeDelta: -2
   - type: Tag
     tags:
     - MonkeyWearable
@@ -1224,7 +1227,7 @@
   - type: ModifyDelayedKnockdown
     cancel: true
   - type: StaminaResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.3
 
 #Pirate EVA Suit (Deep Space EVA Suit)
 #Despite visually appearing like a softsuit, it functions exactly like a hardsuit would (parents off of base hardsuit, has resistances and toggleable clothing, etc.) so it goes here.

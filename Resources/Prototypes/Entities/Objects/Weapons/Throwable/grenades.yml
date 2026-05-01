@@ -235,6 +235,7 @@
     - Security
     - Antagonists
   - type: Flashbang # Goobstation
+    minProtectionRange: 5 # DumontStation So that you can't flash a nukie with a bloodred and a syndie radio.
   - type: Tag
     tags:
     - HandGrenade

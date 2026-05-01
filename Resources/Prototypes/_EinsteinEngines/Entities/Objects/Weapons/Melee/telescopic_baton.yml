@@ -42,7 +42,7 @@
         variation: 0.250
     activatedDamage:
       types:
-        Blunt: 6 # GabyStation. É uma arma de disciplina. 12 de dano significa a mesma quantidade de dano que uma faca de combate.
+        Blunt: 10 # GabyStation. É uma arma de disciplina. 12 de dano significa a mesma quantidade de dano que uma faca de combate.
       woundSeverityMultipliers: #Goob
         Blunt: 0.5 # Im tired of this shit breaking bones, its meant to be nonlethal
   - type: ItemToggleSize
@@ -60,7 +60,7 @@
   - type: TelescopicBaton
   - type: KnockdownOnHit
     duration: 1.5
-    dropItems: true # Goob edit
+    dropItems: false # Gaby edit
   - type: MeleeWeapon
     wideAnimationRotation: -135
     bluntStaminaDamageFactor: 4 # GabyStation 1.5 -> 4.

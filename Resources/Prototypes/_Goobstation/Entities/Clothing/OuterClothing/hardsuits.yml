@@ -182,8 +182,8 @@
       passiveVisibilityRate: -0.5
       movementVisibilityRate: 0.6
   - type: ModifyDelayedKnockdown # Goobstation
-    delayDelta: 3
-    knockdownTimeDelta: -3
+    delayDelta: 2
+    knockdownTimeDelta: -2
   - type: StaminaResistance
     damageCoefficient: 0.5
 
@@ -444,9 +444,9 @@
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitContractor
   - type: ModifyDelayedKnockdown
-    delayDelta: 2
-    knockdownTimeDelta: -2
+    delayDelta: 3
+    knockdownTimeDelta: -3.5
   - type: StaminaResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.3
   - type: Item
     size: Normal
