@@ -210,7 +210,7 @@
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
   - type: SolutionContainerVisuals # controla o visual de quando ta cheio (deixa cheio visualmente)
-    maxFillLevels: 8
+    maxFillLevels: 6
     fillBaseName: tanquedereagente
     inHandsMaxFillLevels: 4
     inHandsFillBaseName: -fill-
