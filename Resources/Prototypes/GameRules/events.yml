@@ -196,6 +196,7 @@
     - id: HereticMidround # Gabystation
     - id: CosmicCultMidround # Gabystation
     - id: BloodCultMidround # Gabystation
+    - id: RevolutionaryMidround # Gabystation
     - id: ZombieOutbreak
     - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
