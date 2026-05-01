@@ -2127,6 +2127,17 @@
   categories:
     - UplinkWearables
 
+# Gabystation
+- type: listing
+  id: UplinkStorageModule
+  name: uplink-storage-module-name
+  description: uplink-storage-module-desc
+  productEntity: ModsuitModuleSyndicateStorage
+  cost:
+    Telecrystal: 20 # goob
+  categories:
+  - UplinkWearables
+
 
  # Pointless
 

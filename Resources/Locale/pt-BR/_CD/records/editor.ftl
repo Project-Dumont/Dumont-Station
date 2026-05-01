@@ -1,4 +1,5 @@
 # Records editor
+humanoid-profile-editor-cd-allergies-tab = Alergias
 humanoid-profile-editor-cd-records-tab = Registros
 
 # General

@@ -90,6 +90,8 @@
   - ClothingBackpackChameleonFill
   - AgentIDCard
   - FakeMindShieldImplanter
+  - DnaScramblerImplanter
+  - AccessBreaker
 
 - type: selectableSet
   id: SyndicatePiromaniacSet

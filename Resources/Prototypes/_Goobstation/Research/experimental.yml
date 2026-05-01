@@ -47,6 +47,7 @@
   - ModsuitGauntlets
   - ModsuitShell
   - ModsuitPlatingExternal
+  - ModsuitModuleLargeStorageRecipe # GabyStation
   position: -4,-1
   technologyPrerequisites:
   - MagnetsTech

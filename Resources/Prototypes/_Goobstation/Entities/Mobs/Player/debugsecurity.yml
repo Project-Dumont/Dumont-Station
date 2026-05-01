@@ -257,9 +257,9 @@
 
 - type: entity
   categories: [ ]
-  parent: MobHuman
+  parent: MobHumanBSOBase
   id: MobHumanBSOModSuit
-  name: Blueshield Officer
+  name: Blueshield Officer ModSuit
   suffix: DEBUG
   components:
   - type: Loadout
@@ -274,3 +274,5 @@
     implants:
     - MindShieldImplant
     #adding bluespace implanter would be stupid
+
+

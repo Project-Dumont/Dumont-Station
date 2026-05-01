@@ -20,3 +20,12 @@
   materials:
     Steel: 900
     Plastic: 450
+
+- type: latheRecipe
+  parent: ClothingShoesBootsMagSci
+  id: SecurityMagbootsRecipe
+  result: SecurityMagboots
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Gold: 200

@@ -29,7 +29,7 @@
       appliesToPlant: false
       effect: !type:Slipify
     - name: ChangeSpecies
-      baseOdds: 0.036
+      baseOdds: 0.076 # GabyStation
       appliesToProduce: false
       effect: !type:PlantSpeciesChange
       persists: false
@@ -169,7 +169,7 @@
       effect: !type:PlantChangeStat
         targetValue: Ligneous
     - name: Kudzufication
-      baseOdds: 0.036
+      baseOdds: 0.026
       persists: false
       effect: !type:PlantChangeStat
         targetValue: TurnIntoKudzu
@@ -187,7 +187,7 @@
       persists: false
       effect: !type:PlantMutateExudeGasses
     - name: ChangeConsumeGasses
-      baseOdds: 0.0036
+      baseOdds: 0.0026 # GabyStation
       persists: false
       effect: !type:PlantMutateConsumeGasses
     - name: ChangeHarvest

@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionCharge
+  name: Charge
+  parent: ActionDashMoth
+  description: Rush in a straight line, knocking people down on impact.
+  components:
+  - type: Action
+    useDelay: 30
+    icon: { sprite: _Gabystation/Charge/charge.rsi, state: charge }
+    itemIconStyle: NoItem
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_Gabystation/Charge/ChargeHeavy.ogg
+      params:
+        volume: 8
+  - type: TargetAction
+    checkCanAccess: false
+    range: 0
+  - type: WorldTargetAction
+    event: !type:DashActionEvent
+      distance: 7
+      speed: 11.5
+      staminaDrain: 50
+      emote: null

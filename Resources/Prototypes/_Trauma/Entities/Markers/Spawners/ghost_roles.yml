@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAntagSpawner
+  id: GhostRoleSpawnerMorph
+  name: morph ghost role spawner
+  components:
+  - type: GhostRole
+    name: ghost-role-information-morph-name
+    description: ghost-role-information-morph-description
+    rules: ghost-role-information-rules-team-antagonist
+    mindRoles:
+    - MindRoleMorph
+    raffle:
+      settings: default
+  - type: Sprite
+    layers:
+    - sprite: Markers/jobs.rsi
+      state: green
+    - sprite: _Trauma/Mobs/morph.rsi
+      state: morph

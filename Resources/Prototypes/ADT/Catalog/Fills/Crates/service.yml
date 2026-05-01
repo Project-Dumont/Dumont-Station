@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Оригинал данного прототипа был сделан @temporaldarkness (discord). Прототип был взят с https://github.com/ss14-ganimed/ENT14-Master.
+
+# Ganimed-Proto-Start
+- type: entity
+  id: ADTCrateServicePrinterInkCartridge
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+      - id: ADTBookPrinterInkCartridge
+# Ganimed-Proto-End

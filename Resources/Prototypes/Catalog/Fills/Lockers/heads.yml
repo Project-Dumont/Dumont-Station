@@ -222,6 +222,7 @@
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    - id: SecApartmentTablet # Corvax-SecApartment
 
 # No laser table + Laser table
 - type: entityTable
@@ -572,6 +573,7 @@
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
+    - id: SecurityMagboots # GabyStation
 
 # No hardsuit locker
 - type: entity

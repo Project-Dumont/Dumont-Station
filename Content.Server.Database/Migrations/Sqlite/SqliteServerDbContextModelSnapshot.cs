@@ -1,44 +1,4 @@
-// SPDX-FileCopyrightText: 2020 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Leo <lzimann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Julian Giebel <j.giebel@netrocks.info>
-// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 PoTeletubby <151896601+PoTeletubby@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
-// SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
-// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
-// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 YotaXP <yotaxp@gmail.com>
-// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 AgentePanela <agentepanela@gmail.com>
-// SPDX-FileCopyrightText: 2026 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -589,6 +549,42 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("blacklist", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.BookPrinterEntry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("book_printer_entry_id");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("content");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("description");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("name");
+
+                    b.Property<string>("StampState")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("stamp_state");
+
+                    b.HasKey("Id")
+                        .HasName("PK_book_printer_entry");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.ToTable("book_printer_entry", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
                 {
                     b.Property<int>("Id")
@@ -615,6 +611,29 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsUnique();
 
                     b.ToTable("cdprofile", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.CDModel+CharacterAllergy", b =>
+                {
+                    b.Property<int>("CDProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("cdprofile_id");
+
+                    b.Property<string>("Allergen")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("allergen");
+
+                    b.Property<int>("Intensity")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("intensity");
+
+                    b.HasKey("CDProfileId", "Allergen")
+                        .HasName("PK_cd_character_allergies");
+
+                    b.HasIndex("CDProfileId", "Allergen")
+                        .HasDatabaseName("IX_cd_character_allergies_cdprofile_id_allergen");
+
+                    b.ToTable("cd_character_allergies", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.CDModel+CharacterRecordEntry", b =>
@@ -1784,6 +1803,36 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("server_unban", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StampedData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("stamped_data_id");
+
+                    b.Property<int?>("BookPrinterEntryId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("book_printer_entry_id");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("color");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("name");
+
+                    b.HasKey("Id")
+                        .HasName("PK_stamped_data");
+
+                    b.HasIndex("BookPrinterEntryId")
+                        .HasDatabaseName("IX_stamped_data_book_printer_entry_id");
+
+                    b.ToTable("stamped_data", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.Property<int>("Id")
@@ -2101,6 +2150,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasConstraintName("FK_cdprofile_profile_profile_id");
 
                     b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.CDModel+CharacterAllergy", b =>
+                {
+                    b.HasOne("Content.Server.Database.CDModel+CDProfile", "CDProfile")
+                        .WithMany("CharacterAllergies")
+                        .HasForeignKey("CDProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_cd_character_allergies_cdprofile_cdprofile_id");
+
+                    b.Navigation("CDProfile");
                 });
 
             modelBuilder.Entity("Content.Server.Database.CDModel+CharacterRecordEntry", b =>
@@ -2586,6 +2647,14 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Ban");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StampedData", b =>
+                {
+                    b.HasOne("Content.Server.Database.BookPrinterEntry", null)
+                        .WithMany("StampedBy")
+                        .HasForeignKey("BookPrinterEntryId")
+                        .HasConstraintName("FK_stamped_data_book_printer_entry_book_printer_entry_id");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2632,8 +2701,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Flags");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.BookPrinterEntry", b =>
+                {
+                    b.Navigation("StampedBy");
+                });
+
             modelBuilder.Entity("Content.Server.Database.CDModel+CDProfile", b =>
                 {
+                    b.Navigation("CharacterAllergies");
+
                     b.Navigation("CharacterRecordEntries");
                 });
 

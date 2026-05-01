@@ -20,6 +20,15 @@
 			"name": "standard-plating"
 		},
 		{
+			"name": "security-plating"
+		},
+		{
+			"name": "engineering-plating"
+		},
+		{
+			"name": "medical-plating"
+		},
+		{
 			"name": "boots"
 		},
 		{

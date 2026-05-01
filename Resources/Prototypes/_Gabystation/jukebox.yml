@@ -666,7 +666,7 @@
   id: frangonapanela
   name: Franguinho Na Panela - Moacyr dos Santos & Paraíso
   path:
-    path: /Audio/_Gabystation/Jukebox/franguinhonapanela.ogg    
+    path: /Audio/_Gabystation/Jukebox/franguinhonapanela.ogg
 
 - type: jukebox
   id: Vermilion
@@ -703,3 +703,27 @@
   name: É o Amor - Zezé Di Camargo & Luciano
   path:
     path: /Audio/_Gabystation/Jukebox/É_o_Amor.ogg
+
+- type: jukebox
+  id: thebreak
+  name: The Break (Crimson Glass deComposition) - Heaven Pierce Her
+  path:
+    path: /Audio/_Gabystation/Jukebox/thebreak.ogg
+
+- type: jukebox
+  id: theshatteringcircle
+  name: The Shattering Circle - Heaven Pierce Her
+  path:
+    path: /Audio/_Gabystation/Jukebox/theshatteringcircle.ogg
+
+- type: jukebox
+  id: inabstentialogos
+  name: In Abstentia Logos - Heaven Pierce Her
+  path:
+    path: /Audio/_Gabystation/Jukebox/inabstentialogos.ogg
+
+- type: jukebox
+  id: eventhorizon
+  name: Event Horizon(Reach for the Sun and Burn! Burn! Burn!)- Heaven Pierce Her
+  path:
+    path: /Audio/_Gabystation/Jukebox/eventhorizon.ogg

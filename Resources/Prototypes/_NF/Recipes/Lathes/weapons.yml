@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Ranged weapons
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: NFWeaponHoloflareGun
+  result: NFWeaponHoloflareGunEmpty  
+  materials:
+    Steel: 300
+    Glass: 200
+    Plastic: 200

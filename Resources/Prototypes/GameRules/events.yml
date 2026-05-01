@@ -197,6 +197,7 @@
     - id: CosmicCultMidround # Gabystation
     - id: BloodCultMidround # Gabystation
     - id: ZombieOutbreak
+    - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
     - id: BlobSpawn # Goobstation - Blob
@@ -211,7 +212,7 @@
     - id: MimeAssassinMidround # Goobstation - New Midrounds
     - id: DarkPriestMidround # Goobstation - New Midrounds
     - id: VoxRaidersMidround # Goobstation - New Midrounds
-    - id: TunnelClownMidround # Goobstation
+    #- id: TunnelClownMidround # Goobstation
     #- id: WraithMidround # Goobstation - Wraith
     #TODO when midrounds are "reviewed" by the chudmins add them back
     #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
@@ -607,7 +608,7 @@
     startAudio:
       path: /Audio/_Gabystation/Announcements/gasleak_saae.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
-    endAudio: 
+    endAudio:
       path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
     weight: 8
     chaos:
@@ -669,7 +670,7 @@
     startAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
     endAnnouncement: station-event-solar-flare-end-announcement
-    endAudio: 
+    endAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_off_saae.ogg
     duration: 120
     maxDuration: 240
@@ -865,7 +866,7 @@
     earliestStart: 35
     weight: 6.0 # Goobstation - was 5.5
     minimumPlayers: 20 # Goobstation - was 20
-    duration: 1
+    duration: null
     maxOccurrences: 1 # Gabystation - loneops apenas uma vez por round
     chaos: # Goobstation
       Hostile: 200

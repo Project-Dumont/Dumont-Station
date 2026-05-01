@@ -1,9 +1,11 @@
 ghost-gui-return-to-body-button = Voltar pro Corpo
 ghost-gui-ghost-warp-button = Teleportar
 ghost-gui-ghost-roles-button = Funções Fantasmas ({$count})
-ghost-gui-toggle-ghost-visibility-button = Alternar Fantasmas
-ghost-gui-toggle-ghost-visibility-popup = Alternou visibilidade de fantasmas.
-ghost-gui-toggle-lighting-manager-popup = Alternou toda a iluminação.
+ghost-gui-toggle-ghost-visibility-popup-on = Ativar visibilidade de fantasmas.
+ghost-gui-toggle-ghost-visibility-popup-off = Desativar visibilidade de fantasmas.
+ghost-gui-toggle-lighting-manager-popup-normal = Iluminação normal.
+ghost-gui-toggle-lighting-manager-popup-personal-light = Luz pessoal ativada.
+ghost-gui-toggle-lighting-manager-popup-fullbright = Modo brilho máximo.
 ghost-gui-toggle-fov-popup = Alternou o campo de visão.
 
 ghost-gui-toggle-hearing-popup-on = Agora você pode ouvir todas as mensagens.
@@ -11,8 +13,21 @@ ghost-gui-toggle-hearing-popup-off = Agora você só pode ouvir rádio e mensage
 
 ghost-target-window-title = Teleportar
 ghost-target-window-current-button = Teleportar: {$name}
+ghost-target-window-warp-to-most-followed = Teleporte-se para o Mais Seguido
 
 ghost-roles-window-title = Funções Fantasmas
+ghost-roles-window-available-button = Disponível ({$rolesCount})
+ghost-roles-window-join-raffle-button = Participar do sorteio
+ghost-roles-window-raffle-in-progress-button =
+    Participar do sorteio (tempo restante: {$time}, { $players ->
+         [one] {$players} jogador
+        *[other] {$players} jogadores
+    })
+ghost-roles-window-leave-raffle-button =
+    Deixar o sorteio (tempo restante: {$time}, { $players ->
+         [one] {$players} jogador
+        *[other] {$players} jogadores
+    })
 ghost-roles-window-request-role-button = Solicitar
 ghost-roles-window-request-role-button-timer = Solicitar ({$time}s)
 ghost-roles-window-follow-role-button = Ir

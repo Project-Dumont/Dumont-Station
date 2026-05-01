@@ -2,6 +2,7 @@
 
 ui-options-title = Opções do Jogo
 ui-options-tab-accessibility = Acessibilidade
+ui-options-tab-admin = Administrador
 ui-options-tab-graphics = Gráficos
 ui-options-tab-controls = Controles
 ui-options-tab-audio = Audio
@@ -37,16 +38,24 @@ ui-options-lobby-music = Musica do Lobby & Round-end
 ui-options-restart-sounds = Sons do restart de rounds
 ui-options-event-music = Musica de eventos
 ui-options-admin-sounds = Tocar sons de admins
+ui-options-bwoink-sound = Reproduzir som de notificação de Ahelp
 ui-options-volume-label = Volume
+# Goobstation - Highlight Volume
+ui-options-highlight-volume = Volume de ping em destaque no chat:
 
 ## Graphics menu
+
+ui-options-display-label = Mostrar
+ui-options-quality-label = Qualidade
+ui-options-misc-label = Diversos
+ui-options-interface-label = Interface
+
 
 ui-options-auto-fill-highlights = Preencher automaticamente os destaques com as informações do personagem
 ui-options-highlights-color = Cor dos destaques:
 ui-options-highlights-color-example = Este é um texto destacado!
 ui-options-show-held-item = Mostrar item segurado ao lado do cursor
 ui-options-show-combat-mode-indicators = Mostrar indicadores do modo de combate
-ui-options-show-offer-mode-indicators = Mostrar indicadores do modo de oferta
 ui-options-opaque-storage-window = Janela de armazenamento opaca
 ui-options-show-ooc-patron-color = Mostrar cor do Patreon no OOC
 ui-options-show-looc-on-head = Mostrar chat LOOC acima da cabeça dos personagens
@@ -85,6 +94,9 @@ ui-options-vp-integer-scaling-tooltip = Se esta opção estiver ativada, o viewp
                                         em resoluções específicas. Isso gera texturas mais nítidas, mas geralmente
                                         faz com que apareçam barras pretas na parte superior/inferior da tela ou que
                                         parte do viewport não fique visível.
+ui-options-filter-label = Filtro de escala:
+ui-options-filter-nearest = Mais próximo (sem suavização)
+ui-options-filter-bilinear = Bilinear (suavizado)
 ui-options-vp-vertical-fit = Ajuste vertical do viewport
 ui-options-vp-vertical-fit-tooltip = Quando ativado, o viewport principal ignora totalmente o eixo horizontal ao se
                                      ajustar à tela. Se sua tela for menor que o viewport, isso fará com que ele seja
@@ -95,7 +107,6 @@ ui-options-ambient-occlusion = Mostrar oclusão de ambiente
 ui-options-fps-counter = Mostrar contador de FPS
 ui-options-vp-width = Largura do viewport:
 ui-options-hud-layout = Layout do HUD:
-
 
 ## Controls menu
 
@@ -120,6 +131,7 @@ ui-options-header-general = Geral
 
 ui-options-hotkey-keymap = Use chaves QWERTY dos EUA
 ui-options-hotkey-toggle-walk = Alternar para caminhar
+ui-options-hotkey-default-walk = Andar por padrão
 
 ui-options-function-move-up = Mover pra cima
 ui-options-function-move-left = Mover pra esquerda
@@ -146,17 +158,18 @@ ui-options-function-alt-activate-item-in-world = Ativar alternativamente item no
 ui-options-function-drop = Largar item
 ui-options-function-examine-entity = Examinar
 ui-options-function-swap-hands = Trocar de maos
+ui-options-function-swap-hands-reverse = Trocar de maos (direçao oposta)
 ui-options-function-move-stored-item = Mover item guardado
 ui-options-function-rotate-stored-item = Rotacionar item guardado
 ui-options-function-save-item-location = Salvar localizacao do item
 ui-options-static-storage-ui = Trava a tela de armazem na hotbar
 
-ui-options-function-smart-equip-backpack = Smart-equip to backpack
-ui-options-function-smart-equip-belt = Smart-equip to belt
+ui-options-function-smart-equip-backpack = Equipar rapido na mochila
+ui-options-function-smart-equip-belt = Equipar rapido no cinto
+ui-options-function-smart-equip-back = Equipar rapido nas costas
 ui-options-function-open-backpack = Abrir mochila
 ui-options-function-open-belt = Abrir o cinto
 ui-options-function-throw-item-in-hand = Jogar
-
 ui-options-function-try-pull-object = Puxar o objeto
 ui-options-function-move-pulled-object = Mover objeto puxado
 ui-options-function-release-pulled-object = Largar objeto puxado
@@ -223,6 +236,16 @@ ui-options-function-hotbar7 = Hotbar slot 7
 ui-options-function-hotbar8 = Hotbar slot 8
 ui-options-function-hotbar9 = Hotbar slot 9
 ui-options-function-hotbar0 = Hotbar slot 0
+ui-options-function-hotbar-shift1 = Hotbar slot Shift+1
+ui-options-function-hotbar-shift2 = Hotbar slot Shift+2
+ui-options-function-hotbar-shift3 = Hotbar slot Shift+3
+ui-options-function-hotbar-shift4 = Hotbar slot Shift+4
+ui-options-function-hotbar-shift5 = Hotbar slot Shift+5
+ui-options-function-hotbar-shift6 = Hotbar slot Shift+6
+ui-options-function-hotbar-shift7 = Hotbar slot Shift+7
+ui-options-function-hotbar-shift8 = Hotbar slot Shift+8
+ui-options-function-hotbar-shift9 = Hotbar slot Shift+9
+ui-options-function-hotbar-shift0 = Hotbar slot Shift+0
 ui-options-function-loadout1 = Hotbar Loadout 1
 ui-options-function-loadout2 = Hotbar Loadout 2
 ui-options-function-loadout3 = Hotbar Loadout 3
@@ -233,6 +256,16 @@ ui-options-function-loadout7 = Hotbar Loadout 7
 ui-options-function-loadout8 = Hotbar Loadout 8
 ui-options-function-loadout9 = Hotbar Loadout 9
 ui-options-function-loadout0 = Hotbar Loadout 0
+ui-options-function-loadoutshift1 = Hotbar Loadout Shift+1
+ui-options-function-loadoutshift2 = Hotbar Loadout Shift+2
+ui-options-function-loadoutshift3 = Hotbar Loadout Shift+3
+ui-options-function-loadoutshift4 = Hotbar Loadout Shift+4
+ui-options-function-loadoutshift5 = Hotbar Loadout Shift+5
+ui-options-function-loadoutshift6 = Hotbar Loadout Shift+6
+ui-options-function-loadoutshift7 = Hotbar Loadout Shift+7
+ui-options-function-loadoutshift8 = Hotbar Loadout Shift+8
+ui-options-function-loadoutshift9 = Hotbar Loadout Shift+9
+ui-options-function-loadoutshift0 = Hotbar Loadout Shift+0
 
 ui-options-function-shuttle-strafe-up = Ir para frente
 ui-options-function-shuttle-strafe-right = Ir pra direita
@@ -251,15 +284,17 @@ ui-options-net-interp-ratio-tooltip = Aumentar isso geralmente torna o jogo mais
                                       Porém, isso adiciona um pouco mais de latência e exige que o cliente
                                       preveja mais ticks futuros.
 
+
 ui-options-net-predict-tick-bias = Deslocamento de ticks da predição
 ui-options-net-predict-tick-bias-tooltip = Aumentar isso geralmente torna o jogo mais resistente à perda de pacotes do cliente para o servidor.
                                            Porém, isso adiciona um pouco mais de latência e exige que o cliente
                                            preveja mais ticks futuros.
 
+
 ui-options-net-pvs-spawn = Orçamento de geração de entidades PVS
 ui-options-net-pvs-spawn-tooltip = Isso limita a taxa com que o servidor envia entidades recém-criadas ao cliente.
                                    Diminuir esse valor pode ajudar a reduzir travadas causadas pela geração de entidades,
-                                   mas pode resultar em pop-in.
+                                   mas pode resultar em pop-in.                              
 
 ui-options-net-pvs-entry = Orçamento de entrada de entidades PVS
 ui-options-net-pvs-entry-tooltip = Isso limita a taxa com que o servidor envia entidades que se tornaram visíveis ao cliente.
@@ -271,6 +306,7 @@ ui-options-net-pvs-leave-tooltip = Isso limita a taxa com que o cliente remove e
                                    Diminuir esse valor pode ajudar a reduzir travadas ao caminhar pelo mapa,
                                    mas pode ocasionalmente causar erros de predição e outros problemas.
 
+
 ## Toggle window console command
 cmd-options-desc = Opens options menu, optionally with a specific tab selected.
 cmd-options-help = Usage: options [tab]
@@ -280,8 +316,64 @@ cmd-options-help = Usage: options [tab]
 ui-options-enable-color-name = Adicionar cores aos nomes dos personagens
 ui-options-colorblind-friendly = Modo para daltônicos
 ui-options-reduced-motion = Reduzir movimento dos efeitos visuais
-ui-options-chat-window-opacity = Opacidade da janela do chat
 ui-options-screen-shake-intensity = Intensidade da vibração da tela
+ui-options-chat-window-opacity = Opacidade da janela de bate-papo
+ui-options-speech-bubble-text-opacity = Opacidade do texto do balão de fala
+ui-options-speech-bubble-speaker-opacity = Opacidade do falante do balão de fala
+ui-options-speech-bubble-background-opacity = Opacidade do fundo do balão de fala
+# Goobstation - Destaque os sons do chat!
+ui-options-highlight-sound = Reproduzir som ao destacar
+
+## Admin menu
 
 ## Shitmed Change
-ui-options-header-targeting = Targeting
+ui-options-header-targeting = Alvo
+ui-options-function-target-head = Selecionar cabeça
+ui-options-function-target-chest = Selecionar peito
+ui-options-function-target-groin = Selecionar virilha
+ui-options-function-target-left-arm = Selecionar braço esquerdo
+ui-options-function-target-right-arm = Selecionar braço direito
+ui-options-function-target-left-hand = Selecionar mão esquerda
+ui-options-function-target-right-hand = Selecionar mão direita
+ui-options-function-target-left-leg = Selecionar perna esquerda
+ui-options-function-target-right-leg = Selecionar perna direita
+ui-options-function-target-left-foot = Selecionar pé esquerdo
+ui-options-function-target-right-foot = Selecionar pé direito
+
+ui-options-admin-player-panel = Menu do administrador Lista de jogadores
+
+ui-options-admin-player-tab-symbol-setting = Coluna de caracteres símbolos antagonista
+ui-options-admin-player-tab-symbol-setting-off = Sem símbolos antagonista
+ui-options-admin-player-tab-symbol-setting-basic = Exibir símbolos antagonista padrão
+ui-options-admin-player-tab-symbol-setting-specific = Mostrar símbolos antagonista específico
+
+ui-options-admin-player-tab-role-setting = Configurações de exibição de função
+ui-options-admin-player-tab-role-setting-roletype = Mostrar tipo de função
+ui-options-admin-player-tab-role-setting-subtype = Mostrar subtipo
+ui-options-admin-player-tab-role-setting-roletypesubtype = Exibir tipo e subtipo de função
+ui-options-admin-player-tab-role-setting-subtyperoletype = Mostrar subtipo e tipo de função
+
+ui-options-admin-player-tab-color-setting = Configurações de cor
+ui-options-admin-player-tab-color-setting-off = Eu odeio cores.
+ui-options-admin-player-tab-color-setting-character = Colorir nomes de personagens antagonistas
+ui-options-admin-player-tab-color-setting-roletype = Colorir todos os tipos de função
+ui-options-admin-player-tab-color-setting-both = Colorir ambos
+
+ui-options-admin-overlay-title = Sobreposição administrativa
+
+ui-options-admin-overlay-antag-format = Estilo de etiqueta Antagonista
+ui-options-admin-overlay-antag-format-binary = Mostrar status de Antagonista
+ui-options-admin-overlay-antag-format-roletype = Mostrar tipo de função
+ui-options-admin-overlay-antag-format-subtype = Mostrar subtipo
+ui-options-admin-overlay-antag-format-off = Não mostrar o status e tipo de função do antagonista
+
+ui-options-admin-overlay-antag-symbol = Estilo de símbolo do antagonista
+ui-options-admin-overlay-antag-symbol-off = Sem símbolo do antagonista
+ui-options-admin-overlay-antag-symbol-basic = Exibir símbolo do antagonista padrão
+ui-options-admin-overlay-antag-symbol-specific = Mostrar símbolo do antagonista específico
+
+ui-options-admin-enable-overlay-playtime = Mostrar tempo de jogo
+ui-options-admin-enable-overlay-starting-job = Mostrar trabalho inicial
+ui-options-admin-overlay-merge-distance = Distância de fusão de pilha
+ui-options-admin-overlay-ghost-fade-distance = A sobreposição fantasma tem um alcance de transição a partir do mouse.
+ui-options-admin-overlay-ghost-hide-distance = A sobreposição fantasma oculta o alcance do mouse.

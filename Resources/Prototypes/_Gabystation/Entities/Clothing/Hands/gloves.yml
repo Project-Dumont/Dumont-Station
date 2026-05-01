@@ -17,6 +17,7 @@
   - type: Clothing
     sprite: _Gabystation/Clothing/Hands/Gloves/x-11.rsi
     equippedPrefix: energizada
+  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-black
@@ -82,7 +83,7 @@
           collection: sparks
           params:
             variation: 0.125
-            
+
       kravmaga: !type:ItemSwitchState
         verb: kravmaga
         sprite:

@@ -397,7 +397,7 @@
 - files: ["franguinhonapanela.ogg"]
   copyright: "Franguinho Na Panela by Moacyr dos Santos & Paraíso. Downloaded in clipgrab"
   license: "Custom"
-  source: "https://youtu.be/HqJxJEpXQAs?si=sYmVyIH_KSslwdRZ"  
+  source: "https://youtu.be/HqJxJEpXQAs?si=sYmVyIH_KSslwdRZ"
 
 - files: ["Vermilion_Pt2.ogg"]
   copyright: "Vermilion Part 2 by Slipknot. Downloaded in y2cv and converted to ogg in Online Audio Converter"
@@ -428,3 +428,24 @@
   copyright: "É o Amor by Zezé Di Camargo & Luciano. Downloaded in y2cv and converted to ogg in Online Audio Converter"
   license: "Custom"
   source: "https://www.youtube.com/watch?v=2xrppJrllv8"
+
+- files: [ inabstentialogos.ogg ]
+  copyright: "In Abstentia Logos by Heaven Pierce Her. Downloaded with Clipgrab and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=QDYUiCPLtxk"
+
+- files: [ thebreak.ogg ]
+  copyright: "The Break (Crimson Glass deComposition) by Heaven Pierce Her. Downloaded with Clipgrab and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=gtboglNaLgw"
+
+- files: [ theshatteringcircle.ogg ]
+  copyright: "The Shattering Circle, Or: A Charade of Shadeless Ones and Zeroes Rearranged Ad Nihilum by Heaven Pierce Her. Downloaded with Clipgrab and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/NVqXG3QNav0?si=BfPhNAm_4b_9ti6R"
+
+- files: [ eventhorizon.ogg ]
+  copyright: "Event Horizon (Reach for the Sun and Burn! Burn! Burn!) (ULTRAKILL 8-3 Theme #3) by Heaven Pierce Her. Downloaded with Clipgrab and converted to ogg in Audacity."
+  license: "Custom"
+  source: "https://youtu.be/XlILSmGtT64?si=9irQ859uyqfjsWsV"
+

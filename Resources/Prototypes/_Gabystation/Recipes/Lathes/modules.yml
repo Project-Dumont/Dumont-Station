@@ -140,3 +140,24 @@
     Plastic: 300
     Gold: 200
     Silver: 200
+
+- type: latheRecipe
+  id: ModsuitModuleLargeStorageRecipe
+  result: ModsuitModuleLargeStorage
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 300
+    Gold: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: ModsuitModuleBluespaceStorageRecipe
+  result: ModsuitModuleBluespaceStorage
+  completetime: 8
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1500
+    Uranium: 150
+    BSCrystal: 200 # Goobstation

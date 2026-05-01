@@ -2384,3 +2384,203 @@ Entries:
         sobrevivência.
   id: 289
   time: '2026-04-04T14:09:01.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Restaura a nave da lavaland para a do goob!
+  id: 290
+  time: '2026-04-11T03:57:25.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Add
+      message: Os trajes agora são imunes a tiros de seringa.
+  id: 291
+  time: '2026-04-11T04:17:33.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Mudança no surgimento de revs e xenos (agora mais comuns).
+    - type: Add
+      message: Adicionado access breaker e DNA scrambler no pacote infiltração.
+  id: 292
+  time: '2026-04-11T22:36:53.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: O bastão telescopico agora stuna em 5 hits, e foi traduzido.
+  id: 293
+  time: '2026-04-11T23:00:46.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Agora a sci pode pesquisar blindagens de modsuit para engenharia,
+        segurança e médico, e quando pesquisados, podem ser fabricados em seus
+        respectivos fabricadores.
+    - type: Add
+      message: >-
+        Módulos de armazenamento pra modsuit! Agora elas não tem armazenamento
+        natural, mas vem com um módulo de armazenamento básico. Armazenamento
+        grande e armazenamento bluespace pode ser pesquisado na sci em Modular
+        Technologies e armazenamento bluespace, respectivamente.
+    - type: Add
+      message: >-
+        Novo item de uplink: Módulo de armazenamento Cybersun, que consegue
+        armazenar muito mais que até mochilas bluespace, mas precisa ser
+        inserido em uma modsuit. 20TC.
+    - type: Tweak
+      message: >-
+        Módulos de salto, magboots, GPS e broca pode ser comprados no
+        salvagevend.
+    - type: Fix
+      message: A modsuit pioneer agora pode usar módulos de torso e sapato.
+    - type: Tweak
+      message: >-
+        Itens que perder o componente de armazenamento agora esvaziam os itens
+        no chão invés de deletar.
+    - type: Fix
+      message: Agora a modsuit pioneer do salvage vend vem com bateria.
+  id: 294
+  time: '2026-04-12T11:32:11.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Magboots de sec pra counterar o vento espacial.
+  id: 295
+  time: '2026-04-12T14:50:37.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: A estação Falcon está de volta na rotação e atualizada!
+  id: 296
+  time: '2026-04-14T02:56:01.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: A estação Gamma está de volta na rotação e atualizada!
+  id: 297
+  time: '2026-04-14T02:57:11.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Nova estação de evento Hyperion!
+  id: 298
+  time: '2026-04-14T03:00:45.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: A capa, mantle e ensemble do HOS agora tem uma câmera.
+  id: 299
+  time: '2026-04-14T03:12:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona alergias na customização de personagem.
+  id: 300
+  time: '2026-04-18T00:40:12.0000000+00:00'
+- author: AlgumCorrupto
+  changes:
+    - type: Tweak
+      message: balanceamento das mutações
+  id: 301
+  time: '2026-04-18T00:56:35.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Add
+      message: Oni charge!
+  id: 302
+  time: '2026-04-18T16:21:32.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Tweak
+      message: Atualização regra de roleplay 13.
+  id: 303
+  time: '2026-04-18T23:12:29.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Remove
+      message: tunnel clown removido da rotação de ghostroles de meio de round!
+  id: 304
+  time: '2026-04-18T23:25:34.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: O manifesto revolucionário voltou com suas frases.
+  id: 305
+  time: '2026-04-18T23:27:54.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona o SegurApartamento para organizar a segurança em esquadrões.
+  id: 306
+  time: '2026-04-18T23:48:33.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora a pessoas slimes podem transforma-se em slime.
+  id: 307
+  time: '2026-04-18T23:50:44.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: 4 músicas de Heaven Pierce Her a jukebox.
+  id: 308
+  time: '2026-04-19T00:22:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Morph (Novo Antagonista de Midround)
+  id: 309
+  time: '2026-04-19T19:12:01.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Fix
+      message: >-
+        A capa do segurança chefe usa o sprite correto invés do sprite de
+        bodycam.
+  id: 310
+  time: '2026-04-19T20:55:34.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona propulsor grande e enorme para mapeamento.
+  id: 311
+  time: '2026-04-19T21:00:35.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona pistola holosinalizadora.
+  id: 312
+  time: '2026-04-19T23:16:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        O escudo de bala anti motim agora tem um sprite quando está sendo
+        segurado.
+  id: 313
+  time: '2026-05-01T02:04:28.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: SerpentCrest NÃO está mais na rotação de mapas.
+  id: 314
+  time: '2026-05-01T02:06:52.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona impressora de livros.
+  id: 315
+  time: '2026-05-01T02:18:23.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug que fazia os LoneOps não conseguirem declarar guerra.
+  id: 316
+  time: '2026-05-01T02:20:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Luvas "Berserker" da caixa x-00 agora são insuladas.
+  id: 317
+  time: '2026-05-01T03:13:08.0000000+00:00'

@@ -35,6 +35,14 @@
           whitelist:
             components:
               - PowerCell
+        control_module: # GabyStation
+          name: modsuit-control-unit-module-slot
+          startingItem: ModsuitModuleBasicStorage
+          insertDelay: 1.0
+          ejectDelay: 0.5
+          whitelist:
+            tags:
+              - ModsuitControlUnitUpgrade
     - type: Storage
       grid:
         - 0,0,7,6
@@ -46,7 +54,7 @@
         back:
         - state: equipped-BACKPACK-sealed
         - state: equipped-BACKPACK-sealed-unshaded
-          shader: unshaded      
+          shader: unshaded
 
 - type: entity
   parent: [ClothingModsuitGauntletsStandard, BaseCentcommContraband]
@@ -298,7 +306,7 @@
           - id: WelderExperimental
           - id: Multitool
           - id: MedkitCombatFilled
-          
+
 #NCT
 - type: entity
   parent: [ClothingModsuitCorporate, ClothingModsuitStandard, BaseCentcommContraband]

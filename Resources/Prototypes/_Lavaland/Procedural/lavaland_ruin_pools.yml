@@ -7,10 +7,9 @@
 # SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 Kyoth25f <41803390+Kyoth25f@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
-# SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
@@ -36,30 +35,31 @@
     SyndicateBase: 1
     HierophantArena: 1
     RougeAI: 1
-    BiodomeBeach: 1 # 2 Gaby Station
-    BiodomeSnow: 1 # 2 Gaby Station
-    GolemShuttle: 1 # 1 Gaby Station
+    BiodomeBeach: 2
+    BiodomeSnow: 2
+    GolemShuttle: 2
     ToyShop: 1
-    Chemistry: 1 # 1 Gaby Station
+    Chemistry: 2
     Graveyard: 1
-    SeedVault: 1 # 1 Gaby Station
-    Hermit: 1 # 2 Gaby Station
-    WaffleCo: 1 # 1 Gaby Station
+    SeedVault: 2
+    Hermit: 5
+    WaffleCo: 2
     ArrivalsBack: 1
     ArrivalsFront: 1
-    Shelter: 1 # 1 Gaby Station
+    VulpLab: 1
+    Shelter: 4
     Ratvar: 1
-    MiningPost: 1 # 3 Gaby Station
+    MiningPost: 3
     AbductorDebris: 1
     CultBase: 1
     Hunter: 1
 #WIZDEN RUINS (only peak ones, rest are trash) man
     CargoWreck: 1
     Murder: 1
-    EscapePod: 1 # 2 Gaby Station
-    Desk: 1 # 2 Gaby Station
-    Generator: 1 # 3 Gaby Station
+    EscapePod: 2
+    Desk: 2
+    Generator: 3
     Mug: 1
     Temple: 1
   dungeonRuins:
-    CommonRuin5x5: 15 # 60 Gaby Station
+    CommonRuin5x5: 60

@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: body
+  id: ADTGeras
+  name: "slimes"
+  root: chest
+  slots:
+    chest:
+      part: ChestSlime
+      connections:
+      - groin
+      organs:
+        lungs: OrganSlimeLungs
+    groin:
+      part: GroinSlime
+      organs:
+        core: SentientSlimeCore
+      connections:
+      - legs
+    legs:
+      part: ADTLegsGeras
+      connections:
+      - feet
+    feet:
+      part: ADTFeetGeras

@@ -22,7 +22,8 @@
     Traitor: 0.20
     Changeling: 0.10
     Nukeops: 0.05
-    Revolutionary: 0.05
+    Revolutionary: 0.15 # GabyStation 0.05 -> 0.15
+    XenomorphsInfestationRoundstart: 0.05 # GabyStation
     Zombie: 0.04
     Heretic: 0.11
     BlobGameMode: 0.05

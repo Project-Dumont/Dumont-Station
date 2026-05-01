@@ -16,3 +16,9 @@
   recipes:
   - ModsuitModuleSecHudRecipe
   - ModsuitModuleInjectorRecipe
+  - ModsuitPlatingSecurityRecipe
+
+- type: latheRecipePack
+  id: SecurityClothing
+  recipes:
+  - SecurityMagbootsRecipe

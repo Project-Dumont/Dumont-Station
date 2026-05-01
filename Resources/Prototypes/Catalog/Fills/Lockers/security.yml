@@ -141,6 +141,7 @@
       prob: 0.5
     - id: ATMFlatpack # Gabystation
     - id: BoxEncryptionKeyPrisoner #Delta-V
+    - id: SecApartmentTablet # Corvax-SecApartment
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -149,6 +150,7 @@
     - id: ClothingOuterHardsuitWarden
     - id: OxygenTankFilled
     - id: ClothingMaskBreath
+    - id: SecurityMagboots # GabyStation
 
 - type: entity
   id: LockerSecurityFilled
@@ -223,6 +225,7 @@
     - id: MedkitAdvancedFilled
     - id: BoxSyringe
     - id: BoxBodyBag # Goob Station
+    - id: SecurityMagboots # GabyStation
 
 - type: entity
   id: LockerDetectiveFilled
@@ -267,6 +270,7 @@
       prob: 0.25
     - id: PhotoCameraFilled # CorvaxGoob-PhotoCamera
     - id: ClothingOuterHardsuitDetective # Gaby. O Goob fez bosta em adicionar a hardsuit do detetive, esqueceram de programar ela spawnar se não tiver um suit storage no mapa, e nenhum mapa tem suit storage de det. Eu vou deixar isso aqui por enquanto, e quando o goob consertar, so remove isso.
+    - id: SecurityMagboots # GabyStation
 
 - type: entity
   id: ClosetBombFilled

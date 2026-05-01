@@ -56,6 +56,15 @@
       "name": "welding-head"
     },
     {
+      "name": "storage-control"
+    },
+    {
+      "name": "bluespace-control"
+    },
+    {
+      "name": "syndie-control"
+    },
+    {
       "name": "injector-chest"
     }
   ]
