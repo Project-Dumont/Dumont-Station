@@ -2552,3 +2552,41 @@ Entries:
       message: Adiciona pistola holosinalizadora.
   id: 312
   time: '2026-04-19T23:16:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        O escudo de bala anti motim agora tem um sprite quando está sendo
+        segurado.
+  id: 313
+  time: '2026-05-01T02:04:28.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: SerpentCrest NÃO está mais na rotação de mapas.
+  id: 314
+  time: '2026-05-01T02:06:52.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona impressora de livros.
+  id: 315
+  time: '2026-05-01T02:18:23.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug que fazia os LoneOps não conseguirem declarar guerra.
+  id: 316
+  time: '2026-05-01T02:20:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Luvas "Berserker" da caixa x-00 agora são insuladas.
+  id: 317
+  time: '2026-05-01T03:13:08.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Revs agoram spawnam no meio da rodada.
+  id: 318
+  time: '2026-05-01T14:54:10.0000000+00:00'
