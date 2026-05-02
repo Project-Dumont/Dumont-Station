@@ -196,6 +196,7 @@
     - id: HereticMidround # Gabystation
     - id: CosmicCultMidround # Gabystation
     - id: BloodCultMidround # Gabystation
+    - id: RevolutionaryMidround # Gabystation
     - id: ZombieOutbreak
     - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
@@ -866,7 +867,7 @@
     earliestStart: 35
     weight: 6.0 # Goobstation - was 5.5
     minimumPlayers: 20 # Goobstation - was 20
-    duration: 1
+    duration: null
     maxOccurrences: 1 # Gabystation - loneops apenas uma vez por round
     chaos: # Goobstation
       Hostile: 200

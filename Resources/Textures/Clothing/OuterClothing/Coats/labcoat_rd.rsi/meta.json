@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Made by Ubaser from labcoat sprite, modified by Flareguy",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/6b3586226fcfc1ffafb7bf7d19b30ff55c695536",
   "size": {
     "x": 32,
     "y": 32

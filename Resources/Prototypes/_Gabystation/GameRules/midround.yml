@@ -12,7 +12,7 @@
     minimumPlayers: 30
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -54,7 +54,7 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -99,7 +99,7 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -143,7 +143,7 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -210,3 +210,53 @@
         sound: /Audio/_Gabystation/Misc/Morph/mutate.ogg
       mindRoles:
       - MindRoleMorph
+
+# Midround Revs
+- type: entity
+  parent: Revolutionary
+  id: RevolutionaryMidround
+  components:
+  - type: StationEvent
+    earliestStart: 15 # Começa no mínimo após 15 minutos
+    weight: 3
+    minimumPlayers: 25
+    maxOccurrences: 1
+    startAnnouncement: station-event-communication-interception
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+    duration: null
+    occursDuringRoundEnd: false
+    chaos:
+      Hostile: 300
+      Medical: 100
+      Death: 300
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 1000
+  - type: AlertLevelInterceptionRule
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: head-rev-role-greeting
+    definitions:
+    - prefRoles: [ HeadRev ]
+      max: 3
+      playerRatio: 15
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+      jobBlacklist: [ Chaplain ]
+      startingGear: HeadRevGear
+      lateJoinAdditional: true
+      briefing:
+        text: head-rev-role-greeting
+        color: CornflowerBlue
+        sound: "/Audio/Ambience/Antag/headrev_start.ogg"
+      components:
+      - type: Revolutionary
+      - type: HeadRevolutionary
+      mindRoles:
+      - MindRoleHeadRevolutionary
+  - type: Tag
+    tags:
+      - MidroundAntag
