@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from cev-eris at https://github.com/discordia-space/CEV-Eris/blob/2b969adc2dfd3e9621bf3597c5cbffeb3ac8c9f0/icons/obj/chemical.dmi",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/11da7dd5c2d84437acf052ae7c89c68b0ecd8970",
   "size": {
     "x": 32,
     "y": 32
@@ -11,24 +11,10 @@
       "name": "beakernoreact",
       "delays": [
         [
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05,
-          0.05
+          0.1,
+          0.1,
+          0.1,
+          0.1
         ]
       ]
     },
