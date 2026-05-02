@@ -55,6 +55,12 @@
   - type: WarpPoint
     follow: true
     location: immovable rod
+    # Dumont edit #
+    shouldGib: false
+    damage:
+      types:
+        Blunt: 70
+    # Dumont edit end #
 
 # goob edit
 - type: entity
