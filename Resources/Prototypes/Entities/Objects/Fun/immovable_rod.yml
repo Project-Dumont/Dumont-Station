@@ -30,6 +30,10 @@
   - type: ImmovableRod
     minSpeed: 15 # Goobstation
     maxSpeed: 15 # Goobstation
+    shouldGib: false
+    damage:
+      types:
+        Blunt: 70
   - type: Physics
     bodyType: Dynamic
     linearDamping: 0
@@ -55,12 +59,6 @@
   - type: WarpPoint
     follow: true
     location: immovable rod
-    # Dumont edit #
-    shouldGib: false
-    damage:
-      types:
-        Blunt: 70
-    # Dumont edit end #
 
 # goob edit
 - type: entity
