@@ -270,8 +270,8 @@
   parent: BulletTrace
   damage:
     types:
-      Piercing: 36 #Dumont It was meant to be like this.
-    armorPenetration: 0.2
+      Piercing: 30
+    armorPenetration: 0.2 #DumontStation so slugs are decent.
   bullet:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: slug
