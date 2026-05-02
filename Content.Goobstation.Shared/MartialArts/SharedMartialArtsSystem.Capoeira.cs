@@ -112,7 +112,7 @@ public abstract partial class SharedMartialArtsSystem
             return;
 
         _stun.TryKnockdown(target,
-            TimeSpan.FromSeconds(proto.ParalyzeTime * power),
+            proto.ParalyzeTime * power,
             true,
             true,
             proto.DropItems);
@@ -144,7 +144,7 @@ public abstract partial class SharedMartialArtsSystem
             return;
 
         _stun.TryKnockdown(target,
-            TimeSpan.FromSeconds(proto.ParalyzeTime * power),
+            proto.ParalyzeTime * power,
             true,
             true,
             proto.DropItems);
@@ -192,7 +192,7 @@ public abstract partial class SharedMartialArtsSystem
         var mapPos = _transform.GetMapCoordinates(ent).Position;
         var hitPos = _transform.GetMapCoordinates(target).Position;
         var dir = hitPos - mapPos;
-        var time = TimeSpan.FromSeconds(proto.ParalyzeTime * power);
+        var time = proto.ParalyzeTime * power;
 
         if (TryComp<PullableComponent>(target, out var pullable))
             _pulling.TryStopPull(target, pullable, ent, true);
