@@ -107,7 +107,7 @@
   id: SniperRedLaser
   damage:
     types:
-      Heat: 15
+      Heat: 35
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light
@@ -122,7 +122,7 @@
   id: SniperIonLaser
   damage:
     types:
-      Ion: 21
+      Ion: 40
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_ion
@@ -137,8 +137,8 @@
   id: SniperXrayLaser
   damage:
     types:
-      Heat: 7.5
-      Radiation: 7.5
+      Heat: 15
+      Radiation: 15
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_xray
@@ -154,7 +154,7 @@
   # fireStacks: 0.7 # Gabystation Rework aramentos balísticos
   damage:
     types:
-      Heat: 21
+      Heat: 45
     armorPenetration: -0.2
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
@@ -170,7 +170,7 @@
   id: SniperBluespaceLaser
   damage:
     types:
-      Heat: 14
+      Heat: 25
     armorPenetration: 0.4
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
@@ -186,7 +186,7 @@
   id: SniperPulseLaser
   damage:
     types:
-      Heat: 20
+      Heat: 35
     armorPenetration: 1
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
@@ -330,7 +330,7 @@
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_beam_heavy
-    
+
 - type: hitscan
   id: MediumOverchargedLaser
   damage:

@@ -34,7 +34,7 @@
         Heat: 0.70
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: ClothingHeadHelmetHardsuitCombatStandard
   id: ClothingHeadHelmetHardsuitCombatOfficer
   name: security combat hardsuit helmet
   components:

@@ -167,8 +167,8 @@
       state: o4
       shader: unshaded
   - type: Battery
-    maxCharge: 1200
-    startingCharge: 1200
+    maxCharge: 600
+    startingCharge: 600
   - type: BatteryDrinkerSource
     maxAmount: 200
   - type: Tag
@@ -387,7 +387,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 750
-    startingCharge: 750    
+    startingCharge: 750
   - type: GenericVisualizer
     visuals:
       enum.AmmoVisuals.HasAmmo:
@@ -471,7 +471,7 @@
       Plasma: 200
     chemicalComposition:
       Zinc: 20
-      
+
 - type: entity
   id: MilitaryPowerCellBluespaceLMG
   parent: BaseMilitaryPowerCell

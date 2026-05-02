@@ -38,7 +38,7 @@
     defaultDirection: 1, 0
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumSplitLaser
-    fireCost: 80
+    fireCost: 60
   - type: StaticPrice
     price: 2500
   - type: BatterySelfRecharger
@@ -77,7 +77,7 @@
     - 0,0,3,1
   - type: Gun
     minAngle: 3
-    maxAngle: 18
+    maxAngle: 12 #Dumontstation X-00 weapon rebalance
     fireRate: 6
     burstFireRate: 8
     angleIncrease: 4
@@ -183,7 +183,7 @@
   - type: GunRequiresWield
   - type: HitscanBatteryAmmoProvider
     proto: LaserSniper
-    fireCost: 100
+    fireCost: 120
   - type: SpeedModifiedOnWield
     walkModifier: 0.80
     sprintModifier: 0.80

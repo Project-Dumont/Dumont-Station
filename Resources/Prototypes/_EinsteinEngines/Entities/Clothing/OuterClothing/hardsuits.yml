@@ -33,9 +33,9 @@
     - Foot
     modifiers:
       coefficients:
-        Blunt: 0.60
-        Slash: 0.60
-        Piercing: 0.55
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
         Radiation: 0.60
         Caustic: 0.60
         Heat: 0.75
@@ -137,9 +137,9 @@
     - Foot
     modifiers:
       coefficients:
-        Blunt: 0.50
-        Slash: 0.50
-        Piercing: 0.40
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.35
         Radiation: 0.10
         Caustic: 0.70
         Heat: 0.40
@@ -151,8 +151,8 @@
       head: ClothingHeadHelmetHardsuitCombatRiot
   - type: AllowSuitStorage
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.5
+    damageCoefficient: 0.3
   - type: ModifyDelayedKnockdown # Goobstation
     cancel: true
-  - type: FireProtection 
-    reduction: 0.75 
+  - type: FireProtection
+    reduction: 0.75

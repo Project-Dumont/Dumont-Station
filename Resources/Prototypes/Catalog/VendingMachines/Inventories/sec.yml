@@ -78,7 +78,7 @@
     CartridgeSaline: 4
     CartridgeBicaridine: 4
     CartridgeDermaline: 4 # Goobstation - end
-    CartridgeToxin: 3 #Gabystation
+    CartridgeToxin: 4 #Gabystation
   # security officers need to follow a diet regimen!
   contrabandInventory:
     WeaponMeleeNeedle: 2

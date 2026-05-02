@@ -84,7 +84,7 @@
   - WeaponLaserCellSMG
   - PowerCellIRSMG
   - PowerCellIonSMG
-  position: 5,-1
+  position: 3,-1
   technologyPrerequisites:
   - WeaponizedLaserManipulation
 
@@ -115,7 +115,7 @@
   - PortableMicrofusionWeaponry
   - SmartWeaponry
   - ThermalVisionTech
-  position: 7,2
+  position: 6,0
 
 - type: technology
   id: EnergyBoltBasedWeaponry # for future energy bolt weapon
@@ -133,7 +133,7 @@
   - EnergyMagRifleLethal
   technologyPrerequisites:
   - WaveParticleHarnessing
-  position: 4,0
+  position: 1,0
 
 # Tier 3
 
@@ -166,7 +166,7 @@
   recipeUnlocks:
   - ClothingBackpackLMGBattery
   - MilitaryPowerCellLMG
-  position: 3,0
+  position: 3,-2
   technologyPrerequisites:
   - WeaponLaserCellSMGTech
 
@@ -183,7 +183,7 @@
   - WeaponMechCombatMissileRack8
   technologyPrerequisites:
   - Gygax
-  position: 7,1
+  position: 7,0
 
 - type: technology
   id: Durand
@@ -209,7 +209,7 @@
   - WeaponMechCombatShotgunIncendiary
   technologyPrerequisites:
   - Gygax
-  position: 8,2
+  position: 6,-1
 
 - type: technology
   id: SmartWeaponry
@@ -241,6 +241,7 @@
   - PowerCellBluespaceSMG
   - PowerCellBluespaceSniper
   - MilitaryPowerCellBluespaceLMG
+  - EnergyMagRifleBluespaceLethal
   technologyPrerequisites:
   - WeaponLaserCellLMGTech
   - WeaponLaserCellSniperTech

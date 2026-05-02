@@ -67,6 +67,7 @@
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
   - ShrapnelPayload
+  - GrenadeStinger #Dumont
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic

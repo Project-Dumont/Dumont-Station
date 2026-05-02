@@ -51,10 +51,10 @@
             attackRate: 1
             damage:
               types:
-                Blunt: 12
-                Structural: 15
+                Blunt: 15
+                Structural: 18
             mustBeEquippedToUse: true
-            canWideSwing: false
+            canWideSwing: true
         soundStateActivate:
           collection: sparks
           params:
@@ -68,21 +68,21 @@
           state: icon-garras
         components:
           - type: MeleeWeapon
-            attackRate: 1.5
+            attackRate: 2.5
             autoAttack: true
             damage:
               types:
                 Slash: 8
-                Structural: 3
+                Structural: 8
             mustBeEquippedToUse: true
             soundHit:
               path: /Audio/Weapons/bladeslice.ogg
-            canWideSwing: false
+            canWideSwing: true
         soundStateActivate:
           collection: sparks
           params:
             variation: 0.125
-            
+
       kravmaga: !type:ItemSwitchState
         verb: kravmaga
         sprite:

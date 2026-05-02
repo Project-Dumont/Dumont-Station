@@ -65,7 +65,7 @@
   name:  ES-7 Multilens
   parent: [ BaseWeaponCustomCell, BaseGunWieldable, BaseSecurityContraband ]
   id: WeaponLaserCellSniper
-  description: A burst-fire laser sniper rifle that retains its power across extreme distances. Fitted with a standard magnifying scope. Takes sniper power cells.
+  description: A laser sniper rifle that retains its power across extreme distances. Fitted with a standard magnifying scope. Takes sniper power cells.
   components:
   - type: Item
     sprite: _Goobstation/Objects/Weapons/Guns/Battery/cell_sniper.rsi
@@ -73,16 +73,12 @@
     shape:
     - 0,0,6,1
   - type: Gun
-    burstFireRate: 15
-    shotsPerBurst: 3
-    burstCooldown: 1.5
-    fireRate: 1.5
-    lockOnTargetBurst: true
-    selectedMode: Burst
+    fireRate: 1.2
+    selectedMode: SemiAuto
     availableModes:
-    - Burst
+    - SemiAuto
     soundGunshot:
-      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/laser_lmg.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -145,7 +141,7 @@
     - Sidearm
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 1.5 # Goobstation
+    fireRate: 2.5 # Dumontstation
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -166,7 +162,7 @@
       visible: false
       shader: unshaded
       map: ["enum.GunVisualLayers.Mag"]
-    - state: off
+    - state: on
       map: ["base"]
   - type: PhysicalComposition
     materialComposition:
@@ -178,10 +174,10 @@
     slots:
     - suitStorage
     - belt
-  - type: ItemToggle
-    wieldToggle: false
-    soundActivate: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
-    soundDeactivate: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+#  - type: ItemToggle
+#    wieldToggle: false
+#    soundActivate: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+#    soundDeactivate: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -193,10 +189,10 @@
         base:
           True: { state: on }
           False: { state: off }
-  - type: FoldingWeapon
-    setPrefix: false
-  - type: BatterySlotRequiresToggle
-    itemSlot: gun_magazine
+#  - type: FoldingWeapon
+#    setPrefix: false
+#  - type: BatterySlotRequiresToggle
+#    itemSlot: gun_magazine
   - type: SurgeryTool
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
