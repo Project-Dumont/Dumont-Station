@@ -12,7 +12,7 @@
     sprite: _Andromeda/Objects/Fun/andromeda_plush.rsi
     state: janie
   - type: UseDelay
-    delay: 0.5
+    delay: 1.5
   - type: EmitSoundOnUse
     sound:
       path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
