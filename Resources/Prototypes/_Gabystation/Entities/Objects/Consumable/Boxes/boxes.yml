@@ -1,0 +1,42 @@
+
+- type: entity
+  parent: BaseItem
+  id: GunKitMk58Pistol
+  name: Mk58 pistol kit
+  description: A small box containing a Mk58 and a magazine. It'll fall apart the moment you open it.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponPistolMk58
+    - id: MagazinePistol
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Item
+    sprite: Objects/Storage/boxes.rsi
+    size: Normal
+  - type: Sprite
+    sprite: Objects/Storage/boxes.rsi
+    layers:
+      - state: box_security
+      - state: magazine
+
+- type: entity
+  parent: BaseItem
+  id: GunKitGoldMk58Pistol
+  name: golden mk58 pistol kit
+  description: A small box containing a golden Mk58 and a magazine. It'll fall apart the moment you open it.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponPistolMk58Gold
+    - id: MagazinePistol
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Item
+    sprite: Objects/Storage/boxes.rsi
+    size: Normal
+  - type: Sprite
+    sprite: Objects/Storage/boxes.rsi
+    layers:
+      - state: box_security
+      - state: magazine

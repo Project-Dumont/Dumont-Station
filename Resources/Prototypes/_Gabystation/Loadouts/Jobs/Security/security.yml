@@ -14,7 +14,13 @@
         time: 360000 #100 hrs
   storage:
     back:
-    - WeaponPistolMk58Gold
+    - GunKitGoldMk58Pistol
+
+- type: loadout
+  id: WeaponPistolMk58
+  storage:
+    back:
+    - GunKitMk58Pistol
 
 - type: loadout
   id: ClothingNeckRobusto

@@ -66,12 +66,20 @@
   - GoldButchCleaver
 
 - type: loadoutGroup
+  id: WeaponsSecurityGun
+  name: loadout-group-weapons-security
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WeaponPistolMk58Gold
+  - WeaponPistolMk58
+
+- type: loadoutGroup
   id: TrinketsSecurity
   name: loadout-group-trinkets-job
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - WeaponPistolMk58Gold
   - ClothingNeckRobusto
   - ClothingNeckChoque
 
