@@ -38,7 +38,4 @@
   - type: Sprite
     sprite: _NF/Objects/Fun/Plushies/vulp.rsi
     state: plushie_vulp
-  - type: FoodSequenceElement
-    entries:
-      CottonBurger: PlushieVulp
 
