@@ -39,6 +39,12 @@
     - PlushieKiiaraWarden
 
 - type: loadout
+  id: PlushieJanie
+  storage:
+    back:
+    - PlushieJanie
+
+- type: loadout
   id: MP3PlayerWhite
   effects:
   - !type:JobRequirementLoadoutEffect

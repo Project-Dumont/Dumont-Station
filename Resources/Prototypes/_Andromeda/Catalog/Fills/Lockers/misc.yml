@@ -1,0 +1,8 @@
+- type: entityTable
+  id: AndromedaMaintLoot
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: PlushieJanie
+      weight: 10
+   
