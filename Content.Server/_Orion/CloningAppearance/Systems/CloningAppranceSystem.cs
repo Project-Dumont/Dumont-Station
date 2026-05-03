@@ -8,7 +8,9 @@ using Content.Server.Traits;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared.Preferences;
 using Robust.Shared.Containers;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization.Manager;
 
@@ -38,10 +40,21 @@ public sealed class CloningAppearanceSystem : EntitySystem
         SubscribeLocalEvent<CloningAppearanceEvent>(OnPlayerSpawn);
     }
 
+    public EntityUid SpawnProfileEntity(EntityCoordinates coordinates, HumanoidCharacterProfile profile, EntityUid? stationUid = null)
+    {
+        return _spawning.SpawnPlayerMob(coordinates, null, profile, stationUid);
+    }
+
+    public EntityUid SpawnProfileEntity(EntityCoordinates coordinates, ICommonSession player, EntityUid? stationUid = null)
+    {
+        var profile = _ticker.GetPlayerProfile(player);
+        return SpawnProfileEntity(coordinates, profile, stationUid);
+    }
+
     private void OnPlayerSpawn(CloningAppearanceEvent ev)
     {
         var profile = _ticker.GetPlayerProfile(ev.Player);
-        var mobUid = _spawning.SpawnPlayerMob(ev.Coords, null, profile, ev.StationUid);
+        var mobUid = SpawnProfileEntity(ev.Coords, profile, ev.StationUid);
         var targetMind = ev.MindId != null && TryComp<MindComponent>(ev.MindId, out var transferredMind)
             ? (ev.MindId.Value, transferredMind)
             : _mindSystem.GetOrCreateMind(ev.Player.UserId);

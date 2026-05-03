@@ -1,0 +1,14 @@
+# Secure Crates
+
+- type: entity
+  parent: [ CrateBaseSecure, CrateGenericSteel ]
+  id: CrateBitrunSecure
+  name: bitrunning crate
+  components:
+  - type: Icon
+    sprite: _Orion/Structures/Storage/Crates/bitrun_secure.rsi
+  - type: Sprite
+    sprite: _Orion/Structures/Storage/Crates/bitrun_secure.rsi
+  - type: AccessReader
+    access: [["Salvage"]] # No Bitrunning :(
+  - type: BitrunningObjectiveCargo # For bitrunning objectives

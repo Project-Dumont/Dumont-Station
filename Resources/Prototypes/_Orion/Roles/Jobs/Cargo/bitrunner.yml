@@ -1,0 +1,20 @@
+- type: job
+  id: Bitrunner
+  name: job-name-bitrunner
+  description: job-description-bitrunner
+  playTimeTracker: JobBitrunner
+  setPreference: false # TODO
+  startingGear: CargoTechGear # TODO
+  icon: "JobIconBitrunner"
+  supervisors: job-supervisors-qm
+  goobcoins: 20 #Goob content
+  access:
+  - Cargo
+  - Bitrun
+  - Maintenance
+  extendedAccess:
+  - Salvage
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: BoxingDay
+    prototype: BoxCardboard

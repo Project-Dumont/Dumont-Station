@@ -1,0 +1,91 @@
+- type: entityTable
+  id: BitrunningDeliveryEasyLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 6, 10
+    children:
+    - id: SheetSteel1
+      weight: 30
+    - id: SheetGlass1
+      weight: 20
+    - id: SilverOre1
+      weight: 7
+    - id: SpaceCash100
+      weight: 2
+
+- type: entityTable
+  id: BitrunningDeliveryMediumLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 10, 15
+    children:
+    - id: SheetSteel1
+      weight: 25
+    - id: SheetGlass1
+      weight: 18
+    - id: SilverOre1
+      weight: 10
+    - id: PlasmaOre1
+      weight: 10
+    - id: GoldOre1
+      weight: 6
+    - id: UraniumOre1
+      weight: 4
+    - id: MaterialDiamond1
+      weight: 3
+    - id: MaterialBSCrystal1
+      weight: 2
+    - id: SpaceCash100
+      weight: 2
+    - id: SpaceCash500
+      weight: 1
+
+- type: entityTable
+  id: BitrunningDeliveryHardLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 14, 20
+    children:
+    - id: SheetSteel1
+      weight: 22
+    - id: SheetGlass1
+      weight: 16
+    - id: SilverOre1
+      weight: 10
+    - id: PlasmaOre1
+      weight: 11
+    - id: GoldOre1
+      weight: 8
+    - id: UraniumOre1
+      weight: 7
+    - id: MaterialDiamond1
+      weight: 5
+    - id: MaterialBSCrystal1
+      weight: 3
+    - id: SpaceCash500
+      weight: 1
+
+- type: entityTable
+  id: BitrunningDeliveryExtremeLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 18, 26
+    children:
+    - id: SheetSteel1
+      weight: 20
+    - id: SheetGlass1
+      weight: 14
+    - id: SilverOre1
+      weight: 10
+    - id: PlasmaOre1
+      weight: 12
+    - id: GoldOre1
+      weight: 9
+    - id: UraniumOre1
+      weight: 8
+    - id: MaterialDiamond1
+      weight: 7
+    - id: MaterialBSCrystal1
+      weight: 5
+    - id: SpaceCash500
+      weight: 1
