@@ -67,6 +67,7 @@
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
   - ShrapnelPayload
+  - GrenadeStinger #Dumont
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -75,6 +76,8 @@
   - Stunbaton
   - CombatKnife
   - RiotShield
+  - RiotBulletShield
+  - RiotLaserShield
 
 ## Dynamic recipes
 
@@ -147,6 +150,7 @@
   - WeaponXrayCannon
   - WeaponTemperatureGun # Goobstation
   - Terminus # Goobstation
+  - WeaponLaserSvalinn
 
 - type: latheRecipePack
   id: SecurityDisablers

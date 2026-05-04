@@ -172,4 +172,4 @@
   unit: materials-unit-piece
   icon: { sprite: Objects/Materials/materials.rsi, state: diamond }
   color: "#80ffff"
-  price: 20 # big diamond gaslit us so hard diamonds actually became extremely rare
+  price: 4.9 # Dumont edit with crystalizers existing no way diamonds should be worth 25 times more than gold, now it's worth 500 spesos for 1 unit (including baseitem value)

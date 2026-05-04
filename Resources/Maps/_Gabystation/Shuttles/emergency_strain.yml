@@ -8,7 +8,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/14/2026 15:01:50
+  time: 04/28/2026 05:13:02
   entityCount: 856
 maps: []
 grids:
@@ -898,31 +898,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-4.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-- proto: ArrivalsShuttleTimer
-  entities:
-  - uid: 25
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,4.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 26
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,-4.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 27
-    components:
-    - type: Transform
-      pos: -12.5,6.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -2985,18 +2960,20 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
+  - uid: 411
+    components:
+    - type: Transform
+      pos: -0.5,11.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: FireAxeCabinetFilled
+  entities:
   - uid: 410
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -7.5,1.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 411
-    components:
-    - type: Transform
-      pos: -0.5,11.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -4570,6 +4547,29 @@ entities:
     - type: Transform
       pos: -6.5,1.5
       parent: 1
+- proto: Screen
+  entities:
+  - uid: 25
+    components:
+    - type: Transform
+      pos: -1.5,4.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 26
+    components:
+    - type: Transform
+      pos: -5.5,-4.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 27
+    components:
+    - type: Transform
+      pos: -12.5,6.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: ShuttersNormalOpen
   entities:
   - uid: 638

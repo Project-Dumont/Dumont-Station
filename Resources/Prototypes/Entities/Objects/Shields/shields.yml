@@ -267,6 +267,7 @@
         suitstorage:
         - state: metal-backpack
     - type: Item
+      sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi
       heldPrefix: ballistic
     - type: Blocking
       passiveBlockModifier:
@@ -665,11 +666,11 @@
         - Energy
     - type: Blocking
       passiveBlockModifier:
-        coefficients:
-          Blunt: 1.0
-          Slash: 0.9
-          Piercing: 0.85
-          Heat: 0.6
+        coefficients: #Dumont edit; making it less tanky passively
+          Blunt: 1.2
+          Slash: 1.2
+          Piercing: 1.2
+          Heat: 0.8
       activeBlockModifier:
         coefficients:
           Blunt: 1.2
@@ -686,11 +687,13 @@
       price: 350
       # WD EDIT START
     - type: Battery
-      maxCharge: 35
-      startingCharge: 35
+      maxCharge: 60 #Dumont; It now does not recharge for 15 seconds after getting shot, so it needs to have more battery to compensate
+      startingCharge: 60
     - type: BatterySelfRecharger
       autoRecharge: true
-      autoRechargeRate: 3
+      autoRechargeRate: 5
+      autoRechargePause: true
+      autoRechargePauseTime: 15
     - type: RechargeableBlocking
       dischargedRechargeRate: 2
       chargedRechargeRate: 3

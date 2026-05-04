@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: cargoProduct
+  id: Gygaxboardcrate
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: gygax
+  product: CrateGygaxBoards
+  cost: 40000
+  category: cargoproduct-category-name-arsenal
+  group: market
+
+- type: cargoProduct
+  id: DurandBoardCrate
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: durand
+  product: CrateDurandBoards
+  cost: 60000
+  category: cargoproduct-category-name-arsenal
+  group: market

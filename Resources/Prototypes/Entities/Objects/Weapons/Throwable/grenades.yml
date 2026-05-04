@@ -235,6 +235,7 @@
     - Security
     - Antagonists
   - type: Flashbang # Goobstation
+    minProtectionRange: 7 # Can't stun/knockdown people wearing any ear protection
   - type: Tag
     tags:
     - HandGrenade

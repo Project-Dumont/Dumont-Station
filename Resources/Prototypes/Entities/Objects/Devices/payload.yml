@@ -69,7 +69,7 @@
         damage: 25
       behaviors:
       - !type:TriggerBehavior
-  - type: DeleteOnTrigger
+  # Removed DeleteOnTrigger cuz it deleted the payload before it could explode. It cannot explode twice, and other grenades with this system follow this logic.
   - type: ContainerContainer
     containers:
       cluster-payload: !type:Container

@@ -35,7 +35,7 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1.4
+    fireRate: 1.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

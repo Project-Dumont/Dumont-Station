@@ -61,9 +61,6 @@
     ClothingEyesEyepatchHudSecurity: 2
     ClothingBeltSecurityWebbing: 5
     Zipties: 12
-    RiotShield: 2
-    RiotLaserShield: 2
-    RiotBulletShield: 2
     RadioHandheldSecurity: 5
     #Bola: 6 # Goob edit - already have energy bolas
     CombatKnife: 1 # Goob edit
@@ -77,11 +74,11 @@
     PanicButton: 5
     PepperSpray: 3
     SecHypo: 2
-    CartridgeEpinephrine: 2
-    CartridgeSaline: 2
-    CartridgeBicaridine: 2
-    CartridgeDermaline: 2 # Goobstation - end
-    CartridgeToxin: 3 #Gabystation
+    CartridgeEpinephrine: 4
+    CartridgeSaline: 4
+    CartridgeBicaridine: 4
+    CartridgeDermaline: 4 # Goobstation - end
+    CartridgeToxin: 4 #Gabystation
   # security officers need to follow a diet regimen!
   contrabandInventory:
     WeaponMeleeNeedle: 2

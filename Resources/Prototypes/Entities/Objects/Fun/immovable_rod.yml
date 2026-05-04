@@ -30,6 +30,10 @@
   - type: ImmovableRod
     minSpeed: 15 # Goobstation
     maxSpeed: 15 # Goobstation
+    shouldGib: false
+    damage:
+      types:
+        Blunt: 70
   - type: Physics
     bodyType: Dynamic
     linearDamping: 0

@@ -82,7 +82,7 @@
       - state: notice-0
       - map: ["enum.StorageFillLayers.Fill"]
   - type: StorageFillVisualizer
-    maxFillLevels: 6
+    maxFillLevels: 9
     fillBaseName: notice
   - type: Appearance
   - type: Damageable

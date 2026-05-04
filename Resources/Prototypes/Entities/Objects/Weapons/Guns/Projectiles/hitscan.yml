@@ -133,7 +133,7 @@
   id: RedHeavyLaser
   damage:
     types:
-      Heat: 28
+      Heat: 35
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy

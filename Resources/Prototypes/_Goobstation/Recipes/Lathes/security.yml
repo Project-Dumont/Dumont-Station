@@ -718,7 +718,7 @@
     Plasma: 500
     Uranium: 400
     BSCrystal: 100
-    
+
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MilitaryPowerCellBluespaceLMG
@@ -751,6 +751,17 @@
     Glass: 400
     Plasma: 1000
     BSCrystal: 100
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: EnergyMagRifleBluespaceLethal
+  result: EnergyMagRifleBluespaceLethal
+  materials:
+    Steel: 1500
+    Gold: 200
+    Glass: 800
+    Plasma: 1000
+    BSCrystal: 150
 
 - type: latheRecipe
   id: ClothingEyesGlassesSecurityContraDetect
@@ -789,4 +800,3 @@
     Plastic: 250
     Cloth: 200
 
-  

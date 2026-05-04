@@ -743,7 +743,7 @@
   - type: Appearance
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ ClothingBeltStorageBase, BaseSecurityContraband ]
   id: ClothingBeltHolster
   name: shoulder holster
   description: 'A holster to carry a handgun and ammo. WARNING: Badasses only.'
@@ -754,14 +754,36 @@
     sprite: Clothing/Belt/holster.rsi
   - type: Storage
     grid:
-    - 0,0,3,1
+    - 0,0,6,1
   # Goobstation
     whitelist:
+      tags:
+        - CigPack
+        - Taser
+        - SecBeltEquip
+        - Radio
+        - Sidearm
+        - MagazinePistol
+        - MagazineMagnum
+        - CombatKnife
+        - Truncheon
+        - BolaEnergy # Goobstation
+        - EnergySpeedloader # Goobstation
+        - MilitaryPowerCell # Goobstation
+        - EnergyMagAmmo # Goobstation
+        - HandGrenade
       components:
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
         - BallisticAmmoProvider
         - CartridgeAmmo
-      tags:
-        - EnergySpeedloader # Goobstation
+        - DoorRemote
+        - Whistle
+        - BalloonPopper
+        - ScatteringGrenade # goobstation
   - type: ContainerContainer
     containers:
       item: !type:ContainerSlot

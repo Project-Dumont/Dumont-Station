@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Robust.Shared.Serialization;
 
@@ -16,9 +20,15 @@ public sealed class DnaClientSystem : EntitySystem
 
     private void OnInit(Entity<DnaClientComponent> ent, ref ComponentInit args)
     {
+        if (TryComp<DnaServerComponent>(ent, out var localServer))
+        {
+            _dnaServer.RegisterClient((ent, localServer), (ent, ent.Comp));
+            return;
+        }
         foreach (var server in _dnaServer.GetServers())
         {
             _dnaServer.RegisterClient((server, server.Comp), (ent, ent.Comp));
+            return;
         }
     }
 
