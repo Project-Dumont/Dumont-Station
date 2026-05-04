@@ -43,9 +43,9 @@
   description: A loose-fitting and casual variant of the standard security uniform.
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/summer_security.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/summer_security.rsi # Gaby
   - type: Clothing
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/summer_security.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/summer_security.rsi # Gaby
 
 - type: entity
   parent: ClothingUniformBase
