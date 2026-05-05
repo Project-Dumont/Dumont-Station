@@ -53,3 +53,10 @@
   price: 9999
   color: "#ffca00"
   available: false
+
+- type: titleListing
+  id: ExclusiveCazumStaffTitle
+  title: title-exclusive-cazumStaff
+  price: 9999
+  color: "#ffa500"
+  available: false

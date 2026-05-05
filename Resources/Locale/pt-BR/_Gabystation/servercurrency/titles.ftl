@@ -8,7 +8,7 @@ title-exclusive-trial-admin = Trial-Admin
 title-exclusive-admin = Admin
 title-exclusive-headmin = Headmin
 title-exclusive-host = Host
-
+title-exclusive-cazumStaff = Pudinoso
 # Avaibles
 
 title-poor = Pobre
