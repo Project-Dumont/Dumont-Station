@@ -283,7 +283,7 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Healium
-          max: 24
+          max: 12
         scaleByQuantity: true
         ignoreResistances: true
         damage:
