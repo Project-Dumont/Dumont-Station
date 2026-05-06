@@ -233,9 +233,9 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -2
-            Toxin: -5
-            Brute: -2
+            Burn: -8
+            Toxin: -10
+            Brute: -6
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -244,9 +244,9 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -20
+            Burn: -40
             Toxin: -50
-            Brute: -20
+            Brute: -30
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -288,20 +288,22 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -2
-            Toxin: -5
-            Brute: -2
+            Burn: -12
+            Toxin: -15
+            Brute: -9
+            Airloss: -6
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
           reagent: Healium
-          min: 24
+          min: 12
         ignoreResistances: true
         damage:
           groups:
-            Burn: -20
+            Burn: -40
             Toxin: -50
-            Brute: -20
+            Brute: -30
+            Airloss: -20
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
