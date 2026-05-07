@@ -177,7 +177,7 @@
   Após anos de conflito intenso, o Sol Gov conseguiu expulsar os Xenomorfos de seus setores, levando-os à quase erradicação. No entanto, “quase” não é o suficiente. Ainda existem pequenas colônias isoladas espalhadas pelo espaço, muitas vezes ocultas em regiões remotas ou abandonadas.
   O maior risco atual vem de formas larvais, que ocasionalmente conseguem se infiltrar em assentamentos espaciais sem serem detectadas. Uma única larva é suficiente para iniciar uma nova infestação, tornando qualquer sinal de presença Xenomorfa uma emergência de nível máximo.
   
-  Embora não sejam mais uma ameaça dominante como no passado, subestimar os Xenomorfos é um erro crítico. Onde há um, há potencial para muitos — e onde há muitos, há apenas uma certeza: propagação e morte.
+  Embora não sejam mais uma ameaça dominante como no passado, subestimar os Xenomorfos é um erro crítico. Onde há um, há potencial para muitos, e onde há muitos, há apenas uma certeza: propagação e morte.
 
   ### Mago
 
@@ -208,7 +208,11 @@
   Os seguintes antagonistas são de conhecimento restrito, sendo reconhecidos apenas pelo Comando da Estação, Warden e indivíduos autorizados. Traidores, Metamorfos, Hereges, Magos e Ladrões também tem conhecimento caso estejam na rodada:
 
   ### Shadowling
-
+  
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookShadowling" Caption=""/>
+  </Box>
+  
   Shadowlings são um ser superior para os Metamorfos e adorados pelos mesmo, resultante da exposição prolongada a ambientes saturados de energia noosférica. 
   Diferente de seus originais, essas entidades não caçam humanos por necessidade biológica, mas sim para extrair energia, fortalecendo suas próprias capacidades.
   Mantendo traços da biologia dos Metamorfos, Shadowlings possuem a habilidade de manipular diretamente suas vítimas. Eles são capazes de injetar um pequeno tumor no cérebro do alvo, assumindo controle mental total sobre suas ações 
@@ -223,56 +227,86 @@
   Shadowlings são altamente sensíveis à luz, sendo este um de seus principais pontos fracos. Ambientes escuros, corredores isolados, áreas de manutenção e comportamentos estranhos por parte da tripulação podem indicar sua presença. 
   Ainda assim, não há registros confirmados de Shadowlings em assentamentos espaciais, o que faz com que, oficialmente, não sejam considerados uma ameaça imediata nesses locais.
 
-  ## Padre e CC
+  ### Slasher
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadHatSlasherMask" Caption=""/>
+  </Box>
   
-  - Heretico
-  - Blood Cult
-  - Cosmic Cult
-  - Slasher
+   ̶U̶m̶ ̶a̶s̶s̶a̶s̶s̶i̶n̶o̶ ̶d̶o̶s̶ ̶a̶n̶o̶s̶ ̶8̶0̶ ̶g̶u̶i̶a̶d̶o̶ ̶p̶e̶l̶a̶ ̶v̶i̶n̶g̶a̶n̶ç̶a̶,̶ ̶s̶e̶d̶e̶ ̶d̶e̶ ̶s̶a̶n̶g̶u̶e̶ ̶e̶ ̶ó̶d̶i̶o̶.̶
+
+  O Slasher é um indivíduo instável, brutal e extremamente perigoso, responsável por assombrar o imaginário de incontáveis seres ao redor do universo. 
+  Para a maioria das pessoas e tripulantes, ele não passa de uma lenda macabra, uma história criada para provocar medo e impedir curiosos de irem longe demais.
+
+  No entanto, agências de segurança espalhadas pelo espaço sabem muito bem o que significa lidar com essa maldita entidade imortal.
+  O Slasher é único. Não importa quantas vezes seja morto, preso ou contido, sua essência permanece intacta. O morto sempre retorna. O aprisionado sempre desaparece.
+  
+  Relatos sobre sua presença costumam ser acompanhados de falhas elétricas, corredores vazios, desaparecimentos inexplicáveis e sobreviventes traumatizados.
+  No fim, tudo o que resta são as memórias daqueles que ele aterrorizou… enquanto aguarda silenciosamente pelo próximo momento em que o Véu enfraquecer.
+
+  ## O Vaticano e a Nanotrasen
+
+  Os seguintes antagonistas são de conhecimento perdido, sendo conhecidos apenas por membros do Vaticano e parcialmente pelo Alto Escalão da Nanotrasen. Traidores, Hereges, Magos e Ladrões também tem conhecimento caso estejam na rodada:
+
+  ### Cultistas
+
+  <Box>
+    <GuideEntityEmbed Entity="CultPylon" Caption=""/>
+    <GuideEntityEmbed Entity="CosmicMalignRift" Caption=""/>
+  </Box>
+  
+  A prática de criar ou participar de cultos foi banida há muito tempo, ainda antes da humanidade alcançar as estrelas. Após assumir o controle de praticamente toda a estrutura religiosa da Terra, 
+  o Vaticano declarou qualquer forma de culto proibido como heresia absoluta e um dos mais graves crimes religiosos existentes. Entretanto, isso jamais foi suficiente para impedir o surgimento de cultos, e não apeans cultos normais.
+
+  Mesmo em um futuro distante, existem coisas que nunca foram totalmente compreendidas. Há entidades que espreitam nas profundezas do espaço, horrores antigos e indescritíveis que existem além do universo físico conhecido. 
+  Seres cuja simples presença desafia lógica, matéria e sanidade. Essas entidades observam o universo através do vazio e lentamente distorcem as mentes de homens e mulheres, manipulando-os na esperança de um dia retornarem plenamente a este plano de existência.
+
+  Os Cultistas são indivíduos que veneram essas divindades extraplanares. Muitos são levados pela promessa de poder, conhecimento ou salvação, sem compreender verdadeiramente aquilo que servem.
+  O Vaticano é a principal força responsável por manter essas ameaças sob controle, conduzindo investigações, infiltrações e operações secretas para localizar e eliminar qualquer tentativa de formação de cultos ou realização de rituais proibidos. 
+  Mesmo após a Grande Inquisição ter devastado inúmeras células cultistas ao longo da história, o mal jamais foi completamente erradicado.
+
+  Embora a Nanotrasen não conheça toda a verdade, possui experiência suficiente para reconhecer sinais claros de influência anômala, como indivíduos agindo de forma irracional, manifestações de energia e comportamentos incompatíveis. Parte desse conhecimento foi discretamente compartilhado pelo Vaticano ao longo dos anos.
+  
+  Infelizmente para a estação, a Nanotrasen posicionou inadvertidamente a instalação próxima a um ponto frágil e indetectável no espaço-tempo. Um Véu enfraquecido. 
+  Lugares assim funcionam como portas entre planos, permitindo que entidades influenciem em massa qualquer indivíduo azarado o suficiente para se aproximar.
+
+  [color=#ff3333][italic]A emoção mais antiga e forte da humanidade é o medo, e o tipo mais antigo e forte de medo é o medo do desconhecido.[/italic][/color] [color=#4296b3][italic]Uma revelação sem igual. Um fim para o sofrimento cíclico e sifiano.[/italic][/color]
+
+  ### Herege
+
+  <Box>
+    <GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption=""/>
+  </Box>
+
+  Esquecidos. Devorados. Estraçalhados. A humanidade abandonou o conhecimento das forças antigas, acreditando que o tempo havia enterrado todos os horrores do passado. Mas o Véu enfraqueceu… e o Mansus voltou a tocar a realidade.
+  Agora, eles irão sentir o medo novamente.
+
+  Hereges são indivíduos obcecados pela busca da verdade e do poder absoluto. Mesmo o Vaticano, com séculos de experiência e conhecimento oculto, possui extrema dificuldade em interceptar ou obter informações concretas quando um deles surge.
+  Hereges aparecem como sombras e desaparecem da mesma forma. Sua presença está quase sempre ligada a locais onde o Véu se encontra enfraquecido, permitindo contato com forças além da compreensão humana. Através de rituais antigos, símbolos proibidos 
+  e magias esquecidas, eles utilizam o Mansus como fonte de conhecimento e poder.
+
+  Pouco se sabe sobre seus verdadeiros objetivos. Os registros restantes afirmam que Hereges buscam a Ascensão, um estado transcendental onde deixam de ser humanos para se tornarem algo muito maior… algo próximo de um deus.
+  Bem, pelo menos isso é o que os poucos registros dizem, o que eu apenas sei é que;
+  
+  Os D̷̪̪̖̳͓̘̀̈̈́̕ë̴̦̗͕̤̝͖͉̪͌̊̈͌̌̄̇̈͌͘̚͝u̵̧̫̭̭̺̰̘̖̯̼̳͓̲̦͎̅͛̎̈́̔̑̓͝͝s̴͙̪͙͇̣͍̹͔̥̱͊͗͋̏̂̾͛͗͗͜͠ȇ̶͙̂̾͆̀̋͂͋͆̂̑̎͒͐͘š̸̪̲̄̎̿ ̴̨̨̢̱̻̰͓̬̖̥̬̪̮̆̃̓͊̚̚͝A̴͉͐̄͗̀̈́n̸̢̡̙͙͙̫͎̬̤̼͙̗͇̠̿̐̉͛̌̆͛̀̏͂ţ̷̨̺͎̝͚̩̞͔̆̀í̵͔̝͂ḡ̶̛̛̹͙͕͍̫̻̈́̅̇̇̔̄̅̐o̴̥̭̣̾̕͝s̷͉̻̼̗͛̃̅͑̅̈͜ só querem uma coisa: Influência.
+
+  
+  
   - Diabo
   - Slaughter Demon
   - Vampiros
   - Wraith
-
-  ## Alto Escalão da Estação
-
-  Os seguintes antagonistas são de conhecimento apenas do HoS, Capitão, NTR, BS e oficiais da CC
-
-  - Operativos Nucleares
-  - Metamorfos
-  - Shadowling
-
-  ## Alto Escalão da CC
-
-  Os seguintes antagonistas são de conhecimento apenas do alto escalão da CC
-
-  - DeathSquad
-
-  ## Cientista
-
-  Os seguintes antagonistas são de conhecimento apenas dos da SCI, NTR, BS e oficiais da CC
-
-  - IA Defeituosa (Malf IA)
 
   ## Desconhecido
 
   Os seguintes antagonistas são desconhecidos de todos
 
   - Abductor
-  - Zumbis
-
-  # Observações
-
-  ## Zumbis
-
-  Os Zumbis eram uma doença antiga, assim, todos da estação pensam que estavam erradicados, os quimicos apenas tem a receita da cura.
-
-  ## Abductors
-
-  Os Abductors são aliens que se escondem de todos, assim ninguem sabe sobre eles, ou oque eles fazem.
 
   # Condições de Revelação
 
+  Isso ira abordar a condição de revelação para todos os antagonistas e itens em que a tripulação e derivados possui conhecimento parcial ou zero.
+  
   # Itens
 
   ## Implantes implantados
@@ -300,52 +334,64 @@
   - vivenciar uma situação em que absolutamente nenhuma outra explicação é possível
   - descobrir um uplink desbloqueado
 
+  ## Itens Mágicos
+  A condição reveladora para este metashield é qualquer uma das seguintes:
+  - Um Padre afirmar que aquilo é algo perigoso/mágico, etc
+  - Presenciar o item sendo usado
+
   # Antagonistas
 
   ## Hereges
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
-  - Encontrar uma runa
-  - Ver uma Fratura da Realidade
+
+  A condição da presença de um Herege na estação para um Padre é a de:
+  - Encontrar Fraturas na Realidade
+  - Encontrar uma Runa
+  - Testemunhar um membro da tripulação usando qualquer magia
+  - Testemunhar um membro da tripulação usando um item mágico
+  
+  A condição de revelação de um Herege para ao NTR e GSO é qualquer uma das seguintes:
+  - Encontrar uma runa (com uma pessoa sacrificada)
   - Testemunhar um membro da tripulação usando seus poderes
+  - O Padre provar que tem um Herege abordo (caso tenha uma padre)
+
+  ## Culto de Sangue
 
   ## Culto Cósmico
 
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
-  - Testemunhar um membro da tripulação com a máscara reveladora
-  - Ver um glifo
-  - Testemunhar um membro da tripulação absorvendo uma transformação maligna
-  - Testemunhar um membro da tripulação usando uma habilidade específica do culto
+  A condição da presença de um Cultista Cósmico na estação para um Padre é a de:
+  - Encontrar uma Fenda Maligna
+  - Encontrar o Monólito (mesmo que seja sua sombra)
+  - Testemunhar um membro da tripulação usando poderes
   - Testemunhar equipamentos do culto, como espadas e armaduras entrópicas
+  - Ver um glifo
+  
+  A condição de revelação de um Cultista Cósmico para ao NTR e GSO é qualquer uma das seguintes:
+  - Testemunhar um membro da tripulação com a máscara reveladora
+  - Testemunhar um membro da tripulação usando seus poderes
+  - Testemunhar equipamentos do culto, como espadas e armaduras entrópicas
+  - Um Padre provar que um culto abordo.
+
+  ## Slaughter Demon
+
+  ## Morph
+
+  ## Shadowling
+
+  ## Slasher
+
+  ## Wraith
+  
+  ## Vampiros
 
   ## Diabo
 
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
+  A condição da presença de um Diabo na estação para um Padre é a de:
   - Você é um Diabo.
-  - Você é o Capelão, um advogado ou um membro do Comando Central. (Incluindo BS e NTR)
+  - Você é o Padre, ou um Advogado.
   - Você fez um acordo com o Diabo.
   - Você testemunhou alguém fazer um acordo.
+  - Você viu um acordo.
 
-  ## Zumbis
+  ## Abductors
 
-  Condições reveladoras para o Metashield "Zumbi":
-  - Você é um Agente Nuclear
-  - Você é um Agente do Sindicato
-  - Você é um Zumbi
-  - Você viu Zumbis na estação
-
-  ## Infecções (Assim que o vírus zumbi for comprovado)
-
-  Condições reveladoras para o Metashield "Infecções":
-  - Você é um Químico
-  - Você é um Médico Chefe
-  - Zumbis são anunciados como reais e presentes em toda a estação
-
-  ## Malf IA
-
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
-
-  - Você é uma IA Defeituosa.
-  - Você testemunhou a IA agir de forma hostil contra a tripulação.
-  - Você testemunhou a IA sabotando sistemas diversos da estação.
-  - O protocolo DOOMSDAY foi ativado.
-</Document>
+  
