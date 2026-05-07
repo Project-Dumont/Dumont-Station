@@ -80,7 +80,7 @@
   id: CartridgeChesterRifleDisabler
   name: cartridge (.315 rifle disabler)
   parent: BaseCartridgeChesterRifle
-  description: A powerful cartridge used by the Chester lever rifle. The .315 disabler ammunition features a special composite core intended for immobilizing targets.
+  description: A powerful cartridge used by the Chester lever rifle. The .315 disabler ammunition features a special composite core designed for immobilizing targets.
   components:
   - type: HitScanCartridgeAmmo
     hitscan: BulletChesterRifleDisablerTrace
@@ -96,7 +96,7 @@
   id: CartridgeChesterRifleEMP
   name: cartridge (.315 rifle EMP)
   parent: BaseCartridgeChesterRifle
-  description: A powerful cartridge used by the Chester lever rifle. The .315 EMP ammunition replaces the lead core with a miniaturized EMP head, only possible thanks to the Bluespace technology.
+  description: A powerful cartridge used by the Chester lever rifle. The .315 EMP ammunition replaces the lead core of the bullet with a miniaturized EMP head, only possible thanks to the Bluespace technology.
   components:
   - type: HitScanCartridgeAmmo
     hitscan: BulletChesterRifleEMPTrace

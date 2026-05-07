@@ -35,7 +35,7 @@
 - type: entity
   id: MagazineBoxChesterRifle
   parent: BaseMagazineBoxChesterRifle
-  name: ammunition box (.315 rifle)
+  name: ammunition box (.315 rifle jumbo)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeChesterRifle
