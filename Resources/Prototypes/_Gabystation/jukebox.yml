@@ -730,6 +730,6 @@
 
 - type: jukebox
   id: sonsdalagoa
-  name: Arthur Diniz - Sons da Lagoa
+  name: Sons da Lagoa - Arthur Diniz
   path:
-    path: /Audio/_Gabystation/Jukebox/sons_da_lagoa.ogg
+    path: /Audio/_Gabystation/Lobby/sonsdalagoa.ogg
