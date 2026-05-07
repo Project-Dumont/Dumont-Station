@@ -33,8 +33,8 @@
   - type: Appearance
 
 - type: entity
-  parent: BaseMagazineBoxChesterRifle
   id: MagazineBoxChesterRifle
+  parent: BaseMagazineBoxChesterRifle
   name: ammunition box (.315 rifle)
   components:
   - type: BallisticAmmoProvider
@@ -47,8 +47,8 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazineBoxChesterRiflePractice
   parent: BaseMagazineBoxChesterRifle
-  id: MagazineBoxRifleChesterPractice
   name: ammunition box (.315 rifle practice)
   components:
   - type: BallisticAmmoProvider
