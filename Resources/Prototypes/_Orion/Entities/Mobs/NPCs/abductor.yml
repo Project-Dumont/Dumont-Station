@@ -21,6 +21,8 @@
   - type: Loadout
     prototypes:
     - AbductorAgentNpcGear
+  - type: Perishable # Nuh, no.
+    molsPerSecondPerUnitMass: 0
 
 - type: entity
   parent: [ MobAbductor, MobBaseNPC ]
@@ -41,7 +43,9 @@
       task: SimpleHumanoidHostileCompound
   - type: InnateTool
     tools:
-    - id: Wonderprod
+    - id: WonderprodBitrunning
   - type: Loadout
     prototypes:
     - AbductorAgentNpcGear
+  - type: Perishable # Nuh, no.
+    molsPerSecondPerUnitMass: 0

@@ -120,4 +120,16 @@
 #    shoes: ClothingModsuitBootsSecurity
 #    gloves: ClothingModsuitGauntletsSecurity
 #    outerClothing: ClothingModsuitChestplateSecurity
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesBootsCombat
     back: ClothingModsuitSecurityPowerCell
+
+- type: startingGear
+  parent: BitrunnerAvatarGear
+  id: BitrunnerAvatarXenonautenGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCamouflage
+    head: ClothingHeadHelmetXenonauten
+    outerClothing: ClothingOuterArmorXenonautenHeavy
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesBootsCombat

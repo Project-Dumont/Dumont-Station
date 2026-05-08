@@ -13,6 +13,8 @@
   - type: HTN
     rootTask:
       task: SimpleHumanoidHostileCompound
+  - type: Perishable # Nuh, no.
+    molsPerSecondPerUnitMass: 0
 
 - type: entity
   parent: BaseMobHuman
@@ -29,6 +31,8 @@
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
+  - type: Perishable # Nuh, no.
+    molsPerSecondPerUnitMass: 0
 
 - type: entity
   parent: BaseMobHuman
@@ -45,6 +49,8 @@
   - type: HTN
     rootTask:
       task: SimpleHumanoidHostileCompound
+  - type: Perishable # Nuh, no.
+    molsPerSecondPerUnitMass: 0
 
 - type: entity
   parent: BaseMobHuman
@@ -58,9 +64,28 @@
   - type: Loadout
     prototypes:
     - PirateFlintlockGear
+  - type: BasicEntityAmmoProvider
+    proto: CartridgeMagnum
+    capacity: 30
+    count: 30
+  - type: Gun
+    fireRate: 0.30
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.30
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+      params:
+        volume: -100
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
+  - type: Perishable # Nuh, no.
+    molsPerSecondPerUnitMass: 0
 
 - type: entity
   parent: MobPirateEvaCutlass

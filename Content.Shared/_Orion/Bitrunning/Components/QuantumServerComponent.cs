@@ -48,6 +48,9 @@ public sealed partial class QuantumServerComponent : Component
     public int BroadcastWirelessRange = UnboundedBroadcastRange;
 
     [DataField]
+    public ProtoId<EntityTablePrototype> DeliveryPeacefulLootTable = "BitrunningDeliveryPeacefulLoot";
+
+    [DataField]
     public ProtoId<EntityTablePrototype> DeliveryEasyLootTable = "BitrunningDeliveryEasyLoot";
 
     [DataField]

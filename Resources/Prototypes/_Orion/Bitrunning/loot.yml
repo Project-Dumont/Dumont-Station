@@ -1,27 +1,45 @@
+# x1 multiply
 - type: entityTable
-  id: BitrunningDeliveryEasyLoot
+  id: BitrunningDeliveryPeacefulLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
       range: 6, 10
     children:
-    - id: SheetSteel1
+    - id: SteelOre1
       weight: 30
-    - id: SheetGlass1
+    - id: SpaceQuartz1
       weight: 20
     - id: SilverOre1
       weight: 7
     - id: SpaceCash100
       weight: 2
 
+# x2 multiply
+- type: entityTable
+  id: BitrunningDeliveryEasyLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 12, 20
+    children:
+    - id: SteelOre1
+      weight: 30
+    - id: SpaceQuartz1
+      weight: 20
+    - id: SilverOre1
+      weight: 7
+    - id: SpaceCash100
+      weight: 2
+
+# x4 multiply
 - type: entityTable
   id: BitrunningDeliveryMediumLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 10, 15
+      range: 24, 36
     children:
-    - id: SheetSteel1
+    - id: SteelOre1
       weight: 25
-    - id: SheetGlass1
+    - id: SpaceQuartz1
       weight: 18
     - id: SilverOre1
       weight: 10
@@ -40,15 +58,16 @@
     - id: SpaceCash500
       weight: 1
 
+# x6 multiply
 - type: entityTable
   id: BitrunningDeliveryHardLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 14, 20
+      range: 33, 48
     children:
-    - id: SheetSteel1
+    - id: SteelOre1
       weight: 22
-    - id: SheetGlass1
+    - id: SpaceQuartz1
       weight: 16
     - id: SilverOre1
       weight: 10
@@ -65,15 +84,16 @@
     - id: SpaceCash500
       weight: 1
 
+# x8 multiply
 - type: entityTable
   id: BitrunningDeliveryExtremeLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 18, 26
+      range: 42, 60
     children:
-    - id: SheetSteel1
+    - id: SteelOre1
       weight: 20
-    - id: SheetGlass1
+    - id: SpaceQuartz1
       weight: 14
     - id: SilverOre1
       weight: 10

@@ -63,6 +63,7 @@
   bitrunningRewardPoints: 150
   completionLoot:
     PlushieRouny: 1
+  forcedLoadout: BitrunnerAvatarXenonautenGear
   isModular: true
   mapPath: /Maps/_Orion/Bitrun/xenomorph-infestation.yml
   objectiveTypePool:
@@ -82,6 +83,8 @@
   bitrunningRewardPoints: 150
   forcedLoadout: BitrunnerAvatarSecurityOfficerMODGear
   isModular: true
+  completionLoot:
+    ClothingNeckFellForItAward: 1
   mapPath: /Maps/_Orion/Bitrun/meta-central.yml
   objectiveTypePool:
   - DeliveryCacheCrate

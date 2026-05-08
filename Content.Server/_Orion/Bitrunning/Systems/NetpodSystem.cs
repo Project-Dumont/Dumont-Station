@@ -215,6 +215,9 @@ public sealed class NetpodSystem : EntitySystem
         if (args.Container.ID != "netpod-body")
             return;
 
+        if (ent.Comp.EjectingOccupant)
+            return;
+
         if (ent.Comp.Avatar is not { } avatar)
             return;
 
@@ -265,13 +268,23 @@ public sealed class NetpodSystem : EntitySystem
 
     public bool EjectOccupant(EntityUid podUid)
     {
-        if (!TryComp<NetpodContainerComponent>(podUid, out var containerComp))
+        if (!TryComp<NetpodComponent>(podUid, out var podComp) ||
+            !TryComp<NetpodContainerComponent>(podUid, out var containerComp))
             return false;
 
         if (containerComp.BodyContainer.ContainedEntity is not { } contained)
             return false;
 
-        return _container.Remove(contained, containerComp.BodyContainer);
+        podComp.EjectingOccupant = true;
+        try
+        {
+            return _container.Remove(contained, containerComp.BodyContainer);
+        }
+        finally
+        {
+            if (TryComp<NetpodComponent>(podUid, out var current))
+                current.EjectingOccupant = false;
+        }
     }
 
     private EntityUid? ResolveServer(Entity<NetpodComponent> ent)

@@ -100,6 +100,7 @@ bitrunning-ui-domain-info = { $description }
 
 bitrunning-ui-virtual-domains = Virtual Domains
 bitrunning-ui-broadcast = Broadcast
+bitrunning-ui-broadcast-tooltip = Station viewers can watch your avatar broadcast.
 bitrunning-ui-server-points-badge = { $points } §
 bitrunning-ui-domain-reward = Server { $server } / NP { $np }
 bitrunning-ui-scanner-inline = Scanner: { $scanner }

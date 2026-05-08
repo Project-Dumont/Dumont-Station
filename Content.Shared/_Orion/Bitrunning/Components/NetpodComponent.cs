@@ -17,6 +17,11 @@ public sealed partial class NetpodComponent : Component
     [DataField]
     public EntityUid? Avatar;
 
+    /// <summary>
+    /// Internal re-entrancy guard while removing occupant from the pod container.
+    /// </summary>
+    public bool EjectingOccupant;
+
     [DataField, AutoNetworkedField]
     public ProtoId<StartingGearPrototype>? PreferredLoadout = "BitrunnerAvatarShaftMinerGear"; // TODO: Replace with BitrunnerGear
 

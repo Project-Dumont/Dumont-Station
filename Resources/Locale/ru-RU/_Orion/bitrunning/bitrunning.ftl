@@ -100,6 +100,7 @@ bitrunning-ui-domain-info = { $description }
 
 bitrunning-ui-virtual-domains = Виртуальные домены
 bitrunning-ui-broadcast = Вещание
+bitrunning-ui-broadcast-tooltip = Зрители смогут следить за трансляцией ваших аватаров на камерах развлечений.
 bitrunning-ui-server-points-badge = { $points } §
 bitrunning-ui-domain-reward = Сервер { $server } / СО { $np }
 bitrunning-ui-scanner-inline = Сканер: { $scanner }

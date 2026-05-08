@@ -6,7 +6,7 @@
     head: ClothingHeadHelmetHardsuitPirateEVA
     outerClothing: ClothingOuterHardsuitPirateEVA
   inhand:
-  - EnergyCutlass
+  - Cutlass
 
 - type: startingGear
   id: PirateEvaLaserCarbineGear
@@ -27,6 +27,7 @@
     outerClothing: ClothingOuterHardsuitPirateCap
   inhand:
   - WeaponLaserCarbine
+  - EnergyCutlass
 
 - type: startingGear
   id: PirateCutlassGear
@@ -35,7 +36,7 @@
     shoes: ClothingShoesBootsLaceup
     head: ClothingHeadBandRed
   inhand:
-  - EnergyCutlass
+  - Cutlass
 
 - type: startingGear
   id: PirateFlintlockGear
