@@ -1,0 +1,72 @@
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifle
+  name: ntr-executive-bso-chester-ammo-name
+  description: ntr-executive-bso-chester-ammo-desc
+  productEntity: SpawnPodMagazineBoxChesterRifle
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: base
+  cost:
+    NTLoyaltyPoint: 50
+  categories:
+  - NTRstation
+  restockTime: 1800 # Se isso precisar ser comprado em menos de meia-hora, talvez o BSO precise ser demitido.
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 600 # 10 min
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifleUranium
+  name: ntr-executive-bso-chester-ammo-uranium-name
+  description: ntr-executive-bso-chester-ammo-uranium-desc
+  productEntity: SpawnPodMagazineBoxChesterRifleUranium
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: uranium
+  cost:
+    NTLoyaltyPoint: 45
+  categories:
+  - NTRstation
+  restockTime: 1800 
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 600 # 10 min
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifleIncendiary
+  name: ntr-executive-bso-chester-ammo-incendiary-name
+  description: ntr-executive-bso-chester-ammo-incendiary-desc
+  productEntity: SpawnPodMagazineBoxChesterRifleUranium
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: incendiary
+  cost:
+    NTLoyaltyPoint: 35
+  categories:
+  - NTRstation
+  restockTime: 1800 
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 600 # 10 min
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifleDisabler
+  name: ntr-executive-bso-chester-ammo-disabler-name
+  description: ntr-executive-bso-chester-ammo-disabler-desc
+  productEntity: SpawnPodMagazineBoxChesterRifleUranium
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: rubber
+  cost:
+    NTLoyaltyPoint: 20
+  categories:
+  - NTRstation
+  restockTime: 1800 
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 300 # 5 min
