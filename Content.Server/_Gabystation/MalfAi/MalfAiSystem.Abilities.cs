@@ -4,6 +4,7 @@
 
 using System.Linq;
 using Content.Server.Construction.Components;
+using Content.Shared.VendingMachines;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Popups;
 using Content.Server.Radio.Components;
@@ -55,7 +56,8 @@ public sealed partial class MalfAiSystem
 
         var coordinates = _transform.ToMapCoordinates(args.Target);
         var target = _lookup.GetEntitiesInRange(coordinates, 0.25f, LookupFlags.Uncontained)
-            .Where(HasComp<MachineComponent>).FirstOrNull();
+            // Foi feita uma alteração onde agora o overload também funciona em computadores e máquinas de venda, então é necessário verificar os três tipos de componentes.
+            .Where(entity => HasComp<MachineComponent>(entity) || HasComp<ComputerComponent>(entity) || HasComp<VendingMachineComponent>(entity)).FirstOrNull();
 
         if (target is not { } machine)
         {
