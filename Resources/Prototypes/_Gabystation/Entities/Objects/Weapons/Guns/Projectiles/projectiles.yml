@@ -113,7 +113,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 40
+        Piercing: 35
       armorPenetration: 0.15 
 
 - type: entity
@@ -138,7 +138,7 @@
     damage:
       types:
         Radiation: 15
-        Piercing: 20
+        Piercing: 15
 
 - type: entity
   id: BulletRifleChesterPractice
@@ -149,7 +149,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 4
+        Blunt: 3
 
 - type: entity
   id: BulletRifleChesterDisabler
@@ -175,8 +175,8 @@
     - state: rubber
       color: "#009eff"
   - type: EmpOnTrigger
-    range: 0.2
-    energyConsumption: 70
+    range: 0.15
+    energyConsumption: 50
     disableDuration: 1
   - type: Ammo
     muzzleFlash: null
