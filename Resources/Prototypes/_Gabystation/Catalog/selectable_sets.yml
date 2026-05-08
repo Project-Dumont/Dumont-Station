@@ -38,7 +38,8 @@
   - MagazineChesterLeverRifleEmpty
   - MagazineChesterLeverRifleEmpty
   - MagazineBoxChesterRifleEMP
-  - MagazineBoxChesterRifleDisabler
+  - MagazineBoxChesterRifleDisabler6
+  # - MagazineBoxChesterRifle
 
 - type: selectableSet
   id: SyndicateCQCSmokeThermalSet

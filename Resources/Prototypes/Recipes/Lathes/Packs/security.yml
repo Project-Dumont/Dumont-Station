@@ -52,7 +52,6 @@
   - MagazineBoxMagnum
   - MagazineBoxPistol
   - MagazineBoxRifle
-  - MagazineBoxChesterRifle # Dumont 
   # - MagazineLightRifle # Goobstation - remove light rifle
   # - MagazineLightRifleEmpty # Goobstation - remove light rifle
   - MagazinePistol
@@ -129,9 +128,6 @@
   - MagazineBoxPistolUranium
   - MagazineBoxRifleIncendiary
   - MagazineBoxRifleUranium
-  - MagazineBoxChesterRifleIncendiary # Dumont
-  - MagazineBoxChesterRifleUranium # Dumont
-  - MagazineBoxChesterRifleDisabler # Dumont
   # - MagazineLightRifleIncendiary # Goobstation - remove light rifle
   # - MagazineLightRifleUranium # Goobstation - remove light rifle
   - MagazinePistolIncendiary

@@ -121,7 +121,6 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
-  - MagazineBoxChesterRifleIncendiary # Dumont | Chester rework
   # Goobstation R&D Console rework start
   position: 6,3
   technologyPrerequisites:
@@ -164,7 +163,6 @@
   - BoxShellTranquilizer
   - BoxBeanbag
   - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
-  - MagazineBoxChesterRifleDisabler # Dumont | Chester rework
   - WeaponDisabler
   - WeaponMechCombatDisabler # Goobstation
   - BorgModuleSecurityChase # DeltaV - Security Borg
@@ -195,7 +193,6 @@
   - MagazineBoxRifleUranium
   - BoxShotgunUranium
   - MagazineBoxShotgunUraniumHighCaliber # Goobstation
-  - MagazineBoxChesterRifleUranium # Dumont | Chester rework
   # Goobstation R&D Console rework start
   position: 5,3
   technologyPrerequisites:
