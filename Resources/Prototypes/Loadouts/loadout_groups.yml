@@ -267,10 +267,10 @@
   - PlushieTajaran
   - PlushieKiiaraWami
   - PlushieKiiaraWarden
-  - PlushieJanie
   - MP3PlayerWhite
   - PhotoCamera
   # End Gabystation
+  - PlushieJanie # DumontStation
 
 - type: loadoutGroup
   id: Glasses

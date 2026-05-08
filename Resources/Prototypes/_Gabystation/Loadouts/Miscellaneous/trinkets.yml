@@ -38,7 +38,7 @@
     back:
     - PlushieKiiaraWarden
 
-- type: loadout
+- type: loadout # Andromeda
   id: PlushieJanie
   storage:
     back:
