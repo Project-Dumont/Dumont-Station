@@ -9,7 +9,7 @@
   productEntity: SpawnPodMagazineBoxChesterRifle
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
-    state: base
+    state: full-base
   cost:
     NTLoyaltyPoint: 50
   categories:
@@ -28,7 +28,7 @@
   productEntity: SpawnPodMagazineBoxChesterRifleUranium
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
-    state: uranium
+    state: full-uranium
   cost:
     NTLoyaltyPoint: 45
   categories:
@@ -47,7 +47,7 @@
   productEntity: SpawnPodMagazineBoxChesterRifleUranium
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
-    state: incendiary
+    state: full-incendiary
   cost:
     NTLoyaltyPoint: 35
   categories:
@@ -66,7 +66,7 @@
   productEntity: SpawnPodMagazineBoxChesterRifleUranium
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
-    state: rubber
+    state: full-rubber
   cost:
     NTLoyaltyPoint: 20
   categories:
