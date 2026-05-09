@@ -3,6 +3,7 @@
 using Content.Medical.Common.Targeting;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Shared._FarHorizons.Power.Generation.FissionGenerator; // Dumont
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -27,6 +28,7 @@ namespace Content.Server._Trauma.Nuclear.Reactor;
 public sealed partial class ReactorPartSystem : EntitySystem
 {
     [Dependency] private AtmosphereSystem _atmos = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!; // Dumont
     [Dependency] private DamageableSystem _damage = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
@@ -181,6 +183,7 @@ public sealed partial class ReactorPartSystem : EntitySystem
 
             var burncomp = EnsureComp<DamageOnInteractComponent>(uid);
             burncomp.IsDamageActive = temp.Temperature > _hotTemp;
+            _appearance.SetData(uid, ReactorPartVisuals.HeatDistort, burncomp.IsDamageActive); // Dumont
 
             if (burncomp.Damage == default)
                 burncomp.Damage = new();
