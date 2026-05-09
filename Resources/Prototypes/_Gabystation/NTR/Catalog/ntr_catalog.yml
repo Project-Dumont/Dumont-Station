@@ -71,6 +71,6 @@
     NTLoyaltyPoint: 20
   categories:
   - NTRstation
-  restockTime: 1500 
+  restockTime: 1200 
   resetRestockOnPurchase: true
   restockAfterPurchase: 300 # 5 min
