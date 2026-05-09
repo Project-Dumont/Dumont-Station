@@ -68,7 +68,7 @@
   id: CartridgeChesterRiflePractice
   name: cartridge (.315 rifle practice)
   parent: BaseCartridgeChesterRifle
-  description: A powerful cartridge used by the Chester lever rifle. This one is meant for training purpouses only.
+  description: A powerful cartridge used by the Chester lever rifle. This one is meant for training purposes only.
   components:
   - type: HitScanCartridgeAmmo
     hitscan: BulletChesterRiflePracticeTrace

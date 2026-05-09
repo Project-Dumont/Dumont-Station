@@ -29,7 +29,7 @@ ntr-executive-pizza-small-name = Pedir uma pequena festa de pizza
 ntr-executive-pizza-small-desc = Peça um pacote de festa de pizza pequeno da NanoTrasen. Como um bom funcionário, você deveria compartilhar com seus colegas... ou comer tudo sozinho.
 
 ntr-executive-bso-chester-ammo-name = Caixa de munição .315 Jumbo
-ntr-executive-bso-chester-ammo-desc = Uma caixa de munição .315 Jumbo de Chester para o seu Oficial Blueshield não ficar sem munição. É cara, então tenha certeza que ele não está desperdiçando os seus pontos de fidelidade.
+ntr-executive-bso-chester-ammo-desc = Uma caixa de munição .315 Jumbo de Chester para o seu Oficial Blueshield não ficar sem munição. É cara, então tenha certeza que ele não está desperdiçando os seus Pontos de Fidelidade NanoTrasen™.
 
 ntr-executive-bso-chester-ammo-uranium-name = Caixa de munição .315 Urânio
 ntr-executive-bso-chester-ammo-uranium-desc = Uma caixa de munição .315 Urânio de Chester para o seu Oficial Blueshield não ficar sem munição. É cara, pois a NanoTrasen tem uso bem rigoroso das suas fontes de urânio.

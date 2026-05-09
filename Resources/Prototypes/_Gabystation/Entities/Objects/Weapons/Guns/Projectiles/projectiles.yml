@@ -114,7 +114,7 @@
     damage:
       types:
         Piercing: 35
-      armorPenetration: 0.15 
+      armorPenetration: 0.15
 
 - type: entity
   id: BulletChesterRifleIncendiary
