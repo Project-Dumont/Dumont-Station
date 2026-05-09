@@ -40,7 +40,7 @@ cult-veil-ritual-not-enough-at-end = O ritual falhou! Não permaneceram cultista
 cult-veil-ritual-failed = O ritual de Rasgar o Véu falhou! Os cultistas não conseguiram manter o ritual.
 cult-veil-ritual-success = O ritual de Rasgar o Véu está completo! O véu foi enfraquecido e o poder de Nar'Sie cresce!
 cult-veil-ritual-already-completed = O ritual de Rasgar o Véu já foi concluído. O véu não pode ser enfraquecido ainda mais.
-cult-veil-ritual-central-command-announcement = Atenção a todos os funcionários: Anomalias de distorção da realidade foram detectadas. O véu entre as dimensões foi comprometido. Todo o pessoal de segurança deve se armar imediatamente. Evitem, prendam ou parem qualquer tripulante exibindo habilidades extradimensionais. A estação está agora operando sob protocolos de alerta máximo.
+cult-veil-ritual-central-command-announcement = Atenção a todos os funcionários: Anomalias de distorção da realidade foram detectadas. O véu entre as dimensões foi comprometido. Todo o pessoal de segurança deve se armar imediatamente. Evitem, prendam ou parem qualquer tripulante exibindo habilidades extradimensionais. A estação está agora operando sob protocolos do Vaticano, sigam as orientações do Padre mais próximo.
 
 cult-final-ritual-already-in-progress = O ritual final de invocação já está em andamento!
 cult-final-ritual-not-enough-cultists = Não há cultistas suficientes sobre as runas de invocação! {$current} presentes, {$required} necessários.
