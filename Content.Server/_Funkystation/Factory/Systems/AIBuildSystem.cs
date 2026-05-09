@@ -16,6 +16,7 @@ using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.SubFloor;
 using Content.Shared.Tag;
 using Content.Shared._Funkystation.Actions.Events;
+using Content.Shared.Charges.Systems;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -46,6 +47,7 @@ public sealed partial class AIBuildSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedChargesSystem _chargesSystem = default!;
 
     private static readonly ISawmill Sawmill = Logger.GetSawmill("ai.build.system");
 
@@ -116,8 +118,12 @@ public sealed partial class AIBuildSystem : EntitySystem
     /// </summary>
     private void OnBuildDoAfter(EntityUid uid, MalfunctioningAiComponent component, AIBuildDoAfterEvent args)
     {
+        // Dumont Station: If DoAfter is cancelled, its supposed to refund the charge for the Robotics Factory action, so we add it back here.
         if (args.Cancelled)
+        {
+            AddChargeRoboticsFactoryAction(uid);
             return;
+        }
 
         var location = GetCoordinates(args.Location);
 
@@ -173,6 +179,26 @@ public sealed partial class AIBuildSystem : EntitySystem
 
         foreach (var action in toRemove)
             _actions.RemoveAction(action.AsNullable());
+    }
+
+    private void AddChargeRoboticsFactoryAction(EntityUid performer)
+    {
+        // Dumont Station: Add charge to Robotics Factory action (ActionMalfAiRoboticsFactory) from the performer.
+        // We search via ActionsComponent -> BaseActionComponent.BaseEvent type.
+        if (!TryComp<ActionsComponent>(performer, out var actionsComp))
+            return;
+
+        foreach (var action in _actions.GetActions(performer, actionsComp))
+        {
+            var baseEvent = _actions.GetEvent(action.Owner);
+
+            if (baseEvent is not null
+                && baseEvent is MalfAiRoboticsFactoryActionEvent)
+            {
+                _chargesSystem.AddCharges(action.Owner, 1);
+                break;
+            }
+        }
     }
 
     /// <summary>
