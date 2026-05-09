@@ -44,7 +44,7 @@
   id: NTRExecutiveMagazineBoxChesterRifleIncendiary
   name: ntr-executive-bso-chester-ammo-incendiary-name
   description: ntr-executive-bso-chester-ammo-incendiary-desc
-  productEntity: SpawnPodMagazineBoxChesterRifleUranium
+  productEntity: SpawnPodMagazineBoxChesterRifleIncendiary
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
     state: full-incendiary
@@ -63,7 +63,7 @@
   id: NTRExecutiveMagazineBoxChesterRifleDisabler
   name: ntr-executive-bso-chester-ammo-disabler-name
   description: ntr-executive-bso-chester-ammo-disabler-desc
-  productEntity: SpawnPodMagazineBoxChesterRifleUranium
+  productEntity: SpawnPodMagazineBoxChesterRifleDisabler
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
     state: full-rubber
@@ -71,6 +71,6 @@
     NTLoyaltyPoint: 20
   categories:
   - NTRstation
-  restockTime: 1800 
+  restockTime: 1500 
   resetRestockOnPurchase: true
   restockAfterPurchase: 300 # 5 min
