@@ -23,7 +23,7 @@ public sealed class TryCatchBreathSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
-    private const float DoAfterTime = 3f;
+    private const float DoAfterTime = 6f;
 
     public override void Initialize()
     {
@@ -94,26 +94,26 @@ public sealed class TryCatchBreathSystem : EntitySystem
 
         var audio = new SoundPathSpecifier("");
 
-        if (roll < 0.01f)
+        if (roll < 0.03f)
         {
             damage.DamageDict.Add("Blunt", -2);
             damage.DamageDict.Add("Slash", -2);
             damage.DamageDict.Add("Piercing", -2);
-            damage.DamageDict.Add("Asphyxiation", -4);
+            damage.DamageDict.Add("Asphyxiation", -10);
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got BLUNT SUCCESS!");
             _popup.PopupEntity(Loc.GetString("catch-breath-blunt-success"), uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-bluntsuccess.ogg");
         }
-        else if (roll < 0.51f)
+        else if (roll < 0.63f)
         {
-            damage.DamageDict.Add("Asphyxiation", -4);
+            damage.DamageDict.Add("Asphyxiation", -7);
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got SUCCESS!");
             _popup.PopupEntity(Loc.GetString("catch-breath-success"), uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-success.ogg");
         }
-        else if (roll < 0.76f)
+        else if (roll < 0.78f)
         {
-            damage.DamageDict.Add("Asphyxiation", 3);
+            damage.DamageDict.Add("Asphyxiation", 5);
             _adminLogger.Add(LogType.CatchBreath, LogImpact.Low, $"{ev.User} has got FAILURE!");
             _popup.PopupEntity(Loc.GetString("catch-breath-failure"), uid);
             audio = new SoundPathSpecifier("/Audio/_LP/Alerts/Event/CatchBreath/catch-breath-failure.ogg");
