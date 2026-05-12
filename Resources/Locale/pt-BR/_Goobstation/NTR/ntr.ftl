@@ -133,9 +133,9 @@ ntr-executive-id-desc = Placa de computador de alto valor para criar um console 
 ntr-executive-tier-1-name = Estação
 ntr-executive-tier-2-name = Equipes de resposta
 ntr-executive-tier-3-name = Pessoal
-ntr-executive-tier-4-name = Oficial Blueshield
 ntr-executive-tier-4-name = Maligno
 ntr-executive-tier-5-name = Placas de máquina raras
+ntr-executive-tier-6-name = Oficial Blueshield
 
 # insert attempt in console
 ntr-console-insert-deny = Errado!

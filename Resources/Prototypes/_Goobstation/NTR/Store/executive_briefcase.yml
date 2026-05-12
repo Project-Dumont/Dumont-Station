@@ -98,7 +98,7 @@
 # Dumont | BSO ammo
 - type: storeCategory
   id: NTRBSO
-  name: ntr-executive-tier-4-name
+  name: ntr-executive-tier-6-name
   priority: 1
 
 - type: storeCategory
