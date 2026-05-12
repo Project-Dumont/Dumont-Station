@@ -134,14 +134,12 @@
       types:
         Piercing: 10
         Ion: 25
-  components:
-  - type: EmpOnTrigger
+  EmpOnTrigger:
     range: 0.15
     energyConsumption: 50
     disableDuration: 1
-  - type: Ammo
-    muzzleFlash: null
-  - type: PointLight
+  muzzleFlash: null
+  PointLight:
     radius: 1.5
     color: blue
     energy: 0.5
