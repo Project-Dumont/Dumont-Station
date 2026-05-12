@@ -161,7 +161,8 @@
     damage:
       types:
         Blunt: 5
-    staminaDamage: 35
+  - type: StaminaDamageOnCollide
+    damage: 35
 
 - type: entity
   id: BulletChesterEMP
