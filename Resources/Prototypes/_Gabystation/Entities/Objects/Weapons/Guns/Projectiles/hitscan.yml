@@ -126,20 +126,3 @@
     types:
       Blunt: 5
   staminaDamage: 35 # Balancear aqui
-
-- type: hitscan
-  id: BulletChesterRifleEMPTrace
-  parent: BulletTrace
-  damage:
-      types:
-        Piercing: 10
-        Ion: 25
-  EmpOnTrigger:
-    range: 0.15
-    energyConsumption: 50
-    disableDuration: 1
-  muzzleFlash: null
-  PointLight:
-    radius: 1.5
-    color: blue
-    energy: 0.5

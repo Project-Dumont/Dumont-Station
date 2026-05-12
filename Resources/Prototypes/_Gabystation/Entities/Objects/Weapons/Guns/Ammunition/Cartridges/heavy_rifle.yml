@@ -24,6 +24,28 @@
   - type: SpentAmmoVisuals
 
 - type: entity
+  id: BaseCartridgeChesterRifleProjectile
+  name: cartridge (.315 rifle)
+  parent: [ BaseCartridge, BaseSecurityContraband ]
+  suffix: Projectile
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeRifle
+      - CartridgeChesterRifle 
+  - type: CartridgeAmmo
+    proto: BulletChesterRifle
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
   id: CartridgeChesterRifle
   name: cartridge (.315 rifle jumbo)
   parent: BaseCartridgeChesterRifle
@@ -99,11 +121,11 @@
 - type: entity
   id: CartridgeChesterRifleEMP
   name: cartridge (.315 rifle EMP)
-  parent: BaseCartridgeChesterRifle
+  parent: BaseCartridgeChesterRifleProjectile
   description: A powerful cartridge used by the Chester lever rifle. The .315 EMP ammunition replaces the lead core of the bullet with a miniaturized EMP head, only possible thanks to the Bluespace technology.
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRifleEMPTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRifleEMP
   - type: Sprite
     layers:
       - state: base
