@@ -13,7 +13,7 @@
   cost:
     NTLoyaltyPoint: 50
   categories:
-  - NTRstation
+  - NTRBSO
   restockTime: 1800 # Se isso precisar ser comprado em menos de meia-hora, talvez o BSO precise ser demitido.
   resetRestockOnPurchase: true
   restockAfterPurchase: 600 # 10 min
@@ -32,7 +32,7 @@
   cost:
     NTLoyaltyPoint: 45
   categories:
-  - NTRstation
+  - NTRBSO
   restockTime: 1800 
   resetRestockOnPurchase: true
   restockAfterPurchase: 600 # 10 min
@@ -51,7 +51,7 @@
   cost:
     NTLoyaltyPoint: 35
   categories:
-  - NTRstation
+  - NTRBSO
   restockTime: 1800 
   resetRestockOnPurchase: true
   restockAfterPurchase: 600 # 10 min
@@ -70,7 +70,7 @@
   cost:
     NTLoyaltyPoint: 20
   categories:
-  - NTRstation
+  - NTRBSO
   restockTime: 1200 
   resetRestockOnPurchase: true
   restockAfterPurchase: 300 # 5 min

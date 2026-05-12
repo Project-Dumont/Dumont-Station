@@ -61,6 +61,7 @@
     categories:
     - NTRstation
     - NTRpersonal
+    - NTRBSO
     - NTRBoards
     - NTREvil
 
@@ -75,6 +76,7 @@
     categories:
     - NTRstation # for stuff like buying spesos, disablers, etc
     - NTRpersonal # for, well, personal stuff.
+    - NTRBSO # Dumont | BSO ammo
     - NTRBoards # for hard to get boards
 #    - NTREvil # for evil stuff
     currencyWhitelist:
@@ -91,6 +93,12 @@
 - type: storeCategory
   id: NTRpersonal
   name: ntr-executive-tier-3-name
+  priority: 1
+
+# Dumont | BSO ammo
+- type: storeCategory
+  id: NTRBSO
+  name: ntr-executive-tier-4-name
   priority: 1
 
 - type: storeCategory

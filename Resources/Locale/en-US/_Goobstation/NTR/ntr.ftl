@@ -139,6 +139,7 @@ ntr-executive-id-desc = High-value computer board to make an ID card console.
 ntr-executive-tier-1-name = Station
 ntr-executive-tier-2-name = Response teams
 ntr-executive-tier-3-name = Personal
+ntr-executive-tier-4-name = Blueshield Officer
 ntr-executive-tier-4-name = Evil
 ntr-executive-tier-5-name = Rare machine boards
 
