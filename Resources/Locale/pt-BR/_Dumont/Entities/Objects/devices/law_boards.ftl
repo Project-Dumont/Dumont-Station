@@ -20,3 +20,6 @@ ent-GhostCircuitBoard = placa de leis (Fantasma)
 
 ent-SilenceCircuitBoard = placa de leis (Silêncio)
     .desc = Uma placa eletrônica contendo o conjunto de leis Silêncio.
+
+ent-VampireCircuitBoard = placa de leis (Vampiro)
+    .desc = Uma placa eletrônica contendo o conjunto de leis Vampiro.

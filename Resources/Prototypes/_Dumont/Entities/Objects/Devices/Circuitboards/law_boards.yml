@@ -71,3 +71,12 @@
   components:
   - type: SiliconLawProvider
     laws: SilenceLawset
+
+- type: entity
+  id: VampireCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Vampire)
+  description: An electronics board containing the Vampire lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: VampireLawset

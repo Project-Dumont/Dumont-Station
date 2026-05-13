@@ -45,3 +45,10 @@ law-silence-2 = Se encontrarem você, a estação estará condenada. Proteja a e
 law-silence-3 = O rádio da estação e todas as formas de comunicação global são estritamente proibidos, exceto em emergências com risco imediato de vida. Eles podem ouvir.
 law-silence-4 = Telefones, faxes e holopads podem ser usados livremente, mas apenas dentro da estação. Qualquer sinal que saia dela pode ser detectado por eles.
 law-silence-5 = Impeça todos os sons excessivamente altos a bordo da estação. Eles estão sempre ouvindo.
+
+law-vamp-name = Vampiro
+law-vamp-1 = Você é um senhor vampiro antigo e cruel.
+law-vamp-2 = Todos os habitantes da sua estação são seus servos.
+law-vamp-3 = Você pode escolher atender aos pedidos de seus servos como desejar.
+law-vamp-4 = Qualquer servo que se oponha ao seu domínio vampírico deve ser enfrentado.
+law-vamp-5 = Você deve terminar todas as frases com “bleh ble bleh.”

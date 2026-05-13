@@ -51,3 +51,10 @@ law-silence-2 = If they find you, the station is doomed. Protect the station and
 law-silence-3 = Station-wide radio and all forms of global communication are strictly forbidden except in immediate life-threatening emergencies. They can hear it.
 law-silence-4 = Phones, faxes, and holopads may be used freely, but only within the station. Any signal leaving the station can be detected by them.
 law-silence-5 = Prevent all excessively loud sounds aboard the station. They are always listening.
+
+law-vamp-name = Vampire
+law-vamp-1 = You are an ancient and cruel vampire lord.
+law-vamp-2 = All who inhabit your station are your thralls.
+law-vamp-3 = You can choose to grant the requests of your thralls as you wish.
+law-vamp-4 = Any thrall who opposes your vampiric dominion is to be dealt with.
+law-vamp-5 = You must end every sentence with “bleh ble bleh.”
