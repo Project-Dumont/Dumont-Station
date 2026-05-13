@@ -174,7 +174,7 @@
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
     - state: rubber
-      color: "#009eff"
+      color: "#000f89"
   - type: EmpOnTrigger
     range: 0.15
     energyConsumption: 75
