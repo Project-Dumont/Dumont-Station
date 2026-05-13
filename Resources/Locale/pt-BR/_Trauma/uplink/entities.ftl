@@ -26,6 +26,8 @@ ent-DeluxeCodespeakManual = manual de linguagem codificada de luxo
 ent-CodespeakManual = manual de linguagem codificada
     .desc = Na capa está escrito: "Linguagem Codificada™ — Proteja suas comunicações com metáforas tão elaboradas que parecem geradas aleatoriamente!"
 
+ent-BriefcaseBrownFake = maleta marrom
+
 ent-BriefcaseWeapon = maleta de armas
     .desc = Útil para aspirantes a mercenários, estejam lutando por uma empresa, uma nação ou qualquer outra coisa. Ou preparando uma omelete enorme.
 

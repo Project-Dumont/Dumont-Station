@@ -58,9 +58,15 @@ uplink-cigcarton-name = Pacote de cigarros Interdyne Herbals
 
 uplink-cigcarton-desc = Cigarros de elite para agentes de elite. Contêm medicamentos para quando você precisa de mais do que acalmar os nervos. Agora em pacotes maiores!
 
+uplink-storage-briefcase-name = Maleta com fundo falso
+
+uplink-storage-briefcase-desc = Uma maleta com compartimento secreto para itens de tamanho normal ou menores. Use uma chave de fenda para abrir o fundo falso, guarde o item e feche-o com a ferramenta. Qualquer pessoa com as ferramentas certas também pode abri-lo!
+
 uplink-codespeak-manual-name = Manual de linguagem codificada
 
 uplink-codespeak-manual-desc = Ensina a linguagem codificada do Sindicato: metáforas e palavras-chave que transmitem informações complexas, mas parecem conceitos e bebidas aleatórios aos demais. Esta edição de luxo pode ser usada quantas vezes você quiser.
+
+secret-stash-briefcase = maleta
 
 store-category-objective = Objetivos
 
