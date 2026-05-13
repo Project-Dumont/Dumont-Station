@@ -30,7 +30,7 @@
       default:
         length: 1
       telebaton:
-        length: 2 #Dumont edit man, goob really went "my relatively cheap uplink item that costs around as much as a hypopen will insta knockdown, insta desarm, 2 hit stun, have practically no cooldown and be infinite" and NOONE argued against it, apparently. Well i do. Fuck you.
+        length: 2 
   - type: ItemToggle
     soundActivate:
       path: /Audio/_Goobstation/Weapons/Baton/contractorbatonextend.ogg
