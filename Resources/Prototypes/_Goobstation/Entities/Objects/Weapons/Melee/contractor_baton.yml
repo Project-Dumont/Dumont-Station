@@ -24,13 +24,13 @@
   - type: Clothing
     sprite: _Goobstation/Objects/Weapons/Melee/contractor_baton.rsi
   - type: TelescopicBaton
-    alwaysDropItems: true
+    alwaysDropItems: false
   - type: UseDelay
     delays:
       default:
         length: 1
       telebaton:
-        length: 1
+        length: 3 #Dumont edit man, goob really went "my relatively cheap uplink item that costs around as much as a hypopen will insta knockdown, insta desarm, 2 hit stun, have practically no cooldown and be infinite" and NOONE argued against it, apparently. Well i do. Fuck you.
   - type: ItemToggle
     soundActivate:
       path: /Audio/_Goobstation/Weapons/Baton/contractorbatonextend.ogg
@@ -48,6 +48,6 @@
   - type: MeleeWeapon
     bluntStaminaDamageFactor: 0
   - type: StaminaDamageOnHit
-    damage: 85
+    damage: 70
   - type: StunBorgsOnHit
   - type: TogglePreventStaminaDamage

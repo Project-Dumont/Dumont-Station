@@ -337,7 +337,7 @@
     blacklist:
       tags:
       - ContractorUplink #cheaper for contractors
-      - NukeOpsUplink
+    #  - NukeOpsUplink why wouldn't nukies be allowed to get this for hostage ops?
   - !type:ListingLimitedStockCondition
     stock: 1
 
