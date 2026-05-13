@@ -365,7 +365,7 @@
 
 - type: lobbyBackground
   id: metamorfosmeta
-  background: /Textures/_Gabystation/LobbyScreens/Metamorfos.webp
+  background: /Textures/_Gabystation/LobbyScreens/metamorfosart.webp
   name: Metamorfos
   artist: asardonicsailor
 
