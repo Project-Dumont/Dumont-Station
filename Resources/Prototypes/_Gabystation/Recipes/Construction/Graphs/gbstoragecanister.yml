@@ -23,13 +23,13 @@
     edges: 
     - to: start 
       conditions: 
-      - !type:EntityAnchored 
+      - !type: EntityAnchored 
         anchored: false 
       completed: 
-      - !type:SpawnPrototype 
+      - !type: SpawnPrototype 
         prototype: SheetPlasteel 
         amount: 3 
-      - !type:DeleteEntity 
+      - !type: DeleteEntity 
       steps: 
       - tool: Welding 
         doAfter: 5 
