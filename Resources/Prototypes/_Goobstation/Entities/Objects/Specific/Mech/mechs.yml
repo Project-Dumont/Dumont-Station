@@ -83,15 +83,18 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
+    requireKey: true # Dumont edit make ripley require keys
+    keySlotId: key_slot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
-        Blunt: 20
+        Blunt: 25
+        Structural: 30
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 2 #Goobedit
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3 #Goobedit
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: StaticPrice
@@ -101,6 +104,20 @@
     - DoorBumpOpener
     - FootstepSound
     - RipleyMkII
+# Dumont edit make mechs use keys
+  - type: ItemSlots
+    slots:
+      key_slot:
+        name: vehicle-slot-component-slot-name-keys
+        whitelist:
+          requireAll: true
+          tags:
+          - VehicleKey
+          - RipleyKeys
+        insertSound:
+          path: /Audio/Effects/Vehicle/vehiclestartup.ogg
+          params:
+            volume: -3
 
 - type: entity
   id: MechRipley2Battery
@@ -131,7 +148,9 @@
       state: paper
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: FootstepBorg
+      collection: FootstepKilldozer # dumont edit it is a giant mech.
+      params:
+        variation: 0.17
   - type: Mech
     baseState: clarke
     openState: clarke-open
@@ -147,6 +166,7 @@
     damage:
       types:
         Blunt: 26
+        Structural: 20
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 3.5 #Goobedit
@@ -222,8 +242,8 @@
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 2 #Goobedit
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 2.5 #Goobedit
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -282,8 +302,8 @@
         Blunt: 40
         Structural: 220
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 1.5 #Goobedit
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 2.0 #Dumont edit
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: CanMoveInAir
@@ -350,8 +370,8 @@
         Blunt: 40
         Structural: 200
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1
-    baseSprintSpeed: 1 #Goobedit
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 1.5 #Dumont edit
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
@@ -424,7 +444,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 2.2 
+    baseSprintSpeed: 2.2
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
@@ -501,8 +521,8 @@
         Blunt: 30
         Structural: 200
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.2
-    baseSprintSpeed: 2.2 #Goobedit
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 3.0 #Dumont edit
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: CanMoveInAir
@@ -574,8 +594,8 @@
         Blunt: 50
         Structural: 400
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1
-    baseSprintSpeed: 1 #Goobedit
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 1.5 #Goobedit
   - type: Damageable
     damageModifierSet: HeavyArmorSyndi
   - type: CanMoveInAir

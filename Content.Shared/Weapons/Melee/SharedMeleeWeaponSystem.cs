@@ -524,6 +524,77 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         return false;
     }
 
+    // Mono - add user override
+    public bool TryGetWeapon(EntityUid entity, out EntityUid weaponUid, [NotNullWhen(true)] out MeleeWeaponComponent? melee, out EntityUid userOverride)
+    {
+        weaponUid = default;
+        melee = null;
+        userOverride = entity;
+
+        var ev = new GetMeleeWeaponEvent();
+        RaiseLocalEvent(entity, ev);
+        if (ev.Handled)
+        {
+            if (TryComp(ev.Weapon, out melee))
+            {
+                weaponUid = ev.Weapon.Value;
+                if (ev.User.HasValue)
+                    userOverride = ev.User.Value;
+                return true;
+            }
+
+            return false;
+        }
+
+        // Use inhands entity if we got one.
+        if (_hands.TryGetActiveItem(entity, out var held))
+        {
+            // Make sure the entity is a weapon AND it doesn't need
+            // to be equipped to be used (E.g boxing gloves).
+            if (TryComp(held, out melee) &&
+                !melee.MustBeEquippedToUse)
+            {
+                // Lavaland Change start
+                if (HasComp<MeleeWeaponRelayComponent>(held.Value))
+                {
+                    var relay = new GetRelayMeleeWeaponEvent();
+                    RaiseLocalEvent(held.Value, ref relay);
+                    if (relay.Handled && TryComp(relay.Found, out MeleeWeaponComponent? relayMelee))
+                    {
+                        weaponUid = relay.Found.Value;
+                        melee = relayMelee;
+                        return true;
+                    }
+                }
+                // Lavaland Change end
+
+                weaponUid = held.Value;
+                return true;
+            }
+
+            if (!HasComp<VirtualItemComponent>(held))
+                return false;
+        }
+
+        // Use hands clothing if applicable.
+        if (_inventory.TryGetSlotEntity(entity, "gloves", out var gloves) &&
+            TryComp<MeleeWeaponComponent>(gloves, out var glovesMelee))
+        {
+            weaponUid = gloves.Value;
+            melee = glovesMelee;
+            return true;
+        }
+
+        // Use our own melee
+        if (TryComp(entity, out melee))
+        {
+            weaponUid = entity;
+            return true;
+        }
+
+        return false;
+    }
+
     public void AttemptLightAttackMiss(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityCoordinates coordinates)
     {
         AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(null, GetNetEntity(weaponUid), GetNetCoordinates(coordinates)), null);
@@ -1255,7 +1326,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (localPos.Length() > visualLength)
             localPos = localPos.Normalized() * visualLength;
 
-        DoLunge(user, weapon, angle, localPos, animation, spriteRotation, flipAnimation);
+        DoLunge(user, user, weapon, angle, localPos, animation, spriteRotation, flipAnimation);
     }
 
     private void PhysicalShove(EntityUid user, EntityUid target)
@@ -1269,7 +1340,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         _throwing.TryThrow(target, pushVector, force * _shoveSpeed, animated: animated);
     }
 
-    public abstract void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true);
+    public abstract void DoLunge(EntityUid user, EntityUid playerUid, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true);
 
     /// <summary>
     /// Used to update the MeleeWeapon component on item toggle.

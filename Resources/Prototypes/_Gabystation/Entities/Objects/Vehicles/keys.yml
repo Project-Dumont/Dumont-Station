@@ -1,0 +1,14 @@
+
+- type: entity
+  parent: BaseKey
+  id: VehicleKeyRipley
+  name: ripley keys
+  description: Keys for a ripley. Time to haul!
+  components:
+  - type: Sprite
+    sprite: Objects/Vehicles/atv.rsi
+    state: keys
+  - type: Tag
+    tags:
+    - VehicleKey
+    - RipleyKeys

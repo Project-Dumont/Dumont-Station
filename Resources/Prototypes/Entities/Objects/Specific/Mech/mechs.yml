@@ -236,6 +236,8 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
+    requireKey: true
+    keySlotId: key_slot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -244,8 +246,21 @@
         Blunt: 25 # Goobstation - Make ripley punch hard
         Structural: 30 # Goobstation - Make ripley punch hard
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.25
-    baseSprintSpeed: 2.25 #Goobedit
+    baseWalkSpeed: 3.2
+    baseSprintSpeed: 3.2
+  - type: ItemSlots
+    slots:
+      key_slot:
+        name: vehicle-slot-component-slot-name-keys
+        whitelist:
+          requireAll: true
+          tags:
+          - VehicleKey
+          - RipleyKeys
+        insertSound:
+          path: /Audio/Effects/Vehicle/vehiclestartup.ogg
+          params:
+            volume: -3
 
 - type: entity
   id: MechRipleyBattery

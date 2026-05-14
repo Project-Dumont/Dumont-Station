@@ -73,6 +73,26 @@ public sealed partial class MechComponent : Component
     public readonly string BatterySlotId = "mech-battery-slot";
 
     /// <summary>
+    /// Whether this mech requires a key in a designated slot to be usable.
+    /// Settable from prototypes/YAML.
+    /// </summary>
+    [DataField("requireKey")]
+    public bool RequireKey = false;
+
+    /// <summary>
+    /// The slot id to check for a key when <see cref="RequireKey"/> is true.
+    /// Matches the `ItemSlots` id used in prototypes (usually "key_slot").
+    /// </summary>
+    [DataField("keySlotId")]
+    public string KeySlotId = "key_slot";
+
+    /// <summary>
+    /// Prevent removal of the key while a pilot is inside.
+    /// </summary>
+    [DataField("preventEjectOfKey")]
+    public bool PreventEjectOfKey = true;
+
+    /// <summary>
     /// A multiplier used to calculate how much of the damage done to a mech
     /// is transfered to the pilot
     /// </summary>

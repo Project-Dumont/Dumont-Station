@@ -22,5 +22,5 @@
     attackRate: 3.5
     damage:
       types:
-        Structural: 35
+        Structural: 50 # Dumont edit it is a mech chainsaw. how is it worse than a mining drill
         Piercing: 15

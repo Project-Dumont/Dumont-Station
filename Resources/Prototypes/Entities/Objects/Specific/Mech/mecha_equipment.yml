@@ -42,6 +42,7 @@
       - MechUnGrabbable
       components:
       - Mech
+    grabDelay: 1.5
   - type: UIFragment
     ui: !type:MechGrabberUi
   - type: ContainerContainer
@@ -63,7 +64,7 @@
       components:
       - Mech
     maxContents: 4
-    grabDelay: 3
+    grabDelay: 1.5
     grabEnergyDelta: -20
   - type: UIFragment
     ui: !type:MechGrabberUi

@@ -58,6 +58,7 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Configuration;
 using Content.Shared.Implants.Components;
 using Content.Shared.Silicons.StationAi;
@@ -98,6 +99,7 @@ public abstract partial class SharedMechSystem : EntitySystem
     {
         SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);
         SubscribeLocalEvent<MechComponent, MechEjectPilotEvent>(OnEjectPilotEvent);
+        SubscribeLocalEvent<MechComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEject);
         SubscribeLocalEvent<MechComponent, UserActivateInWorldEvent>(RelayInteractionEvent);
         SubscribeLocalEvent<MechComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MechComponent, DestructionEventArgs>(OnDestruction);
@@ -114,6 +116,14 @@ public abstract partial class SharedMechSystem : EntitySystem
         Subs.CVar(_config, GoobCVars.MechGunOutsideMech, value => _canUseMechGunOutside = value, true); // Goobstation
 
         InitializeRelay();
+    }
+
+    private void OnItemSlotEject(EntityUid uid, MechComponent component, ref ItemSlotEjectAttemptEvent args)
+    {
+        if (!component.PreventEjectOfKey || component.PilotSlot.ContainedEntity == null || args.Slot.ID != component.KeySlotId || args.User == component.PilotSlot.ContainedEntity)
+            return;
+
+        args.Cancelled = true;
     }
 
     // GoobStation: Fixes scram implants or teleports locking the pilot out of being able to move.
@@ -451,6 +461,15 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (!CanInsert(uid, toInsert.Value, component))
             return false;
 
+        if (component.RequireKey)
+        {
+            if (!_container.TryGetContainer(uid, component.KeySlotId, out var keyContainer) || keyContainer.ContainedEntities.Count == 0)
+            {
+                _popup.PopupEntity(Loc.GetString("mech-requires-key", ("item", uid)), toInsert.Value);
+                return false;
+            }
+        }
+
         SetupUser(uid, toInsert.Value);
         _container.Insert(toInsert.Value, component.PilotSlot);
         UpdateAppearance(uid, component);
@@ -548,6 +567,7 @@ public abstract partial class SharedMechSystem : EntitySystem
 
         var weapon = mech.CurrentSelectedEquipment ?? component.Mech;
         args.Weapon = weapon;
+        args.User = component.Mech; // Mono
         args.Handled = true;
     }
 

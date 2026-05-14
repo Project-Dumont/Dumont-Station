@@ -119,7 +119,19 @@ public sealed partial class MechSystem : SharedMechSystem
     private void OnMechCanMoveEvent(EntityUid uid, MechComponent component, UpdateCanMoveEvent args)
     {
         if (component.Broken || component.Integrity <= 0 || component.Energy <= 0)
+        {
             args.Cancel();
+            return;
+        }
+
+        if (component.RequireKey)
+        {
+            if (!_container.TryGetContainer(uid, component.KeySlotId, out var keyContainer) || keyContainer.ContainedEntities.Count == 0)
+            {
+                args.Cancel();
+                return;
+            }
+        }
     }
 
     private void OnInteractUsing(EntityUid uid, MechComponent component, InteractUsingEvent args)

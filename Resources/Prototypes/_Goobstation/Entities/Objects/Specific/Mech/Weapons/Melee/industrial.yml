@@ -18,12 +18,14 @@
     - Pickaxe
     - IndustrialMech
   - type: MeleeWeapon
-    canWideSwing: false
-    autoAttack: true
-    angle: 0
+    canWideSwing: true
+    autoAttack: true #Dumont edit make mechs good
+    angle: 45
     wideAnimationRotation: -90
+    animationRotation: 90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
+    heavyStaminaCost: 0
     attackRate: 3.5
     damage:
       groups:
@@ -45,10 +47,11 @@
     - Pickaxe
     - IndustrialMech
   - type: MeleeWeapon
-    canWideSwing: false
+    canWideSwing: true #Dumont edit make mechs good
     autoAttack: true
-    angle: 0
+    angle: 45
     wideAnimationRotation: -90
+    animationRotation: 90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
     attackRate: 4
@@ -57,3 +60,4 @@
         Brute: 18
       types:
         Structural: 60 # ~3 seconds for solid wall / 9 seconds for reinforced wall
+    heavyStaminaCost: 0
