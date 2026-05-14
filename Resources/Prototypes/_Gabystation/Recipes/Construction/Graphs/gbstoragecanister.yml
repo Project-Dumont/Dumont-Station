@@ -11,8 +11,8 @@
     - to: storagecanister 
       steps: 
       - material: Plasteel 
-        ammount: 5 
-        doafter: 3 
+        amount: 5 
+        doAfter: 3 
       - tool: Anchoring 
         doAfter: 2 
       - tool: Welding 
@@ -28,13 +28,10 @@
       completed: 
       - !type: SpawnPrototype 
         prototype: SheetPlasteel 
-        amount: 3 
-      - !type: DeleteEntity 
+        amount: 5 
+      - !type:DeleteEntity 
       steps: 
       - tool: Welding 
         doAfter: 5 
       - tool: Prying 
         doAfter: 2.5
-
-# 2º tetativa de enviar isso na PR, vamos lá
-# Dizem que o numero 3 é o numero da sorte. Espero que estejam certo

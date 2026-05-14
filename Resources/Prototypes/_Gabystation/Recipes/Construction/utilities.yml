@@ -5,19 +5,16 @@
 - type: construction 
   name: storage canister 
   id: GBStorageCanister 
-  description: Um butijao que pode conter qualquer tipo de gas. Pode ser ligado há um conector usando uma chave inglesa. 
+  description: A hefty canister for storing medium amounts of atmospheric gasses. 
   graph: GBStorageCanister
   startNode: start 
   targetNode: storagecanister 
   category: construction-category-utilities 
   icon: 
-    sprite: Stuctures/Storage/canister.rsi 
+    sprite: Structures/Storage/canister.rsi 
     state: yellow 
   objectType: Structure 
   placementMode: snapgridCenter 
   canBuildInImpassable: false 
   conditions: 
     - !type: TileNotBlocked
-
-# 2º tetativa de enviar isso na PR, vamos lá
-# Dizem que o numero 3 é o numero da sorte. Espero que estejam certo
