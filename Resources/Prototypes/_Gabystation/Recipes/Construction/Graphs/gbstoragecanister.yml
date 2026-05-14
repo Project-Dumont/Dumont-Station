@@ -12,12 +12,18 @@
       steps: 
       - material: Plasteel 
         amount: 5 
-        doAfter: 3 
-      - tool: Anchoring 
-        doAfter: 2 
-      - tool: Welding 
-        doAfter: 3 
-
+        doAfter: 3  
+        
+  - node: unfinishedcanister
+    entity: AirCanister #entidade temporaria até resolver o cilindro inacabado
+    edges:
+      - to: storagecanister
+        steps:
+        - tool: Anchoring 
+          doAfter: 2 
+        - tool: Welding 
+          doAfter: 3
+  
   - node: storagecanister 
     entity: StorageCanister 
     edges: 
@@ -32,6 +38,6 @@
       - !type:DeleteEntity 
       steps: 
       - tool: Welding 
-        doAfter: 5 
+        doAfter: 6 
       - tool: Prying 
-        doAfter: 2.5
+        doAfter: 3

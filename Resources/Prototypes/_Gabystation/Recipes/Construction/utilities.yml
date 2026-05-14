@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: construction 
-  name: storage canister 
+  name: Cilindro de Armazenamento 
   id: GBStorageCanister 
   description: A hefty canister for storing medium amounts of atmospheric gasses. 
   graph: GBStorageCanister
@@ -18,4 +18,3 @@
   canBuildInImpassable: false 
   conditions: 
     - !type: TileNotBlocked
-
