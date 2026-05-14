@@ -17,7 +17,7 @@
   placementMode: snapgridCenter 
   canBuildInImpassable: false 
   conditions: 
-    - !type:TileNotBlocked
+    - !type: TileNotBlocked
 
 # 2º tetativa de enviar isso na PR, vamos lá
 # Dizem que o numero 3 é o numero da sorte. Espero que estejam certo
