@@ -124,3 +124,13 @@
     Telecrystal: 15 # 3 TC on tg
   categories:
     - UplinkDeception
+
+- type: listing
+  id: UplinkAccessConfiguratorSyndicate
+  name: uplink-syndicate-access-config-name
+  description: uplink-syndicate-access-config-desc
+  productEntity: AccessConfiguratorSyndicate
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkDisruption

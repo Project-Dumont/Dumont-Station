@@ -66,6 +66,10 @@ uplink-codespeak-manual-name = Manual de linguagem codificada
 
 uplink-codespeak-manual-desc = Ensina a linguagem codificada do Sindicato: metáforas e palavras-chave que transmitem informações complexas, mas parecem conceitos e bebidas aleatórios aos demais. Esta edição de luxo pode ser usada quantas vezes você quiser.
 
+uplink-syndicate-access-config-name = Configurador Cybersun
+
+uplink-syndicate-access-config-desc = Um configurador de acessos da Cybersun compatível com identificações que não sejam da Nanotrasen. Agora com troca rápida de cartões!
+
 secret-stash-briefcase = maleta
 
 store-category-objective = Objetivos

@@ -36,6 +36,9 @@ ent-VoiceMaskImplanter = implantador de máscara de identidade
 ent-VoiceMaskImplant = implante de máscara de identidade
     .desc = Este implante permite mudar sua identidade à vontade.
 
+ent-AccessConfiguratorSyndicate = configurador de acesso do Sindicato
+    .desc = Um configurador da Cybersun compatível com cartões que não sejam da Nanotrasen. Agora com troca rápida de acesso!
+
 ent-HijackBeacon = sinalizador de sequestro
     .desc = Um dispositivo que contorna o firewall das estações comerciais automatizadas da Nanotrasen.
 

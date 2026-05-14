@@ -63,6 +63,10 @@ uplink-codespeak-manual-name = Codespeak Manual
 
 uplink-codespeak-manual-desc = Syndicate agents can be trained to use a series of codewords to convey complex information, which sounds like random concepts and drinks to anyone listening. This manual teaches you this Codespeak. This is the deluxe edition, which has unlimited uses.
 
+uplink-syndicate-access-config-name = Cybersun Configurator
+
+uplink-syndicate-access-config-desc = A Cybersun-branded access configurator, compatible with all non-NanoTrasen IDs. Now with quick-swap functionality!
+
 secret-stash-briefcase = briefcase
 
 store-category-objective = Objective
