@@ -610,7 +610,7 @@ public sealed class RCDSystem : EntitySystem
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
-            if (component.IsRpd & component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Dumontstation Edit - Really bad implementation for ProtoRCD
+            if (component.IsRpd && component.AvailablePrototypes.Contains("DeconstructStrong") == false) // Dumontstation Edit - Really bad implementation for ProtoRCD
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
