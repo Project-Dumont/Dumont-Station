@@ -94,7 +94,7 @@
         Structural: 30
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
-    baseSprintSpeed: 3 #Goobedit
+    baseSprintSpeed: 3 #Dumont edit
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: StaticPrice
