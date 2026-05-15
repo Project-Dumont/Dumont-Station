@@ -4,7 +4,7 @@
 
 - type: construction 
   name: Cilindro de Armazenamento 
-  id: GBStorageCanister 
+  id: GBStorageCanister
   description: A hefty canister for storing medium amounts of atmospheric gasses. 
   graph: GBStorageCanister
   startNode: start 
@@ -14,7 +14,7 @@
     sprite: Structures/Storage/canister.rsi 
     state: yellow 
   objectType: Structure 
-  placementMode: snapgridCenter 
+  placementMode: SnapgridCenter 
   canBuildInImpassable: false 
   conditions: 
-    - !type: TileNotBlocked
+    - !type:TileNotBlocked
