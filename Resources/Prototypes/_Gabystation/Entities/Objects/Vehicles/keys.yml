@@ -10,8 +10,8 @@
   description: Keys for a ripley. Time to haul!
   components:
   - type: Sprite
-    sprite: _Gabystation\Objects\Vehicles\keys.rsi
-    state: keys-ripley
+    sprite: Objects/Vehicles/atv.rsi
+    state: keys
   - type: Tag
     tags:
     - VehicleKey
