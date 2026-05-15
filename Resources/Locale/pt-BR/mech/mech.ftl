@@ -9,7 +9,7 @@ mech-equipment-select-none-popup = Nada selecionado
 
 mech-ui-open-verb = Painel de controle
 
-mech-menu-title = Painel de controle do mech
+mech-menu-title = Painel de controle do mecha
 
 mech-integrity-display = Integridade: {$amount}%
 mech-energy-display = Energia: {$amount}%
