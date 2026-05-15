@@ -596,7 +596,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
-    baseSprintSpeed: 1.5 #Goobedit
+    baseSprintSpeed: 1.5 #Dumont edit
   - type: Damageable
     damageModifierSet: HeavyArmorSyndi
   - type: CanMoveInAir
