@@ -112,7 +112,7 @@
   - type: MeleeWeapon
     canWideSwing: true #Dumont edit make mechs good
     angle: 0
-    wideAnimationRotation: -90
+    wideAnimationRotation: 90
     soundHit:
       collection: PowerFistHit
     attackRate: 0.5

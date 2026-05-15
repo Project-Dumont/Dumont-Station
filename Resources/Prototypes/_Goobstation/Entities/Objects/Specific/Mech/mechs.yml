@@ -109,6 +109,7 @@
     slots:
       key_slot:
         name: vehicle-slot-component-slot-name-keys
+        startingItem: VehicleKeyRipley
         whitelist:
           requireAll: true
           tags:

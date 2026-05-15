@@ -13,3 +13,5 @@ ent-VehicleKeySkeleton = chaves mestras do veículo
 ent-VehicleKeySyndicateSegway = distribui chaves de segway
      .desc = Modelado após o design icônico EMAG.
 
+ent-VehicleKeyRipley = chaves do ripley
+     .desc = Chaves para um mech Ripley APLU. Não se esqueca de tirar as chaves para ninguem roubar ele!
