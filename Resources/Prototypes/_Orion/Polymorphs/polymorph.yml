@@ -1,7 +1,7 @@
 - type: polymorph
   id: BitrunningAvatarDragonPolymorph
   configuration:
-    entity: MobDragonDungeon
+    entity: MobBitrunningAvatarDragon
     forced: false
     inventory: None
     transferName: true
@@ -13,7 +13,7 @@
 - type: polymorph
   id: BitrunningAvatarBearPolymorph
   configuration:
-    entity: MobBearSpace
+    entity: MobBitrunningAvatarBear
     forced: false
     inventory: None
     transferName: true

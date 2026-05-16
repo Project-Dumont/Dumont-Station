@@ -41,7 +41,8 @@
   name: bitrunning-domain-cosmic-vestige-name
   description: bitrunning-domain-cosmic-vestige-desc
   difficulty: Peaceful
-  serverRewardPoints: 6
+  rewardLootDifficulty: Medium
+  serverRewardPoints: 0
   cost: 20
   bitrunningRewardPoints: 600 # Because cost overprice etc...
   completionLoot:

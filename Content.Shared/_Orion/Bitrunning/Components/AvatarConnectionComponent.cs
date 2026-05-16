@@ -28,4 +28,7 @@ public sealed partial class AvatarConnectionComponent : Component
 
     [DataField]
     public EntityUid? DisconnectActionEntity;
+
+    [DataField]
+    public TimeSpan DisconnectBlockedUntil = TimeSpan.Zero;
 }

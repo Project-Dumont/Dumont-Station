@@ -11,4 +11,11 @@
     sprite: _Orion/Structures/Storage/Crates/bitrun_secure.rsi
   - type: AccessReader
     access: [["Salvage"]] # No Bitrunning :(
-  - type: BitrunningObjectiveCargo # For bitrunning objectives
+
+- type: entity
+  parent: CrateBitrunSecure
+  id: CrateBitrunSecureReward
+  name: cache crate
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BitrunningDespawnOnOpen

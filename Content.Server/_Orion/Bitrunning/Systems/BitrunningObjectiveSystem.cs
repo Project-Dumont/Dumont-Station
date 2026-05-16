@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Goobstation.Common.Effects;
 using Content.Goobstation.Shared.Fishing.Events;
 using Content.Shared._Orion.Bitrunning;
@@ -7,6 +8,9 @@ using Content.Shared.Mobs;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
+using Content.Shared.Storage;
+using Content.Shared.Storage.Components;
+using Robust.Server.Containers;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -25,6 +29,7 @@ public sealed class BitrunningObjectiveSystem : EntitySystem
     [Dependency] private readonly HungerSystem _hunger = default!;
     [Dependency] private readonly SparksSystem _sparks = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ContainerSystem _container = default!;
 
     public override void Initialize()
     {
@@ -34,6 +39,7 @@ public sealed class BitrunningObjectiveSystem : EntitySystem
         SubscribeLocalEvent<BitrunningDomainEnemyObjectiveComponent, ComponentStartup>(OnEnemyObjectiveStartup);
         SubscribeLocalEvent<BitrunningDomainEnemyObjectiveComponent, MobStateChangedEvent>(OnEnemyStateChanged);
         SubscribeLocalEvent<BitrunningDomainEnemyObjectiveComponent, EntityTerminatingEvent>(OnEnemyTerminating);
+        SubscribeLocalEvent<BitrunningDespawnOnOpenComponent, StorageAfterOpenEvent>(OnRewardCacheOpened);
         SubscribeLocalEvent<AvatarConnectionComponent, FishCaughtEvent>(OnFishCaught);
     }
 
@@ -77,7 +83,7 @@ public sealed class BitrunningObjectiveSystem : EntitySystem
         if (!_server.TryGetServerByDomainMap(mapUid, out _, out _))
             return;
 
-        _server.DisconnectAvatar(args.OtherEntity, false);
+        _server.TryRequestDisconnectAvatar(args.OtherEntity, args.OtherEntity, true);
     }
 
     private void OnInteract(Entity<BitrunningObjectivePointComponent> ent, ref InteractHandEvent args)
@@ -198,6 +204,28 @@ public sealed class BitrunningObjectiveSystem : EntitySystem
             return;
 
         _server.AddObjectiveProgress(serverUid, 1);
+    }
+
+    private void OnRewardCacheOpened(Entity<BitrunningDespawnOnOpenComponent> ent, ref StorageAfterOpenEvent args)
+    {
+        var dropCoordinates = Transform(ent).Coordinates;
+        EjectEntitiesFromStorage(ent, dropCoordinates);
+        _sparks.DoSparks(dropCoordinates);
+        QueueDel(ent);
+    }
+
+    private void EjectEntitiesFromStorage(EntityUid cargoUid, EntityCoordinates dropCoordinates)
+    {
+        if (TryComp<StorageComponent>(cargoUid, out var storage))
+            _container.EmptyContainer(storage.Container, destination: dropCoordinates);
+
+        if (!TryComp<EntityStorageComponent>(cargoUid, out var entityStorage))
+            return;
+
+        foreach (var contained in entityStorage.Contents.ContainedEntities.ToList())
+        {
+            _container.Remove(contained, entityStorage.Contents, destination: dropCoordinates, reparent: true);
+        }
     }
 
     private bool TryResolveDomainMapUid(EntityUid primaryUid, EntityUid? fallbackUid, out EntityUid mapUid, out EntityCoordinates coordinates)

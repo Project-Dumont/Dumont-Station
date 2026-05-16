@@ -126,3 +126,5 @@ bitrunning-ui-cooldown-active = Cooldown in progress
 bitrunning-ui-clients-header-count = Connected Clients ({ $count })
 bitrunning-ui-domain-cost = § { $cost }
 bitrunning-ui-domain-cost-tooltip = Required server points to start this domain.
+
+bitrunning-avatar-disconnect-blocked = Neural link is unstable after recent damage. Disconnect available in { $seconds }s.

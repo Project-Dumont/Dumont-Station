@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: QuantumServer
   name: quantum server
   description: High density simulation hardware for virtual domains.
@@ -65,7 +65,7 @@
     channel: BitrunningHub
 
 - type: entity
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: Netpod
   name: netpod
   description: Neural link pod for bitrunning avatar sessions.
@@ -149,7 +149,7 @@
     - BitrunnerAvatarShaftMinerGear
 
 - type: entity
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: Byteforge
   name: byteforge
   description: A quantum processor that recompiles delivered cache crates into physical rewards.

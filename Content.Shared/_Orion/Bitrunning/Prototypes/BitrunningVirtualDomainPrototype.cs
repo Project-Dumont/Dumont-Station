@@ -27,6 +27,12 @@ public sealed class BitrunningVirtualDomainPrototype : IPrototype
     public BitrunningDifficulty Difficulty { get; private set; } = BitrunningDifficulty.Easy;
 
     /// <summary>
+    /// Optional loot tier override used when selecting delivery reward loot tables.
+    /// </summary>
+    [DataField]
+    public BitrunningDifficulty? RewardLootDifficulty { get; private set; }
+
+    /// <summary>
     /// Server/domain reward for successful completion.
     /// </summary>
     [DataField]
