@@ -838,7 +838,7 @@
       head-vox:
       - state: equipped-HEAD-vox
       head-feroxi:
-      - state: equipped-HEAD-sealed-feroxi
+      - state: equipped-HEAD-feroxi
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/captain.rsi
     layers:
