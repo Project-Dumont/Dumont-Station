@@ -212,6 +212,9 @@
           - 0 # N2O
           - 0 # Frezon
         temperature: 293.15
+    - type: Construction
+      graph: GBStorageCanister
+      node: storagecanister
     - type: Destructible
       thresholds:
       - trigger:
