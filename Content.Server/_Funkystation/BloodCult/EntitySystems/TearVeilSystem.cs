@@ -408,7 +408,7 @@ namespace Content.Server.BloodCult.EntitySystems
 			// Central Command announcement briefing the crew
 			_chat.DispatchGlobalAnnouncement(
 				Loc.GetString("cult-veil-ritual-central-command-announcement"),
-				"O Vaticano",
+				"Central de Comando",
 				playSound: false,
 				colorOverride: Color.FromHex("#cae8e8")
 			);
