@@ -35,8 +35,8 @@
   </Box>
   
   Ladrões são especialistas na arte do roubo, nem mesmo o Sindicato consegue igualar seu nível de habilidade.
-  Mestres em explosivos, camuflagem, uso de químicos, infiltração e praticamente qualquer técnica relacionada ao furto
-  um ladrão experiente domina todos os aspectos necessários para agir sem ser detectado.
+  Mestres em explosivos, camuflagem, uso de químicos, infiltração e praticamente qualquer técnica relacionada ao furto.
+  Um ladrão experiente domina todos os aspectos necessários para agir sem ser detectado.
 
   O desaparecimento repentino de itens ou de objetos pode indicar sua presença, especialmente em casos envolvendo PDAs. 
   Sua atuação beira o sobrenatural: é praticamente impossível identificar ou sequer perceber quando um ladrão o está roubando.
@@ -72,7 +72,7 @@
     <GuideEntityEmbed Entity="MobDragon" Caption=""/>
   </Box>
   
-  Dragões Espaciais são criaturas altamente perigosas e relativamente comuns nas regiões do espaço conhecido, sendo considerados ameaças de nível elevado para todas as organizações e assetamentos espaciais.
+  Dragões Espaciais são criaturas altamente perigosas e relativamente comuns nas regiões do espaço conhecido, sendo considerados ameaças de nível elevado para todas as organizações e assentamentos espaciais.
   Dotados da capacidade de voar livremente no vácuo, esses predadores colossais são conhecidos por expelir chamas extremamente destrutivas, capazes de comprometer estruturas. 
   Além disso, possuem uma ligação direta com as Carpas Espaciais, sendo capazes de criá-las e comandá-las. Um Dragão Espacial é considerado o ápice da hierarquia dessas criaturas, o verdadeiro alfa das Carpas.
 
