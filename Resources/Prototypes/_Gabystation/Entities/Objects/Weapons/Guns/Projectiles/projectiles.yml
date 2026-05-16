@@ -176,7 +176,7 @@
     - state: rubber
       color: "#000f89"
   - type: EmpOnTrigger
-    range: 0.15
+    range: 1
     energyConsumption: 75
     disableDuration: 1
   - type: Ammo
