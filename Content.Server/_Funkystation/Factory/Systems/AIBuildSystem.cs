@@ -17,6 +17,7 @@ using Content.Shared.SubFloor;
 using Content.Shared.Tag;
 using Content.Shared._Funkystation.Actions.Events;
 using Content.Shared.Charges.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -27,13 +28,15 @@ public sealed partial class AIBuildRequestEvent : EntityEventArgs
 {
     public EntityUid Requester { get; }
     public EntityCoordinates Target { get; }
-    public string Prototype { get; }
+    public EntProtoId Prototype { get; }
+    public EntProtoId? RefundAction { get; }
 
-    public AIBuildRequestEvent(EntityUid requester, EntityCoordinates target, string prototype)
+    public AIBuildRequestEvent(EntityUid requester, EntityCoordinates target, EntProtoId prototype, EntProtoId? refundAction)
     {
         Requester = requester;
         Target = target;
         Prototype = prototype;
+        RefundAction = refundAction;
     }
 }
 
@@ -83,7 +86,7 @@ public sealed partial class AIBuildSystem : EntitySystem
         }
 
         // Start building process with DoAfter
-        var doAfterEvent = new AIBuildDoAfterEvent(GetNetCoordinates(target), prototype);
+        var doAfterEvent = new AIBuildDoAfterEvent(GetNetCoordinates(target), prototype, args.RefundAction);
         var delay = TimeSpan.FromSeconds(3.0f); // 3 second build time
 
         // Try to get the AI's visible eye entity (RemoteEntity) for DoAfter display
@@ -119,6 +122,9 @@ public sealed partial class AIBuildSystem : EntitySystem
     private void OnBuildDoAfter(EntityUid uid, MalfunctioningAiComponent component, AIBuildDoAfterEvent args)
     {
         // Dumont Station: If DoAfter is cancelled, its supposed to refund the charge for the Robotics Factory action, so we add it back here.
+
+        // agora temos `args.RefundAction` aqui.
+
         if (args.Cancelled)
         {
             AddChargeRoboticsFactoryAction(uid);

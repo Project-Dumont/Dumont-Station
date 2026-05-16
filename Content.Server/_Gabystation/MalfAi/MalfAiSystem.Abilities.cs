@@ -18,6 +18,7 @@ using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Utility;
+using Content.Server._Funkystation.Factory.Systems;
 
 namespace Content.Server._Gabystation.MalfAi;
 
