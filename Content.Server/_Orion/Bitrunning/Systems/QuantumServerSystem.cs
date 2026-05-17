@@ -907,7 +907,7 @@ public sealed class QuantumServerSystem : EntitySystem
 
     private void SpawnRewardCache(QuantumServerComponent server, EntityCoordinates coordinates)
     {
-        var cache = Spawn(server.RewardCachePrototype, coordinates);
+        var cache = Spawn(server.CompletionRewardCachePrototype, coordinates);
         _byteforge.TryFillRewardCacheWithLoot(cache, server);
         _sparks.DoSparks(coordinates);
     }

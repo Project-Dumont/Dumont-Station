@@ -32,6 +32,15 @@ public sealed partial class QuantumServerComponent : Component
     [DataField, AutoNetworkedField]
     public EntProtoId AvatarPrototype = "MobHuman";
 
+    /// <summary>
+    /// Crate that spawns in domain as reward when players reach goal.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId CompletionRewardCachePrototype = "BitrunningObjectiveCacheStructure";
+
+    /// <summary>
+    /// Crate that spawns in byteforge delivery.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public EntProtoId RewardCachePrototype = "CrateBitrunSecureReward";
 
