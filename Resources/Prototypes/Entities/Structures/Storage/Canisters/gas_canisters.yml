@@ -214,7 +214,7 @@
         temperature: 293.15
     - type: Construction
       graph: GBStorageCanister
-      node: storagecanister
+      node: storagecanister #isso faz com que o cilindo seja craftavel
     - type: Destructible
       thresholds:
       - trigger:
