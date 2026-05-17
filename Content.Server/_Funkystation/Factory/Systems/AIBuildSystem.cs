@@ -154,6 +154,7 @@ public sealed partial class AIBuildSystem : EntitySystem
                 owner.Controller = uid; // uid is the AI entity that received the DoAfter completion
             }
 
+            // a próxima função sempre da erro linha 189 do MapChunk.cs. o erro acontece pq ele tá tentando por o `spawned` no centro do tile sendo que ele já está. ainda não entendi pq ele já está.
             _xform.AnchorEntity(spawned);
 
             // On success, remove the Robotics Factory action from the Malf AI that built it.
