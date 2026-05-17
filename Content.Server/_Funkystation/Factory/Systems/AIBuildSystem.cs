@@ -125,9 +125,9 @@ public sealed partial class AIBuildSystem : EntitySystem
 
         // agora temos `args.RefundAction` aqui.
 
-        if (args.Cancelled)
+        if (args.Cancelled && args.RefundAction is { } actionId)
         {
-            AddChargeRoboticsFactoryAction(uid);
+            _chargesSystem.RefundAction(uid, actionId);
             return;
         }
 
@@ -185,26 +185,6 @@ public sealed partial class AIBuildSystem : EntitySystem
 
         foreach (var action in toRemove)
             _actions.RemoveAction(action.AsNullable());
-    }
-
-    private void AddChargeRoboticsFactoryAction(EntityUid performer)
-    {
-        // Dumont Station: Add charge to Robotics Factory action (ActionMalfAiRoboticsFactory) from the performer.
-        // We search via ActionsComponent -> BaseActionComponent.BaseEvent type.
-        if (!TryComp<ActionsComponent>(performer, out var actionsComp))
-            return;
-
-        foreach (var action in _actions.GetActions(performer, actionsComp))
-        {
-            var baseEvent = _actions.GetEvent(action.Owner);
-
-            if (baseEvent is not null
-                && baseEvent is MalfAiRoboticsFactoryActionEvent)
-            {
-                _chargesSystem.AddCharges(action.Owner, 1);
-                break;
-            }
-        }
     }
 
     /// <summary>
