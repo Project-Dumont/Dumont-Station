@@ -54,6 +54,10 @@ uplink-cddisknumber-name = CD da estação de números
 
 uplink-cddisknumber-desc = Chame uma ameaça para distrair a estação... se conseguir tocar o disco inteiro.
 
+uplink-ammo-20rdmagazine-name = Carregador reto de 20 tiros (.30 de rifle)
+
+uplink-ammo-20rdmagazine-desc = Um carregador reto de coluna dupla com 20 cartuchos convencionais de calibre .30 para rifle.
+
 uplink-cigcarton-name = Pacote de cigarros Interdyne Herbals
 
 uplink-cigcarton-desc = Cigarros de elite para agentes de elite. Contêm medicamentos para quando você precisa de mais do que acalmar os nervos. Agora em pacotes maiores!
@@ -69,6 +73,10 @@ uplink-codespeak-manual-desc = Ensina a linguagem codificada do Sindicato: metá
 uplink-syndicate-access-config-name = Configurador Cybersun
 
 uplink-syndicate-access-config-desc = Um configurador de acessos da Cybersun compatível com identificações que não sejam da Nanotrasen. Agora com troca rápida de cartões!
+
+uplink-rifle-FAL-name = Saive Automatique
+
+uplink-rifle-FAL-description = Um antigo rifle de batalha semiautomático de Terra, apelidado de "braço direito do mundo livre" por seu uso na Guerra Fria. Utiliza carregadores retos de calibre .30 de rifle.
 
 secret-stash-briefcase = maleta
 

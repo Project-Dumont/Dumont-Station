@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+ent-BriefcaseWeaponSaiveFilled = maleta de Saive Automatique
+
 ent-ClothingBeltKnifeRig = bandoleira de facas de arremesso
     .desc = Uma bandoleira especializada em carregar facas de arremesso.
 
@@ -41,6 +43,12 @@ ent-AccessConfiguratorSyndicate = configurador de acesso do Sindicato
 
 ent-HijackBeacon = sinalizador de sequestro
     .desc = Um dispositivo que contorna o firewall das estações comerciais automatizadas da Nanotrasen.
+
+ent-MagazineLightRifle20rd = carregador reto (.30 de fuzil)
+    .desc = Um carregador reto de fileira dupla com 20 cartuchos cinéticos de uso geral para fuzis de combate.
+
+ent-WeaponRifleFAL = Saive Automatique
+    .desc = Um fuzil do século XX da Velha Terra. Adotado por vários países capitalistas, ficou conhecido como "o braço direito do mundo livre".
 
 ent-HijackTradeStationObjective = Sequestre a Estação Comercial Automatizada.
     .desc = Seu uplink foi autorizado a fornecer um sinalizador de sequestro. Instale-o na Estação Comercial Automatizada e defenda-o até que o sequestro seja concluído.

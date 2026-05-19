@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: BriefcaseWeapon
+  id: BriefcaseWeaponSaiveFilled
+  name: secure saive automatique case
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: WeaponRifleFAL
+            - id: MagazineLightRifle20rd

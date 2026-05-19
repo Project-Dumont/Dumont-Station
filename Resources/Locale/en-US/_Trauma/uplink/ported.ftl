@@ -51,6 +51,10 @@ uplink-hijack-beacon-name = Hijack Beacon
 
 uplink-hijack-beacon-desc = A syndicate-brand hijack beacon designed to get around the firewalls of Nanotrasen-brand Automated Trade Stations. They take 600 seconds to work and Trade Stations will announce they are being hacked, so prepare accordingly.
 
+uplink-ammo-20rdmagazine-name = Straight Magazine (.30 rifle)
+
+uplink-ammo-20rdmagazine-desc = A straight 20-round double stack magazine, intended to hold 20 rounds of general-purpose kinetic .30 rifle ammunition.
+
 uplink-cigcarton-name = Interdyne Herbals Carton
 
 uplink-cigcarton-desc = Elite cigarettes for elite agents. Infused with medicine for when you need to do more than calm your nerves. Now sold in cartons!
@@ -66,6 +70,10 @@ uplink-codespeak-manual-desc = Syndicate agents can be trained to use a series o
 uplink-syndicate-access-config-name = Cybersun Configurator
 
 uplink-syndicate-access-config-desc = A Cybersun-branded access configurator, compatible with all non-NanoTrasen IDs. Now with quick-swap functionality!
+
+uplink-rifle-FAL-name = Saive Automatique
+
+uplink-rifle-FAL-description = The Saive Automatique is an old semi-automatic battle rifle that originates from Terra, it was nicknamed "The right arm of the free world" due to its use in cold war conflicts, it feeds from straight .30 rifle magazines.
 
 secret-stash-briefcase = briefcase
 
