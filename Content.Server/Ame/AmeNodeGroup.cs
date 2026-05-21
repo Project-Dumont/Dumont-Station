@@ -182,8 +182,9 @@ public sealed class AmeNodeGroup : BaseNodeGroup
     /// </summary>
     public float CalculatePower(int fuel, int cores)
     {
-        // Balanced around a single core AME with injection level 2 producing 120KW.
-        // Two core with four injection is 150kW. Two core with two injection is 90kW.
+        // Dumont edit - Powerful AME
+        // Balanced around a single core AME with injection level 2 producing 361,2KW.
+        // Two core with four injection is 421,4kW. Two core with two injection is 301kW.
 
         // Increasing core count creates diminishing returns, increasing injection amount increases
         // Unlike the previous solution, increasing fuel and cores always leads to an increase in power, even if by very small amounts.
