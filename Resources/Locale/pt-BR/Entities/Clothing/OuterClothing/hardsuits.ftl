@@ -35,10 +35,13 @@ ent-ClothingOuterHardsuitSalvage = hardsuit de exploração
     .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Tem uma camada extra de placas pensadas no encontro de vidas selvagens.
 
 ent-ClothingOuterHardsuitSecurity = hardsuit de segurança
-    .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Tem uma camada extra de blindagem
+    .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Tem uma camada extra de blindagem.
 
 ent-ClothingOuterHardsuitSecurityRed = hardsuit do segurança chefe
-    .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Tem uma camada extra de blindagem
+    .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Tem uma camada extra de blindagem.
+
+ent-ClothingOuterVoidsuitSecurity = hardsuit de segurança
+    .desc = Uma hardsuit com um suporte de placa embutido para proteção moderada enquanto se mantendo móvel.
 
 ent-ClothingOuterHardsuitSyndie = hardsuit do Sindicato
     .desc = Uma hardsuit extremamente blindada e ágil planejada para operações espaciais.

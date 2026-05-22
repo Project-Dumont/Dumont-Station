@@ -73,3 +73,6 @@ ent-ClothingBackpackMerc = mochila de mercenário
 ent-ClothingBackpackCluwne = jisos jon juzinton
     .desc = Juma jochila juzinástica! Jeita jor Jonk! Jo.
     .suffix = irremovível
+
+
+

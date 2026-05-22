@@ -43,5 +43,63 @@ ent-CrateRCDAmmo = Caixa de munição RCD
 ent-CrateRCD = Caixa de RCD
     .desc = Uma caixa contendo um Dispositivo de Construção Rápida.
 
-ent-CrateParticleDecelerators = Caixa de Desaceleradores de Partículas
+ent-CrateRPD = Caixa de RPD
+    .desc = Uma caixa contendo um Dispositivo de Canos Rápidos.
+
+ent-CrateParticleDecelerators = caixa de Desaceleradores de Partículas
     .desc = Uma caixa contendo 3 desaceleradores de partículas.
+
+ent-CrateAirGrenade = caixa de granadas de ar
+    .desc = Uma caixa contendo 3 granadas de ar.
+
+ent-CrateEngineeringAMEJar = caixa de combustível antimatéria
+    .desc = Uma caixa contendo 3 jarros de combustível antimatéria, para alimentar um reator de antimatéria.
+
+ent-CrateEngineeringSingularityContainment = caixa de gerador de campo de contenção
+    .desc = Uma caixa contendo um gerador de campo de contenção, útil para manter a singularidade ou tesla no lugar.
+
+ent-CrateLockBoxEngineering = caixa de venda de engenharia
+    .desc = Uma caixa de venda. O dinheiro recebido de sua venda será distribuido de volta ao departamento de engenharia. Apenas lembre-se: A logística sempre recebe sua parte.
+
+ent-CrateEngineeringParticleAccelerator = caixa de circuitos de acelerador de partículas
+    .desc = Uma caixa contendo todos os circuitos necessários para montar um acelerador de partículas para ligar um gerador de singularidade gravitacional ou tesla. Complexo para montar.
+
+
+ent-CrateEngineeringSingularityCollector = caixa de coletor de radiação
+    .desc = Uma caixa contendo um flatpack de um coletor de radiação. Plasma vem incluído.
+
+ent-CrateEngineeringSingularityGenerator = caixa de gerador de singularidade
+    .desc = Uma caixa contendo a origem de uma das coisas mais perigosas e radioativas do universo. Pode ser ativado usando um acelerador de partículas.
+
+ent-CrateEngineeringTeslaGenerator = caixa de gerador de tesla
+    .desc = Uma caixa contendo a origem de uma das coisas mais perigosas e energizadas do universo. Pode ser ativado usando um acelerador de partículas.
+
+ent-CrateEngineeringTeslaCoil = caixa de circuitos de bobina de raios
+    .desc = Uma caixa contendo um flatpack de uma bobina de raios. Coleta relâmpagos e transforma eles em eletricidade para ser coletada por cabos de alta tensão.
+
+ent-CrateEngineeringTeslaGroundingRod = caixa de haste de aterramento de relâmpago
+    .desc = Uma caixa contendo um haste de aterramento de relâmpago. Atrai choques elétricos e nunca quebra, mas não coleta energia deles.
+
+ent-CrateEngineeringTEG = caixa de gerador termoelétrico
+    .desc = Uma caixa contendo um gerador termoelétrico para gerar energia usando a diferença de temperatura entre dois gases e fazer atmosianos felizes.
+
+ent-MachinePowerTransmissionLaserCrate = caixa de laser de transmissão de energia
+    .desc = Uma caixa contendo um flatpack de um laser de transmissão de energia; Uma máquina extremamente valiosa utilizada pelo departamento de engenharia para transmitir a uma instalação de processamento de energia da NanoTrasen por uma quantidade enorme de dinheiro.
+
+ent-CrateEngineeringFoamGrenade = caixa de granadas de espuma de metal
+    .desc = Uma caixa contendo 5 granadas de espuma de metal para encher buracos na estação.
+
+ent-CrateEngineeringSpaceHeater = caixa de climatizador espacial
+    .desc = Uma caixa contendo um flatpack de um climatizador espacial usado para controle de temperatura de um ambiente fechado.
+
+ent-CrateEngineeringSolar = caixa de montagem de solares
+    .desc = Uma caixa contendo vidro e flatpacks para construir até 10 geradores solares.
+
+ent-CrateVendingMachineRestockEngineeringFilled = caixa de restoque engivend
+    .desc = Uma caixa contendo um restoque para uma máquina de vendas de engenharia ou ferramentas.
+
+ent-CrateEngineeringSingularityEmitter = caixa de emissor
+    .desc = Uma caixa contendo um emissor para energizar um gerador de campo de contenção.
+
+ent-CrateEngineeringFirefighterBackpackTank = caixa de mochila de bombeiro
+    .desc = Uma caixa contendo uma mochila de água para apagar incêndios e remover gases nocivos da atmosfera com facilidade.

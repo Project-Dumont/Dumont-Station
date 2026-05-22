@@ -94,8 +94,8 @@
 - type: entity
   id: Airlock
   parent: BaseStructure
-  name: airlock
-  description: It opens, it closes, and maybe crushes you.
+  name: porta
+  description: Ela abre, fecha, talvez ela te esmague. #Dumont edit a outra opção é pra manualmente traduzir toda. porta. do. jogo.
   components:
   - type: StationAiWhitelist
   - type: MeleeSound
@@ -307,7 +307,7 @@
 - type: entity
   id: AirlockGlass
   parent: Airlock
-  name: glass airlock
+  name: porta com janela #Dumont edit
   components:
   - type: MeleeSound
     soundGroups:

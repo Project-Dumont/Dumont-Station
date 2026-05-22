@@ -8,8 +8,8 @@
 - type: entity
   id: AirlockSealed
   parent: Airlock
-  name: sealed airlock
-  description: It opens, it closes, and maybe crushes you. Now it stops little creatures too!
+  name: porta selada
+  description: Ela abre, ela fecha, talvez ela te esmague. Não tem espaço suficiente para criaturas pequenas passar embaixo.
   suffix: DO NOT MAP
   components:
   - type: AnimationPlayer
@@ -41,8 +41,8 @@
 - type: entity
   id: AirlockSealedGlass
   parent: AirlockGlass
-  name: sealed glass airlock
-  description: It opens, it closes, and maybe crushes you. Now it stops little creatures too!
+  name: porta com janela selada
+  description: Ela abre, ela fecha, talvez ela te esmague. Não tem espaço suficiente para criaturas pequenas passar embaixo.
   suffix: DO NOT MAP
   components:
   - type: AnimationPlayer

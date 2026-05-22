@@ -119,8 +119,8 @@
   parent: AirlockRCDResistant
   id: AirlockShuttle
   suffix: Docking
-  name: external airlock
-  description: Necessary for connecting two space craft together.
+  name: porta externa de nave
+  description: Necessária para atracar duas naves.
   components:
   - type: Docking
   - type: DockingSignalControl
@@ -182,9 +182,7 @@
 - type: entity
   id: AirlockGlassShuttle
   parent: AirlockShuttle
-  name: external airlock
   suffix: Glass, Docking
-  description: Necessary for connecting two space craft together.
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
@@ -201,9 +199,9 @@
 - type: entity
   id: AirlockShuttleAssembly
   parent: AirlockAssembly
-  name: external airlock assembly
+  name: porta externa de nave inacabada
   suffix: Docking
-  description: An incomplete structure necessary for connecting two space craft together.
+  description: Uma porta usada para atracar naves, mas está incompleta.
   components:
   - type: Transform
     anchored: true
@@ -220,9 +218,7 @@
 - type: entity
   id: AirlockGlassShuttleSyndicate
   parent: AirlockGlassShuttle
-  name: external airlock
   suffix: Glass, Docking
-  description: Necessary for connecting two space craft together.
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
@@ -231,8 +227,6 @@
   parent: AirlockShuttle
   id: AirlockShuttleSyndicate
   suffix: Docking
-  name: external airlock
-  description: Necessary for connecting two space craft together.
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
