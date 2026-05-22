@@ -1,3 +1,18 @@
+ent-BaseXenoArtifactItem = artefato
+ .desc = Um artefato estranho de uma época desconhecida. Parece interessante.
+
+ent-ComplexXenoArtifactItem = artefato
+ .desc = Um artefato estranho de uma época desconhecida. Parece interessante. Cabe na sua mão estranhamente perfeitamente.
+
+ent-ComplexXenoArtifact = artefato
+ .desc = Um artefato estranho de uma época desconhecida. Parece interessante.
+
+ent-ArtifactFragment = fragmento de artefato
+ .desc = Um pedaço de um artefato quebrado. Você poderia consertar ele se você tivesse mais desses.
+
+ent-ArtifactFragment1 = fragmento de artefato
+ .desc = Um pedaço de um artefato quebrado. Você poderia consertar ele se você tivesse mais desses.
+
 ent-BaseXenoArtifact = alien artifact
     .desc = A strange alien device.
 
