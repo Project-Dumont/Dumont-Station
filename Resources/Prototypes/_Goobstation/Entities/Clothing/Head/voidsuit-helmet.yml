@@ -158,7 +158,7 @@
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
   - type: PointLight
-    color: red
+    color: "#ff5050" # Starlight
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
