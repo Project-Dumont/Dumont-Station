@@ -43,3 +43,12 @@ ent-TableCounterMetal = balcão
     .desc = Looks like a good place to put a drink down.
     .suffix = DEBUG
 
+ent-TableBrass = mesa de latão
+ .desc = Uma mesa brilhante e resistente a corrosão.
+
+ent-TableWeb = mesa de teia
+ .desc = Lisa e surpreendentemente durável.
+
+ent-TableCard = mesa de papelão
+ .desc = Folhas de papelão encima de uma armação de metal.
+

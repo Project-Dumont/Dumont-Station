@@ -39,3 +39,9 @@ ent-ClothingOuterArmorBasic = colete de armadura
 
 ent-ClothingOuterArmorBasicSlim = colete de armadura
     .desc = Um colete padrão de tipo I que oferece proteção moderada contra todos os tipos de dano enquanto se mantendo leve.
+
+ent-ClothingOuterArmorBone = armadura de osso
+    .desc = É surpreendentemente confortável.
+
+ent-CardArmour = armadura de papelão
+    .desc = Um peitoral medieval feito de papelão.

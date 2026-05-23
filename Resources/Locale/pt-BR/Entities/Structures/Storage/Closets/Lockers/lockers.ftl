@@ -1,72 +1,171 @@
-ent-LockerBooze = booze storage
-    .desc = This is where the bartender keeps the booze.
+ent-LockerBooze = armazenamento de bebidas
+    .desc = É aqui que o bartender guarda as cervejas.
 
-ent-LockerQuarterMaster = intendente logístico's locker
-    .desc = This is where the bartender keeps the booze.
+ent-LockerBoozeFilled = armazenamento de bebidas
+    .desc = É aqui que o bartender guarda as cervejas.
 
-ent-LockerSalvageSpecialist = salvage specialist's equipment
-    .desc = Nevermind the pickaxe.
+ent-LockerQuarterMaster = armário do intendente logístico
+    .desc = O armário pessoal do intendente logístico, com folhas de ouro e as cores da logística.
 
-ent-LockerCaptain = captain's locker
-    .desc = Nevermind the pickaxe.
+ent-LockerQuarterMasterFilled = armário do intendente logístico
+    .desc = O armário pessoal do intendente logístico, com folhas de ouro e as cores da logística.
 
-ent-LockerHeadOfPersonnel = head of personnel's locker
-    .desc = Nevermind the pickaxe.
+ent-LockerSalvageSpecialist = equipamento de especialista de exploração
+    .desc = Pra os coletadores de lixo com permissão a carregar armas.
 
-ent-LockerChiefEngineer = chief engineer's locker
-    .desc = Nevermind the pickaxe.
+ent-LockerSalvageSpecialistFilled = equipamento de especialista de exploração
+    .desc = Pra os coletadores de lixo com permissão a carregar armas.
 
-ent-LockerElectricalSupplies = electrical supplies locker
-    .desc = Nevermind the pickaxe.
+ent-LockerCaptain = armário do capitão
+    .desc = Agentes do sindicato iriam se matar para pegar as coisas dentro desse armário.
 
-ent-LockerWeldingSupplies = welding supplies locker
-    .desc = Nevermind the pickaxe.
+ent-LockerCaptainFilled = armário do capitão
+    .desc = Agentes do sindicato iriam se matar para pegar as coisas dentro desse armário.
 
-ent-LockerAtmospherics = atmospheric technician's locker
-    .desc = Nevermind the pickaxe.
+ent-LockerHeadOfPersonnel = armário do chefe dos funcionários
+    .desc = Tudo que precisa para tudo relacionado com burocracia!
 
-ent-LockerEngineer = engineer's locker
-    .desc = Nevermind the pickaxe.
+ent-LockerHeadOfPersonnelFilled = armário do chefe dos funcionários
+    .desc = Tudo que precisa para tudo relacionado com burocracia!
 
-ent-LockerFreezer = freezer
-    .desc = Nevermind the pickaxe.
+ent-LockerChiefEngineer = armário do engenheiro chefe
+    .desc = Cheio de ferramentas de última geração. E um lança foguetes.
 
-ent-LockerBotanist = botanist's locker
-    .desc = Nevermind the pickaxe.
+ent-LockerChiefEngineerFilled = armário do engenheiro chefe
+    .desc = Cheio de ferramentas de última geração. E um lança foguetes.
 
-ent-LockerMedicine = medicine locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerChiefEngineerFilledHardsuit = armário do engenheiro chefe
+    .desc = Cheio de ferramentas de última geração. E um lança foguetes.
 
-ent-LockerMedical = medical doctor's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerElectricalSupplies = armário de suprimentos elétricos
+    .desc = Alguns cabos e ferramentas para resolver tudo relacionado com fios danificados.
 
-ent-LockerChemistry = chemical locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerElectricalSuppliesFilled = armário de suprimentos elétricos
+    .desc = Alguns cabos e ferramentas para resolver tudo relacionado com fios danificados.
 
-ent-LockerChiefMedicalOfficer = chief medical officer's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerWeldingSupplies = armários de suprimentos de solda
+    .desc = Contem algumas soldas emergenciais e máscaras de solda para soldar coisas.
 
-ent-LockerResearchDirector = research director's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerWeldingSuppliesFilled = armários de suprimentos de solda
+    .desc = Contem algumas soldas emergenciais e máscaras de solda para soldar coisas.
 
-ent-LockerScientist = scientist's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerAtmospherics = armário de técnico atmosférico
+    .desc = Um armário com suprimentos para apagar incêndios e fazer a sala de atmosfera parecer igual a arte abstrata.
 
-ent-LockerHeadOfSecurity = head of security's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerAtmosphericsFilled = armário de técnico atmosférico
+    .desc = Um armário com suprimentos para apagar incêndios e fazer a sala de atmosfera parecer igual a arte abstrata.
 
-ent-LockerWarden = warden's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerEngineer = armário de engenheiro
+    .desc = Um armário com equipamento para reparos rápidos na estação.
 
-ent-LockerSecurity = security officer's locker
-    .desc = Filled to the brim with medical junk.
+ent-LockerEngineerFilled = armário de engenheiro
+    .desc = Um armário com equipamento para reparos rápidos na estação.
 
-ent-LockerDetective = detective's cabinet
-    .desc = Usually cold and empty... like your heart.
+ent-LockerEngineerFilledHardsuit = armário de engenheiro
+    .desc = Um armário com equipamento para reparos rápidos na estação. Alguem escreveu com uma caneta no lado: "HARDSUIT".
 
-ent-LockerEvidence = evidence locker
-    .desc = To store bags of bullet casings and detainee belongings.
+ent-LockerFreezerVaultFilled = congelador
+    .desc = Frio.
 
-ent-LockerSyndicatePersonal = armory closet
-    .desc = It's a personal storage unit for operative gear.
+ent-LockerFreezerBase = congelador
+    .desc = Frio.
+
+ent-LockerFreezer = congelador
+    .desc = Frio.
+
+ent-LockerBotanist = armário de botanista
+    .desc = Tudo que precisa para crescer tudo que não é maconha. E maconha.
+
+ent-LockerBotanistFilled = armário de botanista
+    .desc = Tudo que precisa para crescer tudo que não é maconha. E maconha.
+
+ent-LockerMedicine = armário de remédios
+    .desc = Cheio de equipamentos médicos miscelâneos.
+
+ent-LockerMedicineFilled = armário de remédios
+    .desc = Cheio de equipamentos médicos miscelâneos.
+
+ent-LockerMedical = armário de médico
+    .desc = Algumas roupas e um MedHud para médicos da NanoTrasen usarem.
+
+ent-LockerMedicalFilled = armário de médico
+    .desc = Algumas roupas e um MedHud para médicos da NanoTrasen usarem.
+
+ent-LockerParamedic = armário de paramédico
+    .desc = Um armário com alguns equipamentos especiais para resgates rápidos.
+
+ent-LockerParamedicFilled = armário de paramédico
+    .desc = Um armário com alguns equipamentos especiais para resgates rápidos.
+
+ent-LockerChemistry = armário de químicos
+    .desc = Hora de cozinhar.
+
+ent-LockerChemistryFilled = armário de químicos
+    .desc = Hora de cozinhar.
+
+ent-LockerChiefMedicalOfficer = armário do médico chefe
+    .desc = Apenas as ferramentas cirúrgicas de mais alta qualidade para o suposto médico de mais alta qualidade.
+
+ent-LockerChiefMedicalOfficerFilled = armário do médico chefe
+    .desc = Apenas as ferramentas cirúrgicas de mais alta qualidade para o suposto médico de mais alta qualidade.
+
+ent-LockerChiefMedicalOfficerFilledHardsuit = armário do médico chefe
+    .desc = Apenas as ferramentas cirúrgicas de mais alta qualidade para o suposto médico de mais alta qualidade.
+
+ent-LockerResearchDirector = armário do diretor de pesquisa
+    .desc = Algumas das maiores invenções que a NanoTrasen pesquisou estão nesse armário.
+
+ent-LockerResearchDirectorFilled = armário do diretor de pesquisa
+    .desc = Algumas das maiores invenções que a NanoTrasen pesquisou estão nesse armário.
+
+ent-LockerResearchDirectorFilledHardsuit = armário do diretor de pesquisa
+    .desc = Algumas das maiores invenções que a NanoTrasen pesquisou estão nesse armário.
+
+ent-LockerScientist = armário de cientista
+    .desc = Surpreendentemente vazio.
+
+ent-LockerScientistFilled = armário de cientista
+    .desc = Surpreendentemente vazio.
+
+ent-LockerScientistFilledXenobiology = armário de xenobiologia
+    .desc = Alguns equipamentos para controlar geleias sencientes.
+
+ent-LockerHeadOfSecurity = armário do chefe de segurança
+    .desc = O equipamento da lei.
+
+ent-LockerHeadOfSecurityFilled = armário do chefe de segurança
+    .desc = O equipamento da lei.
+
+ent-LockerHeadOfSecurityFilledHardsuit = armário do chefe de segurança
+    .desc = O equipamento da lei.
+
+ent-LockerWarden = armário do carcereiro
+    .desc = Para quem precisa lidar com ser esfaqueado por prisoneiros diariamente.
+
+ent-LockerWardenFilled = armário do carcereiro
+    .desc = Para quem precisa lidar com ser esfaqueado por prisoneiros diariamente.
+
+ent-LockerWardenFilledHardsuit = armário do carcereiro
+    .desc = Para quem precisa lidar com ser esfaqueado por prisoneiros diariamente.
+
+ent-LockerSecurity = armário de oficial de segurança
+    .desc = Cheio de equipamentos não letais para manter a ordem na estação.
+
+ent-LockerSecurityFilled = armário de oficial de segurança
+    .desc = Cheio de equipamentos não letais para manter a ordem na estação.
+
+ent-LockerDetective = armário do detetive
+    .desc = Normalmente está vazio e frio... Igual seu coração.
+
+ent-LockerDetectiveFilled = armário do detetive
+    .desc = Normalmente está vazio e frio... Igual seu coração.
+
+ent-LockerDetectiveFilledHardsuit = armário do detetive
+    .desc = Normalmente está vazio e frio... Igual seu coração.
+
+ent-LockerEvidence = armário de evidência
+    .desc = Para armazenar contrabando e evidências de crimes.
+
+ent-LockerSyndicatePersonal = armário de arsenal
+    .desc = Armazenamento pessoal para equipamento de operativos.
 

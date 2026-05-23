@@ -33,3 +33,12 @@ ent-ChairCursed = cadeira amaldiçoada
 
 ent-ChairFolding = cadeira dobrável
     .desc = Perfeita para trapacear em lutas.
+
+ent-ChairBrass = cadeira de latão
+ .desc = Sente-se ou seja sentado.
+
+ent-ChairMeat = cadeira de carne
+ .desc = Ew... Tem suor...
+
+ent-CardStool = banco de papelão
+ .desc = Sente-se *muito* gentilmente.

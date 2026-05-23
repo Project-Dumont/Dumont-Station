@@ -18,7 +18,7 @@ ent-CrateSecuritySupplies = Caixa de suprimentos de segurança
  .desc = Uma caixa contendo diversos suprimentos para a equipe de segurança da estação. Precisa de acesso de segurança para abrir.
 
 ent-CrateRestraints = Caixa de algemas
- .desc = Uma caixa contendo 2 caixas de algemas de metal e 2 caixas de algemas de plástico. Precisa de acesso de segurança para abrir.
+ .desc = Uma caixa contendo 2 caixas de algemas de metal e 2 caixas de amarras. Precisa de acesso de segurança para abrir.
 
 ent-CrateSecNonlethalThrowables = Caixa de granadas não-letais
  .desc = Uma caixa contendo granadas de borracha, atordoamento, gás e boleadeiras.

@@ -746,8 +746,8 @@
   id: TableFancyBase
   abstract: true
   parent: TableBase
-  name: fancy table
-  description: Expensive and rich.
+  name: mesa chique
+  description: Cara e sofisticada. #Dumont 10 variantes com o mesmo nome e descrição não obrigado
   components:
   - type: Damageable
     damageModifierSet: Wood

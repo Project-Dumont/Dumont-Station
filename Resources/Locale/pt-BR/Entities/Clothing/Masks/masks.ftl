@@ -57,3 +57,6 @@ ent-ClothingMaskMuzzle = mordaça
 ent-ClothingMaskPlague = máscara de médico da peste
     .desc = Eu tenho um mal pressentimento sobre isso.
     .suffix = Voice Mask
+
+ent-ClothingMaskClownBanana = máscara de bananium
+ .desc = Um palhaço sem maquiagem é tipo um rasta que não fuma.

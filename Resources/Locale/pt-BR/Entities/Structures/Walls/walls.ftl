@@ -82,3 +82,5 @@ ent-WallInvisible = parede invisível
 ent-WallForce = parede de Força
     .desc = Uma misteriosa parede ornamentada. Pode haver perigos antigos lá dentro.
 
+ent-Cardwall = parede de papelão
+    .desc = Cortes orçamentários estão afetando muito mesmo...

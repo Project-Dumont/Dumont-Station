@@ -9,3 +9,9 @@ ent-CombatKnife = faca de combate
 
 ent-SurvivalKnife = faca de sobrevivência
      .desc = Arma de primeiro e último recurso no combate à carpa espacial.
+
+ent-BladedFlatcapGrey = boné plano cinza
+ .desc = Ótimo ambos pa- Oh, Tem um pedaço de vidro embutido nele..
+
+ent-BladedFlatcapBrown = boné plano marrom
+ .desc = Ótimo ambos pa- Oh, Tem um pedaço de vidro embutido nele..

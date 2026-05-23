@@ -139,3 +139,5 @@ ent-ToySword = toy sword
 ent-ToyAmongPequeno = among pequeno
     .desc = sus!
 
+ent-CardSword = espada de papelão
+    .desc = Um tubo de papelão no formato de uma espada.

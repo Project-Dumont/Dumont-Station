@@ -81,3 +81,6 @@ ent-ClothingHeadHelmetBone = capacete de crânio
 
 ent-ClothingHeadHelmetPodWars = capacete ironclad II
     .desc = Um capacete ironclad II, uma relíquia das Guerras dos Pods.
+
+ent-CardHelmet = capacete de papelão
+    .desc = Um capacete de papelão que parece um capacete medieval.
