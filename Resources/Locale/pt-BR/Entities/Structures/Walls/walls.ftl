@@ -84,3 +84,6 @@ ent-WallForce = parede de Força
 
 ent-Cardwall = parede de papelão
     .desc = Cortes orçamentários estão afetando muito mesmo...
+
+ent-WallDirectional = parede direcional
+ .desc = Uma parede barata.

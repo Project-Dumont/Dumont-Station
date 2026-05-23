@@ -26,6 +26,6 @@ ent-CrateSecNonlethalThrowables = Caixa de granadas não-letais
 ent-CrateVendingMachineRestockSecTechFilled = Caixa de restoque de SecTéc
  .desc = Uma caixa contendo um restoque para uma máquina de venda SecTéc.
 
-ent-CrateLockBoxSecurity = Caixa de venda de segurança
+ent-CrateLockBoxSecurity = caixa de venda de segurança
  .desc = Uma caixa de venda. O dinheiro recebido de sua venda será distribuido de volta ao departamento de segurança. Apenas lembre-se: A logística sempre recebe sua parte.
 

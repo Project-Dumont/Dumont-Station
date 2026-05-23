@@ -85,3 +85,11 @@ ent-ClothingOuterHardsuitERTSecurity = hardsuit de segurança da ERT
 ent-ClothingOuterHardsuitERTJanitor = hardsuit de zelador da ERT
     .desc = Uma hardsuit de proteção utilizada pelos membros do esquadrão da ERT.
 
+ent-ClothingOuterHardsuitClown = hardsuit de palhaço
+    .desc = Uma hardsuit personalizada de palhaço.
+
+ent-ClothingOuterHardsuitMime = hardsuit de mímico
+    .desc = Uma hardsuit personalizada de mímco.
+
+ent-ClothingOuterHardsuitGoliath = hardsuit de goliath
+    .desc = Uma hardsuit leve feita de couro duro de goliath.

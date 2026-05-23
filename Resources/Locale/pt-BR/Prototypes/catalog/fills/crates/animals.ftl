@@ -65,3 +65,12 @@ ent-CrateNPCPuppyCorgi = caixa de corgi filhote
 
 ent-CrateNPCSnake = caixa de cobras
  .desc = Uma caixa contendo três cobras não venenosas.
+
+ent-CrateNPCHamster = gaiola de hamster
+ .desc = Uma gaiola com um hamster dentro.
+
+ent-CrateNPCMonkeyCube = caixa de cubos de macaco
+ .desc = Uma caixa com 8 cubos de macaco.
+
+ent-CrateNPCKoboldCube = gaiola de kobold
+ .desc = Uma caixa com 8 cubos de kobold.

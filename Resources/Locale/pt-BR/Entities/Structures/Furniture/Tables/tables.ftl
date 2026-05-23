@@ -52,3 +52,31 @@ ent-TableWeb = mesa de teia
 ent-TableCard = mesa de papelão
  .desc = Folhas de papelão encima de uma armação de metal.
 
+
+ent-TableFancyBlue = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyCyan = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyRed = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyWhite = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyOrange = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyBlack = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyPurple = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyPink = mesa chique
+ .desc = Cara e sofisticada.
+
+ent-TableFancyGreen = mesa chique
+ .desc = Cara e sofisticada.
+

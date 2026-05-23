@@ -37,3 +37,5 @@ ent-ClothingNeckCloakMiner = capa do minerador
 ent-ClothingNeckCloakTrans = capa de vampiro
     .desc = Tem cheiro de vinho.
 
+ent-ClothingNeckCloakGoliathCloak = capa de goliath
+    .desc = Uma capa feito do couro de fauna perigosa de um planeta distante.

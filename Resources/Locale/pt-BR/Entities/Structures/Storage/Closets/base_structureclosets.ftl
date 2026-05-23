@@ -10,5 +10,8 @@ ent-BaseWallLocker = armário de parede
 ent-ClosetSteelBase = armário
     .desc = Uma unidade de armazenamento de nanotrasen em edição padrão.
 
-ent-ClosetSteelBase = armário
-    .desc = Uma unidade de armazenamento de nanotrasen em edição padrão.
+ent-GunSafe = armário de armas
+ .desc = Uma unidade de armazenamento extremamente resistente, para segurar equipamentos de segurança pesados.
+
+ent-GunSafeBaseSecure = armário de armas
+ .desc = Uma unidade de armazenamento extremamente resistente, para segurar equipamentos de segurança pesados.
