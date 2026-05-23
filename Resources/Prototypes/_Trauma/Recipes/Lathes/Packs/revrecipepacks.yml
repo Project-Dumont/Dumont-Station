@@ -101,6 +101,7 @@
   - DataChipReflectivePlate
   - DataChipFakeMindshield
   - DataChipShieldRipper
+  - DataChipMeleeUpgrades
 
 - type: latheRecipePack
   id: RevFoundryStatic
