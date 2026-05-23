@@ -201,6 +201,8 @@
     size: Ginormous #damn its hard to spell
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg # dumont
+    unequipSound: /Audio/Mecha/mechmove03.ogg # dumont
     equipDelay: 15
     unequipDelay: 600 # if i add the unremovable comp then you couldnt even put this on
   - type: PressureProtection
@@ -229,6 +231,13 @@
     walkModifier: 0.7
     sprintModifier: 0.5
   - type: HeldSpeedModifier
+  - type: FootstepModifier # dumont
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      params:
+        volume: -6
+        pitch: 0.7
+        variation: 0.025
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitDreadnought
