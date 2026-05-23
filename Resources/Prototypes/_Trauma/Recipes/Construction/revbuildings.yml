@@ -131,16 +131,29 @@
   graph: RevMachine
   startNode: start
   targetNode: tech analyzer
-  placementMode: SnapgridCenter
-  category: construction-category-antagonist
-  objectType: Structure
-  canBuildInImpassable: false
-  conditions:
-  - !type:TileNotBlocked
-  entityWhitelist:
-    components:
-    - HeadRevolutionary
-    - Revolutionary
+
+- type: construction
+  parent: BaseRevMachine
+  id: RevPlasmaFoundry
+  targetNode: plasma foundry
+
+- type: construction
+  parent: BaseRevMachine
+  id: RevMedFab
+  targetNode: hidden medical fabricator
+
+# Turrets
+
+- type: construction
+  abstract: true
+  parent: BaseRevMachine
+  id: BaseRevTurret
+  graph: RevTurret
+  theory:
+    RevolutionaryKnowledge: 2
+    WeaponsKnowledge: 1
+  practical:
+    MechanicsKnowledge: 2
 
 - type: construction
   id: RevTurretPistol

@@ -1,0 +1,62 @@
+- type: latheRecipe
+  id: Hypoport
+  result: Hypoport
+  completetime: 4
+  materials:
+    Steel: 400
+    Plastic: 200
+    Glass: 100
+
+- type: latheRecipe
+  id: HypoportSecure
+  result: HypoportSecure
+  completetime: 5
+  materials:
+    Steel: 400
+    Plastic: 200
+    Glass: 200
+    Plasma: 200
+
+- type: latheRecipe
+  id: MedicalHyposprayEmpty
+  result: MedicalHyposprayEmpty
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 300
+    Silver: 150
+
+- type: latheRecipe
+  id: MedicalCigCarton
+  result: CigCartonMedical
+  completetime: 16
+  materials:
+    Plastic: 2500
+    Cloth: 2500
+
+- type: latheRecipe
+  id: SawElectric
+  result: SawElectric
+  categories:
+  - Tools
+  completetime: 2
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: RegenerativeMesh
+  result: RegenerativeMesh
+  categories:
+  - Medical
+  materials:
+    Cloth: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: MedicatedSuture
+  result: MedicatedSuture
+  categories:
+  - Medical
+  materials:
+    Cloth: 100
+    Plasma: 100
