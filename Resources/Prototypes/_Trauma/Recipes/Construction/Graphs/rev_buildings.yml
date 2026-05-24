@@ -176,6 +176,8 @@
     - to: hidden medifab
       steps:
       - tag: HudMedical # Bully medical for it
+        name: construction-graph-tag-medical-hud
+        icon:
       - tool: Screwing
         doAfter: 1
       - material: Glass
