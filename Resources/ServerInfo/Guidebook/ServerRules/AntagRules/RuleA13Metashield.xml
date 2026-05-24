@@ -7,72 +7,332 @@
   ## Tripulação Geral
 
   Antagonistas não listados em nenhuma parte desta regra serão consideradas partes do conhecimento da tripulação geral, até que uma atualização de regras altere isso.
-  A tripulação geral só conhece os seguintes antagonistas:
+  Toda a tripulação, assim como os seres no universo de Space Station 14, possui algum nível de conhecimento, variando entre rumores, relatos populares e informações mais detalhadas sobre suas características e ameaças, sobre os seguintes antagonistas:
 
-  - Traidor
-  - Ladrao
-  - Dragao
-  - Blob
-  - Rato Rei
-  - Ninja
-  - Mago
-  - Fireteam
-  - Bingle
-  - Revolucionários
-  - Xenomorfos
+  ### Traidor
 
-  ## Padre
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandSyndicateRecruitment" Caption=""/>
+  </Box>
+  
+  Todo mundo sabe que a Nanotrasen e o Sindicato são extremamente rivais, e rumores sobre uma guerra corporativa circulam constantemente em todos os lugares onde ambas estão presentes. 
+  Embora isso seja apenas meia verdade, a realidade é que vivem em uma verdadeira guerra fria, o que não elimina a presença constante de espiões, agentes e informantes de ambos os lados.
+  
+  Para o azar da Nanotrasen, infiltração, espionagem, roubo e sabotagem são algumas das principais armas do Sindicato. Apesar de todos os esforços da corporação, nenhuma forma realmente eficaz foi criada para impedir essas ações.
+  Agentes sindicalistas estão infiltrados até mesmo nas camadas mais profundas da Nanotrasen. Tecnologias são roubadas, pessoas são mortas sem aviso, visto que todo agente do Sindicato é treinado para ser um profissional: 
+  entrar, completar seu objetivo e sair, ou não. Sua sobrevivência e progresso dependem diretamente das ordens da organização.
+  
+  Traidores estão por toda parte, e a segurança frequentemente consegue identificar muitos deles. Indivíduos obtendo objetos ou recursos aparentemente “do nada” é um dos sinais mais comuns, especialmente quando se trata de tecnologia do Sindicato. 
+  Felizmente para os traidores, nem a Segurança nem o Comando Central têm conhecimento completo sobre os uplinks: dispositivos baseados em tecnologia Redspace, extremamente discretos e fáceis de ocultar. Há suspeitas sobre sua existência, mas nenhuma confirmação concreta. 
+  Nunca permita que vejam seu PDA sem um motivo válido, e mantenha-o sempre fechado! E nunca, nunca confie em outro agente, as vibóras existem por toda parte, apenas ouça sua empresa.
 
-  Os seguintes antagonistas são só conhecidos pelo Padre, BS e NTR e oficiais da CC
+  Lembre-se, agente: glória ao Sindicato!
 
-  - Heretico
-  - Blood Cult
-  - Cosmic Cult
-  - Slasher
-  - Diabo
-  - Slaughter Demon
-  - Vampiros
-  - Wraith
+  ### Ladrão
 
-  ## Alto Escalão da Estação
+  <Box>
+    <GuideEntityEmbed Entity="ClothingBackpackSatchelSmuggler" Caption=""/>
+  </Box>
+  
+  Ladrões são especialistas na arte do roubo, nem mesmo o Sindicato consegue igualar seu nível de habilidade.
+  Mestres em explosivos, camuflagem, uso de químicos, infiltração e praticamente qualquer técnica relacionada ao furto.
+  Um ladrão experiente domina todos os aspectos necessários para agir sem ser detectado.
 
-  Os seguintes antagonistas são de conhecimento apenas do HoS, Capitão, NTR, BS e oficiais da CC
+  O desaparecimento repentino de itens ou de objetos pode indicar sua presença, especialmente em casos envolvendo PDAs. 
+  Sua atuação beira o sobrenatural: é praticamente impossível identificar ou sequer perceber quando um ladrão o está roubando.
 
-  - Operativos Nucleares
-  - Metamorfos
-  - Shadowling
+  São cleptomaníacos compulsivos; nem mesmo implantes de pacifismo são capazes de conter o seu impulso de roubar.
 
-  ## Alto Escalão da CC
+  ### Agentes Nucleares
 
-  Os seguintes antagonistas são de conhecimento apenas do alto escalão da CC
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
+  </Box>
+  
+  Agentes Nucleares, também conhecidos como “Nukes”, são terroristas amplamente conhecidos e atualmente procurados por praticamente todas as organizações atuantes na galáxia.
+  Os Nukes possuem capacidade para realizar ataques de diversos tipos. No entanto, como o próprio nome sugere, têm preferência por ataques nucleares localizados, frequentemente contra alvos aleatórios
+  embora demonstrem uma clara tendência em atingir instalações da Nanotrasen, por motivos desconhecidos do público geral.
 
-  - DeathSquad
+  Apesar de ser um segredo rigidamente guardado pelo alto comando do Sindicato, os Nukes são, na realidade, agentes de elite da organização, operados pela Gorlex. São encarregados de atacar e enfraquecer diretamente a Nanotrasen. 
+  Ainda assim, é praticamente impossível provar essa ligação, graças à fachada construída ao longo de décadas.
 
-  ## Cientista
+  No passado, os Nukes operavam de forma clandestina, utilizando equipamentos genéricos e atacando diversas corporações e organizações, com o objetivo de construir uma identidade independente. 
+  À medida que sua reputação crescia, o Sindicato encenou um suposto roubo de carga realizado por eles, permitindo que passassem a utilizar tecnologia avançada e deles próprio sem levantar suspeitas diretas. 
+  Esse evento causou prejuízos financeiros e políticos ao próprio Sindicato, que foi visto como negligente, não só por outras organizações, mas também por várias empresas ligadas ao Sindicato, 
+  no qual deixou as brigas internas ainda maiores... Um custo considerado aceitável pelo Alto Comando, para sustentar a operação.
 
-  Os seguintes antagonistas são de conhecimento apenas dos da SCI, NTR, BS e oficiais da CC
+  Com o caos político gerado, as empresas dentro do Sindicato cometeram diversos ataques contra si mesmo, por disputa de poder internamente. Aproveitando toda a situação causada esses ataques foram, atribuído aos próprios Nukes. 
+  Aproveitando a ocasião, foi declarado publicamente que o grupo terrorista havia sido completamente derrotado e dispersado. Para futuramente o mesmo retornar, realizando ataques, mas de forma mais quieta e isolada.
 
-  - IA Defeituosa (Malf IA)
+  A Nanotrasen tem ciência da verdadeira origem dos Nukes, porém essa informação não é compartilhada com a tripulação comum. Para o público geral, eles são apenas terroristas, agora atacando a Nano como alvo principal, utilizando tecnologia supostamente roubada do Sindicato.
 
+  ### Dragão
+
+  <Box>
+    <GuideEntityEmbed Entity="MobDragon" Caption=""/>
+  </Box>
+  
+  Dragões Espaciais são criaturas altamente perigosas e relativamente comuns nas regiões do espaço conhecido, sendo considerados ameaças de nível elevado para todas as organizações e assentamentos espaciais.
+  Dotados da capacidade de voar livremente no vácuo, esses predadores colossais são conhecidos por expelir chamas extremamente destrutivas, capazes de comprometer estruturas. 
+  Além disso, possuem uma ligação direta com as Carpas Espaciais, sendo capazes de criá-las e comandá-las. Um Dragão Espacial é considerado o ápice da hierarquia dessas criaturas, o verdadeiro alfa das Carpas.
+
+  Uma de suas habilidades mais perigosas é a criação de portais instáveis no espaço, dos quais emergem ainda mais Carpas, permitindo que rapidamente sobrecarreguem qualquer área com números massivos de hostis. 
+  Isso torna encontros com um Dragão não apenas uma ameaça direta, mas também um evento de escalada exponencial de perigo.
+
+  Devido à sua natureza destrutiva e ao risco que representam para rotas comerciais, estações e operações espaciais, a caça a Dragões Espaciais é fortemente incentivada pelo Sol Gov. Essas operações são geralmente conduzidas por equipes especializadas
+  geralmente feita pelo Departamento de Salvatagem da maioria dos lugares, que assume a responsabilidade de localizar, enfrentar e eliminar essas entidades.
+
+  Embora relativamente comuns, subestimar um Dragão Espacial é um erro fatal. Sua presença é frequentemente precedida por surtos de Carpas. Ao menor sinal dessas ocorrências, protocolos de emergência devem ser ativados imediatamente.
+
+  ### Metamorfo
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookChangelingFluff" Caption=""/>
+  </Box>
+  
+  Metamorfos são predadores altamente mortais e extremamente adaptáveis, responsáveis por inúmeras tragédias ao longo de séculos em todo o cosmo. 
+  Sua capacidade de se camuflar entre seres vivos os torna excepcionalmente perigosos, permitindo que passem despercebidos até mesmo em cidades com altíssimo nível de segurança do Sol Gov. 
+  Como resultado, muitos incidentes ocorrem sem qualquer aviso prévio, frequentemente terminando em múltiplas mortes.
+  
+  Casos envolvendo Metamorfos em assentamentos espaciais são extremamente raros, graças aos rigorosos protocolos de segurança exigidos para o acesso a essas áreas. No entanto, raro não significa impossível. 
+  Por isso, ao identificar qualquer sinal que indique a possível presença de um Metamorfo, é essencial acionar imediatamente a segurança local para investigação.
+  
+  Um dos principais indícios da presença de um Metamorfo é a descoberta de um corpo oco. 
+  Embora esse sinal não seja conclusivo, já que diversas criaturas espaciais também se alimentam do interior de suas vítimas, corpos ocos devem ser tratados como um alerta azul. 
+  Nesses casos, toda a estação deve permanecer vigilante e atenta ao ambiente ao redor.
+
+  Lembre-se: colegas de trabalho, familiares ou até mesmo você podem ser um Metamorfo. Não hesite em relatar qualquer suspeita à Linha de Segurança mais próxima. Em situações como essa, a cautela é fundamental, e desconfiar pode salvar vidas.
+  
+  ### Blob
+
+  <Box>
+    <GuideEntityEmbed Entity="CoreBlobTile" Caption=""/>
+  </Box>
+  
+  Blob é um organismo biológico altamente contagioso e de rápida reprodução, capaz de infectar qualquer habitat em questão de segundos. Superando qualquer arma biológica já criada, o Blob é considerado um dos desastres naturais mais perigosos do universo conhecido.
+  Sua origem é desconhecida. Embora muitos especulem que ele seja uma variante mutante de Physarum polycephalum, originária da Terra, o Sol Gov nega oficialmente qualquer evidência que comprove essa ligação.
+
+  A infecção do Blob foi responsável pela perda de diversos planetas, causando prejuízos incalculáveis a múltiplas organizações e civilizações. Desde sua descoberta, pelo menos seis planetas conhecidos foram completamente consumidos, 
+  sendo dois deles sob jurisdição direta do Sol Gov. Em resposta, campanhas de bombardeamento orbital foram conduzidas com o objetivo de incinerar a superfície desses mundos. Embora quase todos tenham obtido sucesso, os bombardeio inevitavelmente resultaram na perda total dos planetas afetados.
+
+  O Blob possui uma capacidade de aprendizado em colmeia, desenvolvendo uma inteligência coletiva que permite ataques coordenados, adaptativos e progressivamente mais eficientes. Verdanthar Prime, um planeta de selva e um dos seis planetas contaminados pelo Blob foi o único em que todas as campanhas de bombardeamento organizadas pelo Sol Gov falharam completamente. 
+  O próprio planeta acabou sendo convertido no núcleo central do organismo.
+  
+  A partir desse ponto, Verdanthar Prime passou a atuar como um ponto de propagação, lançando esporos pelo espaço. Esses esporos contaminam qualquer ser vivo que tenha o azar de inalá-los, transformando-o em um vetor ativo da infestação. Qualquer local alcançado por essas vítimas está, inevitavelmente, condenado à mesma destruição.
+
+  ### Rato Rei
+
+  <Box>
+    <GuideEntityEmbed Entity="MobRatKing" Caption=""/>
+  </Box>
+  
+  Ratos Reis são roedores mutantes resultantes da exposição prolongada à radiação do espaço. Esse processo provoca alterações celulares intensas, aumentando drasticamente seu metabolismo e os tornando mais rápidos, fortes e inteligentes, e, consequentemente, muito mais férteis.
+  Devido a esse metabolismo acelerado, Ratos Reis estão constantemente em busca de alimento para sustentar seus níveis de energia. Isso leva a uma taxa de reprodução extremamente elevada, sendo capazes de infestar rapidamente qualquer ambiente que não possua controle adequado, 
+  resultando em enxames de ratos que crescem fora de controle.
+  
+  No geral, um Rato Rei é considerado uma praga relativamente comum. No entanto, em assentamentos espaciais, sua presença pode rapidamente evoluir para uma ameaça séria e potencialmente mortal se não for contida a tempo, especialmente quando têm liberdade para se reproduzir sem restrições.
+  Ratos Reis são criaturas de comportamento imprevisível, frequentemente descritas como astutas, oportunistas e altamente enganosas. Não devem ser considerados confiáveis sob nenhuma circunstância.
+  
+  ### Ninja
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyesVisorNinja" Caption=""/>
+  </Box>
+  
+  Anteriormente tratados apenas como mitos, o Clã Aranha revelou sua existência ao universo após realizar um feito sem precedentes: sabotar e roubar uma instalação do Sol Gov. Mesmo diante de ameaças diretas, nunca cederam, e jamais foram capturados, operando como verdadeiros espectros.
+
+  Ninjas Espaciais são uma classe especializada de ninjas que atuam no vácuo e em ambientes de alta complexidade. A maioria deles pertence ao Clã Aranha, uma seita de natureza quase cultista que existe há séculos. Seus membros seguem uma doutrina própria, baseada em uma interpretação 
+  extrema de um “Bushido Espacial Pós-moderno”, buscando transcender os limites humanos através de modificações corporais e aprimoramento tecnológico.
+
+  Além de suas crenças, o Clã Aranha é conhecido por realizar assassinatos por contrato, sabotagens e operações de infiltração altamente sofisticadas. Seus líderes são escolhidos entre os mais antigos e experientes mestres, indivíduos que, segundo relatos, viveram muito além do que seria considerado natural para um ser humano.
+  Fanáticos por tecnologia, os membros do Clã Aranha utilizam equipamentos de ponta: implantes cibernéticos avançados, exoesqueletos de alta performance, baterias de hipercapacidade e diversos outros recursos que os colocam muito acima de qualquer força convencional.
+
+  Há rumores de que grande parte dessa tecnologia seja derivada de engenharia reversa alienígena. Embora essa teoria nunca tenha sido confirmada, uma coisa é certa: o nível tecnológico do Clã Aranha é, sem exagero, extraordinário.
+  
+  ### Bingles
+
+  <Box>
+    <GuideEntityEmbed Entity="MobBingleUpgraded" Caption=""/>
+  </Box>
+  
+  Bingles são entidades de origem possivelmente interdimensional, conhecidas por surgirem repentinamente em qualquer local, sempre acompanhadas por um estrondo semelhante a um trovão. Sua aparição é imprevisível e, até hoje, não há consenso sobre sua verdadeira natureza.
+  Muitos acreditam que os Bingles sejam criações de Magos, utilizadas para espalhar caos por onde passam. No entanto, a Federação nega qualquer envolvimento, alegando que também precisam lidar com essas criaturas.
+  
+  Os Bingles costumam emergir através de um fenômeno anômalo: um grande buraco de matéria estranha, capaz de engolir tudo o que é lançado em seu interior. Esse buraco tende a crescer progressivamente, 
+  e os Bingles demonstram comportamento ativo ao arremessar objetos, vivos ou não, para dentro dele, ampliando ainda mais o buraco.
+  
+  Apesar de seu potencial risco, Bingles raramente representam uma ameaça significativa em centros populacionais. Ataques diretos a civis são incomuns, principalmente devido à rápida mobilização de forças de contenção. 
+  E mesmo objetos ou pessoas podem ser recuperadas do buraco, caso o mesmo seja destruído.
+  
+  ### Xenomorfos
+
+  <Box>
+    <GuideEntityEmbed Entity="MobXenomorphHunter" Caption=""/>
+  </Box>
+  
+  Xenomorfos são organismos extremamente hostis, conhecidos por sua biologia agressiva e capacidade de reprodução exponencial. No passado, representaram uma das maiores ameaças já enfrentadas pelo Sol Gov, 
+  sendo combatidos diretamente na linha de frente por unidades de fuzileiros coloniais em campanhas extensivas de erradicação.
+  
+  Apelidados de “Enxame Negro”, os Xenomorfos se destacam por sua organização coletiva e comportamento de colmeia, permitindo ataques coordenados e expansão extremamente rápida. Sua principal força está na reprodução: 
+  pequenas infestações podem rapidamente se transformar em colônias inteiras, dominando ambientes em questão de horas.
+  Após anos de conflito intenso, o Sol Gov conseguiu expulsar os Xenomorfos de seus setores, levando-os à quase erradicação. No entanto, “quase” não é o suficiente. Ainda existem pequenas colônias isoladas espalhadas pelo espaço, muitas vezes ocultas em regiões remotas ou abandonadas.
+  O maior risco atual vem de formas larvais, que ocasionalmente conseguem se infiltrar em assentamentos espaciais sem serem detectadas. Uma única larva é suficiente para iniciar uma nova infestação, tornando qualquer sinal de presença Xenomorfa uma emergência de nível máximo.
+  
+  Embora não sejam mais uma ameaça dominante como no passado, subestimar os Xenomorfos é um erro crítico. Onde há um, há potencial para muitos, e onde há muitos, há apenas uma certeza: propagação e morte.
+
+  ### Mago
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadHatWizardReal" Caption=""/>
+  </Box>
+  
+  Caro leitor, não temas, estamos apenas quebrando a lógica neste exato momento, falando diretamente com você… ainda que de forma indireta. Mas não se assuste.
+  
+  Nós, da Federação de Magos, somos frequentemente descritos como “incertos”, “incompreensíveis” ou até “instáveis”. Curioso como aqueles que menos entendem são sempre os que mais opinam. Ainda assim, permita-me esclarecer: 
+  somos poderosos, influentes e detentores de forças que vocês insistem em chamar de “tecnologia”, uma simplificação quase adorável.
+  Até mesmo o Sol Gov, com toda a sua grandiosidade burocrática e poder militar, que vocês tanto temem, tem a sensatez de evitar conflitos conosco. Não por gentileza, é claro! Mas por entendimento básico de consequências. 
+  Séculos de “incidentes”, como vocês gostam de chamar, parecem não ter sido suficientes para fixar essa lição em todas as organizações.
+
+  A maioria mantém uma postura respeitosa ou, no mínimo, prudente. Já outras… bem, sempre há exceções. A Nanotrasen, por exemplo, decidiu que zombar daquilo que não compreende seria uma estratégia viável. Imagino que isso lhes traga algum conforto... 
+  Rir costuma ser mais fácil do que entender.
+  Quanto a nós tratarmos nossa arte como magia… claro que tratamos. Porque é. O fato de vocês não conseguirem replicar, medir ou sequer conceber isso dentro dos seus parâmetros limitados não a torna menos real, apenas evidencia o abismo entre nós.
+
+  Felizmente (para vocês, não para mim), nossos arquimagos e demais magos de alto e médio nível estão ocupados contendo uma pequena inconveniência: uma invasão interdimensional de demônios ameaçando o plano real. Nada que deva preocupar mentes mais simples.
+  Diante disso, enviarei um mago de nível baixo, se possível com um aprendiz para “demonstrar” nossa dita “tecnologia”. Tenho certeza de que isso será… educativo.
+
+  Só espero que eles estejam de bom humor. Seria uma pena se, por descuido, acabassem destruindo sua instalação, invocando algo indesejado… ou quebrando a própria realidade dentro da sua preciosa Estação 14, Nanotrasen.
+
+  Mas não se preocupe. Provavelmente ficará tudo bem.
+
+  ## Especiais
+
+  Os seguintes antagonistas são de conhecimento restrito, sendo reconhecidos apenas pelo Comando da Estação, Warden e indivíduos autorizados. Traidores, Metamorfos, Hereges, Magos e Ladrões também têm conhecimento caso estejam na rodada:
+
+  ### Shadowling
+  
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookShadowling" Caption=""/>
+  </Box>
+  
+  Shadowlings são um ser superior para os Metamorfos e adorados pelos mesmo, resultante da exposição prolongada a ambientes saturados de energia noosférica. 
+  Diferente de seus originais, essas entidades não caçam humanos por necessidade biológica, mas sim para extrair energia, fortalecendo suas próprias capacidades.
+  Mantendo traços da biologia dos Metamorfos, Shadowlings possuem a habilidade de manipular diretamente suas vítimas. Eles são capazes de injetar um pequeno tumor no cérebro do alvo, assumindo controle mental total sobre suas ações 
+  transformando indivíduos comuns em extensões de sua vontade.
+
+  Extremamente raros, Shadowlings são cercados por desinformação. Grande parte dos registros disponíveis é considerada imprecisa ou deliberadamente falsa, o que faz com que a tripulação comum os trate como meras lendas ou rumores infundados. 
+  Sua existência, no entanto, é conhecida por membros de alta confiança dentro de organizações, que mantém essas informações sob rígido controle.
+
+  As capacidades de controle mental dos Shadowlings são confirmadas, detalhes mais críticos, como seu potencial de “ascensão”, são tratados apenas como algo que deve ser evitado a qualquer custo. 
+  Já que um evento desse tipo exigiria mobilização direta de forças do próprio Sol Gov.
+
+  Shadowlings são altamente sensíveis à luz, sendo este um de seus principais pontos fracos. Ambientes escuros, corredores isolados, áreas de manutenção e comportamentos estranhos por parte da tripulação podem indicar sua presença. 
+  Ainda assim, não há registros confirmados de Shadowlings em assentamentos espaciais, o que faz com que, oficialmente, não sejam considerados uma ameaça imediata nesses locais.
+
+  ### Slasher
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadHatSlasherMask" Caption=""/>
+  </Box>
+  
+   ̶U̶m̶ ̶a̶s̶s̶a̶s̶s̶i̶n̶o̶ ̶d̶o̶s̶ ̶a̶n̶o̶s̶ ̶8̶0̶ ̶g̶u̶i̶a̶d̶o̶ ̶p̶e̶l̶a̶ ̶v̶i̶n̶g̶a̶n̶ç̶a̶,̶ ̶s̶e̶d̶e̶ ̶d̶e̶ ̶s̶a̶n̶g̶u̶e̶ ̶e̶ ̶ó̶d̶i̶o̶.̶
+
+  O Slasher é um indivíduo instável, brutal e extremamente perigoso, responsável por assombrar o imaginário de incontáveis seres ao redor do universo. 
+  Para a maioria das pessoas e tripulantes, ele não passa de uma lenda macabra, uma história criada para provocar medo e impedir curiosos de irem longe demais.
+
+  No entanto, agências de segurança espalhadas pelo espaço sabem muito bem o que significa lidar com essa maldita entidade imortal.
+  O Slasher é único. Não importa quantas vezes seja morto, preso ou contido, sua essência permanece intacta. O morto sempre retorna. O aprisionado sempre desaparece.
+  
+  Relatos sobre sua presença costumam ser acompanhados de falhas elétricas, corredores vazios, desaparecimentos inexplicáveis e sobreviventes traumatizados.
+  No fim, tudo o que resta são as memórias daqueles que ele aterrorizou… enquanto aguarda silenciosamente pelo próximo momento em que o Véu enfraquecer.
+
+  ## O Vaticano e a Nanotrasen
+
+  Os seguintes antagonistas são de conhecimento perdido, sendo conhecidos apenas por membros do Vaticano e parcialmente pelo Alto Escalão da Nanotrasen. Traidores, Hereges, Magos e Ladrões também têm conhecimento caso estejam na rodada:
+
+  ### Cultistas
+
+  <Box>
+    <GuideEntityEmbed Entity="CultPylon" Caption=""/>
+    <GuideEntityEmbed Entity="CosmicMalignRift" Caption=""/>
+  </Box>
+  
+  A prática de criar ou participar de cultos foi banida há muito tempo, ainda antes da humanidade alcançar as estrelas. Após assumir o controle de praticamente toda a estrutura religiosa da Terra, 
+  o Vaticano declarou qualquer forma de culto proibido como heresia absoluta e um dos mais graves crimes religiosos existentes. Entretanto, isso jamais foi suficiente para impedir o surgimento de cultos, e não apenas cultos normais.
+
+  Mesmo em um futuro distante, existem coisas que nunca foram totalmente compreendidas. Há entidades que espreitam nas profundezas do espaço, horrores antigos e indescritíveis que existem além do universo físico conhecido. 
+  Seres cuja simples presença desafia lógica, matéria e sanidade. Essas entidades observam o universo através do vazio e lentamente distorcem as mentes de homens e mulheres, manipulando-os na esperança de um dia retornarem plenamente a este plano de existência.
+
+  Os Cultistas são indivíduos que veneram essas divindades extraplanares. Muitos são levados pela promessa de poder, conhecimento ou salvação, sem compreender verdadeiramente aquilo que servem.
+  O Vaticano é a principal força responsável por manter essas ameaças sob controle, conduzindo investigações, infiltrações e operações secretas para localizar e eliminar qualquer tentativa de formação de cultos ou realização de rituais proibidos. 
+  Mesmo após a Grande Inquisição ter devastado inúmeras células cultistas ao longo da história, o mal jamais foi completamente erradicado.
+
+  Embora a Nanotrasen não conheça toda a verdade, possui experiência suficiente para reconhecer sinais claros de influência anômala, como indivíduos agindo de forma irracional, manifestações de energia e comportamentos incompatíveis. Parte desse conhecimento foi discretamente compartilhado pelo Vaticano ao longo dos anos.
+  
+  Infelizmente para a estação, a Nanotrasen posicionou inadvertidamente a instalação próxima a um ponto frágil e indetectável no espaço-tempo. Um Véu enfraquecido. 
+  Lugares assim funcionam como portas entre planos, permitindo que entidades influenciem em massa qualquer indivíduo azarado o suficiente para se aproximar.
+
+  [color=#ff3333][italic]A emoção mais antiga e forte da humanidade é o medo, e o tipo mais antigo e forte de medo é o medo do desconhecido.[/italic][/color] [color=#4296b3][italic]Uma revelação sem igual. Um fim para o sofrimento cíclico e sifiano.[/italic][/color]
+
+  ### Herege
+
+  <Box>
+    <GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption=""/>
+  </Box>
+
+  Esquecidos. Devorados. Estraçalhados. A humanidade abandonou o conhecimento das forças antigas, acreditando que o tempo havia enterrado todos os horrores do passado. Mas o Véu enfraqueceu… e o Mansus voltou a tocar a realidade.
+  Agora, eles irão sentir o medo novamente.
+
+  Hereges são indivíduos obcecados pela busca da verdade e do poder absoluto. Mesmo o Vaticano, com séculos de experiência e conhecimento oculto, possui extrema dificuldade em interceptar ou obter informações concretas quando um deles surge.
+  Hereges aparecem como sombras e desaparecem da mesma forma. Sua presença está quase sempre ligada a locais onde o Véu se encontra enfraquecido, permitindo contato com forças além da compreensão humana. Através de rituais antigos, símbolos proibidos 
+  e magias esquecidas, eles utilizam o Mansus como fonte de conhecimento e poder.
+
+  Pouco se sabe sobre seus verdadeiros objetivos. Os registros restantes afirmam que Hereges buscam a Ascensão, um estado transcendental onde deixam de ser humanos para se tornarem algo muito maior… algo próximo de um deus.
+  Bem, pelo menos isso é o que os poucos registros dizem, o que eu apenas sei é que;
+  
+  Os D̷̪̪̖̳͓̘̀̈̈́̕ë̴̦̗͕̤̝͖͉̪͌̊̈͌̌̄̇̈͌͘̚͝u̵̧̫̭̭̺̰̘̖̯̼̳͓̲̦͎̅͛̎̈́̔̑̓͝͝s̴͙̪͙͇̣͍̹͔̥̱͊͗͋̏̂̾͛͗͗͜͠ȇ̶͙̂̾͆̀̋͂͋͆̂̑̎͒͐͘š̸̪̲̄̎̿ ̴̨̨̢̱̻̰͓̬̖̥̬̪̮̆̃̓͊̚̚͝A̴͉͐̄͗̀̈́n̸̢̡̙͙͙̫͎̬̤̼͙̗͇̠̿̐̉͛̌̆͛̀̏͂ţ̷̨̺͎̝͚̩̞͔̆̀í̵͔̝͂ḡ̶̛̛̹͙͕͍̫̻̈́̅̇̇̔̄̅̐o̴̥̭̣̾̕͝s̷͉̻̼̗͛̃̅͑̅̈͜ só querem uma coisa: Influência.
+
+  ### Wraith
+
+  <Box>
+    <GuideEntityEmbed Entity="MobWraith" Caption=""/>
+  </Box>
+  
+  Wraiths são espíritos vingativos presos à realidade, incapazes de seguir adiante até que seus desejos sejam saciados por qualquer meio necessário. 
+  Na maioria das vezes, esses desejos nascem da violência, da morte e de tragédias profundas.
+  
+  Diferente de fantasmas comuns, Wraiths não estão destinados a eventualmente reencarnar ou desaparecer naturalmente. Sua existência persiste indefinidamente, a menos que sejam forçados ao descanso através de rituais específicos, 
+  geralmente realizados por padres do Vaticano por meio de exorcismos.
+  
+  Wraiths são considerados extremamente perigosos devido à sua natureza incorpórea. Apenas Arcebispos ou indivíduos devidamente preparados conseguem interagir diretamente com eles enquanto permanecem em estado não físico. 
+  Graças a isso, podem existir despercebidos dentro de assentamentos por anos ou até décadas, observando silenciosamente aqueles ao seu redor sem jamais serem notados.
+  Quando o Véu enfraquece, os Wraiths tornam-se capazes de manifestar suas habilidades livremente no mundo físico. E quase sempre utilizam esse poder para causar sofrimento, terror e dor às suas vítimas.
+  
+  Um Wraith pode absorver força através das emoções negativas geradas ao seu redor. Medo, desespero, violência e sofrimento funcionam como combustível para sua existência. Quanto mais caos provocam, mais poder acumulam.
+  Relatos afirmam que Wraiths antigos e experientes conseguem até mesmo abrir pequenas rupturas no Véu, trazendo grandes quantidades de energia sobrenatural para a realidade e, em algumas ocasiões, permitindo a manifestação de outras entidades sobrenaturais.
+  Por esse motivo, ameaças envolvendo Wraiths raramente são tratadas apenas como assombrações comuns. Quando um padre local não consegue conter a situação, unidades especializadas do Vaticano são mobilizadas imediatamente para eliminar a ameaça antes que ela se espalhe.
+  
   ## Desconhecido
 
-  Os seguintes antagonistas são desconhecidos de todos
+  Os seguintes antagonistas são desconhecidos de todos:
 
-  - Abductor
-  - Zumbis
+  ### Abductor
 
-  # Observações
+  <Box>
+    <GuideEntityEmbed Entity="MobAbductorAgent" Caption=""/>
+  </Box>
+  
+  A̶b̶d̶u̶c̶t̶o̶r̶s̶ ̶s̶ã̶o̶ ̶e̶n̶t̶i̶d̶a̶d̶e̶s̶ ̶a̶l̶i̶e̶n̶í̶g̶e̶n̶a̶s̶ ̶e̶x̶t̶r̶e̶m̶a̶m̶e̶n̶t̶e̶ ̶i̶n̶t̶e̶l̶i̶g̶e̶n̶t̶e̶s̶ ̶e̶ ̶t̶e̶c̶n̶o̶l̶o̶g̶i̶c̶a̶m̶e̶n̶t̶e̶ ̶a̶v̶a̶n̶ç̶a̶d̶a̶s̶,̶ ̶e̶n̶v̶o̶l̶t̶a̶s̶ ̶e̶m̶ ̶m̶i̶s̶t̶é̶r̶i̶o̶ ̶a̶ ̶t̶a̶l̶ ̶p̶o̶n̶t̶o̶ ̶q̶u̶e̶ ̶s̶u̶a̶ ̶p̶r̶ó̶p̶r̶i̶a̶ ̶e̶x̶i̶s̶t̶ê̶n̶c̶i̶a̶ ̶é̶ ̶t̶r̶a̶t̶a̶d̶a̶ ̶c̶o̶m̶o̶ ̶u̶m̶ ̶m̶i̶t̶o̶ ̶a̶n̶t̶i̶g̶o̶.̶
+̶  Q̶u̶a̶s̶e̶ ̶n̶ã̶o̶ ̶e̶x̶i̶s̶t̶e̶m̶ ̶r̶e̶g̶i̶s̶t̶r̶o̶s̶ ̶c̶o̶n̶c̶r̶e̶t̶o̶s̶ ̶s̶o̶b̶r̶e̶ ̶e̶l̶e̶s̶.̶ ̶N̶e̶n̶h̶u̶m̶a̶ ̶o̶r̶g̶a̶n̶i̶z̶a̶ç̶ã̶o̶ ̶p̶o̶s̶s̶u̶i̶ ̶p̶r̶o̶v̶a̶s̶ ̶d̶e̶f̶i̶n̶i̶t̶i̶v̶a̶s̶,̶ ̶e̶ ̶a̶t̶é̶ ̶m̶e̶s̶m̶o̶ ̶o̶s̶ ̶M̶a̶g̶o̶s̶ ̶q̶u̶e̶ ̶p̶o̶s̶s̶u̶e̶m̶ ̶a̶ ̶c̶a̶p̶a̶c̶i̶d̶a̶d̶e̶ ̶d̶e̶ ̶a̶t̶r̶a̶v̶e̶s̶s̶a̶r̶ ̶d̶i̶m̶e̶n̶s̶õ̶e̶s̶,̶ ̶o̶s̶ ̶c̶o̶n̶h̶e̶c̶e̶m̶.̶
 
-  ## Zumbis
+̶  R̶e̶l̶a̶t̶o̶s̶ ̶e̶n̶v̶o̶l̶v̶e̶n̶d̶o̶ ̶A̶b̶d̶u̶c̶t̶o̶r̶s̶ ̶s̶ã̶o̶ ̶f̶r̶e̶q̶u̶e̶n̶t̶e̶m̶e̶n̶t̶e̶ ̶d̶e̶s̶c̶a̶r̶t̶a̶d̶o̶s̶ ̶c̶o̶m̶o̶ ̶d̶e̶l̶í̶r̶i̶o̶s̶,̶ ̶p̶a̶r̶a̶n̶o̶i̶a̶ ̶o̶u̶ ̶s̶u̶r̶t̶o̶s̶ ̶p̶s̶i̶c̶o̶l̶ó̶g̶i̶c̶o̶s̶.̶ ̶D̶e̶s̶a̶p̶a̶r̶e̶c̶i̶m̶e̶n̶t̶o̶s̶ ̶i̶n̶e̶x̶p̶l̶i̶c̶á̶v̶e̶i̶s̶,̶ ̶m̶e̶m̶ó̶r̶i̶a̶s̶ ̶f̶r̶a̶g̶m̶e̶n̶t̶a̶d̶a̶s̶ ̶e̶ ̶t̶e̶s̶t̶e̶m̶u̶n̶h̶o̶s̶ ̶d̶e̶s̶c̶o̶n̶e̶x̶o̶s̶ ̶s̶ã̶o̶ ̶n̶o̶r̶m̶a̶l̶m̶e̶n̶t̶e̶ ̶a̶b̶a̶f̶a̶d̶o̶s̶ ̶o̶u̶ ̶i̶g̶n̶o̶r̶a̶d̶o̶s̶ ̶p̶e̶l̶a̶s̶ ̶a̶u̶t̶o̶r̶i̶d̶a̶d̶e̶s̶.̶
+̶  A̶p̶e̶n̶a̶s̶ ̶a̶l̶g̶u̶n̶s̶ ̶p̶o̶u̶c̶o̶s̶ ̶i̶n̶d̶i̶v̶í̶d̶u̶o̶s̶ ̶c̶o̶n̶s̶i̶d̶e̶r̶a̶d̶o̶s̶ ̶e̶x̶c̶ê̶n̶t̶r̶i̶c̶o̶s̶,̶ ̶c̶o̶n̶s̶p̶i̶r̶a̶c̶i̶o̶n̶i̶s̶t̶a̶s̶ ̶o̶u̶ ̶c̶o̶m̶p̶l̶e̶t̶a̶m̶e̶n̶t̶e̶ ̶i̶n̶s̶a̶n̶o̶s̶ ̶i̶n̶s̶i̶s̶t̶e̶m̶ ̶q̶u̶e̶ ̶o̶s̶ ̶A̶b̶d̶u̶c̶t̶o̶r̶s̶ ̶r̶e̶a̶l̶m̶e̶n̶t̶e̶ ̶e̶x̶i̶s̶t̶e̶m̶.̶
 
-  Os Zumbis eram uma doença antiga, assim, todos da estação pensam que estavam erradicados, os quimicos apenas tem a receita da cura.
-
-  ## Abductors
-
-  Os Abductors são aliens que se escondem de todos, assim ninguem sabe sobre eles, ou oque eles fazem.
-
+  Tinha algo aqui? Por que está rasurado?
+  
   # Condições de Revelação
 
+  Isso ira abordar a condição de revelação para os antagonistas e itens em que a tripulação e derivados possui conhecimento parcial ou zero.
+  
   # Itens
 
   ## Implantes implantados
@@ -100,52 +360,104 @@
   - vivenciar uma situação em que absolutamente nenhuma outra explicação é possível
   - descobrir um uplink desbloqueado
 
+  ## Itens Mágicos
+  A condição reveladora para este metashield é qualquer uma das seguintes:
+  - Um Padre afirmar que aquilo é algo perigoso/mágico, etc
+  - Presenciar o item sendo usado
+
   # Antagonistas
 
   ## Hereges
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
-  - Encontrar uma runa
-  - Ver uma Fratura da Realidade
+
+  A condição da presença/revelação de um Herege na estação para um Padre é a de:
+  - Encontrar Fraturas na Realidade
+  - Encontrar uma Runa
+  - Testemunhar um membro da tripulação usando qualquer magia
+  - Testemunhar um membro da tripulação usando um item mágico
+  
+  A condição de presença/revelação de um Herege para ao NTR e GSO é qualquer uma das seguintes:
+  - Encontrar uma runa (com uma pessoa sacrificada)
   - Testemunhar um membro da tripulação usando seus poderes
+  - O Padre provar que tem um Herege abordo (caso tenha um padre)
+
+  ## Culto de Sangue
+
+  A condição da presença/revelação de um Culto de Sangue na estação para um Padre é a de:
+  - Encontrar runas
+  - Encontrar estruturas do culto
+  - Testemunhar um membro da tripulação usando poderes
+  - Testemunhar equipamentos do culto, como espadas e armaduras
+  - Testemunhar um membro da tripulação falando a língua de Nar'sie
+
+  A condição de presença/revelação de um Cultista de Sangue para ao NTR e GSO é qualquer uma das seguintes:
+  - Testemunhar um membro da tripulação usando seus poderes
+  - Testemunhar equipamentos do culto, como espadas e armaduras
+  - Um Padre provar que tem um culto a bordo.
+  - O Véu ser comprometido (vale para a toda a estação)
 
   ## Culto Cósmico
 
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
-  - Testemunhar um membro da tripulação com a máscara reveladora
-  - Ver um glifo
-  - Testemunhar um membro da tripulação absorvendo uma transformação maligna
-  - Testemunhar um membro da tripulação usando uma habilidade específica do culto
+  A condição da presença/revelação de um Culto Cósmico na estação para um Padre é a de:
+  - Encontrar uma Fenda Maligna
+  - Encontrar o Monólito (mesmo que seja sua sombra)
+  - Testemunhar um membro da tripulação usando poderes
   - Testemunhar equipamentos do culto, como espadas e armaduras entrópicas
+  - Ver um glifo
+  
+  A condição de presença/revelação de um Cultista Cósmico para ao NTR e GSO é qualquer uma das seguintes:
+  - Testemunhar um membro da tripulação com a máscara reveladora
+  - Testemunhar um membro da tripulação usando seus poderes
+  - Testemunhar equipamentos do culto, como espadas e armaduras entrópicas
+  - Um Padre provar que tem um culto a bordo.
+  - O Véu ser comprometido (vale para a toda a estação)
+
+  ## Shadowling
+
+  A condição da presença/revelação de um Shadowling na estação é a de:
+
+  - Você recebe orientações do Comando ou da Segurança
+  - O Comando faz um anúncio oficial da presença do mesmo
+
+  ## Slasher
+
+  A condição da presença/revelação de um Slasher na estação é a de:
+
+  - Você é um Padre
+  - Você é um Conspirador
+  - Você é um membro do Comando ou o Warden
+  - Você testemunha um tripulante afirmando que viu um Jason
+  
+  ## Wraith
+
+  A condição da presença/revelação de um Wraith na estação para um Padre é a de:
+
+  - Você testemunha um objetivo ganhando vida
+  - Você testemunha escritas surgindo de maneira sobrenatural
+  - Um tripulante afirmar que viu um ser com as características físicas de um Wraith
+  - Presenciar um Poltergeist
+  - Presenciar uma criação de um Wraith
+  - Presenciar o Wraith
+
+  A condição de presença/revelação de um Wraith para ao NTR e GSO é qualquer uma das seguintes:
+
+  - Presenciar um Poltergeist
+  - Presenciar uma criação de um Wraith
+  - Presenciar o Wraith
 
   ## Diabo
 
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
+  A condição da presença de um Diabo na estação é a de:
+  
   - Você é um Diabo.
-  - Você é o Capelão, um advogado ou um membro do Comando Central. (Incluindo BS e NTR)
+  - Você é o Padre, ou um Advogado.
   - Você fez um acordo com o Diabo.
   - Você testemunhou alguém fazer um acordo.
+  - Você viu um acordo.
 
-  ## Zumbis
-
-  Condições reveladoras para o Metashield "Zumbi":
-  - Você é um Agente Nuclear
-  - Você é um Agente do Sindicato
-  - Você é um Zumbi
-  - Você viu Zumbis na estação
-
-  ## Infecções (Assim que o vírus zumbi for comprovado)
-
-  Condições reveladoras para o Metashield "Infecções":
-  - Você é um Químico
-  - Você é um Médico Chefe
-  - Zumbis são anunciados como reais e presentes em toda a estação
-
-  ## Malf IA
-
-  A condição de revelação para este Metashield é qualquer uma das seguintes:
-
-  - Você é uma IA Defeituosa.
-  - Você testemunhou a IA agir de forma hostil contra a tripulação.
-  - Você testemunhou a IA sabotando sistemas diversos da estação.
-  - O protocolo DOOMSDAY foi ativado.
+  ## Abductors
+  
+  A condição da presença de um Abductor na estação é a de:
+  
+  - Você é um Conspirador
+  
 </Document>

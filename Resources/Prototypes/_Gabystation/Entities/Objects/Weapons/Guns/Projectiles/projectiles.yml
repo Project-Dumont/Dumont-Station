@@ -103,3 +103,91 @@
         reagents:
         - ReagentId: TranexamicAcid #Pra parar sangramento
           Quantity: 0.5
+
+- type: entity
+  id: BulletChesterRifle
+  name: bullet (0.315 rifle jumbo)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+      armorPenetration: 0.15
+
+- type: entity
+  id: BulletChesterRifleIncendiary
+  parent: BaseBulletIncendiary
+  name: bullet (0.315 rifle incendiary)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 10
+        Heat: 20
+
+- type: entity
+  id: BulletChesterRifleUranium
+  parent: BaseBulletUranium
+  name: bullet (0.315 rifle uranium)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 15
+        Piercing: 15
+
+- type: entity
+  id: BulletChesterRIflePractice
+  name: bullet (0.315 rifle practice)
+  parent: BaseBulletPractice
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+
+- type: entity
+  id: BulletChesterRifleDisabler
+  name: bullet (0.315 rifle disabler)
+  parent: BaseBulletPractice
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+  - type: StaminaDamageOnCollide
+    damage: 35
+
+- type: entity
+  id: BulletChesterRifleEMP
+  name: bullet (.315 rifle EMP)
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: rubber
+      color: "#000f89"
+  - type: EmpOnTrigger
+    range: 1
+    energyConsumption: 75
+    disableDuration: 1
+  - type: Ammo
+    muzzleFlash: null
+  - type: PointLight
+    radius: 1.5
+    color: blue
+    energy: 0.5
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Ion: 25
+

@@ -197,6 +197,13 @@ selectable-set-blueshield-syringe-description =
     Inclui: Um colete resistente a explosivos, um injetor de combate
     e vários frascos de remédios.
 
+selectable-set-blueshield-chester-mk2-name = Conjunto Chester Mk. II
+selectable-set-blueshield-chester-mk2-description =
+    Pronto para caçar?
+    Conheça a irmã mais nova da escopeta icônica.
+    Inclui: Rifle de alavanca calibre .315, a Chester Mk. II. Munição extra,
+    munição alternativa e carregadores sobressalentes.
+
 # Trajes Blueshield
 
 selectable-set-blueshield-hardsuit-light-name = hardsuit blindado

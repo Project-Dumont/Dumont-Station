@@ -58,3 +58,9 @@
 
 - type: Tag
   id: RipleyKeys
+
+- type: Tag
+  id: CartridgeChesterRifle
+
+- type: Tag
+  id: MagazineChesterLeverRifle

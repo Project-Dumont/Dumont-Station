@@ -27,6 +27,21 @@
   - ClothingBeltSheathFilledRosethorn
 
 - type: selectableSet
+  id: BSOChesterMk2Set
+  name: selectable-set-blueshield-chester-mk2-name
+  description: selectable-set-blueshield-chester-mk2-description
+  sprite:
+    sprite: _Goobstation/Objects/Weapons/Guns/Lever/chester_icon_48x.rsi
+    state: base
+  content:
+  - WeaponLeverChesterMarkTwo
+  - MagazineChesterLeverRifleEmpty
+  - MagazineChesterLeverRifleEmpty
+  - MagazineBoxChesterRifleEMP
+  - MagazineBoxChesterRifleDisabler
+  - MagazineBoxChesterRifle
+
+- type: selectableSet
   id: SyndicateCQCSmokeThermalSet
   name: selectable-set-syndicate-cqcsmokethermal-name
   description: selectable-set-syndicate-cqcsmokethermal-description

@@ -334,10 +334,9 @@
   - UplinkWeaponry
   conditions:
   - !type:StoreWhitelistCondition
-    blacklist:
+    whitelist:
       tags:
-      - ContractorUplink #cheaper for contractors
-      - NukeOpsUplink
+      - NukeOpsUplink #Dumont edit only for nukies
   - !type:ListingLimitedStockCondition
     stock: 1
 

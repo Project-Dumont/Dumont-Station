@@ -28,6 +28,19 @@ ntr-executive-tools-small-desc = Uma caixa contendo ferramentas básicas de enge
 ntr-executive-pizza-small-name = Pedir uma pequena festa de pizza
 ntr-executive-pizza-small-desc = Peça um pacote de festa de pizza pequeno da NanoTrasen. Como um bom funcionário, você deveria compartilhar com seus colegas... ou comer tudo sozinho.
 
+ntr-executive-bso-chester-ammo-name = Caixa de munição .315 Jumbo
+ntr-executive-bso-chester-ammo-desc = Uma caixa de munição .315 Jumbo de Chester para o seu Oficial Blueshield não ficar sem munição. É cara, então tenha certeza que ele não está desperdiçando os seus Pontos de Fidelidade NanoTrasen™.
+
+ntr-executive-bso-chester-ammo-uranium-name = Caixa de munição .315 Urânio
+ntr-executive-bso-chester-ammo-uranium-desc = Uma caixa de munição .315 Urânio de Chester para o seu Oficial Blueshield não ficar sem munição. É cara, pois a NanoTrasen tem uso bem rigoroso das suas fontes de urânio.
+
+ntr-executive-bso-chester-ammo-incendiary-name = Caixa de munição .315 Incendiária
+ntr-executive-bso-chester-ammo-incendiary-desc = Uma caixa de munição .315 Incendiária de Chester para o seu Oficial Blueshield não ficar sem munição. Relativamente cara, mas pode satisfazer tendências piromaníacas.
+
+ntr-executive-bso-chester-ammo-disabler-name = Caixa de munição .315 Atordoadora
+ntr-executive-bso-chester-ammo-disabler-desc = Uma caixa de munição .315 Atordoadora de Chester para o seu Oficial Blueshield não ficar sem munição. Não é muito cara, então ele pode ser gatilho frouxo sem matar desnecessariamente.
+
+
 # personal
 
 ntr-executive-bsd-name = Chamar Blueshield Deputy
@@ -122,6 +135,7 @@ ntr-executive-tier-2-name = Equipes de resposta
 ntr-executive-tier-3-name = Pessoal
 ntr-executive-tier-4-name = Maligno
 ntr-executive-tier-5-name = Placas de máquina raras
+ntr-executive-tier-6-name = Oficial Blueshield
 
 # insert attempt in console
 ntr-console-insert-deny = Errado!

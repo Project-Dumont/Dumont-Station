@@ -86,3 +86,43 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_pulse
+
+- type: hitscan
+  id: BulletChesterRifleTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Piercing: 35
+    armorPenetration: 0.15 
+
+- type: hitscan
+  id: BulletChesterRiflePracticeTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Blunt: 3
+
+- type: hitscan
+  id: BulletChesterRifleIncendiaryTrace
+  parent: BulletTrace
+  ignite: true
+  damage:
+    types:
+      Blunt: 10
+      Heat: 20
+
+- type: hitscan
+  id: BulletChesterRifleUraniumTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Radiation: 15
+      Piercing: 15
+
+- type: hitscan
+  id: BulletChesterRifleDisablerTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Blunt: 5
+  staminaDamage: 35 # Balancear aqui

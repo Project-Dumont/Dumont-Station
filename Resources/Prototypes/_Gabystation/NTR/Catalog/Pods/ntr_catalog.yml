@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: SpawnPodMagazineBoxChesterRifle
+  categories: [ HideSpawnMenu ]
+  name: SpawnSupplyMagazineBoxChesterRifle
+  parent: SpawnSupplyEmpty
+  components:
+  - type: SpawnOnDespawn
+    prototype: MagazineBoxChesterRifle
+
+- type: entity
+  id: SpawnPodMagazineBoxChesterRifleUranium
+  categories: [ HideSpawnMenu ]
+  name: SpawnSupplyMagazineBoxChesterRifleUranium
+  parent: SpawnSupplyEmpty
+  components:
+  - type: SpawnOnDespawn
+    prototype: MagazineBoxChesterRifleUranium
+
+- type: entity
+  id: SpawnPodMagazineBoxChesterRifleIncendiary
+  categories: [ HideSpawnMenu ]
+  name: SpawnSupplyMagazineBoxChesterRifleIncendiary
+  parent: SpawnSupplyEmpty
+  components:
+  - type: SpawnOnDespawn
+    prototype: MagazineBoxChesterRifleIncendiary
+
+- type: entity
+  id: SpawnPodMagazineBoxChesterRifleDisabler
+  categories: [ HideSpawnMenu ]
+  name: SpawnSupplyMagazineBoxChesterRifleDisabler
+  parent: SpawnSupplyEmpty
+  components:
+  - type: SpawnOnDespawn
+    prototype: MagazineBoxChesterRifleDisabler
