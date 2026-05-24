@@ -17,4 +17,3 @@ ent-CrateStationAiCore = caixa de núcleo de IA
 ent-CrateLockBoxScience = caixa de venda de ciência
  .desc = Uma caixa de venda. O dinheiro recebido de sua venda será distribuido de volta ao departamento de pesquisa e desenvolvimento. Apenas lembre-se: A logística sempre recebe sua parte.
 
-ent-RandomArtifactSpawner = artefato aleátorio

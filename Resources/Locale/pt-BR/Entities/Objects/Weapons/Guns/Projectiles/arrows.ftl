@@ -14,5 +14,5 @@ ent-ArrowImprovisedPlasma = flecha de urânio
 ent-ArrowImprovised = flecha improvisada
  .desc = A flecha favorita do camisa cinza.
 
-ent-ArrowImprovised = flecha
+ent-Arrow = flecha
  .desc = Hora de caçar.

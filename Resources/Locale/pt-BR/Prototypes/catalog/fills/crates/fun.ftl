@@ -54,6 +54,9 @@ ent-CrateCargoGambling = A Loteria $$$
 ent-CrateFunInstrumentsString = caixa de instrumentos de corda
  .desc = Toque uma melodia suave com esse pacote de instrumentos de corda!
 
+ent-CrateFunInstrumentsBrass = caixa de instrumentos de latão
+ .desc = Traga um pouco de jazz para a estação com essa caixa.
+
 ent-CrateFunInstrumentsSpecial = caixa de instrumentos especiais
  .desc = A NanoTrasen não é responsável por quaisquer danos mentais causados pelos conteúdos dessa caixa.
 

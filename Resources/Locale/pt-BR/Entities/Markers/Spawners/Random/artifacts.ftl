@@ -1,6 +1,6 @@
-ent-RandomArtifactSpawner = random artifact spawner
+ent-RandomArtifactSpawner = artefato aleátorio
     .desc = { "" }
 
-ent-RandomArtifactSpawner20 = random artifact spawner [20]
+ent-RandomArtifactSpawner20 = artefato aleátorio [20]
     .desc = { "" }
 

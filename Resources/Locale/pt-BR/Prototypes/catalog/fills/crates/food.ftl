@@ -32,5 +32,11 @@ ent-CrateFoodIceCream = caixa de sorvetes
 ent-CrateFoodGetMore = caixa de Bakemore
  .desc = Uma caixa com suprimentos de marca Bakemore para fazer várias sobremesas, sem tem que esvaziar as máquinas de venda da estação.
 
-ent-CrateFoodPizzaLarge = entrega de pizza
+ent-CrateFoodPizza = entrega de pizza
  .desc = Faça sua parte para acabar com fome da estação distribuindo pizza para departamentos sem orçamento! Inclui 4 pizzas.
+
+ent-CrateFunBlackCaviar = caixa de caviar preto
+ .desc = Contém 5 latas de caviar preto.
+
+ent-CrateFunRedCaviar = caixa de caviar vermelho
+ .desc = Contém 5 latas de caviar vermelho.

@@ -72,5 +72,5 @@ ent-CrateNPCHamster = gaiola de hamster
 ent-CrateNPCMonkeyCube = caixa de cubos de macaco
  .desc = Uma caixa com 8 cubos de macaco.
 
-ent-CrateNPCKoboldCube = gaiola de kobold
+ent-CrateNPCKoboldCube = caixa de cubos de kobold
  .desc = Uma caixa com 8 cubos de kobold.
