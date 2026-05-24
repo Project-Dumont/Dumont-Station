@@ -42,3 +42,9 @@ ent-ChairMeat = cadeira de carne
 
 ent-CardStool = banco de papelão
  .desc = Sente-se *muito* gentilmente.
+
+ent-SteelBench = banco de aço
+ .desc = Um banco longo feito para um metro. Design padrão.
+
+ent-WoodenBench = banco de madeira
+ .desc = Uma lasca espetou você? Bem, pelo menos é bom para o ambiente.

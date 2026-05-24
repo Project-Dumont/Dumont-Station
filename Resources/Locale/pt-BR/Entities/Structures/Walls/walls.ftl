@@ -87,3 +87,7 @@ ent-Cardwall = parede de papelão
 
 ent-WallDirectional = parede direcional
  .desc = Uma parede barata.
+
+ent-WallMeat = parede de carne
+ .desc = Grudenta.
+

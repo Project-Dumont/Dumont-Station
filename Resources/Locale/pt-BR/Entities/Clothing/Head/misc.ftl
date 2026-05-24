@@ -37,3 +37,5 @@ ent-ClothingHeadHatFancyCrown = coroa do rei
 ent-ClothingHeadHatCatEars = orelhas de gato
     .desc = ALERTA DE FURRY!!!!
 
+ent-ClothingHeadHatFlowerWreath = guirlanda
+    .desc = Uma guirlanda de flores. Pode ser usado na cabeça e no pescoço.

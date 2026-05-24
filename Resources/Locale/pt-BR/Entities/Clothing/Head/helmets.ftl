@@ -84,3 +84,9 @@ ent-ClothingHeadHelmetPodWars = capacete ironclad II
 
 ent-CardHelmet = capacete de papelão
     .desc = Um capacete de papelão que parece um capacete medieval.
+
+ent-ClothingHeadHelmetJustice = capacete de justiça
+    .desc = Weewoo weewoo weewoo!
+
+ent-ClothingHeadHelmetJusticeEmpty = capacete de justiça
+    .desc = Weewoo weewoo weewoo!

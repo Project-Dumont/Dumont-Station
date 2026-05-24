@@ -1,25 +1,55 @@
 ent-ClothingBeltUtility = cinto de ferramentas
     .desc = Pode armazenar diversas coisas.
 
+ent-ClothingBeltUtilityEngineering = cinto de ferramentas
+    .desc = Pode armazenar diversas coisas.
+
+ent-ClothingBeltUtilityFilled = cinto de ferramentas
+    .desc = Pode armazenar diversas coisas.
+
+ent-ClothingBeltUtilityFilledUnremoveable = cinto de ferramentas
+    .desc = Pode armazenar diversas coisas.
+
 ent-ClothingBeltChiefEngineer = cinto do engenheiro chefe
+    .desc = Segura ferramentas, tem uma aparência elegante.
+
+ent-ClothingBeltChiefEngineerFilled = cinto do engenheiro chefe
     .desc = Segura ferramentas, tem uma aparência elegante.
 
 ent-ClothingBeltAssault = cinto tático
     .desc = Um cinto de utilidades tático.
 
+ent-ClothingBeltAssaultFilled = cinto tático
+    .desc = Um cinto de utilidades tático.
+
 ent-ClothingBeltJanitor = cinto de zelador
+    .desc = Um cinto capaz de segurar produtos de limpeza.
+
+ent-ClothingBeltJanitorFilled = cinto de zelador
     .desc = Um cinto capaz de segurar produtos de limpeza.
 
 ent-ClothingBeltMedical = cinto médico
     .desc = Pode segurar vários tipos de equipamentos médicos.
 
+ent-ClothingBeltMedicalFilled = cinto médico
+    .desc = Pode segurar vários tipos de equipamentos médicos.
+
 ent-ClothingBeltPlant = cinto botânico
+    .desc = Um cinto capaz de segurar vários equipamentos hidropônicos. Surpreendentemente, não é verde.
+
+ent-ClothingBeltPlantFilled = cinto botânico
     .desc = Um cinto capaz de segurar vários equipamentos hidropônicos. Surpreendentemente, não é verde.
 
 ent-ClothingBeltSecurity = cinto de segurança
     .desc = Pode segurar equipamentos de segurança, como algemas e até mesmo um cassetete.
 
+ent-ClothingBeltSecurityFilled = cinto de segurança
+    .desc = Pode segurar equipamentos de segurança, como algemas e até mesmo um cassetete.
+
 ent-ClothingBeltSheath = bainha
+    .desc = Uma bainha elegante, capaz de armazenar um sabre.
+
+ent-ClothingBeltSheathFilled = bainha
     .desc = Uma bainha elegante, capaz de armazenar um sabre.
 
 ent-ClothingBeltBandolier = bandoleira
@@ -31,10 +61,16 @@ ent-ClothingBeltChampion = cinturão de ouro
 ent-ClothingBeltHolster = coldre
     .desc = Um coldre capaz de suportar uma pistola e munição. AVISO: Somente para os mais fodas!
 
+ent-ClothingBeltHolsterFilled = coldre
+    .desc = Um coldre capaz de suportar uma pistola e munição. AVISO: Somente para os mais fodas!
+
 ent-ClothingBeltSyndieHolster = coldre do Sindicato
     .desc = Um coldre capaz de suportar armamentos e munição.
 
 ent-ClothingBeltSecurityWebbing = colete tático de segurança
+    .desc = Equipamento de peito exclusivo e versátil, pode segurar equipamentos de segurança. Não oferece proteção.
+
+ent-ClothingBeltSecurityWebbingFilled = colete tático de segurança
     .desc = Equipamento de peito exclusivo e versátil, pode segurar equipamentos de segurança. Não oferece proteção.
 
 ent-ClothingBeltMilitaryWebbing = colete tático

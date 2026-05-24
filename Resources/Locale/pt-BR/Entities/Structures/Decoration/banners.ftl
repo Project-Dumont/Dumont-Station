@@ -34,3 +34,5 @@ ent-BannerYellow = estandarte amarelo
 ent-BannerGreen = estandarte verde
     .desc = Um estandarte verde. Que nem grama, grana, guacamole.
 
+ent-BannerSyndicate = estandarte do sindicato
+    .desc = Uma estandarte com a logo do sindicato. Quem colocou isso aqui?

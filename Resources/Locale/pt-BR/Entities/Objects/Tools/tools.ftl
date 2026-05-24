@@ -45,3 +45,6 @@ ent-Shovel = pá
 
 ent-Omnitool = omnitool
      .desc = O melhor amigo de um drone.
+
+ent-RollingPin = rolo de massa
+     .desc = Usado para amassar massa.

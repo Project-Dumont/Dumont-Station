@@ -43,7 +43,7 @@ ent-ClothingEyesGlassesSecurityContraDetect = óculos detector de contrabando
 ent-ClothingEyesGlassesMed = óculos médico
  .desc = Um óculos de sol com MedHud que mostra a saúde de seres vivos.
 
-ent-ClothingEyesGlassesMedChemFlash = óculos químico e médico
+ent-ClothingEyesGlassesMedChemFlash = óculos medchem
  .desc = Um óculos de sol com MedHud e scanner de reagentes.
 
 ent-ClothingEyesGlassesMedSec = óculos medsec
@@ -51,3 +51,6 @@ ent-ClothingEyesGlassesMedSec = óculos medsec
 
 ent-ClothingEyesGlassesMedDiag = óculos meddiag
  .desc = Um óculos de sol com MedHud e hud diagnóstico.
+
+ent-ClothingEyesGlassesMedChem = óculos medchem
+ .desc = Um óculos que consegue analisar a saúde de seres vivos e reagentes.

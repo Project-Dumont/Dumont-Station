@@ -16,8 +16,14 @@ ent-MobFireBot = fogobot
 ent-MobJonkBot = buzinabot
      .desc = Destrua a todos os custos.
 
-ent-MobMimeBot = buzinabot
+ent-MobMimeBot = mimibot
      .desc = ...
 
 ent-MobSupplyBot = entregabot
      .desc = Entrega recursos!
+
+ent-MobPlantbot = plantabot
+     .desc = O amigo favorito de um botanista!
+
+ent-MobWeldbot = soldabot
+     .desc = Não substitui um engenheiro, mas é melhor que nada.

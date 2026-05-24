@@ -4,3 +4,6 @@ ent-ClothingBackpackChameleon = mochila
 
 ent-ClothingBackpackWaterTank = mochila tanque de água
     .desc = Armazena muito líquido. Usada por pistolas de lava a jato.
+
+ent-ClothingBagPet = mochila para animais
+    .desc = Uma mochila pequena para uso por animais de estimação.

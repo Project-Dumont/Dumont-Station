@@ -138,3 +138,6 @@ ent-ClothingHeadHatGreyFlatcap = boné plano cinza
 
 ent-ClothingHeadHatBrownFlatcap = boné plano cinza
  .desc = Palhaço idiota! Você me fez parecer mal!
+
+ent-ClothingHeadHatStrawHat = chapéu de palha
+ .desc = Para uma festa junina.

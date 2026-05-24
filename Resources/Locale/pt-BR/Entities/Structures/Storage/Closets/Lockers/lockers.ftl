@@ -1,3 +1,11 @@
+
+
+
+
+ent-LockerSteel = armário trancado
+    .desc = Uma unidade de armazenamento padrão da NanoTrasen.
+
+
 ent-LockerBooze = armazenamento de bebidas
     .desc = É aqui que o bartender guarda as cervejas.
 
@@ -20,6 +28,12 @@ ent-LockerCaptain = armário do capitão
     .desc = Agentes do sindicato iriam se matar para pegar as coisas dentro desse armário.
 
 ent-LockerCaptainFilled = armário do capitão
+    .desc = Agentes do sindicato iriam se matar para pegar as coisas dentro desse armário.
+
+ent-LockerCaptainFilledNoLaser = armário do capitão
+    .desc = Agentes do sindicato iriam se matar para pegar as coisas dentro desse armário.
+
+ent-LockerCaptainFilledHardsuit = armário do capitão
     .desc = Agentes do sindicato iriam se matar para pegar as coisas dentro desse armário.
 
 ent-LockerHeadOfPersonnel = armário do chefe dos funcionários
@@ -166,6 +180,69 @@ ent-LockerDetectiveFilledHardsuit = armário do detetive
 ent-LockerEvidence = armário de evidência
     .desc = Para armazenar contrabando e evidências de crimes.
 
+ent-LockerNanorep = armário do representativo da nanotrasen
+    .desc = Para fazer nada o turno inteiro.
+
+ent-LockerNanorepFilled = armário do representativo da nanotrasen
+    .desc = Para fazer nada o turno inteiro.
+
+ent-UniqueLockerNanorepFilled = armário do representativo da nanotrasen
+    .desc = Para fazer nada o turno inteiro.
+
+ent-LockerBrigmedic = armário do clínico brigadista
+    .desc = Para quem não conseguiu decidir o trabalho deles.
+
+ent-LockerBrigmedicFilled = armário do clínico brigadista
+    .desc = Para quem não conseguiu decidir o trabalho deles.
+
+ent-LockerAdministrativeAssistant = armário do assistente administrativo
+    .desc = Pelo menos tem café...
+
+ent-LockerAdministrativeAssistantFilled = armário do assistente administrativo
+    .desc = Pelo menos tem café...
+
+ent-UniqueLockerAdminAssistantFilled = armário do assistente administrativo
+    .desc = Pelo menos tem café...
+
+ent-LockerBlueshieldOfficer = armário do oficial blueshield
+    .desc = Armário cheio de equipamentos de última geração para o defensor do comando.
+
+ent-LockerBlueshieldOfficerFilled = armário do oficial blueshield
+    .desc = Armário cheio de equipamentos de última geração para o defensor do comando.
+
+ent-UniqueLockerBlueshieldOfficerFilled = armário do oficial blueshield
+    .desc = Armário cheio de equipamentos de última geração para o defensor do comando.
+
 ent-LockerSyndicatePersonal = armário de arsenal
     .desc = Armazenamento pessoal para equipamento de operativos.
+
+
+
+
+# armários de prisoneiro
+
+
+ent-LockerPrisoner = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner2 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner3 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner4 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner5 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner6 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner7 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
+
+ent-LockerPrisoner8 = armário de prisoneiro
+ .desc = Um armário para segurar os pertences de um prisoneiro quando eles estão na prisão.
 
