@@ -158,7 +158,9 @@
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
   - type: PointLight
-    color: "#ff5050" # Starlight
+    color: red # Starlight
+    radius: 7 
+    energy: 5
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -181,6 +183,14 @@
   - type: FlashSoundSuppression
   - type: SpeechSoundsReplacer
     speechSounds: Chrono
+  - type: Hailer # STARLIGHT
+    hailMessage: "Death to NanoTrasen!!"
+    hailSound:
+      path: /Audio/_Starlight/Effects/nano_death.ogg
+      params:
+        variation: 0.09
+        pitch: 0.5
+    cooldownDuration: 30
 
 # Security
 - type: entity
