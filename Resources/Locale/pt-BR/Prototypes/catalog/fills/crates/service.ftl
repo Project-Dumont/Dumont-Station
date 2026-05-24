@@ -104,9 +104,6 @@ ent-CrateMousetrapBoxes = caixa de armadilhas de rato
 ent-CrateServiceJanitorialSupplies = caixa de suprimentos de limpeza
  .desc = Lute contra a sujeira com os Essenciais de Zeladoria da NanoTrasen(tm)! Contém 4 granadas de limpeza, 3 baldes, 2 placas de chão molhado, sprays de limpador espacial, sacos de lixo, escovas de arame, 1 sabonete, esfregão, cubo de balde de zeladoria e uma máquina de lavar.
 
-ent-CrateJanitorBiosuit = caixa de traje biológico de zelador
- .desc = Contém 2 trajes biológicos para que nada te impeça de limpar.
-
 
 ent-CrateServiceTheatre = caixa de apresentação teatral
  .desc = Contém varias fantasias e roupas para uma apresentação ou para parecer ridículo.
@@ -141,5 +138,3 @@ ent-CrateServiceBureaucracy = caixa de burocracia
 ent-CrateServiceBox = caixa de caixas
  .desc = Contém 6 caixas de papelão pequenas.
 
-ent-ClosetJanitorBombFilled = armário de traje anti-bombas de zelador
- .desc = O potássio tem que ser limpo de alguma forma...
