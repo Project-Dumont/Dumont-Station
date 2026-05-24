@@ -70,6 +70,7 @@ public sealed class HailerSystem : EntitySystem
         "/Audio/_Goobstation/Hailer/bobby.ogg",
         "/Audio/_Goobstation/Hailer/compliance.ogg",
         "/Audio/_Goobstation/Hailer/dontmove.ogg",
+        "/Audio/_Starlight/Effects/nano_death.ogg",
         "/Audio/_Goobstation/Hailer/dredd.ogg",
         "/Audio/_Goobstation/Hailer/floor.ogg",
         "/Audio/_Goobstation/Hailer/freeze.ogg",
