@@ -102,7 +102,7 @@
   - DataChipReflectivePlate
   - DataChipFakeMindshield
   - DataChipShieldRipper
-  - DataChipMeleeUpgrades
+  - MoldMeleeUpgrades
 
 - type: latheRecipePack
   id: RevMedicalStatic

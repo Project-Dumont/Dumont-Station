@@ -23,7 +23,7 @@
   id: FlamethrowerTank
 
 - type: Tag
-  id: ForgeMold
+  id: CartridgeTurret # Ammo whitelist: BaseMagazineTurret, WeaponTurretRevolutionaryPistol, BaseMagazineTurretHeavy, WeaponLightMachineGunProletariat
 
 - type: Tag
   id: FusionCore
