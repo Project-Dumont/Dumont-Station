@@ -64,15 +64,16 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  #- Atlas # Gabystation - não está sendo mantido
-  #- Amber # Gabystation - não está sendo mantido s/2
-  #- Bagel # Gabystation - não está sendo mantido
+  #- Atlas # Dumont Station - não está sendo mantido
+  #- Amber # Dumont Station - não está sendo mantido s/2
+  #- Bagel # Dumont Station - não está sendo mantido
   - Box
   - Cluster
   #- Core
-  #- Fland # Gabystation - não está sendo mantido
+  #- Fland # Dumont Station - não está sendo mantido
+  - Cog # those who forget to clear their multitool
+  #- Serpentcrest # Dumont Station - Retirado por doação de 1.5k de GC
   - Gate
-  - Glacier
   #- Loop Goobstation - I love maintenance!!!
   - Marathon
   - Meta
@@ -83,18 +84,17 @@
   - Packed
   #- Reach # Goobstation, removed from map pool
   #- Train # Goobstation - all my friends hate train
-  #- FlandHighPop # Gabystation - não está sendo mantido
+  #- FlandHighPop # Dumont Station - não está sendo mantido
   - OasisHighPop
   # Goob Station Maps
-  #- Barratry # Gabystation - Retirado do vote por doação de 1K de GC
-  #- Kettle # Gabystation - não está sendo mantido # Goobstation - Re-add kettle (before it was gemini!)
-  #- Leonid # Gabystation - não está sendo mantido # Goobstation - for goob by goob
-  #- Delta # Gabystation - não está sendo mantido # Goobstation - ported from Corvax
-  #- Chloris # Gabystation - não está sendo mantido # Goobstation - also Corvax because we love goidamaps
-  # Gaby Station Maps
+  #- Barratry # Dumont Station - Retirado do vote por doação de 1K de GC
+  #- Kettle # Dumont Station - não está sendo mantido # Goobstation - Re-add kettle (before it was gemini!)
+  #- Leonid # Dumont Station - não está sendo mantido # Goobstation - for goob by goob
+  #- Delta # Dumont Station - não está sendo mantido # Goobstation - ported from Corvax
+  #- Chloris # Dumont Station - não está sendo mantido # Goobstation - also Corvax because we love goidamaps
+  # Dumont Station Maps
   - Gamma
   #- Gax
   - Falcon
-  #- Tram # Gabystation - Ninguem gosta da Tram
-  - Cog # those who forget to clear their multitool
-  #- Serpentcrest # Gabystation - Retirado por doação de 1.5k de GC
+  #- Tram # Dumont Station - Ninguem gosta da Tram
+  #- Glacier # Dumont Station - Retirado da rotação por 2k de GC
