@@ -289,9 +289,9 @@
   description: A baseball cap colored to match security's uniforms.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Soft/secsoft.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/secsoft.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Head/Soft/secsoft.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/secsoft.rsi # Gaby
   - type: Armor # Goob
     coverage:
     - Head

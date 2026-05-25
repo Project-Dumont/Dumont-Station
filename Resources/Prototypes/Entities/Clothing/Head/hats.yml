@@ -228,9 +228,9 @@
   description: A beret with the security department's insignia. For officers that are more inclined towards style than safety.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_security.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/beret_security.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_security.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/beret_security.rsi # Gaby
   - type: Tag
     tags:
     - ClothMade
@@ -262,9 +262,9 @@
   description: A campaign hat for the Nanotrasen Troopers. It's supposed to come with a case, too...
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/security_trooper_hat.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/security_trooper_hat.rsi # Gaby
   - type: Tag
     tags:
     - ClothMade
@@ -402,9 +402,9 @@
   description: A corporate-blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_warden.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/beret_warden.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_warden.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/beret_warden.rsi # Gaby
   - type: Armor # Goob
     coverage:
     - Head
@@ -743,9 +743,9 @@
   description: A stylish cap worn by the Head of Security. Shows the officers who's in charge.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/hoshat.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/hoshat.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Head/Hats/hoshat.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/hoshat.rsi # Gaby
   - type: Tag
     tags:
     - PetWearable

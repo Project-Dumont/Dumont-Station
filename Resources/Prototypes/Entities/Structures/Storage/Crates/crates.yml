@@ -261,9 +261,9 @@
   name: secgear crate
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/sec_gear.rsi
+    sprite: _Gabystation/Structures/Storage/Crates/sec_gear.rsi # Gaby
   - type: Sprite
-    sprite: Structures/Storage/Crates/sec_gear.rsi
+    sprite: _Gabystation/Structures/Storage/Crates/sec_gear.rsi # Gaby
   - type: AccessReader
     access: [["Security"]]
 
