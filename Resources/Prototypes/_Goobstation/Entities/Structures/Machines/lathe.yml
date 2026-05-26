@@ -207,10 +207,10 @@
     - ElectronicsStatic
     - SurgeryStatic
     - ScienceBoardsStatic
-    - ScienceExplosives # Goobstation - Roundstart Grenade Tech
     - GrenadeTriggersStatic # Goobstation - Roundstart Grenade Tech
     - MiscSignallersStatic
     dynamicPacks:
+    - ScienceExplosives
     - AdvancedTools
     - ScienceEquipment
     - ScienceClothing
