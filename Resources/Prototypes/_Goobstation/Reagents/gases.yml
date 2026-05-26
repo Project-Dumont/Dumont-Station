@@ -338,6 +338,25 @@
         - !type:ReagentThreshold
           reagent: Healium
           min: 4
+      # Convert Healium into CO2 and N2O - Dumont
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        ratios:
+          CarbonDioxide: 0.5
+          NitrousOxide: 0.5
+          Healium: -1.0
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: true
+        ratios:
+          CarbonDioxide: 0.25
+          NitrousOxide: 0.25
+          Healium: -0.5
 
 - type: reagent
   id: Nitrium
