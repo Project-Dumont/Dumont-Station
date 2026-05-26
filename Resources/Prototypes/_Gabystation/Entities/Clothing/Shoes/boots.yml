@@ -108,6 +108,3 @@
   - type: FootstepModifier # GabyStation
     footstepSoundCollection:
       collection: BootStomp
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
