@@ -470,7 +470,6 @@
     - SecurityWeaponsStaticGoob
     - SecurityAmmoStaticGoob
     - SyndicateAmmoLightStatic
-    - ScienceExplosives
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -566,6 +565,7 @@
     - SecurityWeaponsGoob
     - RestraintTechnology
     - MiningWeapons
+    - ScienceExplosives
 
 - type: entity
   id: ProtolatheHyperConvection
