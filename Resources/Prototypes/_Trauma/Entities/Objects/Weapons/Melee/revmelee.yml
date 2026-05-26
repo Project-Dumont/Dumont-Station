@@ -81,7 +81,7 @@
   - type: Sharp
   - type: Utensil
     types:
-      - Knife
+    - Knife
   - type: Tool
     qualities:
       - Slicing
