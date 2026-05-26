@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: GBStorageCanister
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: storagecanister
+      steps:
+      - material: Plasteel
+        amount: 5
+        doAfter: 3
+
+  - node: unfinishedcanister
+    entity: AirCanister # entidade temporaria até resolver o cilindro inacabado
+    edges:
+      - to: storagecanister
+        steps:
+        - tool: Anchoring
+          doAfter: 2
+        - tool: Welding
+          doAfter: 3
+  
+  - node: storagecanister
+    entity: StorageCanister
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlasteel
+        amount: 5
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 6
+      - tool: Prying
+        doAfter: 3

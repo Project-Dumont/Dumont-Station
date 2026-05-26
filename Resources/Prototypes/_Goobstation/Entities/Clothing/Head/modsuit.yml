@@ -49,6 +49,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
 
   - type: Tag
     tags:
@@ -150,6 +152,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -237,6 +241,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/security.rsi
     layers:
@@ -261,6 +267,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -347,6 +355,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/headofsecurity.rsi
     layers:
@@ -370,6 +380,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -459,6 +471,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -544,6 +558,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -629,6 +645,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-feroxi
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-helmet
     sealDownPopup: sealable-clothing-seal-down-helmet
@@ -643,6 +661,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -742,6 +762,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     modifiers:
       coefficients:
@@ -839,6 +861,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-feroxi:
+      - state: equipped-HEAD-sealed-feroxi
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3

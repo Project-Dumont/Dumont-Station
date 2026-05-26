@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Chester Mk. II
+  parent: [ WeaponLeverChester,BaseWeaponRifle, BaseGunWieldable, BaseCentcommContraband ]
+  id: WeaponLeverChesterMarkTwo
+  description: "An improved version of the beloved rifle for NanoTrasen's Blueshield corps, now chambered in .315 Jumbo. Feeds from lever rifle magazines."
+  suffix: .315 rifle jumbo
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineChesterLeverRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineChesterLeverRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeChesterRifle

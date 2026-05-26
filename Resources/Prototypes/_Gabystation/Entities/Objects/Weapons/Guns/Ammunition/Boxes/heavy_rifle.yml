@@ -1,0 +1,126 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBoxChesterRifle
+  components:
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeChesterRifle
+    proto: CartridgeChesterRifle
+    capacity: 24
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBoxChesterRifle
+  parent: BaseMagazineBoxChesterRifle
+  name: ammunition box (.315 rifle jumbo)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeChesterRifle
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineBoxChesterRiflePractice
+  parent: BaseMagazineBoxChesterRifle
+  name: ammunition box (.315 rifle practice)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeChesterRiflePractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice
+
+- type: entity
+  id: MagazineBoxChesterRifleIncendiary
+  parent: BaseMagazineBoxChesterRifle
+  name: ammunition box (.315 rifle incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeChesterRifleIncendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: incendiary
+
+- type: entity
+  id: MagazineBoxChesterRifleUranium
+  parent: BaseMagazineBoxChesterRifle
+  name: ammunition box (.315 rifle uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeChesterRifleUranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: uranium
+
+- type: entity
+  id: MagazineBoxChesterRifleDisabler
+  parent: BaseMagazineBoxChesterRifle
+  name: ammunition box (.315 rifle disabler)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeChesterRifleDisabler
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: rubber
+
+- type: entity
+  id: MagazineBoxChesterRifleEMP
+  parent: BaseMagazineBoxChesterRifle
+  name: ammunition box (.315 rifle EMP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeChesterRifleEMP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: emp

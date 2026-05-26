@@ -28,6 +28,19 @@ ntr-executive-tools-small-desc = A crate containing basic engineering tools.
 ntr-executive-pizza-small-name = Order a small pizza party
 ntr-executive-pizza-small-desc = Order a small pizza party bundle from NanoTrasen. As a good employee, you should share this with your coworkers... or eat it all yourself.
 
+ntr-executive-bso-chester-ammo-name = .315 Jumbo ammo box
+ntr-executive-bso-chester-ammo-desc = A box of Chester Jumbo ammunition for your Blueshield Officer so they don't run out of ammo. Expensive so make sure he's not wasting your NanoTrasen Fidelity Points™.
+
+ntr-executive-bso-chester-ammo-uranium-name = .315 Uranium ammo box
+ntr-executive-bso-chester-ammo-uranium-desc = A box of Chester uranium ammunition for your Blueshield Officer so they don't run out of ammo. Expensive because NanoTrasen has a very rigid use of its uranium sources.
+
+ntr-executive-bso-chester-ammo-incendiary-name = .315 Incendiary ammo box
+ntr-executive-bso-chester-ammo-incendiary-desc = A box of Chester incendiary ammunition for your Blueshield Officer so they don't run out of ammo. Relatively expensive but can satisfy pyromaniac tendencies.
+
+ntr-executive-bso-chester-ammo-disabler-name = .315 Disabler ammo box
+ntr-executive-bso-chester-ammo-disabler-desc = A box of Chester disabler ammunition for your Blueshield Officer so they don't run out of ammo. Not so expensive so he can be trigger happy without killing unnecessary stuff.
+
+
 # personal
 
 ntr-executive-bsd-name = Call Blueshield Deputy
@@ -128,6 +141,7 @@ ntr-executive-tier-2-name = Response teams
 ntr-executive-tier-3-name = Personal
 ntr-executive-tier-4-name = Evil
 ntr-executive-tier-5-name = Rare machine boards
+ntr-executive-tier-6-name = Blueshield Officer
 
 # insert attempt in console
 ntr-console-insert-deny = Wrong!

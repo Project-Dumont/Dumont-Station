@@ -16,6 +16,8 @@ using Content.Shared._Gabystation.MalfAi.Components;
 using Content.Shared.SubFloor;
 using Content.Shared.Tag;
 using Content.Shared._Funkystation.Actions.Events;
+using Content.Shared.Charges.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.Factory.Systems;
 
@@ -26,13 +28,15 @@ public sealed partial class AIBuildRequestEvent : EntityEventArgs
 {
     public EntityUid Requester { get; }
     public EntityCoordinates Target { get; }
-    public string Prototype { get; }
+    public EntProtoId Prototype { get; }
+    public EntProtoId? RefundAction { get; }
 
-    public AIBuildRequestEvent(EntityUid requester, EntityCoordinates target, string prototype)
+    public AIBuildRequestEvent(EntityUid requester, EntityCoordinates target, EntProtoId prototype, EntProtoId? refundAction)
     {
         Requester = requester;
         Target = target;
         Prototype = prototype;
+        RefundAction = refundAction;
     }
 }
 
@@ -46,6 +50,7 @@ public sealed partial class AIBuildSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedChargesSystem _chargesSystem = default!;
 
     private static readonly ISawmill Sawmill = Logger.GetSawmill("ai.build.system");
 
@@ -81,7 +86,7 @@ public sealed partial class AIBuildSystem : EntitySystem
         }
 
         // Start building process with DoAfter
-        var doAfterEvent = new AIBuildDoAfterEvent(GetNetCoordinates(target), prototype);
+        var doAfterEvent = new AIBuildDoAfterEvent(GetNetCoordinates(target), prototype, args.RefundAction);
         var delay = TimeSpan.FromSeconds(3.0f); // 3 second build time
 
         // Try to get the AI's visible eye entity (RemoteEntity) for DoAfter display
@@ -116,8 +121,15 @@ public sealed partial class AIBuildSystem : EntitySystem
     /// </summary>
     private void OnBuildDoAfter(EntityUid uid, MalfunctioningAiComponent component, AIBuildDoAfterEvent args)
     {
-        if (args.Cancelled)
+        // Dumont Station: If DoAfter is cancelled, its supposed to refund the charge for the Robotics Factory action, so we add it back here.
+
+        // agora temos `args.RefundAction` aqui.
+
+        if (args.Cancelled && args.RefundAction is { } actionId)
+        {
+            _chargesSystem.RefundAction(uid, actionId);
             return;
+        }
 
         var location = GetCoordinates(args.Location);
 
@@ -142,6 +154,7 @@ public sealed partial class AIBuildSystem : EntitySystem
                 owner.Controller = uid; // uid is the AI entity that received the DoAfter completion
             }
 
+            // a próxima função sempre da erro linha 189 do MapChunk.cs. o erro acontece pq ele tá tentando por o `spawned` no centro do tile sendo que ele já está. ainda não entendi pq ele já está.
             _xform.AnchorEntity(spawned);
 
             // On success, remove the Robotics Factory action from the Malf AI that built it.

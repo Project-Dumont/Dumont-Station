@@ -2759,3 +2759,82 @@ Entries:
         Goob)!
   id: 330
   time: '2026-05-08T02:41:38.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Luxury pen agora quase faz nada em pressão normal; A salic, oxand e dex+
+        dela foram removidos.
+    - type: Tweak
+      message: >-
+        Luxurium e Minersalvine agora funcionam apenas entre 25-51 KPA para
+        combinar com PKAs.
+  id: 331
+  time: '2026-05-13T00:28:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Caixas de circuito de durand e gygax são categorizadas corretamente.
+  id: 332
+  time: '2026-05-16T13:05:52.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Um novo kit Chester Mk. II, que utiliza munição de rifle .315 e
+        variantes, foi adicionado ao arsenal do BSO.
+    - type: Tweak
+      message: >-
+        Com exceção da munição de prática, a munição de .315 só pode ser
+        adquirida na loja de pontos de fidelidade do NTR.
+    - type: Remove
+      message: O kit Chester padrão deixa o arsenal do BSO.
+  id: 333
+  time: '2026-05-16T23:39:10.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Metashield reformulado (Leiam as regras do servidor)
+  id: 334
+  time: '2026-05-16T23:45:25.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Tweak
+      message: >-
+        Agora a habilidade de explodir máquinas e também a habilidade de fazer
+        elas viraram mobs agressivos funciona em computadores e máquinas de
+        venda.
+    - type: Fix
+      message: >-
+        Agora a IA Malfuncional não perde a habildade da fábrica de robôs quando
+        ela cancela a ação de colocar.
+  id: 335
+  time: '2026-05-17T14:49:03.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Resprite do projetor de holofan atmosférico.
+  id: 336
+  time: '2026-05-17T15:01:05.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Bastão de contrator apenas é comprável por nukies, contratores e por
+        meio de bundles indeterminados agora.
+  id: 337
+  time: '2026-05-17T15:14:25.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Fix
+      message: Sprites de modsuit dos feroxi agora estão funcionando!
+  id: 338
+  time: '2026-05-17T18:36:49.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: >-
+        Corrige bug que lone ops não conseguia declarar guerra depois de 12
+        minutos spawnado!
+  id: 339
+  time: '2026-05-17T19:09:10.0000000+00:00'

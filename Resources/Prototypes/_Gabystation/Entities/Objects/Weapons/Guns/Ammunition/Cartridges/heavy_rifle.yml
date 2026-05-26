@@ -1,0 +1,135 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseCartridgeChesterRifle
+  name: cartridge (.315 rifle)
+  parent: [ BaseCartridge, BaseSecurityContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeRifle
+      - CartridgeChesterRifle 
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletChesterRifleTrace
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: BaseCartridgeChesterRifleProjectile
+  name: cartridge (.315 rifle)
+  parent: [ BaseCartridge, BaseSecurityContraband ]
+  suffix: Projectile
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeRifle
+      - CartridgeChesterRifle 
+  - type: CartridgeAmmo
+    proto: BulletChesterRifle
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: CartridgeChesterRifle
+  name: cartridge (.315 rifle jumbo)
+  parent: BaseCartridgeChesterRifle
+  description: A powerful cartridge used by the Chester lever rifle. The .315 Jumbo is said to be able to pierce clean through space rhinos' thick hide and Syndicate agents.
+  components:
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletChesterRifleTrace
+
+- type: entity
+  id: CartridgeChesterRifleIncendiary
+  name: cartridge (.315 rifle incendiary)
+  parent: BaseCartridgeChesterRifle
+  description: A powerful cartridge used by the Chester lever rifle. The .315 incendiary ammunition contains a self-igniting compound that sets the target ablaze.
+  components:
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletChesterRifleIncendiaryTrace
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#ff6e52"
+
+- type: entity
+  id: CartridgeChesterRifleUranium
+  name: cartridge (.315 rifle uranium)
+  parent: BaseCartridgeChesterRifle
+  description: A powerful cartridge used by the Chester lever rifle. The .315 uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
+  components:
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletChesterRifleUraniumTrace
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#00cd42"
+
+- type: entity
+  id: CartridgeChesterRiflePractice
+  name: cartridge (.315 rifle practice)
+  parent: BaseCartridgeChesterRifle
+  description: A powerful cartridge used by the Chester lever rifle. This one is meant for training purposes only.
+  components:
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletChesterRiflePracticeTrace
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#dbdbdb"
+
+- type: entity
+  id: CartridgeChesterRifleDisabler
+  name: cartridge (.315 rifle disabler)
+  parent: BaseCartridgeChesterRifle
+  description: A powerful cartridge used by the Chester lever rifle. The .315 disabler ammunition features a special composite core designed for immobilizing targets.
+  components:
+  - type: HitScanCartridgeAmmo
+    hitscan: BulletChesterRifleDisablerTrace
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#1f92c2"
+
+- type: entity
+  id: CartridgeChesterRifleEMP
+  name: cartridge (.315 rifle EMP)
+  parent: BaseCartridgeChesterRifleProjectile
+  description: A powerful cartridge used by the Chester lever rifle. The .315 EMP ammunition replaces the lead core of the bullet with a miniaturized EMP head, only possible thanks to the Bluespace technology.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletChesterRifleEMP
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#000f89"

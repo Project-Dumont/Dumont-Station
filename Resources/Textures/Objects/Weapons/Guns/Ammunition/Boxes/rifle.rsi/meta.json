@@ -45,6 +45,27 @@
     },
     {
       "name": "uranium"
+    },
+    {
+      "name": "emp"
+    },
+    {
+      "name": "full-base"
+    },
+    {
+      "name": "full-incendiary"
+    },
+    {
+      "name": "full-uranium"
+    },
+    {
+      "name": "full-rubber"
+    },
+    {
+      "name": "full-emp"
+    },
+    {
+      "name": "full-practice"
     }
   ]
 }

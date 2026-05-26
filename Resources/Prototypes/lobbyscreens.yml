@@ -356,3 +356,10 @@
   background: /Textures/_Gabystation/LobbyScreens/gabywarsplayers.webp
   name: Gaby Wars (Players)
   artist: Heartbeat
+
+- type: lobbyBackground
+  id: metamorfosmeta
+  background: /Textures/_Gabystation/LobbyScreens/metamorfosart.webp
+  name: Metamorfos
+  artist: asardonicsailor
+
