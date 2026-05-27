@@ -1,6 +1,6 @@
 # Tail Markings
 - type: marking
-  id: VulpTailFennec
+  id: VulpTailExpie
   bodyPart: Tail
   groupWhitelist: [ Vulpkanin ]
   sprites:
