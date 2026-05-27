@@ -4,7 +4,7 @@
   bodyPart: Tail
   groupWhitelist: [ Vulpkanin ]
   sprites:
-    - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: expie
-    - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: expie-tip
+  - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: expie
+  - sprite: _Moffstation/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: expie-tip

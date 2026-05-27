@@ -4,5 +4,5 @@
   bodyPart: HeadTop
   groupWhitelist: [ Vulpkanin ]
   sprites:
-    - sprite: _Moffstation/Mobs/Customization/Vulpkanin/ear_markings.rsi
-      state: expie
+  - sprite: _Moffstation/Mobs/Customization/Vulpkanin/ear_markings.rsi
+    state: expie
