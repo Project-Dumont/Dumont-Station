@@ -39,7 +39,7 @@ ent-GunSafePistolMk58 = cofre de mk58
 ent-GunSafeDisabler = cofre de atordoador
  .desc = Uma caixa com 5 atordoadores.
 
-ent-ClosetBombFilled = armário de traje anti-bomba.
+ent-ClosetBombFilled = armário de traje anti-bomba
  .desc = Apenas aja rápido e ninguém vai explodir.
 
 ent-GunSafeLauncherNonLethal = armário de lança-granadas anti-motim

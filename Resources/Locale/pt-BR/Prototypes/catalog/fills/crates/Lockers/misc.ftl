@@ -26,3 +26,5 @@ ent-ClosetFireFilled = armário anti-incêndio
 ent-ClosetWallFireFilledRandom = armário de parede anti-incêndio
  .desc = Uma unidade de armazenamento com suprimentos para serem usado em casos de incêndio ou queda de energia. Contém um traje de bombeiro, máscara, tanque de oxigênio e pé de cabra.
 
+ent-ClosetMaintenanceFilledRandom = armário de manuntenção
+ .desc = A caixa de saque da estação.

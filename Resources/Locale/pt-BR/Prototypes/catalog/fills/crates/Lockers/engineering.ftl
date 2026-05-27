@@ -8,6 +8,12 @@ ent-LockerEngineerFilled = armário de engenheiro
 ent-LockerAtmosphericsFilled = armário de técnico atmosférico
     .desc = Um armário com suprimentos para apagar incêndios e fazer a sala de atmosfera parecer igual a arte abstrata.
 
+ent-LockerAtmosphericsFilledHardsuit = armário de técnico atmosférico
+    .desc = Um armário com suprimentos para apagar incêndios e fazer a sala de atmosfera parecer igual a arte abstrata.
+
+ent-ClosetRadiationSuitFilled = armário de traje de radiação
+ .desc = Mais confortável que uma mutação inesperada, pelo menos.
+
 ent-LockerWeldingSuppliesFilled = armário de suprimentos de solda
     .desc = Contem algumas soldas emergenciais e máscaras de solda para soldar coisas.
 

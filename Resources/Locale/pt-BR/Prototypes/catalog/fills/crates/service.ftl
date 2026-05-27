@@ -138,3 +138,5 @@ ent-CrateServiceBureaucracy = caixa de burocracia
 ent-CrateServiceBox = caixa de caixas
  .desc = Contém 6 caixas de papelão pequenas.
 
+ent-ADTCrateServicePrinterInkCartridge = caixa de cartucho de tinta
+ .desc = Contém um cartucho de tinta para uma impressora. Como esperado, é caro demais para ser justificado.

@@ -15,3 +15,9 @@ ent-VehicleATV = ATV
 
 ent-VehicleSyndicateSegway = Sindicato segway
      .desc = Seja um inimigo da corporação, com estilo.
+
+ent-VehicleWheelchair = cadeira de rodas
+     .desc = Você sente mal por quem precisa de uma dessas.
+
+ent-VehicleWheelchairFolded = cadeira de rodas
+     .desc = Você sente mal por quem precisa de uma dessas.

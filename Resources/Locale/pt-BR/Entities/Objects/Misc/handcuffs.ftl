@@ -1,4 +1,4 @@
-ent-Algemas = algemas
+ent-Handcuffs = algemas
      .desc = Usado para deter criminosos e outros idiotas.
 
 ent-Cablecuffs = algemas improvisadas
