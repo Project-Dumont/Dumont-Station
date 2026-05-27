@@ -1,6 +1,6 @@
 # Tail Markings
 - type: marking
-  id: Expie
+  id: tailVulpkaninExpie
   bodyPart: Tail
   groupWhitelist: [ Vulpkanin ]
   sprites:
