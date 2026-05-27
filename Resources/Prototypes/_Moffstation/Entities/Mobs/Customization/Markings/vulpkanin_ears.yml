@@ -1,7 +1,6 @@
-
 # Ears Markings
 - type: marking
-  id: earVulpkaninExpie
+  id: VulpEarExpie
   bodyPart: HeadTop
   groupWhitelist: [ Vulpkanin ]
   sprites:
