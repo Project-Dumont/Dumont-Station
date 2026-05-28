@@ -664,11 +664,11 @@
     layers:
     - state: base
     - state: overlay
-      color: "#c12d30"
+      color: "#0e1d42"
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
     - state: overlay-closed
-      color: "#c12d30"
+      color: "#0e1d42"
       map: [ lid_overlay ]
     - state: welded
       visible: false
