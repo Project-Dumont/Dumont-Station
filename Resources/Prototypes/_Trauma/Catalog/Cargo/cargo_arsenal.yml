@@ -1,0 +1,10 @@
+
+- type: cargoProduct
+  id: CrateArmoryPhaser
+  icon:
+    sprite: _Trauma/Objects/Weapons/Guns/Battery/phaser.rsi
+    state: icon
+  product: CrateArmoryPhasers
+  cost: 4000
+  category: cargoproduct-category-name-armory
+  group: market

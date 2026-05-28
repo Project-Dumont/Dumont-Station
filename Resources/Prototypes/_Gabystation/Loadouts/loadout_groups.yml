@@ -73,6 +73,7 @@
   loadouts:
   - WeaponPistolMk58Gold
   - WeaponPistolMk58
+  - WeaponEnergyGunPhaser
 
 - type: loadoutGroup
   id: TrinketsSecurity

@@ -1,0 +1,11 @@
+
+- type: entity
+  id: CrateArmoryPhasers
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: phasers crate
+  description: Contains two standard NT laser sidearms.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponEnergyGunPhaser
+      amount: 2
