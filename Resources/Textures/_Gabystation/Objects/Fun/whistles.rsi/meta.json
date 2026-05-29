@@ -14,6 +14,13 @@
     },
     {
       "name": "sec"
+    },
+    {
+      "name": "trench-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "trench"
     }
   ]
 }
