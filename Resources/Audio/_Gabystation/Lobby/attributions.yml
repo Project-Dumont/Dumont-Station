@@ -382,3 +382,8 @@
   copyright: "Still Alive by Adriana Figueroa e Daniel Alvarez."
   license: "CC-BY-NC-SA-3.0"
   source: "https://www.youtube.com/watch?v=qF9vdZAYj3I"
+
+- files: ["sonsdalagoa.ogg"]
+  copyright: "Sons da Lagoa - Arthur Diniz"
+  license: "Custom"
+  source: "https://www.youtube.com/watch?v=1DjZeJY_bYk"

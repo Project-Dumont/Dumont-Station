@@ -47,6 +47,7 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 4
       baseSprintSpeed: 3
+    - type: MindControllable # Goobstation - shadowling
     - type: ZombieImmune
     - type: DoAfter
     - type: RotationVisuals
@@ -263,8 +264,6 @@
           type: StrippableBoundUserInterface
         enum.StoreUiKey.Key: # Goobstation - changelings
           type: StoreBoundUserInterface
-        enum.HereticLivingHeartKey.Key: # goob edit - heretics
-          type: LivingHeartMenuBoundUserInterface
         enum.BloodCultistCommuneUIKey.Key: # funky edit - cultists
           type: BloodCultCommuneBoundUserInterface
           requireInputValidation: false
@@ -366,6 +365,8 @@
       lightningExplode: false
     - type: ComplexInteraction
     - type: Carriable
+    - type: GrabIntent # wilted rose
+    - type: Grabbable
     - type: Targeting
     - type: Crawler
     - type: Consciousness

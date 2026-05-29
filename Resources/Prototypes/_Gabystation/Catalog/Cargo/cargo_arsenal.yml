@@ -9,7 +9,7 @@
     state: gygax
   product: CrateGygaxBoards
   cost: 40000
-  category: cargoproduct-category-name-arsenal
+  category: cargoproduct-category-name-armory
   group: market
 
 - type: cargoProduct
@@ -19,5 +19,5 @@
     state: durand
   product: CrateDurandBoards
   cost: 60000
-  category: cargoproduct-category-name-arsenal
+  category: cargoproduct-category-name-armory
   group: market

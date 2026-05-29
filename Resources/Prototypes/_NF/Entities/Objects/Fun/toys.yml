@@ -1,0 +1,41 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#region Plushies
+- type: entity
+  parent: BasePlushie
+  id: BasePlushieVulp
+  name: vulpkanin plushie
+  description: A vulpkanin plushie, at least you can hug this one without the risk to get bitten.
+  abstract: true
+  components:
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/silence.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+
+- type: entity
+  parent: BasePlushieVulp
+  id: PlushieVulp
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Fun/Plushies/vulp.rsi
+    state: plushie_vulp
+

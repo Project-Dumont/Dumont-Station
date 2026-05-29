@@ -55,3 +55,9 @@
 
 - type: Tag
   id: ModsuitPlatingSecurity
+
+- type: Tag
+  id: CartridgeChesterRifle
+
+- type: Tag
+  id: MagazineChesterLeverRifle

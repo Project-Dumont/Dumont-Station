@@ -129,13 +129,13 @@
     cost: 2000
   - id: ClothingShoesBootsMoon
     cost: 2000
+  - id: ClothingShoesBootsJump
+    cost: 2000
   - id: ClothingOuterHardsuitSalvage
     cost: 2000
   - id: ModsuitModuleDiamondDrill #Gabystation modulos
     cost: 2000
     #TODO: super resonator for 2500
-  - id: ClothingShoesBootsJump
-    cost: 2500
   - id: ClothingOuterHardsuitDarkLuxury # Gabystation edit
     cost: 3000 #still costs more than just buying it with spesos you got from vendor but whatever
   - id: MedkitCombatFilled

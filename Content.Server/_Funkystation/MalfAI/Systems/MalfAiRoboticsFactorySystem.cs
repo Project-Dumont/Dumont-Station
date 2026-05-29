@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._Funkystation.Factory.Systems;
 using Robust.Shared.Prototypes;
 using Content.Shared._Gabystation.MalfAi.Components;
@@ -32,8 +36,8 @@ public sealed partial class MalfAiRoboticsFactorySystem : EntitySystem
         if (!args.Target.IsValid(EntityManager))
             return;
 
-        var ev = new AIBuildRequestEvent(malf.Owner, args.Target, RoboticsFactoryPrototype.Id);
-
+        var refundAction = MetaData(args.Action).EntityPrototype?.ID;
+        var ev = new AIBuildRequestEvent(malf.Owner, args.Target, RoboticsFactoryPrototype, refundAction);
         RaiseLocalEvent(ev);
 
         args.Handled = true; // consume the action

@@ -212,6 +212,9 @@
           - 0 # N2O
           - 0 # Frezon
         temperature: 293.15
+    - type: Construction # DumontStation
+      graph: GBStorageCanister
+      node: storagecanister # isso faz com que o cilindo seja craftavel
     - type: Destructible
       thresholds:
       - trigger:

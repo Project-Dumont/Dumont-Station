@@ -229,6 +229,8 @@
   - Animals
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - WeaponsSecurityGun #DumontStation
+  - TrinketsSecurity #Dumontstation
   # Goobstation - EE Plasmeme Change.
   - BrigmedicEnvirohelm
   - BrigmedicEnvirosuit
@@ -267,7 +269,7 @@
   - CivilianShoes # Gabystation
   - CivilianOuterClothing
   - CivilianBelt
-  
+
 # gives plasmaman a plasma breathing tank
 # other species get nothing
 - type: roleLoadout

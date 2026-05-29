@@ -17,7 +17,11 @@
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/standard.rsi
   - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/standard.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-feroxi:
+      - state: equipped-OUTERCLOTHING-feroxi
   - type: PressureProtection
     highPressureMultiplier: 0.50
     lowPressureMultiplier: 1000
@@ -61,7 +65,11 @@
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/officer.rsi
   - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/officer.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-feroxi:
+      - state: equipped-OUTERCLOTHING-feroxi
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitCombatOfficer #goobstation change
@@ -76,7 +84,11 @@
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/medical.rsi
   - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/medical.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-feroxi:
+      - state: equipped-OUTERCLOTHING-feroxi
   - type: PressureProtection # Less protective from high pressure than a standard hardsuit due to less plating.
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
@@ -121,7 +133,11 @@
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/riot.rsi
   - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/riot.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-feroxi:
+      - state: equipped-OUTERCLOTHING-feroxi
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000

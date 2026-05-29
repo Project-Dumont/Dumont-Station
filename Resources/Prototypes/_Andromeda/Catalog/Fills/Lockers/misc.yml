@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityTable
+  id: AndromedaMaintLoot
+  table: !type:GroupSelector
+    children:
+    - !type:EntSelector
+      id: PlushieJanie
+      weight: 10
+   

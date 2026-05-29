@@ -1458,7 +1458,7 @@
     energy: 1.6
     color: "#b89f25"
   - type: AccessReader
-    access: [["Quartermaster"]]
+    access: [["Cargo"]] #Dumontstation what, do cargo techs not have the right to skip dumbass bounties if there's no QM?
   - type: GuideHelp
     guides:
     - CargoBounties

@@ -727,3 +727,9 @@
   name: Event Horizon(Reach for the Sun and Burn! Burn! Burn!)- Heaven Pierce Her
   path:
     path: /Audio/_Gabystation/Jukebox/eventhorizon.ogg
+
+- type: jukebox
+  id: sonsdalagoa
+  name: Sons da Lagoa - Arthur Diniz
+  path:
+    path: /Audio/_Gabystation/Lobby/sonsdalagoa.ogg

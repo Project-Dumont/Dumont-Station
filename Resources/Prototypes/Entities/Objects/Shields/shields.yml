@@ -267,7 +267,7 @@
         suitstorage:
         - state: metal-backpack
     - type: Item
-      sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi
+      sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi #Goobstation
       heldPrefix: ballistic
     - type: Blocking
       passiveBlockModifier:

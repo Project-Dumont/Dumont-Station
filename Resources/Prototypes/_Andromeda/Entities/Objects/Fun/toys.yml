@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BasePlushieVulp
+  id: PlushieJanie
+  name: Janie plushie
+  description: Sua própria Janie, edição de colecionador.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Objects/Fun/andromeda_plush.rsi
+    state: janie
+  - type: UseDelay
+    delay: 1.5
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_whine.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/silence.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
+      params:
+        volume: 1
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/_EinsteinEngines/Voice/Vulpkanin/vulpscream4.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_snarl2.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_snarl2.ogg
+
