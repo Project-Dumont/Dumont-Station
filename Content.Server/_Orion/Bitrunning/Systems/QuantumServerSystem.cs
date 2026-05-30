@@ -514,7 +514,6 @@ public sealed class QuantumServerSystem : EntitySystem
         Dirty(podUid, pod);
         _netpod.UpdateVisuals((podUid, pod));
         Dirty(serverUid, server);
-        Dirty(avatar, connection);
         _bitrunningDisk.RefreshAvatarEffects(avatar);
         return true;
     }
@@ -558,7 +557,6 @@ public sealed class QuantumServerSystem : EntitySystem
             Dirty(connection.Server.Value, server);
         }
 
-        Dirty(avatarUid, connection);
         _bitrunningDisk.RefreshAvatarEffects(avatarUid);
         return true;
     }
@@ -1143,7 +1141,6 @@ public sealed class QuantumServerSystem : EntitySystem
         }
 
         RemCompDeferred<AvatarConnectionComponent>(ent);
-        Dirty(newAvatarUid, newConnection);
         _bitrunningDisk.RefreshAvatarEffects(newAvatarUid);
     }
 
