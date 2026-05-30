@@ -1,6 +1,25 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
+  parent: BaseSheathCounterAttackWeak
+  id: BaseSheathCounterAttackStrong
+  abstract: true
+  components:
+    - type: SheathCounterattack
+      blockEffectTime: 5
+      extraDamageMultiplier: 1.8
+      extraWoundSeverityMultipliers:
+        Slash: 3
+- type: entity
+  id: BaseSheathCounterAttackWeak
+  abstract: true
+  components:
+    - type: SheathCounterattack
+      extraDamageMultiplier: 1.5
+      extraWoundSeverityMultipliers:
+        Slash: 2
+      extraArmorPenetration: 0.5
+- type: entity
   abstract: true
   parent: ClothingHandsGlovesBoxingBase
   id: ClothingHandsGlovesBoxingRiggedBase
@@ -130,3 +149,33 @@
         path: /Audio/_Goobstation/Items/handling/book_drop.ogg
         params:
           volume: -4
+- type: entity
+  parent: StatusEffectBase
+  id: CounterAttackingStatusEffect
+  name: counter attacking
+  components:
+    - type: CounterAttackingStatusEffect
+    - type: StatusEffectAlert
+      alert: CounterAttacking
+- type: entity
+  parent: StatusEffectBase
+  id: BlockCounterAttackStatusEffect
+  name: counter attacking blocked
+  components:
+    - type: BlockCounterAttackStatusEffect
+    - type: StatusEffectAlert
+      alert: CounterAttackingBlocked
+- type: alert
+  id: CounterAttacking
+  icons:
+    - sprite: /Textures/_Trauma/Interface/Alerts/counterattack.rsi
+      state: counterattack
+  name: alerts-counter-attacking-name
+  description: alerts-counter-attacking-desc
+- type: alert
+  id: CounterAttackingBlocked
+  icons:
+    - sprite: /Textures/_Trauma/Interface/Alerts/counterattack.rsi
+      state: counterattack_blocked
+  name: alerts-counter-attacking-blocked-name
+  description: alerts-counter-attacking-blocked-desc

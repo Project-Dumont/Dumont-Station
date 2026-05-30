@@ -35,6 +35,14 @@ photograph-name-text = This is a photograph of { PROPER($entity) ->
 
 photograph-name-text-photograph = This is a photograph of another photograph.
 
+counter-attack-verb = Counter attack
+
+counter-attack-fail-npc-message = They are too unpredictable to counterattack!
+
+counter-attack-self-message = You prepare to counterattack {$target}...
+
+counter-attack-others-message = {$user} widens {POSS-ADJ($user)} stance, {POSS-ADJ($user)} hand hovering over {THE($sheath)}
+
 uplink-travel-camera-name = Travel Camera
 
 uplink-travel-camera-desc = Stun people with your photography skills and the conveniently legal camera flash. Makes you look like a tourist.
@@ -70,6 +78,10 @@ uplink-codespeak-manual-desc = Syndicate agents can be trained to use a series o
 uplink-syndicate-access-config-name = Cybersun Configurator
 
 uplink-syndicate-access-config-desc = A Cybersun-branded access configurator, compatible with all non-NanoTrasen IDs. Now with quick-swap functionality!
+
+uplink-snakesfang-name = Snakesfang
+
+uplink-snakesfang-desc = The Snakesfang is a fork-tipped scimitar with a sharp edge and sharper bite. Comes with a scabbard.
 
 uplink-rifle-FAL-name = Saive Automatique
 
@@ -116,6 +128,14 @@ voice-trigger-lock-on-examine = The display shows the passphrase: "{$keyphrase}"
 selectable-lock-no-lock-verb = No lock
 
 selectable-lock-no-lock-popup = No lock has been added to {THE($target)}.
+
+alerts-counter-attacking-name = Counter attacking
+
+alerts-counter-attacking-desc = You are ready to deliver counter attack...
+
+alerts-counter-attacking-blocked-name = Counter attacking blocked
+
+alerts-counter-attacking-blocked-desc = You cannot counter attack for some time...
 
 simple-tool-usage-blocked-message = You need a tool that can perform {$quality}!
 

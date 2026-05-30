@@ -5,6 +5,9 @@ ent-BriefcaseWeaponSaiveFilled = maleta de Saive Automatique
 ent-ClothingBeltKnifeRig = bandoleira de facas de arremesso
     .desc = Uma bandoleira especializada em carregar facas de arremesso.
 
+ent-ClothingBeltSheathSnakesfang = bainha da Presa da Serpente
+    .desc = Pode guardar cimitarras.
+
 ent-ClothingHandsGlovesBoxingRiggedBlue = luvas de boxe azuis
     .desc = Luvas azuis para boxe competitivo.
 
@@ -50,6 +53,9 @@ ent-MagazineLightRifle20rd = carregador reto (.30 de fuzil)
 ent-WeaponRifleFAL = Saive Automatique
     .desc = Um fuzil do século XX da Velha Terra. Adotado por vários países capitalistas, ficou conhecido como "o braço direito do mundo livre".
 
+ent-Snakesfang = Presa da Serpente
+    .desc = Uma espada preta e vermelha de curvatura peculiar. Extremamente afiada e cheia de estilo.
+
 ent-HijackTradeStationObjective = Sequestre a Estação Comercial Automatizada.
     .desc = Seu uplink foi autorizado a fornecer um sinalizador de sequestro. Instale-o na Estação Comercial Automatizada e defenda-o até que o sequestro seja concluído.
 
@@ -58,3 +64,7 @@ ent-WeaponSubMachineGunBriefcase = maleta marrom
 
 ent-CdDiskNumber = CD (Números)
     .desc = Contate o posto de escuta do Sindicato mais próximo para pedir reforços!
+
+ent-CounterAttackingStatusEffect = contra-ataque preparado
+
+ent-BlockCounterAttackStatusEffect = contra-ataque indisponível

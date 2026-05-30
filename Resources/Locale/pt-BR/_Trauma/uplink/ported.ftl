@@ -34,6 +34,14 @@ photograph-name-text = Esta é uma fotografia de {$entity}.
 
 photograph-name-text-photograph = Esta é uma fotografia de outra fotografia.
 
+counter-attack-verb = Contra-atacar
+
+counter-attack-fail-npc-message = Os movimentos do alvo são imprevisíveis demais para um contra-ataque!
+
+counter-attack-self-message = Você se prepara para contra-atacar {$target}...
+
+counter-attack-others-message = {$user} assume uma postura de combate, com a mão sobre {$sheath}.
+
 uplink-travel-camera-name = Câmera de viagem
 
 uplink-travel-camera-desc = Atordoe as pessoas com suas habilidades fotográficas e um flash convenientemente legalizado. Também ajuda a parecer um turista.
@@ -73,6 +81,10 @@ uplink-codespeak-manual-desc = Ensina a linguagem codificada do Sindicato: metá
 uplink-syndicate-access-config-name = Configurador Cybersun
 
 uplink-syndicate-access-config-desc = Um configurador de acessos da Cybersun compatível com identificações que não sejam da Nanotrasen. Agora com troca rápida de cartões!
+
+uplink-snakesfang-name = Snakesfang
+
+uplink-snakesfang-desc = Uma cimitarra de ponta bifurcada, com fio afiado e mordida ainda pior. Acompanha uma bainha.
 
 uplink-rifle-FAL-name = Saive Automatique
 
@@ -129,6 +141,14 @@ voice-trigger-lock-on-examine = O visor mostra a senha: "{$keyphrase}"
 selectable-lock-no-lock-verb = Sem trava
 
 selectable-lock-no-lock-popup = Nenhuma trava foi adicionada a {$target}.
+
+alerts-counter-attacking-name = Contra-ataque preparado
+
+alerts-counter-attacking-desc = Você está pronto para contra-atacar...
+
+alerts-counter-attacking-blocked-name = Contra-ataque indisponível
+
+alerts-counter-attacking-blocked-desc = Você precisa esperar um pouco antes de contra-atacar novamente.
 
 simple-tool-usage-blocked-message = Você precisa de uma ferramenta capaz de realizar {$quality}!
 

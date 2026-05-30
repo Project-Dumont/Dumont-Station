@@ -27,3 +27,45 @@
         storagebase:
           id: ThrowingKnife
           amount: 8
+
+- type: entity
+  id: ClothingBeltSheathSnakesfangFilled
+  parent: ClothingBeltSheathSnakesfang
+  suffix: Filled
+  components:
+    - type: ContainerFill
+      containers:
+        item:
+          - Snakesfang
+
+- type: entity
+  parent:
+    - BaseClothingBeltSheath
+    - BaseSheathCounterAttackStrong
+    - BaseSyndicateContraband
+  id: ClothingBeltSheathSnakesfang
+  name: snakesfang scabbard
+  description: Can hold scimitars.
+  components:
+    - type: Sprite
+      sprite: _Trauma/Clothing/Belt/snakesfang_sheath.rsi
+      state: sheath
+    - type: Clothing
+      sprite: _Trauma/Clothing/Belt/snakesfang_sheath.rsi
+    - type: ItemSlots
+      slots:
+        item:
+          name: Snakesfang
+          insertVerbText: sheath-insert-verb
+          ejectVerbText: sheath-eject-verb
+          insertSound: /Audio/Items/sheath.ogg
+          ejectSound: /Audio/Items/unsheath.ogg
+          whitelist:
+            tags:
+              - Scimitar
+    - type: ItemMapper
+      mapLayers:
+        sheath-blade:
+          whitelist:
+            tags:
+              - Scimitar
