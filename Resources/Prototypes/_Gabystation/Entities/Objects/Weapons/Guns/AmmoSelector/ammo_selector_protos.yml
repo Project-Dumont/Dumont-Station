@@ -7,7 +7,7 @@
     state: heavylaser
   color: red
   protoId: BulletEnergyGunLaser
-  fireCost: 30
+  fireCost: 50
 
 - type: selectableAmmo
   id: BulletDisablerPhaser
@@ -17,5 +17,5 @@
     state: omnilaser
   color: "#00B2FF"
   protoId: BulletDisabler
-  fireCost: 30
+  fireCost: 50
 

@@ -29,14 +29,14 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 600
-    startingCharge: 600
+    maxCharge: 1000
+    startingCharge: 1000
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletDisablerPhaser
-    fireCost: 30
+    proto: BulletDisabler
+    fireCost: 50
   - type: AmmoSelector
     prototypes:
-      - BulletDisablerPhaser
+      - BulletDisabler
       - BulletEnergyGunLaserPhaser
   - type: UserInterface
     interfaces:
