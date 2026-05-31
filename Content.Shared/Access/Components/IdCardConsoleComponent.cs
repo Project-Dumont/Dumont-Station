@@ -85,7 +85,14 @@ public sealed partial class IdCardConsoleComponent : Component
         "Service",
         "Theatre",
         "Robotics", //Goob
-        "Journalism" //Goob
+        "Journalism", //Goob
+        "Virologist", //Dumont
+        "Psycologist", //Dumont
+        "Pharmacist", //Dumont
+        "Genetics", //Dumont
+        "Mail", //Dumont
+        "Mining", //Dumont
+        "Exploration" //Dumont
     };
 
     [Serializable, NetSerializable]

@@ -50,6 +50,13 @@
   - GenpopLeave
   - Robotics #Goob
   - Journalism #Goob
+  - Virologist #Dumont
+  - Psychologist #Dumont
+  - Pharmacist #Dumont
+  - Genetics #Dumont
+  - Mail #Dumont
+  - Mining #Dumont
+  - Exploration #Dumont
 
 - type: accessGroup
   id: General
