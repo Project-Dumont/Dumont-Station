@@ -116,21 +116,14 @@ public sealed class HailerSystem : EntitySystem
         if (hailerComponent == null || hailerEntity == null)
             return;
 
-        if (TryComp<UseDelayComponent>(hailerEntity.Value, out var useDelay))
-        {
-            if (_useDelay.IsDelayed((hailerEntity.Value, useDelay)))
-                return;
-            
-            _useDelay.SetLength(hailerEntity.Value, TimeSpan.FromSeconds(hailerComponent.CooldownDuration));
-            _useDelay.TryResetDelay(hailerEntity.Value);
-        }
-        else 
-        {
-            if (_delays.TryGetValue(hailerEntity.Value, out var delay) && _timing.CurTime < delay)
-                return;
-                
-            _delays[hailerEntity.Value] = _timing.CurTime.Add(_fixed_delay);
-        }
+        EnsureComp<UseDelayComponent>(hailerEntity.Value, out var useDelay);
+        var hailerEnt = new Entity<UseDelayComponent>(hailerEntity.Value, useDelay);
+
+        if (_useDelay.IsDelayed(hailerEnt.AsNullable()))
+            return;
+
+        _useDelay.SetLength(hailerEnt.AsNullable(), TimeSpan.FromSeconds(hailerComponent.CooldownDuration));
+        _useDelay.TryResetDelay(hailerEnt);
 
         if (!string.IsNullOrEmpty(hailerComponent.HailMessage))
         {
