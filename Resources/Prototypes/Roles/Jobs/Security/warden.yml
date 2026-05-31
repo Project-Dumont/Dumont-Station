@@ -152,10 +152,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 54000 #15 hrs
-    - !type:SpeciesRequirement # Dumont - No Waddler
-      inverted: true
-      species:
-      - Waddler
+    #- !type:SpeciesRequirement # Dumont - No Waddler
+    #  inverted: true
+    #  species:
+    #  - Waddler
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"

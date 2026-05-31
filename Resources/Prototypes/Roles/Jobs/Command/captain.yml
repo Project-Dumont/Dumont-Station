@@ -160,10 +160,10 @@
     - !type:RoleTimeRequirement # Dumont
       role: JobHeadOfPersonnel
       time: 43200 #12 hrs
-    - !type:SpeciesRequirement # Dumont - No Waddler
-      inverted: true
-      species:
-     - Waddler
+    #- !type:SpeciesRequirement # Dumont - No Waddler
+    #  inverted: true
+    #  species:
+    #  - Waddler
       #any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30

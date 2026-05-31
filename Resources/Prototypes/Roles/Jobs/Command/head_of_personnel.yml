@@ -158,10 +158,10 @@
     - !type:RoleTimeRequirement # Dumont
       role: JobAdminAssistant
       time: 36000 #10 hrs
-    - !type:SpeciesRequirement # Dumont - No Waddler
-      inverted: true
-      species:
-     - Waddler
+  #  - !type:SpeciesRequirement # Dumont - No Waddler
+  #    inverted: true
+  #    species:
+  #    - Waddler
   guides: # goobstation
   - Command
   # - Succession

@@ -104,10 +104,10 @@
       time: 180000  #50 hours
     - !type:AgeRequirement
       requiredAge: 21
-    - !type:SpeciesRequirement # Dumont - No Waddler
-      inverted: true
-      species:
-      - Waddler
+    #- !type:SpeciesRequirement # Dumont - No Waddler
+    #  inverted: true
+    #  species:
+    #  - Waddler
   weight: 20
   salary: 100 # Gaby content
   startingGear: NanotrasenRepresentativeGear

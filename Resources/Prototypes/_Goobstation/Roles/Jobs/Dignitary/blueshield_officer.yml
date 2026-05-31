@@ -44,10 +44,10 @@
       time: 90000 # 25 hours
     - !type:AgeRequirement
       requiredAge: 21
-    - !type:SpeciesRequirement # Dumont - No Waddler
-      inverted: true
-      species:
-      - Waddler
+    #- !type:SpeciesRequirement # Dumont - No Waddler
+    #  inverted: true
+    #  species:
+    #  - Waddler
   guides:
   # - BlueshieldOfficerSOP
   - Command
