@@ -1,8 +1,8 @@
-ent-PlayerStationAiEmpty = Núcleo de IA
- .desc = O modelo de inteligência artificial mais recente que tem.
+ent-PlayerStationAiEmpty = { PlayerStationAi }
+ .desc = { PlayerStationAi.desc }
 
-ent-PlayerStationAi = Núcleo de IA
- .desc = O modelo de inteligência artificial mais recente que tem.
+ent-PlayerStationAi = núcleo de IA
+ .desc = O modelo de inteligência artificial mais avançado que há.
 
-ent-PlayerStationAiAssembly = Núcleo de IA incompleto
+ent-PlayerStationAiAssembly = núcleo de IA incompleto
  .desc = Um núcleo incompleto para uma inteligência artificial.

@@ -23,7 +23,7 @@ ent-ViolinInstrument = violino
     .suffix = Admeme
 
 ent-ViolaInstrument = viola
-    .desc = Tipo um violino, so que pior.
+    .desc = Tipo um violino, só que pior.
     .suffix = Admeme
 
 ent-CelloInstrument = cello

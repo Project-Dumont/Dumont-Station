@@ -41,7 +41,7 @@ ent-ClothingOuterHardsuitSecurityRed = hardsuit do segurança chefe
     .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Tem uma camada extra de blindagem.
 
 ent-ClothingOuterVoidsuitSecurity = hardsuit de segurança
-    .desc = Uma hardsuit com um suporte de placa embutido para proteção moderada enquanto se mantendo móvel.
+    .desc = Uma hardsuit com um suporte de placa embutido para proteção moderada enquanto se mantém móvel.
 
 ent-ClothingOuterHardsuitSyndie = hardsuit do Sindicato
     .desc = Uma hardsuit extremamente blindada e ágil planejada para operações espaciais.

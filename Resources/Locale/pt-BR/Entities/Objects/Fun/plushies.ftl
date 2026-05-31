@@ -1,5 +1,3 @@
-
-
 ent-PlushieThrongler = pelúcia do trongolador
  .desc = Uma pelúcia lembrando aos técnicos de logística o que eles não são permitidos mais ter.
 
@@ -13,7 +11,7 @@ ent-PlushieBee = pelúcia de abelha
  .desc = Uma pelúcia fofa que se assemelha a um programador ainda mais fofo. Você seria um monstro se triturasse isso.
 
 ent-PlushieHampter = pelúcia de hamster
- .desc = Uma pelúcia de um hamster que parece um hamster extremamente triste.
+ .desc = Uma pelúcia de um hamster que parece estar extremamente triste.
 
 ent-PlushieRGBee = pelúcia de rgbelha
  .desc = Uma pelúcia fofa que se assemelha a uma abelha quando você está sofrendo efeitos de LSD.

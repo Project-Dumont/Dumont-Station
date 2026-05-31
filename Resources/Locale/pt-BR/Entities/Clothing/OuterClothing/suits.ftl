@@ -26,4 +26,4 @@ ent-ClothingOuterSuitAtmosFire = traje de bombeiro da atmos
     .desc = Um traje de bombeiro caro, capaz de proteger o usuário das chamas mais quentes possíveis, mesmo se o usuário ficar em chamas o mesmo não será afetado.
 
 ent-ClothingOuterSuitIan = traje de ian
-    .desc = Quem é um bom garato?
+    .desc = Quem é um bom garoto?

@@ -1,7 +1,5 @@
-
-
-ent-FoodCartCold = carrinho de comidas frias
+ent-FoodCartCold = carrinho refrigerado de comida
  .desc = Sorvete! O carrinho de sorvete está aqui!
 
-ent-FoodCartHot = carrinho de comidas quentes
+ent-FoodCartHot = carrinho de comida
  .desc = Vai lá e venda alguns cachorros-quentes.

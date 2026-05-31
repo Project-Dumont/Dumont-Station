@@ -1,12 +1,11 @@
-
 construction-recipe-diagonal-shuttle-wall = parede de nave (diagonal)
 construction-window-diagonal = janela (diagonal)
 construction-recipe-reinforced-window-diagonal = janela reforçada (diagonal)
 construction-recipe-clockwork-window-diagonal = janela de latão (diagonal)
 construction-recipe-plasma-window-diagonal = janela de plasma (diagonal)
-construction-recipe-reinforced-plasma-window-diagonal = janela de plasma reforçado (diagonal)
+construction-recipe-reinforced-plasma-window-diagonal = janela de plasma reforçada (diagonal)
 construction-recipe-uranium-window-diagonal = janela de urânio (diagonal)
-construction-recipe-reinforced-uranium-window-diagonal = janela de urânio reforçado (diagonal)
+construction-recipe-reinforced-uranium-window-diagonal = janela de urânio reforçada (diagonal)
 construction-recipe-firelock-edge = barreira corta fogo
 construction-recipe-fence-metal-corner = canto de cerca de arame
 construction-recipe-fence-metal-end = fim de cerca de arame
@@ -24,5 +23,5 @@ construction-recipe-fence-wood-gate-small = portão de cerca de madeira pequena
 construction-recipe-pinion-airlock = porta de latão
 construction-recipe-pinion-airlock-glass = porta de latão de vidro
 construction-recipe-airlock-glass-shuttle = porta de nave de vidro
-construction-recipe-plastic-flaps-clear = porta de entrega hermética (clear)
+construction-recipe-plastic-flaps-clear = porta de entrega hermética (translúcida)
 construction-recipe-plastic-flaps-opaque = porta de entrega hermética (opaca)

@@ -1,6 +1,5 @@
+ent-FoodSnackLollypopWrappedMystery = pirulito embalado misterioso
+ .desc = Um pirulito de conteúdo aleatório. Perfeito para dar para pacientes.
 
-ent-FoodSnackLollypopWrappedMystery = pirulito embalado de mistério
- .desc = Um pirulito de conteúdos aleatórios. Perfeito para dar para pacientes.
-
-ent-FoodSnackLollypopWrappedTricordrazine = pirulito embalado de tricordazina
+ent-FoodSnackLollypopWrappedTricordrazine = pirulito embalado de { reagent-name-tricordrazine }
  .desc = Um pirulito embalado feito de tricordazina.
