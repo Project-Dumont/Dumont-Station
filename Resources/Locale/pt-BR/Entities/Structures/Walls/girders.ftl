@@ -4,3 +4,5 @@ ent-Girder = viga
 ent-ReinforcedGirder = viga reforçada
     .desc = Uma grande montagem estrutural feita de metal e Plasteel. Requer uma camada de Plasteel antes que possa ser considerada uma parede reforçada.
 
+ent-ClockworkGirder = viga de latão
+    .desc = Uma grande montagem estrutural feita de metal. Requer uma camada de metal antes que possa ser considerada uma parede.

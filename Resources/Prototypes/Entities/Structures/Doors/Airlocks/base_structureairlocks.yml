@@ -94,7 +94,7 @@
 - type: entity
   id: Airlock
   parent: BaseStructure
-  name: airlock
+  name: porta
   description: It opens, it closes, and maybe crushes you.
   components:
   - type: StationAiWhitelist

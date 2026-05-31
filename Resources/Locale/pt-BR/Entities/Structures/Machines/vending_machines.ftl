@@ -51,7 +51,10 @@ ent-VendingMachineSeeds = BrotaBrotos
     .desc = Para quando você precisa de sementes imediatamente.
     .suffix = Hyroponics
 
-ent-VendingMachineSmartFridge = Geladeira Smart
+ent-SmartFridge = Geladeira Smart
+    .desc = Uma geladeira smart, conecta na internet e passa propaganda do jogo do tigrinho.
+
+ent-SmartFridgeMedical = Geladeira Smart
     .desc = Uma geladeira smart, conecta na internet e passa propaganda do jogo do tigrinho.
 
 ent-VendingMachineSnack = ComaComa Choco Co.

@@ -15,3 +15,5 @@ ent-JanitorialTrolley = carrinho de zeladoria
 ent-FloorDrain = dreno
      .desc = Drena poças ao seu redor. Útil para despejar baldes de esfregão ou manter certas salas limpas.
 
+ent-RagItem = pano molhado
+     .desc = Para limpar bagunças em uma emergência.

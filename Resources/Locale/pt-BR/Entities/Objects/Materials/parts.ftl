@@ -1,8 +1,8 @@
-ent-PartRodMetal = metal rods
-    .desc = { "" }
+ent-PartRodMetal = barra de metal
+    .desc = Usado em armações ou como reforçamento estrutural.
     .suffix = Full
 
-ent-PartRodMetal1 = metal rod
-    .desc = { "" }
+ent-PartRodMetal1 = barra de metal
+    .desc = Usado em armações ou como reforçamento estrutural.
     .suffix = Single
 

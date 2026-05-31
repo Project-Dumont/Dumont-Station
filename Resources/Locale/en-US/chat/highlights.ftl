@@ -1,64 +1,62 @@
 #Goob start
 #Central Command
-highlights-nanotrasen-representative = Nanotrasen Representative, "Central Command", "NTR", "NT", "CC", Bridge, "Command"
-highlights-blueshield-officer = Blueshield Officer, "Central Command", "BSO", "CC", Bridge, "Command"
-
+highlights-NanotrasenRepresentative = Nanotrasen Representative, "Central Command", "NTR", "NT", "CC", Bridge, "Command"
+highlights-BlueshieldOfficer = Blueshield Officer, "Central Command", "BSO", "CC", Bridge, "Command"
 
 # Command
-highlights-captain = Captain, "Cap", Bridge, "Command"
-highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, "Command"
-highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, "Command"
-highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, "Command"
-highlights-head-of-security = Head of Security, "HoS", Security, "Sec", Bridge, "Command"
-highlights-quartermaster = Quartermaster, "QM", Cargo, Bridge, "Command"
-highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, "Command"
+highlights-Captain = Captain, "Cap", Bridge, "Command"
+highlights-HeadOfPersonnel = Head Of Personnel, "HoP", Service, Bridge, "Command"
+highlights-ChiefEngineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, "Command"
+highlights-ChiefMedicalOfficer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, "Command"
+highlights-HeadOfSecurity = Head of Security, "HoS", Security, "Sec", Bridge, "Command"
+highlights-Quartermaster = Quartermaster, "QM", Cargo, Bridge, "Command"
+highlights-ResearchDirector = Research Director, "RD", Science, "Sci", Bridge, "Command"
 #Goob end
 
 # Security
-highlights-detective = Detective, "Det", Security, "Sec"
-highlights-security-cadet = Security Cadet, Secoff, Cadet, Security, "Sec"
-highlights-security-officer = Security Officer, Secoff, Officer, Security, "Sec"
-highlights-warden = Warden, "Ward", Security, "Sec"
+highlights-Detective = Detective, "Det", Security, "Sec"
+highlights-SecurityCadet = Security Cadet, Secoff, Cadet, Security, "Sec"
+highlights-SecurityOfficer = Security Officer, Secoff, Officer, Security, "Sec"
+highlights-Warden = Warden, "Ward", Security, "Sec"
 
 # Cargo
-highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"
-highlights-salvage-specialist = Salvage Specialist, Salvager, Salvage, "Salv", "Cargo", Miner
+highlights-CargoTechnician = Cargo Technician, Cargo Tech, "Cargo"
+highlights-SalvageSpecialist = Salvage Specialist, Salvager, Salvage, "Salv", "Cargo", Miner
 
 # Engineering
-highlights-atmospheric-technician = Atmospheric Technician, Atmos tech, Atmospheric, Engineering, "Atmos", "Engi"
-highlights-station-engineer = Station Engineer, Engineering, Engineer, "Engi"
-highlights-technical-assistant = Technical Assistant, Tech Assistant, Engineering, Engineer, "Engi"
+highlights-AtmosphericTechnician = Atmospheric Technician, Atmos tech, Atmospheric, Engineering, "Atmos", "Engi"
+highlights-StationEngineer = Station Engineer, Engineering, Engineer, "Engi"
+highlights-TechnicalAssistant = Technical Assistant, Tech Assistant, Engineering, Engineer, "Engi"
 
 # Medical
-highlights-chemist = Chemist, Chemistry, "Chem", MedBay, "Med"
-highlights-medical-doctor = Medical Doctor, Doctor, "Doc", MedBay, "Med"
-highlights-medical-intern = Medical Intern, "Doc", Intern, MedBay, "Med"
-highlights-paramedic = Paramedic, "Para", MedBay, "Med"
+highlights-Chemist = Chemist, Chemistry, "Chem", MedBay, "Med"
+highlights-MedicalDoctor = Medical Doctor, Doctor, "Doc", MedBay, "Med"
+highlights-MedicalIntern = Medical Intern, "Doc", Intern, MedBay, "Med"
+highlights-Paramedic = Paramedic, "Para", MedBay, "Med"
 
 # Science
-highlights-scientist = Scientist, Science, "Sci"
-highlights-research-assistant = Research Assistant, Science, "Sci"
+highlights-Scientist = Scientist, Science, "Sci"
+highlights-ResearchAssistant = Research Assistant, Science, "Sci"
 
 # Civilian
-highlights-bartender = Bartender, Barkeeper, Barkeep, "Bar"
-highlights-botanist = Botanist, Botany, Hydroponics
-highlights-chaplain = Chaplain, "Chap", Chapel
-highlights-chef = Chef, "Cook", Kitchen
-highlights-clown = Clown, Jester
-highlights-janitor = Janitor, "Jani"
-highlights-lawyer = Lawyer, Attorney
-highlights-librarian = Librarian, Library
-highlights-mime = Mime
-highlights-passenger = Passenger, Greytider, "Tider"
-highlights-service-worker = Service Worker
+highlights-Bartender = Bartender, Barkeeper, Barkeep, "Bar"
+highlights-Botanist = Botanist, Botany, Hydroponics
+highlights-Chaplain = Chaplain, "Chap", Chapel
+highlights-Chef = Chef, "Cook", Kitchen
+highlights-Clown = Clown, Jester
+highlights-Janitor = Janitor, "Jani"
+highlights-Lawyer = Lawyer, Attorney
+highlights-Librarian = Librarian, Library
+highlights-Mime = Mime
+highlights-Passenger = Passenger, Greytider, "Tider"
+highlights-ServiceWorker = Service Worker
 
 # Station-specific
-highlights-boxer = Boxer
-highlights-reporter = Reporter, Journalist
-highlights-zookeeper = Zookeeper
-highlights-psychologist = Psychologist, Psychology
+highlights-Boxer = Boxer
+highlights-Reporter = Reporter, Journalist
+highlights-Zookeeper = Zookeeper
+highlights-Psychologist = Psychologist, Psychology
 
 # Silicon
-highlights-personal-ai = Personal AI, "pAI"
-highlights-cyborg = Cyborg, Silicon, Borg
-highlights-station-ai = Station AI, Silicon, "AI", "sAI"
+highlights-Borg = Cyborg, Silicon, Borg
+highlights-StationAi = Station AI, Silicon, "AI", "sAI"

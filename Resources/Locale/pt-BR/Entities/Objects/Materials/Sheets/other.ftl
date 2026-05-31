@@ -1,32 +1,50 @@
-ent-SheetPaper = paper
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Full
+ent-SheetPaper = papel
+ .desc = Uma folha de papel duro demais para escrever; Mas pode ser utilizado por impressoras industriais.
 
-ent-SheetPaper1 = paper
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Single
+ent-SheetPaper1 = papel
+ .desc = Uma folha de papel duro demais para escrever; Mas pode ser utilizado por impressoras industriais.
+
+
 
 ent-SheetPlasma = plasma
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Full
+ .desc = Folha(s) de plasma; Um recurso tão importante que causou diversas guerras para adquirir-lo. Com exploração de espaço profundo virando mais prevalente, o valor dele reduziu, mas ele ainda é utilizado para diversas coisas.
+
+ent-SheetPlasma10 = plasma
+ .desc = Folha(s) de plasma; Um recurso tão importante que causou diversas guerras para adquirir-lo. Com exploração de espaço profundo virando mais prevalente, o valor dele reduziu, mas ele ainda é utilizado para diversas coisas.
 
 ent-SheetPlasma1 = plasma
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Single
+ .desc = Folha(s) de plasma; Um recurso tão importante que causou diversas guerras para adquirir-lo. Com exploração de espaço profundo virando mais prevalente, o valor dele reduziu, mas ele ainda é utilizado para diversas coisas.
 
-ent-SheetPlastic = plastic
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Full
+ent-SheetLingering0 = plasma
+ .desc = Folha(s) de plasma; Um recurso tão importante que causou diversas guerras para adquirir-lo. Com exploração de espaço profundo virando mais prevalente, o valor dele reduziu, mas ele ainda é utilizado para diversas coisas.
 
-ent-SheetPlastic1 = plastic
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Single
 
-ent-SheetUranium = uranium
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Full
 
-ent-SheetUranium1 = uranium
-    .desc = A sheet of material, used often on the station in various applications.
-    .suffix = Single
+ent-SheetPlastic = plástico
+ .desc = Folha(s) de plástico duro, usado por fabricadores.
 
+ent-SheetPlastic10 = plástico
+ .desc = Folha(s) de plástico duro, usado por fabricadores.
+
+ent-SheetPlastic1 = plástico
+ .desc = Folha(s) de plástico duro, usado por fabricadores.
+
+
+ent-SheetUranium = urânio
+ .desc = Barra(s) de urânio, frequentemente usado como fonte de energia ou em munições militares.
+
+ent-SheetUranium1 = urânio
+ .desc = Barra(s) de urânio, frequentemente usado como fonte de energia ou em munições militares.
+
+ent-SheetUranium10 = urânio
+ .desc = Barra(s) de urânio, frequentemente usado como fonte de energia ou em munições militares.
+
+ent-SheetUraniumLingering0 = urânio
+ .desc = Barra(s) de urânio, frequentemente usado como fonte de energia ou em munições militares.
+
+
+ent-MaterialSheetMeat = folha de carne
+ .desc = Folha(s) de carne... Ew...
+
+ent-MaterialSheetMeat1 = folha de carne
+ .desc = Folha(s) de carne... Ew...

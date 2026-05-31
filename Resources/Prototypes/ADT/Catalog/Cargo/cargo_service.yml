@@ -12,6 +12,6 @@
     state: icon
   product: ADTCrateServicePrinterInkCartridge
   cost: 1500
-  category: Service
+  category: cargoproduct-category-name-service
   group: market
 # Ganimed-Proto-End

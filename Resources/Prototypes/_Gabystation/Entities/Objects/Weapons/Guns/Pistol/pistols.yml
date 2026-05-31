@@ -7,7 +7,7 @@
   name: MK-58 Dourada
   parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: WeaponPistolMk58Gold
-  description: MK-58 folheada a ouro, puro estilo, so estilo mesmo pq o resto é tudo igual. Utiliza pentes de pistolas .35 .
+  description: MK-58 folheada a ouro. É funcionalmente idêntica a uma MK-58 normal. Utiliza pentes de pistolas .35 .
   components:
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Guns/Pistol/mk58gold.rsi

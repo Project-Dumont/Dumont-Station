@@ -2838,3 +2838,49 @@ Entries:
         minutos spawnado!
   id: 339
   time: '2026-05-17T19:09:10.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Healium buffado, agora ele é uma opção versátil decente para a Med.
+  id: 340
+  time: '2026-05-29T23:47:23.0000000+00:00'
+- author: PiiCat
+  changes:
+    - type: Tweak
+      message: AMEs agora produzem o dobro de energia base.
+    - type: Tweak
+      message: Injeções da AME são mais poderosas.
+    - type: Tweak
+      message: Caixa de combustível da AME agora vem com 2 jarros ao invés de 3.
+    - type: Tweak
+      message: >-
+        O preço de compra do combustivel pela Logi aumentou para 25k e vem com 1
+        jarro a menos.
+  id: 341
+  time: '2026-05-30T22:26:02.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: Glacier foi removido da rotação de mapas.
+  id: 342
+  time: '2026-05-31T01:59:25.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        Agora granadas de borracha e payloads REALMENTE precisam ser
+        pesquisadas.
+  id: 343
+  time: '2026-05-31T02:01:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Magboots de sec agora são melhores como magboots e piores como coturnos.
+  id: 344
+  time: '2026-05-31T02:04:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Muitas traduções. Muitas, muitas traduções.
+  id: 345
+  time: '2026-05-31T03:06:28.0000000+00:00'

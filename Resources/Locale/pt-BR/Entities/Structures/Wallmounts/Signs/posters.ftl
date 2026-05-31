@@ -1,106 +1,109 @@
-ent-PosterBroken = broken poster
-    .desc = You can't make out anything from the poster's original print. It's ruined.
+ent-PosterBroken = Poster Arruinado
+    .desc = Você não consegue ver o que esse poster era para mostrar antes. Está arruinado.
 
-ent-PosterContrabandFreeTonto = Free Tonto
-    .desc = A salvaged shred of a much larger flag, colors bled together and faded from age.
+ent-PosterContrabandFreeTonto = Tonto grátis
+    .desc = Parte de uma bandeira rasgada maior que isso, suas cores estão desvanescendo.
 
-ent-PosterContrabandAtmosiaDeclarationIndependence = Atmosia Declaration of Independence
-    .desc = A relic of a failed rebellion.
+ent-PosterContrabandAtmosiaDeclarationIndependence = Declaração de Independência de Atmosia
+    .desc = Uma rebelião falhada.
 
-ent-PosterContrabandFunPolice = Fun Police
+ent-PosterContrabandFunPolice = Polícia de Diversão
     .desc = A poster condemning the station's security forces.
 
+
+# eles removeram isso
 ent-PosterContrabandLustyExomorph = Lusty Exomorph
     .desc = A heretical poster depicting the titular star of an equally heretical book.
 
-ent-PosterContrabandSyndicateRecruitment = Syndicate Recruitment
-    .desc = See the galaxy! Shatter corrupt megacorporations! Join today!
 
-ent-PosterContrabandClown = Clown
+ent-PosterContrabandSyndicateRecruitment = Recrutamento do Sindicato
+    .desc = Veja a galáxia! Destrua megacorporações! Junte-se ao sindicato hoje!
+
+ent-PosterContrabandClown = Palhaço
     .desc = Honk.
 
-ent-PosterContrabandSmoke = Smoke
-    .desc = A poster advertising a rival corporate brand of cigarettes.
+ent-PosterContrabandSmoke = Fume
+    .desc = Um poster fazendo anúncio a uma marca de cigarros rival.
 
-ent-PosterContrabandGreyTide = Grey Tide
+ent-PosterContrabandGreyTide = Marinha Cinzenta
     .desc = A rebellious poster symbolizing passenger solidarity.
 
-ent-PosterContrabandMissingGloves = Missing Gloves
-    .desc = This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases.
+ent-PosterContrabandMissingGloves = Luvas desaparecidas
+    .desc = Esse poster foi parte do alvoroço gerado pela redução de estoque de luvas isolantes.
 
-ent-PosterContrabandHackingGuide = Hacking Guide
-    .desc = This poster details the internal workings of the common Nanotrasen airlock. Sadly, it appears out of date.
+ent-PosterContrabandHackingGuide = Guia de Hackeamento
+    .desc = Esse poster apresenta os mecanismos de uma porta padrão da NanoTrasen, e como abrir sem ter acesso. Infelizmente, está desatualizado.
 
-ent-PosterContrabandRIPBadger = RIP Badger
-    .desc = This seditious poster references Nanotrasen's genocide of a space station full of badgers.
+ent-PosterContrabandRIPBadger = Descanse em Paz, Texugo
+    .desc = Esse poster faz referência a um massacre realizado pela NanoTrasen em uma estação cheia de texugos.
 
 ent-PosterContrabandAmbrosiaVulgaris = Ambrosia Vulgaris
-    .desc = This poster is lookin' pretty trippy man.
+    .desc = Esse poster ta doidão, cara.
 
 ent-PosterContrabandDonutCorp = Donut Corp.
-    .desc = This poster is an unauthorized advertisement for Donut Corp.
+    .desc = Esse poster é um anúncio não autorizado para Donut Corp.
 
-ent-PosterContrabandEAT = EAT.
-    .desc = This poster promotes rank gluttony.
+ent-PosterContrabandEAT = COMA.
+    .desc = Esse poster estimula a gulodice.
 
-ent-PosterContrabandTools = Tools
-    .desc = This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentComm.
+ent-PosterContrabandTools = Ferramentas
+    .desc = Esse poster parece ser um anúncio simples de ferramentas, mas na verdade é uma crítica as "Ferramentas" da NanoTrasen na central de comando.
 
-ent-PosterContrabandPower = Power
-    .desc = A poster that positions the seat of power outside Nanotrasen.
+ent-PosterContrabandPower = Poder
+    .desc = Um poster que posiciona o assento de poder fora da NanoTrasen.
 
-ent-PosterContrabandSpaceCube = Space Cube
-    .desc = Ignorant of Nature's Harmonic 6 Side Space Cube Creation, the Spacemen are Dumb, Educated Singularity Stupid and Evil.
+ent-PosterContrabandSpaceCube = Cubo Espacial
+    .desc = ... Ele tem quantos lados?
 
-ent-PosterContrabandCommunistState = Communist State
-    .desc = All hail the Communist party!
+ent-PosterContrabandCommunistState = Estado Comunista
+    .desc = Glória ao partido!
 
 ent-PosterContrabandLamarr = Lamarr
-    .desc = This poster depicts Lamarr. Probably made by a traitorous Research Director.
+    .desc = Esse poster retrata o Lamarr. Provavelmente feito por um diretor de pesquisa insano.
 
-ent-PosterContrabandBorgFancy = Borg Fancy
-    .desc = Being fancy can be for any borg, just need a suit.
+ent-PosterContrabandBorgFancy = Borg Chique
+    .desc = Ser chique pode ser feito por qualquer ciborgue, você so precisa de um terno.
 
-ent-PosterContrabandBorgFancyv2 = Borg Fancy v2
-    .desc = Borg Fancy, Now only taking the most fancy.
+ent-PosterContrabandBorgFancyv2 = Borg Chique V2
+    .desc = Borg Chique, agora apenas aceitando os mais chiques.
 
-ent-PosterContrabandKosmicheskayaStantsiya = Kosmicheskaya Stantsiya 13 Does Not Exist
-    .desc = A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13.
+ent-PosterContrabandKosmicheskayaStantsiya = A Kosmicheskaya Stantsiya 13 Não Existe
+    .desc = Um poster insultando a negação da central de comando da estação derelita perto da estação espacial 13.
 
-ent-PosterContrabandRebelsUnite = Rebels Unite
-    .desc = A poster urging the viewer to rebel against Nanotrasen.
+ent-PosterContrabandRebelsUnite = Rebeldes se Unem
+    .desc = Um poster tentando convencer o usuário de se rebelar contra a NanoTrasen.
 
 ent-PosterContrabandC20r = C-20r
-    .desc = A poster advertising the Scarborough Arms C-20r.
+    .desc = Um poster anunciando C-20r.
 
-ent-PosterContrabandHaveaPuff = Have a Puff
-    .desc = Who cares about lung cancer when you're high as a kite?
+ent-PosterContrabandHaveaPuff = Faça Um Sopro
+    .desc = Quem se importa sobre câncer quando você mal consegue entender ele?
 
 ent-PosterContrabandRevolver = Revolver
-    .desc = Because seven shots are all you need.
+    .desc = Pois sete tiros são tudo que você precisa... Pera.
 
-ent-PosterContrabandDDayPromo = D-Day Promo
-    .desc = A promotional poster for some rapper.
+ent-PosterContrabandDDayPromo = Promoção do D-Day
+    .desc = Um poster promocional para algum rapper.
 
-ent-PosterContrabandSyndicatePistol = Syndicate Pistol
-    .desc = A poster advertising syndicate pistols as being 'classy as fuck'. It's covered in faded gang tags.
+ent-PosterContrabandSyndicatePistol = Pistola do Sindicato
+    .desc = Um poster afirmando que pistolas do sindicato são "elegantes pra caralho". Tem marcas de gangue encima.
 
-ent-PosterContrabandEnergySwords = Energy Swords
-    .desc = All the colors of the bloody murder rainbow.
+ent-PosterContrabandEnergySwords = Espadas de Energia
+    .desc = Todas as cores do arco-íris de morte.
 
-ent-PosterContrabandRedRum = Red Rum
-    .desc = Looking at this poster makes you want to kill.
+ent-PosterContrabandRedRum = Rum Vermelho
+    .desc = Olhar para esse poster faz você querer matar.
 
-ent-PosterContrabandCC64KAd = CC 64K Ad
-    .desc = The latest portable computer from Comrade Computing, with a whole 64kB of ram!
+ent-PosterContrabandCC64KAd = Anúncio de CC 64K
+    .desc = O computador menos portátil da marca Camarada Computacional, com 64kb inteiros de memória!
 
-ent-PosterContrabandPunchShit = Punch Shit
-    .desc = Fight things for no reason, like a man!
+ent-PosterContrabandPunchShit = Soque Coisas
+    .desc = Lute com coisas por nenhum motivo, como um homem!
 
-ent-PosterContrabandTheGriffin = The Griffin
-    .desc = The Griffin commands you to be the worst you can be. Will you?
+ent-PosterContrabandTheGriffin = O Grifo
+    .desc = O Grifo comanda você a ser o pior que você pode ser. Você será?
 
-ent-PosterContrabandFreeDrone = Free Drone
+ent-PosterContrabandFreeDrone = Drone livre
     .desc = This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm.
 
 ent-PosterContrabandBustyBackdoorExoBabes6 = Busty Backdoor Exo Babes 6

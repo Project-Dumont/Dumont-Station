@@ -18,8 +18,8 @@
 #Base
 - type: entity
   id: AirlockAssembly
-  name: airlock assembly
-  description: It opens, it closes, and maybe crushes you.
+  name: porta inacabada
+  description: Ela não abre, ela não fecha, mas é um começo.
   components:
   - type: Clickable
   - type: InteractionOutline

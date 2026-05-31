@@ -41,3 +41,6 @@ ent-DisposalSignalRouter = tubo roteador de sinal
 
 ent-DisposalSignaller = tubo detector
     .desc = Um tubo que envia um sinal quando algo passa por ele.
+
+ent-DisposalBlocker = tubo bloqueador
+    .desc = Um tubo que previne o movimento de objetos em um lado e permite no outro.

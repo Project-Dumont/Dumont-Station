@@ -43,5 +43,40 @@ ent-CrateRCDAmmo = Caixa de munição RCD
 ent-CrateRCD = Caixa de RCD
     .desc = Uma caixa contendo um Dispositivo de Construção Rápida.
 
-ent-CrateParticleDecelerators = Caixa de Desaceleradores de Partículas
+ent-CrateRPD = Caixa de RPD
+    .desc = Uma caixa contendo um Dispositivo de Canos Rápidos.
+
+ent-CrateParticleDecelerators = caixa de Desaceleradores de Partículas
     .desc = Uma caixa contendo 3 desaceleradores de partículas.
+
+ent-CrateAirGrenade = caixa de granadas de ar
+    .desc = Uma caixa contendo 3 granadas de ar.
+
+
+
+
+
+ent-CrateLockBoxEngineering = caixa de venda de engenharia
+    .desc = Uma caixa de venda. O dinheiro recebido de sua venda será distribuido de volta ao departamento de engenharia. Apenas lembre-se: A logística sempre recebe sua parte.
+
+
+
+
+
+ent-MachinePowerTransmissionLaserCrate = caixa de laser de transmissão de energia
+    .desc = Uma caixa contendo um flatpack de um laser de transmissão de energia; Uma máquina extremamente valiosa utilizada pelo departamento de engenharia para transmitir a uma instalação de processamento de energia da NanoTrasen por uma quantidade enorme de dinheiro.
+
+ent-CrateEngineeringFoamGrenade = caixa de granadas de espuma de metal
+    .desc = Uma caixa contendo 5 granadas de espuma de metal para encher buracos na estação.
+
+ent-CrateEngineeringSpaceHeater = caixa de climatizador espacial
+    .desc = Uma caixa contendo um flatpack de um climatizador espacial usado para controle de temperatura de um ambiente fechado.
+
+ent-CrateVendingMachineRestockEngineeringFilled = caixa de restoque engivend
+    .desc = Uma caixa contendo um restoque para uma máquina de vendas de engenharia ou ferramentas.
+
+ent-CrateEngineeringSingularityEmitter = caixa de emissor
+    .desc = Uma caixa contendo um emissor para energizar um gerador de campo de contenção.
+
+ent-CrateEngineeringFirefighterBackpackTank = caixa de mochila de bombeiro
+    .desc = Uma caixa contendo uma mochila de água para apagar incêndios e remover gases nocivos da atmosfera com facilidade.

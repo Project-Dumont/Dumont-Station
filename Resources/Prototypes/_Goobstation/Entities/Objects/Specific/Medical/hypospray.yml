@@ -196,7 +196,7 @@
 - type: entity
   name: brute autoinjector cartridge
   parent: [ BaseSecurityMedicalContraband , BaseAutoinjectorCartridge ]
-  description: Contains 6u of bicaridine, 1.5 units of salicylic acid and 2u of tranexamic acid, used in a cartridge autoinjector.
+  description: Contains 6u of bicaridine, 1.5 units of salicylic acid and 2.5u of tranexamic acid, used in a cartridge autoinjector.
   id: CartridgeBicaridine
   components:
   - type: Sprite

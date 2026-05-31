@@ -225,3 +225,6 @@ ent-ClothingUniformJumpsuitMonasticRobeLight = manto monástico leve
 
 ent-ClothingUniformJumpsuitMusician = smoking do músico
     .desc = Um smoking chique para quem gosta de música. Perfeito para qualquer ato lounge!
+
+ent-ClothingUniformJumpsuitClownBanana = roupa de bananium
+ .desc = HONK!

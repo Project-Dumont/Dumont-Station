@@ -133,3 +133,11 @@ ent-ClothingHeadHatFedoraGreyOffBrand = Fedora cinza de baixa qualidade
 ent-ClothingHeadHatFedoraBrownOffBrand = Fedora marrom de baixa qualidade
     .desc = Um fedora marrom. Esse parece ser de qualidade menor comparado com o que você pode normalmente achar.
 
+ent-ClothingHeadHatGreyFlatcap = boné plano cinza
+ .desc = Ótimo ambos para proletários e o velho Jenkins.
+
+ent-ClothingHeadHatBrownFlatcap = boné plano cinza
+ .desc = Palhaço idiota! Você me fez parecer mal!
+
+ent-ClothingHeadHatStrawHat = chapéu de palha
+ .desc = Para uma festa junina.

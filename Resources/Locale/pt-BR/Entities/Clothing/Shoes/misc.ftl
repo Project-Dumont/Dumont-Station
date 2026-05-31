@@ -12,3 +12,6 @@ ent-ClothingShoeSlippersDuck = chinelos patinhos
 
 ent-ClothingShoesTourist = calçado turístico
      .desc=Essas sandálias baratas não parecem muito confortáveis.
+
+ent-ClothingShoeSlippersLizard = chinelos de pelúcia de reptiliano
+     .desc= Um par de chinelos adoráveis que parecem um reptiliano. Pega uma roupa verde e você vira a pessoa mais maneira da estação.

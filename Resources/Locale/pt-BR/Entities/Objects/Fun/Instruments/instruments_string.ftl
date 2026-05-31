@@ -1,32 +1,32 @@
-ent-ElectricGuitarInstrument = electric guitar
-    .desc = Now this makes you feel like a rock star!
+ent-ElectricGuitarInstrument = guitarra elétrica
+    .desc = Agora você sente como uma estrela do rock!
 
-ent-BassGuitarInstrument = bass guitar
-    .desc = You feel really cool holding this. Shame you're the only one that thinks that.
+ent-BassGuitarInstrument = baixo
+    .desc = Você sente muito maneiro segurando isso. É uma vergonha que o resto das pessoas não pensam assim.
 
-ent-RockGuitarInstrument = rock guitar
-    .desc = What an axe!
+ent-RockGuitarInstrument = guitarra rock
+    .desc = Que machado maneiro.
 
-ent-AcousticGuitarInstrument = acoustic guitar
-    .desc = Anyway, here's Wonderwall.
+ent-AcousticGuitarInstrument = violão
+    .desc = De qualquer maneira, hora de Wonderwall.
 
-ent-GuitarlessFretsInstrument = guitarless frets
-    .desc = who even needs a body?
+ent-GuitarlessFretsInstrument = trastes sem violão
+    .desc = Quem precisa de um corpo?
     .suffix = Admeme
 
 ent-BanjoInstrument = banjo
-    .desc = who even needs a body?
+    .desc = Yeee-haw!
     .suffix = Admeme
 
-ent-ViolinInstrument = violin
-    .desc = The favorite of musical virtuosos and bluegrass bands.
+ent-ViolinInstrument = violino
+    .desc = O favorito de bandas bluegrass.
     .suffix = Admeme
 
 ent-ViolaInstrument = viola
-    .desc = Like a violin, but worse.
+    .desc = Tipo um violino, só que pior.
     .suffix = Admeme
 
 ent-CelloInstrument = cello
-    .desc = The nerds call these violoncellos.
+    .desc = Os nerds chamam eles de violoncellos.
     .suffix = Admeme
 

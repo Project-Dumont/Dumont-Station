@@ -24,3 +24,33 @@ ent-ClothingEyesGlassesSecurity = óculos de segurança
 
 ent-ClothingEyesGlassesThermal = óculos de visão térmica
     .desc = Um visor térmico portátil.
+
+ent-ClothingEyesGlassesCommand = óculos adminstrativo
+ .desc = Um óculos de sol melhorado que mostra o trabalho marcado no ID de pessoas perto de você.
+
+ent-ClothingEyesGlassesNoir = óculos noir
+ .desc = Um óculos com SecHud que mostra como o mundo parecia antes da invenção de cores que não são vermelho.
+
+ent-ClothingEyesGlassesDiag = óculos diagnóstico
+ .desc = Um óculos com hud de roboticista que mostra a saúde de mechas e siliconos.
+
+ent-ClothingEyesGlassesBSO = óculos de oficial blueshield
+ .desc = Um óculos com hud de médico, segurança e roboticista.
+
+ent-ClothingEyesGlassesSecurityContraDetect = óculos detector de contrabando
+ .desc = Um óculos de sol com SecHud e revela se alguém está vestindo contrabando.
+
+ent-ClothingEyesGlassesMed = óculos médico
+ .desc = Um óculos de sol com MedHud que mostra a saúde de seres vivos.
+
+ent-ClothingEyesGlassesMedChemFlash = óculos medchem
+ .desc = Um óculos de sol com MedHud e scanner de reagentes.
+
+ent-ClothingEyesGlassesMedSec = óculos medsec
+ .desc = Um óculos de sol com MedHud e SecHud.
+
+ent-ClothingEyesGlassesMedDiag = óculos meddiag
+ .desc = Um óculos de sol com MedHud e hud diagnóstico.
+
+ent-ClothingEyesGlassesMedChem = óculos medchem
+ .desc = Um óculos que consegue analisar a saúde de seres vivos e reagentes.

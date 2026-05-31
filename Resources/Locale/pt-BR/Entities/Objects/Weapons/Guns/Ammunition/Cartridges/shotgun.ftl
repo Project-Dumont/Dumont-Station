@@ -22,3 +22,6 @@ ent-ShellShotgunPractice = cartucho  (.50 prática)
 ent-ShellTranquilizer = cartucho  (.50 tranquilizante)
     .desc = { "" }
 
+
+ent-ShellShotgunImprovised = cartucho improvisado (.50)
+    .desc = Um cartucho artesanal que atira pedaços de vidro. É tão impreciso que poderia errar a um metro de distância.
