@@ -147,11 +147,7 @@
       time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 54000 #15 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
-      inverted: true
-      species:
-      - Felinid
+      time: 86400 #24 hrs - Dumont edit
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

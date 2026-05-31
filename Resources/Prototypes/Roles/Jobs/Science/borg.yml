@@ -57,7 +57,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000 # 10 hrs
+      time: 86400 # 24 hrs - Dumont edit
   canBeAntag: false
   goobcoins: 20 #Goob content
   hasBank: false # Gaby content

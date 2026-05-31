@@ -146,23 +146,20 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 72000 #20 hr
+      time: 86400 #24h - Dumont edit
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 18000 #5 hr, knowing how to use the tools is important
+      time: 21600 #6 hr, knowing how to use the tools is important - Dumont edit
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 36000 #10 hrs
-    - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 3600 #1 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 108000 # 30 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
+      time: 144000 # 40 hrs - Dumont edit
+    - !type:SpeciesRequirement # Dumont - No Waddler
       inverted: true
       species:
-      - Felinid
+     - Waddler
   #  - !type:StyleRequirement
   #    styles:
   #    - HumanHairFloorlengthBedhead

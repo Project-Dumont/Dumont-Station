@@ -72,6 +72,10 @@
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer
     time: 18000 #5 hrs
+  - !type:SpeciesRequirement # Dumont - No Waddler
+      inverted: true
+      species:
+      - Waddler
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

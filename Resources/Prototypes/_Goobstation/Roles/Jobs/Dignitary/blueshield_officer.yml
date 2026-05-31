@@ -44,10 +44,10 @@
       time: 90000 # 25 hours
     - !type:AgeRequirement
       requiredAge: 21
-    - !type:SpeciesRequirement # Goob - None Felinid
+    - !type:SpeciesRequirement # Dumont - No Waddler
       inverted: true
       species:
-      - Felinid
+      - Waddler
   guides:
   # - BlueshieldOfficerSOP
   - Command

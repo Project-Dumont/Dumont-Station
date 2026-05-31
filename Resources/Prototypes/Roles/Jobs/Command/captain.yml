@@ -147,7 +147,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChiefEngineer
-      time: 18000 #5 hrs
+      time: 36000 #10 hrs - Dumont edit
     - !type:RoleTimeRequirement
       role: JobChiefMedicalOfficer
       time: 18000 #5 hrs
@@ -157,10 +157,13 @@
     - !type:RoleTimeRequirement
       role: JobResearchDirector
       time: 18000 #5 hrs
-    - !type:SpeciesRequirement # Goob - None Felinid
+    - !type:RoleTimeRequirement # Dumont
+      role: JobHeadOfPersonnel
+      time: 43200 #12 hrs
+    - !type:SpeciesRequirement # Dumont - No Waddler
       inverted: true
       species:
-      - Felinid
+     - Waddler
       #any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30

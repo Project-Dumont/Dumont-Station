@@ -91,7 +91,11 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 9000 #2.5 hrs
+      time: 86400 #24 hrs - Dumont edit
+    - !type:SpeciesRequirement # Dumont - No Waddler
+      inverted: true
+      species:
+      - Waddler
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos

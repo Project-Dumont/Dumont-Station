@@ -145,23 +145,23 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 14400 # 4 hours
+      time: 18000 # 6 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 14400 # 4 hours
+      time: 18000 # 6 hours
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 14400 # 4 hrs
+      time: 18000 # 6 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400 # 4 hrs
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 14400 # 4 hours
-    - !type:SpeciesRequirement # Goob - None Felinid
+      time: 18000 # 6 hrs
+    - !type:RoleTimeRequirement # Dumont
+      role: JobAdminAssistant
+      time: 36000 #10 hrs
+    - !type:SpeciesRequirement # Dumont - No Waddler
       inverted: true
       species:
-      - Felinid
+     - Waddler
   guides: # goobstation
   - Command
   # - Succession
