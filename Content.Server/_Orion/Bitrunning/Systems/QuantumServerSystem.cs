@@ -932,8 +932,6 @@ public sealed class QuantumServerSystem : EntitySystem
 
         if (ent.Comp.DisconnectActionEntity is { } disconnectAction)
             _actions.SetCooldown(disconnectAction, _timing.CurTime, ent.Comp.DisconnectBlockedUntil);
-
-        Dirty(ent);
     }
 
     private void OnAvatarStateChanged(Entity<AvatarConnectionComponent> ent, ref MobStateChangedEvent args)
