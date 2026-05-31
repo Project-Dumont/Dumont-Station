@@ -42,3 +42,12 @@
   id: Halt
   sound: /Audio/_Goobstation/Hailer/halt.ogg
   message: hail-8
+
+- type: hailerEntry
+  id: DeathToNanoTrasen
+  sound:
+    path: /Audio/_Starlight/Effects/nano_death.ogg
+    params:
+      variation: 0.09
+      pitch: 0.5
+  message: hail-death-to-nt

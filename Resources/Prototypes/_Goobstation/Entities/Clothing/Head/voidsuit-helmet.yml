@@ -184,12 +184,7 @@
   - type: SpeechSoundsReplacer
     speechSounds: Chrono
   - type: Hailer # STARLIGHT
-    hailMessage: "Death to NanoTrasen!!"
-    hailSound:
-      path: /Audio/_Starlight/Effects/nano_death.ogg
-      params:
-        variation: 0.09
-        pitch: 0.5
+    hails: [ DeathToNanoTrasen ]
     cooldownDuration: 30
 
 # Security
