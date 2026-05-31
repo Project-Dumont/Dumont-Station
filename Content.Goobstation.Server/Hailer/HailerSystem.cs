@@ -20,6 +20,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -34,21 +35,7 @@ public sealed class HailerSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
-
-    private readonly string[] _sounds = [
-        "/Audio/_Goobstation/Hailer/asshole.ogg",
-        "/Audio/_Goobstation/Hailer/bash.ogg",
-        "/Audio/_Goobstation/Hailer/bobby.ogg",
-        "/Audio/_Goobstation/Hailer/compliance.ogg",
-        "/Audio/_Goobstation/Hailer/dontmove.ogg",
-        "/Audio/_Goobstation/Hailer/dredd.ogg",
-        "/Audio/_Goobstation/Hailer/floor.ogg",
-        "/Audio/_Goobstation/Hailer/freeze.ogg",
-        "/Audio/_Goobstation/Hailer/halt.ogg",
-    ];
-
-    private readonly Dictionary<EntityUid, TimeSpan> _delays = new();
-    private readonly TimeSpan _fixed_delay = TimeSpan.FromSeconds(2);
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
@@ -91,60 +78,51 @@ public sealed class HailerSystem : EntitySystem
 
         // No hail spam check.
         var performer = uid;
-        HailerComponent? hailerComponent = null;
-        EntityUid? hailerEntity = null;
+        Entity<HailerComponent>? maybeHailerEnt = null;
 
+        // encontra a entidade que tem o componente de Hailer. pode ser o borg, uma máscara ou o capaceta de dread.
         if (TryComp<HailerComponent>(performer, out var borgComp) && borgComp.IsBorg)
         {
-            hailerComponent = borgComp;
-            hailerEntity = performer;
+            maybeHailerEnt = (performer, borgComp);
         }
         else if (_inventory.TryGetSlots(performer, out var slotDefinitions))
         {
             foreach (var slot in slotDefinitions)
             {
-                if (_inventory.TryGetSlotEntity(performer, slot.Name, out var item) && 
-                    TryComp<HailerComponent>(item, out var comp))
-            {
-                    hailerComponent = comp;
-                    hailerEntity = item;
+                if (_inventory.TryGetSlotEntity(performer, slot.Name, out var item)
+                    && TryComp<HailerComponent>(item, out var comp))
+                {
+                    maybeHailerEnt = (item.Value, comp);
                     break;
                 }
             }
         }
 
-        if (hailerComponent == null || hailerEntity == null)
+        if (maybeHailerEnt is not { } hailerEnt)
             return;
 
-        EnsureComp<UseDelayComponent>(hailerEntity.Value, out var useDelay);
-        var hailerEnt = new Entity<UseDelayComponent>(hailerEntity.Value, useDelay);
+        EnsureComp<UseDelayComponent>(hailerEnt.Owner, out var useDelayComp);
 
-        if (_useDelay.IsDelayed(hailerEnt.AsNullable()))
+        if (_useDelay.IsDelayed(hailerEnt.Owner))
             return;
 
-        _useDelay.SetLength(hailerEnt.AsNullable(), TimeSpan.FromSeconds(hailerComponent.CooldownDuration));
-        _useDelay.TryResetDelay(hailerEnt);
+        _useDelay.SetLength(hailerEnt.Owner, hailerEnt.Comp.CooldownDuration);
+        _useDelay.TryResetDelay(hailerEnt.Owner);
 
-        if (!string.IsNullOrEmpty(hailerComponent.HailMessage))
-        {
-            if (hailerComponent.HailSound != null)
-            {
-                _audio.PlayPvs(hailerComponent.HailSound, performer);
-            }
+        var randomProtoId = _random.Pick(hailerEnt.Comp.Hails);
 
-            _chat.TrySendInGameICMessage(performer, hailerComponent.HailMessage, InGameICChatType.Speak, false);
-        }
-        else
-        {
-            int rInt = (int)_random.NextDouble(0, _sounds.Length);
-            _audio.PlayPvs(_sounds[rInt], performer);
+        if (!_proto.Resolve(randomProtoId, out var randomProto))
+            return;
 
-            var name = Name(performer);
-            if (!hailerComponent.IsBorg) // GabyStation - SecBorg Hailer. Only borgs uid has HailerComponent
-                name += "(SecMask)";
+        var name = Name(performer);
 
-            _chat.TrySendInGameICMessage(performer, Loc.GetString("hail-" + rInt), InGameICChatType.Speak, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
-        }
+        if (!hailerEnt.Comp.IsBorg)
+            name += " (SecMask)";
+
+        if (randomProto.Sound is not null)
+            _audio.PlayPvs(randomProto.Sound, performer);
+
+        _chat.TrySendInGameICMessage(performer, Loc.GetString(randomProto.Message), InGameICChatType.Speak, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
 
         args.Handled = true;
     }
