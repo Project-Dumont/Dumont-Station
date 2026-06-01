@@ -14,8 +14,8 @@ ent-CartridgeSaline = cartucho de autoinjetor de perda de ar
 ent-CartridgeBicaridine = cartucho de autoinjetor de bruto
  .desc = Contém 6 unidades de bicaridina, 1.5 unidades de ácido salicílico e 2.5 unidades de ácido tranexâmico. Impede sangramento e cura dano bruto. Usado em um autoinjetor.
 
-ent-CartridgeDermaline = cartucho de autoinjetor de queimada
- .desc = Contém 5 unidades de kelotane, 4 unidades de dermaline e 1 unidade de leporazina. Cura danos de queimada. Usado em um autoinjetor.
+ent-CartridgeDermaline = cartucho de autoinjetor de queimadura
+ .desc = Contém 5 unidades de kelotane, 4 unidades de dermaline e 1 unidade de leporazina. Cura danos de queimadura. Usado em um autoinjetor.
 
 ent-CartridgeAtropine = cartucho de autoinjetor emergencial
  .desc = Contém 10 unidades de atropina. Cura pessoas em estado crítico rapidamente. Usado em um autoinjetor.
