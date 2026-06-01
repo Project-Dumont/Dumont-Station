@@ -1,0 +1,83 @@
+- type: entity
+  parent: Airlock
+  id: AirlockPsychology
+  suffix: Psychology
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/psychology.rsi
+  - type: PaintableAirlock
+    department: Medical
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: Airlock
+  id: AirlockPharmacy
+  suffix: Pharmacy
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/pharmacy.rsi
+  - type: PaintableAirlock
+    department: Medical
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: Airlock
+  id: AirlockGenetics
+  suffix: Genetics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/genetics.rsi
+  - type: PaintableAirlock
+    department: Science
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: AirlockMail
+  suffix: Mail
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/mail.rsi
+  - type: PaintableAirlock
+    department: Cargo
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: Airlock
+  id: AirlockMining
+  suffix: Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/miner.rsi
+  - type: PaintableAirlock
+    department: Cargo
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: Airlock
+  id: AirlockExploration
+  suffix: Exploration
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/salvmine.rsi
+  - type: PaintableAirlock
+    department: Cargo
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: Airlock
+  id: AirlockMedSci
+  suffix: MedSci
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
+  - type: PaintableAirlock
+    department: Science
+  - type: Wires
+    layoutId: AirlockScience

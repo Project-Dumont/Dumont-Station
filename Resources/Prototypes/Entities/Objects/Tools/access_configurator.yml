@@ -67,15 +67,21 @@
       - ChiefMedicalOfficer
       - Command
       - Engineering
+      - Exploration # Dumont
       - External
+      - Genetics # Dumont
       - HeadOfPersonnel
       - HeadOfSecurity
       - Hydroponics
       - Janitor
       - Kitchen
       - Lawyer
+      - Mail # Dumont
       - Maintenance
       - Medical
+      - Mining # Dumont
+      - Pharmacist # Dumont
+      - Psycologist # Dumont
       - Quartermaster
       - Research
       - Robotics # goobstation
@@ -85,6 +91,7 @@
       - Security
       - Service
       - Theatre
+      - Virologist # Dumont
       - GenpopEnter
       - GenpopLeave
       privilegedIdSlot:
@@ -144,15 +151,21 @@
     - Cryogenics
     - EmergencyShuttleRepealAll
     - Engineering
+    - Exploration # Dumont
     - External
+    - Genetics # Dumont
     - HeadOfPersonnel
     - HeadOfSecurity
     - Hydroponics
     - Janitor
     - Kitchen
     - Lawyer
+    - Mail # Dumont
     - Maintenance
     - Medical
+    - Mining # Dumont
+    - Pharmacist # Dumont
+    - Psycologist # Dumont
     - Quartermaster
     - Research
     - ResearchDirector
@@ -161,6 +174,7 @@
     - Service
     - StationAi
     - Theatre
+    - Virologist # Dumont
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent

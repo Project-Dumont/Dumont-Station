@@ -1,0 +1,47 @@
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsPsychology
+  suffix: Psychology, Locked
+  components:
+  - type: AccessReader
+    access: [["Psychologist"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsPharmacy
+  suffix: Pharmacy, Locked
+  components:
+  - type: AccessReader
+    access: [["Pharmacist"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsGenetics
+  suffix: Genetics, Locked
+  components:
+  - type: AccessReader
+    access: [["Genetics"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMail
+  suffix: Mail, Locked
+  components:
+  - type: AccessReader
+    access: [["Mail"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMining
+  suffix: Mining, Locked
+  components:
+  - type: AccessReader
+    access: [["Mining"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsExploration
+  suffix: Exploration, Locked
+  components:
+  - type: AccessReader
+    access: [["Exploration"]]
