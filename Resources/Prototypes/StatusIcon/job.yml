@@ -96,7 +96,7 @@
   parent: JobIcon
   id: JobIconDetective
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: Detective
   jobName: job-name-detective
 
@@ -192,7 +192,7 @@
   parent: JobIcon
   id: JobIconSecurityOfficer
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: SecurityOfficer
   jobName: job-name-security
 
@@ -368,7 +368,7 @@
   parent: JobIcon
   id: JobIconBrigmedic
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: Brigmedic
   jobName: job-name-brigmedic
 
@@ -400,7 +400,7 @@
   parent: JobIcon
   id: JobIconWarden
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: Warden
   jobName: job-name-warden
 
@@ -472,7 +472,7 @@
   parent: JobIcon
   id: JobIconSecurityCadet
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: SecurityCadet
   jobName: job-name-cadet
 
@@ -512,7 +512,7 @@
   parent: JobIcon
   id: JobIconSeniorOfficer
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: SeniorOfficer
   allowSelection: false
 
@@ -568,6 +568,6 @@
   parent: JobIcon
   id: JobIconSecurityClown #Goobstation
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: SecurityClown
   allowSelection: false

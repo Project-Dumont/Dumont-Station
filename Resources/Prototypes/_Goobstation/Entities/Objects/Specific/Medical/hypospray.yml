@@ -24,7 +24,7 @@
   abstract: true
   components:
   - type: Item
-    sprite: _Goobstation/Objects/Specific/Medical/autoinjector.rsi
+    sprite: _Gabystation/Objects/Specific/Security/autoinjector.rsi
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Medical/autoinjector.rsi
   - type: SolutionContainerVisuals

@@ -31,7 +31,7 @@
 - type: gameMap
   id: Origin
   mapName: 'Origin'
-  mapPath: /Maps/_Goobstation/origin.yml
+  mapPath: /Maps/_Gabystation/origin.yml # Dumont
   minPlayers: 50
   maxPlayers: 85
   stations:

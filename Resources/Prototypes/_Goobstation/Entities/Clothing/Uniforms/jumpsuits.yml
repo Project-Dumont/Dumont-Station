@@ -331,9 +331,9 @@
   description: The head of security's custom-commissioned summer outfit, for when chasing tiders gets hot.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Casual/casualshirt_hos.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/casualshirt_hos.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Casual/casualshirt_hos.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/casualshirt_hos.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]

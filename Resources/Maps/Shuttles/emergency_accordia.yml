@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Grid
@@ -107,7 +111,7 @@ entities:
           decals:
             44: 5,0
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNe
           decals:
             47: 5,-6
@@ -117,7 +121,7 @@ entities:
           decals:
             43: 3,0
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNw
           decals:
             48: 3,-6
@@ -127,7 +131,7 @@ entities:
           decals:
             45: 5,-4
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerSe
           decals:
             46: 5,-10
@@ -150,7 +154,7 @@ entities:
           decals:
             42: 3,-4
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerSw
           decals:
             60: 3,-10
@@ -179,7 +183,7 @@ entities:
             77: -3,7
             92: 1,-19
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteInnerNe
           decals:
             71: 1,-9
@@ -222,7 +226,7 @@ entities:
             90: 1,-17
             91: 1,-23
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteInnerSe
           decals:
             72: 1,-6
@@ -275,7 +279,7 @@ entities:
             88: 1,-24
             89: 1,-18
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineE
           decals:
             55: 5,-9
@@ -310,7 +314,7 @@ entities:
           decals:
             78: -2,7
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineN
           decals:
             59: 4,-6
@@ -325,7 +329,7 @@ entities:
           decals:
             36: 4,-4
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineS
           decals:
             58: 4,-10
@@ -373,7 +377,7 @@ entities:
             140: -5,0
             141: -5,-9
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineW
           decals:
             52: 3,-7
@@ -406,7 +410,7 @@ entities:
             69: 2,-3
             70: 2,-2
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: FullTileOverlayGreyscale
           decals:
             49: 4,-5
