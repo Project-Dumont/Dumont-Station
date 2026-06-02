@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprited by @b11jj for Goobstation, vulps sprites edited by YERO",
+  "copyright": "Taken from Paradise SS13 at commit https://github.com/ParadiseSS13/Paradise/commit/a67c929b7394f78e7787114457ba42f4df6cc3a1. Vox state by Flareguy for SS14, Resprited by Sunrise. monkey state made by MercerBray for Ss14. Color scheme, species, toggleable lights and unshaded by JustAdler for https://github.com/ss14Starlight/space-station-14",
   "size": {
     "x": 32,
     "y": 32
@@ -18,6 +18,14 @@
       "directions": 4
     },
     {
+      "name": "off-equipped-HELMET-unshaded",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-unshaded",
+      "directions": 4
+    },
+    {
       "name": "on-equipped-HELMET",
       "directions": 4
     },
@@ -26,15 +34,79 @@
       "directions": 4
     },
     {
-      "name": "on-equipped-HELMET-vox",
+      "name": "off-equipped-HELMET-unshaded-vox",
       "directions": 4
     },
     {
-      "name": "on-equipped-HELMET-vulpkanin",
+      "name": "on-equipped-HELMET-unshaded-vox",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-cyclorite",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-cyclorite",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-unshaded-cyclorite",
       "directions": 4
     },
     {
       "name": "off-equipped-HELMET-vulpkanin",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-vulpkanin",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-unshaded-vulpkanin",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-felionoid",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-felionoid",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-unshaded-felionoid",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-resomi",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-resomi",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-unshaded-resomi",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-avali",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-unshaded-avali",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-unshaded-avali",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HELMET-monkey",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HELMET-dog",
       "directions": 4
     }
   ]

@@ -354,7 +354,7 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     mask: ClothingMaskGasSecurity # Goobstation
     eyes: ClothingEyesGlassesSecurity
-    outerClothing: ClothingOuterCoatWarden
+    outerClothing: ClothingOuterCoatBlueWarden
     pocket1: WeaponDisabler
     pocket2: Zipties
   inhand:

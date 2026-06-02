@@ -108,7 +108,7 @@
   description: The future of transportation. Popularized by St. James, the patron saint of security officers and internet forum moderators.
   components:
   - type: Sprite
-    sprite: Objects/Vehicles/secway.rsi
+    sprite: _Gabystation/Objects/Vehicles/secway.rsi
     state: vehicle
     noRot: true
   - type: Vehicle

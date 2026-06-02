@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Grid
@@ -162,7 +166,7 @@ entities:
           decals:
             20: 1,-10
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileInnerOverlayNE
           decals:
             70: 1,-2
@@ -177,7 +181,7 @@ entities:
           decals:
             17: 5,-10
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileInnerOverlayNW
           decals:
             69: 5,-2
@@ -192,7 +196,7 @@ entities:
           decals:
             19: 1,-8
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileInnerOverlaySE
           decals:
             71: 1,0
@@ -212,7 +216,7 @@ entities:
           decals:
             18: 5,-8
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileInnerOverlaySW
           decals:
             72: 5,0
@@ -263,7 +267,7 @@ entities:
             12: 3,-10
             13: 4,-10
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileLineOverlayN
           decals:
             63: 2,-2
@@ -304,7 +308,7 @@ entities:
             15: 3,-8
             16: 4,-8
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileLineOverlayS
           decals:
             66: 2,0
@@ -335,7 +339,7 @@ entities:
             119: 13,9
             120: 13,8
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: MiniTileOverlay
           decals:
             115: 3,10

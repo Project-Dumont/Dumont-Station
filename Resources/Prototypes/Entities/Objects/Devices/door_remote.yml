@@ -81,9 +81,9 @@
     layers:
     - state: door_remotebase
     - state: door_remotelightscolour
-      color: "#cb0000"
+      color: "#1a3878"
     - state: door_remotescreencolour
-      color: "#830000"
+      color: "#142a58"
   - type: Access
     groups:
     - Security
@@ -97,9 +97,9 @@
     layers:
     - state: door_remotebase
     - state: door_remotelightscolour
-      color: "#e80000"
+      color: "#1a3878"
     - state: door_remotescreencolour
-      color: "#a80000"
+      color: "#142a58"
   - type: Access
     groups:
     - Armory

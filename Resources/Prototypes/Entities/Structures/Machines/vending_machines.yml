@@ -2028,7 +2028,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#d82929"
+    color: "#1142b6"
   - type: AccessReader
     access: [["Security"]]
 

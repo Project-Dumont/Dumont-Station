@@ -21,7 +21,7 @@
             - tag: HudSecurity
               name: construction-graph-tag-security-hud
               icon:
-                sprite: Clothing/Eyes/Hud/sec.rsi
+                sprite: _Gabystation/Clothing/Eyes/Glasses/sec.rsi # Gaby
                 state: icon
               doAfter: 5
             - material: Cable

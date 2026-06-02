@@ -261,9 +261,9 @@
   name: secgear crate
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/sec_gear.rsi
+    sprite: _Gabystation/Structures/Storage/Crates/sec_gear.rsi # Gaby
   - type: Sprite
-    sprite: Structures/Storage/Crates/sec_gear.rsi
+    sprite: _Gabystation/Structures/Storage/Crates/sec_gear.rsi # Gaby
   - type: AccessReader
     access: [["Security"]]
 
@@ -664,11 +664,11 @@
     layers:
     - state: base
     - state: overlay
-      color: "#c12d30"
+      color: "#0e1d42"
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
     - state: overlay-closed
-      color: "#c12d30"
+      color: "#0e1d42"
       map: [ lid_overlay ]
     - state: welded
       visible: false

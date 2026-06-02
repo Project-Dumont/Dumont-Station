@@ -201,9 +201,9 @@
   description: This pair of jackboots was designed for the Head of Security. No one knows why are they called advanced, but they are for sure advanced in drip.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Shoes/Boots/advanced_jackboots.rsi
+    sprite: _Gabystation/Clothing/Shoes/Boots/advanced_jackboots.rsi # Dumont
   - type: Clothing
-    sprite: _Goobstation/Clothing/Shoes/Boots/advanced_jackboots.rsi
+    sprite: _Gabystation/Clothing/Shoes/Boots/advanced_jackboots.rsi # Dumont
   - type: FootstepModifier
     footstepSoundCollection:
       collection: StepHeavyBoots
@@ -279,9 +279,9 @@
   description: Nanotrasen-issue Security combat boots for combat scenarios or combat situations. Now in winter edition.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Shoes/Boots/winterbootsjackboot.rsi
+    sprite: _Gabystation/Clothing/Shoes/Boots/winterbootsjackboot.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Shoes/Boots/winterbootsjackboot.rsi
+    sprite: _Gabystation/Clothing/Shoes/Boots/winterbootsjackboot.rsi # Gaby
   - type: ClothingSlowOnDamageModifier
     modifier: 0.6
   - type: ModifyStandingUpTime

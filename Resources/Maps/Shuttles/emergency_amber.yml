@@ -178,7 +178,7 @@ entities:
             85: 3,-11
             86: 2,-11
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: CheckerNWSE
           decals:
             33: 7,-12
