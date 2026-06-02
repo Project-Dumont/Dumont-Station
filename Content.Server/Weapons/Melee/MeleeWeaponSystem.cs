@@ -42,6 +42,8 @@
 
 using Content.Server.Chat.Systems;
 using Content.Server.Movement.Systems;
+using Content.Shared.Administration.Components;
+using Content.Shared.CombatMode;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Effects;
