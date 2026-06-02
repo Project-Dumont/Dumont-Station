@@ -133,12 +133,12 @@
       - state: base-inhand-left
         color: "#404040"
       - state: clasp-inhand-left
-        color: "#eca615"
+        color: "#38734b"
       right:
       - state: base-inhand-right
         color: "#404040"
       - state: clasp-inhand-right
-        color: "#eca615"
+        color: "#38734b"
 
 # Engineering
 - type: entity
