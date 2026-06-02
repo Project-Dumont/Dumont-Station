@@ -7,7 +7,7 @@ doc-text-printer-ReportStation =
     =============================================
                                 RELATÓRIO DE SITUAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -30,7 +30,7 @@ doc-text-printer-ReportOnEliminationOfViolations =
     =============================================
                             RELATÓRIO DE ELIMINAÇÃO DE VIOLAÇÕES
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -52,7 +52,7 @@ doc-text-printer-ReporDepartment =
     =============================================
                                 RELATÓRIO DE DESEMPENHO DO DEPARTAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -74,7 +74,7 @@ doc-text-printer-ReportEmployeePerformance =
     =============================================
                         RELATÓRIO DE DESEMPENHO DO FUNCIONÁRIO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -92,7 +92,7 @@ doc-text-printer-ReportOnTheChaptersMeeting =
     =============================================
                                 RELATÓRIO DA REUNIÃO DOS CHEFES
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -119,7 +119,7 @@ doc-text-printer-InternalAffairsAgentsReport =
     =============================================
                 RELATÓRIO DE INVESTIGAÇÃO INTERNA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -138,7 +138,7 @@ doc-text-printer-ConditionReport =
     =============================================
                         RELATÓRIO DE CONDIÇÃO TÉCNICA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -160,7 +160,7 @@ doc-text-printer-ReportStudyObject =
     =============================================
                         RELATÓRIO DE ESTUDO DE OBJETO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -180,7 +180,7 @@ doc-text-printer-ExperimentReport =
     =============================================
                         RELATÓRIO DE EXPERIMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -208,7 +208,7 @@ doc-text-printer-DisposalReport =
     =============================================
                         RELATÓRIO DE DESCARTE
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -226,14 +226,14 @@ doc-text-printer-ApplicationAppointmentInterim =
     =============================================
                     REQUERIMENTO DE NOMEAÇÃO INTERINA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
     Eu, (NOME), no cargo de (nome completo do cargo), solicito a aprovação da minha nomeação para o cargo de Interino Chefe (nome completo do departamento)/Capitão.
     Ao assumir o cargo, comprometo-me a seguir os Procedimentos Operacionais Padrão e, até a chegada do Chefe (nome completo do departamento)/Capitão da  Central de Comando, garantir a ordem e a gestão do departamento, assegurando a preservação dos itens especialmente valiosos e equipamentos confiados a mim.
 
-    Na chegada do Chefe do departamento/Capitão da  Central de Comando, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
+    Na chegada do Chefe do departamento/Capitão da Central de Comando, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ApplicationEmployment =
@@ -245,12 +245,12 @@ doc-text-printer-ApplicationEmployment =
     =============================================
                         REQUERIMENTO DE EMPREGO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
     Eu, (NOME), atualmente no cargo de (nome completo do cargo), solicito ser designado como membro do (nome do departamento de emprego) no cargo de (nome completo do cargo).
-    Comprometo-me a seguir os Procedimentos Operacionais Padrão do departamento. Comprometo-me a devolver o equipamento de trabalho e a engrenagem do departamento ao ser transferido.
+    Comprometo-me a seguir os Procedimentos Operacionais Padrão do departamento. Comprometo-me a devolver o equipamento de trabalho e uniforme do departamento de origem ao ser transferido.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-LetterResignation =
@@ -262,7 +262,7 @@ doc-text-printer-LetterResignation =
     =============================================
                         DECLARAÇÃO DE RESIGNAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -280,7 +280,7 @@ doc-text-printer-ApplicationAccess =
     =============================================
                     PEDIDO DE ACESSO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -299,7 +299,7 @@ doc-text-printer-ApplicationEquipment =
     =============================================
                     PEDIDO DE EQUIPAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -319,7 +319,7 @@ doc-text-printer-Appeal =
     =============================================
                             APELO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -339,11 +339,11 @@ doc-text-printer-EvacuationShuttleRequest =
     =============================================
                     PEDIDO DE NAVE DE EVACUAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
-    Respeitável  Central de Comando! Eu, (NOME), no cargo de (nome completo do cargo), solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
+    Respeitável Central de Comando! Eu, (NOME), no cargo de (nome completo do cargo), solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
     Motivo para o encerramento do turno:
 
     =============================================
@@ -358,7 +358,7 @@ doc-text-printer-ShuttleRegistrationRequest =
     =============================================
                         PEDIDO DE REGISTRO DE NAVE
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -383,7 +383,7 @@ doc-text-printer-RequestCallMembersCentralCommitteeDSO =
     =============================================
                     SOLICITAÇÃO DE CHAMADA DE MEMBROS DO CC, DSO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -403,7 +403,7 @@ doc-text-printer-RequestToEstablishThreatLevel =
     =============================================
                     SOLICITAÇÃO PARA ESTABELECER O NÍVEL DE AMEAÇA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -422,7 +422,7 @@ doc-text-printer-RequestChangeSalary =
     =============================================
             PEDIDO DE ALTERAÇÃO DE SALÁRIO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -441,7 +441,7 @@ doc-text-printer-RequestForNonlistedEmployment =
     =============================================
             PEDIDO DE EMPREGO NÃO LISTADO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -468,7 +468,7 @@ doc-text-printer-RequestForPromotion=
     =============================================
             PEDIDO DE PROMOÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -490,7 +490,7 @@ doc-text-printer-RequestDocuments=
     =============================================
             SOLICITAÇÃO DE DOCUMENTOS
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -508,7 +508,7 @@ doc-text-printer-RequestEuthanasia =
     =============================================
             SOLICITAÇÃO DE EUTANÁSIA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -526,7 +526,7 @@ doc-text-printer-RequestConstructionWork =
     =============================================
         SOLICITAÇÃO DE TRABALHOS DE CONSTRUÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -545,7 +545,7 @@ doc-text-printer-RequestModernization =
     =============================================
                 SOLICITAÇÃO DE MODERNIZAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -564,7 +564,7 @@ doc-text-printer-ComplaintViolationLaborRules =
     =============================================
             RECLAMAÇÃO DE VIOLAÇÃO DAS NORMAS DE TRABALHO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -582,7 +582,7 @@ doc-text-printer-ComplaintOffense =
     =============================================
                         RECLAMAÇÃO DE INFRAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -601,7 +601,7 @@ doc-text-printer-PermissionEquipment =
     =============================================
         PERMISSÃO PARA UTILIZAR EQUIPAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -619,7 +619,7 @@ doc-text-printer-PermissionToTravelInCaseOfThreat=
     =============================================
             PERMISSÃO PARA VIAJAR EM CASO DE AMEAÇA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -639,11 +639,11 @@ doc-text-printer-SearchPermission =
     =============================================
                         PERMISSÃO DE BUSCA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), redatorizo a realização de uma busca em (NOME)/(nome completo do departamento), no cargo de (nome completo do cargo).
+    Eu, (NOME), no cargo de (nome completo do cargo), redatorizo a realização de uma busca em (NOME)/(nome completo do departamento).
     Razão para a busca:
 
     =============================================
@@ -658,7 +658,7 @@ doc-text-printer-PermissionToCarryWeapons =
     =============================================
                     PERMISSÃO PARA PORTAR ARMAS
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -681,7 +681,7 @@ doc-text-printer-PrescriptionDrugAuthorization =
     =============================================
                 AUTORIZAÇÃO DE MEDICAMENTO CONTROLADO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -701,7 +701,7 @@ doc-text-printer-PermissionDisposeBody =
     =============================================
                     PERMISSÃO PARA DESCARTE DE CORPO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -720,7 +720,7 @@ doc-text-printer-ConstructionPermit =
     =============================================
                         PERMISSÃO PARA CONSTRUÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -739,7 +739,7 @@ doc-text-printer-PermissionToExtendMarriage =
     =============================================
                 PERMISSÃO PARA AMPLIAÇÃO DO CASAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -762,7 +762,7 @@ doc-text-printer-OrderDismissal =
     =============================================
                             ORDEM DE DEMISSÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -780,7 +780,7 @@ doc-text-printer-OrderDeprivationAccess =
     =============================================
                         ORDEM DE PRIVAÇÃO DE ACESSO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -798,7 +798,7 @@ doc-text-printer-OrderEncouragement =
     =============================================
                             ORDEM DE ELOGIO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -815,7 +815,7 @@ doc-text-printer-OrderParolePrisoner =
     =============================================
                     ORDEM DE LIBERDADE CONDICIONAL DE PRISIONEIRO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -834,7 +834,7 @@ doc-text-printer-OrderRecognizingSentienceCreature =
     =============================================
             ORDEM DE RECONHECIMENTO DE INTELIGÊNCIA DE CRIATURA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -856,7 +856,7 @@ doc-text-printer-OrderMedicalIntervention =
     =============================================
     ORDEM DE INTERVENÇÃO MÉDICA
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -874,7 +874,7 @@ doc-text-printer-ProductManufacturingOrder =
     =============================================
                     ORDEM DE PRODUÇÃO DE PRODUTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -895,7 +895,7 @@ doc-text-printer-OrderPurchaseResourcesEquipment =
     =============================================
             ORDEM DE COMPRA DE RECURSOS, EQUIPAMENTOS
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -917,7 +917,7 @@ doc-text-printer-OrderingSpecialEquipment =
     =============================================
                     ORDEM DE SOLICITAÇÃO DE EQUIPAMENTO ESPECIAL
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -937,11 +937,11 @@ doc-text-printer-OrderPurchaseWeapons =
     =============================================
             ORDEM DE COMPRA DE ARMAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), faço um pedido de armas de combate e/ou equipamentos de combate através do Departamento de Suprimentos.
+    Eu, (NOME), no cargo de (nome completo do cargo), faço um pedido de armas de combate e/ou equipamentos de combate através do Departamento de Logística.
     Razão do pedido:
 
     =============================================
@@ -956,7 +956,7 @@ doc-text-printer-Certificate =
     =============================================
                                         CERTIFICADO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -974,7 +974,7 @@ doc-text-printer-CertificateAdvancedTraining =
     =============================================
     CERTIFICADO DE TREINAMENTO AVANÇADO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -990,7 +990,7 @@ doc-text-printer-CertificateOffense =
     =============================================
                 CERTIFICADO DE INFRAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1016,7 +1016,7 @@ doc-text-printer-DeathCertificate =
     =============================================
                             CERTIFICADO DE ÓBITO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1039,7 +1039,7 @@ doc-text-printer-MarriageCertificate =
     =============================================
                 CERTIFICADO DE CASAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1060,7 +1060,7 @@ doc-text-printer-DivorceCertificate =
     =============================================
                 CERTIFICADO DE DIVÓRCIO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1084,7 +1084,7 @@ doc-text-printer-ClosingIndictment =
     =============================================
                         ORDEM DE PRISÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1107,7 +1107,7 @@ doc-text-printer-Sentence =
         =============================================
                                         SENTENÇA
         =============================================
-        Tempo desde o início do turno e data:
+        Tempo desde o início do turno:
         Redator do documento:
         Posição do redator:
 
@@ -1130,7 +1130,7 @@ doc-text-printer-Judgment =
     =============================================
                     SENTENÇA JUDICIAL
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1163,7 +1163,7 @@ doc-text-printer-StatementHealth =
     =============================================
                     DECLARAÇÃO DE SAÚDE
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1190,7 +1190,7 @@ doc-text-printer-DecisionToStartTrial =
     =============================================
             DECISÃO DE INICIAR O JULGAMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Redator do documento:
     Posição do redator:
 
@@ -1208,7 +1208,7 @@ doc-text-printer-ErrorLoadingFormHeader =
     =============================================
                         NOME DO DOCUMENTO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Apelido do Agente:
 
     Conteúdo completo do documento com todas as informações necessárias e descrição
@@ -1224,7 +1224,7 @@ doc-text-printer-NOTICEOFLIQUIDATION =
     =============================================
                         AVISO DE LIQUIDAÇÃO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Apelido do agente:
 
     Estimado (NOME), no cargo de (nome completo do cargo)! A administração do Sindicato tomou a decisão de liquidá-lo imediatamente durante este turno. Pedimos que prepare antecipadamente um testamento e o envie ao Departamento Médico da estação. A destruição do seu corpo será realizada pelas forças do Sindicato.
@@ -1242,7 +1242,7 @@ doc-text-printer-BUSINESSDEAL =
     =============================================
                                 NEGÓCIO FECHADO
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Apelido do agente:
 
     O Sindicato gentilmente propõe concluir um acordo entre a estação e o agente (apelido do agente). Do lado da estação, é necessário:
@@ -1260,7 +1260,7 @@ doc-text-printer-NOTEBEGINNINGMILITARYACTIONS =
     =============================================
                     NOTA SOBRE O INÍCIO DAS AÇÕES MILITARES
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Apelido do agente:
 
     Desprezíveis ratos corporativos da NanoTrasen! O Sindicato anuncia oficialmente o início das ações militares contra vocês, bem como o início da operação para exterminá-los.
@@ -1278,7 +1278,7 @@ doc-text-printer-REPORTACCOMPLISHMENTGOALS =
     =============================================
                         RELATÓRIO DE CUMPRIMENTO DE OBJETIVOS
     =============================================
-    Tempo desde o início do turno e data:
+    Tempo desde o início do turno:
     Apelido do agente:
 
     Eu, (apelido do agente), alcancei com sucesso os objetivos estabelecidos pela liderança do Sindicato. Solicito a aceitação do relatório de cumprimento.
