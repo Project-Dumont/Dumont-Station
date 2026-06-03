@@ -1642,7 +1642,7 @@
        !type:String
        pda-seniorofficer
   - type: PdaBorderColor
-    borderColor: "#A32D26"
+    borderColor: "#2b3447"
     accentVColor: "#DFDFDF"
   - type: Icon
     state: pda-seniorofficer
