@@ -35,8 +35,8 @@
       board: [ DoorElectronicsMail ]
 
 - type: entity
-  parent: AirlockCargoLocked
-  id: AirlockMining
+  parent: AirlockMining
+  id: AirlockMiningLocked
   suffix: Mining, Locked
   components:
   - type: ContainerFill
@@ -55,7 +55,7 @@
 # Glass
 
 - type: entity
-  parent: AirlockMedicalGlassLocked
+  parent: AirlockPsychologyGlass
   id: AirlockPsychologyGlassLocked
   suffix: Psychology, Locked
   components:
@@ -64,7 +64,7 @@
       board: [ DoorElectronicsPsychology ]
 
 - type: entity
-  parent: AirlockMedicalGlassLocked
+  parent: AirlockPharmacyGlass
   id: AirlockPharmacyGlassLocked
   suffix: Pharmacy, Locked
   components:
@@ -73,7 +73,7 @@
       board: [ DoorElectronicsPharmacy ]
 
 - type: entity
-  parent: AirlockScienceGlassLocked
+  parent: AirlockGeneticsGlass
   id: AirlockGeneticsGlassLocked
   suffix: Genetics, Locked
   components:
@@ -82,7 +82,7 @@
       board: [ DoorElectronicsGenetics ]
 
 - type: entity
-  parent: AirlockCargoGlassLocked
+  parent: AirlockMailGlass
   id: AirlockMailGlassLocked
   suffix: Mail, Locked
   components:
@@ -91,7 +91,7 @@
       board: [ DoorElectronicsMail ]
 
 - type: entity
-  parent: AirlockCargoGlassLocked
+  parent: AirlockMiningGlass
   id: AirlockMiningGlassLocked
   suffix: Mining, Locked
   components:
@@ -100,10 +100,19 @@
       board: [ DoorElectronicsMining ]
 
 - type: entity
-  parent: AirlockCargoGlassLocked
+  parent: AirlockExplorationGlass
   id: AirlockExplorationGlassLocked
   suffix: Exploration, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsExploration ]
+
+- type: entity
+  parent: AirlockRoboticsGlass
+  id: AirlockRoboticsGlassLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]

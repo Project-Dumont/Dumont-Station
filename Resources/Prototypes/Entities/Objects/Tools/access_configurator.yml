@@ -58,6 +58,7 @@
       - Atmospherics
       - Bar
       - Brig
+      - BrigMedic # Dumont
       - Detective
       - Captain
       - Cargo
@@ -76,12 +77,13 @@
       - Janitor
       - Kitchen
       - Lawyer
+      - Library # Dumont
       - Mail # Dumont
       - Maintenance
       - Medical
       - Mining # Dumont
-      - Pharmacist # Dumont
-      - Psycologist # Dumont
+      - Pharmacy # Dumont
+      - Psychology # Dumont
       - Quartermaster
       - Research
       - Robotics # goobstation
@@ -91,7 +93,7 @@
       - Security
       - Service
       - Theatre
-      - Virologist # Dumont
+      - Virology # Dumont
       - GenpopEnter
       - GenpopLeave
       privilegedIdSlot:
@@ -140,6 +142,7 @@
     - BasicSilicon
     - Borg
     - Brig
+    - BrigMedic # Dumont
     - Detective
     - Captain
     - Cargo
@@ -160,12 +163,13 @@
     - Janitor
     - Kitchen
     - Lawyer
+    - Library # Dumont
     - Mail # Dumont
     - Maintenance
     - Medical
     - Mining # Dumont
-    - Pharmacist # Dumont
-    - Psycologist # Dumont
+    - Pharmacy # Dumont
+    - Psychology # Dumont
     - Quartermaster
     - Research
     - ResearchDirector
@@ -174,7 +178,7 @@
     - Service
     - StationAi
     - Theatre
-    - Virologist # Dumont
+    - Virology # Dumont
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent

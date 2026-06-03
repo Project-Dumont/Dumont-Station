@@ -1,10 +1,18 @@
 - type: entity
   parent: DoorElectronics
+  id: DoorElectronicsVirology
+  suffix: Virology, Locked
+  components:
+  - type: AccessReader
+    access: [["Virology"]]
+
+- type: entity
+  parent: DoorElectronics
   id: DoorElectronicsPsychology
   suffix: Psychology, Locked
   components:
   - type: AccessReader
-    access: [["Psychologist"]]
+    access: [["Psychology"]]
 
 - type: entity
   parent: DoorElectronics
@@ -12,7 +20,7 @@
   suffix: Pharmacy, Locked
   components:
   - type: AccessReader
-    access: [["Pharmacist"]]
+    access: [["Pharmacy"]]
 
 - type: entity
   parent: DoorElectronics
@@ -45,3 +53,27 @@
   components:
   - type: AccessReader
     access: [["Exploration"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSalvMine
+  suffix: Salvage/Mining, Locked
+  components:
+  - type: AccessReader
+    access: [["Exploration"], ["Mining"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBrigMedic
+  suffix: BrigMedic, Locked
+  components:
+  - type: AccessReader
+    access: [["BrigMedic"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsLibrary
+  suffix: Library, Locked
+  components:
+  - type: AccessReader
+    access: [["Library"]]

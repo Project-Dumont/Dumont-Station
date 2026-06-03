@@ -339,7 +339,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScience
+  parent: AirlockMedicalScience
   id: AirlockMedicalScienceLocked
   suffix: Medical/Science, Locked
   components:
@@ -742,7 +742,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScienceGlass
+  parent: AirlockMedicalScienceGlass
   id: AirlockMedicalScienceGlassLocked
   suffix: Medical/Science, Locked
   components:

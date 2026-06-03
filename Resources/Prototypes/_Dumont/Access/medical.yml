@@ -1,11 +1,11 @@
 - type: accessLevel
-  id: Virologist
-  name: id-card-access-level-virologist
+  id: Virology
+  name: id-card-access-level-virology
 
 - type: accessLevel
-  id: Psychologist
-  name: id-card-access-level-psychologist
+  id: Psychology
+  name: id-card-access-level-psychology
 
 - type: accessLevel
-  id: Pharmacist
-  name: id-card-access-level-pharmacist
+  id: Pharmacy
+  name: id-card-access-level-pharmacy
