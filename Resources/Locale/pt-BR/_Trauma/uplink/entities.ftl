@@ -47,6 +47,10 @@ ent-AccessConfiguratorSyndicate = configurador de acesso do Sindicato
 ent-HijackBeacon = sinalizador de sequestro
     .desc = Um dispositivo que contorna o firewall das estações comerciais automatizadas da Nanotrasen.
 
+ent-BoxShotgunHypo = caixa de cartuchos de injeção
+
+ent-ShellShotgunHypo = cartucho (calibre 12 de injeção)
+
 ent-MagazineLightRifle20rd = carregador reto (.30 de fuzil)
     .desc = Um carregador reto de fileira dupla com 20 cartuchos cinéticos de uso geral para fuzis de combate.
 

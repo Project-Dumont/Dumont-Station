@@ -147,6 +147,21 @@
     - UplinkDisruption
 
 - type: listing
+  id: UplinkHypoShell
+  name: uplink-hyposhell-name
+  description: uplink-hyposhell-desc
+  icon: { sprite: _Trauma/Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi, state: icon-hypo }
+  productEntity: BoxShotgunHypo
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkJob
+  conditions:
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bartender
+
+- type: listing
   id: UplinkRevolverSnakesfang
   name: uplink-snakesfang-name
   description: uplink-snakesfang-desc

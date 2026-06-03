@@ -82,6 +82,10 @@ uplink-syndicate-access-config-name = Configurador Cybersun
 
 uplink-syndicate-access-config-desc = Um configurador de acessos da Cybersun compatível com identificações que não sejam da Nanotrasen. Agora com troca rápida de cartões!
 
+uplink-hyposhell-name = Caixa de cartuchos hipodérmicos
+
+uplink-hyposhell-desc = Uma caixa com quatro cartuchos de escopeta que podem armazenar sete unidades de qualquer substância química.
+
 uplink-snakesfang-name = Snakesfang
 
 uplink-snakesfang-desc = Uma cimitarra de ponta bifurcada, com fio afiado e mordida ainda pior. Acompanha uma bainha.
