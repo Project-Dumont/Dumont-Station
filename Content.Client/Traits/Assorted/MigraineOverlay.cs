@@ -43,7 +43,7 @@ namespace Content.Client.Traits.Assorted
         public MigraineOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _cataractsShader = _prototypeManager.Index<ShaderPrototype>("Cataracts").InstanceUnique();
+            _cataractsShader = _prototypeManager.Index<ShaderPrototype>(new ProtoId<ShaderPrototype>("Cataracts")).InstanceUnique();
         }
 
         protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -118,7 +118,7 @@ namespace Content.Client.Traits.Assorted
                 return;
 
             var viewport = args.WorldBounds;
-            var frameTime = (float)_gameTiming.FrameTime.TotalSeconds;
+            var frameTime = (float) _gameTiming.FrameTime.TotalSeconds;
 
             // Get zoom level for shader
             var zoom = 1.0f;
@@ -164,14 +164,14 @@ namespace Content.Client.Traits.Assorted
                 strength *= _localSoftness;
 
             strength = Math.Clamp(strength, 0f, BlurryVisionComponent.MaxMagnitude);
-            var normalized = (float)Math.Pow(Math.Min(strength / BlurryVisionComponent.MaxMagnitude, 1.0f), BlurryVisionComponent.DefaultCorrectionPower);
+            var normalized = (float) Math.Pow(Math.Min(strength / BlurryVisionComponent.MaxMagnitude, 1.0f), BlurryVisionComponent.DefaultCorrectionPower);
 
             // Apply shader effects
             _cataractsShader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
             _cataractsShader.SetParameter("LIGHT_TEXTURE", args.Viewport.LightRenderTarget.Texture);
             _cataractsShader.SetParameter("Zoom", zoom);
-            _cataractsShader.SetParameter("DistortionScalar", (float)Math.Pow(normalized, 2.0f));
-            _cataractsShader.SetParameter("CloudinessScalar", (float)Math.Pow(normalized, 1.0f));
+            _cataractsShader.SetParameter("DistortionScalar", (float) Math.Pow(normalized, 2.0f));
+            _cataractsShader.SetParameter("CloudinessScalar", (float) Math.Pow(normalized, 1.0f));
 
             var worldHandle = args.WorldHandle;
             worldHandle.UseShader(_cataractsShader);

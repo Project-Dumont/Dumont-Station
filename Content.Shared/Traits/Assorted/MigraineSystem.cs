@@ -109,7 +109,7 @@ public sealed class MigraineSystem : EntitySystem
     {
         // Initialize visual state
         component.CurrentBlur = MathF.Min(0.01f, component.BlurryMagnitude);
-        component.PulseAccumulator = (float)(DateTime.UtcNow.TimeOfDay.TotalSeconds % 1000.0);
+        component.PulseAccumulator = (float) (DateTime.UtcNow.TimeOfDay.TotalSeconds % 1000.0);
 
         // Refresh movement speed modifiers to apply slowdown if enabled
         if (component.ApplySlowdown)

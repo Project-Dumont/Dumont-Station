@@ -61,7 +61,7 @@ public sealed partial class SeizureSystem : SharedSeizureSystem
         dspec.DamageDict.Add("Blunt", 0.6f);
         var normalDamage = dspec * factor;
         _damageable.TryChangeDamage(ent, normalDamage);
-        _colorFlash.RaiseEffect(Color.Red, new List<EntityUid> {ent}, Filter.Pvs(ent, entityManager: EntityManager));
+        _colorFlash.RaiseEffect(Color.Red, new List<EntityUid> { ent }, Filter.Pvs(ent, entityManager: EntityManager));
     }
     protected override void UpdateSeizureComponents(float frameTime)
     {
@@ -170,7 +170,7 @@ public sealed partial class SeizureSystem : SharedSeizureSystem
         }
 
         // Apply server-side effects
-        _stun.TryParalyze(uid, TimeSpan.FromSeconds(seizure.RemainingTime), true);
+        _stun.TryAddParalyzeDuration(uid, TimeSpan.FromSeconds(seizure.RemainingTime));
         _jittering.DoJitter(uid, TimeSpan.FromSeconds(seizure.RemainingTime), true,
             seizure.JitterAmplitude, seizure.JitterFrequency, true);
         _stuttering.DoStutter(uid, TimeSpan.FromSeconds(seizure.RemainingTime), true);
@@ -267,7 +267,7 @@ public sealed partial class SeizureSystem : SharedSeizureSystem
                 return;
 
             var duration = SeizureDuration.HasValue ? TimeSpan.FromSeconds(SeizureDuration.Value) : comp.NeuroAversionSeizureDuration;
-            float? seizureDurationSeconds = (float)duration.TotalSeconds;
+            float? seizureDurationSeconds = (float) duration.TotalSeconds;
             args.EntityManager.EntitySysManager.GetEntitySystem<SeizureSystem>()
                 .StartSeizure(args.TargetEntity, seizureDurationSeconds, ProdromeDuration);
             comp.SeizureBuild = comp.PostSeizureResidual;

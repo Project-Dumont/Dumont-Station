@@ -3,16 +3,13 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Traits.Assorted;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
-using Content.Shared.EntityEffects;
 using Content.Shared.Traits.Assorted;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
-using System;
 
-namespace Content.Server.EntityEffects.Effects;
+namespace Content.Shared.EntityEffects.Effects;
 
 /// <summary>
 /// Reduces seizure build for entities with Neuroaversion trait.
@@ -63,7 +60,7 @@ public sealed partial class ReduceSeizureBuild : EntityEffect
         comp.SeizurePaused = reagentPresent;
 
         var amountToSubtract = MathF.Min(actualReduction, comp.SeizureBuild);
-        args.EntityManager.EntitySysManager.GetEntitySystem<NeuroAversionSystem>()
+        args.EntityManager.EntitySysManager.GetEntitySystem<SharedNeuroAversionSystem>()
             .ModifySeizureBuild(args.TargetEntity, -amountToSubtract);
     }
 }

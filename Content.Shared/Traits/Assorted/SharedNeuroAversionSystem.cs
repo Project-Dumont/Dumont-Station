@@ -45,7 +45,7 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
     protected virtual void OnStartup(EntityUid uid, NeuroAversionComponent component, ComponentStartup args)
     {
         // Initialize migraine timer
-        component.NextMigraineTime = TimeSpan.FromSeconds(Random.NextFloat((float)component.TimeBetweenMigraines.Min.TotalSeconds, (float)component.TimeBetweenMigraines.Max.TotalSeconds));
+        component.NextMigraineTime = TimeSpan.FromSeconds(Random.NextFloat((float) component.TimeBetweenMigraines.Min.TotalSeconds, (float) component.TimeBetweenMigraines.Max.TotalSeconds));
         component.StartedMindShielded = true;
     }
 
@@ -83,7 +83,7 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
         if (maxHp <= 0f)
             return 0f;
 
-        var currentDamage = (float)damageable.TotalDamage;
+        var currentDamage = (float) damageable.TotalDamage;
         return MathF.Max(0f, MathF.Min(1f, currentDamage / maxHp));
     }
 
@@ -94,7 +94,7 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
     protected void UpdateSeizureBuild(EntityUid uid, NeuroAversionComponent comp, TimeSpan deltaTime,
         float conditionMultiplier, float traitInteractionMultiplier, float missingHpFrac)
     {
-        var seconds = (float)deltaTime.TotalSeconds;
+        var seconds = (float) deltaTime.TotalSeconds;
 
         // Passive build (0-100 scale means we can use nice whole numbers)
         var passiveBuild = comp.BaseSeizurePassivePerSec * conditionMultiplier * traitInteractionMultiplier;

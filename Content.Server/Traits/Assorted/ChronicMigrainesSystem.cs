@@ -45,7 +45,7 @@ public sealed class ChronicMigrainesSystem : EntitySystem
 
     private void SetupChronicMigraines(EntityUid uid, ChronicMigrainesComponent component, ComponentStartup args)
     {
-        var seconds = _random.NextFloat((float)component.TimeBetweenMigraines.Min.TotalSeconds, (float)component.TimeBetweenMigraines.Max.TotalSeconds);
+        var seconds = _random.NextFloat((float) component.TimeBetweenMigraines.Min.TotalSeconds, (float) component.TimeBetweenMigraines.Max.TotalSeconds);
         component.NextMigraineTime = TimeSpan.FromSeconds(seconds);
     }
 
@@ -77,9 +77,9 @@ public sealed class ChronicMigrainesSystem : EntitySystem
                 continue;
 
             // Pick new migraine time
-            var nextMigraineSeconds = _random.NextFloat((float)migraines.TimeBetweenMigraines.Min.TotalSeconds, (float)migraines.TimeBetweenMigraines.Max.TotalSeconds);
+            var nextMigraineSeconds = _random.NextFloat((float) migraines.TimeBetweenMigraines.Min.TotalSeconds, (float) migraines.TimeBetweenMigraines.Max.TotalSeconds);
             migraines.NextMigraineTime = TimeSpan.FromSeconds(nextMigraineSeconds);
-            var durationSeconds = _random.NextFloat((float)migraines.MigraineDuration.Min.TotalSeconds, (float)migraines.MigraineDuration.Max.TotalSeconds);
+            var durationSeconds = _random.NextFloat((float) migraines.MigraineDuration.Min.TotalSeconds, (float) migraines.MigraineDuration.Max.TotalSeconds);
             var duration = TimeSpan.FromSeconds(durationSeconds);
             Dirty(uid, migraines);
 
@@ -91,7 +91,7 @@ public sealed class ChronicMigrainesSystem : EntitySystem
             _popup.PopupEntity(othersMsg, uid, Filter.PvsExcept(uid), true, PopupType.Medium);
 
             var migraineComp = AddComp<MigraineComponent>(uid);
-            migraineComp.Duration = (float)duration.TotalSeconds;
+            migraineComp.Duration = (float) duration.TotalSeconds;
             migraineComp.FadeOutDuration = migraines.FadeOutDuration;
 
             // Make sure the episode time doesn't cut into the time to next incident

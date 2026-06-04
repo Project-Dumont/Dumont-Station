@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using System.Numerics;
 using Robust.Shared.GameStates;
 

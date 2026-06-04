@@ -11,7 +11,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
@@ -103,9 +103,9 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
         if (comp.NextMigraineTime <= TimeSpan.Zero)
         {
             // Pick new migraine time
-            var nextMigraineSeconds = Random.NextFloat((float)comp.TimeBetweenMigraines.Min.TotalSeconds, (float)comp.TimeBetweenMigraines.Max.TotalSeconds);
+            var nextMigraineSeconds = Random.NextFloat((float) comp.TimeBetweenMigraines.Min.TotalSeconds, (float) comp.TimeBetweenMigraines.Max.TotalSeconds);
             comp.NextMigraineTime = TimeSpan.FromSeconds(nextMigraineSeconds);
-            var durationSeconds = Random.NextFloat((float)comp.MigraineDuration.Min.TotalSeconds, (float)comp.MigraineDuration.Max.TotalSeconds);
+            var durationSeconds = Random.NextFloat((float) comp.MigraineDuration.Min.TotalSeconds, (float) comp.MigraineDuration.Max.TotalSeconds);
             TriggerMigraine(uid, durationSeconds);
         }
     }
@@ -152,7 +152,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 
         hazard *= conditionMult * mindshieldMult * traitInteractionMult;
 
-        float interval = (float)comp.SeizureCheckInterval.TotalSeconds;
+        float interval = (float) comp.SeizureCheckInterval.TotalSeconds;
         float probability = 1f - MathF.Exp(-hazard * interval);
 
         double roll = Random.NextDouble();
@@ -160,7 +160,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
         if (triggered)
         {
             // Use the effects system to trigger a seizure
-            var effect = new SeizureSystem.TriggerSeizureEffect { SeizureDuration = (float)comp.NeuroAversionSeizureDuration.TotalSeconds };
+            var effect = new SeizureSystem.TriggerSeizureEffect { SeizureDuration = (float) comp.NeuroAversionSeizureDuration.TotalSeconds };
             effect.Effect(new EntityEffectBaseArgs(uid, EntityManager));
         }
     }
@@ -173,7 +173,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
             duration += ChronicMigraineDurationBonus;
         }
 
-        _statusEffects.TryAddStatusEffect<MigraineComponent>(uid, StatusEffectKey, TimeSpan.FromSeconds(duration), false);
+        _statusEffects.TryAddStatusEffect(uid, StatusEffectKey, out _, TimeSpan.FromSeconds(duration));
 
         try
         {
@@ -207,7 +207,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
             {
                 // We check for both AddComponentSpecial and AddImplantSpecial because while they're ONLY supposed to be given via AddImplantSpecial I don't want the scenario where for some fucking reason someone decides to use AddComponentSpecial to do it instead.
                 if ((special is AddComponentSpecial addCompSpecial && addCompSpecial.Components.ContainsKey("MindShield")) ||
-                    (special is AddImplantSpecial implantSpecial && implantSpecial.Implants.Any(id => id.Equals("MindShieldImplant", StringComparison.OrdinalIgnoreCase))))
+                    (special is AddImplantSpecial implantSpecial && implantSpecial.Implants.Any(id => string.Equals(id, "MindShieldImplant", StringComparison.OrdinalIgnoreCase))))
                     return true;
             }
         }
