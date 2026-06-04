@@ -20,35 +20,3 @@
     sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: trainer
   jobName: job-name-nct
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconRadioHost
-  icon:
-    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
-    state: radiohost
-  jobName: job-name-radiohost
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCommandMaid
-  icon:
-    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
-    state: CommandMaid
-  allowSelection: false
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconPartyMaker
-  icon:
-    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
-    state: PartyMaker
-  allowSelection: false
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSecurityClown
-  icon:
-    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
-    state: SecurityClown
-  allowSelection: false
