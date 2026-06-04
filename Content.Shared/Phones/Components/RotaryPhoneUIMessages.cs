@@ -3,7 +3,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Trauma.Shared.Phones.Components;
+namespace Content.Shared.Phones.Components;
 
 [Serializable, NetSerializable]
 public sealed class PhoneKeypadMessage(int value) : BoundUserInterfaceMessage

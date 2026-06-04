@@ -6,7 +6,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Trauma.Shared.Phones.Components;
+namespace Content.Shared.Phones.Components;
 
 /// <summary>
 /// used for the real phones
@@ -23,7 +23,7 @@ public sealed partial class RotaryPhoneComponent : Component
     /// <summary>
     /// When true phones will transfer messages, becomes true when the phone is picked up while the phone is ringing
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool Connected;
 
     /// <summary>

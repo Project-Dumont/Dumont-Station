@@ -2,7 +2,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Trauma.Shared.Phones;
+namespace Content.Shared.Phones;
 
 /// <summary>
 /// This is a prototype for phone category's in the phone-book

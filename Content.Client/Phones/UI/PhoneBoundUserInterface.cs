@@ -1,15 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Trauma.Shared.Phones.Components;
+using Content.Shared.Phones.Components;
 using Robust.Client.UserInterface;
 
-namespace Content.Trauma.Client.Phones.UI;
+namespace Content.Client.Phones.UI;
 
 public sealed class PhoneBoundUserInterface : BoundUserInterface
 {
     private PhoneMenu? _menu;
 
-    public PhoneBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    public PhoneBoundUserInterface(EntityUid owner, Enum uiKey)
+        : base(owner, uiKey)
     {
     }
 
@@ -21,29 +22,33 @@ public sealed class PhoneBoundUserInterface : BoundUserInterface
 
         _menu.OnKeypadButtonPressed += i =>
         {
-            var current = _menu.DialNumber.GetMessage();
-
-            if (current is not {})
-                return;
+            var current = _menu.GetDialNumber();
 
             if (current.Length >= 5)
                 return;
 
-            _menu.DialNumber.SetMessage(current + i);
+            _menu.SetDialNumber(current + i);
 
             SendPredictedMessage(new PhoneKeypadMessage(i));
         };
-        _menu.OnEnterButtonPressed += () => SendPredictedMessage(new PhoneDialedMessage());
+
+        _menu.OnEnterButtonPressed += () =>
+        {
+            SendPredictedMessage(new PhoneDialedMessage());
+        };
+
         _menu.OnClearButtonPressed += () =>
         {
             SendPredictedMessage(new PhoneKeypadClearMessage());
-            _menu.DialNumber.SetMessage(string.Empty);
+
+            _menu.SetDialNumber(string.Empty);
         };
 
         _menu.OnPhoneBookButtonPressed += i =>
         {
             SendPredictedMessage(new PhoneBookPressedMessage(i));
-            _menu.DialNumber.SetMessage(i.ToString());
+
+            _menu.SetDialNumber(i.ToString());
         };
     }
 
