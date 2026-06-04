@@ -8,7 +8,7 @@ using Content.Server.Jobs;
 using Content.Server.Mind;
 using Content.Shared.Damage;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Mindshield.Components;
+using Content.Shared.Implants.Components;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
 using Content.Shared.StatusEffectNew;
@@ -30,7 +30,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    private EntityQuery<MindShieldComponent> _mindShieldQuery;
+    private EntityQuery<ImplantedComponent> _mindShieldQuery;
     private EntityQuery<ChronicMigrainesComponent> _chronicMigrainesQuery;
 
     private const string StatusEffectKey = "Migraine";
@@ -39,7 +39,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
     {
         base.Initialize();
 
-        _mindShieldQuery = GetEntityQuery<MindShieldComponent>();
+        _mindShieldQuery = GetEntityQuery<ImplantedComponent>();
         _chronicMigrainesQuery = GetEntityQuery<ChronicMigrainesComponent>();
     }
 
@@ -71,8 +71,8 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 
     private void UpdateMindshieldStatus(EntityUid uid, NeuroAversionComponent comp)
     {
-        var hasMindShield = _mindShieldQuery.HasComponent(uid);
-        comp.IsMindShielded = hasMindShield;
+        comp.IsMindShielded = _mindShieldQuery.TryComp(uid, out var implanted) && implanted.ImplantContainer.ContainedEntities.Count > 0;
+
         // Check if started mindshielded only once
         if (!comp.StartedMindShieldedChecked)
         {
@@ -175,6 +175,9 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 
         _statusEffects.TryAddStatusEffect(uid, StatusEffectKey, out _, TimeSpan.FromSeconds(duration));
 
+        if (!HasComp<MigraineComponent>(uid))
+            AddComp<MigraineComponent>(uid).Duration = duration;
+
         try
         {
             _popup.PopupEntity(Loc.GetString("trait-neuro-aversion-migraine-start"), uid, uid, PopupType.MediumCaution);
@@ -206,8 +209,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
             foreach (var special in jobProto.Special)
             {
                 // We check for both AddComponentSpecial and AddImplantSpecial because while they're ONLY supposed to be given via AddImplantSpecial I don't want the scenario where for some fucking reason someone decides to use AddComponentSpecial to do it instead.
-                if ((special is AddComponentSpecial addCompSpecial && addCompSpecial.Components.ContainsKey("MindShield")) ||
-                    (special is AddImplantSpecial implantSpecial && implantSpecial.Implants.Any(id => string.Equals(id, "MindShieldImplant", StringComparison.OrdinalIgnoreCase))))
+                if (special is AddImplantSpecial { Implants.Count: > 0 })
                     return true;
             }
         }
