@@ -378,6 +378,12 @@ internal sealed partial class ChatManager : IChatManager
         SendAdminAlert($"{playerName}{(antag ? " (ANTAG)" : "")} {message}");
     }
 
+    public void SendAdminAlertNoFormatOrEscape(string message) // Dumont
+    {
+        var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        ChatMessageToMany(ChatChannel.AdminAlert, message, message, default, false, true, clients);
+    }
+
     public void SendHookOOC(string sender, string message)
     {
         if (!_oocEnabled && _configurationManager.GetCVar(CCVars.DisablingOOCDisablesRelay))
