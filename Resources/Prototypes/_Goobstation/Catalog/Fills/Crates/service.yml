@@ -11,10 +11,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: FishingRod
-      - id: FishingRodGoon
-      - id: ClothingHeadFishCap
-      - id: DrinkBeerBottleFull
+    - id: FishingRod
+    - id: FishingRodGoon
+    - id: ClothingHeadFishCap
+    - id: DrinkBeerBottleFull
 
 - type: entity
   id: CrateSlotMachine
@@ -24,7 +24,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: SlotMachineFlatpack
+    - id: SlotMachineFlatpack
 
 - type: entity
   id: CrateCoinFlipper
@@ -52,10 +52,10 @@
   name: Forklift crate
   description: A perfect utility vehicle for cargo.
   components:
-    - type: StorageFill
-      contents:
-        - id: VehicleForklift
-        - id: VehicleKeyForklift
+  - type: StorageFill
+    contents:
+    - id: VehicleForklift
+    - id: VehicleKeyForklift
 
 - type: entity
   id: CrateRadioStationAds
