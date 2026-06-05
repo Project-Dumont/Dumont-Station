@@ -12,7 +12,7 @@ namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 public sealed partial class NuclearReactorMonitorComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public NetEntity? reactor;
+    public NetEntity? Reactor;
 
     [DataField]
     public ProtoId<SinkPortPrototype> LinkingPort = "NuclearReactorDataReceiver";

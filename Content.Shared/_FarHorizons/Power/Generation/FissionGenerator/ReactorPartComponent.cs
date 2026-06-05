@@ -114,7 +114,7 @@ public sealed partial class ReactorPartComponent : Component
     public float ThermalMass = 420 * 250; //specific heat capacity of steel (420 J/KgK) * mass of component (Kg)
     #endregion
 
-    [DataField("material")]
+    [DataField]
     public ProtoId<MaterialPrototype> Material = "Steel";
 
     [DataField]

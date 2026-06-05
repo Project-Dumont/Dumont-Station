@@ -39,7 +39,7 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
         if (!HasComp<NuclearReactorComponent>(args.Source))
             return;
 
-        comp.reactor = GetNetEntity(args.Source);
+        comp.Reactor = GetNetEntity(args.Source);
         Dirty(uid, comp);
     }
 
@@ -48,14 +48,14 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
         if (args.Port != comp.LinkingPort)
             return;
 
-        comp.reactor = null;
+        comp.Reactor = null;
         Dirty(uid, comp);
     }
 
     public bool TryGetReactorComp(NuclearReactorMonitorComponent reactorMonitor, [NotNullWhen(true)] out NuclearReactorComponent? reactorComponent)
     {
         reactorComponent = null;
-        if (!_entityManager.TryGetEntity(reactorMonitor.reactor, out var reactorEnt) || reactorEnt == null)
+        if (!_entityManager.TryGetEntity(reactorMonitor.Reactor, out var reactorEnt) || reactorEnt == null)
             return false;
 
         if (!_entityManager.TryGetComponent<NuclearReactorComponent>(reactorEnt, out var reactor))
@@ -147,7 +147,7 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
             return;
 
         if (AdjustControlRods(reactor, args.Change))
-            _adminLog.Add(LogType.Action, $"{ToPrettyString(args.Actor):actor} set control rod insertion of {ToPrettyString(comp.reactor):target} to {reactor.ControlRodInsertion} through {ToPrettyString(uid):monitor}");
+            _adminLog.Add(LogType.Action, $"{ToPrettyString(args.Actor):actor} set control rod insertion of {ToPrettyString(comp.Reactor):target} to {reactor.ControlRodInsertion} through {ToPrettyString(uid):monitor}");
         UpdateUI(uid, reactor);
     }
 

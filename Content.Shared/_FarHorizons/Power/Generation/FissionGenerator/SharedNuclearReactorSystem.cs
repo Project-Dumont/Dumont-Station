@@ -74,7 +74,7 @@ public abstract class SharedNuclearReactorSystem : EntitySystem
                 }
                 else
                 {
-                    var data = new ReactorCapVisualData { cap = gridComp.IconStateCap, color = _proto.Index(gridComp.Material).Color };
+                    var data = new ReactorCapVisualData { Cap = gridComp.IconStateCap, Color = _proto.Index(gridComp.Material).Color };
                     if (!comp.VisualData.TryAdd(vector, data))
                         comp.VisualData[vector] = data;
                 }

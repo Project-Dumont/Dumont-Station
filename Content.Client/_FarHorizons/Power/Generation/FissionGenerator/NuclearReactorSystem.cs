@@ -70,7 +70,7 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
             for (var y = 0; y < comp.ReactorGridHeight; y++)
             {
                 if(comp.VisualData.TryGetValue(new(x,y), out var data))
-                    UpdateRodAppearance(uid, FormatMap(x,y), data.cap, data.color);
+                    UpdateRodAppearance(uid, FormatMap(x,y), data.Cap, data.Color);
                 else
                     UpdateRodAppearance(uid, FormatMap(x, y), "empty_cap", Color.Black);
             }

@@ -30,7 +30,7 @@ public sealed class NuclearReactorMonitorBoundUserInterface : BoundUserInterface
             return;
 
         // Check if reactor monitor has an attached entity
-        if (!_entityManager.TryGetEntity(reactorMonitorComponent.reactor, out var reactor) || reactor == null)
+        if (!_entityManager.TryGetEntity(reactorMonitorComponent.Reactor, out var reactor) || reactor == null)
             return;
 
         // Check if the attached entity is a nuclear reactor

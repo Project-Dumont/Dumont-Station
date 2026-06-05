@@ -15,6 +15,7 @@ using Content.Shared.DeviceLinking;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization;
 using System.Numerics;
+using Content.Shared.Radio;
 
 namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -41,7 +42,7 @@ public sealed partial class NuclearReactorComponent : Component
     public readonly int ReactorFireTemp = 1500;
     public readonly int ReactorMeltdownTemp = 2000;
 
-    // Making this a DataField causes the game to explode, neat
+    // Making this a DataField causes the game to explode, neat. claro, né...
     /// <summary>
     /// 2D grid of reactor components, or null where there are no components. Size is ReactorGridWidth x ReactorGridHeight
     /// </summary>
@@ -127,7 +128,7 @@ public sealed partial class NuclearReactorComponent : Component
     /// Radio channel to send alerts to
     /// </summary>
     [DataField]
-    public string EngineeringChannel = "Engineering";
+    public ProtoId<RadioChannelPrototype> EngineeringChannel = "Engineering";
 
     /// <summary>
     /// Last reported temperature during overheat events
@@ -190,7 +191,7 @@ public sealed partial class NuclearReactorComponent : Component
     /// <summary>
     /// Material the reactor is made out of
     /// </summary>
-    [DataField("material")]
+    [DataField]
     public ProtoId<MaterialPrototype> Material = "Steel";
 
     /// <summary>
@@ -203,7 +204,7 @@ public sealed partial class NuclearReactorComponent : Component
     /// [3] Offset of the center along the y axis
     /// </remarks>
     [DataField]
-    public int[] Gridbounds = [ 18, 15, 0, 5 ];
+    public int[] Gridbounds = [18, 15, 0, 5];
 
     #region Pipe Connections
     /// <summary>
@@ -256,23 +257,28 @@ public sealed partial class NuclearReactorComponent : Component
 
     #endregion
 
-    [DataField("controlRodRetractPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string ControlRodRetractPort = "RetractControlRods";
+    [DataField]
+    public ProtoId<SinkPortPrototype> ControlRodRetractPort = "RetractControlRods";
 
-    [DataField("controlRodInsertPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
-    public string ControlRodInsertPort = "InsertControlRods";
+    [DataField]
+    public ProtoId<SinkPortPrototype> ControlRodInsertPort = "InsertControlRods";
 
     #region Debug
     [ViewVariables(VVAccess.ReadOnly)]
     public int NeutronCount = 0;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public int MeltedParts = 0;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public int DetectedControlRods = 0;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public float TotalNRads = 0;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public float TotalRads = 0;
+
     [ViewVariables(VVAccess.ReadOnly)]
     public float TotalSpent = 0;
     #endregion
@@ -281,6 +287,6 @@ public sealed partial class NuclearReactorComponent : Component
 [Serializable, NetSerializable, DataDefinition]
 public sealed partial class ReactorCapVisualData
 {
-    public Color color = Color.Black;
-    public string cap = "";
+    public Color Color = Color.Black;
+    public string Cap = "";
 }

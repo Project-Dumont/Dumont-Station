@@ -85,12 +85,11 @@ namespace Content.Shared.Materials
         /// <summary>
         /// The physical properties of this material.
         /// </summary>
-        [DataField("properties")]
+        [DataField]
         public MaterialProperties Properties { get; private set; } = new MaterialProperties
-      {
-        Hardness = 1,
-        Density = 1.0f,
-      };
-
+        {
+            Hardness = 1,
+            Density = 1.0f,
+        };
     }
 }
