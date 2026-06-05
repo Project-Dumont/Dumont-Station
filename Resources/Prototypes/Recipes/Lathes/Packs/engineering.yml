@@ -114,5 +114,5 @@
   - TeslaCoilCircuitboard
   - RadiationCollectorCircuitboard
   - BluespaceGasVendorMachineCircuitBoard # Gabystation
-  - NuclearFabricatorMachineCircuitBoard
-  - NuclearCentrifugeMachineCircuitBoard
+  - NuclearFabricatorMachineCircuitboard
+  - NuclearCentrifugeMachineCircuitboard
