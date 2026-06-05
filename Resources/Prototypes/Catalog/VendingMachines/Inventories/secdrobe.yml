@@ -50,7 +50,7 @@
     ClothingShoesBootsJack: 3
     ClothingHeadHatBeretSecurity: 3
     ClothingHeadHatSecsoft: 3
-    ClothingHeadBandRed: 3
+    ClothingHeadBandBlue: 3
     ClothingHeadHatBeretBrigmedic: 1 # Goobstation
     SurveillanceWirelessCameraBodySecurity: 5 # Goobstation
     ClothingMaskGasSecurity: 5 # Goobstation
@@ -69,7 +69,7 @@
     ClothingOuterWinterSecArmored : 2 # Goobstation
     ClothingOuterArmorBasic: 2
     ClothingOuterCoatAMG: 1 # Goobstation
-    ClothingNeckScarfStripedRed: 3
+    ClothingNeckScarfStripedBlue: 3
     ClothingOuterArmorBasicSlim: 2
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1

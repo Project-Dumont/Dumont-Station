@@ -2884,3 +2884,45 @@ Entries:
       message: Traduções. Muitas traduções. Muitas, muitas traduções.
   id: 345
   time: '2026-05-31T03:06:28.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Reskin da Dreadnought
+    - type: Tweak
+      message: Metashield mais amigavel
+  id: 346
+  time: '2026-06-02T11:53:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterado o mapping da Sec
+    - type: Tweak
+      message: Sprites do borg dog
+    - type: Tweak
+      message: Alguns sprites novos do goob recoloridos
+  id: 347
+  time: '2026-06-02T12:00:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Algumas traduções foram consertadas.
+  id: 348
+  time: '2026-06-02T12:59:27.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Sec vermelha
+    - type: Tweak
+      message: Agora a Segurança é azul, mudança total no visual em respeito as cores
+    - type: Tweak
+      message: Alguns resprites no BSO
+    - type: Tweak
+      message: Alguns ícones de trabalho foram alterados.
+  id: 349
+  time: '2026-06-02T13:18:06.0000000+00:00'
+- author: Victor Job and Struater
+  changes:
+    - type: Tweak
+      message: Core azul do BSO alterada pra verde
+  id: 350
+  time: '2026-06-02T13:20:26.0000000+00:00'

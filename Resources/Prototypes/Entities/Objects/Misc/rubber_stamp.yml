@@ -261,7 +261,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-hos
-    stampedColor: "#cc0000"
+    stampedColor: "#0045cc"
     stampState: "paper_stamp-hos"
     stampLargeIcon: "large_stamp-hos" # Goob
   - type: Sprite
@@ -346,7 +346,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-warden
-    stampedColor: "#5b0000"
+    stampedColor: "#00175b"
     stampState: "paper_stamp-warden"
   - type: Sprite
     state: stamp-warden

@@ -29,7 +29,7 @@
     anchored: false
     noRot: true
   - type: Sprite
-    sprite: Objects/Specific/Security/barrier.rsi
+    sprite: _Gabystation/Objects/Specific/Security/barrier.rsi # Gaby
     layers:
     - state: idle
     - state: locked

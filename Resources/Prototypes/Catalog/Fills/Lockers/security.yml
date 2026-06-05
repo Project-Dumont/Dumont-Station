@@ -118,7 +118,7 @@
     - id: ClothingHandsGlovesCombat
     - id: ClothingShoesBootsJack
     - id: ClothingShoesHighheelBootsCombat # Gabystation
-    - id: ClothingOuterCoatWarden
+    - id: ClothingOuterCoatBlueWarden
     - id: ClothingOuterWinterWarden
     - id: RubberStampWarden
     - id: DoorRemoteArmory

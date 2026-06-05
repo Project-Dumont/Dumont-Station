@@ -27,7 +27,7 @@
   description: The keys to the future.
   components:
   - type: Sprite
-    sprite: Objects/Vehicles/secway.rsi
+    sprite: _Gabystation/Objects/Vehicles/secway.rsi
     state: keys
   - type: Tag
     tags:

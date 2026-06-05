@@ -309,9 +309,9 @@
   description: It's bright red and rather crisp, much like security's victims tend to be.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/hos.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hos.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/hos.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hos.rsi # Gaby
   - type: Item
     inhandVisuals:
       left:
@@ -319,13 +319,13 @@
         color: "#C12D30"
         sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/color/color.rsi # Goob
       - state: overlay-inhand-left
-        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # Goob
+        sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # Gaby
       right:
       - state: inhand-right
         color: "#C12D30"
         sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/color/color.rsi # Goob
       - state: overlay-inhand-right
-        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # Goob
+        sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # Gaby
 
 - type: entity
   parent: [ClothingUniformSkirtBase, ClothingUniformFoldableBase, BaseCommandContraband] # Goob
@@ -334,9 +334,9 @@
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/hos_alt.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hos_alt.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/hos_alt.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hos_alt.rsi # Gaby
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -345,9 +345,9 @@
   description: A head of security's luxury-wear, for special occasions.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hos_parade.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hos_parade.rsi # Gaby
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -430,9 +430,9 @@
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/brigmedic.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/brigmedic.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/brigmedic.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/brigmedic.rsi # Gaby
 
 - type: entity
   parent: [ClothingUniformSkirtBase, ClothingUniformFoldableBase] # Goob
@@ -553,9 +553,9 @@
   description: A jumpskirt made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/security.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/security.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/security.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/security.rsi # Gaby
   - type: Item
     inhandVisuals:
       left:
@@ -579,9 +579,9 @@
   description: A formal security suit for officers complete with Nanotrasen belt buckle. # Goob
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/warden.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/warden.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/warden.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/warden.rsi # Gaby
   - type: Item
     inhandVisuals:
       left:
@@ -589,13 +589,13 @@
         color: "#C12D30"
         sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/color/color.rsi # Goob
       - state: overlay-inhand-left
-        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # Goob
+        sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # Gaby
       right:
       - state: inhand-right
         color: "#C12D30"
         sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/color/color.rsi # Goob
       - state: overlay-inhand-right
-        sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # Goob
+        sprite: _Gabystation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # Gaby
 
 
 - type: entity
@@ -660,9 +660,9 @@
   description: A dress for special occasions.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/hosformaldress.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hosformaldress.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/hosformaldress.rsi
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/hosformaldress.rsi # Gaby
 
 - type: entity
   parent: [UnsensoredClothingUniformSkirtBase,ClothingUniformFoldableBase, BaseSyndicateContraband] # Goob
@@ -853,9 +853,9 @@
   description: A sign of skill and prestige within the security department.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/senior_officer.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/senior_officer.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/senior_officer.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/senior_officer.rsi # Gaby
 
 - type: entity
   parent: [ClothingUniformSkirtBase, ClothingUniformFoldableBase, BaseSecurityContraband] # Goob
@@ -864,9 +864,9 @@
   description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/security_grey.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/security_grey.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/Security/security_grey.rsi # Goob
+    sprite: _Gabystation/Clothing/Uniforms/Jumpskirt/Security/security_grey.rsi # Gaby
 
 - type: entity
   parent: ClothingUniformSkirtBase

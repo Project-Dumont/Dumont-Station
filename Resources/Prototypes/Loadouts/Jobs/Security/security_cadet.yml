@@ -78,11 +78,11 @@
 - type: loadout
   id: RedJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorRed
+    jumpsuit: ClothingUniformJumpsuitColorBlue
 
 
 - type: loadout
   id: RedJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtColorRed
+    jumpsuit: ClothingUniformJumpskirtColorBlue
 
