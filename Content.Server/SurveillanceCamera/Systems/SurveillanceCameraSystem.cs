@@ -315,7 +315,6 @@ public sealed class SurveillanceCameraSystem : EntitySystem
             camera.AvailableNetworks.Add(receiveFrequencyId);
 
         camera.NetworkSet = true;
-        Dirty(uid, camera);
         Dirty(uid, deviceNet);
     }
     // Orion-End
