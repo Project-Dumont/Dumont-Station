@@ -256,30 +256,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // Light attack
         if (useDown == BoundKeyState.Down)
-        {
-            var attackerPos = TransformSystem.GetMapCoordinates(userOverride);
-
-            if (mousePos.MapId != attackerPos.MapId ||
-                (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
-            {
-                return;
-            }
-
-            EntityUid? target = null;
-
-            if (_stateManager.CurrentState is GameplayStateBase screen)
-            {
-                target = screen.GetDamageableClickedEntity(mousePos); // Goob edit
-            }
-
-            // Don't light-attack if interaction will be handling this instead // Mono - add hands check (why is this duplicated?)
-            if (HasComp<HandsComponent>(userOverride) && Interaction.CombatModeCanHandInteract(userOverride, target))
-                return;
-
-            RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
-        }
-
-        if (useDown == BoundKeyState.Down)
             ClientLightAttack(userOverride, mousePos, coordinates, weaponUid, weapon);
     }
 
