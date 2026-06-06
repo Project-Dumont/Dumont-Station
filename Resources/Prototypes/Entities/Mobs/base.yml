@@ -196,6 +196,8 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      HardCritical: # Orion-Edit
+      - ActionCritSuccumb
   - type: Deathgasp
   - type: HealthExaminable
     examinableTypes:
