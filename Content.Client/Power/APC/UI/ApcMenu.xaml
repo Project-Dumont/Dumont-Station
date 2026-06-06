@@ -29,7 +29,7 @@ SPDX-License-Identifier: MIT
                     <GridContainer Margin="10 0 0 0" Columns="2">
                         <!-- Power On/Off -->
                         <Label Text="{Loc 'apc-menu-breaker-label'}" HorizontalExpand="True"
-                                StyleClasses="StatusFieldTitle" MinWidth="120"/>
+                                StyleClasses="StatusFieldTitle" MinWidth="150"/>
                         <BoxContainer Orientation="Horizontal" MinWidth="90">
                             <Button Name="BreakerButton" Text="{Loc 'apc-menu-breaker-button'}" HorizontalExpand="True"/>
                         </BoxContainer>
