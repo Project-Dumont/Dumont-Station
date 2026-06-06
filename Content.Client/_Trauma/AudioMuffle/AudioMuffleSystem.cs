@@ -22,7 +22,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Player;
-using Robust.Shared.Timing;
 
 namespace Content.Trauma.Client.AudioMuffle;
 
@@ -164,7 +163,7 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         if (!_pathfindingEnabled && !_raycastEnabled)
             return;
 
-        if (!CanMuffle(ent.Comp))
+        if (!CanMuffle(ent.Owner, ent.Comp))
             return;
 
         if (ResolvePlayer() is not { } player)
@@ -183,7 +182,7 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
     private void RemoveAudioMuffle(Entity<AudioMuffleComponent> ent)
     {
         if (!_audioQuery.TryComp(ent, out var audio) ||
-            ent.Comp.Indices is not {} indices ||
+            ent.Comp.Indices is not { } indices ||
             !ReverseAudioPosDict.TryGetValue(indices, out var set))
             return;
 
@@ -364,7 +363,7 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
             if (!_audioQuery.TryComp(ent.Value, out var audioComp))
                 continue;
 
-            if (!CanMuffle(audioComp))
+            if (!CanMuffle(ent.Value, audioComp))
                 continue;
 
             var muffle = EnsureComp<AudioMuffleComponent>(ent.Value);
@@ -762,7 +761,7 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         if (!Exists(audio) || !Resolve(audio, ref audio.Comp1, ref audio.Comp2, false))
             return;
 
-        if (!CanMuffle(audio.Comp1) || !audio.Comp1.Loaded || ResolvePlayer() is not { } player)
+        if (!CanMuffle(audio.Owner, audio.Comp1) || !audio.Comp1.Loaded || ResolvePlayer() is not { } player)
             return;
 
         var xform = Transform(player);
@@ -923,9 +922,15 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         _audio.SetVolume(audio, volume, audio);
     }
 
-    private static bool CanMuffle(AudioComponent audio)
+    private bool CanMuffle(EntityUid uid, AudioComponent audio)
     {
         if (audio.LifeStage > ComponentLifeStage.Running)
+            return false;
+
+        if (HasComp<IgnoreAudioMuffleComponent>(uid))
+            return false;
+
+        if (TryComp(uid, out TransformComponent? xform) && HasComp<IgnoreAudioMuffleComponent>(xform.ParentUid))
             return false;
 
         return !audio.Global;
