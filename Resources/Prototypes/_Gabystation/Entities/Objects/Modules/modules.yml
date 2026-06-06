@@ -22,6 +22,8 @@
   name: modsuit jump module
   description: A module that can be inserted inside modsuit boots to grant the user the ability to jump in the direction they're facing.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: jump-boots
@@ -53,6 +55,8 @@
   name: modsuit magboot module
   description: A module that can be inserted inside modsuit boots to give them the functionality of regular magboots. DO NOT INSERT INSIDE MODSUITS WITH MAGBOOT FUNCTIONALITY. # Inserir isso dentro de uma modsuit de engenheiro fez as botas perderem a funcionallidade de magboots completamente.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: mag-boots
@@ -81,6 +85,8 @@
   name: modsuit clown shoes module
   description: A module that can be inserted inside modsuit boots to give them the functionality of clown shoes. Honk!
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: clownshoes-boots
@@ -106,6 +112,8 @@
   name: modsuit drill module
   description: A module that can be inserted inside modsuit gloves to make them work like a mining drill.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: drill-hands
@@ -138,6 +146,8 @@
   name: modsuit diamond drill module
   description: A module that can be inserted inside modsuit gloves to make them work like a diamond mining drill.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: diamonddrill-hands
@@ -170,6 +180,8 @@
   name: modsuit surgery module
   description: A module that can be inserted inside modsuit gloves to make them work like a surgical omnitool. Due to oudated tech, it needs another surgery tool to begin the surgery, even though it can do the rest.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: surgery-hands
@@ -224,6 +236,8 @@
   name: modsuit medhud module
   description: A module that can be inserted inside modsuit helmets to grant the user a medical HUD that displays the health of nearby living creatures.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: medhud-head
@@ -244,6 +258,8 @@
   name: modsuit diagnostic module
   description: A module that can be inserted inside modsuit helmets to grant the user a diagnostic HUD that displays the health of nearby sillicons.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: diagnostichud-head
@@ -266,6 +282,8 @@
   name: modsuit sechud module
   description: A module that can be inserted inside modsuit helmets to grant the user a security HUD that displays the ID status and wanted level of nearby crewmembers.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: sechud-head
@@ -287,6 +305,8 @@
   name: modsuit welding module
   description: A module that can be inserted inside modsuit helmets to grant the user welding protection.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: welding-head
@@ -306,6 +326,8 @@
   name: modsuit anti-gravity module
   description: A module that can be inserted inside the chest of a modsuit to negate gravity for the user.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: antigrav-chest
@@ -324,6 +346,8 @@
   name: modsuit GPS module
   description: A module that can be inserted inside the chest of a modsuit to grant it GPS functionality.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: gps-chest
@@ -344,12 +368,16 @@
     tags:
     - ModsuitChestUpgrade
 
+
+
 - type: entity
   parent: BaseItem
   id: ModsuitModuleInjector
   name: modsuit injector module
   description: A module that can be inserted inside the chest of a modsuit to make it inject a small dose of healing and stimulating chemicals into the user when the user reaches critical condition.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Gabystation/Objects/Specific/modsuit_modules.rsi
     state: injector-chest
