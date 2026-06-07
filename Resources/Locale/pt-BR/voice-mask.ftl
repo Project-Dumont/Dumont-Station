@@ -8,3 +8,6 @@ voice-mask-name-change-set-description = Mude o nome que outras pessoas ouvem pa
 
 voice-mask-popup-success = Nome definido com sucesso.
 voice-mask-popup-failure = Não foi possível definir o nome.
+
+voice-mask-icon-label = Ícone de rádio
+voice-mask-name-current-name = Nome atual
