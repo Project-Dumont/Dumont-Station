@@ -267,16 +267,16 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
             RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
 
             if (TryComp<RotaryPhoneComponent>(thisPhone.ConnectedPhone, out var otherPhone))
-{
-    if (otherPhone.SoundEntity != null)
-        otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
+            {
+                if (otherPhone.SoundEntity != null)
+                    otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
 
-    otherPhone.ConnectedPhone = null;
-    otherPhone.Connected = false;
-    otherPhone.Engaged = false;
+                otherPhone.ConnectedPhone = null;
+                otherPhone.Connected = false;
+                otherPhone.Engaged = false;
 
-    Dirty(thisPhone.ConnectedPhone.Value, otherPhone);
-}
+                Dirty(thisPhone.ConnectedPhone.Value, otherPhone);
+            }
         }
 
         if (thisPhone.SoundEntity != null)
