@@ -23,6 +23,12 @@
     - GunKitMk58Pistol
 
 - type: loadout
+  id: WeaponEnergyGunPhaser
+  storage:
+    back:
+    - WeaponEnergyGunPhaser
+
+- type: loadout
   id: ClothingNeckRobusto
   effects:
     - !type:JobRequirementLoadoutEffect

@@ -145,6 +145,7 @@
           False: { visible: false }
   - type: PowerCellSlot
     cellSlotId: charger_slot
+    allowMegaCells: true # Orion
     # fitsInCharger is true i dont think this will ever affect anything negatively but it lets it function
   - type: Charger #Goobstation
     chargeRate: 25
@@ -155,6 +156,7 @@
         name: power-cell-slot-component-slot-name-default
         whitelist:
           tags:
+          - MegaCell # Orion
           - PowerCell
           - PowerCellSmall
         blacklist:

@@ -1,27 +1,27 @@
 ent-GlockenspielInstrument = glockenspiel
-    .desc = { "" }
+    .desc = Um xilofone sem cor.
 
-ent-MusicBoxInstrument = music box
-    .desc = Playing this makes you feel safe from scary animatronics.
+ent-MusicBoxInstrument = caixa de música
+    .desc = Tocar isso faz você sentir seguro de animatrônicos assustadores.
 
-ent-XylophoneInstrument = xylophone
-    .desc = Rainbow colored glockenspiel.
+ent-XylophoneInstrument = xilofone
+    .desc = Um glockenspiel colorido.
 
-ent-MicrophoneInstrument = microphone
-    .desc = Perfect for singing your heart out.
+ent-MicrophoneInstrument = microfone
+    .desc = Alô? Tão me escutando?
 
-ent-SynthesizerInstrument = synthesizer
-    .desc = Perfect for singing your heart out.
+ent-SynthesizerInstrument = sintetizador
+    .desc = O barulho do futuro de séculos atrás.
 
 ent-KalimbaInstrument = kalimba
-    .desc = The power of a piano right at your thumbs.
+    .desc = O poder de um piano na palma da sua mão.
 
-ent-WoodblockInstrument = woodblock
-    .desc = If you listen to this enough it'll start driving itself into your mind.
+ent-WoodblockInstrument = bloco de madeira
+    .desc = Se você escutar isso por tempo suficiente vai começar a entrar na sua mente.
 
-ent-ReverseCymbalsInstrument = reverse cymbals
-    .desc = I think you have it the wrong way around?
+ent-ReverseCymbalsInstrument = pratos reversos
+    .desc = Uh, hey, eu não acho que é assim que você segura isso...
 
-ent-SuperSynthesizerInstrument = super synthesizer
-    .desc = Blasting the ghetto with Touhou MIDIs since 2020.
+ent-SuperSynthesizerInstrument = super sintetizador
+    .desc = O barulho do futuro de um passado menos distante.
 

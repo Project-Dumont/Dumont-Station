@@ -1,47 +1,3 @@
-ent-PlushieBee = bee plushie
-    .desc = A cute toy that resembles an even cuter programmer. You'd have to be a monster to grind this up.
-
-ent-PlushieRGBee = RGBee plushie
-    .desc = A cute toy that resembles a bee plushie while you're on LSD.
-
-ent-PlushieNuke = nukie plushie
-    .desc = A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious.
-
-ent-PlushieRouny = rouny plushie
-    .desc = Rouny
-
-ent-PlushieLamp = lamp plushie
-    .desc = A light emitting friend!
-
-ent-PlushieLizard = lizard plushie
-    .desc = An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
-
-ent-PlushieSpaceLizard = space lizard plushie
-    .desc = An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
-
-ent-PlushieRatvar = ratvar plushie
-    .desc = A small stuffed doll of the elder god Ratvar.
-
-ent-PlushieNar = nar'sie plushie
-    .desc = A small stuffed doll of the elder goddess Nar'Sie.
-
-ent-PlushieCarp = carp plushie
-    .desc = An adorable stuffed toy that resembles the monstrous space carp.
-
-ent-PlushieSlime = slime plushie
-    .desc = An adorable stuffed toy that resembles a slime. It's basically a hacky sack.
-
-ent-PlushieSnake = snake plushie
-    .desc = An adorable stuffed toy that resembles a snake.
-
-ent-ToyMouse = mouse toy
-    .desc = A colorful toy mouse!
-
-ent-ToyRubberDuck = rubber ducky
-    .desc = Not carried here by ocean currents.
-
-ent-PlushieVox = vox plushie
-    .desc = SKREEEEEEEEEEEE!
 
 ent-ToyAi = AI toy
     .desc = A scaled-down toy AI core.
@@ -139,3 +95,5 @@ ent-ToySword = toy sword
 ent-ToyAmongPequeno = among pequeno
     .desc = sus!
 
+ent-CardSword = espada de papelão
+    .desc = Um tubo de papelão no formato de uma espada.

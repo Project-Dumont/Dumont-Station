@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi | Brigmedic icon made by PuroSlavKing (Github) | SecurityClown by lzk228 (github). Security Icons Recolored by Struater",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "Detective"
+        },
+        {
+            "name": "SecurityOfficer"
+        },
+        {
+            "name": "Warden"
+        },
+        {
+            "name": "Brigmedic"
+        },
+        {
+            "name": "SecurityCadet"
+        },
+        {
+            "name": "SeniorOfficer"
+        },
+        {
+            "name": "SecurityClown"
+        },
+        {
+            "name": "nyanoPrisonGuard"
+        },
+        {
+            "name": "blueshield"
+        },
+        {
+            "name": "nanotrasenrepresentative"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Lumberjack
+- type: marking
+  id: HumanFacialHairLumberjack
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: lumberjack
+
+# Lumberjack Alt
+- type: marking
+  id: HumanFacialHairLumberjackAlt
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: lumberjackalt
+
+# Prospector's
+- type: marking
+  id: HumanFacialHairProspectors
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: prospectors
+
+# Bigger
+- type: marking
+  id: HumanFacialHairBiggerbeard
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: biggerbeard
+
+# Goat man
+- type: marking
+  id: HumanFacialHairGoatman
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: goatman
+
+# Big Stache
+- type: marking
+  id: HumanFacialHairBigStache
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: bigstache
+
+# Big Stache & Beard
+- type: marking
+  id: HumanFacialHairBigStacheBeard
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: bigstachebeard
+
+# Clocker
+- type: marking
+  id: HumanFacialHairClocker
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: clocker
+
+# Clocker Alt
+- type: marking
+  id: HumanFacialHairClockerAlt
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: clockeralt

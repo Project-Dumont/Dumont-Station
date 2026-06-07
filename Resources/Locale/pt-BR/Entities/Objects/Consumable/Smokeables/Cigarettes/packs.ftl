@@ -15,3 +15,6 @@ ent-CigPackBlack = maço de nômades
 
 ent-CigPackSyndicate = maço de syndicate smokes
      .desc = Cigarros de elite para agentes de elite. Infundido com remédio para quando você precisar fazer mais do que acalmar os nervos.
+
+ent-CigPackMedical = maço de cigarros chemlab
+ .desc = Feito pelas grandes indústrias farmacêuticas para elas mesmas. Contém 10 cigarros super-absorventes para encher de químicos.

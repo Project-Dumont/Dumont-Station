@@ -13,3 +13,4 @@ hail-5 = I AM THE LAW!!
 hail-6 = Get down on the floor creep!!
 hail-7 = Freeze scumbag!!
 hail-8 = HALT! HALT! HALT!!
+hail-death-to-nt = Death to NanoTrasen!!

@@ -41,7 +41,7 @@
 - type: entity
   id: AirlockSealedGlass
   parent: AirlockGlass
-  name: sealed glass airlock
+  name: sealded glass airlock
   description: It opens, it closes, and maybe crushes you. Now it stops little creatures too!
   suffix: DO NOT MAP
   components:

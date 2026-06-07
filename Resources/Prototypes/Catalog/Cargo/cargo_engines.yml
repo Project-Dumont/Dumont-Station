@@ -35,7 +35,7 @@
     sprite: Objects/Power/AME/ame_jar.rsi
     state: jar
   product: CrateEngineeringAMEJar
-  cost: 2000
+  cost: 25000 # Dumont edit - Powerful AME
   category: cargoproduct-category-name-engineering
   group: market
 

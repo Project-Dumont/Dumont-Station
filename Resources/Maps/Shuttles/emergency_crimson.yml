@@ -163,7 +163,7 @@ entities:
             88: 0,13
             89: 1,11
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNe
           decals:
             443: -3,9
@@ -180,7 +180,7 @@ entities:
           decals:
             87: -1,13
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNw
           decals:
             442: -4,9
@@ -196,7 +196,7 @@ entities:
           decals:
             84: 1,9
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerSe
           decals:
             440: -2,7
@@ -212,7 +212,7 @@ entities:
             85: 0,9
             448: -1,10
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerSw
           decals:
             79: -4,7
@@ -222,7 +222,7 @@ entities:
           decals:
             95: 0,11
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteInnerNe
           decals:
             445: -3,8
@@ -278,7 +278,7 @@ entities:
             93: -1,12
             447: -1,11
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineW
           decals:
             446: -4,8
@@ -424,7 +424,7 @@ entities:
             506: -7,2
             507: -7,3
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: QuarterTileOverlayGreyscale
           decals:
             441: -2,5
@@ -469,7 +469,7 @@ entities:
             498: 1,2
             499: 1,3
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: QuarterTileOverlayGreyscale90
           decals:
             423: -4,5
@@ -493,12 +493,12 @@ entities:
             580: -2,5
             581: -2,-1
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnLineGreyscaleN
           decals:
             437: -3,5
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnLineGreyscaleS
           decals:
             438: -3,7

@@ -16,7 +16,7 @@
   parent: WardenGear
   equipment:
     head: ClothingHeadHatWarden
-    outerClothing: ClothingOuterCoatWarden
+    outerClothing: ClothingOuterCoatBlueWarden
     jumpsuit: ClothingUniformJumpsuitWarden
     gloves: ClothingHandsGlovesKravMaga
     shoes: ClothingShoesBootsJack

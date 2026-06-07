@@ -38,9 +38,9 @@
   description: A sturdy, utilitarian winter coat designed to protect security members from any threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/secvestcoat.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/secvestcoat.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/secvestcoat.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/secvestcoat.rsi # Gaby
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingHeadHatHoodWinterSec
@@ -63,9 +63,9 @@
   description: A sturdy, utilitarian winter coat designed to protect senior security members from any threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/seniorsecvestcoat.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/seniorsecvestcoat.rsi # Gaby
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Wintercoats/seniorsecvestcoat.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/seniorsecvestcoat.rsi # Gaby
 
 - type: entity
   parent: ClothingOuterWinterCoat

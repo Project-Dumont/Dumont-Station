@@ -161,7 +161,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName, nanoBank) = data;
+        var (entity, job, objectives, briefing, entityName, nanoBank, _) = data;
 
         _window.SpriteView.SetEntity(entity);
 

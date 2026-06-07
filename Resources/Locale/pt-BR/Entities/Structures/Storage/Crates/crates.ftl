@@ -63,3 +63,6 @@ ent-CrateCommandSecure = caixa de comando
 
 ent-CrateLivestock = caixa de gado
     .desc = { "" }
+
+ent-CrateCoffin = caixão
+    .desc = Um caixão confortável, perfeito para corpos e vampiros.

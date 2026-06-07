@@ -139,7 +139,7 @@ entities:
         nodes:
         - node:
             angle: -1.5707963267948966 rad
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: Arrows
           decals:
             92: -2,-1
@@ -341,7 +341,7 @@ entities:
             53: 1,20
         - node:
             angle: 6.283185307179586 rad
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineN
           decals:
             42: -4,1
@@ -362,7 +362,7 @@ entities:
             323: 1,3
         - node:
             angle: 6.283185307179586 rad
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineS
           decals:
             39: -2,3
@@ -427,7 +427,7 @@ entities:
           decals:
             335: -7,-6
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: CheckerNESW
           decals:
             93: -3,-2

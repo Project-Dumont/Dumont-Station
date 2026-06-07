@@ -6,7 +6,7 @@
 - type: gameMap
   id: Cog
   mapName: 'Cog'
-  mapPath: /Maps/_Goobstation/cog.yml
+  mapPath: /Maps/_Gabystation/cog.yml # Dumont
   minPlayers: 40
   stations:
     Cog:

@@ -65,7 +65,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#de3a3a"
+    color: "#223b78"
 
 - type: entity
   parent: ComputerComms

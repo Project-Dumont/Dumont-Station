@@ -10,7 +10,22 @@ ent-Wrench = chave inglesa
 ent-Crowbar = pé de cabra
      .desc = Uma ferramenta multifuncional para arrombar portas e combater invasores interdimensionais.
 
-ent-CrowbarRed = pé de cabra emergêncial
+ent-CrowbarGreen = { ent-Crowbar }
+     .desc = Uma ferramenta multifuncional para arrombar portas e combater invasores interdimensionais, feita de um torno.
+
+ent-CrowbarOrange = { ent-Crowbar }
+     .desc = Uma ferramenta multifuncional para arrombar portas e combater invasores interdimensionais, encontrada em uma caixa de ferramentas.
+
+ent-CrowbarYellow = { ent-Crowbar }
+     .desc = Uma ferramenta multifuncional para arrombar portas e combater invasores interdimensionais, dispensada na engenharia.
+
+ent-CrowbarWizard = { ent-Crowbar }
+     .desc = Uma ferramenta multifuncional para arrombar portas, combater invasores interdimensionais e destruir estações.
+
+ent-CrowbarAbductor = { ent-Crowbar } de alta tecnologia
+     .desc = Um { ent-Crowbar } feito de um metal mais resistente que qualquer coisa que a NanoTrasen poderia achar.
+
+ent-CrowbarRed = { ent-Crowbar } emergêncial
      .desc = Uma ferramenta multifuncional para arrombar portas e combater invasores interdimensionais.
 
 ent-Multitool = multiferramenta
@@ -30,3 +45,6 @@ ent-Shovel = pá
 
 ent-Omnitool = omnitool
      .desc = O melhor amigo de um drone.
+
+ent-RollingPin = rolo de massa
+     .desc = Usado para amassar massa.

@@ -64,7 +64,6 @@
 # Assembly
 - type: entity
   id: AirlockUraniumAssembly
-  name: airlock assembly
   suffix: Uranium
   parent: AirlockAssembly
   components:

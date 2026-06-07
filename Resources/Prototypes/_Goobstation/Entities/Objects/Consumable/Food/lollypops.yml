@@ -386,7 +386,7 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
     - state: color
       map: [ "enum.AmmoVisualLayers.Tip" ]
-      color: "#040273"
+      color: "#02731e"
 
 # Captain
 

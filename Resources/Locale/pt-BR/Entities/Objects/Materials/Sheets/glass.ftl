@@ -1,32 +1,68 @@
-ent-SheetGlass = glass
-    .desc = A sheet of glass, used often on the station in various applications.
-    .suffix = Full
 
-ent-SheetGlass1 = glass
-    .desc = A sheet of glass, used often on the station in various applications.
-    .suffix = Single
+ent-SheetGlassBase = vidro
+ .desc = Folha(s) de vidro, usado na estação para diversas coisas.
 
-ent-SheetRGlass = reinforced glass
-    .desc = A reinforced sheet of glass.
-    .suffix = Full
+ent-SheetGlass = vidro
+ .desc = Folha(s) de vidro, usado na estação para diversas coisas.
 
-ent-SheetRGlass1 = reinforced glass
-    .desc = A reinforced sheet of glass.
-    .suffix = Single
+ent-SheetGlass10 = vidro
+ .desc = Folha(s) de vidro, usado na estação para diversas coisas.
 
-ent-SheetPGlass = plasma glass
-    .desc = A sheet of translucent plasma.
-    .suffix = Full
+ent-SheetGlass1 = vidro
+ .desc = Folha(s) de vidro, usado na estação para diversas coisas.
 
-ent-SheetPGlass1 = plasma glass
-    .desc = A sheet of translucent plasma.
-    .suffix = Single
+ent-SheetGlassLingering0 = vidro
+ .desc = Folha(s) de vidro, usado(s) na estação para diversas coisas.
 
-ent-SheetRPGlass = reinforced plasma glass
-    .desc = A reinforced sheet of translucent plasma.
-    .suffix = Full
 
-ent-SheetRPGlass1 = reinforced plasma glass
-    .desc = A reinforced sheet of translucent plasma.
-    .suffix = Single
 
+ent-SheetRGlass = vidro reforçado
+ .desc = Folha(s) de vidro reforçado, usado na estação para diversas coisas.
+
+ent-SheetRGlass1 = vidro reforçado
+ .desc = Folha(s) de vidro reforçado, usado na estação para diversas coisas.
+
+ent-SheetRGlassLingering0 = vidro reforçado
+ .desc = Folha(s) de vidro reforçado, usado na estação para diversas coisas.
+
+
+
+ent-SheetPGlass = vidro de plasma
+ .desc = Folha(s) de plasma translúcido.
+
+ent-SheetPGlass1 = vidro de plasma
+ .desc = Folha(s) de plasma translúcido.
+
+
+ent-SheetRPGlass = vidro de plasma reforçado
+ .desc = Folha(s) de plasma translúcido e reforçado.
+
+ent-SheetRPGlass1 = vidro de plasma reforçado
+ .desc = Folha(s) de plasma translúcido e reforçado.
+
+ent-SheetRPGlassLingering0 = vidro de plasma reforçado
+ .desc = Folha(s) de plasma translúcido e reforçado.
+
+
+
+ent-SheetUGlass = vidro de urânio
+ .desc = Folha(s) de urânio translúcido.
+
+ent-SheetUGlass1 = vidro de urânio
+ .desc = Folha(s) de urânio translúcido.
+
+
+
+ent-SheetRUGlass = vidro de urânio reforçado
+ .desc = Folha(s) de urânio translúcido e reforçado.
+
+ent-SheetRUGlass1 = vidro de urânio reforçado
+ .desc = Folha(s) de urânio translúcido e reforçado.
+
+
+
+ent-SheetClockworkGlass = vidro de latão
+ .desc = Folha(s) de vidro endurecido em latão, as vezes utilizado por remanescentes do culto de Ratvar.
+
+ent-SheetClockworkGlass1 = vidro de latão
+ .desc = Folha(s) de vidro endurecido em latão, as vezes utilizado por remanescentes do culto de Ratvar.

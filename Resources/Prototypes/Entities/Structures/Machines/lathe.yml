@@ -470,7 +470,6 @@
     - SecurityWeaponsStaticGoob
     - SecurityAmmoStaticGoob
     - SyndicateAmmoLightStatic
-    - ScienceExplosives
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -566,6 +565,7 @@
     - SecurityWeaponsGoob
     - RestraintTechnology
     - MiningWeapons
+    - ScienceExplosives
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -791,12 +791,12 @@
     - SecurityBoardsStaticGoob
     - SecurityBoardsStaticGoob
     - PowerCellsStatic
-    - ScienceExplosives
     - GrenadeTriggersStatic
     - SecurityWeaponsStaticGoob
     - CablesStatic #Dumont
     - ERTAmmoStaticGoob #Dumont, so that sec can print .30 for some new guns
     dynamicPacks:
+    - ScienceExplosives
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
     - SecurityEquipment

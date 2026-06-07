@@ -96,3 +96,17 @@ ent-WindoorScienceLocked = porta de vidro reforçado
     .desc = É tipo uma janela e um portão em um!
     .suffix = Science, Trancada
 
+ent-WindoorClockwork = porta de vidro de latão
+    .desc = É tipo uma janela e um portão em um!
+
+ent-WindoorPlasma = porta de vidro de plasma
+    .desc = É tipo uma janela rosa e um portão em um!
+
+ent-WindoorSecurePlasma = porta de vidro reforçado de plasma
+    .desc = É tipo uma janela rosa reforçada e um portão em um!
+
+ent-WindoorUranium = porta de vidro de urânio
+    .desc = É tipo uma janela verde e um portão em um!
+
+ent-WindoorSecureUranium = porta de vidro reforçado de urânio
+    .desc = É tipo uma janela verde reforçada e um portão em um!

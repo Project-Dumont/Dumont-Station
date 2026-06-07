@@ -1,6 +1,6 @@
 interaction-LookAt-name = Encarar
 interaction-LookAt-description = Encare o vazio e veja-o encarar de volta.
-interaction-LookAt-success-self-popup = Você encara { ARTIGO-O($user) } { $user }.
+interaction-LookAt-success-self-popup = Você encara { ARTIGO-O($target) } { $target }.
 interaction-LookAt-success-target-popup = Você sente { ARTIGO-O($user) } { $user } te encarando...
 interaction-LookAt-success-others-popup = { CAPITALIZE(ARTIGO-O($user)) } { $user } encara { ARTIGO-O($target) } { $target }.
 

@@ -1,15 +1,23 @@
 <Document>
   # Regra de Antagonista 13 - MetaShield.
 
-  Essa regra irá abordar sobre o metashield de diferentes papeis, se seu grupo de papeis não sabe sobre certos antagonistas, voce deve apenas se referir a eles com sua aparencia ou algum aspecto do genero
+  Essa regra irá abordar sobre o Metashield de diferentes papeis, se seu grupo de papeis não sabe sobre certos antagonistas, voce deve apenas se referir a eles com sua aparencia ou algum aspecto do genero.
+  Se você sabe ou não da existência de um Antagonista dependera das cores chaves setadas nas palavras chave, que são: [bold]Verde, Laranja, Vermelho e Preto[bold].
 
+  - [bold][color=#0af024]Conhecimento Geral[/color][/bold] é algo que qualquer ser senciente e dotado de conhecimento no universo de Space Station 14 reconheceria, independentemente do grupo ou cultura a que pertença, tal como qualquer pessoa sabe o que é um avião.
+  - [bold][color=#ff6200]Conhecimento Restrito[/color][/bold] algo que é reservado a apenas membros capazes e valiosos de qualquer organização no espaço. Sendo alguns deles: Todo o Comando, o Warden, a IA da Estação e membros da Central de Comando.
+  - [bold][color=#f00000]Conhecimento Perdido[/color][/bold] trata-se de um conhecimento restrito a grupos poderosos e organizações extremamente zelosas quanto à sua preservação. São informações tão absurdas e inacreditáveis que, mesmo que alguém tente revelá-las ao público, nem precisara ser silenciado 
+  já que todos o taxarão de conspiracionista. Normalmente, esse tipo de conhecimento permanece reservado ao Vaticano e, parcialmente, ao Alto Escalão da Nanotrasen.
+  - [bold][color=#000000]Conhecimento Desconhecido[/color][/bold] ninguém, absolutamente ninguém sabe o que é.
 
-  ## Tripulação Geral
+  Adicionalmente, toda regra possui suas exceções. Certos antagonistas também podem deter conhecimento acerca de tal assunto, devendo ser tratados de maneira condizente com essa violação dentro do Roleplay.
+
+  ## Conhecimento Geral
 
   Antagonistas não listados em nenhuma parte desta regra serão consideradas partes do conhecimento da tripulação geral, até que uma atualização de regras altere isso.
   Toda a tripulação, assim como os seres no universo de Space Station 14, possui algum nível de conhecimento, variando entre rumores, relatos populares e informações mais detalhadas sobre suas características e ameaças, sobre os seguintes antagonistas:
 
-  ### Traidor
+  [head=3][color=#0af024]Traidor[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandSyndicateRecruitment" Caption=""/>
@@ -28,7 +36,7 @@
 
   Lembre-se, agente: glória ao Sindicato!
 
-  ### Ladrão
+  [head=3][color=#0af024]Ladrão[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="ClothingBackpackSatchelSmuggler" Caption=""/>
@@ -43,7 +51,7 @@
 
   São cleptomaníacos compulsivos; nem mesmo implantes de pacifismo são capazes de conter o seu impulso de roubar.
 
-  ### Agentes Nucleares
+  [head=3][color=#0af024]Agentes Nucleares[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
@@ -66,7 +74,7 @@
 
   A Nanotrasen tem ciência da verdadeira origem dos Nukes, porém essa informação não é compartilhada com a tripulação comum. Para o público geral, eles são apenas terroristas, agora atacando a Nano como alvo principal, utilizando tecnologia supostamente roubada do Sindicato.
 
-  ### Dragão
+  [head=3][color=#0af024]Dragão[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="MobDragon" Caption=""/>
@@ -84,7 +92,7 @@
 
   Embora relativamente comuns, subestimar um Dragão Espacial é um erro fatal. Sua presença é frequentemente precedida por surtos de Carpas. Ao menor sinal dessas ocorrências, protocolos de emergência devem ser ativados imediatamente.
 
-  ### Metamorfo
+  [head=3][color=#0af024]Metamorfo[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookChangelingFluff" Caption=""/>
@@ -103,7 +111,7 @@
 
   Lembre-se: colegas de trabalho, familiares ou até mesmo você podem ser um Metamorfo. Não hesite em relatar qualquer suspeita à Linha de Segurança mais próxima. Em situações como essa, a cautela é fundamental, e desconfiar pode salvar vidas.
   
-  ### Blob
+  [head=3][color=#0af024]Blob[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="CoreBlobTile" Caption=""/>
@@ -120,7 +128,7 @@
   
   A partir desse ponto, Verdanthar Prime passou a atuar como um ponto de propagação, lançando esporos pelo espaço. Esses esporos contaminam qualquer ser vivo que tenha o azar de inalá-los, transformando-o em um vetor ativo da infestação. Qualquer local alcançado por essas vítimas está, inevitavelmente, condenado à mesma destruição.
 
-  ### Rato Rei
+  [head=3][color=#0af024]Rato Rei[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="MobRatKing" Caption=""/>
@@ -133,7 +141,7 @@
   No geral, um Rato Rei é considerado uma praga relativamente comum. No entanto, em assentamentos espaciais, sua presença pode rapidamente evoluir para uma ameaça séria e potencialmente mortal se não for contida a tempo, especialmente quando têm liberdade para se reproduzir sem restrições.
   Ratos Reis são criaturas de comportamento imprevisível, frequentemente descritas como astutas, oportunistas e altamente enganosas. Não devem ser considerados confiáveis sob nenhuma circunstância.
   
-  ### Ninja
+  [head=3][color=#0af024]Ninja[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="ClothingEyesVisorNinja" Caption=""/>
@@ -149,7 +157,7 @@
 
   Há rumores de que grande parte dessa tecnologia seja derivada de engenharia reversa alienígena. Embora essa teoria nunca tenha sido confirmada, uma coisa é certa: o nível tecnológico do Clã Aranha é, sem exagero, extraordinário.
   
-  ### Bingles
+  [head=3][color=#0af024]Bingles[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="MobBingleUpgraded" Caption=""/>
@@ -164,8 +172,7 @@
   Apesar de seu potencial risco, Bingles raramente representam uma ameaça significativa em centros populacionais. Ataques diretos a civis são incomuns, principalmente devido à rápida mobilização de forças de contenção. 
   E mesmo objetos ou pessoas podem ser recuperadas do buraco, caso o mesmo seja destruído.
   
-  ### Xenomorfos
-
+  [head=3][color=#0af024]Xenomorfos[/color][/head]
   <Box>
     <GuideEntityEmbed Entity="MobXenomorphHunter" Caption=""/>
   </Box>
@@ -180,7 +187,7 @@
   
   Embora não sejam mais uma ameaça dominante como no passado, subestimar os Xenomorfos é um erro crítico. Onde há um, há potencial para muitos, e onde há muitos, há apenas uma certeza: propagação e morte.
 
-  ### Mago
+  [head=3][color=#0af024]Mago[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadHatWizardReal" Caption=""/>
@@ -204,11 +211,11 @@
 
   Mas não se preocupe. Provavelmente ficará tudo bem.
 
-  ## Especiais
+  ## Conhecimento Restrito
 
   Os seguintes antagonistas são de conhecimento restrito, sendo reconhecidos apenas pelo Comando da Estação, Warden e indivíduos autorizados. Traidores, Metamorfos, Hereges, Magos e Ladrões também têm conhecimento caso estejam na rodada:
 
-  ### Shadowling
+  [head=3][color=#ff6200]Shadowling[/color][/head]
   
   <Box>
     <GuideEntityEmbed Entity="GuidebookShadowling" Caption=""/>
@@ -228,7 +235,7 @@
   Shadowlings são altamente sensíveis à luz, sendo este um de seus principais pontos fracos. Ambientes escuros, corredores isolados, áreas de manutenção e comportamentos estranhos por parte da tripulação podem indicar sua presença. 
   Ainda assim, não há registros confirmados de Shadowlings em assentamentos espaciais, o que faz com que, oficialmente, não sejam considerados uma ameaça imediata nesses locais.
 
-  ### Slasher
+  [head=3][color=#ff6200]Slasher[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadHatSlasherMask" Caption=""/>
@@ -245,11 +252,11 @@
   Relatos sobre sua presença costumam ser acompanhados de falhas elétricas, corredores vazios, desaparecimentos inexplicáveis e sobreviventes traumatizados.
   No fim, tudo o que resta são as memórias daqueles que ele aterrorizou… enquanto aguarda silenciosamente pelo próximo momento em que o Véu enfraquecer.
 
-  ## O Vaticano e a Nanotrasen
+  ## Conhecimento Perdido
 
-  Os seguintes antagonistas são de conhecimento perdido, sendo conhecidos apenas por membros do Vaticano e parcialmente pelo Alto Escalão da Nanotrasen. Traidores, Hereges, Magos e Ladrões também têm conhecimento caso estejam na rodada:
+  Os seguintes antagonistas são de conhecimento perdido, sendo conhecidos apenas por membros do Vaticano ou organizações derivadas e parcialmente pelo Alto Escalão da Nanotrasen. Traidores, Hereges, Magos e Ladrões também têm conhecimento caso estejam na rodada:
 
-  ### Cultistas
+  [head=3][color=#f00000]Cultistas[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="CultPylon" Caption=""/>
@@ -273,7 +280,7 @@
 
   [color=#ff3333][italic]A emoção mais antiga e forte da humanidade é o medo, e o tipo mais antigo e forte de medo é o medo do desconhecido.[/italic][/color] [color=#4296b3][italic]Uma revelação sem igual. Um fim para o sofrimento cíclico e sifiano.[/italic][/color]
 
-  ### Herege
+  [head=3][color=#f00000]Herege[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption=""/>
@@ -291,7 +298,7 @@
   
   Os D̷̪̪̖̳͓̘̀̈̈́̕ë̴̦̗͕̤̝͖͉̪͌̊̈͌̌̄̇̈͌͘̚͝u̵̧̫̭̭̺̰̘̖̯̼̳͓̲̦͎̅͛̎̈́̔̑̓͝͝s̴͙̪͙͇̣͍̹͔̥̱͊͗͋̏̂̾͛͗͗͜͠ȇ̶͙̂̾͆̀̋͂͋͆̂̑̎͒͐͘š̸̪̲̄̎̿ ̴̨̨̢̱̻̰͓̬̖̥̬̪̮̆̃̓͊̚̚͝A̴͉͐̄͗̀̈́n̸̢̡̙͙͙̫͎̬̤̼͙̗͇̠̿̐̉͛̌̆͛̀̏͂ţ̷̨̺͎̝͚̩̞͔̆̀í̵͔̝͂ḡ̶̛̛̹͙͕͍̫̻̈́̅̇̇̔̄̅̐o̴̥̭̣̾̕͝s̷͉̻̼̗͛̃̅͑̅̈͜ só querem uma coisa: Influência.
 
-  ### Wraith
+  [head=3][color=#f00000]Wraith[/color][/head]
 
   <Box>
     <GuideEntityEmbed Entity="MobWraith" Caption=""/>
@@ -315,7 +322,7 @@
 
   Os seguintes antagonistas são desconhecidos de todos:
 
-  ### Abductor
+  [head=3][color=#000000]Abductor[/color][/bold]
 
   <Box>
     <GuideEntityEmbed Entity="MobAbductorAgent" Caption=""/>

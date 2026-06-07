@@ -2838,3 +2838,160 @@ Entries:
         minutos spawnado!
   id: 339
   time: '2026-05-17T19:09:10.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Healium buffado, agora ele é uma opção versátil decente para a Med.
+  id: 340
+  time: '2026-05-29T23:47:23.0000000+00:00'
+- author: PiiCat
+  changes:
+    - type: Tweak
+      message: AMEs agora produzem o dobro de energia base.
+    - type: Tweak
+      message: Injeções da AME são mais poderosas.
+    - type: Tweak
+      message: Caixa de combustível da AME agora vem com 2 jarros ao invés de 3.
+    - type: Tweak
+      message: >-
+        O preço de compra do combustivel pela Logi aumentou para 25k e vem com 1
+        jarro a menos.
+  id: 341
+  time: '2026-05-30T22:26:02.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: Glacier foi removido da rotação de mapas.
+  id: 342
+  time: '2026-05-31T01:59:25.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        Agora granadas de borracha e payloads REALMENTE precisam ser
+        pesquisadas.
+  id: 343
+  time: '2026-05-31T02:01:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Magboots de sec agora são melhores como magboots e piores como coturnos.
+  id: 344
+  time: '2026-05-31T02:04:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Muitas traduções. Muitas, muitas traduções.
+  id: 345
+  time: '2026-05-31T03:06:28.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Reskin da Dreadnought
+    - type: Tweak
+      message: Metashield mais amigavel
+  id: 346
+  time: '2026-06-02T11:53:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterado o mapping da Sec
+    - type: Tweak
+      message: Sprites do borg dog
+    - type: Tweak
+      message: Alguns sprites novos do goob recoloridos
+  id: 347
+  time: '2026-06-02T12:00:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Algumas traduções foram consertadas.
+  id: 348
+  time: '2026-06-02T12:59:27.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Sec vermelha
+    - type: Tweak
+      message: Agora a Segurança é azul, mudança total no visual em respeito as cores
+    - type: Tweak
+      message: Alguns resprites no BSO
+    - type: Tweak
+      message: Alguns ícones de trabalho foram alterados.
+  id: 349
+  time: '2026-06-02T13:18:06.0000000+00:00'
+- author: Victor Job and Struater
+  changes:
+    - type: Tweak
+      message: Core azul do BSO alterada pra verde
+  id: 350
+  time: '2026-06-02T13:20:26.0000000+00:00'
+- author: VacaoComTil
+  changes:
+    - type: Add
+      message: 9 Beards styles
+  id: 351
+  time: '2026-06-05T13:00:14.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Nova pistola pode ser selecionada por oficiais no loadout: A phaser, a
+        pistola arma laser/atordoador.
+  id: 352
+  time: '2026-06-05T13:02:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona indutores.
+    - type: Add
+      message: Adiciona megacélulas.
+  id: 353
+  time: '2026-06-05T13:18:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Removida capacidade dos fones de ouvido e headsets de transmitirem no
+        canal comum. Mensagens ainda podem ser ouvidas por eles, mas precisam
+        ser enviadas de outra forma como interfone.
+  id: 354
+  time: '2026-06-05T15:51:20.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas corpo a corpo de mech podem fazer wideswing.
+  id: 355
+  time: '2026-06-05T15:57:26.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Tweak
+      message: Portados sprites do funky!
+  id: 356
+  time: '2026-06-05T15:58:42.0000000+00:00'
+- author: sTRUATER
+  changes:
+    - type: Fix
+      message: Corrigido alguns sprites da sec e bso estarem nas cores antigas
+  id: 357
+  time: '2026-06-05T16:05:11.0000000+00:00'
+- author: Lachryphage, CRISO
+  changes:
+    - type: Add
+      message: A estação Eclipse Starport foi adicionada à rotação de mapas.
+  id: 358
+  time: '2026-06-05T16:14:45.0000000+00:00'
+- author: Redmagician14
+  changes:
+    - type: Remove
+      message: >-
+        Remove campo "data" de vários documentos da impressora de documentos
+        (início do turno ainda é necessário).
+  id: 359
+  time: '2026-06-05T17:57:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Icon do Warden agora é um olho, big brother is watching
+  id: 360
+  time: '2026-06-05T18:08:01.0000000+00:00'

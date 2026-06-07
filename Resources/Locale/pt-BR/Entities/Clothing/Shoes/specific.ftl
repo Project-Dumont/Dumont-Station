@@ -30,3 +30,5 @@ ent-ClothingShoesChameleonNoSlips = sapatos pretos
      .desc = Sapatos pretos estilosos.
      .suffix = antiderrapante, camaleão
 
+ent-ClothingShoesClownBanana = sapatos de bananium
+ .desc = Quando comédia e sapatos chegam em um novo nível de absurdez.

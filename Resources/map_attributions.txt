@@ -1,17 +1,22 @@
-#Gabystation Maps
+#Dumont Station Maps
 #These are located in /_Gabystation/Maps/
 
 - files: ["gamma.yml"]
   authors: AgRevol, CRISOOOOO
 
 - files: ["falcon.yml"]
-  authors: Tap0r, BenDJaminUt, CRISOOOOO, fuinha7, gustaichi
+  authors: Tap0r, BenDJaminUt, CRISOOOOO
 
 - files: ["tram.yml"]
   authors: Betterwithketchup
 
 - files: ["hyperion.yml"]
   authors: pn130, CRISOOOOO  
+#Harmony Maps
+#These are located in /_Harmony/Maps/
+
+- files: ["eclipse.yml"]
+  authors: Lachryphage
 # Wizden/Goob Maps
 # These are located in /Maps/
 

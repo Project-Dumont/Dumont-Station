@@ -42,6 +42,8 @@
 
 using Content.Server.Chat.Systems;
 using Content.Server.Movement.Systems;
+using Content.Shared.Administration.Components;
+using Content.Shared.CombatMode;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Effects;
@@ -141,13 +143,13 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         _color.RaiseEffect(Color.Red, targets, filter);
     }
 
-    public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true)
+    public override void DoLunge(EntityUid user, EntityUid playerUid, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, Angle spriteRotation, bool flipAnimation, bool predicted = true)
     {
         Filter filter;
 
         if (predicted)
         {
-            filter = Filter.PvsExcept(user, entityManager: EntityManager);
+            filter = Filter.PvsExcept(playerUid, entityManager: EntityManager);
         }
         else
         {

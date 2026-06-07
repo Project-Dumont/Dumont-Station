@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingOuterArmorWarden, ClothingOuterStorageBase, BaseWardenContraband]
+  id: ClothingOuterCoatBlueWarden
+  name: warden's blue armored jacket
+  description: A sturdy, utilitarian jacket designed to protect a warden from any brig-bound threats.
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Clothing/OuterClothing/Coats/warden.rsi
+  - type: Clothing
+    sprite: _Gabystation/Clothing/OuterClothing/Coats/warden.rsi

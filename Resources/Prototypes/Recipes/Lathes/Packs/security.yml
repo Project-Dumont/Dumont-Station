@@ -67,8 +67,6 @@
   - MagazineShotgunSlug
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
-  - ShrapnelPayload
-  - GrenadeStinger #Dumont
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -111,6 +109,8 @@
   - GrenadeEMP
   - GrenadeFlash
   - MagazineGrenadeEmpty
+  - ShrapnelPayload
+  - GrenadeStinger #Dumont
 
 # Shared between secfab and emagged protolathe
 - type: latheRecipePack

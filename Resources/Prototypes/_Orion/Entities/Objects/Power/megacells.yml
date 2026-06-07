@@ -1,0 +1,204 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# MegaCells - like PowerCells, but for large machines, such as SMES, etc.
+# Also, MegaCells charge is multiplied by 5 compared to the regular version.
+- type: entity
+  parent: BaseItem
+  id: BaseMegaCell
+  abstract: true
+  components:
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: Battery
+    pricePerJoule: 0.15
+  - type: PowerCell
+  - type: MegaCell
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 750
+    intensitySlope: 1.5
+  - type: Sprite
+    sprite: _Orion/Objects/Power/mega_cells.rsi
+  - type: SolutionContainerManager
+    solutions:
+      battery:
+        maxVol: 5
+  - type: InjectableSolution
+    solution: battery
+  - type: DrawableSolution
+    solution: battery
+  - type: Extractable
+    juiceSolution:
+      reagents:
+        - ReagentId: Zinc
+          Quantity: 15
+  - type: Tag
+    tags:
+      - MegaCell
+      - DroneUsable # Goobstation
+  - type: Appearance
+  - type: PowerCellVisuals
+  - type: Riggable
+  - type: StealTarget #Goobstation - IPC steal
+    stealGroup: Battery
+  - type: BatteryDrinkerSource # Goobstation - Energycrit
+    maxAmount: 360
+
+- type: entity
+  parent: BaseMegaCell
+  id: MegaCellSmall
+  name: megacell small
+  description: A series of rechargeable electrochemical cells wired together to hold significantly more power than a standard power cell.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: small
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 1800
+    startingCharge: 1800
+
+- type: entity
+  parent: MegaCellSmall
+  id: MegaCellSmallPrinted
+  suffix: Empty
+  components:
+  - type: Battery
+    maxCharge: 1800
+    startingCharge: 0
+
+- type: entity
+  parent: BaseMegaCell
+  id: MegaCellHigh
+  name: high-capacity megacell
+  description: A series of rechargeable electrochemical cells wired together to hold significantly more power than a standard power cell.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: high
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 5400
+    startingCharge: 5400
+
+- type: entity
+  parent: MegaCellHigh
+  id: MegaCellHighPrinted
+  suffix: Empty
+  components:
+  - type: Battery
+    maxCharge: 5400
+    startingCharge: 0
+
+- type: entity
+  parent: BaseMegaCell
+  id: MegaCellSuper
+  name: super-capacity megacell
+  description: A series of rechargeable electrochemical cells wired together to hold significantly more power than a standard power cell.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: super
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 6250
+    startingCharge: 6250
+
+- type: entity
+  parent: MegaCellSuper
+  id: MegaCellSuperPrinted
+  suffix: Empty
+  components:
+  - type: Battery
+    maxCharge: 6250
+    startingCharge: 0
+
+- type: entity
+  parent: BaseMegaCell
+  id: MegaCellHyper
+  name: hyper-capacity megacell
+  description: A series of rechargeable electrochemical cells wired together to hold significantly more power than a standard power cell.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: hyper
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 9000
+    startingCharge: 9000
+
+- type: entity
+  parent: MegaCellHyper
+  id: MegaCellHyperPrinted
+  suffix: Empty
+  components:
+  - type: Battery
+    maxCharge: 9000
+    startingCharge: 0
+
+- type: entity
+  parent: BaseMegaCell
+  id: MegaCellBluespace
+  name: bluespace megacell
+  description: A rechargeable transdimensional megacell.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: bluespace
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 11000
+    startingCharge: 11000
+
+- type: entity
+  parent: MegaCellBluespace
+  id: MegaCellBluespacePrinted
+  suffix: Empty
+  components:
+  - type: Battery
+    maxCharge: 11000
+    startingCharge: 0
+
+- type: entity
+  parent: BaseMegaCell
+  id: MegaCellInfinite
+  name: infinite-capacity megacell
+  description: A transdimensional megacell with an inexhaustible capacity.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: antique
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 6000
+    startingCharge: 6000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40

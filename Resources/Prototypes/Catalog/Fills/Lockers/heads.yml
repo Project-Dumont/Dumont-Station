@@ -357,6 +357,7 @@
     # Gabystation
     - id: HandheldPowerMonitorGs
     - id: RCDProtoCE
+    - id: InducerEngineeringWhiteBattery # Orion
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -492,6 +493,8 @@
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
     - id: XenobiologyBountyComputerCircuitboard # Goobstation
     - id: MMI # Goobstation
+    - id: InducerScientificBattery # Orion
+      prob: 0.4
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprited by SolsticeOfTheWinter, new resomi sprite by Dondee",
+  "copyright": "Sprited by SolsticeOfTheWinter, new resomi sprite by Dondee. Recolor by VictorJob",
   "size": {
     "x": 32,
     "y": 32
@@ -33,7 +33,7 @@
     {
       "name": "equipped-OUTERCLOTHING-resomi",
       "directions": 4
-    }, 
+    },
     {
       "name": "equipped-OUTERCLOTHING-feroxi",
       "directions": 4
