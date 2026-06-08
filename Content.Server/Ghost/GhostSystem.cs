@@ -601,6 +601,10 @@ namespace Content.Server.Ghost
             foreach (var antagonist in EntityQuery<GlobalAntagonistComponent>())
             {
                 var entity = antagonist.Owner;
+
+                if (_mobState.IsDead(entity))
+                    continue;
+
                 var prototype = _prototypeManager.Index<AntagonistPrototype>(antagonist.AntagonistPrototype ?? "globalAntagonistUnknown");
 
                 var warp = new GhostWarpGlobalAntagonist(
