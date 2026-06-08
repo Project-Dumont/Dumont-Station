@@ -163,5 +163,5 @@ bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny t
 bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
 bounty-description-ring = On this EXTRAORDINARY day there will be a wedding between the Gelts, but Mr. Gelt has lost the rings, send a pair of rings.
 
-bounty-skip-message = Bounty {$bounty} was skipped by {$user}.
+bounty-skip-message = Bounty [bold]{$bounty}[/bold] was skipped by [bold]{$user}[/bold].
 bounty-skip-unknown = unknown

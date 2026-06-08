@@ -139,5 +139,5 @@ bounty-description-flashes = SAUDAÇÕES \[Estação] EXIGIMOS 6 FLASHES DEVIDO 
 bounty-description-tooth-space-carp = Alguns rapazes da "unda down" precisam de alguns dentes para fazer suas roupas tradicionais. Envie-lhes alguns de alguma carpa espacial.
 bounty-description-tooth-sharkminnow = O chef afirma que os dentes dos sharminnows é um material de faca de alta qualidade. Não sei o que eles estão falando, mas eles querem um set. Envie para eles.
 
-bounty-skip-message = Recompensa {$bounty} foi pulada por {$user}.
+bounty-skip-message = Recompensa [bold]{$bounty}[/bold] foi pulada por [bold]{$user}[/bold].
 bounty-skip-unknown = desconhecido

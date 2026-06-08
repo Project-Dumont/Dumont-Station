@@ -193,12 +193,12 @@ public sealed partial class CargoSystem
 
         var ev = new TryGetIdentityShortInfoEvent(null, args.Actor);
         RaiseLocalEvent(ev);
+
+        var message = Loc.GetString("bounty-skip-message", 
+            ("bounty", "ID#" + bountyData.Id), 
+            ("user", ev.Title ?? Loc.GetString("bounty-skip-unknown")));
         
-        _radio.SendRadioMessage(
-            uid, 
-            Loc.GetString("bounty-skip-message", 
-            ("bounty", "#" + bountyData.Id), ("user", ev.Title ?? Loc.GetString("bounty-skip-unknown") )), CargoRadioChannel, 
-            uid);
+        _radio.SendRadioMessage(uid, message, CargoRadioChannel, uid, escapeMarkup: false);
 
         FillBountyDatabase(station);
         db.NextSkipTime = Timing.CurTime + db.SkipDelay;
