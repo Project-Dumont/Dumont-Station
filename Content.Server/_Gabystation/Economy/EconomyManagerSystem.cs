@@ -249,7 +249,7 @@ namespace Content.Server._Gabystation.Economy
                         Account = account,
                         Amount = proto.Salary
                     };
-
+                    RaiseLocalEvent(uid, ev);
                 }
 
                 RaiseLocalEvent(new AfterPaymentRotation() { Uid = uid });
