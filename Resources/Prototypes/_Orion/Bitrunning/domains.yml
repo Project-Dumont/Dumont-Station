@@ -163,4 +163,22 @@
 #  EXTREME 🗣️
 # --- --- ---
 
-# TODO
+- type: bitrunningVirtualDomain
+  id: SpecialSquad
+  name: bitrunning-domain-special-squad-name
+  description: bitrunning-domain-special-squad-desc
+  difficulty: Extreme
+  cost: 5
+  serverRewardPoints: 8
+  bitrunningRewardPoints: 900
+  isModular: true
+  completionLoot:
+    FoodSnackLollypopWrappedMysteryEvil: 3
+    BalloonSyn: 1
+  mapPath: /Maps/_Orion/Bitrun/Special-squad.yml
+  objectiveTypePool:
+  - DeliveryCacheCrate
+  - EliminateEnemies
+  objectiveTargetByType:
+    DeliveryCacheCrate: 1
+    EliminateEnemies: 0

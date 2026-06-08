@@ -258,3 +258,31 @@
   - type: ConditionalSpawner
     prototypes:
     - MobPirateFlintlockBitrunning
+
+- type: entity
+  parent: SpawnMobDeathSquadPhoronSabre
+  id: SpawnMobDeathSquadPhoronSabreBitrunning
+  name: Death Squad spawner
+  suffix: AI, Phoron Sabre, Bitrunning
+  categories: [ Spawner ]
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+  - type: ConditionalSpawner
+    prototypes:
+    - MobDeathSquadPhoronSabreBitrunning
+
+- type: entity
+  parent: SpawnMobDeathSquadPulseRifle
+  id: SpawnMobDeathSquadPulseRifleBitrunning
+  name: Death Squad spawner
+  suffix: AI, Pulse Rifle, Bitrunning
+  categories: [ Spawner ]
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+  - type: ConditionalSpawner
+    prototypes:
+    - MobDeathSquadPulseRifleBitrunning

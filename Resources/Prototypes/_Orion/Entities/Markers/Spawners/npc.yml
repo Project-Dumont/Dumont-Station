@@ -135,3 +135,33 @@
   - type: ConditionalSpawner
     prototypes:
     - MobPirateFlintlock
+
+# ---- DeathSquad Mobs ----
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobDeathSquadPulseRifle
+  name: Death Squad spawner
+  categories: [ Spawner ]
+  suffix: AI, Pulse rifle
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MobDeathSquadPulseRifleBitrunning
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobDeathSquadPhoronSabre
+  name: Death Squad spawner
+  categories: [ Spawner ]
+  suffix: AI, Phoron sabre
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MobDeathSquadPhoronSabreBitrunning

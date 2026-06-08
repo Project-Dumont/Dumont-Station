@@ -1,0 +1,6 @@
+- type: entity
+  parent: ClothingOuterHardsuitDeathsquad
+  id: ClothingOuterHardsuitDeathsquadUnremovable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
