@@ -50,16 +50,6 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockExploration
-  suffix: Exploration
-  components:
-  - type: Sprite
-    sprite: _Dumont/Structures/Doors/Airlocks/Standard/explorer.rsi
-  - type: Wires
-    layoutId: AirlockCargo
-
-- type: entity
-  parent: Airlock
   id: AirlockSalvMine
   suffix: Salvage/Mining
   components:
@@ -97,6 +87,14 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
   - type: Wires
     layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: AirlockLibrary
+  suffix: Library
+  components:
+  - type: Wires
+    layoutId: AirlockService
 
 # Glass
 
@@ -152,16 +150,6 @@
 
 - type: entity
   parent: AirlockGlass
-  id: AirlockExplorationGlass
-  suffix: Exploration
-  components:
-  - type: Sprite
-    sprite: _Dumont/Structures/Doors/Airlocks/Glass/explorer.rsi
-  - type: Wires
-    layoutId: AirlockCargo
-
-- type: entity
-  parent: AirlockGlass
   id: AirlockSalvMineGlass
   suffix: Salvage/Mining
   components:
@@ -189,3 +177,11 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/medsci.rsi
   - type: Wires
     layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockLibraryGlass
+  suffix: Library
+  components:
+  - type: Wires
+    layoutId: AirlockService

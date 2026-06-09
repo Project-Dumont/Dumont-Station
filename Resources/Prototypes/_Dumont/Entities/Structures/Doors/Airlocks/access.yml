@@ -44,13 +44,40 @@
       board: [ DoorElectronicsMining ]
 
 - type: entity
-  parent: AirlockExploration
-  id: AirlockExplorationLocked
-  suffix: Exploration, Locked
+  parent: AirlockSalvMine
+  id: AirlockSalvMineLocked
+  suffix: Salvage/Mining, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsExploration ]
+      board: [ DoorElectronicsSalvMine ]
+
+- type: entity
+  parent: AirlockBrigMedic
+  id: AirlockBrigMedicLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
+
+- type: entity
+  parent: AirlockMedicalScience
+  id: AirlockMedicalScienceLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
+
+- type: entity
+  parent: AirlockLibrary
+  id: AirlockLibraryLocked
+  suffix: Library, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
 
 # Glass
 
@@ -100,13 +127,22 @@
       board: [ DoorElectronicsMining ]
 
 - type: entity
-  parent: AirlockExplorationGlass
-  id: AirlockExplorationGlassLocked
-  suffix: Exploration, Locked
+  parent: AirlockSalvMineGlass
+  id: AirlockSalvMineGlassLocked
+  suffix: Salvage/Mining, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsExploration ]
+      board: [ DoorElectronicsSalvMine ]
+
+- type: entity
+  parent: AirlockBrigMedicGlass
+  id: AirlockBrigMedicGlassLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
 
 - type: entity
   parent: AirlockRoboticsGlass
@@ -116,3 +152,12 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsRobotics ]
+
+- type: entity
+  parent: AirlockLibraryGlass
+  id: AirlockLibraryGlassLocked
+  suffix: Library, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]

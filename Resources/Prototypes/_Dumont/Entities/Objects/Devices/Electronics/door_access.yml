@@ -48,19 +48,11 @@
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsExploration
-  suffix: Exploration, Locked
-  components:
-  - type: AccessReader
-    access: [["Exploration"]]
-
-- type: entity
-  parent: DoorElectronics
   id: DoorElectronicsSalvMine
   suffix: Salvage/Mining, Locked
   components:
   - type: AccessReader
-    access: [["Exploration"], ["Mining"]]
+    access: [["Salvage"], ["Mining"]]
 
 - type: entity
   parent: DoorElectronics

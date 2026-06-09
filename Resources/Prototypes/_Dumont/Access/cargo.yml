@@ -5,7 +5,3 @@
 - type: accessLevel
   id: Mining
   name: id-card-access-level-mining
-
-- type: accessLevel
-  id: Exploration
-  name: id-card-access-level-exploration

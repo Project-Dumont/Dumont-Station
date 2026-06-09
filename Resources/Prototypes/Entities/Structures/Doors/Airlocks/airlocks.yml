@@ -145,7 +145,7 @@
   suffix: Salvage
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/salvage.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/explorer.rsi #Dumont
   - type: Wires
     layoutId: AirlockCargo
 
@@ -316,7 +316,7 @@
   suffix: Salvage
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/salvage.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/explorer.rsi #Dumont
   - type: Wires
     layoutId: AirlockCargo
 

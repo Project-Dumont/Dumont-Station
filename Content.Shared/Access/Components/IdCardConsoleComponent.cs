@@ -80,7 +80,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Quartermaster",
         "Research",
         "ResearchDirector",
-        "Salvage",
+        "Salvage", //Dumont Salvage -> Exploration
         "Security",
         "Service",
         "Theatre",
@@ -92,7 +92,6 @@ public sealed partial class IdCardConsoleComponent : Component
         "Genetics", //Dumont
         "Mail", //Dumont
         "Mining", //Dumont
-        "Exploration", //Dumont
         "BrigMedic", //Dumont
         "Library" //Dumont
     };
