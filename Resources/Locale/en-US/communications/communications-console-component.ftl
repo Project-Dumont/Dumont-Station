@@ -69,3 +69,10 @@ comms-console-announcement-title-station-ai = Station AI
 # footer
 comms-console-menu-footer-left = root@nanoOs
 comms-console-menu-footer-right = v1.5
+
+# alerts
+comms-console-menu-green-alert = Green
+comms-console-menu-blue-alert = Blue
+comms-console-menu-yellow-alert = Yellow
+comms-console-menu-red-alert = Red
+comms-console-menu-violet-alert = Violet

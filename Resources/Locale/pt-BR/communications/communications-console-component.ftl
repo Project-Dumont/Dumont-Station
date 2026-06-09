@@ -9,7 +9,7 @@ comms-console-menu-emergency-maint = Alternar acessos de manutenção
 comms-console-menu-nuclear-code = Requisitar codigos de ativação nuclear
 comms-console-menu-martial = Requisitar lei marcial
 comms-console-menu-martial-help = Requisita a lei marcial - Apenas chefe de segurança ou capitão.
-comms-console-menu-message-centcomm = Enviar mensagem para a Central de Comando
+comms-console-menu-message-centcomm = Enviar para Centcomm
 
 # Announcement
 comms-console-announcement-content-maint = O acesso das portas de manutenção foram alterados.
@@ -44,3 +44,10 @@ comms-console-announcement-title-nukie = Agente Nuclear do Sindicato
 # footer
 comms-console-menu-footer-left = root@nanoOs
 comms-console-menu-footer-right = v1.5
+
+# alerts
+comms-console-menu-green-alert = Verde
+comms-console-menu-blue-alert = Azul
+comms-console-menu-yellow-alert = Amarelo
+comms-console-menu-red-alert = Vermelho
+comms-console-menu-violet-alert = Violeta
