@@ -64,11 +64,11 @@
 - type: entity
   parent: AirlockMedicalScience
   id: AirlockMedicalScienceLocked
-  suffix: BrigMedic, Locked
+  suffix: Medical/Science, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsBrigMedic ]
+      board: [ DoorElectronicsMedicalResearch ]
 
 - type: entity
   parent: AirlockLibrary

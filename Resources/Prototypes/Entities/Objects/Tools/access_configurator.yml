@@ -68,7 +68,6 @@
       - ChiefMedicalOfficer
       - Command
       - Engineering
-      - Exploration # Dumont
       - External
       - Genetics # Dumont
       - HeadOfPersonnel
@@ -89,7 +88,7 @@
       - Robotics # goobstation
       - Journalism # goobstation
       - ResearchDirector
-      - Salvage
+      - Salvage # Dumont - Salvage -> Explorer
       - Security
       - Service
       - Theatre
@@ -154,7 +153,6 @@
     - Cryogenics
     - EmergencyShuttleRepealAll
     - Engineering
-    - Exploration # Dumont
     - External
     - Genetics # Dumont
     - HeadOfPersonnel
@@ -173,7 +171,7 @@
     - Quartermaster
     - Research
     - ResearchDirector
-    - Salvage
+    - Salvage # Dumont - Salvage -> Explorer
     - Security
     - Service
     - StationAi
