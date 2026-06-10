@@ -124,6 +124,7 @@
   recipeUnlocks:
   # Orion-Start
   - InducerScientific
+  - InducerEngineering
   - MegaCellSuper
   - MegaCellHyper
   - MegaCellHigh
