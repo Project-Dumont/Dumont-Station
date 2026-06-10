@@ -1,23 +1,17 @@
 - type: technology
   id: Bitrunning
   name: research-technology-bitrunning-name
-  description: research-technology-bitrunning-desc
   icon:
     sprite: _Orion/Objects/Specific/Cargo/Bitrunning/encrypted_cache.rsi
     state: icon
-  discipline: Shaft
-  tier: 3
-  announceChannels:
-  - Supply
-  pointCosts:
-  - type: General
-    amount: 7500
-  technologyPrerequisites:
-  - Gaming
-  - AppliedBluespace
+  discipline: Experimental
+  tier: 2
+  cost: 7500
   recipeUnlocks:
   - QuantumConsoleCircuitboard
   - QuantumServerMachineCircuitboard
   - NetpodMachineCircuitboard
   - ByteforgeMachineCircuitboard
-  position: 4,6
+  position: -5,-2
+  technologyPrerequisites:
+   - BluespaceTheory
