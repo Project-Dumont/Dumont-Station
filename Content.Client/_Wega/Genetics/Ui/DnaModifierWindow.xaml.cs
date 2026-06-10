@@ -24,6 +24,8 @@ namespace Content.Client._Wega.Genetics.Ui;
 [GenerateTypedNameReferences]
 public sealed partial class DnaModifierWindow : FancyWindow
 {
+    private static readonly TimeSpan SingleBlockRadiationCooldown = TimeSpan.FromSeconds(0.75);
+
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IEntityNetworkManager _entNetworkManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -533,7 +535,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
             _entNetworkManager.SendSystemNetworkMessage(new DnaModifierUpdateEvent(_console));
 
             Releveration1Button.Disabled = true;
-            _releveration1ButtonCooldown = _gameTiming.CurTime + TimeSpan.FromSeconds(2);
+            _releveration1ButtonCooldown = _gameTiming.CurTime + SingleBlockRadiationCooldown;
         }
     }
 
@@ -547,7 +549,7 @@ public sealed partial class DnaModifierWindow : FancyWindow
             _entNetworkManager.SendSystemNetworkMessage(new DnaModifierUpdateEvent(_console));
 
             Releveration2Button.Disabled = true;
-            _releveration2ButtonCooldown = _gameTiming.CurTime + TimeSpan.FromSeconds(2);
+            _releveration2ButtonCooldown = _gameTiming.CurTime + SingleBlockRadiationCooldown;
         }
     }
 

@@ -164,7 +164,7 @@
     - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
+#    - id: MimicVendorRule dumont edit doesn't do shit, useless event
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -196,7 +196,9 @@
     - id: HereticMidround # Gabystation
     - id: CosmicCultMidround # Gabystation
     - id: BloodCultMidround # Gabystation
+    - id: RevolutionaryMidround # Gabystation
     - id: ZombieOutbreak
+    - id: MorphRule # Trauma Port - Gabystation
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
     - id: BlobSpawn # Goobstation - Blob
@@ -205,16 +207,17 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
+    - id: SlasherSpawn # Goobstation - The Slasher
+    - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
     - id: GreyTideAntagMidround # Goobstation - New Midrounds
     - id: SingulothKnightsMidround # Goobstation - New Midrounds
     #- id: DarkLordMidround # Goobstation - New Midrounds
     - id: MimeAssassinMidround # Goobstation - New Midrounds
     - id: DarkPriestMidround # Goobstation - New Midrounds
     - id: VoxRaidersMidround # Goobstation - New Midrounds
-    - id: TunnelClownMidround # Goobstation
+    #- id: TunnelClownMidround # Goobstation
     #- id: WraithMidround # Goobstation - Wraith
     #TODO when midrounds are "reviewed" by the chudmins add them back
-    #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -607,7 +610,7 @@
     startAudio:
       path: /Audio/_Gabystation/Announcements/gasleak_saae.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
-    endAudio: 
+    endAudio:
       path: /Audio/_Gabystation/Announcements/gasleak_off_saae.ogg
     weight: 8
     chaos:
@@ -638,7 +641,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: 100 #dumont edit
   - type: KudzuGrowthRule
 
 - type: entity
@@ -646,7 +649,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    weight: 5
+    weight: 3
     startAnnouncement: station-event-power-grid-check-start-announcement
     startAudio:
       path: /Audio/_Gabystation/Announcements/power_off_saae.ogg
@@ -656,7 +659,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: 120 #Dumont edit annoying
   - type: PowerGridCheckRule
 
 - type: entity
@@ -664,12 +667,12 @@
   id: SolarFlare
   components:
   - type: StationEvent
-    weight: 8
+    weight: 6
     startAnnouncement: station-event-solar-flare-start-announcement
     startAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
     endAnnouncement: station-event-solar-flare-end-announcement
-    endAudio: 
+    endAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_off_saae.ogg
     duration: 120
     maxDuration: 240
@@ -678,7 +681,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 60
+    chaosScore: 100 #Dumont edit annoying
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -712,7 +715,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 70
+    chaosScore: 240 #Dumont edit distracting and fucks up combat
   - type: VentClogRule
 
 - type: entity
@@ -733,7 +736,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 120 # dumont edit doesn't do shit
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -757,7 +760,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 180 #dumont edit sometimes kills people
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -783,7 +786,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 120 # dumont edit weak
   - type: VentCrittersRule
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobGiantSpiderAngry
@@ -806,7 +809,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 150 # Dumont edit they're weak as hell
   - type: VentCrittersRule
     playerRatio: 20 # DeltaV: Clown spiders are very robust
     table: # DeltaV: EntityTable instead of spawn entries
@@ -863,18 +866,19 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 6.0 # Goobstation - was 5.5
-    minimumPlayers: 20 # Goobstation - was 20
-    duration: 1
+    weight: 1 # Dumontstation - was 6.0 because of *us* and we never noticed it and we always complained about it.
+    minimumPlayers: 30 # Dumontstation was 20
+    duration: null
     maxOccurrences: 1 # Gabystation - loneops apenas uma vez por round
     chaos: # Goobstation
-      Hostile: 200
-      Medical: 200
-      Death: 200
+      Hostile: 250
+      Medical: 250
+      Death: 250
+      Combat: 400
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 700
+    chaosScore: 800 # Dumont edit they end the round when they show up and can declare war
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml # GabyStation
@@ -883,6 +887,7 @@
     warDeclarationMinOps: 1 # <--- GabyStation - Adicionado aqui para permitir guerra com 1 jogador
     warNukieArriveDelay: 300 # <--- GabyStation - Adicionado para manter o Lone preso por 5 minutos.
     warTcAmountPerNukie: 60 # GabyStation
+    warTcPerPlayer: 5  # GabyStation
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointLoneNukeOperative

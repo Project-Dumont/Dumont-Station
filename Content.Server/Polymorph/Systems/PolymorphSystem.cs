@@ -103,6 +103,19 @@
 
 using Content.Server.Actions;
 using Content.Server.Humanoid;
+//ADT-Geras-Tweak-Start
+using Content.Server.Speech.Components;
+using Content.Shared.Speech.Components;
+using Content.Shared.Traits.Assorted;
+using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Server.Traits.Assorted;
+using Content.Shared.Speech.Muting;
+using Content.Shared.Storage.Components;
+using Content.Shared._EinsteinEngines.Language.Components;
+using Content.Goobstation.Common.Barks;
+//ADT-Geras-Tweak-End
 using Content.Server.Inventory;
 using Content.Server.Mind.Commands;
 using Content.Server.Polymorph.Components;
@@ -308,6 +321,13 @@ public sealed partial class PolymorphSystem : EntitySystem
             && !currentPoly.Configuration.AllowRepeatedMorphs)
             return null;
 
+        //ADT-Geras-Tweak-Start
+        if (configuration.CanNotPolymorphInStorage && HasComp<InsideEntityStorageComponent>(uid))
+        {
+            _popup.PopupEntity(Loc.GetString("polymorph-in-storage-forbidden"), uid, uid);
+            return null;
+        }
+
         // If this polymorph has a cooldown, check if that amount of time has passed since the
         // last polymorph ended.
         if (TryComp<PolymorphableComponent>(uid, out var polymorphableComponent) &&
@@ -451,6 +471,93 @@ public sealed partial class PolymorphSystem : EntitySystem
             // Goob edit end
         }
 
+        // ADT-Geras-Tweak-Start
+        if (configuration.TransferLanguageSpeaker && TryComp<LanguageSpeakerComponent>(uid, out var originalLangComp))
+        {
+            var childLangComp = EnsureComp<LanguageSpeakerComponent>(child);
+            childLangComp.SpokenLanguages = [.. originalLangComp.SpokenLanguages];
+            childLangComp.UnderstoodLanguages = [.. originalLangComp.UnderstoodLanguages];
+            childLangComp.CurrentLanguage = originalLangComp.CurrentLanguage;
+        }
+
+        if (configuration.TransferSpeechBarks && TryComp<SpeechSynthesisComponent>(uid, out var originalBarksComp))
+        {
+            var childBarksComp = EnsureComp<SpeechSynthesisComponent>(child);
+            childBarksComp.VoicePrototypeId = originalBarksComp.VoicePrototypeId;
+        }
+
+        if (configuration.TransferAccents)
+        {
+            var accentComponents = new List<Type>
+            {
+                typeof(AccentlessComponent),
+                typeof(BackwardsAccentComponent),
+                typeof(BarkAccentComponent),
+                typeof(BleatingAccentComponent),
+                typeof(DamagedSiliconAccentComponent),
+                typeof(FrenchAccentComponent),
+                typeof(GermanAccentComponent),
+                typeof(LizardAccentComponent),
+                typeof(MobsterAccentComponent),
+                typeof(MonkeyAccentComponent),
+                typeof(MothAccentComponent),
+                typeof(MumbleAccentComponent),
+                typeof(OwOAccentComponent),
+                typeof(ParrotAccentComponent),
+                typeof(PirateAccentComponent),
+                typeof(ReplacementAccentComponent),
+                typeof(RussianAccentComponent),
+                typeof(ScrambledAccentComponent),
+                typeof(SkeletonAccentComponent),
+                typeof(SlurredAccentComponent),
+                typeof(SouthernAccentComponent),
+                typeof(SpanishAccentComponent),
+                typeof(StutteringAccentComponent),
+                typeof(FrontalLispComponent),
+                typeof(SlowAccentComponent)
+            };
+
+            foreach (var accentType in accentComponents)
+            {
+                if (!HasComp(uid, accentType))
+                    continue;
+
+                var originalAccentComp = EntityManager.GetComponent(uid, accentType);
+                var childAccentComp = (Component) _serialization.CreateCopy(originalAccentComp, notNullableOverride: true);
+                AddComp(child, childAccentComp);
+            }
+        }
+
+        if (configuration.TransferQuirks)
+        {
+            var quirkComponents = new List<Type> //Вроде бы все добавил???
+            {
+                typeof(PacifiedComponent),
+                typeof(LightweightDrunkComponent),
+                typeof(SnoringComponent),
+                typeof(BlindableComponent),
+                typeof(PermanentBlindnessComponent),
+                typeof(BlurryVisionComponent),
+                typeof(TemporaryBlindnessComponent),
+                typeof(NarcolepsyComponent),
+                typeof(UnrevivableComponent),
+                typeof(MutedComponent),
+                typeof(ParacusiaComponent),
+                typeof(PainNumbnessComponent)
+            };
+
+            foreach (var quirkType in quirkComponents)
+            {
+                if (!HasComp(uid, quirkType))
+                    continue;
+
+                var originalQuirkComp = EntityManager.GetComponent(uid, quirkType);
+                var childQuirkComp = (Component) _serialization.CreateCopy(originalQuirkComp, notNullableOverride: true);
+                AddComp(child, childQuirkComp);
+            }
+        }
+        // ADT-Geras-Tweak-End
+
         if (configuration.TransferHumanoidAppearance)
         {
             _humanoid.CloneAppearance(uid, child);
@@ -521,6 +628,14 @@ public sealed partial class PolymorphSystem : EntitySystem
         var (uid, component) = ent;
         if (!Resolve(ent, ref component))
             return null;
+
+        //ADT-Geras-Tweak-Start
+        if (component.Configuration.CanNotPolymorphInStorage && HasComp<InsideEntityStorageComponent>(uid))
+        {
+            _popup.PopupEntity(Loc.GetString("revert-in-storage-forbidden"), uid, uid);
+            return null;
+        }
+        //ADT-Geras-Tweak-End
 
         if (Deleted(uid))
             return null;

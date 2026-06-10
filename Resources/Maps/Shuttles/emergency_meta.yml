@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Grid
@@ -427,7 +431,7 @@ entities:
           decals:
             183: 8,-6
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnLineGreyscaleS
           decals:
             182: 2,-6

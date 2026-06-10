@@ -145,7 +145,7 @@ selectable-set-syndicate-infiltration-name = Pacote Infiltração
 selectable-set-syndicate-infiltration-description =
     Um pacote que contém um kit de infiltração completo. Uma das maiores armas da guerra é a informação.
     Contém: 1 Cartão de Agente, Kit Camaleão, 1 Máscara de Voz, 1 Fake mindshield,
-    placa de comunicação da Central, bengala falsa,
+    placa de comunicação da Central, bengala falsa, 1 Modificador de DNA, 1 Access Breaker
     e uma chave de criptografia do sindicato e da estação.
 
 selectable-set-syndicate-piromaniac-name = Pacote Piromániaco
@@ -196,6 +196,13 @@ selectable-set-blueshield-syringe-description =
     Perfeito para curar aliados ou envenenar inimigos em uma picadinha.
     Inclui: Um colete resistente a explosivos, um injetor de combate
     e vários frascos de remédios.
+
+selectable-set-blueshield-chester-mk2-name = Conjunto Chester Mk. II
+selectable-set-blueshield-chester-mk2-description =
+    Pronto para caçar?
+    Conheça a irmã mais nova da escopeta icônica.
+    Inclui: Rifle de alavanca calibre .315, a Chester Mk. II. Munição extra,
+    munição alternativa e carregadores sobressalentes.
 
 # Trajes Blueshield
 

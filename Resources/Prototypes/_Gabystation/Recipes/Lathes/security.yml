@@ -20,3 +20,68 @@
   materials:
     Steel: 900
     Plastic: 450
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponShotgunAntelope
+  result: WeaponShotgunAntelope
+  materials:
+    Steel: 1200
+    Plastic: 600
+
+- type: latheRecipe
+  parent: ClothingShoesBootsMagSci
+  id: SecurityMagbootsRecipe
+  result: SecurityMagboots
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Gold: 200
+
+- type: latheRecipe
+  id: GrenadeStinger
+  result: GrenadeStinger
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 200
+    Plastic: 150
+    Glass: 100
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxChesterRifle
+  result: MagazineBoxChesterRifle
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxChesterRiflePractice
+  result: MagazineBoxChesterRiflePractice
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxChesterRifleIncendiary
+  result: MagazineBoxChesterRifleIncendiary
+  materials:
+    Steel: 250
+    Plastic: 750
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxChesterRifleUranium
+  result: MagazineBoxChesterRifleUranium
+  materials:
+    Plastic: 750
+    Uranium: 750
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxChesterRifleDisabler
+  result: MagazineBoxChesterRifleDisabler
+  materials:
+    Steel: 1000

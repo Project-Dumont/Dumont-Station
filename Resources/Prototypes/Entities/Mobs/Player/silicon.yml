@@ -403,6 +403,7 @@
   - type: ExaminableDamage
     messages: StationAiCoreMessages
   - type: StationAiVision
+  - type: StationAiEarlyLeave # Goobstation
   - type: InteractionOutline
   - type: Sprite
     sprite: Mobs/Silicon/station_ai.rsi
@@ -689,6 +690,7 @@
     - state: ai_camera
       shader: unshaded
       map: ["base"]
+  - type: AiEye # Trauma
 
 # The holographic representation of the AI that is projected from a holopad.
 - type: entity

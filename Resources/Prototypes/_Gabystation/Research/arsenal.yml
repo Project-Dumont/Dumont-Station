@@ -18,5 +18,69 @@
   - WeaponRifleMA56XF
   - WeaponPistolMX3R
   technologyPrerequisites:
-  - WeaponLaserCellSMGTech #Temporário
-  position: 5,-3 #Temporários
+  - SmartWeaponry
+  position: 5,4
+
+- type: technology
+  id: ShotgunsTech
+  name: research-technology-revolving-magazines
+  icon:
+    sprite: _Goobstation/Objects/Weapons/Guns/Shotguns/antelope.rsi
+    state: base
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - WeaponShotgunAntelope
+  technologyPrerequisites:
+  - SelectiveFirePowerguns
+  position: 6,4
+
+- type: technology
+  id: PayloadsTech
+  name: research-technology-grenade-payloads
+  icon:
+    sprite: Objects/Devices/payload.rsi
+    state: payload-explosive-armed
+  discipline: Arsenal
+  tier: 1
+  cost: 7000
+  recipeUnlocks:
+  - ShrapnelPayload
+  - FlashPayload
+  - ChemicalPayload
+  technologyPrerequisites:
+  - AdvancedRiotControl
+  position: 2,3
+
+#Mover os oculos de visão térmica para aqui
+- type: technology
+  id: NightVisionTech
+  name: research-technology-night-vision
+  icon:
+    sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  position: 5,2
+  recipeUnlocks:
+  - ClothingEyesNightVisionGoggles
+  technologyPrerequisites:
+  - DualWieldingTechnology
+
+- type: technology
+  id: ThermalVisionTech
+  name: research-technology-thermal-vision
+  icon:
+    sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 12000
+  position: 6,2
+  recipeUnlocks:
+  - ClothingEyesThermalVisionGoggles
+  - ClothingEyesGlassesSecurityContraDetect
+  technologyPrerequisites:
+  - NightVisionTech

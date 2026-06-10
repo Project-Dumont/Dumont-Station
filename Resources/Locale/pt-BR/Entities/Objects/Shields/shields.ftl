@@ -20,5 +20,7 @@ ent-ClockworkShield = Clockwork Shield
      .desc = Ratvar oyrffrf lbh jvgu uvf cebgrpgvba.
 
 ent-MirrorShield = Escudo Espelhado
-     .desc = Brilha estranhamente em vermelho... você ouve o geômetra sussurrando
+     .desc = Brilha estranhamente em vermelho... você ouve o geômetra sussurrando.
 
+ent-CardShield = escudo de papelão
+     .desc = Um escudo que não vai te proteger de nada, mas é divertido de segurar.

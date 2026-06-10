@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Drawn by Ubaser, taken inspiration by /tg/'s vials",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/2d54693913547f740fac9ee3b8400317d034e989",
   "size": {
     "x": 32,
     "y": 32

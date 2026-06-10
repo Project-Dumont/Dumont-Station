@@ -1,6 +1,9 @@
 ent-LeavesCannabis = folhas de cannabis
      .desc = Pode ser legal, em algumas galáxias.
 
+ent-GroundCannabisRainbow = folhas de cannabis arco-íris
+     .desc = Pode ser legal, em algumas galáxias.
+
 ent-LeavesCannabisDried = folhas secas de cannabis
      .desc = Folhas secas de cannabis, prontas para serem moídas.
 

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: revolutionary manifesto
   parent: BaseItem
@@ -16,6 +20,8 @@
     # Traumastation - flash revs
     # - type: RevolutionaryConverter
     #   conversionDuration: 2
+    - type: SpeakDatasetOnUse
+      dataset: RevolutionaryConverterSpeech
     - type: Tag
       tags:
         - Book

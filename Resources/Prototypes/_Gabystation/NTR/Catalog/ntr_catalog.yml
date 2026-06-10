@@ -1,0 +1,76 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifle
+  name: ntr-executive-bso-chester-ammo-name
+  description: ntr-executive-bso-chester-ammo-desc
+  productEntity: SpawnPodMagazineBoxChesterRifle
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: full-base
+  cost:
+    NTLoyaltyPoint: 50
+  categories:
+  - NTRBSO
+  restockTime: 1800 # Se isso precisar ser comprado em menos de meia-hora, talvez o BSO precise ser demitido.
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 600 # 10 min
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifleUranium
+  name: ntr-executive-bso-chester-ammo-uranium-name
+  description: ntr-executive-bso-chester-ammo-uranium-desc
+  productEntity: SpawnPodMagazineBoxChesterRifleUranium
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: full-uranium
+  cost:
+    NTLoyaltyPoint: 45
+  categories:
+  - NTRBSO
+  restockTime: 1800 
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 600 # 10 min
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifleIncendiary
+  name: ntr-executive-bso-chester-ammo-incendiary-name
+  description: ntr-executive-bso-chester-ammo-incendiary-desc
+  productEntity: SpawnPodMagazineBoxChesterRifleIncendiary
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: full-incendiary
+  cost:
+    NTLoyaltyPoint: 35
+  categories:
+  - NTRBSO
+  restockTime: 1800 
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 600 # 10 min
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: NTRExecutiveMagazineBoxChesterRifleDisabler
+  name: ntr-executive-bso-chester-ammo-disabler-name
+  description: ntr-executive-bso-chester-ammo-disabler-desc
+  productEntity: SpawnPodMagazineBoxChesterRifleDisabler
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    state: full-rubber
+  cost:
+    NTLoyaltyPoint: 20
+  categories:
+  - NTRBSO
+  restockTime: 1200 
+  resetRestockOnPurchase: true
+  restockAfterPurchase: 300 # 5 min

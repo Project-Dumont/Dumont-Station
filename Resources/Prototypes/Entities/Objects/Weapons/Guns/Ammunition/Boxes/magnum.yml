@@ -49,7 +49,7 @@
       tags:
         - CartridgeMagnum
     proto: CartridgeMagnum
-    capacity: 12
+    capacity: 24 #Dumontstation
   - type: Item
     size: Small
   - type: ContainerContainer

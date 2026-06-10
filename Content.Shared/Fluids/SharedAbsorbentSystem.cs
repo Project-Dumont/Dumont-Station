@@ -361,7 +361,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         var localPos = Vector2.Transform(targetPos, _transform.GetInvWorldMatrix(userXform));
         localPos = userXform.LocalRotation.RotateVec(localPos);
 
-        _melee.DoLunge(user, absorbEnt, Angle.Zero, localPos, null, Angle.Zero, false);
+        _melee.DoLunge(user, user, absorbEnt, Angle.Zero, localPos, null, Angle.Zero, false);
 
         RaiseLocalEvent(target, new FootprintCleanEvent()); // Corvax-Next-Footprints
 

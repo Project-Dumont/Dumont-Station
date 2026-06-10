@@ -433,6 +433,16 @@ namespace Content.Server.Database
 
         #endregion
 
+        // ADT-BookPrinter-Start
+        #region BookPrinter
+
+        Task<bool> DeleteBookPrinterEntryAsync(int bookId);
+        Task<List<BookPrinterEntry>> GetBookPrinterEntriesAsync();
+        Task UploadBookPrinterEntryAsync(BookPrinterEntry bookEntry);
+
+        #endregion
+        // ADT-BookPrinter-End
+
         #region Job Whitelists
 
         Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job);
@@ -490,6 +500,9 @@ namespace Content.Server.Database
         Task<List<PollVote>> GetPlayerVotesAsync(int pollId, NetUserId userId, CancellationToken cancel = default);
         Task<bool> HasPlayerVotedAsync(int pollId, NetUserId userId, CancellationToken cancel = default);
         Task<Dictionary<int, int>> GetPollResultsAsync(int pollId, CancellationToken cancel = default);
+        Task<bool> MarkPollSeenAsync(int pollId, NetUserId userId, CancellationToken cancel = default);
+        Task<HashSet<int>> GetSeenPollIdsAsync(NetUserId userId, CancellationToken cancel = default);
+        Task<int> GetPollSeenCountAsync(int pollId, CancellationToken cancel = default);
 
         #endregion
 
@@ -1414,7 +1427,45 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetPollResultsAsync(pollId, cancel));
         }
 
+        public Task<bool> MarkPollSeenAsync(int pollId, NetUserId userId, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.MarkPollSeenAsync(pollId, userId, cancel));
+        }
+
+        public Task<HashSet<int>> GetSeenPollIdsAsync(NetUserId userId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetSeenPollIdsAsync(userId, cancel));
+        }
+
+        public Task<int> GetPollSeenCountAsync(int pollId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPollSeenCountAsync(pollId, cancel));
+        }
+
         #endregion
+
+        // ADT-BookPrinter-Start
+        public Task<List<BookPrinterEntry>> GetBookPrinterEntriesAsync()
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetBookPrinterEntries());
+        }
+
+        public Task<bool> DeleteBookPrinterEntryAsync(int bookId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.DeleteBookPrinterEntryAsync(bookId));
+        }
+
+        public Task UploadBookPrinterEntryAsync(BookPrinterEntry bookEntry)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.UploadBookPrinterEntry(bookEntry));
+        }
+        // ADT-BookPrinter-Start
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {

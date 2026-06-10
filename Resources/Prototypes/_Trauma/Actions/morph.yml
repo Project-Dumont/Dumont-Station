@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionMorphReplicate
+  name: Replicate
+  description: Copia suas células para criar uma réplica sua. Custa 80 biomassa.
+  components:
+  - type: Action
+    icon:
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: reproduce
+  - type: InstantAction
+    event: !type:MorphReplicateActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMorph
+  name: Morph
+  description: Metamorfe seu corpo para imitar a aparência de qualquer coisa.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: morph
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+      - Anchorable
+      - Item
+      tags:
+      - Bot
+    event: !type:MorphActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionUnMorph
+  name: Un-Morph
+  description: Tenta reverter você para sua forma original se você estiver morfado.
+  components:
+  - type: Action
+    icon:
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: unmorph
+  - type: InstantAction
+    event: !type:UnMorphActionEvent
+
+- type: entity
+  parent: ActionDevour
+  id: ActionMorphDevour
+  description: Devora uma criatura ou item. Aumenta sua biomassa.
+  components:
+  - type: Action 
+    icon:
+      sprite: _Trauma/Icons/morph_abilities.rsi
+      state: devour
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+      - Item

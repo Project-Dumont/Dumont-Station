@@ -120,7 +120,7 @@
   id: AirlockShuttle
   suffix: Docking
   name: external airlock
-  description: Necessary for connecting two space craft together.
+  description: Necessary for connecting two spacecraft together.
   components:
   - type: Docking
   - type: DockingSignalControl
@@ -182,9 +182,7 @@
 - type: entity
   id: AirlockGlassShuttle
   parent: AirlockShuttle
-  name: external airlock
   suffix: Glass, Docking
-  description: Necessary for connecting two space craft together.
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
@@ -220,9 +218,7 @@
 - type: entity
   id: AirlockGlassShuttleSyndicate
   parent: AirlockGlassShuttle
-  name: external airlock
   suffix: Glass, Docking
-  description: Necessary for connecting two space craft together.
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi

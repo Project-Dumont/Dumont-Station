@@ -148,7 +148,7 @@
   description: A robust satchel for security related needs.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/security.rsi
+    sprite: _Gabystation/Clothing/Back/Satchels/security.rsi # Gaby
 
 - type: entity
   parent: [ClothingBackpackSatchel, BaseSecurityContraband]
@@ -157,7 +157,7 @@
   description: A sterile satchel for medical related needs.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/brigmedic.rsi
+    sprite: _Gabystation/Clothing/Back/Satchels/brigmedic.rsi # Gaby
 
 - type: entity
   parent: [ClothingBackpackSatchel, BaseCommandContraband]

@@ -39,7 +39,6 @@
   - Dropper #Goobstation
   - PillCanister
   - HandLabeler
-  - ChemicalPayload
   - BaseChemistryEmptyVial
 
 - type: latheRecipePack
@@ -124,6 +123,7 @@
   - SyringeBluespace
   - MedkitCombat #goob - Move combat kit to research
   - VialBluespace # goob edit - bluespace vials
+  - ChemicalPayload
 
 - type: latheRecipePack
   id: MedicalBoards

@@ -27,9 +27,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <Button Name="CharacterSetup" Text="{Loc 'lobby-character-preview-panel-character-setup-button'}"
                         HorizontalAlignment="Center"
                         Margin="0 5 0 0"
-                        StyleClasses="ButtonColorGaby"/>
+                        StyleClasses="ButtonColorDumont"/>
                 <Button Name="PatronPerks" Access="Public" Text="{Loc 'rmc-ui-patron-perks'}"
-                        Margin="0 5 0 0" Visible="False" StyleClasses="ButtonColorGaby"/>
+                        Margin="0 5 0 0" Visible="False" StyleClasses="ButtonColorDumont"/>
                 <!-- <cc:CommandButton Name="Currency"
                     Command="balanceui"
                     Text="{Loc 'gs-balanceui-shop-label'}"

@@ -13,11 +13,14 @@ economy-notification-deposit-body = Deposito de {$amount} { economy-money-name }
 economy-notification-transference-failed-title = Erro na transferencia.
 economy-notification-transference-failed-transfer-body = Numero de conta ou saldo indisponivel.
 
-economy-notification-transference-sender-title = Transferencia enviada
-economy-notification-transference-sender-body = Transferecia de {$amount} { economy-money-name } para {$target} enviada!
+economy-notification-transference-sender-title = Transferência enviada
+economy-notification-transference-sender-body = Transferência de {$amount} { economy-money-name } para {$target} enviada!
 
-economy-notification-transference-target-title = Transferencia recebida
-economy-notification-transference-target-body = Transferecia de {$amount} { economy-money-name } recebida de {$name}!
+economy-notification-transference-target-title = Transferência recebida
+economy-notification-transference-target-body = Transferência de {$amount} { economy-money-name } recebida de {$name}!
+
+economy-notification-transfer-target-title = Transferência recebida
+economy-notification-transfer-target-body = Transferência de {$amount} { economy-money-name } recebida de {$name}!
 
 ent-NanoBankCartridge = Cartucho do NanoPix
     .desc = O diabo na sua carteira.

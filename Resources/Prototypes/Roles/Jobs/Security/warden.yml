@@ -196,11 +196,9 @@
     eyes: ClothingEyesGlassesSecurityContraDetect # Goobstation
     id: WardenPDA
     ears: ClothingHeadsetAltWarden # Goobstation
-    pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash
-    - MagazinePistol
     - SecHypo # Goobstation
     - ClothingMaskGasSecurity # Goobstation
 
@@ -211,7 +209,7 @@
   equipment:
     head: ClothingHeadHatWarden
     mask: ClothingMaskGasSecurity
-    outerClothing: ClothingOuterCoatWarden
+    outerClothing: ClothingOuterCoatBlueWarden
     jumpsuit: ClothingUniformJumpsuitWarden
     neck: Dinkystar
     belt: ClothingBeltSecurity

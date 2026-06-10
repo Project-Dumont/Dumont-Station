@@ -12,7 +12,7 @@
     minimumPlayers: 30
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -54,7 +54,7 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -63,7 +63,7 @@
       Death: 200
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 500
+    chaosScore: 800
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -99,7 +99,7 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -112,7 +112,7 @@
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
-    agentName: cosmic-cult-roundend-name 
+    agentName: cosmic-cult-roundend-name
     definitions:
     - prefRoles: [ CosmicAntagCultist ]
       max: 4
@@ -143,7 +143,7 @@
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
     duration: null
     occursDuringRoundEnd: false
     chaos:
@@ -152,7 +152,7 @@
       Death: 400
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 1000
+    chaosScore: 1100
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -178,6 +178,87 @@
       - type: BloodCultist
       mindRoles:
       - MindRoleCultist
+  - type: Tag
+    tags:
+      - MidroundAntag
+
+# Midround Morph - Trauma Port
+- type: entity
+  parent: BaseGameRule
+  id: MorphRule
+  components:
+  - type: StationEvent
+    earliestStart: 20
+    weight: 3
+    minimumPlayers: 20
+    duration: null
+    occursDuringRoundEnd: false
+  - type: MorphRule
+  - type: AntagRandomSpawn
+  - type: AntagSpawner
+    prototype: MobMorph
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: morph-round-end-name
+    definitions:
+    - spawnerPrototype: GhostRoleSpawnerMorph
+      min: 1
+      max: 1
+      briefing:
+        text: morph-role-greeting
+        color: lime
+        sound: /Audio/_Gabystation/Misc/Morph/mutate.ogg
+      mindRoles:
+      - MindRoleMorph
+  - type: GameRule
+    chaosScore: 200 # dumont edit maybe it'll actually be spawned now
+
+# Midround Revs
+- type: entity
+  parent: Revolutionary
+  id: RevolutionaryMidround
+  components:
+  - type: StationEvent
+    earliestStart: 15 # Começa no mínimo após 15 minutos
+    weight: 3
+    minimumPlayers: 25
+    maxOccurrences: 1
+    startAnnouncement: station-event-communication-interception
+    startAudio:
+      path: /Audio/_Gabystation/Announcements/intercept_saae.ogg
+    duration: null
+    occursDuringRoundEnd: false
+    chaos:
+      Hostile: 300
+      Medical: 100
+      Death: 300
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 1000
+  - type: AlertLevelInterceptionRule
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    agentName: head-rev-role-greeting
+    definitions:
+    - prefRoles: [ HeadRev ]
+      max: 3
+      playerRatio: 15
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+      jobBlacklist: [ Chaplain ]
+      startingGear: HeadRevGear
+      lateJoinAdditional: true
+      briefing:
+        text: head-rev-role-greeting
+        color: CornflowerBlue
+        sound: "/Audio/Ambience/Antag/headrev_start.ogg"
+      components:
+      - type: Revolutionary
+      - type: HeadRevolutionary
+      mindRoles:
+      - MindRoleHeadRevolutionary
   - type: Tag
     tags:
       - MidroundAntag

@@ -191,8 +191,8 @@
   id: LaserSniper
   damage:
     types:
-      Heat: 30
-      Shock: 10
+      Heat: 25
+      Shock: 8 #Dumontstation X-00 weapon rebalance
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_blue
@@ -229,7 +229,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 8
+        Heat: 10 #X-00 weapon rebalance
 
 - type: entity
   name: heavy laser bolt
@@ -241,19 +241,19 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 12
-        Structural: 10
+        Heat: 10
+        Structural: 20 #Dumontstation X-00 weapon rebalance, STRUCTURAL damage
 
 - type: entity
   name: heavy laser barrage
   id: BulletLaserSpreadHeavy
   categories: [ HideSpawnMenu ]
-  parent: BulletLaserHeavy
+  parent: BulletLaserHeavyStructural #Dumontstation X-00 weapon rebalance
   components:
   - type: ProjectileSpread
     proto: BulletLaserHeavyStructural
-    count: 6
-    spread: 30
+    count: 5
+    spread: 25
 
 - type: hitscan
   id: StunPulse

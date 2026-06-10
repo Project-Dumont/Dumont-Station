@@ -25,3 +25,8 @@ ent-NitrousOxideTank = tanque de óxido nitroso
 ent-PlasmaTank = tanque de plasma
      .desc = Contém plasma perigoso. Não inspire. Extremamente inflamável.
 
+ent-PlasmaTankFilled = tanque de plasma
+     .desc = Contém plasma perigoso. Não inspire. Extremamente inflamável.
+
+ent-NitrousOxideTankFilled = tanque de óxido nitroso
+     .desc = Contém uma mistura de oxigênio e óxido nitroso. Certifique-se de não reabastecê-lo com N2O puro.

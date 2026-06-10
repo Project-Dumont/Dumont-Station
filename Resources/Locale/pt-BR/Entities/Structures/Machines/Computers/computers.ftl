@@ -66,6 +66,9 @@ ent-ComputerCargoShuttle = computador da nave de carga
 ent-ComputerCargoOrders = computador de requisições logisticas
     .desc = Usado para comprar coisas pela internet, se você tiver dinheiro.
 
+ent-ComputerCargoBounty = computador de recompensas de logística
+    .desc = Usada para supervisar recompensas disponíveis.
+
 ent-ComputerCloningConsole = console de clonagem
     .desc = O equipamento que controla o sistema de clonagem, a maior invenção médica desde a penicilina.
 
@@ -83,3 +86,22 @@ ent-ComputerShuttleSalvage = console da nave de salvatagem
 
 ent-ComputerPalletConsole = console de vendas da logística
     .desc = Usado para vender mercadorias carregadas em paletes de carga.
+
+
+ent-ComputerCargoOrdersSecurity = console de requisições de segurança
+    .desc = Usado pelo departamento de segurança para comprar suprimentos. Solicitar algo gera uma fatura que deve ser inserida em um computador de requisição de logística e finalizar a compra.
+
+ent-ComputerCargoOrdersService = console de requisições de serviço
+    .desc = Usado pelo departamento de serviço para comprar suprimentos. Solicitar algo gera uma fatura que deve ser inserida em um computador de requisição de logística e finalizar a compra.
+
+ent-ComputerCargoOrdersScience = console de requisições de pesquisa e desenvolvimento
+    .desc = Usado pelo departamento de pesquisa e desenvolvimento para comprar suprimentos. Solicitar algo gera uma fatura que deve ser inserida em um computador de requisição de logística e finalizar a compra.
+
+ent-ComputerCargoOrdersMedical = console de requisições médico
+    .desc = Usado pelo departamento médico para comprar suprimentos. Solicitar algo gera uma fatura que deve ser inserida em um computador de requisição de logística e finalizar a compra.
+
+ent-ComputerCargoOrdersEngineering = console de requisições de engenharia
+    .desc = Usado pelo departamento de engenharia para comprar suprimentos. Solicitar algo gera uma fatura que deve ser inserida em um computador de requisição de logística e finalizar a compra.
+
+ent-ComputerTechnlogyDiskTerminal = terminal de discos de pesquisa
+    .desc = Utiliza pontos de pesquisa para imprimir discos de pesquisa de qualquer nível. É tipo apostar com seus pontos de pesquisa.

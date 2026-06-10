@@ -1,0 +1,31 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Preferences;
+using Robust.Shared.Enums;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared.Humanoid;
+
+/// <summary>
+/// Dictates what species and age this character "looks like"
+/// </summary>
+[NetworkedComponent, RegisterComponent, AutoGenerateComponentState(true)]
+//[Access(typeof(HumanoidProfileSystem))] // Trauma - dumbass put access with no api whatsoever :face_holding_back_tears:
+public sealed partial class HumanoidProfileComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public Gender Gender;
+
+    [DataField, AutoNetworkedField]
+    public Sex Sex;
+
+    [DataField, AutoNetworkedField]
+    public int Age = 18;
+
+    [DataField, AutoNetworkedField]
+    public ProtoId<SpeciesPrototype> Species = "Human";
+}

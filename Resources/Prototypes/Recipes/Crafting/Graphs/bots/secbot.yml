@@ -42,7 +42,7 @@
         doAfter: 2
       - tag: ContrabandDetectorGlasses
         icon:
-          sprite: Clothing/Eyes/Glasses/secglasses.rsi
+          sprite: _Gabystation/Clothing/Eyes/Glasses/secglasses.rsi # Gaby
           state: icon
         name: construction-graph-tag-contraband-detector-glasses
         doAfter: 2

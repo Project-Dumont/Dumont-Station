@@ -24,6 +24,8 @@ using Content.Shared.Examine;
 using JetBrains.Annotations;
 using Robust.Shared.Timing;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Actions;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Charges.Systems;
 
@@ -31,6 +33,7 @@ public abstract class SharedChargesSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // TraumaStation
     [Dependency] protected readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
 
     /*
      * Despite what a bunch of systems do you don't need to continuously tick linear number updates and can just derive it easily.
@@ -276,5 +279,34 @@ public abstract class SharedChargesSystem : EntitySystem
         component.MaxCharges = charges;
         SetCharges(uid, Math.Clamp(charges, 0, component.MaxCharges));
         Dirty(uid, component);
+    }
+
+    /// <summary>
+    ///     Add a charge to an action if it can be recharged, otherwise add a new instance of the action.
+    /// </summary>
+    public void RefundAction(EntityUid performer, EntProtoId actionPrototypeId)
+    {
+        var found = false;
+
+        // procura por uma action que possa ser recarregada.
+        foreach (var action in _actions.GetActions(performer))
+        {
+            if (MetaData(action.Owner).EntityPrototype?.ID != actionPrototypeId.Id)
+                continue;
+
+            if (!TryComp<LimitedChargesComponent>(action.Owner, out var chargesComp))
+                continue; // se não pode ser recarregada, procura pela próxima.
+
+            var charges = GetCurrentCharges(action.Owner);
+            if (charges == chargesComp.MaxCharges)
+                continue; //se a carga já está no máximo, pule para a próxima
+
+            found = true; // encontramos uma que pode ser recarregada! recarrega e encerra.
+            AddCharges(action.Owner, 1);
+            break;
+        }
+
+        if (!found) // nenhuma action pôde ser recarregada. adiciona uma nova.
+          _actions.AddAction(performer, actionPrototypeId);
     }
 }

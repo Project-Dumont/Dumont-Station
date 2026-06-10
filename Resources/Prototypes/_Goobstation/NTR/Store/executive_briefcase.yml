@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: Executive briefcase
   parent: [BaseItem, StorePresetNTR, BaseGrandTheftContraband]
@@ -61,6 +65,7 @@
     categories:
     - NTRstation
     - NTRpersonal
+    - NTRBSO
     - NTRBoards
     - NTREvil
 
@@ -75,6 +80,7 @@
     categories:
     - NTRstation # for stuff like buying spesos, disablers, etc
     - NTRpersonal # for, well, personal stuff.
+    - NTRBSO # Dumont | BSO ammo
     - NTRBoards # for hard to get boards
 #    - NTREvil # for evil stuff
     currencyWhitelist:
@@ -91,6 +97,12 @@
 - type: storeCategory
   id: NTRpersonal
   name: ntr-executive-tier-3-name
+  priority: 1
+
+# Dumont | BSO ammo
+- type: storeCategory
+  id: NTRBSO
+  name: ntr-executive-tier-6-name
   priority: 1
 
 - type: storeCategory

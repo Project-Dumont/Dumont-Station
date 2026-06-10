@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ADTActionMorphGeras
+  parent: BaseAction
+  name: Morph into Geras
+  description: Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
+  components:
+    - type: Action
+      itemIconStyle: BigAction
+      useDelay: 5 # prevent spam
+      priority: -20
+      checkCanInteract: true
+      icon:
+        sprite: Mobs/Aliens/slimes.rsi
+        state: blue_adult_slime
+    - type: InstantAction
+      event: !type:MorphIntoGeras

@@ -29,7 +29,8 @@
     - BSOBlueshieldSet
     - BSORevolverSet
     - BSOCQCSet
-    - BSOChesterSet
+    # - BSOChesterSet # Dumont | Chester rework
+    - BSOChesterMk2Set # Dumont | Chester rework 
     - BSOSyringeSet
     maxSelectedSets: 2
 

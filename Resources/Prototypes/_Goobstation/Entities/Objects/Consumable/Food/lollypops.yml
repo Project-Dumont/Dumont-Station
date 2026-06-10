@@ -82,7 +82,7 @@
       reagents:
       - ReagentId: Sugar
         Quantity: 5
-  - type: Lollypop
+  - type: PassiveConsumable
 
 # Syndicate
 
@@ -386,7 +386,7 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
     - state: color
       map: [ "enum.AmmoVisualLayers.Tip" ]
-      color: "#040273"
+      color: "#02731e"
 
 # Captain
 
@@ -423,7 +423,7 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
     - state: lollypop-captain
       map: [ "enum.AmmoVisualLayers.Tip" ]
-  - type: Lollypop
+  - type: PassiveConsumable
     deleteOnEmpty: false
 
 # CentComm

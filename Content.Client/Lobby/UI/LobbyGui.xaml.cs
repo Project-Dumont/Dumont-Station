@@ -58,6 +58,7 @@ using Robust.Client.Console;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.ResourceManagement;
+using Content.Client.Stylesheets;
 
 namespace Content.Client.Lobby.UI
 {
@@ -74,14 +75,14 @@ namespace Content.Client.Lobby.UI
             SetAnchorPreset(MainContainer, LayoutPreset.Wide);
             SetAnchorPreset(Background, LayoutPreset.Wide);
 
-            var logoTexture = _resCache.GetResource<TextureResource>("/Textures/Logo/lobby.png");
+            var logoTexture = _resCache.GetResource<TextureResource>("/Textures/_Dumont/Logo/lobby.png");
             Logo.Texture = logoTexture;
 
-            AHelpButton.AddStyleClass("ButtonColorGaby");
-            BalanceButton.AddStyleClass("ButtonColorGaby");
-            CallVoteButton.AddStyleClass("ButtonColorGaby");
-            OptionsButton.AddStyleClass("ButtonColorGaby");
-            LeaveButton.AddStyleClass("ButtonColorGaby");
+            AHelpButton.AddStyleClass(StyleNano.StyleClassButtonColorDumont);
+            BalanceButton.AddStyleClass(StyleNano.StyleClassButtonColorDumont);
+            CallVoteButton.AddStyleClass(StyleNano.StyleClassButtonColorDumont);
+            OptionsButton.AddStyleClass(StyleNano.StyleClassButtonColorDumont);
+            LeaveButton.AddStyleClass(StyleNano.StyleClassButtonColorDumont);
 
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
             LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text")); // Goobstation

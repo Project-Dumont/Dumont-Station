@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
 // SPDX-FileCopyrightText: 2020 20kdc <asdd2808@gmail.com>
 // SPDX-FileCopyrightText: 2020 DamianX <DamianX@users.noreply.github.com>
@@ -76,6 +80,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Content.Shared._CD.Records; // CD - Character Records
+using Content.Goobstation.Maths.FixedPoint;
 
 namespace Content.Shared.Preferences
 {
@@ -204,6 +209,9 @@ namespace Content.Shared.Preferences
         public PlayerProvidedCharacterRecords? CDCharacterRecords;
         // End CD - Character records
 
+        [DataField("cosmaticDriftAllergies")]
+        public Dictionary<string, FixedPoint2> CDAllergies = new();
+
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
@@ -222,11 +230,10 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
             ProtoId<BarkPrototype> barkVoice, // Goob Station - Barks
-            // Begin CD - Character Records
-            PlayerProvidedCharacterRecords? cdCharacterRecords
-            // End CD - Character Records
-        )
-
+            // Begin CD - Character Records and Allergies
+            PlayerProvidedCharacterRecords? cdCharacterRecords,
+            Dictionary<string, FixedPoint2> cdAllergies)
+            // End CD - Character Records and Allergies
         {
             Name = name;
             FlavorText = flavortext;
@@ -245,9 +252,10 @@ namespace Content.Shared.Preferences
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
             BarkVoice = barkVoice; // Goob Station - Barks
-            // Begin CD - Character Records
+            // Begin CD - Character Records and Allergies
             CDCharacterRecords = cdCharacterRecords;
-            // End CD - Character Records
+            CDAllergies = cdAllergies;
+            // End CD - Character Records and Allergies
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -283,7 +291,10 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
                 other.BarkVoice, // Goob Station - Barks
-                other.CDCharacterRecords) // CD - Character Records
+                // Begin CD - Character Records and Allergies
+                other.CDCharacterRecords,
+                other.CDAllergies)
+                // End CD - Character Records and Allergies
         {
         }
 
@@ -611,6 +622,13 @@ namespace Content.Shared.Preferences
             };
         }
 
+        // Begin CD - Allergies
+        public HumanoidCharacterProfile WithCDAllergies(Dictionary<string, FixedPoint2> allergies)
+        {
+            return new HumanoidCharacterProfile(this) { CDAllergies = allergies };
+        }
+        // End CD - Allergies
+
         public string Summary =>
             Loc.GetString(
                 "humanoid-character-profile-summary",
@@ -638,8 +656,11 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
-            if (CDCharacterRecords != null && other.CDCharacterRecords != null && // CD
-                !CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords)) return false; // CD
+            // Begin CD - Character Records and Allergies
+            if (CDCharacterRecords != null && other.CDCharacterRecords != null &&
+                !CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords)) return false;
+            if (!CDAllergies.SequenceEqual(other.CDAllergies)) return false;
+            // End CD - Character Records and Allergies
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 

@@ -270,6 +270,7 @@
   - MP3PlayerWhite
   - PhotoCamera
   # End Gabystation
+  - PlushieJanie # DumontStation
 
 - type: loadoutGroup
   id: Glasses
@@ -1649,6 +1650,7 @@
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
   - TrooperUniform
+  - VeteranOfficerBlackJumpsuit # Goobstation
   - SecuritySummerJumpsuit # Nyanotrasen
 
 - type: loadoutGroup
@@ -1679,6 +1681,7 @@
   - ArmorVestSlim
   - SecurityOfficerWintercoat
   - WinterCoatSeniorSecArmored # Goobstation
+  - VeteranOfficerArmor # Goobstation
 
 - type: loadoutGroup
   id: SecurityShoes

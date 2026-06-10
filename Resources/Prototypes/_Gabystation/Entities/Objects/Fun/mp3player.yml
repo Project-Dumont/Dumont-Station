@@ -61,6 +61,7 @@
         type: JukeboxBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  - type: IgnoreAudioMuffle # Dumont - Audio muffle does not support movement.
 
 - type: entity
   id: MP3PlayerBlue

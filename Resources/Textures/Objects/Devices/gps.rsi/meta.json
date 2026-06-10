@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "tgstation at 3ddd840268e33bbcf316f242e6a972b84e6b773c, Inhand sprites by onesch",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/master/icons/obj/devices/tracker.dmi , modified by CRISOOOOO",
     "size": {
         "x": 32,
         "y": 32
@@ -33,7 +33,11 @@
                     0.1,
                     0.1,
                     0.1,
-                    0.1
+                    0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
                 ]
             ]
         }

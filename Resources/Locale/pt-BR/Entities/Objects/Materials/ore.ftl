@@ -1,48 +1,48 @@
-ent-GoldOre = gold ore
-    .desc = A piece of unrefined ore.
+ent-GoldOre = minério de ouro
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Full
 
-ent-GoldOre1 = gold ore
-    .desc = A piece of unrefined ore.
+ent-GoldOre1 = minério de ouro
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 
-ent-SteelOre = steel ore
-    .desc = A piece of unrefined ore.
+ent-SteelOre = minério de aço
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Full
 
-ent-SteelOre1 = steel ore
-    .desc = A piece of unrefined ore.
+ent-SteelOre1 = minério de aço
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 
-ent-PlasmaOre = plasma ore
-    .desc = A piece of unrefined ore.
+ent-PlasmaOre = minério de plasma
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Full
 
-ent-PlasmaOre1 = plasma ore
-    .desc = A piece of unrefined ore.
+ent-PlasmaOre1 = minério de plasma
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 
-ent-SilverOre = silver ore
-    .desc = A piece of unrefined ore.
+ent-SilverOre = minério de prata
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Full
 
-ent-SilverOre1 = silver ore
-    .desc = A piece of unrefined ore.
+ent-SilverOre1 = minério de prata
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 
-ent-SpaceQuartz = space quartz
-    .desc = A piece of unrefined ore.
+ent-SpaceQuartz = quartzo espacial
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Full
 
-ent-SpaceQuartz1 = space quartz
-    .desc = A piece of unrefined ore.
+ent-SpaceQuartz1 = quartzo espacial
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 
-ent-UraniumOre = uranium ore
-    .desc = A piece of unrefined ore.
+ent-UraniumOre = minério de urânio
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Full
 
-ent-UraniumOre1 = uranium ore
-    .desc = A piece of unrefined ore.
+ent-UraniumOre1 = minério de urânio
+    .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 

@@ -1,12 +1,12 @@
-ent-TrumpetInstrument = trumpet
-    .desc = The favorite instrument of jazz musicians and egotistical middle schoolers.
+ent-TrumpetInstrument = trombeta
+    .desc = O instrumento favorito de músicos de jazz e estudantes egoístas.
 
 ent-TromboneInstrument = trombone
-    .desc = Everyone's favorite sliding brass instrument.
+    .desc = O instrumento deslizante de bronze favorito de todo mundo.
 
-ent-FrenchHornInstrument = french horn
-    .desc = The fact that holding it involves using your hand to muffle it may suggest something about its sound.
+ent-FrenchHornInstrument = trompa francesa
+    .desc = O fato que para segurar isso você precisa abafar o som sugere algo sobre seu barulho.
 
-ent-EuphoniumInstrument = euphonium
-    .desc = A baby tuba? A Baritone? Whatever it is, it's a pretty cool mess of pipes.
+ent-EuphoniumInstrument = eufônio
+    .desc = Uma bagunça de canos bem maneira.
 

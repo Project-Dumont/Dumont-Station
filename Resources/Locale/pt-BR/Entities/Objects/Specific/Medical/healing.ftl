@@ -55,3 +55,5 @@ ent-SyringeIpecac = seringa de ipecac
 ent-SyringeCorpium = seringa de corpium
     .desc = Um creme tópico para queimaduras.
 
+ent-Tourniquet = torniquete
+    .desc = Impede sangramento! Você espera, pelo menos. Pode ser aplicado nos membros de uma pessoa para prevenir sangramento causado por amputações ou danos extremos.

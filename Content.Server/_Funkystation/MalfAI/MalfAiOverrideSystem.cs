@@ -23,6 +23,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Content.Server.Silicons.StationAi;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared.VendingMachines;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -76,7 +77,7 @@ public sealed class MalfAiOverrideSystem : EntitySystem
 
         foreach (var entity in entitiesAtLocation)
         {
-            if (HasComp<MachineComponent>(entity))
+            if (HasComp<MachineComponent>(entity) || HasComp<ComputerComponent>(entity) || HasComp<VendingMachineComponent>(entity))
             {
                 targetMachine = entity;
                 break;

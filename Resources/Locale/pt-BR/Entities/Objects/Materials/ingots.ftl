@@ -1,16 +1,16 @@
-ent-IngotGold = gold bar
-    .desc = A heavy metal ingot stamped with the Nanotrasen logo.
+ent-IngotGold = barra de ouro
+    .desc = Uma barra de ouro pesada com a logo da NanoTrasen engravada.
     .suffix = Full
 
-ent-IngotGold1 = gold bar
-    .desc = A heavy metal ingot stamped with the Nanotrasen logo.
+ent-IngotGold1 = barra de ouro
+    .desc = Uma barra de ouro pesada com a logo da NanoTrasen engravada.
     .suffix = Single
 
-ent-IngotSilver = silver bar
-    .desc = A heavy metal ingot stamped with the Nanotrasen logo.
+ent-IngotSilver = barra de prata
+    .desc = Uma barra de prata pesada com a logo da NanoTrasen engravada.
     .suffix = Full
 
-ent-IngotSilver1 = silver bar
-    .desc = A heavy metal ingot stamped with the Nanotrasen logo.
+ent-IngotSilver1 = barra de prata
+    .desc = Uma barra de prata pesada com a logo da NanoTrasen engravada.
     .suffix = Single
 

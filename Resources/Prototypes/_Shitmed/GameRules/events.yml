@@ -28,10 +28,10 @@
   - type: StationEvent
     earliestStart: 45
     reoccurrenceDelay: 45
-    weight: 3 # Goobstation - 7.5 -> 3
+    weight: 2 # dumont edit too many abductors (was 3)
     minimumPlayers: 18 # menos abductor por favor
     duration: null # Goobstation - chud
-    maxOccurrences: 2 # Gabystation - menos abductors
+    maxOccurrences: 1 # Dumont edit why do we need more than 1 abductor, plus abductor duo?
     chaos:
       Hostile: 150 # menos abductor por favor
       Medical: 75
@@ -129,7 +129,7 @@
   - type: StationEvent # Gabystation - Less abductors
     earliestStart: 60
     reoccurrenceDelay: 45
-    weight: 3 # Goobstation - 7.5 -> 3
+    weight: 1 # Dumont edit too many abductors (was 3)
     minimumPlayers: 25
     duration: null # Goobstation - chud
     maxOccurrences: 1

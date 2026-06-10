@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesModsuitBase
   id: ClothingModsuitBootsMining
   name: pioneer modsuit boots
   description: Go forth, pioneer, for there are still mountains to be mined.

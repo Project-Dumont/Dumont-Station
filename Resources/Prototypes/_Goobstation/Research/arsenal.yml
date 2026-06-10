@@ -49,9 +49,9 @@
   recipeUnlocks:
   - WeaponLaserCellRevolver
   - PowerCellIRRevolver
-  position: 3,0
+  position: 3,1
   technologyPrerequisites:
-  - DraconicMunitions
+  - AdvancedRiotControl
 
 - type: technology
   id: RestraintTechnology
@@ -65,7 +65,8 @@
   recipeUnlocks:
   - ClothingMaskMuzzleSecure
   - ClothingMaskMuzzleShock
-  position: 1,1
+  - ClothingBackpackElectropack
+  position: 2,2
   technologyPrerequisites:
   - SalvageWeapons
 
@@ -83,7 +84,7 @@
   - WeaponLaserCellSMG
   - PowerCellIRSMG
   - PowerCellIonSMG
-  position: 5,-1
+  position: 3,-1
   technologyPrerequisites:
   - WeaponizedLaserManipulation
 
@@ -114,7 +115,7 @@
   - PortableMicrofusionWeaponry
   - SmartWeaponry
   - ThermalVisionTech
-  position: 2,-1
+  position: 6,0
 
 - type: technology
   id: EnergyBoltBasedWeaponry # for future energy bolt weapon
@@ -132,7 +133,7 @@
   - EnergyMagRifleLethal
   technologyPrerequisites:
   - WaveParticleHarnessing
-  position: 6,1
+  position: 1,0
 
 # Tier 3
 
@@ -149,7 +150,7 @@
   - WeaponLaserCellSniper
   - PowerCellIRSniper
   - PowerCellIonSniper
-  position: 6,-1
+  position: 4,-1
   technologyPrerequisites:
   - WeaponLaserCellSMGTech
 
@@ -165,7 +166,7 @@
   recipeUnlocks:
   - ClothingBackpackLMGBattery
   - MilitaryPowerCellLMG
-  position: 6,-2
+  position: 3,-2
   technologyPrerequisites:
   - WeaponLaserCellSMGTech
 
@@ -182,7 +183,7 @@
   - WeaponMechCombatMissileRack8
   technologyPrerequisites:
   - Gygax
-  position: 3,-2
+  position: 7,0
 
 - type: technology
   id: Durand
@@ -208,7 +209,7 @@
   - WeaponMechCombatShotgunIncendiary
   technologyPrerequisites:
   - Gygax
-  position: 3,-1
+  position: 6,-1
 
 - type: technology
   id: SmartWeaponry
@@ -223,8 +224,8 @@
   - WeaponSubMachineSmart
   - MagazineSmart
   technologyPrerequisites:
-  - UraniumMunitions
-  position: 4,2
+  - NonlethalAmmunition
+  position: 4,4
 
 - type: technology
   id: BlueSpaceMunitions
@@ -240,7 +241,8 @@
   - PowerCellBluespaceSMG
   - PowerCellBluespaceSniper
   - MilitaryPowerCellBluespaceLMG
+  - EnergyMagRifleBluespaceLethal
   technologyPrerequisites:
   - WeaponLaserCellLMGTech
   - WeaponLaserCellSniperTech
-  position: 7, -1
+  position: 4, -2

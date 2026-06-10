@@ -235,6 +235,7 @@
     - Security
     - Antagonists
   - type: Flashbang # Goobstation
+    minProtectionRange: 7 # Can't stun/knockdown people wearing any ear protection
   - type: Tag
     tags:
     - HandGrenade
@@ -639,7 +640,7 @@
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Grenades/tear_gas.rsi
+    sprite: _Gabystation/Objects/Weapons/Grenades/tear_gas.rsi # Gaby
   - type: SmokeOnTrigger
     keysIn:
     - timer

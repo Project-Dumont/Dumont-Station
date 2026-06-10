@@ -41,9 +41,9 @@
   description: For a CMO that has been in enough medbays to know that more PPE means less central command dry cleaning visits when the shift is over.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/mantles/cmomantle.rsi
+    sprite: _Goobstation/Clothing/Neck/Mantle/cmomantle.rsi # Goob Station - mantle resprite
   - type: Clothing
-    sprite: Clothing/Neck/mantles/cmomantle.rsi
+    sprite: _Goobstation/Clothing/Neck/Mantle/cmomantle.rsi # Goob Station - mantle resprite
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -57,7 +57,7 @@
     sprite: Clothing/Neck/mantles/hopmantle.rsi
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [ClothingNeckBase, BaseCommandContraband, SurveillanceWirelessCameraBodySecurity]
   id: ClothingNeckMantleHOS
   name: head of security's mantle
   description: Shootouts with syndicate agents are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
@@ -98,4 +98,4 @@
   - type: Sprite
     sprite: Clothing/Neck/mantles/mantle.rsi
   - type: Clothing
-    sprite: Clothing/Neck/mantles/mantle.rsi 
+    sprite: Clothing/Neck/mantles/mantle.rsi

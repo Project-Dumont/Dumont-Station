@@ -355,7 +355,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Melee/e_shield.rsi, state: eshield-on }
   productEntity: EnergyShield
   cost:
-    Telecrystal: 15 # goob
+    Telecrystal: 30 #Dumont; This shit's OP, you're telling me it was supposed to cost less than a silenced pistol?
   categories:
   - UplinkWeaponry
 
@@ -2126,6 +2126,17 @@
     Telecrystal: 4 # goob - Pointless valid item.
   categories:
     - UplinkWearables
+
+# Gabystation
+- type: listing
+  id: UplinkStorageModule
+  name: uplink-storage-module-name
+  description: uplink-storage-module-desc
+  productEntity: ModsuitModuleSyndicateStorage
+  cost:
+    Telecrystal: 20 # goob
+  categories:
+  - UplinkWearables
 
 
  # Pointless

@@ -134,10 +134,11 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             affected.NextAttack + TimeSpan.FromSeconds(0.1f) > Timing.CurTime) // Goobstation
             return;
 
-        if (!TryGetWeapon(entity, out var weaponUid, out var weapon))
+        // Mono - add user override
+        if (!TryGetWeapon(entity, out var weaponUid, out var weapon, out var userOverride))
             return;
 
-        if (!CombatMode.IsInCombatMode(entity) || !Blocker.CanAttack(entity, weapon: (weaponUid, weapon)))
+        if (!CombatMode.IsInCombatMode(entity) || !Blocker.CanAttack(userOverride, weapon: (weaponUid, weapon)))
         {
             weapon.Attacking = false;
             return;
@@ -188,15 +189,15 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             switch(altFireComponent.AttackType)
             {
                 case AltFireAttackType.Light:
-                    ClientLightAttack(entity, mousePos, coordinates, weaponUid, weapon);
+                    ClientLightAttack(userOverride, mousePos, coordinates, weaponUid, weapon);
                     break;
 
                 case AltFireAttackType.Heavy:
-                    ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
+                    ClientHeavyAttack(userOverride, coordinates, weaponUid, weapon);
                     break;
 
                 case AltFireAttackType.Disarm:
-                    ClientDisarm(entity, mousePos, coordinates);
+                    ClientDisarm(userOverride, mousePos, coordinates);
                     break;
             }
 
@@ -207,7 +208,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (altDown == BoundKeyState.Down)
         {
             // If it's an unarmed attack then do a disarm
-            if (weapon.AltDisarm && weaponUid == entity)
+            if (weapon.AltDisarm && weaponUid == userOverride)
             {
                 ClientDisarm(entity, mousePos, coordinates);
                 return;
@@ -236,7 +237,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             // Helper func
             Vector2 GetDirection()
             {
-                if (!_xformQuery.TryGetComponent(entity, out var userXform))
+                if (!_xformQuery.TryGetComponent(userOverride, out var userXform))
                     return Vector2.Zero;
 
                 var targetMap = _transform.ToMapCoordinates(coordinates);
@@ -249,13 +250,13 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             }
             // Goobstation end
 
-            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
+            ClientHeavyAttack(userOverride, coordinates, weaponUid, weapon);
             return;
         }
 
         // Light attack
         if (useDown == BoundKeyState.Down)
-            ClientLightAttack(entity, mousePos, coordinates, weaponUid, weapon);
+            ClientLightAttack(userOverride, mousePos, coordinates, weaponUid, weapon);
     }
 
     public override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session) // Goob edit
@@ -331,8 +332,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return;
         // Goob edit end
 
-        // Don't light-attack if interaction will be handling this instead
-        if (Interaction.CombatModeCanHandInteract(attacker, target))
+        // Don't light-attack if interaction will be handling this instead // Mono - only if attacker has hands
+        if (HasComp<HandsComponent>(attacker) && Interaction.CombatModeCanHandInteract(attacker, target))
             return;
 
         RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
@@ -345,6 +346,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // Entity might not have been sent by PVS.
         if (Exists(ent) && Exists(entWeapon))
-            DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation, ev.SpriteRotation, ev.FlipAnimation);
+            DoLunge(ent, ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation, ev.SpriteRotation, ev.FlipAnimation);
     }
 }

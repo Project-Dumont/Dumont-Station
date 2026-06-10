@@ -38,3 +38,14 @@ ent-ModsuitModuleGPS = módulo de GPS
 ent-ModsuitModuleInjector = módulo de autoinjetor
     .desc = Um módulo de autoinjetor para ser inserido no peitoral de uma MODsuit para fornecer uma dose de medicamento estabilizante quando o usuário entrar em estado crítico.
 
+ent-ModsuitModuleBasicStorage = módulo de armazenamento básico
+    .desc = Um módulo de armazenamento básico para ser inserido no slot de controle de uma MODsuit. Ele fornece um espaço de armazenamento médio para o usuário.
+
+ent-ModsuitModuleLargeStorage = módulo de armazenamento grande
+    .desc = Um módulo de armazenamento grande para ser inserido no slot de controle de uma MODsuit. Ele fornece um espaço de armazenamento comparável com uma mala para o usuário.
+
+ent-ModsuitModuleBluespaceStorage = módulo de armazenamento de bluespace
+    .desc = Um módulo de armazenamento de bluespace para ser inserido no slot de controle de uma MODsuit. Ele fornece um espaço de armazenamento grande para o usuário, usando tecnologia de bluespace para armazenar itens.
+
+ent-ModsuitModuleSyndicateStorage = módulo de armazenamento do sindicato
+    .desc = Um módulo de armazenamento do sindicato para ser inserido no slot de controle de uma MODsuit. Ele comprime itens dentro com tecnologia da Cybersun, permitindo armazenamento superior em comparação com mochilas bluespace.

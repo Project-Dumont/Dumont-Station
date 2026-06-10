@@ -8,18 +8,20 @@ game-ticker-delay-start = O início da rodada foi adiado por {$seconds} segundos
 game-ticker-pause-start = O início da rodada foi pausado.
 game-ticker-pause-start-resumed = A contagem regressiva para o início da rodada foi retomada.
 game-ticker-player-join-game-message = Bem-vindo à Space Station 14! Se esta é sua primeira vez jogando, leia as regras do jogo e não tenha medo de pedir ajuda no LOOC (OOC local) ou OOC (geralmente disponível apenas entre rodadas).
-game-ticker-get-info-text = A rodada atual é: [color=#C73C55]#{$roundId}[/color]
-                            O número atual de jogadores é: [color=#C73C55]{$playerCount}[/color]
-                            O mapa atual é: [color=#C73C55]{$mapName}[/color]
-                            O modo de jogo atual é: [color=#C73C55]{$gmTitle}[/color] - [color=#ADBABA]{$desc}[/color]
-game-ticker-get-info-preround-text = A rodada atual é: [color=#C73C55]#{$roundId}[/color]
-                            O número atual de jogadores é: [color=#C73C55]{$playerCount}[/color] ([color=#C73C55]{$readyCount}[/color] {$readyCount ->
-                                [one] está
-                                *[other] estão
-                            } prontos)
-                            O mapa atual é: [color=#C73C55]{$mapName}[/color]
-                            O modo de jogo atual é: [color=#C73C55]{$gmTitle}[/color] - [color=#ADBABA]{$desc}[/color]
-game-ticker-no-map-selected = [color=#ADBABA]Mapa ainda não selecionado![/color]
+game-ticker-get-info-text = Bem-vinda(o) ao [color=white]Dumont Station![/color]
+                            A rodada atual é [color=white]#{$roundId}[/color].
+                            A quantidade atual de jogadores é [color=white]{$playerCount}[/color].
+                            O mapa atual é [color=white]{$mapName}[/color].
+                            O modo de jogo atual é [color=white]{$gmTitle}[/color] [icon src="JobIconNoId" tooltip="{$desc}"/].
+game-ticker-get-info-preround-text = Bem-vinda(o) ao a [color=white]Dumont Station![/color]
+                            A rodada atual é [color=white]#{$roundId}[/color]
+                            O quantidade atual de jogadores é [color=white]{$playerCount}[/color] e [color=white]{$readyCount}[/color] {$readyCount ->
+                                [one] está pronto.
+                                *[other] estão prontos.
+                            }
+                            O mapa atual é [color=white]{$mapName}[/color].
+                            O modo de jogo atual é [color=white]{$gmTitle}[/color] [icon src="JobIconNoId" tooltip="{$desc}"/].
+game-ticker-no-map-selected = [color=yellow]Mapa ainda não selecionado![/color]
 game-ticker-player-no-jobs-available-when-joining = Ao tentar entrar no jogo, nenhum cargo estava disponível.
 
 # Exibido no chat para administradores quando um jogador entra
@@ -38,7 +40,6 @@ latejoin-arrivals-dumped-from-shuttle = Uma força misteriosa impede você de sa
 latejoin-arrivals-teleport-to-spawn = Uma força misteriosa teletransporta você para fora da nave de chegadas. Tenha um turno seguro!
 
 preset-not-enough-ready-players = A rodada será cancelado pois não é possível iniciar {$presetName}. São necessários {$minimumPlayers} jogadores prontos, mas temos apenas {$readyPlayersCount}.
-preset-not-enough-ready-players-end-rule = Cancelando {$presetName}, são necessários {$minimumPlayers} jogadores prontos, mas temos apenas {$readyPlayersCount}.
 preset-no-one-ready = Não é possível iniciar {$presetName}. Nenhum jogador está pronto.
 
 game-run-level-PreRoundLobby = Lobby pré-rodada

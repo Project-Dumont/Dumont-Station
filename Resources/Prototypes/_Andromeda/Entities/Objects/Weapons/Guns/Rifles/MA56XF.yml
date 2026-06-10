@@ -8,7 +8,7 @@
   name: MA56XF
   parent: BaseWeaponRifle
   id: WeaponRifleMA56XF
-  description: An advanced military-grade assault rifle. Uses .20 rifle ammo.
+  description: An advanced military-grade assault rifle. Uses .30 rifle ammo.
   components:
     - type: Sprite
       sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
@@ -20,10 +20,10 @@
     - type: Clothing
       sprite: _Andromeda/Objects/Weapons/Guns/Rifles/ma56xf.rsi
     - type: Gun
-      fireRate: 5.5
-      burstFireRate: 12
+      fireRate: 5.0
+      burstFireRate: 15
       shotsPerBurst: 4
-      burstCooldown: 0.55
+      burstCooldown: 0.60
       availableModes:
         - SemiAuto
         - Burst
@@ -34,21 +34,21 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineRifle
+          startingItem: MagazineLightRifle
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
           whitelist:
             tags:
-              - MagazineRifle
+              - MagazineLightRifle #.30
           whitelistFailPopup: gun-magazine-whitelist-fail
         gun_chamber:
           name: Chamber
-          startingItem: CartridgeRifle
+          startingItem: CartridgeLightRifle
           priority: 1
           whitelist:
             tags:
-              - CartridgeRifle
+              - CartridgeLightRifle #.30
     - type: ContainerContainer
       containers:
         gun_magazine: !type:ContainerSlot

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: crystallizerRecipe
   id: metalHydrogenRecipe
   name: Metal Hydrogen
@@ -196,7 +200,7 @@
   minimumRequirements:
   - 0     # oxygen
   - 0     # nitrogen
-  - 1500  # carbon dioxide
+  - 3000  # carbon dioxide
   - 0     # plasma
   - 0     # tritium
   - 0     # vapor

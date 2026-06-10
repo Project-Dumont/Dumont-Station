@@ -168,6 +168,8 @@
       - id: AirGrenade
       - id: ClothingHandsGlovesAtmosInsulated # Goobstation - insulated atmos gloves
       - id: ClothingBackpackFirefighterTank # Assmos - Firefighter nozzle
+      - id: InducerEngineeringBattery # Orion
+        prob: 0.4
 
 - type: entity
   id: LockerAtmosphericsFilled
@@ -189,6 +191,8 @@
       - id: ClothingHandsGlovesAtmosInsulated # Goobstation - insulated atmos gloves
       - id: ClothingBackpackFirefighterTank # Assmos - Firefighter nozzle
       - id: AirGrenade
+      - id: InducerEngineeringBattery # Orion
+        prob: 0.4
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -206,6 +210,8 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
+      - id: InducerEngineeringBattery # Orion
+        prob: 0.4
 
 - type: entity
   id: LockerEngineerFilled
@@ -220,6 +226,8 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
+      - id: InducerEngineeringBattery # Orion
+        prob: 0.4
 
 - type: entity
   id: ClosetRadiationSuitFilled

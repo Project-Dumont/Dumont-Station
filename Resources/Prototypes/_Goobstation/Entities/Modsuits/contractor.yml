@@ -14,7 +14,7 @@
 
 # The Modsuit Itself, This is just a Deathsquad modsuit, but reskined for CC Officials
 - type: entity
-  parent: [ ClothingModsuitStandardNoStorage, BaseSyndicateContraband ]
+  parent: [ ClothingModsuitStandard, BaseSyndicateContraband ]
   id: ClothingModsuitContractor
   name: Contractor modsuit control unit
   description: The main controller for a Contractor modsuit.
@@ -35,6 +35,14 @@
           whitelist:
             components:
               - PowerCell
+        control_module: # GabyStation
+          name: modsuit-control-unit-module-slot
+          startingItem: ModsuitModuleBasicStorage
+          insertDelay: 1.0
+          ejectDelay: 0.5
+          whitelist:
+            tags:
+              - ModsuitControlUnitUpgrade
     - type: ChameleonClothing
       slot: [back]
       default: ClothingModsuitContractor
@@ -44,9 +52,11 @@
           type: ChameleonBoundUserInterface
         enum.ToggleClothingUiKey.Key:
           type: ToggleableClothingBoundUserInterface
+        enum.StorageUiKey.Key: # GabyStation
+          type: StorageBoundUserInterface
     - type: ExplosionResistance
       damageCoefficient: 0.1
- 
+
 - type: entity
   parent: [ClothingModsuitGauntletsStandard, BaseSyndicateContraband]
   id: ClothingModsuitGauntletsContractor

@@ -11,6 +11,8 @@
     - ModsuitModuleGPSRecipe
     - ModsuitModuleAntiGravRecipe
     - ModsuitModuleWeldingRecipe
+    - ModsuitModuleLargeStorageRecipe
+    - ModsuitModuleBluespaceStorageRecipe
 
 - type: latheRecipePack
   id: ModulesSimple

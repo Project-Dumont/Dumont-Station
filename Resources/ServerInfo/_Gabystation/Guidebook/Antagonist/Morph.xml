@@ -1,0 +1,20 @@
+<Document>
+  # Morph
+  <Box>
+    <GuideEntityEmbed Entity="MobMorph" />
+    <GuideEntityEmbed Entity="MobMorph" Caption=""/>
+    <GuideEntityEmbed Entity="ClownDummy" Caption=""/>
+    <GuideEntityEmbed Entity="MobMorph" Caption=""/>
+  </Box>
+  <Box>
+    [color=#999999][italic]A cena de Morphs comendo um delicioso palhaço[/italic][/color]
+  </Box>
+
+  Morphs são terrores interdimensionais vindo do submundo, que chegou a sua estação durante uma temporada de acasalamento para comer itens e seres orgânicos para ganhar [color=#79b037]biomassa[/color] e se reproduzir
+  - Morphs ganham biomassa devorando comida ou outras criaturas como ratos, macacos ou a tripulação.
+  - Morphs podem usar a biomassa para se dividir. Criando uma cópia de si mesmo.
+  - Morphs podem comer qualquer coisa, tente comer algo de valor como equipamentos ou armas para aumentar suas chances.
+  - Morphs podem se disfarçar de itens ou criaturas para enganar sua presa, deixando a mesma com a guarda baixa.
+  - Morphs recebem duas vezes o dano de [color=#e6a009]calor[/color]
+  - Morphs são completamente imunes a dano de [color=green]radiação[/color]
+</Document>

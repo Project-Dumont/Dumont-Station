@@ -40,3 +40,89 @@
   impactFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: impact_blue
+
+- type: hitscan
+  id: IonLaser
+  damage:
+    types:
+      Ion: 20
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_blue
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_blue
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_blue
+
+- type: hitscan
+  id: RedLaserOvercharge
+  damage:
+    types:
+      Heat: 25
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_heavy
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
+
+- type: hitscan
+  id: LaserBluespace
+  damage:
+    types:
+      Heat: 18
+    armorPenetration: 0.4
+  muzzleFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: muzzle_beam_light_pulse
+  travelFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: beam_light_pulse
+  impactFlash:
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+    state: impact_beam_light_pulse
+
+- type: hitscan
+  id: BulletChesterRifleTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Piercing: 35
+    armorPenetration: 0.15 
+
+- type: hitscan
+  id: BulletChesterRiflePracticeTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Blunt: 3
+
+- type: hitscan
+  id: BulletChesterRifleIncendiaryTrace
+  parent: BulletTrace
+  ignite: true
+  damage:
+    types:
+      Blunt: 10
+      Heat: 20
+
+- type: hitscan
+  id: BulletChesterRifleUraniumTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Radiation: 15
+      Piercing: 15
+
+- type: hitscan
+  id: BulletChesterRifleDisablerTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Blunt: 5
+  staminaDamage: 35 # Balancear aqui

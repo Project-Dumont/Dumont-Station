@@ -2384,3 +2384,700 @@ Entries:
         sobrevivência.
   id: 289
   time: '2026-04-04T14:09:01.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: Restaura a nave da lavaland para a do goob!
+  id: 290
+  time: '2026-04-11T03:57:25.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Add
+      message: Os trajes agora são imunes a tiros de seringa.
+  id: 291
+  time: '2026-04-11T04:17:33.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Mudança no surgimento de revs e xenos (agora mais comuns).
+    - type: Add
+      message: Adicionado access breaker e DNA scrambler no pacote infiltração.
+  id: 292
+  time: '2026-04-11T22:36:53.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: O bastão telescopico agora stuna em 5 hits, e foi traduzido.
+  id: 293
+  time: '2026-04-11T23:00:46.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Agora a sci pode pesquisar blindagens de modsuit para engenharia,
+        segurança e médico, e quando pesquisados, podem ser fabricados em seus
+        respectivos fabricadores.
+    - type: Add
+      message: >-
+        Módulos de armazenamento pra modsuit! Agora elas não tem armazenamento
+        natural, mas vem com um módulo de armazenamento básico. Armazenamento
+        grande e armazenamento bluespace pode ser pesquisado na sci em Modular
+        Technologies e armazenamento bluespace, respectivamente.
+    - type: Add
+      message: >-
+        Novo item de uplink: Módulo de armazenamento Cybersun, que consegue
+        armazenar muito mais que até mochilas bluespace, mas precisa ser
+        inserido em uma modsuit. 20TC.
+    - type: Tweak
+      message: >-
+        Módulos de salto, magboots, GPS e broca pode ser comprados no
+        salvagevend.
+    - type: Fix
+      message: A modsuit pioneer agora pode usar módulos de torso e sapato.
+    - type: Tweak
+      message: >-
+        Itens que perder o componente de armazenamento agora esvaziam os itens
+        no chão invés de deletar.
+    - type: Fix
+      message: Agora a modsuit pioneer do salvage vend vem com bateria.
+  id: 294
+  time: '2026-04-12T11:32:11.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Magboots de sec pra counterar o vento espacial.
+  id: 295
+  time: '2026-04-12T14:50:37.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: A estação Falcon está de volta na rotação e atualizada!
+  id: 296
+  time: '2026-04-14T02:56:01.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: A estação Gamma está de volta na rotação e atualizada!
+  id: 297
+  time: '2026-04-14T02:57:11.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Nova estação de evento Hyperion!
+  id: 298
+  time: '2026-04-14T03:00:45.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: A capa, mantle e ensemble do HOS agora tem uma câmera.
+  id: 299
+  time: '2026-04-14T03:12:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona alergias na customização de personagem.
+  id: 300
+  time: '2026-04-18T00:40:12.0000000+00:00'
+- author: AlgumCorrupto
+  changes:
+    - type: Tweak
+      message: balanceamento das mutações
+  id: 301
+  time: '2026-04-18T00:56:35.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Add
+      message: Oni charge!
+  id: 302
+  time: '2026-04-18T16:21:32.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Tweak
+      message: Atualização regra de roleplay 13.
+  id: 303
+  time: '2026-04-18T23:12:29.0000000+00:00'
+- author: Wizard-Thorkell
+  changes:
+    - type: Remove
+      message: tunnel clown removido da rotação de ghostroles de meio de round!
+  id: 304
+  time: '2026-04-18T23:25:34.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: O manifesto revolucionário voltou com suas frases.
+  id: 305
+  time: '2026-04-18T23:27:54.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona o SegurApartamento para organizar a segurança em esquadrões.
+  id: 306
+  time: '2026-04-18T23:48:33.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora a pessoas slimes podem transforma-se em slime.
+  id: 307
+  time: '2026-04-18T23:50:44.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: 4 músicas de Heaven Pierce Her a jukebox.
+  id: 308
+  time: '2026-04-19T00:22:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Morph (Novo Antagonista de Midround)
+  id: 309
+  time: '2026-04-19T19:12:01.0000000+00:00'
+- author: TheRealHeartbeat
+  changes:
+    - type: Fix
+      message: >-
+        A capa do segurança chefe usa o sprite correto invés do sprite de
+        bodycam.
+  id: 310
+  time: '2026-04-19T20:55:34.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona propulsor grande e enorme para mapeamento.
+  id: 311
+  time: '2026-04-19T21:00:35.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona pistola holosinalizadora.
+  id: 312
+  time: '2026-04-19T23:16:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        O escudo de bala anti motim agora tem um sprite quando está sendo
+        segurado.
+  id: 313
+  time: '2026-05-01T02:04:28.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: SerpentCrest NÃO está mais na rotação de mapas.
+  id: 314
+  time: '2026-05-01T02:06:52.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona impressora de livros.
+  id: 315
+  time: '2026-05-01T02:18:23.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido bug que fazia os LoneOps não conseguirem declarar guerra.
+  id: 316
+  time: '2026-05-01T02:20:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Luvas "Berserker" da caixa x-00 agora são insuladas.
+  id: 317
+  time: '2026-05-01T03:13:08.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Revs agoram spawnam no meio da rodada.
+  id: 318
+  time: '2026-05-01T14:54:10.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Tweak
+      message: Geneticista QOL.
+    - type: Tweak
+      message: Os buffers dos computadores de geneticista foram separados.
+    - type: Tweak
+      message: >-
+        Agora é garantido que ao irradiar um bloco no computador de geneticista
+        o valor dele vai mudar.
+  id: 319
+  time: '2026-05-02T13:49:24.0000000+00:00'
+- author: Pepe
+  changes:
+    - type: Add
+      message: Port óculos medchem/medchemflash
+  id: 320
+  time: '2026-05-03T00:20:22.0000000+00:00'
+- author: Dreykor
+  changes:
+    - type: Tweak
+      message: >-
+        Rods agora não gibbam mais, e no lugar, causam 70 de dano bruto ao
+        acertar um mob.
+  id: 321
+  time: '2026-05-03T14:45:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Circuitos de Durand e Gygax agora podem ser comprados na logística por
+        um preço alto, mas ainda precisam que a sci pesquise eles para criar um.
+    - type: Add
+      message: >-
+        Escudos anti-motim laser e anti-balas agora podem ser feitos no
+        fabricador de segurança.
+    - type: Add
+      message: >-
+        Stinger grenades agora são parte das receitas desbloqueadas na pesquisa
+        anti-motim.
+    - type: Add
+      message: >-
+        Antelope, uma espingarda que utiliza tambores, pode ser pesquisada na
+        sci.
+    - type: Add
+      message: A Svallin agora é pesquisada junto com armas lasers.
+    - type: Tweak
+      message: .40 causa menos dano, mas as caixas armazenam 24 tiros.
+    - type: Tweak
+      message: >-
+        Cargas de granada modular agora são uma pesquisa nova da sec invés de
+        roundstart
+    - type: Tweak
+      message: >-
+        Escudo de energia custa 30TC, tem um cooldown de autorecarga, mas ele
+        recarrega mais rápido e tem mais bateria. Ele também é mais fraco contra
+        danos que não são lasers.
+    - type: Tweak
+      message: >-
+        O cartucho de autoinjetor bruto não tem mais ibuprofena e cura a mesma
+        quantidade que o autoinjetor de queimada.
+    - type: Tweak
+      message: PTL, diamantes, e SMES geram menos dinheiro.
+    - type: Tweak
+      message: >-
+        Hardsuits de combate da logística protegem mais, mas as hardsuits de sec
+        roundstart protegem menos.
+    - type: Tweak
+      message: Slugs causam mais dano e são levemente AP.
+    - type: Tweak
+      message: Hardsuits de combate protegem mais contra dano de stamina.
+    - type: Tweak
+      message: >-
+        O bastão telescopico não desarma mais, mas o dano de stamina dele foi
+        aumentado.
+    - type: Tweak
+      message: Fabricador de segurança fabrica cabos.
+    - type: Tweak
+      message: O sectéc agora vende 4 injetores de todos os tipos invés de 2.
+    - type: Tweak
+      message: >-
+        A árvore de pesquisa da sec e as armas pesquisáveis foram reorganizadas
+        e balanceadas, e visão térmica e noturna é parte dela agora.
+    - type: Tweak
+      message: >-
+        As armas X-00 são mais balanceadas entre si: A sniper é mais fraca, as
+        outras são mais fortes.
+    - type: Tweak
+      message: O coldre do detetive agora funciona como um cinto de segurança.
+    - type: Tweak
+      message: >-
+        A textiles crate agora custa 8 mil, tornando impossível gerar dinheiro
+        infinito com isso.
+    - type: Tweak
+      message: >-
+        Agora flashes não funcionam em quem estiver vestindo um rádio overhead e
+        um capacete de hardsuit.
+    - type: Tweak
+      message: A MA56 agora usa .30.
+    - type: Tweak
+      message: Buckshot .50 agora causa dano estrutural. FBI OPEN UP!
+    - type: Remove
+      message: Escudos anti-motim do sectéc.
+    - type: Fix
+      message: Beanbag não é mais AP.
+  id: 322
+  time: '2026-05-03T14:57:34.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Carga de estilhaço do fabricador de segurança funciona agora.
+  id: 323
+  time: '2026-05-03T14:58:54.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Corrigido LoneOps ganhar 300 TC ao declarar guerra.
+  id: 324
+  time: '2026-05-07T23:42:11.0000000+00:00'
+- author: Janie-Smith
+  changes:
+    - type: Add
+      message: Janie Plushie
+  id: 325
+  time: '2026-05-08T02:17:05.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Remove
+      message: Detetive não pode mais começar com uma MK58 dourada.
+    - type: Tweak
+      message: >-
+        Agora oficiais não podem spawnar com ambas as versões da MK58.
+        Verifiquem seu loadout!
+    - type: Fix
+      message: >-
+        O Clinico Brigadista agora pode selecionar um extra de trabalho de
+        segurança e a MK58 dourada.
+  id: 326
+  time: '2026-05-08T02:21:25.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        O computador de missão da logística agora permite qualquer um com acesso
+        de logística pular missões.
+  id: 327
+  time: '2026-05-08T02:24:29.0000000+00:00'
+- author: Dreammyrr
+  changes:
+    - type: Add
+      message: >-
+        Adicionada a música "Sons da Lagoa - Arthur Diniz" como recompensa do
+        patrocinador @brunn_0.
+  id: 328
+  time: '2026-05-08T02:39:14.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: O antagonista IA Malfuncional agora pode aparecer naturalmente.
+  id: 329
+  time: '2026-05-08T02:40:27.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: >-
+        Adicionas as mudanças do Goob de 13/03 até 07/05 (verifique a aba do
+        Goob)!
+  id: 330
+  time: '2026-05-08T02:41:38.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Luxury pen agora quase faz nada em pressão normal; A salic, oxand e dex+
+        dela foram removidos.
+    - type: Tweak
+      message: >-
+        Luxurium e Minersalvine agora funcionam apenas entre 25-51 KPA para
+        combinar com PKAs.
+  id: 331
+  time: '2026-05-13T00:28:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Caixas de circuito de durand e gygax são categorizadas corretamente.
+  id: 332
+  time: '2026-05-16T13:05:52.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Um novo kit Chester Mk. II, que utiliza munição de rifle .315 e
+        variantes, foi adicionado ao arsenal do BSO.
+    - type: Tweak
+      message: >-
+        Com exceção da munição de prática, a munição de .315 só pode ser
+        adquirida na loja de pontos de fidelidade do NTR.
+    - type: Remove
+      message: O kit Chester padrão deixa o arsenal do BSO.
+  id: 333
+  time: '2026-05-16T23:39:10.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Metashield reformulado (Leiam as regras do servidor)
+  id: 334
+  time: '2026-05-16T23:45:25.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Tweak
+      message: >-
+        Agora a habilidade de explodir máquinas e também a habilidade de fazer
+        elas viraram mobs agressivos funciona em computadores e máquinas de
+        venda.
+    - type: Fix
+      message: >-
+        Agora a IA Malfuncional não perde a habildade da fábrica de robôs quando
+        ela cancela a ação de colocar.
+  id: 335
+  time: '2026-05-17T14:49:03.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Resprite do projetor de holofan atmosférico.
+  id: 336
+  time: '2026-05-17T15:01:05.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Bastão de contrator apenas é comprável por nukies, contratores e por
+        meio de bundles indeterminados agora.
+  id: 337
+  time: '2026-05-17T15:14:25.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Fix
+      message: Sprites de modsuit dos feroxi agora estão funcionando!
+  id: 338
+  time: '2026-05-17T18:36:49.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: >-
+        Corrige bug que lone ops não conseguia declarar guerra depois de 12
+        minutos spawnado!
+  id: 339
+  time: '2026-05-17T19:09:10.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: Healium buffado, agora ele é uma opção versátil decente para a Med.
+  id: 340
+  time: '2026-05-29T23:47:23.0000000+00:00'
+- author: PiiCat
+  changes:
+    - type: Tweak
+      message: AMEs agora produzem o dobro de energia base.
+    - type: Tweak
+      message: Injeções da AME são mais poderosas.
+    - type: Tweak
+      message: Caixa de combustível da AME agora vem com 2 jarros ao invés de 3.
+    - type: Tweak
+      message: >-
+        O preço de compra do combustivel pela Logi aumentou para 25k e vem com 1
+        jarro a menos.
+  id: 341
+  time: '2026-05-30T22:26:02.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Remove
+      message: Glacier foi removido da rotação de mapas.
+  id: 342
+  time: '2026-05-31T01:59:25.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: >-
+        Agora granadas de borracha e payloads REALMENTE precisam ser
+        pesquisadas.
+  id: 343
+  time: '2026-05-31T02:01:31.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Magboots de sec agora são melhores como magboots e piores como coturnos.
+  id: 344
+  time: '2026-05-31T02:04:12.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Muitas traduções. Muitas, muitas traduções.
+  id: 345
+  time: '2026-05-31T03:06:28.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Reskin da Dreadnought
+    - type: Tweak
+      message: Metashield mais amigavel
+  id: 346
+  time: '2026-06-02T11:53:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterado o mapping da Sec
+    - type: Tweak
+      message: Sprites do borg dog
+    - type: Tweak
+      message: Alguns sprites novos do goob recoloridos
+  id: 347
+  time: '2026-06-02T12:00:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Algumas traduções foram consertadas.
+  id: 348
+  time: '2026-06-02T12:59:27.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Sec vermelha
+    - type: Tweak
+      message: Agora a Segurança é azul, mudança total no visual em respeito as cores
+    - type: Tweak
+      message: Alguns resprites no BSO
+    - type: Tweak
+      message: Alguns ícones de trabalho foram alterados.
+  id: 349
+  time: '2026-06-02T13:18:06.0000000+00:00'
+- author: Victor Job and Struater
+  changes:
+    - type: Tweak
+      message: Core azul do BSO alterada pra verde
+  id: 350
+  time: '2026-06-02T13:20:26.0000000+00:00'
+- author: VacaoComTil
+  changes:
+    - type: Add
+      message: 9 Beards styles
+  id: 351
+  time: '2026-06-05T13:00:14.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Nova pistola pode ser selecionada por oficiais no loadout: A phaser, a
+        pistola arma laser/atordoador.
+  id: 352
+  time: '2026-06-05T13:02:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona indutores.
+    - type: Add
+      message: Adiciona megacélulas.
+  id: 353
+  time: '2026-06-05T13:18:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Removida capacidade dos fones de ouvido e headsets de transmitirem no
+        canal comum. Mensagens ainda podem ser ouvidas por eles, mas precisam
+        ser enviadas de outra forma como interfone.
+  id: 354
+  time: '2026-06-05T15:51:20.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas corpo a corpo de mech podem fazer wideswing.
+  id: 355
+  time: '2026-06-05T15:57:26.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Tweak
+      message: Portados sprites do funky!
+  id: 356
+  time: '2026-06-05T15:58:42.0000000+00:00'
+- author: sTRUATER
+  changes:
+    - type: Fix
+      message: Corrigido alguns sprites da sec e bso estarem nas cores antigas
+  id: 357
+  time: '2026-06-05T16:05:11.0000000+00:00'
+- author: Lachryphage, CRISO
+  changes:
+    - type: Add
+      message: A estação Eclipse Starport foi adicionada à rotação de mapas.
+  id: 358
+  time: '2026-06-05T16:14:45.0000000+00:00'
+- author: Redmagician14
+  changes:
+    - type: Remove
+      message: >-
+        Remove campo "data" de vários documentos da impressora de documentos
+        (início do turno ainda é necessário).
+  id: 359
+  time: '2026-06-05T17:57:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Icon do Warden agora é um olho, big brother is watching
+  id: 360
+  time: '2026-06-05T18:08:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o áudio abafa quando passa por paredes.
+  id: 361
+  time: '2026-06-07T14:00:26.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Remove
+      message: Removido Gaby Station!
+    - type: Add
+      message: Adicionado Dumont Station!
+    - type: Tweak
+      message: >-
+        A moeda local mudou! Vá trocar esse Gaby Coins, ninguém usa mais
+        isso... 
+  id: 362
+  time: '2026-06-07T14:07:39.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona a ação de alternar HUDs para os fantasmas.
+    - type: Tweak
+      message: Agora os fantasmas podem interagir com objetos com interface.
+  id: 363
+  time: '2026-06-07T14:13:21.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Add
+      message: 'Novo gerador de energia: Reator Nuclear!'
+  id: 364
+  time: '2026-06-07T14:15:19.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Telefones, façam mais fake news
+    - type: Add
+      message: >-
+        Adicionado o Mercador de Telefones para o evento de distribuição de
+        trabalhos
+  id: 365
+  time: '2026-06-07T15:20:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Tablet de equipes de segurança pro armário do chefe de segurança.
+    - type: Add
+      message: Megafone de segurança pro armário do chefe de segurança.
+    - type: Remove
+      message: Tablet de equipes de segurança do armário do capitão.
+  id: 366
+  time: '2026-06-07T15:23:02.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Remove
+      message: Waddlers removidos da rotação.
+  id: 367
+  time: '2026-06-07T15:25:01.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Módulos de modsuit são de tamanho enorme agora.
+  id: 368
+  time: '2026-06-07T15:26:54.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Mudança para spawns de vários midrounds. Lone ops não vai mais spawnar
+        *todo* round.
+  id: 369
+  time: '2026-06-07T15:31:16.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Poster de recrutamento de ERT.
+    - type: Remove
+      message: Poster de recrutamento de DS.
+  id: 370
+  time: '2026-06-07T15:33:50.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Remove
+      message: Removida tooltip dos ícones do chat.
+  id: 371
+  time: '2026-06-07T15:59:37.0000000+00:00'

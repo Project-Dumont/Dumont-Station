@@ -135,6 +135,7 @@
   - Zookeeper
   - ServiceWorker
   - PartyMaker # event-restricted, Goobstation
+  - PhoneMerchant # Trauma
 
 - type: department
   id: CentralCommand

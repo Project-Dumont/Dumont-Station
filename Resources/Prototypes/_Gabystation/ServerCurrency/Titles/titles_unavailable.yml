@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: titleListing
   id: BetaTitle
   title: title-beta
@@ -52,4 +56,11 @@
   title: title-exclusive-host
   price: 9999
   color: "#ffca00"
+  available: false
+
+- type: titleListing
+  id: ExclusiveCazumStaffTitle
+  title: title-exclusive-cazumStaff
+  price: 9999
+  color: "#ffa500"
   available: false

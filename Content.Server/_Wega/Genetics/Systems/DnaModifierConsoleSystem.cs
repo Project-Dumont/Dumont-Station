@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.DeviceLinking.Systems;
@@ -960,17 +964,14 @@ namespace Content.Server.Genetics.System
             float changeStrength = Math.Clamp((intensity * duration) / 100f, 0f, 1f);
             changeStrength = (float)Math.Sqrt(changeStrength);
 
-            float threshold = 0.15f;
-            if (_random.NextFloat() <= threshold)
-                return baseValue.ToString("X1");
+            var maxStep = Math.Clamp((int)Math.Ceiling(15 * changeStrength), 1, 15);
+            var offset = _random.Next(1, maxStep + 1);
+            if (_random.Prob(0.5f))
+                offset *= -1;
 
-            float maxChange = 16 * changeStrength;
-            float direction = _random.NextFloat() > 0.5f ? 1 : -1;
-
-            int modifiedValue = (int)(baseValue + (direction * maxChange * _random.NextFloat())) % 16;
-
-            if (modifiedValue < 0) modifiedValue += 16;
-            else if (modifiedValue >= 16) modifiedValue -= 16;
+            int modifiedValue = (baseValue + offset) % 16;
+            if (modifiedValue < 0)
+                modifiedValue += 16;
 
             return modifiedValue.ToString("X1");
         }

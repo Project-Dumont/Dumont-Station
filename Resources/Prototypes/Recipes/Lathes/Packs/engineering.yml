@@ -22,6 +22,7 @@
   - NetworkConfigurator
   - Signaller
   - SprayPainter
+  - GeigerCounter #Goob station
   - SprayPainterAmmo
   - FlashlightLantern
   - HandheldGPSBasic
@@ -113,3 +114,5 @@
   - TeslaCoilCircuitboard
   - RadiationCollectorCircuitboard
   - BluespaceGasVendorMachineCircuitBoard # Gabystation
+  - NuclearFabricatorMachineCircuitboard
+  - NuclearCentrifugeMachineCircuitboard

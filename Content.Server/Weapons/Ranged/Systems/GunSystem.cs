@@ -129,7 +129,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.Projectiles; // Goobstation
-using Content.Server.Atmos.Components;
+using Content.Shared.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Cargo.Systems;
 using Content.Server.Power.EntitySystems;
@@ -608,7 +608,7 @@ public sealed partial class GunSystem : SharedGunSystem
             {
                 var hitEntity = lastHit.Value;
                 if (hitscan.StaminaDamage > 0f)
-                    _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user);
+                    _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user, applyResistances: true);
 
                 var dmg = hitscan.Damage;
 

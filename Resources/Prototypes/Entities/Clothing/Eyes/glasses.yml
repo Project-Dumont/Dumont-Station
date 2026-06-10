@@ -201,6 +201,7 @@
   - type: Tag
     tags:
     - PetWearable
+    - MesonGoggles
     - WhitelistChameleon
 
 - type: entity
@@ -305,9 +306,9 @@
   description: Upgraded sunglasses that provide flash immunity and a security HUD.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+    sprite: _Gabystation/Clothing/Eyes/Glasses/secglasses.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+    sprite: _Gabystation/Clothing/Eyes/Glasses/secglasses.rsi # Gaby
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
@@ -448,6 +449,7 @@
       tags:
       - PetWearable
       - WhitelistChameleon
+      - HudChemistry #omu edit
 
 - type: entity
   parent: [ClothingEyesBase, BaseMajorContraband]

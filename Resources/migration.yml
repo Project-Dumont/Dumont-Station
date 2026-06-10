@@ -180,9 +180,9 @@ BenchParkRight: null
 BenchPewLeft: null
 BenchPewMiddle: null
 BenchPewRight: null
-BenchSofaCorpLeft: null
-BenchSofaCorpMiddle: null
-BenchSofaCorpRight: null
+#BenchSofaCorpLeft: null # Goob edit
+#BenchSofaCorpMiddle: null # Goob edit
+#BenchSofaCorpRight: null # Goob edit
 BenchSofaLeft: null
 BenchSofaRight: null
 BenchSteelLeft: null
@@ -1073,3 +1073,6 @@ ChemDispenser: EnergyChemDispenser
 
 # 2026-03-07 Gabystation Change Mapped Bloodpack to CMBloodPackFull by default
 Bloodpack: CMBloodPackFull
+
+# 2026-04-06
+RotaryPhoneStand: RotaryPhoneStandNoRot

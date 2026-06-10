@@ -78,7 +78,7 @@
     coverage: EYES
   - type: ChameleonClothing #Goobstation start
     slot: [eyes]
-    default: ClothingEyesThermalVisionGogglesSyndie  
+    default: ClothingEyesThermalVisionGogglesSyndie
   - type: UserInterface
     interfaces:
       enum.ChameleonUiKey.Key:

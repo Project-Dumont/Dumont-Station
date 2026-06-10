@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # /tg/ gases
 
 - type: reagent
@@ -233,9 +237,9 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -2
-            Toxin: -5
-            Brute: -2
+            Burn: -8
+            Toxin: -10
+            Brute: -6
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -244,9 +248,9 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -20
+            Burn: -40
             Toxin: -50
-            Brute: -20
+            Brute: -30
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -288,9 +292,10 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -2
-            Toxin: -5
-            Brute: -2
+            Burn: -12
+            Toxin: -15
+            Brute: -9
+            Airloss: -6
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -299,9 +304,10 @@
         ignoreResistances: true
         damage:
           groups:
-            Burn: -20
+            Burn: -40
             Toxin: -50
-            Brute: -20
+            Brute: -30
+            Airloss: -20
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -332,6 +338,25 @@
         - !type:ReagentThreshold
           reagent: Healium
           min: 4
+      # Convert Healium into CO2 and N2O - Dumont
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        ratios:
+          CarbonDioxide: 0.5
+          NitrousOxide: 0.5
+          Healium: -1.0
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: true
+        ratios:
+          CarbonDioxide: 0.25
+          NitrousOxide: 0.25
+          Healium: -0.5
 
 - type: reagent
   id: Nitrium

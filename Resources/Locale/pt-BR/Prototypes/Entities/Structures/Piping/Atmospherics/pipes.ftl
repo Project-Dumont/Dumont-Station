@@ -25,6 +25,6 @@ ent-GasPipeBroken = { ent-GasPipeBase }
     .desc = Leva gás.
     .suffix = 1 lado
 
-ent-GasPipeManifold = { ent-GasPipeBase }
+ent-GasPipeManifold = Cano convergente
     .desc = Leva gás.
     .suffix = manifold

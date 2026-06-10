@@ -1,27 +1,27 @@
-ent-SaxophoneInstrument = saxophone
-    .desc = An instrument. You could probably grind this into raw jazz.
+ent-SaxophoneInstrument = saxofone
+    .desc = Você provavelmente poderia transformar isso em jazz puro.
 
 ent-AccordionInstrument = accordion
-    .desc = An instrument. You could probably grind this into raw jazz.
+    .desc = Você provavelmente poderia transformar isso em jazz puro.
 
 ent-HarmonicaInstrument = harmonica
-    .desc = An instrument. You could probably grind this into raw jazz.
+    .desc = Você provavelmente poderia transformar isso em jazz puro.
 
-ent-ClarinetInstrument = clarinet
-    .desc = Skweedward tintacklays.
+ent-ClarinetInstrument = clarinete
+    .desc = É tipo uma flauta, mas mais complicado.
 
-ent-FluteInstrument = flute
-    .desc = Reaching new heights of being horrifyingly shrill.
+ent-FluteInstrument = flauta
+    .desc = Horrorosamente estridente.
 
-ent-RecorderInstrument = recorder
-    .desc = Comes in various colors of fashionable plastic!
+ent-RecorderInstrument = flauta doce
+    .desc = Não é doce, não tente comer.
 
-ent-PanFluteInstrument = pan flute
-    .desc = Perfect for luring ancient mythical beings to dance with you.
+ent-PanFluteInstrument = flauta de pã
+    .desc = Perfeito para atrair criaturas de floresta para você.
 
 ent-OcarinaInstrument = ocarina
-    .desc = Good for playing lullabies.
+    .desc = Perfeito para cantar canções de ninar.
 
 ent-BagpipeInstrument = bagpipe
-    .desc = Pairs nicely with a kilt.
+    .desc = Combina bem com um kilt.
 

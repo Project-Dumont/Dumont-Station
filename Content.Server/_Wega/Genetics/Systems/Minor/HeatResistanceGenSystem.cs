@@ -1,5 +1,5 @@
-using Content.Server.Atmos.Components;
 using Content.Server.Temperature.Components;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Genetics;
 
 namespace Content.Server.Genetics.System;

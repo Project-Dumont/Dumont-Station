@@ -50,7 +50,7 @@
   - type: StorageFill
     contents:
       - id: AmeJar
-        amount: 3
+        amount: 2 # Dumont edit - Powerful AME
 
 - type: entity
   id: CrateEngineeringAMEControl

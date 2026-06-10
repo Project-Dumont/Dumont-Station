@@ -270,11 +270,11 @@
   suffix: Empty
   components:
   - type: Item
-    sprite: Objects/Tanks/Jetpacks/security.rsi
+    sprite: _Gabystation/Objects/Tanks/Jetpacks/security.rsi # Gaby
   - type: Sprite
-    sprite: Objects/Tanks/Jetpacks/security.rsi
+    sprite: _Gabystation/Objects/Tanks/Jetpacks/security.rsi # Gaby
   - type: Clothing
-    sprite: Objects/Tanks/Jetpacks/security.rsi
+    sprite: _Gabystation/Objects/Tanks/Jetpacks/security.rsi # Gaby
     slots:
       - Back
 

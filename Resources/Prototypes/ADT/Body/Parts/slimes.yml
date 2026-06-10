@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ADTLegsGeras
+  name: geras legs
+  parent: PartAnimalBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: l_leg
+    - state: r_leg
+  - type: Icon
+    state: l_leg
+  - type: BodyPart
+    partType: Leg
+    slotId: legs
+  - type: MovementBodyPart
+    walkSpeed : 3
+    sprintSpeed : 5
+
+- type: entity
+  id: ADTFeetGeras
+  name: geras feet
+  parent: PartAnimalBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: r_foot
+    - state: l_foot
+  - type: Icon
+    state: l_foot
+  - type: BodyPart
+    partType: Foot
+    slotId: feet

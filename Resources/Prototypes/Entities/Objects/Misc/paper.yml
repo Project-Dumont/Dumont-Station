@@ -300,6 +300,7 @@
   - type: Construction
     graph: SpesosCounterfeit
     node: start
+  - type: StationAiWhitelist
 
 - type: entity
   name: paper scrap
@@ -679,3 +680,4 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: StationAiWhitelist

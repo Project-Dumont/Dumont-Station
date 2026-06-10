@@ -1,8 +1,11 @@
 research-technology-selective-fire-powerguns = Armas de fogo seletivo
 research-technology-compact-pod = Módulo Compacto
+research-technology-revolving-magazines = Carregadores Giratórios
+research-technology-grenade-payloads = Cargas de Granada
 research-technology-basic-modules = Módulos de MODsuit básicos
 research-technology-hud-modules = Módulos de HUD
 research-technology-mining-modules = Módulos de mineração
 research-technology-medical-modules = Módulos médicos
 research-technology-advanced-modules = Módulos avançados
 research-technology-Service-modules = Módulos de serviço
+research-technology-modsuit-plating = Blindagens de MODsuit

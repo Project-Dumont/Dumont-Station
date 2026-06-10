@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseComputerAiAccess
   id: DnaModifierConsole
@@ -5,6 +9,7 @@
   description: "This interface is used to change the structure of DNA."
   components:
   - type: DnaClient
+  - type: DnaServer
   - type: DnaModifierConsole
   - type: DeviceList
   - type: DeviceNetwork

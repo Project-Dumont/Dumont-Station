@@ -334,6 +334,8 @@
     - WhitelistChameleon
     - GasMask
     - Mask
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -964,12 +966,12 @@
 - type: entity
   parent: ClothingMaskNeckGaiter
   id: ClothingMaskNeckGaiterRed
-  name: red neck gaiter
+  name: blue neck gaiter
   components:
   - type: Sprite
-    sprite: Clothing/Mask/neckgaiterred.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/neckgaiterred.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Mask/neckgaiterred.rsi
+    sprite: _Gabystation/Clothing/Head/Hats/neckgaiterred.rsi # Gaby
 
 - type: entity
   parent: ClothingMaskClownBase

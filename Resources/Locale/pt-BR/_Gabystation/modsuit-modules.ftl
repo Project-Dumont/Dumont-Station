@@ -19,3 +19,8 @@ modsuit-module-welding-name = { ent-ModsuitModuleWelding }
 modsuit-module-antigrav-name = { ent-ModsuitModuleAntiGrav }
 modsuit-module-gps-name = { ent-ModsuitModuleGPS }
 modsuit-module-injector-name = { ent-ModsuitModuleInjector }
+
+# control unit
+modsuit-module-basic-storage-name = { ent-ModsuitModuleBasicStorage }
+modsuit-module-large-storage-name = { ent-ModsuitModuleLargeStorage }
+modsuit-module-bluespace-storage-name = { ent-ModsuitModuleBluespaceStorage }

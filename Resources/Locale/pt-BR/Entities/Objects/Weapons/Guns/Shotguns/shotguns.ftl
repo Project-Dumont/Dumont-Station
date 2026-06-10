@@ -16,3 +16,11 @@ ent-WeaponShotgunKammerer = Kammerer
 ent-WeaponShotgunSawn = espingarda serrada
      .desc = Legal! Usa cartuchos de espingarda .50.
 
+ent-WeaponShotgunAntelope = antelope
+     .desc = Uma espingarda semi-automática alimentada por tambores, feita para manter mal-feitores distantes utilizando fogo constante. Utiliza tambores de cartucho .50.
+
+ent-WeaponShotgunImprovised = espingarda improvisada
+     .desc = Uma espingarda merda artesanal que utiliza cartuchos .50. Apenas consegue segurar um tiro.
+
+ent-WeaponShotgunImprovisedLoaded = espingarda improvisada
+     .desc = Uma espingarda horrível artesanal que utiliza cartuchos .50. Apenas consegue segurar um tiro.

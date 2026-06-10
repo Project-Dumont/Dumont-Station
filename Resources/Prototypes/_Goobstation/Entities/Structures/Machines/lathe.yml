@@ -57,13 +57,16 @@
     - CablesStatic
     - MaterialsStatic
     - LightsStatic
+    - LatheMiscStatic
     - PowerCellsStatic
     - ElectronicsStatic
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
     - EngineerBagStatic
+    - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
+    - MegaCells # Orion
     - ConstructionBagOfHolding
     - AdvancedTools
     - AtmosTools
@@ -123,11 +126,15 @@
     - SharedBoardsStatic
     - CargoBoardsStatic
     - CablesStatic
+    - PartsStatic
+    - LatheMiscStatic
     - PowerCellsStatic
     - MiningToolsStatic
     - MiscSignallersStatic
     - CargoStatic
+    - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
+    - MegaCells # Orion
     - AdvancedTools
     - Mining
     - PowerCells
@@ -189,8 +196,10 @@
     - CircuitFloorsStatic
     - MedicalBoardsStatic
     - MedicalBoardsStaticGoob
+    - ChemistryStatic
     - ToolsStatic
     - PartsStatic
+    - LatheMiscStatic
     - AtmosStatic
     - CablesStatic
     - MaterialsStatic
@@ -200,10 +209,11 @@
     - ElectronicsStatic
     - SurgeryStatic
     - ScienceBoardsStatic
-    - ScienceExplosives # Goobstation - Roundstart Grenade Tech
     - GrenadeTriggersStatic # Goobstation - Roundstart Grenade Tech
     - MiscSignallersStatic
     dynamicPacks:
+    - MegaCells # Orion
+    - ScienceExplosives
     - AdvancedTools
     - ScienceEquipment
     - ScienceClothing
@@ -280,6 +290,7 @@
     - ServiceStatic
     - PowerCellsStatic
     - LatheMiscStatic
+    - PartsStatic
     - ChemistryStatic
     - TapeRecorderStatic
     - CondimentStatic

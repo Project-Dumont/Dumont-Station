@@ -11,6 +11,7 @@ using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Map;
 using Content.Server.Silicons.StationAi;
 using Content.Shared._Gabystation.MalfAi.Components;
+using Content.Shared.VendingMachines;
 
 namespace Content.Server._Funkystation.MalfAI;
 
@@ -61,7 +62,8 @@ public sealed class MalfAiOverloadSystem : EntitySystem
         foreach (var entity in entitiesAtLocation)
         {
             // Match Override's targeting: operate only on actual machines
-            if (HasComp<MachineComponent>(entity))
+            // Dumont Station: Agora também afeta computadores e máquinas de venda
+            if (HasComp<MachineComponent>(entity) || HasComp<ComputerComponent>(entity) || HasComp<VendingMachineComponent>(entity))
             {
                 targetMachine = entity;
                 break;

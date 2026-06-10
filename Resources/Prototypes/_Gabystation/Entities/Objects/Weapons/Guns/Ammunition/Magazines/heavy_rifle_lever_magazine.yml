@@ -1,0 +1,56 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseMagazineChesterLeverRifle
+  name: "magazine (0.315 rifle)"
+  parent: [ BaseItem, BaseSecurityContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineChesterLeverRifle
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeChesterRifle
+    proto: CartridgeChesterRifle
+    capacity: 8
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineChesterLeverRifle
+  name: "lever rifle magazine (0.315 rifle)"
+  parent: BaseMagazineChesterLeverRifle
+  components:
+  - type: Tag
+    tags:
+      - MagazineChesterLeverRifle
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/lever_rifle_mags.rsi
+
+- type: entity
+  id: MagazineChesterLeverRifleEmpty
+  parent: MagazineChesterLeverRifle
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null

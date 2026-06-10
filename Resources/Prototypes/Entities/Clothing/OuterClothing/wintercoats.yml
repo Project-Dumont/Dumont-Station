@@ -575,9 +575,9 @@
   name: security winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatsec.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/coatsec.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatsec.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/coatsec.rsi # Gaby
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHatHoodWinterSec
@@ -610,9 +610,9 @@
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi # Gaby
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHatHoodWinterWarden
@@ -640,9 +640,9 @@
   description: A sturdy coat, a warm coat, but not an armored coat.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatwarden.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/coatwarden.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatwarden.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/WinterCoats/coatwarden.rsi # Gaby
   - type: ToggleableClothing # Goobstation - Modsuits change
     clothingPrototypes:
       head: ClothingHeadHatHoodWinterWarden

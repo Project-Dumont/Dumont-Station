@@ -13,6 +13,8 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Objectives;
+using Content.Shared.Roles;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.CharacterInfo;
@@ -36,13 +38,15 @@ public sealed class CharacterInfoEvent : EntityEventArgs
     public readonly Dictionary<string, List<ObjectiveInfo>> Objectives;
     public readonly string? Briefing;
     public readonly string? NanoBankBriefing;
+    public readonly ProtoId<JobPrototype>? Job; // Dumont Station - passa o id do job
 
-    public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? nanoBankBriefing)
+    public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? nanoBankBriefing, ProtoId<JobPrototype>? job)
     {
         NetEntity = netEntity;
         JobTitle = jobTitle;
         Objectives = objectives;
         Briefing = briefing;
         NanoBankBriefing = nanoBankBriefing; // Gabystation change - bank
+        Job = job; // Dumont station - passa o id do job
     }
 }

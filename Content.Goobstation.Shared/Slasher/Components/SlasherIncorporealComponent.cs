@@ -2,9 +2,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Alert;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Content.Shared.Actions.Components;
+using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.Slasher.Components;
 
@@ -62,4 +64,30 @@ public sealed partial class SlasherIncorporealComponent : Component
     /// </summary>
     [ViewVariables]
     public TimeSpan? IncorporealStartTime;
+
+    /// <summary>
+    /// Effect spawned when entering incorporeal state.
+    /// </summary>
+    [DataField]
+    public EntProtoId JauntInEffect = "EffectSlasherJauntIn";
+
+    /// <summary>
+    /// Effect spawned when exiting incorporeal state.
+    /// </summary>
+    [DataField]
+    public EntProtoId JauntOutEffect = "EffectSlasherJauntOut";
+
+    /// <summary>
+    /// Alert shown to indicate if the slasher is seen or unseen by observers.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype> SeenAlert = "SlasherSeen";
+
+    [DataField]
+    public SoundSpecifier JauntAppear =
+        new SoundPathSpecifier(new ResPath("/Audio/_Goobstation/Effects/Slasher/SlasherJauntAppear.ogg"));
+
+    [DataField]
+    public SoundSpecifier JauntDisappear =
+        new SoundPathSpecifier(new ResPath("/Audio/_Goobstation/Effects/Slasher/SlasherJauntDisappear.ogg"));
 }

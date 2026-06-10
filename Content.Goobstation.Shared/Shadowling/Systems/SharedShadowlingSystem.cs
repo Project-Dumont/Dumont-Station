@@ -16,7 +16,6 @@ using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.Heretic;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
@@ -220,16 +219,15 @@ public abstract class SharedShadowlingSystem : EntitySystem
 
     public bool CanGlare(EntityUid target)
     {
-        var convEv = new BeforeConversionEvent();
-        RaiseLocalEvent(target, ref convEv);
+        var convEv = new BeforeConversionEvent(target);
+        RaiseLocalEvent(target, ref convEv, true);
 
         if (convEv.Blocked) // make all the shit below to use the event in the future tm
             return false;
 
         return HasComp<MobStateComponent>(target)
                && !HasComp<ShadowlingComponent>(target)
-               && !HasComp<ThrallComponent>(target)
-               && !HasComp<HereticComponent>(target);
+               && !HasComp<ThrallComponent>(target);
     }
 
     public void DoEnthrall(EntityUid uid, EntProtoId components, SimpleDoAfterEvent args)
