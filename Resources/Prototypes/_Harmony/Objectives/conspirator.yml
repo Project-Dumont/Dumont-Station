@@ -14,8 +14,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorUnionObjective
-  name: Declare a part of the station an independent nation
-  description: Take over a section or department of the station and declare independence from Nanotrasen.
+  name: Forcefully seize control of a department
+  description: Assume direct control over a department and declare independence from Nanotrasen.
   components:
   - type: Objective
     icon:
@@ -36,8 +36,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorTechnologyObjective
-  name: Destroy all station technology
-  description: Show the crew the merits of a simpler life. Forcefully.
+  name: Seize all station technology
+  description: Show the crew the merits of a simpler life. Because only you deserve the wonders of technology.
   components:
   - type: Objective
     icon:
