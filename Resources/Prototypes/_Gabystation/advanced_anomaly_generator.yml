@@ -6,19 +6,19 @@
   id: AdvancedAnomalyPyroclastic
   name: advanced-anomaly-generator-entry-pyroclastic
   anomalyPrototype: AnomalyPyroclastic
-  researchCost: 10000
+  researchCost: 15000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyGravity
   name: advanced-anomaly-generator-entry-gravity
   anomalyPrototype: AnomalyGravity
-  researchCost: 12000
+  researchCost: 14000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyElectricity
   name: advanced-anomaly-generator-entry-electricity
   anomalyPrototype: AnomalyElectricity
-  researchCost: 10000
+  researchCost: 17000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyIce
@@ -30,37 +30,37 @@
   id: AdvancedAnomalyFlora
   name: advanced-anomaly-generator-entry-flora
   anomalyPrototype: AnomalyFlora
-  researchCost: 12000
+  researchCost: 15000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyBluespace
   name: advanced-anomaly-generator-entry-bluespace
   anomalyPrototype: AnomalyBluespace
-  researchCost: 8000
+  researchCost: 12000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyTech
   name: advanced-anomaly-generator-entry-tech
   anomalyPrototype: AnomalyTech
-  researchCost: 10000
+  researchCost: 19000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyRock
   name: advanced-anomaly-generator-entry-rock
   anomalyPrototype: AnomalyRockBananium
-  researchCost: 8000
+  researchCost: 12000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalySanta
   name: advanced-anomaly-generator-entry-santa
   anomalyPrototype: AnomalySanta
-  researchCost: 150000
+  researchCost: 200000
 
 - type: advancedAnomalyGeneration
   id: AdvancedAnomalyShadow
   name: advanced-anomaly-generator-entry-shadow
   anomalyPrototype: AnomalyShadow
-  researchCost: 15000
+  researchCost: 20000
 
 - type: entity
   id: MachineAdvancedAnomalyGenerator

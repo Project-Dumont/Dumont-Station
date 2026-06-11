@@ -5,10 +5,11 @@
 using Content.Shared.Materials;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Anomaly.Components;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class AdvancedAnomalyGeneratorComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]
@@ -34,4 +35,11 @@ public sealed partial class AdvancedAnomalyGeneratorComponent : Component
 
     [DataField]
     public string AnnouncementChannel = "Science";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan CooldownLength = TimeSpan.FromMinutes(20);
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
+    public TimeSpan NextSpawnTime = TimeSpan.Zero;
 }

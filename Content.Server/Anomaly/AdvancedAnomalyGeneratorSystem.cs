@@ -111,6 +111,7 @@ public sealed class AdvancedAnomalyGeneratorSystem : EntitySystem
 
         _research.ModifyServerPoints(researchServer, -entry.ResearchCost, server);
         var anomaly = Spawn(entry.AnomalyPrototype, coords);
+        component.NextSpawnTime = _timing.CurTime + component.CooldownLength;
         _audio.PlayPvs(component.GeneratingFinishedSound, uid);
 
         AnnounceGeneration(uid, component, anomaly, Loc.GetString(entry.Name), generating.User);
@@ -161,6 +162,15 @@ public sealed class AdvancedAnomalyGeneratorSystem : EntitySystem
         if (!this.IsPowered(uid, EntityManager))
         {
             message = Loc.GetString("advanced-anomaly-generator-error-unpowered");
+            Fail(uid, component, user, message);
+            return;
+        }
+
+        if (_timing.CurTime < component.NextSpawnTime)
+        {
+            var remaining = component.NextSpawnTime - _timing.CurTime;
+            message = Loc.GetString("advanced-anomaly-generator-error-cooldown",
+                ("time", $"{(int) remaining.TotalMinutes:D2}:{remaining.Seconds:D2}"));
             Fail(uid, component, user, message);
             return;
         }

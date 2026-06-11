@@ -139,3 +139,4 @@ advanced-anomaly-generator-error-blocked-location = O tile escolhido está bloqu
 advanced-anomaly-generator-success = { $anomaly } gerada no tile { $x }, { $y } da estação.
 advanced-anomaly-generator-announce = { $anomaly } gerada por { $user } perto de { $location }.
 advanced-anomaly-generator-announce-unknown-user = um operador desconhecido
+advanced-anomaly-generator-error-cooldown = O gerador está recarregando. Tempo restante: { $time }.
