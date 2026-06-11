@@ -196,7 +196,6 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 
             // goobstation - traitor flavor
             // TODO: the entirety of roundend methods are shitcode
-            // if we were to add changeling/heretic/bloodbrother/antag flavor
             // (something like "Timmy Turner was the Ashbringer" or "Grey Maria was from Gami Hive")
             // we'd need to make a type check on every mind role or raise a separate event for each game rule/role
             // and i can't be assed to do it!
