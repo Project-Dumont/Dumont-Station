@@ -321,7 +321,7 @@
   - type: UserInterface
     interfaces:
         enum.AnomalyGeneratorUiKey.Key:
-          type: AnomalyGeneratorBoundUserInterface
+          type: Content.Client.Anomaly.Ui.AnomalyGeneratorBoundUserInterface
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: Appearance

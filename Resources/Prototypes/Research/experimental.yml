@@ -245,3 +245,19 @@
   technologyPrerequisites:
   - GravityManipulation
   # Goobstation R&D Console rework end
+
+- type: technology
+  id: AdvancedAnomalyGeneration
+  name: research-technology-advanced-anomaly-generation
+  icon:
+    sprite: _Gabystation/Structures/Machines/Anomaly/advanced_anomaly_generator.rsi
+    state: base
+  discipline: Experimental
+  tier: 3
+  cost: 30000
+  recipeUnlocks:
+  - AdvancedAnomalyGeneratorCircuitboard
+  technologyPrerequisites:
+  - AdvancedAnomalyResearch
+  - XenoBiology
+  position: -6,0

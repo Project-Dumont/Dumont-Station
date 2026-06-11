@@ -1,0 +1,79 @@
+<!--
+SPDX-FileCopyrightText: 2026 Dumont Station Contributors
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:ui="clr-namespace:Content.Client.Anomaly.Ui"
+                      Title="{Loc 'advanced-anomaly-generator-ui-title'}"
+                      MinSize="980 620"
+                      Resizable="True">
+    <BoxContainer Orientation="Horizontal" Margin="8" SeparationOverride="8">
+
+        <!-- LEFT: Station map (expands to fill available width) -->
+        <PanelContainer StyleClasses="Inset" MinWidth="420" HorizontalExpand="True" VerticalExpand="True">
+            <ui:AdvancedAnomalyGeneratorNavMapControl Name="StationMap"
+                                                      HorizontalExpand="True"
+                                                      VerticalExpand="True" />
+        </PanelContainer>
+
+        <!-- RIGHT: Control panel (fixed minimum width, vertical stack) -->
+        <BoxContainer Orientation="Vertical" MinWidth="310" SeparationOverride="5">
+
+            <!-- Section: Anomaly selection header -->
+            <Label Text="{Loc 'advanced-anomaly-generator-ui-anomaly'}"
+                   StyleClasses="LabelKeyText" />
+
+            <!-- Scrollable anomaly card list (expands to fill remaining height) -->
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                <BoxContainer Name="AnomalyCardContainer"
+                              Orientation="Vertical"
+                              SeparationOverride="4"
+                              HorizontalExpand="True" />
+            </ScrollContainer>
+
+            <!-- Section: Available resources -->
+            <PanelContainer StyleClasses="Inset">
+                <BoxContainer Orientation="Vertical" Margin="8 5" SeparationOverride="2">
+                    <Label Text="{Loc 'advanced-anomaly-generator-ui-resources'}"
+                           StyleClasses="LabelKeyText" />
+                    <RichTextLabel Name="ResourceLabel" />
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- Section: Station tile selector -->
+            <PanelContainer StyleClasses="Inset">
+                <BoxContainer Orientation="Vertical" Margin="8 5" SeparationOverride="3">
+                    <Label Text="{Loc 'advanced-anomaly-generator-ui-map'}"
+                           StyleClasses="LabelKeyText" />
+                    <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+                        <RichTextLabel Name="SelectedTileLabel"
+                                       HorizontalExpand="True"
+                                       VerticalAlignment="Center" />
+                        <Button Name="UseMachineTileButton"
+                                Text="{Loc 'advanced-anomaly-generator-ui-use-machine-tile'}" />
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- Section: Activity log -->
+            <PanelContainer StyleClasses="Inset">
+                <BoxContainer Orientation="Vertical" Margin="8 5" SeparationOverride="2">
+                    <Label Text="{Loc 'advanced-anomaly-generator-ui-log'}"
+                           StyleClasses="LabelKeyText" />
+                    <RichTextLabel Name="StatusLabel" MinSize="0 20" />
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- Generate button -->
+            <Button Name="GenerateButton"
+                    Text="{Loc 'advanced-anomaly-generator-ui-generate'}"
+                    HorizontalExpand="True"
+                    MinSize="0 36" />
+
+        </BoxContainer>
+
+    </BoxContainer>
+</controls:FancyWindow>
