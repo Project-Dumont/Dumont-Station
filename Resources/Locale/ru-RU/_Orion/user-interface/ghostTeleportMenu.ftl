@@ -1,4 +1,4 @@
-﻿﻿global-antagonist-wizard-name = Маг
+﻿global-antagonist-wizard-name = Маг
 global-antagonist-wizard-description = Старый сумашедший из Федерации Магов, обученный смертельным заклинаниям.
 
 global-antagonist-nukeops-name = Ядерный оперативник

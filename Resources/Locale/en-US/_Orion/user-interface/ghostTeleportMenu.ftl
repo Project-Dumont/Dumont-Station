@@ -1,4 +1,4 @@
-﻿﻿global-antagonist-wizard-name = Wizard
+﻿global-antagonist-wizard-name = Wizard
 global-antagonist-wizard-description = Old madman from the Federation of Magicians, trained in deadly spells.
 
 global-antagonist-nukeops-name = Nuclear operative
