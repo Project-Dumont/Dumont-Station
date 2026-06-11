@@ -4,7 +4,8 @@ comms-console-menu-announcement-placeholder = Digite o texto do aviso...
 comms-console-menu-announcement-button = Anunciar
 comms-console-menu-broadcast-button = Transmitir nos monitores
 comms-console-menu-call-shuttle = Chamar nave de emergência
-comms-console-menu-recall-shuttle = Chamar nave de emergência de volta
+comms-console-menu-recall-shuttle = Revocar ({$time})
+comms-console-menu-recall-disabled = Impossivel revocar agora
 comms-console-menu-emergency-maint = Alternar acessos de manutenção
 comms-console-menu-nuclear-code = Requisitar codigos de ativação nuclear
 comms-console-menu-martial = Requisitar lei marcial
@@ -18,6 +19,7 @@ comms-console-announcement-content-maint = O acesso das portas de manutenção f
 comms-console-menu-label-announcements = Anuncios:
 comms-console-menu-label-alerts = Nivel de alerta:
 comms-console-menu-label-others = Outros:
+comms-console-menu-emergency-shuttle-button-tooltip = Chama ou revoca a nave de emergencia. Você só pode chamar-la de volta quando há tempo suficiente sobrando.
 
 # Dialog
 comms-console-menu-dialog-shuttle-tittle = Chamar Nave de Emergencia
@@ -46,8 +48,10 @@ comms-console-menu-footer-left = root@nanoOs
 comms-console-menu-footer-right = v1.5
 
 # alerts
-comms-console-menu-green-alert = Verde
-comms-console-menu-blue-alert = Azul
-comms-console-menu-yellow-alert = Amarelo
-comms-console-menu-red-alert = Vermelho
-comms-console-menu-violet-alert = Violeta
+comms-console-menu-disabled-alert = Impossivel mudar o alerta agora
+comms-console-menu-green-alert = Declarar Alerta Verde
+comms-console-menu-blue-alert = Declarar Alerta Azul
+comms-console-menu-yellow-alert = Declarar Alerta Amarelo
+comms-console-menu-red-alert = Declarar Alerta Vermelho
+comms-console-menu-violet-alert = Declarar Alerta Violeta
+comms-console-menu-cyan-alert = Declarar Alerta Ciano

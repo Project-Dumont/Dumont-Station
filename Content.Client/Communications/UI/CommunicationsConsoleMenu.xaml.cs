@@ -104,6 +104,12 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Client.Stylesheets;
+using Robust.Client.UserInterface.Controls;
+using Robust.Client.Graphics;
+using System.Numerics;
+using System.ComponentModel;
+using System.Reflection.Metadata;
+using System.Security.Principal;
 
 namespace Content.Client.Communications.UI
 {
@@ -114,13 +120,22 @@ namespace Content.Client.Communications.UI
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
+        [Dependency] private readonly ILogManager _logMan = default!;
+
+        private ISawmill _sawMill;
         public bool CanAnnounce;
         public bool CanBroadcast;
         public bool CanCall;
         public bool AlertLevelSelectable;
         public bool CountdownStarted;
-        public string CurrentLevel = string.Empty;
+        public bool Blinking = false;
+        public bool LoadedButtons = false;
+        public bool isSyndie = false;
+
+        public string CurrentStationAlertLevel = string.Empty;
         public TimeSpan? CountdownEnd;
+        public readonly double buttonBlinkDelay = 0.6;
+        public double nextBlink;
 
         public event Action? OnEmergencyLevel;
         public event Action<string>? OnAlertLevel;
@@ -130,6 +145,33 @@ namespace Content.Client.Communications.UI
         public event Action? OnCentcomm; // Gabystation
         public event Action? OnMaint; // Gabystation
         public event Action? OnMartial; // Gabystation
+
+        public AlertLevelButton? CurrentAlertButton;
+
+        // maybe instead of storing the ids as strings here, get from loc in the button's tooltips? maybe later
+
+        public static readonly float DefaultL = 0.4f;
+
+        public readonly struct alertLevel {
+            public static readonly string Green = "green";
+            public static readonly Color GreenColor = Color.FromHsl(new Vector4(0.3f, 0.6f, DefaultL, 1.0f));
+            public static readonly string Blue = "blue";
+            public static readonly Color BlueColor = Color.FromHsl(new Vector4(0.66f, 0.6f, DefaultL, 1.0f));
+            public static readonly string Yellow = "yellow";
+            public static readonly Color YellowColor = Color.FromHsl(new Vector4(0.138f, 0.6f, DefaultL, 1.0f));
+            public static readonly string Red = "red";
+            public static readonly Color RedColor = Color.FromHsl(new Vector4(0.0f, 0.6f, DefaultL, 1.0f));
+            public static readonly string Violet = "violet";
+            public static readonly Color VioletColor = Color.FromHsl(new Vector4(0.8f, 0.6f, DefaultL, 1.0f));
+            public static readonly string Cyan = "cyan";
+            public static readonly Color CyanColor = Color.FromHsl(new Vector4(0.472f, 0.6f, DefaultL, 1.0f));
+
+            public alertLevel()
+            {
+
+            }
+
+        }
 
         public CommunicationsConsoleMenu()
         {
@@ -160,18 +202,6 @@ namespace Content.Client.Communications.UI
             BroadcastButton.OnPressed += _ => OnBroadcast?.Invoke(Rope.Collapse(MessageInput.TextRope));
             BroadcastButton.Disabled = !CanBroadcast;
 
-            AlertLevelButton.OnItemSelected += args =>
-            {
-                var metadata = AlertLevelButton.GetItemMetadata(args.Id);
-                if (metadata != null && metadata is string cast)
-                {
-                    OnAlertLevel?.Invoke(cast);
-                }
-            };
-
-
-            AlertLevelButton.Disabled = !AlertLevelSelectable;
-
             EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
             EmergencyShuttleButton.Disabled = !CanCall;
 
@@ -179,61 +209,90 @@ namespace Content.Client.Communications.UI
             CentCommButton.OnPressed += _ => OnCentcomm?.Invoke(); // Gabystation
             MartialButton.OnPressed += _ => OnMartial?.Invoke(); // Gabystation
 
-            UpdateCountdown();
+            // we use real time here because CurTime gets it from the server at a delay
+            nextBlink = _timing.RealTime.TotalSeconds + buttonBlinkDelay;
+            Blinking = false;
+
+            _sawMill = _logMan.GetSawmill("ui");
+
+
+
         }
 
-        // The current alert could make levels unselectable, so we need to ensure that the UI reacts properly.
-        // If the current alert is unselectable, the only item in the alerts list will be
-        // the current alert. Otherwise, it will be the list of alerts, with the current alert
-        // selected.
-        public void UpdateAlertLevels(List<string>? alerts, string currentAlert)
-        {
-            AlertLevelButton.Clear();
+        public void AddAlertButtons(List<(string id, Color color)> alertLevels) {
+            if (alertLevels is not null) {
+                foreach (var (id, color) in alertLevels) {
+                    var button = new AlertLevelButton(id, color);
+                    button.OnPressedAlertButton += _ => OnAlertLevel?.Invoke(id);
 
-            if (alerts == null)
-            {
-                var name = currentAlert;
-                if (_loc.TryGetString($"alert-level-{currentAlert}", out var locName))
-                {
-                    name = locName;
+                    AlertLevelArea.AddChild(button);
                 }
-                AlertLevelButton.AddItem(name);
-                AlertLevelButton.SetItemMetadata(AlertLevelButton.ItemCount - 1, currentAlert);
-            }
-            else
-            {
-                foreach (var alert in alerts)
-                {
-                    var name = alert;
-                    if (_loc.TryGetString($"alert-level-{alert}", out var locName))
-                    {
-                        name = locName;
-                    }
-                    AlertLevelButton.AddItem(name);
-                    AlertLevelButton.SetItemMetadata(AlertLevelButton.ItemCount - 1, alert);
-                    if (alert == currentAlert)
-                    {
-                        AlertLevelButton.Select(AlertLevelButton.ItemCount - 1);
-                    }
-                }
+
+                LoadedButtons = true;
             }
         }
+
+
 
         public void UpdateCountdown()
         {
-            if (!CountdownStarted)
+            var diff = MathHelper.Max((CountdownEnd - _timing.CurTime) ?? TimeSpan.Zero, TimeSpan.Zero);
+
+            if (!CountdownStarted || diff!.TotalSeconds <= 0)
             {
-                CountdownLabel.SetMessage(string.Empty);
                 EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-call-shuttle");
+                EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-emergency-shuttle-button-tooltip");
                 return;
             }
 
-            var diff = MathHelper.Max((CountdownEnd - _timing.CurTime) ?? TimeSpan.Zero, TimeSpan.Zero);
+            if (diff!.TotalSeconds != 0)
+                EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-recall-disabled");
+        }
 
-            EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-recall-shuttle");
-            var infoText = Loc.GetString($"comms-console-menu-time-remaining",
-                ("time", diff.ToString(@"hh\:mm\:ss", CultureInfo.CurrentCulture)));
-            CountdownLabel.SetMessage(infoText);
+        public void UpdateState()
+        {
+            if (isSyndie) {
+                foreach (AlertLevelButton button in AlertLevelArea.Children)
+                    button.Visible = false;
+            }
+
+            foreach (AlertLevelButton button in AlertLevelArea.Children) {
+                if (CurrentStationAlertLevel is not "")
+                {
+                    if (button.alertLevel != CurrentStationAlertLevel)
+                        button.Disabled = false;
+
+                    if (button.alertLevel == CurrentStationAlertLevel)
+                    {
+                        button.Disabled = true;
+                        CurrentAlertButton = button;
+                    }
+                }
+
+                if (!AlertLevelSelectable)
+                    button.ToolTip = Loc.GetString("comms-console-menu-disabled-alert");
+                else
+                    button.ToolTip = Loc.GetString($"comms-console-menu-{button.alertLevel}-alert");
+            }
+
+        }
+        protected override void FrameUpdate(FrameEventArgs args)
+        {
+            if (CountdownEnd is not null && _timing.RealTime.TotalSeconds <= CountdownEnd.Value.TotalSeconds) {
+                var diff = MathHelper.Max((CountdownEnd - _timing.RealTime) ?? TimeSpan.Zero, TimeSpan.Zero);
+                var infoText = diff.ToString(@"hh\:mm\:ss", CultureInfo.CurrentCulture);
+
+                if (diff!.TotalSeconds != 0) {
+                    EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-recall-shuttle", ("time", infoText));
+                }
+            }
+
+            if (_timing.RealTime.TotalSeconds >= nextBlink && !AlertLevelSelectable && CurrentAlertButton is not null)
+            {
+                CurrentAlertButton.Disabled = Blinking;
+                nextBlink = _timing.RealTime.TotalSeconds + buttonBlinkDelay;
+                Blinking = !Blinking;
+            }
         }
     }
 }

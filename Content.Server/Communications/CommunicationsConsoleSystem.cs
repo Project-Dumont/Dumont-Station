@@ -86,6 +86,8 @@ using Content.Server.Administration;
 using Robust.Shared.Player;
 using Content.Server.Chat.Managers; //pra falar com centcom
 using Robust.Shared.Timing;
+using System.Reflection.Metadata;
+
 
 namespace Content.Server.Communications
 {
@@ -216,7 +218,7 @@ namespace Content.Server.Communications
         public void UpdateCommsConsoleInterface(EntityUid uid, CommunicationsConsoleComponent comp)
         {
             var stationUid = _stationSystem.GetOwningStation(uid);
-            List<string>? levels = null;
+            List<(string id, Color color)>? levels = null;
             string currentLevel = default!;
             float currentDelay = 0;
 
@@ -232,7 +234,7 @@ namespace Content.Server.Communications
                         {
                             if (detail.Selectable)
                             {
-                                levels.Add(id);
+                                levels.Add((id, detail.Color));
                             }
                         }
                     }
@@ -242,7 +244,14 @@ namespace Content.Server.Communications
                 }
             }
 
+            var isSyndie = false;
+
+            if (TryComp<MetaDataComponent>(uid, out var meta)) {
+                var proto = meta.EntityPrototype?.ID;
+                isSyndie = proto == "SyndicateComputerComms";
+            }
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
+                isSyndie,
                 CanAnnounce(comp),
                 CanCallOrRecall(comp),
                 levels,

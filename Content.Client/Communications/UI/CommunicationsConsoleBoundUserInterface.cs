@@ -26,11 +26,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.ComponentModel;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Communications;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
+using Content.Client.UserInterface.Controls;
+using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.Communications.UI
 {
@@ -64,7 +67,6 @@ namespace Content.Client.Communications.UI
         {
             if (_menu!.AlertLevelSelectable)
             {
-                _menu.CurrentLevel = level;
                 SendMessage(new CommunicationsConsoleSelectAlertLevelMessage(level));
             }
         }
@@ -128,15 +130,33 @@ namespace Content.Client.Communications.UI
                 _menu.CanCall = commsState.CanCall;
                 _menu.CountdownStarted = commsState.CountdownStarted;
                 _menu.AlertLevelSelectable = commsState.AlertLevels != null && !float.IsNaN(commsState.CurrentAlertDelay) && commsState.CurrentAlertDelay <= 0;
-                _menu.CurrentLevel = commsState.CurrentAlert;
+                _menu.CurrentStationAlertLevel = commsState.CurrentAlert;
                 _menu.CountdownEnd = commsState.ExpectedCountdownEnd;
 
-                _menu.UpdateCountdown();
-                _menu.UpdateAlertLevels(commsState.AlertLevels, _menu.CurrentLevel);
-                _menu.AlertLevelButton.Disabled = !_menu.AlertLevelSelectable;
+                if (commsState.AlertLevels is not null && !_menu.LoadedButtons) _menu.AddAlertButtons(commsState.AlertLevels);
+
+                // shit code, mas fds
+                _menu.isSyndie = commsState.isSyndie;
+
+
+                if (commsState.isSyndie) {
+                    _menu.BroadcastButton.Visible = false;
+                    _menu.CentCommButton.Visible = false;
+
+                    _menu.EmergencyShuttleButton.Visible = false;
+                    _menu.MartialButton.Visible = false;
+                    _menu.MaintEmergencyButton.Visible = false;
+                }
+
+
                 _menu.EmergencyShuttleButton.Disabled = !_menu.CanCall;
                 _menu.AnnounceButton.Disabled = !_menu.CanAnnounce;
                 _menu.BroadcastButton.Disabled = !_menu.CanBroadcast;
+
+                _menu.UpdateCountdown();
+                _menu.UpdateState();
+
+
             }
         }
     }

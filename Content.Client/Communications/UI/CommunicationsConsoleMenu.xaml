@@ -12,13 +12,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <controls:FancyWindow xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     Title="{Loc 'comms-console-menu-title'}"
-    MinSize="300 300">
+    SetSize="910 300">
 
-    <BoxContainer Orientation="Vertical"  MaxWidth="800">
-        <BoxContainer Name="StationActions" Orientation="Horizontal" MinHeight="190">
-            <BoxContainer Name="AnnouncementArea" Orientation="Vertical" Margin="15">
-                <TextEdit Name="MessageInput" VerticalExpand="True"/>
-                <BoxContainer Orientation="Horizontal">
+    <BoxContainer Orientation="Vertical"  MaxWidth="800" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Name="StationActions" Orientation="Horizontal" MinHeight="190" VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Name="AnnouncementArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
+                <TextEdit Name="MessageInput" VerticalExpand="True" HorizontalExpand="True"/>
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                     <Button Name="AnnounceButton"
                             Access="Public"
                             Text="{Loc 'comms-console-menu-announcement-button'}"
@@ -39,13 +39,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                             StyleClasses="OpenLeft"/>
                 </BoxContainer>
             </BoxContainer>
-            <BoxContainer Name="EmergencyArea" Orientation="Vertical" Margin="15">
+            <BoxContainer Name="EmergencyArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
                 <Button Name="EmergencyShuttleButton"
                     Access="Public"
                     Text="Call Evacuation Shuttle"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"
                     StyleClasses="OpenLeft"
                     VerticalExpand="True"
+                    HorizontalExpand="True"
                     />
 
                 <Button Name="MartialButton"
@@ -54,6 +55,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     StyleClasses="OpenBoth"
                     Access="Public"
                     VerticalExpand="True"
+                    HorizontalExpand="True"
                     />
 
                 <Button Name="MaintEmergencyButton"
@@ -61,52 +63,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     StyleClasses="OpenRight"
                     Access="Public"
                     VerticalExpand="True"
+                    HorizontalExpand="True"
                     />
             </BoxContainer>
 
         </BoxContainer>
-        <BoxContainer Name="AlertLevelArea" Orientation="Horizontal" Margin="20" MinHeight="70" HorizontalAlignment="Center">
-            <Button Name="GreenAlertButton"
-                Text="{Loc 'comms-console-menu-green-alert'}"
-                Access="Public"
-                Margin="10"
-                MaxWidth="120"
-                ToolTip="{Loc 'comms-console-menu-green-alert'}"
-                StyleClasses="LabelKeyText">
-
-            </Button>
-            <Button Name="BlueAlertButton"
-                Text="{Loc 'comms-console-menu-blue-alert'}"
-                Access="Public"
-                Margin="10"
-                MaxWidth="120"
-                ToolTip="{Loc 'comms-console-menu-blue-alert'}"
-                StyleClasses="LabelKeyText">
-            </Button>
-            <Button Name="YellowAlertButton"
-                Text="{Loc 'comms-console-menu-yellow-alert'}"
-                Access="Public"
-                Margin="10"
-                MaxWidth="120"
-                ToolTip="{Loc 'comms-console-menu-yellow-alert'}"
-                StyleClasses="LabelKeyText">
-            </Button>
-            <Button Name="RedAlertButton"
-                Text="{Loc 'comms-console-menu-red-alert'}"
-                Access="Public"
-                Margin="10"
-                MaxWidth="120"
-                ToolTip="{Loc 'comms-console-menu-red-alert'}"
-                StyleClasses="LabelKeyText">
-            </Button>
-            <Button Name="VioletAlertButton"
-                Text="{Loc 'comms-console-menu-violet-alert'}"
-                Access="Public"
-                Margin="10"
-                MaxWidth="120"
-                ToolTip="{Loc 'comms-console-menu-violet-alert'}"
-                StyleClasses="LabelKeyText">
-            </Button>
+        <BoxContainer Name="AlertLevelArea" Orientation="Horizontal" Margin="20" MinHeight="70" HorizontalAlignment="Center" HorizontalExpand="True">
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>
