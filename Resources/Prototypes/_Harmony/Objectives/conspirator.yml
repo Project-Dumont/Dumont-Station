@@ -74,8 +74,8 @@
   components:
   - type: Objective
     icon:
-      sprite: _Goobstation/Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
-      state: brassknuckleduster
+      sprite: Clothing/Head/Hats/outlawhat.rsi
+      state: icon
 
 - type: entity
   parent: BaseConspiratorObjective
