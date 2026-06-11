@@ -162,8 +162,6 @@
     - id: Conspirators
       prob: 0.25
     # Harmony end
-    - id: SubWizard
-      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
