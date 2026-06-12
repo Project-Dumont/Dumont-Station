@@ -146,6 +146,8 @@ namespace Content.Client.Communications.UI
                     _menu.EmergencyShuttleButton.Visible = false;
                     _menu.MartialButton.Visible = false;
                     _menu.MaintEmergencyButton.Visible = false;
+
+                    _menu.AlertLevelArea.Visible = false;
                 }
 
 
@@ -153,7 +155,7 @@ namespace Content.Client.Communications.UI
                 _menu.AnnounceButton.Disabled = !_menu.CanAnnounce;
                 _menu.BroadcastButton.Disabled = !_menu.CanBroadcast;
 
-                _menu.UpdateCountdown();
+                _menu.UpdateRemainingTime();
                 _menu.UpdateState();
 
 

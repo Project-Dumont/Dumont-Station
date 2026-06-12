@@ -32,6 +32,7 @@ comms-console-menu-recall-shuttle = Recall emergency shuttle
 comms-console-menu-emergency-maint = Enable emergency access
 comms-console-menu-nuclear-code = Request nuclear authentication codes
 comms-console-menu-message-centcomm = Send message to CentComn
+comms-console-menu-recall-disabled-tooltip = Can't recall right now
 
 # Announcement
 comns-console-announcement-content-maint = The maintance airlocks access has been toggled.

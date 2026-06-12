@@ -2,15 +2,16 @@
 comms-console-menu-title = Console de Comunicações
 comms-console-menu-announcement-placeholder = Digite o texto do aviso...
 comms-console-menu-announcement-button = Anunciar
+comms-console-menu-announcement-button-tooltip = Enviar sua mensagem para toda a estação pelo radio.
 comms-console-menu-broadcast-button = Transmitir nos monitores
 comms-console-menu-call-shuttle = Chamar nave de emergência
 comms-console-menu-recall-shuttle = Revocar ({$time})
-comms-console-menu-recall-disabled = Impossivel revocar agora
 comms-console-menu-emergency-maint = Alternar acessos de manutenção
 comms-console-menu-nuclear-code = Requisitar codigos de ativação nuclear
 comms-console-menu-martial = Requisitar lei marcial
 comms-console-menu-martial-help = Requisita a lei marcial - Apenas chefe de segurança ou capitão.
 comms-console-menu-message-centcomm = Enviar para Centcomm
+comms-console-menu-recall-disabled-tooltip = Impossivel revocar agora
 
 # Announcement
 comms-console-announcement-content-maint = O acesso das portas de manutenção foram alterados.

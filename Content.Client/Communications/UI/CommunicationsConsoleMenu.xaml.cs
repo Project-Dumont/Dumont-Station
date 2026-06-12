@@ -110,6 +110,7 @@ using System.Numerics;
 using System.ComponentModel;
 using System.Reflection.Metadata;
 using System.Security.Principal;
+using System.Timers;
 
 namespace Content.Client.Communications.UI
 {
@@ -134,6 +135,7 @@ namespace Content.Client.Communications.UI
 
         public string CurrentStationAlertLevel = string.Empty;
         public TimeSpan? CountdownEnd;
+        public TimeSpan? TimeRemaining;
         public readonly double buttonBlinkDelay = 0.6;
         public double nextBlink;
 
@@ -234,19 +236,10 @@ namespace Content.Client.Communications.UI
 
 
 
-        public void UpdateCountdown()
+        public void UpdateRemainingTime()
         {
-            var diff = MathHelper.Max((CountdownEnd - _timing.CurTime) ?? TimeSpan.Zero, TimeSpan.Zero);
-
-            if (!CountdownStarted || diff!.TotalSeconds <= 0)
-            {
-                EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-call-shuttle");
-                EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-emergency-shuttle-button-tooltip");
-                return;
-            }
-
-            if (diff!.TotalSeconds != 0)
-                EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-recall-disabled");
+            if (CountdownEnd is not null)
+                TimeRemaining = CountdownEnd <= _timing.CurTime ? TimeSpan.Zero : CountdownEnd - _timing.CurTime;
         }
 
         public void UpdateState()
@@ -255,6 +248,11 @@ namespace Content.Client.Communications.UI
                 foreach (AlertLevelButton button in AlertLevelArea.Children)
                     button.Visible = false;
             }
+
+            if (TimeRemaining != TimeSpan.Zero && !CanCall)
+                EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-recall-disabled-tooltip");
+
+
 
             foreach (AlertLevelButton button in AlertLevelArea.Children) {
                 if (CurrentStationAlertLevel is not "")
@@ -278,13 +276,13 @@ namespace Content.Client.Communications.UI
         }
         protected override void FrameUpdate(FrameEventArgs args)
         {
-            if (CountdownEnd is not null && _timing.RealTime.TotalSeconds <= CountdownEnd.Value.TotalSeconds) {
-                var diff = MathHelper.Max((CountdownEnd - _timing.RealTime) ?? TimeSpan.Zero, TimeSpan.Zero);
-                var infoText = diff.ToString(@"hh\:mm\:ss", CultureInfo.CurrentCulture);
+            if (TimeRemaining is not null && TimeRemaining != TimeSpan.Zero) {
+                TimeRemaining -= _timing.FrameTime;
+                string infoText = TimeRemaining.Value.ToString(@"mm\:ss");
 
-                if (diff!.TotalSeconds != 0) {
+                if (TimeRemaining.Value.TotalSeconds != 0)
                     EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-recall-shuttle", ("time", infoText));
-                }
+
             }
 
             if (_timing.RealTime.TotalSeconds >= nextBlink && !AlertLevelSelectable && CurrentAlertButton is not null)
