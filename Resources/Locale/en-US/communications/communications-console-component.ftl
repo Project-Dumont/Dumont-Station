@@ -32,7 +32,6 @@ comms-console-menu-recall-shuttle = Recall emergency shuttle
 comms-console-menu-emergency-maint = Enable emergency access
 comms-console-menu-nuclear-code = Request nuclear authentication codes
 comms-console-menu-message-centcomm = Send message to CentComn
-comms-console-menu-recall-disabled-tooltip = Can't recall right now
 
 # Announcement
 comns-console-announcement-content-maint = The maintance airlocks access has been toggled.
@@ -53,8 +52,8 @@ comms-console-menu-dialog-centcom-message = Message:
 comms-console-permission-denied = Permission denied
 comms-console-shuttle-unavailable = Shuttle is currently unavailable
 comms-console-message-too-long = Message is too long
-comns-console-empty-input = Empty message
-comns-console-centcom-send = Sent message to the Central Command
+comms-console-empty-input = Empty message
+comms-console-centcom-send = Sent message to the Central Command
 
 # Placeholder values
 comms-console-announcement-sent-by = Sent by
@@ -72,9 +71,10 @@ comms-console-menu-footer-right = v1.5
 
 # alerts
 comms-console-menu-disabled-alert = Impossible to set alert level right now
-comms-console-menu-green-alert = Declare Green Alert
-comms-console-menu-blue-alert = Declare Blue Alert
-comms-console-menu-yellow-alert = Declare Yellow Alert
-comms-console-menu-red-alert = Declare Red Alert
-comms-console-menu-violet-alert = Declare Violet Alert
-comms-console-menu-cyan-alert = Declare Cyan Alert
+comms-console-menu-declare-alert = Declare {$alertLevel} Alert
+comms-green-alert = Red
+comms-blue-alert = Blue
+comms-yellow-alert = Yellow
+comms-red-alert = Red
+comms-violet-alert = Violet
+comms-cyan-alert = Cyan

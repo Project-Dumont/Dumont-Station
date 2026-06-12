@@ -3,7 +3,6 @@
             Access="Public"
             Margin="10"
             MaxWidth="120"
-            ToolTip="{Loc 'comms-console-menu-green-alert'}"
             SetSize="50 50">
     </Button>
 </Control>

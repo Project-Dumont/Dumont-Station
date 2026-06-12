@@ -11,7 +11,6 @@ comms-console-menu-nuclear-code = Requisitar codigos de ativação nuclear
 comms-console-menu-martial = Requisitar lei marcial
 comms-console-menu-martial-help = Requisita a lei marcial - Apenas chefe de segurança ou capitão.
 comms-console-menu-message-centcomm = Enviar para Centcomm
-comms-console-menu-recall-disabled-tooltip = Impossivel revocar agora
 
 # Announcement
 comms-console-announcement-content-maint = O acesso das portas de manutenção foram alterados.
@@ -27,13 +26,13 @@ comms-console-menu-dialog-shuttle-tittle = Chamar Nave de Emergencia
 comms-console-menu-dialog-shuttle-message = Razão:
 comms-console-menu-dialog-centcom-tittle = Falar com a Central de Comando
 comms-console-menu-dialog-centcom-message = Mensagem:
-comns-console-centcom-send = Sent message to the Central Command
+comms-console-centcom-send = Sent message to the Central Command
 
 # Popup
 comms-console-permission-denied = Permissão recusada
 comms-console-shuttle-unavailable = A nave não está disponível no momento
 comms-console-message-too-long = Mensagem muito longa
-comns-console-empty-input = Mensagem vazia
+comms-console-empty-input = Mensagem vazia
 
 # Placeholder values
 comms-console-announcement-sent-by = Enviado por
@@ -50,9 +49,10 @@ comms-console-menu-footer-right = v1.5
 
 # alerts
 comms-console-menu-disabled-alert = Impossivel mudar o alerta agora
-comms-console-menu-green-alert = Declarar Alerta Verde
-comms-console-menu-blue-alert = Declarar Alerta Azul
-comms-console-menu-yellow-alert = Declarar Alerta Amarelo
-comms-console-menu-red-alert = Declarar Alerta Vermelho
-comms-console-menu-violet-alert = Declarar Alerta Violeta
-comms-console-menu-cyan-alert = Declarar Alerta Ciano
+comms-console-menu-declare-alert = Declarar Alerta {$alertLevel}
+comms-green-alert = Verde
+comms-blue-alert = Azul
+comms-yellow-alert = Amarelo
+comms-red-alert = Vermelho
+comms-violet-alert = Violeta
+comms-cyan-alert = Ciano

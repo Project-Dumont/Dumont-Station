@@ -27,6 +27,12 @@ public sealed partial class AlertLevelButton : Control
         }
     }
 
+    public string? ToolTip
+    {
+        get => AlertButton.ToolTip;
+        set => AlertButton.ToolTip = value;
+    }
+
     public readonly Color color;
     public readonly Color disabledColor;
 
@@ -46,7 +52,8 @@ public sealed partial class AlertLevelButton : Control
 
     private void UpdateDisabled()
     {
-        if (this.Disabled) AlertButton.ModulateSelfOverride = disabledColor;
-        else AlertButton.ModulateSelfOverride = color;
+        // invertido pq o botão acionado precisa ignorar inputs
+        if (this.Disabled) AlertButton.ModulateSelfOverride = color;
+        else AlertButton.ModulateSelfOverride = disabledColor;
     }
 }

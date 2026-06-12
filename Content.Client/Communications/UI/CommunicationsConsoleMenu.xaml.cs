@@ -149,6 +149,8 @@ namespace Content.Client.Communications.UI
 
         public AlertLevelButton? CurrentAlertButton;
 
+        public readonly object MaxAnnounceLength;
+
         // maybe instead of storing the ids as strings here, get from loc in the button's tooltips? maybe later
 
         public static readonly float DefaultL = 0.4f;
@@ -181,21 +183,8 @@ namespace Content.Client.Communications.UI
 
             MessageInput.Placeholder = new Rope.Leaf(_loc.GetString("comms-console-menu-announcement-placeholder"));
 
-            var maxAnnounceLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
-            MessageInput.OnTextChanged += (args) =>
-            {
-                if (args.Control.TextLength > maxAnnounceLength)
-                {
-                    AnnounceButton.Disabled = true;
-                    AnnounceButton.ToolTip = Loc.GetString("comms-console-message-too-long");
-                }
-                else
-                {
-                    AnnounceButton.Disabled = !CanAnnounce;
-                    AnnounceButton.ToolTip = null;
-
-                }
-            };
+            MaxAnnounceLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
+            MessageInput.OnTextChanged += (args) => { UpdateMessageInput(); };
 
             AnnounceButton.OnPressed += _ => OnAnnounce?.Invoke(Rope.Collapse(MessageInput.TextRope));
             AnnounceButton.Disabled = !CanAnnounce;
@@ -204,7 +193,7 @@ namespace Content.Client.Communications.UI
             BroadcastButton.Disabled = !CanBroadcast;
 
             EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
-            EmergencyShuttleButton.Disabled = !CanCall;
+            EmergencyShuttleButton.Disabled = true;
 
             MaintEmergencyButton.OnPressed += _ => OnMaint?.Invoke(); // Gabystation
             CentCommButton.OnPressed += _ => OnCentcomm?.Invoke(); // Gabystation
@@ -223,8 +212,9 @@ namespace Content.Client.Communications.UI
         public void AddAlertButtons(List<(string id, Color color)> alertLevels) {
             if (alertLevels is not null) {
                 foreach (var (id, color) in alertLevels) {
-                    var button = new AlertLevelButton(id, color);
-                    button.OnPressedAlertButton += _ => OnAlertLevel?.Invoke(id);
+                    var alertId = id;
+                    var button = new AlertLevelButton(alertId, color);
+                    button.OnPressedAlertButton += _ => OnAlertLevel?.Invoke(alertId);
 
                     AlertLevelArea.AddChild(button);
                 }
@@ -237,18 +227,49 @@ namespace Content.Client.Communications.UI
 
         public void UpdateRemainingTime()
         {
-            if (CountdownEnd is not null)
+            if (CountdownEnd is not null && CountdownStarted)
                 TimeRemaining = CountdownEnd <= _timing.CurTime ? TimeSpan.Zero : CountdownEnd - _timing.CurTime;
         }
 
-        public void UpdateState()
+        public void UpdateMessageInput()
         {
+            if (MessageInput.TextLength == 0) DisableAllAnnounceButtons("comms-console-empty-input");
+            else if (MessageInput.TextLength > (int)MaxAnnounceLength) DisableAllAnnounceButtons("comms-console-message-too-long");
+            else
+            {
+                CentCommButton.Disabled = false;
+                BroadcastButton.Disabled = !CanBroadcast;
+                AnnounceButton.Disabled = !CanAnnounce;
 
-            if (TimeRemaining != TimeSpan.Zero && !CanCall)
-                EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-recall-disabled-tooltip");
+                CentCommButton.ToolTip = Loc.GetString("comms-console-menu-message-centcomm");
+                BroadcastButton.ToolTip = Loc.GetString("comms-console-menu-broadcast-button-tooltip");
+                AnnounceButton.ToolTip = Loc.GetString("comms-console-menu-announcement-button-tooltip");
+            }
+        }
 
+        public void DisableAllAnnounceButtons(string locale)
+        {
+            foreach (Button button in MessageActions.Children)
+            {
+                button.Disabled = true;
+                button.ToolTip = Loc.GetString(locale);
+            }
+        }
 
+        public void UpdateEmergencyShuttleButton()
+        {
+            EmergencyShuttleButton.Disabled = !CanCall;
+            if (CanCall) Loc.GetString("comms-console-menu-emergency-shuttle-button-tooltip");
 
+            if (!CountdownStarted)
+            {
+                TimeRemaining = TimeSpan.Zero;
+                EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-call-shuttle");
+            }
+        }
+
+        public void UpdateButtons()
+        {
             foreach (AlertLevelButton button in AlertLevelArea.Children) {
                 if (CurrentStationAlertLevel is not "")
                 {
@@ -265,19 +286,27 @@ namespace Content.Client.Communications.UI
                 if (!AlertLevelSelectable)
                     button.ToolTip = Loc.GetString("comms-console-menu-disabled-alert");
                 else
-                    button.ToolTip = Loc.GetString($"comms-console-menu-{button.alertLevel}-alert");
+                    button.ToolTip = Loc.GetString("comms-console-menu-declare-alert", ("alertLevel", Loc.GetString($"comms-{button.alertLevel}-alert")));
             }
-
         }
+
+
         protected override void FrameUpdate(FrameEventArgs args)
         {
-            if (TimeRemaining is not null && TimeRemaining != TimeSpan.Zero) {
+            if (TimeRemaining is not null && TimeRemaining > TimeSpan.Zero)
+            {
                 TimeRemaining -= _timing.FrameTime;
-                string infoText = TimeRemaining.Value.ToString(@"mm\:ss");
 
-                if (TimeRemaining.Value.TotalSeconds != 0)
+                if (TimeRemaining <= TimeSpan.Zero)
+                {
+                    TimeRemaining = TimeSpan.Zero;
+                    EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-call-shuttle");
+                }
+                else
+                {
+                    string infoText = TimeRemaining.Value.ToString(@"mm\:ss");
                     EmergencyShuttleButton.Text = Loc.GetString("comms-console-menu-recall-shuttle", ("time", infoText));
-
+                }
             }
 
             if (_timing.RealTime.TotalSeconds >= nextBlink && !AlertLevelSelectable && CurrentAlertButton is not null)

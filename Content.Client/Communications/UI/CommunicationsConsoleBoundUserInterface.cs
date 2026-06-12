@@ -146,13 +146,10 @@ namespace Content.Client.Communications.UI
                     _menu.AlertLevelArea.Visible = false;
                 }
 
-
-                _menu.EmergencyShuttleButton.Disabled = !_menu.CanCall;
-                _menu.AnnounceButton.Disabled = !_menu.CanAnnounce;
-                _menu.BroadcastButton.Disabled = !_menu.CanBroadcast;
-
+                _menu.UpdateButtons();
                 _menu.UpdateRemainingTime();
-                _menu.UpdateState();
+                _menu.UpdateEmergencyShuttleButton();
+                _menu.UpdateMessageInput();
 
 
             }

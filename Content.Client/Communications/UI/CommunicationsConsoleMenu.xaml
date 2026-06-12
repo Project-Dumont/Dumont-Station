@@ -18,7 +18,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         <BoxContainer Name="StationActions" Orientation="Horizontal" MinHeight="190" VerticalExpand="True" HorizontalExpand="True">
             <BoxContainer Name="AnnouncementArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
                 <TextEdit Name="MessageInput" VerticalExpand="True" HorizontalExpand="True"/>
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <BoxContainer Name="MessageActions" Orientation="Horizontal" HorizontalExpand="True">
                     <Button Name="AnnounceButton"
                             Access="Public"
                             Text="{Loc 'comms-console-menu-announcement-button'}"
@@ -42,7 +42,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             <BoxContainer Name="EmergencyArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True" Access="Public">
                 <Button Name="EmergencyShuttleButton"
                     Access="Public"
-                    Text="Call Evacuation Shuttle"
+                    Text="{Loc 'comms-console-menu-dialog-shuttle-tittle'}"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"
                     StyleClasses="OpenLeft"
                     VerticalExpand="True"

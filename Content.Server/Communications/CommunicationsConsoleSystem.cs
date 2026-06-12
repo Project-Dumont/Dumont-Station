@@ -412,10 +412,10 @@ namespace Content.Server.Communications
                 {
                     _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: Enviou mensagem para CENTCOM '{centMessage}'"); // mensagem de admin (muito uim usar pray)
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has sent a message to centcom, message: '{centMessage}'."); //log
-                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+                    _popupSystem.PopupEntity(Loc.GetString("comms-console-centcom-send"), uid, message.Actor);
                     return;
                 } //pop up avisando q ta vazio
-                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-empty-input"), uid, message.Actor);
             });
         }
 
@@ -437,7 +437,7 @@ namespace Content.Server.Communications
                 {
                     _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: requsitou a lei marcial. Motivo: '{centMessage}'");
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has requested martial law, reason: '{centMessage}'.");
-                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+                    _popupSystem.PopupEntity(Loc.GetString("comms-console-centcom-send"), uid, message.Actor);
 
                     SoundSpecifier sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
 
@@ -447,7 +447,7 @@ namespace Content.Server.Communications
                                                             false, sound, colorOverride: comp.Color);
                     return;
                 }
-                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-empty-input"), uid, message.Actor);
             });
         }
 
