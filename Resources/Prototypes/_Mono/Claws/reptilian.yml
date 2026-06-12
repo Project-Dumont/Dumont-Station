@@ -73,8 +73,8 @@
   clawType: !type:SharpClaw
     damage:
       types:
-        Slash: 1
-        Piercing: 2
+        Slash: 10
+        Piercing: 3
         Blunt: -3
     gunSpreadMultiplier: 0.08
     canWideSwing: true
