@@ -12,9 +12,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <controls:FancyWindow xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     Title="{Loc 'comms-console-menu-title'}"
-    SetSize="910 300">
+    SetSize="870 300">
 
-    <BoxContainer Orientation="Vertical"  MaxWidth="800" HorizontalExpand="True" VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
         <BoxContainer Name="StationActions" Orientation="Horizontal" MinHeight="190" VerticalExpand="True" HorizontalExpand="True">
             <BoxContainer Name="AnnouncementArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
                 <TextEdit Name="MessageInput" VerticalExpand="True" HorizontalExpand="True"/>
@@ -46,7 +46,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"
                     StyleClasses="OpenLeft"
                     VerticalExpand="True"
-                    HorizontalExpand="True"
                     />
 
                 <Button Name="MartialButton"
@@ -55,7 +54,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     StyleClasses="OpenBoth"
                     Access="Public"
                     VerticalExpand="True"
-                    HorizontalExpand="True"
                     />
 
                 <Button Name="MaintEmergencyButton"
@@ -63,7 +61,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     StyleClasses="OpenRight"
                     Access="Public"
                     VerticalExpand="True"
-                    HorizontalExpand="True"
                     />
             </BoxContainer>
 
