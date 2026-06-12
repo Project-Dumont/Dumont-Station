@@ -1,5 +1,5 @@
 using Content.Server._Mono.Temperature.Components;
-using Content.Server.IgnitionSource;
+using Content.Shared.IgnitionSource;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Temperature.Components;

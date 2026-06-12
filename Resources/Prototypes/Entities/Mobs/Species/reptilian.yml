@@ -187,7 +187,7 @@
     damage:
       types:
         Blunt: 3 # Mono
-    attackRate: 1.5
+    attackRate: 1.0
   - type: Temperature
     heatDamageThreshold: 400
     coldDamageThreshold: 285

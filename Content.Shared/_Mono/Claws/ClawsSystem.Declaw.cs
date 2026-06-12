@@ -38,7 +38,7 @@ public abstract partial class SharedClawsSystem
 
         foreach (var hand in hands)
         {
-            DeclawDrop(uid, hand, hand.HeldEntity);
+            DeclawDrop(uid, hand, _hands.GetHeldItem(uid, hand));
         }
 
         claws.DeclawItemHoldTimer = TimeSpan.Zero;
@@ -64,13 +64,13 @@ public abstract partial class SharedClawsSystem
         Dirty(uid, claws);
     }
 
-    private void DeclawDrop(EntityUid uid, Hand hand, EntityUid? item)
+    private void DeclawDrop(EntityUid uid, string handId, EntityUid? item)
     {
-        _hands.SetActiveHand(uid, hand);
         if (item == null)
             return;
 
-        _hands.TryDrop(uid);
+        if (!_hands.TryDrop(uid, handId))
+            return;
         _throw.TryThrow(item.Value, _random.NextVector2(), 1, uid);
         _popup.PopupEntity(Loc.GetString("declaw-item-drop"), uid, PopupType.MediumCaution);
     }

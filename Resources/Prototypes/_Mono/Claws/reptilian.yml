@@ -18,16 +18,19 @@
   clawType: !type:Declawed
     damageOnDeclaw:
       types:
-        Slash: 20
+        Slash: 3 # dumont edit why would they do more slash damage without claws?
+    gunSpreadMultiplier: 0
     clawsExaminationString: "claws-lizard-declawed"
 
+# Dumont note: the gunspreadmultipliers had to be massively reduced due to changes we made, but the intended effect is there
 - type: claw
   id: ReptilianTinyClaws
   clawType: !type:SharpClaw
     damage:
       types:
-        Slash: 8
+        Slash: 5
         Blunt: -3
+    gunSpreadMultiplier: 0
     clawsExaminationString: "claws-lizard-tiny"
 
 - type: claw
@@ -35,9 +38,9 @@
   clawType: !type:SharpClaw
     damage:
       types:
-        Slash: 11
+        Slash: 8
         Blunt: -3
-    gunSpreadMultiplier: 1.1
+    gunSpreadMultiplier: 0.03
     meleeDamageModifiers:
       coefficients:
         Blunt: 0.95
@@ -50,10 +53,10 @@
   clawType: !type:SharpClaw
     damage:
       types:
-        Slash: 13
+        Slash: 9
         Piercing: 2
         Blunt: -3
-    gunSpreadMultiplier: 1.25
+    gunSpreadMultiplier: 0.05
     canWideSwing: true
     meleeDamageModifiers:
       coefficients:
@@ -67,10 +70,10 @@
   clawType: !type:SharpClaw
     damage:
       types:
-        Slash: 15
-        Piercing: 5
+        Slash: 1
+        Piercing: 2
         Blunt: -3
-    gunSpreadMultiplier: 1.45
+    gunSpreadMultiplier: 0.08
     canWideSwing: true
     meleeDamageModifiers:
       coefficients:
@@ -85,8 +88,8 @@
   clawType: !type:SharpClaw
     damage:
       types:
-        Slash: 18
-        Piercing: 12
+        Slash: 11
+        Piercing: 4
         Blunt: -3
     canShoot: false
     canWideSwing: true
