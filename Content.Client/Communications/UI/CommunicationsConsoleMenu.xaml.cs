@@ -131,7 +131,6 @@ namespace Content.Client.Communications.UI
         public bool CountdownStarted;
         public bool Blinking = false;
         public bool LoadedButtons = false;
-        public bool isSyndie = false;
 
         public string CurrentStationAlertLevel = string.Empty;
         public TimeSpan? CountdownEnd;
@@ -244,10 +243,6 @@ namespace Content.Client.Communications.UI
 
         public void UpdateState()
         {
-            if (isSyndie) {
-                foreach (AlertLevelButton button in AlertLevelArea.Children)
-                    button.Visible = false;
-            }
 
             if (TimeRemaining != TimeSpan.Zero && !CanCall)
                 EmergencyShuttleButton.ToolTip = Loc.GetString("comms-console-menu-recall-disabled-tooltip");

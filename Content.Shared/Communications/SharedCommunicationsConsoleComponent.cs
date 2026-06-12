@@ -35,14 +35,14 @@ namespace Content.Shared.Communications
         public readonly bool CanCall;
         public readonly TimeSpan? ExpectedCountdownEnd;
         public readonly bool CountdownStarted;
-        public readonly bool isSyndie;
+        public readonly bool IsSyndie;
         public List<(string id, Color color)>? AlertLevels;
         public string CurrentAlert;
         public float CurrentAlertDelay;
 
         public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null)
         {
-            isSyndie = isSyndie;
+            IsSyndie = isSyndie;
             CanAnnounce = canAnnounce;
             CanCall = canCall;
             ExpectedCountdownEnd = expectedCountdownEnd;

@@ -34,12 +34,14 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Log;
 
 namespace Content.Client.Communications.UI
 {
     public sealed class CommunicationsConsoleBoundUserInterface : BoundUserInterface
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly ILogManager _logMan = default!;
 
         [ViewVariables]
         private CommunicationsConsoleMenu? _menu;
@@ -136,17 +138,11 @@ namespace Content.Client.Communications.UI
                 if (commsState.AlertLevels is not null && !_menu.LoadedButtons) _menu.AddAlertButtons(commsState.AlertLevels);
 
                 // shit code, mas fds
-                _menu.isSyndie = commsState.isSyndie;
-
-
-                if (commsState.isSyndie) {
+                if (commsState.IsSyndie) {
                     _menu.BroadcastButton.Visible = false;
                     _menu.CentCommButton.Visible = false;
 
-                    _menu.EmergencyShuttleButton.Visible = false;
-                    _menu.MartialButton.Visible = false;
-                    _menu.MaintEmergencyButton.Visible = false;
-
+                    _menu.EmergencyArea.Visible = false;
                     _menu.AlertLevelArea.Visible = false;
                 }
 

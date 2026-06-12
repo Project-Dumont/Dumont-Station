@@ -39,7 +39,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                             StyleClasses="OpenLeft"/>
                 </BoxContainer>
             </BoxContainer>
-            <BoxContainer Name="EmergencyArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Name="EmergencyArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True" Access="Public">
                 <Button Name="EmergencyShuttleButton"
                     Access="Public"
                     Text="Call Evacuation Shuttle"
@@ -65,7 +65,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             </BoxContainer>
 
         </BoxContainer>
-        <BoxContainer Name="AlertLevelArea" Orientation="Horizontal" Margin="20" MinHeight="70" HorizontalAlignment="Center" HorizontalExpand="True">
+        <BoxContainer Name="AlertLevelArea" Orientation="Horizontal" Margin="20" MinHeight="70" HorizontalAlignment="Center" HorizontalExpand="True" Access="Public">
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>
