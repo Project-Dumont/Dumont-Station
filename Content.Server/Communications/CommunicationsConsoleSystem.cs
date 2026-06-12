@@ -87,7 +87,6 @@ using Robust.Shared.Player;
 using Content.Server.Chat.Managers; //pra falar com centcom
 using Robust.Shared.Timing;
 using System.Reflection.Metadata;
-using Robust.Shared.Log;
 using Robust.Shared.Prototypes; // para checar se o console é sindicato ou não
 
 
@@ -112,7 +111,6 @@ namespace Content.Server.Communications
         [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
         [Dependency] private readonly IGameTiming _timing = default!; // cooldown
 
-        [Dependency] private readonly ILogManager _logMan = default!;
 
         private const float UIUpdateInterval = 5.0f;
 
@@ -252,9 +250,6 @@ namespace Content.Server.Communications
             var protoId = Prototype(uid)?.ID;
             var isSyndie = protoId == "SyndicateComputerComms";
 
-            ISawmill _sawMill = _logMan.GetSawmill("test");
-            _sawMill.Debug(isSyndie ? "true" : "false");
-            _sawMill.Debug(protoId ?? "null");
 
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 isSyndie,

@@ -34,14 +34,12 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Log;
 
 namespace Content.Client.Communications.UI
 {
     public sealed class CommunicationsConsoleBoundUserInterface : BoundUserInterface
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly ILogManager _logMan = default!;
 
         [ViewVariables]
         private CommunicationsConsoleMenu? _menu;
