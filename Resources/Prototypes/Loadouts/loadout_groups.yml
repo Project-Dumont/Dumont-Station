@@ -269,8 +269,8 @@
   - PlushieKiiaraWarden
   - MP3PlayerWhite
   - PhotoCamera
-  # End Gabystation
   - PlushieJanie # DumontStation
+  - PillCanisterMeroxzine # DumontStation
 
 - type: loadoutGroup
   id: Glasses

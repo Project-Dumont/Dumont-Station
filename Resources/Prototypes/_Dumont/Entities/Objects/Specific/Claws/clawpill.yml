@@ -1,0 +1,33 @@
+#10 seconds with accumulation and 0.02u per second is a bit high, so im making the pill only have 5 u which is already a crazy amount of time with no claw regen
+- type: entity
+  name: claw growth inhibitor pills
+  parent: PillCanister
+  id: PillCanisterMeroxzine
+  suffix: Meroxzine 5u, 15 
+  components:
+  - type: Label
+    currentLabel: meroxzine 5u
+  - type: StorageFill
+    contents:
+    - id: PillMeroxzine
+      amount: 15 
+
+- type: entity
+  name: pill
+  suffix: Meroxzine 5u
+  parent: Pill
+  id: PillMeroxzine
+  components:
+  - type: Pill
+    pillType: 18
+  - type: Sprite
+    state: pill18
+  - type: Label
+    currentLabel: meroxzine 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Meroxzine
+          Quantity: 5

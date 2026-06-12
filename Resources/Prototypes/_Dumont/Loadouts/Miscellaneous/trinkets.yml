@@ -1,0 +1,10 @@
+
+- type: loadout
+  id: PillCanisterMeroxzine
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Reptilian
+  storage:
+    back:
+    - PillCanisterMeroxzine

@@ -1,65 +1,55 @@
 <Document>
-  # Reptilians
+  # Reptilianos
 
   <Box>
     <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
   </Box>
 
 
-  ## Food
-  Reptilians are capable of eating raw meat, but will get ill from consuming chocolate or any other food containing theobromine.
-
-  They get more satiation from proteins, but way less from nutriment.
-
-
-  ## Physical properties
-  They can drag objects with their tail, keeping both their hands free.
-
-  They receive [color=#FFA500]15%[/color] less damage from slash and [color=#FF0000]5%[/color] less damage from heat, but [color=#FFA500]25%[/color] more damage from blunt.
-
-  Their raw melee is way more powerful than human - 8 slash with 1.5 attack rate
+  ## Alimento
+  Reptilianos são capazes de comer carne crua, mas ficam doentes de consumir chocolate ou outra comida que contém theobromine, similar a outras espécies com estômago animal.
+  
+  Eles obtêm mais saciedade com proteínas, mas muito menos com nutrição.
 
 
-  ## Claws
-  Reptilians are equipped with dangerous claws that have different stages.
+  ## Propriedades físicas
+  Eles podem puxar objetos com sua cauda, mantendo ambas as mãos livres.
 
-  - Stage 0 - [color=#FFA500]8 slash damage.[/color]
-  - Stage 1 - [color=#FFA500]11 slash damage.[/color] [color=#FFDEAD]Gun spread is increased by 10%, Handheld weapon damage is decreased by 5%[/color]
-  - Stage 2 - [color=#FFA500]13 slash damage, 2 piercing damage.[/color] [color=#FFDEAD]Gun spread is increased by 25%, Handheld weapon damage is decreased by 13%.[/color] Starting from this stage, you are capable of wideswinging with your claws
-  - Stage 3 - [color=#FFA500]15 slash damage, 5 piercing damage.[/color] [color=#FFDEAD]Gun spread is increased by 45%, Handheld weapon damage is decreased by 25%[/color]
-  - Stage 4 - [color=#FFA500]18 slash damage, 12 piercing damage.[/color] [color=#FFDEAD]You are not capable of using guns anymore, Handheld weapon damage is decreased by 50%[/color]
+  Eles recebem 5% menos dano de calor, mas 30% mais dano de frio.
 
-  ### Cutting Claws
 
-  Using [color=#FFA500]wirecutters[/color], you can cut Reptilian's claws, reducing their stage by 1.
+  ## Garras
+  Reptilianos naturalmente crescem garras perigosas que causam dano cortante. O mais longo estiver suas garras, o pior você será com armas corpo a corpo ou longo alcance, mas o mais dano você causará com elas.
+
+  - Estágio 0 - [color=#FFA500]5 dano cortante.[/color]
+  - Estágio 1 - [color=#FFA500]8 dano cortante.[/color] [color=#FFDEAD]Precisão com armas de longo alcance levemente reduzida, dano de armas corpo reduzido por 5%.[/color]
+  - Estágio 2 - [color=#FFA500]9 dano cortante, 2 dano perfurante.[/color] [color=#FFDEAD]Precisão com armas de longo alcance reduzida, dano de armas corpo a corpo reduzido por 13%.[/color]
+  - Estágio 3 - [color=#FFA500]10 dano cortante, 3 dano perfurante.[/color] [color=#FFDEAD]Precisão com armas de longo alcance altamente reduzida, dano de armas corpo a corpo reduzido por 25%.[/color]
+  - Estágio 4 - [color=#FFA500]11 dano cortante, 4 dano perfurante.[/color] [color=#FFDEAD]Você não é capaz de usar armas de longo alcance, dano de armas corpo a corpo reduzido por 50%.[/color]
+
+  Reptilianos podem escolher trazer pílulas anti-crescimento de garras na secção de extras no loadout.
+  
+  ## Cortando garras
+
+  Usando [color=#FFA500]um cortador de fio[/color], você pode cortar as garras de um reptiliano, reduzido o estágio delas por 1.
 
   <Box>
     <GuideEntityEmbed Entity="Wirecutter" Caption=""/>
   </Box>
 
-  ### Declaw
-  Reptilian claws can be ripped out, instantly setting claw stage to 0 and freezing growth, but there are consequences of this action.
+  ## Temperatura
 
-  - You can deal only [color=#FFA500]3 blunt[/color] with your hands.
-  - You can't hold items in hand for longer than [color=#FF0000]30 seconds[/color]. Doing so will result into items being [color=#FF0000]dropped[/color].
-  - There is a [color=#FF0000]3%[/color] chance to drop melee weapon on hit.
+  Devido a terem sangue frio, eles não são capazes de gerar calor suficiente para se sustentar em um ambiente de [color=#4169E1]20C[/color].
+  No entanto, eles recebem pequena regeneração e aumento de velocidade se conseguirem manter a temperatura corporal maior que [color=#FFA500]47C[/color].
 
-  Currently there's no tool that is capable of performing declaw in the colossus sector.
+  ### Aquecimento
 
-  ## Temperature
-
-  Due to being cold-blooded, they are not capable of generating enough heat to sustain themselfs in the [color=#4169E1]20C[/color] environment.
-  Temperatures lower than [color=#4169E1]22C[/color] are extremely dangerous for them! They will start getting [color=#FF0000]drowsy and start periodically falling unconscious[/color].
-  However, they receive small regeneration and speed boost if they manage to sustain body temperature higher than [color=#FFA500]47C[/color].
-
-  ### Heating up
-
-  - Welders, emergency flares and campfires are now capable of heating up humanoids, including Reptilians.
+  - Soldadores, isqueiros, sinalizadores e fogueiras são capazes de aquecer qualquer espécie, incluindo Reptilianos.
   <Box>
     <GuideEntityEmbed Entity="Welder" Caption=""/>
     <GuideEntityEmbed Entity="Flare" Caption=""/>
     <GuideEntityEmbed Entity="Bonfire" Caption=""/>
   </Box>
-  - Wearing winter clothes or hardsuits will let you to generate enough heat to stay somewhat comfortable.
-  - Reptilians are capable of exchanging heat with other creatures by hugging them. Hugging colder creature, however, will make situation worse.
+  - Vestir roupas de inverno ou hardsuits ajudam a manter sua temperatura em controle.
+  - Reptilianos são capazes de compartilhar sua temperatura com outras espécies ao abraçar elas.
 </Document>
