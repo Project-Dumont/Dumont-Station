@@ -124,7 +124,7 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorCameraObjective
-  name: Desmantele todos os sitemas de vigilância da estação
+  name: Desmantele todos os sistemas de vigilância da estação
   description: Traga de volta o direito à privacidade para os funcionários da Nanotrasen.
   components:
   - type: Objective
