@@ -1,3 +1,33 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateGolden
+  name: golden crate
+  components:
+  - type: Icon
+    sprite: _Orion/Structures/Storage/Crates/gold.rsi
+  - type: Sprite
+    sprite: _Orion/Structures/Storage/Crates/gold.rsi
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateSilver
+  name: silver crate
+  components:
+  - type: Icon
+    sprite: _Orion/Structures/Storage/Crates/silver.rsi
+  - type: Sprite
+    sprite: _Orion/Structures/Storage/Crates/silver.rsi
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateWooden
+  name: wooden crate
+  components:
+  - type: Icon
+    sprite: _Orion/Structures/Storage/Crates/wood.rsi
+  - type: Sprite
+    sprite: _Orion/Structures/Storage/Crates/wood.rsi
+
 # Secure Crates
 
 - type: entity

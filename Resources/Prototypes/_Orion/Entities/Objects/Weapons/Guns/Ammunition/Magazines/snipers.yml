@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseMagazineHeavyRifle762
+  id: MagazineRifle762Sniper
+  name: rifle magazine (7.62mm rifle)
+  description: Standard USSP and EarthGov type of heavy magazines.
+  components:
+  - type: Tag
+    tags:
+      - MagazineRifle762Sniper
+      - MagazineRifle762
+  - type: BallisticAmmoProvider
+    capacity: 20
+    proto: CartridgeRifle762
+    whitelist:
+      tags:
+        - CartridgeRifle762
+  - type: Item
+    size: Small
+  - type: Sprite
+    netsync: false
+    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Magazines/Snipers/svd_mag.rsi
+  - type: MagazineVisuals
+    steps: 2

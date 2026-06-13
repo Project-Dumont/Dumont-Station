@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: ShellLand
+  files:
+  - /Audio/_Orion/Weapons/ShotgunShell/shotgun_shell1.ogg
+  - /Audio/_Orion/Weapons/ShotgunShell/shotgun_shell2.ogg
+  - /Audio/_Orion/Weapons/ShotgunShell/shotgun_shell3.ogg

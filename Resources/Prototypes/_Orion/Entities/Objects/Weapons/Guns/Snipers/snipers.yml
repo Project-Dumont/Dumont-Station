@@ -1,0 +1,54 @@
+- type: entity
+  parent: [ BaseSecurityContraband, BaseWeaponRifle ]
+  id: WeaponRifleDragunov
+  name: Dragunov
+  description: A semiautomatic sniper rifle, famed for its marksmanship, and is built from the ground up for it.
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Weapons/Guns/Snipers/dragunov/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Orion/Objects/Weapons/Guns/Snipers/dragunov/tiny.rsi
+  - type: Item
+    sprite: _Orion/Objects/Weapons/Guns/Snipers/dragunov/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -44
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    minAngle: 24
+    maxAngle: 45
+    cameraRecoilScalar: 3
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/_Orion/Weapons/Guns/Snipers/svd.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Orion/Weapons/Guns/Snipers/svd_cocked.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        startingItem: MagazineRifle762Sniper
+        insertSound: /Audio/_Orion/Weapons/Guns/Snipers/svd_reload.ogg
+        ejectSound: /Audio/_Orion/Weapons/Guns/Snipers/svd_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle762Sniper
+      gun_chamber:
+        startingItem: CartridgeRifle762
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle762
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
