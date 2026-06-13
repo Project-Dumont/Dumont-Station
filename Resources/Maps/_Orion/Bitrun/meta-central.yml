@@ -949,23 +949,6 @@ entities:
     - type: Transform
       pos: 9.5,37.5
       parent: 1
-- proto: AirlockCaptain
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      pos: 8.5,21.5
-      parent: 1
-  - uid: 7
-    components:
-    - type: Transform
-      pos: 10.5,19.5
-      parent: 1
-  - uid: 8
-    components:
-    - type: Transform
-      pos: 13.5,27.5
-      parent: 1
 - proto: AirlockCommand
   entities:
   - uid: 9
@@ -1039,6 +1022,31 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,23.5
       parent: 1
+  - uid: 6
+    components:
+    - type: Transform
+      pos: 8.5,21.5
+      parent: 1
+  - uid: 7
+    components:
+    - type: Transform
+      pos: 10.5,19.5
+      parent: 1
+  - uid: 8
+    components:
+    - type: Transform
+      pos: 13.5,27.5
+      parent: 1
+  - uid: 31
+    components:
+    - type: Transform
+      pos: -7.5,23.5
+      parent: 1
+  - uid: 32
+    components:
+    - type: Transform
+      pos: -16.5,23.5
+      parent: 1
 - proto: AirlockCommandLocked
   entities:
   - uid: 23
@@ -1086,18 +1094,6 @@ entities:
     components:
     - type: Transform
       pos: 11.5,10.5
-      parent: 1
-- proto: AirlockHeadOfPersonnel
-  entities:
-  - uid: 31
-    components:
-    - type: Transform
-      pos: -7.5,23.5
-      parent: 1
-  - uid: 32
-    components:
-    - type: Transform
-      pos: -16.5,23.5
       parent: 1
 - proto: AirlockMaint
   entities:
@@ -5030,7 +5026,7 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
-- proto: ClothingNeckCloakSyndicateAdmiral
+- proto: ClothingNeckCloakGoliathCloak
   entities:
   - uid: 745
     components:
@@ -5039,7 +5035,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckCloakSyndicateOfficer
+- proto: ClothingNeckCloakHerald
   entities:
   - uid: 746
     components:
@@ -5055,7 +5051,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckNanoTrasenRed
+- proto: ClothingNeckCloakNanotrasen
   entities:
   - uid: 790
     components:
@@ -5478,7 +5474,7 @@ entities:
     - type: Transform
       pos: -20.5,6.5
       parent: 1
-- proto: DocumentPrinter
+- proto: PrinterDoc
   entities:
   - uid: 843
     components:
@@ -8729,7 +8725,7 @@ entities:
     - type: Transform
       pos: 3.5687308,25.665857
       parent: 1
-- proto: ResearchDataDisk
+- proto: TreasureDatadiskEncrypted
   entities:
   - uid: 1409
     components:

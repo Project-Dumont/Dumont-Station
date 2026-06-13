@@ -2438,7 +2438,7 @@ entities:
     - type: Transform
       pos: 1.4631635,11.712632
       parent: 1
-- proto: PokerChipsBox
+- proto: TreasureCoinDiamond
   entities:
   - uid: 366
     components:

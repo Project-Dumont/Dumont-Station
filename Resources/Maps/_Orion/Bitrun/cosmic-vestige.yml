@@ -952,7 +952,7 @@ entities:
     - type: Transform
       pos: -0.5,8.5
       parent: 1
-- proto: StatueBustDecoration
+- proto: StatueBananiumClown
   entities:
   - uid: 189
     components:

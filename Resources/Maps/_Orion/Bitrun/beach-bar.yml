@@ -4230,7 +4230,7 @@ entities:
     - type: Transform
       pos: 7.5,8.5
       parent: 1
-- proto: DoubleBed
+- proto: Bed
   entities:
   - uid: 621
     components:
@@ -4242,7 +4242,7 @@ entities:
     - type: Transform
       pos: 23.5,19.5
       parent: 1
-- proto: DoubleBedsheetBlack
+- proto: BedsheetBlack
   entities:
   - uid: 623
     components:
@@ -4250,7 +4250,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 22.5,23.5
       parent: 1
-- proto: DoubleBedsheetIan
+- proto: BedsheetIan
   entities:
   - uid: 624
     components:
@@ -5275,28 +5275,28 @@ entities:
     - type: Transform
       pos: 14.55928,28.515379
       parent: 1
-- proto: PokerChip100
+- proto: TreasureCoinAdamantine
   entities:
   - uid: 781
     components:
     - type: Transform
       pos: 7.6006,27.71729
       parent: 1
-- proto: PokerChip5
+- proto: TreasureCoinSilver
   entities:
   - uid: 782
     components:
     - type: Transform
       pos: 7.287867,27.71729
       parent: 1
-- proto: PokerChip50
+- proto: TreasureCoinGold
   entities:
   - uid: 783
     components:
     - type: Transform
       pos: 7.4755073,27.545416
       parent: 1
-- proto: PokerChipsBox
+- proto: TreasureCoinDiamond
   entities:
   - uid: 784
     components:

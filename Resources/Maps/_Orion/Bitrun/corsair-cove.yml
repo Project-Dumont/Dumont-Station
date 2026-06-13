@@ -2523,7 +2523,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatCaptainWhite
+- proto: ClothingOuterCapJacket
   entities:
   - uid: 423
     components:
@@ -2611,14 +2611,14 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: DoubleBed
+- proto: Bed
   entities:
   - uid: 439
     components:
     - type: Transform
       pos: 4.5,32.5
       parent: 1
-- proto: DoubleBedsheetClown
+- proto: BedsheetClown
   entities:
   - uid: 440
     components:
