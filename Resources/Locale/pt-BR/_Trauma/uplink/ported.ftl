@@ -94,6 +94,10 @@ uplink-rifle-FAL-name = Saive Automatique
 
 uplink-rifle-FAL-description = Um antigo rifle de batalha semiautomático de Terra, apelidado de "braço direito do mundo livre" por seu uso na Guerra Fria. Utiliza carregadores retos de calibre .30 de rifle.
 
+uplink-monarch-name = Casaco Monarch
+
+uplink-monarch-desc = Uma réplica do traje do operativo mais icônico da Gorlex Entertainment. Esta armadura leve utiliza tecnologia reflexiva roubada para desviar disparos de energia. Não espere a mesma proteção contra outros ataques.
+
 secret-stash-briefcase = maleta
 
 store-category-objective = Objetivos

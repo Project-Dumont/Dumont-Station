@@ -91,6 +91,10 @@ uplink-rifle-FAL-name = Saive Automatique
 
 uplink-rifle-FAL-description = The Saive Automatique is an old semi-automatic battle rifle that originates from Terra, it was nicknamed "The right arm of the free world" due to its use in cold war conflicts, it feeds from straight .30 rifle magazines.
 
+uplink-monarch-name = Monarch Coat
+
+uplink-monarch-desc = Directly taken from the wardrobe of Gorlex Entertainment’s most iconic operative, the Monarch Coat is a lightweight armor that uses stolen reflective technology to passively deflect energy blasts… but don't expect too much real protection from a prop.
+
 secret-stash-briefcase = briefcase
 
 store-category-objective = Objective

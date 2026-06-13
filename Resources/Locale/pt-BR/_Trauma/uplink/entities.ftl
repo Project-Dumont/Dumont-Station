@@ -20,6 +20,9 @@ ent-ClothingHandsGlovesBoxingRiggedRed = luvas de boxe vermelhas
 ent-ClothingHandsGlovesBoxingRiggedYellow = luvas de boxe amarelas
     .desc = Luvas amarelas para boxe competitivo.
 
+ent-ClothingOuterArmorMonarchCoat = casaco monarca
+    .desc = Uma réplica do traje mais icônico da estrela da Gorlex Entertainment. Sua tecnologia refletiva repele disparos de energia, mas oferece pouca proteção contra outros danos.
+
 ent-CigCartonSyndicate = pacote de Interdyne Herbals
     .desc = Um pacote com 5 maços de Interdyne Herbals.
 

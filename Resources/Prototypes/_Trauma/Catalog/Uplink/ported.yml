@@ -182,3 +182,13 @@
     Telecrystal: 50
   categories:
     - UplinkWeaponry
+
+- type: listing
+  id: UplinkMonarchCoat
+  name: uplink-monarch-name
+  description: uplink-monarch-desc
+  productEntity: ClothingOuterArmorMonarchCoat
+  cost:
+    Telecrystal: 40
+  categories:
+    - UplinkWearables
