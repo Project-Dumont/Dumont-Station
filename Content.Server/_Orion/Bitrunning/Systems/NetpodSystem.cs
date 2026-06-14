@@ -133,7 +133,10 @@ public sealed class NetpodSystem : EntitySystem
             return;
 
         if (ent.Comp.Avatar != null)
+        {
             _server.DisconnectAvatar(ent.Comp.Avatar.Value, true);
+            ent.Comp.Avatar = null;
+        }
 
         Timer.Spawn(TimeSpan.Zero,
             () =>
@@ -197,6 +200,7 @@ public sealed class NetpodSystem : EntitySystem
             return;
 
         ent.Comp.Occupant = null;
+        ent.Comp.Avatar = null;
         Dirty(ent);
         SetVisualState(ent, NetpodVisualState.Opening);
         _audio.PlayPvs(ent.Comp.OpenSound, ent);
@@ -283,7 +287,11 @@ public sealed class NetpodSystem : EntitySystem
         finally
         {
             if (TryComp<NetpodComponent>(podUid, out var current))
+            {
                 current.EjectingOccupant = false;
+                current.Avatar = null;
+                Dirty(podUid, current);
+            }
         }
     }
 
