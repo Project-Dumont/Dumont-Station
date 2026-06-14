@@ -27,13 +27,3 @@ public enum DefusableVisuals
 {
     Active
 }
-
-[NetSerializable, Serializable]
-public enum DefusableWireStatus
-{
-    LiveIndicator,
-    BoltIndicator,
-    BoomIndicator,
-    DelayIndicator,
-    ProceedIndicator,
-}

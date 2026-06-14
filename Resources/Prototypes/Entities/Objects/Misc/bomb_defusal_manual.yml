@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseItem
+  id: BombDefusalManual
+  name: bomb defusal manual
+  description: A classified manual containing procedures for defusing modular explosive devices. Just keep talking and nobody explodes.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      state: book7
+    - type: BombDefusalManual
+    - type: ActivatableUI
+      key: enum.BombDefusalManualUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.BombDefusalManualUiKey.Key:
+          type: BombDefusalManualBoundUserInterface
+    - type: Item
+      size: Small
+    - type: Tag
+      tags:
+      - Book
