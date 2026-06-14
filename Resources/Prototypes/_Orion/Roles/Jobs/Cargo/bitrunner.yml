@@ -3,18 +3,37 @@
   name: job-name-bitrunner
   description: job-description-bitrunner
   playTimeTracker: JobBitrunner
-  setPreference: false # TODO
-  startingGear: CargoTechGear # TODO
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 9000 # 2.5 hrs
   icon: "JobIconBitrunner"
+  startingGear: BitrunnerGear
+  guides:
+  # - Bitrunner
+  - Cargo
+  goobcoins: 20
   supervisors: job-supervisors-qm
-  goobcoins: 20 #Goob content
   access:
   - Cargo
   - Bitrun
   - Maintenance
   extendedAccess:
   - Salvage
-  special:
-  - !type:GiveItemOnHolidaySpecial
-    holiday: BoxingDay
-    prototype: BoxCardboard
+
+- type: startingGear
+  id: BitrunnerGear
+  equipment:
+    id: BitrunnerPDA
+    ears: ClothingHeadsetCargo
+
+- type: chameleonOutfit
+  id: BitrunnerChameleonOutfit
+  job: Bitrunner
+  equipment:
+    head: ClothingHeadHatCargosoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskBreath
+    outerClothing: ClothingOuterWinterCargo
+    neck: ClothingNeckScarfStripedBrown
+    gloves: ClothingHandsGlovesColorBlack
