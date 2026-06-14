@@ -180,7 +180,7 @@ public sealed class NetpodSystem : EntitySystem
         Dirty(ent);
         SetVisualState(ent, NetpodVisualState.Closing);
         _audio.PlayPvs(ent.Comp.CloseSound, ent);
-        TryAutoConnect(ent, args.Entity);
+        AutoConnectDelay(ent.Owner, args.Entity, ent.Comp.AutoConnectDelay);
         Timer.Spawn(PodAnimationDuration,
             () =>
         {
@@ -334,6 +334,23 @@ public sealed class NetpodSystem : EntitySystem
 
         ent.Comp.LinkedServer = null;
         Dirty(ent);
+    }
+
+    private void AutoConnectDelay(EntityUid podUid, EntityUid user, TimeSpan delay)
+    {
+        Timer.Spawn(delay, () =>
+        {
+            if (!TryComp<NetpodComponent>(podUid, out var pod) || pod.Avatar != null || pod.Occupant != user)
+                return;
+
+            if (TryComp<ApcPowerReceiverComponent>(podUid, out var power) && !power.Powered)
+            {
+                _popup.PopupEntity(Loc.GetString("bitrunning-netpod-no-power"), podUid, user);
+                return;
+            }
+
+            TryAutoConnect((podUid, pod), user);
+        });
     }
 
     private void TryAutoConnect(Entity<NetpodComponent> ent, EntityUid user)

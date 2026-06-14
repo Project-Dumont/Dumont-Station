@@ -17,6 +17,9 @@ public sealed partial class NetpodComponent : Component
     [DataField]
     public EntityUid? Avatar;
 
+    [DataField]
+    public TimeSpan AutoConnectDelay = TimeSpan.FromSeconds(1.8);
+
     /// <summary>
     /// Internal re-entrancy guard while removing occupant from the pod container.
     /// </summary>
