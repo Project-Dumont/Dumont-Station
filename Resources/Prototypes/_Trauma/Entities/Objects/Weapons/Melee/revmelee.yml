@@ -410,7 +410,6 @@
     angle: 225
   - type: LandAtCursor
   - type: DamageOtherOnHit
-    increaseOnly: true
     damage:
       types:
         Piercing: 15 # 7 to crit
