@@ -102,15 +102,6 @@
         volume: -8
   - type: Construction
     graph: RevSword
-  - type: Parry
-    maxParries: 3
-    maxReflects: 0
-    parryMinSkill: 40
-    soundOnParry:
-      path: /Audio/_Goobstation/Heretic/parry.ogg
-      params:
-        variation: 0.2
-        volume: -11
 
 - type: entity
   parent: BaseRevForgedWeapon

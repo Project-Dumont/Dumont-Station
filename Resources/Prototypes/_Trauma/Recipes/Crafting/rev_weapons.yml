@@ -64,12 +64,11 @@
   targetNode: Proletariat
   category: construction-category-antagonist
   objectType: Item
-  theory:
-    RevolutionaryKnowledge: 2
-    WeaponsKnowledge: 1
-  practical:
-    GunsmithingKnowledge: 4
-    WeaponsKnowledge: 3
+  entityWhitelist:
+    components:
+    - HeadRevolutionary
+    - Revolutionary
+
 
 - type: construction
   id: RevIED

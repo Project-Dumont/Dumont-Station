@@ -5,9 +5,6 @@
   id: CartridgeRPG2
 
 - type: Tag
-  id: CartridgeTurret
-
-- type: Tag
   id: DataChip
 
 - type: Tag
