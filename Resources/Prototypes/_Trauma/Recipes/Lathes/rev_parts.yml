@@ -23,6 +23,11 @@
 
 - type: latheRecipe
   parent: BaseRevComponent
+  id: RevBallBearings
+  result: RevBallBearings
+
+- type: latheRecipe
+  parent: BaseRevComponent
   id: RevArmorPlate
   result: RevArmorPlate
   materials:
