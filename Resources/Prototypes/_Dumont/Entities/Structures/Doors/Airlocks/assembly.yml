@@ -1,3 +1,6 @@
+# Normal
+
+# Med
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyPsychology
@@ -25,6 +28,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/genetics.rsi
     state: "assembly"
 
+# Cargo
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyMail
@@ -52,6 +56,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/salvmine.rsi
     state: "assembly"
 
+# Sec
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyBrigMedic
@@ -61,6 +66,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/brigmedic.rsi
     state: "assembly"
 
+# Sci
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyRobotics
@@ -79,6 +85,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
     state: "assembly"
 
+# Service
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyLibrary
@@ -90,6 +97,7 @@
 
 # Glass
 
+# Med
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyPsychologyGlass
@@ -117,6 +125,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/genetics.rsi
     state: "assembly"
 
+# Cargo
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyMailGlass
@@ -144,6 +153,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/salvmine.rsi
     state: "assembly"
 
+# Sec
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyBrigMedicGlass
@@ -153,6 +163,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/brigmedic.rsi
     state: "assembly"
 
+# Sci
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyRoboticsGlass
@@ -171,6 +182,7 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/medsci.rsi
     state: "assembly"
 
+# Service
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyLibraryGlass

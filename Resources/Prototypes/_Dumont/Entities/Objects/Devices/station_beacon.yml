@@ -1,0 +1,34 @@
+# Med
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconMedicalPharmacy
+  suffix: Pharmacy
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-pharmacy
+
+# Sci
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconScienceGenetics
+  suffix: Genetics
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-genetics
+
+# Cargo
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconCargoMail
+  suffix: Mail
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-mail
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconCargoMining
+  suffix: Mining
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-mining

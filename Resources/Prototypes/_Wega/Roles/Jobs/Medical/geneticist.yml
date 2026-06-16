@@ -17,8 +17,9 @@
   icon: "JobIconGeneticist"
   supervisors: job-supervisors-cmo
   access:
-  - Medical
+  # - Medical # Dumont
   - Research
+  - Genetics # Dumont
   - Maintenance
   - Cryogenics
 
