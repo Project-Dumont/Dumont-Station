@@ -7,7 +7,7 @@ namespace Content.Client.BombDefusal.Modules;
 
 /// <summary>
 /// UI control for the "Simple Wires" module.
-/// Displays colored wires as thick bars that can be cut by clicking.
+/// Wires are buttons because IDK how to add the wires UI to this...
 /// </summary>
 public sealed class WiresModuleControl : BaseModuleControl
 {
@@ -59,7 +59,7 @@ public sealed class WiresModuleControl : BaseModuleControl
                 var wireColor = wiresState.WireColors[i];
                 var colorName = WireColorNames.GetValueOrDefault(wireColor, "???");
 
-                // Wire row with index label and wire button
+                // Wire row
                 var wireRow = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Horizontal,
@@ -77,7 +77,7 @@ public sealed class WiresModuleControl : BaseModuleControl
                 };
                 wireRow.AddChild(indexLabel);
 
-                // Wire button — styled as a thick bar
+                // Wire button
                 var wireButton = new Button
                 {
                     HorizontalExpand = true,

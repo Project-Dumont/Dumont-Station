@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.BombDefusal.Modules;
 
 /// <summary>
-/// Base class for bomb module visible state sent to the client.
+/// Base class for bomb module state sent to the client.
 /// Each module type derives from this with its own display data.
 /// </summary>
 [NetSerializable, Serializable]
@@ -29,7 +29,6 @@ public enum WireColor : byte
 
 /// <summary>
 /// State for the "Simple Wires" module.
-/// 3-6 colored wires; the defuser must cut the correct one.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class WiresModuleState : BombDefusalModuleState

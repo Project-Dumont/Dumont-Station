@@ -41,7 +41,7 @@ public sealed class CodewordsModuleControl : BaseModuleControl
                 var wordIndex = i;
                 var word = codewordsState.Words[i];
 
-                // Wrap in a panel for dark background styling
+                // Wrap in a panel
                 var wordPanel = new PanelContainer
                 {
                     HorizontalExpand = true,

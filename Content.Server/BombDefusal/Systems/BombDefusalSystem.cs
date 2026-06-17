@@ -241,7 +241,9 @@ public sealed class BombDefusalSystem : EntitySystem
                 return WiresModule.Generate(_random, serialNumber);
         }
     }
-
+    /// <summary>
+    /// TODO: need new symbols or symbol renderer for the module, seems like the game doesn't support most symbols
+    /// </summary>
     private static readonly string[] SymbolGlyphs =
     {
         "Ω", "Ψ", "Ξ", "Φ", "Σ",
@@ -302,7 +304,7 @@ public sealed class BombDefusalSystem : EntitySystem
                     rules.RuleLines.Add("Navigate the player (white circle) to the goal (red triangle).");
                     rules.RuleLines.Add("Do not hit walls! The defuser does not see the walls.");
                     rules.RuleLines.Add("");
-                    
+
                     var mazeIndex = 1;
                     foreach (var m in group.OfType<MazeModule>())
                     {
@@ -336,7 +338,12 @@ public sealed class BombDefusalSystem : EntitySystem
 
         comp.RuleSet = ruleSet;
     }
-
+    /// <summary>
+    /// This is VERY shit, do not do it like this, I can't figure out a better way to do this, help!!!
+    /// TODO: Better Rules Generator
+    /// </summary>
+    /// <param name="wires"></param>
+    /// <param name="rules"></param>
     private void GenerateWiresRules(WiresModule wires, BombModuleRules rules)
     {
         rules.RuleLines.Add("[color=yellow]WIRES RULE SHEET[/color]");

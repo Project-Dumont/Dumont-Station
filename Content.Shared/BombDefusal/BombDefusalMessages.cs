@@ -4,7 +4,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.BombDefusal;
 
 /// <summary>
-/// Base class for module-specific interaction payloads sent from client to server.
+/// Base class for module-specific interactions.
 /// </summary>
 [NetSerializable, Serializable]
 [ImplicitDataDefinitionForInheritors]
@@ -13,7 +13,7 @@ public abstract partial class BombModuleAction
 }
 
 /// <summary>
-/// Player cut a wire in the Wires module.
+/// the player cuts a wire in the Wires module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class CutWireAction : BombModuleAction
@@ -27,7 +27,7 @@ public sealed partial class CutWireAction : BombModuleAction
 }
 
 /// <summary>
-/// Player pressed a symbol button in the Symbols module.
+/// the player pressed a symbol button in the Symbols module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class PressSymbolAction : BombModuleAction
@@ -41,7 +41,7 @@ public sealed partial class PressSymbolAction : BombModuleAction
 }
 
 /// <summary>
-/// Player moved in the Maze module.
+/// the player moved in the Maze module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class PressMazeDirectionAction : BombModuleAction
@@ -57,7 +57,7 @@ public sealed partial class PressMazeDirectionAction : BombModuleAction
 }
 
 /// <summary>
-/// Player pressed a button in the Memory module.
+/// the player pressed a button in the Memory module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class PressMemoryButtonAction : BombModuleAction
@@ -71,7 +71,7 @@ public sealed partial class PressMemoryButtonAction : BombModuleAction
 }
 
 /// <summary>
-/// Player cycled a letter column in the Password module.
+/// the player cycled a letter column in the Password module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class CyclePasswordColumnAction : BombModuleAction
@@ -87,7 +87,7 @@ public sealed partial class CyclePasswordColumnAction : BombModuleAction
 }
 
 /// <summary>
-/// Player submitted the password in the Password module.
+/// the player submitted a password in the Password module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class SubmitPasswordAction : BombModuleAction
@@ -95,7 +95,7 @@ public sealed partial class SubmitPasswordAction : BombModuleAction
 }
 
 /// <summary>
-/// Player cycled the frequency in the Morse Code module.
+/// the player cycled the frequency in the Morse Code module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class CycleMorseFrequencyAction : BombModuleAction
@@ -109,7 +109,7 @@ public sealed partial class CycleMorseFrequencyAction : BombModuleAction
 }
 
 /// <summary>
-/// Player submitted the frequency in the Morse Code module.
+/// the player submitted a frequency in the Morse Code module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class SubmitMorseAction : BombModuleAction
@@ -117,7 +117,7 @@ public sealed partial class SubmitMorseAction : BombModuleAction
 }
 
 /// <summary>
-/// Player pressed a button in the Who's on First module.
+/// the player pressed a button in the 'Who's on First' module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class PressWhosOnFirstButtonAction : BombModuleAction
@@ -131,7 +131,7 @@ public sealed partial class PressWhosOnFirstButtonAction : BombModuleAction
 }
 
 /// <summary>
-/// Player pressed a colored button in the Simon Says module.
+/// the player pressed a colored button in the Simon Says module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class PressSimonColorAction : BombModuleAction
@@ -145,7 +145,7 @@ public sealed partial class PressSimonColorAction : BombModuleAction
 }
 
 /// <summary>
-/// Player selected a word in the Codewords module.
+/// the player selected a word in the Codewords module.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed partial class SubmitCodewordAction : BombModuleAction
@@ -159,7 +159,7 @@ public sealed partial class SubmitCodewordAction : BombModuleAction
 }
 
 /// <summary>
-/// Message from client to server: player interacted with a specific module.
+/// Message to the server about interactions with the bomb modules.
 /// </summary>
 [NetSerializable, Serializable]
 public sealed class BombModuleInteractionMessage : BoundUserInterfaceMessage

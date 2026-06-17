@@ -15,12 +15,12 @@ public sealed class BombDefusalUiState : BoundUserInterfaceState
     public List<BombDefusalModuleState> Modules = new();
 
     /// <summary>
-    /// Current number of strikes accumulated.
+    /// Current number of strikes received.
     /// </summary>
     public int Strikes;
 
     /// <summary>
-    /// Maximum strikes before detonation.
+    /// Maximum number of strikes before detonation.
     /// </summary>
     public int MaxStrikes;
 
@@ -30,12 +30,12 @@ public sealed class BombDefusalUiState : BoundUserInterfaceState
     public string SerialNumber = string.Empty;
 
     /// <summary>
-    /// Remaining time on the bomb timer in seconds.
+    /// Remaining time on the timer in seconds.
     /// </summary>
     public float RemainingTime;
 
     /// <summary>
-    /// Whether the bomb is currently armed and ticking.
+    /// Whether the bomb is currently armed.
     /// </summary>
     public bool IsActive;
 }

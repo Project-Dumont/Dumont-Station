@@ -17,7 +17,8 @@ public sealed class SymbolsModuleControl : BaseModuleControl
 
     /// <summary>
     /// Unicode symbol glyphs used for display. Index matches symbol ID.
-    /// These are decorative characters that look like mysterious runes/symbols.
+    /// This is very bad, doesn't work, most symbols are not rendered and I don't know which ones are renderable and which ones aren't
+    /// TODO: Better symbol renderer
     /// </summary>
     private static readonly string[] SymbolGlyphs =
     {

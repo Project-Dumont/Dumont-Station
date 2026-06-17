@@ -31,7 +31,6 @@ bomb-defusal-popup-already-defused = The {$name} is already defused.
 # Examine
 bomb-defusal-examine-defused = The {$name} is defused.
 bomb-defusal-examine-active = The {$name} is active! Remaining time: {$time} seconds.
-bomb-defusal-examine-active-no-time = The {$name} is active!
 bomb-defusal-examine-strikes = Strikes: {$current}/{$max}
 bomb-defusal-examine-modules = Solved modules: {$solved}/{$total}
 bomb-defusal-examine-inactive = The {$name} is inactive.

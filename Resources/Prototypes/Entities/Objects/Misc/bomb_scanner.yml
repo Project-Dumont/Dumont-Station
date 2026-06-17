@@ -2,7 +2,7 @@
   parent: BaseItem
   id: BombScanner
   name: bomb scanner
-  description: A handheld scanning device designed to link with modular explosive devices and display their randomized rules.
+  description: A handheld scanner that detects the underlying logic of the bomb's systems.
   components:
   - type: Sprite
     sprite: Objects/Specific/Research/anomalyscanner.rsi

@@ -7,8 +7,6 @@ namespace Content.Client.BombDefusal.Modules;
 
 /// <summary>
 /// Base class for module UI controls in the bomb defusal interface.
-/// Provides a consistent KTANE-style frame with dark background, colored indicator strip,
-/// module header, and solved/unsolved state.
 /// </summary>
 public abstract class BaseModuleControl : BoxContainer
 {
@@ -44,7 +42,7 @@ public abstract class BaseModuleControl : BoxContainer
         VerticalExpand = true;
         Margin = new Thickness(3);
 
-        // Outer background panel — dark card style
+        // Outer background panel
         _backgroundPanel = new PanelContainer
         {
             HorizontalExpand = true,

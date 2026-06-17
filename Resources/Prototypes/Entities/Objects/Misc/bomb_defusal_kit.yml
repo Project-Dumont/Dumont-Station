@@ -2,7 +2,7 @@
   parent: BaseItem
   id: BombDefusalKit
   name: bomb defusal kit
-  description: A large, heavy-duty kit containing specialized tools for defusing modular explosive devices. Requires both hands to operate.
+  description: A large, heavy set of specialized tools for defusing modular bombs. You hope you never have to use this.
   components:
     - type: Sprite
       sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
