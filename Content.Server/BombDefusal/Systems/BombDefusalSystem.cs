@@ -79,24 +79,455 @@ public sealed class BombDefusalSystem : EntitySystem
         for (var i = 0; i < moduleCount; i++)
         {
             var moduleType = _random.Pick(availableTypes);
-            var module = GenerateModule(moduleType, comp.SerialNumber);
+            var module = GenerateModule(moduleType, comp.SerialNumber, comp.Modules);
             comp.Modules.Add(module);
         }
 
         comp.ModulesGenerated = true;
+
+        GenerateRuleSet(uid, comp);
     }
 
-    private BombModule GenerateModule(BombModuleType type, string serialNumber)
+    private BombModule GenerateModule(BombModuleType type, string serialNumber, List<BombModule> existingModules)
     {
-        return type switch
+        switch (type)
         {
-            BombModuleType.Wires => WiresModule.Generate(_random, serialNumber),
-            BombModuleType.Symbols => SymbolsModule.Generate(_random),
-            BombModuleType.Button => ButtonModule.Generate(_random, serialNumber),
-            BombModuleType.SimonSays => SimonSaysModule.Generate(_random, serialNumber),
-            BombModuleType.Codewords => CodewordsModule.Generate(_random),
-            _ => WiresModule.Generate(_random, serialNumber),
+            case BombModuleType.Wires:
+                var wires = WiresModule.Generate(_random, serialNumber);
+                var prevWires = existingModules.OfType<WiresModule>().FirstOrDefault();
+                if (prevWires != null)
+                {
+                    wires.Rules3 = prevWires.Rules3;
+                    wires.Rules4 = prevWires.Rules4;
+                    wires.Rules5 = prevWires.Rules5;
+                    wires.Rules6 = prevWires.Rules6;
+                    wires.CorrectWireIndex = wires.EvaluateWiresRules(wires.GetRulesForCount(wires.WireColors.Count), wires.WireColors, serialNumber);
+                }
+                return wires;
+
+            case BombModuleType.Symbols:
+                var symbols = SymbolsModule.Generate(_random);
+                var prevSymbols = existingModules.OfType<SymbolsModule>().FirstOrDefault();
+                if (prevSymbols != null)
+                {
+                    symbols.ModuleSymbolColumns = prevSymbols.ModuleSymbolColumns;
+                    var colIdx = _random.Next(symbols.ModuleSymbolColumns.Length);
+                    var col = symbols.ModuleSymbolColumns[colIdx];
+                    var indices = Enumerable.Range(0, col.Length).ToList();
+                    _random.Shuffle(indices);
+                    var chosen = indices.Take(4).ToList();
+                    symbols.DisplayedSymbols = chosen.Select(pos => col[pos]).ToList();
+                    _random.Shuffle(symbols.DisplayedSymbols);
+                    chosen.Sort();
+                    var correct = chosen.Select(pos => col[pos]).ToList();
+                    symbols.CorrectOrder = correct.Select(sym => symbols.DisplayedSymbols.IndexOf(sym)).ToList();
+                }
+                return symbols;
+
+            case BombModuleType.SimonSays:
+                var simon = SimonSaysModule.Generate(_random, serialNumber);
+                var prevSimon = existingModules.OfType<SimonSaysModule>().FirstOrDefault();
+                if (prevSimon != null)
+                {
+                    simon.VowelMappings = prevSimon.VowelMappings;
+                    simon.NoVowelMappings = prevSimon.NoVowelMappings;
+                }
+                return simon;
+
+            case BombModuleType.Codewords:
+                var codewords = CodewordsModule.Generate(_random);
+                var prevCodewords = existingModules.OfType<CodewordsModule>().FirstOrDefault();
+                if (prevCodewords != null)
+                {
+                    codewords.ModuleWordColumns = prevCodewords.ModuleWordColumns;
+                    var key = _random.Pick(codewords.ModuleWordColumns.Keys.ToList());
+                    var col = codewords.ModuleWordColumns[key];
+                    var targetWords = col.ToList();
+                    _random.Shuffle(targetWords);
+                    var fromTarget = _random.Next(2, 4);
+                    var selected = targetWords.Take(fromTarget).ToList();
+                    var correct = col.First(w => selected.Contains(w));
+
+                    var other = new List<string>();
+                    foreach (var kvp in codewords.ModuleWordColumns)
+                    {
+                        if (kvp.Key == key) continue;
+                        foreach (var w in kvp.Value)
+                        {
+                            if (!col.Contains(w) && !selected.Contains(w))
+                                other.Add(w);
+                        }
+                    }
+                    other = other.Distinct().ToList();
+                    _random.Shuffle(other);
+                    var filler = other.Take(6 - fromTarget).ToList();
+                    var displayed = new List<string>();
+                    displayed.AddRange(selected);
+                    displayed.AddRange(filler);
+                    _random.Shuffle(displayed);
+                    codewords.DisplayedWords = displayed;
+                    codewords.CorrectWordIndex = displayed.IndexOf(correct);
+                }
+                return codewords;
+
+            case BombModuleType.Maze:
+                var maze = MazeModule.Generate(_random, serialNumber);
+                var prevMaze = existingModules.OfType<MazeModule>().FirstOrDefault();
+                if (prevMaze != null)
+                {
+                    maze.Walls = prevMaze.Walls;
+                    maze.PlayerX = _random.Next(0, 6);
+                    maze.PlayerY = _random.Next(0, 6);
+                    maze.CurrentX = maze.PlayerX;
+                    maze.CurrentY = maze.PlayerY;
+                    do
+                    {
+                        maze.GoalX = _random.Next(0, 6);
+                        maze.GoalY = _random.Next(0, 6);
+                    } while (maze.GoalX == maze.PlayerX && maze.GoalY == maze.PlayerY);
+                    maze.PathDirections = MazeModule.FindPath(maze);
+                }
+                return maze;
+
+            case BombModuleType.Memory:
+                var memory = MemoryModule.Generate(_random);
+                var prevMemory = existingModules.OfType<MemoryModule>().FirstOrDefault();
+                if (prevMemory != null)
+                {
+                    memory.StageRules = prevMemory.StageRules;
+                }
+                return memory;
+
+            case BombModuleType.Password:
+                var password = PasswordModule.Generate(_random);
+                var prevPassword = existingModules.OfType<PasswordModule>().FirstOrDefault();
+                if (prevPassword != null)
+                {
+                    password.PoolWords = prevPassword.PoolWords;
+                    password.TargetWord = _random.Pick(password.PoolWords);
+
+                    password.Columns.Clear();
+                    for (int col = 0; col < 5; col++)
+                    {
+                        var targetChar = password.TargetWord[col];
+                        var colLetters = new HashSet<char> { targetChar };
+                        while (colLetters.Count < 6)
+                        {
+                            var randChar = (char) ('A' + _random.Next(0, 26));
+                            colLetters.Add(randChar);
+                        }
+                        var colList = colLetters.ToList();
+                        _random.Shuffle(colList);
+                        password.Columns.Add(colList);
+                        password.SelectedIndices[col] = _random.Next(0, 6);
+                    }
+                }
+                return password;
+
+            case BombModuleType.MorseCode:
+                return MorseCodeModule.Generate(_random);
+
+            case BombModuleType.WhosOnFirst:
+                var wof = WhosOnFirstModule.Generate(_random);
+                var prevWof = existingModules.OfType<WhosOnFirstModule>().FirstOrDefault();
+                if (prevWof != null)
+                {
+                    wof.DisplayToPositionMap = prevWof.DisplayToPositionMap;
+                    wof.WordPriorityLists = prevWof.WordPriorityLists;
+                }
+                return wof;
+
+            default:
+                return WiresModule.Generate(_random, serialNumber);
+        }
+    }
+
+    private static readonly string[] SymbolGlyphs =
+    {
+        "Ω", "Ψ", "Ξ", "Φ", "Σ",
+        "Δ", "Π", "Θ", "Λ", "Γ",
+        "ℌ", "℘", "ℜ", "ℑ", "ℵ",
+        "♠", "♣", "♦", "♥", "★",
+        "☆", "◆", "◇", "▲", "▼",
+    };
+
+    public void GenerateRuleSet(EntityUid uid, BombDefusalComponent comp)
+    {
+        if (comp.RuleSet != null)
+            return;
+
+        if (!comp.ModulesGenerated)
+            GenerateModules(uid, comp);
+
+        var ruleSet = new BombRuleSet
+        {
+            SerialNumber = comp.SerialNumber,
+            ModuleCount = comp.Modules.Count
         };
+
+        var hasVowel = comp.SerialNumber.Any(c => "AEIOUaeiou".Contains(c));
+        var lastDigitOdd = comp.SerialNumber.Length > 0 &&
+                           char.IsDigit(comp.SerialNumber[^1]) &&
+                           (comp.SerialNumber[^1] - '0') % 2 != 0;
+
+        var modulesByType = comp.Modules.GroupBy(m => m.Type);
+
+        foreach (var group in modulesByType)
+        {
+            var type = group.Key;
+            var rules = new BombModuleRules();
+            var firstModule = group.First();
+
+            switch (firstModule)
+            {
+                case WiresModule wires:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-wires");
+                    GenerateWiresRules(wires, rules);
+                    break;
+                case SymbolsModule symbols:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-symbols");
+                    GenerateSymbolsRules(symbols, rules);
+                    break;
+                case SimonSaysModule simon:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-simonsays");
+                    GenerateSimonSaysRules(simon, rules);
+                    break;
+                case CodewordsModule codewords:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-codewords");
+                    GenerateCodewordsRules(codewords, rules);
+                    break;
+                case MazeModule:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-maze");
+                    rules.RuleLines.Add("[color=yellow]MAZE NAVIGATION[/color]");
+                    rules.RuleLines.Add("Navigate the player (white circle) to the goal (red triangle).");
+                    rules.RuleLines.Add("Do not hit walls! The defuser does not see the walls.");
+                    rules.RuleLines.Add("");
+                    
+                    var mazeIndex = 1;
+                    foreach (var m in group.OfType<MazeModule>())
+                    {
+                        rules.RuleLines.Add($"[bold]Maze Module #{mazeIndex}:[/bold]");
+                        rules.RuleLines.Add($"  Start: ({m.PlayerX + 1}, {m.PlayerY + 1}) | Goal: ({m.GoalX + 1}, {m.GoalY + 1})");
+                        rules.RuleLines.Add($"  Path: {string.Join(" -> ", m.PathDirections)}");
+                        rules.RuleLines.Add("");
+                        mazeIndex++;
+                    }
+                    break;
+                case MemoryModule memory:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-memory");
+                    GenerateMemoryRules(memory, rules);
+                    break;
+                case PasswordModule password:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-password");
+                    GeneratePasswordRules(password, rules);
+                    break;
+                case MorseCodeModule morse:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-morsecode");
+                    GenerateMorseRules(morse, rules);
+                    break;
+                case WhosOnFirstModule wof:
+                    rules.ModuleName = Loc.GetString("bomb-defusal-module-whosonfirst");
+                    GenerateWhosOnFirstRules(wof, rules);
+                    break;
+            }
+
+            ruleSet.ModuleRules[type] = rules;
+        }
+
+        comp.RuleSet = ruleSet;
+    }
+
+    private void GenerateWiresRules(WiresModule wires, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]WIRES RULE SHEET[/color]");
+        rules.RuleLines.Add("Verify the number of wires on the module and follow the rules below:");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]If there are 3 wires:[/bold]");
+        foreach (var r in wires.Rules3)
+        {
+            rules.RuleLines.Add($"- {r.RuleText}");
+        }
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]If there are 4 wires:[/bold]");
+        foreach (var r in wires.Rules4)
+        {
+            rules.RuleLines.Add($"- {r.RuleText}");
+        }
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]If there are 5 wires:[/bold]");
+        foreach (var r in wires.Rules5)
+        {
+            rules.RuleLines.Add($"- {r.RuleText}");
+        }
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]If there are 6 wires:[/bold]");
+        foreach (var r in wires.Rules6)
+        {
+            rules.RuleLines.Add($"- {r.RuleText}");
+        }
+    }
+
+    private void GenerateSymbolsRules(SymbolsModule symbols, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]SYMBOL KEYPADS[/color]");
+        rules.RuleLines.Add("Only one column below will contain all four symbols displayed on the module.");
+        rules.RuleLines.Add("Press the buttons in order from top to bottom of that column.");
+        rules.RuleLines.Add("");
+        for (int i = 0; i < symbols.ModuleSymbolColumns.Length; i++)
+        {
+            var col = symbols.ModuleSymbolColumns[i];
+            var colStr = string.Join("  ", col.Select(id => SymbolGlyphs[id]));
+            rules.RuleLines.Add($"[bold]Col {i + 1}:[/bold]  [mono]{colStr}[/mono]");
+        }
+    }
+
+    private void GenerateSimonSaysRules(SimonSaysModule simon, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]SIMON SAYS RULES[/color]");
+        rules.RuleLines.Add("A light flashes in a sequence. Press the mapped colors below.");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]If the serial number has a Vowel:[/bold]");
+        rules.RuleLines.Add("- No strikes:");
+        foreach (var kvp in simon.VowelMappings[0])
+            rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
+        rules.RuleLines.Add("- 1 strike:");
+        foreach (var kvp in simon.VowelMappings[1])
+            rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
+        rules.RuleLines.Add("- 2+ strikes:");
+        foreach (var kvp in simon.VowelMappings[2])
+            rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
+
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]If the serial number has NO Vowel:[/bold]");
+        rules.RuleLines.Add("- No strikes:");
+        foreach (var kvp in simon.NoVowelMappings[0])
+            rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
+        rules.RuleLines.Add("- 1 strike:");
+        foreach (var kvp in simon.NoVowelMappings[1])
+            rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
+        rules.RuleLines.Add("- 2+ strikes:");
+        foreach (var kvp in simon.NoVowelMappings[2])
+            rules.RuleLines.Add($"  {kvp.Key.ToString().ToUpper()} -> {kvp.Value.ToString().ToUpper()}");
+    }
+
+    private void GenerateCodewordsRules(CodewordsModule codewords, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]CODEWORDS LOOKUP[/color]");
+        rules.RuleLines.Add("Find a column category where [bold]two or more[/bold] of the displayed words appear.");
+        rules.RuleLines.Add("Press the first word in that column category that is displayed on the module.");
+        rules.RuleLines.Add("");
+        foreach (var kvp in codewords.ModuleWordColumns)
+        {
+            var listStr = string.Join(", ", kvp.Value);
+            rules.RuleLines.Add($"[bold]Category {kvp.Key}:[/bold] {listStr}");
+        }
+    }
+
+    private void GenerateMazeRules(MazeModule maze, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]MAZE NAVIGATION[/color]");
+        rules.RuleLines.Add("Navigate the player (white circle) to the goal (red triangle).");
+        rules.RuleLines.Add("Do not hit walls! The defuser does not see the walls.");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add($"[bold]Player Start:[/bold] ({maze.PlayerX + 1}, {maze.PlayerY + 1})");
+        rules.RuleLines.Add($"[bold]Goal Position:[/bold] ({maze.GoalX + 1}, {maze.GoalY + 1})");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]Correct Path:[/bold]");
+        rules.RuleLines.Add(string.Join(" -> ", maze.PathDirections));
+    }
+
+    private void GenerateMemoryRules(MemoryModule memory, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]MEMORY MODULE RULES[/color]");
+        rules.RuleLines.Add("Follow the rules for the current stage. Buttons are ordered 1 to 4 from left to right.");
+        rules.RuleLines.Add("");
+        for (int stage = 0; stage < 5; stage++)
+        {
+            rules.RuleLines.Add($"[bold]Stage {stage + 1}:[/bold]");
+            var stageRule = memory.StageRules[stage];
+            for (int display = 1; display <= 4; display++)
+            {
+                var type = stageRule.Types[display - 1];
+                var val = stageRule.Values[display - 1];
+                var actionStr = type switch
+                {
+                    MemoryRuleType.Position => $"press the button in [bold]position {val + 1}[/bold].",
+                    MemoryRuleType.Label => $"press the button labeled [bold]{val}[/bold].",
+                    MemoryRuleType.SamePositionAsStage => $"press the button in the [bold]same position[/bold] as stage {val + 1}.",
+                    MemoryRuleType.SameLabelAsStage => $"press the button with the [bold]same label[/bold] as stage {val + 1}.",
+                    _ => "press any button."
+                };
+                rules.RuleLines.Add($"  - If display is [bold]{display}[/bold]: {actionStr}");
+            }
+        }
+    }
+
+    private void GeneratePasswordRules(PasswordModule password, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]PASSWORD LOOKUP[/color]");
+        rules.RuleLines.Add("Cycle the columns on the module. Identify which word from the list below can be formed.");
+        rules.RuleLines.Add("");
+        foreach (var word in password.PoolWords)
+        {
+            rules.RuleLines.Add($"- {word}");
+        }
+    }
+
+    private void GenerateMorseRules(MorseCodeModule morse, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]MORSE CODE FREQUENCIES[/color]");
+        rules.RuleLines.Add("Decode the flashing light pattern and transmit on the correct frequency.");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]Word -> Frequency Table:[/bold]");
+        foreach (var kvp in MorseCodeModule.WordFrequencies.OrderBy(k => k.Key))
+        {
+            rules.RuleLines.Add($"- {kvp.Key} -> {kvp.Value:F3} MHz");
+        }
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]Morse Translation Guide:[/bold]");
+        rules.RuleLines.Add("[mono]A: .-   B: -...  C: -.-.  D: -..   E: .     F: ..-.[/mono]");
+        rules.RuleLines.Add("[mono]G: --.  H: ....  I: ..   J: .---  K: -.-   L: .-..[/mono]");
+        rules.RuleLines.Add("[mono]M: --   N: -.   O: ---  P: .--.  Q: --.-  R: .-.[/mono]");
+        rules.RuleLines.Add("[mono]S: ...  T: -    U: ..-  V: ...-  W: .--   X: -..-[/mono]");
+        rules.RuleLines.Add("[mono]Y: -.-- Z: --..[/mono]");
+    }
+
+    private static string GetPositionName(int pos)
+    {
+        return pos switch
+        {
+            0 => "TOP-LEFT",
+            1 => "TOP-RIGHT",
+            2 => "MIDDLE-LEFT",
+            3 => "MIDDLE-RIGHT",
+            4 => "BOTTOM-LEFT",
+            5 => "BOTTOM-RIGHT",
+            _ => "TOP-LEFT"
+        };
+    }
+
+    private void GenerateWhosOnFirstRules(WhosOnFirstModule wof, BombModuleRules rules)
+    {
+        rules.RuleLines.Add("[color=yellow]WHO'S ON FIRST LOOKUP[/color]");
+        rules.RuleLines.Add("[bold]Step 1:[/bold] Look at the display word and find its position below.");
+        rules.RuleLines.Add("Look at the label of the button in that position.");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]Step 1 Mappings:[/bold]");
+        foreach (var word in WhosOnFirstModule.WordPool.OrderBy(w => w))
+        {
+            var pos = wof.DisplayToPositionMap[word];
+            rules.RuleLines.Add($"- \"{word}\" -> check {GetPositionName(pos)}");
+        }
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]Step 2:[/bold] Look up the word label in the priority list below.");
+        rules.RuleLines.Add("Press the first word in that list that appears on any button on the module.");
+        rules.RuleLines.Add("");
+        rules.RuleLines.Add("[bold]Step 2 Priority Lists:[/bold]");
+        foreach (var word in WhosOnFirstModule.WordPool.OrderBy(w => w))
+        {
+            var list = wof.WordPriorityLists[word];
+            rules.RuleLines.Add($"- [bold]{word}:[/bold] {string.Join(", ", list)}");
+        }
     }
 
     /// <summary>

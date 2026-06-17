@@ -1,5 +1,6 @@
 using Content.Server.BombDefusal.Modules;
 using Content.Server.BombDefusal.Systems;
+using Content.Shared.BombDefusal;
 using Robust.Shared.Audio;
 
 namespace Content.Server.BombDefusal.Components;
@@ -43,6 +44,12 @@ public sealed partial class BombDefusalComponent : Component
     public List<BombModule> Modules = new();
 
     /// <summary>
+    /// The generated rule set for this bomb.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public BombRuleSet? RuleSet;
+
+    /// <summary>
     /// Whether the bomb has been fully defused (all modules solved).
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
@@ -64,7 +71,7 @@ public sealed partial class BombDefusalComponent : Component
     /// Sound played when a module is solved.
     /// </summary>
     [DataField]
-    public SoundSpecifier SolveSound = new SoundPathSpecifier("/Audio/Machines/ping.ogg");
+    public SoundSpecifier SolveSound = new SoundPathSpecifier("/Audio/Effects/Cargo/ping.ogg");
 
     /// <summary>
     /// Sound played when the entire bomb is defused.

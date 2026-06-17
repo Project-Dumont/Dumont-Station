@@ -1,5 +1,6 @@
 using Content.Shared.BombDefusal;
 using Content.Shared.BombDefusal.Modules;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
@@ -7,67 +8,86 @@ namespace Content.Client.BombDefusal.Modules;
 
 /// <summary>
 /// UI control for the "Codewords" module.
-/// Displays 6 words as buttons; the player selects the correct one.
+/// Displays 6 words as styled buttons; the player selects the correct one.
 /// </summary>
 public sealed class CodewordsModuleControl : BaseModuleControl
 {
-    private readonly Label _title;
     private readonly BoxContainer _wordsContainer;
-    private readonly Label _solvedLabel;
+
+    private readonly List<Button> _wordButtons = new();
 
     public CodewordsModuleControl()
     {
-        _title = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-codewords"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Margin = new Thickness(0, 0, 0, 4),
-        };
-        AddChild(_title);
+        SetHeaderText(Loc.GetString("bomb-defusal-module-codewords"));
 
         _wordsContainer = new BoxContainer
         {
             Orientation = LayoutOrientation.Vertical,
             HorizontalExpand = true,
         };
-        AddChild(_wordsContainer);
-
-        _solvedLabel = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-solved"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Visible = false,
-            Align = Label.AlignMode.Center,
-        };
-        AddChild(_solvedLabel);
+        ContentContainer.AddChild(_wordsContainer);
     }
 
-    public override void UpdateState(BombDefusalModuleState state)
+    public override void UpdateModuleState(BombDefusalModuleState state)
     {
         if (state is not CodewordsModuleState codewordsState)
             return;
 
-        _solvedLabel.Visible = codewordsState.IsSolved;
+        if (_wordButtons.Count == 0)
+        {
+            _wordsContainer.RemoveAllChildren();
+            for (var i = 0; i < codewordsState.Words.Count; i++)
+            {
+                var wordIndex = i;
+                var word = codewordsState.Words[i];
 
-        _wordsContainer.RemoveAllChildren();
+                // Wrap in a panel for dark background styling
+                var wordPanel = new PanelContainer
+                {
+                    HorizontalExpand = true,
+                    Margin = new Thickness(0, 1),
+                };
+                wordPanel.PanelOverride = new StyleBoxFlat
+                {
+                    BackgroundColor = Color.FromHex("#0a0a15"),
+                    BorderColor = Color.FromHex("#222244"),
+                    BorderThickness = new Thickness(1),
+                    ContentMarginLeftOverride = 2,
+                    ContentMarginRightOverride = 2,
+                    ContentMarginTopOverride = 1,
+                    ContentMarginBottomOverride = 1,
+                };
+
+                var button = new Button
+                {
+                    Text = word,
+                    HorizontalExpand = true,
+                };
+
+                var idx = wordIndex;
+                button.OnPressed += _ => RaiseAction(new SubmitCodewordAction(idx));
+
+                wordPanel.AddChild(button);
+                _wordsContainer.AddChild(wordPanel);
+                _wordButtons.Add(button);
+            }
+        }
 
         for (var i = 0; i < codewordsState.Words.Count; i++)
         {
             var wordIndex = i;
-            var word = codewordsState.Words[i];
+            var button = _wordButtons[i];
 
-            var button = new Button
+            button.Disabled = codewordsState.IsSolved;
+
+            if (codewordsState.IsSolved && codewordsState.SelectedIndex == wordIndex)
             {
-                Text = word,
-                Disabled = codewordsState.IsSolved,
-                Margin = new Thickness(0, 1),
-                HorizontalExpand = true,
-            };
-
-            var idx = wordIndex;
-            button.OnPressed += _ => RaiseAction(new SubmitCodewordAction(idx));
-
-            _wordsContainer.AddChild(button);
+                button.ModulateSelfOverride = Color.FromHex("#336633");
+            }
+            else
+            {
+                button.ModulateSelfOverride = null;
+            }
         }
     }
 }

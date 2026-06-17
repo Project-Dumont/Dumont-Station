@@ -7,13 +7,11 @@ namespace Content.Client.BombDefusal.Modules;
 
 /// <summary>
 /// UI control for the "Simple Wires" module.
-/// Displays colored wires that can be cut by clicking.
+/// Displays colored wires as thick bars that can be cut by clicking.
 /// </summary>
 public sealed class WiresModuleControl : BaseModuleControl
 {
-    private readonly Label _title;
     private readonly BoxContainer _wiresContainer;
-    private readonly Label _solvedLabel;
 
     private static readonly Dictionary<WireColor, Color> WireColorMap = new()
     {
@@ -21,67 +19,100 @@ public sealed class WiresModuleControl : BaseModuleControl
         { WireColor.Blue, Color.FromHex("#3366ff") },
         { WireColor.Yellow, Color.FromHex("#ffdd33") },
         { WireColor.White, Color.FromHex("#eeeeee") },
-        { WireColor.Black, Color.FromHex("#333333") },
+        { WireColor.Black, Color.FromHex("#444444") },
     };
+
+    private static readonly Dictionary<WireColor, string> WireColorNames = new()
+    {
+        { WireColor.Red, "RED" },
+        { WireColor.Blue, "BLUE" },
+        { WireColor.Yellow, "YELLOW" },
+        { WireColor.White, "WHITE" },
+        { WireColor.Black, "BLACK" },
+    };
+
+    private readonly List<Button> _wireButtons = new();
 
     public WiresModuleControl()
     {
-        _title = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-wires"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Margin = new Thickness(0, 0, 0, 4),
-        };
-        AddChild(_title);
+        SetHeaderText(Loc.GetString("bomb-defusal-module-wires"));
 
         _wiresContainer = new BoxContainer
         {
             Orientation = LayoutOrientation.Vertical,
             HorizontalExpand = true,
         };
-        AddChild(_wiresContainer);
-
-        _solvedLabel = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-solved"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Visible = false,
-            Align = Label.AlignMode.Center,
-        };
-        AddChild(_solvedLabel);
+        ContentContainer.AddChild(_wiresContainer);
     }
 
-    public override void UpdateState(BombDefusalModuleState state)
+    public override void UpdateModuleState(BombDefusalModuleState state)
     {
         if (state is not WiresModuleState wiresState)
             return;
 
-        _solvedLabel.Visible = wiresState.IsSolved;
+        if (_wireButtons.Count == 0)
+        {
+            _wiresContainer.RemoveAllChildren();
+            for (var i = 0; i < wiresState.WireColors.Count; i++)
+            {
+                var wireIndex = i;
+                var wireColor = wiresState.WireColors[i];
+                var colorName = WireColorNames.GetValueOrDefault(wireColor, "???");
 
-        _wiresContainer.RemoveAllChildren();
+                // Wire row with index label and wire button
+                var wireRow = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Horizontal,
+                    HorizontalExpand = true,
+                    Margin = new Thickness(0, 1),
+                };
+
+                // Wire index label
+                var indexLabel = new Label
+                {
+                    Text = $"{wireIndex + 1}.",
+                    FontColorOverride = Color.FromHex("#666688"),
+                    MinWidth = 20,
+                    Margin = new Thickness(0, 0, 4, 0),
+                };
+                wireRow.AddChild(indexLabel);
+
+                // Wire button — styled as a thick bar
+                var wireButton = new Button
+                {
+                    HorizontalExpand = true,
+                    MinHeight = 28,
+                };
+
+                var idx = wireIndex;
+                wireButton.OnPressed += _ => RaiseAction(new CutWireAction(idx));
+
+                wireRow.AddChild(wireButton);
+                _wiresContainer.AddChild(wireRow);
+                _wireButtons.Add(wireButton);
+            }
+        }
 
         for (var i = 0; i < wiresState.WireColors.Count; i++)
         {
-            var wireIndex = i;
             var wireColor = wiresState.WireColors[i];
             var isCut = wiresState.CutWires.Contains(i);
+            var colorName = WireColorNames.GetValueOrDefault(wireColor, "???");
+            var button = _wireButtons[i];
 
-            var wireButton = new Button
+            button.Text = isCut
+                ? $"── ✂ ── {colorName} (CUT)"
+                : $"━━━━━━━━ {colorName}";
+            button.Disabled = isCut || wiresState.IsSolved;
+
+            if (isCut)
             {
-                Text = isCut
-                    ? $"── ✂ ── Wire {wireIndex + 1} (Cut)"
-                    : $"━━━━━━ Wire {wireIndex + 1}",
-                Disabled = isCut || wiresState.IsSolved,
-                Margin = new Thickness(0, 1),
-                HorizontalExpand = true,
-            };
-
-            wireButton.ModulateSelfOverride = WireColorMap.GetValueOrDefault(wireColor, Color.White);
-
-            var idx = wireIndex;
-            wireButton.OnPressed += _ => RaiseAction(new CutWireAction(idx));
-
-            _wiresContainer.AddChild(wireButton);
+                button.ModulateSelfOverride = Color.FromHex("#333333");
+            }
+            else
+            {
+                button.ModulateSelfOverride = WireColorMap.GetValueOrDefault(wireColor, Color.White);
+            }
         }
     }
 }

@@ -29,17 +29,33 @@ public sealed partial class BombDefusalMenu : DefaultWindow
     public void UpdateState(BombDefusalUiState state)
     {
         // Update header
-        SerialLabel.Text = Loc.GetString("bomb-defusal-serial", ("serial", state.SerialNumber));
-        StrikesLabel.Text = Loc.GetString("bomb-defusal-strikes", ("current", state.Strikes), ("max", state.MaxStrikes));
+        SerialLabel.Text = $"SERIAL: {state.SerialNumber}";
 
         var minutes = (int) state.RemainingTime / 60;
         var seconds = (int) state.RemainingTime % 60;
-        TimerLabel.Text = Loc.GetString("bomb-defusal-timer", ("time", $"{minutes:D2}:{seconds:D2}"));
+        var timeStr = $"{minutes:D2}:{seconds:D2}";
+        TimerLabel.Text = timeStr;
+
+        // Color timer based on remaining time
+        if (state.RemainingTime <= 30)
+            TimerLabel.FontColorOverride = Color.FromHex("#ff0000");
+        else if (state.RemainingTime <= 60)
+            TimerLabel.FontColorOverride = Color.FromHex("#ff4444");
+        else
+            TimerLabel.FontColorOverride = Color.FromHex("#ffaa00");
+
+        // Visual strike markers: filled circles for strikes, empty for remaining
+        var strikeChars = new List<string>();
+        for (var i = 0; i < state.MaxStrikes; i++)
+        {
+            strikeChars.Add(i < state.Strikes ? "✕" : "○");
+        }
+        StrikesLabel.Text = string.Join(" ", strikeChars);
 
         // Color the strikes label based on count
         StrikesLabel.FontColorOverride = state.Strikes switch
         {
-            0 => Color.FromHex("#44ff44"),
+            0 => Color.FromHex("#444466"),
             1 => Color.FromHex("#ffaa00"),
             2 => Color.FromHex("#ff4444"),
             _ => Color.FromHex("#ff0000"),
@@ -86,7 +102,7 @@ public sealed partial class BombDefusalMenu : DefaultWindow
             var control = CreateModuleControl(moduleState, moduleIndex);
             _moduleControls.Add(control);
 
-            // Wrap in a panel for styling
+            // Wrap in a panel for consistent sizing
             var panel = new PanelContainer
             {
                 Margin = new Thickness(2),
@@ -105,9 +121,13 @@ public sealed partial class BombDefusalMenu : DefaultWindow
         {
             WiresModuleState => new WiresModuleControl(),
             SymbolsModuleState => new SymbolsModuleControl(),
-            ButtonModuleState => new ButtonModuleControl(),
             SimonSaysModuleState => new SimonSaysModuleControl(),
             CodewordsModuleState => new CodewordsModuleControl(),
+            MazeModuleState => new MazeModuleControl(),
+            MemoryModuleState => new MemoryModuleControl(),
+            PasswordModuleState => new PasswordModuleControl(),
+            MorseCodeModuleState => new MorseCodeModuleControl(),
+            WhosOnFirstModuleState => new WhosOnFirstModuleControl(),
             _ => new WiresModuleControl(), // fallback
         };
 

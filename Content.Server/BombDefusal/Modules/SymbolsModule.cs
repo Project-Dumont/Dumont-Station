@@ -7,16 +7,10 @@ namespace Content.Server.BombDefusal.Modules;
 
 /// <summary>
 /// "Symbols/Keypads" module.
-/// 4 symbols displayed on buttons; press them in the correct column order.
-/// The manual contains 6 columns of symbols. Find the column that contains all 4
-/// of the bomb's symbols, then press them in top-to-bottom order from that column.
+/// Symbol columns are dynamically randomized per bomb.
 /// </summary>
 public sealed class SymbolsModule : BombModule
 {
-    /// <summary>
-    /// All symbol columns for the manual lookup. Each column is an ordered list of symbol IDs.
-    /// Symbols are referenced by index (0-24).
-    /// </summary>
     public static readonly int[][] SymbolColumns =
     {
         new[] { 0, 1, 2, 3, 4, 5, 6 },     // Column 1
@@ -27,24 +21,11 @@ public sealed class SymbolsModule : BombModule
         new[] { 15, 7, 23, 24, 19, 11, 20 },// Column 6
     };
 
-    /// <summary>
-    /// Total unique symbols available.
-    /// </summary>
     public const int TotalSymbols = 25;
 
-    /// <summary>
-    /// The 4 symbol IDs displayed on the module.
-    /// </summary>
+    public int[][] ModuleSymbolColumns = new int[6][];
     public List<int> DisplayedSymbols = new();
-
-    /// <summary>
-    /// The correct press order (indices into DisplayedSymbols).
-    /// </summary>
     public List<int> CorrectOrder = new();
-
-    /// <summary>
-    /// Symbols correctly pressed so far.
-    /// </summary>
     public List<int> PressedSymbols = new();
 
     public SymbolsModule()
@@ -56,9 +37,28 @@ public sealed class SymbolsModule : BombModule
     {
         var module = new SymbolsModule();
 
+        // Copy columns
+        for (int i = 0; i < SymbolColumns.Length; i++)
+        {
+            module.ModuleSymbolColumns[i] = (int[])SymbolColumns[i].Clone();
+        }
+
+        // Randomly remap symbol IDs per bomb
+        var symbolMapping = Enumerable.Range(0, TotalSymbols).ToList();
+        random.Shuffle(symbolMapping);
+
+        for (int i = 0; i < module.ModuleSymbolColumns.Length; i++)
+        {
+            for (int j = 0; j < module.ModuleSymbolColumns[i].Length; j++)
+            {
+                var oldId = module.ModuleSymbolColumns[i][j];
+                module.ModuleSymbolColumns[i][j] = symbolMapping[oldId];
+            }
+        }
+
         // Pick a random column
-        var columnIndex = random.Next(SymbolColumns.Length);
-        var column = SymbolColumns[columnIndex];
+        var columnIndex = random.Next(module.ModuleSymbolColumns.Length);
+        var column = module.ModuleSymbolColumns[columnIndex];
 
         // Pick 4 distinct symbols from this column
         var indices = Enumerable.Range(0, column.Length).ToList();
@@ -101,7 +101,6 @@ public sealed class SymbolsModule : BombModule
         if (pressSymbol.SymbolIndex < 0 || pressSymbol.SymbolIndex >= DisplayedSymbols.Count)
             return false;
 
-        // Already pressed this one
         if (PressedSymbols.Contains(pressSymbol.SymbolIndex))
             return true; // no-op
 
@@ -115,7 +114,6 @@ public sealed class SymbolsModule : BombModule
             return true;
         }
 
-        // Wrong order — strike! Reset progress.
         PressedSymbols.Clear();
         return false;
     }

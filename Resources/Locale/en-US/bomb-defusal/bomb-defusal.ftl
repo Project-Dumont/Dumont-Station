@@ -10,13 +10,17 @@ bomb-defusal-timer = {$time}
 # Module names
 bomb-defusal-module-wires = Wires
 bomb-defusal-module-symbols = Symbols
-bomb-defusal-module-button = The Button
-bomb-defusal-module-simon = Simon Says
+bomb-defusal-module-simonsays = Simon Says
 bomb-defusal-module-codewords = Codewords
+bomb-defusal-module-maze = Maze
+bomb-defusal-module-memory = Memory
+bomb-defusal-module-password = Password
+bomb-defusal-module-morsecode = Morse Code
+bomb-defusal-module-whosonfirst = Who's on First
 
-# Manual
-bomb-defusal-manual-title = Bomb Defusal Manual
-bomb-defusal-manual-description = A classified manual for modular bomb defusal.
+# Scanner
+bomb-scanner-scan-popup = Linked scanner to {$name}.
+bomb-scanner-not-armed = Fails to link. The bomb is not armed!
 
 # Popups
 bomb-defusal-popup-strike-exit = You feel the bomb click ominously as you step away...
@@ -31,3 +35,6 @@ bomb-defusal-examine-active-no-time = The {$name} is active!
 bomb-defusal-examine-strikes = Strikes: {$current}/{$max}
 bomb-defusal-examine-modules = Solved modules: {$solved}/{$total}
 bomb-defusal-examine-inactive = The {$name} is inactive.
+
+# Bomb Defusal Kit
+bomb-defusal-kit-must-wield = You need to wield the defusal kit with both hands first!

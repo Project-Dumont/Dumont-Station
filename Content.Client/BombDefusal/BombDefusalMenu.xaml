@@ -1,45 +1,59 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="{Loc 'bomb-defusal-title'}"
-               MinSize="500 400"
-               SetSize="600 500">
+               MinSize="520 420"
+               SetSize="620 520">
     <BoxContainer Orientation="Vertical"
                   HorizontalExpand="True"
                   VerticalExpand="True">
-        <!-- Header: Serial, Strikes, Timer -->
-        <PanelContainer Margin="0 0 0 5">
+        <!-- Header Panel: Terminal-style bomb info -->
+        <PanelContainer Margin="0 0 0 4">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1a1a2e" />
+                <gfx:StyleBoxFlat BackgroundColor="#0a0a18"
+                                  BorderColor="#333355"
+                                  BorderThickness="0 0 0 2" />
             </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Horizontal" Margin="8 4">
-                <Label Name="SerialLabel"
-                       Text="Serial: ------"
-                       FontColorOverride="#00ff41"
-                       HorizontalExpand="True" />
-                <Label Name="StrikesLabel"
-                       Text="Strikes: 0/3"
-                       FontColorOverride="#ff4444"
-                       Margin="10 0" />
-                <Label Name="TimerLabel"
-                       Text="Time: --:--"
-                       FontColorOverride="#ffaa00"
-                       HorizontalAlignment="Right" />
+            <BoxContainer Orientation="Vertical" Margin="10 6">
+                <!-- Top row: Serial + Timer -->
+                <BoxContainer Orientation="Horizontal" Margin="0 0 0 4">
+                    <Label Name="SerialLabel"
+                           Text="SERIAL: ------"
+                           FontColorOverride="#00ff41"
+                           HorizontalExpand="True" />
+                    <Label Name="TimerLabel"
+                           Text="--:--"
+                           FontColorOverride="#ff4444"
+                           HorizontalAlignment="Right" />
+                </BoxContainer>
+                <!-- Bottom row: Strikes as visual markers -->
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="STRIKES: "
+                           FontColorOverride="#8888aa" />
+                    <Label Name="StrikesLabel"
+                           Text="○ ○ ○"
+                           FontColorOverride="#444466" />
+                </BoxContainer>
             </BoxContainer>
         </PanelContainer>
-        <!-- Status label -->
-        <PanelContainer Name="StatusPanel" Margin="0 0 0 5" Visible="False">
+        <!-- Status label (defused) -->
+        <PanelContainer Name="StatusPanel" Margin="0 0 0 4" Visible="False">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#003300" />
+                <gfx:StyleBoxFlat BackgroundColor="#002200"
+                                  BorderColor="#00ff41"
+                                  BorderThickness="1" />
             </PanelContainer.PanelOverride>
             <Label Name="StatusLabel"
                    Text=""
                    FontColorOverride="#00ff41"
-                   Align="Center" />
+                   Align="Center"
+                   Margin="8 4" />
         </PanelContainer>
         <!-- Module Grid -->
-        <GridContainer Name="ModuleGrid"
-                       Columns="2"
-                       HorizontalExpand="True"
-                       VerticalExpand="True" />
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <GridContainer Name="ModuleGrid"
+                           Columns="2"
+                           HorizontalExpand="True"
+                           VerticalExpand="True" />
+        </ScrollContainer>
     </BoxContainer>
 </DefaultWindow>

@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseItem
+  id: BombScanner
+  name: bomb scanner
+  description: A handheld scanning device designed to link with modular explosive devices and display their randomized rules.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Research/anomalyscanner.rsi
+    state: icon
+  - type: BombScanner
+  - type: Item
+    size: Small
+  - type: UserInterface
+    interfaces:
+      enum.BombScannerUiKey.Key:
+        type: BombScannerBoundUserInterface

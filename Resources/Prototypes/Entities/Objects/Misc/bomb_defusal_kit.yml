@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: BombDefusalKit
+  name: bomb defusal kit
+  description: A large, heavy-duty kit containing specialized tools for defusing modular explosive devices. Requires both hands to operate.
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
+      state: icon
+    - type: BombDefusalKit
+    - type: Wieldable
+    - type: Item
+      size: Large
+      inhandVisuals:
+        left:
+        - state: inhand-left
+        right:
+        - state: inhand-right

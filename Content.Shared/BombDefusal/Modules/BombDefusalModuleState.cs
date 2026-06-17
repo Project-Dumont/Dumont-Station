@@ -75,52 +75,82 @@ public sealed partial class SymbolsModuleState : BombDefusalModuleState
 }
 
 /// <summary>
-/// Colors for the Button module.
+/// State for the "Maze" module.
 /// </summary>
 [NetSerializable, Serializable]
-public enum ButtonColor : byte
+public sealed partial class MazeModuleState : BombDefusalModuleState
 {
-    Red,
-    Blue,
-    Yellow,
-    White,
-}
+    public byte[] WallFlags = new byte[36]; // North=1, South=2, West=4, East=8
+    public int PlayerX;
+    public int PlayerY;
+    public int GoalX;
+    public int GoalY;
 
-/// <summary>
-/// Labels for the Button module.
-/// </summary>
-[NetSerializable, Serializable]
-public enum ButtonLabel : byte
-{
-    Abort,
-    Detonate,
-    Hold,
-    Press,
-}
-
-/// <summary>
-/// State for "The Button" module.
-/// A single colored button with a label; tap or hold based on rules.
-/// </summary>
-[NetSerializable, Serializable]
-public sealed partial class ButtonModuleState : BombDefusalModuleState
-{
-    public ButtonColor Color;
-    public ButtonLabel Label;
-
-    /// <summary>
-    /// The color of the strip revealed when holding. Null if not currently held.
-    /// </summary>
-    public ButtonColor? StripColor;
-
-    /// <summary>
-    /// Whether the button is currently being held down.
-    /// </summary>
-    public bool IsHeld;
-
-    public ButtonModuleState()
+    public MazeModuleState()
     {
-        Type = BombModuleType.Button;
+        Type = BombModuleType.Maze;
+    }
+}
+
+/// <summary>
+/// State for the "Memory" module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class MemoryModuleState : BombDefusalModuleState
+{
+    public int CurrentStage;
+    public int DisplayNumber;
+    public List<int> ButtonLabels = new();
+
+    public MemoryModuleState()
+    {
+        Type = BombModuleType.Memory;
+    }
+}
+
+/// <summary>
+/// State for the "Password" module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class PasswordModuleState : BombDefusalModuleState
+{
+    public List<List<char>> Columns = new();
+    public List<int> SelectedIndices = new();
+
+    public PasswordModuleState()
+    {
+        Type = BombModuleType.Password;
+    }
+}
+
+/// <summary>
+/// State for the "Morse Code" module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class MorseCodeModuleState : BombDefusalModuleState
+{
+    public string MorseSequence = string.Empty;
+    public float CurrentFrequency;
+
+    public MorseCodeModuleState()
+    {
+        Type = BombModuleType.MorseCode;
+    }
+}
+
+/// <summary>
+/// State for the "Who's on First" module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class WhosOnFirstModuleState : BombDefusalModuleState
+{
+    public string DisplayWord = string.Empty;
+    public List<string> ButtonLabels = new();
+    public int CurrentStage;
+
+    public WhosOnFirstModuleState()
+    {
+        Type = BombModuleType.WhosOnFirst;
     }
 }
 

@@ -7,52 +7,22 @@ namespace Content.Server.BombDefusal.Modules;
 
 /// <summary>
 /// "Codewords" module.
-/// 6 words are displayed. The defuser reads them out; the manual reader cross-references
-/// them against word category columns to identify the single correct codeword.
+/// Word categories are dynamically randomized per bomb.
 /// </summary>
 public sealed class CodewordsModule : BombModule
 {
-    /// <summary>
-    /// Word categories for the manual. Each column has a header letter and a list of words.
-    /// If 2 or more of the 6 displayed words appear in a column, the answer is the first
-    /// word in that column that is also displayed.
-    /// </summary>
-    public static readonly Dictionary<char, string[]> WordColumns = new()
+    public static readonly string[] BaseWords = new[]
     {
-        ['A'] = new[] { "ALPHA", "BRAVO", "CHARLIE", "DELTA", "ECHO", "FOXTROT" },
-        ['B'] = new[] { "GOLF", "HOTEL", "INDIA", "JULIET", "KILO", "LIMA" },
-        ['C'] = new[] { "MIKE", "NOVEMBER", "OSCAR", "PAPA", "QUEBEC", "ROMEO" },
-        ['D'] = new[] { "SIERRA", "TANGO", "UNIFORM", "VICTOR", "WHISKEY", "XRAY" },
-        ['E'] = new[] { "YANKEE", "ZULU", "NINER", "ZERO", "CIPHER", "AGENT" },
-        ['F'] = new[] { "SECTOR", "VECTOR", "SIGNAL", "BEACON", "STATIC", "CIPHER" },
+        "ALPHA", "BRAVO", "CHARLIE", "DELTA", "ECHO", "FOXTROT",
+        "GOLF", "HOTEL", "INDIA", "JULIET", "KILO", "LIMA",
+        "MIKE", "NOVEMBER", "OSCAR", "PAPA", "QUEBEC", "ROMEO",
+        "SIERRA", "TANGO", "UNIFORM", "VICTOR", "WHISKEY", "XRAY",
+        "YANKEE", "ZULU", "NINER", "ZERO", "CIPHER", "AGENT",
+        "SECTOR", "VECTOR", "SIGNAL", "BEACON", "STATIC", "BOOM"
     };
 
-    /// <summary>
-    /// All words available across all columns (flattened, deduplicated).
-    /// </summary>
-    public static readonly string[] AllWords;
-
-    static CodewordsModule()
-    {
-        var words = new HashSet<string>();
-        foreach (var column in WordColumns.Values)
-        {
-            foreach (var word in column)
-            {
-                words.Add(word);
-            }
-        }
-        AllWords = words.ToArray();
-    }
-
-    /// <summary>
-    /// The 6 words displayed to the defuser.
-    /// </summary>
+    public Dictionary<char, string[]> ModuleWordColumns = new();
     public List<string> DisplayedWords = new();
-
-    /// <summary>
-    /// The index of the correct word in DisplayedWords.
-    /// </summary>
     public int CorrectWordIndex;
 
     public CodewordsModule()
@@ -64,10 +34,19 @@ public sealed class CodewordsModule : BombModule
     {
         var module = new CodewordsModule();
 
-        // Pick a target column
-        var columns = WordColumns.Keys.ToList();
-        var targetColumnKey = random.Pick(columns);
-        var targetColumn = WordColumns[targetColumnKey];
+        // Generate randomized columns for this bomb
+        var shuffledBase = BaseWords.ToList();
+        random.Shuffle(shuffledBase);
+
+        var keys = new[] { 'A', 'B', 'C', 'D', 'E', 'F' };
+        for (int i = 0; i < keys.Length; i++)
+        {
+            module.ModuleWordColumns[keys[i]] = shuffledBase.Skip(i * 6).Take(6).ToArray();
+        }
+
+        // Pick a target column key
+        var targetColumnKey = random.Pick(keys);
+        var targetColumn = module.ModuleWordColumns[targetColumnKey];
 
         // Pick 2-3 words from the target column (these will be in the displayed list)
         var targetWords = targetColumn.ToList();
@@ -76,31 +55,27 @@ public sealed class CodewordsModule : BombModule
         var selectedFromTarget = targetWords.Take(fromTargetCount).ToList();
 
         // The correct answer is the one that appears first in the column among displayed
-        // Find which of the selected words comes first in the column
         var correctWord = targetColumn.First(w => selectedFromTarget.Contains(w));
 
-        // Pick remaining words from OTHER columns (not the target)
+        // Pick remaining words from OTHER columns
         var otherWords = new List<string>();
-        foreach (var kvp in WordColumns)
+        foreach (var kvp in module.ModuleWordColumns)
         {
             if (kvp.Key == targetColumnKey)
                 continue;
 
             foreach (var word in kvp.Value)
             {
-                // Make sure we don't accidentally pull in words also in the target column
                 if (!targetColumn.Contains(word) && !selectedFromTarget.Contains(word))
                     otherWords.Add(word);
             }
         }
 
-        // Deduplicate
         otherWords = otherWords.Distinct().ToList();
         random.Shuffle(otherWords);
         var fillCount = 6 - fromTargetCount;
         var filler = otherWords.Take(fillCount).ToList();
 
-        // Combine and shuffle
         var allDisplayed = new List<string>();
         allDisplayed.AddRange(selectedFromTarget);
         allDisplayed.AddRange(filler);
@@ -139,6 +114,6 @@ public sealed class CodewordsModule : BombModule
             return true;
         }
 
-        return false; // Wrong word — strike!
+        return false;
     }
 }

@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared.BombDefusal;
 using Content.Shared.BombDefusal.Modules;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
@@ -14,11 +15,9 @@ namespace Content.Client.BombDefusal.Modules;
 /// </summary>
 public sealed class SimonSaysModuleControl : BaseModuleControl
 {
-    private readonly Label _title;
     private readonly Label _stageLabel;
-    private readonly Label _sequenceLabel;
+    private readonly BoxContainer _sequenceRow;
     private readonly GridContainer _grid;
-    private readonly Label _solvedLabel;
 
     private static readonly Dictionary<SimonColor, Color> SimonColorMap = new()
     {
@@ -36,81 +35,144 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
         { SimonColor.Yellow, "YELLOW" },
     };
 
+    private readonly List<Button> _simonButtons = new();
+
     public SimonSaysModuleControl()
     {
-        _title = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-simon"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Margin = new Thickness(0, 0, 0, 4),
-        };
-        AddChild(_title);
+        SetHeaderText(Loc.GetString("bomb-defusal-module-simon"));
 
+        // Stage indicator
         _stageLabel = new Label
         {
-            Text = "Stage: 1/3",
-            FontColorOverride = Color.FromHex("#aaaaaa"),
-            Margin = new Thickness(0, 0, 0, 2),
-        };
-        AddChild(_stageLabel);
-
-        _sequenceLabel = new Label
-        {
-            Text = "Sequence: ...",
-            FontColorOverride = Color.FromHex("#ffaa00"),
+            Text = "STAGE 1/3",
+            FontColorOverride = Color.FromHex("#8888aa"),
             Margin = new Thickness(0, 0, 0, 4),
         };
-        AddChild(_sequenceLabel);
+        ContentContainer.AddChild(_stageLabel);
 
+        // Flash sequence display as colored dots
+        var sequencePanel = new PanelContainer
+        {
+            Margin = new Thickness(0, 0, 0, 6),
+            HorizontalExpand = true,
+        };
+        sequencePanel.PanelOverride = new StyleBoxFlat
+        {
+            BackgroundColor = Color.FromHex("#111122"),
+            ContentMarginLeftOverride = 6,
+            ContentMarginRightOverride = 6,
+            ContentMarginTopOverride = 4,
+            ContentMarginBottomOverride = 4,
+        };
+
+        var sequenceColumn = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Vertical,
+            HorizontalExpand = true,
+        };
+
+        var sequenceTitle = new Label
+        {
+            Text = "SEQUENCE:",
+            FontColorOverride = Color.FromHex("#666688"),
+            Margin = new Thickness(0, 0, 0, 2),
+        };
+        sequenceColumn.AddChild(sequenceTitle);
+
+        _sequenceRow = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+        };
+        sequenceColumn.AddChild(_sequenceRow);
+
+        sequencePanel.AddChild(sequenceColumn);
+        ContentContainer.AddChild(sequencePanel);
+
+        // 2x2 color button grid
         _grid = new GridContainer
         {
             Columns = 2,
             HorizontalExpand = true,
         };
-        AddChild(_grid);
-
-        _solvedLabel = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-solved"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Visible = false,
-            Align = Label.AlignMode.Center,
-        };
-        AddChild(_solvedLabel);
+        ContentContainer.AddChild(_grid);
     }
 
-    public override void UpdateState(BombDefusalModuleState state)
+    public override void UpdateModuleState(BombDefusalModuleState state)
     {
         if (state is not SimonSaysModuleState simonState)
             return;
 
-        _solvedLabel.Visible = simonState.IsSolved;
-        _stageLabel.Text = $"Stage: {simonState.CurrentStage + 1}/{simonState.TotalStages}";
+        _stageLabel.Text = $"STAGE {simonState.CurrentStage + 1}/{simonState.TotalStages}";
 
-        // Show the flash sequence as color names
-        var sequenceStr = string.Join(" → ",
-            simonState.FlashSequence.Select(c => SimonColorNames.GetValueOrDefault(c, "?")));
-        _sequenceLabel.Text = $"Sequence: {sequenceStr}";
-
-        // Rebuild the 4 color buttons
-        _grid.RemoveAllChildren();
-
-        foreach (var color in new[] { SimonColor.Red, SimonColor.Blue, SimonColor.Green, SimonColor.Yellow })
+        // Build sequence display as colored blocks
+        _sequenceRow.RemoveAllChildren();
+        foreach (var flashColor in simonState.FlashSequence)
         {
-            var btn = new Button
+            var dotPanel = new PanelContainer
             {
-                Text = SimonColorNames.GetValueOrDefault(color, "?"),
-                MinSize = new Vector2(60, 40),
-                Disabled = simonState.IsSolved,
-                Margin = new Thickness(2),
-                HorizontalExpand = true,
+                MinWidth = 20,
+                MinHeight = 16,
+                Margin = new Thickness(1, 0),
             };
-            btn.ModulateSelfOverride = SimonColorMap.GetValueOrDefault(color, Color.Gray);
+            dotPanel.PanelOverride = new StyleBoxFlat
+            {
+                BackgroundColor = SimonColorMap.GetValueOrDefault(flashColor, Color.Gray),
+            };
 
-            var col = color;
-            btn.OnPressed += _ => RaiseAction(new PressSimonColorAction(col));
+            var dotLabel = new Label
+            {
+                Text = SimonColorNames.GetValueOrDefault(flashColor, "?")[..1],
+                FontColorOverride = Color.FromHex("#000000"),
+                Align = Label.AlignMode.Center,
+            };
+            dotPanel.AddChild(dotLabel);
+            _sequenceRow.AddChild(dotPanel);
+        }
 
-            _grid.AddChild(btn);
+        // Rebuild/Update the 4 color buttons
+        if (_simonButtons.Count == 0)
+        {
+            _grid.RemoveAllChildren();
+
+            foreach (var color in new[] { SimonColor.Red, SimonColor.Blue, SimonColor.Green, SimonColor.Yellow })
+            {
+                var buttonPanel = new PanelContainer
+                {
+                    Margin = new Thickness(2),
+                    HorizontalExpand = true,
+                };
+                buttonPanel.PanelOverride = new StyleBoxFlat
+                {
+                    BackgroundColor = Color.FromHex("#111122"),
+                    BorderColor = Color.FromHex("#333355"),
+                    BorderThickness = new Thickness(1),
+                    ContentMarginLeftOverride = 2,
+                    ContentMarginRightOverride = 2,
+                    ContentMarginTopOverride = 2,
+                    ContentMarginBottomOverride = 2,
+                };
+
+                var btn = new Button
+                {
+                    Text = SimonColorNames.GetValueOrDefault(color, "?"),
+                    MinSize = new Vector2(70, 45),
+                    HorizontalExpand = true,
+                };
+                btn.ModulateSelfOverride = SimonColorMap.GetValueOrDefault(color, Color.Gray);
+
+                var col = color;
+                btn.OnPressed += _ => RaiseAction(new PressSimonColorAction(col));
+
+                buttonPanel.AddChild(btn);
+                _grid.AddChild(buttonPanel);
+                _simonButtons.Add(btn);
+            }
+        }
+
+        foreach (var btn in _simonButtons)
+        {
+            btn.Disabled = simonState.IsSolved;
         }
     }
 }

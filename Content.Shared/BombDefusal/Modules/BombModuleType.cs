@@ -7,7 +7,11 @@ public enum BombModuleType : byte
 {
     Wires,
     Symbols,
-    Button,
     SimonSays,
     Codewords,
+    Maze,
+    Memory,
+    Password,
+    MorseCode,
+    WhosOnFirst,
 }

@@ -41,29 +41,92 @@ public sealed partial class PressSymbolAction : BombModuleAction
 }
 
 /// <summary>
-/// Player pressed (mouse down) the button in the Button module.
+/// Player moved in the Maze module.
 /// </summary>
 [NetSerializable, Serializable]
-public sealed partial class PressButtonAction : BombModuleAction
+public sealed partial class PressMazeDirectionAction : BombModuleAction
+{
+    public int Dx;
+    public int Dy;
+
+    public PressMazeDirectionAction(int dx, int dy)
+    {
+        Dx = dx;
+        Dy = dy;
+    }
+}
+
+/// <summary>
+/// Player pressed a button in the Memory module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class PressMemoryButtonAction : BombModuleAction
+{
+    public int ButtonIndex;
+
+    public PressMemoryButtonAction(int buttonIndex)
+    {
+        ButtonIndex = buttonIndex;
+    }
+}
+
+/// <summary>
+/// Player cycled a letter column in the Password module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class CyclePasswordColumnAction : BombModuleAction
+{
+    public int ColumnIndex;
+    public bool Up;
+
+    public CyclePasswordColumnAction(int columnIndex, bool up)
+    {
+        ColumnIndex = columnIndex;
+        Up = up;
+    }
+}
+
+/// <summary>
+/// Player submitted the password in the Password module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class SubmitPasswordAction : BombModuleAction
 {
 }
 
 /// <summary>
-/// Player released (mouse up) the button in the Button module.
-/// The server checks timing to determine if the release was correct.
+/// Player cycled the frequency in the Morse Code module.
 /// </summary>
 [NetSerializable, Serializable]
-public sealed partial class ReleaseButtonAction : BombModuleAction
+public sealed partial class CycleMorseFrequencyAction : BombModuleAction
 {
-    /// <summary>
-    /// The timer digit visible when the player released the button.
-    /// Sent by client since client has the timer display.
-    /// </summary>
-    public int TimerDigit;
+    public bool Up;
 
-    public ReleaseButtonAction(int timerDigit)
+    public CycleMorseFrequencyAction(bool up)
     {
-        TimerDigit = timerDigit;
+        Up = up;
+    }
+}
+
+/// <summary>
+/// Player submitted the frequency in the Morse Code module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class SubmitMorseAction : BombModuleAction
+{
+}
+
+/// <summary>
+/// Player pressed a button in the Who's on First module.
+/// </summary>
+[NetSerializable, Serializable]
+public sealed partial class PressWhosOnFirstButtonAction : BombModuleAction
+{
+    public int ButtonIndex;
+
+    public PressWhosOnFirstButtonAction(int buttonIndex)
+    {
+        ButtonIndex = buttonIndex;
     }
 }
 

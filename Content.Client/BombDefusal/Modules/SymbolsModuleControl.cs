@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared.BombDefusal;
 using Content.Shared.BombDefusal.Modules;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
@@ -12,9 +13,7 @@ namespace Content.Client.BombDefusal.Modules;
 /// </summary>
 public sealed class SymbolsModuleControl : BaseModuleControl
 {
-    private readonly Label _title;
     private readonly GridContainer _grid;
-    private readonly Label _solvedLabel;
 
     /// <summary>
     /// Unicode symbol glyphs used for display. Index matches symbol ID.
@@ -29,68 +28,89 @@ public sealed class SymbolsModuleControl : BaseModuleControl
         "☆", "◆", "◇", "▲", "▼",   // 20-24
     };
 
+    private readonly List<Button> _symbolButtons = new();
+    private readonly List<PanelContainer> _symbolPanels = new();
+
     public SymbolsModuleControl()
     {
-        _title = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-symbols"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Margin = new Thickness(0, 0, 0, 4),
-        };
-        AddChild(_title);
+        SetHeaderText(Loc.GetString("bomb-defusal-module-symbols"));
 
         _grid = new GridContainer
         {
             Columns = 2,
             HorizontalExpand = true,
         };
-        AddChild(_grid);
-
-        _solvedLabel = new Label
-        {
-            Text = Loc.GetString("bomb-defusal-module-solved"),
-            FontColorOverride = Color.FromHex("#00ff41"),
-            Visible = false,
-            Align = Label.AlignMode.Center,
-        };
-        AddChild(_solvedLabel);
+        ContentContainer.AddChild(_grid);
     }
 
-    public override void UpdateState(BombDefusalModuleState state)
+    public override void UpdateModuleState(BombDefusalModuleState state)
     {
         if (state is not SymbolsModuleState symbolsState)
             return;
 
-        _solvedLabel.Visible = symbolsState.IsSolved;
+        if (_symbolButtons.Count == 0)
+        {
+            _grid.RemoveAllChildren();
+            _symbolPanels.Clear();
 
-        _grid.RemoveAllChildren();
+            for (var i = 0; i < symbolsState.SymbolIds.Count; i++)
+            {
+                var symbolIndex = i;
+                var symbolId = symbolsState.SymbolIds[i];
+
+                var glyph = symbolId >= 0 && symbolId < SymbolGlyphs.Length
+                    ? SymbolGlyphs[symbolId]
+                    : "?";
+
+                // Wrap button in a panel for dark background
+                var buttonPanel = new PanelContainer
+                {
+                    Margin = new Thickness(2),
+                    HorizontalExpand = true,
+                };
+                buttonPanel.PanelOverride = new StyleBoxFlat
+                {
+                    BorderThickness = new Thickness(1),
+                    ContentMarginLeftOverride = 2,
+                    ContentMarginRightOverride = 2,
+                    ContentMarginTopOverride = 2,
+                    ContentMarginBottomOverride = 2,
+                };
+
+                var button = new Button
+                {
+                    Text = glyph,
+                    MinSize = new Vector2(70, 70),
+                    HorizontalExpand = true,
+                };
+
+                var idx = symbolIndex;
+                button.OnPressed += _ => RaiseAction(new PressSymbolAction(idx));
+
+                buttonPanel.AddChild(button);
+                _grid.AddChild(buttonPanel);
+
+                _symbolButtons.Add(button);
+                _symbolPanels.Add(buttonPanel);
+            }
+        }
 
         for (var i = 0; i < symbolsState.SymbolIds.Count; i++)
         {
-            var symbolIndex = i;
-            var symbolId = symbolsState.SymbolIds[i];
             var isPressed = symbolsState.PressedSymbols.Contains(i);
+            var button = _symbolButtons[i];
+            var panel = _symbolPanels[i];
+            var styleBox = (StyleBoxFlat) panel.PanelOverride!;
 
-            var glyph = symbolId >= 0 && symbolId < SymbolGlyphs.Length
-                ? SymbolGlyphs[symbolId]
-                : "?";
+            styleBox.BackgroundColor = isPressed ? Color.FromHex("#1a3d1a") : Color.FromHex("#111122");
+            styleBox.BorderColor = isPressed ? Color.FromHex("#00ff41") : Color.FromHex("#333355");
 
-            var button = new Button
-            {
-                Text = glyph,
-                MinSize = new Vector2(60, 60),
-                Disabled = isPressed || symbolsState.IsSolved,
-                Margin = new Thickness(2),
-                HorizontalExpand = true,
-            };
+            button.Disabled = isPressed || symbolsState.IsSolved;
 
             if (isPressed)
                 button.ModulateSelfOverride = Color.FromHex("#336633");
-
-            var idx = symbolIndex;
-            button.OnPressed += _ => RaiseAction(new PressSymbolAction(idx));
-
-            _grid.AddChild(button);
+            else
+                button.ModulateSelfOverride = null;
         }
     }
 }

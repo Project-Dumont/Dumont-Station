@@ -7,36 +7,20 @@ namespace Content.Server.BombDefusal.Modules;
 
 /// <summary>
 /// "Simon Says" module.
-/// Colored lights flash in a sequence; the player must press the
-/// remapped colors. The mapping depends on the serial number and strike count.
+/// Colored lights flash in a sequence; the player must press the remapped colors.
+/// Color mapping is dynamically randomized per bomb and depends on serial number and strike count.
 /// </summary>
 public sealed class SimonSaysModule : BombModule
 {
-    /// <summary>
-    /// The full sequence of flash colors (all stages combined).
-    /// Stage N shows the first N+1 colors of this sequence.
-    /// </summary>
     public List<SimonColor> FullSequence = new();
-
-    /// <summary>
-    /// Total number of stages to complete.
-    /// </summary>
     public int TotalStages;
-
-    /// <summary>
-    /// Current stage (0-indexed).
-    /// </summary>
     public int CurrentStage;
-
-    /// <summary>
-    /// How many colors the player has correctly input in the current stage.
-    /// </summary>
     public int InputProgress;
-
-    /// <summary>
-    /// Whether the serial number contains a vowel (affects color mapping).
-    /// </summary>
     public bool SerialHasVowel;
+
+    // Mappings: strikes (0, 1, 2+) -> flashColor -> buttonColor
+    public Dictionary<int, Dictionary<SimonColor, SimonColor>> VowelMappings = new();
+    public Dictionary<int, Dictionary<SimonColor, SimonColor>> NoVowelMappings = new();
 
     public SimonSaysModule()
     {
@@ -49,6 +33,13 @@ public sealed class SimonSaysModule : BombModule
         module.TotalStages = random.Next(3, 6); // 3 to 5 stages
         module.SerialHasVowel = serialNumber.Any(c => "AEIOUaeiou".Contains(c));
 
+        // Generate the mappings
+        for (int strikes = 0; strikes <= 2; strikes++)
+        {
+            module.VowelMappings[strikes] = GenerateRandomColorMap(random);
+            module.NoVowelMappings[strikes] = GenerateRandomColorMap(random);
+        }
+
         // Generate the full sequence
         var colors = Enum.GetValues<SimonColor>();
         for (var i = 0; i < module.TotalStages; i++)
@@ -59,78 +50,29 @@ public sealed class SimonSaysModule : BombModule
         return module;
     }
 
-    /// <summary>
-    /// Get the correct button to press for a given flash color,
-    /// based on serial vowel presence and current strike count.
-    /// </summary>
-    public static SimonColor GetMappedColor(SimonColor flashColor, bool hasVowel, int strikes)
+    private static Dictionary<SimonColor, SimonColor> GenerateRandomColorMap(IRobustRandom random)
     {
-        // KTANE-style color mapping tables
-        if (hasVowel)
+        var colors = Enum.GetValues<SimonColor>().ToList();
+        var shuffled = new List<SimonColor>(colors);
+        random.Shuffle(shuffled);
+
+        var map = new Dictionary<SimonColor, SimonColor>();
+        for (int i = 0; i < colors.Count; i++)
         {
-            return strikes switch
-            {
-                0 => flashColor switch
-                {
-                    SimonColor.Red => SimonColor.Blue,
-                    SimonColor.Blue => SimonColor.Red,
-                    SimonColor.Green => SimonColor.Yellow,
-                    SimonColor.Yellow => SimonColor.Green,
-                    _ => flashColor,
-                },
-                1 => flashColor switch
-                {
-                    SimonColor.Red => SimonColor.Yellow,
-                    SimonColor.Blue => SimonColor.Green,
-                    SimonColor.Green => SimonColor.Blue,
-                    SimonColor.Yellow => SimonColor.Red,
-                    _ => flashColor,
-                },
-                _ => flashColor switch // 2+ strikes
-                {
-                    SimonColor.Red => SimonColor.Green,
-                    SimonColor.Blue => SimonColor.Red,
-                    SimonColor.Green => SimonColor.Yellow,
-                    SimonColor.Yellow => SimonColor.Blue,
-                    _ => flashColor,
-                },
-            };
+            map[colors[i]] = shuffled[i];
         }
-        else
-        {
-            return strikes switch
-            {
-                0 => flashColor switch
-                {
-                    SimonColor.Red => SimonColor.Blue,
-                    SimonColor.Blue => SimonColor.Yellow,
-                    SimonColor.Green => SimonColor.Green,
-                    SimonColor.Yellow => SimonColor.Red,
-                    _ => flashColor,
-                },
-                1 => flashColor switch
-                {
-                    SimonColor.Red => SimonColor.Red,
-                    SimonColor.Blue => SimonColor.Blue,
-                    SimonColor.Green => SimonColor.Yellow,
-                    SimonColor.Yellow => SimonColor.Green,
-                    _ => flashColor,
-                },
-                _ => flashColor switch // 2+ strikes
-                {
-                    SimonColor.Red => SimonColor.Yellow,
-                    SimonColor.Blue => SimonColor.Green,
-                    SimonColor.Green => SimonColor.Blue,
-                    SimonColor.Yellow => SimonColor.Red,
-                    _ => flashColor,
-                },
-            };
-        }
+        return map;
+    }
+
+    public SimonColor GetMappedColor(SimonColor flashColor, bool hasVowel, int strikes)
+    {
+        var strikeKey = Math.Clamp(strikes, 0, 2);
+        var map = hasVowel ? VowelMappings[strikeKey] : NoVowelMappings[strikeKey];
+        return map[flashColor];
     }
 
     public override BombDefusalModuleState GetVisibleState()
     {
-        // Only show the sequence up to current stage + 1
         var visibleSequence = FullSequence.Take(CurrentStage + 1).ToList();
 
         return new SimonSaysModuleState
@@ -140,24 +82,15 @@ public sealed class SimonSaysModule : BombModule
             TotalStages = TotalStages,
             CurrentStage = CurrentStage,
             InputProgress = InputProgress,
-            IsFlashing = true, // Client handles the animation timing
+            IsFlashing = true,
         };
     }
 
-    /// <summary>
-    /// Validate a color press. The caller must pass in the current strike count
-    /// since the mapping depends on it. This is handled by using a two-step process:
-    /// the BombDefusalSystem calls ValidateActionWithStrikes instead.
-    /// </summary>
     public override bool ValidateAction(BombModuleAction action)
     {
-        // This should not be called directly — use ValidateActionWithStrikes
         return false;
     }
 
-    /// <summary>
-    /// Validate with strike count context.
-    /// </summary>
     public bool ValidateActionWithStrikes(BombModuleAction action, int currentStrikes)
     {
         if (IsSolved)
@@ -166,7 +99,6 @@ public sealed class SimonSaysModule : BombModule
         if (action is not PressSimonColorAction pressColor)
             return false;
 
-        // The flash color at the current input position
         var flashColor = FullSequence[InputProgress];
         var expectedColor = GetMappedColor(flashColor, SerialHasVowel, currentStrikes);
 
@@ -174,7 +106,6 @@ public sealed class SimonSaysModule : BombModule
         {
             InputProgress++;
 
-            // Completed all presses for this stage?
             if (InputProgress >= CurrentStage + 1)
             {
                 CurrentStage++;
@@ -187,7 +118,6 @@ public sealed class SimonSaysModule : BombModule
             return true;
         }
 
-        // Wrong color — strike! Reset current stage progress.
         InputProgress = 0;
         return false;
     }
