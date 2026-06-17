@@ -30,8 +30,8 @@
       board: [ DoorElectronicsMail ]
 
 - type: entity
-  parent: AirlockMining
-  id: AirlockMiningLocked
+  parent: AirlockMiningDumont
+  id: AirlockMiningDumontLocked
   suffix: Mining, Locked
   components:
   - type: ContainerFill
@@ -118,8 +118,8 @@
       board: [ DoorElectronicsMail ]
 
 - type: entity
-  parent: AirlockMiningGlass
-  id: AirlockMiningGlassLocked
+  parent: AirlockMiningDumontGlass
+  id: AirlockMiningDumontGlassLocked
   suffix: Mining, Locked
   components:
   - type: ContainerFill
@@ -236,8 +236,8 @@
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
-  parent: AirlockMiningLocked
-  id: AirlockMaintMiningLocked
+  parent: AirlockMiningDumontLocked
+  id: AirlockMaintMiningDumontLocked
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi

@@ -40,7 +40,7 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockMining
+  id: AirlockMiningDumont
   suffix: Mining
   components:
   - type: Sprite
@@ -140,7 +140,7 @@
 
 - type: entity
   parent: AirlockGlass
-  id: AirlockMiningGlass
+  id: AirlockMiningDumontGlass
   suffix: Mining
   components:
   - type: Sprite

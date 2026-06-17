@@ -19,14 +19,18 @@
     security: AirlockSecurity
     virology: AirlockVirology
     janitor: AirlockJanitor # Goob
-    brigmedic: AirlockBrigmedic # Dumont
+    # Dumont
+    robotics: AirlockRobotics
+    brigmedic: AirlockBrigMedic
     psychology: AirlockPsychology
     pharmacy: AirlockPharmacy
     genetics: AirlockGenetics
     mail: AirlockMail
-    mining: AirlockMining
+    lavaland: AirlockMining
+    mining: AirlockMiningDumont
     medsci: AirlockMedicalScience
-    salvmine: AirlockSalvMine # /Dumont
+    salvmine: AirlockSalvMine
+    # /Dumont
 
 - type: paintableGroup
   id: AirlockGlass
@@ -47,12 +51,16 @@
     science: AirlockScienceGlass
     security: AirlockSecurityGlass
     virology: AirlockVirologyGlass
-    janitor: AirlockJanitor # Goob
-    brigmedic: AirlockBrigmedicGlass # Dumont
+    janitor: AirlockJanitorGlass # Goob
+    # Dumont
+    robotics: AirlockRoboticsGlass
+    brigmedic: AirlockBrigMedicGlass
     psychology: AirlockPsychologyGlass
     pharmacy: AirlockPharmacyGlass
     genetics: AirlockGeneticsGlass
     mail: AirlockMailGlass
-    mining: AirlockMiningGlass
+    lavaland: AirlockMiningGlass
+    mining: AirlockMiningDumontGlass
     medsci: AirlockMedicalScienceGlass
-    salvmine: AirlockSalvMine # /Dumont
+    salvmine: AirlockSalvMineGlass
+    # /Dumont

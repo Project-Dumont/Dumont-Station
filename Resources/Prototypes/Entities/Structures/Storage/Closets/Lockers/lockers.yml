@@ -119,7 +119,7 @@
     stateDoorOpen: mining_open
     stateDoorClosed: mining_door
   - type: AccessReader
-    access: [["Salvage"]]
+    access: [["Mining"]] # Dumont edit
 # Lavaland Change end
 
 # Command

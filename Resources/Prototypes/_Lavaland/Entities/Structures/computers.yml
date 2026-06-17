@@ -65,3 +65,5 @@
       - MiningShuttle
   - type: Computer
     board: LavalandShuttleConsoleCircuitboard
+  - type: AccessReader # Dumont
+    access: [["Mining"]]

@@ -287,11 +287,11 @@
 - type: entity
   parent: AirlockMining
   id: AirlockMiningLocked
-  suffix: Mining(Salvage), Locked
+  suffix: Mining (Lavaland), Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSalvage ]
+      board: [ DoorElectronicsMining ] # Dumont edit
 
 - type: entity
   parent: AirlockMedical
@@ -690,11 +690,11 @@
 - type: entity
   parent: AirlockMiningGlass
   id: AirlockMiningGlassLocked
-  suffix: Mining(Salvage), Locked
+  suffix: Mining (Lavaland), Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSalvage ]
+      board: [ DoorElectronicsMining ] # Dumont edit
 
 - type: entity
   parent: AirlockChemistryGlass

@@ -1,118 +1,118 @@
 # Components
-spray-painter-ammo-on-examine = It holds {$charges} charges.
-spray-painter-ammo-after-interact-full = The spray painter is full!
-spray-painter-ammo-after-interact-refilled = You refill the spray painter.
+spray-painter-ammo-on-examine = Contém {$charges} cargas.
+spray-painter-ammo-after-interact-full = O spray de tinta está cheio!
+spray-painter-ammo-after-interact-refilled = Você reabastece o spray de tinta.
 
-spray-painter-interact-no-charges = Not enough paint left.
-spray-painter-interact-nothing-to-remove = Nothing to remove!
+spray-painter-interact-no-charges = Sem tinta suficiente.
+spray-painter-interact-nothing-to-remove = Nada para remover!
 
-spray-painter-on-examined-painted-message = It seems to have been freshly painted.
-spray-painter-style-not-available = Cannot apply the selected style to this object.
+spray-painter-on-examined-painted-message = Parece que foi recentemente pintado.
+spray-painter-style-not-available = Não é possível aplicar o estilo selecionado a esse objeto.
 
-spray-painter-verb-toggle-decals = Toggle decal painting
+spray-painter-verb-toggle-decals = Alternar pintura de decalque.
 
-spray-painter-item-status-label = Decals: {$mode}
-spray-painter-item-status-add = [color=green]Add[/color]
-spray-painter-item-status-remove = [color=red]Remove[/color]
-spray-painter-item-status-off = [color=gray]Off[/color]
+spray-painter-item-status-label = Decalque: {$mode}
+spray-painter-item-status-add = [color=green]Adicionar[/color]
+spray-painter-item-status-remove = [color=red]Remover[/color]
+spray-painter-item-status-off = [color=gray]Desligar[/color]
 
 # UI
-spray-painter-window-title = Spray Painter
+spray-painter-window-title = Spray de Tinta
 
-spray-painter-selected-style = Selected style:
+spray-painter-selected-style = Estilo selecionado:
 
-spray-painter-selected-decals = Selected decal:
-spray-painter-use-custom-color = Use custom color
-spray-painter-use-snap-to-tile = Snap to tile
+spray-painter-selected-decals = Decalque selecionado:
+spray-painter-use-custom-color = Usar cor customizada
+spray-painter-use-snap-to-tile = Alinhar à grade
 
-spray-painter-angle-rotation = Rotation:
+spray-painter-angle-rotation = Rotação:
 spray-painter-angle-rotation-90-sub = -90°
 spray-painter-angle-rotation-reset = 0°
 spray-painter-angle-rotation-90-add = +90°
 
-spray-painter-selected-color = Selected color:
-spray-painter-color-red = red
-spray-painter-color-yellow = yellow
-spray-painter-color-brown = brown
-spray-painter-color-green = green
-spray-painter-color-cyan = cyan
-spray-painter-color-blue = blue
-spray-painter-color-white = white
-spray-painter-color-black = black
+spray-painter-selected-color = Cor selecionada:
+spray-painter-color-red = vermelho
+spray-painter-color-yellow = amarelo
+spray-painter-color-brown = marrom
+spray-painter-color-green = verce
+spray-painter-color-cyan = ciano
+spray-painter-color-blue = azul
+spray-painter-color-white = branco
+spray-painter-color-black = preto
 
 # Categories (tabs)
 spray-painter-tab-category-airlocks = Airlocks
-spray-painter-tab-category-canisters = Canisters
-spray-painter-tab-category-crates = Crates
-spray-painter-tab-category-lockers = Lockers
-spray-painter-tab-category-pipes = Pipes
-spray-painter-tab-category-decals = Decals
+spray-painter-tab-category-canisters = Cilindros
+spray-painter-tab-category-crates = Caixas
+spray-painter-tab-category-lockers = Ármarios
+spray-painter-tab-category-pipes = Canos
+spray-painter-tab-category-decals = Decalques
 
 # Groups (subtabs)
-spray-painter-tab-group-airlockstandard = Standard
-spray-painter-tab-group-airlockglass = Glass
+spray-painter-tab-group-airlockstandard = Normais
+spray-painter-tab-group-airlockglass = Vidro
 
-spray-painter-tab-group-cratesteel = Steel
-spray-painter-tab-group-crateplastic = Plastic
-spray-painter-tab-group-cratesecure = Secure
+spray-painter-tab-group-cratesteel = Metal
+spray-painter-tab-group-crateplastic = Plástico
+spray-painter-tab-group-cratesecure = Segura
 
-spray-painter-tab-group-closet = Unlocked
-spray-painter-tab-group-locker = Secure
-spray-painter-tab-group-wallcloset = Unlocked (Wall)
-spray-painter-tab-group-walllocker = Secure (Wall)
+spray-painter-tab-group-closet = Destrancado
+spray-painter-tab-group-locker = Seguro
+spray-painter-tab-group-wallcloset = Destrancado (Parede)
+spray-painter-tab-group-walllocker = Seguro (Parede)
 
 # Airlocks
-spray-painter-style-airlockstandard-atmospherics = Atmospheric
-spray-painter-style-airlockstandard-basic = Basic
-spray-painter-style-airlockstandard-cargo = Cargo
-spray-painter-style-airlockstandard-chemistry = Chemistry
-spray-painter-style-airlockstandard-command = Command
-spray-painter-style-airlockstandard-engineering = Engineering
+spray-painter-style-airlockstandard-atmospherics = Atmosfera
+spray-painter-style-airlockstandard-basic = Básico
+spray-painter-style-airlockstandard-cargo = Logística
+spray-painter-style-airlockstandard-chemistry = Química
+spray-painter-style-airlockstandard-command = Comando
+spray-painter-style-airlockstandard-engineering = Engenharia
 spray-painter-style-airlockstandard-freezer = Freezer
-spray-painter-style-airlockstandard-hydroponics = Hydroponics
-spray-painter-style-airlockstandard-maintenance = Maintenance
-spray-painter-style-airlockstandard-medical = Medical
-spray-painter-style-airlockstandard-salvage = Salvage
-spray-painter-style-airlockstandard-science = Science
-spray-painter-style-airlockstandard-security = Security
-spray-painter-style-airlockstandard-virology = Virology
+spray-painter-style-airlockstandard-hydroponics = Botânica
+spray-painter-style-airlockstandard-maintenance = Manutenção
+spray-painter-style-airlockstandard-medical = Médico
+spray-painter-style-airlockstandard-salvage = Exploração
+spray-painter-style-airlockstandard-science = Ciência
+spray-painter-style-airlockstandard-security = Segurança
+spray-painter-style-airlockstandard-virology = Virologia
 # Dumont
-spray-painter-style-airlockstandard-janitor = Janitor
-spray-painter-style-airlockstandard-robotics = Robotics
-spray-painter-style-airlockstandard-brigmedic = BrigMedic
-spray-painter-style-airlockstandard-psychology = Psychology
-spray-painter-style-airlockstandard-pharmacy = Pharmacy
-spray-painter-style-airlockstandard-genetics = Genetics
-spray-painter-style-airlockstandard-mail = Mail
+spray-painter-style-airlockstandard-janitor = Zelador
+spray-painter-style-airlockstandard-robotics = Robótica
+spray-painter-style-airlockstandard-brigmedic = Médico da brigada
+spray-painter-style-airlockstandard-psychology = Psicologia
+spray-painter-style-airlockstandard-pharmacy = Farmácia
+spray-painter-style-airlockstandard-genetics = Genética
+spray-painter-style-airlockstandard-mail = Correio
 spray-painter-style-airlockstandard-lavaland = Lavaland
-spray-painter-style-airlockstandard-mining = Mining
+spray-painter-style-airlockstandard-mining = Mineração
 spray-painter-style-airlockstandard-medsci = MedSci
 spray-painter-style-airlockstandard-salvmine = SalvMine
 # /Dumont
 
-spray-painter-style-airlockglass-atmospherics = Atmospherics
-spray-painter-style-airlockglass-basic = Basic
-spray-painter-style-airlockglass-cargo = Cargo
-spray-painter-style-airlockglass-chemistry = Chemistry
-spray-painter-style-airlockglass-command = Command
+spray-painter-style-airlockglass-atmospherics = Atmosfera
+spray-painter-style-airlockglass-basic = Básico
+spray-painter-style-airlockglass-cargo = Logística
+spray-painter-style-airlockglass-chemistry = Química
+spray-painter-style-airlockglass-command = Comando
 spray-painter-style-airlockglass-engineering = Engineering
-spray-painter-style-airlockglass-hydroponics = Hydroponics
-spray-painter-style-airlockglass-maintenance = Maintenance
-spray-painter-style-airlockglass-medical = Medical
-spray-painter-style-airlockglass-salvage = Salvage
-spray-painter-style-airlockglass-science = Science
-spray-painter-style-airlockglass-security = Security
-spray-painter-style-airlockglass-virology = Virology
+spray-painter-style-airlockglass-hydroponics = Botânica
+spray-painter-style-airlockglass-maintenance = Manutenção
+spray-painter-style-airlockglass-medical = Médico
+spray-painter-style-airlockglass-salvage = Exploração
+spray-painter-style-airlockglass-science = Ciência
+spray-painter-style-airlockglass-security = Segurança
+spray-painter-style-airlockglass-virology = Virologia
 # Dumont
-spray-painter-style-airlockglass-janitor = Janitor
-spray-painter-style-airlockglass-robotics = Robotics
-spray-painter-style-airlockglass-brigmedic = BrigMedic
-spray-painter-style-airlockglass-psychology = Psychology
-spray-painter-style-airlockglass-pharmacy = Pharmacy
-spray-painter-style-airlockglass-genetics = Genetics
-spray-painter-style-airlockglass-mail = Mail
+spray-painter-style-airlockglass-janitor = Zelador
+spray-painter-style-airlockglass-robotics = Robótica
+spray-painter-style-airlockglass-brigmedic = Médico da brigada
+spray-painter-style-airlockglass-psychology = Psicologia
+spray-painter-style-airlockglass-pharmacy = Farmácia
+spray-painter-style-airlockglass-genetics = Genética
+spray-painter-style-airlockglass-mail = Correio
 spray-painter-style-airlockglass-lavaland = Lavaland
-spray-painter-style-airlockglass-mining = Mining
+spray-painter-style-airlockglass-mining = Mineração
 spray-painter-style-airlockglass-medsci = MedSci
 spray-painter-style-airlockglass-salvmine = SalvMine
 # /Dumont
