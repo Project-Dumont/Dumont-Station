@@ -22,6 +22,18 @@ public sealed class WiresModuleControl : BaseModuleControl
         { WireColor.Black, Color.FromHex("#444444") },
     };
 
+    /// <summary>
+    /// Text colors chosen for legibility against each wire's background tint.
+    /// </summary>
+    private static readonly Dictionary<WireColor, Color> WireTextColorMap = new()
+    {
+        { WireColor.Red, Color.White },
+        { WireColor.Blue, Color.White },
+        { WireColor.Yellow, Color.Black },
+        { WireColor.White, Color.Black },
+        { WireColor.Black, Color.White },
+    };
+
     private static readonly Dictionary<WireColor, string> WireColorNames = new()
     {
         { WireColor.Red, "RED" },
@@ -108,10 +120,12 @@ public sealed class WiresModuleControl : BaseModuleControl
             if (isCut)
             {
                 button.ModulateSelfOverride = Color.FromHex("#333333");
+                button.Label.FontColorOverride = Color.FromHex("#888888");
             }
             else
             {
                 button.ModulateSelfOverride = WireColorMap.GetValueOrDefault(wireColor, Color.White);
+                button.Label.FontColorOverride = WireTextColorMap.GetValueOrDefault(wireColor, Color.White);
             }
         }
     }

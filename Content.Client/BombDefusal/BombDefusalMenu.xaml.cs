@@ -38,11 +38,11 @@ public sealed partial class BombDefusalMenu : DefaultWindow
 
         // Color timer based on remaining time
         if (state.RemainingTime <= 30)
-            TimerLabel.FontColorOverride = Color.FromHex("#ff0000");
+            TimerLabel.FontColorOverride = Color.FromHex("#ff2222");
         else if (state.RemainingTime <= 60)
-            TimerLabel.FontColorOverride = Color.FromHex("#ff4444");
+            TimerLabel.FontColorOverride = Color.FromHex("#ff6644");
         else
-            TimerLabel.FontColorOverride = Color.FromHex("#ffaa00");
+            TimerLabel.FontColorOverride = Color.FromHex("#d0d0d0");
 
         // Visual strike markers: filled circles for strikes, empty for remaining
         var strikeChars = new List<string>();
@@ -55,9 +55,9 @@ public sealed partial class BombDefusalMenu : DefaultWindow
         // Color the strikes label based on count
         StrikesLabel.FontColorOverride = state.Strikes switch
         {
-            0 => Color.FromHex("#444466"),
-            1 => Color.FromHex("#ffaa00"),
-            2 => Color.FromHex("#ff4444"),
+            0 => Color.FromHex("#cc3333"),
+            1 => Color.FromHex("#ff4444"),
+            2 => Color.FromHex("#ff2222"),
             _ => Color.FromHex("#ff0000"),
         };
 
@@ -105,7 +105,7 @@ public sealed partial class BombDefusalMenu : DefaultWindow
             // Wrap in a panel for consistent sizing
             var panel = new PanelContainer
             {
-                Margin = new Thickness(2),
+                Margin = new Thickness(1),
                 HorizontalExpand = true,
                 VerticalExpand = true,
             };

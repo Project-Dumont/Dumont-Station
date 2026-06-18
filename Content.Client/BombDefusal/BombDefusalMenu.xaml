@@ -1,16 +1,16 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="{Loc 'bomb-defusal-title'}"
-               MinSize="520 420"
-               SetSize="620 520">
+               MinSize="720 420"
+               SetSize="780 520">
     <BoxContainer Orientation="Vertical"
                   HorizontalExpand="True"
                   VerticalExpand="True">
         <!-- Header Panel: Terminal-style bomb info -->
         <PanelContainer Margin="0 0 0 4">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#0a0a18"
-                                  BorderColor="#333355"
+                <gfx:StyleBoxFlat BackgroundColor="#1a0a0a"
+                                  BorderColor="#8b0000"
                                   BorderThickness="0 0 0 2" />
             </PanelContainer.PanelOverride>
             <BoxContainer Orientation="Vertical" Margin="10 6">
@@ -18,33 +18,33 @@
                 <BoxContainer Orientation="Horizontal" Margin="0 0 0 4">
                     <Label Name="SerialLabel"
                            Text="SERIAL: ------"
-                           FontColorOverride="#00ff41"
+                           FontColorOverride="#d0d0d0"
                            HorizontalExpand="True" />
                     <Label Name="TimerLabel"
                            Text="--:--"
-                           FontColorOverride="#ff4444"
+                           FontColorOverride="#d0d0d0"
                            HorizontalAlignment="Right" />
                 </BoxContainer>
                 <!-- Bottom row: Strikes as visual markers -->
                 <BoxContainer Orientation="Horizontal">
                     <Label Text="STRIKES: "
-                           FontColorOverride="#8888aa" />
+                           FontColorOverride="#d0d0d0" />
                     <Label Name="StrikesLabel"
                            Text="○ ○ ○"
-                           FontColorOverride="#444466" />
+                           FontColorOverride="#cc3333" />
                 </BoxContainer>
             </BoxContainer>
         </PanelContainer>
         <!-- Status label (defused) -->
         <PanelContainer Name="StatusPanel" Margin="0 0 0 4" Visible="False">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#002200"
-                                  BorderColor="#00ff41"
+                <gfx:StyleBoxFlat BackgroundColor="#1a2a1a"
+                                  BorderColor="#33cc33"
                                   BorderThickness="1" />
             </PanelContainer.PanelOverride>
             <Label Name="StatusLabel"
                    Text=""
-                   FontColorOverride="#00ff41"
+                   FontColorOverride="#33cc33"
                    Align="Center"
                    Margin="8 4" />
         </PanelContainer>

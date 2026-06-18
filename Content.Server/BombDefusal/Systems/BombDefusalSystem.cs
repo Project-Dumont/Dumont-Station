@@ -242,15 +242,15 @@ public sealed class BombDefusalSystem : EntitySystem
         }
     }
     /// <summary>
-    /// TODO: need new symbols or symbol renderer for the module, seems like the game doesn't support most symbols
+    /// Short text labels for symbol IDs, matching the client-side display.
     /// </summary>
     private static readonly string[] SymbolGlyphs =
     {
-        "Ω", "Ψ", "Ξ", "Φ", "Σ",
-        "Δ", "Π", "Θ", "Λ", "Γ",
-        "ℌ", "℘", "ℜ", "ℑ", "ℵ",
-        "♠", "♣", "♦", "♥", "★",
-        "☆", "◆", "◇", "▲", "▼",
+        "AX", "BQ", "CZ", "DW", "EK",
+        "FJ", "GN", "HV", "IP", "LR",
+        "MT", "NU", "OY", "PH", "QS",
+        "RD", "SF", "TG", "UB", "VA",
+        "WE", "XL", "YM", "ZC", "KO",
     };
 
     public void GenerateRuleSet(EntityUid uid, BombDefusalComponent comp)

@@ -40,7 +40,7 @@ public abstract class BaseModuleControl : BoxContainer
         Orientation = LayoutOrientation.Vertical;
         HorizontalExpand = true;
         VerticalExpand = true;
-        Margin = new Thickness(3);
+        Margin = new Thickness(1);
 
         // Outer background panel
         _backgroundPanel = new PanelContainer
@@ -51,8 +51,8 @@ public abstract class BaseModuleControl : BoxContainer
 
         var backgroundBox = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#0d0d1a"),
-            BorderColor = Color.FromHex("#333355"),
+            BackgroundColor = Color.FromHex("#1a0a0a"),
+            BorderColor = Color.FromHex("#8b0000"),
             BorderThickness = new Thickness(1),
             ContentMarginLeftOverride = 0,
             ContentMarginRightOverride = 0,
@@ -77,7 +77,7 @@ public abstract class BaseModuleControl : BoxContainer
         };
         _indicatorStrip.PanelOverride = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#ff4444"),
+            BackgroundColor = Color.FromHex("#cc3333"),
         };
         innerLayout.AddChild(_indicatorStrip);
 
@@ -101,7 +101,7 @@ public abstract class BaseModuleControl : BoxContainer
         _headerLabel = new Label
         {
             Text = "MODULE",
-            FontColorOverride = Color.FromHex("#8888aa"),
+            FontColorOverride = Color.FromHex("#d0d0d0"),
             HorizontalExpand = true,
         };
         headerRow.AddChild(_headerLabel);
@@ -109,7 +109,7 @@ public abstract class BaseModuleControl : BoxContainer
         _solvedIndicator = new Label
         {
             Text = "✕",
-            FontColorOverride = Color.FromHex("#ff4444"),
+            FontColorOverride = Color.FromHex("#cc3333"),
         };
         headerRow.AddChild(_solvedIndicator);
 
@@ -125,7 +125,7 @@ public abstract class BaseModuleControl : BoxContainer
         };
         separator.PanelOverride = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#333355"),
+            BackgroundColor = Color.FromHex("#8b0000"),
         };
         mainContent.AddChild(separator);
 
@@ -153,14 +153,14 @@ public abstract class BaseModuleControl : BoxContainer
         if (_isSolved)
         {
             _solvedIndicator.Text = "✓";
-            _solvedIndicator.FontColorOverride = Color.FromHex("#00ff41");
-            ((StyleBoxFlat) _indicatorStrip.PanelOverride!).BackgroundColor = Color.FromHex("#00ff41");
+            _solvedIndicator.FontColorOverride = Color.FromHex("#33cc33");
+            ((StyleBoxFlat) _indicatorStrip.PanelOverride!).BackgroundColor = Color.FromHex("#33cc33");
         }
         else
         {
             _solvedIndicator.Text = "✕";
-            _solvedIndicator.FontColorOverride = Color.FromHex("#ff4444");
-            ((StyleBoxFlat) _indicatorStrip.PanelOverride!).BackgroundColor = Color.FromHex("#ff4444");
+            _solvedIndicator.FontColorOverride = Color.FromHex("#cc3333");
+            ((StyleBoxFlat) _indicatorStrip.PanelOverride!).BackgroundColor = Color.FromHex("#cc3333");
         }
     }
 }

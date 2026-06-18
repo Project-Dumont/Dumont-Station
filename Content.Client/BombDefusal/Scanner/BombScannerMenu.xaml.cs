@@ -23,11 +23,11 @@ public sealed partial class BombScannerMenu : DefaultWindow
 
         if (ruleSet == null)
         {
-            SerialLabel.Text = "No scanned bomb data.";
+            HeaderLabel.Text = "No scanned bomb data.";
             return;
         }
 
-        SerialLabel.Text = $"Scanned Bomb Serial: {ruleSet.SerialNumber}  |  Modules: {ruleSet.ModuleCount}";
+        HeaderLabel.Text = $"Scanned Bomb  |  Modules: {ruleSet.ModuleCount}";
 
         foreach (var kvp in ruleSet.ModuleRules.OrderBy(k => k.Key))
         {

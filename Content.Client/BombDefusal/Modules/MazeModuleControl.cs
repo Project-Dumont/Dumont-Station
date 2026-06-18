@@ -137,28 +137,8 @@ public sealed class MazeGrid : Control
             handle.DrawLine(new Vector2(0, i * cellSize), new Vector2(side, i * cellSize), gridColor);
         }
 
-        // Draw walls
-        var wallColor = Color.FromHex("#ff4444");
-        for (int y = 0; y < 6; y++)
-        {
-            for (int x = 0; x < 6; x++)
-            {
-                var flags = WallFlags[y * 6 + x];
-                var cellLeft = x * cellSize;
-                var cellRight = (x + 1) * cellSize;
-                var cellTop = y * cellSize;
-                var cellBottom = (y + 1) * cellSize;
-
-                if ((flags & 1) != 0) // North
-                    handle.DrawLine(new Vector2(cellLeft, cellTop), new Vector2(cellRight, cellTop), wallColor);
-                if ((flags & 2) != 0) // South
-                    handle.DrawLine(new Vector2(cellLeft, cellBottom), new Vector2(cellRight, cellBottom), wallColor);
-                if ((flags & 4) != 0) // West
-                    handle.DrawLine(new Vector2(cellLeft, cellTop), new Vector2(cellLeft, cellBottom), wallColor);
-                if ((flags & 8) != 0) // East
-                    handle.DrawLine(new Vector2(cellRight, cellTop), new Vector2(cellRight, cellBottom), wallColor);
-            }
-        }
+        // Walls are intentionally not drawn — the defuser cannot see them.
+        // The manual reader must guide the defuser through the maze.
 
         // Draw Goal (red triangle)
         var goalCenter = new Vector2((GoalX + 0.5f) * cellSize, (GoalY + 0.5f) * cellSize);

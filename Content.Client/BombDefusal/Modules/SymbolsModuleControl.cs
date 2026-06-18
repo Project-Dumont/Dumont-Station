@@ -16,17 +16,17 @@ public sealed class SymbolsModuleControl : BaseModuleControl
     private readonly GridContainer _grid;
 
     /// <summary>
-    /// Unicode symbol glyphs used for display. Index matches symbol ID.
-    /// This is very bad, doesn't work, most symbols are not rendered and I don't know which ones are renderable and which ones aren't
-    /// TODO: Better symbol renderer
+    /// Short text labels for each symbol ID.
+    /// Uses distinctive 2-3 character codes that are guaranteed to render in any font
+    /// and are easy to communicate verbally between defuser and manual reader.
     /// </summary>
     private static readonly string[] SymbolGlyphs =
     {
-        "Ω", "Ψ", "Ξ", "Φ", "Σ",   // 0-4
-        "Δ", "Π", "Θ", "Λ", "Γ",   // 5-9
-        "ℌ", "℘", "ℜ", "ℑ", "ℵ",   // 10-14
-        "♠", "♣", "♦", "♥", "★",   // 15-19
-        "☆", "◆", "◇", "▲", "▼",   // 20-24
+        "AX", "BQ", "CZ", "DW", "EK",   // 0-4
+        "FJ", "GN", "HV", "IP", "LR",   // 5-9
+        "MT", "NU", "OY", "PH", "QS",   // 10-14
+        "RD", "SF", "TG", "UB", "VA",   // 15-19
+        "WE", "XL", "YM", "ZC", "KO",   // 20-24
     };
 
     private readonly List<Button> _symbolButtons = new();
