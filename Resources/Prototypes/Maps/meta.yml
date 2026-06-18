@@ -107,7 +107,7 @@
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
+            AdministrativeAssistant: [ 1, 1 ] # Dumont Station - admin assist
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
@@ -128,10 +128,12 @@
             MedicalDoctor: [ 5, 5 ]
             MedicalIntern: [ 3, 6 ]
             Paramedic: [ 1, 1 ]
-            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
+            Virologist: [ 2, 2 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 7 ]
+            Roboticist: [ 2, 2 ]
+            Geneticist: [ 2, 2 ] # Corvax-Wega-Genetics
             ResearchAssistant: [ 3, 6 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
