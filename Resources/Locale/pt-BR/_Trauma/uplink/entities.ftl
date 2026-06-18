@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+ent-BriefcaseWeaponBoxingGlovesFilled = maleta de luvas de boxe adulteradas
+
 ent-BriefcaseWeaponSaiveFilled = maleta de Saive Automatique
 
 ent-ClothingBeltKnifeRig = bandoleira de facas de arremesso
@@ -40,6 +42,9 @@ ent-BriefcaseWeapon = maleta de armas
     .desc = Útil para aspirantes a mercenários, estejam lutando por uma empresa, uma nação ou qualquer outra coisa. Ou preparando uma omelete enorme.
 
 ent-VoiceMaskImplanter = implantador de máscara de identidade
+
+ent-UndeterminedSelectorBoxingRiggedRadial = seletor de luvas de boxe
+    .desc = Um pequeno controle que usa tecnologia bluespace para entregar um par de luvas de boxe adulteradas da cor escolhida.
 
 ent-VoiceMaskImplant = implante de máscara de identidade
     .desc = Este implante permite mudar sua identidade à vontade.

@@ -82,6 +82,17 @@
     - UplinkWeaponry
 
 - type: listing
+  id: uplinkRiggedBoxingGloves
+  name: uplink-rigged-boxing-gloves-name
+  description: uplink-rigged-boxing-gloves-desc
+  icon: { sprite: Clothing/Hands/Gloves/Boxing/boxingblue.rsi, state: icon }
+  productEntity: BriefcaseWeaponBoxingGlovesFilled # Trauma - briefcase
+  cost:
+    Telecrystal: 20 # Trauma - was 10, 5x and way cheaper, it's a gimmick item and not viable
+  categories:
+    - UplinkWeaponry
+
+- type: listing
   id: TraumaUplinkCdDiskNumber
   name: uplink-cddisknumber-name
   description: uplink-cddisknumber-desc

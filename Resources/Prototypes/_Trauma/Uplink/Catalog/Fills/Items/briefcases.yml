@@ -2,6 +2,17 @@
 
 
 - type: entity
+  parent: BriefcaseWeaponSmall
+  id: BriefcaseWeaponBoxingGlovesFilled
+  name: secure rigged boxing gloves case
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: UndeterminedSelectorBoxingRiggedRadial
+
+- type: entity
   parent: BriefcaseWeapon
   id: BriefcaseWeaponSaiveFilled
   name: secure saive automatique case
