@@ -66,7 +66,7 @@ public sealed class MazeModuleControl : BaseModuleControl
 
         _btnLeft = new Button
         {
-            Text = "◄",
+            Text = "◀",
             MinSize = new Vector2(36, 36),
         };
         _btnLeft.OnPressed += _ => RaiseAction(new PressMazeDirectionAction(-1, 0));
@@ -77,7 +77,7 @@ public sealed class MazeModuleControl : BaseModuleControl
 
         _btnRight = new Button
         {
-            Text = "►",
+            Text = "▶",
             MinSize = new Vector2(36, 36),
         };
         _btnRight.OnPressed += _ => RaiseAction(new PressMazeDirectionAction(1, 0));
@@ -136,9 +136,6 @@ public sealed class MazeGrid : Control
             handle.DrawLine(new Vector2(i * cellSize, 0), new Vector2(i * cellSize, side), gridColor);
             handle.DrawLine(new Vector2(0, i * cellSize), new Vector2(side, i * cellSize), gridColor);
         }
-
-        // Walls are intentionally not drawn — the defuser cannot see them.
-        // The manual reader must guide the defuser through the maze.
 
         // Draw Goal (red triangle)
         var goalCenter = new Vector2((GoalX + 0.5f) * cellSize, (GoalY + 0.5f) * cellSize);

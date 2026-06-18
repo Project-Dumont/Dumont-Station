@@ -16,9 +16,7 @@ public sealed class SymbolsModuleControl : BaseModuleControl
     private readonly GridContainer _grid;
 
     /// <summary>
-    /// Short text labels for each symbol ID.
-    /// Uses distinctive 2-3 character codes that are guaranteed to render in any font
-    /// and are easy to communicate verbally between defuser and manual reader.
+    /// I can't figure out how to display symbols in Unicode that aren't supported in the game, so 2 letter combos! YAY!
     /// </summary>
     private static readonly string[] SymbolGlyphs =
     {
@@ -63,7 +61,7 @@ public sealed class SymbolsModuleControl : BaseModuleControl
                     ? SymbolGlyphs[symbolId]
                     : "?";
 
-                // Wrap button in a panel for dark background
+                // Wrap button in a panel
                 var buttonPanel = new PanelContainer
                 {
                     Margin = new Thickness(2),

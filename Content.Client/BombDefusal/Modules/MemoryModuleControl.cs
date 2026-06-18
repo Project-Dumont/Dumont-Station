@@ -27,7 +27,7 @@ public sealed class MemoryModuleControl : BaseModuleControl
         };
         ContentContainer.AddChild(mainLayout);
 
-        // Header/Stage progress label
+        // Header: Stage progress label
         _stageLabel = new Label
         {
             Text = "STAGE 1 OF 5",
@@ -37,7 +37,7 @@ public sealed class MemoryModuleControl : BaseModuleControl
         };
         mainLayout.AddChild(_stageLabel);
 
-        // Digital screen
+        // The screen
         var screenPanel = new PanelContainer
         {
             MinSize = new Vector2(120, 60),
@@ -61,7 +61,7 @@ public sealed class MemoryModuleControl : BaseModuleControl
         screenPanel.AddChild(_displayScreen);
         mainLayout.AddChild(screenPanel);
 
-        // Buttons row
+        // Buttons area
         var buttonsRow = new BoxContainer
         {
             Orientation = LayoutOrientation.Horizontal,

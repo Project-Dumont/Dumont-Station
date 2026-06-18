@@ -6,7 +6,7 @@
     <BoxContainer Orientation="Vertical"
                   HorizontalExpand="True"
                   VerticalExpand="True">
-        <!-- Header Panel: Terminal-style bomb info -->
+        <!-- Header Panel -->
         <PanelContainer Margin="0 0 0 4">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#1a0a0a"
@@ -25,7 +25,7 @@
                            FontColorOverride="#d0d0d0"
                            HorizontalAlignment="Right" />
                 </BoxContainer>
-                <!-- Bottom row: Strikes as visual markers -->
+                <!-- Bottom row: Strikes markers -->
                 <BoxContainer Orientation="Horizontal">
                     <Label Text="STRIKES: "
                            FontColorOverride="#d0d0d0" />
@@ -35,7 +35,7 @@
                 </BoxContainer>
             </BoxContainer>
         </PanelContainer>
-        <!-- Status label (defused) -->
+        <!-- Status label -->
         <PanelContainer Name="StatusPanel" Margin="0 0 0 4" Visible="False">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#1a2a1a"

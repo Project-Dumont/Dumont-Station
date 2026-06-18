@@ -45,7 +45,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         };
         ContentContainer.AddChild(mainLayout);
 
-        // Flashing light row
+        // Flashing light area
         var lightPanel = new PanelContainer
         {
             MinSize = new Vector2(40, 40),
@@ -60,7 +60,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         lightPanel.AddChild(_lightIndicator);
         mainLayout.AddChild(lightPanel);
 
-        // Frequency display and tuning row
+        // Frequency display and tuning area
         var tuneRow = new BoxContainer
         {
             Orientation = LayoutOrientation.Horizontal,
@@ -69,7 +69,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         };
         mainLayout.AddChild(tuneRow);
 
-        _btnDown = new Button { Text = "◄", MinSize = new Vector2(30, 30) };
+        _btnDown = new Button { Text = "◀", MinSize = new Vector2(30, 30) };
         _btnDown.OnPressed += _ => RaiseAction(new CycleMorseFrequencyAction(false));
         tuneRow.AddChild(_btnDown);
 
@@ -95,7 +95,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         freqPanel.AddChild(_freqLabel);
         tuneRow.AddChild(freqPanel);
 
-        _btnUp = new Button { Text = "►", MinSize = new Vector2(30, 30) };
+        _btnUp = new Button { Text = "▶", MinSize = new Vector2(30, 30) };
         _btnUp.OnPressed += _ => RaiseAction(new CycleMorseFrequencyAction(true));
         tuneRow.AddChild(_btnUp);
 

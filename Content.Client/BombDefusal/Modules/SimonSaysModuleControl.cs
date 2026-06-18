@@ -27,6 +27,14 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
         { SimonColor.Yellow, Color.FromHex("#ffff33") },
     };
 
+    private static readonly Dictionary<SimonColor, Color> SimonTextColorMap = new()
+    {
+        { SimonColor.Red, Color.White },
+        { SimonColor.Blue, Color.White },
+        { SimonColor.Green, Color.Black },
+        { SimonColor.Yellow, Color.Black },
+    };
+
     private static readonly Dictionary<SimonColor, string> SimonColorNames = new()
     {
         { SimonColor.Red, "RED" },
@@ -105,7 +113,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
 
         _stageLabel.Text = $"STAGE {simonState.CurrentStage + 1}/{simonState.TotalStages}";
 
-        // Build sequence display as colored blocks
+        // Build sequence display as colored squares
         _sequenceRow.RemoveAllChildren();
         foreach (var flashColor in simonState.FlashSequence)
         {
@@ -130,7 +138,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
             _sequenceRow.AddChild(dotPanel);
         }
 
-        // Rebuild/Update the 4 color buttons
+        // Update the 4 color buttons
         if (_simonButtons.Count == 0)
         {
             _grid.RemoveAllChildren();
@@ -160,6 +168,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
                     HorizontalExpand = true,
                 };
                 btn.ModulateSelfOverride = SimonColorMap.GetValueOrDefault(color, Color.Gray);
+                btn.Label.FontColorOverride = SimonTextColorMap.GetValueOrDefault(color, Color.White);
 
                 var col = color;
                 btn.OnPressed += _ => RaiseAction(new PressSimonColorAction(col));
