@@ -39,7 +39,7 @@ public abstract class BaseModuleControl : BoxContainer
     {
         Orientation = LayoutOrientation.Vertical;
         HorizontalExpand = true;
-        VerticalExpand = true;
+        VerticalExpand = false;
         Margin = new Thickness(1);
 
         // Outer background panel
@@ -54,10 +54,6 @@ public abstract class BaseModuleControl : BoxContainer
             BackgroundColor = Color.FromHex("#1a0a0a"),
             BorderColor = Color.FromHex("#8b0000"),
             BorderThickness = new Thickness(1),
-            ContentMarginLeftOverride = 0,
-            ContentMarginRightOverride = 0,
-            ContentMarginTopOverride = 0,
-            ContentMarginBottomOverride = 0,
         };
         _backgroundPanel.PanelOverride = backgroundBox;
 

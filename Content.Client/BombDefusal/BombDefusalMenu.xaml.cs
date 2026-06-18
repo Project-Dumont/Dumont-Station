@@ -92,7 +92,7 @@ public sealed partial class BombDefusalMenu : DefaultWindow
         _moduleControls.Clear();
 
         // Adjust columns based on module count
-        ModuleGrid.Columns = state.Modules.Count <= 2 ? 1 : 2;
+        ModuleGrid.Columns = state.Modules.Count <= 2 ? state.Modules.Count : 3;
 
         for (var i = 0; i < state.Modules.Count; i++)
         {
@@ -107,7 +107,7 @@ public sealed partial class BombDefusalMenu : DefaultWindow
             {
                 Margin = new Thickness(1),
                 HorizontalExpand = true,
-                VerticalExpand = true,
+                VerticalExpand = false,
             };
 
             panel.AddChild(control);

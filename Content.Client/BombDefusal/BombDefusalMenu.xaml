@@ -52,8 +52,7 @@
         <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
             <GridContainer Name="ModuleGrid"
                            Columns="2"
-                           HorizontalExpand="True"
-                           VerticalExpand="True" />
+                           HorizontalExpand="True" />
         </ScrollContainer>
     </BoxContainer>
 </DefaultWindow>
