@@ -205,7 +205,7 @@
   - type: SolutionContainerManager
     solutions:
       melee:
-        maxVol: 3
+        maxVol: 5
   - type: MeleeChemicalInjector
     transferAmount: 5
     solution: melee
