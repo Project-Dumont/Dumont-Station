@@ -134,7 +134,7 @@
   description: A bomb for dummies, manual not included.
   components:
     - type: BombDefusal
-      maxStrikes: 5
+      maxStrikes: 3
     - type: Sprite
       sprite: Structures/Machines/bomb.rsi
       layers:
