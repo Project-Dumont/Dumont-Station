@@ -168,6 +168,18 @@ public sealed class NetpodSystem : EntitySystem
             return;
         }
 
+        if (!HasComp<HumanoidAppearanceComponent>(args.Entity))
+        {
+            Timer.Spawn(TimeSpan.Zero,
+                () =>
+            {
+                if (Exists(ent.Owner))
+                    EjectOccupant(ent.Owner);
+            });
+            _popup.PopupEntity(Loc.GetString("bitrunning-netpod-enter-failed"), ent, args.Entity);
+            return;
+        }
+
         if (TryComp<MobStateComponent>(args.Entity, out var mobState) && mobState.CurrentState == MobState.Dead)
         {
             Timer.Spawn(TimeSpan.Zero,
