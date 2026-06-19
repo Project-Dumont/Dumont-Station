@@ -2,6 +2,7 @@ using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
+using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Shared._Orion.Bitrunning.Prototypes;
 
@@ -155,6 +156,12 @@ public sealed class BitrunningVirtualDomainPrototype : IPrototype
     /// </summary>
     [DataField]
     public ProtoId<StartingGearPrototype>? ForcedLoadout { get; private set; }
+
+    /// <summary>
+    /// Optional forced loadout specie for this domain. Has priority over netpod selection.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<SpeciesPrototype>, ProtoId<StartingGearPrototype>> ForcedLoadoutSpecie { get; private set; } = new();
 
     /// <summary>
     /// Fixed domain completion loot to spawn in decrypted cache.

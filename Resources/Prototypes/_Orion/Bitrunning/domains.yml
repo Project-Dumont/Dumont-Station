@@ -65,6 +65,9 @@
   completionLoot:
     PlushieRouny: 1
   forcedLoadout: BitrunnerAvatarXenonautenGear
+  forcedLoadoutSpecie:
+    Plasmaman: BitrunnerAvatarXenonautenPlasmamanGear
+    Vox: BitrunnerAvatarXenonautenVoxGear
   isModular: true
   mapPath: /Maps/_Orion/Bitrun/xenomorph-infestation.yml
   objectiveTypePool:
@@ -83,6 +86,9 @@
   serverRewardPoints: 3
   bitrunningRewardPoints: 150
   forcedLoadout: BitrunnerAvatarSecurityOfficerMODGear
+  forcedLoadoutSpecie:
+    Plasmaman: BitrunnerAvatarSecurityOfficerMODPlasmamanGear
+    Vox: BitrunnerAvatarSecurityOfficerMODVoxGear
   isModular: true
   completionLoot:
     ClothingNeckFellForItAward: 1

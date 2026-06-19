@@ -497,7 +497,7 @@ public sealed class QuantumServerSystem : EntitySystem
         _mind.TransferTo(mindId, avatar, mind: mind);
         PlayLocalSound(user, pod.ConnectStasisSound);
         PlayLocalSound(avatar, pod.ConnectAvatarSound);
-        TryApplyAvatarOutfit(avatar, server, pod);
+        TryApplyAvatarOutfit(avatar, user, server, pod);
         SetAvatarBroadcastEnabled((avatar, connection), server, server.BroadcastEnabled);
         _actions.AddAction(avatar, ref connection.DisconnectActionEntity, connection.DisconnectActionPrototype, avatar);
         var objectivePopupText = server.ObjectiveCompleted
@@ -569,32 +569,33 @@ public sealed class QuantumServerSystem : EntitySystem
         return domain.DeleteAvatarOnDisconnect;
     }
 
-    private void TryApplyAvatarOutfit(EntityUid avatar, QuantumServerComponent server, NetpodComponent pod)
+    private void TryApplyAvatarOutfit(EntityUid avatar, EntityUid user, QuantumServerComponent server, NetpodComponent pod)
     {
-        if (!TryResolveLoadout(server, pod, out var loadoutId))
+        if (!TryResolveLoadout(user, server, pod, out var loadoutId))
             return;
 
         _outfit.SetOutfit(avatar, loadoutId);
     }
 
-    private bool TryResolveLoadout(QuantumServerComponent server, NetpodComponent pod, out string loadout)
+    private bool TryResolveLoadout(EntityUid user, QuantumServerComponent server, NetpodComponent pod, out string loadout)
     {
         loadout = string.Empty;
 
         if (server.CurrentDomain != null &&
             _domains.TryGetDomain(server.CurrentDomain, out var domain) &&
-            domain is { ForcedLoadout: not null })
+            _domains.GetResolvedForcedLoadout(domain, user) is { } forcedLoadout)
         {
-            loadout = domain.ForcedLoadout.Value;
+            loadout = forcedLoadout;
             return true;
         }
 
-        if (pod.PreferredLoadout == null)
-            return false;
+        if (_netpod.GetResolvedPreferredLoadout(pod, user) is { } preferredLoadout)
+        {
+            loadout = preferredLoadout;
+            return true;
+        }
 
-        loadout = pod.PreferredLoadout.Value;
-        return true;
-
+        return false;
     }
 
     private void SetAvatarBroadcastEnabled(Entity<AvatarConnectionComponent> avatar, QuantumServerComponent server, bool enabled)

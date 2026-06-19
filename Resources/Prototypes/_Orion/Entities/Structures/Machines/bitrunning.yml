@@ -147,6 +147,34 @@
     - BitrunnerAvatarCargoTechnicianGear
     - BitrunnerAvatarSalvageSpecialistGear
     - BitrunnerAvatarShaftMinerGear
+    allowedLoadoutSpecie:
+      Plasmaman:
+      - BitrunnerAvatarPassengerPlasmamanGear
+      - BitrunnerAvatarClownPlasmamanGear
+      - BitrunnerAvatarMimePlasmamanGear
+      - BitrunnerAvatarCaptainPlasmamanGear
+      - BitrunnerAvatarEngineerPlasmamanGear
+      - BitrunnerAvatarMedicalDoctorPlasmamanGear
+      - BitrunnerAvatarScientistPlasmamanGear
+      - BitrunnerAvatarSecurityOfficerPlasmamanGear
+      - BitrunnerAvatarCargoTechnicianPlasmamanGear
+      - BitrunnerAvatarSalvageSpecialistPlasmamanGear
+      - BitrunnerAvatarShaftMinerPlasmamanGear
+      Vox:
+      - BitrunnerAvatarPassengerVoxGear
+      - BitrunnerAvatarClownVoxGear
+      - BitrunnerAvatarMimeVoxGear
+      - BitrunnerAvatarCaptainVoxGear
+      - BitrunnerAvatarEngineerVoxGear
+      - BitrunnerAvatarMedicalDoctorVoxGear
+      - BitrunnerAvatarScientistVoxGear
+      - BitrunnerAvatarSecurityOfficerVoxGear
+      - BitrunnerAvatarCargoTechnicianVoxGear
+      - BitrunnerAvatarSalvageSpecialistVoxGear
+      - BitrunnerAvatarShaftMinerVoxGear
+    preferredLoadoutSpecie:
+      Plasmaman: BitrunnerAvatarShaftMinerPlasmamanGear
+      Vox: BitrunnerAvatarShaftMinerVoxGear
 
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
