@@ -57,6 +57,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Atmos.EntitySystems;
+using Content.Shared.Body.Systems;
+using Content.Shared.Body.Components;
 
 namespace Content.Server._Orion.Bitrunning.Systems;
 
@@ -91,6 +94,8 @@ public sealed class QuantumServerSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly DeathgaspSystem _deathgasp = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedInternalsSystem _internals = default!;
+    [Dependency] private readonly SharedGasTankSystem _gasTank = default!;
 
     private static readonly EntProtoId ExitBlindnessStatusEffect = "StatusEffectBitrunningExitBlindness";
     private const string ServerSourcePort = "BitrunningServerSource";
@@ -498,6 +503,10 @@ public sealed class QuantumServerSystem : EntitySystem
         PlayLocalSound(user, pod.ConnectStasisSound);
         PlayLocalSound(avatar, pod.ConnectAvatarSound);
         TryApplyAvatarOutfit(avatar, user, server, pod);
+
+        if (HasComp<InternalsComponent>(avatar) && _internals.FindBestGasTank(avatar) is { } tank)
+            _gasTank.ConnectToInternals(tank, user: avatar);
+
         SetAvatarBroadcastEnabled((avatar, connection), server, server.BroadcastEnabled);
         _actions.AddAction(avatar, ref connection.DisconnectActionEntity, connection.DisconnectActionPrototype, avatar);
         var objectivePopupText = server.ObjectiveCompleted
