@@ -136,6 +136,7 @@
     mobile: true
   - type: Netpod
     allowedLoadout:
+    - BitrunnerAvatarGear
     - BitrunnerAvatarPassengerGear
     - BitrunnerAvatarClownGear
     - BitrunnerAvatarMimeGear
@@ -149,6 +150,7 @@
     - BitrunnerAvatarShaftMinerGear
     allowedLoadoutSpecie:
       Plasmaman:
+      - BitrunnerAvatarPlasmamanGear
       - BitrunnerAvatarPassengerPlasmamanGear
       - BitrunnerAvatarClownPlasmamanGear
       - BitrunnerAvatarMimePlasmamanGear
@@ -161,6 +163,7 @@
       - BitrunnerAvatarSalvageSpecialistPlasmamanGear
       - BitrunnerAvatarShaftMinerPlasmamanGear
       Vox:
+      - BitrunnerAvatarVoxGear
       - BitrunnerAvatarPassengerVoxGear
       - BitrunnerAvatarClownVoxGear
       - BitrunnerAvatarMimeVoxGear
@@ -173,8 +176,8 @@
       - BitrunnerAvatarSalvageSpecialistVoxGear
       - BitrunnerAvatarShaftMinerVoxGear
     preferredLoadoutSpecie:
-      Plasmaman: BitrunnerAvatarShaftMinerPlasmamanGear
-      Vox: BitrunnerAvatarShaftMinerVoxGear
+      Plasmaman: BitrunnerAvatarPlasmamanGear
+      Vox: BitrunnerAvatarVoxGear
 
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]

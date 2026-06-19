@@ -2,17 +2,20 @@
 
 # Plasmaman
 - type: startingGear
+  parent: [BitrunnerAvatarGear]
   id: BitrunnerAvatarPlasmamanGear
   equipment:
-    id: BitrunAvatarIDCard
+    jumpsuit: ClothingUniformEnvirosuitBitrunner
+    head: ClothingHeadEnvirohelmBitrunner
+    gloves: ClothingHandsGlovesEnviroglovesBlack
     outerClothing: ClothingOuterVestTank
     suitstorage: DoubleEmergencyPlasmaTankFilled
 
 # Vox
 - type: startingGear
+  parent: [BitrunnerAvatarGear]
   id: BitrunnerAvatarVoxGear
   equipment:
-    id: BitrunAvatarIDCard
     outerClothing: ClothingOuterVestTank
     mask: ClothingMaskBreath
     suitstorage: NitrogenTankFilled

@@ -4,6 +4,8 @@
   id: BitrunnerAvatarGear
   equipment:
     id: BitrunAvatarIDCard
+    jumpsuit: ClothingUniformJumpsuitBitrunner
+    shoes: ClothingShoesColorBlack
 
 # --- Avatar Loadouts (Netpod) ---
 

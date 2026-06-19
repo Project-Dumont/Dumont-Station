@@ -27,7 +27,7 @@ public sealed partial class NetpodComponent : Component
     public bool EjectingOccupant;
 
     [DataField, AutoNetworkedField]
-    public ProtoId<StartingGearPrototype>? PreferredLoadout = "BitrunnerAvatarShaftMinerGear"; // TODO: Replace with BitrunnerGear
+    public ProtoId<StartingGearPrototype>? PreferredLoadout = "BitrunnerAvatarGear";
 
     [DataField]
     public Dictionary<ProtoId<SpeciesPrototype>, ProtoId<StartingGearPrototype>> PreferredLoadoutSpecie = new();

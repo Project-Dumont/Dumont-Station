@@ -4,8 +4,14 @@
   description: job-description-bitrun-avatar
   playTimeTracker: JobBitrunAvatar
   setPreference: false
-  startingGear: CargoTechGear # TODO
+  startingGear: BitrunnerAvatarGear
   icon: "JobIconBitrunAvatar"
   supervisors: job-supervisors-qm
   canBeAntag: false
-  goobcoins: 20 #Goob content
+  goobcoins: 20
+  access:
+  - Cargo
+  - Bitrun
+  - Maintenance
+  extendedAccess:
+  - Salvage
