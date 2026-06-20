@@ -21,6 +21,8 @@ bitrunning-domain-corsair-cove-desc = Battle your way to the hidden treasure, se
 
 bitrunning-domain-zealot-arena-name = Zealot Arena
 bitrunning-domain-zealot-arena-desc = Dance, puppets, dance!
+bitrunning-domain-experimental-soldier-name = Experimental Soldier
+bitrunning-domain-experimental-soldier-desc = The Syndicate has new developments. Deliver the data to benefit Nanotrasen!
 
 bitrunning-domain-special-squad-name = Special Squad
 bitrunning-domain-special-squad-desc = After a successful revolution, a "special" ERT unit was sent to your station. The Syndicate has sent you supplies for the battle, so don't let them down.

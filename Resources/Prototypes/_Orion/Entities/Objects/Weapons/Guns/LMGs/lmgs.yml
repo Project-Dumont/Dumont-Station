@@ -104,3 +104,16 @@
   - type: GunRequiresWield
   - type: HeldSpeedModifier
     sprintModifier: 0.9
+
+- type: entity
+  parent: WeaponLightMachineGunL6C
+  id: WeaponLightMachineGunL6CInfinite
+  description: The L6 SAW with an integrated self-charging system. An internal nanofabricator synthesizes rounds in real-time, powered by a self-discharging battery.
+  suffix: Infinite
+  components:
+    - type: Gun 
+      minAngle: 12
+      maxAngle: 20
+      fireRate: 3
+    - type: ProjectileBatteryAmmoProvider
+      fireCost: 10

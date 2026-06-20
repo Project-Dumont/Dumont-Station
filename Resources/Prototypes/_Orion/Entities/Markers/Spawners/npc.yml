@@ -165,3 +165,35 @@
   - type: ConditionalSpawner
     prototypes:
     - MobDeathSquadPhoronSabreBitrunning
+
+# ---- DeathSquad Mobs ----
+
+- type: entity
+  parent: SpawnMobDeathSquadPhoronSabre
+  id: SpawnMobNukeopsSoldier
+  name:  Nukeops Soldier spawner
+  suffix: AI
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobNukeopsSoldierBitrunning
+
+- type: entity
+  parent: SpawnMobDeathSquadPhoronSabre
+  id: SpawnMobExperimentalSoldier
+  name: Experimental Syndicate soldier spawner
+  suffix: AI 
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobExperimentalSoldierBitrunning
+
+- type: entity
+  parent: SpawnMobDeathSquadPhoronSabre
+  id: SpawnMobSyndicateSoldier
+  name: Syndicate soldier spawner
+  suffix: AI 
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSyndicateSoldierBitrunning

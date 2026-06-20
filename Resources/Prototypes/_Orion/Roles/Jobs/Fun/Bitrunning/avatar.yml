@@ -135,3 +135,16 @@
     outerClothing: ClothingOuterArmorXenonautenHeavy
     gloves: ClothingHandsGlovesFingerless
     shoes: ClothingShoesBootsCombat
+
+- type: startingGear
+  parent: BitrunnerAvatarGear
+  id: BitrunnerAvatarERTSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTSecurity
+    back: ClothingBackpackERTSecurity
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam 
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasERT
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTSecurity
+    belt: FlashlightSeclite
