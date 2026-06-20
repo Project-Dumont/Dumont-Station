@@ -420,7 +420,7 @@ public sealed class NetpodSystem : EntitySystem
     {
         Timer.Spawn(delay, () =>
         {
-            if (!TryComp<NetpodComponent>(podUid, out var pod) || pod.Avatar != null || pod.Occupant != user)
+            if (!TryComp<NetpodComponent>(podUid, out var pod) || pod.Occupant != user)
                 return;
 
             if (TryComp<ApcPowerReceiverComponent>(podUid, out var power) && !power.Powered)

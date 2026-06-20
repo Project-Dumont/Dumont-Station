@@ -227,6 +227,16 @@ public sealed class QuantumServerSystem : EntitySystem
         server.WasRandomizedRun = randomized;
         server.GrantedItemDisks.Clear();
 
+        var netpodQuery = EntityQueryEnumerator<NetpodComponent>();
+        while (netpodQuery.MoveNext(out var uid, out var pod))
+        {
+            if (pod.LinkedServer == serverUid)
+            {
+                pod.DeployedAvatar = false;
+                Dirty(uid, pod);
+            }
+        }
+
         ResolveDomainMarkers((serverUid, server));
         CleanupObjectiveArtifacts((serverUid, server));
         _audio.PlayPvs(server.DomainStartSound, serverUid);
@@ -412,6 +422,16 @@ public sealed class QuantumServerSystem : EntitySystem
             DisconnectAvatar(connection, false);
         }
 
+        var netpodQuery = EntityQueryEnumerator<NetpodComponent>();
+        while (netpodQuery.MoveNext(out var uid, out var pod))
+        {
+            if (pod.LinkedServer == serverEnt.Owner)
+            {
+                pod.DeployedAvatar = false;
+                Dirty(uid, pod);
+            }
+        }
+
         if (serverEnt.Comp.DomainMapUid is { } mapUid)
             _map.DeleteMap(Comp<MapComponent>(mapUid).MapId);
 
@@ -477,10 +497,16 @@ public sealed class QuantumServerSystem : EntitySystem
         if (!_mind.TryGetMind(user, out var mindId, out var mind))
             return false;
 
-        if (pod.Avatar != null)
+        if (pod.Avatar != null || pod.DeployedAvatar)
         {
             if (TryReconnectRunner((podUid, pod), user))
                 return true;
+
+            if (pod.DeployedAvatar)
+            {
+                _popup.PopupEntity(Loc.GetString("bitrunning-netpod-enter-failed"), podUid, user);
+                return false;
+            }
 
             if (pod.Avatar is { } oldAvatar && Exists(oldAvatar))
                 DisconnectAvatar(oldAvatar, true);
@@ -488,6 +514,8 @@ public sealed class QuantumServerSystem : EntitySystem
             pod.Avatar = null;
             Dirty(podUid, pod);
         }
+
+        pod.DeployedAvatar = true;
 
         var avatar = SpawnAvatarForRunner(server, user, server.SpawnCoordinates ?? server.ExitCoordinates.Value);
         EnsureComp<BitrunningDomainRuntimeComponent>(avatar);

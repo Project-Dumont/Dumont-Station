@@ -21,6 +21,9 @@ public sealed partial class NetpodComponent : Component
     [DataField]
     public TimeSpan AutoConnectDelay = TimeSpan.FromSeconds(1.8);
 
+    [DataField]
+    public bool DeployedAvatar;
+
     /// <summary>
     /// Internal re-entrancy guard while removing occupant from the pod container.
     /// </summary>
