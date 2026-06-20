@@ -31,6 +31,8 @@
 
 using System.Numerics;
 using Content.Server.Forensics;
+using Content.Server.Stack;
+using Content.Shared.Destructible;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Prototypes;
@@ -62,6 +64,11 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
 
         public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)
         {
+            // ADT-Tweak start
+            if (system.EntityManager.TryGetComponent<DroppodSuppressedComponent>(owner, out _))
+                return;
+            // ADT-Tweak end
+
             var tSys = system.EntityManager.System<TransformSystem>();
             var position = tSys.GetMapCoordinates(owner);
 
@@ -102,9 +109,9 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
                                 : system.EntityManager.SpawnEntity(entityId, position.Offset(getRandomVector()));
 
                             TransferForensics(spawned, system, owner);
-                        }
-                    }
-                }
+        }
+    }
+}
             }
         }
 
@@ -124,3 +131,4 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
         }
     }
 }
+
