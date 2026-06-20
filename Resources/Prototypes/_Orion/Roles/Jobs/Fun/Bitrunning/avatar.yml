@@ -6,6 +6,7 @@
     id: BitrunAvatarIDCard
     jumpsuit: ClothingUniformJumpsuitBitrunner
     shoes: ClothingShoesColorBlack
+    back: ClothingBackpackMessenger
 
 # --- Avatar Loadouts (Netpod) ---
 
@@ -29,6 +30,7 @@
     gloves: ClothingHandsGlovesFingerlessInsulated
     jumpsuit: ClothingUniformJumpsuitClown
     shoes: ClothingShoesClown
+    back: ClothingBackpackMessengerClown
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -40,6 +42,7 @@
     gloves: ClothingHandsGlovesColorWhite
     jumpsuit: ClothingUniformJumpsuitMime
     shoes: ClothingShoesColorBlack
+    back: ClothingBackpackMessengerMime
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -48,6 +51,7 @@
     neck: ClothingNeckMantleCap
     jumpsuit: ClothingUniformJumpsuitCaptain
     shoes: ClothingShoesColorBlack
+    back: ClothingBackpackMessengerCaptain
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -57,6 +61,7 @@
     gloves: ClothingHandsGlovesFingerlessInsulated
     jumpsuit: ClothingUniformJumpsuitEngineering
     shoes: ClothingShoesBootsWork
+    back: ClothingBackpackMessengerEngineering
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -66,6 +71,7 @@
     gloves: ClothingHandsGlovesNitrile
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     shoes: ClothingShoesColorBlack
+    back: ClothingBackpackMessengerMedical
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -75,6 +81,7 @@
     gloves: ClothingHandsGlovesLatex
     jumpsuit: ClothingUniformJumpsuitScientist
     shoes: ClothingShoesColorBlack
+    back: ClothingBackpackMessengerScience
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -83,6 +90,7 @@
     gloves: ClothingHandsGlovesFingerless
     jumpsuit: ClothingUniformJumpsuitSec
     shoes: ClothingShoesBootsCombat
+    back: ClothingBackpackMessengerSecurity
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -92,6 +100,7 @@
     gloves: ClothingHandsGlovesFingerless
     jumpsuit: ClothingUniformJumpsuitCargo
     shoes: ClothingShoesColorBlack
+    back: ClothingBackpackMessengerCargo
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -101,6 +110,7 @@
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     neck: ClothingNeckScarfStripedBrown
     shoes: ClothingShoesBootsSalvage
+    back: ClothingBackpackMessengerSalvage
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -110,6 +120,7 @@
     jumpsuit: ClothingUniformJumpsuitShaftMiner
     neck: ClothingNeckScarfStripedBrown
     shoes: ClothingShoesBootsSalvage
+    back: ClothingBackpackMessengerSalvage
 
 # --- Domain Loadouts ---
 
@@ -135,6 +146,7 @@
     outerClothing: ClothingOuterArmorXenonautenHeavy
     gloves: ClothingHandsGlovesFingerless
     shoes: ClothingShoesBootsCombat
+    back: ClothingBackpackMessengerCamouflage
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -142,7 +154,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurity
-    shoes: ClothingShoesBootsMagEmergencyResponseTeam 
+    shoes: ClothingShoesBootsMagEmergencyResponseTeam
     eyes: ClothingEyesGlassesSecurity
     mask: ClothingMaskGasERT
     gloves: ClothingHandsGlovesCombat
