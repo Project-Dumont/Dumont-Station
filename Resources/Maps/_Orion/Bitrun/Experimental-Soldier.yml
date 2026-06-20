@@ -21,7 +21,7 @@ tilemap:
   4: FloorDarkPavementVertical
   28: FloorMetalDiamond
   2: FloorMiningDark
-  12: FloorPlanetGrassLight
+  12: FloorPlanetGrass
   39: FloorRGlass
   11: FloorSnowDug
   29: FloorSteelPavementAlt
@@ -3059,14 +3059,14 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: FloraAshtreePale
+- proto: FloraTreeSnow
   entities:
   - uid: 581
     components:
     - type: Transform
       pos: 9.372097,9.261433
       parent: 1
-- proto: FloraAshYellowFlowers
+- proto: AshBush
   entities:
   - uid: 590
     components:
@@ -3078,7 +3078,7 @@ entities:
     - type: Transform
       pos: 7.5,7.5
       parent: 1
-- proto: FloraPaleSprouts
+- proto: FloraRockSolid
   entities:
   - uid: 583
     components:
@@ -3950,7 +3950,7 @@ entities:
     - type: Transform
       pos: -6.50387,15.640993
       parent: 1
-- proto: OperatingTableFilled
+- proto: OperatingTable
   entities:
   - uid: 200
     components:
@@ -4041,14 +4041,14 @@ entities:
     - type: Transform
       pos: -10.237316,20.75868
       parent: 1
-- proto: PokerChip100One
+- proto: TreasureCoinGold
   entities:
   - uid: 668
     components:
     - type: Transform
       pos: 4.3851633,14.376452
       parent: 1
-- proto: PokerChip25One
+- proto: TreasureCoinAdamantine
   entities:
   - uid: 670
     components:
@@ -4060,14 +4060,14 @@ entities:
     - type: Transform
       pos: 4.6212845,14.651772
       parent: 1
-- proto: PokerChip5Five
+- proto: TreasureCoinSilver
   entities:
   - uid: 675
     components:
     - type: Transform
       pos: 4.2474265,12.558882
       parent: 1
-- proto: PokerChipsBox
+- proto: TreasureCoinDiamond
   entities:
   - uid: 672
     components:
