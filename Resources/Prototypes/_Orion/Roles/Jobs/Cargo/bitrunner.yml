@@ -15,8 +15,8 @@
   goobcoins: 20
   supervisors: job-supervisors-qm
   access:
-  - Cargo
   - Bitrun
+  - Cargo
   - Maintenance
   extendedAccess:
   - Salvage

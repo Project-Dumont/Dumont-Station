@@ -4,7 +4,7 @@
   description: job-description-bitrun-avatar
   playTimeTracker: JobBitrunAvatar
   setPreference: false
-  startingGear: BitrunnerAvatarGear
+  startingGear: BitrunAvatarGear
   icon: "JobIconBitrunAvatar"
   supervisors: job-supervisors-qm
   canBeAntag: false
@@ -15,3 +15,8 @@
   - Maintenance
   extendedAccess:
   - Salvage
+
+- type: startingGear
+  id: BitrunAvatarGear
+  equipment:
+    id: BitrunAvatarIDCard
