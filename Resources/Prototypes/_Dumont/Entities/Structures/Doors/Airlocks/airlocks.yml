@@ -4,7 +4,7 @@
   suffix: Bitrunner
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/cargo.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/bitrunning.rsi
   - type: Wires
     layoutId: AirlockCargo
 
@@ -14,6 +14,6 @@
   suffix: Bitrunner
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/cargo.rsi
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/bitrunning.rsi
   - type: Wires
     layoutId: AirlockCargo
