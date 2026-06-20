@@ -6,10 +6,16 @@
   id: CartridgeRifle762
 
 - type: Tag
+  id: MagazineAntiMaterielRifle
+
+- type: Tag
   id: MagazineHeavyRifleM41
 
 - type: Tag
   id: MagazineLightMachineGunRPD
+
+- type: Tag
+  id: MagazineSMGP90
 
 - type: Tag
   id: MagazinePulseShotgun

@@ -49,3 +49,25 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: BitrunningDespawnOnOpen
+
+- type: entity
+  parent: [ CrateBaseSecure, CrateGenericSteel ]
+  id: CrateInterdyneSecure
+  name: Interdyne crate
+  description: Crate belonging to Interdyne Pharmaceutics. Hopefully doesn't have bioweapons inside...
+  components:
+  - type: Icon
+    sprite: _Orion/Structures/Storage/Crates/interdyne_secure.rsi
+  - type: Sprite
+    sprite: _Orion/Structures/Storage/Crates/interdyne_secure.rsi
+
+- type: entity
+  parent: [ CrateBaseSecure, CrateFreezer ]
+  id: CrateFreezerInterdyneSecure
+  name: Interdyne freezer
+  description: This is an Interdyne Pharmaceuticals branded freezer. May or may not contain fresh organs.
+  components:
+  - type: Icon
+    sprite: _Orion/Structures/Storage/Crates/interdyne-freezer_secure.rsi
+  - type: Sprite
+    sprite: _Orion/Structures/Storage/Crates/interdyne-freezer_secure.rsi
