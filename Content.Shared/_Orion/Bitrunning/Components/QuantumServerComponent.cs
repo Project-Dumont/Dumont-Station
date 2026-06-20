@@ -30,7 +30,7 @@ public sealed partial class QuantumServerComponent : Component
     public float QualityBonus;
 
     [DataField, AutoNetworkedField]
-    public EntProtoId AvatarPrototype = "MobHuman";
+    public EntProtoId AvatarPrototype = "MobHumanRandom";
 
     /// <summary>
     /// Crate that spawns in domain as reward when players reach goal.
