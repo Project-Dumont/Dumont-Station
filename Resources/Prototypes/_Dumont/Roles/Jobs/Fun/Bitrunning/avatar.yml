@@ -174,6 +174,14 @@
     head: ClothingHeadEnvirohelmXenonaut
     gloves: ClothingHandsGlovesEnviroglovesBlack
 
+- type: startingGear
+  parent: [BitrunnerAvatarERTSecurityGear, BitrunnerAvatarPlasmamanGear]
+  id: BitrunnerAvatarERTSecurityPlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitERTSecurity
+    head: ClothingHeadEnvirohelmERTSecurity
+    gloves: ClothingHandsGlovesEnviroglovesCombat
+
 # Vox
 - type: startingGear
   parent: [BitrunnerAvatarSecurityOfficerMODGear, BitrunnerAvatarVoxGear]
@@ -182,3 +190,7 @@
 - type: startingGear
   parent: [BitrunnerAvatarXenonautenGear, BitrunnerAvatarVoxGear]
   id: BitrunnerAvatarXenonautenVoxGear
+
+- type: startingGear
+  parent: [BitrunnerAvatarERTSecurityGear, BitrunnerAvatarVoxGear]
+  id: BitrunnerAvatarERTSecurityVoxGear
