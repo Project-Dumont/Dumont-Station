@@ -10,6 +10,9 @@
   id: SpaceCashCounterfeit
   name: suspicious spesos
   description: This looks like painted-on paper.
+  components:
+  - type: Stack
+    stackType: SuspiciousCredit
 
 - type: entity
   parent: SpaceCashCounterfeit
@@ -35,3 +38,8 @@
   - type: Construction
     graph: SpesosCounterfeit
     node: spesos
+
+- type: stack
+  parent: Credits
+  id: SuspiciousCredit
+  spawn: SpaceCashCounterfeit
