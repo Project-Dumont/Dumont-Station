@@ -7,6 +7,11 @@
     jumpsuit: ClothingUniformJumpsuitBitrunner
     shoes: ClothingShoesColorBlack
     back: ClothingBackpackMessenger
+  storage:
+    back:
+      - BoxSurvivalSlotsBasic
+      - FlashlightLantern
+      - MedkitFilled
 
 # --- Avatar Loadouts (Netpod) ---
 
