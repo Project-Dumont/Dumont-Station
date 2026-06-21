@@ -67,6 +67,7 @@
     - NFHoloflareStatic # Frontier - Holoflare
     dynamicPacks:
     - MegaCells # Orion
+    - EngineeringEquipment # Orion
     - ConstructionBagOfHolding
     - AdvancedTools
     - AtmosTools

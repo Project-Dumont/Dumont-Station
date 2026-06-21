@@ -203,7 +203,7 @@ public sealed class GhoulSystem : EntitySystem
         if (TryComp<MobThresholdsComponent>(ent, out var th))
         {
             _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth, MobState.Dead, th);
-            _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth * 0.99f, MobState.Critical, th);
+            _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth * 0.99f, MobState.SoftCritical, th); // Orion-Edit
         }
 
         _mind.MakeSentient(ent);
