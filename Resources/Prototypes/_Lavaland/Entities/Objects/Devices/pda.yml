@@ -32,5 +32,5 @@
       - NewsReaderCartridge
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
-      - SOSCartridge # Imp
+#      - SOSCartridge # Imp
       - NanoBankCartridge #Dumont station

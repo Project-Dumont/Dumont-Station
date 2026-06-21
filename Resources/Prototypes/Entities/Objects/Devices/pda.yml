@@ -262,7 +262,7 @@
       - NewsReaderCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
-      - SOSCartridge # Imp
+#      - SOSCartridge # Imp Dumont edit, make the PDA something you have to request
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -365,7 +365,6 @@
       - MedTekCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
-      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -709,7 +708,7 @@
     - NotekeeperCartridge
     - NewsReaderCartridge
     - NanoChatCartridge # DeltaV
-    - SOSCartridge # Imp
+#    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -739,7 +738,7 @@
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
       - NanoBankCartridge # Gabystation
-      - SOSCartridge # Imp
+#      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -870,6 +869,16 @@
     borderColor: "#7C5D00"
   - type: Icon
     state: pda-captain
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -895,6 +904,16 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hop
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -914,6 +933,16 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-ce
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -953,6 +982,17 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-cmo
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1476,7 +1516,8 @@
     - NotekeeperCartridge
     - NewsReaderCartridge
     - NanoChatCartridge # DeltaV
-    - SOSCartridge # Imp
+    - NanoBankCartridge # Gabystation
+#    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA

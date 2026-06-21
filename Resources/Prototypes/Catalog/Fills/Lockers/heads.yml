@@ -565,6 +565,7 @@
       prob: 0.5
     - id: SecApartmentTablet # Dumont edit it's the hos's job
     - id: SecurityMegaphone
+    - id: SOSCartridge # Dumont edit
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
