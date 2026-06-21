@@ -233,6 +233,7 @@ public sealed class QuantumServerSystem : EntitySystem
             if (pod.LinkedServer == serverUid)
             {
                 pod.DeployedAvatar = false;
+                pod.Avatar = null;
                 Dirty(uid, pod);
             }
         }
@@ -504,7 +505,7 @@ public sealed class QuantumServerSystem : EntitySystem
 
             if (pod.DeployedAvatar)
             {
-                _popup.PopupEntity(Loc.GetString("bitrunning-netpod-enter-failed"), podUid, user);
+                _popup.PopupEntity(Loc.GetString("bitrunning-netpod-connect-failed"), podUid, user);
                 return false;
             }
 
@@ -679,7 +680,8 @@ public sealed class QuantumServerSystem : EntitySystem
         if (originalBody is { } bodyToTransfer && TryResolveRunnerMind((avatarUid, connection), out var mindId))
             _mind.TransferTo(mindId, bodyToTransfer);
 
-        connection.OriginalBody = null;
+        if (connection.DeleteOnDisconnect)
+            connection.OriginalBody = null;
 
         if (harmful && canRedirectToBitrunner && originalBody is { } redirectedBody && !IsAvatarInCriticalState(redirectedBody))
             TransferAvatarDamageToBitrunner((avatarUid, connection), redirectedBody, true);
@@ -698,7 +700,7 @@ public sealed class QuantumServerSystem : EntitySystem
                 ? containerComp.BodyContainer.ContainedEntity
                 : null;
 
-            if (connection.DeleteOnDisconnect)
+            if (connection.DeleteOnDisconnect || _mobState.IsDead(avatarUid) || IsAvatarInCriticalState(avatarUid))
                 pod.Avatar = null;
 
             Dirty(podUid.Value, pod);
@@ -707,7 +709,8 @@ public sealed class QuantumServerSystem : EntitySystem
             _netpod.EjectOccupant(podUid.Value);
         }
 
-        ApplyBitrunningExitEffects(originalBody, serverUid);
+        if (canRedirectToBitrunner)
+            ApplyBitrunningExitEffects(originalBody, serverUid);
 
         if (serverUid != null && TryComp<QuantumServerComponent>(serverUid.Value, out var server))
         {

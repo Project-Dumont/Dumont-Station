@@ -7,5 +7,5 @@
     containers:
       entity_storage: !type:NestedSelector
         tableId: FillShaftMinerExplorerSuit
-#  - type: AccessReader # Nuh?
-#    access: [["Salvage"]]
+  - type: AccessReader # Nuh?
+    access: [["Bitrunner"]]
