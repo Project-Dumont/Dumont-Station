@@ -993,7 +993,7 @@ public sealed class QuantumServerSystem : EntitySystem
     private bool IsAvatarInCriticalState(EntityUid avatarUid)
     {
         return TryComp<MobStateComponent>(avatarUid, out var mobState)
-               && mobState.CurrentState is MobState.Critical; // MobState.SoftCritical or MobState.HardCritical;
+               && mobState.CurrentState is MobState.SoftCritical or MobState.HardCritical;
     }
 
     private void TransferAvatarDamageToBitrunner(Entity<AvatarConnectionComponent> avatar, EntityUid bodyUid, bool fatal)
