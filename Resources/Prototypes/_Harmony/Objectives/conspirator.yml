@@ -15,7 +15,7 @@
   parent: BaseConspiratorObjective
   id: ConspiratorUnionObjective
   name: Tome o controle de um departamento à força ou não.
-  description: Assuma o controle direto de um departamento, seja por meio da força ou manipulação e declare independência da Nanotrasen.
+  description: Assuma o controle direto de um departamento, seja por meio da força ou manipulação e declare independência da Nanotrasen!
   components:
   - type: Objective
     icon:
