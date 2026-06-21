@@ -8,4 +8,4 @@
       entity_storage: !type:NestedSelector
         tableId: FillShaftMinerExplorerSuit
   - type: AccessReader # Nuh?
-    access: [["Bitrunner"]]
+    access: [["Bitrun"]]
