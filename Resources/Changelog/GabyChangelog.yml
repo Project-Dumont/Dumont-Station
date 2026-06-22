@@ -3157,3 +3157,9 @@ Entries:
       message: Nova ui do console de comunicações
   id: 381
   time: '2026-06-20T21:49:22.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas usam projeteis denovo.
+  id: 382
+  time: '2026-06-22T16:19:32.0000000+00:00'
