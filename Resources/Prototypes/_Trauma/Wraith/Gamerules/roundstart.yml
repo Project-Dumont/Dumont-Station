@@ -6,7 +6,8 @@
     chaosScore: 1000
     minPlayers: 35
   - type: AntagSpawner
-    prototype: MobWraithMidround
+    # Dumont
+    prototype: MobWraith 
   - type: AntagRandomSpawn
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
@@ -28,6 +29,6 @@
         - NamesWraith
         - NamesWraithTitle
         nameFormat: name-format-wraith
-      - type: Banishment # revive on death, resets WP
+      - type: Banishment 
         lives: 0
         popup: wraith-banishment

@@ -1,5 +1,5 @@
 ﻿using Content.Shared.Actions;
 
-namespace Content.Trauma.Shared.Wraith;
+namespace Content.Shared.Wraith;
 
 public sealed partial class DarkWhisperEvent : EntityTargetActionEvent;

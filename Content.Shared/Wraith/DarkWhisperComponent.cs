@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Trauma.Shared.Wraith;
+namespace Content.Shared.Wraith;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
