@@ -21,6 +21,8 @@ bitrunning-domain-corsair-cove-desc = Abra caminho à força até o tesouro esco
 
 bitrunning-domain-zealot-arena-name = Arena dos Fanáticos
 bitrunning-domain-zealot-arena-desc = Dancem, marionetes, dancem!
+bitrunning-domain-experimental-soldier-name = Soldado Experimental
+bitrunning-domain-experimental-soldier-desc = O Sindicato fez novos avanços. Entregue os dados para beneficiar a Nanotrasen!
 
 bitrunning-domain-special-squad-name = Esquadrão Especial
 bitrunning-domain-special-squad-desc = Após uma revolução bem-sucedida, uma unidade "especial" da ERT foi enviada à sua estação. O Sindicato enviou suprimentos para a batalha, então não os decepcione.
