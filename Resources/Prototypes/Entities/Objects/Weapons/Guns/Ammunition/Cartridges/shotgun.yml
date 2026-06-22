@@ -190,8 +190,6 @@
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    soundEject:
-      collection: ShellEject
     proto: PelletShotgunSpread
 
 - type: entity
