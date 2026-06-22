@@ -43,8 +43,8 @@
     blackboard:
       NavClimb: !type:Bool
         true
-      NavSmash: !type:Bool
-        true
+      # NavSmash: !type:Bool
+      #   true
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: NpcFactionMember
