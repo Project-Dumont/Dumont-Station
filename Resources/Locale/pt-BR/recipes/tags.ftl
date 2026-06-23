@@ -11,7 +11,7 @@ construction-graph-tag-woeful-cluwne-meal = refeição lamentável-cluwne
 
 # mime
 construction-graph-tag-suspenders = suspensórios
-construction-graph-tag-mime-meal = refeição happy-honk edição mimíco
+construction-graph-tag-mime-meal = refeição happy-honk edição mimico
 
 # crayon
 construction-graph-tag-purple-crayon = giz roxo
