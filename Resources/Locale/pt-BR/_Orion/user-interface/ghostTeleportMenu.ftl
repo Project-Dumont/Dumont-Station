@@ -61,4 +61,4 @@ ghost-teleport-menu-dead-label = Mortos
 ghost-teleport-menu-ghosts-label = Fantasmas
 ghost-teleport-menu-left-label = Catatônicos
 ghost-teleport-menu-locations-label = Locais e objetos
-ghost-teleport-menu-count-label = Quantidades
+ghost-teleport-menu-count-label = Quantidade

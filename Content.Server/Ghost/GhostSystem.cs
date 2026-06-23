@@ -188,8 +188,8 @@ namespace Content.Server.Ghost
         private static readonly ProtoId<TagPrototype> AllowGhostShownByEventTag = "AllowGhostShownByEvent";
         private static readonly ProtoId<DamageTypePrototype> AsphyxiationDamageType = "Asphyxiation";
         private static readonly ProtoId<DamageTypePrototype> IonDamageType = "Ion";
-        private static readonly ProtoId<TagPrototype> HideGhostWarpTag = "HideGhostWarp";
-        private static readonly ProtoId<DepartmentPrototype> SpecificDepartment = "Specific";
+        private static readonly ProtoId<TagPrototype> HideGhostWarpTag = "HideGhostWarp"; // Orion
+        private static readonly ProtoId<DepartmentPrototype> SpecificDepartment = "Specific"; // Orion
 
         public override void Initialize()
         {
@@ -391,7 +391,7 @@ namespace Content.Server.Ghost
         private void OnGhostReturnToBodyRequest(GhostReturnToBodyRequest msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not { Valid: true } attached
-                || !TryComp(attached, out GhostComponent? ghost) // Orion-Edit
+                || !_ghostQuery.TryComp(attached, out var ghost)
                 || !ghost.CanReturnToBody
                 || !TryComp(attached, out ActorComponent? actor))
             {
@@ -407,7 +407,7 @@ namespace Content.Server.Ghost
         private void OnGhostWarpsRequest(GhostWarpsRequestEvent msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not { Valid: true } entity
-                || !_ghostQuery.HasComp(entity)) // Orion-Edit
+                || !_ghostQuery.HasComp(entity))
             {
                 Log.Warning($"User {args.SenderSession.Name} sent a {nameof(GhostWarpsRequestEvent)} without being a ghost.");
                 return;
@@ -426,7 +426,7 @@ namespace Content.Server.Ghost
         private void OnGhostWarpToTargetRequest(GhostWarpToTargetRequestEvent msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not { Valid: true } attached
-                || !_ghostQuery.HasComp(attached)) // Orion-Edit
+                || !_ghostQuery.HasComp(attached))
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to warp to {msg.Target} without being a ghost.");
                 return;
@@ -472,7 +472,7 @@ namespace Content.Server.Ghost
             WarpTo(uid, target);
         }
 
-        private void WarpTo(EntityUid uid, EntityUid target) // Orion-Edit
+        private void WarpTo(EntityUid uid, EntityUid target)
         {
             _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(uid)} ghost warped to {ToPrettyString(target)}");
 
