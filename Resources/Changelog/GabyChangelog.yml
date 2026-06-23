@@ -3111,3 +3111,69 @@ Entries:
       message: Pequenas correções com os indutores.
   id: 375
   time: '2026-06-12T19:15:29.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Agora ao dividir spesos suspeitos, você terá spesos suspeitos!
+  id: 376
+  time: '2026-06-21T16:55:53.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Telefones agora estão presentes nos mapas.
+    - type: Add
+      message: >-
+        Saltern, Packed, Omega, Cluster, Box, Meta, Marathon, Cog, Oasis agora
+        possuem genética, roboticistas e impressora de livros.
+    - type: Add
+      message: Falcon agora possui genética.
+    - type: Remove
+      message: Plasma miner foi removido de diversos mapas.
+  id: 377
+  time: '2026-06-21T16:56:41.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado Life Goes On no lobby. Descanse em paz Oliver Tree.
+  id: 378
+  time: '2026-06-20T17:27:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Shadowkins são novamente vulneráveis a flash.
+  id: 379
+  time: '2026-06-20T17:31:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Proto RCD consegue descontruir novamente.
+    - type: Add
+      message: 'Proto RCD pode desconstruir airlocks, independente de acesso ou tranca. '
+  id: 380
+  time: '2026-06-21T14:25:12.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Add
+      message: Nova ui do console de comunicações
+  id: 381
+  time: '2026-06-20T21:49:22.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas usam projeteis denovo.
+  id: 382
+  time: '2026-06-22T16:19:32.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona bitrunning.
+    - type: Tweak
+      message: Agora as câmeras ficam vermelhas quando estão na visão da IA.
+  id: 383
+  time: '2026-06-23T19:59:57.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Não tantas, mas traduções.
+  id: 384
+  time: '2026-06-23T20:58:16.0000000+00:00'

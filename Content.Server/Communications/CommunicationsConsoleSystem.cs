@@ -86,6 +86,9 @@ using Content.Server.Administration;
 using Robust.Shared.Player;
 using Content.Server.Chat.Managers; //pra falar com centcom
 using Robust.Shared.Timing;
+using System.Reflection.Metadata;
+using Robust.Shared.Prototypes; // para checar se o console é sindicato ou não
+
 
 namespace Content.Server.Communications
 {
@@ -107,6 +110,7 @@ namespace Content.Server.Communications
         [Dependency] private readonly QuickDialogSystem _quickDialog = default!; //cria dependencia na mensagem de popup igual eu tenho com a -----------
         [Dependency] private readonly IChatManager _chatManager = default!; // avbiso admin
         [Dependency] private readonly IGameTiming _timing = default!; // cooldown
+
 
         private const float UIUpdateInterval = 5.0f;
 
@@ -216,7 +220,7 @@ namespace Content.Server.Communications
         public void UpdateCommsConsoleInterface(EntityUid uid, CommunicationsConsoleComponent comp)
         {
             var stationUid = _stationSystem.GetOwningStation(uid);
-            List<string>? levels = null;
+            List<(string id, Color color)>? levels = null;
             string currentLevel = default!;
             float currentDelay = 0;
 
@@ -232,7 +236,7 @@ namespace Content.Server.Communications
                         {
                             if (detail.Selectable)
                             {
-                                levels.Add(id);
+                                levels.Add((id, detail.Color));
                             }
                         }
                     }
@@ -242,7 +246,13 @@ namespace Content.Server.Communications
                 }
             }
 
+
+            var protoId = Prototype(uid)?.ID;
+            var isSyndie = protoId == "SyndicateComputerComms";
+
+
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
+                isSyndie,
                 CanAnnounce(comp),
                 CanCallOrRecall(comp),
                 levels,
@@ -358,7 +368,7 @@ namespace Content.Server.Communications
                 return;
             }
 
-            _chatSystem.DispatchStationAnnouncement(uid, msg, title, colorOverride: comp.Color);
+            _chatSystem.DispatchStationAnnouncement(uid, msg, title, true, announcementSound: comp.Sound, colorOverride: comp.Color);
 
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following station announcement: {msg}");
 
@@ -397,10 +407,10 @@ namespace Content.Server.Communications
                 {
                     _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: Enviou mensagem para CENTCOM '{centMessage}'"); // mensagem de admin (muito uim usar pray)
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has sent a message to centcom, message: '{centMessage}'."); //log
-                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+                    _popupSystem.PopupEntity(Loc.GetString("comms-console-centcom-send"), uid, message.Actor);
                     return;
                 } //pop up avisando q ta vazio
-                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-empty-input"), uid, message.Actor);
             });
         }
 
@@ -422,7 +432,7 @@ namespace Content.Server.Communications
                 {
                     _chatManager.SendAdminAnnouncement($"{ToPrettyString(mob):player}: requsitou a lei marcial. Motivo: '{centMessage}'");
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has requested martial law, reason: '{centMessage}'.");
-                    _popupSystem.PopupEntity(Loc.GetString("comns-console-centcom-send"), uid, message.Actor);
+                    _popupSystem.PopupEntity(Loc.GetString("comms-console-centcom-send"), uid, message.Actor);
 
                     SoundSpecifier sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
 
@@ -432,7 +442,7 @@ namespace Content.Server.Communications
                                                             false, sound, colorOverride: comp.Color);
                     return;
                 }
-                _popupSystem.PopupEntity(Loc.GetString("comns-console-empty-input"), uid, message.Actor);
+                _popupSystem.PopupEntity(Loc.GetString("comms-console-empty-input"), uid, message.Actor);
             });
         }
 

@@ -204,6 +204,7 @@
   - Medical
   - Journalism # Goob
   - Robotics # Goob
+  - Bitrun # Orion
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

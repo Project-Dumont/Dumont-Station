@@ -52,7 +52,7 @@ public sealed class SurveillanceCameraMicrophoneSystem : EntitySystem
             if (range < 0 || range > ev.VoiceRange)
                 continue;
 
-            foreach (var viewer in camera.ActiveViewers)
+            foreach (var viewer in camera.ActiveViewers.Keys) // Orion-Edit
             {
                 // Funkystation -> Malf Ai. Skip Malf AIs with camera microphones upgrade - they handle their own proximity-based filtering
                 if (HasComp<MalfAiCameraMicrophonesComponent>(viewer))
