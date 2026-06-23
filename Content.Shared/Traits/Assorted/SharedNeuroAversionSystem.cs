@@ -46,7 +46,7 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
     {
         // Initialize migraine timer
         component.NextMigraineTime = TimeSpan.FromSeconds(Random.NextFloat((float) component.TimeBetweenMigraines.Min.TotalSeconds, (float) component.TimeBetweenMigraines.Max.TotalSeconds));
-        component.StartedMindShielded = true;
+        component.StartedImplanted = true;
     }
 
     protected virtual void OnShutdown(EntityUid uid, NeuroAversionComponent component, ComponentShutdown args)
@@ -56,7 +56,7 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
 
     /// <summary>
     /// Gets the health condition multiplier based on missing HP fraction.
-    /// Combines health state multiplier with mindshield timing severity.
+    /// Combines health state multiplier with implant timing severity.
     /// </summary>
     protected static float GetConditionMultiplier(NeuroAversionComponent comp, bool isCritical, float missingHpFrac)
     {
@@ -66,10 +66,10 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
             : missingHpFrac >= OkayHealthThreshold ? comp.ConditionOkayMultiplier
             : comp.ConditionGoodMultiplier;
 
-        // Apply severity multiplier based on when mindshield was applied
-        var severityMultiplier = comp.StartedMindShielded
-            ? comp.StartedMindShieldedMultiplier
-            : comp.MidRoundMindShieldedMultiplier;
+        // Apply severity multiplier based on when implant was applied
+        var severityMultiplier = comp.StartedImplanted
+            ? comp.StartedImplantedMultiplier
+            : comp.MidRoundImplantedMultiplier;
 
         return baseMultiplier * severityMultiplier;
     }
@@ -116,24 +116,24 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
     /// <summary>
     /// Calculates the chance of a seizure occurring on this roll.
     /// - Rolls happen every 30 seconds.
-    /// - For mindshielded: At maximum build, the chance is set so that, on average, a seizure happens once every 5 rounds (20% chance per round, or 0.000929 per roll) for a baseline player.
-    /// - For non-mindshielded: At maximum build, the chance is set so that a seizure is almost guaranteed (99.9% chance per round, or 0.0192 per roll).
-    /// - The chance scales linearly with build, and is multiplied by both condition and mindshield multipliers.
+    /// - For implanted: At maximum build, the chance is set so that, on average, a seizure happens once every 5 rounds (20% chance per round, or 0.000929 per roll) for a baseline player.
+    /// - For non-implanted: At maximum build, the chance is set so that a seizure is almost guaranteed (99.9% chance per round, or 0.0192 per roll).
+    /// - The chance scales linearly with build, and is multiplied by both condition and implant multipliers.
     /// - For build below 2% of threshold, no seizure can occur.
     ///
     /// Math:
     ///   Let p = per-roll chance at max build for a baseline player.
     ///   (1-p)^(number of rolls per round) = chance of no seizure in a round
     ///   For 240 rolls (2 hours, 30s interval):
-    ///     Mindshielded: (1-p)^240 = 0.8  =>  p = 1 - 0.8^(1/240) ≈ 0.000929
-    ///     Non-mindshielded: (1-p)^240 = 0.001  =>  p = 1 - 0.001^(1/240) ≈ 0.0192
+    ///     Implanted: (1-p)^240 = 0.8  =>  p = 1 - 0.8^(1/240) ≈ 0.000929
+    ///     Non-implanted: (1-p)^240 = 0.001  =>  p = 1 - 0.001^(1/240) ≈ 0.0192
     ///
     /// Example usage:
-    ///   float mindshieldMultiplier = comp.StartedMindShielded ? comp.StartedMindShieldedMultiplier : comp.MidRoundMindShieldedMultiplier;
+    ///   float implantMultiplier = comp.StartedImplanted ? comp.StartedImplantedMultiplier : comp.MidRoundImplantedMultiplier;
     ///   float conditionMultiplier = GetConditionMultiplier(...);
-    ///   float chance = CalculateSeizureChance(comp, conditionMultiplier, mindshieldMultiplier, isNonMindshielded);
+    ///   float chance = CalculateSeizureChance(comp, conditionMultiplier, implantMultiplier, isNonImplanted);
     /// </summary>
-    protected static float CalculateSeizureChance(NeuroAversionComponent comp, float conditionMultiplier, float mindshieldMultiplier, bool isNonMindshielded)
+    protected static float CalculateSeizureChance(NeuroAversionComponent comp, float conditionMultiplier, float implantMultiplier, bool isNonImplanted)
     {
         if (comp.SeizureThreshold <= 0f)
             return 0f;
@@ -143,11 +143,11 @@ public abstract class SharedNeuroAversionSystem : EntitySystem
             return 0f;
 
         // MaxPerRollChance is the maximum chance per roll at full build.
-        // For mindshielded: 0.000929 (20% per round)
-        // For non-mindshielded: 0.0192 (99.9% per round)
-        float maxPerRollChance = isNonMindshielded ? 0.0192f : 0.000929f;
+        // For implanted: 0.000929 (20% per round)
+        // For non-implanted: 0.0192 (99.9% per round)
+        float maxPerRollChance = isNonImplanted ? 0.0192f : 0.000929f;
         float buildFraction = comp.SeizureBuild / comp.SeizureThreshold;
-        float chance = buildFraction * maxPerRollChance * conditionMultiplier * mindshieldMultiplier;
+        float chance = buildFraction * maxPerRollChance * conditionMultiplier * implantMultiplier;
         return MathF.Min(1f, chance);
     }
 

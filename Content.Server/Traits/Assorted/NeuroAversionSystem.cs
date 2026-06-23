@@ -20,7 +20,7 @@ namespace Content.Server.Traits.Assorted;
 
 /// <summary>
 /// Server-side system for Neuroaversion trait.
-/// Handles migraines, seizures, and mindshield interactions.
+/// Handles migraines, seizures, and implant interactions.
 /// </summary>
 public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 {
@@ -30,7 +30,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    private EntityQuery<ImplantedComponent> _mindShieldQuery;
+    private EntityQuery<ImplantedComponent> _implantQuery;
     private EntityQuery<ChronicMigrainesComponent> _chronicMigrainesQuery;
 
     private const string StatusEffectKey = "Migraine";
@@ -39,7 +39,7 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
     {
         base.Initialize();
 
-        _mindShieldQuery = GetEntityQuery<ImplantedComponent>();
+        _implantQuery = GetEntityQuery<ImplantedComponent>();
         _chronicMigrainesQuery = GetEntityQuery<ChronicMigrainesComponent>();
     }
 
@@ -56,10 +56,10 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
             if (MobState.IsDead(uid))
                 continue;
 
-            UpdateMindshieldStatus(uid, comp);
+            UpdateImplantStatus(uid, comp);
 
-            // Only process if mindshielded
-            if (!comp.IsMindShielded)
+            // Only process if implanted
+            if (!comp.IsImplanted)
                 continue;
 
             var missingHpFrac = CalculateHealthFraction(uid);
@@ -69,15 +69,15 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
         }
     }
 
-    private void UpdateMindshieldStatus(EntityUid uid, NeuroAversionComponent comp)
+    private void UpdateImplantStatus(EntityUid uid, NeuroAversionComponent comp)
     {
-        comp.IsMindShielded = _mindShieldQuery.TryComp(uid, out var implanted) && implanted.ImplantContainer.ContainedEntities.Count > 0;
+        comp.IsImplanted = _implantQuery.TryComp(uid, out var implanted) && implanted.ImplantContainer.ContainedEntities.Count > 0;
 
-        // Check if started mindshielded only once
-        if (!comp.StartedMindShieldedChecked)
+        // Check if started implanted only once
+        if (!comp.StartedImplantedChecked)
         {
-            comp.StartedMindShielded = comp.IsMindShielded && JobHasMindshieldComponent(uid);
-            comp.StartedMindShieldedChecked = true;
+            comp.StartedImplanted = comp.IsImplanted && JobHasImplantComponent(uid);
+            comp.StartedImplantedChecked = true;
         }
     }
 
@@ -93,9 +93,9 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
     {
         // Migraines trigger faster when more damaged
         var migraineFactor = 1f - (0.5f * (1f - missingHpFrac));
-        var severityMultiplier = comp.StartedMindShielded
-            ? comp.StartedMindShieldedMultiplier
-            : comp.MidRoundMindShieldedMultiplier;
+        var severityMultiplier = comp.StartedImplanted
+            ? comp.StartedImplantedMultiplier
+            : comp.MidRoundImplantedMultiplier;
 
         var seconds = frameTime * (1f / migraineFactor) * severityMultiplier;
         comp.NextMigraineTime -= TimeSpan.FromSeconds(seconds);
@@ -141,16 +141,16 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
 
         comp.NextSeizureCheckTime = comp.SeizureCheckInterval;
 
-        // Mindshield severity
-        float mindshieldMult = comp.StartedMindShielded
-            ? comp.StartedMindShieldedMultiplier
-            : comp.MidRoundMindShieldedMultiplier;
+        // Implant severity
+        float implantMult = comp.StartedImplanted
+            ? comp.StartedImplantedMultiplier
+            : comp.MidRoundImplantedMultiplier;
 
         // Calculate hazard (per second)
         float hazard =
             (comp.SeizureBuild * comp.BuildHazardFactor);
 
-        hazard *= conditionMult * mindshieldMult * traitInteractionMult;
+        hazard *= conditionMult * implantMult * traitInteractionMult;
 
         float interval = (float) comp.SeizureCheckInterval.TotalSeconds;
         float probability = 1f - MathF.Exp(-hazard * interval);
@@ -191,9 +191,9 @@ public sealed class NeuroAversionSystem : SharedNeuroAversionSystem
     }
 
     /// <summary>
-    /// Checks if the entity's job includes mindshield component or implant.
+    /// Checks if the entity's job includes implant component or implant.
     /// </summary>
-    private bool JobHasMindshieldComponent(EntityUid uid)
+    private bool JobHasImplantComponent(EntityUid uid)
     {
         if (!_mindSystem.TryGetMind(uid, out _, out var mindComponent))
             return false;

@@ -21,7 +21,7 @@ public sealed class ChronicMigrainesSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private EntityQuery<NeuroAversionComponent> _neuroAversionQuery;
-    private EntityQuery<ImplantedComponent> _mindShieldQuery;
+    private EntityQuery<ImplantedComponent> _implantQuery;
 
     public override void Initialize()
     {
@@ -30,7 +30,7 @@ public sealed class ChronicMigrainesSystem : EntitySystem
         SubscribeLocalEvent<ActorComponent, ComponentStartup>(OnActorStartup);
 
         _neuroAversionQuery = GetEntityQuery<NeuroAversionComponent>();
-        _mindShieldQuery = GetEntityQuery<ImplantedComponent>();
+        _implantQuery = GetEntityQuery<ImplantedComponent>();
     }
 
     private void OnActorStartup(EntityUid uid, ActorComponent component, ComponentStartup args)
@@ -61,9 +61,9 @@ public sealed class ChronicMigrainesSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
-            // Skip chronic migraines processing if entity has the NeuroAversion trait and is Mindshielded
+            // Skip chronic migraines processing if entity has the NeuroAversion trait and is implanted
             // In this case, NeuroAversionSystem handles all migraine scheduling with trait interaction
-            if (_neuroAversionQuery.HasComponent(uid) && _mindShieldQuery.TryComp(uid, out var implanted) && implanted.ImplantContainer.ContainedEntities.Count > 0)
+            if (_neuroAversionQuery.HasComponent(uid) && _implantQuery.TryComp(uid, out var implanted) && implanted.ImplantContainer.ContainedEntities.Count > 0)
                 continue;
 
             migraines.NextMigraineTime -= TimeSpan.FromSeconds(frameTime);

@@ -8,7 +8,7 @@ namespace Content.Shared.Traits.Assorted;
 
 /// <summary>
 /// Component for entities with Neuroaversion trait.
-/// When combined with mindshield, causes migraines and seizures.
+/// When combined with implant, causes migraines and seizures.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class NeuroAversionComponent : Component
@@ -83,23 +83,23 @@ public sealed partial class NeuroAversionComponent : Component
     public float BuildHazardFactor = 0.000004f;
 
     /// <summary>
-    /// Whether the entity currently has a mindshield.
+    /// Whether the entity currently has a implant.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool IsMindShielded;
+    public bool IsImplanted;
 
     /// <summary>
-    /// Whether the entity started with a mindshield at round start.
+    /// Whether the entity started with a implant at round start.
     /// Affects severity multipliers.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool StartedMindShielded;
+    public bool StartedImplanted;
 
     /// <summary>
-    /// Whether we've checked if they started mindshielded (only check once).
+    /// Whether we've checked if they started implanted (only check once).
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool StartedMindShieldedChecked;
+    public bool StartedImplantedChecked;
 
     /// <summary>
     /// If true, seizure rolls and build accumulation are paused (such as while psicodine is metabolized).
@@ -120,12 +120,12 @@ public sealed partial class NeuroAversionComponent : Component
     [DataField]
     public float ConditionCriticalMultiplier = 25.0f;
 
-    // Severity multipliers based on when mindshield was applied
+    // Severity multipliers based on when implant was applied
     [DataField]
-    public float StartedMindShieldedMultiplier = 1.0f;
+    public float StartedImplantedMultiplier = 1.0f;
 
     [DataField]
-    public float MidRoundMindShieldedMultiplier = 3.5f;
+    public float MidRoundImplantedMultiplier = 3.5f;
 
     /// <summary>
     /// Duration of seizures triggered by neuroaversion.
