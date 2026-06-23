@@ -215,7 +215,7 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
-  - Geneticist # Corvax-Wega-Genetics
+  # - Geneticist # Corvax-Wega-Genetics # Dumont - Geneticist -> Sci only
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
@@ -249,6 +249,7 @@
   - Scientist
   - ResearchAssistant
   - Roboticist #Goob
+  - Geneticist # Dumont - Geneticist -> Sci only
 
 - type: department
   id: Silicon

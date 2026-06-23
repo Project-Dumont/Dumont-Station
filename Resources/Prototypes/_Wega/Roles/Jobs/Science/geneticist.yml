@@ -1,5 +1,5 @@
 - type: job
-  id: Geneticist
+  id: Geneticist # Dumont edit - Geneticist -> Sci only
   name: job-name-geneticist
   description: job-description-geneticist
   playTimeTracker: JobGeneticist
@@ -15,7 +15,7 @@
       time: 42000
   startingGear: GeneticistGear
   icon: "JobIconGeneticist"
-  supervisors: job-supervisors-cmo
+  supervisors: job-supervisors-rd # Dumont
   access:
   # - Medical # Dumont
   - Research
@@ -28,16 +28,16 @@
   equipment:
     id: GeneticistPDA
     pocket1: UniqueGeneticistLockerTeleporter
-    ears: ClothingHeadsetMedicalScience
-    belt: ClothingBeltMedicalFilled
+    ears: ClothingHeadsetScience # Dumont
+    # belt: ClothingBeltMedicalFilled - Dumont
 
 - type: chameleonOutfit
   id: GeneticistChameleonOutfit
   job: Geneticist
   equipment:
-    head: ClothingHeadHatBeretMedic
+    # head: ClothingHeadHatBeretMedic -Dumont
     eyes: ClothingEyesHudMedical
     mask: ClothingMaskSterile
     outerClothing: ClothingOuterCoatLabGene
-    neck: ClothingNeckStethoscope
+    neck: ClothingNeckTieSci # Dumont
     gloves: ClothingHandsGlovesLatex

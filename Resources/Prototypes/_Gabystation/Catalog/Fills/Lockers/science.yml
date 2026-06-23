@@ -8,8 +8,8 @@
     - id: BoxBeaker
     - id: PillCanisterHyronalin
     - id: PillCanisterMutadon
-    - id: MedicalScannerFlatpack
-    - id: FlatpackDnaModifierConsole
+    # - id: MedicalScannerFlatpack
+    # - id: FlatpackDnaModifierConsole
     - id: BoxDnaFisk
 
 - type: entity
