@@ -68,7 +68,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
             return;
 
         // Check if entity have critical state
-        if (_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var criticalThreshold, mobThresholdsComponent)
+        if (_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out var criticalThreshold, mobThresholdsComponent) // Orion-Edit
             && damageable.TotalDamage < criticalThreshold)
         {
             _mobState.ChangeMobState(uid, MobState.Alive, mobStateComponent);

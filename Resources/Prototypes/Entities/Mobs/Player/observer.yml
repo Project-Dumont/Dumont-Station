@@ -183,6 +183,7 @@
   - type: Ghost
   - type: GhostHearing
   - type: ShowElectrocutionHUD
+  - type: ToggleableHUD # Orion
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
     receiveAllChannels: true
@@ -220,6 +221,7 @@
   - type: Tag
     tags:
     - AllowGhostShownByEvent
+    - NoConsoleSound # Orion
   # <Goobstation>
   - type: UserInterface
     interfaces:

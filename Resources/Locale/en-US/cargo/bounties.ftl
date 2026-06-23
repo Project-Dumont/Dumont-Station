@@ -162,3 +162,6 @@ bounty-description-cotton-boll = A massive swarm of mothroaches ate all the pape
 bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny to stick forks in all the kitchen microwaves. Help us replace them before the chefs start making clown burgers.
 bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
 bounty-description-ring = On this EXTRAORDINARY day there will be a wedding between the Gelts, but Mr. Gelt has lost the rings, send a pair of rings.
+
+bounty-skip-message = Bounty [bold]{$bounty}[/bold] was skipped by [bold]{$user}[/bold].
+bounty-skip-unknown = unknown

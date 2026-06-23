@@ -347,7 +347,7 @@
       Death: 60
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 350
+    chaosScore: 200 # he barely does anything
   - type: AntagSpawner
     prototype: MobHumanDarkPriest
   - type: AntagSelection

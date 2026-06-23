@@ -30,6 +30,7 @@ using Content.Server.Stack;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Construction;
 using Content.Shared.Database;
+using Content.Shared.Ghost;
 using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -76,6 +77,11 @@ public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
     {
         if (args.SenderSession.AttachedEntity is not { } player)
             return;
+
+        // Orion-Start
+        if (TryComp<GhostComponent>(player, out var ghost) && !ghost.CanGhostInteract)
+            return;
+        // Orion-End
 
         var uid = GetEntity(msg.Entity);
 

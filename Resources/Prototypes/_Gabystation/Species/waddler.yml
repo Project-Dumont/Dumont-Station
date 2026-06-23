@@ -6,7 +6,7 @@
 - type: species
   id: Waddler
   name: species-name-waddler
-  roundStart: true
+  roundStart: false
   prototype: MobWaddler
   sprites: MobWaddlerSprites
   defaultSkinTone: "#0c0b52"

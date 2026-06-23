@@ -27,7 +27,7 @@
       Death: 25
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 650
+    chaosScore: 300 # dumont edit make the chaos score apply to the pirate being spawned not cargo losing 5 spesos
   - type: PendingPirateRule
     ransomPrototype: BikeHornRansom
   - type: Tag
@@ -61,6 +61,8 @@
   - type: Tag
     tags:
     - MidroundAntag
+  - type: GameRule
+    chaosScore: 500 # dumont edit make the chaos score apply to the pirate being spawned not cargo losing 5 spesos
 
 - type: entity
   parent: BikeHorn

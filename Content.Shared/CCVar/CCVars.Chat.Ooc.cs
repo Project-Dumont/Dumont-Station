@@ -19,7 +19,7 @@ public sealed partial class CCVars
     ///     If true, whenever OOC is disabled the Discord OOC relay will also be disabled.
     /// </summary>
     public static readonly CVarDef<bool> DisablingOOCDisablesRelay =
-        CVarDef.Create("ooc.disabling_ooc_disables_relay", true, CVar.SERVERONLY);
+        CVarDef.Create("ooc.disabling_ooc_disables_relay", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not OOC chat should be enabled during a round.

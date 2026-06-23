@@ -81,7 +81,7 @@
     # It fires processing on behalf of its connected circulators.
     - type: AtmosDevice
     - type: TegGenerator
-
+      thermalEfficiency: 0.1 #Sem mais waste.
     - type: DeviceNetwork
       deviceNetId: AtmosDevices
       receiveFrequencyId: AtmosMonitor

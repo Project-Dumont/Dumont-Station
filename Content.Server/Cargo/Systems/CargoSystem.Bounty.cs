@@ -94,12 +94,16 @@ using Content.Shared.NameIdentifier;
 using Content.Shared.Paper;
 using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
+using Content.Shared.Radio;
 using JetBrains.Annotations;
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
+using Content.Shared.IdentityManagement;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -110,6 +114,7 @@ public sealed partial class CargoSystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSys = default!;
 
     private static readonly ProtoId<NameIdentifierGroupPrototype> BountyNameIdentifierGroup = "Bounty";
+    private static readonly ProtoId<RadioChannelPrototype> CargoRadioChannel = "Supply";
 
     private EntityQuery<StackComponent> _stackQuery;
     private EntityQuery<ContainerManagerComponent> _containerQuery;
@@ -183,6 +188,17 @@ public sealed partial class CargoSystem
 
         if (!TryRemoveBounty(station, bounty.Value, true, args.Actor))
             return;
+
+        CargoBountyData bountyData = bounty.Value;
+
+        var ev = new TryGetIdentityShortInfoEvent(null, args.Actor);
+        RaiseLocalEvent(ev);
+
+        var message = Loc.GetString("bounty-skip-message", 
+            ("bounty", "ID#" + bountyData.Id), 
+            ("user", ev.Title ?? Loc.GetString("bounty-skip-unknown")));
+        
+        _radio.SendRadioMessage(uid, message, CargoRadioChannel, uid, escapeMarkup: false);
 
         FillBountyDatabase(station);
         db.NextSkipTime = Timing.CurTime + db.SkipDelay;
