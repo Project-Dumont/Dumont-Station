@@ -37,4 +37,7 @@ public sealed partial class ToggleableHUDComponent : Component
 
     [DataField]
     public string PopupToggleOff = "ghost-gui-toggle-hud-popup-off";
+
+    [DataField]
+    public bool IsAdmin;
 }

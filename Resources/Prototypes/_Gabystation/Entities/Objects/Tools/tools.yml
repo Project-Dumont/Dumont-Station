@@ -28,6 +28,8 @@
     - HighRiskItem
   - type: RCD
     isRpd: true
+    isHybrid: true
+    accessBypass: true
     availablePrototypes: #TODO Tentar fazer o Nestling funcionar
     - WallSolid
     - FloorSteel
@@ -108,4 +110,4 @@
     - DirectionalFan
     - BlastDoor
     # </GabyStation>
-    - Deconstruct
+    - DeconstructStrong

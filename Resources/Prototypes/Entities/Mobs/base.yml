@@ -186,14 +186,18 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
+      100: SoftCritical # Orion-Edit
+      150: HardCritical # Orion
       200: Dead
+  - type: CritStateMovement # Orion
   - type: MobStateActions
     actions:
-      Critical:
+      SoftCritical: # Orion-Edit
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      HardCritical: # Orion-Edit
+      - ActionCritSuccumb
   - type: Deathgasp
   - type: HealthExaminable
     examinableTypes:

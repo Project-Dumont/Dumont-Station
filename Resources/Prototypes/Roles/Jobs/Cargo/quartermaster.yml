@@ -169,6 +169,7 @@
   - Brig
   - Cryogenics
   - External # goobstation
+  - Bitrun # Orion
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

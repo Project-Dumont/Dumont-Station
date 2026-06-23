@@ -30,73 +30,80 @@ public sealed class ToggleableHudSystem : EntitySystem
         SubscribeLocalEvent<ToggleableHUDComponent, ToggleActionEvent>(OnToggle);
     }
 
-    private void OnMapInit(EntityUid uid, ToggleableHUDComponent component, MapInitEvent args)
+    private void OnMapInit(Entity<ToggleableHUDComponent> ent, ref MapInitEvent args)
     {
-        _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
+        var (uid, comp) = ent;
+        _actions.AddAction(uid, ref comp.ActionEntity, comp.Action, uid);
     }
 
-    private void OnShutdown(EntityUid uid, ToggleableHUDComponent component, ComponentShutdown args)
+    private void OnShutdown(Entity<ToggleableHUDComponent> ent, ref ComponentShutdown args)
     {
-        _actions.RemoveAction(uid, component.ActionEntity);
+        _actions.RemoveAction(ent.Owner, ent.Comp.ActionEntity);
     }
 
-    private void OnToggle(EntityUid uid, ToggleableHUDComponent component, ref ToggleActionEvent args)
+    private void OnToggle(Entity<ToggleableHUDComponent> ent, ref ToggleActionEvent args)
     {
         if (args.Handled)
             return;
 
-        args.Handled = TryToggle(uid, component);
+        args.Handled = TryToggle(ent);
     }
 
-    public bool TryToggle(EntityUid uid, ToggleableHUDComponent? component = null)
+    public bool TryToggle(Entity<ToggleableHUDComponent> ent)
     {
-        if (!Resolve(uid, ref component))
-            return false;
+        var actionToggle = !ent.Comp.IsToggled;
 
-        var actionToggle = !component.IsToggled;
-
-        var popupKey = actionToggle ? component.PopupToggleOn : component.PopupToggleOff;
+        var popupKey = actionToggle ? ent.Comp.PopupToggleOn : ent.Comp.PopupToggleOff;
         var popupMessage = Loc.GetString(popupKey);
 
         // 这是个好办法，我发誓 😱
         if (actionToggle)
         {
-            EnsureComp<ShowJobIconsComponent>(uid);
-            EnsureComp<ShowMindShieldIconsComponent>(uid);
-            EnsureComp<ShowCriminalRecordIconsComponent>(uid);
+            EnsureComp<ShowJobIconsComponent>(ent);
 
             // HealthBars should have a list of damage containers
-            var healthBars = EnsureComp<ShowHealthBarsComponent>(uid);
-            healthBars.DamageContainers = new List<ProtoId<DamageContainerPrototype>>(component.DamageContainers);
-            Dirty(uid, healthBars);
-            EnsureComp<ShowHealthIconsComponent>(uid);
-            EnsureComp<ShowDiseaseIconsComponent>(uid);
+            var healthBars = EnsureComp<ShowHealthBarsComponent>(ent);
+            healthBars.DamageContainers = new List<ProtoId<DamageContainerPrototype>>(ent.Comp.DamageContainers);
+            Dirty(ent, healthBars);
+            EnsureComp<ShowHealthIconsComponent>(ent);
 
-            EnsureComp<ShowSyndicateIconsComponent>(uid);
+            if (ent.Comp.IsAdmin)
+            {
+                EnsureComp<ShowMindShieldIconsComponent>(ent);
+                EnsureComp<ShowCriminalRecordIconsComponent>(ent);
 
-            EnsureComp<ShowHungerIconsComponent>(uid);
-            EnsureComp<ShowThirstIconsComponent>(uid);
+                EnsureComp<ShowDiseaseIconsComponent>(ent);
+
+                EnsureComp<ShowSyndicateIconsComponent>(ent);
+
+                EnsureComp<ShowHungerIconsComponent>(ent);
+                EnsureComp<ShowThirstIconsComponent>(ent);
+            }
         }
         else
         {
-            RemComp<ShowJobIconsComponent>(uid);
-            RemComp<ShowMindShieldIconsComponent>(uid);
-            RemComp<ShowCriminalRecordIconsComponent>(uid);
+            RemComp<ShowJobIconsComponent>(ent);
+            RemComp<ShowHealthBarsComponent>(ent);
+            RemComp<ShowHealthIconsComponent>(ent);
 
-            RemComp<ShowHealthBarsComponent>(uid);
-            RemComp<ShowHealthIconsComponent>(uid);
-            RemComp<ShowDiseaseIconsComponent>(uid);
+            if (ent.Comp.IsAdmin)
+            {
+                RemComp<ShowMindShieldIconsComponent>(ent);
+                RemComp<ShowCriminalRecordIconsComponent>(ent);
 
-            RemComp<ShowSyndicateIconsComponent>(uid);
+                RemComp<ShowDiseaseIconsComponent>(ent);
 
-            RemComp<ShowHungerIconsComponent>(uid);
-            RemComp<ShowThirstIconsComponent>(uid);
+                RemComp<ShowSyndicateIconsComponent>(ent);
+
+                RemComp<ShowHungerIconsComponent>(ent);
+                RemComp<ShowThirstIconsComponent>(ent);
+            }
         }
 
-        _popup.PopupEntity(popupMessage, uid, uid);
+        _popup.PopupEntity(popupMessage, ent, ent);
 
-        component.IsToggled = actionToggle;
-        Dirty(uid, component);
+        ent.Comp.IsToggled = actionToggle;
+        Dirty(ent);
 
         return true;
     }

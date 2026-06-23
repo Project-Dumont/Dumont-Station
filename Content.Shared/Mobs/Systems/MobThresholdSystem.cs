@@ -33,6 +33,7 @@ using Content.Shared._Shitmed.Body;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Events;
 using Robust.Shared.GameStates;
+using Content.Shared.Silicons.Borgs.Components;
 
 // Shitmed Change
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
@@ -211,7 +212,7 @@ public sealed partial class MobThresholdSystem : EntitySystem
         if (!Resolve(target, ref thresholdComponent))
             return false;
 
-        return TryGetThresholdForState(target, MobState.Critical, out threshold, thresholdComponent)
+        return TryGetThresholdForState(target, MobState.SoftCritical, out threshold, thresholdComponent) // Orion-Edit
                || TryGetThresholdForState(target, MobState.Dead, out threshold, thresholdComponent);
     }
 
@@ -410,6 +411,9 @@ public sealed partial class MobThresholdSystem : EntitySystem
         foreach (var (threshold, mobState) in thresholdsComponent.Thresholds.Reverse())
         {
             if (CheckVitalDamage(target, damageableComponent) < threshold) // GoobStation
+                continue;
+
+            if (mobState == MobState.SoftCritical && HasComp<BorgChassisComponent>(target)) // Orion
                 continue;
 
             TriggerThreshold(target, mobState, mobStateComponent, thresholdsComponent, origin);

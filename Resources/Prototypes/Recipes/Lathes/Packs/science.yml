@@ -49,6 +49,7 @@
 - type: latheRecipePack
   id: ScienceEquipment
   recipes:
+  - InducerScientific # Orion
   - AnomalyScanner
   - NodeScanner
   - AnomalyLocator
