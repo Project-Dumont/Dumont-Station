@@ -57,15 +57,6 @@
     containers:
       board: [ DoorElectronicsGenetics ]
 
-- type: entity
-  parent: AirlockMedicalScience
-  id: AirlockMedicalScienceLocked
-  suffix: Medical/Science, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsMedicalResearch ]
-
 # Sec
 - type: entity
   parent: AirlockBrigMedic
