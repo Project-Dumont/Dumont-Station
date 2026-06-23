@@ -44,6 +44,8 @@
     node: hfrConsole
   - type: HFRSidePart
   - type: HFRConsole
+  - type: AccessReader
+    access: [["Atmospherics"]] # Dumont edit
 
 - type: entity
   parent: BaseStructure
