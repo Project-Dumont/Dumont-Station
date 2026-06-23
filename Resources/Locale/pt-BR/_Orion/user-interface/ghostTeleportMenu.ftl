@@ -10,9 +10,6 @@ global-antagonist-loneops-description = Mercenário de elite do Sindicato. Um ho
 global-antagonist-ninja-name = Ninja
 global-antagonist-ninja-description = Combatente de elite de alta tecnologia.
 
-global-antagonist-zombie-name = Zumbi
-global-antagonist-zombie-description = Erguido dos mortos sob a influência de um vírus.
-
 global-antagonist-dragon-name = Dragão espacial
 global-antagonist-dragon-description = Dragão! Eu vejo um dragão!!
 
@@ -46,11 +43,11 @@ global-antagonist-bingle-description = Bingle, bingle.
 global-antagonist-morph-name = Morph
 global-antagonist-morph-description = Sujo.
 
-global-antagonist-devil-name = Diabo
-global-antagonist-devil-description = Você é insignificante.
-
 global-antagonist-abductor-name = Abdutor
 global-antagonist-abductor-description = Sondagem em andamento.
+
+global-antagonist-contractor-name = Contratado
+global-antagonist-contractor-description = Caçador de recompensas.
 
 global-antagonist-ghost-role-name = Papel fantasma
 global-antagonist-ghost-role-description = Papéis fantasmas geralmente não afetam a estação.

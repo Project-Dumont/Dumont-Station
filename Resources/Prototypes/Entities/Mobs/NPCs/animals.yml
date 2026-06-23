@@ -2374,6 +2374,9 @@
         Asphyxiation: 4
         Slash: 7
         Blunt: 3
+  - type: Tag
+    tags:
+    - HideGhostWarp
 
 - type: entity
   parent: MobMouse

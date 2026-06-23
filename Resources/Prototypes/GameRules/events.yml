@@ -859,8 +859,6 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
-      - type: GlobalAntagonist # Orion
-        antagonistPrototype: globalAntagonistZombie
       mindRoles:
       - MindRoleInitialInfected
 

@@ -415,9 +415,6 @@
       mindRoles:
       - DevilMindRole
       startingGear: DevilStartingGear
-      components:
-      - type: GlobalAntagonist # Orion
-        antagonistPrototype: globalAntagonistDevil
   - type: Tag
     tags:
     - RoundstartAntag

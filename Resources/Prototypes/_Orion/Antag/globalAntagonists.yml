@@ -23,12 +23,6 @@
   weight: 3
 
 - type: antagonist
-  id: globalAntagonistZombie
-  name: global-antagonist-zombie-name
-  description: global-antagonist-zombie-description
-  weight: 4
-
-- type: antagonist
   id: globalAntagonistDragon
   name: global-antagonist-dragon-name
   description: global-antagonist-dragon-description
@@ -65,12 +59,6 @@
   weight: 10
 
 - type: antagonist
-  id: globalAntagonistInteQ
-  name: global-antagonist-inteq-name
-  description: global-antagonist-inteq-description
-  weight: 11
-
-- type: antagonist
   id: globalAntagonistBlob
   name: global-antagonist-blob-name
   description: global-antagonist-blob-description
@@ -95,22 +83,10 @@
   weight: 15
 
 - type: antagonist
-  id: globalAntagonistCorticalBorer
-  name: global-antagonist-cortical-borer-name
-  description: global-antagonist-cortical-borer-description
-  weight: 16
-
-- type: antagonist
   id: globalAntagonistMorph
   name: global-antagonist-morph-name
   description: global-antagonist-morph-description
   weight: 17
-
-- type: antagonist
-  id: globalAntagonistDevil
-  name: global-antagonist-devil-name
-  description: global-antagonist-devil-description
-  weight: 18
 
 - type: antagonist
   id: globalAntagonistAbductor
