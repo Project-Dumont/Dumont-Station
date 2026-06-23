@@ -35,8 +35,8 @@
   id: GeneticistChameleonOutfit
   job: Geneticist
   equipment:
-    # head: ClothingHeadHatBeretMedic -Dumont
-    eyes: ClothingEyesHudMedical
+    # head: ClothingHeadHatBeretMedic - Dumont
+    # eyes: ClothingEyesHudMedical - Dumont
     mask: ClothingMaskSterile
     outerClothing: ClothingOuterCoatLabGene
     neck: ClothingNeckTieSci # Dumont
