@@ -53,7 +53,7 @@ namespace Content.Server._Gabystation.Economy
             int password = _random.Next(1000, 9999);
             if (!TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId, 100, password))
                 return;
-            Log.Debug($"Assigning bank id to {args.Profile.Name} ({number})!");
+
 
             _chat.ChatMessageToOne(
                 Shared.Chat.ChatChannel.Server,
@@ -241,7 +241,7 @@ namespace Content.Server._Gabystation.Economy
                         continue;
 
                     account.Balance += proto.Salary;
-                    Log.Debug("Event time");
+
                     var ev = new AccountTransferenceCompleted()
                     {
                         Type = TransferenceTypes.Payment,
@@ -250,7 +250,6 @@ namespace Content.Server._Gabystation.Economy
                         Amount = proto.Salary
                     };
                     RaiseLocalEvent(uid, ev);
-                    Log.Debug("Event done?");
                 }
 
                 RaiseLocalEvent(new AfterPaymentRotation() { Uid = uid });

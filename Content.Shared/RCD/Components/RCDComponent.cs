@@ -91,4 +91,16 @@ public sealed partial class RCDComponent : Component
     /// </remarks>
     [ViewVariables(VVAccess.ReadOnly)]
     public Transform ConstructionTransform { get; private set; }
+
+    /// <summary>
+    /// Indicates whether this is an hybrid of an RCD and RPD - Dumont
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool IsHybrid { get; set; } = false;
+
+    /// <summary>
+    /// Indicates whether this can ignore access restrictions and bolts state when deconstructing - Dumont
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool AccessBypass { get; set; } = false;
 }

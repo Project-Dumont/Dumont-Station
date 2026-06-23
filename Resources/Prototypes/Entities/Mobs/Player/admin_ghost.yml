@@ -286,6 +286,8 @@
     allowedVerbs: []
   - type: ExplosionResistance
     damageCoefficient: 0
+  - type: ToggleableHUD # Orion
+    isAdmin: true
 
 - type: entity
   abstract: true

@@ -43,7 +43,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             </BoxContainer>
             <PanelContainer>
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.GabyTheme}" ContentMarginTopOverride="2" />
+                    <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.DumontTheme}" ContentMarginTopOverride="2" />
                 </PanelContainer.PanelOverride>
             </PanelContainer>
             <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
@@ -52,7 +52,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 </ScrollContainer>
                 <PanelContainer MinSize="2 0">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.GabyTheme}" ContentMarginTopOverride="2" />
+                        <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.DumontTheme}" ContentMarginTopOverride="2" />
                     </PanelContainer.PanelOverride>
                 </PanelContainer>
                 <BoxContainer Name="CharEditor" HorizontalExpand="True" />

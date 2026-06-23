@@ -26,6 +26,7 @@ using Content.Goobstation.Common.Silo;
 using Content.Shared._DV.Salvage.Components;
 using Content.Shared._Lavaland.UnclaimedOre;
 using Content.Shared.Access.Systems;
+using Content.Shared.ActionBlocker;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
 using Robust.Shared.Audio;
@@ -39,6 +40,7 @@ public sealed class MiningPointsSystem : EntitySystem
     [Dependency] private readonly SharedIdCardSystem _idCard = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!; // Orion
 
     private EntityQuery<MiningPointsComponent> _query;
 
@@ -74,6 +76,12 @@ public sealed class MiningPointsSystem : EntitySystem
     private void OnClaimMiningPoints(Entity<MiningPointsLatheComponent> ent, ref LatheClaimMiningPointsMessage args)
     {
         var user = args.Actor;
+
+        // Orion-Start
+        if (!_actionBlocker.CanInteract(user, ent))
+            return;
+        // Orion-End
+
         if (GetPointComp(user) is {} dest) // Goobstation - borg Miningpoints
             TransferAll(ent.Owner, dest);
     }
@@ -81,7 +89,7 @@ public sealed class MiningPointsSystem : EntitySystem
     #endregion
     #region Public API
     /// <summary>
-    /// if user can claim mining points 
+    /// if user can claim mining points
     /// <summary>
     public bool CanClaimPoints(EntityUid user) // Goobstation - borg Miningpoints
     {

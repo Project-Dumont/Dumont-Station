@@ -45,7 +45,7 @@ public partial class DelayedDeathSystem : EntitySystem
             if (comp.DeathTimer >= comp.DeathTime && !_mobState.IsDead(ent, mob))
             {
                 // go crit then dead so deathgasp can happen
-                _mobState.ChangeMobState(ent, MobState.Critical, mob);
+                _mobState.ChangeMobState(ent, MobState.SoftCritical, mob); // Orion-Edit
                 _mobState.ChangeMobState(ent, MobState.Dead, mob);
 
                 // goob code

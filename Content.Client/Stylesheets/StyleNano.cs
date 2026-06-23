@@ -266,7 +266,10 @@ namespace Content.Client.Stylesheets
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color GabyTheme = Color.FromHex("#c73c55");
+        public static readonly Color DumontTheme = Color.FromHex("#007a33");
+        public static readonly Color DumontLightTheme = Color.FromHex("#00C44F");
+        public static readonly Color DumontYellowTheme = Color.FromHex("#FFB100");
+        public static readonly Color DumontLightYellowTheme = Color.FromHex("#FFCD59");
 
         public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
@@ -284,9 +287,9 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
         public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#164420");
 
-        // gaby station
-        public static readonly Color ButtonColorDefaultGaby = Color.FromHex("#c73c55");
-        public static readonly Color ButtonColorHoveredGaby = Color.FromHex("#4C5B39");
+        // Dumont Station!
+        public static readonly Color ButtonColorDefaultDumont = Color.FromHex("#007a33");
+        public static readonly Color ButtonColorHoveredDumont = Color.FromHex("#005223");
 
         //NavMap
         public static readonly Color PointRed = Color.FromHex("#B02E26");
@@ -328,8 +331,8 @@ namespace Content.Client.Stylesheets
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
 
-        //gaby station
-        public const string StyleClassButtonColorGaby = "ButtonColorGaby";
+        // Dumont Station
+        public const string StyleClassButtonColorDumont = "ButtonColorDumont";
 
         public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
 
@@ -790,7 +793,7 @@ namespace Content.Client.Stylesheets
                     new SelectorElement(typeof(Label), new[] {DefaultWindow.StyleClassWindowTitle}, null, null),
                     new[]
                     {
-                        new StyleProperty(Label.StylePropertyFontColor, GabyTheme),
+                        new StyleProperty(Label.StylePropertyFontColor, DumontLightTheme),
                         new StyleProperty(Label.StylePropertyFont, notoSansDisplayBold14),
                     }),
                 // Alert (white) window title.
@@ -1230,7 +1233,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelKeyText}, null, null), new[]
                 {
                     new StyleProperty(Label.StylePropertyFont, notoSansBold12),
-                    new StyleProperty( Control.StylePropertyModulateSelf, GabyTheme)
+                    new StyleProperty( Control.StylePropertyModulateSelf, DumontTheme)
                 }),
 
                 // alert tooltip
@@ -1356,7 +1359,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelHeading}, null, null), new[]
                 {
                     new StyleProperty(Label.StylePropertyFont, notoSansBold16),
-                    new StyleProperty(Label.StylePropertyFontColor, GabyTheme),
+                    new StyleProperty(Label.StylePropertyFontColor, DumontTheme),
                 }),
 
                 // Bigger Label
@@ -1364,7 +1367,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(Label.StylePropertyFont, notoSansBold20),
-                        new StyleProperty(Label.StylePropertyFontColor, GabyTheme),
+                        new StyleProperty(Label.StylePropertyFontColor, DumontTheme),
                     }),
 
                 // Small Label
@@ -1378,7 +1381,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelKeyText}, null, null), new[]
                 {
                     new StyleProperty(Label.StylePropertyFont, notoSansBold12),
-                    new StyleProperty(Label.StylePropertyFontColor, GabyTheme)
+                    new StyleProperty(Label.StylePropertyFontColor, DumontTheme)
                 }),
 
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelSecondaryColor}, null, null),
@@ -1503,18 +1506,18 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Label.StylePropertyFont, notoSansDisplayBold14),
                     }),
 
-                // gaby station
+                // Dumont Station
                 new StyleRule(
-                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassGabyTopButton}, null, new[] {Button.StylePseudoClassNormal}),
+                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassDumontTopButton}, null, new[] {Button.StylePseudoClassNormal}),
                     new[]
                     {
-                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefaultGaby),
+                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorDefaultDumont),
                     }),
                 new StyleRule(
-                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassGabyTopButton}, null, new[] {Button.StylePseudoClassHover}),
+                    new SelectorElement(typeof(MenuButton), new[] {MenuButton.StyleClassDumontTopButton}, null, new[] {Button.StylePseudoClassHover}),
                     new[]
                     {
-                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorHoveredGaby),
+                        new StyleProperty(Button.StylePropertyModulateSelf, ButtonColorHoveredDumont),
                     }),
 
                 // MonotoneButton (unfilled)
@@ -1716,7 +1719,7 @@ namespace Content.Client.Stylesheets
 
                 new StyleRule(new SelectorElement(typeof(PanelContainer), new []{ ClassHighDivider}, null, null), new []
                 {
-                    new StyleProperty(PanelContainer.StylePropertyPanel, new StyleBoxFlat { BackgroundColor = GabyTheme, ContentMarginBottomOverride = 2, ContentMarginLeftOverride = 2}),
+                    new StyleProperty(PanelContainer.StylePropertyPanel, new StyleBoxFlat { BackgroundColor = DumontTheme, ContentMarginBottomOverride = 2, ContentMarginLeftOverride = 2}),
                 }),
 
                 Element<TextureButton>()
@@ -1757,7 +1760,7 @@ namespace Content.Client.Stylesheets
                 // Window Headers
                 Element<Label>().Class("FancyWindowTitle")
                     .Prop("font", boxFont13)
-                    .Prop("font-color", GabyTheme),
+                    .Prop("font-color", DumontLightTheme),
 
                 Element<PanelContainer>().Class("WindowHeadingBackground")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default })
@@ -1892,14 +1895,14 @@ namespace Content.Client.Stylesheets
                 // ---
 
                 // Gaby Station Button ---
-                Element<Button>().Class("ButtonColorGaby")
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDefaultGaby),
+                Element<Button>().Class(StyleClassButtonColorDumont)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDefaultDumont),
 
-                Element<Button>().Class("ButtonColorGaby").Pseudo(ContainerButton.StylePseudoClassNormal)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDefaultGaby),
+                Element<Button>().Class(StyleClassButtonColorDumont).Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorDefaultDumont),
 
-                Element<Button>().Class("ButtonColorGaby").Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, ButtonColorHoveredGaby),
+                Element<Button>().Class(StyleClassButtonColorDumont).Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, ButtonColorHoveredDumont),
                 // ---
 
                 // Small Button ---
@@ -1912,7 +1915,7 @@ namespace Content.Client.Stylesheets
                 // ---
 
                 Element<Label>().Class("StatusFieldTitle")
-                    .Prop("font-color", GabyTheme),
+                    .Prop("font-color", DumontLightTheme),
 
                 Element<Label>().Class("Good")
                     .Prop("font-color", GoodGreenFore),
@@ -2084,7 +2087,7 @@ namespace Content.Client.Stylesheets
 
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)
-                    .Prop(Label.StylePropertyFontColor, GabyTheme),
+                    .Prop(Label.StylePropertyFontColor, DumontTheme),
                 // Pinned button style
                 new StyleRule(
                     new SelectorElement(typeof(TextureButton), new[] { StyleClassPinButtonPinned }, null, null),
