@@ -747,17 +747,6 @@
 # Cargo
 
 - type: entity
-  parent: Windoor
-  id: WindoorCargoLocked
-  suffix: Cargo, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsCargo ]
-  - type: Wires
-    layoutId: AirlockCargo
-
-- type: entity
   parent: WindoorCargoLocked
   id: WindoorMiningLocked
   suffix: Mining, Locked
