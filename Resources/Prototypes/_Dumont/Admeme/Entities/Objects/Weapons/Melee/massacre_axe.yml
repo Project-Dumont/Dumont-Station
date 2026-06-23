@@ -1,0 +1,56 @@
+- type: entity
+  id: MassacreAxe
+  suffix: Admeme
+  name: the massacre's axe
+  parent: [FireAxe, BaseMagicalContraband]
+  description: The executioner's best friend, those unfortunate to be on the receiving end of the massecre are ignited in flames by this cruel weapon.
+  components:
+  - type: MeleeWeapon
+    heavyStaminaCost: 5
+    wideAnimationRotation: 160
+    attackRate: 1
+    damage:
+      types:
+        Slash: 15
+        Heat: 10
+        Structural: 50
+      armorPenetration: 0.5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 15
+        Heat: 15
+        Structural: 100
+    armorPenetration: 0.5
+  - type: IgniteOnMeleeHit
+    fireStacks: 5
+  - type: Reflect
+    reflectProb: 0.75
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 30
+        Heat: 25
+        Structural: 35
+ # - type: Boomerang # Funny test
+  - type: Sprite
+    sprite: _Dumont/Admeme/Objects/Weapons/Melee/massacre_axe.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Dumont/Admeme/Objects/Weapons/Melee/massacre_axe.rsi
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+  - type: Recallable
+  - type: Tool
+    qualities:
+      - Prying
+      - Axing
+  - type: CrematoriumImmune
+  - type: PointLight
+    enabled: true
+    color: "#A50F34"
+    radius: 3.0
+    energy: 1
+    netsync: true

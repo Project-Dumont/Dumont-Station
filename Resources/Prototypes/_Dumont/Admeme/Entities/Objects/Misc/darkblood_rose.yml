@@ -1,0 +1,22 @@
+- type: entity
+  parent: [ClothingHeadBase, ClothingHeadHatHairflower]
+  id: ClothingHeadHatDarkbloodRose
+  name: darkblood rose
+  suffix: Admeme
+  description: A beautiful rose, for a beautiful lady, this one glows with nefarious energy...
+  components:
+  - type: PointLight
+    enabled: true
+    color: "#A50F34"
+    radius: 3.0
+    energy: 1
+    netsync: true
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7

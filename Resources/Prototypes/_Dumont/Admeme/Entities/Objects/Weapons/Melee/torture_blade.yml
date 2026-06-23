@@ -1,0 +1,65 @@
+- type: entity
+  name: torture blade
+  suffix: Admeme
+  parent: [BaseKnife, BaseMagicalContraband]
+  id: WeaponKnifeTortureBlade
+  description: A terrifying, bloodthirsty dagger that will become the worst of your traumas.
+  components:
+  - type: Tag
+    tags:
+    - Knife
+  - type: Sprite
+    sprite: _Dumont/Admeme/Objects/Weapons/Melee/torture_blade.rsi
+    state: icon
+  - type: Item
+    sprite: _Dumont/Admeme/Objects/Weapons/Melee/torture_blade.rsi
+    storedSprite:
+      state: storage
+      sprite: _Dumont/Admeme/Objects/Weapons/Melee/torture_blade.rsi
+  - type: MeleeWeapon
+    heavyStaminaCost: 2
+    wideAnimationRotation: -135
+    attackRate: 2
+    damage:
+      types:
+        Slash: 20
+    armorPenetration: 0.25
+  - type: Reflect
+    reflectProb: 0.25
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    offset: -0.15,0.0
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 30
+    armorPenetration: 0.5
+  - type: DisarmMalus
+    malus: 0.225
+  - type: ThrowingAngle
+    angle: 225
+  - type: ThrowableBlocked
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          radius: 0.01
+          vertices:
+          - -0.4,-0.2
+          - -0.2,-0.4
+          - 0.4,0.2
+          - 0.2,0.4
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: PointLight
+    enabled: true
+    color: "#A50F34"
+    radius: 3.0
+    energy: 1
+    netsync: true
+  - type: BackStab
+    multiplier: 2

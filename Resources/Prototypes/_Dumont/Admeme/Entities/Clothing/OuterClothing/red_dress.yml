@@ -1,0 +1,29 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingDressRedArmored
+  name: red dress
+  suffix: Admeme
+  description: A pretty red dress, this one is somehow armored.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/red-dress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/red-dress.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.55
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: StaminaResistance 
+    damageCoefficient: 0.25
+  - type: ModifyDelayedKnockdown
+    delayDelta: 3
+    knockdownTimeDelta: -3
+  - type: AllowSuitStorage
