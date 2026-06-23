@@ -29,7 +29,7 @@
 
 - type: job
   id: BlueshieldOfficer
-  name: Blueshield Officer
+  name: job-name-bs
   description: "Act as a bodyguard and advisor for Command and CentCom VIPs."
   playTimeTracker: JobBlueshieldOfficer
   requirements:

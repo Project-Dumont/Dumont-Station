@@ -87,6 +87,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Chat.Systems;
+using Content.Shared._Orion.Mobs.Critical;
 using Content.Shared.EntityEffects.EffectConditions;
 using Content.Shared.EntityEffects.Effects;
 using Content.Shared.Chemistry.EntitySystems;
@@ -105,6 +106,7 @@ using Content.Server.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared._DV.CosmicCult.Components; // DeltaV
 
@@ -133,6 +135,7 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly EntityEffectSystem _entityEffect = default!;
     [Dependency] private readonly ConsciousnessSystem _consciousness = default!; // Shitmed Change
+    [Dependency] private readonly IRobustRandom _random = default!; // Orion
 
     private static readonly ProtoId<MetabolismGroupPrototype> GasId = new("Gas");
 
@@ -202,18 +205,31 @@ public sealed class RespiratorSystem : EntitySystem
             // End DeltaV Code
             UpdateSaturation(uid,  multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
 
-            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid)) // Shitmed Change - Cannot breathe in crit or when no brain.
+            // Orion-Start
+            var critComponent = CompOrNull<CritStateMovementComponent>(uid);
+            var canBreatheActively = !HasComp<DebrainedComponent>(uid) && (!_mobState.IsIncapacitated(uid) || _mobState.IsSoftCritical(uid));
+            // Orion-End
+
+            if (canBreatheActively) // Orion-Edit
             {
-                switch (respirator.Status)
+                // Orion-Start
+                var canCycleBreath = !_mobState.IsSoftCritical(uid) || critComponent == null || _random.Prob(critComponent.SoftCritBreathChance);
+                if (canCycleBreath)
+                // Orion-End
                 {
-                    case RespiratorStatus.Inhaling:
-                        Inhale((uid, respirator));
-                        respirator.Status = RespiratorStatus.Exhaling;
-                        break;
-                    case RespiratorStatus.Exhaling:
-                        Exhale((uid, respirator));
-                        respirator.Status = RespiratorStatus.Inhaling;
-                        break;
+                    // Orion-Edit-Start
+                    switch (respirator.Status)
+                    {
+                        case RespiratorStatus.Inhaling:
+                            Inhale((uid, respirator));
+                            respirator.Status = RespiratorStatus.Exhaling;
+                            break;
+                        case RespiratorStatus.Exhaling:
+                            Exhale((uid, respirator));
+                            respirator.Status = RespiratorStatus.Inhaling;
+                            break;
+                    }
+                    // Orion-Edit-End
                 }
             }
 
@@ -534,7 +550,7 @@ public sealed class RespiratorSystem : EntitySystem
         if (ent.Comp.SuffocationCycles >= 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} stopped suffocating");
 
-        _damageableSys.TryChangeDamage(ent, ent.Comp.DamageRecovery);
+//        _damageableSys.TryChangeDamage(ent, ent.Comp.DamageRecovery); // Orion-Edit
 
         var ev = new StopSuffocatingEvent();
         RaiseLocalEvent(ent, ref ev);
@@ -581,8 +597,23 @@ public sealed class RespiratorSystem : EntitySystem
             }
         }
 
-        _damageableSys.TryChangeDamage(ent, respirator.DamageRecovery, targetPart: TargetBodyPart.All, ignoreBlockers: true);
+        _damageableSys.TryChangeDamage(ent, CalculateSuffocationRecovery(ent.Owner, respirator), targetPart: TargetBodyPart.All, ignoreBlockers: true); // Orion-Edit
         // Shitmed Change End
+    }
+
+    private DamageSpecifier CalculateSuffocationRecovery(EntityUid ent, RespiratorComponent respirator)
+    {
+        var recovery = respirator.DamageRecovery;
+
+        if (!TryComp<CritStateMovementComponent>(ent, out var critConfig))
+            return recovery;
+
+        if (_mobState.IsSoftCritical(ent))
+            recovery *= critConfig.SoftCritSuffocationRecoveryMultiplier;
+        else if (_mobState.IsHardCritical(ent))
+            recovery *= critConfig.HardCritSuffocationRecoveryMultiplier;
+
+        return recovery;
     }
 
     public void UpdateSaturation(EntityUid uid, float amount, RespiratorComponent? respirator = null)

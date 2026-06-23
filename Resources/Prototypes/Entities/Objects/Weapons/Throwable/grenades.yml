@@ -640,7 +640,7 @@
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Grenades/tear_gas.rsi
+    sprite: _Gabystation/Objects/Weapons/Grenades/tear_gas.rsi # Gaby
   - type: SmokeOnTrigger
     keysIn:
     - timer

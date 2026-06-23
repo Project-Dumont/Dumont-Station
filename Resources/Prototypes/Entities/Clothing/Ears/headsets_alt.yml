@@ -204,9 +204,9 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: Clothing/Ears/Headsets/security.rsi
+    sprite: _Gabystation/Clothing/Ears/Headsets/security.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Ears/Headsets/security.rsi
+    sprite: _Gabystation/Clothing/Ears/Headsets/security.rsi # Gaby
 
 - type: entity
   parent: [ClothingHeadsetAltLoudspeaker, BaseCommandContraband] # goob

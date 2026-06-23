@@ -1387,7 +1387,7 @@
   - type: Computer
     board: CargoRequestSecurityComputerCircuitboard
   - type: PointLight
-    color: "#d11d00"
+    color: "#223b78"
   - type: AccessReader
     access: [["Security"]]
 

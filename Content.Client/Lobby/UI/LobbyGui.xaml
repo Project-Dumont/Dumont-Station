@@ -142,19 +142,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <controls:HSpacer Spacing="3" />
                     <!-- logo -->
                     <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="LogoContainer" HorizontalAlignment="Center"
-                        VerticalAlignment="Center" HorizontalExpand="True" Margin="0 8">
-                        <TextureRect Name="Logo" Stretch="KeepCentered"/>
+                        VerticalAlignment="Center" HorizontalExpand="True" Margin="8 0">
+                        <TextureRect Name="Logo" Stretch="KeepAspectCentered"/>
                     </BoxContainer>
                     <controls:HSpacer Spacing="3" />
                     <!-- Server info -->
                     <!-- <controls:NanoHeading Text="{Loc 'ui-lobby-server-info-block'}" /> -->
                     <info:ServerInfo Name="ServerInfo" Access="Public" MinSize="0 30" VerticalExpand="false"
-                                     Margin="3 3 3 3" MaxWidth="400" HorizontalAlignment="Left" />
+                                     Margin="3 3 3 0" MaxWidth="400" HorizontalAlignment="Left" />
                     <Label Name="StationTime" Access="Public" FontColorOverride="{x:Static maths:Color.LightGray}"
-                           Margin="3 3 3 3" HorizontalAlignment="Left" />
+                           Margin="3 0 3 3" HorizontalAlignment="Left" />
                     <controls:HSpacer Spacing="5" />
                     <!-- Server Currency -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine Color="{x:Static style:StyleNano.DumontTheme}" Thickness="2" Access="Public" />
                     <Label Name="Balance" Access="Public" StyleClasses="LabelHeading" VAlign="Center"
                             HorizontalExpand="True" HorizontalAlignment="Center" />
                     <!-- Gaby line -->
@@ -162,7 +162,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <controls:HSpacer Spacing="5" />
                     <BoxContainer MinHeight="10" />
                     <!-- Gaby line -->
-                    <controls:HLine Color="{x:Static style:StyleNano.GabyTheme}" Thickness="2" Access="Public" />
+                    <controls:HLine Color="{x:Static style:StyleNano.DumontTheme}" Thickness="2" Access="Public" />
                     <controls:HSpacer Spacing="10" />
                     <widgets:ChatBox Name="Chat" Access="Public" VerticalExpand="True" Margin="3 3 3 3" MinHeight="50" />
                 </BoxContainer>

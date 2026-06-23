@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Grid
@@ -232,12 +236,12 @@ entities:
             65: -2,5
             157: -3,-2
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNe
           decals:
             87: 1,7
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNw
           decals:
             86: -2,7
@@ -247,7 +251,7 @@ entities:
           decals:
             112: -4,-6
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineE
           decals:
             80: -4,5
@@ -272,7 +276,7 @@ entities:
             106: 0,-5
             107: 1,-5
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineN
           decals:
             88: -1,7
@@ -313,7 +317,7 @@ entities:
           decals:
             113: 3,-6
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineW
           decals:
             81: 3,5

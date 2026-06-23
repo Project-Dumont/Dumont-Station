@@ -2,6 +2,6 @@
   parent: JobIcon
   id: JobIconPrisonGuard
   icon:
-    sprite: /Textures/_DV/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Gabystation/Interface/Misc/job_icons.rsi
     state: nyanoPrisonGuard
   jobName: job-name-guard

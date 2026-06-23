@@ -63,7 +63,7 @@
       Death: 200
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 500
+    chaosScore: 800
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -112,7 +112,7 @@
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
-    agentName: cosmic-cult-roundend-name 
+    agentName: cosmic-cult-roundend-name
     definitions:
     - prefRoles: [ CosmicAntagCultist ]
       max: 4
@@ -152,7 +152,7 @@
       Death: 400
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 1000
+    chaosScore: 1100
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -190,7 +190,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30
+    minimumPlayers: 20
     duration: null
     occursDuringRoundEnd: false
   - type: MorphRule
@@ -210,6 +210,8 @@
         sound: /Audio/_Gabystation/Misc/Morph/mutate.ogg
       mindRoles:
       - MindRoleMorph
+  - type: GameRule
+    chaosScore: 200 # dumont edit maybe it'll actually be spawned now
 
 # Midround Revs
 - type: entity

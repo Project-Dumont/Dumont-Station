@@ -2884,3 +2884,282 @@ Entries:
       message: Traduções. Muitas traduções. Muitas, muitas traduções.
   id: 345
   time: '2026-05-31T03:06:28.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Reskin da Dreadnought
+    - type: Tweak
+      message: Metashield mais amigavel
+  id: 346
+  time: '2026-06-02T11:53:16.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterado o mapping da Sec
+    - type: Tweak
+      message: Sprites do borg dog
+    - type: Tweak
+      message: Alguns sprites novos do goob recoloridos
+  id: 347
+  time: '2026-06-02T12:00:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Fix
+      message: Algumas traduções foram consertadas.
+  id: 348
+  time: '2026-06-02T12:59:27.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Remove
+      message: Sec vermelha
+    - type: Tweak
+      message: Agora a Segurança é azul, mudança total no visual em respeito as cores
+    - type: Tweak
+      message: Alguns resprites no BSO
+    - type: Tweak
+      message: Alguns ícones de trabalho foram alterados.
+  id: 349
+  time: '2026-06-02T13:18:06.0000000+00:00'
+- author: Victor Job and Struater
+  changes:
+    - type: Tweak
+      message: Core azul do BSO alterada pra verde
+  id: 350
+  time: '2026-06-02T13:20:26.0000000+00:00'
+- author: VacaoComTil
+  changes:
+    - type: Add
+      message: 9 Beards styles
+  id: 351
+  time: '2026-06-05T13:00:14.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Nova pistola pode ser selecionada por oficiais no loadout: A phaser, a
+        pistola arma laser/atordoador.
+  id: 352
+  time: '2026-06-05T13:02:58.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona indutores.
+    - type: Add
+      message: Adiciona megacélulas.
+  id: 353
+  time: '2026-06-05T13:18:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Removida capacidade dos fones de ouvido e headsets de transmitirem no
+        canal comum. Mensagens ainda podem ser ouvidas por eles, mas precisam
+        ser enviadas de outra forma como interfone.
+  id: 354
+  time: '2026-06-05T15:51:20.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas corpo a corpo de mech podem fazer wideswing.
+  id: 355
+  time: '2026-06-05T15:57:26.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Tweak
+      message: Portados sprites do funky!
+  id: 356
+  time: '2026-06-05T15:58:42.0000000+00:00'
+- author: sTRUATER
+  changes:
+    - type: Fix
+      message: Corrigido alguns sprites da sec e bso estarem nas cores antigas
+  id: 357
+  time: '2026-06-05T16:05:11.0000000+00:00'
+- author: Lachryphage, CRISO
+  changes:
+    - type: Add
+      message: A estação Eclipse Starport foi adicionada à rotação de mapas.
+  id: 358
+  time: '2026-06-05T16:14:45.0000000+00:00'
+- author: Redmagician14
+  changes:
+    - type: Remove
+      message: >-
+        Remove campo "data" de vários documentos da impressora de documentos
+        (início do turno ainda é necessário).
+  id: 359
+  time: '2026-06-05T17:57:07.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Icon do Warden agora é um olho, big brother is watching
+  id: 360
+  time: '2026-06-05T18:08:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora o áudio abafa quando passa por paredes.
+  id: 361
+  time: '2026-06-07T14:00:26.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Remove
+      message: Removido Gaby Station!
+    - type: Add
+      message: Adicionado Dumont Station!
+    - type: Tweak
+      message: >-
+        A moeda local mudou! Vá trocar esse Gaby Coins, ninguém usa mais
+        isso... 
+  id: 362
+  time: '2026-06-07T14:07:39.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona a ação de alternar HUDs para os fantasmas.
+    - type: Tweak
+      message: Agora os fantasmas podem interagir com objetos com interface.
+  id: 363
+  time: '2026-06-07T14:13:21.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Add
+      message: 'Novo gerador de energia: Reator Nuclear!'
+  id: 364
+  time: '2026-06-07T14:15:19.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Telefones, façam mais fake news
+    - type: Add
+      message: >-
+        Adicionado o Mercador de Telefones para o evento de distribuição de
+        trabalhos
+  id: 365
+  time: '2026-06-07T15:20:56.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Tablet de equipes de segurança pro armário do chefe de segurança.
+    - type: Add
+      message: Megafone de segurança pro armário do chefe de segurança.
+    - type: Remove
+      message: Tablet de equipes de segurança do armário do capitão.
+  id: 366
+  time: '2026-06-07T15:23:02.0000000+00:00'
+- author: Day-OS
+  changes:
+    - type: Remove
+      message: Waddlers removidos da rotação.
+  id: 367
+  time: '2026-06-07T15:25:01.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Módulos de modsuit são de tamanho enorme agora.
+  id: 368
+  time: '2026-06-07T15:26:54.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Mudança para spawns de vários midrounds. Lone ops não vai mais spawnar
+        *todo* round.
+  id: 369
+  time: '2026-06-07T15:31:16.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Poster de recrutamento de ERT.
+    - type: Remove
+      message: Poster de recrutamento de DS.
+  id: 370
+  time: '2026-06-07T15:33:50.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Remove
+      message: Removida tooltip dos ícones do chat.
+  id: 371
+  time: '2026-06-07T15:59:37.0000000+00:00'
+- author: Kyoth25f
+  changes:
+    - type: Remove
+      message: Removidos alguns huds dos fantasmas.
+  id: 372
+  time: '2026-06-12T19:06:24.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Remove
+      message: Larp de atmo.
+    - type: Tweak
+      message: >-
+        Ajusta o TEG para reduzir desperdício e incentivar configurações mais
+        eficientes.
+  id: 373
+  time: '2026-06-12T19:09:51.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        APCs agora possuem capacidade de sobrecarregarem e desligarem após o
+        suprimento passar de 25kW.
+  id: 374
+  time: '2026-06-12T19:11:04.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções com os indutores.
+  id: 375
+  time: '2026-06-12T19:15:29.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Agora ao dividir spesos suspeitos, você terá spesos suspeitos!
+  id: 376
+  time: '2026-06-21T16:55:53.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Telefones agora estão presentes nos mapas.
+    - type: Add
+      message: >-
+        Saltern, Packed, Omega, Cluster, Box, Meta, Marathon, Cog, Oasis agora
+        possuem genética, roboticistas e impressora de livros.
+    - type: Add
+      message: Falcon agora possui genética.
+    - type: Remove
+      message: Plasma miner foi removido de diversos mapas.
+  id: 377
+  time: '2026-06-21T16:56:41.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado Life Goes On no lobby. Descanse em paz Oliver Tree.
+  id: 378
+  time: '2026-06-20T17:27:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Shadowkins são novamente vulneráveis a flash.
+  id: 379
+  time: '2026-06-20T17:31:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Proto RCD consegue descontruir novamente.
+    - type: Add
+      message: 'Proto RCD pode desconstruir airlocks, independente de acesso ou tranca. '
+  id: 380
+  time: '2026-06-21T14:25:12.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Add
+      message: Nova ui do console de comunicações
+  id: 381
+  time: '2026-06-20T21:49:22.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas usam projeteis denovo.
+  id: 382
+  time: '2026-06-22T16:19:32.0000000+00:00'

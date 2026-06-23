@@ -548,6 +548,7 @@ public abstract partial class SharedMechSystem : EntitySystem
 
         var weapon = mech.CurrentSelectedEquipment ?? component.Mech;
         args.Weapon = weapon;
+        args.User = component.Mech; // Mono
         args.Handled = true;
     }
 

@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] O Chefe de Segurança tem permissão para realizar prisões sob as mesmas condições que seus Oficiais de Segurança;
 
-  [bold]2.[/bold] O Chefe de Segurança tem permissão para portar um cinto de segurança completo, uma MK-58, e a Lawbringer. Embora tenha permissão para portar sua arma exclusiva escolhida, é desencorajado de fazê-lo;
+  [bold]2.[/bold] O Chefe de Segurança tem permissão para portar um cinto de segurança completo ou sua espada, uma pistola, e a Lawbringer. Embora tenha permissão para portar sua arma exclusiva escolhida, é desencorajado de fazê-lo;
 
   [bold]3.[/bold] O Chefe de Segurança é obrigado a permitir um julgamento apenas em casos onde a pena do detento é 15 minutos ou superior;
 
@@ -48,7 +48,7 @@ SPDX-License-Identifier: MIT
   [bold]1.[/bold] As diretrizes 1, 2, 4, 6, 7, 8, 9, 10 11 e 12 são mantidas do [color=green]Código Verde[/color];
 
   [bold]2.[/bold] O Chefe de Segurança não é obrigado a permitir julgamentos durante estados de emergência.
-  
+
   [bold]3.[/bold] O Chefe de Segurança tem permissão para pegar qualquer equipamento necessário do Arsenal, desde que deixe o suficiente para o restante da equipe de Segurança;
 
   [bold]4.[/bold] O Chefe de Segurança é obrigado a fazer um Anúncio de Estação informando a natureza da ameaça confirmada que causou o Código Vermelho.
@@ -73,7 +73,7 @@ SPDX-License-Identifier: MIT
 
   [bold]8.[/bold] Oficiais de Segurança devem usar o uniforme conforme descrito nas Regras de Conduta da Segurança.
 
-  [bold]9.[/bold] Oficiais de Segurança são permitidos portar uma MK-58 e munição reserva. Essa arma deveria apenas ser utilizada para eliminar ameaças não protegidas pela lei espacial ou em caso de ameaça imediata a vida própria ou a de outros tripulantes. Cadetes são permitidos portar uma MK-58, mas apenas com munição de prática.
+  [bold]9.[/bold] Oficiais de Segurança são permitidos portar uma pistola e munição reserva. Essa arma deveria apenas ser utilizada para eliminar ameaças não protegidas pela lei espacial ou em caso de ameaça imediata a vida própria ou a de outros tripulantes. Cadetes são permitidos portar uma MK-58, mas apenas com munição de prática.
 
   ## Código Azul
 
@@ -191,7 +191,7 @@ SPDX-License-Identifier: MIT
 
   [bold]2.[/bold] O Clínico Brigadista deve seguir todos os Procedimentos Operacionais Padrão conforme descrito no POP de Oficiais de Segurança em relação a paradas, revistas e prisões.
 
-  [bold]3.[/bold] O Clínico Brigadista pode portar uma MK-58 e munição reserva;
+  [bold]3.[/bold] O Clínico Brigadista pode portar uma pistola e munição reserva;
 
   [bold]4.[/bold] O Clínico Brigadista pode trocar seu cinto de paramédico por um cinto de segurança, mas sempre deve portar equipamento médico suficiente para cuidar de alguém em caso de emergência;
 
@@ -205,8 +205,8 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] As diretrizes 1, 2, 3, 4, 5 e 7 são mantidas do [color=green]Código Verde[/color];
 
-  [bold]2.[/bold] O Clínico Brigadista agora é permitido pegar uma hardsuit de segurança, mas apenas se houver hardsuits suficientes para o resto do Departamento de Segurança; 
-  
+  [bold]2.[/bold] O Clínico Brigadista agora é permitido pegar uma hardsuit de segurança, mas apenas se houver hardsuits suficientes para o resto do Departamento de Segurança;
+
   [bold]3.[/bold] O Clínico Brigadista têm permissão para portar qualquer arma ou equipamento disponível no Arsenal, a critério do Carcereiro, mas nunca mais de um item por vez. Exceção é feita em emergências extremas;
 
   ## Código Vermelho
@@ -217,5 +217,5 @@ SPDX-License-Identifier: MIT
 
   [bold]3.[/bold] O Clínico Brigadista deve se preparar a cuidar dos membros do Departamento de Segurança enquanto lidam com a ameaça.
 
-  
+
 </Document>

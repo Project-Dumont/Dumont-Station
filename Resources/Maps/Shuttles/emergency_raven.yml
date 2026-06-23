@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 6
   postmapinit: false
@@ -392,7 +396,7 @@ entities:
             83: 6,-14
             84: 5,-14
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: CheckerNESW
           decals:
             151: 5,4

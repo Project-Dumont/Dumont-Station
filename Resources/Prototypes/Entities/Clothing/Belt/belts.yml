@@ -903,9 +903,9 @@
   description: Unique and versatile chest rig, can hold security gear.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/securitywebbing.rsi
+    sprite: _Gabystation/Clothing/Belt/securitywebbing.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Belt/securitywebbing.rsi
+    sprite: _Gabystation/Clothing/Belt/securitywebbing.rsi # Gaby
 
 - type: entity
   parent: [ ClothingBeltStorageBase, BaseSecurityCargoContraband ]

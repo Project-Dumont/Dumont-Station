@@ -32,6 +32,10 @@
     TapeRecorder: 1
     # Gabystation - end
   contrabandInventory:
+    # Orion-Start
+    PowerCellHigh: 1
+    MegaCellHigh: 1
+    # Orion-End
     ProximitySensor: 1
     LeftArmBorg: 1
   emaggedInventory: # goob

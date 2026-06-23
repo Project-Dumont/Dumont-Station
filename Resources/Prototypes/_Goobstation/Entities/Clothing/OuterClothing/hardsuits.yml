@@ -198,20 +198,22 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi
   - type: Item
-    size: Ginormous #damn its hard to spell
+    size: Ginormous
   - type: Clothing
     sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
     equipDelay: 15
-    unequipDelay: 600 # if i add the unremovable comp then you couldnt even put this on
+    unequipDelay: 600
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.1 # chinalake meta would go hard
+    damageCoefficient: 0.1
   - type: FireProtection
-    reduction: 0.9 # atmos fire suit is 0.8, so i guess this is fine? Reduction goes the opossite way right?
+    reduction: 0.9
   - type: Armor
-    traumaDeductions: # not full protection so its damage can actually harm you
+    traumaDeductions:
       Dismemberment: 0.9
       OrganDamage: 0.9
       BoneDamage: 0.9
@@ -220,10 +222,10 @@
     modifiers:
       coefficients:
         Blunt: 0.1
-        Slash: 0.1 # holy shit bruv
+        Slash: 0.1
         Piercing: 0.1
         Heat: 0.1
-        Radiation: 0.25 # do people even know rad ammo exists? anyway making rad its weakness is kinda fair
+        Radiation: 0.25
         Caustic: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.7
@@ -244,11 +246,18 @@
           Slash: 0.3
       interval: 1.0
       ignoreResistances: true
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+        params:
+          volume: -6
+          pitch: 0.7
+          variation: 0.025
   - type: StaminaResistance
     damageCoefficient: 0.1
   - type: ModifyDelayedKnockdown
     cancel: true
-
+    
 # Security voidsuit - used this instead of security hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]

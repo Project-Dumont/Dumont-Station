@@ -247,8 +247,8 @@ ent-PosterLegitFruitBowl = Fruit Bowl
 ent-PosterLegitPDAAd = PDA Ad
     .desc = A poster advertising the latest PDA from Nanotrasen suppliers.
 
-ent-PosterLegitEnlist = Enlist
-    .desc = Enlist in the Nanotrasen Deathsquadron reserves today!
+ent-PosterLegitEnlist = Aliste-se
+    .desc = Aliste-se para as reservas ERT da NanoTrasen hoje!
 
 ent-PosterLegitNanomichiAd = Nanomichi Ad
     .desc =  A poster advertising Nanomichi brand audio cassettes.

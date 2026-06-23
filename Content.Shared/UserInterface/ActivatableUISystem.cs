@@ -195,7 +195,7 @@ public sealed partial class ActivatableUISystem : EntitySystem
 
     private void OnActivate(EntityUid uid, ActivatableUIComponent component, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
+        if (args.Handled || !args.Complex && TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostOpenUI) // Orion-Edit
             return;
 
         if (component.VerbOnly)
@@ -251,11 +251,13 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (!_blockerSystem.CanInteract(user, uiEntity) && (!HasComp<GhostComponent>(user) || aui.BlockSpectators))
             return false;
 
+/* // Orion-Edit
         if (aui.RequiresComplex)
         {
             if (!_blockerSystem.CanComplexInteract(user))
                 return false;
         }
+*/
 
         if (aui.InHandsOnly)
         {
@@ -282,6 +284,19 @@ public sealed partial class ActivatableUISystem : EntitySystem
 
             Log.Error($"Activatable UI has user without being opened? Entity: {ToPrettyString(uiEntity)}. User: {aui.CurrentSingleUser}, Key: {aui.Key}");
         }
+
+        // Orion-Start
+        TryComp<GhostComponent>(user, out var ghostComp);
+
+        if (aui.RequiresComplex && ghostComp is null)
+        {
+            if (!_blockerSystem.CanComplexInteract(user))
+                return false;
+        }
+
+        if (ghostComp is not null && !ghostComp.CanGhostOpenUI)
+            return false;
+        // Orion-End
 
         // If we've gotten this far, fire a cancellable event that indicates someone is about to activate this.
         // This is so that stuff can require further conditions (like power).
