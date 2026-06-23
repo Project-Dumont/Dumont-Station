@@ -205,6 +205,16 @@
   - Medical
   - Journalism # Goob
   - Robotics # Goob
+  # Dumont
+  - Virology
+  - Psychology
+  - Pharmacy
+  - Genetics
+  - Mail
+  - Mining
+  - Library
+  - BrigMedic
+  # /Dumont
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

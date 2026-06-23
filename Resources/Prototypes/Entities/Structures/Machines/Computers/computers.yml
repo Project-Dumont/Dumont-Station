@@ -1890,7 +1890,7 @@
   - type: Computer
     board: RoboticsConsoleCircuitboard
   - type: AccessReader # only used for dangerous things
-    access: [["ResearchDirector"]]
+    access: [["ResearchDirector"], ["Robotics"]] # Dumont edit
   - type: Lock
     unlockOnClick: false
 

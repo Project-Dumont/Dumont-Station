@@ -419,7 +419,7 @@
     stateDoorOpen: armory_open
     stateDoorClosed: brigmedic_door
   - type: AccessReader
-    access: [["Security"]] # goob edit
+    access: [["BrigMedic"]] # Dumont edit
 
 # Security Officer
 - type: entity

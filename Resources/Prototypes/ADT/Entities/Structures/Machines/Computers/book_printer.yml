@@ -102,7 +102,7 @@
     key: enum.BookPrinterUiKey.Key
   - type: Appearance
   - type: AccessReader
-    access: [["Service"]]
+    access: [["Library"]]
   - type: AmbientSound
     enabled: false
     volume: 0
