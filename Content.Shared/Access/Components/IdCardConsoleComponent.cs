@@ -87,7 +87,6 @@ public sealed partial class IdCardConsoleComponent : Component
         "Robotics", //Goob
         "Journalism", //Goob
         "Bitrun", // Orion
-        "Journalism", //Goob
         "Virology", //Dumont
         "Psychology", //Dumont
         "Pharmacy", //Dumont
