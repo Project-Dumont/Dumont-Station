@@ -1,0 +1,161 @@
+# Fast and weak boi
+- type: entity
+  parent: BaseMobFleshSalvage
+  id: MobDungeonMeatFast
+  suffix: Dungeon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: clamp
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: clamp
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      25: Dead # 1 PKA shot
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 5.5
+    baseSprintSpeed : 5.5
+  - type: MeleeWeapon
+    attackRate: 2
+    damage:
+      types:
+        Slash: 2
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      15: 0.7
+
+# Generic meat dude
+- type: entity
+  parent: BaseMobFleshSalvage
+  id: MobDungeonMeatGuy
+  suffix: Dungeon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: golem
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: golem
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead # 2 PKA shots
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      25: 0.7
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 3.5
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Slash: 4
+  - type: MobSplitting
+    sound:
+      collection: gib
+    splitInto:
+      MobDungeonMeatFast:
+        min: 1
+        max: 3
+
+# Flying normal meat dude
+- type: entity
+  parent: BaseMobFleshSalvage
+  id: MobDungeonMeatFlying
+  suffix: Dungeon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lover
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: lover
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Dead # Still 2 PKA shots, but less
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      25: 0.7
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: MeleeWeapon
+    attackRate: 2
+    damage:
+      types:
+        Slash: 3
+  - type: MobSplitting
+    sound:
+      collection: gib
+    splitInto:
+      MobDungeonMeatFast:
+        min: 0
+        max: 2
+
+# Miniboss type, large and slow
+- type: entity
+  parent: BaseMobFleshSalvage
+  id: MobDungeonMeatGiant
+  suffix: Dungeon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: jared
+  - type: ScaleVisuals
+    scale: 1.5,1.5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: jared
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead # 4 PKA shots
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 2.5
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      80: 0.5
+  - type: MeleeWeapon
+    attackRate: 0.3
+    damage:
+      types:
+        Slash: 15
+  - type: MobSplitting
+    sound:
+      collection: gib
+    splitInto:
+      MobDungeonMeatGuy:
+        min: 0
+        max: 1
+      MobDungeonMeatFlying:
+        min: 1
+        max: 2

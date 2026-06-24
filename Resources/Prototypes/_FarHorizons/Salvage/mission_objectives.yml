@@ -49,6 +49,7 @@
   allowedFactions:
     - Xenos
     - Carps
+    - Meat
 
 - type: salvageMissionObjective
   id: MissionObjectiveRescue
