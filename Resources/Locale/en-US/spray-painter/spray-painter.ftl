@@ -89,7 +89,11 @@ spray-painter-style-airlockstandard-mining = Mining
 spray-painter-style-airlockstandard-medsci = MedSci
 spray-painter-style-airlockstandard-salvmine = SalvMine
 # /Dumont
+# Orion
+spray-painter-style-airlockstandard-bitrunner = Bitrunner
+# /Orion
 
+# Glass
 spray-painter-style-airlockglass-atmospherics = Atmospherics
 spray-painter-style-airlockglass-basic = Basic
 spray-painter-style-airlockglass-cargo = Cargo
@@ -116,6 +120,9 @@ spray-painter-style-airlockglass-mining = Mining
 spray-painter-style-airlockglass-medsci = MedSci
 spray-painter-style-airlockglass-salvmine = SalvMine
 # /Dumont
+# Orion
+spray-painter-style-airlockglass-bitrunner = Bitrunner
+# /Orion
 
 # Lockers
 spray-painter-style-locker-atmospherics = Atmospherics

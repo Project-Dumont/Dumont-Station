@@ -31,6 +31,7 @@
     medsci: AirlockMedicalScience
     salvmine: AirlockSalvMine
     # /Dumont
+    bitrunner: AirlockBitrunner # Orion
 
 - type: paintableGroup
   id: AirlockGlass
@@ -64,3 +65,4 @@
     medsci: AirlockMedicalScienceGlass
     salvmine: AirlockSalvMineGlass
     # /Dumont
+    bitrunner: AirlockBitrunnerGlass # Orion
