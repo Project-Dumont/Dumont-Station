@@ -3171,3 +3171,33 @@ Entries:
       message: Agora as câmeras ficam vermelhas quando estão na visão da IA.
   id: 383
   time: '2026-06-23T19:59:57.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Não tantas, mas traduções.
+  id: 384
+  time: '2026-06-23T20:58:16.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Diversos cargos e objetos ganharam acesso exclusivo, consulte seu chefe
+        departamental!
+    - type: Remove
+      message: >-
+        Acessos antes básicos agora são próprios, como roboticista, correio,
+        mineração, genética, virologia, médico da brigada e bibliotecário.
+    - type: Fix
+      message: RD agora possui acesso de roboticista.
+    - type: Tweak
+      message: >-
+        Acesso de salvatagem agora se chama "Exploração" e foram separados
+        Mineradores de Exploradores, com acessos demonstrando mudança.
+    - type: Add
+      message: Diversas novas pinturas no spray de tinta, e agora ele está traduzido!
+    - type: Tweak
+      message: >-
+        Geneticista agora pertence apenas a Sci. Loadout, acessos, rádio e
+        equipamento foram alterados para refletir isso.
+  id: 385
+  time: '2026-06-24T18:02:09.0000000+00:00'

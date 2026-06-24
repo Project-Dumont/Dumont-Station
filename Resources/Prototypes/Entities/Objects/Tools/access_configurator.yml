@@ -58,6 +58,7 @@
       - Atmospherics
       - Bar
       - Brig
+      - BrigMedic # Dumont
       - Detective
       - Captain
       - Cargo
@@ -68,23 +69,30 @@
       - Command
       - Engineering
       - External
+      - Genetics # Dumont
       - HeadOfPersonnel
       - HeadOfSecurity
       - Hydroponics
       - Janitor
       - Kitchen
       - Lawyer
+      - Library # Dumont
+      - Mail # Dumont
       - Maintenance
       - Medical
+      - Mining # Dumont
+      - Pharmacy # Dumont
+      - Psychology # Dumont
       - Quartermaster
       - Research
       - Robotics # goobstation
       - Journalism # goobstation
       - ResearchDirector
-      - Salvage
+      - Salvage # Dumont - Salvage -> Explorer
       - Security
       - Service
       - Theatre
+      - Virology # Dumont
       - GenpopEnter
       - GenpopLeave
       - Bitrun # Orion
@@ -134,6 +142,7 @@
     - BasicSilicon
     - Borg
     - Brig
+    - BrigMedic # Dumont
     - Detective
     - Captain
     - Cargo
@@ -146,22 +155,29 @@
     - EmergencyShuttleRepealAll
     - Engineering
     - External
+    - Genetics # Dumont
     - HeadOfPersonnel
     - HeadOfSecurity
     - Hydroponics
     - Janitor
     - Kitchen
     - Lawyer
+    - Library # Dumont
+    - Mail # Dumont
     - Maintenance
     - Medical
+    - Mining # Dumont
+    - Pharmacy # Dumont
+    - Psychology # Dumont
     - Quartermaster
     - Research
     - ResearchDirector
-    - Salvage
+    - Salvage # Dumont - Salvage -> Explorer
     - Security
     - Service
     - StationAi
     - Theatre
+    - Virology # Dumont
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent

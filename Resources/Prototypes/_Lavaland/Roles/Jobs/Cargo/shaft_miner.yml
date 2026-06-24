@@ -17,7 +17,8 @@
   supervisors: job-supervisors-qm
   access:
   - Cargo
-  - Salvage
+  # - Salvage # Dumont
+  - Mining # Dumont
   - Maintenance
   - External
 
