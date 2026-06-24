@@ -217,5 +217,3 @@
   components:
   - type: Wires
     layoutId: AirlockService
-- type: entity
-  parent: Airlock
