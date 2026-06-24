@@ -1,3 +1,4 @@
+# Med
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsVirology
@@ -22,6 +23,7 @@
   - type: AccessReader
     access: [["Pharmacy"]]
 
+# Sci
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsGenetics
@@ -30,6 +32,7 @@
   - type: AccessReader
     access: [["Genetics"]]
 
+# Cargo
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsMail
@@ -56,12 +59,22 @@
 
 - type: entity
   parent: DoorElectronics
+  id: DoorElectronicsBitrunner
+  suffix: Bitrunner, Locked
+  components:
+  - type: AccessReader
+    access: [["Bitrun"]]
+
+# Sec
+- type: entity
+  parent: DoorElectronics
   id: DoorElectronicsBrigMedic
   suffix: BrigMedic, Locked
   components:
   - type: AccessReader
     access: [["BrigMedic"]]
 
+# Service
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsLibrary

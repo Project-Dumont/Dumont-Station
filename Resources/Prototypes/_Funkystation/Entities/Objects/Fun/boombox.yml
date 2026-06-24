@@ -190,3 +190,16 @@
     slots:
     - Back
     - suitStorage
+
+# Orion - Bitrunning - Start
+- type: entity
+  id: BoomboxSlavFull
+  name: three stripe boombox
+  parent: Boombox
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+# Orion - Bitrunning - End

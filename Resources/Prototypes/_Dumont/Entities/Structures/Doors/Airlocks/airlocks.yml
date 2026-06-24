@@ -1,3 +1,6 @@
+# Normal
+
+# Med
 - type: entity
   parent: Airlock
   id: AirlockPsychology
@@ -18,6 +21,7 @@
   - type: Wires
     layoutId: AirlockMedical
 
+# Sci
 - type: entity
   parent: Airlock
   id: AirlockGenetics
@@ -28,6 +32,27 @@
   - type: Wires
     layoutId: AirlockScience
 
+- type: entity
+  parent: Airlock
+  id: AirlockRobotics
+  suffix: Robotics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/robotics.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: AirlockMedicalScience
+  suffix: Medical/Science
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+# Cargo
 - type: entity
   parent: Airlock
   id: AirlockMail
@@ -60,6 +85,17 @@
 
 - type: entity
   parent: Airlock
+  id: AirlockBitrunner
+  suffix: Bitrunner
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/bitrunning.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+# Sec
+- type: entity
+  parent: Airlock
   id: AirlockBrigMedic
   suffix: BrigMedic
   components:
@@ -68,26 +104,7 @@
   - type: Wires
     layoutId: AirlockSecurity
 
-- type: entity
-  parent: Airlock
-  id: AirlockRobotics
-  suffix: Robotics
-  components:
-  - type: Sprite
-    sprite: _Dumont/Structures/Doors/Airlocks/Standard/robotics.rsi
-  - type: Wires
-    layoutId: AirlockScience
-
-- type: entity
-  parent: Airlock
-  id: AirlockMedicalScience
-  suffix: Medical/Science
-  components:
-  - type: Sprite
-    sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
-  - type: Wires
-    layoutId: AirlockScience
-
+# Service
 - type: entity
   parent: Airlock
   id: AirlockLibrary
@@ -98,6 +115,7 @@
 
 # Glass
 
+# Med
 - type: entity
   parent: AirlockGlass
   id: AirlockPsychologyGlass
@@ -118,6 +136,7 @@
   - type: Wires
     layoutId: AirlockMedical
 
+# Sci
 - type: entity
   parent: AirlockGlass
   id: AirlockGeneticsGlass
@@ -128,6 +147,17 @@
   - type: Wires
     layoutId: AirlockScience
 
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMedicalScienceGlass
+  suffix: Medical/Science
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/medsci.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+# Cargo
 - type: entity
   parent: AirlockGlass
   id: AirlockMailGlass
@@ -160,6 +190,17 @@
 
 - type: entity
   parent: AirlockGlass
+  id: AirlockBitrunnerGlass
+  suffix: Bitrunner
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/bitrunning.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+# Sec
+- type: entity
+  parent: AirlockGlass
   id: AirlockBrigMedicGlass
   suffix: BrigMedic
   components:
@@ -168,16 +209,7 @@
   - type: Wires
     layoutId: AirlockSecurity
 
-- type: entity
-  parent: AirlockGlass
-  id: AirlockMedicalScienceGlass
-  suffix: Medical/Science
-  components:
-  - type: Sprite
-    sprite: _Dumont/Structures/Doors/Airlocks/Glass/medsci.rsi
-  - type: Wires
-    layoutId: AirlockScience
-
+# Service
 - type: entity
   parent: AirlockGlass
   id: AirlockLibraryGlass
@@ -185,3 +217,5 @@
   components:
   - type: Wires
     layoutId: AirlockService
+- type: entity
+  parent: Airlock

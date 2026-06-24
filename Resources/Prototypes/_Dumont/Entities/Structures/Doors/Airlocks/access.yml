@@ -47,6 +47,15 @@
     containers:
       board: [ DoorElectronicsSalvMine ]
 
+- type: entity
+  parent: AirlockBitrunner
+  id: AirlockBitrunnerLocked
+  suffix: Bitrunner, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBitrunner ]
+
 # Sci
 - type: entity
   parent: AirlockGenetics
@@ -125,6 +134,15 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSalvMine ]
+
+- type: entity
+  parent: AirlockBitrunnerGlass
+  id: AirlockBitrunnerGlassLocked
+  suffix: Bitrunner, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBitrunner ]
 
 # Sci
 - type: entity
@@ -229,6 +247,13 @@
 - type: entity
   parent: AirlockMiningDumontLocked
   id: AirlockMaintMiningDumontLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockBitrunnerLocked
+  id: AirlockMaintBitrunnerLocked
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi

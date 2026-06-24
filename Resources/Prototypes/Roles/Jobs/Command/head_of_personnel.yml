@@ -215,6 +215,7 @@
   - Library
   - BrigMedic
   # /Dumont
+  - Bitrun # Orion
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

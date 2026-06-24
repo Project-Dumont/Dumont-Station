@@ -56,6 +56,15 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/salvmine.rsi
     state: "assembly"
 
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBitrunner
+  suffix: Bitrunner
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/bitrunning.rsi
+    state: "assembly"
+
 # Sec
 - type: entity
   parent: AirlockAssembly
@@ -151,6 +160,15 @@
   components:
   - type: Sprite
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/salvmine.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBitrunnerGlass
+  suffix: Bitrunner, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/bitrunning.rsi
     state: "assembly"
 
 # Sec

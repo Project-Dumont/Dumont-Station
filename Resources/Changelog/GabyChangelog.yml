@@ -3163,3 +3163,17 @@ Entries:
       message: Armas usam projeteis denovo.
   id: 382
   time: '2026-06-22T16:19:32.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona bitrunning.
+    - type: Tweak
+      message: Agora as câmeras ficam vermelhas quando estão na visão da IA.
+  id: 383
+  time: '2026-06-23T19:59:57.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Não tantas, mas traduções.
+  id: 384
+  time: '2026-06-23T20:58:16.0000000+00:00'
