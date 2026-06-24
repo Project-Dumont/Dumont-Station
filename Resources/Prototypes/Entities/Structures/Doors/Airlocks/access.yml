@@ -309,7 +309,7 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsMedical ]
+      board: [ DoorElectronicsVirology ]
 
 - type: entity
   parent: AirlockChemistry
