@@ -1,8 +1,8 @@
 - type: entity
+  parent: BaseLatheLube
   id: NuclearFabricator
-  parent: [BaseLatheLube, BaseSiloUtilizer]
   name: nuclear fabricator
-  description: It makes nuclear reactor parts.
+  description: It makes nuclear parts.
   components:
   - type: Sprite
     sprite: Structures/Machines/protolathe.rsi
@@ -22,15 +22,24 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
-        - Ingot
+      - Sheet
+      - RawMaterial
+      - Ingot
   - type: Lathe
     idleState: icon
     runningState: building
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticPacks:
-    - ReactorPartsStatic
+    - ReactorPartsBasic
+    - GasTurbineBlades
+    - GasTurbineStators
     dynamicPacks:
-    - ReactorPartsDynamic
+    - ReactorFuelRods
+    - ReactorControlRods
+    - ReactorGasChannels
+    - ReactorHeatExchangers
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container

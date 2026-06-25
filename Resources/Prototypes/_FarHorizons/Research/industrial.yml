@@ -10,6 +10,7 @@
   recipeUnlocks:
   - NuclearFabricatorMachineCircuitboard
   - NuclearReactorMonitorComputerCircuitboard
+  - GasTurbineMonitorComputerCircuitboard
   - UraniumReactorFuelRod
   - PlasmaReactorFuelRod
   - UraniumGlassReactorFuelRod
@@ -22,15 +23,15 @@
   - SilverReactorHeatExchanger
   - PlasteelReactorHeatExchanger
   - PlasmaGlassReactorHeatExchanger
+  position: 3,1
   technologyPrerequisites:
   - PowerGeneration
-  position: -1, -2
- 
+
 - type: technology
   id: NuclearPowerRecycling
   name: research-technology-nuclear-recycling
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/nuclear_waste.rsi
+    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_parts.rsi
     state: nuclear_waste
   discipline: Industrial
   tier: 2
@@ -45,6 +46,6 @@
   - DiamondReactorGasChannel
   - GoldReactorHeatExchanger
   - DiamondReactorHeatExchanger
+  position: 4,1
   technologyPrerequisites:
   - NuclearPowerGeneration
-  position: -1, -3

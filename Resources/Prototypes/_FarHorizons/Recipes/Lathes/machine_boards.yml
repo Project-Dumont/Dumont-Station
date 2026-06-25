@@ -1,9 +1,11 @@
+# Nuclear Reactor
+
 - type: latheRecipe
-  parent: [ BaseCircuitboardRecipe ]
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: NuclearFabricatorMachineCircuitboard
   result: NuclearFabricatorMachineCircuitboard
 
 - type: latheRecipe
-  parent: [ BaseCircuitboardRecipe ]
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: NuclearCentrifugeMachineCircuitboard
   result: NuclearCentrifugeMachineCircuitboard

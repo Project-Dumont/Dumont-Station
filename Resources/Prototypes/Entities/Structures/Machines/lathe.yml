@@ -615,6 +615,8 @@
     - SecurityBoardsStaticGoob
     - ServiceBoardsStaticGoob
     dynamicPacks:
+    # Dumont
+    - ReactorCircuitboards
     - EngineeringBoards
     - CargoBoards
     - MedicalBoards
