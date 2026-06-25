@@ -1,15 +1,19 @@
 - type: entity
-  parent: BaseWallmountMachine
+  parent: [BaseSign, BaseWallmountMachine]
   id: BaseSignPowered
   abstract: true
   components:
+  - type: Sprite
+    sprite: _FarHorizons/Structures/Wallmounts/signs.rsi
+    snapCardinals: false
+    noRot: true
   - type: ApcPowerReceiver
     powerLoad: 50
   - type: LitOnPowered
-  - type: PointLight 
+  - type: PointLight
     radius: 1.5
     energy: 0.75
-    color: "#ffffff" 
+    color: "#ffffff"
   - type: Appearance
   - type: GenericVisualizer
     visuals:

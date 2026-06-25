@@ -360,7 +360,7 @@
 # Regular Signs
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignAi
   name: ai sign
   description: A sign, indicating an AI is present.
@@ -373,7 +373,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignAiUpload
   name: ai upload sign
   description: A sign, indicating an AI is present.
@@ -395,7 +395,7 @@
     state: arcade
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignArmory
   name: armory sign
   description: A sign indicating the armory.
@@ -417,7 +417,7 @@
     state: ass
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignAnomaly
   name: xenoarcheology lab sign
   description: A sign indicating the xenoarchaeology lab.
@@ -430,7 +430,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignAnomaly2
   name: anomaly lab sign
   description: A sign indicating the anomalous research lab.
@@ -443,7 +443,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignAtmos
   name: atmos sign
   description: A sign indicating the atmospherics area.
@@ -527,7 +527,7 @@
     state: biohazard
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignBridge
   name: bridge sign
   description: A sign indicating the bridge.
@@ -540,7 +540,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignCanisters
   name: canisters sign
   description: A sign warning the viewer about pressurised canisters.
@@ -548,12 +548,12 @@
   - type: Sprite
     layers: #Far Horizons start
     - state: off
-    - state: canisters
+    - state: cans
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignCargo
   name: cargo sign
   description: A sign indicating the cargo area.
@@ -566,7 +566,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignCargoDock
   name: cargo dock sign
   description: A sign indicating a cargo dock.
@@ -588,7 +588,7 @@
     state: chapel
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignChem
   name: chemistry sign
   description: A sign indicating the chemistry lab.
@@ -601,7 +601,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignCloning
   name: cloning sign
   description: A sign indicating the cloning lab.
@@ -614,7 +614,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignConference
   name: conference room sign
   description: Where work happens.
@@ -664,20 +664,19 @@
     state: restroom
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSign #Far Horizons
   id: SignMaterials
   name: materials sign
   description: An omen to the juicy vault of steel, glass, and plastic that lays before you.
   components:
   - type: Sprite
     layers: #Far Horizons start
-    - state: off
     - state: mats
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignEngine
   name: power sign
   description: Where the powa happens.
@@ -690,7 +689,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignEngineering
   name: engineering sign
   description: A sign indicating the engineering area.
@@ -730,7 +729,7 @@
     state: electrical
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignExamroom
   name: examination room sign
   description: A sign indicating a medical examination room.
@@ -752,7 +751,7 @@
     state: fire
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignGravity
   name: gravity sign
   description: A sign indicating the gravity generator.
@@ -765,7 +764,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignHead
   name: head sign
   description: An official sign indicating the dwellings of a Nanotrasen-certified head of department.
@@ -787,7 +786,7 @@
     state: hydro
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignInterrogation
   name: interrogation sign
   description: A sign indicating an interrogation room.
@@ -818,7 +817,7 @@
     state: laundromat
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignLawyer
   name: law sign
   description: A sign indicating the presence of the (typically absent) rule of law.
@@ -840,7 +839,7 @@
     state: biblio
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignMail
   name: mail sign
   description: A sign indicating mail.
@@ -853,7 +852,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignMedical
   name: medbay sign
   description: A sign indicating the medical bay.
@@ -866,7 +865,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignMorgue
   name: morgue sign
   description: A sign indicating the morgue.
@@ -897,7 +896,7 @@
     state: nosmoking
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignGenpop
   name: genpop sign
   description: A sign indicating the genpop prison.
@@ -910,7 +909,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignPrison
   name: prison sign
   description: A sign indicating the prison.
@@ -923,7 +922,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignPsychology
   name: psychology sign
   description: A sign labelling an area where the Psychologist works.
@@ -945,7 +944,7 @@
     state: reception
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignRND
   name: research and development sign
   description: A sign indicating the research and development lab.
@@ -958,7 +957,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignRobo
   name: robo sign
   description: A sign indicating the robotics lab.
@@ -971,7 +970,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignSalvage
   name: salvage sign
   description: A sign indicating the salvage area.
@@ -984,7 +983,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignScience
   name: science sign
   description: A sign indicating the science area.
@@ -997,7 +996,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignServer
   name: server sign
   description: Ever heard of Big Data? This is it, chump. The biggest.
@@ -1010,7 +1009,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignCans
   name: canisters sign
   description: A sign indicating the auspicious presence of gas canisters.
@@ -1029,7 +1028,6 @@
   components:
   - type: Sprite
     layers: #Far Horizons start
-    - state: off
     - state: cans_sci
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
@@ -1053,7 +1051,7 @@
     state: space
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignSurgery
   name: surgery sign
   description: A sign indicating the operating theater.
@@ -1066,20 +1064,19 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSign
   id: SignTelecomms
   name: telecomms sign
   description: A sign indicating the telecommunications room.
   components:
   - type: Sprite
     layers: #Far Horizons start
-    - state: off
     - state: telecoms
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignToxins
   name: toxins sign
   description: A sign indicating the toxin lab.
@@ -1092,7 +1089,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignVault
   name: vault sign
   description: A sign indicating the vault. Who knows what secrets lie inside?
@@ -1105,7 +1102,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignVirology
   name: virology sign
   description: A sign indicating the virology lab.
@@ -1245,7 +1242,7 @@
     state: radiation
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignXenobio
   name: xenobio sign
   description: A sign indicating the xenobiology lab.
@@ -1258,7 +1255,7 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
 
 - type: entity
-  parent: [ BaseSign, BaseSignPowered ] #Far Horizons
+  parent: BaseSignPowered #Far Horizons
   id: SignZomlab
   name: zombie lab sign
   description: The final remains of a shut-down Nanotrasen research project that aimed to harness the powers of Romerol. I wonder how that went...
