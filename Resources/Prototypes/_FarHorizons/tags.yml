@@ -131,7 +131,22 @@
   id: RiotShotgun
 
 - type: Tag
-  id: RamChip
+  id: RocketAmmo120mm
+
+- type: Tag
+  id: RocketAmmo120mmAP
+
+- type: Tag
+  id: RocketAmmo120mmHE
+
+- type: Tag
+  id: RocketAmmo120mmIncendiary
+
+- type: Tag
+  id: RocketAmmo120mmShrapnel
+
+- type: Tag
+  id: SalvageFactory
 
 - type: Tag
   id: SalvageReactor

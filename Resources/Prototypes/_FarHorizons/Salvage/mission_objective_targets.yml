@@ -101,3 +101,20 @@
       radius: 1.5
       energy: 1.6
       color: "#3db83b"
+    - type: StatusIcon
+
+- type: entity
+  id: ComputerSalvageMissionObjective
+  parent: BaseMachine
+  name: Security Console
+  components:
+    - type: Sprite
+      sprite: _Starlight/Structures/Machines/desktop_computers.rsi
+      drawdepth: SmallObjects
+      offset: 0,0.2
+      layers:
+      - state: computer
+      - state: explosive
+        shader: unshaded
+        map: ["screen"]
+        visible: false

@@ -28,6 +28,7 @@
     - Haunted
     - Mineshaft
     - Reactor
+    - Factory
 
 - type: salvageMissionObjective
   id: MissionObjectiveCapture
@@ -73,6 +74,7 @@
     - LavaBrig
     - SnowyLabs
     - Reactor
+    - Factory
 
 - type: salvageMissionObjective
   id: MissionObjectivePurge
@@ -96,6 +98,7 @@
     - LavaBrig
     - SnowyLabs
     - Reactor
+    - Factory
 
 - type: salvageMissionObjective
   id: MissionObjectiveShutdown
@@ -121,3 +124,4 @@
     - Haunted
     - Mineshaft
     - Reactor
+    - Factory

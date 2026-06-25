@@ -1,0 +1,127 @@
+- type: dungeonRoom
+  id: FactorySide17x7a
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 0,0
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7b
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 20,0
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7c
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 40,0
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7d
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 0,9
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7e
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 20,9
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom 
+  id: FactorySide17x7f
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 40,9
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7g
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 0,18
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7h
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 20,18
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide17x7i
+  size: 17,7
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 40,18
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6a
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 0,27
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6b
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 8,27
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6c
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 16,27
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6d
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 24,27
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6e
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 32,27
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6f
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 40,27
+  tags:
+    - SalvageFactory
+
+- type: dungeonRoom
+  id: FactorySide7x6g
+  size: 7,6
+  atlas: /Maps/_FarHorizons/Dungeon/Factory/factory_side_rooms.yml
+  offset: 48,27
+  tags:
+    - SalvageFactory

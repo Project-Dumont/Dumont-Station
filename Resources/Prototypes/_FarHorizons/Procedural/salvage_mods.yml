@@ -13,6 +13,21 @@
   # - Moderate
   # - Easy
 
+- type: salvageDungeonMod
+  id: Factory
+  desc: salvage-dungeon-mod-factory
+  proto: Factory
+  biomes:
+    - Grasslands
+    - Abyss
+    - Snow
+    - Mountains
+    - LowDesert
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+
 # Airs
 - type: salvageAirMod
   id: Nitrogen

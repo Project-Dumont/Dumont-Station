@@ -68,20 +68,89 @@
       NorthWest: WarnCornerSmallNW
       NorthEast: WarnCornerSmallNE
 
+- type: dungeonConfig
+  id: Factory
+  layers:
+  - !type:PrefabDunGen
+    roomWhitelist:
+      tags:
+      - SalvageFactory
+    presets:
+    - ReactorBox
+    - ReactorLong
+    - ReactorStar
+    - ReactorDouble
 
-# - type: entityTable // Dumont
-#  id: BaseAirlock
-#  table: !type:AllSelector
-#    children:
-#    - id: CableApcExtension
-#    - id: AirlockGlass
-                                        
-# - type: entityTable
-#  id: BaseWindow
-#  table: !type:AllSelector
-#    children:
-#    - id: Grille
-#    - id: ReinforcedWindow
+  - !type:CorridorDunGen
+    width: 3
+    tile: FloorConcreteMono
+
+  - !type:DungeonEntranceDunGen
+    count: 3
+    tile: FloorConcreteMono
+    contents: FHOrangeAirlock
+  
+  - !type:RoomEntranceDunGen
+    tile: FloorConcreteMono
+    contents: FHOrangeAirlock
+
+  - !type:WallMountDunGen
+    contents: ReactorWalls
+    tile: FloorConcreteMono
+
+  - !type:BoundaryWallDunGen
+    wall: WallSolidRust
+    tile: FloorConcreteMono
+
+  - !type:JunctionDunGen
+    width: 3
+    tile: FloorConcreteMono
+    contents: FHOrangeAirlock
+
+  - !type:AutoCablingDunGen
+    entity: CableApcExtension
+  
+  - !type:CornerClutterDunGen
+    contents: BaseClutter
+
+  - !type:CorridorDecalSkirtingDunGen
+    cardinalDecals:
+      South: thinplatingsouth
+      East: thinplatingeast
+      North: thinplatingnorth
+      West: thinplatingwest
+    cornerDecals:
+      SouthEast: thinplatingse
+      SouthWest: thinplatingsw
+      NorthEast: thinplatingne
+      NorthWest: thinplatingnw
+    pocketDecals:
+      SouthWest: thincornerwest
+      SouthEast: thincornersouth
+      NorthWest: thincornernorth
+      NorthEast: thincornereast
+
+
+- type: entityTable
+  id: FHBaseAirlock
+  table: !type:AllSelector
+    children:
+    - id: CableApcExtension
+    - id: FHAirlockGlass
+
+- type: entityTable
+  id: FHOrangeAirlock
+  table: !type:AllSelector
+    children:
+    - id: CableApcExtension
+    - id: FHAirlockNSAtmospherics
+
+- type: entityTable
+  id: FHBaseWindow
+  table: !type:AllSelector
+    children:
+    - id: Grille
+    - id: ReinforcedWindow
 
 - type: entityTable
   id: ReactorWalls
