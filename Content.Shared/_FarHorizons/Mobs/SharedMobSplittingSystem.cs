@@ -22,7 +22,8 @@ public sealed class SharedMobSplittingSystem : EntitySystem
 
     private void OnStateChanged(Entity<MobSplittingComponent> ent, ref MobStateChangedEvent args)
     {
-        if (!(args.NewMobState == MobState.Dead && args.OldMobState != MobState.Dead))
+        if (!(args.NewMobState == MobState.Dead && args.OldMobState != MobState.Dead) ||
+            TerminatingOrDeleted(ent))
             return;
 
         _audio.PlayPredicted(ent.Comp.Sound, ent.Owner, ent.Owner);

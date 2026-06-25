@@ -118,3 +118,25 @@
         shader: unshaded
         map: ["screen"]
         visible: false
+    - type: SalvageMissionDisarmConsole
+      failSound:
+        path: /Audio/Machines/buzz-two.ogg
+      successSound:
+        path: /Audio/Effects/Cargo/ping.ogg
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.SalvageMissionDisarmConsoleVisuals.Enabled:
+          screen:
+            True: {visible: true}
+            False: {visible: false}
+        enum.SalvageMissionDisarmConsoleVisuals.Armed:
+          screen:
+            True: {state: explosive}
+            False: {state: generic}
+    - type: ActivatableUI
+      key: enum.SalvageMissionDisarmConsoleUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.SalvageMissionDisarmConsoleUiKey.Key:
+          type: SalvageMissionDisarmBUI

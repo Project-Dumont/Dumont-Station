@@ -125,3 +125,27 @@
     - Mineshaft
     - Reactor
     - Factory
+
+- type: salvageMissionObjective
+  id: MissionObjectiveDisarm
+  handlerId: "MissionObjectiveDisarmHandler"
+  name: salvage-mission-objective-name-disarm
+  description: salvage-mission-objective-description-disarm
+  announcement: salvage-mission-objective-announcement-disarm
+  baseReward:
+    Easy: 1200
+    Moderate: 1450
+    Challenging: 1600 # High rewards, but it has no bonus, also this mission is insanely rare
+  cashMultiplier: 5.5
+  numTargets:
+    Easy: 1
+    Moderate: 2
+    Challenging: 3
+  bonus: 0
+  bonusCap: 0
+  allowedDifficulties:
+    - Easy
+    - Moderate
+    - Challenging
+  allowedDungeons:
+    - Factory

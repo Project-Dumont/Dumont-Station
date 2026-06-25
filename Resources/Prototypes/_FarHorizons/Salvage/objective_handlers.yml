@@ -17,3 +17,9 @@
 - type: salvageMissionObjectiveHandler
   id: MissionObjectiveShutdownHandler
   handler: !type:SalvageMissionShutdown
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveDisarmHandler
+  handler: !type:SalvageMissionDisarm
+    numBodies: 20
+    codeLength: 4
