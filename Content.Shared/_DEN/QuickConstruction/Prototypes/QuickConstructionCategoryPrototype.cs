@@ -3,6 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._DEN.QuickConstruction.Prototypes;
+
 [Prototype]
 public sealed partial class QuickConstructionCategoryPrototype : IPrototype
 {

@@ -10,8 +10,10 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Collections;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Client._DEN.QuickConstruction.UI;
+
 [UsedImplicitly]
 public sealed class QuickConstructionBoundUserInterface : BoundUserInterface
 {
@@ -41,14 +43,14 @@ public sealed class QuickConstructionBoundUserInterface : BoundUserInterface
         _menu.OpenOverMouseScreenPosition();
     }
 
-    private IEnumerable<RadialMenuOptionBase> ConvertToButtons(
+    private IEnumerable<RadialMenuOption> ConvertToButtons(
         List<ProtoId<ConstructionPrototype>> constructionEntries,
         List<ProtoId<QuickConstructionCategoryPrototype>> categoryEntries)
     {
         var constructionSystem = EntMan.System<ConstructionSystem>();
 
-        ValueList<RadialMenuActionOptionBase> constructionButtons = [];
-        Dictionary<QuickConstructionCategoryPrototype, List<RadialMenuOptionBase>> categoryButtons = [];
+        ValueList<RadialMenuActionOption> constructionButtons = [];
+        Dictionary<QuickConstructionCategoryPrototype, List<RadialMenuOption>> categoryButtons = [];
 
         foreach (var constructionEntry in constructionEntries)
         {
@@ -58,13 +60,12 @@ public sealed class QuickConstructionBoundUserInterface : BoundUserInterface
                 continue;
 
             var topLevelActionOption = new RadialMenuActionOption<ConstructionPrototype>(HandlePlacement, prototype)
-                {
-                    IconSpecifier = RadialMenuIconSpecifier.With(recipePrototype),
-                    ToolTip = recipePrototype.Name,
-                };
+            {
+                Sprite = new SpriteSpecifier.EntityPrototype(recipePrototype.ID),
+                ToolTip = recipePrototype.Name,
+            };
             constructionButtons.Add(topLevelActionOption);
         }
-
 
         foreach (var categoryEntry in categoryEntries)
         {
@@ -74,18 +75,18 @@ public sealed class QuickConstructionBoundUserInterface : BoundUserInterface
             if (categoryButtons.TryGetValue(prototype, out var list))
                 continue;
 
-            list = ConvertToButtons(prototype.ConstructionEntries,prototype.CategoryEntries).ToList();
+            list = ConvertToButtons(prototype.ConstructionEntries, prototype.CategoryEntries).ToList();
             categoryButtons.Add(prototype, list);
         }
 
-        var models = new RadialMenuOptionBase[constructionButtons.Count + categoryEntries.Count];
+        var models = new RadialMenuOption[constructionButtons.Count + categoryEntries.Count];
         var modelIndex = 0;
 
         foreach (var (prototype, buttonList) in categoryButtons)
         {
             models[modelIndex] = new RadialMenuNestedLayerOption(buttonList)
             {
-                IconSpecifier = RadialMenuIconSpecifier.With(prototype.Icon),
+                Sprite = prototype.Icon,
                 ToolTip = Loc.GetString(prototype.Name),
             };
             modelIndex++;
@@ -111,10 +112,10 @@ public sealed class QuickConstructionBoundUserInterface : BoundUserInterface
         }
 
         _placementMan.BeginPlacing(new PlacementInformation
-            {
-                IsTile = false,
-                PlacementOption = proto.PlacementMode,
-            },
+        {
+            IsTile = false,
+            PlacementOption = proto.PlacementMode,
+        },
             new ConstructionPlacementHijack(constructionSystem, proto));
 
         _menu?.Close();
