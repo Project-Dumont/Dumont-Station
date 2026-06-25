@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseSignPowered
+  id: SignMining
+  name: surgery sign
+  description: A sign indicating the mining area.
+  components:
+  - type: Sprite
+    layers:
+    - state: off
+    - state: mining
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+
+- type: entity
+  parent: BaseSignPowered
+  id: SignBrigmed
+  name: surgery sign
+  description: A sign indicating the brig med area.
+  components:
+  - type: Sprite
+    layers:
+    - state: off
+    - state: brigmed
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]

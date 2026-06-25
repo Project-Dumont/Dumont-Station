@@ -388,3 +388,8 @@ ent-SignNanotrasen4 = placa da Nanotrasen 4
 ent-SignNanotrasen5 = placa da Nanotrasen 5
     .desc = Parte 5.
 
+ent-SignMining = placa de mineração
+    .desc = Uma placa que indica a area dos mineradores
+
+ent-SignBrigmed = placa de brigmed
+    .desc = Uma placa que indica a area de saúde da segurança
