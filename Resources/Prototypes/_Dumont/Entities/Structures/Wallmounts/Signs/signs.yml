@@ -27,3 +27,16 @@
     - state: brigmed
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
+
+- type: entity
+  parent: BaseSignPowered
+  id: SignGenetics
+  name: genetics sign
+  description: A sign indicating the genetics laboratory.
+  components:
+  - type: Sprite
+    layers:
+    - state: off
+    - state: genetics
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]

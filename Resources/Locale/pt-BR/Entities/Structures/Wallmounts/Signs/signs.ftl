@@ -393,3 +393,6 @@ ent-SignMining = placa de mineração
 
 ent-SignBrigmed = placa de brigmed
     .desc = Uma placa que indica a area de saúde da segurança
+
+ent-SignGenetics = placa de genética
+    .desc = Uma placa que indica o laboratório de genética
