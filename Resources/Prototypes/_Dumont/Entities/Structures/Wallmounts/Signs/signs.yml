@@ -5,7 +5,7 @@
 - type: entity
   parent: BaseSignPowered
   id: SignMining
-  name: surgery sign
+  name: mining sign
   description: A sign indicating the mining area.
   components:
   - type: Sprite
@@ -18,7 +18,7 @@
 - type: entity
   parent: BaseSignPowered
   id: SignBrigmed
-  name: surgery sign
+  name: brigmed sign
   description: A sign indicating the brig med area.
   components:
   - type: Sprite

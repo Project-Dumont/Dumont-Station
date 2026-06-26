@@ -1028,6 +1028,7 @@
   components:
   - type: Sprite
     layers: #Far Horizons start
+    - state: off
     - state: cans_sci
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"] #Far Horizons end
