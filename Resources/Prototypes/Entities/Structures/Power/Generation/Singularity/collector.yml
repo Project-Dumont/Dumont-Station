@@ -92,7 +92,7 @@
   - type: RadiationCollector
     chargeModifier: 8000 # Dumont edit - 15000 -> 8000
     proximityRange: 8.5 # Dumont
-    #requiredProximityTag: EletricRadiation # Dumont
+    requiredProximityTag: EletricRadiation # Dumont
     radiationReactiveGases:
       - reactantPrototype: Plasma
         powerGenerationEfficiency: 1
