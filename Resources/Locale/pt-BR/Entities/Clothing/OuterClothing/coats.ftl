@@ -28,6 +28,6 @@ ent-ClothingOuterCoatLabCmo = jaleco do médico chefe
 ent-ClothingOuterCoatPirate = casaco de pirata
     .desc = Arr.
 
-ent-ClothingOuterCoatWarden = jaqueta blindada do carcereiro
+ent-ClothingOuterCoatBlueWarden = jaqueta azul blindada do carcereiro
     .desc = Uma jaqueta utilitária e resistente, planejada para proteger o carcereiro de ameaças iminentes.
 

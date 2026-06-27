@@ -1,6 +1,7 @@
 <p align="center"><img alt="Space Station 14" src="https://raw.githubusercontent.com/Gaby-Station/Gaby-Station/refs/heads/gaby/Resources/Textures/Logo/logo.png"/></p>
 
-Essa é uma fork brasileira do [Goob Station](https://github.com/Goob-Station/Goob-Station), chamada Gaby Station, aqui contem todos os arquivos referentes ao servidor e client do jogo.
+Esse é um fork brasileiro do [Goob Station](https://github.com/Goob-Station/Goob-Station), chamado Dumont Station, aqui contem todos os arquivos referentes ao servidor e ao cliente do jogo.
+
 > [!NOTE]
 > Goob Station é uma fork de [Space Station 14](https://github.com/space-wizards/space-station-14).
 
@@ -10,21 +11,6 @@ Essa é uma fork brasileira do [Goob Station](https://github.com/Goob-Station/Go
 ## Links:
 
 [Servidor do Discord](https://discord.gg/9SUUREbMbq)
-
-<!--
-
-## Documentation/Wiki
-
-The Goob Station [docs site](https://docs.goobstation.com/) has documentation on GS14's content, engine, game design, and more. It also has lots of resources for new contributors to the project.
-
-## Contributing
-
-We are happy to accept contributions from anybody. Get in [Development Discord Server](https://discord.gg/zXk2cyhzPN) if you want to help. Feel free to check the [list of issues](https://github.com/Goob-Station/Goob-Station/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
-While following the [Space Station 14 contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) is not mandatory for Goob Station, we recommend reviewing them for best practices.
-
-We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
-
--->
 
 ## Compilando e Rodando:
 

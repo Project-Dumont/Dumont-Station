@@ -88,7 +88,7 @@
 - type: cargoProduct
   id: SecurityBarrier
   icon:
-    sprite: Objects/Specific/Security/barrier.rsi
+    sprite: _Gabystation/Objects/Specific/Security/barrier.rsi  # Gaby
     state: idle
   product: DeployableBarrier
   cost: 1000

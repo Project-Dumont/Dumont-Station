@@ -41,7 +41,6 @@ comms-console-menu-label-announcements = announcements:
 comms-console-menu-label-alerts = Alert level:
 comms-console-menu-label-others = Others:
 comms-console-menu-emergency-shuttle-button-tooltip = Calls or recalls the emergency shuttle. You can only recall when there's enough time left.
-comms-console-menu-time-remaining = Time remaining: {$time}
 
 # Dialog
 comms-console-menu-dialog-shuttle-tittle = Call Emergency Shuttle
@@ -53,8 +52,8 @@ comms-console-menu-dialog-centcom-message = Message:
 comms-console-permission-denied = Permission denied
 comms-console-shuttle-unavailable = Shuttle is currently unavailable
 comms-console-message-too-long = Message is too long
-comns-console-empty-input = Empty message
-comns-console-centcom-send = Sent message to the Central Command
+comms-console-empty-input = Empty message
+comms-console-centcom-send = Sent message to the Central Command
 
 # Placeholder values
 comms-console-announcement-sent-by = Sent by
@@ -69,3 +68,13 @@ comms-console-announcement-title-station-ai = Station AI
 # footer
 comms-console-menu-footer-left = root@nanoOs
 comms-console-menu-footer-right = v1.5
+
+# alerts
+comms-console-menu-disabled-alert = Impossible to set alert level right now
+comms-console-menu-declare-alert = Declare {$alertLevel} Alert
+comms-green-alert = Red
+comms-blue-alert = Blue
+comms-yellow-alert = Yellow
+comms-red-alert = Red
+comms-violet-alert = Violet
+comms-cyan-alert = Cyan

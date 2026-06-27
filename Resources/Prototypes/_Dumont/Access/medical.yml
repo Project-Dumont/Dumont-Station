@@ -1,0 +1,11 @@
+- type: accessLevel
+  id: Virology
+  name: id-card-access-level-virology
+
+- type: accessLevel
+  id: Psychology
+  name: id-card-access-level-psychology
+
+- type: accessLevel
+  id: Pharmacy
+  name: id-card-access-level-pharmacy

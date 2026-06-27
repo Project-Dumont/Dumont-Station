@@ -121,7 +121,7 @@
   description: A large duffel bag for holding extra security related goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/security.rsi
+    sprite: _Gabystation/Clothing/Back/Duffels/security.rsi # Gaby
 
 - type: entity
   parent: [ClothingBackpackDuffel, BaseSecurityContraband]
@@ -130,7 +130,7 @@
   description: A large duffel bag for holding extra medical related goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/brigmedic.rsi
+    sprite: _Gabystation/Clothing/Back/Duffels/brigmedic.rsi # Gaby
 
 - type: entity
   parent: ClothingBackpackDuffel

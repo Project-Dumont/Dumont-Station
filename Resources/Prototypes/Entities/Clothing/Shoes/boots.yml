@@ -268,9 +268,9 @@
   name: security winter boots
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/winterbootssec.rsi
+    sprite: _Gabystation/Clothing/Shoes/Boots/winterbootssec.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/winterbootssec.rsi
+    sprite: _Gabystation/Clothing/Shoes/Boots/winterbootssec.rsi # Gaby
   - type: ItemSlots # Goobstation
     slots:
       item:

@@ -639,9 +639,9 @@
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/brigmedic.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/Coats/brigmedic.rsi # Gaby
   - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/brigmedic.rsi
+    sprite: _Gabystation/Clothing/OuterClothing/Coats/brigmedic.rsi # Gaby
   - type: Armor
     coverage:
     - Chest

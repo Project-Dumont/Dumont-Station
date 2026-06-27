@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMedicalPDA
+  parent: BasePDA # Dumont edit - Geneticist -> Sci only
   id: GeneticistPDA
   name: geneticist PDA
   description: "You can see a bizarre pattern of DNA and RNA on it."

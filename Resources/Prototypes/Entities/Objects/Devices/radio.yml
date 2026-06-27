@@ -67,7 +67,7 @@
     channels:
     - Security
   - type: Sprite
-    sprite: Objects/Devices/securityhandy.rsi
+    sprite: _Gabystation/Objects/Devices/securityhandy.rsi # Gaby
   - type: Item
-    sprite: Objects/Devices/securityhandy.rsi
+    sprite: _Gabystation/Objects/Devices/securityhandy.rsi # Gaby
     heldPrefix: walkietalkie

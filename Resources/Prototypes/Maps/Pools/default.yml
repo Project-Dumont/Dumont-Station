@@ -85,7 +85,7 @@
   #- Reach # Goobstation, removed from map pool
   #- Train # Goobstation - all my friends hate train
   #- FlandHighPop # Dumont Station - não está sendo mantido
-  - OasisHighPop
+  #- OasisHighPop # Dumont Station - isso nem faz sentido.
   # Goob Station Maps
   #- Barratry # Dumont Station - Retirado do vote por doação de 1K de GC
   #- Kettle # Dumont Station - não está sendo mantido # Goobstation - Re-add kettle (before it was gemini!)
@@ -94,7 +94,9 @@
   #- Chloris # Dumont Station - não está sendo mantido # Goobstation - also Corvax because we love goidamaps
   # Dumont Station Maps
   - Gamma
-  #- Gax
   - Falcon
+  - Eclipse # Dumont Station - Harmony port
+  #- Gax
   #- Tram # Dumont Station - Ninguem gosta da Tram
   #- Glacier # Dumont Station - Retirado da rotação por 2k de GC
+  # End of Dumont Station Maps

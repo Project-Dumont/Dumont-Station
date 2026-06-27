@@ -104,7 +104,7 @@ entities:
             79: 0,-1
             80: 0,-3
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: Bot
           decals:
             86: -1,-2
@@ -168,7 +168,7 @@ entities:
             99: -4,-3
             133: -9,7
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: Box
           decals:
             84: 0,-6
@@ -293,17 +293,17 @@ entities:
             148: -11,-3
             149: -9,-2
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerNw
           decals:
             69: -2,-1
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerSe
           decals:
             71: 0,-4
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteCornerSw
           decals:
             72: -2,-4
@@ -328,7 +328,7 @@ entities:
           decals:
             109: -10,8
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineE
           decals:
             70: 0,-2
@@ -338,7 +338,7 @@ entities:
           decals:
             147: -10,-3
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: BrickTileWhiteLineS
           decals:
             73: -1,-4
@@ -450,7 +450,7 @@ entities:
           decals:
             151: -8,-2
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnCornerGreyscaleNE
           decals:
             78: 0,-1
@@ -500,12 +500,12 @@ entities:
             121: -9,10
             122: -9,9
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnLineGreyscaleE
           decals:
             77: 0,-3
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnLineGreyscaleN
           decals:
             76: -1,-1
@@ -536,7 +536,7 @@ entities:
           decals:
             114: -7,5
         - node:
-            color: '#DE3A3A96'
+            color: '#2b3447DE'
             id: WarnLineGreyscaleW
           decals:
             74: -2,-3

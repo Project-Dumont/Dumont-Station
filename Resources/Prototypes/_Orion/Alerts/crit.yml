@@ -1,0 +1,17 @@
+- type: alert
+  id: HumanSoftCrit
+  category: Health
+  icons:
+  - sprite: /Textures/Interface/Alerts/human_critical.rsi
+    state: critical
+  name: alerts-soft-crit-name
+  description: alerts-soft-crit-desc
+
+- type: alert
+  id: HumanHardCrit
+  category: Health
+  icons:
+  - sprite: /Textures/Interface/Alerts/human_critical.rsi
+    state: critical
+  name: alerts-hard-crit-name
+  description: alerts-hard-crit-desc

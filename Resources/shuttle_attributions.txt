@@ -1,0 +1,16 @@
+#Dumont Station Shuttles
+#These are located in /_Gabystation/Maps/Shuttles/
+
+- files: ["emergency_strain.yml"]
+  authors: fuinha7
+
+- files: ["cargo_falcon.yml"]
+  authors: CRISOOOOO
+
+#Harmony Shuttles
+
+- files: ["emergency_tottality.yml"]
+  authors: Lachryphage
+
+- files: ["cargo_eclipse.yml"]
+  authors: Lachryphage

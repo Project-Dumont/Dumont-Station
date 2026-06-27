@@ -26,6 +26,9 @@ ent-PlasmaCanister = cilindro de plasma
 ent-OxygenCanister = cilindro de oxigênio
     .desc = Um cilindro que pode conter qualquer tipo de gás. Esse é para conter oxigênio. Pode ser fixado a uma porta conectora atmosférica com uma chave inglesa.
 
+ent-NitrousOxideCanister = cilindro de óxido nitroso
+    .desc = Um cilindro que pode conter qualquer tipo de gás. Esse é para conter óxido nitroso. Pode ser fixado a uma porta conectora atmosférica com uma chave inglesa.
+
 ent-NitrogenCanister = cilindro de nitrogênio
     .desc = Um cilindro que pode conter qualquer tipo de gás. Esse é para conter nitrogênio. Pode ser fixado a uma porta conectora atmosférica com uma chave inglesa.
 

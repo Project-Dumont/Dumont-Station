@@ -75,7 +75,7 @@ namespace Content.Server._DV.Harpy
 
         private void OnMobStateChangedEvent(EntityUid uid, InstrumentComponent component, MobStateChangedEvent args)
         {
-            if (args.NewMobState is MobState.Critical or MobState.Dead)
+            if (args.NewMobState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Orion-Edit
                 CloseMidiUi(args.Target);
         }
 

@@ -9,6 +9,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Dumont.Hailer;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -26,4 +28,10 @@ public sealed partial class HailerComponent : Component
     // GabyStation - SecBorg Hailer
     [DataField, AutoNetworkedField]
     public bool IsBorg = false;
+
+    [DataField, AutoNetworkedField]
+    public List<ProtoId<HailerEntryPrototype>> Hails = new() { "Asshole", "Bash", "Bobby", "Compliance", "Dontmove", "Dredd", "Floor", "Freeze", "Halt" };
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan CooldownDuration = TimeSpan.FromSeconds(2);
 }

@@ -64,7 +64,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <LineEdit Name="GiftPlayer" PlaceHolder="{Loc gs-balanceui-gift-player}" ToolTip="{Loc gs-balanceui-gift-player-tooltip}" MinWidth="170" />
                     <LineEdit Name="GiftAmmount" PlaceHolder="{Loc gs-balanceui-gift-value}" ToolTip="{Loc gs-balanceui-gift-value-tooltip}" HorizontalExpand="True" MinWidth="50" />
                 </BoxContainer>
-                <Button Name="GiftButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorGaby" />
+                <Button Name="GiftButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorDumont" />
 
                 <BoxContainer VerticalExpand="True" />
 
@@ -76,7 +76,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         <LineEdit Name="AdminAddPlayer" PlaceHolder="{Loc gs-balanceui-admin-add-player}" MinWidth="170" />
                         <LineEdit Name="AdminAddAmmount" PlaceHolder="{Loc gs-balanceui-admin-add-value}" HorizontalExpand="True" MinWidth="50" />
                     </BoxContainer>
-                    <Button Name="AdminAddButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorGaby" />
+                    <Button Name="AdminAddButton" Text="{Loc gs-balanceui-confirm}" StyleClasses="ButtonColorDumont" />
                 </BoxContainer>
             </BoxContainer>
         </BoxContainer>

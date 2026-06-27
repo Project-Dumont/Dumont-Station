@@ -209,7 +209,7 @@
   equipment:
     head: ClothingHeadHatWarden
     mask: ClothingMaskGasSecurity
-    outerClothing: ClothingOuterCoatWarden
+    outerClothing: ClothingOuterCoatBlueWarden
     jumpsuit: ClothingUniformJumpsuitWarden
     neck: Dinkystar
     belt: ClothingBeltSecurity

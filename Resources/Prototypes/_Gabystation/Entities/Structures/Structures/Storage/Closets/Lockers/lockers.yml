@@ -4,7 +4,7 @@
   name: armario de geneticist
   components:
   - type: AccessReader
-    access: [["Medical"], ["Research"]]
+    access: [["Genetics"]] # Dumont edit
 
 - type: entity
   id: UniqueLockerGeneticistFilled
@@ -14,3 +14,4 @@
   - type: ConditionalSpawner
     prototypes:
     - UniqueMarkerGeneticist
+

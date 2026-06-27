@@ -1,0 +1,57 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: hailerEntry
+  id: Asshole
+  sound: /Audio/_Goobstation/Hailer/asshole.ogg
+  message: hail-0
+
+- type: hailerEntry
+  id: Bash
+  sound: /Audio/_Goobstation/Hailer/bash.ogg
+  message: hail-1
+
+- type: hailerEntry
+  id: Bobby
+  sound: /Audio/_Goobstation/Hailer/bobby.ogg
+  message: hail-2
+
+- type: hailerEntry
+  id: Compliance
+  sound: /Audio/_Goobstation/Hailer/compliance.ogg
+  message: hail-3
+
+- type: hailerEntry
+  id: Dontmove
+  sound: /Audio/_Goobstation/Hailer/dontmove.ogg
+  message: hail-4
+
+- type: hailerEntry
+  id: Dredd
+  sound: /Audio/_Goobstation/Hailer/dredd.ogg
+  message: hail-5
+
+- type: hailerEntry
+  id: Floor
+  sound: /Audio/_Goobstation/Hailer/floor.ogg
+  message: hail-6
+
+- type: hailerEntry
+  id: Freeze
+  sound: /Audio/_Goobstation/Hailer/freeze.ogg
+  message: hail-7
+
+- type: hailerEntry
+  id: Halt
+  sound: /Audio/_Goobstation/Hailer/halt.ogg
+  message: hail-8
+
+- type: hailerEntry
+  id: DeathToNanoTrasen
+  sound:
+    path: /Audio/_Starlight/Effects/nano_death.ogg
+    params:
+      variation: 0.09
+      pitch: 0.5
+  message: hail-death-to-nt

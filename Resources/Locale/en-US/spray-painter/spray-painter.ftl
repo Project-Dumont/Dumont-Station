@@ -76,7 +76,24 @@ spray-painter-style-airlockstandard-salvage = Salvage
 spray-painter-style-airlockstandard-science = Science
 spray-painter-style-airlockstandard-security = Security
 spray-painter-style-airlockstandard-virology = Virology
+# Dumont
+spray-painter-style-airlockstandard-janitor = Janitor
+spray-painter-style-airlockstandard-robotics = Robotics
+spray-painter-style-airlockstandard-brigmedic = BrigMedic
+spray-painter-style-airlockstandard-psychology = Psychology
+spray-painter-style-airlockstandard-pharmacy = Pharmacy
+spray-painter-style-airlockstandard-genetics = Genetics
+spray-painter-style-airlockstandard-mail = Mail
+spray-painter-style-airlockstandard-lavaland = Lavaland
+spray-painter-style-airlockstandard-mining = Mining
+spray-painter-style-airlockstandard-medsci = MedSci
+spray-painter-style-airlockstandard-salvmine = SalvMine
+# /Dumont
+# Orion
+spray-painter-style-airlockstandard-bitrunner = Bitrunner
+# /Orion
 
+# Glass
 spray-painter-style-airlockglass-atmospherics = Atmospherics
 spray-painter-style-airlockglass-basic = Basic
 spray-painter-style-airlockglass-cargo = Cargo
@@ -90,6 +107,22 @@ spray-painter-style-airlockglass-salvage = Salvage
 spray-painter-style-airlockglass-science = Science
 spray-painter-style-airlockglass-security = Security
 spray-painter-style-airlockglass-virology = Virology
+# Dumont
+spray-painter-style-airlockglass-janitor = Janitor
+spray-painter-style-airlockglass-robotics = Robotics
+spray-painter-style-airlockglass-brigmedic = BrigMedic
+spray-painter-style-airlockglass-psychology = Psychology
+spray-painter-style-airlockglass-pharmacy = Pharmacy
+spray-painter-style-airlockglass-genetics = Genetics
+spray-painter-style-airlockglass-mail = Mail
+spray-painter-style-airlockglass-lavaland = Retro
+spray-painter-style-airlockglass-mining = Mining
+spray-painter-style-airlockglass-medsci = MedSci
+spray-painter-style-airlockglass-salvmine = SalvMine
+# /Dumont
+# Orion
+spray-painter-style-airlockglass-bitrunner = Bitrunner
+# /Orion
 
 # Lockers
 spray-painter-style-locker-atmospherics = Atmospherics

@@ -113,6 +113,7 @@
   - Quartermaster
   - SalvageSpecialist
   - ShaftMiner # Lavaland Change
+  - Bitrunner # Orion
 
 - type: department
   id: Civilian
@@ -142,6 +143,7 @@
   - Zookeeper
   - ServiceWorker
   - PartyMaker # event-restricted, Goobstation
+  - PhoneMerchant # Trauma
 
 - type: department
   id: CentralCommand
@@ -237,7 +239,7 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
-  - Geneticist # Corvax-Wega-Genetics
+  # - Geneticist # Corvax-Wega-Genetics # Dumont - Geneticist -> Sci only
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
@@ -278,6 +280,7 @@
   - Scientist
   - ResearchAssistant
   - Roboticist #Goob
+  - Geneticist # Dumont - Geneticist -> Sci only
 
 - type: department
   id: Silicon
