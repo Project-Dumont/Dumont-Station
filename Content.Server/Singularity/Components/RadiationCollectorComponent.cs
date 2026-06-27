@@ -35,6 +35,8 @@
 
 using Content.Server.Singularity.EntitySystems;
 using Content.Shared.Atmos;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Singularity.Components;
 
@@ -89,7 +91,7 @@ public sealed partial class RadiationCollectorComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public string? RequiredProximityTag;
+    public ProtoId<TagPrototype> RequiredProximityTag;
 }
 
 /// <summary>

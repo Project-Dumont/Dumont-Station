@@ -330,7 +330,7 @@ public sealed class RadiationCollectorSystem : EntitySystem
 
     private bool HasNearbyTarget(EntityUid uid, RadiationCollectorComponent component) // Dumont - Check for nearby entity with desired tag.
     {
-        if (string.IsNullOrEmpty(component.RequiredProximityTag)) // If no tag is set, it ignores it and generates power.
+        if (component.RequiredProximityTag is null) // If no tag is set, it ignores it and generates power.
             return true;
 
         var coords = Transform(uid).Coordinates;
@@ -339,11 +339,8 @@ public sealed class RadiationCollectorSystem : EntitySystem
 
         foreach (var inRange in entities)
         {
-            if (component.RequiredProximityTag is not null)
-            {
-                if (_tag.HasTag(inRange.Owner, component.RequiredProximityTag))
-                    return true;
-            }
+            if (_tag.HasTag(inRange.Owner, component.RequiredProximityTag))
+                return true;
         }
 
         return false;
