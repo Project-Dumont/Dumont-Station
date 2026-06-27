@@ -3239,3 +3239,35 @@ Entries:
       message: Alarmes de ar novamente requerem acesso de atmosfera.
   id: 388
   time: '2026-06-26T02:35:41.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Corrigido bug do fabricador nuclear não podendo ser linkado no silo.
+    - type: Fix
+      message: >-
+        Agora a placa do computador de monitoramento do reator nuclear pode ser
+        fabricada.
+  id: 389
+  time: '2026-06-20T20:04:02.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Tweak
+      message: Alterado sprites da inspector, Kahemmer e energy balls..
+  id: 390
+  time: '2026-06-20T20:27:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Adiciona pré-crítico, que permite se movimentar e sussurrar enquanto
+        estiver caído.
+  id: 391
+  time: '2026-06-21T14:20:38.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: portado os sprites de algumas placa do far horizon.
+    - type: Add
+      message: adicionado placas de mineração, brigmed e genética com o mesmo estilo
+  id: 392
+  time: '2026-06-26T18:31:36.0000000+00:00'
