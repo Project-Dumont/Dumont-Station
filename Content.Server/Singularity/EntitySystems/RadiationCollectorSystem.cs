@@ -339,12 +339,13 @@ public sealed class RadiationCollectorSystem : EntitySystem
 
         foreach (var inRange in entities)
         {
-            if (component.RequiredProximityTag is not { } tag) // intellisense screams without this, and why not double proof?
+            // If a required tag is configured, check entities in range for that tag.
+            if (component.RequiredProximityTag is { } tag)
             {
-                if (_tag.HasTag(inRange.Owner, component.RequiredProximityTag))
+                if (_tag.HasTag(inRange.Owner, tag))
                     return true;
             }
-        }
+}
 
         return false;
     }
