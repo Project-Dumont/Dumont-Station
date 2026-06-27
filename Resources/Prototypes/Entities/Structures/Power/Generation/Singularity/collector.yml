@@ -90,7 +90,9 @@
     sprite: Structures/Power/Generation/Singularity/collector.rsi
     state: static
   - type: RadiationCollector
-    chargeModifier: 15000
+    chargeModifier: 10000 # Dumont edit - 15000 -> 10000
+    proximityRange: 3.0 # Dumont
+    requiredProximityTag: EletricRadiation # Dumont
     radiationReactiveGases:
       - reactantPrototype: Plasma
         powerGenerationEfficiency: 1

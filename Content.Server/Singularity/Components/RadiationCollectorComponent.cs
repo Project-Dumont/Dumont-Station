@@ -75,6 +75,21 @@ public sealed partial class RadiationCollectorComponent : Component
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public List<RadiationReactiveGas>? RadiationReactiveGases;
+
+    /// <summary>
+    ///     Radius for entity search.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float ProximityRange = 3f;
+
+    /// <summary>
+    ///     Tag an entity in range needs to enable power generation.
+    ///     Empty = No requirement.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string? RequiredProximityTag;
 }
 
 /// <summary>

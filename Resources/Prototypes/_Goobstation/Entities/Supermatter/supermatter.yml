@@ -94,3 +94,5 @@
       - TauCetiBasic
       understands:
       - TauCetiBasic
+    - type: tags
+        - EletricRadiation # Dumont
