@@ -1898,7 +1898,7 @@
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader
-    access: [["Mining"]] # Dumont edit
+    access: [["Salvage"], ["Mining"]] # Dumont edit
   - type: GuideHelp
     guides:
     - Salvage
