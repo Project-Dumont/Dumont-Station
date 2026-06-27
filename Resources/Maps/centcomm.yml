@@ -1289,7 +1289,7 @@ entities:
             557: 10,15
             558: 8,15
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: HalfTileOverlayGreyscale
           decals:
             1800: 9,27
@@ -1367,7 +1367,7 @@ entities:
             869: 30,-19
             870: 34,-19
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: HalfTileOverlayGreyscale180
           decals:
             1794: 5,21
@@ -1450,7 +1450,7 @@ entities:
             893: 19,-16
             894: 19,-14
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: HalfTileOverlayGreyscale270
           decals:
             1790: 8,23
@@ -1530,7 +1530,7 @@ entities:
             839: 27,-25
             846: 21,-21
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: HalfTileOverlayGreyscale90
           decals:
             1786: 12,24
@@ -1613,7 +1613,7 @@ entities:
             872: 31,-16
             876: 19,-25
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: QuarterTileOverlayGreyscale
           decals:
             1825: 8,22
@@ -1686,7 +1686,7 @@ entities:
             877: 21,-27
             928: -19,-30
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: QuarterTileOverlayGreyscale180
           decals:
             1827: 12,26
@@ -1734,7 +1734,7 @@ entities:
             841: 27,-27
             878: 19,-27
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: QuarterTileOverlayGreyscale270
           decals:
             1826: 11,21
@@ -1820,7 +1820,7 @@ entities:
             1625: -13,30
             1655: -12,16
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             1780: 4,22
@@ -1846,7 +1846,7 @@ entities:
             1621: -10,24
             1657: -12,20
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             1785: 16,26
@@ -1882,7 +1882,7 @@ entities:
             1622: -13,20
             1623: -12,15
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             1818: 13,29
@@ -1912,7 +1912,7 @@ entities:
             1624: -10,30
             1656: -7,16
         - node:
-            color: '#FF5C5C7F'
+            color: '#3f4c69FF'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             1783: 16,33

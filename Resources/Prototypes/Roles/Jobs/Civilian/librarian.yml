@@ -74,6 +74,7 @@
   goobcoins: 10 #Goob content
   access:
   - Service
+  - Library # Dumont
   - Maintenance
   alternateTitles:
   - LibrarianTitleWriter

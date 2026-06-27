@@ -184,6 +184,7 @@
   - type: StealTarget
     stealGroup: IDCard
   - type: MiningPoints # DeltaV
+  - type: BitrunningPoints # Orion
   - type: NanoChatCard # DeltaV
   - type: NanoBankCard # Gabystation
   # Goobstation edit start

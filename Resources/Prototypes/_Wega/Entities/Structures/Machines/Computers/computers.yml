@@ -45,7 +45,7 @@
     ports:
       - MedicalScannerSender
   - type: AccessReader
-    access: [["Research"]]
+    access: [["Genetics"]] # Dumont edit
   - type: ContainerContainer
     containers:
       diskSlot: !type:ContainerSlot

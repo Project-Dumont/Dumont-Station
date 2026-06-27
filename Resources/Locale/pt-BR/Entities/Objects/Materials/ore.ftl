@@ -46,3 +46,9 @@ ent-UraniumOre1 = minério de urânio
     .desc = Um pedaço de um minério não refinado.
     .suffix = Single
 
+ent-MaterialBSCrystal1Unprocessed = cristal bluespace bruto
+    .desc = Um material bruto.
+    .suffix = Single
+
+ent-MaterialBSCrystalUnprocessed = cristal bluespace bruto
+    .desc = Um material bruto.

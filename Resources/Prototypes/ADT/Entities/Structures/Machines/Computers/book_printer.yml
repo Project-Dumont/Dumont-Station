@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Оригинал данного файла был сделан @temporaldarkness (discord). Прототип был взят с https://github.com/ss14-ganimed/ENT14-Master.
 
 - type: entity
@@ -102,7 +106,7 @@
     key: enum.BookPrinterUiKey.Key
   - type: Appearance
   - type: AccessReader
-    access: [["Service"]]
+    access: [["Library"]]
   - type: AmbientSound
     enabled: false
     volume: 0
