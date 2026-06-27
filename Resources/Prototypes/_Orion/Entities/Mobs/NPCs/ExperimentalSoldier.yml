@@ -25,3 +25,6 @@
   components:
   - type: Loadout
     prototypes: [ ExperimentalSoldierGear ]
+  - type: InnateTool
+    tools:
+    - id: WeaponLightMachineGunL6CInfinite

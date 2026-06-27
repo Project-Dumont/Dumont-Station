@@ -9,8 +9,6 @@
     outerClothing: ClothingOuterHardsuitCybersunDreadnoughtexperimental
     head: ClothingHeadHelmetHardsuitDreadnought
     id: HighCommandPDA
-  inhand:
-  - WeaponLightMachineGunL6CInfinite
 
 - type: startingGear
   id: NukeopsSoldierGear
