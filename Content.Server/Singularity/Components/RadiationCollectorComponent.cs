@@ -91,7 +91,7 @@ public sealed partial class RadiationCollectorComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<TagPrototype> RequiredProximityTag;
+    public ProtoId<TagPrototype>? RequiredProximityTag;
 }
 
 /// <summary>
