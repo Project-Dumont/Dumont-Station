@@ -34,7 +34,7 @@
 
 - type: entity
   parent: BaseWeaponShotgunAny
-  id: BaseWeaponShotgun
+  id: BaseWeaponShotgun9Letter
   abstract: true
   components:
   - type: ContainerContainer

@@ -275,7 +275,7 @@
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    proto: PelletShotgunImprovised
+    proto: PelletShotgunImprovisedSpread
   - type: SpentAmmoVisuals
     state: "improvised"
 
