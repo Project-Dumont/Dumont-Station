@@ -27,7 +27,6 @@
       path: /Audio/_FarHorizons/Items/Weapons/Mark1/mark1.ogg
       params:
         variation: 0.246
-    pump: true
     fireRate: .75
   - type: Sprite
     sprite: /Textures/_FarHorizons/Objects/Weapons/Guns/Snipers/mark1_rifle.rsi
@@ -76,7 +75,6 @@
       path: /Audio/_FarHorizons/Items/Weapons/Mark1/mark1.ogg
       params:
         variation: 0.246
-    pump: true
     fireRate: .40
   - type: Sprite
     sprite: /Textures/_FarHorizons/Objects/Weapons/Guns/Snipers/mark1_sniper_rifle.rsi
@@ -129,7 +127,6 @@
       path: /Audio/_FarHorizons/Items/Weapons/Mark1/mark1.ogg
       params:
         variation: 0.246
-    pump: true
     fireRate: .75
   - type: Sprite
     sprite: /Textures/_FarHorizons/Objects/Weapons/Guns/Snipers/markalibur1_rifle.rsi

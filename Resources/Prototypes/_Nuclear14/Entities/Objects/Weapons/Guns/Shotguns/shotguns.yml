@@ -35,7 +35,6 @@
   - type: StaticPrice
     price: 10
   - type: Wieldable
-    wieldedSpeedModifier: 0.82
 
 - type: entity
   name: sawed-off shotgun

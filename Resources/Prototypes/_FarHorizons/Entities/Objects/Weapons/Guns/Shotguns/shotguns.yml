@@ -70,7 +70,6 @@
     sprite: _FarHorizons/Objects/Weapons/Guns/Shotguns/four_icon_59x.rsi
   - type: GunRequiresWield
   - type: Gun
-    spread: 15
     fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
