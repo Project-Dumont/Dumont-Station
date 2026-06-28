@@ -28,3 +28,6 @@
 
 - type: Tag
   id: ShellShotgunImprovised
+
+- type: Tag
+  id: ShotgunSentinel

@@ -11,8 +11,6 @@
       types:
         Slash: 28
         Piercing: 10
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Melee/machete.rsi
     quickEquip: false
@@ -116,7 +114,7 @@
     price: 50
   - type: SurgeryTool
     startSound:
-      path: /Audio/Medical/Surgery/saw.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
   - type: BoneSaw
     speed: 0.75
   - type: Scalpel

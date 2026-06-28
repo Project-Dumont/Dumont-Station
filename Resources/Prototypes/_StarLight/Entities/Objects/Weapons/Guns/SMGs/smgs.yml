@@ -130,9 +130,6 @@
   - type: Tag
     tags:
       - MagazineSMGImprovised
-  - type: Construction
-    graph: ImprovisedMagazinePistolSubMachineGunGraph
-    node: shell
 
 - type: entity
   parent: BaseItem
@@ -171,9 +168,6 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
-  - type: Construction
-    graph: ImprovisedMagazineBoxGraph
-    node: shell
   - type: Tag
     tags:
     - ImprovisedAmmoBox
