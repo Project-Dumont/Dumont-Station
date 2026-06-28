@@ -1,0 +1,549 @@
+# Reações
+- type: nanoChatEmoji
+  id: alegria
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/joy.png
+
+- type: nanoChatEmoji
+  id: pensando
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/thinking.png
+
+- type: nanoChatEmoji
+  id: corado
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/flushed.png
+
+- type: nanoChatEmoji
+  id: pensativo
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pensive.png
+
+- type: nanoChatEmoji
+  id: irritado
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/angry.png
+
+- type: nanoChatEmoji
+  id: doente
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/sick.png
+
+- type: nanoChatEmoji
+  id: gostei
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/up.png
+
+- type: nanoChatEmoji
+  id: desgostei
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/down.png
+
+- type: nanoChatEmoji
+  id: palmas
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/clap.png
+
+- type: nanoChatEmoji
+  id: festa
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/tada.png
+
+- type: nanoChatEmoji
+  id: olhando
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/eyes.png
+
+- type: nanoChatEmoji
+  id: superlegal
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/supercool.png
+
+- type: nanoChatEmoji
+  id: sorrisomaroto
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/smork.png
+
+- type: nanoChatEmoji
+  id: barrigudo
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pregman.png
+
+- type: nanoChatEmoji
+  id: feroz
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/gnarg.png
+
+- type: nanoChatEmoji
+  id: caveira
+  category: Reacoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/skull.png
+
+# Símbolos
+- type: nanoChatEmoji
+  id: sim
+  category: Simbolos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/yes.png
+
+- type: nanoChatEmoji
+  id: nao
+  category: Simbolos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/no.png
+
+- type: nanoChatEmoji
+  id: u
+  category: Simbolos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/u.png
+
+- type: nanoChatEmoji
+  id: q
+  category: Simbolos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/q.png
+
+- type: nanoChatEmoji
+  id: exclamacao
+  category: Simbolos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/exclamation.png
+
+- type: nanoChatEmoji
+  id: coracao
+  category: Simbolos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/heart.png
+
+- type: nanoChatEmoji
+  id: sindicato_dos_trabalhadores
+  category: Default
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/syndie.png
+
+- type: nanoChatEmoji
+  id: viva_la_nanotrasen
+  category: Default
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/viva.png
+
+# Ações
+- type: nanoChatEmoji
+  id: ajudar
+  category: Acoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/help.png
+
+- type: nanoChatEmoji
+  id: desarmar
+  category: Acoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/disarm.png
+
+- type: nanoChatEmoji
+  id: agarrar
+  category: Acoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/grab.png
+
+- type: nanoChatEmoji
+  id: machucar
+  category: Acoes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/harm.png
+
+# Memes
+- type: nanoChatEmoji
+  id: fpalm
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/fpalm.png
+
+- type: nanoChatEmoji
+  id: xdd
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/xdd.png
+
+- type: nanoChatEmoji
+  id: kekw
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/kekw.png
+
+- type: nanoChatEmoji
+  id: clueless
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/clueless.png
+
+- type: nanoChatEmoji
+  id: trollface
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/troll.png
+
+- type: nanoChatEmoji
+  id: taa
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/taa.png
+
+- type: nanoChatEmoji
+  id: mowzers
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/mowzers.png
+
+- type: nanoChatEmoji
+  id: gatto
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/gatto.png
+
+- type: nanoChatEmoji
+  id: hamter
+  category: Memes
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/hamter.png
+
+# Cabeças
+- type: nanoChatEmoji
+  id: moff
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/moff.png
+
+- type: nanoChatEmoji
+  id: rainhonk
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/rainhonk.png
+
+- type: nanoChatEmoji
+  id: palhaco
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/clown.png
+
+- type: nanoChatEmoji
+  id: mimo
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/mime.png
+
+- type: nanoChatEmoji
+  id: tider
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/tider.png
+
+- type: nanoChatEmoji
+  id: plasmeme
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/plasmeme.png
+
+- type: nanoChatEmoji
+  id: macaco
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/monkey.png
+
+- type: nanoChatEmoji
+  id: xeno
+  category: Cabecas
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/xeno.png
+
+# Pélucias
+- type: nanoChatEmoji
+  id: mago
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/wiz.png
+
+- type: nanoChatEmoji
+  id: nuke
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/nuke.png
+
+- type: nanoChatEmoji
+  id: rainha
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/queen.png
+
+- type: nanoChatEmoji
+  id: lagarto
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/plizard.png
+
+- type: nanoChatEmoji
+  id: mariposa
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/moth.png
+
+- type: nanoChatEmoji
+  id: slime
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pslime.png
+
+- type: nanoChatEmoji
+  id: gondola
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/gondy.png
+
+- type: nanoChatEmoji
+  id: pintinho
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/chick.png
+
+- type: nanoChatEmoji
+  id: pato
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/duck.png
+
+- type: nanoChatEmoji
+  id: jerry
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/jerry.png
+
+- type: nanoChatEmoji
+  id: cobra
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/snek.png
+
+- type: nanoChatEmoji
+  id: larva
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/larva.png
+
+- type: nanoChatEmoji
+  id: cogumelo
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/shroom.png
+
+- type: nanoChatEmoji
+  id: nya
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/nya.png
+
+- type: nanoChatEmoji
+  id: carpa
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/carp.png
+
+- type: nanoChatEmoji
+  id: ian
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/ian.png
+
+- type: nanoChatEmoji
+  id: vox
+  category: Plushies
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/vox.png
+
+# Departamentos
+- type: nanoChatEmoji
+  id: eng
+  category: Departamentos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/eng.png
+
+- type: nanoChatEmoji
+  id: med
+  category: Departamentos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/med.png
+
+- type: nanoChatEmoji
+  id: sci
+  category: Departamentos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/sci.png
+
+- type: nanoChatEmoji
+  id: sup
+  category: Departamentos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/sup.png
+
+- type: nanoChatEmoji
+  id: sec
+  category: Departamentos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/sec.png
+
+# Comida
+- type: nanoChatEmoji
+  id: pipoca
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/popcorn.png
+
+- type: nanoChatEmoji
+  id: hamburguer
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/burger.png
+
+- type: nanoChatEmoji
+  id: rosquinha
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/donut.png
+
+- type: nanoChatEmoji
+  id: banana
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/peel.png
+
+- type: nanoChatEmoji
+  id: berinjela
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/eggplant.png
+
+- type: nanoChatEmoji
+  id: cha
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/tea.png
+
+- type: nanoChatEmoji
+  id: carne
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/meat.png
+
+- type: nanoChatEmoji
+  id: pizza
+  category: Comida
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pizza.png
+
+# Robôs
+- type: nanoChatEmoji
+  id: ia
+  category: Robos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/ai.png
+
+- type: nanoChatEmoji
+  id: limpabot
+  category: Robos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/clean.png
+
+- type: nanoChatEmoji
+  id: pisobot
+  category: Robos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/tile.png
+
+- type: nanoChatEmoji
+  id: medbot
+  category: Robos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/medbot.png
+
+- type: nanoChatEmoji
+  id: securitron
+  category: Robos
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/law.png
+
+# Outros
+- type: nanoChatEmoji
+  id: ligado
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/on.png
+
+- type: nanoChatEmoji
+  id: desligado
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/off.png
+
+- type: nanoChatEmoji
+  id: revolver
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/revolver.png
+
+- type: nanoChatEmoji
+  id: d20
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/d20.png
+
+- type: nanoChatEmoji
+  id: espada_de_brinquedo
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/esword.png
+
+- type: nanoChatEmoji
+  id: maleta
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/toolbox.png
+
+- type: nanoChatEmoji
+  id: disco
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/disk.png
+
+- type: nanoChatEmoji
+  id: singulo
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/singulo.png
+
+- type: nanoChatEmoji
+  id: oculos
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/shades.png
+
+- type: nanoChatEmoji
+  id: cerebro
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/brain.png
+
+- type: nanoChatEmoji
+  id: fogo
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/burn.png
+
+- type: nanoChatEmoji
+  id: buzina
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/honk.png
+
+- type: nanoChatEmoji
+  id: blob
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/blob.png
+
+- type: nanoChatEmoji
+  id: baseado
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/rollie.png
+
+- type: nanoChatEmoji
+  id: medalha
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/medal.png
+
+- type: nanoChatEmoji
+  id: dinheiro
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/cash.png
+
+- type: nanoChatEmoji
+  id: trofeu
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/trophy.png
+
+- type: nanoChatEmoji
+  id: sm
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/sm.png
+
+- type: nanoChatEmoji
+  id: cachimbo
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/unepipe.png
+
+- type: nanoChatEmoji
+  id: jornal
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/news.png
+
+- type: nanoChatEmoji
+  id: vaso_sanitario
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/flush.png
+
+- type: nanoChatEmoji
+  id: livro
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/book.png
+
+- type: nanoChatEmoji
+  id: biblia
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/bible.png
+
+- type: nanoChatEmoji
+  id: algemas
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/cuffs.png
+
+- type: nanoChatEmoji
+  id: mata_moscas
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/swatter.png
+
+- type: nanoChatEmoji
+  id: taser
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/taser.png
+
+- type: nanoChatEmoji
+  id: planta
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/plant.png
+
+- type: nanoChatEmoji
+  id: apc
+  category: Misc
+  sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/apc.png
