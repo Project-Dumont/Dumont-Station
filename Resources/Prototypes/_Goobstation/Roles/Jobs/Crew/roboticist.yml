@@ -16,6 +16,8 @@
   - Research
   - Maintenance
   - Robotics
+  extendedAccess:
+  - Genetics # Dumont
 
 - type: startingGear
   id: RoboticistGear

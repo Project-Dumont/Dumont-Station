@@ -19,6 +19,7 @@
   access:
   - Medical
   - Maintenance
+  - Virology # Dumont
   extendedAccess:
   - Chemistry
   special:
