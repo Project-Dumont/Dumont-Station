@@ -36,3 +36,5 @@
     receiveFrequencyId: VirologyServer
   - type: WirelessNetworkConnection
     range: 1200
+  - type: AccessReader
+    access: [["Virology"]] # Dumont edit

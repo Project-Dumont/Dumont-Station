@@ -161,7 +161,9 @@
   salary: 75 # Gaby content
   access:
   - Cargo
-  - Salvage
+  - Salvage # Dumont - Exploraion
+  - Mail # Dumont
+  - Mining # Dumont
   - Quartermaster
   - Maintenance
   - External
@@ -169,6 +171,7 @@
   - Brig
   - Cryogenics
   - External # goobstation
+  - Bitrun # Orion
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

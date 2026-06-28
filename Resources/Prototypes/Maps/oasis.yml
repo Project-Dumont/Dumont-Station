@@ -94,8 +94,8 @@
   id: Oasis
   mapName: 'Oasis'
   mapPath: /Maps/_Gabystation/oasis.yml # Dumont
-  minPlayers: 50 # Goobstation return minPlayers requirement for maps
-  maxPlayers: 85 # Goobstation - Limit mappool to highpop versions of maps only
+  minPlayers: 35 # Dumont Station - não faz nem sentido esse mapa ser highpop
+  maxPlayers: 65 # Goobstation - Limit mappool to highpop versions of maps only
   stations:
     Oasis:
       stationProto: StandardNanotrasenStation
@@ -114,7 +114,7 @@
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
+            AdministrativeAssistant: [ 1, 1 ] # Dumont Station - admin assist
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
@@ -138,11 +138,13 @@
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 4 ]
             Psychologist: [ 1, 1 ]
-            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
+            Virologist: [ 2, 2 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
             ResearchAssistant: [ 6, 6 ]
+            Roboticist: [ 2, 2 ]
+            Geneticist: [ 2, 2 ] # Corvax-Wega-Genetics
             Borg: [ 2, 2 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -151,13 +153,14 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 3, 3 ]
-            PermaPrisoner: [ 3, 3 ] # Gaby
-            PrisonGuard: [ 1, 1 ] # Gaby
+            PermaPrisoner: [ 3, 3 ] # Dumont Station
+            PrisonGuard: [ 2, 2 ] # Dumont Station
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             ShaftMiner: [ 3, 3 ]
+            Bitrunner: [ 3, 3 ]
             CargoTechnician: [ 4, 4 ]
             #civilian
             Passenger: [ -1, -1 ]

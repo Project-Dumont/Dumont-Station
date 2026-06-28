@@ -1,6 +1,6 @@
 - type: entity
   id: NuclearFabricator
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseSiloUtilizer]
   name: nuclear fabricator
   description: It makes nuclear reactor parts.
   components:

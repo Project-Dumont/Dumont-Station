@@ -72,6 +72,8 @@
         running:
           True: { visible: true }
           False: { visible: false }
+  - type: AccessReader
+    access: [["Virology"]] # Dumont edit
   # </Goobstation>
 
 - type: entity

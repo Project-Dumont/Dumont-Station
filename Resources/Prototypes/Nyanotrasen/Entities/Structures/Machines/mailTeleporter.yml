@@ -65,3 +65,5 @@
   - type: PowerSwitch
   - type: Machine
     board: MailTeleporterMachineCircuitboard
+  - type: AccessReader
+    access: [["Mail"]] # Dumont edit

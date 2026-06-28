@@ -1,0 +1,211 @@
+# Normal
+
+# Med
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyPsychology
+  suffix: Psychology
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/psychology.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyPharmacy
+  suffix: Pharmacy
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/pharmacy.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyGenetics
+  suffix: Genetics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/genetics.rsi
+    state: "assembly"
+
+# Cargo
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMail
+  suffix: Mail
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/mail.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMiningDumont
+  suffix: Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/miner.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySalvMine
+  suffix: Salvage/Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/salvmine.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBitrunner
+  suffix: Bitrunner
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/bitrunning.rsi
+    state: "assembly"
+
+# Sec
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBrigMedic
+  suffix: BrigMedic
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/brigmedic.rsi
+    state: "assembly"
+
+# Sci
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyRobotics
+  suffix: Robotics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/robotics.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMedicalScience
+  suffix: Medical/Science
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
+    state: "assembly"
+
+# Service
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyLibrary
+  suffix: Library
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    state: "assembly"
+
+# Glass
+
+# Med
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyPsychologyGlass
+  suffix: Psychology, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/psychology.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyPharmacyGlass
+  suffix: Pharmacy, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/pharmacy.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyGeneticsGlass
+  suffix: Genetics, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/genetics.rsi
+    state: "assembly"
+
+# Cargo
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMailGlass
+  suffix: Mail, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/mail.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMiningDumontGlass
+  suffix: Mining, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/miner.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySalvMineGlass
+  suffix: Salvage/Mining, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/salvmine.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBitrunnerGlass
+  suffix: Bitrunner, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/bitrunning.rsi
+    state: "assembly"
+
+# Sec
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBrigMedicGlass
+  suffix: BrigMedic, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/brigmedic.rsi
+    state: "assembly"
+
+# Sci
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyRoboticsGlass
+  suffix: Robotics, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/robotics.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMedicalScienceGlass
+  suffix: Medical/Science, Glass
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/medsci.rsi
+    state: "assembly"
+
+# Service
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyLibraryGlass
+  suffix: Library, Glass
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    state: "assembly"

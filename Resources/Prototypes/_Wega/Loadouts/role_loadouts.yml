@@ -1,16 +1,16 @@
 - type: roleLoadout
-  id: JobGeneticist
+  id: JobGeneticist # Dumont edit - Geneticist -> Sci only
   groups:
   - GroupTankHarness
   - GeneticsJumpsuit
-  - MedicalGloves
+  - ScientistGloves
   - GeneticsBackpack
   - GeneticsOuterClothing
-  - MedicalShoes
+  - ScientistShoes
   - Glasses
-  - SurvivalMedical
+  - Survival
   - Trinkets
-  - GroupSpeciesBreathToolMedical
+  - GroupSpeciesBreathTool
   - Animals
   - CivilianJumpsuit
   - CivilianBackpack

@@ -132,5 +132,5 @@
   - CryoPodMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - StasisOperatingTableCircuitboard # Corvax-Goob-StasisOperatingTable
-  - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics
-  - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics
+  # - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics # Dumont -Geneticist -> Sci only
+  # - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics # Dumont -Geneticist -> Sci only

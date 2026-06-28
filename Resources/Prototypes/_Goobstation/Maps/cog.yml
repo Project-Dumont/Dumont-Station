@@ -26,6 +26,7 @@
             HeadOfPersonnel: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ] # Dumont Station - admin assist
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
@@ -49,10 +50,11 @@
             Psychologist: [ 1, 1 ]
             Paramedic: [ 2, 2 ]
             Virologist: [ 1, 1 ]
-            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
+            Roboticist: [ 2, 2 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             ResearchAssistant: [ 3, 3 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -62,12 +64,13 @@
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
             Brigmedic: [ 1, 1 ]
-            PermaPrisoner: [ 3, 3 ] # Gaby
-            PrisonGuard: [ 1, 1 ] # Gaby
+            PermaPrisoner: [ 3, 3 ] # Dumont Station
+            PrisonGuard: [ 1, 1 ] # Dumont Station
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             ShaftMiner: [ 4, 4 ]
+            Bitrunner: [ 3, 3 ]
             CargoTechnician: [ 4, 4 ]
             #civilian
             Passenger: [ -1, -1 ]

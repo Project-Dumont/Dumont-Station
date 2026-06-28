@@ -1,0 +1,8 @@
+<Control xmlns="https://spacestation14.io">
+    <Button Name="AlertButton"
+            Access="Public"
+            Margin="10"
+            MaxWidth="120"
+            SetSize="50 50">
+    </Button>
+</Control>

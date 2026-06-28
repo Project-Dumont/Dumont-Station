@@ -3111,3 +3111,183 @@ Entries:
       message: Pequenas correções com os indutores.
   id: 375
   time: '2026-06-12T19:15:29.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Agora ao dividir spesos suspeitos, você terá spesos suspeitos!
+  id: 376
+  time: '2026-06-21T16:55:53.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Telefones agora estão presentes nos mapas.
+    - type: Add
+      message: >-
+        Saltern, Packed, Omega, Cluster, Box, Meta, Marathon, Cog, Oasis agora
+        possuem genética, roboticistas e impressora de livros.
+    - type: Add
+      message: Falcon agora possui genética.
+    - type: Remove
+      message: Plasma miner foi removido de diversos mapas.
+  id: 377
+  time: '2026-06-21T16:56:41.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Adicionado Life Goes On no lobby. Descanse em paz Oliver Tree.
+  id: 378
+  time: '2026-06-20T17:27:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Shadowkins são novamente vulneráveis a flash.
+  id: 379
+  time: '2026-06-20T17:31:40.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Proto RCD consegue descontruir novamente.
+    - type: Add
+      message: 'Proto RCD pode desconstruir airlocks, independente de acesso ou tranca. '
+  id: 380
+  time: '2026-06-21T14:25:12.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Add
+      message: Nova ui do console de comunicações
+  id: 381
+  time: '2026-06-20T21:49:22.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: Armas usam projeteis denovo.
+  id: 382
+  time: '2026-06-22T16:19:32.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona bitrunning.
+    - type: Tweak
+      message: Agora as câmeras ficam vermelhas quando estão na visão da IA.
+  id: 383
+  time: '2026-06-23T19:59:57.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: Traduções. Não tantas, mas traduções.
+  id: 384
+  time: '2026-06-23T20:58:16.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Diversos cargos e objetos ganharam acesso exclusivo, consulte seu chefe
+        departamental!
+    - type: Remove
+      message: >-
+        Acessos antes básicos agora são próprios, como roboticista, correio,
+        mineração, genética, virologia, médico da brigada e bibliotecário.
+    - type: Fix
+      message: RD agora possui acesso de roboticista.
+    - type: Tweak
+      message: >-
+        Acesso de salvatagem agora se chama "Exploração" e foram separados
+        Mineradores de Exploradores, com acessos demonstrando mudança.
+    - type: Add
+      message: Diversas novas pinturas no spray de tinta, e agora ele está traduzido!
+    - type: Tweak
+      message: >-
+        Geneticista agora pertence apenas a Sci. Loadout, acessos, rádio e
+        equipamento foram alterados para refletir isso.
+  id: 385
+  time: '2026-06-24T18:02:09.0000000+00:00'
+- author: CRISOOOOO
+  changes:
+    - type: Add
+      message: Bitrunning foi adicionado nos mapas!
+    - type: Tweak
+      message: Oasis não é mais um mapa highpop.
+    - type: Tweak
+      message: Eclipse agora é um mapa highpop.
+    - type: Fix
+      message: Cluster agora tem spawner de plasma.
+  id: 386
+  time: '2026-06-24T21:18:00.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: Alterado Envirosuits da sec para azul
+    - type: Tweak
+      message: Alterado alguns sprites para azul
+    - type: Tweak
+      message: Alterado Envirosuits do gso para verde
+    - type: Tweak
+      message: Alterado cor do rádio da sec e console de comms
+    - type: Tweak
+      message: Alterado icones de esquadrão para um azul claro
+    - type: Tweak
+      message: Alterado placa de direção da prisão
+  id: 387
+  time: '2026-06-25T18:05:37.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Adicionado requisito de acesso atmosférico para o console do Reator
+        Hiper Torus.
+    - type: Tweak
+      message: Alarmes de ar novamente requerem acesso de atmosfera.
+  id: 388
+  time: '2026-06-26T02:35:41.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Corrigido bug do fabricador nuclear não podendo ser linkado no silo.
+    - type: Fix
+      message: >-
+        Agora a placa do computador de monitoramento do reator nuclear pode ser
+        fabricada.
+  id: 389
+  time: '2026-06-20T20:04:02.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Tweak
+      message: Alterado sprites da inspector, Kahemmer e energy balls..
+  id: 390
+  time: '2026-06-20T20:27:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Adiciona pré-crítico, que permite se movimentar e sussurrar enquanto
+        estiver caído.
+  id: 391
+  time: '2026-06-21T14:20:38.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: portado os sprites de algumas placa do far horizon.
+    - type: Add
+      message: adicionado placas de mineração, brigmed e genética com o mesmo estilo
+  id: 392
+  time: '2026-06-26T18:31:36.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: >-
+        Acesso a vend de tickets e roupas da mineração temporariamente
+        restaurado aos exploradores até o merge do rework.
+  id: 393
+  time: '2026-06-27T15:57:56.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Coletores de radiação, além da radiação agora necessitam de proximidade
+        com Singularidade ou Cristal de Super Matéria para gerarem energia.
+    - type: Remove
+      message: >-
+        Coletores de radiação agora produzem menos energia por unidade de
+        radiação (impacto real apenas em estações maiores).
+  id: 394
+  time: '2026-06-27T16:25:13.0000000+00:00'

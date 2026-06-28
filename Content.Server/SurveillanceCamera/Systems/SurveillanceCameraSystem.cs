@@ -51,18 +51,24 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
+using System.Numerics;
+using Content.Server._Orion.Bitrunning.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Emp;
+using Content.Shared._Orion.Bitrunning.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat; // Einstein Engines - Languages
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Power;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.SurveillanceCamera;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.DeviceNetwork.Components;
@@ -79,6 +85,7 @@ public sealed class SurveillanceCameraSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!; // Goobstation
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly SharedStationAiSystem _stationAiSystem = default!; // Orion
 
 
     // Pings a surveillance camera subnet. All cameras will always respond
@@ -111,6 +118,34 @@ public sealed class SurveillanceCameraSystem : EntitySystem
     public const string CameraMobile = "surveillance_camera_mobile"; // Goobstation - Is the camera mobile? Needed for pvs sorting as well as the icon in the camera monitor
 
     public const int CameraNameLimit = 32;
+
+    // Orion-Start
+    private const float AiViewerActivationRange = 7f;
+    private const float VisualRefreshInterval = 1f;
+    private float _visualRefreshAccumulator;
+    private readonly List<(MapId Map, Vector2 Position)> _activeAiObservers = new();
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        _visualRefreshAccumulator += frameTime;
+        if (_visualRefreshAccumulator < VisualRefreshInterval)
+            return;
+
+        _visualRefreshAccumulator = 0f;
+        RefreshActiveAiObservers();
+
+        var query = EntityQueryEnumerator<SurveillanceCameraComponent>();
+        while (query.MoveNext(out var uid, out var camera))
+        {
+            if (!camera.Active)
+                continue;
+
+            UpdateVisuals(uid, camera);
+        }
+    }
+    // Orion-End
 
     public override void Initialize()
     {
@@ -180,9 +215,7 @@ public sealed class SurveillanceCameraSystem : EntitySystem
                     if (TryComp(uid, out TransformComponent? transformComponent))
                     {
                         // Decoupling the bodycam/nopro from the wearer, otherwise we'll just keep seeing the last known owner move around on the map
-                        payload[CameraNetEntity] = component.Mobile ?
-                            (GetNetEntity(uid), GetNetCoordinates(_transformSystem.ToCoordinates(uid, _transformSystem.ToMapCoordinates(transformComponent.Coordinates)))) :
-                            (GetNetEntity(uid), GetNetCoordinates(transformComponent.Coordinates));
+                        payload[CameraNetEntity] = (GetNetEntity(uid), GetNetCoordinates(transformComponent.Coordinates)); // Orion-Edit
                         payload[CameraMobile] = component.Mobile;
                     }
                     // Goobstation end
@@ -267,6 +300,24 @@ public sealed class SurveillanceCameraSystem : EntitySystem
         UpdateSetupInterface(uid, component);
     }
 
+    // Orion-Start
+    public void ConfigureCameraNetwork(EntityUid uid, ProtoId<DeviceFrequencyPrototype> receiveFrequencyId, ProtoId<DeviceFrequencyPrototype>? transmitFrequencyId = null, SurveillanceCameraComponent? camera = null, DeviceNetworkComponent? deviceNet = null)
+    {
+        if (!Resolve(uid, ref camera, ref deviceNet))
+            return;
+
+        deviceNet.ReceiveFrequencyId = receiveFrequencyId;
+
+        if (transmitFrequencyId != null)
+            deviceNet.TransmitFrequencyId = transmitFrequencyId.Value;
+
+        if (!camera.AvailableNetworks.Contains(receiveFrequencyId))
+            camera.AvailableNetworks.Add(receiveFrequencyId);
+
+        camera.NetworkSet = true;
+    }
+    // Orion-End
+
     private void OpenSetupInterface(EntityUid uid, EntityUid player, SurveillanceCameraComponent? camera = null)
     {
         if (!Resolve(uid, ref camera))
@@ -320,7 +371,7 @@ public sealed class SurveillanceCameraSystem : EntitySystem
 
         var ev = new SurveillanceCameraDeactivateEvent(camera);
 
-        RemoveActiveViewers(camera, new(component.ActiveViewers), null, component);
+        RemoveActiveViewers(camera, new(component.ActiveViewers.Keys), null, component); // Orion-Edit
         component.Active = false;
 
         // Send a targetted event to all monitors.
@@ -369,8 +420,11 @@ public sealed class SurveillanceCameraSystem : EntitySystem
             return;
         }
 
-        _viewSubscriberSystem.AddViewSubscriber(camera, actor.PlayerSession);
-        component.ActiveViewers.Add(player);
+        // Orion-Edit-Start
+        var subscribeTarget = ResolveSubscribeTarget(camera);
+        _viewSubscriberSystem.AddViewSubscriber(subscribeTarget, actor.PlayerSession);
+        component.ActiveViewers[player] = subscribeTarget;
+        // Orion-Edit-End
 
         if (monitor != null)
         {
@@ -429,8 +483,14 @@ public sealed class SurveillanceCameraSystem : EntitySystem
         if (!Resolve(camera, ref component))
             return;
 
+        // Orion-Start
+        var subscribeTarget = ResolveSubscribeTarget(camera);
+        if (component.ActiveViewers.TryGetValue(player, out var storedTarget))
+            subscribeTarget = storedTarget;
+        // Orion-End
+
         if (Resolve(player, ref actor))
-            _viewSubscriberSystem.RemoveViewSubscriber(camera, actor.PlayerSession);
+            _viewSubscriberSystem.RemoveViewSubscriber(subscribeTarget, actor.PlayerSession); // Orion-Edit
 
         component.ActiveViewers.Remove(player);
 
@@ -441,6 +501,37 @@ public sealed class SurveillanceCameraSystem : EntitySystem
 
         UpdateVisuals(camera, component);
     }
+
+    // Orion-Start
+    public void ClearActiveViewers(EntityUid camera, SurveillanceCameraComponent? component = null)
+    {
+        if (!Resolve(camera, ref component))
+            return;
+
+//        var subscribeTarget = ResolveSubscribeTarget(camera); // Orion-Edit
+        foreach (var (viewer, subscribeTarget) in component.ActiveViewers.ToArray()) // Orion-Edit
+        {
+            if (!TryComp<ActorComponent>(viewer, out var actor))
+                continue;
+
+            _viewSubscriberSystem.RemoveViewSubscriber(subscribeTarget, actor.PlayerSession);
+        }
+
+        component.ActiveViewers.Clear();
+        UpdateVisuals(camera, component);
+    }
+
+    private EntityUid ResolveSubscribeTarget(EntityUid camera)
+    {
+        if (TryComp<AvatarNavRelayComponent>(camera, out var relay) && relay.RelayEntity is { } relayUid && Exists(relayUid))
+            return relayUid;
+
+        if (TryComp<NetpodComponent>(camera, out var pod) && pod.Avatar is { } avatar && Exists(avatar))
+            return avatar;
+
+        return camera;
+    }
+    // Orion-End
 
     public void RemoveActiveViewers(EntityUid camera, HashSet<EntityUid> players, EntityUid? monitor = null, SurveillanceCameraComponent? component = null)
     {
@@ -477,13 +568,56 @@ public sealed class SurveillanceCameraSystem : EntitySystem
             key = SurveillanceCameraVisuals.Active;
         }
 
-        if (component.ActiveViewers.Count > 0 || component.ActiveMonitors.Count > 0)
+        if (component.Active && HasActiveAiViewerInRange(uid)) // Orion-Edit
         {
             key = SurveillanceCameraVisuals.InUse;
         }
 
         _appearance.SetData(uid, SurveillanceCameraVisualsKey.Key, key, appearance);
     }
+
+    // Orion-Start
+    private void RefreshActiveAiObservers()
+    {
+        _activeAiObservers.Clear();
+
+        var coreQuery = EntityQueryEnumerator<StationAiCoreComponent>();
+        while (coreQuery.MoveNext(out var coreUid, out var coreComp))
+        {
+            if (coreComp.RemoteEntity == null)
+                continue;
+
+            // Only active AI with mind should affect camera visuals
+            if (!_stationAiSystem.TryGetHeld((coreUid, coreComp), out var held) || !HasComp<ActorComponent>(held))
+                continue;
+
+            if (!TryComp(coreComp.RemoteEntity.Value, out TransformComponent? observerXform))
+                continue;
+
+            _activeAiObservers.Add((observerXform.MapID, _transformSystem.GetWorldPosition(observerXform)));
+        }
+    }
+
+    private bool HasActiveAiViewerInRange(EntityUid camera)
+    {
+        if (!TryComp(camera, out TransformComponent? cameraXform))
+            return false;
+
+        var cameraMap = cameraXform.MapID;
+        var cameraPos = _transformSystem.GetWorldPosition(cameraXform);
+        var activationRangeSquared = AiViewerActivationRange * AiViewerActivationRange;
+        foreach (var observer in _activeAiObservers)
+        {
+            if (observer.Map != cameraMap)
+                continue;
+
+            if ((observer.Position - cameraPos).LengthSquared() <= activationRangeSquared)
+                return true;
+        }
+
+        return false;
+    }
+    // Orion-End
 
     private void OnEmpPulse(EntityUid uid, SurveillanceCameraComponent component, ref EmpPulseEvent args)
     {
