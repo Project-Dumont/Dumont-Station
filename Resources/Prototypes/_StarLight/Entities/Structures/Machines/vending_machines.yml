@@ -100,7 +100,7 @@
   - type: Sprite
     sprite: _Starlight/Structures/Machines/VendingMachines/salvage.rsi
   - type: Store
-    name: Máquinas de Ticket de Explorador
+    name: vending-machine-salvage
     categories:
     - SalvageEquipment
     - SalvageUtilities
@@ -108,6 +108,222 @@
     - SalvageConsumeables
     currencyWhitelist:
     - SalvageTicket
+
+# Armas
+
+- type: listing
+  id: VendorKukriKnife
+  productEntity: KukriKnife
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMark1Rifle
+  productEntity: WeaponRifleMark1
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMark1SniperRifle
+  productEntity: WeaponRifleMark1Sniper
+  cost:
+    SalvageTicket: 600
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorN14ripper
+  productEntity: N14ripper
+  cost:
+    SalvageTicket: 450
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMarkalibur1Rifle
+  productEntity: Markalibur1SheathFilled
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMakeshiftLaser
+  productEntity: WeaponMakeshiftLaser
+  cost:
+    SalvageTicket: 1800
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponSubMachineGunForged
+  productEntity: WeaponSubMachineGunForged
+  cost:
+    SalvageTicket: 2400
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponShotgunSalvager
+  productEntity: WeaponShotgunSalvager
+  cost:
+    SalvageTicket: 3000
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+# Utilitários
+
+## Equipamentos
+
+- type: listing
+  id: VendorMiningDrill
+  productEntity: MiningDrill
+  cost:
+    SalvageTicket: 300
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingHeadHelmetSalvageMerc
+  productEntity: ClothingHeadHelmetSalvageMerc
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterVestWebSalvageMerc
+  productEntity: ClothingOuterVestWebSalvageMerc
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingHandsSalvageMercGlovesCombat
+  productEntity: ClothingHandsSalvageMercGlovesCombat
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingShoesBootsSalvageMerc
+  productEntity: ClothingShoesBootsSalvageMerc
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingBeltSalvageMercWebbing
+  productEntity: ClothingBeltSalvageMercWebbing
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorFultonBeacon
+  productEntity: FultonBeacon
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorDefibrillatorCompact
+  productEntity: DefibrillatorCompact
+  cost:
+    SalvageTicket: 350
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorOreBagMagnetic
+  productEntity: OreBagMagnetic
+  cost:
+    SalvageTicket: 500
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitSalvage
+  productEntity: ClothingOuterHardsuitSalvage
+  cost:
+    SalvageTicket: 500
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorN14ShieldMetalHeavy
+  productEntity: N14ShieldMetalHeavy
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitMaxim
+  productEntity: ClothingOuterHardsuitMaxim
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorN14SledgeHammer
+  productEntity: N14SledgeHammer
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
 
 # Consumiveis
 
@@ -117,51 +333,133 @@
   id: VendorTesteMedkit
   productEntity: MedkitFilled
   cost:
-    SalvageTicket: 100
+    SalvageTicket: 300
   categories:
   - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMedkitRadiationFilled
+  productEntity: MedkitRadiationFilled
+  cost:
+    SalvageTicket: 500
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMedkitToxinFilled
+  productEntity: MedkitToxinFilled
+  cost:
+    SalvageTicket: 500
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMedkitAdvancedFilled
+  productEntity: MedkitAdvancedFilled
+  cost:
+    SalvageTicket: 750
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
 
 ## Munição
+
+- type: listing
+  id: VendorShellShotgunImprovised
+  productEntity: ShellShotgunImprovised
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMagazinePistolSubMachineGunImprovised
+  productEntity: MagazinePistolSubMachineGunImprovised
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMagazineShotgunEmpty
+  productEntity: MagazineShotgunEmpty
+  cost:
+    SalvageTicket: 250
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+  
 
 - type: listing
   id: VendorBoxMagnum
   productEntity: MagazineBoxMagnum
   cost:
-    SalvageTicket: 250
+    SalvageTicket: 350
   categories:
   - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
 
 - type: listing
   id: VendorBoxLightRifle
   productEntity: MagazineBoxLightRifle
   cost:
+    SalvageTicket: 450
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMagazineBoxImprovisedPistol
+  productEntity: MagazineBoxImprovisedPistol
+  cost:
     SalvageTicket: 750
   categories:
   - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
 
-# Armas
-
-- type: listing
-  id: VendorWeaponMark1Rifle
-  productEntity: WeaponRifleMark1
-  cost:
-    SalvageTicket: 400
-  categories:
-  - SalvageWeapons
+## Outros
 
 - type: listing
-  id: VendorWeaponMark1SniperRifle
-  productEntity: WeaponRifleMark1Sniper
+  id: VendorBoxFlare
+  productEntity: BoxFlare
   cost:
-    SalvageTicket: 600
+    SalvageTicket: 50
   categories:
-  - SalvageWeapons
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorWeaponMarkalibur1Rifle
-  productEntity: Markalibur1SheathFilled
+  id: VendorBoxMRE
+  productEntity: BoxMRE
   cost:
-    SalvageTicket: 1000
+    SalvageTicket: 50
   categories:
-  - SalvageWeapons
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
 
+- type: listing
+  id: VendorFulton
+  productEntity: Fulton
+  cost:
+    SalvageTicket: 150
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition

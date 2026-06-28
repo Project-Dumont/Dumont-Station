@@ -1,0 +1,1 @@
+vending-machine-salvage = Máquina de Ticket de Explorador

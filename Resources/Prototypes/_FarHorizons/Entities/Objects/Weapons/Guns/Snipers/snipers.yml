@@ -2,7 +2,6 @@
   name: Mark 1 Rifle
   parent: [BaseWeaponSniper, BaseGunWieldable, BaseSalvageContraband]
   id: WeaponRifleMark1
-  description: A very old Mark 1 Rifle used in many old wars. Someone managed to find one out of a museum or something, with the date of production scratched out from usage... but the GSL logo is very new.
   components:
   - type: KnockbackByUserTag
     doestContain:
@@ -12,7 +11,7 @@
         knockback: 1
   - type: BallisticAmmoProvider
     capacity: 10
-    proto: CartridgeLightRifleSP
+    proto: CartridgeLightRifle
     whitelist:
       tags:
         - CartridgeMagnum
@@ -52,7 +51,6 @@
   name: Mark 1 Sniper Rifle
   parent: [BaseWeaponSniper, BaseGunWieldable, BaseSalvageContraband]
   id: WeaponRifleMark1Sniper
-  description: A very old Mark 1 Rifle used in many old wars. They say the scratches on the side of the gun are for every kill the wielder had.
   components:
   - type: KnockbackByUserTag
     doestContain:
@@ -62,7 +60,7 @@
         knockback: 1
   - type: BallisticAmmoProvider
     capacity: 10
-    proto: CartridgeLightRifleSP
+    proto: CartridgeLightRifle
     whitelist:
       tags:
         - CartridgeMagnum
@@ -106,7 +104,6 @@
   name: Markalibur 1 "Rifle"
   parent: [BaseWeaponSniper, BaseGunWieldable, BaseSalvageContraband]
   id: WeaponRifleMarkalibur1
-  description: A very old Mark 1 Rifle used in many old wars... before someone took the poor thing, mangled it, and somehow ended up with a sword.
   components:
   - type: KnockbackByUserTag
     doestContain:
@@ -116,7 +113,7 @@
         knockback: 2
   - type: BallisticAmmoProvider
     capacity: 3
-    proto: CartridgeLightRifleSP
+    proto: CartridgeLightRifle
     whitelist:
       tags:
         - CartridgeMagnum

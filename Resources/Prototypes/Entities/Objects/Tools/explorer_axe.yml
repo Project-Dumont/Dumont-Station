@@ -1,0 +1,63 @@
+- type: entity
+  name: explorer axe
+  parent: [ BaseItem, BaseSalvageContraband ]
+  id: ExplorerAxeBase
+  components:
+  - type: Tag
+    tags:
+    - ExplorerAxeBase
+  - type: Sprite
+    sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
+    state: icon-axe
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Clothing
+    sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
+    quickEquip: false
+    slots:
+      - Belt
+  - type: ToolTileCompatible
+    delay: 0.5
+  - type: Tool
+    qualities:
+      - Prying
+    useSound: /Audio/Items/crowbar.ogg
+  - type: Prying
+    speedModifier: 1.5
+    pryPowered: true
+    useSound: /Audio/Items/crowbar.ogg
+  - type: UseDelay # Goobstation - For insta prying
+    delay: 1
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Cutting
+        sprite:
+          sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
+          state: icon-axe
+        useSound: /Audio/Items/jaws_cut.ogg
+        changeSound: /Audio/Items/change_jaws.ogg
+      - behavior: Prying
+        sprite:
+          sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
+          state: icon-force
+        useSound: /Audio/Items/jaws_pry.ogg
+        changeSound: /Audio/Items/change_jaws.ogg
+      - behavior: Screwing
+        sprite:
+          sprite: _Gabystation/Objects/Tools/exploreraxe.rsi
+          state: icon-pick
+        useSound:
+          path: /Audio/Items/screwdriver.ogg
+        changeSound:
+          path: /Audio/Items/screwdriver2.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+      collection: MetalThud
