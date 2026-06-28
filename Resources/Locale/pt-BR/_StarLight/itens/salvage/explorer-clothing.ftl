@@ -11,7 +11,7 @@ ent-ClothingShoesBootsSalvageMerc = Botas de Explorador
     .desc = As botas ideais para exploração de terrenos acidentados.
 
 ent-ClothingBeltSalvageMercWebbing = Vestimenta de Explorador
-    .desc = Útil para amarzenagem de munição, ferramentas e no geral, salvatagem.
+    .desc = Útil para armazenagem de munição, ferramentas e no geral, exploração.
 
 ent-ClothingHeadHatBeretSalvageMercBrown = Bereta do Líder
     .desc = A Bereta Oficial do Líder da Expedição.

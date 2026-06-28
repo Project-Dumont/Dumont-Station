@@ -29,10 +29,6 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
             - !type:SpawnEntitiesBehavior
-              spawn:
-                N14Scrap:
-                  min: 3
-                  max: 3
     - type: Blocking
       passiveBlockModifier:
         coefficients:

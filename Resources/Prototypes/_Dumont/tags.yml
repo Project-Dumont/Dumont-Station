@@ -4,3 +4,27 @@
 
 - type: Tag
   id: EletricRadiation
+
+- type: Tag
+  id: ExplorerAxeBase
+
+- type: Tag
+  id: Markalibur1
+
+- type: Tag
+  id: MagazineSMGImprovised
+
+- type: Tag
+  id: ImprovisedAmmoBox
+
+- type: Tag
+  id: CartridgePistolImprovised
+
+- type: Tag
+  id: CartridgeMagnumImprovised
+
+- type: Tag
+  id: CartridgeLightRifleImprovised
+
+- type: Tag
+  id: ShellShotgunImprovised

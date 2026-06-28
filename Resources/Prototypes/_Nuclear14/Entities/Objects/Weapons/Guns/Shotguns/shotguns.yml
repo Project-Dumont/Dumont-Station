@@ -63,9 +63,6 @@
     capacity: 2
     proto: ShellShotgun
     soundInsert:
-      path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg
-  - type: Construction
-    graph: ShotgunSawed
-    node: shotgunsawed
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
   - type: StaticPrice
     price: 45
