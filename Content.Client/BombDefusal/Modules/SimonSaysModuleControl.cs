@@ -119,8 +119,8 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
         {
             var dotPanel = new PanelContainer
             {
-                MinWidth = 20,
-                MinHeight = 16,
+                MinWidth = 16,
+                MinHeight = 12,
                 Margin = new Thickness(1, 0),
             };
             dotPanel.PanelOverride = new StyleBoxFlat
@@ -164,7 +164,7 @@ public sealed class SimonSaysModuleControl : BaseModuleControl
                 var btn = new Button
                 {
                     Text = SimonColorNames.GetValueOrDefault(color, "?"),
-                    MinSize = new Vector2(70, 45),
+                    MinSize = new Vector2(56, 36),
                     HorizontalExpand = true,
                 };
                 btn.ModulateSelfOverride = SimonColorMap.GetValueOrDefault(color, Color.Gray);

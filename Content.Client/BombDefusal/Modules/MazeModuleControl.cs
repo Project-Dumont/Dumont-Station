@@ -31,7 +31,7 @@ public sealed class MazeModuleControl : BaseModuleControl
         // Left side: Maze grid
         _mazeGrid = new MazeGrid
         {
-            MinSize = new Vector2(160, 160),
+            MinSize = new Vector2(120, 120),
             HorizontalExpand = true,
             VerticalExpand = true,
         };
@@ -42,15 +42,15 @@ public sealed class MazeModuleControl : BaseModuleControl
         {
             Orientation = LayoutOrientation.Vertical,
             Align = BoxContainer.AlignMode.Center,
-            MinSize = new Vector2(100, 120),
-            Margin = new Thickness(8, 0, 0, 0),
+            MinSize = new Vector2(80, 96),
+            Margin = new Thickness(6, 0, 0, 0),
         };
         mainLayout.AddChild(dPadLayout);
 
         _btnUp = new Button
         {
             Text = "▲",
-            MinSize = new Vector2(36, 36),
+            MinSize = new Vector2(30, 30),
             HorizontalAlignment = HAlignment.Center,
         };
         _btnUp.OnPressed += _ => RaiseAction(new PressMazeDirectionAction(0, -1));
@@ -60,25 +60,25 @@ public sealed class MazeModuleControl : BaseModuleControl
         {
             Orientation = LayoutOrientation.Horizontal,
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 4),
+            Margin = new Thickness(0, 2),
         };
         dPadLayout.AddChild(horizDPad);
 
         _btnLeft = new Button
         {
             Text = "◀",
-            MinSize = new Vector2(36, 36),
+            MinSize = new Vector2(30, 30),
         };
         _btnLeft.OnPressed += _ => RaiseAction(new PressMazeDirectionAction(-1, 0));
         horizDPad.AddChild(_btnLeft);
 
-        var spacer = new Control { MinSize = new Vector2(8, 0) };
+        var spacer = new Control { MinSize = new Vector2(6, 0) };
         horizDPad.AddChild(spacer);
 
         _btnRight = new Button
         {
             Text = "▶",
-            MinSize = new Vector2(36, 36),
+            MinSize = new Vector2(30, 30),
         };
         _btnRight.OnPressed += _ => RaiseAction(new PressMazeDirectionAction(1, 0));
         horizDPad.AddChild(_btnRight);
@@ -86,7 +86,7 @@ public sealed class MazeModuleControl : BaseModuleControl
         _btnDown = new Button
         {
             Text = "▼",
-            MinSize = new Vector2(36, 36),
+            MinSize = new Vector2(30, 30),
             HorizontalAlignment = HAlignment.Center,
         };
         _btnDown.OnPressed += _ => RaiseAction(new PressMazeDirectionAction(0, 1));

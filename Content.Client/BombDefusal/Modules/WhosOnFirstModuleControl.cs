@@ -33,16 +33,16 @@ public sealed class WhosOnFirstModuleControl : BaseModuleControl
             Text = "STAGE 1 OF 3",
             FontColorOverride = Color.FromHex("#8888aa"),
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 8),
+            Margin = new Thickness(0, 0, 0, 4),
         };
         mainLayout.AddChild(_stageLabel);
 
         // Screen
         var screenPanel = new PanelContainer
         {
-            MinSize = new Vector2(160, 50),
+            MinSize = new Vector2(130, 40),
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 16),
+            Margin = new Thickness(0, 0, 0, 8),
         };
         screenPanel.PanelOverride = new StyleBoxFlat
         {
@@ -75,8 +75,8 @@ public sealed class WhosOnFirstModuleControl : BaseModuleControl
             var button = new Button
             {
                 Text = "?",
-                MinSize = new Vector2(100, 36),
-                Margin = new Thickness(4, 4),
+                MinSize = new Vector2(80, 30),
+                Margin = new Thickness(2, 2),
             };
             button.OnPressed += _ => RaiseAction(new PressWhosOnFirstButtonAction(btnIndex));
             grid.AddChild(button);

@@ -48,13 +48,13 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         // Flashing light area
         var lightPanel = new PanelContainer
         {
-            MinSize = new Vector2(40, 40),
+            MinSize = new Vector2(32, 32),
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 12),
+            Margin = new Thickness(0, 0, 0, 6),
         };
         _lightIndicator = new PanelContainer
         {
-            MinSize = new Vector2(30, 30),
+            MinSize = new Vector2(24, 24),
             PanelOverride = _lightOff,
         };
         lightPanel.AddChild(_lightIndicator);
@@ -65,7 +65,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         {
             Orientation = LayoutOrientation.Horizontal,
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 16),
+            Margin = new Thickness(0, 0, 0, 8),
         };
         mainLayout.AddChild(tuneRow);
 
@@ -75,7 +75,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
 
         var freqPanel = new PanelContainer
         {
-            MinSize = new Vector2(100, 30),
+            MinSize = new Vector2(80, 26),
             Margin = new Thickness(6, 0),
         };
         freqPanel.PanelOverride = new StyleBoxFlat
@@ -103,7 +103,7 @@ public sealed class MorseCodeModuleControl : BaseModuleControl
         _btnTx = new Button
         {
             Text = "TX (TRANSMIT)",
-            MinSize = new Vector2(120, 32),
+            MinSize = new Vector2(96, 28),
             HorizontalAlignment = HAlignment.Center,
         };
         _btnTx.OnPressed += _ => RaiseAction(new SubmitMorseAction());

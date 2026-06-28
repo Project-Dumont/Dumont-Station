@@ -79,7 +79,7 @@ public sealed class SymbolsModuleControl : BaseModuleControl
                 var button = new Button
                 {
                     Text = glyph,
-                    MinSize = new Vector2(70, 70),
+                    MinSize = new Vector2(56, 56),
                     HorizontalExpand = true,
                 };
 

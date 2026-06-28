@@ -83,7 +83,7 @@ public abstract class BaseModuleControl : BoxContainer
             Orientation = LayoutOrientation.Vertical,
             HorizontalExpand = true,
             VerticalExpand = true,
-            Margin = new Thickness(6, 4),
+            Margin = new Thickness(4, 2),
         };
 
         // Header row with module name and solved indicator
@@ -91,7 +91,7 @@ public abstract class BaseModuleControl : BoxContainer
         {
             Orientation = LayoutOrientation.Horizontal,
             HorizontalExpand = true,
-            Margin = new Thickness(0, 0, 0, 4),
+            Margin = new Thickness(0, 0, 0, 2),
         };
 
         _headerLabel = new Label
@@ -117,7 +117,7 @@ public abstract class BaseModuleControl : BoxContainer
             MinHeight = 1,
             MaxHeight = 1,
             HorizontalExpand = true,
-            Margin = new Thickness(0, 0, 0, 4),
+            Margin = new Thickness(0, 0, 0, 2),
         };
         separator.PanelOverride = new StyleBoxFlat
         {

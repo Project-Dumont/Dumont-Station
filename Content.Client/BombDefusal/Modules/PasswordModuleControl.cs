@@ -33,7 +33,7 @@ public sealed class PasswordModuleControl : BaseModuleControl
         {
             Orientation = LayoutOrientation.Horizontal,
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 16),
+            Margin = new Thickness(0, 0, 0, 8),
         };
         mainLayout.AddChild(columnsLayout);
 
@@ -43,14 +43,14 @@ public sealed class PasswordModuleControl : BaseModuleControl
             var colLayout = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
-                Margin = new Thickness(4, 0),
+                Margin = new Thickness(2, 0),
             };
             columnsLayout.AddChild(colLayout);
 
             var btnUp = new Button
             {
                 Text = "▲",
-                MinSize = new Vector2(30, 24),
+                MinSize = new Vector2(26, 20),
             };
             btnUp.OnPressed += _ => RaiseAction(new CyclePasswordColumnAction(colIdx, true));
             colLayout.AddChild(btnUp);
@@ -58,7 +58,7 @@ public sealed class PasswordModuleControl : BaseModuleControl
 
             var charPanel = new PanelContainer
             {
-                MinSize = new Vector2(30, 40),
+                MinSize = new Vector2(26, 32),
                 Margin = new Thickness(0, 4),
             };
             charPanel.PanelOverride = new StyleBoxFlat
@@ -82,7 +82,7 @@ public sealed class PasswordModuleControl : BaseModuleControl
             var btnDown = new Button
             {
                 Text = "▼",
-                MinSize = new Vector2(30, 24),
+                MinSize = new Vector2(26, 20),
             };
             btnDown.OnPressed += _ => RaiseAction(new CyclePasswordColumnAction(colIdx, false));
             colLayout.AddChild(btnDown);
@@ -93,7 +93,7 @@ public sealed class PasswordModuleControl : BaseModuleControl
         _btnSubmit = new Button
         {
             Text = "SUBMIT",
-            MinSize = new Vector2(100, 32),
+            MinSize = new Vector2(80, 28),
             HorizontalAlignment = HAlignment.Center,
         };
         _btnSubmit.OnPressed += _ => RaiseAction(new SubmitPasswordAction());

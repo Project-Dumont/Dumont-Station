@@ -93,7 +93,7 @@ public sealed class WiresModuleControl : BaseModuleControl
                 var wireButton = new Button
                 {
                     HorizontalExpand = true,
-                    MinHeight = 28,
+                    MinHeight = 24,
                 };
 
                 var idx = wireIndex;

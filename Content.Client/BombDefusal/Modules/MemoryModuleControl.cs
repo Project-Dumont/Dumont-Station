@@ -33,16 +33,16 @@ public sealed class MemoryModuleControl : BaseModuleControl
             Text = "STAGE 1 OF 5",
             FontColorOverride = Color.FromHex("#8888aa"),
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 8),
+            Margin = new Thickness(0, 0, 0, 4),
         };
         mainLayout.AddChild(_stageLabel);
 
         // The screen
         var screenPanel = new PanelContainer
         {
-            MinSize = new Vector2(120, 60),
+            MinSize = new Vector2(100, 48),
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 16),
+            Margin = new Thickness(0, 0, 0, 8),
         };
         screenPanel.PanelOverride = new StyleBoxFlat
         {
@@ -75,8 +75,8 @@ public sealed class MemoryModuleControl : BaseModuleControl
             var button = new Button
             {
                 Text = "?",
-                MinSize = new Vector2(45, 45),
-                Margin = new Thickness(4, 0),
+                MinSize = new Vector2(36, 36),
+                Margin = new Thickness(2, 0),
             };
             button.OnPressed += _ => RaiseAction(new PressMemoryButtonAction(btnIndex));
             buttonsRow.AddChild(button);
