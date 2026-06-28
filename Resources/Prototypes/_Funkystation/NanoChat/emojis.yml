@@ -39,57 +39,57 @@
   category: Godo
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/golove.png
 
-# Misc emotes
-- type: nanoChatEmoji
-  id: troll
-  category: Misc
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/troll.png
+# # Misc emotes
+# - type: nanoChatEmoji
+#   id: troll
+#   category: Misc
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/troll.png
 
-# Character emotes
+# # Character emotes
 # - type: nanoChatEmoji
 #   id: bubble
 #   category: Character
 #   sprite: /Textures/Interface/Emotes/bubble.png
 
-- type: nanoChatEmoji
-  id: buzz
-  category: Character
-  sprite: /Textures/Interface/Emotes/buzztwo.png
+# - type: nanoChatEmoji
+#   id: buzz
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/buzztwo.png
 
-- type: nanoChatEmoji
-  id: chime
-  category: Character
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/chime.png
+# - type: nanoChatEmoji
+#   id: chime
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/chime.png
 
-- type: nanoChatEmoji
-  id: chirp
-  category: Character
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/chirp.png
+# - type: nanoChatEmoji
+#   id: chirp
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/chirp.png
 
-- type: nanoChatEmoji
-  id: clap
-  category: Character
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/clap.png
+# - type: nanoChatEmoji
+#   id: clap
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/clap.png
 
-- type: nanoChatEmoji
-  id: click
-  category: Character
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/click.png
+# - type: nanoChatEmoji
+#   id: click
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/click.png
 
-- type: nanoChatEmoji
-  id: cough
-  category: Character
-  sprite: /Textures/Interface/Emotes/cough.png
+# - type: nanoChatEmoji
+#   id: cough
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/cough.png
 
-- type: nanoChatEmoji
-  id: cry
-  category: Character
-  sprite: /Textures/Interface/Emotes/cry.png
+# - type: nanoChatEmoji
+#   id: cry
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/cry.png
 
-- type: nanoChatEmoji
-  id: deathgasp
-  category: Character
-  sprite: /Textures/Interface/Emotes/deathgasp.png
+# - type: nanoChatEmoji
+#   id: deathgasp
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/deathgasp.png
 
 # - type: nanoChatEmoji
 #   id: fizz
@@ -106,195 +106,195 @@
 #   category: Character
 #   sprite: /Textures/Interface/Emotes/hew.png
 
-- type: nanoChatEmoji
-  id: honk
-  category: Character
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/honk.png
+# - type: nanoChatEmoji
+#   id: honk
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/honk.png
 
-- type: nanoChatEmoji
-  id: laugh
-  category: Character
-  sprite: /Textures/Interface/Emotes/laugh.png
+# - type: nanoChatEmoji
+#   id: laugh
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/laugh.png
 
-- type: nanoChatEmoji
-  id: salute
-  category: Character
-  sprite: /Textures/Interface/Emotes/salute.png
+# - type: nanoChatEmoji
+#   id: salute
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/salute.png
 
-- type: nanoChatEmoji
-  id: scream
-  category: Character
-  sprite: /Textures/Interface/Emotes/scream.png
+# - type: nanoChatEmoji
+#   id: scream
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/scream.png
 
-- type: nanoChatEmoji
-  id: sigh
-  category: Character
-  sprite: /Textures/Interface/Emotes/sigh.png
+# - type: nanoChatEmoji
+#   id: sigh
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/sigh.png
 
-- type: nanoChatEmoji
-  id: snap
-  category: Character
-  sprite: /Textures/Interface/Emotes/snap.png
+# - type: nanoChatEmoji
+#   id: snap
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/snap.png
 
-- type: nanoChatEmoji
-  id: squeak
-  category: Character
-  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/squeak.png
+# - type: nanoChatEmoji
+#   id: squeak
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/squeak.png
 
-- type: nanoChatEmoji
-  id: tailslap
-  category: Character
-  sprite: /Textures/Interface/Emotes/tailslap.png
+# - type: nanoChatEmoji
+#   id: tailslap
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/tailslap.png
 
-- type: nanoChatEmoji
-  id: vocal
-  category: Character
-  sprite: /Textures/Interface/Emotes/vocal.png
+# - type: nanoChatEmoji
+#   id: vocal
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/vocal.png
 
-- type: nanoChatEmoji
-  id: weh
-  category: Character
-  sprite: /Textures/Interface/Emotes/weh.png
+# - type: nanoChatEmoji
+#   id: weh
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/weh.png
 
-- type: nanoChatEmoji
-  id: whistle
-  category: Character
-  sprite: /Textures/Interface/Emotes/whistle.png
+# - type: nanoChatEmoji
+#   id: whistle
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/whistle.png
 
-- type: nanoChatEmoji
-  id: yawn
-  category: Character
-  sprite: /Textures/Interface/Emotes/yawn.png
+# - type: nanoChatEmoji
+#   id: yawn
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/yawn.png
 
-# Plushie emotes
-- type: nanoChatEmoji
-  id: bee
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_h
+# # Plushie emotes
+# - type: nanoChatEmoji
+#   id: bee
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_h
 
-- type: nanoChatEmoji
-  id: ratvar
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_ratvar
+# - type: nanoChatEmoji
+#   id: ratvar
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_ratvar
 
-- type: nanoChatEmoji
-  id: penguin
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_penguin
+# - type: nanoChatEmoji
+#   id: penguin
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_penguin
 
-- type: nanoChatEmoji
-  id: moth
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_moth
+# - type: nanoChatEmoji
+#   id: moth
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_moth
 
 - type: nanoChatEmoji
   id: rouny
   category: Plushies
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/rouny.png
 
-- type: nanoChatEmoji
-  id: lizard
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_lizard
+# - type: nanoChatEmoji
+#   id: lizard
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_lizard
 
-- type: nanoChatEmoji
-  id: spacelizard
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_spacelizard
+# - type: nanoChatEmoji
+#   id: spacelizard
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_spacelizard
 
-- type: nanoChatEmoji
-  id: hampter
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_hampter
+# - type: nanoChatEmoji
+#   id: hampter
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_hampter
 
-- type: nanoChatEmoji
-  id: arachnid
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_arachnid
+# - type: nanoChatEmoji
+#   id: arachnid
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_arachnid
 
-- type: nanoChatEmoji
-  id: lamp
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_lamp
+# - type: nanoChatEmoji
+#   id: lamp
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_lamp
 
-- type: nanoChatEmoji
-  id: nukie
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_nuke
+# - type: nanoChatEmoji
+#   id: nukie
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_nuke
 
-- type: nanoChatEmoji
-  id: atmosian
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_atmosian
+# - type: nanoChatEmoji
+#   id: atmosian
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_atmosian
 
-- type: nanoChatEmoji
-  id: slime
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_slime
+# - type: nanoChatEmoji
+#   id: slime
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_slime
 
-- type: nanoChatEmoji
-  id: snake
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_snake
+# - type: nanoChatEmoji
+#   id: snake
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_snake
 
-- type: nanoChatEmoji
-  id: vox
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_vox
+# - type: nanoChatEmoji
+#   id: vox
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_vox
 
 - type: nanoChatEmoji
   id: diona
   category: Plushies
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/plushie_diona.png
 
-- type: nanoChatEmoji
-  id: human
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_human
+# - type: nanoChatEmoji
+#   id: human
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_human
 
-- type: nanoChatEmoji
-  id: xeno
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: plushie_xeno
+# - type: nanoChatEmoji
+#   id: xeno
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: plushie_xeno
 
-- type: nanoChatEmoji
-  id: carp
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: carpplush
+# - type: nanoChatEmoji
+#   id: carp
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: carpplush
 
 - type: nanoChatEmoji
   id: rainbowcarp
@@ -306,12 +306,12 @@
   category: Plushies
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/rainbowlizardplush.png
 
-- type: nanoChatEmoji
-  id: nar
-  category: Plushies
-  sprite:
-    sprite: /Textures/Objects/Fun/toys.rsi
-    state: narplush
+# - type: nanoChatEmoji
+#   id: nar
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/Objects/Fun/toys.rsi
+#     state: narplush
 
 # - type: nanoChatEmoji
 #   id: cirno
@@ -341,8 +341,7 @@
 #     sprite: /Textures/_DV/CosmicCult/Objects/unknownplushie.rsi
 #     state: plushie_cosmic
 
-# Other
 - type: nanoChatEmoji
   id: floorgoblin
-  category: Misc
+  category: Plushies
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/floorgoblin.png
