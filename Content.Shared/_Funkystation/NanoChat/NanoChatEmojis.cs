@@ -31,9 +31,9 @@ public static class NanoChatEmojis
 
                 var sortedEmojis = prototypeManager.EnumeratePrototypes<NanoChatEmojiPrototype>()
                     .GroupBy(proto => proto.Category)
-                    .OrderBy(group => group.Min(proto => string.IsNullOrEmpty(proto.CategoryOrder) ? "zzz" : proto.CategoryOrder))
+                    .OrderBy(group => group.Select(proto => int.TryParse(proto.CategoryOrder, out var val) ? val : int.MaxValue).Min())
                     .ThenBy(group => group.Key)
-                    .SelectMany(group => group.OrderBy(proto => string.IsNullOrEmpty(proto.EmojiOrder) ? "zzz" : proto.EmojiOrder).ThenBy(proto => proto.ID));
+                    .SelectMany(group => group.OrderBy(proto => int.TryParse(proto.EmojiOrder, out var val) ? val : int.MaxValue).ThenBy(proto => proto.ID));
 
                 foreach (var proto in sortedEmojis)
                 {

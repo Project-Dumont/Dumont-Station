@@ -2,7 +2,7 @@
 - type: nanoChatEmoji
   id: alegria
   category: Reacoes
-  categoryOrder: 1
+  categoryOrder: 2
   emojiOrder: 2
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/joy.png
 
@@ -21,7 +21,7 @@
 - type: nanoChatEmoji
   id: pensativo
   category: Reacoes
-  emojiOrder: 4
+  emojiOrder: 5
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pensive.png
 
 - type: nanoChatEmoji
@@ -75,7 +75,7 @@
 - type: nanoChatEmoji
   id: sorrisomaroto
   category: Reacoes
-  emojiOrder: 5
+  emojiOrder: 4
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/smork.png
 
 - type: nanoChatEmoji
@@ -249,7 +249,7 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/clown.png
 
 - type: nanoChatEmoji
-  id: mimo
+  id: mimico
   category: Cabecas
   emojiOrder: 2
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/mime.png
@@ -345,7 +345,7 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/shroom.png
 
 - type: nanoChatEmoji
-  id: nya
+  id: tom
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/nya.png
 
@@ -407,7 +407,7 @@
 - type: nanoChatEmoji
   id: hamburguer
   category: Comida
-  emojiOrder: 3
+  emojiOrder: 2
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/burger.png
 
 - type: nanoChatEmoji
@@ -443,7 +443,7 @@
 - type: nanoChatEmoji
   id: pizza
   category: Comida
-  emojiOrder: 2
+  emojiOrder: 3
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pizza.png
 
 # Departamentos

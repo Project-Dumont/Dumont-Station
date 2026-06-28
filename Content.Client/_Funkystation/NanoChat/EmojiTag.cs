@@ -74,14 +74,24 @@ public sealed class EmojiTag : IMarkupTagHandler
         }
 
         var emojiSize = new Vector2(32f, 32f);
-        control = new TextureRect
+
+        var container = new LayoutContainer
+        {
+            MinSize = emojiSize,
+            MaxSize = emojiSize,
+        };
+
+        var rect = new TextureRect
         {
             Texture = texture,
             Stretch = TextureRect.StretchMode.KeepAspect,
             MinSize = emojiSize,
             MaxSize = emojiSize,
-            Margin = new Thickness(0, -8, 0, 0),
         };
+
+        container.AddChild(rect);
+        LayoutContainer.SetPosition(rect, new Vector2(0, -4f));
+        control = container;
 
         return true;
     }

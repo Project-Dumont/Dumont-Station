@@ -7,8 +7,8 @@
 - type: nanoChatEmoji
   id: godo
   category: Godo
-  categoryOrder: 2
-  emojiOrder: 1
+  categoryOrder: 1
+  emojiOrder: 2
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/godo.png
 
 - type: nanoChatEmoji
@@ -20,7 +20,7 @@
 - type: nanoChatEmoji
   id: donow
   category: Godo
-  emojiOrder: 2
+  emojiOrder: 3
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/donow.png
 
 - type: nanoChatEmoji
@@ -44,7 +44,7 @@
 - type: nanoChatEmoji
   id: golove
   category: Godo
-  emojiOrder: 3
+  emojiOrder: 1
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/golove.png
 
 # # Misc emotes
