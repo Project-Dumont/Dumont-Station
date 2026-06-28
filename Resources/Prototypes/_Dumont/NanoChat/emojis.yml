@@ -2,7 +2,7 @@
 - type: nanoChatEmoji
   id: alegria
   category: Reacoes
-  categoryOrder: 2
+  categoryOrder: 1
   emojiOrder: 2
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/joy.png
 
@@ -100,7 +100,7 @@
 - type: nanoChatEmoji
   id: sim
   category: Simbolos
-  categoryOrder: 4
+  categoryOrder: 3
   emojiOrder: 4
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/yes.png
 
@@ -150,7 +150,7 @@
 - type: nanoChatEmoji
   id: ajudar
   category: Acoes
-  categoryOrder: 5
+  categoryOrder: 4
   emojiOrder: 1
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/help.png
 
@@ -273,7 +273,7 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/monkey.png
 
 - type: nanoChatEmoji
-  id: xeno
+  id: xeno_2
   category: Cabecas
   emojiOrder: 8
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/xeno.png
@@ -295,17 +295,17 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/queen.png
 
 - type: nanoChatEmoji
-  id: lagarto
+  id: lagarto_2
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/plizard.png
 
 - type: nanoChatEmoji
-  id: mariposa
+  id: mariposa_2
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/moth.png
 
 - type: nanoChatEmoji
-  id: slime
+  id: slime_2
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/pslime.png
 
@@ -330,7 +330,7 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/jerry.png
 
 - type: nanoChatEmoji
-  id: cobra
+  id: cobra_2
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/snek.png
 
@@ -350,7 +350,7 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/nya.png
 
 - type: nanoChatEmoji
-  id: carpa
+  id: carpa_2
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/carp.png
 
@@ -360,9 +360,58 @@
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/ian.png
 
 - type: nanoChatEmoji
-  id: vox
+  id: vox_2
   category: Plushies
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/vox.png
+
+- type: nanoChatEmoji
+  id: lagarto_invertido
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/lizard.rsi
+    state: plushie_lizard_inversed
+
+- type: nanoChatEmoji
+  id: carpa_holografica
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/carp.rsi
+    state: holoplush
+
+- type: nanoChatEmoji
+  id: carpa_magica
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/carp.rsi
+    state: magicplush
+
+- type: nanoChatEmoji
+  id: experimento
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/expi.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: tubaram_azul
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/shark.rsi
+    state: blue
+
+- type: nanoChatEmoji
+  id: tubaram_cinza
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/shark.rsi
+    state: grey
+
+- type: nanoChatEmoji
+  id: tubaram_rosa
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/shark.rsi
+    state: pink
 
 # Robôs
 - type: nanoChatEmoji
