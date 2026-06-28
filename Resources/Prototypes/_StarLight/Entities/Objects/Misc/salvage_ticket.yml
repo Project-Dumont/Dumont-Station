@@ -27,8 +27,6 @@
     baseLayer: base
     layerStates:
     - icon
-    layerCountStates:
-    - 1
   - type: Sprite
     sprite: _Starlight/Objects/Economy/salvage_ticket.rsi
     state: icon
@@ -61,7 +59,7 @@
 
 - type: stack
   id: SalvageTicket
-  name: ticket
+  name: ticket-name-2
   icon: { sprite: /Textures/_Starlight/Objects/Economy/salvage_ticket.rsi, state: icon }
   spawn: SalvageTicket
   
