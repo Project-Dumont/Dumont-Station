@@ -7,36 +7,44 @@
 - type: nanoChatEmoji
   id: godo
   category: Godo
+  categoryOrder: 2
+  emojiOrder: 1
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/godo.png
 
 - type: nanoChatEmoji
   id: do
   category: Godo
+  emojiOrder: 4
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/do.png
 
 - type: nanoChatEmoji
   id: donow
   category: Godo
+  emojiOrder: 2
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/donow.png
 
 - type: nanoChatEmoji
   id: gocrazy
   category: Godo
+  emojiOrder: 5
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/donot.png
 
 - type: nanoChatEmoji
   id: gosad
   category: Godo
+  emojiOrder: 7
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/dontdo.png
 
 - type: nanoChatEmoji
   id: godover
   category: Godo
+  emojiOrder: 6
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/godover.png
 
 - type: nanoChatEmoji
   id: golove
   category: Godo
+  emojiOrder: 3
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/golove.png
 
 # # Misc emotes
@@ -49,6 +57,7 @@
 # - type: nanoChatEmoji
 #   id: bubble
 #   category: Character
+#   categoryOrder: 3
 #   sprite: /Textures/Interface/Emotes/bubble.png
 
 # - type: nanoChatEmoji
@@ -198,6 +207,7 @@
 - type: nanoChatEmoji
   id: rouny
   category: Plushies
+  categoryOrder: 8
   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/rouny.png
 
 # - type: nanoChatEmoji

@@ -30,8 +30,10 @@ public static class NanoChatEmojis
                 _cachedEmojis = new Dictionary<string, SpriteSpecifier>();
 
                 var sortedEmojis = prototypeManager.EnumeratePrototypes<NanoChatEmojiPrototype>()
-                    .OrderBy(proto => proto.Category)
-                    .ThenBy(proto => proto.ID);
+                    .GroupBy(proto => proto.Category)
+                    .OrderBy(group => group.Min(proto => string.IsNullOrEmpty(proto.CategoryOrder) ? "zzz" : proto.CategoryOrder))
+                    .ThenBy(group => group.Key)
+                    .SelectMany(group => group.OrderBy(proto => string.IsNullOrEmpty(proto.EmojiOrder) ? "zzz" : proto.EmojiOrder).ThenBy(proto => proto.ID));
 
                 foreach (var proto in sortedEmojis)
                 {

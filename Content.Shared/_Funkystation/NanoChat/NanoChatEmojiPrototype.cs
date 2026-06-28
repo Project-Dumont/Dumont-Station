@@ -27,6 +27,18 @@ public sealed partial class NanoChatEmojiPrototype : IPrototype
     public string Category { get; private set; } = string.Empty;
 
     /// <summary>
+    /// Optional for sort the entire category.
+    /// </summary>
+    [DataField]
+    public string CategoryOrder { get; private set; } = string.Empty;
+
+    /// <summary>
+    /// Optional for sort emojis within their category.
+    /// </summary>
+    [DataField]
+    public string EmojiOrder { get; private set; } = string.Empty;
+
+    /// <summary>
     /// The sprite specifier for this emoji
     /// </summary>
     [DataField(required: true)]
