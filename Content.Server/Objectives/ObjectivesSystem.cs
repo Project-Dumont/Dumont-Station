@@ -57,6 +57,7 @@ using Content.Shared.Administration.Logs;
 using Robust.Shared.Network;
 using Content.Shared.Roles;
 using Content.Server.Roles; //Goobstation
+using Content.Server._CD.Traits; // CD: Round End Redacting
 
 namespace Content.Server.Objectives;
 
@@ -392,6 +393,14 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             _player.TryGetPlayerData(mind.Comp.OriginalOwnerUserId.Value, out var sessionData))
         {
             var username = sessionData.UserName;
+
+            // CD: Round End Redacting
+            if (mind.Comp.OriginalOwnedEntity != null &&
+                TryGetEntity(mind.Comp.OriginalOwnedEntity.Value, out var originalEntity) &&
+                HasComp<HideFromRoundEndScreenComponent>(originalEntity))
+            {
+                username = Loc.GetString("cd-name-redacted-text");
+            }
 
             var nameWithJobMaybe = name;
             if (_job.MindTryGetJobName(mind, out var jobName))
