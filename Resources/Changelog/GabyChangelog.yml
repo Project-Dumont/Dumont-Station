@@ -3337,3 +3337,9 @@ Entries:
         comunicação.
   id: 399
   time: '2026-06-29T22:39:15.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Jetpacks agora podem ser vestidos no slot de outerclotching.
+  id: 400
+  time: '2026-06-29T22:43:00.0000000+00:00'
