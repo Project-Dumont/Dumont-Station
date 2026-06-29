@@ -79,7 +79,7 @@
 - type: ghostSkinListing
   id: DaveJonesSkin
   name: ghost-skin-dave-jones
-  available: false # apenas primeiro mes da loja nova
+  available: true # apenas primeiro mes da loja nova e no dia de lançamento do GTA 6
   price: 18000
   sprite:
     sprite: "/Textures/_Gabystation/Mobs/Ghosts/mago.rsi"
