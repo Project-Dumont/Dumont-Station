@@ -169,7 +169,7 @@ namespace Content.Client.Communications.UI
 
                 if (!string.IsNullOrEmpty(commsState.StationName))
                 {
-                    _menu.StationNameLabel.Text = Loc.GetString("comms-console-menu-header") + " " + commsState.StationName;
+                    _menu.StationNameLabel.Text = Loc.GetString("comms-console-menu-header", ("stationName", commsState.StationName));
                     if (!_menu.StationNameLoaded)
                     {
                         _menu.RenameInput.Text = commsState.StationName;
