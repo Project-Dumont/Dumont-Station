@@ -252,6 +252,7 @@ namespace Content.Server.Communications
 
 
             var stationName = stationUid != null ? MetaData(stationUid.Value).EntityName : string.Empty;
+            var renameOnCooldown = (_timing.CurTime.TotalSeconds - comp.RenameTimer) < comp.RenameDelay;
 
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 isSyndie,
@@ -261,7 +262,8 @@ namespace Content.Server.Communications
                 currentLevel,
                 currentDelay,
                 _roundEndSystem.ExpectedCountdownEnd,
-                stationName
+                stationName,
+                renameOnCooldown
             ));
         }
 

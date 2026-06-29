@@ -89,7 +89,7 @@ namespace Content.Server.Communications
         public double ToggleAcessDelay = 5;
 
         [DataField]
-        public double RenameTimer = 0;
+        public double RenameTimer = -300;
 
         [DataField]
         public double RenameDelay = 300;

@@ -55,6 +55,7 @@ comms-console-rename-cooldown = Aguarde antes de renomear a estação novamente.
 comms-console-rename-same-name = A estação já possui esse nome.
 
 # alerts
+comms-console-menu-alert-header = Nivel de alerta da estação:
 comms-console-menu-disabled-alert = Impossivel mudar o alerta agora
 comms-console-menu-declare-alert = Declarar Alerta {$alertLevel}
 comms-green-alert = Verde

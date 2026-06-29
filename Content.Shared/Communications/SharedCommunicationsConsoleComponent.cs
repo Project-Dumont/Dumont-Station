@@ -40,8 +40,9 @@ namespace Content.Shared.Communications
         public string CurrentAlert;
         public float CurrentAlertDelay;
         public string StationName;
+        public readonly bool RenameOnCooldown;
 
-        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "")
+        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false)
         {
             IsSyndie = isSyndie;
             CanAnnounce = canAnnounce;
@@ -52,6 +53,7 @@ namespace Content.Shared.Communications
             CurrentAlert = currentAlert;
             CurrentAlertDelay = currentAlertDelay;
             StationName = stationName;
+            RenameOnCooldown = renameOnCooldown;
         }
     }
 

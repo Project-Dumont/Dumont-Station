@@ -180,6 +180,9 @@ namespace Content.Client.Communications.UI
                 var canRename = LocalPlayerCanRename();
                 _menu.RenameButton.Visible = canRename;
                 _menu.RenameInput.Visible = canRename;
+                _menu.RenameButton.Disabled = commsState.RenameOnCooldown;
+                _menu.RenameButton.ToolTip = commsState.RenameOnCooldown
+                    ? Loc.GetString("comms-console-rename-cooldown") : null;
 
                 _menu.UpdateButtons();
                 _menu.UpdateRemainingTime();
