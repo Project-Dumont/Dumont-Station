@@ -47,6 +47,13 @@ comms-console-announcement-title-nukie = Agente Nuclear do Sindicato
 comms-console-menu-footer-left = root@nanoOs
 comms-console-menu-footer-right = v1.5
 
+# rename
+comms-console-menu-header = Bem vindo(a) à estação
+comms-console-menu-rename-placeholder = Novo nome da estação...
+comms-console-menu-rename-button = Renomear
+comms-console-rename-cooldown = Aguarde antes de renomear a estação novamente.
+comms-console-rename-same-name = A estação já possui esse nome.
+
 # alerts
 comms-console-menu-disabled-alert = Impossivel mudar o alerta agora
 comms-console-menu-declare-alert = Declarar Alerta {$alertLevel}

@@ -39,8 +39,9 @@ namespace Content.Shared.Communications
         public List<(string id, Color color)>? AlertLevels;
         public string CurrentAlert;
         public float CurrentAlertDelay;
+        public string StationName;
 
-        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null)
+        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "")
         {
             IsSyndie = isSyndie;
             CanAnnounce = canAnnounce;
@@ -50,6 +51,7 @@ namespace Content.Shared.Communications
             AlertLevels = alertLevels;
             CurrentAlert = currentAlert;
             CurrentAlertDelay = currentAlertDelay;
+            StationName = stationName;
         }
     }
 
@@ -86,6 +88,7 @@ namespace Content.Shared.Communications
     }
 
 
+    #region GabyStation
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleToggleEmergencyMaintMessage : BoundUserInterfaceMessage { }
 
@@ -94,6 +97,18 @@ namespace Content.Shared.Communications
 
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleMartialButtonMessage : BoundUserInterfaceMessage { }
+
+    [Serializable, NetSerializable]
+    public sealed class CommunicationsConsoleStationRenameMessage : BoundUserInterfaceMessage
+    {
+        public readonly string NewName;
+        public CommunicationsConsoleStationRenameMessage(string newName)
+        {
+            NewName = newName;
+        }
+    }
+
+    #endregion
 
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleCallEmergencyShuttleMessage : BoundUserInterfaceMessage
