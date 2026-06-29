@@ -18,6 +18,7 @@
 using Content.Server.Defusable.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Popups;
+using Content.Server.Wires;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Components;
 using Content.Shared.Database;
