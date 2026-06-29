@@ -90,6 +90,7 @@ namespace Content.Client.RoundEnd
             RoundId = roundId;
             var roundEndTabs = new TabContainer();
             roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
+            roundEndTabs.AddChild(MakeEconomyRankTab(info)); // gaby
             roundEndTabs.AddChild(MakePlayerManifestTab(info));
             roundEndTabs.AddChild(MakeStationReportTab()); //goob
 
@@ -412,6 +413,55 @@ namespace Content.Client.RoundEnd
             StationReportContainerScrollbox.AddChild(StationReportContainer);
             stationReportTab.AddChild(StationReportContainerScrollbox);
             return stationReportTab;
+        }
+        #endregion
+
+        #region GabyStation/Dumont
+        private BoxContainer MakeEconomyRankTab(RoundEndMessageEvent.RoundEndPlayerInfo[] playersInfo)
+        {
+            var tab = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                Name = Loc.GetString("round-end-summary-window-economy-rank-tab-title")
+            };
+
+            var title = new RichTextLabel();
+            title.SetMarkup("[head=3]Ranking dos mais ricos da rodada.[/head]");
+
+            var scrollBox = new ScrollContainer
+            {
+                VerticalExpand = true,
+                Margin = new Thickness(10),
+                HScrollEnabled = false,
+            };
+
+            var container = new BoxContainer { Orientation = LayoutOrientation.Vertical };
+
+            var rankedPlayers = playersInfo
+                .OrderByDescending(x => x.ICCurrency)
+                .ToArray();
+
+            int rank = 1;
+
+            foreach (var info in rankedPlayers)
+            {
+                var label = new RichTextLabel();
+
+                label.SetMarkup(
+                    $"[color=cyan]#{rank}[/color] " +
+                    $"[color=white]{info.PlayerICName}[/color] - " +
+                    $"[color=yellow]{info.ICCurrency} créditos[/color]"
+                );
+
+                container.AddChild(label);
+                rank++;
+            }
+
+            scrollBox.AddChild(container);
+            tab.AddChild(new Label() { Text = "" });
+            tab.AddChild(title);
+            tab.AddChild(scrollBox);
+            return tab;
         }
         #endregion
     }
