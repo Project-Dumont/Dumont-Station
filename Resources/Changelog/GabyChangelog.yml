@@ -3329,3 +3329,11 @@ Entries:
       message: Aba no manifesto de fim de turno com o ranking de jogadores mais ricos.
   id: 398
   time: '2026-06-29T21:04:19.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Capitão e NTR agora podem renomear a estação pelo console de
+        comunicação.
+  id: 399
+  time: '2026-06-29T22:39:15.0000000+00:00'
