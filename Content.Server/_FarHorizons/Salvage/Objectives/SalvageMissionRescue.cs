@@ -1,8 +1,7 @@
-
 using System.Linq;
 using Content.Server.Humanoid;
 using Content.Server.Station.Systems;
-using Content.Shared._FarHorizons.Factions;
+// Dumont
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Inventory;
@@ -10,9 +9,8 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
-using Microsoft.CodeAnalysis;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Prototypes; // Dumont
 using Robust.Shared.Random;
 
 namespace Content.Server._FarHorizons.Salvage.Objectives;
@@ -45,6 +43,7 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
         var namesString = $"{string.Join("; ", names[..^1])} and {names[^1]}";
         Announce(Loc.GetString(Objective.Announcement, ("names", namesString)));
     }
+    
     public override void BeforeFTLFromMap(EntityUid shuttle)
     {
         if (GetExpeditionConsole(shuttle) is not EntityUid expedConsole)
@@ -66,15 +65,15 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
                             0);
         SetRewardComponent(expedConsole, completion);
         DeleteWithEffect(allTargets);
-
     }
+    
     public override void BeforeFTLToMap(EntityUid shuttle)
     {
 
     }
+    
     public override void OnMapCreated()
     {
-        var factions = IoCManager.Resolve<ISharedFactionManager>();
         var humanoid = EntMan.System<HumanoidAppearanceSystem>();
         var metadata = EntMan.System<MetaDataSystem>();
         var state = EntMan.System<MobStateSystem>();
@@ -86,8 +85,8 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
 
         int objectivesSpawned = 0;
 
-        var possibleFactions = factions.ListPlayableFactions().Where(p => p.Major).ToList();
-        var selectedFaction = possibleFactions[Rand.Next(possibleFactions.Count)];
+        // Dumont
+        string[] possibleJobs = { "Passenger", "MedicalDoctor", "SalvageSpecialist", "CargoTechnician", "Scientist" };
 
         for (var i = 0; i < GetNumSpawnables(); i++)
         {
@@ -110,20 +109,21 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
                 damage.DamageDict.TryAdd(damageTypes[Rand.Next(damageTypes.Count)].ID, Rand.Next(300));
             damageable.TryChangeDamage(ent, damage);
 
-            var jobs = factions.ListFactionJobs().Where(p => p.Faction == selectedFaction).ToList();
-            var job = jobs[Rand.Next(jobs.Count)];
-            var loadoutProtoId = factions.OverrideJobLoadout(job);
-            var loadoutProto = ProtoMan.Index(loadoutProtoId);
-
-            var loadout = new RoleLoadout(loadoutProtoId);
-            loadout.SetDefault(character, null, ProtoMan);
-
-            stationSpawning.EquipRoleLoadout(ent, loadout, loadoutProto);
+            // Dumont
+            var chosenJobId = possibleJobs[Rand.Next(possibleJobs.Length)];
+            
+            if (ProtoMan.TryIndex<RoleLoadoutPrototype>(chosenJobId, out var loadoutProto))
+            {
+                var loadout = new RoleLoadout(chosenJobId);
+                loadout.SetDefault(character, null, ProtoMan);
+                stationSpawning.EquipRoleLoadout(ent, loadout, loadoutProto);
+            }
 
             if (Rand.Prob(0.4))
             {
                 var gasMaskEnt = EntMan.SpawnAtPosition(GasMask, pos);
-                inventory.TryEquip(ent, gasMaskEnt, MaskSlot, force: true);
+                if (!inventory.TryEquip(ent, gasMaskEnt, MaskSlot, force: true))
+                    EntMan.DeleteEntity(gasMaskEnt);
             }
 
             if (objectivesSpawned < Objective.NumTargets.GetValueOrDefault(Difficulty, 0))

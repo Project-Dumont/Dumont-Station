@@ -19,8 +19,10 @@ salvage-expedition-window-claim = Reivindicar
 salvage-expedition-window-next = Próxima oferta
 
 salvage-expedition-difficulty-Moderate = Moderada
-salvage-expedition-difficulty-Hazardous = Perigosa
-salvage-expedition-difficulty-Extreme = Extrema
+salvage-expedition-difficulty-Challenging = Desafiadora
+salvage-expedition-difficulty-Easy = Fácil
+salvage-expedition-difficulty-Difficult = Perigosa
+salvage-expedition-difficulty-Impossible = Impossível
 
 salvage-expedition-difficulty-players = Salvadores recomendados:
 

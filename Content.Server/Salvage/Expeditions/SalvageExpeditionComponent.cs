@@ -17,6 +17,7 @@
 using System.Numerics;
 using Content.Shared._FarHorizons.Salvage;
 using Content.Shared.Salvage;
+using Robust.Shared.Prototypes;
 using Content.Shared.Salvage.Expeditions;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;

@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System; // Dumont: Necessário para o TimeSpan funcionar
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Procedural;
@@ -40,4 +41,18 @@ public sealed partial class SalvageDifficultyPrototype : IPrototype
 
     [DataField("recommendedPlayers", required: true)]
     public int RecommendedPlayers;
+
+    // --- Dumont / Starlight Port ---
+
+    /// <summary>
+    /// Chance of this difficulty being picked in the random pool.
+    /// </summary>
+    [DataField("probability")]
+    public float Probability = 1f;
+
+    /// <summary>
+    /// How much time needs to pass in the round before this difficulty can appear.
+    /// </summary>
+    [DataField("delay")]
+    public TimeSpan Delay = TimeSpan.Zero;
 }
