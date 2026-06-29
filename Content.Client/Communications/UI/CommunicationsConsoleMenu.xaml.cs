@@ -131,6 +131,7 @@ namespace Content.Client.Communications.UI
         public bool CountdownStarted;
         public bool Blinking = false;
         public bool LoadedButtons = false;
+        public bool StationNameLoaded = false;
 
         public string CurrentStationAlertLevel = string.Empty;
         public TimeSpan? CountdownEnd;
@@ -146,6 +147,7 @@ namespace Content.Client.Communications.UI
         public event Action? OnCentcomm; // Gabystation
         public event Action? OnMaint; // Gabystation
         public event Action? OnMartial; // Gabystation
+        public event Action<string>? OnRenameStation; // Gabystation
 
         public AlertLevelButton? CurrentAlertButton;
 
@@ -198,15 +200,13 @@ namespace Content.Client.Communications.UI
             MaintEmergencyButton.OnPressed += _ => OnMaint?.Invoke(); // Gabystation
             CentCommButton.OnPressed += _ => OnCentcomm?.Invoke(); // Gabystation
             MartialButton.OnPressed += _ => OnMartial?.Invoke(); // Gabystation
+            RenameButton.OnPressed += _ => OnRenameStation?.Invoke(RenameInput.Text); // Gabystation
 
             // we use real time here because CurTime gets it from the server at a delay
             nextBlink = _timing.RealTime.TotalSeconds + buttonBlinkDelay;
             Blinking = false;
 
             _sawMill = _logMan.GetSawmill("ui");
-
-
-
         }
 
         public void AddAlertButtons(List<(string id, Color color)> alertLevels) {
