@@ -48,7 +48,7 @@ comms-console-menu-footer-left = root@nanoOs
 comms-console-menu-footer-right = v1.5
 
 # rename
-comms-console-menu-header = Bem vindo(a) à estação ${stationName}
+comms-console-menu-header = Bem vindo(a) à estação {$stationName}
 comms-console-menu-rename-placeholder = Novo nome da estação...
 comms-console-menu-rename-button = Renomear
 comms-console-rename-cooldown = Aguarde antes de renomear a estação novamente.
