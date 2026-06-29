@@ -254,6 +254,13 @@ namespace Content.Server.Database
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.TraitName })
                 .IsUnique();
 
+            modelBuilder.Entity<DBJobAlternateTitle>()
+                .HasOne(t => t.Profile)
+                .WithMany(p => p.AltTitles)
+                .HasForeignKey(t => t.ProfileId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
+
             modelBuilder.Entity<ProfileRoleLoadout>()
                 .HasOne(e => e.Profile)
                 .WithMany(e => e.Loadouts)
@@ -720,7 +727,7 @@ namespace Content.Server.Database
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
 
-        public List<DBJobAlternateTitle> AltTitles = new();
+        public List<DBJobAlternateTitle> AltTitles { get; } = new();
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
