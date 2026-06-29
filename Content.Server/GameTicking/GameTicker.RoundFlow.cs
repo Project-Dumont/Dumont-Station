@@ -716,7 +716,7 @@ namespace Content.Server.GameTicking
                     LastWords = lastWords,
                     EntMobState = mobState,
                     DamagePerGroup = damagePerGroup,
-                    ICCurrency = icCurrency,
+                    PlayerICCurrency = icCurrency,
                 };
                 listOfPlayerInfo.Add(playerEndRoundInfo);
             }

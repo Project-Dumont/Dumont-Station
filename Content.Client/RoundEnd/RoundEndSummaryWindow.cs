@@ -425,9 +425,6 @@ namespace Content.Client.RoundEnd
                 Name = Loc.GetString("round-end-summary-window-economy-rank-tab-title")
             };
 
-            var title = new RichTextLabel();
-            title.SetMarkup("[head=3]Ranking dos mais ricos da rodada.[/head]");
-
             var scrollBox = new ScrollContainer
             {
                 VerticalExpand = true,
@@ -438,28 +435,96 @@ namespace Content.Client.RoundEnd
             var container = new BoxContainer { Orientation = LayoutOrientation.Vertical };
 
             var rankedPlayers = playersInfo
-                .OrderByDescending(x => x.ICCurrency)
+                .Where(p => !p.Observer)
+                .OrderByDescending(x => x.PlayerICCurrency)
                 .ToArray();
+
+            var headerLabel = new Label()
+            {
+                Text = Loc.GetString("round-end-summary-window-economy-rank-tab-title"),
+                StyleClasses = { StyleNano.StyleClassLabelHeading },
+            };
+            container.AddChild(headerLabel);
 
             int rank = 1;
 
             foreach (var info in rankedPlayers)
             {
-                var label = new RichTextLabel();
+                var panel = new PanelContainer
+                {
+                    StyleClasses = { StyleNano.StyleClassBackgroundBaseDark },
+                    Margin = new Thickness(0, 0, 0, 6)
+                };
 
-                label.SetMarkup(
-                    $"[color=cyan]#{rank}[/color] " +
-                    $"[color=white]{info.PlayerICName}[/color] - " +
-                    $"[color=yellow]{info.ICCurrency} créditos[/color]"
-                );
+                var hBox = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Horizontal,
+                    VerticalExpand = true
+                };
 
-                container.AddChild(label);
+                // Rank badge
+                var rankLabel = new Label
+                {
+                    Text = $"#{rank}",
+                    StyleClasses = { StyleNano.StyleClassLabelHeading },
+                    VerticalAlignment = VAlignment.Center,
+                    Margin = new Thickness(8, 0, 4, 0),
+                    FontColorOverride = rank == 1 ? Color.Gold : rank == 2 ? Color.Silver : rank == 3 ? Color.FromHex("#cd7f32") : Color.Gray,
+                };
+                hBox.AddChild(rankLabel);
+
+                // Player sprite
+                if (info.PlayerNetEntity != null)
+                {
+                    hBox.AddChild(new SpriteView(info.PlayerNetEntity.Value, _entityManager)
+                    {
+                        OverrideDirection = Direction.South,
+                        VerticalAlignment = VAlignment.Center,
+                        SetSize = new Vector2(64, 64),
+                        VerticalExpand = true,
+                        Stretch = SpriteView.StretchMode.Fill,
+                        Margin = new Thickness(3, 0, 3, 0)
+                    });
+                }
+
+                var textVBox = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Vertical,
+                    VerticalExpand = true,
+                    SeparationOverride = 2,
+                };
+
+                if (info.PlayerICName != null)
+                {
+                    var nameLabel = new Label
+                    {
+                        Text = info.PlayerICName,
+                        StyleClasses = { StyleNano.StyleClassLabelHeading },
+                        VerticalAlignment = VAlignment.Bottom,
+                        Margin = new Thickness(0, 0, 6, 0),
+                    };
+                    textVBox.AddChild(nameLabel);
+
+                    var oocLabel = new Label
+                    {
+                        Text = Loc.GetString("round-end-summary-window-player-name", ("player", info.PlayerOOCName)),
+                        StyleClasses = { StyleNano.StyleClassLabelSubText },
+                        VerticalAlignment = VAlignment.Top,
+                    };
+                    textVBox.AddChild(oocLabel);
+                }
+
+                var currencyLabel = new RichTextLabel { VerticalAlignment = VAlignment.Center };
+                currencyLabel.SetMarkup(Loc.GetString("round-end-summary-window-ic-balance", ("balance", info.PlayerICCurrency ?? 0)));
+                textVBox.AddChild(currencyLabel);
+
+                hBox.AddChild(textVBox);
+                panel.AddChild(hBox);
+                container.AddChild(panel);
                 rank++;
             }
 
             scrollBox.AddChild(container);
-            tab.AddChild(new Label() { Text = "" });
-            tab.AddChild(title);
             tab.AddChild(scrollBox);
             return tab;
         }

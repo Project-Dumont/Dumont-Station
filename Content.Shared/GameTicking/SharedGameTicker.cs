@@ -261,7 +261,7 @@ namespace Content.Shared.GameTicking
             #endregion
 
             #region GabyStation
-            public int? ICCurrency;
+            public int? PlayerICCurrency;
             #endregion
         }
 
