@@ -37,3 +37,7 @@
 
 - type: Tag
   id: Resomi
+  id: HideGhostWarp
+
+- type: Tag
+  id: EletricRadiation

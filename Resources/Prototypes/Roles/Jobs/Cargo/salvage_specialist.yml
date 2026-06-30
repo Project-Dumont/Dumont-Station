@@ -92,8 +92,10 @@
   - Salvage
   - Maintenance
   - External
+  extendedAccess:
+  - Mining # Dumont
   alternateTitles:
-  - SalvageSpecialistTitleMiner
+  #- SalvageSpecialistTitleMiner //Dumont edit - Separate role
   - SalvageSpecialistTitleTech
   - SalvageSpecialistTitleExpedition
 

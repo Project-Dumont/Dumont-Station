@@ -3291,3 +3291,55 @@ Entries:
         radiação (impacto real apenas em estações maiores).
   id: 394
   time: '2026-06-27T16:25:13.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Adicionado os novos acessos como acessos extendidos em rounds lowpop
+        para funções não especializadas.
+    - type: Fix
+      message: Virologista agora possui o próprio acesso.
+    - type: Fix
+      message: >-
+        Ícone de trabalho do Geneticista alterado para a mesma cor do restante
+        da Sci.
+    - type: Remove
+      message: >-
+        Removido títulos alternativos de carteiro, minerador e roboticista das
+        funções sem tal acesso como padrão.
+  id: 395
+  time: '2026-06-28T17:33:47.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: >-
+        Airlocks do correio agora devem spawnar corretamente durante
+        carregamento do mapa.
+  id: 396
+  time: '2026-06-28T17:37:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: A interface fantasma foi melhorada.
+  id: 397
+  time: '2026-06-29T20:42:10.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Aba no manifesto de fim de turno com o ranking de jogadores mais ricos.
+  id: 398
+  time: '2026-06-29T21:04:19.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Capitão e NTR agora podem renomear a estação pelo console de
+        comunicação.
+  id: 399
+  time: '2026-06-29T22:39:15.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Jetpacks agora podem ser vestidos no slot de outerclotching.
+  id: 400
+  time: '2026-06-29T22:43:00.0000000+00:00'

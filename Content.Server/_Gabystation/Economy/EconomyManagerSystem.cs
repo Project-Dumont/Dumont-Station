@@ -18,6 +18,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.NameIdentifier;
 using Content.Shared.Roles;
+using NetCord;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -351,6 +352,23 @@ namespace Content.Server._Gabystation.Economy
 
             return result;
 
+        }
+
+        /// <summary>
+        /// Get the first balance the system find in any available component.
+        /// </summary>
+        /// <returns>0 if theres no account registred</returns>
+        public int GetFirstBalance(int accountId)
+        {
+            var balance = 0;
+            var query = AllEntityQuery<EconomyManagerComponent>();
+            while (query.MoveNext(out var comp))
+            {
+                if (TryGetBalance(comp, accountId, out balance))
+                    return balance;
+            }
+
+            return 0;
         }
     }
 }
