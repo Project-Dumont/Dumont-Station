@@ -48,6 +48,9 @@
         - MedicalPatch
         - CigPack
         - Cigarette
+        - Jug # gaby change
   - type: Dumpable
   - type: ExplosionResistance # Goob - end
     damageCoefficient: 0.25
+  - type: StaticPrice
+    price: 500 # gaby change
