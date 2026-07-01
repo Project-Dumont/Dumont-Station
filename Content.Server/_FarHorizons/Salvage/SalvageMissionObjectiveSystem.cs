@@ -77,7 +77,7 @@ public sealed class SalvageMissionObjectiveSystem : EntitySystem
             ("bonus", ent.Comp.Bonuses), ("maxBonus", ent.Comp.MaxBonuses), ("totalReward", ent.Comp.TotalReward)),
             InGameICChatType.Speak, true);
         
-        if(_transform.TryGetMapOrGridCoordinates(ent, out var pos))
+        if(ent.Comp.TotalReward > 0 && _transform.TryGetMapOrGridCoordinates(ent, out var pos))
             _stack.SpawnMultiple(objective.RewardProto, ent.Comp.TotalReward, pos.Value);
         EntityManager.RemoveComponent<SalvageMissionRewardComponent>(ent);
     }
