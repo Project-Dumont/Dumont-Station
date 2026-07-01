@@ -171,7 +171,7 @@ public sealed partial class SalvageMissionRescue : BaseSalvageMissionObjectiveHa
                             continue;
                         }
                         
-                        // Se for uma roupa normal e passar no filtro, veste no corpo
+                        // Dumont
                         if (!inventory.TryEquip(ent, item, slot, force: true))
                             EntMan.DeleteEntity(item);
                     }
