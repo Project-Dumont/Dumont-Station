@@ -468,6 +468,8 @@
     board: CargoShuttleConsoleCircuitboard
   - type: StealTarget
     stealGroup: CargoShuttleConsoleCircuitboard
+  - type: AccessReader # Dumont
+    access: [["Cargo"]]
 
 - type: entity
   parent: BaseComputerShuttle
@@ -498,6 +500,8 @@
       board: SalvageShuttleConsoleCircuitboard
     - type: StealTarget
       stealGroup: SalvageShuttleConsoleCircuitboard
+    - type: AccessReader # Dumont
+      access: [["Salvage"]]
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -1886,7 +1890,7 @@
   - type: Computer
     board: RoboticsConsoleCircuitboard
   - type: AccessReader # only used for dangerous things
-    access: [["ResearchDirector"]]
+    access: [["ResearchDirector"], ["Robotics"]] # Dumont edit
   - type: Lock
     unlockOnClick: false
 

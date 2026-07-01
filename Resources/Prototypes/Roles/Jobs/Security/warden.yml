@@ -178,6 +178,7 @@
   - External
   - Detective
   - Cryogenics
+  - BrigMedic # Dumont
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

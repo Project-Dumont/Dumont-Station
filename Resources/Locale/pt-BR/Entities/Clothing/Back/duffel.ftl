@@ -49,8 +49,8 @@ ent-ClothingBackpackDuffelSyndicateMedical = mala do Sindicato
 ent-ClothingBackpackDuffelSyndicateMedicalBundle = mala do Sindicato
     .desc = Isso não parece bom, é uma mala de algum traídor... Talvez tenha algo dentro?
 
-ent-ClothingBackpackDuffelHolding = mala interdimensional
-    .desc = Uma mala que contém um buraco de minhoca a dimensão azul.
+ent-ClothingBackpackDuffelHolding = mala bluespace
+    .desc = Uma mala que contém um portal bluespace para armazenamento de itens.
 
 ent-ClothingBackpackDuffelAtmospherics = mala da atmosférica
     .desc = Uma mala espaçosa e à prova de fogo. Tem cheiro de plasma.

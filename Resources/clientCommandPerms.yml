@@ -89,6 +89,7 @@
     - dumpentities
     - showaccessreaders
     - showaudiomuffle # Trauma
+    - exportsprite # Dumont
 
 - Flags: MAPPING
   Commands:

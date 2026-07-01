@@ -32,7 +32,7 @@
   - Engineering
   - Medical
   - Quartermaster
-  - Salvage
+  - Salvage #Dumont Salvage -> Exploration
   - Cargo
   - Research
   - Service
@@ -50,6 +50,15 @@
   - GenpopLeave
   - Robotics #Goob
   - Journalism #Goob
+  - Virology #Dumont
+  - Psychology #Dumont
+  - Pharmacy #Dumont
+  - Genetics #Dumont
+  - Mail #Dumont
+  - Mining #Dumont
+  - BrigMedic #Dumont
+  - Library #Dumont
+  - Bitrun # Orion
 
 - type: accessGroup
   id: General

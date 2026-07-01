@@ -483,7 +483,8 @@ namespace Content.Client.HealthAnalyzer.UI
             return mobState switch
             {
                 MobState.Alive => Loc.GetString("health-analyzer-window-entity-alive-text"),
-                MobState.Critical => Loc.GetString("health-analyzer-window-entity-critical-text"),
+                MobState.SoftCritical => Loc.GetString("health-analyzer-window-entity-soft-critical-text"), // Orion-Edit
+                MobState.HardCritical => Loc.GetString("health-analyzer-window-entity-hard-critical-text"), // Orion
                 MobState.Dead => Loc.GetString("health-analyzer-window-entity-dead-text"),
                 _ => Loc.GetString("health-analyzer-window-entity-unknown-text"),
             };

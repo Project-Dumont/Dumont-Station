@@ -119,7 +119,7 @@
     stateDoorOpen: mining_open
     stateDoorClosed: mining_door
   - type: AccessReader
-    access: [["Salvage"]]
+    access: [["Mining"]] # Dumont edit
 # Lavaland Change end
 
 # Command
@@ -419,7 +419,7 @@
     stateDoorOpen: armory_open
     stateDoorClosed: brigmedic_door
   - type: AccessReader
-    access: [["Security"]] # goob edit
+    access: [["BrigMedic"]] # Dumont edit
 
 # Security Officer
 - type: entity
