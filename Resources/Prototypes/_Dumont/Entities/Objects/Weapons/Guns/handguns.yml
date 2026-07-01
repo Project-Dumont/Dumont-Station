@@ -6,7 +6,7 @@
   name: Watson 38
   parent: [BaseWeaponRevolver, BaseSecurityContraband]
   id: WeaponRevolverWatson38
-  description: A compact revolver, uninteresting but gets the job done, like a true detective. Loads eight .38 bullets.
+  description: A compact revolver, uninteresting but gets the job done like a true detective. Loads eight .38 bullets.
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/k38master.rsi
