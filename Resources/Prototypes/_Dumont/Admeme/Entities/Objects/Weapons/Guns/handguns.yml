@@ -123,29 +123,28 @@
 # Revolvers
 
 - type: entity
-  name: Big Drummer
+  name: The Silverthorn
   suffix: admeme
-  parent: [BaseWeaponRevolver]
-  id: WeaponRevolverBigDrummer
-  description: This revolver somehow fits 30 bullets of .45 ammo into a 6-round drum through space magic. 
+  parent: [BaseWeaponRevolver, BaseMajorContraband]
+  id: WeaponRevolverSilverthorn
+  description: This single-action revolver is a nefarious masterpiece, anti-materiel firepower that fits into your hand, loads five .60 rounds. 
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
   - type: Gun
-    fireRate: 4 
+    fireRate: 0.75 
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - CartridgeMagnum
-        - SpeedLoaderMagnum
-    proto: CartridgeMagnum 
-    capacity: 30 
-    chambers: [ True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True ] 
-    ammoSlots: [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+        - CartridgeAntiMateriel
+    proto: CartridgeAntiMateriel
+    capacity: 5
+    chambers: [ True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null ]
     soundEject:
       path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
     soundInsert:

@@ -34,8 +34,8 @@
     tags:
     - Cartridge
     - CartridgeAntiMateriel
-  - type: HitScanCartridgeAmmo
-    hitscan: AntiMaterielBulletTrace
+  - type: CartridgeAmmo # Dumont, test
+    proto: BulletAntiMateriel # Dumont, test
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
     layers:

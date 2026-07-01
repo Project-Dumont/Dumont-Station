@@ -44,7 +44,7 @@
             attackRate: 1.5
             damage:
               types:
-                Blunt: 15
+                Blunt: 25
                 Structural: 25
             armorPenetration: 0.5
             mustBeEquippedToUse: true
@@ -68,7 +68,7 @@
             autoAttack: true
             damage:
               types:
-                Slash: 15
+                Slash: 20
                 Structural: 15
             armorPenetration: 0.5
             mustBeEquippedToUse: true
