@@ -75,6 +75,7 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
         if (!_hands.TryGetHand(args.Container.Owner, args.Container.ID, out _))
             args.Cancel();
     }
+    
     private void OnPhoneRemoveHolder(Entity<RotaryPhoneHolderComponent> ent, ref EntRemovedFromContainerMessage args)
     {
         if (Deleted(ent.Owner)
@@ -160,7 +161,6 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
             args.PushMarkup(Loc.GetString("phone-number-description", ("number", number)));
     }
 
-
     private void OnGetVerbs(Entity<RotaryPhoneComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanComplexInteract
@@ -194,7 +194,6 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
         if (phone.PhoneNumber != comp.PhoneNumber)
             args.Cancelled = true;
     }
-
 
     private void OnUiClosed(Entity<RotaryPhoneComponent> ent, ref BoundUIClosedEvent args)
     {
@@ -272,26 +271,24 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
 
     private void DisconnectPhones(RotaryPhoneComponent thisPhone)
     {
-        if (thisPhone.ConnectedPhone != null)
-        {
-            if (TryComp<RotaryPhoneComponent>(thisPhone.ConnectedPhone, out var otherPhone))
-            {
-                // Dumont
-                if (otherPhone.SoundEntity != null)
-                    otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
+        // Dumont - fix shitcode
+        if (thisPhone.ConnectedPhone is null)
+            return;
 
-                // Dumont
-                var ev = new PhoneHungUpEvent();
-                RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
+        if (!TryComp<RotaryPhoneComponent>(thisPhone.ConnectedPhone, out var otherPhone))
+            return;
 
-                // Dumont
-                otherPhone.ConnectedPhone = null;
-                otherPhone.Connected = false;
-                otherPhone.Engaged = false;
+        if (otherPhone.SoundEntity != null)
+            otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
 
-                Dirty(thisPhone.ConnectedPhone.Value, otherPhone);
-            }
-        }
+        var ev = new PhoneHungUpEvent();
+        RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
+
+        otherPhone.ConnectedPhone = null;
+        otherPhone.Connected = false;
+        otherPhone.Engaged = false;
+
+        Dirty(thisPhone.ConnectedPhone.Value, otherPhone);
 
         // Dumont
         if (thisPhone.SoundEntity != null)
