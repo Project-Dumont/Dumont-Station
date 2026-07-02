@@ -272,24 +272,26 @@ public abstract class SharedRotaryPhoneSystem : EntitySystem
 
     private void DisconnectPhones(RotaryPhoneComponent thisPhone)
     {
-        // Dumont - fix shitcode
-        if (thisPhone.ConnectedPhone is null)
-            return;
+        if (thisPhone.ConnectedPhone != null)
+        {
+            if (TryComp<RotaryPhoneComponent>(thisPhone.ConnectedPhone, out var otherPhone))
+            {
+                // Dumont
+                if (otherPhone.SoundEntity != null)
+                    otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
 
-        if (!TryComp<RotaryPhoneComponent>(thisPhone.ConnectedPhone, out var otherPhone))
-            return;
+                // Dumont
+                var ev = new PhoneHungUpEvent();
+                RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
 
-        if (otherPhone.SoundEntity != null)
-            otherPhone.SoundEntity = _audio.Stop(otherPhone.SoundEntity);
+                // Dumont
+                otherPhone.ConnectedPhone = null;
+                otherPhone.Connected = false;
+                otherPhone.Engaged = false;
 
-        var ev = new PhoneHungUpEvent();
-        RaiseLocalEvent(thisPhone.ConnectedPhone.Value, ref ev);
-
-        otherPhone.ConnectedPhone = null;
-        otherPhone.Connected = false;
-        otherPhone.Engaged = false;
-
-        Dirty(thisPhone.ConnectedPhone.Value, otherPhone);
+                Dirty(thisPhone.ConnectedPhone.Value, otherPhone);
+            }
+        }
 
         // Dumont
         if (thisPhone.SoundEntity != null)
