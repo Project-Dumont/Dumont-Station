@@ -1,0 +1,936 @@
+- type: jukebox
+  id: AlienBoy
+  name: Oliver Tree - Alien Boy
+  path:
+    path: /Audio/_Dumont/Jukebox/alien_boy.ogg
+
+- type: jukebox
+  id: AllStar
+  name: Smash Mouth - All Star
+  path:
+    path: /Audio/_Dumont/Jukebox/all_star.ogg
+
+- type: jukebox
+  id: AllTheThingsSheSaid
+  name: t.A.T.u. - All The Things She Said
+  path:
+    path: /Audio/_Dumont/Jukebox/all_the_things_she_said.ogg
+
+- type: jukebox
+  id: AloneAgain
+  name: Gillbert O'Sullivan - Alone Again
+  path:
+    path: /Audio/_Dumont/Jukebox/alone_again.ogg
+
+- type: jukebox
+  id: AmericanIdiot
+  name: Green Day - American Idiot
+  path:
+    path: /Audio/_Dumont/Jukebox/american_idiot.ogg
+
+- type: jukebox
+  id: AndILoveHer
+  name: The Beatles - And I Love Her
+  path:
+    path: /Audio/_Dumont/Jukebox/and_i_love_her.ogg
+
+- type: jukebox
+  id: AxelF
+  name: Crazy Frog - Axel F
+  path:
+    path: /Audio/_Dumont/Jukebox/axel_f.ogg
+
+- type: jukebox
+  id: BakerStreet
+  name: Gerry Refferty - Baker Street
+  path:
+    path: /Audio/_Dumont/Jukebox/baker_street.ogg
+
+- type: jukebox
+  id: BarbieGirl
+  name: Aqua - Barbie Girl
+  path:
+    path: /Audio/_Dumont/Jukebox/barbie_girl.ogg
+
+- type: jukebox
+  id: BeatIt
+  name: Michael Jackson - Beat It
+  path:
+    path: /Audio/_Dumont/Jukebox/beat_it.ogg
+
+- type: jukebox
+  id: Because
+  name: The Beatles - Because
+  path:
+    path: /Audio/_Dumont/Jukebox/because.ogg
+
+- type: jukebox
+  id: BetterOffAlone
+  name: Alice Deejay - Better Off Alone
+  path:
+    path: /Audio/_Dumont/Jukebox/better_off_alone.ogg
+
+- type: jukebox
+  id: BillieJean
+  name: Michael Jackson - Billie Jean
+  path:
+    path: /Audio/_Dumont/Jukebox/billie_jean.ogg
+
+- type: jukebox
+  id: Blue
+  name: Eiffel 65 - Blue
+  path:
+    path: /Audio/_Dumont/Jukebox/blue.ogg
+
+- type: jukebox
+  id: BoomBoomBoomBoom
+  name: Vengaboys - Boom, Boom, Boom, Boom!!
+  path:
+    path: /Audio/_Dumont/Jukebox/boom_boom_boom_boom.ogg
+
+- type: jukebox
+  id: BrainStew
+  name: Green Day - Brain Stew
+  path:
+    path: /Audio/_Dumont/Jukebox/brain_stew.ogg
+
+- type: jukebox
+  id: BreakMyStride
+  name: Matthew Wilder - Break My Stride
+  path:
+    path: /Audio/_Dumont/Jukebox/break_my_stride.ogg
+
+- type: jukebox
+  id: Brother_Louie
+  name: Modern Talking - Brother Louie
+  path:
+    path: /Audio/_Dumont/Jukebox/brother_louie.ogg
+
+- type: jukebox
+  id: BumbleBee
+  name: Bambee - Bumble Bee
+  path:
+    path: /Audio/_Dumont/Jukebox/bumble_bee.ogg
+
+- type: jukebox
+  id: Butterfly
+  name: SMiLE.dk - Butterfly
+  path:
+    path: /Audio/_Dumont/Jukebox/butterfly.ogg
+
+- type: jukebox
+  id: CaliforniaDreamin
+  name: The Mamas & The Papas - California Dreamin'
+  path:
+    path: /Audio/_Dumont/Jukebox/california_dreamin.ogg
+
+- type: jukebox
+  id: Californication
+  name: Red Hot Chilli Peppers - Californication
+  path:
+    path: /Audio/_Dumont/Jukebox/californication.ogg
+
+- type: jukebox
+  id: CantStop
+  name: Red Hot Chilli Peppers - Can't Stop
+  path:
+    path: /Audio/_Dumont/Jukebox/cant_stop.ogg
+
+- type: jukebox
+  id: CantTakeMyEyesOffYou
+  name: Frankie Valli - Can't My Eyes Off You
+  path:
+    path: /Audio/_Dumont/Jukebox/cant_take_my_eyes_off_you.ogg
+
+- type: jukebox
+  id: CatchTheRainbow
+  name: Rainbow - Catch The Rainbow
+  path:
+    path: /Audio/_Dumont/Jukebox/catch_the_rainbow.ogg
+
+- type: jukebox
+  id: CheriCheriLady
+  name: Modern Talking - Cheri Cheri Lady
+  path:
+    path: /Audio/_Dumont/Jukebox/cheri_cheri_lady.ogg
+
+- type: jukebox
+  id: ChopisCentis
+  name: Mamonas Assassinas - Chopis Centis
+  path:
+    path: /Audio/_Dumont/Jukebox/chopis_centis.ogg
+
+- type: jukebox
+  id: ClintEastwood
+  name: Gorillaz - Clint Eastwood
+  path:
+    path: /Audio/_Dumont/Jukebox/clint_eastwood.ogg
+
+- type: jukebox
+  id: CorDeCaramelo
+  name: Milennium Cia Show - Cor De Caramelo
+  path:
+    path: /Audio/_Dumont/Jukebox/cor_de_caramelo.ogg
+
+- type: jukebox
+  id: CrystalDolphin
+  name: Kingo Hamada - Crystal Dolphin
+  path:
+    path: /Audio/_Dumont/Jukebox/crystal_dolphin.ogg
+
+- type: jukebox
+  id: DancaKuduro
+  name: Latino - Dança Kuduro
+  path:
+    path: /Audio/_Dumont/Jukebox/danca_kuduro.ogg
+
+- type: jukebox
+  id: DancingQueen
+  name: ABBA - Dancing Queen
+  path:
+    path: /Audio/_Dumont/Jukebox/dancing_queen.ogg
+
+- type: jukebox
+  id: DancingWithMyself
+  name: Billy Idol - Dancing With Myself
+  path:
+    path: /Audio/_Dumont/Jukebox/dancing_with_myself.ogg
+
+- type: jukebox
+  id: DayAfterDay
+  name: Badfinger - Day After Day
+  path:
+    path: /Audio/_Dumont/Jukebox/day_after_day.ogg
+
+- type: jukebox
+  id: DISCO
+  name: Ottawan - D.I.S.C.O.
+  path:
+    path: /Audio/_Dumont/Jukebox/disco.ogg
+
+- type: jukebox
+  id: DontDreamItsOver
+  name: Crowded House - Don't Dream It's Over
+  path:
+    path: /Audio/_Dumont/Jukebox/dont_dream_its_over.ogg
+
+- type: jukebox
+  id: DontLetTheStarsGetInYourEyes
+  name: Perry Como - Don't Let The Stars Get In Your Eyes
+  path:
+    path: /Audio/_Dumont/Jukebox/dont_let_the_stars_get_in_your_eyes.ogg
+
+- type: jukebox
+  id: DontStopMeNow
+  name: Queen - Don't Stop Me Now
+  path:
+    path: /Audio/_Dumont/Jukebox/dont_stop_me_now.ogg
+
+- type: jukebox
+  id: DotA
+  name: Basshunter - DotA
+  path:
+    path: /Audio/_Dumont/Jukebox/dota.ogg
+
+- type: jukebox
+  id: Downunder
+  name: Men At Work - Down Under
+  path:
+    path: /Audio/_Dumont/Jukebox/down_under.ogg
+
+- type: jukebox
+  id: DragosteaDinTei
+  name: O-Zone - Dragostea Din Tei
+  path:
+    path: /Audio/_Dumont/Jukebox/dragostea_din_tei.ogg
+
+- type: jukebox
+  id: Elenore
+  name: The Turtles - Elenore
+  path:
+    path: /Audio/_Dumont/Jukebox/elenore.ogg
+
+- type: jukebox
+  id: EnjoyTheSilence
+  name: Depeche Mode - Enjoy The Silence
+  path:
+    path: /Audio/_Dumont/Jukebox/enjoy_the_silence.ogg
+
+- type: jukebox
+  id: Escape
+  name: Ruppert Holmes - Escape
+  path:
+    path: /Audio/_Dumont/Jukebox/escape.ogg
+
+- type: jukebox
+  id: EuNasciHaDezMilAnos
+  name: Raul Seixas - Eu Nasci Há 10 Mil Anos Atrás
+  path:
+    path: /Audio/_Dumont/Jukebox/eu_nasci_ha_dez_mil_anos.ogg
+
+- type: jukebox
+  id: EuSemVoce
+  name: Lilian - Eu Sem Você
+  path:
+    path: /Audio/_Dumont/Jukebox/eu_sem_voce.ogg
+
+- type: jukebox
+  id: EveryBreathYouTake
+  name: The Police - Every Breath You Take
+  path:
+    path: /Audio/_Dumont/Jukebox/every_breath_you_take.ogg
+
+- type: jukebox
+  id: EverybodyWantsToRuleTheWorld
+  name: Tears For Fears - Everybody Wants To Rule The World
+  path:
+    path: /Audio/_Dumont/Jukebox/everybody_wants_to_rule_the_world.ogg
+
+- type: jukebox
+  id: EverythingSheWants
+  name: Wham! - Everything She Wants
+  path:
+    path: /Audio/_Dumont/Jukebox/everything_she_wants.ogg
+
+- type: jukebox
+  id: Exagerado
+  name: Cazuza - Exagerado
+  path:
+    path: /Audio/_Dumont/Jukebox/exagerado.ogg
+
+- type: jukebox
+  id: EyeOfTheTiger
+  name: Survivor - Eye Of The Tiger
+  path:
+    path: /Audio/_Dumont/Jukebox/eye_of_the_tiger.ogg
+
+- type: jukebox
+  id: Fernando
+  name: ABBA - Fernando
+  path:
+    path: /Audio/_Dumont/Jukebox/fernando.ogg
+
+- type: jukebox
+  id: FestaNoApe
+  name: Latino - Festa No Apê
+  path:
+    path: /Audio/_Dumont/Jukebox/festa_no_ape.ogg
+
+- type: jukebox
+  id: FiveHundredMiles
+  name: Peter, Paul And Mary - 500 Miles
+  path:
+    path: /Audio/_Dumont/Jukebox/five_hundred_miles.ogg
+
+- type: jukebox
+  id: Funkytown
+  name: Lipps Inc. - Funkytown
+  path:
+    path: /Audio/_Dumont/Jukebox/funkytown.ogg
+
+- type: jukebox
+  id: GirlsJustWantToHaveFun
+  name: Cyndi Lauper - Girls Just Want To Have Fun
+  path:
+    path: /Audio/_Dumont/Jukebox/girls_just_wanna_have_fun.ogg
+
+- type: jukebox
+  id: GotToGetYouIntoMyLife
+  name: The Beatles - Got To Get You Into My Life
+  path:
+    path: /Audio/_Dumont/Jukebox/got_to_get_you_into_my_life.ogg
+
+- type: jukebox
+  id: HappyTogheter
+  name: The Turtles - Happy Togheter
+  path:
+    path: /Audio/_Dumont/Jukebox/happy_togheter.ogg
+
+- type: jukebox
+  id: HaveYoutEverSeenTheRain
+  name: Creedence Clearwater Revival - Have You Ever Seen The Rain
+  path:
+    path: /Audio/_Dumont/Jukebox/have_you_ever_seen_the_rain.ogg
+
+- type: jukebox
+  id: HeartOfGlass
+  name: Blondie - Heart Of Glass
+  path:
+    path: /Audio/_Dumont/Jukebox/heart_of_glass.ogg
+
+- type: jukebox
+  id: HeavenKnowsImMiserableNow
+  name: The Smiths - Heaven Knows I'm Miserable Now
+  path:
+    path: /Audio/_Dumont/Jukebox/heaven_knows_im_miserable_now.ogg
+
+- type: jukebox
+  id: Help
+  name: The Beatles - Help!
+  path:
+    path: /Audio/_Dumont/Jukebox/help.ogg
+
+- type: jukebox
+  id: HeMan
+  name: Trem Da Alegria - He-Man
+  path:
+    path: /Audio/_Dumont/Jukebox/he_man.ogg
+
+- type: jukebox
+  id: HereComesTheSun
+  name: The Beatles - Here Comes The Sun
+  path:
+    path: /Audio/_Dumont/Jukebox/here_comes_the_sun.ogg
+
+- type: jukebox
+  id: Heroes
+  name: David Bowie - "Heroes"
+  path:
+    path: /Audio/_Dumont/Jukebox/heroes.ogg
+
+- type: jukebox
+  id: HeyJude
+  name: The Beatles - Hey Jude
+  path:
+    path: /Audio/_Dumont/Jukebox/hey_jude.ogg
+
+- type: jukebox
+  id: HeyTonight
+  name: Creedence Clearwater Revival - Hey Tonight
+  path:
+    path: /Audio/_Dumont/Jukebox/hey_tonight.ogg
+
+- type: jukebox
+  id: Heyyeyaaeyaaaeyaeyaa
+  name: SLACKCiRCUS - Fabulous Secret Powers
+  path:
+    path: /Audio/_Dumont/Jukebox/heyyeyaaeyaaaeyaeyaa.ogg
+
+- type: jukebox
+  id: HotelCalifornia
+  name: Eagles - Hotel California
+  path:
+    path: /Audio/_Dumont/Jukebox/hotel_california.ogg
+
+- type: jukebox
+  id: HowSoonIsNow
+  name: The Smiths - How Soon Is Now?
+  path:
+    path: /Audio/_Dumont/Jukebox/how_soon_is_now.ogg
+
+- type: jukebox
+  id: IJustThrewOutTheLoveOfMyDreams
+  name: Weezer - I Just Threw Out The Love Of My Dreams
+  path:
+    path: /Audio/_Dumont/Jukebox/i_just_threw_out_the_love_of_my_dreams.ogg
+
+- type: jukebox
+  id: IRanSoFarAway
+  name: A Flock Of Seagulls - I Ran
+  path:
+    path: /Audio/_Dumont/Jukebox/i_ran_so_far_away.ogg
+
+- type: jukebox
+  id: IWantYou
+  name: Savage Garden - I Want You
+  path:
+    path: /Audio/_Dumont/Jukebox/i_want_you.ogg
+
+- type: jukebox
+  id: IllNeverSmileAgain
+  name: Tommy Dorsey - I'll Never Smile Again
+  path:
+    path: /Audio/_Dumont/Jukebox/ill_never_smile_again.ogg
+
+- type: jukebox
+  id: ImABeliever
+  name: Smash Mouth - I'm A Believer
+  path:
+    path: /Audio/_Dumont/Jukebox/im_a_believer.ogg
+
+- type: jukebox
+  id: ImGonnaBe
+  name: The Proclaimers - I'm Gonna Be
+  path:
+    path: /Audio/_Dumont/Jukebox/im_gonna_be.ogg
+
+- type: jukebox
+  id: Imagine
+  name: John Lennon - Imagine
+  path:
+    path: /Audio/_Dumont/Jukebox/imagine.ogg
+
+- type: jukebox
+  id: InMyLife
+  name: The Beatles - In My Life
+  path:
+    path: /Audio/_Dumont/Jukebox/in_my_life.ogg
+
+- type: jukebox
+  id: IntoEachLifeSomeRainMustFall
+  name: The Ink Spots - Into Each Life Some Rain Must Fall
+  path:
+    path: /Audio/_Dumont/Jukebox/into_each_life_some_rain_must_fall.ogg
+
+- type: jukebox
+  id: IslandInTheSun
+  name: Weezer - Island In The Sun
+  path:
+    path: /Audio/_Dumont/Jukebox/island_in_the_sun.ogg
+
+- type: jukebox
+  id: ItAintOverTilItsOver
+  name: Lenny Kravitz - It Ain't Over 'Til It's Over
+  path:
+    path: /Audio/_Dumont/Jukebox/it_aint_over_til_its_over.ogg
+
+- type: jukebox
+  id: JohnnyBeGoode
+  name: Chuck Berry - Johnny B. Goode
+  path:
+    path: /Audio/_Dumont/Jukebox/johnny_be_goode.ogg
+
+- type: jukebox
+  id: KillerQueen
+  name: Queen - Killer Queen
+  path:
+    path: /Audio/_Dumont/Jukebox/killer_queen.ogg
+
+- type: jukebox
+  id: Kokomo
+  name: The Beach Boys - Kokomo
+  path:
+    path: /Audio/_Dumont/Jukebox/kokomo.ogg
+
+- type: jukebox
+  id: LaVemOAlemao
+  name: Mamonas Assassinas - Lá Vem O Alemão
+  path:
+    path: /Audio/_Dumont/Jukebox/la_vem_o_alemao.ogg
+
+- type: jukebox
+  id: LamourToujours
+  name: Gigi D'Agostino - L'Amour Toujours
+  path:
+    path: /Audio/_Dumont/Jukebox/lamour_toujours.ogg
+
+- type: jukebox
+  id: LastChristmas
+  name: Wham! - Last Christmas
+  path:
+    path: /Audio/_Dumont/Jukebox/last_christmas.ogg
+
+- type: jukebox
+  id: LetItBe
+  name: The Beatles - Let It Be
+  path:
+    path: /Audio/_Dumont/Jukebox/let_it_be.ogg
+
+- type: jukebox
+  id: LetsDance
+  name: David Bowie - Let's Dance
+  path:
+    path: /Audio/_Dumont/Jukebox/lets_dance.ogg
+
+- type: jukebox
+  id: LiveAndLetDie
+  name: Wings - Live And Let Die
+  path:
+    path: /Audio/_Dumont/Jukebox/live_and_let_die.ogg
+
+- type: jukebox
+  id: MariaIzabel
+  name: Marcus Pitter - Maria Izabel
+  path:
+    path: /Audio/_Dumont/Jukebox/maria_izabel.ogg
+
+- type: jukebox
+  id: Maybe
+  name: The Ink Spots - Maybe
+  path:
+    path: /Audio/_Dumont/Jukebox/maybe.ogg
+
+- type: jukebox
+  id: MeninaVeneno
+  name: Ritchie - Menina Veneno
+  path:
+    path: /Audio/_Dumont/Jukebox/menina_veneno.ogg
+
+- type: jukebox
+  id: MyLuckyStars
+  name: Tupperwave - My Lucky Stars
+  path:
+    path: /Audio/_Dumont/Jukebox/my_lucky_stars.ogg
+
+- type: jukebox
+  id: MyWay
+  name: Frank Sinatra - My Way
+  path:
+    path: /Audio/_Dumont/Jukebox/my_way.ogg
+
+- type: jukebox
+  id: NineteenTwoThousand
+  name: Gorillaz - 19-2000
+  path:
+    path: /Audio/_Dumont/Jukebox/nineteen_two_thousand.ogg
+
+- type: jukebox
+  id: NovemberRain
+  name: Guns N' Roses - November Rain
+  path:
+    path: /Audio/_Dumont/Jukebox/november_rain.ogg
+
+- type: jukebox
+  id: OAstronautaDeMarmore
+  name: Nenhum De Nós - O Astronauta De Mármore
+  path:
+    path: /Audio/_Gabystation/Lobby/marmore.ogg
+
+- type: jukebox
+  id: OceanMan
+  name: Ween - Ocean Man
+  path:
+    path: /Audio/_Dumont/Jukebox/ocean_man.ogg
+
+- type: jukebox
+  id: OneWayOrAnother
+  name: Blondie - One Way Or Another
+  path:
+    path: /Audio/_Dumont/Jukebox/one_way_or_another.ogg
+
+- type: jukebox
+  id: OnlyYou
+  name: The Platters - Only You
+  path:
+    path: /Audio/_Dumont/Jukebox/only_you.ogg
+
+- type: jukebox
+  id: OutOfTouch
+  name: Daryl Hall & John Oates - Out Of Touch
+  path:
+    path: /Audio/_Dumont/Jukebox/out_of_touch.ogg
+
+- type: jukebox
+  id: ParadiseCity
+  name: Guns N' Roses - Paradise City
+  path:
+    path: /Audio/_Dumont/Jukebox/paradise_city.ogg
+
+- type: jukebox
+  id: Pare
+  name: Zezé Di Camargo & Luciano - Pare!
+  path:
+    path: /Audio/_Dumont/Jukebox/pare.ogg
+
+- type: jukebox
+  id: PeladosEmSantos
+  name: Mamonas Assassinas - Pelados Em Santos
+  path:
+    path: /Audio/_Dumont/Jukebox/pelados_em_santos.ogg
+
+- type: jukebox
+  id: PurpleRain
+  name: Prince - Purple Rain
+  path:
+    path: /Audio/_Dumont/Jukebox/purple_rain.ogg
+
+- type: jukebox
+  id: RaindropsKeepFallingOnMyHead
+  name: B.J. Thomas - Raindrops Keep Fallin' On My Head
+  path:
+    path: /Audio/_Dumont/Jukebox/raindrops_keep_falling_on_my_head.ogg
+
+- type: jukebox
+  id: RapDaFelicidade
+  name: DJ Marlboro - Rap Da Felicidade
+  path:
+    path: /Audio/_Dumont/Jukebox/rap_da_felicidade.ogg
+
+- type: jukebox
+  id: RapDoSilva
+  name: DJ Marlboro - Rap Do Silva
+  path:
+    path: /Audio/_Dumont/Jukebox/rap_do_silva.ogg
+
+- type: jukebox
+  id: Relax
+  name: Stelvio Cipriani - Relax
+  path:
+    path: /Audio/_Dumont/Jukebox/relax.ogg
+
+- type: jukebox
+  id: RockinAroundTheChristmasTree
+  name: Brenda Lee - Rockin' Around The Christmas Tree
+  path:
+    path: /Audio/_Dumont/Jukebox/rockin_around_the_christmas_tree.ogg
+
+- type: jukebox
+  id: Sandman
+  name: America - Sandman
+  path:
+    path: /Audio/_Dumont/Jukebox/sandman.ogg
+
+- type: jukebox
+  id: SayItIsntSo
+  name: Daryl Hall & John Oates - Say It Isn't So
+  path:
+    path: /Audio/_Dumont/Jukebox/say_it_isnt_so.ogg
+
+- type: jukebox
+  id: September
+  name: Earth, Wind & Fire - September
+  path:
+    path: /Audio/_Dumont/Jukebox/september.ogg
+
+- type: jukebox
+  id: ShouldIStaryOrShouldIGo
+  name: The Clash - Should I Stay Or Should I Go
+  path:
+    path: /Audio/_Dumont/Jukebox/should_i_stay_or_should_i_go.ogg
+
+- type: jukebox
+  id: SomeEnchantedEvening
+  name: The Castells - Some Enchanted Evening
+  path:
+    path: /Audio/_Dumont/Jukebox/some_enchanted_evening.ogg
+
+- type: jukebox
+  id: SomethinStupid
+  name: Frank Sinatra - Somethin' Stupid
+  path:
+    path: /Audio/_Dumont/Jukebox/somethin_stupid.ogg
+
+- type: jukebox
+  id: SouthernNights
+  name: Glen Campbell - Southern Nights
+  path:
+    path: /Audio/_Dumont/Jukebox/southern_nights.ogg
+
+- type: jukebox
+  id: SpaceOddity
+  name: David Bowie - Space Oddity
+  path:
+    path: /Audio/_Dumont/Jukebox/space_oddity.ogg
+
+- type: jukebox
+  id: Starman
+  name: David Bowie - Starman
+  path:
+    path: /Audio/_Dumont/Jukebox/starman.ogg
+
+- type: jukebox
+  id: Stars
+  name: Simply Red - Stars
+  path:
+    path: /Audio/_Dumont/Jukebox/stars.ogg
+
+- type: jukebox
+  id: StartMeUp
+  name: The Rolling Stones - Start Me Up
+  path:
+    path: /Audio/_Dumont/Jukebox/start_me_up.ogg
+
+- type: jukebox
+  id: StrangersByTheDay
+  name: Shades Apart - Strangers By The Day
+  path:
+    path: /Audio/_Dumont/Jukebox/strangers_by_the_day.ogg
+
+- type: jukebox
+  id: StrawberryFields
+  name: The Beatles - Strawberry Fields
+  path:
+    path: /Audio/_Dumont/Jukebox/strawberry_fields.ogg
+
+- type: jukebox
+  id: SugarSugar
+  name: The Archies - Sugar Sugar
+  path:
+    path: /Audio/_Dumont/Jukebox/sugar_sugar.ogg
+
+- type: jukebox
+  id: SultansOfSwing
+  name: Dire Straits - Sultans Of Swing
+  path:
+    path: /Audio/_Dumont/Jukebox/sultans_of_swing.ogg
+
+- type: jukebox
+  id: SunshineLollipopsAndRainbows
+  name: Lesley Gore - Sunshine, Lollipopos And Rainbows
+  path:
+    path: /Audio/_Dumont/Jukebox/sunshine_lollipops_and_rainbows.ogg
+
+- type: jukebox
+  id: SupersonicRocketship
+  name: The Kinks - Supersonic Rocket Ship
+  path:
+    path: /Audio/_Dumont/Jukebox/supersonic_rocketship.ogg
+
+- type: jukebox
+  id: SweetChildOMine
+  name: Guns N' Roses - Sweet Child O' Mine
+  path:
+    path: /Audio/_Dumont/Jukebox/sweet_child_o_mine.ogg
+
+- type: jukebox
+  id: TakeMeOut
+  name: Franz Ferdinand - Take Me Out
+  path:
+    path: /Audio/_Dumont/Jukebox/take_me_out.ogg
+
+- type: jukebox
+  id: TempoPerdido
+  name: Legião Urbana - Tempo Perdido
+  path:
+    path: /Audio/_Dumont/Jukebox/tempo_perdido.ogg
+
+- type: jukebox
+  id: ThereIsALightThatNeverGoesOut
+  name: The Smiths - There Is A Light That Never Goes Out
+  path:
+    path: /Audio/_Dumont/Jukebox/there_is_a_light_that_never_goes_out.ogg
+
+- type: jukebox
+  id: TieAYellowRibbonRoundTheOleOakTree
+  name: Dawn - Tie A Yellow Ribbon Round The Ole Oak Tree
+  path:
+    path: /Audio/_Dumont/Jukebox/tie_a_yellow_ribbon_round_the_ole_oak_tree.ogg
+
+- type: jukebox
+  id: TimeInABottle
+  name: Jim Croce - Time In A Bottle
+  path:
+    path: /Audio/_Dumont/Jukebox/time_in_a_bottle.ogg
+
+- type: jukebox
+  id: TokyoReggie
+  name: Masayoshi Takanaka - Tokyo Reggie
+  path:
+    path: /Audio/_Dumont/Jukebox/tokyo_reggie.ogg
+
+- type: jukebox
+  id: TuEsOMDCDaMinhaVida
+  name: Raul Seixas - Tu És O MDC Da Minha Vida
+  path:
+    path: /Audio/_Dumont/Jukebox/tu_es_o_mdc_da_minha_vida.ogg
+
+- type: jukebox
+  id: TuLlegasteCuandoMenosTeEsperaba
+  name: Leo Dan - Tú Llegaste, Cuando Menos Te Esperaba
+  path:
+    path: /Audio/_Dumont/Jukebox/tu_llegaste_cuando_menos_te_esperaba.ogg
+
+- type: jukebox
+  id: TwistAndShout
+  name: The Beatles - Twist And Shout
+  path:
+    path: /Audio/_Dumont/Jukebox/twist_and_shout.ogg
+
+- type: jukebox
+  id: TwoOfUs
+  name: The Beatles - Two Of Us
+  path:
+    path: /Audio/_Dumont/Jukebox/two_of_us.ogg
+
+- type: jukebox
+  id: UmaPartidaDeFutebol
+  name: Skank - É Uma Partida De Futebol
+  path:
+    path: /Audio/_Dumont/Jukebox/uma_partida_de_futebol.ogg
+
+- type: jukebox
+  id: UnderPressure
+  name: Queen, David Bowie - Under Pressure
+  path:
+    path: /Audio/_Dumont/Jukebox/under_pressure.ogg
+
+- type: jukebox
+  id: UniDuniTe
+  name: Trem Da Alegria - Uni-Duni-Tê
+  path:
+    path: /Audio/_Dumont/Jukebox/uni_duni_te.ogg
+
+- type: jukebox
+  id: VamosFugir
+  name: Skank - Vamos Fugir
+  path:
+    path: /Audio/_Dumont/Jukebox/vamos_fugir.ogg
+
+- type: jukebox
+  id: VouDeixar
+  name: Skank - Vou Deixar
+  path:
+    path: /Audio/_Dumont/Jukebox/vou_deixar.ogg
+
+- type: jukebox
+  id: WeLikeToParty
+  name: Vengaboys - We Like To Party!
+  path:
+    path: /Audio/_Dumont/Jukebox/we_like_to_party.ogg
+
+- type: jukebox
+  id: WeNoSpeakAmericano
+  name: Yolanda Be Cool - We No Speak Americano
+  path:
+    path: /Audio/_Dumont/Jukebox/we_no_speak_americano.ogg
+
+- type: jukebox
+  id: WelcomeToTheJungle
+  name: Guns N' Roses - Welcome To The Jungle
+  path:
+    path: /Audio/_Dumont/Jukebox/welcome_to_the_jungle.ogg
+
+- type: jukebox
+  id: WellMeetAgain
+  name: The Ink Spots - We'll Meet Again
+  path:
+    path: /Audio/_Dumont/Jukebox/well_meet_again.ogg
+
+- type: jukebox
+  id: WhamBamShangALang
+  name: Silver - Wham Bam Shang-A-Lang
+  path:
+    path: /Audio/_Dumont/Jukebox/wham_bam_shang_a_lang.ogg
+
+- type: jukebox
+  id: WhileMyGuitarGentlyWeeps
+  name: The Beatles - While My Guitar Gently Weeps
+  path:
+    path: /Audio/_Dumont/Jukebox/while_my_guitar_gently_weeps.ogg
+
+- type: jukebox
+  id: WhiskyAGoGo
+  name: Roupa Nova - Whisky A Go-Go
+  path:
+    path: /Audio/_Dumont/Jukebox/whisky_a_go_go.ogg
+
+- type: jukebox
+  id: WhoCanItBeNow
+  name: Men At Work - Who Can It Be Now?
+  path:
+    path: /Audio/_Dumont/Jukebox/who_can_it_be_now.ogg
+
+- type: jukebox
+  id: WouldntItBeNice
+  name: The Beach Boys - Wouldn't It Be Nice
+  path:
+    path: /Audio/_Dumont/Jukebox/wouldnt_it_be_nice.ogg
+
+- type: jukebox
+  id: YoureMyHeartYoureMySoul
+  name: Modern Talking - You're My Hear, You're My Soul
+  path:
+    path: /Audio/_Dumont/Jukebox/youre_my_heart_youre_my_soul.ogg
+
+- type: jukebox
+  id: CarelessWhisper
+  name: George Michael - Careless Whisper
+  path:
+    path: /Audio/_Dumont/Jukebox/careless_whisper.ogg
+
+- type: jukebox
+  id: IDontWantToSetTheWorldOnFire
+  name: The Ink Spots - I Don't Want To Set The World On Fire
+  path:
+    path: /Audio/_Dumont/Jukebox/i_dont_want_to_set_the_world_on_fire.ogg
+
