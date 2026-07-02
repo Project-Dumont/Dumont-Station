@@ -185,6 +185,7 @@
     - type: Tag
       tags:
       - ChemDispensable
+      - Jug # Dumont
     - type: DnaSubstanceTrace
 
 - type: entity
