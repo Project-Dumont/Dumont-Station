@@ -18,7 +18,7 @@
     Easy: 2
     Moderate: 4
     Challenging: 6
-  bonus: 95
+  bonus: 225
   bonusCap: 4
   allowedDungeons:
     - Experiment
@@ -39,7 +39,7 @@
     Easy: 1
     Moderate: 2
     Challenging: 2
-  bonus: 75
+  bonus: 375
   bonusCap: 5
   allowedFactions:
     - Xenos
@@ -59,7 +59,7 @@
     Easy: 2
     Moderate: 2
     Challenging: 3
-  bonus: 300
+  bonus: 450
   bonusCap: 3
   allowedDungeons:
     - Experiment
@@ -80,7 +80,7 @@
     Easy: 4
     Moderate: 5
     Challenging: 6
-  bonus: 150
+  bonus: 275
   bonusCap: 2
   allowedDungeons:
     - Experiment
