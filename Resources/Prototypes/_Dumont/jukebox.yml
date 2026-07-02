@@ -914,23 +914,23 @@
   id: WouldntItBeNice
   name: The Beach Boys - Wouldn't It Be Nice
   path:
-    path: /Audio/_Dumont/Jukebox/Jukebox/wouldnt_it_be_nice.ogg
+    path: /Audio/_Dumont/Jukebox/wouldnt_it_be_nice.ogg
 
 - type: jukebox
   id: YoureMyHeartYoureMySoul
   name: Modern Talking - You're My Hear, You're My Soul
   path:
-    path: /Audio/_Dumont/Jukebox/Jukebox/youre_my_heart_youre_my_soul.ogg
+    path: /Audio/_Dumont/Jukebox/youre_my_heart_youre_my_soul.ogg
 
 - type: jukebox
   id: CarelessWhisper
   name: George Michael - Careless Whisper
   path:
-    path: /Audio/_Dumont/Jukebox/Jukebox/careless_whisper.ogg
+    path: /Audio/_Dumont/Jukebox/careless_whisper.ogg
 
 - type: jukebox
   id: IDontWantToSetTheWorldOnFire
   name: The Ink Spots - I Don't Want To Set The World On Fire
   path:
-    path: /Audio/_Dumont/Jukebox/Jukebox/i_dont_want_to_set_the_world_on_fire.ogg
+    path: /Audio/_Dumont/Jukebox/i_dont_want_to_set_the_world_on_fire.ogg
 
