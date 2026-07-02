@@ -3367,3 +3367,11 @@ Entries:
       message: Não é mais possivel botar jugs em mochilas. Use o smart fridge!
   id: 403
   time: '2026-07-02T17:54:31.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Seleção inteira das músicas da jukebox e lobby foram alteradas.
+        Aproveite as músicas novas no bar mais próximo!
+  id: 404
+  time: '2026-07-02T18:18:08.0000000+00:00'
