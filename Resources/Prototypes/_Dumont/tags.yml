@@ -40,3 +40,9 @@
 
 - type: Tag
   id: HideGhostWarp
+
+- type: Tag
+  id: CartridgeWatson
+
+- type: Tag
+  id: SpeedLoaderWatson

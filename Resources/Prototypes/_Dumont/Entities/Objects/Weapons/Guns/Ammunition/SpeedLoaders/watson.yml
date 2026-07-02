@@ -1,0 +1,174 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseSpeedLoaderWatson
+  name: "speed loader (.38 watson)"
+  parent: [ BaseItem, BaseSecurityContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - SpeedLoaderWatson
+  - type: SpeedLoader
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeWatson
+    capacity: 8
+  - type: Sprite
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  id: SpeedLoaderWatson
+  name: "speed loader (.38 watson)"
+  parent: BaseSpeedLoaderWatson
+  description: Designed to quickly refill an empty revolver, it fits up to eight .38 rounds. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeWatson
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/SpeedLoaders/watson_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: base-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: base
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-ammo
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-ammo
+
+- type: entity
+  id: SpeedLoaderWatsonEmpty
+  name: "speed loader (.38 watson any)"
+  parent: SpeedLoaderWatson
+  description: Designed to quickly refill an empty revolver, it fits up to eight .38 rounds for the small iron on your hip.
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/SpeedLoaders/watson_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: base-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag
+
+- type: entity
+  id: SpeedLoaderWatsonIncendiary
+  name: "speed loader (.38 watson incendiary)"
+  parent: SpeedLoaderWatson
+  description: Designed to quickly refill an empty revolver, it fits up to eight .38 rounds. Intended to hold self-igniting incendiary ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeWatsonIncendiary
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/SpeedLoaders/watson_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: incendiary-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: incendiary
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-ammo
+      - state: inhand-left-stripe
+        color: "#820000"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-ammo
+      - state: inhand-right-stripe
+        color: "#820000"
+
+- type: entity
+  id: SpeedLoaderWatsonPractice
+  name: "speed loader (.38 watson practice)"
+  parent: BaseSpeedLoaderWatson
+  description: Designed to quickly refill an empty revolver, it fits up to eight .38 rounds. Intended to hold non-harmful chalk ammunition, perfect for practicing your quick draw.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeWatsonPractice
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/SpeedLoaders/watson_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: practice-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: practice
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-ammo
+      - state: inhand-left-stripe
+        color: "#ea5800"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-ammo
+      - state: inhand-right-stripe
+        color: "#ea5800"
+
+- type: entity
+  id: SpeedLoaderWatsonUranium
+  name: "speed loader (.38 watson uranium)"
+  parent: BaseSpeedLoaderWatson
+  description: Designed to quickly refill an empty revolver, it fits up to eight .38 rounds. Intended to hold exotic uranium-core ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeWatsonUranium
+  - type: Sprite
+    sprite: _Dumont/Objects/Weapons/Guns/SpeedLoaders/watson_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: uranium-8
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: uranium
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-ammo
+      - state: inhand-left-stripe
+        color: "#00cd42"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-ammo
+      - state: inhand-right-stripe
+        color: "#00cd42"
