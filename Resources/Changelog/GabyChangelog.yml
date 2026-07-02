@@ -3361,3 +3361,9 @@ Entries:
       message: Agora é possivel botar o disabler no colete do brigmedic.
   id: 402
   time: '2026-07-02T15:48:22.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Não é mais possivel botar jugs em mochilas. Use o smart fridge!
+  id: 403
+  time: '2026-07-02T17:54:31.0000000+00:00'
