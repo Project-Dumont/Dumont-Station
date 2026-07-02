@@ -103,9 +103,6 @@
   id: Jug
   description: Used to contain a very large amount of chemicals or solutions. Chugging is extremely ill-advised.
   components:
-    - type: Tag # gaby change
-      tags:
-      - Jug
     - type: SolutionContainerManager
       solutions:
         beaker:
