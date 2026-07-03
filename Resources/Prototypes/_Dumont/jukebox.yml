@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: jukebox
   id: AlienBoy
   name: Oliver Tree - Alien Boy
@@ -756,7 +760,7 @@
 
 - type: jukebox
   id: SunshineLollipopsAndRainbows
-  name: Lesley Gore - Sunshine, Lollipopos And Rainbows
+  name: Lesley Gore - Sunshine, Lollipops And Rainbows
   path:
     path: /Audio/_Dumont/Jukebox/sunshine_lollipops_and_rainbows.ogg
 
@@ -918,7 +922,7 @@
 
 - type: jukebox
   id: YoureMyHeartYoureMySoul
-  name: Modern Talking - You're My Hear, You're My Soul
+  name: Modern Talking - You're My Heart, You're My Soul
   path:
     path: /Audio/_Dumont/Jukebox/youre_my_heart_youre_my_soul.ogg
 
