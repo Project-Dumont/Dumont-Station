@@ -24,3 +24,7 @@ salvage-mission-objective-failed-message = Missão de exploração fracassada.
 salvage-mission-objective-name-purge = Apague
 salvage-mission-objective-description-purge = A destruição da base deixou registros inconvenientes. Apague-os.
 salvage-mission-objective-announcement-purge = Sua missão é destruir {$numTargets} pastas de documentos deixadas na base. Se você recuperar alguma pasta adicional, também será pago pela destruição delas.
+
+salvage-mission-objective-name-shutdown = Shutdown
+salvage-mission-objective-description-shutdown = Dispositivos ilegais foram deixados operacionais em uma base planetária. Desligue eles
+salvage-mission-objective-announcement-shutdown = Sua missão é encontrar e destruir {$numTargets} dispositivos suspeitos. Você receberá um pagamento extra por qualquer dispositivo adicional que destruir.
