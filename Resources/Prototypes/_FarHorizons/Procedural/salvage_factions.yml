@@ -29,7 +29,6 @@
   difficulties: 
     - Challenging
     - Moderate
-    - Difficult
 
 - type: salvageFaction
   id: Meat
