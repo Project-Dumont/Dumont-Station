@@ -103,7 +103,6 @@
     speechVerb: Robotic
   - type: RandomMetadata
     nameSegments: [NamesBorg]
-  - type: Body
   - type: Climbing
   - type: RotationVisuals
     horizontalRotation: 90
@@ -124,7 +123,7 @@
   parent: MobDungeonBorgBase
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/Chassis/derelict.rsi
+    sprite: _FarHorizons/Mobs/Silicon/Chassis/derelict.rsi
     layers:
     - state: borg
   - type: MeleeWeapon
@@ -156,7 +155,7 @@
   parent: MobDungeonBorgBase
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/Chassis/engineer_derelict.rsi
+    sprite: _FarHorizons/Mobs/Silicon/Chassis/engineer_derelict.rsi
     layers:
     - state: engineer_derelict
     - state: engineer_derelict_crystal
@@ -191,7 +190,7 @@
   parent: MobDungeonBorgBase
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/Chassis/miner_derelict.rsi
+    sprite: _FarHorizons/Mobs/Silicon/Chassis/miner_derelict.rsi
     layers:
     - state: miner_derelict
       map: ["movement"]
@@ -231,7 +230,7 @@
   parent: MobDungeonBorgBase
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/Chassis/janitor_derelict.rsi
+    sprite: _FarHorizons/Mobs/Silicon/Chassis/janitor_derelict.rsi
     layers:
     - state: janitor_derelict
       map: ["movement"]
@@ -316,7 +315,7 @@
   suffix: AI Funny
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/Chassis/medical_derelict.rsi
+    sprite: _FarHorizons/Mobs/Silicon/Chassis/medical_derelict.rsi
     layers:
     - state: medical_derelict
       map: ["movement"]
