@@ -21,7 +21,7 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Gravity;
-using Content.Shared.Radiation.Components;
+using Content.Shared.Radiation.Components; // Dumont
 
 namespace Content.Server.Gravity;
 
@@ -65,6 +65,7 @@ public sealed class GravityGeneratorSystem : EntitySystem
             _gravitySystem.EnableGravity(xform.ParentUid, gravity);
         }
 
+        // Dumont - Radiation generated when active
         var comp = EnsureComp<RadiationSourceComponent>(ent.Owner);
 
         comp.Intensity = ent.Comp.ActiveRadiation;
@@ -81,6 +82,7 @@ public sealed class GravityGeneratorSystem : EntitySystem
             _gravitySystem.RefreshGravity(xform.ParentUid, gravity);
         }
 
+        // Dumont - No radiation when off
         var comp = EnsureComp<RadiationSourceComponent>(ent.Owner);
 
         comp.Intensity = 0;

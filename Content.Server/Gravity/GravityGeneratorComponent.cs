@@ -43,6 +43,10 @@ namespace Content.Server.Gravity
         [DataField("lightRadiusMin")] public float LightRadiusMin { get; set; }
         [DataField("lightRadiusMax")] public float LightRadiusMax { get; set; }
 
+        /// <summary>
+        /// Dumont
+        /// How much radiation whill it generate when active?
+        /// </summary>
         [DataField("activeRadiation")]
         public float ActiveRadiation { get; set; } = 0f;
 
