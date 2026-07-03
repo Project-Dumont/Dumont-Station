@@ -21,6 +21,7 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Gravity;
+using Content.Shared.Radiation.Components;
 
 namespace Content.Server.Gravity;
 
@@ -63,6 +64,10 @@ public sealed class GravityGeneratorSystem : EntitySystem
         {
             _gravitySystem.EnableGravity(xform.ParentUid, gravity);
         }
+
+        var comp = EnsureComp<RadiationSourceComponent>(ent.Owner);
+
+        comp.Intensity = ent.Comp.ActiveRadiation;
     }
 
     private void OnDeactivated(Entity<GravityGeneratorComponent> ent, ref ChargedMachineDeactivatedEvent args)
@@ -75,6 +80,10 @@ public sealed class GravityGeneratorSystem : EntitySystem
         {
             _gravitySystem.RefreshGravity(xform.ParentUid, gravity);
         }
+
+        var comp = EnsureComp<RadiationSourceComponent>(ent.Owner);
+
+        comp.Intensity = 0;
     }
 
     private void OnParentChanged(EntityUid uid, GravityGeneratorComponent component, ref EntParentChangedMessage args)

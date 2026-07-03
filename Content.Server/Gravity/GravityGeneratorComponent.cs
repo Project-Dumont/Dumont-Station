@@ -43,6 +43,9 @@ namespace Content.Server.Gravity
         [DataField("lightRadiusMin")] public float LightRadiusMin { get; set; }
         [DataField("lightRadiusMax")] public float LightRadiusMax { get; set; }
 
+        [DataField("activeRadiation")]
+        public float ActiveRadiation { get; set; } = 0f;
+
         /// <summary>
         /// Is the gravity generator currently "producing" gravity?
         /// </summary>
