@@ -3399,3 +3399,13 @@ Entries:
       message: Corrigido bug da trait de esconder nome OOC.
   id: 407
   time: '2026-07-04T19:30:34.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Remove
+      message: Midround rev e os dois cultos midround.
+    - type: Tweak
+      message: Secreto médio tem menos midrounds e mais startrounds.
+    - type: Tweak
+      message: Piratas aparecem 1/3 a frequência anterior.
+  id: 408
+  time: '2026-07-04T19:33:10.0000000+00:00'
