@@ -3385,3 +3385,11 @@ Entries:
         (tu tu tu)
   id: 405
   time: '2026-07-03T02:48:07.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: >-
+        Reator de Fusão HiperTorus agora realmente precisa de acesso atmosférico
+        para interação.
+  id: 406
+  time: '2026-07-04T19:08:04.0000000+00:00'
