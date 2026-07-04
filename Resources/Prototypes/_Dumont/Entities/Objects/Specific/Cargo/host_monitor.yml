@@ -1,0 +1,16 @@
+- type: entity
+  name: host monitor
+  parent: ClothingBeltBase
+  id: HostMonitor
+  description: A complex electronic designed to analyze the health of the connection between the host and the avatar.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Cargo/host_monitor.rsi
+  - type: UseDelay
+    delay: 1
+  - type: UseDelayOnTrigger
+  - type: UseDelayTriggerCondition
+  - type: TriggerOnActivate
+  - type: Speech
+    speechSounds: Pai
+  - type: HostMonitor

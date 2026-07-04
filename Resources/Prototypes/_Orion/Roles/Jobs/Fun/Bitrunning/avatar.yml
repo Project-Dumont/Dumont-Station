@@ -7,6 +7,7 @@
     jumpsuit: ClothingUniformJumpsuitBitrunner
     shoes: ClothingShoesColorBlack
     back: ClothingBackpackMessenger
+    belt: HostMonitor
   storage:
     back:
       - BoxSurvivalSlotsBasic
@@ -48,6 +49,9 @@
     jumpsuit: ClothingUniformJumpsuitMime
     shoes: ClothingShoesColorBlack
     back: ClothingBackpackMessengerMime
+  storage:
+    back:
+      - HostMonitor
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -165,3 +169,6 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTSecurity
     belt: FlashlightSeclite
+  storage:
+    back:
+      - HostMonitor
