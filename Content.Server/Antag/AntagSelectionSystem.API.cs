@@ -18,6 +18,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Antag.Components;
+using Content.Server._CD.Traits; // CD: Round End Redacting
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Objectives;
 using Content.Shared.Antag;
@@ -161,6 +162,21 @@ public sealed partial class AntagSelectionSystem
             output.Add((mind, data, name));
         }
         return output;
+    }
+
+    /// <summary>
+    /// Returns the round-end display username for an antag mind, redacted if they have <see cref="HideFromRoundEndScreenComponent"/>.
+    /// </summary>
+    public string GetRoundEndUsername(EntityUid mind, string fallback)
+    {
+        if (TryComp<MindComponent>(mind, out var mindComp) &&
+            mindComp.OriginalOwnedEntity != null &&
+            TryGetEntity(mindComp.OriginalOwnedEntity.Value, out var originalEntity) &&
+            HasComp<HideFromRoundEndScreenComponent>(originalEntity))
+        {
+            return Loc.GetString("cd-name-redacted-text");
+        }
+        return fallback;
     }
 
     /// <summary>
