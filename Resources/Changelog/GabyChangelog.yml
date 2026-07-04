@@ -3393,3 +3393,9 @@ Entries:
         para interação.
   id: 406
   time: '2026-07-04T19:08:04.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Fix
+      message: Corrigido bug da trait de esconder nome OOC.
+  id: 407
+  time: '2026-07-04T19:30:34.0000000+00:00'
