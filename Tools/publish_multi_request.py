@@ -20,7 +20,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.gabystation.space/"
+ROBUST_CDN_URL = "https://cdn.dumontstation.online/"
 FORK_ID = "gaby"
 
 def main():
