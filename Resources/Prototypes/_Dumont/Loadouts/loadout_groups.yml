@@ -51,3 +51,28 @@
   maxLimit: 1
   loadouts:
   - BlackEnvirogloves
+
+# Prisoner
+- type: loadoutGroup
+  id: PrisonerEnvirohelm
+  name: loadout-group-prisoner-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PermaPrisonerEnvirohelm
+
+- type: loadoutGroup
+  id: PrisonerEnvirosuit
+  name: loadout-group-prisoner-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PermaPrisonerEnvirosuit
+
+- type: loadoutGroup
+  id: PrisonerEnvirogloves
+  name: loadout-group-prisoner-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BlackEnvirogloves

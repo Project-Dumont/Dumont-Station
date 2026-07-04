@@ -6,3 +6,8 @@ loadout-group-bitrunner-shoes = Sapatos do Bitrunner
 loadout-group-bitrunner-envirohelm = Capacete selado do Bitrunner
 loadout-group-bitrunner-envirosuit = Macacão selado do Bitrunner
 loadout-group-bitrunner-envirogloves = Luvas seladas do Bitrunner
+
+# Security
+loadout-group-prisoner-envirohelm = Capacete selado de prisioneiro
+loadout-group-prisoner-envirosuit = Macacão selado de prisioneiro
+loadout-group-prisoner-envirogloves = Luvas seladas de prisioneiro

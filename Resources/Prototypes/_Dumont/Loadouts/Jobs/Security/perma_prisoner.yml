@@ -1,0 +1,18 @@
+# Plasmaman
+- type: loadout
+  id: PermaPrisonerEnvirosuit
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisoner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: PermaPrisonerEnvirohelm
+  equipment:
+    head: ClothingHeadEnvirohelmPrisoner
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Plasmaman
