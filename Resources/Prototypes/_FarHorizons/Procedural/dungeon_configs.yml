@@ -18,32 +18,32 @@
   - !type:DungeonEntranceDunGen
     count: 3
     tile: FloorDarkMono
-    contents: FHBaseAirlock
+    contents: BaseAirlock
   
   - !type:ExternalWindowDunGen
     tile: FloorDarkMono
-    contents: FHBaseWindow
+    contents: BaseWindow
   
   - !type:RoomEntranceDunGen
     tile: FloorDarkMono
-    contents: FHBaseAirlock
+    contents: BaseAirlock
 
   - !type:WallMountDunGen
     contents: ReactorWalls
     tile: FloorDarkMono
 
   - !type:BoundaryWallDunGen
-    wall: WallSolidSyndicate
+    wall: WallReinforced
     tile: FloorDarkMono
   
   - !type:RoomEntranceDunGen
     tile: FloorDarkMono
-    contents: FHBaseAirlock
+    contents: BaseAirlock
 
   - !type:JunctionDunGen
     width: 3
     tile: FloorDarkMono
-    contents: FHBaseAirlock
+    contents: BaseAirlock
 
   - !type:AutoCablingDunGen
     entity: CableApcExtension
@@ -69,19 +69,19 @@
       NorthEast: WarnCornerSmallNE
 
 
-- type: entityTable
-  id: FHBaseAirlock
-  table: !type:AllSelector
-    children:
-    - id: CableApcExtension
-    - id: FHAirlockGlass
-
-- type: entityTable
-  id: FHBaseWindow
-  table: !type:AllSelector
-    children:
-    - id: Grille
-    - id: ReinforcedWindowSyndie
+# - type: entityTable // Dumont
+#  id: BaseAirlock
+#  table: !type:AllSelector
+#    children:
+#    - id: CableApcExtension
+#    - id: AirlockGlass
+                                        
+# - type: entityTable
+#  id: BaseWindow
+#  table: !type:AllSelector
+#    children:
+#    - id: Grille
+#    - id: ReinforcedWindow
 
 - type: entityTable
   id: ReactorWalls

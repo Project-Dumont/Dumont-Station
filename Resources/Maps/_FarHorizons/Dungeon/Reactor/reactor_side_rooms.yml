@@ -22,7 +22,7 @@ tilemap:
   2: FloorShuttleOrange
   7: FloorShuttleWhite
   10: FloorSteel
-  9: FloorTerracotta
+  9: FloorAsteroidSandRedBorderless
   6: FloorWhiteMono
   3: FloorWhitePlastic
   11: FloorWood
@@ -261,7 +261,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: AmmoniaPack
+- proto: Bloodpack
   entities:
   - uid: 26
     components:
@@ -4915,7 +4915,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 49.779667,3.698985
       parent: 1
-- proto: ChairOfficeSleek
+- proto: ChairOfficeLight
   entities:
   - uid: 611
     components:
@@ -5783,7 +5783,7 @@ entities:
     - type: Transform
       pos: 2.362249,29.563034
       parent: 1
-- proto: FHAirlockChiefEngineerLocked
+- proto: AirlockChiefEngineerLocked
   entities:
   - uid: 593
     components:
@@ -5803,7 +5803,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 32.5,4.5
       parent: 1
-- proto: FHAirlockEngineering
+- proto: AirlockEngineering
   entities:
   - uid: 469
     components:
@@ -5843,7 +5843,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 33.5,21.5
       parent: 1
-- proto: FHAirlockEngineeringGlass
+- proto: AirlockEngineeringGlass
   entities:
   - uid: 576
     components:
@@ -5877,7 +5877,7 @@ entities:
         1779:
         - - DoorStatus
           - DoorBolt
-- proto: FHAirlockGlass
+- proto: AirlockGlass
   entities:
   - uid: 466
     components:
@@ -5937,7 +5937,7 @@ entities:
         799:
         - - DoorStatus
           - DoorBolt
-- proto: FHAirlockMedical
+- proto: AirlockMedical
   entities:
   - uid: 67
     components:
@@ -5957,7 +5957,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 28.5,28.5
       parent: 1
-- proto: FHAirlockSecurity
+- proto: AirlockSecurity
   entities:
   - uid: 130
     components:
@@ -5976,7 +5976,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 51.5,3.5
       parent: 1
-- proto: FHFoodBoxDonut
+- proto: FoodBoxDonut
   entities:
   - uid: 166
     components:
@@ -7004,7 +7004,7 @@ entities:
     - type: Transform
       pos: 8.5,14.5
       parent: 1
-- proto: GirderSyndie
+- proto: Girder
   entities:
   - uid: 992
     components:
@@ -7542,7 +7542,7 @@ entities:
     - type: Transform
       pos: 44.0931,21.223207
       parent: 1
-- proto: IntegrityAnalyzer
+- proto: HandheldHealthAnalyzer
   entities:
   - uid: 564
     components:
@@ -7743,7 +7743,7 @@ entities:
     - type: Transform
       pos: 4.5,28.5
       parent: 1
-- proto: LockerSecurityFHFilled
+- proto: LockerSecurityFilled
   entities:
   - uid: 134
     components:
@@ -8550,7 +8550,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 29.5,3.5
       parent: 1
-- proto: ReinforcedWindowSyndie
+- proto: ReinforcedWindow
   entities:
   - uid: 42
     components:
@@ -9089,7 +9089,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 10.5,21.5
       parent: 1
-- proto: SmartFridgeCircuitboard
+- proto: ThrusterMachineCircuitboard
   entities:
   - uid: 1790
     components:
@@ -9931,7 +9931,7 @@ entities:
     - type: Transform
       pos: 2.5,24.5
       parent: 1
-- proto: VitalsMonitor
+- proto: HandheldCrewMonitor
   entities:
   - uid: 4
     components:
@@ -9989,7 +9989,7 @@ entities:
     - type: Transform
       pos: 33.5,29.5
       parent: 1
-- proto: WallSolidSyndicate
+- proto: WallReinforced
   entities:
   - uid: 62
     components:
@@ -10787,7 +10787,7 @@ entities:
     - type: Transform
       pos: 21.5,22.5
       parent: 1
-- proto: WeaponAdvancedTaser
+- proto: WeaponTaser
   entities:
   - uid: 196
     components:
@@ -10917,7 +10917,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 42.5,31.5
       parent: 1
-- proto: WindowSyndie
+- proto: ReinforcedWindow
   entities:
   - uid: 89
     components:

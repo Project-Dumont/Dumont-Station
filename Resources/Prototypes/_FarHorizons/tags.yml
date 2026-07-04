@@ -155,9 +155,6 @@
   id: NodeScanner
 
 - type: Tag
-  id: Markalibur1
-
-- type: Tag
   id: Seismic
 
 - type: Tag

@@ -313,7 +313,7 @@
   table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
     children:
     - id: Grille
-    - id: Window
+    - id: ReinforcedWindow
 
 # Lava brig
 - type: entityTable
