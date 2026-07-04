@@ -109,9 +109,9 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
                                 : system.EntityManager.SpawnEntity(entityId, position.Offset(getRandomVector()));
 
                             TransferForensics(spawned, system, owner);
-        }
-    }
-}
+                        }
+                    }
+                }
             }
         }
 
@@ -131,4 +131,3 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
         }
     }
 }
-
