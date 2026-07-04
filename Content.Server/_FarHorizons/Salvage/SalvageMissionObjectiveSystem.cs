@@ -74,8 +74,8 @@ public sealed class SalvageMissionObjectiveSystem : EntitySystem
 
         if(ent.Comp.TotalReward > 0 && _transform.TryGetMapOrGridCoordinates(ent, out var pos))
         {
-            _stack.SpawnMultipleAtPosition(objective.RewardProto, ent.Comp.TotalReward, pos.Value);
-            _stack.SpawnMultipleAtPosition(objective.CashProto, totalCash, pos.Value);
+            _stack.SpawnMultiple(objective.RewardProto, ent.Comp.TotalReward, pos.Value);
+            _stack.SpawnMultiple(objective.CashProto, totalCash, pos.Value);
         }
         EntityManager.RemoveComponent<SalvageMissionRewardComponent>(ent);
 

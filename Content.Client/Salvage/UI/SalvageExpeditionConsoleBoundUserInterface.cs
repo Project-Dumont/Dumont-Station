@@ -80,7 +80,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
                 FontColorOverride = objectiveProto.Color,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
-                StyleClasses = { StyleClass.LabelKeyText }
+                StyleClasses = { "LabelKeyText" }
             });
 
             offering.AddContent(new Label(){ Text = Loc.GetString("salvage-expedition-window-objective-description") });
@@ -101,7 +101,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
                 FontColorOverride = StyleNano.NanoGold,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
-                StyleClasses = { StyleClass.LabelKeyText }
+                StyleClasses = { "LabelKeyText" }
             });
             // Far Horizons end
 
@@ -120,7 +120,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
                 FontColorOverride = difficultyColor,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
-                StyleClasses = { StyleClass.LabelKeyText }, // Far Horizons - uniform style
+                StyleClasses = { "LabelKeyText" }, // Far Horizons - uniform style
             });
 
             // Far Horizons - freeing some visual space in UI
