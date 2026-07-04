@@ -1,2 +1,3 @@
-host-monitor-error = > ERRO
-host-monitor-health = > Integridade do Host: {$percentage}%
+host-monitor-error = >> ERRO
+host-monitor-health = >> INTEGRIDADE DO HOST: {$percentage}%
+

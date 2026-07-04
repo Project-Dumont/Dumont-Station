@@ -51,7 +51,10 @@
     back: ClothingBackpackMessengerMime
   storage:
     back:
+      - BoxSurvivalSlotsBasic
       - HostMonitor
+      - FlashlightLantern
+      - MedkitFilled
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -168,7 +171,9 @@
     mask: ClothingMaskGasERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTSecurity
-    belt: FlashlightSeclite
+    belt: HostMonitor
   storage:
     back:
-      - HostMonitor
+      - BoxSurvivalSlotsBasic
+      - FlashlightSeclite
+      - MedkitFilled

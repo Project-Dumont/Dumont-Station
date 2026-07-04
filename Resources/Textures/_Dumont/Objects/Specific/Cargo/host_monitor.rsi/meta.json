@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": null,
-  "copyright": null,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/ba8471b8dbf2c83345809bac7154880e37da7120/icons/obj/devices/scanner.dmi",
   "size": {
     "x": 32,
     "y": 32
