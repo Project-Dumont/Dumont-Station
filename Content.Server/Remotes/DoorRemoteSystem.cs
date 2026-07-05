@@ -28,18 +28,21 @@ using Content.Shared.Access.Components;
 using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Examine;
+using Content.Shared.Electrocution;
 using Content.Shared.Interaction;
 using Content.Shared.Remotes.Components;
 using Content.Shared.Remotes.EntitySystems;
 
 namespace Content.Shared.Remotes
 {
-    public sealed class DoorRemoteSystem : SharedDoorRemoteSystem
+    public sealed partial class DoorRemoteSystem : SharedDoorRemoteSystem
     {
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly AirlockSystem _airlock = default!;
-        [Dependency] private readonly DoorSystem _doorSystem = default!;
-        [Dependency] private readonly ExamineSystemShared _examine = default!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private AirlockSystem _airlock = default!;
+        [Dependency] private DoorSystem _doorSystem = default!;
+        [Dependency] private ExamineSystemShared _examine = default!;
+
+        [Dependency] private SharedElectrocutionSystem _electrocution = default!;
 
         public override void Initialize()
         {
@@ -121,6 +124,14 @@ namespace Content.Shared.Remotes
                             $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to set emergency access {(airlockComp.EmergencyAccess ? "on" : "off")}");
                     }
 
+                    break;
+                case OperatingMode.ToggleOvercharge when entity.Comp.AllowOvercharge:
+                    if (TryComp<ElectrifiedComponent>(args.Target, out var electrified))
+                    {
+                        _electrocution.SetElectrified((args.Target.Value, electrified), !electrified.Enabled);
+                        _adminLogger.Add(LogType.Action, LogImpact.Medium,
+                            $"{ToPrettyString(args.User):player} used {ToPrettyString(entity)} to set {ToPrettyString(args.Target.Value)} electrified={electrified.Enabled}");
+                    }
                     break;
                 default:
                     throw new InvalidOperationException(

@@ -54,6 +54,19 @@
     - type: IgniteFromGasImmunity
       parts: [ LeftHand, RightHand ]
 - type: entity
+  abstract: true
+  parent: Clothing
+  id: ClothingNeckUnbutcherableBase
+  components:
+    - type: Item
+      size: Small
+    - type: Clothing
+      quickEquip: true
+      slots:
+        - neck
+    - type: Sprite
+      state: icon
+- type: entity
   parent: SelectableLock
   abstract: true
   id: BaseChameleon
@@ -130,6 +143,50 @@
           popup: selectable-lock-no-lock-popup
           priority: 0
           componentsToAdd: null
+- type: entity
+  abstract: true
+  parent: BaseNukieAnimal
+  id: BaseNukieAnimalSpaceproof
+  components:
+    - type: Respirator
+      minSaturation: 5
+    - type: Temperature
+      heatDamageThreshold: 423
+      coldDamageThreshold: 0
+    - type: PressureImmunity
+- type: entity
+  abstract: true
+  id: BaseNukieAnimal
+  components:
+    - type: GhostRole
+      makeSentient: true
+      allowSpeech: true
+      allowMovement: true
+      rules: ghost-role-information-syndicate-reinforcement-rules
+      mindRoles:
+        - MindRoleGhostRoleTeamAntagonist
+    - type: GhostTakeoverAvailable
+    - type: Insulated
+    - type: Damageable
+      damageModifierSet: NukieSpider
+    - type: PointLight
+      radius: 3
+      energy: 2.3
+      offset: 0, -2
+      color: green
+    - type: ShowSyndicateIcons
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - Syndicate
+    - type: ActiveRadio
+      channels:
+        - Syndicate
+    - type: MobPrice
+      price: 250
 - type: entity
   abstract: true
   id: BaseBookSounds

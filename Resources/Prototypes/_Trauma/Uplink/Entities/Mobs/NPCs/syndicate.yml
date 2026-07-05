@@ -2,6 +2,171 @@
 
 - type: entity
   parent:
+    - BaseNukieAnimalSpaceproof
+    - MobMouse
+  id: MobNukieMouse
+  name: nuclear operative mouse
+  description: A Nuclear Operative... MOUSE?!
+  suffix: Syndicate
+  components:
+    - type: GhostRole
+      name: ghost-role-information-nukie-mouse-name
+      description: ghost-role-information-nukie-mouse-description
+    - type: RandomMetadata
+      nameSegments: [ NamesMouseDeathCommando ]
+    - type: PointLight
+      radius: 1.5
+      offset: 0, -1
+    - type: Sprite
+      sprite: _Trauma/Mobs/Animals/Syndicate/nukiemouse.rsi
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/Effects/bite.ogg
+      angle: 0
+      animation: WeaponArcBite
+      damage:
+        types:
+          Slash: 5
+          Piercing: 5
+          Structural: 15
+    - type: Tag
+      tags:
+        - FootstepSound
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        15: Critical
+        30: Dead
+
+- type: entity
+  parent:
+    - BaseNukieAnimal
+    - BaseMobCarp
+  id: MobNukieCarp
+  name: nuclear operative carp
+  suffix: Syndicate # no shit?
+  description: A blood-red carp trained in carp-to-carp combat.
+  components:
+    - type: GhostRole
+      name: ghost-role-information-nukie-carp-name
+      description: ghost-role-information-nukie-carp-description
+    - type: RandomMetadata
+      nameFormat: name-format-nukie-operator
+      nameSegments: [ NamesNukieCarp ]
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Trauma/Mobs/Animals/Syndicate/nukiecarp.rsi
+      layers:
+        - map: [ "enum.DamageStateVisualLayers.Base" ]
+          state: alive
+        - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+          state: mouth
+          shader: unshaded
+    - type: Access
+      tags:
+        - NuclearOperative
+        - SyndicateAgent
+    - type: Tag
+      tags:
+        - Carp
+        - DoorBumpOpener
+    - type: ExplosionResistance
+      damageCoefficient: 0.2
+    - type: SolutionContainerManager
+      solutions:
+        melee:
+          reagents:
+            - ReagentId: CarpoToxin
+              Quantity: 30
+    - type: MeleeChemicalInjector
+      solution: melee
+      transferAmount: 1
+    - type: Damageable
+      damageModifierSet: NukieSpider
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        25: Critical
+        50: Dead
+
+- type: entity
+  parent:
+    - BaseNukieAnimalSpaceproof
+    - MobGiantSpiderAngry
+  id: MobNukieSpider
+  name: nuclear operative tarantula
+  description: A spider? A NUKIE SPIDER?!
+  suffix: Syndicate
+  components:
+    - type: GhostRole
+      name: ghost-role-information-nukie-spider-name
+      description: ghost-role-information-nukie-spider-description
+    - type: RandomMetadata
+      nameFormat: name-format-nukie-operator
+      nameSegments: [ NamesNukieSpider ]
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+        - Xeno # no spider war
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Trauma/Mobs/Animals/Syndicate/nukiespider.rsi
+      layers:
+        - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+          state: syndicate-spider
+    - type: SpriteMovement
+      movementLayers:
+        movement:
+          state: syndicate-spider-moving
+      noMovementLayers:
+        movement:
+          state: syndicate-spider
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        90: Critical
+        150: Dead
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: syndicate-spider
+        Critical:
+          Base: syndicate-spider-dead
+        Dead:
+          Base: syndicate-spider-dead
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 4.9
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/Effects/bite.ogg
+      angle: 0
+      animation: WeaponArcBite
+      damage:
+        types:
+          Slash: 4
+          Piercing: 4
+          Structural: 25
+    - type: SolutionContainerManager
+      solutions:
+        melee:
+          reagents:
+            - ReagentId: Lexorin
+              Quantity: 30
+    - type: MeleeChemicalInjector
+      transferAmount: 0.5
+      solution: melee
+    - type: Access
+      tags:
+        - NuclearOperative
+        - SyndicateAgent
+    - type: Tag
+      tags:
+        - FootstepSound
+        - DoorBumpOpener
+
+- type: entity
+  parent:
     - BaseMobAsteroid
     - FlyingMobBase
   id: MobSyndieViscerator
@@ -65,3 +230,39 @@
         # highly aggressive
         VisionRadius: !type:Single "15"
         AggroVisionRadius: !type:Single "15"
+
+- type: entity
+  parent:
+    - BaseNukieAnimal
+    - BaseMobBehonker
+  id: MobNukieBehonker
+  name: nuclear operative behonker
+  description: Gorlex thought it would be funny to have a behonker. It was.
+  suffix: Syndicate
+  components:
+    - type: RandomMetadata
+      nameFormat: name-format-nukie-operator
+      nameSegments: [ NamesNukieBehonker ]
+    - type: Sprite
+      sprite: _Trauma/Mobs/Monsters/Demons/syndie_behonker.rsi
+    - type: Access
+      tags:
+        - NuclearOperative
+        - SyndicateAgent
+    - type: Tag
+      tags:
+        - DoorBumpOpener
+    - type: LanguageKnowledge
+      speaks:
+        - Universal
+      understands:
+        - Universal
+    - type: MovementIgnoreGravity
+    - type: ThermalVision
+      thermalShader: null
+      color: "#BF40BF"
+      activateSound: null
+      deactivateSound: null
+    - type: HitscanBatteryAmmoProvider
+      proto: SyndicateBehonkerXray
+      fireCost: 62.5

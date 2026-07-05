@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: damageModifierSet
+  id: NukieSpider
+  coefficients:
+    # A stock bloodred hardsuit, but made for a giant spider.
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.5
+    Heat: 0.5
+    Radiation: 0.5
+    Caustic: 0.5
+    Cold: 0.8

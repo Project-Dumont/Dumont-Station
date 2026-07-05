@@ -4,6 +4,23 @@
   parent:
     - BoxCardboard
     - BaseSyndicateContraband
+  id: ObservationKitSyndie
+  name: observation kit
+  suffix: Filled
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: SyndiCrewMonitorEmpty
+            - id: PowerCellMicroreactor
+            - id: ClothingEyesGlassesHiddenSecurity
+            - id: CameraBug
+
+- type: entity
+  parent:
+    - BoxCardboard
+    - BaseSyndicateContraband
   id: BoxGrenadeViscerators
   name: viscerator delivery grenade box
   description: A box containing unique grenades that deploys a swarm of viscerators upon activation, which will chase down
@@ -18,3 +35,19 @@
       layers:
         - state: box_of_doom
         - state: flashbang
+
+- type: entity
+  parent:
+    - BoxCardboard
+    - BaseSyndicateContraband
+  id: BombCollarKit
+  name: bomb collar kit
+  suffix: Filled
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+            - id: ClothingNeckBombCollar
+            - id: RemoteSignallerAdvanced
+            - id: Multitool

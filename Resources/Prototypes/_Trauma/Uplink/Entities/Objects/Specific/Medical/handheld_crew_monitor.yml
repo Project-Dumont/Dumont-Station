@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: entity
+  parent: SyndiCrewMonitor
+  id: SyndiCrewMonitorEmpty
+  suffix: Empty
+  components:
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  parent:
+    - BaseSyndicateContraband
+    - HandheldCrewMonitor
+  id: SyndiCrewMonitor
+  name: syndicate crew monitor
+  description: The syndicated version of crew monitor, intercepts information from the server.
+  components:
+    - type: Sprite
+      layers:
+        - state: syndiscanner
+          sprite: Objects/Specific/Medical/syndihandheldcrewmonitor.rsi
+        - state: screen
+          sprite: _Trauma/Objects/Specific/Medical/handheldcrewmonitor.rsi
+          shader: unshaded
+          visible: false
+          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - type: Item
+      sprite: _Trauma/Objects/Specific/Medical/handheldcrewmonitor.rsi
+    - type: PowerCellDraw
+      useRate: 0
+    - type: CrewMonitoringConsole

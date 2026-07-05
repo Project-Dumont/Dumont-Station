@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: DehydratedSpaceCarp
+  id: DehydratedMagicCarp
+  name: dehydrated magic carp
+  description: Looks like a plush toy magic carp, but just add water and it becomes a real-life magic carp!
+  components:
+    - type: Sprite
+      state: magicplush
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: magicarpplush-inhand-left
+        right:
+          - state: magicarpplush-inhand-right
+    - type: Rehydratable
+      possibleSpawns:
+        - MobCarpMagic
