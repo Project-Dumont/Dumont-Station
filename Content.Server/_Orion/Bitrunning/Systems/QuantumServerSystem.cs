@@ -568,7 +568,7 @@ public sealed class QuantumServerSystem : EntitySystem
         if (HasComp<ActorComponent>(avatarUid))
             return false;
 
-        if (TryComp<MobStateComponent>(avatarUid, out var state) && state.CurrentState is MobState.Dead or MobState.SoftCritical or MobState.HardCritical)
+        if (IsAvatarInCriticalState(avatarUid) || _mobState.IsDead(avatarUid))
             return false;
 
         if (!_mind.TryGetMind(user, out var mindId, out var mind))
