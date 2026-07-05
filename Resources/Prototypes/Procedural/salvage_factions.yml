@@ -12,6 +12,16 @@
     - proto: CMMobXenoDrone
     - proto: CMMobXenoDrone
       cost: 2
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: CMMobXenoBurrower
+      cost: 3
     - proto: CMMobXenoWarrior
       cost: 5
       prob: 0.1
@@ -26,8 +36,14 @@
     - proto: CMMobXenoKing
       cost: 10
       prob: 0.05
+    - proto: CMMobXenoRogueKing
+      cost: 10
+      prob: 0.01
     - proto: WeaponTurretXeno
       prob: 0.1
+  difficulties:
+    - Challenging 
+    - Moderate
   configs:
     DefenseStructure: XenoWardingTower
     Megafauna: CMMobXenoQueen
@@ -47,9 +63,15 @@
     - proto: MobCarpRainbow # carp version of rouny...
       cost: 3
       prob: 0.05
+    - proto: MobSharkSalvage
+      cost: 5
+      prob: 0.1
     - proto: MobDragonDungeon
       cost: 10
       prob: 0.02
+  difficulties: 
+    - Moderate
+    - Easy
   configs:
     DefenseStructure: CarpStatue
     Megafauna: MobDragonDungeon

@@ -7,6 +7,8 @@
 
 using System; // Dumont: Necessário para o TimeSpan funcionar
 using Robust.Shared.Prototypes;
+using Content.Shared.Destructible.Thresholds;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Procedural;
 
@@ -32,6 +34,9 @@ public sealed partial class SalvageDifficultyPrototype : IPrototype
     /// </summary>
     [DataField("mobBudget", required : true)]
     public float MobBudget;
+
+    [DataField("lootPrototype")]
+    public string LootPrototypeId = "SalvageLoot";
 
     /// <summary>
     /// Budget allowed for mission modifiers like no light, etc.

@@ -10,9 +10,9 @@
   - type: LanguageSpeaker
   - type: LanguageKnowledge
     speaks:
-    - Machine
+    - RobotTalk
     understands:
-    - Machine
+    - RobotTalk
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -98,7 +98,7 @@
       - FootstepSound
   - type: NoSlip
   - type: Stamina
-    baseCritThreshold: 200
+    CritThreshold: 200
   - type: Speech
     speechVerb: Robotic
   - type: RandomMetadata

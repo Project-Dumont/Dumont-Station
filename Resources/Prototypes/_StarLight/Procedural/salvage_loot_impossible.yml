@@ -11,7 +11,7 @@
         - proto: ResearchDisk10000
           prob: 0.3
 
-        - proto: WeaponPistolMakarov
+        - proto: WeaponShotgunHandmade
           prob: 0.5
           cost: 4
         - proto: WeaponRifleAk
@@ -22,13 +22,13 @@
           prob: 0.2
           cost: 3
 
-        - proto: MagazineBoxPistolSP
+        - proto: MagazineBoxPistol
           prob: 0.2
           cost: 10
-        - proto: MagazineBoxPistolHP
+        - proto: MagazineBoxPistolPractice
           prob: 0.2
           cost: 10
-        - proto: MagazineBoxPistolFMJ
+        - proto: MagazinePistol
           prob: 0.2
           cost: 10
         - proto: MagazineBoxPistolUranium
@@ -37,17 +37,17 @@
         - proto: MagazineBoxPistolIncendiary
           prob: 0.1
           cost: 20
-        - proto: MagazineBoxPistolAP
+        - proto: BoxMagazinePistolCaselessRifle
           prob: 0.05
           cost: 40
 
-        - proto: MagazineBoxLightRifleSP
+        - proto: MagazineBoxLightRiflePractice
           prob: 0.2
           cost: 10
-        - proto: MagazineBoxLightRifleHP
+        - proto: MagazineBoxLightRifle
           prob: 0.2
           cost: 10
-        - proto: MagazineBoxLightRifleFMJ
+        - proto: MagazineBoxLightRiflePractice
           prob: 0.2
           cost: 10
         - proto: MagazineBoxLightRifleUranium
@@ -56,7 +56,7 @@
         - proto: MagazineBoxLightRifleIncendiary
           prob: 0.1
           cost: 20
-        - proto: MagazineBoxLightRifleAP
+        - proto: MagazineBoxLightRifleBig
           prob: 0.05
           cost: 40
         - proto: GrenadeIncendiary
@@ -66,174 +66,174 @@
           prob: 0.3
           cost: 10
 
-        - proto: LeftArmCyber
+        - proto: LeftArmCybernetic
           prob: 0.6
-          cost: 5
-        - proto: RightArmCyber
+          cost: 10
+        - proto: RightArmCybernetic
           prob: 0.6
-          cost: 5
-        - proto: LeftArmCyberRipper
+          cost: 10
+        - proto: BasicCyberneticHeart
           prob: 0.4
-          cost: 10
-        - proto: RightArmCyberRipper
+          cost: 15
+        - proto: DiagnosticCyberneticEyes
           prob: 0.4
-          cost: 10
-        - proto: LeftArmCyberMechwright
+          cost: 15
+        - proto: BasicCyberneticLiver
           prob: 0.4
-          cost: 10
-        - proto: RightArmCyberMechwright
+          cost: 15
+        - proto: DiagnosticCyberneticEyes
           prob: 0.4
-          cost: 10
-        - proto: LeftArmCyberPersephone
-          prob: 0.2
-          cost: 10
-        - proto: RightArmCyberPersephone
-          prob: 0.2
-          cost: 10
-        - proto: LeftArmCyberSpacer
+          cost: 15
+        - proto: BasicCyberneticLungs
           prob: 0.2
           cost: 15
-        - proto: RightArmCyberSpacer
+        - proto: DiagnosticCyberneticEyes
           prob: 0.2
           cost: 15
-        - proto: LeftArmCyberRiplet
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberRiplet
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberGorilla
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberGorilla
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberBulwark
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberBulwark
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberReaper
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberReaper
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberZeus
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberZeus
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberAngel
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberAngel
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberResearcher
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberResearcher
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberScribe
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberScribe
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberHerakles
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberHerakles
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberMantisBlade
-          prob: 0.2
-          cost: 15
-        - proto: RightArmCyberMantisBlade
-          prob: 0.2
-          cost: 15
-        - proto: LeftArmCyberEngineer
+        - proto: BasicCyberneticLungs
           prob: 0.2
           cost: 20
-        - proto: RightArmCyberEngineer
+        - proto: BasicCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticHeart
+          prob: 0.2
+          cost: 20
+        - proto: MedicalCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticHeart
+          prob: 0.2
+          cost: 20
+        - proto: MedicalCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftFootCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: MedicalCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftFootCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: SecurityCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftHandCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: SecurityCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftHandCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: SecurityCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: UpgradedCyberneticHeart
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: UpgradedCyberneticLungs
+          prob: 0.2
+          cost: 20
+        - proto: LeftHandCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: LeftHandCybernetic
           prob: 0.2
           cost: 20
 
-        - proto: LeftLegCyber
+        - proto: LeftLegCybernetic
           prob: 0.6
           cost: 5
-        - proto: RightLegCyber
+        - proto: RightLegCybernetic
           prob: 0.6
           cost: 5
-        - proto: LeftLegCyberCargo
+        - proto: HonkerLLeg
           prob: 0.6
           cost: 5
-        - proto: RightLegCyberCargo
+        - proto: HonkerRLeg
           prob: 0.6
           cost: 5
-        - proto: LeftLegCyberHydraulic
+        - proto: HamtrLLeg
           prob: 0.4
           cost: 5
-        - proto: RightLegCyberHydraulic
+        - proto: HamtrRLeg
           prob: 0.4
           cost: 5
-        - proto: LeftLegCyberPilebunker
+        - proto: SpeedLeftLeg
           prob: 0.4
           cost: 15
-        - proto: RightLegCyberPilebunker
+        - proto: SpeedRightLeg
           prob: 0.4
           cost: 15
 
-        - proto: BrainImplantTranslator
+        - proto: AnimalTranslator
           prob: 0.2
           cost: 5
-        - proto: BrainImplantComms
+        - proto: XenoTranslator
           prob: 0.2
           cost: 5
-        - proto: LeftHandImplantForensics #FH
+        - proto: EncryptionKeyBinary
           prob: 0.2
           cost: 5
-        - proto: RightHandImplantForensics #FH
+        - proto: EncryptionKeyBinary
           prob: 0.2
           cost: 5
-        - proto: LeftHandImplantClaws #FH
+        - proto: BasicSpaceItalianTranslatorImplanter
           prob: 0.2
           cost: 5
-        - proto: RightHandImplantClaws #FH
+        - proto: RootSpeakTranslatorImplanter
           prob: 0.2
           cost: 5
-        - proto: LeftHandImplantInsulated #FH
+        - proto: BikeHornImplanter
           prob: 0.1
           cost: 10
-        - proto: RightHandImplantInsulated #FH
+        - proto: LightImplanter
           prob: 0.1
           cost: 10
-        - proto: LeftHandImplantThrusters #FH
+        - proto: SadTromboneImplanter
           prob: 0.2
           cost: 5
-        - proto: RightHandImplantThrusters #FH
+        - proto: AdvancedGalaticCommonTranslatorImplanter
           prob: 0.2
           cost: 5
-        - proto: EyeImplantChemistry
+        - proto: MindShieldImplanter
           prob: 0.2
           cost: 5
-        - proto: EyeImplantMedical
+        - proto: TrackingImplanter
           prob: 0.2
           cost: 5
-        - proto: EyeImplantWelding
+        - proto: ClothingOuterArmorScrap
           prob: 0.2
           cost: 5
-        - proto: EyeImplantSecurity
+        - proto: ClothingOuterArmorQueenCarapace
+          prob: 0.2
+          cost: 15
+        - proto: OverlordCircuitBoard
           prob: 0.2
           cost: 5
-        - proto: EyeImplantDiagnostic
-          prob: 0.2
-          cost: 5
-        - proto: EyeImplantSyndie
+        - proto: DeathAcidifierImplanter
           prob: 0.1
           cost: 10
 
@@ -253,7 +253,7 @@
           prob: 0.2
           cost: 2
 
-        - proto: DrinkVodkizineBottleFull
+        - proto: DrinkPremiumVodkaBottleFull
           cost: 3                    
         - proto: MedkitBruteFilled
           cost: 6
