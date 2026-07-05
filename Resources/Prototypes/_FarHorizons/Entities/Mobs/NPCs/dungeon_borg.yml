@@ -71,10 +71,8 @@
     - Alive
     - Dead
   - type: Bloodstream
-    solutions::
-      reagents:
-      - ReagentId: Oil
-        Quantity: 650
+    bloodReagent: Oil
+    bloodMaxVolume: 650
     bloodlossDamage:
       types:
         Bloodloss:
