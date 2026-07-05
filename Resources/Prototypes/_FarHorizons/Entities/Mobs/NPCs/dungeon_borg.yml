@@ -71,7 +71,7 @@
     - Alive
     - Dead
   - type: Bloodstream
-    bloodReferenceSolution:
+    solutions::
       reagents:
       - ReagentId: Oil
         Quantity: 650
@@ -98,7 +98,7 @@
       - FootstepSound
   - type: NoSlip
   - type: Stamina
-    CritThreshold: 200
+    critThreshold: 200
   - type: Speech
     speechVerb: Robotic
   - type: RandomMetadata

@@ -1858,5 +1858,3 @@
     outputs:
     - Plating
     - FloorDarkSquiggly
-  - type: Stack
-    stackType: FloorTileDarkSquiggly

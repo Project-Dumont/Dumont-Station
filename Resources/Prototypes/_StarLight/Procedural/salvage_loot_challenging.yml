@@ -136,89 +136,83 @@
           prob: 0.3
           cost: 3
 
-        - proto: LeftArmCyber
-          prob: 0.4
+        - proto: LeftArmCybernetic
+          prob: 0.6
           cost: 10
-        - proto: RightArmCyber
-          prob: 0.4
+        - proto: RightArmCybernetic
+          prob: 0.6
           cost: 10
-        - proto: LeftArmCyberRipper
-          prob: 0.2
+        - proto: BasicCyberneticHeart
+          prob: 0.4
           cost: 15
-        - proto: RightArmCyberRipper
-          prob: 0.2
+        - proto: DiagnosticCyberneticEyes
+          prob: 0.4
           cost: 15
-        - proto: LeftArmCyberMechwright
-          prob: 0.2
+        - proto: BasicCyberneticLiver
+          prob: 0.4
           cost: 15
-        - proto: RightArmCyberMechwright
-          prob: 0.2
+        - proto: DiagnosticCyberneticEyes
+          prob: 0.4
           cost: 15
 
-        - proto: LeftLegCyber
+        - proto: LeftLegCybernetic
+          prob: 0.6
+          cost: 5
+        - proto: RightLegCybernetic
+          prob: 0.6
+          cost: 5
+        - proto: HonkerLLeg
+          prob: 0.6
+          cost: 5
+        - proto: HonkerRLeg
+          prob: 0.6
+          cost: 5
+        - proto: HamtrLLeg
           prob: 0.4
-          cost: 10
-        - proto: RightLegCyber
+          cost: 5
+        - proto: HamtrRLeg
           prob: 0.4
-          cost: 10
-        - proto: LeftLegCyberCargo
-          prob: 0.4
-          cost: 10
-        - proto: RightLegCyberCargo
-          prob: 0.4
-          cost: 10
-        - proto: LeftLegCyberHydraulic
-          prob: 0.2
-          cost: 10
-        - proto: RightLegCyberHydraulic
-          prob: 0.2
-          cost: 10
+          cost: 5
 
-        - proto: BrainImplantTranslator
+        - proto: AnimalTranslator
           prob: 0.2
           cost: 5
-        - proto: BrainImplantComms
+        - proto: XenoTranslator
           prob: 0.2
           cost: 5
-        - proto: LeftHandImplantForensics #FH
+        - proto: EncryptionKeyBinary
           prob: 0.2
           cost: 5
-        - proto: RightHandImplantForensics #FH
+        - proto: EncryptionKeyBinary
           prob: 0.2
           cost: 5
-        - proto: LeftHandImplantClaws #FH
+        - proto: BasicSpaceItalianTranslatorImplanter
           prob: 0.2
           cost: 5
-        - proto: RightHandImplantClaws #FH
+        - proto: RootSpeakTranslatorImplanter
           prob: 0.2
           cost: 5
-        - proto: LeftHandImplantInsulated #FH
+        - proto: BikeHornImplanter
           prob: 0.1
           cost: 10
-        - proto: RightHandImplantInsulated #FH
+        - proto: LightImplanter
           prob: 0.1
           cost: 10
-        - proto: LeftHandImplantThrusters #FH
+        - proto: SadTromboneImplanter
           prob: 0.2
           cost: 5
-        - proto: RightHandImplantThrusters #FH
+        - proto: AdvancedGalaticCommonTranslatorImplanter
           prob: 0.2
           cost: 5
-        - proto: EyeImplantChemistry
+        - proto: MindShieldImplanter
           prob: 0.2
           cost: 5
-        - proto: EyeImplantMedical
+        - proto: TrackingImplanter
           prob: 0.2
           cost: 5
-        - proto: EyeImplantWelding
-          prob: 0.2
-          cost: 5
-        - proto: EyeImplantSecurity
-          prob: 0.2
-          cost: 5
-        - proto: EyeImplantDiagnostic
-          prob: 0.2
-          cost: 5
-        - proto: EyeImplantSyndie
+        - proto: ClothingOuterArmorScrap
           prob: 0.1
-          cost: 10
+          cost: 5
+        - proto: ClothingOuterArmorQueenCarapace
+          prob: 0.01
+          cost: 20
