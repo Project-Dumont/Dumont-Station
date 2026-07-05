@@ -19,7 +19,6 @@ salvage-mission-objective-description-rescue = Perdemos o contato com a base no 
 salvage-mission-objective-announcement-rescue = Sua missão é garantir os seguintes corpos: {$names}. Você vai receber recompensas adicionais dependendo da condição dos corpos.
 
 salvage-mission-objective-completed-message = Missão de exploração completa. {$bonus}/{$maxBonus} objetivo bonus completado. Pagamento total: {$totalReward} e {$totalCash} spesos.
-salvage-mission-objective-failed-message = Salvage mission failed.
 salvage-mission-objective-failed-message = Missão de exploração fracassada.
 
 salvage-mission-objective-name-purge = Apague
