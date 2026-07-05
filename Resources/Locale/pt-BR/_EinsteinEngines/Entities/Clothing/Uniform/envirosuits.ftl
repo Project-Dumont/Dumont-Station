@@ -1,2 +1,2 @@
-ent-ClothingUniformEnvirosuitPrisoner = macacão selado de prisioneiro
-    .desc = Um macacão selado laranja identificando e protegendo um criminoso.
+ent-ClothingUniformEnvirosuitPrisoner = traje hermético de prisioneiro
+    .desc = Um traje hermético laranja identificando e protegendo um criminoso.

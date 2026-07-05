@@ -1,2 +1,2 @@
-ent-ClothingHeadEnvirohelmPrisoner = capacete selado de prisioneiro
-    .desc = Um capacete de contenção de Plasmaman para prisioneiros
+ent-ClothingHeadEnvirohelmPrisoner = capacete hermético de prisioneiro
+    .desc = Um capacete de contenção de pessoas plasma para prisioneiros.

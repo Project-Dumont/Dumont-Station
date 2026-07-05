@@ -6,7 +6,7 @@
 - type: entity
   id: SpawnPointPermaPrisoner
   parent: SpawnPointJobBase
-  name: SpawnPointPermaPrisoner
+  name: perma prisoner
   components:
   - type: SpawnPoint
     job_id: PermaPrisoner
