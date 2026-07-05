@@ -81,11 +81,11 @@ public sealed class HostMonitorSystem : EntitySystem
         if (args.User is not { } user)
             return;
 
-        if (TryComp<AvatarConnectionComponent>(user, out var avatar) && avatar.OriginalBody is { } hostBody && Exists(hostBody) && TryComp<DamageableComponent>(hostBody, out var damageable) && _mobThreshold.TryGetDeadThreshold(hostBody, out var deadThreshold) && deadThreshold.Value > 0)
+        if (TryComp<AvatarConnectionComponent>(user, out var avatar) && avatar.OriginalBody is { } hostBody && Exists(hostBody) && TryComp<DamageableComponent>(hostBody, out var damageable) && _mobThreshold.TryGetIncapThreshold(hostBody, out var critThreshold) && critThreshold.Value > 0)
         {
             if (component.Mode == HostMonitorMode.Integrity)
             {
-                var percentage = Math.Clamp((int) ((1f - _mobThreshold.CheckVitalDamage(hostBody, damageable).Float() / deadThreshold.Value.Float()) * 100), 0, 100);
+                var percentage = Math.Clamp((int) ((1f - _mobThreshold.CheckVitalDamage(hostBody, damageable).Float() / critThreshold.Value.Float()) * 100), 0, 100);
                 var message = Loc.GetString("host-monitor-health", ("percentage", percentage));
                 _chat.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, hideChat: true);
             }
