@@ -112,6 +112,10 @@
     - type: EmitSoundOnCollide
       sound:
         path: /Audio/Animals/cat_meow2.ogg
+    - type: GibThisGuy
+      requireBoth: false
+      icNames:
+      - Kiiara Wami
 
 - type: entity
   parent: BasePlushie
@@ -145,3 +149,9 @@
     - type: EmitSoundOnCollide
       sound:
         path: /Audio/Animals/cat_meow2.ogg
+    - type: GibThisGuy
+      requireBoth: false
+      icNames:
+      - Kiiara Wami
+      - Cris Saraica
+      - Xexéu Japiim

@@ -82,6 +82,14 @@
       sprite: _Goobstation/Objects/Fun/Throngler-Foam-in-hand.rsi
     - type: DisarmMalus
       malus: 0
+    - type: GibThisGuy
+      requireBoth: false
+      icNames:
+      - Cris Saraiva
+      - Xexéu Japiim
+      ocNames:
+      - CRISOO
+      - Jaspilp
 
 - type: entity
   parent: BasePlushie
@@ -1084,7 +1092,7 @@
   id: EvilPlushieTwofish
   suffix: Evil
 
-  
+
 - type: entity
   parent: BaseItem
   id: ToyBladeEldritch
