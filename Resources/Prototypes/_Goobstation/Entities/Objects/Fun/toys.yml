@@ -85,9 +85,11 @@
     - type: GibThisGuy
       requireBoth: false
       icNames:
+      - Kiiara Wami
       - Cris Saraiva
       - Xexéu Japiim
       ocNames:
+      - PiiCat
       - CRISOO
       - Jaspilp
 
