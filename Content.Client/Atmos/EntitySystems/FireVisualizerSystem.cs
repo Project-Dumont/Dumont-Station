@@ -12,7 +12,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Atmos.Components;
+using Content.Client.DisplacementMap;
 using Content.Shared.Atmos;
+using Content.Shared.DisplacementMap;
 using Robust.Client.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
@@ -26,6 +28,7 @@ public sealed class FireVisualizerSystem : VisualizerSystem<FireVisualsComponent
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly PointLightSystem _lights = default!;
+    [Dependency] private DisplacementMapSystem _displacement = default!;
 
     public override void Initialize()
     {
@@ -79,6 +82,7 @@ public sealed class FireVisualizerSystem : VisualizerSystem<FireVisualsComponent
 
         AppearanceSystem.TryGetData<bool>(uid, FireVisuals.OnFire, out var onFire, appearance);
         AppearanceSystem.TryGetData<float>(uid, FireVisuals.FireStacks, out var fireStacks, appearance);
+        AppearanceSystem.TryGetData<string?>(uid, FireVisuals.FireDisplacement, out var fireDisplacement, appearance);
         _sprite.LayerSetVisible((uid, sprite), index, onFire);
 
         if (!onFire)

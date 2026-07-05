@@ -17,7 +17,8 @@ namespace Content.Shared.Damage
         Disabled,
         DamageSpecifierDelta,
         DamageUpdateGroups,
-        ForceUpdate
+        ForceUpdate,
+        Displacement,
     }
 
     [Serializable, NetSerializable]

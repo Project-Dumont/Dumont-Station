@@ -93,7 +93,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Damage.Prototypes;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Damage.Systems;
+using Content.Shared.DisplacementMap;
+using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
@@ -183,7 +185,14 @@ namespace Content.Shared.Damage
 
         [ViewVariables]
         public TimeSpan LastModifiedTime = TimeSpan.Zero;
-    }
+
+    /// <summary>
+    /// Sets the displacement map used for any of the DamageVisuals sprites for this entity.
+    /// TODO: The entirety of DamageVisualsSystem needs to be rewritten.
+    /// </summary>
+    [DataField]
+    public ProtoId<DisplacementDataPrototype>? Displacement;
+}
 
     [Serializable, NetSerializable]
     public sealed class DamageableComponentState : ComponentState
