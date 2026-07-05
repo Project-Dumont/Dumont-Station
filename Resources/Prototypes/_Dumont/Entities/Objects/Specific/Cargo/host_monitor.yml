@@ -8,9 +8,6 @@
     sprite: _Dumont/Objects/Specific/Cargo/host_monitor.rsi
   - type: UseDelay
     delay: 1
-  - type: UseDelayOnTrigger
-  - type: UseDelayTriggerCondition
-  - type: TriggerOnActivate
   - type: Speech
     speechSounds: Pai
   - type: HostMonitor

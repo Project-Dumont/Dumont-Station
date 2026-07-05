@@ -4,7 +4,7 @@ using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
-using Content.Shared.Trigger;
+using Content.Shared.Interaction;
 using Content.Shared.Examine;
 using Content.Shared.Verbs;
 using Content.Shared.Popups;
@@ -22,7 +22,7 @@ public sealed class HostMonitorSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HostMonitorComponent, TriggerEvent>(OnTrigger);
+        SubscribeLocalEvent<HostMonitorComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<HostMonitorComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<HostMonitorComponent, GetVerbsEvent<AlternativeVerb>>(OnAltVerb);
     }
@@ -76,12 +76,9 @@ public sealed class HostMonitorSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("host-monitor-mode", ("mode", modeName)), uid, user);
     }
 
-    private void OnTrigger(EntityUid uid, HostMonitorComponent component, ref TriggerEvent args)
+    private void OnActivate(EntityUid uid, HostMonitorComponent component, ActivateInWorldEvent args)
     {
-        if (args.User is not { } user)
-            return;
-
-        if (TryComp<AvatarConnectionComponent>(user, out var avatar) && avatar.OriginalBody is { } hostBody && Exists(hostBody) && TryComp<DamageableComponent>(hostBody, out var damageable) && _mobThreshold.TryGetIncapThreshold(hostBody, out var critThreshold) && critThreshold.Value > 0)
+        if (TryComp<AvatarConnectionComponent>(args.User, out var avatar) && avatar.OriginalBody is { } hostBody && Exists(hostBody) && TryComp<DamageableComponent>(hostBody, out var damageable) && _mobThreshold.TryGetIncapThreshold(hostBody, out var critThreshold) && critThreshold.Value > 0)
         {
             if (component.Mode == HostMonitorMode.Integrity)
             {
