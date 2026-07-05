@@ -1,48 +1,34 @@
-# Lavaland Change - moved to salvage.yml file in _Lavaland resource folder
-#- type: entityTable
-#  id: FillSalvageSpecialistHardsuitSpatio
-#  table: !type:AllSelector
-#    children:
-#    - id: OxygenTankFilled
-#    - id: ClothingShoesBootsMag
-#    - id: ClothingOuterHardsuitSpatio
-#    - id: ClothingMaskGasExplorer
-#
-#- type: entityTable
-#  id: LockerFillSalvageSpecialist
-#  table: !type:AllSelector
-#    children:
-#    - id: ClothingBeltUtilityFilled
-#    - id: SurvivalKnife
-#    - id: HandheldGPSBasic
-#    - id: RadioHandheld
-#    - id: AppraisalTool
-#    - id: FireExtinguisher
-#    - id: Flare
-#      prob: 0.3
-#      rolls: !type:ConstantNumberSelector
-#        value: 3
-#
-#- type: entity
-#  id: LockerSalvageSpecialistFilledHardsuit
-#  suffix: Filled, Hardsuit
-#  parent: LockerSalvageSpecialist
-#  components:
-#  - type: EntityTableContainerFill
-#    containers:
-#      entity_storage: !type:AllSelector
-#        children:
-#          - !type:NestedSelector
-#            tableId: FillSalvageSpecialistHardsuitSpatio
-#          - !type:NestedSelector
-#            tableId: LockerFillSalvageSpecialist
-#
-#- type: entity
-#  id: LockerSalvageSpecialistFilled
-#  suffix: Filled
-#  parent: LockerSalvageSpecialist
-#  components:
-#    - type: EntityTableContainerFill
-#      containers:
-#        entity_storage: !type:NestedSelector
-#          tableId: LockerFillSalvageSpecialist
+- type: entityTable
+  id: LockerFillSalvageLead
+  table: !type:AllSelector
+    children: # DOTS - add Lead specific items
+    - id: BoxFolderClipboard
+    - id: RubberStampSalvageLead
+    - id: MedkitCombatFilled
+    - id: ClothingOuterHardsuitSalvage
+    - id: BoxLethalshot
+    - id: WeaponShotgunDoubleBarreled
+    - id: ClothingEyesGlassesCommand
+
+- type: entityTable
+  id: FillSalvageLeadHardsuitSpatio
+  table: !type:AllSelector
+    children:
+    - id: OxygenTankFilled
+    - id: ClothingShoesBootsMag
+    - id: ClothingOuterHardsuitSpatioLead
+    - id: ClothingMaskGasExplorer
+
+- type: entity
+  id: LockerSalvageLeadFilled
+  suffix: Filled
+  parent: LockerSalvageLead
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: LockerFillSalvageLead
+        - !type:NestedSelector
+          tableId: LockerFillSalvageSpecialist

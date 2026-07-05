@@ -87,11 +87,15 @@
   - Cargo
   goobcoins: 20 #Goob content
   supervisors: job-supervisors-qm
+  canBeAntag: false
   access:
   - Cargo
   - Salvage
   - Maintenance
   - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
   alternateTitles:
   - SalvageSpecialistTitleMiner
   - SalvageSpecialistTitleTech

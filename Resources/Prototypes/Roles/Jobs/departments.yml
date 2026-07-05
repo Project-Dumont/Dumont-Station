@@ -108,6 +108,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - SalvageLead # Starlight
   - ShaftMiner # Lavaland Change
 
 - type: department

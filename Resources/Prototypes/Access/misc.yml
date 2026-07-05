@@ -50,6 +50,16 @@
   - GenpopLeave
   - Robotics #Goob
   - Journalism #Goob
+  - Virology #Dumont
+  - Psychology #Dumont
+  - Pharmacy #Dumont
+  - Genetics #Dumont
+  - Mail #Dumont
+  - Mining #Dumont
+  - BrigMedic #Dumont
+  - Library #Dumont
+  - Bitrun # Orion
+  - SalvageLead # Starlight
 
 - type: accessGroup
   id: General

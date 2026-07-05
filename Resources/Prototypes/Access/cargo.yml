@@ -25,5 +25,6 @@
   id: Cargo
   tags:
   - Quartermaster
-  - Salvage
+  - Salvage #Dumont Salvage -> Exploration
+  - SalvageLead
   - Cargo
