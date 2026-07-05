@@ -4,8 +4,8 @@
   name: loadout-group-salvage-head
   minLimit: 0
   loadouts:
-  - ClothingHeadHelmetSalvageMerc
-  - ClothingHeadHatBeretSalvageMercBrown
+    - ClothingHeadHelmetSalvageMerc
+    - ClothingHeadHatBeretSalvageMercBrown
 
 - type: loadoutGroup
   id: SalvageLeadNeck
@@ -18,5 +18,5 @@
   id: SalvageLeadPDALoad
   name: loadout-group-salvagelead-id
   loadouts:
-  - SalvageLeadPDA
-  - HelldiverPDA
+    - SalvageLeadPDA
+    - HelldiverPDA

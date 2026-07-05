@@ -1,14 +1,12 @@
 - type: roleLoadout
   id: JobSalvageLead
   groups: # TODO - add custom groups to Resources/Prototypes/_StarLight/Loadouts/loadout_groups.yml, reference here
-    - GroupTankHarness
-    - SalvageLeadHead
-    - SalvageLeadNeck
-    - SalvageLeadPDALoad
+    - SalvageLeadHead #Far Horizons
     - SalvageSpecialistBackpack
+    - SalvageLeadNeck
     - SalvageSpecialistOuterClothing
     - SalvageSpecialistShoes
+    - SalvageLeadPDALoad
     - Glasses
     - Survival
     - Trinkets
-    - GroupSpeciesBreathTool
