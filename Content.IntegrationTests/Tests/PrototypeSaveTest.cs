@@ -88,6 +88,14 @@ public sealed class PrototypeSaveTest
             if (prototype.Components.ContainsKey("MapGrid"))
                 continue;
 
+            // ADT-Tweak start
+            if (HasSolutionContainerWithSolutions(prototype, prototypeMan))
+                continue;
+
+            if (prototype.HideSpawnMenu)
+                continue;
+            // ADT-Tweak end
+
             // Currently mobs and such can't be serialized, but they aren't flagged as serializable anyways.
             if (!prototype.MapSavable)
                 continue;
