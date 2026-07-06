@@ -181,7 +181,7 @@
   id: fpalm
   category: Memes
   categoryOrder: 6
-  emojiOrder: 9
+  emojiOrder: 15
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/fpalm.png
 
 - type: nanoChatEmoji
@@ -211,25 +211,25 @@
 - type: nanoChatEmoji
   id: taa
   category: Memes
-  emojiOrder: 8
+  emojiOrder: 13
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/taa.png
 
 - type: nanoChatEmoji
   id: mowzers
   category: Memes
-  emojiOrder: 5
+  emojiOrder: 7
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/mowzers.png
 
 - type: nanoChatEmoji
   id: gatto
   category: Memes
-  emojiOrder: 6
+  emojiOrder: 9
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/gatto.png
 
 - type: nanoChatEmoji
   id: hamter
   category: Memes
-  emojiOrder: 7
+  emojiOrder: 10
   sprite: /Textures/_Dumont/Interface/NanoChat/Emotes/hamter.png
 
 # Cabeças
