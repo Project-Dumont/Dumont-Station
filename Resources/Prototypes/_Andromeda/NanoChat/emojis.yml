@@ -1,60 +1,60 @@
 
 #Personagens
 
-- type: nanoChatEmoji
-  id: AmyDevil
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AmyDevil.png
+# - type: nanoChatEmoji
+#   id: AmyDevil
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AmyDevil.png
 
-- type: nanoChatEmoji
-  id: AngelJanie
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AngelJanie.png
+# - type: nanoChatEmoji
+#   id: AngelJanie
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AngelJanie.png
 
-- type: nanoChatEmoji
-  id: AngryLoona
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AngryLoona.png
+# - type: nanoChatEmoji
+#   id: AngryLoona
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AngryLoona.png
 
-- type: nanoChatEmoji
-  id: CuteBoris
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/CuteBoris.png
+# - type: nanoChatEmoji
+#   id: CuteBoris
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/CuteBoris.png
 
-- type: nanoChatEmoji
-  id: DoriLoL
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/DoriLoL.png
+# - type: nanoChatEmoji
+#   id: DoriLoL
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/DoriLoL.png
 
-- type: nanoChatEmoji
-  id: IldoBigBrain
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/IldoBigBrain.png
+# - type: nanoChatEmoji
+#   id: IldoBigBrain
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/IldoBigBrain.png
 
-- type: nanoChatEmoji
-  id: MidoriLove
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/MidoriLove.png
+# - type: nanoChatEmoji
+#   id: MidoriLove
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/MidoriLove.png
 
-- type: nanoChatEmoji
-  id: PsikoAdelia
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/PsikoAdelia.png
+# - type: nanoChatEmoji
+#   id: PsikoAdelia
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/PsikoAdelia.png
 
-- type: nanoChatEmoji
-  id: WEEEEEEEEEEEEEELLS
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/WEEEEEEEEEEEEEELLS.png
+# - type: nanoChatEmoji
+#   id: WEEEEEEEEEEEEEELLS
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/WEEEEEEEEEEEEEELLS.png
 
-- type: nanoChatEmoji
-  id: YvonneCry
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/YvonneCry.png
+# - type: nanoChatEmoji
+#   id: YvonneCry
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/YvonneCry.png
 
-- type: nanoChatEmoji
-  id: PolarisNerd
-  category: Character
-  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/PolarisNerd.png
+# - type: nanoChatEmoji
+#   id: PolarisNerd
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/PolarisNerd.png
 
 
 #Resto
@@ -103,5 +103,3 @@
   id: sus
   category: Misc
   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/sus.png
-
-
