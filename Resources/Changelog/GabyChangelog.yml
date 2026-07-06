@@ -3409,3 +3409,13 @@ Entries:
       message: Piratas aparecem 1/3 a frequência anterior.
   id: 408
   time: '2026-07-04T19:33:10.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: As munições da Chester Mk. II agora usam projéteis ao invés de hitscan.
+    - type: Tweak
+      message: Alterados alguns valores de dano, munição atordoadora ficou mais eficaz.
+    - type: Tweak
+      message: O custo geral das munições na loja de pontos do NTR foi reduzido.
+  id: 409
+  time: '2026-07-06T08:50:06.0000000+00:00'
