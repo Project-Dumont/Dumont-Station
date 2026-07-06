@@ -11,10 +11,33 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <controls:FancyWindow xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'comms-console-menu-title'}"
-    SetSize="870 300">
+    SetSize="870 410">
 
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="10">
+        <PanelContainer HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+            <BoxContainer Name="RenameArea" Orientation="Vertical" Margin="15 5 15 5" HorizontalExpand="True" Access="Public">
+                <Label Name="StationNameLabel"
+                    Access="Public"
+                    Text="{Loc 'comms-console-menu-header'}"
+                    HorizontalAlignment="Left"
+                    StyleClasses="LabelHeading"/>
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <LineEdit Name="RenameInput"
+                            Access="Public"
+                            PlaceHolder="{Loc 'comms-console-menu-rename-placeholder'}"
+                            HorizontalExpand="True"
+                            Margin="0 0 4 0"/>
+                    <Button Name="RenameButton"
+                            Access="Public"
+                            Text="{Loc 'comms-console-menu-rename-button'}"/>
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
         <BoxContainer Name="StationActions" Orientation="Horizontal" MinHeight="190" VerticalExpand="True" HorizontalExpand="True">
             <BoxContainer Name="AnnouncementArea" Orientation="Vertical" Margin="15" VerticalExpand="True" HorizontalExpand="True">
                 <TextEdit Name="MessageInput" VerticalExpand="True" HorizontalExpand="True"/>
@@ -65,7 +88,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             </BoxContainer>
 
         </BoxContainer>
-        <BoxContainer Name="AlertLevelArea" Orientation="Horizontal" Margin="20" MinHeight="70" HorizontalAlignment="Center" HorizontalExpand="True" Access="Public">
-        </BoxContainer>
+        <PanelContainer HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+            <BoxContainer Orientation="Vertical" Margin="10">
+                <Label Text="{Loc 'comms-console-menu-alert-header'}" HorizontalAlignment="Left" StyleClasses="LabelHeading"/>
+                <BoxContainer Name="AlertLevelArea" Orientation="Horizontal" Margin="10" MinHeight="70" HorizontalAlignment="Center" HorizontalExpand="True" Access="Public"/>
+            </BoxContainer>
+        </PanelContainer>
     </BoxContainer>
 </controls:FancyWindow>

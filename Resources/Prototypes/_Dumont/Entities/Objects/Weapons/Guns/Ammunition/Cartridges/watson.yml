@@ -1,0 +1,59 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseCartridgeWatson
+  name: cartridge (.38 watson)
+  parent: [ BaseCartridge, BaseSecurityCommandContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeWatson
+  - type: CartridgeAmmo
+    proto: BulletWatson
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: CartridgeWatson
+  name: cartridge (.38 watson)
+  parent: BaseCartridgeWatson
+  description: A standard cartridge for compact revolvers.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletWatson
+
+- type: entity
+  id: CartridgeWatsonPractice
+  name: cartridge (.38 watson practice)
+  parent: BaseCartridgeWatson
+  description: A standard practice cartridge for compact revolvers.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletWatsonPractice
+
+- type: entity
+  id: CartridgeWatsonIncendiary
+  name: cartridge (.38 watson incendiary)
+  parent: BaseCartridgeWatson
+  description: A standard incendiary cartridge for compact revolvers.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletWatsonIncendiary
+
+- type: entity
+  id: CartridgeWatsonUranium
+  name: cartridge (.38 watson uranium)
+  parent: BaseCartridgeWatson
+  description: A standard uranium cartridge for compact revolvers.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletWatsonUranium

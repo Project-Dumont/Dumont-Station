@@ -30,6 +30,7 @@
   - BoxShotgunPractice
   # - MagazineBoxLightRiflePractice # Goobstation - remove light rifle
   - MagazineBoxMagnumPractice
+  - MagazineBoxWatsonPractice # Dumont
   - MagazineBoxPistolPractice
   - MagazineBoxRiflePractice
   - WeaponDisablerPractice
@@ -38,6 +39,7 @@
   - MagazineRiflePractice
   - MagazinePistolPractice
   - SpeedLoaderMagnumPractice
+  - SpeedLoaderWatsonPractice # Dumont
   - MagazinePistolSubMachineGunPractice
   - MagazineBoxChesterRiflePractice # Dumont
   - WeaponFlareGunSecurity
@@ -50,6 +52,7 @@
   - BoxShotgunSlug
   # - MagazineBoxLightRifle # Goobstation - remove light rifle
   - MagazineBoxMagnum
+  - MagazineBoxWatson # Dumont
   - MagazineBoxPistol
   - MagazineBoxRifle
   # - MagazineLightRifle # Goobstation - remove light rifle
@@ -66,7 +69,9 @@
   - MagazineShotgunEmpty
   - MagazineShotgunSlug
   - SpeedLoaderMagnum
+  - SpeedLoaderWatson # Dumont
   - SpeedLoaderMagnumEmpty
+  - SpeedLoaderWatsonEmpty # Dumont
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -124,6 +129,8 @@
   # - MagazineBoxLightRifleUranium # Goobstation - remove light rifle
   - MagazineBoxMagnumIncendiary
   - MagazineBoxMagnumUranium
+  - MagazineBoxWatsonIncendiary # Dumont
+  - MagazineBoxWatsonUranium # Dumont
   - MagazineBoxPistolIncendiary
   - MagazineBoxPistolUranium
   - MagazineBoxRifleIncendiary
@@ -140,6 +147,8 @@
   - MagazineShotgunIncendiary
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
+  - SpeedLoaderWatsonIncendiary # Dumont
+  - SpeedLoaderWatsonUranium # Dumont
 
 - type: latheRecipePack
   id: SecurityWeapons

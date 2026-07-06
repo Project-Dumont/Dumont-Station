@@ -3229,3 +3229,205 @@ Entries:
       message: Alterado placa de direção da prisão
   id: 387
   time: '2026-06-25T18:05:37.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Adicionado requisito de acesso atmosférico para o console do Reator
+        Hiper Torus.
+    - type: Tweak
+      message: Alarmes de ar novamente requerem acesso de atmosfera.
+  id: 388
+  time: '2026-06-26T02:35:41.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: Corrigido bug do fabricador nuclear não podendo ser linkado no silo.
+    - type: Fix
+      message: >-
+        Agora a placa do computador de monitoramento do reator nuclear pode ser
+        fabricada.
+  id: 389
+  time: '2026-06-20T20:04:02.0000000+00:00'
+- author: VictorJob
+  changes:
+    - type: Tweak
+      message: Alterado sprites da inspector, Kahemmer e energy balls..
+  id: 390
+  time: '2026-06-20T20:27:08.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: >-
+        Adiciona pré-crítico, que permite se movimentar e sussurrar enquanto
+        estiver caído.
+  id: 391
+  time: '2026-06-21T14:20:38.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: portado os sprites de algumas placa do far horizon.
+    - type: Add
+      message: adicionado placas de mineração, brigmed e genética com o mesmo estilo
+  id: 392
+  time: '2026-06-26T18:31:36.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: >-
+        Acesso a vend de tickets e roupas da mineração temporariamente
+        restaurado aos exploradores até o merge do rework.
+  id: 393
+  time: '2026-06-27T15:57:56.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Coletores de radiação, além da radiação agora necessitam de proximidade
+        com Singularidade ou Cristal de Super Matéria para gerarem energia.
+    - type: Remove
+      message: >-
+        Coletores de radiação agora produzem menos energia por unidade de
+        radiação (impacto real apenas em estações maiores).
+  id: 394
+  time: '2026-06-27T16:25:13.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: >-
+        Adicionado os novos acessos como acessos extendidos em rounds lowpop
+        para funções não especializadas.
+    - type: Fix
+      message: Virologista agora possui o próprio acesso.
+    - type: Fix
+      message: >-
+        Ícone de trabalho do Geneticista alterado para a mesma cor do restante
+        da Sci.
+    - type: Remove
+      message: >-
+        Removido títulos alternativos de carteiro, minerador e roboticista das
+        funções sem tal acesso como padrão.
+  id: 395
+  time: '2026-06-28T17:33:47.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: >-
+        Airlocks do correio agora devem spawnar corretamente durante
+        carregamento do mapa.
+  id: 396
+  time: '2026-06-28T17:37:01.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: A interface fantasma foi melhorada.
+  id: 397
+  time: '2026-06-29T20:42:10.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Aba no manifesto de fim de turno com o ranking de jogadores mais ricos.
+  id: 398
+  time: '2026-06-29T21:04:19.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: >-
+        Capitão e NTR agora podem renomear a estação pelo console de
+        comunicação.
+  id: 399
+  time: '2026-06-29T22:39:15.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Jetpacks agora podem ser vestidos no slot de outerclotching.
+  id: 400
+  time: '2026-06-29T22:43:00.0000000+00:00'
+- author: SrKolobanoc
+  changes:
+    - type: Add
+      message: 'Novo revólver para o detetive: Watson 38!'
+    - type: Add
+      message: Novas munições .38 fabricáveis.
+    - type: Add
+      message: Seletor de revólveres no armário do detetive, use para escolher o seu!
+    - type: Remove
+      message: Coldre da Inspetor roundstart do detetive.
+  id: 401
+  time: '2026-07-02T01:23:33.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Agora é possivel botar o disabler no colete do brigmedic.
+  id: 402
+  time: '2026-07-02T15:48:22.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Não é mais possivel botar jugs em mochilas. Use o smart fridge!
+  id: 403
+  time: '2026-07-02T17:54:31.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Tweak
+      message: >-
+        Seleção inteira das músicas da jukebox e lobby foram alteradas.
+        Aproveite as músicas novas no bar mais próximo!
+  id: 404
+  time: '2026-07-02T18:18:08.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Fix
+      message: Telefones não são mais infinitos ao botar em uma lixeira
+    - type: Fix
+      message: >-
+        Agora você tem como saber quando desligam na sua cara usando um telefone
+        (tu tu tu)
+  id: 405
+  time: '2026-07-03T02:48:07.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: >-
+        Reator de Fusão HiperTorus agora realmente precisa de acesso atmosférico
+        para interação.
+  id: 406
+  time: '2026-07-04T19:08:04.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Fix
+      message: Corrigido bug da trait de esconder nome OOC.
+  id: 407
+  time: '2026-07-04T19:30:34.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Remove
+      message: Midround rev e os dois cultos midround.
+    - type: Tweak
+      message: Secreto médio tem menos midrounds e mais startrounds.
+    - type: Tweak
+      message: Piratas aparecem 1/3 a frequência anterior.
+  id: 408
+  time: '2026-07-04T19:33:10.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: As munições da Chester Mk. II agora usam projéteis ao invés de hitscan.
+    - type: Tweak
+      message: Alterados alguns valores de dano, munição atordoadora ficou mais eficaz.
+    - type: Tweak
+      message: O custo geral das munições na loja de pontos do NTR foi reduzido.
+  id: 409
+  time: '2026-07-06T08:50:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Tempo jogado como prisioneiro não irá mais registrar como segurança.
+    - type: Fix
+      message: >-
+        Plasmaman agora podem ser prisioneiros roundstart, começando com traje
+        adequado.
+    - type: Add
+      message: Traduções dos trajes herméticos de prisioneiro.
+  id: 410
+  time: '2026-07-06T13:12:53.0000000+00:00'

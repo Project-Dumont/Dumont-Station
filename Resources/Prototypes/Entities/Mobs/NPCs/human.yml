@@ -136,6 +136,9 @@
   - type: Inventory
     templateId: corpse
   - type: PartialAbsorbable # Goobstation - changelings
+  - type: Tag
+    tags:
+    - HideGhostWarp
 
 - type: entity
   parent: MobHuman

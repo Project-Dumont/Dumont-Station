@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Basically a reskin of salvage specialist
 - type: job
   id: ShaftMiner
@@ -17,10 +21,11 @@
   supervisors: job-supervisors-qm
   access:
   - Cargo
-  # - Salvage # Dumont
   - Mining # Dumont
   - Maintenance
-  - External
+  extendedAccess:
+  - Salvage # Dumont
+  - External # Dumont
 
 - type: startingGear
   id: ShaftMinerGear

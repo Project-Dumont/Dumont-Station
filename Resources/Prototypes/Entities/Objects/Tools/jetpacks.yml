@@ -79,6 +79,10 @@
     quickEquip: false
     slots:
     - Back
+    - outerClothing # Gaby change
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-BACKPACK
   - type: GasTank
     outputPressure: 21.3
     air:
@@ -126,6 +130,7 @@
     sprite: Objects/Tanks/Jetpacks/blue.rsi
     slots:
       - Back
+      - outerClothing # Gaby change
 
 # Filled blue
 - type: entity
@@ -159,6 +164,7 @@
     sprite: Objects/Tanks/Jetpacks/black.rsi
     slots:
       - Back
+      - outerClothing # Gaby change
   - type: StaticPrice
     price: 1000
 
@@ -192,6 +198,7 @@
     sprite: Objects/Tanks/Jetpacks/captain.rsi
     slots:
       - Back
+      - outerClothing # Gaby change
       - SuitStorage
   - type: Item
     sprite: Objects/Tanks/Jetpacks/captain.rsi
@@ -277,6 +284,7 @@
     sprite: _Gabystation/Objects/Tanks/Jetpacks/security.rsi # Gaby
     slots:
       - Back
+      - outerClothing # Gaby change
 
 #Filled security
 - type: entity
@@ -310,6 +318,7 @@
     sprite: Objects/Tanks/Jetpacks/void.rsi
     slots:
       - Back
+      - outerClothing # Gaby change
       - suitStorage
       - Belt
 

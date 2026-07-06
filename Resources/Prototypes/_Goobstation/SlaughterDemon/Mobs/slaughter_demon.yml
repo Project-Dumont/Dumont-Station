@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent:
     - SimpleSpaceMobBase
@@ -167,6 +171,8 @@
       Female: SlaughterDemon
       Unsexed: SlaughterDemon
   - type: ZombieImmune
+  - type: GlobalAntagonist # Orion
+    antagonistPrototype: globalAntagonistSlaughterDemon
   - type: SlowOnDamage
     speedModifierThresholds:
       200: 1

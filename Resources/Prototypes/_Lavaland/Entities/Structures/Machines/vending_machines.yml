@@ -50,7 +50,7 @@
     energy: 1.6
     color: "#b89e2a"
   - type: AccessReader
-    access: [["Mining"]] # Dumont edit
+    access: [["Salvage"], ["Mining"]] # Dumont edit
 
 - type: localizedDataset
   id: MiningDrobeAds
