@@ -75,6 +75,8 @@
     damagePenalty: 0.4
   - type: WeldingSparksAnimation # Goobstation
     startingOffset: 0, 0.5
+  - type: SoundBlocker # Trauma
+    soundBlockPercent: 0.8
 
 - type: entity
   id: BlastDoorOpen

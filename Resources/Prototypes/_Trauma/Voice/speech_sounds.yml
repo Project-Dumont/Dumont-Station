@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: speechSounds
   id: Morph
   saySound:
@@ -10,3 +9,12 @@
     path: /Audio/Effects/Fluids/glug.ogg
   exclaimSound:
     path: /Audio/Effects/Fluids/glug.ogg
+
+- type: speechSounds
+  id: RMCPhoneSpeakSounds
+  saySound:
+    collection: RMCPhoneSpeak
+  askSound:
+    collection: RMCPhoneSpeak
+  exclaimSound:
+    collection: RMCPhoneSpeak

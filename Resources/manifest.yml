@@ -1,6 +1,10 @@
-defaultWindowTitle: Gaby Station
-windowIconSet: /Textures/Logo/icon
-splashLogo: /Textures/Logo/logo.png
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+defaultWindowTitle: Dumont Station
+windowIconSet: /Textures/_Dumont/Logo/icon
+splashLogo: /Textures/_Dumont/Logo/logo.png
 
 # PJB PLEASE
 # naooooooooooooooooo nao

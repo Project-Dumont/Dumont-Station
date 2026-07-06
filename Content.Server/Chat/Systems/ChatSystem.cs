@@ -135,6 +135,8 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared._Starlight.CollectiveMind; // Goobstation - Starlight collective mind port
+using Content.Shared.Cuffs.Components;
+using Content.Shared.Damage.ForceSay;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
@@ -143,6 +145,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
+using Content.Shared.Popups;
 using Content.Shared.Radio;
 using Content.Shared.Station.Components;
 using Content.Shared.Whitelist;
@@ -410,7 +413,18 @@ public sealed partial class ChatSystem : SharedChatSystem
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {
-            if (TryProccessRadioMessage(source, message, out var modMessage, out var channel))
+            // Orion-Start
+            if (IsRadioPrefixMessage(message) && !CanUseRadio(source))
+            {
+                if (TryProccessRadioMessage(source, message, out var fallbackMessage, out _, quiet: true))
+                    message = fallbackMessage;
+
+                desiredType = InGameICChatType.Whisper;
+                checkRadioPrefix = false;
+            }
+            // Orion-End
+
+            if (checkRadioPrefix && TryProccessRadioMessage(source, message, out var modMessage, out var channel)) // Orion-Edit
             {
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, language, hideLog, ignoreActionBlocker, colorOverride); // Goob edit & Einstein Engines - Language
                 return;
@@ -434,6 +448,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
+        // Orion-Start
+        if (desiredType == InGameICChatType.Speak && _mobStateSystem.IsSoftCritical(source))
+            desiredType = InGameICChatType.Whisper;
+        // Orion-End
+
         // Otherwise, send whatever type.
         switch (desiredType)
         {
@@ -451,6 +470,32 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
         }
     }
+
+    // Orion-Start
+    private bool IsRadioPrefixMessage(string message)
+    {
+        return message.StartsWith(RadioCommonPrefix) ||
+               message.StartsWith(RadioChannelPrefix) ||
+               message.StartsWith(RadioChannelAltPrefix);
+    }
+
+    private bool CanUseRadio(EntityUid source)
+    {
+        if (_mobStateSystem.IsCritical(source))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("chat-manager-cannot-radio-while-critical"), source, source);
+            return false;
+        }
+
+        if (TryComp<CuffableComponent>(source, out var cuffable) && cuffable.CuffedHandCount > 0)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("chat-manager-cannot-radio-with-bound-hands"), source, source);
+            return false;
+        }
+
+        return true;
+    }
+    // Orion-End
 
     public void TrySendInGameOOCMessage(
         EntityUid source,
@@ -796,8 +841,24 @@ public sealed partial class ChatSystem : SharedChatSystem
         Color? colorOverride = null // Goobstation
         )
     {
+        // Orion-Start
+        var allowSoftCritWhisper = false;
+        if (!ignoreActionBlocker && _mobStateSystem.IsSoftCritical(source) && !HasComp<AllowNextCritSpeechComponent>(source))
+        {
+            allowSoftCritWhisper = true;
+            EnsureComp<AllowNextCritSpeechComponent>(source);
+        }
+        // Orion-End
+
+        // Orion-Edit-Start
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
+        {
+            if (allowSoftCritWhisper)
+                RemCompDeferred<AllowNextCritSpeechComponent>(source);
+
             return;
+        }
+        // Orion-Edit-End
 
         // Goob edit start
         var message = FormattedMessage.RemoveMarkupOrThrow(originalMessage);

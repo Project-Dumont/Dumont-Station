@@ -64,7 +64,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
-            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
+            AdministrativeAssistant: [ 1, 1 ] # Dumont Station - admin assist
             RadioHost: [ 1, 1 ] # Goobstation
             Reporter: [ 1, 1 ] #Goobstation
             #engineering
@@ -79,10 +79,11 @@
             MedicalIntern: [ 3, 3 ]
             Psychologist: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
-            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
+            Roboticist: [ 2, 2 ]
+            Geneticist: [ 1, 1 ] # Corvax-Wega-Genetics
             ResearchAssistant: [ 3, 3 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -92,11 +93,13 @@
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
             PermaPrisoner: [ 3, 3 ] # HARMONY
-            PrisonGuard: [ 1, 1 ] # Gaby
+            PrisonGuard: [ 1, 1 ] # Dumont
             Brigmedic: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            ShaftMiner: [ 3, 3 ]
+            Bitrunner: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]

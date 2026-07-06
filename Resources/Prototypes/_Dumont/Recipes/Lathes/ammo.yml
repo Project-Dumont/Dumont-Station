@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxWatson
+  result: MagazineBoxWatson
+  materials:
+    Steel:  240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxWatsonPractice
+  result: MagazineBoxWatsonPractice
+  materials:
+    Steel: 50
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxWatsonIncendiary
+  result: MagazineBoxWatsonIncendiary
+  materials:
+    Plastic: 240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxWatsonUranium
+  result: MagazineBoxWatsonUranium
+  materials:
+    Plastic: 240
+    Uranium: 180
+
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: SpeedLoaderWatsonEmpty
+  result: SpeedLoaderWatsonEmpty
+  materials:
+    Steel: 50
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderWatson
+  result: SpeedLoaderWatson
+  materials:
+    Steel: 190
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderWatsonIncendiary
+  result: SpeedLoaderWatsonIncendiary
+  materials:
+    Steel: 50
+    Plastic: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderWatsonPractice
+  result: SpeedLoaderWatsonPractice
+  materials:
+    Steel: 90
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderWatsonUranium
+  result: SpeedLoaderWatsonUranium
+  materials:
+    Steel: 50
+    Plastic: 150
+    Uranium: 110

@@ -115,30 +115,30 @@
     - state: icon-base
       color: "#404040"
     - state: icon-sling
-      color: "#004281"
+      color: "#38734b"
     - state: icon-clasp
-      color: "#005DBF"
+      color: "#599c65"
   - type: Clothing
     clothingVisuals:
       back:
       - state: base-equipped-BACKPACK
         color: "#404040"
       - state: sling-equipped-BACKPACK
-        color: "#004281"
+        color: "#38734b"
       - state: clasp-equipped-BACKPACK
-        color: "#005DBF"
+        color: "#599c65"
   - type: Item
     inhandVisuals:
       left:
       - state: base-inhand-left
         color: "#404040"
       - state: clasp-inhand-left
-        color: "#eca615"
+        color: "#38734b"
       right:
       - state: base-inhand-right
         color: "#404040"
       - state: clasp-inhand-right
-        color: "#eca615"
+        color: "#38734b"
 
 # Engineering
 - type: entity

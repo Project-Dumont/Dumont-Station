@@ -262,7 +262,9 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Goobstation/Shuttles/retort_medical.yml",
             "/Maps/_Goobstation/Shuttles/retort_engineering.yml",
             "/Maps/_Goobstation/Shuttles/retort_janitorial.yml",
-            "/Maps/_Goobstation/Shuttles/retort_cburn.yml"
+            "/Maps/_Goobstation/Shuttles/retort_cburn.yml",
+			// Harmony maps/map versions;
+			"/Maps/_Harmony/eclipse.yml", // Harmony Map - Contains Matter Dematerializer and svalinn shuttle guns.
         };
 
         private static readonly string[] GameMaps =
@@ -282,6 +284,7 @@ namespace Content.IntegrationTests.Tests
             "Core",             // Not in pool
             "Delta",
             "Dev",              // Dev map
+			"Eclipse",          //Harmony, Developed by Lachryphage
             "dm01-entryway",    // Deathmatch
             "Europa",           // Not in pool.
             "Fland",

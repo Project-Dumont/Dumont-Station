@@ -31,7 +31,7 @@
     tag: DockMining
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsExternal ]
+      board: [ DoorElectronicsMining ] # Dumont edit
 
 # 1 per map, this spawns the mining shuttle
 - type: entity

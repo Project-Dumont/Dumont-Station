@@ -106,6 +106,10 @@ public abstract class SharedFishingSystem : EntitySystem
                     if (activeSpotComp.Fish != null)
                     {
                         ThrowFishReward(activeSpotComp.Fish.Value, fishSpot, fisher);
+                        // Orion-Start
+                        var fishCaughtEvent = new FishCaughtEvent(activeSpotComp.Fish.Value);
+                        RaiseLocalEvent(fisher, ref fishCaughtEvent);
+                        // Orion-End
                         _popup.PopupEntity(Loc.GetString("fishing-progress-success"), fisher, fisher);
                     }
 

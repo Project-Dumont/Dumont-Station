@@ -29,6 +29,7 @@ namespace Content.Client.Clickable
             "/Textures/LobbyScreens",
             "/Textures/Parallaxes",
             "/Textures/Logo",
+            "/Textures/_Dumont/Logo",
         };
 
         private const float Threshold = 0.1f;

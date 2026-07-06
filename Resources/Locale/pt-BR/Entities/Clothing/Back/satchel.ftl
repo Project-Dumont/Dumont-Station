@@ -25,8 +25,8 @@ ent-ClothingBackpackSatchelHydroponics = bolsa da botânica
 ent-ClothingBackpackSatchelSalvage = bolsa de exploração
     .desc = Uma bolsa surrada. Pode conter tesouros de outro mundo!
 
-ent-ClothingBackpackSatchelHolding = bolsa interdimensional
-    .desc = Uma bolsa que contém um buraco de minhoca a dimensão azul.
+ent-ClothingBackpackSatchelHolding = bolsa bluespace
+    .desc = Uma bolsa que contém um portal bluespace para armazenamento de itens.
 
 ent-ClothingBackpackSatchelLeather = bolsa de couro
     .desc = Uma bolsa tão elegante quanto antiga.

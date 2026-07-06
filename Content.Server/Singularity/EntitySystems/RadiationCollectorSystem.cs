@@ -96,6 +96,7 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Radiation.Events;
 using Content.Shared.Singularity.Components;
+using Content.Shared.Tag;
 using Content.Shared.Timing;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
@@ -109,6 +110,8 @@ public sealed class RadiationCollectorSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     private const string GasTankContainer = "gas_tank";
 
@@ -196,11 +199,19 @@ public sealed class RadiationCollectorSystem : EntitySystem
             }
         }
 
-        if (TryComp<PowerSupplierComponent>(uid, out var comp))
+        if (TryComp<PowerSupplierComponent>(uid, out var comp)) // Dumont edit - Make Singulo/SM mandatory for power
         {
-            int powerHoldoverTicks = _gameTiming.TickRate * 2; // number of ticks to hold radiation
-            component.PowerTicksLeft = powerHoldoverTicks;
-            comp.MaxSupply = component.Enabled ? charge : 0;
+            var canGenerate = HasNearbyTarget(uid, component);
+
+            if (canGenerate)
+            {
+                comp.MaxSupply = charge;
+                component.PowerTicksLeft = _gameTiming.TickRate * 2;
+            }
+            else
+            {
+                comp.MaxSupply = 0;
+            }
         }
 
         // Update appearance
@@ -315,5 +326,27 @@ public sealed class RadiationCollectorSystem : EntitySystem
         _appearance.SetData(uid, RadiationCollectorVisuals.TankInserted, gasTank != null, appearance);
 
         UpdatePressureIndicatorAppearance(uid, component, gasTank, appearance);
+    }
+
+    private bool HasNearbyTarget(EntityUid uid, RadiationCollectorComponent component) // Dumont - Check for nearby entity with desired tag.
+    {
+        if (component.RequiredProximityTag is null) // If no tag is set, it ignores it and generates power.
+            return true;
+
+        var coords = Transform(uid).Coordinates;
+
+        var entities = _entityLookup.GetEntitiesInRange<TagComponent>(coords, component.ProximityRange);
+
+        foreach (var inRange in entities)
+        {
+            // If a required tag is configured, check entities in range for that tag.
+            if (component.RequiredProximityTag is { } tag)
+            {
+                if (_tag.HasTag(inRange.Owner, tag))
+                    return true;
+            }
+}
+
+        return false;
     }
 }

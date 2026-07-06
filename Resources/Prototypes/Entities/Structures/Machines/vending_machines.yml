@@ -1435,7 +1435,7 @@
   components:
   - type: VendingMachine
     pack: SustenanceInventory
-    paidItems: false # GabyStation -> Economy    
+    paidItems: false # GabyStation -> Economy
     dispenseOnHitChance: 0.25
     dispenseOnHitThreshold: 2
     offState: off
@@ -1708,7 +1708,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Research"]]
+    access: [["Robotics"]] # Dumont edit
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -1898,7 +1898,7 @@
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader
-    access: [["Salvage"]]
+    access: [["Salvage"], ["Mining"]] # Dumont edit
   - type: GuideHelp
     guides:
     - Salvage
@@ -2204,7 +2204,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Service"]]
+    access: [["Library"]] # Dumont edit
 
 - type: entity
   parent: VendingMachine
@@ -2447,7 +2447,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Research"]]
+    access: [["Robotics"]] # Dumont edit
 
 - type: entity
   parent: VendingMachine
@@ -2475,7 +2475,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Medical"]]
+    access: [["Genetics"]] # Dumont Edit
 
 - type: entity
   parent: VendingMachine
@@ -2503,7 +2503,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Medical"]]
+    access: [["Virology"]] # Dumont edit
 
 - type: entity
   parent: VendingMachine
@@ -2620,7 +2620,7 @@
   components:
   - type: VendingMachine
     pack: TankDispenserEVAInventory
-    paidItems: false # GabyStation -> Economy    
+    paidItems: false # GabyStation -> Economy
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
     state: dispenser

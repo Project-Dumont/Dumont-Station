@@ -18,6 +18,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.NameIdentifier;
 using Content.Shared.Roles;
+using NetCord;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -53,7 +54,7 @@ namespace Content.Server._Gabystation.Economy
             int password = _random.Next(1000, 9999);
             if (!TryCreateAccount(out var number, (args.Station, comp), args.Mob, args.JobId, 100, password))
                 return;
-            Log.Debug($"Assigning bank id to {args.Profile.Name} ({number})!");
+
 
             _chat.ChatMessageToOne(
                 Shared.Chat.ChatChannel.Server,
@@ -241,7 +242,7 @@ namespace Content.Server._Gabystation.Economy
                         continue;
 
                     account.Balance += proto.Salary;
-                    Log.Debug("Event time");
+
                     var ev = new AccountTransferenceCompleted()
                     {
                         Type = TransferenceTypes.Payment,
@@ -250,7 +251,6 @@ namespace Content.Server._Gabystation.Economy
                         Amount = proto.Salary
                     };
                     RaiseLocalEvent(uid, ev);
-                    Log.Debug("Event done?");
                 }
 
                 RaiseLocalEvent(new AfterPaymentRotation() { Uid = uid });
@@ -352,6 +352,23 @@ namespace Content.Server._Gabystation.Economy
 
             return result;
 
+        }
+
+        /// <summary>
+        /// Get the first balance the system find in any available component.
+        /// </summary>
+        /// <returns>0 if theres no account registred</returns>
+        public int GetFirstBalance(int accountId)
+        {
+            var balance = 0;
+            var query = AllEntityQuery<EconomyManagerComponent>();
+            while (query.MoveNext(out var comp))
+            {
+                if (TryGetBalance(comp, accountId, out balance))
+                    return balance;
+            }
+
+            return 0;
         }
     }
 }

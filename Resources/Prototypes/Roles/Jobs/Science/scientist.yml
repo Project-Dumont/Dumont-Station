@@ -85,8 +85,11 @@
   access:
   - Research
   - Maintenance
+  extendedAccess:
+  - Genetics # Dumont
+  - Robotics # Dumont
   alternateTitles:
-  - ScientistTitleRoboticist
+  #- ScientistTitleRoboticist //Dumont edit - It's a role now
   - ScientistTitleAnom
   - ScientistTitleXeno
   - ScientistTitleTech

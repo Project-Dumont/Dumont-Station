@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: InducerScientific
+  result: InducerScientific
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 100
+
+- type: latheRecipe
+  id: InducerEngineering
+  result: InducerEngineering
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 100
