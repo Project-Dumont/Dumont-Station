@@ -4,5 +4,14 @@
   id: JugPreserving
   description: A powerful vacuum-sealed jar that allows reagents to be stored inside without spoiling.
   components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Specific/Chemistry/special-jug.rsi
+    layers:
+      - state: jug
+      - state: jug1
+        map: [ "enum.SolutionContainerLayers.Fill" ]
+        visible: false
+  - type: Item
+    sprite: _Gabystation/Objects/Specific/Chemistry/special-jug.rsi
   - type: ReagentPreserver
     reversalRate: 0 # no reverse.
