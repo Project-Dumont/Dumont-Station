@@ -1,8 +1,11 @@
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared._Gabystation.CCVar;
 using Content.Shared._Gabystation.ChemicalSpoilage;
+using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Gabystation.ChemicalSpoilage;
@@ -14,6 +17,14 @@ namespace Content.Server._Gabystation.ChemicalSpoilage;
 public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    /// <summary>
+    /// How much a fully-spoiled solution's color is muted towards gray. Kept low - this should read
+    /// as "looking a bit off", not a dramatic color change.
+    /// </summary>
+    private const float MaxDesaturation = 0.35f;
 
     public override void Update(float frameTime)
     {
@@ -34,11 +45,12 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 
             var preservationRate = GetPreservationRate(uid);
             var changed = preservationRate is { } rate
-                ? ReverseSpoilage(solution, rate)
+                ? ReverseSpoilage(spoiling, solution, rate)
                 : ProgressSpoilage(spoiling, solution);
 
             var stage = CalculateStage(solution);
-            if (stage != spoiling.Stage)
+            var stageChanged = stage != spoiling.Stage;
+            if (stageChanged)
             {
                 spoiling.Stage = stage;
                 Dirty(uid, spoiling);
@@ -47,6 +59,9 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
             if (changed)
                 _solutionContainer.UpdateChemicals(solnEnt.Value);
 
+            if (changed || stageChanged)
+                UpdateColor(uid, spoiling, solution);
+
             if (!HasSpoilableReagent(solution) && !HasReversibleReagent(solution))
                 RemCompDeferred<SpoilingSolutionComponent>(uid);
         }
@@ -54,8 +69,40 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 
     private bool ProgressSpoilage(SpoilingSolutionComponent spoiling, Solution solution)
     {
-        var fraction = (float) (spoiling.UpdateRate.TotalSeconds / spoiling.ShelfLife.TotalSeconds);
-        if (fraction <= 0f)
+        if (spoiling.ShelfLife <= TimeSpan.Zero)
+            return false;
+
+        var decayRate = _cfg.GetCVar(GabyCVars.ChemSpoilageDecayRate);
+        spoiling.SpoilAccumulator += spoiling.UpdateRate * decayRate;
+
+        var elapsedFraction = Math.Clamp(
+            (float) (spoiling.SpoilAccumulator.TotalSeconds / spoiling.ShelfLife.TotalSeconds), 0f, 1f);
+
+        // Nothing actually spoils until we'd be entering stage 1 - a container that still "looks
+        // fresh" (stage 0) shouldn't already be quietly poisoning anyone.
+        if (elapsedFraction < 1f / MaxStages)
+            return false;
+
+        // Per-reagent totals (fresh + already spoiled from it) and how much of that is already
+        // spoiled, so we can convert straight to whatever the elapsed time *should* have spoiled by
+        // now (a fixed target), instead of nibbling a fraction of whatever's currently left (which
+        // would only ever asymptotically approach - but never reach - fully spoiled).
+        var totals = new Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>();
+        var alreadySpoiled = new Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>();
+        foreach (var (reagent, quantity) in solution.Contents)
+        {
+            if (IsSpoilable(reagent.Prototype))
+            {
+                totals[reagent.Prototype] = totals.GetValueOrDefault(reagent.Prototype) + quantity;
+            }
+            else if (TryGetSpoiledOrigin(reagent, out var original))
+            {
+                totals[original] = totals.GetValueOrDefault(original) + quantity;
+                alreadySpoiled[original] = alreadySpoiled.GetValueOrDefault(original) + quantity;
+            }
+        }
+
+        if (totals.Count == 0)
             return false;
 
         var toConvert = new List<(ReagentId Reagent, FixedPoint2 Amount)>();
@@ -64,9 +111,11 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
             if (!IsSpoilable(reagent.Prototype))
                 continue;
 
-            var amount = quantity * fraction;
-            if (amount > FixedPoint2.Zero)
-                toConvert.Add((reagent, amount));
+            var target = totals[reagent.Prototype] * elapsedFraction;
+            var already = alreadySpoiled.GetValueOrDefault(reagent.Prototype);
+            var delta = FixedPoint2.Min(quantity, target - already);
+            if (delta > FixedPoint2.Zero)
+                toConvert.Add((reagent, delta));
         }
 
         if (toConvert.Count == 0)
@@ -85,8 +134,11 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
         return true;
     }
 
-    private bool ReverseSpoilage(Solution solution, float rate)
+    private bool ReverseSpoilage(SpoilingSolutionComponent spoiling, Solution solution, float rate)
     {
+        var reduced = spoiling.SpoilAccumulator - spoiling.UpdateRate;
+        spoiling.SpoilAccumulator = reduced > TimeSpan.Zero ? reduced : TimeSpan.Zero;
+
         if (rate <= 0f)
             return false;
 
@@ -142,5 +194,25 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 
         var stage = (int) (MaxStages * spoiled.Float() / total.Float());
         return Math.Clamp(stage, 0, MaxStages);
+    }
+
+    /// <summary>
+    /// Changes the color of the reagent on how much spoiled it is.
+    /// </summary>
+    private void UpdateColor(EntityUid uid, SpoilingSolutionComponent spoiling, Solution solution)
+    {
+        if (!TryComp<AppearanceComponent>(uid, out var appearance))
+            return;
+
+        var color = solution.GetColor(Proto);
+        var amount = MaxDesaturation * (spoiling.Stage / (float) MaxStages);
+        if (amount > 0f)
+        {
+            var luminance = color.R * 0.299f + color.G * 0.587f + color.B * 0.114f;
+            var gray = new Color(luminance, luminance, luminance, color.A);
+            color = Color.InterpolateBetween(color, gray, amount);
+        }
+
+        _appearance.SetData(uid, SolutionContainerVisuals.Color, color, appearance);
     }
 }

@@ -31,6 +31,11 @@ public sealed partial class SpoilingSolutionComponent : Component
     public TimeSpan ShelfLife = TimeSpan.FromMinutes(5);
 
     /// <summary>
+    /// How long this container has been actively spoiling
+    [DataField]
+    public TimeSpan SpoilAccumulator = TimeSpan.Zero;
+
+    /// <summary>
     /// How spoiled this solution currently looks, from 0 (fresh)
     /// </summary>
     [DataField, AutoNetworkedField]
