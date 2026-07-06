@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Cargo
 - type: loadoutGroup
   id: BitrunnerJumpsuit
@@ -47,6 +51,31 @@
 - type: loadoutGroup
   id: BitrunnerEnvirogloves
   name: loadout-group-bitrunner-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BlackEnvirogloves
+
+# Prisoner
+- type: loadoutGroup
+  id: PrisonerEnvirohelm
+  name: loadout-group-prisoner-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PermaPrisonerEnvirohelm
+
+- type: loadoutGroup
+  id: PrisonerEnvirosuit
+  name: loadout-group-prisoner-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PermaPrisonerEnvirosuit
+
+- type: loadoutGroup
+  id: PrisonerEnvirogloves
+  name: loadout-group-prisoner-envirogloves
   minLimit: 1
   maxLimit: 1
   loadouts:
