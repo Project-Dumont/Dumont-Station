@@ -15,8 +15,6 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
-    private static readonly ProtoId<ReagentPrototype> SpoiledReagent = "Toxin";
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -36,10 +34,10 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
 
             var preservationRate = GetPreservationRate(uid);
             var changed = preservationRate is { } rate
-                ? ReverseSpoilage(spoiling, solution, rate)
+                ? ReverseSpoilage(solution, rate)
                 : ProgressSpoilage(spoiling, solution);
 
-            var stage = CalculateStage(spoiling, solution);
+            var stage = CalculateStage(solution);
             if (stage != spoiling.Stage)
             {
                 spoiling.Stage = stage;
@@ -49,7 +47,7 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
             if (changed)
                 _solutionContainer.UpdateChemicals(solnEnt.Value);
 
-            if (spoiling.Ledger.Count == 0 && !HasSpoilableReagent(solution))
+            if (!HasSpoilableReagent(solution) && !HasReversibleReagent(solution))
                 RemCompDeferred<SpoilingSolutionComponent>(uid);
         }
     }
@@ -80,66 +78,61 @@ public sealed class ChemicalSpoilageSystem : SharedChemicalSpoilageSystem
             if (removed <= FixedPoint2.Zero)
                 continue;
 
-            solution.AddReagent(SpoiledReagent, removed);
-            AddToLedger(spoiling, reagent.Prototype, removed);
+            var spoiledId = new ReagentId(SpoiledReagentId, new List<ReagentData> { new SpoiledReagentData(reagent.Prototype) });
+            solution.AddReagent(spoiledId, removed);
         }
 
         return true;
     }
 
-    private bool ReverseSpoilage(SpoilingSolutionComponent spoiling, Solution solution, float rate)
+    private bool ReverseSpoilage(Solution solution, float rate)
     {
-        if (spoiling.Ledger.Count == 0 || rate <= 0f)
+        if (rate <= 0f)
             return false;
 
         var remaining = FixedPoint2.New(rate);
-        var changed = false;
+        if (remaining <= FixedPoint2.Zero)
+            return false;
 
-        for (var i = spoiling.Ledger.Count - 1; i >= 0 && remaining > FixedPoint2.Zero; i--)
-        {
-            var entry = spoiling.Ledger[i];
-            var toRevert = FixedPoint2.Min(entry.Quantity, remaining);
-
-            var removedToxin = solution.RemoveReagent(SpoiledReagent, toRevert);
-            if (removedToxin <= FixedPoint2.Zero)
-                break; // nothing left to revert
-
-            solution.AddReagent(new ReagentId(entry.Reagent, null), removedToxin);
-            entry.Quantity -= removedToxin;
-            remaining -= removedToxin;
-            changed = true;
-
-            if (entry.Quantity <= FixedPoint2.Zero)
-                spoiling.Ledger.RemoveAt(i);
-        }
-
-        return changed;
-    }
-
-    private static void AddToLedger(SpoilingSolutionComponent spoiling, ProtoId<ReagentPrototype> reagent, FixedPoint2 quantity)
-    {
-        foreach (var entry in spoiling.Ledger)
-        {
-            if (entry.Reagent != reagent)
-                continue;
-
-            entry.Quantity += quantity;
-            return;
-        }
-
-        spoiling.Ledger.Add(new SpoiledPortion(reagent, quantity));
-    }
-
-    private int CalculateStage(SpoilingSolutionComponent spoiling, Solution solution)
-    {
-        var spoiled = FixedPoint2.Zero;
-        foreach (var entry in spoiling.Ledger)
-            spoiled += entry.Quantity;
-
-        var fresh = FixedPoint2.Zero;
+        var toRevert = new List<(ReagentId Reagent, ProtoId<ReagentPrototype> Original, FixedPoint2 Amount)>();
         foreach (var (reagent, quantity) in solution.Contents)
         {
-            if (IsSpoilable(reagent.Prototype))
+            if (remaining <= FixedPoint2.Zero)
+                break;
+
+            if (!TryGetSpoiledOrigin(reagent, out var original))
+                continue;
+
+            var amount = FixedPoint2.Min(quantity, remaining);
+            toRevert.Add((reagent, original, amount));
+            remaining -= amount;
+        }
+
+        if (toRevert.Count == 0)
+            return false;
+
+        foreach (var (reagent, original, amount) in toRevert)
+        {
+            var removed = solution.RemoveReagent(reagent, amount);
+            if (removed <= FixedPoint2.Zero)
+                continue;
+
+            solution.AddReagent(new ReagentId(original, null), removed);
+        }
+
+        return true;
+    }
+
+    private int CalculateStage(Solution solution)
+    {
+        var spoiled = FixedPoint2.Zero;
+        var fresh = FixedPoint2.Zero;
+
+        foreach (var (reagent, quantity) in solution.Contents)
+        {
+            if (TryGetSpoiledOrigin(reagent, out _))
+                spoiled += quantity;
+            else if (IsSpoilable(reagent.Prototype))
                 fresh += quantity;
         }
 

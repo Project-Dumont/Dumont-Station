@@ -23,9 +23,15 @@ public abstract class SharedChemicalSpoilageSystem : EntitySystem
     public const int MaxStages = 3;
 
     /// <summary>
-    /// Only chems with fields in this group are able to spil
+    /// Only chems with fields in this group are able to spoil
     /// </summary>
     public static readonly ProtoId<MetabolismGroupPrototype> MedicineGroup = "Medicine";
+
+    /// <summary>
+    /// The reagent spoiled medicine turns into. Tagged with SpoiledReagentData so it can be told
+    /// apart from Toxin someone actually injected on purpose, and so it can be reverted back.
+    /// </summary>
+    public static readonly ProtoId<ReagentPrototype> SpoiledReagentId = "Toxin";
 
     public override void Initialize()
     {
@@ -56,7 +62,7 @@ public abstract class SharedChemicalSpoilageSystem : EntitySystem
         if (HasComp<SpoilingSolutionComponent>(contained.Container))
             return;
 
-        if (!HasSpoilableReagent(ent.Comp.Solution))
+        if (!HasSpoilableReagent(ent.Comp.Solution) && !HasReversibleReagent(ent.Comp.Solution))
             return;
 
         var spoiling = EnsureComp<SpoilingSolutionComponent>(contained.Container);
@@ -80,6 +86,43 @@ public abstract class SharedChemicalSpoilageSystem : EntitySystem
         {
             if (IsSpoilable(reagent.Prototype))
                 return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Whether this solution still has any already-spoiled reagent in it.
+    /// </summary>
+    public bool HasReversibleReagent(Solution solution)
+    {
+        foreach (var (reagent, _) in solution.Contents)
+        {
+            if (TryGetSpoiledOrigin(reagent, out _))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// If this reagent is spoiled medicine tagged with SpoiledReagentData, returns the reagent it
+    /// originally was before spoiling.
+    /// </summary>
+    public static bool TryGetSpoiledOrigin(ReagentId reagent, out ProtoId<ReagentPrototype> original)
+    {
+        original = default;
+
+        if (reagent.Prototype != SpoiledReagentId || reagent.Data is null)
+            return false;
+
+        foreach (var data in reagent.Data)
+        {
+            if (data is not SpoiledReagentData spoiled)
+                continue;
+
+            original = spoiled.OriginalReagent;
+            return true;
         }
 
         return false;
