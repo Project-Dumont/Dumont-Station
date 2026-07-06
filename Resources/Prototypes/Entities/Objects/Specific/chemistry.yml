@@ -494,6 +494,8 @@
     materialComposition:
       Steel: 62
       Plastic: 12
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   name: bluespace beaker
@@ -866,6 +868,8 @@
     materialComposition:
       Steel: 62
       Plastic: 12
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 
 - type: entity
@@ -952,3 +956,5 @@
     sound:
       path: /Audio/_Goobstation/Items/handling/pillbottle_drop.ogg
   # Goobstation edit end
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.

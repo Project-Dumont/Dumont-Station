@@ -119,6 +119,7 @@
   recipes:
   - CryostasisBeaker
   - SyringeCryostasis
+  - JugPreserving # Gaby station
   - BluespaceBeaker
   - SyringeBluespace
   - MedkitCombat #goob - Move combat kit to research

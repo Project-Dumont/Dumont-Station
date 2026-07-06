@@ -115,3 +115,5 @@
       Sodium: 5
       Sugar: 5
       Sulfur: 5
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.

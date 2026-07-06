@@ -164,6 +164,8 @@
     solutionName: hypospray
   - type: EdibleMatter # Corvax-Wega-Add
     canBeEaten: false # Corvax-Wega-Add
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   name: gorlex hypospray
@@ -819,6 +821,8 @@
     price: 75
   - type: EmitSoundOnUse
     handle: false # don't want the sound to stop the self-inject from triggering
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   parent: [ BaseItem, BaseSyndicateContraband ]

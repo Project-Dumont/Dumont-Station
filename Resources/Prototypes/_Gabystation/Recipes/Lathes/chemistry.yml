@@ -1,0 +1,7 @@
+- type: latheRecipe
+  id: JugPreserving
+  result: JugPreserving
+  completetime: 2
+  materials:
+    Steel: 75
+    Plastic: 100
