@@ -28,7 +28,7 @@ public sealed partial class SpoilingSolutionComponent : Component
     /// How long it takes a fully fresh medicinal reagent to become fully spoiled if left unattended
     /// </summary>
     [DataField]
-    public TimeSpan ShelfLife = TimeSpan.FromMinutes(5);
+    public TimeSpan ShelfLife = TimeSpan.FromMinutes(20);
 
     /// <summary>
     /// How long this container has been actively spoiling
