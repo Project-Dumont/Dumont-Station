@@ -96,8 +96,10 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  extendedAccess:
+  - Mining # Dumont
   alternateTitles:
-  - SalvageSpecialistTitleMiner
+  #- SalvageSpecialistTitleMiner //Dumont edit - Separate role
   - SalvageSpecialistTitleTech
   - SalvageSpecialistTitleExpedition
 

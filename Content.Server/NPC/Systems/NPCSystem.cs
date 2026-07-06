@@ -179,7 +179,8 @@ namespace Content.Server.NPC.Systems
                 case MobState.Alive:
                     WakeNPC(uid, component);
                     break;
-                case MobState.Critical:
+                case MobState.SoftCritical: // Orion-Edit
+                case MobState.HardCritical: // Orion
                 case MobState.Dead:
                     SleepNPC(uid, component);
                     break;

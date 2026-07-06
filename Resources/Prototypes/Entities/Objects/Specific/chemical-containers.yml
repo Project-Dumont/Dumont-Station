@@ -182,8 +182,9 @@
     - type: Tag
       tags:
       - ChemDispensable
+      - Jug # Dumont
     - type: DnaSubstanceTrace
-    
+
 - type: entity
   name: tanque de reagente
   parent: BaseItem
@@ -230,7 +231,7 @@
   - type: MultiHandedItem
   - type: StaticPrice
     price: 400
-    
+
     #feito por skysnowflok/supernova com ajuda do Bruno e sprite por skysnowflok/supernova
     #Gabystation
 

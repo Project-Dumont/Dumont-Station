@@ -248,7 +248,6 @@
     objectives:
     - NukeopsDetonateObjective
 
-
 - type: entity
   parent: BaseNukeopsRule
   id: Nukeops
@@ -271,6 +270,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -290,6 +291,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -313,6 +316,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNukeops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:

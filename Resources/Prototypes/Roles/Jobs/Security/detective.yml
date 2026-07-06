@@ -108,7 +108,7 @@
     id: DetectivePDA
     #gloves: ClothingHandsGlovesForensic - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
-    belt: ClothingBeltHolsterFilled
+    # belt: ClothingBeltHolsterFilled - Dumont, revolver selector kit added to locker
   storage:
     back:
     - Flash

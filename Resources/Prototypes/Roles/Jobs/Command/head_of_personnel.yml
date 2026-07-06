@@ -185,6 +185,7 @@
   - Theatre
   - Kitchen
   - Chapel
+  - Library # Dumont
   - Hydroponics
   - External
   - Cryogenics
@@ -204,6 +205,17 @@
   - Medical
   - Journalism # Goob
   - Robotics # Goob
+  # Dumont
+  - Virology
+  - Psychology
+  - Pharmacy
+  - Genetics
+  - Mail
+  - Mining
+  - Library
+  - BrigMedic
+  # /Dumont
+  - Bitrun # Orion
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

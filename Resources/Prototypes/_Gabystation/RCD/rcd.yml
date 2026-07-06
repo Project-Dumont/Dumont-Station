@@ -317,3 +317,14 @@
   rotation: Fixed
   fx: EffectRCDConstruct4
   noLayers: true
+
+# Especial
+- type: rcd
+  id: DeconstructStrong
+  name: rcd-component-deconstruct
+  category: Main
+  sprite: /Textures/Interface/Radial/RCD/deconstruct.png
+  mode: Deconstruct
+  prototype: EffectRCDDeconstructPreview
+  rotation: Camera
+  noLayers: true

@@ -610,7 +610,7 @@ public sealed class RCDSystem : EntitySystem
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
-            if (component.IsRpd)
+            if (component.IsRpd && component.IsHybrid == false) // Dumontstation Edit - Really bad implementation for ProtoRCD
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -651,7 +651,7 @@ public sealed class RCDSystem : EntitySystem
         else
         {
             // The object is not in the RPD whitelist
-            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd)
+            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd && component.IsHybrid == false) // Dumont Edit
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -669,7 +669,7 @@ public sealed class RCDSystem : EntitySystem
             }
 
             // Goobstation - RCD check access for doors
-            if (TryComp<AccessReaderComponent>(target, out var accessList) && !_accessReader.IsAllowed(user, target.Value))
+            if (TryComp<AccessReaderComponent>(target, out var accessList) && !_accessReader.IsAllowed(user, target.Value) && component.AccessBypass == false) // Dumont Edit
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-no-access"), uid, user);
@@ -678,7 +678,7 @@ public sealed class RCDSystem : EntitySystem
             }
 
             // Goobstation - RCD check access for bolts (Yeah, this should be event based...)
-            if (TryComp<DoorBoltComponent>(target, out var doorBolt) && doorBolt.BoltsDown)
+            if (TryComp<DoorBoltComponent>(target, out var doorBolt) && doorBolt.BoltsDown && component.AccessBypass == false) // Dumont Edit
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-is-bolted"), uid, user);

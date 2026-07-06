@@ -57,7 +57,7 @@
     access: [[ "HeadOfSecurity" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-security
-    color: "#de3a3a"
+    color: "#0059d7"
     canShuttle: false
     global: false
   - type: Computer

@@ -259,6 +259,10 @@ namespace Content.Shared.GameTicking
 
             public Dictionary<string, FixedPoint2> DamagePerGroup;
             #endregion
+
+            #region GabyStation
+            public int? PlayerICCurrency;
+            #endregion
         }
 
         public string GamemodeTitle { get; }

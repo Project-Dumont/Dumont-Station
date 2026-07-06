@@ -7,6 +7,8 @@
 
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Eye.Blinding.Systems;
@@ -24,21 +26,54 @@ public sealed class TemporaryBlindnessSystem : EntitySystem
         SubscribeLocalEvent<TemporaryBlindnessComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<TemporaryBlindnessComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<TemporaryBlindnessComponent, CanSeeAttemptEvent>(OnBlindTrySee);
+        // Orion-Start
+        SubscribeLocalEvent<TemporaryBlindnessComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
+        SubscribeLocalEvent<TemporaryBlindnessComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
+        SubscribeLocalEvent<TemporaryBlindnessComponent, StatusEffectRelayedEvent<CanSeeAttemptEvent>>(OnBlindTrySeeRelayed);
+        // Orion-End
     }
 
     private void OnStartup(EntityUid uid, TemporaryBlindnessComponent component, ComponentStartup args)
     {
-        _blindableSystem.UpdateIsBlind(uid);
+        // Orion-Edit-Start
+        if (!TryComp<StatusEffectComponent>(uid, out var status) || status.AppliedTo == null)
+            return;
+
+        _blindableSystem.UpdateIsBlind(status.AppliedTo.Value);
+        // Orion-Edit-End
     }
 
     private void OnShutdown(EntityUid uid, TemporaryBlindnessComponent component, ComponentShutdown args)
     {
-        _blindableSystem.UpdateIsBlind(uid);
+        // Orion-Edit-Start
+        if (!TryComp<StatusEffectComponent>(uid, out var status) || status.AppliedTo == null)
+            return;
+
+        _blindableSystem.UpdateIsBlind(status.AppliedTo.Value);
+        // Orion-Edit-End
     }
 
-    private void OnBlindTrySee(EntityUid uid, TemporaryBlindnessComponent component, CanSeeAttemptEvent args)
+    private static void OnBlindTrySee(EntityUid uid, TemporaryBlindnessComponent component, CanSeeAttemptEvent args) // Orion-Edit: Static
     {
         if (component.LifeStage <= ComponentLifeStage.Running)
             args.Cancel();
     }
+
+    // Orion-Start
+    private void OnStatusEffectApplied(Entity<TemporaryBlindnessComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        _blindableSystem.UpdateIsBlind(args.Target);
+    }
+
+    private void OnStatusEffectRemoved(Entity<TemporaryBlindnessComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        _blindableSystem.UpdateIsBlind(args.Target);
+    }
+
+    private static void OnBlindTrySeeRelayed(Entity<TemporaryBlindnessComponent> ent, ref StatusEffectRelayedEvent<CanSeeAttemptEvent> args)
+    {
+        if (ent.Comp.LifeStage <= ComponentLifeStage.Running)
+            args.Args.Cancel();
+    }
+    // Orion-End
 }
