@@ -58,6 +58,8 @@
         color: Green
         sound: /Audio/_Shitmed/Misc/abductor.ogg
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistAbductor
       - type: Abductor
       - type: ActionGrant
         actions:
@@ -159,6 +161,8 @@
         color: Green
         sound: /Audio/_Shitmed/Misc/abductor.ogg
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistAbductor
       - type: Abductor
       - type: ActionGrant
         actions:
