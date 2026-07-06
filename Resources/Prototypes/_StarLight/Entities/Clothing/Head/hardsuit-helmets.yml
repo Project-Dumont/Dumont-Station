@@ -17,6 +17,7 @@
     - type: HandheldLight
       addPrefix: false
     - type: ToggleableVisuals
+      spriteLayer: light
       clothingVisuals:
         head:
           - state: equipped-head-light
