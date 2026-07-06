@@ -1,5 +1,5 @@
 # Group chat
-nano-chat-create-group = Criar chat em grupo
+nano-chat-create-group = Criar grupo do zap
 nano-chat-invite-to-group = Convidar para o grupo
 nano-chat-view-members = Ver membros
 nano-chat-invite = Convidar
@@ -12,7 +12,7 @@ nano-chat-no-members = Nenhum membro
 nano-chat-close = Fechar
 
 # Create group chat popup
-nano-chat-create-group-title = Criar chat em grupo
+nano-chat-create-group-title = Criar grupo do zap
 nano-chat-group-name-label = Nome do grupo
 nano-chat-group-name-placeholder = Digite o nome do grupo
 
