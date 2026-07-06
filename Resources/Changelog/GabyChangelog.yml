@@ -3419,3 +3419,15 @@ Entries:
       message: O custo geral das munições na loja de pontos do NTR foi reduzido.
   id: 409
   time: '2026-07-06T08:50:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Tempo jogado como prisioneiro não irá mais registrar como segurança.
+    - type: Fix
+      message: >-
+        Plasmaman agora podem ser prisioneiros roundstart, começando com traje
+        adequado.
+    - type: Add
+      message: Traduções dos trajes herméticos de prisioneiro.
+  id: 410
+  time: '2026-07-06T13:12:53.0000000+00:00'
