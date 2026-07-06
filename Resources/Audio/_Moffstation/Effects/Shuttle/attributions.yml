@@ -1,0 +1,7 @@
+- files:
+  - hyperspace_begin.ogg
+  - hyperspace_end.ogg
+  - hyperspace_progress.ogg
+  copyright: '"hyperspace_begin.ogg", "hyperspace_progress.ogg", and "hyperspace_end.ogg" from NSV-13. Edited by _starch_ (discord) to fit SS14'
+  license: CC-BY-SA-3.0
+  source: https://github.com/BeeStation/NSV13/tree/master/nsv13/sound/effects/ship

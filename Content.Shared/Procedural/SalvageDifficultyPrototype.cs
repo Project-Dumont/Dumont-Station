@@ -32,6 +32,9 @@ public sealed partial class SalvageDifficultyPrototype : IPrototype
     [DataField("mobBudget", required : true)]
     public float MobBudget;
 
+    [DataField("lootPrototype")]
+    public string LootPrototypeId = "SalvageLoot";
+
     /// <summary>
     /// Budget allowed for mission modifiers like no light, etc.
     /// </summary>

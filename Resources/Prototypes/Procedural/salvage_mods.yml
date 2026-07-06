@@ -243,8 +243,12 @@
   desc: salvage-dungeon-mod-experiment
   proto: Experiment
   biomes:
-    #- LowDesert
+    - LowDesert # Far Horizons
     - Grasslands
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
 
 - type: salvageDungeonMod
   id: LavaBrig
