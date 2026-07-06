@@ -61,7 +61,7 @@
   name: HECU ID card
   components:
   - type: Sprite
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi
+    sprite: _Dumont/Objects/Misc/id_cards.rsi
     layers:
     - state: ert_security
   - type: IdCard

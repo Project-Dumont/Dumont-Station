@@ -164,11 +164,11 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi
+    sprite: _Dumont/Objects/Misc/id_cards.rsi
   - type: Clothing
     slots:
     - idcard
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi
+    sprite: _Dumont/Objects/Misc/id_cards.rsi
   - type: Item
     size: Small
     heldPrefix: default
@@ -397,13 +397,13 @@
   components:
   - type: Sprite
     layers:
-    - state: chemist # Goobstation - Chemist card
+    - state: default # Dumont
     - state: idchemist
   - type: PresetIdCard
     job: Chemist
   - type: Item # Goobstation - Chemist card
     heldPrefix: chemist
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi
+    sprite: _Dumont/Objects/Misc/id_cards.rsi
 
 - type: entity
   parent: IDCardStandard
@@ -1088,12 +1088,12 @@
   description: An ID card that gives you access beyond your wildest dreams.
   components:
   - type: Sprite
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi
+    sprite: _Dumont/Objects/Misc/id_cards.rsi
     layers:
     - state: admin
     - state: idadmin
   - type: Clothing
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi
+    sprite: _Dumont/Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: green
   - type: IdCard
