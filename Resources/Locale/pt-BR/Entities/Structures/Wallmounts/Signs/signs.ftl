@@ -73,7 +73,7 @@ ent-SignDirectionalWash = placa do banheiro
 ent-SignAi = placa de IA
     .desc = Uma placa que indica a inteligência artificial da estação.
 
-ent-SignArmory = placa do artenal
+ent-SignArmory = placa do arsenal
     .desc = Uma placa que indica o arsenal.
 
 ent-SignToolStorage = placa da despensa de ferramentas
@@ -388,3 +388,11 @@ ent-SignNanotrasen4 = placa da Nanotrasen 4
 ent-SignNanotrasen5 = placa da Nanotrasen 5
     .desc = Parte 5.
 
+ent-SignMining = placa de mineração
+    .desc = Uma placa que indica a area dos mineradores
+
+ent-SignBrigmed = placa de brigmed
+    .desc = Uma placa que indica a area de saúde da segurança
+
+ent-SignGenetics = placa de genética
+    .desc = Uma placa que indica o laboratório de genética

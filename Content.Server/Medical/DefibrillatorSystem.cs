@@ -327,7 +327,7 @@ public sealed class DefibrillatorSystem : EntitySystem
                 TryComp<DamageableComponent>(target, out var damageableComponent) &&
                 _mobThreshold.CheckVitalDamage(target, damageableComponent) < threshold) // GoobStation
             {
-                _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
+                _mobState.ChangeMobState(target, MobState.SoftCritical, mob, uid); // Orion-Edit
                 dead = false;
             }
 

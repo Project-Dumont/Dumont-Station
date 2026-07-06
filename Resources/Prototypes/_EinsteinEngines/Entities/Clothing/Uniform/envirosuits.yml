@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuit
@@ -331,13 +335,13 @@
   - type: Sprite
     layers:
     - state: icon
-      color: "#8f3132"
+      color: "#2b3447"
     - state: accent2-icon
       color: "#2e2e2e"
     - state: accenthighlight-icon
       color: "#313e5a"
     - state: clip-icon
-      color: "#730000"
+      color: "#222733"
     - state: clip_right-icon
       color: "#313e5a"
     - state: pants-icon
@@ -346,26 +350,26 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#8f3132"
+        color: "#2b3447"
       - state: accent2-inhand-left
         color: "#2e2e2e"
       - state: accenthighlight-inhand-left
         color: "#313e5a"
       - state: clip-inhand-left
-        color: "#730000"
+        color: "#222733"
       - state: clip_right-inhand-left
         color: "#313e5a"
       - state: pants-inhand-left
         color: "#2e2e2e"
       right:
       - state: inhand-right
-        color: "#8f3132"
+        color: "#2b3447"
       - state: accent2-inhand-right
         color: "#2e2e2e"
       - state: accenthighlight-inhand-right
         color: "#313e5a"
       - state: clip-inhand-right
-        color: "#730000"
+        color: "#222733"
       - state: clip_right-inhand-right
         color: "#313e5a"
       - state: pants-inhand-right
@@ -374,13 +378,13 @@
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: "#8f3132"
+        color: "#2b3447"
       - state: accent2-equipped-INNERCLOTHING
         color: "#2e2e2e"
       - state: accenthighlight-equipped-INNERCLOTHING
         color: "#313e5a"
       - state: clip-equipped-INNERCLOTHING
-        color: "#730000"
+        color: "#222733"
       - state: clip_right-equipped-INNERCLOTHING
         color: "#313e5a"
       - state: pants-equipped-INNERCLOTHING

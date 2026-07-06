@@ -18,7 +18,7 @@
   name: id-card-access-level-cargo
 
 - type: accessLevel
-  id: Salvage
+  id: Salvage #Dumont Salvage -> Exploration
   name: id-card-access-level-salvage
 
 - type: accessGroup
@@ -28,3 +28,7 @@
   - Salvage #Dumont Salvage -> Exploration
   - SalvageLead
   - Cargo
+  - Cargo
+  - Mail #Dumont
+  - Mining #Dumont
+  - Bitrun # Orion

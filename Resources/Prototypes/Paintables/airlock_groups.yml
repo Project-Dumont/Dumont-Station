@@ -14,10 +14,24 @@
     hydroponics: AirlockHydroponics
     maintenance: AirlockMaint
     medical: AirlockMedical
-    salvage: AirlockSalvage
+    salvage: AirlockSalvage # Dumont Salvage -> Explorer
     science: AirlockScience
     security: AirlockSecurity
     virology: AirlockVirology
+    janitor: AirlockJanitor # Goob
+    # Dumont
+    robotics: AirlockRobotics
+    brigmedic: AirlockBrigMedic
+    psychology: AirlockPsychology
+    pharmacy: AirlockPharmacy
+    genetics: AirlockGenetics
+    mail: AirlockMail
+    lavaland: AirlockMining
+    mining: AirlockMiningDumont
+    medsci: AirlockMedicalScience
+    salvmine: AirlockSalvMine
+    # /Dumont
+    bitrunner: AirlockBitrunner # Orion
 
 - type: paintableGroup
   id: AirlockGlass
@@ -34,7 +48,21 @@
     hydroponics: AirlockHydroponicsGlass
     maintenance: AirlockMaintGlass
     medical: AirlockMedicalGlass
-    salvage: AirlockSalvageGlass
+    salvage: AirlockSalvageGlass # Dumont Salvage -> Explorer
     science: AirlockScienceGlass
     security: AirlockSecurityGlass
     virology: AirlockVirologyGlass
+    janitor: AirlockJanitorGlass # Goob
+    # Dumont
+    robotics: AirlockRoboticsGlass
+    brigmedic: AirlockBrigMedicGlass
+    psychology: AirlockPsychologyGlass
+    pharmacy: AirlockPharmacyGlass
+    genetics: AirlockGeneticsGlass
+    mail: AirlockMailGlass
+    lavaland: AirlockMiningGlass
+    mining: AirlockMiningDumontGlass
+    medsci: AirlockMedicalScienceGlass
+    salvmine: AirlockSalvMineGlass
+    # /Dumont
+    bitrunner: AirlockBitrunnerGlass # Orion

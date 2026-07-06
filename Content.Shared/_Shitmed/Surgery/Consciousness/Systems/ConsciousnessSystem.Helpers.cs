@@ -162,13 +162,13 @@ public partial class ConsciousnessSystem
 
         var newMobState = consciousness.IsConscious
             ? MobState.Alive
-            : MobState.Critical;
+            : MobState.SoftCritical; // Orion-Edit
 
         if (consciousness.PassedOut)
-            newMobState = MobState.Critical;
+            newMobState = MobState.SoftCritical; // Orion-Edit
 
         if (consciousness.ForceUnconscious)
-            newMobState = MobState.Critical;
+            newMobState = MobState.SoftCritical; // Orion-Edit
 
         if (consciousness.Consciousness <= 0 && !consciousness.ForceConscious)
             newMobState = MobState.Dead;

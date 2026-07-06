@@ -47,7 +47,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 35 # Heartbeat i had nerfed this before but i think i overdid it, it's fine
 
 - type: entity
   id: BulletMagnumPractice

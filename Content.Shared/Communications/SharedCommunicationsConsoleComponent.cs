@@ -35,12 +35,16 @@ namespace Content.Shared.Communications
         public readonly bool CanCall;
         public readonly TimeSpan? ExpectedCountdownEnd;
         public readonly bool CountdownStarted;
-        public List<string>? AlertLevels;
+        public readonly bool IsSyndie;
+        public List<(string id, Color color)>? AlertLevels;
         public string CurrentAlert;
         public float CurrentAlertDelay;
+        public string StationName;
+        public readonly bool RenameOnCooldown;
 
-        public CommunicationsConsoleInterfaceState(bool canAnnounce, bool canCall, List<string>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null)
+        public CommunicationsConsoleInterfaceState(bool isSyndie, bool canAnnounce, bool canCall, List<(string, Color)>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null, string stationName = "", bool renameOnCooldown = false)
         {
+            IsSyndie = isSyndie;
             CanAnnounce = canAnnounce;
             CanCall = canCall;
             ExpectedCountdownEnd = expectedCountdownEnd;
@@ -48,6 +52,8 @@ namespace Content.Shared.Communications
             AlertLevels = alertLevels;
             CurrentAlert = currentAlert;
             CurrentAlertDelay = currentAlertDelay;
+            StationName = stationName;
+            RenameOnCooldown = renameOnCooldown;
         }
     }
 
@@ -84,6 +90,7 @@ namespace Content.Shared.Communications
     }
 
 
+    #region GabyStation
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleToggleEmergencyMaintMessage : BoundUserInterfaceMessage { }
 
@@ -92,6 +99,18 @@ namespace Content.Shared.Communications
 
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleMartialButtonMessage : BoundUserInterfaceMessage { }
+
+    [Serializable, NetSerializable]
+    public sealed class CommunicationsConsoleStationRenameMessage : BoundUserInterfaceMessage
+    {
+        public readonly string NewName;
+        public CommunicationsConsoleStationRenameMessage(string newName)
+        {
+            NewName = newName;
+        }
+    }
+
+    #endregion
 
     [Serializable, NetSerializable]
     public sealed class CommunicationsConsoleCallEmergencyShuttleMessage : BoundUserInterfaceMessage

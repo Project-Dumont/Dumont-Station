@@ -73,17 +73,17 @@
     damageModifierSet: Xenomorph
   - type: Stamina
     critThreshold: 500
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.25
-        density: 200
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
+#  - type: Fixtures # Orion-Edit
+#    fixtures:
+#      fix1:
+#        shape:
+#          !type:PhysShapeCircle
+#          radius: 0.25
+#        density: 200
+#        mask:
+#        - MobMask
+#        layer:
+#        - MobLayer
   - type: Bloodstream
     bloodReagent: FluorosulfuricAcid
     bloodMaxVolume: 250

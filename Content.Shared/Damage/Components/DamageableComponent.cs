@@ -170,7 +170,8 @@ namespace Content.Shared.Damage
         public Dictionary<MobState, ProtoId<HealthIconPrototype>> HealthIcons = new()
         {
             { MobState.Alive, "HealthIconFine" },
-            { MobState.Critical, "HealthIconCritical" },
+            { MobState.SoftCritical, "HealthIconCritical" }, // Orion-Edit
+            { MobState.HardCritical, "HealthIconCritical" }, // Orion
             { MobState.Dead, "HealthIconDead" },
         };
 

@@ -169,6 +169,9 @@
   weight: 10 #Goob Edit
   access:
   - Medical
+  - Virology # Dumont
+  - Psychology # Dumont
+  - Pharmacy # Dumont
   - Command
   - Maintenance
   - Chemistry

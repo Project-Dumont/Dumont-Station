@@ -14,40 +14,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: jukebox
-  id: Fnaf
-  name: The Living Tombstone - Five Nights at Freddy's 1 Song
-  path:
-    path: /Audio/_Gabystation/Jukebox/fnaf1.ogg
-
-- type: jukebox
-  id: SpaceAsshole
-  name: Chris Remo - Space Asshole
-  path:
-    path: /Audio/_Gabystation/Jukebox/spaceAsshole.ogg
-
-- type: jukebox
-  id: DigitalCircus
-  name: Gooseworx - Your New Home (Digital Circus)
-  path:
-    path: /Audio/_Gabystation/Jukebox/DigitalCircus.ogg
-
-#- type: jukebox
-#  id: TodoGay
-#  name: Marcelo Adnet - Todo Mundo é Gay
-#  path:
-#    path: /Audio/_Gabystation/Jukebox/gay.ogg
-
-- type: jukebox
   id: CheiaManias
   name: Raça Negra - Cheia de Manias
   path:
     path: /Audio/_Gabystation/Jukebox/cheia_de_manias.ogg
-
-- type: jukebox
-  id: CaracaMuleke
-  name: Thiaguinho - Caraca, Muleke!
-  path:
-    path: /Audio/_Gabystation/Jukebox/CaracaMuleke.ogg
 
 - type: jukebox
   id: GrandeFamilia
@@ -62,65 +32,10 @@
     path: /Audio/_Gabystation/Jukebox/evidencias.ogg
 
 - type: jukebox
-  id: Heart
-  name: EH!DE - My Heart
-  path:
-    path: /Audio/_Gabystation/Jukebox/heart.ogg
-
-- type: jukebox
-  id: Candy
-  name: Tobu - Candyland
-  path:
-    path: /Audio/_Gabystation/Jukebox/candyland.ogg
-
-- type: jukebox
-  id: Sin
-  name: ZIZZ Studio - Sin
-  path:
-    path: /Audio/_Gabystation/Jukebox/sin.ogg
-
-- type: jukebox
-  id: Sunset
-  name: ZIZZ Studio - Sunset
-  path:
-    path: /Audio/_Gabystation/Jukebox/sunset.ogg
-
-- type: jukebox
-  id: Saya
-  name: ZIZZ Studio - Song Of Saya II
-  path:
-    path: /Audio/_Gabystation/Jukebox/saya.ogg
-
-- type: jukebox
-  id: ShoesofGlass
-  name: Itou Kanako - Shoes Of Glass
-  path:
-    path: /Audio/_Gabystation/Jukebox/shoes_of_glass.ogg
-
-
-- type: jukebox
-  id: ChaLaHeadChaLa
-  name: RicardoJuniorSings - Cha-la Head Cha-la
-  path:
-    path: /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
-
-- type: jukebox
   id: GatinhaComunista
   name: Vitroles - Gatinha Comunista
   path:
     path: /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
-
-- type: jukebox
-  id: Melissa
-  name: Canal Tragicômico - Melissa
-  path:
-    path: /Audio/_Gabystation/Lobby/Melissa.ogg
-
-- type: jukebox
-  id: SorrisoResplandecente
-  name: RicardoJuniorSings - Sorriso Resplandecente
-  path:
-    path: /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
 
 - type: jukebox
   id: ElaPartiu
@@ -133,12 +48,6 @@
   name: Tim Maia - O Descobridor dos Sete Mares
   path:
     path: /Audio/_Gabystation/Lobby/sete_mares.ogg
-
-- type: jukebox
-  id: Perfume
-  name: Rita Lee - Lança Perfume
-  path:
-    path: /Audio/_Gabystation/Lobby/Lança_Perfume.ogg
 
 - type: jukebox
   id: Periferia
@@ -190,7 +99,7 @@
 
 - type: jukebox
   id: WindsOfFjords
-  name: Soft Knees - Winds Of Fjords (minomus 2022 remaster)
+  name: Soft Knees - Winds Of Fjords
   path:
     path: /Audio/_Gabystation/Jukebox/winds_of_fjord.ogg
 
@@ -219,70 +128,16 @@
     path: /Audio/_Gabystation/Jukebox/amor_mafioso.ogg
 
 - type: jukebox
-  id: AWorldIBuiltForYou
-  name: Joel Tumelty - A World I Built For You
-  path:
-    path: /Audio/_Gabystation/Jukebox/a_world_i_built_for_you.ogg
-
-- type: jukebox
-  id: AltarsOfApostasy
-  name: Heaven Pierce Her - Altars of Apostasy
-  path:
-    path: /Audio/_Gabystation/Jukebox/altars_of_apostasy.ogg
-
-- type: jukebox
-  id: AlthoughTheSky
-  name: Dorkus64 - Although The Sky
-  path:
-    path: /Audio/_Gabystation/Jukebox/although_the_sky.ogg
-
-- type: jukebox
-  id: Anemoia
-  name: Oliver Buckland - Anemoia
-  path:
-    path: /Audio/_Gabystation/Jukebox/anemoia.ogg
-
-- type: jukebox
-  id: Asgore
-  name: Toby Fox - Asgore
-  path:
-    path: /Audio/_Gabystation/Jukebox/asgore.ogg
-
-- type: jukebox
-  id: AsgoreRunsOver
-  name: Bub8les - Asgore runs over Dess
-  path:
-    path: /Audio/_Gabystation/Jukebox/asgore_runs_over.ogg
-
-- type: jukebox
   id: BabyBlue
   name: Badfinger - Baby Blue
   path:
     path: /Audio/_Gabystation/Jukebox/baby_blue.ogg
 
 - type: jukebox
-  id: Balatro
-  name: LouisF - Balatro Main Theme
-  path:
-    path: /Audio/_Gabystation/Jukebox/balatro.ogg
-
-- type: jukebox
   id: BarDaEsquina
   name: Banda Passarela - Bar da Esquina
   path:
     path: /Audio/_Gabystation/Jukebox/bar_da_esquina.ogg
-
-- type: jukebox
-  id: BirdsDontSing
-  name: TV Girl - Birds Don't Sing
-  path:
-    path: /Audio/_Gabystation/Jukebox/birds_dont_sing.ogg
-
-- type: jukebox
-  id: BlackKnife
-  name: Toby Fox - Black Knife
-  path:
-    path: /Audio/_Gabystation/Jukebox/black_knife.ogg
 
 - type: jukebox
   id: BuddyHolly
@@ -303,12 +158,6 @@
     path: /Audio/_Gabystation/Jukebox/cant_get_over.ogg
 
 - type: jukebox
-  id: CastleVein
-  name: Heaven Pierce Her - Castle Vein
-  path:
-    path: /Audio/_Gabystation/Jukebox/castle_vein.ogg
-
-- type: jukebox
   id: ClairDeLune
   name: Johann Debussy - Clair de Lune
   path:
@@ -327,64 +176,10 @@
     path: /Audio/_Gabystation/Jukebox/fly.ogg
 
 - type: jukebox
-  id: Glory
-  name: Heaven Pierce Her - GLORY
-  path:
-    path: /Audio/_Gabystation/Jukebox/glory.ogg
-
-- type: jukebox
-  id: HearTheSirenSongCallOfDeath
-  name: Heaven Pierce Her - Hear! The Siren Song Call Of Death
-  path:
-    path: /Audio/_Gabystation/Jukebox/hear_the_siren_song_call_of_death.ogg
-
-- type: jukebox
-  id: HopesAndDreams
-  name: Toby Fox - Hopes And Dreams
-  path:
-    path: /Audio/_Gabystation/Jukebox/hopes_and_dreams.ogg
-
-- type: jukebox
-  id: Invisible
-  name: Duran Duran - Invisible
-  path:
-    path: /Audio/_Gabystation/Jukebox/invisible.ogg
-
-- type: jukebox
-  id: ItsRainingSomewhereElse
-  name: Toby Fox - It's raining somewhere else
-  path:
-    path: /Audio/_Gabystation/Jukebox/its_raining_somewhere_else.ogg
-
-- type: jukebox
-  id: ItsTvTime
-  name: Toby Fox - It's Tv Time!
-  path:
-    path: /Audio/_Gabystation/Jukebox/its_tv_time.ogg
-
-- type: jukebox
-  id: Katamari
-  name: Femtanyl - KATAMARI
-  path:
-    path: /Audio/_Gabystation/Jukebox/katamari.ogg
-
-- type: jukebox
   id: Lady
   name: Modjo - Lady
   path:
     path: /Audio/_Gabystation/Jukebox/lady.ogg
-
-- type: jukebox
-  id: LastGoodbye
-  name: Toby Fox - Last Goodbye
-  path:
-    path: /Audio/_Gabystation/Jukebox/last_goodbye.ogg
-
-- type: jukebox
-  id: LoversRock
-  name: TV Girl - Lover's Rock
-  path:
-    path: /Audio/_Gabystation/Jukebox/lovers_rock.ogg
 
 - type: jukebox
   id: PegandoOnibus
@@ -399,22 +194,10 @@
     path: /Audio/_Gabystation/Jukebox/primeiro_baile.ogg
 
 - type: jukebox
-  id: RaiseUpYourBat
-  name: Toby Fox - Raise Up Your Bat
-  path:
-    path: /Audio/_Gabystation/Jukebox/raise_up_your_bat.ogg
-
-- type: jukebox
   id: Roundabout
   name: Yes - Roundabout
   path:
     path: /Audio/_Gabystation/Jukebox/roundabout.ogg
-
-- type: jukebox
-  id: RuderBuster
-  name: Toby Fox - Ruder Buster
-  path:
-    path: /Audio/_Gabystation/Jukebox/ruder_buster.ogg
 
 - type: jukebox
   id: Summer
@@ -423,34 +206,10 @@
     path: /Audio/_Gabystation/Jukebox/summer.ogg
 
 - type: jukebox
-  id: TakingWhatsNotYours
-  name: TV Girl - Taking What's Not Yours
-  path:
-    path: /Audio/_Gabystation/Jukebox/taking_whats_not_yours.ogg
-
-- type: jukebox
-  id: TheFireIsGone
-  name: Heaven Pierce Her - The Fire is Gone
-  path:
-    path: /Audio/_Gabystation/Jukebox/the_fire_is_gone.ogg
-
-- type: jukebox
   id: TheManWhoSoldTheWorld
   name: Midge Ure - The Man Who Sold The World
   path:
     path: /Audio/_Gabystation/Jukebox/the_man_who_sold_the_world.ogg
-
-- type: jukebox
-  id: ThePlaceWhereItRained
-  name: Toby Fox - The place where it rained
-  path:
-    path: /Audio/_Gabystation/Jukebox/the_place_where_it_rained.ogg
-
-- type: jukebox
-  id: TheWorldLooksRed
-  name: Heaven Pierce Her - The World Looks Red
-  path:
-    path: /Audio/_Gabystation/Jukebox/the_world_looks_red.ogg
 
 - type: jukebox
   id: VouPraSantaCatarina
@@ -459,28 +218,10 @@
     path: /Audio/_Gabystation/Jukebox/vou_pra_santa_catarina.ogg
 
 - type: jukebox
-  id: WarWithoutReason
-  name: Heaven Pierce Her - War Without Reason
-  path:
-    path: /Audio/_Gabystation/Jukebox/war_without_reason.ogg
-
-- type: jukebox
-  id: WelcomeToTheGreenRoom
-  name: Toby Fox - Welcome to the Green Room
-  path:
-    path: /Audio/_Gabystation/Jukebox/welcome_to_the_green_room.ogg
-
-- type: jukebox
   id: EyesWithoutAFace
   name: Billy Idol - Eyes Without A Face
   path:
     path: /Audio/_Gabystation/Jukebox/eyes_without_a_face.ogg
-
-- type: jukebox
-  id: HeartToHeart
-  name: Mac DeMarco - Heart To Heart
-  path:
-    path: /Audio/_Gabystation/Jukebox/heart_to_heart.ogg
 
 - type: jukebox
   id: DoFundoDaGrota
@@ -493,24 +234,6 @@
   name: Gaúcho da Fronteira - É disso que o velhos gosta
   path:
     path: /Audio/_Gabystation/Lobby/e_disso_que_o_velho_gosta.ogg
-
-- type: jukebox
-  id: ADarkZone
-  name: Toby Fox - A DARK ZONE
-  path:
-    path: /Audio/_Gabystation/Jukebox/a_dark_zone.ogg
-
-- type: jukebox
-  id: Guardian
-  name: Toby Fox - GUARDIAN
-  path:
-    path: /Audio/_Gabystation/Jukebox/guardian.ogg
-
-- type: jukebox
-  id: QuestionableEthics1
-  name: Joel Nielsen - Questionable Ethics 1
-  path:
-    path: /Audio/_Gabystation/Jukebox/questionable_ethics_1.ogg
 
 - type: jukebox
   id: AmigaDaMinhaMulher
@@ -529,12 +252,6 @@
   name: Seu Jorge - Burguesinha
   path:
     path: /Audio/_Gabystation/Jukebox/burguesinha.ogg
-
-- type: jukebox
-  id: CeuAzul
-  name: Charlie Brown Jr - Céu Azul
-  path:
-    path: /Audio/_Gabystation/Jukebox/ceu_azul.ogg
 
 - type: jukebox
   id: LugarAoSol
@@ -567,64 +284,10 @@
     path: /Audio/_Gabystation/Jukebox/ursinho_de_dormir.ogg
 
 - type: jukebox
-  id: PapersPleaseThemeSong
-  name: Papers Please - Theme Song
-  path:
-    path: /Audio/_Gabystation/Jukebox/Papers_Please_Theme_Song.ogg
-
-- type: jukebox
-  id: PapersPleaseGlory
-  name: Papers Please - Glory to ARSTOTZKA
-  path:
-    path: /Audio/_Gabystation/Jukebox/PAPERS_PLEASE_Glory_ARSTOTZKA.ogg
-
-- type: jukebox
-  id: PapersPleaseDeathTheme
-  name: Papers Please - Death Theme
-  path:
-    path: /Audio/_Gabystation/Jukebox/Papers_Please_Death_Theme.ogg
-
-- type: jukebox
-  id: sugarCrash
-  name: ElyOtto - Sugar crash
-  path:
-    path: /Audio/_Gabystation/Jukebox/ElyOttoSugarCrash.ogg
-
-- type: jukebox
-  id: AHAH
-  name: Sylendanna - AHAH
-  path:
-    path: /Audio/_Gabystation/Jukebox/Sylendanna_AHAH.ogg
-
-- type: jukebox
-  id: WaitAMinut
-  name: Willow Smith - Wait a Minute
-  path:
-    path: /Audio/_Gabystation/Jukebox/WillowSmithWaitAMinute.ogg
-
-- type: jukebox
-  id: Catroll
-  name: Rapid Liquid - Never Gonna Meow You up
-  path:
-    path: /Audio/_Gabystation/Jukebox/NeverGonnaMeowYouUp.ogg
-
-- type: jukebox
   id: Runoutdois
   name: Running Out V2 - Sanabi
   path:
     path: /Audio/_Gabystation/Jukebox/Running-Out-V2.1.ogg
-
-- type: jukebox
-  id: Ordinarilife
-  name: My Ordinary Life - The Living Tombstone
-  path:
-    path: /Audio/_Gabystation/Jukebox/my-ordinary-life.ogg
-
-- type: jukebox
-  id: Posterboy
-  name: Poster Boy - 2hollis
-  path:
-    path: /Audio/_Gabystation/Jukebox/poster-boy.ogg
 
 - type: jukebox
   id: StillAlive
@@ -633,34 +296,10 @@
     path: /Audio/_Gabystation/Lobby/Still_Alive.ogg
 
 - type: jukebox
-  id: Brighterfuture
-  name: A Brighter Future - Resonance Hub
-  path:
-    path: /Audio/_Gabystation/Jukebox/A_Brighter_Future.ogg
-
-- type: jukebox
-  id: Stayyourhouse
-  name: I Really Want To Stay At Your House - Cyberpunk
-  path:
-    path: /Audio/_Gabystation/Jukebox/I_Really_Want_To_Stay_At_Your_House.ogg
-
-- type: jukebox
   id: Tokyodrift
   name: Tokyo Drift - Fast & Furious
   path:
     path: /Audio/_Gabystation/Jukebox/Tokyo_Drift_Fast_&_Furious.ogg
-
-- type: jukebox
-  id: Waltztornado
-  name: Waltz of The Tornado - War Thunder
-  path:
-    path: /Audio/_Gabystation/Jukebox/Waltz_of_The_Tornado.ogg
-
-- type: jukebox
-  id: Readytomorrow
-  name: Whos Ready For Tomorrow - Cyberpunk
-  path:
-    path: /Audio/_Gabystation/Jukebox/Whos_Ready_For_Tomorrow.ogg
 
 - type: jukebox
   id: frangonapanela
@@ -673,12 +312,6 @@
   name: Vermilion Pt2 - Slipknot
   path:
     path: /Audio/_Gabystation/Jukebox/Vermilion_Pt2.ogg
-
-- type: jukebox
-  id: IDontKnow
-  name: Leave me Alone - I DONT KNOW HOW BUT THEY FOUND ME
-  path:
-    path: /Audio/_Gabystation/Jukebox/I_Dont_Know_How_But_They_Found_Me.ogg
 
 - type: jukebox
   id: Opirata
@@ -704,32 +337,8 @@
   path:
     path: /Audio/_Gabystation/Jukebox/É_o_Amor.ogg
 
-- type: jukebox
-  id: thebreak
-  name: The Break (Crimson Glass deComposition) - Heaven Pierce Her
-  path:
-    path: /Audio/_Gabystation/Jukebox/thebreak.ogg
-
-- type: jukebox
-  id: theshatteringcircle
-  name: The Shattering Circle - Heaven Pierce Her
-  path:
-    path: /Audio/_Gabystation/Jukebox/theshatteringcircle.ogg
-
-- type: jukebox
-  id: inabstentialogos
-  name: In Abstentia Logos - Heaven Pierce Her
-  path:
-    path: /Audio/_Gabystation/Jukebox/inabstentialogos.ogg
-
-- type: jukebox
-  id: eventhorizon
-  name: Event Horizon(Reach for the Sun and Burn! Burn! Burn!)- Heaven Pierce Her
-  path:
-    path: /Audio/_Gabystation/Jukebox/eventhorizon.ogg
-
-- type: jukebox
-  id: sonsdalagoa
-  name: Sons da Lagoa - Arthur Diniz
-  path:
-    path: /Audio/_Gabystation/Lobby/sonsdalagoa.ogg
+#- type: jukebox
+#  id: sonsdalagoa
+#  name: Sons da Lagoa - Arthur Diniz
+#  path:
+#    path: /Audio/_Gabystation/Lobby/sonsdalagoa.ogg

@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseSign, BaseWallmountMachine]
+  id: BaseSignPowered
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _FarHorizons/Structures/Wallmounts/signs.rsi
+    snapCardinals: false
+    noRot: true
+  - type: ApcPowerReceiver
+    powerLoad: 50
+  - type: LitOnPowered
+  - type: PointLight
+    radius: 1.5
+    energy: 0.75
+    color: "#ffffff"
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }

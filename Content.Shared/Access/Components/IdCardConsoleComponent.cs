@@ -80,12 +80,21 @@ public sealed partial class IdCardConsoleComponent : Component
         "Quartermaster",
         "Research",
         "ResearchDirector",
-        "Salvage",
+        "Salvage", //Dumont Salvage -> Exploration
         "Security",
         "Service",
         "Theatre",
         "Robotics", //Goob
-        "Journalism" //Goob
+        "Journalism", //Goob
+        "Bitrun", // Orion
+        "Virology", //Dumont
+        "Psychology", //Dumont
+        "Pharmacy", //Dumont
+        "Genetics", //Dumont
+        "Mail", //Dumont
+        "Mining", //Dumont
+        "BrigMedic", //Dumont
+        "Library" //Dumont
     };
 
     [Serializable, NetSerializable]
