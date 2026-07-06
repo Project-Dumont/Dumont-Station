@@ -150,6 +150,8 @@
     tags:
       - AutoinjectorCartridge
       - SecBeltEquip
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   name: adrenaline autoinjector cartridge

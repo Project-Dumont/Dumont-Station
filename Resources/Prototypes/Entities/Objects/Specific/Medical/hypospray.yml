@@ -293,6 +293,8 @@
     - Medipen
   - type: TrashOnSolutionEmpty
     solution: pen
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
 - type: entity
   name: emergency medipen

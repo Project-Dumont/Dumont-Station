@@ -52,6 +52,8 @@
       - Syringe
       - Medipen
       - AutoinjectorCartridge
+  - type: ReagentPreserver # Gaby station - rotting chems
+    reversalRate: 0 # no reverse.
 
   - type: ItemCounter # i do not have the spoons to make itemmapper work with opening/closing so you get this
     count:
