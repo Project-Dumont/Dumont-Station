@@ -136,3 +136,5 @@
     flavorText: smart-fridge-request-chemistry
   - type: AccessReader
     access: [["Medical"]]
+  - type: ReagentPreserver # Gabystation change - rotting chems
+    reversalRate: 2

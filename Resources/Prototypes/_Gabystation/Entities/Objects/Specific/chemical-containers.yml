@@ -1,0 +1,8 @@
+- type: entity
+  name: vacuum jug
+  parent: Jug
+  id: JugPreserving
+  description: A powerful vacuum-sealed jar that allows reagents to be stored inside without spoiling.
+  components:
+  - type: ReagentPreserver
+    reversalRate: 0 # no reverse.
