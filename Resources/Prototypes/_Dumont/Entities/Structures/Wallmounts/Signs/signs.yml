@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSignPowered
+  id: SignMining
+  name: mining sign
+  description: A sign indicating the mining area.
+  components:
+  - type: Sprite
+    layers:
+    - state: off
+    - state: mining
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+
+- type: entity
+  parent: BaseSignPowered
+  id: SignBrigmed
+  name: brigmed sign
+  description: A sign indicating the brig med area.
+  components:
+  - type: Sprite
+    layers:
+    - state: off
+    - state: brigmed
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+
+- type: entity
+  parent: BaseSignPowered
+  id: SignGenetics
+  name: genetics sign
+  description: A sign indicating the genetics laboratory.
+  components:
+  - type: Sprite
+    layers:
+    - state: off
+    - state: genetics
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]

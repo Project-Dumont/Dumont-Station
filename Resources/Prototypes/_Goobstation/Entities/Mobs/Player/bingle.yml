@@ -148,6 +148,8 @@
     spawned:
     - id: FoodMeatBingle
       amount: 3
+  - type: GlobalAntagonist # Orion
+    antagonistPrototype: globalAntagonistBingle
 
 - type: entity
   id: MobBinglePrime
