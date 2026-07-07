@@ -46,6 +46,9 @@
         density: 20
         mask:
         - HighImpassable
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 300
 
 - type: entity
   parent: CanvasBase
