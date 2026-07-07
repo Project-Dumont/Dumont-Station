@@ -102,6 +102,7 @@
     - type: Sprite
       sprite: Objects/Specific/Medical/implanter.rsi
       state: implanter0
+      rotation: -90
       layers:
         - state: implanter0
           map: [ "implantOnly" ]

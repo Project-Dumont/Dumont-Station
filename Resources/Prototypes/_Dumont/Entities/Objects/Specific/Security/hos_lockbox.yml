@@ -17,12 +17,6 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: GenericVisualizer
-    visuals:
-      enum.LockVisuals.Locked:
-        locked:
-          False: { state: unlocked, shader: "unshaded" }
-          True: { state: locked, shader: "unshaded" } 
   - type: Storage
     maxItemSize: Small
     grid:
