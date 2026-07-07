@@ -14,8 +14,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorUnionObjective
-  name: Tome o controle de um departamento à força ou não.
-  description: Assuma o controle direto de um departamento, seja por meio da força ou manipulação e declare independência da Nanotrasen.
+  name: conspirator-union-objective-name
+  description: conspirator-union-objective-description
   components:
   - type: Objective
     icon:
@@ -25,8 +25,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorGameshowObjective
-  name: Realize um show de vida ou morte
-  description: Force a tripulação a participar de um game show com apostas incríveis.
+  name: conspirator-gameshow-objective-name
+  description: conspirator-gameshow-objective-description
   components:
   - type: Objective
     icon:
@@ -36,8 +36,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorTechnologyObjective
-  name: Experimente toda a tecnologia da estação.
-  description: Mostre à tripulação os méritos de uma vida mais simples. Porque só você merece as maravilhas da tecnologia.
+  name: conspirator-technology-objective-name
+  description: conspirator-technology-objective-description
   components:
   - type: Objective
     icon:
@@ -47,8 +47,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorArmsObjective
-  name: Desarme a segurança e se armem em vez disso
-  description: Pegue as armas da segurança e dê elas para si mesmos. Eles não podem ser confiados com elas.
+  name: conspirator-arms-objective-name
+  description: conspirator-arms-objective-description
   components:
   - type: Objective
     icon:
@@ -58,8 +58,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorThiefObjective
-  name: Realize o maior assalto de todos os tempos
-  description: Façam seus nomes ficarem nos livros de história pelo que vocês tirarem desta estação.
+  name: conspirator-thief-objective-name
+  description: conspirator-thief-objective-description
   components:
   - type: Objective
     icon:
@@ -69,8 +69,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorMafiaObjective
-  name: Forme uma família do crime
-  description: Torne-se o líder do crime nesta estação e cimente sua reputação como um grupo que deve ser temido.
+  name: conspirator-mafia-objective-name
+  description: conspirator-mafia-objective-description
   components:
   - type: Objective
     icon:
@@ -80,8 +80,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorCultObjective
-  name: Forme um culto perigoso
-  description: Estabeleçam-se como um culto que adora o que vocês desejam, eliminem quaisquer outros cultistas rivais.
+  name: conspirator-cult-objective-name
+  description: conspirator-cult-objective-description
   components:
   - type: Objective
     icon:
@@ -91,8 +91,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorPetObjective
-  name: Substitua o Comando pelo seus pets
-  description: O Ian é provavelmente mais competente do que o Chefe dos Funcionários, de qualquer forma
+  name: conspirator-pet-objective-name
+  description: conspirator-pet-objective-description
   components:
   - type: Objective
     icon:
@@ -102,8 +102,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorBanquetObjective
-  name: Faça um grande banquete de carne dos mascote da estação
-  description: Descubra por que o Sindicato quer que o Ian seja multilado tão desesperadamente.
+  name: conspirator-banquet-objective-name
+  description: conspirator-banquet-objective-description
   components:
   - type: Objective
     icon:
@@ -113,8 +113,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorArrestObjective
-  name: Engane a Segurança para que prendam pessoas inocentes.
-  description:  Demonstre a incompetência deles mostrando o quão fácil é enganá-los.
+  name: conspirator-arrest-objective-name
+  description: conspirator-arrest-objective-description
   components:
   - type: Objective
     icon:
@@ -124,8 +124,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorCameraObjective
-  name: Desmantele todos os sistemas de vigilância da estação
-  description: Traga de volta o direito à privacidade para os funcionários da Nanotrasen.
+  name: conspirator-camera-objective-name
+  description: conspirator-camera-objective-description
   components:
   - type: Objective
     icon:

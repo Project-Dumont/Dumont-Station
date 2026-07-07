@@ -14,3 +14,5 @@ conspirator-radio-implant = Se comunique com outros conspiradores usando o impla
 
 conspiracy-title = Conspiração
 conspiracy-description = A conspiração é um passo!
+
+guide-entry-conspirators = Conspiradores

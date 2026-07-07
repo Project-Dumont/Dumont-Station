@@ -411,6 +411,7 @@
   components:
   - type: GameRule
     minPlayers: 28 # minimum of 4 conspirators
+    chaosScore: 250 # Dumont
   - type: ConspiratorRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
