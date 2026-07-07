@@ -141,6 +141,7 @@
     - type: Tag
       tags:
         - Trash
+        - ImplantImplanter # Dumont
 
 - type: entity
   parent: Implanter

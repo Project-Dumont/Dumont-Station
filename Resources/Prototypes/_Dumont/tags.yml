@@ -2,14 +2,18 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# ORDEM ALFABÉTICA!
 - type: Tag
   id: CartridgeWatson
 
 - type: Tag
-  id: SpeedLoaderWatson
-  
+  id: EletricRadiation
+
 - type: Tag
   id: HideGhostWarp
 
 - type: Tag
-  id: EletricRadiation
+  id: ImplantImplanter
+
+- type: Tag
+  id: SpeedLoaderWatson

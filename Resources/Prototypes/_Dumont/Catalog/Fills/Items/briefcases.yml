@@ -1,0 +1,11 @@
+- type: entity
+  id: ImplanterBoxHoSFilled
+  parent: ImplanterBoxHoS
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MindShieldImplanter
+        amount: 4
+      - id: TrackingImplanter
+        amount: 2

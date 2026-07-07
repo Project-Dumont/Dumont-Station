@@ -1,0 +1,39 @@
+- type: entity
+  name: secure implanter lockbox
+  suffix: Empty
+  description: Standard issue portable lockbox for various implanters, perfectly preserving them inside. Compact, convenient and stylish.
+  parent: BaseStorageItem
+  id: ImplanterBoxHoS
+  components:
+  - type: Lock
+  - type: LockVisuals
+  - type: AccessReader
+    access: [["HeadOfSecurity"]]
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Security/implanter_box_hos.rsi
+    state: icon
+    layers:
+    - state: icon
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.LockVisuals.Locked:
+        locked:
+          False: { state: unlocked, shader: "unshaded" }
+          True: { state: locked, shader: "unshaded" } 
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,2
+    whitelist:
+      tags:
+      - ImplantImplanter
+      - Trash # funny
+  - type: Item
+    size: Normal
+    sprite: _Dumont/Objects/Specific/Security/implanter_box_hos.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 75
