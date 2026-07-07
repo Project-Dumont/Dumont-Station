@@ -3431,3 +3431,11 @@ Entries:
       message: Traduções dos trajes herméticos de prisioneiro.
   id: 410
   time: '2026-07-06T13:12:53.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: >-
+        Os cartuchos .60 anti-material da Hristov voltam a ser projéteis com
+        alto dano e atravessam paredes.
+  id: 411
+  time: '2026-07-07T11:10:13.0000000+00:00'
