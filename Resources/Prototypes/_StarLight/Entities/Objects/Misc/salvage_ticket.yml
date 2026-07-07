@@ -24,9 +24,6 @@
   - type: Stack
     stackType: SalvageTicket
     count: 1
-    baseLayer: base
-    layerStates:
-    - icon
   - type: Sprite
     sprite: _Starlight/Objects/Economy/salvage_ticket.rsi
     state: icon
