@@ -3439,3 +3439,9 @@ Entries:
         alto dano e atravessam paredes.
   id: 411
   time: '2026-07-07T11:10:13.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Onis agora podem usar revólveres.
+  id: 412
+  time: '2026-07-07T11:20:37.0000000+00:00'
