@@ -274,7 +274,7 @@
 - type: entity
   id: ActionEvolve
   name: Evolve
-  description: Choose a form to evolve into once you have absorbed at least 3 souls.
+  description: Choose a form to evolve into once you have absorbed at least 4 souls.
   components:
   - type: Action
     useDelay: 0
