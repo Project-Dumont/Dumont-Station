@@ -82,6 +82,8 @@
   - Chemistry
   - Maintenance
   # Shitmed Change
+  extendedAccess:
+  - Pharmacy # Dumont
   special:
   - !type:AddComponentSpecial
     components:

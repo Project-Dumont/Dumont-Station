@@ -481,6 +481,8 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistNinja
       mindRoles:
       - MindRoleNinja
 
@@ -899,6 +901,8 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      - type: GlobalAntagonist # Orion
+        antagonistPrototype: globalAntagonistLoneops
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:

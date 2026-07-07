@@ -92,12 +92,15 @@
   extendedAccess:
   - Salvage
   - External # goobstation
+  - Mail # Dumont
+  - Mining # Dumont
+  - Bitrun # Dumont
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay
     prototype: BoxCardboard
   alternateTitles:
-  - CargoTechnitianTitleMail
+  #- CargoTechnitianTitleMail //Dumont edit - Soon to be a role
   - CargoTechnitianTitlePilot
   - CargoTechnitianTitleStorage
   - CargoTechnitianTitleRessuplier

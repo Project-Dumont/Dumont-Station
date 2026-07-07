@@ -96,6 +96,9 @@
     grid:
     - 0,0,6,3
     maxItemSize: Huge
+    blacklist: # gaby change
+      tags:
+      - Jug
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

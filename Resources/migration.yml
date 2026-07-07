@@ -157,8 +157,8 @@ AirlockClownGlassLocked: AirlockServiceGlassLocked
 AirlockClownLocked: AirlockServiceGlassLocked
 AirlockCorpsmanGlassLocked: AirlockServiceGlassLocked
 AirlockExternalGlassShuttleShipyard: AirlockExternalGlassLocked
-AirlockMailGlassLocked: AirlockCargoGlassLocked
-AirlockMaintMailLocked: AirlockMaintCargoLocked
+# AirlockMailGlassLocked: AirlockCargoGlassLocked # Dumont edit
+# AirlockMaintMailLocked: AirlockMaintCargoLocked # Dumont edit
 AirlockMaintMimeLocked: AirlockMaintTheatreLocked
 AirlockMaintPsychologistLocked: AirlockMaintMedLocked
 AirlockMaintReporterLocked: AirlockServiceLocked
@@ -220,7 +220,7 @@ DefaultStationBeaconMantis: null
 DefaultStationBeaconMetempsychosis: null
 DefaultStationBeaconPark: null
 DefaultStationBeaconPsychologist: null
-DefaultStationBeaconVirology: null
+# DefaultStationBeaconVirology: null # Dumont edit
 DrinkBubbleTeaGlass: null
 FishLabeler: null
 FoodLollipop: null
@@ -333,7 +333,7 @@ WarpPointSingulo: null
 WashingMachineBroken: null
 WashingMachineFilledClothes: null
 WeaponShotgunKammererNonLethal: null
-WindoorSecureMailLocked: null
+# WindoorSecureMailLocked: null # Dumont edit
 WindoorSecureParamedicLocked: null
 SpawnPointMailCarrier: null
 HoloprojectorEngineering: null

@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: selectableSet
+  id: DetectiveInspectorSet
+  name: selectable-set-detective-inspector-name
+  description: selectable-set-detective-inspector-description
+  sprite:
+    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+    state: icon
+  content:
+  - ClothingBeltHolsterFilled
+
+- type: selectableSet
+  id: DetectiveWatsonSet
+  name: selectable-set-detective-watson-name
+  description: selectable-set-detective-watson-description
+  sprite:
+    sprite: DeltaV/Objects/Weapons/Guns/k38master.rsi
+    state: icon
+  content:
+  - ClothingBeltHolsterWatsonFilled
