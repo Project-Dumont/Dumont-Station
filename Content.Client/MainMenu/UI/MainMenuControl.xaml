@@ -27,7 +27,8 @@ SPDX-License-Identifier: MIT
                   StyleIdentifier="mainMenuVBox"
                   SeparationOverride="3">
         <TextureRect Name="Logo"
-                     Stretch="KeepCentered"/>
+                     Stretch="KeepCentered"
+                     Margin="0 0 0 20"/>
         <GridContainer Columns="2">
             <Label Text="{Loc 'main-menu-username-label'}" />
             <LineEdit Name="UsernameBox"

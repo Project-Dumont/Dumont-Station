@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-﻿<Document>
-  # Tipos de Bans
-=======
 <!--
 SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -10,8 +6,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Ban Types
->>>>>>> goob/master
+  # Tipos de Bans
 
   Banimentos podem ser apelados no nosso discord oficial. Caso você esteja banido do nosso discord oficial, apele em https://dyno.gg/form/28ea13ff.
 
@@ -19,5 +14,5 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Esse banimento previne que você jogue no servidor enquanto desempenha uma função em específico. Esse tipo de banimento é usado, geralmente, em resposta a comportamento problemático em departamentos específicos ou por inexperiência grotesca em funções importantes como chefes de departamento. Esses banimentos não te impedem de, mecanicamente, se tornar a função durante um round ou agir como a função; ainda assim, isso é considerado evasão de banimento.
 
   ## Ban do Servidor
-  Esse banimento te previne de conectar no(s) servidor(es) de Gabystation.
+  Esse banimento te previne de conectar no(s) servidor(es) do Dumont Station.
 </Document>

@@ -300,12 +300,27 @@ namespace Content.Shared.Interaction
         private void OnBoundInterfaceInteractAttempt(Entity<UserInterfaceComponent> ent, ref BoundUserInterfaceMessageAttempt ev)
         {
             _uiQuery.TryComp(ev.Target, out var aUiComp);
+
+            // Orion-Start
+            if (TryComp<GhostComponent>(ev.Actor, out var ghost) && !ghost.CanGhostInteract)
+            {
+                if (ev.Message is not OpenBoundInterfaceMessage
+                    || !ghost.CanGhostOpenUI
+                    || aUiComp is not null && (aUiComp.SingleUser || aUiComp.BlockSpectators))
+                    ev.Cancel();
+
+                return;
+            }
+            // Orion-End
+
             if (!_actionBlockerSystem.CanInteract(ev.Actor, ev.Target))
             {
                 // We permit ghosts to open uis unless explicitly blocked
                 if (ev.Message is not OpenBoundInterfaceMessage
+/* // Orion-Edit
                     || !HasComp<GhostComponent>(ev.Actor)
                     || aUiComp?.BlockSpectators == true
+*/
                     || _tagSystem.HasTag(ev.Actor, "CantInteract")) // Shitmed change
                 {
                     ev.Cancel();

@@ -157,6 +157,7 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualSystem = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!; // Orion
 
     public override void Initialize()
     {
@@ -258,7 +259,7 @@ public sealed class PullingSystem : EntitySystem
         if (component.Pulling == null)
             return;
 
-        if (TryComp<PullableComponent>(component.Pulling, out var comp) && (args.State == MobState.Critical || args.State == MobState.Dead))
+        if (TryComp<PullableComponent>(component.Pulling, out var comp) && args.State is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Orion-Edit
         {
             TryStopPull(component.Pulling.Value, comp);
         }
@@ -738,6 +739,9 @@ public sealed class PullingSystem : EntitySystem
 
         if (pullerUidNull == null)
             return true;
+
+        if (user == pullableUid && _mobState.IsSoftCritical(pullableUid)) // Orion
+            return false;
 
         var msg = new AttemptStopPullingEvent(user);
         RaiseLocalEvent(pullableUid, ref msg, true);

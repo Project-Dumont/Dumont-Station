@@ -8,4 +8,5 @@
     - state: default
     - state: idshaftminer
   - type: PresetIdCard
-    job: ShaftMiner
+    job: ShaftMiner  
+

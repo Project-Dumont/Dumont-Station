@@ -70,6 +70,14 @@
   id: MegaCellSmallPrinted
   suffix: Empty
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: small
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+      visible: false
   - type: Battery
     maxCharge: 1800
     startingCharge: 0
@@ -97,6 +105,14 @@
   id: MegaCellHighPrinted
   suffix: Empty
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: high
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+      visible: false
   - type: Battery
     maxCharge: 5400
     startingCharge: 0
@@ -124,6 +140,14 @@
   id: MegaCellSuperPrinted
   suffix: Empty
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: super
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+      visible: false
   - type: Battery
     maxCharge: 6250
     startingCharge: 0
@@ -151,6 +175,14 @@
   id: MegaCellHyperPrinted
   suffix: Empty
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: hyper
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+      visible: false
   - type: Battery
     maxCharge: 9000
     startingCharge: 0
@@ -172,12 +204,24 @@
   - type: Battery
     maxCharge: 11000
     startingCharge: 11000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 12
+    canEmp: true
 
 - type: entity
   parent: MegaCellBluespace
   id: MegaCellBluespacePrinted
   suffix: Empty
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: bluespace
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+      visible: false
   - type: Battery
     maxCharge: 11000
     startingCharge: 0

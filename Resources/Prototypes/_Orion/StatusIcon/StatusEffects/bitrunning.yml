@@ -1,0 +1,6 @@
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectBitrunningExitBlindness
+  name: neuro blindness
+  components:
+  - type: TemporaryBlindness

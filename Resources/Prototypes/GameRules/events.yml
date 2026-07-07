@@ -164,7 +164,7 @@
     - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
+#    - id: MimicVendorRule dumont edit doesn't do shit, useless event
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -641,7 +641,7 @@
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: 100 #dumont edit
   - type: KudzuGrowthRule
 
 - type: entity
@@ -649,7 +649,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    weight: 5
+    weight: 3
     startAnnouncement: station-event-power-grid-check-start-announcement
     startAudio:
       path: /Audio/_Gabystation/Announcements/power_off_saae.ogg
@@ -659,7 +659,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 80
+    chaosScore: 120 #Dumont edit annoying
   - type: PowerGridCheckRule
 
 - type: entity
@@ -667,7 +667,7 @@
   id: SolarFlare
   components:
   - type: StationEvent
-    weight: 8
+    weight: 6
     startAnnouncement: station-event-solar-flare-start-announcement
     startAudio:
       path: /Audio/_Gabystation/Announcements/solarflare_on_saae.ogg
@@ -681,7 +681,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 60
+    chaosScore: 100 #Dumont edit annoying
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -715,7 +715,7 @@
     eventType: Interference # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 70
+    chaosScore: 240 #Dumont edit distracting and fucks up combat
   - type: VentClogRule
 
 - type: entity
@@ -736,7 +736,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 120 # dumont edit doesn't do shit
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -760,7 +760,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 180 #dumont edit sometimes kills people
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -786,7 +786,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 120 # dumont edit weak
   - type: VentCrittersRule
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobGiantSpiderAngry
@@ -809,7 +809,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 240
+    chaosScore: 150 # Dumont edit they're weak as hell
   - type: VentCrittersRule
     playerRatio: 20 # DeltaV: Clown spiders are very robust
     table: # DeltaV: EntityTable instead of spawn entries
@@ -866,18 +866,19 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 6.0 # Goobstation - was 5.5
-    minimumPlayers: 20 # Dumontstation was 50 # Goobstation - was 20
+    weight: 1 # Dumontstation - was 6.0 because of *us* and we never noticed it and we always complained about it.
+    minimumPlayers: 30 # Dumontstation was 20
     duration: null
     maxOccurrences: 1 # Gabystation - loneops apenas uma vez por round
     chaos: # Goobstation
-      Hostile: 200
-      Medical: 200
-      Death: 200
+      Hostile: 250
+      Medical: 250
+      Death: 250
+      Combat: 400
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 700
+    chaosScore: 800 # Dumont edit they end the round when they show up and can declare war
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker_loneops.yml # GabyStation

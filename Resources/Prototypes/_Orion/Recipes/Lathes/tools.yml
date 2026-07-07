@@ -9,3 +9,11 @@
   materials:
     Steel: 500
     Plastic: 100
+
+- type: latheRecipe
+  id: InducerEngineering
+  result: InducerEngineering
+  completetime: 8
+  materials:
+    Steel: 500
+    Plastic: 100

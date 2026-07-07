@@ -136,10 +136,10 @@
     layers:
       - state: beanbag
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitScanCartridgeAmmo
+  - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    hitscan: PelletShotgunBeanbagTrace
+    proto: PelletShotgunBeanbag
   - type: SpentAmmoVisuals
     state: "beanbag"
 
@@ -152,10 +152,10 @@
     layers:
       - state: slug
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitScanCartridgeAmmo
+  - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    hitscan: PelletShotgunSlugTrace
+    proto: PelletShotgunSlug
   - type: SpentAmmoVisuals
     state: "slug"
 
@@ -189,10 +189,8 @@
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitScanCartridgeAmmo
-    soundEject:
-      collection: ShellEject
-    hitscan: PelletShotgunSpreadTrace
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpread
 
 - type: entity
   id: ShellShotgunIncendiary
@@ -203,10 +201,10 @@
     layers:
       - state: incendiary
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitScanCartridgeAmmo
+  - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    hitscan: ShellShotgunIncendiaryTrace
+    proto: PelletShotgunIncendiary
   - type: SpentAmmoVisuals
     state: "incendiary"
 
@@ -219,10 +217,10 @@
     layers:
       - state: practice
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitScanCartridgeAmmo
+  - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    hitscan: PelletShotgunPracticeSpreadTrace
+    proto: PelletShotgunPractice
   - type: SpentAmmoVisuals
     state: "practice"
 
@@ -274,10 +272,10 @@
   - type: Construction
     graph: ImprovisedShotgunShellGraph
     node: shell
-  - type: HitScanCartridgeAmmo
+  - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    hitscan: PelletShotgunImprovisedSpreadTrace
+    proto: PelletShotgunImprovised
   - type: SpentAmmoVisuals
     state: "improvised"
 
@@ -290,9 +288,9 @@
     layers:
       - state: depleted-uranium
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: HitScanCartridgeAmmo
+  - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    hitscan: PelletShotgunUraniumSpreadTrace
+    proto: PelletShotgunUranium
   - type: SpentAmmoVisuals
     state: "depleted-uranium"

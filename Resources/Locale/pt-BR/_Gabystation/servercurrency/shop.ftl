@@ -3,9 +3,9 @@ gs-balanceui-confirm = Confirmar
 
 gs-balanceui-gift-label = Transferir:
 gs-balanceui-gift-player = Jogador
-gs-balanceui-gift-player-tooltip = Insira o nome do jogador que você quer dar gabycoins.
+gs-balanceui-gift-player-tooltip = Insira o nome do jogador que você quer dar cruzeiros.
 gs-balanceui-gift-value = Valor
-gs-balanceui-gift-value-tooltip = Quantidade de Gabycoins a transferir
+gs-balanceui-gift-value-tooltip = Quantidade de cruzeiros a transferir
 
 gs-balanceui-select-title = Selecione título OOC:
 gs-balanceui-title-default = Nenhum
@@ -43,7 +43,7 @@ gs-balanceui-shop-token-ghost-role-buy = Token fantasma de {$token}
 gs-balanceui-shop-token-ghost-role-desc = Permite você spawnar uma função fantasma de {$token}.
 gs-balanceui-shop-token-ghost-role-remark = Comprou um ghost role token de "{$token}" - Spawne após 30 minutos de partida.
 
-gs-balanceui-admin-add-label = Adiciona (ou subtrai) Gabycoins:
+gs-balanceui-admin-add-label = Adiciona (ou subtrai) cruzeiros:
 gs-balanceui-admin-add-player = Nome do Jogador
 gs-balanceui-admin-add-value = Valor
 
