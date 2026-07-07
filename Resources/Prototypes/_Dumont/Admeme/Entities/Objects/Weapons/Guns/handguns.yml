@@ -6,26 +6,26 @@
   description: A beautiful, custom-made handcannon refined for maximum lethality and precision. Sister to the Chrysanthemum.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/dahlia.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/dahlia.rsi
   - type: Gun
     minAngle: 1
     maxAngle: 3
     angleIncrease: 1
     angleDecay: 4
-    fireRate: 3
+    fireRate: 2
     burstFireRate: 9
     availableModes:
     - SemiAuto
     - Burst
-    shotsPerBurst: 3
-    burstCooldown: 0.375
+    shotsPerBurst: 4
+    burstCooldown: 1.25
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
   - type: ItemSlots
@@ -67,26 +67,26 @@
   description: A beautiful, custom-made handcannon refined for maximum lethality and precision. Sister to the Dahlia.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/chrysanthemum.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/chrysanthemum.rsi
   - type: Gun
     minAngle: 1
     maxAngle: 3
     angleIncrease: 1
     angleDecay: 4
     burstFireRate: 9
-    fireRate: 3
+    fireRate: 2
     availableModes:
     - SemiAuto
     - Burst
-    shotsPerBurst: 3
-    burstCooldown: 0.375
+    shotsPerBurst: 4
+    burstCooldown: 1.25
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
   - type: ItemSlots
@@ -134,7 +134,7 @@
   - type: Clothing
     sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
   - type: Gun
-    fireRate: 0.75 
+    fireRate: 0.65 
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: RevolverAmmoProvider

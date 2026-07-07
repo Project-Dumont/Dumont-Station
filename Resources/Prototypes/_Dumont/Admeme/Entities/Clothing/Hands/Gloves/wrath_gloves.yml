@@ -18,9 +18,10 @@
         Piercing: -15
         Slash: -15
         Heat: -15
-        BloodLoss: -10
         Structural: -25
     bloodlossModifier: -15
     staminaDamage: -25
     armorPenetration: 1
     mustBeEquippedToUse: true
+    soundHit:
+      path: /Audio/_Goobstation/Weapons/Effects/metalcrush.ogg

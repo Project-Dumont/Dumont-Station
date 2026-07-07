@@ -29,7 +29,7 @@
       pryPowered: true
       force: true
       speedModifier: 4.5
-    - type: StipMenuInvisible
+    - type: StripMenuInvisible
   - type: ItemSwitch
     showLabel: false
     state: gloves

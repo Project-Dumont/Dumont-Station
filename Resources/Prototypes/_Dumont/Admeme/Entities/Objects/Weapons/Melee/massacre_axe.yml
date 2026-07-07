@@ -32,7 +32,7 @@
         Slash: 30
         Heat: 25
         Structural: 35
- # - type: Boomerang # Funny test
+  - type: Boomerang # Funny test
   - type: Sprite
     sprite: _Dumont/Admeme/Objects/Weapons/Melee/massacre_axe.rsi
     state: icon
