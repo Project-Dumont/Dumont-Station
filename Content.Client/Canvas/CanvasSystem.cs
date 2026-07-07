@@ -48,9 +48,6 @@ namespace Content.Client.Canvas
 
             component.UIUpdateNeeded = true;
 
-            // Only (re)build the sprite texture when the painting actually changed.
-            // Otherwise every state replication (e.g. re-entering PVS) would re-upload
-            // a fresh GPU texture, which is expensive and pointless for finalized art.
             if (!string.IsNullOrEmpty(component.Artist) && component.LastRenderedCode != component.PaintingCode)
             {
                 component.LastRenderedCode = component.PaintingCode;
@@ -73,9 +70,13 @@ namespace Content.Client.Canvas
 
         private Texture GenerateArtistTexture(string code, int height = 16, int width = 16, int sizeMultiplier = 2)
         {
+            height = Math.Clamp(height, SharedCanvasComponent.MinResolution, SharedCanvasComponent.MaxResolution);
+            width = Math.Clamp(width, SharedCanvasComponent.MinResolution, SharedCanvasComponent.MaxResolution);
+
             if (height > 32 || width > 32)
                 sizeMultiplier = 1;
-            var image = new Image<Rgba32>(width * sizeMultiplier, height * sizeMultiplier);
+
+            using var image = new Image<Rgba32>(width * sizeMultiplier, height * sizeMultiplier);
 
             // Parse the code string into color segments
             var colorSegments = code.Split(';', StringSplitOptions.RemoveEmptyEntries);

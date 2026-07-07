@@ -77,6 +77,8 @@ namespace Content.Server.Canvas
 
         private void OnCanvasBoundUI(EntityUid uid, CanvasComponent component, CanvasSelectMessage args)
         {
+            if (args.State.Length > SharedCanvasComponent.MaxPaintingCodeLength)
+                return;
 
             component.SelectedState = args.State;
             component.PaintingCode = args.State;
@@ -105,12 +107,12 @@ namespace Content.Server.Canvas
         }
         private void OnCanvasBoundHeight(EntityUid uid, CanvasComponent component, CanvasHeightMessage args)
         {
-            component.Height = args.Height;
+            component.Height = Math.Clamp(args.Height, SharedCanvasComponent.MinResolution, SharedCanvasComponent.MaxResolution);
             Dirty(uid, component);
         }
         private void OnCanvasBoundWidth(EntityUid uid, CanvasComponent component, CanvasWidthMessage args)
         {
-            component.Width = args.Width;
+            component.Width = Math.Clamp(args.Width, SharedCanvasComponent.MinResolution, SharedCanvasComponent.MaxResolution);
             Dirty(uid, component);
         }
 

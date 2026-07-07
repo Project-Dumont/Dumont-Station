@@ -13,126 +13,33 @@ namespace Content.Shared.Canvas;
 [NetworkedComponent, ComponentProtoName("Canvas"), Access(typeof(SharedCanvasSystem))]
 public abstract partial class SharedCanvasComponent : Component
 {
-    private string _selectedState = string.Empty;
-    public string SelectedState
-    {
-        get => _selectedState;
-        set
-        {
-            if (_selectedState == value)
-                return;
+    public const int MinResolution = 16;
+    public const int MaxResolution = 32;
 
-            _selectedState = value;
-            Dirty();
-        }
-    }
+    public const int MaxPaintingCodeLength = MaxResolution * MaxResolution * 24;
+
+    public string SelectedState { get; set; } = string.Empty;
 
     [DataField("color")]
-    private Color _color;
-    public Color Color
-    {
-        get => _color;
-        set
-        {
-            if (_color == value)
-                return;
-
-            _color = value;
-            Dirty();
-        }
-    }
+    public Color Color { get; set; }
 
     [DataField("paintingCode")]
-    private string _paintingCode = string.Empty;
-    public string PaintingCode
-    {
-        get => _paintingCode;
-        set
-        {
-            if (_paintingCode == value)
-                return;
+    public string PaintingCode { get; set; } = string.Empty;
 
-            _paintingCode = value;
-            Dirty();
-        }
-    }
     [DataField("artist")]
-    private string _artist = string.Empty;
-    public string Artist
-    {
-        get => _artist;
-        set
-        {
-            if (_artist == value)
-                return;
-
-            _artist = value;
-            Dirty();
-        }
-    }
+    public string Artist { get; set; } = string.Empty;
 
     [DataField("signature")]
-    private string _signature = string.Empty;
-    public string Signature
-    {
-        get => _signature;
-        set
-        {
-            if (_signature == value)
-                return;
-
-            _signature = value;
-            Dirty();
-        }
-    }
+    public string Signature { get; set; } = string.Empty;
 
     [DataField("height")]
-    private int _height = 16;
-    public int Height
-    {
-        get => _height;
-        set
-        {
-            if (_height == value)
-                return;
-
-            _height = value;
-            Dirty();
-        }
-    }
+    public int Height { get; set; } = 16;
 
     [DataField("width")]
-    private int _width = 16;
-    public int Width
-    {
-        get => _width;
-        set
-        {
-            if (_width == value)
-                return;
-
-            _width = value;
-            //Nwidth = value;
-            Dirty();
-        }
-    }
+    public int Width { get; set; } = 16;
 
     [DataField("size")]
-    private int _sizeMultiplier = 2;
-    public int SizeMultiplier
-    {
-        get => _sizeMultiplier;
-        set
-        {
-            if (_sizeMultiplier == value)
-                return;
-
-            _sizeMultiplier = value;
-            Dirty();
-        }
-    }
-
-    public bool SelectableColor { get; internal set; }
+    public int SizeMultiplier { get; set; } = 2;
 
 
     /// <summary>

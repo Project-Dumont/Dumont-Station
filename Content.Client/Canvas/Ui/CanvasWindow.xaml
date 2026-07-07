@@ -7,7 +7,7 @@
     <BoxContainer Orientation="Vertical">
         <BoxContainer Name="HeaderColorPreview" Orientation="Horizontal" Align="Center" Margin="0 8 0 8">
             <Label Text="Colour:" Margin="0 0 8 0"/>
-            <Button Name="ColorPreview" Text="Cor" Margin="8 0 0 0" />
+            <Button Name="ColorPreview" Text="Color" Margin="8 0 0 0" />
         </BoxContainer>
         <BoxContainer Name="HeaderTools" Orientation="Horizontal" Margin="0 0 0 8">
             <LineEdit Name="Search" PlaceHolder="Paint Code" HorizontalExpand="True" />

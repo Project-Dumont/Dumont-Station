@@ -4,6 +4,7 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
@@ -84,17 +85,11 @@ namespace Content.Client.Canvas.Ui
                 // Ensure the input code is not empty
                 if (!string.IsNullOrEmpty(inputCode))
                 {
-                    // If the input code is shorter than expected, fill the rest with 'W'
-                    if (inputCode.Length < _height * _width)
-                    {
-                        inputCode = inputCode.PadRight(_height * _width, 'W');
-                    }
-
-                    // Update the painting code
                     _paintingCode = inputCode;
 
                     // Populate the grid with the new painting code
                     PopulatePaintingGrid();
+                    _paintingCode = string.Join(";", _segments);
                     OnSelected?.Invoke(_paintingCode);
                 }
                 else
@@ -278,6 +273,10 @@ namespace Content.Client.Canvas.Ui
         }
 
 
+        public void SetOwner(EntityUid owner)
+        {
+            _owner = owner;
+        }
         public void SetPaintingCode(string code)
         {
             _paintingCode = code;
@@ -463,11 +462,12 @@ namespace Content.Client.Canvas.Ui
 
             colorCode = colorCode.Replace(',', '.');
             string[] components = colorCode.Split('|');
+            var culture = CultureInfo.InvariantCulture;
             if (components.Length == 4 &&
-                float.TryParse(components[0], out float r) &&
-                float.TryParse(components[1], out float g) &&
-                float.TryParse(components[2], out float b) &&
-                float.TryParse(components[3], out float a))
+                float.TryParse(components[0], NumberStyles.Float, culture, out float r) &&
+                float.TryParse(components[1], NumberStyles.Float, culture, out float g) &&
+                float.TryParse(components[2], NumberStyles.Float, culture, out float b) &&
+                float.TryParse(components[3], NumberStyles.Float, culture, out float a))
             {
                 //Logger.ErrorS("canvas", $"color {colorCode} color code, color: {r}{g}{b}{a}.");
                 return new Color(r, g, b, a);

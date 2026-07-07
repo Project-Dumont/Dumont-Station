@@ -114,6 +114,7 @@ namespace Content.Client.Canvas.Ui
                 return;
 
             // Set properties from canvasComponent to the window
+            _window.SetOwner(Owner);
             _window.SetPaintingCode(canvasComponent?.PaintingCode ?? string.Empty);
             _window.SetHeight(canvasComponent?.Height ?? 16);
             _window.SetWidth(canvasComponent?.Width ?? 16);
