@@ -1,0 +1,74 @@
+- type: entity
+  parent: BaseItem
+  id: CanvasBase
+  name: Canvas
+  description: A canvas to Paint.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/artstuff.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - Payload
+  - type: Item
+    sprite: Objects/Misc/artstuff.rsi
+  - type: UseDelay
+    delay: 2.0
+  - type: Construction
+    graph: Canvas
+    node: canvas
+  - type: ActivatableUI
+    key: enum.CanvasUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CanvasUiKey.Key:
+        type: CanvasBoundUserInterface
+  - type: Canvas
+    color: white
+    paintingCode: ""
+    artist: ""
+    height: 16
+    width: 16
+  # Allows the canvas to be wrenched down so it stays put like an easel.
+  - type: Anchorable
+  - type: Physics
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25, -0.25, 0.25, 0.25"
+        density: 20
+        mask:
+        - HighImpassable
+
+- type: entity
+  parent: CanvasBase
+  id: CanvasMedium
+  name: Medium Canvas
+  description: A medium sized canvas to paint.
+  components:
+  - type: Canvas
+    height: 16
+    width: 16
+
+- type: entity
+  parent: CanvasBase
+  id: CanvasLarge
+  name: Large Canvas
+  description: A big sized canvas to paint.
+  components:
+  - type: Canvas
+    height: 16
+    width: 32
+
+- type: entity
+  parent: CanvasBase
+  id: CanvasGiant
+  name: Giant Canvas
+  description: A giant sized canvas to paint.
+  components:
+  - type: Canvas
+    height: 32
+    width: 32
