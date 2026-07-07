@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["conspirator_greeting.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from TG station as heretic_gain.ogg"
