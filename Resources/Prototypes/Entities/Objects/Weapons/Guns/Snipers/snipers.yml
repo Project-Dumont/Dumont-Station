@@ -261,6 +261,7 @@
   - type: Gun
     # fireRate: 0.4 # Goobstation
     selectedMode: SemiAuto
+    projectileSpeed: 55 # Dumont
     availableModes:
     - SemiAuto
     soundGunshot:
