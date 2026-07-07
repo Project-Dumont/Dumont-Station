@@ -3,14 +3,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: construction
-  name: Canvas
   id: Canvas
   graph: Canvas
   startNode: start
   targetNode: canvas
   category: construction-category-tools
   objectType: Item
-  description: Um quadro para pintar.
-  icon:
-    sprite: Objects/Misc/artstuff.rsi
-    state: icon
