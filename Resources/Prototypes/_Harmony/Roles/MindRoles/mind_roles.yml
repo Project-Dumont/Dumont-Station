@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleConspirator
+  name: Conspirator Role
+  components:
+  - type: ConspiratorRole
+  - type: MindRole
+    antagPrototype: Conspirator
+    exclusiveAntag: true
+    roleType: TeamAntagonist
+    subtype: role-subtype-conspirator
