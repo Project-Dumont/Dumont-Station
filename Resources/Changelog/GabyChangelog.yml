@@ -3461,3 +3461,13 @@ Entries:
       message: Pequenas correções no bitrunning.
   id: 414
   time: '2026-07-08T02:45:26.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Segurança e comando tem um aplicativo de SOS no PDA. Apertar esse
+        aplicativo resulta em um alerta avisando ao departamento de segurança
+        que você necessita de ajuda, mas sem sua localização. Warden, HOP e HOS
+        tem um cartucho de SOS no armário deles para quem solicitar.
+  id: 415
+  time: '2026-07-08T12:26:19.0000000+00:00'
