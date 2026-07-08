@@ -38,7 +38,9 @@ public sealed class OutlineRichTextLabel : RichTextLabel
         IoCManager.InjectDependencies(this);
         var prototypes = IoCManager.Resolve<IPrototypeManager>();
         _outlineShader = prototypes.Index(OutlinePrototype).InstanceUnique();
-        Thickness = thickness;
+
+        _thickness = thickness;
+        _outlineOffsets = BuildOutlineOffsets();
     }
 
     // _Starfall Start
