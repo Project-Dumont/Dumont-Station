@@ -3445,3 +3445,11 @@ Entries:
       message: Onis agora podem usar revólveres.
   id: 412
   time: '2026-07-07T11:20:37.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado novo antagonista! Conspiradores.
+    - type: Add
+      message: SHHHHH, eles podem nos ouvir, fica em silêncio!
+  id: 413
+  time: '2026-07-08T02:23:13.0000000+00:00'
