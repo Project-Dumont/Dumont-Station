@@ -3,15 +3,15 @@
   id: BitrunningDeliveryPeacefulLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 15, 30
+      range: 5, 10
     children:
-    - id: SteelOre1Unprocessed
+    - id: SteelOre5
       weight: 30
-    - id: SpaceQuartz1Unprocessed
+    - id: SpaceQuartz5
       weight: 20
-    - id: SilverOre1Unprocessed
+    - id: SilverOre3
       weight: 7
-    - id: SpaceCash100
+    - id: SpaceCash500
       weight: 2
 
 # x2 multiply
@@ -19,43 +19,49 @@
   id: BitrunningDeliveryEasyLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 30, 60
+      range: 15, 30
     children:
-    - id: SteelOre1Unprocessed
+    - id: SteelOre5
       weight: 30
-    - id: SpaceQuartz1Unprocessed
+    - id: SpaceQuartz5
       weight: 20
-    - id: SilverOre1Unprocessed
+    - id: SilverOre3
       weight: 7
-    - id: SpaceCash100
-      weight: 2
+    - id: SpaceCash500
+      weight: 1
+    - id: SpaceCash1000
+      weight: 3
+    - id: ResearchDisk
+      weight: 1
 
 # x4 multiply
 - type: entityTable
   id: BitrunningDeliveryMediumLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 60, 120
+      range: 15, 30
     children:
-    - id: SteelOre1Unprocessed
+    - id: SteelOre5
       weight: 25
-    - id: SpaceQuartz1Unprocessed
+    - id: SpaceQuartz5
       weight: 18
-    - id: SilverOre1Unprocessed
+    - id: SilverOre3
       weight: 10
-    - id: PlasmaOre1Unprocessed
+    - id: PlasmaOre3
       weight: 10
-    - id: GoldOre1Unprocessed
+    - id: GoldOre3
       weight: 6
-    - id: UraniumOre1Unprocessed
+    - id: UraniumOre3
       weight: 4
-    - id: DiamondOre1Unprocessed
+    - id: DiamondOre1
       weight: 3
-    - id: MaterialBSCrystal1Unprocessed
+    - id: MaterialBSCrystal1
       weight: 2
-    - id: SpaceCash100
-      weight: 2
+    - id: SpaceCash1000
+      weight: 3
     - id: SpaceCash500
+      weight: 1
+    - id: ResearchDisk5000
       weight: 1
 
 # x6 multiply
@@ -63,25 +69,27 @@
   id: BitrunningDeliveryHardLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 90, 180
+      range: 25, 50
     children:
-    - id: SteelOre1Unprocessed
+    - id: SteelOre5
       weight: 22
-    - id: SpaceQuartz1Unprocessed
+    - id: SpaceQuartz5
       weight: 16
-    - id: SilverOre1Unprocessed
+    - id: SilverOre3
       weight: 10
-    - id: PlasmaOre1Unprocessed
+    - id: PlasmaOre3
       weight: 11
-    - id: GoldOre1Unprocessed
+    - id: GoldOre3
       weight: 8
-    - id: UraniumOre1Unprocessed
+    - id: UraniumOre3
       weight: 7
-    - id: DiamondOre1Unprocessed
+    - id: DiamondOre1
       weight: 5
-    - id: MaterialBSCrystal1Unprocessed
+    - id: MaterialBSCrystal1
       weight: 3
-    - id: SpaceCash500
+    - id: SpaceCash1000
+      weight: 3
+    - id: ResearchDisk10000
       weight: 1
 
 # x8 multiply
@@ -89,23 +97,23 @@
   id: BitrunningDeliveryExtremeLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 120, 240
+      range: 60, 120
     children:
-    - id: SteelOre1Unprocessed
+    - id: SteelOre5
       weight: 20
-    - id: SpaceQuartz1Unprocessed
+    - id: SpaceQuartz5
       weight: 14
-    - id: SilverOre1Unprocessed
+    - id: SilverOre3
       weight: 10
-    - id: PlasmaOre1Unprocessed
+    - id: PlasmaOre3
       weight: 12
-    - id: GoldOre1Unprocessed
+    - id: GoldOre3
       weight: 9
-    - id: UraniumOre1Unprocessed
+    - id: UraniumOre3
       weight: 8
-    - id: DiamondOre1Unprocessed
+    - id: DiamondOre1
       weight: 7
-    - id: MaterialBSCrystal1Unprocessed
+    - id: MaterialBSCrystal1
       weight: 5
-    - id: SpaceCash500
+    - id: SpaceCash10000
       weight: 1

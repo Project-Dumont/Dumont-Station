@@ -36,6 +36,13 @@ bitrunning-disk-popup-selected = Selecionado: { $option }
 bitrunning-disk-examine-unselected = [color=yellow]Use na mão para escolher uma opção.[/color]
 bitrunning-disk-examine-selected = [color=lightblue]Selecionado: { $option }.[/color]
 
+bitrunning-disk-option-combat-medipen = Medipen de combate
+bitrunning-disk-option-anaconda = Anaconda
+bitrunning-disk-option-pulse-pistol = Pistola de pulso
+bitrunning-disk-option-pressure-modkit = Modkit de pressão
+bitrunning-disk-option-hardsuit-riot = Hardsuit anti-motim
+bitrunning-disk-option-hardsuit-standard = Hardsuit de combate
+bitrunning-disk-option-hardsuit-medical = Hardsuit médica
 bitrunning-disk-option-pizza-box = Caixa de pizza
 bitrunning-disk-option-medical-beam-gun = Arma de raio médico
 bitrunning-disk-option-c4 = C-4
@@ -58,10 +65,44 @@ bitrunning-disk-option-range-modkit = Modkit de alcance
 bitrunning-disk-option-fire-rate-modkit = Modkit de cadência
 bitrunning-disk-option-damage-modkit = Modkit de dano
 bitrunning-disk-option-space-modkit = Modkit espacial
-bitrunning-disk-option-proto-kinetic-crusher = Proto-kinetic crusher
-bitrunning-disk-option-proto-kinetic-glaive = Proto-kinetic glaive
-bitrunning-disk-option-proto-kinetic-hammer = Proto-kinetic hammer
-bitrunning-disk-option-proto-kinetic-machete = Proto-kinetic machete
+bitrunning-disk-option-proto-kinetic-crusher = Crusher
+bitrunning-disk-option-proto-kinetic-glaive = Gládio
+bitrunning-disk-option-proto-kinetic-hammer = Martelo
+bitrunning-disk-option-proto-kinetic-machete = Machete
+bitrunning-disk-option-pka = Acelerador protocinético
+bitrunning-disk-option-pka-pistol = Pistola protocinética
+bitrunning-disk-option-pka-shotgun = Espingarda protocinética
+bitrunning-disk-option-pka-repeater = Rifle de reptição protocinético
+
+ent-BitrunningGearSimpleDisk = equipamento de bitrunning: simples
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningGearComplexDisk = equipamento de bitrunning: complexo
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningGearAdvancedDisk = equipamento de bitrunning: avançado
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningProgramBasicDisk = programa de bitrunning: básico
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningProgramComplexDisk = programa de bitrunning: complexo
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningProgramEliteDisk = programa de bitrunning: elite
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningGearPKAModsDisk = equipamento de bitrunning: mods PKA
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningGearPremiumPKAModsDisk = equipamento de bitrunning: mods PKA premium
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningGearPKADisk = equipamento de bitrunning: aceleradores protocinéticos
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
+
+ent-BitrunningGearCrusherModsDisk = equipamento de bitrunning: crusher
+ .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
 
 bitrunning-ui-title = Console Quântico
 bitrunning-ui-label-status = Status:

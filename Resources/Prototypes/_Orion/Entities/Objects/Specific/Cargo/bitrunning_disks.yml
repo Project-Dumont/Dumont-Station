@@ -32,7 +32,7 @@
   - type: BitrunningAbilityDisk
     grantMode: Item
     options:
-      bitrunning-disk-option-pizza-box: FoodBoxPizza
+      bitrunning-disk-option-pizza-box: FoodBoxPizzaFilled #dumont edit lmao the pizza box didnt come with pizza
       bitrunning-disk-option-medical-beam-gun: MedicalBeamGun
       bitrunning-disk-option-c4: C4
       bitrunning-disk-option-boombox: BoomboxSlavFull
@@ -46,8 +46,11 @@
   - type: BitrunningAbilityDisk
     grantMode: Item
     options:
-      bitrunning-disk-option-luxury-medipen: LuxuryMedipen
-      bitrunning-disk-option-viper: WeaponPistolViper
+#Dumont edit
+      bitrunning-disk-option-anaconda: WeaponPistolAnaconda
+      bitrunning-disk-option-combat-medipen: CombatMedipen
+#      bitrunning-disk-option-luxury-medipen: LuxuryMedipen
+#      bitrunning-disk-option-viper: WeaponPistolViper
       bitrunning-disk-option-armor-vest: ClothingOuterArmorBasic
 
 - type: entity
@@ -59,10 +62,16 @@
   - type: BitrunningAbilityDisk
     grantMode: Item
     options:
-      bitrunning-disk-option-advanced-laser-gun: WeaponAdvancedLaser
+# Dumont edit
+      bitrunning-disk-option-pulse-pistol: WeaponPulsePistol
+#      bitrunning-disk-option-advanced-laser-gun: WeaponAdvancedLaser
       bitrunning-disk-option-double-energy-sword: EnergySwordDouble
-      bitrunning-disk-option-energy-scythe: PlasmaScythe
-      bitrunning-disk-option-syndicate-mini-bomb: SyndieMiniBomb
+#      bitrunning-disk-option-energy-scythe: PlasmaScythe
+#      bitrunning-disk-option-syndicate-mini-bomb: SyndieMiniBomb dumont blows up the level, fucks everything up
+      bitrunning-disk-option-hardsuit-riot: ClothingOuterHardsuitCombatRiot
+      bitrunning-disk-option-hardsuit-standard: ClothingOuterHardsuitCombatStandard
+      bitrunning-disk-option-hardsuit-medical: ClothingOuterHardsuitCombatMedical
+
 
 - type: entity
   parent: BaseBitrunningDisk
@@ -135,7 +144,9 @@
     grantMode: Item
     options:
       bitrunning-disk-option-damage-modkit: PKAUpgradeDamage
-      bitrunning-disk-option-space-modkit: PKAUpgradeSpace
+#Dumont edit
+      bitrunning-disk-option-pressure-modkit: PKAUpgradePressure
+#      bitrunning-disk-option-space-modkit: PKAUpgradeSpace
 
 - type: entity
   parent: BaseBitrunningDisk
@@ -148,6 +159,24 @@
     options:
       bitrunning-disk-option-proto-kinetic-crusher: WeaponCrusher
       bitrunning-disk-option-proto-kinetic-glaive: WeaponCrusherGlaive
+# Dumont edit why wouldn't they be on the same thing?
+      bitrunning-disk-option-proto-kinetic-hammer: WeaponCrusherHammer
+      bitrunning-disk-option-proto-kinetic-machete: LavalandWeaponKineticMachete
+
+#Dumont new disks
+- type: entity
+  parent: BaseBitrunningDisk
+  id: BitrunningGearPKADisk
+  name: "bitrunning gear: proto-kinetic accelerator"
+  description: Use in hand to choose a one-time gear package.
+  components:
+  - type: BitrunningAbilityDisk
+    grantMode: Item
+    options:
+      bitrunning-disk-option-pka: WeaponProtoKineticAccelerator
+      bitrunning-disk-option-pka-pistol: WeaponProtoKineticPistol
+      bitrunning-disk-option-pka-shotgun: WeaponProtoKineticRepeater
+      bitrunning-disk-option-pka-repeater: WeaponProtoKineticShotgun
 
 - type: entity
   parent: BaseBitrunningDisk
