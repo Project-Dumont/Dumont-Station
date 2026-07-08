@@ -41,13 +41,19 @@ public sealed partial class FancySpeechBubble : Control
         BuildLines(message, _contentTag);
     }
 
+    // _Starfall Start
+    // Static regex to match the font tag in the message without reparsing regex everytime
+    private static readonly Regex FontRegex = new(
+        @"\[font=([^\s\]]+)\s+size=(\d+)\]",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
     /// <summary>
     /// Gets the font that the message has.
     /// </summary>
     /// <param name="message"></param>
     private (string? FontName, int? FontSize) ParseFont(string input)
     {
-        var match = Regex.Match(input, @"\[font=([^\s\]]+)\s+size=(\d+)\]", RegexOptions.IgnoreCase);
+        var match = FontRegex.Match(input); // _Starfall: Use the static regex to match the font tag in the message without reparsing regex everytime
 
         if (match.Success)
         {
@@ -61,23 +67,24 @@ public sealed partial class FancySpeechBubble : Control
     // _Starfall Start
     private void BuildLines(ChatMessage chatMessage, string? tag)
     {
-        string messageString;
-        if (tag != null)
+        // _Starfall: Get the message string inside the tag if it exists, otherwise use the wrapped message
+        var messageString = tag != null
+            ? SharedChatSystem.GetStringInsideTag(chatMessage, tag)
+            : chatMessage.WrappedMessage;
+
+        // _Starfall Start
+        // Skip font parsing if the font is forced
+        if (!_forceFont)
         {
-            messageString = SharedChatSystem.GetStringInsideTag(chatMessage, tag);
+            var font = ParseFont(chatMessage.WrappedMessage);
+
+            if (font.FontName != null)
+                _font = font.FontName;
+
+            if (font.FontSize != null)
+                _fontSize = font.FontSize.Value;
         }
-        else
-        {
-            messageString = chatMessage.WrappedMessage;
-        }
-
-        var font = ParseFont(chatMessage.WrappedMessage);
-
-        if (font.FontName != null && !_forceFont)
-            _font = font.FontName;
-
-        if (font.FontSize != null && !_forceFont)
-            _fontSize = font.FontSize.Value;
+        // _Starfall end
 
         var wraptest = WordWrapHelper.WordWrap(messageString, WordWrapLength);
 
@@ -88,18 +95,23 @@ public sealed partial class FancySpeechBubble : Control
             Align = BoxContainer.AlignMode.Center,
         };
 
+        // _Starfall: Create a dictionary to hold the font parameters for the markup node
+        var fontParameters = new Dictionary<string, MarkupParameter>
+        {
+            ["size"] = new MarkupParameter(_fontSize)
+        };
+
         foreach (var message in wraptest)
         {
-            Log.Debug("message: " + message);
+            // Log.Debug("message: " + message); // _Starfall: we dont need to log speech bubbles
 
             var msg = new FormattedMessage();
 
-            msg.PushTag(new MarkupNode("font",
+            // _Starfall: Push the font tag with the font parameters to the message instead of recreating font parameters for every line
+            msg.PushTag(new MarkupNode(
+                "font",
                 new MarkupParameter(_font),
-                new Dictionary<string, MarkupParameter>()
-                {
-                    { "size", new MarkupParameter(_fontSize) }
-                }));
+                fontParameters));
 
             if (_color != null)
                 msg.PushColor(_color.Value);
@@ -159,88 +171,10 @@ public sealed partial class FancySpeechBubble : Control
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>
-    private List<FormattedMessage> BuildMessages(FormattedMessage message)
-    {
-        List<FormattedMessage> lines = new();
-
-        List<MarkupNode> unclosedNodes = new();
-
-        FormattedMessage currentLine = new();
-
-        var wrapLimit = 35;
-
-        foreach (var node in message)
-        {
-            //There is text in this node
-            if (node.Name == null && node.Value.StringValue != null)
-            {
-                foreach (var tag in unclosedNodes)
-                {
-                    currentLine.PushTag(tag);
-                }
-
-                if (currentLine.ToString().Length + node.Value.StringValue.Length < wrapLimit)
-                {
-                    currentLine.PushTag(node);
-                    continue;
-                }
-
-                if (currentLine.ToString().Length + node.Value.StringValue.Length >= wrapLimit)
-                {
-                    //var wrapList = ShittyWrap(node.Value.StringValue, wrapLimit);
-                    var wrapList = WordWrapHelper.WordWrap(node.Value.StringValue, wrapLimit);
-
-                    foreach (var wrap in wrapList)
-                    {
-                        if (currentLine.ToString().Length + wrap.Length <= wrapLimit + (wrapLimit / 4))
-                        {
-                            currentLine.AddMarkupOrThrow(wrap);
-                            continue;
-                        }
-
-                        var newLine = new FormattedMessage();
-                        foreach (var tag in unclosedNodes)
-                        {
-                            currentLine.Pop();
-                            newLine.PushTag(tag);
-                        }
-                        lines.Add(currentLine);
-                        currentLine = newLine;
-                        currentLine.AddMarkupOrThrow(wrap);
-                        foreach (var _ in unclosedNodes)
-                        {
-                            currentLine.Pop();
-                        }
-                    }
-                }
-                continue;
-            }
-            //This node is a tag we've already seen
-            if (node.Closing)
-            {
-                currentLine.Pop();
-                var toRemove = unclosedNodes.FindLast(n => node.Name == n.Name);
-                if (toRemove != null)
-                    unclosedNodes.Remove(toRemove);
-                continue;
-            }
-
-            //This node is a tag
-            if (node.Name != null && !node.Closing)
-            {
-                unclosedNodes.Add(node);
-                continue;
-            }
-        }
-
-        if (currentLine.Count > 0)
-        {
-            lines.Add(currentLine);
-
-        }
-
-        return lines;
-    }
+    // private List<FormattedMessage> BuildMessages(FormattedMessage message)
+    // {
+    //   _Starfall Here lies where the barely working magic happens because i made the magic work better
+    // }
 
 }
 
