@@ -564,7 +564,7 @@
       prob: 0.5
     - id: SecApartmentTablet # Dumont edit it's the hos's job
     - id: SecurityMegaphone
-    - id: ImplanterBoxHoSFilled # Dumont
+    - id: SecureLockboxHoSFilled # Dumont
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

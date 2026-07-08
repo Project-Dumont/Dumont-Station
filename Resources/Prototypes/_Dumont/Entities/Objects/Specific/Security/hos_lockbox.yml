@@ -1,9 +1,9 @@
 - type: entity
   name: secure implanter lockbox
   suffix: Empty
-  description: Standard issue portable lockbox for various implanters, perfectly preserving them inside. Compact, convenient and stylish.
+  description: Standard issue portable lockbox for various implanters, perfectly preserving them inside. Compact, convenient and stylish. Available under the head of security's autority aboard all NanoTrasen stations.
   parent: BaseStorageItem
-  id: ImplanterBoxHoS
+  id: SecureLockboxHoS
   components:
   - type: Appearance
   - type: Lock
@@ -11,7 +11,7 @@
   - type: AccessReader
     access: [["HeadOfSecurity"]]
   - type: Sprite
-    sprite: _Dumont/Objects/Specific/Security/implanter_box_hos.rsi
+    sprite: _Dumont/Objects/Specific/Security/secure_lockbox_hos.rsi
     state: icon
     layers:
     - state: icon
@@ -28,7 +28,9 @@
       - Trash # funny
   - type: Item
     size: Normal
-    sprite: _Dumont/Objects/Specific/Security/implanter_box_hos.rsi
+    shape:
+    - 0,0,2,1
+    sprite: _Dumont/Objects/Specific/Security/secure_lockbox_hos.rsi
   - type: PhysicalComposition
     materialComposition:
       Plastic: 75
