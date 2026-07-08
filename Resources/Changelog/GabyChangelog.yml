@@ -3453,3 +3453,11 @@ Entries:
       message: SHHHHH, eles podem nos ouvir, fica em silêncio!
   id: 413
   time: '2026-07-08T02:23:13.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona monitor do host para o bitrunner.
+    - type: Fix
+      message: Pequenas correções no bitrunning.
+  id: 414
+  time: '2026-07-08T02:45:26.0000000+00:00'
