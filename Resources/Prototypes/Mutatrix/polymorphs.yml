@@ -1,0 +1,253 @@
+- type: polymorph
+  id: MutatrixLaserRaptorPolymorph
+  configuration:
+    entity: MobLaserRaptor
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: true
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    allowRepeatedMorphs: false
+    ignoreAllowRepeatedMorphs: false
+    cooldown: 90
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# These polymorphs intentionally delegate transformation mechanics to the existing
+# Dumont/Goob PolymorphSystem. Mutatrix code should call these prototypes instead
+# of manually swapping bodies.
+
+
+
+- type: polymorph
+  id: MutatrixRatPolymorph
+  configuration:
+    entity: MobMouse
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+- type: polymorph
+  id: MutatrixGoliathPolymorph
+  configuration:
+    entity: MobLavalandGoliath
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+- type: polymorph
+  id: MutatrixRevenantPolymorph
+  configuration:
+    entity: MobRevenant
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+- type: polymorph
+  id: MutatrixChitinidPolymorph
+  configuration:
+    entity: MobChitinid
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+- type: polymorph
+  id: MutatrixSpaceCarpPolymorph
+  configuration:
+    entity: MobCarp
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+- type: polymorph
+  id: MutatrixPlasmamanPolymorph
+  configuration:
+    entity: MobPlasmaman
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+- type: polymorph
+  id: MutatrixArachnidPolymorph
+  configuration:
+    entity: MobArachnid
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+# BaseMobAsteroid is abstract in Dumont, so this entry uses MobHivelord as the
+# generic concrete asteroid-fauna representative for now. Scanner sources still
+# include BaseMobAsteroid so derived asteroid fauna can map to this DNA.
+- type: polymorph
+  id: MutatrixBaseMobAsteroidPolymorph
+  configuration:
+    entity: MobHivelord
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: false
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer:
+    - component: LanguageKnowledge
+    - component: LanguageSpeaker
+    - component: Grammar
+
+# Fix39: new initial forms.
+
+- type: polymorph
+  id: MutatrixLegionPolymorph
+  configuration:
+    entity: MobLegion
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: true
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer: []

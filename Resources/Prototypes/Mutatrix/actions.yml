@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionMutatrixOpenMenu
+  name: Abrir Mutatrix
+  description: Abre a roda de transformações do Mutatrix.
+  components:
+  - type: Action
+    checkCanInteract: false
+    useDelay: 0.5
+    icon:
+      sprite: Objects/Devices/mutatrix.rsi
+      state: icon
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:MutatrixOpenMenuActionEvent
+
+# O componente Mutatrix no código procura exatamente ActionMutatrixCaptureDNA.
+# O ID antigo ActionMutatrixCaptureDna quebrava ao pegar o item.
+- type: entity
+  parent: BaseAction
+  id: ActionMutatrixCaptureDNA
+  name: Registrar DNA
+  description: Escaneia uma criatura próxima para registrar uma nova forma no Mutatrix.
+  components:
+  - type: Action
+    checkCanInteract: false
+    useDelay: 1
+    icon:
+      sprite: Objects/Devices/mutatrix.rsi
+      state: icon
+    itemIconStyle: BigAction
+  - type: TargetAction
+    range: 1.25
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:MutatrixCaptureDnaActionEvent
+
+# Alias de compatibilidade caso algum arquivo antigo ainda use o ID com Dna.
+- type: entity
+  parent: BaseAction
+  id: ActionMutatrixCaptureDna
+  name: Registrar DNA
+  description: Escaneia uma criatura próxima para registrar uma nova forma no Mutatrix.
+  components:
+  - type: Action
+    checkCanInteract: false
+    useDelay: 1
+    icon:
+      sprite: Objects/Devices/mutatrix.rsi
+      state: icon
+    itemIconStyle: BigAction
+  - type: TargetAction
+    range: 1.25
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:MutatrixCaptureDnaActionEvent

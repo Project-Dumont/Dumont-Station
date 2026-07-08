@@ -1,0 +1,209 @@
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ============================================================
+# Mutatrix - Tetramus
+# ============================================================
+
+- type: entity
+  parent: SimpleMobBase
+  id: MobMutatrixTetramus
+  name: Tetramus
+  description: Uma forma forte de quatro braços, feita para combate direto, saltos longos e golpes brutais.
+  components:
+  - type: MutatrixQuatroBracos
+
+  # Usa corpo Animal para não gerar as 2 mãos extras automáticas do Monkey.
+  # As únicas mãos do Tetramus são as 4 definidas abaixo no componente Hands.
+  - type: Body
+    prototype: Animal
+
+  # 4 slots de mão: 2 esquerdas e 2 direitas.
+  - type: Hands
+    showInHands: false
+    hands:
+      hand_left_upper:
+        location: Left
+      hand_left_lower:
+        location: Left
+      hand_right_upper:
+        location: Right
+      hand_right_lower:
+        location: Right
+    sortedHands:
+    - hand_right_upper
+    - hand_left_upper
+    - hand_right_lower
+    - hand_left_lower
+
+  - type: ComplexInteraction
+
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Mutatrix/Mobs/tetramus.rsi
+    # Reduzido no eixo vertical para não ficar alto demais na tela.
+    scale: 0.86, 0.74
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: tetramus
+
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: tetramus
+      Critical:
+        Base: tetramus
+      Dead:
+        Base: tetramus-dead
+
+  - type: Appearance
+
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.38
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+  # Velocidade de pessoa comum com sprint.
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 4.5
+
+  - type: Sprinter
+    staminaDrainRate: 3
+
+  - type: Stamina
+    critThreshold: 130
+
+  # Super pulo da genética do Wega.
+  - type: JumpGen
+
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Critical
+      350: Dead
+
+  # Ataque normal no meio do intervalo pedido: 20 a 26.
+  - type: MeleeWeapon
+    range: 1.2
+    soundHit:
+      collection: Punch
+    angle: 30
+    attackRate: 0.85
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 23
+        Structural: 15
+
+  # IA básica.
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        6
+      AggroVisionRadius: !type:Single
+        7
+      NavSmash: !type:Bool
+        true
+
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+
+  - type: Speech
+    speechSounds: Alto
+
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
+    wilhelmProbability: 0.001
+
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+
+  - type: NoSlip
+
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: polymorph
+  id: MutatrixTetramusPolymorph
+  configuration:
+    entity: MobMutatrixTetramus
+    duration: 420
+    forced: false
+    transferDamage: false
+    transferName: true
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    allowRepeatedMorphs: false
+    ignoreAllowRepeatedMorphs: false
+    cooldown: 90
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer: []
+
+- type: mutatrixTransformation
+  id: MutatrixTetramus
+  polymorph: MutatrixTetramusPolymorph
+  mobPrototype: MobMutatrixTetramus
+  name: mutatrix-transformation-tetramus-name
+  description: mutatrix-transformation-tetramus-desc
+  category: mutatrix-category-humanoid
+  defaultUnlocked: true
+  order: 12
+  icon:
+    sprite: Mutatrix/Mobs/tetramus.rsi
+    state: tetramus
+
+# ============================================================
+# Actions
+# ============================================================
+
+- type: entity
+  parent: BaseAction
+  id: ActionMutatrixQuatroBracosKick
+  name: mutatrix-quatrobracos-action-kick-name
+  description: mutatrix-quatrobracos-action-kick-desc
+  components:
+  - type: Action
+    priority: 2
+    useDelay: 10
+    icon:
+      sprite: _Wega/Interface/Actions/actions_hulk.rsi
+      state: charge
+    itemIconStyle: BigAction
+  - type: TargetAction
+    interactOnMiss: false
+    range: 2
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:MutatrixQuatroBracosKickActionEvent

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprites created/adapted by Guilherme Galinha Azul for Mutatrix Tetramus.",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "tetramus",
+      "directions": 4
+    },
+    {
+      "name": "tetramus-dead"
+    }
+  ]
+}

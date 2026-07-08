@@ -1,0 +1,226 @@
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ============================================================
+# Mutatrix - Córtex
+# ============================================================
+
+# IA simples de criatura pequena: procura comida e vagueia, sem Mouse Call,
+# sem reprodução, sem Mousemind, sem veneno/doença de rato e sem poderes de rato.
+- type: htnCompound
+  id: MutatrixCortexCompound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: FoodCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: entity
+  parent: SimpleMobBase
+  id: MobMutatrixCortex
+  name: Córtex
+  description: Uma forma pequena, frágil e extremamente inteligente criada pelo Mutatrix para infiltração, mobilidade e acesso técnico.
+  components:
+  - type: MutatrixGreyMatter
+    manipulationRange: 2.0
+
+  # IA básica parecida com a de um animal pequeno, mas sem a árvore MouseCompound.
+  # MouseCompound inclui chamada de ratos e comportamento de rato, então usamos uma IA própria.
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MutatrixCortexCompound
+
+  # Neutro como criatura pequena quando spawnado como NPC.
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+
+  # Mantidos: visão noturna, rastejar por baixo de obstáculos baixos e usar ventilação.
+  - type: VentCrawler
+    enterDelay: 0.25
+    allowInventory: false
+  - type: Crawler
+  - type: NightVision
+    color: "#96A0A0"
+    activateSound: null
+    deactivateSound: null
+
+  # Corpo pequeno para passar por espaços de mob pequeno, sem herdar MobMouse.
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 10
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+
+  # Duas mãos para pegar/manusear itens. Usa corpo humano só para gerar mão esquerda/direita,
+  # mas a aparência continua sendo a sprite customizada do Córtex.
+  - type: Hands
+    showInHands: false
+  - type: ComplexInteraction
+  - type: Puller
+  - type: Body
+    bodyType: Complex
+    prototype: Human
+    requiredLegs: 2
+
+  # Acesso embutido: substitui os poderes bugados de hackear/desligar APC/alterar acesso.
+  # Dá acesso amplo a portas, APCs e máquinas sem precisar de ação extra na barra.
+  - type: Access
+    groups:
+    - AllAccess
+    - Silicon
+    tags:
+    - EmergencyShuttleRepealAll
+    - Captain
+    - HeadOfPersonnel
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - HeadOfSecurity
+    - ResearchDirector
+    - Command
+    - Cryogenics
+    - Security
+    - Detective
+    - Armory
+    - Brig
+    - Lawyer
+    - Engineering
+    - Medical
+    - Quartermaster
+    - Salvage
+    - Cargo
+    - Research
+    - Service
+    - Maintenance
+    - External
+    - Janitor
+    - Theatre
+    - Bar
+    - Chemistry
+    - Kitchen
+    - Chapel
+    - Hydroponics
+    - Atmospherics
+    - GenpopEnter
+    - GenpopLeave
+    - Robotics
+    - Journalism
+    - Virology
+    - Psychology
+    - Pharmacy
+    - Genetics
+    - Mail
+    - Mining
+    - BrigMedic
+    - Library
+    - Bitrun
+    - CentralCommand
+    - Borg
+    - BasicSilicon
+    - StationAi
+    - NuclearOperative
+    - SyndicateAgent
+    - Wizard
+    - Xenoborg
+
+  - type: Insulated
+    coefficient: 0
+
+  - type: Speech
+    speechVerb: SmallMob
+
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: Mutatrix/Mobs/cortex.rsi
+    scale: 0.72, 0.72
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cortex
+
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cortex
+      Critical:
+        Base: cortex
+      Dead:
+        Base: cortex-dead
+
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 5.2
+
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      18: Critical
+      30: Dead
+
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Blunt: 1
+
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+
+  # Sobrescreve a Tag herdada de SimpleMobBase para remover DoorBumpOpener.
+  # Assim o Córtex não ativa portas automaticamente passando por baixo delas.
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - FootstepSound
+
+- type: polymorph
+  id: MutatrixCortexPolymorph
+  configuration:
+    entity: MobMutatrixCortex
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: true
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    allowRepeatedMorphs: false
+    ignoreAllowRepeatedMorphs: false
+    cooldown: 90
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer: []
+
+- type: mutatrixTransformation
+  id: MutatrixCortex
+  polymorph: MutatrixCortexPolymorph
+  mobPrototype: MobMutatrixCortex
+  name: mutatrix-transformation-cortex-name
+  description: mutatrix-transformation-cortex-desc
+  category: mutatrix-category-humanoid
+  defaultUnlocked: true
+  order: 10
+  icon:
+    sprite: Mutatrix/Mobs/cortex.rsi
+    state: cortex-icon

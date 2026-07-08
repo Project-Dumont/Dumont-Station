@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: Mutatrix
+  parent: BaseItem
+  name: Mutatrix
+  description: Um dispositivo xenogenético de transformação usado no pulso.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/mutatrix.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Devices/mutatrix.rsi
+    size: Small
+  - type: Clothing
+    sprite: Objects/Devices/mutatrix.rsi
+    slots:
+    - gloves
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.20,-0.20,0.20,0.20"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: Mutatrix
+  - type: UserInterface
+    interfaces:
+      enum.MutatrixUiKey.Key:
+        type: MutatrixBoundUserInterface
+  - type: StaticPrice
+    price: 5000

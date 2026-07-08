@@ -417,11 +417,19 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
+            // Mutatrix/Fix53:
+            // Keep the source inventory template before transfer.
+            // This prevents equipped items from falling when the target humanoid lacks
+            // a slot that the original body had, e.g. IPC missing ears/special slots.
+            // This is still safe for non-humanoids: if the child has no InventoryComponent,
+            // the original fallback path below is used.
             // Goob edit start
             if (TryComp(uid, out InventoryComponent? inventory1))
             {
                 if (TryComp(child, out InventoryComponent? inventory2))
                 {
+                    _inventory.SetTemplateId((child, inventory2), inventory1.TemplateId);
+                    TryComp(child, out inventory2);
                     _inventory.TransferEntityInventories((uid, inventory1), (child, inventory2), false);
                     foreach (var hand in _hands.EnumerateHeld(uid))
                     {

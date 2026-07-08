@@ -1,0 +1,49 @@
+- type: mutatrixTransformation
+  id: MutatrixLaserRaptor
+  polymorph: MutatrixLaserRaptorPolymorph
+  mobPrototype: MobLaserRaptor
+  name: mutatrix-transformation-laser-raptor-name
+  description: mutatrix-transformation-laser-raptor-desc
+  category: mutatrix-category-fauna
+  defaultUnlocked: true
+  order: 0
+  icon:
+    sprite: Mobs/Aliens/laser_raptor.rsi
+    state: laser_raptor
+
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+
+- type: mutatrixTransformation
+  id: MutatrixGoliath
+  polymorph: MutatrixGoliathPolymorph
+  mobPrototype: MobLavalandGoliath
+  scanPrototypes:
+  - MobLavalandGoliath
+  - MobGoliath
+  name: mutatrix-transformation-goliath-name
+  description: mutatrix-transformation-goliath-desc
+  category: mutatrix-category-lavaland
+  defaultUnlocked: true
+  order: 4
+  icon:
+    sprite: _Lavaland/Mobs/goliath.rsi
+    state: goliath
+
+
+- type: mutatrixTransformation
+  id: MutatrixLegion
+  polymorph: MutatrixLegionPolymorph
+  mobPrototype: MobLegion
+  scanPrototypes:
+  - MobLegion
+  name: mutatrix-transformation-legion-name
+  description: mutatrix-transformation-legion-desc
+  category: mutatrix-category-lavaland
+  defaultUnlocked: true
+  order: 7
+  icon:
+    sprite: _Lavaland/Mobs/legion.rsi
+    state: legion

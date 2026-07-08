@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprites adapted for Mutatrix Feralis by Guilherme Galinha Azul.",
+  "size": {
+    "x": 54,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "feralis-icon"
+    },
+    {
+      "name": "feralis",
+      "directions": 4
+    },
+    {
+      "name": "feralis-dead"
+    }
+  ]
+}

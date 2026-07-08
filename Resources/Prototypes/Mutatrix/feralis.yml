@@ -1,0 +1,156 @@
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ============================================================
+# Mutatrix - Feralis
+# Fix25: mescla Fix22/Fix23/Fix24 + visão mais fechada e sprint.
+# ============================================================
+
+- type: entity
+  parent: [ BaseMobAsteroid, MobBloodstream ]
+  id: MobMutatrixFeralis
+  name: Feralis
+  description: Uma criatura bruta e quase cega, guiada por visão térmica e instinto predatório.
+  components:
+  # Corpo sem coração de goliath. O coração de goliath dava Tentacle Slam.
+  # A vida/resistência continua controlada por Bloodstream/MobThresholds abaixo.
+  - type: Body
+    prototype: Animal
+
+  # NÃO usa PermanentBlindness, porque esse componente deixa a tela embaçada.
+  # A limitação real da visão é feita pelo componente FeralisLimitedVision no client.
+  - type: BestaLimitedVision
+    radiusPixels: 70
+    innerRadiusPixels: 0
+
+  # Visão térmica do tipo genética: o mundo fica limitado/escuro,
+  # mas entidades ainda podem ser percebidas pela visão térmica.
+  - type: ThermalVision
+
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mutatrix/Mobs/feralis.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: feralis
+
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: feralis
+      Critical:
+        Base: feralis
+      Dead:
+        Base: feralis-dead
+
+  # Um pouco mais rápida, com sprint habilitado.
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.3
+    baseSprintSpeed: 6.6
+
+  - type: Sprinter
+    staminaDrainRate: 3
+
+  - type: Bloodstream
+    bloodMaxVolume: 350
+    chemicalMaxVolume: 0
+
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Critical
+      350: Dead
+
+  # Lizard causa Slash 5; a Feralis causa 2.5x isso = Slash 12.5.
+  - type: MeleeWeapon
+    range: 1.3
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    attackRate: 0.75
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 12.5
+
+  # IA básica hostil. Não usa GoliathCompound e não recebe NPCUseActionOnTarget,
+  # então não usa Tentacle Slam nem habilidades especiais do goliath.
+  - type: NpcFactionMember
+    factions:
+    - Lavafauna
+
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        3
+      AggroVisionRadius: !type:Single
+        4
+      NavSmash: !type:Bool
+        true
+
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - FootstepSound
+
+  - type: NoSlip
+
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatGoliath
+      amount: 3
+    - id: MaterialGoliathHide1
+      amount: 1
+    - id: MaterialBones1
+      maxAmount: 2
+
+  - type: Fauna
+
+  - type: Speech
+    speechVerb: LargeMob
+
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+
+- type: polymorph
+  id: MutatrixFeralisPolymorph
+  configuration:
+    entity: MobMutatrixFeralis
+    duration: 390
+    forced: false
+    transferDamage: false
+    transferName: true
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    allowRepeatedMorphs: false
+    ignoreAllowRepeatedMorphs: false
+    cooldown: 90
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer: []
+
+- type: mutatrixTransformation
+  id: MutatrixFeralis
+  polymorph: MutatrixFeralisPolymorph
+  mobPrototype: MobMutatrixFeralis
+  name: mutatrix-transformation-feralis-name
+  description: mutatrix-transformation-feralis-desc
+  category: mutatrix-category-lavaland
+  defaultUnlocked: true
+  order: 3
+  icon:
+    sprite: Mutatrix/Mobs/feralis.rsi
+    state: feralis-icon

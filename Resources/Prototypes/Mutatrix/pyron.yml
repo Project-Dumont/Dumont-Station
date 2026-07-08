@@ -1,0 +1,313 @@
+# SPDX-FileCopyrightText: 2026 Guilherme Galinha Azul <guilhermegalinhaazul@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ============================================================
+# Mutatrix - Pyron
+# ============================================================
+
+- type: damageModifierSet
+  id: MutatrixPyronDamage
+  coefficients:
+    Heat: 0
+  flatReductions:
+    Heat: 999
+
+- type: entity
+  parent: SimpleMobBase
+  id: MobMutatrixPyron
+  name: Pyron
+  description: Uma forma incendiária do Mutatrix, feita de calor vivo e resistente ao fogo, mas vulnerável à água.
+  components:
+  - type: MutatrixChama
+    fireStacks: 5
+
+  - type: Body
+    bodyType: Complex
+    prototype: Monkey
+    requiredLegs: 2
+
+  - type: Hands
+    showInHands: false
+  - type: ComplexInteraction
+
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Mutatrix/Mobs/pyron.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: pyron
+
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: pyron
+      Critical:
+        Base: pyron
+      Dead:
+        Base: pyron-dead
+
+  - type: Appearance
+
+  # Visual em tamanho comum, levemente menor que o sprite original.
+  - type: ScaleVisuals
+    scale: 0.9, 0.9
+
+  # Colisão ocupa 1 tile, mas é mais estreita/alta para combinar melhor com a textura 32x64.
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.30,-0.45,0.30,0.45"
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+  - type: PointLight
+    enabled: true
+    color: "#ff7a1a"
+    radius: 2.4
+    energy: 1.6
+    netsync: false
+
+  # Sempre em pyrons, mas sem tomar dano por isso.
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: false
+    firestacksOnIgnite: 5
+    firestackFade: 0
+    damage:
+      types: {}
+
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+
+  - type: Temperature
+    heatDamageThreshold: 10000
+    coldDamageThreshold: 260
+
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: MutatrixPyronDamage
+
+  # Água machuca o Pyron. Isso pega toque, balde, respingos e spray com reagente Water.
+  # Não adiciona dano por vapor atmosférico/umidade do ar.
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+      Acidic: [ Touch, Ingestion ]
+    reactions:
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 20
+
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 4.5
+
+  - type: Sprinter
+    staminaDrainRate: 2.5
+
+  - type: Stamina
+    critThreshold: 120
+
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      150: Dead
+
+  # Soco quente: pancada + calor.
+  - type: MeleeWeapon
+    range: 1.1
+    soundHit:
+      collection: Punch
+    angle: 30
+    attackRate: 1
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 5
+        Heat: 5
+
+  - type: IgniteOnMeleeHit
+    fireStacks: 1.5
+
+  # IA básica no estilo macaco: reage e consegue usar comportamento simples.
+  - type: NpcFactionMember
+    factions:
+    - Passive
+    - Monkey
+
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        5
+      AggroVisionRadius: !type:Single
+        6
+      NavSmash: !type:Bool
+        false
+
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+
+  - type: GroupRetaliation
+    range: 8
+
+  # Sons de humano.
+  - type: Speech
+    speechSounds: Alto
+
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
+    wilhelmProbability: 0.001
+
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+
+  - type: NoSlip
+
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: polymorph
+  id: MutatrixPyronPolymorph
+  configuration:
+    entity: MobMutatrixPyron
+    duration: 360
+    forced: false
+    transferDamage: false
+    transferName: true
+    transferLanguageSpeaker: true
+    transferSpeechBarks: false
+    transferAccents: false
+    transferQuirks: false
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnCrit: false
+    revertOnDeath: false
+    canNotPolymorphInStorage: true
+    allowRepeatedMorphs: false
+    ignoreAllowRepeatedMorphs: false
+    cooldown: 90
+    skipRevertConfirmation: true
+    showPopup: false
+    componentsToTransfer: []
+
+- type: mutatrixTransformation
+  id: MutatrixPyron
+  polymorph: MutatrixPyronPolymorph
+  mobPrototype: MobMutatrixPyron
+  name: mutatrix-transformation-pyron-name
+  description: mutatrix-transformation-pyron-desc
+  category: mutatrix-category-humanoid
+  defaultUnlocked: true
+  order: 11
+  icon:
+    sprite: Mutatrix/Mobs/pyron.rsi
+    state: pyron
+
+# ============================================================
+# Pyron guns/powers
+# ============================================================
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: MutatrixChamaFireballGun
+  name: pyron fireball organ
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 6
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileDragonsBreath
+    capacity: 1
+    count: 1
+  - type: Gun
+    projectileSpeed: 7
+    soundGunshot:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundEmpty: null
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: MutatrixChamaFlameThrowerGun
+  name: pyron flame organ
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound: null
+  - type: BasicEntityAmmoProvider
+    proto: FlameThrowerBullet
+    capacity: 1
+    count: 1
+  - type: Gun
+    projectileSpeed: 10
+    soundGunshot:
+      path: /Audio/_Trauma/Revs/flamethrower.ogg
+    soundEmpty: null
+
+# ============================================================
+# Actions
+# ============================================================
+
+- type: entity
+  parent: BaseAction
+  id: ActionMutatrixChamaFireball
+  name: mutatrix-chama-action-fireball-name
+  description: mutatrix-chama-action-fireball-desc
+  components:
+  - type: Action
+    icon:
+      sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+      state: fireball
+    itemIconStyle: BigAction
+    useDelay: 6
+    priority: 1
+  - type: TargetAction
+    checkCanAccess: false
+    range: 0
+  - type: WorldTargetAction
+    event: !type:MutatrixChamaFireballActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMutatrixChamaFlameThrower
+  name: mutatrix-chama-action-flame-name
+  description: mutatrix-chama-action-flame-desc
+  components:
+  - type: Action
+    icon:
+      sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+      state: fireball
+    itemIconStyle: BigAction
+    useDelay: 2
+    priority: 2
+  - type: TargetAction
+    checkCanAccess: false
+    range: 0
+  - type: WorldTargetAction
+    event: !type:MutatrixChamaFlameActionEvent
