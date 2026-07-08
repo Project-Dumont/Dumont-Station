@@ -5,6 +5,7 @@
   parent: BaseStorageItem
   id: ImplanterBoxHoS
   components:
+  - type: Appearance
   - type: Lock
   - type: LockVisuals
   - type: AccessReader
