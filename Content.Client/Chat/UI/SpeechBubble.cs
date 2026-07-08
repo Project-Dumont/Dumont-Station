@@ -456,7 +456,7 @@ namespace Content.Client.Chat.UI
             var bubbleContent = new FancySpeechBubble(
                 message,
                 24,
-                font: "TinyUnicode",
+                font: "KenneyMini",
                 true,
                 fontColor: fontColor,
                 thicknessOverride: 2,
@@ -487,7 +487,8 @@ namespace Content.Client.Chat.UI
                 true,
                 fontColor: fontColor,
                 thicknessOverride: 2,
-                contentTag: "BubbleContent");
+                contentTag: "BubbleContent",
+                glyph: "/Textures/_UM/Chat/chat_icons/emote.png");
 
             var panel = new PanelContainer
             {
