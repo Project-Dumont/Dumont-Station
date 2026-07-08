@@ -139,6 +139,17 @@
     state: pda-blueshield
   - type: PdaBorderColor
     borderColor: "#3c94c5"
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: CentcomPDA
@@ -207,6 +218,7 @@
     - MedTekCartridge
     - AstroNavCartridge
     - NanoChatCartridge # DeltaV
+    - SOSCartridge # Imp
 
 - type: entity
   parent: NavyCaptainPDA
@@ -318,6 +330,16 @@
   components:
   - type: Pda
     id: CommandMaidIDCard
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 - type: entity
   parent: MusicianPDA
