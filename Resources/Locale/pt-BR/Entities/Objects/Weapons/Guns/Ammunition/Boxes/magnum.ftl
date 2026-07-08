@@ -1,5 +1,5 @@
-ent-MagazineBoxMagnum = caixa de munição (.40 magnum)
-    .desc = { "" }
+ent-MagazineBoxMagnum = Caixa de Munição (magnum .45)
+    .desc = Uma caixa de papelão com munições de magnum .45. Destinada a armazenar munição cinética de uso geral.
 
 ent-MagazineBoxMagnumHighVelocity = caixa de munição (.40 magnum alta velocidade)
     .desc = { "" }

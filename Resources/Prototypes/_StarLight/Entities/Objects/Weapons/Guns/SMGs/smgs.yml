@@ -107,7 +107,6 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunImprovised
-  name: Improvised 9mm Magazine (SMG)
   parent: [ BaseMagazinePistolSubMachineGun, BaseSalvageContraband ]
   components:
   - type: BallisticAmmoProvider
@@ -175,7 +174,6 @@
 - type: entity
   parent: BaseMagazineBoxImprovised
   id: MagazineBoxImprovisedPistol
-  name: Improvised 9mm Ammunition Box
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolImprovised

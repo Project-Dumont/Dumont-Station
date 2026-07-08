@@ -390,10 +390,8 @@
   - type: Appearance
 
 - type: entity
-  name: makeshift laser pistol
   parent: [BaseWeaponBatterySmall, BaseSalvageContraband]
   id: WeaponMakeshiftLaser
-  description: Better pray it won't burn your hands off.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi

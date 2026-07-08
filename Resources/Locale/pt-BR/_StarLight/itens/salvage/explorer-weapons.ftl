@@ -30,3 +30,9 @@ ent-N14ScrapMachete = Facão Improvisado
 
 ent-N14ripper = Motoserra Ripper
     .desc = Uma motosserra leve de uma mão, originalmente desenvolvida para soldados abrirem trilhas em áreas de mata fechada na pré-guerra contra os Xenos. Acontece que ela também funciona muito bem contra carne.
+
+ent-KukriKnife = Faca Kukri
+    .desc = Profissionais têm padrões. Seja educado. Seja eficiente. Tenha um plano para matar todos que encontrar.
+
+ent-WeaponMakeshiftLaser = Pistola a Laser Improvisada
+    .desc = É melhor rezar para que isso não queime as suas mãos.

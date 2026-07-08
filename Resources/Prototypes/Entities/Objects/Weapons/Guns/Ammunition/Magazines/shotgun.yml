@@ -77,7 +77,6 @@
 
 - type: entity
   id: MagazineShotgunEmpty
-  name: ammo drum (12 Gauge shells any) # Goobstation
   suffix: empty
   parent: BaseMagazineShotgun
   components:
