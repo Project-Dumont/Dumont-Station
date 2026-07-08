@@ -13,35 +13,44 @@ namespace Content.Server._Impstation.CartridgeLoader.Cartridges;
 public sealed partial class SOSCartridgeComponent : Component
 {
     [DataField]
-    //Path to the id container
+    /// <summary>
+    /// Path to PDA ID
+    /// </summary>
     public const string PDAIdContainer = "PDA-id";
 
-    [DataField]
-    //Name to use if no id is found
-    public string DefaultName = "sos-caller-defaultname";
-
+    /// <summary>
+    /// Name to use in case there is none, localized
+    /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
-    public string LocalizedDefaultName => Loc.GetString(DefaultName);
+    public string LocalizedDefaultName => Loc.GetString("sos-caller-defaultname");
 
     [DataField]
-    //Notification message
+    /// <summary>
+    /// Notification message
+    /// </summary>
     public string HelpMessage = "sos-message";
 
+    /// <summary>
+    /// Message used to call help
+    /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public string LocalizedHelpMessage => Loc.GetString(HelpMessage);
 
     [DataField]
-    //Channel to notify
+    /// <summary>
+    /// Channel to notify
+    /// </summary>
     public ProtoId<RadioChannelPrototype> HelpChannel = "Security";
 
     [DataField]
-    //Timeout between calls
+    /// <summary>
+    /// Timeout between calls
+    /// </summary>
     public const float TimeOut = 90;
 
     [DataField]
-    //Countdown until next call is allowed
-    public float Timer = 0;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public bool CanCall => Timer <= 0;
+    /// <summary>
+    /// Time at which a next SOS call is now allowed
+    /// </summary>
+    public TimeSpan NextMinimumTime = TimeSpan.FromSeconds(0);
 }
