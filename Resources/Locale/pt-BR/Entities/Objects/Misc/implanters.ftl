@@ -11,15 +11,15 @@ ent-ImplanterAdmeme = { ent-BaseImplanter }
 ent-BaseImplantOnlyImplanter = { ent-BaseImplanter }
     .desc = Uma seringa descartável exclusivamente projetada para implantação de implantes subdérmicos.
 
-ent-BaseImplantOnlyImplanterSyndi = { ent-BaseImplanter } do sindicato
-    .desc = { ent-Implanter.desc } Tenha certeza de remover qualquer DNA residual com um sabão ou pano de limpeza após usar!
+ent-BaseImplantOnlyImplanterSyndi = { ent-BaseImplanter } do Sindicato
+    .desc = { ent-Implanter.desc } Tenha certeza de remover qualquer DNA residual com sabão ou pano de limpeza após usar!
 
 # Central de Comando
 ent-RadioImplanterCentcomm = { ent-BaseImplanter }
-    .suffix = rádio da central
+    .suffix = rádio da Central de Comando
 
 ent-DeathRattleImplanterCentcomm = { ent-BaseImplanter }
-    .suffix = { ent-DeathRattleImplanter.suffix } da central
+    .suffix = { ent-DeathRattleImplanter.suffix } da Central de Comando
 
 # Tripulantes
 # Diversão
@@ -49,7 +49,7 @@ ent-FreedomImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .suffix = liberdade
 
 ent-RadioImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = rádio do sindicato
+    .suffix = rádio do Sindicato
 
 ent-UplinkImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .suffix = uplink
@@ -64,7 +64,10 @@ ent-DnaScramblerImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .suffix = embaralhador de DNA
 
 ent-ChameleonControllerImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = controle cCamaleão
+    .suffix = controle camaleão
+
+ent-FakeMindShieldImplanter = { ent-BaseImplantOnlyImplanterSyndi }
+    .suffix = { ent-MindShieldImplanter.suffix } falsa
 
 # Nukies
 ent-MicroBombImplanter = { ent-BaseImplantOnlyImplanterSyndi }
@@ -78,9 +81,6 @@ ent-DeathRattleImplanter = { ent-BaseImplantOnlyImplanterSyndi }
 
 ent-DeathAcidifierImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .suffix = acidificador de morte
-
-ent-FakeMindShieldImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = { ent-MindShieldImplanter } falso
 
 # Nukies Especial
 ent-HostageImplanter = { ent-BaseImplantOnlyImplanterSyndi }
