@@ -3471,3 +3471,21 @@ Entries:
         tem um cartucho de SOS no armário deles para quem solicitar.
   id: 415
   time: '2026-07-08T12:26:19.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Nova máquina para os Exploradores, Máquina de Tickets de Explorador.
+    - type: Add
+      message: Nova moeda para conseguir os itens da Máquina de Tickets - Tickets!
+    - type: Add
+      message: Novos equipamentos exclusivo para os Exploradores.
+    - type: Add
+      message: Novas armas exclusiva para os Exploradores.
+    - type: Add
+      message: >-
+        Machadinha de Explorador, uma ferramenta quase faz-tudo para
+        Exploradores.
+    - type: Fix
+      message: Corrigido Bug do Herobrine não aparecer no jogo.
+  id: 416
+  time: '2026-07-09T07:09:20.0000000+00:00'
