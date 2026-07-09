@@ -3489,3 +3489,9 @@ Entries:
       message: Corrigido Bug do Herobrine não aparecer no jogo.
   id: 416
   time: '2026-07-09T07:09:20.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona construção rápida para alguns matérias ao interagir.
+  id: 417
+  time: '2026-07-09T07:47:32.0000000+00:00'
