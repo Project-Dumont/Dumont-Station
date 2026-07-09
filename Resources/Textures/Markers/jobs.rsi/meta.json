@@ -149,7 +149,7 @@
       "name": "passenger"
     },
     {
-      "name": "prisoner"
+      "name": "permaprisoner"
     },
     {
       "name": "psychologist"
@@ -173,7 +173,7 @@
       "name": "scientist"
     },
     {
-      "name": "security_cadet" 
+      "name": "security_cadet"
     },
     {
       "name": "security_officer"
