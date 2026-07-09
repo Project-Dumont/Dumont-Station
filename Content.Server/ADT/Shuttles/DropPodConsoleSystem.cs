@@ -520,7 +520,7 @@ public sealed class DropPodConsoleSystem : EntitySystem
         {
             var tcEnt = _itemSlots.GetItemOrNull(uid, "tcSlot", slots);
             if (tcEnt is { } tcItem && TryComp<StackComponent>(tcItem, out var stack))
-                _stack.TryUse((tcItem, stack), currentCost);
+                _stack.Use(tcItem, currentCost, stack);
         }
 
         dropPod.Launched = true;

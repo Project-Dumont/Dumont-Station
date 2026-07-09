@@ -22,7 +22,7 @@ public sealed partial class DropPodConsoleComponent : Component
     /// Total flight time in seconds from launch to impact. Also used as the announcement lead time.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float FlightTime = 90f;
+    public float FlightTime = 30f;
 
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(120);

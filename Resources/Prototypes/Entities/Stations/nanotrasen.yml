@@ -67,9 +67,7 @@
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
-    - BaseStationDeliveries
     - BaseDropPodTarget # ADT
-    - BaseStationLavaland # ADT
     - BaseStationMail # Nyano component, required for station mail to function
     - BaseStationWizardTarget # Goobstation
     - BaseStationEconomy # Gabystation
