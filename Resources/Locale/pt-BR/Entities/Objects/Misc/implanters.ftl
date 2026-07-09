@@ -12,74 +12,76 @@ ent-BaseImplantOnlyImplanter = { ent-BaseImplanter }
     .desc = Uma seringa descartável exclusivamente projetada para implantação de implantes subdérmicos.
 
 ent-BaseImplantOnlyImplanterSyndi = { ent-BaseImplanter } do sindicato
-    .desc = { ent-Implanter.desc }. Tenha certeza de remover qualquer DNA residual com um sabão ou pano de limpeza após usar!
+    .desc = { ent-Implanter.desc } Tenha certeza de remover qualquer DNA residual com um sabão ou pano de limpeza após usar!
 
+# Central de Comando
+ent-RadioImplanterCentcomm = { ent-BaseImplanter }
+    .suffix = rádio da central
+
+ent-DeathRattleImplanterCentcomm = { ent-BaseImplanter }
+    .suffix = { ent-DeathRattleImplanter.suffix } da central
+
+# Tripulantes
 # Diversão
 ent-SadTromboneImplanter = { ent-BaseImplanter }
-    .suffix = Trombone Triste
+    .suffix = trombone triste
 
 ent-LightImplanter = { ent-BaseImplanter }
-    .suffix = Luz
+    .suffix = luz
 
 ent-BikeHornImplanter = { ent-BaseImplanter }
-    .suffix = Buzina
+    .suffix = buzina
 
 # Segurança
 ent-TrackingImplanter = { ent-BaseImplanter }
-    .suffix = Rastreador
-    
+    .suffix = rastreador
+
 # Segurança e Comando
 ent-MindShieldImplanter = { ent-BaseImplanter }
-    .suffix = MindShield
+    .suffix = psicoproteção
 
+# Antagonistas
 # Traidores
 ent-StorageImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Armazenamento
+    .suffix = armazenamento
 
 ent-FreedomImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Liberdade
+    .suffix = liberdade
 
 ent-RadioImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Rádio do Sindicato
+    .suffix = rádio do sindicato
 
 ent-UplinkImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Uplink
+    .suffix = uplink
 
 ent-EmpImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .suffix = PEM
 
 ent-ScramImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Fuga
+    .suffix = fuga
 
 ent-DnaScramblerImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Embaralhador de DNA
+    .suffix = embaralhador de DNA
 
 ent-ChameleonControllerImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Controle Camaleão
+    .suffix = controle cCamaleão
 
 # Nukies
 ent-MicroBombImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Microbomba
+    .suffix = microbomba
 
 ent-MacroBombImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Macrobomba
+    .suffix = macrobomba
 
 ent-DeathRattleImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Notificador de Morte
+    .suffix = notificador de morte
 
 ent-DeathAcidifierImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Acidificador de Morte
+    .suffix = acidificador de morte
 
 ent-FakeMindShieldImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = MindShield Falso
+    .suffix = { ent-MindShieldImplanter } falso
 
 # Nukies Especial
 ent-HostageImplanter = { ent-BaseImplantOnlyImplanterSyndi }
-    .suffix = Refém
-
-# Central de Comando
-ent-RadioImplanterCentcomm = { ent-BaseImplanter }
-    .suffix = Rádio da Central
-
-ent-DeathRattleImplanterCentcomm = { ent-BaseImplanter }
-    .suffix = Notificador de Morte da Central
+    .suffix = refém
