@@ -70,7 +70,7 @@
   - type: Stack
     stackType: GoldOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 12
+    miningPoints: 60
 
 - type: entity
   parent: GoldOreUnprocessed
@@ -110,7 +110,7 @@
   - type: Stack
     stackType: SteelOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 3 # very abundant, is used up more than coal (coal 0.1, iron 0.33)
+    miningPoints: 15 # very abundant, is used up more than coal (coal 0.1, iron 0.33)
 
 - type: entity
   id: SteelOre1Unprocessed
@@ -148,7 +148,7 @@
   - type: Stack
     stackType: PlasmaOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 6
+    miningPoints: 30
 
 - type: entity
   parent: PlasmaOreUnprocessed
@@ -168,7 +168,7 @@
   - type: Stack
     stackType: SilverOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 12
+    miningPoints: 60
 
 - type: entity
   parent: SilverOreUnprocessed
@@ -188,7 +188,7 @@
   - type: Stack
     stackType: SpaceQuartzUnprocessed
   - type: UnclaimedOre
-    miningPoints: 3.5 # slightly rarer than iron and coal
+    miningPoints: 18 # slightly rarer than iron and coal
 
 - type: entity
   parent: SpaceQuartzUnprocessed
@@ -226,7 +226,7 @@
   - type: Stack
     stackType: UraniumOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 24 # used for fuel, lategame schematics, artifacts ect
+    miningPoints: 120 # used for fuel, lategame schematics, artifacts ect
 
 - type: entity
   parent: UraniumOreUnprocessed
@@ -246,7 +246,7 @@
   - type: Stack
     stackType: BananiumOreUnprocessed
   - type: UnclaimedOre
-    miningPoints: 69 # nice
+    miningPoints: 345 # nice (not anymore)
 
 - type: entity
   parent: BananiumOreUnprocessed
@@ -266,7 +266,7 @@
   - type: Stack
     stackType: CoalUnprocessed
   - type: UnclaimedOre
-    miningPoints: 1 # very abundant, used up much less in steel (0.1 coal, 0.33 iron)
+    miningPoints: 5 # very abundant, used up much less in steel (0.1 coal, 0.33 iron)
 
 - type: entity
   parent: CoalUnprocessed
