@@ -94,8 +94,8 @@
   id: Oasis
   mapName: 'Oasis'
   mapPath: /Maps/_Gabystation/oasis.yml # Dumont
-  minPlayers: 50 # Goobstation return minPlayers requirement for maps
-  maxPlayers: 85 # Goobstation - Limit mappool to highpop versions of maps only
+  minPlayers: 35 # Dumont Station - não faz nem sentido esse mapa ser highpop
+  maxPlayers: 65 # Goobstation - Limit mappool to highpop versions of maps only
   stations:
     Oasis:
       stationProto: StandardNanotrasenStation
@@ -160,6 +160,7 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             ShaftMiner: [ 3, 3 ]
+            Bitrunner: [ 3, 3 ]
             CargoTechnician: [ 4, 4 ]
             #civilian
             Passenger: [ -1, -1 ]

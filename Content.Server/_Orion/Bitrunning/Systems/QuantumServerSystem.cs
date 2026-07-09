@@ -569,7 +569,7 @@ public sealed class QuantumServerSystem : EntitySystem
         if (HasComp<ActorComponent>(avatarUid))
             return false;
 
-        if (TryComp<MobStateComponent>(avatarUid, out var state) && state.CurrentState == MobState.Dead)
+        if (IsAvatarInCriticalState(avatarUid) || _mobState.IsDead(avatarUid))
             return false;
 
         if (!_mind.TryGetMind(user, out var mindId, out var mind))
@@ -701,7 +701,7 @@ public sealed class QuantumServerSystem : EntitySystem
                 ? containerComp.BodyContainer.ContainedEntity
                 : null;
 
-            if (connection.DeleteOnDisconnect || _mobState.IsDead(avatarUid) || IsAvatarInCriticalState(avatarUid))
+            if (connection.DeleteOnDisconnect)
                 pod.Avatar = null;
 
             Dirty(podUid.Value, pod);

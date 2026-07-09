@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ClothingBeltHolsterWatsonFilled
+  parent: ClothingBeltHolster
+  suffix: Filled, Watson
+  components:
+  - type: ContainerFill 
+    containers:
+      item:
+      - WeaponRevolverWatson38
+  - type: StorageFill
+    contents:
+        - id: SpeedLoaderWatson

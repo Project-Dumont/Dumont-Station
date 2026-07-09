@@ -198,7 +198,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Cargo"]]
+    access: [["Mail"]]
   - type: PointLight
     radius: 1.5
     energy: 1.6

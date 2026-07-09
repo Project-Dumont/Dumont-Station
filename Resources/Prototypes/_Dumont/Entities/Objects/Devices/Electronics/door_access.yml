@@ -1,4 +1,62 @@
+# Med
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVirology
+  suffix: Virology, Locked
+  components:
+  - type: AccessReader
+    access: [["Virology"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsPsychology
+  suffix: Psychology, Locked
+  components:
+  - type: AccessReader
+    access: [["Psychology"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsPharmacy
+  suffix: Pharmacy, Locked
+  components:
+  - type: AccessReader
+    access: [["Pharmacy"]]
+
+# Sci
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsGenetics
+  suffix: Genetics, Locked
+  components:
+  - type: AccessReader
+    access: [["Genetics"]]
+
 # Cargo
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMail
+  suffix: Mail, Locked
+  components:
+  - type: AccessReader
+    access: [["Mail"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMining
+  suffix: Mining, Locked
+  components:
+  - type: AccessReader
+    access: [["Mining"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSalvMine
+  suffix: Salvage/Mining, Locked
+  components:
+  - type: AccessReader
+    access: [["Salvage"], ["Mining"]]
+
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsBitrunner
@@ -6,3 +64,21 @@
   components:
   - type: AccessReader
     access: [["Bitrun"]]
+
+# Sec
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBrigMedic
+  suffix: BrigMedic, Locked
+  components:
+  - type: AccessReader
+    access: [["BrigMedic"]]
+
+# Service
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsLibrary
+  suffix: Library, Locked
+  components:
+  - type: AccessReader
+    access: [["Library"]]

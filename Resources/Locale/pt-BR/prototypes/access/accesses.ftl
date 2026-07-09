@@ -23,7 +23,7 @@ id-card-access-level-paramedic = Paramédico
 
 id-card-access-level-quartermaster = intendente logístico
 id-card-access-level-cargo = Cargas
-id-card-access-level-salvage = Recuperação
+id-card-access-level-salvage = Exploração
 
 id-card-access-level-bar = Bar
 id-card-access-level-kitchen = Cozinha

@@ -92,7 +92,7 @@
   parent: BulletTrace
   damage:
     types:
-      Piercing: 35
+      Piercing: 40 
     armorPenetration: 0.15 
 
 - type: hitscan
@@ -117,12 +117,12 @@
   damage:
     types:
       Radiation: 15
-      Piercing: 15
+      Piercing: 20
 
 - type: hitscan
   id: BulletChesterRifleDisablerTrace
   parent: BulletTrace
   damage:
     types:
-      Blunt: 5
-  staminaDamage: 35 # Balancear aqui
+      Blunt: 3
+  staminaDamage: 45 # 3 hits pra stun sem armadura

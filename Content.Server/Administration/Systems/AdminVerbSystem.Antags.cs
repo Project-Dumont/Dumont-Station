@@ -92,6 +92,7 @@ using Content.Server._DV.CosmicCult.Components; // DeltaV
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server.Zombies;
 using Content.Shared.Administration;
 using Content.Server.Clothing.Systems;
@@ -121,9 +122,12 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultVampireRule = "Vampire";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultChangelingRule = "Changeling";
+    private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
+
+    private static readonly EntProtoId DefaultConspiratorRule = "Conspirators"; // Harmony
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
-    private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -399,5 +403,20 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", wraithName, Loc.GetString("admin-verb-make-wraith")),
         };
         args.Verbs.Add(wraith);
+        var conspiratorName = Loc.GetString("admin-verb-text-make-conspirator");
+        Verb conspirator = new()
+        {
+            Text = conspiratorName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_EinsteinEngines/Interface/Misc/job_icons.rsi"), "Conspirator"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<ConspiratorRuleComponent>(targetPlayer, DefaultConspiratorRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),
+        };
+        args.Verbs.Add(conspirator);
+        // Harmony end
     }
 }

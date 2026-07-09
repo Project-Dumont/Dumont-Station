@@ -30,6 +30,16 @@
     state: pda-admin-assistant
   - type: PdaBorderColor
     borderColor: "#3c94c5"
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - NanoBankCartridge # Gabystation
+      - SOSCartridge # Imp
 
 # Security
 

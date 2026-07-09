@@ -100,6 +100,7 @@
             SalvageSpecialist: [ 2, 2 ]
             CargoTechnician: [ 2, 2 ]
             ShaftMiner: [ 2, 2 ]
+            Bitrunner: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]

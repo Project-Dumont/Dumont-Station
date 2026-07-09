@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BulletWatson
+  name: bullet (.38 watson)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 24
+
+- type: entity
+  id: BulletWatsonPractice
+  name: bullet (.38 watson practice)
+  parent: BaseBulletPractice
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+
+- type: entity
+  id: BulletWatsonIncendiary
+  parent: BaseBulletIncendiary
+  name: bullet (.38 watson incendiary)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+        Heat: 5
+
+- type: entity
+  id: BulletWatsonUranium
+  name: bullet (.38 watson uranium)
+  parent: BaseBulletUranium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 10
+        Piercing: 5

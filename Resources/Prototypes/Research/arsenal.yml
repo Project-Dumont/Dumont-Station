@@ -116,9 +116,11 @@
   - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
   - MagazineLightRifleIncendiary
   - SpeedLoaderMagnumIncendiary
+  - SpeedLoaderWatsonIncendiary
   - MagazineShotgunIncendiary
   - MagazineBoxPistolIncendiary
   - MagazineBoxMagnumIncendiary
+  - MagazineBoxWatsonIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
   # Goobstation R&D Console rework start
@@ -187,8 +189,10 @@
   - MagazinePistolSubMachineGunUranium
   - MagazineLightRifleUranium
   - SpeedLoaderMagnumUranium
+  - SpeedLoaderWatsonUranium
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
+  - MagazineBoxWatsonUranium
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
   - BoxShotgunUranium

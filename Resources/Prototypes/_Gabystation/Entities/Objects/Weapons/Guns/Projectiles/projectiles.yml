@@ -113,7 +113,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 40
       armorPenetration: 0.15
 
 - type: entity
@@ -138,10 +138,10 @@
     damage:
       types:
         Radiation: 15
-        Piercing: 15
+        Piercing: 20
 
 - type: entity
-  id: BulletChesterRIflePractice
+  id: BulletChesterRiflePractice
   name: bullet (0.315 rifle practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
@@ -160,9 +160,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 5
+        Blunt: 3
   - type: StaminaDamageOnCollide
-    damage: 35
+    damage: 45 # 3 hits pra stun sem armadura
 
 - type: entity
   id: BulletChesterRifleEMP
