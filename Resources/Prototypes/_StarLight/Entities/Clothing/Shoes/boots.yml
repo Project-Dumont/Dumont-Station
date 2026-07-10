@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ ClothingShoesMilitaryBase, BaseSalvageContraband ]
+  id: ClothingShoesBootsSalvageMerc
+  name: scrapper boots
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Shoes/Boots/salvage.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Shoes/Boots/salvage.rsi

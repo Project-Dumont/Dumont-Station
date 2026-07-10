@@ -209,6 +209,16 @@
     criminalPoints: 2.5
 
 - type: entity
+  id: BaseSecuritySalvageContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ SalvageSpecialist, BlueshieldOfficer ]
+    criminalPoints: 2.5
+
+- type: entity
   id: BaseMedicalScienceContraband
   parent: BaseRestrictedContraband
   abstract: true
