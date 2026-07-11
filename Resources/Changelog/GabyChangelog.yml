@@ -3409,3 +3409,140 @@ Entries:
       message: Piratas aparecem 1/3 a frequência anterior.
   id: 408
   time: '2026-07-04T19:33:10.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: As munições da Chester Mk. II agora usam projéteis ao invés de hitscan.
+    - type: Tweak
+      message: Alterados alguns valores de dano, munição atordoadora ficou mais eficaz.
+    - type: Tweak
+      message: O custo geral das munições na loja de pontos do NTR foi reduzido.
+  id: 409
+  time: '2026-07-06T08:50:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Tempo jogado como prisioneiro não irá mais registrar como segurança.
+    - type: Fix
+      message: >-
+        Plasmaman agora podem ser prisioneiros roundstart, começando com traje
+        adequado.
+    - type: Add
+      message: Traduções dos trajes herméticos de prisioneiro.
+  id: 410
+  time: '2026-07-06T13:12:53.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: >-
+        Os cartuchos .60 anti-material da Hristov voltam a ser projéteis com
+        alto dano e atravessam paredes.
+  id: 411
+  time: '2026-07-07T11:10:13.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Onis agora podem usar revólveres.
+  id: 412
+  time: '2026-07-07T11:20:37.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado novo antagonista! Conspiradores.
+    - type: Add
+      message: SHHHHH, eles podem nos ouvir, fica em silêncio!
+  id: 413
+  time: '2026-07-08T02:23:13.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona monitor do host para o bitrunner.
+    - type: Fix
+      message: Pequenas correções no bitrunning.
+  id: 414
+  time: '2026-07-08T02:45:26.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Segurança e comando tem um aplicativo de SOS no PDA. Apertar esse
+        aplicativo resulta em um alerta avisando ao departamento de segurança
+        que você necessita de ajuda, mas sem sua localização. Warden, HOP e HOS
+        tem um cartucho de SOS no armário deles para quem solicitar.
+  id: 415
+  time: '2026-07-08T12:26:19.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Nova máquina para os Exploradores, Máquina de Tickets de Explorador.
+    - type: Add
+      message: Nova moeda para conseguir os itens da Máquina de Tickets - Tickets!
+    - type: Add
+      message: Novos equipamentos exclusivo para os Exploradores.
+    - type: Add
+      message: Novas armas exclusiva para os Exploradores.
+    - type: Add
+      message: >-
+        Machadinha de Explorador, uma ferramenta quase faz-tudo para
+        Exploradores.
+    - type: Fix
+      message: Corrigido Bug do Herobrine não aparecer no jogo.
+  id: 416
+  time: '2026-07-09T07:09:20.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona construção rápida para alguns matérias ao interagir.
+  id: 417
+  time: '2026-07-09T07:47:32.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novos biomas para as expedições!
+    - type: Add
+      message: Bioma das montanhas.
+    - type: Add
+      message: Bioma do deserto.
+    - type: Add
+      message: Agora as expedições possuem climas, como chuva ou neve.
+    - type: Tweak
+      message: >-
+        Reformulação no sistema de expedição, agora as expedições geram missões
+        que podem ser concluidas para receber spesos e tickets!
+    - type: Add
+      message: >-
+        Adiciona 5 tipos de missão para exploração: capturar, recuperar, apagar,
+        destruir e resgatar.
+    - type: Add
+      message: 'Novas dificuldades: Fácil, Desafiadora, Perigosa e Impossível.'
+    - type: Add
+      message: >-
+        Novo tipo de inimigo nas exploração: Silício. Com 6 inimigos diferentes
+        para lutar. Disponível apenas nas dificuldades moderada e desafiadora.
+    - type: Add
+      message: >-
+        "NT-34-Expeditioneer" - Adeus Reclaimer, uma nova nave para
+        Exploradores.
+    - type: Add
+      message: >-
+        "NT-99 "Asteroid Cracker" - Uma nave para os mineradores, atualmente,
+        desativada.
+    - type: Fix
+      message: Corrigido console de expedição se tornar um console de mineração.
+    - type: Add
+      message: >-
+        Nova expedição para os exploradores: Usina nuclear. Você realmente
+        deveria procurar sucata em um lugar assim?
+    - type: Add
+      message: >-
+        Nova atmosfera que pode surgir em expedições: Atmosfera N2. Voxs,
+        alegrem-se.
+    - type: Tweak
+      message: >-
+        Atmosferas antes não usadas agora podem surgir em expedições: Sem
+        atmosfera, variação não sonolenta de atmosfera "perigosa", atmosfera
+        tóxica.
+    - type: Tweak
+      message: Raramente temperaturas extremas de frio e alta podem aparecer.
+  id: 418
+  time: '2026-07-11T12:24:19.0000000+00:00'

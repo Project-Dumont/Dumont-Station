@@ -172,7 +172,7 @@
 
 - type: entity
   name: AKM
-  parent: [BaseWeaponRifle, BaseSecurityContraband]
+  parent: [BaseWeaponRifle, BaseSecuritySalvageContraband]
   id: WeaponRifleAk
   description: A somewhat battered combat rifle of a design originating from old Earth. Favored by criminals, militias, and terrorists due to its famed reliability and easy-to-manufacture design. Feeds from .30 Rifle magazines.
   components:

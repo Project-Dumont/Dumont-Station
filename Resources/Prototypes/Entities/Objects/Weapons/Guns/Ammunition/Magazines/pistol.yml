@@ -107,7 +107,7 @@
 - type: entity
   id: BaseMagazinePistolSubMachineGun  # Yeah it's weird but it's pistol caliber
   name: SMG magazine (.35 auto)
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [ BaseItem, BaseSecuritySalvageContraband ]
   abstract: true
   components:
   - type: Tag

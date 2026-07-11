@@ -314,17 +314,50 @@ namespace Content.Server.Lathe
                 {
                     // Goobstation, output to material storage instead of spawning
                     var prototype = _proto.Index(resultProto);
+                    
+                    //Starlight Start
+                    var transform = Transform(uid).Coordinates;
+                    if (_container.IsEntityInContainer(uid))
+                        transform = Transform(_container.GetContainingContainers(uid).Last().Owner).Coordinates;
+
                     if (comp.OutputToStorage && prototype.TryGetComponent<PhysicalCompositionComponent>(out var composition, _factory))
                     {
                         _materialStorage.TryChangeMaterialAmount(uid, composition.MaterialComposition);
                     }
                     else
                     {
-                        var result = Spawn(resultProto, Transform(uid).Coordinates);
-                        _stack.TryMergeToContacts(result);
+                        var result = Spawn(resultProto, transform);
+
                         if (TryComp<ScannableForPointsComponent>(result, out var scannable)) // Goobstation
-                            scannable.Points = 0; // Goobstation, this thing is to prevent ntr duping points via an emagged lathe
+                            scannable.Points = 0; // prevent ntr duping points via an emagged lathe
+
+                        var ev = new LatheProductFinishedEvent(result); //FarHorizons
+                        RaiseLocalEvent(uid, ref ev); //FarHorizons
+
+                        _stack.TryMergeToContacts(result);
                     }
+                    
+                    // Dumont - Salvage print tickets, no tickets for miners
+                    bool isSalvage = false;
+                    var itemSlotsSystem = EntityManager.System<Content.Shared.Containers.ItemSlots.ItemSlotsSystem>();
+                    
+                    if (itemSlotsSystem.TryGetSlot(uid, "id_slot", out var slot) && slot.Item != null)
+                    {
+                        if (TryComp<MetaDataComponent>(slot.Item.Value, out var meta) && meta.EntityPrototype != null)
+                        {
+                            if (meta.EntityPrototype.ID == "SalvageIDCard")
+                            {
+                                isSalvage = true;
+                            }
+                        }
+                    }
+
+                    if (currentRecipe.PrintTicket && isSalvage)
+                    {
+                        var tickets = Spawn(currentRecipe.TicketProtoId, transform);
+                        _stack.TryMergeToContacts(tickets);
+                    }
+                    //Starlight End
                 }
 
                 if (currentRecipe.ResultReagents is { } resultReagents &&

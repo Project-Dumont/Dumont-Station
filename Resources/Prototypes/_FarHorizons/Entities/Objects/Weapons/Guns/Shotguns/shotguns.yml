@@ -1,0 +1,113 @@
+
+- type: entity
+  name: BaseWeaponShotgun
+  parent: BaseItem
+  id: BaseWeaponShotgunAny
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,4,0
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseWeaponShotgunAny
+  id: BaseWeaponShotgun9Letter
+  abstract: true
+  components:
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 7
+    proto: ShellShotgun
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+
+- type: entity
+  name: Four Letter Word
+  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSalvageContraband]
+  id: WeaponShotgunSalvager
+  description: An odd magazine-fed pump action shotgun that is the result of a regulatory compromise. Fires as fast as you can pump it, loads .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _FarHorizons/Objects/Weapons/Guns/Shotguns/four_icon_59x.rsi
+    scale: 0.8, 0.8
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: _FarHorizons/Objects/Weapons/Guns/Shotguns/four_inhands_64x.rsi
+  - type: Clothing
+    sprite: _FarHorizons/Objects/Weapons/Guns/Shotguns/four_icon_59x.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg #"/Audio/Weapons/Guns/Empty/empty.ogg" is the proper sound for it, but because of buggy guncode this was deemed the "lesser evil" as this is the sound you hear while firing most of the time
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgunEmpty
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        whitelistFailPopup: gun-magazine-whitelist-fail
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+      gun_chamber:
+        name: Chamber
+        startingItem: ShellShotgunImprovised
+        priority: 1
+        whitelist:
+          tags:
+          - ShellShotgun
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    canRack: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: Tag
+    tags:
+    - ShotgunSentinel

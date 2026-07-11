@@ -1,0 +1,35 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._Harmony.Conspirators.Components;
+using Content.Shared.Antag;
+using Robust.Shared.GameStates;
+using Robust.Shared.Player;
+
+namespace Content.Shared._Harmony.Conspirators.EntitySystems;
+
+public abstract class SharedConspiratorSystem : EntitySystem // looking at blood bound to see how the icons work
+{
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<ConspiratorComponent, ComponentGetStateAttemptEvent>(OnConspiratorAttemptGetState);
+    }
+
+    private void OnConspiratorAttemptGetState(
+        Entity<ConspiratorComponent> entity,
+        ref ComponentGetStateAttemptEvent args)
+    {
+        args.Cancelled = !CanGetState(args.Player);
+    }
+
+    private bool CanGetState(ICommonSession? player)
+    {
+        if (player?.AttachedEntity is not { } uid)
+            return true;
+
+        return HasComp<ConspiratorComponent>(uid) || HasComp<ShowAntagIconsComponent>(uid);
+    }
+}

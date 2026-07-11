@@ -1,0 +1,174 @@
+- type: htnCompound
+  id: DungeonBorgCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: DungeonBorgMeleeCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: htnCompound
+  id: DungeonMediBorgCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: DungeonBorgMediNonExplosiveCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: htnCompound
+  id: DungeonMediBorgExplosiveCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: DungeonBorgMediExplosiveCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+# Modified MeleeCombatCompound
+- type: htnCompound
+  id: DungeonBorgMeleeCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: DungeonBorgMeleeAttackCompound
+
+- type: htnCompound
+  id: DungeonBorgMediExplosiveCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: DungeonBorgYellThenRunCompound
+
+- type: htnCompound
+  id: DungeonBorgMediNonExplosiveCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: DungeonBorgRunThenYellCompound
+
+# Modified BeforeMeleeAttackTargetCompound
+- type: htnCompound
+  id: DungeonBorgMeleeAttackCompound
+  branches:
+    - preconditions:
+        - !type:PulledPrecondition
+          isPulled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnPullOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:InContainerPrecondition
+          isInContainer: true
+      tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+
+    - preconditions:
+        - !type:KeyExistsPrecondition
+          key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: false
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:PlaySoundOperator
+            sound:
+              collection: SiliconScreams
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
+
+- type: htnCompound
+  id: DungeonBorgYellThenRunCompound
+  branches:
+      - preconditions:
+          - !type:PulledPrecondition
+            isPulled: true
+        tasks:
+          - !type:HTNPrimitiveTask
+            operator: !type:UnPullOperator
+              shutdownState: TaskFinished
+
+      - preconditions:
+          - !type:InContainerPrecondition
+            isInContainer: true
+        tasks:
+          - !type:HTNCompoundTask
+            task: EscapeCompound
+        
+      - preconditions:
+          - !type:KeyExistsPrecondition
+            key: Target
+        tasks:
+          - !type:HTNPrimitiveTask
+            operator: !type:PlaySoundOperator
+              sound:
+                collection: SiliconScreams
+          - !type:HTNPrimitiveTask
+            operator: !type:MoveToOperator
+              pathfindInPlanning: false
+              removeKeyOnFinish: false
+              targetKey: TargetCoordinates
+              rangeKey: MeleeRange
+
+- type: htnCompound
+  id: DungeonBorgRunThenYellCompound
+  branches:
+      - preconditions:
+          - !type:PulledPrecondition
+            isPulled: true
+        tasks:
+          - !type:HTNPrimitiveTask
+            operator: !type:UnPullOperator
+              shutdownState: TaskFinished
+
+      - preconditions:
+          - !type:InContainerPrecondition
+            isInContainer: true
+        tasks:
+          - !type:HTNCompoundTask
+            task: EscapeCompound
+        
+      - preconditions:
+          - !type:KeyExistsPrecondition
+            key: Target
+        tasks:
+          - !type:HTNPrimitiveTask
+            operator: !type:MoveToOperator
+              pathfindInPlanning: false
+              removeKeyOnFinish: false
+              targetKey: TargetCoordinates
+              rangeKey: MeleeRange
+          - !type:HTNPrimitiveTask
+            operator: !type:PlaySoundOperator
+              sound:
+                collection: SiliconScreams

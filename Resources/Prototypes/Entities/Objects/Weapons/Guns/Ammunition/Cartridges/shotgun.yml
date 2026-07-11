@@ -258,7 +258,7 @@
   id: ShellShotgunImprovised
   name: improvised shotgun shell
   description: A homemade shotgun shell that shoots painful glass shrapnel. The spread is so wide that it couldn't hit the broad side of a barn.
-  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  parent: [ BaseShellShotgun, BaseSecuritySalvageContraband]
   components:
   - type: Tag
     tags:
@@ -275,7 +275,7 @@
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
-    proto: PelletShotgunImprovised
+    proto: PelletShotgunImprovisedSpread
   - type: SpentAmmoVisuals
     state: "improvised"
 

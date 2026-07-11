@@ -23,8 +23,6 @@
 - type: entity
   id: FultonBeacon
   parent: BaseFoldable
-  name: fulton beacon
-  description: Beacon to receive fulton extractions.
   components:
     - type: Physics
       bodyType: Dynamic
@@ -67,8 +65,6 @@
   id: Fulton
   parent: BaseItem
   suffix: Full
-  name: fulton
-  description: Used to extract containers, items, or forcibly recruit people into your base of operations.
   components:
   - type: Fulton
   - type: Item
