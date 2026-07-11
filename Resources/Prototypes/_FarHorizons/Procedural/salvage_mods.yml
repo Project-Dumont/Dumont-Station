@@ -1,0 +1,149 @@
+- type: salvageDungeonMod
+  id: Reactor
+  desc: salvage-dungeon-mod-reactor
+  proto: Reactor
+  biomes:
+    - Grasslands
+  # - Abyss
+    - Snow
+    - Mountains
+    - LowDesert
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+
+# Airs
+- type: salvageAirMod
+  id: Nitrogen
+  cost: 1
+  desc: salvage-air-mod-nitrogen-atmosphere
+  gases:
+    - 0 # oxygen
+    - 100 # nitrogen
+  biomes:
+    - Caves
+    - LowDesert # Far Horizons
+    - Snow
+    - Mountains
+    - Grasslands
+    - Lava
+  difficulties: 
+    - Challenging
+    - Moderate
+
+# Biomes
+- type: salvageBiomeMod
+  id: LowDesert
+  desc: salvage-biome-mod-desert
+  biome: LowDesert
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
+
+- type: salvageBiomeMod
+  id: Mountains
+  desc: salvage-biome-mod-mountains
+  biome: Mountains
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
+
+# Weathers
+- type: salvageWeatherMod
+  id: SalvageWeatherNone
+  desc: salvage-biome-mod-weather-dummy
+
+- type: salvageWeatherMod
+  id: AshfallLight
+  desc: salvage-biome-mod-weather-dummy
+  weather: AshfallLight
+  biomes:
+    - Lava
+
+- type: salvageWeatherMod
+  id: Ashfall
+  desc: salvage-biome-mod-weather-dummy
+  weather: Ashfall
+  cost: 1
+  biomes:
+    - Lava
+
+- type: salvageWeatherMod
+  id: AshfallHeavy
+  desc: salvage-biome-mod-weather-dummy
+  weather: AshfallHeavy
+  cost: 2
+  biomes:
+    - Lava
+
+- type: salvageWeatherMod
+  id: Rain
+  desc: salvage-biome-mod-weather-dummy
+  weather: Rain
+  biomes:
+    - Grasslands
+    - Caves
+
+- type: salvageWeatherMod
+  id: Storm
+  desc: salvage-biome-mod-weather-dummy
+  weather: Storm
+  cost: 1
+  biomes:
+    - Grasslands
+    - Caves
+
+- type: salvageWeatherMod
+  id: Sandstorm
+  desc: salvage-biome-mod-weather-dummy
+  weather: Sandstorm
+  cost: 1
+  biomes:
+    - LowDesert
+
+- type: salvageWeatherMod
+  id: SandstormHeavy
+  desc: salvage-biome-mod-weather-dummy
+  weather: SandstormHeavy
+  cost: 2
+  biomes:
+    - LowDesert
+
+- type: salvageWeatherMod
+  id: Hail
+  desc: salvage-biome-mod-weather-dummy
+  weather: Hail
+  biomes:
+    - Snow
+    - Mountains
+
+- type: salvageWeatherMod
+  id: SnowfallLight
+  desc: salvage-biome-mod-weather-dummy
+  weather: SnowfallLight
+  biomes:
+    - Snow
+    - Mountains
+
+- type: salvageWeatherMod
+  id: SnowfallMedium
+  desc: salvage-biome-mod-weather-dummy
+  weather: SnowfallMedium
+  cost: 1
+  biomes:
+    - Snow
+    - Mountains
+
+- type: salvageWeatherMod
+  id: SnowfallHeavy
+  desc: salvage-biome-mod-weather-dummy
+  weather: SnowfallHeavy
+  cost: 2
+  biomes:
+    - Snow
+    - Mountains

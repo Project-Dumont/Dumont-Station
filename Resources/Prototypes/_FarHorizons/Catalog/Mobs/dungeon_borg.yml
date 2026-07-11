@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: DungeonBorgLines
+  values:
+    prefix: lines-borg-dungeon-
+    count: 11

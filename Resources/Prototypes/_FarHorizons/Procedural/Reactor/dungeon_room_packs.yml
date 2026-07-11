@@ -1,0 +1,14 @@
+- type: dungeonRoomPack
+  id: ReactorArea0
+  size: 23,23
+  rooms:
+    - 2,0,17,10 # 15x10 main reactor room
+    - 0,14,7,23 #  7x9 storage
+    - 13,13,23,21 # 10x8 transformer room
+
+- type: dungeonRoomPack
+  id: ReactorWingArea0
+  size: 28,10
+  rooms:
+    - 0,2,7,8 # 7x6 Small room (med/sec)
+    - 11,1,28,8 # 17x7 Big room (lockers/common area)
