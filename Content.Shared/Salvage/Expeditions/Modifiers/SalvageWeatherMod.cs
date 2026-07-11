@@ -31,13 +31,14 @@ public sealed partial class SalvageWeatherMod : IPrototype, IBiomeSpecificMod
     [DataField]
     public List<ProtoId<SalvageBiomeModPrototype>>? Biomes { get; private set; } = null;
 
-     // 🌟Starlight🌟
+    // 🌟Starlight🌟
     [DataField]
     public List<ProtoId<SalvageDifficultyPrototype>>? Difficulties { get; private set; } = null;
 
     /// <summary>
     /// Weather prototype to use on the planet.
     /// </summary>
-    [DataField("weather", required: true, customTypeSerializer:typeof(PrototypeIdSerializer<WeatherPrototype>))]
-    public string WeatherPrototype = string.Empty;
+    /// Far Horizons
+    [DataField]
+    public ProtoId<WeatherPrototype>? Weather = null;
 }
