@@ -3578,3 +3578,33 @@ Entries:
       message: Novo som do hyperdrive.
   id: 421
   time: '2026-07-11T21:56:54.0000000+00:00'
+- author: Struater e Lumminal
+  changes:
+    - type: Add
+      message: >-
+        Wraith agora pode ser jogado como um antagonista de início de rodada. O
+        Wraith recebeu um grande rebalanceamento e uma leve reformulação.
+    - type: Add
+      message: O Wraith de meio de rodada está de volta, mas não pode mais evoluir.
+    - type: Remove
+      message: >-
+        O Wraith não recebe mais uma segunda vida ao morrer. Morreu uma vez,
+        acabou o jogo.
+    - type: Tweak
+      message: >-
+        Absorver Cadáver, Decadência e outras habilidades agora exigem forma
+        corpórea.
+    - type: Tweak
+      message: >-
+        Absorver um cadáver como Wraith agora possui um tempo de execução
+        (do-after).
+    - type: Tweak
+      message: Linhas de sal não se quebram mais quando alguém passa por cima delas.
+    - type: Fix
+      message: >-
+        Corrigido um problema em que o assombro (Haunt) do Wraith aplicava
+        penalidade de velocidade mesmo quando ele estava em forma corpórea.
+    - type: Tweak
+      message: O Wraith de meio de rodada agora faz parte das ameaças de Ninja.
+  id: 422
+  time: '2026-07-11T22:01:23.0000000+00:00'
