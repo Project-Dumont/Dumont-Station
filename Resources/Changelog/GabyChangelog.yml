@@ -3495,3 +3495,54 @@ Entries:
       message: Adiciona construção rápida para alguns matérias ao interagir.
   id: 417
   time: '2026-07-09T07:47:32.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novos biomas para as expedições!
+    - type: Add
+      message: Bioma das montanhas.
+    - type: Add
+      message: Bioma do deserto.
+    - type: Add
+      message: Agora as expedições possuem climas, como chuva ou neve.
+    - type: Tweak
+      message: >-
+        Reformulação no sistema de expedição, agora as expedições geram missões
+        que podem ser concluidas para receber spesos e tickets!
+    - type: Add
+      message: >-
+        Adiciona 5 tipos de missão para exploração: capturar, recuperar, apagar,
+        destruir e resgatar.
+    - type: Add
+      message: 'Novas dificuldades: Fácil, Desafiadora, Perigosa e Impossível.'
+    - type: Add
+      message: >-
+        Novo tipo de inimigo nas exploração: Silício. Com 6 inimigos diferentes
+        para lutar. Disponível apenas nas dificuldades moderada e desafiadora.
+    - type: Add
+      message: >-
+        "NT-34-Expeditioneer" - Adeus Reclaimer, uma nova nave para
+        Exploradores.
+    - type: Add
+      message: >-
+        "NT-99 "Asteroid Cracker" - Uma nave para os mineradores, atualmente,
+        desativada.
+    - type: Fix
+      message: Corrigido console de expedição se tornar um console de mineração.
+    - type: Add
+      message: >-
+        Nova expedição para os exploradores: Usina nuclear. Você realmente
+        deveria procurar sucata em um lugar assim?
+    - type: Add
+      message: >-
+        Nova atmosfera que pode surgir em expedições: Atmosfera N2. Voxs,
+        alegrem-se.
+    - type: Tweak
+      message: >-
+        Atmosferas antes não usadas agora podem surgir em expedições: Sem
+        atmosfera, variação não sonolenta de atmosfera "perigosa", atmosfera
+        tóxica.
+    - type: Tweak
+      message: Raramente temperaturas extremas de frio e alta podem aparecer.
+  id: 418
+  time: '2026-07-11T12:24:19.0000000+00:00'
