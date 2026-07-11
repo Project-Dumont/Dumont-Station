@@ -3554,3 +3554,9 @@ Entries:
         no database.
   id: 419
   time: '2026-07-11T15:29:46.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: minerios agora rendem cinco vezes menos materiais
+  id: 420
+  time: '2026-07-11T16:10:38.0000000+00:00'
