@@ -20,7 +20,7 @@ public sealed class CurseHolderSystem : SharedCurseHolderSystem
         SubscribeLocalEvent<CurseHolderComponent, BibleUsedEvent>(OnBibleSmite);
     }
 
-    private void OnBibleSmite(Entity<CurseHolderComponent> ent, ref BibleUsedEvent args)
+    private void OnBibleUsed(Entity<CurseHolderComponent> ent, ref BibleUsedEvent args)
     {
         _popupSystem.PopupEntity(Loc.GetString("curse-not-anymore"), ent.Owner, ent.Owner, PopupType.Medium);
         RemCompDeferred<CurseHolderComponent>(ent.Owner);
