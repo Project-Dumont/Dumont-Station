@@ -3546,3 +3546,11 @@ Entries:
       message: Raramente temperaturas extremas de frio e alta podem aparecer.
   id: 418
   time: '2026-07-11T12:24:19.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: >-
+        Corrigido bug onde títulos alternativos dos trabalhos não ficavam salvos
+        no database.
+  id: 419
+  time: '2026-07-11T15:29:46.0000000+00:00'
