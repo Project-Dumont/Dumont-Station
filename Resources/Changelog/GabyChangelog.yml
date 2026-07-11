@@ -3560,3 +3560,21 @@ Entries:
       message: minerios agora rendem cinco vezes menos materiais
   id: 420
   time: '2026-07-11T16:10:38.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado o Líder da Expedição
+    - type: Add
+      message: >-
+        O olho e ouvido do Líder da Logística está na estação, e fora dela, não
+        zoem mais o QM!
+    - type: Tweak
+      message: Especialista de Exploração não pode ser mais antagonista
+    - type: Add
+      message: Agora Especialistas de Exploração possuem Mindshield
+    - type: Tweak
+      message: Modifica o iconjob do Especialista de Exploração
+    - type: Tweak
+      message: Novo som do hyperdrive.
+  id: 421
+  time: '2026-07-11T21:56:54.0000000+00:00'
