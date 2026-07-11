@@ -1,0 +1,45 @@
+{
+    "version": 1,
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "copyright": "Taken from tgstation. | SalvageLead by CRISOO",
+    "license": "CC-BY-SA-3.0",
+    "states": [
+
+        {
+            "name": "welded"
+        },
+        {
+            "name": "unlocked"
+        },
+        {
+            "name": "locked"
+        },
+        {
+            "name": "sparking"
+        },
+        {
+            "name": "salvagelead"
+        },
+        {
+            "name": "salvagelead_open"
+        },
+        {
+            "name": "generic_door"
+        },
+        {
+            "name": "generic_icon"
+        },
+        {
+            "name": "generic_open"
+        },
+        {
+            "name": "generic"
+        },
+        {
+            "name": "salvagelead_door"
+        }
+    ]
+}

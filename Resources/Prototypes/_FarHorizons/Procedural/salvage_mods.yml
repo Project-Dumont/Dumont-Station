@@ -10,8 +10,8 @@
     - LowDesert
   difficulties: 
     - Challenging
-    - Moderate
-    - Easy
+  # - Moderate
+  # - Easy
 
 # Airs
 - type: salvageAirMod

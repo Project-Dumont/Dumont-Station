@@ -38,7 +38,7 @@
       prob: 0.05
     - proto: CMMobXenoRogueKing
       cost: 10
-      prob: 0.01
+      prob: 0.005
     - proto: WeaponTurretXeno
       prob: 0.1
   difficulties:
