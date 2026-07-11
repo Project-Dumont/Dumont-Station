@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared.Changeling.Components;
 using Content.Goobstation.Shared.Wraith.Components;
 using Content.Goobstation.Shared.Wraith.Events;
@@ -9,6 +13,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Database;
+using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
@@ -30,6 +35,9 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly ISharedAdminLogManager _admin = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+
+    private EntityQuery<WraithAbsorbableComponent> _absorbableQuery;
 
     public override void Initialize()
     {
@@ -37,14 +45,18 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
 
         SubscribeLocalEvent<AbsorbCorpseComponent, AbsorbCorpseEvent>(OnAbsorb);
         SubscribeLocalEvent<PlaguebringerComponent, AbsorbCorpseAttemptEvent>(OnPlaguebringerAttempt);
+
+        SubscribeLocalEvent<AbsorbCorpseComponent, AbsorbCorpseDoAfterEvent>(OnAbsorbFinished);
+
+        _absorbableQuery = GetEntityQuery<WraithAbsorbableComponent>();
     }
 
     private void OnAbsorb(Entity<AbsorbCorpseComponent> ent, ref AbsorbCorpseEvent args)
     {
-        var user = args.Performer;
         var target = args.Target;
+        var user = args.Performer;
 
-        if (_tag.HasTag(args.Target, ent.Comp.Tag) || !TryComp<WraithAbsorbableComponent>(args.Target, out var absorbable)) // save the monkeys
+        if (_tag.HasTag(target, ent.Comp.Tag) || !_absorbableQuery.TryComp(args.Target, out var absorbable)) // save the monkeys
             return;
 
         if (!_mobState.IsDead(target))
@@ -60,15 +72,36 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
             return;
         }
 
-        var ev = new AbsorbCorpseAttemptEvent(args.Target);
-        RaiseLocalEvent(args.Performer, ref ev);
+        var doAfterArgs = new DoAfterArgs(
+            EntityManager,
+            ent.Owner,
+            ent.Comp.AbsorbDoAfter,
+            new AbsorbCorpseDoAfterEvent(),
+            ent.Owner,
+            target)
+        {
+            BreakOnMove = true,
+            BreakOnWeightlessMove = true,
+        };
+
+        _doAfter.TryStartDoAfter(doAfterArgs);
+    }
+
+    private void OnAbsorbFinished(Entity<AbsorbCorpseComponent> ent, ref AbsorbCorpseDoAfterEvent args)
+    {
+        var user = args.User;
+        if (args.Target is not {} target || !_absorbableQuery.TryComp(target, out var absorbable))
+            return;
+
+        var ev = new AbsorbCorpseAttemptEvent(target);
+        RaiseLocalEvent(user, ref ev);
         if (ev.Cancelled)
             return;
 
         if (ev.Handled)
         {
             absorbable.Absorbed = true;
-            Dirty(args.Target, absorbable);
+            Dirty(target, absorbable);
 
             _admin.Add(LogType.Action, LogImpact.Medium,
                 $"{ToPrettyString(ent.Owner)} absorbed the corpse of {ToPrettyString(args.Target)} as a Plaguebringer Wraith");
@@ -83,7 +116,7 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
         }
 
         // do reagent checking logic, if true activate cooldown
-        if (RemoveReagent(args.Target, ent))
+        if (RemoveReagent(target, ent))
         {
             args.Handled = true;
             return;
@@ -96,7 +129,7 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
         _wraithPoints.AdjustWpGenerationRate(ent.Comp.WpPassiveAdd, ent.Owner);
 
         // apply rot
-// EnsureComp<RottingComponent>(target); // TODO Removed until someone figures out how to make it partially rot instead of instant full rot
+        // EnsureComp<RottingComponent>(target); // TODO Removed until someone figures out how to make it partially rot instead of instant full rot
 
         _popup.PopupPredicted(Loc.GetString("wraith-absorb-smoke1"), target, target);
         ent.Comp.CorpsesAbsorbed++;
@@ -104,7 +137,7 @@ public sealed partial class AbsorbCorpseSystem : EntitySystem
 
         // mark as absorbed
         absorbable.Absorbed = true;
-        Dirty(args.Target, absorbable);
+        Dirty(target, absorbable);
 
         _admin.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(ent.Owner)} absorbed the corpse of {ToPrettyString(args.Target)} as a Wraith");

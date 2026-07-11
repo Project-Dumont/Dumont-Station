@@ -82,6 +82,7 @@
 using System.Text.RegularExpressions;
 using Content.Server.Chat.Systems;
 using Content.Shared.Speech;
+using Content.Shared.Chat;
 
 namespace Content.Server.Speech;
 
