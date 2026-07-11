@@ -202,6 +202,7 @@ namespace Content.Server.Database
 
         // Gabystation
         public DbSet<GabyModel.GabyStoreOwnedItems> GabyStoreOwnedItems { get; set; } = default!;
+        public DbSet<DBJobAlternateTitle> DBJobAlternateTitle { get; set; } = null!;
 
         // Goobstation Polls
         public DbSet<Poll> Polls { get; set; } = default!;
@@ -668,6 +669,16 @@ namespace Content.Server.Database
             modelBuilder.Entity<PollSeen>()
                 .HasIndex(s => new { s.PollId, s.PlayerUserId })
                 .IsUnique();
+
+            modelBuilder.Entity<DBJobAlternateTitle>()
+                .HasOne(e => e.Profile)
+                .WithMany(e => e.AltTitles)
+                .HasForeignKey(e => e.ProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<DBJobAlternateTitle>()
+                .HasIndex(p => new { p.ProfileId, p.RoleName, p.AlternateTitle })
+                .IsUnique();
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -720,7 +731,7 @@ namespace Content.Server.Database
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
 
-        public List<DBJobAlternateTitle> AltTitles = new();
+        public List<DBJobAlternateTitle> AltTitles { get; } = new();
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
