@@ -33,7 +33,7 @@ public sealed class SOSCartridgeSystem : EntitySystem
             return;
 
         if (component.NextMinimumTime < _timing.CurTime &&
-            _container.TryGetContainer(args.Loader, SOSCartridgeComponent.PDAIdContainer, out var idContainer)) {
+            _container.TryGetContainer(args.Loader, component.PDAIdContainer, out var idContainer)) {
 
             //If theres nothing in id slot, send message anonymously
             if (idContainer.ContainedEntities.Count == 0)
@@ -51,7 +51,7 @@ public sealed class SOSCartridgeSystem : EntitySystem
             }
 
             // have to do this bullshit cuz timespan can't be constant
-            component.NextMinimumTime = TimeSpan.FromSeconds(_timing.CurTime.TotalSeconds + SOSCartridgeComponent.TimeOut);
+            component.NextMinimumTime = TimeSpan.FromSeconds(_timing.CurTime.TotalSeconds + component.TimeOut);
             // DeltaV - send feedback that you succeeded
             _popupSystem.PopupEntity(Loc.GetString("sos-message-sent-success"), uid, PopupType.Medium);
         }
