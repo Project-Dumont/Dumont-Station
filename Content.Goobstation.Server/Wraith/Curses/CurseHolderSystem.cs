@@ -17,7 +17,7 @@ public sealed class CurseHolderSystem : SharedCurseHolderSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CurseHolderComponent, BibleUsedEvent>(OnBibleSmite);
+        SubscribeLocalEvent<CurseHolderComponent, BibleUsedEvent>(OnBibleUsed);
     }
 
     private void OnBibleUsed(Entity<CurseHolderComponent> ent, ref BibleUsedEvent args)
