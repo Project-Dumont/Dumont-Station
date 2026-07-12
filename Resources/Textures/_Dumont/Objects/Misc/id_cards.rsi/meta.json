@@ -193,9 +193,6 @@
     {
       "name": "orange"
     },
-	{
-      "name": "chemist"
-    },
     {
       "name": "pirate"
     },
@@ -260,13 +257,19 @@
       "name": "idbitrunner"
     },
 	{
-      "name": "ididcourier"
+      "name": "idcourier"
     },
 	{
       "name": "idexplorer"
     },
 	{
-      "name": "idunknown"
+      "name": "idphonemerchant"
+    },
+	{
+      "name": "idprisonguard"
+    },
+	{
+      "name": "idadminassistant"
     },
     {
       "name": "gold-inhand-left",
