@@ -1,24 +1,13 @@
-using Robust.Serialization;
+using Content.Shared.PDA;
 
 namespace Content.Server.PDA
 {
     public sealed partial class PdaSystem : SharedPdaSystem
     {
 
-
-        public override void Initialize() {
-            base.Initialize();
-
-            SubscribleLocalEvent<PdaComponent, PdaNotificationEvent>(OnPdaNotification)
-        }
-
-        public void OnPdaNotification()
+        public void OnPdaNotification(Entity<PdaComponent> ent, ref PdaNotificationEvent args)
         {
-            var query = EntityQueryEnumerator<PdaComponent>;
 
-            while (query.MoveNext(out var uid, out _)) {
-
-            }
         }
     }
 }
