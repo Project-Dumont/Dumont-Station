@@ -499,9 +499,9 @@ public sealed class QuantumServerSystem : EntitySystem
         if (!_mind.TryGetMind(user, out var mindId, out var mind))
             return false;
 
-        if (pod.Avatar != null || pod.DeployedAvatar)
+        if (pod.DeployedAvatar)
         {
-            if (TryReconnectRunner((podUid, pod), user))
+            if (pod.Avatar != null && Exists(pod.Avatar) && TryReconnectRunner((podUid, pod), user))
                 return true;
 
             return false;
