@@ -10,4 +10,4 @@
     - state: targeting
       shader: unshaded
   - type: TimedDespawn
-    lifetime: 15
+    lifetime: 5

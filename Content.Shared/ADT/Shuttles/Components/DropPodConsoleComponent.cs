@@ -44,19 +44,25 @@ public sealed partial class DropPodConsoleComponent : Component
     /// How many seconds before landing to spawn <see cref="PreLandingSpawnPrototype"/>.
     /// </summary>
     [DataField]
-    public float PreLandingSpawnLeadTime = 15f;
+    public float PreLandingSpawnLeadTime = 5f;
+
+    /// <summary> // Dumont
+    /// How many seconds before landing to announce the arrival to the station.
+    /// </summary>
+    [DataField]
+    public float AnnouncementLeadTime = 5f;
 
     /// <summary>
     /// Cost of launching the drop pod in peacetime.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int PeaceCost = 60;
+    public int PeaceCost = 200;
 
     /// <summary>
     /// Cost of launching the drop pod during war (discounted).
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int WarCost = 30;
+    public int WarCost = 300;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan? WarDeclaredTime;

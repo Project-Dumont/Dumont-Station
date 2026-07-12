@@ -52,14 +52,28 @@ public sealed class DropPodConsoleBui(EntityUid owner, Enum uiKey) : BoundUserIn
 
         if (_warStatusLabel != null)
         {
-            if (s.IsAtWar)
+            if (_warStatusLabel != null)
             {
-                _warStatusLabel.Text = Loc.GetString("drop-pod-console-war-active", ("time", s.WarCooldownRemaining));
-                _warStatusLabel.FontColorOverride = Color.OrangeRed;
-            }
-            else
-            {
-                _warStatusLabel.Text = string.Empty;
+                if (s.IsAtWar)
+                {
+                    if (s.WarCooldownRemaining > 0)
+                    {
+                        _warStatusLabel.Text =
+                            Loc.GetString("drop-pod-console-war-active",
+                                ("time", s.WarCooldownRemaining));
+                    }
+                    else
+                    {   
+                        _warStatusLabel.Text =
+                            Loc.GetString("drop-pod-console-war-ready");
+                    }
+
+                    _warStatusLabel.FontColorOverride = Color.OrangeRed;
+                }
+                else
+                {
+                    _warStatusLabel.Text = string.Empty;
+                }
             }
         }
 

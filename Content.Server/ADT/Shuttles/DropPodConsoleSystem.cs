@@ -61,6 +61,9 @@ public sealed class DropPodConsoleSystem : EntitySystem
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly DecalSystem _decalSystem = default!;
 
+    private static readonly SoundSpecifier DropPodMusic =
+        new SoundCollectionSpecifier("DropPodMusic");
+
     public override void Initialize()
     {
         base.Initialize();
@@ -122,6 +125,9 @@ public sealed class DropPodConsoleSystem : EntitySystem
         // Play loud impact sound at landing site
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/metal_slam5.ogg"), podCoords, AudioParams.Default.WithVolume(12f));
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/explosion3.ogg"), podCoords, AudioParams.Default.WithVolume(10f));
+        // Dumont
+        _audio.PlayGlobal(DropPodMusic,Filter.Broadcast(),true, AudioParams.Default.WithVolume(-8f));
+        // Dumont end
 
         // Camera shake — everyone within 20 tiles gets their screen kicked
         var epicenter = new MapCoordinates(podWorldPos, mapId);
@@ -323,31 +329,39 @@ public sealed class DropPodConsoleSystem : EntitySystem
         var elapsed = cooldownPassed ? comp.Cooldown : (_timing.CurTime - comp.LastLaunchTime);
         var cooldownReady = onDropPod && !alreadyLaunched && elapsed >= comp.Cooldown;
 
-        var isAtWar = false;
+        var warDeclared = false;
         var warCooldownRemaining = 0;
-        var warNukieArriveDelay = TimeSpan.Zero;
+        var launchBlockedByWar = false;
 
         var nukeopsQuery = EntityQueryEnumerator<NukeopsRuleComponent>();
         while (nukeopsQuery.MoveNext(out _, out var nukeops))
         {
-            if (nukeops.WarDeclaredTime != null)
-            {
-                var warTime = _timing.CurTime - nukeops.WarDeclaredTime.Value;
-                warNukieArriveDelay = nukeops.WarNukieArriveDelay;
-                if (warTime < nukeops.WarNukieArriveDelay)
-                {
-                    isAtWar = true;
-                    warCooldownRemaining = (int)Math.Ceiling((nukeops.WarNukieArriveDelay - warTime).TotalSeconds);
-                }
-                break;
-            }
-        }
+            if (nukeops.WarDeclaredTime == null)
+                continue;
+            
+            warDeclared = true;
 
-        comp.WarDeclaredTime = isAtWar ? _timing.CurTime : comp.WarDeclaredTime;
+            var warTime = _timing.CurTime - nukeops.WarDeclaredTime.Value;
+
+            if (warTime < nukeops.WarNukieArriveDelay)
+           {
+                launchBlockedByWar = true;
+                warCooldownRemaining =
+                    (int)Math.Ceiling((nukeops.WarNukieArriveDelay - warTime).TotalSeconds);
+           }
+
+           break;
+       }
+
+       if (!warDeclared)
+           comp.WarDeclaredTime = null;
 
         var tcCount = GetTcInSlot(uid);
-        var currentCost = isAtWar ? comp.WarCost : comp.PeaceCost;
-        var canLaunch = cooldownReady && tcCount >= currentCost;
+        var currentCost = warDeclared ? comp.WarCost : comp.PeaceCost;
+        var canLaunch =
+            cooldownReady &&
+            tcCount >= currentCost &&
+            !launchBlockedByWar;
 
         var cooldownRemaining = cooldownReady ? 0 : (int)Math.Ceiling((comp.Cooldown - elapsed).TotalSeconds);
 
@@ -409,7 +423,7 @@ public sealed class DropPodConsoleSystem : EntitySystem
             StationWorldCenter = stationCenter,
             TcBalance = tcCount,
             CurrentCost = currentCost,
-            IsAtWar = isAtWar,
+            IsAtWar = warDeclared,
             WarCooldownRemaining = warCooldownRemaining,
         });
     }
@@ -467,8 +481,29 @@ public sealed class DropPodConsoleSystem : EntitySystem
 
         var tcCount = GetTcInSlot(uid);
 
-        var isAtWar = comp.WarDeclaredTime != null;
-        var currentCost = isAtWar ? comp.WarCost : comp.PeaceCost;
+        var warDeclared = false;
+        var launchBlockedByWar = false;
+        
+        var warQuery = EntityQueryEnumerator<NukeopsRuleComponent>();
+        while (warQuery.MoveNext(out _, out var nukeops))
+        {
+            if (nukeops.WarDeclaredTime == null)
+                continue;
+
+            warDeclared = true;
+
+            var elapsed = _timing.CurTime - nukeops.WarDeclaredTime.Value;
+
+            if (elapsed < nukeops.WarNukieArriveDelay)
+                launchBlockedByWar = true;
+
+            break;
+        }
+
+        if (launchBlockedByWar)
+            return;
+
+        var currentCost = warDeclared ? comp.WarCost : comp.PeaceCost;
 
         if (tcCount < currentCost)
             return;
@@ -497,7 +532,6 @@ public sealed class DropPodConsoleSystem : EntitySystem
             return;
         }
 
-        // Gather all blacklisted beacon positions for landing offset avoidance
         var blacklistedPositions = new List<Vector2>();
         var blacklistQuery = EntityQueryEnumerator<WarpPointComponent, NavMapBeaconComponent, MetaDataComponent>();
         while (blacklistQuery.MoveNext(out var bUid, out _, out _, out var bMeta))
@@ -507,18 +541,32 @@ public sealed class DropPodConsoleSystem : EntitySystem
                 blacklistedPositions.Add(_transform.GetWorldPosition(bUid));
         }
 
-        // Announce the chosen beacon — the exact tile is still randomised by GetDropPodTargetCoords
+        // Dumont
+        var announcementDelay = Math.Max(0f, comp.FlightTime - comp.AnnouncementLeadTime);
+
+        
         var announcement = Loc.GetString("drop-pod-console-launch-announcement",
             ("beacon", beaconName),
-            ("seconds", (int)comp.FlightTime));
-        _chat.DispatchGlobalAnnouncement(
-            announcement,
-            sender: Loc.GetString("drop-pod-console-sender"),
-            colorOverride: Color.Red);
+            ("seconds", (int)comp.AnnouncementLeadTime));
+            
+        var senderName = Loc.GetString("drop-pod-console-sender");
+
+        
+        Timer.Spawn(TimeSpan.FromSeconds(announcementDelay), () =>
+        {
+            _chat.DispatchGlobalAnnouncement(
+                announcement,
+                sender: senderName,
+                colorOverride: Color.Red);
+        });
+        // Dumont end
 
         if (TryComp<ItemSlotsComponent>(uid, out var slots))
         {
             var tcEnt = _itemSlots.GetItemOrNull(uid, "tcSlot", slots);
+
+            Log.Info($"DropPod Launch | warDeclared={warDeclared} | currentCost={currentCost} | tcCount={tcCount}");
+            
             if (tcEnt is { } tcItem && TryComp<StackComponent>(tcItem, out var stack))
                 _stack.Use(tcItem, currentCost, stack);
         }
@@ -527,10 +575,8 @@ public sealed class DropPodConsoleSystem : EntitySystem
         comp.LastLaunchTime = _timing.CurTime;
         dropPod.TargetStationGrid = beaconXform.GridUid;
 
-        // Exact landing coords — random 3-8 tile offset, kept away from blacklisted beacons
         var targetCoords = GetDropPodTargetCoords(targetBeaconEnt, targetWorldPos, blacklistedPositions);
 
-        // Schedule the pre-landing effect prototype at the configured lead time
         if (comp.PreLandingSpawnPrototype != null)
         {
             var spawnDelay = Math.Max(0f, comp.FlightTime - comp.PreLandingSpawnLeadTime);
