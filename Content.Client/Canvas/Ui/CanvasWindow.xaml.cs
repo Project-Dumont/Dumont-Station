@@ -20,6 +20,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Content.Shared.Canvas.SharedCanvasComponent;
@@ -260,7 +261,7 @@ namespace Content.Client.Canvas.Ui
             // Add a button specifically for transparency
             var transparencyButton = new Button
             {
-                Text = "Eraser",
+                Text = Loc.GetString("canvas-window-eraser-button"),
                 MinHeight = 30,
                 VerticalAlignment = Control.VAlignment.Top
             };
@@ -312,39 +313,27 @@ namespace Content.Client.Canvas.Ui
                 HeaderTools.Visible = false;
             }
 
-            int index = 0; // Index to track the position in the painting code
-            bool isDrawing = false; // Tracks if the mouse button is held down for drawing
-            bool pendingSend = false; // Whether the current stroke changed anything that needs to be sent
+            int index = 0;
+            bool isDrawing = false;
+            bool pendingSend = false;
 
-            // Rebuild the cached segment array (padded to the grid size) once for the whole grid.
             RebuildSegments();
 
-            // Iterate over rows
+            Grids.Columns = _width;
+
             for (int row = 0; row < _height; row++)
             {
                 int currentRow = row;
 
-                // Create a new horizontal BoxContainer for each row
-                var rowContainer = new BoxContainer
-                {
-                    Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                    HorizontalExpand = true,
-                    VerticalExpand = false,
-                    Align = AlignMode.Center
-                };
-
-                // Iterate over columns for the current row
                 for (int col = 0; col < _width; col++)
                 {
                     int currentCol = col;
 
-                    // Get the initial color for this cell (segments are padded to grid size).
                     Color initialColor = index < _segments.Length
                         ? GetColorFromCode(_segments[index])
                         : Color.White;
-                    index++; // Increment the index
+                    index++;
 
-                    // Create a new button
                     var button = new Button
                     {
                         MinSize = new Vector2(ButtonSize, ButtonSize),
@@ -353,7 +342,6 @@ namespace Content.Client.Canvas.Ui
                         ModulateSelfOverride = initialColor
                     };
 
-                    // Handle mouse-down events for starting the drawing process
                     button.OnButtonDown += _ =>
                     {
                         isDrawing = true;
@@ -362,7 +350,6 @@ namespace Content.Client.Canvas.Ui
                             pendingSend = true;
                     };
 
-                    // Handle mouse-enter events for drawing while holding the mouse button
                     button.OnMouseEntered += _ =>
                     {
                         if (isDrawing)
@@ -373,34 +360,19 @@ namespace Content.Client.Canvas.Ui
                         }
                     };
 
-                    // Handle mouse-up events to stop drawing. Only now do we send the
-                    // whole painting code to the server once, instead of once per pixel.
                     button.OnButtonUp += _ =>
                     {
                         isDrawing = false;
                         if (pendingSend)
                         {
                             pendingSend = false;
-                            // Join the mutated segments back into the code string once per stroke.
                             _paintingCode = string.Join(";", _segments);
                             OnSelected?.Invoke(_paintingCode);
                         }
                     };
 
-                    rowContainer.AddChild(button);
+                    Grids.AddChild(button);
                 }
-
-                Grids.AddChild(rowContainer);
-            }
-
-            if (!string.IsNullOrEmpty(_artist))
-            {
-                var artistButton = new Button
-                {
-                    Text = _artist,
-                    ModulateSelfOverride = Color.Black
-                };
-                Grids.AddChild(artistButton);
             }
         }
 
@@ -474,34 +446,6 @@ namespace Content.Client.Canvas.Ui
             }
             Logger.ErrorS("canvas", $"color {colorCode} color code fail.");
             return Color.White; // Default to white if parsing fails
-        }
-
-
-        /// <summary>
-        /// Converts a Color object to a color code character.
-        /// </summary>
-        private char GetCodeFromColor(Color color)
-        {
-            if (color == Color.Transparent) return 'Z';
-            if (color == Color.Red) return 'R';
-            if (color == Color.Green) return 'G';
-            if (color == Color.Blue) return 'B';
-            if (color == Color.Yellow) return 'Y';
-            if (color == Color.Cyan) return 'C';
-            if (color == Color.Magenta) return 'M';
-            if (color == new Color(1.0f, 0.65f, 0.0f)) return 'O'; // Orange
-            if (color == new Color(0.75f, 0.0f, 0.75f)) return 'P'; // Purple
-            if (color == new Color(0.33f, 0.55f, 0.2f)) return 'T'; // Teal
-            if (color == new Color(0.6f, 0.3f, 0.1f)) return 'N'; // Brown
-            if (color == new Color(0.9f, 0.8f, 0.7f)) return 'E'; // Beige
-            if (color == Color.LightGray) return 'L';
-            if (color == Color.DarkGray) return 'D';
-            if (color == new Color(0.5f, 0.5f, 1.0f)) return 'F'; // Pastel Blue
-            if (color == new Color(1.0f, 0.5f, 0.5f)) return 'I'; // Pastel Pink
-            if (color == new Color(0.0f, 0.5f, 0.5f)) return 'Q'; // Dark Cyan
-            if (color == new Color(0.4f, 0.2f, 0.6f)) return 'H'; // Deep Purple
-            if (color == Color.Black) return 'K';
-            return 'W'; // Default to white
         }
 
 
