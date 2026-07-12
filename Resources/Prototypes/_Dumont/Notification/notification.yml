@@ -1,2 +1,52 @@
 - type: notificationGroup
-  members:
+  id: All
+
+- type: notificationGroup
+  id: CaptainOnly
+  access:
+  - Captain
+
+- type: notificationGroup
+  id: EngineeringAlerts
+  accessGroups:
+  - Engineering
+  access:
+  - Captain
+
+- type: notificationGroup
+  id: SecurityAlert
+  accessGroups:
+  - Security
+  access:
+  - Captain
+
+# Futuramente fazer um cartucho que serve pra chamar o jani
+- type: notificationGroup
+  id: janitorAlert
+  access:
+  - Janitor
+
+- type: notificationGroup
+  id: MedicalDepartment
+  accessGroups:
+  - Medical
+
+- type: notificationGroup
+  id: CargoDepartment
+  accessGroups:
+  - Cargo
+
+- type: notificationGroup
+  id: ScienceDepartment
+  accessGroups:
+  - Science
+
+- type: notificationGroup
+  id: SecurityDepartment
+  accessGroups:
+  - Security
+
+- type: notificationGroup
+  id: ServiceDepartment
+  accessGroups:
+  - Service

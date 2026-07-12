@@ -3,6 +3,7 @@ using Content.Shared.Access;
 
 namespace Content.Shared.PDA;
 
+[Prototype]
 public sealed class NotificationGroupPrototype : IPrototype {
     [ViewVariables]
     [IdDataField]
