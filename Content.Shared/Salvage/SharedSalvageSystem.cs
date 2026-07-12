@@ -99,6 +99,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
 
         foreach (var mod in mods)
         {
+
             if (mod.Cost > rating || (mod.Biomes != null && !mod.Biomes.Contains(biome)))
                 continue;
 
@@ -118,6 +119,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
 
         foreach (var mod in mods)
         {
+
             if (mod.Cost > rating)
                 continue;
 
@@ -125,7 +127,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
 
             return mod;
         }
-
+ 
         throw new InvalidOperationException();
     }
 }
