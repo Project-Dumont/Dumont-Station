@@ -10,7 +10,8 @@ gs-balanceui-token-shadowling = Shadowling
 gs-balanceui-token-malf = Malf AI
 
 gs-balanceui-token-loneops = Loneops
-gs-balanceui-token-wraith = Wraith
+gs-balanceui-token-wraith-start = Wraith Roundstart
+gs-balanceui-token-wraith-mid = Wraith Midround
 gs-balanceui-token-slaughterdemon = Slaughter demon
 gs-balanceui-token-ninja = Ninja
 gs-balanceui-token-abductor = Abductor

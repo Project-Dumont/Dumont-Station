@@ -1,0 +1,253 @@
+# Loot table
+# Main loot table for random spawns
+- type: salvageLoot
+  id: SalvageLootDifficult
+  loots:
+    - !type:RandomSpawnsLoot
+      entries:
+        - proto: AmmoTechFabCircuitboard
+          cost: 2
+          prob: 0.2
+        - proto: ResearchDisk10000
+          prob: 0.3
+
+        - proto: WeaponShotgunHandmade
+          prob: 0.5
+          cost: 4
+        - proto: WeaponRifleAk
+          prob: 0.1
+          cost: 50
+
+        - proto: MagazineLightRifleEmpty
+          prob: 0.2
+          cost: 3
+
+        - proto: MagazineBoxPistol
+          prob: 0.2
+          cost: 10
+        - proto: MagazineBoxPistolIncendiary
+          prob: 0.2
+          cost: 10
+        - proto: MagazinePistol
+          prob: 0.2
+          cost: 10
+        - proto: MagazineBoxPistolUranium
+          prob: 0.1
+          cost: 20
+        - proto: MagazineBoxPistolIncendiary
+          prob: 0.1
+          cost: 20
+        - proto: BoxMagazinePistolCaselessRifle
+          prob: 0.05
+          cost: 40
+
+        - proto: MagazineBoxLightRiflePractice
+          prob: 0.2
+          cost: 10
+        - proto: MagazineBoxLightRifle
+          prob: 0.2
+          cost: 10
+        - proto: MagazineBoxLightRiflePractice
+          prob: 0.2
+          cost: 10
+        - proto: MagazineBoxLightRifleUranium
+          prob: 0.1
+          cost: 20
+        - proto: MagazineBoxLightRifleIncendiary
+          prob: 0.1
+          cost: 20
+        - proto: MagazineBoxLightRifleBig
+          prob: 0.05
+          cost: 40
+        - proto: GrenadeIncendiary
+          prob: 0.3
+          cost: 10
+        - proto: ExGrenade
+          prob: 0.3
+          cost: 10
+
+        - proto: LeftArmCybernetic
+          prob: 0.6
+          cost: 10
+        - proto: RightArmCybernetic
+          prob: 0.6
+          cost: 10
+        - proto: BasicCyberneticHeart
+          prob: 0.4
+          cost: 15
+        - proto: DiagnosticCyberneticEyes
+          prob: 0.4
+          cost: 15
+        - proto: BasicCyberneticLiver
+          prob: 0.4
+          cost: 15
+        - proto: DiagnosticCyberneticEyes
+          prob: 0.4
+          cost: 15
+        - proto: BasicCyberneticLungs
+          prob: 0.2
+          cost: 15
+        - proto: DiagnosticCyberneticEyes
+          prob: 0.2
+          cost: 15
+        - proto: BasicCyberneticLungs
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticHeart
+          prob: 0.2
+          cost: 20
+        - proto: MedicalCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticHeart
+          prob: 0.2
+          cost: 20
+        - proto: MedicalCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftFootCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: MedicalCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftFootCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: SecurityCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftHandCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: SecurityCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: LeftHandCybernetic
+          prob: 0.2
+          cost: 20
+        - proto: SecurityCyberneticEyes
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: UpgradedCyberneticHeart
+          prob: 0.2
+          cost: 20
+        - proto: BasicCyberneticLiver
+          prob: 0.2
+          cost: 20
+        - proto: UpgradedCyberneticLungs
+          prob: 0.2
+          cost: 20
+
+        - proto: LeftLegCybernetic
+          prob: 0.6
+          cost: 5
+        - proto: RightLegCybernetic
+          prob: 0.6
+          cost: 5
+        - proto: HonkerLLeg
+          prob: 0.6
+          cost: 5
+        - proto: HonkerRLeg
+          prob: 0.6
+          cost: 5
+        - proto: HamtrLLeg
+          prob: 0.4
+          cost: 5
+        - proto: HamtrRLeg
+          prob: 0.4
+          cost: 5
+        - proto: SpeedLeftLeg
+          prob: 0.4
+          cost: 15
+        - proto: SpeedRightLeg
+          prob: 0.4
+          cost: 15
+
+        - proto: AnimalTranslator
+          prob: 0.2
+          cost: 5
+        - proto: XenoTranslator
+          prob: 0.2
+          cost: 5
+        - proto: EncryptionKeyBinary
+          prob: 0.2
+          cost: 5
+        - proto: EncryptionKeyBinary
+          prob: 0.2
+          cost: 5
+        - proto: BasicSpaceItalianTranslatorImplanter
+          prob: 0.2
+          cost: 5
+        - proto: RootSpeakTranslatorImplanter
+          prob: 0.2
+          cost: 5
+        - proto: BikeHornImplanter
+          prob: 0.1
+          cost: 10
+        - proto: LightImplanter
+          prob: 0.1
+          cost: 10
+        - proto: SadTromboneImplanter
+          prob: 0.2
+          cost: 5
+        - proto: AdvancedGalaticCommonTranslatorImplanter
+          prob: 0.2
+          cost: 5
+        - proto: MindShieldImplanter
+          prob: 0.2
+          cost: 5
+        - proto: TrackingImplanter
+          prob: 0.2
+          cost: 5
+        - proto: ClothingOuterArmorScrap
+          prob: 0.2
+          cost: 5
+        - proto: ClothingOuterArmorQueenCarapace
+          prob: 0.1
+          cost: 20
+
+        - proto: Wristwatch
+          prob: 0.8
+          cost: 3
+        - proto: WristwatchGold
+          prob: 0.4
+          cost: 6
+        - proto: ScrapPAIGold
+          prob: 0.2
+          cost: 1
+        - proto: ClothingNeckCloakPirateCap
+          prob: 0.2
+          cost: 18
+        - proto: MusicBoxInstrument
+          prob: 0.2
+          cost: 2
+
+        - proto: DrinkPremiumVodkaBottleFull
+          cost: 3                    
+        - proto: MedkitBruteFilled
+          cost: 6
+        - proto: MedkitBurnFilled
+          cost: 6
+        - proto: MedkitRadiationFilled
+          cost: 6
+        - proto: MedkitToxinFilled
+          cost: 6

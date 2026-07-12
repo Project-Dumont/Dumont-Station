@@ -42,7 +42,7 @@
 
 # Helldiver
 - type: entity
-  parent: SalvageIDCard
+  parent: SalvageLeadIDCard
   id: HelldiverIDCard
   name: salvage diver ID card
   components:

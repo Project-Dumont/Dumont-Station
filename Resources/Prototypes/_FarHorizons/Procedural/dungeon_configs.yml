@@ -1,0 +1,96 @@
+- type: dungeonConfig
+  id: Reactor
+  layers:
+  - !type:PrefabDunGen
+    roomWhitelist:
+      tags:
+      - SalvageReactor
+    presets:
+    - ReactorBox
+    - ReactorLong
+    - ReactorStar
+    - ReactorDouble
+
+  - !type:CorridorDunGen
+    width: 3
+    tile: FloorDarkMono
+
+  - !type:DungeonEntranceDunGen
+    count: 3
+    tile: FloorDarkMono
+    contents: BaseAirlock
+  
+  - !type:ExternalWindowDunGen
+    tile: FloorDarkMono
+    contents: BaseWindow
+  
+  - !type:RoomEntranceDunGen
+    tile: FloorDarkMono
+    contents: BaseAirlock
+
+  - !type:WallMountDunGen
+    contents: ReactorWalls
+    tile: FloorDarkMono
+
+  - !type:BoundaryWallDunGen
+    wall: WallReinforced
+    tile: FloorDarkMono
+  
+  - !type:RoomEntranceDunGen
+    tile: FloorDarkMono
+    contents: BaseAirlock
+
+  - !type:JunctionDunGen
+    width: 3
+    tile: FloorDarkMono
+    contents: BaseAirlock
+
+  - !type:AutoCablingDunGen
+    entity: CableApcExtension
+  
+  - !type:CornerClutterDunGen
+    contents: BaseClutter
+
+  - !type:CorridorDecalSkirtingDunGen
+    cardinalDecals:
+      South: WarnLineN
+      East: WarnLineE
+      North: WarnLineW
+      West: WarnLineS
+    cornerDecals:
+      SouthEast: WarnCornerSE
+      SouthWest: WarnCornerSW
+      NorthEast: WarnCornerNE
+      NorthWest: WarnCornerNW
+    pocketDecals:
+      SouthWest: WarnCornerSmallSW
+      SouthEast: WarnCornerSmallSE
+      NorthWest: WarnCornerSmallNW
+      NorthEast: WarnCornerSmallNE
+
+
+# - type: entityTable // Dumont
+#  id: BaseAirlock
+#  table: !type:AllSelector
+#    children:
+#    - id: CableApcExtension
+#    - id: AirlockGlass
+                                        
+# - type: entityTable
+#  id: BaseWindow
+#  table: !type:AllSelector
+#    children:
+#    - id: Grille
+#    - id: ReinforcedWindow
+
+- type: entityTable
+  id: ReactorWalls
+  table: !type:GroupSelector
+    children:
+    - id: SignRadiationMed
+    - id: ExtinguisherCabinetFilled
+      prob: 0.2
+    - id: FireAxeCabinetFilled
+      prob: 0.1
+    - id: IntercomEngineering
+      prob: 0.1

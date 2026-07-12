@@ -160,4 +160,10 @@ namespace Content.Shared.Lathe
     /// </summary>
     [ByRefEvent]
     public readonly record struct LatheStartPrintingEvent(LatheRecipePrototype Recipe);
+
+    // FarHorizons change start
+    [ByRefEvent]
+    public readonly record struct LatheProductFinishedEvent(EntityUid Item);
+
+    //FarHorizons End
 }

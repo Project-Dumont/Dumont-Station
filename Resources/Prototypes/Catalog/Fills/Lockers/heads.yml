@@ -310,6 +310,7 @@
     - id: RubberStampHop
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
+    - id: SOSCartridge # DeltaV - adds SOS app https://github.com/DeltaV-Station/Delta-v/pull/2812
     - id: PrinterDocFlatpack # Gabystation [port corvax]
     - id: BoxTapeRecorder # Gabystation
       prob: 0.5
@@ -564,6 +565,7 @@
       prob: 0.5
     - id: SecApartmentTablet # Dumont edit it's the hos's job
     - id: SecurityMegaphone
+    - id: SOSCartridge # Dumont edit
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

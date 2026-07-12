@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHeadsetCargo
+  id: ClothingHeadsetSalvageLead
+  name: salvage lead's headset
+  description: Headset used by the salvage lead.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommand
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/mining.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/mining.rsi
