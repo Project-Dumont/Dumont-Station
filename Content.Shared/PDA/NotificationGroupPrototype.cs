@@ -9,5 +9,9 @@ public sealed class NotificationGroupPrototype : IPrototype {
     public string ID { get; private set; } = default!;
 
     [DataField]
-    public HashSet<ProtoId<AccessLevelPrototype>> Members = null!;
+    public HashSet<ProtoId<AccessGroupPrototype>>? AcessGroups = null;
+
+    [DataField]
+    public HashSet<ProtoId<AccessLevelPrototype>>? Access = null;
+
 }
