@@ -42,7 +42,6 @@
       ballistic-ammo: !type:Container
   - type: Tag
     tags:
-    - Nullrod
     - Iradomini
   - type: DivineIntervention
   - type: Reflect
@@ -103,7 +102,6 @@
         volume: 0.1
   - type: Tag
     tags:
-    - Nullrod
     - FaithGun
   - type: DivineIntervention
   - type: Reflect
