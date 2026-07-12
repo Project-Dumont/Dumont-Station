@@ -23,9 +23,9 @@ language-Azaziba-description =
     Apesar de minguar desde quando os Moghes entraram no estágio galáctico, é popularmente usado pelos Unathi que nunca se conformaram à dominação cultural da Hegemonia.
 
 # Referência ao Chinês Simplificado.
-language-SolCommon-name = Sol Simplificado
+language-SolCommon-name = Solariano
 language-SolCommon-description =
-    Com suas raízes no mandarim chinês, Sol surgiu como um esforço de unificar a língua oficial da Aliança Solar.
+    Com suas raízes no mandarim chinês, surgiu como um esforço de unificar a língua oficial da Aliança Solar.
     É falado por oficiais de estado, ensinado em escolas e falado por aqueles que sentem um orgulho na Aliança ou de alguma forma sucumbiram à cultura deles.
 
 language-NovuNederic-name = Portomenho
@@ -34,11 +34,11 @@ language-NovuNederic-description =
     Falado na Nova-Holanda, essa língua de troca direta e pragmática carrega as consoantes afiadas e vogais cortadas do passado terrestre.
     Desenvolvido durante séculos de navegações, conquistas territoriais e comércio, ela prospera entre aqueles que modificavam mundos inteiros - assim como seus antepassados modificaram das terras ao mar.
 
-language-TauCetiBasic-name = Tau-Ceti Unificado
+language-TauCetiBasic-name = Galáctico Comum
 language-TauCetiBasic-description =
     Um sucessor espiritual do Esperanto, estabelecido em 2404 em Tau Ceti por intelectuais de Ceti.
     O seu alfabeto único, totalmente customizável e estrutura permitem-na ser falada pela maioria das espécies alienígenas.
-    É a linguagem oficial de Tau Ceti e tem ganhado popularidade em círculos diplomáticos e Universalistas pelo espaço sideral humano.
+    É a língua franca oficial da galáxia e tem ganhado popularidade em círculos diplomáticos e Universalistas pelo espaço sideral humano.
 
 # Trocadilho idiota de "espaço" com "espanhol". Não resisti.
 language-Tradeband-name = Espaçonhol
@@ -58,7 +58,7 @@ language-Elyran-description =
     Elírio Padrão é a língua oficial da República de Elíria. Construido usando elementos do Persa, Árabe e Turco.
     A influência dessas três línguas podem ser vistas no seu vocabulário e gramática.
 
-language-Canilunzt-name = Canilunzt
+language-Canilunzt-name = Vulpino
 language-Canilunzt-description =
     A linguagem gutural falada e utilizada pelos habitantes do sistema Vazzend,
     composta de latidos, rosnidos e movimentos das orelhas e cauda. Vulpkanins falam essa linguagem com facilidade.
@@ -74,21 +74,21 @@ language-Calcic-name = Cálcico
 language-Calcic-description = A linguagem do chacoalhar de ossos dos Esqueletos e Plasmamen. Soa como uma harmonia de ossos em tom humorístico.
 
 # Tau-Ceti Basic Sign Language - Removed prefix for better readability.
-language-Sign-name = Linguagem de Sinais
+language-Sign-name = Libras
 language-Sign-description =
-    Linguagem de Sinais de Tau Ceti.
+    Linguagem de sinais comum galáctica.
     Essa linguagem de sinais é popular entre deficientes auditivos.
 
-language-Marish-name = Marish
+language-Marish-name = Marrish
 language-Marish-description =  Uma linguagem falada apenas por Shadowkins, não pode ser replicada por línguas comuns.
 
 language-ValyrianStandard-name = Valírio Padrão
 language-ValyrianStandard-description =
     Uma linguagem originada de línguas da europa oriental da antiga Terra - Valírio Padrão é comunmente falada por Harpias trazidas do seu planeta natal Valíria 4b.
     É raramente falada fora dos mundos dos falantes nativos, e tem sido recentemente suplantada pelos 'Conlangs da Aliança Solar.
-    Seus falantes são aqueles que desejam defender as tradições e crenças dos pvoos antigos de antes do período colonial.
+    Seus falantes são aqueles que desejam defender as tradições e crenças dos povos antigos de antes do período colonial.
 
-language-Chittin-name = Zunir
+language-Chittin-name = Queratinita
 language-Chittin-description =
     Uma linguagem que consiste em cliques, zunidos e uma variedade de sons de insetos.
     A maior parte da fala deles vem de suas antenas, tornando-a quase impossível para pessoas que não têm como falar.
