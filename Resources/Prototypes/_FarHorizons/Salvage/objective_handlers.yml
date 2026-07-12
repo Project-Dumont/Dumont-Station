@@ -1,0 +1,19 @@
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveRecoverHandler
+  handler: !type:SalvageMissionRecovery
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveCaptureHandler
+  handler: !type:SalvageMissionCapture
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveRescueHandler
+  handler: !type:SalvageMissionRescue
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectivePurgeHandler
+  handler: !type:SalvageMissionPurge
+
+- type: salvageMissionObjectiveHandler
+  id: MissionObjectiveShutdownHandler
+  handler: !type:SalvageMissionShutdown

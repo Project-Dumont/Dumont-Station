@@ -1,0 +1,12 @@
+- type: entity
+  id: SpawnPointSalvageLead
+  parent: SpawnPointJobBase
+  name: salvage lead
+  components:
+  - type: SpawnPoint
+    job_id: SalvageLead
+  - type: Sprite
+    sprite: _Starlight/Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: salvagelead

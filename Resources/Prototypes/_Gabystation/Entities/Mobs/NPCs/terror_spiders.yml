@@ -26,8 +26,8 @@
   - type: ReplacementAccent
     accent: xeno
   - type: Bloodstream
-    bloodReagent: CopperBlood
-    bloodMaxVolume: 105
+    bloodReagent: Oil
+    bloodMaxVolume: 650
     bloodlossDamage:
       types:
         Bloodloss:
@@ -35,7 +35,7 @@
     bloodlossHealDamage:
       types:
         Bloodloss:
-          -1
+          -0.5
   - type: Insulated
   - type: CombatMode
   - type: MeleeWeapon

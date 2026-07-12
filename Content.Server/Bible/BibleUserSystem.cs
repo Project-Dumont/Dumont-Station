@@ -169,6 +169,11 @@ namespace Content.Server.Bible
             if (args.Target == null || args.Target == args.User || !_mobStateSystem.IsAlive(args.Target.Value))
                 return; // STOP WITH USELESS BRACES!! - Goobstation
 
+            // <Trauma>
+            var bibleUsedEv = new BibleUsedEvent();
+            RaiseLocalEvent(args.Target.Value, ref bibleUsedEv);
+            // </Trauma>
+
             if (!HasComp<BibleUserComponent>(args.User))
             {
                 _popupSystem.PopupEntity(Loc.GetString("bible-sizzle"), args.User, args.User);

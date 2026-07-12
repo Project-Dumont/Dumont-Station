@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # --- Base Avatar Gear ---
 
 - type: startingGear
@@ -7,6 +11,7 @@
     jumpsuit: ClothingUniformJumpsuitBitrunner
     shoes: ClothingShoesColorBlack
     back: ClothingBackpackMessenger
+    belt: HostMonitor
   storage:
     back:
       - BoxSurvivalSlotsBasic
@@ -48,6 +53,12 @@
     jumpsuit: ClothingUniformJumpsuitMime
     shoes: ClothingShoesColorBlack
     back: ClothingBackpackMessengerMime
+  storage:
+    back:
+      - BoxSurvivalSlotsBasic
+      - HostMonitor
+      - FlashlightLantern
+      - MedkitFilled
 
 - type: startingGear
   parent: BitrunnerAvatarGear
@@ -164,4 +175,9 @@
     mask: ClothingMaskGasERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTSecurity
-    belt: FlashlightSeclite
+    belt: HostMonitor
+  storage:
+    back:
+      - BoxSurvivalSlotsBasic
+      - FlashlightSeclite
+      - MedkitFilled
