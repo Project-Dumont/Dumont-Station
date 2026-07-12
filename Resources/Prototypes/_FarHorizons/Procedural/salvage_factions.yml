@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: salvageFaction
   id: Silicon
   desc: salvage-faction-silicon
@@ -25,3 +29,4 @@
   difficulties: 
     - Challenging
     - Moderate
+    - Difficult
