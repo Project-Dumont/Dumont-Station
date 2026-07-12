@@ -33,7 +33,7 @@ public sealed class DroppodSystem : EntitySystem
 
     public void CreateDroppod(EntityCoordinates coords, List<EntProtoId> spawns)
     {
-        var droppod = Spawn("ADTDroppodDropping", coords);
+        var droppod = Spawn("", coords);
         if (!TryComp<DroppodComponent>(droppod, out var pod))
             return;
         foreach (var proto in spawns)
