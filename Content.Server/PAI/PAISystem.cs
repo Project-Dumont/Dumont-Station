@@ -37,6 +37,7 @@ using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using System.Text;
+using Content.Shared.Kitchen.Components;
 
 namespace Content.Server.PAI;
 

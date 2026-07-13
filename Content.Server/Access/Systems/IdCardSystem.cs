@@ -51,6 +51,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.Kitchen.EntitySystems;
+using Content.Shared.Kitchen.Components;
 
 namespace Content.Server.Access.Systems;
 
