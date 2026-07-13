@@ -134,13 +134,10 @@ namespace Content.Client.Canvas.Ui
 
             FinalizeButton.OnPressed += _ =>
             {
-                _artist = "Anonymous";
-                if (!string.IsNullOrEmpty(_signature))
-                    _artist = _signature;
-                if (_entManager.TryGetComponent(_owner, out MetaDataComponent? metaData))
-                {
-                    _artist = metaData.EntityName;
-                }
+                var signature = ArtistSignature.Text.Trim();
+                _artist = string.IsNullOrEmpty(signature)
+                    ? Loc.GetString("canvas-artist-anonymous")
+                    : signature;
                 OnFinalize?.Invoke(_artist);
             };
 
@@ -311,6 +308,12 @@ namespace Content.Client.Canvas.Ui
                 ResolutionContainer.Visible = false;
                 HeaderColorPreview.Visible = false;
                 HeaderTools.Visible = false;
+                ArtistLabel.Text = Loc.GetString("canvas-window-artist-label", ("artist", _artist));
+                ArtistLabel.Visible = true;
+            }
+            else
+            {
+                ArtistLabel.Visible = false;
             }
 
             int index = 0;

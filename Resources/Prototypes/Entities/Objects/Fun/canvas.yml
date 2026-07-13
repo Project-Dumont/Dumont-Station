@@ -4,9 +4,9 @@
 
 - type: entity
   parent: BaseItem
-  id: CanvasBase
-  name: Canvas
-  description: A canvas to Paint.
+  id: Canvas
+  name: tela
+  description: Uma tela em branco, pronta para ser pintada.
   components:
   - type: Sprite
     sprite: Objects/Misc/artstuff.rsi
@@ -33,7 +33,6 @@
     artist: ""
     height: 16
     width: 16
-  # Allows the canvas to be wrenched down so it stays put like an easel.
   - type: Anchorable
   - type: Physics
     canCollide: true
@@ -49,33 +48,3 @@
   - type: PhysicalComposition
     materialComposition:
       Cloth: 300
-
-- type: entity
-  parent: CanvasBase
-  id: CanvasMedium
-  name: Medium Canvas
-  description: A medium sized canvas to paint.
-  components:
-  - type: Canvas
-    height: 16
-    width: 16
-
-- type: entity
-  parent: CanvasBase
-  id: CanvasLarge
-  name: Large Canvas
-  description: A big sized canvas to paint.
-  components:
-  - type: Canvas
-    height: 16
-    width: 32
-
-- type: entity
-  parent: CanvasBase
-  id: CanvasGiant
-  name: Giant Canvas
-  description: A giant sized canvas to paint.
-  components:
-  - type: Canvas
-    height: 32
-    width: 32

@@ -11,3 +11,5 @@ canvas-window-finalize-button = Finalizar
 canvas-window-resolution-label = Resolução
 canvas-window-signature-placeholder = Assinatura
 canvas-window-eraser-button = Borracha
+canvas-window-artist-label = Artista: {$artist}
+canvas-artist-anonymous = Anônimo

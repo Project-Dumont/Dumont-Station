@@ -54,5 +54,6 @@
             </BoxContainer>
 
         </ScrollContainer>
+        <Label Name="ArtistLabel" HorizontalAlignment="Center" Visible="False" Margin="0 8 0 8"/>
     </BoxContainer>
 </controls:FancyWindow>
