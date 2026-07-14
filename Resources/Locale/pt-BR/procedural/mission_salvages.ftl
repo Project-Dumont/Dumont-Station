@@ -32,3 +32,4 @@ salvage-mission-objective-announcement-shutdown = Sua missão é encontrar e des
 salvage-mission-objective-name-disarm = Desarme
 salvage-mission-objective-description-disarm = Desative o protocolo de autodestruição de uma fábrica automatizada.
 salvage-mission-objective-announcement-disarm = Sua missão é encontrar os códigos de desarme e inseri-los nos consoles de segurança para interromper a sequência de autodestruição. Há um total de {$numTargets} códigos.
+salvage-mission-objective-disarm-paper = O seu código de desarme do turno é: #{$code}
