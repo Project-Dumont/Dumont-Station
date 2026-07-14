@@ -1,10 +1,10 @@
 using System.Linq;
 using Content.Server.Body;
 using Content.Server.Station.Systems;
-using Content.Shared._FarHorizons.Factions;
 using Content.Shared._FarHorizons.Salvage;
 using Content.Shared._FarHorizons.Salvage.Components;
 using Content.Shared.Damage.Systems;
+using Robust.Shared.Map;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
@@ -12,6 +12,8 @@ using Content.Shared.Paper;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared.Damage;
+using Content.Server.Humanoid;
 
 namespace Content.Server._FarHorizons.Salvage.Objectives;
 
@@ -24,6 +26,7 @@ public sealed partial class SalvageMissionDisarm : BaseSalvageMissionObjectiveHa
 
     public override void AFterFTLToMap(EntityUid shuttle) => 
         Announce(GetAnnouncement());
+        
     public override void BeforeFTLFromMap(EntityUid shuttle)
     {
         if (GetExpeditionConsole(shuttle) is not EntityUid expedConsole)
@@ -33,6 +36,7 @@ public sealed partial class SalvageMissionDisarm : BaseSalvageMissionObjectiveHa
         var targetsDisarmed = allTargets.Count(p => EntMan.TryGetComponent<SalvageMissionDisarmConsoleComponent>(p, out var console) && !console.Armed);
         SetRewardComponent(expedConsole, ResolveCompletion(targetsDisarmed));
     }
+    
     public override void BeforeFTLToMap(EntityUid shuttle){} // Override intentionally left empty
 
     public override void OnMapCreated()
@@ -40,29 +44,29 @@ public sealed partial class SalvageMissionDisarm : BaseSalvageMissionObjectiveHa
         if (!EntMan.TryGetComponent<TransformComponent>(Map, out var mapTransform))
             return;
 
-        var factions = IoCManager.Resolve<ISharedFactionManager>();
-        var visualBody = EntMan.System<VisualBodySystem>();
-        var profile = EntMan.System<HumanoidProfileSystem>();
+        var humanoid = EntMan.System<HumanoidAppearanceSystem>();
         var metadata = EntMan.System<MetaDataSystem>();
         var state = EntMan.System<MobStateSystem>();
         var damageable = EntMan.System<DamageableSystem>();
-        var stationSpawning = EntMan.System<StationSpawningSystem>();
         var inventory = EntMan.System<InventorySystem>();
         var paper = EntMan.System<PaperSystem>();
         var disarmConsole = EntMan.System<SalvageMissionDisarmConsoleSystem>();
 
-        var possibleFactions = factions.ListPlayableFactions().Where(p => p.Major).ToList();
-        var selectedFaction = possibleFactions[Rand.Next(possibleFactions.Count)];
-
         List<EntityUid> bodies = [];
+        List<EntityCoordinates> bodyPositions = [];
 
         for (var i = 0; i < NumBodies; i++)
         {
-            if (GetRandomEmptyTileInDungeon() is not { } pos) return;
+            if (GetRandomEmptyTileInDungeon() is not { } pos) 
+                continue; // Dumont
 
+            // Dumont
             var damage = SalvageMissionRescue.RandomDamage(ProtoMan, Rand, 100, 200, 4);
-            var body = SalvageMissionRescue.SpawnRandomBody(ProtoMan, EntMan, Rand, pos, visualBody, profile, metadata, state, damageable, factions, stationSpawning, inventory, selectedFaction, true, damage, true);
+            
+            // Dumont
+            var body = SalvageMissionRescue.SpawnRandomBody(ProtoMan, EntMan, Rand, pos, humanoid, metadata, inventory, state, damageable, true, damage, true);
             bodies.Add(body);
+            bodyPositions.Add(pos); // Dumont
         }
         
         Rand.Shuffle(bodies);
@@ -82,23 +86,30 @@ public sealed partial class SalvageMissionDisarm : BaseSalvageMissionObjectiveHa
 
         for (var i = 0; i < numCodes; i++)
         {
+            if (bodies.Count == 0 || consoles.Count == 0)
+                break; // Dumont
+
             var slot = _pocketSlots[Rand.Next(_pocketSlots.Count)];
+            
+            // Dumont
             var body = bodies.Pop();
             var console = consoles.Pop();
-            var spawnedPaper = EntMan.Spawn(_paper);
+            
+            // Dumont
+            var bodyXform = EntMan.GetComponent<TransformComponent>(body);
+            var pos = bodyXform.Coordinates;
 
-            if (!inventory.TryEquip(body, spawnedPaper, slot, force: true))
-            {
-                EntMan.DeleteEntity(spawnedPaper);
-                i--;
-                continue;
-            }
+            // Dumont
+            var spawnedPaper = EntMan.SpawnAtPosition(_paper, pos);
 
             var code = GenerateCode();
             
             paper.SetContent(spawnedPaper, Loc.GetString("salvage-mission-objective-disarm-paper", ("code", code)));
             disarmConsole.SetupConsole(console.AsNullable(), code);
             MarkEntity(console);
+
+            // Dumont
+            inventory.TryEquip(body, spawnedPaper, slot, force: true);
         }
     }
 

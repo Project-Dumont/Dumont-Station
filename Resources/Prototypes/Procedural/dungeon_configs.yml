@@ -301,19 +301,19 @@
     - id: PottedPlantRandom
       amount: 1
 
-- type: entityTable
-  id: BaseAirlock
-  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
-    children:
-    - id: CableApcExtension
-    - id: AirlockGlass
+# - type: entityTable
+#  id: BaseAirlock
+#  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
+#    children:
+#    - id: CableApcExtension
+#    - id: AirlockGlass
 
-- type: entityTable
-  id: BaseWindow
-  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
-    children:
-    - id: Grille
-    - id: ReinforcedWindow
+# - type: entityTable
+#  id: BaseWindow
+#  table: !type:AllSelector # Far Horizons fix. Group selector means "something from group" which would cause doors and windows to be missing half the time
+#    children:
+#    - id: Grille
+#    - id: ReinforcedWindow
 
 # Lava brig
 - type: entityTable

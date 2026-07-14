@@ -22,7 +22,7 @@ tilemap:
   15: FloorDarkHerringbone
   4: FloorDarkMono
   8: FloorDarkPavementVertical
-  16: FloorDarkVerticalSlatsBordered
+  16: FloorDarkPlastic
   17: FloorMetalDiamond
   12: FloorOldConcreteMono
   2: FloorShuttleOrange
@@ -190,7 +190,6 @@ entities:
             8: 40.061565,28.111397
             9: 49.064545,27.962288
     - type: NavMap
-    - type: ExplosionAirtightGrid
     - type: RadiationGridResistance
 - proto: AirlockAssembly
   entities:
@@ -199,7 +198,7 @@ entities:
     - type: Transform
       pos: 22.5,12.5
       parent: 1
-- proto: BloodpackOil
+- proto: PuddleBlood
   entities:
   - uid: 726
     components:
@@ -4341,7 +4340,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 41.489346,5.6614246
       parent: 1
-- proto: ChairOfficeSleek
+- proto: ChairOfficeLight
   entities:
   - uid: 92
     components:
@@ -5965,7 +5964,7 @@ entities:
     - type: Transform
       pos: 14.479918,31.878515
       parent: 1
-- proto: FHAirlockNSExecutiveGlass
+- proto: AirlockGlass
   entities:
   - uid: 25
     components:
@@ -6364,7 +6363,7 @@ entities:
     - type: Transform
       pos: 34.76738,5.4978447
       parent: 1
-- proto: LockerAtmosphericsFilledSyndi
+- proto: LockerAtmosphericsFilled
   entities:
   - uid: 135
     components:
@@ -6421,7 +6420,7 @@ entities:
     - type: Transform
       pos: 56.5,19.5
       parent: 1
-- proto: LockerEngineerFilledSyndi
+- proto: LockerEngineerFilled
   entities:
   - uid: 23
     components:
@@ -6488,7 +6487,7 @@ entities:
     - type: Transform
       pos: 6.5,0.5
       parent: 1
-- proto: LockerRedsword
+- proto: LockerScienceFilled
   entities:
   - uid: 125
     components:
@@ -7008,7 +7007,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 5.5,11.5
       parent: 1
-- proto: PlushieLizardJobMultiweh
+- proto: PlushieLizardMirrored
   entities:
   - uid: 937
     components:

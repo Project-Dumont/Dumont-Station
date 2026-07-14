@@ -12,6 +12,7 @@ public sealed class SharedMobSplittingSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ThrowingSystem _throw = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -28,7 +29,7 @@ public sealed class SharedMobSplittingSystem : EntitySystem
 
         _audio.PlayPredicted(ent.Comp.Sound, ent.Owner, ent.Owner);
 
-        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
+        var rand = _random; // Dumont
 
         foreach (var (entProto, spawnCfg) in ent.Comp.SplitInto)
         {
