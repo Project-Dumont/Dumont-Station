@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: Canvas
+  name: tela
+  description: Uma tela em branco, pronta para ser pintada.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/artstuff.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - Payload
+  - type: Item
+    sprite: Objects/Misc/artstuff.rsi
+  - type: UseDelay
+    delay: 2.0
+  - type: Construction
+    graph: Canvas
+    node: canvas
+  - type: ActivatableUI
+    key: enum.CanvasUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CanvasUiKey.Key:
+        type: CanvasBoundUserInterface
+  - type: Canvas
+    color: white
+    paintingCode: ""
+    artist: ""
+    height: 16
+    width: 16
+  - type: Anchorable
+  - type: Physics
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25, -0.25, 0.25, 0.25"
+        density: 20
+        mask:
+        - HighImpassable
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 300
