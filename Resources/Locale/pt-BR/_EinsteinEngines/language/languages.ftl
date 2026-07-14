@@ -58,7 +58,7 @@ language-Elyran-description =
     Elírio Padrão é a língua oficial da República de Elíria. Construido usando elementos do Persa, Árabe e Turco.
     A influência dessas três línguas podem ser vistas no seu vocabulário e gramática.
 
-language-Canilunzt-name = Vulpino
+language-Canilunzt-name = Caniluso
 language-Canilunzt-description =
     A linguagem gutural falada e utilizada pelos habitantes do sistema Vazzend,
     composta de latidos, rosnidos e movimentos das orelhas e cauda. Vulpkanins falam essa linguagem com facilidade.

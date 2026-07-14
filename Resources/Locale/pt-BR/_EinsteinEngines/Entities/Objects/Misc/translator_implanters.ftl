@@ -25,7 +25,7 @@ ent-DraconicTranslatorImplanter = { ent-BaseTranslatorImplanter }
 
 ent-CanilunztTranslatorImplanter = { ent-BaseTranslatorImplanter }
     .desc = { ent-BaseTranslatorImplanter.desc }
-    .suffix = vulpino
+    .suffix = caniluso
 
 ent-SolCommonTranslatorImplanter = { ent-BaseTranslatorImplanter }
     .desc = { ent-BaseTranslatorImplanter.desc }
