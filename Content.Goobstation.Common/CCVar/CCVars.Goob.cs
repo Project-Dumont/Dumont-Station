@@ -637,4 +637,7 @@ public sealed partial class GoobCVars
         CVarDef.Create("particles.global_budget", 8000, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     #endregion
+
+    public static readonly CVarDef<bool> SecretUseOnlinePlayerCount =
+        CVarDef.Create("game.secret_use_online_count", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 }
