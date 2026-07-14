@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: salvageMissionObjective
   id: MissionObjectiveFree
   name: salvage-mission-objective-name-free
@@ -11,9 +15,9 @@
   description: salvage-mission-objective-description-recover
   announcement: salvage-mission-objective-announcement-recover
   baseReward:
-    Easy: 700
-    Moderate: 900
-    Challenging: 1100
+    Easy: 150
+    Moderate: 180
+    Challenging: 220
   cashMultiplier: 5.5
   numTargets:
     Easy: 2
@@ -37,9 +41,9 @@
   description: salvage-mission-objective-description-capture
   announcement: salvage-mission-objective-announcement-capture
   baseReward:
-    Easy: 1000
-    Moderate: 1150
-    Challenging: 1350
+    Easy: 200
+    Moderate: 230
+    Challenging: 270
   cashMultiplier: 6
   numTargets:
     Easy: 1
@@ -59,9 +63,9 @@
   description: salvage-mission-objective-description-rescue
   announcement: salvage-mission-objective-announcement-rescue
   baseReward:
-    Easy: 950
-    Moderate: 1100
-    Challenging: 1250
+    Easy: 190
+    Moderate: 220
+    Challenging: 250
   cashMultiplier: 4
   numTargets:
     Easy: 2
@@ -83,9 +87,9 @@
   description: salvage-mission-objective-description-purge
   announcement: salvage-mission-objective-announcement-purge
   baseReward:
-    Easy: 800
-    Moderate: 1050
-    Challenging: 1200
+    Easy: 160
+    Moderate: 219
+    Challenging: 240
   cashMultiplier: 4
   numTargets:
     Easy: 4
@@ -107,9 +111,9 @@
   description: salvage-mission-objective-description-shutdown
   announcement: salvage-mission-objective-announcement-shutdown
   baseReward:
-    Easy: 850
-    Moderate: 1150
-    Challenging: 1300
+    Easy: 170
+    Moderate: 230
+    Challenging: 260
   cashMultiplier: 5.5
   numTargets:
     Easy: 2
