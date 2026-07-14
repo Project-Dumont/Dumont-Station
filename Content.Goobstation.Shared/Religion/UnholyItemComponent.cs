@@ -6,8 +6,23 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Goobstation.Shared.Religion;
 
-[RegisterComponent, NetworkedComponent]
-public sealed partial class UnholyItemComponent : Component;
+/// <summary>
+/// Marks an item as unholy.
+///
+/// When <see cref="Punish"/> is enabled, unauthorized entities that attempt
+/// to pick up or pull this item are punished by <see cref="UnholyItemSystem"/>.
+/// </summary>
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class UnholyItemComponent : Component
+{
+    /// <summary>
+    /// Whether interacting with this item should punish entities that are
+    /// neither unholy nor capable of using bibles.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Punish = false;
+}
