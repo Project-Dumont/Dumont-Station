@@ -3,8 +3,8 @@
   id: WraithRoundstart
   components:
   - type: GameRule
-    chaosScore: 1000
-    minPlayers: 35
+    chaosScore: 500
+    minPlayers: 20
   - type: AntagSpawner
     # Dumont
     prototype: MobWraith 
