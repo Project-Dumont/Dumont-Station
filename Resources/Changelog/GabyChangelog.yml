@@ -3624,3 +3624,9 @@ Entries:
       message: Sistema de punição para itens malignos.
   id: 425
   time: '2026-07-14T21:15:46.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Adiciona um cvar para contar pessoas online no lobby
+  id: 426
+  time: '2026-07-15T00:40:24.0000000+00:00'
