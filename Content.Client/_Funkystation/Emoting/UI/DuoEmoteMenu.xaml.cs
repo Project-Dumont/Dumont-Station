@@ -17,7 +17,7 @@ public sealed class DuoEmoteMenu
         _menu = new SimpleRadialMenu();
         _menu.Track(target.Owner);
 
-        var options = new List<RadialMenuOptionBase>();
+        var options = new List<RadialMenuOption>();
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var entityManager = IoCManager.Resolve<IEntityManager>();
 
@@ -34,7 +34,7 @@ public sealed class DuoEmoteMenu
             )
             {
                 ToolTip = Loc.GetString(proto.Name),
-                IconSpecifier = RadialMenuIconSpecifier.With(proto.Icon),
+                Sprite = proto.Icon
             });
         }
 

@@ -139,6 +139,7 @@
     upper: MobFeroxi
     lowest: MobSkrellkey
   # Corvax-Wega-Genetics-end
+  - type: TailDuoEmote # Funky Change
 
 - type: entity
   parent: MobHumanDummy
