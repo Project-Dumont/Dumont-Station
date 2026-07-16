@@ -3638,3 +3638,9 @@ Entries:
         computador de arma da nave 
   id: 427
   time: '2026-07-16T02:13:24.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no bitrunning.
+  id: 428
+  time: '2026-07-16T18:47:47.0000000+00:00'
