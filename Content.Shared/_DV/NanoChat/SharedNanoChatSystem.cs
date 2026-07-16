@@ -51,6 +51,8 @@ public abstract class SharedNanoChatSystem : EntitySystem
         if (string.IsNullOrEmpty(text))
             return string.Empty;
 
+    if (overflowText.Length > maxLength)
+        return overflowText;
         return text.Length > maxLength
             ? text[..(maxLength - overflowText.Length)] + overflowText
             : text;
