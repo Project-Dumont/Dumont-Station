@@ -115,6 +115,7 @@
     - Challenging
     - Moderate
     - Easy
+    - Impossible
 
 - type: salvageTemperatureMod
   id: Burning
@@ -153,6 +154,7 @@
     - Challenging
     - Moderate
     - Easy
+    - Impossible
 
 - type: salvageTemperatureMod
   id: Tundra
@@ -223,6 +225,7 @@
   difficulties: 
     - Challenging
     - Moderate
+    - Impossible
  
 - type: salvageAirMod
   id: Poisoned
@@ -242,6 +245,7 @@
   difficulties: 
     - Challenging
     - Moderate
+    - Impossible
  
 - type: salvageAirMod
   id: Poison

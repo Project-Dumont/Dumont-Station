@@ -48,5 +48,5 @@
   modifierBudget: 1
   color: "#DE3A3A96"
   recommendedPlayers: 6
-  delay: 3600 # 60 mins
+  delay: 0 # 60 mins
   probability: 0.3

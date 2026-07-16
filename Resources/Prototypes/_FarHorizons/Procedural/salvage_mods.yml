@@ -107,6 +107,7 @@
   biomes:
     - Grasslands
     - Caves
+    - DenseForest
 
 - type: salvageWeatherMod
   id: Storm
@@ -116,6 +117,7 @@
   biomes:
     - Grasslands
     - Caves
+    - DenseForest
 
 - type: salvageWeatherMod
   id: Sandstorm

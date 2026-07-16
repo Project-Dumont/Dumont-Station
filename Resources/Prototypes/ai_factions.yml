@@ -164,7 +164,8 @@
   - Lavafauna # Goob - Lavaland
   - BloodCultist # Blood cultists
   friendly: # Goobstation
-    - Wizard
+  - Wizard
+  - Xeno # Dumont
 
 - type: npcFaction
   id: Zombie

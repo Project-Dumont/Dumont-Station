@@ -26,7 +26,7 @@ salvage-mission-objective-description-purge = A destruição da base deixou regi
 salvage-mission-objective-announcement-purge = Sua missão é destruir {$numTargets} pastas de documentos deixadas na base. Se você recuperar alguma pasta adicional, também será pago pela destruição delas.
 
 salvage-mission-objective-name-shutdown = Shutdown
-salvage-mission-objective-description-shutdown = Dispositivos ilegais foram enconrados em uma base planetária. Destrua eles.
+salvage-mission-objective-description-shutdown = Dispositivos ilegais foram encontrados em uma base planetária. Destrua eles.
 salvage-mission-objective-announcement-shutdown = Sua missão é encontrar e destruir {$numTargets} dispositivos suspeitos. Você receberá um pagamento extra por qualquer dispositivo adicional que destruir.
 
 salvage-mission-objective-name-disarm = Desarme
