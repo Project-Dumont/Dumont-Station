@@ -629,8 +629,10 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             if (!failed)
                 deliverableRecipients.AddRange(memberCards);
         }
+
         if (deliverableRecipients.Count == 0)
             return (true, deliverableRecipients);
+
         return (false, deliverableRecipients);
     }
 
