@@ -3630,3 +3630,11 @@ Entries:
       message: Adiciona um cvar para contar pessoas online no lobby
   id: 426
   time: '2026-07-15T00:40:24.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: >-
+        fantasmas não podem mais remover pacientes da cryopod e acessar o
+        computador de arma da nave 
+  id: 427
+  time: '2026-07-16T02:13:24.0000000+00:00'
