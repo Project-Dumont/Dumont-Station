@@ -1,4 +1,8 @@
-﻿using System.Linq;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Linq;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Funkystation.Emoting.Components;
 using Content.Shared._Funkystation.Emoting.Prototypes;

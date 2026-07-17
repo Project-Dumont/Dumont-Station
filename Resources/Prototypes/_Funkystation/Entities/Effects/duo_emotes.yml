@@ -1,4 +1,8 @@
-﻿# Funky Duo Emotes entity
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Funky Duo Emotes entity
 - type: entity
   id: FunkyEffectDuoEmoteBase
   categories: [ HideSpawnMenu ]
