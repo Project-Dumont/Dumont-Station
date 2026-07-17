@@ -3644,3 +3644,9 @@ Entries:
       message: Pequenas correções no bitrunning.
   id: 428
   time: '2026-07-16T18:47:47.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Tweak
+      message: alterado tempo de pular bounty para 6 minutos
+  id: 429
+  time: '2026-07-17T03:30:00.0000000+00:00'
