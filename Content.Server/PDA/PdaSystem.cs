@@ -167,7 +167,7 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(ChameleonControllerOutfitItemSelected);
 
-            SubscribeLocalEvent<PdaComponent, PdaNotificationEvent>(OnPdaNotification);
+            SubscribeLocalEvent<PdaNotificationEvent>(OnPdaNotification);
         }
 
         private void ChameleonControllerOutfitItemSelected(Entity<PdaComponent> ent, ref InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent> args)

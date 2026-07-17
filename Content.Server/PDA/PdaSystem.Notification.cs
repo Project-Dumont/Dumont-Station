@@ -12,16 +12,21 @@ namespace Content.Server.PDA
 
         public void OnPdaNotification(Entity<PdaComponent> ent, ref PdaNotificationEvent args)
         {
-            if (ent.Comp.IdSlot.Item is not { } idCardUid)
-                return;
+            var Pdas = EntityQueryEnumerator<PdaComponent>();
 
-            if (!TryComp<AccessComponent>(idCardUid, out var accessComp))
-                return;
+            while (Pdas.MoveNext(out uid, out pdaComp)) {
+                if (pdaComp.IdSlot.Item is not { } idCardUid)
+                    continue;
 
-            var accessLevels = accessComp.Tags;
+                if (!TryComp<AccessComponent>(idCardUid, out var accessComp))
+                    continue;
 
-            PdaNotifyByAccess(args.Group.Access, accessLevels, ent.Comp, args);
-            PdaNotifyByGroups(args.Group.AccessGroup, accessLevels, ent.Comp, args);
+                var accessLevels = accessComp.Tags;
+
+                PdaNotifyByAccess(args.Group.Access, accessLevels, pdaComp, args);
+                PdaNotifyByGroups(args.Group.AccessGroup, accessLevels, pdaComp, args);
+            }
+
         }
 
         public void PdaNotifyByAccess(
