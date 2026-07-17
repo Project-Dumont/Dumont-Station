@@ -79,7 +79,7 @@ ent-DnaScramblerImplanter = { ent-BaseImplantOnlyImplanterSyndi }
 
 ent-ChameleonControllerImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
-    .suffix = controle camaleão
+    .suffix = controlador camaleão
 
 ent-FakeMindShieldImplanter = { ent-BaseImplantOnlyImplanterSyndi }
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
