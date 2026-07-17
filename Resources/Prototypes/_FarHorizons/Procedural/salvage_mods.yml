@@ -8,7 +8,7 @@
   proto: Reactor
   biomes:
     - Grasslands
-  # - Abyss
+    - Abyss
     - Snow
     - Mountains
     - LowDesert
@@ -23,7 +23,7 @@
   proto: Factory
   biomes:
     - Grasslands
-  #  - Abyss
+    - Abyss
     - Snow
     - Mountains
     - LowDesert

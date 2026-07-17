@@ -1,0 +1,7 @@
+- type: dungeonRoom
+  id: SovietDungeon50x50
+  size: 50,50
+  atlas: /Maps/_Starlight/Dungeon/soviet-warehouse.yml
+  offset: 0,0
+  tags:
+    - SovietWarehouse

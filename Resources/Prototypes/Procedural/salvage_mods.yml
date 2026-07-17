@@ -313,6 +313,7 @@
   biomes:
     - LowDesert # Far Horizons
     - Grasslands
+    - Abyss
   difficulties: 
     - Challenging
     - Moderate

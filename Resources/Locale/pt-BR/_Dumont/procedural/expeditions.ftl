@@ -16,8 +16,8 @@ salvage-expedition-window-duration = Duração:
 salvage-expedition-window-biome = Bioma:
 salvage-expedition-window-modifiers = Modificadores:
 
-offering-window-claimed = Claimado
-offering-window-claim = Claime
+offering-window-claimed = Reivindicado
+offering-window-claim = Reivindicar
 
 salvage-expedition-window-next = Próxima oferta
 
@@ -67,3 +67,8 @@ salvage-dungeon-mod-experiment = Experimento
 salvage-dungeon-mod-haunted = Assombrado
 salvage-dungeon-mod-mineshaft = Minas
 salvage-dungeon-mod-xeno = Instalação da Federação Solar
+salvage-biome-mod-true-abyss = Abismo Verdadeiro
+salvage-biome-mod-abyss = Abismo
+
+salvage-faction-worms = Minhocas
+salvage-faction-elder = [DADOS PERDIDOS]
