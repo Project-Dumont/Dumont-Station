@@ -8,6 +8,6 @@ namespace Content.Shared.PDA;
 
 public sealed partial class PdaNotificationEvent(string message, ProtoId<NotificationGroupPrototype> group, bool isLoud = false) : HandledEntityEventArgs {
     public readonly string Message = message;
-    public readonly string Group = group;
-    public readonly string IsLoud = isLoud;
+    public readonly ProtoId<NotificationGroupPrototype> Group = group;
+    public readonly bool IsLoud = isLoud;
 }

@@ -3,6 +3,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.PDA;
+using Content.Shared.Access;
+using Content.Shared.Access.Components;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.PDA
 {
@@ -10,47 +14,61 @@ namespace Content.Server.PDA
     {
         [Dependency] private readonly IPrototypeManager _proto = default!;
 
-        public void OnPdaNotification(Entity<PdaComponent> ent, ref PdaNotificationEvent args)
+        public void OnPdaNotification(ref PdaNotificationEvent args)
         {
+            if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto))
+                return;
+
             var Pdas = EntityQueryEnumerator<PdaComponent>();
 
-            while (Pdas.MoveNext(out uid, out pdaComp)) {
+            while (Pdas.MoveNext(out var uid, out var pdaComp)) {
                 if (pdaComp.IdSlot.Item is not { } idCardUid)
                     continue;
 
                 if (!TryComp<AccessComponent>(idCardUid, out var accessComp))
                     continue;
 
+                if (notiGroupProto.Access is null || notiGroupProto.AccessGroups is null)
+                    continue;
+
                 var accessLevels = accessComp.Tags;
 
-                PdaNotifyByAccess(args.Group.Access, accessLevels, pdaComp, args);
-                PdaNotifyByGroups(args.Group.AccessGroup, accessLevels, pdaComp, args);
+                Entity<PdaComponent> pda = new(uid, pdaComp);
+
+                PdaNotifyByAccess(pda, notiGroupProto.Access, accessLevels, args);
+                PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, accessLevels, args);
             }
 
         }
 
         public void PdaNotifyByAccess(
-            IEnumerable access,
+            Entity<PdaComponent> pda,
+            HashSet<ProtoId<AccessLevelPrototype>> accessNoti,
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
-            PdaComponent pdaComp,
             PdaNotificationEvent args)
         {
-            foreach (var accessSingular in access) {
-                if (accessLevels.Contains(accessSingular)) {
-                    pdaComp.Notifications,Add(args.Message);
-                    UpdateState();
-                }
+            foreach (var accessSingular in accessNoti) {
+                if (!accessLevels.Contains(accessSingular))
+                    continue;
+
+                pda.Comp.Notifications.Add(args.Message);
+                UpdatePdaUi(pda.Owner, pda.Comp);
             }
         }
 
         public void PdaNotifyByGroups(
-            IEnumerable group,
+            Entity<PdaComponent> pda,
+            HashSet<ProtoId<AccessGroupPrototype>> notiGroup,
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
-            PdaComponent pdaComp,
             PdaNotificationEvent args)
-        ) {
-            foreach (var accessGroup in group) {
-                PdaNotifyByAccess(accessGroup.Tags, accessLevels, pdaComp, args);
+        {
+
+            foreach (var accessGroupId in notiGroup) {
+                if (!_proto.TryIndex<AccessGroupPrototype>(accessGroupId, out var accessGroup))
+                    continue;
+
+
+                PdaNotifyByAccess(pda, accessGroup.Tags, accessLevels, args);
             }
         }
     }
