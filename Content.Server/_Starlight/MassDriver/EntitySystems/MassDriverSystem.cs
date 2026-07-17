@@ -57,7 +57,7 @@ public sealed partial class MassDriverSystem : SharedMassDriverSystem
         if (args.Port != component.LinkingPort || !component.MassDrivers.Contains(massDriverUid))
             return;
 
-        if (TryComp<MassDriverComponent>(massDriverUid, out var driver))
+        if (TryComp<MassDriverComponent>(massDriverUid, out var driver) && driver.Console == uid)
         {
             driver.Console = null;
             Dirty(massDriverUid, driver);
@@ -70,7 +70,7 @@ public sealed partial class MassDriverSystem : SharedMassDriverSystem
 
     private void OnSignalReceived(EntityUid uid, MassDriverComponent component, ref SignalReceivedEvent args)
     {
-        if (args.Port == component.LaunchPort && component.Mode == MassDriverMode.Manual)
+        if (args.Port == component.LaunchPort && component.Mode == MassDriverMode.Manual && _powerReceiver.IsPowered(uid))
             StartManualLaunch(uid, component);
     }
 
@@ -116,7 +116,8 @@ public sealed partial class MassDriverSystem : SharedMassDriverSystem
         foreach (var massDriverUid in component.MassDrivers)
         {
             if (!TryComp<MassDriverComponent>(massDriverUid, out var massDriverComponent) ||
-                massDriverComponent.Mode != MassDriverMode.Manual)
+                massDriverComponent.Mode != MassDriverMode.Manual ||
+                !_powerReceiver.IsPowered(massDriverUid))
             {
                 continue;
             }
