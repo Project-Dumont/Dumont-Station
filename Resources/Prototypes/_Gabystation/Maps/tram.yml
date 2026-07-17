@@ -67,6 +67,7 @@
             #supply 7
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             CargoTechnician: [ 3, 3 ]
             #civilian 4+
             Passenger: [ -1, -1 ]

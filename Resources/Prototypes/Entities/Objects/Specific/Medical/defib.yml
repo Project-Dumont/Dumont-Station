@@ -104,8 +104,6 @@
 - type: entity
   id: DefibrillatorCompact # This should be a research item at some point # Goobstation - it is.
   parent: [ BaseDefibrillator, PowerCellSlotMediumItem ]
-  name: compact defibrillator
-  description: Now in fun size!
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/defibsmall.rsi
