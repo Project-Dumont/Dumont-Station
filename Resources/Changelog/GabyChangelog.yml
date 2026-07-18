@@ -3678,3 +3678,11 @@ Entries:
       message: Agora você dá um tapinha nas costas ao clicar no personagem.
   id: 432
   time: '2026-07-18T18:49:36.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Mass Drivers foram adicionados em maioria dos mapas.
+    - type: Add
+      message: Conteúdo novo da Salvage agora está mapeado em todos os mapas.
+  id: 433
+  time: '2026-07-18T20:12:29.0000000+00:00'
