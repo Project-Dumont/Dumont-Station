@@ -3670,3 +3670,11 @@ Entries:
         caracteres.
   id: 431
   time: '2026-07-18T03:23:28.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode fazer emote em dupla.
+    - type: Tweak
+      message: Agora você dá um tapinha nas costas ao clicar no personagem.
+  id: 432
+  time: '2026-07-18T18:49:36.0000000+00:00'
