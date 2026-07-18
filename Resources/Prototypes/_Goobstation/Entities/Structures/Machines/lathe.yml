@@ -295,7 +295,6 @@
     - ChemistryStatic
     - TapeRecorderStatic
     - CondimentStatic
-    - DrinkDisposableCup #imp recipe
     dynamicPacks:
     - Janitor
     - Instruments

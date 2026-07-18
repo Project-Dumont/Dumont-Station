@@ -1,4 +1,4 @@
-- type: reagentDispenserInventory
+- type: vendingMachineInventory
   id: ImpCoffeeDispenserInventory
   inventory:
   - DrinkCoffeeJug

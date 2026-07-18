@@ -2174,8 +2174,8 @@
     FoodCakePlain: 1
     FoodSnackRaisins: 1
     OrganAnimalHeart: 1
-    recipeType: 
-    - Oven
+  recipeType: 
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBerryDelight
