@@ -11,20 +11,20 @@ namespace Content.Shared._Starlight.MassDriver.Components;
 /// Enables mass driver update processing.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[AutoGenerateComponentPause]
+[AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class ActiveMassDriverComponent : Component
 {
     public TimeSpan UpdateDelay = TimeSpan.FromSeconds(1);
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    [AutoPausedField]
+    [AutoPausedField, AutoNetworkedField]
     public TimeSpan NextUpdateTime;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    [AutoPausedField]
+    [AutoPausedField, AutoNetworkedField]
     public TimeSpan NextThrowTime;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    [AutoPausedField]
+    [AutoPausedField, AutoNetworkedField]
     public TimeSpan LaunchEndTime;
 }

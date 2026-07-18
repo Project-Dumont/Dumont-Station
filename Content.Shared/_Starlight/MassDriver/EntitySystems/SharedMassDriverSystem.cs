@@ -8,6 +8,7 @@ using Content.Shared.Ghost;
 using Content.Shared.Power;
 using Content.Shared.Throwing;
 using Robust.Shared.Timing;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Starlight.MassDriver.EntitySystems;
 
@@ -18,6 +19,7 @@ public abstract partial class SharedMassDriverSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _audio = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     private EntityQuery<GhostComponent> _ghostQuery;
     private readonly HashSet<EntityUid> _entities = new();
@@ -101,7 +103,7 @@ public abstract partial class SharedMassDriverSystem : EntitySystem
             }
 
             ChangePowerLoad(uid, massDriver, massDriver.LaunchPowerLoad);
-            _appearance.SetData(uid, MassDriverVisuals.Launching, true);
+
             activeMassDriver.NextThrowTime = TimeSpan.Zero;
             activeMassDriver.LaunchEndTime = _timing.CurTime + massDriver.LaunchAnimationTime;
             activeMassDriver.NextUpdateTime = activeMassDriver.LaunchEndTime;
@@ -109,8 +111,11 @@ public abstract partial class SharedMassDriverSystem : EntitySystem
 
             ThrowEntities(uid, massDriver, _entities, entityCount);
 
-            if (TryComp<AmbientSoundComponent>(uid, out var ambientSound))
-                _audio.SetAmbience(uid, true, ambientSound);
+            if (_net.IsServer) {
+                _appearance.SetData(uid, MassDriverVisuals.Launching, true);
+                if (TryComp<AmbientSoundComponent>(uid, out var ambientSound))
+                    _audio.SetAmbience(uid, true, ambientSound);
+            }
         }
     }
 
