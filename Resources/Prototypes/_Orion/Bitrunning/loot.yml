@@ -7,9 +7,11 @@
   id: BitrunningDeliveryPeacefulLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 5, 10
+      range: 10, 20
     children:
     - id: SteelOre5
+      weight: 30
+    - id: Coal10
       weight: 30
     - id: SpaceQuartz5
       weight: 20
@@ -27,6 +29,8 @@
     children:
     - id: SteelOre5
       weight: 30
+    - id: Coal10
+      weight: 30
     - id: SpaceQuartz5
       weight: 20
     - id: SilverOre3
@@ -36,16 +40,18 @@
     - id: SpaceCash1000
       weight: 3
     - id: ResearchDisk
-      weight: 1
+      weight: 2
 
 # x4 multiply
 - type: entityTable
   id: BitrunningDeliveryMediumLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 15, 30
+      range: 25, 50
     children:
     - id: SteelOre5
+      weight: 25
+    - id: Coal10
       weight: 25
     - id: SpaceQuartz5
       weight: 18
@@ -66,16 +72,18 @@
     - id: SpaceCash500
       weight: 1
     - id: ResearchDisk5000
-      weight: 1
+      weight: 3
 
 # x6 multiply
 - type: entityTable
   id: BitrunningDeliveryHardLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 25, 50
+      range: 40, 80
     children:
     - id: SteelOre5
+      weight: 22
+    - id: Coal10
       weight: 22
     - id: SpaceQuartz5
       weight: 16
@@ -94,17 +102,19 @@
     - id: SpaceCash1000
       weight: 3
     - id: ResearchDisk10000
-      weight: 1
+      weight: 3
 
 # x8 multiply
 - type: entityTable
   id: BitrunningDeliveryExtremeLoot
   table: !type:GroupSelector
     rolls: !type:RangeNumberSelector
-      range: 60, 120
+      range: 75, 150
     children:
     - id: SteelOre5
       weight: 20
+    - id: Coal10
+      weight: 30
     - id: SpaceQuartz5
       weight: 14
     - id: SilverOre3

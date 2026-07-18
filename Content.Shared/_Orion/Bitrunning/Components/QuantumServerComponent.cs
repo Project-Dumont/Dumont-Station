@@ -45,7 +45,7 @@ public sealed partial class QuantumServerComponent : Component
     public EntProtoId RewardCachePrototype = "CrateBitrunSecureReward";
 
     [DataField, AutoNetworkedField]
-    public TimeSpan Cooldown = TimeSpan.FromMinutes(2);
+    public TimeSpan Cooldown = TimeSpan.FromMinutes(1);
 
     [DataField, AutoNetworkedField]
     public TimeSpan CooldownEndTime;
