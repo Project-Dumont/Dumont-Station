@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: hitscan
+  id: BulletWatsonTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Piercing: 24
+
+- type: hitscan
+  id: BulletWatsonPracticeTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Blunt: 1
+
+- type: hitscan
+  id: BulletWatsonIncendiaryTrace
+  parent: BulletTrace
+  ignite: true
+  damage:
+    types:
+      Blunt: 5
+      Heat: 5
+
+- type: hitscan
+  id: BulletWatsonUraniumTrace
+  parent: BulletTrace
+  damage:
+    types:
+      Piercing: 5
+      Radiation: 10

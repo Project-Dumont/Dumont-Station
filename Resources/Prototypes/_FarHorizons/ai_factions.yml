@@ -1,0 +1,14 @@
+- type: npcFaction
+  id: DungeonSilicon
+  hostile: # Notably not hostile to borgs
+    - NanoTrasen
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Zombie
+    - Revolutionary
+    - Vampire
+    - Changeling
+    - AllHostile
+    - Wizard
+    - Dragon

@@ -1,0 +1,15 @@
+# Salvage Lead
+- type: entity
+  id: LockerSalvageLead
+  parent: LockerBaseSecure
+  name: salvage lead's locker
+  components:
+    - type: Appearance
+    - type: Sprite
+      sprite: _Starlight/Structures/Storage/closet.rsi
+    - type: EntityStorageVisuals
+      stateBaseClosed: salvagelead
+      stateDoorOpen: salvagelead_open
+      stateDoorClosed: salvagelead_door
+    - type: AccessReader
+      access: [["SalvageLead"]]

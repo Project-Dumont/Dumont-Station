@@ -1,0 +1,12 @@
+- type: entity
+  parent: [ BaseSalvageContraband, ClothingHandsGlovesCombat ]
+  id: ClothingHandsSalvageMercGlovesCombat
+  name: Scrapper Combat Gloves #FH
+  components:
+    - type: Sprite
+      sprite: _FarHorizons/Clothing/Hands/Gloves/salvagecombat.rsi #FH
+    - type: Clothing
+      sprite: _FarHorizons/Clothing/Hands/Gloves/salvagecombat.rsi #FH
+    - type: Fiber
+      fiberMaterial: fibers-insulative
+      fiberColor: fibers-brown

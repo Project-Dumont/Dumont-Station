@@ -211,7 +211,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
             args.AddLine(Loc.GetString("rev-headrev-name-user",
                 ("name", name),
-                ("username", data.UserName),
+                ("username", _antag.GetRoundEndUsername(mind, data.UserName)),
                 ("count", count)));
 
             // TODO: someone suggested listing all alive? revs maybe implement at some point

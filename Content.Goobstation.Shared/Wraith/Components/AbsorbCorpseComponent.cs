@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -53,6 +57,12 @@ public sealed partial class AbsorbCorpseComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? AbsorbSound = new SoundCollectionSpecifier("Wraith_SoulSucc");
+
+    /// <summary>
+    /// How long the doafter of absorbing the corpse is
+    /// </summary>
+    [DataField]
+    public TimeSpan AbsorbDoAfter = TimeSpan.FromSeconds(8);
 
     [ViewVariables]
     public ProtoId<TagPrototype> Tag = "VimPilot";

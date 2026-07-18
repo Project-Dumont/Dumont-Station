@@ -1,0 +1,67 @@
+- type: entity
+  name: N14WeaponShotgunBase
+  parent: [ BaseItem, BaseSalvageContraband ]
+  id: N14WeaponShotgunBase
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.2
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: StaticPrice
+    price: 10
+  - type: Wieldable
+
+- type: entity
+  name: sawed-off shotgun
+  parent: N14WeaponShotgunBase
+  id: N14WeaponShotgunSawedOff
+  components:
+  - type: Clothing
+    sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/sawed_off.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/sawed_off.rsi
+  - type: Item
+    size: Normal # Forge-Change
+    sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/sawed_off.rsi
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      collection: N14DoubleBarrelShotgunGunshot
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 2
+    proto: ShellShotgun
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: StaticPrice
+    price: 45

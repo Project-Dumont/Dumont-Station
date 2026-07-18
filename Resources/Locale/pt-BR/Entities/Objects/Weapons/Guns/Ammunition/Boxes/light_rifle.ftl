@@ -4,8 +4,8 @@ ent-BaseMagazineBoxLightRifle = caixa de munição (.30 rifle)
 ent-MagazineBoxLightRifleBig = caixa de munição (.30 rifle)
     .desc = { "" }
 
-ent-MagazineBoxLightRifle = caixa de munição (.30 rifle)
-    .desc = { "" }
+ent-MagazineBoxLightRifle = Caixa de Munição (rifle .30)
+    .desc = Uma caixa de papelão com munições de rifle .30. Destinada a armazenar munição cinética de uso geral.
 
 ent-MagazineBoxLightRifleHighVelocity = caixa de munição (.30 rifle alta velocidade)
     .desc = { "" }
