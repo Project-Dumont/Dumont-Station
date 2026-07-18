@@ -3608,10 +3608,6 @@ Entries:
       message: O Wraith de meio de rodada agora faz parte das ameaças de Ninja.
   id: 422
   time: '2026-07-11T22:01:23.0000000+00:00'
-- author: isTheSuperN0va
-  changes: []
-  id: 423
-  time: '2026-07-12T13:09:34.0000000+00:00'
 - author: Crono209
   changes:
     - type: Add
