@@ -3656,3 +3656,17 @@ Entries:
       message: Added mass drivers!
   id: 430
   time: '2026-07-18T03:20:25.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode enviar emoji no nanochat.
+    - type: Add
+      message: Agora você pode criar grupos no nanochat.
+    - type: Add
+      message: Agora você pode mutar chats em especifico no nanochat.
+    - type: Fix
+      message: >-
+        Agora os icones do nanochat não se esmaga quando passa do limite de
+        caracteres.
+  id: 431
+  time: '2026-07-18T03:23:28.0000000+00:00'
