@@ -179,8 +179,8 @@
     options:
       bitrunning-disk-option-pka: WeaponProtoKineticAccelerator
       bitrunning-disk-option-pka-pistol: WeaponProtoKineticPistol
-      bitrunning-disk-option-pka-shotgun: WeaponProtoKineticRepeater
-      bitrunning-disk-option-pka-repeater: WeaponProtoKineticShotgun
+      bitrunning-disk-option-pka-shotgun: WeaponProtoKineticShotgun
+      bitrunning-disk-option-pka-repeater: WeaponProtoKineticRepeater
 
 - type: entity
   parent: BaseBitrunningDisk
