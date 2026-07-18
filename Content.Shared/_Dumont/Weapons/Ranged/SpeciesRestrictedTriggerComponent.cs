@@ -30,7 +30,7 @@ public sealed partial class SpeciesRestrictedTriggerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public SoundSpecifier BreakSound =
-        new SoundPathSpecifier("/Audio/Weapons/Guns/Empty/empty.ogg");
+        new SoundPathSpecifier("/Audio/_Dumont/Misc/tool_break.ogg");
 
     /// <summary>
     /// Minimum delay, in seconds, between repeated failure feedback.
