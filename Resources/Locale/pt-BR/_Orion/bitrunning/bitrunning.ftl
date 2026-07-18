@@ -72,7 +72,7 @@ bitrunning-disk-option-proto-kinetic-machete = Machete
 bitrunning-disk-option-pka = Acelerador protocinético
 bitrunning-disk-option-pka-pistol = Pistola protocinética
 bitrunning-disk-option-pka-shotgun = Espingarda protocinética
-bitrunning-disk-option-pka-repeater = Rifle de reptição protocinético
+bitrunning-disk-option-pka-repeater = Rifle de repetição protocinético
 
 ent-BitrunningGearSimpleDisk = equipamento de bitrunning: simples
  .desc = Use na mão para selecionar uma das opções. Para usar, mantenha na sua mochila quando iniciando um avatar.
