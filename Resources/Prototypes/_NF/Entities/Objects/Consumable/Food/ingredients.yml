@@ -49,7 +49,7 @@
       food:
         maxVol: 6
         reagents:
-        - ReagentId: CoffeeGrounds
+        - ReagentId: Coffee
           Quantity: 5
   - type: Sprite
     sprite: _NF/Objects/Specific/Hydroponics/coffee.rsi
