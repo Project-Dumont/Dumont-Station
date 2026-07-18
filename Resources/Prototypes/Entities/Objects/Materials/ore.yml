@@ -101,7 +101,7 @@
 - type: entity
   parent: GoldOre
   id: GoldOre3
-  suffix: Single
+  suffix: Three
   components:
   - type: Stack
     count: 3
@@ -176,7 +176,7 @@
 - type: entity
   id: SteelOre5
   parent: SteelOre
-  suffix: Single
+  suffix: Five
   components:
     - type: Stack
       count: 5
@@ -226,7 +226,7 @@
 - type: entity
   parent: PlasmaOre
   id: PlasmaOre3
-  suffix: Single
+  suffix: Three
   components:
     - type: Stack
       count: 3
@@ -271,7 +271,7 @@
 - type: entity
   parent: SilverOre
   id: SilverOre3
-  suffix: Single
+  suffix: Three
   components:
     - type: Stack
       count: 3
@@ -312,7 +312,7 @@
 - type: entity
   parent: SpaceQuartz
   id: SpaceQuartz5
-  suffix: Single
+  suffix: Five
   components:
   - type: Stack
     count: 5
@@ -365,7 +365,7 @@
 - type: entity
   parent: UraniumOre
   id: UraniumOre3
-  suffix: Single
+  suffix: Three
   components:
   - type: Stack
     count: 3
