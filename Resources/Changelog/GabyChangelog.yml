@@ -3650,3 +3650,31 @@ Entries:
       message: alterado tempo de pular bounty para 6 minutos
   id: 429
   time: '2026-07-17T03:30:00.0000000+00:00'
+- author: Rinary, AgentePanela
+  changes:
+    - type: Add
+      message: Added mass drivers!
+  id: 430
+  time: '2026-07-18T03:20:25.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode enviar emoji no nanochat.
+    - type: Add
+      message: Agora você pode criar grupos no nanochat.
+    - type: Add
+      message: Agora você pode mutar chats em especifico no nanochat.
+    - type: Fix
+      message: >-
+        Agora os icones do nanochat não se esmaga quando passa do limite de
+        caracteres.
+  id: 431
+  time: '2026-07-18T03:23:28.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode fazer emote em dupla.
+    - type: Tweak
+      message: Agora você dá um tapinha nas costas ao clicar no personagem.
+  id: 432
+  time: '2026-07-18T18:49:36.0000000+00:00'

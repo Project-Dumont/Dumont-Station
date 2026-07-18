@@ -62,6 +62,8 @@
   - ThermomachineFreezerMachineCircuitBoard
   - BankATMCircuitboard # Gabystation change
   - WashingMachineCircuitboard # Gabystation change
+  - MassDriverCircuitboard # Starlight
+  - MassDriverComputerCircuitboard # Starlight
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
