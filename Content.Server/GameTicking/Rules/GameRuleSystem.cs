@@ -17,12 +17,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.CCVar;
 using Content.Server._Gabystation;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Managers;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -34,6 +36,7 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
     [Dependency] protected readonly IChatManager ChatManager = default!;
     [Dependency] protected readonly GameTicker GameTicker = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     // Not protected, just to be used in utility methods
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
@@ -56,11 +59,15 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
         if (args.Forced || args.Cancelled)
             return;
 
+        var playerCount = _cfg.GetCVar(GoobCVars.SecretUseOnlinePlayerCount)
+            ? GameTicker.OnlinePlayerCount()
+            : args.Players.Length;
+
         var query = QueryAllRules();
         while (query.MoveNext(out var uid, out _, out var gameRule))
         {
             var minPlayers = gameRule.MinPlayers;
-            if (args.Players.Length >= minPlayers)
+            if (playerCount >= minPlayers)
                 continue;
 
             if (gameRule.CancelPresetOnTooFewPlayers)
@@ -69,7 +76,7 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
                 {
                     // GabyStation
                     ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players-end-rule",
-                        ("readyPlayersCount", args.Players.Length),
+                        ("readyPlayersCount", playerCount),
                         ("minimumPlayers", minPlayers),
                         ("presetName", ToPrettyString(uid))));
 
@@ -78,7 +85,7 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
                 else
                 {
                     ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
-                        ("readyPlayersCount", args.Players.Length),
+                        ("readyPlayersCount", playerCount),
                         ("minimumPlayers", minPlayers),
                         ("presetName", ToPrettyString(uid))));
                     args.Cancel();

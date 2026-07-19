@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: host monitor
+  parent: ClothingBeltBase
+  id: HostMonitor
+  description: A complex electronic designed to analyze the health of the connection between the host and the avatar.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Cargo/host_monitor.rsi
+  - type: UseDelay
+    delay: 1
+  - type: Speech
+    speechSounds: Pai
+  - type: HostMonitor

@@ -22,7 +22,7 @@
 - type: entity
   id: BaseCartridgeLightRifle
   name: cartridge (.30 rifle)
-  parent: [ BaseCartridge, BaseSecurityContraband ]
+  parent: [ BaseCartridge, BaseSecurityContraband, BaseSalvageContraband ] #Far Horizons
   abstract: true
   components:
   - type: Tag

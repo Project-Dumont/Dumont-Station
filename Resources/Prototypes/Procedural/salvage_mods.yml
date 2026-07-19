@@ -21,23 +21,47 @@
   id: Caves
   desc: salvage-biome-mod-caves
   biome: Caves
+  # Starlight
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageBiomeMod
   id: Grasslands
   desc: salvage-biome-mod-grasslands
   biome: Grasslands
+  # Starlight
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageBiomeMod
   id: Snow
   desc: salvage-biome-mod-snow
   cost: 1
   biome: Snow
+  # Starlight
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageBiomeMod
   id: Lava
   desc: salvage-biome-mod-lava
-  cost: 2
+  cost: 1 # Far Horizons
   biome: Lava
+  # Starlight
+  difficulties:
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 #- type: salvageBiomeMod
 #  id: Space
@@ -84,9 +108,13 @@
   temperature: 323.15 # 50C
   biomes:
     - Caves
-    #- LowDesert
+    - LowDesert # Far Horizons
     - Grasslands
     - Lava
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
 
 - type: salvageTemperatureMod
   id: Burning
@@ -95,9 +123,12 @@
   temperature: 423.15 # 200C
   biomes:
     - Caves
-    #- LowDesert
+    - LowDesert # Far Horizons
     - Lava
-
+  difficulties: 
+    - Challenging
+    - Moderate
+    
 - type: salvageTemperatureMod
   id: Melting
   desc: salvage-temperature-mod-extreme-heat
@@ -105,7 +136,9 @@
   temperature: 1273.15 # 1000C hot hot hot
   biomes:
     - Lava
-
+  difficulties: 
+    - Challenging
+  
 - type: salvageTemperatureMod
   id: Cold
   desc: salvage-temperature-mod-cold
@@ -113,9 +146,13 @@
   temperature: 275.15 # 2C
   biomes:
     - Caves
-    #- LowDesert
     - Grasslands
     - Snow
+    - Mountains # Far Horizons
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
 
 - type: salvageTemperatureMod
   id: Tundra
@@ -125,6 +162,10 @@
   biomes:
     - Caves
     - Snow
+    - Mountains # Far Horizons
+  difficulties: 
+    - Challenging
+    - Moderate
 
 - type: salvageTemperatureMod
   id: Frozen
@@ -133,6 +174,9 @@
   temperature: 123.15 # -150C
   biomes:
     - Snow
+    - Mountains # Far Horizons
+  difficulties: 
+    - Challenging
 
 # Air mixtures
 - type: salvageAirMod
@@ -143,6 +187,10 @@
   biomes:
     - Caves
     - Lava
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
 
 - type: salvageAirMod
   id: Breathable
@@ -167,14 +215,18 @@
     - 10 # nitrous oxide
   biomes:
     - Caves
-    #- LowDesert
+    - LowDesert # Far Horizons
     - Snow
+    - Mountains # Far Horizons
     - Grasslands
     - Lava
-
+  difficulties: 
+    - Challenging
+    - Moderate
+ 
 - type: salvageAirMod
   id: Poisoned
-  cost: 2
+  cost: 1 # Far Horizons
   desc: salvage-air-mod-dangerous-atmosphere
   gases:
     - 21.824779 # oxygen
@@ -182,14 +234,18 @@
     - 10 # carbon dioxide
   biomes:
     - Caves
-    #- LowDesert
+    - LowDesert # Far Horizons
     - Snow
     - Grasslands
+    - Mountains # Far Horizons
     - Lava
-
+  difficulties: 
+    - Challenging
+    - Moderate
+ 
 - type: salvageAirMod
   id: Poison
-  cost: 3
+  cost: 2 # Far Horizons
   desc: salvage-air-mod-toxic-atmosphere
   gases:
     - 21.824779 # oxygen
@@ -198,11 +254,14 @@
   biomes:
     - Caves
     - Snow
+    - Mountains # Far Horizons
     - Lava
-
+  difficulties: 
+    - Challenging
+    - Moderate
 - type: salvageAirMod
   id: Plasma
-  cost: 4
+  cost: 4 # Far Horizons, this is to make sure this doesn't happen
   desc: salvage-air-mod-toxic-atmosphere
   gases:
     - 0
@@ -212,7 +271,9 @@
   biomes:
     - Caves
     - Lava
-
+  difficulties: 
+    - Challenging
+ 
 - type: salvageAirMod
   id: Burnable
   cost: 5
@@ -225,6 +286,9 @@
   biomes:
     - Caves
     - Lava
+  difficulties: 
+    - Challenging
+
 
 # Weather mods -> not required
 #- type: salvageWeatherMod
@@ -243,8 +307,13 @@
   desc: salvage-dungeon-mod-experiment
   proto: Experiment
   biomes:
-    #- LowDesert
+    - LowDesert # Far Horizons
     - Grasslands
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageDungeonMod
   id: LavaBrig
@@ -252,6 +321,11 @@
   proto: LavaBrig
   biomes:
     - Lava
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageDungeonMod
   id: Mineshaft
@@ -259,6 +333,11 @@
   proto: Mineshaft
   biomes:
     - Caves
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageDungeonMod
   id: SnowyLabs
@@ -266,6 +345,12 @@
   proto: SnowyLabs
   biomes:
     - Snow
+    - Mountains # Far Horizons
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult
 
 - type: salvageDungeonMod
   id: Haunted
@@ -273,3 +358,8 @@
   proto: Haunted
   biomes:
     - Caves
+  difficulties: 
+    - Challenging
+    - Moderate
+    - Easy
+    - Difficult

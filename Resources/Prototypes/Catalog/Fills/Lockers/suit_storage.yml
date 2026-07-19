@@ -299,7 +299,7 @@
       - id: OxygenTankFilled
       - id: NitrogenTankFilled
       - id: ClothingShoesBootsMag
-      - id: ClothingOuterHardsuitSalvage #Goobstation
+      - id: ClothingOuterHardsuitSpatio # Dumont
       - id: ClothingMaskGasExplorer
   - type: AccessReader
     access: [["Salvage"]]

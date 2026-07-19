@@ -17,6 +17,7 @@
 
 using Content.Goobstation.Common.Speech;
 using Robust.Shared.Audio;
+using Content.Shared.Chat;
 using Content.Server.Chat.Systems;
 using Content.Shared.Speech;
 using Robust.Shared.Audio.Systems;
