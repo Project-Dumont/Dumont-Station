@@ -196,9 +196,9 @@
       maxCharge: 10000
       startingCharge: 10000
     # Dumont
-  - type: SpeciesRestrictedTrigger
-    restrictedSpecies:
-    - Oni
+    - type: SpeciesRestrictedTrigger
+      restrictedSpecies:
+      - Oni
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 25

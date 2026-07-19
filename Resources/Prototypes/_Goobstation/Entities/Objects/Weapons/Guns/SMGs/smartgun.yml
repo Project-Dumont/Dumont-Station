@@ -93,3 +93,7 @@
   - type: EyeCursorOffset
     maxOffset: 1.5
     pvsIncrease: 0.15
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+      - Oni
