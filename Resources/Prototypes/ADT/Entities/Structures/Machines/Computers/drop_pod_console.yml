@@ -29,8 +29,6 @@
       - DefaultStationBeaconCourtroom
       - DefaultStationBeaconLawOffice
       - DefaultStationBeaconSecurityCheckpoint
-      - ADTDefaultStationBeaconDockingAreaSec
-      - ADTDefaultStationBeaconSuitsSec
       # AI
       - DefaultStationBeaconAI
       - DefaultStationBeaconAISatellite
@@ -38,7 +36,6 @@
       - DefaultStationBeaconAIUpload
       - DefaultStationBeaconAIPower
       # Dangerous engineering
-      - ADTDefaultStationBeaconSuperMatter
       - DefaultStationBeaconGravGen
       - DefaultStationBeaconAnchor
       - DefaultStationBeaconSingularity
@@ -49,7 +46,7 @@
       - DefaultStationBeaconNukeOps
       - NuclearBomb
       # Special
-      - ADTBluespaceHarvesterRift
+      - BluespaceHarvesterRift
       - DefaultStationBeaconNuclear
       - DefaultStationBeaconCentComm
   - type: ActivatableUI
