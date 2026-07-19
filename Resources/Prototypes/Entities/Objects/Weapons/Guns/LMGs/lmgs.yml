@@ -117,13 +117,6 @@
     delay: 1
   - type: Multishot # Goobstation V
     missChance: 0.4 #MISS CHANCE DOESNT WORK LMAO
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
-    - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   # Goobstation edit start
   - type: EmitSoundOnPickup
     sound:
@@ -135,6 +128,10 @@
     sound:
       collection: RiflesDrop
   # Goobstation edit end
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   name: L6 SAW
@@ -153,13 +150,10 @@
     magState: mag
     steps: 4
     zeroVisible: true
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
+ # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
     - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   - type: Appearance
   - type: StaticPrice
     price: 10000
@@ -201,13 +195,10 @@
     - type: Battery
       maxCharge: 10000
       startingCharge: 10000
-    - type: RestrictGunshotsByUserTag # Goobstation
-      doesntContain:
-      - Oni
-      messages:
-      - oni-cannot-shoot-guns-1
-      - oni-cannot-shoot-guns-2
-      - oni-cannot-shoot-guns-3
+    # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 25
