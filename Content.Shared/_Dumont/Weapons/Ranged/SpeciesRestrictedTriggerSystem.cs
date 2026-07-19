@@ -58,7 +58,7 @@ public sealed class SpeciesRestrictedTriggerSystem : EntitySystem
         {
             ent.Comp.LastPopup = currentTime;
 
-            _popup.PopupClient(
+            _popup.PopupPredicted(
                 Loc.GetString("species-restricted-trigger-break-popup"),
                 args.User,
                 args.User,
@@ -71,6 +71,7 @@ public sealed class SpeciesRestrictedTriggerSystem : EntitySystem
         }
 
         // Add the existing broken-trigger mechanic to the gun.
-        EnsureComp<WeaponTriggerBrokenComponent>(ent.Owner);
+        var brokenComp = EnsureComp<WeaponTriggerBrokenComponent>(ent.Owner);
+        brokenComp.LastPopupTime = currentTime;
     }
 }

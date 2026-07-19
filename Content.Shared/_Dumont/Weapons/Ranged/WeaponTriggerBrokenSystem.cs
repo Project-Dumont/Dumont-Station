@@ -61,7 +61,7 @@ public sealed class WeaponTriggerBrokenSystem : EntitySystem
         {
             ent.Comp.LastPopupTime = currentTime;
 
-            _popup.PopupClient(
+            _popup.PopupPredicted(
                 Loc.GetString("weapon-trigger-broken-fire-popup"),
                 args.User,
                 args.User,
@@ -140,7 +140,7 @@ public sealed class WeaponTriggerBrokenSystem : EntitySystem
         if (!welder.Enabled)
             return;
 
-        _popup.PopupClient(
+        _popup.PopupPredicted(
             Loc.GetString("weapon-trigger-broken-repaired-popup"),
             args.User,
             args.User,
