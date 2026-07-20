@@ -183,33 +183,6 @@ public sealed class PrototypeSaveTest
         });
     }
 
-    // ADT-Tweak start
-    private static bool HasSolutionContainerWithSolutions(EntityPrototype prototype, IPrototypeManager prototypeMan)
-    {
-        if (prototype.Components.TryGetValue("SolutionContainerManager", out var entry) &&
-            entry.Mapping is not null &&
-            entry.Mapping.Children.TryGetValue("solutions", out var solutionsNode) &&
-            solutionsNode is MappingDataNode)
-        {
-            return true;
-        }
-
-        if (prototype.Parents == null)
-            return false;
-
-        foreach (var parentId in prototype.Parents)
-        {
-            if (prototypeMan.TryIndex(parentId, out EntityPrototype? parent))
-            {
-                if (HasSolutionContainerWithSolutions(parent, prototypeMan))
-                    return true;
-            }
-        }
-
-        return false;
-    }
-    // ADT-Tweak end
-
     public sealed class TestEntityUidContext : ISerializationContext,
         ITypeSerializer<EntityUid, ValueDataNode>
     {
