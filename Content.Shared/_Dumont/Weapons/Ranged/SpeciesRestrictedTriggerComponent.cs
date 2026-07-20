@@ -1,4 +1,3 @@
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
