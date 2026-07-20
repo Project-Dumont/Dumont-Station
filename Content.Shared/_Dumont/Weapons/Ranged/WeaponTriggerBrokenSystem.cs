@@ -113,7 +113,7 @@ public sealed class WeaponTriggerBrokenSystem : EntitySystem
             args.Used,
             args.User,
             ent.Owner,
-            (float)ent.Comp.RepairDuration.TotalSeconds,
+            (float) ent.Comp.RepairDuration.TotalSeconds,
             WeldingQualities,
             new RepairBrokenTriggerDoAfterEvent());
 
