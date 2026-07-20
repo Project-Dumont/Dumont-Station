@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -23,7 +24,7 @@ public sealed partial class SpeciesRestrictedTriggerComponent : Component
     /// to fire this weapon.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public List<ProtoId<TagPrototype>> RestrictedSpecies = [];
+    public List<ProtoId<SpeciesPrototype>> RestrictedSpecies = [];
 
     /// <summary>
     /// Sound played when the trigger breaks.
@@ -36,7 +37,7 @@ public sealed partial class SpeciesRestrictedTriggerComponent : Component
     /// Minimum delay, in seconds, between repeated failure feedback.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float PopupCooldown = 1f;
+    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(1);
 
     /// <summary>
     /// Last time the trigger-breaking popup was shown.

@@ -18,13 +18,13 @@ public sealed partial class WeaponTriggerBrokenComponent : Component
     /// Minimum time, in seconds, between firing-failure popups and sounds.
     /// </summary>
     [DataField]
-    public float PopupCooldown = 1f;
+    public TimeSpan PopupCooldown = TimeSpan.FromSeconds(1);
 
     /// <summary>
     /// Time, in seconds, required to repair the trigger.
     /// </summary>
     [DataField]
-    public float RepairDuration = 5f;
+    public TimeSpan RepairDuration = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// Last time the firing-failure popup was shown.

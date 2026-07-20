@@ -2,6 +2,7 @@ using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Dumont.Weapons.Ranged;
@@ -43,7 +44,15 @@ public sealed class SpeciesRestrictedTriggerSystem : EntitySystem
             return;
 
         // The user must possess at least one configured species tag.
-        if (!_tagSystem.HasAnyTag(args.User, ent.Comp.RestrictedSpecies))
+        // Convert the list of species IDs to tag IDs before checking.
+        var restrictedTags = new List<ProtoId<TagPrototype>>(ent.Comp.RestrictedSpecies.Count);
+        foreach (var species in ent.Comp.RestrictedSpecies)
+        {
+            // Convert the ProtoId<SpeciesPrototype> to a string ID and build a Tag ProtoId.
+            restrictedTags.Add(new ProtoId<TagPrototype> { Id = species.AsType() });
+        }
+
+        if (!_tagSystem.HasAnyTag(args.User, restrictedTags))
             return;
 
         // Prevent the current shot.
@@ -52,7 +61,7 @@ public sealed class SpeciesRestrictedTriggerSystem : EntitySystem
         var currentTime = _timing.CurTime;
         var nextPopupTime =
             ent.Comp.LastPopup +
-            TimeSpan.FromSeconds(ent.Comp.PopupCooldown);
+            ent.Comp.PopupCooldown;
 
         if (currentTime >= nextPopupTime)
         {

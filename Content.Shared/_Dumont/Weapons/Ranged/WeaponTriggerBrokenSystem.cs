@@ -55,7 +55,7 @@ public sealed class WeaponTriggerBrokenSystem : EntitySystem
         var currentTime = _timing.CurTime;
         var nextPopupTime =
             ent.Comp.LastPopupTime +
-            TimeSpan.FromSeconds(ent.Comp.PopupCooldown);
+            ent.Comp.PopupCooldown;
 
         if (currentTime >= nextPopupTime)
         {
@@ -109,7 +109,7 @@ public sealed class WeaponTriggerBrokenSystem : EntitySystem
             args.Used,
             args.User,
             ent.Owner,
-            ent.Comp.RepairDuration,
+            (float)ent.Comp.RepairDuration.TotalSeconds,
             WeldingQualities,
             new RepairBrokenTriggerDoAfterEvent());
 
