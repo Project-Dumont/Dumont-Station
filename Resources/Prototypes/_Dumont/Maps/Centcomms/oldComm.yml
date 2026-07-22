@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: gameMap
-  id: SummerCentcomm
+  id: OldCentcomm
   isGrid: true # Did you know that centcomm is the only "game map" that isn't actually a map? Send help.
   mapName: 'Central Command'
-  mapPath: /Maps/_Gabystation/Centcomms/summerComm.yml
+  mapPath: /Maps/_Dumont/Centcomms/oldComm.yml
   minPlayers: 10
   stations:
     centcomm:

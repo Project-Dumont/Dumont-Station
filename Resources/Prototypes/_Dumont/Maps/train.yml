@@ -96,7 +96,7 @@
 - type: gameMap
   id: Train
   mapName: 'Train'
-  mapPath: /Maps/_Gabystation/train.yml
+  mapPath: /Maps/_Dumont/train.yml
   maxRandomOffset: 0
   minPlayers: 30
   maxPlayers: 60
