@@ -1,0 +1,13 @@
+- type: entity
+  name: Salvage Lead's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampSalvageLead
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: "Salvage Lead"
+    stampedColor: "#846433"
+    stampState: "paper_stamp-salvagelead"
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/stamps.rsi
+    state: stamp-salvagelead

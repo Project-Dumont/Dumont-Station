@@ -1,0 +1,357 @@
+# SPDX-FileCopyrightText: 2025 Evaisa <evagiacosa1@gmail.com>
+# SPDX-FileCopyrightText: 2025 EvaisaDev <mail@evaisa.dev>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Godo emotes
+- type: nanoChatEmoji
+  id: godo
+  category: Godo
+  categoryOrder: 5
+  emojiOrder: 2
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/godo.png
+
+- type: nanoChatEmoji
+  id: do
+  category: Godo
+  emojiOrder: 4
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/do.png
+
+- type: nanoChatEmoji
+  id: donow
+  category: Godo
+  emojiOrder: 3
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/donow.png
+
+- type: nanoChatEmoji
+  id: gocrazy
+  category: Godo
+  emojiOrder: 5
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/donot.png
+
+- type: nanoChatEmoji
+  id: gosad
+  category: Godo
+  emojiOrder: 7
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/dontdo.png
+
+- type: nanoChatEmoji
+  id: godover
+  category: Godo
+  emojiOrder: 6
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/godover.png
+
+- type: nanoChatEmoji
+  id: golove
+  category: Godo
+  emojiOrder: 1
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/golove.png
+
+# # Misc emotes
+# - type: nanoChatEmoji
+#   id: troll
+#   category: Misc
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/troll.png
+
+# # Character emotes
+# - type: nanoChatEmoji
+#   id: bubble
+#   category: Character
+#   categoryOrder: 2
+#   sprite: /Textures/Interface/Emotes/bubble.png
+
+# - type: nanoChatEmoji
+#   id: buzz
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/buzztwo.png
+
+# - type: nanoChatEmoji
+#   id: chime
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/chime.png
+
+# - type: nanoChatEmoji
+#   id: chirp
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/chirp.png
+
+# - type: nanoChatEmoji
+#   id: clap
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/clap.png
+
+# - type: nanoChatEmoji
+#   id: click
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/click.png
+
+# - type: nanoChatEmoji
+#   id: cough
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/cough.png
+
+# - type: nanoChatEmoji
+#   id: cry
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/cry.png
+
+# - type: nanoChatEmoji
+#   id: deathgasp
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/deathgasp.png
+
+# - type: nanoChatEmoji
+#   id: fizz
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/fizz.png
+
+# - type: nanoChatEmoji
+#   id: hat
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/hat.png
+
+# - type: nanoChatEmoji
+#   id: hew
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/hew.png
+
+# - type: nanoChatEmoji
+#   id: honk
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/honk.png
+
+# - type: nanoChatEmoji
+#   id: laugh
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/laugh.png
+
+# - type: nanoChatEmoji
+#   id: salute
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/salute.png
+
+# - type: nanoChatEmoji
+#   id: scream
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/scream.png
+
+# - type: nanoChatEmoji
+#   id: sigh
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/sigh.png
+
+# - type: nanoChatEmoji
+#   id: snap
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/snap.png
+
+# - type: nanoChatEmoji
+#   id: squeak
+#   category: Character
+#   sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/squeak.png
+
+# - type: nanoChatEmoji
+#   id: tailslap
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/tailslap.png
+
+# - type: nanoChatEmoji
+#   id: vocal
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/vocal.png
+
+# - type: nanoChatEmoji
+#   id: weh
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/weh.png
+
+# - type: nanoChatEmoji
+#   id: whistle
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/whistle.png
+
+# - type: nanoChatEmoji
+#   id: yawn
+#   category: Character
+#   sprite: /Textures/Interface/Emotes/yawn.png
+
+# # Plushie emotes
+- type: nanoChatEmoji
+  id: abelha
+  category: Plushies
+  categoryOrder: 8
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/bee.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: error_1
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/ratvar.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: pinguim
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/penguin.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: mariposa
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/moth.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: rouny
+  category: Plushies
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/rouny.png
+
+- type: nanoChatEmoji
+  id: lagarto
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/lizard.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: lagarto_espacial
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/lizard.rsi
+    state: plushie_spacelizard
+
+- type: nanoChatEmoji
+  id: hampter
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/hampter.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: aracnídeo
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/arachnid.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: lampada
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/lamp.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: error_4
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/nukie.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: atmosiano
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/atmosian.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: slime
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/slime.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: cobra
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/snake.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: vox
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/vox.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: diona
+  category: Plushies
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/plushie_diona.png
+
+- type: nanoChatEmoji
+  id: humano
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/human.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: xeno
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/xeno.rsi
+    state: icon
+
+- type: nanoChatEmoji
+  id: carpa
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/carp.rsi
+    state: carpplush
+
+- type: nanoChatEmoji
+  id: carpa_arcoiris
+  category: Plushies
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/rainbowcarp.png
+
+- type: nanoChatEmoji
+  id: lagarto_arcoiris
+  category: Plushies
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/rainbowlizardplush.png
+
+- type: nanoChatEmoji
+  id: error_2
+  category: Plushies
+  sprite:
+    sprite: /Textures/Objects/Fun/Plushies/narsie.rsi
+    state: icon
+
+# - type: nanoChatEmoji
+#   id: cirno
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/_Funkystation/Objects/Fun/toys.rsi
+#     state: plushie_cirno
+
+# - type: nanoChatEmoji
+#   id: mothroach
+#   category: Plushies
+#   sprite:
+#     sprite: /Textures/_Funkystation/Objects/Fun/toys.rsi
+#     state: plushie_mothroach
+
+- type: nanoChatEmoji
+  id: louie
+  category: Plushies
+  sprite:
+    sprite: /Textures/_Goobstation/Objects/Fun/toys.rsi
+    state: plushie_louie
+
+- type: nanoChatEmoji
+  id: error_3
+  category: Plushies
+  sprite:
+    sprite: /Textures/_DV/CosmicCult/Objects/unknownplushie.rsi
+    state: plushie_cosmic
+
+- type: nanoChatEmoji
+  id: goblin_do_chão
+  category: Plushies
+  sprite: /Textures/_Funkystation/Interface/NanoChat/Emotes/floorgoblin.png

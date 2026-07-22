@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: SLVendingMachine
   parent: BaseMachinePowered
@@ -115,7 +119,7 @@
   id: VendorKukriKnife
   productEntity: KukriKnife
   cost:
-    SalvageTicket: 100
+    SalvageTicket: 20
   categories:
   - SalvageWeapons
   conditions:
@@ -125,7 +129,7 @@
   id: VendorWeaponMark1Rifle
   productEntity: WeaponRifleMark1
   cost:
-    SalvageTicket: 400
+    SalvageTicket: 80
   categories:
   - SalvageWeapons
   conditions:
@@ -135,7 +139,7 @@
   id: VendorWeaponMark1SniperRifle
   productEntity: WeaponRifleMark1Sniper
   cost:
-    SalvageTicket: 600
+    SalvageTicket: 110
   categories:
   - SalvageWeapons
   conditions:
@@ -145,7 +149,7 @@
   id: VendorN14ripper
   productEntity: N14ripper
   cost:
-    SalvageTicket: 450
+    SalvageTicket: 20
   categories:
   - SalvageWeapons
   conditions:
@@ -155,7 +159,7 @@
   id: VendorWeaponMarkalibur1Rifle
   productEntity: Markalibur1SheathFilled
   cost:
-    SalvageTicket: 1000
+    SalvageTicket: 200
   categories:
   - SalvageWeapons
   conditions:
@@ -165,7 +169,7 @@
   id: VendorWeaponMakeshiftLaser
   productEntity: WeaponMakeshiftLaser
   cost:
-    SalvageTicket: 1800
+    SalvageTicket: 360
   categories:
   - SalvageWeapons
   conditions:
@@ -175,7 +179,7 @@
   id: VendorWeaponSubMachineGunForged
   productEntity: WeaponSubMachineGunForged
   cost:
-    SalvageTicket: 2400
+    SalvageTicket: 480
   categories:
   - SalvageWeapons
   conditions:
@@ -185,7 +189,7 @@
   id: VendorWeaponShotgunSalvager
   productEntity: WeaponShotgunSalvager
   cost:
-    SalvageTicket: 3000
+    SalvageTicket: 600
   categories:
   - SalvageWeapons
   conditions:
@@ -199,7 +203,7 @@
   id: VendorMiningDrill
   productEntity: MiningDrill
   cost:
-    SalvageTicket: 300
+    SalvageTicket: 60
   categories:
   - SalvageUtilities
   conditions:
@@ -209,7 +213,7 @@
   id: VendorClothingHeadHelmetSalvageMerc
   productEntity: ClothingHeadHelmetSalvageMerc
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
@@ -219,7 +223,7 @@
   id: VendorClothingOuterVestWebSalvageMerc
   productEntity: ClothingOuterVestWebSalvageMerc
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
@@ -229,7 +233,7 @@
   id: VendorClothingHandsSalvageMercGlovesCombat
   productEntity: ClothingHandsSalvageMercGlovesCombat
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
@@ -239,7 +243,7 @@
   id: VendorClothingShoesBootsSalvageMerc
   productEntity: ClothingShoesBootsSalvageMerc
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
@@ -249,7 +253,7 @@
   id: VendorClothingBeltSalvageMercWebbing
   productEntity: ClothingBeltSalvageMercWebbing
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
@@ -259,7 +263,7 @@
   id: VendorFultonBeacon
   productEntity: FultonBeacon
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageUtilities
   conditions:
@@ -269,7 +273,7 @@
   id: VendorDefibrillatorCompact
   productEntity: DefibrillatorCompact
   cost:
-    SalvageTicket: 350
+    SalvageTicket: 70
   categories:
   - SalvageUtilities
   conditions:
@@ -279,7 +283,7 @@
   id: VendorOreBagMagnetic
   productEntity: OreBagMagnetic
   cost:
-    SalvageTicket: 500
+    SalvageTicket: 100
   categories:
   - SalvageUtilities
   conditions:
@@ -289,7 +293,7 @@
   id: VendorClothingOuterHardsuitSalvage
   productEntity: ClothingOuterHardsuitSalvage
   cost:
-    SalvageTicket: 500
+    SalvageTicket: 100
   categories:
   - SalvageEquipment
   conditions:
@@ -299,7 +303,7 @@
   id: VendorN14ShieldMetalHeavy
   productEntity: N14ShieldMetalHeavy
   cost:
-    SalvageTicket: 400
+    SalvageTicket: 80
   categories:
   - SalvageEquipment
   conditions:
@@ -309,7 +313,7 @@
   id: VendorClothingOuterHardsuitMaxim
   productEntity: ClothingOuterHardsuitMaxim
   cost:
-    SalvageTicket: 1000
+    SalvageTicket: 200
   categories:
   - SalvageEquipment
   conditions:
@@ -319,7 +323,7 @@
   id: VendorN14SledgeHammer
   productEntity: N14SledgeHammer
   cost:
-    SalvageTicket: 1000
+    SalvageTicket: 200
   categories:
   - SalvageEquipment
   conditions:
@@ -333,7 +337,7 @@
   id: VendorTesteMedkit
   productEntity: MedkitFilled
   cost:
-    SalvageTicket: 300
+    SalvageTicket: 60
   categories:
   - SalvageConsumeables
   conditions:
@@ -343,7 +347,7 @@
   id: VendorMedkitRadiationFilled
   productEntity: MedkitRadiationFilled
   cost:
-    SalvageTicket: 500
+    SalvageTicket: 100
   categories:
   - SalvageConsumeables
   conditions:
@@ -353,7 +357,7 @@
   id: VendorMedkitToxinFilled
   productEntity: MedkitToxinFilled
   cost:
-    SalvageTicket: 500
+    SalvageTicket: 100
   categories:
   - SalvageConsumeables
   conditions:
@@ -363,7 +367,7 @@
   id: VendorMedkitAdvancedFilled
   productEntity: MedkitAdvancedFilled
   cost:
-    SalvageTicket: 750
+    SalvageTicket: 150
   categories:
   - SalvageConsumeables
   conditions:
@@ -375,7 +379,7 @@
   id: VendorShellShotgunImprovised
   productEntity: ShellShotgunImprovised
   cost:
-    SalvageTicket: 20
+    SalvageTicket: 4
   categories:
   - SalvageConsumeables
   conditions:
@@ -385,7 +389,7 @@
   id: VendorMagazinePistolSubMachineGunImprovised
   productEntity: MagazinePistolSubMachineGunImprovised
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 40
   categories:
   - SalvageConsumeables
   conditions:
@@ -395,18 +399,18 @@
   id: VendorMagazineShotgunEmpty
   productEntity: MagazineShotgunEmpty
   cost:
-    SalvageTicket: 250
+    SalvageTicket: 50
   categories:
   - SalvageConsumeables
   conditions:
   - !type:BuyerAccessCondition
-  
+
 
 - type: listing
   id: VendorBoxMagnum
   productEntity: MagazineBoxMagnum
   cost:
-    SalvageTicket: 350
+    SalvageTicket: 70
   categories:
   - SalvageConsumeables
   conditions:
@@ -416,7 +420,7 @@
   id: VendorBoxLightRifle
   productEntity: MagazineBoxLightRifle
   cost:
-    SalvageTicket: 450
+    SalvageTicket: 90
   categories:
   - SalvageConsumeables
   conditions:
@@ -426,7 +430,7 @@
   id: VendorMagazineBoxImprovisedPistol
   productEntity: MagazineBoxImprovisedPistol
   cost:
-    SalvageTicket: 750
+    SalvageTicket: 150
   categories:
   - SalvageConsumeables
   conditions:
@@ -438,7 +442,7 @@
   id: VendorBoxFlare
   productEntity: BoxFlare
   cost:
-    SalvageTicket: 50
+    SalvageTicket: 10
   categories:
   - SalvageUtilities
   conditions:
@@ -448,7 +452,7 @@
   id: VendorBoxMRE
   productEntity: BoxMRE
   cost:
-    SalvageTicket: 50
+    SalvageTicket: 10
   categories:
   - SalvageConsumeables
   conditions:

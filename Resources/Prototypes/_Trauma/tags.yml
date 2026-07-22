@@ -1,11 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: Tag
   id: AdvancedMagboots
 
 - type: Tag
   id: CartridgeRPG2
-
-- type: Tag
-  id: CartridgeTurret
 
 - type: Tag
   id: DataChip
@@ -23,7 +24,10 @@
   id: FlamethrowerTank
 
 - type: Tag
-  id: ForgeMold
+  id: CartridgeTurret # Ammo whitelist: BaseMagazineTurret, WeaponTurretRevolutionaryPistol, BaseMagazineTurretHeavy, WeaponLightMachineGunProletariat
+
+- type: Tag
+  id: ForgeMold # Blueprint whitelist: RevForge
 
 - type: Tag
   id: FusionCore
@@ -60,6 +64,9 @@
 
 - type: Tag
   id: TechfabMachineBoard
+
+- type: Tag
+  id: ThrowingKnife # Storage whitelist: ClothingBeltKnifeRig
 
 - type: Tag
   id: T45Frame

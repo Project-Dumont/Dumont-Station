@@ -15,6 +15,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Shared._FarHorizons.Salvage;
+using Content.Shared.Salvage;
+using Robust.Shared.Prototypes;
 using Content.Shared.Salvage.Expeditions;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -70,4 +73,7 @@ public sealed partial class SalvageExpeditionComponent : SharedSalvageExpedition
     /// </summary>
     [DataField]
     public ResolvedSoundSpecifier SelectedSong;
+
+    // Far Horizons
+    public ProtoId<SalvageMissionObjectivePrototype> Objective;
 }

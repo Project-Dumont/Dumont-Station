@@ -101,6 +101,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             CargoTechnician: [ 2, 2 ]
             ShaftMiner: [ 3, 3 ]
             Bitrunner: [ 3, 3 ]

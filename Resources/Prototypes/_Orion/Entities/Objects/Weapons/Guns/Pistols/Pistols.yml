@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: WeaponPistolG22
@@ -32,6 +36,51 @@
         whitelist:
           tags:
             - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+
+- type: entity
+  parent: [BaseWeaponPistol, BaseCentcommCommandContraband]
+  id: WeaponPistolDesertEagle
+  name: desert eagle
+  description: A magnum chambered in .45AE that comes with a serious kick. This one is engraved, "Peace through superior firepower".
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Weapons/Guns/Pistols/deagle/big.rsi
+  - type: Item
+    sprite: _Orion/Objects/Weapons/Guns/Pistols/deagle/tiny.rsi
+  - type: Gun
+    angleDecay: 35
+    angleIncrease: 12
+    cameraRecoilScalar: 5
+    fireRate: 4
+    maxAngle: 40
+    minAngle: 2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Orion/Weapons/Guns/Pistols/deagle.ogg
+    soundEmpty:
+      path: /Audio/_Orion/Weapons/Guns/Pistols/deagle_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        startingItem: MagazineMagnum
+        insertSound: /Audio/_Orion/Weapons/Guns/Pistols/deagle_reload.ogg
+        ejectSound: /Audio/_Orion/Weapons/Guns/Pistols/deagle_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
   - type: MagazineVisuals
     magState: mag
     steps: 1
