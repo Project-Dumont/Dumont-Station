@@ -99,6 +99,9 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - SolarControlComputerCircuitboard
+  - AlertsComputerCircuitboard # DumontStation
+  - AtmosMonitoringComputerCircuitboard # DumontStation
+  - PowerComputerCircuitboard # DumontStation
   - SolarTrackerElectronics
   - GasRecyclerMachineCircuitboard
   - PortableGeneratorPacmanMachineCircuitboard
