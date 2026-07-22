@@ -59,18 +59,6 @@ ent-CentcommStypticStimulatorImplanter = { ent-BaseImplantOnlyImplanterCentcomm 
     .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }
     .suffix = estimulador de homeostase
 
-ent-CentcommMindShieldImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
-    .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }
-    .suffix = { ent-MindShieldImplanter.suffix }
-
-ent-CentcommMindShieldImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
-    .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }
-    .suffix = { ent-MindShieldImplanter.suffix }
-
-ent-CentcommMindShieldImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
-    .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }
-    .suffix = { ent-MindShieldImplanter.suffix }
-
 # Tripulação
 ent-PacifismImplanter = { ent-BaseImplanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }

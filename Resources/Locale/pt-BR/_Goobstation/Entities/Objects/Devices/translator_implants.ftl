@@ -6,9 +6,6 @@ ent-LibrarianTranslatorImplant = { ent-BaseSubdermalImplant } tradutor bibliotec
 ent-BasicSpaceItalianTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de cosmo siciliano básico
     .desc = Um implante possibilitando o entendimento dos habitantes da cozinha.
 
-ent-BasicSpaceItalianTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de cosmo siciliano avançado
-    .desc = Um implante possibilitando o entendimento e fala dos habitantes da cozinha.
-
 ent-YowKriolTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de yow crioulo
     .desc = Um implante possibilitando o entendimento e fala de Yol Crioulo.
 

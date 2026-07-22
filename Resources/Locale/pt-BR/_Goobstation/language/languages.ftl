@@ -1,6 +1,5 @@
 language-SpaceItalian-name = Cosmo Siciliano
-language-SpaceItalian-description =
-    La língua da cucina. Mamma mia!
+language-SpaceItalian-description = La língua da cucina. Mamma mia!
 
 language-Cheval-name = Equinês
 language-Cheval-description = A língua dos cavalos.
