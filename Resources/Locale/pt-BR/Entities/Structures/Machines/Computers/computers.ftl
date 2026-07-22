@@ -1,6 +1,12 @@
 ent-ComputerAlert = computador de alertas
     .desc = Usado para acessar o sistema automatizado de alertas da estação.
 
+ent-ComputerSensorMonitoring = computador de monitoramento de sensores
+    .desc = Um computador flexivel capaz de monitorar todos os tipos de sensores.
+
+ent-ComputerAtmosMonitoring = monitor de rede atmosferica
+    .desc = Usado para monitorar as redes atmosfericas da estação.
+
 ent-ComputerEmergencyShuttle = console da nave de emergência
     .desc = Utilizado para fazer a nave de evacuação partir mais cedo.
 

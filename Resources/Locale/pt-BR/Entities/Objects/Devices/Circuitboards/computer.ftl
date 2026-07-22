@@ -7,6 +7,12 @@ ent-AlertsComputerCircuitboard = placa de computador de alertas
 ent-PowerComputerCircuitboard = placa de computador de monitoramento de energia
     .desc = Uma placa de circuito impresso para um computador de monitoramento de energia.
 
+ent-AtmosMonitoringComputerCircuitboard = placa de computador de monitoramento atmosferico
+    .desc = Uma placa de circuito impresso para um computador de monitoramento atmosferico.
+
+ent-SensorConsoleCircuitboard = placa de computador de monitoramento de sensores
+    .desc = Uma placa de circuito impresso para um computador de monitoramento de sensores.
+
 ent-MedicalRecordsComputerCircuitboard = placa de computador de registros médicos
     .desc = Uma placa de circuito impresso para um computador de registros médicos.
 
