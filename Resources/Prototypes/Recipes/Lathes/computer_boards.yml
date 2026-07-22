@@ -61,25 +61,21 @@
 - type: latheRecipe # DumontStation
   parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
   id: AlertsComputerCircuitboard
-  icon: Resources\Textures\Objects\Misc\module.rsi\cpu_engineering.png
   result: AlertsComputerCircuitboard
 
 - type: latheRecipe # DumontStation
   parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
   id: SensorConsoleCircuitboard
-  icon: Resources\Textures\Objects\Misc\module.rsi\cpu_engineering.png
   result: SensorConsoleCircuitboard
 
 - type: latheRecipe # DumontStation
   parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
   id: AtmosMonitoringComputerCircuitboard
-  icon: Resources\Textures\Objects\Misc\module.rsi\cpu_engineering.png
   result: AtmosMonitoringComputerCircuitboard
 
 - type: latheRecipe # DumontStation
   parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
   id: PowerComputerCircuitboard
-  icon: Resources\Textures\Objects\Misc\module.rsi\cpu_engineering.png
   result: PowerComputerCircuitboard
 
 # Medical

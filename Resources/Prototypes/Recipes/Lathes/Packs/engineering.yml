@@ -100,6 +100,7 @@
   - PortableScrubberMachineCircuitBoard
   - SolarControlComputerCircuitboard
   - AlertsComputerCircuitboard # DumontStation
+  - SensorConsoleCircuitboard # DumontStation
   - AtmosMonitoringComputerCircuitboard # DumontStation
   - PowerComputerCircuitboard # DumontStation
   - SolarTrackerElectronics
