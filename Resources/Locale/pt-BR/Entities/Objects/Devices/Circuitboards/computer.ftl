@@ -1,14 +1,14 @@
 ent-BaseComputerCircuitboard = placa de computador
     .desc = { "" }
 
-ent-AlertsComputerCircuitboard = placa de computador de alertas
-    .desc = Uma placa de circuito impresso de computador para um computador de alertas.
+ent-AlertsComputerCircuitboard = placa de computador de alertas atmosféricos
+    .desc = Uma placa de circuito impresso de computador para um computador de alertas atmosféricos.
 
 ent-PowerComputerCircuitboard = placa de computador de monitoramento de energia
     .desc = Uma placa de circuito impresso para um computador de monitoramento de energia.
 
-ent-AtmosMonitoringComputerCircuitboard = placa de computador de monitoramento atmosferico
-    .desc = Uma placa de circuito impresso para um computador de monitoramento atmosferico.
+ent-AtmosMonitoringComputerCircuitboard = placa de computador de monitoramento atmosférico
+    .desc = Uma placa de circuito impresso para um computador de monitoramento atmosférico.
 
 ent-SensorConsoleCircuitboard = placa de computador de monitoramento de sensores
     .desc = Uma placa de circuito impresso para um computador de monitoramento de sensores.
