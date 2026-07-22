@@ -14,7 +14,7 @@ ent-NekomimeticTranslatorImplant = { ent-BaseSubdermalImplant } tradutor nekomim
 ent-DraconicTranslatorImplant = { ent-BaseSubdermalImplant } tradutor sinta'unathi
     .desc = Um implante tradutor providênciando a habilidade de se comunicar com reptilianos. Weh!
 
-ent-CanilunztTranslatorImplant = { ent-BaseSubdermalImplant } tradutor vulpino
+ent-CanilunztTranslatorImplant = { ent-BaseSubdermalImplant } tradutor caniluso
     .desc = Um implante tradutor que lhe ajuda a comunicar com seus uivadores locais. Yip!
 
 ent-SolCommonTranslatorImplant = { ent-BaseSubdermalImplant } tradutor solariano

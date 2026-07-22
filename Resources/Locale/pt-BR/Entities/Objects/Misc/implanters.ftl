@@ -6,7 +6,7 @@ ent-Implanter = { ent-BaseImplanter }
 
 ent-ImplanterAdmeme = { ent-BaseImplanter }
     .desc = { ent-Implanter.desc }
-    .suffix = Admeme
+    .suffix = admeme
 
 ent-BaseImplantOnlyImplanter = { ent-BaseImplanter }
     .desc = Uma seringa descartável exclusivamente projetada para implantação de implantes subdérmicos.

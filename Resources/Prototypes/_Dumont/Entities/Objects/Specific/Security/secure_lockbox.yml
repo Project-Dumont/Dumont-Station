@@ -1,0 +1,78 @@
+- type: entity
+  id: BaseSecureLockbox
+  parent: BaseStorageItem
+  name: secure lockbox
+  description: A ressistant and lockable handheld lockbox.
+  components:
+  - type: Appearance
+  - type: Lock
+  - type: LockVisuals
+  - type: AccessReader
+    access: [["Command"]]
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Security/secure_lockbox_hos.rsi
+    state: icon
+    layers:
+    - state: icon
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,2
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+    sprite: _Dumont/Objects/Specific/Security/secure_lockbox_hos.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 150
+      Plasteel: 100
+      Plastic: 75
+  - type: Damageable # Mesma coisa que ármario com tranca
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+
+- type: entity
+  id: SecureLockboxHoS
+  parent: BaseSecureLockbox
+  name: secure implanter lockbox
+  description: Standard issue portable lockbox for various implanters, perfectly preserving them inside. Compact, convenient and stylish.
+  suffix: Empty
+  components:
+  - type: AccessReader
+    access: [["HeadOfSecurity"]]
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Security/secure_lockbox_hos.rsi
+    state: icon
+    layers:
+    - state: icon
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,2
+    whitelist:
+      tags:
+      - ImplantImplanter
+      - Trash # funny
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+    sprite: _Dumont/Objects/Specific/Security/secure_lockbox_hos.rsi
