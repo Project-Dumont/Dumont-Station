@@ -39,7 +39,7 @@ ent-XenoCompatibilityImplant = { ent-BaseSubdermalImplant } de { ent-XenoCompati
     .desc = Um implante que permite ao usuário receber transplantes de órgãos de xeno.
 
 # Antagonistas
-ent-ShadowmindImplant = { ent-BaseSubdermalImplant } de { ent-ShadowmindImplanter.suffix }
+ent-ShadowmindImplant = { ent-BaseSubdermalImplant } de shadowmind
     .desc = Um implante que permite ao usuário acessar a frequência Shadowmind.
 
 ent-AntagImplantChangeling = { ent-BaseSubdermalImplant } { ent-AntagImplanterChangeling.suffix }
