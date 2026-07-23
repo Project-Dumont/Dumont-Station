@@ -63,9 +63,6 @@
         - Handcuff
         - BallisticAmmoProvider
         - Ammo
-    blacklist:
-      tags:
-      - MechReactor
   - type: ItemMapper
     mapLayers:
       flashbang:

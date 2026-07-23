@@ -43,7 +43,7 @@
       baseWalkSpeed: 4
       baseSprintSpeed: 5
     - type: Stamina
-      baseCritThreshold: 500
+      critThreshold: 500
     - type: DamageStateVisuals
       states:
         Alive:
@@ -125,7 +125,7 @@
       baseWalkSpeed: 2.5
       baseSprintSpeed: 5.5
     - type: Stamina
-      baseCritThreshold: 40
+      critThreshold: 40
       animationThreshold: 20
     - type: DamageStateVisuals
       states:
@@ -181,7 +181,6 @@
     checkCanAccess: false
   - type: WorldTargetAction
     event: !type:TeleportSpellEvent
-      ignoreWalls: true
 
 - type: entity
   id: WeaponElderSlash

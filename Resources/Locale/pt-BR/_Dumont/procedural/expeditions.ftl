@@ -65,6 +65,7 @@ salvage-dungeon-mod-lava-brig = Prisão de Lava
 salvage-dungeon-mod-snowy-labs = Laboratório Gelado
 salvage-dungeon-mod-experiment = Experimento
 salvage-dungeon-mod-haunted = Assombrado
+salvage-dungeon-mod-soviet-warehouse = ???
 salvage-dungeon-mod-mineshaft = Minas
 salvage-dungeon-mod-xeno = Instalação da Federação Solar
 salvage-biome-mod-true-abyss = Abismo Verdadeiro
