@@ -31,7 +31,7 @@
 - type: gameMap
   id: Gax
   mapName: 'NCS Gax'
-  mapPath: /Maps/_Gabystation/gaxstation.yml
+  mapPath: /Maps/_Dumont/gaxstation.yml
   minPlayers: 10
   maxPlayers: 45
   stations:

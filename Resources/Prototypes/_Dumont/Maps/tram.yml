@@ -8,7 +8,7 @@
 - type: gameMap
   id: Tram
   mapName: 'Tram'
-  mapPath: /Maps/_Gabystation/tram.yml
+  mapPath: /Maps/_Dumont/tram.yml
   maxRandomOffset: 0
   minPlayers: 15
   maxPlayers: 80
