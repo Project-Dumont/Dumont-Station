@@ -19,7 +19,7 @@ ent-BluespaceLifelineImplant = { ent-BaseSubdermalImplant } { ent-BluespaceLifel
     .desc = Um implante salva-vidas que teletransporta o corpo do usuário para a Central de Comando em caso de morte ou quando ativado manualmente. A viagem é somente ida, retorno não é possível.
 
 ent-CommandTrackingImplant = { ent-BaseSubdermalImplant } { ent-CommandTrackingImplanter.suffix }
-    .desc = Um implante rastreador especialmente reservado para comandantes que possui monitoramento de local e vitais conectado a uma rede privada de diretamente na frequência da Central de Comando.
+    .desc = Um implante rastreador especialmente reservado para comandantes que possui monitoramento de local e vitais conectado a uma rede privada diretamente na frequência da Central de Comando.
 
 ent-SpaceProofImplant = { ent-BaseSubdermalImplant } de { ent-SpaceProofImplanter.suffix }
     .desc = Um implante que possibilita ao usuário sobreviver no espaço e sem ar.
@@ -32,11 +32,11 @@ ent-StypticStimulatorImplant = { ent-BaseSubdermalImplant } { ent-StypticStimula
 
 # Tripulação
 ent-PacifismImplant = { ent-BaseSubdermalImplant } { ent-PacifismImplanter.suffix }
-    .desc = Um implante que impede o usuário que de cometer violência. Normalmente usado em prisioneiros perigosos ou em prisão perpétua.
+    .desc = Um implante que impede o usuário de cometer violência. Normalmente usado em prisioneiros perigosos ou em prisão perpétua.
 
 # Xeno
 ent-XenoCompatibilityImplant = { ent-BaseSubdermalImplant } de { ent-XenoCompatibilityImplanter.suffix }
-    .desc = Um implante que permite ao usuário receber transplantes de orgãos de xeno.
+    .desc = Um implante que permite ao usuário receber transplantes de órgãos de xeno.
 
 # Antagonistas
 ent-ShadowmindImplant = { ent-BaseSubdermalImplant } de { ent-ShadowmindImplanter.suffix }
@@ -56,7 +56,7 @@ ent-KravMagaImplant = { ent-BaseSubdermalImplant } de { ent-KravMagaImplanter.su
     .desc = Um implante que ensina ao usuário diversos movimentos da arte marcial.
 
 ent-AutoinjectorImplant = { ent-BaseSubdermalImplant } autoinjetor
-    .desc = Um implante que permite ao usuário se injetar com algum quimico carregadondo ativado manualmente. Possui adrenalida carregada por padrão.
+    .desc = Um implante que permite ao usuário se injetar com algum químico carregado quando ativado manualmente. Possui adrenalina carregada por padrão.
 
 ent-BinaryImplant = { ent-BaseSubdermalImplant } { ent-BinaryImplanter.suffix }
     .desc = Um implante que permite ao usuário acesso à frequência binária usada por silícios para comunicação.
@@ -65,4 +65,4 @@ ent-ClumsyImplant = { ent-BaseSubdermalImplant } de { ent-ClumsyImplanter.suffix
     .desc = Um implante que torna o usuário desastrado, permitindo-o dirigir um certo veículo.
 
 ent-RedspaceLifelineImplant = { ent-BaseSubdermalImplant } { ent-RedspaceLifelineImplanter.suffix }
-    .desc = Um implante que permite ao usuário receber transplantes de orgãos de xeno.
+    .desc = Um implante salva-vidas que teletransporta o corpo do usuário para o Alto Comando do Sindicato em caso de morte ou quando ativado manualmente. A viagem é somente ida, retorno não é possível.

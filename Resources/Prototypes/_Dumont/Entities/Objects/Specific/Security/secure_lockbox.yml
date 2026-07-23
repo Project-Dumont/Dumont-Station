@@ -1,8 +1,9 @@
 - type: entity
+  abstract: true
   id: BaseSecureLockbox
   parent: BaseStorageItem
   name: secure lockbox
-  description: A ressistant and lockable handheld lockbox.
+  description: A resistant and lockable handheld lockbox.
   components:
   - type: Appearance
   - type: Lock

@@ -16,7 +16,7 @@ ent-ShiftImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
 
 ent-BlinkImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
     .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }
-    .suffix = salto dimentsional
+    .suffix = salto dimensional
 
 ent-StopTimeImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
     .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }

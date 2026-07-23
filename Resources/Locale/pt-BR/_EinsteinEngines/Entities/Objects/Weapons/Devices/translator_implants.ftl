@@ -12,7 +12,7 @@ ent-NekomimeticTranslatorImplant = { ent-BaseSubdermalImplant } tradutor nekomim
     .desc = Um implante tradutor inicialmente projetado para ajudar donos de gato a melhor entender seus pets, agora possibilitando a habilidade de entender e conversar com felinídeos! Nya!
 
 ent-DraconicTranslatorImplant = { ent-BaseSubdermalImplant } tradutor sinta'unathi
-    .desc = Um implante tradutor providênciando a habilidade de se comunicar com reptilianos. Weh!
+    .desc = Um implante tradutor proporcionando a habilidade de se comunicar com reptilianos. Weh!
 
 ent-CanilunztTranslatorImplant = { ent-BaseSubdermalImplant } tradutor caniluso
     .desc = Um implante tradutor que lhe ajuda a comunicar com seus uivadores locais. Yip!
@@ -24,7 +24,7 @@ ent-NovuNedericTranslatorImplant = { ent-BaseSubdermalImplant } tradutor portome
     .desc = Um implante possibilitando o entendimento e fala de Portomenho. Hoezee!
 
 ent-RootSpeakTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de galhofala
-    .desc = Um implante que possibilitando que você fale pelas árvores. Ou com as árvores.
+    .desc = Um implante que possibilita que você fale pelas árvores. Ou com as árvores.
 
 ent-MofficTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de mariponês
     .desc = Um implante projetado para ajudar na domesticação de baraposas. Consequentemente, também ajuda a se comunicar com pessoas mariposa. Chitters!

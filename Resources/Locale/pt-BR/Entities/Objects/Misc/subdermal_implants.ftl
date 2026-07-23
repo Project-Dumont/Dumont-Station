@@ -25,14 +25,14 @@ ent-TrackingImplant = { ent-BaseSubdermalImplant } { ent-TrackingImplanter.suffi
     .desc = Um implante que possui um dispositivo rastreador conectado à rede de monitoramento da tripulação.
 
 ent-MindShieldImplant = { ent-BaseSubdermalImplant } { ent-MindShieldImplanter.suffix }
-    .desc = Um implante que garante lealdade à corporação ao proteger o usuário e previnir o funcionamento de dispositivos de controle mental.
+    .desc = Um implante que garante lealdade à corporação ao proteger o usuário e prevenir o funcionamento de diversos métodos de controle externo.
 
 # Antagonistas
 ent-StorageImplant = { ent-BaseSubdermalImplant } de { ent-StorageImplanter.suffix }
-    .desc = Um implante que permite ao usuário livrar-se de algemas ou amarras até três vezes antes de parar de funcionar.
+    .desc = Um implante que proporciona um armazenamento escondido no corpo do usuário por meio de tecnologia bluespace.
 
 ent-FreedomImplant = { ent-BaseSubdermalImplant } de { ent-FreedomImplanter.suffix }
-    .desc = Um implante que possui um dispositivo rastreador conectado à rede de monitoramento da tripulação.
+    .desc = Um implante que permite ao usuário livrar-se de algemas ou amarras até três vezes antes de parar de funcionar.
 
 ent-RadioImplant = { ent-BaseSubdermalImplant } de { ent-RadioImplanter.suffix }
     .desc = Um implante que permite acesso a frequência do Sindicato sem necessidade de fones de ouvido.

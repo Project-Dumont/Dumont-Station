@@ -7,7 +7,7 @@ ent-BasicSpaceItalianTranslatorImplant = { ent-BaseSubdermalImplant } tradutor d
     .desc = Um implante possibilitando o entendimento dos habitantes da cozinha.
 
 ent-YowKriolTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de yow crioulo
-    .desc = Um implante possibilitando o entendimento e fala de Yol Crioulo.
+    .desc = Um implante possibilitando o entendimento e fala de Yow Crioulo.
 
 ent-SignTranslatorImplant = { ent-BaseSubdermalImplant } tradutor de libras
     .desc = Um implante possibilitando o entendimento e gesticulação da linguagem de sinais.
