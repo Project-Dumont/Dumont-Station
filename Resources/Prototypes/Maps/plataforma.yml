@@ -38,7 +38,7 @@
 - type: gameMap
   id: PlataformaDeResenha
   mapName: "Plataforma De Resenha"
-  mapPath: /Maps/_Gabystation/PlataformaDeResenha.yml
+  mapPath: /Maps/_Dumont/plataforma.yml
   minPlayers: 0
   maxPlayers: 35
   stations:

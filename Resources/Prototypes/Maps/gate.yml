@@ -80,7 +80,7 @@
 - type: gameMap
   id: Gate
   mapName: 'Gate Station'
-  mapPath: /Maps/_Gabystation/gate.yml # Dumont
+  mapPath: /Maps/_Dumont/gate.yml # Dumont
   minPlayers: 55
   stations:
     Gate:
