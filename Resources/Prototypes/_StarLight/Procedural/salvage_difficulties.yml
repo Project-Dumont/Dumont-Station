@@ -37,7 +37,7 @@
   modifierBudget: 1
   color: "#EFB34196"
   recommendedPlayers: 4
-  delay: 0 # 30 mins
+  delay: 1800 # 30 mins
   probability: 0.5
 
 - type: salvageDifficulty
@@ -48,5 +48,5 @@
   modifierBudget: 1
   color: "#DE3A3A96"
   recommendedPlayers: 6
-  delay: 0 # 60 mins
+  delay: 3600 # 60 mins
   probability: 0.3

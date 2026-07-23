@@ -60,7 +60,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 - type: salvageBiomeMod
   id: Mountains
@@ -70,7 +69,6 @@
     - Challenging
     - Moderate
     - Easy
-    - Difficult
 
 # Weathers
 - type: salvageWeatherMod
@@ -142,6 +140,7 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest
 
 - type: salvageWeatherMod
   id: SnowfallLight
@@ -150,6 +149,7 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest
 
 - type: salvageWeatherMod
   id: SnowfallMedium
@@ -159,6 +159,7 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest
 
 - type: salvageWeatherMod
   id: SnowfallHeavy
@@ -168,3 +169,4 @@
   biomes:
     - Snow
     - Mountains
+    - FrozenForest

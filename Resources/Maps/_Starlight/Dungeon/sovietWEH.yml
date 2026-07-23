@@ -2735,7 +2735,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: BaseBarrelChemRadioactiveFilledRadium
+- proto: BarrelChemFilledMercury
   entities:
   - uid: 76
     components:
@@ -2767,7 +2767,7 @@ entities:
     - type: Transform
       pos: 17.750805,39.416462
       parent: 1
-- proto: BaseBarrelChemRadioactiveFilledUranium
+- proto: BarrelChemFilledEthanol
   entities:
   - uid: 82
     components:
@@ -15902,7 +15902,7 @@ entities:
     - type: Transform
       pos: 46.18207,27.758556
       parent: 1
-- proto: GeneratorRTGDamaged
+- proto: TrashBananiumPeel
   entities:
   - uid: 2559
     components:
@@ -19231,7 +19231,7 @@ entities:
     - type: Transform
       pos: 8.5,35.5
       parent: 1
-- proto: SpawnMobBearSalvage
+- proto: MobBearSoviet
   entities:
   - uid: 3134
     components:

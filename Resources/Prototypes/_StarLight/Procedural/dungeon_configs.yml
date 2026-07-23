@@ -295,7 +295,6 @@
     - id: RandomSecurityCorpseSpawner
     - id: RandomCommandCorpseSpawner
     - id: RandomArtifactSpawner20
-    - id: SpawnMobOreCrab
     - id: LootSpawnerMedicalMinor
     - id: LootSpawnerMaterialsSupplementary
     - id: SalvageCanisterSpawner
@@ -303,7 +302,6 @@
     - id: SalvageSpawnerScrapValuable
     - id: SalvageSpawnerTreasure
     - id: SalvageLootSpawner
-    - id: BaseBarrelChemRadioactiveFilledUranium
     - id: Bonfire
       weight: 7
     - id: AcousticGuitarInstrument
