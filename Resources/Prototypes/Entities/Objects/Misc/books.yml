@@ -223,26 +223,27 @@
     - Fiber
   # Goobstation Edit End
 
-- type: entity
-  id: BookSpaceEncyclopedia
-  parent: BaseGuidebook
-  name: space encyclopedia
-  description: An encyclopedia containing all the knowledge. The author of this encyclopedia is unknown.
-  components:
-  - type: Sprite
-    layers:
-    - state: paper
-    - state: cover_base
-      color: "#0a2a6b"
-    - state: decor_wingette
-      color: "#082561"
-    - state: icon_text
-      color: gold
-    - state: icon_planet
-      color: "#42b6f5"
-  - type: GuideHelp
-    guides:
-    - SS14
+# Dumont - deactivated since it breaks metashield
+# - type: entity
+#   id: BookSpaceEncyclopedia
+#   parent: BaseGuidebook
+#   name: space encyclopedia
+#   description: An encyclopedia containing all the knowledge. The author of this encyclopedia is unknown.
+#   components:
+#   - type: Sprite
+#     layers:
+#     - state: paper
+#     - state: cover_base
+#       color: "#0a2a6b"
+#     - state: decor_wingette
+#       color: "#082561"
+#     - state: icon_text
+#       color: gold
+#     - state: icon_planet
+#       color: "#42b6f5"
+#   - type: GuideHelp
+#     guides:
+#     - SS14
 
 - type: entity
   id: BookTheBookOfControl
