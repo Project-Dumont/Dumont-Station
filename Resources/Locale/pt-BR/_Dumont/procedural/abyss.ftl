@@ -3,4 +3,8 @@ stack-abyssium-bar = {$amount ->
     *[other] Barras Abissais
 }
 
+stack-abyssium-ore = {$amount ->
+    [1] Minério Abissal
+    *[other] Minérios Abissais
+}
 materials-raw-abyssium = abissal não processado

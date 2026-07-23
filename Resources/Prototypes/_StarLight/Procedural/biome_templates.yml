@@ -16,11 +16,6 @@
         - AbyssBushOne
         - AbyssBushTwo
         - AbyssBushThree
-        - AbyssOne
-        - AbyssTwo
-        - AbyssThree
-        - AbyssFour
-        - AbyssFive
     - !type:BiomeDecalLayer
       allowedTiles:
         - FloorAbyss2
