@@ -35,11 +35,18 @@
     tags:
     - Ore
 
-- type: material
-  id: RawAbyssium
-  stackEntity: AbyssiumOre1
-  name: materials-raw-abyssium
-  unit: materials-unit-chunk
+#stack
+- type: stack
+  id: AbyssiumOre
+  name: stack-abyssium-ore
   icon: { sprite: _Starlight/Objects/Materials/ore.rsi, state: abyssium }
-  color: "#B096FD"
-  price: 0.4
+  spawn: AbyssiumOre1
+  maxCount: 10
+
+- type: entity
+  parent: AbyssiumOre
+  id: AbyssiumOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
