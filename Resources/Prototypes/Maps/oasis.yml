@@ -93,7 +93,7 @@
 - type: gameMap
   id: Oasis
   mapName: 'Oasis'
-  mapPath: /Maps/_Gabystation/oasis.yml # Dumont
+  mapPath: /Maps/_Dumont/oasis.yml # Dumont
   minPlayers: 35 # Dumont Station - não faz nem sentido esse mapa ser highpop
   maxPlayers: 65 # Goobstation - Limit mappool to highpop versions of maps only
   stations:

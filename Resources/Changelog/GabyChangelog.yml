@@ -3608,10 +3608,6 @@ Entries:
       message: O Wraith de meio de rodada agora faz parte das ameaças de Ninja.
   id: 422
   time: '2026-07-11T22:01:23.0000000+00:00'
-- author: isTheSuperN0va
-  changes: []
-  id: 423
-  time: '2026-07-12T13:09:34.0000000+00:00'
 - author: Crono209
   changes:
     - type: Add
@@ -3624,3 +3620,109 @@ Entries:
       message: Sistema de punição para itens malignos.
   id: 425
   time: '2026-07-14T21:15:46.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Adiciona um cvar para contar pessoas online no lobby
+  id: 426
+  time: '2026-07-15T00:40:24.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: >-
+        fantasmas não podem mais remover pacientes da cryopod e acessar o
+        computador de arma da nave 
+  id: 427
+  time: '2026-07-16T02:13:24.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no bitrunning.
+  id: 428
+  time: '2026-07-16T18:47:47.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Tweak
+      message: alterado tempo de pular bounty para 6 minutos
+  id: 429
+  time: '2026-07-17T03:30:00.0000000+00:00'
+- author: Rinary, AgentePanela
+  changes:
+    - type: Add
+      message: Added mass drivers!
+  id: 430
+  time: '2026-07-18T03:20:25.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode enviar emoji no nanochat.
+    - type: Add
+      message: Agora você pode criar grupos no nanochat.
+    - type: Add
+      message: Agora você pode mutar chats em especifico no nanochat.
+    - type: Fix
+      message: >-
+        Agora os icones do nanochat não se esmaga quando passa do limite de
+        caracteres.
+  id: 431
+  time: '2026-07-18T03:23:28.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode fazer emote em dupla.
+    - type: Tweak
+      message: Agora você dá um tapinha nas costas ao clicar no personagem.
+  id: 432
+  time: '2026-07-18T18:49:36.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Mass Drivers foram adicionados em maioria dos mapas.
+    - type: Add
+      message: Conteúdo novo da Salvage agora está mapeado em todos os mapas.
+  id: 433
+  time: '2026-07-18T20:12:29.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Revs agora podem criar um fabricador médico de subsolo!
+    - type: Add
+      message: Adicionado 3 novas armas para os Revolucionários
+    - type: Tweak
+      message: Faca Forjada agora comporta 5u de químicos em vez de 3u.
+    - type: Tweak
+      message: Espada Forjada e Garfo agora cabe em bolsas revs
+    - type: Tweak
+      message: >-
+        Inimigos da Revolução agora possui seu próprio ícone de caveira
+        vermelha, em vez de reutilizar literalmente o ícone dos revs.
+    - type: Tweak
+      message: Ball Bearings agoram podem ser feitas na Forja dos Rev
+  id: 434
+  time: '2026-07-20T05:23:44.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Novo sistema de gatilhos quebrados para as armas de fogo. Utilize um
+        soldador para reparar.
+    - type: Remove
+      message: Onis não podem mais usar nenhuma arma de fogo sem quebrar o gatilho!
+  id: 435
+  time: '2026-07-22T07:02:07.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Nova maleta segura de implantes para o segurança chefe!
+    - type: Add
+      message: Diversas traduções para implantes e implantadores.
+  id: 436
+  time: '2026-07-23T04:32:20.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        placas de computador de alerta atmosferico, monitoramento de energia e
+        monitoramento de sensores agora são fabricaveis
+  id: 437
+  time: '2026-07-23T04:37:05.0000000+00:00'

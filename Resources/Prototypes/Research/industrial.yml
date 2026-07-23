@@ -203,6 +203,7 @@
   - PortableGeneratorJrPacmanMachineCircuitboard
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
+  - PowerComputerCircuitboard # DumontStation
   - EmitterCircuitboard
   position: 0,-2
 
@@ -218,6 +219,8 @@
   recipeUnlocks:
   - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
   - GasRecyclerMachineCircuitboard
+  - AlertsComputerCircuitboard # DumontStation
+  - AtmosMonitoringComputerCircuitboard # DumontStation
   # Goobstation R&D Console rework start
   position: -2,-4
   technologyPrerequisites:

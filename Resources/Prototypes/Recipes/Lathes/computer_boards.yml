@@ -58,6 +58,21 @@
   icon: _Goobstation/Structures/Machines/Icons/Computers/solar.png # Goobstation
   result: SolarControlComputerCircuitboard
 
+- type: latheRecipe # DumontStation
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
+  id: AlertsComputerCircuitboard
+  result: AlertsComputerCircuitboard
+
+- type: latheRecipe # DumontStation
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
+  id: AtmosMonitoringComputerCircuitboard
+  result: AtmosMonitoringComputerCircuitboard
+
+- type: latheRecipe # DumontStation
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringComputerRecipeCategory ]
+  id: PowerComputerCircuitboard
+  result: PowerComputerCircuitboard
+
 # Medical
 
 # Science

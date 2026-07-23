@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MassDriverCircuitboard
+  parent: BaseMachineCircuitboard
+  name: mass driver board
+  components:
+  - type: MachineBoard
+    prototype: MassDriver
+    stackRequirements:
+      Steel: 5
+      Manipulator: 2
+      Cable: 4
