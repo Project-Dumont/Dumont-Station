@@ -13,3 +13,10 @@
   biome: DenseForest
   difficulties:
     - Impossible
+
+- type: salvageBiomeMod
+  id: FrozenForest
+  desc: salvage-biome-mod-dense-forest-frozen
+  biome: FrozenForest
+  difficulties:
+    - Difficult

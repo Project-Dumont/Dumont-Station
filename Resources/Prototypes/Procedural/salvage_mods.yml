@@ -155,6 +155,7 @@
     - Moderate
     - Easy
     - Impossible
+    - Difficult
 
 - type: salvageTemperatureMod
   id: Tundra
@@ -168,6 +169,7 @@
   difficulties: 
     - Challenging
     - Moderate
+    - Difficult
 
 - type: salvageTemperatureMod
   id: Frozen

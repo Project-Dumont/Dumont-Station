@@ -10,3 +10,16 @@
   - Xeno
   - Zombie
   - Revolutionary
+
+- type: npcFaction
+  id: DungeonSoviet
+  hostile:
+  - NanoTrasen
+  - SimpleHostile
+  - Xeno
+  - PetsNT
+  - Syndicate
+  - DungeonSyndicate
+  - Zombie
+  - Revolutionary
+  - Abyss

@@ -6,6 +6,7 @@ salvage-air-mod-nitrogen-atmosphere = Atmosfera N2
 salvage-biome-mod-desert = Deserto
 salvage-biome-mod-mountains = Montanhas
 salvage-biome-mod-dense-forest = Floresta Densa
+salvage-biome-mod-dense-forest-frozen = Floresta Congelada
 
 salvage-expedition-type = Missão
 salvage-expedition-window-title = Expedição dos Exploradores
@@ -21,7 +22,6 @@ offering-window-claim = Reivindicar
 
 salvage-expedition-window-next = Próxima oferta
 
-salvage-expedition-difficulty-Moderate = Moderate
 salvage-expedition-difficulty-Hazardous = Hazardous
 salvage-expedition-difficulty-Extreme = Extreme
 
@@ -69,6 +69,8 @@ salvage-dungeon-mod-mineshaft = Minas
 salvage-dungeon-mod-xeno = Instalação da Federação Solar
 salvage-biome-mod-true-abyss = Abismo Verdadeiro
 salvage-biome-mod-abyss = Abismo
+salvage-dungeon-mod-soviet-stronghold = Complexo Unido
 
+salvage-faction-soviet = Revolucionários
 salvage-faction-worms = Minhocas
 salvage-faction-elder = [DADOS PERDIDOS]

@@ -6714,7 +6714,7 @@ entities:
       pos: 26.5,39.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2351.1033
+      secondsUntilStateChange: -2444.8257
       state: Opening
   - uid: 830
     components:
@@ -7902,12 +7902,50 @@ entities:
     - type: Transform
       pos: 32.5,14.5
       parent: 1
-- proto: MagazineLightMachineGunRPD
+- proto: MagazineSMGP90
   entities:
-  - uid: 1033
+  - uid: 1627
     components:
     - type: Transform
-      pos: 42.25445,4.815626
+      pos: 26.527397,10.734619
+      parent: 1
+  - uid: 1881
+    components:
+    - type: Transform
+      pos: 20.45027,4.703369
+      parent: 1
+  - uid: 1882
+    components:
+    - type: Transform
+      pos: 22.62871,18.52947
+      parent: 1
+  - uid: 1883
+    components:
+    - type: Transform
+      pos: 21.519098,27.801281
+      parent: 1
+  - uid: 1884
+    components:
+    - type: Transform
+      pos: 29.556095,32.53023
+      parent: 1
+  - uid: 1885
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 19.708885,40.411324
+      parent: 1
+  - uid: 1886
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.3915186,46.48414
+      parent: 1
+  - uid: 1887
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 4.5946436,35.567947
       parent: 1
 - proto: MaintenanceFluffSpawner
   entities:
@@ -11451,15 +11489,13 @@ entities:
     - type: Transform
       pos: 7.5,3.5
       parent: 1
-- proto: WeaponLightMachineGunRPD
+- proto: WeaponEarthGovLaserRifle
   entities:
-  - uid: 1627
+  - uid: 1033
     components:
     - type: Transform
-      pos: 42.57508,4.601045
+      pos: 42.36743,4.596464
       parent: 1
-    - type: Gun
-      burstCooldownModified: 0.25
 - proto: WeaponSubMachineGunP90
   entities:
   - uid: 1628

@@ -21,3 +21,12 @@
   biome: TrueAbyss
   difficulties: 
     - Impossible
+
+- type: salvageDungeonMod
+  id: SovietStronghold
+  desc: salvage-dungeon-mod-soviet-stronghold
+  proto: SovietDungeonWeh
+  biomes:
+    - FrozenForest
+  difficulties:
+    - Difficult
