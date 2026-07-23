@@ -24,7 +24,7 @@ ent-CommandTrackingImplant = { ent-BaseSubdermalImplant } { ent-CommandTrackingI
 ent-SpaceProofImplant = { ent-BaseSubdermalImplant } de { ent-SpaceProofImplanter.suffix }
     .desc = Um implante que possibilita ao usuário sobreviver no espaço e sem ar.
 
-ent-NutrimentPumpImplant = { ent-BaseSubdermalImplant } de { ent-NutrimentPumpImplanter.suffix }
+ent-NutrimentPumpImplant = { ent-BaseSubdermalImplant } de { ent-CentcommNutrimentImplanter.suffix }
     .desc = Um implante que previne o usuário de ficar com fome ou sede.
 
 ent-StypticStimulatorImplant = { ent-BaseSubdermalImplant } { ent-StypticStimulatorImplanter.suffix }
