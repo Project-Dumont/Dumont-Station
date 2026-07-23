@@ -137,9 +137,9 @@
   description: salvage-mission-objective-description-disarm
   announcement: salvage-mission-objective-announcement-disarm
   baseReward:
-    Easy: 1200
-    Moderate: 1450
-    Challenging: 1600 # High rewards, but it has no bonus, also this mission is insanely rare
+    Easy: 300
+    Moderate: 350
+    Challenging: 400 # High rewards, but it has no bonus, also this mission is insanely rare
   cashMultiplier: 5.5
   numTargets:
     Easy: 1
