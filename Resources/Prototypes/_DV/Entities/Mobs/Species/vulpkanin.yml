@@ -171,6 +171,7 @@
     upper: MobVulpkanin
     lowest: MobWolfling
   # Corvax-Wega-Genetics-end
+  - type: TailDuoEmote # Funky Change
 
 - type: entity
   save: false

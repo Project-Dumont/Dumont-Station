@@ -1,0 +1,11 @@
+- type: entity
+  id: SecureLockboxHoSFilled
+  parent: SecureLockboxHoS
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MindShieldImplanter
+        amount: 4
+      - id: TrackingImplanter
+        amount: 2
