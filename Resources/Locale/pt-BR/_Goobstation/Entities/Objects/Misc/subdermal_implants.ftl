@@ -21,13 +21,13 @@ ent-BluespaceLifelineImplant = { ent-BaseSubdermalImplant } { ent-BluespaceLifel
 ent-CommandTrackingImplant = { ent-BaseSubdermalImplant } { ent-CommandTrackingImplanter.suffix }
     .desc = Um implante rastreador especialmente reservado para comandantes que possui monitoramento de local e vitais conectado a uma rede privada diretamente na frequência da Central de Comando.
 
-ent-SpaceProofImplant = { ent-BaseSubdermalImplant } de { ent-SpaceProofImplanter.suffix }
+ent-SpaceProofImplant = { ent-BaseSubdermalImplant } de { ent-CentcommSpaceproofImplanter.suffix }
     .desc = Um implante que possibilita ao usuário sobreviver no espaço e sem ar.
 
 ent-NutrimentPumpImplant = { ent-BaseSubdermalImplant } de { ent-CentcommNutrimentImplanter.suffix }
     .desc = Um implante que previne o usuário de ficar com fome ou sede.
 
-ent-StypticStimulatorImplant = { ent-BaseSubdermalImplant } { ent-StypticStimulatorImplanter.suffix }
+ent-StypticStimulatorImplant = { ent-BaseSubdermalImplant } { ent-CentcommStypticStimulatorImplanter.suffix }
     .desc = Um implante que estimula a regeneração do usuário ao máximo.
 
 # Tripulação
