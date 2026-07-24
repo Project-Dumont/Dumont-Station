@@ -3726,3 +3726,13 @@ Entries:
         monitoramento de sensores agora são fabricaveis
   id: 437
   time: '2026-07-23T04:37:05.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Remove
+      message: livro de enciclopedia
+    - type: Tweak
+      message: >-
+        livro security 101 agora apenas mostra os antagonistas que são
+        conhecimento comum via metashield
+  id: 438
+  time: '2026-07-24T04:33:57.0000000+00:00'
