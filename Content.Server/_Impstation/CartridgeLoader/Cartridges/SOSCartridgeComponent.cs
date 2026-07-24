@@ -16,7 +16,7 @@ public sealed partial class SOSCartridgeComponent : Component
     /// <summary>
     /// Path to PDA ID
     /// </summary>
-    public const string PDAIdContainer = "PDA-id";
+    public string PDAIdContainer = "PDA-id";
 
     /// <summary>
     /// Name to use in case there is none, localized
@@ -46,7 +46,7 @@ public sealed partial class SOSCartridgeComponent : Component
     /// <summary>
     /// Timeout between calls
     /// </summary>
-    public const float TimeOut = 90;
+    public float TimeOut = 90;
 
     [DataField]
     /// <summary>

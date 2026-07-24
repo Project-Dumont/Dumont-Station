@@ -155,20 +155,10 @@
   - type: EmitSoundOnPickup
     sound:
       collection: RiflesPickUp
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
+ # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
     - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
-  - type: EmitSoundOnDrop
-    sound:
-      collection: RiflesDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RiflesDrop
-  # Goobstation edit end
 
 - type: entity
   name: AKM

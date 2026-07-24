@@ -1,0 +1,116 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#Personagens
+
+# - type: nanoChatEmoji
+#   id: AmyDevil
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AmyDevil.png
+
+# - type: nanoChatEmoji
+#   id: AngelJanie
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AngelJanie.png
+
+# - type: nanoChatEmoji
+#   id: AngryLoona
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/AngryLoona.png
+
+# - type: nanoChatEmoji
+#   id: CuteBoris
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/CuteBoris.png
+
+# - type: nanoChatEmoji
+#   id: DoriLoL
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/DoriLoL.png
+
+# - type: nanoChatEmoji
+#   id: IldoBigBrain
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/IldoBigBrain.png
+
+# - type: nanoChatEmoji
+#   id: MidoriLove
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/MidoriLove.png
+
+# - type: nanoChatEmoji
+#   id: PsikoAdelia
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/PsikoAdelia.png
+
+# - type: nanoChatEmoji
+#   id: WEEEEEEEEEEEEEELLS
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/WEEEEEEEEEEEEEELLS.png
+
+# - type: nanoChatEmoji
+#   id: YvonneCry
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/YvonneCry.png
+
+# - type: nanoChatEmoji
+#   id: PolarisNerd
+#   category: Character
+#   sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/PolarisNerd.png
+
+#Resto
+
+- type: nanoChatEmoji
+  id: baumdia
+  category: Memes
+  emojiOrder: 17
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/baumdia.png
+
+- type: nanoChatEmoji
+  id: gcm
+  category: Memes
+  emojiOrder: 8
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/gcm.png
+
+- type: nanoChatEmoji
+  id: KKKKKKKKKKKKKKK
+  category: Memes
+  emojiOrder: 5
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/KKKKKKKKKKKKKKK.png
+
+- type: nanoChatEmoji
+  id: Marvin
+  category: Memes
+  emojiOrder: 14
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/Marvin.png
+
+- type: nanoChatEmoji
+  id: MeuDeus
+  category: Memes
+  emojiOrder: 12
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/MeuDeus.png
+
+- type: nanoChatEmoji
+  id: NT_Emote
+  category: Simbolos
+  emojiOrder: 9
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/NT.png
+
+- type: nanoChatEmoji
+  id: piorquee
+  category: Memes
+  emojiOrder: 11
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/piorquee.png
+
+- type: nanoChatEmoji
+  id: RewDog
+  category: Memes
+  emojiOrder: 6
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/RewDog.png
+
+- type: nanoChatEmoji
+  id: sus
+  category: Memes
+  emojiOrder: 16
+  sprite: /Textures/_Andromeda/Interface/NanoChat/Emotes/sus.png

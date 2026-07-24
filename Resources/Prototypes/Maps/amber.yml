@@ -90,6 +90,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             ShaftMiner: [ 3, 3 ]
             CargoTechnician: [ 2, 3 ]
             #civilian

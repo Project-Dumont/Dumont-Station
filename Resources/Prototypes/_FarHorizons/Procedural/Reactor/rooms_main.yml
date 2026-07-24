@@ -1,0 +1,121 @@
+- type: dungeonRoom
+  id: Reactor15x10a
+  size: 15,10
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 0,0
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: Reactor15x10b
+  size: 15,10
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 16,0
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: Reactor15x10c
+  size: 15,10
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 0,11
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: Reactor15x10d
+  size: 15,10
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 16,11
+  tags:
+    - SalvageReactor
+
+
+- type: dungeonRoom
+  id: Reactor15x10e
+  size: 15,10
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 32,0
+  tags:
+    - SalvageReactor
+
+# Not mapped yet
+# - type: dungeonRoom
+#   id: Reactor15x10f
+#   size: 15,10
+#   atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+#   offset: 32,11
+#   tags:
+#     - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorTransformer10x8a
+  size: 10,8
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 0,22
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorTransformer10x8b
+  size: 10,8
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 11,22
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorTransformer10x8c
+  size: 10,8
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 22,22
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorTransformer10x8d
+  size: 10,8
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 33,22
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorTransformer10x8e
+  size: 10,8
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 44,22
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorStorage7x9a
+  size: 7,9
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 0,31
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorStorage7x9b
+  size: 7,9
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 8,31
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorStorage7x9c
+  size: 7,9
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 16,31
+  tags:
+    - SalvageReactor
+
+- type: dungeonRoom
+  id: ReactorStorage7x9d
+  size: 7,9
+  atlas: /Maps/_FarHorizons/Dungeon/Reactor/reactor_main_rooms.yml
+  offset: 24,31
+  tags:
+    - SalvageReactor
