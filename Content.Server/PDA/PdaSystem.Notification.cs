@@ -13,9 +13,13 @@ namespace Content.Server.PDA
     public sealed partial class PdaSystem : SharedPdaSystem
     {
         [Dependency] private readonly IPrototypeManager _proto = default!;
+        [Dependency] private readonly ILogManager _log = default!;
+        private ISawmill _sawmill = default!;
 
-        public void OnPdaNotification(ref PdaNotificationEvent args)
+        public void OnPdaNotification(PdaNotificationEvent args)
         {
+
+
             if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto))
                 return;
 
@@ -28,35 +32,45 @@ namespace Content.Server.PDA
                 if (!TryComp<AccessComponent>(idCardUid, out var accessComp))
                     continue;
 
-                if (notiGroupProto.Access is null || notiGroupProto.AccessGroups is null)
-                    continue;
-
                 var accessLevels = accessComp.Tags;
 
                 Entity<PdaComponent> pda = new(uid, pdaComp);
 
-                PdaNotifyByAccess(pda, notiGroupProto.Access, accessLevels, args);
-                PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, accessLevels, args);
+                if (notiGroupProto.Access is not null)
+                    if (PdaNotifyByAccess(pda, notiGroupProto.Access, accessLevels, args))
+                        continue;
+
+                if (notiGroupProto.AccessGroups is not null)
+                    if (PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, accessLevels, args))
+                        continue;
             }
 
         }
 
-        public void PdaNotifyByAccess(
+        public bool PdaNotifyByAccess(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessLevelPrototype>> accessNoti,
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
             PdaNotificationEvent args)
         {
+            _sawmill = _log.GetSawmill("notification");
+            int i = 0;
+
             foreach (var accessSingular in accessNoti) {
                 if (!accessLevels.Contains(accessSingular))
                     continue;
 
+                i++;
                 pda.Comp.Notifications.Add(args.Message);
                 UpdatePdaUi(pda.Owner, pda.Comp);
+
+                return true;
             }
+
+            return false;
         }
 
-        public void PdaNotifyByGroups(
+        public bool PdaNotifyByGroups(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessGroupPrototype>> notiGroup,
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
@@ -67,9 +81,11 @@ namespace Content.Server.PDA
                 if (!_proto.TryIndex<AccessGroupPrototype>(accessGroupId, out var accessGroup))
                     continue;
 
-
-                PdaNotifyByAccess(pda, accessGroup.Tags, accessLevels, args);
+                if (PdaNotifyByAccess(pda, accessGroup.Tags, accessLevels, args))
+                    return true;
             }
+
+            return false;
         }
     }
 }

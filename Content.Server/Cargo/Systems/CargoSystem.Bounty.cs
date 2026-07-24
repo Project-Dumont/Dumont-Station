@@ -104,6 +104,7 @@ using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
 using Content.Shared.IdentityManagement;
 using System.Reflection.Metadata.Ecma335;
+using Content.Shared.PDA;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -191,14 +192,17 @@ public sealed partial class CargoSystem
 
         CargoBountyData bountyData = bounty.Value;
 
-        var ev = new TryGetIdentityShortInfoEvent(null, args.Actor);
-        RaiseLocalEvent(ev);
+        // var ev = new TryGetIdentityShortInfoEvent(null, args.Actor);
+        // RaiseLocalEvent(ev);
 
-        var message = Loc.GetString("bounty-skip-message", 
-            ("bounty", "ID#" + bountyData.Id), 
-            ("user", ev.Title ?? Loc.GetString("bounty-skip-unknown")));
-        
-        _radio.SendRadioMessage(uid, message, CargoRadioChannel, uid, escapeMarkup: false);
+        // var message = Loc.GetString("bounty-skip-message",
+        //     ("bounty", "ID#" + bountyData.Id),
+        //     ("user", ev.Title ?? Loc.GetString("bounty-skip-unknown")));
+
+        // _radio.SendRadioMessage(uid, message, CargoRadioChannel, uid, escapeMarkup: false);
+
+        var ev = new PdaNotificationEvent("debug", "CaptainOnly", false);
+        RaiseLocalEvent(ev);
 
         FillBountyDatabase(station);
         db.NextSkipTime = Timing.CurTime + db.SkipDelay;
