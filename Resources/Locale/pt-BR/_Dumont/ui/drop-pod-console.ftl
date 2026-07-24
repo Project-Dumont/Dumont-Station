@@ -24,6 +24,6 @@ drop-pod-console-notice = AVISO: Operativos que não estiverem sentados durante 
 ## Anúncio enviado quando um lançamento é iniciado
 ## {$beacon}  – nome do farol de destino
 ## {$seconds} – tempo restante em segundos
-drop-pod-console-launch-announcement = ALERTA: Um objeto de hipervelocidade foi detectado com destino a "{ $beacon }" na estação. Preparem-se para o impacto em { $seconds } segundos!
+drop-pod-console-launch-announcement = ALERTA: Um objeto de hipervelocidade foi detectado com destino a estação. Preparem-se para o impacto em { $seconds } segundos!
 
 drop-pod-console-sender = Central de Comando
