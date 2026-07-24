@@ -40,6 +40,7 @@ using System.Linq;
 using Content.Shared.Paper;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
+using Content.Shared.PDA;
 
 namespace Content.Server.CriminalRecords.Systems;
 
@@ -220,8 +221,12 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             // this is impossible
             _ => "not-wanted"
         };
-        _radio.SendRadioMessage(ent, Loc.GetString($"criminal-records-console-{statusString}", args),
-            ent.Comp.SecurityChannel, ent);
+
+        var ev = new PdaNotificationEvent(Loc.GetString($"criminal-records-console-{statusString}", args), "All", false);
+        RaiseLocalEvent(ev);
+
+        // _radio.SendRadioMessage(ent, Loc.GetString($"criminal-records-console-{statusString}", args),
+        //     ent.Comp.SecurityChannel, ent);
 
         UpdateUserInterface(ent);
     }

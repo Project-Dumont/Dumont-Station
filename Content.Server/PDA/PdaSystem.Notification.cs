@@ -18,10 +18,13 @@ namespace Content.Server.PDA
 
         public void OnPdaNotification(PdaNotificationEvent args)
         {
-
-
             if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto))
                 return;
+
+            if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
+                PdaNotifyAll(args.Message);
+                return;
+            }
 
             var Pdas = EntityQueryEnumerator<PdaComponent>();
 
@@ -86,6 +89,15 @@ namespace Content.Server.PDA
             }
 
             return false;
+        }
+
+        public void PdaNotifyAll(string message) {
+            var query = EntityQueryEnumerator<PdaComponent>();
+
+            while (query.MoveNext(out var uid, out var comp)) {
+
+                comp.Notifications.Add(message);
+            }
         }
     }
 }
