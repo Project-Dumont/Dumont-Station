@@ -5,6 +5,7 @@
 using Content.Shared.PDA;
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
+using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 
 
@@ -14,6 +15,8 @@ namespace Content.Server.PDA
     {
         [Dependency] private readonly IPrototypeManager _proto = default!;
         [Dependency] private readonly ILogManager _log = default!;
+        [Dependency] private readonly SharedPopupSystem _popup = default!;
+
         private ISawmill _sawmill = default!;
 
         public void OnPdaNotification(PdaNotificationEvent args)
@@ -22,7 +25,7 @@ namespace Content.Server.PDA
                 return;
 
             if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
-                PdaNotifyAll(args.Message);
+                PdaNotifyAll(args);
                 return;
             }
 
@@ -57,16 +60,13 @@ namespace Content.Server.PDA
             PdaNotificationEvent args)
         {
             _sawmill = _log.GetSawmill("notification");
-            int i = 0;
 
             foreach (var accessSingular in accessNoti) {
                 if (!accessLevels.Contains(accessSingular))
                     continue;
 
-                i++;
-                pda.Comp.Notifications.Add(args.Message);
-                UpdatePdaUi(pda.Owner, pda.Comp);
 
+                NotifyPda(pda, args);
                 return true;
             }
 
@@ -91,13 +91,22 @@ namespace Content.Server.PDA
             return false;
         }
 
-        public void PdaNotifyAll(string message) {
+        public void PdaNotifyAll(PdaNotificationEvent args) {
             var query = EntityQueryEnumerator<PdaComponent>();
 
             while (query.MoveNext(out var uid, out var comp)) {
-
-                comp.Notifications.Add(message);
+                NotifyPda((uid, comp), args);
             }
+        }
+
+        public void NotifyPda(Entity<PdaComponent> ent, PdaNotificationEvent args) {
+            _popup.PopupEntity(Loc.GetString("pda-new-notification"), ent.Owner);
+
+            if (args.IsLoud)
+                _ringer.RingerPlayRingtone(ent.Owner);
+
+            ent.Comp.Notifications.Add(args.Message);
+            UpdatePdaUi(ent.Owner, ent.Comp);
         }
     }
 }
