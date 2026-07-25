@@ -14,12 +14,12 @@ drop-pod-console-status-not-ready = Status: Sistema recarregando. Aguarde.
 drop-pod-console-status-launched = Status: Cápsula já lançada.
 
 drop-pod-console-tc-label = Telecristais: { $balance } / { $cost } TC
-drop-pod-console-war-active = GUERRA EM ANDAMENTO — Cápsula indisponível por { $time } segundos
+drop-pod-console-war-active = GUERRA EM ANDAMENTO — Cápsula indisponível por { $time } segundos.
 drop-pod-console-war-ready = GUERRA EM ANDAMENTO — Cápsula liberada.
-drop-pod-console-tc-slot-name = Compartimento de Telecristais
+drop-pod-console-tc-slot-name = Compartimento de Telecristais.
 
 
-drop-pod-console-notice = AVISO: Operativos que não estiverem sentados durante o pouso sofrerão ferimentos.
+drop-pod-console-notice = AVISO: Operativos que não estiverem sentados durante o pouso podem sofrer ferimentos.
 
 ## Anúncio enviado quando um lançamento é iniciado
 ## {$beacon}  – nome do farol de destino
