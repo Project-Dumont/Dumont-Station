@@ -46,9 +46,10 @@ namespace Content.Client.PDA
         private readonly ClientGameTicker _gameTicker;
 
         public const int HomeView = 0;
-        public const int ProgramListView = 1;
-        public const int SettingsView = 2;
-        public const int ProgramContentView = 3;
+        public const int NotificationsListView = 1;
+        public const int ProgramListView = 2;
+        public const int SettingsView = 3;
+        public const int ProgramContentView = 4;
 
 
         private string _pdaOwner = Loc.GetString("comp-pda-ui-unknown");
@@ -57,7 +58,7 @@ namespace Content.Client.PDA
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-        
+
 
         private int _currentView;
 
@@ -87,6 +88,8 @@ namespace Content.Client.PDA
                 HomeButton.IsCurrent = false;
                 ProgramListButton.IsCurrent = true;
                 SettingsButton.IsCurrent = false;
+                NotificationsButton.IsCurrent = false;
+
                 ProgramTitle.IsCurrent = false;
 
                 ChangeView(ProgramListView);
@@ -98,9 +101,24 @@ namespace Content.Client.PDA
                 HomeButton.IsCurrent = false;
                 ProgramListButton.IsCurrent = false;
                 SettingsButton.IsCurrent = true;
+                NotificationsButton.IsCurrent = false;
+
                 ProgramTitle.IsCurrent = false;
 
                 ChangeView(SettingsView);
+            };
+
+            // this code fucking sucks
+            NotificationsButton.OnPressed += _ =>
+            {
+                HomeButton.IsCurrent = false;
+                ProgramListButton.IsCurrent = false;
+                SettingsButton.IsCurrent = false;
+                NotificationsButton.IsCurrent = true;
+
+                ProgramTitle.IsCurrent = false;
+
+                ChangeView(NotificationsListView);
             };
 
             ProgramTitle.OnPressed += _ =>
@@ -108,11 +126,12 @@ namespace Content.Client.PDA
                 HomeButton.IsCurrent = false;
                 ProgramListButton.IsCurrent = false;
                 SettingsButton.IsCurrent = false;
+                NotificationsButton.IsCurrent = false;
+
                 ProgramTitle.IsCurrent = true;
 
                 ChangeView(ProgramContentView);
             };
-
             ProgramCloseButton.OnPressed += _ =>
             {
                 HideProgramHeader();
@@ -150,7 +169,7 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
-            
+
 
 
             HideAllViews();
@@ -190,7 +209,7 @@ namespace Content.Client.PDA
             _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",
                 ("station", _stationName)));
-            
+
 
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
@@ -221,6 +240,29 @@ namespace Content.Client.PDA
             ActivateMusicButton.Visible = state.CanPlayMusic;
             ShowUplinkButton.Visible = state.HasUplink;
             LockUplinkButton.Visible = state.HasUplink;
+
+            if (state.Notifications is { } notifications) {
+                foreach (var noti in notifications) {
+                    BoxContainer notificationContainer = new();
+
+                    Label messageLabel = new();
+                    Label timeLabel = new();
+
+                    messageLabel.Text = WrapMessage(noti.Message, 95);
+                    messageLabel.ClipText = false;
+
+                    timeLabel.Text = noti.Time.ToString(@"hh\:mm\:ss");
+                    timeLabel.ClipText = false;
+
+                    notificationContainer.Margin = new Thickness(3, 7);
+                    notificationContainer.Orientation = BoxContainer.LayoutOrientation.Horizontal;
+
+                    notificationContainer.AddChild(timeLabel);
+                    notificationContainer.AddChild(messageLabel);
+
+                    Notifications.AddChild(notificationContainer);
+                }
+            }
         }
 
         public void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
@@ -360,6 +402,35 @@ namespace Content.Client.PDA
             {
                 view.Visible = false;
             }
+        }
+
+        private string WrapMessage(string message, int maxCharacters) {
+            if (message.Length < maxCharacters)
+                return message;
+
+            string[] words = message.Split(" ");
+            List<string> lines = new();
+            List<string> currentLine = new();
+            int currentLineLength = 0;
+
+            foreach (string word in words) {
+                if (currentLineLength + word.Length + (currentLineLength == 0 ? 0 : 1) > maxCharacters) {
+                    lines.Add(string.Join(" ", currentLine));
+                    currentLine.Clear();
+
+                    currentLine.Add(word);
+                    currentLineLength = word.Length;
+                }
+                else {
+                    currentLine.Add(word);
+                    currentLineLength += word.Length + 1;
+                }
+            }
+
+            if (currentLine.Count > 0)
+                lines.Add(string.Join(" ", currentLine));
+
+            return string.Join("\n", lines);
         }
 
         protected override void Draw(DrawingHandleScreen handle)

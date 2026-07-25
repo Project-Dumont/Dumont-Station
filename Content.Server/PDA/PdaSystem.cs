@@ -127,6 +127,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 using Content.Shared.Security.Systems; // Beepsky - GabyStation
 
 namespace Content.Server.PDA
@@ -144,6 +145,7 @@ namespace Content.Server.PDA
         [Dependency] private readonly ContainerSystem _containerSystem = default!;
         [Dependency] private readonly IdCardSystem _idCard = default!;
         [Dependency] private readonly NanoBankCartridgeSystem _nanoBank = default!; // GabyStation -> NanoBank
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         public override void Initialize()
         {
@@ -321,6 +323,13 @@ namespace Content.Server.PDA
 
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
+
+            List<Notification> notifications = new();
+            foreach (var notiMessage in pda.Notifications) {
+                Notification notification = new(_timing.CurTime, notiMessage);
+                notifications.Add(notification);
+            }
+
             var state = new PdaUpdateState(
                 programs,
                 GetNetEntity(loader.ActiveProgram),
@@ -336,6 +345,7 @@ namespace Content.Server.PDA
                     StationAlertColor = pda.StationAlertColor
                 },
                 pda.StationName,
+                notifications,
                 showUplink,
                 hasInstrument,
                 address);

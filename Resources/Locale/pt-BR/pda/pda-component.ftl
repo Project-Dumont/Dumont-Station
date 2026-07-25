@@ -10,6 +10,8 @@ comp-pda-ui-owner = Dono: [color=white]{$actualOwnerName}[/color]
 
 comp-pda-io-program-list-button = Programas
 
+comp-pda-io-notifications-list-button = Notificações
+
 comp-pda-io-settings-button = Configurações
 
 comp-pda-io-program-fallback-title = Programa
