@@ -3752,3 +3752,9 @@ Entries:
       message: removido canvas
   id: 440
   time: '2026-07-25T22:31:53.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: rendimento de minerios foram buffados.
+  id: 441
+  time: '2026-07-25T23:25:06.0000000+00:00'
