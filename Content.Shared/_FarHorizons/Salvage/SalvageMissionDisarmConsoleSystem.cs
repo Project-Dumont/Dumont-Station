@@ -42,7 +42,7 @@ public sealed class SalvageMissionDisarmConsoleSystem : EntitySystem
         _ui.CloseUis(ent.Owner);
     }
 
-    public void SetupConsole(Entity<SalvageMissionDisarmConsoleComponent?> ent, int code)
+    public void SetupConsole(Entity<SalvageMissionDisarmConsoleComponent?> ent, string code)
     {
         if (!Resolve(ent, ref ent.Comp) ||
             !TryComp<AppearanceComponent>(ent, out var appearance))

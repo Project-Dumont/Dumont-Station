@@ -14,7 +14,7 @@ namespace Content.Client._FarHorizons.Salvage;
 public sealed partial class SalvageMissionDisarmWindow : FancyWindow
 {
 
-    public Action<int>? SubmitCodeCallback;
+    public Action<string>? SubmitCodeCallback;
 
     public SalvageMissionDisarmWindow()
     {
@@ -35,6 +35,6 @@ public sealed partial class SalvageMissionDisarmWindow : FancyWindow
         if (!int.TryParse(Input.Text, out var code))
             return;
         
-        SubmitCodeCallback?.Invoke(code);
+        SubmitCodeCallback?.Invoke(Input.Text);
     }
 }

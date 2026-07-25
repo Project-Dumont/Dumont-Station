@@ -117,7 +117,7 @@ public sealed partial class SalvageMissionDisarm : BaseSalvageMissionObjectiveHa
         }
     }
 
-    public int GenerateCode()
+    public string GenerateCode()
     {
         var result = 0;
 
@@ -129,6 +129,6 @@ public sealed partial class SalvageMissionDisarm : BaseSalvageMissionObjectiveHa
             result += digit;
         }
 
-        return result;
+        return result.ToString();
     }
 }

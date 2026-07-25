@@ -12,7 +12,7 @@ public sealed partial class SalvageMissionDisarmConsoleComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly)] public bool Enabled = false;
     [ViewVariables(VVAccess.ReadOnly)] public bool Armed = false;
-    [ViewVariables(VVAccess.ReadOnly)] public int Code = 0;
+    [ViewVariables(VVAccess.ReadOnly)] public string Code = string.Empty;
 
     [DataField] public SoundSpecifier? FailSound;
     [DataField] public SoundSpecifier? SuccessSound;
@@ -32,7 +32,12 @@ public enum SalvageMissionDisarmConsoleUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class SalvageMissionDisarmSubmitCodeMessage(int code) : BoundUserInterfaceMessage
+public sealed class SalvageMissionDisarmSubmitCodeMessage : BoundUserInterfaceMessage
 {
-    public int Code = code;
+    public string Code { get; }
+
+    public SalvageMissionDisarmSubmitCodeMessage(string code)
+    {
+        Code = code;
+    }
 }

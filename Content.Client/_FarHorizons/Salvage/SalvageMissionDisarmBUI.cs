@@ -19,6 +19,6 @@ public sealed partial class SalvageMissionDisarmBUI(EntityUid owner, Enum uiKey)
         _window.SubmitCodeCallback += SubmitCode;
     }
 
-    private void SubmitCode(int code) =>
+    private void SubmitCode(string code) =>
         SendMessage(new SalvageMissionDisarmSubmitCodeMessage(code));
 }
