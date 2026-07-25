@@ -3736,3 +3736,13 @@ Entries:
         conhecimento comum via metashield
   id: 438
   time: '2026-07-24T04:33:57.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Acesso de correio concedido a técnicos de carga até que o trabalho
+        separado seja introduzido.
+    - type: Fix
+      message: Airlock de vidro da virologia possui acesso adequado agora.
+  id: 439
+  time: '2026-07-25T05:17:56.0000000+00:00'
