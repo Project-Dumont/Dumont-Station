@@ -74,7 +74,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawGold: 100
+      RawGold: 200
   - type: Extractable
     grindableSolutionName: goldore
   - type: SolutionContainerManager
@@ -177,7 +177,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawPlasma: 100
+      RawPlasma: 330
   - type: PointLight
     radius: 1.2
     energy: 0.6
@@ -219,7 +219,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      RawSilver: 100
+      RawSilver: 330
   - type: Extractable
     grindableSolutionName: silverore
   - type: SolutionContainerManager
