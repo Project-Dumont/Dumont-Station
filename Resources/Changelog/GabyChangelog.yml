@@ -3758,3 +3758,15 @@ Entries:
       message: rendimento de minerios foram buffados.
   id: 441
   time: '2026-07-25T23:25:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Adicionado circuitos de dispensores de energia ao torno da Sci.
+    - type: Remove
+      message: Removido dispensores químicos de energia roundstart.
+    - type: Tweak
+      message: >-
+        Dispensor de energia agora é pesquisável pela Sci na tecnologia de
+        química bluespace.
+  id: 442
+  time: '2026-07-26T22:28:45.0000000+00:00'
