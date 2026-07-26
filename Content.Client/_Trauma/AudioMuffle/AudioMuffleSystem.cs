@@ -14,7 +14,6 @@ using Robust.Client.GameObjects;
 using Robust.Client.Physics;
 using Robust.Client.Player;
 using Robust.Shared;
-using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -41,6 +40,7 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
     private static EntityQuery<RelayInputMoverComponent> _relayedQuery;
     private static EntityQuery<AiEyeComponent> _aiEyeQuery;
     private static EntityQuery<SoundBlockerComponent> _blockerQuery;
+    private static EntityQuery<IgnoreAudioMuffleComponent> _ignoreQuery;
 
     // Tile indices -> blocker entities
     [ViewVariables]
@@ -73,6 +73,7 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
         _relayedQuery = GetEntityQuery<RelayInputMoverComponent>();
         _aiEyeQuery = GetEntityQuery<AiEyeComponent>();
         _blockerQuery = GetEntityQuery<SoundBlockerComponent>();
+        _ignoreQuery = GetEntityQuery<IgnoreAudioMuffleComponent>();
 
         _xform.OnGlobalMoveEvent += OnMove;
 
@@ -515,6 +516,15 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
 
     private float OnOcclusion(MapCoordinates listener, Vector2 delta, float distance, EntityUid? ignoredEnt)
     {
+        if (ignoredEnt.HasValue)
+        {
+            if (_ignoreQuery.HasComp(ignoredEnt.Value))
+                return 0f;
+
+            if (TryComp(ignoredEnt.Value, out TransformComponent? ignoredXform) && _ignoreQuery.HasComp(ignoredXform.ParentUid))
+                return 0f;
+        }
+
         if (distance < 0.1f || ResolvePlayer() is not { } player)
             return 0f;
 
