@@ -142,6 +142,7 @@
     - id: ATMFlatpack # Gabystation
     - id: BoxEncryptionKeyPrisoner #Delta-V
     - id: SecApartmentTablet # Corvax-SecApartment
+    - id: SOSCartridge # Dumont edit
 
 - type: entityTable
   id: FillLockerWardenHarduit

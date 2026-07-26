@@ -14,6 +14,7 @@
 
 using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Salvage.Expeditions.Modifiers;
 
@@ -31,6 +32,10 @@ public sealed partial class SalvageDungeonModPrototype : IPrototype, IBiomeSpeci
     /// <inheridoc/>
     [DataField]
     public List<ProtoId<SalvageBiomeModPrototype>>? Biomes { get; private set; } = null;
+
+    // 🌟Starlight🌟
+    [DataField]
+    public List<ProtoId<SalvageDifficultyPrototype>>? Difficulties { get; private set; } = null;
 
     /// <summary>
     /// The config to use for spawning the dungeon.

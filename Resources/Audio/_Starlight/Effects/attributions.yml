@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["mass_driver_launching.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Starlight."
+  source: "https://github.com/ss14Starlight/space-station-14/blob/starlight-dev/Resources/Audio/_Starlight/Effects/mass_driver_launching.ogg"

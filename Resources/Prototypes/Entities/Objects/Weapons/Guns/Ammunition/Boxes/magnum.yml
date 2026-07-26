@@ -31,6 +31,7 @@
   abstract: true
   parent: BaseItem
   id: BaseMagazineBoxMagnum
+  description: 12-round box of .45 Magnum ammunition. #Far Horizons
   components:
   # Goobstation edit start
   - type: EmitSoundOnPickup
@@ -67,8 +68,6 @@
 - type: entity
   parent: BaseMagazineBoxMagnum
   id: MagazineBoxMagnum
-  name: ammunition box (.45 magnum)
-  description: A cardboard box of .45 magnum rounds. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum

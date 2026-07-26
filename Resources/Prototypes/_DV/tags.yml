@@ -25,7 +25,4 @@
   id: PreventLabel
 
 - type: Tag
-  id: BorgModuleSecurity
-
-- type: Tag
   id: LightFixture

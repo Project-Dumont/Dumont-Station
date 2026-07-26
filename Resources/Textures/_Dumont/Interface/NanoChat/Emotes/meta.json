@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from paradise at https://github.com/ParadiseSS13/Paradise/blob/master/icons/ui_icons/emoji.dmi and modified by Will-Oliver-Br",
+  "size": {
+    "x": 16,
+    "y": 16
+  },
+  "states": [
+    {
+      "name": "joy"
+    },
+    {
+      "name": "thinking"
+    },
+    {
+      "name": "flushed"
+    },
+    {
+      "name": "pensive"
+    },
+    {
+      "name": "angry"
+    },
+    {
+      "name": "sick"
+    },
+    {
+      "name": "up"
+    },
+    {
+      "name": "down"
+    },
+    {
+      "name": "clap"
+    },
+    {
+      "name": "tada"
+    },
+    {
+      "name": "yes"
+    },
+    {
+      "name": "no"
+    },
+    {
+      "name": "u"
+    },
+    {
+      "name": "q"
+    },
+    {
+      "name": "exclamation"
+    },
+    {
+      "name": "moff"
+    },
+    {
+      "name": "heart"
+    },
+    {
+      "name": "help"
+    },
+    {
+      "name": "disarm"
+    },
+    {
+      "name": "grab"
+    },
+    {
+      "name": "harm"
+    },
+    {
+      "name": "eyes"
+    },
+    {
+      "name": "fpalm"
+    },
+    {
+      "name": "xdd"
+    },
+    {
+      "name": "kekw"
+    },
+    {
+      "name": "clueless"
+    },
+    {
+      "name": "troll"
+    },
+    {
+      "name": "taa"
+    },
+    {
+      "name": "mowzers"
+    },
+    {
+      "name": "rainhonk"
+    },
+    {
+      "name": "clown"
+    },
+    {
+      "name": "mime"
+    },
+    {
+      "name": "tider"
+    },
+    {
+      "name": "plasmeme"
+    },
+    {
+      "name": "monkey"
+    },
+    {
+      "name": "xeno"
+    },
+    {
+      "name": "wiz"
+    },
+    {
+      "name": "nuke"
+    },
+    {
+      "name": "queen"
+    },
+    {
+      "name": "plizard"
+    },
+    {
+      "name": "moth"
+    },
+    {
+      "name": "pslime"
+    },
+    {
+      "name": "gondy"
+    },
+    {
+      "name": "chick"
+    },
+    {
+      "name": "duck"
+    },
+    {
+      "name": "jerry"
+    },
+    {
+      "name": "snek"
+    },
+    {
+      "name": "larva"
+    },
+    {
+      "name": "shroom"
+    },
+    {
+      "name": "nya"
+    },
+    {
+      "name": "carp"
+    },
+    {
+      "name": "eng"
+    },
+    {
+      "name": "med"
+    },
+    {
+      "name": "sci"
+    },
+    {
+      "name": "sup"
+    },
+    {
+      "name": "sec"
+    },
+    {
+      "name": "on"
+    },
+    {
+      "name": "off"
+    },
+    {
+      "name": "syndie"
+    },
+    {
+      "name": "viva"
+    },
+    {
+      "name": "revolver"
+    },
+    {
+      "name": "d20"
+    },
+    {
+      "name": "ian"
+    },
+    {
+      "name": "ai"
+    },
+    {
+      "name": "esword"
+    },
+    {
+      "name": "clean"
+    },
+    {
+      "name": "tile"
+    },
+    {
+      "name": "medbot"
+    },
+    {
+      "name": "law"
+    },
+    {
+      "name": "toolbox"
+    },
+    {
+      "name": "disk"
+    },
+    {
+      "name": "singulo"
+    },
+    {
+      "name": "shades"
+    },
+    {
+      "name": "brain"
+    },
+    {
+      "name": "burn"
+    },
+    {
+      "name": "popcorn"
+    },
+    {
+      "name": "burger"
+    },
+    {
+      "name": "donut"
+    },
+    {
+      "name": "peel"
+    },
+    {
+      "name": "honk"
+    },
+    {
+      "name": "blob"
+    },
+    {
+      "name": "rollie"
+    },
+    {
+      "name": "medal"
+    },
+    {
+      "name": "eggplant"
+    },
+    {
+      "name": "cash"
+    },
+    {
+      "name": "trophy"
+    },
+    {
+      "name": "tea"
+    },
+    {
+      "name": "sm"
+    },
+    {
+      "name": "skull"
+    },
+    {
+      "name": "unepipe"
+    },
+    {
+      "name": "news"
+    },
+    {
+      "name": "flush"
+    },
+    {
+      "name": "meat"
+    },
+    {
+      "name": "pizza"
+    },
+    {
+      "name": "book"
+    },
+    {
+      "name": "bible"
+    },
+    {
+      "name": "cuffs"
+    },
+    {
+      "name": "swatter"
+    },
+    {
+      "name": "taser"
+    },
+    {
+      "name": "plant"
+    },
+    {
+      "name": "apc"
+    },
+    {
+      "name": "gatto"
+    },
+    {
+      "name": "supercool"
+    },
+    {
+      "name": "smork"
+    },
+    {
+      "name": "pregman"
+    },
+    {
+      "name": "gnarg"
+    },
+    {
+      "name": "vox"
+    },
+    {
+      "name": "hamter"
+    }
+  ]
+}

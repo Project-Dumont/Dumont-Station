@@ -43,7 +43,7 @@ public sealed class MorphRuleSystem : GameRuleSystem<MorphRuleComponent>
                 count = morph.Children;
 
             var key = lone ? "morph-name-user-lone" : "morph-name-user";
-            args.AddLine(Loc.GetString(key, ("name", name), ("username", data.UserName), ("count", count)));
+            args.AddLine(Loc.GetString(key, ("name", name), ("username", _antag.GetRoundEndUsername(mindId, data.UserName)), ("count", count)));
         }
     }
 

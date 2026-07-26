@@ -1,0 +1,137 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseConspiratorObjective
+  components:
+  - type: Objective
+    issuer: conspirator-objective-issuer
+    difficulty: 0 # uses own system for assignment
+  - type: RoleRequirement
+    roles:
+    - ConspiratorRole
+  - type: NoCompletionObjective
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorUnionObjective
+  name: conspirator-union-objective-name
+  description: conspirator-union-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorGameshowObjective
+  name: conspirator-gameshow-objective-name
+  description: conspirator-gameshow-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Machines/computers.rsi
+      state: television
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorTechnologyObjective
+  name: conspirator-technology-objective-name
+  description: conspirator-technology-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+      state: icon
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorArmsObjective
+  name: conspirator-arms-objective-name
+  description: conspirator-arms-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+      state: icon
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorThiefObjective
+  name: conspirator-thief-objective-name
+  description: conspirator-thief-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Tools/thief_beacon.rsi
+      state: extraction_point
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorMafiaObjective
+  name: conspirator-mafia-objective-name
+  description: conspirator-mafia-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Head/Hats/outlawhat.rsi
+      state: icon
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorCultObjective
+  name: conspirator-cult-objective-name
+  description: conspirator-cult-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/cult_dagger.rsi
+      state: icon
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorPetObjective
+  name: conspirator-pet-objective-name
+  description: conspirator-pet-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Pets/corgi.rsi
+      state: ian
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorBanquetObjective
+  name: conspirator-banquet-objective-name
+  description: conspirator-banquet-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Consumable/Food/meat.rsi
+      state: corgi
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorArrestObjective
+  name: conspirator-arrest-objective-name
+  description: conspirator-arrest-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorCameraObjective
+  name: conspirator-camera-objective-name
+  description: conspirator-camera-objective-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_camera

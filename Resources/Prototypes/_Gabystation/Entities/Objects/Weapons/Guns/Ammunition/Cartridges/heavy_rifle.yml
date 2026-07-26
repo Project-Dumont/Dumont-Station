@@ -13,8 +13,8 @@
       - Cartridge
       - CartridgeRifle
       - CartridgeChesterRifle 
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRifleTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRifle
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -51,8 +51,8 @@
   parent: BaseCartridgeChesterRifle
   description: A powerful cartridge used by the Chester lever rifle. The .315 Jumbo is said to be able to pierce clean through space rhinos' thick hide and Syndicate agents.
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRifleTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRifle
 
 - type: entity
   id: CartridgeChesterRifleIncendiary
@@ -60,8 +60,8 @@
   parent: BaseCartridgeChesterRifle
   description: A powerful cartridge used by the Chester lever rifle. The .315 incendiary ammunition contains a self-igniting compound that sets the target ablaze.
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRifleIncendiaryTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRifleIncendiary
   - type: Sprite
     layers:
       - state: base
@@ -76,8 +76,8 @@
   parent: BaseCartridgeChesterRifle
   description: A powerful cartridge used by the Chester lever rifle. The .315 uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRifleUraniumTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRifleUranium
   - type: Sprite
     layers:
       - state: base
@@ -92,8 +92,8 @@
   parent: BaseCartridgeChesterRifle
   description: A powerful cartridge used by the Chester lever rifle. This one is meant for training purposes only.
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRiflePracticeTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRiflePractice
   - type: Sprite
     layers:
       - state: base
@@ -108,8 +108,8 @@
   parent: BaseCartridgeChesterRifle
   description: A powerful cartridge used by the Chester lever rifle. The .315 disabler ammunition features a special composite core designed for immobilizing targets.
   components:
-  - type: HitScanCartridgeAmmo
-    hitscan: BulletChesterRifleDisablerTrace
+  - type: CartridgeAmmo
+    proto: BulletChesterRifleDisabler
   - type: Sprite
     layers:
       - state: base

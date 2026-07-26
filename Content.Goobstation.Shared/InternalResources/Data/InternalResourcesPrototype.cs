@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Alert;
 using Robust.Shared.Prototypes;
 
@@ -7,7 +11,7 @@ namespace Content.Goobstation.Shared.InternalResources.Data;
 /// Prototype for internal resources type. Mostly contain visualization and information data.
 /// </summary>
 [Prototype]
-public sealed class InternalResourcesPrototype : IPrototype
+public sealed partial class InternalResourcesPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

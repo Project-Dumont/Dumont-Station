@@ -155,24 +155,14 @@
   - type: EmitSoundOnPickup
     sound:
       collection: RiflesPickUp
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
+ # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
     - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
-  - type: EmitSoundOnDrop
-    sound:
-      collection: RiflesDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RiflesDrop
-  # Goobstation edit end
 
 - type: entity
   name: AKM
-  parent: [BaseWeaponRifle, BaseSecurityContraband]
+  parent: [BaseWeaponRifle, BaseSecuritySalvageContraband]
   id: WeaponRifleAk
   description: A somewhat battered combat rifle of a design originating from old Earth. Favored by criminals, militias, and terrorists due to its famed reliability and easy-to-manufacture design. Feeds from .30 Rifle magazines.
   components:

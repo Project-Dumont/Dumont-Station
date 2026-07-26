@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared.Wraith.Components;
 using Content.Goobstation.Shared.Wraith.Events;
 using Content.Goobstation.Shared.Wraith.WraithPoints;
@@ -10,6 +14,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Revenant.Components;
 using Content.Shared.StatusEffect;
+using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.Wraith.Systems;
 //Partially ported from Impstation
@@ -29,6 +34,9 @@ public sealed partial class HauntSystem : EntitySystem
 
     private readonly HashSet<Entity<HumanoidAppearanceComponent>> _humanoid = new();
     private readonly HashSet<Entity<StatusEffectsComponent>> _statusEffects = new();
+
+    private static readonly ProtoId<StatusEffectPrototype> CorporealEffect = "Corporeal";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -62,7 +70,7 @@ public sealed partial class HauntSystem : EntitySystem
 
             if (_timing.CurTime >= haunt.NextHauntUpdate)
             {
-                RemComp<CorporealComponent>(uid);
+                _statusEffectsOld.TryRemoveStatusEffect(uid, CorporealEffect);
                 haunt.Active = false;
                 _actions.StartUseDelay(haunt.ActionEnt);
 
@@ -97,7 +105,7 @@ public sealed partial class HauntSystem : EntitySystem
     {
         if (ent.Comp.Active)
         {
-            _statusEffectsOld.TryRemoveStatusEffect(ent.Owner, ent.Comp.CorporealEffect);
+            _statusEffectsOld.TryRemoveStatusEffect(ent.Owner, CorporealEffect);
             _wraithPointsSystem.SetWpRate(ent.Comp.OriginalWpRegen, ent.Owner);
             ent.Comp.Active = false;
             ent.Comp.WpBoostActive = false;
@@ -119,7 +127,7 @@ public sealed partial class HauntSystem : EntitySystem
                 true);
 
         // we don't have corporeal so add it
-        _statusEffectsOld.TryAddStatusEffect<CorporealComponent>(ent.Owner, ent.Comp.CorporealEffect, ent.Comp.HauntCorporealDuration, true);
+        _statusEffectsOld.TryAddStatusEffect<CorporealComponent>(ent.Owner, CorporealEffect, ent.Comp.HauntCorporealDuration, true);
 
         // set original rate for resetting it after boost
         ent.Comp.OriginalWpRegen = _wraithPointsSystem.GetCurrentWpRate(ent.Owner);

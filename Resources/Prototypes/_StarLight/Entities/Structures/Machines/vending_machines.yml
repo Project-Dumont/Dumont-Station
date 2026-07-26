@@ -1,0 +1,469 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: SLVendingMachine
+  parent: BaseMachinePowered
+  name: Vending Machine #Far Horizons - The Great Capitalization Crusade
+  description: Just add capitalism!
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Machines/VendingMachines/plushiemat.rsi
+    snapCardinals: true
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: normal-unshaded
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+  - type: StationAiWhitelist
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.16,0.3,0.40"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 190
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: UserInterface
+    interfaces:
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: WiresPanel
+  - type: Wires
+   #boardName: wires-board-name-vendingmachine
+    layoutId: Vending
+  - type: Anchorable
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+  - type: WiresVisuals
+  - type: Store
+    name: store-preset-name-spellbook
+    categories: []
+    currencyWhitelist:
+    - NTCredit
+
+- type: entity
+  parent: SLVendingMachine
+  id: SLVendingMachineSalvage
+  name: salvage ticket machine
+  components:
+  - type: AccessReader
+    access: [["Salvage"]]
+  - type: Sprite
+    sprite: _Starlight/Structures/Machines/VendingMachines/salvage.rsi
+  - type: Store
+    name: vending-machine-salvage
+    categories:
+    - SalvageEquipment
+    - SalvageUtilities
+    - SalvageWeapons
+    - SalvageConsumeables
+    currencyWhitelist:
+    - SalvageTicket
+
+# Armas
+
+- type: listing
+  id: VendorKukriKnife
+  productEntity: KukriKnife
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMark1Rifle
+  productEntity: WeaponRifleMark1
+  cost:
+    SalvageTicket: 80
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMark1SniperRifle
+  productEntity: WeaponRifleMark1Sniper
+  cost:
+    SalvageTicket: 110
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorN14ripper
+  productEntity: N14ripper
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMarkalibur1Rifle
+  productEntity: Markalibur1SheathFilled
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponMakeshiftLaser
+  productEntity: WeaponMakeshiftLaser
+  cost:
+    SalvageTicket: 360
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponSubMachineGunForged
+  productEntity: WeaponSubMachineGunForged
+  cost:
+    SalvageTicket: 480
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponShotgunSalvager
+  productEntity: WeaponShotgunSalvager
+  cost:
+    SalvageTicket: 600
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+# Utilitários
+
+## Equipamentos
+
+- type: listing
+  id: VendorMiningDrill
+  productEntity: MiningDrill
+  cost:
+    SalvageTicket: 60
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingHeadHelmetSalvageMerc
+  productEntity: ClothingHeadHelmetSalvageMerc
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterVestWebSalvageMerc
+  productEntity: ClothingOuterVestWebSalvageMerc
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingHandsSalvageMercGlovesCombat
+  productEntity: ClothingHandsSalvageMercGlovesCombat
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingShoesBootsSalvageMerc
+  productEntity: ClothingShoesBootsSalvageMerc
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingBeltSalvageMercWebbing
+  productEntity: ClothingBeltSalvageMercWebbing
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorFultonBeacon
+  productEntity: FultonBeacon
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorDefibrillatorCompact
+  productEntity: DefibrillatorCompact
+  cost:
+    SalvageTicket: 70
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorOreBagMagnetic
+  productEntity: OreBagMagnetic
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitSalvage
+  productEntity: ClothingOuterHardsuitSalvage
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorN14ShieldMetalHeavy
+  productEntity: N14ShieldMetalHeavy
+  cost:
+    SalvageTicket: 80
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitMaxim
+  productEntity: ClothingOuterHardsuitMaxim
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorN14SledgeHammer
+  productEntity: N14SledgeHammer
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+# Consumiveis
+
+## Medicamentos
+
+- type: listing
+  id: VendorTesteMedkit
+  productEntity: MedkitFilled
+  cost:
+    SalvageTicket: 60
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMedkitRadiationFilled
+  productEntity: MedkitRadiationFilled
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMedkitToxinFilled
+  productEntity: MedkitToxinFilled
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMedkitAdvancedFilled
+  productEntity: MedkitAdvancedFilled
+  cost:
+    SalvageTicket: 150
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+## Munição
+
+- type: listing
+  id: VendorShellShotgunImprovised
+  productEntity: ShellShotgunImprovised
+  cost:
+    SalvageTicket: 4
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMagazinePistolSubMachineGunImprovised
+  productEntity: MagazinePistolSubMachineGunImprovised
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMagazineShotgunEmpty
+  productEntity: MagazineShotgunEmpty
+  cost:
+    SalvageTicket: 50
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+
+- type: listing
+  id: VendorBoxMagnum
+  productEntity: MagazineBoxMagnum
+  cost:
+    SalvageTicket: 70
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorBoxLightRifle
+  productEntity: MagazineBoxLightRifle
+  cost:
+    SalvageTicket: 90
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMagazineBoxImprovisedPistol
+  productEntity: MagazineBoxImprovisedPistol
+  cost:
+    SalvageTicket: 150
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+## Outros
+
+- type: listing
+  id: VendorBoxFlare
+  productEntity: BoxFlare
+  cost:
+    SalvageTicket: 10
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorBoxMRE
+  productEntity: BoxMRE
+  cost:
+    SalvageTicket: 10
+  categories:
+  - SalvageConsumeables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorFulton
+  productEntity: Fulton
+  cost:
+    SalvageTicket: 150
+  categories:
+  - SalvageUtilities
+  conditions:
+  - !type:BuyerAccessCondition
