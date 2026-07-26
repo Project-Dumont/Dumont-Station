@@ -1068,11 +1068,11 @@ GhostBarSpawner: null
 # 2026-01-18
 DVSmartFridgeMedical: SmartFridgeMedical
 
-# 2026-01-10 Goobstation Change Mapped Chem to Energy Chem by default
-ChemDispenser: EnergyChemDispenser
-
 # 2026-03-07 Gabystation Change Mapped Bloodpack to CMBloodPackFull by default
 Bloodpack: CMBloodPackFull
 
 # 2026-04-06
 RotaryPhoneStand: RotaryPhoneStandNoRot
+
+# 2026-07-03 Dumont Change Mapped Energy Chem to Normal Chem by default
+EnergyChemDispenser: ChemDispenser # Dumont edit
