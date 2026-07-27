@@ -359,6 +359,8 @@
     - id: HandheldPowerMonitorGs
     - id: RCDProtoCE
     - id: InducerEngineeringWhiteBattery # Orion
+    - id: WeaponNailgun
+    - id: MagazineNailgun
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
