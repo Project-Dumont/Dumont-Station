@@ -187301,6 +187301,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: -24.5,49.5
       parent: 2
+- proto: SkibidiCube
+  entities:
+  - uid: 28801
+    components:
+    - type: Transform
+      pos: -66.127914,-82.48548
+      parent: 2
 - proto: Skub
   entities:
   - uid: 28802

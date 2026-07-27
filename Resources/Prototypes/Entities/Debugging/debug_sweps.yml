@@ -31,7 +31,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: bang, ded
+  name: goob, ded # Goobstation edit
   parent: BaseWeaponPistol
   id: WeaponPistolDebug
   description: ded

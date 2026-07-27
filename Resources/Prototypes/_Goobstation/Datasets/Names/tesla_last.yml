@@ -3,5 +3,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-reagent-name-sigmajuice = sigmajuice
-reagent-desc-sigmajuice = Only real sigma males can drink this drink taken from the rizzlers of ohio.
+- type: localizedDataset
+  id: GoobGeneratorsNamesTeslaLast
+  values:
+    prefix: goob-generators-names-tesla-last-dataset-
+    count: 5
