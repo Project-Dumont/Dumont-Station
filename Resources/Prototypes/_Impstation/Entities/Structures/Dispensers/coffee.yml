@@ -35,7 +35,6 @@
   parent: ImpCoffeeMachine
   components:
   - type: ReagentDispenser
-    storageWhitelist:
+    whitelist:
       tags:
       - DrinkBottle
-    pack: EmptyInventory

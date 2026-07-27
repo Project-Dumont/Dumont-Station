@@ -41,9 +41,6 @@
     - type: Perishable
     - type: MeleeWeapon
       damage: {}
-    - type: RotInto
-      entity: FoodRot
-      stage: 1
     - type: ItemToggle
     - type: Explosive
       explosionType: HardBomb

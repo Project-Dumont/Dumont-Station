@@ -109,13 +109,6 @@
     FoodGarlic: 2 #Goobstation
     FoodOnion: 2 #Goobstation
     FoodTomato: 3 #Goobstation
-    # Begin DeltaV Additions
-    LunchboxGenericFilledRandom: 5
-    ReagentContainerSalt: 1
-    ReagentContainerPepper: 1
-    ReagentContainerChocolate: 1
-    FoodBoxWaffleCone: 1 # Frontier
-    # End DeltaV Additions
   contrabandInventory:
     EggBoxBroken: 1
     FoodBoxDonkpocket: 1
