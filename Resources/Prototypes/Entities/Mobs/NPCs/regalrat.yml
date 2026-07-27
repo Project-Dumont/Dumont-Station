@@ -296,11 +296,10 @@
       gender: male
   - type: Sharp
   - type: NightVision # Goobstation - Nigthvision
-    color: "#d14343"
+    toggleAction: null
+    color: "#808080"
     activateSound: null
     deactivateSound: null
-  - type: Insulated # Goobstation
-    coefficient: 0.5
   - type: CombatPower # Goobstation
     factor: 2
   - type: PassiveDamage #passive Healing
@@ -395,7 +394,6 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
-  - type: Insulated # Goobstation
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
     - Mouse
