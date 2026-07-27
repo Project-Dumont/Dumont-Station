@@ -5,7 +5,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 [Prototype("ghostSkinListing")]
-public sealed class GhostSkinListingPrototype : IPrototype
+public sealed partial class GhostSkinListingPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

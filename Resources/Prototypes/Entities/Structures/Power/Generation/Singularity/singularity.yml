@@ -190,3 +190,6 @@
             scale: .9,.9
   - type: SupermatterImmune # Goobstation
   - type: ContainmentFieldIgnore # goob
+  - type: Tag
+    tags:
+      - EletricRadiation # Dumont

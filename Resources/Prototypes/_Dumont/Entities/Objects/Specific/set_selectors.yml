@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: DetectiveRevolverUndetermined
+  name: Revolver Briefcase
+  description: This briefcase utilizes bluespace technology to drop in a weapon from the detective's arsenal. Choose wisely.
+  parent: [ BaseItem, BaseSetSelector, BaseSecurityContraband ]
+  components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/revolver_selector.rsi
+    state: icon
+  - type: Item
+    sprite: _Dumont/Objects/Specific/revolver_selector.rsi
+  - type: SetSelector
+    possibleSets:
+    - DetectiveInspectorSet
+    - DetectiveWatsonSet
+    maxSelectedSets: 1

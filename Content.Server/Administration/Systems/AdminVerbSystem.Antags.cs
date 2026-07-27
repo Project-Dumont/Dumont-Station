@@ -92,6 +92,7 @@ using Content.Server._DV.CosmicCult.Components; // DeltaV
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server.Zombies;
 using Content.Shared.Administration;
 using Content.Server.Clothing.Systems;
@@ -104,6 +105,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Server._Funkystation.GameTicking;
+using Content.Server.Antag.Components;
 
 namespace Content.Server.Administration.Systems;
 
@@ -120,9 +122,12 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultVampireRule = "Vampire";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultChangelingRule = "Changeling";
+    private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
+
+    private static readonly EntProtoId DefaultConspiratorRule = "Conspirators"; // Harmony
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
-    private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -362,5 +367,56 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-vampire"),
         };
         args.Verbs.Add(vampire);
+
+        // Dumontstation - Wraith
+        var wraithName = Loc.GetString("admin-verb-text-make-wraith");
+        Verb wraith = new()
+        {
+            Text = wraithName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Wraith/wraith.rsi"), "icon"),
+            Act = () =>
+    {
+        var mindSystem = EntityManager.System<Content.Shared.Mind.SharedMindSystem>();
+
+        if (targetPlayer.AttachedEntity != null)
+        {
+            var oldBody = targetPlayer.AttachedEntity.Value;
+            var coords = EntityManager.GetComponent<TransformComponent>(oldBody).Coordinates;
+
+            var wraithMob = EntityManager.SpawnEntity("MobWraith", coords);
+
+            if (mindSystem.TryGetMind(targetPlayer, out var mindId, out var mind))
+            {
+                mindSystem.TransferTo(mindId, wraithMob, mind: mind);
+            }
+
+            if (!EntityManager.HasComponent<Content.Shared.Ghost.GhostComponent>(oldBody))
+            {
+                EntityManager.QueueDeleteEntity(oldBody);
+            }
+        }
+
+        _antag.ForceMakeAntag<AntagSelectionComponent>(targetPlayer, "WraithRoundstart");
+    },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", wraithName, Loc.GetString("admin-verb-make-wraith")),
+        };
+        args.Verbs.Add(wraith);
+        var conspiratorName = Loc.GetString("admin-verb-text-make-conspirator");
+        Verb conspirator = new()
+        {
+            Text = conspiratorName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_EinsteinEngines/Interface/Misc/job_icons.rsi"), "Conspirator"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<ConspiratorRuleComponent>(targetPlayer, DefaultConspiratorRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),
+        };
+        args.Verbs.Add(conspirator);
+        // Harmony end
     }
 }

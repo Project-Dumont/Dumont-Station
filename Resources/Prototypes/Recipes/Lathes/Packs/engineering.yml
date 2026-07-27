@@ -62,6 +62,8 @@
   - ThermomachineFreezerMachineCircuitBoard
   - BankATMCircuitboard # Gabystation change
   - WashingMachineCircuitboard # Gabystation change
+  - MassDriverCircuitboard # Starlight
+  - MassDriverComputerCircuitboard # Starlight
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
@@ -97,6 +99,9 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - SolarControlComputerCircuitboard
+  - AlertsComputerCircuitboard # DumontStation
+  - AtmosMonitoringComputerCircuitboard # DumontStation
+  - PowerComputerCircuitboard # DumontStation
   - SolarTrackerElectronics
   - GasRecyclerMachineCircuitboard
   - PortableGeneratorPacmanMachineCircuitboard

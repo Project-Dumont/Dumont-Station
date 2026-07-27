@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: latheRecipe
   abstract: true
   id: BaseRevComponent
@@ -20,6 +24,11 @@
   parent: BaseRevComponent
   id: RevBolt
   result: RevBolt
+
+- type: latheRecipe
+  parent: BaseRevComponent
+  id: RevBallBearings
+  result: RevBallBearings
 
 - type: latheRecipe
   parent: BaseRevComponent

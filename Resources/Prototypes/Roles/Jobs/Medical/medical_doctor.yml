@@ -95,6 +95,8 @@
   - Maintenance
   extendedAccess:
   - Chemistry
+  - Psychology # Dumont
+  - Virology # Dumont
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: DoctorDay

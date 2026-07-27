@@ -1,0 +1,12 @@
+- type: entity
+  parent: [ IDCardStandard, BaseCargoContraband ]
+  id: SalvageLeadIDCard
+  name: salvage lead ID card
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/id_cards.rsi
+      layers:
+        - state: default
+        - state: idsalvagelead
+    - type: PresetIdCard
+      job: SalvageLead
