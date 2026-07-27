@@ -1,10 +1,10 @@
 using Content.Shared.Examine;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
-using Content.Trauma.Shared.DeepFryer.Components;
+using Content.Shared.DeepFryer.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Trauma.Shared.DeepFryer.Systems;
+namespace Content.Shared.DeepFryer.Systems;
 
 public sealed class DeepFriedSystem : EntitySystem
 {

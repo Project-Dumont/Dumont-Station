@@ -1,4 +1,4 @@
-namespace Content.Trauma.Shared.DeepFryer.Components;
+namespace Content.Shared.DeepFryer.Components;
 
 /// <summary>
 /// 1984 component

@@ -10,11 +10,11 @@ using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Storage.Components;
-using Content.Trauma.Shared.DeepFryer.Components;
+using Content.Shared.DeepFryer.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Trauma.Shared.DeepFryer.Systems;
+namespace Content.Shared.DeepFryer.Systems;
 
 public abstract class SharedDeepFryerSystem : EntitySystem
 {

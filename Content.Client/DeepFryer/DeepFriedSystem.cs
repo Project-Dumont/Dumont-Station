@@ -1,12 +1,12 @@
 using System.Linq;
 using Content.Shared.Clothing;
 using Content.Shared.Hands;
-using Content.Trauma.Shared.DeepFryer.Components;
+using Content.Shared.DeepFryer.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Trauma.Client.DeepFryer;
+namespace Content.Client.DeepFryer;
 
 public sealed class DeepFriedSystem : EntitySystem
 {

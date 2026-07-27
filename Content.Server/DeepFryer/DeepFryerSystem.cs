@@ -1,12 +1,13 @@
+using System;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
-using Content.Trauma.Shared.DeepFryer.Components;
-using Content.Trauma.Shared.DeepFryer.Systems;
+using Content.Shared.DeepFryer.Components;
+using Content.Shared.DeepFryer.Systems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Trauma.Server.DeepFryer;
+namespace Content.Server.DeepFryer;
 
 public sealed class DeepFryerSystem : SharedDeepFryerSystem
 {
@@ -43,9 +44,13 @@ public sealed class DeepFryerSystem : SharedDeepFryerSystem
         if (_solution.TryGetSolution(ent.Owner,
                 ent.Comp.FryerSolutionContainer,
                 out var solutionRef,
-                out _))
+                out var solution)) // Dumont
         {
-            _solution.AddThermalEnergyClamped(solutionRef.Value, heatToAdd * frameTime, 293f, ent.Comp.MaxHeat);
+            solution.Temperature = Math.Clamp(solution.Temperature + (heatToAdd * frameTime), 293f, ent.Comp.MaxHeat);
+
+            
+            _solution.UpdateChemicals(solutionRef.Value);
+            // Dumont End
         }
     }
 
