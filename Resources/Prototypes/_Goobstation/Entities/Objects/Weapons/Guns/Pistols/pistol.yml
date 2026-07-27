@@ -117,6 +117,8 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+  - type: Multishot
+    missChance: 0.3
 
 - type: entity
   name: Contract Terminator

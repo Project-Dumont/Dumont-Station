@@ -45,6 +45,8 @@
     magState: mag
     steps: 5
     zeroVisible: true
+  - type: Multishot
+    spreadMultiplier: 1.2
   - type: PhysicalComposition
     materialComposition:
       Steel: 500
@@ -164,6 +166,8 @@
       map: ["enum.GunVisualLayers.Mag"]
     - state: on
       map: ["base"]
+  - type: Multishot
+    spreadMultiplier: 1.2
   - type: PhysicalComposition
     materialComposition:
       Steel: 250
@@ -238,6 +242,8 @@
     price: 500
   - type: UseDelay
     delay: 1
+  - type: Multishot
+    spreadMultiplier: 1.4
   - type: Appearance
   - type: Cautery
     speed: 0.9
