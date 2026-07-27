@@ -909,17 +909,6 @@
   recipeType:
   - Assembler
 
-- type: microwaveMealRecipe
-  id: RecipeOnionRings
-  name: onion rings recipe
-  result: FoodOnionRings
-  time: 15
-  group: Savory
-  solids:
-    FoodOnionSlice: 1
-  recipeType:
-  - Oven
-
 #Pizzas TODO: contruction graph based pizza
 - type: microwaveMealRecipe
   id: RecipeMargheritaPizza
@@ -1751,46 +1740,6 @@
   solids:
     FoodPotato: 1
     FoodCheeseSlice: 1
-  recipeType:
-  - Oven
-
-- type: microwaveMealRecipe
-  id: RecipeFries
-  name: space fries recipe
-  result: FoodMealFries
-  time: 15
-  group: Savory
-  reagents:
-    TableSalt: 5
-  solids:
-    FoodPotato: 1
-  recipeType:
-  - Oven
-
-- type: microwaveMealRecipe
-  id: RecipeCheesyFries
-  name: cheesy fries recipe
-  result: FoodMealFriesCheesy
-  time: 15
-  group: Savory
-  reagents:
-    TableSalt: 5
-  solids:
-    FoodPotato: 1
-    FoodCheeseSlice: 1
-  recipeType:
-  - Oven
-
-- type: microwaveMealRecipe
-  id: RecipeCarrotFries
-  name: carrot fries recipe
-  result: FoodMealFriesCarrot
-  time: 15
-  group: Savory
-  reagents:
-    TableSalt: 5
-  solids:
-    FoodCarrot: 1
   recipeType:
   - Oven
 

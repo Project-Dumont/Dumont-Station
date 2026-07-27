@@ -74,7 +74,7 @@
     openOnMove: false
     isCollidableWhenOpen: true
     showContents: false
-    capacity: 2
+    capacity: 3
     airtight: true
     open: true
     closeSound:

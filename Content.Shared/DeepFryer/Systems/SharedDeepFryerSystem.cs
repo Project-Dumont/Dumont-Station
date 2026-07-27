@@ -20,7 +20,7 @@ public abstract class SharedDeepFryerSystem : EntitySystem
 {
     [Dependency] protected readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] protected readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] protected readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;

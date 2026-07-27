@@ -28,5 +28,5 @@ guidebook-food-processing-type-oven = bake
 guidebook-food-processing-type-assembler = assemble
 guidebook-food-processing-type-medical-assembler = assemble
 guidebook-food-processing-type-medical-generic = cook
-guidebook-food-processing-type-deepfryer = deep fry
+guidebook-food-processing-type-deep-fryer = deepfryer
 # End Frontier: processing types
