@@ -13,11 +13,6 @@
       - state: coffeemachine
       - state: unshaded
         shader: unshaded
-  - type: ReagentDispenser
-    storageWhitelist:
-      tags:
-      - DrinkBottle
-    pack: ImpCoffeeDispenserInventory
   - type: Transform
     noRot: false
   - type: Machine
@@ -34,7 +29,3 @@
   suffix: Empty
   parent: ImpCoffeeMachine
   components:
-  - type: ReagentDispenser
-    whitelist:
-      tags:
-      - DrinkBottle

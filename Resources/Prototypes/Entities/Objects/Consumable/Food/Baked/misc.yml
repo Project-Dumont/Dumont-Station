@@ -526,9 +526,6 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 1
-  - type: Construction # Frontier
-    graph: WaffleCone # Frontier
-    node: start # Frontier
 
 - type: entity
   name: soylent waffles
