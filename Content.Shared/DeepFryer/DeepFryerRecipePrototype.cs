@@ -1,12 +1,14 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared.DeepFryer;
 
 [Prototype("deepFryerRecipe")]
-public sealed class DeepFryerRecipePrototype : IPrototype
+[DataDefinition]
+public sealed partial class DeepFryerRecipePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

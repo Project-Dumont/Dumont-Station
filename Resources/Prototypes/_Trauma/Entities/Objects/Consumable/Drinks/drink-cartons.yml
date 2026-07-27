@@ -1,8 +1,6 @@
 - type: entity
   parent: [DrinkBaseMaterialPlastic, DrinkCartonBaseFull]
   id: DrinkFullFatCarton
-  name: full fat carton
-  description: A label on the side says "101% fat!".
   components:
   - type: SolutionContainerManager
     solutions:

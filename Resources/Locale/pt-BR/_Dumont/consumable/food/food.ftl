@@ -8,3 +8,6 @@ deep-fryer-no-power = A fritadeira precisa estar ligada!
 deep-fryer-item-cooked = A fritadeira chia, parece que algo terminou de cozinhar!
 
 deep-fried-item = {$name} frito
+
+ent-DrinkFullFatCarton = óleo de soja
+    .desc = óleo de soja? eu acho que não é soja...
