@@ -178,6 +178,9 @@
     - id: TidemindDevelop # Goobstation - Tidemind
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
+    - id: AncientXenoVentsEasy # Goobstation
+    - id: AncientXenoVentsMedium # Goobstation
+    - id: AncientXenoVentsHard # Goobstation
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
     - id: ClownGoblinMigration # Goobstation - New Midrounds
@@ -208,6 +211,7 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
+    - id: AncientXenoVentsRogue # Goobstation
     - id: SlasherSpawn # Goobstation - The Slasher
     - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
     - id: GreyTideAntagMidround # Goobstation - New Midrounds
@@ -383,7 +387,7 @@
     earliestStart: 30 # Goobstation was 45
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
-    minimumPlayers: 50
+    minimumPlayers: 60
     duration: null
     chaos: # Goobstation
       Hostile: 20
