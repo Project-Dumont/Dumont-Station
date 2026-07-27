@@ -14,14 +14,3 @@
   - KitchenAssemblerMachineCircuitboard # Frontier cooking port
   - ElectricRangeMachineCircuitboard # Frontier cooking port
 
-## Dynamic
-
-- type: latheRecipePack
-  id: Botany
-  recipes:
-  - PlantBagOfHolding
-
-- type: latheRecipePack
-  id: ServiceBoardsDeltaV
-  recipes:
-
