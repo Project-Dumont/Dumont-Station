@@ -173,9 +173,6 @@
   - type: ZombieImmune
   - type: GlobalAntagonist # Orion
     antagonistPrototype: globalAntagonistSlaughterDemon
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      200: 1
   - type: Bloodstream
     bloodMaxVolume: 300
     bloodReagent: Sulfur
