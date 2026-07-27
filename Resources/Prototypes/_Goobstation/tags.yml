@@ -338,9 +338,6 @@
   id: ItemPickaxe
 
 - type: Tag
-  id: ImprovisedShotgun
-
-- type: Tag
   id: IndustrialMech
 
 - type: Tag
