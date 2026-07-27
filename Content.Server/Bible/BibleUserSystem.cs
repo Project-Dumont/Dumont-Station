@@ -166,7 +166,7 @@ namespace Content.Server.Bible
             if (!TryComp(uid, out UseDelayComponent? useDelay) || _delay.IsDelayed((uid, useDelay)))
                 return;
 
-            if (args.Target == null || args.Target == args.User || !_mobStateSystem.IsAlive(args.Target.Value))
+            if (args.Target == null || args.Target == args.User || _mobStateSystem.IsDead(args.Target.Value)) // Trauma - was IsAlive bible heals crit targets now
                 return; // STOP WITH USELESS BRACES!! - Goobstation
 
             // <Trauma>
