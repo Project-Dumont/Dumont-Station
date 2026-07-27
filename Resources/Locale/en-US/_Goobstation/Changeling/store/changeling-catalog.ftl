@@ -45,7 +45,7 @@ evolutionmenu-combat-armor-desc =
     Costs 25 chemicals.
 
 evolutionmenu-combat-shield-name = Organic Shield
-evolutionmenu-combat-shield-desc =
+evolutionmenu-combat-shield-desc = 
     Reforms one of your arms into a large, fleshy shield.
     Reduces incoming damage, albeit is less durable than conventional shields.
     WARNING: Requires you to absorb at least 1 organic to use the ability.
