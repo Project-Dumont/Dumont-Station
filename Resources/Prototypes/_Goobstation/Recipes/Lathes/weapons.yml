@@ -16,7 +16,7 @@
     Glass: 300
     Plasma: 300
 
-- type: latheRecipe
+- type: latheRecipe 
   id: WeaponPlasmaRifle
   result: WeaponPlasmaRifleEmpty
   completetime: 6
