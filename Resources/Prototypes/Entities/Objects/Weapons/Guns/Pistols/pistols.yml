@@ -175,7 +175,7 @@
   - type: StaticPrice
     price: 500
   - type: Multishot # Goobstation V
-    spreadMultiplier: 2
+    spreadMultiplier: 1.25
   # Goobstation edit start
   - type: EmitSoundOnPickup
     sound:
@@ -392,5 +392,3 @@
         whitelist:
           tags:
             - CartridgeMagnum
-  - type: Multishot #Goob
-    spreadMultiplier: 30
