@@ -22,6 +22,7 @@ poor-vision-trait-examined = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} ey
 
 trait-medieval-accent-name = Medieval accent
 trait-medieval-accent-desc = Hark! Thy manner o' speech, 'tis most unusual!
+
 trait-tile-movement-name = Inner peace
 trait-tile-movement-desc = You are always in touch with your roots. And by your roots, I mean the center of the tile you're standing on.
 
@@ -35,3 +36,6 @@ trait-social-anxiety-disc = You have crippling social anxiety, you're freaked ou
 
 trait-deaf-name = Deaf
 trait-deaf-disc =  You're completly deaf, you can't hear anything, including yourself!
+
+trait-tide-accent-name = Tide accent
+trait-tide-accent-desc = Me shu insuls
