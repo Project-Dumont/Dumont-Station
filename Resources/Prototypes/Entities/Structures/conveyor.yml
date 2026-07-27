@@ -69,7 +69,7 @@
     mode: SnapgridCenter
   components:
   - type: Rotatable
-    rotateWhileAnchored: false #goob
+    rotateWhileAnchored: true
   - type: Clickable
   - type: InteractionOutline
   - type: Transform
