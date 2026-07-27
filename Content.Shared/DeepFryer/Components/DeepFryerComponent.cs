@@ -68,6 +68,12 @@ public sealed partial class DeepFryerComponent : Component
 
     [DataField]
     public EntityUid? SoundEntity;
+
+    /// <summary>
+    /// which components get removed to any non-sentient objects (doesn't have a mind container)
+    /// </summary>
+    [DataField]
+    public ComponentRegistry ComponentsToRemoveObjects = new();
 }
 
 [Serializable, NetSerializable]
