@@ -1,4 +1,8 @@
-﻿using Content.Shared.Dataset;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Codewords;
@@ -11,13 +15,13 @@ public sealed partial class CodewordGeneratorPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     /// List of datasets to use for word generation. All values will be concatenated into one list and then randomly chosen from
     /// </summary>
     [DataField]
-    public List<ProtoId<LocalizedDatasetPrototype>> Words { get; } =
+    public List<ProtoId<LocalizedDatasetPrototype>> Words { get; private set; } =
     [
         "Adjectives",
         "Verbs",
