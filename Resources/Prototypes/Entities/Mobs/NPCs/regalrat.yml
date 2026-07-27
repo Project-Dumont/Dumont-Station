@@ -218,7 +218,7 @@
         Slash: 12
         Piercing: 8
   - type: Body
-    prototype: RatKing
+    prototype: Rat
     requiredLegs: 1 # TODO: More than 1 leg
   - type: Hunger # probably should be prototyped
     thresholds:
