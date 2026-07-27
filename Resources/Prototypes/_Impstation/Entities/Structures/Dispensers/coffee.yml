@@ -13,6 +13,7 @@
       - state: coffeemachine
       - state: unshaded
         shader: unshaded
+  - type: ReagentDispenser
   - type: Transform
     noRot: false
   - type: Machine
@@ -29,3 +30,4 @@
   suffix: Empty
   parent: ImpCoffeeMachine
   components:
+  - type: ReagentDispenser
