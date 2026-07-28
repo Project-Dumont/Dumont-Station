@@ -1,0 +1,33 @@
+- type: latheRecipe
+  abstract: true
+  id: BaseUpgradeRecipe
+  completetime: 2
+  categories:
+  - Upgrades
+
+- type: latheRecipe
+  parent: BaseUpgradeRecipe
+  id: TerminusUpgradeHeatBlade
+  result: TerminusUpgradeHeatBlade
+  materials: 
+    Steel: 300
+    Gold: 200
+    Plasma: 500
+
+- type: latheRecipe
+  parent: BaseUpgradeRecipe
+  id: TerminusUpgradeAttackSpeed
+  result: TerminusUpgradeAttackSpeed
+  materials: 
+    Steel: 1000
+    Gold: 200
+    Plastic: 500
+
+- type: latheRecipe
+  parent: BaseUpgradeRecipe
+  id: TerminusUpgradeMeleeRange
+  result: TerminusUpgradeMeleeRange
+  materials:
+    Steel: 500
+    Gold: 300
+    Plastic: 500
