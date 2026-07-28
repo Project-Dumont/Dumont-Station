@@ -43,7 +43,7 @@
   id: TerminusUpgradeAttackSpeed
   parent: BaseTerminusUpgrade
   name: terminus handle upgrade (attack speed)
-  description: A lightweight Terminus's handle replacement that allows you to make attacks more frequently.
+  description: A lightweight handle replacement for Terminus that allows you to make attacks more frequently.
   components:
   - type: Sprite
     layers:
