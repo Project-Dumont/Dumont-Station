@@ -11,6 +11,8 @@
   - TerminusUpgradeHeatBlade
   - TerminusUpgradeAttackSpeed
   - TerminusUpgradeMeleeRange
+  - SpearTelescopicUpgradeAttackSpeed
+  - SpearTelescopicUpgradeMeleeRange
   # Goobstation R&D Console rework start
   position: 2, 1
   technologyPrerequisites:
