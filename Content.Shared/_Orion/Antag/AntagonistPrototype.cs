@@ -9,7 +9,7 @@ namespace Content.Shared._Orion.Antag;
 [Prototype("antagonist")]
 public sealed partial class AntagonistPrototype : IPrototype
 {
-    [IdDataField] public string ID { get; private set; } = default!;
+    [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
     ///     Name string to display in ghost teleport menu .

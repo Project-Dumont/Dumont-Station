@@ -5,7 +5,7 @@ using Content.Shared._Funkystation.Atmos.HFR;
 namespace Content.Shared._Funkystation.Atmos.Prototypes
 {
     [Prototype("fusionRecipe")]
-    public sealed partial class FusionRecipePrototype : IPrototype
+    public sealed class FusionRecipePrototype : IPrototype
     {
         [IdDataField]
         public string ID { get; private set; } = default!;

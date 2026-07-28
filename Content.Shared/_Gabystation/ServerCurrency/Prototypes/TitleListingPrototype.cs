@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 [Prototype]
-public sealed partial class TitleListingPrototype : IPrototype
+public sealed class TitleListingPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

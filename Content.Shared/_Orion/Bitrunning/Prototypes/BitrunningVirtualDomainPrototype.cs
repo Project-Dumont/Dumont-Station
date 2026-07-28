@@ -7,10 +7,10 @@ using Content.Shared.Humanoid.Prototypes;
 namespace Content.Shared._Orion.Bitrunning.Prototypes;
 
 [Prototype("bitrunningVirtualDomain")]
-public sealed partial class BitrunningVirtualDomainPrototype : IPrototype
+public sealed class BitrunningVirtualDomainPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; } = default!;
 
     [DataField(required: true)]
     public string Name { get; private set; } = string.Empty;

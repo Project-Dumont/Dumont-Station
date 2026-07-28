@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Gabystation.ServerCurrency.Prototypes;
 
 [Prototype]
-public sealed partial class TokenListingPrototype : IPrototype
+public sealed class TokenListingPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

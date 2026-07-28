@@ -13,15 +13,15 @@ using Robust.Shared.Serialization.Manager.Attributes;
 namespace Content.Goobstation.Shared.MisandryBox;
 
 [Prototype("AccountAppend")]
-public sealed partial class AccountAppendPrototype : IPrototype
+public sealed class AccountAppendPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set; } = null!;
+    public string ID { get; private init; } = null!;
 
     [DataField("userid", customTypeSerializer: typeof(GuidSerializer))]
-    public Guid Userid { get; private set; } = Guid.Empty;
+    public Guid Userid { get; private init; } = Guid.Empty;
 
     // I am not dragging the whole compReg for this
     [DataField("AppendComps")]
-    public List<string> Components { get; private set; } = [];
+    public List<string> Components { get; init; } = [];
 }

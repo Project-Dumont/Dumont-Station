@@ -1,9 +1,6 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Content.Goobstation.Shared.Silicon;
 using Content.Goobstation.Shared.Silicon.Components;
+using Linguini.Bundle.Errors;
 
 using Content.Server.Chat.Systems;
 using Robust.Shared.Player;

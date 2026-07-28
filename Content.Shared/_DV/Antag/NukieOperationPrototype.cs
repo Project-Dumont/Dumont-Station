@@ -10,7 +10,7 @@ public sealed partial class NukieOperationPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; } = default!;
 
     [DataField(required: true)]
     public List<EntProtoId> OperationObjectives = new();

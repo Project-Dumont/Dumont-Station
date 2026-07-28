@@ -6,7 +6,7 @@ namespace Content.Shared.Genetics;
 
 [Prototype, Access(typeof(SharedDnaModifierSystem), typeof(EnzymeInfo))]
 [Serializable, NetSerializable]
-public sealed partial class UniqueIdentifiersPrototype : IPrototype
+public sealed class UniqueIdentifiersPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; set; } = string.Empty;

@@ -1,8 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using Robust.Shared.Prototypes;
+﻿using Robust.Shared.Prototypes;
 
 namespace Content.Server.Codewords;
 
@@ -14,11 +10,11 @@ public sealed partial class CodewordFactionPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; } = default!;
 
     /// <summary>
     /// The generator to use for this faction.
     /// </summary>
     [DataField(required:true)]
-    public ProtoId<CodewordGeneratorPrototype> Generator { get; private set; } = default!;
+    public ProtoId<CodewordGeneratorPrototype> Generator { get; } = default!;
 }

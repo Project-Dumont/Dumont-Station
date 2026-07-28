@@ -5,7 +5,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Genetics;
 
 [Prototype, Access(typeof(SharedDnaModifierSystem))]
-public sealed partial class StructuralEnzymesPrototype : IPrototype
+public sealed class StructuralEnzymesPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; set; } = string.Empty;
