@@ -1,0 +1,157 @@
+- type: entity
+  name: Dahlia
+  suffix: Admeme
+  parent: [BaseWeaponPistol, BaseMajorContraband]
+  id: WeaponPistolDahlia
+  description: A beautiful, custom-made handcannon refined for maximum lethality and precision. Sister to the Chrysanthemum.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/dahlia.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/dahlia.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 4
+    fireRate: 2
+    burstFireRate: 9
+    availableModes:
+    - SemiAuto
+    - Burst
+    shotsPerBurst: 3
+    burstCooldown: 1.25
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: SpeciesRestrictedTrigger
+    enabled: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumHighCapacity
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: Tag
+    tags:
+    - WeaponPistolDahlia
+  - type: Multishot
+    missChance: 0
+    spreadMultiplier: 1
+    spreadAddition: 0
+  - type: RequiresDualWield
+    whitelist:
+      tags:
+      - WeaponPistolChrysanthemum
+
+- type: entity
+  name: Chrysanthemum
+  suffix: Admeme
+  parent: [BaseWeaponPistol, BaseMajorContraband]
+  id: WeaponPistolChrysanthemum
+  description: A beautiful, custom-made handcannon refined for maximum lethality and precision. Sister to the Dahlia.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/chrysanthemum.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/chrysanthemum.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 4
+    burstFireRate: 9
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    - Burst
+    shotsPerBurst: 3
+    burstCooldown: 1.25
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: SpeciesRestrictedTrigger
+    enabled: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumHighCapacity
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: Tag
+    tags:
+    - WeaponPistolChrysanthemum
+  - type: Multishot
+    missChance: 0
+    spreadMultiplier: 1
+    spreadAddition: 0
+  - type: RequiresDualWield
+    whitelist:
+      tags:
+      - WeaponPistolDahlia
+
+# Revolvers
+
+- type: entity
+  name: The Silverthorn
+  suffix: admeme
+  parent: [BaseWeaponRevolver, BaseMajorContraband]
+  id: WeaponRevolverSilverthorn
+  description: This single-action revolver is a nefarious masterpiece, anti-materiel firepower that fits into your hand, loads five .60 rounds. 
+  components:
+  - type: Sprite
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
+  - type: Clothing
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
+  - type: Gun
+    fireRate: 0.65 
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeAntiMateriel
+    proto: CartridgeAntiMateriel
+    capacity: 5
+    chambers: [ True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null ]
+    soundEject:
+      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+  - type: SpeciesRestrictedTrigger
+    enabled: false

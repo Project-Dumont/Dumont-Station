@@ -1,0 +1,87 @@
+- type: entity
+  parent: [ClothingHandsGlovesCombat, BaseMagicalContraband]
+  id: ClothingHandsGlovesExecutionLady
+  suffix: Admeme
+  name: execution lady's gloves
+  description: A pair of charming gloves, they smell like fresh blood and claim for slaugther.
+  components:
+  - type: Sprite
+    sprite: _Dumont/Admeme/Clothing/Hands/Gloves/executionladygloves.rsi
+  - type: Item
+    sprite: _Dumont/Admeme/Clothing/Hands/Gloves/executionladygloves.rsi
+    heldPrefix: gloves
+  - type: Clothing
+    sprite: _Dumont/Admeme/Clothing/Hands/Gloves/executionladygloves.rsi
+    equippedPrefix: gloves
+  - type: Insulated
+  - type: CrematoriumImmune
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-pitch-black
+  - type: ClothingGrantComponent
+    component:
+    - type: GrabModifier
+      startingGrabStage: Hard
+      grabEscapeModifier: -0.1
+      grabEscapeMultiplier: 0.8
+      grabMoveSpeedMultiplier: 2
+    - type: Prying
+      pryPowered: true
+      force: true
+      speedModifier: 4.5
+    - type: StripMenuInvisible
+  - type: ItemSwitch
+    showLabel: false
+    state: gloves
+    states:
+      gloves: !type:ItemSwitchState
+        verb: gloves
+        sprite:
+          sprite: _Dumont/Admeme/Clothing/Hands/Gloves/executionladygloves.rsi
+          state: icon
+        components:
+          - type: MeleeWeapon
+            attackRate: 1.5
+            damage:
+              types:
+                Blunt: 25
+                Structural: 25
+            armorPenetration: 0.5
+            mustBeEquippedToUse: true
+            soundHit:
+              path: /Audio/_Goobstation/Weapons/Effects/metalcrush.ogg
+            canWideSwing: false
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
+            volume: -5
+
+      claws: !type:ItemSwitchState
+        verb: claws
+        sprite:
+          sprite: _Dumont/Admeme/Clothing/Hands/Gloves/executionladygloves.rsi
+          state: icon-on
+        components:
+          - type: MeleeWeapon
+            attackRate: 3
+            autoAttack: true
+            damage:
+              types:
+                Slash: 20
+                Structural: 15
+            armorPenetration: 0.5
+            mustBeEquippedToUse: true
+            soundHit:
+              path: /Audio/Weapons/bladeslice.ogg
+            canWideSwing: true
+          - type: PointLight
+            enabled: true
+            color: "#A50F34"
+            radius: 3.0
+            energy: 1
+            netsync: true
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.125
