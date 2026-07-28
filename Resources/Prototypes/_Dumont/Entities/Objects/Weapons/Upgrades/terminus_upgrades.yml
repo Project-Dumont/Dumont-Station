@@ -20,7 +20,7 @@
   id: TerminusUpgradeHeatBlade
   parent: BaseTerminusUpgrade
   name: terminus blade upgrade (heat)
-  description: An improvement that attaches to the blade to heat it, allowing Terminus to do heat damage. Unfortunately, it hinders the weapon's ability to crush another things.
+  description: An improvement that attaches to the blade to heat it, allowing Terminus to do heat damage. Unfortunately, it hinders the weapon's ability to crush other things.
   components:
   - type: Sprite
     layers:

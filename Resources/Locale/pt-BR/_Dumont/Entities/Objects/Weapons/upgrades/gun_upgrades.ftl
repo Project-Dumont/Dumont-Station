@@ -9,7 +9,7 @@ ent-TerminusUpgradeAttackSpeed = melhoria de cabo da terminus (velocidade de ata
  .desc = Um substituto leve para o cabo da Terminus que permite que você faça ataques mais frequentemente.
 
 ent-TerminusUpgradeMeleeRange = melhoria de cabo da terminus (alcance de ataque físico)
- .desc = Uma melhoria que aumenta o cabo da Terminus e consequentemente aumenta o alcance do ataque corpo a corpo da arma.´
+ .desc = Uma melhoria que aumenta o cabo da Terminus e consequentemente aumenta o alcance do ataque corpo a corpo da arma.
 
 ent-SpearTelescopicUpgradeAttackSpeed = melhoria de cabo da lança telescópica (velocidade de ataque)
  .desc = Um substituto leve para o cabo da lança telescópica que permite que você faça ataques mais frequentemente.
