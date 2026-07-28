@@ -254,3 +254,6 @@ ent-WeaponPlasmaAkurra = Akurra
 ent-CounterAttackingStatusEffect = contra-ataque preparado
 
 ent-BlockCounterAttackStatusEffect = contra-ataque indisponível
+
+ent-ActionBorgDisguiseToggle = Alternar projetor camaleão
+    .desc = Ativa ou desativa o disfarce de borg de engenharia da Nanotrasen.
