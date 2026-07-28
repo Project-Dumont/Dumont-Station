@@ -3,7 +3,7 @@
   id: ClothingShoesSkatesSupercharged
   suffix: Admeme
   name: supercharged roller skates
-  description: These are the wildest roller skates you have ever seen. Under their normal appearance, you find the power of superchargers packed in them with bluespace magic. Life insurance not included.
+  description: These are the wildest roller skates you have ever seen. Under their normal appearance, you find the power of superchargers packed in them thanks to bluespace magic. Life insurance not included.
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Specific/skates.rsi

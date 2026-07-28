@@ -131,12 +131,12 @@
   suffix: admeme
   parent: [BaseWeaponRevolver, BaseMajorContraband]
   id: WeaponRevolverSilverthorn
-  description: This single-action revolver is a nefarious masterpiece, anti-materiel firepower that fits into your hand, loads five .60 rounds. 
+  description: This enormous single-action revolver is a nefarious masterpiece, anti-materiel firepower that fits into your hand. Engravings give you purpose as advantage, Snake. Loads five .60 rounds. 
   components:
   - type: Sprite
-    sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/silverthorn.rsi
   - type: Clothing
-    sprite: _Dumont/Admeme/Objects/Weapons/Guns/nefarious_revolver.rsi
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/silverthorn.rsi
   - type: Gun
     fireRate: 0.65 
     soundGunshot:
