@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 #nullable enable
 using System.Linq;
 using Content.Server.Objectives;
@@ -54,7 +58,7 @@ public sealed class ObjectiveCommandsTest
         });
 
         Assert.That(mindEnt, Is.Not.Null);
-        var mindComp = mindEnt.Value.Comp;
+        var mindComp = mindEnt!.Value.Comp;
         Assert.That(mindComp.Objectives, Is.Empty, "Dummy player started with objectives.");
 
         await pair.WaitCommand($"addobjective {playerSession.Name} {ObjectiveProtoId}");
