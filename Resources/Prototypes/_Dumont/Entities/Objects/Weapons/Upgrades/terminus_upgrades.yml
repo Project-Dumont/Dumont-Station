@@ -1,0 +1,80 @@
+- type: entity
+  id: BaseTerminusUpgrade
+  parent: [BaseItem, BaseSecurityContraband]
+  name: terminus blade upgrade
+  description: A modkit for a DT-8 Terminus.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/upgrade.rsi
+  - type: Item
+    size: Small
+  - type: GunUpgrade
+  - type: StaticPrice
+    price: 75
+  - type: Tag
+    tags:
+    - TerminusUpgradeMain
+
+- type: entity
+  id: TerminusUpgradeHeatBlade
+  parent: BaseTerminusUpgrade
+  name: terminus blade upgrade (heat)
+  description: An improvement that attaches to the blade to heat it, allowing Terminus to do heat damage. Unfortunately, it hinders the weapon's ability to crush another things.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#cd1c18"
+    - state: overlay-2
+      color: "#a47dab"
+    - state: overlay-3
+      color: "#ff355e"
+  - type: GunUpgrade
+    name: gun-upgrade-heat
+  - type: WeaponUpgradeDamage
+    bonusDamage:
+      types:
+        Heat: 10
+        Blunt: -12
+
+- type: entity
+  id: TerminusUpgradeAttackSpeed
+  parent: BaseTerminusUpgrade
+  name: terminus handle upgrade (attack speed)
+  description: A lightweight Terminus's handle replacement that allows you to make attacks more frequently.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#ffc222"
+    - state: overlay-2
+      color: "#a47dab"
+    - state: overlay-3
+      color: "#ba8e23"
+  - type: GunUpgrade
+    name: gun-upgrade-attack-speed
+  - type: WeaponUpgradeSpeed
+    attackRateMultiplier: 1.3 # 30% faster
+
+- type: entity
+  id: TerminusUpgradeMeleeRange
+  parent: BaseTerminusUpgrade
+  name: terminus handle upgrade (melee attack range)
+  description: An upgrade that increases the length of terminus's handle and consequently increases the melee range of the weapon.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#f96c1b"
+    - state: overlay-2
+      color: "#a47dab"
+    - state: overlay-3
+      color: "#e65100"
+  - type: GunUpgrade
+    name: gun-upgrade-melee-range
+  - type: WeaponUpgradeRange
+    rangeMultiplier: 1.35 # 35% more range
