@@ -1,0 +1,28 @@
+- type: entity
+  parent: [ClothingShoesBaseButcherable, ClothingShoesSkates]
+  id: ClothingShoesSkatesSupercharged
+  suffix: Admeme
+  name: supercharged roller skates
+  description: These are the wildest roller skates you have ever seen. Under their normal appearance, you find the power of superchargers packed in them with bluespace magic. Life insurance not included.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/skates.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/skates.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.04"
+      - state: equipped-FEET-reptilian # WWDP
+        offset: "0, -0.04"
+  - type: Item
+    sprite: Clothing/Shoes/Specific/skates.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 10
+    sprintModifier: 10
+  - type: Skates
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSkates
+      params:
+        variation: 0.08
