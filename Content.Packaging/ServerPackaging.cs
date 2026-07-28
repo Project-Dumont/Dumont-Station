@@ -274,8 +274,12 @@ public static class ServerPackaging
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
 
         var deps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Server.deps.json"));
+        var goobDeps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Goobstation.Server.deps.json"));
 
-        var contentAssemblies = GetContentAssemblyNamesToCopy(deps);
+        var goobContentAssemblies = GetContentAssemblyNamesToCopy(goobDeps, "Content.Goobstation.Server");
+        var contentAssemblies = GetContentAssemblyNamesToCopy(deps, "Content.Server");
+
+        contentAssemblies = contentAssemblies.Union(goobContentAssemblies);
 
         await RobustSharedPackaging.DoResourceCopy(
             Path.Combine("RobustToolbox", "bin", "Server",
@@ -304,9 +308,9 @@ public static class ServerPackaging
     }
 
     // This returns both content assemblies (e.g. Content.Server.dll) and dependencies (e.g. Npgsql)
-    private static IEnumerable<string> GetContentAssemblyNamesToCopy(DepsHandler deps)
+    private static IEnumerable<string> GetContentAssemblyNamesToCopy(DepsHandler deps, string name)
     {
-        var depsContent = deps.RecursiveGetLibrariesFrom("Content.Server").SelectMany(GetLibraryNames);
+        var depsContent = deps.RecursiveGetLibrariesFrom(name).SelectMany(GetLibraryNames);
         var depsRobust = deps.RecursiveGetLibrariesFrom("Robust.Server").SelectMany(GetLibraryNames);
 
         var depsContentExclusive = depsContent.Except(depsRobust).ToHashSet();
