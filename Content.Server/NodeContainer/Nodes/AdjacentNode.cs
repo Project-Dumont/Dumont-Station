@@ -40,9 +40,11 @@ namespace Content.Server.NodeContainer.Nodes
             if (!xform.Anchored || grid == null)
                 yield break;
 
-            var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+            var mapSystem = entMan.System<SharedMapSystem>();
+            var gridUid = xform.GridUid!.Value;
+            var gridIndex = mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
 
-            foreach (var (_, node) in NodeHelpers.GetCardinalNeighborNodes(nodeQuery, grid, gridIndex))
+            foreach (var (_, node) in NodeHelpers.GetCardinalNeighborNodes(nodeQuery, gridUid, grid, mapSystem, gridIndex))
             {
                 if (node != this)
                     yield return node;

@@ -21,6 +21,7 @@ public sealed class StationAiShopSystem : SharedStationAiShopSystem
 {
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SmokeSystem _smoke = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SpreaderSystem _spreader = default!;
@@ -70,8 +71,8 @@ public sealed class StationAiShopSystem : SharedStationAiShopSystem
     private void OnEmergencySealant(Entity<StationAiShopComponent> ent, ref StationAiSmokeActionEvent args)
     {
         var mapCoords = _transform.ToMapCoordinates(args.Target);
-        if (!_map.TryFindGridAt(mapCoords, out _, out var grid) ||
-            !grid.TryGetTileRef(args.Target, out var tileRef) ||
+        if (!_map.TryFindGridAt(mapCoords, out var gridUid, out var grid) ||
+            !_mapSystem.TryGetTileRef(gridUid, grid, args.Target, out var tileRef) ||
             tileRef.Tile.IsEmpty)
         {
             return;
@@ -80,7 +81,7 @@ public sealed class StationAiShopSystem : SharedStationAiShopSystem
         if (_spreader.RequiresFloorToSpread(args.SmokePrototype.ToString()) && _turf.IsSpace(tileRef.Tile))
             return;
 
-        var coords = grid.MapToGrid(mapCoords);
+        var coords = _mapSystem.MapToGrid(gridUid, mapCoords);
         var uid = Spawn(args.SmokePrototype, coords.SnapToGrid());
         _smoke.StartSmoke(uid, args.Solution, args.Duration, args.SpreadAmount);
         args.Handled = true;

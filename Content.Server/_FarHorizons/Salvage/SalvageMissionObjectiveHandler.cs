@@ -166,7 +166,7 @@ public abstract partial class BaseSalvageMissionObjectiveHandler
             {
                 var tile = availableTiles.RemoveSwap(Rand.Next(availableTiles.Count));
 
-                if (!AnchorableSys.TileFree(Map, tile, (int)CollisionGroup.MachineLayer,
+                if (!AnchorableSys.TileFree(Map.Owner, Map.Comp, tile, (int)CollisionGroup.MachineLayer,
                         (int)CollisionGroup.MachineLayer))
                     continue;
 
