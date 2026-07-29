@@ -59,7 +59,7 @@
     range: 5
   - type: SmokeOnTrigger #Dumont start
     duration: 8
-    spreadAmount: 40
+    spreadAmount: 20
     smokePrototype: Resin
   - type: EmitSoundOnTrigger #Dumont end
     sound:
