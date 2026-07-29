@@ -77,7 +77,7 @@
     sprite: _Funkystation/Objects/Weapons/Grenades/nitrousoxidecrystal.rsi
   - type: AdjustAirOnTrigger
     gasAdjustments:
-      nitrousoxide: 20
+      nitrousoxide: 300
     range: 1
   - type: EmitSoundOnTrigger
     sound:
