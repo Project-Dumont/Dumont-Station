@@ -3782,3 +3782,11 @@ Entries:
       message: Alterado liberação de gás do cristal de N2O. Zzz...
   id: 444
   time: '2026-07-29T15:43:45.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Bitrunning foi rebalanceado. Os discos são melhores e as recompensas
+        fazem mais sentido.
+  id: 445
+  time: '2026-07-29T16:52:52.0000000+00:00'
