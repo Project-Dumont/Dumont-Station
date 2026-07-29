@@ -61,14 +61,23 @@ using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Atmos.Components
 {
-    [RegisterComponent, NetworkedComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
     public sealed partial class FlammableComponent : Component
     {
         [DataField]
         public bool Resisting;
+
+        /// <summary>
+        /// The time at which an active <see cref="Resisting"/> will end.
+        /// Replaces the old SpawnTimer-based delay (removed from RobustToolbox v275.0.0).
+        /// </summary>
+        [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+        [AutoPausedField]
+        public TimeSpan? ResistCompleteTime;
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField]

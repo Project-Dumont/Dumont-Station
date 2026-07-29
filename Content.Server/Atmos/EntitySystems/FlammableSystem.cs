@@ -163,6 +163,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Configuration;
+using Robust.Shared.Timing;
 using Content.Goobstation.Common.Flammability;
 
 namespace Content.Server.Atmos.EntitySystems
@@ -187,6 +188,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly SpellbladeSystem _spellblade = default!; // Goobstation
         [Dependency] private readonly SharedBodySystem _body = default!; // Goobstation
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         private EntityQuery<InventoryComponent> _inventoryQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -578,18 +580,11 @@ namespace Content.Server.Atmos.EntitySystems
                 return;
 
             flammable.Resisting = true;
+            flammable.ResistCompleteTime = _timing.CurTime + TimeSpan.FromSeconds(2);
 
             _popup.PopupEntity(Loc.GetString("flammable-component-resist-message"), uid, uid);
             //goob edit stunmeta or something
             _stunSystem.KnockdownOrStun(uid, TimeSpan.FromSeconds(2f));
-
-            // TODO FLAMMABLE: Make this not use TimerComponent...
-            uid.SpawnTimer(2000, () =>
-            {
-                flammable.Resisting = false;
-                flammable.FireStacks -= flammable.FirestackFade * 10f; // EE Plasmamen Change
-                UpdateAppearance(uid, flammable);
-            });
         }
 
         public override void Update(float frameTime)
@@ -627,6 +622,14 @@ namespace Content.Server.Atmos.EntitySystems
                     continue;
                 }
                 // </Goobstation>
+
+                // Check if we finished resisting.
+                if (flammable.Resisting && _timing.CurTime >= flammable.ResistCompleteTime)
+                {
+                    flammable.Resisting = false;
+                    flammable.FireStacks -= flammable.FirestackFade * 10f; // EE Plasmamen Change
+                    UpdateAppearance(uid, flammable);
+                }
 
                 // Slowly dry ourselves off if wet.
                 if (flammable.FireStacks < 0)

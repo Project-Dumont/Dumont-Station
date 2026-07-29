@@ -24,6 +24,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
@@ -34,6 +35,7 @@ using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Light.EntitySystems
 {
@@ -45,6 +47,7 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly SharedItemSystem _item = default!;
         [Dependency] private readonly SharedPointLightSystem _lights = default!;
         [Dependency] private readonly TransformSystem _transformSystem = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         private readonly HashSet<Entity<MatchstickComponent>> _litMatches = new();
 
@@ -65,10 +68,18 @@ namespace Content.Server.Light.EntitySystems
         {
             base.Update(frameTime);
 
-            foreach (var match in _litMatches)
+            var curTime = _timing.CurTime;
+            foreach (var match in _litMatches.ToArray())
             {
                 if (match.Comp.CurrentState != SmokableState.Lit || Paused(match) || match.Comp.Deleted)
                     continue;
+
+                if (match.Comp.BurnOutTime is { } burnOut && curTime >= burnOut)
+                {
+                    SetState(match, SmokableState.Burnt);
+                    _litMatches.Remove(match);
+                    continue;
+                }
 
                 var xform = Transform(match);
 
@@ -110,12 +121,8 @@ namespace Content.Server.Light.EntitySystems
 
             // Change state
             SetState((matchstick, component), SmokableState.Lit); // Shitmed Change
+            component.BurnOutTime = _timing.CurTime + TimeSpan.FromSeconds(component.Duration);
             _litMatches.Add(matchstick);
-            matchstick.Owner.SpawnTimer(component.Duration * 1000, delegate
-            {
-                SetState((matchstick, component), SmokableState.Burnt); // Shitmed Change
-                _litMatches.Remove(matchstick);
-            });
         }
 
         // Shitmed Change Start

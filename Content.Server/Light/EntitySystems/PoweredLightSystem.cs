@@ -178,6 +178,22 @@ namespace Content.Server.Light.EntitySystems
         private static readonly TimeSpan ThunkDelay = TimeSpan.FromSeconds(2);
         public const string LightBulbContainer = "light_bulb";
 
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+
+            var curTime = _gameTiming.CurTime;
+            var query = EntityQueryEnumerator<PoweredLightComponent>();
+            while (query.MoveNext(out var uid, out var light))
+            {
+                if (light.StopBlinkingTime is { } stop && curTime >= stop)
+                {
+                    light.StopBlinkingTime = null;
+                    ToggleBlinkingLight(uid, light, false);
+                }
+            }
+        }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -459,10 +475,7 @@ namespace Content.Server.Light.EntitySystems
             light.LastGhostBlink = time;
 
             ToggleBlinkingLight(uid, light, true);
-            uid.SpawnTimer(light.GhostBlinkingTime, () =>
-            {
-                ToggleBlinkingLight(uid, light, false);
-            });
+            light.StopBlinkingTime = time + light.GhostBlinkingTime;
 
             args.Handled = true;
         }

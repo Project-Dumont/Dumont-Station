@@ -16,9 +16,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Threading;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Spawners.Components;
 
@@ -28,6 +28,7 @@ namespace Content.Server.Spawners.Components;
 /// and min/max number of entities to spawn.
 /// </summary>
 [RegisterComponent, EntityCategory("Spawner")]
+[AutoGenerateComponentPause]
 public sealed partial class TimedSpawnerComponent : Component, ISerializationHooks
 {
     /// <summary>
@@ -62,7 +63,12 @@ public sealed partial class TimedSpawnerComponent : Component, ISerializationHoo
     [DataField]
     public int MaximumEntitiesSpawned = 1;
 
-    public CancellationTokenSource? TokenSource;
+    /// <summary>
+    /// The time at which the current interval will have elapsed and entities may be spawned.
+    /// Replaces the old SpawnRepeatingTimer-based delay (removed from RobustToolbox v275.0.0).
+    /// </summary>
+    [AutoPausedField]
+    public TimeSpan NextFire = TimeSpan.Zero;
 
     void ISerializationHooks.AfterDeserialization()
     {

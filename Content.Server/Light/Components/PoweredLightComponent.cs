@@ -192,6 +192,13 @@ namespace Content.Server.Light.Components
         [ViewVariables]
         public TimeSpan? LastGhostBlink;
 
+        /// <summary>
+        /// The time at which ghost-triggered blinking will stop.
+        /// Replaces the old SpawnTimer-based delay (removed from RobustToolbox v275.0.0).
+        /// </summary>
+        [ViewVariables]
+        public TimeSpan? StopBlinkingTime;
+
         [DataField("onPort", customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
         public string OnPort = "On";
 
