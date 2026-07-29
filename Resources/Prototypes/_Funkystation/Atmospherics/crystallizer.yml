@@ -174,9 +174,9 @@
   - 0     # tritium
   - 0     # vapor
   - 0     # miasma
-  - 150   # n2o
+  - 400   # n2o
   - 0     # frezon
-  - 30    # bz
+  - 50    # bz
   - 0     # healium
   - 0     # nitrium
   - 0     # pluox
