@@ -24,7 +24,7 @@
   description: bitrunning-domain-breeze-bay-desc
   difficulty: Peaceful
   serverRewardPoints: 1
-  bitrunningRewardPoints: 120
+  bitrunningRewardPoints: 60
   mapPath: /Maps/_Orion/Bitrun/breeze-bay.yml
   objectiveType: CatchFish
   objectiveTarget: 5
@@ -35,7 +35,7 @@
   description: bitrunning-domain-grassland-hunt-desc
   difficulty: Peaceful
   serverRewardPoints: 1
-  bitrunningRewardPoints: 150
+  bitrunningRewardPoints: 45
   mapPath: /Maps/_Orion/Bitrun/grassland-hunt.yml
   objectiveType: EliminateEnemies
   objectiveTarget: 8
@@ -65,7 +65,7 @@
   difficulty: Easy
   cost: 1
   serverRewardPoints: 3
-  bitrunningRewardPoints: 250
+  bitrunningRewardPoints: 150
   completionLoot:
     PlushieAbductor: 1
   isModular: true
@@ -79,7 +79,7 @@
   difficulty: Easy
   cost: 1
   serverRewardPoints: 3
-  bitrunningRewardPoints: 300
+  bitrunningRewardPoints: 150
   forcedLoadout: BitrunnerAvatarSecurityOfficerMODGear
   forcedLoadoutSpecie:
     Plasmaman: BitrunnerAvatarSecurityOfficerMODPlasmamanGear
@@ -106,7 +106,7 @@
   difficulty: Medium
   cost: 2
   serverRewardPoints: 4
-  bitrunningRewardPoints: 600
+  bitrunningRewardPoints: 250
   completionLoot:
     PlushieRouny: 1
   forcedLoadout: BitrunnerAvatarXenonautenGear
@@ -129,7 +129,7 @@
   difficulty: Medium
   cost: 2
   serverRewardPoints: 4
-  bitrunningRewardPoints: 500
+  bitrunningRewardPoints: 180
   completionLoot:
     FoodPizzaMeatSlice: 1
   isModular: true
@@ -143,7 +143,7 @@
   difficulty: Medium
   cost: 2
   serverRewardPoints: 4
-  bitrunningRewardPoints: 500
+  bitrunningRewardPoints: 220
   completionLoot:
     IngotGold1: 1
   mapPath: /Maps/_Orion/Bitrun/corsair-cove.yml
@@ -165,7 +165,7 @@
   difficulty: Hard
   cost: 3
   serverRewardPoints: 6
-  bitrunningRewardPoints: 1000
+  bitrunningRewardPoints: 600
   mapPath: /Maps/_Orion/Bitrun/zealot-arena.yml
   objectiveType: EliminateEnemies
 
@@ -176,7 +176,7 @@
   difficulty: Hard
   cost: 3
   serverRewardPoints: 6
-  bitrunningRewardPoints: 1000
+  bitrunningRewardPoints: 600
   forcedLoadout: BitrunnerAvatarERTSecurityGear
   forcedLoadoutSpecie:
     Plasmaman: BitrunnerAvatarERTSecurityPlasmamanGear
@@ -195,7 +195,7 @@
   difficulty: Extreme
   cost: 5
   serverRewardPoints: 8
-  bitrunningRewardPoints: 1500
+  bitrunningRewardPoints: 900
   isModular: true
   completionLoot:
     FoodSnackLollypopWrappedMysteryEvil: 3
