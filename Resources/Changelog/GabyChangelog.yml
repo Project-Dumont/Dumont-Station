@@ -3736,3 +3736,43 @@ Entries:
         conhecimento comum via metashield
   id: 438
   time: '2026-07-24T04:33:57.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Acesso de correio concedido a técnicos de carga até que o trabalho
+        separado seja introduzido.
+    - type: Fix
+      message: Airlock de vidro da virologia possui acesso adequado agora.
+  id: 439
+  time: '2026-07-25T05:17:56.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Remove
+      message: removido canvas
+  id: 440
+  time: '2026-07-25T22:31:53.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: rendimento de minerios foram buffados.
+  id: 441
+  time: '2026-07-25T23:25:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Adicionado circuitos de dispensores de energia ao torno da Sci.
+    - type: Remove
+      message: Removido dispensores químicos de energia roundstart.
+    - type: Tweak
+      message: >-
+        Dispensor de energia agora é pesquisável pela Sci na tecnologia de
+        química bluespace.
+  id: 442
+  time: '2026-07-26T22:28:45.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas artes ao lobby.
+  id: 443
+  time: '2026-07-29T06:07:37.0000000+00:00'
