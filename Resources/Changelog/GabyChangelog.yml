@@ -3770,3 +3770,9 @@ Entries:
         química bluespace.
   id: 442
   time: '2026-07-26T22:28:45.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas artes ao lobby.
+  id: 443
+  time: '2026-07-29T06:07:37.0000000+00:00'
