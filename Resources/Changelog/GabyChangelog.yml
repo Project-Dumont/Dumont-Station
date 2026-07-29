@@ -3776,3 +3776,9 @@ Entries:
       message: Novas artes ao lobby.
   id: 443
   time: '2026-07-29T06:07:37.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Alterado liberação de gás do cristal de N2O. Zzz...
+  id: 444
+  time: '2026-07-29T15:43:45.0000000+00:00'
