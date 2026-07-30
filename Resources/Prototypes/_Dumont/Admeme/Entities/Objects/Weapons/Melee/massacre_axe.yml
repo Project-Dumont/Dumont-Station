@@ -3,7 +3,7 @@
   suffix: Admeme
   name: the massacre's axe
   parent: [FireAxe, BaseMagicalContraband]
-  description: The executioner's best friend, those unfortunate to be on the receiving end of the massecre are ignited in flames by this cruel weapon.
+  description: The executioner's best friend, those unfortunate to be on the receiving end of the massacre are ignited in flames by this cruel weapon.
   components:
   - type: MeleeWeapon
     heavyStaminaCost: 5
@@ -32,7 +32,7 @@
         Slash: 30
         Heat: 25
         Structural: 35
-  - type: Boomerang # Funny test
+  - type: Boomerang # Yes because it's funny
   - type: Sprite
     sprite: _Dumont/Admeme/Objects/Weapons/Melee/massacre_axe.rsi
     state: icon

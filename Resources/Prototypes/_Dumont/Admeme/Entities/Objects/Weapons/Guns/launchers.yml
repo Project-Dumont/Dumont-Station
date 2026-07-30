@@ -2,7 +2,7 @@
   parent: [ BaseWeaponLauncher, BaseGunWieldable, BaseSyndicateContraband ]
   id: WeaponLauncherHydraEvil
   suffix: Admeme
-  name: Evil Hybra
+  name: Evil Hydra
   description: PLOOP... FSSSSSS... SLIP!
   components:
   - type: Sprite

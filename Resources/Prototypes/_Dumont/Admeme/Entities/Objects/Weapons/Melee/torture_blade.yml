@@ -14,7 +14,7 @@
   - type: Item
     sprite: _Dumont/Admeme/Objects/Weapons/Melee/torture_blade.rsi
     storedSprite:
-      state: storage
+      state: icon
       sprite: _Dumont/Admeme/Objects/Weapons/Melee/torture_blade.rsi
   - type: MeleeWeapon
     heavyStaminaCost: 2
