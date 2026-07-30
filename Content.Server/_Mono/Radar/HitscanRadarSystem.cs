@@ -12,7 +12,6 @@ namespace Content.Server._Mono.Radar;
 /// </summary>
 public sealed partial class HitscanRadarSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly RadarBlipSystem _radarBlipSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;

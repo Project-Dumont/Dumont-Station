@@ -61,7 +61,6 @@ public sealed class AristocratSystem : EntitySystem
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
     [Dependency] private readonly IPrototypeManager _prot = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -277,7 +276,7 @@ public sealed class AristocratSystem : EntitySystem
             {
                 var offset = new Vector2(x, y);
 
-                var pos = coords.Offset(offset).SnapToGrid(EntityManager, _mapMan);
+                var pos = coords.Offset(offset).SnapToGrid(EntityManager);
                 tiles.Add(pos);
             }
         }

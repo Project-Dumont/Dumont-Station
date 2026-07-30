@@ -20,7 +20,6 @@ namespace Content.Server._DV.Silicons;
 public sealed class StationAiShopSystem : SharedStationAiShopSystem
 {
     [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SmokeSystem _smoke = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -71,7 +70,7 @@ public sealed class StationAiShopSystem : SharedStationAiShopSystem
     private void OnEmergencySealant(Entity<StationAiShopComponent> ent, ref StationAiSmokeActionEvent args)
     {
         var mapCoords = _transform.ToMapCoordinates(args.Target);
-        if (!_map.TryFindGridAt(mapCoords, out var gridUid, out var grid) ||
+        if (!_mapSystem.TryFindGridAt(mapCoords, out var gridUid, out var grid) ||
             !_mapSystem.TryGetTileRef(gridUid, grid, args.Target, out var tileRef) ||
             tileRef.Tile.IsEmpty)
         {

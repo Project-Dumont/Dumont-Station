@@ -857,7 +857,6 @@ sealed class Explosion
         int maxTileBreak,
         bool canCreateVacuum,
         IEntityManager entMan,
-        IMapManager mapMan,
         EntityUid visualEnt,
         EntityUid? cause,
         SharedMapSystem mapSystem)

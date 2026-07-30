@@ -48,7 +48,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
 {
     [Dependency] private readonly ConstructionSystem _construction = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
 
     public override void Initialize()

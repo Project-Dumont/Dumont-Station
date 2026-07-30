@@ -29,7 +29,7 @@ namespace Content.Client._Mono.FireControl.UI;
 
 public sealed class FireControlNavControl : BaseShuttleControl
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapManager = default!;
     private readonly SharedShuttleSystem _shuttles;
     private readonly SharedTransformSystem _transform;
     private readonly IEntitySystemManager _sysManager = default!;

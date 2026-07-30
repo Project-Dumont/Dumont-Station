@@ -51,7 +51,7 @@ public sealed partial class CultHealingSourceSystem : EntitySystem
 
 	// Dependencies
 	[Dependency] private readonly SharedStackSystem _stack = default!;
-	[Dependency] private readonly IMapManager _mapManager = default!;
+	[Dependency] private readonly SharedMapSystem _mapManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 	[Dependency] private readonly DamageableSystem _damageableSystem = default!;

@@ -183,6 +183,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private   readonly IPrototypeManager _protoManager = default!;
     [Dependency] private   readonly IRobustRandom _random = default!;
     [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
+    [Dependency] protected readonly SharedMapSystem MapManager = default!;
     [Dependency] protected readonly ActionBlockerSystem Blocker = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] private   readonly SharedHandsSystem _hands = default!;
