@@ -16,18 +16,12 @@ using Robust.Shared.Serialization;
 namespace Content.Goobstation.Shared.Blob;
 
 #region BlobChemTypedStorage
-[DataDefinition, Serializable, NetSerializable]
 public abstract partial class BlobChemTypedStorage<T> : IEnumerable
 {
-    [DataField]
     public virtual T BlazingOil { get; set; } = default!;
-    [DataField]
     public virtual T ReactiveSpines { get; set; }= default!;
-    [DataField]
     public virtual T RegenerativeMateria { get; set; }= default!;
-    [DataField]
     public virtual T ExplosiveLattice { get; set; }= default!;
-    [DataField]
     public virtual T ElectromagneticWeb { get; set; }= default!;
 
     // Indexer to access fields via BlobChemType enumeration
@@ -91,11 +85,19 @@ public abstract partial class BlobChemTypedStorage<T> : IEnumerable
 [DataDefinition, Serializable, NetSerializable]
 public sealed partial class BlobChemColors : BlobChemTypedStorage<Color>
 {
-
+    [DataField] public override Color BlazingOil { get; set; } = default!;
+    [DataField] public override Color ReactiveSpines { get; set; } = default!;
+    [DataField] public override Color RegenerativeMateria { get; set; } = default!;
+    [DataField] public override Color ExplosiveLattice { get; set; } = default!;
+    [DataField] public override Color ElectromagneticWeb { get; set; } = default!;
 }
 
 [DataDefinition, Serializable, NetSerializable]
 public sealed partial class BlobChemDamage : BlobChemTypedStorage<DamageSpecifier>
 {
-
+    [DataField] public override DamageSpecifier BlazingOil { get; set; } = default!;
+    [DataField] public override DamageSpecifier ReactiveSpines { get; set; } = default!;
+    [DataField] public override DamageSpecifier RegenerativeMateria { get; set; } = default!;
+    [DataField] public override DamageSpecifier ExplosiveLattice { get; set; } = default!;
+    [DataField] public override DamageSpecifier ElectromagneticWeb { get; set; } = default!;
 }

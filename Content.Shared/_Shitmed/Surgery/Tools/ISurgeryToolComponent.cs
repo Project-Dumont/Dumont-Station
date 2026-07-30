@@ -7,9 +7,9 @@
 
 namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 
-public interface ISurgeryToolComponent
+[ImplicitDataDefinitionForInheritors]
+public partial interface ISurgeryToolComponent
 {
-    [DataField]
     public string ToolName { get; }
 
     /// <summary>

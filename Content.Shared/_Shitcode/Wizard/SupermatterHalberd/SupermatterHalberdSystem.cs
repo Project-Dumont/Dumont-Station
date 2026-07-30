@@ -105,9 +105,14 @@ public sealed class SupermatterHalberdSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed partial class SmHalberdExecuteDoAfterEvent(NetEntity? rayEffect) : DoAfterEvent
+public sealed partial class SmHalberdExecuteDoAfterEvent : DoAfterEvent
 {
-    public NetEntity? RayEffect = rayEffect;
+    public NetEntity? RayEffect;
+
+    public SmHalberdExecuteDoAfterEvent(NetEntity? rayEffect)
+    {
+        RayEffect = rayEffect;
+    }
 
     public SmHalberdExecuteDoAfterEvent() : this(null) { }
 

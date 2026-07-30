@@ -54,9 +54,14 @@ public enum CarvingKnifeUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CarveRuneDoAfterEvent(ProtoId<RuneCarvingPrototype> carving) : DoAfterEvent
+public sealed partial class CarveRuneDoAfterEvent : DoAfterEvent
 {
-    public ProtoId<RuneCarvingPrototype> Carving = carving;
+    public ProtoId<RuneCarvingPrototype> Carving;
+
+    public CarveRuneDoAfterEvent(ProtoId<RuneCarvingPrototype> carving)
+    {
+        Carving = carving;
+    }
 
     public CarveRuneDoAfterEvent() : this(default) { }
 

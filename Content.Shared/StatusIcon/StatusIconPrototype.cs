@@ -91,7 +91,7 @@ namespace Content.Shared.StatusIcon;
 /// A data structure that holds relevant
 /// information for status icons.
 /// </summary>
-[Virtual, DataDefinition]
+[Virtual, ImplicitDataDefinitionForInheritors]
 public partial class StatusIconData : IComparable<StatusIconData>
 {
     /// <summary>
