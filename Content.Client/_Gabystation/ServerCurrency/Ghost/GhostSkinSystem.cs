@@ -68,7 +68,7 @@ public sealed class GhostSkinSystem : SharedGhostSkinSystem
 
         _sprite.LayerSetSprite(sprEnt, layer, proto.Sprite);
         sprite.LayerSetShader(layer, "unshaded");
-        _sprite.LayerSetColor(sprEnt, layer, Color.TryFromHex(proto.Color) ?? Color.White);
+        _sprite.LayerSetColor(sprEnt, layer, Color.TryFromHex(proto.Color, out var protoColor) ? protoColor : Color.White);
         _sprite.LayerSetScale(sprEnt, layer, proto.Scale);
     }
 
