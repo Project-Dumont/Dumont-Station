@@ -25,7 +25,7 @@
   parent: BaseItem #Dumont
   id: HealiumCrystal
   name: healium crystal
-  description: A crystal made from healium gas. It's cold to the touch.
+  description: A crystal made from healium gas. It's cold to the touch and looks strangely sweet and appetizing.
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Weapons/Grenades/healiumcrystal.rsi
