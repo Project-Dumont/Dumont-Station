@@ -293,7 +293,7 @@
   id: VendorClothingOuterHardsuitSalvage
   productEntity: ClothingOuterHardsuitSalvage
   cost:
-    SalvageTicket: 100
+    SalvageTicket: 300
   categories:
   - SalvageEquipment
   conditions:
@@ -313,7 +313,7 @@
   id: VendorClothingOuterHardsuitMaxim
   productEntity: ClothingOuterHardsuitMaxim
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 1000
   categories:
   - SalvageEquipment
   conditions:
@@ -367,7 +367,7 @@
   id: VendorMedkitAdvancedFilled
   productEntity: MedkitAdvancedFilled
   cost:
-    SalvageTicket: 150
+    SalvageTicket: 100
   categories:
   - SalvageConsumeables
   conditions:
@@ -389,7 +389,7 @@
   id: VendorMagazinePistolSubMachineGunImprovised
   productEntity: MagazinePistolSubMachineGunImprovised
   cost:
-    SalvageTicket: 40
+    SalvageTicket: 30
   categories:
   - SalvageConsumeables
   conditions:
@@ -399,7 +399,7 @@
   id: VendorMagazineShotgunEmpty
   productEntity: MagazineShotgunEmpty
   cost:
-    SalvageTicket: 50
+    SalvageTicket: 20
   categories:
   - SalvageConsumeables
   conditions:
@@ -410,7 +410,7 @@
   id: VendorBoxMagnum
   productEntity: MagazineBoxMagnum
   cost:
-    SalvageTicket: 70
+    SalvageTicket: 30
   categories:
   - SalvageConsumeables
   conditions:
@@ -420,7 +420,7 @@
   id: VendorBoxLightRifle
   productEntity: MagazineBoxLightRifle
   cost:
-    SalvageTicket: 90
+    SalvageTicket: 30
   categories:
   - SalvageConsumeables
   conditions:
@@ -430,7 +430,7 @@
   id: VendorMagazineBoxImprovisedPistol
   productEntity: MagazineBoxImprovisedPistol
   cost:
-    SalvageTicket: 150
+    SalvageTicket: 50
   categories:
   - SalvageConsumeables
   conditions:
@@ -462,7 +462,7 @@
   id: VendorFulton
   productEntity: Fulton
   cost:
-    SalvageTicket: 150
+    SalvageTicket: 100
   categories:
   - SalvageUtilities
   conditions:

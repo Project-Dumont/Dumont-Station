@@ -36,6 +36,13 @@ bitrunning-disk-popup-selected = Selected: { $option }
 bitrunning-disk-examine-unselected = [color=yellow]Use in hand to choose one option.[/color]
 bitrunning-disk-examine-selected = [color=lightblue]Selected: { $option }.[/color]
 
+bitrunning-disk-option-combat-medipen = Combat medipen
+bitrunning-disk-option-anaconda = Anaconda
+bitrunning-disk-option-pulse-pistol = Pulse pistol
+bitrunning-disk-option-pressure-modkit = Pressure modkit
+bitrunning-disk-option-hardsuit-riot = Riot hardsuit
+bitrunning-disk-option-hardsuit-standard = Combat hardsuit
+bitrunning-disk-option-hardsuit-medical = Medical hardsuit
 bitrunning-disk-option-pizza-box = Pizza box
 bitrunning-disk-option-medical-beam-gun = Medical beam gun
 bitrunning-disk-option-c4 = C-4
@@ -62,6 +69,10 @@ bitrunning-disk-option-proto-kinetic-crusher = Proto-kinetic crusher
 bitrunning-disk-option-proto-kinetic-glaive = Proto-kinetic glaive
 bitrunning-disk-option-proto-kinetic-hammer = Proto-kinetic hammer
 bitrunning-disk-option-proto-kinetic-machete = Proto-kinetic machete
+bitrunning-disk-option-pka = Proto-kinetic accelerator
+bitrunning-disk-option-pka-pistol = Proto-kinetic pistol
+bitrunning-disk-option-pka-shotgun = Proto-kinetic shotgun
+bitrunning-disk-option-pka-repeater = Proto-kinetic repeater
 
 bitrunning-ui-title = Quantum Console
 bitrunning-ui-label-status = Status:

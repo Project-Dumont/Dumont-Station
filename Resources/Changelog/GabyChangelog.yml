@@ -3736,3 +3736,104 @@ Entries:
         conhecimento comum via metashield
   id: 438
   time: '2026-07-24T04:33:57.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Acesso de correio concedido a técnicos de carga até que o trabalho
+        separado seja introduzido.
+    - type: Fix
+      message: Airlock de vidro da virologia possui acesso adequado agora.
+  id: 439
+  time: '2026-07-25T05:17:56.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Remove
+      message: removido canvas
+  id: 440
+  time: '2026-07-25T22:31:53.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: rendimento de minerios foram buffados.
+  id: 441
+  time: '2026-07-25T23:25:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Adicionado circuitos de dispensores de energia ao torno da Sci.
+    - type: Remove
+      message: Removido dispensores químicos de energia roundstart.
+    - type: Tweak
+      message: >-
+        Dispensor de energia agora é pesquisável pela Sci na tecnologia de
+        química bluespace.
+  id: 442
+  time: '2026-07-26T22:28:45.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas artes ao lobby.
+  id: 443
+  time: '2026-07-29T06:07:37.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Alterado liberação de gás do cristal de N2O. Zzz...
+  id: 444
+  time: '2026-07-29T15:43:45.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Bitrunning foi rebalanceado. Os discos são melhores e as recompensas
+        fazem mais sentido.
+  id: 445
+  time: '2026-07-29T16:52:52.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionada 3 novas dungeons para os Exploradores.
+    - type: Add
+      message: Adicionado 3 novos biomas.
+    - type: Add
+      message: >-
+        Nova missão para os Exploradores, Desarme. É uma missão rara no qual
+        terão que achar os códigos de desativação e inserir nos computadores
+        certos para evitar a autodestruição da instalação.
+    - type: Add
+      message: 3 novos inimigos e 2 novos bosses, e um miniboss com um sub-boss.
+    - type: Tweak
+      message: Várias traduções.
+    - type: Tweak
+      message: Spawn do ammotech reduzido.
+    - type: Tweak
+      message: Preço de alguns itens foram alterados.
+    - type: Tweak
+      message: >-
+        Agora a dificuldade impossivel pode ser rodada (Disponível após 60
+        minutos).
+    - type: Fix
+      message: >-
+        Agora as missões devem ser geradas normalmente, não gerando apenas 1 ou
+        2 missões e em alguns casos 0.
+  id: 446
+  time: '2026-07-30T07:44:12.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Fix
+      message: Corrigido bug onde o texto ao examinar no chat não era formatado.
+  id: 447
+  time: '2026-07-30T09:10:12.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Tweak
+      message: Faz o cvar do sprint funcionar.
+  id: 448
+  time: '2026-07-30T09:22:19.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Atmosiano consegue sintetizar folha de plasma de uma maneira mais fácil.
+  id: 449
+  time: '2026-07-30T09:24:07.0000000+00:00'
