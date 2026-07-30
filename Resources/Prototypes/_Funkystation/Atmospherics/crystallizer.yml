@@ -174,9 +174,9 @@
   - 0     # tritium
   - 0     # vapor
   - 0     # miasma
-  - 150   # n2o
+  - 400   # n2o
   - 0     # frezon
-  - 30    # bz
+  - 50    # bz
   - 0     # healium
   - 0     # nitrium
   - 0     # pluox
@@ -223,8 +223,8 @@
   id: plasmaSheetRecipe
   name: Plasma Sheet
   minimumTemperature: 10
-  maximumTemperature: 20
-  energyRelease: 3500000
+  maximumTemperature: 50
+  energyRelease: 525000
   products:
     SheetPlasma1: 1
   dangerous: false
@@ -232,7 +232,7 @@
   - 0     # oxygen
   - 0     # nitrogen
   - 0     # carbon dioxide
-  - 450   # plasma
+  - 200   # plasma
   - 0     # tritium
   - 0     # vapor
   - 0     # miasma

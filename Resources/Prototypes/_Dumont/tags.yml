@@ -56,3 +56,6 @@
 
 - type: Tag
   id: WeaponPistolDahlia
+  
+- type: Tag
+  id: XenoDungeon
