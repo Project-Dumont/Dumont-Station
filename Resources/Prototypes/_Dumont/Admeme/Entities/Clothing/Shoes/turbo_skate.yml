@@ -18,9 +18,10 @@
   - type: Item
     sprite: Clothing/Shoes/Specific/skates.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 10
-    sprintModifier: 10
+    walkModifier: 0.10 # Would be be very funny if the description make you think it makes you faster, but in reality it makes you slow as hell, and can't take them off.
+    sprintModifier: 0.20
   - type: Skates
+  - type: SelfUnremovableClothing
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSkates
