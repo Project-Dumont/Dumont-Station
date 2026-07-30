@@ -3790,3 +3790,32 @@ Entries:
         fazem mais sentido.
   id: 445
   time: '2026-07-29T16:52:52.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionada 3 novas dungeons para os Exploradores.
+    - type: Add
+      message: Adicionado 3 novos biomas.
+    - type: Add
+      message: >-
+        Nova missão para os Exploradores, Desarme. É uma missão rara no qual
+        terão que achar os códigos de desativação e inserir nos computadores
+        certos para evitar a autodestruição da instalação.
+    - type: Add
+      message: 3 novos inimigos e 2 novos bosses, e um miniboss com um sub-boss.
+    - type: Tweak
+      message: Várias traduções.
+    - type: Tweak
+      message: Spawn do ammotech reduzido.
+    - type: Tweak
+      message: Preço de alguns itens foram alterados.
+    - type: Tweak
+      message: >-
+        Agora a dificuldade impossivel pode ser rodada (Disponível após 60
+        minutos).
+    - type: Fix
+      message: >-
+        Agora as missões devem ser geradas normalmente, não gerando apenas 1 ou
+        2 missões e em alguns casos 0.
+  id: 446
+  time: '2026-07-30T07:44:12.0000000+00:00'
