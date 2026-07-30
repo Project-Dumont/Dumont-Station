@@ -3825,3 +3825,9 @@ Entries:
       message: Corrigido bug onde o texto ao examinar no chat não era formatado.
   id: 447
   time: '2026-07-30T09:10:12.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Tweak
+      message: Faz o cvar do sprint funcionar.
+  id: 448
+  time: '2026-07-30T09:22:19.0000000+00:00'
