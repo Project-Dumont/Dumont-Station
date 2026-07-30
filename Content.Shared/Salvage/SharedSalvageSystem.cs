@@ -115,17 +115,13 @@ public abstract partial class SharedSalvageSystem : EntitySystem
     {
         var mods = _proto.EnumeratePrototypes<T>().Where(x => x.Difficulties == null || x.Difficulties.Contains(difficultyId)).ToList();
 
-        Logger.Info($"==== GetMod<{typeof(T).Name}> ====");
-        Logger.Info($"Difficulty: {difficultyId}");
-        Logger.Info($"Mods encontrados: {mods.Count}");
-        
+
         mods.Sort((x, y) => string.Compare(x.ID, y.ID, StringComparison.Ordinal));
         rand.Shuffle(mods);
 
         foreach (var mod in mods)
         {
-            Logger.Info($"- {mod.ID}");
-            
+
             if (mod.Cost > rating)
                 continue;
 
@@ -133,7 +129,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
 
             return mod;
         }
- 
+
         throw new InvalidOperationException();
     }
 }
