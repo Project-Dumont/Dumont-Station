@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -45,7 +49,7 @@ public sealed partial class QuantumServerComponent : Component
     public EntProtoId RewardCachePrototype = "CrateBitrunSecureReward";
 
     [DataField, AutoNetworkedField]
-    public TimeSpan Cooldown = TimeSpan.FromMinutes(2);
+    public TimeSpan Cooldown = TimeSpan.FromMinutes(1);
 
     [DataField, AutoNetworkedField]
     public TimeSpan CooldownEndTime;

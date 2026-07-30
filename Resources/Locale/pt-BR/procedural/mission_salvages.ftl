@@ -26,5 +26,10 @@ salvage-mission-objective-description-purge = A destruição da base deixou regi
 salvage-mission-objective-announcement-purge = Sua missão é destruir {$numTargets} pastas de documentos deixadas na base. Se você recuperar alguma pasta adicional, também será pago pela destruição delas.
 
 salvage-mission-objective-name-shutdown = Shutdown
-salvage-mission-objective-description-shutdown = Dispositivos ilegais foram enconrados em uma base planetária. Destrua eles.
+salvage-mission-objective-description-shutdown = Dispositivos ilegais foram encontrados em uma base planetária. Destrua eles.
 salvage-mission-objective-announcement-shutdown = Sua missão é encontrar e destruir {$numTargets} dispositivos suspeitos. Você receberá um pagamento extra por qualquer dispositivo adicional que destruir.
+
+salvage-mission-objective-name-disarm = Desarme
+salvage-mission-objective-description-disarm = Desative o protocolo de autodestruição de uma fábrica automatizada.
+salvage-mission-objective-announcement-disarm = Sua missão é encontrar os códigos de desarme e inseri-los nos consoles de segurança para interromper a sequência de autodestruição. Há um total de {$numTargets} códigos.
+salvage-mission-objective-disarm-paper = O seu código de desarme do turno é: #{$code}
