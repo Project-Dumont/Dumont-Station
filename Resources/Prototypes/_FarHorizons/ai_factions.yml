@@ -3,6 +3,7 @@
   hostile: # Notably not hostile to borgs
     - NanoTrasen
     - Syndicate
+    - Abyss
     - Passive
     - PetsNT
     - Zombie
