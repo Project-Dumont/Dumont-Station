@@ -3819,3 +3819,9 @@ Entries:
         2 missões e em alguns casos 0.
   id: 446
   time: '2026-07-30T07:44:12.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Fix
+      message: Corrigido bug onde o texto ao examinar no chat não era formatado.
+  id: 447
+  time: '2026-07-30T09:10:12.0000000+00:00'
