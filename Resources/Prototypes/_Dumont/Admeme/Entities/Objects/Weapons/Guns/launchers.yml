@@ -1,0 +1,41 @@
+- type: entity
+  parent: [ BaseWeaponLauncher, BaseGunWieldable, BaseSyndicateContraband ]
+  id: WeaponLauncherHydraEvil
+  suffix: Admeme
+  name: Evil Hybra
+  description: PLOOP... FSSSSSS... SLIP!
+  components:
+  - type: Sprite
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/evil_hydra.rsi
+    layers:
+    - state: icon
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Clothing
+    sprite: _Dumont/Admeme/Objects/Weapons/Guns/evil_hydra.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: GunRequiresWield
+  - type: ContainerContainer
+    containers:
+      revolver-ammo: !type:Container
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+      - Grenade
+    proto: GrenadeCleanade
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+    soundEject:
+      path: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
