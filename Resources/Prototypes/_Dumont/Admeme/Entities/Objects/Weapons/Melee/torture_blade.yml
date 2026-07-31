@@ -23,6 +23,7 @@
     damage:
       types:
         Slash: 20
+    armorPenetration: 0.25
   - type: Reflect
     reflectProb: 0.25
   - type: EmbeddableProjectile
@@ -61,6 +62,6 @@
     energy: 1
     netsync: true
   - type: BackStab
-    damageMultiplier: 2
+    multiplier: 2
   - type: UnholyItem
     punish: true

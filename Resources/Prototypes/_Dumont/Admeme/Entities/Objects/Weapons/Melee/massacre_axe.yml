@@ -14,12 +14,14 @@
         Slash: 15
         Heat: 10
         Structural: 50
+      armorPenetration: 0.5
   - type: IncreaseDamageOnWield
     damage:
       types:
         Slash: 15
         Heat: 15
         Structural: 100
+    armorPenetration: 0.5
   - type: IgniteOnMeleeHit
     fireStacks: 5
   - type: Reflect

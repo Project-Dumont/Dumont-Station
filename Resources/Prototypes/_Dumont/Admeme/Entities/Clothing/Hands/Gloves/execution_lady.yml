@@ -46,12 +46,16 @@
               types:
                 Blunt: 25
                 Structural: 25
+            armorPenetration: 0.5
             mustBeEquippedToUse: true
             soundHit:
               path: /Audio/_Goobstation/Weapons/Effects/metalcrush.ogg
             canWideSwing: false
             soundStateActivate:
               path: /Audio/Items/sheath.ogg
+            params:
+              variation: 0.125
+              volume: -5
           - type: StaminaDamageOnHit
             damage: 15
             overtime: 45
@@ -69,6 +73,7 @@
               types:
                 Slash: 20
                 Structural: 15
+            armorPenetration: 0.5
             mustBeEquippedToUse: true
             soundHit:
               path: /Audio/Weapons/bladeslice.ogg
@@ -81,3 +86,5 @@
             netsync: true
         soundStateActivate:
           path: /Audio/Items/unsheath.ogg
+          params:
+            variation: 0.125
