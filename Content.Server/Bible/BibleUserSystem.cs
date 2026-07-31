@@ -57,6 +57,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components; // Trauma
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
@@ -166,8 +167,12 @@ namespace Content.Server.Bible
             if (!TryComp(uid, out UseDelayComponent? useDelay) || _delay.IsDelayed((uid, useDelay)))
                 return;
 
-            if (args.Target == null || args.Target == args.User || _mobStateSystem.IsDead(args.Target.Value)) // Trauma - was IsAlive bible heals crit targets now
+            // <Trauma> - Was IsAlive now works on critical, Added MobStateComponent to only targets creatures.
+            if (args.Target == null || args.Target == args.User ||
+                !HasComp<MobStateComponent>(args.Target.Value) ||
+                _mobStateSystem.IsDead(args.Target.Value))
                 return; // STOP WITH USELESS BRACES!! - Goobstation
+            // </Trauma>
 
             // <Trauma>
             var bibleUsedEv = new BibleUsedEvent();
