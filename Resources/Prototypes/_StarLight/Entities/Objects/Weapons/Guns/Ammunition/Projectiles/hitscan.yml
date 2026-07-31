@@ -63,7 +63,6 @@
       Piercing: 40
       Structural: 30
   staminaDamage: 35
-  armorPenetration: 0.5
 
 - type: hitscan
   id: DebugBulletTrace

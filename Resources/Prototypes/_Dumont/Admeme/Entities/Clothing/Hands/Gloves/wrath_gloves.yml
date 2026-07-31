@@ -21,9 +21,9 @@
         Radiation: -15
         Poison: -15
         Structural: -25
-      bloodlossModifier: -15
-      staminaDamage: -25
       armorPenetration: 1
+    staminaDamage: -25
+    bloodlossModifier: -15
     mustBeEquippedToUse: true
     soundHit:
       path: /Audio/_Goobstation/Weapons/Effects/metalcrush.ogg
