@@ -57,8 +57,8 @@
     air:
       volume: 1000
       moles:
-      - 400 # oxygen
-      - 1400 # nitrogen
+      - 436.8 # oxygen
+      - 1643.2 # nitrogen
       temperature: 293.15
   - type: SmokeOnTrigger
     duration: 8
