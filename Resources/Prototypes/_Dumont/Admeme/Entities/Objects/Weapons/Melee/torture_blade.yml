@@ -23,7 +23,7 @@
     damage:
       types:
         Slash: 20
-    armorPenetration: 0.25
+      armorPenetration: 0.25
   - type: Reflect
     reflectProb: 0.25
   - type: EmbeddableProjectile
@@ -34,7 +34,7 @@
     damage:
       types:
         Slash: 30
-    armorPenetration: 0.5
+      armorPenetration: 0.5
   - type: DisarmMalus
     malus: 0.225
   - type: ThrowingAngle
@@ -62,6 +62,5 @@
     energy: 1
     netsync: true
   - type: BackStab
-    multiplier: 2
   - type: UnholyItem
     punish: true
