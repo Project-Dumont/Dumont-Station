@@ -3843,3 +3843,9 @@ Entries:
       message: Corrigido bug onde certas partes do livro guia não apareciam.
   id: 450
   time: '2026-07-31T16:26:46.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Fix
+      message: Corrigido bug do chiado no áudio!
+  id: 451
+  time: '2026-07-31T23:29:41.0000000+00:00'
