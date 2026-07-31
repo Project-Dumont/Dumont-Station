@@ -22,8 +22,9 @@
         Poison: -15
         Structural: -25
     bloodlossModifier: -15
-    staminaDamage: -25
-    armorPenetration: 1
+    resistanceBypass: true
     mustBeEquippedToUse: true
     soundHit:
       path: /Audio/_Goobstation/Weapons/Effects/metalcrush.ogg
+  - type: StaminaDamageOnHit
+    damage: -15
