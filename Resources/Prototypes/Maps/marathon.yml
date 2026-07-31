@@ -36,7 +36,7 @@
 - type: gameMap
   id: Marathon
   mapName: 'Marathon Station'
-  mapPath: /Maps/_Gabystation/marathon.yml # Dumont
+  mapPath: /Maps/_Dumont/marathon.yml # Dumont
   minPlayers: 35
   maxPlayers: 70
   stations:
@@ -98,6 +98,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             ShaftMiner: [ 3, 3 ]
             Bitrunner: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]

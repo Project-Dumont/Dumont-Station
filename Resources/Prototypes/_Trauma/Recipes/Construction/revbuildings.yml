@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: construction
   id: RevForge
   graph: RevMachine
@@ -143,6 +147,38 @@
     - Revolutionary
 
 - type: construction
+  id: RevPlasmaFoundry
+  graph: RevMachine
+  startNode: start
+  targetNode: plasma foundry
+  placementMode: SnapgridCenter
+  category: construction-category-antagonist
+  objectType: Structure
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+  entityWhitelist:
+    components:
+    - HeadRevolutionary
+    - Revolutionary
+
+- type: construction
+  id: RevMedFab
+  graph: RevMachine
+  startNode: start
+  targetNode: hidden medifab
+  placementMode: SnapgridCenter
+  category: construction-category-antagonist
+  objectType: Structure
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+  entityWhitelist:
+    components:
+    - HeadRevolutionary
+    - Revolutionary
+
+- type: construction
   id: RevTurretPistol
   graph: RevTurret
   startNode: start
@@ -163,22 +199,6 @@
   graph: RevTurret
   startNode: start
   targetNode: SMG turret
-  placementMode: SnapgridCenter
-  category: construction-category-antagonist
-  objectType: Structure
-  canBuildInImpassable: false
-  conditions:
-  - !type:TileNotBlocked
-  entityWhitelist:
-    components:
-    - HeadRevolutionary
-    - Revolutionary
-
-- type: construction
-  id: RevPlasmaFoundry
-  graph: RevMachine
-  startNode: start
-  targetNode: plasma foundry
   placementMode: SnapgridCenter
   category: construction-category-antagonist
   objectType: Structure

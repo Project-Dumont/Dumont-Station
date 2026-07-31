@@ -445,6 +445,11 @@ namespace Content.Server.GameTicking
             return total;
         }
 
+        public int OnlinePlayerCount()
+        {
+            return _playerManager.PlayerCount;
+        }
+
         public void StartRound(bool force = false)
         {
 #if EXCEPTION_TOLERANCE

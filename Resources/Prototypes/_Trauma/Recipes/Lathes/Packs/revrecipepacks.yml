@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: latheRecipePack
   id: RevForgeStatic
   recipes:
@@ -9,6 +13,7 @@
   - RevGear
   - RevBolt
   - RevNut
+  - RevBallBearings
   - ClothingOuterArmorRev
   - RevArmorPlate
 
@@ -58,6 +63,7 @@
   recipes:
   - RevGunParts
   - RevTurretMagazine
+  - RevTurretMagazineHeavy
   - RevSMGMagazine
 
 - type: latheRecipePack
@@ -100,6 +106,16 @@
   - DataChipReflectivePlate
   - DataChipFakeMindshield
   - DataChipShieldRipper
+  - MoldMeleeUpgrades
+
+- type: latheRecipePack
+  id: RevMedicalStatic
+  recipes:
+  - MedicatedSuture
+  - RegenerativeMesh
+  - RevGauze
+  - RevBrutepack
+  - RevOintment
 
 - type: latheRecipePack
   id: RevFoundryStatic

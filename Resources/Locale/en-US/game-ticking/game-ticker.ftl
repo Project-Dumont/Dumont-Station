@@ -65,6 +65,7 @@ latejoin-arrivals-dumped-from-shuttle = A mysterious force prevents you from lea
 latejoin-arrivals-teleport-to-spawn = A mysterious force teleports you off the arrivals shuttle. Have a safe shift!
 
 preset-not-enough-ready-players = Can't start {$presetName}. Requires {$minimumPlayers} players but we have {$readyPlayersCount}.
+preset-not-enough-ready-players-end-rule = Ending {$presetName}. Requires {$minimumPlayers} players but we have {$readyPlayersCount}.
 preset-no-one-ready = Can't start {$presetName}. No players are ready.
 
 game-run-level-PreRoundLobby = Pre-round lobby

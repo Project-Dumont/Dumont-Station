@@ -122,12 +122,12 @@ public sealed partial class ShuttleSystem
      * This is a way to move a shuttle from one location to another, via an intermediate map for fanciness.
      */
 
-    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_begin.ogg")
+    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/_Moffstation/Effects/Shuttle/hyperspace_begin.ogg") // Moffstation - Custom FTL noises
     {
         Params = AudioParams.Default.WithVolume(-5f),
     };
 
-    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end.ogg")
+    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/_Moffstation/Effects/Shuttle/hyperspace_end.ogg") // Moffstation - Custom FTL noises
     {
         Params = AudioParams.Default.WithVolume(-5f),
     };

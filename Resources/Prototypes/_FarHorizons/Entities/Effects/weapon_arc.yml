@@ -1,0 +1,64 @@
+- type: entity
+  id: WeaponArcWrench
+  parent: WeaponArcStatic
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: WeaponArcVisuals
+      fadeOut: false
+      animation: Slash
+    - type: Sprite
+      sprite: Objects/Tools/wrench.rsi
+      state: storage
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 0.399
+
+- type: entity
+  id: WeaponArcWelder
+  parent: WeaponArcStatic
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: WeaponArcVisuals
+      fadeOut: false
+      animation: Slash
+    - type: Sprite
+      sprite: Objects/Tools/welder.rsi
+      layers:
+        - state: icon
+        - state: welder_flame
+          shader: unshaded
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 0.399
+
+- type: entity
+  id: WeaponArcDrill
+  parent: WeaponArcStatic
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: WeaponArcVisuals
+      fadeOut: false
+      animation: Thrust
+    - type: Sprite
+      sprite: Objects/Tools/handdrilldiamond.rsi
+      state: handdrill
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 0.1
+
+- type: entity
+  id: WeaponArcMop
+  parent: WeaponArcStatic
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: WeaponArcVisuals
+      fadeOut: false
+      animation: Slash
+    - type: Sprite
+      sprite: Objects/Specific/Janitorial/advmop.rsi
+      layers:
+        - state: advmop
+        - state: fill-2
+      drawdepth: Effects
+    - type: TimedDespawn
+      lifetime: 0.399

@@ -38,7 +38,7 @@
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/_Gabystation/saltern.yml
+  mapPath: /Maps/_Dumont/saltern.yml
   minPlayers: 0
   maxPlayers: 35
   fallback: true
@@ -100,6 +100,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 3 ]
+            SalvageLead: [ 1, 1 ]
             CargoTechnician: [ 2, 2 ]
             Bitrunner: [ 3, 3 ]
             ShaftMiner: [ 2, 2 ]

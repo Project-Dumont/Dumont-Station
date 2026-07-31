@@ -134,6 +134,7 @@
     upper: MobTajaran
     lowest: MobTajkey
   # Corvax-Wega-Genetics-end
+  - type: TailDuoEmote # Funky Change
   # Gaby-Better-Tajara-start
   - type: NightVision
     color: "#808080"
@@ -181,7 +182,6 @@
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
   # Gaby-Better-Tajara-end
-
 
 - type: entity
   save: false
