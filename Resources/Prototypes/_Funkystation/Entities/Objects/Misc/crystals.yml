@@ -56,7 +56,7 @@
     removeFraction: 0.25
     air:
       volume: 1000
-      moles: # Target is 3117.84 mols total for filling 30 tiles (goal is 101.325 kPa @ 20C)
+      moles:
       - 400 # oxygen
       - 1400 # nitrogen
       temperature: 293.15
