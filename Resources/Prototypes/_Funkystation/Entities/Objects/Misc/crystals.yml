@@ -60,7 +60,7 @@
       - 400 # oxygen
       - 1400 # nitrogen
       temperature: 293.15
-  - type: SmokeOnTrigger #Dumont start
+  - type: SmokeOnTrigger
     duration: 8
     spreadAmount: 20
     smokePrototype: Resin
