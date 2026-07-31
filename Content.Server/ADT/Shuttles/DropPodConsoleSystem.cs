@@ -130,7 +130,7 @@ public sealed class DropPodConsoleSystem : EntitySystem
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/metal_slam5.ogg"), podCoords, AudioParams.Default.WithVolume(12f));
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/explosion3.ogg"), podCoords, AudioParams.Default.WithVolume(10f));
         // Dumont
-        _audio.PlayGlobal(DropPodMusic,Filter.Broadcast(),true, AudioParams.Default.WithVolume(-8f));
+        _audio.PlayGlobal(DropPodMusic, Filter.Broadcast(), true , AudioParams.Default.WithVolume(-6f));
         // Dumont end
 
         // Camera shake — everyone within 20 tiles gets their screen kicked
