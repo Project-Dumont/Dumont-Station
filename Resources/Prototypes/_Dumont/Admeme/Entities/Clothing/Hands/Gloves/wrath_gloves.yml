@@ -18,6 +18,8 @@
         Piercing: -15
         Slash: -15
         Heat: -15
+        Radiation: -15
+        Poison: -15
         Structural: -25
     bloodlossModifier: -15
     staminaDamage: -25
