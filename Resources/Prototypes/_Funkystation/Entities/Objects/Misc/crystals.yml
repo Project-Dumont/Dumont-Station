@@ -52,7 +52,7 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Weapons/Grenades/protonitratecrystal.rsi
-  - type: ReleaseGasOnTrigger
+  - type: ReleaseGasOnTrigger # Dumont edit start
     removeFraction: 0.25
     air:
       volume: 1000
