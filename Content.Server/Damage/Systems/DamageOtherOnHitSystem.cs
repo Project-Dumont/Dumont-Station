@@ -72,8 +72,8 @@ using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
-using Content.Shared._Adventure.Bartender.Systems; // GabyStation (Adventure)
-using Content.Shared.Chemistry.EntitySystems; // Omu - Make Beer Goggles Cool Again (MBGCA)
+using Content.Shared._Adventure.Bartender.Systems; // Adventure
+using Content.Shared.Chemistry.EntitySystems; // Omu - MBGCA
 
 namespace Content.Server.Damage.Systems
 {
@@ -85,8 +85,8 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
         [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
         [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-        [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // GabyStation (Adventure)
-        [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Omu (MBGCA)
+        [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Adventure
+        [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Omu - MBGCA
 
         public override void Initialize()
         {
@@ -100,17 +100,13 @@ namespace Content.Server.Damage.Systems
             if (TerminatingOrDeleted(args.Target))
                 return;
 
-            if(args.Target == args.Component.Thrower) // Goobstation - Mjolnir
+            if (args.Target == args.Component.Thrower) // Goobstation - Mjolnir
                 return;
 
-            // Omu Starts - Prevents thrown drinks from dealing damage when the thrower is wearing beer goggles (MBGCA)
-            if (args.Component.Thrower is { } thrower
-                && _nonspillthrower.GetSpillProofThrow(thrower)
-                && _solutions.TryGetSolution(uid, "drink", out _))
-            {
+            // Omu start - Prevents thrown drinks from dealing damage when the thrower is wearing beer goggles
+            if (args.Component.Thrower is { } thrower && _nonspillthrower.GetSpillProofThrow(thrower) && _solutions.TryGetSolution(uid, "drink", out _))
                 return;
-            }
-            // Omu ends
+            // Omu end
 
             var dmg = _damageable.TryChangeDamage(args.Target, component.Damage * _damageable.UniversalThrownDamageModifier, component.IgnoreResistances, origin: args.Component.Thrower);
 
@@ -145,13 +141,11 @@ namespace Content.Server.Damage.Systems
         /// </summary>
         private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
         {
-            // GabyStation start - Pacified players wearing beer goggles can now perform throws.
-            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid)
-                && _solutions.TryGetSolution(ent.Owner, "drink", out _)) // Omu - Pacified players are restricted to throwing only drinks.
-            {
+            // Adventure start - Pacified players wearing beer goggles can now perform throws.
+            if (_nonspillthrower.GetSpillProofThrow(args.PlayerUid) && _solutions.TryGetSolution(ent.Owner, "drink", out _))
                 return;
-            }
-            // GabyStation end
+            // Adventure end
+
             args.Cancel("pacified-cannot-throw");
         }
     }

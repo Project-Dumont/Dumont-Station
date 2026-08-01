@@ -12,7 +12,7 @@ using Content.Shared._Adventure.Bartender.Systems; // Adventure
 using Content.Server.Damage.Components;
 using Content.Shared.Damage;
 using Content.Shared.Throwing;
-using Content.Shared.Chemistry.EntitySystems; // Omu - Make Beer Goggles Cool Again (MBGCA)
+using Content.Shared.Chemistry.EntitySystems; // Omu - MBGCA
 
 namespace Content.Server.Damage.Systems
 {
@@ -23,7 +23,7 @@ namespace Content.Server.Damage.Systems
     {
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly SpillProofThrowerSystem _nonspillthrower = default!; // Adventure
-        [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Omu (MBGCA)
+        [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!; // Omu - MBGCA
 
         public override void Initialize()
         {
@@ -33,14 +33,11 @@ namespace Content.Server.Damage.Systems
 
         private void DamageOnLand(EntityUid uid, DamageOnLandComponent component, ref LandEvent args)
         {
-            // Adventure start: Drinks thrown while wearing beer goggles do not take damage
-            if (args.User is { } user
-                && _nonspillthrower.GetSpillProofThrow(user)
-                && _solutions.TryGetSolution(uid, "drink", out _))
-            {
+            // Adventure start - Drinks thrown while wearing beer goggles do not take damage
+            if (args.User is { } user && _nonspillthrower.GetSpillProofThrow(user) && _solutions.TryGetSolution(uid, "drink", out _))
                 return;
-            }
             // Adventure end
+
             _damageableSystem.TryChangeDamage(uid, component.Damage, component.IgnoreResistances);
         }
     }
