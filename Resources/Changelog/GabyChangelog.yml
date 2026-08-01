@@ -3849,3 +3849,9 @@ Entries:
       message: Corrigido bug do chiado no áudio!
   id: 451
   time: '2026-07-31T23:29:41.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Jugs podem voltar a serem postas em mochilas.
+  id: 452
+  time: '2026-08-01T12:00:20.0000000+00:00'
