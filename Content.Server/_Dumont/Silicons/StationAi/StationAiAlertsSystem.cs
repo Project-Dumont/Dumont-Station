@@ -34,6 +34,7 @@ public sealed class StationAiAlertsSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly StationAiWaypointSystem _waypoints = default!;
 
     /// <summary>
     /// quanto tempo uma área precisa ficar quieta pra avisar a IA no chat de novo
@@ -232,6 +233,7 @@ public sealed class StationAiAlertsSystem : EntitySystem
 
         AddAlarms(station, alerts);
         AddKnocks(station, alerts);
+        AddWaypoint(ai, alerts);
 
         alerts.Sort((a, b) => a.Severity != b.Severity
             ? b.Severity.CompareTo(a.Severity)
@@ -317,6 +319,23 @@ public sealed class StationAiAlertsSystem : EntitySystem
         {
             _knocks.Remove(key);
         }
+    }
+
+    /// <summary>
+    /// o ponto da própria IA pra ela voltar pro que marcou pros borgs
+    /// </summary>
+    private void AddWaypoint(EntityUid ai, List<AiAlertEntry> alerts)
+    {
+        if (!_waypoints.TryGetWaypoint(ai, out var marker, out var area))
+            return;
+
+        alerts.Add(new AiAlertEntry
+        {
+            Source = GetNetEntity(marker),
+            Area = area,
+            Kind = AiAlertKind.Waypoint,
+            Severity = AiAlertSeverity.Info,
+        });
     }
 
     /// <summary>

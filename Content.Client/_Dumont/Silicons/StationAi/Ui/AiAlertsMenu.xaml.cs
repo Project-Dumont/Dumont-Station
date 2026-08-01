@@ -65,7 +65,13 @@ public sealed partial class AiAlertsMenu : FancyWindow
         };
 
         string markup;
-        if (alert.Kind == AiAlertKind.Door)
+        if (alert.Kind == AiAlertKind.Waypoint)
+        {
+            markup = Loc.GetString("ai-alerts-ui-row-waypoint",
+                ("color", color.ToHex()),
+                ("area", alert.Area));
+        }
+        else if (alert.Kind == AiAlertKind.Door)
         {
             markup = Loc.GetString("ai-alerts-ui-row-door",
                 ("color", color.ToHex()),

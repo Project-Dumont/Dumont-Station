@@ -16,3 +16,20 @@
       state: alerts
   - type: InstantAction
     event: !type:ToggleAiAlertsScreenEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAiPlaceWaypoint
+  name: Mark waypoint
+  description: Marks a spot for the silicon collective and announces it on binary.
+  components:
+  - type: Action
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -7
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Dumont/Interface/Actions/actions_ai_dumont.rsi
+      state: alerts
+  - type: WorldTargetAction
+    event: !type:AiPlaceWaypointEvent

@@ -10,6 +10,11 @@ namespace Content.Shared._Dumont.Silicons.StationAi;
 /// </summary>
 public sealed partial class ToggleAiAlertsScreenEvent : InstantActionEvent;
 
+/// <summary>
+/// marca um ponto pro coletivo silicon
+/// </summary>
+public sealed partial class AiPlaceWaypointEvent : WorldTargetActionEvent;
+
 [Serializable, NetSerializable]
 public enum AiAlertsUiKey : byte
 {
@@ -33,6 +38,7 @@ public enum AiAlertKind : byte
     Atmos,
     Fire,
     Door,
+    Waypoint,
 }
 
 /// <summary>
@@ -42,7 +48,7 @@ public enum AiAlertKind : byte
 public record struct AiAlertEntry()
 {
     /// <summary>
-    /// o alarme ou a porta. é pra onde o botão Ir leva
+    /// o alarme, a porta ou o marcador. é pra onde o botão Ir leva
     /// </summary>
     public NetEntity Source = NetEntity.Invalid;
 
