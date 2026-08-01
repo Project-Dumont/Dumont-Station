@@ -110,6 +110,8 @@ public sealed class StationAiLawSyncSystem : EntitySystem
     /// empurra as leis da IA pra todo borg escravizado na mesma estação
     /// aqui é fail-closed de propósito, IA sem estação não manda lei pra ninguém. o filtro
     /// de alarme é fail-open porque ouvir um alarme a mais não custa nada, lei custa
+    /// borg subvertido (emag) fica de fora, senão a sincronia sobrescreveria o lawset do
+    /// traitor 45s depois e o emag deixaria de ser o jeito de cortar o vínculo
     /// </summary>
     private void Propagate(EntityUid ai, SiliconLawset laws)
     {
@@ -120,8 +122,11 @@ public sealed class StationAiLawSyncSystem : EntitySystem
         var count = 0;
 
         var query = EntityQueryEnumerator<SlavedBorgComponent, SiliconLawProviderComponent>();
-        while (query.MoveNext(out var borg, out var slaved, out _))
+        while (query.MoveNext(out var borg, out var slaved, out var provider))
         {
+            if (provider.Subverted)
+                continue;
+
             if (_station.GetOwningStation(borg) != station)
                 continue;
 
