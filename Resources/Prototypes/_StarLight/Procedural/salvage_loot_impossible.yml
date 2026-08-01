@@ -16,6 +16,12 @@
           cost: 4
         - proto: WeaponRifleAk
           prob: 0.1
+          cost: 30
+        - proto: WeaponEnergyRifle
+          prob: 0.1
+          cost: 15
+        - proto: WeaponEarthGovLaserRifle
+          prob: 0.1
           cost: 50
 
         - proto: MagazineLightRifleEmpty
@@ -39,7 +45,7 @@
           cost: 20
         - proto: BoxMagazinePistolCaselessRifle
           prob: 0.05
-          cost: 40
+          cost: 5
 
         - proto: MagazineBoxLightRiflePractice
           prob: 0.2
@@ -58,7 +64,7 @@
           cost: 20
         - proto: MagazineBoxLightRifleBig
           prob: 0.05
-          cost: 40
+          cost: 20
         - proto: GrenadeIncendiary
           prob: 0.3
           cost: 10
@@ -256,10 +262,10 @@
         - proto: DrinkPremiumVodkaBottleFull
           cost: 3                    
         - proto: MedkitBruteFilled
-          cost: 6
+          cost: 1
         - proto: MedkitBurnFilled
-          cost: 6
+          cost: 1
         - proto: MedkitRadiationFilled
-          cost: 6
+          cost: 1
         - proto: MedkitToxinFilled
-          cost: 6
+          cost: 1

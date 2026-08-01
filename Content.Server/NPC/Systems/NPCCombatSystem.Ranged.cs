@@ -16,6 +16,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
@@ -85,11 +86,14 @@ public sealed partial class NPCCombatSystem
 
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
-            if (!_gun.TryGetGun(uid, out var gunUid, out var gun))
+            EntityUid gunUid = default;
+
+            //🌟Starlight🌟
+            if (!_gun.IsChamberClosed(uid)
+                && _gun.TryGetGun(uid, out gunUid, out var _)
+                && TryComp<ChamberMagazineAmmoProviderComponent>(gunUid, out var magazineComp))
             {
-                comp.Status = CombatStatus.NoWeapon;
-                comp.ShootAccumulator = 0f;
-                continue;
+                _gun.SetBoltClosed(gunUid, magazineComp, true);
             }
 
             if (comp.Status == CombatStatus.Unspecified)
@@ -98,7 +102,14 @@ public sealed partial class NPCCombatSystem
                 continue;
             }
 
-            if (_steeringQuery.TryGetComponent(uid, out var steering) && steering.Status == SteeringStatus.NoPath)
+            if (!_gun.TryGetGun(uid, out gunUid, out var gun))
+            {
+                comp.Status = CombatStatus.NoWeapon;
+                comp.ShootAccumulator = 0f;
+                continue;
+            }
+
+            if (_steeringQuery.TryGetComponent(uid, out var steering) && steering.Status == SteeringStatus.NoPath && !TryComp<HitscanBatteryAmmoProviderComponent>(gunUid, out _))
             {
                 comp.Status = CombatStatus.TargetUnreachable;
                 comp.ShootAccumulator = 0f;
@@ -161,9 +172,13 @@ public sealed partial class NPCCombatSystem
             {
                 comp.LOSAccumulator += UnoccludedCooldown;
 
-                // For consistency with NPC steering.
-                var collisionGroup = comp.UseOpaqueForLOSChecks ? CollisionGroup.Opaque : (CollisionGroup.Impassable | CollisionGroup.InteractImpassable);
-                comp.TargetInLOS = _interaction.InRangeUnobstructed(uid, comp.Target, distance + 0.1f, collisionGroup);
+                //🌟Starlight🌟 start
+                var collision = CollisionGroup.Impassable | CollisionGroup.InteractImpassable;
+                if(TryComp<HitscanBatteryAmmoProviderComponent>(gunUid, out _))
+                    collision = CollisionGroup.Opaque;
+                //🌟Starlight🌟 end
+
+                comp.TargetInLOS = _interaction.InRangeUnobstructed(uid, comp.Target, distance + 0.1f, collisionMask: collision);
             }
 
             if (!comp.TargetInLOS)
