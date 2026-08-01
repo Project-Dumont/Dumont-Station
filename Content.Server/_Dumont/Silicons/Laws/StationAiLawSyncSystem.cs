@@ -51,6 +51,12 @@ public sealed class StationAiLawSyncSystem : EntitySystem
     /// </summary>
     private readonly Dictionary<EntityUid, (string Signature, TimeSpan ChangedAt, bool Propagated)> _seen = new();
 
+    /// <summary>
+    /// o último lawset que cada IA entregou. é contra ele que os borgs se alinham, então
+    /// mudança pendente nos 45s não vaza pros borgs antes da hora
+    /// </summary>
+    private readonly Dictionary<EntityUid, SiliconLawset> _delivered = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -61,6 +67,7 @@ public sealed class StationAiLawSyncSystem : EntitySystem
     private void OnRoundRestart(RoundRestartCleanupEvent args)
     {
         _seen.Clear();
+        _delivered.Clear();
         _nextCheck = TimeSpan.Zero;
     }
 
@@ -78,6 +85,12 @@ public sealed class StationAiLawSyncSystem : EntitySystem
         while (query.MoveNext(out var ai, out _, out _))
         {
             Track(ai, now);
+
+            // realinha em silêncio qualquer borg que destoe do último lawset entregue. isso
+            // cobre borg que nasceu depois, troca de chassi resetando as leis, e o que mais
+            // inventarem de reset.. um mecanismo só, sempre conferindo
+            if (_delivered.TryGetValue(ai, out var delivered))
+                Propagate(ai, delivered, announce: false);
         }
     }
 
@@ -88,7 +101,11 @@ public sealed class StationAiLawSyncSystem : EntitySystem
 
         if (!_seen.TryGetValue(ai, out var previous))
         {
+            // primeira vista: alinha os borgs já, senão a IA nasce com o lawset dela e o borg
+            // fica no dele até alguém mudar uma lei. silencioso porque isso é o estado natural
+            // do coletivo, os avisos da ciência existem pra telegrafar mudança
             _seen[ai] = (signature, now, true);
+            Propagate(ai, laws, announce: false);
             return;
         }
 
@@ -113,7 +130,7 @@ public sealed class StationAiLawSyncSystem : EntitySystem
     /// borg subvertido (emag) fica de fora, senão a sincronia sobrescreveria o lawset do
     /// traitor 45s depois e o emag deixaria de ser o jeito de cortar o vínculo
     /// </summary>
-    private void Propagate(EntityUid ai, SiliconLawset laws)
+    private void Propagate(EntityUid ai, SiliconLawset laws, bool announce = true)
     {
         var station = _station.GetOwningStation(ai);
         if (station == null)
@@ -139,11 +156,17 @@ public sealed class StationAiLawSyncSystem : EntitySystem
             var lawset = new SiliconLawset { Laws = copy };
             _slaved.AddLaw(lawset, slaved.Law);
 
+            // só escreve quando destoa, senão o borg levaria aviso de lei nova a cada 5s
+            if (provider.Lawset != null && Signature(provider.Lawset) == Signature(lawset))
+                continue;
+
             _laws.SetLaws(lawset.Laws, borg);
             count++;
         }
 
-        if (count > 0)
+        _delivered[ai] = new SiliconLawset { Laws = laws.Laws.Select(law => law.ShallowClone()).ToList() };
+
+        if (count > 0 && announce)
             Warn(ai, "station-ai-law-sync-applied");
     }
 
