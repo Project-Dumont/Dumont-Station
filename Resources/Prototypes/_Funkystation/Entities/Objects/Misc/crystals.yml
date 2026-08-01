@@ -22,28 +22,36 @@
           Quantity: 6
 
 - type: entity
-  parent: GrenadeBase
+  parent: BaseItem #Dumont
   id: HealiumCrystal
   name: healium crystal
-  description: A crystal made from healium gas. It's cold to the touch.
+  description: A crystal made from healium gas. It's cold to the touch and looks strangely sweet and appetizing.
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Weapons/Grenades/healiumcrystal.rsi
-  - type: AdjustAirOnTrigger
-    gasAdjustments:
-      healium: 0.8
-    temperature: 293.15
-    range: 8.0
-  - type: EmitSoundOnTrigger
-    sound:
-      path: "/Audio/Effects/spray.ogg"
-    positional: true
-  - type: DeleteOnTrigger
-  - type: Appearance
+    #Dumont start
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - cold
+  - type: Food
+    solution: food
+    delay: 5
+    forceFeedDelay: 5
+    transferAmount: 50
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Healium
+          Quantity: 40
+        - ReagentId: Nitrium
+          Quantity: 10
   - type: StaticPrice
-    price: 500
-  - type: TimerTriggerVisuals
-
+    price: 1000
+    #Dumont end
+    
 - type: entity
   parent: GrenadeBase
   id: ProtoNitrateCrystal
