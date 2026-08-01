@@ -7,6 +7,10 @@ using Content.Shared.Access;
 
 namespace Content.Shared.PDA;
 
+/// <summary>
+/// Defines a group of pdas to notify based on the access in its inserted ID, an entirely empty group meaning that it emcompasses all PDA.
+/// </summary>
+
 [Prototype]
 public sealed class NotificationGroupPrototype : IPrototype {
     [ViewVariables]

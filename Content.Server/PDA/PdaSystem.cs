@@ -324,11 +324,6 @@ namespace Content.Server.PDA
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
 
-            List<Notification> notifications = new();
-            foreach (var notiMessage in pda.Notifications) {
-                Notification notification = new(_timing.CurTime, notiMessage);
-                notifications.Add(notification);
-            }
 
             var state = new PdaUpdateState(
                 programs,
@@ -345,7 +340,7 @@ namespace Content.Server.PDA
                     StationAlertColor = pda.StationAlertColor
                 },
                 pda.StationName,
-                notifications,
+                pda.Notifications,
                 showUplink,
                 hasInstrument,
                 address);

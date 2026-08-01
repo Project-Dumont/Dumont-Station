@@ -51,6 +51,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.GameStates;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.PDA;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.PDA
@@ -89,6 +90,6 @@ namespace Content.Shared.PDA
         [ViewVariables] public string? StationAlertLevel;
         [ViewVariables] public Color StationAlertColor = Color.White;
 
-        [ViewVariables] public List<string> Notifications = [];
+        [ViewVariables] public List<Notification> Notifications = [];
     }
 }

@@ -21,8 +21,12 @@ namespace Content.Server.PDA
 
         public void OnPdaNotification(PdaNotificationEvent args)
         {
-            if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto))
+            _sawmill = _log.GetSawmill("pda_notification");
+
+            if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto)) {
+                _sawmill.Error($"group '{args.Group} does not exist'");
                 return;
+            }
 
             if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
                 PdaNotifyAll(args);
@@ -30,6 +34,7 @@ namespace Content.Server.PDA
             }
 
             var Pdas = EntityQueryEnumerator<PdaComponent>();
+            var amountNotified = 0;
 
             while (Pdas.MoveNext(out var uid, out var pdaComp)) {
                 if (pdaComp.IdSlot.Item is not { } idCardUid)
@@ -43,13 +48,20 @@ namespace Content.Server.PDA
                 Entity<PdaComponent> pda = new(uid, pdaComp);
 
                 if (notiGroupProto.Access is not null)
-                    if (PdaNotifyByAccess(pda, notiGroupProto.Access, accessLevels, args))
+                    if (PdaNotifyByAccess(pda, notiGroupProto.Access, accessLevels, args)) {
+                        amountNotified++;
                         continue;
+                    }
 
                 if (notiGroupProto.AccessGroups is not null)
-                    if (PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, accessLevels, args))
+                    if (PdaNotifyByGroups(pda, notiGroupProto.AccessGroups, accessLevels, args)) {
+                        amountNotified++;
                         continue;
+                    }
             }
+
+            if (amountNotified == 0)
+                _sawmill.Warning("Notified zero PDAs on last PdaNotificationEvent");
 
         }
 
@@ -59,14 +71,13 @@ namespace Content.Server.PDA
             HashSet<ProtoId<AccessLevelPrototype>> accessLevels,
             PdaNotificationEvent args)
         {
-            _sawmill = _log.GetSawmill("notification");
+
 
             foreach (var accessSingular in accessNoti) {
                 if (!accessLevels.Contains(accessSingular))
                     continue;
 
-
-                NotifyPda(pda, args);
+                NotifyPda(pda, args.Message, args.IsLoud);
                 return true;
             }
 
@@ -95,17 +106,17 @@ namespace Content.Server.PDA
             var query = EntityQueryEnumerator<PdaComponent>();
 
             while (query.MoveNext(out var uid, out var comp)) {
-                NotifyPda((uid, comp), args);
+                NotifyPda((uid, comp), args.Message, args.IsLoud);
             }
         }
 
-        public void NotifyPda(Entity<PdaComponent> ent, PdaNotificationEvent args) {
-            _popup.PopupEntity(Loc.GetString("pda-new-notification"), ent.Owner);
+        public void NotifyPda(Entity<PdaComponent> ent, string message, bool isLoud = false) {
+            _popup.PopupEntity(Loc.GetString("pda-new-notification"), ent.Owner, PopupType.Medium);
 
-            if (args.IsLoud)
+            if (isLoud)
                 _ringer.RingerPlayRingtone(ent.Owner);
 
-            ent.Comp.Notifications.Add(args.Message);
+            ent.Comp.Notifications.Add(new Notification(_timing.CurTime, message));
             UpdatePdaUi(ent.Owner, ent.Comp);
         }
     }

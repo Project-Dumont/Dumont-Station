@@ -241,6 +241,7 @@ namespace Content.Client.PDA
             ShowUplinkButton.Visible = state.HasUplink;
             LockUplinkButton.Visible = state.HasUplink;
 
+            Notifications.RemoveAllChildren();
             if (state.Notifications is { } notifications) {
                 foreach (var noti in notifications) {
                     BoxContainer notificationContainer = new();
@@ -248,8 +249,9 @@ namespace Content.Client.PDA
                     Label messageLabel = new();
                     Label timeLabel = new();
 
-                    messageLabel.Text = WrapMessage(noti.Message, 95);
+                    messageLabel.Text = WrapMessage(FormattedMessage.RemoveMarkupOrThrow(noti.Message), 70);
                     messageLabel.ClipText = false;
+                    messageLabel.Margin = new Thickness(15, 0);
 
                     timeLabel.Text = noti.Time.ToString(@"hh\:mm\:ss");
                     timeLabel.ClipText = false;
