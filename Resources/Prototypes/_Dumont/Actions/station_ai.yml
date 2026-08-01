@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionOpenAiAlertsMenu
+  name: Internal monitoring
+  description: Live atmospheric and fire alarms, with a jump to each one.
+  components:
+  - type: Action
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -8
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Dumont/Interface/Actions/actions_ai_dumont.rsi
+      state: alerts
+  - type: InstantAction
+    event: !type:ToggleAiAlertsScreenEvent
