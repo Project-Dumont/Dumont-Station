@@ -3863,3 +3863,15 @@ Entries:
       message: Agora o cristal de healium pode ser comido! Prepare os seus dentes.
   id: 453
   time: '2026-08-01T12:04:07.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Cristal de energia agora é imune a EMP.
+    - type: Tweak
+      message: Cristal de amônia teve o valor aumentado.
+    - type: Tweak
+      message: >-
+        Cristal de Proto-Nitrate libera quantidade massiva de O2/N2 padrão de
+        atmosfera e uma espuma reguladora de temperatura.
+  id: 454
+  time: '2026-08-01T12:06:19.0000000+00:00'
