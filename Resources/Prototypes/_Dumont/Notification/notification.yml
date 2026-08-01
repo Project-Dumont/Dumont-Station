@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: notificationGroup
-  id: All
+  id: GenericAll
 
 - type: notificationGroup
   id: CaptainOnly
@@ -18,7 +18,7 @@
   - Captain
 
 - type: notificationGroup
-  id: SecurityAlert
+  id: SecurityAlerts
   accessGroups:
   - Security
   access:
@@ -26,9 +26,22 @@
 
 # Futuramente fazer um cartucho que serve pra chamar o jani
 - type: notificationGroup
-  id: janitorAlert
+  id: JanitorAlerts
   access:
   - Janitor
+
+- type: notificationGroup
+  id: CargoSansSalvage
+  access:
+  - CargoTechnician
+  - Quartermaster
+
+- type: notificationGroup
+  id: CargoAlerts
+  accessGroups:
+  - Cargo
+  access:
+  - Captain
 
 - type: notificationGroup
   id: MedicalDepartment
