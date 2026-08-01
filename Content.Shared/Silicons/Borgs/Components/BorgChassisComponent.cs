@@ -56,7 +56,7 @@ public sealed partial class BorgChassisComponent : Component
     /// <summary>
     /// How many modules can be installed in this borg
     /// </summary>
-    [DataField("maxModules"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("maxModules"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] // Dumont-Borg-Upgrades: o menu do borg lê isso no cliente, sem sincronizar mostrava 4/3 depois da baia de módulo
     public int MaxModules = 3;
 
     /// <summary>

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Server.Atmos.Monitor.Systems;
 using Content.Server.Chat.Systems;
@@ -104,7 +105,7 @@ public sealed class StationAiAlertsSystem : EntitySystem
 
         var station = _station.GetOwningStation(ent.Owner);
         var area = FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((ent.Owner, null)));
-        var who = Name(user);
+        var who = FormattedMessage.RemoveMarkupPermissive(Name(user));
 
         _knocks[key] = new Knock(area, who, station, now);
 
@@ -195,8 +196,12 @@ public sealed class StationAiAlertsSystem : EntitySystem
 
     private void OnWarp(Entity<StationAiHeldComponent> ent, ref AiAlertWarpMessage args)
     {
-        var target = GetEntity(args.Target);
+        var netTarget = args.Target;
+        var target = GetEntity(netTarget);
         if (Deleted(target))
+            return;
+
+        if (!BuildAlerts(ent.Owner).Any(alert => alert.Source == netTarget))
             return;
 
         if (!_stationAi.TryGetCore(ent.Owner, out var core) || core.Comp?.RemoteEntity == null)

@@ -84,9 +84,18 @@ public sealed class BorgUpgradeSystem : EntitySystem
 
         args.Handled = true;
 
+        if (TryComp<WiresPanelComponent>(target, out var panel) && !panel.Open)
+        {
+            _popup.PopupEntity(Loc.GetString("borg-panel-not-open"), target, args.User);
+            return;
+        }
+
         var upgraded = EnsureComp<BorgUpgradedComponent>(target);
         if (upgraded.Installed.Contains(ent.Comp.Name))
+        {
+            _popup.PopupEntity(Loc.GetString("borg-upgrade-already-installed"), target, args.User);
             return;
+        }
 
         EntityManager.AddComponents(target, ent.Comp.Components, removeExisting: false);
 

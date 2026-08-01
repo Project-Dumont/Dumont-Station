@@ -107,22 +107,29 @@ public sealed class StationAiLawSyncSystem : EntitySystem
     }
 
     /// <summary>
-    /// empurra as leis da IA pra todo borg escravizado na mesma estação.
+    /// empurra as leis da IA pra todo borg escravizado na mesma estação
+    /// aqui é fail-closed de propósito, IA sem estação não manda lei pra ninguém. o filtro
+    /// de alarme é fail-open porque ouvir um alarme a mais não custa nada, lei custa
     /// </summary>
     private void Propagate(EntityUid ai, SiliconLawset laws)
     {
         var station = _station.GetOwningStation(ai);
+        if (station == null)
+            return;
+
         var count = 0;
 
         var query = EntityQueryEnumerator<SlavedBorgComponent, SiliconLawProviderComponent>();
         while (query.MoveNext(out var borg, out var slaved, out _))
         {
-            if (station != null && _station.GetOwningStation(borg) is { } borgStation && borgStation != station)
+            if (_station.GetOwningStation(borg) != station)
+                continue;
+
+            if (!_proto.TryIndex(slaved.Law, out var slaveLawProto))
                 continue;
 
             var copy = laws.Laws.Select(law => law.ShallowClone()).ToList();
-            var slaveLaw = _proto.Index(slaved.Law).LawString;
-            copy.RemoveAll(law => law.LawString == slaveLaw);
+            copy.RemoveAll(law => law.LawString == slaveLawProto.LawString);
 
             var lawset = new SiliconLawset { Laws = copy };
             _slaved.AddLaw(lawset, slaved.Law);

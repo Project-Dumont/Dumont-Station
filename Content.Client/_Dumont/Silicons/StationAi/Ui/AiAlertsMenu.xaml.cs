@@ -94,7 +94,7 @@ public sealed partial class AiAlertsMenu : FancyWindow
                 ("area", alert.Area));
         }
 
-        label.SetMessage(FormattedMessage.FromMarkupOrThrow(markup));
+        label.SetMessage(FormattedMessage.FromMarkupPermissive(markup));
 
         var jump = new Button
         {
