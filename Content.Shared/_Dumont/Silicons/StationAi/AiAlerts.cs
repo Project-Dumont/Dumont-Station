@@ -22,6 +22,7 @@ public enum AiAlertsUiKey : byte
 [Serializable, NetSerializable]
 public enum AiAlertSeverity : byte
 {
+    Info,
     Warning,
     Danger,
 }
@@ -31,6 +32,7 @@ public enum AiAlertKind : byte
 {
     Atmos,
     Fire,
+    Door,
 }
 
 /// <summary>
@@ -40,11 +42,16 @@ public enum AiAlertKind : byte
 public record struct AiAlertEntry()
 {
     /// <summary>
-    /// o alarme. é pra onde o botão Ir leva
+    /// o alarme ou a porta. é pra onde o botão Ir leva
     /// </summary>
     public NetEntity Source = NetEntity.Invalid;
 
     public string Area = string.Empty;
+
+    /// <summary>
+    /// quem está pedindo. só é preenchido em <see cref="AiAlertKind.Door"/>.
+    /// </summary>
+    public string Subject = string.Empty;
 
     public AiAlertKind Kind;
 

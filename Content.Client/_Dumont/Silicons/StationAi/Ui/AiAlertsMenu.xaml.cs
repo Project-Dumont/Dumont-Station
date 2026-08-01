@@ -15,6 +15,7 @@ public sealed partial class AiAlertsMenu : FancyWindow
 {
     private static readonly Color DangerColor = Color.FromHex("#ff4b4b");
     private static readonly Color WarningColor = Color.FromHex("#ffa500");
+    private static readonly Color DoorColor = Color.FromHex("#5ed7aa");
 
     public event Action<NetEntity>? OnWarpTo;
 
@@ -56,20 +57,36 @@ public sealed partial class AiAlertsMenu : FancyWindow
             VerticalAlignment = Control.VAlignment.Center,
         };
 
-        var color = alert.Severity == AiAlertSeverity.Danger ? DangerColor : WarningColor;
+        var color = alert.Severity switch
+        {
+            AiAlertSeverity.Danger => DangerColor,
+            AiAlertSeverity.Warning => WarningColor,
+            _ => DoorColor,
+        };
 
-        var kind = Loc.GetString(alert.Kind == AiAlertKind.Fire
-            ? "station-ai-alarm-kind-fire"
-            : "station-ai-alarm-kind-atmos");
-        var severity = Loc.GetString(alert.Severity == AiAlertSeverity.Danger
-            ? "ai-alerts-ui-severity-danger"
-            : "ai-alerts-ui-severity-warning");
+        string markup;
+        if (alert.Kind == AiAlertKind.Door)
+        {
+            markup = Loc.GetString("ai-alerts-ui-row-door",
+                ("color", color.ToHex()),
+                ("who", alert.Subject),
+                ("area", alert.Area));
+        }
+        else
+        {
+            var kind = Loc.GetString(alert.Kind == AiAlertKind.Fire
+                ? "station-ai-alarm-kind-fire"
+                : "station-ai-alarm-kind-atmos");
+            var severity = Loc.GetString(alert.Severity == AiAlertSeverity.Danger
+                ? "ai-alerts-ui-severity-danger"
+                : "ai-alerts-ui-severity-warning");
 
-        var markup = Loc.GetString("ai-alerts-ui-row",
-            ("color", color.ToHex()),
-            ("severity", severity),
-            ("kind", kind),
-            ("area", alert.Area));
+            markup = Loc.GetString("ai-alerts-ui-row",
+                ("color", color.ToHex()),
+                ("severity", severity),
+                ("kind", kind),
+                ("area", alert.Area));
+        }
 
         label.SetMessage(FormattedMessage.FromMarkupOrThrow(markup));
 
