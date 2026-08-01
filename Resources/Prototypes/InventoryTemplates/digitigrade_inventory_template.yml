@@ -31,6 +31,16 @@
 - type: inventoryTemplate
   id: digitigrade
   slots:
+    # Dumont-Arpia-Sapato: o DeltaV tirou o slot de sapato do corpo digitígrado inteiro.
+    # aqui a arpia calça, mesmo sabendo que os sprites de sapato não foram desenhados
+    # pra garra e podem desalinhar
+    - name: shoes
+      slotTexture: shoes
+      slotFlags: FEET
+      stripTime: 3
+      uiWindowPos: 1,0
+      strippingWindowPos: 1,3
+      displayName: Shoes
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING
