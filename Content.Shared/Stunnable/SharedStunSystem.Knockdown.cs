@@ -378,24 +378,16 @@ public abstract partial class SharedStunSystem
         if (!Resolve(entity, ref entity.Comp, false))
             return;
 
-        // That way if we fail to stand, the game will try to stand for us when we are able to
+        // Dumont-Levantar: levantar é uma lógica só, dentro e fora de combate. o atalho de
+        // combate levantava instantâneo por 10 de stamina, então bater deitado ignorava o
+        // knockdown. agora todo gatilho cai no mesmo DoAfter do StandTime, mudou lá mudou
+        // em todo lugar
         SetAutoStand(entity, true);
 
         if (StandingBlocked((entity, entity.Comp)))
             return;
 
-        if (!_hands.TryGetEmptyHand(entity.Owner, out _))
-            return;
-
-        if (!TryForceStand(entity.Owner))
-            return;
-
-        // If we have a DoAfter, cancel it
-        CancelKnockdownDoAfter(entity);
-        // Remove Component
-        RemComp<KnockedDownComponent>(entity);
-
-        _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(entity):user} has force stood up from knockdown.");
+        TryStanding(entity);
     }
 
     private void OnKnockedDownAlert(Entity<KnockedDownComponent> entity, ref KnockedDownAlertEvent args)
