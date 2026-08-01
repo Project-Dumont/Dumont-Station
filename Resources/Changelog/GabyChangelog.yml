@@ -3855,3 +3855,11 @@ Entries:
       message: Jugs podem voltar a serem postas em mochilas.
   id: 452
   time: '2026-08-01T12:00:20.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Remove
+      message: Passageiros usando drogas na manutenção.
+    - type: Tweak
+      message: Agora o cristal de healium pode ser comido! Prepare os seus dentes.
+  id: 453
+  time: '2026-08-01T12:04:07.0000000+00:00'
