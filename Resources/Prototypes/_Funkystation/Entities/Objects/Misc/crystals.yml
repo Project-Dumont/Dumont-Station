@@ -11,7 +11,7 @@
     flavors:
     - eggplant
   - type: StaticPrice
-    price: 35
+    price: 200 #Dumont
   - type: Item
     size: Small
   - type: SolutionContainerManager
@@ -60,20 +60,35 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Weapons/Grenades/protonitratecrystal.rsi
-  - type: AdjustAirOnTrigger
-    gasAdjustments:
-      nitrogen: 80
-      oxygen: 30
-    range: 5
-  - type: EmitSoundOnTrigger
+  - type: ReleaseGasOnTrigger # Dumont edit start
+    removeFraction: 0.25
+    air:
+      volume: 1000
+      moles:
+      - 436.8 # oxygen
+      - 1643.2 # nitrogen
+      temperature: 293.15
+  - type: SmokeOnTrigger
+    duration: 8
+    spreadAmount: 20
+    smokePrototype: Resin
+    keysIn:
+    - timer #Dumont end
+  - type: EmitSoundOnTrigger 
     sound:
-      path: "/Audio/Effects/spray.ogg"
+      path: /Audio/Effects/spray.ogg
+    keysIn:
+    - timer
     positional: true
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: Appearance
   - type: StaticPrice
     price: 650
   - type: TimerTriggerVisuals
+    primingSound:
+      path: /Audio/Items/smoke_grenade_smoke.ogg
 
 - type: entity
   parent: GrenadeBase
@@ -114,3 +129,4 @@
   - type: Tag
     tags:
     - NoRecharge
+  - type: EmpImmune #Dumont

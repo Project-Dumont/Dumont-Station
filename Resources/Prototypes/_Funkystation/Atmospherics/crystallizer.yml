@@ -74,8 +74,8 @@
     ProtoNitrateCrystal: 1
   dangerous: false
   minimumRequirements:
-  - 80    # oxygen
-  - 80    # nitrogen
+  - 220    # oxygen
+  - 710   # nitrogen
   - 0     # carbon dioxide
   - 0     # plasma
   - 0     # tritium
@@ -89,7 +89,7 @@
   - 0     # pluox
   - 0     # hydrogen
   - 0     # hypernob
-  - 100   # protonitrate
+  - 200   # protonitrate
   - 0     # zauker
   - 0     # halon
   - 0     # helium
@@ -99,7 +99,7 @@
   id: ammoniaCrystalRecipe
   name: Ammonia Crystal
   minimumTemperature: 200
-  maximumTemperature: 240
+  maximumTemperature: 400
   energyRelease: 950000
   products:
     AmmoniaCrystal: 2
@@ -111,14 +111,14 @@
   - 0     # plasma
   - 0     # tritium
   - 0     # vapor
-  - 0     # miasma
+  - 40     # miasma
   - 0     # n2o
   - 0     # frezon
   - 0     # bz
   - 0     # healium
   - 0     # nitrium
   - 0     # pluox
-  - 50    # hydrogen
+  - 0    # hydrogen
   - 0     # hypernob
   - 0     # protonitrate
   - 0     # zauker
