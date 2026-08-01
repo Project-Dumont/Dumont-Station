@@ -8,9 +8,9 @@ borg-upgrade-examine = Aprimoramentos: [color=cyan]{ $upgrades }[/color].
 
 ent-BaseBorgUpgrade = aprimoramento de borg
     .desc = Uma peça que entra no chassi e não sai mais.
-ent-BorgUpgradeVtec = aprimoramento de borg (VTEC)
+ent-BorgUpgradeVtec = VTEC de borg
     .desc = Mexe nos servos do chassi. O borg anda bem mais rápido.
-ent-BorgUpgradeRepair = aprimoramento de borg (auto-reparo)
+ent-BorgUpgradeRepair = auto-reparo de borg
     .desc = Nanites que vão soldando o chassi sozinhos. Resolve arranhão, não salva de briga.
-ent-BorgUpgradeModuleBay = aprimoramento de borg (baia de módulo)
+ent-BorgUpgradeModuleBay = baia de módulo de borg
     .desc = Uma baia a mais do que o chassi vem de fábrica. Cabe mais um módulo.

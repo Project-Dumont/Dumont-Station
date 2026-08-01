@@ -18,9 +18,12 @@
 - type: entity
   parent: BaseBorgUpgrade
   id: BorgUpgradeVtec
-  name: borg upgrade (VTEC)
+  name: VTEC borg upgrade
   description: Rebuilds the chassis servos for higher travel speed.
   components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Robotics/borg_upgrades.rsi
+    state: vtec
   - type: BorgUpgrade
     name: borg-upgrade-vtec
     components:
@@ -31,9 +34,12 @@
 - type: entity
   parent: BaseBorgUpgrade
   id: BorgUpgradeRepair
-  name: borg upgrade (self-repair)
+  name: self-repair borg upgrade
   description: A nanite bay that slowly welds the chassis back together.
   components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Robotics/borg_upgrades.rsi
+    state: repair
   - type: BorgUpgrade
     name: borg-upgrade-repair
     components:
@@ -52,9 +58,12 @@
 - type: entity
   parent: BaseBorgUpgrade
   id: BorgUpgradeModuleBay
-  name: borg upgrade (module bay)
+  name: module bay borg upgrade
   description: An expansion bay that accepts one more module than the chassis was built for.
   components:
+  - type: Sprite
+    sprite: _Dumont/Objects/Specific/Robotics/borg_upgrades.rsi
+    state: bay
   - type: BorgUpgrade
     name: borg-upgrade-module-bay
     extraModules: 1
