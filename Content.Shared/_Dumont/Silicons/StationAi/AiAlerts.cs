@@ -89,5 +89,19 @@ public sealed class AiAlertWarpMessage : BoundUserInterfaceMessage
     }
 }
 
+/// <summary>
+/// enviada quando a IA oculta uma linha do monitor
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class AiAlertDismissMessage : BoundUserInterfaceMessage
+{
+    public NetEntity Target;
+
+    public AiAlertDismissMessage(NetEntity target)
+    {
+        Target = target;
+    }
+}
+
 [Serializable, NetSerializable]
 public sealed class AiAlertsRefreshMessage : BoundUserInterfaceMessage;

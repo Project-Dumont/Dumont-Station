@@ -9,6 +9,9 @@
   "states": [
     {
       "name": "alerts"
+    },
+    {
+      "name": "waypoint"
     }
   ]
 }

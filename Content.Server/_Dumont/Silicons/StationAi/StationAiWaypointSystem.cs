@@ -8,6 +8,7 @@ using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared.Chat;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -21,9 +22,8 @@ namespace Content.Server._Dumont.Silicons.StationAi;
 /// deixa a IA marcar um ponto pro coletivo silicon
 /// o binário já carregava "vai pro cargo", mas nada amarrava a mensagem a um lugar. o ponto
 /// nomeia o local pelo beacon mais próximo e deixa uma âncora pra IA voltar
-/// limite conhecido: o borg recebe o ponto como mensagem na mente coletiva, não como marcador
-/// desenhado no mundo. desenhar só pros silicons pede um overlay de cliente, que é bem mais
-/// trabalho que o resto do sistema e ficou de fora de propósito.
+/// o marcador é um holograma visível no mundo, projetado pela IA. quem passar por ele vê,
+/// o que é aceitável.. holograma de IA marcando lugar é fluff válido, não vazamento
 /// </summary>
 public sealed class StationAiWaypointSystem : EntitySystem
 {
@@ -32,6 +32,7 @@ public sealed class StationAiWaypointSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
 
     /// <summary>
@@ -56,6 +57,7 @@ public sealed class StationAiWaypointSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<StationAiHeldComponent, AiPlaceWaypointEvent>(OnPlaceWaypoint);
+        SubscribeLocalEvent<AiWaypointMarkerComponent, AiWaypointRemoveEvent>(OnMarkerRemove);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
     }
 
@@ -76,12 +78,29 @@ public sealed class StationAiWaypointSystem : EntitySystem
 
         args.Handled = true;
 
+        // marcar em cima do próprio ponto remove em vez de mover, vira toggle
+        if (_waypoints.TryGetValue(ent.Owner, out var existing) && !Deleted(existing.Marker))
+        {
+            var markerCoords = Transform(existing.Marker).Coordinates;
+            if (args.Target.TryDistance(EntityManager, markerCoords, out var dist) && dist < 1f)
+            {
+                RemoveWaypoint(ent.Owner, ent.Owner);
+                return;
+            }
+        }
+
         Clear(ent.Owner);
 
         var marker = Spawn(MarkerProto, args.Target);
+        var markerComp = EnsureComp<AiWaypointMarkerComponent>(marker);
+        markerComp.Ai = ent.Owner;
+        Dirty(marker, markerComp);
         var area = FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((marker, null)));
 
         _waypoints[ent.Owner] = (marker, area, _timing.CurTime);
+
+        // feedback imediato pra quem marcou, o anúncio no binário é pros outros
+        _popup.PopupEntity(Loc.GetString("station-ai-waypoint-set", ("area", area)), marker, ent.Owner);
 
         Announce(ent.Owner, Loc.GetString("station-ai-waypoint-set", ("area", area)));
     }
@@ -89,10 +108,11 @@ public sealed class StationAiWaypointSystem : EntitySystem
     /// <summary>
     /// o ponto vivo da IA, se ela tem um e ele não venceu.
     /// </summary>
-    public bool TryGetWaypoint(EntityUid ai, out EntityUid marker, out string area)
+    public bool TryGetWaypoint(EntityUid ai, out EntityUid marker, out string area, out TimeSpan at)
     {
         marker = default;
         area = string.Empty;
+        at = default;
 
         if (!_waypoints.TryGetValue(ai, out var waypoint))
             return false;
@@ -105,7 +125,41 @@ public sealed class StationAiWaypointSystem : EntitySystem
 
         marker = waypoint.Marker;
         area = waypoint.Area;
+        at = waypoint.At;
         return true;
+    }
+
+    /// <summary>
+    /// escolheu remover no radial do holograma
+    /// </summary>
+    private void OnMarkerRemove(Entity<AiWaypointMarkerComponent> ent, ref AiWaypointRemoveEvent args)
+    {
+        if (ent.Comp.Ai is not { } ai || ai != args.User)
+            return;
+
+        RemoveWaypoint(ai, args.User);
+    }
+
+    /// <summary>
+    /// apaga o ponto de verdade, com feedback pra quem removeu e aviso no binário
+    /// </summary>
+    public void RemoveWaypoint(EntityUid ai, EntityUid? feedbackTo = null)
+    {
+        if (!_waypoints.TryGetValue(ai, out var waypoint))
+            return;
+
+        var message = Loc.GetString("station-ai-waypoint-removed", ("area", waypoint.Area));
+
+        if (feedbackTo != null && !Deleted(waypoint.Marker))
+            _popup.PopupEntity(message, waypoint.Marker, feedbackTo.Value);
+
+        Clear(ai);
+        Announce(ai, message);
+    }
+
+    public bool IsWaypoint(EntityUid ai, EntityUid marker)
+    {
+        return _waypoints.TryGetValue(ai, out var waypoint) && waypoint.Marker == marker;
     }
 
     private void Clear(EntityUid ai)
@@ -132,7 +186,9 @@ public sealed class StationAiWaypointSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
-            if (collective.Minds.ContainsKey(mind.ID) || collective.HearAll)
+            // Channels é a configuração fixa do canal. o dicionário Minds só enche quando
+            // a entidade fala no coletivo, então num round quieto ele filtra todo mundo
+            if (collective.Channels.Contains(BinaryMind) || collective.HearAll)
                 clients.AddPlayer(actor.PlayerSession);
         }
 

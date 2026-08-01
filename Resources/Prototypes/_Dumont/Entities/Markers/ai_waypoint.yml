@@ -2,12 +2,25 @@
 
 - type: entity
   id: AiWaypointMarker
-  name: waypoint
+  name: ponto marcado
+  description: Um holograma projetado pela IA da estação marcando um lugar.
   categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
   components:
   - type: Transform
     anchored: true
+  - type: Sprite
+    sprite: _Dumont/Markers/waypoint.rsi
+    drawdepth: Overlays
+    layers:
+    - state: pin
+      shader: unshaded
   - type: TimedDespawn
     lifetime: 300
+  - type: AiWaypointMarker
+  - type: StationAiWhitelist
+  - type: UserInterface
+    interfaces:
+      enum.AiUi.Key:
+        type: StationAiBoundUserInterface

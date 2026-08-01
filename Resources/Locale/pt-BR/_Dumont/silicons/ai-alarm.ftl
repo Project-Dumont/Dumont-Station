@@ -17,8 +17,12 @@ ai-alerts-ui-count = { $count ->
 }
 ai-alerts-ui-severity-warning = ALERTA
 ai-alerts-ui-severity-danger = PERIGO
-ai-alerts-ui-row = [color={ $color }]{ $severity }[/color] { $kind } — { $area }
-ai-alerts-ui-row-door = [color={ $color }]PORTA[/color] { $who } — { $area }
+ai-alerts-ui-row-title-alarm = [color={ $color }][bold]{ $severity } { $kind }[/bold][/color]
+ai-alerts-ui-row-desc-alarm = { $area }
+ai-alerts-ui-row-title-door = [color={ $color }][bold]Pedido de porta[/bold][/color]
+ai-alerts-ui-row-desc-door = { $who } está sem acesso, { $area }.
+ai-alerts-ui-row-title-waypoint = [color={ $color }][bold]Ponto marcado[/bold][/color]
+ai-alerts-ui-row-desc-waypoint = { $area }
 ai-alerts-ui-jump = Ir
 
 # Sincronia de leis IA -> borg
@@ -28,10 +32,13 @@ station-ai-law-sync-applied = As unidades cyborg foram sincronizadas com o conju
 # Waypoints
 station-ai-waypoint-set = Ponto marcado: { $area }.
 station-ai-waypoint-wrap = [color=#5ed7aa][{ $channel }] { $message }[/color]
-ai-alerts-ui-row-waypoint = [color={ $color }]PONTO[/color] { $area }
 ent-AiWaypointMarker = ponto marcado
 
 ent-ActionOpenAiAlertsMenu = Monitoramento Interno
     .desc = Alarmes de atmos e incêndio ao vivo, e quem ficou barrado numa porta. Dá pra pular pra cada um.
 ent-ActionAiPlaceWaypoint = Marcar ponto
     .desc = Marca um lugar pro coletivo silicon e avisa no binário.
+ai-alerts-ui-dismiss = Ocultar
+ai-alerts-ui-remove = Remover
+station-ai-waypoint-removed = Ponto removido: { $area }.
+station-ai-waypoint-remove-verb = Remover ponto

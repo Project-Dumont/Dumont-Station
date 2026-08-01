@@ -17,8 +17,12 @@ ai-alerts-ui-count = { $count ->
 }
 ai-alerts-ui-severity-warning = WARNING
 ai-alerts-ui-severity-danger = DANGER
-ai-alerts-ui-row = [color={ $color }]{ $severity }[/color] { $kind } — { $area }
-ai-alerts-ui-row-door = [color={ $color }]DOOR[/color] { $who } — { $area }
+ai-alerts-ui-row-title-alarm = [color={ $color }][bold]{ $kind } { $severity }[/bold][/color]
+ai-alerts-ui-row-desc-alarm = { $area }
+ai-alerts-ui-row-title-door = [color={ $color }][bold]Door request[/bold][/color]
+ai-alerts-ui-row-desc-door = { $who } has no access, { $area }.
+ai-alerts-ui-row-title-waypoint = [color={ $color }][bold]Waypoint[/bold][/color]
+ai-alerts-ui-row-desc-waypoint = { $area }
 ai-alerts-ui-jump = Jump
 
 # AI -> borg law synchronisation
@@ -28,4 +32,7 @@ station-ai-law-sync-applied = Cyborg units have been synchronised to the AI's cu
 # Waypoints
 station-ai-waypoint-set = Waypoint marked: { $area }.
 station-ai-waypoint-wrap = [color=#5ed7aa][{ $channel }] { $message }[/color]
-ai-alerts-ui-row-waypoint = [color={ $color }]WAYPOINT[/color] { $area }
+ai-alerts-ui-dismiss = Hide
+ai-alerts-ui-remove = Remove
+station-ai-waypoint-removed = Waypoint removed: { $area }.
+station-ai-waypoint-remove-verb = Remove waypoint

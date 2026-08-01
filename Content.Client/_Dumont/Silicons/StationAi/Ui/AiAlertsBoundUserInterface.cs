@@ -15,6 +15,7 @@ public sealed class AiAlertsBoundUserInterface(EntityUid owner, Enum uiKey) : Bo
 
         _menu = this.CreateWindow<AiAlertsMenu>();
         _menu.OnWarpTo += target => SendMessage(new AiAlertWarpMessage(target));
+        _menu.OnDismiss += target => SendMessage(new AiAlertDismissMessage(target));
 
         SendMessage(new AiAlertsRefreshMessage());
     }
