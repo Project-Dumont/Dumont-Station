@@ -1,0 +1,107 @@
+## Soldier
+
+- type: startingGear
+  id: SovietComradeGear
+  equipment:
+    head: ClothingHeadHatUshanka
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckRev
+    outerClothing: ClothingOuterVestWebRev
+    mask: ClothingMaskGasMerc
+    belt: ClothingSovietBelt
+    shoes: ClothingShoesBootsMerc
+  storage:
+    belt:
+    - RadioHandheld
+    - GeigerCounter
+    - Flare
+    - Flare
+    - Flare
+    - Flare
+#melee
+- type: startingGear
+  id: SovietComradeGearCombatKnife
+  parent: SovietComradeGear
+  inhand:
+  - CombatKnife
+- type: startingGear
+  id: SovietComradeGearFinka
+  parent: SovietComradeGear
+  inhand:
+  - Finka
+#pistol
+- type: startingGear
+  id: SovietComradeGearMakarov
+  parent: SovietComradeGear
+  inhand:
+  - WeaponPistolMakarov
+
+## Sargent
+
+- type: startingGear
+  id: SovietSargentGear
+  equipment:
+    head: ClothingHeadHelmetMerc
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    gloves: ClothingHandsMercGlovesCombat
+    outerClothing: ClothingOuterVestWebRev
+    mask: ClothingMaskGasMerc
+    belt: ClothingSovietBelt
+    shoes: ClothingShoesBootsMerc
+  storage:
+    belt:
+    - RadioHandheld
+    - GeigerCounter
+    - Flare
+    - Flare
+    - Flare
+    - Flare
+
+#shotgun
+- type: startingGear
+  id: SovietSargentGearSawn
+  parent: SovietSargentGear
+  inhand:
+  - WeaponShotgunKammerer
+
+#rifle
+- type: startingGear
+  id: SovietSargentGearFamas
+  parent: SovietSargentGear
+  inhand:
+  - WeaponRifleFamas
+
+## Tenent
+
+- type: startingGear
+  id: SovietTenentGear
+  equipment:
+    head: ClothingHeadHelmetMerc
+    eyes: ClothingEyesGlassesMercenary
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenaryMedic
+    gloves: ClothingHandsMercGlovesCombat
+    outerClothing: ClothingOuterVestWebMerc
+    belt: ClothingBeltMercWebbing
+    mask: ClothingMaskBandMerc
+    shoes: ClothingShoesBootsMerc
+  storage:
+    belt:
+    - RadioHandheld
+    - GeigerCounter
+    - Flare
+    - Flare
+    - Flare
+    - Flare
+
+#laser
+- type: startingGear
+  id: SovietTenentGearLaser
+  parent: SovietTenentGear
+  inhand:
+  - WeaponLaserGun
+
+#rifle
+- type: startingGear
+  id: SovietTenentGearAk
+  parent: SovietTenentGear
+  inhand:
+  - WeaponRifleAk
