@@ -43,6 +43,22 @@ public abstract class SharedNanoChatSystem : EntitySystem
         args.PushMarkup(Loc.GetString("nanochat-card-examine-number", ("number", $"{ent.Comp.Number:D4}")));
     }
 
+    /// <summary>
+    ///     Helper Method for truncating a string to maximum length
+    /// </summary>
+    public static string Truncate(string? text, int maxLength, string overflowText = "...") // Funky station - made text nullable because weird shit was happening that I could not bother to debug.
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+    if (overflowText.Length > maxLength)
+        return overflowText;
+
+        return text.Length > maxLength
+            ? text[..(maxLength - overflowText.Length)] + overflowText
+            : text;
+    }
+
     #region Public API Methods
 
     /// <summary>
@@ -197,6 +213,19 @@ public abstract class SharedNanoChatSystem : EntitySystem
             return;
 
         card.Comp.NotificationsMuted = muted;
+        Dirty(card);
+    }
+
+    /// <summary>
+    ///     Sets whether notifications are muted for a specific chat.
+    /// </summary>
+    public void ToggleChatMuted(Entity<NanoChatCardComponent?> card, uint chat)
+    {
+        if (!Resolve(card, ref card.Comp))
+            return;
+
+        if (!card.Comp.MutedChats.Remove(chat))
+            card.Comp.MutedChats.Add(chat);
         Dirty(card);
     }
 

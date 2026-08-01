@@ -11,7 +11,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
     state: full-base
   cost:
-    NTLoyaltyPoint: 50
+    NTLoyaltyPoint: 35
   categories:
   - NTRBSO
   restockTime: 1800 # Se isso precisar ser comprado em menos de meia-hora, talvez o BSO precise ser demitido.
@@ -30,7 +30,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
     state: full-uranium
   cost:
-    NTLoyaltyPoint: 45
+    NTLoyaltyPoint: 30
   categories:
   - NTRBSO
   restockTime: 1800 
@@ -49,7 +49,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
     state: full-incendiary
   cost:
-    NTLoyaltyPoint: 35
+    NTLoyaltyPoint: 25
   categories:
   - NTRBSO
   restockTime: 1800 
@@ -68,7 +68,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
     state: full-rubber
   cost:
-    NTLoyaltyPoint: 20
+    NTLoyaltyPoint: 15
   categories:
   - NTRBSO
   restockTime: 1200 

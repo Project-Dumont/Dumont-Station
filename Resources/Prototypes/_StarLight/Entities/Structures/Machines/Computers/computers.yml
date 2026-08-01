@@ -1,0 +1,45 @@
+- type: entity
+  parent: BaseComputerAiAccess
+  id: MassDriverComputer
+  name: mass driver computer
+  description: A computer for controlling mass drivers.
+  components:
+  - type: MassDriverConsole
+  - type: ActivatableUI
+    key: enum.MassDriverConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.MassDriverConsoleUiKey.Key:
+        type: MassDriverConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Sprite
+    layers:
+    - map: [ "computerLayerBody" ]
+      state: computer
+    - map: [ "computerLayerKeyboard" ]
+      state: generic_keyboard
+    - map: [ "computerLayerScreen" ]
+      state: sensors
+    - map: [ "computerLayerKeys" ]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: Computer
+    board: MassDriverComputerCircuitboard
+  - type: PointLight
+    radius: 2.5
+    energy: 1.5
+    color: "#2e9ec9"
+    castShadows: false
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: DeviceLinkSource
+    range: 50
+    ports:
+    - MassDriverConsoleSender
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      board: !type:Container

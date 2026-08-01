@@ -155,11 +155,11 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
 
         var antags = _antag.GetAntagIdentifiers(uid);
         args.AddLine(Loc.GetString("zombie-round-end-initial-count", ("initialCount", antags.Count)));
-        foreach (var (_, data, entName) in antags)
+        foreach (var (mind, data, entName) in antags)
         {
             args.AddLine(Loc.GetString("zombie-round-end-user-was-initial",
                 ("name", entName),
-                ("username", data.UserName)));
+                ("username", _antag.GetRoundEndUsername(mind, data.UserName))));
         }
 
         var healthy = GetHealthyHumans(true); // Einstein Engines - Zombie Improvements Take 2

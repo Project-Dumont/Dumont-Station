@@ -161,10 +161,13 @@
   salary: 75 # Gaby content
   access:
   - Cargo
-  - Salvage
+  - Salvage # Dumont - Exploraion
+  - Mail # Dumont
+  - Mining # Dumont
   - Quartermaster
   - Maintenance
   - External
+  - SalvageLead # Starlight
   - Command
   - Brig
   - Cryogenics

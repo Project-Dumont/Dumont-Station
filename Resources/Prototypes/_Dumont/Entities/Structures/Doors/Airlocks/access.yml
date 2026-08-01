@@ -1,3 +1,52 @@
+# Normal
+
+# Med
+- type: entity
+  parent: AirlockPsychology
+  id: AirlockPsychologyLocked
+  suffix: Psychology, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychology ]
+
+- type: entity
+  parent: AirlockPharmacy
+  id: AirlockPharmacyLocked
+  suffix: Pharmacy, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPharmacy ]
+
+# Cargo
+- type: entity
+  parent: AirlockMail
+  id: AirlockMailLocked
+  suffix: Mail, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMail ]
+
+- type: entity
+  parent: AirlockMiningDumont
+  id: AirlockMiningDumontLocked
+  suffix: Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMining ]
+
+- type: entity
+  parent: AirlockSalvMine
+  id: AirlockSalvMineLocked
+  suffix: Salvage/Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvMine ]
+
 - type: entity
   parent: AirlockBitrunner
   id: AirlockBitrunnerLocked
@@ -6,6 +55,85 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBitrunner ]
+
+# Sci
+- type: entity
+  parent: AirlockGenetics
+  id: AirlockGeneticsLocked
+  suffix: Genetics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsGenetics ]
+
+# Sec
+- type: entity
+  parent: AirlockBrigMedic
+  id: AirlockBrigMedicLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
+
+# Service
+- type: entity
+  parent: AirlockLibrary
+  id: AirlockLibraryLocked
+  suffix: Library, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
+
+# Glass
+
+# Med
+- type: entity
+  parent: AirlockPsychologyGlass
+  id: AirlockPsychologyGlassLocked
+  suffix: Psychology, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychology ]
+
+- type: entity
+  parent: AirlockPharmacyGlass
+  id: AirlockPharmacyGlassLocked
+  suffix: Pharmacy, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPharmacy ]
+
+# Cargo
+- type: entity
+  parent: AirlockMailGlass
+  id: AirlockMailGlassLocked
+  suffix: Mail, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMail ]
+
+- type: entity
+  parent: AirlockMiningDumontGlass
+  id: AirlockMiningDumontGlassLocked
+  suffix: Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMining ]
+
+- type: entity
+  parent: AirlockSalvMineGlass
+  id: AirlockSalvMineGlassLocked
+  suffix: Salvage/Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvMine ]
 
 - type: entity
   parent: AirlockBitrunnerGlass
@@ -16,9 +144,132 @@
     containers:
       board: [ DoorElectronicsBitrunner ]
 
+# Sci
+- type: entity
+  parent: AirlockGeneticsGlass
+  id: AirlockGeneticsGlassLocked
+  suffix: Genetics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsGenetics ]
+
+- type: entity
+  parent: AirlockRoboticsGlass
+  id: AirlockRoboticsGlassLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+# Sec
+- type: entity
+  parent: AirlockBrigMedicGlass
+  id: AirlockBrigMedicGlassLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
+
+# Service
+- type: entity
+  parent: AirlockLibraryGlass
+  id: AirlockLibraryGlassLocked
+  suffix: Library, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
+
+# Maint
+
+# Med
+- type: entity
+  parent: AirlockVirologyLocked
+  id: AirlockMaintVirologyLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockPsychologyLocked
+  id: AirlockMaintPsychologyLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockPharmacyLocked
+  id: AirlockMaintPharmacyLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+# Sci
+- type: entity
+  parent: AirlockGeneticsLocked
+  id: AirlockMaintGeneticsLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMedicalScienceLocked
+  id: AirlockMaintMedicalScienceLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockRoboticsLocked
+  id: AirlockMaintRoboticsLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+# Cargo
+- type: entity
+  parent: AirlockMailLocked
+  id: AirlockMaintMailLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockSalvMineLocked
+  id: AirlockMaintSalvMineLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMiningDumontLocked
+  id: AirlockMaintMiningDumontLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
 - type: entity
   parent: AirlockBitrunnerLocked
   id: AirlockMaintBitrunnerLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+# Sec
+- type: entity
+  parent: AirlockBrigMedicLocked
+  id: AirlockMaintBrigMedicLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+# Service
+- type: entity
+  parent: AirlockLibraryLocked
+  id: AirlockMaintLibraryLocked
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi

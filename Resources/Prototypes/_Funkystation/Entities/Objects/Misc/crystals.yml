@@ -11,7 +11,7 @@
     flavors:
     - eggplant
   - type: StaticPrice
-    price: 35
+    price: 200 #Dumont
   - type: Item
     size: Small
   - type: SolutionContainerManager
@@ -22,28 +22,36 @@
           Quantity: 6
 
 - type: entity
-  parent: GrenadeBase
+  parent: BaseItem #Dumont
   id: HealiumCrystal
   name: healium crystal
-  description: A crystal made from healium gas. It's cold to the touch.
+  description: A crystal made from healium gas. It's cold to the touch and looks strangely sweet and appetizing.
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Weapons/Grenades/healiumcrystal.rsi
-  - type: AdjustAirOnTrigger
-    gasAdjustments:
-      healium: 0.8
-    temperature: 293.15
-    range: 8.0
-  - type: EmitSoundOnTrigger
-    sound:
-      path: "/Audio/Effects/spray.ogg"
-    positional: true
-  - type: DeleteOnTrigger
-  - type: Appearance
+    #Dumont start
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - cold
+  - type: Food
+    solution: food
+    delay: 5
+    forceFeedDelay: 5
+    transferAmount: 50
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Healium
+          Quantity: 40
+        - ReagentId: Nitrium
+          Quantity: 10
   - type: StaticPrice
-    price: 500
-  - type: TimerTriggerVisuals
-
+    price: 1000
+    #Dumont end
+    
 - type: entity
   parent: GrenadeBase
   id: ProtoNitrateCrystal
@@ -52,20 +60,35 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Weapons/Grenades/protonitratecrystal.rsi
-  - type: AdjustAirOnTrigger
-    gasAdjustments:
-      nitrogen: 80
-      oxygen: 30
-    range: 5
-  - type: EmitSoundOnTrigger
+  - type: ReleaseGasOnTrigger # Dumont edit start
+    removeFraction: 0.25
+    air:
+      volume: 1000
+      moles:
+      - 436.8 # oxygen
+      - 1643.2 # nitrogen
+      temperature: 293.15
+  - type: SmokeOnTrigger
+    duration: 8
+    spreadAmount: 20
+    smokePrototype: Resin
+    keysIn:
+    - timer #Dumont end
+  - type: EmitSoundOnTrigger 
     sound:
-      path: "/Audio/Effects/spray.ogg"
+      path: /Audio/Effects/spray.ogg
+    keysIn:
+    - timer
     positional: true
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: Appearance
   - type: StaticPrice
     price: 650
   - type: TimerTriggerVisuals
+    primingSound:
+      path: /Audio/Items/smoke_grenade_smoke.ogg
 
 - type: entity
   parent: GrenadeBase
@@ -77,7 +100,7 @@
     sprite: _Funkystation/Objects/Weapons/Grenades/nitrousoxidecrystal.rsi
   - type: AdjustAirOnTrigger
     gasAdjustments:
-      nitrousoxide: 20
+      nitrousoxide: 300
     range: 1
   - type: EmitSoundOnTrigger
     sound:
@@ -106,3 +129,4 @@
   - type: Tag
     tags:
     - NoRecharge
+  - type: EmpImmune #Dumont

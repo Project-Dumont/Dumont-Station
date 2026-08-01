@@ -109,6 +109,7 @@
   goobcoins: 15 #Goob content
   access:
   - Medical
+  - Psychology # Dumont
   - Maintenance
   extendedAccess:
   - Chemistry

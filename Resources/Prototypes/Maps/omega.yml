@@ -37,7 +37,7 @@
 - type: gameMap
   id: Omega
   mapName: 'Omega'
-  mapPath: /Maps/_Gabystation/omega.yml # Gabystation
+  mapPath: /Maps/_Dumont/omega.yml # Gabystation
   minPlayers: 7
   maxPlayers: 35
   stations:
@@ -98,8 +98,10 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]
+            SalvageLead: [ 1, 1 ]
             CargoTechnician: [ 2, 2 ]
             ShaftMiner: [ 2, 2 ]
+            Bitrunner: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]

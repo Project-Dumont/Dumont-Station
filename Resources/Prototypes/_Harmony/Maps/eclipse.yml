@@ -6,7 +6,7 @@
   id: Eclipse
   mapName: 'Eclipse'
   mapPath: /Maps/_Harmony/eclipse.yml
-  minPlayers: 50
+  minPlayers: 60
   maxPlayers: 100
   stations:
     eclipse:
@@ -68,6 +68,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             ShaftMiner: [ 3, 3 ]
             CargoTechnician: [ 5, 5 ]
             #civilian

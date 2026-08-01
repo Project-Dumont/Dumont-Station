@@ -162,6 +162,8 @@
   salary: 75 # Gaby content
   access:
   - Research
+  - Robotics # Dumont
+  - Genetics # Dumont
   - Command
   - Maintenance
   - ResearchDirector

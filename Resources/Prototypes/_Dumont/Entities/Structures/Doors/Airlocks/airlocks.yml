@@ -1,3 +1,88 @@
+# Normal
+
+# Med
+- type: entity
+  parent: Airlock
+  id: AirlockPsychology
+  suffix: Psychology
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/psychology.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: Airlock
+  id: AirlockPharmacy
+  suffix: Pharmacy
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/pharmacy.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+# Sci
+- type: entity
+  parent: Airlock
+  id: AirlockGenetics
+  suffix: Genetics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/genetics.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: AirlockRobotics
+  suffix: Robotics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/robotics.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: AirlockMedicalScience
+  suffix: Medical/Science
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/medsci.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+# Cargo
+- type: entity
+  parent: Airlock
+  id: AirlockMail
+  suffix: Mail
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/mail.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: Airlock
+  id: AirlockMiningDumont
+  suffix: Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/miner.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: Airlock
+  id: AirlockSalvMine
+  suffix: Salvage/Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/salvmine.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
 - type: entity
   parent: Airlock
   id: AirlockBitrunner
@@ -5,6 +90,101 @@
   components:
   - type: Sprite
     sprite: _Dumont/Structures/Doors/Airlocks/Standard/bitrunning.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+# Sec
+- type: entity
+  parent: Airlock
+  id: AirlockBrigMedic
+  suffix: BrigMedic
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Standard/brigmedic.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+# Service
+- type: entity
+  parent: Airlock
+  id: AirlockLibrary
+  suffix: Library
+  components:
+  - type: Wires
+    layoutId: AirlockService
+
+# Glass
+
+# Med
+- type: entity
+  parent: AirlockGlass
+  id: AirlockPsychologyGlass
+  suffix: Psychology
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/psychology.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockPharmacyGlass
+  suffix: Pharmacy
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/pharmacy.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+# Sci
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGeneticsGlass
+  suffix: Genetics
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/genetics.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMedicalScienceGlass
+  suffix: Medical/Science
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/medsci.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+# Cargo
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMailGlass
+  suffix: Mail
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/mail.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMiningDumontGlass
+  suffix: Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/miner.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockSalvMineGlass
+  suffix: Salvage/Mining
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/salvmine.rsi
   - type: Wires
     layoutId: AirlockCargo
 
@@ -17,3 +197,23 @@
     sprite: _Dumont/Structures/Doors/Airlocks/Glass/bitrunning.rsi
   - type: Wires
     layoutId: AirlockCargo
+
+# Sec
+- type: entity
+  parent: AirlockGlass
+  id: AirlockBrigMedicGlass
+  suffix: BrigMedic
+  components:
+  - type: Sprite
+    sprite: _Dumont/Structures/Doors/Airlocks/Glass/brigmedic.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+# Service
+- type: entity
+  parent: AirlockGlass
+  id: AirlockLibraryGlass
+  suffix: Library
+  components:
+  - type: Wires
+    layoutId: AirlockService

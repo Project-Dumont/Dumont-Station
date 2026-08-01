@@ -89,7 +89,7 @@
 - type: gameMap
   id: Box
   mapName: 'Box Station'
-  mapPath: /Maps/_Gabystation/box.yml # Dumont
+  mapPath: /Maps/_Dumont/box.yml # Dumont
   minPlayers: 30 # Goobstation return minPlayers requirement for maps
   maxPlayers: 85 # Goobstation - Limit mappool to highpop versions of maps only
   stations:
@@ -152,7 +152,9 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             ShaftMiner: [ 4, 4 ]
+            Bitrunner: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]

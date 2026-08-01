@@ -52,7 +52,7 @@ ent-FloorTileItemBar = piso de bar
 ent-FloorTileItemClown = piso de palhaço
     .desc = Era pro chão segurar isso, não você.
 
-ent-FloorTileItemMime = piso de mimíco
+ent-FloorTileItemMime = piso de mimico
     .desc = Era pro chão segurar isso, não você.
 
 ent-FloorTileItemKitchen = piso de cozinha

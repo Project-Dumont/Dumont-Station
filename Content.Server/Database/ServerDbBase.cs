@@ -195,6 +195,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(h => h.AltTitles) //Dumont Change
                 // Begin CD - Character Records and Allergies
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.CDProfile)
@@ -263,6 +264,7 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
+                .Include(p => p.AltTitles) // Dumont Change
                 .Include(p => p.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
@@ -423,15 +425,14 @@ namespace Content.Server.Database
 
             // Gaby change - start
 
-            var altTitles = new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>();
+            var altTitles = profile.AltTitles
+                .GroupBy(r => r.RoleName)
+                .ToDictionary(g => new ProtoId<JobPrototype>(g.Key),
+                    g => new ProtoId<JobAlternateTitlePrototype>(g
+                        .OrderByDescending(x => x.Id)
+                        .First().AlternateTitle)
+                    );
 
-            foreach (var role in profile.AltTitles)
-            {
-                altTitles.Add(
-                    new ProtoId<JobPrototype>(role.RoleName),
-                    new ProtoId<JobAlternateTitlePrototype>(role.AlternateTitle)
-                );
-            }
             // Gaby change - end
 
             // Begin CD - Chracter Records and Allergies

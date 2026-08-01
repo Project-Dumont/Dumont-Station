@@ -35,7 +35,7 @@
   parent: ConstructibleMachine # Goobstation
   name: radiation collector
   suffix: Empty tank
-  description: A machine that collects radiation and turns it into power. Requires plasma gas to function.
+  description: A machine that collects radiation and turns it into power. Requires plasma gas to function, as well as proximity to a singularity or supermatter.
   placement:
     mode: SnapgridCenter
   components:
@@ -90,7 +90,9 @@
     sprite: Structures/Power/Generation/Singularity/collector.rsi
     state: static
   - type: RadiationCollector
-    chargeModifier: 15000
+    chargeModifier: 8000 # Dumont edit - 15000 -> 8000
+    proximityRange: 8.5 # Dumont
+    requiredProximityTag: EletricRadiation # Dumont
     radiationReactiveGases:
       - reactantPrototype: Plasma
         powerGenerationEfficiency: 1

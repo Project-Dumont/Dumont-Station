@@ -77,7 +77,7 @@
     - ExpandingRepairingStation
 
 - type: entity
-  parent: SheetMetalBase
+  parent: [SheetMetalBase, BaseQuickConstructionMaterial] # DEN add quick construction parent
   id: SheetSteel
   name: steel
   suffix: Full
@@ -113,6 +113,8 @@
           Quantity: 2
         - ReagentId: Lead
           Quantity: 1
+  - type: QuickConstructable # DEN quick construction
+    category: Steel
   - type: Tag # Goobstation
     tags:
     - Sheet

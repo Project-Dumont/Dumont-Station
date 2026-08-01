@@ -103,3 +103,5 @@
   - type: Puller
     needsHands: false
   - type: Stealth # Hijacking this to prevent huds from showing, tell me if you got a better solution.
+  - type: GlobalAntagonist # Orion
+    antagonistPrototype: globalAntagonistUnknown

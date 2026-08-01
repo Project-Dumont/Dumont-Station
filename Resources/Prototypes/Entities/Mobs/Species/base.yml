@@ -529,6 +529,7 @@
   - type: MindControllable # Goobstation
   - type: VisibleContraband # Goobstation
   - type: MomentumSteering # Goobstation - No steer
+  - type: DuoEmote # Funky change
 
 - type: entity
   save: false

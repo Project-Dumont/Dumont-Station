@@ -661,3 +661,268 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsNukeop ]
+
+# Dumont
+# Normal
+
+# Med
+- type: entity
+  parent: Windoor
+  id: WindoorMedicalLocked
+  suffix: Medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: WindoorMedicalLocked
+  id: WindoorVirologyLocked
+  suffix: Virology, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVirology ]
+
+- type: entity
+  parent: WindoorMedicalLocked
+  id: WindoorPsychologyLocked
+  suffix: Psychology, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychology ]
+
+- type: entity
+  parent: WindoorMedicalLocked
+  id: WindoorPharmacyLocked
+  suffix: Pharmacy, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPharmacy ]
+
+# Sci
+
+- type: entity
+  parent: Windoor
+  id: WindoorScienceLocked
+  suffix: Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: WindoorScienceLocked
+  id: WindoorGeneticsLocked
+  suffix: Genetics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsGenetics ]
+
+- type: entity
+  parent: WindoorScienceLocked
+  id: WindoorRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+- type: entity
+  parent: WindoorScienceLocked
+  id: WindoorMedicalScienceLocked
+  suffix: Medical/Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedicalResearch ]
+
+# Cargo
+
+- type: entity
+  parent: WindoorCargoLocked
+  id: WindoorMiningLocked
+  suffix: Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMining ]
+
+- type: entity
+  parent: WindoorCargoLocked
+  id: WindoorSalvageLocked
+  suffix: Salvage, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+- type: entity
+  parent: WindoorCargoLocked
+  id: WindoorMailLocked
+  suffix: Mail, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMail ]
+
+- type: entity
+  parent: WindoorCargoLocked
+  id: WindoorSalvMineLocked
+  suffix: Salvage/Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvMine ]
+
+# Security
+
+- type: entity
+  parent: Windoor
+  id: WindoorSecurityLocked
+  suffix: Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: WindoorSecurityLocked
+  id: WindoorBrigMedicLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
+
+# Service
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorLibraryLocked
+  suffix: Library, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
+
+# Secure
+
+# Med
+
+- type: entity
+  parent: WindoorSecureMedicalLocked
+  id: WindoorSecureVirologyLocked
+  suffix: Virology, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVirology ]
+
+- type: entity
+  parent: WindoorSecureMedicalLocked
+  id: WindoorSecurePsychologyLocked
+  suffix: Psychology, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPsychology ]
+
+- type: entity
+  parent: WindoorSecureMedicalLocked
+  id: WindoorSecurePharmacyLocked
+  suffix: Pharmacy, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPharmacy ]
+
+# Sci
+
+- type: entity
+  parent: WindoorSecureScienceLocked
+  id: WindoorSecureGeneticsLocked
+  suffix: Genetics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsGenetics ]
+
+- type: entity
+  parent: WindoorSecureScienceLocked
+  id: WindoorSecureRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+- type: entity
+  parent: WindoorSecureScienceLocked
+  id: WindoorSecureMedicalScienceLocked
+  suffix: Medical/Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedicalResearch ]
+
+# Cargo
+
+- type: entity
+  parent: WindoorSecureCargoLocked
+  id: WindoorSecureMiningLocked
+  suffix: Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMining ]
+
+- type: entity
+  parent: WindoorSecureCargoLocked
+  id: WindoorSecureMailLocked
+  suffix: Mail, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMail ]
+
+- type: entity
+  parent: WindoorSecureCargoLocked
+  id: WindoorSecureSalvMineLocked
+  suffix: Salvage/Mining, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvMine ]
+
+# Security
+
+- type: entity
+  parent: WindoorSecureSecurityLocked
+  id: WindoorSecureBrigMedicLocked
+  suffix: BrigMedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigMedic ]
+
+# Service
+
+- type: entity
+  parent: WindoorSecureServiceLocked
+  id: WindoorSecureLibraryLocked
+  suffix: Library, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLibrary ]
+# /Dumont

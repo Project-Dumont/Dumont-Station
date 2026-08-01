@@ -1,0 +1,1 @@
+job-description-salvagelead = Lidere sua equipe de exploração e mantenha todos seguros. Lembre-se, você é os olhos e ouvidos do Líder da Logistíca fora da estação.

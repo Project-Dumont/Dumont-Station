@@ -109,7 +109,6 @@
   - ChemMasterMachineCircuitboard
   - CondenserMachineCircuitBoard
   - HotplateMachineCircuitboard
-  - EnergyChemDispenserMachineCircuitboard #Goob edit - all things that get base med boards get E-Chem
 
 ## Dynamic
 
@@ -132,5 +131,6 @@
   - CryoPodMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - StasisOperatingTableCircuitboard # Corvax-Goob-StasisOperatingTable
-  - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics
-  - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics
+  # - MedicalScannerMachineCircuitboard # Corvax-Wega-Genetics # Dumont -Geneticist -> Sci only
+  # - DnaModifierComputerCircuitboard # Corvax-Wega-Genetics # Dumont -Geneticist -> Sci only
+  - EnergyChemDispenserMachineCircuitboard #Goob

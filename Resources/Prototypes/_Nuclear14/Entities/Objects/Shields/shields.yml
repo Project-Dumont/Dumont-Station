@@ -1,0 +1,111 @@
+- type: entity
+  name: base shield
+  parent: [ BaseItem, BaseSalvageContraband ]
+  id: N14BaseShield
+  description: Debug item, you shouldn't see it!
+  abstract: true
+  components:
+    - type: Sprite
+      sprite: _Nuclear14/Objects/Weapons/Melee/shield_light.rsi
+      state: icon
+    - type: Item
+      sprite: _Nuclear14/Objects/Weapons/Melee/shield_light.rsi
+      size: Ginormous
+    # #Misfits Fix - Add Clothing so metal shields can be equipped to Back / armor suitStorage (matches Legion shield behavior)
+    - type: Clothing
+      sprite: _Nuclear14/Objects/Weapons/Melee/shield_light.rsi
+      quickEquip: false
+      slots:
+      - Back
+      - suitStorage
+    - type: Damageable
+      damageContainer: Shield
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.85
+          Piercing: 0.85
+          Heat: 0.85
+        flatReductions:
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.5
+          Heat: 1
+    - type: Reflect # #Made the deflect change 15% to interact with the heavy shields double
+      reflectProb: 0.15
+      spread: 150
+    - type: ClothingSpeedModifier
+      walkModifier: 0.975
+      sprintModifier: 0.975
+    - type: HeldSpeedModifier
+      mirrorClothingModifier: false
+      walkModifier: 0.95
+      sprintModifier: 0.95
+    - type: StaticPrice
+      price: 50
+
+- type: entity
+  name: heavy metal shield
+  parent: N14BaseShield
+  id: N14ShieldMetalHeavy
+  components:
+    - type: Sprite
+      sprite: _Nuclear14/Objects/Weapons/Melee/shield_heavy.rsi
+    - type: Item
+      sprite: _Nuclear14/Objects/Weapons/Melee/shield_heavy.rsi
+    # #Misfits Fix - Override Clothing sprite to match heavy shield RSI
+    - type: Clothing
+      sprite: _Nuclear14/Objects/Weapons/Melee/shield_heavy.rsi
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100 # Half'd durabillity due to insanely cheap cost
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.85
+          Piercing: 0.9 # Forge-Change
+          Heat: 0.85
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.85 # Forge-Change
+          Heat: 0.8
+        flatReductions:
+          Blunt: 0.5 # Forge-Change
+          Slash: 0.5 # Forge-Change
+          Piercing: 0.5 # Forge-Change
+          Heat: 1 # Forge-Change
+    - type: Reflect # # Made reflect to 20 because the shield is insane
+      reflectProb: 0.20
+      spread: 150
+    - type: ClothingSpeedModifier
+      walkModifier: 0.85 # Forge-Change
+      sprintModifier: 0.85 # Forge-Change
+    - type: HeldSpeedModifier
+      mirrorClothingModifier: false
+      walkModifier: 0.875 # Forge-Change
+      sprintModifier: 0.875 # Forge-Change

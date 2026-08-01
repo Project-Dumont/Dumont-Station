@@ -403,7 +403,7 @@
     job: Chemist
   - type: Item # Goobstation - Chemist card
     heldPrefix: chemist
-    sprite: _Gabystation/Objects/Misc/id_cards.rsi 
+    sprite: _Gabystation/Objects/Misc/id_cards.rsi
 
 - type: entity
   parent: IDCardStandard
@@ -1115,6 +1115,19 @@
     # Goobstation
     - NanotrasenRepresentative
     - BlueshieldOfficer
+    - Robotics
+    - Journalism
+    # Dumont
+    - Virology
+    - Psychology
+    - Pharmacy
+    - Genetics
+    - Mail
+    - Mining
+    - BrigMedic
+    - Library
+      # Orion
+    - Bitrun
   - type: NanoChatCard # DeltaV
     listNumber: false
   - type: NanoBankCard # Gabystation

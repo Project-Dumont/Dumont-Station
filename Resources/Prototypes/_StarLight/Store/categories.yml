@@ -1,0 +1,17 @@
+# salvage
+
+- type: storeCategory
+  id: SalvageEquipment
+  name: Equipment
+  
+- type: storeCategory
+  id: SalvageUtilities
+  name: Utilities
+
+- type: storeCategory
+  id: SalvageWeapons
+  name: Weapons
+  
+- type: storeCategory
+  id: SalvageConsumeables
+  name: Consumeables

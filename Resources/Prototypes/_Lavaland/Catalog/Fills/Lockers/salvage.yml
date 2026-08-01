@@ -8,6 +8,7 @@
     - id: HandHeldMassScanner
     - id: FlashlightSeclite
     - id: OreBag
+    - id: JetpackMiniFilled
     - id: Pickaxe
     - id: MineralScanner
     - id: Flare
@@ -21,7 +22,7 @@
     children:
     - id: OxygenTankFilled
     - id: ClothingShoesBootsMag
-    - id: ClothingOuterHardsuitSalvage
+    - id: ClothingOuterHardsuitSpatio
     - id: ClothingMaskGasExplorer
 
 - type: entityTable
@@ -29,10 +30,17 @@
   table: !type:AllSelector
     children:
     - id: ClothingBeltUtilityFilled
-    - id: UndeterminedWeaponSalvageSpecialist
     - id: SurvivalKnife
     - id: AppraisalTool
-    - id: FireExtinguisher
+    - id: N14WeaponShotgunSawedOff
+    - id: N14ScrapMachete
+    - id: ShellShotgunImprovised
+    - id: ShellShotgunImprovised
+    - id: ShellShotgunImprovised
+    - id: ShellShotgunImprovised
+    - id: ShellShotgunImprovised
+    - id: ShellShotgunImprovised
+    - id: ExplorerAxeBase
     - !type:NestedSelector
       tableId: FillGeneralMiningExploration
 
