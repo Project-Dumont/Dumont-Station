@@ -67,6 +67,7 @@
     powered: true
     openingSpriteState: closed_unlit
     closingSpriteState: closed_unlit
+  - type: NavMapDoor
 
 - type: entity
   parent: DoorXenoResin

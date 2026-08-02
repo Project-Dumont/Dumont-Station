@@ -468,8 +468,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 1.00
-    sprintModifier: 1.00
+    walkModifier: 0.70
+    sprintModifier: 0.70
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
