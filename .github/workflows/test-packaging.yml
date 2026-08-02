@@ -27,7 +27,8 @@ on:
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ master, staging, stable ]
+    # Isso deve rodar em qualquer branch, independentemente do nome.
+    # branches: [ master, staging, stable ]
     paths:
       - '**.cs'
       - '**.csproj'
