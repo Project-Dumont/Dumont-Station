@@ -502,12 +502,12 @@
 - type: entity
   parent: BaseAction
   id: ActionToggleTrayGoogles
-  name: Toggle Tray Googles
+  name: Toggle Tray Goggles
   description: Toggle the tray goggles on and off.
   components:
   - type: Action
     itemIconStyle: BigItem
-    useDelay: 1 # equip noise spam.
+    useDelay: 1
   - type: InstantAction
     event: !type:ToggleActionEvent
 

@@ -503,7 +503,7 @@
 
 - type: entity
   parent: ClothingEyesBase
-  id: ClothingEyesGlassesTray
+  id: ClothingEyesTray
   name: t-ray goggles
   description: Blue-tinted goggles using a proprietary polymer that provides protection from eye damage of all types.
   components:
@@ -511,11 +511,9 @@
     sprite: Clothing/Eyes/Glasses/t-ray.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/t-ray.rsi
-  - type: ToggleClothing
-    action: ActionToggleTrayGoogles
-    mustEquip: true
+    slot: eyes
+  - type: ItemToggle
   - type: EyeProtection
-  - type: TrayScanner
   - type: IdentityBlocker
     coverage: EYES
   - type: Tag
