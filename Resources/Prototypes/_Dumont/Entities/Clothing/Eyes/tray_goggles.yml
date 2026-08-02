@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ideia original do SukitaBR na issue #894
+
+- type: entity
+  parent: [ClothingEyesBase, BaseToggleClothing]
+  id: ClothingEyesGlassesTray
+  name: t-ray goggles
+  description: Terahertz scanning goggles. Reveals pipes and wiring under the floor without occupying your hands.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+  # o componente fica sempre no item porque a máscara de visão do subsolo é
+  # concedida no GotEquippedEvent. o toggle só liga e desliga o Enabled
+  - type: TrayScanner
+    enabled: false
+    range: 4
+  - type: WornTrayScanner
+  - type: ItemToggle
+    onActivate: false # é roupa, não liga clicando na mão
+  - type: ToggleClothing
+    action: ActionToggleTrayGoggles
+    mustEquip: true
+    disableOnUnequip: true
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: icon }
+          False: { state: icon }
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 300
+      Glass: 200
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: BaseAction
+  id: ActionToggleTrayGoggles
+  name: Toggle t-ray goggles
+  description: Turns the terahertz scanner on and off.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+  - type: InstantAction
+    event: !type:ToggleActionEvent

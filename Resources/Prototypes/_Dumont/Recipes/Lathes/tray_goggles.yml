@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: ClothingEyesGlassesTray
+  result: ClothingEyesGlassesTray
+  completetime: 4
+  materials:
+    Steel: 600
+    Glass: 400
+    Gold: 100
