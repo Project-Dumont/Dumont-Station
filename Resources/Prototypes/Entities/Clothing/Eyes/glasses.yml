@@ -500,3 +500,25 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesTray
+  name: t-ray goggles
+  description: Blue-tinted goggles using a proprietary polymer that provides protection from eye damage of all types.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/t-ray.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/t-ray.rsi
+  - type: ToggleClothing
+    action: ActionToggleTrayGoogles
+    mustEquip: true
+  - type: EyeProtection
+  - type: TrayScanner
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon

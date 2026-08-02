@@ -498,3 +498,16 @@
     itemIconStyle: BigAction
   - type: InstantAction
     event: !type:ChameleonControllerOpenMenuEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionToggleTrayGoogles
+  name: Toggle Tray Googles
+  description: Toggle the tray goggles on and off.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 1 # equip noise spam.
+  - type: InstantAction
+    event: !type:ToggleActionEvent
+
