@@ -5839,7 +5839,7 @@ entities:
             3600: 39,-22
             3642: 37,-31
         - node:
-            color: '#DE3A3A96'
+            color: '#2B3EA1C8'
             id: WarnBox
           decals:
             7809: 52,50

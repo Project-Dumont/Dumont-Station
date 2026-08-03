@@ -492,7 +492,7 @@
     layers:
     - state: paper
     - state: cover_strong
-      color: "#87011c"
+      color: "#12124a"
     - state: icon_law
       color: "#f7d61a"
   - type: GuideHelp

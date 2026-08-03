@@ -766,7 +766,7 @@ entities:
             1842: 25,25
             1843: 25,28
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteCornerNe
           decals:
             490: 29,18
@@ -818,7 +818,7 @@ entities:
             1840: 24,28
             1841: 24,25
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteCornerNw
           decals:
             489: 27,18
@@ -878,7 +878,7 @@ entities:
             1844: 25,27
             1845: 25,24
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteCornerSe
           decals:
             491: 29,16
@@ -941,7 +941,7 @@ entities:
             1846: 24,24
             1847: 24,27
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteCornerSw
           decals:
             492: 27,16
@@ -992,7 +992,7 @@ entities:
             1367: 14,5
             1368: 17,5
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteInnerNe
           decals:
             145: 1,50
@@ -1060,7 +1060,7 @@ entities:
           decals:
             1836: 30,25
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteInnerSe
           decals:
             144: 1,52
@@ -1085,7 +1085,7 @@ entities:
           decals:
             150: 1,52
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteLineE
           decals:
             143: 1,51
@@ -1160,7 +1160,7 @@ entities:
             1824: 31,28
             1825: 32,28
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteLineN
           decals:
             139: 2,50
@@ -1265,7 +1265,7 @@ entities:
             1833: 31,25
             1834: 32,25
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteLineS
           decals:
             141: 2,52
@@ -1376,7 +1376,7 @@ entities:
             1838: 27,26
             1839: 27,27
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: BrickTileWhiteLineW
           decals:
             496: 27,17
@@ -1499,7 +1499,7 @@ entities:
             664: 3,4
             665: 6,2
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: CheckerNESW
           decals:
             375: 18,12
@@ -1573,7 +1573,7 @@ entities:
             794: -12,-6
             795: -12,-7
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: CheckerNWSE
           decals:
             525: 34,11
@@ -1872,7 +1872,7 @@ entities:
             1641: 15,1
             1642: 10,1
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: FullTileOverlayGreyscale
           decals:
             497: 30,13
@@ -1960,7 +1960,7 @@ entities:
             1184: 19.968218,33.077896
             1185: 23.34307,34.234146
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale
           decals:
             462: 32,18
@@ -2047,7 +2047,7 @@ entities:
             906: 14,-11
             907: 15,-11
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale180
           decals:
             501: 32,20
@@ -2129,7 +2129,7 @@ entities:
             902: 12,-13
             903: 13,-13
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale270
           decals:
             523: 36,11
@@ -2204,7 +2204,7 @@ entities:
             1854: -26,-13
             1855: -26,-11
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: HalfTileOverlayGreyscale90
           decals:
             521: 38,11
@@ -2601,7 +2601,7 @@ entities:
           decals:
             1856: -26,-9
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale
           decals:
             457: 31,10
@@ -2720,7 +2720,7 @@ entities:
           decals:
             1113: 45,34
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale180
           decals:
             420: 13,8
@@ -2820,7 +2820,7 @@ entities:
           decals:
             1112: 46,33
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale270
           decals:
             450: 31,17
@@ -2917,7 +2917,7 @@ entities:
             1237: 31,-11
             1238: 32,-11
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: QuarterTileOverlayGreyscale90
           decals:
             371: 9,15
@@ -3059,7 +3059,7 @@ entities:
           decals:
             1058: -40,22
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             459: 11,10
@@ -3115,7 +3115,7 @@ entities:
             892: 18,-11
             897: 11,-11
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             518: 38,10
@@ -3171,7 +3171,7 @@ entities:
             895: 16,-12
             900: 14,-13
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             458: 11,8
@@ -3229,7 +3229,7 @@ entities:
           decals:
             1114: 45,33
         - node:
-            color: '#2B3447DE'
+            color: '#2B3EA1C8'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             460: 33,18
