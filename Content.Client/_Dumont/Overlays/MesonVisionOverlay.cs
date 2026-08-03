@@ -168,6 +168,11 @@ public sealed class MesonVisionOverlay : Overlay
 
                 var center = _map.GridTileToWorld(grid.Owner, grid.Comp, tileRef.GridIndices);
 
+                // a janela de varredura e quadrada de proposito, nao um circulo.
+                // o InRangeUnOccluded devolve falso tanto pra bloqueado quanto pra
+                // longe demais, entao o tile de canto entra aqui e ganha um pouco
+                // mais de claridade. isso e o que da a leitura de scanner ligado,
+                // cortar certinho no circulo deixa uma borda dura que parece bug
                 if (_examine.InRangeUnOccluded(mapPos, center, Range, null))
                     continue;
 
