@@ -11,12 +11,16 @@
   description: Terahertz scanning goggles. Reveals pipes, wiring and engineering machinery through walls, without occupying your hands.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/meson.rsi
+    sprite: _Dumont/Clothing/Eyes/Glasses/tray_goggles.rsi
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/meson.rsi
+    sprite: _Dumont/Clothing/Eyes/Glasses/tray_goggles.rsi
+  # o cliente monta o nome do sprite vestido como "{prefixo}-equipped-{slot}",
+  # entao sem esse prefixo o estado aceso nunca seria carregado
+  - type: ToggleClothingPrefix
+    prefixOn: on
   # o componente fica sempre no item porque a máscara de visão do subsolo é
   # concedida no GotEquippedEvent. o toggle só liga e desliga o Enabled
   - type: TrayScanner
@@ -41,7 +45,7 @@
     visuals:
       enum.ToggleableVisuals.Enabled:
         enum.ToggleableVisuals.Layer:
-          True: { state: icon }
+          True: { state: icon-on }
           False: { state: icon }
   - type: PhysicalComposition
     materialComposition:
