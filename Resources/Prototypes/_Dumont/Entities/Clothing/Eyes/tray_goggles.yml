@@ -8,7 +8,7 @@
   parent: [ClothingEyesBase, BaseToggleClothing]
   id: ClothingEyesGlassesTray
   name: t-ray goggles
-  description: Terahertz scanning goggles. Reveals pipes and wiring under the floor without occupying your hands.
+  description: Terahertz scanning goggles. Reveals pipes, wiring and engineering machinery through walls, without occupying your hands.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/meson.rsi
@@ -23,6 +23,11 @@
     enabled: false
     range: 4
   - type: WornTrayScanner
+  # o TrayScanner tira o equipamento de baixo do piso e o ScannerVision traz ele
+  # pra frente através das paredes.. um sem o outro não resolve
+  - type: ScannerVision
+    showsStructure: true
+    range: 4
   - type: ItemToggle
     onActivate: false # é roupa, não liga clicando na mão
   - type: ToggleClothing

@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 Gabriel Raposo <gabriel.henrique7@hotmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# ideia original do SukitaBR na issue #894
+# item novo de propósito: o ClothingEyesGlassesMeson antigo é cosmético e nasce
+# em meia estação, dar visão pra ele distribuiria a feature sem ninguém pedir
+
+- type: entity
+  parent: [ClothingEyesBase, BaseToggleClothing]
+  id: ClothingEyesGlassesMesonScanner
+  name: optical meson scanner
+  description: Structural scanning goggles. Reveals the station layout through walls, leaving equipment, people and objects out of sight.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/meson.rsi
+  # sem EyeProtection: proteger de solda não é o propósito desses óculos
+  # só a planta: chão, parede, porta e janela. equipamento é trabalho do t-ray
+  - type: MesonVision
+    range: 8
+  - type: ItemToggle
+    onActivate: false # é roupa, não liga clicando na mão
+  - type: ToggleClothing
+    action: ActionToggleMesonScanner
+    mustEquip: true
+    disableOnUnequip: true
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 300
+      Glass: 200
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: BaseAction
+  id: ActionToggleMesonScanner
+  name: Toggle meson scanner
+  description: Turns the structural scanner on and off.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+  - type: InstantAction
+    event: !type:ToggleActionEvent
