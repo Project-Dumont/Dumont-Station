@@ -1,0 +1,32 @@
+- type: salvageBiomeMod
+  id: Abyss
+  desc: salvage-biome-mod-abyss
+  biome: Abyss
+  difficulties: 
+    - Moderate
+    - Challenging
+
+- type: salvageDungeonMod
+  id: SovietStrategicResourcesWarehouse
+  desc: salvage-dungeon-mod-soviet-warehouse
+  proto: SovietStrategicResourcesWarehouseDungeon
+  biomes:
+    - TrueAbyss
+  difficulties: 
+    - Impossible
+
+- type: salvageBiomeMod
+  id: TrueAbyss
+  desc: salvage-biome-mod-true-abyss
+  biome: TrueAbyss
+  difficulties: 
+    - Impossible
+
+- type: salvageDungeonMod
+  id: SovietStronghold
+  desc: salvage-dungeon-mod-soviet-stronghold
+  proto: SovietDungeonWeh
+  biomes:
+    - FrozenForest
+  difficulties:
+    - Difficult

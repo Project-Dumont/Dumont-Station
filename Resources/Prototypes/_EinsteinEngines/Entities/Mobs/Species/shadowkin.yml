@@ -236,7 +236,6 @@
     saturationLoss: 0.2
     maxSaturation: 30
     saturation: 30 #Goob Edit end
-
   - type: SprintingAffectedByScale # GabyStation
     max: 1.05
     min: 1.0
@@ -245,6 +244,7 @@
     upper: MobShadowkin
     lowest: MobBat
   # Corvax-Wega-Genetics-end
+  - type: TailDuoEmote # Funky Change
 
 - type: entity
   save: false

@@ -1075,6 +1075,16 @@
     - type: MiningPoints # DeltaV - Source of mining points for miners
     - type: MiningPointsLathe # DeltaV
     - type: MaterialStorageMagnetPickup # Frontier
+    # // Dumont
+    - type: ItemSlots
+      slots:
+        id_slot:
+          name: card reader
+          insertSound: /Audio/Machines/id_swipe.ogg
+          ejectSound: /Audio/Machines/id_swipe.ogg
+          whitelist:
+            components:
+              - IdCard
 
 - type: entity
   parent: OreProcessor

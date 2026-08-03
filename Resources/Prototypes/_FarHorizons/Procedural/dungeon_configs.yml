@@ -1,0 +1,169 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: dungeonConfig
+  id: Reactor
+  layers:
+  - !type:PrefabDunGen
+    roomWhitelist:
+      tags:
+      - SalvageReactor
+    presets:
+    - ReactorBox
+    - ReactorLong
+    - ReactorStar
+    - ReactorDouble
+
+  - !type:CorridorDunGen
+    width: 3
+    tile: FloorDarkMono
+
+  - !type:DungeonEntranceDunGen
+    count: 3
+    tile: FloorDarkMono
+    contents: BaseAirlock
+  
+  - !type:ExternalWindowDunGen
+    tile: FloorDarkMono
+    contents: BaseWindow
+  
+  - !type:RoomEntranceDunGen
+    tile: FloorDarkMono
+    contents: BaseAirlock
+
+  - !type:WallMountDunGen
+    contents: WallReinforced
+    tile: FloorDarkMono
+
+  - !type:BoundaryWallDunGen
+    wall: WallReinforced
+    tile: FloorDarkMono
+  
+  - !type:RoomEntranceDunGen
+    tile: FloorDarkMono
+    contents: BaseAirlock
+
+  - !type:JunctionDunGen
+    width: 3
+    tile: FloorDarkMono
+    contents: BaseAirlock
+
+  - !type:AutoCablingDunGen
+    entity: CableApcExtension
+  
+  - !type:CornerClutterDunGen
+    contents: BaseClutter
+
+  - !type:CorridorDecalSkirtingDunGen
+    cardinalDecals:
+      South: WarnLineN
+      East: WarnLineE
+      North: WarnLineW
+      West: WarnLineS
+    cornerDecals:
+      SouthEast: WarnCornerSE
+      SouthWest: WarnCornerSW
+      NorthEast: WarnCornerNE
+      NorthWest: WarnCornerNW
+    pocketDecals:
+      SouthWest: WarnCornerSmallSW
+      SouthEast: WarnCornerSmallSE
+      NorthWest: WarnCornerSmallNW
+      NorthEast: WarnCornerSmallNE
+
+- type: dungeonConfig
+  id: Factory
+  layers:
+  - !type:PrefabDunGen
+    roomWhitelist:
+      tags:
+      - SalvageFactory
+    presets:
+    - ReactorBox
+    - ReactorLong
+    - ReactorStar
+    - ReactorDouble
+
+  - !type:CorridorDunGen
+    width: 3
+    tile: FloorConcreteMono
+
+  - !type:DungeonEntranceDunGen
+    count: 3
+    tile: FloorConcreteMono
+    contents: AirlockMaint
+  
+  - !type:RoomEntranceDunGen
+    tile: FloorConcreteMono
+    contents: AirlockMaint
+
+  - !type:WallMountDunGen
+    contents: WallReinforced
+    tile: FloorConcreteMono
+
+  - !type:BoundaryWallDunGen
+    wall: WallSolidRust
+    tile: FloorConcreteMono
+
+  - !type:JunctionDunGen
+    width: 3
+    tile: FloorConcreteMono
+    contents: AirlockMaint
+
+  - !type:AutoCablingDunGen
+    entity: CableApcExtension
+  
+  - !type:CornerClutterDunGen
+    contents: BaseClutter
+
+  - !type:CorridorDecalSkirtingDunGen
+    cardinalDecals:
+      South: thinplatingsouth
+      East: thinplatingeast
+      North: thinplatingnorth
+      West: thinplatingwest
+    cornerDecals:
+      SouthEast: thinplatingse
+      SouthWest: thinplatingsw
+      NorthEast: thinplatingne
+      NorthWest: thinplatingnw
+    pocketDecals:
+      SouthWest: thincornerwest
+      SouthEast: thincornersouth
+      NorthWest: thincornernorth
+      NorthEast: thincornereast
+
+
+- type: entityTable
+  id: BaseAirlock
+  table: !type:AllSelector
+    children:
+    - id: CableApcExtension
+    - id: AirlockGlass
+
+- type: entityTable
+  id: AirlockMaint
+  table: !type:AllSelector
+    children:
+    - id: CableApcExtension
+    - id: AirlockMaint
+
+- type: entityTable
+  id: BaseWindow
+  table: !type:AllSelector
+    children:
+    - id: Grille
+    - id: ReinforcedWindow
+
+- type: entityTable
+  id: WallReinforced
+  table: !type:GroupSelector
+    children:
+    - id: SignRadiationMed
+    - id: ExtinguisherCabinetFilled
+      prob: 0.2
+    - id: FireAxeCabinetFilled
+      prob: 0.1
+    - id: IntercomEngineering
+      prob: 0.1

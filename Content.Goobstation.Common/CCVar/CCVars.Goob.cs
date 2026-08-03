@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Configuration;
 
 namespace Content.Goobstation.Common.CCVar;
@@ -121,8 +125,8 @@ public sealed partial class GoobCVars
     /// <summary>
     ///     Is sprint enabled.
     /// </summary>
-    public static readonly CVarDef<bool> ToggleSprint =
-        CVarDef.Create("control.toggle_sprint", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<bool> SprintEnabled =
+        CVarDef.Create("goob.sprint_enabled", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Enable Dorm Notifier
@@ -637,4 +641,7 @@ public sealed partial class GoobCVars
         CVarDef.Create("particles.global_budget", 8000, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     #endregion
+
+    public static readonly CVarDef<bool> SecretUseOnlinePlayerCount =
+        CVarDef.Create("game.secret_use_online_count", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 }

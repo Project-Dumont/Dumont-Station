@@ -2311,6 +2311,19 @@
   tileRipResistance: 100
 
 - type: tile
+  id: FloorDarkSquiggly
+  name: tiles-dark-squiggly
+  sprite: /Textures/_FarHorizons/Tiles/dark_squiggly.png # FarHorizons - resprite
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  itemDrop: FloorTileItemDarkSquiggly
+  allowRotationMirror: true
+
+- type: tile
   id: FloorWhiteMarble
   name: tiles-white-marble
   sprite: /Textures/Tiles/white_marble.png

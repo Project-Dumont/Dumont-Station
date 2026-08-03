@@ -48,6 +48,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
+using Content.Server._FarHorizons.Salvage;
+using Content.Shared.Weather;
 
 namespace Content.Server.Salvage;
 
@@ -127,7 +129,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
 
         // Setup mission configs
         // As we go through the config the rating will deplete so we'll go for most important to least important.
-        var difficultyId = "Moderate";
+        var difficultyId = _missionParams.Difficulty;
         var difficultyProto = _prototypeManager.Index<SalvageDifficultyPrototype>(difficultyId);
 
         var mission = _entManager.System<SharedSalvageSystem>()
@@ -157,6 +159,18 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             _entManager.System<AtmosphereSystem>().SetMapSpace(mapUid, air.Space, atmos);
             _entManager.System<AtmosphereSystem>().SetMapGasMixture(mapUid, new GasMixture(moles, mission.Temperature), atmos);
 
+            // Far Horizons weather start
+            if (!air.Space)
+            {
+                var weather = _prototypeManager.Index(mission.Weather);
+                if (weather.Weather != null)
+                {
+                    var weatherProto = _prototypeManager.Index(weather.Weather);
+                    _entManager.System<SharedWeatherSystem>().SetWeather(mapId, weatherProto, null);
+                }
+            }
+            // Far Horisons end
+
             if (mission.Color != null)
             {
                 var lighting = _entManager.EnsureComponent<MapLightComponent>(mapUid);
@@ -173,6 +187,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         expedition.Station = Station;
         expedition.EndTime = _timing.CurTime + mission.Duration;
         expedition.MissionParams = _missionParams;
+        expedition.Objective = mission.Objective; // Far Horizons
 
         var landingPadRadius = 24;
         var minDungeonOffset = landingPadRadius + 4;
@@ -247,29 +262,51 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         var randomSystem = _entManager.System<RandomSystem>();
 
         foreach (var entry in faction.MobGroups)
-        {
-            budgetEntries.Add(entry);
-        }
+{
+    if (!entry.Guaranteed)
+        budgetEntries.Add(entry);
+}
 
-        var probSum = budgetEntries.Sum(x => x.Prob);
+// Spawn garantido
+foreach (var entry in faction.MobGroups)
+{
+    if (!entry.Guaranteed)
+        continue;
 
-        while (mobBudget > 0f)
-        {
-            var entry = randomSystem.GetBudgetEntry(ref mobBudget, ref probSum, budgetEntries, random);
-            if (entry == null)
-                break;
+    if (entry.Cost > mobBudget)
+        continue;
 
-            try
-            {
-                await SpawnRandomEntry((mapUid, grid), entry, dungeon, random);
-            }
-            catch (Exception e)
-            {
-                _sawmill.Error($"Failed to spawn mobs for {entry.Proto}: {e}");
-            }
-        }
+    mobBudget -= entry.Cost;
 
-        var allLoot = _prototypeManager.Index(SharedSalvageSystem.ExpeditionsLootProto);
+    try
+    {
+        await SpawnRandomEntry((mapUid, grid), entry, dungeon, random);
+    }
+    catch (Exception e)
+    {
+        _sawmill.Error($"Failed to spawn guaranteed mob {entry.Proto}: {e}");
+    }
+}
+
+var probSum = budgetEntries.Sum(x => x.Prob);
+
+while (mobBudget > 0f)
+{
+    var entry = randomSystem.GetBudgetEntry(ref mobBudget, ref probSum, budgetEntries, random);
+    if (entry == null)
+        break;
+
+    try
+    {
+        await SpawnRandomEntry((mapUid, grid), entry, dungeon, random);
+    }
+    catch (Exception e)
+    {
+        _sawmill.Error($"Failed to spawn mobs for {entry.Proto}: {e}");
+    }
+}
+
+        var allLoot = _prototypeManager.Index<SalvageLootPrototype>(difficultyProto.LootPrototypeId);
         var lootBudget = difficultyProto.LootBudget;
 
         foreach (var rule in allLoot.LootRules)
@@ -300,6 +337,13 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
                     throw new NotImplementedException();
             }
         }
+
+        // Far Horizons start
+        var objective = _prototypeManager.Index(mission.Objective);
+        if (objective.HandlerId != null &&
+            _prototypeManager.TryIndex<SalvageMissionObjectiveHandlerPrototype>(objective.HandlerId, out var handler))
+            handler.Handler?.Run(_sawmill, _entManager, _prototypeManager, random, objective, _anchorable, _map, difficultyProto, dungeon, (mapUid, grid));
+        // Far Horizons end
 
         return true;
     }

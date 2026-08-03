@@ -40,7 +40,7 @@
 - type: gameMap
   id: Packed
   mapName: 'Packed'
-  mapPath: /Maps/_Gabystation/packed.yml # Gabystation
+  mapPath: /Maps/_Dumont/packed.yml # Gabystation
   minPlayers: 7
   maxPlayers: 35
   stations:
@@ -101,6 +101,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
+            SalvageLead: [ 1, 1 ]
             CargoTechnician: [ 2, 2 ]
             ShaftMiner: [ 3, 3 ]
             Bitrunner: [ 3, 3 ]

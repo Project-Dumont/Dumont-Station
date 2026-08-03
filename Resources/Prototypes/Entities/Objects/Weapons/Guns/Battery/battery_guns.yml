@@ -202,6 +202,10 @@
     missChance: 0.4
     spreadMultiplier: 3
     spreadAddition: 40
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -255,6 +259,10 @@
     wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
     soundHit:
       collection: MetalThud # Goobstation ^
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -283,6 +291,10 @@
     wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
     soundHit:
       collection: MetalThud # Goobstation ^
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -314,6 +326,10 @@
     missChance: 0.4
     spreadMultiplier: 2
     spreadAddition: 40
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
 
 - type: entity
   name: Svalinn # Goobstation
@@ -331,13 +347,6 @@
       shader: unshaded
   - type: Item
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
-    - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -373,13 +382,6 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
-    - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumLaser
     fireCost: 62.5
@@ -390,10 +392,8 @@
   - type: Appearance
 
 - type: entity
-  name: makeshift laser pistol
-  parent: [BaseWeaponBatterySmall, BaseMinorContraband]
+  parent: [BaseWeaponBatterySmall, BaseSalvageContraband]
   id: WeaponMakeshiftLaser
-  description: Better pray it won't burn your hands off.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
@@ -403,13 +403,6 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
-    - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -780,13 +773,6 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
-    - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   # Goobstation
   - type: Tag
     tags:
@@ -1043,13 +1029,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 30
-  - type: RestrictGunshotsByUserTag # Goobstation
-    doesntContain:
-    - Oni
-    messages:
-    - oni-cannot-shoot-guns-1
-    - oni-cannot-shoot-guns-2
-    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 5

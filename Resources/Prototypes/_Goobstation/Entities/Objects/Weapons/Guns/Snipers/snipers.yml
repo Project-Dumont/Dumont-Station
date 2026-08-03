@@ -63,3 +63,7 @@
     pvsIncrease: 0.5
   - type: StaticPrice
     price: 1000
+  # Dumont
+  - type: SpeciesRestrictedTrigger
+    restrictedSpecies:
+    - Oni
