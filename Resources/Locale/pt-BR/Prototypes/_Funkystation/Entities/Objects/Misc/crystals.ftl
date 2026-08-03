@@ -2,7 +2,7 @@ ent-AmmoniaCrystal = cristal de amônia
     .desc = Um cristal feito de amônia. Você pode ver amônia líquida dentro.
 
 ent-HealiumCrystal = cristal de healium
-    .desc = Um cristal feito de healium. É frio ao toque.
+    .desc = Um cristal feito de healium. É frio ao toque e parece estranhamente doce e apetitoso.
 
 ent-ProtoNitrateCrystal = cristal de proto-nitrate
     .desc = Um cristal feito de proto-nitrate. Você pode ver um líquido dentro.

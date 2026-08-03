@@ -7,5 +7,5 @@
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: MedicalScannerMachineCircuitboard
-  icon: Structures/Machines/scanner.rsi/open.png
+  icon: { sprite: Structures/Machines/scanner.rsi, state: open }
   result: MedicalScannerMachineCircuitboard

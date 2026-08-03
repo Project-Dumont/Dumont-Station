@@ -3409,3 +3409,469 @@ Entries:
       message: Piratas aparecem 1/3 a frequência anterior.
   id: 408
   time: '2026-07-04T19:33:10.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: As munições da Chester Mk. II agora usam projéteis ao invés de hitscan.
+    - type: Tweak
+      message: Alterados alguns valores de dano, munição atordoadora ficou mais eficaz.
+    - type: Tweak
+      message: O custo geral das munições na loja de pontos do NTR foi reduzido.
+  id: 409
+  time: '2026-07-06T08:50:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Fix
+      message: Tempo jogado como prisioneiro não irá mais registrar como segurança.
+    - type: Fix
+      message: >-
+        Plasmaman agora podem ser prisioneiros roundstart, começando com traje
+        adequado.
+    - type: Add
+      message: Traduções dos trajes herméticos de prisioneiro.
+  id: 410
+  time: '2026-07-06T13:12:53.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: >-
+        Os cartuchos .60 anti-material da Hristov voltam a ser projéteis com
+        alto dano e atravessam paredes.
+  id: 411
+  time: '2026-07-07T11:10:13.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Tweak
+      message: Onis agora podem usar revólveres.
+  id: 412
+  time: '2026-07-07T11:20:37.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado novo antagonista! Conspiradores.
+    - type: Add
+      message: SHHHHH, eles podem nos ouvir, fica em silêncio!
+  id: 413
+  time: '2026-07-08T02:23:13.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona monitor do host para o bitrunner.
+    - type: Fix
+      message: Pequenas correções no bitrunning.
+  id: 414
+  time: '2026-07-08T02:45:26.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Add
+      message: >-
+        Segurança e comando tem um aplicativo de SOS no PDA. Apertar esse
+        aplicativo resulta em um alerta avisando ao departamento de segurança
+        que você necessita de ajuda, mas sem sua localização. Warden, HOP e HOS
+        tem um cartucho de SOS no armário deles para quem solicitar.
+  id: 415
+  time: '2026-07-08T12:26:19.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Nova máquina para os Exploradores, Máquina de Tickets de Explorador.
+    - type: Add
+      message: Nova moeda para conseguir os itens da Máquina de Tickets - Tickets!
+    - type: Add
+      message: Novos equipamentos exclusivo para os Exploradores.
+    - type: Add
+      message: Novas armas exclusiva para os Exploradores.
+    - type: Add
+      message: >-
+        Machadinha de Explorador, uma ferramenta quase faz-tudo para
+        Exploradores.
+    - type: Fix
+      message: Corrigido Bug do Herobrine não aparecer no jogo.
+  id: 416
+  time: '2026-07-09T07:09:20.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Adiciona construção rápida para alguns matérias ao interagir.
+  id: 417
+  time: '2026-07-09T07:47:32.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novos biomas para as expedições!
+    - type: Add
+      message: Bioma das montanhas.
+    - type: Add
+      message: Bioma do deserto.
+    - type: Add
+      message: Agora as expedições possuem climas, como chuva ou neve.
+    - type: Tweak
+      message: >-
+        Reformulação no sistema de expedição, agora as expedições geram missões
+        que podem ser concluidas para receber spesos e tickets!
+    - type: Add
+      message: >-
+        Adiciona 5 tipos de missão para exploração: capturar, recuperar, apagar,
+        destruir e resgatar.
+    - type: Add
+      message: 'Novas dificuldades: Fácil, Desafiadora, Perigosa e Impossível.'
+    - type: Add
+      message: >-
+        Novo tipo de inimigo nas exploração: Silício. Com 6 inimigos diferentes
+        para lutar. Disponível apenas nas dificuldades moderada e desafiadora.
+    - type: Add
+      message: >-
+        "NT-34-Expeditioneer" - Adeus Reclaimer, uma nova nave para
+        Exploradores.
+    - type: Add
+      message: >-
+        "NT-99 "Asteroid Cracker" - Uma nave para os mineradores, atualmente,
+        desativada.
+    - type: Fix
+      message: Corrigido console de expedição se tornar um console de mineração.
+    - type: Add
+      message: >-
+        Nova expedição para os exploradores: Usina nuclear. Você realmente
+        deveria procurar sucata em um lugar assim?
+    - type: Add
+      message: >-
+        Nova atmosfera que pode surgir em expedições: Atmosfera N2. Voxs,
+        alegrem-se.
+    - type: Tweak
+      message: >-
+        Atmosferas antes não usadas agora podem surgir em expedições: Sem
+        atmosfera, variação não sonolenta de atmosfera "perigosa", atmosfera
+        tóxica.
+    - type: Tweak
+      message: Raramente temperaturas extremas de frio e alta podem aparecer.
+  id: 418
+  time: '2026-07-11T12:24:19.0000000+00:00'
+- author: O-Verdadeiro-Biel
+  changes:
+    - type: Fix
+      message: >-
+        Corrigido bug onde títulos alternativos dos trabalhos não ficavam salvos
+        no database.
+  id: 419
+  time: '2026-07-11T15:29:46.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: minerios agora rendem cinco vezes menos materiais
+  id: 420
+  time: '2026-07-11T16:10:38.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado o Líder da Expedição
+    - type: Add
+      message: >-
+        O olho e ouvido do Líder da Logística está na estação, e fora dela, não
+        zoem mais o QM!
+    - type: Tweak
+      message: Especialista de Exploração não pode ser mais antagonista
+    - type: Add
+      message: Agora Especialistas de Exploração possuem Mindshield
+    - type: Tweak
+      message: Modifica o iconjob do Especialista de Exploração
+    - type: Tweak
+      message: Novo som do hyperdrive.
+  id: 421
+  time: '2026-07-11T21:56:54.0000000+00:00'
+- author: Struater e Lumminal
+  changes:
+    - type: Add
+      message: >-
+        Wraith agora pode ser jogado como um antagonista de início de rodada. O
+        Wraith recebeu um grande rebalanceamento e uma leve reformulação.
+    - type: Add
+      message: O Wraith de meio de rodada está de volta, mas não pode mais evoluir.
+    - type: Remove
+      message: >-
+        O Wraith não recebe mais uma segunda vida ao morrer. Morreu uma vez,
+        acabou o jogo.
+    - type: Tweak
+      message: >-
+        Absorver Cadáver, Decadência e outras habilidades agora exigem forma
+        corpórea.
+    - type: Tweak
+      message: >-
+        Absorver um cadáver como Wraith agora possui um tempo de execução
+        (do-after).
+    - type: Tweak
+      message: Linhas de sal não se quebram mais quando alguém passa por cima delas.
+    - type: Fix
+      message: >-
+        Corrigido um problema em que o assombro (Haunt) do Wraith aplicava
+        penalidade de velocidade mesmo quando ele estava em forma corpórea.
+    - type: Tweak
+      message: O Wraith de meio de rodada agora faz parte das ameaças de Ninja.
+  id: 422
+  time: '2026-07-11T22:01:23.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Adiciona Canvas
+  id: 424
+  time: '2026-07-14T12:35:14.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: Sistema de punição para itens malignos.
+  id: 425
+  time: '2026-07-14T21:15:46.0000000+00:00'
+- author: Crono209
+  changes:
+    - type: Add
+      message: Adiciona um cvar para contar pessoas online no lobby
+  id: 426
+  time: '2026-07-15T00:40:24.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: >-
+        fantasmas não podem mais remover pacientes da cryopod e acessar o
+        computador de arma da nave 
+  id: 427
+  time: '2026-07-16T02:13:24.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Pequenas correções no bitrunning.
+  id: 428
+  time: '2026-07-16T18:47:47.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Tweak
+      message: alterado tempo de pular bounty para 6 minutos
+  id: 429
+  time: '2026-07-17T03:30:00.0000000+00:00'
+- author: Rinary, AgentePanela
+  changes:
+    - type: Add
+      message: Added mass drivers!
+  id: 430
+  time: '2026-07-18T03:20:25.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode enviar emoji no nanochat.
+    - type: Add
+      message: Agora você pode criar grupos no nanochat.
+    - type: Add
+      message: Agora você pode mutar chats em especifico no nanochat.
+    - type: Fix
+      message: >-
+        Agora os icones do nanochat não se esmaga quando passa do limite de
+        caracteres.
+  id: 431
+  time: '2026-07-18T03:23:28.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Agora você pode fazer emote em dupla.
+    - type: Tweak
+      message: Agora você dá um tapinha nas costas ao clicar no personagem.
+  id: 432
+  time: '2026-07-18T18:49:36.0000000+00:00'
+- author: CRISO
+  changes:
+    - type: Add
+      message: Mass Drivers foram adicionados em maioria dos mapas.
+    - type: Add
+      message: Conteúdo novo da Salvage agora está mapeado em todos os mapas.
+  id: 433
+  time: '2026-07-18T20:12:29.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Revs agora podem criar um fabricador médico de subsolo!
+    - type: Add
+      message: Adicionado 3 novas armas para os Revolucionários
+    - type: Tweak
+      message: Faca Forjada agora comporta 5u de químicos em vez de 3u.
+    - type: Tweak
+      message: Espada Forjada e Garfo agora cabe em bolsas revs
+    - type: Tweak
+      message: >-
+        Inimigos da Revolução agora possui seu próprio ícone de caveira
+        vermelha, em vez de reutilizar literalmente o ícone dos revs.
+    - type: Tweak
+      message: Ball Bearings agoram podem ser feitas na Forja dos Rev
+  id: 434
+  time: '2026-07-20T05:23:44.0000000+00:00'
+- author: SrKolobanov
+  changes:
+    - type: Add
+      message: >-
+        Novo sistema de gatilhos quebrados para as armas de fogo. Utilize um
+        soldador para reparar.
+    - type: Remove
+      message: Onis não podem mais usar nenhuma arma de fogo sem quebrar o gatilho!
+  id: 435
+  time: '2026-07-22T07:02:07.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Nova maleta segura de implantes para o segurança chefe!
+    - type: Add
+      message: Diversas traduções para implantes e implantadores.
+  id: 436
+  time: '2026-07-23T04:32:20.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Tweak
+      message: >-
+        placas de computador de alerta atmosferico, monitoramento de energia e
+        monitoramento de sensores agora são fabricaveis
+  id: 437
+  time: '2026-07-23T04:37:05.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Remove
+      message: livro de enciclopedia
+    - type: Tweak
+      message: >-
+        livro security 101 agora apenas mostra os antagonistas que são
+        conhecimento comum via metashield
+  id: 438
+  time: '2026-07-24T04:33:57.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Acesso de correio concedido a técnicos de carga até que o trabalho
+        separado seja introduzido.
+    - type: Fix
+      message: Airlock de vidro da virologia possui acesso adequado agora.
+  id: 439
+  time: '2026-07-25T05:17:56.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Remove
+      message: removido canvas
+  id: 440
+  time: '2026-07-25T22:31:53.0000000+00:00'
+- author: supernova
+  changes:
+    - type: Tweak
+      message: rendimento de minerios foram buffados.
+  id: 441
+  time: '2026-07-25T23:25:06.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Add
+      message: Adicionado circuitos de dispensores de energia ao torno da Sci.
+    - type: Remove
+      message: Removido dispensores químicos de energia roundstart.
+    - type: Tweak
+      message: >-
+        Dispensor de energia agora é pesquisável pela Sci na tecnologia de
+        química bluespace.
+  id: 442
+  time: '2026-07-26T22:28:45.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Novas artes ao lobby.
+  id: 443
+  time: '2026-07-29T06:07:37.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Alterado liberação de gás do cristal de N2O. Zzz...
+  id: 444
+  time: '2026-07-29T15:43:45.0000000+00:00'
+- author: Heartbeat
+  changes:
+    - type: Tweak
+      message: >-
+        Bitrunning foi rebalanceado. Os discos são melhores e as recompensas
+        fazem mais sentido.
+  id: 445
+  time: '2026-07-29T16:52:52.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionada 3 novas dungeons para os Exploradores.
+    - type: Add
+      message: Adicionado 3 novos biomas.
+    - type: Add
+      message: >-
+        Nova missão para os Exploradores, Desarme. É uma missão rara no qual
+        terão que achar os códigos de desativação e inserir nos computadores
+        certos para evitar a autodestruição da instalação.
+    - type: Add
+      message: 3 novos inimigos e 2 novos bosses, e um miniboss com um sub-boss.
+    - type: Tweak
+      message: Várias traduções.
+    - type: Tweak
+      message: Spawn do ammotech reduzido.
+    - type: Tweak
+      message: Preço de alguns itens foram alterados.
+    - type: Tweak
+      message: >-
+        Agora a dificuldade impossivel pode ser rodada (Disponível após 60
+        minutos).
+    - type: Fix
+      message: >-
+        Agora as missões devem ser geradas normalmente, não gerando apenas 1 ou
+        2 missões e em alguns casos 0.
+  id: 446
+  time: '2026-07-30T07:44:12.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Fix
+      message: Corrigido bug onde o texto ao examinar no chat não era formatado.
+  id: 447
+  time: '2026-07-30T09:10:12.0000000+00:00'
+- author: Crono209ggg
+  changes:
+    - type: Tweak
+      message: Faz o cvar do sprint funcionar.
+  id: 448
+  time: '2026-07-30T09:22:19.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Atmosiano consegue sintetizar folha de plasma de uma maneira mais fácil.
+  id: 449
+  time: '2026-07-30T09:24:07.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Fix
+      message: Corrigido bug onde certas partes do livro guia não apareciam.
+  id: 450
+  time: '2026-07-31T16:26:46.0000000+00:00'
+- author: Biel Verdadeiro
+  changes:
+    - type: Fix
+      message: Corrigido bug do chiado no áudio!
+  id: 451
+  time: '2026-07-31T23:29:41.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Tweak
+      message: Jugs podem voltar a serem postas em mochilas.
+  id: 452
+  time: '2026-08-01T12:00:20.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Remove
+      message: Passageiros usando drogas na manutenção.
+    - type: Tweak
+      message: Agora o cristal de healium pode ser comido! Prepare os seus dentes.
+  id: 453
+  time: '2026-08-01T12:04:07.0000000+00:00'
+- author: cristalyssd
+  changes:
+    - type: Tweak
+      message: Cristal de energia agora é imune a EMP.
+    - type: Tweak
+      message: Cristal de amônia teve o valor aumentado.
+    - type: Tweak
+      message: >-
+        Cristal de Proto-Nitrate libera quantidade massiva de O2/N2 padrão de
+        atmosfera e uma espuma reguladora de temperatura.
+  id: 454
+  time: '2026-08-01T12:06:19.0000000+00:00'

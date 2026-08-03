@@ -368,7 +368,7 @@
 
 #Salvage Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
+  parent: [ClothingOuterHardsuitBase, BaseSalvageContraband]
   id: ClothingOuterHardsuitSalvage
   name: mining hardsuit # Goob edit
   description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
@@ -457,10 +457,8 @@
 
 #Maxim Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
+  parent: [ClothingOuterHardsuitBase, BaseSalvageContraband]
   id: ClothingOuterHardsuitMaxim
-  name: salvager maxim hardsuit # Goob edit
-  description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
@@ -470,8 +468,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 1.00
-    sprintModifier: 1.00
+    walkModifier: 0.70
+    sprintModifier: 0.70
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -481,9 +479,9 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.5
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.6
         Heat: 0.3
         Radiation: 0.01
   - type: ExplosionResistance

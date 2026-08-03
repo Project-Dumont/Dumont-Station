@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: factionIcon
+  id: ConspiratorFaction
+  isShaded: true
+  priority: 11
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Conspirator
+  icon:
+    sprite: /Textures/_EinsteinEngines/Interface/Misc/job_icons.rsi
+    state: Conspirator

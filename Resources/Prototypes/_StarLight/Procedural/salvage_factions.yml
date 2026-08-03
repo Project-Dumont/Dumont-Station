@@ -1,0 +1,64 @@
+- type: salvageFaction
+  id: Worms
+  desc: salvage-faction-worms
+  entries:
+    - proto: MobWorm
+      cost: 4
+  biomes:
+    - Abyss
+  difficulties: 
+    - Challenging
+  configs:
+    DefenseStructure: WeaponTurretSyndicate
+
+- type: salvageFaction
+  id: Elder
+  desc: salvage-faction-elder
+  entries:
+    - proto: MobElder
+      cost: 463
+  biomes:
+    - TrueAbyss
+  difficulties: 
+    - Impossible
+  configs:
+    DefenseStructure: WeaponTurretSyndicate
+
+- type: salvageFaction
+  id: Soviet
+  desc: salvage-faction-soviet
+  biomes:
+    - FrozenForest
+  entries:
+    - proto: MobSovietComradeCombatKnife
+      cost: 3
+    - proto: MobSovietComradeFinka
+      cost: 8
+    #shotgun
+    - proto: MobSovietSargentSawn
+      cost: 8
+    #pistol
+    - proto: MobSovietComradeMakarov
+      cost: 10
+    #rifle
+    - proto: MobSovietSargentFamas
+      cost: 30
+      prob: 0.2
+    - proto: MobSovietTenentLaser
+      cost: 30
+      prob: 0.4
+    - proto: MobSovietTenentAk
+      cost: 30
+      prob: 0.2
+    #miniboss
+    - proto: MobBearSoviet
+      cost: 35
+      prob: 0.6
+    #sub-boss
+    - proto: MobCombatMech
+      cost: 10
+      guaranteed: true
+  difficulties: 
+    - Difficult
+  configs:
+    DefenseStructure: WeaponTurretSyndicateBroken

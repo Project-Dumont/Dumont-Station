@@ -112,6 +112,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - SalvageLead # Starlight
   - ShaftMiner # Lavaland Change
   - Bitrunner # Orion
 
@@ -261,7 +262,6 @@
   - SecurityOfficer
   - Detective
   - Warden
-  - PermaPrisoner # Harmony
   - Brigmedic # Goob
   - SecurityClown # event-restricted, Goob
   - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
@@ -310,4 +310,5 @@
   - Reporter
   - Zookeeper
   - Psychologist
+  - PermaPrisoner # Harmony
   primary: false

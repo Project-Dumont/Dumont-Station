@@ -1,0 +1,33 @@
+- type: dungeonPreset
+  id: ReactorBox
+  roomPacks:
+    - -11,4,12,27 # Main reactor pack 23x23
+    - -15,31,13,41 # 3 side wings 28x10
+    - -25,0,-15,28 # Last 2 are rotated, so technically 10x28
+    - 16,0,26,28
+
+- type: dungeonPreset
+  id: ReactorLong
+  roomPacks:
+    - -11,32,12,55 # Main reactor pack 23x23
+    - -12,59,16,69 # 3 side wings 28x10
+    - -12,0,-2,28 # Last 2 are rotated, so technically 10x28
+    - 2,0,12,28
+
+- type: dungeonPreset
+  id: ReactorStar
+  roomPacks:
+    - -10,32,13,55 # Main reactor pack 23x23
+    - -42,37,-14,47 # 4 side wings 28x10 woah!
+    - 17,37,45,47
+    - -5,0,5,28 # Last 2 are rotated, so technically 10x28
+    - -5,59,5,87
+
+- type: dungeonPreset
+  id: ReactorDouble
+  roomPacks:
+    - -46,4,-23,27 # Main reactor pack 23x23
+    - 23,4,46,27 # Second reactor
+    - -19,0,-9,28 # 3 wings 28x10
+    - -5,0,5,28
+    - 9,0,19,28

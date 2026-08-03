@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: quickConstructionCategory
+  id: MetalRod
+  constructionEntries:
+  - Grille
+  - Table
+  - Catwalk
+  categoryEntries:
+  - Railings
+
+- type: quickConstructionCategory
+  id: Railings
+  name: quickconstruction-category-railing
+  icon: {sprite: Structures/Walls/railing.rsi, state: side}
+  constructionEntries:
+  - Railing
+  - RailingRound
+  - RailingCorner
+  - RailingCornerSmall
+

@@ -1,0 +1,155 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: salvageMissionObjective
+  id: MissionObjectiveFree
+  name: salvage-mission-objective-name-free
+  description: salvage-mission-objective-description-free
+  announcement: salvage-mission-objective-announcement-free
+
+- type: salvageMissionObjective
+  id: MissionObjectiveRecover
+  handlerId: "MissionObjectiveRecoverHandler"
+  name: salvage-mission-objective-name-recover
+  description: salvage-mission-objective-description-recover
+  announcement: salvage-mission-objective-announcement-recover
+  baseReward:
+    Easy: 150
+    Moderate: 180
+    Challenging: 220
+  cashMultiplier: 5.5
+  numTargets:
+    Easy: 2
+    Moderate: 4
+    Challenging: 6
+  bonus: 225
+  bonusCap: 4
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+    - Haunted
+    - Mineshaft
+    - Reactor
+    - Factory
+
+- type: salvageMissionObjective
+  id: MissionObjectiveCapture
+  handlerId: "MissionObjectiveCaptureHandler"
+  name: salvage-mission-objective-name-capture
+  description: salvage-mission-objective-description-capture
+  announcement: salvage-mission-objective-announcement-capture
+  baseReward:
+    Easy: 200
+    Moderate: 230
+    Challenging: 270
+  cashMultiplier: 6
+  numTargets:
+    Easy: 1
+    Moderate: 2
+    Challenging: 2
+  bonus: 375
+  bonusCap: 5
+  allowedFactions:
+    - Xenos
+    - Carps
+    - Meat
+
+- type: salvageMissionObjective
+  id: MissionObjectiveRescue
+  handlerId: "MissionObjectiveRescueHandler"
+  name: salvage-mission-objective-name-rescue
+  description: salvage-mission-objective-description-rescue
+  announcement: salvage-mission-objective-announcement-rescue
+  baseReward:
+    Easy: 190
+    Moderate: 220
+    Challenging: 250
+  cashMultiplier: 4
+  numTargets:
+    Easy: 2
+    Moderate: 2
+    Challenging: 3
+  bonus: 450
+  bonusCap: 3
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+    - Reactor
+    - Factory
+
+- type: salvageMissionObjective
+  id: MissionObjectivePurge
+  handlerId: "MissionObjectivePurgeHandler"
+  name: salvage-mission-objective-name-purge
+  description: salvage-mission-objective-description-purge
+  announcement: salvage-mission-objective-announcement-purge
+  baseReward:
+    Easy: 160
+    Moderate: 219
+    Challenging: 240
+  cashMultiplier: 4
+  numTargets:
+    Easy: 4
+    Moderate: 5
+    Challenging: 6
+  bonus: 275
+  bonusCap: 2
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+    - Reactor
+    - Factory
+
+- type: salvageMissionObjective
+  id: MissionObjectiveShutdown
+  handlerId: "MissionObjectiveShutdownHandler"
+  name: salvage-mission-objective-name-shutdown
+  description: salvage-mission-objective-description-shutdown
+  announcement: salvage-mission-objective-announcement-shutdown
+  baseReward:
+    Easy: 170
+    Moderate: 230
+    Challenging: 260
+  cashMultiplier: 5.5
+  numTargets:
+    Easy: 2
+    Moderate: 3
+    Challenging: 4
+  bonus: 345
+  bonusCap: 3
+  allowedDungeons:
+    - Experiment
+    - LavaBrig
+    - SnowyLabs
+    - Haunted
+    - Mineshaft
+    - Reactor
+    - Factory
+
+- type: salvageMissionObjective
+  id: MissionObjectiveDisarm
+  handlerId: "MissionObjectiveDisarmHandler"
+  name: salvage-mission-objective-name-disarm
+  description: salvage-mission-objective-description-disarm
+  announcement: salvage-mission-objective-announcement-disarm
+  baseReward:
+    Easy: 300
+    Moderate: 350
+    Challenging: 400 # High rewards, but it has no bonus, also this mission is insanely rare
+  cashMultiplier: 5.5
+  numTargets:
+    Easy: 1
+    Moderate: 2
+    Challenging: 3
+  bonus: 0
+  bonusCap: 0
+  allowedDifficulties:
+    - Easy
+    - Moderate
+    - Challenging
+  allowedDungeons:
+    - Factory

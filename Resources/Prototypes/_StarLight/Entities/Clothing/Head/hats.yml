@@ -1,0 +1,13 @@
+- type: entity
+  parent: [ ClothingHeadHelmetArmoredBase, BaseSalvageContraband ]
+  id: ClothingHeadHatBeretSalvageMercBrown
+  name: Brown Scrapper Beret #Far Horizons - The Great Capitalization Crusade
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Head/Hats/salvage-brown.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Head/Hats/salvage-brown.rsi
+    - type: Tag
+      tags:
+        - PetWearable
+        - CorgiWearable
