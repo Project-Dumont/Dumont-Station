@@ -13,9 +13,23 @@
   description: Combined scanning goggles. Reveals the station layout and the engineering equipment through walls at once, without occupying your hands.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/meson.rsi
+    sprite: _Dumont/Clothing/Eyes/Glasses/engi_scanner.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/meson.rsi
+    sprite: _Dumont/Clothing/Eyes/Glasses/engi_scanner.rsi
+  # o cliente monta o nome do sprite vestido como "{prefixo}-equipped-{slot}",
+  # entao sem esse prefixo o estado aceso nunca seria carregado
+  - type: ToggleClothingPrefix
+    prefixOn: on
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: icon-on }
+          False: { state: icon }
   # sem EyeProtection: proteger de solda não é o propósito desses óculos
   # o TrayScanner tira o equipamento de baixo do piso e o ScannerVision traz ele
   # pra frente através das paredes.. um sem o outro não resolve
