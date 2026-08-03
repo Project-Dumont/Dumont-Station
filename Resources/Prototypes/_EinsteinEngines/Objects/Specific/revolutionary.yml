@@ -17,7 +17,7 @@
       - state: icon_manifesto
       - state: detail_bookmark
         color: "#aaaa24"
-    # Traumastation - flash revs
+    # Traumastation - flash revs 
     # - type: RevolutionaryConverter
     #   conversionDuration: 2
     - type: SpeakDatasetOnUse
@@ -35,3 +35,4 @@
     # - type: Construction
     #   graph: RevolutionaryManifesto
     #   node: revolutionaryManifesto
+    # Suma 

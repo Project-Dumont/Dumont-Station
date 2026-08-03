@@ -44,6 +44,8 @@
   difficulties:
     - Challenging 
     - Moderate
+    - Difficult
+    - Impossible
   configs:
     DefenseStructure: XenoWardingTower
     Megafauna: CMMobXenoQueen
@@ -72,6 +74,8 @@
   difficulties: 
     - Moderate
     - Easy
+    - Difficult
+    - Impossible
   configs:
     DefenseStructure: CarpStatue
     Megafauna: MobDragonDungeon

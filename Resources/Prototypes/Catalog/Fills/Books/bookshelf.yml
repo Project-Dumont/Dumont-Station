@@ -96,7 +96,7 @@
     - id: BookMedicalReferenceBook
     - id: BookScientistsGuidebook
     - id: BookSecurity
-    - id: BookSpaceEncyclopedia
+    # - id: BookSpaceEncyclopedia Dumont
     - id: BookSpaceLaw
     - id: BookTheBookOfControl
 

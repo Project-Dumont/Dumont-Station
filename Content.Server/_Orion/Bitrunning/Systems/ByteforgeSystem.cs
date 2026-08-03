@@ -204,24 +204,45 @@ public sealed class ByteforgeSystem : EntitySystem
     public bool TryFillRewardCacheWithLoot(EntityUid cargoUid, QuantumServerComponent server)
     {
         var tableId = GetDifficultyLootTable(server);
-        if (!_prototype.TryIndex(tableId, out var table))
-            return false;
-
         var coordinates = Transform(cargoUid).Coordinates;
         var insertedAny = false;
-        foreach (var prototypeId in _entityTable.GetSpawns(table))
+        if (_prototype.TryIndex(tableId, out var table))
         {
-            var loot = Spawn(prototypeId, coordinates);
-
-            if (TryComp<StorageComponent>(cargoUid, out var storage) &&
-                _storage.Insert(cargoUid, loot, out _, storageComp: storage, playSound: false) || TryComp<EntityStorageComponent>(cargoUid, out var entityStorage) &&
-                _entityStorage.Insert(loot, cargoUid, entityStorage))
+            foreach (var prototypeId in _entityTable.GetSpawns(table))
             {
-                insertedAny = true;
-                continue;
-            }
+                var loot = Spawn(prototypeId, coordinates);
 
-            QueueDel(loot);
+                if (TryComp<StorageComponent>(cargoUid, out var storage) &&
+                    _storage.Insert(cargoUid, loot, out _, storageComp: storage, playSound: false) || TryComp<EntityStorageComponent>(cargoUid, out var entityStorage) &&
+                    _entityStorage.Insert(loot, cargoUid, entityStorage))
+                {
+                    insertedAny = true;
+                    continue;
+                }
+
+                QueueDel(loot);
+            }
+        }
+
+        if (server.CurrentDomain != null && _domains.TryGetDomain(server.CurrentDomain, out var domain))
+        {
+            foreach (var (prototypeId, amount) in domain.CompletionLoot)
+            {
+                for (var i = 0; i < amount; i++)
+                {
+                    var loot = Spawn(prototypeId, coordinates);
+
+                    if (TryComp<StorageComponent>(cargoUid, out var storage) &&
+                        _storage.Insert(cargoUid, loot, out _, storageComp: storage, playSound: false) || TryComp<EntityStorageComponent>(cargoUid, out var entityStorage) &&
+                        _entityStorage.Insert(loot, cargoUid, entityStorage))
+                    {
+                        insertedAny = true;
+                        continue;
+                    }
+
+                    QueueDel(loot);
+                }
+            }
         }
 
         return insertedAny;

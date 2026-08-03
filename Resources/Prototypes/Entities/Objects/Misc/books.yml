@@ -383,7 +383,18 @@
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    - Traitors
+    - Thieves
+    - NuclearOperatives
+    # - Dragon Doesn't exist?
+    - Morph
+    - Blob
+    # - RatKing no exist also?
+    - SpaceNinja
+    - Bingle
+    # - Xenos nonono
+    - Wizard
+
 
 - type: entity
   id: BookHowToKeepStationClean
