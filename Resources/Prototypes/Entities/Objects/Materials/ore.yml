@@ -97,6 +97,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: GoldOre
+  id: GoldOre3
+  suffix: Three
+  components:
+  - type: Stack
+    count: 3
 
 - type: entity
   parent: OreBase
@@ -164,6 +172,15 @@
     - type: Stack
       count: 1
 
+#Dumont edit for bitrunning
+- type: entity
+  id: SteelOre5
+  parent: SteelOre
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
 - type: entity
   parent: OreBase
   id: PlasmaOre
@@ -205,6 +222,14 @@
   components:
     - type: Stack
       count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: PlasmaOre
+  id: PlasmaOre3
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
 
 - type: entity
   parent: OreBase
@@ -242,6 +267,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: SilverOre
+  id: SilverOre3
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
 
 - type: entity
   parent: OreBase
@@ -275,6 +308,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: SpaceQuartz
+  id: SpaceQuartz5
+  suffix: Five
+  components:
+  - type: Stack
+    count: 5
 
 - type: entity
   parent: OreBase
@@ -320,6 +361,14 @@
   components:
   - type: Stack
     count: 1
+#Dumont edit for bitrunning loot
+- type: entity
+  parent: UraniumOre
+  id: UraniumOre3
+  suffix: Three
+  components:
+  - type: Stack
+    count: 3
 
 - type: entity
   parent: OreBase
