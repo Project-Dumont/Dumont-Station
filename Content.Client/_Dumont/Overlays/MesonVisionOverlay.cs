@@ -63,6 +63,11 @@ public sealed class MesonVisionOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
+        // a planta é o fundo: precisa sair antes do equipamento do t-ray, senão
+        // o chão desenhado aqui cobre os canos. sem z definido a ordem entre
+        // dois overlays do mesmo espaço é sorteada
+        ZIndex = 0;
+
         _transform = _entity.System<SharedTransformSystem>();
         _map = _entity.System<SharedMapSystem>();
         _sprite = _entity.System<SpriteSystem>();

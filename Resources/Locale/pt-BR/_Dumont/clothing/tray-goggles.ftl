@@ -9,3 +9,9 @@ ent-ClothingEyesGlassesMesonScanner = scanner óptico de meson
 
 ent-ActionToggleMesonScanner = Alternar scanner de meson
     .desc = Liga e desliga a varredura estrutural.
+
+ent-ClothingEyesGlassesEngineeringScanner = óculos de varredura de engenharia
+    .desc = Óculos de varredura combinado. Revela a planta da estação e o equipamento de engenharia através das paredes de uma vez, sem ocupar as mãos.
+
+ent-ActionToggleEngineeringScanner = Alternar óculos de varredura
+    .desc = Liga e desliga a varredura combinada.

@@ -37,6 +37,9 @@ public sealed class ScannerVisionOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
+        // equipamento vem por cima da planta do meson
+        ZIndex = 1;
+
         _transform = _entity.System<SharedTransformSystem>();
         _sprite = _entity.System<SpriteSystem>();
         _lookup = _entity.System<EntityLookupSystem>();
