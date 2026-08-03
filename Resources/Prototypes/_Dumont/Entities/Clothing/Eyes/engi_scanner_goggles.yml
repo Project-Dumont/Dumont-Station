@@ -7,7 +7,7 @@
 # modo pra compensar o custo de fabricação
 
 - type: entity
-  parent: [ClothingEyesBase, BaseToggleClothing]
+  parent: ClothingEyesBase
   id: ClothingEyesGlassesEngineeringScanner
   name: engineering scanner goggles
   description: Combined scanning goggles. Reveals the station layout and the engineering equipment through walls at once, without occupying your hands.
@@ -43,12 +43,9 @@
   # a planta da estação, o modo do meson
   - type: MesonVision
     range: 10
+  # liga e desliga com E, sem acao na barra. o sistema do fork cancela o toggle
+  # quando o item nao esta vestido, senao voltaria a funcionar na mao
   - type: ItemToggle
-    onActivate: false # é roupa, não liga clicando na mão
-  - type: ToggleClothing
-    action: ActionToggleEngineeringScanner
-    mustEquip: true
-    disableOnUnequip: true
   - type: IdentityBlocker
     coverage: EYES
   - type: PhysicalComposition
@@ -62,13 +59,3 @@
     tags:
     - WhitelistChameleon
 
-- type: entity
-  parent: BaseAction
-  id: ActionToggleEngineeringScanner
-  name: Toggle scanner goggles
-  description: Turns the combined scanner on and off.
-  components:
-  - type: Action
-    itemIconStyle: BigItem
-  - type: InstantAction
-    event: !type:ToggleActionEvent

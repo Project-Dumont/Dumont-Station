@@ -4,6 +4,7 @@ using Content.Server.SubFloor;
 using Content.Shared._Dumont.Overlays;
 using Content.Shared._Dumont.SubFloor;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.SubFloor;
 
@@ -16,6 +17,8 @@ namespace Content.Server._Dumont.SubFloor;
 /// </summary>
 public sealed class TrayScannerToggleSystem : EntitySystem
 {
+    [Dependency] private readonly InventorySystem _inventory = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -23,6 +26,8 @@ public sealed class TrayScannerToggleSystem : EntitySystem
         SubscribeLocalEvent<WornTrayScannerComponent, ItemToggledEvent>(OnToggled);
         SubscribeLocalEvent<WornTrayScannerComponent, ActivateInWorldEvent>(OnActivate,
             before: [typeof(TrayScannerSystem)]);
+        SubscribeLocalEvent<WornTrayScannerComponent, ItemToggleActivateAttemptEvent>(OnActivateAttempt);
+        SubscribeLocalEvent<MesonVisionComponent, ItemToggleActivateAttemptEvent>(OnMesonActivateAttempt);
         SubscribeLocalEvent<ScannerVisionComponent, ItemToggledEvent>(OnVisionToggled);
         SubscribeLocalEvent<MesonVisionComponent, ItemToggledEvent>(OnMesonToggled);
     }
@@ -60,11 +65,36 @@ public sealed class TrayScannerToggleSystem : EntitySystem
     }
 
     /// <summary>
-    /// scanner que é roupa não liga na mão. sem isso o clique do upstream
-    /// acende o óculos segurado e ele revela o subsolo fora do rosto
+    /// o clique do upstream ligava o Enabled direto, por fora do ItemToggle.
+    /// bloqueado pra sobrar um caminho só, senão os dois brigam pelo estado
     /// </summary>
     private void OnActivate(Entity<WornTrayScannerComponent> ent, ref ActivateInWorldEvent args)
     {
         args.Handled = true;
+    }
+
+    /// <summary>
+    /// só liga no rosto. o scanner do upstream funciona na mão também, então
+    /// sem esse corte o óculos segurado revelaria o subsolo
+    /// </summary>
+    private void OnActivateAttempt(Entity<WornTrayScannerComponent> ent, ref ItemToggleActivateAttemptEvent args)
+    {
+        if (IsWorn(ent))
+            return;
+
+        args.Cancelled = true;
+    }
+
+    private void OnMesonActivateAttempt(Entity<MesonVisionComponent> ent, ref ItemToggleActivateAttemptEvent args)
+    {
+        if (IsWorn(ent))
+            return;
+
+        args.Cancelled = true;
+    }
+
+    private bool IsWorn(EntityUid uid)
+    {
+        return _inventory.TryGetContainingSlot(uid, out _);
     }
 }

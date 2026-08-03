@@ -7,7 +7,7 @@
 # em meia estação, dar visão pra ele distribuiria a feature sem ninguém pedir
 
 - type: entity
-  parent: [ClothingEyesBase, BaseToggleClothing]
+  parent: ClothingEyesBase
   id: ClothingEyesGlassesMesonScanner
   name: optical meson scanner
   description: Structural scanning goggles. Reveals the station layout through walls, leaving equipment, people and objects out of sight.
@@ -34,12 +34,9 @@
   # só a planta: chão, parede, porta e janela. equipamento é trabalho do t-ray
   - type: MesonVision
     range: 8
+  # liga e desliga com E, sem acao na barra. o sistema do fork cancela o toggle
+  # quando o item nao esta vestido, senao voltaria a funcionar na mao
   - type: ItemToggle
-    onActivate: false # é roupa, não liga clicando na mão
-  - type: ToggleClothing
-    action: ActionToggleMesonScanner
-    mustEquip: true
-    disableOnUnequip: true
   - type: IdentityBlocker
     coverage: EYES
   - type: PhysicalComposition
@@ -52,13 +49,3 @@
     tags:
     - WhitelistChameleon
 
-- type: entity
-  parent: BaseAction
-  id: ActionToggleMesonScanner
-  name: Toggle meson scanner
-  description: Turns the structural scanner on and off.
-  components:
-  - type: Action
-    itemIconStyle: BigItem
-  - type: InstantAction
-    event: !type:ToggleActionEvent

@@ -5,7 +5,7 @@
 # ideia original do SukitaBR na issue #894
 
 - type: entity
-  parent: [ClothingEyesBase, BaseToggleClothing]
+  parent: ClothingEyesBase
   id: ClothingEyesGlassesTray
   name: t-ray goggles
   description: Terahertz scanning goggles. Reveals pipes, wiring and engineering machinery through walls, without occupying your hands.
@@ -32,12 +32,9 @@
   - type: ScannerVision
     showsStructure: true
     range: 4
+  # liga e desliga com E, sem acao na barra. o sistema do fork cancela o toggle
+  # quando o item nao esta vestido, senao voltaria a funcionar na mao
   - type: ItemToggle
-    onActivate: false # é roupa, não liga clicando na mão
-  - type: ToggleClothing
-    action: ActionToggleTrayGoggles
-    mustEquip: true
-    disableOnUnequip: true
   - type: IdentityBlocker
     coverage: EYES
   - type: Appearance
@@ -57,13 +54,3 @@
     tags:
     - WhitelistChameleon
 
-- type: entity
-  parent: BaseAction
-  id: ActionToggleTrayGoggles
-  name: Toggle t-ray goggles
-  description: Turns the terahertz scanner on and off.
-  components:
-  - type: Action
-    itemIconStyle: BigItem
-  - type: InstantAction
-    event: !type:ToggleActionEvent
