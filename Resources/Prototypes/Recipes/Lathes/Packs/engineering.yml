@@ -80,6 +80,8 @@
   - WelderExperimental
   - JawsOfLife
   - ClothingEyesGlassesTray # Dumont-Oculos-TRay
+  - ClothingEyesGlassesMesonScanner # Dumont-Oculos-TRay
+  - ClothingEyesGlassesEngineeringScanner # Dumont-Oculos-TRay
 
 - type: latheRecipePack
   id: AtmosTools

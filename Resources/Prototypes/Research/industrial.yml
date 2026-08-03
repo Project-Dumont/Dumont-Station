@@ -311,6 +311,8 @@
     - BorgModuleAdvancedTool
     - SignallerAdvanced # Moved from explosives research
     - ClothingEyesGlassesTray # Dumont-Oculos-TRay
+    - ClothingEyesGlassesMesonScanner # Dumont-Oculos-TRay
+    - ClothingEyesGlassesEngineeringScanner # Dumont-Oculos-TRay
   # Goobstation R&D Console rework start
   position: 2,-5
   technologyPrerequisites:
