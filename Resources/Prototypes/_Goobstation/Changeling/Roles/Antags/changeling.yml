@@ -15,9 +15,9 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-changeling-description
-  requirements:
-  - !type:OverallPlaytimeRequirement
-      time: 36000 #10 hrs
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Difficult antag and needs good RP to be convincing
+      time: 180000 # 50 hrs
   - !type:SpeciesRequirement
     inverted: true
     species:

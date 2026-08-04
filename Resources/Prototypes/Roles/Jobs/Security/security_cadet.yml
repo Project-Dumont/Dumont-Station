@@ -99,12 +99,12 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 86400 #24 hrs - Dumont edit
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # Really not for new players, basics about the game and gameplay should be known
+      time: 86400 #24 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 86400 #24 hrs - Dumont edit
+      time: 108000 #30 hrs
       inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"

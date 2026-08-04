@@ -15,9 +15,11 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-heretic-description
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 54000 # 15h
+  requirements: # Dumont edit
+    - !type:RoleTimeRequirement
+      role: JobChaplain # Know the very basics about your enemy and magic
+      time: 21600 # 6 hrs
+
   guides: [ Heretics ]
 
 - type: antag

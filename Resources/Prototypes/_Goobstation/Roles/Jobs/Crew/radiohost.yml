@@ -3,6 +3,12 @@
   name: job-name-radiohost
   description: job-description-radiohost
   playTimeTracker: JobRadioHost
+  requirements: # Dumont edit
+    - !type:RoleTimeRequirement
+      role: JobMusician # You're a musician with a potentially bigger audience, know the basics about it
+      time: 21600 # 6 hrs
+    - !type:OverallPlaytimeRequirement # The crew will literally linch you if you play badly, get to know them a little first
+      time: 86400 # 24 hrs
   startingGear: RadioHostGear
   icon: "JobIconRadioHost"
   supervisors: job-supervisors-hop

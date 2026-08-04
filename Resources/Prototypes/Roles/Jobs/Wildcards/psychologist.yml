@@ -103,6 +103,12 @@
   name: job-name-psychologist
   description: job-description-psychologist
   playTimeTracker: JobPsychologist
+  requirements: # Dumont edit
+    - !type:DepartmentTimeRequirement
+      department: Medical # Learn the basics of Med
+      time: 86400 # 24 hrs
+    - !type:OverallPlaytimeRequirement # Heavy RP role, needs to know a bit about server culture
+      time: 180000 # 50 hrs
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo

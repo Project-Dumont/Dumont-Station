@@ -88,14 +88,10 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
-  requirements:
+  requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 86400 #24 hrs - Dumont edit
-  #  - !type:SpeciesRequirement # Dumont - No Waddler
-  #    inverted: true
-  #    species:
-  #      - Waddler
+      department: Security # Basics on how Sec works
+      time: 86400 #24 hrs
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos

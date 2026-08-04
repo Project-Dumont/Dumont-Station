@@ -65,10 +65,13 @@
   name: job-name-chemist
   description: job-description-chemist
   playTimeTracker: JobChemist
-  requirements:
+  requirements: # Dumont edit
+    - !type:RoleTimeRequirement
+      role: JobMedicalDoctor # Needs to know what Medics actually want and use
+      time: 43200 #12 hrs
     - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 18000 #5 hrs
+      department: Medical # Learn enought of Med
+      time: 86400 #40 hrs
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo

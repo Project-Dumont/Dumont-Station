@@ -70,9 +70,9 @@
   name: job-name-lawyer
   description: job-description-lawyer
   playTimeTracker: JobLawyer
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 9000 # 2.5 hrs
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # RP role, needs to know how some things work before annoying Sec
+      time: 86400 # 24 hrs
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop

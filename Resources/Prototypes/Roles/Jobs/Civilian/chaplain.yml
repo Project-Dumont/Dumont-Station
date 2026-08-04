@@ -74,12 +74,12 @@
   name: job-name-chaplain
   description: job-description-chaplain
   playTimeTracker: JobChaplain
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 18000 # 15 hours
-    - !type:RoleTimeRequirement # Dumont
-      role: JobSecurityOfficer
-      time: 21600 #6 hrs
+  requirements: # Dumont edit
+    - !type:OverallPlaytimeRequirement # Heavy RP role, some metashield is also expected from you
+      time: 86400 # 24 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security # Minimal combat knowledge is needed
+      time: 21600 # 6 hrs
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-hop

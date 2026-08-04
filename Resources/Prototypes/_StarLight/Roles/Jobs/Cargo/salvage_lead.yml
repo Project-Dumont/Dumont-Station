@@ -3,16 +3,10 @@
   name: job-name-salvagelead
   description: job-description-salvagelead
   playTimeTracker: JobSalvageLead
-  requirements:
+  requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
-      time: 144000 # 40 hours
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 18000 # 5 hours
-    - !type:RoleTimeRequirement
-      role: JobQuartermaster
-      time: 18000 # 5 hours
+      role: JobSalvageSpecialist # Know what you're dealing with
+      time: 108000 # 30 hours
   icon: "JobIconSalvageLead"
   startingGear: SalvageLeadGear
   supervisors: job-supervisors-qm
