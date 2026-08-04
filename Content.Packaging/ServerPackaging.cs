@@ -79,7 +79,6 @@
 
 using System.Diagnostics;
 using System.IO.Compression;
-using Content.ModuleManager;
 using Robust.Packaging;
 using Robust.Packaging.AssetProcessing;
 using Robust.Packaging.AssetProcessing.Passes;
@@ -114,31 +113,9 @@ public static class ServerPackaging
         .Select(o => o.Rid)
         .ToList();
 
-    private static readonly List<string> CoreServerContentAssemblies = new()
-    {
-        "Content.Server.Database",
-        "Content.Server",
-        "Content.Shared",
-        "Content.Shared.Database",
-        /*"Content.Goobstation.Server", // Gabystation - start
-        "Content.Goobstation.Client", // I don't give a shit if this is not the right way to do
-        "Content.Goobstation.Shared",
-        "Content.Goobstation.Common", // Gabystation - end*/
-        "Content.ModuleManager", // I cant be fucked to figure out how to this dynamically
-    };
-
-    private static readonly List<string> ServerExtraAssemblies = new()
-    {
-        // Python script had Npgsql. though we want Npgsql.dll as well soooo
-        "Npgsql",
-        "Microsoft",
-        "Concentus",
-        "NetCord",
-    };
-
     private static readonly List<string> ServerNotExtraAssemblies = new()
     {
-        "Microsoft.CodeAnalysis",
+        "JetBrains.Annotations",
     };
 
     private static readonly HashSet<string> BinSkipFolders = new()
@@ -255,31 +232,6 @@ public static class ServerPackaging
         return serverModules;
     }
 
-    private static List<string> FindAllServerModules(string path = ".")
-    {
-        var modules = new List<string>(CoreServerContentAssemblies);
-        modules.AddRange(ModuleDiscovery.DiscoverModules(path)
-            .Where(m => m.Type is not ModuleType.Client)
-            .Select(m => m.Name)
-            .Distinct()
-        );
-
-        var directories = Directory.GetDirectories(path, "Content.*");
-        foreach (var dir in directories)
-        {
-            var dirName = Path.GetFileName(dir);
-
-            // Throw out anything that does not end with ".Server" or ".Shared"
-            if ((!dirName.EndsWith(".Server") && !dirName.EndsWith(".Shared")) || modules.Contains(dirName))
-                continue;
-            var projectPath = Path.Combine(dir, $"{dirName}.csproj");
-            if (File.Exists(projectPath))
-                modules.Add(dirName);
-        }
-
-        return modules;
-    }
-
     private static async Task PublishClientServer(string runtime, string targetOs, string configuration)
     {
         await ProcessHelpers.RunCheck(new ProcessStartInfo
@@ -318,23 +270,12 @@ public static class ServerPackaging
         var inputPassCore = graph.InputCore;
         var inputPassResources = graph.InputResources;
 
-        var contentAssemblies = FindAllServerModules();
-
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
 
-        // Should this be an asset pass?
-        // For future archaeologists I just want audio rework to work and need the audio pass so
-        // just porting this as is from python.
-        foreach (var fullPath in Directory.EnumerateFiles(sourcePath, "*.*", SearchOption.AllDirectories))
-        {
-            var fileName = Path.GetFileNameWithoutExtension(fullPath);
+        var deps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Server.deps.json"));
 
-            if (!ServerNotExtraAssemblies.Any(o => fileName.StartsWith(o)) && ServerExtraAssemblies.Any(o => fileName.StartsWith(o)))
-            {
-                contentAssemblies.Add(fileName);
-            }
-        }
+        var contentAssemblies = GetContentAssemblyNamesToCopy(deps);
 
         await RobustSharedPackaging.DoResourceCopy(
             Path.Combine("RobustToolbox", "bin", "Server",
@@ -360,6 +301,22 @@ public static class ServerPackaging
 
         inputPassCore.InjectFinished();
         inputPassResources.InjectFinished();
+    }
+
+    // This returns both content assemblies (e.g. Content.Server.dll) and dependencies (e.g. Npgsql)
+    private static IEnumerable<string> GetContentAssemblyNamesToCopy(DepsHandler deps)
+    {
+        var depsContent = deps.RecursiveGetLibrariesFrom("Content.Server").SelectMany(GetLibraryNames);
+        var depsRobust = deps.RecursiveGetLibrariesFrom("Robust.Server").SelectMany(GetLibraryNames);
+
+        var depsContentExclusive = depsContent.Except(depsRobust).ToHashSet();
+
+        // Remove .dll suffix and apply filtering.
+        var names = depsContentExclusive.Select(p => p[..^4]).Where(p => !ServerNotExtraAssemblies.Any(p.StartsWith));
+
+        return names;
+
+        IEnumerable<string> GetLibraryNames(string library) => deps.Libraries[library].GetDllNames();
     }
 
     private readonly record struct PlatformReg(string Rid, string TargetOs, bool BuildByDefault);

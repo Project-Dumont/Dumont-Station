@@ -1,0 +1,37 @@
+- type: salvageFaction
+  id: XenosTrue
+  desc: salvage-faction-xenos-true
+  entries:
+    - proto: CMMobXenoDrone
+    - proto: CMMobXenoDrone
+      cost: 2
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: ResinWeedNode
+      cost: 1
+    - proto: CMMobXenoBurrower
+      cost: 3
+    - proto: CMMobXenoWarrior
+      cost: 5
+      prob: 1
+    - proto: CMMobXenoQueen
+      cost: 10
+      guaranteed: true
+    - proto: CMMobXenoRavager
+      cost: 5
+    - proto: CMMobXenoCrusher
+      cost: 5
+      prob: 1
+    - proto: CMMobXenoRogueKing
+      cost: 10
+      guaranteed: true
+    - proto: WeaponTurretXeno
+      prob: 0.1
+  biomes:
+    - DenseForest
+  difficulties:
+    - Impossible
