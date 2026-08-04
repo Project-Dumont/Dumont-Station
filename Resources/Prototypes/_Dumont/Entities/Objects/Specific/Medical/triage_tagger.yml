@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: TriageTagger
+  name: triage tagger
+  description: Projects a holographic priority tag onto a patient. Only readable through a medical HUD.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
+    state: icon
+  - type: Item
+    heldPrefix: scanner
+  - type: TriageTagger
+    whitelist:
+      components:
+      - MobState
+    levels:
+    - TriageIconImmediate
+    - TriageIconVeryUrgent
+    - TriageIconUrgent
+    - TriageIconStandard
+    - TriageIconNonUrgent
+    - TriageIconDeceased
+  - type: UserInterface
+    interfaces:
+      enum.TriageTaggerUiKey.Key:
+        type: TriageTaggerBoundUserInterface
+
+- type: entity
+  parent: TriageTagger
+  id: TriageTaggerLine
+  suffix: teste da linha
+  components:
+  - type: TriageTagger
+    whitelist:
+      components:
+      - MobState
+    levels:
+    - TriageIconLineImmediate
+    - TriageIconLineVeryUrgent
+    - TriageIconLineUrgent
+    - TriageIconLineStandard
+    - TriageIconLineNonUrgent
+    - TriageIconLineDeceased

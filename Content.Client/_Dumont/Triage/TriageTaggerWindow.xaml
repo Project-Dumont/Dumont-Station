@@ -1,0 +1,16 @@
+<!--
+SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="{Loc 'triage-tagger-window-title'}"
+               MinSize="380 0">
+    <BoxContainer Orientation="Vertical" SeparationOverride="8">
+        <Label Name="PatientLabel" StyleClasses="LabelHeading" />
+        <BoxContainer Name="LevelsContainer" Orientation="Vertical" SeparationOverride="4" />
+        <Button Name="ClearButton" Text="{Loc 'triage-tagger-clear'}" />
+    </BoxContainer>
+</DefaultWindow>
