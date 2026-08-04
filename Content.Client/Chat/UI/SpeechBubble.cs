@@ -459,7 +459,7 @@ namespace Content.Client.Chat.UI
                 font: "TinyUnicode",
                 true,
                 fontColor: fontColor,
-                thicknessOverride: 2,
+                thicknessOverride: 1,
                 contentTag: "BubbleContent");
 
             var panel = new PanelContainer
@@ -479,15 +479,14 @@ namespace Content.Client.Chat.UI
 
         protected override Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null)
         {
-
             var bubbleContent = new FancySpeechBubble(
                 message,
-                12,
-                font: "MinecraftItalic",
+                10,
+                font: "MinecraftItalic", 
                 true,
                 fontColor: fontColor,
-                thicknessOverride: 2,
-                contentTag: "BubbleContent",
+                thicknessOverride: 1,
+                contentTag: null,
                 glyph: "/Textures/_UM/Chat/chat_icons/emote.png");
 
             var panel = new PanelContainer

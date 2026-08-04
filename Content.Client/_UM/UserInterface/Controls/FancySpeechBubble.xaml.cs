@@ -112,11 +112,13 @@ public sealed partial class FancySpeechBubble : Control
                 "font",
                 new MarkupParameter(_font),
                 fontParameters));
+            
+            var cleanMessage = System.Text.RegularExpressions.Regex.Replace(message, @"\[/?color[^\]]*\]", "", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 
             if (_color != null)
                 msg.PushColor(_color.Value);
 
-            msg.AddMarkupOrThrow(message);
+            msg.AddMarkupOrThrow(cleanMessage);
             msg.Pop();
             msg.Pop();
 
