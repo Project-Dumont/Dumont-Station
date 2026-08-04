@@ -3875,3 +3875,9 @@ Entries:
         atmosfera e uma espuma reguladora de temperatura.
   id: 454
   time: '2026-08-01T12:06:19.0000000+00:00'
+- author: RaposoG
+  changes:
+    - type: Add
+      message: as falas de hail agora estão em português
+  id: 455
+  time: '2026-08-04T01:54:03.0000000+00:00'
