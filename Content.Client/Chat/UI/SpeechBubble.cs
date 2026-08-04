@@ -431,14 +431,34 @@ namespace Content.Client.Chat.UI
 
         protected override Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null)
         {
+            var bubbleHeader = new FancySpeechBubble(
+                message,
+                12,
+                font: "Minecraft",
+                true,
+                fontColor: fontColor,
+                thicknessOverride: 1, // Borda fina!
+                contentTag: "BubbleHeader");
+
             var bubbleContent = new FancySpeechBubble(
                 message,
-                contentTag: "BubbleContent",
-                fontColor: fontColor);
+                11,
+                font: "Minecraft",
+                true,
+                fontColor: fontColor,
+                thicknessOverride: 1,
+                contentTag: "BubbleContent");
+
+            var verticalBox = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalAlignment = HAlignment.Center,
+                Children = { bubbleHeader, bubbleContent }
+            };
 
             var panel = new PanelContainer
             {
-                Children = { bubbleContent },
+                Children = { verticalBox }
             };
             return panel;
         }
