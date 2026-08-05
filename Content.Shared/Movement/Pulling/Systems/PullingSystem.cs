@@ -712,15 +712,7 @@ public sealed class PullingSystem : EntitySystem
             // joint will have infinite stiffness.
             joint.Stiffness = 0f;
 
-            // Dumont - Prevent pull objects from rotating when anchored.
-            if (pullablePhysics.BodyType == BodyType.Static)
-            {
-                _physics.SetFixedRotation(pullableUid, true, body: pullablePhysics);
-            }
-            else
-            {
-                _physics.SetFixedRotation(pullableUid, pullableComp.FixedRotationOnPull, body: pullablePhysics);
-            }
+            _physics.SetFixedRotation(pullableUid, pullableComp.FixedRotationOnPull, body: pullablePhysics);
         }
 
         // Messaging
