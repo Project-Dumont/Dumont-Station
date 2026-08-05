@@ -1,8 +1,9 @@
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Trauma.Shared.BloodSplatter;
+namespace Content.Goobstation.Shared._Trauma.BloodSplatter;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
 public sealed partial class BloodSplattererComponent : Component
@@ -24,4 +25,10 @@ public sealed partial class BloodSplattererComponent : Component
 
     [DataField, AutoPausedField]
     public TimeSpan NextSplashAvailable;
+
+    [DataField]
+    public SoundSpecifier? SplatSound = new SoundCollectionSpecifier("blood")
+    {
+        Params = AudioParams.Default.WithVolume(-4f).WithMaxDistance(6f),
+    };
 }
