@@ -53,6 +53,10 @@ jobs:
           ref: ${{ steps.meta.outputs.head_ref }}
           token: ${{ secrets.BOT_TOKEN }}
           path: pr
+          # da pra baixar pra 1 aqui, so precisamos do HEAD pra aplicar o patch e
+          # commitar, e clonar o historico todo desse repo demora a beca. nao troquei
+          # junto porque workflow_run so roda depois do merge, entao eu nao tinha como
+          # testar se o push aguenta shallow clone. fica pra quem mexer depois
           fetch-depth: 0
 
       - name: Apply patch and push

@@ -56,6 +56,11 @@ jobs:
 
           # array em vez de string pra nome com espaco nao virar dois argumentos, e
           # ./ na frente pra nome comecando com - nao ser lido como flag do argparse.
+          # o filtro aqui pega so cs/yml/yaml, mas o update_pr_reuse_headers.py sabe
+          # tratar xaml, ftl, py, md e mais um monte. entao arquivo novo desses passa
+          # batido e nao ganha header por aqui. nao mexi junto pra nao misturar com o
+          # hotfix, mas se PR com xaml ou ftl novo estiver quebrando no check de
+          # reuse, o motivo e essa linha
           mapfile -t ADDED < <(grep "^added " <<< "$PR_FILES" | grep -E '\.(cs|ya?ml)$' | sed 's|^added |./|')
           mapfile -t MODIFIED < <(grep "^modified " <<< "$PR_FILES" | grep -E '\.(cs|ya?ml)$' | sed 's|^modified |./|')
 
