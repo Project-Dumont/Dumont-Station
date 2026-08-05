@@ -22,6 +22,9 @@ permissions:
 
 jobs:
   generate_patch:
+    # Draft nao recebe header. Commit de reuse no meio do rascunho obriga a ficar
+    # mergindo a toa, o ready_for_review la em cima pega quando a PR sair de draft.
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -35,7 +38,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Get Changed Files and PR Info
+      - name: Run REUSE Header Update Script
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,43 +54,30 @@ jobs:
           PR_FILES=$(gh api --paginate "repos/${GH_REPO}/pulls/${PR_NUMBER}/files" \
             --jq '.[] | select(.filename != null) | "\(.status) \(.filename)"')
 
-          ADDED_FILES=$(echo "$PR_FILES" | grep "^added" | grep -E '\.(cs|ya?ml)$' | sed 's/^added //' | xargs) || true
-          MODIFIED_FILES=$(echo "$PR_FILES" | grep "^modified" | grep -E '\.(cs|ya?ml)$' | sed 's/^modified //' | xargs) || true
+          # array em vez de string pra nome com espaco nao virar dois argumentos, e
+          # ./ na frente pra nome comecando com - nao ser lido como flag do argparse.
+          mapfile -t ADDED < <(grep "^added " <<< "$PR_FILES" | grep -E '\.(cs|ya?ml)$' | sed 's|^added |./|')
+          mapfile -t MODIFIED < <(grep "^modified " <<< "$PR_FILES" | grep -E '\.(cs|ya?ml)$' | sed 's|^modified |./|')
 
-          echo "Added Files: $ADDED_FILES"
-          echo "Modified Files: $MODIFIED_FILES"
-
-          {
-            echo "ADDED_FILES_LIST<<EOF"
-            echo "$ADDED_FILES"
-            echo "EOF"
-            echo "MODIFIED_FILES_LIST<<EOF"
-            echo "$MODIFIED_FILES"
-            echo "EOF"
-          } >> "$GITHUB_ENV"
+          echo "Added: ${#ADDED[@]} arquivo(s), modified: ${#MODIFIED[@]} arquivo(s)"
 
           echo "Checking PR body for license..."
           if grep -q "LICENSE: MIT" <<< "$PR_BODY"; then
-            echo "PR_LICENSE=mit" >> "$GITHUB_ENV"
-            echo "License specified in PR: MIT"
+            PR_LICENSE=mit
           elif grep -q "LICENSE: AGPL" <<< "$PR_BODY"; then
-            echo "PR_LICENSE=agpl" >> "$GITHUB_ENV"
-            echo "License specified in PR: AGPL"
+            PR_LICENSE=agpl
           elif grep -q "LICENSE: MPL" <<< "$PR_BODY"; then
-            echo "PR_LICENSE=mpl" >> "$GITHUB_ENV"
-            echo "License specified in PR: MPL"
+            PR_LICENSE=mpl
           else
-            echo "PR_LICENSE=agpl" >> "$GITHUB_ENV"
+            PR_LICENSE=agpl
             echo "No license specified in PR, using default: AGPL"
           fi
+          echo "License: $PR_LICENSE"
 
-      - name: Run REUSE Header Update Script
-        run: |
-          set -euo pipefail
           python Tools/update_pr_reuse_headers.py \
             --pr-license "$PR_LICENSE" \
-            --files-added $ADDED_FILES_LIST \
-            --files-modified $MODIFIED_FILES_LIST
+            --files-added "${ADDED[@]}" \
+            --files-modified "${MODIFIED[@]}"
 
       - name: Build patch
         id: patch
