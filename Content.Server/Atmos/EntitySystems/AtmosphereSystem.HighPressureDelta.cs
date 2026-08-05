@@ -218,7 +218,8 @@ public sealed partial class AtmosphereSystem
 
         // Yes this technically increases the magnitude by a small amount... I detest having to swap between "World" and "Local" vectors.
         // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
-        var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
+        var gridRotation = xform.GridUid != null ? _transformSystem.GetWorldRotation(xform.GridUid.Value) : Angle.Zero;
+        var velocity = gridRotation.RotateVec(pressureVector); // _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
 
         _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
             1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
