@@ -152,8 +152,8 @@
     - !type:RoleTimeRequirement
       role: JobPermaPrisoner # Suffer, know where you're putting people in
       time: 21600 # 6 hrs
-    - !type:DepartmentTimeRequirement # Be familiar with the entire workings of Sec, you're the 2nd in command
-      department: Security
+    - !type:DepartmentTimeRequirement
+      department: Security # Be familiar with the entire workings of Sec, you're the 2nd in command
       time: 216000 # 60 hrs
   weight: 5
   startingGear: WardenGear

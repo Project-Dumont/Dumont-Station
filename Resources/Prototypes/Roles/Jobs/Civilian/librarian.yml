@@ -68,7 +68,7 @@
   name: job-name-librarian
   description: job-description-librarian
   playTimeTracker: JobLibrarian
-  requirements: # Dumont edit
+  requirements: # Dumont
     - !type:OverallPlaytimeRequirement # RP role, and there's some metashield expectations
       time: 43200 # 12 hrs
   startingGear: LibrarianGear

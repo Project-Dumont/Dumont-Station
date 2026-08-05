@@ -125,7 +125,7 @@
   name: job-name-mime
   description: job-description-mime
   playTimeTracker: JobMime
-  requirements: # Dumont edit
+  requirements: # Dumont
     - !type:OverallPlaytimeRequirement # Heavy RP role, mimes need to actually be mimes y'know?
       time: 180000 # 50 hrs
   startingGear: MimeGear

@@ -82,7 +82,7 @@
   playTimeTracker: JobParamedic
   requirements: # Dumont edit
     - !type:RoleTimeRequirement
-      role: JobMedicalDoctor # Emergency rescue, needs to be very familiar with treatments and speedy
+      role: JobMedicalDoctor # Emergency rescue, needs to be speedy and very familiar with fast treatments
       time: 43200 #12 hrs
     - !type:DepartmentTimeRequirement
       department: Medical # Learn enought of Med

@@ -58,7 +58,7 @@
   name: job-name-reporter
   description: job-description-reporter
   playTimeTracker: JobReporter
-  requirements: # Dumont edit
+  requirements: # Dumont
     - !type:OverallPlaytimeRequirement # RP role, needs to know how some things work to report decent news
       time: 86400 # 24 hrs
   startingGear: ReporterGear

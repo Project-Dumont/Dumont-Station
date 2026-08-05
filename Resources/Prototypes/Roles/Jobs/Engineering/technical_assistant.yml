@@ -63,7 +63,7 @@
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
   requirements: # Dumont edit
-    - !type:OverallPlaytimeRequirement # Needs to know absolute basics of the game, bad job can be game ending
+    - !type:OverallPlaytimeRequirement # Needs to know absolute basics of the game, a bad job can be game ending
       time: 43200 # 12 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering

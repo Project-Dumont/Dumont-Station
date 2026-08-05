@@ -7,3 +7,6 @@
   name: ghost-role-information-morph-name
   objective: ghost-role-information-morph-description
   antagonist: true
+  requirements: # Dumont
+  - !type:OverallPlaytimeRequirement # Simple antag
+    time: 43200 # 12 hrs

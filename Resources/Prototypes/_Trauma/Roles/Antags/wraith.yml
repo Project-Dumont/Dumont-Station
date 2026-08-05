@@ -5,6 +5,6 @@
   setPreference: true
   objective: roles-antag-wraith-objective
   guides: [ Wraith ]
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 36000
+  requirements: # Dumont edit
+  - !type:OverallPlaytimeRequirement # Some little game knowlege since it's a more complex antag
+    time: 86400 # 24 hrs

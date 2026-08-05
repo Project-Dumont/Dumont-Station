@@ -5,8 +5,8 @@
   playTimeTracker: JobPrisonGuard
   requirements: # Dumont edit
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 86400 #24 hrs
+      department: Security # Sec basics
+      time: 86400 # 24 hrs
   startingGear: PrisonGuardGear
   canBeAntag: false
   icon: "JobIconPrisonGuard"
