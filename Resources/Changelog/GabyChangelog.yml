@@ -3881,3 +3881,17 @@ Entries:
       message: as falas de hail agora estão em português
   id: 455
   time: '2026-08-04T01:54:03.0000000+00:00'
+- author: RaposoG
+  changes:
+    - type: Fix
+      message: >-
+        Corrigido o boletim de mensagem do dia, que aparecia vazio no lobby e
+        voltava sozinho depois de fechado.
+    - type: Fix
+      message: >-
+        Corrigida a listagem de crimes da Space Law, que aparecia com o texto
+        sobreposto.
+    - type: Fix
+      message: Corrigido o link do Desacato na Space Law, que abria uma tela em branco.
+  id: 456
+  time: '2026-08-05T02:55:35.0000000+00:00'
