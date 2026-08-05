@@ -1,5 +1,5 @@
 // <Trauma>
-using Content.Trauma.Common.Decals;
+using Content.Goobstation.Shared._Trauma.Decals;
 // </Trauma>
 using System.Numerics;
 using Content.Server.Decals;

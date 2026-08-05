@@ -2,15 +2,15 @@
 
 using Content.Server.Decals;
 using Content.Shared.GameTicking;
-using Content.Trauma.Common.CCVar;
-using Content.Trauma.Common.Decals;
-using Content.Trauma.Shared.Timing;
+using Content.Goobstation.Common.CCVar;
+using Content.Goobstation.Shared._Trauma.Decals;
+using Content.Goobstation.Shared._Trauma.Timing;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
 
-namespace Content.Trauma.Server.Decals;
+namespace Content.Goobstation.Server._Trauma.Decals;
 
 /// <summary>
 /// Manages decals that opt in to being removed after a delay, configured by cvars.
@@ -33,8 +33,8 @@ public sealed class DecalDespawnSystem : EntitySystem
         SubscribeLocalEvent<DespawningDecalSpawnerComponent, DecalSpawnedEvent>(OnDecalSpawned);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
 
-        Subs.CVar(_cfg, TraumaCVars.DecalDespawnLimit, x => _limit = x, true);
-        Subs.CVar(_cfg, TraumaCVars.DecalDespawnTime, UpdateDespawnTime, true);
+        Subs.CVar(_cfg, GoobCVars.DecalDespawnLimit, x => _limit = x, true);
+        Subs.CVar(_cfg, GoobCVars.DecalDespawnTime, UpdateDespawnTime, true);
 
         _buffer = new(_limit!, _despawnTime, _timing);
     }

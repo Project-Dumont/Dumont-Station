@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Trauma.Server.Decals;
+namespace Content.Goobstation.Server._Trauma.Decals;
 
 /// <summary>
 /// Component for random decal spawner entities to queue despawning their spawned decals.

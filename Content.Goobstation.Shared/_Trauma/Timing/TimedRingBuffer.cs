@@ -2,7 +2,7 @@
 
 using Robust.Shared.Timing;
 
-namespace Content.Trauma.Shared.Timing;
+namespace Content.Goobstation.Shared._Trauma.Timing;
 
 /// <summary>
 /// A ringbuffer that stores items in order of a popping timespan.
