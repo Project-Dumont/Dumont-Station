@@ -22,7 +22,7 @@ public sealed partial class CCVars
     ///     A direct multiplier on how violent space wind is.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 2.5f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
@@ -155,7 +155,7 @@ public sealed partial class CCVars
     ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
-        CVarDef.Create("atmos.space_wind_allow_knockdown", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_allow_knockdown", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
