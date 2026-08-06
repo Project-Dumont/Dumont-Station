@@ -222,7 +222,11 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             _ => "not-wanted"
         };
 
-        var ev = new PdaNotificationEvent(Loc.GetString($"criminal-records-console-{statusString}", args), "SecurityAlerts", false); // Dumont
+        var ev = new PdaNotificationEvent(
+            Loc.GetString($"criminal-records-console-{statusString}", args),
+            "SecurityAlerts", false,
+            _station.GetOwningStation(ent.Owner)); // Dumont
+
         RaiseLocalEvent(ev);
 
         // _radio.SendRadioMessage(ent, Loc.GetString($"criminal-records-console-{statusString}", args),

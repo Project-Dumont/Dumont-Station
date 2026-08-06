@@ -83,6 +83,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.NameIdentifier;
+using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
@@ -199,7 +200,7 @@ public sealed partial class CargoSystem
             ("bounty", "ID#" + bountyData.Id),
             ("user", InfoEv.Title ?? Loc.GetString("bounty-skip-unknown")));
 
-        var ev = new PdaNotificationEvent(message, "CargoSansSalvage", false); // Dumont
+        var ev = new PdaNotificationEvent(message, "CargoSansSalvage", false, _station.GetOwningStation(uid)); // Dumont
         RaiseLocalEvent(ev);
 
         FillBountyDatabase(station);

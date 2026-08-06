@@ -24,7 +24,7 @@ namespace Content.Server.PDA
             _sawmill = _log.GetSawmill("pda_notification");
 
             if (!_proto.TryIndex<NotificationGroupPrototype>(args.Group, out var notiGroupProto)) {
-                _sawmill.Error($"group '{args.Group} does not exist'");
+                _sawmill.Error($"group {args.Group} does not exist'");
                 return;
             }
 
@@ -37,6 +37,9 @@ namespace Content.Server.PDA
             var amountNotified = 0;
 
             while (Pdas.MoveNext(out var uid, out var pdaComp)) {
+                if (args.Station is { } notifiedStation && notifiedStation != _station.GetOwningStation(uid))
+                    continue;
+
                 if (pdaComp.IdSlot.Item is not { } idCardUid)
                     continue;
 

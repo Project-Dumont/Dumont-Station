@@ -70,7 +70,7 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
         // Dumont begin - Pda notification
         if (stationEvent.StartAnnouncement != null) {
-            var ev = new PdaNotificationEvent(Loc.GetString(stationEvent.StartAnnouncement), "StationAlerts", true);
+            var ev = new PdaNotificationEvent(Loc.GetString(stationEvent.StartAnnouncement), "StationAlerts", true, StationSystem.GetOwningStation(uid));
             RaiseLocalEvent(ev);
         }
         // Dumont end

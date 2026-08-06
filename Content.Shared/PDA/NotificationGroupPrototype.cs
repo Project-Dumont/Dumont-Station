@@ -8,7 +8,8 @@ using Content.Shared.Access;
 namespace Content.Shared.PDA;
 
 /// <summary>
-/// Defines a group of pdas to notify based on the access in its inserted ID, an entirely empty group meaning that it emcompasses all PDA.
+/// Defines a group of pdas to notify based on the access in its inserted ID, an entirely empty group meaning that it encompasses all PDA.
+/// A given pda will be notified if its id's access are contained in the notification group's accesses
 /// </summary>
 
 [Prototype]
