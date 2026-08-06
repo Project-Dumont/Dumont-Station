@@ -12,8 +12,9 @@ namespace Content.Shared.PDA;
 /// A given pda will be notified if its id's access are contained in the notification group's accesses
 /// </summary>
 
+[DataDefinition]
 [Prototype]
-public sealed class NotificationGroupPrototype : IPrototype {
+public sealed partial class NotificationGroupPrototype : IPrototype {
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
