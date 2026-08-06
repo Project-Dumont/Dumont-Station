@@ -11,6 +11,7 @@
   id: SalvageLeadNeck
   name: loadout-group-salvage-lead-mantle
   loadouts:
+#    - ClothingNeckCloakHelldiver
     - ClothingNeckMantleDecoratedSalvager
 
 - type: loadoutGroup
@@ -18,3 +19,5 @@
   name: loadout-group-salvagelead-id
   loadouts:
     - SalvageLeadPDA
+#    - HelldiverPDA
+
