@@ -3895,3 +3895,9 @@ Entries:
       message: Corrigido o link do Desacato na Space Law, que abria uma tela em branco.
   id: 456
   time: '2026-08-05T02:55:35.0000000+00:00'
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Agora catatônicos não aparecem na lista de vivos da interface fantasma.
+  id: 457
+  time: '2026-08-06T02:51:19.0000000+00:00'
