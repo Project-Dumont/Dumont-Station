@@ -273,10 +273,7 @@ public sealed partial class PressurizedSolutionSystem : EntitySystem
     {
         // Omu start - Allows players wearing beer goggles to throw drinks without causing sprays or increasing fizziness
         if (args.User is { } user && _nonspillthrower.GetSpillProofThrow(user))
-        {
-            TryClearFizziness(new Entity<PressurizedSolutionComponent?>(entity.Owner, entity.Comp));
             return;
-        }
         // Omu end
 
         SprayOrAddFizziness(entity, entity.Comp.SprayChanceModOnLand, entity.Comp.FizzinessAddedOnLand);
