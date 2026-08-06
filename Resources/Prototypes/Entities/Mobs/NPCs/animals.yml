@@ -1884,6 +1884,9 @@
     upper: MobHuman
     lowest: MobMonkey
   # Corvax-Wega-Genetics-end
+  - type: DuoEmote # Funky Change
+  - type: TailDuoEmote # Funky Change
+
 
 - type: entity
   name: monkey
@@ -2049,6 +2052,8 @@
         Blunt: 1
     clumsySound:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+  - type: DuoEmote # Funky Change
+  - type: TailDuoEmote # Funky Change
 
 - type: entity
   id: MobBaseSyndicateKobold

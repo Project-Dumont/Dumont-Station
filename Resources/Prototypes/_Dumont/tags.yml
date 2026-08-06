@@ -2,11 +2,36 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# ORDEM ALFABÉTICA!
+- type: Tag
+  id: CartridgeLightRifleImprovised
+
+- type: Tag
+  id: CartridgeMagnumImprovised
+
+- type: Tag
+  id: CartridgePistolImprovised
+
+- type: Tag
+  id: CartridgeWatson
+
 - type: Tag
   id: EletricRadiation
 
 - type: Tag
   id: ExplorerAxeBase
+
+- type: Tag
+  id: Felionoid
+
+- type: Tag
+  id: HideGhostWarp
+
+- type: Tag
+  id: ImprovisedAmmoBox
+
+- type: Tag
+  id: ImplantImplanter
 
 - type: Tag
   id: Markalibur1
@@ -15,16 +40,7 @@
   id: MagazineSMGImprovised
 
 - type: Tag
-  id: ImprovisedAmmoBox
-
-- type: Tag
-  id: CartridgePistolImprovised
-
-- type: Tag
-  id: CartridgeMagnumImprovised
-
-- type: Tag
-  id: CartridgeLightRifleImprovised
+  id: Resomi
 
 - type: Tag
   id: ShellShotgunImprovised
@@ -33,16 +49,7 @@
   id: ShotgunSentinel
 
 - type: Tag
-  id: Felionoid
-
-- type: Tag
-  id: Resomi
-
-- type: Tag
-  id: HideGhostWarp
-
-- type: Tag
-  id: CartridgeWatson
-
-- type: Tag
   id: SpeedLoaderWatson
+
+- type: Tag
+  id: XenoDungeon

@@ -39,6 +39,12 @@ public sealed partial class NanoChatCardComponent : Component
     public Dictionary<uint, List<NanoChatMessage>> Messages = new();
 
     /// <summary>
+    ///     The NanoChat numbers that should not give a notification, even when notifications are enabled.
+    /// </summary>
+    [DataField]
+    public HashSet<uint> MutedChats = [];
+
+    /// <summary>
     ///     The currently selected chat recipient number.
     /// </summary>
     [DataField]

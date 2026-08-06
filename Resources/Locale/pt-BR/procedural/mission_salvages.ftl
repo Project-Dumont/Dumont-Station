@@ -18,7 +18,7 @@ salvage-mission-objective-name-rescue = Resgate
 salvage-mission-objective-description-rescue = Perdemos o contato com a base no planeta. Recompensas por corpo recuperado disponíveis.
 salvage-mission-objective-announcement-rescue = Sua missão é garantir os seguintes corpos: {$names}. Você vai receber recompensas adicionais dependendo da condição dos corpos.
 
-salvage-mission-objective-completed-message = Missão de exploração completa. {$bonus}/{$maxBonus} objetivo bonus completado. Pagamento total: {$totalReward} e {$totalCash} spesos.
+salvage-mission-objective-completed-message = Missão de exploração completa. {$bonus}/{$maxBonus} objetivo bonus completado. Pagamento total: {$totalReward} tickets e {$totalCash} spesos.
 salvage-mission-objective-failed-message = Missão de exploração fracassada.
 
 salvage-mission-objective-name-purge = Apague
@@ -26,5 +26,10 @@ salvage-mission-objective-description-purge = A destruição da base deixou regi
 salvage-mission-objective-announcement-purge = Sua missão é destruir {$numTargets} pastas de documentos deixadas na base. Se você recuperar alguma pasta adicional, também será pago pela destruição delas.
 
 salvage-mission-objective-name-shutdown = Shutdown
-salvage-mission-objective-description-shutdown = Dispositivos ilegais foram enconrados em uma base planetária. Destrua eles.
+salvage-mission-objective-description-shutdown = Dispositivos ilegais foram encontrados em uma base planetária. Destrua eles.
 salvage-mission-objective-announcement-shutdown = Sua missão é encontrar e destruir {$numTargets} dispositivos suspeitos. Você receberá um pagamento extra por qualquer dispositivo adicional que destruir.
+
+salvage-mission-objective-name-disarm = Desarme
+salvage-mission-objective-description-disarm = Desative o protocolo de autodestruição de uma fábrica automatizada.
+salvage-mission-objective-announcement-disarm = Sua missão é encontrar os códigos de desarme e inseri-los nos consoles de segurança para interromper a sequência de autodestruição. Há um total de {$numTargets} códigos.
+salvage-mission-objective-disarm-paper = O seu código de desarme do turno é: #{$code}

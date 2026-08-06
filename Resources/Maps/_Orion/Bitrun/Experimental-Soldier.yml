@@ -9,7 +9,7 @@ meta:
   forkId: Orion
   forkVersion: ""
   time: 06/26/2026 21:55:52
-  entityCount: 1238
+  entityCount: 1237
 maps: []
 grids:
 - 1
@@ -3215,15 +3215,6 @@ entities:
     - type: Transform
       pos: -2.6197624,19.434664
       parent: 1
-- proto: FlagLizard
-  entities:
-  - uid: 636
-    components:
-    - type: Transform
-      pos: -10.5,19.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
 - proto: FloorDrain
   entities:
   - uid: 640
@@ -5802,9 +5793,6 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1219:
-        - - Pressed
-          - Toggle
-        368:
         - - Pressed
           - Toggle
     - type: Fixtures

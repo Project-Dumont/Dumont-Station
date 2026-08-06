@@ -28,6 +28,7 @@ using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Random;
+using Content.Goobstation.Common.CCVar;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Robust.Shared.Prototypes;
@@ -93,10 +94,17 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
         }
     }
 
+    private int GetPlayerCountForPresetSelection()
+    {
+        return _configurationManager.GetCVar(GoobCVars.SecretUseOnlinePlayerCount)
+            ? GameTicker.OnlinePlayerCount()
+            : GameTicker.ReadyPlayerCount();
+    }
+
     private bool TryPickPreset(ProtoId<WeightedRandomPrototype> weights, [NotNullWhen(true)] out GamePresetPrototype? preset)
     {
         var options = _prototypeManager.Index(weights).Weights.ShallowClone();
-        var players = GameTicker.ReadyPlayerCount();
+        var players = GetPlayerCountForPresetSelection();
 
         GamePresetPrototype? selectedPreset = null;
         var sum = options.Values.Sum();
@@ -154,7 +162,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
     /// </summary>
     public bool CanPickAny(IEnumerable<ProtoId<GamePresetPrototype>> protos)
     {
-        var players = GameTicker.ReadyPlayerCount();
+        var players = GetPlayerCountForPresetSelection();
         foreach (var id in protos)
         {
             if (!_prototypeManager.TryIndex(id, out var selectedPreset))

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: salvageFaction
   id: Silicon
   desc: salvage-faction-silicon
@@ -25,3 +29,23 @@
   difficulties: 
     - Challenging
     - Moderate
+
+- type: salvageFaction
+  id: Meat
+  desc: salvage-faction-meat
+  entries:
+    - proto: MobDungeonMeatFast
+      cost: 1
+    - proto: MobDungeonMeatGuy
+      cost: 2
+      prob: 0.7
+    - proto: MobDungeonMeatFlying
+      cost: 2
+      prob: 0.6
+    - proto: MobDungeonMeatGiant
+      cost: 4
+      prob: 0.25
+  difficulties: 
+    - Easy
+    - Moderate
+    - Challenging

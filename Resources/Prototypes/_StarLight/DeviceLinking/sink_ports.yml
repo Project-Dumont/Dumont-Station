@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: sinkPort
+  id: MassDriverConsoleReceiver
+  name: signal-port-name-mass-driver-console-receiver
+  description: signal-port-description-mass-driver-console-receiver
+
+- type: sinkPort
+  id: Launch
+  name: signal-port-name-launch
+  description: signal-port-description-launch
