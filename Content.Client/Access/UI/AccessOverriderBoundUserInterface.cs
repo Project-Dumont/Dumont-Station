@@ -76,6 +76,10 @@ namespace Content.Client.Access.UI
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
+
+            if (_window is not { Disposed: false })
+                return;
+
             var castState = (AccessOverriderBoundUserInterfaceState) state;
             _window?.UpdateState(_prototypeManager, castState);
         }

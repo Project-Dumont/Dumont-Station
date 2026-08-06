@@ -26,6 +26,9 @@ public sealed class AiCameraWarpBoundUserInterface(EntityUid owner, Enum uiKey) 
     {
         base.UpdateState(state);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (state is not CameraWarpBuiState msg)
             return;
 
