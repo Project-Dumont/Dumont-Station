@@ -52,17 +52,20 @@ public sealed partial class CryoSlotBelongingsSystem
             // parent is gone
             if (Deleted(parent) || !IsContainedBy(parent, body))
                 continue;
+
             // parent cannot store toggleable comp
-            if (!TryComp<ToggleableClothingComponent>(parent, out var toggleable) || toggleable.Container == null)
+            if (!TryComp<ToggleableClothingComponent>(parent, out var toggleable) || !_container.TryGetContainer(parent, toggleable.ContainerId, out var toggleableContainer))
                 continue;
+
             // item is already inside the parent
-            if (toggleable.Container.ContainedEntity == item)
+            if (toggleableContainer.Contains(item))
                 continue;
+
             // try unequip it first so container metadata is cleared before it returns to the parent.
             if (_inventory.TryUnequip(body, toggleable.Slot, force: true))
                 continue;
 
-            _container.Insert(item, toggleable.Container, force: true);
+            _container.Insert(item, toggleableContainer, force: true);
         }
     }
 
