@@ -32,7 +32,6 @@ public sealed partial class AudioMuffleSystem : SharedAudioMuffleSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IClientGameStateManager _stateMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private static EntityQuery<GhostComponent> _ghostQuery;
