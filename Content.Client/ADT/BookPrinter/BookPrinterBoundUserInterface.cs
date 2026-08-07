@@ -55,6 +55,9 @@ public sealed class BookPrinterBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         var castState = (BookPrinterBoundUserInterfaceState)state;
         _lastState = castState;
 

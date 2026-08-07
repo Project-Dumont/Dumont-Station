@@ -15,7 +15,7 @@ namespace Content.Server._Funkystation.MalfAI;
 /// </summary>
 public sealed class MalfAiViewportPvsSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
@@ -42,7 +42,7 @@ public sealed class MalfAiViewportPvsSystem : EntitySystem
         var visibilityRadius = 4.0f;
 
         // Get grid tile size for proper radius calculation
-        if (_mapManager.TryFindGridAt(anchorCoords, out var gridUid, out var grid))
+        if (_mapSystem.TryFindGridAt(anchorCoords, out var gridUid, out var grid))
         {
             visibilityRadius *= grid.TileSize;
         }
