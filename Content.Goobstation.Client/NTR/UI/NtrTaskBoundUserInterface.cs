@@ -44,6 +44,9 @@ public sealed class NtrTaskBoundUserInterface(EntityUid owner, Enum uiKey) : Bou
     {
         base.UpdateState(message);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (message is not NtrTaskConsoleState state)
             return;
 

@@ -37,7 +37,6 @@ namespace Content.Server.BloodCult.EntitySystems
 		[Dependency] private readonly DamageableSystem _damageableSystem = default!;
 		[Dependency] private readonly PopupSystem _popupSystem = default!;
 		[Dependency] private readonly IPrototypeManager _protoMan = default!;
-		[Dependency] private readonly IMapManager _mapManager = default!;
 		[Dependency] private readonly BloodCultRuleSystem _bloodCultRule = default!;
 
 		private EntityQuery<BloodCultRuneComponent> _runeQuery;
@@ -148,7 +147,7 @@ namespace Content.Server.BloodCult.EntitySystems
 
 		private bool CanPlaceBarrierAt(EntityCoordinates clickedAt, out EntityCoordinates location)
 		{
-			location = clickedAt.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+			location = clickedAt.AlignWithClosestGridTile(entityManager: EntityManager);
 			var gridUid = _transform.GetGrid(location);
 			if (!TryComp<MapGridComponent>(gridUid, out var grid))
 			{

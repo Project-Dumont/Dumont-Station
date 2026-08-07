@@ -48,7 +48,7 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
     {
         base.UpdateState(state);
 
-        if (state is not SalvageExpeditionConsoleState current || _window == null)
+        if (state is not SalvageExpeditionConsoleState current || _window is not { Disposed: false })
             return;
 
         _window.Progression = null;
