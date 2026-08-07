@@ -210,10 +210,10 @@ namespace Content.Client.Paper.UI
                     Texture = backgroundImage,
                     TextureScale = visuals.BackgroundScale,
                     Mode = backgroundImageMode,
-                    PatchMarginLeft = backgroundPatchMargin.Left,
-                    PatchMarginBottom = backgroundPatchMargin.Bottom,
-                    PatchMarginRight = backgroundPatchMargin.Right,
-                    PatchMarginTop = backgroundPatchMargin.Top
+                    PatchMarginLeft = backgroundPatchMargin.X,
+                    PatchMarginBottom = backgroundPatchMargin.Y,
+                    PatchMarginRight = backgroundPatchMargin.Z,
+                    PatchMarginTop = backgroundPatchMargin.W
                 };
 
             }
@@ -231,8 +231,7 @@ namespace Content.Client.Paper.UI
             }
 
             HeaderImage.ModulateSelfOverride = visuals.HeaderImageModulate;
-            HeaderImage.Margin = new Thickness(visuals.HeaderMargin.Left, visuals.HeaderMargin.Top,
-                    visuals.HeaderMargin.Right, visuals.HeaderMargin.Bottom);
+            HeaderImage.Margin = ToThickness(visuals.HeaderMargin);
 
             // Then the footer
             if (visuals.FooterImagePath is {} path)
@@ -242,8 +241,7 @@ namespace Content.Client.Paper.UI
             }
 
             FooterImage.ModulateSelfOverride = visuals.FooterImageModulate;
-            FooterImage.Margin = new Thickness(visuals.FooterMargin.Left, visuals.FooterMargin.Top,
-                    visuals.FooterMargin.Right, visuals.FooterMargin.Bottom);
+            FooterImage.Margin = ToThickness(visuals.FooterMargin);
 
             PaperContent.ModulateSelfOverride = visuals.ContentImageModulate;
             WrittenTextLabel.ModulateSelfOverride = visuals.FontAccentColor;
@@ -263,9 +261,7 @@ namespace Content.Client.Paper.UI
                 _paperContentLineScale = visuals.ContentImageNumLines;
             }
 
-            PaperContent.Margin = new Thickness(
-                    visuals.ContentMargin.Left, visuals.ContentMargin.Top,
-                    visuals.ContentMargin.Right, visuals.ContentMargin.Bottom);
+            PaperContent.Margin = ToThickness(visuals.ContentMargin);
 
             if (visuals.MaxWritableArea != null)
             {
@@ -295,6 +291,11 @@ namespace Content.Client.Paper.UI
                     SetHeight = float.NaN;
                 }
             }
+        }
+
+        private static Thickness ToThickness(Vector4 margin)
+        {
+            return new Thickness(margin.X, margin.W, margin.Z, margin.Y);
         }
 
         /// <summary>

@@ -15,10 +15,10 @@
 
 # Neck
 
-- type: loadout
-  id: ClothingNeckCloakHelldiver
-  equipment:
-    neck: ClothingNeckCloakHelldiver
+# - type: loadout
+#   id: ClothingNeckCloakHelldiver
+#   equipment:
+#     neck: ClothingNeckCloakHelldiver
 
 - type: loadout
   id: ClothingNeckMantleDecoratedSalvager
@@ -27,10 +27,10 @@
 
 # PDA
 
-- type: loadout
-  id: HelldiverPDA
-  equipment:
-    id: HelldiverPDA
+# - type: loadout
+#   id: HelldiverPDA
+#   equipment:
+#     id: HelldiverPDA
 
 - type: loadout
   id: SalvageLeadPDA
