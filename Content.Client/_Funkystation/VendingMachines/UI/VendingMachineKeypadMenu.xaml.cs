@@ -103,7 +103,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
 
         for (var row = 0; row < _rowCount; row++)
         {
-            var letter = (char)('A' + row);
+            var letter = (char) ('A' + row);
             var capturedLetter = letter;
 
             var shift = _bluesScale[row % _bluesScale.Length] - 12;
@@ -129,7 +129,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
             var code = GetCode(i);
 
             var slot = new VendingMachineGridSlot();
-            slot.SetItem(entry.ID, code, entry.Amount, entry.Amount == 0);
+            slot.SetItem(entry.ID, code, entry.Amount, entry.Amount == 0, entry.Price);
 
             ItemGrid.AddChild(slot);
             _slots.Add(slot);
@@ -376,7 +376,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         {
             var row = i / 10;
             var col = i % 10;
-            var letter = (char)('A' + row);
+            var letter = (char) ('A' + row);
 
             var isRowMatch = _bufferLetter == letter;
             var isExactMatch = isRowMatch && _bufferNumber == col;
@@ -389,7 +389,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     {
         var row = index / 10;
         var col = index % 10;
-        var letter = (char)('A' + row);
+        var letter = (char) ('A' + row);
         return $"{letter}{col}";
     }
 }

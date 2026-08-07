@@ -53,14 +53,17 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
 
         LayoutContainer.SetPosition(CodeLabel, new Vector2(2f, 2f));
 
+        PriceLabel.SetWidth = SlotSize;
+        LayoutContainer.SetPosition(PriceLabel, new Vector2(0f, SlotSize - 20f));
+
         AmountBadge.SetSize = new Vector2(BadgeSize, BadgeSize);
-        LayoutContainer.SetPosition(AmountBadge, new Vector2(SlotSize - BadgeSize - 2f, SlotSize - BadgeSize - 2f));
+        LayoutContainer.SetPosition(AmountBadge, new Vector2(SlotSize - BadgeSize - 2f, 2f));
 
         SoldOverlay.SetSize = new Vector2(SlotSize, 22f);
         LayoutContainer.SetPosition(SoldOverlay, new Vector2(0f, (SlotSize - 22f) / 2f));
     }
 
-    public void SetItem(EntProtoId protoId, string code, uint amount, bool soldOut)
+    public void SetItem(EntProtoId protoId, string code, uint amount, bool soldOut, uint? price = null)
     {
         CodeLabel.Text = code;
         ItemSprite.SetPrototype(protoId);
@@ -78,6 +81,16 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
                     : label.CurrentLabel;
 
                 tooltipText = $"{proto.Name} ({labelText})";
+            }
+
+            if (price is { } p && p > 0)
+            {
+                PriceLabel.Text = $"${p}";
+                PriceLabel.Visible = true;
+            }
+            else
+            {
+                PriceLabel.Visible = false;
             }
 
             ToolTip = string.IsNullOrWhiteSpace(proto.Description)

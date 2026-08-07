@@ -7,6 +7,7 @@
     <LayoutContainer Name="SlotLayout">
         <EntityPrototypeView Name="ItemSprite" />
         <Label Name="CodeLabel" StyleClasses="DimNormal" />
+        <Label Name="PriceLabel" FontColorOverride="#33ff33" HorizontalAlignment="Center" VerticalAlignment="Bottom" Align="Center" Visible="False" />
         <PanelContainer Name="AmountBadge" StyleClasses="StripeBack">
             <Label Name="AmountLabel" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </PanelContainer>
