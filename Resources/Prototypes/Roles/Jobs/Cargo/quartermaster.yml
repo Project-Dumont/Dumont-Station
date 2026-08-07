@@ -211,7 +211,6 @@
     gloves: ClothingHandsKnuckleDustersQM
 
 
-
 - type: jobAlternateTitle
   id: QuarterMasterTitleChief
   name: job-name-alt-qm-chief

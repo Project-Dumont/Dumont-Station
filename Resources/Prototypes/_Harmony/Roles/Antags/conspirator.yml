@@ -8,7 +8,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-conspirator-objective
-  requirements: # Dumont edit
+  requirements: # Dumont
     - !type:OverallPlaytimeRequirement # Heavy RP expected for open objectives
       time: 180000 # 50 hrs
   guides: [ Conspirators ]

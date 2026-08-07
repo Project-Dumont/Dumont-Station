@@ -3,7 +3,7 @@
   name: roles-antag-generic-solo-antagonist-name
   antagonist: true
   objective: never-shown
-    requirements: # Dumont
+  requirements: # Dumont
   - !type:OverallPlaytimeRequirement # Basic antag time
     time: 43200 # 12 hrs
 
