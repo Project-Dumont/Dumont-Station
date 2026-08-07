@@ -156571,7 +156571,6 @@ entities:
     - type: Transform
       pos: 45.5,53.5
       parent: 2
-    - type: Timer
   - uid: 23488
     components:
     - type: Transform
@@ -156993,7 +156992,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 45.5,55.5
       parent: 2
-    - type: Timer
   - uid: 23561
     components:
     - type: Transform
@@ -157672,7 +157670,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 47.5,58.5
       parent: 2
-    - type: Timer
   - uid: 23676
     components:
     - type: Transform

@@ -27,9 +27,11 @@ namespace Content.Server.NodeContainer.Nodes
             if (!xform.Anchored || grid == null)
                 yield break;
 
-            var gridIndex = grid.TileIndicesFor(xform.Coordinates);
+            var mapSystem = entMan.System<SharedMapSystem>();
 
-            foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, grid, gridIndex))
+            var gridIndex = mapSystem.TileIndicesFor(grid.Owner, grid, xform.Coordinates);
+
+            foreach (var node in NodeHelpers.GetNodesInTile(nodeQuery, mapSystem, grid, gridIndex))
             {
                 if (node is PortablePipeNode)
                     yield return node;

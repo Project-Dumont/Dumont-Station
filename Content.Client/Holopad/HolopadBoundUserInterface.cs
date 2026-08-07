@@ -66,6 +66,9 @@ public sealed class HolopadBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         var castState = (HolopadBoundInterfaceState)state;
         EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
 

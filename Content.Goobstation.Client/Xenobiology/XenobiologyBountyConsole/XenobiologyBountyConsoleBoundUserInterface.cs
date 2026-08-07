@@ -37,6 +37,9 @@ public sealed class XenobiologyBountyConsoleBoundUserInterface(EntityUid owner, 
     {
         base.UpdateState(message);
 
+        if (_menu is not { Disposed: false })
+            return;
+
         if (message is not XenobiologyBountyConsoleState state)
             return;
 
