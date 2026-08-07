@@ -101,6 +101,9 @@ public sealed class FireControlConsoleBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
+        if (_window is not { Disposed: false })
+            return;
+
         if (state is not FireControlConsoleBoundInterfaceState castState)
             return;
 

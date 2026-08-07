@@ -186,10 +186,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         if (_stateManager.CurrentState is LobbyState lobby)
         {
-            var enabled = _configurationManager.GetCVar(CCVars.MOTDBuletinEnable);
-            lobby.Lobby!.MOTDBuletin.Visible = enabled;
-            if (!enabled)
-                lobby.Lobby!.ShowMOTD.Visible = enabled;
+            if (_configurationManager.GetCVar(CCVars.MOTDBuletinEnable)) // Gabystation - motd
+                return;
+
+            lobby.Lobby!.MOTDBuletin.Visible = false;
+            lobby.Lobby!.ShowMOTD.Visible = false;
         }
     }
 
