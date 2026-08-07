@@ -31,7 +31,7 @@ public sealed partial class VendingMachineKeypadKey : LayoutContainer
 
         KeyLabel.Text = key;
         KeyLabel.FontColorOverride = new Color(0x80, 0x7b, 0x7a);
-        KeyLabel.FontOverride = new VectorFont(_resourceCache.GetResource<FontResource>("/Fonts/Sysfont/Sysfont-Regular.otf"), 14);
+        // KeyLabel.FontOverride = new VectorFont(_resourceCache.GetResource<FontResource>("/Fonts/Sysfont/Sysfont-Regular.otf"), 14);
 
         var displaySize = NativeSize * DisplayScale;
         SetSize = new Vector2(displaySize, displaySize);
